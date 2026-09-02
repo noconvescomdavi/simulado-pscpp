@@ -59,3 +59,21 @@ git add .
 git commit -m "Migra plataforma PSCPP para Next.js e PostgreSQL"
 git push origin main
 ```
+
+## Painel administrativo
+
+Rota: `/admin`
+
+O painel valida a sessão e confirma no PostgreSQL que o usuário possui `role='admin'` e `status='active'`. Operações de ativação/revogação de licença e bloqueio/desbloqueio de conta também são validadas no servidor.
+
+Para ativar o primeiro administrador, execute `ATIVAR-PAINEL-ADMIN.sql` no Neon SQL Editor. Depois acesse `/admin` ou use o botão `Admin` exibido na Área do Aluno.
+
+Recursos atuais do painel:
+- indicadores de alunos, licenças ativas, pendentes e contas bloqueadas;
+- pesquisa por e-mail;
+- situação da conta e da licença;
+- data de cadastro, último login e ativação;
+- número de simulados, questões respondidas, média e progresso;
+- ativação e revogação de licença;
+- bloqueio e desbloqueio de conta;
+- registro das ações administrativas em `audit_log`.
