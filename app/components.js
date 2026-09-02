@@ -1,0 +1,2 @@
+export function Nav(){return <nav className="nav"><div className="navin"><a className="brand" href="/">SIMULADOS PSCPP<small>@noconvescomdavi</small></a><div className="links"><a href="/login">Entrar</a><a className="primary" href="/cadastro">Criar conta</a></div></div></nav>}
+export function Footer(){return <div className="footer">SIMULADOS PSCPP · @noconvescomdavi · Plataforma independente de estudos.</div>}

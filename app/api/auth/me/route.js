@@ -1,0 +1,1 @@
+import {getSession} from "../../../../lib/auth";export async function GET(){const s=await getSession();return s?Response.json({user:s}):Response.json({error:"Não autenticado"},{status:401})}

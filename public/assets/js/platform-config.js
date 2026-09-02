@@ -1,0 +1,1 @@
+window.PSCPP_CONFIG={SUPABASE_URL:"",SUPABASE_ANON_KEY:"",PRODUCT_SLUG:"pscpp-vitalicio",DEMO_MODE:true};

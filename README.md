@@ -1,39 +1,61 @@
-# SIMULADOS PSCPP — @noconvescomdavi
+# SIMULADOS PSCPP — Next.js + PostgreSQL
 
-Portal de estudos estruturado conforme o arquivo **Conteúdo Programático para o Processo Seletivo à Categoria de Praticante de Prático** fornecido para montagem do projeto.
+Versão sem Supabase. A autenticação é própria e o banco é PostgreSQL.
 
-## Estrutura
+## Componentes
+- Next.js / Vercel
+- PostgreSQL (recomendado: Neon conectado à Vercel)
+- `pg` para acesso ao banco
+- Argon2id para hash de senhas
+- JWT em cookie HttpOnly/Secure/SameSite
+- Gateway de pagamento: preparado para ser adicionado depois
+- Conteúdo anterior preservado em `public/study-content/`
 
-- I – Manobrabilidade do Navio (Ship Manoeuvrability)
-- II – Arte Naval
-- III – Navegação em Águas Restritas
-  - RIPEAM Trainer integrado em `/navegacao-aguas-restritas/ripeam/`
-- IV – Legislação e Regulamentação
-- V – Meteorologia e Oceanografia
-- VI – Comunicações
-  - Código Internacional de Sinais integrado em `/comunicacoes/cis/`
-- VII – Conhecimentos Gerais
+## 1. Banco
+Crie um PostgreSQL e execute:
+`db/schema.sql`
 
-## Recursos
+Na Vercel, adicione:
+`DATABASE_URL`
 
-- Conteúdo programático detalhado com tópicos e subtópicos
-- Busca dentro de cada disciplina
-- Expandir/recolher tópicos
-- Checkboxes de estudo com progresso salvo via `localStorage`
-- Tema claro/escuro
-- Layout responsivo
-- Assinatura `@noconvescomdavi`
-- RIPEAM e CIS já funcionais e incorporados
+## 2. Chave da sessão
+Crie `AUTH_SECRET` com uma string aleatória longa e salve somente nas Environment Variables da Vercel.
 
-## Publicação
+## 3. Desenvolvimento local
+Copie `.env.example` para `.env.local` e preencha as variáveis.
 
-Copie todo o conteúdo desta pasta para a raiz do seu repositório `C:\simulado-pscpp`, depois:
+```cmd
+npm install
+npm run dev
+```
 
+## 4. Produção
+Depois de subir no GitHub, a Vercel detecta Next.js e executa `npm install` + `npm run build`.
+
+## 5. Ativar aluno manualmente durante a fase sem gateway
+```sql
+UPDATE user_access
+SET status='active', lifetime=TRUE, activated_at=NOW()
+WHERE user_id=(
+  SELECT id FROM users WHERE LOWER(email)=LOWER('aluno@email.com')
+)
+AND product_code='pscpp-vitalicio';
+```
+
+## Segurança
+- Nunca envie `.env`, `DATABASE_URL` ou `AUTH_SECRET` ao GitHub.
+- Senhas são armazenadas como Argon2id.
+- Cookie de sessão é HttpOnly e Secure em produção.
+- A API usa queries parametrizadas.
+- O gateway futuro deve ativar a licença exclusivamente após confirmação server-to-server.
+
+## Observação importante sobre o conteúdo legado
+O portal valida login/licença no servidor antes de mostrar a central de estudos. Entretanto, os módulos RIPEAM/CIS e páginas antigas preservadas em `public/study-content/` continuam sendo arquivos estáticos. Para proteção comercial forte, migre gradualmente esse conteúdo para componentes/rotas Next.js protegidas, em vez de mantê-lo em `/public`.
+
+## Git
 ```cmd
 cd /d "C:\simulado-pscpp"
 git add .
-git commit -m "Portal completo Simulados PSCPP com RIPEAM e CIS"
+git commit -m "Migra plataforma PSCPP para Next.js e PostgreSQL"
 git push origin main
 ```
-
-Não há build: o projeto é HTML/CSS/JavaScript estático.

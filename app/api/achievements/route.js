@@ -1,0 +1,2 @@
+import {getSession} from "../../../lib/auth";import {query} from "../../../lib/db";
+export async function GET(){const s=await getSession();if(!s)return Response.json({error:"Não autenticado"},{status:401});const r=await query(`select a.code,a.name,a.description,ua.unlocked_at from achievements a left join user_achievements ua on ua.achievement_id=a.id and ua.user_id=$1 order by a.id`,[s.id]);return Response.json({achievements:r.rows})}
