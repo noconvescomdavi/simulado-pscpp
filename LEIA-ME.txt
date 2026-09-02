@@ -1,54 +1,26 @@
-ESTIBORDO — integração pronta para o repositório simulado-pscpp
+ESTIBORDO — SITE VISUAL FINAL
 
-Este pacote foi montado especificamente para o repositório:
-https://github.com/noconvescomdavi/simulado-pscpp
+Esta versão substitui os desenhos anteriores da lancha e da marca pelas DUAS imagens aprovadas na conversa:
 
-Estrutura detectada no GitHub:
-- Next.js 15
-- React 19
-- App Router
-- app/page.js
-- app/layout.js
-- app/components.js
-- app/globals.css
+1. public/estibordo/logos/estibordo-logo-final.png
+   Logo completa ESTIBORDO com lancha realista.
 
-INSTALAÇÃO MAIS FÁCIL (Windows)
-1. Extraia esta pasta.
-2. Clique com botão direito em PowerShell dentro da pasta extraída.
-3. Execute:
-   powershell -ExecutionPolicy Bypass -File .\INSTALAR_ESTIBORDO.ps1
+2. public/estibordo/vetores/lancha-pilot-final.png
+   Lancha PILOT realista com mar, usada nos destaques/hero.
 
-O script usa por padrão:
-C:\simulado-pscpp
+Os SVGs antigos da logo e da lancha foram removidos para impedir que o site continue carregando as versões simplificadas.
 
-Ele faz backup automático dos 4 arquivos de interface antes de sobrescrever.
+A bandeira Hotel e os ícones auxiliares permanecem em SVG, pois não fazem parte das duas artes substituídas.
+
+INSTALAÇÃO
+No PowerShell, dentro desta pasta:
+powershell -ExecutionPolicy Bypass -File .\APLICAR_VISUAL_ESTIBORDO.ps1
 
 Depois:
-cd /d C:\simulado-pscpp
-npm install
-npm run dev
+Set-Location C:\simulado-pscpp
+npm.cmd run dev
 
-Abra:
-http://localhost:3000
+Se o navegador ainda mostrar a arte antiga:
+Ctrl + Shift + R
 
-O pacote NÃO altera:
-- banco PostgreSQL
-- autenticação
-- APIs
-- .env
-- lógica de simulados
-- área administrativa
-
-Ele altera:
-- identidade visual global
-- home
-- headline
-- menu
-- rodapé
-- tipografia
-- cores
-- assets ESTIBORDO
-- navegação pública
-
-IMPORTANTE
-As rotas existentes /login, /cadastro, /area-do-aluno e /simulado foram preservadas.
+O instalador cria backup dos arquivos de interface atuais antes da substituição.

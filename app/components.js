@@ -1,64 +1,70 @@
+
 export function Nav(){
   return (
-    <header className="siteHeader">
-      <div className="siteHeaderInner">
-        <a className="siteBrand" href="/" aria-label="ESTIBORDO - Início">
-          <img src="/estibordo/logos/estibordo-logo-horizontal.svg" alt="ESTIBORDO — Preparação para a Praticagem"/>
+    <nav className="nav">
+      <div className="navin">
+        <a className="brand" href="/" aria-label="ESTIBORDO">
+          <img src="/estibordo/logos/estibordo-logo-final.png" alt="ESTIBORDO — Preparação para a Praticagem"/>
         </a>
 
-        <nav className="mainMenu" aria-label="Navegação principal">
-          <a href="/area-do-aluno">Área do aluno</a>
+        <div className="navmenu">
+          <a href="/">Início</a>
+          <a href="/area-do-aluno">Questões</a>
           <a href="/simulado">Simulados</a>
-          <a href="/area-do-aluno#disciplinas">Disciplinas</a>
           <a href="/area-do-aluno#desempenho">Desempenho</a>
-        </nav>
+          <a href="/area-do-aluno#ranking">Ranking</a>
+          <a href="/area-do-aluno#conteudos">Conteúdos</a>
+        </div>
 
-        <div className="headerActions">
-          <a className="headerLogin" href="/login">Entrar</a>
-          <a className="headerCta" href="/cadastro">Começar agora</a>
+        <div className="links">
+          <a href="/login">Entrar</a>
+          <a className="primary" href="/cadastro">Meu perfil</a>
         </div>
       </div>
-    </header>
+    </nav>
   )
 }
 
 export function Footer(){
   return (
-    <footer className="siteFooter">
-      <div className="footerInner">
-        <div className="footerBrand">
-          <img src="/estibordo/logos/estibordo-logo-horizontal.svg" alt="ESTIBORDO"/>
-          <p>Conhecimento no rumo da Praticagem.</p>
-          <div className="hotelSignature" aria-label="Bandeira Hotel">
-            <span></span><span></span>
+    <footer className="footer">
+      <div className="footerMain">
+        <div className="footerQuote">
+          <div className="quoteMark">“</div>
+          <strong>Corrija o rumo<br/>antes da prova.</strong>
+          <div className="hotelFooter"><span></span><span></span></div>
+          <small>ESTIBORDO — PREPARAÇÃO PARA A PRATICAGEM</small>
+        </div>
+
+        <div className="footerAbout">
+          <h4>SOBRE A PLATAFORMA</h4>
+          <p>A ESTIBORDO reúne o que você precisa em um só lugar para estudar com método, treinar com simulados e acompanhar sua evolução até a Praticagem.</p>
+          <div className="footerValues">
+            <span>◉<small>CONFIANÇA</small></span>
+            <span>✦<small>QUALIDADE</small></span>
+            <span>⌖<small>FOCO</small></span>
+            <span>⊕<small>EVOLUÇÃO</small></span>
           </div>
         </div>
 
-        <div className="footerColumn">
-          <strong>Plataforma</strong>
-          <a href="/area-do-aluno">Área do aluno</a>
-          <a href="/simulado">Simulados</a>
-          <a href="/login">Entrar</a>
+        <div className="footerLinks">
+          <h4>DISCIPLINAS</h4>
+          <a href="/area-do-aluno#ripeam">⚓ RIPEAM</a>
+          <a href="/area-do-aluno">⚓ Navegação</a>
+          <a href="/area-do-aluno">⚓ Meteorologia</a>
+          <a href="/area-do-aluno">⚓ Estabilidade</a>
+          <a href="/area-do-aluno">⚓ Manobra</a>
+          <a href="/area-do-aluno">⚓ Legislação</a>
+        </div>
+
+        <div className="footerContact">
+          <h4>ESTIBORDO</h4>
+          <p>Conhecimento no rumo da Praticagem.</p>
+          <a href="/login">Entrar na plataforma</a>
           <a href="/cadastro">Criar conta</a>
         </div>
-
-        <div className="footerColumn">
-          <strong>Preparação PSCPP</strong>
-          <a href="/area-do-aluno#disciplinas">Disciplinas</a>
-          <a href="/area-do-aluno#ripeam">RIPEAM</a>
-          <a href="/area-do-aluno#cis">Código Internacional de Sinais</a>
-          <a href="/area-do-aluno#desempenho">Desempenho</a>
-        </div>
-
-        <div className="footerColumn">
-          <strong>ESTIBORDO</strong>
-          <p>Plataforma independente de estudos para preparação ao PSCPP.</p>
-        </div>
       </div>
-      <div className="footerBottom">
-        <span>© ESTIBORDO</span>
-        <span>Preparação para a Praticagem</span>
-      </div>
+      <div className="footerBottom">© ESTIBORDO. Plataforma independente de estudos para o PSCPP.</div>
     </footer>
   )
 }

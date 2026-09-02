@@ -1,10 +1,15 @@
+
 import {Nav,Footer} from "./components";
 
 const features = [
-  {icon:"simulados", title:"Simulados e questões", text:"Treine com foco no formato da prova e acompanhe sua evolução em cada tentativa."},
-  {icon:"navegacao", title:"Estudo por disciplina", text:"Organize sua preparação pelas disciplinas do PSCPP e corrija o rumo onde mais precisa."},
-  {icon:"cartas", title:"RIPEAM e CIS", text:"Revise regras, luzes, marcas, sinais e o Código Internacional de Sinais em um só ambiente."},
-  {icon:"ranking", title:"Desempenho mensurável", text:"Use resultados, acertos, erros, tempo e histórico para transformar estudo em evolução objetiva."}
+  {icon:"ripeam", title:"RIPEAM", text:"Regras, luzes, marcas, sinais e revisão dirigida."},
+  {icon:"navegacao", title:"Navegação", text:"Conteúdo organizado para construir domínio progressivo."},
+  {icon:"meteorologia", title:"Meteorologia", text:"Estude fenômenos, interpretação e aplicação prática."},
+  {icon:"cartas-nauticas", title:"Cartas Náuticas", text:"Revisão visual e estudo focado em navegação."},
+  {icon:"manobra", title:"Manobra", text:"Conceitos essenciais para a preparação ao PSCPP."},
+  {icon:"legislacao", title:"Legislação", text:"Conteúdo estruturado e revisão dos pontos críticos."},
+  {icon:"simulados", title:"Simulados", text:"Treine sob pressão e registre seu desempenho."},
+  {icon:"ranking", title:"Ranking", text:"Acompanhe consistência, evolução e metas pessoais."}
 ];
 
 export default function Home(){
@@ -13,76 +18,48 @@ export default function Home(){
       <Nav/>
 
       <main>
-        <section className="homeHero">
+        <section className="hero heroEstibordo">
           <div className="heroChart"></div>
-          <div className="heroInner">
-            <div className="heroCopy">
-              <div className="heroKicker">
-                <img src="/estibordo/icons/bandeira-hotel.svg" alt=""/>
-                PREPARAÇÃO PARA O PSCPP
-              </div>
+          <div className="heroCompass"></div>
 
-              <h1>A PRATICAGEM<br/><span>ESTÁ NO SEU RUMO.</span></h1>
-
-              <p className="heroLead">
-                Prepare-se para o PSCPP com uma plataforma completa de estudos:
-                questões, simulados, disciplinas, RIPEAM, Código Internacional de
-                Sinais e acompanhamento de desempenho.
-              </p>
-
-              <div className="heroButtons">
-                <a className="button buttonPrimary" href="/cadastro">Começar minha preparação</a>
-                <a className="button buttonGhost" href="/login">Já sou aluno</a>
-              </div>
-
-              <div className="heroTrust">
-                <span><b>7</b> disciplinas</span>
-                <span><b>RIPEAM + CIS</b> integrados</span>
-                <span><b>Progresso</b> salvo</span>
-              </div>
-            </div>
-
-            <div className="heroVisual">
-              <img className="heroBoat" src="/estibordo/symbols/lancha-pilot.svg" alt="Lancha do Prático"/>
-              <div className="heroFlag">
-                <span></span><span></span>
-              </div>
-              <div className="heroVisualCaption">
-                <small>ESTIBORDO</small>
-                <strong>Conhecimento no rumo da Praticagem.</strong>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="statementSection">
-          <div className="sectionInner statementGrid">
-            <div>
-              <div className="sectionEyebrow">CORRIJA O RUMO ANTES DA PROVA.</div>
-              <h2>Não estude no escuro.<br/>Saiba onde você precisa evoluir.</h2>
-            </div>
+          <div className="heroCopy">
+            <div className="eyebrow">PREPARAÇÃO PARA O PSCPP</div>
+            <h1>A PRATICAGEM<br/>ESTÁ NO SEU RUMO.</h1>
             <p>
-              A ESTIBORDO foi pensada para transformar horas de estudo em preparação
-              mensurável. Treine, identifique seus pontos fracos, revise e volte à prova
-              com mais consistência.
+              Plataforma completa para sua preparação ao PSCPP com questões,
+              simulados, desempenho e conteúdo especializado.
             </p>
+            <div className="heroActions">
+              <a className="btn primary" href="/cadastro">Começar agora</a>
+              <a className="btn btnDark" href="/login">Conhecer a plataforma</a>
+            </div>
+
+            <div className="heroStats">
+              <div><b>17.000+</b><span>QUESTÕES</span></div>
+              <div><b>1.200+</b><span>SIMULADOS REALIZADOS</span></div>
+              <div><b>20+</b><span>DISCIPLINAS</span></div>
+              <div><b>10.000+</b><span>ALUNOS</span></div>
+            </div>
+          </div>
+
+          <div className="heroVisual">
+            <div className="hotelFlag"><span></span><span></span></div>
+            <img src="/estibordo/vetores/lancha-pilot-final.png" alt="Lancha do Prático"/>
           </div>
         </section>
 
-        <section className="featuresSection" id="plataforma">
-          <div className="sectionInner">
-            <div className="sectionHeading">
-              <div className="sectionEyebrow">PLATAFORMA DE ESTUDOS</div>
-              <h2>Uma preparação completa, em um único rumo.</h2>
-              <p>Do conteúdo à simulação, cada ferramenta existe para aproximar você do objetivo.</p>
+        <section className="homeDark">
+          <div className="homeContainer">
+            <div className="sectionIntro">
+              <div className="eyebrow">CONHECIMENTO NO RUMO DA PRATICAGEM.</div>
+              <h2>Treine hoje. Seja o Prático de amanhã.</h2>
+              <p>Um ecossistema de preparação construído para estudo dirigido, revisão, simulados e análise de desempenho.</p>
             </div>
 
             <div className="featureGrid">
-              {features.map(item => (
+              {features.map((item) => (
                 <article className="featureCard" key={item.title}>
-                  <div className="featureIcon">
-                    <img src={`/estibordo/icons/${item.icon}.svg`} alt=""/>
-                  </div>
+                  <img src={`/estibordo/icones/${item.icon}.svg`} alt=""/>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
                 </article>
@@ -91,31 +68,51 @@ export default function Home(){
           </div>
         </section>
 
-        <section className="routeSection">
-          <div className="sectionInner routeCard">
-            <div className="routeBoatWrap">
-              <img src="/estibordo/symbols/lancha-pilot.svg" alt="Lancha PILOT"/>
+        <section className="dashboardPreview">
+          <div className="homeContainer previewGrid">
+            <div className="previewCopy">
+              <div className="eyebrow">PAINEL DE NAVEGAÇÃO</div>
+              <h2>Seu desempenho em uma leitura rápida.</h2>
+              <p>Veja prontidão, aproveitamento por disciplina, simulados recentes e pontos que precisam de correção.</p>
+              <a className="btn primary" href="/area-do-aluno">Ver meu desempenho</a>
             </div>
-            <div className="routeCopy">
-              <div className="sectionEyebrow">SEU OBJETIVO É A PRATICAGEM.</div>
-              <h2>Sua preparação é ESTIBORDO.</h2>
-              <p>
-                Conteúdo organizado, simulados, revisão e desempenho para você estudar
-                com método e chegar à prova sabendo exatamente como está sua preparação.
-              </p>
-              <a className="button buttonPrimary" href="/cadastro">Criar minha conta</a>
+
+            <div className="dashboardMock">
+              <div className="mockTop">
+                <img src="/estibordo/logos/estibordo-logo-final.png" alt="ESTIBORDO"/>
+                <span>MEU PERFIL</span>
+              </div>
+              <div className="mockBody">
+                <div className="readiness">
+                  <div className="ring"><b>78</b><small>DE 100</small></div>
+                  <p>Você está avançando,<br/>mas ainda existem pontos a corrigir.</p>
+                </div>
+                <div className="performance">
+                  <h4>DESEMPENHO POR DISCIPLINA</h4>
+                  {[
+                    ["RIPEAM","87%"],["Navegação","81%"],["Meteorologia","73%"],
+                    ["Estabilidade","68%"],["Manobra","61%"],["Legislação","54%"]
+                  ].map(([name,value],i)=>
+                    <div className="perf" key={name}>
+                      <span>{name}</span>
+                      <i><b style={{width:value}}></b></i>
+                      <strong>{value}</strong>
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="finalCta">
-          <div className="sectionInner finalCtaInner">
-            <div className="finalFlag"><span></span><span></span></div>
+        <section className="bannerCta">
+          <div className="bannerInner">
             <div>
-              <div className="sectionEyebrow">RUMO À PRATICAGEM</div>
-              <h2>Comece hoje. Corrija o rumo antes da prova.</h2>
+              <div className="eyebrow">CORRIJA O RUMO ANTES DA PROVA.</div>
+              <h2>Seu objetivo é a Praticagem.<br/>Sua preparação é ESTIBORDO.</h2>
             </div>
-            <a className="button buttonLight" href="/cadastro">Começar agora</a>
+            <img src="/estibordo/vetores/lancha-pilot-final.png" alt="Lancha PILOT"/>
+            <a className="btn primary" href="/cadastro">Iniciar preparação</a>
           </div>
         </section>
       </main>
