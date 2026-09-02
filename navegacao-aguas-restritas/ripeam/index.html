@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#07192b">
+  <title>RIPEAM Trainer | Flashcards</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brandMark">⚓</div>
+    <div><strong>RIPEAM Trainer</strong><span>Regulamento Internacional para Evitar Abalroamentos no Mar</span></div>
+  </div>
+  <div class="headerBtns">
+    <button id="themeBtn" class="iconBtn" title="Alternar tema">🌙</button>
+  </div>
+</header>
+
+<main class="shell">
+  <section class="hero">
+    <div>
+      <span class="eyebrow">ESTUDO INTERATIVO</span>
+      <h1>RIPEAM-72</h1>
+      <p>Regras de governo e navegação, luzes e marcas, sinais sonoros e situações de prova.</p>
+    </div>
+    <div class="statsGrid">
+      <div class="stat"><b id="totalStat">0</b><span>respondidas</span></div>
+      <div class="stat"><b id="correctStat">0</b><span>acertos</span></div>
+      <div class="stat"><b id="pctStat">0%</b><span>aproveitamento</span></div>
+      <div class="stat"><b id="diffStat">0</b><span>difíceis</span></div>
+    </div>
+  </section>
+
+  <section class="controls">
+    <div class="searchBox"><span>⌕</span><input id="search" type="search" placeholder="Buscar Regra 14, boreste, praticagem, apito..."></div>
+    <div class="filters" id="filters"></div>
+    <div class="modeRow">
+      <button class="mode active" data-mode="study">📚 Estudo</button>
+      <button class="mode" data-mode="exam">🎯 Modo prova</button>
+      <button class="mode" data-filter="wrong">🔄 Errados</button>
+      <button class="mode" data-filter="difficult">⭐ Difíceis</button>
+    </div>
+  </section>
+
+  <section id="studyPanel" class="panel">
+    <div class="panelHead">
+      <div><span id="categoryBadge" class="badge"></span><span id="counter" class="counter"></span></div>
+      <button id="difficultBtn" class="starBtn">☆ Marcar difícil</button>
+    </div>
+    <article id="flashcard" class="flashcard" tabindex="0">
+      <div class="cardVisual" id="cardVisual"></div>
+      <div class="cardText">
+        <div class="ruleCode" id="ruleCode"></div>
+        <h2 id="question"></h2>
+        <div id="answerWrap" class="answerWrap">
+          <div class="divider"></div>
+          <p id="answer"></p>
+          <small id="note"></small>
+        </div>
+        <div id="flipHint" class="flipHint">Clique no cartão para revelar a resposta</div>
+      </div>
+    </article>
+    <div class="navRow">
+      <button id="prevBtn">← Anterior</button>
+      <div class="gradeBtns">
+        <button id="wrongBtn" class="wrong">✕ Errei</button>
+        <button id="correctBtn" class="correct">✓ Acertei</button>
+      </div>
+      <button id="nextBtn">Próximo →</button>
+    </div>
+  </section>
+
+  <section id="examPanel" class="panel hidden">
+    <div class="panelHead"><span class="badge">MODO PROVA</span><span id="examCounter" class="counter"></span></div>
+    <div class="examCard">
+      <div id="examVisual" class="cardVisual"></div>
+      <h2 id="examQuestion"></h2>
+      <div id="options" class="options"></div>
+      <div id="examFeedback" class="examFeedback"></div>
+      <button id="examNext" class="primary hidden">Próxima questão →</button>
+    </div>
+  </section>
+
+  <section class="footerActions">
+    <button id="resetBtn" class="ghost">Limpar progresso</button>
+    <span>Atalhos: ← → navegar · espaço revelar · D marcar difícil</span>
+  </section>
+</main>
+<script src="assets/js/app.js"></script>
+<div style="position:fixed;right:10px;bottom:10px;z-index:9999;background:#061827;color:#fff;padding:7px 10px;border-radius:999px;font:700 11px system-ui;box-shadow:0 5px 18px #0004">@noconvescomdavi</div>
+</body>
+</html>
