@@ -1,26 +1,23 @@
-ESTIBORDO — SITE VISUAL FINAL
+ESTIBORDO — VISUAL FINAL PORTO
 
-Esta versão substitui os desenhos anteriores da lancha e da marca pelas DUAS imagens aprovadas na conversa:
+Atualizações desta versão:
+- Corrige o enquadramento/tamanho da logo no header.
+- Cria asset específico de header: public/estibordo/logos/estibordo-logo-header.png
+- Substitui a imagem principal da Home pela foto aérea de um navio conteineiro atracando com auxílio de dois rebocadores.
+- Mantém a identidade ESTIBORDO, bandeira Hotel, cores, menus, dashboard e rodapé.
 
-1. public/estibordo/logos/estibordo-logo-final.png
-   Logo completa ESTIBORDO com lancha realista.
-
-2. public/estibordo/vetores/lancha-pilot-final.png
-   Lancha PILOT realista com mar, usada nos destaques/hero.
-
-Os SVGs antigos da logo e da lancha foram removidos para impedir que o site continue carregando as versões simplificadas.
-
-A bandeira Hotel e os ícones auxiliares permanecem em SVG, pois não fazem parte das duas artes substituídas.
-
-INSTALAÇÃO
-No PowerShell, dentro desta pasta:
+INSTALAÇÃO NO POWERSHELL:
 powershell -ExecutionPolicy Bypass -File .\APLICAR_VISUAL_ESTIBORDO.ps1
 
 Depois:
 Set-Location C:\simulado-pscpp
 npm.cmd run dev
 
-Se o navegador ainda mostrar a arte antiga:
-Ctrl + Shift + R
+PUBLICAÇÃO:
+git status
+git add app public/estibordo
+git commit -m "Atualiza home ESTIBORDO com logo corrigida e manobra portuaria"
+git push origin main
 
-O instalador cria backup dos arquivos de interface atuais antes da substituição.
+Observação:
+O comando acima adiciona somente app e public/estibordo, evitando enviar pastas de backup por engano.

@@ -18,6 +18,7 @@ const elements = {
   feedbackTitle: document.querySelector("#qbFeedbackTitle"),
   explanation: document.querySelector("#qbExplanation"),
   source: document.querySelector("#qbSource"),
+  save: document.querySelector("#qbSave"),
   next: document.querySelector("#qbNext"),
   stop: document.querySelector("#qbStop"),
   result: document.querySelector("#qbResult"),
@@ -26,13 +27,16 @@ const elements = {
   restart: document.querySelector("#qbRestart"),
 };
 
+const SUBJECT = "manobrabilidade";
 let bank = [];
 let queue = [];
 let currentIndex = 0;
 let correctAnswers = 0;
 let answered = 0;
 let locked = false;
+let selectedAnswer = null;
 let startedAt = 0;
+let questionStartedAt = 0;
 
 function shuffle(items) {
   for (let index = items.length - 1; index > 0; index -= 1) {
@@ -42,8 +46,7 @@ function shuffle(items) {
   return items;
 }
 
-function sourceText(question) {
-  const source = question.source || {};
+function sourceText(source = {}) {
   return [source.author, source.title, source.edition, source.locator]
     .filter(Boolean)
     .join(". ");
@@ -58,7 +61,7 @@ function showError(message) {
 
 async function loadBank() {
   try {
-    const response = await fetch("/api/questions/manobrabilidade", {
+    const response = await fetch(`/api/questions/${SUBJECT}`, {
       credentials: "same-origin",
       cache: "no-store",
     });
@@ -108,6 +111,7 @@ function startExam() {
   correctAnswers = 0;
   answered = 0;
   locked = false;
+  selectedAnswer = null;
   startedAt = Date.now();
 
   elements.setup.classList.add("hidden");
@@ -120,7 +124,12 @@ function startExam() {
 function renderQuestion() {
   const question = queue[currentIndex];
   locked = false;
+  selectedAnswer = null;
+  questionStartedAt = Date.now();
   elements.feedback.className = "qb-feedback hidden";
+  elements.save.disabled = true;
+  elements.save.textContent = "Salvar resposta";
+  elements.save.classList.remove("hidden");
   elements.next.classList.add("hidden");
   elements.position.textContent = `Questão ${currentIndex + 1} de ${queue.length}`;
   elements.score.textContent = `${correctAnswers} ${correctAnswers === 1 ? "acerto" : "acertos"}`;
@@ -141,34 +150,72 @@ function renderQuestion() {
     const text = document.createElement("span");
     text.textContent = option.text;
     button.append(key, text);
-    button.addEventListener("click", () => answerQuestion(button, question));
+    button.addEventListener("click", () => selectOption(button));
     elements.options.append(button);
   }
 }
 
-function answerQuestion(selectedButton, question) {
+function selectOption(button) {
   if (locked) return;
-  locked = true;
-  answered += 1;
-  const isCorrect = selectedButton.dataset.key === question.correct_answer;
-  if (isCorrect) correctAnswers += 1;
-
-  for (const button of elements.options.querySelectorAll("button")) {
-    button.disabled = true;
-    if (button.dataset.key === question.correct_answer) button.classList.add("correct");
+  selectedAnswer = button.dataset.key;
+  for (const option of elements.options.querySelectorAll("button")) {
+    option.classList.toggle("selected", option === button);
   }
-  if (!isCorrect) selectedButton.classList.add("wrong");
+  elements.save.disabled = false;
+}
 
-  elements.score.textContent = `${correctAnswers} ${correctAnswers === 1 ? "acerto" : "acertos"}`;
-  elements.feedback.className = `qb-feedback ${isCorrect ? "correct" : "wrong"}`;
-  elements.feedbackTitle.textContent = isCorrect
-    ? `Resposta correta: ${question.correct_answer}`
-    : `Resposta incorreta. Gabarito: ${question.correct_answer}`;
-  elements.explanation.textContent = question.explanation;
-  elements.source.textContent = `Fonte: ${sourceText(question)}`;
-  elements.next.textContent = currentIndex === queue.length - 1 ? "Ver resultado" : "Próxima questão";
-  elements.next.classList.remove("hidden");
-  elements.progress.style.width = `${((currentIndex + 1) / queue.length) * 100}%`;
+async function saveAnswer() {
+  if (locked || !selectedAnswer) return;
+  locked = true;
+  elements.save.disabled = true;
+  elements.save.textContent = "Salvando...";
+  const question = queue[currentIndex];
+
+  try {
+    const response = await fetch(`/api/questions/${SUBJECT}/answer`, {
+      method: "POST",
+      credentials: "same-origin",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        question_id: question.id,
+        selected_answer: selectedAnswer,
+        response_time_ms: Date.now() - questionStartedAt,
+      }),
+    });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || "Não foi possível salvar a resposta.");
+
+    answered += 1;
+    if (result.is_correct) correctAnswers += 1;
+
+    for (const button of elements.options.querySelectorAll("button")) {
+      button.disabled = true;
+      button.classList.remove("selected");
+      if (button.dataset.key === result.correct_answer) button.classList.add("correct");
+    }
+    const selectedButton = elements.options.querySelector(`[data-key="${selectedAnswer}"]`);
+    if (!result.is_correct) selectedButton?.classList.add("wrong");
+
+    elements.score.textContent = `${correctAnswers} ${correctAnswers === 1 ? "acerto" : "acertos"}`;
+    elements.feedback.className = `qb-feedback ${result.is_correct ? "correct" : "wrong"}`;
+    elements.feedbackTitle.textContent = result.is_correct
+      ? `Você acertou. Gabarito: ${result.correct_answer}`
+      : `Você errou. Gabarito: ${result.correct_answer}`;
+    elements.explanation.textContent = result.explanation;
+    elements.source.textContent = `Fonte: ${sourceText(result.source)}`;
+    elements.save.classList.add("hidden");
+    elements.next.textContent = currentIndex === queue.length - 1 ? "Ver resultado" : "Próxima questão";
+    elements.next.classList.remove("hidden");
+    elements.progress.style.width = `${((currentIndex + 1) / queue.length) * 100}%`;
+  } catch (error) {
+    locked = false;
+    elements.save.disabled = false;
+    elements.save.textContent = "Tentar salvar novamente";
+    elements.feedback.className = "qb-feedback wrong";
+    elements.feedbackTitle.textContent = "Resposta ainda não salva";
+    elements.explanation.textContent = error.message;
+    elements.source.textContent = "Verifique sua conexão e tente novamente.";
+  }
 }
 
 function nextQuestion() {
@@ -194,17 +241,17 @@ async function finishExam() {
 
   elements.exam.classList.add("hidden");
   elements.resultScore.textContent = `${Math.round(scorePercent)}%`;
-  elements.resultText.textContent = `${correctAnswers} acertos e ${answered - correctAnswers} erros em ${answered} questões.`;
+  elements.resultText.textContent = `${correctAnswers} acertos e ${answered - correctAnswers} erros em ${answered} questões. As estatísticas foram atualizadas na Área do Aluno.`;
   elements.result.classList.remove("hidden");
 
   try {
-    await fetch("/api/attempts", {
+    const response = await fetch("/api/attempts", {
       method: "POST",
       credentials: "same-origin",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         module: selectedModule === "all" ? "Banco completo" : selectedModule,
-        subject: "manobrabilidade",
+        subject: SUBJECT,
         score_percent: scorePercent,
         correct_answers: correctAnswers,
         wrong_answers: answered - correctAnswers,
@@ -212,8 +259,9 @@ async function finishExam() {
         duration_seconds: durationSeconds,
       }),
     });
+    if (!response.ok) throw new Error("Resumo não registrado");
   } catch {
-    // O resultado continua visível mesmo se o registro de desempenho falhar.
+    elements.resultText.textContent += " As respostas individuais foram salvas, mas o resumo desta prova não pôde ser registrado.";
   }
 }
 
@@ -225,6 +273,7 @@ function returnToSetup() {
 }
 
 elements.start.addEventListener("click", startExam);
+elements.save.addEventListener("click", saveAnswer);
 elements.next.addEventListener("click", nextQuestion);
 elements.stop.addEventListener("click", finishExam);
 elements.restart.addEventListener("click", returnToSetup);

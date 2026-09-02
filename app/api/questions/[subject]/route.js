@@ -4,7 +4,7 @@ import { publicQuestionBank } from "../../../../lib/question-banks";
 
 export const dynamic = "force-dynamic";
 
-export async function GET() {
+export async function GET(_request, { params }) {
   const session = await getSession();
   if (!session) return Response.json({ error: "Não autenticado" }, { status: 401 });
 
@@ -16,7 +16,9 @@ export async function GET() {
     return Response.json({ error: "Licença inativa" }, { status: 403 });
   }
 
-  return Response.json(publicQuestionBank("manobrabilidade"), {
-    headers: { "Cache-Control": "private, no-store" },
-  });
+  const { subject } = await params;
+  const bank = publicQuestionBank(subject);
+  if (!bank) return Response.json({ error: "Matéria sem banco de questões" }, { status: 404 });
+
+  return Response.json(bank, { headers: { "Cache-Control": "private, no-store" } });
 }

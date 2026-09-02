@@ -50,6 +50,22 @@ IMPORTAR-MANOBRABILIDADE.cmd "D:\Bancos\manobrabilidade.json"
 
 O importador valida quantidade, IDs, alternativas, gabarito, comentários e fontes antes de gravar o arquivo utilizado pela plataforma. Ao final, ele executa o build de produção.
 
+## Prova interativa e métricas
+
+O simulado de Manobrabilidade utiliza duas etapas por questão: o aluno seleciona uma alternativa e clica em **Salvar resposta**. Somente após o servidor registrar e corrigir a resposta são exibidos o gabarito, o comentário e a fonte. Em seguida, o botão **Próxima questão** é liberado.
+
+As respostas alimentam as tabelas existentes `question_answers` e `question_stats`. Ao encerrar a prova, o resumo é registrado em `exam_attempts`. Não é necessária nova migração SQL.
+
+A Área do Aluno apresenta:
+
+- provas realizadas, questões, acertos, erros e aproveitamento na soma das matérias;
+- as mesmas estatísticas para cada uma das sete disciplinas;
+- melhor nota por disciplina;
+- tópicos com maior recorrência e percentual de erros;
+- ranking geral de conteúdos prioritários para revisão.
+
+A API foi preparada para bancos de outras matérias. Cada novo banco deve ser registrado em `lib/question-banks.js`; as métricas passam a agrupá-lo automaticamente pela disciplina, módulo e tópico.
+
 ## 5. Ativar aluno manualmente durante a fase sem gateway
 ```sql
 UPDATE user_access
