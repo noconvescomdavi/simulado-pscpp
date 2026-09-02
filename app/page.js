@@ -44,7 +44,7 @@ export default function Home(){
 
           <div className="heroVisual">
             <div className="hotelFlag"><span></span><span></span></div>
-            <img src="/estibordo/vetores/lancha-pilot-final.png" alt="Lancha do Prático"/>
+            <img className="heroPortPhoto" src="/estibordo/imagens/navio-conteineiro-atracando-dois-rebocadores.png" alt="Navio conteineiro atracando com auxílio de dois rebocadores"/>
           </div>
         </section>
 

@@ -185,3 +185,62 @@ h1,h2,h3,h4,.btn,.brand,.eyebrow{font-family:"Poppins",Arial,sans-serif}
   .brand{width:205px;height:56px}
   .brand img{width:200px;height:74px}
 }
+
+
+/* === ESTIBORDO FINAL: HEADER LOGO + HERO PORTO === */
+.brand{
+  width:280px !important;
+  height:64px !important;
+  overflow:visible !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  flex:0 0 280px !important;
+}
+.brand img{
+  width:auto !important;
+  height:58px !important;
+  max-width:275px !important;
+  object-fit:contain !important;
+  object-position:left center !important;
+  display:block !important;
+}
+.heroVisual{
+  overflow:hidden !important;
+  border-radius:10px !important;
+  min-height:430px !important;
+  height:500px !important;
+  align-items:stretch !important;
+  justify-content:stretch !important;
+  background:#061522 !important;
+  border:1px solid rgba(255,255,255,.10) !important;
+}
+.heroVisual .heroPortPhoto{
+  width:100% !important;
+  height:100% !important;
+  max-width:none !important;
+  object-fit:cover !important;
+  object-position:center center !important;
+  transform:none !important;
+  filter:none !important;
+}
+.heroVisual .hotelFlag{
+  z-index:3 !important;
+  top:18px !important;
+  right:18px !important;
+}
+@media(max-width:700px){
+  .brand{
+    width:205px !important;
+    height:54px !important;
+    flex-basis:205px !important;
+  }
+  .brand img{
+    height:47px !important;
+    max-width:200px !important;
+  }
+  .heroVisual{
+    height:310px !important;
+    min-height:310px !important;
+  }
+}

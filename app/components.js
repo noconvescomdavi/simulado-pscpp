@@ -4,7 +4,7 @@ export function Nav(){
     <nav className="nav">
       <div className="navin">
         <a className="brand" href="/" aria-label="ESTIBORDO">
-          <img src="/estibordo/logos/estibordo-logo-final.png" alt="ESTIBORDO — Preparação para a Praticagem"/>
+          <img src="/estibordo/logos/estibordo-logo-header.png" alt="ESTIBORDO — Preparação para a Praticagem"/>
         </a>
 
         <div className="navmenu">
