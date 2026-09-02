@@ -32,6 +32,24 @@ npm run dev
 ## 4. Produção
 Depois de subir no GitHub, a Vercel detecta Next.js e executa `npm install` + `npm run build`.
 
+## Banco de questões de Manobrabilidade
+
+O catálogo das questões fica em `data/questions/manobrabilidade.json`, fora da pasta pública. A rota protegida `/api/questions/manobrabilidade` somente entrega o conteúdo para usuário autenticado e com licença ativa.
+
+Para importar ou substituir o banco, coloque `banco_300_questoes_manobrabilidade.json` em Downloads e execute, na raiz do projeto:
+
+```cmd
+IMPORTAR-MANOBRABILIDADE.cmd
+```
+
+Também é possível informar outro caminho:
+
+```cmd
+IMPORTAR-MANOBRABILIDADE.cmd "D:\Bancos\manobrabilidade.json"
+```
+
+O importador valida quantidade, IDs, alternativas, gabarito, comentários e fontes antes de gravar o arquivo utilizado pela plataforma. Ao final, ele executa o build de produção.
+
 ## 5. Ativar aluno manualmente durante a fase sem gateway
 ```sql
 UPDATE user_access

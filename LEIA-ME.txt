@@ -1,0 +1,54 @@
+ESTIBORDO — integração pronta para o repositório simulado-pscpp
+
+Este pacote foi montado especificamente para o repositório:
+https://github.com/noconvescomdavi/simulado-pscpp
+
+Estrutura detectada no GitHub:
+- Next.js 15
+- React 19
+- App Router
+- app/page.js
+- app/layout.js
+- app/components.js
+- app/globals.css
+
+INSTALAÇÃO MAIS FÁCIL (Windows)
+1. Extraia esta pasta.
+2. Clique com botão direito em PowerShell dentro da pasta extraída.
+3. Execute:
+   powershell -ExecutionPolicy Bypass -File .\INSTALAR_ESTIBORDO.ps1
+
+O script usa por padrão:
+C:\simulado-pscpp
+
+Ele faz backup automático dos 4 arquivos de interface antes de sobrescrever.
+
+Depois:
+cd /d C:\simulado-pscpp
+npm install
+npm run dev
+
+Abra:
+http://localhost:3000
+
+O pacote NÃO altera:
+- banco PostgreSQL
+- autenticação
+- APIs
+- .env
+- lógica de simulados
+- área administrativa
+
+Ele altera:
+- identidade visual global
+- home
+- headline
+- menu
+- rodapé
+- tipografia
+- cores
+- assets ESTIBORDO
+- navegação pública
+
+IMPORTANTE
+As rotas existentes /login, /cadastro, /area-do-aluno e /simulado foram preservadas.
