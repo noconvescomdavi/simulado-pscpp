@@ -4,6 +4,7 @@ import { getAdmin } from "../../lib/admin";
 import { query } from "../../lib/db";
 import { getUserMetrics } from "../../lib/metrics";
 import { normalizeSubject, subjectLabel } from "../../lib/subjects";
+import "./dashboard.css";
 
 function formatNumber(value) {
   return new Intl.NumberFormat("pt-BR").format(Number(value || 0));

@@ -1,0 +1,92 @@
+/* Estilos exclusivos do painel do aluno. Mantidos fora de globals.css para
+   que novas métricas nunca alterem a identidade visual da página inicial. */
+.dashboardHeader{height:76px;background:rgba(8,21,34,.98);border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;z-index:50}
+.dashboardHeaderInner{max-width:1240px;height:100%;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.dashboardBrand{width:250px}
+.dashboardBrand img{width:100%}
+.dashboardActions{display:flex;align-items:center;gap:9px}
+.dashboardActions a,.dashboardActions button{border:1px solid rgba(255,255,255,.2);background:transparent;color:#fff;border-radius:8px;padding:9px 13px;font-size:11px;font-weight:800;cursor:pointer}
+.dashboardActions form{margin:0}
+.dashboardActions .dashboardStudy{background:var(--red);border-color:var(--red)}
+
+.studentDashboard{max-width:1240px;--dashboard-muted:#687A8A;--dashboard-line:#DCE4EA}
+.dashboardIntro{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:18px 0 22px}
+.dashboardIntro h1{font-size:clamp(36px,5vw,58px);letter-spacing:-.045em;margin:5px 0}
+.dashboardIntro p{margin:0;color:var(--dashboard-muted);font-size:12px}
+.accessBadge{border-radius:999px;padding:8px 11px;font-size:9px;font-weight:900;letter-spacing:.07em}
+.accessBadge.active{background:#e5f7ee;color:#117148;border:1px solid #bde7d0}
+.accessBadge.pending{background:#fff5d7;color:#846200;border:1px solid #ecd68d}
+
+.performanceMetrics{display:grid;grid-template-columns:repeat(5,1fr);gap:11px}
+.performanceMetric{background:#fff;border:1px solid var(--dashboard-line);border-radius:14px;padding:18px;box-shadow:0 13px 35px rgba(13,27,42,.05)}
+.performanceMetric span{display:block;color:var(--dashboard-muted);font-size:9px;font-weight:900;letter-spacing:.05em}
+.performanceMetric strong{display:block;font-size:29px;margin-top:7px}
+.performanceMetric.success strong{color:#087a58}
+.performanceMetric.danger strong{color:var(--red)}
+
+.dashboardSplit{display:grid;grid-template-columns:1.35fr .65fr;gap:13px;margin-top:14px}
+.dashboardPanel{background:#fff;border:1px solid var(--dashboard-line);border-radius:16px;padding:21px;box-shadow:0 13px 35px rgba(13,27,42,.05)}
+.panelHeading{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.panelHeading span,.studyPriority>span{font-size:9px;color:var(--red);font-weight:900;letter-spacing:.1em}
+.panelHeading h2{margin:4px 0 0;font-size:23px}
+.panelHeading>strong{font-size:30px;color:var(--red)}
+.priorityList{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:8px;counter-reset:priority}
+.priorityList li{counter-increment:priority;display:grid;grid-template-columns:auto 1fr auto;gap:11px;align-items:center;border:1px solid var(--dashboard-line);background:var(--off);border-radius:11px;padding:11px}
+.priorityList li:before{content:counter(priority);width:27px;height:27px;border-radius:8px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:10px;font-weight:900}
+.priorityList li strong,.priorityList li span{display:block}
+.priorityList li strong{font-size:12px}
+.priorityList li span{font-size:9px;color:var(--dashboard-muted);margin-top:3px}
+.priorityList li>b{font-size:10px;color:var(--red);text-align:right}
+.emptyPerformance{font-size:12px;color:var(--dashboard-muted);line-height:1.6}
+.largeProgress,.accuracyBar{height:10px;background:#e7edf1;border-radius:999px;overflow:hidden}
+.largeProgress{margin-top:20px}
+.largeProgress i,.accuracyBar i{display:block;height:100%;background:linear-gradient(90deg,var(--red),#ed405c);border-radius:inherit}
+.progressPanel p{font-size:11px;color:var(--dashboard-muted);line-height:1.55;margin-bottom:0}
+
+.subjectPerformance{margin-top:42px}
+.subjectPerformanceHeading{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:15px}
+.subjectPerformanceHeading h2{font-size:32px;letter-spacing:-.035em;margin:5px 0 0}
+.subjectPerformanceHeading p{max-width:430px;text-align:right;color:var(--dashboard-muted);font-size:11px;line-height:1.55}
+.subjectPerformanceGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.subjectPerformanceCard{background:#fff;border:1px solid var(--dashboard-line);border-radius:16px;padding:20px;box-shadow:0 13px 35px rgba(13,27,42,.05)}
+.subjectPerformanceTitle{display:flex;align-items:flex-start;justify-content:space-between;gap:15px}
+.subjectPerformanceTitle span,.subjectPerformanceTitle small{display:block}
+.subjectPerformanceTitle span{font-family:"Poppins",Arial,sans-serif;font-size:16px;font-weight:700}
+.subjectPerformanceTitle small{color:var(--dashboard-muted);font-size:9px;margin-top:4px}
+.subjectPerformanceTitle>strong{font-size:23px;color:var(--red)}
+.subjectStats{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:16px 0 12px}
+.subjectStats div{background:var(--off);border-radius:9px;padding:9px}
+.subjectStats span{display:block;font-size:7px;color:var(--dashboard-muted);font-weight:900}
+.subjectStats b{display:block;font-size:14px;margin-top:3px}
+.successText{color:#087a58}
+.dangerText{color:var(--red)}
+.accuracyBar{height:7px}
+.studyPriority{border-top:1px solid var(--dashboard-line);margin-top:15px;padding-top:13px}
+.studyPriority ul{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:6px}
+.studyPriority li{display:flex;justify-content:space-between;gap:12px;font-size:10px}
+.studyPriority li small{color:var(--dashboard-muted);text-align:right}
+.studyPriority p{color:var(--dashboard-muted);font-size:10px;margin:8px 0 0}
+
+@media(max-width:980px){
+  .performanceMetrics{grid-template-columns:repeat(3,1fr)}
+  .dashboardSplit{grid-template-columns:1fr}
+  .subjectPerformanceGrid{grid-template-columns:1fr}
+}
+
+@media(max-width:700px){
+  .dashboardHeader{height:68px}
+  .dashboardHeaderInner{padding:0 12px}
+  .dashboardBrand{width:180px}
+  .dashboardActions a:not(.dashboardStudy){display:none}
+  .dashboardActions a,.dashboardActions button{padding:8px 10px}
+  .dashboardIntro{align-items:flex-start;flex-direction:column}
+  .performanceMetrics{grid-template-columns:1fr 1fr}
+  .performanceMetric:last-child{grid-column:1/-1}
+  .subjectPerformanceHeading{align-items:flex-start;flex-direction:column}
+  .subjectPerformanceHeading p{text-align:left;margin:0}
+  .subjectStats{grid-template-columns:1fr 1fr}
+  .priorityList li{grid-template-columns:auto 1fr}
+  .priorityList li>b{grid-column:2;text-align:left}
+  .studyPriority li{align-items:flex-start;flex-direction:column}
+  .studyPriority li small{text-align:left}
+}
