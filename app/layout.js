@@ -1,5 +1,6 @@
 
 import "./globals.css";
+import "./estibordo-polish.css";
 import SiteDesignRuntime from "./site-editor/SiteDesignRuntime";
 
 export const metadata={
@@ -7,7 +8,7 @@ export const metadata={
     default:"ESTIBORDO | Plataforma de estudos PSCPP",
     template:"%s | ESTIBORDO"
   },
-  description:"Plataforma de preparaÃ§Ã£o para o PSCPP com questÃµes, simulados, RIPEAM, CÃ³digo Internacional de Sinais e anÃ¡lise de desempenho.",
+  description:"Plataforma de preparação para o PSCPP com questões, simulados, RIPEAM, Código Internacional de Sinais e análise de desempenho.",
   icons:{icon:"/estibordo/icones/bandeira-hotel.svg"}
 };
 

@@ -1,4 +1,4 @@
-﻿import styles from "./logout.module.css";
+import styles from "./logout.module.css";
 
 export default function LogoutPage() {
   return (
@@ -6,7 +6,7 @@ export default function LogoutPage() {
       <section className={styles.card}>
         <img
           className={styles.logo}
-          src="/estibordo/logos/estibordo-logo-horizontal.svg"
+          src="/estibordo/logos/estibordo-logo-header.png"
           alt="ESTIBORDO"
         />
 

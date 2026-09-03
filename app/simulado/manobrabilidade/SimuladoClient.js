@@ -334,7 +334,7 @@ export default function SimuladoClient({ userEmail }) {
 
   if (phase === "result" && result) {
     return <main className={styles.resultPage} data-theme={theme}>
-      <a className={styles.resultBrand} href="/"><img src="/estibordo/logos/estibordo-logo-horizontal.svg" alt="ESTIBORDO" /></a>
+      <a className={styles.resultBrand} href="/"><img src="/estibordo/logos/estibordo-logo-header.png" alt="ESTIBORDO" /></a>
       <section className={styles.resultCard}>
         <span className={styles.eyebrow}>SIMULADO CONCLUÍDO</span>
         <div className={styles.resultGauge}><strong>{resultScore}%</strong><span>APROVEITAMENTO</span></div>
@@ -349,7 +349,7 @@ export default function SimuladoClient({ userEmail }) {
   return <div className={styles.page} data-theme={theme}>
     <header className={styles.header}>
       <div className={styles.headerInner}>
-        <a className={styles.brand} href="/"><img src="/estibordo/logos/estibordo-logo-horizontal.svg" alt="ESTIBORDO" /></a>
+        <a className={styles.brand} href="/"><img src="/estibordo/logos/estibordo-logo-header.png" alt="ESTIBORDO" /></a>
         <div className={styles.headerMeta}><span>{userEmail}</span><a href="/area-do-aluno#desempenho">Desempenho</a><button type="button" onClick={toggleTheme} aria-label="Alternar tema">{theme === "dark" ? "☀️" : "🌙"}</button><form action="/api/auth/logout" method="post"><button type="submit">Sair</button></form></div>
       </div>
     </header>

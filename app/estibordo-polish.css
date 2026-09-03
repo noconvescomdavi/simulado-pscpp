@@ -1,0 +1,162 @@
+/*
+ * ESTIBORDO - acabamento visual responsivo.
+ * Arquivo separado para preservar app/globals.css.
+ */
+
+:where(*,*::before,*::after){
+  box-sizing:border-box;
+}
+
+:where(html,body){
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+:where(main,section,article,aside,nav,header,footer,div){
+  min-width:0;
+}
+
+:where(img,svg,video,canvas){
+  max-width:100%;
+}
+
+:where(img[src$="estibordo-logo-header.png"]){
+  width:auto !important;
+  height:44px !important;
+  max-width:min(210px,38vw) !important;
+  object-fit:contain !important;
+  object-position:left center;
+  display:block;
+}
+
+:where(header) :where(img[src$="estibordo-logo-header.png"]){
+  flex:0 0 auto;
+}
+
+:where(input,select,textarea,button){
+  max-width:100%;
+  font:inherit;
+}
+
+:where(
+  button,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  a[class*="button"],
+  a[class*="Button"],
+  a[class*="btn"],
+  a[class*="Btn"],
+  a[class*="cta"],
+  a[class*="CTA"],
+  a[class*="primary"],
+  a[class*="secondary"]
+){
+  cursor:pointer;
+  transform:translateZ(0);
+  transition:
+    transform .16s ease,
+    box-shadow .16s ease,
+    filter .16s ease,
+    background-color .16s ease,
+    border-color .16s ease,
+    color .16s ease,
+    opacity .16s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+
+@media (hover:hover) and (pointer:fine){
+  :where(
+    button,
+    input[type="button"],
+    input[type="submit"],
+    input[type="reset"],
+    a[class*="button"],
+    a[class*="Button"],
+    a[class*="btn"],
+    a[class*="Btn"],
+    a[class*="cta"],
+    a[class*="CTA"],
+    a[class*="primary"],
+    a[class*="secondary"]
+  ):not(:disabled):hover{
+    transform:translateY(-2px);
+    filter:brightness(1.06);
+    box-shadow:0 10px 24px rgba(0,0,0,.20);
+  }
+
+  :where(a[class*="card"],button[class*="card"]){
+    transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+  }
+
+  :where(a[class*="card"],button[class*="card"]):hover{
+    transform:translateY(-3px);
+    box-shadow:0 16px 36px rgba(0,0,0,.18);
+  }
+}
+
+:where(
+  button,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  a[class*="button"],
+  a[class*="Button"],
+  a[class*="btn"],
+  a[class*="Btn"],
+  a[class*="cta"],
+  a[class*="CTA"],
+  a[class*="primary"],
+  a[class*="secondary"]
+):not(:disabled):active{
+  transform:translateY(0) scale(.975);
+  box-shadow:0 4px 12px rgba(0,0,0,.16);
+}
+
+:where(a,button,input,select,textarea,[tabindex]):focus-visible{
+  outline:3px solid rgba(231,48,75,.45);
+  outline-offset:3px;
+}
+
+:where(button:disabled,input:disabled){
+  cursor:not-allowed;
+  opacity:.58;
+}
+
+:where([class*="grid"],[class*="Grid"]){
+  align-items:stretch;
+}
+
+:where([class*="card"],[class*="Card"],[class*="panel"],[class*="Panel"]){
+  overflow-wrap:anywhere;
+}
+
+:where(p,li,small,span,strong,b,h1,h2,h3,h4){
+  overflow-wrap:break-word;
+}
+
+:where(table){
+  max-width:100%;
+}
+
+@media (max-width:760px){
+  :where(img[src$="estibordo-logo-header.png"]){
+    height:36px !important;
+    max-width:155px !important;
+  }
+
+  :where(table){
+    display:block;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  :where(*,*::before,*::after){
+    scroll-behavior:auto !important;
+    transition-duration:.01ms !important;
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+  }
+}
