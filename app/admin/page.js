@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { getSession } from "../../lib/auth";
 import { getAdmin } from "../../lib/admin";
 import { query } from "../../lib/db";
+import content from "../../data/site/admin.json";
 
 export const dynamic = "force-dynamic";
 
@@ -89,10 +90,10 @@ export default async function AdminPage({ searchParams }) {
   return <>
     <nav className="nav">
       <div className="navin">
-        <a className="brand" href="/">SIMULADOS PSCPP<small>@noconvescomdavi</small></a>
+        <a className="brand" href="/">{content.nav.brand}<small>{content.nav.brandSmall}</small></a>
         <div className="links">
-          <a href="/area-do-aluno">Área do aluno</a>
-          <form action="/api/auth/logout" method="post"><button>Sair</button></form>
+          <a href="/area-do-aluno">{content.nav.studentArea}</a>
+          <form action="/api/auth/logout" method="post"><button>{content.nav.logout}</button></form>
         </div>
       </div>
     </nav>
@@ -100,45 +101,40 @@ export default async function AdminPage({ searchParams }) {
     <main className="wrap admin-wrap">
       <div className="admin-heading">
         <div>
-          <div className="eyebrow">ADMINISTRAÇÃO</div>
-          <h1>Painel administrativo</h1>
-          <p className="muted">Acesso restrito · {admin.email}</p>
+          <div className="eyebrow">{content.heading.eyebrow}</div>
+          <h1>{content.heading.title}</h1>
+          <p className="muted">{content.heading.restricted} · {admin.email}</p>
         </div>
         <form className="admin-search" method="get" action="/admin">
-          <input name="q" type="search" defaultValue={q} placeholder="Pesquisar por e-mail" aria-label="Pesquisar aluno por e-mail" />
-          <button className="btn primary" type="submit">Pesquisar</button>
-          {q && <a className="btn" href="/admin">Limpar</a>}
+          <input name="q" type="search" defaultValue={q} placeholder={content.search.placeholder} aria-label="Pesquisar aluno por e-mail" />
+          <button className="btn primary" type="submit">{content.search.button}</button>
+          {q && <a className="btn" href="/admin">{content.search.clear}</a>}
         </form>
       </div>
 
       {message && <div className="admin-notice">{message}</div>}
 
       <section className="metrics admin-metrics">
-        <div className="metric"><span>ALUNOS</span><b>{s.students || 0}</b></div>
-        <div className="metric"><span>LICENÇAS ATIVAS</span><b>{s.active_access || 0}</b></div>
-        <div className="metric"><span>PENDENTES</span><b>{s.pending_access || 0}</b></div>
-        <div className="metric"><span>CONTAS BLOQUEADAS</span><b>{s.blocked || 0}</b></div>
+        <div className="metric"><span>{content.metrics.students}</span><b>{s.students || 0}</b></div>
+        <div className="metric"><span>{content.metrics.active}</span><b>{s.active_access || 0}</b></div>
+        <div className="metric"><span>{content.metrics.pending}</span><b>{s.pending_access || 0}</b></div>
+        <div className="metric"><span>{content.metrics.blocked}</span><b>{s.blocked || 0}</b></div>
       </section>
 
       <section className="card admin-card">
         <div className="admin-table-head">
           <div>
-            <h2>Usuários</h2>
+            <h2>{content.users.title}</h2>
             <p className="muted">Mostrando até 100 registros{q ? ` para “${q}”` : " mais recentes"}.</p>
           </div>
-          <span className="muted">Revogadas: {s.revoked_access || 0}</span>
+          <span className="muted">{content.users.revoked}: {s.revoked_access || 0}</span>
         </div>
 
         <div className="table-scroll">
           <table className="admin-table">
             <thead>
               <tr>
-                <th>Usuário</th>
-                <th>Conta</th>
-                <th>Licença</th>
-                <th>Desempenho</th>
-                <th>Datas</th>
-                <th>Ações</th>
+                {content.users.headers.map((header)=><th key={header}>{header}</th>)}
               </tr>
             </thead>
             <tbody>
@@ -183,7 +179,7 @@ export default async function AdminPage({ searchParams }) {
                   </div>
                 </td>
               </tr>)}
-              {!users.rowCount && <tr><td colSpan="6" className="empty">Nenhum usuário encontrado.</td></tr>}
+              {!users.rowCount && <tr><td colSpan="6" className="empty">{content.users.empty}</td></tr>}
             </tbody>
           </table>
         </div>

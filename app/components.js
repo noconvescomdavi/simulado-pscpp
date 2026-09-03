@@ -1,70 +1,41 @@
+import shared from "../data/site/shared.json";
 
 export function Nav(){
+  const nav = shared.nav;
   return (
-    <nav className="nav">
-      <div className="navin">
-        <a className="brand" href="/" aria-label="ESTIBORDO">
-          <img src="/estibordo/logos/estibordo-logo-header.png" alt="ESTIBORDO — Preparação para a Praticagem"/>
-        </a>
-
-        <div className="navmenu">
-          <a href="/">Início</a>
-          <a href="/area-do-aluno">Questões</a>
-          <a href="/simulado">Simulados</a>
-          <a href="/area-do-aluno#desempenho">Desempenho</a>
-          <a href="/area-do-aluno#ranking">Ranking</a>
-          <a href="/area-do-aluno#conteudos">Conteúdos</a>
-        </div>
-
-        <div className="links">
-          <a href="/login">Entrar</a>
-          <a className="primary" href="/cadastro">Meu perfil</a>
-        </div>
-      </div>
-    </nav>
+    <nav className="nav"><div className="navin">
+      <a className="brand" href="/" aria-label="ESTIBORDO"><img src={nav.logo.src} alt={nav.logo.alt}/></a>
+      <div className="navmenu">{nav.items.map((item)=><a href={item.href} key={`${item.href}-${item.label}`}>{item.label}</a>)}</div>
+      <div className="links"><a href={nav.login.href}>{nav.login.label}</a><a className="primary" href={nav.profile.href}>{nav.profile.label}</a></div>
+    </div></nav>
   )
 }
 
 export function Footer(){
+  const f = shared.footer;
+  const marks = ["◉","✦","⌖","⊕"];
   return (
     <footer className="footer">
       <div className="footerMain">
         <div className="footerQuote">
           <div className="quoteMark">“</div>
-          <strong>Corrija o rumo<br/>antes da prova.</strong>
-          <div className="hotelFooter"><span></span><span></span></div>
-          <small>ESTIBORDO — PREPARAÇÃO PARA A PRATICAGEM</small>
+          <strong><span>{f.quoteLine1}</span><br/><span>{f.quoteLine2}</span></strong>
+          <div className="hotelFooter"><span></span><span></span></div><small>{f.signature}</small>
         </div>
-
         <div className="footerAbout">
-          <h4>SOBRE A PLATAFORMA</h4>
-          <p>A ESTIBORDO reúne o que você precisa em um só lugar para estudar com método, treinar com simulados e acompanhar sua evolução até a Praticagem.</p>
-          <div className="footerValues">
-            <span>◉<small>CONFIANÇA</small></span>
-            <span>✦<small>QUALIDADE</small></span>
-            <span>⌖<small>FOCO</small></span>
-            <span>⊕<small>EVOLUÇÃO</small></span>
-          </div>
+          <h4>{f.aboutTitle}</h4><p>{f.aboutText}</p>
+          <div className="footerValues">{f.values.map((v,i)=><span key={v}>{marks[i] || "•"}<small>{v}</small></span>)}</div>
         </div>
-
         <div className="footerLinks">
-          <h4>DISCIPLINAS</h4>
-          <a href="/area-do-aluno#ripeam">⚓ RIPEAM</a>
-          <a href="/area-do-aluno">⚓ Navegação</a>
-          <a href="/area-do-aluno">⚓ Meteorologia</a>
-          <a href="/area-do-aluno">⚓ Estabilidade</a>
-          <a href="/area-do-aluno">⚓ Manobra</a>
-          <a href="/area-do-aluno">⚓ Legislação</a>
+          <h4>{f.disciplinesTitle}</h4>
+          {f.disciplines.map((d)=><a href={d.href} key={`${d.href}-${d.label}`}>⚓ {d.label}</a>)}
         </div>
-
         <div className="footerContact">
-          <h4>ESTIBORDO</h4>
-          <p>Conhecimento no rumo da Praticagem.</p>
-          <a href="/login">Entrar na plataforma</a>
-          <a href="/cadastro">Criar conta</a>
+          <h4>{f.contactTitle}</h4><p>{f.contactText}</p>
+          <a href={f.login.href}>{f.login.label}</a><a href={f.register.href}>{f.register.label}</a>
         </div>
       </div>
-      <div className="footerBottom">© ESTIBORDO. Plataforma independente de estudos para o PSCPP.</div>
+      <div className="footerBottom">{f.bottom}</div>
     </footer>
   )
 }
