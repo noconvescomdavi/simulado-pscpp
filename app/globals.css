@@ -244,3 +244,41 @@ h1,h2,h3,h4,.btn,.brand,.eyebrow{font-family:"Poppins",Arial,sans-serif}
     min-height:310px !important;
   }
 }
+
+
+/* Botao "Conhecer a plataforma" */
+.home-platform-cta {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transform: translateY(0) scale(1);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.home-platform-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(7, 27, 43, 0.24);
+  filter: brightness(1.06);
+}
+
+.home-platform-cta:active {
+  transform: translateY(1px) scale(0.975);
+  box-shadow: 0 4px 12px rgba(7, 27, 43, 0.18);
+  filter: brightness(0.96);
+}
+
+.home-platform-cta:focus-visible {
+  outline: 3px solid rgba(197, 31, 42, 0.36);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-platform-cta {
+    transition: none;
+  }
+}

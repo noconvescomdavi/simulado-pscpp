@@ -16,7 +16,9 @@ export default function Home(){
             <p>{home.hero.description}</p>
             <div className="heroActions">
               <a className="btn primary" href={home.hero.primaryButton.href}>{home.hero.primaryButton.label}</a>
-              <a className="btn btnDark" href={home.hero.secondaryButton.href}>{home.hero.secondaryButton.label}</a>
+              <a className="btn btnDark home-platform-cta" href="/plataforma">
+                {home.hero.secondaryButton.label}
+              </a>
             </div>
             <div className="heroStats">
               {home.hero.stats.map((item) => <div key={item.label}><b>{item.value}</b><span>{item.label}</span></div>)}
