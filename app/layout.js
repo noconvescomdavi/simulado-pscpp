@@ -1,10 +1,10 @@
-﻿
+
 import "./globals.css";
 import SiteDesignRuntime from "./site-editor/SiteDesignRuntime";
 
 export const metadata={
   title:{
-    default:"ESTIBORDO | PreparaÃ§Ã£o para a Praticagem",
+    default:"ESTIBORDO | Plataforma de estudos PSCPP",
     template:"%s | ESTIBORDO"
   },
   description:"Plataforma de preparaÃ§Ã£o para o PSCPP com questÃµes, simulados, RIPEAM, CÃ³digo Internacional de Sinais e anÃ¡lise de desempenho.",
