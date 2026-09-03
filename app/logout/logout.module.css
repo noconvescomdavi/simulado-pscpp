@@ -1,0 +1,103 @@
+﻿.page{
+  min-height:calc(100vh - 76px);
+  padding:70px 20px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(30,58,95,.32),transparent 45%),
+    #061522;
+}
+
+.card{
+  width:100%;
+  max-width:520px;
+  padding:42px 38px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;
+  background:#0a1d2d;
+  box-shadow:0 28px 70px rgba(0,0,0,.34);
+  color:#fff;
+  text-align:center;
+}
+
+.logo{
+  width:250px;
+  max-width:80%;
+  margin:0 auto 30px;
+}
+
+.eyebrow{
+  color:#ed334f;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.16em;
+  margin-bottom:10px;
+}
+
+.card h1{
+  margin:0 0 12px;
+  font-size:38px;
+  letter-spacing:-.035em;
+}
+
+.card p{
+  color:#b8c6d1;
+  font-size:14px;
+  line-height:1.7;
+  margin:0 auto 28px;
+}
+
+.actions{
+  display:grid;
+  gap:10px;
+}
+
+.actions a{
+  min-height:46px;
+  border-radius:7px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.primary{
+  color:#fff;
+  background:#c8102e;
+  border:1px solid #c8102e;
+}
+
+.secondary{
+  color:#fff;
+  background:#091827;
+  border:1px solid #536b7e;
+}
+
+.card small{
+  display:block;
+  margin-top:24px;
+  color:#748898;
+  line-height:1.6;
+  font-size:10px;
+}
+
+@media(max-width:600px){
+  .page{
+    padding:35px 14px;
+  }
+
+  .card{
+    padding:34px 22px;
+  }
+
+  .card h1{
+    font-size:31px;
+  }
+
+  .logo{
+    width:210px;
+  }
+}
