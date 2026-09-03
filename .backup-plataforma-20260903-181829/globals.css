@@ -1,0 +1,246 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
+
+*{box-sizing:border-box}
+:root{
+  --navy:#0D1B2A;
+  --navy2:#081522;
+  --blue:#1E3A5F;
+  --red:#C8102E;
+  --off:#F1F3F5;
+  --white:#FFFFFF;
+  --line:rgba(255,255,255,.12);
+}
+html{background:var(--navy);scroll-behavior:smooth}
+body{margin:0;color:#0d1b2a;font-family:"Montserrat",Arial,sans-serif;background:var(--off)}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
+img{display:block;max-width:100%}
+h1,h2,h3,h4,.btn,.brand,.eyebrow{font-family:"Poppins",Arial,sans-serif}
+
+/* HEADER */
+.nav{height:78px;background:rgba(7,20,33,.98);color:#fff;position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(13px)}
+.navin{max-width:1280px;height:100%;margin:auto;padding:0 22px;display:flex;align-items:center;gap:34px}
+.brand{width:285px;flex:0 0 auto}
+.brand img{width:100%;height:auto}
+.navmenu{display:flex;align-items:center;gap:24px;margin-left:auto}
+.navmenu a{font-size:10px;font-weight:800;color:#cad4dd;letter-spacing:.025em}
+.navmenu a:hover{color:#fff}
+.links{display:flex;gap:8px;align-items:center}
+.links a,.links button,.btn{border:1px solid rgba(255,255,255,.18);border-radius:5px;padding:11px 17px;font-weight:800;cursor:pointer}
+.links a{font-size:10px;color:#fff}
+.primary{background:var(--red)!important;color:#fff!important;border-color:var(--red)!important}
+
+/* HOME HERO */
+.heroEstibordo{min-height:650px;background:linear-gradient(100deg,#061525 0%,#0a1c2d 58%,#10283f 100%);color:#fff;position:relative;overflow:hidden;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;padding:65px max(5vw,28px);gap:20px;border-radius:0}
+.heroChart{position:absolute;inset:0;background:url("/estibordo/backgrounds/batimetrico.svg") center/cover;opacity:.28}
+.heroCompass{position:absolute;width:500px;height:500px;left:-100px;top:-150px;border:1px solid rgba(30,58,95,.35);border-radius:50%;opacity:.4}
+.heroCompass:before,.heroCompass:after{content:"";position:absolute;background:rgba(30,58,95,.3)}
+.heroCompass:before{width:1px;height:100%;left:50%}.heroCompass:after{height:1px;width:100%;top:50%}
+.heroCopy,.heroVisual{position:relative;z-index:2}
+.heroCopy{max-width:680px;justify-self:end}
+.eyebrow{font-size:11px;color:#ed334f;font-weight:800;letter-spacing:.16em}
+.heroCopy h1{font-size:clamp(47px,5.4vw,79px);line-height:.96;letter-spacing:-.045em;margin:15px 0 21px}
+.heroCopy p{max-width:580px;color:#c7d3dd;font-size:15px;line-height:1.72;margin:0}
+.heroActions{display:flex;gap:10px;margin:27px 0 35px}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-size:11px;background:#fff;color:var(--navy);min-height:43px}
+.btnDark{background:#091827;color:#fff;border-color:#617285}
+.heroStats{border-top:1px solid var(--line);padding-top:25px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.heroStats b{display:block;font-family:"Poppins";font-size:24px}
+.heroStats span{font-size:8px;color:#9daebb;font-weight:700}
+.heroVisual{height:510px;display:flex;align-items:end;justify-content:center}
+.heroVisual img{width:118%;max-width:none;filter:drop-shadow(0 28px 22px rgba(0,0,0,.45));transform:translate(1%,8%)}
+.hotelFlag{position:absolute;top:9%;right:8%;display:grid;grid-template-columns:1fr 1fr;width:100px;height:67px;box-shadow:0 10px 28px rgba(0,0,0,.2)}
+.hotelFlag span:first-child{background:#fff}.hotelFlag span:last-child{background:var(--red)}
+
+/* DARK FEATURE SECTION */
+.homeDark{background:#061522;color:#fff;padding:82px 0}
+.homeContainer{max-width:1200px;margin:auto;padding:0 22px}
+.sectionIntro{max-width:770px;margin-bottom:34px}
+.sectionIntro h2,.previewCopy h2,.bannerInner h2{font-size:clamp(34px,4.5vw,55px);line-height:1.04;letter-spacing:-.04em;margin:10px 0 14px}
+.sectionIntro p,.previewCopy p{color:#91a4b4;font-size:14px;line-height:1.7}
+.featureGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.featureCard{border:1px solid #18334a;background:#0a1d2d;border-radius:8px;padding:22px;min-height:215px;position:relative;overflow:hidden}
+.featureCard:after{content:"";position:absolute;height:3px;left:0;right:0;bottom:0;background:linear-gradient(90deg,var(--red),transparent)}
+.featureCard img{width:48px;height:48px;object-fit:contain;margin-bottom:23px}
+.featureCard h3{font-size:15px;margin:0 0 9px}
+.featureCard p{font-size:11px;color:#91a4b4;line-height:1.6;margin:0}
+
+/* DASHBOARD PREVIEW */
+.dashboardPreview{background:#0a1a29;padding:78px 0;color:#fff}
+.previewGrid{display:grid;grid-template-columns:.72fr 1.28fr;gap:55px;align-items:center}
+.previewCopy p{margin-bottom:24px}
+.dashboardMock{border:1px solid #1e3a5f;background:#061522;border-radius:10px;overflow:hidden;box-shadow:0 28px 60px rgba(0,0,0,.22)}
+.mockTop{height:58px;padding:0 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #173047}
+.mockTop img{width:210px}
+.mockTop span{background:var(--red);padding:8px 12px;border-radius:4px;font-size:8px;font-weight:800}
+.mockBody{padding:18px;display:grid;grid-template-columns:.85fr 1.15fr;gap:14px}
+.readiness,.performance{border:1px solid #173047;border-radius:8px;background:#081a2a;padding:22px}
+.ring{width:150px;height:150px;border:13px solid #6bc34a;border-right-color:#1e3a5f;border-radius:50%;display:grid;place-content:center;margin:auto;text-align:center}
+.ring b{font-size:42px}.ring small{font-size:8px;color:#9eacb7}
+.readiness p{font-size:10px;text-align:center;line-height:1.55;color:#a9b7c1}
+.performance h4{font-size:10px;margin:0 0 20px}
+.perf{display:grid;grid-template-columns:90px 1fr 36px;align-items:center;gap:8px;margin:12px 0;font-size:9px}
+.perf i{height:4px;background:#173047}.perf i b{display:block;height:100%;background:#21b46b}
+.perf:nth-of-type(5) i b,.perf:nth-of-type(6) i b{background:#f09c1c}
+.perf:nth-of-type(7) i b{background:var(--red)}
+
+/* CTA */
+.bannerCta{background:#081725;color:#fff;padding:38px 0 0;overflow:hidden}
+.bannerInner{max-width:1200px;min-height:330px;margin:auto;padding:45px 22px 0;display:grid;grid-template-columns:1fr .8fr auto;gap:25px;align-items:center;position:relative}
+.bannerInner:before{content:"";position:absolute;inset:0;background:url("/estibordo/backgrounds/batimetrico.svg") center/cover;opacity:.2}
+.bannerInner>*{position:relative;z-index:1}
+.bannerInner h2{font-size:38px}
+.bannerInner img{width:115%;align-self:end;filter:drop-shadow(0 20px 20px rgba(0,0,0,.35))}
+
+/* EXISTING APP PAGES */
+.wrap{max-width:1160px;margin:auto;padding:28px 18px 55px}
+.panel,.card,.auth{background:#fff;border:1px solid #dce5eb;border-radius:10px;padding:20px;box-shadow:0 12px 36px rgba(13,27,42,.08)}
+.section{padding:50px 0}.section h2{font-size:38px;letter-spacing:-.03em}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.muted{color:#667b8d;font-size:13px;line-height:1.55}
+.auth{max-width:460px;margin:45px auto}
+.field{margin:14px 0}.field label{display:block;font-size:11px;font-weight:900;margin-bottom:6px}
+.field input{width:100%;padding:12px;border:1px solid #dce6ed;border-radius:7px}
+.full{width:100%}.msg{min-height:20px;font-size:12px;margin-top:10px}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.metric{background:#fff;border:1px solid #dce6ed;border-radius:8px;padding:17px}.metric span{font-size:10px;color:#667b8d;font-weight:900}.metric b{display:block;font-size:27px;margin-top:5px}
+.two{display:grid;grid-template-columns:1.3fr .7fr;gap:14px;margin-top:14px}
+.bar{height:10px;background:#e6edf2;border-radius:99px;overflow:hidden;margin-top:7px}.bar i{display:block;height:100%;background:var(--red)}
+
+/* FOOTER */
+.footer{background:#061522;color:#fff;text-align:left}
+.footerMain{max-width:1280px;margin:auto;padding:48px 22px;display:grid;grid-template-columns:1.1fr 1.25fr .8fr .85fr;gap:35px}
+.footer h4{font-size:10px;letter-spacing:.08em;margin:0 0 15px}
+.footer p,.footer a{font-size:10px;color:#98a9b6;line-height:1.65}
+.footer a{display:block;margin:6px 0}.footer a:hover{color:#fff}
+.quoteMark{font-family:serif;color:var(--red);font-size:50px;height:40px}
+.footerQuote strong{font-size:20px;line-height:1.3}
+.hotelFooter{width:80px;height:52px;display:grid;grid-template-columns:1fr 1fr;margin:23px 0}
+.hotelFooter span:first-child{background:#fff}.hotelFooter span:last-child{background:var(--red)}
+.footerQuote small{font-size:7px;color:#748898}
+.footerValues{display:flex;gap:20px;margin-top:20px}.footerValues span{font-size:20px;color:#c5d1da}.footerValues small{display:block;font-size:6px;color:#7d91a1;margin-top:4px}
+.footerBottom{max-width:1280px;margin:auto;border-top:1px solid #173047;padding:17px 22px 25px;text-align:right;color:#667c8d;font-size:8px}
+
+/* ADMIN — mantém funcionalidade e recebe a nova linguagem */
+.admin-wrap{max-width:1440px}.admin-heading{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:18px}.admin-heading h1{margin:5px 0 4px;font-size:38px;letter-spacing:-.035em}.admin-search{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.admin-search input{min-width:300px;padding:11px 13px;border:1px solid #cfdce5;border-radius:7px;background:#fff}.admin-notice{margin:12px 0 16px;padding:12px 15px;border:1px solid #a9d7bd;background:#eefaf3;border-radius:7px;font-weight:800;font-size:13px}.admin-card{margin-top:14px;padding:0;overflow:hidden}.admin-table-head{padding:20px 20px 14px;display:flex;justify-content:space-between;align-items:end;gap:15px}.admin-table-head h2{margin:0 0 3px}.table-scroll{overflow-x:auto}.admin-table{width:100%;border-collapse:collapse;min-width:1120px}.admin-table th{background:#f6f9fb;color:#667b8d;font-size:10px;letter-spacing:.06em;text-align:left;padding:11px 14px;border-top:1px solid #e1e9ee;border-bottom:1px solid #e1e9ee}.admin-table td{padding:14px;border-bottom:1px solid #e6edf2;vertical-align:top;font-size:13px}.admin-table tr:last-child td{border-bottom:0}.admin-table strong{display:block}.admin-table small{display:block;color:#718494;font-size:11px;line-height:1.55;margin-top:3px}.status{display:inline-block;padding:5px 8px;border-radius:999px;font-size:9px;font-weight:950;letter-spacing:.05em;background:#edf2f5;color:#536877}.status-active{background:#e6f8ee;color:#187246}.status-pending{background:#fff6d8;color:#8a6500}.status-revoked,.status-refunded,.status-blocked,.status-deleted{background:#ffe9e9;color:#9b2f2f}.admin-actions{display:flex;flex-direction:column;align-items:flex-start;gap:6px}.admin-actions form{margin:0}.mini{border:1px solid #cfdce5;background:#fff;border-radius:6px;padding:7px 9px;font-size:10px;font-weight:900;cursor:pointer;white-space:nowrap}.mini-good{border-color:#a9d7bd;color:#187246;background:#f2fbf6}.mini-warn{border-color:#e6cc85;color:#7c5d04;background:#fffaea}.mini-danger{border-color:#e3abab;color:#982c2c;background:#fff4f4}.empty{text-align:center!important;padding:35px!important;color:#718494}.admin-metrics{grid-template-columns:repeat(4,1fr)}
+
+@media(max-width:1020px){
+  .navmenu{display:none}.brand{width:245px}
+  .heroEstibordo{grid-template-columns:1fr;padding-top:55px}
+  .heroCopy{justify-self:start;max-width:760px}
+  .heroVisual{height:390px}.heroVisual img{width:82%}
+  .featureGrid{grid-template-columns:repeat(2,1fr)}
+  .previewGrid{grid-template-columns:1fr}
+  .bannerInner{grid-template-columns:1fr 1fr}.bannerInner .btn{grid-column:1/-1;width:max-content}
+  .footerMain{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .nav{height:68px}.navin{padding:0 13px}.brand{width:195px}.links a:first-child{display:none}.links a{padding:9px 10px}
+  .heroEstibordo{padding:45px 17px 0;min-height:auto}.heroCopy h1{font-size:43px}.heroCopy p{font-size:13px}
+  .heroStats{grid-template-columns:1fr 1fr}.heroVisual{height:310px}.hotelFlag{width:66px;height:44px}
+  .featureGrid{grid-template-columns:1fr}.homeDark,.dashboardPreview{padding:55px 0}.homeContainer{padding:0 16px}
+  .mockBody{grid-template-columns:1fr}.previewCopy h2{font-size:36px}
+  .bannerInner{grid-template-columns:1fr;padding:35px 17px 0}.bannerInner img{width:100%}.bannerInner h2{font-size:30px}
+  .footerMain{grid-template-columns:1fr;padding:40px 17px}.footerBottom{text-align:left;padding:15px 17px 24px}
+  .grid,.metrics,.two{grid-template-columns:1fr}.wrap{padding:14px 11px 45px}
+  .admin-heading{align-items:stretch;flex-direction:column}.admin-search{width:100%}.admin-search input{min-width:0;width:100%}.admin-metrics{grid-template-columns:1fr 1fr}.admin-table-head{align-items:flex-start;flex-direction:column}.admin-heading h1{font-size:32px}
+}
+
+
+/* FINAL APPROVED ARTWORK OVERRIDES */
+.brand{
+  width:300px;
+  height:64px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+}
+.brand img{
+  width:290px;
+  height:100px;
+  object-fit:contain;
+  object-position:center;
+}
+.heroVisual img{
+  width:118%;
+  max-width:none;
+  object-fit:contain;
+  filter:drop-shadow(0 30px 24px rgba(0,0,0,.42));
+}
+.bannerInner img{
+  width:115%;
+  object-fit:contain;
+  filter:drop-shadow(0 20px 20px rgba(0,0,0,.35));
+}
+.mockTop{
+  overflow:hidden;
+}
+.mockTop img{
+  width:205px;
+  height:48px;
+  object-fit:contain;
+}
+@media(max-width:700px){
+  .brand{width:205px;height:56px}
+  .brand img{width:200px;height:74px}
+}
+
+
+/* === ESTIBORDO FINAL: HEADER LOGO + HERO PORTO === */
+.brand{
+  width:280px !important;
+  height:64px !important;
+  overflow:visible !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  flex:0 0 280px !important;
+}
+.brand img{
+  width:auto !important;
+  height:58px !important;
+  max-width:275px !important;
+  object-fit:contain !important;
+  object-position:left center !important;
+  display:block !important;
+}
+.heroVisual{
+  overflow:hidden !important;
+  border-radius:10px !important;
+  min-height:430px !important;
+  height:500px !important;
+  align-items:stretch !important;
+  justify-content:stretch !important;
+  background:#061522 !important;
+  border:1px solid rgba(255,255,255,.10) !important;
+}
+.heroVisual .heroPortPhoto{
+  width:100% !important;
+  height:100% !important;
+  max-width:none !important;
+  object-fit:cover !important;
+  object-position:center center !important;
+  transform:none !important;
+  filter:none !important;
+}
+.heroVisual .hotelFlag{
+  z-index:3 !important;
+  top:18px !important;
+  right:18px !important;
+}
+@media(max-width:700px){
+  .brand{
+    width:205px !important;
+    height:54px !important;
+    flex-basis:205px !important;
+  }
+  .brand img{
+    height:47px !important;
+    max-width:200px !important;
+  }
+  .heroVisual{
+    height:310px !important;
+    min-height:310px !important;
+  }
+}

@@ -1,23 +1,45 @@
-ESTIBORDO — VISUAL FINAL PORTO
+ATUALIZACAO — SIMULADO INTERATIVO DE MANOBRABILIDADE
+=====================================================
 
-Atualizações desta versão:
-- Corrige o enquadramento/tamanho da logo no header.
-- Cria asset específico de header: public/estibordo/logos/estibordo-logo-header.png
-- Substitui a imagem principal da Home pela foto aérea de um navio conteineiro atracando com auxílio de dois rebocadores.
-- Mantém a identidade ESTIBORDO, bandeira Hotel, cores, menus, dashboard e rodapé.
+PROBLEMA CORRIGIDO
+O arquivo questions.js era carregado por um caminho relativo. Quando a URL da
+disciplina era aberta sem a barra final, o navegador procurava o JavaScript e o
+CSS na pasta errada. Por isso a tela permanecia em "Carregando o banco de
+questoes...".
 
-INSTALAÇÃO NO POWERSHELL:
-powershell -ExecutionPolicy Bypass -File .\APLICAR_VISUAL_ESTIBORDO.ps1
+O QUE FOI ADICIONADO
+- Botao "Iniciar Novo Simulado" sempre visivel na pagina de Manobrabilidade.
+- Nova rota autenticada: /simulado/manobrabilidade.
+- Sorteio de 100 questoes entre as 300 disponiveis.
+- Uma questao por vez, com salvamento obrigatorio para avancar.
+- Correcao imediata, justificativa e fonte bibliografica.
+- Cronometro regressivo de 3 horas.
+- Encerramento automatico quando o tempo termina.
+- Retomada da prova em andamento depois de atualizar a pagina.
+- Resultado com acertos, erros e aproveitamento.
+- Registro automatico nas metricas da Area do Aluno.
+- Tema claro e escuro.
+- Layout responsivo baseado nos padroes do site de referencia e adaptado a
+  identidade visual ESTIBORDO.
 
-Depois:
-Set-Location C:\simulado-pscpp
-npm.cmd run dev
+COMO INSTALAR
+1. Coloque este pacote dentro da raiz do repositorio simulado-pscpp.
+2. Execute APLICAR-ATUALIZACAO-SIMULADO.cmd.
+3. Responda S quando o programa perguntar se deve enviar ao GitHub.
+4. Aguarde o deploy da Vercel.
+5. Atualize o navegador com Ctrl+F5.
 
-PUBLICAÇÃO:
-git status
-git add app public/estibordo
-git commit -m "Atualiza home ESTIBORDO com logo corrigida e manobra portuaria"
-git push origin main
+ARQUIVOS ALTERADOS OU ADICIONADOS
+- public/study-content/simulado/manobrabilidade/index.html
+- public/study-content/simulado/manobrabilidade/questions.css
+- app/simulado/manobrabilidade/page.js
+- app/simulado/manobrabilidade/SimuladoClient.js
+- app/simulado/manobrabilidade/simulado.module.css
 
-Observação:
-O comando acima adiciona somente app e public/estibordo, evitando enviar pastas de backup por engano.
+VALIDACAO
+- Build de producao aprovado.
+- 300 questoes confirmadas.
+- 300 IDs unicos.
+- Alternativas validadas.
+- Sem alteracao em app/globals.css.
+- Sem migracao ou comando adicional no Neon.

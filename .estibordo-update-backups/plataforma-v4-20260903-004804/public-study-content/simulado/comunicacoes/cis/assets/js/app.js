@@ -34,17 +34,6 @@
     {id:"Y", code:"Y", name:"Yankee", category:"flags", pt:"Estou a garrar (arrastar a âncora).", en:"I am dragging my anchor."},
     {id:"Z", code:"Z", name:"Zulu", category:"flags", pt:"Peço reboque.", en:"I require a tug.", note:"O material-base também registra uso por embarcações de pesca próximo aos pesqueiros: “I am shooting nets.”"},
 
-    {id:"NUM0", code:"0", name:"NADAZERO", category:"numerals", pt:"Representa o numeral 0 (zero) no Código Internacional de Sinais.", en:"Represents numeral 0 (zero) in the International Code of Signals."},
-    {id:"NUM1", code:"1", name:"UNAONE", category:"numerals", pt:"Representa o numeral 1 (um) no Código Internacional de Sinais.", en:"Represents numeral 1 (one) in the International Code of Signals."},
-    {id:"NUM2", code:"2", name:"BISSOTWO", category:"numerals", pt:"Representa o numeral 2 (dois) no Código Internacional de Sinais.", en:"Represents numeral 2 (two) in the International Code of Signals."},
-    {id:"NUM3", code:"3", name:"TERRATHREE", category:"numerals", pt:"Representa o numeral 3 (três) no Código Internacional de Sinais.", en:"Represents numeral 3 (three) in the International Code of Signals."},
-    {id:"NUM4", code:"4", name:"KARTFOUR", category:"numerals", pt:"Representa o numeral 4 (quatro) no Código Internacional de Sinais.", en:"Represents numeral 4 (four) in the International Code of Signals."},
-    {id:"NUM5", code:"5", name:"PANTAFIVE", category:"numerals", pt:"Representa o numeral 5 (cinco) no Código Internacional de Sinais.", en:"Represents numeral 5 (five) in the International Code of Signals."},
-    {id:"NUM6", code:"6", name:"SOXISIX", category:"numerals", pt:"Representa o numeral 6 (seis) no Código Internacional de Sinais.", en:"Represents numeral 6 (six) in the International Code of Signals."},
-    {id:"NUM7", code:"7", name:"SETESEVEN", category:"numerals", pt:"Representa o numeral 7 (sete) no Código Internacional de Sinais.", en:"Represents numeral 7 (seven) in the International Code of Signals."},
-    {id:"NUM8", code:"8", name:"OHTOEIGHT", category:"numerals", pt:"Representa o numeral 8 (oito) no Código Internacional de Sinais.", en:"Represents numeral 8 (eight) in the International Code of Signals."},
-    {id:"NUM9", code:"9", name:"NOVENINE", category:"numerals", pt:"Representa o numeral 9 (nove) no Código Internacional de Sinais.", en:"Represents numeral 9 (nine) in the International Code of Signals."},
-
     {id:"AC", code:"AC", name:"", category:"combinations", pt:"Estou a abandonar o meu navio.", en:"I am abandoning my vessel."},
     {id:"AN", code:"AN", name:"", category:"combinations", tags:["medical"], pt:"Preciso de um médico.", en:"I need a doctor."},
     {id:"BR", code:"BR", name:"", category:"combinations", pt:"Necessito de um helicóptero.", en:"I require a helicopter."},
@@ -188,8 +177,7 @@
     filtered = CARDS.filter(card => {
       const tagMatch =
         filter === "all" ||
-        (filter === "flags" && (card.category === "flags" || card.category === "numerals")) ||
-        (filter === "numerals" && card.category === "numerals") ||
+        (filter === "flags" && card.category === "flags") ||
         (filter === "combinations" && card.category === "combinations") ||
         (filter === "medical" && (card.category === "medical" || card.tags?.includes("medical"))) ||
         (filter === "distress" && card.tags?.includes("distress")) ||
@@ -489,7 +477,6 @@
 
   function categoryLabel(card) {
     if (card.category === "flags") return state.language === "pt" ? "Bandeira" : "Flag";
-    if (card.category === "numerals") return state.language === "pt" ? "Flâmula numeral" : "Numeral pennant";
     if (card.category === "medical") return state.language === "pt" ? "Médico" : "Medical";
     if (card.tags?.includes("distress")) return "Distress";
     return state.language === "pt" ? "Combinação" : "Combination";
@@ -501,7 +488,6 @@
     const numerals = chars.filter(ch => /\d/.test(ch));
 
     if (flags.length === 1 && numerals.length === 0) return FLAG_SVGS[flags[0]] || "";
-    if (flags.length === 0 && numerals.length === 1) return numeralPennantSvg(numerals[0]);
     const parts = [
       ...flags.map(ch => FLAG_SVGS[ch]),
       ...numerals.map(ch => numeralSvg(ch))
@@ -567,33 +553,6 @@
       "9": `<rect x="4" y="4" width="46" height="46" fill="#fff"/><rect x="50" y="4" width="46" height="46" fill="#d8222a"/><rect x="4" y="50" width="46" height="46" fill="#111"/><rect x="50" y="50" width="46" height="46" fill="#f4d21f"/>`
     }[n];
     return shape ? svg(shape) : "";
-  }
-
-  function numeralPennantSvg(n) {
-    const content = {
-      "0": `<rect width="120" height="80" fill="#f4d21f"/><rect x="40" width="40" height="80" fill="#d8222a"/>`,
-      "1": `<rect width="120" height="80" fill="#fff"/><circle cx="40" cy="40" r="17" fill="#d8222a"/>`,
-      "2": `<rect width="120" height="80" fill="#1769aa"/><circle cx="40" cy="40" r="17" fill="#fff"/>`,
-      "3": `<rect width="40" height="80" fill="#d8222a"/><rect x="40" width="40" height="80" fill="#fff"/><rect x="80" width="40" height="80" fill="#1769aa"/>`,
-      "4": `<rect width="120" height="80" fill="#d8222a"/><rect x="25" width="11" height="80" fill="#fff"/><rect y="34" width="120" height="12" fill="#fff"/>`,
-      "5": `<rect width="60" height="80" fill="#f4d21f"/><rect x="60" width="60" height="80" fill="#1769aa"/>`,
-      "6": `<rect width="120" height="40" fill="#111"/><rect y="40" width="120" height="40" fill="#fff"/>`,
-      "7": `<rect width="120" height="40" fill="#f4d21f"/><rect y="40" width="120" height="40" fill="#d8222a"/>`,
-      "8": `<rect width="120" height="80" fill="#fff"/><rect x="25" width="11" height="80" fill="#d8222a"/><rect y="34" width="120" height="12" fill="#d8222a"/>`,
-      "9": `<rect width="60" height="40" fill="#fff"/><rect x="60" width="60" height="40" fill="#111"/><rect y="40" width="60" height="40" fill="#d8222a"/><rect x="60" y="40" width="60" height="40" fill="#f4d21f"/>`
-    }[n];
-
-    if (!content) return "";
-
-    return `<svg class="signal-svg" viewBox="0 0 120 80" role="img" aria-label="Flâmula numeral ${n}" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <clipPath id="numeric-pennant-${n}">
-          <polygon points="3,3 117,40 3,77"/>
-        </clipPath>
-      </defs>
-      <polygon points="3,3 117,40 3,77" fill="#fff" stroke="rgba(0,0,0,.22)" stroke-width="2"/>
-      <g clip-path="url(#numeric-pennant-${n})">${content}</g>
-    </svg>`;
   }
 
   function defaultState() {

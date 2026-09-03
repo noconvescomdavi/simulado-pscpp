@@ -1,0 +1,35 @@
+CORRECAO DO LAYOUT ESTIBORDO
+============================
+
+CAUSA IDENTIFICADA
+O commit cdc586c substituiu app/globals.css por um arquivo cujas classes nao
+correspondiam a pagina inicial atual. Por isso o conteudo apareceu praticamente
+sem formatacao.
+
+O QUE ESTA CORRECAO FAZ
+1. Restaura app/globals.css exatamente da ultima versao visual correta (d10cf8d).
+2. Mantem as APIs, o banco de 300 questoes, o simulado interativo e as metricas.
+3. Move os estilos novos do painel para app/area-do-aluno/dashboard.css.
+4. Faz o build antes de oferecer o envio ao GitHub.
+
+COMO APLICAR
+1. Baixe o ZIP desta correcao.
+2. Extraia a pasta dentro da raiz do repositorio simulado-pscpp, onde esta o
+   arquivo package.json.
+3. Abra a pasta extraida e execute APLICAR-CORRECAO-LAYOUT.cmd.
+4. Ao final, responda S para criar o commit e enviar ao GitHub.
+5. Aguarde o deploy automatico da Vercel e atualize a pagina com Ctrl+F5.
+
+ARQUIVOS ALTERADOS
+- app/globals.css
+- app/area-do-aluno/page.js
+- app/area-do-aluno/dashboard.css (novo)
+
+VALIDACAO JA REALIZADA
+- npm run build: aprovado
+- 17 paginas geradas
+- todas as rotas de questoes, respostas, tentativas e metricas preservadas
+
+IMPORTANTE
+Nao reutilize o pacote anterior atualizacao_simulado_interativo_metricas_estibordo.zip,
+pois ele contem o app/globals.css que causou esta regressao visual.
