@@ -1,0 +1,764 @@
+"use client";
+
+import { useEffect, useMemo, useRef, useState } from "react";
+import styles from "./deck.module.css";
+
+function shuffle(items) {
+  const arr = [...items];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function normalize(value) {
+  return String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toUpperCase()
+    .trim();
+}
+
+function svg(content, viewBox = "0 0 100 100") {
+  return `<svg class="${styles.signalSvg}" viewBox="${viewBox}" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="2" width="96" height="96" rx="1" fill="#fff" stroke="rgba(0,0,0,.18)" stroke-width="2"/>
+    ${content}
+  </svg>`;
+}
+
+function stripes(colors, direction) {
+  const n = colors.length;
+  const chunks = colors
+    .map((color, i) => {
+      if (direction === "h") {
+        const h = 92 / n;
+        return `<rect x="4" y="${4 + i * h}" width="92" height="${h + 0.4}" fill="${color}"/>`;
+      }
+      const w = 92 / n;
+      return `<rect x="${4 + i * w}" y="4" width="${w + 0.4}" height="92" fill="${color}"/>`;
+    })
+    .join("");
+  return svg(chunks);
+}
+
+function checker(a, b) {
+  return svg(`
+    <rect x="4" y="4" width="46" height="46" fill="${a}"/>
+    <rect x="50" y="4" width="46" height="46" fill="${b}"/>
+    <rect x="4" y="50" width="46" height="46" fill="${b}"/>
+    <rect x="50" y="50" width="46" height="46" fill="${a}"/>
+  `);
+}
+
+function diagonalStripes() {
+  return svg(`
+    <defs><clipPath id="yclip"><rect x="4" y="4" width="92" height="92"/></clipPath></defs>
+    <g clip-path="url(#yclip)" transform="rotate(-45 50 50)">
+      <rect x="-30" y="-30" width="160" height="160" fill="#f4d21f"/>
+      <rect x="-30" y="-30" width="160" height="14" fill="#d8222a"/>
+      <rect x="-30" y="-2" width="160" height="14" fill="#d8222a"/>
+      <rect x="-30" y="26" width="160" height="14" fill="#d8222a"/>
+      <rect x="-30" y="54" width="160" height="14" fill="#d8222a"/>
+      <rect x="-30" y="82" width="160" height="14" fill="#d8222a"/>
+      <rect x="-30" y="110" width="160" height="14" fill="#d8222a"/>
+    </g>
+  `);
+}
+
+const FLAGS = {
+  A: svg(`<polygon points="4,4 92,4 68,50 92,96 4,96" fill="#fff"/><polygon points="4,4 48,4 48,96 4,96" fill="#fff"/><polygon points="48,4 92,4 68,50 92,96 48,96" fill="#1769aa"/>`, "0 0 96 100"),
+  B: svg(`<polygon points="4,4 92,4 68,50 92,96 4,96" fill="#d8222a"/>`, "0 0 96 100"),
+  C: stripes(["#1769aa", "#fff", "#d8222a", "#fff", "#1769aa"], "h"),
+  D: stripes(["#f4d21f", "#1769aa", "#f4d21f"], "h"),
+  E: stripes(["#1769aa", "#d8222a"], "h"),
+  F: svg(`<rect x="4" y="4" width="92" height="92" fill="#fff"/><polygon points="50,18 82,50 50,82 18,50" fill="#d8222a"/>`),
+  G: stripes(["#f4d21f", "#1769aa", "#f4d21f", "#1769aa", "#f4d21f", "#1769aa"], "v"),
+  H: stripes(["#fff", "#d8222a"], "v"),
+  I: svg(`<rect x="4" y="4" width="92" height="92" fill="#f4d21f"/><circle cx="50" cy="50" r="25" fill="#111"/>`),
+  J: stripes(["#1769aa", "#fff", "#1769aa"], "h"),
+  K: stripes(["#f4d21f", "#1769aa"], "v"),
+  L: svg(`<rect x="4" y="4" width="92" height="92" fill="#f4d21f"/><rect x="50" y="4" width="46" height="46" fill="#111"/><rect x="4" y="50" width="46" height="46" fill="#111"/>`),
+  M: svg(`<rect x="4" y="4" width="92" height="92" fill="#1769aa"/><polygon points="4,4 16,4 96,84 96,96 84,96 4,16" fill="#fff"/><polygon points="84,4 96,4 96,16 16,96 4,96 4,84" fill="#fff"/>`),
+  N: checker("#1769aa", "#fff"),
+  O: svg(`<polygon points="4,4 96,4 4,96" fill="#f4d21f"/><polygon points="96,4 96,96 4,96" fill="#d8222a"/>`),
+  P: svg(`<rect x="4" y="4" width="92" height="92" fill="#1769aa"/><rect x="27" y="27" width="46" height="46" fill="#fff"/>`),
+  Q: svg(`<rect x="4" y="4" width="92" height="92" fill="#f4d21f"/>`),
+  R: svg(`<rect x="4" y="4" width="92" height="92" fill="#d8222a"/><rect x="41" y="4" width="18" height="92" fill="#f4d21f"/><rect x="4" y="41" width="92" height="18" fill="#f4d21f"/>`),
+  S: svg(`<rect x="4" y="4" width="92" height="92" fill="#fff"/><rect x="27" y="27" width="46" height="46" fill="#1769aa"/>`),
+  T: stripes(["#d8222a", "#fff", "#1769aa"], "v"),
+  U: svg(`<rect x="4" y="4" width="92" height="92" fill="#fff"/><rect x="4" y="4" width="46" height="46" fill="#d8222a"/><rect x="50" y="50" width="46" height="46" fill="#d8222a"/>`),
+  V: svg(`<rect x="4" y="4" width="92" height="92" fill="#fff"/><polygon points="4,4 18,4 96,82 96,96 82,96 4,18" fill="#d8222a"/><polygon points="82,4 96,4 96,18 18,96 4,96 4,82" fill="#d8222a"/>`),
+  W: svg(`<rect x="4" y="4" width="92" height="92" fill="#1769aa"/><rect x="20" y="20" width="60" height="60" fill="#fff"/><rect x="34" y="34" width="32" height="32" fill="#d8222a"/>`),
+  X: svg(`<rect x="4" y="4" width="92" height="92" fill="#fff"/><rect x="41" y="4" width="18" height="92" fill="#1769aa"/><rect x="4" y="41" width="92" height="18" fill="#1769aa"/>`),
+  Y: diagonalStripes(),
+  Z: svg(`<rect x="4" y="4" width="92" height="92" fill="#f4d21f"/><polygon points="4,4 50,50 4,96" fill="#111"/><polygon points="96,4 50,50 96,96" fill="#d8222a"/><polygon points="4,96 50,50 96,96" fill="#1769aa"/>`),
+};
+
+function numeralSvg(n) {
+  const shape = {
+    "0": `<rect x="4" y="4" width="92" height="30.7" fill="#f4d21f"/><rect x="4" y="34.7" width="92" height="30.6" fill="#d8222a"/><rect x="4" y="65.3" width="92" height="30.7" fill="#f4d21f"/>`,
+    "1": `<rect x="4" y="4" width="92" height="92" fill="#fff"/><circle cx="50" cy="50" r="25" fill="#d8222a"/>`,
+    "2": `<rect x="4" y="4" width="92" height="92" fill="#1769aa"/><circle cx="50" cy="50" r="25" fill="#fff"/>`,
+    "3": `<rect x="4" y="4" width="92" height="30.7" fill="#d8222a"/><rect x="4" y="34.7" width="92" height="30.6" fill="#fff"/><rect x="4" y="65.3" width="92" height="30.7" fill="#1769aa"/>`,
+    "4": `<rect x="4" y="4" width="92" height="92" fill="#d8222a"/><rect x="42" y="4" width="16" height="92" fill="#fff"/><rect x="4" y="42" width="92" height="16" fill="#fff"/>`,
+    "5": `<rect x="4" y="4" width="92" height="46" fill="#f4d21f"/><rect x="4" y="50" width="92" height="46" fill="#1769aa"/>`,
+    "6": `<rect x="4" y="4" width="92" height="46" fill="#111"/><rect x="4" y="50" width="92" height="46" fill="#fff"/>`,
+    "7": `<rect x="4" y="4" width="92" height="46" fill="#f4d21f"/><rect x="4" y="50" width="92" height="46" fill="#d8222a"/>`,
+    "8": `<rect x="4" y="4" width="92" height="92" fill="#fff"/><rect x="42" y="4" width="16" height="92" fill="#d8222a"/><rect x="4" y="42" width="92" height="16" fill="#d8222a"/>`,
+    "9": `<rect x="4" y="4" width="46" height="46" fill="#fff"/><rect x="50" y="4" width="46" height="46" fill="#d8222a"/><rect x="4" y="50" width="46" height="46" fill="#111"/><rect x="50" y="50" width="46" height="46" fill="#f4d21f"/>`,
+  }[String(n)];
+  return shape ? svg(shape) : "";
+}
+
+function renderSignal(code) {
+  const chars = String(code || "").replace(/\s/g, "").toUpperCase().split("");
+  const flags = chars.filter((ch) => /[A-Z]/.test(ch));
+  const numerals = chars.filter((ch) => /\d/.test(ch));
+  if (flags.length === 1 && numerals.length === 0) return FLAGS[flags[0]] || "";
+  const parts = [...flags.map((ch) => FLAGS[ch]), ...numerals.map(numeralSvg)].filter(Boolean);
+  return `<div class="${styles.signalGroup}">${parts.join("")}</div>`;
+}
+
+function progressMap(rows) {
+  return Object.fromEntries((rows || []).map((item) => [String(item.card_key), item]));
+}
+
+function emptyMetrics() {
+  return { answered: 0, correct: 0, wrong: 0, difficult: 0, studied_cards: 0, accuracy: 0 };
+}
+
+export default function FlashcardsClient({ deck, initialState }) {
+  const cards = Array.isArray(deck.cards) ? deck.cards : [];
+  const [language, setLanguage] = useState("pt");
+  const [dark, setDark] = useState(false);
+  const [filter, setFilter] = useState("all");
+  const [search, setSearch] = useState("");
+  const [order, setOrder] = useState(cards.map((card) => String(card.id)));
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [flipped, setFlipped] = useState(false);
+  const [progress, setProgress] = useState(() => progressMap(initialState?.progress));
+  const [metrics, setMetrics] = useState(initialState?.metrics || emptyMetrics());
+  const [examMode, setExamMode] = useState(false);
+  const [examQueue, setExamQueue] = useState([]);
+  const [examCardId, setExamCardId] = useState(null);
+  const [examChoices, setExamChoices] = useState([]);
+  const [examAnswered, setExamAnswered] = useState(false);
+  const [examFeedback, setExamFeedback] = useState(null);
+  const [examNumber, setExamNumber] = useState(0);
+  const [toast, setToast] = useState("");
+  const [saving, setSaving] = useState(false);
+
+  const shownAt = useRef(Date.now());
+  const sessionRef = useRef({ id: null, mode: null });
+  const toastTimer = useRef(null);
+  const cardsById = useMemo(
+    () => Object.fromEntries(cards.map((card) => [String(card.id), card])),
+    [cards]
+  );
+
+  useEffect(() => {
+    try {
+      const savedLanguage = localStorage.getItem("estibordo:flashcards:language");
+      const savedTheme = localStorage.getItem("estibordo:flashcards:theme");
+      if (savedLanguage === "en" || savedLanguage === "pt") setLanguage(savedLanguage);
+      if (savedTheme === "dark") setDark(true);
+    } catch {}
+  }, []);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("estibordo:flashcards:language", language);
+      localStorage.setItem("estibordo:flashcards:theme", dark ? "dark" : "light");
+    } catch {}
+  }, [language, dark]);
+
+  const orderedCards = useMemo(
+    () => order.map((id) => cardsById[id]).filter(Boolean),
+    [order, cardsById]
+  );
+
+  const filtered = useMemo(() => {
+    const q = normalize(search);
+    return orderedCards.filter((card) => {
+      const item = progress[String(card.id)] || {};
+      const tags = Array.isArray(card.tags) ? card.tags : [];
+      const tagMatch =
+        filter === "all" ||
+        (filter === "flags" && card.category === "flags") ||
+        (filter === "combinations" && card.category === "combinations") ||
+        (filter === "medical" && (card.category === "medical" || tags.includes("medical"))) ||
+        (filter === "distress" && tags.includes("distress")) ||
+        (filter === "difficult" && item.difficult === true) ||
+        (filter === "wrong" && item.last_answer_correct === false);
+
+      if (!tagMatch) return false;
+      if (!q) return true;
+
+      return normalize([card.code, card.name, card.pt, card.en].join(" ")).includes(q);
+    });
+  }, [orderedCards, filter, search, progress]);
+
+  useEffect(() => {
+    if (currentIndex >= filtered.length) setCurrentIndex(Math.max(0, filtered.length - 1));
+  }, [filtered.length, currentIndex]);
+
+  useEffect(() => {
+    setFlipped(false);
+    shownAt.current = Date.now();
+  }, [currentIndex, filter, search, examMode]);
+
+  useEffect(() => {
+    const handle = (event) => {
+      if (examMode) return;
+      if (["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName)) return;
+      if (event.key === "ArrowRight") moveCard(1);
+      if (event.key === "ArrowLeft") moveCard(-1);
+      if (event.key === " " || event.key === "Enter") {
+        event.preventDefault();
+        setFlipped((value) => !value);
+      }
+      if (event.key.toLowerCase() === "d") void toggleDifficult();
+    };
+    document.addEventListener("keydown", handle);
+    return () => document.removeEventListener("keydown", handle);
+  });
+
+  useEffect(() => {
+    return () => {
+      const current = sessionRef.current;
+      if (current.id) {
+        fetch(`/api/flashcards/${encodeURIComponent(deck.slug)}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          keepalive: true,
+          body: JSON.stringify({
+            action: "session_finish",
+            sessionId: current.id,
+            status: "abandoned",
+          }),
+        }).catch(() => {});
+      }
+    };
+  }, [deck.slug]);
+
+  function showToast(message) {
+    clearTimeout(toastTimer.current);
+    setToast(message);
+    toastTimer.current = setTimeout(() => setToast(""), 1900);
+  }
+
+  async function api(body) {
+    const response = await fetch(`/api/flashcards/${encodeURIComponent(deck.slug)}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.error || "Falha ao salvar.");
+    return data;
+  }
+
+  async function ensureSession(mode) {
+    const current = sessionRef.current;
+    if (current.id && current.mode === mode) return current.id;
+
+    if (current.id) {
+      await api({
+        action: "session_finish",
+        sessionId: current.id,
+        status: "completed",
+      }).catch(() => {});
+    }
+
+    const data = await api({ action: "session_start", mode });
+    const next = { id: data.session.id, mode };
+    sessionRef.current = next;
+    return next.id;
+  }
+
+  function currentMeaning(card) {
+    return language === "pt" ? card.pt : card.en;
+  }
+
+  function categoryLabel(card) {
+    if (card.category === "flags") return language === "pt" ? "Bandeira" : "Flag";
+    if (card.category === "medical") return language === "pt" ? "Médico" : "Medical";
+    if ((card.tags || []).includes("distress")) return "Distress";
+    return language === "pt" ? "Combinação" : "Combination";
+  }
+
+  function moveCard(delta) {
+    if (!filtered.length) return;
+    setCurrentIndex((index) => (index + delta + filtered.length) % filtered.length);
+  }
+
+  function updateLocalAnswer(cardId, correct) {
+    setMetrics((old) => {
+      const answered = old.answered + 1;
+      const nextCorrect = old.correct + (correct ? 1 : 0);
+      return {
+        ...old,
+        answered,
+        correct: nextCorrect,
+        wrong: old.wrong + (correct ? 0 : 1),
+        studied_cards: old.studied_cards + (progress[cardId]?.last_seen_at ? 0 : 1),
+        accuracy: Math.round((nextCorrect / answered) * 100),
+      };
+    });
+
+    setProgress((old) => {
+      const previous = old[cardId] || {
+        correct_count: 0,
+        wrong_count: 0,
+        difficult: false,
+      };
+      return {
+        ...old,
+        [cardId]: {
+          ...previous,
+          card_key: cardId,
+          correct_count: previous.correct_count + (correct ? 1 : 0),
+          wrong_count: previous.wrong_count + (correct ? 0 : 1),
+          last_answer_correct: correct,
+          last_seen_at: new Date().toISOString(),
+        },
+      };
+    });
+  }
+
+  async function persistAnswer(card, correct, mode) {
+    try {
+      setSaving(true);
+      const sessionId = await ensureSession(mode);
+      const data = await api({
+        action: "answer",
+        sessionId,
+        cardKey: String(card.id),
+        correct,
+        responseTimeMs: Math.max(0, Date.now() - shownAt.current),
+      });
+      if (data.state) {
+        setMetrics(data.state.metrics);
+        setProgress(progressMap(data.state.progress));
+      }
+    } catch (error) {
+      showToast(error.message || "Não foi possível salvar o progresso.");
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  function gradeStudy(correct) {
+    const card = filtered[currentIndex];
+    if (!card) return;
+    updateLocalAnswer(String(card.id), correct);
+    showToast(correct ? "✓ Acerto registrado" : "↻ Erro salvo para revisão");
+    void persistAnswer(card, correct, "study");
+
+    if (filter === "wrong" && correct) {
+      setCurrentIndex(0);
+      return;
+    }
+
+    setTimeout(() => moveCard(1), 140);
+  }
+
+  async function toggleDifficult() {
+    const card = filtered[currentIndex];
+    if (!card) return;
+    const id = String(card.id);
+    const next = !(progress[id]?.difficult === true);
+
+    setProgress((old) => ({
+      ...old,
+      [id]: {
+        ...(old[id] || { card_key: id, correct_count: 0, wrong_count: 0 }),
+        difficult: next,
+      },
+    }));
+
+    setMetrics((old) => ({
+      ...old,
+      difficult: Math.max(0, old.difficult + (next ? 1 : -1)),
+    }));
+
+    showToast(next ? "★ Cartão marcado como difícil" : "Cartão removido dos difíceis");
+
+    try {
+      const data = await api({ action: "difficulty", cardKey: id, difficult: next });
+      if (data.state) {
+        setMetrics(data.state.metrics);
+        setProgress(progressMap(data.state.progress));
+      }
+    } catch (error) {
+      showToast(error.message || "Não foi possível salvar.");
+    }
+  }
+
+  function shuffleCurrent() {
+    if (filtered.length < 2) return;
+    const visibleIds = shuffle(filtered.map((card) => String(card.id)));
+    const visibleSet = new Set(visibleIds);
+    setOrder((old) => [...visibleIds, ...old.filter((id) => !visibleSet.has(id))]);
+    setCurrentIndex(0);
+    showToast("Cartões embaralhados");
+  }
+
+  function buildChoices(correctCard) {
+    let pool = filtered.filter((card) => String(card.id) !== String(correctCard.id));
+    if (pool.length < 3) pool = cards.filter((card) => String(card.id) !== String(correctCard.id));
+    return shuffle([correctCard, ...shuffle(pool).slice(0, 3)]);
+  }
+
+  function loadExamCard(id, queue, number) {
+    const card = cardsById[id];
+    if (!card) {
+      setExamCardId(null);
+      return;
+    }
+    setExamCardId(id);
+    setExamChoices(buildChoices(card));
+    setExamQueue(queue);
+    setExamAnswered(false);
+    setExamFeedback(null);
+    setExamNumber(number);
+    shownAt.current = Date.now();
+  }
+
+  function startExam() {
+    if (!filtered.length) {
+      showToast("Nenhum cartão disponível para o modo prova.");
+      return;
+    }
+
+    const visibleIds = filtered.map((card) => String(card.id));
+    const wrongIds = visibleIds.filter((id) => progress[id]?.last_answer_correct === false);
+    const rest = shuffle(visibleIds.filter((id) => !wrongIds.includes(id)));
+    const queue = [...wrongIds, ...rest];
+    const [first, ...remaining] = queue;
+
+    setExamMode(true);
+    loadExamCard(first, remaining, 1);
+    void ensureSession("exam").catch(() => {});
+  }
+
+  async function stopExam() {
+    const current = sessionRef.current;
+    if (current.id && current.mode === "exam") {
+      await api({
+        action: "session_finish",
+        sessionId: current.id,
+        status: "completed",
+      }).catch(() => {});
+      sessionRef.current = { id: null, mode: null };
+    }
+    setExamMode(false);
+    setExamCardId(null);
+    setExamQueue([]);
+    setExamFeedback(null);
+  }
+
+  function answerExam(chosenId) {
+    if (examAnswered || !examCardId) return;
+    const current = cardsById[examCardId];
+    const correct = String(chosenId) === String(examCardId);
+
+    setExamAnswered(true);
+    setExamFeedback({
+      correct,
+      text: correct
+        ? language === "pt"
+          ? "Correto."
+          : "Correct."
+        : language === "pt"
+          ? `Incorreto. Resposta: ${current.pt}`
+          : `Incorrect. Answer: ${current.en}`,
+    });
+
+    updateLocalAnswer(String(current.id), correct);
+    if (!correct) setExamQueue((queue) => [...queue, String(current.id)]);
+    void persistAnswer(current, correct, "exam");
+  }
+
+  function nextExamQuestion() {
+    if (!examQueue.length) {
+      setExamCardId(null);
+      setExamChoices([]);
+      setExamFeedback({ correct: true, text: "Revisão concluída." });
+      return;
+    }
+    const [next, ...rest] = examQueue;
+    loadExamCard(next, rest, examNumber + 1);
+  }
+
+  async function resetProgress() {
+    if (!window.confirm("Apagar todo o progresso deste baralho de flashcards?")) return;
+    try {
+      setSaving(true);
+      await api({ action: "reset" });
+      setProgress({});
+      setMetrics(emptyMetrics());
+      sessionRef.current = { id: null, mode: null };
+      setFilter("all");
+      setCurrentIndex(0);
+      if (examMode) setExamMode(false);
+      showToast("Progresso dos flashcards resetado");
+    } catch (error) {
+      showToast(error.message || "Não foi possível resetar.");
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  const current = filtered[currentIndex] || null;
+  const currentProgress = current ? progress[String(current.id)] || {} : {};
+  const examCard = examCardId ? cardsById[examCardId] : null;
+  const progressPercent = filtered.length
+    ? Math.round(((currentIndex + 1) / filtered.length) * 100)
+    : 0;
+
+  return (
+    <main className={`${styles.page} ${dark ? styles.dark : ""}`}>
+      <section className={styles.hero}>
+        <div>
+          <a className={styles.backLink} href="/flashcards">← Todos os flashcards</a>
+          <span className={styles.eyebrow}>{deck.subjectLabel}</span>
+          <h1>{deck.title}</h1>
+          <p>{deck.description}</p>
+        </div>
+
+        <div className={styles.heroActions}>
+          <button type="button" onClick={() => setDark((value) => !value)}>
+            {dark ? "☀ Tema claro" : "☾ Tema escuro"}
+          </button>
+          <button
+            type="button"
+            onClick={() => setLanguage((value) => (value === "pt" ? "en" : "pt"))}
+          >
+            {language === "pt" ? "🇧🇷 PT-BR" : "🇬🇧 English"}
+          </button>
+        </div>
+      </section>
+
+      <section className={styles.statsGrid} aria-label="Métricas de flashcards">
+        <article><span>Acertos</span><strong>{metrics.correct}</strong></article>
+        <article><span>Erros</span><strong>{metrics.wrong}</strong></article>
+        <article><span>Aproveitamento</span><strong>{metrics.answered ? `${metrics.accuracy}%` : "—"}</strong></article>
+        <article><span>Difíceis</span><strong>{metrics.difficult}</strong></article>
+      </section>
+
+      <section className={styles.toolbar}>
+        <label className={styles.searchBox}>
+          <span>⌕</span>
+          <input
+            value={search}
+            onChange={(event) => {
+              setSearch(event.target.value);
+              setCurrentIndex(0);
+            }}
+            type="search"
+            placeholder="Buscar código ou termo..."
+            aria-label="Buscar flashcards"
+          />
+          {search && (
+            <button type="button" onClick={() => setSearch("")} aria-label="Limpar busca">×</button>
+          )}
+        </label>
+
+        <div className={styles.filters}>
+          {[
+            ["all", "Todos"],
+            ["flags", "🏳 Bandeiras"],
+            ["distress", "🚨 Distress"],
+            ["combinations", "🔤 Combinações"],
+            ["medical", "🩺 Médico"],
+            ["difficult", "★ Difíceis"],
+            ["wrong", "↻ Errados"],
+          ].map(([key, label]) => (
+            <button
+              type="button"
+              key={key}
+              className={filter === key ? styles.activeFilter : ""}
+              onClick={() => {
+                setFilter(key);
+                setCurrentIndex(0);
+              }}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+
+        <div className={styles.modeRow}>
+          <button
+            className={styles.primaryButton}
+            type="button"
+            onClick={() => (examMode ? void stopExam() : startExam())}
+          >
+            {examMode ? "✕ Encerrar modo prova" : "🎯 Iniciar modo prova"}
+          </button>
+          <button type="button" disabled={examMode} onClick={shuffleCurrent}>
+            🔀 Embaralhar
+          </button>
+          <span className={styles.saving}>{saving ? "Salvando..." : "Progresso salvo na sua conta"}</span>
+        </div>
+      </section>
+
+      <section className={styles.studyPanel}>
+        <div className={styles.panelHead}>
+          <div>
+            <span className={styles.modeBadge}>{examMode ? "MODO PROVA" : "MODO ESTUDO"}</span>
+            <strong>{examMode ? `${cards.length} cartões no baralho` : `${filtered.length} cartões`}</strong>
+          </div>
+          <span>{examMode ? `Questão ${Math.max(1, examNumber)}` : filtered.length ? `${currentIndex + 1} / ${filtered.length}` : "0 / 0"}</span>
+        </div>
+
+        {!examMode && (
+          <div className={styles.progressTrack}>
+            <i style={{ width: `${progressPercent}%` }} />
+          </div>
+        )}
+
+        {!examMode && !current && (
+          <div className={styles.emptyState}>
+            <strong>Nenhum cartão encontrado</strong>
+            <p>Tente outro código, termo ou filtro.</p>
+          </div>
+        )}
+
+        {!examMode && current && (
+          <>
+            <div className={styles.flashcardWrap}>
+              <button
+                type="button"
+                className={`${styles.flashcard} ${flipped ? styles.flipped : ""}`}
+                onClick={() => setFlipped((value) => !value)}
+                aria-label="Virar cartão"
+              >
+                <div className={styles.flashcardInner}>
+                  <section className={`${styles.cardFace} ${styles.cardFront}`}>
+                    <div className={styles.cardTopline}>
+                      <span>{categoryLabel(current)}</span>
+                      {currentProgress.difficult && <b>★ Difícil</b>}
+                    </div>
+                    <div
+                      className={styles.flagStage}
+                      dangerouslySetInnerHTML={{ __html: renderSignal(current.code) }}
+                    />
+                    <div className={styles.codeBlock}>
+                      <small>CÓDIGO</small>
+                      <strong>{current.code}</strong>
+                      <span>{current.name || categoryLabel(current)}</span>
+                    </div>
+                    <p>Toque no cartão para ver o significado</p>
+                  </section>
+
+                  <section className={`${styles.cardFace} ${styles.cardBack}`}>
+                    <div className={styles.cardTopline}>
+                      <span>{categoryLabel(current)}</span>
+                      <b>{language === "pt" ? "🇧🇷 PT-BR" : "🇬🇧 English"}</b>
+                    </div>
+                    <div className={styles.answerContent}>
+                      <small>{current.name ? `${current.code} • ${current.name}` : current.code}</small>
+                      <h2>{currentMeaning(current)}</h2>
+                      {current.note && <p className={styles.note}>{current.note}</p>}
+                    </div>
+                    <p>Toque para voltar</p>
+                  </section>
+                </div>
+              </button>
+            </div>
+
+            <div className={styles.answerActions}>
+              <button type="button" className={styles.wrongButton} onClick={() => gradeStudy(false)}>✕ Errei</button>
+              <button
+                type="button"
+                className={`${styles.difficultButton} ${currentProgress.difficult ? styles.marked : ""}`}
+                onClick={() => void toggleDifficult()}
+              >
+                {currentProgress.difficult ? "★ Difícil" : "☆ Marcar difícil"}
+              </button>
+              <button type="button" className={styles.correctButton} onClick={() => gradeStudy(true)}>✓ Acertei</button>
+            </div>
+
+            <div className={styles.navigationRow}>
+              <button type="button" onClick={() => moveCard(-1)} disabled={filtered.length <= 1}>← Anterior</button>
+              <button type="button" onClick={() => moveCard(1)} disabled={filtered.length <= 1}>Próximo →</button>
+            </div>
+          </>
+        )}
+
+        {examMode && (
+          <div className={styles.examArea}>
+            {examCard ? (
+              <article className={styles.examCard}>
+                <div className={styles.cardTopline}>
+                  <span>{categoryLabel(examCard)}</span>
+                  <b>Questão {examNumber}</b>
+                </div>
+                <div
+                  className={styles.examFlag}
+                  dangerouslySetInnerHTML={{ __html: renderSignal(examCard.code) }}
+                />
+                <p>{language === "pt" ? "Qual é o significado deste sinal?" : "What is the meaning of this signal?"}</p>
+                <h2>{examCard.code}</h2>
+                {examCard.name && <h3>{examCard.name}</h3>}
+
+                <div className={styles.options}>
+                  {examChoices.map((choice) => {
+                    const choiceId = String(choice.id);
+                    const correctChoice = examAnswered && choiceId === String(examCard.id);
+                    return (
+                      <button
+                        key={choiceId}
+                        type="button"
+                        disabled={examAnswered}
+                        className={correctChoice ? styles.correctOption : ""}
+                        onClick={() => answerExam(choiceId)}
+                      >
+                        {currentMeaning(choice)}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {examFeedback && (
+                  <div className={`${styles.examFeedback} ${examFeedback.correct ? styles.feedbackCorrect : styles.feedbackWrong}`}>
+                    {examFeedback.text}
+                  </div>
+                )}
+
+                {examAnswered && (
+                  <button type="button" className={styles.primaryButton} onClick={nextExamQuestion}>
+                    Próxima questão →
+                  </button>
+                )}
+              </article>
+            ) : (
+              <div className={styles.examComplete}>
+                <strong>✓ Revisão concluída</strong>
+                <p>Os erros permanecem disponíveis no filtro “Errados” até serem acertados.</p>
+                <button type="button" className={styles.primaryButton} onClick={() => void stopExam()}>Voltar ao estudo</button>
+              </div>
+            )}
+          </div>
+        )}
+      </section>
+
+      <section className={styles.footerPanel}>
+        <div>
+          <span>MÉTRICAS EXCLUSIVAS DE FLASHCARDS</span>
+          <h2>Seu progresso fica salvo no banco de flashcards.</h2>
+          <p>
+            Acertos, erros, cartões difíceis e sessões são independentes das provas e simulados do PSCPP.
+          </p>
+        </div>
+        <button type="button" onClick={() => void resetProgress()}>Resetar progresso deste baralho</button>
+      </section>
+
+      {toast && <div className={styles.toast} role="status">{toast}</div>}
+    </main>
+  );
+}

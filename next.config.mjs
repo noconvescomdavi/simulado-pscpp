@@ -1,4 +1,4 @@
-﻿const nextConfig = {
+const nextConfig = {
   poweredByHeader: false,
 
   /*
@@ -22,8 +22,12 @@
       },
       {
         source: "/cis",
-        destination:
-          "/study-content/flashcards/flashcard-cis/",
+        destination: "/flashcards/cis",
+        permanent: false,
+      },
+      {
+        source: "/study-content/flashcards/flashcard-cis/:path*",
+        destination: "/flashcards/cis",
         permanent: false,
       },
     ];
