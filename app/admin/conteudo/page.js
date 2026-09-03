@@ -1,0 +1,1 @@
+export default function Page(){return <main className="wrap admin-wrap"><h1>Conteúdo</h1><p>Conteúdo protegido em <code>protected-content/study-content</code>.</p><a className="btn primary" href="/conteudos">Abrir conteúdos</a></main>}

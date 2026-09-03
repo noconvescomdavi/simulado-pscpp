@@ -1,0 +1,1 @@
+export default function Page(){return <main className="wrap admin-wrap"><h1>Configurações</h1><p>Variáveis: EXAM_WEEKLY_INTERVAL_DAYS, PSCPP_ANNUAL_PRICE_CENTS, MERCADO_PAGO_ACCESS_TOKEN, MERCADO_PAGO_WEBHOOK_SECRET.</p></main>}

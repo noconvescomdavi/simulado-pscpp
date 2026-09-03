@@ -1,22 +1,27 @@
 import { redirect } from "next/navigation";
 import { getSession } from "../../../lib/auth";
-import { query } from "../../../lib/db";
-import SimuladoClient from "./SimuladoClient";
+import { getUserAccess } from "../../../lib/access";
+import { getQuestionBank } from "../../../lib/question-banks";
+import { subjectLabel } from "../../../lib/subjects";
+import StudentHeader from "../../components/StudentHeader";
+import Client from "../[subject]/Client";
 
-export const metadata = {
-  title: "Simulado de Manobrabilidade",
-  description: "Prova interativa de Manobrabilidade com 100 questões aleatórias e correção comentada.",
-};
-
-export default async function SimuladoManobrabilidade() {
+export default async function Page() {
   const session = await getSession();
-  if (!session) redirect("/login?next=/simulado/manobrabilidade");
+  if (!session) redirect("/login");
+  if (!(await getUserAccess(session.id))?.active) redirect("/comprar");
 
-  const access = await query(
-    "select status from user_access where user_id=$1 and product_code='pscpp-vitalicio'",
-    [session.id]
+  const subject = "manobrabilidade";
+  const bank = getQuestionBank(subject);
+
+  return (
+    <>
+      <StudentHeader active="simulados" />
+      <Client
+        subject={subject}
+        title={subjectLabel(subject)}
+        ready={Boolean(bank?.questions?.length)}
+      />
+    </>
   );
-  if (access.rows[0]?.status !== "active") redirect("/comprar?locked=1");
-
-  return <SimuladoClient userEmail={session.email} />;
 }

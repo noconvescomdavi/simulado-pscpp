@@ -12,7 +12,7 @@ export async function POST(req){
   const hash=await argon2.hash(password,{type:argon2.argon2id});
   const r=await query("insert into users(email,password_hash) values($1,$2) returning id,email,role",[normalized,hash]);
   const u=r.rows[0];
-  await query("insert into user_access(user_id,product_code,status,lifetime) values($1,'pscpp-vitalicio','pending',true) on conflict do nothing",[u.id]);
+  await query("insert into user_access(user_id,product_code,status,lifetime) values($1,'pscpp-vitalicio','pending',false) on conflict do nothing",[u.id]);
   await createSession(u);
   return Response.json({ok:true,user:{id:u.id,email:u.email}});
  }catch(e){console.error(e);return Response.json({error:"Não foi possível criar a conta."},{status:500})}

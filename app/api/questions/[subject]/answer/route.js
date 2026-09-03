@@ -1,21 +1,14 @@
-import { getSession } from "../../../../../lib/auth";
-import { withTransaction, query } from "../../../../../lib/db";
+import { accessDeniedResponse, getAccessContext } from "../../../../../lib/access";
+import { withTransaction } from "../../../../../lib/db";
 import { getQuestion } from "../../../../../lib/question-banks";
 import { normalizeSubject } from "../../../../../lib/subjects";
 
 const ANSWERS = new Set(["A", "B", "C", "D", "E"]);
 
 export async function POST(request, { params }) {
-  const session = await getSession();
+  const { session, access, active } = await getAccessContext();
   if (!session) return Response.json({ error: "Não autenticado" }, { status: 401 });
-
-  const access = await query(
-    "select status from user_access where user_id=$1 and product_code='pscpp-vitalicio'",
-    [session.id]
-  );
-  if (access.rows[0]?.status !== "active") {
-    return Response.json({ error: "Licença inativa" }, { status: 403 });
-  }
+  if (!active) return accessDeniedResponse(access);
 
   const { subject: rawSubject } = await params;
   const subject = normalizeSubject(rawSubject);

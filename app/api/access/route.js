@@ -1,2 +1,12 @@
-import {getSession} from "../../../lib/auth";import {query} from "../../../lib/db";
-export async function GET(){const s=await getSession();if(!s)return Response.json({active:false},{status:401});const r=await query("select status,lifetime,activated_at from user_access where user_id=$1 and product_code='pscpp-vitalicio'",[s.id]);const a=r.rows[0];return Response.json({active:a?.status==="active",access:a||null})}
+import { getAccessContext } from "../../../lib/access";
+
+export const dynamic = "force-dynamic";
+
+export async function GET() {
+  const { session, access, active } = await getAccessContext();
+  if (!session) return Response.json({ active: false, error: "Não autenticado." }, { status: 401 });
+  return Response.json(
+    { active, access },
+    { headers: { "Cache-Control": "private, no-store" } }
+  );
+}

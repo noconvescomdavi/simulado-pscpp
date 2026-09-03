@@ -1,0 +1,1 @@
+import {availableQuestionBanks} from "../../../lib/question-banks";export default function Page(){return <main className="wrap admin-wrap"><h1>Questões</h1><div className="grid">{availableQuestionBanks().map(x=><article className="card" key={x.slug}><h3>{x.title}</h3><p>{x.count} questões</p><code>data/questions/{x.slug}.json</code></article>)}</div></main>}
