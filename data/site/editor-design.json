@@ -4,5 +4,16 @@
     "favicon": "",
     "elements": {}
   },
-  "pages": {}
+  "pages": {
+    "/area-do-aluno": {
+      "elements": {
+        "body > header.dashboardHeader > div.dashboardHeaderInner > a.dashboardBrand > img": {
+          "attrs": {
+            "src": "estibordo/logos/estibordo-logo-header.png"
+          },
+          "hidden": false
+        }
+      }
+    }
+  }
 }
