@@ -1,113 +1,144 @@
-# SIMULADOS PSCPP — Next.js + PostgreSQL
+# ESTIBORDO — Biblioteca automática pesquisável
 
-Versão sem Supabase. A autenticação é própria e o banco é PostgreSQL.
+## O que mudou nesta versão
 
-## Componentes
-- Next.js / Vercel
-- PostgreSQL (recomendado: Neon conectado à Vercel)
-- `pg` para acesso ao banco
-- Argon2id para hash de senhas
-- JWT em cookie HttpOnly/Secure/SameSite
-- Gateway de pagamento: preparado para ser adicionado depois
-- Conteúdo anterior preservado em `public/study-content/`
+Você NÃO precisa renomear os PDFs e NÃO precisa preencher `manifest.json` antes de importar.
 
-## 1. Banco
-Crie um PostgreSQL e execute:
-`db/schema.sql`
+Basta colocar os arquivos em:
 
-Na Vercel, adicione:
-`DATABASE_URL`
+`C:\simulado-pscpp\biblioteca-pdfs\`
 
-## 2. Chave da sessão
-Crie `AUTH_SECRET` com uma string aleatória longa e salve somente nas Environment Variables da Vercel.
+O importador:
+1. varre todos os `.pdf`;
+2. calcula SHA-256;
+3. lê metadados internos do PDF;
+4. analisa as primeiras páginas;
+5. tenta identificar título, autores, edição, editora, ano, ISBN e idioma;
+6. conta as páginas;
+7. gera/atualiza `manifest.json` automaticamente;
+8. classifica os metadados como `auto_verified` ou `review`;
+9. importa páginas e trechos para o PostgreSQL;
+10. não duplica PDFs já conhecidos pelo SHA-256.
 
-## 3. Desenvolvimento local
-Copie `.env.example` para `.env.local` e preencha as variáveis.
+## Limite importante
 
-```cmd
-npm install
-npm run dev
+Nenhum sistema consegue garantir 100% de precisão em todos os PDFs.
+
+Alguns arquivos têm metadados ruins, por exemplo:
+- Title: Microsoft Word - final.doc
+- Author: Administrator
+
+Nesses casos, o importador tenta extrair dados das primeiras páginas.
+Se a confiança não for suficiente, marca:
+
+`"metadata_status": "review"`
+
+Você pode corrigir manualmente apenas esses casos no `manifest.json`.
+Na próxima execução, seus campos preenchidos manualmente prevalecem sobre a detecção automática.
+
+## Instalação Python
+
+```powershell
+cd C:\simulado-pscpp
+py -m pip install pymupdf "psycopg[binary]" python-dotenv beautifulsoup4
 ```
 
-## 4. Produção
-Depois de subir no GitHub, a Vercel detecta Next.js e executa `npm install` + `npm run build`.
+## 1. Apenas identificar os PDFs
 
-## Banco de questões de Manobrabilidade
+Antes de gravar no banco, você pode gerar só o manifesto:
 
-O catálogo das questões fica em `data/questions/manobrabilidade.json`, fora da pasta pública. A rota protegida `/api/questions/manobrabilidade` somente entrega o conteúdo para usuário autenticado e com licença ativa.
-
-Para importar ou substituir o banco, coloque `banco_300_questoes_manobrabilidade.json` em Downloads e execute, na raiz do projeto:
-
-```cmd
-IMPORTAR-MANOBRABILIDADE.cmd
+```powershell
+py scripts\import_library_auto.py --scan-only
 ```
 
-Também é possível informar outro caminho:
+Resultado:
 
-```cmd
-IMPORTAR-MANOBRABILIDADE.cmd "D:\Bancos\manobrabilidade.json"
+```text
+Encontrados 12 PDFs.
+[1/12] Analisando livro01.pdf...
+  [OK] Principles of Naval Architecture | en | 812 páginas
+
+[2/12] Analisando scan_final.pdf...
+  [REVISAR] Ship Manoeuvring Principles | en | 341 páginas
+
+Manifesto salvo em:
+C:\simulado-pscpp\biblioteca-pdfs\manifest.json
 ```
 
-O importador valida quantidade, IDs, alternativas, gabarito, comentários e fontes antes de gravar o arquivo utilizado pela plataforma. Ao final, ele executa o build de produção.
+## 2. Importar para o PostgreSQL
 
-## Prova interativa e métricas
+Depois:
 
-O simulado de Manobrabilidade utiliza duas etapas por questão: o aluno seleciona uma alternativa e clica em **Salvar resposta**. Somente após o servidor registrar e corrigir a resposta são exibidos o gabarito, o comentário e a fonte. Em seguida, o botão **Próxima questão** é liberado.
-
-As respostas alimentam as tabelas existentes `question_answers` e `question_stats`. Ao encerrar a prova, o resumo é registrado em `exam_attempts`. Não é necessária nova migração SQL.
-
-A Área do Aluno apresenta:
-
-- provas realizadas, questões, acertos, erros e aproveitamento na soma das matérias;
-- as mesmas estatísticas para cada uma das sete disciplinas;
-- melhor nota por disciplina;
-- tópicos com maior recorrência e percentual de erros;
-- ranking geral de conteúdos prioritários para revisão.
-
-A API foi preparada para bancos de outras matérias. Cada novo banco deve ser registrado em `lib/question-banks.js`; as métricas passam a agrupá-lo automaticamente pela disciplina, módulo e tópico.
-
-## 5. Ativar aluno manualmente durante a fase sem gateway
-```sql
-UPDATE user_access
-SET status='active', lifetime=TRUE, activated_at=NOW()
-WHERE user_id=(
-  SELECT id FROM users WHERE LOWER(email)=LOWER('aluno@email.com')
-)
-AND product_code='pscpp-vitalicio';
+```powershell
+py scripts\import_library_auto.py
 ```
 
-## Segurança
-- Nunca envie `.env`, `DATABASE_URL` ou `AUTH_SECRET` ao GitHub.
-- Senhas são armazenadas como Argon2id.
-- Cookie de sessão é HttpOnly e Secure em produção.
-- A API usa queries parametrizadas.
-- O gateway futuro deve ativar a licença exclusivamente após confirmação server-to-server.
+## 3. Aplicar migration
 
-## Observação importante sobre o conteúdo legado
-O portal valida login/licença no servidor antes de mostrar a central de estudos. Entretanto, os módulos RIPEAM/CIS e páginas antigas preservadas em `public/study-content/` continuam sendo arquivos estáticos. Para proteção comercial forte, migre gradualmente esse conteúdo para componentes/rotas Next.js protegidas, em vez de mantê-lo em `/public`.
+Antes da primeira importação, execute no PostgreSQL:
 
-## Git
-```cmd
-cd /d "C:\simulado-pscpp"
-git add .
-git commit -m "Migra plataforma PSCPP para Next.js e PostgreSQL"
-git push origin main
+`db/migrations/006_library_search.sql`
+
+## 4. Conteúdo programático
+
+Depois rode:
+
+```powershell
+py scripts\seed_syllabus_topics.py
 ```
 
-## Painel administrativo
+Isso lê automaticamente os tópicos já existentes nas páginas HTML, como:
 
-Rota: `/admin`
+- 1.1 Resistência friccional
+- 1.2 Resistência às ondas
+- 2.5 Cavitação
 
-O painel valida a sessão e confirma no PostgreSQL que o usuário possui `role='admin'` e `status='active'`. Operações de ativação/revogação de licença e bloqueio/desbloqueio de conta também são validadas no servidor.
+e grava em `syllabus_topics`.
 
-Para ativar o primeiro administrador, execute `ATIVAR-PAINEL-ADMIN.sql` no Neon SQL Editor. Depois acesse `/admin` ou use o botão `Admin` exibido na Área do Aluno.
+## 5. Como corrigir um documento detectado errado
 
-Recursos atuais do painel:
-- indicadores de alunos, licenças ativas, pendentes e contas bloqueadas;
-- pesquisa por e-mail;
-- situação da conta e da licença;
-- data de cadastro, último login e ativação;
-- número de simulados, questões respondidas, média e progresso;
-- ativação e revogação de licença;
-- bloqueio e desbloqueio de conta;
-- registro das ações administrativas em `audit_log`.
+Abra:
+
+`C:\simulado-pscpp\biblioteca-pdfs\manifest.json`
+
+Localize o arquivo:
+
+```json
+{
+  "file": "arquivo_0023.pdf",
+  "title": "Título correto",
+  "authors": ["Autor correto"],
+  "edition": "4th edition",
+  "language": "en"
+}
+```
+
+Salve e execute novamente:
+
+```powershell
+py scripts\import_library_auto.py
+```
+
+O importador preserva esses valores como `manual_override`.
+
+## 6. PDFs escaneados
+
+Esta versão NÃO faz OCR automaticamente.
+
+Se o PDF for somente imagem, o sistema poderá identificar poucas informações ou nenhuma.
+Nesse caso, transforme o PDF em um PDF pesquisável com OCR antes da importação.
+
+## 7. PDFs e GitHub
+
+Não versione os livros.
+
+Adicione ao `.gitignore`:
+
+```gitignore
+biblioteca-pdfs/*.pdf
+biblioteca-pdfs/manifest.json
+```
+
+## 8. Direitos autorais
+
+Mantenha os PDFs privados. Na interface do aluno, prefira trechos curtos e referências bibliográficas, salvo quando houver autorização para disponibilizar a obra integral.

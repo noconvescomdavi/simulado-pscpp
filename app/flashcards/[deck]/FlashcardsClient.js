@@ -256,6 +256,10 @@ function renderRipeamPro(card) {
 
 
 
+
+
+
+
 /* RIPEAM_CINEMATIC_V2_START */
 function renderRipeamCinematic(card) {
   const v=card?.visual||{}, id=String(card?.id||""), code=String(card?.code||"RIPEAM"), title=String(card?.name||"");
