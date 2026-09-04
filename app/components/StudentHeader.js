@@ -3,7 +3,9 @@ import styles from "./student-header.module.css";
 
 export default async function StudentHeader({ active = "" }) {
   const admin = await getAdmin();
+
   const links = [
+    ["Hoje", "/hoje", "hoje"],
     ["Painel", "/area-do-aluno", "painel"],
     ["Conteúdos", "/conteudos", "conteudos"],
     ["Simulados", "/simulado", "simulados"],
@@ -17,13 +19,16 @@ export default async function StudentHeader({ active = "" }) {
         <a className={styles.brand} href="/">
           <img src="/estibordo/logos/estibordo-logo-header.png" alt="ESTIBORDO" />
         </a>
+
         <nav className={styles.links}>
           {links.map(([label, href, key]) => (
             <a key={href} className={active === key ? styles.active : ""} href={href}>
               {label}
             </a>
           ))}
+
           {admin && <a href="/admin">Admin</a>}
+
           <form action="/api/auth/logout" method="post">
             <button>Sair</button>
           </form>

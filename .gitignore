@@ -1,13 +1,35 @@
 node_modules/
 .next/
+.vercel/
+
 .env
 .env.local
 .env.production
-.vercel/
-
-.vercel
 .env*
 
 biblioteca-pdfs/*.pdf
-
 biblioteca-pdfs/manifest.json
+
+# Backups e artefatos locais
+.backup-*/
+.estibordo-editor-backups/
+.estibordo-update-backups/
+_backup_*/
+*.backup-*
+*.bak
+*.bak-*
+*.patch
+
+# Python local / importadores
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+Lib/
+Scripts/
+lib/site-packages/
+
+# Temporários
+.DS_Store
+Thumbs.db
+*.log

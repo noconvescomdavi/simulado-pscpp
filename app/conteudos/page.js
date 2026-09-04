@@ -6,6 +6,7 @@ import styles from "./conteudos.module.css";
 
 const contents = [
   ["Banco de questões", "Crie cadernos aleatórios com até 100 questões.", "/conteudos/banco-de-questoes"],
+  ["Caderno de erros", "Revise automaticamente as questões que você mais erra.", "/conteudos/caderno-de-erros"],
   ["Simulados", "Provas emitidas e histórico completo.", "/simulado"],
   ["Flashcards", "Revise conteúdos com métricas próprias, repetição de erros e modo prova.", "/flashcards"],
   ["I – Manobrabilidade do Navio", "/study-content/simulado/manobrabilidade/"],
@@ -31,6 +32,7 @@ export default async function Page() {
       <main className={styles.page}>
         <span>CENTRAL DE ESTUDOS</span>
         <h1>Conteúdos</h1>
+
         <section className={styles.grid}>
           {contents.map((item) => {
             const title = item[0];
