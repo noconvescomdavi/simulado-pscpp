@@ -261,7 +261,48 @@ function renderRipeamPro(card) {
 
 
 /* RIPEAM_CINEMATIC_V2_START */
+
+/* RIPEAM_PDF_IMAGES_START */
+const RIPEAM_PDF_IMAGES = {
+  "R23-PD": "/flashcards/ripeam/navigation-rules-pdf/rule23_power_over50.png",
+  "R24-TOW3": "/flashcards/ripeam/navigation-rules-pdf/rule24_tow_over200.png",
+  "R24-TOW2": "/flashcards/ripeam/navigation-rules-pdf/rule24_tow_short.png",
+  "R25-SAIL": "/flashcards/ripeam/navigation-rules-pdf/rule25_sailing.png",
+  "R26-TRAWL": "/flashcards/ripeam/navigation-rules-pdf/rule26_trawling_making_way.png",
+  "R26-FISH": "/flashcards/ripeam/navigation-rules-pdf/rule26_fishing_making_way.png",
+  "R27-NUC": "/flashcards/ripeam/navigation-rules-pdf/rule27_nuc_making_way.png",
+  "R27-RAM": "/flashcards/ripeam/navigation-rules-pdf/rule27_ram_making_way.png",
+  "R27-DREDGE-BLOCK": "/flashcards/ripeam/navigation-rules-pdf/rule27_dredging_obstructed.png",
+  "R27-DREDGE-PASS": "/flashcards/ripeam/navigation-rules-pdf/rule27_dredging_safe_side.png",
+  "R27-MINES": "/flashcards/ripeam/navigation-rules-pdf/rule27_mineclearance.png",
+  "R28-CBD": "/flashcards/ripeam/navigation-rules-pdf/rule28_constrained_draught.png",
+  "R29-PILOT": "/flashcards/ripeam/navigation-rules-pdf/rule29_pilot_making_way.png",
+  "R30-ANCH": "/flashcards/ripeam/navigation-rules-pdf/rule30_anchor.png",
+  "R30-AGROUND": "/flashcards/ripeam/navigation-rules-pdf/rule30_aground.png",
+  "SH-BALL": "/flashcards/ripeam/navigation-rules-pdf/shape_ball_anchor.png",
+  "SH-2BALL": "/flashcards/ripeam/navigation-rules-pdf/shape_two_balls_nuc.png",
+  "SH-BDB": "/flashcards/ripeam/navigation-rules-pdf/shape_ball_diamond_ball_ram.png",
+  "SH-CYL": "/flashcards/ripeam/navigation-rules-pdf/shape_cylinder_cbd.png",
+  "SH-CONE-DOWN": "/flashcards/ripeam/navigation-rules-pdf/shape_cone_down_sail_motor.png",
+  "SH-2CONE": "/flashcards/ripeam/navigation-rules-pdf/shape_two_cones_fishing.png",
+  "SH-3BALL": "/flashcards/ripeam/navigation-rules-pdf/shape_three_balls_aground.png",
+  "SH-DIAMOND": "/flashcards/ripeam/navigation-rules-pdf/shape_diamond_long_tow.png"
+};
+
+function renderRipeamPdfImage(card) {
+  const src = RIPEAM_PDF_IMAGES[String(card?.id || "")];
+  if (!src) return "";
+  const alt = `${String(card?.code || "RIPEAM")} - ${String(card?.name || "")}`;
+  return `<div style="width:100%;height:100%;min-height:260px;display:flex;align-items:center;justify-content:center;background:#cfcfcf;border-radius:20px;overflow:hidden;box-shadow:0 14px 34px rgba(0,0,0,.28)">
+    <img src="${src}" alt="${alt}" loading="eager" decoding="async" style="width:100%;height:100%;max-height:430px;object-fit:contain;display:block;background:#cfcfcf" />
+  </div>`;
+}
+/* RIPEAM_PDF_IMAGES_END */
+
+
 function renderRipeamCinematic(card) {
+  const pdfReference = renderRipeamPdfImage(card);
+  if (pdfReference) return pdfReference;
   const v=card?.visual||{}, id=String(card?.id||""), code=String(card?.code||"RIPEAM"), title=String(card?.name||"");
   const defs=`<defs>
     <linearGradient id="csky" x2="0" y2="1"><stop stop-color="#071a2a"/><stop offset=".48" stop-color="#255b78"/><stop offset=".75" stop-color="#e19b68"/><stop offset="1" stop-color="#f3c38f"/></linearGradient>
