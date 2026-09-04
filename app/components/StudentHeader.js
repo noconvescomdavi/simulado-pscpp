@@ -14,7 +14,7 @@ export default async function StudentHeader({ active = "" }) {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        <a className={styles.brand} href="/area-do-aluno">
+        <a className={styles.brand} href="/">
           <img src="/estibordo/logos/estibordo-logo-header.png" alt="ESTIBORDO" />
         </a>
         <nav className={styles.links}>
