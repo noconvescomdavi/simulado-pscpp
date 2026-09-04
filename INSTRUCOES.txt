@@ -1,0 +1,19 @@
+INSTALAÇÃO — BANCO DE CONHECIMENTOS GERAIS
+
+1. Extraia todo o conteúdo deste ZIP dentro da pasta do repositório simulado-pscpp.
+2. Execute INSTALAR-CONHECIMENTOS-GERAIS.cmd no Windows.
+3. O instalador localizará a raiz pelo package.json e criará backups com data e hora.
+4. Ele copiará o banco e o validador, executará a validação e depois npm run build.
+5. Em caso de falha de validação ou build, os arquivos anteriores serão restaurados.
+6. Commit e push só serão oferecidos depois do sucesso e exigirão confirmação separada.
+
+Instalação manual:
+
+1. Copie data/questions/conhecimentos-gerais.json para o mesmo caminho no projeto.
+2. Copie scripts/validate-question-bank.mjs para o mesmo caminho no projeto.
+3. Na raiz do projeto, execute:
+   node scripts/validate-question-bank.mjs data/questions/conhecimentos-gerais.json
+4. Se o resultado for OK, execute:
+   npm run build
+
+O instalador nunca executa push sem confirmação explícita.
