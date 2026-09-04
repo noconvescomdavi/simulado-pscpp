@@ -144,26 +144,6 @@ function renderSignal(code) {
   return `<div class="${styles.signalGroup}">${parts.join("")}</div>`;
 }
 
-function renderRipeamVisual(card) {
-  const v=card?.visual;if(!v)return "";
-  const C={red:"#e23b45",green:"#21b36b",white:"#fff",yellow:"#f4c542"};
-  const wrap=(b)=>`<svg class="${styles.signalSvg}" viewBox="0 0 600 330" xmlns="http://www.w3.org/2000/svg"><rect width="600" height="330" rx="24" fill="#061522"/>${b}</svg>`;
-  const light=(x,y,c)=>`<circle cx="${x}" cy="${y}" r="14" fill="${C[c]||c}" stroke="#02070b" stroke-width="4"/><circle cx="${x}" cy="${y}" r="25" fill="${C[c]||c}" opacity=".12"/>`;
-  const ship=(x,y,a=0)=>`<g transform="translate(${x} ${y}) rotate(${a})"><path d="M0-52C18-35 22-5 18 30L0 52-18 30C-22-5-18-35 0-52Z" fill="#e9eef2" stroke="#597080" stroke-width="3"/><circle cx="-10" cy="0" r="6" fill="#e23b45"/><circle cx="10" cy="0" r="6" fill="#21b36b"/></g>`;
-  if(v.type==="headon")return wrap(`${ship(300,75,180)}${ship(300,255)}<path d="M300 125Q365 150 400 110M300 205Q235 180 200 220" fill="none" stroke="#21b36b" stroke-width="7"/><text x="300" y="168" text-anchor="middle" fill="white" font-size="20" font-weight="800">AMBAS GUINAM PARA BORESTE</text>`);
-  if(v.type==="crossing")return wrap(`${ship(120,210,90)}${ship(410,90,180)}<path d="M70 210H500M410 45V285" stroke="#9dd6f5" stroke-width="5" stroke-dasharray="12 10"/><circle cx="410" cy="210" r="24" fill="none" stroke="#e23b45" stroke-width="5"/><text x="300" y="300" text-anchor="middle" fill="white" font-size="18">QUEM AVISTA A OUTRA POR BORESTE MANOBRA</text>`);
-  if(v.type==="overtaking")return wrap(`${ship(300,90)}${ship(240,245,-12)}<path d="M300 90L170 280M300 90L430 280" stroke="#f4c542" stroke-width="4" stroke-dasharray="10 8"/><text x="300" y="310" text-anchor="middle" fill="white" font-size="18">&gt; 22,5° PARA RÉ DO TRAVÉS</text>`);
-  if(v.type==="tss")return wrap(`<rect x="35" y="60" width="530" height="70" rx="10" fill="#174b6b"/><rect x="35" y="200" width="530" height="70" rx="10" fill="#174b6b"/><path d="M60 95H540M540 235H60" stroke="#9dd6f5" stroke-width="6" stroke-dasharray="20 12"/><path d="M300 290V40" stroke="#f4c542" stroke-width="7" stroke-dasharray="12 9"/><text x="315" y="170" fill="white" font-size="20" font-weight="800">CRUZAR ≈ PERPENDICULAR AO FLUXO</text>`);
-  if(v.type==="channel")return wrap(`<path d="M45 285C160 220 185 105 300 80S460 130 555 40" fill="none" stroke="#246c94" stroke-width="95"/><path d="M45 285C160 220 185 105 300 80S460 130 555 40" fill="none" stroke="#c7e5f5" stroke-width="4" stroke-dasharray="12 10"/>${ship(255,120,42)}<text x="300" y="315" text-anchor="middle" fill="white" font-size="18">MANTER-SE AO LIMITE DE BORESTE</text>`);
-  if(v.type==="radar")return wrap(`<circle cx="300" cy="165" r="130" fill="#062b29" stroke="#2d8f76" stroke-width="3"/><circle cx="300" cy="165" r="85" fill="none" stroke="#2d8f76"/><circle cx="300" cy="165" r="42" fill="none" stroke="#2d8f76"/><path d="M300 35V295M170 165H430M300 165L390 75" stroke="#50e3a4" stroke-width="3"/><circle cx="390" cy="75" r="9" fill="#f4c542"/>`);
-  if(v.type==="sector")return wrap(`${v.sector==="side"?'<path d="M300 165L165 55A155 155 0 0 0 155 210Z" fill="#e23b45" opacity=".45"/><path d="M300 165L435 55A155 155 0 0 1 445 210Z" fill="#21b36b" opacity=".45"/>':v.sector==="stern"?'<path d="M300 165L180 270A155 155 0 0 1 420 270Z" fill="white" opacity=".35"/>':'<path d="M300 165L170 55A155 155 0 1 1 430 55Z" fill="white" opacity=".35"/>'}${ship(300,165)}`);
-  if(v.type==="lights"||v.type==="vessel"){let ls=v.lights||[];let body=v.type==="vessel"?'<path d="M120 260Q300 295 480 260L445 305H155Z" fill="#233a49"/><path d="M250 260V165M350 260V165" stroke="#7890a0" stroke-width="5"/>':'';if(v.kind==="mine")body+=light(300,70,"green")+light(220,140,"green")+light(380,140,"green");else body+=ls.map((c,i)=>light(300,65+i*48,c)).join("");return wrap(body);}
-  if(v.type==="shapes"){const d=(q,y)=>q==="ball"?`<circle cx="300" cy="${y}" r="25" fill="#05090d"/>`:q==="diamond"?`<polygon points="300,${y-32} 334,${y} 300,${y+32} 266,${y}" fill="#05090d"/>`:q==="cylinder"?`<rect x="273" y="${y-35}" width="54" height="70" fill="#05090d"/>`:q==="coneUp"?`<polygon points="300,${y-34} 336,${y+30} 264,${y+30}" fill="#05090d"/>`:`<polygon points="264,${y-30} 336,${y-30} 300,${y+34}" fill="#05090d"/>`;let a=v.shapes||[];let st=165-(a.length-1)*48;return wrap(`<rect x="225" y="25" width="150" height="280" rx="20" fill="#eef2f4"/>${a.map((q,i)=>d(q,st+i*96)).join("")}`);}
-  if(v.type==="sound"){let x=65;let b=(v.pattern||[]).map(q=>{let w=q==="long"?115:34,o=`<rect x="${x}" y="145" width="${w}" height="28" rx="14" fill="${q==="long"?"#f4c542":"#e9eef2"}"/>`;x+=w+20;return o}).join("");return wrap(`${b}<path d="M70 225Q100 190 130 225T190 225T250 225T310 225T370 225T430 225T490 225" fill="none" stroke="#3aa8df" stroke-width="5"/><text x="300" y="285" text-anchor="middle" fill="white" font-size="19">CURTO ≈ 1 s • LONGO = 4–6 s</text>`);}
-  return "";
-}
-function renderCardVisual(card){return card?.visual?renderRipeamVisual(card):renderSignal(card?.code);}
-
 function progressMap(rows) {
   return Object.fromEntries((rows || []).map((item) => [String(item.card_key), item]));
 }
@@ -235,12 +215,7 @@ export default function FlashcardsClient({ deck, initialState }) {
         (filter === "medical" && (card.category === "medical" || tags.includes("medical"))) ||
         (filter === "distress" && tags.includes("distress")) ||
         (filter === "difficult" && item.difficult === true) ||
-        (filter === "wrong" && item.last_answer_correct === false) ||
-        (filter === "rules" && card.category === "rules") ||
-        (filter === "lights" && card.category === "lights") ||
-        (filter === "shapes" && card.category === "shapes") ||
-        (filter === "sounds" && card.category === "sounds") ||
-        (filter === "traps" && card.category === "traps");
+        (filter === "wrong" && item.last_answer_correct === false);
 
       if (!tagMatch) return false;
       if (!q) return true;
@@ -336,11 +311,6 @@ export default function FlashcardsClient({ deck, initialState }) {
     if (card.category === "flags") return language === "pt" ? "Bandeira" : "Flag";
     if (card.category === "numerals") return language === "pt" ? "Flâmula numeral" : "Numeral pennant";
     if (card.category === "medical") return language === "pt" ? "Médico" : "Medical";
-    if (card.category === "rules") return language === "pt" ? "Regra" : "Rule";
-    if (card.category === "lights") return language === "pt" ? "Luzes" : "Lights";
-    if (card.category === "shapes") return language === "pt" ? "Marcas diurnas" : "Day shapes";
-    if (card.category === "sounds") return language === "pt" ? "Sinais sonoros" : "Sound signals";
-    if (card.category === "traps") return language === "pt" ? "Pegadinha de prova" : "Exam trap";
     if ((card.tags || []).includes("distress")) return "Distress";
     return language === "pt" ? "Combinação" : "Combination";
   }
@@ -628,7 +598,6 @@ export default function FlashcardsClient({ deck, initialState }) {
             ["all", "Todos"],
             ["flags", "🏳 Bandeiras"],
             ["numerals", "🔢 Numerais"],
-            ...(deck.slug === "ripeam" ? [["rules","📖 Regras"],["lights","🚦 Luzes"],["shapes","◆ Marcas"],["sounds","🔊 Sinais sonoros"],["traps","🎯 Pegadinhas"]] : []),
             ["distress", "🚨 Distress"],
             ["combinations", "🔤 Combinações"],
             ["medical", "🩺 Médico"],
@@ -703,7 +672,7 @@ export default function FlashcardsClient({ deck, initialState }) {
                     </div>
                     <div
                       className={styles.flagStage}
-                      dangerouslySetInnerHTML={{ __html: renderCardVisual(current) }}
+                      dangerouslySetInnerHTML={{ __html: renderSignal(current.code) }}
                     />
                     <div className={styles.codeBlock}>
                       <small>CÓDIGO</small>
@@ -758,7 +727,7 @@ export default function FlashcardsClient({ deck, initialState }) {
                 </div>
                 <div
                   className={styles.examFlag}
-                  dangerouslySetInnerHTML={{ __html: renderCardVisual(examCard) }}
+                  dangerouslySetInnerHTML={{ __html: renderSignal(examCard.code) }}
                 />
                 <p>{language === "pt" ? "Qual é o significado deste sinal?" : "What is the meaning of this signal?"}</p>
                 <h2>{examCard.code}</h2>
