@@ -35,9 +35,6 @@ body{padding-top:76px!important}
 <nav><a href="/area-do-aluno">Painel</a><a href="/conteudos">Conteúdos</a><a href="/simulado">Simulados</a><a href="/perfil">Perfil</a></nav>
 </div></header>`;
 
-const LIBRARY_ASSETS = `
-<link rel="stylesheet" href="/estibordo/library/library-ui.css">
-<script defer src="/estibordo/library/library-ui.js"></script>`;
 
 function deny(req, session, access) {
   if (!session) return Response.redirect(new URL("/login", req.url), 303);
@@ -74,12 +71,6 @@ export async function GET(req, { params }) {
 
     if (ext === ".html") {
       let html = body.toString("utf8");
-
-      if (/<head[^>]*>/i.test(html)) {
-        html = html.replace(/<\/head>/i, `${LIBRARY_ASSETS}</head>`);
-      } else {
-        html = LIBRARY_ASSETS + html;
-      }
 
       html = /<body[^>]*>/i.test(html)
         ? html.replace(/<body([^>]*)>/i, `<body$1>${HEADER}`)
