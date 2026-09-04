@@ -137,6 +137,10 @@ export default function Client({ subject, title, ready }) {
       const response = await fetch(`/api/exams/${subject}`, { method: "POST" });
       const payload = await response.json().catch(() => ({}));
       if (!response.ok) {
+        if (payload.code === "TRIAL_LIMIT" || payload.trial_exhausted) {
+          location.href = "/teste-gratis-excedido?recurso=simulado";
+          return;
+        }
         setError(payload.error || "Não foi possível iniciar o simulado.");
         if (payload.next_available_at) {
           setState({ state: "available", ...payload, can_start: false });

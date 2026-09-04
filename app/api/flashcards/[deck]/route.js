@@ -1,5 +1,5 @@
 import { getSession } from "../../../../lib/auth";
-import { getUserAccess, accessDeniedResponse } from "../../../../lib/access";
+import { getEntitlement } from "../../../../lib/entitlement";
 import {
   finishFlashcardSession,
   getFlashcardDeck,
@@ -16,12 +16,14 @@ async function context(params) {
     return { response: Response.json({ error: "Não autenticado." }, { status: 401 }) };
   }
 
-  const access = await getUserAccess(session.id);
-  if (!access?.active) {
-    return { response: accessDeniedResponse(access) };
+  const { deck: slug } = await params;
+  const entitlement = await getEntitlement(session.id);
+  const trialAllowed = entitlement.trial && String(slug).toLowerCase() === "cis";
+
+  if (!entitlement.active && !trialAllowed) {
+    return { response: Response.json({ error: "Acesso nÃ£o liberado." }, { status: 403 }) };
   }
 
-  const { deck: slug } = await params;
   const deck = await getFlashcardDeck(slug);
 
   if (!deck) {

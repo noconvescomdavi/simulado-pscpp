@@ -1,4 +1,4 @@
-﻿
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
 
 *{box-sizing:border-box}
@@ -136,7 +136,7 @@ h1,h2,h3,h4,.btn,.brand,.eyebrow{font-family:"Poppins",Arial,sans-serif}
   .footerMain{grid-template-columns:1fr 1fr}
 }
 @media(max-width:700px){
-  .nav{height:68px}.navin{padding:0 13px}.brand{width:195px}.links a:first-child{display:none}.links a{padding:9px 10px}
+  .nav{height:68px}.navin{padding:0 13px}.brand{width:195px}.links a{padding:9px 10px}
   .heroEstibordo{padding:45px 17px 0;min-height:auto}.heroCopy h1{font-size:43px}.heroCopy p{font-size:13px}
   .heroStats{grid-template-columns:1fr 1fr}.heroVisual{height:310px}.hotelFlag{width:66px;height:44px}
   .featureGrid{grid-template-columns:1fr}.homeDark,.dashboardPreview{padding:55px 0}.homeContainer{padding:0 16px}
@@ -345,3 +345,72 @@ h1,h2,h3,h4,.btn,.brand,.eyebrow{font-family:"Poppins",Arial,sans-serif}
   cursor: pointer;
 }
 
+
+/* ESTIBORDO MOBILE V2 */
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+.mobileMenu{display:none}
+@media(max-width:1020px){
+  .navin{justify-content:space-between;gap:12px}
+  .publicDesktopActions{display:none!important}
+  .mobileMenu{display:block;margin-left:auto;position:relative}
+  .mobileMenu summary{list-style:none;width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.22);border-radius:8px;color:#fff;font-size:22px;cursor:pointer}
+  .mobileMenu summary::-webkit-details-marker{display:none}
+  .mobileMenuPanel{position:absolute;right:0;top:52px;width:min(88vw,330px);max-height:calc(100vh - 82px);overflow-y:auto;background:#071b2b;border:1px solid rgba(255,255,255,.13);border-radius:12px;padding:10px;box-shadow:0 18px 45px rgba(0,0,0,.35)}
+  .mobileMenuPanel a{display:block;color:#fff;padding:11px 12px;border-radius:8px;font-size:12px;font-weight:800}
+  .mobileMenuPanel a:hover{background:rgba(255,255,255,.08)}
+  .mobileStudentArea{background:#c8102e!important;margin-bottom:5px}
+  .mobileMenuGroup{border-top:1px solid rgba(255,255,255,.08);margin-top:5px;padding-top:5px}
+  .mobileSubLink{padding-left:24px!important;color:#b9c8d3!important;font-size:11px!important}
+}
+@media(max-width:700px){
+  .nav{height:64px}
+  .navin{height:64px;padding:0 12px}
+  .brand{width:190px!important;height:54px!important;flex-basis:190px!important}
+  .brand img{height:46px!important;max-width:185px!important}
+  .heroActions{flex-direction:column;align-items:stretch}
+  .heroActions .btn{width:100%}
+  .heroCopy h1{font-size:clamp(35px,11vw,43px)}
+  .heroStats{gap:8px}
+  .dashboardMock{max-width:100%}
+  .sectionIntro h2,.previewCopy h2,.bannerInner h2{overflow-wrap:anywhere}
+  .footerValues{flex-wrap:wrap}
+  .admin-metrics{grid-template-columns:1fr 1fr}
+}
+@media(max-width:430px){
+  .brand{width:165px!important;flex-basis:165px!important}
+  .brand img{max-width:160px!important}
+  .heroEstibordo{padding-left:14px;padding-right:14px}
+  .heroVisual{height:260px!important;min-height:260px!important}
+  .heroStats b{font-size:20px}
+}
+
+/* MINHAS ASSINATURAS */
+.subscriptionPage{min-height:calc(100vh - 76px);background:#eef3f6;padding:40px 18px 70px}
+.subscriptionHero,.subscriptionCard{max-width:980px;margin:0 auto}
+.subscriptionHero>span,.trialLimitCard>span{color:#c8102e;font-size:11px;font-weight:950;letter-spacing:.12em}
+.subscriptionHero h1{font-size:clamp(34px,5vw,52px);margin:8px 0}
+.subscriptionHero p{color:#607181;line-height:1.6}
+.subscriptionCard{margin-top:24px;background:#fff;border:1px solid #dce5eb;border-radius:18px;padding:28px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;box-shadow:0 18px 45px rgba(13,27,42,.08)}
+.subscriptionStatus{display:inline-block;padding:7px 10px;border-radius:999px;font-size:10px;font-weight:950;letter-spacing:.08em}
+.subscriptionStatus.isActive{background:#e8f7ef;color:#176b43}
+.subscriptionStatus.isInactive{background:#fff1f2;color:#922334}
+.subscriptionCard h2{margin:14px 0 8px}
+.subscriptionCard p{color:#607181;line-height:1.55}
+.subscriptionValidity{min-width:250px;display:grid;gap:12px}
+.subscriptionValidity>div{background:#f4f7f9;border-radius:10px;padding:12px}
+.subscriptionValidity small,.subscriptionValidity strong{display:block}
+.subscriptionValidity small{color:#718494;font-size:10px;text-transform:uppercase}
+.subscriptionValidity strong{margin-top:4px;font-size:18px}
+.subscriptionValidity a{display:grid;place-items:center;min-height:46px;background:#c8102e;color:#fff;border-radius:8px;font-size:12px;font-weight:900;padding:0 16px;text-align:center}
+@media(max-width:700px){.subscriptionCard{grid-template-columns:1fr;padding:20px}.subscriptionValidity{min-width:0}}
+
+/* LIMITE TESTE GRATIS */
+.trialLimitPage{min-height:calc(100vh - 76px);display:grid;place-items:center;background:#eef3f6;padding:30px 16px}
+.trialLimitCard{width:min(100%,620px);background:#fff;border:1px solid #dce5eb;border-radius:20px;padding:clamp(24px,6vw,42px);box-shadow:0 24px 60px rgba(13,27,42,.12);text-align:center}
+.trialLimitCard h1{font-size:clamp(30px,6vw,44px);letter-spacing:-.04em;margin:10px 0}
+.trialLimitCard p{color:#607181;line-height:1.7}
+.trialLimitActions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
+.trialLimitActions a{min-height:48px;display:grid;place-items:center;border-radius:9px;font-size:12px;font-weight:900}
+.trialBack{border:1px solid #cbd7df;color:#0d1b2a}
+.trialBuy{background:#c8102e;color:#fff}
+@media(max-width:430px){.trialLimitActions{grid-template-columns:1fr}}

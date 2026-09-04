@@ -1,1 +1,15 @@
-.header{height:76px;background:rgba(8,21,34,.98);border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;z-index:1000}.inner{max-width:1240px;height:100%;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{width:250px;display:block}.brand img{width:100%;max-height:58px;object-fit:contain;display:block}.links{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}.links a,.links button{border:1px solid rgba(255,255,255,.2);background:transparent;color:#fff;border-radius:8px;padding:9px 12px;font-size:11px;font-weight:800;cursor:pointer;text-decoration:none}.links a.active{background:var(--red,#c8102e);border-color:var(--red,#c8102e)}.links form{margin:0}@media(max-width:700px){.header{height:auto;min-height:68px}.inner{padding:9px 12px;gap:8px}.brand{width:170px}.links{gap:5px}.links a,.links button{padding:7px 8px;font-size:9px}}
+.header{min-height:76px;background:rgba(8,21,34,.98);border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;z-index:1000}
+.inner{max-width:1280px;min-height:76px;margin:auto;padding:8px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{width:230px;flex:0 0 230px;display:block}
+.brand img{width:100%;max-height:58px;object-fit:contain;display:block}
+.links{display:flex;align-items:center;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.links a,.links button{border:1px solid rgba(255,255,255,.2);background:transparent;color:#fff;border-radius:8px;padding:9px 10px;font-size:10px;font-weight:800;cursor:pointer;text-decoration:none;white-space:nowrap}
+.links a.active{background:var(--red,#c8102e);border-color:var(--red,#c8102e)}
+.links form{margin:0}
+@media(max-width:900px){
+  .inner{align-items:flex-start;flex-direction:column;gap:4px;padding:7px 12px 9px}
+  .brand{width:180px;flex-basis:auto}
+  .brand img{max-height:48px}
+  .links{width:100%;justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;padding:4px 0 3px;scrollbar-width:thin}
+  .links a,.links button{padding:8px 9px;font-size:9px;flex:0 0 auto}
+}

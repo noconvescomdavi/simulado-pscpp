@@ -1,6 +1,6 @@
 import { notFound, redirect } from "next/navigation";
 import { getSession } from "../../../lib/auth";
-import { getUserAccess } from "../../../lib/access";
+import { getEntitlement } from "../../../lib/entitlement";
 import { getFlashcardDeck, getFlashcardState } from "../../../lib/flashcards";
 import StudentHeader from "../../components/StudentHeader";
 import FlashcardsClient from "./FlashcardsClient";
@@ -9,9 +9,7 @@ export async function generateMetadata({ params }) {
   const { deck: slug } = await params;
   try {
     const deck = await getFlashcardDeck(slug);
-    return {
-      title: deck ? `Flashcards — ${deck.title}` : "Flashcards",
-    };
+    return { title: deck ? `Flashcards â€” ${deck.title}` : "Flashcards" };
   } catch {
     return { title: "Flashcards" };
   }
@@ -22,8 +20,12 @@ export default async function FlashcardDeckPage({ params }) {
   const session = await getSession();
   if (!session) redirect(`/login?next=/flashcards/${encodeURIComponent(slug)}`);
 
-  const access = await getUserAccess(session.id);
-  if (!access?.active) redirect("/comprar?locked=inactive");
+  const entitlement = await getEntitlement(session.id);
+  const trialAllowed = entitlement.trial && String(slug).toLowerCase() === "cis";
+
+  if (!entitlement.active && !trialAllowed) {
+    redirect("/comprar?locked=inactive");
+  }
 
   const deck = await getFlashcardDeck(slug);
   if (!deck) notFound();
