@@ -208,55 +208,11 @@ function renderRipeamFallback(card) {
   </svg>`;
 }
 
-
-/* RIPEAM_VISUAL_PRO_START */
-function renderRipeamPro(card) {
-  const v = card?.visual || {};
-  const cat = String(card?.category || "rules");
-  const id = String(card?.id || "");
-  const code = String(card?.code || "RIPEAM");
-  const title = String(card?.name || "");
-  const defs = `<defs>
-  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#061522"/><stop offset=".58" stop-color="#123b59"/><stop offset="1" stop-color="#d38354"/></linearGradient>
-  <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#164d6b"/><stop offset="1" stop-color="#03111d"/></linearGradient>
-  <linearGradient id="hull" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#647786"/><stop offset=".45" stop-color="#263844"/><stop offset=".46" stop-color="#a43131"/><stop offset="1" stop-color="#3b1517"/></linearGradient>
-  <filter id="shadow"><feDropShadow dx="0" dy="7" stdDeviation="8" flood-opacity=".5"/></filter>
-  <filter id="blur"><feGaussianBlur stdDeviation="8"/></filter>
-  <marker id="arrp" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#7fe0ff"/></marker>
-  </defs>`;
-  const ocean = `<rect width="800" height="450" fill="url(#sky)"/><circle cx="655" cy="90" r="44" fill="#ffd9a1" opacity=".78"/><path d="M0 235 Q120 215 240 236 T480 235 T800 232 V450 H0Z" fill="url(#sea)"/><g opacity=".18" stroke="#b9e7ff"><path d="M0 300q55-15 110 0t110 0t110 0t110 0t110 0t110 0t110 0"/><path d="M-40 350q55-15 110 0t110 0t110 0t110 0t110 0t110 0t110 0"/></g>`;
-  const night = `<rect width="800" height="450" fill="#020912"/><circle cx="665" cy="75" r="34" fill="#dceaff" opacity=".75"/><g fill="#fff" opacity=".6"><circle cx="80" cy="60" r="2"/><circle cx="145" cy="90" r="2"/><circle cx="225" cy="45" r="2"/><circle cx="330" cy="78" r="2"/><circle cx="480" cy="42" r="2"/><circle cx="570" cy="110" r="2"/></g><path d="M0 245 Q150 225 300 245 T600 242 T800 245V450H0Z" fill="#041c2c"/>`;
-  const label = `<g><rect x="24" y="22" width="340" height="42" rx="21" fill="#061522" opacity=".88"/><text x="42" y="49" fill="#eaf6ff" font-size="17" font-weight="800">${code} · ${title}</text></g>`;
-  const ship=(x,y,s=1)=>`<g transform="translate(${x} ${y}) scale(${s})" filter="url(#shadow)"><path d="M-125 5L105 5L140 27Q80 58-100 47Q-126 33-125 5Z" fill="url(#hull)" stroke="#9fb1bd" stroke-width="2"/><path d="M-88 4v-42h70v42M-78-42v-27h47v27" fill="#d7dde0" stroke="#647786" stroke-width="2"/><rect x="-72" y="-61" width="8" height="7" fill="#14242e"/><rect x="-56" y="-61" width="8" height="7" fill="#14242e"/><path d="M-8 2v-76M-8-72h58M47-72v74" stroke="#8d9ca5" stroke-width="4"/><rect x="3" y="-32" width="28" height="29" fill="#6d7f89"/><rect x="35" y="-32" width="28" height="29" fill="#566b77"/><path d="M-125 49q80 20 170 5t95-27" fill="none" stroke="#d8f4ff" stroke-width="5" opacity=".45"/></g>`;
-  const top=(x,y,a=0,s=1)=>`<g transform="translate(${x} ${y}) rotate(${a}) scale(${s})" filter="url(#shadow)"><path d="M0-68C20-49 29-17 24 37L0 68-24 37C-29-17-20-49 0-68Z" fill="#cbd5db" stroke="#07141f" stroke-width="4"/><path d="M0-55V48" stroke="#6d7f89" stroke-width="3"/><circle cx="-14" cy="-7" r="7" fill="#e93e49"/><circle cx="14" cy="-7" r="7" fill="#27c477"/></g>`;
-  const light=(x,y,c)=>{const C={red:"#ff3045",green:"#32ff8a",white:"#fff7d1",yellow:"#ffd83d"};return `<g><circle cx="${x}" cy="${y}" r="30" fill="${C[c]}" opacity=".15" filter="url(#blur)"/><circle cx="${x}" cy="${y}" r="9" fill="${C[c]}" stroke="#fff" stroke-opacity=".35"/><circle cx="${x-2}" cy="${y-2}" r="3" fill="#fff"/></g>`};
-  const arrow=(x1,y1,x2,y2)=>`<path d="M${x1} ${y1}Q${(x1+x2)/2+25} ${(y1+y2)/2-20} ${x2} ${y2}" fill="none" stroke="#7fe0ff" stroke-width="7" stroke-dasharray="14 10" marker-end="url(#arrp)"/>`;
-  const wrap=(body,bg=ocean)=>`<svg class="${styles.signalSvg}" viewBox="0 0 800 450" role="img" aria-label="${code} ${title}" xmlns="http://www.w3.org/2000/svg">${defs}${bg}${body}${label}</svg>`;
-
-  if(v.type==="headon") return wrap(`${top(400,125,180,1.05)}${top(400,335,0,1.05)}${arrow(385,195,315,250)}${arrow(415,255,485,200)}<text x="400" y="420" text-anchor="middle" fill="#fff" font-size="19" font-weight="900">AMBAS GUINAM PARA BORESTE</text>`);
-  if(v.type==="crossing") return wrap(`${top(220,285,90,1.05)}${top(535,125,180,1.05)}${arrow(275,285,490,285)}${arrow(535,185,535,335)}<circle cx="535" cy="285" r="34" fill="none" stroke="#ff4d5c" stroke-width="5"/><text x="400" y="410" text-anchor="middle" fill="#fff" font-size="18" font-weight="900">AVISTA POR BORESTE → MANTÉM-SE FORA DO CAMINHO</text>`);
-  if(v.type==="overtaking") return wrap(`${top(430,155,0,1.15)}${top(325,330,-12,.92)}${arrow(325,280,365,175)}<path d="M430 155L235 365M430 155L625 365" stroke="#ffd34d" stroke-width="4" stroke-dasharray="12 9"/><text x="400" y="420" text-anchor="middle" fill="#fff" font-size="18" font-weight="900">MAIS DE 22,5° PARA RÉ DO TRAVÉS</text>`);
-  if(v.type==="channel") return wrap(`<path d="M80 430C210 340 170 175 360 135C545 95 610 195 760 55" fill="none" stroke="#315f78" stroke-width="145"/><path d="M80 430C210 340 170 175 360 135C545 95 610 195 760 55" fill="none" stroke="#9bd8f5" stroke-width="4" stroke-dasharray="15 12"/>${top(330,175,42,.85)}<text x="400" y="415" text-anchor="middle" fill="#fff" font-size="19" font-weight="900">MANTER-SE PRÓXIMO AO LIMITE DE BORESTE</text>`);
-  if(v.type==="tss") return wrap(`<path d="M50 125H750M750 305H50" stroke="#285873" stroke-width="105"/><path d="M65 125H735M735 305H65" stroke="#a7dff7" stroke-width="4" stroke-dasharray="18 13"/><path d="M400 390V45" stroke="#ffd34d" stroke-width="7" stroke-dasharray="13 10"/><text x="420" y="220" fill="#fff" font-size="20" font-weight="900">CRUZAR ≈ 90° AO FLUXO</text>`);
-  if(v.type==="radar") return wrap(`<g transform="translate(400 235)"><circle r="165" fill="#052c28" stroke="#31b184" stroke-width="3"/><circle r="120" fill="none" stroke="#278067"/><circle r="75" fill="none" stroke="#278067"/><circle r="30" fill="none" stroke="#278067"/><path d="M-165 0H165M0-165V165" stroke="#278067"/><path d="M0 0L110-115" stroke="#5bffc2" stroke-width="4"/><circle cx="110" cy="-115" r="10" fill="#ffd34d"/></g>`,night);
-  if(v.type==="sector"){let a=v.sector==="stern"?`<path d="M400 235L245 365A205 205 0 0 1 555 365Z" fill="#fff" opacity=".23"/>`:v.sector==="side"?`<path d="M400 235L225 85A215 215 0 0 0 195 270Z" fill="#ff3045" opacity=".28"/><path d="M400 235L575 85A215 215 0 0 1 605 270Z" fill="#32ff8a" opacity=".28"/>`:`<path d="M400 235L235 85A220 220 0 1 1 565 85Z" fill="#fff" opacity=".20"/>`;return wrap(`${a}${top(400,235,0,1)}<circle cx="400" cy="235" r="205" fill="none" stroke="#91b3c7" stroke-width="2"/>`,night);}
-  if(v.type==="vessel"||v.type==="lights"){const ls=v.lights||["white"];const stack=ls.map((c,i)=>light(585,88+i*48,c)).join("");if(v.kind==="sail")return wrap(`<path d="M250 315L390 100L390 315Z" fill="#e7e0cf" stroke="#8796a0" stroke-width="3"/><path d="M390 100V330" stroke="#a9b4ba" stroke-width="5"/><path d="M185 330Q390 370 575 325L545 365H215Z" fill="url(#hull)"/>${stack}`,night);let ex=v.kind==="mine"?light(400,78,"green")+light(330,130,"green")+light(470,130,"green"):"";return wrap(`${ship(365,300,1.35)}${stack}${ex}`,night);}
-  if(v.type==="shapes"){const sh=(q,y)=>q==="ball"?`<circle cx="400" cy="${y}" r="28" fill="#05080b"/>`:q==="diamond"?`<polygon points="400,${y-35} 435,${y} 400,${y+35} 365,${y}" fill="#05080b"/>`:q==="cylinder"?`<rect x="367" y="${y-42}" width="66" height="84" rx="4" fill="#05080b"/>`:q==="coneUp"?`<polygon points="400,${y-38} 442,${y+32} 358,${y+32}" fill="#05080b"/>`:`<polygon points="358,${y-32} 442,${y-32} 400,${y+38}" fill="#05080b"/>`;const a=v.shapes||[];const ys=a.length===1?[220]:a.length===2?[170,275]:[125,220,315];return wrap(`${ship(240,345,.85)}<rect x="330" y="78" width="140" height="300" rx="18" fill="#dfe8ec" opacity=".92"/>${a.map((q,i)=>sh(q,ys[i])).join("")}`);}
-  if(v.type==="sound"){const a=v.pattern||[];let x=90;const bars=a.map(q=>{const w=q==="long"?125:42;const z=`<rect x="${x}" y="188" width="${w}" height="34" rx="17" fill="${q==="long"?"#ffd34d":"#f3f7fa"}"/>`;x+=w+24;return z}).join("");return wrap(`${ship(185,320,.8)}${bars}<path d="M75 275Q115 230 155 275T235 275T315 275T395 275T475 275T555 275T635 275" fill="none" stroke="#70d8ff" stroke-width="6"/><text x="400" y="405" text-anchor="middle" fill="#fff" font-size="18" font-weight="900">CURTO ≈ 1 s · LONGO = 4–6 s</text>`);}
-  if(cat==="traps") return wrap(`${ship(290,315,1.05)}<path d="M610 105L720 305H500Z" fill="#ffd34d" stroke="#08131d" stroke-width="6"/><text x="610" y="260" text-anchor="middle" fill="#07131e" font-size="110" font-weight="900">!</text>`);
-  if(id==="R05") return wrap(`${ship(300,315,1.05)}<g transform="translate(555 150)"><circle r="72" fill="#07131e" stroke="#bcecff" stroke-width="7"/><path d="M-55 0Q0-45 55 0Q0 45-55 0Z" fill="#d8f4ff"/><circle r="18" fill="#123b59"/></g>`);
-  if(id==="R06") return wrap(`${ship(290,315,1.05)}<g transform="translate(610 165)"><circle r="82" fill="#07131e" stroke="#d6e8f2" stroke-width="7"/><path d="M0 0L45-45" stroke="#ff5c5c" stroke-width="9"/><circle r="8" fill="#fff"/></g>`);
-  if(id==="R07") return wrap(`${top(260,275,25,.9)}${top(555,150,205,.9)}<path d="M260 275L555 150" stroke="#ff5964" stroke-width="5" stroke-dasharray="12 9"/><circle cx="400" cy="215" r="35" fill="none" stroke="#ffd34d" stroke-width="5"/>`);
-  if(id==="R08"||id==="R16"||id==="R17") return wrap(`${top(300,300,0,1)}${top(510,115,180,.9)}${arrow(300,235,210,155)}`);
-  if(id==="R12") return wrap(`<path d="M250 335L390 100L390 335Z" fill="#f1ead8"/><path d="M390 100V345" stroke="#c4ced4" stroke-width="5"/><path d="M160 345Q360 382 530 340L500 375H195Z" fill="url(#hull)"/><path d="M590 105q-55 20-95 60" fill="none" stroke="#bcecff" stroke-width="7" marker-end="url(#arrp)"/>`);
-  if(id==="R18") return wrap(`${ship(205,315,.7)}<path d="M390 330L455 185L520 330Z" fill="#efe7d4"/><path d="M455 185V340" stroke="#aab8c0" stroke-width="4"/>${ship(620,325,.55)}`);
-  return wrap(`${ship(350,315,1.25)}<g opacity=".7"><path d="M590 120l55 55-55 55-55-55Z" fill="#7fe0ff"/><circle cx="590" cy="175" r="18" fill="#061522"/></g>`);
-}
-/* RIPEAM_VISUAL_PRO_END */
-
-
 function renderCardVisual(card, deckSlug) {
-  if (deckSlug === "ripeam") return renderRipeamPro(card);
+  if (deckSlug === "ripeam") {
+    const visual = card?.visual ? renderRipeamVisual(card) : "";
+    return visual || renderRipeamFallback(card);
+  }
   return renderSignal(card?.code);
 }
 
