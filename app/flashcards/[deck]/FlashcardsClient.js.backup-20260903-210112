@@ -95,29 +95,6 @@ const FLAGS = {
   Z: svg(`<rect x="4" y="4" width="92" height="92" fill="#f4d21f"/><polygon points="4,4 50,50 4,96" fill="#111"/><polygon points="96,4 50,50 96,96" fill="#d8222a"/><polygon points="4,96 50,50 96,96" fill="#1769aa"/>`),
 };
 
-function numeralPennantSvg(n) {
-  const content = {
-    "0": `<rect width="120" height="80" fill="#f4d21f"/><rect x="40" width="40" height="80" fill="#d8222a"/>`,
-    "1": `<rect width="120" height="80" fill="#fff"/><circle cx="40" cy="40" r="17" fill="#d8222a"/>`,
-    "2": `<rect width="120" height="80" fill="#1769aa"/><circle cx="40" cy="40" r="17" fill="#fff"/>`,
-    "3": `<rect width="40" height="80" fill="#d8222a"/><rect x="40" width="40" height="80" fill="#fff"/><rect x="80" width="40" height="80" fill="#1769aa"/>`,
-    "4": `<rect width="120" height="80" fill="#d8222a"/><rect x="25" width="11" height="80" fill="#fff"/><rect y="34" width="120" height="12" fill="#fff"/>`,
-    "5": `<rect width="60" height="80" fill="#f4d21f"/><rect x="60" width="60" height="80" fill="#1769aa"/>`,
-    "6": `<rect width="120" height="40" fill="#111"/><rect y="40" width="120" height="40" fill="#fff"/>`,
-    "7": `<rect width="120" height="40" fill="#f4d21f"/><rect y="40" width="120" height="40" fill="#d8222a"/>`,
-    "8": `<rect width="120" height="80" fill="#fff"/><rect x="25" width="11" height="80" fill="#d8222a"/><rect y="34" width="120" height="12" fill="#d8222a"/>`,
-    "9": `<rect width="60" height="40" fill="#fff"/><rect x="60" width="60" height="40" fill="#111"/><rect y="40" width="60" height="40" fill="#d8222a"/><rect x="60" y="40" width="60" height="40" fill="#f4d21f"/>`,
-  }[String(n)];
-
-  if (!content) return "";
-
-  return `<svg class="${styles.signalSvg}" viewBox="0 0 120 80" role="img" aria-label="Flâmula numeral ${n}" xmlns="http://www.w3.org/2000/svg">
-    <defs><clipPath id="numeric-pennant-${n}"><polygon points="3,3 117,40 3,77"/></clipPath></defs>
-    <polygon points="3,3 117,40 3,77" fill="#fff" stroke="rgba(0,0,0,.22)" stroke-width="2"/>
-    <g clip-path="url(#numeric-pennant-${n})">${content}</g>
-  </svg>`;
-}
-
 function numeralSvg(n) {
   const shape = {
     "0": `<rect x="4" y="4" width="92" height="30.7" fill="#f4d21f"/><rect x="4" y="34.7" width="92" height="30.6" fill="#d8222a"/><rect x="4" y="65.3" width="92" height="30.7" fill="#f4d21f"/>`,
@@ -139,7 +116,6 @@ function renderSignal(code) {
   const flags = chars.filter((ch) => /[A-Z]/.test(ch));
   const numerals = chars.filter((ch) => /\d/.test(ch));
   if (flags.length === 1 && numerals.length === 0) return FLAGS[flags[0]] || "";
-  if (flags.length === 0 && numerals.length === 1) return numeralPennantSvg(numerals[0]);
   const parts = [...flags.map((ch) => FLAGS[ch]), ...numerals.map(numeralSvg)].filter(Boolean);
   return `<div class="${styles.signalGroup}">${parts.join("")}</div>`;
 }
@@ -209,8 +185,7 @@ export default function FlashcardsClient({ deck, initialState }) {
       const tags = Array.isArray(card.tags) ? card.tags : [];
       const tagMatch =
         filter === "all" ||
-        (filter === "flags" && (card.category === "flags" || card.category === "numerals")) ||
-        (filter === "numerals" && card.category === "numerals") ||
+        (filter === "flags" && card.category === "flags") ||
         (filter === "combinations" && card.category === "combinations") ||
         (filter === "medical" && (card.category === "medical" || tags.includes("medical"))) ||
         (filter === "distress" && tags.includes("distress")) ||
@@ -309,7 +284,6 @@ export default function FlashcardsClient({ deck, initialState }) {
 
   function categoryLabel(card) {
     if (card.category === "flags") return language === "pt" ? "Bandeira" : "Flag";
-    if (card.category === "numerals") return language === "pt" ? "Flâmula numeral" : "Numeral pennant";
     if (card.category === "medical") return language === "pt" ? "Médico" : "Medical";
     if ((card.tags || []).includes("distress")) return "Distress";
     return language === "pt" ? "Combinação" : "Combination";
@@ -597,7 +571,6 @@ export default function FlashcardsClient({ deck, initialState }) {
           {[
             ["all", "Todos"],
             ["flags", "🏳 Bandeiras"],
-            ["numerals", "🔢 Numerais"],
             ["distress", "🚨 Distress"],
             ["combinations", "🔤 Combinações"],
             ["medical", "🩺 Médico"],
