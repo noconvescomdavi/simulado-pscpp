@@ -1,8 +1,26 @@
 const securityHeaders = [
-  { key: "X-Content-Type-Options", value: "nosniff" },
-  { key: "X-Frame-Options", value: "DENY" },
-  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-  { key: "Permissions-Policy", value: "camera=(), geolocation=(), microphone=()" },
+  {
+    key: "X-Content-Type-Options",
+    value: "nosniff",
+  },
+
+  // Permite que o próprio ESTIBORDO seja aberto dentro
+  // do iframe do Editor Visual.
+  // Continua bloqueando sites externos.
+  {
+    key: "X-Frame-Options",
+    value: "SAMEORIGIN",
+  },
+
+  {
+    key: "Referrer-Policy",
+    value: "strict-origin-when-cross-origin",
+  },
+
+  {
+    key: "Permissions-Policy",
+    value: "camera=(), geolocation=(), microphone=()",
+  },
 ];
 
 const nextConfig = {
@@ -31,11 +49,13 @@ const nextConfig = {
           "/study-content/simulado/navegacao-aguas-restritas/ripeam/",
         permanent: false,
       },
+
       {
         source: "/cis",
         destination: "/flashcards/cis",
         permanent: false,
       },
+
       {
         source: "/study-content/flashcards/flashcard-cis/:path*",
         destination: "/flashcards/cis",
