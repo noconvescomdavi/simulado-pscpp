@@ -14,9 +14,10 @@ export async function POST(request) {
 
     const url = new URL(request.url);
     const body = await request.json().catch(() => ({}));
-    const dataId = url.searchParams.get("data.id") || body?.data?.id;
+    const dataId = url.searchParams.get("data.id") || url.searchParams.get("data_id") || body?.data?.id;
     const type = url.searchParams.get("type") || body?.type;
     if (type && type !== "payment") return Response.json({ ok: true, ignored: true });
+    if (!dataId) return Response.json({ error: "Data ID ausente." }, { status: 400 });
 
     const valid = validateMercadoPagoSignature({
       xSignature: request.headers.get("x-signature"),
@@ -33,6 +34,8 @@ export async function POST(request) {
     const amountCents = paymentAmountInCents(payment);
     const currency = String(payment?.currency_id || "");
 
+    if (!externalReference) return Response.json({ ok: true, ignored: true, reason: "missing_external_reference" });
+
     const result = await withTransaction(async (client) => {
       const locked = await client.query(
         "select * from payment_orders where id::text=$1 limit 1 for update",
@@ -40,6 +43,7 @@ export async function POST(request) {
       );
       const order = locked.rows[0];
       if (!order) return { ignored: true, reason: "unknown_order" };
+
       if (amountCents !== Number(order.amount_cents) || currency !== order.currency) {
         await client.query(
           "update payment_orders set status='review',provider_payment_id=$2,raw_status=$3,updated_at=now() where id=$1",
@@ -52,6 +56,7 @@ export async function POST(request) {
       const finalStatus = alreadyApproved && !["refunded", "charged_back"].includes(status)
         ? "approved"
         : status;
+
       await client.query(
         `update payment_orders
             set provider_payment_id=$2,status=$3,raw_status=$4,
@@ -86,6 +91,7 @@ export async function POST(request) {
           [order.user_id, PRODUCT_CODE, status === "refunded" ? "refunded" : "revoked", providerPaymentId]
         );
       }
+
       return { ignored: false };
     });
 
