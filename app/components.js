@@ -14,7 +14,7 @@ export function Nav() {
             <div className="navGroup" key={item.href}>
               <a href={item.href} className="navTopLink">
                 {item.label}
-                {item.children?.length ? <span className="navChevron">âŒ„</span> : null}
+                {item.children?.length ? <span className="navChevron">⌄</span> : null}
               </a>
               {item.children?.length ? (
                 <div className="navDropdown">
@@ -33,7 +33,7 @@ export function Nav() {
         </div>
 
         <details className="mobileMenu">
-          <summary aria-label="Abrir menu">â˜°</summary>
+          <summary aria-label="Abrir menu">☰</summary>
           <div className="mobileMenuPanel">
             <a href={nav.login.href} className="mobileStudentArea">{nav.login.label}</a>
             <a href={nav.profile.href}>Cadastre-se</a>
@@ -55,7 +55,7 @@ export function Nav() {
 }
 
 export function Footer() {
-  const f = shared.footer, marks = ["â—‰", "âœ¦", "âŒ–", "âŠ•"];
+  const f = shared.footer, marks = ["◉", "✦", "âŒ–", "âŠ•"];
   return (
     <footer className="footer">
       <div className="footerMain">
@@ -74,7 +74,7 @@ export function Footer() {
         </div>
         <div className="footerLinks">
           <h4>{f.disciplinesTitle}</h4>
-          {f.disciplines.map(d=><a href={d.href} key={d.href}>âš“ {d.label}</a>)}
+          {f.disciplines.map(d=><a href={d.href} key={d.href}>⚓ {d.label}</a>)}
         </div>
         <div className="footerContact">
           <h4>{f.contactTitle}</h4>
