@@ -29,7 +29,7 @@ export default function PlanClient({plan}){
     const key=day.iso+"|"+task.key; setBusy(key);
     const kind=task.type==="reading"?"bibliography":"task";
     const body=kind==="bibliography"
-      ? {kind,bibliography_key:task.bibliography_key,section_key:task.section_key,subject_slug:task.subject,status}
+      ? {kind,bibliography_key:task.bibliography_key,section_key:task.section_key,subject_slug:task.subject,status,page_from:task.page_from,page_to:task.page_to}
       : {kind,plan_date:day.iso,task_key:task.key,task_type:task.type,subject_slug:task.subject,status};
 
     const r=await fetch("/api/study-plan/task",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
@@ -51,7 +51,7 @@ export default function PlanClient({plan}){
       <div>
         <span>PLANO DE ESTUDOS INTELIGENTE</span>
         <h1>Seu caminho até 01/11/2027</h1>
-        <p>O plano combina bibliografia, leitura, questões, revisão e simulados. Ele é recalculado com base no que você responde e marca como concluído.</p>
+        <p>O plano percorre somente a bibliografia exigida pelo PSCPP, publicação por publicação e capítulo por capítulo. Quando a paginação da edição estiver cadastrada, a leitura é distribuída em páginas — nunca por tempo.</p>
       </div>
       <div className={styles.heroStats}>
         <div><strong>{plan.days_left}</strong><span>dias até a prova</span></div>
@@ -106,7 +106,7 @@ export default function PlanClient({plan}){
           {!day.active?<p>Dia sem estudo programado.</p>:day.tasks.map(task=>{
             const key=day.iso+"|"+task.key;
             return <div className={task.status==="done"?styles.taskDone:styles.task} key={task.key}>
-              <div className={styles.taskMeta}><span>{task.type.toUpperCase()}</span><em>{task.minutes} min</em></div>
+              <div className={styles.taskMeta}><span>{task.type.toUpperCase()}</span><em>{task.type==="reading"?(task.pages?task.pages+" páginas":"capítulo/seção"):task.type==="questions"?(task.target_questions||"")+" questões":task.type==="simulado"?"simulado":"revisão"}</em></div>
               <strong>{task.title}</strong>
               <p>{task.description}</p>
               <div className={styles.taskActions}>
@@ -120,12 +120,12 @@ export default function PlanClient({plan}){
     </section>
 
     <section className={styles.bibliographySection}>
-      <div className={styles.sectionHead}><div><span>BIBLIOGRAFIA INTEGRADA</span><h2>Leituras e capítulos</h2><p>Marque Done quando concluir a leitura. O plano remove o item da fila e recalibra as semanas seguintes.</p></div><div className={styles.bibProgress}>{plan.bibliography_progress.done}/{plan.bibliography_progress.total}</div></div>
+      <div className={styles.sectionHead}><div><span>MINHA BIBLIOGRAFIA</span><h2>Publicações, capítulos e páginas exigidas</h2><p>Livros parciais exibem somente os capítulos/seções cobrados. Paginação só aparece quando estiver conferida para a edição correta.</p></div><div className={styles.bibProgress}>{plan.bibliography_progress.done}/{plan.bibliography_progress.total}</div></div>
       <div className={styles.bibliographyGrid}>
         {Object.entries(bibliography.reduce((acc,item)=>{(acc[item.subject_slug] ||= []).push(item);return acc},{})).map(([subject,items])=><article key={subject}>
           <h3>{plan.metrics.subjects.find(s=>s.slug===subject)?.label||subject}</h3>
           <div>{items.map(item=><div className={item.progress?.status==="done"?styles.readDone:styles.readItem} key={item.bibliography_key+"|"+item.section_key}>
-            <div><strong>{item.publication}</strong><span>{item.section}</span><small>{item.source}</small></div>
+            <div><strong>{item.publication}</strong><span>{item.chapter||item.section}{item.page_start&&item.page_end?` · páginas ${item.page_start}–${item.page_end}`:""}</span><small>{item.source}</small></div>
             <button onClick={async()=>{
               const status=item.progress?.status==="done"?"pending":"done";setBusy("bib|"+item.bibliography_key+"|"+item.section_key);
               await fetch("/api/study-plan/task",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({kind:"bibliography",bibliography_key:item.bibliography_key,section_key:item.section_key,subject_slug:item.subject_slug,status})});

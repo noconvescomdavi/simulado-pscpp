@@ -27,7 +27,7 @@ export default function OnboardingForm({subjects,initial}){
       study_days:[...days],
       studied_subjects:[...studied],
       confidence_by_subject:confidence,
-      notes:String(f.get("notes")||"")
+      notes:String(f.get("notes")||"")+"\nRitmo de leitura: "+String(f.get("reading_pace")||"standard")
     };
     const r=await fetch("/api/study-plan/onboarding",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
     const j=await r.json().catch(()=>({}));
@@ -49,7 +49,7 @@ export default function OnboardingForm({subjects,initial}){
       <div className={styles.inlineFields}>
         <label><span>Já estudava antes de entrar na ESTIBORDO?</span><select name="started_before" defaultValue={initial?.started_before?"yes":"no"}><option value="no">Não</option><option value="yes">Sim</option></select></label>
         <label><span>Há quantos meses estuda para o PSCPP?</span><input name="months_studying" type="number" min="0" max="240" defaultValue={initial?.months_studying||0}/></label>
-        <label><span>Tempo disponível por dia</span><select name="daily_minutes" defaultValue={initial?.daily_minutes||60}>{[30,45,60,90,120,180,240].map(v=><option value={v} key={v}>{v} minutos</option>)}</select></label>
+        <input type="hidden" name="daily_minutes" value={initial?.daily_minutes||60}/><label><span>Ritmo de leitura</span><select name="reading_pace" defaultValue="standard"><option value="light">Leve — menos páginas por dia</option><option value="standard">Normal</option><option value="intensive">Intensivo — mais páginas por dia</option></select></label>
       </div>
     </section>
 
@@ -59,7 +59,7 @@ export default function OnboardingForm({subjects,initial}){
     </section>
 
     <section className={styles.block}>
-      <div className={styles.blockTitle}><span>03</span><div><h2>O que você já estudou?</h2><p>Marque as matérias já iniciadas. O plano priorizará as lacunas.</p></div></div>
+      <div className={styles.blockTitle}><span>03</span><div><h2>O que você já estudou?</h2><p>Esta seleção ajuda na prioridade inicial. Dentro do plano, o progresso real é controlado por publicação, capítulo/seção e páginas.</p></div></div>
       <div className={styles.subjects}>{subjects.map(s=><label key={s.slug}><input type="checkbox" checked={studied.has(s.slug)} onChange={()=>toggle(setStudied,studied,s.slug)}/><span>{s.label}</span></label>)}</div>
     </section>
 
