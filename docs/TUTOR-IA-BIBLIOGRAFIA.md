@@ -1,17 +1,28 @@
-# Bibliografia do Tutor IA
+# Bibliografia do CONTRAMESTRE
 
-O Tutor usa o File Search da Responses API quando `OPENAI_TUTOR_VECTOR_STORE_ID` estiver configurado.
+O CONTRAMESTRE usa o File Search da Responses API para consultar a bibliografia oficial/curada do PSCPP antes de responder.
+
+## Configuração
+A única credencial externa obrigatória é:
+
+- `OPENAI_API_KEY` na Vercel.
+
+O Vector Store não precisa ser criado manualmente. O painel:
+
+`Administração → Contramestre`
+
+cria o acervo automaticamente no primeiro upload e salva o `vector_store_id` no Neon.
 
 ## Ingestão
-1. Crie um Vector Store no projeto OpenAI usado pela ESTIBORDO.
-2. Faça upload somente das publicações autorizadas/curadas da bibliografia vigente do PSCPP.
-3. Anexe os arquivos ao Vector Store e aguarde o status `completed`.
-4. Configure na Vercel:
-   - `OPENAI_API_KEY`
-   - `OPENAI_TUTOR_VECTOR_STORE_ID=vs_...`
-5. Faça novo deploy.
-
-Sem o Vector Store configurado, o Tutor continua funcionando, mas sem recuperação da bibliografia. Com ele configurado, a rota envia `file_search` com até 8 resultados relevantes por pergunta.
+1. Acesse Administração → Contramestre.
+2. Envie até 10 PDFs por lote, com máximo de 50 MB por arquivo.
+3. A plataforma envia cada PDF para a OpenAI com purpose `user_data`.
+4. O arquivo é anexado ao Vector Store do CONTRAMESTRE.
+5. O CONTRAMESTRE passa a usar `file_search` com até 8 resultados relevantes por pergunta.
+6. Quando houver resultados recuperados, as fontes aparecem abaixo da resposta do aluno.
 
 ## Curadoria recomendada
-Use nomes de arquivo inequívocos, com título, edição/ano e capítulo quando o PDF for parcial. Não misture apostilas não oficiais no mesmo Vector Store das fontes oficiais. Antes de substituir uma edição, remova a anterior para evitar conflito normativo.
+Use apenas publicações autorizadas e vigentes. Prefira nomes de arquivo inequívocos com título, edição/ano e capítulo quando o PDF for parcial. Não misture apostilas não oficiais no mesmo acervo das fontes oficiais. Antes de substituir uma edição, remova a anterior para evitar conflito normativo.
+
+## Fallback
+`OPENAI_TUTOR_VECTOR_STORE_ID` continua aceito como override opcional. Se não estiver configurado, o ID salvo no Neon pelo painel Admin será usado.
