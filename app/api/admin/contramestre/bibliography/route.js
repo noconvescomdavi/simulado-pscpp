@@ -59,8 +59,8 @@ export async function POST(request){
       uploaded.push({filename:name,error:"Somente PDF é permitido."});
       continue;
     }
-    if(Number(file.size||0)>50*1024*1024){
-      uploaded.push({filename:name,error:"Arquivo acima de 50 MB."});
+    if(Number(file.size||0)>512*1024*1024){
+      uploaded.push({filename:name,error:"Arquivo acima de 512 MB, limite atual da OpenAI Files API."});
       continue;
     }
 
