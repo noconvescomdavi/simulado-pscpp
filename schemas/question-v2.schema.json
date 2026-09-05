@@ -1,0 +1,30 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"estibordo-question-v2",
+  "title":"ESTIBORDO Question v2",
+  "type":"object",
+  "required":["id","subject","module","topic_code","topic","difficulty","style","question","options","correct_answer","explanation","taxonomy","source","tags"],
+  "properties":{
+    "id":{"type":"string","minLength":1},
+    "subject":{"type":"string","minLength":1},
+    "module":{"type":"string","minLength":1},
+    "topic_code":{"type":"string","minLength":1},
+    "topic":{"type":"string","minLength":1},
+    "difficulty":{"type":"string","minLength":1},
+    "style":{"type":"string","minLength":1},
+    "question":{"type":"string","minLength":1},
+    "options":{"type":"array","minItems":2,"items":{"type":"object","required":["key","text"],"properties":{"key":{"type":"string"},"text":{"type":"string","minLength":1}}}},
+    "correct_answer":{"type":"string","minLength":1},
+    "explanation":{"type":"string","minLength":1},
+    "taxonomy":{"type":"object","required":["subject_id","subject_slug","bibliography_id","chapter_id","topic_id"],"properties":{
+      "subject_id":{"enum":["I","II","III","IV","V","VI","VII"]},
+      "subject_slug":{"type":"string","minLength":1},
+      "bibliography_id":{"type":"string","minLength":1},
+      "chapter_id":{"type":"string","minLength":1},
+      "topic_id":{"type":"string","minLength":1},
+      "subtopic_id":{"type":["string","null"]}
+    }},
+    "source":{"type":"object","required":["author","title","edition","locator"],"properties":{"author":{"type":"string"},"title":{"type":"string","minLength":1},"edition":{"type":"string"},"locator":{"type":"string","minLength":1}}},
+    "tags":{"type":"array","items":{"type":"string"}}
+  }
+}

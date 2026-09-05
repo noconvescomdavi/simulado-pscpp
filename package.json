@@ -9,7 +9,9 @@
     "check:repo": "node scripts/check-repo-hygiene.mjs",
     "validate:questions": "node scripts/validate-question-banks.mjs",
     "validate": "npm run check:repo && npm run validate:questions && npm run build",
-    "import:manobrabilidade": "node scripts/import-manobrabilidade.mjs"
+    "import:manobrabilidade": "node scripts/import-manobrabilidade.mjs",
+    "validate:taxonomy": "node scripts/validate-question-taxonomy.mjs",
+    "validate:questions:all": "npm run validate:questions && npm run validate:taxonomy"
   },
   "dependencies": {
     "argon2": "^0.41.1",
