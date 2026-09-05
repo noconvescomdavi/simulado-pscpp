@@ -1,1 +1,36 @@
-import {redirect} from "next/navigation";import {getSession} from "../../../lib/auth";import {getEntitlement} from "../../../lib/entitlement";import {availableQuestionBanks} from "../../../lib/question-banks";import StudentHeader from "../../components/StudentHeader";import Builder from "./Builder";import styles from "./bank.module.css";export default async function Page(){const s=await getSession();if(!s)redirect('/login');const e=await getEntitlement(s.id);if(!e.active&&!e.trial)redirect('/comprar');return <><StudentHeader active="conteudos"/><main className={styles.page}><span>QUESTÕES</span><h1>Banco de questões</h1><p>{e.trial?"Período de testes: gere 1 bloco com 10 questões.":"Marque as matérias e gere um caderno aleatório de 1 a 100 questões."}</p><Builder banks={availableQuestionBanks()} trial={e.trial}/></main></>}
+import {redirect} from "next/navigation";
+import {getSession} from "../../../lib/auth";
+import {getEntitlement} from "../../../lib/entitlement";
+import {availableQuestionBanks} from "../../../lib/question-banks";
+import StudentHeader from "../../components/StudentHeader";
+import Builder from "./Builder";
+import styles from "./bank.module.css";
+
+export default async function Page({searchParams}){
+  const s=await getSession();
+  if(!s)redirect("/login");
+
+  const e=await getEntitlement(s.id);
+  if(!e.active&&!e.trial)redirect("/comprar");
+
+  const q=await searchParams;
+  const requested=String(q?.materia||"").trim();
+  const banks=availableQuestionBanks();
+  const initialSubjects=requested&&banks.some(b=>b.slug===requested&&b.count)
+    ? [requested]
+    : [];
+
+  return (
+    <>
+      <StudentHeader active="conteudos"/>
+      <main className={styles.page}>
+        <span>QUESTÕES</span>
+        <h1>Banco de questões</h1>
+        <p>{e.trial
+          ?"Período de testes: gere 1 bloco com 10 questões."
+          :"Marque as matérias e gere um caderno aleatório de 1 a 100 questões."}</p>
+        <Builder banks={banks} trial={e.trial} initialSubjects={initialSubjects}/>
+      </main>
+    </>
+  );
+}
