@@ -1,7 +1,7 @@
 import {redirect,notFound} from "next/navigation";
 import {getSession} from "../../../lib/auth";
 import {getEntitlement} from "../../../lib/entitlement";
-import {getQuestionBank} from "../../../lib/question-banks";
+import {getQuestionBank,getQuestionFilterFacets} from "../../../lib/question-banks";
 import {normalizeSubject,subjectLabel,TRIAL_SUBJECT_SLUG} from "../../../lib/subjects";
 import StudentHeader from "../../components/StudentHeader";
 import Client from "./Client";
@@ -21,6 +21,7 @@ export default async function Page({params}){
 
   const b=getQuestionBank(normalized);
   if(!b) notFound();
+  const facets=trialAllowed?{works:[],chapters:[],modules:[]}:getQuestionFilterFacets(normalized);
 
   return (
     <>
@@ -30,6 +31,7 @@ export default async function Page({params}){
         title={subjectLabel(normalized)}
         ready={(b.questions||[]).length>0}
         trial={trialAllowed}
+        facets={facets}
       />
     </>
   );

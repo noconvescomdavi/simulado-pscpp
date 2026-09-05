@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import QuestionFilterControls, { EMPTY_QUESTION_FILTERS } from "../../components/QuestionFilterControls";
 import styles from "./exam.module.css";
 
 function clock(seconds) {
@@ -78,7 +79,7 @@ function Result({ result }) {
   );
 }
 
-export default function Client({ subject, title, ready }) {
+export default function Client({ subject, title, ready, facets }) {
   const [state, setState] = useState(null);
   const [index, setIndex] = useState(0);
   const [answer, setAnswer] = useState(null);
@@ -86,6 +87,7 @@ export default function Client({ subject, title, ready }) {
   const [now, setNow] = useState(Date.now());
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
+  const [filters, setFilters] = useState({ ...EMPTY_QUESTION_FILTERS });
   const questionStartedAt = useRef(Date.now());
   const timeoutHandled = useRef(false);
 
@@ -134,7 +136,11 @@ export default function Client({ subject, title, ready }) {
     setBusy(true);
     setError("");
     try {
-      const response = await fetch(`/api/exams/${subject}`, { method: "POST" });
+      const response = await fetch(`/api/exams/${subject}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ filters }),
+      });
       const payload = await response.json().catch(() => ({}));
       if (!response.ok) {
         if (payload.code === "TRIAL_LIMIT" || payload.trial_exhausted) {
@@ -241,9 +247,16 @@ export default function Client({ subject, title, ready }) {
       <main className={styles.page}>
         <span>SIMULADO</span>
         <h1>{title}</h1>
-        <p>Até 100 questões aleatórias. Duração máxima de 240 minutos, com início e expiração registrados no PostgreSQL.</p>
+        <p>Até 100 questões aleatórias. Você pode usar todo o banco ou restringir o sorteio por obra, capítulo, assunto e termo.</p>
         <p>Cada resposta é salva no servidor e não pode ser alterada depois do salvamento.</p>
-        <button type="button" onClick={start} disabled={busy || state.can_start === false}>Iniciar simulado</button>
+        <QuestionFilterControls
+          facets={facets}
+          value={filters}
+          onChange={setFilters}
+          subjects={[subject]}
+          disabled={busy || state.can_start === false}
+        />
+        <button type="button" onClick={start} disabled={busy || state.can_start === false}>Criar e iniciar simulado</button>
         {state.can_start === false && state.next_available_at && (
           <p>Nova emissão disponível em {new Date(state.next_available_at).toLocaleString("pt-BR")}.</p>
         )}
@@ -275,6 +288,11 @@ export default function Client({ subject, title, ready }) {
       </div>
 
       <article>
+        <p className={styles.trace}>
+          {[question.tracking?.work?.title,question.tracking?.chapter?.label,question.tracking?.module,question.tracking?.topic?.title]
+            .filter(Boolean)
+            .join(" · ")}
+        </p>
         <h2>{question.question}</h2>
         {options.map((option) => (
           <button
@@ -297,6 +315,9 @@ export default function Client({ subject, title, ready }) {
               <p>Resposta correta: <strong>{answer.correct_answer}</strong></p>
             )}
             {answer.explanation && <p>{answer.explanation}</p>}
+            {answer.source?.title && (
+              <p className={styles.source}>Fonte: {answer.source.title}{answer.source.locator?` · ${answer.source.locator}`:""}</p>
+            )}
             <p>Resposta salva definitivamente.</p>
             <button type="button" onClick={next}>
               {pendingResult ? "Ver resultado →" : "Próxima →"}

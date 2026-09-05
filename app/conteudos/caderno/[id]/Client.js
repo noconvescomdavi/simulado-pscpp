@@ -99,6 +99,10 @@ function initialAnswers(notebook) {
         question.answer
           .explanation ??
         null,
+      source:
+        question.answer
+          .source ??
+        null,
     };
   }
 
@@ -320,6 +324,8 @@ export default function Client({
           payload.correct_answer,
         explanation:
           payload.explanation,
+        source:
+          payload.source,
       };
 
       setAnswers(
@@ -359,6 +365,16 @@ export default function Client({
       </p>
 
       <article>
+        <p className={styles.trace}>
+          {[
+            question.tracking?.work?.title,
+            question.tracking?.chapter?.label,
+            question.tracking?.module,
+            question.tracking?.topic?.title,
+          ]
+            .filter(Boolean)
+            .join(" · ")}
+        </p>
         <h2>
           {question.question}
         </h2>
@@ -432,6 +448,15 @@ export default function Client({
                 {
                   answer.explanation
                 }
+              </p>
+            )}
+
+            {answer.source?.title && (
+              <p className={styles.source}>
+                Fonte: {answer.source.title}
+                {answer.source.locator
+                  ? ` · ${answer.source.locator}`
+                  : ""}
               </p>
             )}
 

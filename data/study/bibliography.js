@@ -26,7 +26,20 @@ E("fonseca-arte-v1","FONSECA — Arte Naval, Volume 1, 8ª ed.",[
 {...S("ch11","Capítulo 11 – Aparelho de Governo, Mastreação e Aparelhos de Carga"),pageStart:755,pageEnd:790},
 {...S("ch12","Capítulo 12 – Manobra do Navio"),pageStart:791,pageEnd:936}
 ]),
-E("macelrevey","MacELREVEY — Shiphandling for the Mariner, 4ª ed.",[S("integral","Publicação indicada pela bibliografia — sem capítulos delimitados no Anexo 2-B")]),
+E("macelrevey","MacELREVEY — Shiphandling for the Mariner, 4ª ed.",[
+S("ch1","Chapter 1 – Arrival"),
+S("ch2","Chapter 2 – Shiphandling in a Channel"),
+S("ch3","Chapter 3 – Use of Tugs"),
+S("ch4","Chapter 4 – Approaching the Berth"),
+S("ch5","Chapter 5 – Docking"),
+S("ch6","Chapter 6 – Undocking"),
+S("ch7","Chapter 7 – Departure"),
+S("ch8","Chapter 8 – Anchoring and Shiphandling with Anchors"),
+S("ch9","Chapter 9 – Special Maneuvers"),
+S("ch10","Chapter 10 – Training"),
+S("ch11","Chapter 11 – Master/Pilot Relationship and Bridge Resource Management"),
+S("ch12","Chapter 12 – Vessel Operations")
+]),
 E("solas-v23","IMO SOLAS 1974",[S("v-23-3-3","Regulation V/23.3.3")]),E("msc1495","IMO MSC.1/Circ.1495/Rev.1",[S("integral","Unified interpretation of SOLAS regulation V/23.3.3")]),E("msc1428","IMO MSC.1/Circ.1428",[S("integral","Required pilot transfer arrangements")]),E("a1045","IMO Resolution A.1045(27)",[S("integral","Pilot transfer arrangements")]),E("a1108","IMO Resolution A.1108(29)",[S("integral","Amendments to A.1045(27)")]),
 E("nayak-arte","NAYAK — Theory and Practices of Marine Pilotage",[3,4,13,14,15,16,17,18,19].map(n=>S("ch"+n,"Chapter "+n))),
 E("hensen-tug","HENSEN — Tug Use in Port, 4ª ed.",[1,2,3,4,5,6,7,9].map(n=>S("ch"+n,"Chapter "+n))),E("hensen-estabilidade","HENSEN & VAN DER LAAN — Estabilidade dos Rebocadores",[S("ch2","Capítulo 2 – Princípios básicos de estabilidade")]),E("clark","CLARK — Mooring and Anchoring Ships, Vol. 1",[S("ch6","Chapter 6 – Anchor and cable")]),E("fragoso","FRAGOSO & CAJATY — Rebocadores Portuários",[S("integral","Publicação indicada — sem capítulos delimitados no Anexo 2-B")]),E("pianc-dimensions","PIANC — Ship Dimensions and Data for Design of Marine Infrastructure",[S("ch1","Chapter 1 – Introduction"),S("ch2","Chapter 2 – Vessel characteristics")])

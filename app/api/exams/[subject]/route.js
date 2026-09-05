@@ -67,7 +67,7 @@ export async function GET(_request, { params }) {
   }
 }
 
-export async function POST(_request, { params }) {
+export async function POST(request, { params }) {
   try {
     const p = await params;
     const ctx = await authorize(p.subject);
@@ -87,7 +87,10 @@ export async function POST(_request, { params }) {
       }
     }
 
-    const result = await startExam(ctx.session.id, ctx.subject);
+    const body = await request.json().catch(() => ({}));
+    const result = await startExam(ctx.session.id, ctx.subject, {
+      filters: ctx.trialAllowed ? {} : body.filters,
+    });
     return Response.json(result, { status: result.status || 200 });
   } catch (error) {
     console.error("Erro ao iniciar simulado:", error);

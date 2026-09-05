@@ -120,6 +120,16 @@ export default async function Page({ params }) {
             const answer = answerMap.get(String(questionId));
             return (
               <article key={`${questionId}-${index}`}>
+                {question?.tracking && (
+                  <p className={styles.trace}>
+                    {[
+                      question.tracking.work?.title,
+                      question.tracking.chapter?.label,
+                      question.tracking.module,
+                      question.tracking.topic?.title,
+                    ].filter(Boolean).join(" · ")}
+                  </p>
+                )}
                 <h2>{index + 1}. {question?.question || questionId}</h2>
                 {answer ? (
                   <>
@@ -130,6 +140,11 @@ export default async function Page({ params }) {
                       <p>Resposta correta: <strong>{question.correct_answer || question.answer || "—"}</strong></p>
                     )}
                     {question?.explanation && <p>{question.explanation}</p>}
+                    {question?.source?.title && (
+                      <p className={styles.source}>
+                        Fonte: {question.source.title}{question.source.locator ? ` · ${question.source.locator}` : ""}
+                      </p>
+                    )}
                     {question && (
                       <p>
                         <a href={`/mapas-mentais?subject=${encodeURIComponent(question.source_subject || exam.subject)}&title=${encodeURIComponent(`Questão ${index + 1} — ${question.topic || "Revisão"}`)}&note=${encodeURIComponent((`Questão: ${question.question}\n\nMinha anotação:`).slice(0,700))}`}>
