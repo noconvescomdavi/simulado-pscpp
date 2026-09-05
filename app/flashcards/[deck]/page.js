@@ -9,7 +9,7 @@ export async function generateMetadata({ params }) {
   const { deck: slug } = await params;
   try {
     const deck = await getFlashcardDeck(slug);
-    return { title: deck ? `Flashcards â€” ${deck.title}` : "Flashcards" };
+    return { title: deck ? `Flashcards — ${deck.title}` : "Flashcards" };
   } catch {
     return { title: "Flashcards" };
   }
