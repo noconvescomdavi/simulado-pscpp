@@ -6,7 +6,7 @@ import { normalizeSubject, TRIAL_SUBJECT_SLUG } from "../../../../../lib/subject
 export async function POST(request, { params }) {
   try {
     const session = await getSession();
-    if (!session) return Response.json({ error: "NÃ£o autenticado." }, { status: 401 });
+    if (!session) return Response.json({ error: "Não autenticado." }, { status: 401 });
 
     const { subject: rawSubject } = await params;
     const subject = normalizeSubject(rawSubject);
@@ -14,7 +14,7 @@ export async function POST(request, { params }) {
     const trialAllowed = entitlement.trial && subject === TRIAL_SUBJECT_SLUG;
 
     if (!entitlement.active && !trialAllowed) {
-      return Response.json({ error: "Acesso nÃ£o liberado." }, { status: 403 });
+      return Response.json({ error: "Acesso não liberado." }, { status: 403 });
     }
 
     const body = await request.json();
@@ -32,6 +32,6 @@ export async function POST(request, { params }) {
     return Response.json(result, { status: result.status || 200 });
   } catch (error) {
     console.error("Erro ao finalizar simulado:", error);
-    return Response.json({ error: "NÃ£o foi possÃ­vel finalizar o simulado." }, { status: 500 });
+    return Response.json({ error: "Não foi possível finalizar o simulado." }, { status: 500 });
   }
 }
