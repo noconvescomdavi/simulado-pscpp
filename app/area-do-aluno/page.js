@@ -73,6 +73,7 @@ export default async function Area(){
             <a className="quickCard blue" href="/plano-de-estudos"><i>◫</i><div><strong>Plano de Estudos</strong><span>Calendário inteligente até 01/11/2027</span></div><b>›</b></a>
             <a className="quickCard purple" href="/treino-adaptativo"><i>◎</i><div><strong>Treino Adaptativo</strong><span>Treine primeiro o que mais precisa</span></div><b>›</b></a>
             <a className="quickCard ranking" href="/ranking"><i>★</i><div><strong>Ranking</strong><span>Compare seu desempenho acadêmico</span></div><b>›</b></a>
+            <a className="quickCard maps" href="/mapas-mentais"><i>🧠</i><div><strong>Mapas Mentais</strong><span>Construa e conecte suas anotações</span></div><b>›</b></a>
           </div>
         </section>
 
