@@ -18,6 +18,14 @@ function radarPoints(subjects){
 }
 
 function polygon(points){return points.map(p=>p.join(",")).join(" ")}
+function groupPublications(items){
+  const map=new Map();
+  for(const item of items){
+    if(!map.has(item.bibliography_key))map.set(item.bibliography_key,{key:item.bibliography_key,publication:item.publication,source:item.source,items:[]});
+    map.get(item.bibliography_key).items.push(item);
+  }
+  return [...map.values()];
+}
 
 export default function PlanClient({plan}){
   const [week,setWeek]=useState(plan.week);
@@ -71,6 +79,33 @@ export default function PlanClient({plan}){
       <a href="/plano-de-estudos/configurar">Recalibrar questionário</a>
     </section>
 
+    <section className={styles.quantGrid}>
+      <article>
+        <span>ESTRATÉGIA DE LEITURA</span>
+        <h2>Meta interna: 15/07/2027</h2>
+        <p>O limite oficial da primeira passagem continua em <strong>01/08/2027</strong>. A diferença funciona como margem para atrasos e imprevistos.</p>
+        <div className={styles.quantStats}>
+          <div><b>{plan.first_pass.reading_minutes_target} min</b><small>capacidade de leitura/dia</small></div>
+          <div><b>{plan.first_pass.pages_per_reading_day??"—"}</b><small>páginas/dia necessárias</small></div>
+          <div><b>{plan.first_pass.actual_pages_per_reading_day??"—"}</b><small>ritmo real registrado</small></div>
+          <div><b>{plan.first_pass.projected_finish?fmtDate(plan.first_pass.projected_finish):"—"}</b><small>previsão de término</small></div>
+        </div>
+      </article>
+      <article>
+        <span>INVENTÁRIO QUANTITATIVO</span>
+        <h2>{plan.first_pass.known_pages_completed}/{plan.first_pass.known_pages_total||0} páginas conhecidas</h2>
+        <p>{plan.first_pass.units_pending_pagination
+          ?`${plan.first_pass.units_pending_pagination} capítulo(s)/seção(ões) ainda aguardam paginação conferida. Até isso ser preenchido, a previsão de páginas é provisória.`
+          :"Toda a bibliografia cadastrada já possui paginação conferida."}</p>
+        <div className={styles.quantStats}>
+          <div><b>{plan.first_pass.known_pages_remaining}</b><small>páginas conhecidas restantes</small></div>
+          <div><b>{plan.first_pass.units_with_pagination}</b><small>unidades paginadas</small></div>
+          <div><b>{plan.first_pass.units_pending_pagination}</b><small>paginação pendente</small></div>
+          <div><b>{plan.first_pass.margin_days===null?"—":plan.first_pass.margin_days+" dias"}</b><small>margem projetada</small></div>
+        </div>
+      </article>
+    </section>
+
     <section className={styles.topGrid}>
       <article className={styles.radarCard}>
         <div className={styles.cardHead}><div><span>RADAR PSCPP</span><h2>Desempenho por matéria</h2></div><strong>{plan.readiness}%</strong></div>
@@ -111,7 +146,7 @@ export default function PlanClient({plan}){
           {!day.active?<p>Dia sem estudo programado.</p>:day.tasks.map(task=>{
             const key=day.iso+"|"+task.key;
             return <div className={task.status==="done"?styles.taskDone:styles.task} key={task.key}>
-              <div className={styles.taskMeta}><span>{task.type.toUpperCase()}</span><em>{task.type==="reading"?(task.pages?task.pages+" páginas":"capítulo/seção"):task.type==="questions"?(task.target_questions||"")+" questões":task.type==="simulado"?"simulado":"revisão"}</em></div>
+              <div className={styles.taskMeta}><span>{task.type.toUpperCase()}</span><em>{task.type==="reading"?(task.pages?task.pages+" páginas":"capítulo/seção"):task.type==="questions"?(task.fixation?"todas disponíveis":(task.target_questions||"")+" questões"):task.type==="simulado"?"simulado":"revisão"}</em></div>
               <strong>{task.title}</strong>
               <p>{task.description}</p>
               <div className={styles.taskActions}>
@@ -129,14 +164,17 @@ export default function PlanClient({plan}){
       <div className={styles.bibliographyGrid}>
         {Object.entries(bibliography.reduce((acc,item)=>{(acc[item.subject_slug] ||= []).push(item);return acc},{})).map(([subject,items])=><article key={subject}>
           <h3>{plan.metrics.subjects.find(s=>s.slug===subject)?.label||subject}</h3>
-          <div>{items.map(item=><div className={item.progress?.status==="done"?styles.readDone:styles.readItem} key={item.bibliography_key+"|"+item.section_key}>
-            <div><strong>{item.publication}</strong><span>{item.chapter||item.section}{item.page_start&&item.page_end?` · páginas ${item.page_start}–${item.page_end}`:""}</span><small>{item.source}</small></div>
-            <button onClick={async()=>{
-              const status=item.progress?.status==="done"?"pending":"done";setBusy("bib|"+item.bibliography_key+"|"+item.section_key);
-              await fetch("/api/study-plan/task",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({kind:"bibliography",bibliography_key:item.bibliography_key,section_key:item.section_key,subject_slug:item.subject_slug,status})});
-              setBusy("");setBibliography(list=>list.map(x=>x.bibliography_key===item.bibliography_key&&x.section_key===item.section_key?{...x,progress:{...(x.progress||{}),status}}:x));
-            }}>{item.progress?.status==="done"?"✓ Done":"Done"}</button>
-          </div>)}</div>
+          <div className={styles.publicationList}>{groupPublications(items).map(pub=><section className={styles.publication} key={pub.key}>
+            <div className={styles.publicationHead}><strong>{pub.publication}</strong><small>{pub.source}</small></div>
+            <div>{pub.items.map(item=><div className={item.progress?.status==="done"?styles.readDone:styles.readItem} key={item.bibliography_key+"|"+item.section_key}>
+              <div><a href={"#"+item.bibliography_key+"-"+item.section_key}>{item.chapter||item.section}</a><span>{item.page_start&&item.page_end?`páginas ${item.page_start}–${item.page_end}`:"Paginação pendente de conferência"}</span></div>
+              <button onClick={async()=>{
+                const status=item.progress?.status==="done"?"pending":"done";setBusy("bib|"+item.bibliography_key+"|"+item.section_key);
+                await fetch("/api/study-plan/task",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({kind:"bibliography",bibliography_key:item.bibliography_key,section_key:item.section_key,subject_slug:item.subject_slug,status})});
+                setBusy("");setBibliography(list=>list.map(x=>x.bibliography_key===item.bibliography_key&&x.section_key===item.section_key?{...x,progress:{...(x.progress||{}),status}}:x));
+              }}>{item.progress?.status==="done"?"✓ Done":"Done"}</button>
+            </div>)}</div>
+          </section>)}</div>
         </article>)}
       </div>
     </section>

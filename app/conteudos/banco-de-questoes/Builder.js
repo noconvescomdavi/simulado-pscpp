@@ -2,11 +2,11 @@
 import {useState} from "react";
 import styles from "./bank.module.css";
 
-export default function Builder({banks,trial=false,initialSubjects=[]}){
+export default function Builder({banks,trial=false,initialSubjects=[],fixation=null}){
   const available=banks.filter(x=>x.count).map(x=>x.slug);
   const initial=initialSubjects.filter(slug=>available.includes(slug));
   const [s,setS]=useState(initial.length?initial:available);
-  const [n,setN]=useState(trial?10:20);
+  const [n,setN]=useState(trial?10:(fixation?100:20));
   const [e,setE]=useState("");
 
   async function go(){
@@ -14,7 +14,7 @@ export default function Builder({banks,trial=false,initialSubjects=[]}){
     const r=await fetch("/api/question-notebooks",{
       method:"POST",
       headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({subjects:s,count:trial?10:n})
+      body:JSON.stringify({subjects:s,count:trial?10:n,fixation,title:fixation?"Caderno de fixação — "+(fixation.chapter||fixation.section_key):null})
     });
     const p=await r.json().catch(()=>({}));
 
@@ -32,6 +32,7 @@ export default function Builder({banks,trial=false,initialSubjects=[]}){
 
   return (
     <section className={styles.box}>
+      {fixation&&<p><strong>Modo fixação:</strong> o caderno usará somente as questões que correspondem ao conteúdo estudado. Se houver menos questões, o caderno será criado apenas com as disponíveis.</p>}
       <div className={styles.banks}>
         {banks.map(x=>(
           <label key={x.slug} className={!x.count?styles.off:""}>

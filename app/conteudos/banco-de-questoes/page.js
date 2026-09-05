@@ -29,7 +29,7 @@ export default async function Page({searchParams}){
         <p>{e.trial
           ?"Período de testes: gere 1 bloco com 10 questões."
           :"Marque as matérias e gere um caderno aleatório de 1 a 100 questões."}</p>
-        <Builder banks={banks} trial={e.trial} initialSubjects={initialSubjects}/>
+        <Builder banks={banks} trial={e.trial} initialSubjects={initialSubjects} fixation={q?.modo==="fixacao"?{bibliography_key:q?.bibliografia||"",section_key:q?.secao||"",chapter:q?.capitulo||""}:null}/>
       </main>
     </>
   );
