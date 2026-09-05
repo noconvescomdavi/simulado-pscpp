@@ -1,0 +1,19 @@
+BEGIN;
+CREATE TABLE IF NOT EXISTS ai_tutor_settings (
+  id SMALLINT PRIMARY KEY DEFAULT 1 CHECK(id=1),
+  vector_store_id VARCHAR(120),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+INSERT INTO ai_tutor_settings(id) VALUES(1) ON CONFLICT(id) DO NOTHING;
+
+CREATE TABLE IF NOT EXISTS ai_tutor_library_files (
+  id BIGSERIAL PRIMARY KEY,
+  openai_file_id VARCHAR(120) NOT NULL UNIQUE,
+  vector_store_id VARCHAR(120) NOT NULL,
+  filename TEXT NOT NULL,
+  bytes BIGINT,
+  status VARCHAR(40) NOT NULL DEFAULT 'in_progress',
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+COMMIT;
