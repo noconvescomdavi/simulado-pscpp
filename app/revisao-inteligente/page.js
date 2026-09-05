@@ -10,7 +10,7 @@ export default async function Page(){
  const s=await getSession();if(!s)redirect("/login?next=/revisao-inteligente");
  const e=await getEntitlement(s.id);if(!e.active&&!e.trial)redirect("/comprar?locked=inactive");
  const [items,consistency]=await Promise.all([getReviewQueue(s.id,40),getConsistency(s.id)]);
- return <><StudentHeader active="conteudos"/><main className={styles.page}>
+ return <><StudentHeader active="revisao"/><main className={styles.page}>
  <span>REPETIÇÃO ESPAÇADA</span><h1>Revisão Inteligente</h1>
  <p>Prioridades calculadas com base em erros, acurácia e recorrência. Revise primeiro o que mais ameaça sua nota.</p>
  <section className={styles.summary}><div><b>{items.length}</b><span>tópicos prioritários</span></div><div><b>{consistency.streak}</b><span>dias de sequência</span></div><div><b>{consistency.questions}</b><span>questões respondidas</span></div></section>
