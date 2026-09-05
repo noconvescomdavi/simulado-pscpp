@@ -37,8 +37,7 @@ export async function POST(request, { params }) {
       `insert into question_stats
        (user_id,question_id,subject,answer_count,correct_count,error_count,last_answered_at)
        values($1,$2,$3,1,$4,$5,now())
-       on conflict(user_id,question_id) do update set
-         subject=excluded.subject,
+       on conflict(user_id,subject,question_id) do update set
          answer_count=question_stats.answer_count+1,
          correct_count=question_stats.correct_count+excluded.correct_count,
          error_count=question_stats.error_count+excluded.error_count,
