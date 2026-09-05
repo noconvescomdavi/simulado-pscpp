@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { getSession } from "../../lib/auth";
 import { getEntitlement } from "../../lib/entitlement";
-import { getTodayStudyPlan } from "../../lib/study-engine";
+import { getIntegratedStudyPlan } from "../../lib/integrated-study-plan";
 import StudentHeader from "../components/StudentHeader";
 import styles from "./hoje.module.css";
 
@@ -14,7 +14,11 @@ export default async function HojePage() {
   const entitlement = await getEntitlement(session.id);
   if (!entitlement.active && !entitlement.trial) redirect("/comprar?locked=inactive");
 
-  const plan = await getTodayStudyPlan(session.id);
+  const integrated = await getIntegratedStudyPlan(session.id,0);
+  if(integrated.needs_onboarding) redirect("/plano-de-estudos/configurar");
+  const todayIso=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Sao_Paulo",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+  const today=integrated.week.days.find(d=>d.iso===todayIso);
+  const plan={tasks:today?.tasks||[],goal:{daily_minutes:integrated.onboarding.daily_minutes},weak_topics:integrated.metrics.weak_topics||[],total_question_bank:integrated.metrics.total_question_bank||integrated.metrics.overall?.questions||0};
 
   return (
     <>
@@ -39,7 +43,7 @@ export default async function HojePage() {
             <a href={task.href} className={styles.task} key={`${task.type}-${index}`}>
               <div className={styles.order}>{index + 1}</div>
               <div>
-                <span>{task.minutes} MIN</span>
+                <span>{task.type==="reading"?(task.pages?task.pages+" PÁGINAS":"LEITURA"):task.type==="questions"?(task.target_questions||"")+" QUESTÕES":task.type.toUpperCase()}</span>
                 <h2>{task.title}</h2>
                 <p>{task.description}</p>
               </div>
