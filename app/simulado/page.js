@@ -14,7 +14,7 @@ import styles from "./simulados.module.css";
 
 const STATUS = {
   in_progress: "Em andamento",
-  completed: "ConcluÃ­do",
+  completed: "Concluído",
   expired: "Tempo encerrado",
   abandoned: "Encerrado"
 };
@@ -55,17 +55,17 @@ export default async function Page() {
   );
 
   const choices = entitlement.active
-    ? [{slug:ALL_SUBJECTS_SLUG,label:"Todas as matÃ©rias"}, ...SUBJECTS]
-    : [{slug:TRIAL_SUBJECT_SLUG,label:"Simulado de teste grÃ¡tis"}];
+    ? [{slug:ALL_SUBJECTS_SLUG,label:"Todas as matérias"}, ...SUBJECTS]
+    : [{slug:TRIAL_SUBJECT_SLUG,label:"Simulado de teste grátis"}];
 
   function cardDescription(item) {
-    if (entitlement.trial) return "10 questÃµes aleatÃ³rias entre as matÃ©rias Â· uma Ãºnica emissÃ£o";
+    if (entitlement.trial) return "10 questões aleatórias entre as matérias · uma única emissão";
     if (item.slug === ALL_SUBJECTS_SLUG) {
-      return `${totalQuestionCount.toLocaleString("pt-BR")} questÃµes no banco Â· 100 questÃµes aleatÃ³rias de todas as matÃ©rias Â· 240 minutos`;
+      return `${totalQuestionCount.toLocaleString("pt-BR")} questões no banco · 100 questões aleatórias de todas as matérias · 240 minutos`;
     }
     const count = questionCountBySlug[item.slug] ?? 0;
     const examSize = Math.min(100, count);
-    return `${count.toLocaleString("pt-BR")} questÃµes no banco Â· simulado com ${examSize} questÃµes Â· 240 minutos`;
+    return `${count.toLocaleString("pt-BR")} questões no banco · simulado com ${examSize} questões · 240 minutos`;
   }
 
   return (
@@ -76,8 +76,8 @@ export default async function Page() {
         <h1>Simulados</h1>
         <p>
           {entitlement.trial
-            ? "Teste grÃ¡tis: vocÃª pode emitir 1 simulado com 10 questÃµes aleatÃ³rias entre as matÃ©rias disponÃ­veis."
-            : "Escolha uma matÃ©ria ou gere um simulado misto com 100 questÃµes aleatÃ³rias de todas as matÃ©rias."}
+            ? "Teste grátis: você pode emitir 1 simulado com 10 questões aleatórias entre as matérias disponíveis."
+            : "Escolha uma matéria ou gere um simulado misto com 100 questões aleatórias de todas as matérias."}
         </p>
 
         <section className={styles.launch}>
@@ -96,7 +96,7 @@ export default async function Page() {
           })}
         </section>
 
-        <h2>Todos os simulados lanÃ§ados</h2>
+        <h2>Todos os simulados lançados</h2>
         <div className={styles.history}>
           {history.rows.length ? (
             history.rows.map((exam) => {
@@ -112,11 +112,11 @@ export default async function Page() {
                   <div>
                     <b>{subjectLabel(exam.subject)}</b>
                     <small>
-                      {new Date(exam.started_at).toLocaleString("pt-BR")} Â· {STATUS[exam.status] || exam.status}
+                      {new Date(exam.started_at).toLocaleString("pt-BR")} · {STATUS[exam.status] || exam.status}
                     </small>
                   </div>
-                  <strong>{correct}/{answered} Â· {percent(correct, answered).toFixed(1)}%</strong>
-                  <span>{inProgress ? "Continuar â†’" : "Acessar â†’"}</span>
+                  <strong>{correct}/{answered} · {percent(correct, answered).toFixed(1)}%</strong>
+                  <span>{inProgress ? "Continuar →" : "Acessar →"}</span>
                 </a>
               );
             })
