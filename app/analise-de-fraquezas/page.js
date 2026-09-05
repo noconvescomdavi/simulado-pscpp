@@ -7,7 +7,7 @@ export const dynamic="force-dynamic";
 export default async function Page(){
  const s=await getSession();if(!s)redirect("/login?next=/analise-de-fraquezas");
  const rows=await getTopicAnalytics(s.id);
- return <><StudentHeader active="conteudos"/><main className={styles.page}><span>DIAGNÓSTICO</span><h1>Análise de Fraquezas</h1><p>Desempenho detalhado por tópico, do menor para o maior aproveitamento.</p>
+ return <><StudentHeader active="fraquezas"/><main className={styles.page}><span>DIAGNÓSTICO</span><h1>Análise de Fraquezas</h1><p>Desempenho detalhado por tópico, do menor para o maior aproveitamento.</p>
  <div className={styles.table}>{rows.map(x=><article key={x.subject+"|"+x.topic_code+"|"+x.topic}>
  <div><small>{x.subject_label}</small><strong>{x.topic}</strong><span>{x.answers} respostas · {x.errors} erros</span></div>
  <b className={x.accuracy<60?styles.bad:x.accuracy<80?styles.mid:styles.good}>{x.accuracy}%</b>
