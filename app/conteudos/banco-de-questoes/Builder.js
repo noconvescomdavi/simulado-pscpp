@@ -41,7 +41,7 @@ export default function Builder({banks,trial=false}){
             />
             <span>
               <b>{x.title}</b>
-              <small>{x.count?`${x.count} questÃµes`:"Aguardando upload"}</small>
+              <small>{x.count?`${x.count} questões`:"Aguardando upload"}</small>
             </span>
           </label>
         ))}
@@ -59,7 +59,7 @@ export default function Builder({banks,trial=false}){
         />
       </label>
 
-      {trial&&<p><strong>Teste gratuito:</strong> este serÃ¡ seu Ãºnico caderno, com 10 questÃµes aleatÃ³rias entre as matÃ©rias disponÃ­veis.</p>}
+      {trial&&<p><strong>Teste gratuito:</strong> este será seu único caderno, com 10 questões aleatórias entre as matérias disponíveis.</p>}
       {e&&<p>{e}</p>}
       <button onClick={go} disabled={!s.length}>Criar caderno</button>
     </section>
