@@ -20,17 +20,17 @@ export const BIBLIOGRAPHY = {
       title: "Arte Naval — Volume 2",
       source: "Bibliografia PSCPP",
       sections: [
-        { key: "cap-9", label: "Capítulo 9" },
-        { key: "cap-10", label: "Capítulo 10" },
-        { key: "cap-11", label: "Capítulo 11" },
-        { key: "cap-12", label: "Capítulo 12" }
+        { key: "cap-9", label: "Capítulo 9", chapter: "Capítulo 9", pageStart: null, pageEnd: null },
+        { key: "cap-10", label: "Capítulo 10", chapter: "Capítulo 10", pageStart: null, pageEnd: null },
+        { key: "cap-11", label: "Capítulo 11", chapter: "Capítulo 11", pageStart: null, pageEnd: null },
+        { key: "cap-12", label: "Capítulo 12", chapter: "Capítulo 12", pageStart: null, pageEnd: null }
       ]
     },
     {
       key: "mooring-anchoring-v1",
       title: "Mooring and Anchoring Ships — Vol. 1",
       source: "Bibliografia PSCPP",
-      sections: [{ key: "cap-6", label: "Capítulo 6" }]
+      sections: [{ key: "cap-6", label: "Capítulo 6", chapter: "Capítulo 6", pageStart: null, pageEnd: null }]
     },
     {
       key: "nayak-arte",
@@ -138,3 +138,28 @@ export const BIBLIOGRAPHY = {
 
 export const OFFICIAL_BIBLIOGRAPHY_URL =
   "https://www.marinha.mil.br/dpc/revisao-dos-anexos-2-e-2-b-da-normam-311dpc";
+
+
+/*
+ * O plano usa capítulo/seção como referência oficial e páginas como unidade
+ * operacional. pageStart/pageEnd devem ser preenchidos somente após conferência
+ * na edição exata indicada pela bibliografia; null impede o sistema de inventar
+ * paginação. Um livro parcial deve listar apenas sections efetivamente exigidas.
+ */
+export function bibliographyUnits(){
+  return Object.entries(BIBLIOGRAPHY).flatMap(([subjectSlug,entries])=>
+    entries.flatMap((entry,publicationIndex)=>entry.sections.map((section,sectionIndex)=>({
+      subject_slug:subjectSlug,
+      bibliography_key:entry.key,
+      publication:entry.title,
+      source:entry.source,
+      section_key:section.key,
+      section:section.label,
+      chapter:section.chapter||section.label,
+      page_start:Number.isInteger(section.pageStart)?section.pageStart:null,
+      page_end:Number.isInteger(section.pageEnd)?section.pageEnd:null,
+      required:section.required!==false,
+      order:publicationIndex*100+sectionIndex
+    }))).filter(item=>item.required)
+  );
+}
