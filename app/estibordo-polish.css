@@ -1,162 +1,97 @@
 /*
- * ESTIBORDO - acabamento visual responsivo.
- * Arquivo separado para preservar app/globals.css.
+ * ESTIBORDO — camada global de acabamento.
+ * Mantém os módulos funcionais e normaliza comportamento visual entre todas as rotas.
  */
-
-:where(*,*::before,*::after){
-  box-sizing:border-box;
+:root{
+  --est-navy:#071b2b;
+  --est-navy-2:#0b2b42;
+  --est-red:#c51f2a;
+  --est-bg:#f4f7f9;
+  --est-card:#fff;
+  --est-text:#102a3d;
+  --est-muted:#667b8a;
+  --est-border:#dbe5ea;
+  --est-radius:14px;
+  --est-shadow:0 14px 38px rgba(7,27,43,.08);
 }
-
-:where(html,body){
-  max-width:100%;
-  overflow-x:hidden;
-}
-
-:where(main,section,article,aside,nav,header,footer,div){
-  min-width:0;
-}
-
-:where(img,svg,video,canvas){
-  max-width:100%;
-}
-
-:where(img[src$="estibordo-logo-header.png"]){
-  width:auto !important;
-  height:44px !important;
-  max-width:min(210px,38vw) !important;
-  object-fit:contain !important;
-  object-position:left center;
-  display:block;
-}
-
-:where(header) :where(img[src$="estibordo-logo-header.png"]){
-  flex:0 0 auto;
-}
-
-:where(input,select,textarea,button){
-  max-width:100%;
-  font:inherit;
-}
-
+:where(*,*::before,*::after){box-sizing:border-box}
+:where(html,body){max-width:100%;overflow-x:hidden}
+:where(body){text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+:where(main,section,article,aside,nav,header,footer,div){min-width:0}
+:where(img,svg,video,canvas){max-width:100%}
+:where(img[src$="estibordo-logo-header.png"]){width:auto!important;height:44px!important;max-width:min(210px,38vw)!important;object-fit:contain!important;object-position:left center;display:block}
+:where(header) :where(img[src$="estibordo-logo-header.png"]){flex:0 0 auto}
+:where(input,select,textarea,button){max-width:100%;font:inherit}
+:where(input,select,textarea){border-radius:9px;transition:border-color .16s ease,box-shadow .16s ease,background .16s ease}
+:where(input,select,textarea):focus{border-color:#8caec4;box-shadow:0 0 0 3px rgba(30,112,168,.1)}
+:where(h1,h2,h3){text-wrap:balance}
+:where(p){text-wrap:pretty}
+:where(code){font-size:.88em;background:#edf2f5;border:1px solid #dbe5ea;border-radius:6px;padding:2px 5px;color:#274257}
 :where(
-  button,
-  input[type="button"],
-  input[type="submit"],
-  input[type="reset"],
-  a[class*="button"],
-  a[class*="Button"],
-  a[class*="btn"],
-  a[class*="Btn"],
-  a[class*="cta"],
-  a[class*="CTA"],
-  a[class*="primary"],
-  a[class*="secondary"]
-){
-  cursor:pointer;
-  transform:translateZ(0);
-  transition:
-    transform .16s ease,
-    box-shadow .16s ease,
-    filter .16s ease,
-    background-color .16s ease,
-    border-color .16s ease,
-    color .16s ease,
-    opacity .16s ease;
-  -webkit-tap-highlight-color:transparent;
-}
-
+ button,input[type="button"],input[type="submit"],input[type="reset"],
+ a[class*="button"],a[class*="Button"],a[class*="btn"],a[class*="Btn"],
+ a[class*="cta"],a[class*="CTA"],a[class*="primary"],a[class*="secondary"]
+){cursor:pointer;transform:translateZ(0);transition:transform .16s ease,box-shadow .16s ease,filter .16s ease,background-color .16s ease,border-color .16s ease,color .16s ease,opacity .16s ease;-webkit-tap-highlight-color:transparent}
 @media (hover:hover) and (pointer:fine){
-  :where(
-    button,
-    input[type="button"],
-    input[type="submit"],
-    input[type="reset"],
-    a[class*="button"],
-    a[class*="Button"],
-    a[class*="btn"],
-    a[class*="Btn"],
-    a[class*="cta"],
-    a[class*="CTA"],
-    a[class*="primary"],
-    a[class*="secondary"]
-  ):not(:disabled):hover{
-    transform:translateY(-2px);
-    filter:brightness(1.06);
-    box-shadow:0 10px 24px rgba(0,0,0,.20);
-  }
-
-  :where(a[class*="card"],button[class*="card"]){
-    transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
-  }
-
-  :where(a[class*="card"],button[class*="card"]):hover{
-    transform:translateY(-3px);
-    box-shadow:0 16px 36px rgba(0,0,0,.18);
-  }
+ :where(button,input[type="button"],input[type="submit"],input[type="reset"],a[class*="button"],a[class*="Button"],a[class*="btn"],a[class*="Btn"],a[class*="cta"],a[class*="CTA"],a[class*="primary"],a[class*="secondary"]):not(:disabled):hover{transform:translateY(-2px);filter:brightness(1.04);box-shadow:0 10px 24px rgba(0,0,0,.16)}
+ :where(a[class*="card"],button[class*="card"]){transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+ :where(a[class*="card"],button[class*="card"]):hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,.14)}
 }
+:where(button,input[type="button"],input[type="submit"],input[type="reset"],a[class*="button"],a[class*="Button"],a[class*="btn"],a[class*="Btn"],a[class*="cta"],a[class*="CTA"],a[class*="primary"],a[class*="secondary"]):not(:disabled):active{transform:translateY(0) scale(.975);box-shadow:0 4px 12px rgba(0,0,0,.14)}
+:where(a,button,input,select,textarea,[tabindex]):focus-visible{outline:3px solid rgba(197,31,42,.35);outline-offset:3px}
+:where(button:disabled,input:disabled){cursor:not-allowed;opacity:.58}
+:where([class*="grid"],[class*="Grid"]){align-items:stretch}
+:where([class*="card"],[class*="Card"],[class*="panel"],[class*="Panel"]){overflow-wrap:anywhere}
+:where(p,li,small,span,strong,b,h1,h2,h3,h4){overflow-wrap:break-word}
+:where(table){max-width:100%}
 
-:where(
-  button,
-  input[type="button"],
-  input[type="submit"],
-  input[type="reset"],
-  a[class*="button"],
-  a[class*="Button"],
-  a[class*="btn"],
-  a[class*="Btn"],
-  a[class*="cta"],
-  a[class*="CTA"],
-  a[class*="primary"],
-  a[class*="secondary"]
-):not(:disabled):active{
-  transform:translateY(0) scale(.975);
-  box-shadow:0 4px 12px rgba(0,0,0,.16);
+/* Páginas legadas que usam .wrap/.card/.panel recebem o mesmo padrão do restante do produto. */
+:where(.wrap){width:min(1180px,calc(100% - 36px));margin-inline:auto}
+:where(.wrap>h1){font-size:clamp(30px,4vw,46px);letter-spacing:-.035em;margin:10px 0 22px}
+:where(.wrap>.eyebrow){margin-top:18px}
+:where(.panel,.card,.auth){border-color:var(--est-border);border-radius:var(--est-radius);box-shadow:var(--est-shadow)}
+:where(.metric){border-radius:12px!important;box-shadow:0 8px 24px rgba(7,27,43,.05)}
+:where(.admin-wrap){padding-top:34px!important}
+:where(.admin-wrap p){color:var(--est-muted);line-height:1.7}
+:where(.admin-wrap .grid){gap:14px}
+:where(.admin-table){background:#fff;border-radius:12px;overflow:hidden}
+:where(.admin-table th){background:#f0f4f7!important}
+:where(.admin-table tbody tr:hover){background:#f8fafb}
+
+/* Login/cadastro públicos */
+.authPage{min-height:calc(100vh - 78px);background:linear-gradient(135deg,#eef4f7,#fff 50%,#e7f0f4);display:grid;place-items:center;padding:52px 18px}
+.authShell{width:min(1040px,100%);display:grid;grid-template-columns:.9fr 1.1fr;background:#fff;border:1px solid var(--est-border);border-radius:22px;overflow:hidden;box-shadow:0 28px 70px rgba(7,27,43,.13)}
+.authStory{background:linear-gradient(145deg,#061725,#0b3049);color:#fff;padding:42px;position:relative;overflow:hidden}
+.authStory:after{content:"⚓";position:absolute;right:-15px;bottom:-35px;font-size:170px;opacity:.045}
+.authStory span{font-size:10px;letter-spacing:.15em;color:#ef6870;font-weight:900}
+.authStory h1{font-size:clamp(32px,4vw,47px);line-height:1.05;letter-spacing:-.04em;margin:13px 0 17px}
+.authStory p{color:#bdd0dc;line-height:1.75;font-size:13px}
+.authStory ul{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:10px}
+.authStory li{font-size:11px;color:#dce8ee}
+.authStory li:before{content:"✓";color:#ef6870;font-weight:900;margin-right:8px}
+.authForm{padding:42px}
+.authForm .eyebrow{margin-bottom:7px}
+.authForm h2{font-size:30px;letter-spacing:-.03em;margin:0 0 8px}
+.authForm>p{color:var(--est-muted);font-size:12px;line-height:1.65;margin-bottom:22px}
+.authForm .field input{min-height:46px;background:#fbfcfd}
+.authForm .btn{min-height:47px;border-radius:9px}
+.authFoot{font-size:11px;color:var(--est-muted);margin-top:16px;text-align:center}
+.authFoot a{color:var(--est-red);font-weight:900}
+
+/* Estados vazios e avisos */
+:where([class*="empty"],[class*="Empty"]){border-radius:14px}
+:where([class*="error"],[class*="Error"]){line-height:1.55}
+:where([class*="success"],[class*="Success"]){line-height:1.55}
+
+/* Mobile */
+@media(max-width:760px){
+ :where(img[src$="estibordo-logo-header.png"]){height:36px!important;max-width:155px!important}
+ :where(table){display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+ :where(.wrap){width:min(100% - 22px,1180px)}
+ .authPage{padding:28px 12px}
+ .authShell{grid-template-columns:1fr;border-radius:16px}
+ .authStory{padding:28px 24px}
+ .authStory h1{font-size:32px}
+ .authForm{padding:28px 22px}
 }
-
-:where(a,button,input,select,textarea,[tabindex]):focus-visible{
-  outline:3px solid rgba(231,48,75,.45);
-  outline-offset:3px;
-}
-
-:where(button:disabled,input:disabled){
-  cursor:not-allowed;
-  opacity:.58;
-}
-
-:where([class*="grid"],[class*="Grid"]){
-  align-items:stretch;
-}
-
-:where([class*="card"],[class*="Card"],[class*="panel"],[class*="Panel"]){
-  overflow-wrap:anywhere;
-}
-
-:where(p,li,small,span,strong,b,h1,h2,h3,h4){
-  overflow-wrap:break-word;
-}
-
-:where(table){
-  max-width:100%;
-}
-
-@media (max-width:760px){
-  :where(img[src$="estibordo-logo-header.png"]){
-    height:36px !important;
-    max-width:155px !important;
-  }
-
-  :where(table){
-    display:block;
-    overflow-x:auto;
-    -webkit-overflow-scrolling:touch;
-  }
-}
-
-@media (prefers-reduced-motion:reduce){
-  :where(*,*::before,*::after){
-    scroll-behavior:auto !important;
-    transition-duration:.01ms !important;
-    animation-duration:.01ms !important;
-    animation-iteration-count:1 !important;
-  }
-}
+@media(prefers-reduced-motion:reduce){:where(*,*::before,*::after){scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
