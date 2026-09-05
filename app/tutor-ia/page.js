@@ -7,7 +7,7 @@ import styles from "./tutor.module.css";
 export const dynamic="force-dynamic";
 
 export default async function TutorPage({searchParams}){
-  const session=await getSession();if(!session)redirect("/login?next=/tutor-ia");
+  const session=await getSession();if(!session)redirect("/login?next=/contramestre");
   const access=await getAiTutorAccess(session.id);
   const usage=await getTutorUsage(session.id);
   const params=await searchParams;
