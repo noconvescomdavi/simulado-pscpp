@@ -43,11 +43,6 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: "/tutor-ia",
-        destination: "/contramestre",
-        permanent: true,
-      },
-      {
         source: "/:path*",
         headers: securityHeaders,
       },
@@ -56,6 +51,11 @@ const nextConfig = {
 
   async redirects() {
     return [
+      {
+        source: "/tutor-ia",
+        destination: "/contramestre",
+        permanent: true,
+      },
       {
         source: "/conteúdos",
         destination: "/conteudos",
