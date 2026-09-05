@@ -12,3 +12,18 @@
 
 
 .submenuAll{margin-top:5px!important;padding-top:9px!important;border-top:1px solid rgba(112,169,216,.18);color:#b9dcf7!important;font-weight:800!important}
+
+
+/* Consistência visual e estado ativo */
+.group[open]>summary{background:rgba(24,104,168,.13);color:#fff;border-color:rgba(72,145,203,.16)}
+.group[open]>summary .icon{color:#68b9f3}
+.submenu a{line-height:1.35}
+.submenu a:focus-visible{outline:2px solid rgba(92,181,244,.45);outline-offset:1px}
+.topbar{box-shadow:0 8px 28px rgba(0,0,0,.12)}
+.search:focus-within{border-color:rgba(84,171,235,.62);box-shadow:0 0 0 3px rgba(40,128,194,.12)}
+.topActions a{transition:transform .16s ease,background .16s ease,border-color .16s ease}
+.topActions a:hover{transform:translateY(-2px);background:#12344d;border-color:rgba(104,185,244,.35)}
+.adminLink{border:1px solid rgba(255,255,255,.08);transition:.16s}
+.adminLink:hover{background:#1b405c;transform:translateY(-1px)}
+.sidebarBottom button:hover{background:rgba(184,31,55,.16)}
+@media(max-height:760px) and (min-width:961px){.profileCard{margin:9px 0 6px;padding:9px}.nav>a,.group>summary{min-height:35px}.submenu a{padding-top:5px;padding-bottom:5px}.sidebarBottom{padding-top:8px}.sidebarBottom p{display:none}}
