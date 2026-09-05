@@ -12,7 +12,7 @@ export const dynamic="force-dynamic";
 function d(v){
   return v
     ? new Intl.DateTimeFormat("pt-BR",{dateStyle:"long",timeZone:"America/Sao_Paulo"}).format(new Date(v))
-    : "â€”";
+    : "—";
 }
 
 export default async function Page({searchParams}){
@@ -36,12 +36,12 @@ export default async function Page({searchParams}){
         <section className={styles.hero}>
           <div className={styles.copy}>
             <span>ACESSO Ã€ PLATAFORMA</span>
-            <h1>365 dias de preparaÃ§Ã£o.</h1>
+            <h1>365 dias de preparação.</h1>
             <p>Checkout Seguro do Mercado Pago</p>
             <ul>
               <li>Pagamento processado pelo Mercado Pago</li>
-              <li>ConexÃ£o protegida por HTTPS/SSL</li>
-              <li>LiberaÃ§Ã£o automÃ¡tica apÃ³s confirmaÃ§Ã£o do pagamento</li>
+              <li>Conexão protegida por HTTPS/SSL</li>
+              <li>Liberação automática após confirmação do pagamento</li>
             </ul>
           </div>
 
@@ -50,8 +50,8 @@ export default async function Page({searchParams}){
               <>
                 <div className={styles.activeBadge}>ACESSO ATIVO</div>
                 <h2>Acesso liberado</h2>
-                <p>VÃ¡lido atÃ© <strong>{d(a.expires_at)}</strong>.</p>
-                <a className={styles.primary} href="/conteudos">Acessar conteÃºdos</a>
+                <p>Válido até <strong>{d(a.expires_at)}</strong>.</p>
+                <a className={styles.primary} href="/conteudos">Acessar conteúdos</a>
               </>
             ) : (
               <>
@@ -59,7 +59,7 @@ export default async function Page({searchParams}){
                 <strong className={styles.price}>{formatCurrencyFromCents(c.priceCents)}</strong>
                 <small>365 dias</small>
 
-                <div className={styles.securityBadges} aria-label="SeguranÃ§a do checkout">
+                <div className={styles.securityBadges} aria-label="Segurança do checkout">
                   <span>ðŸ”’ Checkout seguro</span>
                   <span>ðŸ›¡ï¸ HTTPS / SSL</span>
                   <span>âœ“ Mercado Pago</span>
@@ -69,7 +69,7 @@ export default async function Page({searchParams}){
 
                 {q?.locked && (
                   <div className={styles.error}>
-                    {q.locked==="expired" ? "Seu acesso expirou." : "Acesso ainda nÃ£o ativado."}
+                    {q.locked==="expired" ? "Seu acesso expirou." : "Acesso ainda não ativado."}
                   </div>
                 )}
 
@@ -87,10 +87,10 @@ export default async function Page({searchParams}){
                 </form>
 
                 <p className={styles.secure}>
-                  Seus dados de pagamento sÃ£o processados no ambiente seguro do Mercado Pago.
+                  Seus dados de pagamento são processados no ambiente seguro do Mercado Pago.
                 </p>
 
-                {!c.ready && <p className={styles.configMessage}>Configure as variÃ¡veis do Mercado Pago no Vercel.</p>}
+                {!c.ready && <p className={styles.configMessage}>Configure as variáveis do Mercado Pago no Vercel.</p>}
               </>
             )}
           </article>
@@ -98,7 +98,7 @@ export default async function Page({searchParams}){
 
         {p.rowCount>0 && (
           <section className={styles.history}>
-            <h2>HistÃ³rico de pagamentos</h2>
+            <h2>Histórico de pagamentos</h2>
             <div className={styles.paymentList}>
               {p.rows.map(x=>(
                 <article key={x.id}>
