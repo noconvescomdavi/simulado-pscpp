@@ -9,6 +9,7 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,11 +23,15 @@ jobs:
       - name: Install
         run: npm ci
 
+      - name: Repository hygiene
+        run: npm run check:repo
+
       - name: Validate question banks
-        run: node scripts/validate-question-banks.mjs
+        run: npm run validate:questions
 
       - name: Build
         env:
           DATABASE_URL: postgresql://placeholder:placeholder@localhost:5432/placeholder
           AUTH_SECRET: ci-only-secret-ci-only-secret-ci-only
+          AUTH_SESSION_DAYS: 30
         run: npm run build
