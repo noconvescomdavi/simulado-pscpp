@@ -70,6 +70,7 @@ export default async function Area(){
             <a className="quickCard green" href="/conteudos/banco-de-questoes"><i>☷</i><div><strong>Gerar Caderno</strong><span>Monte seu banco de questões</span></div><b>›</b></a>
             <a className="quickCard purple" href="/flashcards/cis"><i>▤</i><div><strong>Flashcards CIS</strong><span>Treine o Código Internacional de Sinais</span></div><b>›</b></a>
             <a className="quickCard gold" href="#desempenho"><i>▥</i><div><strong>Meu Desempenho</strong><span>Acompanhe sua evolução</span></div><b>›</b></a>
+            <a className="quickCard ranking" href="/ranking"><i>★</i><div><strong>Ranking</strong><span>Compare seu desempenho acadêmico</span></div><b>›</b></a>
           </div>
         </section>
 

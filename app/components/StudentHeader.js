@@ -61,6 +61,10 @@ function Menu({ active = "", flashcardDecks = [] }) {
         </div></div>
       </details>
 
+      <a className={active === "ranking" ? styles.active : ""} href="/ranking">
+        <span className={styles.icon}>★</span><span>Ranking</span>
+      </a>
+
       <a className={active === "assinaturas" ? styles.active : ""} href="/minhas-assinaturas">
         <span className={styles.icon}>♛</span><span>Minhas Assinaturas</span>
       </a>
