@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 async function authorize(subject) {
   const session = await getSession();
   if (!session) {
-    return { response: Response.json({ error: "NÃ£o autenticado." }, { status: 401 }) };
+    return { response: Response.json({ error: "Não autenticado." }, { status: 401 }) };
   }
 
   const entitlement = await getEntitlement(session.id);
@@ -19,7 +19,7 @@ async function authorize(subject) {
   if (!entitlement.active && !trialAllowed) {
     return {
       response: Response.json(
-        { error: "Acesso nÃ£o liberado.", code: "ACCESS_DENIED" },
+        { error: "Acesso não liberado.", code: "ACCESS_DENIED" },
         { status: 403 }
       )
     };
@@ -63,7 +63,7 @@ export async function GET(_request, { params }) {
     });
   } catch (error) {
     console.error("Erro ao carregar simulado:", error);
-    return Response.json({ error: "NÃ£o foi possÃ­vel carregar o simulado." }, { status: 500 });
+    return Response.json({ error: "Não foi possível carregar o simulado." }, { status: 500 });
   }
 }
 
@@ -78,7 +78,7 @@ export async function POST(_request, { params }) {
       if (previous && previous.status !== "in_progress") {
         return Response.json(
           {
-            error: "O Teste GrÃ¡tis jÃ¡ foi utilizado.",
+            error: "O Teste Grátis já foi utilizado.",
             code: "TRIAL_LIMIT",
             trial_exhausted: true
           },
@@ -91,6 +91,6 @@ export async function POST(_request, { params }) {
     return Response.json(result, { status: result.status || 200 });
   } catch (error) {
     console.error("Erro ao iniciar simulado:", error);
-    return Response.json({ error: "NÃ£o foi possÃ­vel iniciar o simulado." }, { status: 500 });
+    return Response.json({ error: "Não foi possível iniciar o simulado." }, { status: 500 });
   }
 }
