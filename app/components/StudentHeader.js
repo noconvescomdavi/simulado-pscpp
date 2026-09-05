@@ -100,6 +100,10 @@ function Menu({ active = "", flashcardDecks = [] }) {
         <span className={styles.icon}>♛</span><span>Minhas Assinaturas</span>
       </a>
 
+      <a className={active === "suporte" ? styles.active : ""} href="/suporte">
+        <span className={styles.icon}>✉</span><span>Suporte</span>
+      </a>
+
       <div className={styles.divider} />
 
       <a className={active === "perfil" ? styles.active : ""} href="/perfil">
@@ -154,7 +158,7 @@ export default async function StudentHeader({ active = "" }) {
 
         <div className={styles.sidebarBottom}>
           <p>Algum problema com a plataforma?</p>
-          <a href="mailto:suporte@estibordo.com.br">Ajuda e Suporte</a>
+          <a href="/suporte">Ajuda e Suporte</a>
           <form action="/api/auth/logout" method="post">
             <button type="submit">↪ Sair da Conta</button>
           </form>
