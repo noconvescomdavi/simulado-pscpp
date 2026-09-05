@@ -41,9 +41,7 @@ export function Nav() {
               <div className="mobileMenuGroup" key={item.href}>
                 <a href={item.href}>{item.label}</a>
                 {item.children?.map((child) => (
-                  <a className="mobileSubLink" href={child.href} key={child.href}>
-                    {child.label}
-                  </a>
+                  <a className="mobileSubLink" href={child.href} key={child.href}>{child.label}</a>
                 ))}
               </div>
             ))}
@@ -55,12 +53,12 @@ export function Nav() {
 }
 
 export function Footer() {
-  const f = shared.footer, marks = ["◉", "✦", "âŒ–", "âŠ•"];
+  const f = shared.footer, marks = ["◉", "✦", "⌖", "⊕"];
   return (
     <footer className="footer">
       <div className="footerMain">
         <div className="footerQuote">
-          <div className="quoteMark">â€œ</div>
+          <div className="quoteMark">“</div>
           <strong><span>{f.quoteLine1}</span><br/><span>{f.quoteLine2}</span></strong>
           <div className="hotelFooter"><span></span><span></span></div>
           <small>{f.signature}</small>
@@ -68,9 +66,7 @@ export function Footer() {
         <div className="footerAbout">
           <h4>{f.aboutTitle}</h4>
           <p>{f.aboutText}</p>
-          <div className="footerValues">
-            {f.values.map((v,i)=><span key={v}>{marks[i]||"â€¢"}<small>{v}</small></span>)}
-          </div>
+          <div className="footerValues">{f.values.map((v,i)=><span key={v}>{marks[i]||"•"}<small>{v}</small></span>)}</div>
         </div>
         <div className="footerLinks">
           <h4>{f.disciplinesTitle}</h4>
