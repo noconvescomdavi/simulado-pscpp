@@ -1,0 +1,4 @@
+BEGIN;
+ALTER TABLE ai_tutor_messages
+  ADD COLUMN IF NOT EXISTS sources JSONB NOT NULL DEFAULT '[]'::jsonb;
+COMMIT;

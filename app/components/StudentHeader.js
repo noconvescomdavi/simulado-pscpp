@@ -88,8 +88,8 @@ function Menu({ active = "", flashcardDecks = [] }) {
         </div></div>
       </details>
 
-      <a className={active === "tutor" ? styles.active : ""} href="/tutor-ia">
-        <span className={styles.icon}>✨</span><span>Tutor IA</span>
+      <a className={active === "tutor" ? styles.active : ""} href="/contramestre">
+        <span className={styles.icon}>⚓</span><span>Contramestre</span>
       </a>
 
       <a className={active === "ranking" ? styles.active : ""} href="/ranking">
