@@ -52,6 +52,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/tutor-ia",
+        destination: "/contramestre",
+        permanent: true,
+      },
+      {
         source: "/conteúdos",
         destination: "/conteudos",
         permanent: true,
