@@ -130,6 +130,13 @@ export default async function Page({ params }) {
                       <p>Resposta correta: <strong>{question.correct_answer || question.answer || "—"}</strong></p>
                     )}
                     {question?.explanation && <p>{question.explanation}</p>}
+                    {question && (
+                      <p>
+                        <a href={`/mapas-mentais?subject=${encodeURIComponent(question.source_subject || exam.subject)}&title=${encodeURIComponent(`Questão ${index + 1} — ${question.topic || "Revisão"}`)}&note=${encodeURIComponent((`Questão: ${question.question}\n\nMinha anotação:`).slice(0,700))}`}>
+                          🧠 Criar mapa desta questão →
+                        </a>
+                      </p>
+                    )}
                   </>
                 ) : (
                   <p className={styles.unanswered}>Não respondida.</p>
