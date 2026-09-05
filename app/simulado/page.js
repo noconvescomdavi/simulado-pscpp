@@ -80,6 +80,15 @@ export default async function Page() {
             : "Escolha uma matéria ou gere um simulado misto com 100 questões aleatórias de todas as matérias."}
         </p>
 
+        {entitlement.active && (
+          <section style={{margin:"18px 0",border:"1px solid #1c6fa6",background:"#09243a",borderRadius:12,padding:16}}>
+            <span style={{fontSize:9,color:"#72bdf0",fontWeight:900}}>MODO PROVA PSCPP</span>
+            <h2 style={{margin:"5px 0 6px"}}>Simulação completa de prova</h2>
+            <p style={{margin:"0 0 10px",color:"#9ab4c6"}}>100 questões aleatórias de todas as matérias, 240 minutos, salvamento server-side e relatório pós-prova por disciplina.</p>
+            <a href="/simulado/todas-as-materias" style={{display:"inline-block",border:"1px solid #2384c1",background:"#0e5788",padding:"9px 12px",borderRadius:8,fontSize:9,fontWeight:900}}>Iniciar Modo Prova →</a>
+          </section>
+        )}
+
         <section className={styles.launch}>
           {choices.map((item) => {
             const href =

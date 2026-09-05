@@ -48,6 +48,38 @@ export default async function Page({ params }) {
   const answered = Number(exam.answered_count || answersResult.rows.length || 0);
   const correct = Number(exam.correct_count || answersResult.rows.filter((x) => x.is_correct).length || 0);
   const percent = score(correct, answered);
+  const perSubject = new Map();
+  let responseTotal = 0;
+  let responseCount = 0;
+
+  for (const questionId of ids) {
+    const question = getQuestion(exam.subject, questionId);
+    const answer = answerMap.get(String(questionId));
+    if (!answer) continue;
+
+    const slug = question?.source_subject || exam.subject;
+    const current = perSubject.get(slug) || { subject: slug, answered: 0, correct: 0, response_ms: 0 };
+    current.answered += 1;
+    current.correct += answer.is_correct ? 1 : 0;
+    current.response_ms += Number(answer.response_time_ms || 0);
+    perSubject.set(slug, current);
+
+    if (answer.response_time_ms) {
+      responseTotal += Number(answer.response_time_ms);
+      responseCount += 1;
+    }
+  }
+
+  const subjectBreakdown = [...perSubject.values()]
+    .map((item) => ({
+      ...item,
+      label: subjectLabel(item.subject),
+      accuracy: score(item.correct, item.answered),
+      avg_seconds: item.answered ? Math.round(item.response_ms / item.answered / 1000) : 0,
+    }))
+    .sort((a, b) => a.accuracy - b.accuracy);
+
+  const avgResponseSeconds = responseCount ? Math.round(responseTotal / responseCount / 1000) : 0;
 
   return (
     <>
@@ -67,7 +99,20 @@ export default async function Page({ params }) {
         <p>
           Iniciado em {new Date(exam.started_at).toLocaleString("pt-BR")}
           {exam.finished_at ? ` · encerrado em ${new Date(exam.finished_at).toLocaleString("pt-BR")}` : ""}.
+          {avgResponseSeconds ? ` · tempo médio por questão: ${avgResponseSeconds}s` : ""}
         </p>
+
+        {subjectBreakdown.length > 1 && (
+          <section className={styles.summary}>
+            {subjectBreakdown.map((item) => (
+              <div key={item.subject}>
+                <small>{item.label}</small>
+                <strong>{item.accuracy.toFixed(1)}%</strong>
+                <span>{item.correct}/{item.answered} · {item.avg_seconds}s/q</span>
+              </div>
+            ))}
+          </section>
+        )}
 
         <section className={styles.questions}>
           {ids.map((questionId, index) => {

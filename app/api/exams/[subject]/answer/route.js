@@ -2,6 +2,7 @@ import { getSession } from "../../../../../lib/auth";
 import { getEntitlement } from "../../../../../lib/entitlement";
 import { submitExamAnswer } from "../../../../../lib/exams";
 import { normalizeSubject, TRIAL_SUBJECT_SLUG } from "../../../../../lib/subjects";
+import { recordAppError } from "../../../../../lib/observability";
 
 const ANSWERS = new Set(["A", "B", "C", "D", "E"]);
 
@@ -42,6 +43,7 @@ export async function POST(request, { params }) {
     return Response.json(result, { status: result.status || 200 });
   } catch (error) {
     console.error("Erro ao salvar resposta do simulado:", error);
+    await recordAppError("/api/exams/[subject]/answer", error);
     return Response.json({ error: "Não foi possível salvar a resposta." }, { status: 500 });
   }
 }

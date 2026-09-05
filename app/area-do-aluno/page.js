@@ -7,6 +7,7 @@ import {normalizeSubject,subjectLabel} from "../../lib/subjects";
 import StudentHeader from "../components/StudentHeader";
 import ExamCountdown from "../components/ExamCountdown";
 import DailyStudyPlan from "./DailyStudyPlan";
+import {getConsistency} from "../../lib/engagement";
 import "./dashboard.css";
 
 function fmt(v){return new Intl.NumberFormat("pt-BR").format(Number(v||0))}
@@ -16,13 +17,14 @@ export default async function Area(){
   const session=await getSession();
   if(!session)redirect("/login");
 
-  const [access,progress,performance,profile,recentExams,dailyPlan]=await Promise.all([
+  const [access,progress,performance,profile,recentExams,dailyPlan,consistency]=await Promise.all([
     getUserAccess(session.id),
     query("select subject,percent from study_progress where user_id=$1",[session.id]),
     getUserMetrics(session.id),
     query("select full_name from user_profiles where user_id=$1 limit 1",[session.id]).catch(()=>({rows:[]})),
     query("select id,subject,status,answered_count,correct_count,started_at from exam_sessions where user_id=$1 order by started_at desc limit 4",[session.id]).catch(()=>({rows:[]})),
-    import("../../lib/study-engine").then(({getTodayStudyPlan})=>getTodayStudyPlan(session.id))
+    import("../../lib/study-engine").then(({getTodayStudyPlan})=>getTodayStudyPlan(session.id)),
+    getConsistency(session.id)
   ]);
 
   const active=access?.active===true;
@@ -72,6 +74,15 @@ export default async function Area(){
         </section>
 
         <DailyStudyPlan initialPlan={dailyPlan}/>
+
+        <section className="consistencyPanel">
+          <div><span>SEQUÊNCIA ATUAL</span><strong>{consistency.streak} dias</strong><small>{consistency.study_days} dias estudados no histórico</small></div>
+          <div className="badgeRow">
+            {consistency.badges.map((badge)=><span key={badge.label} className={badge.earned?"earned":""}>{badge.earned?"✓ ":"○ "}{badge.label}</span>)}
+          </div>
+          <a href="/revisao-inteligente">Abrir Revisão Inteligente →</a>
+          <a href="/analise-de-fraquezas">Ver análise por tópico →</a>
+        </section>
 
         <section className="dashboardSection" id="desempenho">
           <div className="sectionTitle"><div><h2>Meu Progresso</h2><p>Acompanhe seus estudos em tempo real:</p></div><a href="#disciplinas">Ver estatísticas completas →</a></div>
