@@ -6,6 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "check:repo": "node scripts/check-repo-hygiene.mjs",
+    "validate:questions": "node scripts/validate-question-banks.mjs",
+    "validate": "npm run check:repo && npm run validate:questions && npm run build",
     "import:manobrabilidade": "node scripts/import-manobrabilidade.mjs"
   },
   "dependencies": {
