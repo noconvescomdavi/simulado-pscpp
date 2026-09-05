@@ -20,7 +20,7 @@ export async function POST(request){
   await query("update payment_orders set provider_preference_id=$2,updated_at=now() where id=$1",[orderId,String(pref.id)]);
   return NextResponse.redirect(pref.init_point,303);
  }catch(error){
-  console.error("Erro checkout Tutor IA",error);
+  console.error("Erro checkout CONTRAMESTRE",error);
   if(orderId)await query("update payment_orders set status='failed',raw_status=$2,updated_at=now() where id=$1",[orderId,String(error?.message||"checkout_error").slice(0,240)]).catch(()=>{});
   return NextResponse.redirect(new URL("/tutor-ia?erro=checkout",request.url),303);
  }
