@@ -1,43 +1,7 @@
 import {MarketingShell,styles} from "../../components/MarketingShell";
-
-export const metadata = {
-  title: "O que Faz um Pratico | ESTIBORDO",
-  description: "Entenda a funcao do Pratico na navegacao, manobra e seguranca da embarcacao em aguas restritas."
-};
-
-export default function Page(){
-  return <MarketingShell
-    eyebrow="SOBRE A PRATICAGEM"
-    title="O Pratico assessora o Comandante nas operacoes mais sensiveis da navegacao."
-    lead="Sua atuacao e especialmente relevante em portos, canais, barras, rios, terminais e outras areas de navegacao restrita."
-  >
-    <section className={styles.section}>
-      <span>ATUACAO</span>
-      <h2>Conhecimento local aplicado a manobra e navegacao.</h2>
-      <p>O Pratico utiliza conhecimento detalhado da Zona de Praticagem para assessorar o Comandante em situacoes que exigem elevada precisao operacional.</p>
-
-      <div className={styles.grid}>
-        <article className={styles.card}>
-          <h3>Navegacao em aguas restritas</h3>
-          <p>Avalia condicoes locais, trafego, profundidade, correntes, vento, canais e restricoes operacionais.</p>
-        </article>
-
-        <article className={styles.card}>
-          <h3>Manobras</h3>
-          <p>Participa do planejamento e da execucao de aproximacoes, atracacoes, desatracacoes, giros e movimentacoes portuarias.</p>
-        </article>
-
-        <article className={styles.card}>
-          <h3>Assessoramento tecnico</h3>
-          <p>Fornece ao Comandante informacoes locais e recomendacoes para apoiar decisoes seguras durante a operacao.</p>
-        </article>
-      </div>
-    </section>
-
-    <section className={styles.section}>
-      <span>RESPONSABILIDADE</span>
-      <h2>Precisao, comunicacao e leitura do ambiente.</h2>
-      <p>A atividade combina conhecimento tecnico, experiencia operacional, comunicacao de passadico e tomada de decisao em ambientes de baixa margem para erro.</p>
-    </section>
-  </MarketingShell>
-}
+export const metadata={title:"O que faz um Prático? | Serviço de Praticagem | ESTIBORDO",description:"Entenda tecnicamente a função do Prático, sua atuação no passadiço e nas manobras em Zonas de Praticagem."};
+export default function Page(){return <MarketingShell eyebrow="SOBRE A PRATICAGEM" title="Prático: conhecimento local especializado onde a margem para erro é mínima." lead="O Prático presta assessoria ao Comandante na navegação e nas manobras de praticagem, aplicando conhecimento profundo das particularidades locais da Zona de Praticagem." primaryHref="/sobre-a-praticagem/como-se-tornar-um-pratico" primaryLabel="Ver como ingressar na Praticagem" secondaryHref="/cadastro" secondaryLabel="Preparar-me para o PSCPP">
+<section className={styles.section}><span>FUNÇÃO OPERACIONAL</span><h2>Não é apenas “manobrar navios”.</h2><p>O serviço integra conhecimento local, características do navio, condições ambientais, tráfego, limitações de canal, recursos portuários e comunicação de passadiço para assessorar operações de elevada precisão.</p><div className={styles.grid}><article className={styles.card}><h3>Navegação de praticagem</h3><p>Atuação no interior da Zona de Praticagem, considerando canais, barras, rios, portos, terminais, perigos, balizamento, profundidades e restrições locais.</p></article><article className={styles.card}><h3>Manobras de praticagem</h3><p>A NORMAM-311 contempla fainas como atracar/desatracar, fundear/suspender, amarrar/largar da boia, entrar/sair de dique ou carreira e alar ao cais quando executadas com assessoria de Prático.</p></article><article className={styles.card}><h3>Passadiço e comunicação</h3><p>A assessoria depende de comunicação clara com Comandante e equipe de passadiço, consciência situacional, planejamento e atualização contínua do cenário operacional.</p></article></div></section>
+<section className={styles.section}><span>LEITURA DA MANOBRA</span><h2>O Prático conecta o navio ao ambiente local.</h2><ul className={styles.checklist}><li>Vento, corrente, maré e visibilidade</li><li>Calado, UKC e profundidades</li><li>Características de manobra do navio</li><li>Tráfego e regras de navegação</li><li>Rebocadores e configuração da manobra</li><li>Berço, terminal, bacia e canal</li><li>Comunicação com passadiço e apoio</li><li>Contingências e mudanças do cenário</li></ul></section>
+<section className={styles.section}><span>RESPONSABILIDADE</span><h2>Assessoria especializada não elimina o papel do Comandante.</h2><p>A presença do Prático insere conhecimento local especializado na tomada de decisão do passadiço. A atividade exige precisão técnica, comunicação, antecipação de risco e julgamento profissional consistente.</p><div className={styles.quote}>Para quem pretende chegar à Praticagem, as disciplinas do PSCPP formam repertório para compreender o ambiente operacional — não são apenas matérias para memorizar.</div><p className={styles.sourceLine}><a href="https://www.marinha.mil.br/dpc/normam-311">Consultar a NORMAM-311/DPC vigente →</a></p></section>
+</MarketingShell>}
