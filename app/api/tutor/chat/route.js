@@ -1,5 +1,5 @@
 import {getSession} from "../../../../lib/auth";
-import {AI_TUTOR_DAILY_LIMIT,ensureConversation,getAiTutorAccess,getTutorConversation,getTutorUsage,saveTutorExchange,tutorSystemPrompt} from "../../../../lib/ai-tutor";
+import {AI_TUTOR_DAILY_LIMIT,ensureConversation,getAiTutorAccess,getTutorConversation,getTutorUsage,getTutorVectorStoreId,saveTutorExchange,tutorSystemPrompt} from "../../../../lib/ai-tutor";
 
 export const dynamic="force-dynamic";
 
@@ -42,7 +42,7 @@ export async function POST(request){
   const conversation=await getTutorConversation(session.id,conversationId);
   const history=(conversation?.messages||[]).slice(-16).map(m=>({role:m.role,content:m.content}));
   const model=String(process.env.OPENAI_TUTOR_MODEL||"gpt-5.6-luna").trim();
-  const vectorStoreId=String(process.env.OPENAI_TUTOR_VECTOR_STORE_ID||"").trim();
+  const vectorStoreId=await getTutorVectorStoreId();
   const tools=vectorStoreId?[{type:"file_search",vector_store_ids:[vectorStoreId],max_num_results:8}]:[];
 
   const response=await fetch("https://api.openai.com/v1/responses",{
