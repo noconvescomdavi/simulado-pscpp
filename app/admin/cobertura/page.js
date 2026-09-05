@@ -1,3 +1,4 @@
+import "./coverage.css";
 import {getQuestionBank} from "../../../lib/question-banks";
 import {taxonomyCatalog,validateQuestionTaxonomy,SUBJECT_TAXONOMY} from "../../../lib/question-taxonomy";
 
