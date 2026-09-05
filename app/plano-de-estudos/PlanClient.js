@@ -50,14 +50,19 @@ export default function PlanClient({plan}){
     <section className={styles.hero}>
       <div>
         <span>PLANO DE ESTUDOS INTELIGENTE</span>
-        <h1>Seu caminho até 01/11/2027</h1>
-        <p>O plano percorre somente a bibliografia exigida pelo PSCPP, publicação por publicação e capítulo por capítulo. Quando a paginação da edição estiver cadastrada, a leitura é distribuída em páginas — nunca por tempo.</p>
+        <h1>Bibliografia completa antes da reta final</h1>
+        <p>Até 01/08/2027, o objetivo é concluir pelo menos uma leitura de 100% da bibliografia exigida. De 02/08 até a prova, o plano entra em revisão pesada: questões, simulados, erros e releitura seletiva dos tópicos com pior desempenho.</p>
       </div>
       <div className={styles.heroStats}>
         <div><strong>{plan.days_left}</strong><span>dias até a prova</span></div>
+        <div><strong>{plan.first_pass?.pending_sections??0}</strong><span>seções para 1ª leitura</span></div>
         <div><strong>{plan.readiness}%</strong><span>índice de prontidão</span></div>
         <div><strong>{plan.bibliography_progress.percent}%</strong><span>bibliografia concluída</span></div>
       </div>
+    </section>
+
+    <section className={styles.phaseBanner}>
+      <div><span>META DA 1ª PASSAGEM</span><strong>100% até 01/08/2027</strong>{plan.first_pass?.pages_per_reading_day&&<small> · média necessária: {plan.first_pass.pages_per_reading_day} páginas/dia de estudo</small>}</div>
     </section>
 
     <section className={styles.phaseBanner}>
