@@ -58,7 +58,7 @@ export default async function MinhasAssinaturas(){
             <p>Pacote adicional: <strong>{formatCurrencyFromCents(AI_TUTOR_PRICE_CENTS)}/mês</strong>.</p>
           </div>
           <div className="subscriptionValidity">
-            {tutorAccess?.active ? <><div><small>Válido até</small><strong>{new Date(tutorAccess.expires_at).toLocaleDateString("pt-BR")}</strong></div><a href="/tutor-ia">Abrir CONTRAMESTRE</a></> : <><p>CONTRAMESTRE especializado exclusivamente no universo PSCPP e marítimo.</p><a href="/tutor-ia">Conhecer e comprar</a></>}
+            {tutorAccess?.active ? <><div><small>Válido até</small><strong>{new Date(tutorAccess.expires_at).toLocaleDateString("pt-BR")}</strong></div><a href="/contramestre">Abrir CONTRAMESTRE</a></> : <><p>CONTRAMESTRE especializado exclusivamente no universo PSCPP e marítimo.</p><a href="/contramestre">Conhecer e comprar</a></>}
           </div>
         </section>
       </main>
