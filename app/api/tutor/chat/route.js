@@ -27,6 +27,8 @@ export async function POST(request){
   const conversation=await getTutorConversation(session.id,conversationId);
   const history=(conversation?.messages||[]).slice(-16).map(m=>({role:m.role,content:m.content}));
   const model=String(process.env.OPENAI_TUTOR_MODEL||"gpt-5.6-luna").trim();
+  const vectorStoreId=String(process.env.OPENAI_TUTOR_VECTOR_STORE_ID||"").trim();
+  const tools=vectorStoreId?[{type:"file_search",vector_store_ids:[vectorStoreId],max_num_results:8}]:[];
 
   const response=await fetch("https://api.openai.com/v1/responses",{
     method:"POST",
@@ -35,6 +37,8 @@ export async function POST(request){
       model,
       instructions:tutorSystemPrompt(),
       input:[...history,{role:"user",content:message}],
+      tools,
+      include:vectorStoreId?["file_search_call.results"]:undefined,
       max_output_tokens:900,
       store:false
     })
