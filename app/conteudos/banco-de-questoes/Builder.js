@@ -2,8 +2,10 @@
 import {useState} from "react";
 import styles from "./bank.module.css";
 
-export default function Builder({banks,trial=false}){
-  const [s,setS]=useState(banks.filter(x=>x.count).map(x=>x.slug));
+export default function Builder({banks,trial=false,initialSubjects=[]}){
+  const available=banks.filter(x=>x.count).map(x=>x.slug);
+  const initial=initialSubjects.filter(slug=>available.includes(slug));
+  const [s,setS]=useState(initial.length?initial:available);
   const [n,setN]=useState(trial?10:20);
   const [e,setE]=useState("");
 
@@ -17,7 +19,7 @@ export default function Builder({banks,trial=false}){
     const p=await r.json().catch(()=>({}));
 
     if(!r.ok){
-      if(r.status===429 && trial){
+      if(r.status===429&&trial){
         location.href="/teste-gratis-excedido?recurso=caderno";
         return;
       }
