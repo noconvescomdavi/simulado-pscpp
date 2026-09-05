@@ -15,6 +15,19 @@ function d(v){
     : "—";
 }
 
+function statusLabel(status){
+  const s=String(status||"").toLowerCase();
+  if(s==="approved") return "Aprovado";
+  if(s==="pending") return "Pendente";
+  if(s==="failed") return "Falhou";
+  if(s==="rejected") return "Rejeitado";
+  if(s==="cancelled") return "Cancelado";
+  if(s==="refunded") return "Estornado";
+  if(s==="charged_back") return "Chargeback";
+  if(s==="review") return "Em análise";
+  return status||"—";
+}
+
 export default async function Page({searchParams}){
   const s=await getSession();
   if(!s) redirect("/cadastro");
@@ -23,11 +36,13 @@ export default async function Page({searchParams}){
   const [a,p,pr]=await Promise.all([
     getUserAccess(s.id),
     query("select * from payment_orders where user_id=$1 order by created_at desc limit 5",[s.id]),
-    query("select full_name,cpf,phone from user_profiles where user_id=$1",[s.id])
+    query("select full_name,cpf,phone from user_profiles where user_id=$1 limit 1",[s.id])
   ]);
 
   const c=getPaymentConfig();
   const ready=Boolean(pr.rows[0]?.full_name&&pr.rows[0]?.cpf&&pr.rows[0]?.phone);
+  const retorno=String(q?.retorno||"");
+  const erro=String(q?.erro||"");
 
   return (
     <>
@@ -37,9 +52,9 @@ export default async function Page({searchParams}){
           <div className={styles.copy}>
             <span>ACESSO À PLATAFORMA</span>
             <h1>365 dias de preparação.</h1>
-            <p>Checkout Seguro do Mercado Pago</p>
+            <p>Pagamento processado pelo Mercado Pago em ambiente seguro.</p>
             <ul>
-              <li>Pagamento processado pelo Mercado Pago</li>
+              <li>Checkout hospedado pelo Mercado Pago</li>
               <li>Conexão protegida por HTTPS/SSL</li>
               <li>Liberação automática após confirmação do pagamento</li>
             </ul>
@@ -50,7 +65,7 @@ export default async function Page({searchParams}){
               <>
                 <div className={styles.activeBadge}>ACESSO ATIVO</div>
                 <h2>Acesso liberado</h2>
-                <p>Válido até <strong>{d(a.expires_at)}</strong>.</p>
+                <p>{a.lifetime ? "Seu acesso é vitalício." : <>Válido até <strong>{d(a.expires_at)}</strong>.</>}</p>
                 <a className={styles.primary} href="/conteudos">Acessar conteúdos</a>
               </>
             ) : (
@@ -65,7 +80,13 @@ export default async function Page({searchParams}){
                   <span>✓ Mercado Pago</span>
                 </div>
 
-                {["sucesso","pendente"].includes(String(q?.retorno||"")) && <PaymentStatusPoller/>}
+                {retorno==="sucesso" && <div className={styles.notice}>Pagamento enviado. Estamos confirmando a aprovação com o Mercado Pago.</div>}
+                {retorno==="pendente" && <div className={styles.notice}>Pagamento pendente. Assim que o Mercado Pago confirmar, seu acesso será liberado automaticamente.</div>}
+                {retorno==="falha" && <div className={styles.error}>O pagamento não foi concluído. Nenhum acesso foi ativado. Você pode tentar novamente.</div>}
+                {erro==="checkout" && <div className={styles.error}>Não foi possível iniciar o checkout agora. Tente novamente em instantes.</div>}
+                {erro==="configuracao" && <div className={styles.error}>O checkout está temporariamente indisponível. A configuração de pagamento precisa ser revisada.</div>}
+
+                {["sucesso","pendente"].includes(retorno) && <PaymentStatusPoller/>}
 
                 {q?.locked && (
                   <div className={styles.error}>
@@ -75,8 +96,8 @@ export default async function Page({searchParams}){
 
                 {!ready && (
                   <div className={styles.profileWarning}>
-                    Complete nome, CPF e telefone.
-                    <a href="/perfil">Abrir perfil</a>
+                    Antes do pagamento, complete nome, CPF e telefone.
+                    <a href="/perfil">Completar meu perfil</a>
                   </div>
                 )}
 
@@ -84,8 +105,8 @@ export default async function Page({searchParams}){
                   <button className={styles.primary} disabled={!c.ready||!ready}>Ir para o Mercado Pago</button>
                 </form>
 
-                <p className={styles.secure}>Seus dados de pagamento são processados no ambiente seguro do Mercado Pago.</p>
-                {!c.ready && <p className={styles.configMessage}>Configure as variáveis do Mercado Pago no Vercel.</p>}
+                <p className={styles.secure}>Os dados de pagamento são informados diretamente no ambiente do Mercado Pago e não são armazenados pela ESTIBORDO.</p>
+                {!c.ready && <p className={styles.configMessage}>Checkout indisponível: revise as variáveis de integração no ambiente de produção.</p>}
               </>
             )}
           </article>
@@ -97,7 +118,7 @@ export default async function Page({searchParams}){
             <div className={styles.paymentList}>
               {p.rows.map(x=>(
                 <article key={x.id}>
-                  <div><strong>{x.status}</strong><small>{d(x.created_at)}</small></div>
+                  <div><strong>{statusLabel(x.status)}</strong><small>{d(x.created_at)}</small></div>
                   <b>{formatCurrencyFromCents(Number(x.amount_cents))}</b>
                 </article>
               ))}
