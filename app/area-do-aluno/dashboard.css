@@ -1,92 +1,16 @@
-/* Estilos exclusivos do painel do aluno. Mantidos fora de globals.css para
-   que novas métricas nunca alterem a identidade visual da página inicial. */
-.dashboardHeader{height:76px;background:rgba(8,21,34,.98);border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;z-index:50}
-.dashboardHeaderInner{max-width:1240px;height:100%;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.dashboardBrand{width:250px}
-.dashboardBrand img{width:100%}
-.dashboardActions{display:flex;align-items:center;gap:9px}
-.dashboardActions a,.dashboardActions button{border:1px solid rgba(255,255,255,.2);background:transparent;color:#fff;border-radius:8px;padding:9px 13px;font-size:11px;font-weight:800;cursor:pointer}
-.dashboardActions form{margin:0}
-.dashboardActions .dashboardStudy{background:var(--red);border-color:var(--red)}
-
-.studentDashboard{max-width:1240px;--dashboard-muted:#687A8A;--dashboard-line:#DCE4EA}
-.dashboardIntro{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:18px 0 22px}
-.dashboardIntro h1{font-size:clamp(36px,5vw,58px);letter-spacing:-.045em;margin:5px 0}
-.dashboardIntro p{margin:0;color:var(--dashboard-muted);font-size:12px}
-.accessBadge{border-radius:999px;padding:8px 11px;font-size:9px;font-weight:900;letter-spacing:.07em}
-.accessBadge.active{background:#e5f7ee;color:#117148;border:1px solid #bde7d0}
-.accessBadge.pending{background:#fff5d7;color:#846200;border:1px solid #ecd68d}
-
-.performanceMetrics{display:grid;grid-template-columns:repeat(5,1fr);gap:11px}
-.performanceMetric{background:#fff;border:1px solid var(--dashboard-line);border-radius:14px;padding:18px;box-shadow:0 13px 35px rgba(13,27,42,.05)}
-.performanceMetric span{display:block;color:var(--dashboard-muted);font-size:9px;font-weight:900;letter-spacing:.05em}
-.performanceMetric strong{display:block;font-size:29px;margin-top:7px}
-.performanceMetric.success strong{color:#087a58}
-.performanceMetric.danger strong{color:var(--red)}
-
-.dashboardSplit{display:grid;grid-template-columns:1.35fr .65fr;gap:13px;margin-top:14px}
-.dashboardPanel{background:#fff;border:1px solid var(--dashboard-line);border-radius:16px;padding:21px;box-shadow:0 13px 35px rgba(13,27,42,.05)}
-.panelHeading{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.panelHeading span,.studyPriority>span{font-size:9px;color:var(--red);font-weight:900;letter-spacing:.1em}
-.panelHeading h2{margin:4px 0 0;font-size:23px}
-.panelHeading>strong{font-size:30px;color:var(--red)}
-.priorityList{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:8px;counter-reset:priority}
-.priorityList li{counter-increment:priority;display:grid;grid-template-columns:auto 1fr auto;gap:11px;align-items:center;border:1px solid var(--dashboard-line);background:var(--off);border-radius:11px;padding:11px}
-.priorityList li:before{content:counter(priority);width:27px;height:27px;border-radius:8px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:10px;font-weight:900}
-.priorityList li strong,.priorityList li span{display:block}
-.priorityList li strong{font-size:12px}
-.priorityList li span{font-size:9px;color:var(--dashboard-muted);margin-top:3px}
-.priorityList li>b{font-size:10px;color:var(--red);text-align:right}
-.emptyPerformance{font-size:12px;color:var(--dashboard-muted);line-height:1.6}
-.largeProgress,.accuracyBar{height:10px;background:#e7edf1;border-radius:999px;overflow:hidden}
-.largeProgress{margin-top:20px}
-.largeProgress i,.accuracyBar i{display:block;height:100%;background:linear-gradient(90deg,var(--red),#ed405c);border-radius:inherit}
-.progressPanel p{font-size:11px;color:var(--dashboard-muted);line-height:1.55;margin-bottom:0}
-
-.subjectPerformance{margin-top:42px}
-.subjectPerformanceHeading{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:15px}
-.subjectPerformanceHeading h2{font-size:32px;letter-spacing:-.035em;margin:5px 0 0}
-.subjectPerformanceHeading p{max-width:430px;text-align:right;color:var(--dashboard-muted);font-size:11px;line-height:1.55}
-.subjectPerformanceGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
-.subjectPerformanceCard{background:#fff;border:1px solid var(--dashboard-line);border-radius:16px;padding:20px;box-shadow:0 13px 35px rgba(13,27,42,.05)}
-.subjectPerformanceTitle{display:flex;align-items:flex-start;justify-content:space-between;gap:15px}
-.subjectPerformanceTitle span,.subjectPerformanceTitle small{display:block}
-.subjectPerformanceTitle span{font-family:"Poppins",Arial,sans-serif;font-size:16px;font-weight:700}
-.subjectPerformanceTitle small{color:var(--dashboard-muted);font-size:9px;margin-top:4px}
-.subjectPerformanceTitle>strong{font-size:23px;color:var(--red)}
-.subjectStats{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:16px 0 12px}
-.subjectStats div{background:var(--off);border-radius:9px;padding:9px}
-.subjectStats span{display:block;font-size:7px;color:var(--dashboard-muted);font-weight:900}
-.subjectStats b{display:block;font-size:14px;margin-top:3px}
-.successText{color:#087a58}
-.dangerText{color:var(--red)}
-.accuracyBar{height:7px}
-.studyPriority{border-top:1px solid var(--dashboard-line);margin-top:15px;padding-top:13px}
-.studyPriority ul{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:6px}
-.studyPriority li{display:flex;justify-content:space-between;gap:12px;font-size:10px}
-.studyPriority li small{color:var(--dashboard-muted);text-align:right}
-.studyPriority p{color:var(--dashboard-muted);font-size:10px;margin:8px 0 0}
-
-@media(max-width:980px){
-  .performanceMetrics{grid-template-columns:repeat(3,1fr)}
-  .dashboardSplit{grid-template-columns:1fr}
-  .subjectPerformanceGrid{grid-template-columns:1fr}
-}
-
-@media(max-width:700px){
-  .dashboardHeader{height:68px}
-  .dashboardHeaderInner{padding:0 12px}
-  .dashboardBrand{width:180px}
-  .dashboardActions a:not(.dashboardStudy){display:none}
-  .dashboardActions a,.dashboardActions button{padding:8px 10px}
-  .dashboardIntro{align-items:flex-start;flex-direction:column}
-  .performanceMetrics{grid-template-columns:1fr 1fr}
-  .performanceMetric:last-child{grid-column:1/-1}
-  .subjectPerformanceHeading{align-items:flex-start;flex-direction:column}
-  .subjectPerformanceHeading p{text-align:left;margin:0}
-  .subjectStats{grid-template-columns:1fr 1fr}
-  .priorityList li{grid-template-columns:auto 1fr}
-  .priorityList li>b{grid-column:2;text-align:left}
-  .studyPriority li{align-items:flex-start;flex-direction:column}
-  .studyPriority li small{text-align:left}
-}
+.studentDashboardV2{min-height:100vh;background:radial-gradient(circle at 55% 0,#0d2a46 0,#071927 34%,#05131e 72%);color:#e7f0f7;padding:30px 28px 26px!important;font-family:"Montserrat",Arial,sans-serif}
+.studentWelcome{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:18px}.studentWelcome>div:first-child>span{color:#5ba9e8;font-size:9px;font-weight:900;letter-spacing:.14em}.studentWelcome h1{font-size:30px;margin:4px 0 3px;letter-spacing:-.03em}.studentWelcome h1 b{font-size:25px}.studentWelcome p{margin:0;color:#8da7bb;font-size:11px}.studentMotto{text-align:right}.studentMotto span,.studentMotto strong{display:block;font-size:8px;letter-spacing:.18em}.studentMotto span{color:#9bb7ca}.studentMotto strong{margin-top:5px;color:#d5e5ef}
+.studentHeroBanner{min-height:160px;border:1px solid rgba(56,139,211,.42);border-radius:14px;overflow:hidden;position:relative;display:grid;grid-template-columns:1fr 235px minmax(430px,1.05fr);align-items:center;gap:14px;padding:18px 18px 18px 30px;background:linear-gradient(90deg,rgba(4,23,39,.96) 0%,rgba(5,31,52,.78) 36%,rgba(9,24,42,.62) 100%),url("/estibordo/imagens/navio-conteineiro-atracando-dois-rebocadores.png") center 48%/cover;box-shadow:0 22px 60px rgba(0,0,0,.18)}.studentHeroBanner:after{content:"";position:absolute;inset:auto 0 0;height:2px;background:linear-gradient(90deg,#187de0,#9747ff,#e3a632)}
+.studentHeroCopy{position:relative;z-index:1}.studentHeroCopy small{font-size:8px;font-weight:900}.studentHeroCopy h2{font-size:22px;line-height:1.02;margin:7px 0 9px}.studentHeroCopy p{margin:0;color:#aac3d6;font-size:8px;letter-spacing:.15em}
+.studentAccessCard{position:relative;z-index:1;background:rgba(5,19,33,.82);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:17px 18px}.studentAccessCard span,.studentAccessCard small{display:block}.studentAccessCard span{font-size:8px;color:#9eb5c6}.studentAccessCard strong{display:block;font-size:22px;margin:4px 0}.studentAccessCard.isActive strong{color:#20d487}.studentAccessCard.isTrial strong{color:#f3b433}.studentAccessCard small{font-size:8px;color:#d1dde6;line-height:1.45}
+.examCountdown{position:relative;z-index:1;background:rgba(5,18,32,.82);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:13px 14px}.countdownHeading{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:9px}.countdownHeading span{font-size:8px;font-weight:900;color:#d8e5ee}.countdownHeading small{font-size:7px;color:#91aabd}.countdownGrid{display:grid;grid-template-columns:repeat(7,auto);align-items:center;justify-content:center;gap:8px}.countdownGrid>div{min-width:66px;background:#07182a;border:1px solid #153b59;border-radius:8px;text-align:center;padding:9px 7px}.countdownGrid strong,.countdownGrid span{display:block}.countdownGrid strong{font-size:22px;line-height:1;color:#fff}.countdownGrid span{font-size:7px;color:#83a2b8;margin-top:6px}.countdownGrid i{font-style:normal;color:#4b6380;font-size:20px;font-weight:900}
+.dashboardSection{margin-top:20px}.sectionTitle{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:9px}.sectionTitle h2{font-size:17px;margin:0 0 3px}.sectionTitle p{font-size:9px;color:#839fb4;margin:0}.sectionTitle>a,.panelHead>a{border:1px solid #1767a4;color:#8ecfff;background:#0b2b45;border-radius:7px;padding:8px 11px;font-size:8px;font-weight:800}
+.quickGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.quickCard{min-height:92px;border-radius:11px;border:1px solid;display:grid;grid-template-columns:50px 1fr 15px;gap:12px;align-items:center;padding:12px 14px;transition:transform .2s ease,filter .2s ease,box-shadow .2s ease}.quickCard:hover{transform:translateY(-3px);filter:brightness(1.08);box-shadow:0 15px 30px rgba(0,0,0,.2)}.quickCard>i{width:50px;height:50px;border-radius:13px;display:grid;place-items:center;font-style:normal;font-size:24px;background:rgba(0,0,0,.22)}.quickCard strong,.quickCard span{display:block}.quickCard strong{font-size:11px}.quickCard span{font-size:8px;color:#c5d4de;line-height:1.45;margin-top:5px}.quickCard>b{font-size:24px}.quickCard.blue{background:linear-gradient(135deg,#075cba,#063765);border-color:#1689f1}.quickCard.green{background:linear-gradient(135deg,#087b51,#06432f);border-color:#12b679}.quickCard.purple{background:linear-gradient(135deg,#5420a9,#32126e);border-color:#8e45eb}.quickCard.gold{background:linear-gradient(135deg,#80540e,#422c0d);border-color:#c58b28}
+.statsGridV2{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.statsGridV2 article{min-height:84px;border:1px solid #173d5a;background:linear-gradient(180deg,#0a2235,#081b2a);border-radius:10px;padding:12px;display:flex;align-items:center;gap:12px}.statsGridV2 i{width:46px;height:46px;display:grid;place-items:center;border-radius:12px;background:#102f52;font-style:normal;font-size:20px;color:#79c5ff}.statsGridV2 span,.statsGridV2 strong,.statsGridV2 small{display:block}.statsGridV2 span{font-size:8px;color:#a6bccb}.statsGridV2 strong{font-size:22px;margin:2px 0}.statsGridV2 small{font-size:8px;color:#7f9caf}
+.bibliographyBanner{margin-top:13px;min-height:60px;border:1px solid #174267;background:linear-gradient(90deg,#0b2843,#081d30);border-radius:10px;display:grid;grid-template-columns:48px 1fr auto;gap:12px;align-items:center;padding:10px 14px;transition:.2s}.bibliographyBanner:hover{border-color:#2387cd;transform:translateY(-1px)}.bookIcon{width:42px;height:42px;border-radius:11px;background:#123f70;display:grid;place-items:center;font-size:21px}.bibliographyBanner strong,.bibliographyBanner span{display:block}.bibliographyBanner strong{font-size:10px}.bibliographyBanner span{font-size:8px;color:#8facbf;margin-top:3px}.bibliographyBanner>b{font-size:8px;color:#9bd3ff;border:1px solid #1767a4;padding:8px 10px;border-radius:7px}
+.dashboardColumns{display:grid;grid-template-columns:1.1fr .9fr;gap:12px;margin-top:13px}.activityPanel,.newsPanel,.disciplinePanel{border:1px solid #173d5a;background:linear-gradient(180deg,#0a2133,#071927);border-radius:11px;padding:12px}.panelHead{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.panelHead h2{font-size:12px;margin:0}.activityList,.newsList{display:grid}.activityList>a,.newsList>div{min-height:50px;border-top:1px solid rgba(112,159,194,.14);display:grid;align-items:center;gap:10px;padding:7px 5px}.activityList>a{grid-template-columns:34px 1fr auto}.newsList>div{grid-template-columns:34px 1fr}.activityList i,.newsList i{width:31px;height:31px;border-radius:9px;background:#075fc1;display:grid;place-items:center;font-style:normal}.activityList strong,.activityList span,.activityList small,.newsList strong,.newsList span{display:block}.activityList strong,.newsList strong{font-size:9px}.activityList span,.newsList span{font-size:7px;color:#87a4b8;margin-top:3px}.activityList small{font-size:7px;color:#7d97aa}.emptyActivity{padding:24px;text-align:center;color:#7793a6;font-size:9px}
+.disciplinePanel{margin-top:13px}.disciplineGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px 16px}.disciplineGrid article{display:grid;grid-template-columns:1fr auto;gap:7px;align-items:center;padding:8px;border-radius:8px;background:#081b2a}.disciplineGrid strong,.disciplineGrid span{display:block}.disciplineGrid strong{font-size:9px}.disciplineGrid span{font-size:7px;color:#7895a9;margin-top:2px}.disciplineGrid>b{font-size:12px;color:#8ed2ff}.disciplineBar{grid-column:1/-1;height:4px;background:#12334c;border-radius:99px;overflow:hidden}.disciplineBar i{display:block;height:100%;background:linear-gradient(90deg,#168fe8,#23cf93);border-radius:99px}
+.studentDashFooter{margin-top:13px;padding:12px 2px 0;border-top:1px solid #15354c;display:flex;justify-content:space-between;gap:15px;color:#718fa4;font-size:7px}.studentDashFooter strong{color:#9cb3c3}
+@media(max-width:1250px){.studentHeroBanner{grid-template-columns:1fr 220px}.examCountdown{grid-column:1/-1}.quickGrid{grid-template-columns:1fr 1fr}.statsGridV2{grid-template-columns:1fr 1fr}}
+@media(max-width:960px){.studentDashboardV2{padding:82px 16px 24px!important}.studentHeroBanner{grid-template-columns:1fr}.examCountdown{grid-column:auto}.studentWelcome{margin-top:0}.dashboardColumns{grid-template-columns:1fr}}
+@media(max-width:650px){.studentDashboardV2{padding:76px 10px 20px!important}.studentWelcome{align-items:flex-start}.studentMotto{display:none}.studentWelcome h1{font-size:24px}.studentHeroBanner{padding:18px 12px;min-height:0}.studentHeroCopy h2{font-size:20px}.countdownHeading{align-items:flex-start;flex-direction:column}.countdownGrid{gap:4px;grid-template-columns:repeat(7,auto);overflow-x:auto;justify-content:start}.countdownGrid>div{min-width:56px}.countdownGrid strong{font-size:18px}.countdownGrid i{font-size:14px}.quickGrid,.statsGridV2,.disciplineGrid{grid-template-columns:1fr}.bibliographyBanner{grid-template-columns:42px 1fr}.bibliographyBanner>b{grid-column:1/-1;text-align:center}.studentDashFooter{flex-direction:column}.quickCard{min-height:82px}}
