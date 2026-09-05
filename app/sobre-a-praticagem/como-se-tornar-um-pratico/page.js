@@ -1,47 +1,24 @@
 import {MarketingShell,styles} from "../../components/MarketingShell";
 
-export const metadata = {
-  title: "Como se tornar um Pratico | ESTIBORDO",
-  description: "Visao geral sobre o caminho para ingresso na praticagem no Brasil e preparacao para o processo seletivo."
-};
+export const metadata={title:"Como se tornar um Prático no Brasil | PSCPP | ESTIBORDO",description:"Entenda o caminho oficial para ingressar na praticagem: requisitos, PSCPP, etapas de seleção, qualificação e habilitação."};
 
-export default function Page(){
-  return <MarketingShell
-    eyebrow="SOBRE A PRATICAGEM"
-    title="O ingresso na Praticagem exige preparacao tecnica e aprovacao em processo seletivo."
-    lead="O caminho envolve requisitos de ingresso, processo seletivo e uma etapa posterior de qualificacao na Zona de Praticagem."
-  >
-    <section className={styles.section}>
-      <span>CAMINHO GERAL</span>
-      <h2>Da preparacao ao exercicio da atividade.</h2>
+export default function Page(){return <MarketingShell eyebrow="GUIA DA PRATICAGEM • PSCPP" title="Como se tornar Prático no Brasil: do PSCPP à habilitação." lead="O ingresso não acontece por concurso para cargo público. O candidato disputa uma vaga para a categoria de Praticante de Prático, cumpre o processo seletivo da Autoridade Marítima e, se selecionado, ainda precisa concluir a qualificação e obter a habilitação." primaryHref="/cadastro" primaryLabel="Começar a estudar para o PSCPP" secondaryHref="/sobre-a-praticagem/o-que-faz-um-pratico" secondaryLabel="Entender a profissão">
+<section className={styles.section}><span>ANTES DE COMEÇAR</span><h2>PSCPP seleciona Praticantes de Prático — não entrega diretamente a habilitação de Prático.</h2><p>No Edital PSCPP/2012, a DPC definiu que o acesso à categoria de Praticante de Prático ocorria exclusivamente por Processo Seletivo. O documento também esclarecia que Praticante de Prático e Prático não são militares, servidores ou empregados públicos e que o certame não se destinava ao provimento de cargo ou emprego público.</p><div className={styles.quote}>O caminho é: preencher os requisitos do edital → ser aprovado e classificado no PSCPP → ser distribuído e selecionado para uma Zona de Praticagem → tornar-se Praticante de Prático → cumprir a qualificação prevista pela Autoridade Marítima → obter a habilitação como Prático.</div><div className={styles.notice}><strong>Atenção à data:</strong> o edital de 2012 é referência histórica do último PSCPP disponibilizado pela DPC, não o edital de um futuro processo. Requisitos, critérios, provas, índices e prazos podem mudar. Atualmente, a norma de referência do Serviço de Praticagem é a NORMAM-311/DPC; em novo certame, prevalecerão a norma e o edital oficiais vigentes.</div></section>
 
-      <div className={styles.grid}>
-        <article className={styles.card}>
-          <span className={styles.number}>1</span>
-          <h3>Preparacao</h3>
-          <p>Estudo sistematico da bibliografia e das disciplinas previstas para o processo seletivo.</p>
-        </article>
+<section className={styles.section}><span>O CAMINHO COMPLETO</span><h2>Como foi estruturado o PSCPP/2012, etapa por etapa.</h2><div className={styles.timeline}>
+<article className={styles.timelineItem}><div><h3>Verificar os requisitos</h3><p>Em 2012 foram exigidos, entre outros pontos, nacionalidade brasileira, idade mínima de 18 anos, graduação de nível superior reconhecida e condição náutica específica: aquaviário de convés ou máquinas de nível igual ou superior a 4, Prático/Praticante de Prático ou, no grupo de amadores, no mínimo Mestre-Amador.</p></div></article>
+<article className={styles.timelineItem}><div><h3>Inscrição e Zonas de Praticagem</h3><p>O candidato indicava as Zonas de Praticagem em ordem de preferência. A escolha participava da posterior distribuição dos classificados e seguia as regras de vagas do edital.</p></div></article>
+<article className={styles.timelineItem}><div><h3>1ª etapa — prova escrita</h3><p>Objetiva, de múltipla escolha, eliminatória e classificatória. O edital admitia textos e questões em português e/ou inglês. Em 2012, valia 70 pontos, exigia pelo menos 35 e classificava para a sequência os 250 maiores graus, observadas as regras de desempate.</p></div></article>
+<article className={styles.timelineItem}><div><h3>2ª etapa — documentos, seleção psicofísica e suficiência física</h3><p>Os classificados apresentavam documentação e passavam por avaliação psicofísica e teste físico. Em 2012, o teste incluiu 4 exercícios completos de barra, 50 m de natação em até 1min30s e flutuação por 20 minutos. Esses índices são históricos.</p></div></article>
+<article className={styles.timelineItem}><div><h3>3ª etapa — prova de títulos</h3><p>Teve caráter classificatório e pontuou experiência marítima, categoria/posto e tempo de comando ou de prestação de serviços de praticagem, dentro dos critérios daquele edital.</p></div></article>
+<article className={styles.timelineItem}><div><h3>4ª etapa — prova prático-oral</h3><p>Teve caráter eliminatório e classificatório, com normas próprias. É uma fase distinta da prova escrita e exige aplicação do conhecimento em contexto prático e oral.</p></div></article>
+<article className={styles.timelineItem}><div><h3>Classificação e distribuição</h3><p>A seleção final não significava escolher livremente qualquer local. A distribuição pelas Zonas de Praticagem observava vagas, classificação e opções previamente declaradas.</p></div></article>
+<article className={styles.timelineItem}><div><h3>Praticante → qualificação → Prático</h3><p>No edital de 2012, a certificação e a qualificação já não integravam o PSCPP. O documento previa programa de qualificação com duração mínima de 12 e máxima de 15 meses e aprovação no Exame de Habilitação para Prático. A regra atual dessa fase deve ser conferida na NORMAM-311/DPC vigente.</p></div></article>
+</div></section>
 
-        <article className={styles.card}>
-          <span className={styles.number}>2</span>
-          <h3>Processo seletivo</h3>
-          <p>O candidato precisa atender aos requisitos estabelecidos e ser aprovado nas etapas previstas no edital vigente.</p>
-        </article>
+<section className={styles.section}><span>REQUISITOS • REFERÊNCIA 2012</span><h2>Não bastava ter nível superior.</h2><p>O último edital combinou formação superior, habilitação ou qualificação náutica, regularidade documental e aprovação sucessiva nas fases eliminatórias.</p><ul className={styles.checklist}><li>Brasileiro e com idade mínima prevista</li><li>Graduação oficialmente reconhecida</li><li>Qualificação náutica exigida</li><li>Regularidade documental</li><li>Idoneidade e antecedentes verificados</li><li>Aptidão psicofísica</li><li>Aprovação no teste físico</li><li>Desempenho competitivo nas provas</li></ul></section>
 
-        <article className={styles.card}>
-          <span className={styles.number}>3</span>
-          <h3>Qualificacao</h3>
-          <p>A aprovacao no processo seletivo nao encerra a formacao. Ha etapa posterior de qualificacao para a atividade na Zona de Praticagem.</p>
-        </article>
-      </div>
-    </section>
+<section className={styles.section}><span>PREPARAÇÃO</span><h2>A prova escrita é a primeira grande barreira — e a preparação começa muito antes dela.</h2><p>A DPC registrou em 2012 que o conteúdo programático não se encerrava na bibliografia sugerida. A bibliografia funciona como base; questões, simulados e revisão devem testar domínio do assunto, interpretação técnica, velocidade e retenção.</p><div className={styles.grid}><article className={styles.card}><h3>Bibliografia</h3><p>Organize o estudo pelos assuntos oficiais e publicações de referência, sem tratar a bibliografia sugerida como limite absoluto de cobrança.</p><a href="/plataforma">Ver a plataforma →</a></article><article className={styles.card}><h3>Banco de questões</h3><p>Converta leitura em recuperação ativa e identifique padrões de erro antes que se consolidem.</p><a href="/produtos/banco-de-questoes">Conhecer o banco →</a></article><article className={styles.card}><h3>Simulados</h3><p>Treine tempo, consistência e resistência cognitiva em condições progressivamente mais próximas de prova.</p><a href="/produtos/simulados">Conhecer simulados →</a></article></div></section>
 
-    <section className={styles.section}>
-      <span>IMPORTANTE</span>
-      <h2>Use sempre a norma e o edital vigente como referencia.</h2>
-      <div className={styles.quote}>
-        Requisitos, etapas, criterios e documentos podem ser atualizados. Para qualquer decisao de inscricao, consulte a regulamentacao e o edital oficial em vigor.
-      </div>
-    </section>
-  </MarketingShell>
-}
+<section className={styles.section}><span>FONTE OFICIAL</span><h2>Use a ESTIBORDO para preparar-se; use a Marinha para validar a regra.</h2><p>O edital de 2012 ajuda a entender a arquitetura do último processo seletivo. Alterações normativas e um futuro PSCPP devem ser conferidos diretamente nas publicações da Diretoria de Portos e Costas.</p><p className={styles.sourceLine}><a href="https://www.marinha.mil.br/dpc/processo-seletivo">Página oficial do PSCPP — DPC</a> · <a href="https://www.marinha.mil.br/dpc/normam-311">NORMAM-311/DPC — DPC</a></p></section>
+</MarketingShell>}
