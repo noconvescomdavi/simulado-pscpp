@@ -35,7 +35,7 @@ export default async function Page({searchParams}){
       <main className={styles.page}>
         <section className={styles.hero}>
           <div className={styles.copy}>
-            <span>ACESSO Ã€ PLATAFORMA</span>
+            <span>ACESSO À PLATAFORMA</span>
             <h1>365 dias de preparação.</h1>
             <p>Checkout Seguro do Mercado Pago</p>
             <ul>
@@ -60,9 +60,9 @@ export default async function Page({searchParams}){
                 <small>365 dias</small>
 
                 <div className={styles.securityBadges} aria-label="Segurança do checkout">
-                  <span>ðŸ”’ Checkout seguro</span>
-                  <span>ðŸ›¡ï¸ HTTPS / SSL</span>
-                  <span>âœ“ Mercado Pago</span>
+                  <span>🔒 Checkout seguro</span>
+                  <span>🛡️ HTTPS / SSL</span>
+                  <span>✓ Mercado Pago</span>
                 </div>
 
                 {["sucesso","pendente"].includes(String(q?.retorno||"")) && <PaymentStatusPoller/>}
@@ -81,15 +81,10 @@ export default async function Page({searchParams}){
                 )}
 
                 <form action="/api/payments/mercado-pago/checkout" method="post">
-                  <button className={styles.primary} disabled={!c.ready||!ready}>
-                    Ir para o Mercado Pago
-                  </button>
+                  <button className={styles.primary} disabled={!c.ready||!ready}>Ir para o Mercado Pago</button>
                 </form>
 
-                <p className={styles.secure}>
-                  Seus dados de pagamento são processados no ambiente seguro do Mercado Pago.
-                </p>
-
+                <p className={styles.secure}>Seus dados de pagamento são processados no ambiente seguro do Mercado Pago.</p>
                 {!c.ready && <p className={styles.configMessage}>Configure as variáveis do Mercado Pago no Vercel.</p>}
               </>
             )}
@@ -102,10 +97,7 @@ export default async function Page({searchParams}){
             <div className={styles.paymentList}>
               {p.rows.map(x=>(
                 <article key={x.id}>
-                  <div>
-                    <strong>{x.status}</strong>
-                    <small>{d(x.created_at)}</small>
-                  </div>
+                  <div><strong>{x.status}</strong><small>{d(x.created_at)}</small></div>
                   <b>{formatCurrencyFromCents(Number(x.amount_cents))}</b>
                 </article>
               ))}
