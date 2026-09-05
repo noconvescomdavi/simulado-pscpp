@@ -136,6 +136,12 @@ export async function POST(req, { params }) {
       );
     }
 
+    await query(
+      `INSERT INTO admin_audit_log(actor_user_id,action,entity_type,entity_key,after_data)
+       VALUES($1,$2,'user_access',$3,$4::jsonb)`,
+      [admin.id, "access_" + action, id, JSON.stringify({ status: action })]
+    ).catch(() => {});
+
     const url = new URL("/admin/usuarios", req.url);
     url.searchParams.set(
       "msg",
