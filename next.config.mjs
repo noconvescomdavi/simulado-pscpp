@@ -21,6 +21,14 @@ const securityHeaders = [
     key: "Permissions-Policy",
     value: "camera=(), geolocation=(), microphone=()",
   },
+  {
+    key: "Strict-Transport-Security",
+    value: "max-age=31536000; includeSubDomains",
+  },
+  {
+    key: "X-DNS-Prefetch-Control",
+    value: "on",
+  },
 ];
 
 const nextConfig = {
@@ -43,6 +51,16 @@ const nextConfig = {
 
   async redirects() {
     return [
+      {
+        source: "/conteúdos",
+        destination: "/conteudos",
+        permanent: true,
+      },
+      {
+        source: "/admin/métricas",
+        destination: "/admin/metricas",
+        permanent: true,
+      },
       {
         source: "/ripeam",
         destination:

@@ -28,6 +28,18 @@ export default async function Area(){
   const pm=Object.fromEntries(progress.rows.map(r=>[normalizeSubject(r.subject),Number(r.percent||0)]));
   const pv=performance.subjects.map(s=>pm[s.slug]||0);
   const overall=pv.length?Math.round(pv.reduce((a,b)=>a+b,0)/pv.length):0;
+  const ranked=[...performance.subjects].filter(s=>s.questions>0).sort((a,b)=>b.accuracy-a.accuracy);
+  const strongest=ranked[0]||null;
+  const weakest=ranked.length?ranked[ranked.length-1]:null;
+  const examCoverage=Math.min(100,Math.round((Number(performance.overall.attempts||0)/7)*100));
+  const volumeScore=Math.min(100,Math.round((Number(performance.overall.questions||0)/1000)*100));
+  const readiness=Math.round(
+    Number(performance.overall.accuracy||0)*0.45+
+    overall*0.30+
+    examCoverage*0.15+
+    volumeScore*0.10
+  );
+  const readinessLabel=readiness>=85?"Muito forte":readiness>=70?"Competitivo":readiness>=50?"Em evolução":"Construindo base";
 
   return (
     <>
@@ -64,6 +76,19 @@ export default async function Area(){
             <article><i>▤</i><div><span>Questões</span><strong>{fmt(performance.overall.questions)}</strong><small>Respondidas</small></div></article>
             <article><i>▥</i><div><span>Aproveitamento</span><strong>{performance.overall.accuracy}%</strong><small>Média geral</small></div></article>
             <article><i>◷</i><div><span>Progresso</span><strong>{overall}%</strong><small>Conteúdo estudado</small></div></article>
+          </div>
+        </section>
+
+        <section className="readinessPanel">
+          <div className="readinessScore">
+            <span>ÍNDICE DE PRONTIDÃO ESTIBORDO</span>
+            <strong>{readiness}<small>/100</small></strong>
+            <b>{readinessLabel}</b>
+          </div>
+          <div className="readinessDetails">
+            <div><span>Melhor disciplina</span><strong>{strongest?strongest.label:"Aguardando dados"}</strong><small>{strongest?`${strongest.accuracy}% de acerto`:"Responda questões para calcular"}</small></div>
+            <div><span>Ponto de atenção</span><strong>{weakest?weakest.label:"Aguardando dados"}</strong><small>{weakest?`${weakest.accuracy}% de acerto`:"Responda questões para calcular"}</small></div>
+            <div><span>Cobertura de simulados</span><strong>{examCoverage}%</strong><small>Meta de referência: 7 simulados</small></div>
           </div>
         </section>
 
