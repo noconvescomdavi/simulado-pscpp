@@ -11,6 +11,20 @@ function Menu({ active = "", flashcardDecks = [] }) {
         <span className={styles.icon}>⌂</span><span>Início</span>
       </a>
 
+      <details className={styles.group} open={["plano","adaptativo","hoje","revisao","fraquezas"].includes(active)}>
+        <summary>
+          <span><b className={styles.icon}>◫</b> Minha Preparação</span>
+          <b className={styles.chevron}>⌄</b>
+        </summary>
+        <div className={styles.submenu}><div>
+          <a href="/plano-de-estudos">Plano de Estudos</a>
+          <a href="/hoje">Plano de Hoje</a>
+          <a href="/treino-adaptativo">Treino Adaptativo</a>
+          <a href="/revisao-inteligente">Revisão Inteligente</a>
+          <a href="/analise-de-fraquezas">Análise de Fraquezas</a>
+        </div></div>
+      </details>
+
       <details className={styles.group} open={active === "simulados"}>
         <summary>
           <span><b className={styles.icon}>▣</b> Simulados</span>
@@ -52,12 +66,12 @@ function Menu({ active = "", flashcardDecks = [] }) {
 
       <details className={styles.group}>
         <summary>
-          <span><b className={styles.icon}>▦</b> Conteúdo</span>
+          <span><b className={styles.icon}>▦</b> Central de Estudos</span>
           <b className={styles.chevron}>⌄</b>
         </summary>
         <div className={styles.submenu}><div>
-          <a href="/conteudos">Materiais de Estudo</a>
-          <a href="/conteudos">Matérias</a>
+          <a href="/conteudos">Estudar por Matéria</a>
+          <a href="/conteudos/caderno-de-erros">Caderno de Erros</a>
         </div></div>
       </details>
 
