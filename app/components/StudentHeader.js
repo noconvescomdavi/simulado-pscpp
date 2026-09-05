@@ -60,7 +60,20 @@ function Menu({ active = "", flashcardDecks = [] }) {
               {deck.title}
             </a>
           ))}
+          <a href="/flashcards/meus-mapas">Dos meus mapas</a>
           <a className={styles.submenuAll} href="/flashcards">Todos os Flashcards</a>
+        </div></div>
+      </details>
+
+      <details className={styles.group} open={active === "mapas"}>
+        <summary>
+          <span><b className={styles.icon}>🧠</b> Mapas Mentais</span>
+          <b className={styles.chevron}>⌄</b>
+        </summary>
+        <div className={styles.submenu}><div>
+          <a href="/mapas-mentais">Meus Mapas Mentais</a>
+          <a href="/mapas-mentais?template=study">Criar Novo Mapa</a>
+          <a href="/flashcards/meus-mapas">Flashcards dos Mapas</a>
         </div></div>
       </details>
 

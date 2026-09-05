@@ -63,6 +63,9 @@ export default async function ErrorNotebookPage() {
                 <a href={`/study-content/simulado/${item.subject}/`}>
                   Revisar conteúdo →
                 </a>
+                <a href={`/mapas-mentais?subject=${encodeURIComponent(item.subject)}&title=${encodeURIComponent(`Erro — ${item.topic}`)}&note=${encodeURIComponent((`Questão: ${item.question}\n\nMinha anotação:`).slice(0,700))}`}>
+                  🧠 Criar mapa desta questão →
+                </a>
               </div>
             </article>
           )) : (
