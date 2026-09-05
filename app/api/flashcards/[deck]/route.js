@@ -21,7 +21,7 @@ async function context(params) {
   const trialAllowed = entitlement.trial && String(slug).toLowerCase() === "cis";
 
   if (!entitlement.active && !trialAllowed) {
-    return { response: Response.json({ error: "Acesso nÃ£o liberado." }, { status: 403 }) };
+    return { response: Response.json({ error: "Acesso não liberado." }, { status: 403 }) };
   }
 
   const deck = await getFlashcardDeck(slug);
