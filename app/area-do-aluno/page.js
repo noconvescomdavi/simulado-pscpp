@@ -6,6 +6,7 @@ import {getUserMetrics} from "../../lib/metrics";
 import {normalizeSubject,subjectLabel} from "../../lib/subjects";
 import StudentHeader from "../components/StudentHeader";
 import ExamCountdown from "../components/ExamCountdown";
+import DailyStudyPlan from "./DailyStudyPlan";
 import "./dashboard.css";
 
 function fmt(v){return new Intl.NumberFormat("pt-BR").format(Number(v||0))}
@@ -15,12 +16,13 @@ export default async function Area(){
   const session=await getSession();
   if(!session)redirect("/login");
 
-  const [access,progress,performance,profile,recentExams]=await Promise.all([
+  const [access,progress,performance,profile,recentExams,dailyPlan]=await Promise.all([
     getUserAccess(session.id),
     query("select subject,percent from study_progress where user_id=$1",[session.id]),
     getUserMetrics(session.id),
     query("select full_name from user_profiles where user_id=$1 limit 1",[session.id]).catch(()=>({rows:[]})),
-    query("select id,subject,status,answered_count,correct_count,started_at from exam_sessions where user_id=$1 order by started_at desc limit 4",[session.id]).catch(()=>({rows:[]}))
+    query("select id,subject,status,answered_count,correct_count,started_at from exam_sessions where user_id=$1 order by started_at desc limit 4",[session.id]).catch(()=>({rows:[]})),
+    import("../../lib/study-engine").then(({getTodayStudyPlan})=>getTodayStudyPlan(session.id))
   ]);
 
   const active=access?.active===true;
@@ -68,6 +70,8 @@ export default async function Area(){
             <a className="quickCard gold" href="#desempenho"><i>▥</i><div><strong>Meu Desempenho</strong><span>Acompanhe sua evolução</span></div><b>›</b></a>
           </div>
         </section>
+
+        <DailyStudyPlan initialPlan={dailyPlan}/>
 
         <section className="dashboardSection" id="desempenho">
           <div className="sectionTitle"><div><h2>Meu Progresso</h2><p>Acompanhe seus estudos em tempo real:</p></div><a href="#disciplinas">Ver estatísticas completas →</a></div>
