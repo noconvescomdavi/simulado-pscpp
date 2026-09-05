@@ -5,6 +5,9 @@ import { useMemo, useState } from "react";
 export default function DailyStudyPlan({ initialPlan }) {
   const [plan, setPlan] = useState(initialPlan);
   const [busy, setBusy] = useState("");
+  const [dailyMinutes, setDailyMinutes] = useState(plan.goal.daily_minutes);
+  const [weeklyQuestions, setWeeklyQuestions] = useState(plan.goal.weekly_questions);
+  const [savingGoals, setSavingGoals] = useState(false);
 
   const completedMinutes = useMemo(
     () =>
@@ -59,6 +62,31 @@ export default function DailyStudyPlan({ initialPlan }) {
     }
   }
 
+  async function saveGoals(event) {
+    event.preventDefault();
+    if (savingGoals) return;
+    setSavingGoals(true);
+    try {
+      const response = await fetch("/api/study-plan", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          daily_minutes: Number(dailyMinutes),
+          weekly_questions: Number(weeklyQuestions),
+        }),
+      });
+      if (!response.ok) throw new Error();
+      const data = await response.json();
+      if (data.plan) {
+        setPlan(data.plan);
+        setDailyMinutes(data.plan.goal.daily_minutes);
+        setWeeklyQuestions(data.plan.goal.weekly_questions);
+      }
+    } finally {
+      setSavingGoals(false);
+    }
+  }
+
   return (
     <section className="dailyPlanPanel">
       <div className="dailyPlanHead">
@@ -82,9 +110,38 @@ export default function DailyStudyPlan({ initialPlan }) {
 
       <div className="dailyPlanMeta">
         <span>Meta diária: <b>{plan.goal.daily_minutes} min</b></span>
-        <span>Questões: <b>{plan.goal.daily_question_target}</b></span>
+        <span>Questões hoje: <b>{plan.goal.questions_answered_today}/{plan.goal.daily_question_target}</b></span>
         <span>Concluído: <b>{completedMinutes} min</b></span>
       </div>
+
+      <details className="dailyPlanSettings">
+        <summary>Ajustar minhas metas</summary>
+        <form onSubmit={saveGoals}>
+          <label>
+            Minutos por dia
+            <input
+              type="number"
+              min="10"
+              max="720"
+              value={dailyMinutes}
+              onChange={(event) => setDailyMinutes(event.target.value)}
+            />
+          </label>
+          <label>
+            Questões por semana
+            <input
+              type="number"
+              min="7"
+              max="10000"
+              value={weeklyQuestions}
+              onChange={(event) => setWeeklyQuestions(event.target.value)}
+            />
+          </label>
+          <button type="submit" disabled={savingGoals}>
+            {savingGoals ? "Salvando..." : "Salvar metas"}
+          </button>
+        </form>
+      </details>
 
       <div className="dailyPlanTasks">
         {plan.tasks.map((task, index) => (
