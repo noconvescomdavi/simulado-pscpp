@@ -3,6 +3,7 @@ import {getSession} from "../../lib/auth";
 import {getUserAccess} from "../../lib/access";
 import {getPaymentConfig,formatCurrencyFromCents} from "../../lib/payments";
 import StudentHeader from "../components/StudentHeader";
+import {getAiTutorAccess,AI_TUTOR_PRICE_CENTS} from "../../lib/ai-tutor";
 
 function daysLeft(expiresAt){
   if(!expiresAt) return 0;
@@ -13,7 +14,7 @@ export default async function MinhasAssinaturas(){
   const session=await getSession();
   if(!session) redirect("/login?next=/minhas-assinaturas");
 
-  const access=await getUserAccess(session.id);
+  const [access,tutorAccess]=await Promise.all([getUserAccess(session.id),getAiTutorAccess(session.id)]);
   const config=getPaymentConfig();
   const active=access?.active===true;
   const remaining=daysLeft(access?.expires_at);
@@ -49,6 +50,16 @@ export default async function MinhasAssinaturas(){
               <a href="/comprar">Comprar assinatura</a>
             </div>
           )}
+        </section>
+        <section className="subscriptionCard">
+          <div>
+            <span className={`subscriptionStatus ${tutorAccess?.active?"isActive":"isInactive"}`}>{tutorAccess?.active?"ATIVO":"ADICIONAL"}</span>
+            <h2>✨ Tutor IA ESTIBORDO</h2>
+            <p>Pacote adicional: <strong>{formatCurrencyFromCents(AI_TUTOR_PRICE_CENTS)}/mês</strong>.</p>
+          </div>
+          <div className="subscriptionValidity">
+            {tutorAccess?.active ? <><div><small>Válido até</small><strong>{new Date(tutorAccess.expires_at).toLocaleDateString("pt-BR")}</strong></div><a href="/tutor-ia">Abrir Tutor IA</a></> : <><p>Tutor especializado exclusivamente no universo PSCPP e marítimo.</p><a href="/tutor-ia">Conhecer e comprar</a></>}
+          </div>
         </section>
       </main>
     </>

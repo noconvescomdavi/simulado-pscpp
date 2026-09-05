@@ -1,6 +1,7 @@
 import { getPaymentConfig, mercadoPagoRequest, normalizedPaymentStatus, paymentAmountInCents, validateMercadoPagoSignature } from "../../../../../lib/payments";
 import { withTransaction } from "../../../../../lib/db";
 import { ACCESS_DURATION_DAYS, PRODUCT_CODE, accessDateFromPayment } from "../../../../../lib/access";
+import { AI_TUTOR_DURATION_DAYS, AI_TUTOR_PRODUCT_CODE } from "../../../../../lib/ai-tutor";
 
 export const dynamic = "force-dynamic";
 
@@ -74,8 +75,10 @@ export async function POST(request) {
            values($1,$2,'active',false,'mercado_pago',$3,$4::timestamptz,$4::timestamptz + ($5::int * interval '1 day'),null,now())
            on conflict(user_id,product_code) do update set
              status='active',lifetime=false,payment_provider='mercado_pago',payment_id=excluded.payment_id,
-             activated_at=excluded.activated_at,expires_at=excluded.expires_at,revoked_at=null,updated_at=now()`,
-          [order.user_id, PRODUCT_CODE, providerPaymentId, approvedAt, ACCESS_DURATION_DAYS]
+             activated_at=excluded.activated_at,
+             expires_at=case when $2='tutor-ia-mensal' and user_access.expires_at>now() then user_access.expires_at + ($5::int * interval '1 day') else excluded.expires_at end,
+             revoked_at=null,updated_at=now()`,
+          [order.user_id, order.product_code === AI_TUTOR_PRODUCT_CODE ? AI_TUTOR_PRODUCT_CODE : PRODUCT_CODE, providerPaymentId, approvedAt, order.product_code === AI_TUTOR_PRODUCT_CODE ? AI_TUTOR_DURATION_DAYS : ACCESS_DURATION_DAYS]
         );
         await client.query(
           "insert into audit_log(user_id,event_type) values($1,$2)",
@@ -88,7 +91,7 @@ export async function POST(request) {
           `update user_access
               set status=$3,revoked_at=now(),updated_at=now()
             where user_id=$1 and product_code=$2 and payment_provider='mercado_pago' and payment_id=$4`,
-          [order.user_id, PRODUCT_CODE, status === "refunded" ? "refunded" : "revoked", providerPaymentId]
+          [order.user_id, order.product_code === AI_TUTOR_PRODUCT_CODE ? AI_TUTOR_PRODUCT_CODE : PRODUCT_CODE, status === "refunded" ? "refunded" : "revoked", providerPaymentId]
         );
       }
 
