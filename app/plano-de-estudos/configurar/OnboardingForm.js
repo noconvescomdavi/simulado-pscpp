@@ -24,6 +24,7 @@ export default function OnboardingForm({subjects,initial}){
       started_before:f.get("started_before")==="yes",
       months_studying:Number(f.get("months_studying")||0),
       daily_minutes:Number(f.get("daily_minutes")||60),
+      reading_minutes_target:Number(f.get("reading_minutes_target")||120),
       study_days:[...days],
       studied_subjects:[...studied],
       confidence_by_subject:confidence,
@@ -49,7 +50,8 @@ export default function OnboardingForm({subjects,initial}){
       <div className={styles.inlineFields}>
         <label><span>Já estudava antes de entrar na ESTIBORDO?</span><select name="started_before" defaultValue={initial?.started_before?"yes":"no"}><option value="no">Não</option><option value="yes">Sim</option></select></label>
         <label><span>Há quantos meses estuda para o PSCPP?</span><input name="months_studying" type="number" min="0" max="240" defaultValue={initial?.months_studying||0}/></label>
-        <input type="hidden" name="daily_minutes" value={initial?.daily_minutes||60}/><label><span>Ritmo de leitura</span><select name="reading_pace" defaultValue="standard"><option value="light">Leve — menos páginas por dia</option><option value="standard">Normal</option><option value="intensive">Intensivo — mais páginas por dia</option></select></label>
+        <input type="hidden" name="daily_minutes" value={initial?.daily_minutes||60}/>
+        <label><span>Capacidade diária de leitura</span><select name="reading_minutes_target" defaultValue={initial?.reading_minutes_target||120}><option value="60">1 hora/dia</option><option value="90">1h30/dia</option><option value="120">2 horas/dia</option><option value="150">2h30/dia</option><option value="180">3 horas/dia</option><option value="240">4 horas/dia</option></select></label>
       </div>
     </section>
 
@@ -74,7 +76,7 @@ export default function OnboardingForm({subjects,initial}){
     </section>
 
     <div className={styles.submitBar}>
-      <div><strong>Data-alvo: 01/11/2027</strong><span>O plano será recalculado conforme seu desempenho.</span></div>
+      <div><strong>1ª passagem interna: 15/07/2027 · limite: 01/08/2027 · prova: 01/11/2027</strong><span>As páginas/dia serão recalculadas conforme sua bibliografia e seu ritmo real.</span></div>
       <button disabled={busy||!days.size}>{busy?"Salvando...":"Gerar meu plano inteligente"}</button>
     </div>
     {msg&&<p className={styles.message}>{msg}</p>}
