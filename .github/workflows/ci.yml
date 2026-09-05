@@ -34,6 +34,7 @@ jobs:
           DATABASE_URL: postgresql://placeholder:placeholder@localhost:5432/placeholder
           AUTH_SECRET: ci-only-secret-ci-only-secret-ci-only
           AUTH_SESSION_DAYS: 30
+          NEXT_PUBLIC_APP_URL: http://127.0.0.1:3000
         run: npm run build
 
       - name: HTTP smoke E2E
@@ -41,16 +42,42 @@ jobs:
           DATABASE_URL: postgresql://placeholder:placeholder@localhost:5432/placeholder
           AUTH_SECRET: ci-only-secret-ci-only-secret-ci-only
           AUTH_SESSION_DAYS: 30
+          NEXT_PUBLIC_APP_URL: http://127.0.0.1:3000
         run: |
           npm start > /tmp/estibordo-next.log 2>&1 &
           APP_PID=$!
           trap "kill $APP_PID || true" EXIT
+
           for i in {1..30}; do
             if curl -fsS "http://127.0.0.1:3000/api/health?shallow=1" >/dev/null; then
               break
             fi
             sleep 1
           done
+
+          # Infraestrutura pública
           curl -fsS "http://127.0.0.1:3000/api/health?shallow=1"
           curl -fsS "http://127.0.0.1:3000/robots.txt" >/dev/null
           curl -fsS "http://127.0.0.1:3000/sitemap.xml" >/dev/null
+
+          # Páginas críticas de aquisição
+          curl -fsS "http://127.0.0.1:3000/login" | grep -q "Entrar"
+          curl -fsS "http://127.0.0.1:3000/cadastro" | grep -q "Criar conta"
+          curl -fsS "http://127.0.0.1:3000/plataforma" | grep -q "preparação"
+          curl -fsS "http://127.0.0.1:3000/produtos" | grep -q "PSCPP"
+
+          # /comprar exige autenticação e deve redirecionar sem sessão
+          BUY_HEADERS=$(curl -sS -o /dev/null -D - "http://127.0.0.1:3000/comprar")
+          echo "$BUY_HEADERS" | grep -Eq "HTTP/1.1 30[2378]|HTTP/1.1 307"
+          echo "$BUY_HEADERS" | grep -qi "location:.*cadastro"
+
+          # Checkout aceita apenas POST; GET não pode iniciar cobrança
+          CHECKOUT_STATUS=$(curl -sS -o /dev/null -w "%{http_code}" "http://127.0.0.1:3000/api/payments/mercado-pago/checkout")
+          test "$CHECKOUT_STATUS" = "405"
+
+          # Webhook sem credenciais deve falhar fechado, nunca processar evento
+          WEBHOOK_STATUS=$(curl -sS -o /tmp/webhook.json -w "%{http_code}"             -X POST "http://127.0.0.1:3000/api/payments/mercado-pago/webhook"             -H "Content-Type: application/json"             -d '{"type":"payment","data":{"id":"123"}}')
+          test "$WEBHOOK_STATUS" = "503"
+          grep -q "Integração indisponível" /tmp/webhook.json
+
+          echo "Smoke tests críticos concluídos."
