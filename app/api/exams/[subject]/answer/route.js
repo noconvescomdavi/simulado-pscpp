@@ -8,7 +8,7 @@ const ANSWERS = new Set(["A", "B", "C", "D", "E"]);
 export async function POST(request, { params }) {
   try {
     const session = await getSession();
-    if (!session) return Response.json({ error: "NÃ£o autenticado." }, { status: 401 });
+    if (!session) return Response.json({ error: "Não autenticado." }, { status: 401 });
 
     const { subject: rawSubject } = await params;
     const subject = normalizeSubject(rawSubject);
@@ -16,13 +16,13 @@ export async function POST(request, { params }) {
     const trialAllowed = entitlement.trial && subject === TRIAL_SUBJECT_SLUG;
 
     if (!entitlement.active && !trialAllowed) {
-      return Response.json({ error: "Acesso nÃ£o liberado." }, { status: 403 });
+      return Response.json({ error: "Acesso não liberado." }, { status: 403 });
     }
 
     const body = await request.json();
     const selectedAnswer = String(body.selected_answer || "").toUpperCase();
     if (!ANSWERS.has(selectedAnswer)) {
-      return Response.json({ error: "Selecione uma alternativa vÃ¡lida." }, { status: 400 });
+      return Response.json({ error: "Selecione uma alternativa válida." }, { status: 400 });
     }
 
     const responseTimeMs = Math.max(
@@ -42,6 +42,6 @@ export async function POST(request, { params }) {
     return Response.json(result, { status: result.status || 200 });
   } catch (error) {
     console.error("Erro ao salvar resposta do simulado:", error);
-    return Response.json({ error: "NÃ£o foi possÃ­vel salvar a resposta." }, { status: 500 });
+    return Response.json({ error: "Não foi possível salvar a resposta." }, { status: 500 });
   }
 }
