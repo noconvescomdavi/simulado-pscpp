@@ -76,7 +76,7 @@ export async function POST(request) {
            on conflict(user_id,product_code) do update set
              status='active',lifetime=false,payment_provider='mercado_pago',payment_id=excluded.payment_id,
              activated_at=excluded.activated_at,
-             expires_at=case when user_access.expires_at>now() then user_access.expires_at + ($5::int * interval '1 day') else excluded.expires_at end,
+             expires_at=case when $2='tutor-ia-mensal' and user_access.expires_at>now() then user_access.expires_at + ($5::int * interval '1 day') else excluded.expires_at end,
              revoked_at=null,updated_at=now()`,
           [order.user_id, order.product_code === AI_TUTOR_PRODUCT_CODE ? AI_TUTOR_PRODUCT_CODE : PRODUCT_CODE, providerPaymentId, approvedAt, order.product_code === AI_TUTOR_PRODUCT_CODE ? AI_TUTOR_DURATION_DAYS : ACCESS_DURATION_DAYS]
         );
