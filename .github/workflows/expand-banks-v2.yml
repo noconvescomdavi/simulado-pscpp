@@ -5,6 +5,7 @@ on:
     paths:
       - 'scripts/expand-manobrabilidade-v2.mjs'
       - 'scripts/expand-navigation-v2.mjs'
+      - 'scripts/expand-navigation-followup-v2.mjs'
       - 'scripts/expand-other-banks-v2.mjs'
       - 'scripts/sync-question-validation-totals.mjs'
       - 'scripts/lib/question-expansion.mjs'
@@ -27,9 +28,11 @@ jobs:
           cache: npm
       - name: Expand Manobrabilidade
         run: node scripts/expand-manobrabilidade-v2.mjs
-      - name: Expand Navigation when available
+      - name: Expand Navigation
         run: if [ -f scripts/expand-navigation-v2.mjs ]; then node scripts/expand-navigation-v2.mjs; fi
-      - name: Expand other banks when available
+      - name: Complete Navigation follow-up
+        run: if [ -f scripts/expand-navigation-followup-v2.mjs ]; then node scripts/expand-navigation-followup-v2.mjs; fi
+      - name: Expand other banks
         run: if [ -f scripts/expand-other-banks-v2.mjs ]; then node scripts/expand-other-banks-v2.mjs; fi
       - name: Synchronize validation totals
         run: node scripts/sync-question-validation-totals.mjs
