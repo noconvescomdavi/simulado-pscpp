@@ -1,0 +1,40 @@
+name: Migrate Question Taxonomy
+
+on:
+  push:
+    branches:
+      - feat/manobrabilidade-taxonomia-v2-20260905
+    paths:
+      - 'scripts/migrate-question-taxonomy.mjs'
+      - 'scripts/taxonomy-maps/manobrabilidade.mjs'
+      - '.github/workflows/migrate-question-taxonomy.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    if: ${{ !contains(github.event.head_commit.message, '[taxonomy-output]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/manobrabilidade-taxonomia-v2-20260905
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Migrate Manobrabilidade
+        run: node scripts/migrate-question-taxonomy.mjs manobrabilidade
+      - name: Commit migrated bank and report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/questions/manobrabilidade.json reports/manobrabilidade-migration.json
+          if git diff --cached --quiet; then
+            echo "No migration changes"
+            exit 0
+          fi
+          git commit -m "feat: migra manobrabilidade para taxonomia V2 [taxonomy-output]"
+          git push origin HEAD:feat/manobrabilidade-taxonomia-v2-20260905
