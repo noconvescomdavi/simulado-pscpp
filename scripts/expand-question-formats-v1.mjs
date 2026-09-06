@@ -57,6 +57,9 @@ function topicLabel(q) {
 function chapterLabel(q) {
   return clean(q?.tracking?.chapter?.title || q?.tracking?.chapter?.label || q?.tracking?.section || q?.taxonomy?.chapter_id || 'unidade bibliográfica');
 }
+function sourceRef(q) {
+  return clean([q?.source?.title || q?.tracking?.work?.title, q?.source?.locator || q?.tracking?.chapter?.title || q?.tracking?.chapter?.label].filter(Boolean).join(' — ')) || chapterLabel(q);
+}
 function sourcePendingChapters(subjectSlug) {
   return new Set((deficits?.subjects?.[subjectSlug]?.rows || [])
     .filter(r => r.status === 'fonte_pendente')
@@ -66,7 +69,9 @@ function eligibleQuestion(q, blocked) {
   if (!q?.id || !q?.taxonomy?.chapter_id || !q?.taxonomy?.bibliography_id) return false;
   if (blocked.has(q.taxonomy.chapter_id)) return false;
   if (!Array.isArray(q.options) || q.options.length < 5) return false;
-  if (!correctText(q) || wrongTexts(q).length < 1) return false;
+  if (!correctText(q) || wrongTexts(q).length < 4) return false;
+  const optionTexts = q.options.map(o => norm(o?.text));
+  if (optionTexts.some(t => !t) || new Set(optionTexts).size !== optionTexts.length) return false;
   if (!clean(q.explanation)) return false;
   const tags = Array.isArray(q.tags) ? q.tags : [];
   if (tags.includes('expansao-formatos-v1')) return false;
@@ -75,9 +80,13 @@ function eligibleQuestion(q, blocked) {
 }
 function groupByChapter(pool) {
   const map = new Map();
+  const seen = new Map();
   for (const q of pool) {
     const id = q.taxonomy.chapter_id;
-    if (!map.has(id)) map.set(id, []);
+    if (!map.has(id)) { map.set(id, []); seen.set(id, new Set()); }
+    const statementSig = norm(`${topicLabel(q)}|${correctText(q)}`);
+    if (!statementSig || seen.get(id).has(statementSig)) continue;
+    seen.get(id).add(statementSig);
     map.get(id).push(q);
   }
   return [...map.entries()]
@@ -102,7 +111,7 @@ function fiveOptions(texts, correctTextValue, desiredIndex) {
   for (const t of texts.map(clean)) if (t && !uniq.includes(t)) uniq.push(t);
   if (!uniq.includes(correctTextValue)) uniq.unshift(correctTextValue);
   const wrong = uniq.filter(t => t !== correctTextValue).slice(0, 4);
-  while (wrong.length < 4) wrong.push(`Distrator técnico ${wrong.length + 1}`);
+  if (wrong.length < 4) throw new Error('Questão-base sem quatro distratores distintos');
   const ordered = [];
   let w = 0;
   for (let i = 0; i < 5; i++) ordered.push(i === desiredIndex ? correctTextValue : wrong[w++]);
@@ -143,7 +152,7 @@ function makeTrueFalse({ base, id, seq }) {
     ...withMeta(base, { style: 'Verdadeiro/Falso', tag: 'formato-vf', difficulty: seq % 3 === 0 ? 'Médio' : 'Fácil' }),
     style: 'Verdadeiro/Falso',
     topic_code: `FMT.VF.${String(seq + 1).padStart(3, '0')}`,
-    question: `Julgue a afirmativa a seguir, considerando ${chapterLabel(base)}: “${statement}”.`,
+    question: `Julgue a afirmativa a seguir, considerando ${chapterLabel(base)} e a referência ${sourceRef(base)}: “${statement}”.`,
     options: [{ key: 'A', text: 'Verdadeiro' }, { key: 'B', text: 'Falso' }],
     correct_answer: truth ? 'A' : 'B',
     explanation: truth
@@ -186,7 +195,7 @@ function makeIncorrect({ bases, id, seq }) {
     ...withMeta(bases[0], { style: 'Assinale a incorreta', tag: 'formato-incorreta', difficulty: 'Difícil', derivedIds: bases.map(q => q.id), topic: `${chapterLabel(bases[0])} — identificação da incorreta` }),
     style: 'Assinale a incorreta',
     topic_code: `FMT.INC.${String(seq + 1).padStart(3, '0')}`,
-    question: `Considerando ${chapterLabel(bases[0])}, assinale a alternativa INCORRETA.`,
+    question: `Considerando ${chapterLabel(bases[0])} e o problema-base “${clean(bases[0].question)}”, assinale a alternativa INCORRETA entre as cinco afirmações apresentadas.`,
     options: statements.map((text, i) => ({ key: KEYS[i], text })),
     correct_answer: KEYS[falseIndex],
     explanation: `A alternativa ${KEYS[falseIndex]} é a incorreta. Para “${topicLabel(bases[falseIndex])}”, a formulação correta é: ${correctText(bases[falseIndex])}.`
@@ -223,7 +232,7 @@ function makeBlank({ base, id, seq }) {
     ...withMeta(base, { style: 'Preenchimento de lacuna', tag: 'formato-lacuna', difficulty: seq % 2 ? 'Médio' : 'Fácil' }),
     style: 'Preenchimento de lacuna',
     topic_code: `FMT.LAC.${String(seq + 1).padStart(3, '0')}`,
-    question: `Complete corretamente a lacuna: em ${chapterLabel(base)}, a caracterização tecnicamente correta de “${topicLabel(base)}” é ______.`,
+    question: `Complete corretamente a lacuna, considerando ${chapterLabel(base)} e a referência ${sourceRef(base)}: a caracterização tecnicamente correta de “${topicLabel(base)}” é ______.`,
     options: rotated.options,
     correct_answer: rotated.correct_answer,
     explanation: `A lacuna deve ser preenchida por: ${correctText(base)}.`
@@ -237,7 +246,7 @@ function makeCase({ base, id, seq }) {
     ...withMeta(base, { style: 'Estudo de caso', tag: 'formato-estudo-de-caso', difficulty: seq % 3 === 0 ? 'Difícil' : 'Médio' }),
     style: 'Estudo de caso',
     topic_code: `FMT.CASO.${String(seq + 1).padStart(3, '0')}`,
-    question: `Durante um exercício de preparação operacional sobre ${chapterLabel(base)}, a equipe precisa resolver a seguinte situação técnica: “${clean(base.question)}” Considerando a bibliografia indicada para essa unidade, qual alternativa representa a decisão ou interpretação correta?`,
+    question: `Durante um exercício de preparação operacional sobre ${chapterLabel(base)}, com base em ${sourceRef(base)}, a equipe precisa resolver a seguinte situação técnica: “${clean(base.question)}” Qual alternativa representa a decisão ou interpretação correta?`,
     options: rotated.options,
     correct_answer: rotated.correct_answer,
     explanation: `No caso apresentado, a resposta tecnicamente correta é: ${correctText(base)}. ${clean(base.explanation)}`
@@ -249,14 +258,25 @@ function buildForSubject(subjectSlug) {
   const bank = JSON.parse(fs.readFileSync(file, 'utf8'));
   const blocked = sourcePendingChapters(subjectSlug);
   const originalQuestions = bank.questions || [];
-  const pool = originalQuestions.filter(q => eligibleQuestion(q, blocked));
+  const beforeCount = originalQuestions.length;
+  const rawPool = originalQuestions.filter(q => eligibleQuestion(q, blocked));
+  const seenBaseSignatures = new Set();
+  const pool = [];
+  for (const q of rawPool) {
+    const sig = norm(`${q.taxonomy.chapter_id}|${topicLabel(q)}|${correctText(q)}|${wrongTexts(q).join("|")}|${sourceRef(q)}`);
+    if (!sig || seenBaseSignatures.has(sig)) continue;
+    seenBaseSignatures.add(sig);
+    pool.push(q);
+  }
   const groups = groupByChapter(pool);
   if (!groups.length) throw new Error(`${subjectSlug}: nenhuma unidade elegível com >=6 questões-fonte.`);
   const nextId = nextIdFactory(originalQuestions, subjectSlug);
   const added = [];
   const counts = Object.fromEntries(FORMAT_DEFS.map(f => [f.style, 0]));
 
+  const flatPool = groups.flatMap(g => g.questions);
   function basesFor(seq, count, formatOffset) {
+    if (count === 1) return [flatPool[(seq + formatOffset * PER_FORMAT) % flatPool.length]];
     const g = groups[(seq + formatOffset) % groups.length];
     const start = (seq * 3 + formatOffset * 5) % g.questions.length;
     const out = [];
@@ -285,13 +305,15 @@ function buildForSubject(subjectSlug) {
 
   const existingIds = new Set(originalQuestions.map(q => String(q.id)));
   const newIds = new Set();
-  const existingPrompts = new Set(originalQuestions.map(q => norm(q.question)));
+  const existingSignatures = new Set(originalQuestions.map(q => norm(`${q.question}|${(q.options || []).map(o => o.text).join("|")}`)));
   for (const q of added) {
     if (existingIds.has(String(q.id)) || newIds.has(String(q.id))) throw new Error(`${subjectSlug}: ID duplicado ${q.id}`);
     newIds.add(String(q.id));
-    const sig = norm(q.question);
-    if (!sig || existingPrompts.has(sig)) throw new Error(`${subjectSlug}: enunciado duplicado ${q.id}`);
-    existingPrompts.add(sig);
+    const texts = (q.options || []).map(o => norm(o.text));
+    if (texts.some(t => !t) || new Set(texts).size !== texts.length) throw new Error(`${subjectSlug}: alternativas repetidas/vazias em ${q.id}`);
+    const sig = norm(`${q.question}|${(q.options || []).map(o => o.text).join("|")}`);
+    if (!sig || existingSignatures.has(sig)) throw new Error(`${subjectSlug}: item duplicado ${q.id}`);
+    existingSignatures.add(sig);
   }
 
   bank.questions.push(...added);
@@ -300,7 +322,7 @@ function buildForSubject(subjectSlug) {
 
   return {
     subject_slug: subjectSlug,
-    before: originalQuestions.length,
+    before: beforeCount,
     added: added.length,
     after: bank.questions.length,
     source_pool: pool.length,
