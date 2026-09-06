@@ -1,0 +1,41 @@
+name: Audit Manobrabilidade Taxonomy
+
+on:
+  push:
+    branches:
+      - feat/manobrabilidade-taxonomia-v2-20260905
+    paths:
+      - 'scripts/audit-manobrabilidade-taxonomy.mjs'
+      - 'data/questions/manobrabilidade.json'
+      - 'data/study/bibliography.js'
+      - '.github/workflows/audit-manobrabilidade-taxonomy.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    if: ${{ !contains(github.event.head_commit.message, '[audit-output]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/manobrabilidade-taxonomia-v2-20260905
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Generate audit
+        run: node scripts/audit-manobrabilidade-taxonomy.mjs
+      - name: Commit audit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/manobrabilidade-taxonomy-audit.json
+          if git diff --cached --quiet; then
+            echo "No report changes"
+            exit 0
+          fi
+          git commit -m "chore: atualiza auditoria de manobrabilidade [audit-output]"
+          git push origin HEAD:feat/manobrabilidade-taxonomia-v2-20260905
