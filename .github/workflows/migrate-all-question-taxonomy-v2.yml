@@ -1,0 +1,38 @@
+name: Migrate All Question Taxonomy V2
+on:
+  push:
+    branches: [feat/bancos-v2-todas-materias-20260905]
+    paths:
+      - 'scripts/migrate-all-question-taxonomy-v2.mjs'
+      - 'scripts/taxonomy-maps/**'
+      - '.github/workflows/migrate-all-question-taxonomy-v2.yml'
+permissions:
+  contents: write
+jobs:
+  migrate:
+    if: ${{ !contains(github.event.head_commit.message, '[migration-output]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/bancos-v2-todas-materias-20260905
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Migrate taxonomy
+        run: node scripts/migrate-all-question-taxonomy-v2.mjs
+      - name: Install dependencies
+        run: npm ci
+      - name: Validate question banks
+        run: npm run validate:questions
+      - name: Commit migrated banks and reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/questions/manobrabilidade.json data/questions/navegacao-aguas-restritas.json data/questions/legislacao-regulamentacao.json data/questions/meteorologia-oceanografia.json data/questions/comunicacoes.json data/questions/conhecimentos-gerais.json reports/*-migration.json reports/all-question-taxonomy-migration.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "feat: migra bancos restantes para taxonomia V2 [migration-output]"
+          git push origin HEAD:feat/bancos-v2-todas-materias-20260905
