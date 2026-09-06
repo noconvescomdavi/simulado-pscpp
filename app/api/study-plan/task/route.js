@@ -1,5 +1,8 @@
 import { getSession } from "../../../../lib/auth";
-import { setPlanTaskStatus, setBibliographyStatus } from "../../../../lib/integrated-study-plan";
+import {
+  setBibliographyStatusAndMetrics,
+  setPlanTaskStatusAndMetrics,
+} from "../../../../lib/study-plan-progress";
 
 export async function POST(req){
   const session=await getSession();
@@ -7,11 +10,11 @@ export async function POST(req){
   try{
     const body=await req.json();
     if(body.kind==="bibliography"){
-      const item=await setBibliographyStatus(session.id,body);
-      return Response.json({ok:true,item});
+      const result=await setBibliographyStatusAndMetrics(session.id,body);
+      return Response.json({ok:true,...result});
     }
-    const item=await setPlanTaskStatus(session.id,body);
-    return Response.json({ok:true,item});
+    const result=await setPlanTaskStatusAndMetrics(session.id,body);
+    return Response.json({ok:true,...result});
   }catch(error){
     console.error("Erro ao atualizar plano:",error);
     return Response.json({error:"Não foi possível atualizar a tarefa."},{status:500});
