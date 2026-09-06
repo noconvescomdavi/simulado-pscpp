@@ -1,0 +1,28 @@
+name: Final Banks V2 Validation
+on:
+  push:
+    branches: [feat/bancos-v2-todas-materias-20260905]
+    paths:
+      - 'data/questions/*.json'
+      - 'data/study/bibliography.js'
+      - 'scripts/**'
+      - '.github/workflows/final-banks-v2-validation.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/bancos-v2-todas-materias-20260905
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Full repository validation
+        run: npm run validate
