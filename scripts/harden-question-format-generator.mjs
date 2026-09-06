@@ -51,6 +51,11 @@ const promptReplacements = [
 ];
 for (const [oldText, newText] of promptReplacements) if (s.includes(oldText)) s = s.replace(oldText, newText);
 
+const oldPool = `  const pool = originalQuestions.filter(q => eligibleQuestion(q, blocked));\n  const groups = groupByChapter(pool);\n`;
+const newPool = `  const rawPool = originalQuestions.filter(q => eligibleQuestion(q, blocked));\n  const seenBaseSignatures = new Set();\n  const pool = [];\n  for (const q of rawPool) {\n    const sig = norm(\`${'${q.taxonomy.chapter_id}'}|${'${topicLabel(q)}'}|${'${correctText(q)}'}|${'${wrongTexts(q).join("|")}'}|${'${sourceRef(q)}'}\`);\n    if (!sig || seenBaseSignatures.has(sig)) continue;\n    seenBaseSignatures.add(sig);\n    pool.push(q);\n  }\n  const groups = groupByChapter(pool);\n`;
+if (s.includes(oldPool)) s = s.replace(oldPool, newPool);
+else if (!s.includes('seenBaseSignatures')) throw new Error('Bloco de pool esperado não localizado');
+
 const oldBases = `  function basesFor(seq, count, formatOffset) {\n    const g = groups[(seq + formatOffset) % groups.length];\n    const start = (seq * 3 + formatOffset * 5) % g.questions.length;\n    const out = [];\n    for (let i = 0; i < count; i++) out.push(g.questions[(start + i) % g.questions.length]);\n    return out;\n  }\n`;
 const newBases = `  const flatPool = groups.flatMap(g => g.questions);\n  function basesFor(seq, count, formatOffset) {\n    if (count === 1) return [flatPool[(seq + formatOffset * PER_FORMAT) % flatPool.length]];\n    const g = groups[(seq + formatOffset) % groups.length];\n    const start = (seq * 3 + formatOffset * 5) % g.questions.length;\n    const out = [];\n    for (let i = 0; i < count; i++) out.push(g.questions[(start + i) % g.questions.length]);\n    return out;\n  }\n`;
 if (s.includes(oldBases)) s = s.replace(oldBases, newBases);
