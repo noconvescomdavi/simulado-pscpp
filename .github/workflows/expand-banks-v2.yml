@@ -1,0 +1,44 @@
+name: Expand Question Banks V2
+on:
+  push:
+    branches: [feat/bancos-v2-todas-materias-20260905]
+    paths:
+      - 'scripts/expand-manobrabilidade-v2.mjs'
+      - 'scripts/expand-navigation-v2.mjs'
+      - 'scripts/expand-other-banks-v2.mjs'
+      - 'scripts/lib/question-expansion.mjs'
+      - '.github/workflows/expand-banks-v2.yml'
+permissions:
+  contents: write
+jobs:
+  expand:
+    if: ${{ !contains(github.event.head_commit.message, '[expansion-output]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/bancos-v2-todas-materias-20260905
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Expand Manobrabilidade
+        run: node scripts/expand-manobrabilidade-v2.mjs
+      - name: Expand Navigation when available
+        run: if [ -f scripts/expand-navigation-v2.mjs ]; then node scripts/expand-navigation-v2.mjs; fi
+      - name: Expand other banks when available
+        run: if [ -f scripts/expand-other-banks-v2.mjs ]; then node scripts/expand-other-banks-v2.mjs; fi
+      - name: Install dependencies
+        run: npm ci
+      - name: Validate question banks
+        run: npm run validate:questions
+      - name: Commit expansion
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/questions/*.json reports/*expansion*.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "feat: completa cobertura disponível dos bancos V2 [expansion-output]"
+          git push origin HEAD:feat/bancos-v2-todas-materias-20260905
