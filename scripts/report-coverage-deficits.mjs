@@ -11,3 +11,4 @@ for(const slug of slugs){
 }
 fs.writeFileSync(path.join(root,'reports','coverage-deficits-summary.json'),JSON.stringify(out,null,2)+'\n');
 console.log(JSON.stringify(out,null,2));
+// This report intentionally contains only units below the 25-question floor.
