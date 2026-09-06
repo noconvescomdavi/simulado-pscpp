@@ -942,11 +942,19 @@ export default function FlashcardsClient({ deck, initialState }) {
                   <section className={`${styles.cardFace} ${styles.cardBack}`}>
                     <div className={styles.cardTopline}>
                       <span>{categoryLabel(current)}</span>
-                      <b>{language === "pt" ? "🇧🇷 PT-BR" : "🇬🇧 English"}</b>
+                      <b>{deck.slug === "arte-naval-nomenclatura-navio" ? "🇧🇷 PT-BR + 🇬🇧 English" : (language === "pt" ? "🇧🇷 PT-BR" : "🇬🇧 English")}</b>
                     </div>
                     <div className={styles.answerContent}>
                       <small>{current.name ? `${current.code} • ${current.name}` : current.code}</small>
-                      <h2>{currentMeaning(current)}</h2>
+                      {deck.slug === "arte-naval-nomenclatura-navio" ? (
+                        <>
+                          <h2>{current.term_pt || current.name}</h2>
+                          <h3 style={{margin:"4px 0 12px",fontSize:"1.05rem",fontWeight:800,opacity:.82}}>🇬🇧 {current.term_en || "—"}</h3>
+                          <p style={{margin:0,fontSize:"1rem",lineHeight:1.55}}>🇧🇷 {current.pt}</p>
+                        </>
+                      ) : (
+                        <h2>{currentMeaning(current)}</h2>
+                      )}
                       {current.note && <p className={styles.note}>{current.note}</p>}
                     </div>
                     <p>Toque para voltar</p>
@@ -986,7 +994,7 @@ export default function FlashcardsClient({ deck, initialState }) {
                   className={styles.examFlag}
                   dangerouslySetInnerHTML={{ __html: renderCardVisual(examCard, deck.slug) }}
                 />
-                <p>{language === "pt" ? "Qual é o significado deste sinal?" : "What is the meaning of this signal?"}</p>
+                <p>{deck.slug === "arte-naval-nomenclatura-navio" ? "Qual é o termo representado? / What term is represented?" : (language === "pt" ? "Qual é o significado deste sinal?" : "What is the meaning of this signal?")}</p>
                 <h2>{examCard.code}</h2>
                 {examCard.name && <h3>{examCard.name}</h3>}
 
@@ -1002,7 +1010,7 @@ export default function FlashcardsClient({ deck, initialState }) {
                         className={correctChoice ? styles.correctOption : ""}
                         onClick={() => answerExam(choiceId)}
                       >
-                        {currentMeaning(choice)}
+                        {deck.slug === "arte-naval-nomenclatura-navio" ? `${choice.term_pt || choice.name} • ${choice.term_en || ""}` : currentMeaning(choice)}
                       </button>
                     );
                   })}
