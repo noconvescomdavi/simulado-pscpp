@@ -4,6 +4,9 @@ import { getEntitlement } from "../../../lib/entitlement";
 import { getFlashcardDeck, getFlashcardState } from "../../../lib/flashcards";
 import StudentHeader from "../../components/StudentHeader";
 import FlashcardsClient from "./FlashcardsClient";
+import ArteNavalFlashcardsClient from "./ArteNavalFlashcardsClient";
+
+const ARTE_NAVAL_SLUG = "arte-naval-nomenclatura-navio";
 
 export async function generateMetadata({ params }) {
   const { deck: slug } = await params;
@@ -31,20 +34,19 @@ export default async function FlashcardDeckPage({ params }) {
   if (!deck) notFound();
 
   const state = await getFlashcardState(session.id, deck.id);
+  const deckProps = {
+    slug: deck.slug,
+    title: deck.title,
+    subjectLabel: deck.subject_label,
+    description: deck.description,
+    cards: deck.cards,
+  };
+  const DeckClient = deck.slug === ARTE_NAVAL_SLUG ? ArteNavalFlashcardsClient : FlashcardsClient;
 
   return (
     <>
       <StudentHeader active="flashcards" />
-      <FlashcardsClient
-        deck={{
-          slug: deck.slug,
-          title: deck.title,
-          subjectLabel: deck.subject_label,
-          description: deck.description,
-          cards: deck.cards,
-        }}
-        initialState={state}
-      />
+      <DeckClient deck={deckProps} initialState={state} />
     </>
   );
 }
