@@ -15,7 +15,7 @@ export default function RootLayout({children}){
   return (
     <html lang="pt-BR">
       <head>
-        <link rel="apple-touch-icon" href="/estibordo/logos/estibordo-logo-header.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/pwa-icon" />
         <link rel="manifest" href="/manifest.webmanifest" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-title" content="ESTIBORDO" />
