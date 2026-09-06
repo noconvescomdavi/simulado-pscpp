@@ -1,0 +1,44 @@
+name: Expand Question Formats V1
+
+on:
+  push:
+    branches:
+      - feat/expansao-formatos-questoes-20260906
+    paths:
+      - 'scripts/expand-question-formats-v1.mjs'
+      - '.github/workflows/expand-question-formats-v1.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  expand:
+    if: ${{ !contains(github.event.head_commit.message, '[format-expansion-output]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/expansao-formatos-questoes-20260906
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Generate new question formats
+        run: node scripts/expand-question-formats-v1.mjs
+      - name: Synchronize validation totals
+        run: node scripts/sync-question-validation-totals.mjs
+      - name: Validate complete repository
+        run: npm run validate
+      - name: Commit generated expansion
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/questions/*.json reports/format-expansion-v1.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "feat: adiciona novos formatos de questões [format-expansion-output]"
+          git pull --rebase origin feat/expansao-formatos-questoes-20260906
+          git push origin HEAD:feat/expansao-formatos-questoes-20260906
