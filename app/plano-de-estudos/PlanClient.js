@@ -1,6 +1,5 @@
 "use client";
-import {useEffect,useMemo,useState} from "react";
-import {useRouter} from "next/navigation";
+import {useMemo,useState} from "react";
 import styles from "./plano.module.css";
 
 const dayNames=["DOM","SEG","TER","QUA","QUI","SEX","SÁB"];
@@ -29,15 +28,11 @@ function groupPublications(items){
 }
 
 export default function PlanClient({plan}){
-  const router=useRouter();
   const [week,setWeek]=useState(plan.week);
   const [bibliography,setBibliography]=useState(plan.bibliography);
   const [busy,setBusy]=useState("");
   const [message,setMessage]=useState("");
   const radar=useMemo(()=>radarPoints(plan.metrics.subjects),[plan.metrics.subjects]);
-
-  useEffect(()=>{setWeek(plan.week)},[plan.week]);
-  useEffect(()=>{setBibliography(plan.bibliography)},[plan.bibliography]);
 
   async function updateTask(day,task){
     if(task.status==="done")return;
@@ -59,7 +54,11 @@ export default function PlanClient({plan}){
         description:task.description,
         href:task.href||null,
         target_questions:task.target_questions||null,
-        fixation:task.fixation||null
+        fixation:task.fixation||null,
+        bibliography_key:task.bibliography_key||null,
+        section_key:task.section_key||null,
+        page_from:task.page_from||null,
+        page_to:task.page_to||null
       }
     };
 
@@ -75,8 +74,6 @@ export default function PlanClient({plan}){
       const bp=data.bibliography.progress;
       setBibliography(items=>items.map(x=>x.bibliography_key===bp.bibliography_key&&x.section_key===bp.section_key?{...x,progress:bp}:x));
     }
-
-    router.refresh();
   }
 
   async function markBibliographyDone(item){
@@ -99,12 +96,14 @@ export default function PlanClient({plan}){
     if(!r.ok){setMessage(data.error||"Não foi possível atualizar a bibliografia.");return}
     const bp=data.progress||{...(item.progress||{}),status:"done"};
     setBibliography(list=>list.map(x=>x.bibliography_key===item.bibliography_key&&x.section_key===item.section_key?{...x,progress:bp}:x));
-    router.refresh();
   }
 
   const totalTasks=week.days.flatMap(d=>d.tasks).length;
   const doneTasks=week.days.flatMap(d=>d.tasks).filter(t=>t.status==="done").length;
   const weeklyPercent=totalTasks?Math.round(doneTasks/totalTasks*100):0;
+  const bibliographyTotal=bibliography.length;
+  const bibliographyDone=bibliography.filter(item=>item.progress?.status==="done").length;
+  const bibliographyPercent=bibliographyTotal?Math.round(bibliographyDone/bibliographyTotal*100):0;
 
   return <main className={styles.page}>
     <section className={styles.hero}>
@@ -117,7 +116,7 @@ export default function PlanClient({plan}){
         <div><strong>{plan.days_left}</strong><span>dias até a prova</span></div>
         <div><strong>{plan.first_pass?.pending_sections??0}</strong><span>seções para 1ª leitura</span></div>
         <div><strong>{plan.readiness}%</strong><span>índice de prontidão</span></div>
-        <div><strong>{plan.bibliography_progress.percent}%</strong><span>bibliografia concluída</span></div>
+        <div><strong>{bibliographyPercent}%</strong><span>bibliografia concluída</span></div>
       </div>
     </section>
 
@@ -215,7 +214,7 @@ export default function PlanClient({plan}){
     </section>
 
     <section className={styles.bibliographySection}>
-      <div className={styles.sectionHead}><div><span>MINHA BIBLIOGRAFIA</span><h2>Publicações, capítulos e páginas exigidas</h2><p>Livros parciais exibem somente os capítulos/seções cobrados. Paginação só aparece quando estiver conferida para a edição correta.</p></div><div className={styles.bibProgress}>{plan.bibliography_progress.done}/{plan.bibliography_progress.total}</div></div>
+      <div className={styles.sectionHead}><div><span>MINHA BIBLIOGRAFIA</span><h2>Publicações, capítulos e páginas exigidas</h2><p>Livros parciais exibem somente os capítulos/seções cobrados. Paginação só aparece quando estiver conferida para a edição correta.</p></div><div className={styles.bibProgress}>{bibliographyDone}/{bibliographyTotal}</div></div>
       <div className={styles.bibliographyGrid}>
         {Object.entries(bibliography.reduce((acc,item)=>{(acc[item.subject_slug] ||= []).push(item);return acc},{})).map(([subject,items])=><article key={subject}>
           <h3>{plan.metrics.subjects.find(s=>s.slug===subject)?.label||subject}</h3>
