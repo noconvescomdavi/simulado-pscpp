@@ -22,11 +22,11 @@ export const sourcePendingNotes={
 };
 
 function pnaV2(q){
-  const m=norm(q.module), t=norm(q.topic), c=norm(q.topic_code), s=`${m} ${t} ${c}`;
+  const m=norm(q.module), t=norm(q.topic);
   if(has(m,"resistencia do navio")){
     if(has(t,"friccional","friccao","rugosidade","reynolds"))return "ch5-s3";
     if(has(t,"onda","wave","interferencia","kelvin","froude"))return "ch5-s4";
-    if(has(t,"viscosa de pressao","separacao","eddy","ar ","vento","appendage","apendice","trim","aguas rasas","shallow","leeway","heel","resistencia adicional"))return "ch5-s5";
+    if(has(t,"viscosa de pressao","separacao","eddy","vento","appendage","apendice","trim","aguas rasas","shallow","leeway","heel","resistencia adicional"))return "ch5-s5";
     return "ch5-s1";
   }
   if(has(t,"cavit"))return "ch6-s7";
@@ -40,14 +40,14 @@ function pnaV2(q){
 }
 
 function pnaV3(q){
-  const m=norm(q.module), t=norm(q.topic), s=`${m} ${t} ${norm(q.topic_code)}`;
-  if(has(t,"leme","rudder","superficie de controle","control surface","flap","madre","aspecto do leme","razao de aspecto","stall","estol" )||has(m,"superficies de controle"))return "ch9-s14";
+  const m=norm(q.module), t=norm(q.topic);
+  if(has(t,"leme","rudder","superficie de controle","control surface","flap","madre","aspecto do leme","razao de aspecto","stall","estol")||has(m,"superficies de controle"))return "ch9-s14";
   if(has(t,"aguas rasas","shallow","squat","efeito de banco","bank","canal","channel","waterway","folga sob a quilha","under keel","interacao navio","interacao entre navios","ship ship","sinkage","afundamento","trim em aguas","blockage"))return "ch9-s13";
   if(has(t,"vento","wind","corrente","current","ondas","waves","environment","ambient"))return "ch9-s12";
   if(has(t,"parada","stopping","stop","aceleracao","acceleration","desaceleracao","backing","movimento a re","a re","coasting"))return "ch9-s10";
   if(has(t,"curva de giro","turning","giro","tactical","diametro tatico","advance","avanco","transfer","fases da curva","fase inicial","raio de giro","steady turning","varredura da popa","heel em curva","adernamento em curva","ponto pivo","pivot point"))return "ch9-s6";
   if(has(t,"zig zag","zigzag","zigue zague","overshoot","quebra da guinada","yaw checking","nomoto","indices k","indice k","indice t","course keeping","manutencao do rumo"))return "ch9-s5";
-  if(has(t,"espiral","spiral","bech","estabilidade direcional","course stability","controls fixed","laço de instabilidade","laco de instabilidade"))return "ch9-s4";
+  if(has(t,"espiral","spiral","bech","estabilidade direcional","course stability","controls fixed","laco de instabilidade"))return "ch9-s4";
   if(has(t,"derivada hidrodinamica","hydrodynamic derivative","equacao de movimento","linear","motion stability","estabilidade dinamica","cross flow","escoamento cruzado","munk"))return "ch9-s3";
   if(has(t,"controlabilidade","qualidades de manobra","caracteristicas de manobrabilidade","definicao","escopo"))return "ch9-s1";
   if(has(m,"efeitos ambientais"))return "ch9-s13";
@@ -87,7 +87,7 @@ function bertram(q){
 }
 
 function msc1053(q){
-  const t=norm(q.topic), c=norm(q.topic_code);
+  const t=norm(q.topic);
   if(has(t,"metodos de previsao","previsao","prediction","modelo cativo","pmm","projeto para manobrabilidade","design","simulacao","regression","derivadas hidrodinamicas"))return "ch3";
   if(has(t,"corrente no ensaio","limite de ondas","limite de vento","profundidade de ensaio","correcao ambiental","registro de dados","condicao de ensaio","full load","carregamento","trim de ensaio","metacentric","agua profunda","deep water"))return "ch2";
   return "ch1";
@@ -121,11 +121,11 @@ function msc1228(q){
 export function classifyManobrabilidade(q){
   const title=norm(q?.source?.title), author=norm(q?.source?.author);
   if(title.includes("naval shiphandling")||author.includes("crenshaw"))return {bibliography_id:"crenshaw-naval-shiphandling",section_key:"ch2",confidence:"high",basis:"obra/unidade única"};
-  if(title.includes("principles of naval architecture")&&title.includes("volume ii")){
-    const k=pnaV2(q);return k?{bibliography_id:"pna-v2",section_key:k,confidence:"high",basis:"tópico + sumário real da obra"}:null;
-  }
   if(title.includes("principles of naval architecture")&&title.includes("volume iii")){
     const k=pnaV3(q);return k?{bibliography_id:"pna-v3",section_key:k,confidence:"high",basis:"tópico + sumário real do Chapter IX"}:null;
+  }
+  if(title.includes("principles of naval architecture")&&title.includes("volume ii")){
+    const k=pnaV2(q);return k?{bibliography_id:"pna-v2",section_key:k,confidence:"high",basis:"tópico + sumário real da obra"}:null;
   }
   if(title.includes("ship resistance and flow")||author.includes("larsson")){
     const k=larsson(q);return k?{bibliography_id:"larsson-resistance",section_key:k,confidence:"high",basis:"tópico + sumário real Chapters 1–8"}:null;
@@ -133,9 +133,7 @@ export function classifyManobrabilidade(q){
   if(title.includes("practical ship hydrodynamics")||author.includes("bertram")){
     const k=bertram(q);return k?{bibliography_id:"bertram",section_key:k,confidence:"high",basis:"tópico + capítulos 2, 3 e 6"}:null;
   }
-  if(title.includes("explanatory notes")||title.includes("msc circ 1053")||title.includes("msc 1 circ 1053")){
-    return {bibliography_id:"msc1053",section_key:msc1053(q),confidence:"high",basis:"tópico + estrutura Chapters 1–3"};
-  }
+  if(title.includes("explanatory notes")||title.includes("msc circ 1053")||title.includes("msc 1 circ 1053"))return {bibliography_id:"msc1053",section_key:msc1053(q),confidence:"high",basis:"tópico + estrutura Chapters 1–3"};
   if((title.includes("standards for ship manoeuvrability")||title.includes("standards for ship maneuverability")||title.includes("msc 137"))&&!title.includes("explanatory"))return {bibliography_id:"msc137",section_key:"annex6",confidence:"high",basis:"Annex 6 é a unidade canônica"};
   if(title.includes("manobrabilidade do navio no seculo 21")||author.includes("edson mesquita")){
     const k=santos(q);return k?{bibliography_id:"santos-manobrabilidade",section_key:k,confidence:"medium",basis:"tópico + títulos de capítulos da bibliografia oficial; fonte integral pendente"}:null;
