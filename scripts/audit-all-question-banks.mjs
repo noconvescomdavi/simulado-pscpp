@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import {BIBLIOGRAPHY} from '../data/study/bibliography.js';
 
 const root=process.cwd();
 const subjects=['manobrabilidade','navegacao-aguas-restritas','legislacao-regulamentacao','meteorologia-oceanografia','comunicacoes','conhecimentos-gerais'];
@@ -26,5 +27,8 @@ for(const slug of subjects){
   out.subjects[slug]=subject;
   fs.writeFileSync(path.join(root,'reports',`audit-${slug}.json`),JSON.stringify({generated_at:out.generated_at,subject_slug:slug,...subject},null,2)+'\n');
 }
+const catalog={};
+for(const [slug,works] of Object.entries(BIBLIOGRAPHY)) catalog[slug]=(works||[]).map(w=>({key:w.key,title:w.title,sections:(w.sections||[]).map(s=>({key:s.key,label:s.label,chapter:s.chapter}))}));
+fs.writeFileSync(path.join(root,'reports','bibliography-catalog.json'),JSON.stringify(catalog,null,2)+'\n');
 fs.writeFileSync(path.join(root,'reports','all-question-banks-audit.json'),JSON.stringify(out,null,2)+'\n');
 console.log(JSON.stringify(Object.fromEntries(Object.entries(out.subjects).map(([k,v])=>[k,{total:v.total,v2:v.v2,legacy:v.legacy,sources:v.source_titles.length,pairs:v.source_pairs.length}])),null,2));
