@@ -346,8 +346,45 @@ function renderRipeamCinematic(card) {
 /* RIPEAM_CINEMATIC_V2_END */
 
 
+function renderArteNavalVisual(card) {
+  const type = card?.visual?.type || "ship";
+  const labels = {
+    bow: ["PROA", "BOW"], stern: ["POPA", "STERN"], starboard: ["BORESTE", "STARBOARD"],
+    port: ["BOMBORDO", "PORT"], midship: ["MEIA-NAU", "MIDSHIP"], waterline: ["LINHA-D'ÁGUA", "WATERLINE"],
+    section: ["SEÇÃO DO CASCO", "HULL SECTION"], side: ["COSTADO", "SIDE"], plating: ["CHAPEAMENTO", "PLATING"],
+    superstructure: ["SUPERESTRUTURA", "SUPERSTRUCTURE"], structure: ["ESTRUTURA", "STRUCTURE"],
+    frame: ["CAVERNA", "FRAME"], bulkhead: ["ANTEPARA", "BULKHEAD"], deck: ["CONVÉS", "DECK"],
+    compartment: ["COMPARTIMENTO", "COMPARTMENT"], tank: ["TANQUE", "TANK"], shaft: ["LINHA DE EIXO", "SHAFT LINE"],
+    anchor: ["FUNDEIO", "ANCHORING"], opening: ["ABERTURA", "OPENING"], hull: ["CASCO", "HULL"], ship: ["NAVIO", "SHIP"]
+  };
+  const [pt,en] = labels[type] || labels.ship;
+  const marker = type === "bow" ? 110 : type === "stern" ? 490 : type === "midship" ? 300 : 300;
+  const water = type === "waterline" ? '<line x1="65" y1="218" x2="535" y2="218" stroke="#55a7e6" stroke-width="7" stroke-dasharray="16 9"/>' : "";
+  const ribs = ["structure","frame","section","bulkhead","plating"].includes(type)
+    ? '<path d="M175 210 Q300 290 425 210 M215 225 Q300 270 385 225 M260 236 L260 175 M300 245 L300 165 M340 236 L340 175" fill="none" stroke="#9fb3c2" stroke-width="5"/>'
+    : "";
+  const deck = ["deck","superstructure","compartment"].includes(type)
+    ? '<path d="M190 177 H410 M225 145 H375 M255 115 H345" fill="none" stroke="#9fb3c2" stroke-width="6"/>'
+    : "";
+  const anchor = type === "anchor" ? '<path d="M300 120 V215 M270 155 H330 M250 205 Q300 255 350 205 M250 205 L266 205 M350 205 L334 205" fill="none" stroke="#d9e4ea" stroke-width="8"/>' : "";
+  return `<svg class="${styles.signalSvg}" viewBox="0 0 600 330" role="img" aria-label="${pt}" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="navalSea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#071a2a"/><stop offset="1" stop-color="#0b3149"/></linearGradient></defs>
+    <rect width="600" height="330" rx="24" fill="url(#navalSea)"/>
+    <path d="M70 185 L120 150 H440 L525 190 L485 245 H145 Z" fill="#dfe7ec" stroke="#ffffff" stroke-width="4"/>
+    <path d="M225 150 V108 H370 V150 M265 108 V82 H335 V108" fill="#b8c7d1" stroke="#fff" stroke-width="4"/>
+    <path d="M60 245 Q150 232 240 245 T420 245 T590 245 V330 H0 V252 Q30 242 60 245Z" fill="#0c5b7a" opacity=".9"/>
+    ${water}${ribs}${deck}${anchor}
+    <circle cx="${marker}" cy="190" r="18" fill="#e33434" stroke="#fff" stroke-width="5"/>
+    <path d="M${marker} 170 V105" stroke="#e33434" stroke-width="4"/>
+    <rect x="150" y="268" width="300" height="45" rx="12" fill="rgba(2,10,18,.82)"/>
+    <text x="300" y="287" text-anchor="middle" fill="#fff" font-size="15" font-weight="800">${pt}</text>
+    <text x="300" y="305" text-anchor="middle" fill="#9fc9e5" font-size="12" font-weight="700">${en}</text>
+  </svg>`;
+}
+
 function renderCardVisual(card, deckSlug) {
   if (deckSlug === "ripeam") return renderRipeamCinematic(card);
+  if (deckSlug === "arte-naval-nomenclatura-navio") return renderArteNavalVisual(card);
   return renderSignal(card?.code);
 }
 
@@ -528,6 +565,8 @@ export default function FlashcardsClient({ deck, initialState }) {
     if (card.category === "shapes") return language === "pt" ? "Marcas diurnas" : "Day shapes";
     if (card.category === "sounds") return language === "pt" ? "Sinais sonoros" : "Sound signals";
     if (card.category === "traps") return language === "pt" ? "Pegadinha de prova" : "Exam trap";
+    if (card.category === "naval") return language === "pt" ? "Nomenclatura do navio" : "Ship nomenclature";
+    if (card.category === "bilingual") return language === "pt" ? "Português ↔ Inglês" : "Portuguese ↔ English";
     if ((card.tags || []).includes("distress")) return "Distress";
     return language === "pt" ? "Combinação" : "Combination";
   }
