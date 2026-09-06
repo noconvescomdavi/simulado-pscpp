@@ -3,6 +3,7 @@ on:
   push:
     branches: [feat/bancos-v2-todas-materias-20260905]
     paths:
+      - 'data/questions/*.json'
       - 'scripts/report-coverage-deficits.mjs'
       - '.github/workflows/report-coverage-deficits.yml'
 permissions:
