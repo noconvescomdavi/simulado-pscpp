@@ -1,0 +1,64 @@
+name: Build ESTIBORDO Android APK
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "android/**"
+      - ".github/workflows/build-android-apk.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android platform
+        run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.11.1"
+
+      - name: Add official ESTIBORDO logo
+        run: |
+          mkdir -p android/app/src/main/res/drawable
+          curl -fL "https://raw.githubusercontent.com/noconvescomdavi/simulado-pscpp/main/public/estibordo/logos/estibordo-logo-header.png"             -o android/app/src/main/res/drawable/estibordo_logo.png
+
+      - name: Build installable APK
+        working-directory: android
+        run: gradle --no-daemon assembleDebug
+
+      - name: Prepare APK
+        run: cp android/app/build/outputs/apk/debug/app-debug.apk ESTIBORDO-Android.apk
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ESTIBORDO-Android
+          path: ESTIBORDO-Android.apk
+          if-no-files-found: error
+
+      - name: Publish APK release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="android-build-${GITHUB_RUN_NUMBER}"
+          gh release create "$TAG" ESTIBORDO-Android.apk             --title "ESTIBORDO Android APK - Build ${GITHUB_RUN_NUMBER}"             --notes "APK instalável da plataforma ESTIBORDO para testes e uso direto em aparelho Android. Este pacote carrega a plataforma oficial https://simulado-pscpp.vercel.app e recebe automaticamente as atualizações do site."
