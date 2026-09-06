@@ -31,28 +31,79 @@ export default function PlanClient({plan}){
   const [week,setWeek]=useState(plan.week);
   const [bibliography,setBibliography]=useState(plan.bibliography);
   const [busy,setBusy]=useState("");
+  const [message,setMessage]=useState("");
   const radar=useMemo(()=>radarPoints(plan.metrics.subjects),[plan.metrics.subjects]);
 
-  async function updateTask(day,task,status){
-    const key=day.iso+"|"+task.key; setBusy(key);
-    const kind=task.type==="reading"?"bibliography":"task";
-    const body=kind==="bibliography"
-      ? {kind,bibliography_key:task.bibliography_key,section_key:task.section_key,subject_slug:task.subject,status,page_from:task.page_from,page_to:task.page_to}
-      : {kind,plan_date:day.iso,task_key:task.key,task_type:task.type,subject_slug:task.subject,status};
+  async function updateTask(day,task){
+    if(task.status==="done")return;
+    const key=day.iso+"|"+task.key;
+    setBusy(key);setMessage("");
+    const body={
+      kind:"task",
+      plan_date:day.iso,
+      task_key:task.key,
+      task_type:task.type,
+      subject_slug:task.subject,
+      status:"done",
+      bibliography_key:task.bibliography_key||null,
+      section_key:task.section_key||null,
+      page_from:task.page_from||null,
+      page_to:task.page_to||null,
+      metadata:{
+        title:task.title,
+        description:task.description,
+        href:task.href||null,
+        target_questions:task.target_questions||null,
+        fixation:task.fixation||null,
+        bibliography_key:task.bibliography_key||null,
+        section_key:task.section_key||null,
+        page_from:task.page_from||null,
+        page_to:task.page_to||null
+      }
+    };
 
     const r=await fetch("/api/study-plan/task",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+    const data=await r.json().catch(()=>({}));
     setBusy("");
-    if(!r.ok)return;
+    if(!r.ok){setMessage(data.error||"Não foi possível marcar a tarefa como feita.");return}
 
-    setWeek(w=>({...w,days:w.days.map(d=>d.iso!==day.iso?d:{...d,tasks:d.tasks.map(t=>t.key!==task.key?t:{...t,status})})}));
-    if(kind==="bibliography"){
-      setBibliography(items=>items.map(x=>x.bibliography_key===task.bibliography_key&&x.section_key===task.section_key?{...x,progress:{...(x.progress||{}),status}}:x));
+    const completedAt=data.item?.completed_at||new Date().toISOString();
+    setWeek(w=>({...w,days:w.days.map(d=>d.iso!==day.iso?d:{...d,tasks:d.tasks.map(t=>t.key!==task.key?t:{...t,status:"done",completed_at:completedAt})})}));
+
+    if(task.type==="reading"&&data.bibliography?.progress){
+      const bp=data.bibliography.progress;
+      setBibliography(items=>items.map(x=>x.bibliography_key===bp.bibliography_key&&x.section_key===bp.section_key?{...x,progress:bp}:x));
     }
+  }
+
+  async function markBibliographyDone(item){
+    if(item.progress?.status==="done")return;
+    const key="bib|"+item.bibliography_key+"|"+item.section_key;
+    setBusy(key);setMessage("");
+    const r=await fetch("/api/study-plan/task",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({
+        kind:"bibliography",
+        bibliography_key:item.bibliography_key,
+        section_key:item.section_key,
+        subject_slug:item.subject_slug,
+        status:"done"
+      })
+    });
+    const data=await r.json().catch(()=>({}));
+    setBusy("");
+    if(!r.ok){setMessage(data.error||"Não foi possível atualizar a bibliografia.");return}
+    const bp=data.progress||{...(item.progress||{}),status:"done"};
+    setBibliography(list=>list.map(x=>x.bibliography_key===item.bibliography_key&&x.section_key===item.section_key?{...x,progress:bp}:x));
   }
 
   const totalTasks=week.days.flatMap(d=>d.tasks).length;
   const doneTasks=week.days.flatMap(d=>d.tasks).filter(t=>t.status==="done").length;
   const weeklyPercent=totalTasks?Math.round(doneTasks/totalTasks*100):0;
+  const bibliographyTotal=bibliography.length;
+  const bibliographyDone=bibliography.filter(item=>item.progress?.status==="done").length;
+  const bibliographyPercent=bibliographyTotal?Math.round(bibliographyDone/bibliographyTotal*100):0;
 
   return <main className={styles.page}>
     <section className={styles.hero}>
@@ -65,9 +116,11 @@ export default function PlanClient({plan}){
         <div><strong>{plan.days_left}</strong><span>dias até a prova</span></div>
         <div><strong>{plan.first_pass?.pending_sections??0}</strong><span>seções para 1ª leitura</span></div>
         <div><strong>{plan.readiness}%</strong><span>índice de prontidão</span></div>
-        <div><strong>{plan.bibliography_progress.percent}%</strong><span>bibliografia concluída</span></div>
+        <div><strong>{bibliographyPercent}%</strong><span>bibliografia concluída</span></div>
       </div>
     </section>
+
+    {message&&<div role="alert" className={styles.phaseBanner}><div><span>ATENÇÃO</span><strong>{message}</strong></div></div>}
 
     <section className={styles.phaseBanner}>
       <div><span>META DA 1ª PASSAGEM</span><strong>100% até 01/08/2027</strong>{plan.first_pass?.pages_per_reading_day&&<small> · média necessária: {plan.first_pass.pages_per_reading_day} páginas/dia de estudo</small>}</div>
@@ -145,13 +198,14 @@ export default function PlanClient({plan}){
           <header><span>{dayNames[new Date(day.iso+"T12:00:00").getDay()]}</span><strong>{fmtDate(day.iso)}</strong></header>
           {!day.active?<p>Dia sem estudo programado.</p>:day.tasks.map(task=>{
             const key=day.iso+"|"+task.key;
-            return <div className={task.status==="done"?styles.taskDone:styles.task} key={task.key}>
+            const done=task.status==="done";
+            return <div className={done?styles.taskDone:styles.task} key={task.key}>
               <div className={styles.taskMeta}><span>{task.type.toUpperCase()}</span><em>{task.type==="reading"?(task.pages?task.pages+" páginas":"capítulo/seção"):task.type==="questions"?(task.fixation?"todas disponíveis":(task.target_questions||"")+" questões"):task.type==="simulado"?"simulado":"revisão"}</em></div>
               <strong>{task.title}</strong>
               <p>{task.description}</p>
               <div className={styles.taskActions}>
                 {task.type!=="reading"&&<a href={task.href}>Abrir →</a>}
-                <button disabled={busy===key} onClick={()=>updateTask(day,task,task.status==="done"?"pending":"done")}>{task.status==="done"?"✓ Done":"Marcar Done"}</button>
+                <button disabled={busy===key||done} onClick={()=>updateTask(day,task)}>{busy===key?"Salvando...":done?"✓ Feito":"Feito"}</button>
               </div>
             </div>
           })}
@@ -160,20 +214,20 @@ export default function PlanClient({plan}){
     </section>
 
     <section className={styles.bibliographySection}>
-      <div className={styles.sectionHead}><div><span>MINHA BIBLIOGRAFIA</span><h2>Publicações, capítulos e páginas exigidas</h2><p>Livros parciais exibem somente os capítulos/seções cobrados. Paginação só aparece quando estiver conferida para a edição correta.</p></div><div className={styles.bibProgress}>{plan.bibliography_progress.done}/{plan.bibliography_progress.total}</div></div>
+      <div className={styles.sectionHead}><div><span>MINHA BIBLIOGRAFIA</span><h2>Publicações, capítulos e páginas exigidas</h2><p>Livros parciais exibem somente os capítulos/seções cobrados. Paginação só aparece quando estiver conferida para a edição correta.</p></div><div className={styles.bibProgress}>{bibliographyDone}/{bibliographyTotal}</div></div>
       <div className={styles.bibliographyGrid}>
         {Object.entries(bibliography.reduce((acc,item)=>{(acc[item.subject_slug] ||= []).push(item);return acc},{})).map(([subject,items])=><article key={subject}>
           <h3>{plan.metrics.subjects.find(s=>s.slug===subject)?.label||subject}</h3>
           <div className={styles.publicationList}>{groupPublications(items).map(pub=><section className={styles.publication} key={pub.key}>
             <div className={styles.publicationHead}><strong>{pub.publication}</strong><small>{pub.source}</small></div>
-            <div>{pub.items.map(item=><div className={item.progress?.status==="done"?styles.readDone:styles.readItem} key={item.bibliography_key+"|"+item.section_key}>
-              <div><a href={"#"+item.bibliography_key+"-"+item.section_key}>{item.chapter||item.section}</a><span>{item.page_start&&item.page_end?`páginas ${item.page_start}–${item.page_end}`:"Paginação pendente de conferência"}</span></div>
-              <button onClick={async()=>{
-                const status=item.progress?.status==="done"?"pending":"done";setBusy("bib|"+item.bibliography_key+"|"+item.section_key);
-                await fetch("/api/study-plan/task",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({kind:"bibliography",bibliography_key:item.bibliography_key,section_key:item.section_key,subject_slug:item.subject_slug,status})});
-                setBusy("");setBibliography(list=>list.map(x=>x.bibliography_key===item.bibliography_key&&x.section_key===item.section_key?{...x,progress:{...(x.progress||{}),status}}:x));
-              }}>{item.progress?.status==="done"?"✓ Done":"Done"}</button>
-            </div>)}</div>
+            <div>{pub.items.map(item=>{
+              const key="bib|"+item.bibliography_key+"|"+item.section_key;
+              const done=item.progress?.status==="done";
+              return <div className={done?styles.readDone:styles.readItem} key={item.bibliography_key+"|"+item.section_key}>
+                <div><a href={"#"+item.bibliography_key+"-"+item.section_key}>{item.chapter||item.section}</a><span>{item.page_start&&item.page_end?`páginas ${item.page_start}–${item.page_end}`:"Paginação pendente de conferência"}</span></div>
+                <button disabled={busy===key||done} onClick={()=>markBibliographyDone(item)}>{busy===key?"Salvando...":done?"✓ Feito":"Feito"}</button>
+              </div>
+            })}</div>
           </section>)}</div>
         </article>)}
       </div>
