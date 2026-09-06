@@ -60,3 +60,4 @@ for(const slug of slugs){
 
 fs.writeFileSync(path.join(root,'reports','coverage-deficits-summary.json'),JSON.stringify(out,null,2)+'\n');
 console.log(JSON.stringify(Object.fromEntries(Object.entries(out.subjects).map(([k,v])=>[k,{total_questions:v.total_questions,deficit_units:v.deficit_units,source_pending_units:v.source_pending_units,actionable_deficit_units:v.actionable_deficit_units,total_needed:v.total_needed_if_all_available,total_needed_actionable:v.total_needed_actionable}])),null,2));
+// Recalculation marker: run after final source-grounded expansion.
