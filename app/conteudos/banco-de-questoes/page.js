@@ -42,7 +42,7 @@ export default async function Page({searchParams}){
           }:null}
         />
 
-        <section className={styles.history}>
+        <section id="meus-cadernos" className={styles.history}>
           <div className={styles.historyHead}>
             <div>
               <span>HISTÓRICO</span>
