@@ -4,6 +4,12 @@ import { BIBLIOGRAPHY } from '../data/study/bibliography.js';
 
 const root=process.cwd();
 const slugs=['manobrabilidade','navegacao-aguas-restritas','legislacao-regulamentacao','meteorologia-oceanografia','comunicacoes','conhecimentos-gerais'];
+const knownPending={
+  manobrabilidade:new Set(['santos-manobrabilidade','santos-hidrodinamica']),
+  'navegacao-aguas-restritas':new Set(['bento','nav-doc-6']),
+  'meteorologia-oceanografia':new Set(['met-2','pianc-hydromet']),
+  'conhecimentos-gerais':new Set(['pianc-channels','livingstone','stopford','pimenta'])
+};
 const out={generated_at:new Date().toISOString(),subjects:{}};
 
 for(const slug of slugs){
@@ -27,12 +33,13 @@ for(const slug of slugs){
       const count=counts.get(chapterId)||0;
       if(count>=25)continue;
       const wasPending=priorStatus.get(chapterId)==='fonte_pendente';
+      const sourcePending=wasPending || knownPending[slug]?.has(work.key)===true;
       rows.push({
         bibliography_id:work.key,
         chapter_id:chapterId,
         unit:section.chapter||section.label,
         count,
-        status:wasPending?'fonte_pendente':count===0?'critico':'insuficiente',
+        status:sourcePending?'fonte_pendente':count===0?'critico':'insuficiente',
         need_to_25:25-count
       });
     }
