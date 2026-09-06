@@ -1,5 +1,5 @@
 import { query } from "../../../../lib/db";
-import { createPasswordResetToken, sendPasswordResetEmail } from "../../../../lib/password-reset";
+import { createPasswordResetToken, invalidatePasswordResetToken, sendPasswordResetEmail } from "../../../../lib/password-reset";
 import {
   clientIpHash,
   consumeRateLimit,
@@ -41,7 +41,12 @@ export async function POST(req) {
 
     if (user) {
       const reset = await createPasswordResetToken(user.id);
-      await sendPasswordResetEmail({ to: user.email, resetUrl: reset.url });
+      try {
+        await sendPasswordResetEmail({ to: user.email, resetUrl: reset.url });
+      } catch (error) {
+        await invalidatePasswordResetToken(reset.token).catch(() => {});
+        throw error;
+      }
     }
 
     return Response.json({ ok: true, message: GENERIC_MESSAGE });
