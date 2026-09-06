@@ -27,17 +27,38 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
-      - name: Harden generator prompt uniqueness
+      - name: Harden generator quality checks
         run: |
           python - <<'PY'
           from pathlib import Path
           p = Path('scripts/expand-question-formats-v1.mjs')
           s = p.read_text(encoding='utf-8')
-          old = "question: `Considerando ${chapterLabel(bases[0])}, assinale a alternativa INCORRETA.`,"
-          new = "question: `Considerando ${chapterLabel(bases[0])} e o problema-base “${clean(bases[0].question)}”, assinale a alternativa INCORRETA entre as cinco afirmações apresentadas.`,"
-          if old not in s:
-              raise SystemExit('Trecho esperado não localizado no gerador')
-          p.write_text(s.replace(old, new), encoding='utf-8')
+          old_prompt = "question: `Considerando ${chapterLabel(bases[0])}, assinale a alternativa INCORRETA.`,"
+          new_prompt = "question: `Considerando ${chapterLabel(bases[0])} e o problema-base “${clean(bases[0].question)}”, assinale a alternativa INCORRETA entre as cinco afirmações apresentadas.`,"
+          if old_prompt in s:
+              s = s.replace(old_prompt, new_prompt)
+          old_block = """  const existingPrompts = new Set(originalQuestions.map(q => norm(q.question)));
+  for (const q of added) {
+    if (existingIds.has(String(q.id)) || newIds.has(String(q.id))) throw new Error(`${subjectSlug}: ID duplicado ${q.id}`);
+    newIds.add(String(q.id));
+    const sig = norm(q.question);
+    if (!sig || existingPrompts.has(sig)) throw new Error(`${subjectSlug}: enunciado duplicado ${q.id}`);
+    existingPrompts.add(sig);
+  }
+"""
+          new_block = """  const existingSignatures = new Set(originalQuestions.map(q => norm(`${q.question}|${(q.options || []).map(o => o.text).join('|')}`)));
+  for (const q of added) {
+    if (existingIds.has(String(q.id)) || newIds.has(String(q.id))) throw new Error(`${subjectSlug}: ID duplicado ${q.id}`);
+    newIds.add(String(q.id));
+    const sig = norm(`${q.question}|${(q.options || []).map(o => o.text).join('|')}`);
+    if (!sig || existingSignatures.has(sig)) throw new Error(`${subjectSlug}: item duplicado ${q.id}`);
+    existingSignatures.add(sig);
+  }
+"""
+          if old_block not in s:
+              raise SystemExit('Bloco de validação esperado não localizado no gerador')
+          s = s.replace(old_block, new_block)
+          p.write_text(s, encoding='utf-8')
           PY
       - name: Generate new question formats
         run: node scripts/expand-question-formats-v1.mjs
