@@ -44,6 +44,7 @@ function Menu({ active = "", flashcardDecks = [] }) {
         </summary>
         <div className={styles.submenu}><div>
           <a href="/conteudos/banco-de-questoes">Gerar Caderno</a>
+          <a href="/conteudos/banco-de-questoes#meus-cadernos">Meus Cadernos</a>
           <a href="/conteudos/caderno-de-erros">Caderno de Erros</a>
           <a href="/conteudos">Central de Conteúdos</a>
         </div></div>
