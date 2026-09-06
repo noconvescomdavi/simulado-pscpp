@@ -7,8 +7,9 @@ for(const slug of slugs){
   const p=path.join(root,'reports',`${slug}-migration.json`);
   const r=JSON.parse(fs.readFileSync(p,'utf8'));
   const rows=(r.coverage||[]).filter(x=>Number(x.count)<25).map(x=>({bibliography_id:x.bibliography_id,chapter_id:x.chapter_id,unit:x.unit,count:x.count,status:x.status,need_to_25:Math.max(0,25-Number(x.count||0))}));
-  out.subjects[slug]={deficit_units:rows.length,total_needed_if_all_available:rows.reduce((s,x)=>s+x.need_to_25,0),rows};
+  const subject={deficit_units:rows.length,total_needed_if_all_available:rows.reduce((s,x)=>s+x.need_to_25,0),rows};
+  out.subjects[slug]=subject;
+  fs.writeFileSync(path.join(root,'reports',`deficits-${slug}.json`),JSON.stringify({generated_at:out.generated_at,subject_slug:slug,...subject},null,2)+'\n');
 }
 fs.writeFileSync(path.join(root,'reports','coverage-deficits-summary.json'),JSON.stringify(out,null,2)+'\n');
-console.log(JSON.stringify(out,null,2));
-// This report intentionally contains only units below the 25-question floor.
+console.log(JSON.stringify(Object.fromEntries(Object.entries(out.subjects).map(([k,v])=>[k,{deficit_units:v.deficit_units,total_needed:v.total_needed_if_all_available}])),null,2));
