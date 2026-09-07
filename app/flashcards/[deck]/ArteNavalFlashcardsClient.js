@@ -151,8 +151,11 @@ function visualAsset(card) {
 }
 
 function cardNumber(card) {
-  const match = String(card?.id || "").match(/AN1-(\d+)/);
-  return match ? Number(match[1]) : 0;
+  const id = String(card?.id || "");
+  const modern = id.match(/AN1-(\d+)/);
+  if (modern) return Number(modern[1]);
+  const legacy = id.match(/AN(\d{3})[A-Z]?/i);
+  return legacy ? Number(legacy[1]) : 0;
 }
 
 function bookFigureFor(card) {
@@ -201,6 +204,8 @@ function referenceFamily(card) {
 }
 
 function NavalVisual({ card, reveal = false, compact = false, onZoom }) {
+  const figure = bookFigureFor(card);
+  const family = referenceFamily(card);
   const asset = visualAsset(card);
   if (asset) return <img className={`${styles.navalVisual} ${compact ? styles.compactVisual : ''}`} src={asset} alt={reveal ? `${termPt(card)}, ${termEn(card)}` : 'Referência visual do cartão'} onClick={onZoom} />;
   const type = visualType(card);
