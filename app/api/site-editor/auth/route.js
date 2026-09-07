@@ -1,4 +1,5 @@
 import { getAdmin } from "../../../../lib/admin";
+import { clientIpHash, consumeRateLimit, rateLimitResponse } from "../../../../lib/security";
 import {
   assertSameOrigin,
   setEditorCookie,
@@ -16,6 +17,11 @@ export async function POST(request) {
         { status: 403 }
       );
     }
+
+    const limit = await clientIpHash().then((keyHash) =>
+      consumeRateLimit({ action: "site_editor_login_ip", keyHash, limit: 8, windowSeconds: 900 })
+    );
+    if (!limit.allowed) return rateLimitResponse(limit);
 
     const { password } = await request.json().catch(() => ({}));
     if (!validatePassword(password || "")) {
