@@ -4,7 +4,11 @@ import { query, withTransaction } from "../../../../../../lib/db";
 import { assertSameOrigin } from "../../../../../../lib/security";
 
 export async function POST(req, context) {
-  await assertSameOrigin();
+  try {
+    await assertSameOrigin();
+  } catch (error) {
+    return Response.json({ error: "Origem inválida." }, { status: Number(error?.status) || 403 });
+  }
   const admin = await getAdmin();
   if (!admin) return Response.json({ error: "Acesso negado." }, { status: 403 });
 
