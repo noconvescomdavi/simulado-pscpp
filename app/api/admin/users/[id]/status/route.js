@@ -8,27 +8,54 @@ export async function POST(req, context) {
 
   const { id } = await context.params;
   if (!isUuid(id)) return Response.json({ error: "Usuário inválido." }, { status: 400 });
-  if (id === admin.id) return Response.json({ error: "Você não pode bloquear sua própria conta." }, { status: 400 });
+  if (id === admin.id) return Response.json({ error: "Você não pode alterar sua própria conta por este painel." }, { status: 400 });
 
   const form = await req.formData();
   const status = String(form.get("status") || "");
-  if (!["active", "blocked"].includes(status)) {
+  if (!["active","suspended","blocked","deleted"].includes(status)) {
     return Response.json({ error: "Status inválido." }, { status: 400 });
   }
 
-  const target = await query("SELECT id, role FROM users WHERE id=$1", [id]);
+  const target = await query("SELECT id,email,role,status FROM users WHERE id=$1", [id]);
   if (!target.rowCount) return Response.json({ error: "Usuário não encontrado." }, { status: 404 });
   if (target.rows[0].role === "admin") {
-    return Response.json({ error: "O bloqueio de outro administrador não é permitido por este painel." }, { status: 400 });
+    return Response.json({ error: "Alterar outra conta de administrador não é permitido por este painel." }, { status: 400 });
   }
 
-  await query("UPDATE users SET status=$2, updated_at=NOW() WHERE id=$1", [id, status]);
-  await query(
-    `INSERT INTO audit_log(user_id, event_type) VALUES($1, $2)`,
-    [admin.id, `admin_account_${status}:${id}`]
-  );
+  await query("BEGIN");
+  try {
+    await query("UPDATE users SET status=$2, updated_at=NOW() WHERE id=$1", [id, status]);
 
-  const url = new URL("/admin", req.url);
-  url.searchParams.set("msg", status === "active" ? "Conta desbloqueada." : "Conta bloqueada.");
+    if (status === "deleted") {
+      await query(
+        "UPDATE user_access SET status='revoked', expires_at=NOW(), revoked_at=NOW(), updated_at=NOW() WHERE user_id=$1",
+        [id]
+      );
+      await query(
+        "UPDATE password_reset_tokens SET used_at=NOW() WHERE user_id=$1 AND used_at IS NULL",
+        [id]
+      ).catch(()=>{});
+    }
+
+    await query(
+      `INSERT INTO admin_audit_log(actor_user_id,action,entity_type,entity_key,after_data)
+       VALUES($1,$2,'user',$3,$4::jsonb)`,
+      [admin.id, `user_${status}`, id, JSON.stringify({status,previous_status:target.rows[0].status,email:target.rows[0].email})]
+    ).catch(()=>{});
+
+    await query("COMMIT");
+  } catch (error) {
+    await query("ROLLBACK").catch(()=>{});
+    throw error;
+  }
+
+  const url = new URL("/admin/usuarios", req.url);
+  const labels = {
+    active:"Conta reativada.",
+    suspended:"Conta suspensa.",
+    blocked:"Conta bloqueada.",
+    deleted:"Conta excluída e assinaturas revogadas."
+  };
+  url.searchParams.set("msg", labels[status] || "Conta atualizada.");
   return NextResponse.redirect(url, { status: 303 });
 }
