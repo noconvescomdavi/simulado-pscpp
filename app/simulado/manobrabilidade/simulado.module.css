@@ -24,3 +24,7 @@
 
 @media(max-width:980px){.examLayout{grid-template-columns:1fr}.sidebar{position:static;grid-template-columns:1fr 1fr}.backLink{grid-column:1/-1}.questionGrid{grid-template-columns:repeat(20,1fr)}}
 @media(max-width:700px){.header{height:68px}.headerInner{padding:0 13px}.brand{width:185px}.headerMeta>span,.headerMeta a{display:none}.headerMeta button{padding:8px 10px}.main{padding:22px 12px 45px}.examHeading{align-items:stretch;flex-direction:column;gap:16px}.timer{text-align:left;min-width:0;display:flex;align-items:center;justify-content:space-between}.timer strong{font-size:23px}.examLayout{gap:11px}.questionCard{border-radius:16px;padding:18px 14px}.questionCard h2{font-size:18px}.option{grid-template-columns:34px 1fr;padding:11px 10px}.option span{font-size:12px}.actions{align-items:stretch;flex-direction:column-reverse}.actions button{width:100%}.nextButton{justify-content:center}.sidebar{grid-template-columns:1fr}.backLink{grid-column:auto}.questionGrid{grid-template-columns:repeat(10,1fr)}.resultActions,.stateActions{flex-direction:column}.resultActions>*{width:100%}.resultBrand{width:210px}.resultStats{gap:5px}.resultStats div{padding:10px 6px}}
+
+/* Mantém alto contraste quando o aluno seleciona texto com mouse/toque. */
+.page ::selection{background:#145cc7;color:#fff;text-shadow:none}
+.page ::-moz-selection{background:#145cc7;color:#fff;text-shadow:none}
