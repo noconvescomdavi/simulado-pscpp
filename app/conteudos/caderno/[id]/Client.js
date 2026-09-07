@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./caderno.module.css";
 
 function questionKey(question) {
@@ -185,6 +185,7 @@ function Result({
 
 export default function Client({
   notebook,
+  planTask,
 }) {
   const questions =
     Array.isArray(
@@ -216,6 +217,27 @@ export default function Client({
 
   const [reviewing, setReviewing] =
     useState(false);
+
+  const planMarkedRef = useRef(false);
+
+  useEffect(() => {
+    if (!result?.completed || planMarkedRef.current) return;
+    if (!planTask?.plan_date || !planTask?.task_key) return;
+    planMarkedRef.current = true;
+    fetch("/api/study-plan/task", {
+      method: "POST",
+      headers: {"Content-Type":"application/json"},
+      body: JSON.stringify({
+        kind:"task",
+        plan_date:planTask.plan_date,
+        task_key:planTask.task_key,
+        task_type:planTask.task_type||"questions",
+        subject_slug:planTask.subject_slug||null,
+        status:"done",
+        metadata:{source:"automatic_notebook_completion",notebook_id:notebook.id}
+      })
+    }).catch(()=>{});
+  }, [result?.completed, planTask, notebook.id]);
 
   if (
     result?.completed &&

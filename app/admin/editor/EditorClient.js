@@ -25,7 +25,7 @@ const SITE_MAP = [
     ["/ranking","Ranking"],["/contramestre","CONTRAMESTRE"]
   ]},
   {group:"Administração",pages:[
-    ["/flashcards","Flashcards"],["/flashcards/meus-mapas","Flashcards · Meus Mapas"],
+    ["/flashcards","Flashcards"],["/flashcards/cis","Flashcards · CIS"],["/flashcards/arte-naval","Flashcards · Arte Naval"],["/flashcards/meus-mapas","Flashcards · Meus Mapas"],
     ["/admin","Dashboard Admin"],["/admin/usuarios","Usuários"],["/admin/questoes","Questões"],
     ["/admin/simulados","Simulados"],["/admin/conteudo","Conteúdo"],["/admin/pagamentos","Pagamentos"],
     ["/admin/metricas","Métricas"],["/admin/contramestre","CONTRAMESTRE"],["/admin/configuracoes","Configurações"]

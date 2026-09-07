@@ -18,6 +18,8 @@ export default async function FixacaoPage({searchParams}){
   const sectionKey=String(q?.secao||"").trim();
   const chapter=String(q?.capitulo||"").trim();
   const publication=String(q?.publicacao||"").trim();
+  const planDate=String(q?.plan_date||"").trim();
+  const taskKey=String(q?.task_key||"").trim();
 
   if(!subject||!bibliographyKey||!sectionKey)redirect("/plano-de-estudos");
 
@@ -33,7 +35,15 @@ export default async function FixacaoPage({searchParams}){
     title:"Fixação — "+(publication||subject)+" — "+(chapter||sectionKey)
   });
 
-  if(result?.notebook?.id)redirect("/conteudos/caderno/"+result.notebook.id);
+  if(result?.notebook?.id){
+    const tracking=new URLSearchParams();
+    if(planDate)tracking.set("plan_date",planDate);
+    if(taskKey)tracking.set("task_key",taskKey);
+    tracking.set("task_type","questions");
+    tracking.set("subject_slug",subject);
+    const suffix=tracking.toString()?"?"+tracking.toString():"";
+    redirect("/conteudos/caderno/"+result.notebook.id+suffix);
+  }
 
   const params=new URLSearchParams({
     materia:subject,
