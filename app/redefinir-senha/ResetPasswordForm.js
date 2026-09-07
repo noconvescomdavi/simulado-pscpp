@@ -3,7 +3,8 @@ import { useState } from "react";
 
 export default function ResetPasswordForm({ token }) {
   const [msg, setMsg] = useState("");
-  const [done, setDone] = useState(false);\n  const [showPassword, setShowPassword] = useState(false);
+  const [done, setDone] = useState(false);
+ const [showPassword, setShowPassword] = useState(false);
 
   async function submit(e) {
     e.preventDefault();
