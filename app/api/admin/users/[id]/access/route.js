@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getAdmin, isUuid } from "../../../../../../lib/admin";
 import { query } from "../../../../../../lib/db";
+import { assertSameOrigin } from "../../../../../../lib/security";
 
 const MAIN_PRODUCT_CODE = "pscpp-vitalicio";
 const TUTOR_PRODUCT_CODE = "tutor-ia-mensal";
@@ -12,6 +13,7 @@ function safeDuration(value, fallback=30){
 
 export async function POST(req, { params }) {
   try {
+    await assertSameOrigin();
     const admin = await getAdmin();
     if (!admin) return Response.json({ error: "Acesso negado." }, { status: 403 });
 
