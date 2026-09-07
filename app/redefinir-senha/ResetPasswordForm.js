@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export default function ResetPasswordForm({ token }) {
   const [msg, setMsg] = useState("");
-  const [done, setDone] = useState(false);
+  const [done, setDone] = useState(false);\n  const [showPassword, setShowPassword] = useState(false);
 
   async function submit(e) {
     e.preventDefault();
@@ -38,8 +38,8 @@ export default function ResetPasswordForm({ token }) {
   }
 
   return <form onSubmit={submit}>
-    <div className="field"><label>NOVA SENHA</label><input name="password" type="password" autoComplete="new-password" minLength={10} required/></div>
-    <div className="field"><label>CONFIRMAR NOVA SENHA</label><input name="confirm" type="password" autoComplete="new-password" minLength={10} required/></div>
+    <div className="field"><label>NOVA SENHA</label><div className="passwordWrap"><input name="password" type={showPassword?"text":"password"} autoComplete="new-password" minLength={10} required/><button type="button" className="passwordToggle" onClick={()=>setShowPassword(v=>!v)}>{showPassword?"Ocultar":"Mostrar"}</button></div></div>
+    <div className="field"><label>CONFIRMAR NOVA SENHA</label><div className="passwordWrap"><input name="confirm" type={showPassword?"text":"password"} autoComplete="new-password" minLength={10} required/><button type="button" className="passwordToggle" onClick={()=>setShowPassword(v=>!v)}>{showPassword?"Ocultar":"Mostrar"}</button></div></div>
     <button className="btn primary full">Alterar senha</button>
     <div className="msg" role="status">{msg}</div>
   </form>;
