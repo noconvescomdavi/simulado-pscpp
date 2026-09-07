@@ -138,6 +138,12 @@ export default function EditorClient(){
   const [moveMode,setMoveMode]=useState(false);
   const [showGrid,setShowGrid]=useState(false);
   const [snap,setSnap]=useState(true);
+  const [layers,setLayers]=useState([]);
+  const [locked,setLocked]=useState(false);
+  const [cloneCount,setCloneCount]=useState(0);
+  const [styleClipboard,setStyleClipboard]=useState(null);
+  const [undoStack,setUndoStack]=useState([]);
+  const [redoStack,setRedoStack]=useState([]);
   const iframeRef=useRef(null);
   const cleanupRef=useRef(null);
   const targetRef=useRef(null);
@@ -154,7 +160,7 @@ export default function EditorClient(){
     if(r.status===401){setAuth("login");return;}
     const j=await r.json();
     if(!j.ok) throw new Error(j.error||"Falha ao carregar editor.");
-    setDesign(j.content);setOriginal(clone(j.content));setSha(j.sha||"");setAuth("ready");
+    setDesign(j.content);setOriginal(clone(j.content));setSha(j.sha||"");setUndoStack([]);setRedoStack([]);setAuth("ready");
   }
 
   useEffect(()=>{load().catch(e=>{setStatus(e.message);setAuth("login")})},[]);
@@ -179,6 +185,76 @@ export default function EditorClient(){
     return scope==="global" ? design.global?.elements?.[selector] : design.pages?.[page]?.elements?.[selector];
   }
 
+  function remember(){
+    if(!design)return;
+    setUndoStack(prev=>[...prev.slice(-39),clone(design)]);
+    setRedoStack([]);
+  }
+
+  function restoreSnapshot(snapshot){
+    if(!snapshot)return;
+    setDesign(clone(snapshot));
+    setTarget(null);
+    setStatus("Histórico restaurado. Salve para publicar.");
+    setTimeout(()=>iframeRef.current?.contentWindow?.location.reload(),0);
+  }
+
+  function undo(){
+    setUndoStack(prev=>{
+      if(!prev.length)return prev;
+      const snapshot=prev[prev.length-1];
+      setRedoStack(r=>design?[...r.slice(-39),clone(design)]:r);
+      restoreSnapshot(snapshot);
+      return prev.slice(0,-1);
+    });
+  }
+
+  function redo(){
+    setRedoStack(prev=>{
+      if(!prev.length)return prev;
+      const snapshot=prev[prev.length-1];
+      setUndoStack(u=>design?[...u.slice(-39),clone(design)]:u);
+      restoreSnapshot(snapshot);
+      return prev.slice(0,-1);
+    });
+  }
+
+  function refreshLayers(doc=iframeRef.current?.contentDocument){
+    if(!doc)return;
+    const nodes=Array.from(doc.querySelectorAll("header,nav,main,section,article,aside,footer,h1,h2,h3,p,a,button,img"))
+      .filter(el=>!el.hasAttribute("data-estibordo-runtime-clone"))
+      .slice(0,250);
+    setLayers(nodes.map((el,index)=>({
+      index,
+      selector:selectorFor(el),
+      tag:el.tagName.toLowerCase(),
+      label:(el.innerText||el.getAttribute("alt")||el.getAttribute("aria-label")||el.tagName).trim().replace(/\s+/g," ").slice(0,72)
+    })).filter(x=>x.selector));
+  }
+
+  function selectBySelector(selector){
+    try{
+      const el=iframeRef.current?.contentDocument?.querySelector(selector);
+      if(el)selectElement(el);
+    }catch{}
+  }
+
+  function copyStyle(){
+    setStyleClipboard(clone(styleOverrides));
+    setStatus("Estilo copiado.");
+  }
+
+  function pasteStyle(){
+    if(!styleClipboard||!target)return;
+    remember();
+    const so=clone(styleClipboard);
+    setStyleOverrides(so);
+    setStyle(s=>({...s,...so}));
+    try{const el=iframeRef.current?.contentDocument?.querySelector(target.selector);if(el)Object.entries(so).forEach(([k,v])=>{el.style[k]=v})}catch{}
+    write(so,attrsOverrides,hidden,locked,cloneCount);
+    setStatus("Estilo aplicado. Salve para publicar.");
+  }
+
   function selectElement(el){
     const selector=selectorFor(el); if(!selector)return;
     const current=scope==="global"?design?.global?.elements?.[selector]:design?.pages?.[page]?.elements?.[selector];
@@ -192,7 +268,9 @@ export default function EditorClient(){
       title:el.getAttribute?.("title")||undefined
     };
     Object.keys(a).forEach(k=>a[k]===undefined&&delete a[k]);
+    if(current?.locked){setStatus("Este elemento está bloqueado no editor.");return;}
     const ao={...(current?.attrs||{})};
+    setLocked(Boolean(current?.locked));setCloneCount(Number(current?.cloneCount||0));
     setTarget({selector,tag:el.tagName.toLowerCase(),label:(el.innerText||el.textContent||el.getAttribute?.("alt")||el.tagName).trim().slice(0,120)});
     setStyle({...base,...overrides});setStyleOverrides(overrides);
     setAttrs({...a,...ao});setAttrsOverrides(ao);setHidden(Boolean(current?.hidden));
@@ -211,13 +289,14 @@ export default function EditorClient(){
     `;
     doc.head.appendChild(s);
     doc.documentElement.classList.toggle("ev-editor-grid",gridRef.current);
+    refreshLayers(doc);
     let hover,selected,drag=null;
 
     const over=e=>{if(drag)return;if(hover)hover.removeAttribute("data-ev-hover");hover=e.target;hover?.setAttribute("data-ev-hover","")};
     const click=e=>{e.preventDefault();e.stopPropagation();if(drag)return;if(selected)selected.removeAttribute("data-ev-selected");selected=e.target;selected.setAttribute("data-ev-selected","");selectElement(selected)};
 
     const down=e=>{
-      if(!moveModeRef.current || !selected || e.target!==selected)return;
+      if(!moveModeRef.current || locked || !selected || e.target!==selected)return;
       e.preventDefault();e.stopPropagation();
       const current=String(selected.style.translate||doc.defaultView.getComputedStyle(selected).translate||"").trim();
       const nums=current.match(/-?\d+(?:\.\d+)?/g)||[];
@@ -238,6 +317,7 @@ export default function EditorClient(){
       const value=`${drag.x}px ${drag.y}px`;
       drag.el.removeAttribute("data-ev-dragging");
       if(targetRef.current?.selector===selector){
+        remember();
         setStyle(s=>({...s,translate:value}));
         setStyleOverrides(prev=>{
           const so={...prev,translate:value};
@@ -267,7 +347,7 @@ export default function EditorClient(){
     };
   }
 
-  function write(nextStyle=styleOverrides,nextAttrs=attrsOverrides,nextHidden=hidden){
+  function write(nextStyle=styleOverrides,nextAttrs=attrsOverrides,nextHidden=hidden,nextLocked=locked,nextCloneCount=cloneCount){
     if(!target?.selector)return;
     setDesign(prev=>{
       const n=clone(prev||{version:2,global:{favicon:"",elements:{}},pages:{}});
@@ -276,6 +356,8 @@ export default function EditorClient(){
       if(Object.keys(nextStyle).length)config.style={...nextStyle};
       if(Object.keys(nextAttrs).length)config.attrs={...nextAttrs};
       config.hidden=Boolean(nextHidden);
+      if(nextLocked)config.locked=true;
+      if(Number(nextCloneCount)>0)config.cloneCount=Math.min(10,Number(nextCloneCount));
       if(scope==="global")n.global.elements[target.selector]=config;
       else{n.pages[page]||={elements:{}};n.pages[page].elements||={};n.pages[page].elements[target.selector]=config;}
       return n;
@@ -283,6 +365,7 @@ export default function EditorClient(){
   }
 
   function setStyleValue(key,value){
+    remember();
     const so={...styleOverrides};if(value==="")delete so[key];else so[key]=value;
     setStyle(s=>({...s,[key]:value}));setStyleOverrides(so);
     try{const el=iframeRef.current?.contentDocument?.querySelector(target.selector);if(el)el.style[key]=value}catch{}
@@ -290,6 +373,7 @@ export default function EditorClient(){
   }
 
   function setAttr(key,value){
+    remember();
     const ao={...attrsOverrides};if(value==="")delete ao[key];else ao[key]=value;
     setAttrs(a=>({...a,[key]:value}));setAttrsOverrides(ao);
     try{
@@ -300,6 +384,7 @@ export default function EditorClient(){
   }
 
   function toggleHidden(v){
+    remember();
     setHidden(v);
     try{const el=iframeRef.current?.contentDocument?.querySelector(target.selector);if(el)el.style.display=v?"none":(style.display||"")}catch{}
     write(styleOverrides,attrsOverrides,v);
@@ -307,6 +392,7 @@ export default function EditorClient(){
 
   function resetTarget(){
     if(!target?.selector)return;
+    remember();
     setDesign(prev=>{
       const n=clone(prev);
       if(scope==="global")delete n.global?.elements?.[target.selector];
@@ -315,6 +401,22 @@ export default function EditorClient(){
     });
     setStatus("Alterações desse elemento removidas. Salve para publicar.");
     iframeRef.current?.contentWindow?.location.reload();
+  }
+
+  function toggleLocked(v){
+    remember();setLocked(v);write(styleOverrides,attrsOverrides,hidden,v,cloneCount);
+    setStatus(v?"Elemento bloqueado no editor.":"Elemento desbloqueado.");
+  }
+
+  function changeCloneCount(v){
+    const n=Math.max(0,Math.min(10,Number(v)||0));
+    remember();setCloneCount(n);write(styleOverrides,attrsOverrides,hidden,locked,n);
+    setStatus(n?"Duplicação configurada. Salve para publicar.":"Duplicatas removidas. Salve para publicar.");
+  }
+
+  function bringForward(delta){
+    const current=Number.parseInt(style.zIndex||"0",10)||0;
+    setStyleValue("zIndex",String(current+delta));
   }
 
   async function upload(file,mode="src"){
@@ -347,6 +449,8 @@ export default function EditorClient(){
         {["desktop","tablet","mobile"].map(v=><button key={v} className={viewport===v?"is-active":""} onClick={()=>setViewport(v)}>{v==="desktop"?"Desktop":v==="tablet"?"Tablet":"Mobile"}</button>)}
       </div>
       <div className="ev-toolbar">
+        <button onClick={undo} disabled={!undoStack.length} title="Desfazer">↶</button>
+        <button onClick={redo} disabled={!redoStack.length} title="Refazer">↷</button>
         <button className={moveMode?"is-active":""} onClick={()=>setMoveMode(v=>!v)} title="Mover elementos por arraste">✥ Mover</button>
         <button className={showGrid?"is-active":""} onClick={()=>setShowGrid(v=>!v)} title="Mostrar grade"># Grade</button>
         <button className={snap?"is-active":""} onClick={()=>setSnap(v=>!v)} title="Ajustar movimento em passos de 5 px">⊞ Snap</button>
@@ -359,6 +463,7 @@ export default function EditorClient(){
       <aside className="ev-sitemap">
         <div className="ev-side-title"><b>MAPA DO SITE</b><span>Escolha uma página para editar</span></div>
         <div className="ev-site-scroll">{SITE_MAP.map(group=><section key={group.group}><h4>{group.group}</h4>{group.pages.map(([url,label])=><button className={page===url?"is-active":""} key={url} onClick={()=>{setPage(url);setTarget(null)}}><span>{label}</span><small>{url}</small></button>)}</section>)}</div>
+        <div className="ev-layers"><div className="ev-layers-head"><b>CAMADAS</b><button type="button" onClick={()=>refreshLayers()}>↻</button></div><div className="ev-layer-scroll">{layers.map(layer=><button type="button" key={layer.selector+"-"+layer.index} className={target?.selector===layer.selector?"is-active":""} onClick={()=>selectBySelector(layer.selector)}><small>{layer.tag}</small><span>{layer.label||layer.selector}</span></button>)}</div></div>
       </aside>
 
       <section className="ev-canvas">
@@ -370,6 +475,7 @@ export default function EditorClient(){
         {!target ? <div className="ev-empty"><div className="ev-empty-icon">✦</div><h3>Selecione um elemento</h3><p>Clique em um texto, botão, imagem, card, cabeçalho ou menu na prévia. As ferramentas de edição aparecerão aqui.</p><div className="ev-tip"><b>Dica</b><span>Para cabeçalho, menu, logo ou rodapé, use o escopo <strong>Todo o site</strong>.</span></div></div> :
         <>
           <div className="ev-inspector-head"><div><span>{target.tag.toUpperCase()}</span><b>{target.label||"Elemento selecionado"}</b></div><code title={target.selector}>{target.selector}</code></div>
+          <div className="ev-object-tools"><button type="button" onClick={copyStyle}>Copiar estilo</button><button type="button" disabled={!styleClipboard} onClick={pasteStyle}>Colar estilo</button><button type="button" onClick={()=>bringForward(1)}>Frente +</button><button type="button" onClick={()=>bringForward(-1)}>Trás −</button></div>
           <div className="ev-scope"><span>Aplicar em</span><button className={scope==="page"?"is-active":""} onClick={()=>setScope("page")}>Só esta página</button><button className={scope==="global"?"is-active":""} onClick={()=>setScope("global")}>Todo o site</button></div>
           <nav className="ev-tabs">{[["content","Conteúdo"],["design","Design"],["media","Imagem"],["layout","Layout"]].map(([id,label])=><button key={id} className={tab===id?"is-active":""} onClick={()=>setTab(id)}>{label}</button>)}</nav>
           <div className="ev-inspector-scroll">
@@ -406,11 +512,14 @@ export default function EditorClient(){
               <div className="ev-grid2"><SelectField label="Direção flex" value={style.flexDirection} onChange={v=>setStyleValue("flexDirection",v)} options={["row","column","row-reverse","column-reverse"]}/><SelectField label="Alinhar itens" value={style.alignItems} onChange={v=>setStyleValue("alignItems",v)} options={["stretch","flex-start","center","flex-end"]}/></div>
               <TextField label="Opacidade" value={style.opacity} onChange={v=>setStyleValue("opacity",v)} placeholder="1"/>
               <h4 className="ev-subtitle">POSICIONAMENTO</h4>
+              <div className="ev-align-tools"><button type="button" onClick={()=>setStyleValue("marginLeft","0px")}>Esquerda</button><button type="button" onClick={()=>{setStyleValue("marginLeft","auto");setStyleValue("marginRight","auto")}}>Centro</button><button type="button" onClick={()=>setStyleValue("marginRight","0px")}>Direita</button></div>
+              <div className="ev-grid2"><TextField label="Camada (z-index)" value={style.zIndex} onChange={v=>setStyleValue("zIndex",v)} placeholder="0"/><SelectField label="Posição" value={style.position} onChange={v=>setStyleValue("position",v)} options={["relative","absolute","fixed","sticky"]}/></div>
               <TextField label="Deslocamento (X Y)" value={style.translate} onChange={v=>setStyleValue("translate",v)} placeholder="0px 0px"/>
               <div className="ev-quick-actions"><button type="button" onClick={()=>setStyleValue("translate","0px 0px")}>Centralizar deslocamento</button><button type="button" onClick={()=>setStyleValue("width","100%")}>Largura 100%</button><button type="button" onClick={()=>setStyleValue("marginLeft","auto")}>Margem esquerda auto</button><button type="button" onClick={()=>setStyleValue("marginRight","auto")}>Margem direita auto</button></div>
               <h4 className="ev-subtitle">FUNDO</h4>
               <div className="ev-grid2"><SelectField label="Tamanho do fundo" value={style.backgroundSize} onChange={v=>setStyleValue("backgroundSize",v)} options={["cover","contain","auto"]}/><TextField label="Posição do fundo" value={style.backgroundPosition} onChange={v=>setStyleValue("backgroundPosition",v)} placeholder="center center"/></div>
             </>}
+            <div className="ev-pro-tools"><label><input type="checkbox" checked={locked} onChange={e=>toggleLocked(e.target.checked)}/> Bloquear no editor</label><label>Duplicatas <input type="number" min="0" max="10" value={cloneCount} onChange={e=>changeCloneCount(e.target.value)}/></label></div>
             <div className="ev-danger-zone"><label><input type="checkbox" checked={hidden} onChange={e=>toggleHidden(e.target.checked)}/> Ocultar elemento</label><button type="button" onClick={resetTarget}>Restaurar este elemento</button></div>
             {status&&<div className="ev-status">{status}</div>}
           </div>
