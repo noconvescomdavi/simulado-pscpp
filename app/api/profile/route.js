@@ -14,7 +14,11 @@ export async function GET() {
 }
 
 export async function POST(request) {
-  await assertSameOrigin();
+  try {
+    await assertSameOrigin();
+  } catch (error) {
+    return Response.json({ error: "Origem inválida." }, { status: Number(error?.status) || 403 });
+  }
   const session = await getSession();
   if (!session) return NextResponse.redirect(new URL("/login?next=/perfil", request.url), 303);
   try {
