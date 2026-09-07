@@ -171,3 +171,5 @@
   .notice{align-items:flex-start;flex-direction:column;gap:4px}
   .deckMetrics{grid-template-columns:repeat(2,1fr)}
 }
+
+.effectGlow{filter:drop-shadow(0 0 20px rgba(63,174,255,.42))}.effectFloat{animation:fcFloat 3.2s ease-in-out infinite}.effectTilt{transform:perspective(1200px) rotateX(1.5deg) rotateY(-1.5deg)}.transitionFast *{transition-duration:.18s!important}.transitionSoft *{transition-duration:.7s!important;transition-timing-function:cubic-bezier(.22,.61,.36,1)!important}.transitionDramatic *{transition-duration:.9s!important;transition-timing-function:cubic-bezier(.34,1.56,.64,1)!important}@keyframes fcFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}

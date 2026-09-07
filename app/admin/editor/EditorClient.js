@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import EditorToolbox from "./EditorToolbox";
+import FlashcardManager from "./FlashcardManager";
 
 const SITE_MAP = [
   {group:"Institucional",pages:[
@@ -25,7 +26,7 @@ const SITE_MAP = [
     ["/ranking","Ranking"],["/contramestre","CONTRAMESTRE"]
   ]},
   {group:"Administração",pages:[
-    ["/flashcards","Flashcards"],["/flashcards/cis","Flashcards · CIS"],["/flashcards/arte-naval","Flashcards · Arte Naval"],["/flashcards/meus-mapas","Flashcards · Meus Mapas"],
+    ["/flashcards","Flashcards"],["/flashcards/cis","Flashcards · CIS"],["/flashcards/arte-naval-nomenclatura-navio","Flashcards · Arte Naval"],["/flashcards/meus-mapas","Flashcards · Meus Mapas"],
     ["/admin","Dashboard Admin"],["/admin/usuarios","Usuários"],["/admin/questoes","Questões"],
     ["/admin/simulados","Simulados"],["/admin/conteudo","Conteúdo"],["/admin/pagamentos","Pagamentos"],
     ["/admin/metricas","Métricas"],["/admin/contramestre","CONTRAMESTRE"],["/admin/configuracoes","Configurações"]
@@ -147,6 +148,7 @@ export default function EditorClient(){
   const [zoom,setZoom]=useState(100);
   const [fitScale,setFitScale]=useState(1);
   const [toolboxOpen,setToolboxOpen]=useState(false);
+  const [flashcardManagerOpen,setFlashcardManagerOpen]=useState(false);
   const [moveMode,setMoveMode]=useState(false);
   const [showGrid,setShowGrid]=useState(false);
   const [snap,setSnap]=useState(true);
@@ -520,6 +522,7 @@ export default function EditorClient(){
     <header className="ev-topbar">
       <div className="ev-brand"><b>ESTIBORDO</b><span>EDITOR VISUAL</span></div>
       <button className="ev-add-main" type="button" onClick={()=>setToolboxOpen(true)}>＋ Adicionar</button>
+      <button className="ev-flash-main" type="button" onClick={()=>setFlashcardManagerOpen(true)}>▣ Flashcards</button>
       <div className="ev-device">
         {["desktop","tablet","mobile"].map(v=><button key={v} className={viewport===v?"is-active":""} onClick={()=>{setViewport(v);setZoom(100)}}>{v==="desktop"?"Desktop":v==="tablet"?"Tablet":"Mobile"}</button>)}
       </div>
@@ -535,6 +538,7 @@ export default function EditorClient(){
     </header>
 
     <EditorToolbox open={toolboxOpen} onClose={()=>setToolboxOpen(false)} onAdd={addBlock} onAction={toolboxAction} pageSettings={pageConfig()} onPageSettings={updatePageSettings} media={design?.global?.media||[]} onUploadMedia={uploadLibraryMedia}/>
+    <FlashcardManager open={flashcardManagerOpen} onClose={()=>setFlashcardManagerOpen(false)} initialSlug={page.startsWith("/flashcards/")?page.split("/")[2]:"cis"} onChanged={()=>setStatus("Flashcard salvo no banco. Atualize a prévia para conferir.")}/>
     <div className="ev-workspace">
       <aside className="ev-sitemap">
         <div className="ev-side-title"><b>MAPA DO SITE</b><span>Escolha uma página para editar</span></div>

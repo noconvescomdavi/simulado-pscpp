@@ -382,7 +382,10 @@ function renderArteNavalVisual(card) {
   </svg>`;
 }
 
+function safeImageMarkup(url){const v=String(url||"").trim();if(!/^\/?[a-z0-9_./:%?=&-]+$/i.test(v)&&!/^https:\/\//i.test(v))return "";const escaped=v.replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");return `<img src="${escaped}" alt="" style="display:block;width:100%;height:100%;object-fit:contain;border-radius:18px"/>`;}
+
 function renderCardVisual(card, deckSlug) {
+  if(card?.image)return safeImageMarkup(card.image);
   if (deckSlug === "ripeam") return renderRipeamCinematic(card);
   if (deckSlug === "arte-naval-nomenclatura-navio") return renderArteNavalVisual(card);
   return renderSignal(card?.code);
@@ -917,7 +920,7 @@ export default function FlashcardsClient({ deck, initialState }) {
             <div className={styles.flashcardWrap}>
               <button
                 type="button"
-                className={`${styles.flashcard} ${flipped ? styles.flipped : ""}`}
+                className={`${styles.flashcard} ${flipped ? styles.flipped : ""} ${current?.effect==="glow"?styles.effectGlow:""} ${current?.effect==="float"?styles.effectFloat:""} ${current?.effect==="tilt"?styles.effectTilt:""} ${current?.transition==="fast"?styles.transitionFast:""} ${current?.transition==="soft"?styles.transitionSoft:""} ${current?.transition==="dramatic"?styles.transitionDramatic:""}`}
                 onClick={() => setFlipped((value) => !value)}
                 aria-label="Virar cartão"
               >
