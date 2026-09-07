@@ -6,6 +6,7 @@ on:
       - fix/revisao-profunda-bancos-20260907
     paths:
       - 'scripts/revise-question-banks-context-v2.mjs'
+      - 'scripts/harden-context-revision-v2.mjs'
       - 'scripts/fix-audit-math-normalization.mjs'
       - '.github/workflows/revise-question-banks-context-v2.yml'
   workflow_dispatch:
@@ -27,6 +28,8 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Harden contextual revision
+        run: node scripts/harden-context-revision-v2.mjs
       - name: Fix audit normalization
         run: node scripts/fix-audit-math-normalization.mjs
       - name: Revise all question banks
@@ -43,7 +46,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/questions/*.json scripts/audit-question-quality-v2.mjs reports/question-context-revision-v2.json reports/question-context-revision-v2.md reports/question-quality-audit-v2.json reports/question-quality-audit-v2.md reports/question-quality-samples.md reports/question-stem-patterns.md
+          git add data/questions/*.json scripts/revise-question-banks-context-v2.mjs scripts/audit-question-quality-v2.mjs reports/question-context-revision-v2.json reports/question-context-revision-v2.md reports/question-quality-audit-v2.json reports/question-quality-audit-v2.md reports/question-quality-samples.md reports/question-stem-patterns.md
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "feat: revisa contexto e dificuldade dos bancos [context-revision-v2-output]"
           git pull --rebase origin fix/revisao-profunda-bancos-20260907
