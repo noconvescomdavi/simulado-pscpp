@@ -44,7 +44,7 @@ export async function POST(req) {
       if (exists.rowCount) return null;
 
       const inserted = await client.query(
-        "insert into users(email,password_hash) values($1,$2) returning id,email,role,status",
+        "insert into users(email,password_hash) values($1,$2) returning id,email,role,status,session_version",
         [normalized, hash]
       );
       const created = inserted.rows[0];
