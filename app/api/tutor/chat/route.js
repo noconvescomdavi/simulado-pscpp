@@ -1,4 +1,5 @@
 import {getSession} from "../../../../lib/auth";
+import {assertSameOrigin,consumeRateLimit,identityHash,rateLimitResponse} from "../../../../lib/security";
 import {AI_TUTOR_DAILY_LIMIT,ensureConversation,getAiTutorAccess,getTutorConversation,getTutorUsage,getTutorVectorStoreId,saveTutorExchange,tutorSystemPrompt} from "../../../../lib/ai-tutor";
 
 export const dynamic="force-dynamic";
@@ -24,8 +25,11 @@ function fileSearchSources(payload){
 }
 
 export async function POST(request){
+  try{await assertSameOrigin();}catch{return Response.json({error:"Origem inválida."},{status:403});}
   const session=await getSession();
   if(!session)return Response.json({error:"Não autenticado."},{status:401});
+  const burst=await consumeRateLimit({action:"tutor_chat_user",keyHash:identityHash(session.id),limit:30,windowSeconds:300});
+  if(!burst.allowed)return rateLimitResponse(burst);
   const access=await getAiTutorAccess(session.id);
   if(!access?.active)return Response.json({error:"O Tutor IA é um pacote adicional de R$ 100/mês.",code:"TUTOR_ADDON_REQUIRED"},{status:403});
 
