@@ -30,7 +30,9 @@ function applyRecord(record) {
   for (const [selector, config] of Object.entries(record)) {
     if (!selector || !config || typeof config !== 'object') continue;
     let nodes = [];
-    try { nodes = Array.from(document.querySelectorAll(selector)); } catch { continue; }
+    try { nodes = Array.from(document.querySelectorAll(selector)).filter((node) => !node.hasAttribute('data-estibordo-runtime-clone')); } catch { continue; }
+
+    document.querySelectorAll('[data-estibordo-runtime-clone-for="' + CSS.escape(selector) + '"]').forEach((node) => node.remove());
 
     for (const node of nodes) {
       if (config.hidden === true) {
@@ -59,6 +61,16 @@ function applyRecord(record) {
       if ('text' in attrs && node.children.length === 0) {
         const nextText = String(attrs.text ?? '');
         if (node.textContent !== nextText) node.textContent = nextText;
+      }
+
+      const cloneCount = Math.max(0, Math.min(10, Number(config.cloneCount || 0)));
+      let anchor = node;
+      for (let i = 0; i < cloneCount; i++) {
+        const copy = node.cloneNode(true);
+        copy.setAttribute('data-estibordo-runtime-clone', 'true');
+        copy.setAttribute('data-estibordo-runtime-clone-for', selector);
+        anchor.insertAdjacentElement('afterend', copy);
+        anchor = copy;
       }
     }
   }
