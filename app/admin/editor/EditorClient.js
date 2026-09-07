@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import EditorToolbox from "./EditorToolbox";
 
 const SITE_MAP = [
   {group:"Institucional",pages:[
@@ -24,6 +25,7 @@ const SITE_MAP = [
     ["/ranking","Ranking"],["/contramestre","CONTRAMESTRE"]
   ]},
   {group:"Administração",pages:[
+    ["/flashcards","Flashcards"],["/flashcards/meus-mapas","Flashcards · Meus Mapas"],
     ["/admin","Dashboard Admin"],["/admin/usuarios","Usuários"],["/admin/questoes","Questões"],
     ["/admin/simulados","Simulados"],["/admin/conteudo","Conteúdo"],["/admin/pagamentos","Pagamentos"],
     ["/admin/metricas","Métricas"],["/admin/contramestre","CONTRAMESTRE"],["/admin/configuracoes","Configurações"]
@@ -144,6 +146,7 @@ export default function EditorClient(){
   const [uploading,setUploading]=useState(false);
   const [zoom,setZoom]=useState(100);
   const [fitScale,setFitScale]=useState(1);
+  const [toolboxOpen,setToolboxOpen]=useState(false);
   const [moveMode,setMoveMode]=useState(false);
   const [showGrid,setShowGrid]=useState(false);
   const [snap,setSnap]=useState(true);
@@ -446,6 +449,47 @@ export default function EditorClient(){
     setStyleValue("zIndex",String(current+delta));
   }
 
+  function pageConfig(){return design?.pages?.[page]?.settings||{};}
+
+  function updatePageSettings(patch){
+    remember();
+    setDesign(prev=>{const n=clone(prev||{version:2,global:{favicon:"",elements:{},media:[]},pages:{}});n.pages||={};n.pages[page]||={elements:{},blocks:[],settings:{}};n.pages[page].settings={...(n.pages[page].settings||{}),...patch};return n});
+    setStatus("Configuração da página alterada. Salve para publicar.");
+  }
+
+  function addBlock(type){
+    remember();
+    const id="blk_"+Date.now().toString(36)+"_"+Math.random().toString(36).slice(2,6);
+    const templates={
+      text:{text:"Novo texto",style:{}},button:{text:"Novo botão",href:"#",style:{}},image:{src:"/estibordo/logos/estibordo-logo-header.png",alt:"Imagem",style:{}},section:{title:"Nova seção",text:"Edite este conteúdo no painel.",style:{}},box:{title:"Nova caixa",text:"Conteúdo da caixa",style:{}},decorative:{text:"✦",style:{}},gallery:{images:[],style:{}},menu:{items:[["Início","/"],["Área do Aluno","/area-do-aluno"]],style:{}},form:{title:"Entre em contato",fields:["Nome","E-mail","Mensagem"],style:{}},video:{src:"",title:"Vídeo",style:{}},interactive:{title:"Conteúdo interativo",text:"Configure este bloco.",style:{}},list:{items:["Item 1","Item 2","Item 3"],style:{}},embed:{code:"",style:{}},social:{items:[["Instagram","#"],["YouTube","#"],["LinkedIn","#"]],style:{}},input:{placeholder:"Digite aqui",style:{}},widget:{title:"Widget",text:"Widget do app",style:{}},cms:{title:"CMS",text:"Conecte este bloco a uma fonte de dados.",style:{}},blog:{title:"Blog",text:"Bloco de posts.",style:{}},app:{title:"App",text:"Integração de aplicativo.",style:{}},api:{title:"API",text:"Bloco conectado a API.",style:{}},hero:{title:"Título de destaque",text:"Subtítulo estratégico da seção.",button:"Começar agora",href:"#",style:{}},cta:{title:"Pronto para avançar?",text:"Adicione uma chamada para ação clara.",button:"Começar",href:"#",style:{}},stats:{items:[["75%","Desempenho"],["1.250","Questões"],["18","Simulados"]],style:{}},socialbar:{items:[["Instagram","#"],["YouTube","#"],["LinkedIn","#"]],style:{}},cards:{items:[["Card 1","Descrição"],["Card 2","Descrição"],["Card 3","Descrição"]],style:{}}
+    };
+    const block={id,type,...(templates[type]||{title:type,text:"Novo bloco",style:{}})};
+    setDesign(prev=>{const n=clone(prev||{version:2,global:{favicon:"",elements:{},media:[]},pages:{}});n.pages||={};n.pages[page]||={elements:{},blocks:[],settings:{}};n.pages[page].blocks=[...(n.pages[page].blocks||[]),block];return n});
+    setStatus("Elemento adicionado ao fim da página. Salve para publicar.");
+    setTimeout(()=>iframeRef.current?.contentWindow?.location.reload(),50);
+  }
+
+  async function uploadLibraryMedia(file){
+    if(!file)return;setStatus("Enviando mídia...");
+    const fd=new FormData();fd.append("file",file);
+    const r=await fetch("/api/site-editor/upload",{method:"POST",body:fd});const j=await r.json().catch(()=>({}));
+    if(!r.ok){setStatus(j.error||"Falha no upload.");return;}
+    setDesign(prev=>{const n=clone(prev||{version:2,global:{favicon:"",elements:{},media:[]},pages:{}});n.global||={favicon:"",elements:{},media:[]};n.global.media=[...(n.global.media||[]),{name:file.name,url:j.url,type:file.type,createdAt:new Date().toISOString()}];return n});
+    setStatus("Mídia adicionada à biblioteca. Salve para publicar.");
+  }
+
+  function toolboxAction(action){
+    if(action==="layers"){setToolboxOpen(false);setStatus("Use CAMADAS no painel esquerdo para selecionar os elementos.");return;}
+    if(action==="pages"){setToolboxOpen(false);setStatus("Use MAPA DO SITE no painel esquerdo para gerenciar e selecionar páginas.");return;}
+    if(action==="section"){setToolboxOpen(false);setStatus("Selecione uma seção na prévia para acessar ações rápidas e layout.");return;}
+  }
+
+  function moveSelected(delta){
+    if(!target?.selector)return;remember();
+    setDesign(prev=>{const n=clone(prev);const holder=scope==="global"?(n.global.elements[target.selector]||={}):((n.pages[page]||={elements:{}}).elements[target.selector]||={});holder.moveDelta=(Number(holder.moveDelta)||0)+delta;return n});
+    setStatus(delta<0?"Seção será movida para cima ao publicar.":"Seção será movida para baixo ao publicar.");
+  }
+
   async function upload(file,mode="src"){
     if(!file)return;
     setUploading(true);setStatus("Enviando imagem...");
@@ -475,6 +519,7 @@ export default function EditorClient(){
   return <main className="ev-app">
     <header className="ev-topbar">
       <div className="ev-brand"><b>ESTIBORDO</b><span>EDITOR VISUAL</span></div>
+      <button className="ev-add-main" type="button" onClick={()=>setToolboxOpen(true)}>＋ Adicionar</button>
       <div className="ev-device">
         {["desktop","tablet","mobile"].map(v=><button key={v} className={viewport===v?"is-active":""} onClick={()=>{setViewport(v);setZoom(100)}}>{v==="desktop"?"Desktop":v==="tablet"?"Tablet":"Mobile"}</button>)}
       </div>
@@ -489,6 +534,7 @@ export default function EditorClient(){
       <div className="ev-actions"><span className={dirty?"ev-dirty":"ev-saved"}>{dirty?"Alterações não publicadas":"Tudo salvo"}</span><a href={page} target="_blank">Abrir página ↗</a><button className="ev-publish" disabled={!dirty||saving} onClick={save}>{saving?"Publicando…":"Salvar e publicar"}</button></div>
     </header>
 
+    <EditorToolbox open={toolboxOpen} onClose={()=>setToolboxOpen(false)} onAdd={addBlock} onAction={toolboxAction} pageSettings={pageConfig()} onPageSettings={updatePageSettings} media={design?.global?.media||[]} onUploadMedia={uploadLibraryMedia}/>
     <div className="ev-workspace">
       <aside className="ev-sitemap">
         <div className="ev-side-title"><b>MAPA DO SITE</b><span>Escolha uma página para editar</span></div>
@@ -510,6 +556,7 @@ export default function EditorClient(){
         <>
           <div className="ev-inspector-head"><div><span>{target.tag.toUpperCase()}</span><b>{target.label||"Elemento selecionado"}</b></div><code title={target.selector}>{target.selector}</code></div>
           <div className="ev-object-tools"><button type="button" onClick={copyStyle}>Copiar estilo</button><button type="button" disabled={!styleClipboard} onClick={pasteStyle}>Colar estilo</button><button type="button" onClick={()=>bringForward(1)}>Frente +</button><button type="button" onClick={()=>bringForward(-1)}>Trás −</button></div>
+          <div className="ev-section-actions"><button onClick={()=>moveSelected(-1)}>↑ Mover seção</button><button onClick={()=>moveSelected(1)}>↓ Mover seção</button><button onClick={()=>changeCloneCount(Math.min(10,cloneCount+1))}>Duplicar · Ctrl+D</button><button onClick={()=>toggleHidden(true)}>Excluir · Del</button></div>
           <div className="ev-scope"><span>Aplicar em</span><button className={scope==="page"?"is-active":""} onClick={()=>setScope("page")}>Só esta página</button><button className={scope==="global"?"is-active":""} onClick={()=>setScope("global")}>Todo o site</button></div>
           <nav className="ev-tabs">{[["content","Conteúdo"],["design","Design"],["media","Imagem"],["layout","Layout"]].map(([id,label])=><button key={id} className={tab===id?"is-active":""} onClick={()=>setTab(id)}>{label}</button>)}</nav>
           <div className="ev-inspector-scroll">
