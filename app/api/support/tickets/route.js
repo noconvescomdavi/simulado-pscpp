@@ -1,6 +1,7 @@
 import { getSession } from "../../../../lib/auth";
 import { query } from "../../../../lib/db";
 import { createTicket, ensureSupportSchema } from "../../../../lib/support";
+import { assertSameOrigin, consumeRateLimit, identityHash, rateLimitResponse } from "../../../../lib/security";
 
 export const dynamic = "force-dynamic";
 
