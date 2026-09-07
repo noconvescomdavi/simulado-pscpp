@@ -43,13 +43,16 @@ jobs:
         run: node scripts/extract-question-quality-samples.mjs
       - name: Report stem patterns
         run: node scripts/report-question-stem-patterns.mjs
-      - name: Validate repository
-        run: npm run validate
+      - name: Validate question banks and taxonomy
+        run: |
+          npm run check:repo
+          npm run validate:questions
+          npm run validate:taxonomy
       - name: Commit reviewed banks
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/questions/*.json scripts/revise-question-banks-context-v2.mjs scripts/audit-question-quality-v2.mjs reports/question-context-revision-v2.json reports/question-context-revision-v2.md reports/question-quality-audit-v2.json reports/question-quality-audit-v2.md reports/question-quality-samples.md reports/question-stem-patterns.md
+          git add data/questions/*.json reports/question-context-revision-v2.json reports/question-context-revision-v2.md reports/question-quality-audit-v2.json reports/question-quality-audit-v2.md reports/question-quality-samples.md reports/question-stem-patterns.md
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "feat: revisa contexto e dificuldade dos bancos [context-revision-v2-output]"
           git pull --rebase origin fix/revisao-profunda-bancos-20260907
