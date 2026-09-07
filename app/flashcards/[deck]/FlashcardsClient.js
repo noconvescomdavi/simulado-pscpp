@@ -289,6 +289,48 @@ const RIPEAM_PDF_IMAGES = {
   "SH-DIAMOND": "/flashcards/ripeam/navigation-rules-pdf/shape_diamond_long_tow.png"
 };
 
+
+const RIPEAM_SAILINGISSUES_IMAGES = {
+  "R23-PD": ["power-driven-vessel-abeam-new-3x.png","power-driven-vessel-ahead-new-3x.png","power-driven-vessel-astern-new-3x.png","power-driven-vessel-top-new-3x.png"],
+  "R24-TOW2": ["tugboat-30-100-abeam-new-3x.png","tugboat-30-100-ahead-new-3x.png","tugboat-30-100-astern-new-3x.png","tugboat-30-100-day-ahead-new-3x.png"],
+  "R24-TOW3": ["tugboat-50-200-abeam-new2-3x.png","tugboat-50-200-ahead-new2-3x.png","tugboat-50-200-astern-new-3x.png","tugboat-50-200-day-ahead-new-3x.png"],
+  "R25-SAIL": ["sailingboat1-abeam-new-3x.png","sailingboat1-ahead-new-3x.png","sailingboat1-astern-new-3x.png","sailingboat1-top-new-3x.png"],
+  "SH-CONE-DOWN": ["sailing-motoring-abeam-new2-3x.png","sailing-motoring-ahead-new2-3x.png","sailing-motoring-astern-new2-3x.png","sailing-motoring-day-new2-3x.png"],
+  "R26-TRAWL": ["trawling-abeam-new-3x.png","trawling-ahead-new-3x.png","trawling-astern-new-3x.png","trawling-day-abeam-new-3x.png"],
+  "R26-FISH": ["fishing-150-abeam-new-3x.png","fishing-150-ahead-new-3x.png","fishing-150-astern-new-3x.png","fishing-150-day-new-3x.png"],
+  "R27-NUC": ["vessel-no-command-abeam-new-3x.png","vessel-no-command-ahead-new-3x.png","vessel-no-command-astern-new-3x.png","vessel-no-command-day-new-3x.png"],
+  "R27-RAM": ["restricted-manoeuvre-way-abeam-new-3x.png","restricted-manoeuvre-way-ahead-new-3x.png","restricted-manoeuvre-way-astern-new-3x.png","restricted-manoeuvre-day-new-3x.png"],
+  "R27-DREDGE-BLOCK": ["dredging-ahead-new-3x.png","dredging-astern-new-3x.png","dredging-day-new-3x.png"],
+  "R27-DREDGE-PASS": ["dredging-way-ahead-new-3x.png","dredging-way-astern-new-3x.png","dredging-way-day-new-3x.png"],
+  "R27-MINES": ["minesweeper-ahead-new2-3x.png","minesweeper-astern-new2-3x.png","minesweeper-day-new2-3x.png"],
+  "R28-CBD": ["power-driven-vessel-constrained-abeam-new-3x.png","power-driven-vessel-constrained-ahead-new-3x.png","power-driven-vessel-constrained-astern-new-3x.png","power-driven-vessel-constrained-day-new-3x.png"],
+  "R29-PILOT": ["pilot-boat-abeam-new-3x.png","pilot-boat-ahead-new-3x.png","pilot-boat-astern-new-3x.png"],
+  "R30-ANCH": ["anchored-100-abeam-new-3x.png","anchored-100-ahead-new-3x.png","anchored-100-astern-new-3x.png","anchored-100-day-new-3x.png"],
+  "R30-AGROUND": ["aground-abeam-new-3x.png","aground-ahead-new-3x.png","aground-astern-new-3x.png","aground-day-new-3x.png"]
+};
+
+function renderRipeamSailingIssues(card) {
+  const names = RIPEAM_SAILINGISSUES_IMAGES[String(card?.id || "")];
+  if (!names?.length) return "";
+  const labels = ["Través", "Proa", "Popa", "Marca diurna"];
+  const imgs = names.map((name,index) => {
+    const src = `https://sailingissues.com/colregs/${name}`;
+    return `<figure style="margin:0;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #d6e0e7;display:flex;flex-direction:column;min-height:0">
+      <div style="flex:1;min-height:145px;display:flex;align-items:center;justify-content:center;background:#fff">
+        <img src="${src}" alt="${String(card?.name||"RIPEAM")} — ${labels[index]||"vista"}" loading="eager" decoding="async" referrerpolicy="no-referrer" style="display:block;width:100%;height:100%;max-height:230px;object-fit:contain;background:#fff" />
+      </div>
+      <figcaption style="padding:7px 9px;background:#edf3f7;color:#173247;font-size:11px;font-weight:900;text-align:center">${labels[index]||`Vista ${index+1}`}</figcaption>
+    </figure>`;
+  }).join("");
+  return `<div style="width:100%;min-height:320px;padding:12px;border-radius:20px;background:#061522;box-shadow:0 14px 34px rgba(0,0,0,.28)">
+    <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;margin:0 3px 10px;color:#fff">
+      <strong style="font-size:13px">Reconhecimento visual RIPEAM / COLREG</strong>
+      <span style="font-size:10px;color:#9fc5d8">vistas de identificação</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px">${imgs}</div>
+  </div>`;
+}
+
 function renderRipeamPdfImage(card) {
   const src = RIPEAM_PDF_IMAGES[String(card?.id || "")];
   if (!src) return "";
@@ -301,6 +343,8 @@ function renderRipeamPdfImage(card) {
 
 
 function renderRipeamCinematic(card) {
+  const sailingIssues = renderRipeamSailingIssues(card);
+  if (sailingIssues) return sailingIssues;
   const pdfReference = renderRipeamPdfImage(card);
   if (pdfReference) return pdfReference;
   const v=card?.visual||{}, id=String(card?.id||""), code=String(card?.code||"RIPEAM"), title=String(card?.name||"");
