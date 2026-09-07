@@ -6,6 +6,7 @@ const dir = path.join(root, 'data', 'questions');
 const subjects = ['arte-naval','manobrabilidade','navegacao-aguas-restritas','legislacao-regulamentacao','meteorologia-oceanografia','comunicacoes','conhecimentos-gerais'];
 const wanted = new Set(['MAN-076','MAN-090','MAN-284']);
 const out = ['# Amostras para revisão profunda',''];
+const norm = v => String(v??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\s+/g,' ').trim();
 
 function render(q) {
   out.push(`## ${q.id} — ${q.subject || ''}`);
@@ -30,6 +31,23 @@ for (const subject of subjects) {
   const qs = bank.questions || [];
   out.push(`# ${subject}`,'');
   for (const q of qs.filter(q => wanted.has(q.id))) render(q);
+
+  const phraseHits = qs.filter(q => norm(`${q.topic} ${q.question}`).includes('mudanca de bordo de atracacao'));
+  if (phraseHits.length) {
+    out.push('## Termo solicitado — mudança de bordo de atracação','');
+    for (const q of phraseHits.slice(0,10)) render(q);
+  }
+
+  const genericBaseline = qs.filter(q => !((q.tags || []).includes('expansao-formatos-v1')) && (
+    norm(q.question).includes('a bibliografia atribui a esse item') ||
+    norm(q.question).includes('publicacao indicada sem recorte') ||
+    norm(q.question).includes('conteudo indicado no anexo 2 b')
+  ));
+  if (genericBaseline.length) {
+    out.push('## Baseline com linguagem genérica/contextual a revisar','');
+    for (const q of genericBaseline.slice(0,5)) render(q);
+  }
+
   const v1 = qs.filter(q => Array.isArray(q.tags) && q.tags.includes('expansao-formatos-v1'));
   const byStyle = new Map();
   for (const q of v1) {
