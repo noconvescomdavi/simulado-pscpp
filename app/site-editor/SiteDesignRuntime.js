@@ -32,7 +32,9 @@ function applyRecord(record) {
     let nodes = [];
     try { nodes = Array.from(document.querySelectorAll(selector)).filter((node) => !node.hasAttribute('data-estibordo-runtime-clone')); } catch { continue; }
 
-    document.querySelectorAll('[data-estibordo-runtime-clone-for="' + CSS.escape(selector) + '"]').forEach((node) => node.remove());
+    document.querySelectorAll('[data-estibordo-runtime-clone-for]').forEach((node) => {
+      if (node.getAttribute('data-estibordo-runtime-clone-for') === selector) node.remove();
+    });
 
     for (const node of nodes) {
       if (config.hidden === true) {
