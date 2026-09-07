@@ -148,6 +148,56 @@ function visualAsset(card) {
   return explicit || "";
 }
 
+function cardNumber(card) {
+  const match = String(card?.id || "").match(/AN1-(\d+)/);
+  return match ? Number(match[1]) : 0;
+}
+
+function bookFigureFor(card) {
+  const n = cardNumber(card);
+  const exact = {
+    33:"1-6",38:"1-7",39:"1-7",40:"1-7",41:"1-7",42:"1-7",43:"1-12",
+    95:"1-20",100:"1-22",101:"1-23",103:"1-25",105:"1-26",
+    106:"1-11",107:"1-5",111:"1-9",113:"1-10",
+    137:"1-21",139:"1-22",140:"1-24",145:"1-27",147:"1-31",
+    148:"1-28",149:"1-29",151:"1-30",157:"1-32",158:"1-33",
+    160:"1-34",161:"1-34",162:"1-35a",163:"1-35b",165:"1-36",
+    170:"1-38",171:"1-39",176:"1-40",178:"1-41",179:"1-42",
+    180:"1-43",181:"1-44",186:"1-45",187:"1-46",188:"1-47",
+    190:"1-48",191:"1-49",192:"1-50",193:"1-51",194:"1-52",
+    198:"1-53",204:"1-25",205:"1-54",210:"1-55",211:"1-56a",
+    212:"1-56a",215:"1-56b",216:"1-56b",224:"1-57",228:"1-58",
+    229:"1-59",232:"1-60",234:"1-61"
+  };
+  if (exact[n]) return exact[n];
+  if (n <= 32) return "1-3";
+  if (n <= 44) return "1-4b";
+  if (n <= 77) return n <= 59 ? "1-13b" : (n <= 71 ? "1-14" : "1-16");
+  if (n <= 96) return n <= 90 ? "1-17a" : (n <= 94 ? "1-18" : "1-19");
+  if (n <= 105) return "1-21";
+  if (n <= 116) return "1-11";
+  if (n <= 136) return n <= 124 ? "1-17a" : "1-18";
+  if (n <= 156) return "1-31";
+  if (n <= 176) return "1-40";
+  if (n <= 185) return "1-43";
+  if (n <= 209) return "1-54";
+  if (n <= 216) return "1-56a";
+  return "1-61";
+}
+
+function referenceFamily(card) {
+  const n = cardNumber(card);
+  if (n <= 44) return "exterior";
+  if (n <= 77) return "structure";
+  if (n <= 136) return "compartments";
+  if (n <= 156) return "appendages";
+  if (n <= 176) return "deck";
+  if (n <= 185) return "interior";
+  if (n <= 209) return "fittings";
+  if (n <= 216) return "rigging";
+  return "equipment";
+}
+
 function NavalVisual({ card, reveal = false, compact = false, onZoom }) {
   const type = visualType(card);
   const [mx, my] = markerFor(type);
@@ -223,6 +273,41 @@ function NavalVisual({ card, reveal = false, compact = false, onZoom }) {
       {showTank && <rect x="315" y="183" width="89" height="50" rx="7" fill="#59b9dc" opacity=".55" stroke="#bfeeff" strokeWidth="4" />}
       {showOpening && <rect x="234" y="119" width="34" height="28" rx="4" fill="#06111c" stroke="#e9f4f8" strokeWidth="4" />}
 
+      {family === "structure" && (
+        <g opacity=".65" fill="none" stroke="#d7eef8" strokeWidth="3">
+          <path d="M135 233 Q300 302 465 233" />
+          <path d="M170 220 Q300 270 430 220" />
+          <path d="M220 200 V242 M260 186 V254 M300 178 V260 M340 186 V254 M380 200 V242" />
+        </g>
+      )}
+      {family === "compartments" && (
+        <g opacity=".48" fill="none" stroke="#d7eef8" strokeWidth="3">
+          <rect x="175" y="128" width="250" height="112" rx="3" />
+          <line x1="238" y1="128" x2="238" y2="240" />
+          <line x1="300" y1="128" x2="300" y2="240" />
+          <line x1="362" y1="128" x2="362" y2="240" />
+          <line x1="175" y1="184" x2="425" y2="184" />
+        </g>
+      )}
+      {family === "deck" && (
+        <g opacity=".55" fill="none" stroke="#d7eef8" strokeWidth="3">
+          <path d="M145 180 H455" />
+          <path d="M165 205 H435" />
+          <circle cx="210" cy="192" r="14" /><circle cx="390" cy="192" r="14" />
+        </g>
+      )}
+      {family === "fittings" && (
+        <g opacity=".6" fill="none" stroke="#d7eef8" strokeWidth="4">
+          <circle cx="220" cy="190" r="22" /><circle cx="380" cy="190" r="22" />
+          <path d="M220 212 V238 M380 212 V238" />
+        </g>
+      )}
+      {family === "rigging" && (
+        <g opacity=".6" fill="none" stroke="#d7eef8" strokeWidth="3">
+          <path d="M300 58 V230 M300 92 L190 210 M300 92 L410 210 M300 130 H395" />
+        </g>
+      )}
+
       <g filter={`url(#glow-${card.id})`}>
         <circle cx={mx} cy={my} r="22" fill="#e33131" opacity=".28" />
         <circle cx={mx} cy={my} r="11" fill="#e33131" stroke="#fff" strokeWidth="4" />
@@ -231,8 +316,9 @@ function NavalVisual({ card, reveal = false, compact = false, onZoom }) {
 
       {!reveal && (
         <g>
-          <rect x="186" y="274" width="228" height="37" rx="18" fill="rgba(2,9,15,.78)" stroke="rgba(255,255,255,.12)" />
-          <text x="300" y="298" textAnchor="middle" fill="#f5f8fa" fontSize="15" fontWeight="800">ÁREA DESTACADA</text>
+          <rect x="168" y="270" width="264" height="41" rx="18" fill="rgba(2,9,15,.78)" stroke="rgba(255,255,255,.12)" />
+          <text x="300" y="291" textAnchor="middle" fill="#f5f8fa" fontSize="14" fontWeight="800">REFERÊNCIA TÉCNICA · FIG. {figure}</text>
+          <text x="300" y="306" textAnchor="middle" fill="#9fcbe0" fontSize="10" fontWeight="700">redesenho vetorial ESTIBORDO</text>
         </g>
       )}
       {reveal && (
@@ -730,7 +816,7 @@ export default function ArteNavalFlashcardsClient({ deck, initialState }) {
                             <li>Use a definição da bibliografia como referência principal.</li>
                           </ul>
                         </div>
-                        <div className={styles.sourceLine}><span>Fonte principal</span><strong>Arte Naval · Volume 1 · 8ª edição · Serviço de Documentação da Marinha</strong></div>
+                        <div className={styles.sourceLine}><span>Fonte principal</span><strong>Arte Naval · Volume 1 · 8ª edição · referência visual Fig. {bookFigureFor(current)} · redesenho ESTIBORDO</strong></div>
                       </div>
                     </div>
                     <div className={styles.flipHint}>Toque para voltar <kbd>ESPAÇO</kbd></div>
