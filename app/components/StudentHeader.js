@@ -11,6 +11,10 @@ function Menu({ active = "", flashcardDecks = [] }) {
         <span className={styles.icon}>⌂</span><span>Início</span>
       </a>
 
+      <a className={active === "perfil" ? styles.active : ""} href="/perfil">
+        <span className={styles.icon}>♙</span><span>Perfil</span>
+      </a>
+
       <details className={styles.group} open={["plano","adaptativo","hoje","revisao","fraquezas"].includes(active)}>
         <summary>
           <span><b className={styles.icon}>◫</b> Minha Preparação</span>
@@ -106,10 +110,6 @@ function Menu({ active = "", flashcardDecks = [] }) {
       </a>
 
       <div className={styles.divider} />
-
-      <a className={active === "perfil" ? styles.active : ""} href="/perfil">
-        <span className={styles.icon}>♙</span><span>Meu Perfil</span>
-      </a>
 
       <a href="/"><span className={styles.icon}>◈</span><span>Home</span></a>
     </nav>
