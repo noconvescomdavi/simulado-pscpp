@@ -32,7 +32,7 @@ export async function POST(req) {
     if (!accountLimit.allowed) return rateLimitResponse(accountLimit);
 
     const result = await query(
-      "select id,email,password_hash,role,status from users where lower(email)=lower($1) limit 1",
+      "select id,email,password_hash,role,status,session_version from users where lower(email)=lower($1) limit 1",
       [normalized]
     );
     const user = result.rows[0];
