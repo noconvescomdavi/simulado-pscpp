@@ -1,6 +1,6 @@
 # Auditoria profunda de qualidade — bancos de questões
 
-Gerado em: 2026-09-07T03:31:35.314Z
+Gerado em: 2026-09-07T03:33:17.436Z
 
 Total de questões analisadas: **11201**
 Taxonomia V2: **11201**

@@ -2,6 +2,205 @@
 
 # arte-naval
 
+## Termo solicitado — mudança de bordo de atracação
+
+## ANV-0020 — Arte Naval
+
+**Formato:** Afirmativas combinadas
+**Tópico:** mudança de bordo de atracação
+**Capítulo:** Manobra do Navio
+**Fonte:** Arte Naval, v. 2 — cap. 12, seção C, item 12.32
+
+De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “mudança de bordo de atracação”, identifique as verdadeiras e assinale a opção correta:  
+I) “mudança de bordo de atracação” designa espia que sai da popa e segue para ré no cais.  
+II) A bibliografia atribui a esse item a seguinte característica: depende do espaço de giro, das condições ambientais e dos recursos de propulsão e reboque.  
+III) “mudança de bordo de atracação” designa manobra destinada a inverter o costado apresentado ao cais.  
+IV) A bibliografia atribui a esse item a seguinte característica: deve considerar bordo, maré, vento, profundidade, posição final e meios disponíveis.
+
+- A) Apenas as afirmativas II e IV são verdadeiras.
+- B) Apenas as afirmativas I e IV são verdadeiras.
+- C) Apenas as afirmativas III e IV são verdadeiras.
+- D) Apenas as afirmativas I e II são verdadeiras.
+- E) Apenas as afirmativas II e III são verdadeiras.
+- **Gabarito:** E
+- **Explicação:** As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “mudança de bordo de atracação”. As demais atribuem ao item propriedades pertencentes a outros conceitos.
+- **Tags:** Atracação e desatracação, mudança de bordo de atracação, Afirmativas combinadas
+- **Proveniência:** {}
+
+## ANV-0519 — Arte Naval
+
+**Formato:** Identificação técnica
+**Tópico:** mudança de bordo de atracação
+**Capítulo:** Manobra do Navio
+**Fonte:** Arte Naval, v. 2 — cap. 12, seção C, item 12.32
+
+De acordo com a bibliografia de Arte Naval, qual termo corresponde à seguinte descrição técnica: manobra destinada a inverter o costado apresentado ao cais
+
+- A) atracação a contrabordo
+- B) lançante de proa
+- C) vento para dentro do cais
+- D) mudança de bordo de atracação
+- E) vento para fora do cais
+- **Gabarito:** D
+- **Explicação:** “mudança de bordo de atracação” é manobra destinada a inverter o costado apresentado ao cais; depende do espaço de giro, das condições ambientais e dos recursos de propulsão e reboque.
+- **Tags:** Atracação e desatracação, mudança de bordo de atracação, Identificação técnica
+- **Proveniência:** {}
+
+## ANV-0718 — Arte Naval
+
+**Formato:** Associação conceitual
+**Tópico:** mudança de bordo de atracação
+**Capítulo:** Manobra do Navio
+**Fonte:** Arte Naval, v. 2 — cap. 12, seção C, item 12.32
+
+Assinale a opção que apresenta corretamente o significado ou a função de “mudança de bordo de atracação”.
+
+- A) amarração de um navio ao costado de outro
+- B) espia que sai da proa e segue para vante no cais
+- C) manobra destinada a inverter o costado apresentado ao cais
+- D) vento que empurra o navio contra o berço
+- E) vento que tende a afastar o navio da posição de atracação
+- **Gabarito:** C
+- **Explicação:** A opção correta apresenta a definição técnica de “mudança de bordo de atracação”: manobra destinada a inverter o costado apresentado ao cais; depende do espaço de giro, das condições ambientais e dos recursos de propulsão e reboque.
+- **Tags:** Atracação e desatracação, mudança de bordo de atracação, Associação conceitual
+- **Proveniência:** {}
+
+## ANV-0940 — Arte Naval
+
+**Formato:** Situação aplicada
+**Tópico:** mudança de bordo de atracação
+**Capítulo:** Manobra do Navio
+**Fonte:** Arte Naval, v. 2 — cap. 12, seção C, item 12.32
+
+Considere a seguinte descrição técnica de uma situação, peça ou procedimento de bordo: manobra destinada a inverter o costado apresentado ao cais. A descrição inclui ainda esta característica: depende do espaço de giro, das condições ambientais e dos recursos de propulsão e reboque. Qual nomenclatura corresponde ao caso apresentado?
+
+- A) atracação a contrabordo
+- B) lançante de proa
+- C) vento para dentro do cais
+- D) vento para fora do cais
+- E) mudança de bordo de atracação
+- **Gabarito:** E
+- **Explicação:** “mudança de bordo de atracação” é manobra destinada a inverter o costado apresentado ao cais; depende do espaço de giro, das condições ambientais e dos recursos de propulsão e reboque.
+- **Tags:** Atracação e desatracação, mudança de bordo de atracação, Situação aplicada
+- **Proveniência:** {}
+
+## Baseline com linguagem genérica/contextual a revisar
+
+## ANV-0001 — Arte Naval
+
+**Formato:** Afirmativas combinadas
+**Tópico:** volta de fiador
+**Capítulo:** Trabalhos do Marinheiro
+**Fonte:** Arte Naval, v. 1 — cap. 8, item 8.5
+
+De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “volta de fiador”, identifique as verdadeiras e assinale a opção correta:  
+I) “volta de fiador” designa nó utilizado para unir dois chicotes ou dois cordões.  
+II) A bibliografia atribui a esse item a seguinte característica: a alça não corre como um laço e pode ser usada temporariamente sem apertar o objeto.  
+III) “volta de fiador” designa volta cujo desenho lembra o número oito.  
+IV) A bibliografia atribui a esse item a seguinte característica: usada no chicote de um tirador para evitar que ele desgurna e não fica mordida como a meia-volta.
+
+- A) Apenas as afirmativas III e IV são verdadeiras.
+- B) Apenas as afirmativas II e III são verdadeiras.
+- C) Apenas as afirmativas I e IV são verdadeiras.
+- D) Apenas as afirmativas I e III são verdadeiras.
+- E) Apenas as afirmativas I e II são verdadeiras.
+- **Gabarito:** A
+- **Explicação:** As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “volta de fiador”. As demais atribuem ao item propriedades pertencentes a outros conceitos.
+- **Tags:** Trabalhos do marinheiro, volta de fiador, Afirmativas combinadas
+- **Proveniência:** {}
+
+## ANV-0002 — Arte Naval
+
+**Formato:** Afirmativas combinadas
+**Tópico:** anete
+**Capítulo:** Aparelhos de Fundear e Suspender
+**Fonte:** Arte Naval, v. 2 — cap. 10, seção A, item 10.2
+
+De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “anete”, identifique as verdadeiras e assinale a opção correta:  
+I) A bibliografia atribui a esse item a seguinte característica: constitui o ponto em que a amarra é talingada ao ferro.  
+II) “anete” designa arganéu ou manilha instalado na extremidade superior da haste.  
+III) “anete” designa barra montada perpendicularmente aos braços na âncora Almirantado.  
+IV) A bibliografia atribui a esse item a seguinte característica: cerca de 150° no tipo Almirantado e de 45° no tipo patente, segundo a definição de cada caso.
+
+- A) Apenas as afirmativas III e IV são verdadeiras.
+- B) Apenas as afirmativas I e II são verdadeiras.
+- C) Apenas as afirmativas II e III são verdadeiras.
+- D) Apenas as afirmativas I e IV são verdadeiras.
+- E) Apenas as afirmativas II e IV são verdadeiras.
+- **Gabarito:** B
+- **Explicação:** As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “anete”. As demais atribuem ao item propriedades pertencentes a outros conceitos.
+- **Tags:** Âncoras, anete, Afirmativas combinadas
+- **Proveniência:** {}
+
+## ANV-0003 — Arte Naval
+
+**Formato:** Afirmativas combinadas
+**Tópico:** meia-volta
+**Capítulo:** Trabalhos do Marinheiro
+**Fonte:** Arte Naval, v. 1 — cap. 8, item 8.4
+
+De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “meia-volta”, identifique as verdadeiras e assinale a opção correta:  
+I) “meia-volta” designa volta dada com o chicote e usada comumente em embrulhos.  
+II) “meia-volta” designa seio ou alça resultante de um lais de guia dado no próprio cabo.  
+III) A bibliografia atribui a esse item a seguinte característica: usada para ligar uma espia a um ancorote ou um fiel a um balde.  
+IV) A bibliografia atribui a esse item a seguinte característica: pode ser desfeita com facilidade e também serve como elemento de outras voltas.
+
+- A) Apenas as afirmativas II e III são verdadeiras.
+- B) Apenas as afirmativas II e IV são verdadeiras.
+- C) Apenas as afirmativas I e IV são verdadeiras.
+- D) Apenas as afirmativas III e IV são verdadeiras.
+- E) Apenas as afirmativas I e II são verdadeiras.
+- **Gabarito:** C
+- **Explicação:** As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “meia-volta”. As demais atribuem ao item propriedades pertencentes a outros conceitos.
+- **Tags:** Trabalhos do marinheiro, meia-volta, Afirmativas combinadas
+- **Proveniência:** {}
+
+## ANV-0004 — Arte Naval
+
+**Formato:** Afirmativas combinadas
+**Tópico:** âncora patente
+**Capítulo:** Aparelhos de Fundear e Suspender
+**Fonte:** Arte Naval, v. 2 — cap. 10, seção A, item 10.3.b
+
+De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “âncora patente”, identifique as verdadeiras e assinale a opção correta:  
+I) A bibliografia atribui a esse item a seguinte característica: suas duas patas penetram juntas e a haste pode alojar-se no escovém.  
+II) A bibliografia atribui a esse item a seguinte característica: deve unhar com rapidez, aguentar firme e soltar-se quando içado.  
+III) “âncora patente” designa região em que a haste se une aos braços.  
+IV) “âncora patente” designa tipo sem cepo e com haste articulada aos braços.
+
+- A) Apenas as afirmativas II e III são verdadeiras.
+- B) Apenas as afirmativas I e II são verdadeiras.
+- C) Apenas as afirmativas I e III são verdadeiras.
+- D) Apenas as afirmativas I e IV são verdadeiras.
+- E) Apenas as afirmativas III e IV são verdadeiras.
+- **Gabarito:** D
+- **Explicação:** As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “âncora patente”. As demais atribuem ao item propriedades pertencentes a outros conceitos.
+- **Tags:** Âncoras, âncora patente, Afirmativas combinadas
+- **Proveniência:** {}
+
+## ANV-0005 — Arte Naval
+
+**Formato:** Afirmativas combinadas
+**Tópico:** volta redonda mordida e cote
+**Capítulo:** Trabalhos do Marinheiro
+**Fonte:** Arte Naval, v. 1 — cap. 8, item 8.18
+
+De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “volta redonda mordida e cote”, identifique as verdadeiras e assinale a opção correta:  
+I) A bibliografia atribui a esse item a seguinte característica: os dois chicotes saem entre os cotes em sentidos contrários.  
+II) “volta redonda mordida e cote” designa resistência inferior à do próprio cabo em que são feitos.  
+III) A bibliografia atribui a esse item a seguinte característica: dada em torno de objeto fixo com volta redonda e cote, mordendo-se depois o chicote.  
+IV) “volta redonda mordida e cote” designa volta que dificilmente recorre e se aperta à medida que cresce o esforço.
+
+- A) Apenas as afirmativas II e III são verdadeiras.
+- B) Apenas as afirmativas I e II são verdadeiras.
+- C) Apenas as afirmativas I e III são verdadeiras.
+- D) Apenas as afirmativas II e IV são verdadeiras.
+- E) Apenas as afirmativas III e IV são verdadeiras.
+- **Gabarito:** E
+- **Explicação:** As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “volta redonda mordida e cote”. As demais atribuem ao item propriedades pertencentes a outros conceitos.
+- **Tags:** Trabalhos do marinheiro, volta redonda mordida e cote, Afirmativas combinadas
+- **Proveniência:** {}
+
 ## Expansão V1 — Verdadeiro/Falso
 
 ## ANV-1151 — Arte Naval
