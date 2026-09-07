@@ -353,7 +353,9 @@ export default function ArteNavalFlashcardsClient({ deck, initialState }) {
   const [examFeedback, setExamFeedback] = useState(null);
   const [examNumber, setExamNumber] = useState(0);
   const [examCorrect, setExamCorrect] = useState(0);
-  const [examTotal, setExamTotal] = useState(0);\n  const [imageZoom, setImageZoom] = useState(false);\n  const [noteOpen, setNoteOpen] = useState(false);
+  const [examTotal, setExamTotal] = useState(0);
+  const [imageZoom, setImageZoom] = useState(false);
+  const [noteOpen, setNoteOpen] = useState(false);
 
   const shownAt = useRef(Date.now());
   const sessionRef = useRef({ id: null, mode: null });
