@@ -12,7 +12,9 @@ const SAFE_STYLE_KEYS = new Set([
   'borderRadius','borderWidth','borderStyle','borderColor',
   'display','flexDirection','justifyContent','alignItems','alignContent','flexWrap','gap','rowGap','columnGap',
   'gridTemplateColumns','gridTemplateRows','gridAutoFlow','order',
-  'position','top','right','bottom','left','zIndex','opacity','overflow','objectFit','objectPosition'
+  'position','top','right','bottom','left','zIndex','opacity','overflow','objectFit','objectPosition',
+  'backgroundImage','backgroundSize','backgroundPosition','backgroundRepeat','boxShadow','filter',
+  'textTransform','textDecoration','whiteSpace','cursor','translate'
 ]);
 
 function safeUrl(value) {
