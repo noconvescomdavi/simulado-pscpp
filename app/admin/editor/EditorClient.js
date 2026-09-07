@@ -32,6 +32,14 @@ const SITE_MAP = [
 
 const PALETTE = ["#ffffff","#f7fbff","#d9ecf8","#eef3f6","#c8102e","#07141f","#071b2b","#0d1b2a","#1e3a5f","#55a7e6","#18c98a","#f0ae35"];
 
+// Resoluções de referência: o conteúdo do iframe sempre renderiza como um dispositivo real.
+// O zoom de 100% significa "tela normal" e a prévia é ajustada apenas visualmente para caber no editor.
+const VIEWPORTS = {
+  desktop:{width:1440,height:900,label:"Desktop · 1440 × 900"},
+  tablet:{width:834,height:1194,label:"Tablet / iPad · 834 × 1194"},
+  mobile:{width:390,height:844,label:"Mobile · 390 × 844"}
+};
+
 const STYLE_KEYS = [
   "color","backgroundColor","fontSize","fontWeight","fontFamily","textAlign","letterSpacing","lineHeight",
   "width","height","minWidth","maxWidth","minHeight","maxHeight",
@@ -135,6 +143,7 @@ export default function EditorClient(){
   const [saving,setSaving]=useState(false);
   const [uploading,setUploading]=useState(false);
   const [zoom,setZoom]=useState(100);
+  const [fitScale,setFitScale]=useState(1);
   const [moveMode,setMoveMode]=useState(false);
   const [showGrid,setShowGrid]=useState(false);
   const [snap,setSnap]=useState(true);
@@ -145,6 +154,7 @@ export default function EditorClient(){
   const [undoStack,setUndoStack]=useState([]);
   const [redoStack,setRedoStack]=useState([]);
   const iframeRef=useRef(null);
+  const frameAreaRef=useRef(null);
   const cleanupRef=useRef(null);
   const targetRef=useRef(null);
   const scopeRef=useRef(scope);
@@ -171,6 +181,23 @@ export default function EditorClient(){
   useEffect(()=>{moveModeRef.current=moveMode},[moveMode]);
   useEffect(()=>{gridRef.current=showGrid;try{iframeRef.current?.contentDocument?.documentElement?.classList.toggle("ev-editor-grid",showGrid)}catch{}},[showGrid]);
   useEffect(()=>{snapRef.current=snap},[snap]);
+
+  useEffect(()=>{
+    const area=frameAreaRef.current;
+    if(!area)return;
+    const updateFit=()=>{
+      const vp=VIEWPORTS[viewport];
+      const availableWidth=Math.max(320,area.clientWidth-32);
+      const availableHeight=Math.max(320,area.clientHeight-32);
+      // Mantém a resolução real do dispositivo dentro do iframe e reduz apenas a representação visual.
+      setFitScale(Math.min(1,availableWidth/vp.width,availableHeight/vp.height));
+    };
+    updateFit();
+    const observer=new ResizeObserver(updateFit);
+    observer.observe(area);
+    window.addEventListener("resize",updateFit);
+    return ()=>{observer.disconnect();window.removeEventListener("resize",updateFit)};
+  },[viewport]);
 
   async function login(e){
     e.preventDefault();setStatus("Autenticando...");
@@ -442,11 +469,14 @@ export default function EditorClient(){
   if(auth==="checking")return <main className="ev-login"><div><b>ESTIBORDO EDITOR</b><p>Carregando editor visual…</p></div></main>;
   if(auth==="login")return <main className="ev-login"><form onSubmit={login}><b>ESTIBORDO EDITOR</b><h1>Editor visual</h1><p>Acesso exclusivo do administrador.</p><input type="password" value={password} onChange={e=>setPassword(e.target.value)} placeholder="Senha do editor" required/><button>Entrar no editor</button>{status&&<small>{status}</small>}</form></main>;
 
+  const preview=VIEWPORTS[viewport];
+  const effectiveScale=fitScale*(zoom/100);
+
   return <main className="ev-app">
     <header className="ev-topbar">
       <div className="ev-brand"><b>ESTIBORDO</b><span>EDITOR VISUAL</span></div>
       <div className="ev-device">
-        {["desktop","tablet","mobile"].map(v=><button key={v} className={viewport===v?"is-active":""} onClick={()=>setViewport(v)}>{v==="desktop"?"Desktop":v==="tablet"?"Tablet":"Mobile"}</button>)}
+        {["desktop","tablet","mobile"].map(v=><button key={v} className={viewport===v?"is-active":""} onClick={()=>{setViewport(v);setZoom(100)}}>{v==="desktop"?"Desktop":v==="tablet"?"Tablet":"Mobile"}</button>)}
       </div>
       <div className="ev-toolbar">
         <button onClick={undo} disabled={!undoStack.length} title="Desfazer">↶</button>
@@ -467,8 +497,12 @@ export default function EditorClient(){
       </aside>
 
       <section className="ev-canvas">
-        <div className="ev-canvas-head"><div><b>{SITE_MAP.flatMap(x=>x.pages).find(x=>x[0]===page)?.[1]||page}</b><span>{page}</span></div><em>{moveMode?"Modo mover: selecione e arraste o elemento":"Clique em qualquer elemento para editar"}</em></div>
-        <div className={`ev-frame-shell ev-${viewport}`}><iframe ref={iframeRef} key={page} src={page} onLoad={wireIframe} title="Prévia da página" style={{transform:`scale(${zoom/100})`,transformOrigin:"top left",width:`${10000/zoom}%`,height:`${10000/zoom}%`}}/></div>
+        <div className="ev-canvas-head"><div><b>{SITE_MAP.flatMap(x=>x.pages).find(x=>x[0]===page)?.[1]||page}</b><span>{page}</span></div><em>{moveMode?"Modo mover: selecione e arraste o elemento":`${preview.label} · zoom ${zoom}%`}</em></div>
+        <div className="ev-frame-area" ref={frameAreaRef}>
+          <div className={`ev-frame-shell ev-${viewport}`} style={{width:`${preview.width*effectiveScale}px`,height:`${preview.height*effectiveScale}px`}}>
+            <iframe ref={iframeRef} key={page} src={page} onLoad={wireIframe} title="Prévia da página" style={{width:`${preview.width}px`,height:`${preview.height}px`,transform:`scale(${effectiveScale})`,transformOrigin:"top left"}}/>
+          </div>
+        </div>
       </section>
 
       <aside className="ev-inspector">
