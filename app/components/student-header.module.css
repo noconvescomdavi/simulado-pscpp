@@ -27,3 +27,14 @@
 .adminLink:hover{background:#1b405c;transform:translateY(-1px)}
 .sidebarBottom button:hover{background:rgba(184,31,55,.16)}
 @media(max-height:760px) and (min-width:961px){.profileCard{margin:9px 0 6px;padding:9px}.nav>a,.group>summary{min-height:35px}.submenu a{padding-top:5px;padding-bottom:5px}.sidebarBottom{padding-top:8px}.sidebarBottom p{display:none}}
+
+
+/* iOS PWA: respeita a safe area da barra de status / Dynamic Island */
+@media(max-width:960px){
+  .topbar{
+    top:env(safe-area-inset-top, 0px);
+  }
+  .mobilePanel{
+    max-height:calc(100dvh - 75px - env(safe-area-inset-top, 0px));
+  }
+}
