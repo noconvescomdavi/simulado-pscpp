@@ -76,6 +76,11 @@ s=s.replace(
 );
 
 s=s.replace(
+  `question:\`Considerando os conceitos de ${'${chapter(bases[0])}'}, assinale a alternativa INCORRETA.\`,`,
+  `question:\`Considerando ${'${chapter(bases[0])}'}, com foco comparativo em ${'${[...new Set(bases.map(topic))].slice(0,3).map(x=>`“${x}”`).join(", ")}'}, assinale a alternativa INCORRETA.\`,`
+);
+
+s=s.replace(
   `{key:'D',text:'Apenas as afirmativas I, II e III estão corretas.'},\n      {key:'E',text:'Apenas as afirmativas II, III e IV estão corretas.'}\n    ];\n    q.correct_answer='D';`,
   `{key:'D',text:'Apenas as afirmativas II, III e IV estão corretas.'},\n      {key:'E',text:'Apenas as afirmativas I, II e III estão corretas.'}\n    ];\n    q.correct_answer='E';`
 );
@@ -102,4 +107,4 @@ const newLoop=`    const g=groups[i%groups.length];
 if (s.includes(oldLoop)) s=s.replace(oldLoop,newLoop); else if (!s.includes('Math.floor(i/groups.length)*5')) throw new Error('loop hard esperado não localizado');
 
 fs.writeFileSync(file,s);
-console.log('Revisão V2 endurecida para unicidade e preservação do baseline.');
+console.log('Revisão V2 endurecida para unicidade, enunciados comparativos e preservação do baseline.');
