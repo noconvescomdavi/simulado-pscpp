@@ -32,9 +32,12 @@ function applyRecord(record) {
     let nodes = [];
     try { nodes = Array.from(document.querySelectorAll(selector)).filter((node) => !node.hasAttribute('data-estibordo-runtime-clone')); } catch { continue; }
 
-    document.querySelectorAll('[data-estibordo-runtime-clone-for]').forEach((node) => {
-      if (node.getAttribute('data-estibordo-runtime-clone-for') === selector) node.remove();
-    });
+    const cloneCount = Math.max(0, Math.min(10, Number(config.cloneCount || 0)));
+    const currentClones = Array.from(document.querySelectorAll('[data-estibordo-runtime-clone-for]'))
+      .filter((node) => node.getAttribute('data-estibordo-runtime-clone-for') === selector);
+    const expectedCloneCount = nodes.length * cloneCount;
+    const rebuildClones = currentClones.length !== expectedCloneCount;
+    if (rebuildClones) currentClones.forEach((node) => node.remove());
 
     for (const node of nodes) {
       if (config.hidden === true) {
@@ -65,14 +68,15 @@ function applyRecord(record) {
         if (node.textContent !== nextText) node.textContent = nextText;
       }
 
-      const cloneCount = Math.max(0, Math.min(10, Number(config.cloneCount || 0)));
-      let anchor = node;
-      for (let i = 0; i < cloneCount; i++) {
-        const copy = node.cloneNode(true);
-        copy.setAttribute('data-estibordo-runtime-clone', 'true');
-        copy.setAttribute('data-estibordo-runtime-clone-for', selector);
-        anchor.insertAdjacentElement('afterend', copy);
-        anchor = copy;
+      if (rebuildClones) {
+        let anchor = node;
+        for (let i = 0; i < cloneCount; i++) {
+          const copy = node.cloneNode(true);
+          copy.setAttribute('data-estibordo-runtime-clone', 'true');
+          copy.setAttribute('data-estibordo-runtime-clone-for', selector);
+          anchor.insertAdjacentElement('afterend', copy);
+          anchor = copy;
+        }
       }
     }
   }
