@@ -13,3 +13,14 @@
 .ev-frame-shell{overflow:auto!important;position:relative}.ev-frame-shell iframe{transition:transform .15s ease;will-change:transform}
 .ev-quick-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}.ev-quick-actions button{border:1px solid #d2dde3;background:#f7fafb;color:#27475c;border-radius:6px;padding:8px;font-size:8px;font-weight:800;cursor:pointer}.ev-quick-actions button:hover{background:#edf4f7;border-color:#b9cbd5}
 @media(max-width:1350px){.ev-toolbar{gap:3px}.ev-toolbar>button{padding:6px 7px}.ev-zoom button:last-child{display:none}}
+
+/* EDITOR VISUAL V4 — histórico, camadas e ferramentas de objeto */
+.ev-sitemap{display:grid;grid-template-rows:62px minmax(220px,1fr) minmax(180px,.72fr)}
+.ev-site-scroll{height:auto!important;min-height:0}
+.ev-layers{border-top:1px solid var(--line);min-height:0;background:#fbfcfd;display:flex;flex-direction:column}
+.ev-layers-head{height:36px;display:flex;align-items:center;justify-content:space-between;padding:0 10px;border-bottom:1px solid #e5ebef}.ev-layers-head b{font-size:9px;letter-spacing:.1em}.ev-layers-head button{border:0;background:transparent;cursor:pointer;color:#536e80;font-weight:900}
+.ev-layer-scroll{overflow:auto;padding:6px;scrollbar-width:thin}.ev-layer-scroll button{width:100%;display:grid;grid-template-columns:38px 1fr;gap:6px;align-items:center;text-align:left;border:0;background:transparent;border-radius:6px;padding:6px;cursor:pointer}.ev-layer-scroll button:hover,.ev-layer-scroll button.is-active{background:#eaf2f6}.ev-layer-scroll small{font-size:7px;text-transform:uppercase;color:#8a9aa5;font-weight:900}.ev-layer-scroll span{font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#29485d}
+.ev-object-tools{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:4px;padding:7px 9px;border-bottom:1px solid var(--line)}.ev-object-tools button{border:1px solid #d3dde3;background:#f8fafb;border-radius:5px;padding:6px 3px;font-size:7px;font-weight:900;color:#38576a;cursor:pointer}.ev-object-tools button:hover{background:#edf4f7}.ev-object-tools button:disabled{opacity:.4;cursor:not-allowed}
+.ev-align-tools{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin:6px 0 10px}.ev-align-tools button{border:1px solid #d2dde3;background:#f7fafb;border-radius:6px;padding:7px 4px;font-size:8px;font-weight:800;cursor:pointer;color:#365468}
+.ev-pro-tools{margin-top:14px;padding:10px;border:1px solid #dce5ea;border-radius:8px;background:#f8fafb;display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}.ev-pro-tools label{font-size:9px;font-weight:800;color:#405e71}.ev-pro-tools input[type=number]{width:54px;margin-left:5px;border:1px solid #cad7df;border-radius:5px;padding:5px;font-size:9px}
+.ev-toolbar>button:disabled{opacity:.35;cursor:not-allowed}
