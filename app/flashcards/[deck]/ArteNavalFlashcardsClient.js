@@ -145,7 +145,9 @@ function markerFor(type) {
 
 function visualAsset(card) {
   const explicit = String(card?.visual?.image || "").trim();
-  return explicit || "";
+  if (explicit) return explicit;
+  const id = String(card?.id || "").trim();
+  return /^AN1-\d{3}$/.test(id) ? `/flashcards/arte-naval/${id}.svg` : "";
 }
 
 function cardNumber(card) {
