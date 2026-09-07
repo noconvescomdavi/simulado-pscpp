@@ -15,3 +15,8 @@
 .taskDone .taskActions button,.readDone button{background:#16875f!important;border-color:#22a876!important;color:#fff!important;opacity:1!important;box-shadow:0 0 0 1px rgba(83,226,166,.16) inset}
 .taskDone .taskActions button:disabled,.readDone button:disabled{cursor:default;filter:none;opacity:1!important}
 .taskDone{border-color:#20a06f!important;background:linear-gradient(180deg,#0b3529,#08281f)!important}
+
+.doneButton{background:#16875f!important;border-color:#2bd498!important;color:#fff!important;box-shadow:0 0 0 1px rgba(83,226,166,.22) inset,0 4px 14px rgba(22,135,95,.22)!important}
+.taskSaved,.taskError{margin-top:6px;padding:5px 7px;border-radius:6px;font-size:6px;font-weight:900}
+.taskSaved{background:rgba(22,135,95,.16);border:1px solid rgba(43,212,152,.35);color:#9af0d0}
+.taskError{background:rgba(200,16,46,.14);border:1px solid rgba(255,91,117,.35);color:#ff9eae}

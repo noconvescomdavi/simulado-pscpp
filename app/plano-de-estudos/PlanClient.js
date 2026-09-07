@@ -32,12 +32,22 @@ export default function PlanClient({plan}){
   const [bibliography,setBibliography]=useState(plan.bibliography);
   const [busy,setBusy]=useState("");
   const [message,setMessage]=useState("");
+  const [taskMessages,setTaskMessages]=useState({});
   const radar=useMemo(()=>radarPoints(plan.metrics.subjects),[plan.metrics.subjects]);
 
   async function updateTask(day,task){
     if(task.status==="done")return;
     const key=day.iso+"|"+task.key;
-    setBusy(key);setMessage("");
+    const completedAt=new Date().toISOString();
+    const previousTask=task;
+
+    setBusy(key);
+    setMessage("");
+    setTaskMessages(m=>({...m,[key]:"Salvando..."}));
+
+    // Resposta visual imediata: o aluno vê o card concluído sem esperar a rede.
+    setWeek(w=>({...w,days:w.days.map(d=>d.iso!==day.iso?d:{...d,tasks:d.tasks.map(t=>t.key!==task.key?t:{...t,status:"done",completed_at:completedAt})})}));
+
     const body={
       kind:"task",
       plan_date:day.iso,
@@ -49,6 +59,7 @@ export default function PlanClient({plan}){
       section_key:task.section_key||null,
       page_from:task.page_from||null,
       page_to:task.page_to||null,
+      complete_bibliography_unit:task.type==="reading",
       metadata:{
         title:task.title,
         description:task.description,
@@ -62,17 +73,28 @@ export default function PlanClient({plan}){
       }
     };
 
-    const r=await fetch("/api/study-plan/task",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
-    const data=await r.json().catch(()=>({}));
-    setBusy("");
-    if(!r.ok){setMessage(data.error||"Não foi possível marcar a tarefa como feita.");return}
+    try{
+      const r=await fetch("/api/study-plan/task",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+      const data=await r.json().catch(()=>({}));
+      if(!r.ok)throw new Error(data.error||"Não foi possível marcar a tarefa como feita.");
 
-    const completedAt=data.item?.completed_at||new Date().toISOString();
-    setWeek(w=>({...w,days:w.days.map(d=>d.iso!==day.iso?d:{...d,tasks:d.tasks.map(t=>t.key!==task.key?t:{...t,status:"done",completed_at:completedAt})})}));
+      const savedAt=data.item?.completed_at||completedAt;
+      setWeek(w=>({...w,days:w.days.map(d=>d.iso!==day.iso?d:{...d,tasks:d.tasks.map(t=>t.key!==task.key?t:{...t,status:"done",completed_at:savedAt})})}));
 
-    if(task.type==="reading"&&data.bibliography?.progress){
-      const bp=data.bibliography.progress;
-      setBibliography(items=>items.map(x=>x.bibliography_key===bp.bibliography_key&&x.section_key===bp.section_key?{...x,progress:bp}:x));
+      const bp=data.bibliography?.progress||data.progress||null;
+      if(task.type==="reading"&&bp){
+        setBibliography(items=>items.map(x=>x.bibliography_key===bp.bibliography_key&&x.section_key===bp.section_key?{...x,progress:bp}:x));
+      }
+
+      setTaskMessages(m=>({...m,[key]:"✓ Tarefa concluída"}));
+      setTimeout(()=>setTaskMessages(m=>{const n={...m};delete n[key];return n}),2200);
+    }catch(error){
+      // Reverte o estado otimista para não mostrar conclusão que não foi persistida.
+      setWeek(w=>({...w,days:w.days.map(d=>d.iso!==day.iso?d:{...d,tasks:d.tasks.map(t=>t.key!==task.key?t:previousTask})}));
+      setTaskMessages(m=>({...m,[key]:error.message||"Falha ao salvar"}));
+      setMessage(error.message||"Não foi possível marcar a tarefa como feita.");
+    }finally{
+      setBusy("");
     }
   }
 
@@ -205,8 +227,15 @@ export default function PlanClient({plan}){
               <p>{task.description}</p>
               <div className={styles.taskActions}>
                 {task.type!=="reading"&&<a href={task.href}>Abrir →</a>}
-                <button disabled={busy===key||done} onClick={()=>updateTask(day,task)}>{busy===key?"Salvando...":done?"✓ Feito":"Feito"}</button>
+                <button
+                  type="button"
+                  className={done?styles.doneButton:""}
+                  aria-pressed={done}
+                  disabled={busy===key}
+                  onClick={()=>updateTask(day,task)}
+                >{busy===key?"Salvando...":done?"✓ Feito":"Feito"}</button>
               </div>
+              {taskMessages[key]&&<div className={done?styles.taskSaved:styles.taskError}>{taskMessages[key]}</div>}
             </div>
           })}
         </article>)}
@@ -225,7 +254,7 @@ export default function PlanClient({plan}){
               const done=item.progress?.status==="done";
               return <div className={done?styles.readDone:styles.readItem} key={item.bibliography_key+"|"+item.section_key}>
                 <div><a href={"#"+item.bibliography_key+"-"+item.section_key}>{item.chapter||item.section}</a><span>{item.page_start&&item.page_end?`páginas ${item.page_start}–${item.page_end}`:"Paginação pendente de conferência"}</span></div>
-                <button disabled={busy===key||done} onClick={()=>markBibliographyDone(item)}>{busy===key?"Salvando...":done?"✓ Feito":"Feito"}</button>
+                <button type="button" className={done?styles.doneButton:""} aria-pressed={done} disabled={busy===key} onClick={()=>markBibliographyDone(item)}>{busy===key?"Salvando...":done?"✓ Feito":"Feito"}</button>
               </div>
             })}</div>
           </section>)}</div>
