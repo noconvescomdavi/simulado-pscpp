@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server";
 import { getAdmin, isUuid } from "../../../../../../lib/admin";
 import { query, withTransaction } from "../../../../../../lib/db";
+import { assertSameOrigin } from "../../../../../../lib/security";
 
 export async function POST(req, context) {
+  await assertSameOrigin();
   const admin = await getAdmin();
   if (!admin) return Response.json({ error: "Acesso negado." }, { status: 403 });
 
@@ -23,7 +25,10 @@ export async function POST(req, context) {
   }
 
   await withTransaction(async (client) => {
-    await client.query("UPDATE users SET status=$2, updated_at=NOW() WHERE id=$1", [id, status]);
+    await client.query(
+      "UPDATE users SET status=$2, session_version=coalesce(session_version,1)+1, updated_at=NOW() WHERE id=$1",
+      [id, status]
+    );
 
     if (status === "deleted") {
       await client.query(
