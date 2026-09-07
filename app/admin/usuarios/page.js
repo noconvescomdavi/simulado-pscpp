@@ -89,11 +89,47 @@ export default async function Page({searchParams}){
                   <button className="mini mini-good">Ativar CONTRAMESTRE</button>
                 </form>
 
+                {u.access_status==="active"&&(
+                  <form action={`/api/admin/users/${u.id}/access`} method="post">
+                    <input type="hidden" name="product" value="pscpp"/>
+                    <input type="hidden" name="action" value="revoked"/>
+                    <button className="mini mini-danger">Revogar assinatura</button>
+                  </form>
+                )}
+
                 {u.tutor_status==="active"&&(
                   <form action={`/api/admin/users/${u.id}/access`} method="post">
                     <input type="hidden" name="product" value="contramestre"/>
                     <input type="hidden" name="action" value="revoked"/>
                     <button className="mini mini-danger">Revogar CONTRAMESTRE</button>
+                  </form>
+                )}
+
+                {u.status!=="suspended"&&u.status!=="deleted"&&(
+                  <form action={`/api/admin/users/${u.id}/status`} method="post">
+                    <input type="hidden" name="status" value="suspended"/>
+                    <button className="mini mini-warn">Suspender conta</button>
+                  </form>
+                )}
+
+                {u.status!=="blocked"&&u.status!=="deleted"&&(
+                  <form action={`/api/admin/users/${u.id}/status`} method="post">
+                    <input type="hidden" name="status" value="blocked"/>
+                    <button className="mini mini-danger">Bloquear conta</button>
+                  </form>
+                )}
+
+                {["suspended","blocked"].includes(u.status)&&(
+                  <form action={`/api/admin/users/${u.id}/status`} method="post">
+                    <input type="hidden" name="status" value="active"/>
+                    <button className="mini mini-good">Reativar conta</button>
+                  </form>
+                )}
+
+                {u.status!=="deleted"&&(
+                  <form action={`/api/admin/users/${u.id}/status`} method="post">
+                    <input type="hidden" name="status" value="deleted"/>
+                    <button className="mini mini-danger">Excluir conta</button>
                   </form>
                 )}
               </div>
