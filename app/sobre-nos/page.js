@@ -1,65 +1,9 @@
 import {MarketingShell,styles} from "../components/MarketingShell";
-
-export const metadata = {
-  title: "Sobre Nós | ESTIBORDO",
-  description: "Conheça a história da ESTIBORDO e como uma jornada pessoal de preparação para o PSCPP se transformou em uma plataforma para ajudar outros candidatos."
-};
-
-export default function Page(){
-  return <MarketingShell
-    eyebrow="QUEM SOMOS"
-    title="Uma plataforma criada por quem também está nessa jornada."
-    lead="A ESTIBORDO nasceu da paixão pelo mar, pela navegação e do sonho de chegar à Praticagem. Um projeto que começou para organizar a minha própria preparação e hoje também ajuda outros candidatos a seguirem o mesmo rumo."
-  >
-    <section className={styles.section}>
-      <span>NOSSA HISTÓRIA</span>
-      <h2>Do sonho pessoal a uma preparação compartilhada.</h2>
-
-      <p>Sou Davi, idealizador da ESTIBORDO. Minha história com esse projeto nasceu de algo muito simples: a paixão pelo mar, pela navegação e o sonho de um dia me tornar Prático.</p>
-
-      <p>Quando decidi começar a me preparar para o PSCPP, percebi rapidamente o tamanho desse desafio. É uma preparação extensa, com uma bibliografia técnica enorme, diferentes matérias e muito conteúdo para estudar, revisar e manter na memória ao longo do tempo.</p>
-
-      <p>E foi justamente durante essa caminhada que nasceu a ESTIBORDO.</p>
-
-      <p>Comecei pensando no tipo de preparação que eu gostaria de ter para mim: um lugar onde pudesse organizar meus estudos, resolver questões, fazer simulados, revisar o que já estudei e, principalmente, entender onde estou evoluindo e onde ainda preciso melhorar.</p>
-
-      <div className={styles.quote}>
-        Aos poucos, essa ideia deixou de ser apenas uma ferramenta para os meus próprios estudos e passou a ter um propósito maior: ajudar outras pessoas que compartilham o mesmo objetivo.
-      </div>
-
-      <p>A ESTIBORDO foi criada para reunir, em um só lugar, ferramentas que tornem essa longa preparação mais organizada, prática e direcionada.</p>
-
-      <p>Eu também estou nessa jornada. Também estudo, reviso a bibliografia, resolvo questões e me preparo para o PSCPP.</p>
-
-      <p>Por isso, quero que a ESTIBORDO continue evoluindo junto com quem estuda por aqui — sempre buscando tornar a preparação para a Praticagem cada vez mais completa.</p>
-
-      <div className={styles.quote}>
-        <strong>Porque chegar à Praticagem é um projeto de longo prazo. E uma jornada como essa fica muito melhor quando não precisamos navegar sozinhos.</strong>
-      </div>
-    </section>
-
-    <section className={styles.section}>
-      <span>A ESTIBORDO</span>
-      <h2>Ferramentas que eu também gostaria de ter na minha preparação.</h2>
-      <p>A proposta é simples: reunir estudo, prática e revisão em um mesmo ambiente, para que seja mais fácil manter a constância e saber onde concentrar os esforços ao longo da preparação.</p>
-
-      <div className={styles.grid}>
-        <article className={styles.card}>
-          <h3>Banco de Questões</h3>
-          <p>Pratique o que acabou de estudar, identifique seus erros e descubra quais assuntos precisam de mais atenção.</p>
-          <a href="/produtos/banco-de-questoes">Conhecer o Banco de Questões →</a>
-        </article>
-        <article className={styles.card}>
-          <h3>Simulados</h3>
-          <p>Coloque o conhecimento à prova, treine com tempo e acompanhe sua evolução durante a preparação.</p>
-          <a href="/produtos/simulados">Conhecer os Simulados →</a>
-        </article>
-        <article className={styles.card}>
-          <h3>Flashcards + Mapas</h3>
-          <p>Volte aos pontos importantes da bibliografia e mantenha o conteúdo vivo na memória ao longo dos estudos.</p>
-          <a href="/produtos/flashcards-mapas-mentais">Conhecer as ferramentas de revisão →</a>
-        </article>
-      </div>
-    </section>
-  </MarketingShell>
-}
+export const metadata={title:"Sobre Nós | ESTIBORDO",description:"Conheça Davi, idealizador da ESTIBORDO, sua experiência na Marinha Mercante e a origem da plataforma de preparação para o PSCPP."};
+export default function Page(){return <MarketingShell eyebrow="QUEM SOMOS" title="Uma plataforma criada por quem também está nessa jornada — e vive o ambiente marítimo." lead="A ESTIBORDO nasceu da paixão pelo mar, da experiência profissional a bordo e do objetivo de chegar à Praticagem. Um projeto criado por quem conhece a rotina marítima e também enfrenta, todos os dias, o desafio de se preparar para o PSCPP.">
+<section className={styles.section}><span>QUEM ESTÁ POR TRÁS DA ESTIBORDO</span><h2>Sou Davi. Minha relação com o mar não começou na plataforma — começou a bordo.</h2><p>Sou profissional da Marinha Mercante, Contramestre, e acumulo mais de uma década de atuação no setor marítimo e offshore. Já naveguei, continuo navegando e minha trajetória profissional foi construída dentro desse ambiente: convivendo com a rotina embarcada, operações marítimas, disciplina operacional, segurança, trabalho de convés e a realidade de quem faz do mar o seu local de trabalho.</p><p>Essa experiência muda a forma como eu enxergo a preparação para a Praticagem. Quando estudo manobrabilidade, Arte Naval, navegação, meteorologia, comunicações ou legislação, não estou olhando para um universo completamente abstrato. Muitos conceitos conversam diretamente com situações, procedimentos, equipamentos, linguagem e dinâmica operacional que fazem parte da vida marítima.</p><div className={styles.quote}><strong>A ESTIBORDO não nasceu de alguém olhando o setor marítimo de fora. Ela nasceu dentro dele — da experiência de quem trabalha embarcado e decidiu transformar a própria preparação para o PSCPP em uma plataforma de estudo.</strong></div></section>
+<section className={styles.section}><span>EXPERIÊNCIA QUE SE TRANSFORMA EM PROPÓSITO</span><h2>Marinha Mercante, offshore, conteúdo marítimo e preparação para a Praticagem.</h2><p>Ao longo dessa trajetória, além da atuação profissional embarcada, passei a compartilhar conhecimento sobre a Marinha Mercante e o universo marítimo por meio do projeto <strong>No Convés com Davi</strong>. O objetivo sempre foi aproximar esse mundo de quem quer ingressar na carreira e de quem já trabalha no setor e busca evoluir.</p><p>Esse contato com profissionais e candidatos reforçou algo que eu já sentia nos meus próprios estudos: informação marítima de qualidade existe, mas frequentemente está espalhada entre normas, publicações, livros, editais e experiências práticas. Para uma preparação longa como a do PSCPP, reunir material não basta. É preciso método para organizar, testar, revisar e acompanhar evolução.</p></section>
+<section className={styles.section}><span>NOSSA HISTÓRIA</span><h2>Do meu próprio plano de estudos para uma preparação compartilhada.</h2><p>Quando decidi estruturar minha preparação para o PSCPP, percebi rapidamente o tamanho do desafio. A bibliografia é técnica e extensa, o horizonte de estudo é longo e simplesmente “ler tudo” não cria, sozinho, retenção ou desempenho.</p><p>Comecei então a pensar no ambiente que eu gostaria de ter para estudar: um lugar em que bibliografia, questões, simulados, revisão, desempenho e planejamento conversassem entre si.</p><p>Foi assim que nasceu a ESTIBORDO. Primeiro como resposta a uma necessidade real da minha própria preparação. Depois, como um projeto capaz de ajudar outras pessoas que perseguem o mesmo objetivo.</p><div className={styles.quote}>Eu também estudo, reviso a bibliografia, resolvo questões e me preparo para o PSCPP. Por isso, cada ferramenta da plataforma parte de uma pergunta prática: <strong>isso realmente ajuda um candidato a estudar melhor?</strong></div></section>
+<section className={styles.section}><span>O QUE QUEREMOS CONSTRUIR</span><h2>Uma plataforma que acompanhe a preparação, em vez de apenas entregar material.</h2><div className={styles.grid}><article className={styles.card}><h3>Estudo organizado</h3><p>Bibliografia e plano de estudos transformados em uma sequência executável, para reduzir a sensação de estar perdido diante de tanto conteúdo.</p></article><article className={styles.card}><h3>Prática mensurável</h3><p>Questões e simulados para mostrar o que você realmente consegue recuperar e aplicar — não apenas o que já leu.</p></article><article className={styles.card}><h3>Correção de rumo</h3><p>Caderno de erros, revisão e métricas para direcionar energia aos assuntos que mais precisam evoluir.</p></article></div></section>
+<section className={styles.section}><span>UM PROJETO EM EVOLUÇÃO</span><h2>A plataforma cresce junto com a minha preparação e com a de quem estuda aqui.</h2><p>Meu compromisso é continuar desenvolvendo a ESTIBORDO com a mesma mentalidade que o ambiente marítimo exige: método, disciplina, atenção aos detalhes e melhoria contínua. A plataforma não substitui as fontes oficiais nem promete atalhos. Ela existe para ajudar o aluno a trabalhar melhor sobre aquilo que realmente precisa dominar.</p><div className={styles.quote}><strong>Chegar à Praticagem é um projeto de longo prazo. Para uma travessia longa, não basta vontade: é preciso rumo, acompanhamento e correção constante.</strong></div></section>
+</MarketingShell>}
