@@ -7,7 +7,7 @@ import {
   rateLimitResponse,
 } from "../../../../lib/security";
 
-const GENERIC_MESSAGE = "Se houver uma conta cadastrada com esse e-mail, enviaremos um link para redefinir a senha.";
+const GENERIC_MESSAGE = "Se houver uma conta cadastrada com esse e-mail, enviaremos um link para redefinir a senha. Caso não encontre a mensagem na caixa de entrada, verifique também as pastas Spam, Lixo Eletrônico e Promoções.";
 
 export async function POST(req) {
   try {
