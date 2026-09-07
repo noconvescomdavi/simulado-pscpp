@@ -6,11 +6,12 @@ import {normalizeSubject,subjectLabel,TRIAL_SUBJECT_SLUG} from "../../../lib/sub
 import StudentHeader from "../../components/StudentHeader";
 import Client from "./Client";
 
-export default async function Page({params}){
+export default async function Page({params,searchParams}){
   const s=await getSession();
   if(!s) redirect("/login");
 
   const {subject}=await params;
+  const q=await searchParams;
   const normalized=normalizeSubject(subject);
   const entitlement=await getEntitlement(s.id);
   const trialAllowed=entitlement.trial && normalized===TRIAL_SUBJECT_SLUG;
@@ -32,6 +33,7 @@ export default async function Page({params}){
         ready={(b.questions||[]).length>0}
         trial={trialAllowed}
         facets={facets}
+        planTask={{plan_date:String(q?.plan_date||''),task_key:String(q?.task_key||''),task_type:'simulado',subject_slug:normalized}}
       />
     </>
   );

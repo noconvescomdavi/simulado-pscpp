@@ -79,7 +79,7 @@ function Result({ result }) {
   );
 }
 
-export default function Client({ subject, title, ready, facets }) {
+export default function Client({ subject, title, ready, facets, planTask }) {
   const [state, setState] = useState(null);
   const [index, setIndex] = useState(0);
   const [answer, setAnswer] = useState(null);
@@ -90,6 +90,7 @@ export default function Client({ subject, title, ready, facets }) {
   const [filters, setFilters] = useState({ ...EMPTY_QUESTION_FILTERS });
   const questionStartedAt = useRef(Date.now());
   const timeoutHandled = useRef(false);
+  const planMarkedRef = useRef(false);
 
   async function load() {
     setError("");
@@ -130,6 +131,18 @@ export default function Client({ subject, title, ready, facets }) {
   useEffect(() => {
     questionStartedAt.current = Date.now();
   }, [exam?.id, index]);
+
+  useEffect(() => {
+    const result = state?.state === 'finished' ? state.result : null;
+    if (!result || planMarkedRef.current) return;
+    if (!planTask?.plan_date || !planTask?.task_key) return;
+    planMarkedRef.current = true;
+    fetch('/api/study-plan/task', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({kind:'task',plan_date:planTask.plan_date,task_key:planTask.task_key,task_type:'simulado',subject_slug:planTask.subject_slug||subject,status:'done',metadata:{source:'automatic_exam_completion',session_id:result.session_id||null}})
+    }).catch(()=>{ planMarkedRef.current=false; });
+  }, [state, planTask, subject]);
 
   async function start() {
     if (busy) return;

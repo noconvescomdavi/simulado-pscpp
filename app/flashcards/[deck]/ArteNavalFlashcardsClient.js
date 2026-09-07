@@ -144,7 +144,7 @@ function markerFor(type) {
 }
 
 function visualAsset(card) {
-  const explicit = String(card?.visual?.image || "").trim();
+  const explicit = String(card?.visual?.image || card?.image || "").trim();
   if (explicit) return explicit;
   const id = String(card?.id || "").trim();
   return /^AN1-\d{3}$/.test(id) ? `/flashcards/arte-naval/${id}.svg` : "";
@@ -201,6 +201,8 @@ function referenceFamily(card) {
 }
 
 function NavalVisual({ card, reveal = false, compact = false, onZoom }) {
+  const asset = visualAsset(card);
+  if (asset) return <img className={`${styles.navalVisual} ${compact ? styles.compactVisual : ''}`} src={asset} alt={reveal ? `${termPt(card)}, ${termEn(card)}` : 'Referência visual do cartão'} onClick={onZoom} />;
   const type = visualType(card);
   const [mx, my] = markerFor(type);
   const showRibs = ["structure", "frame", "section", "bulkhead", "plating"].includes(type);
@@ -783,7 +785,7 @@ export default function ArteNavalFlashcardsClient({ deck, initialState }) {
         {!examMode && current && (
           <>
             <div className={styles.flashcardWrap}>
-              <button type="button" className={`${styles.flashcard} ${flipped ? styles.flipped : ""}`} onClick={() => setFlipped((value) => !value)} aria-label="Virar flashcard">
+              <button type="button" className={`${styles.flashcard} ${flipped ? styles.flipped : ""} ${current?.effect==="glow"?styles.effectGlow:""} ${current?.effect==="float"?styles.effectFloat:""} ${current?.effect==="tilt"?styles.effectTilt:""} ${current?.transition==="fast"?styles.transitionFast:""} ${current?.transition==="soft"?styles.transitionSoft:""} ${current?.transition==="dramatic"?styles.transitionDramatic:""}`} onClick={() => setFlipped((value) => !value)} aria-label="Virar flashcard">
                 <div className={styles.flashcardInner}>
                   <section className={`${styles.face} ${styles.front}`}>
                     <div className={styles.cardTopline}>
