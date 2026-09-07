@@ -1,151 +1,28 @@
 # Auditoria profunda de qualidade — bancos de questões
 
-Gerado em: 2026-09-07T03:33:17.436Z
+Gerado em: 2026-09-07T15:14:07.596Z
 
-Total de questões analisadas: **11201**
-Taxonomia V2: **11201**
-Questões da expansão V1 marcadas para revisão integral: **504**
-Flags: **6939** (críticas 3; altas 879; médias 3281; baixas 2776)
+Total de questões analisadas: **11446**
+Taxonomia V2: **11446**
+Questões da expansão V1 marcadas para revisão integral: **0**
+Flags: **5896** (críticas 0; altas 33; médias 3128; baixas 2735)
 
 ## Por matéria
 
 | Matéria | Questões | Tópicos | Capítulos | Expansão V1 | Contexto | Distratores | Formatação | Estrutural |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| arte-naval | 1222 | 300 | 23 | 72 | 452 | 974 | 0 | 0 |
-| manobrabilidade | 3814 | 560 | 46 | 72 | 121 | 1069 | 0 | 0 |
-| navegacao-aguas-restritas | 1712 | 1343 | 47 | 72 | 131 | 520 | 0 | 0 |
-| legislacao-regulamentacao | 1182 | 1053 | 27 | 72 | 128 | 681 | 0 | 0 |
-| meteorologia-oceanografia | 1077 | 26 | 4 | 72 | 128 | 1580 | 0 | 0 |
-| comunicacoes | 1122 | 125 | 8 | 72 | 133 | 401 | 0 | 0 |
-| conhecimentos-gerais | 1072 | 217 | 7 | 72 | 120 | 501 | 0 | 0 |
+| arte-naval | 1257 | 300 | 23 | 0 | 36 | 989 | 0 | 0 |
+| manobrabilidade | 3849 | 560 | 46 | 0 | 0 | 1071 | 0 | 0 |
+| navegacao-aguas-restritas | 1747 | 1343 | 47 | 0 | 5 | 533 | 0 | 0 |
+| legislacao-regulamentacao | 1217 | 1053 | 27 | 0 | 9 | 698 | 0 | 0 |
+| meteorologia-oceanografia | 1112 | 26 | 4 | 0 | 6 | 1594 | 0 | 0 |
+| comunicacoes | 1157 | 125 | 8 | 0 | 19 | 417 | 0 | 0 |
+| conhecimentos-gerais | 1107 | 217 | 7 | 0 | 0 | 519 | 0 | 0 |
 
 ## Flags prioritárias (primeiras 250)
 
 | Gravidade | Matéria | ID | Código | Detalhe |
 |---|---|---|---|---|
-| critical | manobrabilidade | MAN-076 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
-| critical | manobrabilidade | MAN-090 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
-| critical | manobrabilidade | MAN-284 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
-| high | arte-naval | ANV-1151 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | arte-naval | ANV-1151 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1152 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | arte-naval | ANV-1152 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1153 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | arte-naval | ANV-1153 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1154 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | arte-naval | ANV-1154 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1155 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | arte-naval | ANV-1155 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1156 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | arte-naval | ANV-1156 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1157 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | arte-naval | ANV-1157 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1158 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | arte-naval | ANV-1158 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1159 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | arte-naval | ANV-1159 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1160 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | arte-naval | ANV-1160 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1161 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | arte-naval | ANV-1161 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1162 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | arte-naval | ANV-1162 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1163 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1164 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1165 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1166 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1167 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1168 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1169 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1170 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1171 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1172 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1173 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1174 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1175 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | arte-naval | ANV-1175 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1175 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | arte-naval | ANV-1176 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | arte-naval | ANV-1176 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1176 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | arte-naval | ANV-1177 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | arte-naval | ANV-1177 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1177 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | arte-naval | ANV-1178 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | arte-naval | ANV-1178 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1178 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | arte-naval | ANV-1179 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | arte-naval | ANV-1179 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1179 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | arte-naval | ANV-1180 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | arte-naval | ANV-1180 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1180 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | arte-naval | ANV-1181 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | arte-naval | ANV-1181 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1181 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | arte-naval | ANV-1182 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | arte-naval | ANV-1182 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1182 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | arte-naval | ANV-1183 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | arte-naval | ANV-1183 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1183 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | arte-naval | ANV-1184 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | arte-naval | ANV-1184 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1184 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | arte-naval | ANV-1185 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | arte-naval | ANV-1185 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1185 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | arte-naval | ANV-1186 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | arte-naval | ANV-1186 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1186 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | arte-naval | ANV-1187 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1188 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1189 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1190 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1191 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1192 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1193 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1194 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1195 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1196 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1197 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1198 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1199 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | arte-naval | ANV-1199 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1200 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | arte-naval | ANV-1200 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1201 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | arte-naval | ANV-1201 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1202 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | arte-naval | ANV-1202 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1203 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | arte-naval | ANV-1203 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1204 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | arte-naval | ANV-1204 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1205 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | arte-naval | ANV-1205 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1206 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | arte-naval | ANV-1206 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1207 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | arte-naval | ANV-1207 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1208 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | arte-naval | ANV-1208 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1209 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | arte-naval | ANV-1209 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1210 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | arte-naval | ANV-1210 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1211 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1212 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1213 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1214 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1215 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1216 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1217 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1218 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1219 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1220 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1221 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | arte-naval | ANV-1222 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
 | high | comunicacoes | COM-1038 | DUPLICATE_STEM | Enunciado idêntico a COM-1026. |
 | high | comunicacoes | COM-1039 | DUPLICATE_STEM | Enunciado idêntico a COM-1027. |
 | high | comunicacoes | COM-1040 | DUPLICATE_STEM | Enunciado idêntico a COM-1028. |
@@ -159,120 +36,243 @@ Flags: **6939** (críticas 3; altas 879; médias 3281; baixas 2776)
 | high | comunicacoes | COM-1048 | DUPLICATE_STEM | Enunciado idêntico a COM-1036. |
 | high | comunicacoes | COM-1049 | DUPLICATE_STEM | Enunciado idêntico a COM-1037. |
 | high | comunicacoes | COM-1050 | DUPLICATE_STEM | Enunciado idêntico a COM-1026. |
-| high | comunicacoes | COM-1051 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | comunicacoes | COM-1051 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1052 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | comunicacoes | COM-1052 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1053 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | comunicacoes | COM-1053 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1054 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | comunicacoes | COM-1054 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1055 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | comunicacoes | COM-1055 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1056 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | comunicacoes | COM-1056 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1057 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | comunicacoes | COM-1057 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1058 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | comunicacoes | COM-1058 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1059 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | comunicacoes | COM-1059 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1060 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | comunicacoes | COM-1060 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1061 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | comunicacoes | COM-1061 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1062 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
-| high | comunicacoes | COM-1062 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1063 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1064 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1065 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1066 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1067 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1068 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1069 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1070 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1071 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1072 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1073 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1074 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1075 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | comunicacoes | COM-1075 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1075 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | comunicacoes | COM-1076 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | comunicacoes | COM-1076 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1076 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | comunicacoes | COM-1077 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | comunicacoes | COM-1077 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1077 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | comunicacoes | COM-1078 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | comunicacoes | COM-1078 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1078 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | comunicacoes | COM-1079 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | comunicacoes | COM-1079 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1079 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | comunicacoes | COM-1080 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | comunicacoes | COM-1080 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1080 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | comunicacoes | COM-1081 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | comunicacoes | COM-1081 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1081 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | comunicacoes | COM-1082 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | comunicacoes | COM-1082 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1082 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | comunicacoes | COM-1083 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | comunicacoes | COM-1083 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1083 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | comunicacoes | COM-1084 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | comunicacoes | COM-1084 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1084 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | comunicacoes | COM-1085 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | comunicacoes | COM-1085 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1085 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | comunicacoes | COM-1086 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “problema-base”. |
-| high | comunicacoes | COM-1086 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1086 | TOPIC_OPTION_GLUE | Alternativa aparenta ter sido formada por colagem “tópico — texto de alternativa”, com risco de perda de contexto. |
-| high | comunicacoes | COM-1087 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1088 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1089 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1090 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1091 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1092 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1093 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1094 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1095 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1096 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1097 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1098 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1099 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | comunicacoes | COM-1099 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1100 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | comunicacoes | COM-1100 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1101 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | comunicacoes | COM-1101 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1102 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | comunicacoes | COM-1102 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1103 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | comunicacoes | COM-1103 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1104 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | comunicacoes | COM-1104 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1105 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | comunicacoes | COM-1105 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1106 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | comunicacoes | COM-1106 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1107 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | comunicacoes | COM-1107 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1108 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | comunicacoes | COM-1108 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1109 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | comunicacoes | COM-1109 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1110 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “caracterização tecnicamente correta de”. |
-| high | comunicacoes | COM-1110 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1111 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1112 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1113 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1114 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1115 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
-| high | comunicacoes | COM-1116 | EXPANSION_V1_REVIEW | Questão da expansão V1 requer revisão contextual integral. |
+| high | comunicacoes | COM-1084 | DUPLICATE_STEM | Enunciado idêntico a COM-1076. |
+| high | comunicacoes | COM-1085 | DUPLICATE_STEM | Enunciado idêntico a COM-1077. |
+| high | comunicacoes | COM-1086 | DUPLICATE_STEM | Enunciado idêntico a COM-1078. |
+| high | comunicacoes | COM-1151 | DUPLICATE_STEM | Enunciado idêntico a COM-1143. |
+| high | comunicacoes | COM-1152 | DUPLICATE_STEM | Enunciado idêntico a COM-1144. |
+| high | comunicacoes | COM-1154 | DUPLICATE_STEM | Enunciado idêntico a COM-1146. |
+| high | legislacao-regulamentacao | LEG-1043 | DUPLICATE_STEM | Enunciado idêntico a LEG-1031. |
+| high | legislacao-regulamentacao | LEG-1044 | DUPLICATE_STEM | Enunciado idêntico a LEG-1032. |
+| high | legislacao-regulamentacao | LEG-1045 | DUPLICATE_STEM | Enunciado idêntico a LEG-1033. |
+| high | legislacao-regulamentacao | LEG-1046 | DUPLICATE_STEM | Enunciado idêntico a LEG-1034. |
+| high | legislacao-regulamentacao | LEG-1047 | DUPLICATE_STEM | Enunciado idêntico a LEG-1035. |
+| high | legislacao-regulamentacao | LEG-1048 | DUPLICATE_STEM | Enunciado idêntico a LEG-1036. |
+| high | legislacao-regulamentacao | LEG-1049 | DUPLICATE_STEM | Enunciado idêntico a LEG-1037. |
+| high | legislacao-regulamentacao | LEG-1050 | DUPLICATE_STEM | Enunciado idêntico a LEG-1038. |
+| high | meteorologia-oceanografia | MEO-1034 | DUPLICATE_STEM | Enunciado idêntico a MEO-1029. |
+| high | meteorologia-oceanografia | MEO-1035 | DUPLICATE_STEM | Enunciado idêntico a MEO-1027. |
+| high | meteorologia-oceanografia | MEO-1077 | DUPLICATE_STEM | Enunciado idêntico a MEO-1017. |
+| high | meteorologia-oceanografia | MEO-1100 | DUPLICATE_STEM | Enunciado idêntico a MEO-1094. |
+| high | meteorologia-oceanografia | MEO-1103 | DUPLICATE_STEM | Enunciado idêntico a MEO-1097. |
+| high | meteorologia-oceanografia | MEO-1106 | DUPLICATE_STEM | Enunciado idêntico a MEO-1094. |
+| medium | arte-naval | ANV-0003 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0004 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0006 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0007 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0008 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0009 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0010 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0013 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0014 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0015 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0016 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0018 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0019 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0021 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0022 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0023 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0024 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0025 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0026 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0027 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0028 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0029 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0030 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0031 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0032 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0033 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0034 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0035 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0036 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0037 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0038 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0039 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0040 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0041 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0042 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0043 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0044 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0045 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0046 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0047 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0048 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0049 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0050 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0051 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0052 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0053 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0054 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0055 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0056 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0057 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0058 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0059 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0060 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0061 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0062 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0063 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0064 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0065 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0066 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0067 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0068 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0069 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0070 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0071 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0072 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0073 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0074 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0075 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0076 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0077 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0078 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0079 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0080 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0081 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0082 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0083 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0084 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0085 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0086 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0087 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0088 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0089 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0090 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0091 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0092 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0093 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0094 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0095 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0096 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0097 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0098 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0099 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0100 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0101 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0102 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0103 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0104 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0105 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0106 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0107 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0108 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0109 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0110 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0111 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0112 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0113 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0114 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0115 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0116 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0117 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0118 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0119 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0119 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
+| medium | arte-naval | ANV-0120 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0121 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0122 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0123 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0124 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0125 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0126 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0127 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0128 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0129 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0130 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0131 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0132 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0133 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0134 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0135 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0136 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0137 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0138 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0139 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0140 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0141 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0142 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0143 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0144 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0145 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0146 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0147 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0148 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0149 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0150 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0151 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0152 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0153 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0154 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0155 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0156 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0157 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0158 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0159 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0160 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0161 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0162 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0163 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0164 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0165 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0166 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0167 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0168 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0169 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0170 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0171 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0172 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0173 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0174 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0175 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0176 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0177 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0178 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0179 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0180 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0181 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0182 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0183 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0183 | GENERIC_TEMPLATE_LANGUAGE | Enunciado contém linguagem genérica/template: “a referência ”. |
+| medium | arte-naval | ANV-0184 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0185 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0186 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0187 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0188 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0189 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0190 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0191 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0192 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0193 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0194 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0195 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0196 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0197 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0198 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0199 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0200 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0201 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0202 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0203 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0204 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0205 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0206 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0207 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0208 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0209 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0210 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0211 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0212 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0213 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0214 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0215 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0216 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0217 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0218 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0219 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0220 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0221 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0222 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
 
 ## Critério
 

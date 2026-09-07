@@ -4,25 +4,25 @@
 
 | Padrão | Ocorrências |
 |---|---:|
-| de acordo com a bibliografia | 610 |
-| a bibliografia atribui a esse item | 306 |
-| caracterização tecnicamente correta de | 12 |
-| problema-base | 12 |
-| julgue a afirmativa a seguir, considerando | 12 |
-| analise as assertivas sobre | 12 |
-| julgue as proposições sobre | 12 |
-| complete corretamente a lacuna | 12 |
-| durante um exercício de preparação operacional | 12 |
+| de acordo com a bibliografia | 0 |
+| a bibliografia atribui a esse item | 0 |
+| caracterização tecnicamente correta de | 0 |
+| problema-base | 0 |
+| julgue a afirmativa a seguir, considerando | 0 |
+| analise as assertivas sobre | 0 |
+| julgue as proposições sobre | 0 |
+| complete corretamente a lacuna | 0 |
+| durante um exercício de preparação operacional | 0 |
 
 ### Prefixos repetidos
 
 | Ocorrências | Prefixo |
 |---:|---|
-| 300 | de acordo com a bibliografia de arte naval, analise as afirmativas sobre |
-| 300 | de acordo com a bibliografia de arte naval, qual termo corresponde a |
-| 300 | assinale a opcao que apresenta corretamente o significado ou a funcao de |
-| 100 | considere a seguinte descricao tecnica de uma situacao, peca ou procedimento de |
+| 299 | na terminologia de arte naval, qual termo corresponde a descricao tecnica a |
+| 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
+| 12 | considere a questao tecnica a seguir: “qual alternativa descreve corretamente o significado |
 | 6 | na preparacao para uma manobra, o oficial revisa o conceito definido como |
+| 4 | qual alternativa descreve corretamente o significado ou a funcao de “volta de |
 
 ## manobrabilidade
 
@@ -30,20 +30,19 @@
 |---|---:|
 | de acordo com a bibliografia | 0 |
 | a bibliografia atribui a esse item | 0 |
-| caracterização tecnicamente correta de | 12 |
-| problema-base | 12 |
-| julgue a afirmativa a seguir, considerando | 12 |
-| analise as assertivas sobre | 12 |
-| julgue as proposições sobre | 12 |
-| complete corretamente a lacuna | 12 |
-| durante um exercício de preparação operacional | 12 |
+| caracterização tecnicamente correta de | 0 |
+| problema-base | 0 |
+| julgue a afirmativa a seguir, considerando | 0 |
+| analise as assertivas sobre | 0 |
+| julgue as proposições sobre | 0 |
+| complete corretamente a lacuna | 0 |
+| durante um exercício de preparação operacional | 0 |
 
 ### Prefixos repetidos
 
 | Ocorrências | Prefixo |
 |---:|---|
-| 12 | julgue a afirmativa a seguir, considerando 1. manoeuvring information e a referencia |
-| 12 | durante um exercicio de preparacao operacional sobre chapter 6 – ship manoeuvering, |
+| 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
 | 11 | nesse contexto, durante a analise de uma prova de mar em agua |
 | 11 | para essa avaliacao, durante a analise de uma prova de mar em |
 | 11 | sob essa otica, durante a analise de uma prova de mar em |
@@ -67,6 +66,7 @@
 | 11 | nesse contexto, na preparacao de um briefing tecnico para a equipe de |
 | 11 | para essa avaliacao, na preparacao de um briefing tecnico para a equipe |
 | 11 | sob essa otica, na preparacao de um briefing tecnico para a equipe |
+| 11 | ao concluir a analise, na preparacao de um briefing tecnico para a |
 
 ## navegacao-aguas-restritas
 
@@ -74,13 +74,13 @@
 |---|---:|
 | de acordo com a bibliografia | 0 |
 | a bibliografia atribui a esse item | 0 |
-| caracterização tecnicamente correta de | 12 |
-| problema-base | 12 |
-| julgue a afirmativa a seguir, considerando | 12 |
-| analise as assertivas sobre | 12 |
-| julgue as proposições sobre | 12 |
-| complete corretamente a lacuna | 12 |
-| durante um exercício de preparação operacional | 12 |
+| caracterização tecnicamente correta de | 0 |
+| problema-base | 0 |
+| julgue a afirmativa a seguir, considerando | 0 |
+| analise as assertivas sobre | 0 |
+| julgue as proposições sobre | 0 |
+| complete corretamente a lacuna | 0 |
+| durante um exercício de preparação operacional | 0 |
 
 ### Prefixos repetidos
 
@@ -98,15 +98,18 @@
 | 20 | durante o planejamento de uma passagem noturna, qual conduta operacional atende ao |
 | 20 | ao avaliar a cadeia de erros, qual perigo decorre mais diretamente do |
 | 20 | com visibilidade variavel e espaco limitado, qual acao e coerente com o |
-| 18 | considerando publicacao indicada — sem recorte adicional no anexo 2-b, qual alternativa |
-| 16 | no contexto de publicacao indicada — sem recorte adicional no anexo 2-b, |
-| 16 | em uma analise comparativa de publicacao indicada — sem recorte adicional no |
-| 12 | complete corretamente a lacuna, considerando part b e a referencia convention on |
-| 12 | durante um exercicio de preparacao operacional sobre part b, com base em |
-| 10 | julgue a afirmativa a seguir, considerando part a e a referencia convention |
+| 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
 | 9 | considerando capitulo 11 – regras especiais para evitar abalroamento, qual alternativa caracteriza |
 | 8 | no contexto de capitulo 11 – regras especiais para evitar abalroamento, qual |
 | 8 | em uma analise comparativa de capitulo 11 – regras especiais para evitar |
+| 8 | no contexto de normam-511/dhn — navegacao e cartas nauticas, qual conceito corresponde |
+| 8 | em uma analise comparativa de normam-511/dhn — navegacao e cartas nauticas, qual |
+| 8 | no contexto de normam-501/dhn — levantamentos hidrograficos, qual conceito corresponde a descricao: |
+| 8 | em uma analise comparativa de normam-501/dhn — levantamentos hidrograficos, qual associacao envolvendo |
+| 7 | em uma analise aprofundada de publicacao indicada — sem recorte adicional no |
+| 6 | considere a questao tecnica a seguir: “considerando part e, qual alternativa caracteriza |
+| 5 | considere a questao tecnica a seguir: “em uma analise comparativa de part |
+| 4 | considere o caso tecnico a seguir, relacionado a aplicacao em qualquer visibilidade: |
 
 ## legislacao-regulamentacao
 
@@ -114,30 +117,29 @@
 |---|---:|
 | de acordo com a bibliografia | 0 |
 | a bibliografia atribui a esse item | 0 |
-| caracterização tecnicamente correta de | 12 |
-| problema-base | 12 |
-| julgue a afirmativa a seguir, considerando | 12 |
-| analise as assertivas sobre | 12 |
-| julgue as proposições sobre | 12 |
-| complete corretamente a lacuna | 12 |
-| durante um exercício de preparação operacional | 12 |
+| caracterização tecnicamente correta de | 0 |
+| problema-base | 0 |
+| julgue a afirmativa a seguir, considerando | 0 |
+| analise as assertivas sobre | 0 |
+| julgue as proposições sobre | 0 |
+| complete corretamente a lacuna | 0 |
+| durante um exercício de preparação operacional | 0 |
 
 ### Prefixos repetidos
 
 | Ocorrências | Prefixo |
 |---:|---|
-| 17 | no contexto de conteudo indicado no anexo 2-b, qual conceito corresponde a |
-| 16 | em uma analise comparativa de conteudo indicado no anexo 2-b, qual associacao |
+| 31 | sobre conteudo indicado no anexo 2-b, analise as afirmativas e assinale a |
 | 13 | considerando os conceitos adotados por normam-204/dpc, o que se afirma corretamente em |
-| 12 | julgue a afirmativa a seguir, considerando capitulo vi – art. 17 e |
-| 12 | julgue as proposicoes sobre conteudo indicado no anexo 2-b como verdadeiras (v) |
-| 12 | complete corretamente a lacuna, considerando conteudo indicado no anexo 2-b e a |
-| 12 | durante um exercicio de preparacao operacional sobre conteudo indicado no anexo 2-b, |
+| 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
+| 12 | analise as quatro proposicoes sobre conteudo indicado no anexo 2-b e classifique-as |
 | 10 | no contexto de normam-602/dhn, qual enunciado define corretamente o conteudo de item |
 | 10 | no contexto de normam-204/dpc, qual enunciado define corretamente o conteudo de item |
 | 9 | no contexto de rlesta, qual enunciado define corretamente o conteudo de art. |
 | 8 | no texto de publicacoes nauticas da dhn, lista de auxilio radio - |
 | 8 | a luz de publicacoes nauticas da dhn, ao examinar lista de auxilio |
+| 8 | no contexto de decreto nº 2.596/1998 — rlesta, qual conceito corresponde a |
+| 8 | em uma analise comparativa de decreto nº 2.596/1998 — rlesta, qual associacao |
 | 7 | no contexto de normam-311/dpc, qual enunciado define corretamente o conteudo de item |
 | 7 | considerando os conceitos adotados por lei nº 2.180/1954, o que se afirma |
 | 7 | considerando capitulo iv – administracao do porto organizado, qual alternativa caracteriza corretamente |
@@ -151,6 +153,7 @@
 | 6 | considerando os conceitos adotados por normam-601/dhn, o que se afirma corretamente em |
 | 6 | considerando os conceitos adotados por ripeam/colreg, o que se afirma corretamente em |
 | 6 | em uma analise comparativa de capitulo iv – administracao do porto organizado, |
+| 6 | no contexto de capitulo vi – art. 17, qual conceito corresponde a |
 
 ## meteorologia-oceanografia
 
@@ -158,24 +161,23 @@
 |---|---:|
 | de acordo com a bibliografia | 0 |
 | a bibliografia atribui a esse item | 0 |
-| caracterização tecnicamente correta de | 12 |
-| problema-base | 12 |
-| julgue a afirmativa a seguir, considerando | 12 |
-| analise as assertivas sobre | 12 |
-| julgue as proposições sobre | 12 |
-| complete corretamente a lacuna | 12 |
-| durante um exercício de preparação operacional | 12 |
+| caracterização tecnicamente correta de | 0 |
+| problema-base | 0 |
+| julgue a afirmativa a seguir, considerando | 0 |
+| analise as assertivas sobre | 0 |
+| julgue as proposições sobre | 0 |
+| complete corretamente a lacuna | 0 |
+| durante um exercício de preparação operacional | 0 |
 
 ### Prefixos repetidos
 
 | Ocorrências | Prefixo |
 |---:|---|
+| 22 | sobre publicacao indicada — sem capitulos delimitados no anexo 2-b, analise as |
 | 14 | ao interpretar informacoes de ventos em um produto ou observacao maritima, caso |
 | 13 | ao interpretar informacoes de sistemas atmosfericos em um produto ou observacao maritima, |
 | 12 | ao interpretar informacoes de ondas em um produto ou observacao maritima, caso |
-| 12 | julgue a afirmativa a seguir, considerando publicacao indicada — sem capitulos delimitados |
-| 12 | complete corretamente a lacuna, considerando publicacao indicada — sem capitulos delimitados no |
-| 12 | durante um exercicio de preparacao operacional sobre capitulo 45 – nocoes de |
+| 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
 | 11 | ao interpretar informacoes de mares em um produto ou observacao maritima, caso |
 | 11 | ao interpretar informacoes de pressao atmosferica em um produto ou observacao maritima, |
 | 11 | ao interpretar informacoes de elementos meteorologicos em um produto ou observacao maritima, |
@@ -186,6 +188,8 @@
 | 10 | ao interpretar informacoes de navegacao de mau tempo em um produto ou |
 | 10 | considerando a relacao fisica ou operacional de navegacao de mau tempo, cenario |
 | 10 | ao interpretar informacoes de circulacao do ar em um produto ou observacao |
+| 10 | sobre capitulo 45 – nocoes de meteorologia para navegantes, analise as afirmativas |
+| 10 | em uma analise aprofundada de publicacao indicada — sem capitulos delimitados no |
 | 9 | na comparacao tecnica de conceitos de cartas de correntes de mares, cenario |
 | 9 | considerando a relacao fisica ou operacional de cartas de correntes de mares, |
 | 9 | ao interpretar informacoes de cartas de correntes de mares em um produto |
@@ -194,7 +198,6 @@
 | 9 | ao interpretar informacoes de cobertura do ceu e nuvens em um produto |
 | 9 | na comparacao tecnica de conceitos de cobertura do ceu e nuvens, cenario |
 | 9 | ao interpretar informacoes de sistemas sinoticos em um produto ou observacao maritima, |
-| 8 | considerando a relacao fisica ou operacional de areas geradoras de vagas, cenario |
 
 ## comunicacoes
 
@@ -202,13 +205,13 @@
 |---|---:|
 | de acordo com a bibliografia | 0 |
 | a bibliografia atribui a esse item | 0 |
-| caracterização tecnicamente correta de | 12 |
-| problema-base | 12 |
-| julgue a afirmativa a seguir, considerando | 12 |
-| analise as assertivas sobre | 12 |
-| julgue as proposições sobre | 12 |
-| complete corretamente a lacuna | 12 |
-| durante um exercício de preparação operacional | 12 |
+| caracterização tecnicamente correta de | 0 |
+| problema-base | 0 |
+| julgue a afirmativa a seguir, considerando | 0 |
+| analise as assertivas sobre | 0 |
+| julgue as proposições sobre | 0 |
+| complete corretamente a lacuna | 0 |
+| durante um exercício de preparação operacional | 0 |
 
 ### Prefixos repetidos
 
@@ -217,9 +220,7 @@
 | 14 | no contexto de smcp glossary — general terms, qual descricao corresponde corretamente |
 | 13 | no contexto de glossario tecnico do erog, qual descricao corresponde corretamente a |
 | 12 | qual termo ou sinal de glossario tecnico do erog corresponde a seguinte |
-| 12 | julgue a afirmativa a seguir, considerando apendices 1, 2 e 4 e |
-| 12 | complete corretamente a lacuna, considerando capitulos i a v, vii, viii, x, |
-| 12 | durante um exercicio de preparacao operacional sobre capitulos i a v, vii, |
+| 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
 | 11 | ao revisar smcp glossary — general terms, um aluno encontrou o termo |
 | 10 | em materia de unidade 3 — gmdss, assinale a definicao tecnicamente correta |
 | 9 | considerando secao geral — distress; casualties; aids to navigation; manoeuvres; pilot, qual |
@@ -237,8 +238,10 @@
 | 5 | ao revisar unidade 1 — principios das radiocomunicacoes maritimas, um aluno encontrou |
 | 5 | em materia de identificacao maritima, assinale a definicao tecnicamente correta para “mid |
 | 5 | no contexto de request for medical assistance, qual descricao corresponde corretamente a |
+| 5 | sobre capitulos i a v, vii, viii, x, xi e xii, analise |
+| 5 | sobre secao geral — distress; casualties; aids to navigation; manoeuvres; pilot, analise |
+| 5 | sobre secao medica — request for medical assistance, chapter i, analise as |
 | 4 | ao revisar principios e procedimentos gerais do smcp, um aluno encontrou o |
-| 4 | no contexto de unidade 3 — gmdss, qual descricao corresponde corretamente a |
 
 ## conhecimentos-gerais
 
@@ -246,13 +249,13 @@
 |---|---:|
 | de acordo com a bibliografia | 0 |
 | a bibliografia atribui a esse item | 0 |
-| caracterização tecnicamente correta de | 12 |
-| problema-base | 12 |
-| julgue a afirmativa a seguir, considerando | 12 |
-| analise as assertivas sobre | 12 |
-| julgue as proposições sobre | 12 |
-| complete corretamente a lacuna | 12 |
-| durante um exercício de preparação operacional | 12 |
+| caracterização tecnicamente correta de | 0 |
+| problema-base | 0 |
+| julgue a afirmativa a seguir, considerando | 0 |
+| analise as assertivas sobre | 0 |
+| julgue as proposições sobre | 0 |
+| complete corretamente a lacuna | 0 |
+| durante um exercício de preparação operacional | 0 |
 
 ### Prefixos repetidos
 
@@ -265,22 +268,22 @@
 | 31 | ao consultar “module 2 — fatigue and the company”, qual item em |
 | 30 | no topico “module 3 — fatigue and the seafarer” das guidelines on |
 | 22 | ao consultar “module 5 — fatigue and ship design”, qual item em |
+| 21 | sobre publicacao indicada, analise as afirmativas e assinale a alternativa que apresenta |
 | 15 | ao consultar “module 1 — fatigue”, qual item em ingles esta de |
 | 14 | uma analise de fadiga usa o trecho “module 3 — fatigue and |
 | 14 | uma analise de fadiga usa o trecho “module 2 — fatigue and |
 | 14 | qual trecho em ingles integra o conteudo de “module 3 — fatigue |
 | 12 | qual trecho em ingles integra o conteudo de “module 1 — fatigue” |
 | 12 | qual item e associado pela fonte ao topico “anexo i — regra |
-| 12 | julgue a afirmativa a seguir, considerando capitulo 2 – vias de acesso |
-| 12 | complete corretamente a lacuna, considerando capitulo 2 – vias de acesso a |
-| 12 | durante um exercicio de preparacao operacional sobre capitulo 2 – vias de |
+| 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
 | 11 | no topico “module 2 — fatigue and the company” das guidelines on |
 | 11 | ao consultar “module 3 — fatigue and the seafarer”, qual item em |
 | 10 | qual item e associado pela fonte ao topico “anexo ii — regra |
-| 9 | julgue as proposicoes sobre publicacao indicada como verdadeiras (v) ou falsas (f): |
+| 9 | analise as quatro proposicoes sobre publicacao indicada e classifique-as como verdadeiras (v) |
 | 7 | qual trecho em ingles integra o conteudo de “module 4 — fatigue |
 | 7 | no topico “module 5 — fatigue and ship design” das guidelines on |
+| 6 | sobre capitulo 8 – analise de risco e planejamento portuario, analise as |
 | 5 | no topico “module 4 — fatigue awareness and training” das guidelines on |
 | 5 | qual item e associado pela fonte ao topico “convencao de 1973 — |
-| 4 | ao consultar “module 6 — fatigue, the administration and port state authorities”, |
+| 5 | sobre capitulo 2 – vias de acesso a instalacoes portuarias, analise as |
 
