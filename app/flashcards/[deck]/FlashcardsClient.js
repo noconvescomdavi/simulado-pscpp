@@ -331,7 +331,28 @@ function renderRipeamCinematic(card) {
   if(v.type==="tss") return wrap(`<path d="M50 145H850M850 355H50" stroke="#245a77" stroke-width="125"/><path class="route" d="M70 145H830M830 355H70" stroke="#bcecff" stroke-width="6" stroke-dasharray="20 14"/><path d="M450 475V35" stroke="#ffd64d" stroke-width="8" stroke-dasharray="14 11"/><text x="475" y="260" fill="#fff" font-size="23" font-weight="900">≈ 90°</text>`,sea,true);
   if(v.type==="radar") return wrap(`<g transform="translate(450 265)"><circle r="185" fill="#052b29" stroke="#38c395" stroke-width="3"/><circle r="140" fill="none" stroke="#278067"/><circle r="95" fill="none" stroke="#278067"/><circle r="48" fill="none" stroke="#278067"/><path d="M-185 0H185M0-185V185" stroke="#278067"/><path class="route" d="M0 0L130-130" stroke="#60ffc8" stroke-width="4"/><circle class="pulse" cx="130" cy="-130" r="11" fill="#ffd34d"/></g>`,night,true);
   if(v.type==="sector"){let s=v.sector==="stern"?`<path d="M450 265L270 420A235 235 0 0 1 630 420Z" fill="#fff" opacity=".22"/>`:v.sector==="side"?`<path d="M450 265L250 80A245 245 0 0 0 220 305Z" fill="#ff334b" opacity=".28"/><path d="M450 265L650 80A245 245 0 0 1 680 305Z" fill="#29ff8a" opacity=".28"/>`:`<path d="M450 265L265 80A250 250 0 1 1 635 80Z" fill="#fff" opacity=".2"/>`;return wrap(`${s}${topShip(450,265,0,1.08)}`,night,false);}
-  if(v.type==="vessel"||v.type==="lights"){let ls=v.lights||["white"], stack=ls.map((c,i)=>light(680,95+i*55,c)).join("");let ex=v.kind==="mine"?light(450,82,"green")+light(350,145,"green")+light(550,145,"green"):"";return wrap(`${sideShip(390,350,1.35)}${stack}${ex}`,night,false);}
+  if(v.type==="vessel"||v.type==="lights"){
+    const ls=v.lights||["white"];
+    const stackAt=(x,y,scale=1)=>ls.map((col,i)=>light(x,y+i*46*scale,col)).join("");
+    const dayShape = id==="R30-ANCH" ? '<circle cx="735" cy="205" r="20" fill="#05080b"/>'
+      : id==="R30-AGROUND" ? '<circle cx="735" cy="160" r="18" fill="#05080b"/><circle cx="735" cy="205" r="18" fill="#05080b"/><circle cx="735" cy="250" r="18" fill="#05080b"/>'
+      : id==="R27-NUC" ? '<circle cx="735" cy="180" r="20" fill="#05080b"/><circle cx="735" cy="230" r="20" fill="#05080b"/>'
+      : id==="R27-RAM" ? '<circle cx="735" cy="155" r="18" fill="#05080b"/><polygon points="735,185 758,210 735,235 712,210" fill="#05080b"/><circle cx="735" cy="265" r="18" fill="#05080b"/>'
+      : id==="R28-CBD" ? '<rect x="716" y="170" width="38" height="82" rx="3" fill="#05080b"/>'
+      : id==="R24-TOW3" ? '<polygon points="735,175 764,210 735,245 706,210" fill="#05080b"/>'
+      : "";
+    const special = v.kind==="mine" ? light(450,82,"green")+light(350,145,"green")+light(550,145,"green") : "";
+    return wrap(`
+      <g transform="translate(-70 15) scale(.88)">${sideShip(390,350,1.25)}</g>
+      ${stackAt(560,112,.88)}${special}
+      <g opacity=".96"><rect x="650" y="105" width="170" height="205" rx="20" fill="#eef4f7"/>
+        <text x="735" y="135" text-anchor="middle" fill="#173247" font-size="15" font-weight="900">MARCA DIURNA</text>
+        ${dayShape || '<text x="735" y="210" text-anchor="middle" fill="#627889" font-size="14" font-weight="800">VER REGRA</text>'}
+      </g>
+      <g><text x="265" y="455" text-anchor="middle" fill="#d9f4ff" font-size="16" font-weight="900">CONFIGURAÇÃO DE RECONHECIMENTO</text>
+      <text x="265" y="478" text-anchor="middle" fill="#8fb6cc" font-size="13">luzes e marcas conforme a regra indicada</text></g>
+    `,night,false);
+  }
   if(v.type==="sound"){let x=95;let bars=(v.pattern||[]).map(q=>{let w=q==="long"?140:46,z=`<rect x="${x}" y="205" width="${w}" height="36" rx="18" fill="${q==="long"?"#ffd34d":"#f5f8fa"}"/>`;x+=w+25;return z}).join("");return wrap(`${sideShip(215,385,.75)}${bars}<path class="route" d="M85 315Q125 270 165 315T245 315T325 315T405 315T485 315T565 315T645 315T725 315" fill="none" stroke="#70d8ff" stroke-width="6"/><text x="450" y="470" text-anchor="middle" fill="#fff" font-size="20" font-weight="900">CURTO ≈ 1 s · LONGO = 4–6 s</text>`,sea,true);}
   if(v.type==="shapes") return renderRipeamPro(card);
   if(id==="R05") return wrap(`${sideShip(330,365,1.05)}<g transform="translate(650 175)"><circle r="80" fill="#061522" stroke="#d2f2ff" stroke-width="7"/><path d="M-62 0Q0-50 62 0Q0 50-62 0Z" fill="#e4f6ff"/><circle r="20" fill="#15405a"/></g>`);
