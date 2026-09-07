@@ -6,6 +6,7 @@ on:
       - fix/revisao-profunda-bancos-20260907
     paths:
       - 'scripts/audit-question-quality-v2.mjs'
+      - 'scripts/extract-question-quality-samples.mjs'
       - 'data/questions/*.json'
       - '.github/workflows/audit-question-quality-v2.yml'
   workflow_dispatch:
@@ -26,11 +27,13 @@ jobs:
           node-version: 20
       - name: Run quality audit
         run: node scripts/audit-question-quality-v2.mjs
+      - name: Extract review samples
+        run: node scripts/extract-question-quality-samples.mjs
       - name: Commit reports
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reports/question-quality-audit-v2.json reports/question-quality-audit-v2.md
+          git add reports/question-quality-audit-v2.json reports/question-quality-audit-v2.md reports/question-quality-samples.md
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "chore: atualiza auditoria de qualidade dos bancos [quality-audit-output]"
           git pull --rebase origin fix/revisao-profunda-bancos-20260907
