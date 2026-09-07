@@ -143,7 +143,12 @@ function markerFor(type) {
   return map[type] || map.ship;
 }
 
-function visualAsset(card) {\n  const explicit = String(card?.visual?.image || "").trim();\n  return explicit || "";\n}\n\nfunction NavalVisual({ card, reveal = false, compact = false, onZoom }) {
+function visualAsset(card) {
+  const explicit = String(card?.visual?.image || "").trim();
+  return explicit || "";
+}
+
+function NavalVisual({ card, reveal = false, compact = false, onZoom }) {
   const type = visualType(card);
   const [mx, my] = markerFor(type);
   const showRibs = ["structure", "frame", "section", "bulkhead", "plating"].includes(type);
