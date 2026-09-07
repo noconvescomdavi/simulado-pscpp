@@ -331,6 +331,37 @@ function renderRipeamSailingIssues(card) {
   </div>`;
 }
 
+function renderRipeamRuleReference(card) {
+  const id = String(card?.id || "");
+  const code = String(card?.code || "");
+  const match = code.match(/REGRA\s+(\d+)/i);
+  const n = match ? Number(match[1]) : 0;
+  const isRule21 = /^R21-/.test(id);
+  if (!(n >= 1 && n <= 20) && !isRule21) return "";
+
+  const ruleNo = isRule21 ? 21 : n;
+  const src = `https://ialacolreg.com/study-images/colreg/rule-${ruleNo}-1.webp`;
+  const title = String(card?.name || `Regra ${ruleNo}`);
+  const sector = isRule21 ? renderRipeamVisual(card) : "";
+  const sectorPanel = sector ? `<div style="display:flex;align-items:center;justify-content:center;min-height:220px;background:#061522;border-radius:14px;overflow:hidden">${sector}</div>` : "";
+
+  return `<div style="width:100%;min-height:330px;padding:12px;background:#061522;border-radius:20px;box-shadow:0 14px 34px rgba(0,0,0,.25)">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 3px 10px;color:#fff">
+      <strong style="font-size:13px">Regra ${ruleNo} · ${title}</strong>
+      <span style="font-size:10px;color:#9fc5d8">referência visual + leitura técnica</span>
+    </div>
+    <div style="display:grid;grid-template-columns:${sector ? "1.15fr .85fr" : "1fr"};gap:10px">
+      <figure style="margin:0;background:#fff;border-radius:14px;overflow:hidden;border:1px solid #d6e0e7;min-height:250px;display:flex;flex-direction:column">
+        <div style="flex:1;display:flex;align-items:center;justify-content:center;background:#fff;min-height:250px">
+          <img src="${src}" alt="Regra ${ruleNo} — ${title}" loading="eager" decoding="async" referrerpolicy="no-referrer" style="display:block;width:100%;height:100%;max-height:360px;object-fit:contain;background:#fff" />
+        </div>
+        <figcaption style="padding:8px 10px;background:#edf3f7;color:#173247;font-size:11px;font-weight:900;text-align:center">Regra ${ruleNo} · cenário de reconhecimento</figcaption>
+      </figure>
+      ${sectorPanel}
+    </div>
+  </div>`;
+}
+
 function renderRipeamPdfImage(card) {
   const src = RIPEAM_PDF_IMAGES[String(card?.id || "")];
   if (!src) return "";
@@ -343,6 +374,8 @@ function renderRipeamPdfImage(card) {
 
 
 function renderRipeamCinematic(card) {
+  const ruleReference = renderRipeamRuleReference(card);
+  if (ruleReference) return ruleReference;
   const sailingIssues = renderRipeamSailingIssues(card);
   if (sailingIssues) return sailingIssues;
   const pdfReference = renderRipeamPdfImage(card);
@@ -465,7 +498,17 @@ function emptyMetrics() {
 }
 
 export default function FlashcardsClient({ deck, initialState }) {
-  const cards = Array.isArray(deck.cards) ? deck.cards : [];
+  const cards = useMemo(() => {
+    const source = Array.isArray(deck.cards) ? deck.cards : [];
+    const seen = new Set();
+    return source.filter((card) => {
+      const semantic = normalize([card?.code, card?.name, card?.pt].join("|"));
+      if (!semantic) return true;
+      if (seen.has(semantic)) return false;
+      seen.add(semantic);
+      return true;
+    });
+  }, [deck.cards]);
   const [language, setLanguage] = useState("pt");
   const [dark, setDark] = useState(false);
   const [filter, setFilter] = useState("all");
@@ -880,6 +923,7 @@ export default function FlashcardsClient({ deck, initialState }) {
         </div>
 
         <div className={styles.heroActions}>
+          {deck.slug === "ripeam" && <a className={styles.tool3dLink} href="/flashcards/ripeam/3d">◈ Laboratório 3D RIPEAM</a>}
           <button type="button" onClick={() => setDark((value) => !value)}>
             {dark ? "☀ Tema claro" : "☾ Tema escuro"}
           </button>
@@ -985,21 +1029,21 @@ export default function FlashcardsClient({ deck, initialState }) {
             <div className={styles.flashcardWrap}>
               <button
                 type="button"
-                className={`${styles.flashcard} ${flipped ? styles.flipped : ""} ${current?.effect==="glow"?styles.effectGlow:""} ${current?.effect==="float"?styles.effectFloat:""} ${current?.effect==="tilt"?styles.effectTilt:""} ${current?.transition==="fast"?styles.transitionFast:""} ${current?.transition==="soft"?styles.transitionSoft:""} ${current?.transition==="dramatic"?styles.transitionDramatic:""}`}
+                className={`${styles.flashcard} ${deck.slug === "ripeam" ? styles.ripeamFlashcard : ""} ${flipped ? styles.flipped : ""} ${current?.effect==="glow"?styles.effectGlow:""} ${current?.effect==="float"?styles.effectFloat:""} ${current?.effect==="tilt"?styles.effectTilt:""} ${current?.transition==="fast"?styles.transitionFast:""} ${current?.transition==="soft"?styles.transitionSoft:""} ${current?.transition==="dramatic"?styles.transitionDramatic:""}`}
                 onClick={() => setFlipped((value) => !value)}
                 aria-label="Virar cartão"
               >
                 <div className={styles.flashcardInner}>
-                  <section className={`${styles.cardFace} ${styles.cardFront}`}>
+                  <section className={`${styles.cardFace} ${styles.cardFront} ${deck.slug === "ripeam" ? styles.ripeamFront : ""}`}>
                     <div className={styles.cardTopline}>
                       <span>{categoryLabel(current)}</span>
                       {currentProgress.difficult && <b>★ Difícil</b>}
                     </div>
                     <div
-                      className={styles.flagStage}
+                      className={`${styles.flagStage} ${deck.slug === "ripeam" ? styles.ripeamFlagStage : ""}`}
                       dangerouslySetInnerHTML={{ __html: renderCardVisual(current, deck.slug) }}
                     />
-                    <div className={styles.codeBlock}>
+                    <div className={`${styles.codeBlock} ${deck.slug === "ripeam" ? styles.ripeamCodeBlock : ""}`}>
                       <small>CÓDIGO</small>
                       <strong>{current.code}</strong>
                       <span>{current.name || categoryLabel(current)}</span>
