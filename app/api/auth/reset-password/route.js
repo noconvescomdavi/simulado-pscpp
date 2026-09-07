@@ -4,6 +4,7 @@ import { clientIpHash, consumeRateLimit, rateLimitResponse } from "../../../../l
 
 export async function POST(req) {
   try {
+    await assertSameOrigin();
     const limit = await clientIpHash().then((keyHash) =>
       consumeRateLimit({ action: "password_reset_confirm_ip", keyHash, limit: 10, windowSeconds: 3600 })
     );
