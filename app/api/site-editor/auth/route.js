@@ -30,10 +30,10 @@ export async function POST(request) {
 
     await setEditorCookie();
     return Response.json({ ok: true });
-  } catch {
+  } catch (error) {
     return Response.json(
-      { ok: false, error: "Não foi possível autenticar." },
-      { status: 400 }
+      { ok: false, error: Number(error?.status) === 403 ? "Origem inválida." : "Não foi possível autenticar." },
+      { status: Number(error?.status) || 400 }
     );
   }
 }
