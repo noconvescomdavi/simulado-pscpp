@@ -68,7 +68,11 @@ ${anchor}`;
 
 s=s.replace(
   `const props=bases.map((q,i)=>statement(q,pattern[i],seq+i));\n  const q={`,
-  `const props=distinctProps(bases.map((q,i)=>statement(q,pattern[i],seq+i)),bases);\n  const q={`
+  `const props=distinctProps(bases.map((q,i)=>statement(q,pattern[i],seq+i)),bases);\n  const focus=[...new Set(bases.map(topic))].slice(0,4).map(x=>\`“${'${x}'}”\`).join(', ');\n  const assertionIntro=[\n    \`Sobre ${'${chapter(bases[0])}'}, com foco comparativo em ${'${focus}'}, analise as afirmativas e assinale a alternativa que apresenta apenas as corretas:\`,\n    \`No âmbito de ${'${chapter(bases[0])}'}, confronte as proposições relativas a ${'${focus}'} e assinale a alternativa que reúne apenas as corretas:\`,\n    \`Considerando conjuntamente ${'${focus}'} em ${'${chapter(bases[0])}'}, avalie as afirmativas e indique a combinação correta:\`,\n    \`À luz de ${'${chapter(bases[0])}'}, examine as relações técnicas entre ${'${focus}'} e assinale a opção que contém somente afirmativas corretas:\`,\n    \`Em uma análise integrada de ${'${chapter(bases[0])}'}, envolvendo ${'${focus}'}, julgue as afirmativas e assinale a alternativa correta:\`\n  ][seq%5];\n  const q={`
+);
+s=s.replace(
+  `question: punct(\`Sobre ${'${chapter(bases[0])}'}, analise as afirmativas e assinale a alternativa que apresenta apenas as corretas:\\nI. ${'${props[0]}'}.\\nII. ${'${props[1]}'}.\\nIII. ${'${props[2]}'}.\\nIV. ${'${props[3]'}.}\`),`,
+  `question: punct(\`${'${assertionIntro}'}\\nI. ${'${props[0]}'}.\\nII. ${'${props[1]}'}.\\nIII. ${'${props[2]}'}.\\nIV. ${'${props[3]}'}.\`),`
 );
 s=s.replace(
   `const props=bases.map((q,i)=>statement(q,i!==falseIndex,seq+i));\n  const q={`,
@@ -107,4 +111,4 @@ const newLoop=`    const g=groups[i%groups.length];
 if (s.includes(oldLoop)) s=s.replace(oldLoop,newLoop); else if (!s.includes('Math.floor(i/groups.length)*5')) throw new Error('loop hard esperado não localizado');
 
 fs.writeFileSync(file,s);
-console.log('Revisão V2 endurecida para unicidade, enunciados comparativos e preservação do baseline.');
+console.log('Revisão V2 endurecida para unicidade, enunciados comparativos variados e preservação do baseline.');
