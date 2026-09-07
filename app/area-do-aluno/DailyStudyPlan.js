@@ -5,8 +5,9 @@ import { useMemo, useState } from "react";
 export default function DailyStudyPlan({ initialPlan }) {
   const [plan, setPlan] = useState(initialPlan);
   const [busy, setBusy] = useState("");
-  const [dailyMinutes, setDailyMinutes] = useState(plan.goal.daily_minutes);
-  const [weeklyQuestions, setWeeklyQuestions] = useState(plan.goal.weekly_questions);
+  const integrated = plan?.source === "integrated";
+  const [dailyMinutes, setDailyMinutes] = useState(plan?.goal?.daily_minutes || 60);
+  const [weeklyQuestions, setWeeklyQuestions] = useState(plan?.goal?.weekly_questions || 350);
   const [savingGoals, setSavingGoals] = useState(false);
 
   const completedMinutes = useMemo(
@@ -18,45 +19,39 @@ export default function DailyStudyPlan({ initialPlan }) {
   );
 
   async function toggleTask(task) {
-    if (busy) return;
+    if (busy || task.completed) return;
     setBusy(task.key);
-
-    const nextCompleted = !task.completed;
-    setPlan((current) => ({
-      ...current,
-      tasks: current.tasks.map((item) =>
-        item.key === task.key ? { ...item, completed: nextCompleted } : item
-      ),
-      progress: {
-        ...current.progress,
-        completed:
-          current.progress.completed + (nextCompleted ? 1 : -1),
-        percent: Math.round(
-          ((current.progress.completed + (nextCompleted ? 1 : -1)) /
-            current.progress.total) *
-            100
-        ),
-      },
-    }));
+    const previous=plan;
+    setPlan(current=>{
+      const tasks=current.tasks.map(item=>item.key===task.key?{...item,completed:true,status:"done"}:item);
+      const completed=tasks.filter(item=>item.completed).length;
+      return {...current,tasks,progress:{...current.progress,total:tasks.length,completed,percent:tasks.length?Math.round(completed/tasks.length*100):0}};
+    });
 
     try {
-      const response = await fetch("/api/study-plan", {
+      const response = await fetch("/api/study-plan/task", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          task_key: task.key,
-          completed: nextCompleted,
+          kind:"task",
+          plan_date:task.plan_date,
+          task_key:task.key,
+          task_type:task.type,
+          subject_slug:task.subject,
+          status:"done",
+          bibliography_key:task.bibliography_key||null,
+          section_key:task.section_key||null,
+          page_from:task.page_from||null,
+          page_to:task.page_to||null,
+          complete_bibliography_unit:task.type==="reading",
+          metadata:{title:task.title,description:task.description,href:task.href||null,source:"dashboard_master_plan"}
         }),
       });
-
-      if (!response.ok) throw new Error();
-      const data = await response.json();
-      setPlan((current) => ({
-        ...current,
-        progress: data.progress || current.progress,
-      }));
-    } catch {
-      setPlan(initialPlan);
+      const data=await response.json().catch(()=>({}));
+      if (!response.ok) throw new Error(data.error||"Não foi possível salvar a conclusão.");
+    } catch (error) {
+      setPlan(previous);
+      window.alert(error.message||"Não foi possível salvar a conclusão.");
     } finally {
       setBusy("");
     }
@@ -94,7 +89,9 @@ export default function DailyStudyPlan({ initialPlan }) {
           <span>PLANO DIÁRIO ESTIBORDO</span>
           <h2>Seu rumo de estudo para hoje</h2>
           <p>
-            Prioridades calculadas a partir do seu desempenho, erros e meta semanal.
+            {integrated
+              ? "As tarefas abaixo são as mesmas do seu Plano de Estudos Inteligente. Concluir aqui atualiza o planejamento e a bibliografia."
+              : "Prioridades calculadas a partir do seu desempenho, erros e meta semanal."}
           </p>
         </div>
 
@@ -110,11 +107,12 @@ export default function DailyStudyPlan({ initialPlan }) {
 
       <div className="dailyPlanMeta">
         <span>Meta diária: <b>{plan.goal.daily_minutes} min</b></span>
-        <span>Questões hoje: <b>{plan.goal.questions_answered_today}/{plan.goal.daily_question_target}</b></span>
+        {!integrated&&<span>Questões hoje: <b>{plan.goal.questions_answered_today}/{plan.goal.daily_question_target}</b></span>}
+        {integrated&&plan.phase?.label&&<span>Fase: <b>{plan.phase.label}</b></span>}
         <span>Concluído: <b>{completedMinutes} min</b></span>
       </div>
 
-      <details className="dailyPlanSettings">
+      {!integrated&&<details className="dailyPlanSettings">
         <summary>Ajustar minhas metas</summary>
         <form onSubmit={saveGoals}>
           <label>
@@ -141,7 +139,7 @@ export default function DailyStudyPlan({ initialPlan }) {
             {savingGoals ? "Salvando..." : "Salvar metas"}
           </button>
         </form>
-      </details>
+      </details>}
 
       <div className="dailyPlanTasks">
         {plan.tasks.map((task, index) => (
@@ -152,18 +150,14 @@ export default function DailyStudyPlan({ initialPlan }) {
             <button
               type="button"
               className="dailyTaskCheck"
-              aria-label={
-                task.completed
-                  ? `Marcar ${task.title} como pendente`
-                  : `Marcar ${task.title} como concluída`
-              }
+              aria-label={task.completed ? `${task.title} concluída` : `Marcar ${task.title} como concluída`}
               onClick={() => toggleTask(task)}
               disabled={busy === task.key}
             >
               {task.completed ? "✓" : index + 1}
             </button>
 
-            <a href={task.href} className="dailyTaskMain">
+            <a href={task.href || "/plano-de-estudos"} className="dailyTaskMain">
               <div>
                 <span>{task.target_label}</span>
                 <strong>{task.title}</strong>
