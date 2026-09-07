@@ -19,8 +19,17 @@ export async function GET() {
 }
 
 export async function POST(request) {
+  try { await assertSameOrigin(); } catch { return Response.json({ error: "Origem inválida." }, { status: 403 }); }
   const session = await getSession();
   if (!session) return Response.json({ error: "Não autenticado" }, { status: 401 });
+
+  const limit = await consumeRateLimit({
+    action: "support_ticket_user",
+    keyHash: identityHash(session.id),
+    limit: 8,
+    windowSeconds: 3600,
+  });
+  if (!limit.allowed) return rateLimitResponse(limit);
 
   const body = await request.json().catch(() => ({}));
   const subject = String(body.subject || "").trim().slice(0, 140);
