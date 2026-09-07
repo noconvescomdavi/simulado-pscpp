@@ -7,6 +7,7 @@ on:
     paths:
       - 'scripts/revise-question-banks-context-v2.mjs'
       - 'scripts/harden-context-revision-v2.mjs'
+      - 'scripts/fix-hard-duplicate-stem-v2.mjs'
       - 'scripts/fix-audit-math-normalization.mjs'
       - '.github/workflows/revise-question-banks-context-v2.yml'
   workflow_dispatch:
@@ -30,6 +31,8 @@ jobs:
         run: npm ci
       - name: Harden contextual revision
         run: node scripts/harden-context-revision-v2.mjs
+      - name: Differentiate hard duplicate stems
+        run: node scripts/fix-hard-duplicate-stem-v2.mjs
       - name: Fix audit normalization
         run: node scripts/fix-audit-math-normalization.mjs
       - name: Revise all question banks
@@ -40,17 +43,6 @@ jobs:
         run: node scripts/extract-question-quality-samples.mjs
       - name: Report stem patterns
         run: node scripts/report-question-stem-patterns.mjs
-      - name: Diagnose remaining Arte Naval duplicate
-        run: |
-          node --input-type=module <<'NODE'
-          import fs from 'node:fs';
-          const bank=JSON.parse(fs.readFileSync('data/questions/arte-naval.json','utf8'));
-          const norm=v=>String(v??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').replace(/\s+/g,' ').trim();
-          const target=bank.questions.find(q=>q.id==='ANV-1250');
-          console.log('TARGET', JSON.stringify(target,null,2));
-          const dup=bank.questions.filter(q=>q.id!=='ANV-1250' && norm(q.question)===norm(target?.question));
-          console.log('DUPLICATES', JSON.stringify(dup.map(q=>({id:q.id,style:q.style,question:q.question,topic:q.topic,taxonomy:q.taxonomy,source:q.source,provenance:q.provenance})),null,2));
-          NODE
       - name: Validate repository
         run: npm run validate
       - name: Commit reviewed banks
