@@ -6,10 +6,12 @@ import {
   consumeRateLimit,
   identityHash,
   rateLimitResponse,
+  assertSameOrigin,
 } from "../../../../lib/security";
 
 export async function POST(req) {
   try {
+    await assertSameOrigin();
     const body = await req.json().catch(() => ({}));
     const normalized = String(body.email || "").trim().toLowerCase();
     const password = String(body.password || "");
