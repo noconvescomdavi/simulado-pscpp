@@ -60,7 +60,7 @@ export async function POST(request){
       continue;
     }
     if(Number(file.size||0)>50*1024*1024){
-      uploaded.push({filename:name,error:"Arquivo acima de 50 MB."});
+      uploaded.push({filename:name,error:"Para PDFs acima de 50 MB, use o upload multipart do painel do CONTRAMESTRE."});
       continue;
     }
 
