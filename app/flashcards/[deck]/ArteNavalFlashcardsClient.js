@@ -119,7 +119,7 @@ function groupLabel(card) {
 function promptFor(card, direction) {
   if (direction === "pt-en") return `Qual é o termo técnico em inglês para “${termPt(card)}”?`;
   if (direction === "en-pt") return `Qual é o termo técnico em português para “${termEn(card)}”?`;
-  return "Identifique o elemento ou conceito naval destacado.";
+  return "Observe a imagem e relacione-a ao termo técnico apresentado.";
 }
 
 function choiceLabel(card, direction) {
@@ -139,7 +139,7 @@ function markerFor(type) {
   return map[type] || map.ship;
 }
 
-function NavalVisual({ card, reveal = false, compact = false }) {
+function visualAsset(card) {\n  const explicit = String(card?.visual?.image || "").trim();\n  return explicit || "";\n}\n\nfunction NavalVisual({ card, reveal = false, compact = false, onZoom }) {
   const type = visualType(card);
   const [mx, my] = markerFor(type);
   const showRibs = ["structure", "frame", "section", "bulkhead", "plating"].includes(type);
@@ -258,7 +258,7 @@ export default function ArteNavalFlashcardsClient({ deck, initialState }) {
   const [examFeedback, setExamFeedback] = useState(null);
   const [examNumber, setExamNumber] = useState(0);
   const [examCorrect, setExamCorrect] = useState(0);
-  const [examTotal, setExamTotal] = useState(0);
+  const [examTotal, setExamTotal] = useState(0);\n  const [imageZoom, setImageZoom] = useState(false);\n  const [noteOpen, setNoteOpen] = useState(false);
 
   const shownAt = useRef(Date.now());
   const sessionRef = useRef({ id: null, mode: null });
@@ -607,6 +607,13 @@ export default function ArteNavalFlashcardsClient({ deck, initialState }) {
         </div>
       </section>
 
+      <section className={styles.featureStrip}>
+        <div><b>◫</b><span>Biblioteca visual</span><small>Imagens e diagramas por termo</small></div>
+        <div><b>EN</b><span>PT ↔ EN</span><small>Terminologia técnica bilíngue</small></div>
+        <div><b>≡</b><span>Definições oficiais</span><small>Baseadas na bibliografia de Arte Naval</small></div>
+        <div><b>★</b><span>Revisão inteligente</span><small>Favoritos, erros e progresso</small></div>
+      </section>
+
       <section className={styles.metrics} aria-label="Métricas do baralho">
         <article><span>Estudados</span><strong>{studiedCount}</strong><small>{unseenCount} ainda inéditos</small></article>
         <article><span>Dominados</span><strong>{masteredCount}</strong><small>2+ acertos e último acerto correto</small></article>
@@ -684,12 +691,13 @@ export default function ArteNavalFlashcardsClient({ deck, initialState }) {
                       <span>{groupLabel(current)}</span>
                       <div>{currentProgress.difficult && <b>★ Difícil</b>}<small>{current.code}</small></div>
                     </div>
-                    <div className={styles.visualStage}><NavalVisual card={current} /></div>
-                    <div className={styles.questionBlock}>
-                      <small>{direction === "visual" ? "RECONHECIMENTO VISUAL" : direction === "pt-en" ? "PORTUGUÊS → INGLÊS" : "INGLÊS → PORTUGUÊS"}</small>
-                      {frontTerm && <h2>{frontTerm}</h2>}
-                      <p>{promptFor(current, direction)}</p>
+                    <div className={styles.termHero}>
+                      <small>{direction === "visual" ? "ARTE NAVAL · TERMO TÉCNICO" : direction === "pt-en" ? "PORTUGUÊS → INGLÊS" : "INGLÊS → PORTUGUÊS"}</small>
+                      <h2>{direction === "visual" ? termPt(current) : frontTerm}</h2>
+                      {direction === "visual" && <h3>{termEn(current)}</h3>}
                     </div>
+                    <div className={styles.visualStage}><NavalVisual card={current} onZoom={() => setImageZoom(true)} /></div>
+                    <div className={styles.questionBlock}><p>{promptFor(current, direction)}</p></div>
                     <div className={styles.flipHint}>Toque para revelar <kbd>ESPAÇO</kbd></div>
                   </section>
 
@@ -704,8 +712,16 @@ export default function ArteNavalFlashcardsClient({ deck, initialState }) {
                         <small>TERMO TÉCNICO</small>
                         <h2>{termPt(current)}</h2>
                         <h3>{termEn(current)}</h3>
-                        <div className={styles.definition}><span>Definição</span><p>{current.pt}</p></div>
-                        <div className={styles.sourceLine}><span>Fonte</span><strong>Arte Naval · Volume 1 · 8ª ed. · Capítulo 1</strong></div>
+                        <div className={styles.definition}><span>DEFINIÇÃO</span><p>{current.pt}</p></div>
+                        <div className={styles.learningCallout}>
+                          <strong>Pontos para fixação</strong>
+                          <ul>
+                            <li>Associe o termo em português ao equivalente técnico em inglês.</li>
+                            <li>Observe forma, posição e função do elemento na embarcação.</li>
+                            <li>Use a definição da bibliografia como referência principal.</li>
+                          </ul>
+                        </div>
+                        <div className={styles.sourceLine}><span>Fonte principal</span><strong>Arte Naval · Volume 1 · 8ª edição · Serviço de Documentação da Marinha</strong></div>
                       </div>
                     </div>
                     <div className={styles.flipHint}>Toque para voltar <kbd>ESPAÇO</kbd></div>
@@ -725,6 +741,12 @@ export default function ArteNavalFlashcardsClient({ deck, initialState }) {
               <div><kbd>←</kbd><kbd>→</kbd> navegar · <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> classificar</div>
               <button type="button" onClick={() => moveCard(1)} disabled={filtered.length <= 1}>Próximo →</button>
             </div>
+            <div className={styles.cardTools}>
+              <button type="button" onClick={() => setImageZoom(true)}>⌕ Ampliar imagem</button>
+              <button type="button" onClick={() => setNoteOpen((v) => !v)}>✎ {noteOpen ? "Fechar anotação" : "Anotação rápida"}</button>
+              <button type="button" onClick={() => void toggleDifficult()}>{currentProgress.difficult ? "★ Favoritado" : "☆ Favoritar"}</button>
+            </div>
+            {noteOpen && <textarea className={styles.noteBox} placeholder="Anote aqui uma associação, dúvida ou detalhe para revisar. A anotação é local desta sessão e não altera a bibliografia." />}
           </>
         )}
 
@@ -790,6 +812,13 @@ export default function ArteNavalFlashcardsClient({ deck, initialState }) {
         <button type="button" className={styles.reset} onClick={() => void resetProgress()}>Resetar progresso</button>
       </section>
 
+      {imageZoom && current && (
+        <div className={styles.zoomModal} role="dialog" aria-modal="true" onClick={() => setImageZoom(false)}>
+          <button type="button" aria-label="Fechar" onClick={() => setImageZoom(false)}>×</button>
+          <div onClick={(e) => e.stopPropagation()}><NavalVisual card={current} reveal /></div>
+          <strong>{termPt(current)} · {termEn(current)}</strong>
+        </div>
+      )}
       {toast && <div className={styles.toast} role="status">{toast}</div>}
     </main>
   );
