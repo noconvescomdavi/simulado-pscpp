@@ -289,7 +289,7 @@ export default function Client({ subject, title, ready, facets }) {
 
       <article>
         <p className={styles.trace}>
-          {[question.tracking?.work?.title,question.tracking?.chapter?.label,question.tracking?.module,question.tracking?.topic?.title]
+          {[question.tracking?.work?.title,question.tracking?.chapter?.label,question.tracking?.module]
             .filter(Boolean)
             .join(" · ")}
         </p>

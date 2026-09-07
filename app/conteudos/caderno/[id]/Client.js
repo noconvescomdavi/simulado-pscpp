@@ -392,7 +392,6 @@ export default function Client({
             question.tracking?.work?.title,
             question.tracking?.chapter?.label,
             question.tracking?.module,
-            question.tracking?.topic?.title,
           ]
             .filter(Boolean)
             .join(" · ")}
