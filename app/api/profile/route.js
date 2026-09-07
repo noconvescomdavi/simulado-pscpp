@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getSession } from "../../../lib/auth";
 import { query } from "../../../lib/db";
 import { sanitizeProfile } from "../../../lib/profile";
+import { assertSameOrigin } from "../../../lib/security";
 
 export const dynamic = "force-dynamic";
 
@@ -13,6 +14,7 @@ export async function GET() {
 }
 
 export async function POST(request) {
+  await assertSameOrigin();
   const session = await getSession();
   if (!session) return NextResponse.redirect(new URL("/login?next=/perfil", request.url), 303);
   try {
