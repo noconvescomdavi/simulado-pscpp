@@ -5,11 +5,18 @@ import styles from "./ripeam-3d.module.css";
 const SCENARIOS={
  power:{label:"Propulsão mecânica",rule:"23",lights:[["Mastro","#fff2ba"],["Bombordo","#ef3c4e"],["Boreste","#35dc83"],["Alcançado","#fff2ba"]],shape:""},
  sail:{label:"Embarcação a vela",rule:"25",lights:[["Bombordo","#ef3c4e"],["Boreste","#35dc83"],["Alcançado","#fff2ba"]],shape:""},
+ towShort:{label:"Reboque ≤ 200 m",rule:"24",lights:[["Mastro 1","#fff2ba"],["Mastro 2","#fff2ba"],["Reboque","#ffd34d"],["Bombordo","#ef3c4e"],["Boreste","#35dc83"]],shape:""},
  tow:{label:"Reboque > 200 m",rule:"24",lights:[["Mastro 1","#fff2ba"],["Mastro 2","#fff2ba"],["Mastro 3","#fff2ba"],["Reboque","#ffd34d"]],shape:"◆"},
- nuc:{label:"Sem governo",rule:"27(a)",lights:[["Circular","#ef3c4e"],["Circular","#ef3c4e"]],shape:"● ●"},
+ nuc:{label:"Sem governo",rule:"27(a)",lights:[["Circular","#ef3c4e"],["Circular","#ef3c4e"],["Bombordo","#ef3c4e"],["Boreste","#35dc83"]],shape:"● ●"},
  ram:{label:"Manobra restrita",rule:"27(b)",lights:[["Circular","#ef3c4e"],["Circular","#fff2ba"],["Circular","#ef3c4e"]],shape:"● ◆ ●"},
+ dredgePort:{label:"Dragagem — obstrução a bombordo",rule:"27(d)",lights:[["RAM","#ef3c4e"],["RAM","#fff2ba"],["RAM","#ef3c4e"],["Obstruído","#ef3c4e"],["Obstruído","#ef3c4e"],["Passagem","#35dc83"],["Passagem","#35dc83"]],shape:"● ◆ ●"},
+ dredgeStbd:{label:"Dragagem — obstrução a boreste",rule:"27(d)",lights:[["RAM","#ef3c4e"],["RAM","#fff2ba"],["RAM","#ef3c4e"],["Passagem","#35dc83"],["Passagem","#35dc83"],["Obstruído","#ef3c4e"],["Obstruído","#ef3c4e"]],shape:"● ◆ ●"},
+ mine:{label:"Remoção de minas",rule:"27(f)",lights:[["Verde — tope","#35dc83"],["Verde — lais BB","#35dc83"],["Verde — lais BE","#35dc83"]],shape:"● ● ●"},
+ diving:{label:"Operação de mergulho",rule:"27(e)",lights:[["RAM","#ef3c4e"],["RAM","#fff2ba"],["RAM","#ef3c4e"]],shape:"A"},
+ cbd:{label:"Restrita pelo calado",rule:"28",lights:[["Circular","#ef3c4e"],["Circular","#ef3c4e"],["Circular","#ef3c4e"]],shape:"▮"},
+ pilot:{label:"Praticagem",rule:"29",lights:[["Circular branca","#fff2ba"],["Circular encarnada","#ef3c4e"],["Bombordo","#ef3c4e"],["Boreste","#35dc83"]],shape:""},
  anchor:{label:"Fundeada",rule:"30",lights:[["Circular vante","#fff2ba"],["Circular ré","#fff2ba"]],shape:"●"},
- pilot:{label:"Praticagem",rule:"29",lights:[["Circular","#fff2ba"],["Circular","#ef3c4e"]],shape:""}
+ aground:{label:"Encalhada",rule:"30(d)",lights:[["Fundeio vante","#fff2ba"],["Fundeio ré","#fff2ba"],["Circular","#ef3c4e"],["Circular","#ef3c4e"]],shape:"● ● ●"}
 };
 const PRESETS={Bow:0,"Stbd":-90,Stern:180,Port:90};
 

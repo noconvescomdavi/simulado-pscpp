@@ -70,6 +70,10 @@ function Menu({ active = "", flashcardDecks = [] }) {
         </div></div>
       </details>
 
+      <a className={active === "ripeam3d" ? styles.active : ""} href="/flashcards/ripeam/3d">
+        <span className={styles.icon}>◈</span><span>Laboratório RIPEAM 3D</span>
+      </a>
+
       <details className={styles.group} open={active === "mapas"}>
         <summary>
           <span><b className={styles.icon}>🧠</b> Mapas Mentais</span>
