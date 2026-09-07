@@ -90,7 +90,7 @@ export default function PlanClient({plan}){
       setTimeout(()=>setTaskMessages(m=>{const n={...m};delete n[key];return n}),2200);
     }catch(error){
       // Reverte o estado otimista para não mostrar conclusão que não foi persistida.
-      setWeek(w=>({...w,days:w.days.map(d=>d.iso!==day.iso?d:{...d,tasks:d.tasks.map(t=>t.key!==task.key?t:previousTask})}));
+      setWeek(w=>({...w,days:w.days.map(d=>d.iso!==day.iso?d:{...d,tasks:d.tasks.map(t=>t.key!==task.key?t:previousTask)})}));
       setTaskMessages(m=>({...m,[key]:error.message||"Falha ao salvar"}));
       setMessage(error.message||"Não foi possível marcar a tarefa como feita.");
     }finally{
