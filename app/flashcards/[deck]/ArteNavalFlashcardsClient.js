@@ -95,6 +95,10 @@ function termEn(card) {
   return String(card?.term_en || "—").trim();
 }
 
+function frontTitle(card) {
+  return String(card?.front_title || termPt(card)).trim();
+}
+
 function cardSearchText(card) {
   return normalize([
     card?.code,
@@ -693,7 +697,7 @@ export default function ArteNavalFlashcardsClient({ deck, initialState }) {
                     </div>
                     <div className={styles.termHero}>
                       <small>{direction === "visual" ? "ARTE NAVAL · TERMO TÉCNICO" : direction === "pt-en" ? "PORTUGUÊS → INGLÊS" : "INGLÊS → PORTUGUÊS"}</small>
-                      <h2>{direction === "visual" ? termPt(current) : frontTerm}</h2>
+                      <h2>{direction === "visual" ? frontTitle(current) : frontTerm}</h2>
                       {direction === "visual" && <h3>{termEn(current)}</h3>}
                     </div>
                     <div className={styles.visualStage}><NavalVisual card={current} onZoom={() => setImageZoom(true)} /></div>
