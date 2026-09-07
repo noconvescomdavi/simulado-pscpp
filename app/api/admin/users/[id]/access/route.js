@@ -117,7 +117,7 @@ export async function POST(req, { params }) {
         error:"Erro interno ao alterar acesso do usuário.",
         detail:process.env.NODE_ENV==="development"?String(error?.message||error):undefined
       },
-      {status:500}
+      {status:Number(error?.status)||500}
     );
   }
 }
