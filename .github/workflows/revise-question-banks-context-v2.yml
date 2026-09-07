@@ -55,5 +55,5 @@ jobs:
           git add data/questions/*.json reports/question-context-revision-v2.json reports/question-context-revision-v2.md reports/question-quality-audit-v2.json reports/question-quality-audit-v2.md reports/question-quality-samples.md reports/question-stem-patterns.md
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "feat: revisa contexto e dificuldade dos bancos [context-revision-v2-output]"
-          git pull --rebase origin fix/revisao-profunda-bancos-20260907
+          git restore scripts/revise-question-banks-context-v2.mjs scripts/audit-question-quality-v2.mjs || true
           git push origin HEAD:fix/revisao-profunda-bancos-20260907
