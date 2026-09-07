@@ -13,7 +13,8 @@
     "validate:taxonomy": "npm run validate:taxonomy:master && npm run validate:taxonomy:arte-naval",
     "validate": "npm run check:repo && npm run validate:questions && npm run validate:taxonomy && npm run build",
     "import:manobrabilidade": "node scripts/import-manobrabilidade.mjs",
-    "validate:questions:all": "npm run validate:questions && npm run validate:taxonomy"
+    "validate:questions:all": "npm run validate:questions && npm run validate:taxonomy",
+    "security:audit": "npm audit --audit-level=high"
   },
   "dependencies": {
     "argon2": "^0.41.1",
