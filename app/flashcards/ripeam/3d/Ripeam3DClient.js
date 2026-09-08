@@ -11,8 +11,8 @@ const SCENARIOS={
  tow:{label:"Reboque > 200 m",rule:"24",vessel:"tow-combo",lights:[["Mastro 1","#fff2ba",225],["Mastro 2","#fff2ba",225],["Mastro 3","#fff2ba",225],["Reboque","#ffd34d",135]],shape:"◆"},
  nuc:{label:"Sem governo",rule:"27(a)",vessel:"bulk-carrier",lights:[["Circular encarnada","#ef3c4e",360],["Circular encarnada","#ef3c4e",360],["Bombordo","#ef3c4e",112.5],["Boreste","#35dc83",112.5]],shape:"● ●"},
  ram:{label:"Manobra restrita",rule:"27(b)",vessel:"bulk-carrier",lights:[["Circular encarnada","#ef3c4e",360],["Circular branca","#fff2ba",360],["Circular encarnada","#ef3c4e",360]],shape:"● ◆ ●"},
- dredgePort:{label:"Dragagem — obstrução a bombordo",rule:"27(d)",vessel:"tugboat",lights:[["RAM","#ef3c4e",360],["RAM","#fff2ba",360],["RAM","#ef3c4e",360],["Obstruído","#ef3c4e",360],["Obstruído","#ef3c4e",360],["Passagem","#35dc83",360],["Passagem","#35dc83",360]],shape:"● ◆ ●"},
- dredgeStbd:{label:"Dragagem — obstrução a boreste",rule:"27(d)",vessel:"tugboat",lights:[["RAM","#ef3c4e",360],["RAM","#fff2ba",360],["RAM","#ef3c4e",360],["Passagem","#35dc83",360],["Passagem","#35dc83",360],["Obstruído","#ef3c4e",360],["Obstruído","#ef3c4e",360]],shape:"● ◆ ●"},
+ dredgePort:{label:"Dragagem — obstrução a bombordo",rule:"27(d)",vessel:"dredger",lights:[["RAM","#ef3c4e",360],["RAM","#fff2ba",360],["RAM","#ef3c4e",360],["Obstruído","#ef3c4e",360],["Obstruído","#ef3c4e",360],["Passagem","#35dc83",360],["Passagem","#35dc83",360]],shape:"● ◆ ●"},
+ dredgeStbd:{label:"Dragagem — obstrução a boreste",rule:"27(d)",vessel:"dredger",lights:[["RAM","#ef3c4e",360],["RAM","#fff2ba",360],["RAM","#ef3c4e",360],["Passagem","#35dc83",360],["Passagem","#35dc83",360],["Obstruído","#ef3c4e",360],["Obstruído","#ef3c4e",360]],shape:"● ◆ ●"},
  mine:{label:"Remoção de minas",rule:"27(f)",vessel:"mine-clearance",lights:[["Verde — tope","#35dc83",360],["Verde — lais BB","#35dc83",360],["Verde — lais BE","#35dc83",360]],shape:"● ● ●"},
  diving:{label:"Operação de mergulho",rule:"27(e)",vessel:"tugboat",lights:[["RAM","#ef3c4e",360],["RAM","#fff2ba",360],["RAM","#ef3c4e",360]],shape:"A"},
  cbd:{label:"Restrita pelo calado",rule:"28",vessel:"bulk-carrier",lights:[["Circular encarnada","#ef3c4e",360],["Circular encarnada","#ef3c4e",360],["Circular encarnada","#ef3c4e",360]],shape:"▮"},
@@ -23,8 +23,8 @@ const SCENARIOS={
 };
 
 const PRESETS={Bow:0,"22.5° BE":-22.5,Stbd:-90,Stern:180,Port:90,"22.5° BB":22.5};
-const VESSEL_LABELS={"bulk-carrier":"Bulk carrier 3D","tow-combo":"Tugboat + barge 3D","sailboat":"Sailboat 3D","fishing-vessel":"Fishing vessel 3D","pilot-boat":"Pilot boat 3D","mine-clearance":"Mine-clearance vessel 3D","seaplane":"Hidroavião 3D","tugboat":"Tugboat 3D"};
-const PREFETCH_URLS={"bulk-carrier":"/models/ripeam/web/bulk_carrier-low.glb","tow-combo":"/models/ripeam/web/Tugboat.glb","tugboat":"/models/ripeam/web/Tugboat.glb","sailboat":"/models/ripeam/web/sailboat.glb","fishing-vessel":"/models/ripeam/web/fishing_vessel.glb","pilot-boat":"/models/ripeam/web/pilot_boat.glb","mine-clearance":"/models/ripeam/web/navy_mine_clearance.glb","seaplane":"/models/ripeam/web/hidroaviao.glb"};
+const VESSEL_LABELS={"bulk-carrier":"Bulk carrier 3D","tow-combo":"Tugboat + barge 3D","sailboat":"Sailboat 3D","fishing-vessel":"Fishing vessel 3D","pilot-boat":"Pilot boat 3D","mine-clearance":"Mine-clearance vessel 3D","seaplane":"Hidroavião 3D","tugboat":"Tugboat 3D","dredger":"Dredger 3D"};
+const PREFETCH_URLS={"bulk-carrier":"/models/ripeam/web/bulk_carrier-low.glb","tow-combo":"/models/ripeam/web/Tugboat.glb","tugboat":"/models/ripeam/web/Tugboat.glb","sailboat":"/models/ripeam/web/sailboat.glb","fishing-vessel":"/models/ripeam/web/fishing_vessel.glb","pilot-boat":"/models/ripeam/web/pilot_boat.glb","mine-clearance":"/models/ripeam/web/navy_mine_clearance.glb","seaplane":"/models/ripeam/web/hidroaviao.glb","dredger":"/models/ripeam/web/dredger.glb"};
 
 export default function Ripeam3DClient(){
  const [scenario,setScenario]=useState("power");
