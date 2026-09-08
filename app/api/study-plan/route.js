@@ -68,7 +68,7 @@ export async function POST(request) {
       section_key:task.section_key||null,
       page_from:task.page_from||null,
       page_to:task.page_to||null,
-      complete_bibliography_unit:task.type==="reading",
+      complete_bibliography_unit:task.type==="reading"&&!(task.page_from&&task.page_to),
       metadata:{
         title:task.title,description:task.description,href:task.href||null,
         source:"integrated_study_plan_api"
