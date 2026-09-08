@@ -46,3 +46,11 @@
 .taskOverdue .taskActions a,.taskOverdue .taskActions button{border-color:#8b5d35}
 @media(max-width:1000px){.trackingGrid{grid-template-columns:1fr 1fr}.backlogList{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.trackingGrid{grid-template-columns:1fr}.backlogList{grid-template-columns:1fr}}
+
+
+.dayAvailability{margin-top:7px;padding:7px;border-radius:8px;background:#0a1d2b;border:1px dashed #315a73;display:grid;gap:6px}
+.dayAvailability>button,.dayAvailability>span{font-size:6px;font-weight:900}
+.dayAvailability>button{border:1px solid #315a73;background:#0d2a3d;color:#b9dff7;border-radius:6px;padding:6px;cursor:pointer}
+.dayAvailability>span{color:#ffd178}
+.unavailableReasons{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.unavailableReasons button{border:1px solid #4c5f6f;background:#101e28;color:#d6e4ee;border-radius:5px;padding:5px;font-size:6px;cursor:pointer}
