@@ -1,5 +1,6 @@
 import {getAdmin} from "../../../../../lib/admin";
 import {query} from "../../../../../lib/db";
+import {assertSameOrigin} from "../../../../../lib/security";
 
 export const dynamic="force-dynamic";
 
@@ -41,6 +42,7 @@ export async function GET(){
 }
 
 export async function POST(request){
+  try{await assertSameOrigin();}catch(error){return Response.json({error:"Origem inválida."},{status:Number(error?.status)||403});}
   const admin=await getAdmin();
   if(!admin)return Response.json({error:"Acesso negado."},{status:403});
   if(!openAiKey())return Response.json({error:"Configure OPENAI_API_KEY antes de enviar a bibliografia."},{status:503});
