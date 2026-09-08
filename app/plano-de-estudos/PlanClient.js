@@ -43,7 +43,7 @@ export default function PlanClient({plan}){
   const today=todayIso();
 
   useEffect(()=>{
-    if(plan.week?.snapshot_id||Number(plan.week?.offset||0)<0)return;
+    if(plan.week?.snapshot_id||Number(plan.week?.offset||0)!==0)return;
     let cancelled=false;
     fetch("/api/study-plan/snapshot",{
       method:"POST",
