@@ -26,6 +26,9 @@ jobs:
       - name: Repository hygiene
         run: npm run check:repo
 
+      - name: Study Plan V3 invariants
+        run: npm run validate:study-plan
+
       - name: Validate question banks
         run: npm run validate:questions
 
