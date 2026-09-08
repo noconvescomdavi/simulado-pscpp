@@ -65,7 +65,7 @@ export default function Ripeam3DClient(){
          </div>
          <div className={styles.dragHint}>Arraste para girar · roda do mouse para zoom · ${Math.round(zoom*100)}%</div>
        </div>
-       <footer className={styles.viewerFooter}><div><b>{s.label}</b><span>Regra {s.rule}</span></div><strong>Aspecto: {Math.round(((yaw%360)+360)%360)}° · {s.vessel==="bulk-carrier"?"Bulk carrier 3D":s.vessel==="tow-combo"?"Tugboat + barge 3D":s.vessel==="sailboat"?"Sailboat 3D":s.vessel==="fishing-vessel"?"Fishing vessel 3D":s.vessel==="pilot-boat"?"Pilot boat 3D":s.vessel==="mine-clearance"?"Mine-clearance vessel 3D":"modelo de treinamento"}</strong></footer>
+       <footer className={styles.viewerFooter}><div><b>{s.label}</b><span>Regra {s.rule}</span></div><strong>Aspecto: {Math.round(((yaw%360)+360)%360)}° · {s.vessel==="bulk-carrier"?"Bulk carrier 3D":s.vessel==="tow-combo"?"Tugboat + barge 3D":s.vessel==="sailboat"?"Sailboat 3D":s.vessel==="fishing-vessel"?"Fishing vessel 3D":s.vessel==="pilot-boat"?"Pilot boat 3D":s.vessel==="mine-clearance"?"Mine-clearance vessel 3D":s.vessel==="seaplane"?"Hidroavião 3D":"modelo de treinamento"}</strong></footer>
      </div>
      <aside className={styles.lightList}><h2>Luzes / marcas</h2>{s.lights.map((x,i)=><div key={i}><i style={{background:x[1]}}/><span><b>{x[0]}</b><small>{scenario==="tow"&&i===3?"amarela · 135°":"identificação visual"}</small></span></div>)}{s.shape&&<div className={styles.shapeRow}><b>Marca diurna</b><strong>{s.shape}</strong></div>}</aside>
    </section>

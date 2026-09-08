@@ -10,7 +10,8 @@ const MODEL_URLS={
   "sailboat":{type:"gltf",url:"/models/ripeam/sailboat.glb"},
   "fishing-vessel":{type:"gltf",url:"/models/ripeam/fishing_vessel.glb"},
   "pilot-boat":{type:"gltf",url:"/models/ripeam/pilot_boat.glb"},
-  "mine-clearance":{type:"gltf",url:"/models/ripeam/navy_mine_clearance.glb"}
+  "mine-clearance":{type:"gltf",url:"/models/ripeam/navy_mine_clearance.glb"},
+  "seaplane":{type:"gltf",url:"/models/ripeam/hidroaviao.glb"}
 };
 
 async function loadThree(){
