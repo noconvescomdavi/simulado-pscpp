@@ -163,6 +163,10 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
         scene.add(hemi);
         const sun=new THREE.DirectionalLight(editorScene?(env.sun||"#fff0cf"):(night?0x9eb8d8:0xfff0cf),editorScene?Number(env.sunIntensity||2.2):(night?1.3:3.2));
         sun.position.fromArray(editorScene?(env.sunPosition||[6,14,9]):[6,14,9]); scene.add(sun);
+        const cameraFill=new THREE.DirectionalLight(night?0xb7d6ff:0xffffff,night?.48:1.55);
+        cameraFill.position.set(0,4,10);
+        camera.add(cameraFill);
+        scene.add(camera);
 
         const waterGeo=new THREE.PlaneGeometry(140,140,90,90);
         const waterMat=new THREE.MeshPhysicalMaterial({
@@ -202,6 +206,15 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
               if("depthWrite" in m)m.depthWrite=true;
               if("depthTest" in m)m.depthTest=true;
               if("alphaTest" in m && m.alphaTest>.95)m.alphaTest=.1;
+              if(m.color && !m.map){
+                const lum=.2126*m.color.r+.7152*m.color.g+.0722*m.color.b;
+                if(lum<.018)m.color.setRGB(.075,.085,.095);
+              }
+              if(m.emissive){
+                const e=night?.018:.008;
+                if(m.emissive.r+m.emissive.g+m.emissive.b<.001)m.emissive.setRGB(e,e,e);
+                if("emissiveIntensity" in m)m.emissiveIntensity=night?.55:.24;
+              }
               m.needsUpdate=true;
             });
           });
