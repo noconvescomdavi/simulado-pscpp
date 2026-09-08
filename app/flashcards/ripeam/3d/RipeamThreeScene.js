@@ -145,7 +145,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
         const scene=new THREE.Scene();
         const env=editorScene?.environment||{};
         scene.background=new THREE.Color(editorScene?(env.background||"#071522"):(night?0x010812:0x82ccef));
-        scene.fog=new THREE.FogExp2(editorScene?(env.fog||"#07121d"):(night?0x07121d:0xaeddf2),editorScene?Number(env.fogDensity||.026):.026);
+        scene.fog=new THREE.FogExp2(editorScene?(env.fog||"#07121d"):(night?0x07121d:0xaeddf2),editorScene?Number(env.fogDensity||.012):.008);
 
         const camCfg=editorScene?.camera||{};
         const camera=new THREE.PerspectiveCamera(Number(camCfg.fov||43),1,.1,250);
@@ -159,7 +159,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
         root.innerHTML="";
         root.appendChild(renderer.domElement);
 
-        const hemi=new THREE.HemisphereLight(editorScene?(env.ambient||"#7897bc"):(night?0x7897bc:0xdaf3ff),night?0x06121b:0x306b82,editorScene?Number(env.ambientIntensity||.9):(night?.75:2.4));
+        const hemi=new THREE.HemisphereLight(editorScene?(env.ambient||"#7897bc"):(night?0xa9c6e8:0xe8f8ff),night?0x0c1821:0x3e7488,editorScene?Number(env.ambientIntensity||1.15):(night?1.45:3.1));
         scene.add(hemi);
         const sun=new THREE.DirectionalLight(editorScene?(env.sun||"#fff0cf"):(night?0x9eb8d8:0xfff0cf),editorScene?Number(env.sunIntensity||2.2):(night?1.3:3.2));
         sun.position.fromArray(editorScene?(env.sunPosition||[6,14,9]):[6,14,9]); scene.add(sun);
@@ -187,11 +187,23 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
 
         const tuneMaterial=(obj)=>{
           obj.traverse(o=>{
-            if(o.isMesh){
-              o.castShadow=false;o.receiveShadow=false;
-              const mats=Array.isArray(o.material)?o.material:[o.material];
-              mats.filter(Boolean).forEach(m=>{if("roughness" in m)m.roughness=.48;if("metalness" in m)m.metalness=.08});
-            }
+            if(!o.isMesh)return;
+            o.visible=true;
+            o.frustumCulled=false;
+            o.castShadow=false;o.receiveShadow=false;
+            const mats=Array.isArray(o.material)?o.material:[o.material];
+            mats.filter(Boolean).forEach(m=>{
+              m.visible=true;
+              m.side=THREE.DoubleSide;
+              if("roughness" in m && !Number.isFinite(m.roughness))m.roughness=.48;
+              if("metalness" in m && !Number.isFinite(m.metalness))m.metalness=.08;
+              if("opacity" in m && (!Number.isFinite(m.opacity)||m.opacity<.08))m.opacity=1;
+              if("transparent" in m && m.opacity>=.999)m.transparent=false;
+              if("depthWrite" in m)m.depthWrite=true;
+              if("depthTest" in m)m.depthTest=true;
+              if("alphaTest" in m && m.alphaTest>.95)m.alphaTest=.1;
+              m.needsUpdate=true;
+            });
           });
         };
         const normalize=(obj,targetLength,rotation=[0,0,0])=>{
@@ -215,6 +227,19 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
         const shapeGroup=new THREE.Group(); modelRoot.add(shapeGroup);
         let publishedRoots=null;
         let lightAnchorRoot=modelRoot;
+        const fit={center:new THREE.Vector3(0,.35,0),radius:5};
+        const updateFit=(obj)=>{
+          try{
+            obj.updateMatrixWorld(true);
+            const b=new THREE.Box3().setFromObject(obj);
+            if(b.isEmpty())return;
+            const sphere=new THREE.Sphere();b.getBoundingSphere(sphere);
+            if(Number.isFinite(sphere.radius)&&sphere.radius>.05){
+              fit.center.copy(sphere.center);
+              fit.radius=Math.max(2.5,sphere.radius);
+            }
+          }catch{}
+        };
 
         if(editorScene?.objects?.length){
           const roots=new Map();
@@ -288,6 +313,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
             const parent=data.parentId?roots.get(data.parentId):null;
             (parent||modelRoot).add(rootObj);
           }
+          updateFit(modelRoot);
           for(const data of editorScene.objects){
             if(!["cable","measure"].includes(data.type)||!data.cable)continue;
             const a=roots.get(data.cable.fromId),b=roots.get(data.cable.toId);
@@ -316,6 +342,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
           tugGroup.position.set(3.1,0,0);
           lightAnchorRoot=tugGroup;
           modelRoot.add(tugGroup);
+          updateFit(tugGroup);
 
           const bargeGroup=new THREE.Group();
           const barge=normalize(bargeObj,MODEL_URLS.barge.target,MODEL_URLS.barge.rotation);
@@ -336,6 +363,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
           let model=normalize(raw,cfg.target||8,cfg.rotation||[0,0,0]);
           modelRoot.add(model);
           lightAnchorRoot=model;
+          updateFit(model);
           onReady?.(true);
 
           if(cfg.upgradeUrl){
@@ -349,6 +377,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
                 model.traverse?.(o=>{o.geometry?.dispose?.();if(o.material)(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>m?.dispose?.())});
                 modelRoot.add(hi);
                 model=hi;
+                updateFit(hi);
                 lightAnchorRoot=hi;
                 if(runtime.current)runtime.current.lightAnchorRoot=hi;
                 onProgress?.({phase:"HD pronto",url:cfg.upgradeUrl,loaded:1,total:1,percent:100});
@@ -450,7 +479,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
           raf=requestAnimationFrame(animate);
         };
         raf=requestAnimationFrame(animate);
-        runtime.current={THREE,scene,camera,renderer,modelRoot,navGroup,shapeGroup,water,ro,raf,tow:runtime.currentTow||null,lightAnchorRoot};
+        runtime.current={THREE,scene,camera,renderer,modelRoot,navGroup,shapeGroup,water,ro,raf,tow:runtime.currentTow||null,lightAnchorRoot,fit};
         onReady?.(true);
         onProgress?.({phase:"pronto",percent:100,loaded:1,total:1});
       }catch(err){
@@ -482,10 +511,13 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
     runtime.currentView=view;
     r.modelRoot.rotation.y=view.yaw;
     r.modelRoot.rotation.x=view.pitch;
-    const distance=18/Math.max(.62,zoom);
-    const a=-yaw*rad*.12;
-    r.camera.position.set(Math.sin(a)*distance,Math.max(4.4,7-pitch*.045),Math.cos(a)*distance);
-    r.camera.lookAt(0,1.25,0);
+    const center=r.fit?.center||new r.THREE.Vector3(0,.35,0);
+    const radius=Math.max(2.5,Number(r.fit?.radius||5));
+    const fov=r.camera.fov*Math.PI/180;
+    const fitDistance=(radius/Math.max(.28,Math.sin(fov/2)))*1.22/Math.max(.55,zoom);
+    const camY=center.y+Math.max(radius*.36,2.6)-pitch*.018;
+    r.camera.position.set(center.x,camY,center.z+fitDistance);
+    r.camera.lookAt(center.x,center.y+radius*.06,center.z);
   },[yaw,pitch,zoom]);
 
   useEffect(()=>{
