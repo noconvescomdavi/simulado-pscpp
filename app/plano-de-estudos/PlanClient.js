@@ -1,6 +1,7 @@
 "use client";
 import {useEffect,useMemo,useState} from "react";
 import styles from "./plano.module.css";
+import {startTrackedStudySession} from "../components/StudySessionTracker";
 
 const dayNames=["DOM","SEG","TER","QUA","QUI","SEX","SÁB"];
 
@@ -131,6 +132,22 @@ export default function PlanClient({plan}){
     }finally{
       setBusy("");
     }
+  }
+
+  async function openTask(day,task){
+    const href=task.href||"/plano-de-estudos";
+    try{
+      await startTrackedStudySession({
+        task_key:task.key,
+        subject_slug:task.subject||null,
+        session_type:task.type||"study",
+        plan_date:task.source_plan_date||day.iso,
+        metadata:{title:task.title||null,reprogrammed:task.reprogrammed===true}
+      });
+    }catch(error){
+      setMessage(error.message||"A sessão de estudo não pôde ser iniciada, mas você pode continuar.");
+    }
+    window.location.assign(href);
   }
 
   async function setUnavailable(day,reason,unavailable=true){
@@ -311,7 +328,7 @@ export default function PlanClient({plan}){
               <strong>{task.title}</strong>
               <p>{task.description}</p>
               <div className={styles.taskActions}>
-                {task.type!=="reading"&&<a href={task.href}>Abrir →</a>}
+                {task.href&&<button type="button" onClick={()=>openTask(day,task)}>Abrir e estudar →</button>}
                 <button
                   type="button"
                   className={done?styles.doneButton:""}
