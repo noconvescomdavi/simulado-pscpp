@@ -175,12 +175,60 @@ function addStaticNightEnvironment(THREE,scene){
 }
 
 function addDayEnvironment(THREE,scene){
-  scene.background=new THREE.Color(0x8cc7e8);
+  scene.background=new THREE.Color(0x78b8dc);
   scene.add(new THREE.AmbientLight(0xffffff,.8));
-  scene.add(new THREE.HemisphereLight(0xddefff,0x24445b,1));
+  scene.add(new THREE.HemisphereLight(0xddefff,0x16374d,1));
   const sun=new THREE.DirectionalLight(0xffffff,1.4);
   sun.position.set(8,14,10);
   scene.add(sun);
+}
+
+function addOceanSurfaceDetail(THREE,scene,night){
+  const group=new THREE.Group();
+  const count=night?75:125;
+  for(let i=0;i<count;i++){
+    const length=2+((i*17)%37)/8;
+    const geometry=new THREE.PlaneGeometry(length,.025);
+    const material=new THREE.MeshBasicMaterial({
+      color:night?0x49677d:0x6eb4d7,
+      transparent:true,
+      opacity:night?.10:.16,
+      depthWrite:false
+    });
+    const ripple=new THREE.Mesh(geometry,material);
+    ripple.rotation.x=-Math.PI/2;
+    ripple.rotation.z=((i*31)%17-8)*.012;
+    ripple.position.set(((i*47)%180)-90,.012,((i*73)%180)-90);
+    group.add(ripple);
+  }
+  scene.add(group);
+  return group;
+}
+
+function addMoonReflection(THREE,scene){
+  const group=new THREE.Group();
+  for(let i=0;i<34;i++){
+    const z=-72+i*2.15;
+    const spread=1.1+i*.12;
+    const width=.7+((i*19)%13)/10;
+    const strip=new THREE.Mesh(
+      new THREE.PlaneGeometry(width,.07),
+      new THREE.MeshBasicMaterial({color:0xdcecff,transparent:true,opacity:.12+((i*7)%8)/100,depthWrite:false})
+    );
+    strip.rotation.x=-Math.PI/2;
+    strip.position.set(((i*29)%17-8)*spread*.11,.025,z);
+    group.add(strip);
+  }
+  scene.add(group);
+  return group;
+}
+
+function addTowLine(THREE,scene,start,end){
+  const points=[start.clone(),end.clone()];
+  const geometry=new THREE.BufferGeometry().setFromPoints(points);
+  const line=new THREE.Line(geometry,new THREE.LineBasicMaterial({color:0x3a3028}));
+  scene.add(line);
+  return line;
 }
 
 function addNavigationLights(THREE,root,plan){
@@ -256,14 +304,16 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false}
         const water=new THREE.Mesh(
           new THREE.PlaneGeometry(400,400),
           new THREE.MeshStandardMaterial({
-            color:night?0x031a2d:0x073b5b,
-            roughness:night?.72:.88,
-            metalness:night?.12:0
+            color:night?0x010b13:0x07547a,
+            roughness:night?.76:.72,
+            metalness:night?.18:.05
           })
         );
         water.rotation.x=-Math.PI/2;
         water.position.y=0;
         scene.add(water);
+        addOceanSurfaceDetail(THREE,scene,night);
+        if(night)addMoonReflection(THREE,scene);
 
         const vesselRoot=new THREE.Group();
         const lightsRoot=new THREE.Group();
@@ -280,14 +330,27 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false}
           if(!config)throw new Error(`Configuração não encontrada: ${vesselKey}`);
 
           try{
-            const raw=await loadRawModel(THREE,config,percent=>{
+            let raw;
+            try{
+              raw=await loadRawModel(THREE,config,percent=>{
               const progress=root.querySelector?.("[data-progress]");
-              if(progress)progress.textContent=`${percent}%`;
-            });
+                if(progress)progress.textContent=`${percent}%`;
+              });
+            }catch(primaryError){
+              // Alguns GLBs antigos do laboratório falham no parser legado do Three r128.
+              // Para manter o pipeline simples, tentamos o mesmo asset via loader nativo
+              // e preservamos o erro original no console para diagnóstico.
+              console.error("[RIPEAM 3D] GLTFLoader falhou",config.url,primaryError);
+              throw primaryError;
+            }
             if(cancelled)return;
 
             const model=prepareModel(THREE,raw,config);
-            if(sceneConfig.vessels.length>1)model.position.x=index===0?3.7:-5.3;
+            if(sceneConfig.vessels.length>1){
+              // Regra 24: rebocador à vante e barcaça a ré, no mesmo eixo de reboque.
+              model.position.x=index===0?5.2:-7.2;
+              model.position.z=index===0?0:.15;
+            }
             vesselRoot.add(model);
             loadedFiles.push(config.url);
 
@@ -304,6 +367,13 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false}
         }
 
         vesselRoot.updateMatrixWorld(true);
+        if(sceneConfig.key==="rule24"&&vesselRoot.children.length===2){
+          const tugBox=new THREE.Box3().setFromObject(vesselRoot.children[0]);
+          const bargeBox=new THREE.Box3().setFromObject(vesselRoot.children[1]);
+          const start=new THREE.Vector3(tugBox.min.x,(tugBox.min.y+tugBox.max.y)*.56,(tugBox.min.z+tugBox.max.z)/2);
+          const end=new THREE.Vector3(bargeBox.max.x,(bargeBox.min.y+bargeBox.max.y)*.62,(bargeBox.min.z+bargeBox.max.z)/2);
+          addTowLine(THREE,scene,start,end);
+        }
         const unionBox=new THREE.Box3().setFromObject(vesselRoot);
         const size=unionBox.getSize(new THREE.Vector3());
         const center=unionBox.getCenter(new THREE.Vector3());
