@@ -292,14 +292,14 @@ export default function Client({
     normalizeOptions(
       question.options
     );
+  const answer =
+    answers[key];
+
   const ripeam3dScenario =
     ripeamScenarioFromQuestion(
       question,
       answer
     );
-
-  const answer =
-    answers[key];
 
   async function choose(
     selectedAnswer
