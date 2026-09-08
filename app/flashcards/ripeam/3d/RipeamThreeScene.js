@@ -59,27 +59,34 @@ async function loadThree(){
 }
 
 function lightPlan(scenario){
-  if(scenario==="nuc") return [
-    {p:[0,3.6,0],c:0xff334b},{p:[0,3.0,0],c:0xff334b},
-    {p:[-1.0,1.3,0],c:0xef3c4e},{p:[1.0,1.3,0],c:0x35dc83}
-  ];
-  if(scenario==="ram") return [
-    {p:[0,4.0,0],c:0xff334b},{p:[0,3.4,0],c:0xfff2ba},{p:[0,2.8,0],c:0xff334b}
-  ];
-  if(scenario==="anchor") return [
-    {p:[2.8,2.7,0],c:0xfff2ba},{p:[-3.0,1.9,0],c:0xfff2ba}
-  ];
-  if(scenario==="aground") return [
-    {p:[2.8,2.7,0],c:0xfff2ba},{p:[-3.0,1.9,0],c:0xfff2ba},
-    {p:[0,3.8,0],c:0xff334b},{p:[0,3.2,0],c:0xff334b}
-  ];
-  return [
-    {p:[1.4,3.6,0],c:0xfff2ba},{p:[-1.7,4.0,0],c:0xfff2ba},
-    {p:[0,1.5,-1.15],c:0xef3c4e},{p:[0,1.5,1.15],c:0x35dc83},{p:[-3.5,1.6,0],c:0xfff2ba}
-  ];
+  const W=0xfff2ba,R=0xff334b,G=0x35dc83,Y=0xffd447;
+  const L=(name,p,c,sector=360,heading=0)=>({name,p,c,sector,heading});
+  if(scenario==="power")return [L("Mastro de vante",[2,3.8,0],W,225,0),L("Bombordo",[0,1.55,-1.18],R,112.5,-56.25),L("Boreste",[0,1.55,1.18],G,112.5,56.25),L("Alcançado",[-3.8,1.65,0],W,135,180)];
+  if(scenario==="sail")return [L("Bombordo",[0,1.45,-1.05],R,112.5,-56.25),L("Boreste",[0,1.45,1.05],G,112.5,56.25),L("Alcançado",[-2.8,1.55,0],W,135,180)];
+  if(scenario==="towShort")return [L("Mastro 1",[2.5,3.8,0],W,225,0),L("Mastro 2",[2.5,3.25,0],W,225,0),L("Reboque",[-1.2,1.65,0],Y,135,180),L("Bombordo",[1.7,1.45,-.85],R,112.5,-56.25),L("Boreste",[1.7,1.45,.85],G,112.5,56.25)];
+  if(scenario==="tow")return [L("Mastro 1",[2.5,3.9,0],W,225,0),L("Mastro 2",[2.5,3.35,0],W,225,0),L("Mastro 3",[2.5,2.8,0],W,225,0),L("Reboque",[-1.2,1.65,0],Y,135,180)];
+  if(scenario==="fishing")return [L("Circular encarnada",[0,3.8,0],R),L("Circular branca",[0,3.25,0],W),L("Bombordo",[0,1.4,-1],R,112.5,-56.25),L("Boreste",[0,1.4,1],G,112.5,56.25)];
+  if(scenario==="nuc")return [L("Circular encarnada superior",[0,3.8,0],R),L("Circular encarnada inferior",[0,3.2,0],R),L("Bombordo",[0,1.3,-1],R,112.5,-56.25),L("Boreste",[0,1.3,1],G,112.5,56.25)];
+  if(scenario==="ram")return [L("Circular encarnada",[0,4.05,0],R),L("Circular branca",[0,3.45,0],W),L("Circular encarnada",[0,2.85,0],R)];
+  if(scenario==="mine")return [L("Verde no tope",[0,4.1,0],G),L("Verde no lais BB",[0,2.65,-1.45],G),L("Verde no lais BE",[0,2.65,1.45],G)];
+  if(scenario==="pilot")return [L("Circular branca",[0,3.7,0],W),L("Circular encarnada",[0,3.15,0],R),L("Bombordo",[0,1.25,-.85],R,112.5,-56.25),L("Boreste",[0,1.25,.85],G,112.5,56.25)];
+  if(scenario==="anchor")return [L("Circular vante",[2.8,2.7,0],W),L("Circular ré",[-3,1.9,0],W)];
+  if(scenario==="aground")return [L("Circular vante",[2.8,2.7,0],W),L("Circular ré",[-3,1.9,0],W),L("Encarnada superior",[0,3.8,0],R),L("Encarnada inferior",[0,3.2,0],R)];
+  if(scenario==="seaplane")return [L("Bombordo",[0,1.25,-1.1],R,112.5,-56.25),L("Boreste",[0,1.25,1.1],G,112.5,56.25),L("Branca",[-2.2,1.2,0],W,135,180)];
+  return [];
 }
 
-export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,editorScene,onReady}){
+function dayShapePlan(scenario){
+  if(scenario==="anchor")return [{kind:"ball",p:[1.8,3.3,0]}];
+  if(scenario==="aground")return [{kind:"ball",p:[0,4.1,0]},{kind:"ball",p:[0,3.55,0]},{kind:"ball",p:[0,3,0]}];
+  if(scenario==="nuc")return [{kind:"ball",p:[0,4,0]},{kind:"ball",p:[0,3.45,0]}];
+  if(scenario==="ram")return [{kind:"ball",p:[0,4.15,0]},{kind:"diamond",p:[0,3.55,0]},{kind:"ball",p:[0,2.95,0]}];
+  if(scenario==="tow")return [{kind:"diamond",p:[-1.2,3.2,0]}];
+  if(scenario==="fishing")return [{kind:"coneDown",p:[0,3.85,0]},{kind:"coneUp",p:[0,3.15,0]}];
+  return [];
+}
+
+export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,editorScene,showSectors=false,onReady}){
   const mount=useRef(null);
   const runtime=useRef(null);
 
@@ -155,6 +162,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
         };
 
         const navGroup=new THREE.Group(); modelRoot.add(navGroup);
+        const shapeGroup=new THREE.Group(); modelRoot.add(shapeGroup);
         let publishedRoots=null;
 
         if(editorScene?.objects?.length){
@@ -334,7 +342,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
           raf=requestAnimationFrame(animate);
         };
         raf=requestAnimationFrame(animate);
-        runtime.current={THREE,scene,camera,renderer,modelRoot,navGroup,water,ro,raf,tow:runtime.currentTow||null};
+        runtime.current={THREE,scene,camera,renderer,modelRoot,navGroup,shapeGroup,water,ro,raf,tow:runtime.currentTow||null};
         onReady?.(true);
       }catch(err){
         console.warn("Bulk carrier 3D indisponível; usando fallback visual.",err);
