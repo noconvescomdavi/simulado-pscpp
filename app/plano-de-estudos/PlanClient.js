@@ -8,6 +8,10 @@ function fmtDate(value){
   return new Intl.DateTimeFormat("pt-BR",{day:"2-digit",month:"2-digit"}).format(new Date(value+"T12:00:00"));
 }
 
+function todayIso(){
+  return new Intl.DateTimeFormat("en-CA",{timeZone:"America/Sao_Paulo",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+}
+
 function radarPoints(subjects){
   const cx=120,cy=120,r=92,n=subjects.length;
   return subjects.map((s,i)=>{
@@ -33,7 +37,9 @@ export default function PlanClient({plan}){
   const [busy,setBusy]=useState("");
   const [message,setMessage]=useState("");
   const [taskMessages,setTaskMessages]=useState({});
+  const [unavailableOpen,setUnavailableOpen]=useState("");
   const radar=useMemo(()=>radarPoints(plan.metrics.subjects),[plan.metrics.subjects]);
+  const today=todayIso();
 
   useEffect(()=>{
     if(plan.week?.snapshot_id||Number(plan.week?.offset||0)<0)return;
@@ -125,6 +131,25 @@ export default function PlanClient({plan}){
     }finally{
       setBusy("");
     }
+  }
+
+  async function setUnavailable(day,reason,unavailable=true){
+    const key="unavailable|"+day.iso;
+    setBusy(key);setMessage("");
+    try{
+      const r=await fetch("/api/study-plan/unavailability",{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({plan_date:day.iso,unavailable,reason})
+      });
+      const data=await r.json().catch(()=>({}));
+      if(!r.ok)throw new Error(data.error||"Não foi possível atualizar o dia.");
+      setWeek(w=>({...w,days:w.days.map(d=>d.iso===day.iso?{...d,unavailable:unavailable?{reason:reason||"other",note:null}:null}:d)}));
+      setUnavailableOpen("");
+      setMessage(unavailable?"Dia marcado como indisponível. As pendências serão redistribuídas conforme sua capacidade.":"Dia reativado no planejamento.");
+    }catch(error){
+      setMessage(error.message||"Não foi possível atualizar o dia.");
+    }finally{setBusy("")}
   }
 
   async function markBibliographyDone(item){
@@ -265,6 +290,18 @@ export default function PlanClient({plan}){
       <div className={styles.daysGrid}>
         {week.days.map(day=><article className={day.active?styles.day:styles.dayOff} key={day.iso}>
           <header><span>{dayNames[new Date(day.iso+"T12:00:00").getDay()]}</span><strong>{fmtDate(day.iso)}</strong></header>
+          {day.active&&day.iso===today&&<div className={styles.dayAvailability}>
+            {day.unavailable?<><span>Dia indisponível</span><button type="button" disabled={busy==="unavailable|"+day.iso} onClick={()=>setUnavailable(day,null,false)}>Desfazer</button></>:<>
+              <button type="button" onClick={()=>setUnavailableOpen(unavailableOpen===day.iso?"":day.iso)}>Não consegui estudar hoje</button>
+              {unavailableOpen===day.iso&&<div className={styles.unavailableReasons}>
+                <button onClick={()=>setUnavailable(day,"work")}>Trabalho</button>
+                <button onClick={()=>setUnavailable(day,"onboard")}>Embarque</button>
+                <button onClick={()=>setUnavailable(day,"rest")}>Descanso</button>
+                <button onClick={()=>setUnavailable(day,"unexpected")}>Imprevisto</button>
+                <button onClick={()=>setUnavailable(day,"other")}>Outro</button>
+              </div>}
+            </>}
+          </div>}
           {!day.active?<p>Dia sem estudo programado.</p>:day.tasks.map(task=>{
             const key=day.iso+"|"+(task.display_key||task.key);
             const done=task.status==="done";
