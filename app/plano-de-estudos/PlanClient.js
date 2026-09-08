@@ -1,5 +1,5 @@
 "use client";
-import {useMemo,useState} from "react";
+import {useEffect,useMemo,useState} from "react";
 import styles from "./plano.module.css";
 
 const dayNames=["DOM","SEG","TER","QUA","QUI","SEX","SÁB"];
@@ -34,6 +34,23 @@ export default function PlanClient({plan}){
   const [message,setMessage]=useState("");
   const [taskMessages,setTaskMessages]=useState({});
   const radar=useMemo(()=>radarPoints(plan.metrics.subjects),[plan.metrics.subjects]);
+
+  useEffect(()=>{
+    if(plan.week?.snapshot_id||Number(plan.week?.offset||0)<0)return;
+    let cancelled=false;
+    fetch("/api/study-plan/snapshot",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({week:Number(plan.week?.offset||0)})
+    }).then(async r=>{
+      if(r.ok||cancelled)return;
+      const data=await r.json().catch(()=>({}));
+      throw new Error(data.error||"Não foi possível preservar o planejamento desta semana.");
+    }).catch(error=>{
+      if(!cancelled)setMessage(error.message||"Não foi possível preservar o planejamento desta semana.");
+    });
+    return()=>{cancelled=true};
+  },[plan.week?.offset,plan.week?.snapshot_id]);
 
   async function updateTask(day,task){
     if(task.status==="done")return;
