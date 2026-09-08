@@ -35,6 +35,26 @@ export const SCENE_TEMPLATES = [
   ]},
   {key:"pilot",label:"Praticagem",rule_ref:"29",card_title:"Embarcação de prático",objects:[
     {name:"Pilot Boat",type:"model",assetUrl:"/models/ripeam/pilot_boat.glb",assetType:"glb",position:[0,0,0],rotation:[0,0,0],scale:[1,1,1],normalize:true}
+  ]},
+  {key:"mine-clearance",label:"Remoção de minas",rule_ref:"27(f)",card_title:"Embarcação em operação de remoção de minas",objects:[
+    {name:"Mine Clearance",type:"model",assetUrl:"/models/ripeam/navy_mine_clearance.glb",assetType:"glb",position:[0,0,0],rotation:[0,0,0],scale:[1,1,1],normalize:true},
+    {name:"Verde tope",type:"pointLight",color:"#35dc83",sector:360,position:[0,4.1,0]},
+    {name:"Verde BB",type:"pointLight",color:"#35dc83",sector:360,position:[0,2.65,-1.45]},
+    {name:"Verde BE",type:"pointLight",color:"#35dc83",sector:360,position:[0,2.65,1.45]}
+  ]},
+  {key:"anchor",label:"Fundeada",rule_ref:"30",card_title:"Embarcação fundeada",objects:[
+    {name:"Bulk Carrier",type:"model",assetUrl:"/models/ripeam/bulk_carrier.glb",assetType:"glb",position:[0,0,0],rotation:[0,0,0],scale:[1,1,1],normalize:true},
+    {name:"Circular vante",type:"pointLight",color:"#fff2ba",sector:360,position:[2.8,2.7,0]},
+    {name:"Circular ré",type:"pointLight",color:"#fff2ba",sector:360,position:[-3,1.9,0]}
+  ]},
+  {key:"aground",label:"Encalhada",rule_ref:"30(d)",card_title:"Embarcação encalhada",objects:[
+    {name:"Bulk Carrier",type:"model",assetUrl:"/models/ripeam/bulk_carrier.glb",assetType:"glb",position:[0,0,0],rotation:[0,0,0],scale:[1,1,1],normalize:true},
+    {name:"Esfera 1",type:"shape",shape:"ball",position:[0,4.1,0]},
+    {name:"Esfera 2",type:"shape",shape:"ball",position:[0,3.55,0]},
+    {name:"Esfera 3",type:"shape",shape:"ball",position:[0,3,0]}
+  ]},
+  {key:"seaplane",label:"Hidroavião",rule_ref:"31",card_title:"Hidroavião na água",objects:[
+    {name:"Hidroavião",type:"model",assetUrl:"/models/ripeam/hidroaviao.glb",assetType:"glb",position:[0,0,0],rotation:[0,0,0],scale:[1,1,1],normalize:true}
   ]}
 ];
 
@@ -43,6 +63,10 @@ export const CAMERA_PRESETS = {
   stern:{label:"Popa",position:[0,3,-18],target:[0,1,0]},
   port:{label:"BB",position:[-18,4,0],target:[0,1,0]},
   starboard:{label:"BE",position:[18,4,0],target:[0,1,0]},
+  ahead225stbd:{label:"22,5° BE",position:[7,3,17],target:[0,1,0]},
+  ahead225port:{label:"22,5° BB",position:[-7,3,17],target:[0,1,0]},
+  abaft225stbd:{label:"22,5° AR BE",position:[7,3,-17],target:[0,1,0]},
+  abaft225port:{label:"22,5° AR BB",position:[-7,3,-17],target:[0,1,0]},
   aerial:{label:"Aérea",position:[14,18,14],target:[0,0,0]},
   bridge:{label:"Nível da ponte",position:[10,5,12],target:[0,2,0]}
 };
