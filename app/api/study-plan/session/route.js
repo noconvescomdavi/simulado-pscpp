@@ -12,6 +12,14 @@ export async function POST(req){
     const action=["start","heartbeat","stop"].includes(body.action)?body.action:"heartbeat";
 
     if(action==="start"){
+      await query(
+        `update student_study_sessions
+            set ended_at=coalesce(last_heartbeat_at,started_at),
+                metadata=coalesce(metadata,'{}'::jsonb)||'{"auto_closed":"stale_session"}'::jsonb
+          where user_id=$1 and ended_at is null
+            and coalesce(last_heartbeat_at,started_at)<now()-interval '10 minutes'`,
+        [session.id]
+      ).catch(()=>{});
       const taskKey=text(body.task_key,220)||null;
       const subject=text(body.subject_slug,120)||null;
       const type=text(body.session_type,40)||"study";
