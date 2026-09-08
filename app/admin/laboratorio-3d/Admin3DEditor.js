@@ -99,12 +99,7 @@ export default function Admin3DEditor(){
   },[playing,scene.config?.timeline?.duration,scene.config?.timeline?.loop]);
 
   useEffect(()=>{
-    if(!lastEdit||!scene.id)return;
-    if(scene.liveStudentScene){
-      const timer=setTimeout(()=>save("published",{silent:true,versionLabel:"Atualização automática no aluno"}),650);
-      return()=>clearTimeout(timer);
-    }
-    if(!autosave)return;
+    if(!lastEdit||!scene.id||scene.liveStudentScene||!autosave)return;
     const timer=setTimeout(()=>save(scene.status||"draft",{silent:true,versionLabel:"Autosave"}),1800);
     return()=>clearTimeout(timer);
   },[lastEdit,autosave,scene.id,scene.liveStudentScene]);
