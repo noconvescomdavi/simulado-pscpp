@@ -2,7 +2,7 @@
 import {useEffect,useRef} from "react";
 import styles from "./laboratorio-3d.module.css";
 const THREE_VERSION="0.180.0";
-const CDN="https://cdn.jsdelivr.net/npm/three@"+THREE_VERSION;
+const CDN="https://esm.sh/three@"+THREE_VERSION;
 
 export default function Admin3DViewport({scene,selectedId,mode,onSelect,onTransform}){
   const mount=useRef(null);
@@ -13,15 +13,13 @@ export default function Admin3DViewport({scene,selectedId,mode,onSelect,onTransf
   useEffect(()=>{
     let dead=false;
     (async()=>{
-      // Use o mesmo specifier bare que os addons do Three.js importam internamente.
-      // O import map global da aplicação resolve "three" para a mesma versão.
-      const THREE=await import("three");
+      const THREE=await import(/* webpackIgnore: true */ CDN);
       const [{OrbitControls},{TransformControls},{GLTFLoader},{FBXLoader},{OBJLoader}]=await Promise.all([
-        import(CDN+"/examples/jsm/controls/OrbitControls.js"),
-        import(CDN+"/examples/jsm/controls/TransformControls.js"),
-        import(CDN+"/examples/jsm/loaders/GLTFLoader.js"),
-        import(CDN+"/examples/jsm/loaders/FBXLoader.js"),
-        import(CDN+"/examples/jsm/loaders/OBJLoader.js")
+        import(/* webpackIgnore: true */ CDN+"/examples/jsm/controls/OrbitControls.js"),
+        import(/* webpackIgnore: true */ CDN+"/examples/jsm/controls/TransformControls.js"),
+        import(/* webpackIgnore: true */ CDN+"/examples/jsm/loaders/GLTFLoader.js"),
+        import(/* webpackIgnore: true */ CDN+"/examples/jsm/loaders/FBXLoader.js"),
+        import(/* webpackIgnore: true */ CDN+"/examples/jsm/loaders/OBJLoader.js")
       ]);
       if(dead||!mount.current)return;
 
