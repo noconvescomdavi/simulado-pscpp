@@ -52,7 +52,10 @@ export default async function Area(){
         },
         tasks,
         phase:master.phase,
-        bibliography_progress:master.bibliography_progress
+        bibliography_progress:master.bibliography_progress,
+        tracking:master.tracking,
+        master_readiness:master.readiness,
+        first_pass:master.first_pass
       };
     }),
     getConsistency(session.id)
@@ -68,12 +71,13 @@ export default async function Area(){
   const weakest=ranked.length?ranked[ranked.length-1]:null;
   const examCoverage=Math.min(100,Math.round((Number(performance.overall.attempts||0)/7)*100));
   const volumeScore=Math.min(100,Math.round((Number(performance.overall.questions||0)/1000)*100));
-  const readiness=Math.round(
+  const legacyReadiness=Math.round(
     Number(performance.overall.accuracy||0)*0.45+
     overall*0.30+
     examCoverage*0.15+
     volumeScore*0.10
   );
+  const readiness=Number.isFinite(Number(dailyPlan?.master_readiness))?Number(dailyPlan.master_readiness):legacyReadiness;
   const readinessLabel=readiness>=85?"Muito forte":readiness>=70?"Competitivo":readiness>=50?"Em evolução":"Construindo base";
 
   return (
@@ -126,6 +130,8 @@ export default async function Area(){
             <article><i>▤</i><div><span>Questões</span><strong>{fmt(performance.overall.questions)}</strong><small>Respondidas</small></div></article>
             <article><i>▥</i><div><span>Aproveitamento</span><strong>{performance.overall.accuracy}%</strong><small>Média geral</small></div></article>
             <article><i>◷</i><div><span>Progresso</span><strong>{overall}%</strong><small>Conteúdo estudado</small></div></article>
+            <article><i>◎</i><div><span>Domínio estimado</span><strong>{Math.round(Number(dailyPlan?.tracking?.overall_mastery||0))}%</strong><small>Mastery Score</small></div></article>
+            <article><i>◴</i><div><span>Tempo real</span><strong>{dailyPlan?.tracking?.study_time?.week_minutes||0} min</strong><small>Últimos 7 dias</small></div></article>
           </div>
         </section>
 
@@ -139,6 +145,8 @@ export default async function Area(){
             <div><span>Melhor disciplina</span><strong>{strongest?strongest.label:"Aguardando dados"}</strong><small>{strongest?`${strongest.accuracy}% de acerto`:"Responda questões para calcular"}</small></div>
             <div><span>Ponto de atenção</span><strong>{weakest?weakest.label:"Aguardando dados"}</strong><small>{weakest?`${weakest.accuracy}% de acerto`:"Responda questões para calcular"}</small></div>
             <div><span>Cobertura de simulados</span><strong>{examCoverage}%</strong><small>Meta de referência: 7 simulados</small></div>
+            <div><span>Aderência ao plano</span><strong>{dailyPlan?.tracking?.adherence_percent??100}%</strong><small>{dailyPlan?.tracking?.backlog_count||0} pendência(s) em aberto</small></div>
+            <div><span>1ª leitura projetada</span><strong>{dailyPlan?.first_pass?.projected_finish?new Date(dailyPlan.first_pass.projected_finish+"T12:00:00").toLocaleDateString("pt-BR"):"—"}</strong><small>{dailyPlan?.first_pass?.on_track?"Dentro do ritmo atual":"Risco de atraso no ritmo atual"}</small></div>
           </div>
         </section>
 
