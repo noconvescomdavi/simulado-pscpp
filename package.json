@@ -14,7 +14,8 @@
     "validate": "npm run check:repo && npm run validate:questions && npm run validate:taxonomy && npm run build",
     "import:manobrabilidade": "node scripts/import-manobrabilidade.mjs",
     "validate:questions:all": "npm run validate:questions && npm run validate:taxonomy",
-    "security:audit": "npm audit --audit-level=high"
+    "security:audit": "npm audit --audit-level=high",
+    "validate:study-plan": "node scripts/validate-study-plan-v3.mjs"
   },
   "dependencies": {
     "argon2": "^0.41.1",
