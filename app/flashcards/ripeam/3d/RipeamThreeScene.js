@@ -6,14 +6,14 @@ const LEGACY_CDN="https://cdn.jsdelivr.net/npm/three@0.128.0";
 let threeLoaderPromise=null;
 
 const MODEL_URLS={
-  "bulk-carrier":{type:"gltf",url:"/models/ripeam/bulk_carrier.glb",rotation:[0,Math.PI/2,0],target:10.5},
-  "tugboat":{type:"gltf",url:"/models/ripeam/Tugboat.glb",rotation:[-Math.PI/2,0,0],target:4.3},
-  "barge":{type:"fbx",url:"/models/ripeam/barge.fbx",rotation:[-Math.PI/2,0,-Math.PI/2],target:6.2},
-  "sailboat":{type:"gltf",url:"/models/ripeam/sailboat.glb",rotation:[0,0,0],target:7.4},
-  "fishing-vessel":{type:"gltf",url:"/models/ripeam/fishing_vessel.glb",rotation:[0,Math.PI/2,0],target:8.2},
-  "pilot-boat":{type:"gltf",url:"/models/ripeam/pilot_boat.glb",rotation:[0,0,0],target:6.6},
-  "mine-clearance":{type:"gltf",url:"/models/ripeam/navy_mine_clearance.glb",rotation:[0,Math.PI/2,0],target:9.2},
-  "seaplane":{type:"gltf",url:"/models/ripeam/hidroaviao.glb",rotation:[0,Math.PI/2,0],target:8.4}
+  "bulk-carrier":{type:"gltf",url:"/models/ripeam/web/bulk_carrier-low.glb",upgradeUrl:"/models/ripeam/web/bulk_carrier.glb",rotation:[0,Math.PI/2,0],target:10.5},
+  "tugboat":{type:"gltf",url:"/models/ripeam/web/Tugboat.glb",rotation:[-Math.PI/2,0,0],target:4.3},
+  "barge":{type:"fbx",url:"/models/ripeam/web/barge.fbx",rotation:[-Math.PI/2,0,-Math.PI/2],target:6.2},
+  "sailboat":{type:"gltf",url:"/models/ripeam/web/sailboat.glb",rotation:[0,0,0],target:7.4},
+  "fishing-vessel":{type:"gltf",url:"/models/ripeam/web/fishing_vessel.glb",rotation:[0,Math.PI/2,0],target:8.2},
+  "pilot-boat":{type:"gltf",url:"/models/ripeam/web/pilot_boat.glb",rotation:[0,0,0],target:6.6},
+  "mine-clearance":{type:"gltf",url:"/models/ripeam/web/navy_mine_clearance.glb",rotation:[0,Math.PI/2,0],target:9.2},
+  "seaplane":{type:"gltf",url:"/models/ripeam/web/hidroaviao.glb",rotation:[0,Math.PI/2,0],target:8.4}
 };
 
 function loadScript(src){
@@ -127,7 +127,7 @@ function dayShapePlan(scenario){
   return [];
 }
 
-export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,editorScene,showSectors=false,onReady}){
+export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,editorScene,showSectors=false,onReady,onProgress}){
   const mount=useRef(null);
   const runtime=useRef(null);
 
@@ -172,9 +172,16 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
         const base=waterGeo.attributes.position.array.slice();
 
         const modelRoot=new THREE.Group(); scene.add(modelRoot);
+        THREE.Cache.enabled=true;
         const gltfLoader=new GLTFLoader();
         const fbxLoader=new FBXLoader();
         const objLoader=new OBJLoader();
+        const loadAsset=(loader,url,phase="modelo")=>new Promise((resolve,reject)=>{
+          loader.load(url,resolve,(ev)=>{
+            const total=Number(ev.total||0),loaded=Number(ev.loaded||0);
+            onProgress?.({phase,url,loaded,total,percent:total?Math.min(100,Math.round(loaded/total*100)):null});
+          },reject);
+        });
 
         const tuneMaterial=(obj)=>{
           obj.traverse(o=>{
@@ -296,8 +303,8 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
           }
         }else if(vessel==="tow-combo"){
           const [tugGltf,bargeObj]=await Promise.all([
-            gltfLoader.loadAsync(MODEL_URLS.tugboat.url),
-            fbxLoader.loadAsync(MODEL_URLS.barge.url)
+            loadAsset(gltfLoader,MODEL_URLS.tugboat.url,"tugboat"),
+            loadAsset(fbxLoader,MODEL_URLS.barge.url,"barge")
           ]);
           if(disposed)return;
 
@@ -321,11 +328,31 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
           runtime.currentTow={tugGroup,bargeGroup,cable,towDistance,lastCableFrame:-1};
         }else{
           const cfg=MODEL_URLS[vessel];
-          const raw=cfg.type==="fbx" ? await fbxLoader.loadAsync(cfg.url) : (await gltfLoader.loadAsync(cfg.url)).scene;
+          const loaded=cfg.type==="fbx" ? await loadAsset(fbxLoader,cfg.url,"modelo") : await loadAsset(gltfLoader,cfg.url,"modelo");
+          const raw=loaded.scene||loaded;
           if(disposed)return;
-          const model=normalize(raw,cfg.target||8,cfg.rotation||[0,0,0]);
+          let model=normalize(raw,cfg.target||8,cfg.rotation||[0,0,0]);
           modelRoot.add(model);
           lightAnchorRoot=model;
+          onReady?.(true);
+
+          if(cfg.upgradeUrl){
+            const conn=navigator.connection||navigator.mozConnection||navigator.webkitConnection;
+            const fast=!(conn?.saveData)&&!["slow-2g","2g","3g"].includes(String(conn?.effectiveType||""));
+            if(fast){
+              loadAsset(gltfLoader,cfg.upgradeUrl,"texturas HD").then(up=>{
+                if(disposed)return;
+                const hi=normalize(up.scene||up,cfg.target||8,cfg.rotation||[0,0,0]);
+                modelRoot.remove(model);
+                model.traverse?.(o=>{o.geometry?.dispose?.();if(o.material)(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>m?.dispose?.())});
+                modelRoot.add(hi);
+                model=hi;
+                lightAnchorRoot=hi;
+                if(runtime.current)runtime.current.lightAnchorRoot=hi;
+                onProgress?.({phase:"HD pronto",url:cfg.upgradeUrl,loaded:1,total:1,percent:100});
+              }).catch(()=>{});
+            }
+          }
         }
 
         if(!editorScene){
@@ -418,6 +445,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
         raf=requestAnimationFrame(animate);
         runtime.current={THREE,scene,camera,renderer,modelRoot,navGroup,shapeGroup,water,ro,raf,tow:runtime.currentTow||null,lightAnchorRoot};
         onReady?.(true);
+        onProgress?.({phase:"pronto",percent:100,loaded:1,total:1});
       }catch(err){
         console.warn("Bulk carrier 3D indisponível; usando fallback visual.",err);
         onReady?.(false);
