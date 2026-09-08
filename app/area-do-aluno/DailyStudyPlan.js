@@ -12,20 +12,20 @@ export default function DailyStudyPlan({ initialPlan }) {
   const [weeklyQuestions, setWeeklyQuestions] = useState(plan?.goal?.weekly_questions || 350);
   const [savingGoals, setSavingGoals] = useState(false);
 
+  const completedMinutes = useMemo(
+    () =>
+      (plan?.tasks||[])
+        .filter((task) => task.completed)
+        .reduce((sum, task) => sum + Number(task.minutes || 0), 0),
+    [plan]
+  );
+
   if(!plan){
     return <section className="dailyPlanPanel">
       <div className="dailyPlanHead"><div><span>PLANO DIÁRIO ESTIBORDO</span><h2>Configure seu Plano de Estudos</h2><p>Responda o diagnóstico inicial para a plataforma montar seu cronograma adaptativo.</p></div></div>
       <a href="/plano-de-estudos/configurar">Configurar meu plano →</a>
     </section>;
   }
-
-  const completedMinutes = useMemo(
-    () =>
-      plan.tasks
-        .filter((task) => task.completed)
-        .reduce((sum, task) => sum + Number(task.minutes || 0), 0),
-    [plan]
-  );
 
   async function toggleTask(task) {
     if (busy || task.completed) return;
