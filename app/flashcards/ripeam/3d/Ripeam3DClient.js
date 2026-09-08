@@ -5,17 +5,18 @@ import RipeamThreeScene from "./RipeamThreeScene";
 
 const SCENARIOS={
  power:{label:"Propulsão mecânica",rule:"23",vessel:"bulk-carrier",lights:[["Mastro","#fff2ba"],["Bombordo","#ef3c4e"],["Boreste","#35dc83"],["Alcançado","#fff2ba"]],shape:""},
- sail:{label:"Embarcação a vela",rule:"25",lights:[["Bombordo","#ef3c4e"],["Boreste","#35dc83"],["Alcançado","#fff2ba"]],shape:""},
+ sail:{label:"Embarcação a vela",rule:"25",vessel:"sailboat",lights:[["Bombordo","#ef3c4e"],["Boreste","#35dc83"],["Alcançado","#fff2ba"]],shape:""},
  towShort:{label:"Reboque ≤ 200 m",rule:"24",vessel:"tow-combo",lights:[["Mastro 1","#fff2ba"],["Mastro 2","#fff2ba"],["Reboque","#ffd34d"],["Bombordo","#ef3c4e"],["Boreste","#35dc83"]],shape:""},
+ fishing:{label:"Pesca",rule:"26",vessel:"fishing-vessel",lights:[["Circular encarnada","#ef3c4e"],["Circular branca","#fff2ba"],["Bombordo","#ef3c4e"],["Boreste","#35dc83"]],shape:"◆ ◆"},
  tow:{label:"Reboque > 200 m",rule:"24",vessel:"tow-combo",lights:[["Mastro 1","#fff2ba"],["Mastro 2","#fff2ba"],["Mastro 3","#fff2ba"],["Reboque","#ffd34d"]],shape:"◆"},
  nuc:{label:"Sem governo",rule:"27(a)",vessel:"bulk-carrier",lights:[["Circular","#ef3c4e"],["Circular","#ef3c4e"],["Bombordo","#ef3c4e"],["Boreste","#35dc83"]],shape:"● ●"},
  ram:{label:"Manobra restrita",rule:"27(b)",vessel:"bulk-carrier",lights:[["Circular","#ef3c4e"],["Circular","#fff2ba"],["Circular","#ef3c4e"]],shape:"● ◆ ●"},
  dredgePort:{label:"Dragagem — obstrução a bombordo",rule:"27(d)",lights:[["RAM","#ef3c4e"],["RAM","#fff2ba"],["RAM","#ef3c4e"],["Obstruído","#ef3c4e"],["Obstruído","#ef3c4e"],["Passagem","#35dc83"],["Passagem","#35dc83"]],shape:"● ◆ ●"},
  dredgeStbd:{label:"Dragagem — obstrução a boreste",rule:"27(d)",lights:[["RAM","#ef3c4e"],["RAM","#fff2ba"],["RAM","#ef3c4e"],["Passagem","#35dc83"],["Passagem","#35dc83"],["Obstruído","#ef3c4e"],["Obstruído","#ef3c4e"]],shape:"● ◆ ●"},
- mine:{label:"Remoção de minas",rule:"27(f)",lights:[["Verde — tope","#35dc83"],["Verde — lais BB","#35dc83"],["Verde — lais BE","#35dc83"]],shape:"● ● ●"},
+ mine:{label:"Remoção de minas",rule:"27(f)",vessel:"mine-clearance",lights:[["Verde — tope","#35dc83"],["Verde — lais BB","#35dc83"],["Verde — lais BE","#35dc83"]],shape:"● ● ●"},
  diving:{label:"Operação de mergulho",rule:"27(e)",lights:[["RAM","#ef3c4e"],["RAM","#fff2ba"],["RAM","#ef3c4e"]],shape:"A"},
  cbd:{label:"Restrita pelo calado",rule:"28",lights:[["Circular","#ef3c4e"],["Circular","#ef3c4e"],["Circular","#ef3c4e"]],shape:"▮"},
- pilot:{label:"Praticagem",rule:"29",lights:[["Circular branca","#fff2ba"],["Circular encarnada","#ef3c4e"],["Bombordo","#ef3c4e"],["Boreste","#35dc83"]],shape:""},
+ pilot:{label:"Praticagem",rule:"29",vessel:"pilot-boat",lights:[["Circular branca","#fff2ba"],["Circular encarnada","#ef3c4e"],["Bombordo","#ef3c4e"],["Boreste","#35dc83"]],shape:""},
  anchor:{label:"Fundeada",rule:"30",vessel:"bulk-carrier",lights:[["Circular vante","#fff2ba"],["Circular ré","#fff2ba"]],shape:"●"},
  aground:{label:"Encalhada",rule:"30(d)",vessel:"bulk-carrier",lights:[["Fundeio vante","#fff2ba"],["Fundeio ré","#fff2ba"],["Circular","#ef3c4e"],["Circular","#ef3c4e"]],shape:"● ● ●"}
 };
@@ -62,7 +63,7 @@ export default function Ripeam3DClient(){
          </div>
          <div className={styles.dragHint}>Arraste para girar · roda do mouse para zoom · ${Math.round(zoom*100)}%</div>
        </div>
-       <footer className={styles.viewerFooter}><div><b>{s.label}</b><span>Regra {s.rule}</span></div><strong>Aspecto: {Math.round(((yaw%360)+360)%360)}° · {s.vessel==="bulk-carrier"?"Bulk carrier 3D":s.vessel==="tow-combo"?"Tugboat + barge 3D":"modelo de treinamento"}</strong></footer>
+       <footer className={styles.viewerFooter}><div><b>{s.label}</b><span>Regra {s.rule}</span></div><strong>Aspecto: {Math.round(((yaw%360)+360)%360)}° · {s.vessel==="bulk-carrier"?"Bulk carrier 3D":s.vessel==="tow-combo"?"Tugboat + barge 3D":s.vessel==="sailboat"?"Sailboat 3D":s.vessel==="fishing-vessel"?"Fishing vessel 3D":s.vessel==="pilot-boat"?"Pilot boat 3D":s.vessel==="mine-clearance"?"Mine-clearance vessel 3D":"modelo de treinamento"}</strong></footer>
      </div>
      <aside className={styles.lightList}><h2>Luzes / marcas</h2>{s.lights.map((x,i)=><div key={i}><i style={{background:x[1]}}/><span><b>{x[0]}</b><small>{scenario==="tow"&&i===3?"amarela · 135°":"identificação visual"}</small></span></div>)}{s.shape&&<div className={styles.shapeRow}><b>Marca diurna</b><strong>{s.shape}</strong></div>}</aside>
    </section>

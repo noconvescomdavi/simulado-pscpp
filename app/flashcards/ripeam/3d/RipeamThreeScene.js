@@ -6,7 +6,11 @@ const CDN="https://cdn.jsdelivr.net/npm/three@0.180.0";
 const MODEL_URLS={
   "bulk-carrier":{type:"gltf",url:"/models/ripeam/bulk_carrier.glb"},
   "tugboat":{type:"gltf",url:"/models/ripeam/Tugboat.glb"},
-  "barge":{type:"fbx",url:"/models/ripeam/barge.fbx"}
+  "barge":{type:"fbx",url:"/models/ripeam/barge.fbx"},
+  "sailboat":{type:"gltf",url:"/models/ripeam/sailboat.glb"},
+  "fishing-vessel":{type:"gltf",url:"/models/ripeam/fishing_vessel.glb"},
+  "pilot-boat":{type:"gltf",url:"/models/ripeam/pilot_boat.glb"},
+  "mine-clearance":{type:"gltf",url:"/models/ripeam/navy_mine_clearance.glb"}
 };
 
 async function loadThree(){
