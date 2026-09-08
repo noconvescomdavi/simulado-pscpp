@@ -225,6 +225,8 @@ export default function PlanClient({plan}){
       <article><span>ADERÊNCIA · 30 DIAS</span><strong>{adherence}%</strong><small>{tracking.past_done||0} de {tracking.past_planned||0} metas concluídas</small></article>
       <article className={backlogCount?styles.trackingWarn:""}><span>PENDÊNCIAS</span><strong>{backlogCount}</strong><small>{backlogMinutes} min estimados em aberto</small></article>
       <article><span>CARGA DIÁRIA</span><strong>{tracking.daily_capacity_minutes||plan.onboarding?.daily_minutes||0} min</strong><small>capacidade configurada</small></article>
+      <article><span>TEMPO REAL · HOJE</span><strong>{tracking.study_time?.today_minutes||0} min</strong><small>{tracking.study_time?.week_minutes||0} min nos últimos 7 dias</small></article>
+      <article><span>DOMÍNIO ESTIMADO</span><strong>{Math.round(Number(tracking.overall_mastery||0))}%</strong><small>Mastery Score combinado por tópico</small></article>
       <article className={tracking.schedule_health==="behind"?styles.trackingDanger:tracking.schedule_health==="attention"?styles.trackingWarn:""}><span>SITUAÇÃO DO PLANO</span><strong>{healthLabel}</strong><small>{backlogCount?"redistribuição automática ativa":"cronograma sem pendências"}</small></article>
     </section>
 
@@ -265,7 +267,7 @@ export default function PlanClient({plan}){
           <div><b>{plan.first_pass.known_pages_remaining}</b><small>páginas conhecidas restantes</small></div>
           <div><b>{plan.first_pass.units_with_pagination}</b><small>unidades paginadas</small></div>
           <div><b>{plan.first_pass.units_pending_pagination}</b><small>paginação pendente</small></div>
-          <div><b>{plan.first_pass.margin_days===null?"—":plan.first_pass.margin_days+" dias"}</b><small>margem projetada</small></div>
+          <div><b>{plan.first_pass.margin_days===null?"—":plan.first_pass.margin_days+" dias"}</b><small>{plan.first_pass.on_track?"margem projetada · dentro do ritmo":"margem projetada · risco de atraso"}</small></div>
         </div>
       </article>
     </section>
@@ -288,7 +290,7 @@ export default function PlanClient({plan}){
 
       <article className={styles.priorityCard}>
         <div className={styles.cardHead}><div><span>ADAPTAÇÃO</span><h2>Prioridades atuais</h2></div></div>
-        <div className={styles.priorityList}>{plan.weighted_subjects.map((s,i)=><div key={s.slug}><b>{i+1}</b><div><strong>{s.label}</strong><span>{s.questions} respondidas · {s.correct} acertos · {s.errors} erros</span></div><em>{s.accuracy}%</em></div>)}</div>
+        <div className={styles.priorityList}>{plan.weighted_subjects.map((s,i)=><div key={s.slug}><b>{i+1}</b><div><strong>{s.label}</strong><span>{s.questions} respondidas · {s.errors} erros · domínio {Math.round(Number(s.mastery_score||0))}%</span></div><em>{s.accuracy}%</em></div>)}</div>
         <a className={styles.primaryAction} href="/treino-adaptativo">Começar Treino Adaptativo →</a>
       </article>
     </section>
@@ -327,6 +329,7 @@ export default function PlanClient({plan}){
               <div className={styles.taskMeta}><span>{task.type.toUpperCase()}</span><em>{task.reprogrammed?"REPROGRAMADA":overdue?"ATRASADA":task.type==="reading"?(task.pages?task.pages+" páginas":"capítulo/seção"):task.type==="questions"?(task.fixation?"todas disponíveis":(task.target_questions||"")+" questões"):task.type==="simulado"?"simulado":"revisão"}</em></div>
               <strong>{task.title}</strong>
               <p>{task.description}</p>
+              {task.reason&&<details className={styles.taskWhy}><summary>Por que estou estudando isto?</summary><p>{task.reason}.</p></details>}
               <div className={styles.taskActions}>
                 {task.href&&<button type="button" onClick={()=>openTask(day,task)}>Abrir e estudar →</button>}
                 <button
