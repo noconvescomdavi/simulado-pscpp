@@ -2,6 +2,7 @@ import { getSession } from "../../../../../lib/auth";
 import { getAdmin } from "../../../../../lib/admin";
 import { query } from "../../../../../lib/db";
 import { addMessage, getTicket } from "../../../../../lib/support";
+import { assertSameOrigin } from "../../../../../lib/security";
 
 export const dynamic = "force-dynamic";
 
@@ -24,6 +25,7 @@ export async function GET(_request, { params }) {
 }
 
 export async function POST(request, { params }) {
+  try { await assertSameOrigin(); } catch (error) { return Response.json({ error: "Origem inválida." }, { status: Number(error?.status) || 403 }); }
   const session = await authorizeAdmin();
   if (!session) return Response.json({ error: "Não autorizado" }, { status: 403 });
 
@@ -43,6 +45,7 @@ export async function POST(request, { params }) {
 }
 
 export async function PATCH(request, { params }) {
+  try { await assertSameOrigin(); } catch (error) { return Response.json({ error: "Origem inválida." }, { status: Number(error?.status) || 403 }); }
   const session = await authorizeAdmin();
   if (!session) return Response.json({ error: "Não autorizado" }, { status: 403 });
 
