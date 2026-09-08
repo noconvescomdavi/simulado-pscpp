@@ -6,7 +6,7 @@ const LEGACY_CDN="https://cdn.jsdelivr.net/npm/three@0.128.0";
 let threeLoaderPromise=null;
 
 const MODEL_URLS={
-  "bulk-carrier":{type:"gltf",url:"/models/ripeam/bulk_carrier.glb",rotation:[-Math.PI/2,0,-Math.PI/2],target:10.5},
+  "bulk-carrier":{type:"gltf",url:"/models/ripeam/bulk_carrier.glb",rotation:[0,Math.PI/2,0],target:10.5},
   "tugboat":{type:"gltf",url:"/models/ripeam/Tugboat.glb",rotation:[-Math.PI/2,0,0],target:4.3},
   "barge":{type:"fbx",url:"/models/ripeam/barge.fbx",rotation:[-Math.PI/2,0,-Math.PI/2],target:6.2},
   "sailboat":{type:"gltf",url:"/models/ripeam/sailboat.glb",rotation:[0,0,0],target:7.4},
@@ -74,6 +74,41 @@ function lightPlan(scenario){
   if(scenario==="aground")return [L("Circular vante",[2.8,2.7,0],W),L("Circular ré",[-3,1.9,0],W),L("Encarnada superior",[0,3.8,0],R),L("Encarnada inferior",[0,3.2,0],R)];
   if(scenario==="seaplane")return [L("Bombordo",[0,1.25,-1.1],R,112.5,-56.25),L("Boreste",[0,1.25,1.1],G,112.5,56.25),L("Branca",[-2.2,1.2,0],W,135,180)];
   return [];
+}
+
+function anchoredLightPlan(scenario,vessel,THREE,root){
+  const base=lightPlan(scenario);
+  if(!root||!base.length)return base;
+  const box=new THREE.Box3().setFromObject(root),size=new THREE.Vector3();box.getSize(size);
+  const L=Math.max(.001,size.x),H=Math.max(.001,size.y),B=Math.max(.001,size.z);
+  const min=box.min,max=box.max,mid=(a,b,t)=>a+(b-a)*t;
+  const P=(xr,yr,zr)=>[mid(min.x,max.x,xr),mid(min.y,max.y,yr),mid(min.z,max.z,zr)];
+  const profiles={
+    "bulk-carrier":{mast:P(.60,.98,.5),mast2:P(.20,1.03,.5),port:P(.24,.66,.04),stbd:P(.24,.66,.96),stern:P(.02,.48,.5),all:P(.22,.98,.5),fore:P(.82,.72,.5),aft:P(.05,.55,.5)},
+    "tugboat":{mast:P(.58,.98,.5),mast2:P(.58,.84,.5),mast3:P(.58,.72,.5),port:P(.50,.53,.04),stbd:P(.50,.53,.96),stern:P(.08,.43,.5),all:P(.56,.98,.5),fore:P(.78,.62,.5),aft:P(.08,.48,.5)},
+    "sailboat":{mast:P(.50,.96,.5),port:P(.58,.27,.03),stbd:P(.58,.27,.97),stern:P(.05,.20,.5),all:P(.50,.96,.5),fore:P(.84,.24,.5),aft:P(.06,.20,.5)},
+    "fishing-vessel":{mast:P(.48,.96,.5),port:P(.48,.43,.04),stbd:P(.48,.43,.96),stern:P(.05,.34,.5),all:P(.48,.96,.5),fore:P(.80,.48,.5),aft:P(.06,.38,.5)},
+    "pilot-boat":{mast:P(.52,.96,.5),port:P(.52,.42,.04),stbd:P(.52,.42,.96),stern:P(.05,.32,.5),all:P(.52,.96,.5),fore:P(.80,.45,.5),aft:P(.06,.36,.5)},
+    "mine-clearance":{mast:P(.50,.97,.5),port:P(.48,.46,.04),stbd:P(.48,.46,.96),stern:P(.05,.37,.5),all:P(.50,.97,.5),fore:P(.80,.52,.5),aft:P(.06,.40,.5),wingPort:P(.49,.67,.02),wingStbd:P(.49,.67,.98)},
+    "seaplane":{mast:P(.50,.60,.5),port:P(.56,.48,.02),stbd:P(.56,.48,.98),stern:P(.03,.40,.5),all:P(.50,.65,.5),fore:P(.78,.48,.5),aft:P(.04,.42,.5)}
+  };
+  const q=profiles[vessel]||profiles["tugboat"];
+  return base.map((l,i)=>{
+    let p=l.p;
+    const n=String(l.name||"").toLowerCase();
+    if(n.includes("bombordo")||n.includes("bb"))p=q.port;
+    else if(n.includes("boreste")||n.includes("be"))p=q.stbd;
+    else if(n.includes("alcançado")||n.includes("reboque"))p=q.stern;
+    else if(n.includes("mastro 3"))p=q.mast3||q.mast;
+    else if(n.includes("mastro 2")||n.includes("ré"))p=q.mast2||q.mast;
+    else if(n.includes("mastro"))p=q.mast;
+    else if(n.includes("lais bb"))p=q.wingPort||q.port;
+    else if(n.includes("lais be"))p=q.wingStbd||q.stbd;
+    else if(n.includes("tope"))p=q.mast;
+    else if(n.includes("vante"))p=q.fore;
+    else if(n.includes("circular")||n.includes("ram")||n.includes("encarnada")||n.includes("branca"))p=[q.all[0],q.all[1]-i*H*.10,q.all[2]];
+    return {...l,p};
+  });
 }
 
 function dayShapePlan(scenario){
@@ -164,6 +199,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
         const navGroup=new THREE.Group(); modelRoot.add(navGroup);
         const shapeGroup=new THREE.Group(); modelRoot.add(shapeGroup);
         let publishedRoots=null;
+        let lightAnchorRoot=modelRoot;
 
         if(editorScene?.objects?.length){
           const roots=new Map();
@@ -263,6 +299,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
           const tug=normalize(tugGltf.scene,MODEL_URLS.tugboat.target,MODEL_URLS.tugboat.rotation);
           tugGroup.add(tug);
           tugGroup.position.set(3.1,0,0);
+          lightAnchorRoot=tugGroup;
           modelRoot.add(tugGroup);
 
           const bargeGroup=new THREE.Group();
@@ -272,21 +309,17 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
           bargeGroup.position.set(towDistance,0,0);
           modelRoot.add(bargeGroup);
 
-          const cableMat=new THREE.LineBasicMaterial({color:0xd9d0bb,transparent:true,opacity:.92});
-          const cableGeo=new THREE.BufferGeometry().setFromPoints([
-            new THREE.Vector3(1.4,.25,0),
-            new THREE.Vector3((3.1+towDistance)/2,-.05,0),
-            new THREE.Vector3(towDistance+2.4,.2,0)
-          ]);
-          const cable=new THREE.Line(cableGeo,cableMat);
+          const cableMat=new THREE.MeshStandardMaterial({color:0xc8b99a,roughness:.82,metalness:.02});
+          const cable=new THREE.Mesh(new THREE.TubeGeometry(new THREE.LineCurve3(new THREE.Vector3(),new THREE.Vector3(1,0,0)),24,.028,8,false),cableMat);
           modelRoot.add(cable);
-          runtime.currentTow={tugGroup,bargeGroup,cable,towDistance};
+          runtime.currentTow={tugGroup,bargeGroup,cable,towDistance,lastCableFrame:-1};
         }else{
           const cfg=MODEL_URLS[vessel];
           const raw=cfg.type==="fbx" ? await fbxLoader.loadAsync(cfg.url) : (await gltfLoader.loadAsync(cfg.url)).scene;
           if(disposed)return;
           const model=normalize(raw,cfg.target||8,cfg.rotation||[0,0,0]);
           modelRoot.add(model);
+          lightAnchorRoot=model;
         }
 
         if(!editorScene){
@@ -300,7 +333,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
             const m=new THREE.Mesh(new THREE.ShapeGeometry(sh),new THREE.MeshBasicMaterial({color:l.c,transparent:true,opacity:.13,side:THREE.DoubleSide,depthWrite:false}));
             m.rotation.x=-Math.PI/2;m.position.y=-.72;return m;
           };
-          for(const l of lightPlan(scenario)){
+          for(const l of anchoredLightPlan(scenario,vessel,THREE,lightAnchorRoot)){
             const bulb=new THREE.Mesh(new THREE.SphereGeometry(.115,16,10),new THREE.MeshBasicMaterial({color:l.c}));
             bulb.position.set(...l.p);navGroup.add(bulb);
             const glow=new THREE.PointLight(l.c,night?5.2:1.0,4.6,1.7);glow.position.copy(bulb.position);navGroup.add(glow);
@@ -355,12 +388,29 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
             tow.tugGroup.rotation.z=Math.sin(t*.63)*.008;
             tow.bargeGroup.position.y=Math.sin(t*.54+.8)*.035;
             tow.bargeGroup.rotation.z=Math.sin(t*.43+.6)*.004;
+            const frame=Math.floor(t*20);
+            if(frame%3===0&&frame!==tow.lastCableFrame){
+              tow.lastCableFrame=frame;
+              const from=new THREE.Vector3(1.35,.30,0);
+              const to=new THREE.Vector3(tow.bargeGroup.position.x+2.55,.26,0);
+              const dist=Math.abs(to.x-from.x),sag=(scenario==="tow"?Math.min(.85,dist*.055):Math.min(.45,dist*.04));
+              const points=[];
+              for(let i=0;i<=24;i++){
+                const u=i/24,x=from.x+(to.x-from.x)*u;
+                const y=from.y+(to.y-from.y)*u-sag*4*u*(1-u);
+                const z=Math.sin(u*Math.PI)*Math.sin(t*.8)*.05;
+                points.push(new THREE.Vector3(x,y,z));
+              }
+              const curve=new THREE.CatmullRomCurve3(points);
+              tow.cable.geometry.dispose();
+              tow.cable.geometry=new THREE.TubeGeometry(curve,48,.032,8,false);
+            }
           }
           renderer.render(scene,camera);
           raf=requestAnimationFrame(animate);
         };
         raf=requestAnimationFrame(animate);
-        runtime.current={THREE,scene,camera,renderer,modelRoot,navGroup,shapeGroup,water,ro,raf,tow:runtime.currentTow||null};
+        runtime.current={THREE,scene,camera,renderer,modelRoot,navGroup,shapeGroup,water,ro,raf,tow:runtime.currentTow||null,lightAnchorRoot};
         onReady?.(true);
       }catch(err){
         console.warn("Bulk carrier 3D indisponível; usando fallback visual.",err);
@@ -414,7 +464,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
     const THREE=r.THREE;
     const clear=g=>{while(g?.children?.length){const o=g.children.pop();o.geometry?.dispose?.();o.material?.dispose?.()}};
     clear(r.navGroup);clear(r.shapeGroup);
-    for(const l of lightPlan(scenario)){
+    for(const l of anchoredLightPlan(scenario,vessel,THREE,r.lightAnchorRoot||r.modelRoot)){
       const bulb=new THREE.Mesh(new THREE.SphereGeometry(.115,16,10),new THREE.MeshBasicMaterial({color:l.c}));
       bulb.position.set(...l.p);r.navGroup.add(bulb);
       const glow=new THREE.PointLight(l.c,night?5.2:1.0,4.6,1.7);glow.position.copy(bulb.position);r.navGroup.add(glow);
@@ -434,7 +484,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
         const m=new THREE.Mesh(g,new THREE.MeshStandardMaterial({color:0x111111,roughness:.78}));m.position.set(...d.p);r.shapeGroup.add(m);
       }
     }
-  },[scenario,night,editorScene,showSectors]);
+  },[scenario,vessel,night,editorScene,showSectors]);
 
   return <div ref={mount} className={styles.threeScene} aria-label="Visualizador tridimensional da embarcação"/>;
 }
