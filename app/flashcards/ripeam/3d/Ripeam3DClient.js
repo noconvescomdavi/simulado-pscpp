@@ -18,6 +18,7 @@ const SCENARIOS={
  cbd:{label:"Restrita pelo calado",rule:"28",lights:[["Circular","#ef3c4e"],["Circular","#ef3c4e"],["Circular","#ef3c4e"]],shape:"▮"},
  pilot:{label:"Praticagem",rule:"29",vessel:"pilot-boat",lights:[["Circular branca","#fff2ba"],["Circular encarnada","#ef3c4e"],["Bombordo","#ef3c4e"],["Boreste","#35dc83"]],shape:""},
  anchor:{label:"Fundeada",rule:"30",vessel:"bulk-carrier",lights:[["Circular vante","#fff2ba"],["Circular ré","#fff2ba"]],shape:"●"},
+ seaplane:{label:"Hidroavião",rule:"31",vessel:"seaplane",lights:[["Bombordo","#ef3c4e"],["Boreste","#35dc83"],["Branca","#fff2ba"]],shape:""},
  aground:{label:"Encalhada",rule:"30(d)",vessel:"bulk-carrier",lights:[["Fundeio vante","#fff2ba"],["Fundeio ré","#fff2ba"],["Circular","#ef3c4e"],["Circular","#ef3c4e"]],shape:"● ● ●"}
 };
 const PRESETS={Bow:0,"Stbd":-90,Stern:180,Port:90};
@@ -56,7 +57,7 @@ export default function Ripeam3DClient(){
          <div className={styles.skyGlow}/>
          <div className={styles.horizon}/>
          <div className={styles.water3d}><i/><i/><i/><i/><i/><i/></div>
-         <div className={`${styles.world} ${modelReady && s.vessel==="bulk-carrier" ? styles.worldHidden : ""}`} style={{transform:`scale(${zoom}) rotateX(${pitch}deg) rotateY(${yaw}deg)`}}>
+         <div className={`${styles.world} ${modelReady && s.vessel ? styles.worldHidden : ""}`} style={{transform:`scale(${zoom}) rotateX(${pitch}deg) rotateY(${yaw}deg)`}}>
            <div className={styles.shipBob}><div className={styles.hull}><i/><i/><i/></div>
            <div className={styles.deckhouse}/>
            <div className={styles.mast}/></div>
