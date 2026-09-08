@@ -16,7 +16,7 @@ function Menu({ active = "", flashcardDecks = [] }) {
         <span className={styles.icon}>♙</span><span>Perfil</span>
       </a>
 
-      <details className={styles.group} open={["plano","adaptativo","hoje","revisao","fraquezas"].includes(active)}>
+      <details className={styles.group} open={["plano","adaptativo","hoje","revisao","fraquezas","trajetoria"].includes(active)}>
         <summary>
           <span><b className={styles.icon}>◫</b> Minha Preparação</span>
           <b className={styles.chevron}>⌄</b>
@@ -27,6 +27,7 @@ function Menu({ active = "", flashcardDecks = [] }) {
           <a href="/treino-adaptativo">Treino Adaptativo</a>
           <a href="/revisao-inteligente">Revisão Inteligente</a>
           <a href="/analise-de-fraquezas">Análise de Fraquezas</a>
+          <a href="/minha-trajetoria">Minha Trajetória</a>
         </div></div>
       </details>
 
