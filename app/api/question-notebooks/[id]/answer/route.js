@@ -1,6 +1,8 @@
 import {getSession} from "../../../../../lib/auth";
 import {getEntitlement} from "../../../../../lib/entitlement";
 import {answerNotebook} from "../../../../../lib/notebooks";
+import {refreshTopicMasteryForQuestion} from "../../../../../lib/learning-engine";
+import {normalizeSubject} from "../../../../../lib/subjects";
 
 export async function POST(r,{params}){
   const s=await getSession();
@@ -21,5 +23,8 @@ export async function POST(r,{params}){
     selectedAnswer:b.selected_answer
   });
 
+  if(x?.ok){
+    await refreshTopicMasteryForQuestion(s.id,normalizeSubject(b.subject),String(b.question_id||"")).catch(()=>{});
+  }
   return Response.json(x,{status:x.status||200});
 }
