@@ -1,6 +1,6 @@
 import argon2 from "argon2";
 import { consumePasswordResetToken } from "../../../../lib/password-reset";
-import { clientIpHash, consumeRateLimit, rateLimitResponse } from "../../../../lib/security";
+import { clientIpHash, consumeRateLimit, rateLimitResponse, assertSameOrigin } from "../../../../lib/security";
 
 export async function POST(req) {
   try {
