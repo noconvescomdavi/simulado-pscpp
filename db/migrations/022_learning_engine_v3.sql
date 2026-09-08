@@ -76,6 +76,19 @@ CREATE TABLE IF NOT EXISTS student_plan_reschedules (
 CREATE INDEX IF NOT EXISTS idx_student_plan_reschedules_user_target
   ON student_plan_reschedules(user_id, target_plan_date, status);
 
+CREATE TABLE IF NOT EXISTS student_plan_unavailability (
+  user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  plan_date DATE NOT NULL,
+  reason VARCHAR(60),
+  note VARCHAR(500),
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  PRIMARY KEY (user_id, plan_date)
+);
+
+CREATE INDEX IF NOT EXISTS idx_student_plan_unavailability_user_date
+  ON student_plan_unavailability(user_id, plan_date DESC);
+
 -- Índices para os caminhos quentes do backlog/aderência.
 CREATE INDEX IF NOT EXISTS idx_student_plan_progress_user_status_date
   ON student_plan_task_progress(user_id, status, plan_date DESC);
