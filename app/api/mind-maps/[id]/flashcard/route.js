@@ -1,7 +1,9 @@
 import {getSession} from "../../../../../lib/auth";
 import {upsertMapFlashcard} from "../../../../../lib/mind-maps";
+import {assertSameOrigin} from "../../../../../lib/security";
 
-export async function POST(request,{params}){
+export async function POST(request,{params}) {
+  try { await assertSameOrigin(); } catch (error) { return Response.json({error:"Origem inválida."},{status:Number(error?.status)||403}); }
   const session=await getSession();
   if(!session)return Response.json({error:"Não autenticado"},{status:401});
   const {id}=await params;
