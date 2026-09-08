@@ -2,7 +2,9 @@
 import {useEffect,useRef} from "react";
 import styles from "./ripeam-3d.module.css";
 
-const CDN="https://cdn.jsdelivr.net/npm/three@0.180.0";
+const THREE_ESM="https://esm.sh/three@0.180.0";
+const GLTF_ESM="https://esm.sh/three@0.180.0/examples/jsm/loaders/GLTFLoader.js";
+const FBX_ESM="https://esm.sh/three@0.180.0/examples/jsm/loaders/FBXLoader.js";
 const MODEL_URLS={
   "bulk-carrier":{type:"gltf",url:"/models/ripeam/bulk_carrier.glb",rotation:[-Math.PI/2,0,-Math.PI/2],target:10.5},
   "tugboat":{type:"gltf",url:"/models/ripeam/Tugboat.glb",rotation:[-Math.PI/2,0,0],target:4.3},
@@ -226,7 +228,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
         runtime.current={THREE,scene,camera,renderer,modelRoot,navGroup,water,ro,raf,tow:runtime.currentTow||null};
         onReady?.(true);
       }catch(err){
-        console.warn("Bulk carrier 3D indisponível; usando fallback visual.",err);
+        console.error("RIPEAM 3D: falha ao carregar modelo real.",{vessel,scenario,error:err});
         onReady?.(false);
       }
     })();
