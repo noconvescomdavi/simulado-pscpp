@@ -162,7 +162,7 @@ export default function Admin3DViewport({
     while(r.objects.children.length)r.objects.remove(r.objects.children[0]);
 
     const roots=new Map();
-    let triangles=0,meshes=0,lights=0,models=0;
+    let triangles=0,meshes=0,lights=0,models=0,modelErrors=0;
 
     const normalizeChild=(obj,target=8)=>{
       const box=new r.THREE.Box3().setFromObject(obj);
@@ -186,11 +186,11 @@ export default function Admin3DViewport({
         triangles+=idx?Math.floor(idx/3):Math.floor(pos/3);
         const mats=Array.isArray(o.material)?o.material:[o.material];
         mats.filter(Boolean).forEach(m=>{
-          if("color" in m)m.color.set(data.material?.color||"#ffffff");
-          if("roughness" in m)m.roughness=Number(data.material?.roughness??.5);
-          if("metalness" in m)m.metalness=Number(data.material?.metalness??.05);
-          if("opacity" in m){m.opacity=Number(data.material?.opacity??1);m.transparent=m.opacity<1}
-          if("emissive" in m)m.emissive.set(data.material?.emissive||"#000000");
+          if("color" in m&&data.material?.color&&data.material.color!=="#ffffff")m.color.set(data.material.color);
+          if("roughness" in m&&data.material?.roughness!==undefined&&data.material.roughness!==.5)m.roughness=Number(data.material.roughness);
+          if("metalness" in m&&data.material?.metalness!==undefined&&data.material.metalness!==.05)m.metalness=Number(data.material.metalness);
+          if("opacity" in m&&data.material?.opacity!==undefined&&data.material.opacity!==1){m.opacity=Number(data.material.opacity);m.transparent=m.opacity<1}
+          if("emissive" in m&&data.material?.emissive&&data.material.emissive!=="#000000")m.emissive.set(data.material.emissive);
         });
       });
     };
@@ -234,20 +234,30 @@ export default function Admin3DViewport({
             if(data.normalize!==false)normalizeChild(child,8);
             child.position.sub(new r.THREE.Vector3(...(data.pivot||[0,0,0])));
             applyMaterial(child,data);
-          }catch(error){console.warn("Asset 3D indisponível",data.assetUrl,error)}
+          }catch(error){modelErrors++;console.warn("Asset 3D indisponível",data.assetUrl,error)}
         }
         if(!child)child=new r.THREE.Mesh(new r.THREE.BoxGeometry(3,1,8),new r.THREE.MeshStandardMaterial({color:"#d8e4ea"}));
       }else if(data.type&&data.type.includes("Light")){
         lights++;
         const color=data.color||"#fff2ba";
-        child=new r.THREE.Mesh(new r.THREE.SphereGeometry(.18,18,12),new r.THREE.MeshBasicMaterial({color}));
+        child=new r.THREE.Mesh(new r.THREE.SphereGeometry(.18*Math.max(.2,Number(data.lightSize||1)),18,12),new r.THREE.MeshBasicMaterial({color}));
         let light;
         if(data.type==="directionalLight")light=new r.THREE.DirectionalLight(color,data.intensity||2);
         else if(data.type==="spotLight")light=new r.THREE.SpotLight(color,data.intensity||3,data.distance||12,data.angle||.75,data.penumbra||.25);
         else light=new r.THREE.PointLight(color,data.intensity||3,data.distance||12);
         child.add(light);addSector(root,data);
+        const gizmoLen=Math.max(1.3,Math.min(4,Number(data.distance||12)*.18)),h=Number(data.heading||0)*Math.PI/180;
+        const pts=[new r.THREE.Vector3(0,0,0),new r.THREE.Vector3(Math.sin(h)*gizmoLen,0,Math.cos(h)*gizmoLen)];
+        root.add(new r.THREE.Line(new r.THREE.BufferGeometry().setFromPoints(pts),new r.THREE.LineBasicMaterial({color,transparent:true,opacity:.8})));
       }else if(data.type==="shape"){
         child=new r.THREE.Mesh(shapeGeo(data.shape),new r.THREE.MeshStandardMaterial({color:data.color||"#111111",roughness:.7}));
+      }else if(data.type==="flag"){
+        const canvas=document.createElement("canvas");canvas.width=192;canvas.height=128;
+        const ctx=canvas.getContext("2d"),colors=data.flagColors?.length?data.flagColors:["#ffffff","#1965a0"];
+        colors.forEach((c,i)=>{ctx.fillStyle=c;ctx.fillRect(i*canvas.width/colors.length,0,canvas.width/colors.length,canvas.height)});
+        ctx.fillStyle="rgba(255,255,255,.9)";ctx.font="bold 56px sans-serif";ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(data.flagCode||"",96,64);
+        const tex=new r.THREE.CanvasTexture(canvas);tex.colorSpace=r.THREE.SRGBColorSpace;
+        child=new r.THREE.Mesh(new r.THREE.PlaneGeometry(1.35,.9,12,5),new r.THREE.MeshStandardMaterial({map:tex,side:r.THREE.DoubleSide,roughness:.85}));
       }else if(data.type==="hotspot"){
         child=new r.THREE.Mesh(new r.THREE.SphereGeometry(.22,18,12),new r.THREE.MeshBasicMaterial({color:data.color||"#38bdf8"}));
       }
@@ -290,7 +300,7 @@ export default function Admin3DViewport({
       }
 
       r.editorRoots=roots;
-      propsRef.current.onStats?.({triangles,meshes,lights,models,objects:(scene.objects||[]).length});
+      propsRef.current.onStats?.({triangles,meshes,lights,models,modelErrors,objects:(scene.objects||[]).length});
       const found=roots.get(propsRef.current.selectedId);
       if(found&&!propsRef.current.readOnly){r.transform.attach(found);r.transform.setMode(propsRef.current.mode||"translate")}
     })();

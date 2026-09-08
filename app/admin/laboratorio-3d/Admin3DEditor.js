@@ -2,7 +2,7 @@
 import {useEffect,useMemo,useRef,useState} from "react";
 import styles from "./laboratorio-3d.module.css";
 import Admin3DViewport from "./Admin3DViewport";
-import {CAMERA_PRESETS,DAY_SHAPES,LIGHT_PRESETS,SCENE_TEMPLATES,makeObject} from "./editor-presets";
+import {CAMERA_PRESETS,DAY_SHAPES,LIGHT_PRESETS,SCENE_TEMPLATES,DECORATIVE_OBJECTS,makeObject} from "./editor-presets";
 import {RIPEAM_RULES,CONDITION_LABELS,PERIOD_LABELS,SERVICE_LABELS,SIDE_LABELS,getRule,getSemanticItem,semanticBreadcrumb,semanticLabel} from "./ripeam-semantic";
 
 const EMPTY={
@@ -40,7 +40,7 @@ export default function Admin3DEditor(){
   const [history,setHistory]=useState([]);
   const [future,setFuture]=useState([]);
   const [versions,setVersions]=useState([]);
-  const [stats,setStats]=useState({triangles:0,meshes:0,lights:0,models:0,objects:0});
+  const [stats,setStats]=useState({triangles:0,meshes:0,lights:0,models:0,modelErrors:0,objects:0});
   const [assetFilter,setAssetFilter]=useState("");
   const [importMode,setImportMode]=useState("add");
   const [compare,setCompare]=useState(false);
@@ -49,6 +49,10 @@ export default function Admin3DEditor(){
   const [autosave,setAutosave]=useState(true);
   const [lastEdit,setLastEdit]=useState(0);
   const [clipboard,setClipboard]=useState(null);
+  const [publishedBaseline,setPublishedBaseline]=useState(null);
+  const [abCompare,setAbCompare]=useState(null);
+  const [importReport,setImportReport]=useState(null);
+  const [showDiff,setShowDiff]=useState(false);
   const fileRef=useRef(null);
 
   const cfg=scene.config||EMPTY.config;
@@ -123,7 +127,8 @@ export default function Admin3DEditor(){
       systemScene:!!row.systemScene,liveStudentScene:!!row.liveStudentScene,
       config:{...clone(EMPTY.config),...(row.config||{}),settings:{...EMPTY.config.settings,...(row.config?.settings||{})}}
     });
-    setSelected(null);setHistory([]);setFuture([]);
+    setSelected(null);setHistory([]);setFuture([]);setAbCompare(null);
+    setPublishedBaseline(row.status==="published"?clone(row):null);
     if(fetchVersions&&row.id)load(row.id);
   }
 
@@ -205,6 +210,10 @@ export default function Admin3DEditor(){
     const item=r?.items.find(i=>i.key===t.key)||null;
     next.config.semantic={...EMPTY.config.semantic,ruleNumber:t.rule_ref||"",ruleItem:item?.item||"",scenarioKey:item?.key||t.key,condition:item?.condition||"",period:item?.period||"",serviceStatus:item?.serviceStatus||"",side:item?.side||"",towLength:item?.towLength||"",fishingType:item?.fishingType||"",sourceRef:"Deck RIPEAM / COLREG"};
     next.config.objects=(t.objects||[]).map(o=>makeObject(o));
+    const expected=item?.expected||{},presetByKey=Object.fromEntries(LIGHT_PRESETS.map(p=>[p.key,p]));let y=3.4;
+    for(const [preset,count] of expected.lights||[]){const p=presetByKey[preset];for(let i=0;i<count;i++){next.config.objects.push(makeObject({name:p?.label||preset,type:"pointLight",color:p?.color||"#fff2ba",intensity:p?.intensity||5,distance:p?.distance||14,sector:p?.sector||360,lightPreset:preset,position:[0,y,0]}));y+=.55}}
+    for(const [shape,count] of expected.shapes||[])for(let i=0;i<count;i++)next.config.objects.push(makeObject({name:"Marca RIPEAM — "+shape,type:"shape",shape,color:"#111111",position:[0,3.2+i*.8,0]}));
+    if(expected.cable){const models=next.config.objects.filter(o=>o.type==="model");if(models.length>=2)next.config.objects.push(makeObject({name:"Cabo de reboque",type:"cable",color:"#d9d0bb",cable:{fromId:models[0].id,toId:models[1].id,sag:.4}}))}
     commit(next);setSelected(null);setTab("scene");
   }
 
@@ -264,25 +273,40 @@ export default function Admin3DEditor(){
     openScene(j.scene);setStatus("Versão restaurada.");
   }
 
+  async function inspectGlb(file){
+    const report={ok:false,name:file.name,bytes:file.size,meshes:0,materials:0,textures:0,bounds:null,error:""};
+    if(!file||!String(file.name).toLowerCase().endsWith(".glb")){report.error="O arquivo precisa ser .glb.";return report}
+    if(file.size<100){report.error="Arquivo GLB vazio ou inválido.";return report}
+    const url=URL.createObjectURL(file);
+    try{
+      const THREE=await import(/* webpackIgnore:true */ "https://esm.sh/three@0.180.0");
+      const {GLTFLoader}=await import(/* webpackIgnore:true */ "https://esm.sh/three@0.180.0/examples/jsm/loaders/GLTFLoader.js");
+      const gltf=await new GLTFLoader().loadAsync(url),root=gltf.scene;
+      root.traverse(o=>{if(o.isMesh){report.meshes++;const mats=Array.isArray(o.material)?o.material:[o.material];report.materials+=mats.filter(Boolean).length;mats.filter(Boolean).forEach(m=>{["map","normalMap","roughnessMap","metalnessMap","aoMap","emissiveMap"].forEach(k=>{if(m[k]?.isTexture)report.textures++})})}});
+      const box=new THREE.Box3().setFromObject(root),size=box.getSize(new THREE.Vector3());report.bounds=size.toArray().map(v=>Number(v.toFixed(3)));
+      if(report.meshes<1)throw new Error("GLB sem meshes renderizáveis.");if(box.isEmpty()||!report.bounds.every(Number.isFinite))throw new Error("Bounding box inválida.");report.ok=true;
+    }catch(error){report.error=String(error?.message||error)}finally{URL.revokeObjectURL(url)}
+    return report;
+  }
+
   async function upload(file,mode=importMode){
     if(!file)return;
-    const ext=String(file.name||"").split(".").pop().toLowerCase();
-    if(ext!=="glb"){setStatus("Importe um arquivo .glb para embarcações.");return}
+    const report=await inspectGlb(file);setImportReport(report);
+    if(!report.ok){setStatus("Importação bloqueada: "+report.error);return}
     if(mode==="replace"&&(!obj||obj.type!=="model")){setStatus("Selecione no Outliner o navio/modelo que deseja substituir.");return}
-    setStatus(mode==="replace"?"Enviando GLB para substituir o modelo selecionado...":"Enviando e catalogando novo GLB...");
+    setStatus("GLB validado. Enviando para a biblioteca...");
     const fd=new FormData();fd.append("file",file);fd.append("category","Navios importados");
-    const r=await fetch("/api/admin/laboratorio-3d/upload",{method:"POST",body:fd});
-    const j=await r.json().catch(()=>({}));
+    const r=await fetch("/api/admin/laboratorio-3d/upload",{method:"POST",body:fd});const j=await r.json().catch(()=>({}));
     if(!r.ok){setStatus(j.error||"Falha no upload");return}
-    const a={id:j.asset?.id,name:file.name,url:j.url,type:"glb",category:j.asset?.category||"Navios importados",bytes:file.size};
-    setAssets(x=>[a,...x.filter(y=>y.url!==a.url)]);
-    if(mode==="replace"){
-      patchObject({name:a.name,assetUrl:a.url,assetType:"glb",normalize:true});
-      setStatus("GLB substituído. A transformação atual foi preservada e será publicada automaticamente.");
-    }else{
-      addObject({name:a.name,assetUrl:a.url,assetType:"glb",type:"model",normalize:true});
-      setStatus("Novo GLB adicionado à cena. Posicione-o e ele será publicado ao aluno.");
-    }
+    const a={id:j.asset?.id,name:file.name,url:j.url,type:"glb",category:j.asset?.category||"Navios importados",bytes:file.size};setAssets(x=>[a,...x.filter(y=>y.url!==a.url)]);
+    if(mode==="replace"){setAbCompare({selectedId:obj.id,original:clone(obj),candidate:a});setCompare(false);setStatus("GLB validado. Compare A/B antes de confirmar a substituição.");}
+    else{addObject({name:a.name,assetUrl:a.url,assetType:"glb",type:"model",normalize:true});setStatus("GLB validado e adicionado à cena.");}
+  }
+
+  function confirmReplacement(){
+    if(!abCompare)return;const {selectedId,candidate}=abCompare;
+    mutate(s=>{const o=s.config.objects.find(x=>x.id===selectedId);if(o){o.name=candidate.name;o.assetUrl=candidate.url;o.assetType="glb";o.normalize=true}});
+    setAbCompare(null);setStatus("Substituição confirmada localmente. Clique em Atualizar aluno para publicar.");
   }
 
   function addCard(){mutate(s=>s.config.cards.push({id:uid(),title:"Novo card",front:"Pergunta / situação",back:"Resposta / explicação",published:true}));setTab("cards")}
@@ -333,7 +357,9 @@ export default function Admin3DEditor(){
     const objects=cfg.objects||[],lights=objects.filter(o=>o.type?.includes("Light")),shapes=objects.filter(o=>o.type==="shape");
     if(!semantic.ruleNumber)errors.push("Cena sem Regra RIPEAM vinculada.");
     if(semantic.ruleNumber&&!semantic.scenarioKey)errors.push("Selecione o cenário/item semântico da Regra "+semantic.ruleNumber+".");
-    if(!objects.some(o=>o.type==="model")&&activeRule?.kind==="scene")warnings.push("Nenhum modelo 3D na cena.");
+    if(!objects.some(o=>o.type==="model")&&activeRule?.kind==="scene")errors.push("Nenhum modelo 3D na cena.");
+    if(objects.some(o=>o.type==="model"&&!o.assetUrl))errors.push("Há modelo 3D sem asset associado.");
+    if(stats.modelErrors>0)errors.push(stats.modelErrors+" modelo(s) falharam ao carregar no viewport.");
     const expected=semanticItem?.expected||{};
     for(const [preset,count] of expected.lights||[]){
       const have=lights.filter(l=>l.lightPreset===preset).length;
@@ -351,6 +377,16 @@ export default function Admin3DEditor(){
     return {errors,warnings};
   },[cfg.objects,semantic,semanticItem,activeRule,scene.scene_key,stats]);
 
+  const publishDiff=useMemo(()=>{
+    if(!publishedBaseline)return [{kind:"new",label:"Cena ainda não possui baseline publicada nesta sessão."}];
+    const before=publishedBaseline.config||{},after=scene.config||{},changes=[],bm=new Map((before.objects||[]).map(o=>[o.id,o]));
+    for(const o of after.objects||[]){const p=bm.get(o.id);if(!p){changes.push({kind:"add",label:"Adicionado: "+o.name});continue}
+      for(const key of ["position","rotation","scale","assetUrl","visible","intensity","lightSize","distance","sector","heading","color"])if(JSON.stringify(p[key])!==JSON.stringify(o[key]))changes.push({kind:"edit",label:o.name+" · "+key+": "+JSON.stringify(p[key])+" → "+JSON.stringify(o[key])});bm.delete(o.id)}
+    for(const o of bm.values())changes.push({kind:"remove",label:"Removido: "+o.name});
+    if(JSON.stringify(before.camera)!==JSON.stringify(after.camera))changes.push({kind:"edit",label:"Câmera inicial alterada."});
+    if(JSON.stringify(before.environment)!==JSON.stringify(after.environment))changes.push({kind:"edit",label:"Ambiente alterado."});return changes;
+  },[scene,publishedBaseline]);
+
   async function save(nextStatus=scene.status,{silent=false,versionLabel}={}){
     if(busy)return;
     if(scene.liveStudentScene)nextStatus="published";
@@ -365,6 +401,7 @@ export default function Admin3DEditor(){
     const j=await r.json().catch(()=>({}));setBusy(false);
     if(!r.ok){setStatus(j.error||"Erro ao salvar");return}
     setScene(s=>({...s,id:j.scene.id,status:j.scene.status,config:j.scene.config}));
+    if(nextStatus==="published")setPublishedBaseline(clone(j.scene));
     if(!silent)setStatus(nextStatus==="published"?"Publicado com sucesso.":"Cena salva.");
     await load(j.scene.id);
   }
@@ -381,11 +418,11 @@ export default function Admin3DEditor(){
         <button onClick={duplicateScene}>Duplicar cena</button><button onClick={()=>setScene(clone(EMPTY))}>＋ Nova cena</button>
         <select value={scene.status} onChange={e=>setScene(s=>({...s,status:e.target.value}))}><option value="draft">Rascunho</option><option value="review">Revisão</option><option value="published">Publicado</option><option value="archived">Arquivado</option></select>
         <button disabled={busy} onClick={()=>save(scene.liveStudentScene?"published":scene.status)}>{scene.liveStudentScene?"Salvar agora":"Salvar"}</button>
-        <button className={styles.publish} disabled={busy||validation.errors.length>0} title={validation.errors.length?"Corrija os erros semânticos antes de publicar":scene.liveStudentScene?"A cena já está no aluno; força uma atualização imediata.":"Publica e adiciona esta cena ao aluno."} onClick={()=>save("published")}>{scene.liveStudentScene?"Atualizar aluno":"Adicionar ao aluno"}</button>
+        <button onClick={()=>setShowDiff(v=>!v)} title="Ver alterações desde a última publicação">Diff ({publishDiff.length})</button><button className={styles.publish} disabled={busy||validation.errors.length>0} title={validation.errors.length?"Corrija os erros semânticos antes de publicar":scene.liveStudentScene?"A cena já está no aluno; força uma atualização imediata.":"Publica e adiciona esta cena ao aluno."} onClick={()=>save("published")}>{scene.liveStudentScene?"Atualizar aluno":"Adicionar ao aluno"}</button>
       </div>
     </div>
 
-    <div className={styles.workspace}>
+    {showDiff&&<div className={styles.diffPanel}><b>ALTERAÇÕES PENDENTES PARA O ALUNO</b>{publishDiff.length?publishDiff.slice(0,80).map((d,i)=><p key={i} data-kind={d.kind}>{d.label}</p>):<p>Nenhuma alteração detectada.</p>}{validation.errors.length>0&&<strong>Publicação bloqueada: {validation.errors.length} erro(s) crítico(s).</strong>}</div>}<div className={styles.workspace}>
       <aside className={styles.leftPane}>
         <h3>ÁRVORE RIPEAM / CENAS</h3>
         <div className={styles.ruleTree}>{groupedScenes.map(([ruleNo,rows])=><section key={ruleNo}><div className={styles.ruleTreeHead}>{ruleNo==="unassigned"?"SEM REGRA":"REGRA "+ruleNo}<small>{getRule(ruleNo)?.title||"Cenas não vinculadas"}</small></div><div className={styles.sceneList}>{rows.map(row=><button key={row.id} className={row.id===scene.id?styles.active:""} onClick={()=>openScene(row)}><b>{row.title}</b><small>{semanticLabel(row.config?.semantic||{ruleNumber:String(row.rule_ref||"").match(/\d+/)?.[0]||""})} · {row.liveStudentScene?"● AO VIVO NO ALUNO":row.status}</small></button>)}</div></section>)}</div>
@@ -399,11 +436,11 @@ export default function Admin3DEditor(){
           <button onClick={()=>addObject({name:"Luz livre",type:"pointLight",color:"#fff2ba"})}>＋ Luz</button>
           <button onClick={()=>addObject({name:"Marca diurna",type:"shape",shape:"ball",color:"#111111"})}>＋ Marca</button>
           <button onClick={()=>addObject({name:"Hotspot",type:"hotspot",color:"#38bdf8",hotspot:{title:"Hotspot",body:"Informação didática"}})}>＋ Hotspot</button>
-          <button onClick={createCable}>＋ Cabo</button><button onClick={()=>{const m=cfg.objects.filter(o=>o.type==="model");if(m.length<2){setStatus("Adicione dois modelos para medir.");return}addObject({name:"Régua 3D",type:"measure",color:"#38bdf8",cable:{fromId:m[0].id,toId:m[1].id,sag:0}})}}>＋ Régua</button>
+          <button onClick={createCable}>＋ Cabo</button><button onClick={()=>addObject({...DECORATIVE_OBJECTS[0]})}>＋ Bandeira CIS</button><button onClick={()=>{const m=cfg.objects.filter(o=>o.type==="model");if(m.length<2){setStatus("Adicione dois modelos para medir.");return}addObject({name:"Régua 3D",type:"measure",color:"#38bdf8",cable:{fromId:m[0].id,toId:m[1].id,sag:0}})}}>＋ Régua</button>
         </div>
         <h3>PRESETS RIPEAM</h3><div className={styles.presetList}>{LIGHT_PRESETS.map(p=><button key={p.key} onClick={()=>applyLightPreset(p)}><i style={{background:p.color}}/> {p.label}<small>{p.sector}°</small></button>)}</div>
 
-        <h3>VALIDADOR SEMÂNTICO</h3><div className={validation.errors.length?styles.errors:validation.warnings.length?styles.warnings:styles.valid}>{validation.errors.map((w,i)=><p key={"e"+i}>✕ {w}</p>)}{validation.warnings.map((w,i)=><p key={"w"+i}>⚠ {w}</p>)}{!validation.errors.length&&!validation.warnings.length&&<p>✓ Cena coerente com o vínculo semântico configurado.</p>}</div>
+        <h3>OBJETOS DECORATIVOS</h3><div className={styles.presetList}>{DECORATIVE_OBJECTS.map(d=><button key={d.key} onClick={()=>addObject({...d})}><span>⚑</span>{d.label}<small>CIS</small></button>)}</div><h3>VALIDADOR SEMÂNTICO</h3><div className={validation.errors.length?styles.errors:validation.warnings.length?styles.warnings:styles.valid}>{validation.errors.map((w,i)=><p key={"e"+i}>✕ {w}</p>)}{validation.warnings.map((w,i)=><p key={"w"+i}>⚠ {w}</p>)}{!validation.errors.length&&!validation.warnings.length&&<p>✓ Cena coerente com o vínculo semântico configurado.</p>}</div>
       </aside>
 
       <section className={styles.centerPane}>
@@ -425,7 +462,7 @@ export default function Admin3DEditor(){
 
         <div className={compare?styles.compareGrid:styles.singleViewport}>
           <Admin3DViewport scene={cfg} selectedId={selected} mode={mode} playhead={playhead} onSelect={setSelected} onTransform={(id,t)=>{if(id===selected)patchObject(t)}} onCameraChange={cam=>setScene(s=>({...s,config:{...s.config,editorCamera:cam}}))} onStats={setStats}/>
-          {compare&&<Admin3DViewport scene={{...cfg,settings:{...cfg.settings,previewMode:cfg.settings.previewMode==="day"?"night":"day"}}} readOnly playhead={playhead} onStats={()=>{}}/>}
+          {compare&&<Admin3DViewport scene={{...cfg,settings:{...cfg.settings,previewMode:cfg.settings.previewMode==="day"?"night":"day"}}} readOnly playhead={playhead} onStats={()=>{}}/>}{abCompare&&<Admin3DViewport scene={{...cfg,objects:(cfg.objects||[]).map(o=>o.id===abCompare.selectedId?{...o,name:abCompare.candidate.name,assetUrl:abCompare.candidate.url,assetType:"glb"}:o)}} readOnly playhead={playhead} onStats={()=>{}}/>}
         </div>
 
         <div className={styles.timelineBar}>
@@ -441,7 +478,7 @@ export default function Admin3DEditor(){
           <b>Câmera:</b>{Object.values(CAMERA_PRESETS).map(p=><button key={p.label} onClick={()=>setCameraPreset(p)}>{p.label}</button>)}<button onClick={saveStudentCamera}>Salvar câmera do aluno</button>
         </div>
 
-        <div className={styles.assetShelf}>
+        {abCompare&&<div className={styles.abBar}><b>COMPARAÇÃO A/B</b><span>A = {abCompare.original.name}</span><span>B = {abCompare.candidate.name}</span><button onClick={confirmReplacement}>Confirmar B</button><button onClick={()=>setAbCompare(null)}>Cancelar</button></div>}{importReport&&<div className={importReport.ok?styles.importOk:styles.errors}><b>Pré-processamento GLB:</b> {importReport.ok?"OK":"FALHA"} · {importReport.meshes} meshes · {importReport.materials} materiais · {importReport.textures} texturas · {(importReport.bounds||[]).join(" × ")}{importReport.error?" · "+importReport.error:""}</div>}<div className={styles.assetShelf}>
           <div className={styles.assetHead}><b>Biblioteca persistente 3D</b><input placeholder="Buscar assets..." value={assetFilter} onChange={e=>setAssetFilter(e.target.value)}/>
             <select value={importMode} onChange={e=>setImportMode(e.target.value)} title="Escolha se o GLB será adicionado ou substituirá o modelo selecionado"><option value="add">Adicionar novo navio</option><option value="replace">Substituir selecionado</option></select>
             <label><input type="file" accept=".glb,model/gltf-binary" onChange={e=>{upload(e.target.files?.[0],importMode);e.target.value=""}}/>＋ Importar GLB do PC</label>
