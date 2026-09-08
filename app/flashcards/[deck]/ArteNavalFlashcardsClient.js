@@ -215,6 +215,12 @@ const SHIP_HANDLING_VISUALS = {
     "page": 17,
     "caption": "Abita / cabeço no convés de manobra",
     "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg"
+  },
+  "AN1-186": {
+    "image": "/flashcards/arte-naval/ship-handling/AN1-186.jpg",
+    "page": 21,
+    "caption": "Cabeços / bollards utilizados na amarração",
+    "source_file": "AN-SH-0022_equipamentos-manobra_p021.jpg"
   }
 };
 
