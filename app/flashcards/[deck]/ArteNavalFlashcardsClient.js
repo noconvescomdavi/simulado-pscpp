@@ -144,83 +144,89 @@ function markerFor(type) {
 }
 
 const SHIP_HANDLING_VISUALS = {
+  "AN1-103": {
+    "image": "/flashcards/arte-naval/ship-handling/AN1-103.jpg",
+    "page": 17,
+    "caption": "Tubo do escovém / hawse pipe no conjunto de fundeio",
+    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg",
+    "confidence": "alta"
+  },
   "AN1-147": {
     "image": "/flashcards/arte-naval/ship-handling/AN1-147.jpg",
     "page": 29,
     "caption": "Tipos de leme",
-    "source_file": "AN-SH-0041_leme_p029.jpg"
+    "source_file": "AN-SH-0041_leme_p029.jpg",
+    "confidence": "alta"
   },
-  "AN1-150": {
-    "image": "/flashcards/arte-naval/ship-handling/AN1-150.jpg",
-    "page": 32,
-    "caption": "Geometria e esforços no leme",
-    "source_file": "AN-SH-0049_leme-governo_p032.jpg"
+  "AN1-157": {
+    "image": "/flashcards/arte-naval/ship-handling/AN1-157.jpg",
+    "page": 21,
+    "caption": "Defensas/fenders no cais",
+    "source_file": "AN-SH-0021_equipamentos-manobra_p021.jpg",
+    "confidence": "alta"
   },
-  "AN1-210": {
-    "image": "/flashcards/arte-naval/ship-handling/AN1-210.jpg",
-    "page": 32,
-    "caption": "Geometria e atuação do leme",
-    "source_file": "AN-SH-0049_leme-governo_p032.jpg"
-  },
-  "AN1-202": {
+  "AN1-186": {
     "image": "/flashcards/arte-naval/ship-handling/AN1-202.jpg",
     "page": 17,
-    "caption": "Convés de manobra de vante e aparelho de fundear",
-    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg"
+    "caption": "Cabeços/bitts visíveis no convés de manobra de vante",
+    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg",
+    "confidence": "alta"
+  },
+  "AN1-202": {
+    "image": "/flashcards/arte-naval/ship-handling/AN1-202-anchor.jpg",
+    "page": 18,
+    "caption": "Âncora — diagrama com partes identificadas",
+    "source_file": "AN-SH-0013_navio-casco-dimensoes_p018.jpg",
+    "confidence": "alta"
   },
   "AN1-203": {
-    "image": "/flashcards/arte-naval/ship-handling/AN1-203.jpg",
-    "page": 17,
-    "caption": "Amarra e aparelho de fundear",
-    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg"
-  },
-  "AN1-205": {
-    "image": "/flashcards/arte-naval/ship-handling/AN1-205.jpg",
-    "page": 17,
-    "caption": "Equipamento do convés de manobra",
-    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg"
-  },
-  "AN1-206": {
-    "image": "/flashcards/arte-naval/ship-handling/AN1-206.jpg",
-    "page": 17,
-    "caption": "Molinete e amarra",
-    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg"
-  },
-  "AN1-103": {
-    "image": "/flashcards/arte-naval/ship-handling/AN1-103.jpg",
-    "page": 17,
-    "caption": "Aparelho de fundear / hawse pipe",
-    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg"
+    "image": "/flashcards/arte-naval/ship-handling/AN1-203-chain.jpg",
+    "page": 18,
+    "caption": "Amarra/cabo de corrente e união à âncora",
+    "source_file": "AN-SH-0014_navio-casco-dimensoes_p018.jpg",
+    "confidence": "alta"
   },
   "AN1-204": {
     "image": "/flashcards/arte-naval/ship-handling/AN1-202.jpg",
     "page": 17,
     "caption": "Conjunto do aparelho de fundear e suspender",
-    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg"
+    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg",
+    "confidence": "alta"
+  },
+  "AN1-205": {
+    "image": "/flashcards/arte-naval/ship-handling/AN1-205.jpg",
+    "page": 17,
+    "caption": "Cabrestante/capstan no convés de manobra",
+    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg",
+    "confidence": "alta"
+  },
+  "AN1-206": {
+    "image": "/flashcards/arte-naval/ship-handling/AN1-206.jpg",
+    "page": 17,
+    "caption": "Molinete/windlass e amarra",
+    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg",
+    "confidence": "alta"
   },
   "AN1-207": {
     "image": "/flashcards/arte-naval/ship-handling/AN1-202.jpg",
     "page": 17,
-    "caption": "Mordente / retenção da amarra no convés de vante",
-    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg"
+    "caption": "Mordente/chain stopper no conjunto de retenção da amarra",
+    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg",
+    "confidence": "alta"
   },
   "AN1-208": {
     "image": "/flashcards/arte-naval/ship-handling/AN1-202.jpg",
     "page": 17,
     "caption": "Boça e dispositivos de segurança da amarra",
-    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg"
+    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg",
+    "confidence": "alta"
   },
   "AN1-209": {
     "image": "/flashcards/arte-naval/ship-handling/AN1-202.jpg",
     "page": 17,
-    "caption": "Abita / cabeço no convés de manobra",
-    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg"
-  },
-  "AN1-186": {
-    "image": "/flashcards/arte-naval/ship-handling/AN1-186.jpg",
-    "page": 21,
-    "caption": "Cabeços / bollards utilizados na amarração",
-    "source_file": "AN-SH-0022_equipamentos-manobra_p021.jpg"
+    "caption": "Abita/bitt no convés de manobra",
+    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg",
+    "confidence": "alta"
   }
 };
 
