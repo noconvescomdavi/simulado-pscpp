@@ -160,7 +160,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
             });
           };
           for(const data of editorScene.objects){
-            if(data.type==="cable")continue;
+            if(["cable","measure"].includes(data.type))continue;
             const rootObj=new THREE.Group();
             let obj=null;
             if(data.type==="model"){
@@ -192,19 +192,24 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
             roots.set(data.id,rootObj);
           }
           for(const data of editorScene.objects){
-            if(data.type==="cable")continue;
+            if(["cable","measure"].includes(data.type))continue;
             const rootObj=roots.get(data.id);if(!rootObj)continue;
             const parent=data.parentId?roots.get(data.parentId):null;
             (parent||modelRoot).add(rootObj);
           }
           for(const data of editorScene.objects){
-            if(data.type!=="cable"||!data.cable)continue;
+            if(!["cable","measure"].includes(data.type)||!data.cable)continue;
             const a=roots.get(data.cable.fromId),b=roots.get(data.cable.toId);
             if(!a||!b)continue;
             const pa=new THREE.Vector3(),pb=new THREE.Vector3();a.getWorldPosition(pa);b.getWorldPosition(pb);
             const mid=pa.clone().lerp(pb,.5);mid.y-=Number(data.cable.sag||.4);
             const curve=new THREE.CatmullRomCurve3([pa,mid,pb]);
-            const cable=new THREE.Mesh(new THREE.TubeGeometry(curve,32,.035,8,false),new THREE.MeshStandardMaterial({color:data.color||"#d9d0bb"}));
+            let cable;
+            if(data.type==="measure"){
+              cable=new THREE.Line(new THREE.BufferGeometry().setFromPoints([pa,pb]),new THREE.LineBasicMaterial({color:data.color||"#38bdf8"}));
+            }else{
+              cable=new THREE.Mesh(new THREE.TubeGeometry(curve,32,.035,8,false),new THREE.MeshStandardMaterial({color:data.color||"#d9d0bb"}));
+            }
             modelRoot.add(cable);
           }
         }else if(vessel==="tow-combo"){
