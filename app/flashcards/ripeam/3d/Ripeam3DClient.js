@@ -24,6 +24,7 @@ const SCENARIOS={
 
 const PRESETS={Bow:0,"22.5° BE":-22.5,Stbd:-90,Stern:180,Port:90,"22.5° BB":22.5};
 const VESSEL_LABELS={"bulk-carrier":"Bulk carrier 3D","tow-combo":"Tugboat + barge 3D","sailboat":"Sailboat 3D","fishing-vessel":"Fishing vessel 3D","pilot-boat":"Pilot boat 3D","mine-clearance":"Mine-clearance vessel 3D","seaplane":"Hidroavião 3D","tugboat":"Tugboat 3D"};
+const PREFETCH_URLS={"bulk-carrier":"/models/ripeam/web/bulk_carrier-low.glb","tow-combo":"/models/ripeam/web/Tugboat.glb","tugboat":"/models/ripeam/web/Tugboat.glb","sailboat":"/models/ripeam/web/sailboat.glb","fishing-vessel":"/models/ripeam/web/fishing_vessel.glb","pilot-boat":"/models/ripeam/web/pilot_boat.glb","mine-clearance":"/models/ripeam/web/navy_mine_clearance.glb","seaplane":"/models/ripeam/web/hidroaviao.glb"};
 
 export default function Ripeam3DClient(){
  const [scenario,setScenario]=useState("power");
@@ -39,12 +40,25 @@ export default function Ripeam3DClient(){
  const [compare,setCompare]=useState(false);
  const [compareScenario,setCompareScenario]=useState("anchor");
  const [selectedLight,setSelectedLight]=useState(null);
+ const [loadProgress,setLoadProgress]=useState(null);
  const drag=useRef(null);
  const viewerRef=useRef(null);
  const s=SCENARIOS[scenario];
 
  useEffect(()=>{const q=new URLSearchParams(window.location.search);const k=q.get("scenario");if(k&&SCENARIOS[k])setScenario(k)},[]);
- useEffect(()=>{setModelReady(false);setRevealed(false);setSelectedLight(null)},[scenario]);
+ useEffect(()=>{setModelReady(false);setLoadProgress(null);setRevealed(false);setSelectedLight(null)},[scenario]);
+ useEffect(()=>{
+   if(!modelReady)return;
+   const conn=navigator.connection||navigator.mozConnection||navigator.webkitConnection;
+   if(conn?.saveData||["slow-2g","2g"].includes(String(conn?.effectiveType||"")))return;
+   const order=["power","towShort","sail","fishing","mine","pilot","anchor","seaplane"];
+   const i=order.indexOf(scenario),next=SCENARIOS[order[(i+1+order.length)%order.length]]?.vessel;
+   const href=PREFETCH_URLS[next];
+   if(!href)return;
+   const link=document.createElement("link");link.rel="prefetch";link.as="fetch";link.href=href;link.crossOrigin="anonymous";document.head.appendChild(link);
+   return()=>link.remove();
+ },[scenario,modelReady]);
+
  useEffect(()=>{
    let alive=true,timer=null;
    const load=()=>fetch("/api/ripeam-3d/scenes?key="+encodeURIComponent(scenario),{cache:"no-store"})
@@ -83,7 +97,7 @@ export default function Ripeam3DClient(){
        </div>
 
        <div className={night?styles.sceneNight:styles.sceneDay} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={up} onWheel={wheel}>
-         <RipeamThreeScene scenario={scenario} vessel={s.vessel} yaw={yaw} pitch={pitch} zoom={zoom} night={night} editorScene={editorScene} showSectors={showSectors} onReady={setModelReady} />
+         <RipeamThreeScene scenario={scenario} vessel={s.vessel} yaw={yaw} pitch={pitch} zoom={zoom} night={night} editorScene={editorScene} showSectors={showSectors} onReady={setModelReady} onProgress={setLoadProgress} />
          <div className={styles.skyGlow}/>
          <div className={styles.horizon}/>
          <div className={styles.water3d}><i/><i/><i/><i/><i/><i/></div>
@@ -93,7 +107,7 @@ export default function Ripeam3DClient(){
            {s.shape&&<div className={styles.shape}>{s.shape}</div>}
          </div>
 
-         {!modelReady&&s.vessel&&<div className={styles.loading3d}><b>Carregando modelo 3D real…</b><span>{VESSEL_LABELS[s.vessel]||"Modelo 3D"}</span></div>}
+         {(!modelReady||loadProgress?.phase==="texturas HD")&&s.vessel&&<div className={styles.loading3d}><b>{loadProgress?.phase==="texturas HD"?"Aplicando texturas HD em segundo plano…":"Carregando modelo 3D otimizado…"}</b><span>{VESSEL_LABELS[s.vessel]||"Modelo 3D"}{Number.isFinite(loadProgress?.percent)?` · ${loadProgress.percent}%`:""}</span>{Number.isFinite(loadProgress?.percent)&&<i style={{display:"block",height:4,borderRadius:4,marginTop:6,background:"rgba(255,255,255,.13)",overflow:"hidden"}}><em style={{display:"block",height:"100%",width:`${loadProgress.percent}%`,background:"#66c2f0"}}/></i>}</div>}
          {quizMode&&<div className={styles.quizOverlay}><span>MODO PROVA</span><h3>{revealed?s.label:"Identifique a condição"}</h3><p>{revealed?`Regra ${s.rule}`:"Analise luzes, marcas e aspecto antes de revelar."}</p><button onClick={()=>setRevealed(v=>!v)}>{revealed?"Ocultar":"Revelar resposta"}</button></div>}
          <div className={styles.dragHint}>Arraste para girar · roda do mouse para zoom · {Math.round(zoom*100)}%</div>
        </div>
