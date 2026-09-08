@@ -2,7 +2,8 @@
   "version": 2,
   "global": {
     "favicon": "",
-    "elements": {}
+    "elements": {},
+    "media": []
   },
   "pages": {
     "/": {
@@ -176,16 +177,24 @@
           },
           "hidden": false
         }
-      }
+      },
+      "blocks": [],
+      "settings": {}
     },
     "/login": {
-      "elements": {}
+      "elements": {},
+      "blocks": [],
+      "settings": {}
     },
     "/cadastro": {
-      "elements": {}
+      "elements": {},
+      "blocks": [],
+      "settings": {}
     },
     "/comprar": {
-      "elements": {}
+      "elements": {},
+      "blocks": [],
+      "settings": {}
     },
     "/area-do-aluno": {
       "elements": {
@@ -213,10 +222,14 @@
           },
           "hidden": false
         }
-      }
+      },
+      "blocks": [],
+      "settings": {}
     },
     "/simulado": {
-      "elements": {}
+      "elements": {},
+      "blocks": [],
+      "settings": {}
     },
     "/simulado/manobrabilidade": {
       "elements": {
@@ -226,10 +239,32 @@
           },
           "hidden": false
         }
-      }
+      },
+      "blocks": [],
+      "settings": {}
     },
     "/admin": {
-      "elements": {}
+      "elements": {},
+      "blocks": [],
+      "settings": {}
+    },
+    "/admin/questoes": {
+      "elements": {
+        "body > main.wrap.admin-wrap > h1": {
+          "style": {
+            "color": "#eef3f6"
+          },
+          "hidden": false
+        },
+        "body > main.wrap.admin-wrap > p": {
+          "style": {
+            "color": "#d9ecf8"
+          },
+          "hidden": false
+        }
+      },
+      "blocks": [],
+      "settings": {}
     }
   }
 }
