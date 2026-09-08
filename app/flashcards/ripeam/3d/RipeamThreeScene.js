@@ -368,6 +368,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
       const root=mount.current;
       if(!root)return;
       const editorObjects=Array.isArray(liveConfig?.objects)?liveConfig.objects:null;
+      const hasLiveConfig=Array.isArray(editorObjects);
       const editorModels=editorObjects?.filter(o=>o.type==="model"&&o.visible!==false)||[];
       const urls=editorModels.length?editorModels.map(o=>o.assetUrl):sceneConfig.vessels.map(v=>MODEL_CONFIG[v]?.url||v);
       root.innerHTML=`<div class="${styles.loading}"><b>Carregando modelo 3D...</b><span>${urls.join(" · ")}</span><span data-progress></span></div>`;
@@ -438,8 +439,23 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         let materialCount=0;
         const loadedFiles=[];
 
-        if(editorModels.length){
+        if(hasLiveConfig){
           const roots=new Map();
+          if(!editorModels.length){
+            // Cena publicada pode editar apenas luzes/marcas. Nesse caso mantemos
+            // o GLB canônico da regra, mas todos os sinais/configurações vêm do editor.
+            for(let index=0;index<sceneConfig.vessels.length;index++){
+              const vesselKey=sceneConfig.vessels[index];
+              const config=MODEL_CONFIG[vesselKey];
+              if(!config)continue;
+              const raw=await loadRawModel(THREE,config);
+              const model=prepareModel(THREE,raw,config);
+              if(sceneConfig.vessels.length>1){model.position.x=index===0?5.2:-7.2;model.position.z=index===0?0:.15}
+              vesselRoot.add(model);
+              loadedFiles.push(config.url);
+              raw.traverse(obj=>{if(obj.isMesh){meshCount++;materialCount+=Array.isArray(obj.material)?obj.material.length:(obj.material?1:0)}});
+            }
+          }
           for(const data of editorModels){
             try{
               const config={url:data.assetUrl,type:data.assetType||"glb"};
@@ -613,7 +629,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         resize();
 
         // Elementos didáticos são isolados do carregamento do GLB.
-        if(!editorModels.length){
+        if(!hasLiveConfig){
           addNavigationLights(THREE,lightsRoot,sceneConfig.lightPlan);
           addDayShapes(THREE,shapesRoot,sceneConfig.lightPlan);
         }
