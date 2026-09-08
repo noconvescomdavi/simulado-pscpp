@@ -400,7 +400,12 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
           waterGeo.attributes.position.needsUpdate=true;
           waterGeo.computeVertexNormals();
           const motion=vessel==="pilot-boat"?{bob:.14,roll:.014,speed:1.08}:vessel==="sailboat"?{bob:.11,roll:.022,speed:.88}:vessel==="fishing-vessel"?{bob:.09,roll:.013,speed:.72}:vessel==="dredger"?{bob:.055,roll:.006,speed:.48}:vessel==="mine-clearance"?{bob:.055,roll:.006,speed:.52}:vessel==="seaplane"?{bob:.08,roll:.009,speed:.84}:vessel==="tow-combo"?{bob:.075,roll:.008,speed:.66}:{bob:.045,roll:.004,speed:.46};
+          // Não sobrescreva a orientação escolhida pelo usuário a cada frame.
+          // O balanço da água é aplicado como pequeno offset sobre yaw/pitch persistentes.
+          const view=runtime.currentView||{yaw:0,pitch:0};
           modelRoot.position.y=Math.sin(t*motion.speed)*motion.bob;
+          modelRoot.rotation.y=view.yaw;
+          modelRoot.rotation.x=view.pitch;
           modelRoot.rotation.z=Math.sin(t*motion.speed*.74)*motion.roll;
           if(editorScene?.timeline?.autoplay&&publishedRoots){
             const duration=Math.max(1,Number(editorScene.timeline.duration||10));
@@ -473,8 +478,10 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
   useEffect(()=>{
     const r=runtime.current;if(!r)return;
     const rad=Math.PI/180;
-    r.modelRoot.rotation.y=yaw*rad;
-    r.modelRoot.rotation.x=pitch*rad*.45;
+    const view={yaw:yaw*rad,pitch:pitch*rad*.45};
+    runtime.currentView=view;
+    r.modelRoot.rotation.y=view.yaw;
+    r.modelRoot.rotation.x=view.pitch;
     const distance=18/Math.max(.62,zoom);
     const a=-yaw*rad*.12;
     r.camera.position.set(Math.sin(a)*distance,Math.max(4.4,7-pitch*.045),Math.cos(a)*distance);
