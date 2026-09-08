@@ -230,6 +230,22 @@ function addLightSectors(THREE,root,plan){
   }
 }
 
+function addEncounterGuide(THREE,scene,encounter){
+  if(!encounter)return;
+  const group=new THREE.Group();
+  const matA=new THREE.LineBasicMaterial({color:0x7dd6ff,transparent:true,opacity:.8});
+  const matB=new THREE.LineBasicMaterial({color:0xffcf66,transparent:true,opacity:.8});
+  const mk=(from,to,mat)=>{
+    const g=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(...from),new THREE.Vector3(...to)]);
+    const l=new THREE.Line(g,mat);
+    group.add(l);
+  };
+  mk(encounter.courseA[0],encounter.courseA[1],matA);
+  mk(encounter.courseB[0],encounter.courseB[1],matB);
+  scene.add(group);
+  return group;
+}
+
 function addNavigationLights(THREE,root,plan){
   try{
     const colors={white:0xfff4d6,red:0xff303f,green:0x36e37b,yellow:0xffcf3a};
@@ -250,21 +266,23 @@ function addNavigationLights(THREE,root,plan){
       aground:[[2.2,2.8,0,"white"],[-2.2,2,0,"white"],[0,4,0,"red"],[0,3.4,0,"red"]],
       seaplane:[[0,1.5,-1,"red"],[0,1.5,1,"green"],[-2,1.5,0,"white"]]
     };
-    for(const [x,y,z,colorName] of plans[plan]||[]){
+    (plans[plan]||[]).forEach(([x,y,z,colorName],index)=>{
       const color=colors[colorName];
       const bulb=new THREE.Mesh(new THREE.SphereGeometry(.11,16,10),new THREE.MeshBasicMaterial({color}));
       bulb.position.set(x,y,z);
+      bulb.userData.ripeamLightIndex=index;
       root.add(bulb);
       const point=new THREE.PointLight(color,2.2,7);
       point.position.copy(bulb.position);
+      point.userData.ripeamLightIndex=index;
       root.add(point);
-    }
+    });
   }catch(error){
     console.error("[RIPEAM 3D] Falha isolada ao criar luzes",error);
   }
 }
 
-export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,displayMode="vessel",showSectors=false}){
+export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,displayMode="vessel",showSectors=false,highlightLightIndex=-1}){
   const mount=useRef(null);
   const runtime=useRef(null);
 
@@ -383,7 +401,20 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         }
 
         vesselRoot.updateMatrixWorld(true);
-        if(sceneConfig.key==="rule24"&&vesselRoot.children.length===2){
+
+        if(sceneConfig.encounter&&vesselRoot.children.length===1){
+          const own=vesselRoot.children[0];
+          own.position.set(...sceneConfig.encounter.ownPosition);
+          own.rotation.y+=sceneConfig.encounter.ownRotation||0;
+          const other=own.clone(true);
+          other.position.set(...sceneConfig.encounter.otherPosition);
+          other.rotation.y+=sceneConfig.encounter.otherRotation||0;
+          vesselRoot.add(other);
+          addEncounterGuide(THREE,scene,sceneConfig.encounter);
+          vesselRoot.updateMatrixWorld(true);
+        }
+
+        if(sceneConfig.key==="rule24"&&vesselRoot.children.length===2&&!sceneConfig.encounter){
           const tugBox=new THREE.Box3().setFromObject(vesselRoot.children[0]);
           const bargeBox=new THREE.Box3().setFromObject(vesselRoot.children[1]);
           const start=new THREE.Vector3(tugBox.min.x,(tugBox.min.y+tugBox.max.y)*.56,(tugBox.min.z+tugBox.max.z)/2);
@@ -423,8 +454,8 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         addDayShapes(THREE,shapesRoot,sceneConfig.lightPlan);
         if(showSectors)addLightSectors(THREE,sectorsRoot,sceneConfig.lightPlan);
         vesselRoot.visible=displayMode!=="lights";
-        lightsRoot.visible=displayMode!=="daymarks";
-        shapesRoot.visible=displayMode==="daymarks";
+        lightsRoot.visible=displayMode!=="daymarks"&&!sceneConfig.encounter;
+        shapesRoot.visible=displayMode==="daymarks"&&!sceneConfig.encounter;
 
         camera.updateMatrixWorld(true);
         const frustum=new THREE.Frustum();
@@ -479,7 +510,17 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
           controls.update();
         };
 
-        runtime.current={renderer,controls,observer,vesselRoot,lightsRoot,shapesRoot,sectorsRoot,setView,zoomBy,reset:()=>setView("3d")};
+        const highlightLight=index=>{
+          lightsRoot.traverse(obj=>{
+            const i=obj.userData?.ripeamLightIndex;
+            if(i===undefined)return;
+            const active=index>=0&&i===index;
+            if(obj.isMesh)obj.scale.setScalar(active?1.9:1);
+            if(obj.isLight)obj.intensity=active?5:2.2;
+          });
+        };
+        highlightLight(highlightLightIndex);
+        runtime.current={renderer,controls,observer,vesselRoot,lightsRoot,shapesRoot,sectorsRoot,setView,zoomBy,highlightLight,reset:()=>setView("3d")};
       }catch(error){
         console.error("[RIPEAM 3D]",error);
         if(root){
@@ -509,6 +550,8 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
       if(mount.current)mount.current.innerHTML="";
     };
   },[sceneConfig,onDiagnostics,night,displayMode,showSectors]);
+
+  useEffect(()=>{runtime.current?.highlightLight?.(highlightLightIndex)},[highlightLightIndex]);
 
   const view=name=>runtime.current?.setView?.(name);
   const zoom=factor=>runtime.current?.zoomBy?.(factor);

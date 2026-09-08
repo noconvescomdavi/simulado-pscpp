@@ -22,3 +22,20 @@
 .lightPanel ul{list-style:none;margin:0;padding:5px 10px;overflow:auto;max-height:290px}.lightPanel li{display:flex;gap:9px;padding:8px 4px;border-bottom:1px solid #102b3d}.lightPanel li b,.lightPanel li small{display:block}.lightPanel li b{font-size:12px}.lightPanel li small{font-size:11px;color:#86a8bd;margin-top:3px}.lightDot{width:8px;height:8px;border-radius:50%;background:#9fdfff;margin-top:4px;flex:0 0 auto}
 .variantNote{margin:auto 10px 10px;padding:10px;border-radius:9px;background:#0c2637;color:#a7c6d8;font-size:11px;line-height:1.45}
 @media(max-width:1050px){.viewerStudyGrid{grid-template-columns:1fr}.lightPanel{border-left:0;border-top:1px solid #173b55;min-height:0}.lightDiagram{display:none}.lightPanel ul{max-height:190px}}
+
+.modeBar{max-width:1600px;margin:14px auto 0;padding:0 18px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.modeBar button{border:1px solid #28536e;background:#0a2030;color:#dff4ff;border-radius:999px;padding:9px 15px;cursor:pointer;font-weight:700}
+.modeBar .modeActive{background:#126397;border-color:#74d0fb;color:#fff}
+.score{margin-left:auto;font-size:12px;color:#9fc1d5;border:1px solid #264b63;border-radius:999px;padding:7px 10px}.score b{color:#fff}
+.quizPanel{background:#071522;border-left:1px solid #173b55;padding:16px;min-height:420px;display:flex;flex-direction:column;gap:11px}
+.quizBadge{font-size:10px;letter-spacing:.14em;color:#6fd2ff;font-weight:800}
+.quizPanel h3{margin:0;font-size:18px}.quizPanel p{margin:0;color:#a9c2d2;font-size:13px;line-height:1.5}
+.answerGrid{display:grid;gap:8px;margin-top:4px}
+.answerGrid button{border:1px solid #2a5068;background:#0b2232;color:#e7f6ff;border-radius:9px;padding:10px;text-align:left;cursor:pointer}
+.answerGrid button:hover{background:#12354b}.answerGrid button small{display:block;color:#8db0c5;margin-top:3px}
+.answerGrid .answerCorrect{border-color:#4acb83;background:#0d4630}.answerGrid .answerWrong{border-color:#ff6f79;background:#4b1820}
+.feedback{margin-top:auto;border-top:1px solid #173b55;padding-top:12px;display:grid;gap:8px}.feedback b{color:#fff}.feedback span{font-size:12px;color:#a9c2d2;line-height:1.45}
+.feedback button{justify-self:start;border:1px solid #4c9bc4;background:#114a6b;color:#fff;border-radius:8px;padding:8px 11px;cursor:pointer}
+.lightPanel li{cursor:pointer;border-radius:7px}.lightPanel li:hover{background:#0d2a3d}.lightPanel .lightSelected{background:#123c55;outline:1px solid #62c8f5}
+@media(max-width:1050px){.quizPanel{border-left:0;border-top:1px solid #173b55;min-height:0}}
+@media(max-width:820px){.modeBar{padding:0 10px}.score{width:100%;margin-left:0}.quizPanel{padding:12px}}

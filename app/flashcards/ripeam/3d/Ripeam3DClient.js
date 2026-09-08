@@ -85,6 +85,31 @@ const SCENES=[
   ]}
 ];
 
+
+const SITUATIONS=[
+  {
+    id:"head-on",title:"Roda a roda",rule:"14",
+    prompt:"Duas embarcações de propulsão mecânica se aproximam em rumos opostos, com risco de abalroamento. Qual é a ação correta?",
+    options:["Ambas alteram o rumo para boreste","Ambas alteram o rumo para bombordo","Apenas a maior embarcação manobra","Nenhuma manobra até a distância diminuir"],
+    answer:0,explanation:"Em situação roda a roda, ambas devem alterar o rumo para boreste, passando uma pela outra por bombordo.",
+    encounter:{ownPosition:[-5,0,0],ownRotation:0,otherPosition:[5,0,0],otherRotation:Math.PI,courseA:[[-11,.08,0],[11,.08,0]],courseB:[[11,.09,.7],[-11,.09,.7]]}
+  },
+  {
+    id:"crossing",title:"Cruzamento",rule:"15",
+    prompt:"Duas embarcações de propulsão mecânica estão em situação de cruzamento. A outra embarcação está por boreste. O que deve fazer a sua embarcação?",
+    options:["Manter rumo e velocidade em qualquer caso","Manobrar para manter-se afastada","Guinar obrigatoriamente para bombordo","Parar imediatamente as máquinas"],
+    answer:1,explanation:"A embarcação que avista a outra por boreste deve manter-se afastada e, se possível, evitar cruzar sua proa.",
+    encounter:{ownPosition:[-5,0,0],ownRotation:0,otherPosition:[1,0,-5],otherRotation:-Math.PI/2,courseA:[[ -11,.08,0],[11,.08,0]],courseB:[[1,.09,-11],[1,.09,11]]}
+  },
+  {
+    id:"overtaking",title:"Ultrapassagem",rule:"13",
+    prompt:"Uma embarcação alcança outra por uma direção superior a 22,5° para ré do través. Quem deve manter-se afastado?",
+    options:["A embarcação alcançada","A embarcação que alcança","A embarcação a boreste","A embarcação de maior calado"],
+    answer:1,explanation:"Toda embarcação que alcança outra deve manter-se fora do caminho da embarcação alcançada.",
+    encounter:{ownPosition:[-5,0,0],ownRotation:0,otherPosition:[3,0,.8],otherRotation:0,courseA:[[-11,.08,0],[11,.08,0]],courseB:[[-7,.09,.8],[13,.09,.8]]}
+  }
+];
+
 export default function Ripeam3DClient(){
   const [selected,setSelected]=useState("rule23");
   const [variantId,setVariantId]=useState("power-underway");
@@ -92,17 +117,87 @@ export default function Ripeam3DClient(){
   const [night,setNight]=useState(false);
   const [displayMode,setDisplayMode]=useState("vessel");
   const [showSectors,setShowSectors]=useState(false);
+  const [labMode,setLabMode]=useState("explore");
+  const [identifyIndex,setIdentifyIndex]=useState(0);
+  const [identifyAnswer,setIdentifyAnswer]=useState(null);
+  const [situationIndex,setSituationIndex]=useState(0);
+  const [situationAnswer,setSituationAnswer]=useState(null);
+  const [score,setScore]=useState({correct:0,total:0});
+  const [highlightLight,setHighlightLight]=useState(-1);
 
   const scene=useMemo(()=>SCENES.find(item=>item.key===selected)||SCENES[0],[selected]);
   const variant=useMemo(()=>scene.variants.find(v=>v.id===variantId)||scene.variants[0],[scene,variantId]);
-  const sceneConfig=useMemo(()=>({...scene,...variant,variantId:variant.id}),[scene,variant]);
-  const lights=LIGHT_INFO[variant.lightPlan]||[];
+  const identifyPool=useMemo(()=>SCENES.flatMap(s=>s.variants.map(v=>({scene:s,variant:v}))),[]);
+  const identify=identifyPool[identifyIndex%identifyPool.length];
+  const situation=SITUATIONS[situationIndex%SITUATIONS.length];
+
+  const activeScene=labMode==="identify"?identify.scene:scene;
+  const activeVariant=labMode==="identify"?identify.variant:variant;
+  const situationScene=SCENES[0];
+  const sceneConfig=useMemo(()=>{
+    if(labMode==="situation"){
+      const base=situationScene.variants[0];
+      return {...situationScene,...base,variantId:base.id,encounter:situation.encounter};
+    }
+    return {...activeScene,...activeVariant,variantId:activeVariant.id};
+  },[labMode,activeScene,activeVariant,situation]);
+  const lights=LIGHT_INFO[activeVariant.lightPlan]||[];
 
   const chooseScene=item=>{
     setSelected(item.key);
     setVariantId(item.variants[0].id);
     setDisplayMode("vessel");
     setShowSectors(false);
+    setHighlightLight(-1);
+    setLabMode("explore");
+  };
+
+  const startIdentify=()=>{
+    setLabMode("identify");
+    setNight(true);
+    setDisplayMode("lights");
+    setShowSectors(false);
+    setIdentifyAnswer(null);
+    setHighlightLight(-1);
+  };
+
+  const nextIdentify=()=>{
+    setIdentifyIndex(i=>(i+1)%identifyPool.length);
+    setIdentifyAnswer(null);
+    setHighlightLight(-1);
+  };
+
+  const answerIdentify=key=>{
+    if(identifyAnswer!==null)return;
+    const correct=key===identify.scene.key;
+    setIdentifyAnswer(key);
+    setScore(s=>({correct:s.correct+(correct?1:0),total:s.total+1}));
+  };
+
+  const identifyOptions=useMemo(()=>{
+    const current=identify?.scene;
+    const candidates=[current];
+    for(let step=1;candidates.length<4&&step<SCENES.length;step++){
+      const c=SCENES[(SCENES.indexOf(current)+step*3)%SCENES.length];
+      if(!candidates.some(x=>x.key===c.key))candidates.push(c);
+    }
+    return candidates;
+  },[identify]);
+
+  const startSituation=()=>{
+    setLabMode("situation");
+    setNight(false);
+    setDisplayMode("vessel");
+    setShowSectors(false);
+    setSituationAnswer(null);
+    setHighlightLight(-1);
+  };
+
+  const answerSituation=index=>{
+    if(situationAnswer!==null)return;
+    const correct=index===situation.answer;
+    setSituationAnswer(index);
+    setScore(s=>({correct:s.correct+(correct?1:0),total:s.total+1}));
   };
 
   return <main className={styles.page}>
@@ -111,58 +206,106 @@ export default function Ripeam3DClient(){
         <a href="/flashcards/ripeam">← Voltar aos flashcards</a>
         <span>ESTIBORDO · RIPEAM / COLREG</span>
         <h1>Laboratório 3D</h1>
-        <p>Explore embarcações, luzes, marcas diurnas, setores e variantes operacionais das regras RIPEAM.</p>
+        <p>Explore as regras, reconheça embarcações pelas luzes e treine situações de encontro em cenários 3D.</p>
       </div>
     </header>
 
+    <div className={styles.modeBar}>
+      <button className={labMode==="explore"?styles.modeActive:""} onClick={()=>setLabMode("explore")}>Explorar</button>
+      <button className={labMode==="identify"?styles.modeActive:""} onClick={startIdentify}>Identificar</button>
+      <button className={labMode==="situation"?styles.modeActive:""} onClick={startSituation}>Situação</button>
+      <span className={styles.score}>Desempenho <b>{score.correct}/{score.total}</b></span>
+    </div>
+
     <section className={styles.lab}>
       <aside className={styles.scenarios} aria-label="Cenas RIPEAM">
-        {SCENES.map(item=><button key={item.key} className={item.key===selected?styles.active:""} onClick={()=>chooseScene(item)}>
+        {SCENES.map(item=><button key={item.key} className={item.key===activeScene.key?styles.active:""} onClick={()=>chooseScene(item)}>
           <b>Regra {item.rule}</b><small>{item.title}</small>
         </button>)}
       </aside>
 
       <section className={styles.viewerCard}>
         <div className={styles.viewerHeading}>
-          <div><span>REGRA {scene.rule}</span><h2>{scene.title}</h2><small className={styles.variantTitle}>{variant.label}</small></div>
+          <div>
+            <span>{labMode==="situation"?"TREINO DE ENCONTRO":"REGRA "+activeScene.rule}</span>
+            <h2>{labMode==="situation"?situation.title:activeScene.title}</h2>
+            <small className={styles.variantTitle}>{labMode==="situation"?"Regra "+situation.rule:activeVariant.label}</small>
+          </div>
           <div className={styles.headingActions}>
-            <div className={styles.environmentToggle}>
+            {labMode!=="identify"&&<div className={styles.environmentToggle}>
               <button className={!night?styles.environmentActive:""} onClick={()=>setNight(false)}>☀ Diurno</button>
               <button className={night?styles.environmentActive:""} onClick={()=>setNight(true)}>☾ Noturno</button>
-            </div>
+            </div>}
             <div className={styles.status}>{diagnostics?.status==="loaded"?"Modelo 3D carregado":diagnostics?.status==="error"?"Falha no modelo":"Carregando"}</div>
           </div>
         </div>
 
-        {scene.variants.length>1&&<div className={styles.variantBar} role="tablist" aria-label="Variantes da regra">
-          {scene.variants.map(v=><button key={v.id} role="tab" aria-selected={v.id===variant.id} className={v.id===variant.id?styles.variantActive:""} onClick={()=>setVariantId(v.id)}>{v.label}</button>)}
+        {labMode==="explore"&&activeScene.variants.length>1&&<div className={styles.variantBar}>
+          {activeScene.variants.map(v=><button key={v.id} className={v.id===activeVariant.id?styles.variantActive:""} onClick={()=>{setVariantId(v.id);setHighlightLight(-1)}}>{v.label}</button>)}
         </div>}
 
-        <div className={styles.studyToolbar}>
+        {labMode==="explore"&&<div className={styles.studyToolbar}>
           <button className={displayMode==="vessel"?styles.studyActive:""} onClick={()=>setDisplayMode("vessel")}>Navio + luzes</button>
           <button className={displayMode==="lights"?styles.studyActive:""} onClick={()=>setDisplayMode("lights")}>Somente luzes</button>
           <button className={displayMode==="daymarks"?styles.studyActive:""} onClick={()=>setDisplayMode("daymarks")}>Marcas diurnas</button>
           <button className={showSectors?styles.studyActive:""} onClick={()=>setShowSectors(v=>!v)}>Setores luminosos</button>
-        </div>
+        </div>}
 
         <div className={styles.viewerStudyGrid}>
           <RipeamThreeScene
-            key={scene.key+"-"+variant.id+"-"+(night?"night":"day")}
+            key={sceneConfig.key+"-"+sceneConfig.variantId+"-"+(night?"night":"day")+"-"+labMode+"-"+(situation?.id||"")}
             sceneConfig={sceneConfig}
             onDiagnostics={setDiagnostics}
-            night={night}
-            displayMode={displayMode}
-            showSectors={showSectors}
+            night={labMode==="identify"?true:night}
+            displayMode={labMode==="identify"?"lights":displayMode}
+            showSectors={labMode==="explore"&&showSectors}
+            highlightLightIndex={highlightLight}
           />
 
-          <aside className={styles.lightPanel}>
+          {labMode==="explore"&&<aside className={styles.lightPanel}>
             <div className={styles.lightPanelHeader}><b>Luzes</b><span>{lights.length}</span></div>
             <div className={styles.lightDiagram}>
               {lights.slice(0,7).map((l,i)=><i key={i} className={styles["light"+(l[1].includes("Verde")?"Green":l[1].includes("Encarnada")?"Red":l[1].includes("Amarela")?"Yellow":"White")]} style={{top:(12+i*11)+"%"}} title={l[0]}/>)}
             </div>
-            <ul>{lights.map((l,i)=><li key={i}><span className={styles.lightDot}></span><div><b>{l[0]}</b><small>{l[1]} · {l[2]} · {l[3]}</small></div></li>)}</ul>
-            <p className={styles.variantNote}>{variant.note}</p>
-          </aside>
+            <ul>{lights.map((l,i)=><li key={i} className={highlightLight===i?styles.lightSelected:""} onClick={()=>setHighlightLight(highlightLight===i?-1:i)}><span className={styles.lightDot}></span><div><b>{l[0]}</b><small>{l[1]} · {l[2]} · {l[3]}</small></div></li>)}</ul>
+            <p className={styles.variantNote}>{activeVariant.note}</p>
+          </aside>}
+
+          {labMode==="identify"&&<aside className={styles.quizPanel}>
+            <div className={styles.quizBadge}>IDENTIFICAR · NOTURNO</div>
+            <h3>Que embarcação / condição é esta?</h3>
+            <p>Observe apenas a configuração luminosa e escolha a regra correspondente.</p>
+            <div className={styles.answerGrid}>
+              {identifyOptions.map(opt=>{
+                const chosen=identifyAnswer===opt.key;
+                const correct=identifyAnswer!==null&&opt.key===identify.scene.key;
+                return <button key={opt.key} className={correct?styles.answerCorrect:chosen?styles.answerWrong:""} onClick={()=>answerIdentify(opt.key)}>Regra {opt.rule}<small>{opt.title}</small></button>
+              })}
+            </div>
+            {identifyAnswer!==null&&<div className={styles.feedback}>
+              <b>{identifyAnswer===identify.scene.key?"Correto.":"Resposta incorreta."}</b>
+              <span>Regra {identify.scene.rule} — {identify.scene.title}: {identify.variant.label}.</span>
+              <button onClick={nextIdentify}>Próximo desafio</button>
+            </div>}
+          </aside>}
+
+          {labMode==="situation"&&<aside className={styles.quizPanel}>
+            <div className={styles.quizBadge}>SITUAÇÃO · REGRA {situation.rule}</div>
+            <h3>{situation.title}</h3>
+            <p>{situation.prompt}</p>
+            <div className={styles.answerGrid}>
+              {situation.options.map((option,i)=>{
+                const chosen=situationAnswer===i;
+                const correct=situationAnswer!==null&&i===situation.answer;
+                return <button key={option} className={correct?styles.answerCorrect:chosen?styles.answerWrong:""} onClick={()=>answerSituation(i)}>{option}</button>
+              })}
+            </div>
+            {situationAnswer!==null&&<div className={styles.feedback}>
+              <b>{situationAnswer===situation.answer?"Correto.":"Resposta incorreta."}</b>
+              <span>{situation.explanation}</span>
+              <button onClick={()=>{setSituationIndex(i=>(i+1)%SITUATIONS.length);setSituationAnswer(null)}}>Próxima situação</button>
+            </div>}
+          </aside>}
         </div>
 
         {diagnostics?.status==="loaded"&&<div className={styles.diagnostics}>
