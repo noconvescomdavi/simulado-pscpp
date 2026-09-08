@@ -183,22 +183,6 @@ function Result({
   );
 }
 
-function ripeamScenarioFromQuestion(q,answer){
-  const text=[q?.question,q?.tracking?.work?.title,q?.tracking?.chapter?.label,q?.tracking?.module,answer?.source?.title,answer?.source?.locator,answer?.explanation].filter(Boolean).join(" ");
-  if(!/(RIPEAM|COLREG|REGRA\s*(2[3-9]|30|31))/i.test(text))return "";
-  if(/REGRA\s*23/i.test(text))return "power";
-  if(/REGRA\s*24/i.test(text))return /200\s*m|duzentos/i.test(text)&&/>|maior|mais de/i.test(text)?"tow":"towShort";
-  if(/REGRA\s*25/i.test(text))return "sail";
-  if(/REGRA\s*26/i.test(text))return "fishing";
-  if(/27\s*\(?a\)?|sem governo/i.test(text))return "nuc";
-  if(/27\s*\(?f\)?|remo[cç][aã]o de minas/i.test(text))return "mine";
-  if(/27\s*\(?b\)?|manobra restrita/i.test(text))return "ram";
-  if(/REGRA\s*29|praticagem|pr[aá]tico/i.test(text))return "pilot";
-  if(/encalhad/i.test(text))return "aground";
-  if(/REGRA\s*30|fundeada|fundeio/i.test(text))return "anchor";
-  if(/REGRA\s*31|hidroavi[aã]o/i.test(text))return "seaplane";
-  return "";
-}
 
 export default function Client({
   notebook,
@@ -294,12 +278,6 @@ export default function Client({
     );
   const answer =
     answers[key];
-
-  const ripeam3dScenario =
-    ripeamScenarioFromQuestion(
-      question,
-      answer
-    );
 
   async function choose(
     selectedAnswer
@@ -500,17 +478,6 @@ export default function Client({
                 {answer.source.locator
                   ? ` · ${answer.source.locator}`
                   : ""}
-              </p>
-            )}
-
-            {ripeam3dScenario && (
-              <p>
-                <a
-                  href={"/flashcards/ripeam/3d?scenario="+encodeURIComponent(ripeam3dScenario)}
-                  style={{display:"inline-flex",padding:"8px 11px",borderRadius:8,background:"#c8102e",color:"#fff",fontWeight:800,textDecoration:"none"}}
-                >
-                  ◈ Revisar esta questão em 3D
-                </a>
               </p>
             )}
 

@@ -497,22 +497,6 @@ function emptyMetrics() {
   return { answered: 0, correct: 0, wrong: 0, difficult: 0, studied_cards: 0, accuracy: 0 };
 }
 
-function ripeam3DScenario(card){
-  const id=String(card?.id||"");
-  if(/^R23/.test(id))return "power";
-  if(/^R24-TOW2/.test(id))return "towShort";
-  if(/^R24/.test(id))return "tow";
-  if(/^R25/.test(id)||id==="SH-CONE-DOWN")return "sail";
-  if(/^R26/.test(id)||id==="SH-2CONE")return "fishing";
-  if(/^R27-NUC/.test(id)||id==="SH-2BALL")return "nuc";
-  if(/^R27-RAM/.test(id)||id==="SH-BDB")return "ram";
-  if(/^R27-MINES/.test(id))return "mine";
-  if(/^R29/.test(id))return "pilot";
-  if(/^R30-ANCH/.test(id)||id==="SH-BALL")return "anchor";
-  if(/^R30-AGROUND/.test(id)||id==="SH-3BALL")return "aground";
-  if(/^R31/.test(id))return "seaplane";
-  return "";
-}
 
 export default function FlashcardsClient({ deck, initialState }) {
   const cards = useMemo(() => {
@@ -940,7 +924,6 @@ export default function FlashcardsClient({ deck, initialState }) {
         </div>
 
         <div className={styles.heroActions}>
-          {deck.slug === "ripeam" && <a className={styles.tool3dLink} href="/flashcards/ripeam/3d">◈ Laboratório 3D RIPEAM</a>}
           <button type="button" onClick={() => setDark((value) => !value)}>
             {dark ? "☀ Tema claro" : "☾ Tema escuro"}
           </button>
