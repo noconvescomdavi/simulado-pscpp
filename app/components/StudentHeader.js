@@ -3,6 +3,7 @@ import { getSession } from "../../lib/auth";
 import { query } from "../../lib/db";
 import { listFlashcardDecks } from "../../lib/flashcards";
 import styles from "./student-header.module.css";
+import StudySessionTracker from "./StudySessionTracker";
 
 function Menu({ active = "", flashcardDecks = [] }) {
   return (
@@ -141,6 +142,7 @@ export default async function StudentHeader({ active = "" }) {
 
   return (
     <>
+      <StudySessionTracker/>
       <div id="student-shell" className={styles.shellMarker} />
 
       <aside className={styles.sidebar}>
