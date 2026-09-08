@@ -69,6 +69,10 @@ function lightPlan(scenario){
   if(scenario==="nuc")return [L("Circular encarnada superior",[0,3.8,0],R),L("Circular encarnada inferior",[0,3.2,0],R),L("Bombordo",[0,1.3,-1],R,112.5,-56.25),L("Boreste",[0,1.3,1],G,112.5,56.25)];
   if(scenario==="ram")return [L("Circular encarnada",[0,4.05,0],R),L("Circular branca",[0,3.45,0],W),L("Circular encarnada",[0,2.85,0],R)];
   if(scenario==="mine")return [L("Verde no tope",[0,4.1,0],G),L("Verde no lais BB",[0,2.65,-1.45],G),L("Verde no lais BE",[0,2.65,1.45],G)];
+  if(scenario==="diving")return [L("RAM encarnada superior",[0,4.05,0],R),L("RAM branca",[0,3.45,0],W),L("RAM encarnada inferior",[0,2.85,0],R)];
+  if(scenario==="dredgePort")return [L("RAM encarnada",[0,4.1,0],R),L("RAM branca",[0,3.55,0],W),L("RAM encarnada",[0,3,0],R),L("Obstrução BB superior",[0,2.6,-1.25],R),L("Obstrução BB inferior",[0,2.05,-1.25],R),L("Passagem BE superior",[0,2.6,1.25],G),L("Passagem BE inferior",[0,2.05,1.25],G)];
+  if(scenario==="dredgeStbd")return [L("RAM encarnada",[0,4.1,0],R),L("RAM branca",[0,3.55,0],W),L("RAM encarnada",[0,3,0],R),L("Passagem BB superior",[0,2.6,-1.25],G),L("Passagem BB inferior",[0,2.05,-1.25],G),L("Obstrução BE superior",[0,2.6,1.25],R),L("Obstrução BE inferior",[0,2.05,1.25],R)];
+  if(scenario==="cbd")return [L("Circular encarnada superior",[0,4.1,0],R),L("Circular encarnada média",[0,3.5,0],R),L("Circular encarnada inferior",[0,2.9,0],R),L("Bombordo",[0,1.45,-1],R,112.5,-56.25),L("Boreste",[0,1.45,1],G,112.5,56.25)];
   if(scenario==="pilot")return [L("Circular branca",[0,3.7,0],W),L("Circular encarnada",[0,3.15,0],R),L("Bombordo",[0,1.25,-.85],R,112.5,-56.25),L("Boreste",[0,1.25,.85],G,112.5,56.25)];
   if(scenario==="anchor")return [L("Circular vante",[2.8,2.7,0],W),L("Circular ré",[-3,1.9,0],W)];
   if(scenario==="aground")return [L("Circular vante",[2.8,2.7,0],W),L("Circular ré",[-3,1.9,0],W),L("Encarnada superior",[0,3.8,0],R),L("Encarnada inferior",[0,3.2,0],R)];
@@ -118,6 +122,8 @@ function dayShapePlan(scenario){
   if(scenario==="ram")return [{kind:"ball",p:[0,4.15,0]},{kind:"diamond",p:[0,3.55,0]},{kind:"ball",p:[0,2.95,0]}];
   if(scenario==="tow")return [{kind:"diamond",p:[-1.2,3.2,0]}];
   if(scenario==="fishing")return [{kind:"coneDown",p:[0,3.85,0]},{kind:"coneUp",p:[0,3.15,0]}];
+  if(scenario==="cbd")return [{kind:"cylinder",p:[0,3.45,0]}];
+  if(scenario==="dredgePort"||scenario==="dredgeStbd"||scenario==="diving")return [{kind:"ball",p:[0,4.15,0]},{kind:"diamond",p:[0,3.55,0]},{kind:"ball",p:[0,2.95,0]}];
   return [];
 }
 
@@ -341,7 +347,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
           }
           if(!night){
             for(const d of dayShapePlan(scenario)){
-              let g=d.kind==="diamond"?new THREE.OctahedronGeometry(.32):d.kind==="coneUp"||d.kind==="coneDown"?new THREE.ConeGeometry(.28,.6,20):new THREE.SphereGeometry(.28,20,14);
+              let g=d.kind==="diamond"?new THREE.OctahedronGeometry(.32):d.kind==="cylinder"?new THREE.CylinderGeometry(.22,.22,.62,20):d.kind==="coneUp"||d.kind==="coneDown"?new THREE.ConeGeometry(.28,.6,20):new THREE.SphereGeometry(.28,20,14);
               if(d.kind==="coneDown")g.rotateZ(Math.PI);
               const m=new THREE.Mesh(g,new THREE.MeshStandardMaterial({color:0x111111,roughness:.78}));m.position.set(...d.p);shapeGroup.add(m);
             }
