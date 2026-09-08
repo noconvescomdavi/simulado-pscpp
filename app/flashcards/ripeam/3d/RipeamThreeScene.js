@@ -5,15 +5,16 @@ import styles from "./ripeam-3d.module.css";
 
 const THREE_VERSION="0.180.0";
 let modernThreePromise=null;
+const browserImport=url=>new Function("u","return import(u)")(url);
 
 async function getThree(){
   if(!modernThreePromise){
     modernThreePromise=(async()=>{
-      const THREE=await import("https://esm.sh/three@"+THREE_VERSION);
+      const THREE=await browserImport("https://esm.sh/three@"+THREE_VERSION);
       const [{GLTFLoader},{OrbitControls},{FBXLoader}]=await Promise.all([
-        import("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/loaders/GLTFLoader.js"),
-        import("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/controls/OrbitControls.js"),
-        import("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/loaders/FBXLoader.js")
+        browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/loaders/GLTFLoader.js"),
+        browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/controls/OrbitControls.js"),
+        browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/loaders/FBXLoader.js")
       ]);
       return {...THREE,GLTFLoader,OrbitControls,FBXLoader};
     })().catch(error=>{modernThreePromise=null;throw error;});
