@@ -15,11 +15,12 @@ const MODEL_URLS={
 
 async function loadThree(){
   const THREE=await import(CDN+"/build/three.module.js");
-  const [{GLTFLoader},{FBXLoader}]=await Promise.all([
+  const [{GLTFLoader},{FBXLoader},{OBJLoader}]=await Promise.all([
     import(CDN+"/examples/jsm/loaders/GLTFLoader.js"),
-    import(CDN+"/examples/jsm/loaders/FBXLoader.js")
+    import(CDN+"/examples/jsm/loaders/FBXLoader.js"),
+    import(CDN+"/examples/jsm/loaders/OBJLoader.js")
   ]);
-  return {THREE,GLTFLoader,FBXLoader};
+  return {THREE,GLTFLoader,FBXLoader,OBJLoader};
 }
 
 function lightPlan(scenario){
@@ -43,41 +44,43 @@ function lightPlan(scenario){
   ];
 }
 
-export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,onReady}){
+export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,editorScene,onReady}){
   const mount=useRef(null);
   const runtime=useRef(null);
 
   useEffect(()=>{
     let disposed=false;
-    if(!mount.current || (!MODEL_URLS[vessel] && vessel!=="tow-combo")){ onReady?.(false); return; }
+    if(!mount.current || (!editorScene && !MODEL_URLS[vessel] && vessel!=="tow-combo")){ onReady?.(false); return; }
 
     (async()=>{
       try{
-        const {THREE,GLTFLoader,FBXLoader}=await loadThree();
+        const {THREE,GLTFLoader,FBXLoader,OBJLoader}=await loadThree();
         if(disposed||!mount.current)return;
         const root=mount.current;
         const scene=new THREE.Scene();
-        scene.background=new THREE.Color(night?0x010812:0x82ccef);
-        scene.fog=new THREE.FogExp2(night?0x07121d:0xaeddf2,0.026);
+        const env=editorScene?.environment||{};
+        scene.background=new THREE.Color(editorScene?(env.background||"#071522"):(night?0x010812:0x82ccef));
+        scene.fog=new THREE.FogExp2(editorScene?(env.fog||"#07121d"):(night?0x07121d:0xaeddf2),editorScene?Number(env.fogDensity||.026):.026);
 
-        const camera=new THREE.PerspectiveCamera(43,1,.1,250);
-        camera.position.set(14,7,15);
+        const camCfg=editorScene?.camera||{};
+        const camera=new THREE.PerspectiveCamera(Number(camCfg.fov||43),1,.1,250);
+        camera.position.fromArray(camCfg.position||[14,7,15]);
         const renderer=new THREE.WebGLRenderer({antialias:true,alpha:false,powerPreference:"high-performance"});
         renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));
         renderer.outputColorSpace=THREE.SRGBColorSpace;
         renderer.toneMapping=THREE.ACESFilmicToneMapping;
-        renderer.toneMappingExposure=night?0.85:1.15;
+        renderer.toneMappingExposure=editorScene?Number(env.exposure||.95):(night?0.85:1.15);
         root.innerHTML="";
         root.appendChild(renderer.domElement);
 
-        const hemi=new THREE.HemisphereLight(night?0x7897bc:0xdaf3ff,night?0x06121b:0x306b82,night?.75:2.4);
+        const hemi=new THREE.HemisphereLight(editorScene?(env.ambient||"#7897bc"):(night?0x7897bc:0xdaf3ff),night?0x06121b:0x306b82,editorScene?Number(env.ambientIntensity||.9):(night?.75:2.4));
         scene.add(hemi);
-        const sun=new THREE.DirectionalLight(night?0x9eb8d8:0xfff0cf,night?1.3:3.2);
-        sun.position.set(6,14,9); scene.add(sun);
+        const sun=new THREE.DirectionalLight(editorScene?(env.sun||"#fff0cf"):(night?0x9eb8d8:0xfff0cf),editorScene?Number(env.sunIntensity||2.2):(night?1.3:3.2));
+        sun.position.fromArray(editorScene?(env.sunPosition||[6,14,9]):[6,14,9]); scene.add(sun);
 
         const waterGeo=new THREE.PlaneGeometry(140,140,90,90);
         const waterMat=new THREE.MeshPhysicalMaterial({
-          color:night?0x063b55:0x117ca5,roughness:.18,metalness:.12,
+          color:editorScene?(env.water||"#063b55"):(night?0x063b55:0x117ca5),roughness:.18,metalness:.12,
           transmission:night?.04:.12,transparent:true,opacity:.96,side:THREE.DoubleSide
         });
         const water=new THREE.Mesh(waterGeo,waterMat);
@@ -87,6 +90,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,o
         const modelRoot=new THREE.Group(); scene.add(modelRoot);
         const gltfLoader=new GLTFLoader();
         const fbxLoader=new FBXLoader();
+        const objLoader=new OBJLoader();
 
         const tuneMaterial=(obj)=>{
           obj.traverse(o=>{
@@ -108,7 +112,36 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,o
           return obj;
         };
 
-        if(vessel==="tow-combo"){
+        const navGroup=new THREE.Group(); modelRoot.add(navGroup);
+
+        if(editorScene?.objects?.length){
+          for(const data of editorScene.objects){
+            let obj=null;
+            if(data.type==="model"){
+              try{
+                if(data.assetType==="fbx")obj=await fbxLoader.loadAsync(data.assetUrl);
+                else if(data.assetType==="obj")obj=await objLoader.loadAsync(data.assetUrl);
+                else obj=(await gltfLoader.loadAsync(data.assetUrl)).scene;
+                tuneMaterial(obj);
+              }catch(error){console.warn("Asset publicado indisponível",data.assetUrl,error)}
+            }else if(data.type&&data.type.includes("Light")){
+              const bulb=new THREE.Mesh(new THREE.SphereGeometry(.105,16,10),new THREE.MeshBasicMaterial({color:data.color||"#fff2ba"}));
+              let glow;
+              if(data.type==="directionalLight")glow=new THREE.DirectionalLight(data.color||"#fff2ba",Number(data.intensity||2));
+              else if(data.type==="spotLight")glow=new THREE.SpotLight(data.color||"#fff2ba",Number(data.intensity||3),Number(data.distance||12),Number(data.angle||.75),Number(data.penumbra||.25));
+              else glow=new THREE.PointLight(data.color||"#fff2ba",Number(data.intensity||3),Number(data.distance||12),1.7);
+              bulb.add(glow);obj=bulb;
+            }else if(data.type==="shape"){
+              obj=new THREE.Mesh(new THREE.SphereGeometry(.4,20,14),new THREE.MeshStandardMaterial({color:data.color||"#111111"}));
+            }
+            if(!obj)continue;
+            obj.position.fromArray(data.position||[0,0,0]);
+            obj.rotation.set(...(data.rotation||[0,0,0]));
+            obj.scale.fromArray(data.scale||[1,1,1]);
+            obj.visible=data.visible!==false;
+            modelRoot.add(obj);
+          }
+        }else if(vessel==="tow-combo"){
           const [tugGltf,bargeObj]=await Promise.all([
             gltfLoader.loadAsync(MODEL_URLS.tugboat.url),
             fbxLoader.loadAsync(MODEL_URLS.barge.url)
@@ -136,7 +169,6 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,o
           ]);
           const cable=new THREE.Line(cableGeo,cableMat);
           modelRoot.add(cable);
-
           runtime.currentTow={tugGroup,bargeGroup,cable,towDistance};
         }else{
           const cfg=MODEL_URLS[vessel];
@@ -146,15 +178,13 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,o
           modelRoot.add(model);
         }
 
-        const navGroup=new THREE.Group(); modelRoot.add(navGroup);
-        for(const l of lightPlan(scenario)){
-          const bulb=new THREE.Mesh(
-            new THREE.SphereGeometry(.105,16,10),
-            new THREE.MeshBasicMaterial({color:l.c})
-          );
-          bulb.position.set(...l.p); navGroup.add(bulb);
-          const glow=new THREE.PointLight(l.c,night?5.2:1.1,4.2,1.7);
-          glow.position.copy(bulb.position); navGroup.add(glow);
+        if(!editorScene){
+          for(const l of lightPlan(scenario)){
+            const bulb=new THREE.Mesh(new THREE.SphereGeometry(.105,16,10),new THREE.MeshBasicMaterial({color:l.c}));
+            bulb.position.set(...l.p); navGroup.add(bulb);
+            const glow=new THREE.PointLight(l.c,night?5.2:1.1,4.2,1.7);
+            glow.position.copy(bulb.position); navGroup.add(glow);
+          }
         }
 
         const resize=()=>{
@@ -202,7 +232,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,o
       runtime.current=null;
       runtime.currentTow=null;
     };
-  },[vessel]);
+  },[vessel,editorScene]);
 
   useEffect(()=>{
     const r=runtime.current;if(!r)return;
@@ -217,13 +247,20 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,o
 
   useEffect(()=>{
     const r=runtime.current;if(!r)return;
+    if(editorScene){
+      const e=editorScene.environment||{};
+      r.scene.background.set(e.background||"#071522");
+      r.renderer.toneMappingExposure=Number(e.exposure||.95);
+      r.water.material.color.set(e.water||"#063b55");
+      return;
+    }
     r.scene.background.set(night?0x010812:0x82ccef);
     r.renderer.toneMappingExposure=night?.85:1.15;
     r.water.material.color.set(night?0x063b55:0x117ca5);
-  },[night]);
+  },[night,editorScene]);
 
   useEffect(()=>{
-    const r=runtime.current;if(!r)return;
+    const r=runtime.current;if(!r||editorScene)return;
     while(r.navGroup.children.length){const o=r.navGroup.children.pop();o.geometry?.dispose?.();o.material?.dispose?.()}
     const THREE=r.THREE;
     for(const l of lightPlan(scenario)){
@@ -231,7 +268,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,o
       bulb.position.set(...l.p);r.navGroup.add(bulb);
       const glow=new THREE.PointLight(l.c,night?5.2:1.1,4.2,1.7);glow.position.copy(bulb.position);r.navGroup.add(glow);
     }
-  },[scenario,night]);
+  },[scenario,night,editorScene]);
 
   return <div ref={mount} className={styles.threeScene} aria-label="Visualizador tridimensional da embarcação"/>;
 }
