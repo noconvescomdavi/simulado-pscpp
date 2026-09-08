@@ -6,7 +6,7 @@ const read=(path)=>fs.readFileSync(path,"utf8");
 const integrated=read("lib/integrated-study-plan.js");
 const snapshot=read("lib/study-plan-snapshot.js");
 const progress=read("lib/study-plan-progress.js");
-const migration=read("db/migrations/022_learning_engine_v3.sql");
+const migration=read("db/migrations/022_learning_engine_v3.sql")+"\n"+read("db/migrations/023_learning_analytics_v3.sql");
 const client=read("app/plano-de-estudos/PlanClient.js");
 const unavailable=read("app/api/study-plan/unavailability/route.js");
 const sessionApi=read("app/api/study-plan/session/route.js");
