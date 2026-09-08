@@ -1,7 +1,7 @@
 "use client";
 import {useEffect,useMemo,useState} from "react";
 import styles from "./plano.module.css";
-import {startTrackedStudySession} from "../components/StudySessionTracker";
+import {startTrackedStudySession,stopTrackedStudySession} from "../components/StudySessionTracker";
 
 const dayNames=["DOM","SEG","TER","QUA","QUI","SEX","SÁB"];
 
@@ -119,6 +119,7 @@ export default function PlanClient({plan}){
         setBibliography(items=>items.map(x=>x.bibliography_key===bp.bibliography_key&&x.section_key===bp.section_key?{...x,progress:bp}:x));
       }
 
+      await stopTrackedStudySession().catch(()=>{});
       setTaskMessages(m=>({...m,[key]:"✓ Tarefa concluída"}));
       setTimeout(()=>setTaskMessages(m=>{const n={...m};delete n[key];return n}),2200);
     }catch(error){
