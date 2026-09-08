@@ -3,8 +3,10 @@ import {getSession} from "../../../../../lib/auth";
 import {getAiTutorAccess,AI_TUTOR_PRODUCT_CODE} from "../../../../../lib/ai-tutor";
 import {query} from "../../../../../lib/db";
 import {buildTutorPreference,getTutorPaymentConfig,mercadoPagoRequest} from "../../../../../lib/payments";
+import {assertSameOrigin} from "../../../../../lib/security";
 
-export async function POST(request){
+export async function POST(request) {
+  try { await assertSameOrigin(); } catch (error) { return Response.json({error:"Origem inválida."},{status:Number(error?.status)||403}); }
  const session=await getSession();if(!session)return NextResponse.redirect(new URL("/login?next=/contramestre",request.url),303);
  const access=await getAiTutorAccess(session.id);if(access?.active)return NextResponse.redirect(new URL("/contramestre",request.url),303);
  const profile=await query("select full_name,cpf,phone from user_profiles where user_id=$1 limit 1",[session.id]);
