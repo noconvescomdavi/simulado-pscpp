@@ -196,19 +196,55 @@ function addTowLine(THREE,scene,start,end){
   return line;
 }
 
+function addDayShapes(THREE,root,plan){
+  const black=new THREE.MeshBasicMaterial({color:0x050505});
+  const ball=p=>{const m=new THREE.Mesh(new THREE.SphereGeometry(.24,18,12),black.clone());m.position.set(...p);root.add(m)};
+  const diamond=p=>{const m=new THREE.Mesh(new THREE.OctahedronGeometry(.29),black.clone());m.position.set(...p);root.add(m)};
+  const cone=(p,up=true)=>{const m=new THREE.Mesh(new THREE.ConeGeometry(.28,.5,18),black.clone());m.position.set(...p);if(!up)m.rotation.z=Math.PI;root.add(m)};
+  if(plan==="nuc"){ball([0,4.15,0]);ball([0,3.55,0])}
+  if(plan==="ram"||plan==="dredgerPort"||plan==="dredgerStbd"){ball([0,4.35,0]);diamond([0,3.7,0]);ball([0,3.05,0])}
+  if(plan==="fishing"){cone([0,4.05,0],false);cone([0,3.35,0],true)}
+  if(plan==="mine"){ball([0,4.25,0]);ball([0,3.1,-1.15]);ball([0,3.1,1.15])}
+  if(plan==="cbd"){const m=new THREE.Mesh(new THREE.CylinderGeometry(.22,.22,.7,18),black.clone());m.position.set(0,3.8,0);root.add(m)}
+  if(plan==="anchor")ball([1.8,3.1,0]);
+  if(plan==="aground"){ball([0,4.2,0]);ball([0,3.55,0]);ball([0,2.9,0])}
+}
+
+function addLightSectors(THREE,root,plan){
+  const defs={
+    power:[["white",225,0],["red",112.5,-56.25],["green",112.5,56.25],["white",135,180]],
+    towShort:[["white",225,0],["red",112.5,-56.25],["green",112.5,56.25],["yellow",135,180]],
+    towLong:[["white",225,0],["red",112.5,-56.25],["green",112.5,56.25],["yellow",135,180]],
+    sail:[["red",112.5,-56.25],["green",112.5,56.25],["white",135,180]],
+    seaplane:[["red",112.5,-56.25],["green",112.5,56.25],["white",135,180]]
+  };
+  const colors={white:0xfff4d6,red:0xff303f,green:0x36e37b,yellow:0xffcf3a};
+  for(const [name,deg,heading] of defs[plan]||[]){
+    const start=(heading-deg/2)*Math.PI/180;
+    const geo=new THREE.CircleGeometry(8,48,start,deg*Math.PI/180);
+    const mat=new THREE.MeshBasicMaterial({color:colors[name],transparent:true,opacity:.13,side:THREE.DoubleSide,depthWrite:false});
+    const sector=new THREE.Mesh(geo,mat);
+    sector.rotation.x=-Math.PI/2;
+    sector.position.y=.08;
+    root.add(sector);
+  }
+}
+
 function addNavigationLights(THREE,root,plan){
   try{
     const colors={white:0xfff4d6,red:0xff303f,green:0x36e37b,yellow:0xffcf3a};
     const plans={
       power:[[2.5,4,0,"white"],[0,1.5,-1,"red"],[0,1.5,1,"green"],[-2.5,1.6,0,"white"]],
-      tow:[[2.2,4,0,"white"],[2.2,3.5,0,"white"],[-1.8,1.7,0,"yellow"]],
+      towShort:[[2.2,4,0,"white"],[2.2,3.5,0,"white"],[-1.8,1.7,0,"yellow"],[0,1.5,-1,"red"],[0,1.5,1,"green"]],
+      towLong:[[2.2,4.3,0,"white"],[2.2,3.75,0,"white"],[2.2,3.2,0,"white"],[-1.8,1.7,0,"yellow"],[0,1.5,-1,"red"],[0,1.5,1,"green"]],
       sail:[[0,1.5,-1,"red"],[0,1.5,1,"green"],[-2,1.5,0,"white"]],
       fishing:[[0,4,0,"red"],[0,3.4,0,"white"]],
       nuc:[[0,4,0,"red"],[0,3.4,0,"red"]],
       ram:[[0,4.2,0,"red"],[0,3.6,0,"white"],[0,3,0,"red"]],
-      dredger:[[0,4.2,0,"red"],[0,3.6,0,"white"],[0,3,0,"red"],[-1,2.6,0,"green"],[1,2.6,0,"red"]],
+      dredgerPort:[[0,4.2,0,"red"],[0,3.6,0,"white"],[0,3,0,"red"],[-1,2.8,0,"red"],[-1,2.3,0,"red"],[1,2.8,0,"green"],[1,2.3,0,"green"]],
+      dredgerStbd:[[0,4.2,0,"red"],[0,3.6,0,"white"],[0,3,0,"red"],[-1,2.8,0,"green"],[-1,2.3,0,"green"],[1,2.8,0,"red"],[1,2.3,0,"red"]],
       mine:[[0,4.2,0,"green"],[0,2.7,-1.4,"green"],[0,2.7,1.4,"green"]],
-      cbd:[[0,4.1,0,"red"]],
+      cbd:[[0,4.3,0,"red"],[0,3.7,0,"red"],[0,3.1,0,"red"]],
       pilot:[[0,4,0,"white"],[0,3.4,0,"red"]],
       anchor:[[2.2,2.8,0,"white"],[-2.2,2,0,"white"]],
       aground:[[2.2,2.8,0,"white"],[-2.2,2,0,"white"],[0,4,0,"red"],[0,3.4,0,"red"]],
@@ -228,7 +264,7 @@ function addNavigationLights(THREE,root,plan){
   }
 }
 
-export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false}){
+export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,displayMode="vessel",showSectors=false}){
   const mount=useRef(null);
   const runtime=useRef(null);
 
@@ -293,8 +329,12 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false}
 
         const vesselRoot=new THREE.Group();
         const lightsRoot=new THREE.Group();
+        const shapesRoot=new THREE.Group();
+        const sectorsRoot=new THREE.Group();
         scene.add(vesselRoot);
         scene.add(lightsRoot);
+        scene.add(shapesRoot);
+        scene.add(sectorsRoot);
 
         let meshCount=0;
         let materialCount=0;
@@ -378,8 +418,13 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false}
         observer.observe(root);
         resize();
 
-        // O modelo já está carregado e validado antes das luzes RIPEAM.
+        // Elementos didáticos são isolados do carregamento do GLB.
         addNavigationLights(THREE,lightsRoot,sceneConfig.lightPlan);
+        addDayShapes(THREE,shapesRoot,sceneConfig.lightPlan);
+        if(showSectors)addLightSectors(THREE,sectorsRoot,sceneConfig.lightPlan);
+        vesselRoot.visible=displayMode!=="lights";
+        lightsRoot.visible=displayMode!=="daymarks";
+        shapesRoot.visible=displayMode==="daymarks";
 
         camera.updateMatrixWorld(true);
         const frustum=new THREE.Frustum();
@@ -421,6 +466,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false}
           else if(name==="stern")camera.position.set(target.x-d,target.y+d*.15,target.z);
           else if(name==="port")camera.position.set(target.x,target.y+d*.15,target.z-d);
           else if(name==="starboard")camera.position.set(target.x,target.y+d*.15,target.z+d);
+          else if(name==="top")camera.position.set(target.x,target.y+d,target.z+.001);
           else camera.position.set(target.x+d*.8,target.y+d*.42,target.z+d*.8);
           camera.lookAt(target);
           enforceWaterline();
@@ -433,7 +479,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false}
           controls.update();
         };
 
-        runtime.current={renderer,controls,observer,vesselRoot,lightsRoot,setView,zoomBy,reset:()=>setView("3d")};
+        runtime.current={renderer,controls,observer,vesselRoot,lightsRoot,shapesRoot,sectorsRoot,setView,zoomBy,reset:()=>setView("3d")};
       }catch(error){
         console.error("[RIPEAM 3D]",error);
         if(root){
@@ -454,13 +500,15 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false}
         r.controls?.dispose();
         disposeObject(r.vesselRoot);
         disposeObject(r.lightsRoot);
+        disposeObject(r.shapesRoot);
+        disposeObject(r.sectorsRoot);
         r.renderer?.dispose();
         r.renderer?.forceContextLoss?.();
       }
       runtime.current=null;
       if(mount.current)mount.current.innerHTML="";
     };
-  },[sceneConfig,onDiagnostics,night]);
+  },[sceneConfig,onDiagnostics,night,displayMode,showSectors]);
 
   const view=name=>runtime.current?.setView?.(name);
   const zoom=factor=>runtime.current?.zoomBy?.(factor);
@@ -476,7 +524,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false}
   return <div className={styles.viewerShell}>
     <div className={styles.controls}>
       <button onClick={()=>view("3d")}>3D</button><button onClick={()=>view("bow")}>Proa</button><button onClick={()=>view("stern")}>Popa</button>
-      <button onClick={()=>view("port")}>Bombordo</button><button onClick={()=>view("starboard")}>Boreste</button><button onClick={()=>runtime.current?.reset?.()}>Reset</button>
+      <button onClick={()=>view("port")}>Bombordo</button><button onClick={()=>view("starboard")}>Boreste</button><button onClick={()=>view("top")}>Superior</button><button onClick={()=>runtime.current?.reset?.()}>Reset</button>
       <button onClick={()=>zoom(.85)}>＋</button><button onClick={()=>zoom(1.18)}>−</button><button onClick={fullscreen}>Tela cheia</button>
     </div>
     <div ref={mount} className={styles.viewport}/>
