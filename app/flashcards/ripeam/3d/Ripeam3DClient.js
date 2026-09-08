@@ -1,6 +1,7 @@
 "use client";
 import {useMemo,useRef,useState} from "react";
 import styles from "./ripeam-3d.module.css";
+import RipeamThreeScene from "./RipeamThreeScene";
 
 const SCENARIOS={
  power:{label:"Propulsão mecânica",rule:"23",vessel:"bulk-carrier",lights:[["Mastro","#fff2ba"],["Bombordo","#ef3c4e"],["Boreste","#35dc83"],["Alcançado","#fff2ba"]],shape:""},
@@ -26,6 +27,7 @@ export default function Ripeam3DClient(){
  const [pitch,setPitch]=useState(-8);
  const [night,setNight]=useState(true);
  const [zoom,setZoom]=useState(1);
+ const [modelReady,setModelReady]=useState(false);
  const drag=useRef(null);
  const s=SCENARIOS[scenario];
  const stack=useMemo(()=>s.lights.map((x,i)=>({label:x[0],color:x[1],top:72+i*34})),[s]);
@@ -47,10 +49,11 @@ export default function Ripeam3DClient(){
          <button className={styles.dayToggle} onClick={()=>setNight(v=>!v)}>{night?"☀ Dia":"☾ Noite"}</button>
        </div>
        <div className={night?styles.sceneNight:styles.sceneDay} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={up} onWheel={wheel}>
+         <RipeamThreeScene scenario={scenario} vessel={s.vessel} yaw={yaw} pitch={pitch} zoom={zoom} night={night} onReady={setModelReady} />
          <div className={styles.skyGlow}/>
          <div className={styles.horizon}/>
          <div className={styles.water3d}><i/><i/><i/><i/><i/><i/></div>
-         <div className={styles.world} style={{transform:`scale(${zoom}) rotateX(${pitch}deg) rotateY(${yaw}deg)`}}>
+         <div className={`${styles.world} ${modelReady && s.vessel==="bulk-carrier" ? styles.worldHidden : ""}`} style={{transform:`scale(${zoom}) rotateX(${pitch}deg) rotateY(${yaw}deg)`}}>
            <div className={styles.shipBob}><div className={styles.hull}><i/><i/><i/></div>
            <div className={styles.deckhouse}/>
            <div className={styles.mast}/></div>
@@ -59,7 +62,7 @@ export default function Ripeam3DClient(){
          </div>
          <div className={styles.dragHint}>Arraste para girar · roda do mouse para zoom · ${Math.round(zoom*100)}%</div>
        </div>
-       <footer className={styles.viewerFooter}><div><b>{s.label}</b><span>Regra {s.rule}</span></div><strong>Aspecto: {Math.round(((yaw%360)+360)%360)}° · {s.vessel==="bulk-carrier"?"Bulk carrier":"modelo de treinamento"}</strong></footer>
+       <footer className={styles.viewerFooter}><div><b>{s.label}</b><span>Regra {s.rule}</span></div><strong>Aspecto: {Math.round(((yaw%360)+360)%360)}° · {s.vessel==="bulk-carrier"?"Bulk carrier 3D":"modelo de treinamento"}</strong></footer>
      </div>
      <aside className={styles.lightList}><h2>Luzes / marcas</h2>{s.lights.map((x,i)=><div key={i}><i style={{background:x[1]}}/><span><b>{x[0]}</b><small>{scenario==="tow"&&i===3?"amarela · 135°":"identificação visual"}</small></span></div>)}{s.shape&&<div className={styles.shapeRow}><b>Marca diurna</b><strong>{s.shape}</strong></div>}</aside>
    </section>
