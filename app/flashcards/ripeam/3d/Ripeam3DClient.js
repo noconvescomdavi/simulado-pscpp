@@ -86,6 +86,24 @@ const SCENES=[
 ];
 
 
+const DAYMARK_INFO={
+  power:["Sem marca diurna especial para esta condição."],
+  towShort:["Reboque ≤ 200 m: não há losango obrigatório apenas pelo comprimento do reboque."],
+  towLong:["Losango preto em local bem visível quando o comprimento do reboque excede 200 m."],
+  sail:["Sem marca diurna especial apenas por estar a vela."],
+  fishing:["Dois cones pretos com os vértices unidos."],
+  nuc:["Duas esferas pretas em linha vertical."],
+  ram:["Esfera preta, losango preto e esfera preta em linha vertical."],
+  dredgerPort:["Esfera–losango–esfera; duas esferas no lado obstruído e dois losangos no lado livre."],
+  dredgerStbd:["Esfera–losango–esfera; duas esferas no lado obstruído e dois losangos no lado livre."],
+  mine:["Três esferas pretas: uma próxima ao tope e uma em cada lais."],
+  cbd:["Um cilindro preto."],
+  pilot:["Sem marca diurna especial da praticagem."],
+  anchor:["Uma esfera preta."],
+  aground:["Três esferas pretas em linha vertical."],
+  seaplane:["Na medida do possível, sinais equivalentes aos previstos no RIPEAM."]
+};
+
 const SITUATIONS=[
   {
     id:"head-on",title:"Roda a roda",rule:"14",
@@ -142,6 +160,7 @@ export default function Ripeam3DClient(){
     return {...activeScene,...activeVariant,variantId:activeVariant.id};
   },[labMode,activeScene,activeVariant,situation]);
   const lights=LIGHT_INFO[activeVariant.lightPlan]||[];
+  const daymarks=DAYMARK_INFO[activeVariant.lightPlan]||["Sem marca diurna cadastrada."];
 
   const chooseScene=item=>{
     setSelected(item.key);
@@ -155,7 +174,7 @@ export default function Ripeam3DClient(){
   const startIdentify=()=>{
     setLabMode("identify");
     setNight(true);
-    setDisplayMode("lights");
+    setDisplayMode("signals-only");
     setShowSectors(false);
     setIdentifyAnswer(null);
     setHighlightLight(-1);
@@ -233,8 +252,8 @@ export default function Ripeam3DClient(){
           </div>
           <div className={styles.headingActions}>
             {labMode!=="identify"&&<div className={styles.environmentToggle}>
-              <button className={!night?styles.environmentActive:""} onClick={()=>setNight(false)}>☀ Diurno</button>
-              <button className={night?styles.environmentActive:""} onClick={()=>setNight(true)}>☾ Noturno</button>
+              <button className={!night?styles.environmentActive:""} onClick={()=>{setNight(false);setDisplayMode("vessel");setShowSectors(false);setHighlightLight(-1)}}>☀ Diurno</button>
+              <button className={night?styles.environmentActive:""} onClick={()=>{setNight(true);setDisplayMode("vessel");setHighlightLight(-1)}}>☾ Noturno</button>
             </div>}
             <div className={styles.status}>{diagnostics?.status==="loaded"?"Modelo 3D carregado":diagnostics?.status==="error"?"Falha no modelo":"Carregando"}</div>
           </div>
@@ -245,10 +264,9 @@ export default function Ripeam3DClient(){
         </div>}
 
         {labMode==="explore"&&<div className={styles.studyToolbar}>
-          <button className={displayMode==="vessel"?styles.studyActive:""} onClick={()=>setDisplayMode("vessel")}>Navio + luzes</button>
-          <button className={displayMode==="lights"?styles.studyActive:""} onClick={()=>setDisplayMode("lights")}>Somente luzes</button>
-          <button className={displayMode==="daymarks"?styles.studyActive:""} onClick={()=>setDisplayMode("daymarks")}>Marcas diurnas</button>
-          <button className={showSectors?styles.studyActive:""} onClick={()=>setShowSectors(v=>!v)}>Setores luminosos</button>
+          <button className={displayMode==="vessel"?styles.studyActive:""} onClick={()=>setDisplayMode("vessel")}>{night?"Navio + luzes":"Navio + marcas diurnas"}</button>
+          <button className={displayMode==="signals-only"?styles.studyActive:""} onClick={()=>setDisplayMode("signals-only")}>{night?"Somente luzes":"Somente marcas diurnas"}</button>
+          {night&&<button className={showSectors?styles.studyActive:""} onClick={()=>setShowSectors(v=>!v)}>Setores luminosos</button>}
         </div>}
 
         <div className={styles.viewerStudyGrid}>
@@ -257,17 +275,17 @@ export default function Ripeam3DClient(){
             sceneConfig={sceneConfig}
             onDiagnostics={setDiagnostics}
             night={labMode==="identify"?true:night}
-            displayMode={labMode==="identify"?"lights":displayMode}
+            displayMode={labMode==="identify"?"signals-only":displayMode}
             showSectors={labMode==="explore"&&showSectors}
             highlightLightIndex={highlightLight}
           />
 
           {labMode==="explore"&&<aside className={styles.lightPanel}>
-            <div className={styles.lightPanelHeader}><b>Luzes</b><span>{lights.length}</span></div>
-            <div className={styles.lightDiagram}>
+            <div className={styles.lightPanelHeader}><b>{night?"Luzes noturnas":"Marcas diurnas"}</b><span>{night?lights.length:daymarks.length}</span></div>
+            {night?<><div className={styles.lightDiagram}>
               {lights.slice(0,7).map((l,i)=><i key={i} className={styles["light"+(l[1].includes("Verde")?"Green":l[1].includes("Encarnada")?"Red":l[1].includes("Amarela")?"Yellow":"White")]} style={{top:(12+i*11)+"%"}} title={l[0]}/>)}
             </div>
-            <ul>{lights.map((l,i)=><li key={i} className={highlightLight===i?styles.lightSelected:""} onClick={()=>setHighlightLight(highlightLight===i?-1:i)}><span className={styles.lightDot}></span><div><b>{l[0]}</b><small>{l[1]} · {l[2]} · {l[3]}</small></div></li>)}</ul>
+            <ul>{lights.map((l,i)=><li key={i} className={highlightLight===i?styles.lightSelected:""} onClick={()=>setHighlightLight(highlightLight===i?-1:i)}><span className={styles.lightDot}></span><div><b>{l[0]}</b><small>{l[1]} · {l[2]} · {l[3]}</small></div></li>)}</ul></>:<div className={styles.daymarkPanel}>{daymarks.map((m,i)=><div key={i}><b>Marca RIPEAM</b><p>{m}</p></div>)}</div>}
             <p className={styles.variantNote}>{activeVariant.note}</p>
           </aside>}
 

@@ -4,6 +4,7 @@ import {useEffect,useRef} from "react";
 import styles from "./ripeam-3d.module.css";
 
 const THREE_VERSION="0.180.0";
+const SEA_LEVEL=0;
 let modernThreePromise=null;
 const browserImport=url=>new Function("u","return import(u)")(url);
 
@@ -23,15 +24,15 @@ async function getThree(){
 }
 
 export const MODEL_CONFIG={
-  "bulk-carrier":{url:"/models/ripeam/bulk_carrier.glb",type:"glb",scale:1,rotation:[-Math.PI/2,0,-Math.PI/2],waterline:0},
-  "tugboat":{url:"/models/ripeam/Tugboat.glb",type:"glb",scale:.55,rotation:[-Math.PI/2,0,0],waterline:0},
-  "barge":{url:"/models/ripeam/barge.fbx",type:"fbx",scale:1,rotation:[-Math.PI/2,0,-Math.PI/2],waterline:0},
-  "sailboat":{url:"/models/ripeam/sailboat.glb",type:"glb",scale:.7,rotation:[0,0,0],waterline:0},
-  "fishing-vessel":{url:"/models/ripeam/fishing_vessel.glb",type:"glb",scale:.72,rotation:[0,Math.PI/2,0],waterline:0},
-  "dredger":{url:"/models/ripeam/dredger.glb",type:"glb",scale:1,rotation:[0,0,0],waterline:0},
-  "pilot-boat":{url:"/models/ripeam/pilot_boat.glb",type:"glb",scale:.55,rotation:[0,0,0],waterline:0},
-  "mine-clearance":{url:"/models/ripeam/navy_mine_clearance.glb",type:"glb",scale:.72,rotation:[0,Math.PI/2,0],waterline:0},
-  "seaplane":{url:"/models/ripeam/hidroaviao.glb",type:"glb",scale:.65,rotation:[0,Math.PI/2,0],waterline:0}
+  "bulk-carrier":{url:"/models/ripeam/bulk_carrier.glb",type:"glb",scale:1,rotation:[-Math.PI/2,0,-Math.PI/2],waterline:0,waterlineRatio:.18},
+  "tugboat":{url:"/models/ripeam/Tugboat.glb",type:"glb",scale:.55,rotation:[-Math.PI/2,0,0],waterline:0,waterlineRatio:.20},
+  "barge":{url:"/models/ripeam/barge.fbx",type:"fbx",scale:1,rotation:[-Math.PI/2,0,-Math.PI/2],waterline:0,waterlineRatio:.32},
+  "sailboat":{url:"/models/ripeam/sailboat.glb",type:"glb",scale:.7,rotation:[0,0,0],waterline:0,waterlineRatio:.11},
+  "fishing-vessel":{url:"/models/ripeam/fishing_vessel.glb",type:"glb",scale:.72,rotation:[0,Math.PI/2,0],waterline:0,waterlineRatio:.20},
+  "dredger":{url:"/models/ripeam/dredger.glb",type:"glb",scale:1,rotation:[0,0,0],waterline:0,waterlineRatio:.19},
+  "pilot-boat":{url:"/models/ripeam/pilot_boat.glb",type:"glb",scale:.55,rotation:[0,0,0],waterline:0,waterlineRatio:.18},
+  "mine-clearance":{url:"/models/ripeam/navy_mine_clearance.glb",type:"glb",scale:.72,rotation:[0,Math.PI/2,0],waterline:0,waterlineRatio:.18},
+  "seaplane":{url:"/models/ripeam/hidroaviao.glb",type:"glb",scale:.65,rotation:[0,Math.PI/2,0],waterline:0,waterlineRatio:.14}
 };
 
 function disposeObject(root){
@@ -78,21 +79,49 @@ function prepareModel(THREE,raw,config){
   box=new THREE.Box3().setFromObject(raw);
   const center=box.getCenter(new THREE.Vector3());
 
-  // A centralização e o assentamento na linha d'água são feitos uma única vez.
+  // O zero do editor e o nível do mar são o mesmo plano: Y = 0.
+  // A orientação e a escala são aplicadas uma única vez. A imersão é calibrada
+  // por embarcação, sem qualquer correção automática durante o render.
+  const size=box.getSize(new THREE.Vector3());
+  const waterlineY=box.min.y+size.y*(config.waterlineRatio??.18);
   raw.position.x-=center.x;
   raw.position.z-=center.z;
-  raw.position.y-=box.min.y;
+  raw.position.y-=waterlineY;
   raw.updateMatrixWorld(true);
 
   const model=new THREE.Group();
   model.add(raw);
-  model.position.y=config.waterline;
+  model.position.y=SEA_LEVEL+(config.waterline||0);
   model.updateMatrixWorld(true);
   return model;
 }
 
+function makeMoonTexture(THREE){
+  const canvas=document.createElement("canvas");
+  canvas.width=256;canvas.height=256;
+  const ctx=canvas.getContext("2d");
+  const g=ctx.createRadialGradient(108,90,15,128,128,120);
+  g.addColorStop(0,"#fffdf1");g.addColorStop(.72,"#eee8d2");g.addColorStop(1,"#c9c3ae");
+  ctx.fillStyle=g;ctx.beginPath();ctx.arc(128,128,116,0,Math.PI*2);ctx.fill();
+  const craters=[[78,82,19],[154,70,15],[176,130,23],[106,151,16],[64,145,11],[135,112,9],[151,173,13]];
+  for(const [x,y,r] of craters){ctx.fillStyle="rgba(95,96,91,.16)";ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill()}
+  const texture=new THREE.CanvasTexture(canvas);texture.colorSpace=THREE.SRGBColorSpace;return texture;
+}
+
 function addStaticNightEnvironment(THREE,scene){
-  scene.background=new THREE.Color(0x020916);
+  scene.background=new THREE.Color(0x01040a);
+  scene.fog=new THREE.FogExp2(0x010710,.0023);
+
+  const sky=new THREE.Mesh(
+    new THREE.SphereGeometry(220,40,24),
+    new THREE.ShaderMaterial({
+      side:THREE.BackSide,depthWrite:false,
+      uniforms:{top:{value:new THREE.Color(0x020615)},bottom:{value:new THREE.Color(0x071a2a)}},
+      vertexShader:"varying vec3 vPos;void main(){vPos=position;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}",
+      fragmentShader:"varying vec3 vPos;uniform vec3 top;uniform vec3 bottom;void main(){float h=clamp((normalize(vPos).y+.15)/1.15,0.0,1.0);gl_FragColor=vec4(mix(bottom,top,h),1.0);}"
+    })
+  );
+  scene.add(sky);
 
   const starsGeometry=new THREE.BufferGeometry();
   const starCount=520;
@@ -114,8 +143,8 @@ function addStaticNightEnvironment(THREE,scene){
   scene.add(stars);
 
   const moon=new THREE.Mesh(
-    new THREE.SphereGeometry(4.8,32,20),
-    new THREE.MeshBasicMaterial({color:0xfff8dc})
+    new THREE.SphereGeometry(4.8,40,28),
+    new THREE.MeshBasicMaterial({map:makeMoonTexture(THREE),color:0xffffff})
   );
   moon.position.set(-44,50,-88);
   scene.add(moon);
@@ -181,7 +210,7 @@ function addMoonReflection(THREE,scene){
       new THREE.MeshBasicMaterial({color:0xdcecff,transparent:true,opacity:.12+((i*7)%8)/100,depthWrite:false})
     );
     strip.rotation.x=-Math.PI/2;
-    strip.position.set(((i*29)%17-8)*spread*.11,.025,z);
+    strip.position.set(((i*29)%17-8)*spread*.11,SEA_LEVEL+.025,z);
     group.add(strip);
   }
   scene.add(group);
@@ -201,8 +230,15 @@ function addDayShapes(THREE,root,plan){
   const ball=p=>{const m=new THREE.Mesh(new THREE.SphereGeometry(.24,18,12),black.clone());m.position.set(...p);root.add(m)};
   const diamond=p=>{const m=new THREE.Mesh(new THREE.OctahedronGeometry(.29),black.clone());m.position.set(...p);root.add(m)};
   const cone=(p,up=true)=>{const m=new THREE.Mesh(new THREE.ConeGeometry(.28,.5,18),black.clone());m.position.set(...p);if(!up)m.rotation.z=Math.PI;root.add(m)};
+  if(plan==="towLong")diamond([0,3.75,0]);
   if(plan==="nuc"){ball([0,4.15,0]);ball([0,3.55,0])}
-  if(plan==="ram"||plan==="dredgerPort"||plan==="dredgerStbd"){ball([0,4.35,0]);diamond([0,3.7,0]);ball([0,3.05,0])}
+  if(plan==="ram"){ball([0,4.35,0]);diamond([0,3.7,0]);ball([0,3.05,0])}
+  if(plan==="dredgerPort"||plan==="dredgerStbd"){
+    ball([0,4.35,0]);diamond([0,3.7,0]);ball([0,3.05,0]);
+    const obstructed=plan==="dredgerPort"?-1:1,free=-obstructed;
+    ball([0,2.75,obstructed]);ball([0,2.2,obstructed]);
+    diamond([0,2.75,free]);diamond([0,2.2,free]);
+  }
   if(plan==="fishing"){cone([0,4.05,0],false);cone([0,3.35,0],true)}
   if(plan==="mine"){ball([0,4.25,0]);ball([0,3.1,-1.15]);ball([0,3.1,1.15])}
   if(plan==="cbd"){const m=new THREE.Mesh(new THREE.CylinderGeometry(.22,.22,.7,18),black.clone());m.position.set(0,3.8,0);root.add(m)}
@@ -225,7 +261,7 @@ function addLightSectors(THREE,root,plan){
     const mat=new THREE.MeshBasicMaterial({color:colors[name],transparent:true,opacity:.13,side:THREE.DoubleSide,depthWrite:false});
     const sector=new THREE.Mesh(geo,mat);
     sector.rotation.x=-Math.PI/2;
-    sector.position.y=.08;
+    sector.position.y=SEA_LEVEL+.08;
     root.add(sector);
   }
 }
@@ -309,7 +345,10 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         const renderer=new THREE.WebGLRenderer({antialias:true,alpha:false,powerPreference:"high-performance"});
         renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
         renderer.outputColorSpace=THREE.SRGBColorSpace;
-        renderer.setClearColor(night?0x020916:0x8cc7e8,1);
+        renderer.toneMapping=THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure=night?.82:1.02;
+        renderer.setClearColor(night?0x01040a:0x8cc7e8,1);
+        const maxAnisotropy=renderer.capabilities.getMaxAnisotropy();
 
         root.innerHTML="";
         root.appendChild(renderer.domElement);
@@ -340,7 +379,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
           })
         );
         water.rotation.x=-Math.PI/2;
-        water.position.y=0;
+        water.position.y=SEA_LEVEL;
         scene.add(water);
         addOceanSurfaceDetail(THREE,scene,night);
         if(night)addMoonReflection(THREE,scene);
@@ -393,6 +432,16 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
               meshCount++;
               materialCount+=Array.isArray(obj.material)?obj.material.length:(obj.material?1:0);
               obj.frustumCulled=true;
+              const materials=Array.isArray(obj.material)?obj.material:[obj.material];
+              materials.filter(Boolean).forEach(material=>{
+                ["map","normalMap","roughnessMap","metalnessMap","aoMap","emissiveMap"].forEach(key=>{
+                  const texture=material[key];
+                  if(!texture?.isTexture)return;
+                  texture.anisotropy=maxAnisotropy;
+                  if(key==="map"||key==="emissiveMap")texture.colorSpace=THREE.SRGBColorSpace;
+                  texture.needsUpdate=true;
+                });
+              });
             });
           }catch(error){
             console.error("[RIPEAM 3D] Falha ao carregar modelo",config.url,error);
@@ -453,9 +502,13 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         addNavigationLights(THREE,lightsRoot,sceneConfig.lightPlan);
         addDayShapes(THREE,shapesRoot,sceneConfig.lightPlan);
         if(showSectors)addLightSectors(THREE,sectorsRoot,sceneConfig.lightPlan);
-        vesselRoot.visible=displayMode!=="lights";
-        lightsRoot.visible=displayMode!=="daymarks"&&!sceneConfig.encounter;
-        shapesRoot.visible=displayMode==="daymarks"&&!sceneConfig.encounter;
+        const hideVessel=displayMode==="signals-only";
+        vesselRoot.visible=!hideVessel;
+        // RIPEAM: no cenário diurno mostramos somente as marcas diurnas;
+        // no cenário noturno mostramos somente as luzes.
+        lightsRoot.visible=night&&!sceneConfig.encounter;
+        shapesRoot.visible=!night&&!sceneConfig.encounter;
+        sectorsRoot.visible=night&&showSectors&&!sceneConfig.encounter;
 
         camera.updateMatrixWorld(true);
         const frustum=new THREE.Frustum();
@@ -474,7 +527,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         onDiagnostics?.(base);
 
         const enforceWaterline=()=>{
-          const minY=.35;
+          const minY=SEA_LEVEL+.35;
           if(controls.target.y<minY)controls.target.y=minY;
           if(camera.position.y<minY)camera.position.y=minY;
         };
