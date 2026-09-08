@@ -56,6 +56,25 @@ export default function StudySessionTracker(){
   return null;
 }
 
+export async function stopTrackedStudySession(){
+  const KEY="estibordo.studySession";
+  const raw=localStorage.getItem(KEY);
+  if(!raw)return null;
+  let data=null;
+  try{data=JSON.parse(raw)}catch{}
+  localStorage.removeItem(KEY);
+  if(!data?.id)return null;
+  try{
+    const r=await fetch("/api/study-plan/session",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({action:"stop",session_id:data.id}),
+      keepalive:true
+    });
+    return await r.json().catch(()=>null);
+  }catch{return null}
+}
+
 export async function startTrackedStudySession({task_key,subject_slug,session_type,plan_date,metadata={}}){
   const KEY="estibordo.studySession";
   try{
