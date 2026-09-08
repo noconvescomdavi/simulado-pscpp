@@ -24,7 +24,6 @@ const SCENARIOS={
 
 const PRESETS={Bow:0,"22.5° BE":-22.5,Stbd:-90,Stern:180,Port:90,"22.5° BB":22.5};
 const VESSEL_LABELS={"bulk-carrier":"Bulk carrier 3D","tow-combo":"Tugboat + barge 3D","sailboat":"Sailboat 3D","fishing-vessel":"Fishing vessel 3D","pilot-boat":"Pilot boat 3D","mine-clearance":"Mine-clearance vessel 3D","seaplane":"Hidroavião 3D","tugboat":"Tugboat 3D","dredger":"Dredger 3D"};
-const PREFETCH_URLS={"bulk-carrier":"/models/ripeam/web/bulk_carrier-low.glb","tow-combo":"/models/ripeam/web/Tugboat.glb","tugboat":"/models/ripeam/web/Tugboat.glb","sailboat":"/models/ripeam/web/sailboat.glb","fishing-vessel":"/models/ripeam/web/fishing_vessel.glb","pilot-boat":"/models/ripeam/web/pilot_boat.glb","mine-clearance":"/models/ripeam/web/navy_mine_clearance.glb","seaplane":"/models/ripeam/web/hidroaviao.glb","dredger":"/models/ripeam/web/dredger.glb"};
 
 export default function Ripeam3DClient(){
  const [scenario,setScenario]=useState("power");
@@ -47,17 +46,6 @@ export default function Ripeam3DClient(){
 
  useEffect(()=>{const q=new URLSearchParams(window.location.search);const k=q.get("scenario");if(k&&SCENARIOS[k])setScenario(k)},[]);
  useEffect(()=>{setModelReady(false);setLoadProgress(null);setRevealed(false);setSelectedLight(null)},[scenario]);
- useEffect(()=>{
-   if(!modelReady)return;
-   const conn=navigator.connection||navigator.mozConnection||navigator.webkitConnection;
-   if(conn?.saveData||["slow-2g","2g"].includes(String(conn?.effectiveType||"")))return;
-   const order=["power","towShort","sail","fishing","mine","pilot","anchor","seaplane"];
-   const i=order.indexOf(scenario),next=SCENARIOS[order[(i+1+order.length)%order.length]]?.vessel;
-   const href=PREFETCH_URLS[next];
-   if(!href)return;
-   const link=document.createElement("link");link.rel="prefetch";link.as="fetch";link.href=href;link.crossOrigin="anonymous";document.head.appendChild(link);
-   return()=>link.remove();
- },[scenario,modelReady]);
 
  useEffect(()=>{
    let alive=true,timer=null;
