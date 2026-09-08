@@ -1,6 +1,7 @@
 import { getSession } from "../../../lib/auth";
 import { query } from "../../../lib/db";
 import { normalizeSubject } from "../../../lib/subjects";
+import {assertSameOrigin} from "../../../lib/security";
 
 function safeWholeNumber(value, maximum = 100000) {
   return Math.max(0, Math.min(maximum, Math.trunc(Number(value) || 0)));
@@ -22,6 +23,7 @@ export async function GET() {
 }
 
 export async function POST(request) {
+  try { await assertSameOrigin(); } catch (error) { return Response.json({error:"Origem inválida."},{status:Number(error?.status)||403}); }
   const session = await getSession();
   if (!session) return Response.json({ error: "Não autenticado" }, { status: 401 });
 
