@@ -3,6 +3,7 @@ import { getSession } from "../../lib/auth";
 import { getEntitlement } from "../../lib/entitlement";
 import { getIntegratedStudyPlan } from "../../lib/integrated-study-plan";
 import StudentHeader from "../components/StudentHeader";
+import TrackedStudyLink from "../components/TrackedStudyLink";
 import styles from "./hoje.module.css";
 
 export const dynamic = "force-dynamic";
@@ -18,7 +19,7 @@ export default async function HojePage() {
   if(integrated.needs_onboarding) redirect("/plano-de-estudos/configurar");
   const todayIso=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Sao_Paulo",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
   const today=integrated.week.days.find(d=>d.iso===todayIso);
-  const plan={tasks:today?.tasks||[],goal:{daily_minutes:integrated.onboarding.daily_minutes},weak_topics:integrated.metrics.weak_topics||[],total_question_bank:integrated.metrics.total_question_bank||integrated.metrics.overall?.questions||0};
+  const plan={tasks:today?.tasks||[],goal:{daily_minutes:integrated.onboarding.daily_minutes},weak_topics:integrated.tracking?.weakest_topics||[],total_question_bank:integrated.metrics.total_question_bank||integrated.metrics.overall?.questions||0,study_time:integrated.tracking?.study_time||{},mastery:integrated.tracking?.overall_mastery||0};
 
   return (
     <>
@@ -35,20 +36,21 @@ export default async function HojePage() {
           <div className={styles.goal}>
             <strong>{plan.goal.daily_minutes}</strong>
             <span>minutos planejados</span>
+            <small>{plan.study_time.today_minutes||0} min reais hoje · domínio {Math.round(Number(plan.mastery||0))}%</small>
           </div>
         </section>
 
         <section className={styles.tasks}>
           {plan.tasks.map((task, index) => (
-            <a href={task.href} className={styles.task} key={`${task.type}-${index}`}>
+            <TrackedStudyLink href={task.href||"/plano-de-estudos"} className={styles.task} task={{...task,plan_date:todayIso,source:"today"}} key={`${task.type}-${index}`}>
               <div className={styles.order}>{index + 1}</div>
               <div>
                 <span>{task.type==="reading"?(task.pages?task.pages+" PÁGINAS":"LEITURA"):task.type==="questions"?(task.target_questions||"")+" QUESTÕES":task.type.toUpperCase()}</span>
                 <h2>{task.title}</h2>
-                <p>{task.description}</p>
+                <p>{task.description}</p>{task.reason&&<small>Por quê: {task.reason}.</small>}
               </div>
               <b>Começar →</b>
-            </a>
+            </TrackedStudyLink>
           ))}
         </section>
 
@@ -64,7 +66,7 @@ export default async function HojePage() {
                       <strong>{topic.topic}</strong>
                       <small>{topic.subject_label}</small>
                     </div>
-                    <b>{topic.errors} erros · {topic.accuracy}%</b>
+                    <b>{topic.errors} erros · domínio {Math.round(Number(topic.mastery_score||0))}%</b>
                   </li>
                 ))}
               </ol>
