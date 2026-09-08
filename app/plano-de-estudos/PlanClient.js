@@ -37,7 +37,8 @@ export default function PlanClient({plan}){
 
   async function updateTask(day,task){
     if(task.status==="done")return;
-    const key=day.iso+"|"+task.key;
+    const planDate=task.source_plan_date||day.iso;
+    const key=day.iso+"|"+(task.display_key||task.key);
     const completedAt=new Date().toISOString();
     const previousTask=task;
 
@@ -46,11 +47,15 @@ export default function PlanClient({plan}){
     setTaskMessages(m=>({...m,[key]:"Salvando..."}));
 
     // Resposta visual imediata: o aluno vê o card concluído sem esperar a rede.
-    setWeek(w=>({...w,days:w.days.map(d=>d.iso!==day.iso?d:{...d,tasks:d.tasks.map(t=>t.key!==task.key?t:{...t,status:"done",completed_at:completedAt})})}));
+    setWeek(w=>({...w,days:w.days.map(d=>({...d,tasks:d.tasks.map(t=>{
+      const sameSource=(t.source_plan_date||d.iso)===planDate&&t.key===task.key;
+      const sameDisplay=d.iso===day.iso&&(t.display_key||t.key)===(task.display_key||task.key);
+      return (sameSource||sameDisplay)?{...t,status:"done",completed_at:completedAt}:t;
+    })}))}));
 
     const body={
       kind:"task",
-      plan_date:day.iso,
+      plan_date:planDate,
       task_key:task.key,
       task_type:task.type,
       subject_slug:task.subject,
@@ -79,7 +84,11 @@ export default function PlanClient({plan}){
       if(!r.ok)throw new Error(data.error||"Não foi possível marcar a tarefa como feita.");
 
       const savedAt=data.item?.completed_at||completedAt;
-      setWeek(w=>({...w,days:w.days.map(d=>d.iso!==day.iso?d:{...d,tasks:d.tasks.map(t=>t.key!==task.key?t:{...t,status:"done",completed_at:savedAt})})}));
+      setWeek(w=>({...w,days:w.days.map(d=>({...d,tasks:d.tasks.map(t=>{
+        const sameSource=(t.source_plan_date||d.iso)===planDate&&t.key===task.key;
+        const sameDisplay=d.iso===day.iso&&(t.display_key||t.key)===(task.display_key||task.key);
+        return (sameSource||sameDisplay)?{...t,status:"done",completed_at:savedAt}:t;
+      })}))}));
 
       const bp=data.bibliography?.progress||data.progress||null;
       if(task.type==="reading"&&bp){
@@ -90,7 +99,10 @@ export default function PlanClient({plan}){
       setTimeout(()=>setTaskMessages(m=>{const n={...m};delete n[key];return n}),2200);
     }catch(error){
       // Reverte o estado otimista para não mostrar conclusão que não foi persistida.
-      setWeek(w=>({...w,days:w.days.map(d=>d.iso!==day.iso?d:{...d,tasks:d.tasks.map(t=>t.key!==task.key?t:previousTask)})}));
+      setWeek(w=>({...w,days:w.days.map(d=>({...d,tasks:d.tasks.map(t=>{
+        const sameDisplay=d.iso===day.iso&&(t.display_key||t.key)===(task.display_key||task.key);
+        return sameDisplay?previousTask:t;
+      })}))}));
       setTaskMessages(m=>({...m,[key]:error.message||"Falha ao salvar"}));
       setMessage(error.message||"Não foi possível marcar a tarefa como feita.");
     }finally{
@@ -120,9 +132,15 @@ export default function PlanClient({plan}){
     setBibliography(list=>list.map(x=>x.bibliography_key===item.bibliography_key&&x.section_key===item.section_key?{...x,progress:bp}:x));
   }
 
-  const totalTasks=week.days.flatMap(d=>d.tasks).length;
-  const doneTasks=week.days.flatMap(d=>d.tasks).filter(t=>t.status==="done").length;
+  const plannedTasks=week.days.flatMap(d=>d.tasks).filter(t=>!t.reprogrammed);
+  const totalTasks=plannedTasks.length;
+  const doneTasks=plannedTasks.filter(t=>t.status==="done").length;
   const weeklyPercent=totalTasks?Math.round(doneTasks/totalTasks*100):0;
+  const tracking=plan.tracking||{};
+  const backlogCount=Number(tracking.backlog_count||0);
+  const backlogMinutes=Number(tracking.backlog_minutes||0);
+  const adherence=Number(tracking.adherence_percent??100);
+  const healthLabel=tracking.schedule_health==="behind"?"Atrasado":tracking.schedule_health==="attention"?"Atenção":"Em dia";
   const bibliographyTotal=bibliography.length;
   const bibliographyDone=bibliography.filter(item=>item.progress?.status==="done").length;
   const bibliographyPercent=bibliographyTotal?Math.round(bibliographyDone/bibliographyTotal*100):0;
@@ -143,6 +161,18 @@ export default function PlanClient({plan}){
     </section>
 
     {message&&<div role="alert" className={styles.phaseBanner}><div><span>ATENÇÃO</span><strong>{message}</strong></div></div>}
+
+    <section className={styles.trackingGrid}>
+      <article><span>ADERÊNCIA · 30 DIAS</span><strong>{adherence}%</strong><small>{tracking.past_done||0} de {tracking.past_planned||0} metas concluídas</small></article>
+      <article className={backlogCount?styles.trackingWarn:""}><span>PENDÊNCIAS</span><strong>{backlogCount}</strong><small>{backlogMinutes} min estimados em aberto</small></article>
+      <article><span>CARGA DIÁRIA</span><strong>{tracking.daily_capacity_minutes||plan.onboarding?.daily_minutes||0} min</strong><small>capacidade configurada</small></article>
+      <article className={tracking.schedule_health==="behind"?styles.trackingDanger:tracking.schedule_health==="attention"?styles.trackingWarn:""}><span>SITUAÇÃO DO PLANO</span><strong>{healthLabel}</strong><small>{backlogCount?"redistribuição automática ativa":"cronograma sem pendências"}</small></article>
+    </section>
+
+    {backlogCount>0&&<section className={styles.backlogPanel}>
+      <div className={styles.sectionHead}><div><span>BACKLOG INTELIGENTE</span><h2>Pendências preservadas e redistribuídas</h2><p>As tarefas continuam registradas na data original e são recolocadas gradualmente nos próximos dias, sem apagar o histórico nem sobrecarregar o cronograma.</p></div><strong>{backlogCount}</strong></div>
+      <div className={styles.backlogList}>{(tracking.backlog||[]).slice(0,6).map(item=><div key={item.source_plan_date+"|"+item.key}><div><b>{item.title}</b><span>Original: {fmtDate(item.source_plan_date)} · ~{item.estimate_minutes} min</span></div><em>ATRASADA</em></div>)}</div>
+    </section>}
 
     <section className={styles.phaseBanner}>
       <div><span>META DA 1ª PASSAGEM</span><strong>100% até 01/08/2027</strong>{plan.first_pass?.pages_per_reading_day&&<small> · média necessária: {plan.first_pass.pages_per_reading_day} páginas/dia de estudo</small>}</div>
@@ -219,10 +249,11 @@ export default function PlanClient({plan}){
         {week.days.map(day=><article className={day.active?styles.day:styles.dayOff} key={day.iso}>
           <header><span>{dayNames[new Date(day.iso+"T12:00:00").getDay()]}</span><strong>{fmtDate(day.iso)}</strong></header>
           {!day.active?<p>Dia sem estudo programado.</p>:day.tasks.map(task=>{
-            const key=day.iso+"|"+task.key;
+            const key=day.iso+"|"+(task.display_key||task.key);
             const done=task.status==="done";
-            return <div className={done?styles.taskDone:styles.task} key={task.key}>
-              <div className={styles.taskMeta}><span>{task.type.toUpperCase()}</span><em>{task.type==="reading"?(task.pages?task.pages+" páginas":"capítulo/seção"):task.type==="questions"?(task.fixation?"todas disponíveis":(task.target_questions||"")+" questões"):task.type==="simulado"?"simulado":"revisão"}</em></div>
+            const overdue=!done&&(task.reprogrammed||day.iso<new Intl.DateTimeFormat("en-CA",{timeZone:"America/Sao_Paulo",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date()));
+            return <div className={done?styles.taskDone:overdue?styles.taskOverdue:styles.task} key={task.display_key||task.key}>
+              <div className={styles.taskMeta}><span>{task.type.toUpperCase()}</span><em>{task.reprogrammed?"REPROGRAMADA":overdue?"ATRASADA":task.type==="reading"?(task.pages?task.pages+" páginas":"capítulo/seção"):task.type==="questions"?(task.fixation?"todas disponíveis":(task.target_questions||"")+" questões"):task.type==="simulado"?"simulado":"revisão"}</em></div>
               <strong>{task.title}</strong>
               <p>{task.description}</p>
               <div className={styles.taskActions}>
