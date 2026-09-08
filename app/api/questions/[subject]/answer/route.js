@@ -2,6 +2,7 @@ import { accessDeniedResponse, getAccessContext } from "../../../../../lib/acces
 import { withTransaction } from "../../../../../lib/db";
 import { getQuestion } from "../../../../../lib/question-banks";
 import { normalizeSubject } from "../../../../../lib/subjects";
+import {refreshTopicMasteryForQuestion} from "../../../../../lib/learning-engine";
 
 const ANSWERS = new Set(["A", "B", "C", "D", "E"]);
 
@@ -52,6 +53,8 @@ export async function POST(request, { params }) {
       [session.id]
     );
   });
+
+  await refreshTopicMasteryForQuestion(session.id,subject,question.id).catch(()=>{});
 
   return Response.json({
     ok: true,
