@@ -2,6 +2,7 @@ import {redirect} from "next/navigation";
 import {getSession} from "../../lib/auth";
 import {getIntegratedStudyPlan} from "../../lib/integrated-study-plan";
 import {getLearningProfile,getStudyTimeSummary} from "../../lib/learning-engine";
+import {getLearningGraph} from "../../lib/learning-graph";
 import StudentHeader from "../components/StudentHeader";
 import styles from "./trajectory.module.css";
 
@@ -15,10 +16,11 @@ function fmtDate(value){
 export default async function MinhaTrajetoria(){
   const session=await getSession();
   if(!session)redirect("/login?next=/minha-trajetoria");
-  const [plan,learning,time]=await Promise.all([
+  const [plan,learning,time,graph]=await Promise.all([
     getIntegratedStudyPlan(session.id,0),
     getLearningProfile(session.id),
-    getStudyTimeSummary(session.id)
+    getStudyTimeSummary(session.id),
+    getLearningGraph(session.id)
   ]);
   if(plan.needs_onboarding)redirect("/plano-de-estudos/configurar");
 
@@ -36,6 +38,14 @@ export default async function MinhaTrajetoria(){
       <article><span>CRONOGRAMA</span><strong>{status}</strong><small>capacidade de recuperação: {plan.tracking?.recovery_capacity_minutes||0} min</small></article>
       <article><span>1ª LEITURA</span><strong>{fmtDate(plan.first_pass?.projected_finish)}</strong><small>{plan.first_pass?.on_track?"ritmo compatível":"risco de atraso"}</small></article>
       <article><span>PRONTIDÃO</span><strong>{plan.readiness}%</strong><small>índice integrado ESTIBORDO</small></article>
+    </section>
+
+    <section className={styles.graphSummary}>
+      <div><span>GRAFO DE APRENDIZAGEM</span><strong>{graph.totals.questions.toLocaleString("pt-BR")}</strong><small>questões indexadas</small></div>
+      <div><span>OBRAS</span><strong>{graph.totals.works}</strong><small>fontes/títulos reconhecidos pela taxonomia</small></div>
+      <div><span>CAPÍTULOS</span><strong>{graph.totals.chapters}</strong><small>nós de capítulo/seção</small></div>
+      <div><span>TÓPICOS</span><strong>{graph.totals.topics}</strong><small>tópicos conectados ao banco</small></div>
+      <div><span>BIBLIOGRAFIA</span><strong>{graph.totals.bibliography_units}</strong><small>unidades obrigatórias no plano</small></div>
     </section>
 
     <section className={styles.subjects}>
