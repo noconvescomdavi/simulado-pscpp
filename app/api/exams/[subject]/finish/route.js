@@ -2,8 +2,10 @@ import { getSession } from "../../../../../lib/auth";
 import { getEntitlement } from "../../../../../lib/entitlement";
 import { finishExam } from "../../../../../lib/exams";
 import { normalizeSubject, TRIAL_SUBJECT_SLUG } from "../../../../../lib/subjects";
+import {assertSameOrigin} from "../../../../../lib/security";
 
 export async function POST(request, { params }) {
+  try { await assertSameOrigin(); } catch (error) { return Response.json({error:"Origem inválida."},{status:Number(error?.status)||403}); }
   try {
     const session = await getSession();
     if (!session) return Response.json({ error: "Não autenticado." }, { status: 401 });
