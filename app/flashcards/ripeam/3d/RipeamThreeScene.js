@@ -265,6 +265,8 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false}
         controls.dampingFactor=.08;
         controls.enablePan=true;
         controls.enableZoom=true;
+        controls.minPolarAngle=.04;
+        controls.maxPolarAngle=Math.PI/2-.04;
 
         const waterGeometry=new THREE.PlaneGeometry(400,400,72,72);
         const wp=waterGeometry.attributes.position;
@@ -395,10 +397,17 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false}
         });
         onDiagnostics?.(base);
 
+        const enforceWaterline=()=>{
+          const minY=.35;
+          if(controls.target.y<minY)controls.target.y=minY;
+          if(camera.position.y<minY)camera.position.y=minY;
+        };
+
         const animate=()=>{
           if(cancelled)return;
           frames++;
           controls.update();
+          enforceWaterline();
           renderer.render(scene,camera);
           if(frames===2)onDiagnostics?.({...base,frames});
           raf=requestAnimationFrame(animate);
@@ -414,11 +423,13 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false}
           else if(name==="starboard")camera.position.set(target.x,target.y+d*.15,target.z+d);
           else camera.position.set(target.x+d*.8,target.y+d*.42,target.z+d*.8);
           camera.lookAt(target);
+          enforceWaterline();
           controls.update();
         };
         const zoomBy=factor=>{
           const direction=camera.position.clone().sub(controls.target).multiplyScalar(factor);
           camera.position.copy(controls.target.clone().add(direction));
+          enforceWaterline();
           controls.update();
         };
 
