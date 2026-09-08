@@ -43,7 +43,7 @@ assert.match(client,/Não consegui estudar hoje/,"Controle de indisponibilidade 
 assert.match(unavailable,/DAY_UNAVAILABLE/,"Endpoint não registra indisponibilidade");
 assert.match(getter,/recoveryCapacity/,"Motor de recuperação não considera capacidade");
 assert.match(sessionApi,/heartbeat/,"API de sessão real não possui heartbeat");
-assert.match(learning,/masteryFormula/,"Learning Engine perdeu cálculo de mastery");
+assert.match(learning,/calculateMasteryScore/,"Learning Engine perdeu cálculo de mastery");
 assert.match(learning,/getStudyTimeSummary/,"Learning Engine perdeu tempo real de estudo");
 assert.match(graph,/questionTaxonomy/,"Grafo de aprendizagem não usa taxonomia canônica");
 assert.match(nextConfig,/Content-Security-Policy/,"CSP não está configurada");
