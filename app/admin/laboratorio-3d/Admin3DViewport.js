@@ -1,7 +1,8 @@
 "use client";
 import {useEffect,useRef} from "react";
 import styles from "./laboratorio-3d.module.css";
-const CDN="https://cdn.jsdelivr.net/npm/three@0.180.0";
+const THREE_VERSION="0.180.0";
+const CDN="https://cdn.jsdelivr.net/npm/three@"+THREE_VERSION;
 
 export default function Admin3DViewport({scene,selectedId,mode,onSelect,onTransform}){
   const mount=useRef(null);
@@ -12,7 +13,9 @@ export default function Admin3DViewport({scene,selectedId,mode,onSelect,onTransf
   useEffect(()=>{
     let dead=false;
     (async()=>{
-      const THREE=await import(CDN+"/build/three.module.js");
+      // Use o mesmo specifier bare que os addons do Three.js importam internamente.
+      // O import map global da aplicação resolve "three" para a mesma versão.
+      const THREE=await import("three");
       const [{OrbitControls},{TransformControls},{GLTFLoader},{FBXLoader},{OBJLoader}]=await Promise.all([
         import(CDN+"/examples/jsm/controls/OrbitControls.js"),
         import(CDN+"/examples/jsm/controls/TransformControls.js"),
@@ -109,7 +112,7 @@ export default function Admin3DViewport({scene,selectedId,mode,onSelect,onTransf
       tick();
     })().catch(error=>{
       console.error(error);
-      if(mount.current)mount.current.innerHTML='<div class="'+styles.viewportError+'">Não foi possível iniciar o viewport 3D.</div>';
+      if(mount.current)mount.current.innerHTML='<div class="'+styles.viewportError+'">Não foi possível iniciar o viewport 3D.<br/><small>'+String(error?.message||error).replace(/[<>&]/g,"")+'</small></div>';
     });
 
     return()=>{
