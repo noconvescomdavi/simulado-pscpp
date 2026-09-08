@@ -143,7 +143,64 @@ function markerFor(type) {
   return map[type] || map.ship;
 }
 
+const SHIP_HANDLING_VISUALS = {
+  "AN1-147": {
+    "image": "/flashcards/arte-naval/ship-handling/AN1-147.jpg",
+    "page": 29,
+    "caption": "Tipos de leme",
+    "source_file": "AN-SH-0041_leme_p029.jpg"
+  },
+  "AN1-150": {
+    "image": "/flashcards/arte-naval/ship-handling/AN1-150.jpg",
+    "page": 32,
+    "caption": "Geometria e esforços no leme",
+    "source_file": "AN-SH-0049_leme-governo_p032.jpg"
+  },
+  "AN1-210": {
+    "image": "/flashcards/arte-naval/ship-handling/AN1-210.jpg",
+    "page": 32,
+    "caption": "Geometria e atuação do leme",
+    "source_file": "AN-SH-0049_leme-governo_p032.jpg"
+  },
+  "AN1-202": {
+    "image": "/flashcards/arte-naval/ship-handling/AN1-202.jpg",
+    "page": 17,
+    "caption": "Convés de manobra de vante e aparelho de fundear",
+    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg"
+  },
+  "AN1-203": {
+    "image": "/flashcards/arte-naval/ship-handling/AN1-203.jpg",
+    "page": 17,
+    "caption": "Amarra e aparelho de fundear",
+    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg"
+  },
+  "AN1-205": {
+    "image": "/flashcards/arte-naval/ship-handling/AN1-205.jpg",
+    "page": 17,
+    "caption": "Equipamento do convés de manobra",
+    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg"
+  },
+  "AN1-206": {
+    "image": "/flashcards/arte-naval/ship-handling/AN1-206.jpg",
+    "page": 17,
+    "caption": "Molinete e amarra",
+    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg"
+  },
+  "AN1-103": {
+    "image": "/flashcards/arte-naval/ship-handling/AN1-103.jpg",
+    "page": 17,
+    "caption": "Aparelho de fundear / hawse pipe",
+    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg"
+  }
+};
+
+function shipHandlingVisual(card) {
+  return SHIP_HANDLING_VISUALS[String(card?.id || "")] || null;
+}
+
 function visualAsset(card) {
+  const curated = shipHandlingVisual(card);
+  if (curated?.image) return curated.image;
   const explicit = String(card?.visual?.image || card?.image || "").trim();
   if (explicit) return explicit;
   const id = String(card?.id || "").trim();
@@ -827,7 +884,11 @@ export default function ArteNavalFlashcardsClient({ deck, initialState }) {
                             <li>Use a definição da bibliografia como referência principal.</li>
                           </ul>
                         </div>
-                        <div className={styles.sourceLine}><span>Fonte principal</span><strong>Arte Naval · Volume 1 · 8ª edição · referência visual Fig. {bookFigureFor(current)} · redesenho ESTIBORDO</strong></div>
+                        <div className={styles.sourceLine}>
+                          <span>Fontes</span>
+                          <strong>Definição: Arte Naval · Volume 1 · 8ª edição · Fig. {bookFigureFor(current)}</strong>
+                          {shipHandlingVisual(current) && <small>Referência visual complementar: Hervé Baudu · Ship Handling · p. {shipHandlingVisual(current).page} · {shipHandlingVisual(current).caption}</small>}
+                        </div>
                       </div>
                     </div>
                     <div className={styles.flipHint}>Toque para voltar <kbd>ESPAÇO</kbd></div>
