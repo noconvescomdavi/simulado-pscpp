@@ -2,29 +2,48 @@
 import {useEffect,useRef} from "react";
 import styles from "./ripeam-3d.module.css";
 
-const THREE_ESM="https://esm.sh/three@0.180.0";
-const GLTF_ESM="https://esm.sh/three@0.180.0/examples/jsm/loaders/GLTFLoader.js";
-const FBX_ESM="https://esm.sh/three@0.180.0/examples/jsm/loaders/FBXLoader.js";
-const OBJ_ESM="https://esm.sh/three@0.180.0/examples/jsm/loaders/OBJLoader.js";
-const MODEL_URLS={
-  "bulk-carrier":{type:"gltf",url:"/models/ripeam/bulk_carrier.glb",rotation:[-Math.PI/2,0,-Math.PI/2],target:10.5},
-  "tugboat":{type:"gltf",url:"/models/ripeam/Tugboat.glb",rotation:[-Math.PI/2,0,0],target:4.3},
-  "barge":{type:"fbx",url:"/models/ripeam/barge.fbx",rotation:[-Math.PI/2,0,-Math.PI/2],target:6.2},
-  "sailboat":{type:"gltf",url:"/models/ripeam/sailboat.glb",rotation:[0,0,0],target:7.4},
-  "fishing-vessel":{type:"gltf",url:"/models/ripeam/fishing_vessel.glb",rotation:[0,Math.PI/2,0],target:8.2},
-  "pilot-boat":{type:"gltf",url:"/models/ripeam/pilot_boat.glb",rotation:[0,0,0],target:6.6},
-  "mine-clearance":{type:"gltf",url:"/models/ripeam/navy_mine_clearance.glb",rotation:[0,Math.PI/2,0],target:9.2},
-  "seaplane":{type:"gltf",url:"/models/ripeam/hidroaviao.glb",rotation:[0,Math.PI/2,0],target:8.4}
-};
+const LEGACY_CDN="https://cdn.jsdelivr.net/npm/three@0.128.0";
+let threeLoaderPromise=null;
+
+function loadScript(src){
+  return new Promise((resolve,reject)=>{
+    const existing=document.querySelector(`script[data-ripeam-src="${src}"]`);
+    if(existing){
+      if(existing.dataset.loaded==="1") return resolve();
+      existing.addEventListener("load",resolve,{once:true});
+      existing.addEventListener("error",()=>reject(new Error("Falha ao carregar "+src)),{once:true});
+      return;
+    }
+    const script=document.createElement("script");
+    script.src=src;
+    script.async=true;
+    script.dataset.ripeamSrc=src;
+    script.onload=()=>{script.dataset.loaded="1";resolve();};
+    script.onerror=()=>reject(new Error("Falha ao carregar "+src));
+    document.head.appendChild(script);
+  });
+}
 
 async function loadThree(){
-  const THREE=await import(/* webpackIgnore: true */ THREE_ESM);
-  const [{GLTFLoader},{FBXLoader},{OBJLoader}]=await Promise.all([
-    import(/* webpackIgnore: true */ GLTF_ESM),
-    import(/* webpackIgnore: true */ FBX_ESM),
-    import(/* webpackIgnore: true */ OBJ_ESM)
-  ]);
-  return {THREE,GLTFLoader,FBXLoader,OBJLoader};
+  if(typeof window==="undefined") throw new Error("Three.js só pode ser carregado no navegador.");
+  if(window.THREE?.GLTFLoader && window.THREE?.FBXLoader) {
+    return {THREE:window.THREE,GLTFLoader:window.THREE.GLTFLoader,FBXLoader:window.THREE.FBXLoader};
+  }
+  if(!threeLoaderPromise){
+    threeLoaderPromise=(async()=>{
+      await loadScript(LEGACY_CDN+"/build/three.min.js");
+      await loadScript(LEGACY_CDN+"/examples/js/loaders/GLTFLoader.js");
+      // Dependências do FBXLoader. GLB continua funcionando mesmo que a barcaça não precise delas.
+      await loadScript(LEGACY_CDN+"/examples/js/libs/fflate.min.js");
+      await loadScript(LEGACY_CDN+"/examples/js/curves/NURBSUtils.js");
+      await loadScript(LEGACY_CDN+"/examples/js/curves/NURBSCurve.js");
+      await loadScript(LEGACY_CDN+"/examples/js/loaders/FBXLoader.js");
+      const THREE=window.THREE;
+      if(!THREE?.GLTFLoader) throw new Error("GLTFLoader não foi inicializado.");
+      return {THREE,GLTFLoader:THREE.GLTFLoader,FBXLoader:THREE.FBXLoader};
+    })().catch(err=>{threeLoaderPromise=null;throw err;});
+  }
+  return threeLoaderPromise;
 }
 
 function lightPlan(scenario){
@@ -71,7 +90,8 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
         camera.position.fromArray(camCfg.position||[14,7,15]);
         const renderer=new THREE.WebGLRenderer({antialias:true,alpha:false,powerPreference:"high-performance"});
         renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));
-        renderer.outputColorSpace=THREE.SRGBColorSpace;
+        if("outputColorSpace" in renderer && THREE.SRGBColorSpace) renderer.outputColorSpace=THREE.SRGBColorSpace;
+        else if("outputEncoding" in renderer && THREE.sRGBEncoding) renderer.outputEncoding=THREE.sRGBEncoding;
         renderer.toneMapping=THREE.ACESFilmicToneMapping;
         renderer.toneMappingExposure=editorScene?Number(env.exposure||.95):(night?0.85:1.15);
         root.innerHTML="";
