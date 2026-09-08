@@ -42,6 +42,7 @@ export default function Admin3DEditor(){
   const [versions,setVersions]=useState([]);
   const [stats,setStats]=useState({triangles:0,meshes:0,lights:0,models:0,objects:0});
   const [assetFilter,setAssetFilter]=useState("");
+  const [importMode,setImportMode]=useState("add");
   const [compare,setCompare]=useState(false);
   const [playhead,setPlayhead]=useState(0);
   const [playing,setPlaying]=useState(false);
@@ -98,10 +99,15 @@ export default function Admin3DEditor(){
   },[playing,scene.config?.timeline?.duration,scene.config?.timeline?.loop]);
 
   useEffect(()=>{
-    if(!autosave||!scene.id||scene.liveStudentScene||!lastEdit)return;
+    if(!lastEdit||!scene.id)return;
+    if(scene.liveStudentScene){
+      const timer=setTimeout(()=>save("published",{silent:true,versionLabel:"Atualização automática no aluno"}),650);
+      return()=>clearTimeout(timer);
+    }
+    if(!autosave)return;
     const timer=setTimeout(()=>save(scene.status||"draft",{silent:true,versionLabel:"Autosave"}),1800);
     return()=>clearTimeout(timer);
-  },[lastEdit,autosave]);
+  },[lastEdit,autosave,scene.id,scene.liveStudentScene]);
 
   async function load(sceneId){
     const q=sceneId?"?sceneId="+encodeURIComponent(sceneId):"";
@@ -263,15 +269,25 @@ export default function Admin3DEditor(){
     openScene(j.scene);setStatus("Versão restaurada.");
   }
 
-  async function upload(file){
+  async function upload(file,mode=importMode){
     if(!file)return;
-    setStatus("Enviando e catalogando asset...");
-    const fd=new FormData();fd.append("file",file);fd.append("category","Uploads");
+    const ext=String(file.name||"").split(".").pop().toLowerCase();
+    if(ext!=="glb"){setStatus("Importe um arquivo .glb para embarcações.");return}
+    if(mode==="replace"&&(!obj||obj.type!=="model")){setStatus("Selecione no Outliner o navio/modelo que deseja substituir.");return}
+    setStatus(mode==="replace"?"Enviando GLB para substituir o modelo selecionado...":"Enviando e catalogando novo GLB...");
+    const fd=new FormData();fd.append("file",file);fd.append("category","Navios importados");
     const r=await fetch("/api/admin/laboratorio-3d/upload",{method:"POST",body:fd});
     const j=await r.json().catch(()=>({}));
     if(!r.ok){setStatus(j.error||"Falha no upload");return}
-    const a={id:j.asset?.id,name:file.name,url:j.url,type:j.asset?.asset_type||file.name.split(".").pop().toLowerCase(),category:j.asset?.category||"Uploads",bytes:file.size};
-    setAssets(x=>[a,...x.filter(y=>y.url!==a.url)]);addObject({name:a.name,assetUrl:a.url,assetType:a.type,type:"model",normalize:true});setStatus("Asset adicionado à biblioteca e à cena.");
+    const a={id:j.asset?.id,name:file.name,url:j.url,type:"glb",category:j.asset?.category||"Navios importados",bytes:file.size};
+    setAssets(x=>[a,...x.filter(y=>y.url!==a.url)]);
+    if(mode==="replace"){
+      patchObject({name:a.name,assetUrl:a.url,assetType:"glb",normalize:true});
+      setStatus("GLB substituído. A transformação atual foi preservada e será publicada automaticamente.");
+    }else{
+      addObject({name:a.name,assetUrl:a.url,assetType:"glb",type:"model",normalize:true});
+      setStatus("Novo GLB adicionado à cena. Posicione-o e ele será publicado ao aluno.");
+    }
   }
 
   function addCard(){mutate(s=>s.config.cards.push({id:uid(),title:"Novo card",front:"Pergunta / situação",back:"Resposta / explicação",published:true}));setTab("cards")}
@@ -369,7 +385,8 @@ export default function Admin3DEditor(){
         <button onClick={undo} disabled={!history.length}>↶ Undo</button><button onClick={redo} disabled={!future.length}>↷ Redo</button>
         <button onClick={duplicateScene}>Duplicar cena</button><button onClick={()=>setScene(clone(EMPTY))}>＋ Nova cena</button>
         <select value={scene.status} onChange={e=>setScene(s=>({...s,status:e.target.value}))}><option value="draft">Rascunho</option><option value="review">Revisão</option><option value="published">Publicado</option><option value="archived">Arquivado</option></select>
-        <button disabled={busy} onClick={()=>save(scene.liveStudentScene?"published":scene.status)}>{scene.liveStudentScene?"Salvar no aluno":"Salvar"}</button><button className={styles.publish} disabled={busy||scene.liveStudentScene||validation.errors.length>0} title={validation.errors.length?"Corrija os erros semânticos antes de publicar":""} onClick={()=>save("published")}>Publicar</button>
+        <button disabled={busy} onClick={()=>save(scene.liveStudentScene?"published":scene.status)}>{scene.liveStudentScene?"Salvar agora":"Salvar"}</button>
+        <button className={styles.publish} disabled={busy||validation.errors.length>0} title={validation.errors.length?"Corrija os erros semânticos antes de publicar":scene.liveStudentScene?"A cena já está no aluno; força uma atualização imediata.":"Publica e adiciona esta cena ao aluno."} onClick={()=>save("published")}>{scene.liveStudentScene?"Atualizar aluno":"Adicionar ao aluno"}</button>
       </div>
     </div>
 
@@ -430,7 +447,10 @@ export default function Admin3DEditor(){
         </div>
 
         <div className={styles.assetShelf}>
-          <div className={styles.assetHead}><b>Biblioteca persistente 3D</b><input placeholder="Buscar assets..." value={assetFilter} onChange={e=>setAssetFilter(e.target.value)}/><label><input type="file" accept=".glb,.gltf,.fbx,.obj" onChange={e=>upload(e.target.files?.[0])}/>＋ Importar do PC</label></div>
+          <div className={styles.assetHead}><b>Biblioteca persistente 3D</b><input placeholder="Buscar assets..." value={assetFilter} onChange={e=>setAssetFilter(e.target.value)}/>
+            <select value={importMode} onChange={e=>setImportMode(e.target.value)} title="Escolha se o GLB será adicionado ou substituirá o modelo selecionado"><option value="add">Adicionar novo navio</option><option value="replace">Substituir selecionado</option></select>
+            <label><input type="file" accept=".glb,model/gltf-binary" onChange={e=>{upload(e.target.files?.[0],importMode);e.target.value=""}}/>＋ Importar GLB do PC</label>
+          </div>
           <div className={styles.assetGrid}>{filteredAssets.map((a,i)=><button key={a.url+i} onClick={()=>addObject({name:a.name,assetUrl:a.url,assetType:a.type,type:"model",normalize:true})}><b>{a.name}</b><small>{String(a.type||"").toUpperCase()} · {a.category||"Asset"} · usado {usage[a.url]||0}x</small>{a.bytes&&<small>{(a.bytes/1024/1024).toFixed(1)} MB</small>}</button>)}</div>
         </div>
       </section>

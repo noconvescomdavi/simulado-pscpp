@@ -1,6 +1,6 @@
 "use client";
 
-import {useMemo,useState} from "react";
+import {useEffect,useMemo,useState} from "react";
 import RipeamThreeScene from "./RipeamThreeScene";
 import styles from "./ripeam-3d.module.css";
 
@@ -86,6 +86,14 @@ const SCENES=[
 ];
 
 
+const EDITOR_SCENE_KEY={
+  "power-underway":"power","tow-short":"towShort","tow-long":"tow","sail-underway":"sail","fishing-way":"fishing",
+  "nuc-way":"nuc","nuc-stopped":"nuc","ram-under50":"ram","ram-over50":"ram","ram-anchor":"ram",
+  "dredge-port":"dredgePort","dredge-stbd":"dredgeStbd","dredge-anchor":"dredgePort",
+  "restricted-tow-short":"diving","restricted-tow-long":"diving","mine-way":"mine","mine-anchor":"mine",
+  "cbd":"cbd","pilot-duty":"pilot","anchor":"anchor","aground":"aground","seaplane":"seaplane"
+};
+
 const DAYMARK_INFO={
   power:["Sem marca diurna especial para esta condição."],
   towShort:["Reboque ≤ 200 m: não há losango obrigatório apenas pelo comprimento do reboque."],
@@ -142,6 +150,7 @@ export default function Ripeam3DClient(){
   const [situationAnswer,setSituationAnswer]=useState(null);
   const [score,setScore]=useState({correct:0,total:0});
   const [highlightLight,setHighlightLight]=useState(-1);
+  const [liveScene,setLiveScene]=useState(null);
 
   const scene=useMemo(()=>SCENES.find(item=>item.key===selected)||SCENES[0],[selected]);
   const variant=useMemo(()=>scene.variants.find(v=>v.id===variantId)||scene.variants[0],[scene,variantId]);
@@ -161,6 +170,22 @@ export default function Ripeam3DClient(){
   },[labMode,activeScene,activeVariant,situation]);
   const lights=LIGHT_INFO[activeVariant.lightPlan]||[];
   const daymarks=DAYMARK_INFO[activeVariant.lightPlan]||["Sem marca diurna cadastrada."];
+  const editorKey=EDITOR_SCENE_KEY[sceneConfig.variantId]||sceneConfig.key;
+
+  useEffect(()=>{
+    if(labMode==="situation"){setLiveScene(null);return}
+    let dead=false,timer;
+    const pull=async()=>{
+      try{
+        const r=await fetch("/api/ripeam-3d/scenes?key="+encodeURIComponent(editorKey)+"&_="+Date.now(),{cache:"no-store"});
+        const j=await r.json();
+        if(!dead)setLiveScene(j.scene?.status==="published"?j.scene:null);
+      }catch(error){if(!dead)console.warn("[RIPEAM 3D] atualização ao vivo indisponível",error)}
+      if(!dead)timer=setTimeout(pull,900);
+    };
+    pull();
+    return()=>{dead=true;clearTimeout(timer)};
+  },[editorKey,labMode]);
 
   const chooseScene=item=>{
     setSelected(item.key);
@@ -278,6 +303,7 @@ export default function Ripeam3DClient(){
             displayMode={labMode==="identify"?"signals-only":displayMode}
             showSectors={labMode==="explore"&&showSectors}
             highlightLightIndex={highlightLight}
+            liveConfig={liveScene?.config||null}
           />
 
           {labMode==="explore"&&<aside className={styles.lightPanel}>
