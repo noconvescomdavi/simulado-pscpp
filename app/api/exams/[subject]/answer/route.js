@@ -5,10 +5,12 @@ import { normalizeSubject, TRIAL_SUBJECT_SLUG } from "../../../../../lib/subject
 import { recordAppError } from "../../../../../lib/observability";
 import {getQuestion} from "../../../../../lib/question-banks";
 import {refreshTopicMasteryForQuestion} from "../../../../../lib/learning-engine";
+import {assertSameOrigin} from "../../../../../lib/security";
 
 const ANSWERS = new Set(["A", "B", "C", "D", "E"]);
 
 export async function POST(request, { params }) {
+  try { await assertSameOrigin(); } catch (error) { return Response.json({error:"Origem inválida."},{status:Number(error?.status)||403}); }
   try {
     const session = await getSession();
     if (!session) return Response.json({ error: "Não autenticado." }, { status: 401 });
