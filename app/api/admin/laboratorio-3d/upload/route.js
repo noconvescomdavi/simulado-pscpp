@@ -11,8 +11,17 @@ export async function POST(request){
     await assertSameOrigin();
     const form=await request.formData();
     const file=form.get("file");
-    const result=await saveUpload(file);
     const ext=String(file?.name||"").split(".").pop().toLowerCase();
+    if(ext!=="glb")return Response.json({ok:false,error:"Somente arquivos .glb são permitidos neste importador."},{status:400});
+    const bytes=Number(file?.size||0);
+    if(bytes<100)return Response.json({ok:false,error:"GLB vazio ou inválido."},{status:400});
+    if(bytes>80*1024*1024)return Response.json({ok:false,error:"GLB excede o limite seguro de 80 MB."},{status:413});
+    const head=new Uint8Array(await file.slice(0,12).arrayBuffer());
+    const magic=String.fromCharCode(...head.slice(0,4));
+    const version=head[4]|(head[5]<<8)|(head[6]<<16)|(head[7]<<24);
+    const declared=head[8]|(head[9]<<8)|(head[10]<<16)|(head[11]<<24);
+    if(magic!=="glTF"||version!==2||declared!==bytes)return Response.json({ok:false,error:"Cabeçalho GLB 2.0 inválido ou arquivo truncado."},{status:400});
+    const result=await saveUpload(file);
     const asset=await upsertRipeam3DAsset({
       name:String(file?.name||"Asset 3D"),
       url:result.url,
