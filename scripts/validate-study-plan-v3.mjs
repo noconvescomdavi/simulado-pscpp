@@ -9,6 +9,10 @@ const progress=read("lib/study-plan-progress.js");
 const migration=read("db/migrations/022_learning_engine_v3.sql");
 const client=read("app/plano-de-estudos/PlanClient.js");
 const unavailable=read("app/api/study-plan/unavailability/route.js");
+const sessionApi=read("app/api/study-plan/session/route.js");
+const learning=read("lib/learning-engine.js");
+const graph=read("lib/learning-graph.js");
+const nextConfig=read("next.config.mjs");
 
 const start=integrated.indexOf("export async function getIntegratedStudyPlan");
 const end=integrated.indexOf("export async function setPlanTaskStatus",start);
@@ -28,7 +32,9 @@ for(const table of [
   "student_plan_snapshot_tasks",
   "student_plan_events",
   "student_plan_reschedules",
-  "student_plan_unavailability"
+  "student_plan_unavailability",
+  "student_study_sessions",
+  "student_topic_mastery"
 ]){
   assert.ok(migration.includes(table),"Migration V3 não contém "+table);
 }
@@ -36,5 +42,10 @@ for(const table of [
 assert.match(client,/Não consegui estudar hoje/,"Controle de indisponibilidade sumiu da UI");
 assert.match(unavailable,/DAY_UNAVAILABLE/,"Endpoint não registra indisponibilidade");
 assert.match(getter,/recoveryCapacity/,"Motor de recuperação não considera capacidade");
+assert.match(sessionApi,/heartbeat/,"API de sessão real não possui heartbeat");
+assert.match(learning,/masteryFormula/,"Learning Engine perdeu cálculo de mastery");
+assert.match(learning,/getStudyTimeSummary/,"Learning Engine perdeu tempo real de estudo");
+assert.match(graph,/questionTaxonomy/,"Grafo de aprendizagem não usa taxonomia canônica");
+assert.match(nextConfig,/Content-Security-Policy/,"CSP não está configurada");
 
 console.log("Study Plan V3 invariants: OK");
