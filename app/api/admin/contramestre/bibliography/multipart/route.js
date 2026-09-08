@@ -1,5 +1,6 @@
 import {getAdmin} from "../../../../../../lib/admin";
 import {query} from "../../../../../../lib/db";
+import {assertSameOrigin} from "../../../../../../lib/security";
 
 export const dynamic="force-dynamic";
 const MAX_FILE=512*1024*1024;
@@ -30,6 +31,7 @@ async function store(){
 export async function POST(request){
   const admin=await getAdmin();if(!admin)return Response.json({error:"Acesso negado."},{status:403});
   try{
+    await assertSameOrigin();
     const input=await request.json();
     const action=String(input.action||"");
     if(action==="init"){
@@ -60,12 +62,13 @@ export async function POST(request){
       return Response.json({ok:true});
     }
     throw new Error("Ação inválida.");
-  }catch(error){return Response.json({error:String(error?.message||error)},{status:400})}
+  }catch(error){return Response.json({error:String(error?.message||error)},{status:Number(error?.status)||400})}
 }
 
 export async function PUT(request){
   const admin=await getAdmin();if(!admin)return Response.json({error:"Acesso negado."},{status:403});
   try{
+    await assertSameOrigin();
     const uploadId=String(request.headers.get("x-upload-id")||"");
     if(!uploadId.startsWith("upload_"))throw new Error("Upload ID ausente ou inválido.");
     const buffer=await request.arrayBuffer();
@@ -75,5 +78,5 @@ export async function PUT(request){
     const part=await openai(`/uploads/${encodeURIComponent(uploadId)}/parts`,{form});
     if(!part?.id)throw new Error("A OpenAI não retornou o Part ID.");
     return Response.json({part_id:part.id});
-  }catch(error){return Response.json({error:String(error?.message||error)},{status:400})}
+  }catch(error){return Response.json({error:String(error?.message||error)},{status:Number(error?.status)||400})}
 }
