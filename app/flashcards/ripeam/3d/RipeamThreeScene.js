@@ -290,11 +290,28 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
         }
 
         if(!editorScene){
+          const sectorMesh=l=>{
+            if(!showSectors)return null;
+            const deg=Number(l.sector||360),heading=Number(l.heading||0)*Math.PI/180,radius=3.8;
+            const sh=new THREE.Shape();sh.moveTo(0,0);
+            const start=heading-(deg*Math.PI/180)/2,steps=Math.max(18,Math.ceil(deg/6));
+            for(let i=0;i<=steps;i++){const ang=start+(deg*Math.PI/180)*(i/steps);sh.lineTo(Math.sin(ang)*radius,Math.cos(ang)*radius)}
+            sh.lineTo(0,0);
+            const m=new THREE.Mesh(new THREE.ShapeGeometry(sh),new THREE.MeshBasicMaterial({color:l.c,transparent:true,opacity:.13,side:THREE.DoubleSide,depthWrite:false}));
+            m.rotation.x=-Math.PI/2;m.position.y=-.72;return m;
+          };
           for(const l of lightPlan(scenario)){
-            const bulb=new THREE.Mesh(new THREE.SphereGeometry(.105,16,10),new THREE.MeshBasicMaterial({color:l.c}));
-            bulb.position.set(...l.p); navGroup.add(bulb);
-            const glow=new THREE.PointLight(l.c,night?5.2:1.1,4.2,1.7);
-            glow.position.copy(bulb.position); navGroup.add(glow);
+            const bulb=new THREE.Mesh(new THREE.SphereGeometry(.115,16,10),new THREE.MeshBasicMaterial({color:l.c}));
+            bulb.position.set(...l.p);navGroup.add(bulb);
+            const glow=new THREE.PointLight(l.c,night?5.2:1.0,4.6,1.7);glow.position.copy(bulb.position);navGroup.add(glow);
+            const sec=sectorMesh(l);if(sec)navGroup.add(sec);
+          }
+          if(!night){
+            for(const d of dayShapePlan(scenario)){
+              let g=d.kind==="diamond"?new THREE.OctahedronGeometry(.32):d.kind==="coneUp"||d.kind==="coneDown"?new THREE.ConeGeometry(.28,.6,20):new THREE.SphereGeometry(.28,20,14);
+              if(d.kind==="coneDown")g.rotateZ(Math.PI);
+              const m=new THREE.Mesh(g,new THREE.MeshStandardMaterial({color:0x111111,roughness:.78}));m.position.set(...d.p);shapeGroup.add(m);
+            }
           }
         }
 
@@ -361,6 +378,12 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
   },[vessel,editorScene]);
 
   useEffect(()=>{
+    const r=runtime.current;if(!r?.tow)return;
+    const target=scenario==="tow"?-10.5:-7.0;
+    r.tow.bargeGroup.position.x=target;
+  },[scenario]);
+
+  useEffect(()=>{
     const r=runtime.current;if(!r)return;
     const rad=Math.PI/180;
     r.modelRoot.rotation.y=yaw*rad;
@@ -387,14 +410,30 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
 
   useEffect(()=>{
     const r=runtime.current;if(!r||editorScene)return;
-    while(r.navGroup.children.length){const o=r.navGroup.children.pop();o.geometry?.dispose?.();o.material?.dispose?.()}
     const THREE=r.THREE;
+    const clear=g=>{while(g?.children?.length){const o=g.children.pop();o.geometry?.dispose?.();o.material?.dispose?.()}};
+    clear(r.navGroup);clear(r.shapeGroup);
     for(const l of lightPlan(scenario)){
-      const bulb=new THREE.Mesh(new THREE.SphereGeometry(.105,16,10),new THREE.MeshBasicMaterial({color:l.c}));
+      const bulb=new THREE.Mesh(new THREE.SphereGeometry(.115,16,10),new THREE.MeshBasicMaterial({color:l.c}));
       bulb.position.set(...l.p);r.navGroup.add(bulb);
-      const glow=new THREE.PointLight(l.c,night?5.2:1.1,4.2,1.7);glow.position.copy(bulb.position);r.navGroup.add(glow);
+      const glow=new THREE.PointLight(l.c,night?5.2:1.0,4.6,1.7);glow.position.copy(bulb.position);r.navGroup.add(glow);
+      if(showSectors){
+        const deg=Number(l.sector||360),heading=Number(l.heading||0)*Math.PI/180,radius=3.8,sh=new THREE.Shape();sh.moveTo(0,0);
+        const start=heading-(deg*Math.PI/180)/2,steps=Math.max(18,Math.ceil(deg/6));
+        for(let i=0;i<=steps;i++){const ang=start+(deg*Math.PI/180)*(i/steps);sh.lineTo(Math.sin(ang)*radius,Math.cos(ang)*radius)}
+        sh.lineTo(0,0);
+        const m=new THREE.Mesh(new THREE.ShapeGeometry(sh),new THREE.MeshBasicMaterial({color:l.c,transparent:true,opacity:.13,side:THREE.DoubleSide,depthWrite:false}));
+        m.rotation.x=-Math.PI/2;m.position.y=-.72;r.navGroup.add(m);
+      }
     }
-  },[scenario,night,editorScene]);
+    if(!night&&r.shapeGroup){
+      for(const d of dayShapePlan(scenario)){
+        let g=d.kind==="diamond"?new THREE.OctahedronGeometry(.32):d.kind==="coneUp"||d.kind==="coneDown"?new THREE.ConeGeometry(.28,.6,20):new THREE.SphereGeometry(.28,20,14);
+        if(d.kind==="coneDown")g.rotateZ(Math.PI);
+        const m=new THREE.Mesh(g,new THREE.MeshStandardMaterial({color:0x111111,roughness:.78}));m.position.set(...d.p);r.shapeGroup.add(m);
+      }
+    }
+  },[scenario,night,editorScene,showSectors]);
 
   return <div ref={mount} className={styles.threeScene} aria-label="Visualizador tridimensional da embarcação"/>;
 }
