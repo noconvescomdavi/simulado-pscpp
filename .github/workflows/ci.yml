@@ -29,6 +29,9 @@ jobs:
       - name: Study Plan V3 invariants
         run: npm run validate:study-plan
 
+      - name: Learning algorithm tests
+        run: npm run test:learning
+
       - name: Validate question banks
         run: npm run validate:questions
 
