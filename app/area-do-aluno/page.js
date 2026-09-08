@@ -109,6 +109,7 @@ export default async function Area(){
             <a className="quickCard purple" href="/treino-adaptativo"><i>◎</i><div><strong>Treino Adaptativo</strong><span>Treine primeiro o que mais precisa</span></div><b>›</b></a>
             <a className="quickCard ranking" href="/ranking"><i>★</i><div><strong>Ranking</strong><span>Compare seu desempenho acadêmico</span></div><b>›</b></a>
             <a className="quickCard maps" href="/mapas-mentais"><i>🧠</i><div><strong>Mapas Mentais</strong><span>Construa e conecte suas anotações</span></div><b>›</b></a>
+            <a className="quickCard gold" href="/minha-trajetoria"><i>◉</i><div><strong>Minha Trajetória</strong><span>Domínio, aderência, tempo real e projeção até a prova</span></div><b>›</b></a>
           </div>
         </section>
 
