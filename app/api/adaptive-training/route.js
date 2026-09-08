@@ -4,6 +4,7 @@ import { getEntitlement } from "../../../lib/entitlement";
 import { getIntegratedStudyPlan } from "../../../lib/integrated-study-plan";
 import { getQuestionBank } from "../../../lib/question-banks";
 import { query } from "../../../lib/db";
+import {assertSameOrigin} from "../../../lib/security";
 
 function shuffle(items){
   const result=[...items];
@@ -11,7 +12,8 @@ function shuffle(items){
   return result;
 }
 
-export async function POST(req){
+export async function POST(req) {
+  try { await assertSameOrigin(); } catch (error) { return Response.json({error:"Origem inválida."},{status:Number(error?.status)||403}); }
   const session=await getSession();
   if(!session)return Response.json({error:"Não autenticado."},{status:401});
   const entitlement=await getEntitlement(session.id);
