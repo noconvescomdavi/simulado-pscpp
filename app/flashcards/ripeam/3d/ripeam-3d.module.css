@@ -19,3 +19,17 @@
 .sceneNight .threeScene,.sceneDay .threeScene{z-index:4}
 .sceneNight .skyGlow,.sceneDay .skyGlow{z-index:1}
 .sceneNight .horizon,.sceneDay .horizon,.sceneNight .water3d,.sceneDay .water3d{z-index:2}
+
+.modeTools{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.modeTools button,.presetButtons button{border:1px solid #345164;background:#102b3d;color:#fff;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:850;cursor:pointer}
+.presetButtons{display:flex;gap:6px;flex-wrap:wrap}
+.modeTools .toolOn{background:#c8102e;border-color:#e64e68}
+.loading3d{position:absolute;left:50%;top:50%;z-index:8;transform:translate(-50%,-50%);display:grid;gap:3px;text-align:center;padding:12px 16px;border:1px solid rgba(255,255,255,.16);border-radius:12px;background:rgba(4,14,22,.78);backdrop-filter:blur(8px);pointer-events:none}
+.loading3d b{font-size:12px}.loading3d span{font-size:9px;color:#9db7c5}
+.quizOverlay{position:absolute;right:16px;top:16px;z-index:9;width:min(280px,42%);padding:15px;border:1px solid #e64e68;border-radius:14px;background:rgba(13,36,52,.94);box-shadow:0 14px 30px rgba(0,0,0,.3)}
+.quizOverlay span{font-size:8px;letter-spacing:.14em;color:#ff7488;font-weight:950}.quizOverlay h3{font-size:17px;margin:5px 0}.quizOverlay p{font-size:10px;color:#a9bdc9;line-height:1.5}.quizOverlay button{border:0;border-radius:8px;padding:8px 10px;background:#c8102e;color:#fff;font-weight:900;cursor:pointer}
+.comparePanel{border-top:1px solid #25465a;background:#07141e}.compareHead{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:9px 12px}.compareHead b{font-size:10px}.compareHead select{max-width:300px;background:#102b3d;border:1px solid #345164;color:#fff;border-radius:8px;padding:7px;font-size:10px}.compareScene{position:relative;height:300px;background:#02070c;overflow:hidden}.compareScene>div{position:absolute;inset:0}
+.lightInfo{width:100%;display:flex!important;gap:10px;align-items:flex-start;text-align:left;background:transparent!important;border:0!important;color:inherit!important;border-bottom:1px solid #203c4e!important;border-radius:0!important;padding:11px 4px!important;cursor:pointer}.lightInfo:hover{background:rgba(255,255,255,.035)!important}
+.inspectCard{max-width:1500px;margin:18px auto 0;padding:15px 18px;border:1px solid #315b72;border-radius:14px;background:#0b1e2c;display:flex;justify-content:space-between;gap:14px}.inspectCard span{font-size:8px;letter-spacing:.13em;color:#79c6ef;font-weight:900}.inspectCard h2{margin:5px 0;font-size:18px}.inspectCard p{margin:0;color:#a9bdc9;font-size:11px}.inspectCard button{align-self:flex-start;border:0;background:transparent;color:#fff;font-size:22px;cursor:pointer}
+.viewer:fullscreen{background:#06111c;padding:10px}.viewer:fullscreen .sceneNight,.viewer:fullscreen .sceneDay{height:calc(100vh - 150px);max-height:none}
+@media(max-width:720px){.quizOverlay{width:auto;left:10px;right:10px;top:10px}.compareScene{height:230px}.modeTools{width:100%}.modeTools button{flex:1}.controls{align-items:stretch}.presetButtons{width:100%}}
