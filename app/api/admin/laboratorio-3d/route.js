@@ -3,6 +3,7 @@ import {
   deleteRipeam3DScene,listRipeam3DScenes,saveRipeam3DScene,
   listRipeam3DAssets,upsertRipeam3DAsset,listSceneVersions,restoreSceneVersion
 } from "../../../../lib/ripeam-3d-scenes";
+import {mergeCanonicalStudentScenes} from "../../../../lib/ripeam-3d-default-scenes";
 
 export const dynamic="force-dynamic";
 
@@ -10,11 +11,12 @@ export async function GET(request){
   if(!(await getAdmin()))return Response.json({error:"Não autorizado"},{status:403});
   const url=new URL(request.url);
   const sceneId=String(url.searchParams.get("sceneId")||"");
-  const [scenes,assets,versions]=await Promise.all([
+  const [storedScenes,assets,versions]=await Promise.all([
     listRipeam3DScenes(),
     listRipeam3DAssets(),
     sceneId?listSceneVersions(sceneId):Promise.resolve([])
   ]);
+  const scenes=mergeCanonicalStudentScenes(storedScenes);
   return Response.json({ok:true,scenes,assets,versions});
 }
 

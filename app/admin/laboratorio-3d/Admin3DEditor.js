@@ -98,7 +98,7 @@ export default function Admin3DEditor(){
   },[playing,scene.config?.timeline?.duration,scene.config?.timeline?.loop]);
 
   useEffect(()=>{
-    if(!autosave||!scene.id||!lastEdit)return;
+    if(!autosave||!scene.id||scene.liveStudentScene||!lastEdit)return;
     const timer=setTimeout(()=>save(scene.status||"draft",{silent:true,versionLabel:"Autosave"}),1800);
     return()=>clearTimeout(timer);
   },[lastEdit,autosave]);
@@ -119,6 +119,7 @@ export default function Admin3DEditor(){
     setScene({
       id:row.id,scene_key:row.scene_key,title:row.title,rule_ref:row.rule_ref||"",
       card_title:row.card_title||"",description:row.description||"",status:row.status,
+      systemScene:!!row.systemScene,liveStudentScene:!!row.liveStudentScene,
       config:{...clone(EMPTY.config),...(row.config||{}),settings:{...EMPTY.config.settings,...(row.config?.settings||{})}}
     });
     setSelected(null);setHistory([]);setFuture([]);
@@ -341,13 +342,14 @@ export default function Admin3DEditor(){
 
   async function save(nextStatus=scene.status,{silent=false,versionLabel}={}){
     if(busy)return;
+    if(scene.liveStudentScene)nextStatus="published";
     if(nextStatus==="published"&&validation.errors.length){
       setStatus("Publicação bloqueada: corrija os erros semânticos obrigatórios.");
       setTab("scene");
       return;
     }
     setBusy(true);if(!silent)setStatus("Salvando...");
-    const payload={...scene,status:nextStatus,versionLabel,skipVersion:silent,config:{...scene.config,scenarioKey:scene.scene_key}};
+    const payload={...scene,id:scene.systemScene?undefined:scene.id,status:nextStatus,versionLabel,skipVersion:silent,config:{...scene.config,scenarioKey:scene.scene_key}};
     const r=await fetch("/api/admin/laboratorio-3d",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"save",scene:payload})});
     const j=await r.json().catch(()=>({}));setBusy(false);
     if(!r.ok){setStatus(j.error||"Erro ao salvar");return}
@@ -362,20 +364,20 @@ export default function Admin3DEditor(){
 
   return <div className={styles.editorShell}>
     <div className={styles.topbar}>
-      <div><b>ESTIBORDO · EDITOR 3D PRO</b><span>{semanticLabel(semantic)} · {progress} · {scene.status}</span></div>
+      <div><b>ESTIBORDO · EDITOR 3D PRO</b><span>{semanticLabel(semantic)} · {progress} · {scene.liveStudentScene?"AO VIVO NO ALUNO":scene.status}</span></div>
       <div className={styles.topActions}>
         <button onClick={undo} disabled={!history.length}>↶ Undo</button><button onClick={redo} disabled={!future.length}>↷ Redo</button>
         <button onClick={duplicateScene}>Duplicar cena</button><button onClick={()=>setScene(clone(EMPTY))}>＋ Nova cena</button>
         <select value={scene.status} onChange={e=>setScene(s=>({...s,status:e.target.value}))}><option value="draft">Rascunho</option><option value="review">Revisão</option><option value="published">Publicado</option><option value="archived">Arquivado</option></select>
-        <button disabled={busy} onClick={()=>save(scene.status)}>Salvar</button><button className={styles.publish} disabled={busy||validation.errors.length>0} title={validation.errors.length?"Corrija os erros semânticos antes de publicar":""} onClick={()=>save("published")}>Publicar</button>
+        <button disabled={busy} onClick={()=>save(scene.liveStudentScene?"published":scene.status)}>{scene.liveStudentScene?"Salvar no aluno":"Salvar"}</button><button className={styles.publish} disabled={busy||scene.liveStudentScene||validation.errors.length>0} title={validation.errors.length?"Corrija os erros semânticos antes de publicar":""} onClick={()=>save("published")}>Publicar</button>
       </div>
     </div>
 
     <div className={styles.workspace}>
       <aside className={styles.leftPane}>
         <h3>ÁRVORE RIPEAM / CENAS</h3>
-        <div className={styles.ruleTree}>{groupedScenes.map(([ruleNo,rows])=><section key={ruleNo}><div className={styles.ruleTreeHead}>{ruleNo==="unassigned"?"SEM REGRA":"REGRA "+ruleNo}<small>{getRule(ruleNo)?.title||"Cenas não vinculadas"}</small></div><div className={styles.sceneList}>{rows.map(row=><button key={row.id} className={row.id===scene.id?styles.active:""} onClick={()=>openScene(row)}><b>{row.title}</b><small>{semanticLabel(row.config?.semantic||{ruleNumber:String(row.rule_ref||"").match(/\d+/)?.[0]||""})} · {row.status}</small></button>)}</div></section>)}</div>
-        <h3>TEMPLATES</h3><div className={styles.chips}>{SCENE_TEMPLATES.map(t=><button key={t.key} onClick={()=>applyTemplate(t)}>{t.label}</button>)}</div>
+        <div className={styles.ruleTree}>{groupedScenes.map(([ruleNo,rows])=><section key={ruleNo}><div className={styles.ruleTreeHead}>{ruleNo==="unassigned"?"SEM REGRA":"REGRA "+ruleNo}<small>{getRule(ruleNo)?.title||"Cenas não vinculadas"}</small></div><div className={styles.sceneList}>{rows.map(row=><button key={row.id} className={row.id===scene.id?styles.active:""} onClick={()=>openScene(row)}><b>{row.title}</b><small>{semanticLabel(row.config?.semantic||{ruleNumber:String(row.rule_ref||"").match(/\d+/)?.[0]||""})} · {row.liveStudentScene?"● AO VIVO NO ALUNO":row.status}</small></button>)}</div></section>)}</div>
+        <h3>TEMPLATES · CRIAR NOVA CENA</h3><div className={styles.chips}>{SCENE_TEMPLATES.map(t=><button key={t.key} onClick={()=>applyTemplate(t)}>{t.label}</button>)}</div>
 
         <h3>OUTLINER</h3>
         <div className={styles.outliner}>{(cfg.objects||[]).map(o=><button key={o.id} className={selected===o.id?styles.active:""} onClick={()=>{setSelected(o.id);setTab("object")}} style={{paddingLeft:8+(o.parentId?14:0)}}><span>{o.type.includes("Light")?"💡":o.type==="shape"?"◆":o.type==="cable"?"〰":o.type==="measure"?"↔":o.type==="hotspot"?"◉":"◫"}</span><b>{o.name}</b><small>{o.locked?"🔒":""}</small></button>)}</div>
@@ -395,7 +397,7 @@ export default function Admin3DEditor(){
       <section className={styles.centerPane}>
         <div className={semantic.ruleNumber?styles.semanticBanner:styles.semanticBannerMissing}>
           <div><span>{semantic.ruleNumber?"CENA RIPEAM VINCULADA":"ATENÇÃO · CENA NÃO VINCULADA"}</span><strong>{semanticLabel(semantic)}</strong><small>{breadcrumbs.join(" → ")||"Selecione a Regra e o cenário na aba Cena antes de publicar."}</small></div>
-          <div className={styles.semanticRight}><div className={styles.semanticBadges}>{semantic.condition&&<b>{CONDITION_LABELS[semantic.condition]||semantic.condition}</b>}{semantic.period&&<b>{PERIOD_LABELS[semantic.period]||semantic.period}</b>}{semantic.side&&<b>{SIDE_LABELS[semantic.side]||semantic.side}</b>}{semantic.lockedToRule&&<b>🔒 Vínculo travado</b>}<b>{validation.errors.length?"BLOQUEADO":validation.warnings.length?validation.warnings.length+" ALERTAS":"PRONTO"}</b></div>{semanticItem&&<button className={styles.semanticSync} onClick={syncSemanticEquipment}>＋ Completar base RIPEAM</button>}</div>
+          <div className={styles.semanticRight}><div className={styles.semanticBadges}>{semantic.condition&&<b>{CONDITION_LABELS[semantic.condition]||semantic.condition}</b>}{semantic.period&&<b>{PERIOD_LABELS[semantic.period]||semantic.period}</b>}{semantic.side&&<b>{SIDE_LABELS[semantic.side]||semantic.side}</b>}{semantic.lockedToRule&&<b>🔒 Vínculo travado</b>}{scene.liveStudentScene&&<b>● CENA DO ALUNO</b>}<b>{validation.errors.length?"BLOQUEADO":validation.warnings.length?validation.warnings.length+" ALERTAS":"PRONTO"}</b></div>{semanticItem&&<button className={styles.semanticSync} onClick={syncSemanticEquipment}>＋ Completar base RIPEAM</button>}</div>
         </div>
         <div className={styles.viewportToolbar}>
           <button className={mode==="translate"?styles.active:""} onClick={()=>setMode("translate")}>↔ Mover</button>
@@ -478,7 +480,7 @@ export default function Admin3DEditor(){
           <label>Chave técnica da cena<input value={scene.scene_key} disabled={!!semantic.lockedToRule} onChange={e=>{setScene(s=>({...s,scene_key:e.target.value}));setLastEdit(Date.now())}}/></label>
           <label>Card / cenário<input value={scene.card_title} onChange={e=>{setScene(s=>({...s,card_title:e.target.value}));setLastEdit(Date.now())}}/></label>
           <label>Descrição<textarea rows="4" value={scene.description} onChange={e=>{setScene(s=>({...s,description:e.target.value}));setLastEdit(Date.now())}}/></label>
-          <div className={styles.inlineChecks}><label><input type="checkbox" checked={autosave} onChange={e=>setAutosave(e.target.checked)}/> Autosave</label><label><input type="checkbox" checked={cfg.settings.snapEnabled} onChange={e=>mutate(s=>{s.config.settings.snapEnabled=e.target.checked})}/> Snap</label></div>
+          <div className={styles.inlineChecks}><label title={scene.liveStudentScene?"Autosave é desativado em cenas ao vivo para evitar publicar alterações acidentais.":""}><input type="checkbox" checked={autosave&&!scene.liveStudentScene} disabled={!!scene.liveStudentScene} onChange={e=>setAutosave(e.target.checked)}/> Autosave</label><label><input type="checkbox" checked={cfg.settings.snapEnabled} onChange={e=>mutate(s=>{s.config.settings.snapEnabled=e.target.checked})}/> Snap</label></div>
           <h4>Snap</h4><label>Posição<input type="number" step=".05" value={cfg.settings.snapPosition} onChange={e=>mutate(s=>{s.config.settings.snapPosition=Number(e.target.value)})}/></label><label>Rotação °<input type="number" value={cfg.settings.snapRotation} onChange={e=>mutate(s=>{s.config.settings.snapRotation=Number(e.target.value)})}/></label><label>Escala<input type="number" step=".01" value={cfg.settings.snapScale} onChange={e=>mutate(s=>{s.config.settings.snapScale=Number(e.target.value)})}/></label>
           <h4>Ambiente</h4>{[["background","Fundo"],["water","Água"],["ambient","Luz ambiente"],["sun","Sol"],["fog","Neblina"]].map(([k,l])=><label key={k}>{l}<input type="color" value={cfg.environment[k]} onChange={e=>mutate(s=>{s.config.environment[k]=e.target.value})}/></label>)}<label>Exposição<input type="range" min=".1" max="3" step=".05" value={cfg.environment.exposure} onChange={e=>mutate(s=>{s.config.environment.exposure=Number(e.target.value)})}/></label><label>Neblina<input type="range" min="0" max=".1" step=".001" value={cfg.environment.fogDensity} onChange={e=>mutate(s=>{s.config.environment.fogDensity=Number(e.target.value)})}/></label>
           <h4>Backup</h4><div className={styles.row}><button onClick={exportJson}>Exportar JSON</button><button onClick={()=>fileRef.current?.click()}>Importar JSON</button><input ref={fileRef} type="file" accept=".json" hidden onChange={e=>importJson(e.target.files?.[0])}/></div>

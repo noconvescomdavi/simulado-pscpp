@@ -45,7 +45,17 @@ export default function Ripeam3DClient(){
 
  useEffect(()=>{const q=new URLSearchParams(window.location.search);const k=q.get("scenario");if(k&&SCENARIOS[k])setScenario(k)},[]);
  useEffect(()=>{setModelReady(false);setRevealed(false);setSelectedLight(null)},[scenario]);
- useEffect(()=>{let alive=true;fetch("/api/ripeam-3d/scenes?key="+encodeURIComponent(scenario),{cache:"no-store"}).then(r=>r.json()).then(j=>{if(alive)setEditorScene(j.scene?.config||null)}).catch(()=>{if(alive)setEditorScene(null)});return()=>{alive=false}},[scenario]);
+ useEffect(()=>{
+   let alive=true,timer=null;
+   const load=()=>fetch("/api/ripeam-3d/scenes?key="+encodeURIComponent(scenario),{cache:"no-store"})
+     .then(r=>r.json()).then(j=>{if(alive)setEditorScene(j.scene?.config||null)})
+     .catch(()=>{if(alive)setEditorScene(null)});
+   load();
+   timer=setInterval(load,5000);
+   const onFocus=()=>load();
+   window.addEventListener("focus",onFocus);
+   return()=>{alive=false;if(timer)clearInterval(timer);window.removeEventListener("focus",onFocus)}
+ },[scenario]);
 
  const stack=useMemo(()=>s.lights.map((x,i)=>({label:x[0],color:x[1],sector:x[2],top:72+i*34})),[s]);
 
