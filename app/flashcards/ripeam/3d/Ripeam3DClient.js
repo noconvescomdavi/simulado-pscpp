@@ -1,5 +1,5 @@
 "use client";
-import {useMemo,useRef,useState} from "react";
+import {useEffect,useMemo,useRef,useState} from "react";
 import styles from "./ripeam-3d.module.css";
 import RipeamThreeScene from "./RipeamThreeScene";
 
@@ -29,8 +29,10 @@ export default function Ripeam3DClient(){
  const [night,setNight]=useState(true);
  const [zoom,setZoom]=useState(1);
  const [modelReady,setModelReady]=useState(false);
+ const [editorScene,setEditorScene]=useState(null);
  const drag=useRef(null);
  const s=SCENARIOS[scenario];
+ useEffect(()=>{let alive=true;fetch("/api/ripeam-3d/scenes?key="+encodeURIComponent(scenario),{cache:"no-store"}).then(r=>r.json()).then(j=>{if(alive)setEditorScene(j.scene?.config||null)}).catch(()=>{if(alive)setEditorScene(null)});return()=>{alive=false}},[scenario]);
  const stack=useMemo(()=>s.lights.map((x,i)=>({label:x[0],color:x[1],top:72+i*34})),[s]);
  function down(e){drag.current={x:e.clientX,y:e.clientY,yaw,pitch};e.currentTarget.setPointerCapture?.(e.pointerId)}
  function move(e){if(!drag.current)return;setYaw(drag.current.yaw+(e.clientX-drag.current.x)*.45);setPitch(Math.max(-32,Math.min(18,drag.current.pitch-(e.clientY-drag.current.y)*.18)))}
@@ -50,7 +52,7 @@ export default function Ripeam3DClient(){
          <button className={styles.dayToggle} onClick={()=>setNight(v=>!v)}>{night?"☀ Dia":"☾ Noite"}</button>
        </div>
        <div className={night?styles.sceneNight:styles.sceneDay} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={up} onWheel={wheel}>
-         <RipeamThreeScene scenario={scenario} vessel={s.vessel} yaw={yaw} pitch={pitch} zoom={zoom} night={night} onReady={setModelReady} />
+         <RipeamThreeScene scenario={scenario} vessel={s.vessel} yaw={yaw} pitch={pitch} zoom={zoom} night={night} editorScene={editorScene} onReady={setModelReady} />
          <div className={styles.skyGlow}/>
          <div className={styles.horizon}/>
          <div className={styles.water3d}><i/><i/><i/><i/><i/><i/></div>
