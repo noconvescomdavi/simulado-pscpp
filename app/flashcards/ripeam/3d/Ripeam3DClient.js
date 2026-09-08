@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect,useMemo,useState} from "react";
+import {useEffect,useMemo,useRef,useState} from "react";
 import RipeamThreeScene from "./RipeamThreeScene";
 import styles from "./ripeam-3d.module.css";
 
@@ -151,6 +151,7 @@ export default function Ripeam3DClient(){
   const [score,setScore]=useState({correct:0,total:0});
   const [highlightLight,setHighlightLight]=useState(-1);
   const [liveScene,setLiveScene]=useState(null);
+  const liveSceneStampRef=useRef("");
 
   const scene=useMemo(()=>SCENES.find(item=>item.key===selected)||SCENES[0],[selected]);
   const variant=useMemo(()=>scene.variants.find(v=>v.id===variantId)||scene.variants[0],[scene,variantId]);
@@ -173,15 +174,22 @@ export default function Ripeam3DClient(){
   const editorKey=EDITOR_SCENE_KEY[sceneConfig.variantId]||sceneConfig.key;
 
   useEffect(()=>{
-    if(labMode==="situation"){setLiveScene(null);return}
+    if(labMode==="situation"){liveSceneStampRef.current="";setLiveScene(null);return}
     let dead=false,timer;
+    liveSceneStampRef.current="";
     const pull=async()=>{
       try{
         const r=await fetch("/api/ripeam-3d/scenes?key="+encodeURIComponent(editorKey)+"&_="+Date.now(),{cache:"no-store"});
         const j=await r.json();
-        if(!dead)setLiveScene(j.scene?.status==="published"?j.scene:null);
+        if(dead)return;
+        const next=j.scene?.status==="published"?j.scene:null;
+        const stamp=next?String(next.updated_at||next.created_at||"")+"|"+String(next.id||"")+"|"+String(next.scene_key||""):"none";
+        if(stamp!==liveSceneStampRef.current){
+          liveSceneStampRef.current=stamp;
+          setLiveScene(next);
+        }
       }catch(error){if(!dead)console.warn("[RIPEAM 3D] atualização ao vivo indisponível",error)}
-      if(!dead)timer=setTimeout(pull,900);
+      if(!dead)timer=setTimeout(pull,5000);
     };
     pull();
     return()=>{dead=true;clearTimeout(timer)};
