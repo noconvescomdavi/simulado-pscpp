@@ -20,6 +20,10 @@ CREATE INDEX IF NOT EXISTS idx_student_study_sessions_user_started
 CREATE INDEX IF NOT EXISTS idx_student_study_sessions_user_plan_date
   ON student_study_sessions(user_id, plan_date, started_at DESC);
 
+CREATE UNIQUE INDEX IF NOT EXISTS idx_student_study_sessions_one_open
+  ON student_study_sessions(user_id)
+  WHERE ended_at IS NULL;
+
 CREATE TABLE IF NOT EXISTS student_topic_mastery (
   user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   subject_slug VARCHAR(120) NOT NULL,
