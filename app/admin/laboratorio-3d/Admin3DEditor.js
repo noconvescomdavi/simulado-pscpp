@@ -14,7 +14,11 @@ const EMPTY={
 const BUILTIN=[
   {name:"Bulk Carrier",url:"/models/ripeam/bulk_carrier.glb",type:"glb"},
   {name:"Tugboat",url:"/models/ripeam/Tugboat.glb",type:"glb"},
-  {name:"Barge",url:"/models/ripeam/barge.fbx",type:"fbx"}
+  {name:"Barge",url:"/models/ripeam/barge.fbx",type:"fbx"},
+  {name:"Sailboat",url:"/models/ripeam/sailboat.glb",type:"glb"},
+  {name:"Fishing Vessel",url:"/models/ripeam/fishing_vessel.glb",type:"glb"},
+  {name:"Pilot Boat",url:"/models/ripeam/pilot_boat.glb",type:"glb"},
+  {name:"Mine Clearance",url:"/models/ripeam/navy_mine_clearance.glb",type:"glb"}
 ];
 const clone=x=>JSON.parse(JSON.stringify(x));
 const uid=()=>crypto.randomUUID();
@@ -200,7 +204,7 @@ export default function Admin3DEditor(){
         <div className={styles.assetShelf}>
           <div className={styles.assetHead}>
             <b>Biblioteca 3D</b>
-            <label><input type="file" accept=".glb,.gltf,.fbx,.obj,.mtl,.hdr,.exr" onChange={e=>upload(e.target.files?.[0])}/>＋ Importar do PC</label>
+            <label><input type="file" accept=".glb,.gltf,.fbx,.obj" onChange={e=>upload(e.target.files?.[0])}/>＋ Importar do PC</label>
           </div>
           <div className={styles.assetGrid}>
             {assets.map((a,i)=><button key={a.url+i} onClick={()=>addObject(a)}><b>{a.name}</b><small>{a.type.toUpperCase()}</small></button>)}
@@ -240,7 +244,7 @@ export default function Admin3DEditor(){
 
         {tab==="scene"&&<div className={styles.form}>
           <label>Título<input value={scene.title} onChange={e=>setScene(s=>({...s,title:e.target.value}))}/></label>
-          <label>Chave da cena<input value={scene.scene_key} onChange={e=>setScene(s=>({...s,scene_key:e.target.value}))}/></label>
+          <label>Chave da cena (ex.: power, towShort, dredgePort)<input value={scene.scene_key} onChange={e=>setScene(s=>({...s,scene_key:e.target.value}))}/></label>
           <label>Regra RIPEAM<input value={scene.rule_ref} placeholder="24(a), 27(d)..." onChange={e=>setScene(s=>({...s,rule_ref:e.target.value}))}/></label>
           <label>Card / cenário<input value={scene.card_title} onChange={e=>setScene(s=>({...s,card_title:e.target.value}))}/></label>
           <label>Descrição<textarea rows="4" value={scene.description} onChange={e=>setScene(s=>({...s,description:e.target.value}))}/></label>
