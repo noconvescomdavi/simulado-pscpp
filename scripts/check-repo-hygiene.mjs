@@ -22,9 +22,14 @@ function walk(dir, relative = "") {
 
     if (
       rel.startsWith(".backup-") ||
+      rel.startsWith("_backup_") ||
+      rel === "backup" || rel.startsWith("backup/") ||
+      rel === "backups" || rel.startsWith("backups/") ||
+      rel === "lib/site-packages" || rel.startsWith("lib/site-packages/") ||
       rel.startsWith(".estibordo-editor-backups/") ||
       rel.startsWith(".estibordo-update-backups/") ||
-      rel.startsWith("public/study-content.desativado-")
+      rel.startsWith("public/study-content.desativado-") ||
+      /(^|\/)__pycache__(\/|$)/i.test(rel)
     ) {
       violations.push(rel);
       continue;
@@ -36,7 +41,14 @@ function walk(dir, relative = "") {
       continue;
     }
 
-    if (forbiddenNames.has(entry.name) || /^scripts\/.*\.exe$/i.test(rel)) {
+    if (
+      forbiddenNames.has(entry.name) ||
+      /^scripts\/.*\.exe$/i.test(rel) ||
+      /\.bak(?:-|$)/i.test(entry.name) ||
+      /\.backup(?:-|\.|$)/i.test(entry.name) ||
+      /\.old$/i.test(entry.name) ||
+      /\.py[cod]$/i.test(entry.name)
+    ) {
       violations.push(rel);
     }
   }
