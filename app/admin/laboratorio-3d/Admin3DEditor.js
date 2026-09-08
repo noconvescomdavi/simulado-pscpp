@@ -85,7 +85,7 @@ export default function Admin3DEditor(){
 
   useEffect(()=>{
     if(!autosave||!scene.id||!lastEdit)return;
-    const timer=setTimeout(()=>save("draft",{silent:true,versionLabel:"Autosave"}),1800);
+    const timer=setTimeout(()=>save(scene.status||"draft",{silent:true,versionLabel:"Autosave"}),1800);
     return()=>clearTimeout(timer);
   },[lastEdit,autosave]);
 
@@ -195,7 +195,7 @@ export default function Admin3DEditor(){
   async function save(nextStatus=scene.status,{silent=false,versionLabel}={}){
     if(busy)return;
     setBusy(true);if(!silent)setStatus("Salvando...");
-    const payload={...scene,status:nextStatus,versionLabel,config:{...scene.config,scenarioKey:scene.scene_key}};
+    const payload={...scene,status:nextStatus,versionLabel,skipVersion:silent,config:{...scene.config,scenarioKey:scene.scene_key}};
     const r=await fetch("/api/admin/laboratorio-3d",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"save",scene:payload})});
     const j=await r.json().catch(()=>({}));setBusy(false);
     if(!r.ok){setStatus(j.error||"Erro ao salvar");return}
