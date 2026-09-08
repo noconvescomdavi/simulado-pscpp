@@ -1,5 +1,6 @@
 import {getSession} from "../../../../lib/auth";
 import {deleteMindMap,getMindMap,updateMindMap} from "../../../../lib/mind-maps";
+import {assertSameOrigin} from "../../../../lib/security";
 
 export const dynamic="force-dynamic";
 
@@ -12,7 +13,8 @@ export async function GET(_request,{params}){
   return Response.json({map},{headers:{"Cache-Control":"private, no-store"}});
 }
 
-export async function PUT(request,{params}){
+export async function PUT(request,{params}) {
+  try { await assertSameOrigin(); } catch (error) { return Response.json({error:"Origem inválida."},{status:Number(error?.status)||403}); }
   const session=await getSession();
   if(!session)return Response.json({error:"Não autenticado"},{status:401});
   const {id}=await params;
@@ -22,7 +24,8 @@ export async function PUT(request,{params}){
   return Response.json({ok:true,map});
 }
 
-export async function DELETE(_request,{params}){
+export async function DELETE(_request,{params}) {
+  try { await assertSameOrigin(); } catch (error) { return Response.json({error:"Origem inválida."},{status:Number(error?.status)||403}); }
   const session=await getSession();
   if(!session)return Response.json({error:"Não autenticado"},{status:401});
   const {id}=await params;
