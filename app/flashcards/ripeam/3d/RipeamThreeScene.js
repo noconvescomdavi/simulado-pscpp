@@ -126,6 +126,63 @@ function prepareModel(THREE,raw,config){
   return model;
 }
 
+function addStaticNightEnvironment(THREE,scene){
+  scene.background=new THREE.Color(0x020916);
+
+  const starsGeometry=new THREE.BufferGeometry();
+  const starCount=520;
+  const positions=new Float32Array(starCount*3);
+  for(let i=0;i<starCount;i++){
+    const a=(i*2.399963229728653)% (Math.PI*2);
+    const t=((i*37)%997)/997;
+    const radius=125+((i*53)%40);
+    const y=24+t*88;
+    positions[i*3]=Math.cos(a)*radius;
+    positions[i*3+1]=y;
+    positions[i*3+2]=Math.sin(a)*radius;
+  }
+  starsGeometry.setAttribute("position",new THREE.BufferAttribute(positions,3));
+  const stars=new THREE.Points(
+    starsGeometry,
+    new THREE.PointsMaterial({color:0xdcecff,size:.48,sizeAttenuation:true,transparent:true,opacity:.92})
+  );
+  scene.add(stars);
+
+  const moon=new THREE.Mesh(
+    new THREE.SphereGeometry(4.8,32,20),
+    new THREE.MeshBasicMaterial({color:0xfff8dc})
+  );
+  moon.position.set(-44,50,-88);
+  scene.add(moon);
+
+  const moonGlow=new THREE.Mesh(
+    new THREE.SphereGeometry(6.5,24,16),
+    new THREE.MeshBasicMaterial({color:0xbfdcff,transparent:true,opacity:.11,depthWrite:false})
+  );
+  moonGlow.position.copy(moon.position);
+  scene.add(moonGlow);
+
+  const moonLight=new THREE.DirectionalLight(0xc6dcff,1.7);
+  moonLight.position.set(-18,35,-28);
+  scene.add(moonLight);
+
+  const ambient=new THREE.AmbientLight(0x7899c4,.48);
+  const hemi=new THREE.HemisphereLight(0x6f91bd,0x06111c,.72);
+  scene.add(ambient);
+  scene.add(hemi);
+
+  return {stars,moon,moonGlow,moonLight,ambient,hemi};
+}
+
+function addDayEnvironment(THREE,scene){
+  scene.background=new THREE.Color(0x8cc7e8);
+  scene.add(new THREE.AmbientLight(0xffffff,.8));
+  scene.add(new THREE.HemisphereLight(0xddefff,0x24445b,1));
+  const sun=new THREE.DirectionalLight(0xffffff,1.4);
+  sun.position.set(8,14,10);
+  scene.add(sun);
+}
+
 function addNavigationLights(THREE,root,plan){
   try{
     const colors={white:0xfff4d6,red:0xff303f,green:0x36e37b,yellow:0xffcf3a};
@@ -158,7 +215,7 @@ function addNavigationLights(THREE,root,plan){
   }
 }
 
-export default function RipeamThreeScene({sceneConfig,onDiagnostics}){
+export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false}){
   const mount=useRef(null);
   const runtime=useRef(null);
 
@@ -178,13 +235,14 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics}){
         if(cancelled||!mount.current)return;
 
         const scene=new THREE.Scene();
-        scene.background=new THREE.Color(0x8cc7e8);
+        if(night)addStaticNightEnvironment(THREE,scene);
+        else addDayEnvironment(THREE,scene);
 
         const camera=new THREE.PerspectiveCamera(45,1,.1,1000);
         const renderer=new THREE.WebGLRenderer({antialias:true,alpha:false,powerPreference:"high-performance"});
         renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
         if("outputEncoding" in renderer)renderer.outputEncoding=THREE.sRGBEncoding;
-        renderer.setClearColor(0x8cc7e8,1);
+        renderer.setClearColor(night?0x020916:0x8cc7e8,1);
 
         root.innerHTML="";
         root.appendChild(renderer.domElement);
@@ -195,15 +253,13 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics}){
         controls.enablePan=true;
         controls.enableZoom=true;
 
-        scene.add(new THREE.AmbientLight(0xffffff,.8));
-        scene.add(new THREE.HemisphereLight(0xddefff,0x24445b,1));
-        const sun=new THREE.DirectionalLight(0xffffff,1.4);
-        sun.position.set(8,14,10);
-        scene.add(sun);
-
         const water=new THREE.Mesh(
           new THREE.PlaneGeometry(400,400),
-          new THREE.MeshStandardMaterial({color:0x073b5b,roughness:.88,metalness:0})
+          new THREE.MeshStandardMaterial({
+            color:night?0x031a2d:0x073b5b,
+            roughness:night?.72:.88,
+            metalness:night?.12:0
+          })
         );
         water.rotation.x=-Math.PI/2;
         water.position.y=0;
@@ -349,7 +405,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics}){
       runtime.current=null;
       if(mount.current)mount.current.innerHTML="";
     };
-  },[sceneConfig,onDiagnostics]);
+  },[sceneConfig,onDiagnostics,night]);
 
   const view=name=>runtime.current?.setView?.(name);
   const zoom=factor=>runtime.current?.zoomBy?.(factor);

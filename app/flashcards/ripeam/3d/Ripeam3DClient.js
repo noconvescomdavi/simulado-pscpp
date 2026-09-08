@@ -24,6 +24,7 @@ const SCENES = [
 export default function Ripeam3DClient(){
   const [selected,setSelected] = useState("rule23");
   const [diagnostics,setDiagnostics] = useState(null);
+  const [night,setNight] = useState(false);
   const scene = useMemo(()=>SCENES.find(item=>item.key===selected)||SCENES[0],[selected]);
 
   return <main className={styles.page}>
@@ -46,10 +47,16 @@ export default function Ripeam3DClient(){
       <section className={styles.viewerCard}>
         <div className={styles.viewerHeading}>
           <div><span>REGRA {scene.rule}</span><h2>{scene.title}</h2></div>
-          <div className={styles.status}>{diagnostics?.status==="loaded"?"Modelo 3D carregado":diagnostics?.status==="error"?"Falha no modelo":"Carregando"}</div>
+          <div className={styles.headingActions}>
+            <div className={styles.environmentToggle} aria-label="Ambiente do laboratório">
+              <button className={!night?styles.environmentActive:""} onClick={()=>setNight(false)}>☀ Cenário Diurno</button>
+              <button className={night?styles.environmentActive:""} onClick={()=>setNight(true)}>☾ Cenário Noturno</button>
+            </div>
+            <div className={styles.status}>{diagnostics?.status==="loaded"?"Modelo 3D carregado":diagnostics?.status==="error"?"Falha no modelo":"Carregando"}</div>
+          </div>
         </div>
 
-        <RipeamThreeScene key={scene.key} sceneConfig={scene} onDiagnostics={setDiagnostics}/>
+        <RipeamThreeScene key={scene.key+"-"+(night?"night":"day")} sceneConfig={scene} onDiagnostics={setDiagnostics} night={night}/>
 
         {diagnostics?.status==="loaded"&&<div className={styles.diagnostics}>
           <span>Meshes <b>{diagnostics.meshCount}</b></span>
