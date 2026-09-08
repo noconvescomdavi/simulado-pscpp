@@ -9,6 +9,7 @@ export default function StudySessionTracker(){
     let lastActivity=Date.now();
 
     const touch=()=>{lastActivity=Date.now()};
+    const onSessionStarted=()=>{stopped=false;lastActivity=Date.now()};
     const stop=async()=>{
       if(stopped)return;
       const raw=localStorage.getItem(KEY);
@@ -47,10 +48,12 @@ export default function StudySessionTracker(){
     };
 
     for(const ev of ["pointerdown","keydown","touchstart","scroll"])window.addEventListener(ev,touch,{passive:true});
+    window.addEventListener("estibordo:study-session-started",onSessionStarted);
     const timer=setInterval(heartbeat,60000);
     return()=>{
       clearInterval(timer);
       for(const ev of ["pointerdown","keydown","touchstart","scroll"])window.removeEventListener(ev,touch);
+      window.removeEventListener("estibordo:study-session-started",onSessionStarted);
     };
   },[]);
   return null;
@@ -97,6 +100,7 @@ export async function startTrackedStudySession({task_key,subject_slug,session_ty
   const data=await r.json().catch(()=>({}));
   if(r.ok&&data.session?.id){
     localStorage.setItem(KEY,JSON.stringify({id:data.session.id,started_at:data.session.started_at,task_key}));
+    window.dispatchEvent(new Event("estibordo:study-session-started"));
     return data.session;
   }
   throw new Error(data.error||"Não foi possível iniciar a sessão de estudo.");
