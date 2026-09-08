@@ -4,13 +4,18 @@ import styles from "./ripeam-3d.module.css";
 
 const CDN="https://cdn.jsdelivr.net/npm/three@0.180.0";
 const MODEL_URLS={
-  "bulk-carrier":"/models/ripeam/bulk_carrier.glb"
+  "bulk-carrier":{type:"gltf",url:"/models/ripeam/bulk_carrier.glb"},
+  "tugboat":{type:"gltf",url:"/models/ripeam/Tugboat.glb"},
+  "barge":{type:"fbx",url:"/models/ripeam/barge.fbx"}
 };
 
 async function loadThree(){
   const THREE=await import(CDN+"/build/three.module.js");
-  const {GLTFLoader}=await import(CDN+"/examples/jsm/loaders/GLTFLoader.js");
-  return {THREE,GLTFLoader};
+  const [{GLTFLoader},{FBXLoader}]=await Promise.all([
+    import(CDN+"/examples/jsm/loaders/GLTFLoader.js"),
+    import(CDN+"/examples/jsm/loaders/FBXLoader.js")
+  ]);
+  return {THREE,GLTFLoader,FBXLoader};
 }
 
 function lightPlan(scenario){
@@ -40,11 +45,11 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,o
 
   useEffect(()=>{
     let disposed=false;
-    if(!mount.current || !MODEL_URLS[vessel]){ onReady?.(false); return; }
+    if(!mount.current || (!MODEL_URLS[vessel] && vessel!=="tow-combo")){ onReady?.(false); return; }
 
     (async()=>{
       try{
-        const {THREE,GLTFLoader}=await loadThree();
+        const {THREE,GLTFLoader,FBXLoader}=await loadThree();
         if(disposed||!mount.current)return;
         const root=mount.current;
         const scene=new THREE.Scene();
@@ -76,26 +81,66 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,o
         const base=waterGeo.attributes.position.array.slice();
 
         const modelRoot=new THREE.Group(); scene.add(modelRoot);
-        const loader=new GLTFLoader();
-        const gltf=await loader.loadAsync(MODEL_URLS[vessel]);
-        if(disposed)return;
-        const model=gltf.scene;
-        model.traverse(o=>{
-          if(o.isMesh){
-            o.castShadow=false;o.receiveShadow=false;
-            if(o.material){o.material.roughness=.48;o.material.metalness=.08}
-          }
-        });
-        const box=new THREE.Box3().setFromObject(model);
-        const size=new THREE.Vector3(); box.getSize(size);
-        const center=new THREE.Vector3(); box.getCenter(center);
-        model.position.sub(center);
-        const longest=Math.max(size.x,size.y,size.z);
-        const target=10.5/longest;
-        model.scale.setScalar(target);
-        // Conversão do FBX original: eixo longitudinal -> X e Z-up -> Y-up.
-        model.rotation.set(-Math.PI/2,0,-Math.PI/2);
-        modelRoot.add(model);
+        const gltfLoader=new GLTFLoader();
+        const fbxLoader=new FBXLoader();
+
+        const tuneMaterial=(obj)=>{
+          obj.traverse(o=>{
+            if(o.isMesh){
+              o.castShadow=false;o.receiveShadow=false;
+              const mats=Array.isArray(o.material)?o.material:[o.material];
+              mats.filter(Boolean).forEach(m=>{if("roughness" in m)m.roughness=.48;if("metalness" in m)m.metalness=.08});
+            }
+          });
+        };
+        const normalize=(obj,targetLength,rotation=[0,0,0])=>{
+          tuneMaterial(obj);
+          const box=new THREE.Box3().setFromObject(obj);
+          const size=new THREE.Vector3(); box.getSize(size);
+          const center=new THREE.Vector3(); box.getCenter(center);
+          obj.position.sub(center);
+          obj.scale.setScalar(targetLength/Math.max(size.x,size.y,size.z));
+          obj.rotation.set(...rotation);
+          return obj;
+        };
+
+        if(vessel==="tow-combo"){
+          const [tugGltf,bargeObj]=await Promise.all([
+            gltfLoader.loadAsync(MODEL_URLS.tugboat.url),
+            fbxLoader.loadAsync(MODEL_URLS.barge.url)
+          ]);
+          if(disposed)return;
+
+          const tugGroup=new THREE.Group();
+          const tug=normalize(tugGltf.scene,4.3,[0,Math.PI/2,0]);
+          tugGroup.add(tug);
+          tugGroup.position.set(3.1,0,0);
+          modelRoot.add(tugGroup);
+
+          const bargeGroup=new THREE.Group();
+          const barge=normalize(bargeObj,6.2,[-Math.PI/2,0,-Math.PI/2]);
+          bargeGroup.add(barge);
+          const towDistance=scenario==="tow"?-10.5:-7.0;
+          bargeGroup.position.set(towDistance,0,0);
+          modelRoot.add(bargeGroup);
+
+          const cableMat=new THREE.LineBasicMaterial({color:0xd9d0bb,transparent:true,opacity:.92});
+          const cableGeo=new THREE.BufferGeometry().setFromPoints([
+            new THREE.Vector3(1.4,.25,0),
+            new THREE.Vector3((3.1+towDistance)/2,-.05,0),
+            new THREE.Vector3(towDistance+2.4,.2,0)
+          ]);
+          const cable=new THREE.Line(cableGeo,cableMat);
+          modelRoot.add(cable);
+
+          runtime.currentTow={tugGroup,bargeGroup,cable,towDistance};
+        }else{
+          const cfg=MODEL_URLS[vessel];
+          const raw=cfg.type==="fbx" ? await fbxLoader.loadAsync(cfg.url) : (await gltfLoader.loadAsync(cfg.url)).scene;
+          if(disposed)return;
+          const model=normalize(raw,10.5,[-Math.PI/2,0,-Math.PI/2]);
+          modelRoot.add(model);
+        }
 
         const navGroup=new THREE.Group(); modelRoot.add(navGroup);
         for(const l of lightPlan(scenario)){
@@ -126,11 +171,18 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,o
           waterGeo.computeVertexNormals();
           modelRoot.position.y=Math.sin(t*.72)*.075;
           modelRoot.rotation.z=Math.sin(t*.53)*.006;
+          const tow=runtime.currentTow;
+          if(tow){
+            tow.tugGroup.position.y=Math.sin(t*.88)*.045;
+            tow.tugGroup.rotation.z=Math.sin(t*.63)*.008;
+            tow.bargeGroup.position.y=Math.sin(t*.54+.8)*.035;
+            tow.bargeGroup.rotation.z=Math.sin(t*.43+.6)*.004;
+          }
           renderer.render(scene,camera);
           raf=requestAnimationFrame(animate);
         };
         raf=requestAnimationFrame(animate);
-        runtime.current={THREE,scene,camera,renderer,modelRoot,navGroup,water,ro,raf};
+        runtime.current={THREE,scene,camera,renderer,modelRoot,navGroup,water,ro,raf,tow:runtime.currentTow||null};
         onReady?.(true);
       }catch(err){
         console.warn("Bulk carrier 3D indisponível; usando fallback visual.",err);
@@ -144,6 +196,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,o
       if(r){cancelAnimationFrame(r.raf);r.ro?.disconnect();r.renderer?.dispose();r.scene?.traverse?.(o=>{o.geometry?.dispose?.();if(o.material){(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>m.dispose?.())}})}
       if(mount.current) mount.current.innerHTML="";
       runtime.current=null;
+      runtime.currentTow=null;
     };
   },[vessel]);
 
