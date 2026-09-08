@@ -1,5 +1,6 @@
 import {getSession} from "../../../lib/auth";
 import {completeReview,getReviewQueue} from "../../../lib/engagement";
+import {assertSameOrigin} from "../../../lib/security";
 
 export const dynamic="force-dynamic";
 
@@ -9,7 +10,8 @@ export async function GET(){
   return Response.json({items:await getReviewQueue(s.id,50)},{headers:{"Cache-Control":"private, no-store"}});
 }
 
-export async function POST(request){
+export async function POST(request) {
+  try { await assertSameOrigin(); } catch (error) { return Response.json({error:"Origem inválida."},{status:Number(error?.status)||403}); }
   const s=await getSession();
   if(!s)return Response.json({error:"Não autenticado"},{status:401});
   const body=await request.json().catch(()=>({}));
