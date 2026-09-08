@@ -15,7 +15,7 @@ const end=integrated.indexOf("export async function setPlanTaskStatus",start);
 assert.ok(start>=0&&end>start,"getIntegratedStudyPlan não encontrado");
 const getter=integrated.slice(start,end);
 
-assert.ok(!/insert\\s+into\\s+student_plan_task_progress/i.test(getter),
+assert.ok(!/insert\s+into\s+student_plan_task_progress/i.test(getter),
   "getIntegratedStudyPlan voltou a escrever progresso durante render/GET");
 assert.match(getter,/loadStudyPlanSnapshot/,"Plano não está consumindo snapshots");
 assert.match(snapshot,/student_plan_snapshots/,"Serviço de snapshot ausente");
