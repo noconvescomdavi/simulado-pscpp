@@ -150,9 +150,9 @@ export default function Admin3DViewport({
   useEffect(()=>{
     const r=runtime.current;if(!r)return;
     const settings=scene.settings||{};
-    r.transform.translationSnap=settings.snapEnabled?Number(settings.snapPosition||.25):null;
-    r.transform.rotationSnap=settings.snapEnabled?Number(settings.snapRotation||15)*Math.PI/180:null;
-    r.transform.scaleSnap=settings.snapEnabled?Number(settings.snapScale||.05):null;
+    r.transform.setTranslationSnap(settings.snapEnabled?Number(settings.snapPosition||.25):null);
+    r.transform.setRotationSnap(settings.snapEnabled?Number(settings.snapRotation||15)*Math.PI/180:null);
+    r.transform.setScaleSnap(settings.snapEnabled?Number(settings.snapScale||.05):null);
   },[scene.settings]);
 
   useEffect(()=>{
@@ -306,7 +306,8 @@ export default function Admin3DViewport({
       return null;
     };
     const found=selectedId?find(r.objects,selectedId):null;
-    if(found&&!readOnly){r.transform.attach(found);r.transform.setMode(mode||"translate")}
+    const selectedData=(scene.objects||[]).find(o=>o.id===selectedId);
+    if(found&&!readOnly&&!selectedData?.locked){r.transform.attach(found);r.transform.setMode(mode||"translate")}
     else r.transform.detach();
   },[selectedId,mode,readOnly]);
 
