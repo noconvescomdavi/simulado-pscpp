@@ -47,7 +47,7 @@ export async function POST(request, { params }) {
     );
     await client.query(
       `insert into study_days(user_id,study_date,activity_count)
-       values($1,current_date,1)
+       values($1,(now() at time zone 'America/Sao_Paulo')::date,1)
        on conflict(user_id,study_date) do update set
          activity_count=study_days.activity_count+1`,
       [session.id]
