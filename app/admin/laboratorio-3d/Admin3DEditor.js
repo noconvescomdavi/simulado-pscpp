@@ -256,23 +256,6 @@ export default function Admin3DEditor(){
     const n=clone(scene);delete n.id;n.scene_key=(scene.scene_key||"scene")+"-copy";n.title=(scene.title||"Cena")+" — cópia";n.status="draft";commit(n);
   }
 
-  async function save(nextStatus=scene.status,{silent=false,versionLabel}={}){
-    if(busy)return;
-    if(nextStatus==="published"&&validation.errors.length){
-      setStatus("Publicação bloqueada: corrija os erros semânticos obrigatórios.");
-      setTab("scene");
-      return;
-    }
-    setBusy(true);if(!silent)setStatus("Salvando...");
-    const payload={...scene,status:nextStatus,versionLabel,skipVersion:silent,config:{...scene.config,scenarioKey:scene.scene_key}};
-    const r=await fetch("/api/admin/laboratorio-3d",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"save",scene:payload})});
-    const j=await r.json().catch(()=>({}));setBusy(false);
-    if(!r.ok){setStatus(j.error||"Erro ao salvar");return}
-    setScene(s=>({...s,id:j.scene.id,status:j.scene.status,config:j.scene.config}));
-    if(!silent)setStatus(nextStatus==="published"?"Publicado com sucesso.":"Cena salva.");
-    await load(j.scene.id);
-  }
-
   async function restore(versionId){
     const r=await fetch("/api/admin/laboratorio-3d",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"restore",versionId})});
     const j=await r.json().catch(()=>({}));if(!r.ok){setStatus(j.error||"Falha ao restaurar");return}
@@ -355,6 +338,24 @@ export default function Admin3DEditor(){
     if(stats.triangles>350000)warnings.push("Cena pesada para mobile: mais de 350 mil triângulos.");
     return {errors,warnings};
   },[cfg.objects,semantic,semanticItem,activeRule,scene.scene_key,stats]);
+
+  async function save(nextStatus=scene.status,{silent=false,versionLabel}={}){
+    if(busy)return;
+    if(nextStatus==="published"&&validation.errors.length){
+      setStatus("Publicação bloqueada: corrija os erros semânticos obrigatórios.");
+      setTab("scene");
+      return;
+    }
+    setBusy(true);if(!silent)setStatus("Salvando...");
+    const payload={...scene,status:nextStatus,versionLabel,skipVersion:silent,config:{...scene.config,scenarioKey:scene.scene_key}};
+    const r=await fetch("/api/admin/laboratorio-3d",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"save",scene:payload})});
+    const j=await r.json().catch(()=>({}));setBusy(false);
+    if(!r.ok){setStatus(j.error||"Erro ao salvar");return}
+    setScene(s=>({...s,id:j.scene.id,status:j.scene.status,config:j.scene.config}));
+    if(!silent)setStatus(nextStatus==="published"?"Publicado com sucesso.":"Cena salva.");
+    await load(j.scene.id);
+  }
+
 
   const filteredAssets=assets.filter(a=>(a.name+" "+(a.category||"")+" "+(a.tags||[]).join(" ")).toLowerCase().includes(assetFilter.toLowerCase()));
   const progress=String(cfg.objects?.length||0)+" objetos · "+String(cfg.cards?.length||0)+" cards";
