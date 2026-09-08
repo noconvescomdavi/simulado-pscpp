@@ -1,6 +1,5 @@
 import assert from "node:assert/strict";
-import {calculateMasteryScore} from "../lib/learning-engine.js";
-import {calculateReviewSchedule} from "../lib/engagement.js";
+import {calculateMasteryScore,calculateReviewSchedule} from "../lib/learning-algorithms.js";
 
 const now=Date.parse("2026-09-08T12:00:00Z");
 
