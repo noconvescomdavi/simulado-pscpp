@@ -57,7 +57,7 @@ export default function Admin3DViewport({
         new THREE.MeshStandardMaterial({color:0x063b55,roughness:.28,metalness:.05,transparent:true,opacity:.96})
       );
       water.rotation.x=-Math.PI/2;
-      water.position.y=-1.05;
+      water.position.y=0;
       sc.add(water);
 
       const hemi=new THREE.HemisphereLight(0x7897bc,0x06121b,.9);
@@ -174,7 +174,7 @@ export default function Admin3DViewport({
       const b2=new r.THREE.Box3().setFromObject(obj);
       const center=new r.THREE.Vector3();b2.getCenter(center);
       obj.position.sub(center);
-      obj.position.y+=1.05;
+      obj.position.y+=0;
     };
 
     const applyMaterial=(obj,data)=>{

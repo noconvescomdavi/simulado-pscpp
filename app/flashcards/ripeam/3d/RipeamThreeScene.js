@@ -318,7 +318,45 @@ function addNavigationLights(THREE,root,plan){
   }
 }
 
-export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,displayMode="vessel",showSectors=false,highlightLightIndex=-1}){
+function editorShapeGeo(THREE,shape){
+  if(shape==="coneUp")return new THREE.ConeGeometry(.45,.9,28);
+  if(shape==="coneDown"){const g=new THREE.ConeGeometry(.45,.9,28);g.rotateZ(Math.PI);return g}
+  if(shape==="diamond")return new THREE.OctahedronGeometry(.55);
+  if(shape==="cylinder")return new THREE.CylinderGeometry(.35,.35,.8,28);
+  return new THREE.SphereGeometry(.45,24,16);
+}
+
+function normalizeEditorChild(THREE,obj,target=8){
+  const box=new THREE.Box3().setFromObject(obj);
+  const size=box.getSize(new THREE.Vector3());
+  const max=Math.max(size.x,size.y,size.z)||1;
+  obj.scale.multiplyScalar(target/max);
+  obj.updateMatrixWorld(true);
+  const b2=new THREE.Box3().setFromObject(obj);
+  const center=b2.getCenter(new THREE.Vector3());
+  obj.position.sub(center);
+}
+
+function applyEditorMaterial(obj,data,maxAnisotropy,THREE){
+  obj.traverse?.(o=>{
+    if(!o.isMesh)return;
+    const mats=Array.isArray(o.material)?o.material:[o.material];
+    mats.filter(Boolean).forEach(m=>{
+      // Preserve imported textures. Only editor overrides are applied.
+      if("color" in m&&data.material?.color)m.color.set(data.material.color);
+      if("roughness" in m&&data.material?.roughness!==undefined)m.roughness=Number(data.material.roughness);
+      if("metalness" in m&&data.material?.metalness!==undefined)m.metalness=Number(data.material.metalness);
+      if("opacity" in m&&data.material?.opacity!==undefined){m.opacity=Number(data.material.opacity);m.transparent=m.opacity<1}
+      if("emissive" in m&&data.material?.emissive)m.emissive.set(data.material.emissive);
+      ["map","normalMap","roughnessMap","metalnessMap","aoMap","emissiveMap"].forEach(key=>{
+        const t=m[key];if(!t?.isTexture)return;t.anisotropy=maxAnisotropy;
+        if(key==="map"||key==="emissiveMap")t.colorSpace=THREE.SRGBColorSpace;t.needsUpdate=true;
+      });
+    });
+  });
+}
+
+export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,displayMode="vessel",showSectors=false,highlightLightIndex=-1,liveConfig=null}){
   const mount=useRef(null);
   const runtime=useRef(null);
 
@@ -329,7 +367,9 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
     const start=async()=>{
       const root=mount.current;
       if(!root)return;
-      const urls=sceneConfig.vessels.map(v=>MODEL_CONFIG[v]?.url||v);
+      const editorObjects=Array.isArray(liveConfig?.objects)?liveConfig.objects:null;
+      const editorModels=editorObjects?.filter(o=>o.type==="model"&&o.visible!==false)||[];
+      const urls=editorModels.length?editorModels.map(o=>o.assetUrl):sceneConfig.vessels.map(v=>MODEL_CONFIG[v]?.url||v);
       root.innerHTML=`<div class="${styles.loading}"><b>Carregando modelo 3D...</b><span>${urls.join(" · ")}</span><span data-progress></span></div>`;
       onDiagnostics?.({status:"loading",frames:0});
 
@@ -341,7 +381,8 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         if(night)addStaticNightEnvironment(THREE,scene);
         else addDayEnvironment(THREE,scene);
 
-        const camera=new THREE.PerspectiveCamera(45,1,.1,1000);
+        const liveCamera=liveConfig?.camera||null;
+        const camera=new THREE.PerspectiveCamera(Number(liveCamera?.fov||45),1,.1,1000);
         const renderer=new THREE.WebGLRenderer({antialias:true,alpha:false,powerPreference:"high-performance"});
         renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
         renderer.outputColorSpace=THREE.SRGBColorSpace;
@@ -397,56 +438,126 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         let materialCount=0;
         const loadedFiles=[];
 
-        for(let index=0;index<sceneConfig.vessels.length;index++){
-          const vesselKey=sceneConfig.vessels[index];
-          const config=MODEL_CONFIG[vesselKey];
-          if(!config)throw new Error(`Configuração não encontrada: ${vesselKey}`);
-
-          try{
-            let raw;
+        if(editorModels.length){
+          const roots=new Map();
+          for(const data of editorModels){
             try{
-              raw=await loadRawModel(THREE,config,percent=>{
-              const progress=root.querySelector?.("[data-progress]");
-                if(progress)progress.textContent=`${percent}%`;
+              const config={url:data.assetUrl,type:data.assetType||"glb"};
+              const raw=await loadRawModel(THREE,config,percent=>{
+                const progress=root.querySelector?.("[data-progress]");
+                if(progress)progress.textContent=percent+"%";
               });
-            }catch(primaryError){
-              // Alguns GLBs antigos do laboratório falham no parser legado do Three r128.
-              // Para manter o pipeline simples, tentamos o mesmo asset via loader nativo
-              // e preservamos o erro original no console para diagnóstico.
-              console.error("[RIPEAM 3D] GLTFLoader falhou",config.url,primaryError);
-              throw primaryError;
-            }
-            if(cancelled)return;
-
-            const model=prepareModel(THREE,raw,config);
-            if(sceneConfig.vessels.length>1){
-              // Regra 24: rebocador à vante e barcaça a ré, no mesmo eixo de reboque.
-              model.position.x=index===0?5.2:-7.2;
-              model.position.z=index===0?0:.15;
-            }
-            vesselRoot.add(model);
-            loadedFiles.push(config.url);
-
-            raw.traverse(obj=>{
-              if(!obj.isMesh)return;
-              meshCount++;
-              materialCount+=Array.isArray(obj.material)?obj.material.length:(obj.material?1:0);
-              obj.frustumCulled=true;
-              const materials=Array.isArray(obj.material)?obj.material:[obj.material];
-              materials.filter(Boolean).forEach(material=>{
-                ["map","normalMap","roughnessMap","metalnessMap","aoMap","emissiveMap"].forEach(key=>{
-                  const texture=material[key];
-                  if(!texture?.isTexture)return;
-                  texture.anisotropy=maxAnisotropy;
-                  if(key==="map"||key==="emissiveMap")texture.colorSpace=THREE.SRGBColorSpace;
-                  texture.needsUpdate=true;
-                });
+              if(cancelled)return;
+              if(data.normalize!==false)normalizeEditorChild(THREE,raw,8);
+              raw.position.sub(new THREE.Vector3(...(data.pivot||[0,0,0])));
+              applyEditorMaterial(raw,data,maxAnisotropy,THREE);
+              const model=new THREE.Group();
+              model.add(raw);
+              model.position.fromArray(data.position||[0,0,0]);
+              model.rotation.set(...(data.rotation||[0,0,0]));
+              model.scale.fromArray(data.scale||[1,1,1]);
+              model.visible=data.visible!==false;
+              model.userData.editorId=data.id;
+              roots.set(data.id,model);
+              vesselRoot.add(model);
+              loadedFiles.push(data.assetUrl);
+              raw.traverse(obj=>{
+                if(!obj.isMesh)return;
+                meshCount++;
+                materialCount+=Array.isArray(obj.material)?obj.material.length:(obj.material?1:0);
               });
-            });
-          }catch(error){
-            console.error("[RIPEAM 3D] Falha ao carregar modelo",config.url,error);
-            throw new Error(`Falha ao carregar modelo 3D. Arquivo: ${config.url}. Detalhe: ${String(error?.message||error)}`);
+            }catch(error){
+              console.error("[RIPEAM 3D] Falha ao carregar asset publicado",data.assetUrl,error);
+            }
           }
+          // published light/shape/cable objects are rendered from the exact editor JSON
+          for(const data of editorObjects){
+            if(data.visible===false)continue;
+            if(data.type?.includes("Light")){
+              const group=new THREE.Group();
+              const color=data.color||"#fff2ba";
+              const bulb=new THREE.Mesh(new THREE.SphereGeometry(.14,18,12),new THREE.MeshBasicMaterial({color}));
+              let light;
+              if(data.type==="directionalLight")light=new THREE.DirectionalLight(color,data.intensity||2);
+              else if(data.type==="spotLight")light=new THREE.SpotLight(color,data.intensity||3,data.distance||12,data.angle||.75,data.penumbra||.25);
+              else light=new THREE.PointLight(color,data.intensity||3,data.distance||12);
+              bulb.add(light);group.add(bulb);
+              group.position.fromArray(data.position||[0,0,0]);
+              group.rotation.set(...(data.rotation||[0,0,0]));
+              group.scale.fromArray(data.scale||[1,1,1]);
+              group.userData.ripeamLightIndex=lightsRoot.children.length;
+              lightsRoot.add(group);
+            }else if(data.type==="shape"){
+              const m=new THREE.Mesh(editorShapeGeo(THREE,data.shape),new THREE.MeshStandardMaterial({color:data.color||"#111111",roughness:.7}));
+              m.position.fromArray(data.position||[0,0,0]);
+              m.rotation.set(...(data.rotation||[0,0,0]));
+              m.scale.fromArray(data.scale||[1,1,1]);
+              shapesRoot.add(m);
+            }
+          }
+          for(const data of editorObjects){
+            if(data.type!=="cable"||!data.cable)continue;
+            const a=roots.get(data.cable.fromId),b=roots.get(data.cable.toId);
+            if(!a||!b)continue;
+            const pa=new THREE.Vector3(),pb=new THREE.Vector3();a.getWorldPosition(pa);b.getWorldPosition(pb);
+            const mid=pa.clone().lerp(pb,.5);mid.y-=Number(data.cable.sag||.4);
+            const curve=new THREE.CatmullRomCurve3([pa,mid,pb]);
+            scene.add(new THREE.Mesh(new THREE.TubeGeometry(curve,32,.035,8,false),new THREE.MeshStandardMaterial({color:data.color||"#d9d0bb"})));
+          }
+        }else{
+                  for(let index=0;index<sceneConfig.vessels.length;index++){
+                    const vesselKey=sceneConfig.vessels[index];
+                    const config=MODEL_CONFIG[vesselKey];
+                    if(!config)throw new Error(`Configuração não encontrada: ${vesselKey}`);
+          
+                    try{
+                      let raw;
+                      try{
+                        raw=await loadRawModel(THREE,config,percent=>{
+                        const progress=root.querySelector?.("[data-progress]");
+                          if(progress)progress.textContent=`${percent}%`;
+                        });
+                      }catch(primaryError){
+                        // Alguns GLBs antigos do laboratório falham no parser legado do Three r128.
+                        // Para manter o pipeline simples, tentamos o mesmo asset via loader nativo
+                        // e preservamos o erro original no console para diagnóstico.
+                        console.error("[RIPEAM 3D] GLTFLoader falhou",config.url,primaryError);
+                        throw primaryError;
+                      }
+                      if(cancelled)return;
+          
+                      const model=prepareModel(THREE,raw,config);
+                      if(sceneConfig.vessels.length>1){
+                        // Regra 24: rebocador à vante e barcaça a ré, no mesmo eixo de reboque.
+                        model.position.x=index===0?5.2:-7.2;
+                        model.position.z=index===0?0:.15;
+                      }
+                      vesselRoot.add(model);
+                      loadedFiles.push(config.url);
+          
+                      raw.traverse(obj=>{
+                        if(!obj.isMesh)return;
+                        meshCount++;
+                        materialCount+=Array.isArray(obj.material)?obj.material.length:(obj.material?1:0);
+                        obj.frustumCulled=true;
+                        const materials=Array.isArray(obj.material)?obj.material:[obj.material];
+                        materials.filter(Boolean).forEach(material=>{
+                          ["map","normalMap","roughnessMap","metalnessMap","aoMap","emissiveMap"].forEach(key=>{
+                            const texture=material[key];
+                            if(!texture?.isTexture)return;
+                            texture.anisotropy=maxAnisotropy;
+                            if(key==="map"||key==="emissiveMap")texture.colorSpace=THREE.SRGBColorSpace;
+                            texture.needsUpdate=true;
+                          });
+                        });
+                      });
+                    }catch(error){
+                      console.error("[RIPEAM 3D] Falha ao carregar modelo",config.url,error);
+                      throw new Error(`Falha ao carregar modelo 3D. Arquivo: ${config.url}. Detalhe: ${String(error?.message||error)}`);
+                    }
+                  }
+          
+          
         }
 
         vesselRoot.updateMatrixWorld(true);
@@ -483,7 +594,10 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         controls.target.copy(center);
         camera.near=Math.max(.01,distance/1000);
         camera.far=Math.max(500,distance*30);
-        camera.position.set(center.x+distance*.85,center.y+distance*.42,center.z+distance*.85);
+        if(liveCamera?.position&&liveCamera?.target){
+          camera.position.fromArray(liveCamera.position);
+          controls.target.fromArray(liveCamera.target);
+        }else camera.position.set(center.x+distance*.85,center.y+distance*.42,center.z+distance*.85);
         camera.updateProjectionMatrix();
         controls.update();
 
@@ -499,8 +613,10 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         resize();
 
         // Elementos didáticos são isolados do carregamento do GLB.
-        addNavigationLights(THREE,lightsRoot,sceneConfig.lightPlan);
-        addDayShapes(THREE,shapesRoot,sceneConfig.lightPlan);
+        if(!editorModels.length){
+          addNavigationLights(THREE,lightsRoot,sceneConfig.lightPlan);
+          addDayShapes(THREE,shapesRoot,sceneConfig.lightPlan);
+        }
         if(showSectors)addLightSectors(THREE,sectorsRoot,sceneConfig.lightPlan);
         const hideVessel=displayMode==="signals-only";
         vesselRoot.visible=!hideVessel;
@@ -602,7 +718,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
       runtime.current=null;
       if(mount.current)mount.current.innerHTML="";
     };
-  },[sceneConfig,onDiagnostics,night,displayMode,showSectors]);
+  },[sceneConfig,onDiagnostics,night,displayMode,showSectors,liveConfig]);
 
   useEffect(()=>{runtime.current?.highlightLight?.(highlightLightIndex)},[highlightLightIndex]);
 
