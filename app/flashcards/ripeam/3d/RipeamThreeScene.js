@@ -6,11 +6,12 @@ const LEGACY_CDN="https://cdn.jsdelivr.net/npm/three@0.128.0";
 let threeLoaderPromise=null;
 
 const MODEL_URLS={
-  "bulk-carrier":{type:"gltf",url:"/models/ripeam/web/bulk_carrier-low.glb",upgradeUrl:"/models/ripeam/web/bulk_carrier.glb",rotation:[0,Math.PI/2,0],target:10.5},
+  "bulk-carrier":{type:"gltf",url:"/models/ripeam/web/bulk_carrier.glb",rotation:[0,Math.PI/2,0],target:10.5},
   "tugboat":{type:"gltf",url:"/models/ripeam/web/Tugboat.glb",rotation:[-Math.PI/2,0,0],target:4.3},
   "barge":{type:"fbx",url:"/models/ripeam/web/barge.fbx",rotation:[-Math.PI/2,0,-Math.PI/2],target:6.2},
   "sailboat":{type:"gltf",url:"/models/ripeam/web/sailboat.glb",rotation:[0,0,0],target:7.4},
   "fishing-vessel":{type:"gltf",url:"/models/ripeam/web/fishing_vessel.glb",rotation:[0,Math.PI/2,0],target:8.2},
+  "dredger":{type:"gltf",url:"/models/ripeam/web/dredger.glb",rotation:[0,Math.PI/2,0],target:9.0},
   "pilot-boat":{type:"gltf",url:"/models/ripeam/web/pilot_boat.glb",rotation:[0,0,0],target:6.6},
   "mine-clearance":{type:"gltf",url:"/models/ripeam/web/navy_mine_clearance.glb",rotation:[0,Math.PI/2,0],target:9.2},
   "seaplane":{type:"gltf",url:"/models/ripeam/web/hidroaviao.glb",rotation:[0,Math.PI/2,0],target:8.4}
@@ -92,6 +93,7 @@ function anchoredLightPlan(scenario,vessel,THREE,root){
     "tugboat":{mast:P(.58,.98,.5),mast2:P(.58,.84,.5),mast3:P(.58,.72,.5),port:P(.50,.53,.04),stbd:P(.50,.53,.96),stern:P(.08,.43,.5),all:P(.56,.98,.5),fore:P(.78,.62,.5),aft:P(.08,.48,.5)},
     "sailboat":{mast:P(.50,.96,.5),port:P(.58,.27,.03),stbd:P(.58,.27,.97),stern:P(.05,.20,.5),all:P(.50,.96,.5),fore:P(.84,.24,.5),aft:P(.06,.20,.5)},
     "fishing-vessel":{mast:P(.48,.96,.5),port:P(.48,.43,.04),stbd:P(.48,.43,.96),stern:P(.05,.34,.5),all:P(.48,.96,.5),fore:P(.80,.48,.5),aft:P(.06,.38,.5)},
+    "dredger":{mast:P(.53,.97,.5),mast2:P(.53,.84,.5),port:P(.47,.48,.04),stbd:P(.47,.48,.96),stern:P(.05,.36,.5),all:P(.54,.95,.5),fore:P(.82,.52,.5),aft:P(.06,.40,.5),wingPort:P(.50,.66,.03),wingStbd:P(.50,.66,.97)},
     "pilot-boat":{mast:P(.52,.96,.5),port:P(.52,.42,.04),stbd:P(.52,.42,.96),stern:P(.05,.32,.5),all:P(.52,.96,.5),fore:P(.80,.45,.5),aft:P(.06,.36,.5)},
     "mine-clearance":{mast:P(.50,.97,.5),port:P(.48,.46,.04),stbd:P(.48,.46,.96),stern:P(.05,.37,.5),all:P(.50,.97,.5),fore:P(.80,.52,.5),aft:P(.06,.40,.5),wingPort:P(.49,.67,.02),wingStbd:P(.49,.67,.98)},
     "seaplane":{mast:P(.50,.60,.5),port:P(.56,.48,.02),stbd:P(.56,.48,.98),stern:P(.03,.40,.5),all:P(.50,.65,.5),fore:P(.78,.48,.5),aft:P(.04,.42,.5)}
@@ -397,7 +399,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
           }
           waterGeo.attributes.position.needsUpdate=true;
           waterGeo.computeVertexNormals();
-          const motion=vessel==="pilot-boat"?{bob:.14,roll:.014,speed:1.08}:vessel==="sailboat"?{bob:.11,roll:.022,speed:.88}:vessel==="fishing-vessel"?{bob:.09,roll:.013,speed:.72}:vessel==="mine-clearance"?{bob:.055,roll:.006,speed:.52}:vessel==="seaplane"?{bob:.08,roll:.009,speed:.84}:vessel==="tow-combo"?{bob:.075,roll:.008,speed:.66}:{bob:.045,roll:.004,speed:.46};
+          const motion=vessel==="pilot-boat"?{bob:.14,roll:.014,speed:1.08}:vessel==="sailboat"?{bob:.11,roll:.022,speed:.88}:vessel==="fishing-vessel"?{bob:.09,roll:.013,speed:.72}:vessel==="dredger"?{bob:.055,roll:.006,speed:.48}:vessel==="mine-clearance"?{bob:.055,roll:.006,speed:.52}:vessel==="seaplane"?{bob:.08,roll:.009,speed:.84}:vessel==="tow-combo"?{bob:.075,roll:.008,speed:.66}:{bob:.045,roll:.004,speed:.46};
           modelRoot.position.y=Math.sin(t*motion.speed)*motion.bob;
           modelRoot.rotation.z=Math.sin(t*motion.speed*.74)*motion.roll;
           if(editorScene?.timeline?.autoplay&&publishedRoots){
