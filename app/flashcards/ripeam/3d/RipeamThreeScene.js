@@ -4,14 +4,14 @@ import styles from "./ripeam-3d.module.css";
 
 const CDN="https://cdn.jsdelivr.net/npm/three@0.180.0";
 const MODEL_URLS={
-  "bulk-carrier":{type:"gltf",url:"/models/ripeam/bulk_carrier.glb"},
-  "tugboat":{type:"gltf",url:"/models/ripeam/Tugboat.glb"},
-  "barge":{type:"fbx",url:"/models/ripeam/barge.fbx"},
-  "sailboat":{type:"gltf",url:"/models/ripeam/sailboat.glb"},
-  "fishing-vessel":{type:"gltf",url:"/models/ripeam/fishing_vessel.glb"},
-  "pilot-boat":{type:"gltf",url:"/models/ripeam/pilot_boat.glb"},
-  "mine-clearance":{type:"gltf",url:"/models/ripeam/navy_mine_clearance.glb"},
-  "seaplane":{type:"gltf",url:"/models/ripeam/hidroaviao.glb"}
+  "bulk-carrier":{type:"gltf",url:"/models/ripeam/bulk_carrier.glb",rotation:[-Math.PI/2,0,-Math.PI/2],target:10.5},
+  "tugboat":{type:"gltf",url:"/models/ripeam/Tugboat.glb",rotation:[-Math.PI/2,0,0],target:4.3},
+  "barge":{type:"fbx",url:"/models/ripeam/barge.fbx",rotation:[-Math.PI/2,0,-Math.PI/2],target:6.2},
+  "sailboat":{type:"gltf",url:"/models/ripeam/sailboat.glb",rotation:[0,0,0],target:7.4},
+  "fishing-vessel":{type:"gltf",url:"/models/ripeam/fishing_vessel.glb",rotation:[0,Math.PI/2,0],target:8.2},
+  "pilot-boat":{type:"gltf",url:"/models/ripeam/pilot_boat.glb",rotation:[0,0,0],target:6.6},
+  "mine-clearance":{type:"gltf",url:"/models/ripeam/navy_mine_clearance.glb",rotation:[0,Math.PI/2,0],target:9.2},
+  "seaplane":{type:"gltf",url:"/models/ripeam/hidroaviao.glb",rotation:[0,Math.PI/2,0],target:8.4}
 };
 
 async function loadThree(){
@@ -104,12 +104,18 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
         };
         const normalize=(obj,targetLength,rotation=[0,0,0])=>{
           tuneMaterial(obj);
-          const box=new THREE.Box3().setFromObject(obj);
-          const size=new THREE.Vector3(); box.getSize(size);
-          const center=new THREE.Vector3(); box.getCenter(center);
-          obj.position.sub(center);
-          obj.scale.setScalar(targetLength/Math.max(size.x,size.y,size.z));
           obj.rotation.set(...rotation);
+          obj.updateMatrixWorld(true);
+          let box=new THREE.Box3().setFromObject(obj);
+          const size=new THREE.Vector3(); box.getSize(size);
+          obj.scale.setScalar(targetLength/Math.max(size.x,size.y,size.z));
+          obj.updateMatrixWorld(true);
+          box=new THREE.Box3().setFromObject(obj);
+          const center=new THREE.Vector3(); box.getCenter(center);
+          obj.position.x-=center.x;
+          obj.position.z-=center.z;
+          // Mantém o casco próximo da superfície; o calado visual pode ser refinado por modelo.
+          obj.position.y+=(-0.82-box.min.y);
           return obj;
         };
 
@@ -150,13 +156,13 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
           if(disposed)return;
 
           const tugGroup=new THREE.Group();
-          const tug=normalize(tugGltf.scene,4.3,[0,Math.PI/2,0]);
+          const tug=normalize(tugGltf.scene,MODEL_URLS.tugboat.target,MODEL_URLS.tugboat.rotation);
           tugGroup.add(tug);
           tugGroup.position.set(3.1,0,0);
           modelRoot.add(tugGroup);
 
           const bargeGroup=new THREE.Group();
-          const barge=normalize(bargeObj,6.2,[-Math.PI/2,0,-Math.PI/2]);
+          const barge=normalize(bargeObj,MODEL_URLS.barge.target,MODEL_URLS.barge.rotation);
           bargeGroup.add(barge);
           const towDistance=scenario==="tow"?-10.5:-7.0;
           bargeGroup.position.set(towDistance,0,0);
@@ -175,7 +181,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
           const cfg=MODEL_URLS[vessel];
           const raw=cfg.type==="fbx" ? await fbxLoader.loadAsync(cfg.url) : (await gltfLoader.loadAsync(cfg.url)).scene;
           if(disposed)return;
-          const model=normalize(raw,10.5,[-Math.PI/2,0,-Math.PI/2]);
+          const model=normalize(raw,cfg.target||8,cfg.rotation||[0,0,0]);
           modelRoot.add(model);
         }
 
