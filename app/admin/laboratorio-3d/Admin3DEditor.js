@@ -103,10 +103,10 @@ export default function Admin3DEditor(){
   },[playing,scene.config?.timeline?.duration,scene.config?.timeline?.loop]);
 
   useEffect(()=>{
-    if(!lastEdit||!scene.id||scene.liveStudentScene||!autosave)return;
-    const timer=setTimeout(()=>save(scene.status||"draft",{silent:true,versionLabel:"Autosave"}),1800);
+    if(!lastEdit||!scene.id||!autosave)return;
+    const timer=setTimeout(()=>save("draft",{silent:true,versionLabel:"Autosave"}),1800);
     return()=>clearTimeout(timer);
-  },[lastEdit,autosave,scene.id,scene.liveStudentScene]);
+  },[lastEdit,autosave,scene.id]);
 
   async function load(sceneId){
     const q=sceneId?"?sceneId="+encodeURIComponent(sceneId):"";
@@ -128,7 +128,7 @@ export default function Admin3DEditor(){
       config:{...clone(EMPTY.config),...(row.config||{}),settings:{...EMPTY.config.settings,...(row.config?.settings||{})}}
     });
     setSelected(null);setHistory([]);setFuture([]);setAbCompare(null);
-    setPublishedBaseline(row.status==="published"?clone(row):null);
+    setPublishedBaseline(row.publishedSnapshot?clone(row.publishedSnapshot):(row.systemScene?clone(row):null));
     if(fetchVersions&&row.id)load(row.id);
   }
 
@@ -387,22 +387,31 @@ export default function Admin3DEditor(){
     if(JSON.stringify(before.environment)!==JSON.stringify(after.environment))changes.push({kind:"edit",label:"Ambiente alterado."});return changes;
   },[scene,publishedBaseline]);
 
-  async function save(nextStatus=scene.status,{silent=false,versionLabel}={}){
+  async function save(nextStatus="draft",{silent=false,versionLabel}={}){
     if(busy)return;
-    if(scene.liveStudentScene)nextStatus="published";
-    if(nextStatus==="published"&&validation.errors.length){
-      setStatus("Publicação bloqueada: corrija os erros semânticos obrigatórios.");
-      setTab("scene");
-      return;
-    }
-    setBusy(true);if(!silent)setStatus("Salvando...");
-    const payload={...scene,id:scene.systemScene?undefined:scene.id,status:nextStatus,versionLabel,skipVersion:silent,config:{...scene.config,scenarioKey:scene.scene_key}};
+    setBusy(true);if(!silent)setStatus("Salvando rascunho...");
+    const safeStatus=nextStatus==="archived"?"archived":nextStatus==="review"?"review":"draft";
+    const payload={...scene,id:scene.systemScene?undefined:scene.id,status:safeStatus,versionLabel,skipVersion:silent,config:{...scene.config,scenarioKey:scene.scene_key}};
     const r=await fetch("/api/admin/laboratorio-3d",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"save",scene:payload})});
     const j=await r.json().catch(()=>({}));setBusy(false);
     if(!r.ok){setStatus(j.error||"Erro ao salvar");return}
-    setScene(s=>({...s,id:j.scene.id,status:j.scene.status,config:j.scene.config}));
-    if(nextStatus==="published")setPublishedBaseline(clone(j.scene));
-    if(!silent)setStatus(nextStatus==="published"?"Publicado com sucesso.":"Cena salva.");
+    setScene(s=>({...s,id:j.scene.id,status:j.scene.status,systemScene:false,config:j.scene.config}));
+    if(!silent)setStatus("Rascunho salvo. O aluno não recebeu estas alterações.");
+    await load(j.scene.id);
+  }
+
+  async function publishStudent(){
+    if(busy)return;
+    if(validation.errors.length){setStatus("Atualização do aluno bloqueada: corrija os erros críticos.");setTab("scene");return}
+    setBusy(true);setStatus("Validando e atualizando a cena do aluno...");
+    const payload={...scene,id:scene.systemScene?undefined:scene.id,status:"review",versionLabel:"Atualizar aluno",config:{...scene.config,scenarioKey:scene.scene_key}};
+    const r=await fetch("/api/admin/laboratorio-3d",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"publish",scene:payload})});
+    const j=await r.json().catch(()=>({}));setBusy(false);
+    if(!r.ok){setStatus(j.error||"Falha ao atualizar aluno");return}
+    const baseline=clone(j.publishedSnapshot||j.scene?.publishedSnapshot||j.scene);
+    setPublishedBaseline(baseline);
+    setScene(s=>({...s,id:j.scene.id,status:"review",systemScene:false,liveStudentScene:true,config:j.scene.config}));
+    setStatus("Aluno atualizado manualmente com esta versão. Alterações futuras continuarão privadas até novo clique em Atualizar aluno.");
     await load(j.scene.id);
   }
 
@@ -416,9 +425,9 @@ export default function Admin3DEditor(){
       <div className={styles.topActions}>
         <button onClick={undo} disabled={!history.length}>↶ Undo</button><button onClick={redo} disabled={!future.length}>↷ Redo</button>
         <button onClick={duplicateScene}>Duplicar cena</button><button onClick={()=>setScene(clone(EMPTY))}>＋ Nova cena</button>
-        <select value={scene.status} onChange={e=>setScene(s=>({...s,status:e.target.value}))}><option value="draft">Rascunho</option><option value="review">Revisão</option><option value="published">Publicado</option><option value="archived">Arquivado</option></select>
-        <button disabled={busy} onClick={()=>save(scene.liveStudentScene?"published":scene.status)}>{scene.liveStudentScene?"Salvar agora":"Salvar"}</button>
-        <button onClick={()=>setShowDiff(v=>!v)} title="Ver alterações desde a última publicação">Diff ({publishDiff.length})</button><button className={styles.publish} disabled={busy||validation.errors.length>0} title={validation.errors.length?"Corrija os erros semânticos antes de publicar":scene.liveStudentScene?"A cena já está no aluno; força uma atualização imediata.":"Publica e adiciona esta cena ao aluno."} onClick={()=>save("published")}>{scene.liveStudentScene?"Atualizar aluno":"Adicionar ao aluno"}</button>
+        <select value={scene.status==="published"?"review":scene.status} onChange={e=>setScene(s=>({...s,status:e.target.value}))}><option value="draft">Rascunho</option><option value="review">Revisão</option><option value="archived">Arquivado</option></select>
+        <button disabled={busy} onClick={()=>save(scene.status)}>Salvar rascunho</button>
+        <button onClick={()=>setShowDiff(v=>!v)} title="Ver alterações desde a última publicação">Diff ({publishDiff.length})</button><button className={styles.publish} disabled={busy||validation.errors.length>0} title={validation.errors.length?"Corrija os erros críticos antes de atualizar o aluno":"Única ação que envia a working copy atual para o aluno."} onClick={publishStudent}>{scene.liveStudentScene?"Atualizar aluno":"Adicionar ao aluno"}</button>
       </div>
     </div>
 
