@@ -5,6 +5,17 @@ import styles from "./ripeam-3d.module.css";
 const LEGACY_CDN="https://cdn.jsdelivr.net/npm/three@0.128.0";
 let threeLoaderPromise=null;
 
+const MODEL_URLS={
+  "bulk-carrier":{type:"gltf",url:"/models/ripeam/bulk_carrier.glb",rotation:[-Math.PI/2,0,-Math.PI/2],target:10.5},
+  "tugboat":{type:"gltf",url:"/models/ripeam/Tugboat.glb",rotation:[-Math.PI/2,0,0],target:4.3},
+  "barge":{type:"fbx",url:"/models/ripeam/barge.fbx",rotation:[-Math.PI/2,0,-Math.PI/2],target:6.2},
+  "sailboat":{type:"gltf",url:"/models/ripeam/sailboat.glb",rotation:[0,0,0],target:7.4},
+  "fishing-vessel":{type:"gltf",url:"/models/ripeam/fishing_vessel.glb",rotation:[0,Math.PI/2,0],target:8.2},
+  "pilot-boat":{type:"gltf",url:"/models/ripeam/pilot_boat.glb",rotation:[0,0,0],target:6.6},
+  "mine-clearance":{type:"gltf",url:"/models/ripeam/navy_mine_clearance.glb",rotation:[0,Math.PI/2,0],target:9.2},
+  "seaplane":{type:"gltf",url:"/models/ripeam/hidroaviao.glb",rotation:[0,Math.PI/2,0],target:8.4}
+};
+
 function loadScript(src){
   return new Promise((resolve,reject)=>{
     const existing=document.querySelector(`script[data-ripeam-src="${src}"]`);
@@ -27,7 +38,7 @@ function loadScript(src){
 async function loadThree(){
   if(typeof window==="undefined") throw new Error("Three.js só pode ser carregado no navegador.");
   if(window.THREE?.GLTFLoader && window.THREE?.FBXLoader) {
-    return {THREE:window.THREE,GLTFLoader:window.THREE.GLTFLoader,FBXLoader:window.THREE.FBXLoader};
+    return {THREE:window.THREE,GLTFLoader:window.THREE.GLTFLoader,FBXLoader:window.THREE.FBXLoader,OBJLoader:window.THREE.OBJLoader};
   }
   if(!threeLoaderPromise){
     threeLoaderPromise=(async()=>{
@@ -38,9 +49,10 @@ async function loadThree(){
       await loadScript(LEGACY_CDN+"/examples/js/curves/NURBSUtils.js");
       await loadScript(LEGACY_CDN+"/examples/js/curves/NURBSCurve.js");
       await loadScript(LEGACY_CDN+"/examples/js/loaders/FBXLoader.js");
+      await loadScript(LEGACY_CDN+"/examples/js/loaders/OBJLoader.js");
       const THREE=window.THREE;
       if(!THREE?.GLTFLoader) throw new Error("GLTFLoader não foi inicializado.");
-      return {THREE,GLTFLoader:THREE.GLTFLoader,FBXLoader:THREE.FBXLoader};
+      return {THREE,GLTFLoader:THREE.GLTFLoader,FBXLoader:THREE.FBXLoader,OBJLoader:THREE.OBJLoader};
     })().catch(err=>{threeLoaderPromise=null;throw err;});
   }
   return threeLoaderPromise;
