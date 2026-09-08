@@ -3,9 +3,23 @@
 import {useEffect,useRef} from "react";
 import styles from "./ripeam-3d.module.css";
 
-const THREE_CDN="https://cdn.jsdelivr.net/npm/three@0.128.0";
-let threePromise=null;
-let fbxPromise=null;
+const THREE_VERSION="0.180.0";
+let modernThreePromise=null;
+
+async function getThree(){
+  if(!modernThreePromise){
+    modernThreePromise=(async()=>{
+      const THREE=await import("https://esm.sh/three@"+THREE_VERSION);
+      const [{GLTFLoader},{OrbitControls},{FBXLoader}]=await Promise.all([
+        import("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/loaders/GLTFLoader.js"),
+        import("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/controls/OrbitControls.js"),
+        import("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/loaders/FBXLoader.js")
+      ]);
+      return {...THREE,GLTFLoader,OrbitControls,FBXLoader};
+    })().catch(error=>{modernThreePromise=null;throw error;});
+  }
+  return modernThreePromise;
+}
 
 export const MODEL_CONFIG={
   "bulk-carrier":{url:"/models/ripeam/bulk_carrier.glb",type:"glb",scale:1,rotation:[-Math.PI/2,0,-Math.PI/2],waterline:0},
@@ -18,55 +32,6 @@ export const MODEL_CONFIG={
   "mine-clearance":{url:"/models/ripeam/navy_mine_clearance.glb",type:"glb",scale:.72,rotation:[0,Math.PI/2,0],waterline:0},
   "seaplane":{url:"/models/ripeam/hidroaviao.glb",type:"glb",scale:.65,rotation:[0,Math.PI/2,0],waterline:0}
 };
-
-function loadScript(src,key){
-  return new Promise((resolve,reject)=>{
-    const selector=`script[data-ripeam-script="${key}"]`;
-    const existing=document.querySelector(selector);
-    if(existing){
-      if(existing.dataset.loaded==="1")return resolve();
-      existing.addEventListener("load",resolve,{once:true});
-      existing.addEventListener("error",reject,{once:true});
-      return;
-    }
-    const script=document.createElement("script");
-    script.src=src;
-    script.async=true;
-    script.dataset.ripeamScript=key;
-    script.onload=()=>{script.dataset.loaded="1";resolve();};
-    script.onerror=()=>reject(new Error(`Falha ao carregar dependência 3D: ${src}`));
-    document.head.appendChild(script);
-  });
-}
-
-async function getThree(){
-  if(window.THREE?.GLTFLoader&&window.THREE?.OrbitControls)return window.THREE;
-  if(!threePromise){
-    threePromise=(async()=>{
-      await loadScript(`${THREE_CDN}/build/three.min.js`,"three");
-      await loadScript(`${THREE_CDN}/examples/js/controls/OrbitControls.js`,"orbit-controls");
-      await loadScript(`${THREE_CDN}/examples/js/loaders/GLTFLoader.js`,"gltf-loader");
-      if(!window.THREE?.GLTFLoader||!window.THREE?.OrbitControls)throw new Error("Three.js, GLTFLoader ou OrbitControls não inicializados.");
-      return window.THREE;
-    })().catch(error=>{threePromise=null;throw error;});
-  }
-  return threePromise;
-}
-
-async function getFBXLoader(THREE){
-  if(THREE.FBXLoader)return THREE.FBXLoader;
-  if(!fbxPromise){
-    fbxPromise=(async()=>{
-      await loadScript(`${THREE_CDN}/examples/js/libs/fflate.min.js`,"fflate");
-      await loadScript(`${THREE_CDN}/examples/js/curves/NURBSUtils.js`,"nurbs-utils");
-      await loadScript(`${THREE_CDN}/examples/js/curves/NURBSCurve.js`,"nurbs-curve");
-      await loadScript(`${THREE_CDN}/examples/js/loaders/FBXLoader.js`,"fbx-loader");
-      if(!THREE.FBXLoader)throw new Error("FBXLoader não inicializado.");
-      return THREE.FBXLoader;
-    })().catch(error=>{fbxPromise=null;throw error;});
-  }
-  return fbxPromise;
-}
 
 function disposeObject(root){
   root?.traverse?.(obj=>{
@@ -92,8 +57,7 @@ async function loadRawModel(THREE,config,onProgress){
     if(!gltf?.scene)throw new Error("GLB carregado sem scene.");
     return gltf.scene;
   }
-  const FBXLoader=await getFBXLoader(THREE);
-  return loadProgress(new FBXLoader(),config.url,onProgress);
+  return loadProgress(new THREE.FBXLoader(),config.url,onProgress);
 }
 
 function prepareModel(THREE,raw,config){
@@ -289,7 +253,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false}
         const camera=new THREE.PerspectiveCamera(45,1,.1,1000);
         const renderer=new THREE.WebGLRenderer({antialias:true,alpha:false,powerPreference:"high-performance"});
         renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
-        if("outputEncoding" in renderer)renderer.outputEncoding=THREE.sRGBEncoding;
+        renderer.outputColorSpace=THREE.SRGBColorSpace;
         renderer.setClearColor(night?0x020916:0x8cc7e8,1);
 
         root.innerHTML="";
@@ -301,12 +265,21 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false}
         controls.enablePan=true;
         controls.enableZoom=true;
 
+        const waterGeometry=new THREE.PlaneGeometry(400,400,72,72);
+        const wp=waterGeometry.attributes.position;
+        for(let i=0;i<wp.count;i++){
+          const x=wp.getX(i),y=wp.getY(i);
+          const z=Math.sin(x*.075)*.10+Math.cos(y*.09)*.08+Math.sin((x+y)*.045)*.06;
+          wp.setZ(i,z);
+        }
+        wp.needsUpdate=true;
+        waterGeometry.computeVertexNormals();
         const water=new THREE.Mesh(
-          new THREE.PlaneGeometry(400,400),
+          waterGeometry,
           new THREE.MeshStandardMaterial({
-            color:night?0x010b13:0x07547a,
-            roughness:night?.76:.72,
-            metalness:night?.18:.05
+            color:night?0x010810:0x075d86,
+            roughness:night?.64:.54,
+            metalness:night?.20:.06
           })
         );
         water.rotation.x=-Math.PI/2;
@@ -362,7 +335,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false}
             });
           }catch(error){
             console.error("[RIPEAM 3D] Falha ao carregar modelo",config.url,error);
-            throw new Error(`Falha ao carregar modelo 3D. Arquivo: ${config.url}`);
+            throw new Error(`Falha ao carregar modelo 3D. Arquivo: ${config.url}. Detalhe: ${String(error?.message||error)}`);
           }
         }
 
@@ -413,7 +386,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false}
         const aboveWaterline=unionBox.min.y>=-.02;
 
         let frames=0;
-        const base={status:"loaded",meshCount,materialCount,boundingBoxValid,inFrustum,aboveWaterline,frames:0,files:loadedFiles};
+        const base={status:"loaded",meshCount,materialCount,boundingBoxValid,inFrustum,aboveWaterline,frames:0,files:loadedFiles,runtime:"three-"+THREE_VERSION};
         console.info("[RIPEAM 3D] diagnóstico técnico",{
           scene:sceneConfig.key,
           ...base,
