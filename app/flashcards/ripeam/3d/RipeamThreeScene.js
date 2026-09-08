@@ -331,8 +331,9 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
           }
           waterGeo.attributes.position.needsUpdate=true;
           waterGeo.computeVertexNormals();
-          modelRoot.position.y=Math.sin(t*.72)*.075;
-          modelRoot.rotation.z=Math.sin(t*.53)*.006;
+          const motion=vessel==="pilot-boat"?{bob:.14,roll:.014,speed:1.08}:vessel==="sailboat"?{bob:.11,roll:.022,speed:.88}:vessel==="fishing-vessel"?{bob:.09,roll:.013,speed:.72}:vessel==="mine-clearance"?{bob:.055,roll:.006,speed:.52}:vessel==="seaplane"?{bob:.08,roll:.009,speed:.84}:vessel==="tow-combo"?{bob:.075,roll:.008,speed:.66}:{bob:.045,roll:.004,speed:.46};
+          modelRoot.position.y=Math.sin(t*motion.speed)*motion.bob;
+          modelRoot.rotation.z=Math.sin(t*motion.speed*.74)*motion.roll;
           if(editorScene?.timeline?.autoplay&&publishedRoots){
             const duration=Math.max(1,Number(editorScene.timeline.duration||10));
             const playT=editorScene.timeline.loop===false?Math.min(t,duration):(t%duration);
