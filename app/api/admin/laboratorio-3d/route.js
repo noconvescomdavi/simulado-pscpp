@@ -4,6 +4,7 @@ import {
   listRipeam3DAssets,upsertRipeam3DAsset,listSceneVersions,restoreSceneVersion
 } from "../../../../lib/ripeam-3d-scenes";
 import {mergeCanonicalStudentScenes} from "../../../../lib/ripeam-3d-default-scenes";
+import {assertSameOrigin} from "../../../../lib/security";
 
 export const dynamic="force-dynamic";
 
@@ -21,6 +22,7 @@ export async function GET(request){
 }
 
 export async function POST(request){
+  try{await assertSameOrigin();}catch(error){return Response.json({error:"Origem inválida."},{status:Number(error?.status)||403});}
   if(!(await getAdmin()))return Response.json({error:"Não autorizado"},{status:403});
   const body=await request.json().catch(()=>({}));
   if(body.action==="delete"){
