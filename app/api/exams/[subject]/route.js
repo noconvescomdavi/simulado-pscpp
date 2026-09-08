@@ -3,6 +3,7 @@ import { getEntitlement } from "../../../../lib/entitlement";
 import { query } from "../../../../lib/db";
 import { getExamState, startExam } from "../../../../lib/exams";
 import { normalizeSubject, TRIAL_SUBJECT_SLUG } from "../../../../lib/subjects";
+import {assertSameOrigin} from "../../../../lib/security";
 
 export const dynamic = "force-dynamic";
 
@@ -68,6 +69,7 @@ export async function GET(_request, { params }) {
 }
 
 export async function POST(request, { params }) {
+  try { await assertSameOrigin(); } catch (error) { return Response.json({error:"Origem inválida."},{status:Number(error?.status)||403}); }
   try {
     const p = await params;
     const ctx = await authorize(p.subject);
