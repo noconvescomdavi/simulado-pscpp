@@ -1,6 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import TrackedStudyLink from "../components/TrackedStudyLink";
+import {stopTrackedStudySession} from "../components/StudySessionTracker";
 
 export default function DailyStudyPlan({ initialPlan }) {
   const [plan, setPlan] = useState(initialPlan);
@@ -49,6 +51,7 @@ export default function DailyStudyPlan({ initialPlan }) {
       });
       const data=await response.json().catch(()=>({}));
       if (!response.ok) throw new Error(data.error||"Não foi possível salvar a conclusão.");
+      await stopTrackedStudySession().catch(()=>{});
     } catch (error) {
       setPlan(previous);
       window.alert(error.message||"Não foi possível salvar a conclusão.");
@@ -157,14 +160,19 @@ export default function DailyStudyPlan({ initialPlan }) {
               {task.completed ? "✓" : index + 1}
             </button>
 
-            <a href={task.href || "/plano-de-estudos"} className="dailyTaskMain">
+            <TrackedStudyLink
+              href={task.href || "/plano-de-estudos"}
+              className="dailyTaskMain"
+              task={{...task,source:"dashboard_daily_plan"}}
+            >
               <div>
                 <span>{task.target_label}</span>
                 <strong>{task.title}</strong>
                 <small>{task.description}</small>
+                {task.reason&&<small>Por quê: {task.reason}.</small>}
               </div>
               <b>{task.minutes} min →</b>
-            </a>
+            </TrackedStudyLink>
           </article>
         ))}
       </div>
