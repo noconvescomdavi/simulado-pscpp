@@ -3,11 +3,12 @@ import {useEffect,useMemo,useRef,useState} from "react";
 import styles from "./laboratorio-3d.module.css";
 import Admin3DViewport from "./Admin3DViewport";
 import {CAMERA_PRESETS,DAY_SHAPES,LIGHT_PRESETS,SCENE_TEMPLATES,makeObject} from "./editor-presets";
+import {RIPEAM_RULES,CONDITION_LABELS,PERIOD_LABELS,SERVICE_LABELS,SIDE_LABELS,getRule,getSemanticItem,semanticBreadcrumb,semanticLabel} from "./ripeam-semantic";
 
 const EMPTY={
   scene_key:"nova-cena",title:"Nova cena",rule_ref:"",card_title:"",description:"",status:"draft",
   config:{
-    scenarioKey:"nova-cena",objects:[],cards:[],timeline:{duration:10,loop:true,autoplay:false},
+    scenarioKey:"nova-cena",semantic:{ruleNumber:"",ruleItem:"",scenarioKey:"",condition:"",period:"",serviceStatus:"",side:"",towLength:"",fishingType:"",cardId:"",sourceRef:"",editorialNote:"",lockedToRule:false},objects:[],cards:[],timeline:{duration:10,loop:true,autoplay:false},
     settings:{snapEnabled:true,snapPosition:.25,snapRotation:15,snapScale:.05,showGrid:true,showSectors:true,previewMode:"day"},
     environment:{background:"#071522",ambient:"#7897bc",ambientIntensity:.9,sun:"#fff0cf",sunIntensity:2.2,sunPosition:[6,14,9],water:"#063b55",exposure:.95,fog:"#07121d",fogDensity:.026},
     camera:{position:[14,7,15],target:[0,1,0],fov:43},
@@ -51,6 +52,19 @@ export default function Admin3DEditor(){
 
   const cfg=scene.config||EMPTY.config;
   const obj=cfg.objects?.find(o=>o.id===selected);
+  const semantic=cfg.semantic||EMPTY.config.semantic;
+  const activeRule=getRule(semantic.ruleNumber);
+  const semanticItem=getSemanticItem(semantic.ruleNumber,semantic.scenarioKey);
+  const breadcrumbs=semanticBreadcrumb(semantic);
+  const groupedScenes=useMemo(()=>{
+    const map=new Map();
+    for(const row of scenes){
+      const n=String(row.config?.semantic?.ruleNumber||row.rule_ref||"").match(/\d+/)?.[0]||"unassigned";
+      if(!map.has(n))map.set(n,[]);
+      map.get(n).push(row);
+    }
+    return [...map.entries()].sort((a,b)=>a[0]==="unassigned"?1:b[0]==="unassigned"?-1:Number(a[0])-Number(b[0]));
+  },[scenes]);
   const usage=useMemo(()=>{
     const map={};
     for(const s of scenes)for(const o of s.config?.objects||[])if(o.assetUrl)map[o.assetUrl]=(map[o.assetUrl]||0)+1;
@@ -184,8 +198,58 @@ export default function Admin3DEditor(){
   function applyTemplate(t){
     const next=clone(EMPTY);
     next.title=t.label;next.scene_key=t.key==="empty"?"nova-cena":t.key;next.rule_ref=t.rule_ref||"";next.card_title=t.card_title||"";
-    next.config.scenarioKey=next.scene_key;next.config.objects=(t.objects||[]).map(o=>makeObject(o));
+    next.config.scenarioKey=next.scene_key;
+    const r=getRule(t.rule_ref);
+    const item=r?.items.find(i=>i.key===t.key)||null;
+    next.config.semantic={...EMPTY.config.semantic,ruleNumber:t.rule_ref||"",ruleItem:item?.item||"",scenarioKey:item?.key||t.key,condition:item?.condition||"",period:item?.period||"",serviceStatus:item?.serviceStatus||"",side:item?.side||"",towLength:item?.towLength||"",fishingType:item?.fishingType||"",sourceRef:"Deck RIPEAM / COLREG"};
+    next.config.objects=(t.objects||[]).map(o=>makeObject(o));
     commit(next);setSelected(null);setTab("scene");
+  }
+
+  function selectSemantic(ruleNumber,scenarioKey){
+    const rule=getRule(ruleNumber);
+    const item=rule?.items.find(i=>i.key===scenarioKey)||rule?.items[0]||null;
+    mutate(s=>{
+      s.rule_ref=rule?rule.number+(item?.item||""):"";
+      s.scene_key=item?.key||s.scene_key;
+      s.title=item?.label||s.title;
+      s.card_title=item?.label||s.card_title;
+      s.config.scenarioKey=item?.key||s.config.scenarioKey;
+      s.config.semantic={...EMPTY.config.semantic,...(s.config.semantic||{}),
+        ruleNumber:rule?.number||"",ruleItem:item?.item||"",scenarioKey:item?.key||"",
+        condition:item?.condition||"",period:item?.period||"",serviceStatus:item?.serviceStatus||"",
+        side:item?.side||"",towLength:item?.towLength||"",fishingType:item?.fishingType||"",
+        sourceRef:"Deck RIPEAM / COLREG"
+      };
+    });
+    setTab("scene");
+  }
+
+  function syncSemanticEquipment(){
+    if(!semanticItem){setStatus("Selecione primeiro uma Regra e um cenário RIPEAM.");return}
+    const expected=semanticItem.expected||{};
+    const presetByKey=Object.fromEntries(LIGHT_PRESETS.map(p=>[p.key,p]));
+    mutate(s=>{
+      const objects=s.config.objects;
+      const lights=objects.filter(o=>o.type?.includes("Light"));
+      let y=3.4;
+      for(const [preset,count] of expected.lights||[]){
+        const have=lights.filter(l=>l.lightPreset===preset).length;
+        const p=presetByKey[preset];
+        for(let i=have;i<count;i++){
+          objects.push(makeObject({name:p?.label||preset,type:"pointLight",color:p?.color||"#fff2ba",intensity:p?.intensity||5,distance:p?.distance||14,sector:p?.sector||360,lightPreset:preset,position:[0,y,0]}));y+=.55;
+        }
+      }
+      for(const [shape,count] of expected.shapes||[]){
+        const have=objects.filter(o=>o.type==="shape"&&o.shape===shape).length;
+        for(let i=have;i<count;i++){objects.push(makeObject({name:"Marca RIPEAM — "+shape,type:"shape",shape,color:"#111111",position:[0,3.2+i*.8,0]}))}
+      }
+      if(expected.cable&&!objects.some(o=>o.type==="cable")){
+        const models=objects.filter(o=>o.type==="model");
+        if(models.length>=2)objects.push(makeObject({name:"Cabo de reboque",type:"cable",color:"#d9d0bb",cable:{fromId:models[0].id,toId:models[1].id,sag:.4}}));
+      }
+    });
+    setStatus("Elementos semânticos ausentes foram adicionados como base de edição. Revise posições antes de publicar.");
   }
 
   function duplicateScene(){
@@ -194,6 +258,11 @@ export default function Admin3DEditor(){
 
   async function save(nextStatus=scene.status,{silent=false,versionLabel}={}){
     if(busy)return;
+    if(nextStatus==="published"&&validation.errors.length){
+      setStatus("Publicação bloqueada: corrija os erros semânticos obrigatórios.");
+      setTab("scene");
+      return;
+    }
     setBusy(true);if(!silent)setStatus("Salvando...");
     const payload={...scene,status:nextStatus,versionLabel,skipVersion:silent,config:{...scene.config,scenarioKey:scene.scene_key}};
     const r=await fetch("/api/admin/laboratorio-3d",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"save",scene:payload})});
@@ -265,34 +334,46 @@ export default function Admin3DEditor(){
   }
 
   const validation=useMemo(()=>{
-    const warnings=[];
-    const objects=cfg.objects||[],lights=objects.filter(o=>o.type?.includes("Light"));
-    if(!objects.some(o=>o.type==="model"))warnings.push("Nenhum modelo 3D na cena.");
-    if(scene.rule_ref==="24"&&!objects.some(o=>o.type==="cable"))warnings.push("Regra 24: considere representar o cabo de reboque.");
-    if(scene.rule_ref==="23"&&!lights.some(o=>o.lightPreset==="masthead"))warnings.push("Regra 23: nenhuma luz de mastro preset foi configurada.");
+    const warnings=[],errors=[];
+    const objects=cfg.objects||[],lights=objects.filter(o=>o.type?.includes("Light")),shapes=objects.filter(o=>o.type==="shape");
+    if(!semantic.ruleNumber)errors.push("Cena sem Regra RIPEAM vinculada.");
+    if(semantic.ruleNumber&&!semantic.scenarioKey)errors.push("Selecione o cenário/item semântico da Regra "+semantic.ruleNumber+".");
+    if(!objects.some(o=>o.type==="model")&&activeRule?.kind==="scene")warnings.push("Nenhum modelo 3D na cena.");
+    const expected=semanticItem?.expected||{};
+    for(const [preset,count] of expected.lights||[]){
+      const have=lights.filter(l=>l.lightPreset===preset).length;
+      if(have<count)warnings.push("Esperado: "+count+" × "+(LIGHT_PRESETS.find(p=>p.key===preset)?.label||preset)+"; configurado: "+have+".");
+    }
+    for(const [shape,count] of expected.shapes||[]){
+      const have=shapes.filter(x=>x.shape===shape).length;
+      if(have<count)warnings.push("Marca diurna esperada: "+count+" × "+(DAY_SHAPES.find(p=>p.shape===shape)?.label||shape)+".");
+    }
+    if(expected.cable&&!objects.some(o=>o.type==="cable"))warnings.push("Cenário de reboque sem cabo representado.");
+    if(semantic.ruleNumber==="29"&&semantic.serviceStatus!=="pilotage-duty")warnings.push("Regra 29: confirme se a embarcação está efetivamente em serviço de praticagem.");
+    if(semantic.lockedToRule&&(!semanticItem||scene.scene_key!==semantic.scenarioKey))errors.push("Vínculo semântico travado, mas a chave da cena diverge do cenário RIPEAM.");
     const duplicated=objects.map(o=>o.name).filter((n,i,a)=>a.indexOf(n)!==i);if(duplicated.length)warnings.push("Há objetos com nomes duplicados.");
     if(stats.triangles>350000)warnings.push("Cena pesada para mobile: mais de 350 mil triângulos.");
-    return warnings;
-  },[cfg.objects,scene.rule_ref,stats]);
+    return {errors,warnings};
+  },[cfg.objects,semantic,semanticItem,activeRule,scene.scene_key,stats]);
 
   const filteredAssets=assets.filter(a=>(a.name+" "+(a.category||"")+" "+(a.tags||[]).join(" ")).toLowerCase().includes(assetFilter.toLowerCase()));
   const progress=String(cfg.objects?.length||0)+" objetos · "+String(cfg.cards?.length||0)+" cards";
 
   return <div className={styles.editorShell}>
     <div className={styles.topbar}>
-      <div><b>ESTIBORDO · EDITOR 3D PRO</b><span>{scene.title} · {progress} · {scene.status}</span></div>
+      <div><b>ESTIBORDO · EDITOR 3D PRO</b><span>{semanticLabel(semantic)} · {progress} · {scene.status}</span></div>
       <div className={styles.topActions}>
         <button onClick={undo} disabled={!history.length}>↶ Undo</button><button onClick={redo} disabled={!future.length}>↷ Redo</button>
         <button onClick={duplicateScene}>Duplicar cena</button><button onClick={()=>setScene(clone(EMPTY))}>＋ Nova cena</button>
         <select value={scene.status} onChange={e=>setScene(s=>({...s,status:e.target.value}))}><option value="draft">Rascunho</option><option value="review">Revisão</option><option value="published">Publicado</option><option value="archived">Arquivado</option></select>
-        <button disabled={busy} onClick={()=>save(scene.status)}>Salvar</button><button className={styles.publish} disabled={busy} onClick={()=>save("published")}>Publicar</button>
+        <button disabled={busy} onClick={()=>save(scene.status)}>Salvar</button><button className={styles.publish} disabled={busy||validation.errors.length>0} title={validation.errors.length?"Corrija os erros semânticos antes de publicar":""} onClick={()=>save("published")}>Publicar</button>
       </div>
     </div>
 
     <div className={styles.workspace}>
       <aside className={styles.leftPane}>
-        <h3>CENAS / REGRAS</h3>
-        <div className={styles.sceneList}>{scenes.map(s=><button key={s.id} className={s.id===scene.id?styles.active:""} onClick={()=>openScene(s)}><b>{s.title}</b><small>Regra {s.rule_ref||"—"} · {s.status}</small></button>)}</div>
+        <h3>ÁRVORE RIPEAM / CENAS</h3>
+        <div className={styles.ruleTree}>{groupedScenes.map(([ruleNo,rows])=><section key={ruleNo}><div className={styles.ruleTreeHead}>{ruleNo==="unassigned"?"SEM REGRA":"REGRA "+ruleNo}<small>{getRule(ruleNo)?.title||"Cenas não vinculadas"}</small></div><div className={styles.sceneList}>{rows.map(row=><button key={row.id} className={row.id===scene.id?styles.active:""} onClick={()=>openScene(row)}><b>{row.title}</b><small>{semanticLabel(row.config?.semantic||{ruleNumber:String(row.rule_ref||"").match(/\d+/)?.[0]||""})} · {row.status}</small></button>)}</div></section>)}</div>
         <h3>TEMPLATES</h3><div className={styles.chips}>{SCENE_TEMPLATES.map(t=><button key={t.key} onClick={()=>applyTemplate(t)}>{t.label}</button>)}</div>
 
         <h3>OUTLINER</h3>
@@ -307,10 +388,14 @@ export default function Admin3DEditor(){
         </div>
         <h3>PRESETS RIPEAM</h3><div className={styles.presetList}>{LIGHT_PRESETS.map(p=><button key={p.key} onClick={()=>applyLightPreset(p)}><i style={{background:p.color}}/> {p.label}<small>{p.sector}°</small></button>)}</div>
 
-        <h3>VALIDADOR</h3><div className={validation.length?styles.warnings:styles.valid}>{validation.length?validation.map((w,i)=><p key={i}>⚠ {w}</p>):<p>✓ Nenhum alerta estrutural.</p>}</div>
+        <h3>VALIDADOR SEMÂNTICO</h3><div className={validation.errors.length?styles.errors:validation.warnings.length?styles.warnings:styles.valid}>{validation.errors.map((w,i)=><p key={"e"+i}>✕ {w}</p>)}{validation.warnings.map((w,i)=><p key={"w"+i}>⚠ {w}</p>)}{!validation.errors.length&&!validation.warnings.length&&<p>✓ Cena coerente com o vínculo semântico configurado.</p>}</div>
       </aside>
 
       <section className={styles.centerPane}>
+        <div className={semantic.ruleNumber?styles.semanticBanner:styles.semanticBannerMissing}>
+          <div><span>{semantic.ruleNumber?"CENA RIPEAM VINCULADA":"ATENÇÃO · CENA NÃO VINCULADA"}</span><strong>{semanticLabel(semantic)}</strong><small>{breadcrumbs.join(" → ")||"Selecione a Regra e o cenário na aba Cena antes de publicar."}</small></div>
+          <div className={styles.semanticRight}><div className={styles.semanticBadges}>{semantic.condition&&<b>{CONDITION_LABELS[semantic.condition]||semantic.condition}</b>}{semantic.period&&<b>{PERIOD_LABELS[semantic.period]||semantic.period}</b>}{semantic.side&&<b>{SIDE_LABELS[semantic.side]||semantic.side}</b>}{semantic.lockedToRule&&<b>🔒 Vínculo travado</b>}<b>{validation.errors.length?"BLOQUEADO":validation.warnings.length?validation.warnings.length+" ALERTAS":"PRONTO"}</b></div>{semanticItem&&<button className={styles.semanticSync} onClick={syncSemanticEquipment}>＋ Completar base RIPEAM</button>}</div>
+        </div>
         <div className={styles.viewportToolbar}>
           <button className={mode==="translate"?styles.active:""} onClick={()=>setMode("translate")}>↔ Mover</button>
           <button className={mode==="rotate"?styles.active:""} onClick={()=>setMode("rotate")}>⟳ Rotacionar</button>
@@ -373,9 +458,23 @@ export default function Admin3DEditor(){
         {tab==="object"&&!obj&&<div className={styles.empty}>Selecione um objeto. Atalhos: G mover · R rotacionar · S escalar · Ctrl+C/Ctrl+V · Ctrl+D duplicar · Del excluir.</div>}
 
         {tab==="scene"&&<div className={styles.form}>
+          <h4>Identidade RIPEAM</h4>
+          <label>Regra<select value={semantic.ruleNumber||""} onChange={e=>selectSemantic(e.target.value,getRule(e.target.value)?.items?.[0]?.key||"")}><option value="">Selecione a Regra...</option>{RIPEAM_RULES.map(r=><option key={r.number} value={r.number}>Regra {r.number} — {r.title}</option>)}</select></label>
+          <label>Item / cenário<select value={semantic.scenarioKey||""} disabled={!activeRule} onChange={e=>selectSemantic(semantic.ruleNumber,e.target.value)}><option value="">Selecione...</option>{(activeRule?.items||[]).map(i=><option key={i.key} value={i.key}>{activeRule.number}{i.item||""} — {i.label}</option>)}</select></label>
+          {semanticItem?.summary&&<div className={styles.semanticSummary}>{semanticItem.summary}</div>}
+          {semanticItem?.notes&&<div className={styles.semanticNote}>{semanticItem.notes}</div>}
+          <label>Condição operacional<select value={semantic.condition||""} onChange={e=>mutate(s=>{s.config.semantic.condition=e.target.value})}><option value="">Não definida</option>{Object.entries(CONDITION_LABELS).map(([k,v])=><option key={k} value={k}>{v}</option>)}</select></label>
+          <label>Período<select value={semantic.period||""} onChange={e=>mutate(s=>{s.config.semantic.period=e.target.value})}><option value="">Não definido</option>{Object.entries(PERIOD_LABELS).map(([k,v])=><option key={k} value={k}>{v}</option>)}</select></label>
+          {semantic.ruleNumber==="29"&&<label>Serviço de praticagem<select value={semantic.serviceStatus||""} onChange={e=>mutate(s=>{s.config.semantic.serviceStatus=e.target.value})}><option value="">Definir...</option>{Object.entries(SERVICE_LABELS).map(([k,v])=><option key={k} value={k}>{v}</option>)}</select></label>}
+          {["27"].includes(semantic.ruleNumber)&&<label>Bordo semântico<select value={semantic.side||""} onChange={e=>mutate(s=>{s.config.semantic.side=e.target.value})}><option value="">Não aplicável</option>{Object.entries(SIDE_LABELS).map(([k,v])=><option key={k} value={k}>{v}</option>)}</select></label>}
+          {semantic.ruleNumber==="24"&&<label>Comprimento do reboque<select value={semantic.towLength||""} onChange={e=>mutate(s=>{s.config.semantic.towLength=e.target.value})}><option value="">Definir...</option><option value="lte200">≤ 200 m</option><option value="gt200">&gt; 200 m</option></select></label>}
+          <div className={styles.inlineChecks}><label><input type="checkbox" checked={!!semantic.lockedToRule} onChange={e=>mutate(s=>{s.config.semantic.lockedToRule=e.target.checked})}/> Travar vínculo Regra ↔ cena</label></div>
+          <label>Referência / fonte<input value={semantic.sourceRef||""} placeholder="Deck RIPEAM / publicação usada" onChange={e=>mutate(s=>{s.config.semantic.sourceRef=e.target.value})}/></label>
+          <label>Nota editorial semântica<textarea rows="3" value={semantic.editorialNote||""} onChange={e=>mutate(s=>{s.config.semantic.editorialNote=e.target.value})}/></label>
+
+          <h4>Identidade editorial</h4>
           <label>Título<input value={scene.title} onChange={e=>{setScene(s=>({...s,title:e.target.value}));setLastEdit(Date.now())}}/></label>
-          <label>Chave da cena<input value={scene.scene_key} onChange={e=>{setScene(s=>({...s,scene_key:e.target.value}));setLastEdit(Date.now())}}/></label>
-          <label>Regra RIPEAM<input value={scene.rule_ref} placeholder="24, 27(d)..." onChange={e=>{setScene(s=>({...s,rule_ref:e.target.value}));setLastEdit(Date.now())}}/></label>
+          <label>Chave técnica da cena<input value={scene.scene_key} disabled={!!semantic.lockedToRule} onChange={e=>{setScene(s=>({...s,scene_key:e.target.value}));setLastEdit(Date.now())}}/></label>
           <label>Card / cenário<input value={scene.card_title} onChange={e=>{setScene(s=>({...s,card_title:e.target.value}));setLastEdit(Date.now())}}/></label>
           <label>Descrição<textarea rows="4" value={scene.description} onChange={e=>{setScene(s=>({...s,description:e.target.value}));setLastEdit(Date.now())}}/></label>
           <div className={styles.inlineChecks}><label><input type="checkbox" checked={autosave} onChange={e=>setAutosave(e.target.checked)}/> Autosave</label><label><input type="checkbox" checked={cfg.settings.snapEnabled} onChange={e=>mutate(s=>{s.config.settings.snapEnabled=e.target.checked})}/> Snap</label></div>
