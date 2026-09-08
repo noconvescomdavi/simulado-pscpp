@@ -3,6 +3,8 @@ import { getEntitlement } from "../../../../../lib/entitlement";
 import { submitExamAnswer } from "../../../../../lib/exams";
 import { normalizeSubject, TRIAL_SUBJECT_SLUG } from "../../../../../lib/subjects";
 import { recordAppError } from "../../../../../lib/observability";
+import {getQuestion} from "../../../../../lib/question-banks";
+import {refreshTopicMasteryForQuestion} from "../../../../../lib/learning-engine";
 
 const ANSWERS = new Set(["A", "B", "C", "D", "E"]);
 
@@ -39,6 +41,13 @@ export async function POST(request, { params }) {
       selectedAnswer,
       responseTimeMs,
     });
+
+    if(result?.ok&&result?.question_id){
+      const answered=getQuestion(subject,result.question_id);
+      const metricSubject=normalizeSubject(answered?.source_subject||subject);
+      const metricId=String(answered?.source_id||answered?.id||result.question_id);
+      await refreshTopicMasteryForQuestion(session.id,metricSubject,metricId).catch(()=>{});
+    }
 
     return Response.json(result, { status: result.status || 200 });
   } catch (error) {
