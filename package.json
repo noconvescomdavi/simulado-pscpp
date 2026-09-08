@@ -15,7 +15,8 @@
     "import:manobrabilidade": "node scripts/import-manobrabilidade.mjs",
     "validate:questions:all": "npm run validate:questions && npm run validate:taxonomy",
     "security:audit": "npm audit --audit-level=high",
-    "validate:study-plan": "node scripts/validate-study-plan-v3.mjs"
+    "validate:study-plan": "node scripts/validate-study-plan-v3.mjs",
+    "test:learning": "node scripts/test-learning-algorithms.mjs"
   },
   "dependencies": {
     "argon2": "^0.41.1",
