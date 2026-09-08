@@ -3,8 +3,10 @@ import { getSession } from "../../../../../lib/auth";
 import { getUserAccess } from "../../../../../lib/access";
 import { query } from "../../../../../lib/db";
 import { buildPreference, getPaymentConfig, mercadoPagoRequest } from "../../../../../lib/payments";
+import {assertSameOrigin} from "../../../../../lib/security";
 
 export async function POST(request) {
+  try { await assertSameOrigin(); } catch (error) { return Response.json({error:"Origem inválida."},{status:Number(error?.status)||403}); }
   const session = await getSession();
   if (!session) return NextResponse.redirect(new URL("/login?next=/comprar", request.url), 303);
 
