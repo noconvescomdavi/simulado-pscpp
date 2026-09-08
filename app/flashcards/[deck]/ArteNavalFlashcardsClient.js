@@ -191,6 +191,30 @@ const SHIP_HANDLING_VISUALS = {
     "page": 17,
     "caption": "Aparelho de fundear / hawse pipe",
     "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg"
+  },
+  "AN1-204": {
+    "image": "/flashcards/arte-naval/ship-handling/AN1-202.jpg",
+    "page": 17,
+    "caption": "Conjunto do aparelho de fundear e suspender",
+    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg"
+  },
+  "AN1-207": {
+    "image": "/flashcards/arte-naval/ship-handling/AN1-202.jpg",
+    "page": 17,
+    "caption": "Mordente / retenção da amarra no convés de vante",
+    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg"
+  },
+  "AN1-208": {
+    "image": "/flashcards/arte-naval/ship-handling/AN1-202.jpg",
+    "page": 17,
+    "caption": "Boça e dispositivos de segurança da amarra",
+    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg"
+  },
+  "AN1-209": {
+    "image": "/flashcards/arte-naval/ship-handling/AN1-202.jpg",
+    "page": 17,
+    "caption": "Abita / cabeço no convés de manobra",
+    "source_file": "AN-SH-0011_ancora-amarra-molinete_p017.jpg"
   }
 };
 
