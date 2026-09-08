@@ -5,6 +5,7 @@ import styles from "./ripeam-3d.module.css";
 const THREE_ESM="https://esm.sh/three@0.180.0";
 const GLTF_ESM="https://esm.sh/three@0.180.0/examples/jsm/loaders/GLTFLoader.js";
 const FBX_ESM="https://esm.sh/three@0.180.0/examples/jsm/loaders/FBXLoader.js";
+const OBJ_ESM="https://esm.sh/three@0.180.0/examples/jsm/loaders/OBJLoader.js";
 const MODEL_URLS={
   "bulk-carrier":{type:"gltf",url:"/models/ripeam/bulk_carrier.glb",rotation:[-Math.PI/2,0,-Math.PI/2],target:10.5},
   "tugboat":{type:"gltf",url:"/models/ripeam/Tugboat.glb",rotation:[-Math.PI/2,0,0],target:4.3},
@@ -17,11 +18,11 @@ const MODEL_URLS={
 };
 
 async function loadThree(){
-  const THREE=await import(CDN+"/build/three.module.js");
+  const THREE=await import(/* webpackIgnore: true */ THREE_ESM);
   const [{GLTFLoader},{FBXLoader},{OBJLoader}]=await Promise.all([
-    import(CDN+"/examples/jsm/loaders/GLTFLoader.js"),
-    import(CDN+"/examples/jsm/loaders/FBXLoader.js"),
-    import(CDN+"/examples/jsm/loaders/OBJLoader.js")
+    import(/* webpackIgnore: true */ GLTF_ESM),
+    import(/* webpackIgnore: true */ FBX_ESM),
+    import(/* webpackIgnore: true */ OBJ_ESM)
   ]);
   return {THREE,GLTFLoader,FBXLoader,OBJLoader};
 }
@@ -122,16 +123,54 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
         };
 
         const navGroup=new THREE.Group(); modelRoot.add(navGroup);
+        let publishedRoots=null;
 
         if(editorScene?.objects?.length){
+          const roots=new Map();
+          publishedRoots=roots;
+          const shapeGeo=(shape)=>{
+            if(shape==="coneUp")return new THREE.ConeGeometry(.42,.85,24);
+            if(shape==="coneDown"){const g=new THREE.ConeGeometry(.42,.85,24);g.rotateZ(Math.PI);return g}
+            if(shape==="diamond")return new THREE.OctahedronGeometry(.5);
+            if(shape==="cylinder")return new THREE.CylinderGeometry(.34,.34,.75,24);
+            return new THREE.SphereGeometry(.4,20,14);
+          };
+          const normalizePublished=(obj)=>{
+            obj.updateMatrixWorld(true);
+            const box=new THREE.Box3().setFromObject(obj);
+            const size=new THREE.Vector3();box.getSize(size);
+            const max=Math.max(size.x,size.y,size.z)||1;
+            obj.scale.multiplyScalar(8/max);
+            obj.updateMatrixWorld(true);
+            const b2=new THREE.Box3().setFromObject(obj);
+            const center=new THREE.Vector3();b2.getCenter(center);
+            obj.position.sub(center);obj.position.y+=1.05;
+          };
+          const applyPublishedMaterial=(obj,data)=>{
+            obj.traverse?.(o=>{
+              if(!o.isMesh)return;
+              const mats=Array.isArray(o.material)?o.material:[o.material];
+              mats.filter(Boolean).forEach(m=>{
+                if("color" in m)m.color.set(data.material?.color||"#ffffff");
+                if("roughness" in m)m.roughness=Number(data.material?.roughness??.5);
+                if("metalness" in m)m.metalness=Number(data.material?.metalness??.05);
+                if("opacity" in m){m.opacity=Number(data.material?.opacity??1);m.transparent=m.opacity<1}
+                if("emissive" in m)m.emissive.set(data.material?.emissive||"#000000");
+              });
+            });
+          };
           for(const data of editorScene.objects){
+            if(["cable","measure"].includes(data.type))continue;
+            const rootObj=new THREE.Group();
             let obj=null;
             if(data.type==="model"){
               try{
                 if(data.assetType==="fbx")obj=await fbxLoader.loadAsync(data.assetUrl);
                 else if(data.assetType==="obj")obj=await objLoader.loadAsync(data.assetUrl);
                 else obj=(await gltfLoader.loadAsync(data.assetUrl)).scene;
-                tuneMaterial(obj);
+                if(data.normalize!==false)normalizePublished(obj);
+                obj.position.sub(new THREE.Vector3(...(data.pivot||[0,0,0])));
+                applyPublishedMaterial(obj,data);
               }catch(error){console.warn("Asset publicado indisponível",data.assetUrl,error)}
             }else if(data.type&&data.type.includes("Light")){
               const bulb=new THREE.Mesh(new THREE.SphereGeometry(.105,16,10),new THREE.MeshBasicMaterial({color:data.color||"#fff2ba"}));
@@ -141,14 +180,37 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
               else glow=new THREE.PointLight(data.color||"#fff2ba",Number(data.intensity||3),Number(data.distance||12),1.7);
               bulb.add(glow);obj=bulb;
             }else if(data.type==="shape"){
-              obj=new THREE.Mesh(new THREE.SphereGeometry(.4,20,14),new THREE.MeshStandardMaterial({color:data.color||"#111111"}));
+              obj=new THREE.Mesh(shapeGeo(data.shape),new THREE.MeshStandardMaterial({color:data.color||"#111111"}));
+            }else if(data.type==="hotspot"){
+              obj=new THREE.Mesh(new THREE.SphereGeometry(.18,16,10),new THREE.MeshBasicMaterial({color:data.color||"#38bdf8"}));
             }
-            if(!obj)continue;
-            obj.position.fromArray(data.position||[0,0,0]);
-            obj.rotation.set(...(data.rotation||[0,0,0]));
-            obj.scale.fromArray(data.scale||[1,1,1]);
-            obj.visible=data.visible!==false;
-            modelRoot.add(obj);
+            if(obj)rootObj.add(obj);
+            rootObj.position.fromArray(data.position||[0,0,0]);
+            rootObj.rotation.set(...(data.rotation||[0,0,0]));
+            rootObj.scale.fromArray(data.scale||[1,1,1]);
+            rootObj.visible=data.visible!==false;
+            roots.set(data.id,rootObj);
+          }
+          for(const data of editorScene.objects){
+            if(["cable","measure"].includes(data.type))continue;
+            const rootObj=roots.get(data.id);if(!rootObj)continue;
+            const parent=data.parentId?roots.get(data.parentId):null;
+            (parent||modelRoot).add(rootObj);
+          }
+          for(const data of editorScene.objects){
+            if(!["cable","measure"].includes(data.type)||!data.cable)continue;
+            const a=roots.get(data.cable.fromId),b=roots.get(data.cable.toId);
+            if(!a||!b)continue;
+            const pa=new THREE.Vector3(),pb=new THREE.Vector3();a.getWorldPosition(pa);b.getWorldPosition(pb);
+            const mid=pa.clone().lerp(pb,.5);mid.y-=Number(data.cable.sag||.4);
+            const curve=new THREE.CatmullRomCurve3([pa,mid,pb]);
+            let cable;
+            if(data.type==="measure"){
+              cable=new THREE.Line(new THREE.BufferGeometry().setFromPoints([pa,pb]),new THREE.LineBasicMaterial({color:data.color||"#38bdf8"}));
+            }else{
+              cable=new THREE.Mesh(new THREE.TubeGeometry(curve,32,.035,8,false),new THREE.MeshStandardMaterial({color:data.color||"#d9d0bb"}));
+            }
+            modelRoot.add(cable);
           }
         }else if(vessel==="tow-combo"){
           const [tugGltf,bargeObj]=await Promise.all([
@@ -214,6 +276,21 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
           waterGeo.computeVertexNormals();
           modelRoot.position.y=Math.sin(t*.72)*.075;
           modelRoot.rotation.z=Math.sin(t*.53)*.006;
+          if(editorScene?.timeline?.autoplay&&publishedRoots){
+            const duration=Math.max(1,Number(editorScene.timeline.duration||10));
+            const playT=editorScene.timeline.loop===false?Math.min(t,duration):(t%duration);
+            const lerp=(a,b,k)=>a+(b-a)*k;
+            for(const data of editorScene.objects||[]){
+              const rootObj=publishedRoots.get(data.id),frames=data.keyframes||[];
+              if(!rootObj||!frames.length)continue;
+              let a=frames[0],b=frames[frames.length-1];
+              for(let i=0;i<frames.length-1;i++){if(playT>=frames[i].t&&playT<=frames[i+1].t){a=frames[i];b=frames[i+1];break}}
+              const span=Math.max(.0001,b.t-a.t),k=Math.max(0,Math.min(1,(playT-a.t)/span));
+              rootObj.position.set(...a.position.map((v,i)=>lerp(v,b.position[i],k)));
+              rootObj.rotation.set(...a.rotation.map((v,i)=>lerp(v,b.rotation[i],k)));
+              rootObj.scale.set(...a.scale.map((v,i)=>lerp(v,b.scale[i],k)));
+            }
+          }
           const tow=runtime.currentTow;
           if(tow){
             tow.tugGroup.position.y=Math.sin(t*.88)*.045;
@@ -228,7 +305,7 @@ export default function RipeamThreeScene({scenario,vessel,yaw,pitch,zoom,night,e
         runtime.current={THREE,scene,camera,renderer,modelRoot,navGroup,water,ro,raf,tow:runtime.currentTow||null};
         onReady?.(true);
       }catch(err){
-        console.error("RIPEAM 3D: falha ao carregar modelo real.",{vessel,scenario,error:err});
+        console.warn("Bulk carrier 3D indisponível; usando fallback visual.",err);
         onReady?.(false);
       }
     })();
