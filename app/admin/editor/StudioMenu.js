@@ -53,6 +53,73 @@ const ICONS=[
 {c:"Comércio",name:"Gráfico",path:"M4 20V10h4v10M10 20V4h4v16m2 0v-7h4v7"}
 ];
 
+
+const CIS=[
+["A","Tenho um mergulhador na água; mantenha-se bem afastado e a baixa velocidade.","splitV","#ffffff","#0057a6"],
+["B","Estou carregando, descarregando ou transportando mercadorias perigosas.","solid","#d71920",""],
+["C","Sim (afirmativo).","h3","#0057a6,#ffffff,#d71920",""],
+["D","Mantenha-se afastado de mim; estou manobrando com dificuldade.","h3","#f4c300,#0057a6,#f4c300",""],
+["E","Estou guinando para boreste.","splitH","#0057a6","#d71920"],
+["F","Estou à matroca; comunique-se comigo.","whiteDiamond","#ffffff","#d71920"],
+["G","Necessito de um prático.","v6","#f4c300,#0057a6,#f4c300,#0057a6,#f4c300,#0057a6",""],
+["H","Tenho um prático a bordo.","splitV","#ffffff","#d71920"],
+["I","Estou guinando para bombordo.","circle","#f4c300","#000000"],
+["J","Mantenha-se bem afastado de mim. Tenho incêndio a bordo e carga perigosa.","h3","#0057a6,#ffffff,#0057a6",""],
+["K","Desejo comunicar-me com você.","splitV","#f4c300","#0057a6"],
+["L","Pare imediatamente o seu navio.","quarters","#f4c300","#000000"],
+["M","Meu navio está parado e sem seguimento.","x","#0057a6","#ffffff"],
+["N","Não (negativo).","checker","#0057a6","#ffffff"],
+["O","Homem ao mar.","diag","#f4c300","#d71920"],
+["P","Todos devem regressar a bordo; o navio vai sair.","center","#0057a6","#ffffff"],
+["Q","Meu navio está sem contaminação e peço livre prática.","solid","#f4c300",""],
+["R","Sinal R do CIS.","cross","#d71920","#f4c300"],
+["S","Minhas máquinas estão dando atrás.","center","#ffffff","#0057a6"],
+["T","Mantenha-se afastado; estou fazendo arrasto em paralelo.","v3","#d71920,#ffffff,#0057a6",""],
+["U","Você se dirige para um perigo.","quarters","#d71920","#ffffff"],
+["V","Necessito de auxílio.","x","#ffffff","#d71920"],
+["W","Necessito de assistência médica.","center","#0057a6","#d71920"],
+["X","Suspenda o que está fazendo e observe meus sinais.","cross","#ffffff","#0057a6"],
+["Y","Minha âncora está garrando.","diag","#f4c300","#d71920"],
+["Z","Necessito de rebocador.","quarters","#f4c300","#0057a6"],
+["0","Galhardete numeral zero.","h5","#f4c300,#d71920,#f4c300,#d71920,#f4c300",""],
+["1","Galhardete numeral um.","center","#ffffff","#d71920"],
+["2","Galhardete numeral dois.","splitV","#0057a6","#ffffff"],
+["3","Galhardete numeral três.","v3","#d71920,#ffffff,#0057a6",""],
+["4","Galhardete numeral quatro.","cross","#d71920","#ffffff"],
+["5","Galhardete numeral cinco.","splitV","#f4c300","#0057a6"],
+["6","Galhardete numeral seis.","h2","#000000,#ffffff",""],
+["7","Galhardete numeral sete.","h2","#f4c300,#d71920",""],
+["8","Galhardete numeral oito.","cross","#ffffff","#d71920"],
+["9","Galhardete numeral nove.","quarters","#ffffff","#0057a6"]
+].map(([code,meaning,pattern,a,b])=>({code,meaning,pattern,a,b}));
+const MARINE_ASSETS=[
+{c:"Navios",name:"Navio mercante",path:"M2 16h20l-3 4H6l-4-4Zm4 0V9h5v7m2 0V6h5v10M7 9h10M9 6h4M4 21c2 1 4 1 6 0 2 1 4 1 6 0 2 1 4 1 6 0"},
+{c:"Navios",name:"Petroleiro",path:"M2 15h20l-3 5H6l-4-5Zm4 0v-4h12v4M8 11V8h8v3M5 18h14"},
+{c:"Navios",name:"Porta-contêiner",path:"M2 16h20l-3 4H6l-4-4Zm4-7h4v3H6V9Zm5 0h4v3h-4V9Zm5 0h3v3h-3V9ZM8 13h10v3"},
+{c:"Navios",name:"Rebocador",path:"M3 15h18l-3 5H7l-4-5Zm5 0V9h8l3 6M10 9V6h4v3M5 20c2 1 4 1 6 0 2 1 4 1 6 0"},
+{c:"Navios",name:"Veleiro",path:"M12 3v14M11 5 5 15h6V5Zm2 2 6 8h-6V7ZM4 17h16l-3 4H7l-3-4Z"},
+{c:"Navios",name:"Pesqueiro",path:"M3 16h18l-3 4H7l-4-4Zm6 0V9h7l3 7M11 9V6h4v3M5 12h4M18 8l3-3"},
+{c:"Navios",name:"Draga",path:"M2 16h16l-3 4H6l-4-4Zm5 0V9h7v7m1-5 6-5m-4 3 4 7"},
+{c:"Navios",name:"Offshore PSV",path:"M2 16h20l-3 4H6l-4-4Zm5 0V8h6v8m2 0V11h5M9 8V5h3v3"},
+{c:"Navegação",name:"ECDIS",path:"M3 4h18v14H3V4Zm3 11 4-5 3 2 5-5M8 21h8M12 18v3"},
+{c:"Navegação",name:"AIS",path:"M12 12h.01M8 16a6 6 0 0 1 0-8m8 0a6 6 0 0 1 0 8M5 19a10 10 0 0 1 0-14m14 0a10 10 0 0 1 0 14"},
+{c:"Navegação",name:"Radar ARPA",path:"M12 12 19 5M12 3a9 9 0 1 0 9 9M12 7a5 5 0 1 0 5 5M12 12l4 6"},
+{c:"Navegação",name:"Waypoint",path:"M12 21s6-5.2 6-11a6 6 0 1 0-12 0c0 5.8 6 11 6 11Zm0-8 3-3-3-3-3 3 3 3Z"},
+{c:"Navegação",name:"Carta náutica",path:"M3 5l6-2 6 2 6-2v16l-6 2-6-2-6 2V5Zm6-2v16m6-14v16M5 14c3-4 5-4 8-1 2 2 4 1 6-2"},
+{c:"Navegação",name:"Rosa dos ventos 16",path:"M12 2l1.7 7.1L19 5l-4.1 5.3L22 12l-7.1 1.7L19 19l-5.3-4.1L12 22l-1.7-7.1L5 19l4.1-5.3L2 12l7.1-1.7L5 5l5.3 4.1L12 2Z"},
+{c:"RIPEAM",name:"Luz de navegação",path:"M12 3v3m7-1-2 2m5 5h-3M5 7 3 5M5 12H2m6 7h8l-1-8H9l-1 8Zm2-8V8h4v3"},
+{c:"RIPEAM",name:"Marca esférica",path:"M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"},
+{c:"RIPEAM",name:"Marca cônica",path:"M12 4 4 20h16L12 4Z"},
+{c:"RIPEAM",name:"Marca bicônica",path:"M12 3 5 11h14L12 3Zm0 18 7-8H5l7 8Z"},
+{c:"RIPEAM",name:"Marca cilíndrica",path:"M6 4h12v16H6V4Z"},
+{c:"Balizamento",name:"Boia lateral",path:"M8 20h8l-1-9h-6l-1 9Zm2-9V7h4v4M7 20h10"},
+{c:"Balizamento",name:"Boia cardinal",path:"M8 20h8l-1-9h-6l-1 9Zm4-16 3 5H9l3-5Z"},
+{c:"Equipamento",name:"Âncora Hall",path:"M12 2v14m-5-4h10M5 10h14M4 15c1 4 4 6 8 6s7-2 8-6l-3-1c-1 2-2 4-5 4s-4-2-5-4l-3 1Z"},
+{c:"Equipamento",name:"Guincho",path:"M5 17h14M7 17v-5a5 5 0 0 1 10 0v5M9 12h6M12 7v5"},
+{c:"Equipamento",name:"Bote salva-vidas",path:"M3 14h18l-4 6H7l-4-6Zm4 0 2-5h6l2 5M9 9V6h6v3"},
+{c:"Equipamento",name:"Extintor",path:"M8 21h8V8H8v13Zm2-13V5h5l2 2m-5-2V3m4 7h3"}
+];
+
 const LOGOS=[
 {name:"ESTIBORDO · Âncora",mark:"M12 2v14m-5-4h10M5 10h14M4 15c1.5 4 4.3 6 8 6s6.5-2 8-6",wordmark:"ESTIBORDO",tagline:"PREPARAÇÃO PSCPP",shape:"none"},
 {name:"ESTIBORDO · Bússola",mark:"M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2L12 2Z",wordmark:"ESTIBORDO",tagline:"NAVEGUE MAIS LONGE",shape:"circle"},
@@ -68,8 +135,8 @@ const MORGUE=[["Navios","ship"],["Portos","harbor"],["Oceano","ocean"],["Faróis
 const CATS=["Todos",...Array.from(new Set(ICONS.map(x=>x.c)))];
 function Icon({path}){return <svg viewBox="0 0 24 24"><path d={path}/></svg>}
 
-export default function StudioMenu({open,onClose,siteMap,page,onPageChange,layers,onSelectLayer,blocks,selectedBlockId,onSelectBlock,onOpenBuilder,onOpenFlashcards,media,onUploadMedia,onAddIcon,onAddLogo,onImportImage,customCode,onCustomCode,breakpoints,onBreakpoints}){
-  const [tab,setTab]=useState("site");const [asset,setAsset]=useState({url:"",name:"",source:"Morguefile",license:"Free Personal & Commercial Use"});const [iconCat,setIconCat]=useState("Todos");const [iconSearch,setIconSearch]=useState("");
+export default function StudioMenu({open,onClose,siteMap,page,onPageChange,layers,onSelectLayer,blocks,selectedBlockId,onSelectBlock,onOpenBuilder,onOpenFlashcards,media,onUploadMedia,onAddIcon,onAddLogo,onAddSignalFlag,onImportImage,customCode,onCustomCode,breakpoints,onBreakpoints}){
+  const [tab,setTab]=useState("site");const [assetTab,setAssetTab]=useState("cis");const [asset,setAsset]=useState({url:"",name:"",source:"Morguefile",license:"Free Personal & Commercial Use"});const [iconCat,setIconCat]=useState("Todos");const [iconSearch,setIconSearch]=useState("");
   const totalPages=useMemo(()=>siteMap.reduce((n,g)=>n+(g.pages?.length||0),0),[siteMap]);
   const filtered=useMemo(()=>ICONS.filter(x=>(iconCat==="Todos"||x.c===iconCat)&&(!iconSearch||x.name.toLowerCase().includes(iconSearch.toLowerCase()))),[iconCat,iconSearch]);
   return <div className={"ev-studio-backdrop "+(open?"is-open":"")} onMouseDown={e=>e.target===e.currentTarget&&onClose()}><aside className="ev-studio-menu"><header><button className="ev-studio-close" onClick={onClose}>☰</button><div><b>ESTIBORDO STUDIO</b><span>{totalPages} páginas · ferramentas profissionais</span></div><button className="ev-studio-x" onClick={onClose}>×</button></header><nav>{[["site","Site"],["layers","Camadas"],["tools","Ferramentas"],["assets","Assets"],["code","Código"]].map(([id,label])=><button key={id} className={tab===id?"is-active":""} onClick={()=>setTab(id)}>{label}</button>)}</nav><div className="ev-studio-scroll">
@@ -77,10 +144,13 @@ export default function StudioMenu({open,onClose,siteMap,page,onPageChange,layer
   {tab==="layers"&&<><section><h4>DOM da página</h4><div className="ev-studio-layer-list">{layers.map(x=><button key={x.selector+x.index} onClick={()=>onSelectLayer(x.selector)}><small>{x.tag}</small><span>{x.label||x.selector}</span></button>)}</div></section><section><h4>Blocos & hierarquia</h4><BlockTree blocks={blocks} selectedId={selectedBlockId} onSelect={onSelectBlock}/></section></>}
   {tab==="tools"&&<><div className="ev-studio-tool-grid"><button onClick={onOpenBuilder}><i>＋</i><b>Page Builder</b><span>Blocos, templates e layouts</span></button><button onClick={onOpenFlashcards}><i>▣</i><b>Flashcards</b><span>Gerenciador acadêmico</span></button></div><section><h4>Responsividade / Breakpoints</h4><div className="ev-breakpoint-editor"><label><span>Tablet até</span><input type="number" value={breakpoints.tablet||1024} onChange={e=>onBreakpoints({tablet:Number(e.target.value)||1024})}/><small>px</small></label><label><span>Mobile até</span><input type="number" value={breakpoints.mobile||620} onChange={e=>onBreakpoints({mobile:Number(e.target.value)||620})}/><small>px</small></label></div></section></>}
   {tab==="assets"&&<>
-    <section><h4>Biblioteca de ícones · {ICONS.length} opções</h4><div className="ev-icon-search"><input placeholder="Buscar ícone..." value={iconSearch} onChange={e=>setIconSearch(e.target.value)}/><select value={iconCat} onChange={e=>setIconCat(e.target.value)}>{CATS.map(c=><option key={c}>{c}</option>)}</select></div><div className="ev-icon-library">{filtered.map(icon=><button key={icon.c+icon.name} title={icon.c+" · "+icon.name} onClick={()=>onAddIcon(icon)}><Icon path={icon.path}/><span>{icon.name}</span><small>{icon.c}</small></button>)}</div><a className="ev-external-source" href="https://svg.icones.pro/" target="_blank" rel="noreferrer">Explorar mais no Icones.pro ↗</a></section>
-    <section><h4>Logos & Identidade Visual</h4><div className="ev-logo-library">{LOGOS.map(logo=><button key={logo.name} onClick={()=>onAddLogo(logo)}><div className={"ev-logo-preview is-"+logo.shape}><Icon path={logo.mark}/></div><div><b>{logo.wordmark}</b><span>{logo.tagline}</span><small>{logo.name}</small></div></button>)}</div><p className="ev-studio-help">Os presets são vetoriais e editáveis no canvas: texto, tagline, cor, fundo, tamanho e posição.</p></section>
-    <section><h4>Fotos marítimas · Morguefile</h4><div className="ev-source-chips">{MORGUE.map(([label,term])=><a key={term} href={"https://morguefile.com/search?term="+encodeURIComponent(term)} target="_blank" rel="noreferrer">{label} ↗</a>)}</div><label className="ev-mini-field"><span>URL pública da imagem</span><input value={asset.url} onChange={e=>setAsset(v=>({...v,url:e.target.value}))}/></label><label className="ev-mini-field"><span>Nome</span><input value={asset.name} onChange={e=>setAsset(v=>({...v,name:e.target.value}))}/></label><button className="ev-import-asset" disabled={!asset.url} onClick={()=>onImportImage(asset)}>＋ Adicionar à biblioteca e ao canvas</button></section>
-    <section><h4>Upload próprio</h4><label className="ev-media-library-upload"><input type="file" accept="image/*,video/*,audio/*" onChange={e=>onUploadMedia(e.target.files?.[0])}/><span>＋ Enviar arquivo</span></label><div className="ev-media-list">{(media||[]).slice().reverse().slice(0,10).map((m,i)=><div key={(m.url||"")+i}><b>{m.name||"Arquivo"}</b><small>{m.source?m.source+" · ":""}{m.url}</small></div>)}</div></section>
+    <div className="ev-asset-tabs">{[["cis","CIS"],["marine","Marítimo Pro"],["icons","Ícones"],["logos","Logos"],["photos","Fotos"]].map(([id,label])=><button key={id} className={assetTab===id?"is-active":""} onClick={()=>setAssetTab(id)}>{label}</button>)}</div>
+    {assetTab==="cis"&&<section><h4>Código Internacional de Sinais · A–Z e 0–9</h4><p className="ev-studio-help">Bandeiras vetoriais escaláveis para material didático e composição visual. Cada item conserva código e significado no bloco.</p><div className="ev-cis-library">{CIS.map(flag=><button key={flag.code} onClick={()=>onAddSignalFlag(flag)} title={flag.meaning}><span className="ev-cis-preview" data-pattern={flag.pattern} style={{"--a":flag.a,"--b":flag.b}}><i></i></span><b>{flag.code}</b><small>{flag.meaning}</small></button>)}</div></section>}
+    {assetTab==="marine"&&<section><h4>Marítimo, navios, navegação & RIPEAM</h4><div className="ev-marine-library">{MARINE_ASSETS.map(icon=><button key={icon.c+icon.name} onClick={()=>onAddIcon(icon)}><Icon path={icon.path}/><div><b>{icon.name}</b><small>{icon.c}</small></div></button>)}</div></section>}
+    {assetTab==="icons"&&<section><h4>Biblioteca de ícones · {ICONS.length} opções</h4><div className="ev-icon-search"><input placeholder="Buscar ícone..." value={iconSearch} onChange={e=>setIconSearch(e.target.value)}/><select value={iconCat} onChange={e=>setIconCat(e.target.value)}>{CATS.map(c=><option key={c}>{c}</option>)}</select></div><div className="ev-icon-library">{filtered.map(icon=><button key={icon.c+icon.name} title={icon.c+" · "+icon.name} onClick={()=>onAddIcon(icon)}><Icon path={icon.path}/><span>{icon.name}</span><small>{icon.c}</small></button>)}</div><a className="ev-external-source" href="https://svg.icones.pro/" target="_blank" rel="noreferrer">Explorar mais no Icones.pro ↗</a></section>}
+    {assetTab==="logos"&&<section><h4>Logos & Identidade Visual</h4><div className="ev-logo-library">{LOGOS.map(logo=><button key={logo.name} onClick={()=>onAddLogo(logo)}><div className={"ev-logo-preview is-"+logo.shape}><Icon path={logo.mark}/></div><div><b>{logo.wordmark}</b><span>{logo.tagline}</span><small>{logo.name}</small></div></button>)}</div><p className="ev-studio-help">Os presets são vetoriais e editáveis no canvas: texto, tagline, cor, fundo, tamanho e posição.</p></section>}
+    {assetTab==="photos"&&<><section><h4>Fotos marítimas · Morguefile</h4><div className="ev-source-chips">{MORGUE.map(([label,term])=><a key={term} href={"https://morguefile.com/search?term="+encodeURIComponent(term)} target="_blank" rel="noreferrer">{label} ↗</a>)}</div><label className="ev-mini-field"><span>URL pública da imagem</span><input value={asset.url} onChange={e=>setAsset(v=>({...v,url:e.target.value}))}/></label><label className="ev-mini-field"><span>Nome</span><input value={asset.name} onChange={e=>setAsset(v=>({...v,name:e.target.value}))}/></label><button className="ev-import-asset" disabled={!asset.url} onClick={()=>onImportImage(asset)}>＋ Adicionar à biblioteca e ao canvas</button></section>
+    <section><h4>Upload próprio</h4><label className="ev-media-library-upload"><input type="file" accept="image/*,video/*,audio/*" onChange={e=>onUploadMedia(e.target.files?.[0])}/><span>＋ Enviar arquivo</span></label><div className="ev-media-list">{(media||[]).slice().reverse().slice(0,10).map((m,i)=><div key={(m.url||"")+i}><b>{m.name||"Arquivo"}</b><small>{m.source?m.source+" · ":""}{m.url}</small></div>)}</div></section></>}
   </>}
   {tab==="code"&&<><section><h4>Custom CSS</h4><textarea className="ev-code-editor" spellCheck="false" value={customCode.css||""} onChange={e=>onCustomCode({css:e.target.value})}/></section><section><h4>HTML seguro</h4><textarea className="ev-code-editor" spellCheck="false" value={customCode.html||""} onChange={e=>onCustomCode({html:e.target.value})}/></section></>}
 </div></aside></div>}
