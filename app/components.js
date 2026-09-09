@@ -79,7 +79,7 @@ export function Footer() {
           <a href={f.register.href}>{f.register.label}</a>
         </div>
       </div>
-      <div className="footerBottom"><span>{f.bottom}</span><span style={{display:"inline-flex",gap:14,flexWrap:"wrap"}}><a href="/termos-de-uso">Termos</a><a href="/politica-de-privacidade">Privacidade</a><a href="/politica-de-cookies">Cookies</a></span></div>
+      <div className="footerBottom"><span>{f.bottom}</span><span style={{display:"inline-flex",gap:14,flexWrap:"wrap"}}><a href="/termos-de-uso">Termos</a><a href="/politica-de-privacidade">Privacidade</a><a href="/politica-de-cookies">Cookies</a><a href="/cancelamento-e-reembolso">Cancelamento e reembolso</a></span></div>
     </footer>
   );
 }
