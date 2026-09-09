@@ -99,6 +99,7 @@ export function makeObject(base={}){
     assetType:base.assetType||"glb",
     visible:base.visible!==false,
     parentId:base.parentId||null,
+    anchorName:base.anchorName||"",
     position:base.position||[0,0,0],
     rotation:base.rotation||[0,0,0],
     scale:base.scale||[1,1,1],
