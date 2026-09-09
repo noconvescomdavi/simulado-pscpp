@@ -120,10 +120,26 @@ export function makeObject(base={}){
   };
 }
 
-export const DECORATIVE_OBJECTS=[
-  {key:"cis-alpha",label:"Bandeira CIS — Alpha",type:"flag",flagCode:"A",flagColors:["#ffffff","#1965a0"],position:[0,4.5,0],scale:[.9,.9,.9]},
-  {key:"cis-bravo",label:"Bandeira CIS — Bravo",type:"flag",flagCode:"B",flagColors:["#d71920"],position:[0,4.5,0],scale:[.9,.9,.9]},
-  {key:"cis-charlie",label:"Bandeira CIS — Charlie",type:"flag",flagCode:"C",flagColors:["#1965a0","#ffffff","#d71920"],position:[0,4.5,0],scale:[.9,.9,.9]},
-  {key:"cis-delta",label:"Bandeira CIS — Delta",type:"flag",flagCode:"D",flagColors:["#f3c51d","#1965a0"],position:[0,4.5,0],scale:[.9,.9,.9]},
-  {key:"cis-oscar",label:"Bandeira CIS — Oscar",type:"flag",flagCode:"O",flagColors:["#f3c51d","#d71920"],position:[0,4.5,0],scale:[.9,.9,.9]}
+const CIS_CODES="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".split("");
+const CIS_NAMES={A:"Alpha",B:"Bravo",C:"Charlie",D:"Delta",E:"Echo",F:"Foxtrot",G:"Golf",H:"Hotel",I:"India",J:"Juliett",K:"Kilo",L:"Lima",M:"Mike",N:"November",O:"Oscar",P:"Papa",Q:"Quebec",R:"Romeo",S:"Sierra",T:"Tango",U:"Uniform",V:"Victor",W:"Whiskey",X:"X-ray",Y:"Yankee",Z:"Zulu"};
+const CIS_PALETTES=[
+  ["#ffffff","#1965a0"],["#d71920"],["#1965a0","#ffffff","#d71920"],["#f3c51d","#1965a0"],
+  ["#1965a0","#d71920"],["#ffffff","#d71920"],["#f3c51d","#1965a0"],["#ffffff","#d71920"],
+  ["#f3c51d","#111111"],["#1965a0","#ffffff"],["#f3c51d","#1965a0"],["#f3c51d","#111111"],
+  ["#1965a0","#ffffff"],["#1965a0","#ffffff"],["#f3c51d","#d71920"],["#1965a0","#ffffff"],
+  ["#f3c51d"],["#d71920","#f3c51d"],["#ffffff","#1965a0"],["#d71920","#ffffff","#1965a0"],
+  ["#d71920","#ffffff"],["#ffffff","#d71920"],["#1965a0","#ffffff","#d71920"],["#ffffff","#1965a0"],
+  ["#f3c51d","#d71920"],["#f3c51d","#1965a0"]
 ];
+
+export const DECORATIVE_OBJECTS=CIS_CODES.map((code,index)=>({
+  key:"cis-"+code.toLowerCase(),
+  label:"Bandeira CIS — "+(CIS_NAMES[code]||("Numeral "+code)),
+  type:"flag",flagCode:code,
+  flagColors:CIS_PALETTES[index%26],
+  position:[0,4.5,0],scale:[.9,.9,.9]
+})).concat([
+  {key:"cis-sub1",label:"CIS — 1º substituto",type:"flag",flagCode:"S1",flagColors:["#1965a0","#f3c51d"],position:[0,4.5,0],scale:[.9,.9,.9]},
+  {key:"cis-sub2",label:"CIS — 2º substituto",type:"flag",flagCode:"S2",flagColors:["#1965a0","#ffffff"],position:[0,4.5,0],scale:[.9,.9,.9]},
+  {key:"cis-sub3",label:"CIS — 3º substituto",type:"flag",flagCode:"S3",flagColors:["#ffffff","#111111"],position:[0,4.5,0],scale:[.9,.9,.9]}
+]);
