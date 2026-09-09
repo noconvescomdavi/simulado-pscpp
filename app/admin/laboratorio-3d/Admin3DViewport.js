@@ -178,6 +178,8 @@ export default function Admin3DViewport({
     };
 
     const applyMaterial=(obj,data)=>{
+      const custom=data.material?.mode==="custom";
+      const maxAnisotropy=r.renderer.capabilities.getMaxAnisotropy();
       obj.traverse?.(o=>{
         if(!o.isMesh)return;
         meshes++;
@@ -186,11 +188,22 @@ export default function Admin3DViewport({
         triangles+=idx?Math.floor(idx/3):Math.floor(pos/3);
         const mats=Array.isArray(o.material)?o.material:[o.material];
         mats.filter(Boolean).forEach(m=>{
-          if("color" in m&&data.material?.color&&data.material.color!=="#ffffff")m.color.set(data.material.color);
-          if("roughness" in m&&data.material?.roughness!==undefined&&data.material.roughness!==.5)m.roughness=Number(data.material.roughness);
-          if("metalness" in m&&data.material?.metalness!==undefined&&data.material.metalness!==.05)m.metalness=Number(data.material.metalness);
-          if("opacity" in m&&data.material?.opacity!==undefined&&data.material.opacity!==1){m.opacity=Number(data.material.opacity);m.transparent=m.opacity<1}
-          if("emissive" in m&&data.material?.emissive&&data.material.emissive!=="#000000")m.emissive.set(data.material.emissive);
+          // Ajustes técnicos seguros: preservam o material e as texturas do GLB.
+          ["map","normalMap","roughnessMap","metalnessMap","aoMap","emissiveMap"].forEach(key=>{
+            const t=m[key];
+            if(!t?.isTexture)return;
+            t.anisotropy=maxAnisotropy;
+            if(key==="map"||key==="emissiveMap")t.colorSpace=r.THREE.SRGBColorSpace;
+            t.needsUpdate=true;
+          });
+          if(!custom)return;
+          if("color" in m&&data.material?.color)m.color.set(data.material.color);
+          if("roughness" in m&&data.material?.roughness!==undefined)m.roughness=Number(data.material.roughness);
+          if("metalness" in m&&data.material?.metalness!==undefined)m.metalness=Number(data.material.metalness);
+          if("opacity" in m&&data.material?.opacity!==undefined){m.opacity=Number(data.material.opacity);m.transparent=m.opacity<1}
+          if("emissive" in m&&data.material?.emissive)m.emissive.set(data.material.emissive);
+          if(data.material?.doubleSide)m.side=r.THREE.DoubleSide;
+          m.needsUpdate=true;
         });
       });
     };

@@ -338,20 +338,28 @@ function normalizeEditorChild(THREE,obj,target=8){
 }
 
 function applyEditorMaterial(obj,data,maxAnisotropy,THREE){
+  const custom=data.material?.mode==="custom";
   obj.traverse?.(o=>{
     if(!o.isMesh)return;
     const mats=Array.isArray(o.material)?o.material:[o.material];
     mats.filter(Boolean).forEach(m=>{
-      // Preserve imported textures. Only editor overrides are applied.
+      // Sempre preservamos os mapas importados. Estes ajustes apenas garantem
+      // color management/qualidade sem substituir Base Color/Normal/PBR.
+      ["map","normalMap","roughnessMap","metalnessMap","aoMap","emissiveMap"].forEach(key=>{
+        const t=m[key];
+        if(!t?.isTexture)return;
+        t.anisotropy=maxAnisotropy;
+        if(key==="map"||key==="emissiveMap")t.colorSpace=THREE.SRGBColorSpace;
+        t.needsUpdate=true;
+      });
+      if(!custom)return;
       if("color" in m&&data.material?.color)m.color.set(data.material.color);
       if("roughness" in m&&data.material?.roughness!==undefined)m.roughness=Number(data.material.roughness);
       if("metalness" in m&&data.material?.metalness!==undefined)m.metalness=Number(data.material.metalness);
       if("opacity" in m&&data.material?.opacity!==undefined){m.opacity=Number(data.material.opacity);m.transparent=m.opacity<1}
       if("emissive" in m&&data.material?.emissive)m.emissive.set(data.material.emissive);
-      ["map","normalMap","roughnessMap","metalnessMap","aoMap","emissiveMap"].forEach(key=>{
-        const t=m[key];if(!t?.isTexture)return;t.anisotropy=maxAnisotropy;
-        if(key==="map"||key==="emissiveMap")t.colorSpace=THREE.SRGBColorSpace;t.needsUpdate=true;
-      });
+      if(data.material?.doubleSide)m.side=THREE.DoubleSide;
+      m.needsUpdate=true;
     });
   });
 }

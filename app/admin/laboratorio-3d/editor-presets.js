@@ -116,7 +116,7 @@ export function makeObject(base={}){
     shape:base.shape||"ball",
     hotspot:base.hotspot||null,
     cable:base.cable||null,
-    material:{color:"#ffffff",roughness:.5,metalness:.05,opacity:1,emissive:"#000000",...(base.material||{})}
+    material:{mode:"original",color:"#ffffff",roughness:.5,metalness:.05,opacity:1,emissive:"#000000",doubleSide:false,...(base.material||{})}
   };
 }
 
