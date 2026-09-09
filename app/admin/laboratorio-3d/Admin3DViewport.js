@@ -306,7 +306,9 @@ export default function Admin3DViewport({
       if(child)root.add(child);
       if(scene.settings?.showAxes)root.add(new r.THREE.AxesHelper(.9));
       root.position.fromArray(data.position||[0,0,0]);
-      root.rotation.set(...(data.rotation||[0,0,0]));
+      root.position.y+=Number(data.waterline||0);
+      const baseRot=data.rotation||[0,0,0];
+      root.rotation.set(Number(baseRot[0]||0)+Number(data.heel||0)*Math.PI/180,Number(baseRot[1]||0),Number(baseRot[2]||0)+Number(data.trim||0)*Math.PI/180);
       root.scale.fromArray(data.scale||[1,1,1]);
       root.visible=data.visible!==false;
       roots.set(data.id,root);
