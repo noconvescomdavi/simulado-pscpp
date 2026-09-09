@@ -33,6 +33,7 @@ export default function Admin3DEditor(){
   const [scenes,setScenes]=useState([]);
   const [scene,setScene]=useState(clone(EMPTY));
   const [selected,setSelected]=useState(null);
+  const [selectedIds,setSelectedIds]=useState([]);
   const [mode,setMode]=useState("translate");
   const [tab,setTab]=useState("object");
   const [status,setStatus]=useState("");
@@ -133,7 +134,7 @@ export default function Admin3DEditor(){
       systemScene:!!row.systemScene,liveStudentScene:!!row.liveStudentScene,
       config:{...clone(EMPTY.config),...(row.config||{}),settings:{...EMPTY.config.settings,...(row.config?.settings||{})}}
     });
-    setSelected(null);setHistory([]);setFuture([]);setAbCompare(null);
+    setSelected(null);setSelectedIds([]);setHistory([]);setFuture([]);setAbCompare(null);
     setPublishedBaseline(row.publishedSnapshot?clone(row.publishedSnapshot):(row.systemScene?clone(row):null));
     if(fetchVersions&&row.id)load(row.id);
   }
@@ -189,12 +190,35 @@ export default function Admin3DEditor(){
   }
 
   function removeObject(){
-    if(!selected)return;
+    const ids=selectedIds.length?selectedIds:(selected?[selected]:[]);
+    if(!ids.length)return;
     mutate(s=>{
-      s.config.objects=s.config.objects.filter(o=>o.id!==selected);
-      for(const o of s.config.objects)if(o.parentId===selected)o.parentId=null;
+      s.config.objects=s.config.objects.filter(o=>!ids.includes(o.id));
+      for(const o of s.config.objects)if(ids.includes(o.parentId))o.parentId=null;
     });
-    setSelected(null);
+    setSelected(null);setSelectedIds([]);
+  }
+
+  function selectOutlinerObject(e,id){
+    if(e.shiftKey||e.ctrlKey||e.metaKey){
+      setSelectedIds(list=>list.includes(id)?list.filter(x=>x!==id):[...list,id]);
+      setSelected(id);setTab("object");return;
+    }
+    setSelected(id);setSelectedIds([id]);setTab("object");
+  }
+
+  function bulkPatch(patch){
+    const ids=selectedIds.length?selectedIds:(selected?[selected]:[]);
+    if(!ids.length)return;
+    mutate(s=>{for(const o of s.config.objects)if(ids.includes(o.id))Object.assign(o,patch)});
+  }
+
+  function groupSelection(){
+    const ids=selectedIds.length?selectedIds:(selected?[selected]:[]);
+    if(ids.length<2){setStatus("Selecione pelo menos dois objetos com Shift/Ctrl.");return}
+    const group=makeObject({name:"Grupo",type:"hotspot",visible:false,hotspot:{title:"Grupo",body:"Container editorial"}});
+    mutate(s=>{s.config.objects.push(group);for(const o of s.config.objects)if(ids.includes(o.id))o.parentId=group.id});
+    setSelected(group.id);setSelectedIds([group.id]);setStatus("Objetos agrupados.");
   }
 
   function duplicateObject(){
@@ -553,7 +577,7 @@ export default function Admin3DEditor(){
         <h3>TEMPLATES · CRIAR NOVA CENA</h3><div className={styles.chips}>{SCENE_TEMPLATES.map(t=><button key={t.key} onClick={()=>applyTemplate(t)}>{t.label}</button>)}</div>
 
         <h3>OUTLINER</h3>
-        <div className={styles.outliner}>{(cfg.objects||[]).map(o=><button key={o.id} className={selected===o.id?styles.active:""} onClick={()=>{setSelected(o.id);setTab("object")}} style={{paddingLeft:8+(o.parentId?14:0)}}><span>{o.type.includes("Light")?"💡":o.type==="shape"?"◆":o.type==="cable"?"〰":o.type==="measure"?"↔":o.type==="hotspot"?"◉":"◫"}</span><b>{o.name}</b><small>{o.locked?"🔒":""}</small></button>)}</div>
+        <div className={styles.miniActions}><button onClick={()=>bulkPatch({visible:false})}>Ocultar</button><button onClick={()=>bulkPatch({visible:true})}>Mostrar</button><button onClick={()=>bulkPatch({locked:true})}>Travar</button><button onClick={()=>bulkPatch({locked:false})}>Destravar</button><button onClick={groupSelection}>Agrupar</button></div><div className={styles.outliner}>{(cfg.objects||[]).map(o=><button key={o.id} className={(selectedIds.includes(o.id)||selected===o.id)?styles.active:""} onClick={e=>selectOutlinerObject(e,o.id)} style={{paddingLeft:8+(o.parentId?14:0)}}><span>{o.type.includes("Light")?"💡":o.type==="shape"?"◆":o.type==="cable"?"〰":o.type==="measure"?"↔":o.type==="hotspot"?"◉":"◫"}</span><b>{o.name}</b><small>{o.locked?"🔒":""}</small></button>)}</div>
 
         <h3>ADICIONAR</h3>
         <div className={styles.addGrid}>
@@ -628,6 +652,11 @@ export default function Admin3DEditor(){
           <div className={styles.vecTitle}>Rotação (rad)</div><div className={styles.vec}>{["X","Y","Z"].map((x,i)=><label key={x}>{x}<input type="number" step=".05" value={obj.rotation[i]} onChange={e=>patchVec("rotation",i,e.target.value)}/></label>)}</div>
           <div className={styles.vecTitle}>Escala</div><div className={styles.vec}>{["X","Y","Z"].map((x,i)=><label key={x}>{x}<input type="number" step=".05" value={obj.scale[i]} onChange={e=>patchVec("scale",i,e.target.value)}/></label>)}</div>
           {obj.type==="model"&&<><div className={styles.vecTitle}>Pivô</div><div className={styles.vec}>{["X","Y","Z"].map((x,i)=><label key={x}>{x}<input type="number" step=".05" value={(obj.pivot||[0,0,0])[i]} onChange={e=>patchVec("pivot",i,e.target.value)}/></label>)}</div>
+            <h4>Hidroestática / orientação</h4>
+            <label>Linha d'água / calado visual (m)<input type="range" min="-5" max="5" step=".05" value={obj.waterline??0} onChange={e=>patchObject({waterline:Number(e.target.value)})}/><small>{Number(obj.waterline||0).toFixed(2)} m</small></label>
+            <label>Trim (°)<input type="number" min="-20" max="20" step=".1" value={obj.trim??0} onChange={e=>patchObject({trim:Number(e.target.value)})}/></label>
+            <label>Banda / heel (°)<input type="number" min="-45" max="45" step=".1" value={obj.heel??0} onChange={e=>patchObject({heel:Number(e.target.value)})}/></label>
+            <div className={styles.miniActions}><button onClick={()=>patchObject({trim:0,heel:0})}>Nivelar navio</button><button onClick={()=>patchObject({waterline:0})}>Zerar waterline</button></div>
             <h4>Material do modelo</h4>
             <div className={styles.materialMode}>
               <button className={(obj.material?.mode||"original")==="original"?styles.materialActive:""} onClick={()=>patchMaterial({mode:"original"})}>Usar material original do GLB</button>
