@@ -5,6 +5,7 @@ import EditorToolbox from "./EditorToolbox";
 import FlashcardManager from "./FlashcardManager";
 import BlockInspector from "./BlockInspector";
 import BlockTree from "./BlockTree";
+import StudioMenu from "./StudioMenu";
 
 const SITE_MAP = [
   {group:"Institucional",pages:[
@@ -54,7 +55,7 @@ const STYLE_KEYS = [
   "display","flexDirection","justifyContent","alignItems","gap",
   "position","top","right","bottom","left","zIndex","opacity","overflow","objectFit","objectPosition",
   "backgroundImage","backgroundSize","backgroundPosition","backgroundRepeat","boxShadow","filter",
-  "textTransform","textDecoration","whiteSpace","cursor","translate"
+  "textTransform","textDecoration","whiteSpace","cursor","translate","transform","transition","aspectRatio","mixBlendMode","clipPath"
 ];
 
 const emptyStyle = () => Object.fromEntries(STYLE_KEYS.map(k=>[k,""]));
@@ -152,6 +153,7 @@ export default function EditorClient(){
   const [styleOverrides,setStyleOverrides]=useState({});
   const [attrs,setAttrs]=useState({});
   const [attrsOverrides,setAttrsOverrides]=useState({});
+  const [motion,setMotion]=useState({entrance:"none",duration:"500",delay:"0",hover:"none",click:"none"});
   const [hidden,setHidden]=useState(false);
   const [tab,setTab]=useState("content");
   const [status,setStatus]=useState("");
@@ -161,7 +163,9 @@ export default function EditorClient(){
   const [fitScale,setFitScale]=useState(1);
   const [toolboxOpen,setToolboxOpen]=useState(false);
   const [flashcardManagerOpen,setFlashcardManagerOpen]=useState(false);
+  const [studioMenuOpen,setStudioMenuOpen]=useState(false);
   const [moveMode,setMoveMode]=useState(false);
+  const [snapSize,setSnapSize]=useState(1);
   const [showGrid,setShowGrid]=useState(false);
   const [snap,setSnap]=useState(true);
   const [layers,setLayers]=useState([]);
@@ -179,6 +183,7 @@ export default function EditorClient(){
   const moveModeRef=useRef(moveMode);
   const gridRef=useRef(showGrid);
   const snapRef=useRef(snap);
+  const snapSizeRef=useRef(snapSize);
 
   const dirty=useMemo(()=>design&&original&&JSON.stringify(design)!==JSON.stringify(original),[design,original]);
   const selectedBlock=useMemo(()=>findBlock(design?.pages?.[page]?.blocks||[],selectedBlockId),[design,page,selectedBlockId]);
@@ -209,6 +214,7 @@ export default function EditorClient(){
   useEffect(()=>{moveModeRef.current=moveMode},[moveMode]);
   useEffect(()=>{gridRef.current=showGrid;try{iframeRef.current?.contentDocument?.documentElement?.classList.toggle("ev-editor-grid",showGrid)}catch{}},[showGrid]);
   useEffect(()=>{snapRef.current=snap},[snap]);
+  useEffect(()=>{snapSizeRef.current=snapSize},[snapSize]);
   useEffect(()=>{
     if(!target?.selector)return;
     const timer=setTimeout(()=>selectBySelector(target.selector),60);
@@ -336,7 +342,7 @@ export default function EditorClient(){
     setLocked(Boolean(current?.locked));setCloneCount(Number(current?.cloneCount||0));
     setTarget({selector,tag:el.tagName.toLowerCase(),label:(el.innerText||el.textContent||el.getAttribute?.("alt")||el.tagName).trim().slice(0,120)});
     setStyle({...base,...inherited,...overrides});setStyleOverrides(overrides);
-    setAttrs({...a,...ao});setAttrsOverrides(ao);setHidden(Boolean(current?.hidden));
+    setAttrs({...a,...ao});setAttrsOverrides(ao);setMotion({entrance:"none",duration:"500",delay:"0",hover:"none",click:"none",...(current?.motion||{})});setHidden(Boolean(current?.hidden));
     if(el.tagName==="IMG") setTab("media"); else if(el.children.length===0) setTab("content"); else setTab("design");
   }
 
@@ -359,44 +365,49 @@ export default function EditorClient(){
     const click=e=>{e.preventDefault();e.stopPropagation();if(drag)return;if(selected)selected.removeAttribute("data-ev-selected");selected=e.target;selected.setAttribute("data-ev-selected","");selectElement(selected)};
 
     const down=e=>{
-      if(!moveModeRef.current || locked || !selected || e.target!==selected)return;
+      if(!moveModeRef.current)return;
       e.preventDefault();e.stopPropagation();
-      const current=String(selected.style.translate||doc.defaultView.getComputedStyle(selected).translate||"").trim();
-      const nums=current.match(/-?\d+(?:\.\d+)?/g)||[];
-      drag={el:selected,startX:e.clientX,startY:e.clientY,baseX:Number(nums[0]||0),baseY:Number(nums[1]||0),x:Number(nums[0]||0),y:Number(nums[1]||0)};
+      if(selected)selected.removeAttribute("data-ev-selected");
+      const blockRoot=e.target?.closest?.("[data-estibordo-editor-block]");
+      selected=blockRoot||e.target;
+      selected?.setAttribute("data-ev-selected","");
+      selectElement(selected);
+      const rect=selected.getBoundingClientRect();
+      const parent=selected.offsetParent||selected.parentElement||doc.body;
+      const parentRect=parent.getBoundingClientRect();
+      const baseX=Math.round(rect.left-parentRect.left+(parent.scrollLeft||0));
+      const baseY=Math.round(rect.top-parentRect.top+(parent.scrollTop||0));
+      drag={el:selected,blockId:blockRoot?.getAttribute("data-estibordo-editor-block")||null,startX:e.clientX,startY:e.clientY,baseX,baseY,x:baseX,y:baseY,width:Math.round(rect.width),original:selected.getAttribute("style")||"",activated:false};
       selected.setAttribute("data-ev-dragging","");
     };
 
     const move=e=>{
       if(!drag)return;
-      let x=drag.baseX+(e.clientX-drag.startX),y=drag.baseY+(e.clientY-drag.startY);
-      if(snapRef.current){x=Math.round(x/5)*5;y=Math.round(y/5)*5}
-      drag.x=x;drag.y=y;drag.el.style.translate=`${x}px ${y}px`;
+      const dx=e.clientX-drag.startX,dy=e.clientY-drag.startY;
+      if(!drag.activated&&Math.hypot(dx,dy)<2)return;
+      if(!drag.activated){
+        drag.activated=true;
+        drag.el.style.position="absolute";drag.el.style.width=drag.width+"px";drag.el.style.margin="0";drag.el.style.translate="none";
+        drag.el.style.zIndex=String(Math.max(1,Number(doc.defaultView.getComputedStyle(drag.el).zIndex)||1));
+      }
+      const step=snapRef.current?Math.max(1,Number(snapSizeRef.current)||1):1;
+      let x=drag.baseX+dx,y=drag.baseY+dy;x=Math.round(x/step)*step;y=Math.round(y/step)*step;
+      drag.x=x;drag.y=y;drag.el.style.left=x+"px";drag.el.style.top=y+"px";
     };
 
     const up=()=>{
       if(!drag)return;
-      const selector=selectorFor(drag.el);
-      const value=`${drag.x}px ${drag.y}px`;
-      drag.el.removeAttribute("data-ev-dragging");
-      if(targetRef.current?.selector===selector){
-        remember();
-        setStyle(s=>({...s,translate:value}));
-        setStyleOverrides(prev=>{
-          const so={...prev,translate:value};
-          setDesign(current=>{
-            const n=clone(current||{version:2,global:{favicon:"",elements:{}},pages:{}});
-            n.global||={favicon:"",elements:{}};n.global.elements||={};n.pages||={};
-            const config={style:so,attrs:{...attrsOverrides},hidden:Boolean(hidden)};
-            if(scopeRef.current==="global")n.global.elements[selector]=config;
-            else{const p=pageRef.current;n.pages[p]||={elements:{}};n.pages[p].elements||={};n.pages[p].elements[selector]=config}
-            return n;
-          });
-          return so;
-        });
-        setStatus("Posição alterada por arraste. Salve para publicar.");
+      const currentDrag=drag;drag=null;currentDrag.el.removeAttribute("data-ev-dragging");
+      if(!currentDrag.activated){if(currentDrag.original)currentDrag.el.setAttribute("style",currentDrag.original);else currentDrag.el.removeAttribute("style");return}
+      const patch={position:"absolute",left:currentDrag.x+"px",top:currentDrag.y+"px",width:currentDrag.width+"px",translate:"none",marginLeft:"0px",marginTop:"0px"};
+      if(currentDrag.blockId){
+        updateBlock(currentDrag.blockId,b=>{if(viewport==="desktop")b.style={...(b.style||{}),...patch};else{b.responsive={...(b.responsive||{})};b.responsive[viewport]={...(b.responsive[viewport]||{}),style:{...(b.responsive?.[viewport]?.style||{}),...patch}}}return b;},"Posição absoluta pixel-perfect salva neste breakpoint.");
+        setSelectedBlockId(currentDrag.blockId);setTarget(null);
+      }else{
+        const selector=selectorFor(currentDrag.el);remember();setStyle(s=>({...s,...patch}));setStyleOverrides(prev=>({...prev,...patch}));
+        setDesign(current=>{const n=clone(current||{version:5,global:{favicon:"",elements:{}},pages:{}});n.global||={favicon:"",elements:{}};n.global.elements||={};n.pages||={};const holder=scopeRef.current==="global"?n.global.elements:((n.pages[pageRef.current]||={elements:{}}).elements||=( {} ));const config=holder[selector]||{};if(viewport==="desktop")config.style={...(config.style||{}),...patch};else{config.responsive={...(config.responsive||{})};config.responsive[viewport]={...(config.responsive[viewport]||{}),style:{...(config.responsive?.[viewport]?.style||{}),...patch}}}holder[selector]=config;return n});
+        setStatus("Posição absoluta pixel-perfect salva neste breakpoint.");
       }
-      drag=null;
     };
 
     doc.addEventListener("mouseover",over,true);
@@ -426,6 +437,7 @@ export default function EditorClient(){
       }
       if(nextLocked)config.locked=true;else delete config.locked;
       if(Number(nextCloneCount)>0)config.cloneCount=Math.min(10,Number(nextCloneCount));else delete config.cloneCount;
+      config.motion={...motion};
       holder[target.selector]=config;
       return n;
     });
@@ -532,6 +544,15 @@ export default function EditorClient(){
     setTimeout(()=>iframeRef.current?.contentWindow?.location.reload(),50);
   }
 
+  function breakpoints(){return design?.global?.breakpoints||{tablet:1024,mobile:620};}
+  function updateBreakpoints(patch){remember();setDesign(prev=>{const n=clone(prev);n.global||={};n.global.breakpoints={tablet:1024,mobile:620,...(n.global.breakpoints||{}),...patch};return n});setStatus("Breakpoints atualizados.")}
+  function customCode(){return design?.pages?.[page]?.customCode||{css:"",html:""};}
+  function updateCustomCode(patch){remember();setDesign(prev=>{const n=clone(prev);n.pages||={};n.pages[page]||={elements:{},blocks:[],settings:{}};n.pages[page].customCode={...(n.pages[page].customCode||{}),...patch};return n});setStatus("Código customizado atualizado na prévia segura.")}
+  function setMotionValue(key,value){const next={...motion,[key]:value};setMotion(next);remember();setDesign(prev=>{const n=clone(prev);n.global||={elements:{}};n.global.elements||={};n.pages||={};const holder=scope==="global"?n.global.elements:((n.pages[page]||={elements:{}}).elements||=( {} ));const config=holder[target?.selector]||{};config.motion=next;holder[target.selector]=config;return n});setStatus("Interação atualizada.")}
+  function setBlockMotion(key,value){if(!selectedBlockId)return;updateBlock(selectedBlockId,b=>({...b,motion:{entrance:"none",duration:"500",delay:"0",hover:"none",click:"none",...(b.motion||{}),[key]:value}}),"Interação do bloco atualizada.")}
+  function addIconAsset(icon){const id="blk_icon_"+Math.random().toString(36).slice(2,8);const block={id,type:"icon",title:icon.name,svgPath:icon.path,style:{width:"64px",height:"64px",color:"#0b3b5b"}};remember();setDesign(prev=>{const n=clone(prev);n.pages||={};n.pages[page]||={elements:{},blocks:[],settings:{}};n.pages[page].blocks=[...(n.pages[page].blocks||[]),block];return n});setSelectedBlockId(id);setTarget(null);setStudioMenuOpen(false);setStatus("Ícone adicionado ao canvas.")}
+  function importExternalImage(asset){const id="blk_image_"+Math.random().toString(36).slice(2,8);const block={id,type:"image",src:asset.url,alt:asset.name||"Imagem marítima",style:{maxWidth:"100%",height:"auto",objectFit:"cover"}};remember();setDesign(prev=>{const n=clone(prev);n.global||={};n.global.media=[...(n.global.media||[]),{name:asset.name||"Imagem externa",url:asset.url,type:"image/external",source:asset.source||"",license:asset.license||"",createdAt:new Date().toISOString()}];n.pages||={};n.pages[page]||={elements:{},blocks:[],settings:{}};n.pages[page].blocks=[...(n.pages[page].blocks||[]),block];return n});setSelectedBlockId(id);setTarget(null);setStudioMenuOpen(false);setStatus("Imagem externa adicionada com fonte e licença.")}
+
   function updatePageSettings(patch){
     remember();
     setDesign(prev=>{const n=clone(prev||{version:2,global:{favicon:"",elements:{},media:[]},pages:{}});n.pages||={};n.pages[page]||={elements:{},blocks:[],settings:{}};n.pages[page].settings={...(n.pages[page].settings||{}),...patch};return n});
@@ -608,7 +629,7 @@ export default function EditorClient(){
 
   async function save(){
     if(!design)return;setSaving(true);setStatus("Criando checkpoint e publicando...");
-    const payload=clone(design);payload.version=4;payload.global||={};
+    const payload=clone(design);payload.version=5;payload.global||={};
     const snapshot=clone(payload);if(snapshot.global)delete snapshot.global.versions;
     payload.global.versions=[...(payload.global.versions||[]),{id:"ver_"+Date.now().toString(36),createdAt:new Date().toISOString(),page,label:pageLabel,snapshot}].slice(-6);
     const r=await fetch("/api/site-editor/design/save",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({content:payload,sha})});
@@ -627,9 +648,8 @@ export default function EditorClient(){
 
   return <main className="ev-app">
     <header className="ev-topbar">
-      <div className="ev-brand"><b>ESTIBORDO</b><span>EDITOR VISUAL</span></div>
-      <button className="ev-add-main" type="button" onClick={()=>setToolboxOpen(true)}>＋ Adicionar</button>
-      <button className="ev-flash-main" type="button" onClick={()=>setFlashcardManagerOpen(true)}>▣ Flashcards</button>
+      <button className="ev-hamburger" type="button" onClick={()=>setStudioMenuOpen(true)} aria-label="Abrir ferramentas"><span></span><span></span><span></span></button>
+      <div className="ev-brand"><b>ESTIBORDO</b><span>EDITOR STUDIO</span></div>
       <div className="ev-device">
         {["desktop","tablet","mobile"].map(v=><button key={v} className={viewport===v?"is-active":""} onClick={()=>{setViewport(v);setZoom(100)}}>{v==="desktop"?"Desktop":v==="tablet"?"Tablet":"Mobile"}</button>)}
         <span className="ev-breakpoint-badge">{viewport==="desktop"?"BASE":viewport.toUpperCase()}</span>
@@ -637,14 +657,16 @@ export default function EditorClient(){
       <div className="ev-toolbar">
         <button onClick={undo} disabled={!undoStack.length} title="Desfazer">↶</button>
         <button onClick={redo} disabled={!redoStack.length} title="Refazer">↷</button>
-        <button className={moveMode?"is-active":""} onClick={()=>setMoveMode(v=>!v)} title="Mover elementos por arraste">✥ Mover</button>
+        <button className={moveMode?"is-active":""} onClick={()=>setMoveMode(v=>!v)} title="Posicionamento absoluto por arraste">✥ Livre</button>
         <button className={showGrid?"is-active":""} onClick={()=>setShowGrid(v=>!v)} title="Mostrar grade"># Grade</button>
-        <button className={snap?"is-active":""} onClick={()=>setSnap(v=>!v)} title="Ajustar movimento em passos de 5 px">⊞ Snap</button>
+        <button className={snap?"is-active":""} onClick={()=>setSnap(v=>!v)} title="Ativar/desativar snapping">⊞ Snap</button>
+        <select className="ev-snap-size" value={snapSize} onChange={e=>setSnapSize(Number(e.target.value))} title="Precisão do snap"><option value="1">1 px</option><option value="5">5 px</option><option value="10">10 px</option><option value="20">20 px</option></select>
         <div className="ev-zoom"><button onClick={()=>setZoom(z=>Math.max(40,z-10))}>−</button><span>{zoom}%</span><button onClick={()=>setZoom(z=>Math.min(160,z+10))}>+</button><button onClick={()=>setZoom(100)}>100</button></div>
       </div>
       <div className="ev-actions"><span className={dirty?"ev-dirty":"ev-saved"}>{dirty?"Alterações não publicadas":"Tudo salvo"}</span><a href={page} target="_blank">Abrir página ↗</a><button className="ev-publish" disabled={!dirty||saving} onClick={save}>{saving?"Publicando…":"Salvar e publicar"}</button></div>
     </header>
 
+    <StudioMenu open={studioMenuOpen} onClose={()=>setStudioMenuOpen(false)} siteMap={siteMap} page={page} onPageChange={url=>{setPage(url);setTarget(null);setSelectedBlockId(null);setStudioMenuOpen(false)}} layers={layers} onSelectLayer={selector=>{selectBySelector(selector);setStudioMenuOpen(false)}} blocks={design?.pages?.[page]?.blocks||[]} selectedBlockId={selectedBlockId} onSelectBlock={id=>{setSelectedBlockId(id);setTarget(null);setStudioMenuOpen(false)}} onOpenBuilder={()=>{setStudioMenuOpen(false);setToolboxOpen(true)}} onOpenFlashcards={()=>{setStudioMenuOpen(false);setFlashcardManagerOpen(true)}} media={design?.global?.media||[]} onUploadMedia={uploadLibraryMedia} onAddIcon={addIconAsset} onImportImage={importExternalImage} customCode={customCode()} onCustomCode={updateCustomCode} breakpoints={breakpoints()} onBreakpoints={updateBreakpoints}/>
     <EditorToolbox open={toolboxOpen} onClose={()=>setToolboxOpen(false)} onAdd={addBlock} onAction={toolboxAction} pageSettings={pageConfig()} onPageSettings={updatePageSettings} media={design?.global?.media||[]} onUploadMedia={uploadLibraryMedia} designSystem={designSystem()} onDesignSystem={updateDesignSystem} components={components()} onApplyComponent={applyComponent} onDeleteComponent={deleteComponent} versions={versions()} onRestoreVersion={restoreVersion} onCreatePage={createManagedPage} pageTemplates={PAGE_TEMPLATE_OPTIONS} onApplyPageTemplate={applyPageTemplate}/>
     <FlashcardManager open={flashcardManagerOpen} onClose={()=>setFlashcardManagerOpen(false)} initialSlug={page.startsWith("/flashcards/")?page.split("/")[2]:"cis"} onChanged={()=>setStatus("Flashcard salvo no banco. Atualize a prévia para conferir.")}/>
     <div className="ev-workspace">
@@ -664,14 +686,14 @@ export default function EditorClient(){
       </section>
 
       <aside className="ev-inspector">
-        {selectedBlock ? <BlockInspector block={selectedBlock} viewport={viewport} onField={setBlockField} onStyle={setBlockStyle} onLayoutPreset={applyBlockLayoutPreset} onMove={moveBlock} onDuplicate={duplicateBlock} onWrap={wrapBlock} onPromote={promoteBlock} onDelete={deleteBlock} isContainer={CONTAINER_TYPES.has(selectedBlock.type)}/> : !target ? <div className="ev-empty"><div className="ev-empty-icon">✦</div><h3>Selecione um elemento</h3><p>Clique em um texto, botão, imagem, card, cabeçalho ou menu na prévia. As ferramentas de edição aparecerão aqui.</p><div className="ev-tip"><b>Dica</b><span>Para cabeçalho, menu, logo ou rodapé, use o escopo <strong>Todo o site</strong>.</span></div></div> :
+        {selectedBlock ? <BlockInspector block={selectedBlock} viewport={viewport} onField={setBlockField} onStyle={setBlockStyle} onLayoutPreset={applyBlockLayoutPreset} onMove={moveBlock} onDuplicate={duplicateBlock} onWrap={wrapBlock} onPromote={promoteBlock} onDelete={deleteBlock} isContainer={CONTAINER_TYPES.has(selectedBlock.type)} onMotion={setBlockMotion}/> : !target ? <div className="ev-empty"><div className="ev-empty-icon">✦</div><h3>Selecione um elemento</h3><p>Clique em um texto, botão, imagem, card, cabeçalho ou menu na prévia. As ferramentas de edição aparecerão aqui.</p><div className="ev-tip"><b>Dica</b><span>Para cabeçalho, menu, logo ou rodapé, use o escopo <strong>Todo o site</strong>.</span></div></div> :
         <>
           <div className="ev-inspector-head"><div><span>{target.tag.toUpperCase()}</span><b>{target.label||"Elemento selecionado"}</b></div><code title={target.selector}>{target.selector}</code></div>
           <div className="ev-responsive-note"><b>{viewport==="desktop"?"BASE / DESKTOP":viewport.toUpperCase()}</b><span>{viewport==="desktop"?"Estilo base herdado pelos outros dispositivos.":"Alterações de estilo ficam exclusivas deste breakpoint."}</span></div>
           <div className="ev-object-tools"><button type="button" onClick={copyStyle}>Copiar estilo</button><button type="button" disabled={!styleClipboard} onClick={pasteStyle}>Colar estilo</button><button type="button" onClick={saveSelectionAsComponent}>＋ Componente</button><button type="button" onClick={()=>bringForward(1)}>Frente +</button><button type="button" onClick={()=>bringForward(-1)}>Trás −</button></div>
           <div className="ev-section-actions"><button onClick={()=>moveSelected(-1)}>↑ Mover seção</button><button onClick={()=>moveSelected(1)}>↓ Mover seção</button><button onClick={()=>changeCloneCount(Math.min(10,cloneCount+1))}>Duplicar · Ctrl+D</button><button onClick={()=>toggleHidden(true)}>Excluir · Del</button></div>
           <div className="ev-scope"><span>Aplicar em</span><button className={scope==="page"?"is-active":""} onClick={()=>setScope("page")}>Só esta página</button><button className={scope==="global"?"is-active":""} onClick={()=>setScope("global")}>Todo o site</button></div>
-          <nav className="ev-tabs">{[["content","Conteúdo"],["design","Design"],["media","Imagem"],["layout","Layout"]].map(([id,label])=><button key={id} className={tab===id?"is-active":""} onClick={()=>setTab(id)}>{label}</button>)}</nav>
+          <nav className="ev-tabs ev-tabs-5">{[["content","Conteúdo"],["design","Design"],["media","Imagem"],["layout","Layout"],["motion","Interações"]].map(([id,label])=><button key={id} className={tab===id?"is-active":""} onClick={()=>setTab(id)}>{label}</button>)}</nav>
           <div className="ev-inspector-scroll">
             {tab==="content"&&<>
               {"text" in attrs&&<label className="ev-field"><span>Texto</span><textarea rows="6" value={attrs.text||""} onChange={e=>setAttr("text",e.target.value)}/></label>}
@@ -696,6 +718,10 @@ export default function EditorClient(){
               <div className="ev-media-card"><b>Trocar imagem pelo computador</b><p>PNG, JPG, WEBP, GIF ou AVIF. Máximo 5 MB.</p><label className="ev-upload"><input type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/avif" onChange={e=>upload(e.target.files?.[0],"src")}/><span>{uploading?"Enviando…":"Escolher imagem"}</span></label></div>
               {"src" in attrs&&<><TextField label="URL da imagem" value={attrs.src} onChange={v=>setAttr("src",v)}/><TextField label="Texto alternativo (ALT)" value={attrs.alt} onChange={v=>setAttr("alt",v)}/><div className="ev-grid2"><SelectField label="Ajuste" value={style.objectFit} onChange={v=>setStyleValue("objectFit",v)} options={["cover","contain","fill","none"]}/><TextField label="Posição" value={style.objectPosition} onChange={v=>setStyleValue("objectPosition",v)} placeholder="center center"/></div></>}
               <div className="ev-media-card"><b>Imagem de fundo</b><p>Use quando o elemento selecionado for uma seção, card ou banner.</p><label className="ev-upload secondary"><input type="file" accept="image/*" onChange={e=>upload(e.target.files?.[0],"background")}/><span>Enviar como fundo</span></label></div>
+              <h4 className="ev-subtitle">LOGO & IMAGE STUDIO</h4><div className="ev-image-presets"><button type="button" onClick={()=>{setStyleValue("objectFit","contain");setStyleValue("filter","none");setStyleValue("transform","none")}}>Logo limpo</button><button type="button" onClick={()=>setStyleValue("filter","grayscale(1)")}>P&B</button><button type="button" onClick={()=>setStyleValue("filter","contrast(1.18) saturate(1.12)")}>Contraste</button><button type="button" onClick={()=>setStyleValue("filter","brightness(1.05) saturate(1.25)")}>Vibrante</button></div>
+              <TextField label="Filtro CSS" value={style.filter} onChange={v=>setStyleValue("filter",v)} placeholder="brightness(1) contrast(1) saturate(1)"/>
+              <div className="ev-grid2"><TextField label="Transformação" value={style.transform} onChange={v=>setStyleValue("transform",v)} placeholder="rotate(0deg) scale(1)"/><TextField label="Aspect ratio" value={style.aspectRatio} onChange={v=>setStyleValue("aspectRatio",v)} placeholder="16 / 9"/></div>
+              <div className="ev-grid2"><TextField label="Clip-path" value={style.clipPath} onChange={v=>setStyleValue("clipPath",v)} placeholder="inset(0 round 12px)"/><SelectField label="Blend" value={style.mixBlendMode} onChange={v=>setStyleValue("mixBlendMode",v)} options={["normal","multiply","screen","overlay","darken","lighten"]}/></div>
             </>}
 
             {tab==="layout"&&<>
@@ -714,6 +740,7 @@ export default function EditorClient(){
               <h4 className="ev-subtitle">FUNDO</h4>
               <div className="ev-grid2"><SelectField label="Tamanho do fundo" value={style.backgroundSize} onChange={v=>setStyleValue("backgroundSize",v)} options={["cover","contain","auto"]}/><TextField label="Posição do fundo" value={style.backgroundPosition} onChange={v=>setStyleValue("backgroundPosition",v)} placeholder="center center"/></div>
             </>}
+            {tab==="motion"&&<div className="ev-motion-panel"><SelectField label="Entrada" value={motion.entrance} onChange={v=>setMotionValue("entrance",v)} options={["none","fade","slide-up","slide-left","slide-right","zoom","rotate"]}/><div className="ev-grid2"><TextField label="Duração (ms)" value={motion.duration} onChange={v=>setMotionValue("duration",v)} placeholder="500"/><TextField label="Atraso (ms)" value={motion.delay} onChange={v=>setMotionValue("delay",v)} placeholder="0"/></div><SelectField label="Hover" value={motion.hover} onChange={v=>setMotionValue("hover",v)} options={["none","lift","zoom","glow","tilt","fade"]}/><SelectField label="Clique" value={motion.click} onChange={v=>setMotionValue("click",v)} options={["none","pulse","shake","pop"]}/><p className="ev-help">Interações declarativas compatíveis com CSP, sem JavaScript arbitrário.</p></div>}
             <div className="ev-pro-tools"><label><input type="checkbox" checked={locked} onChange={e=>toggleLocked(e.target.checked)}/> Bloquear no editor</label><label>Duplicatas <input type="number" min="0" max="10" value={cloneCount} onChange={e=>changeCloneCount(e.target.value)}/></label></div>
             <div className="ev-danger-zone"><label><input type="checkbox" checked={hidden} onChange={e=>toggleHidden(e.target.checked)}/> Ocultar elemento</label><button type="button" onClick={resetTarget}>Restaurar este elemento</button></div>
             {status&&<div className="ev-status">{status}</div>}
