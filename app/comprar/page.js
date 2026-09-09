@@ -101,7 +101,7 @@ export default async function Page({searchParams}){
                   </div>
                 )}
 
-                <form action="/api/payments/mercado-pago/checkout" method="post">
+                <div className={styles.notice}>Antes de comprar, consulte o <a href="/termos-de-uso" target="_blank">resumo contratual e Termos</a> e a <a href="/cancelamento-e-reembolso" target="_blank">Política de Cancelamento e Reembolso</a>. A compra concede 365 dias de acesso e não possui renovação automática.</div>\n\n                <form action="/api/payments/mercado-pago/checkout" method="post">
                   <button className={styles.primary} disabled={!c.ready||!ready}>Ir para o Mercado Pago</button>
                 </form>
 
