@@ -57,6 +57,13 @@ async function loadRawModel(THREE,config,onProgress){
   if(config.type==="glb"){
     const gltf=await loadProgress(new THREE.GLTFLoader(),config.url,onProgress);
     if(!gltf?.scene)throw new Error("GLB carregado sem scene.");
+    gltf.scene.traverse?.(obj=>{
+      if(!obj.isMesh||!obj.geometry)return;
+      if(!obj.geometry.attributes?.normal&&obj.geometry.attributes?.position){
+        obj.geometry.computeVertexNormals();
+        obj.geometry.attributes.normal.needsUpdate=true;
+      }
+    });
     return gltf.scene;
   }
   return loadProgress(new THREE.FBXLoader(),config.url,onProgress);
@@ -588,6 +595,36 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
 
         vesselRoot.updateMatrixWorld(true);
 
+        // Diagnóstico autoritativo do asset já carregado: evita considerar
+        // "material" como sinônimo de "textura" e deixa evidente quando um GLB
+        // foi exportado sem mapas.
+        const textureSet=new Set();
+        let baseColorMapCount=0,normalMapCount=0,roughnessMapCount=0,metalnessMapCount=0,aoMapCount=0,emissiveMapCount=0;
+        let uvMeshCount=0,missingUvMeshCount=0;
+        meshCount=0;
+        materialCount=0;
+        vesselRoot.traverse(obj=>{
+          if(!obj.isMesh)return;
+          meshCount++;
+          if(obj.geometry?.attributes?.uv)uvMeshCount++;else missingUvMeshCount++;
+          const materials=(Array.isArray(obj.material)?obj.material:[obj.material]).filter(Boolean);
+          materialCount+=materials.length;
+          materials.forEach(material=>{
+            [["map","base"],["normalMap","normal"],["roughnessMap","rough"],["metalnessMap","metal"],["aoMap","ao"],["emissiveMap","emissive"]].forEach(([key,type])=>{
+              const texture=material[key];
+              if(!texture?.isTexture)return;
+              textureSet.add(texture);
+              if(type==="base")baseColorMapCount++;
+              else if(type==="normal")normalMapCount++;
+              else if(type==="rough")roughnessMapCount++;
+              else if(type==="metal")metalnessMapCount++;
+              else if(type==="ao")aoMapCount++;
+              else if(type==="emissive")emissiveMapCount++;
+            });
+          });
+        });
+        const textureCount=textureSet.size;
+
         if(sceneConfig.encounter&&vesselRoot.children.length===1){
           const own=vesselRoot.children[0];
           own.position.set(...sceneConfig.encounter.ownPosition);
@@ -660,7 +697,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         const aboveWaterline=unionBox.min.y>=-.02;
 
         let frames=0;
-        const base={status:"loaded",meshCount,materialCount,boundingBoxValid,inFrustum,aboveWaterline,frames:0,files:loadedFiles,runtime:"three-"+THREE_VERSION};
+        const base={status:"loaded",meshCount,materialCount,textureCount,baseColorMapCount,normalMapCount,roughnessMapCount,metalnessMapCount,aoMapCount,emissiveMapCount,uvMeshCount,missingUvMeshCount,textureless:textureCount===0,boundingBoxValid,inFrustum,aboveWaterline,frames:0,files:loadedFiles,runtime:"three-"+THREE_VERSION};
         console.info("[RIPEAM 3D] diagnóstico técnico",{
           scene:sceneConfig.key,
           ...base,
