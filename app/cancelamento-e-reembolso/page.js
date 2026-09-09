@@ -1,0 +1,13 @@
+import {Nav,Footer} from "../components";import styles from "../legal.module.css";export const metadata={title:"Cancelamento, Arrependimento e Reembolso"};
+export default function Page(){return <><Nav/><main className={styles.page}><article className={styles.wrap}>
+<span className={styles.eyebrow}>CONSUMIDOR</span><h1>Política de Cancelamento, Arrependimento e Reembolso</h1><p className={styles.updated}>Versão vigente: 08 de setembro de 2026.</p>
+<h2>1. Abrangência</h2><p>Esta Política integra os Termos de Uso e Contratação da ESTIBORDO e disciplina pedidos relacionados a compras realizadas pela internet, sem restringir direitos assegurados pela legislação brasileira.</p>
+<h2>2. Direito de arrependimento</h2><p>Quando aplicável o Código de Defesa do Consumidor, o consumidor poderá desistir da contratação no prazo legal de 7 (sete) dias, contado da assinatura ou do recebimento do serviço, nos termos da legislação aplicável.</p>
+<h2>3. Como solicitar</h2><p>O pedido poderá ser enviado para estibordopscpp@gmail.com, a partir do e-mail vinculado à conta, informando a compra e a solicitação. A ESTIBORDO poderá pedir dados estritamente necessários para localizar a transação e confirmar a identidade do solicitante.</p>
+<h2>4. Efeitos do arrependimento</h2><p>Reconhecido o exercício regular do direito de arrependimento, serão adotadas as providências de restituição cabíveis pelo mesmo meio ou pelo fluxo disponibilizado pelo provedor de pagamento, e o acesso pago correspondente poderá ser encerrado.</p>
+<h2>5. Cancelamento fora do prazo legal</h2><p>Pedidos posteriores ao prazo de arrependimento serão analisados conforme a oferta contratada, eventual falha na prestação, garantias legais e demais direitos obrigatórios do consumidor. Esta Política não cria renúncia a direitos previstos no CDC.</p>
+<h2>6. Cobrança indevida, fraude e duplicidade</h2><p>O usuário deve comunicar imediatamente suspeitas de cobrança indevida, fraude ou duplicidade. A ESTIBORDO analisará seus próprios registros e, quando necessário, orientará ou acionará o provedor de pagamento.</p>
+<h2>7. Chargeback</h2><p>O chargeback é processado pelas instituições de pagamento. Quando houver reversão integral e definitiva da compra, o acesso correspondente poderá ser suspenso ou encerrado, sem prejuízo da análise de eventual erro, fraude ou contestação legítima.</p>
+<h2>8. Prazo e confirmação de atendimento</h2><p>A solicitação será registrada e respondida pelos canais informados, observados os prazos legais aplicáveis ao comércio eletrônico e ao atendimento do consumidor.</p>
+<div className={styles.links}><a href="/termos-de-uso">Termos</a><a href="/politica-de-privacidade">Privacidade</a></div>
+</article></main><Footer/></>;}
