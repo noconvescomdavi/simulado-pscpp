@@ -120,6 +120,35 @@ const MARINE_ASSETS=[
 {c:"Equipamento",name:"Extintor",path:"M8 21h8V8H8v13Zm2-13V5h5l2 2m-5-2V3m4 7h3"}
 ];
 
+const PRO_MARINE_ASSETS=[
+{c:"Passadiço",name:"Timão profissional",path:"M12 2v4m0 12v4M2 12h4m12 0h4M5 5l3 3m8 8 3 3m0-14-3 3M8 16l-3 3M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0-3a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"},
+{c:"Passadiço",name:"Telégrafo de máquinas",path:"M6 21h12M8 21V9a4 4 0 0 1 8 0v12M12 9l4-5M9 14h6M10 17h4"},
+{c:"Passadiço",name:"Binóculo",path:"M3 18 6 7h4l2 5 2-5h4l3 11h-6l-3-6-3 6H3Zm3-11 1-3h3v3m8 0-1-3h-3v3"},
+{c:"Passadiço",name:"VHF marítimo",path:"M7 5h10v16H7V5Zm3 3h4m-4 4h4m-5 5h6M15 5l3-3"},
+{c:"Passadiço",name:"Agulha giroscópica",path:"M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0-15v12m-6-6h12m-6-6 2 6-2 6-2-6 2-6Z"},
+{c:"Passadiço",name:"Piloto automático",path:"M4 18h16V7H4v11Zm4-7h8m-4-4v8M7 21h10"},
+{c:"Navegação",name:"GPS/GNSS",path:"M12 21a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm0-5 3-8-8 3 5 5ZM12 2v2m0 16v2M2 12h2m16 0h2"},
+{c:"Navegação",name:"Sextante",path:"M5 19 19 5M6 18a9 9 0 0 0 12 0M8 15h8M5 19l3-8 8 8"},
+{c:"Navegação",name:"Farol costeiro",path:"M9 21h6l-1-11h-4L9 21Zm1-11 2-5 2 5M6 13 2 15m16-2 4 2M7 7 3 5m14 2 4-2"},
+{c:"Navegação",name:"Derrota/Track",path:"M3 18c4-10 9-2 13-10m-1 0h5v5M3 18h5M18 5l2 3-3 2"},
+{c:"Balizamento",name:"Cardinal Norte",path:"M8 21h8l-1-9H9l-1 9Zm4-17 4 6H8l4-6Z"},
+{c:"Balizamento",name:"Cardinal Sul",path:"M8 21h8l-1-9H9l-1 9Zm4 7 4-6H8l4 6Z"},
+{c:"Balizamento",name:"Perigo isolado",path:"M8 21h8l-1-9H9l-1 9ZM10 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"},
+{c:"Balizamento",name:"Águas seguras",path:"M8 21h8l-1-9H9l-1 9M12 12V4m-3 3h6"},
+{c:"Segurança",name:"Balsa salva-vidas",path:"M4 14c2-4 14-4 16 0l-2 5H6l-2-5Zm3 0c2-2 8-2 10 0M8 19v2m8-2v2"},
+{c:"Segurança",name:"Boia circular",path:"M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm0-5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-6-9 3 3m6 6 3 3m0-12-3 3m-6 6-3 3"},
+{c:"Segurança",name:"EPIRB",path:"M9 21h6l1-13-2-3h-4L8 8l1 13Zm3-16V2m-5 4L4 3m13 3 3-3M10 12h4"},
+{c:"Segurança",name:"SART",path:"M8 21h8V8H8v13Zm4-13V3m-3 2 3-2 3 2M10 12h4m-4 4h4"},
+{c:"Convés",name:"Cabeço de amarração",path:"M6 20h12M8 20V9h8v11M6 9h12M9 9V5h6v4"},
+{c:"Convés",name:"Molinete de âncora",path:"M5 18h14M7 18v-6h10v6M9 12a3 3 0 1 1 6 0M12 9V5m-2 0h4"},
+{c:"Convés",name:"Escovém",path:"M4 18h16M6 18l2-9h8l2 9M10 13h4m-2-4V4"},
+{c:"Convés",name:"Guindaste naval",path:"M7 21h8M9 21V6h4v15M13 7h7l-7 5m6-5v7m-2 0h4"},
+{c:"Navios",name:"LNG Carrier",path:"M2 16h20l-3 4H6l-4-4Zm5 0v-5h10v5M9 11c0-4 6-4 6 0M6 20h12"},
+{c:"Navios",name:"Ro-Ro",path:"M2 16h20l-3 4H6l-4-4Zm5 0V8h11v8M9 11h7m-7 3h7M5 20h14"},
+{c:"Navios",name:"Cruzeiro",path:"M3 16h18l-3 4H7l-4-4Zm4 0V7h10v9M9 9h6m-6 3h6M11 7V4h4v3"},
+{c:"Navios",name:"Navio de Prático",path:"M3 16h18l-3 4H7l-4-4Zm6 0V9h7l3 7M11 9V6h3v3M5 20c2 1 4 1 6 0 2 1 4 1 6 0"}
+];
+
 const LOGOS=[
 {name:"ESTIBORDO · Âncora",mark:"M12 2v14m-5-4h10M5 10h14M4 15c1.5 4 4.3 6 8 6s6.5-2 8-6",wordmark:"ESTIBORDO",tagline:"PREPARAÇÃO PSCPP",shape:"none"},
 {name:"ESTIBORDO · Bússola",mark:"M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2L12 2Z",wordmark:"ESTIBORDO",tagline:"NAVEGUE MAIS LONGE",shape:"circle"},
@@ -146,7 +175,7 @@ export default function StudioMenu({open,onClose,siteMap,page,onPageChange,layer
   {tab==="assets"&&<>
     <div className="ev-asset-tabs">{[["cis","CIS"],["marine","Marítimo Pro"],["icons","Ícones"],["logos","Logos"],["photos","Fotos"]].map(([id,label])=><button key={id} className={assetTab===id?"is-active":""} onClick={()=>setAssetTab(id)}>{label}</button>)}</div>
     {assetTab==="cis"&&<section><h4>Código Internacional de Sinais · A–Z e 0–9</h4><p className="ev-studio-help">Bandeiras vetoriais escaláveis para material didático e composição visual. Cada item conserva código e significado no bloco.</p><div className="ev-cis-library">{CIS.map(flag=><button key={flag.code} onClick={()=>onAddSignalFlag(flag)} title={flag.meaning}><span className="ev-cis-preview" data-pattern={flag.pattern} style={{"--a":flag.a,"--b":flag.b}}><i></i></span><b>{flag.code}</b><small>{flag.meaning}</small></button>)}</div></section>}
-    {assetTab==="marine"&&<section><h4>Marítimo, navios, navegação & RIPEAM</h4><div className="ev-marine-library">{MARINE_ASSETS.map(icon=><button key={icon.c+icon.name} onClick={()=>onAddIcon(icon)}><Icon path={icon.path}/><div><b>{icon.name}</b><small>{icon.c}</small></div></button>)}</div></section>}
+    {assetTab==="marine"&&<section><h4>Marítimo Pro · instrumentos, navios, segurança e convés</h4><p className="ev-studio-help">Assets vetoriais detalhados, escaláveis e adequados a diagramas, cards, aulas e interfaces náuticas.</p><div className="ev-marine-library">{[...MARINE_ASSETS,...PRO_MARINE_ASSETS].map(icon=><button key={icon.c+icon.name} onClick={()=>onAddIcon(icon)}><Icon path={icon.path}/><div><b>{icon.name}</b><small>{icon.c}</small></div></button>)}</div></section>}
     {assetTab==="icons"&&<section><h4>Biblioteca de ícones · {ICONS.length} opções</h4><div className="ev-icon-search"><input placeholder="Buscar ícone..." value={iconSearch} onChange={e=>setIconSearch(e.target.value)}/><select value={iconCat} onChange={e=>setIconCat(e.target.value)}>{CATS.map(c=><option key={c}>{c}</option>)}</select></div><div className="ev-icon-library">{filtered.map(icon=><button key={icon.c+icon.name} title={icon.c+" · "+icon.name} onClick={()=>onAddIcon(icon)}><Icon path={icon.path}/><span>{icon.name}</span><small>{icon.c}</small></button>)}</div><a className="ev-external-source" href="https://svg.icones.pro/" target="_blank" rel="noreferrer">Explorar mais no Icones.pro ↗</a></section>}
     {assetTab==="logos"&&<section><h4>Logos & Identidade Visual</h4><div className="ev-logo-library">{LOGOS.map(logo=><button key={logo.name} onClick={()=>onAddLogo(logo)}><div className={"ev-logo-preview is-"+logo.shape}><Icon path={logo.mark}/></div><div><b>{logo.wordmark}</b><span>{logo.tagline}</span><small>{logo.name}</small></div></button>)}</div><p className="ev-studio-help">Os presets são vetoriais e editáveis no canvas: texto, tagline, cor, fundo, tamanho e posição.</p></section>}
     {assetTab==="photos"&&<><section><h4>Fotos marítimas · Morguefile</h4><div className="ev-source-chips">{MORGUE.map(([label,term])=><a key={term} href={"https://morguefile.com/search?term="+encodeURIComponent(term)} target="_blank" rel="noreferrer">{label} ↗</a>)}</div><label className="ev-mini-field"><span>URL pública da imagem</span><input value={asset.url} onChange={e=>setAsset(v=>({...v,url:e.target.value}))}/></label><label className="ev-mini-field"><span>Nome</span><input value={asset.name} onChange={e=>setAsset(v=>({...v,name:e.target.value}))}/></label><button className="ev-import-asset" disabled={!asset.url} onClick={()=>onImportImage(asset)}>＋ Adicionar à biblioteca e ao canvas</button></section>
