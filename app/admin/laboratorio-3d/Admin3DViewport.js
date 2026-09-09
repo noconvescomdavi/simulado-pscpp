@@ -4,6 +4,20 @@ import styles from "./laboratorio-3d.module.css";
 
 const THREE_VERSION="0.180.0";
 const CDN="https://esm.sh/three@"+THREE_VERSION;
+const MODEL_CACHE=new Map();
+
+function cloneCachedModel(source){
+  const clone=source.clone(true);
+  const sourceMeshes=[],cloneMeshes=[];
+  source.traverse?.(o=>{if(o.isMesh)sourceMeshes.push(o)});
+  clone.traverse?.(o=>{if(o.isMesh)cloneMeshes.push(o)});
+  cloneMeshes.forEach((mesh,i)=>{
+    const src=sourceMeshes[i];if(!src)return;
+    mesh.geometry=src.geometry;
+    mesh.material=Array.isArray(src.material)?src.material.map(m=>m?.clone?.()||m):(src.material?.clone?.()||src.material);
+  });
+  return clone;
+}
 
 export default function Admin3DViewport({
   scene,selectedId,mode,onSelect,onTransform,onCameraChange,onStats,readOnly=false,playhead=0
@@ -242,8 +256,15 @@ export default function Admin3DViewport({
         if(data.assetUrl){
           try{
             const loader=r.loaders[data.assetType]||r.loaders.glb;
-            const loaded=await loader.loadAsync(data.assetUrl);
-            child=loaded.scene||loaded;
+            const cacheKey=(data.assetType||"glb")+":"+data.assetUrl;
+            let source=MODEL_CACHE.get(cacheKey);
+            if(!source){
+              const pending=loader.loadAsync(data.assetUrl).then(loaded=>loaded.scene||loaded).catch(error=>{MODEL_CACHE.delete(cacheKey);throw error});
+              MODEL_CACHE.set(cacheKey,pending);
+              source=await pending;
+              MODEL_CACHE.set(cacheKey,source);
+            }else if(source instanceof Promise)source=await source;
+            child=cloneCachedModel(source);
             if(data.normalize!==false)normalizeChild(child,8);
             child.position.sub(new r.THREE.Vector3(...(data.pivot||[0,0,0])));
             applyMaterial(child,data);
