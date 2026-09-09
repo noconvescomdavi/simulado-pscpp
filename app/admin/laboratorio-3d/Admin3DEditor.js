@@ -57,6 +57,8 @@ export default function Admin3DEditor(){
 
   const cfg=scene.config||EMPTY.config;
   const obj=cfg.objects?.find(o=>o.id===selected);
+  const objAsset=assets.find(a=>a.url===obj?.assetUrl)||null;
+  const objDiag=objAsset?.metadata?.glbDiagnostics||null;
   const semantic=cfg.semantic||EMPTY.config.semantic;
   const activeRule=getRule(semantic.ruleNumber);
   const semanticItem=getSemanticItem(semantic.ruleNumber,semantic.scenarioKey);
@@ -114,7 +116,7 @@ export default function Admin3DEditor(){
     const j=await r.json().catch(()=>({}));
     if(!r.ok){setStatus(j.error||"Não foi possível carregar as cenas.");return}
     setScenes(j.scenes||[]);
-    const persisted=(j.assets||[]).map(a=>({id:a.id,name:a.name,url:a.url,type:a.asset_type,category:a.category||"Uploads",tags:a.tags||[],bytes:a.bytes,triangles:a.triangles}));
+    const persisted=(j.assets||[]).map(a=>({id:a.id,name:a.name,url:a.url,type:a.asset_type,category:a.category||"Uploads",tags:a.tags||[],bytes:a.bytes,triangles:a.triangles,metadata:a.metadata||{}}));
     setAssets([...persisted,...BUILTIN.filter(b=>!persisted.some(a=>a.url===b.url))]);
     setVersions(j.versions||[]);
     if(j.scenes?.[0]&&!scene.id)openScene(j.scenes[0],false);
@@ -274,7 +276,7 @@ export default function Admin3DEditor(){
   }
 
   async function inspectGlb(file){
-    const report={ok:false,name:file.name,bytes:file.size,meshes:0,materials:0,textures:0,bounds:null,error:""};
+    const report={ok:false,name:file?.name||"",bytes:file?.size||0,meshes:0,materials:0,materialSlots:0,textures:0,baseColorMaps:0,normalMaps:0,roughnessMaps:0,metalnessMaps:0,aoMaps:0,emissiveMaps:0,uvMeshes:0,missingUvMeshes:0,multiMaterialMeshes:0,embeddedTextures:true,bounds:null,error:""};
     if(!file||!String(file.name).toLowerCase().endsWith(".glb")){report.error="O arquivo precisa ser .glb.";return report}
     if(file.size<100){report.error="Arquivo GLB vazio ou inválido.";return report}
     const url=URL.createObjectURL(file);
@@ -282,11 +284,58 @@ export default function Admin3DEditor(){
       const THREE=await import(/* webpackIgnore:true */ "https://esm.sh/three@0.180.0");
       const {GLTFLoader}=await import(/* webpackIgnore:true */ "https://esm.sh/three@0.180.0/examples/jsm/loaders/GLTFLoader.js");
       const gltf=await new GLTFLoader().loadAsync(url),root=gltf.scene;
-      root.traverse(o=>{if(o.isMesh){report.meshes++;const mats=Array.isArray(o.material)?o.material:[o.material];report.materials+=mats.filter(Boolean).length;mats.filter(Boolean).forEach(m=>{["map","normalMap","roughnessMap","metalnessMap","aoMap","emissiveMap"].forEach(k=>{if(m[k]?.isTexture)report.textures++})})}});
+      const materialSet=new Set(),textureSet=new Set();
+      root.traverse(o=>{
+        if(!o.isMesh)return;
+        report.meshes++;
+        const hasUv=!!o.geometry?.attributes?.uv;
+        if(hasUv)report.uvMeshes++;else report.missingUvMeshes++;
+        const mats=(Array.isArray(o.material)?o.material:[o.material]).filter(Boolean);
+        report.materialSlots+=mats.length;
+        if(mats.length>1)report.multiMaterialMeshes++;
+        mats.forEach(m=>{
+          materialSet.add(m);
+          [["map","baseColorMaps"],["normalMap","normalMaps"],["roughnessMap","roughnessMaps"],["metalnessMap","metalnessMaps"],["aoMap","aoMaps"],["emissiveMap","emissiveMaps"]].forEach(([key,countKey])=>{
+            const t=m[key];
+            if(!t?.isTexture)return;
+            textureSet.add(t);report[countKey]++;
+            const src=String(t.image?.currentSrc||t.image?.src||"");
+            if(src&&!(src.startsWith("blob:")||src.startsWith("data:")))report.embeddedTextures=false;
+          });
+        });
+      });
+      report.materials=materialSet.size;report.textures=textureSet.size;
       const box=new THREE.Box3().setFromObject(root),size=box.getSize(new THREE.Vector3());report.bounds=size.toArray().map(v=>Number(v.toFixed(3)));
-      if(report.meshes<1)throw new Error("GLB sem meshes renderizáveis.");if(box.isEmpty()||!report.bounds.every(Number.isFinite))throw new Error("Bounding box inválida.");report.ok=true;
+      if(report.meshes<1)throw new Error("GLB sem meshes renderizáveis.");
+      if(box.isEmpty()||!report.bounds.every(Number.isFinite))throw new Error("Bounding box inválida.");
+      report.ok=true;
     }catch(error){report.error=String(error?.message||error)}finally{URL.revokeObjectURL(url)}
     return report;
+  }
+
+  async function diagnoseCurrentAsset(){
+    if(!obj?.assetUrl||obj.type!=="model"){setStatus("Selecione um modelo GLB para diagnosticar.");return}
+    if((obj.assetType||"glb")!=="glb"){setStatus("O diagnóstico avançado está disponível para arquivos GLB.");return}
+    try{
+      setStatus("Analisando materiais, texturas e UVs do GLB...");
+      const response=await fetch(obj.assetUrl,{cache:"no-store"});
+      if(!response.ok)throw new Error("Não foi possível baixar o asset para diagnóstico.");
+      const source=await response.blob();
+      const filename=(obj.name||"modelo").toLowerCase().endsWith(".glb")?obj.name:(obj.name||"modelo")+".glb";
+      const report=await inspectGlb(new File([source],filename,{type:"model/gltf-binary"}));
+      setImportReport(report);
+      if(!report.ok){setStatus("Diagnóstico falhou: "+report.error);return}
+      const asset=assets.find(a=>a.url===obj.assetUrl);
+      if(asset){
+        const metadata={...(asset.metadata||{}),glbDiagnostics:report,materialModeDefault:"original"};
+        const persist=await fetch("/api/admin/laboratorio-3d",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"asset",asset:{id:asset.id,name:asset.name,url:asset.url,asset_type:asset.type||"glb",category:asset.category||"Navios",tags:asset.tags||[],bytes:asset.bytes,triangles:asset.triangles,metadata}})});
+        const saved=await persist.json().catch(()=>({}));
+        if(persist.ok)setAssets(list=>list.map(a=>a.url===asset.url?{...a,metadata:saved.asset?.metadata||metadata}:a));
+      }
+      setStatus("Diagnóstico concluído. Material original, mapas PBR e UVs foram inspecionados.");
+    }catch(error){
+      setStatus("Diagnóstico falhou: "+String(error?.message||error));
+    }
   }
 
   async function upload(file,mode=importMode){
@@ -295,17 +344,17 @@ export default function Admin3DEditor(){
     if(!report.ok){setStatus("Importação bloqueada: "+report.error);return}
     if(mode==="replace"&&(!obj||obj.type!=="model")){setStatus("Selecione no Outliner o navio/modelo que deseja substituir.");return}
     setStatus("GLB validado. Enviando para a biblioteca...");
-    const fd=new FormData();fd.append("file",file);fd.append("category","Navios importados");
+    const fd=new FormData();fd.append("file",file);fd.append("category","Navios importados");fd.append("diagnostics",JSON.stringify(report));
     const r=await fetch("/api/admin/laboratorio-3d/upload",{method:"POST",body:fd});const j=await r.json().catch(()=>({}));
     if(!r.ok){setStatus(j.error||"Falha no upload");return}
-    const a={id:j.asset?.id,name:file.name,url:j.url,type:"glb",category:j.asset?.category||"Navios importados",bytes:file.size};setAssets(x=>[a,...x.filter(y=>y.url!==a.url)]);
+    const a={id:j.asset?.id,name:file.name,url:j.url,type:"glb",category:j.asset?.category||"Navios importados",bytes:file.size,metadata:j.asset?.metadata||{glbDiagnostics:report}};setAssets(x=>[a,...x.filter(y=>y.url!==a.url)]);
     if(mode==="replace"){setAbCompare({selectedId:obj.id,original:clone(obj),candidate:a});setCompare(false);setStatus("GLB validado. Compare A/B antes de confirmar a substituição.");}
-    else{addObject({name:a.name,assetUrl:a.url,assetType:"glb",type:"model",normalize:true});setStatus("GLB validado e adicionado à cena.");}
+    else{addObject({name:a.name,assetUrl:a.url,assetType:"glb",type:"model",normalize:true,material:{mode:"original"}});setStatus("GLB validado e adicionado com material/texturas originais preservados.");}
   }
 
   function confirmReplacement(){
     if(!abCompare)return;const {selectedId,candidate}=abCompare;
-    mutate(s=>{const o=s.config.objects.find(x=>x.id===selectedId);if(o){o.name=candidate.name;o.assetUrl=candidate.url;o.assetType="glb";o.normalize=true}});
+    mutate(s=>{const o=s.config.objects.find(x=>x.id===selectedId);if(o){o.name=candidate.name;o.assetUrl=candidate.url;o.assetType="glb";o.normalize=true;o.material={mode:"original",color:"#ffffff",roughness:.5,metalness:.05,opacity:1,emissive:"#000000",doubleSide:false}}});
     setAbCompare(null);setStatus("Substituição confirmada localmente. Clique em Atualizar aluno para publicar.");
   }
 
@@ -492,7 +541,7 @@ export default function Admin3DEditor(){
             <select value={importMode} onChange={e=>setImportMode(e.target.value)} title="Escolha se o GLB será adicionado ou substituirá o modelo selecionado"><option value="add">Adicionar novo navio</option><option value="replace">Substituir selecionado</option></select>
             <label><input type="file" accept=".glb,model/gltf-binary" onChange={e=>{upload(e.target.files?.[0],importMode);e.target.value=""}}/>＋ Importar GLB do PC</label>
           </div>
-          <div className={styles.assetGrid}>{filteredAssets.map((a,i)=><button key={a.url+i} onClick={()=>addObject({name:a.name,assetUrl:a.url,assetType:a.type,type:"model",normalize:true})}><b>{a.name}</b><small>{String(a.type||"").toUpperCase()} · {a.category||"Asset"} · usado {usage[a.url]||0}x</small>{a.bytes&&<small>{(a.bytes/1024/1024).toFixed(1)} MB</small>}</button>)}</div>
+          <div className={styles.assetGrid}>{filteredAssets.map((a,i)=>{const d=a.metadata?.glbDiagnostics;return <button key={a.url+i} onClick={()=>addObject({name:a.name,assetUrl:a.url,assetType:a.type,type:"model",normalize:true,material:{mode:"original"}})}><b>{a.name}</b><small>{String(a.type||"").toUpperCase()} · {a.category||"Asset"} · usado {usage[a.url]||0}x</small>{a.bytes&&<small>{(a.bytes/1024/1024).toFixed(1)} MB</small>}{d&&<small>{d.materials||0} materiais · {d.textures||0} texturas · UV {d.missingUvMeshes?"atenção":"OK"}</small>}</button>})}</div>
         </div>
       </section>
 
@@ -509,7 +558,16 @@ export default function Admin3DEditor(){
           <div className={styles.vecTitle}>Rotação (rad)</div><div className={styles.vec}>{["X","Y","Z"].map((x,i)=><label key={x}>{x}<input type="number" step=".05" value={obj.rotation[i]} onChange={e=>patchVec("rotation",i,e.target.value)}/></label>)}</div>
           <div className={styles.vecTitle}>Escala</div><div className={styles.vec}>{["X","Y","Z"].map((x,i)=><label key={x}>{x}<input type="number" step=".05" value={obj.scale[i]} onChange={e=>patchVec("scale",i,e.target.value)}/></label>)}</div>
           {obj.type==="model"&&<><div className={styles.vecTitle}>Pivô</div><div className={styles.vec}>{["X","Y","Z"].map((x,i)=><label key={x}>{x}<input type="number" step=".05" value={(obj.pivot||[0,0,0])[i]} onChange={e=>patchVec("pivot",i,e.target.value)}/></label>)}</div>
-            <h4>Material</h4><label>Cor<input type="color" value={obj.material?.color||"#ffffff"} onChange={e=>patchMaterial({color:e.target.value})}/></label><label>Emissive<input type="color" value={obj.material?.emissive||"#000000"} onChange={e=>patchMaterial({emissive:e.target.value})}/></label><label>Roughness<input type="range" min="0" max="1" step=".01" value={obj.material?.roughness??.5} onChange={e=>patchMaterial({roughness:Number(e.target.value)})}/></label><label>Metalness<input type="range" min="0" max="1" step=".01" value={obj.material?.metalness??.05} onChange={e=>patchMaterial({metalness:Number(e.target.value)})}/></label><label>Opacidade<input type="range" min="0" max="1" step=".01" value={obj.material?.opacity??1} onChange={e=>patchMaterial({opacity:Number(e.target.value)})}/></label><label>LOD mobile<input type="checkbox" checked={!!obj.lod?.enabled} onChange={e=>patchObject({lod:{...(obj.lod||{}),enabled:e.target.checked}})}/></label></>}
+            <h4>Material do modelo</h4>
+            <div className={styles.materialMode}>
+              <button className={(obj.material?.mode||"original")==="original"?styles.materialActive:""} onClick={()=>patchMaterial({mode:"original"})}>Usar material original do GLB</button>
+              <button className={obj.material?.mode==="custom"?styles.materialActive:""} onClick={()=>patchMaterial({mode:"custom"})}>Personalizar material</button>
+            </div>
+            <div className={styles.materialHint}>{(obj.material?.mode||"original")==="original"?"Base Color, Normal, Roughness, Metallic, AO, Emissive, UVs, transparência e materiais múltiplos são preservados do arquivo.":"As propriedades abaixo passam a sobrescrever os materiais importados."}</div>
+            {obj.assetType==="glb"&&<button type="button" className={styles.assetDiagnosticButton} onClick={diagnoseCurrentAsset}>Diagnosticar materiais e texturas agora</button>}
+            {objDiag&&<div className={styles.materialDiag}><b>Diagnóstico do asset</b><span>{objDiag.materials||0} materiais únicos · {objDiag.materialSlots||0} slots</span><span>{objDiag.textures||0} texturas · {objDiag.baseColorMaps||0} Base Color · {objDiag.normalMaps||0} Normal</span><span>{objDiag.roughnessMaps||0} Roughness · {objDiag.metalnessMaps||0} Metallic · {objDiag.aoMaps||0} AO · {objDiag.emissiveMaps||0} Emissive</span><span>UVs: {objDiag.missingUvMeshes?objDiag.missingUvMeshes+" mesh(es) sem UV":"OK"} · Materiais múltiplos: {objDiag.multiMaterialMeshes||0} mesh(es)</span><span>Texturas incorporadas: {objDiag.embeddedTextures===false?"não / referência externa detectada":"sim"}</span></div>}
+            {obj.material?.mode==="custom"&&<><label>Cor<input type="color" value={obj.material?.color||"#ffffff"} onChange={e=>patchMaterial({color:e.target.value})}/></label><label>Emissive<input type="color" value={obj.material?.emissive||"#000000"} onChange={e=>patchMaterial({emissive:e.target.value})}/></label><label>Roughness<input type="range" min="0" max="1" step=".01" value={obj.material?.roughness??.5} onChange={e=>patchMaterial({roughness:Number(e.target.value)})}/></label><label>Metalness<input type="range" min="0" max="1" step=".01" value={obj.material?.metalness??.05} onChange={e=>patchMaterial({metalness:Number(e.target.value)})}/></label><label>Opacidade<input type="range" min="0" max="1" step=".01" value={obj.material?.opacity??1} onChange={e=>patchMaterial({opacity:Number(e.target.value)})}/></label><label><input type="checkbox" checked={!!obj.material?.doubleSide} onChange={e=>patchMaterial({doubleSide:e.target.checked})}/> Renderizar frente e verso</label></>}
+            <label>LOD mobile<input type="checkbox" checked={!!obj.lod?.enabled} onChange={e=>patchObject({lod:{...(obj.lod||{}),enabled:e.target.checked}})}/></label></>}
 
           {obj.type?.includes("Light")&&<><h4>Luz RIPEAM</h4><label>Cor<input type="color" value={obj.color} onChange={e=>patchObject({color:e.target.value})}/></label><label>Setor (°)<input type="number" min="0" max="360" step=".5" value={obj.sector||360} onChange={e=>patchObject({sector:Number(e.target.value)})}/></label><label>Rumo do setor (°)<input type="number" value={obj.heading||0} onChange={e=>patchObject({heading:Number(e.target.value)})}/></label><label>Intensidade<input type="range" min="0" max="20" step=".1" value={obj.intensity} onChange={e=>patchObject({intensity:Number(e.target.value)})}/></label><label>Alcance visual<input type="number" value={obj.distance} onChange={e=>patchObject({distance:Number(e.target.value)})}/></label></>}
 

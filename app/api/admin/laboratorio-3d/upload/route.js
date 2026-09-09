@@ -23,6 +23,27 @@ export async function POST(request){
     const version=head[4]|(head[5]<<8)|(head[6]<<16)|(head[7]<<24);
     const declared=head[8]|(head[9]<<8)|(head[10]<<16)|(head[11]<<24);
     if(magic!=="glTF"||version!==2||declared!==bytes)return Response.json({ok:false,error:"Cabeçalho GLB 2.0 inválido ou arquivo truncado."},{status:400});
+    let diagnostics={};
+    try{
+      const parsed=JSON.parse(String(form.get("diagnostics")||"{}"));
+      diagnostics={
+        meshes:Math.max(0,Math.min(100000,Number(parsed.meshes)||0)),
+        materials:Math.max(0,Math.min(100000,Number(parsed.materials)||0)),
+        materialSlots:Math.max(0,Math.min(100000,Number(parsed.materialSlots)||0)),
+        textures:Math.max(0,Math.min(100000,Number(parsed.textures)||0)),
+        baseColorMaps:Math.max(0,Math.min(100000,Number(parsed.baseColorMaps)||0)),
+        normalMaps:Math.max(0,Math.min(100000,Number(parsed.normalMaps)||0)),
+        roughnessMaps:Math.max(0,Math.min(100000,Number(parsed.roughnessMaps)||0)),
+        metalnessMaps:Math.max(0,Math.min(100000,Number(parsed.metalnessMaps)||0)),
+        aoMaps:Math.max(0,Math.min(100000,Number(parsed.aoMaps)||0)),
+        emissiveMaps:Math.max(0,Math.min(100000,Number(parsed.emissiveMaps)||0)),
+        uvMeshes:Math.max(0,Math.min(100000,Number(parsed.uvMeshes)||0)),
+        missingUvMeshes:Math.max(0,Math.min(100000,Number(parsed.missingUvMeshes)||0)),
+        multiMaterialMeshes:Math.max(0,Math.min(100000,Number(parsed.multiMaterialMeshes)||0)),
+        embeddedTextures:parsed.embeddedTextures!==false,
+        bounds:Array.isArray(parsed.bounds)?parsed.bounds.slice(0,3).map(Number):null
+      };
+    }catch{}
     const result=await saveUpload(file);
     const asset=await upsertRipeam3DAsset({
       name:String(file?.name||"Asset 3D"),
@@ -31,7 +52,7 @@ export async function POST(request){
       bytes:Number(file?.size||0),
       category:String(form.get("category")||""),
       tags:String(form.get("tags")||"").split(",").map(x=>x.trim()).filter(Boolean),
-      metadata:{uploaded_from:"admin-laboratorio-3d"}
+      metadata:{uploaded_from:"admin-laboratorio-3d",glbDiagnostics:diagnostics,materialModeDefault:"original"}
     });
     await logAdminAction({admin,action:"ripeam3d_upload",entityType:"ripeam3d_asset",entityKey:asset?.id||asset?.url,afterData:{name:asset?.name,url:asset?.url,bytes}});
     return Response.json({ok:true,...result,asset});
