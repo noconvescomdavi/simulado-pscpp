@@ -1,6 +1,7 @@
 import argon2 from "argon2";
 import { consumePasswordResetToken } from "../../../../lib/password-reset";
 import { clientIpHash, consumeRateLimit, rateLimitResponse, assertSameOrigin } from "../../../../lib/security";
+import { passwordPolicyError } from "../../../../lib/password-policy";
 
 export async function POST(req) {
   try {
@@ -17,9 +18,8 @@ export async function POST(req) {
     if (!/^[a-f0-9]{64}$/i.test(token)) {
       return Response.json({ error: "Link de redefinição inválido ou expirado." }, { status: 400 });
     }
-    if (password.length < 10) {
-      return Response.json({ error: "A nova senha precisa ter ao menos 10 caracteres." }, { status: 400 });
-    }
+    const passwordError = passwordPolicyError(password);
+    if (passwordError) return Response.json({ error: passwordError }, { status: 400 });
 
     const hash = await argon2.hash(password, { type: argon2.argon2id });
     const changed = await consumePasswordResetToken(token, hash);

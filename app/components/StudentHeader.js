@@ -196,10 +196,10 @@ export default async function StudentHeader({ active = "" }) {
           <img src="/estibordo/logos/estibordo-logo-header.png" alt="ESTIBORDO" />
         </a>
 
-        <div className={styles.search}>
+        <form className={styles.search} action="/pesquisar" method="get">
           <span>⌕</span>
-          <input aria-label="Pesquisar na plataforma" placeholder="Pesquisar na plataforma..." />
-        </div>
+          <input name="q" aria-label="Pesquisar na plataforma" placeholder="Pesquisar na plataforma..." />
+        </form>
 
         <div className={styles.topActions}>
           <a href="/minhas-assinaturas" title="Minhas Assinaturas">♛</a>

@@ -98,6 +98,14 @@ export default async function Area(){
           <ExamCountdown/>
         </section>
 
+        <section className="studentFocusGrid">
+          <article><span>PRÓXIMO PASSO</span><strong>{dailyPlan?.progress?.completed||0}/{dailyPlan?.progress?.total||0} tarefas</strong><small>{dailyPlan?.progress?.total?"Priorize o plano de hoje antes de abrir novas frentes.":"Configure seu plano para receber uma rota diária."}</small><a href="/hoje">Abrir plano de hoje →</a></article>
+          <article><span>RITMO DA PREPARAÇÃO</span><strong>{dailyPlan?.tracking?.adherence_percent??100}% de aderência</strong><small>{dailyPlan?.tracking?.backlog_count||0} pendência(s) em aberto.</small><a href="/minha-trajetoria">Ver trajetória →</a></article>
+          <article><span>PONTO DE ATENÇÃO</span><strong>{weakest?weakest.label:"Aguardando dados"}</strong><small>{weakest?weakest.accuracy+"% de acerto — maior oportunidade de ganho.":"Responda questões para gerar o diagnóstico."}</small><a href="/analise-de-fraquezas">Abrir análise →</a></article>
+        </section>
+
+        <DailyStudyPlan initialPlan={dailyPlan}/>
+
         <section className="dashboardSection">
           <div className="sectionTitle"><div><h2>Acesso Rápido</h2><p>Escolha o recurso que deseja utilizar:</p></div></div>
           <div className="quickGrid">
@@ -105,15 +113,13 @@ export default async function Area(){
             <a className="quickCard green" href="/conteudos/banco-de-questoes"><i>☷</i><div><strong>Gerar Caderno</strong><span>Monte seu banco de questões</span></div><b>›</b></a>
             <a className="quickCard purple" href="/flashcards/cis"><i>▤</i><div><strong>Flashcards CIS</strong><span>Treine o Código Internacional de Sinais</span></div><b>›</b></a>
             <a className="quickCard gold" href="#desempenho"><i>▥</i><div><strong>Meu Desempenho</strong><span>Acompanhe sua evolução</span></div><b>›</b></a>
-            <a className="quickCard blue" href="/plano-de-estudos"><i>◫</i><div><strong>Plano de Estudos</strong><span>Calendário inteligente até 01/11/2027</span></div><b>›</b></a>
-            <a className="quickCard purple" href="/treino-adaptativo"><i>◎</i><div><strong>Treino Adaptativo</strong><span>Treine primeiro o que mais precisa</span></div><b>›</b></a>
+            <a className={["quickCard","blue",!active?"premiumLocked":""].join(" ")} href="/plano-de-estudos"><i>◫</i><div><strong>Plano de Estudos</strong><span>Calendário inteligente até 01/11/2027</span></div><b>›</b></a>
+            <a className={["quickCard","purple",!active?"premiumLocked":""].join(" ")} href="/treino-adaptativo"><i>◎</i><div><strong>Treino Adaptativo</strong><span>Treine primeiro o que mais precisa</span></div><b>›</b></a>
             <a className="quickCard ranking" href="/ranking"><i>★</i><div><strong>Ranking</strong><span>Compare seu desempenho acadêmico</span></div><b>›</b></a>
-            <a className="quickCard maps" href="/mapas-mentais"><i>🧠</i><div><strong>Mapas Mentais</strong><span>Construa e conecte suas anotações</span></div><b>›</b></a>
-            <a className="quickCard gold" href="/minha-trajetoria"><i>◉</i><div><strong>Minha Trajetória</strong><span>Domínio, aderência, tempo real e projeção até a prova</span></div><b>›</b></a>
+            <a className={["quickCard","maps",!active?"premiumLocked":""].join(" ")} href="/mapas-mentais"><i>🧠</i><div><strong>Mapas Mentais</strong><span>Construa e conecte suas anotações</span></div><b>›</b></a>
+            <a className={["quickCard","gold",!active?"premiumLocked":""].join(" ")} href="/minha-trajetoria"><i>◉</i><div><strong>Minha Trajetória</strong><span>Domínio, aderência, tempo real e projeção até a prova</span></div><b>›</b></a>
           </div>
         </section>
-
-        <DailyStudyPlan initialPlan={dailyPlan}/>
 
         <section className="consistencyPanel">
           <div><span>SEQUÊNCIA ATUAL</span><strong>{consistency.streak} dias</strong><small>{consistency.study_days} dias estudados no histórico</small></div>

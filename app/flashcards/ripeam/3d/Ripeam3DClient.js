@@ -175,11 +175,11 @@ export default function Ripeam3DClient(){
 
   useEffect(()=>{
     if(labMode==="situation"){liveSceneStampRef.current="";setLiveScene(null);return}
-    let dead=false,timer;
+    let dead=false;
     liveSceneStampRef.current="";
     const pull=async()=>{
       try{
-        const r=await fetch("/api/ripeam-3d/scenes?key="+encodeURIComponent(editorKey)+"&_="+Date.now(),{cache:"no-store"});
+        const r=await fetch("/api/ripeam-3d/scenes?key="+encodeURIComponent(editorKey),{cache:"no-store"});
         const j=await r.json();
         if(dead)return;
         const next=j.scene?.status==="published"?j.scene:null;
@@ -188,11 +188,17 @@ export default function Ripeam3DClient(){
           liveSceneStampRef.current=stamp;
           setLiveScene(next);
         }
-      }catch(error){if(!dead)console.warn("[RIPEAM 3D] atualização ao vivo indisponível",error)}
-      if(!dead)timer=setTimeout(pull,5000);
+      }catch(error){if(!dead)console.warn("[RIPEAM 3D] cena publicada indisponível",error)}
     };
+    const refreshOnFocus=()=>{if(!document.hidden)pull()};
     pull();
-    return()=>{dead=true;clearTimeout(timer)};
+    window.addEventListener("focus",refreshOnFocus);
+    document.addEventListener("visibilitychange",refreshOnFocus);
+    return()=>{
+      dead=true;
+      window.removeEventListener("focus",refreshOnFocus);
+      document.removeEventListener("visibilitychange",refreshOnFocus);
+    };
   },[editorKey,labMode]);
 
   const chooseScene=item=>{

@@ -1,6 +1,7 @@
 import argon2 from "argon2";
 import { query } from "../../../../lib/db";
 import { createSession } from "../../../../lib/auth";
+import { hasCurrentLegalConsent } from "../../../../lib/legal-consent";
 import {
   clientIpHash,
   consumeRateLimit,
@@ -32,7 +33,7 @@ export async function POST(req) {
     if (!accountLimit.allowed) return rateLimitResponse(accountLimit);
 
     const result = await query(
-      "select id,email,password_hash,role,status,session_version from users where lower(email)=lower($1) limit 1",
+      "select id,email,password_hash,role,status,session_version,email_verified,email_verification_required_at from users where lower(email)=lower($1) limit 1",
       [normalized]
     );
     const user = result.rows[0];
@@ -47,10 +48,14 @@ export async function POST(req) {
     if (user.status !== "active") {
       return Response.json({ error: "Conta indisponível." }, { status: 403 });
     }
+    if (user.email_verification_required_at && !user.email_verified) {
+      return Response.json({ error: "Confirme seu e-mail para entrar.", code: "EMAIL_NOT_VERIFIED", email: user.email }, { status: 403 });
+    }
 
     await query("update users set last_login_at=now(),updated_at=now() where id=$1", [user.id]);
     await createSession(user);
-    return Response.json({ ok: true });
+    const requiresTerms = !(await hasCurrentLegalConsent(user.id));
+    return Response.json({ ok: true, requiresTerms });
   } catch (error) {
     console.error("Erro de login:", error);
     return Response.json({ error: "Não foi possível entrar." }, { status: 500 });

@@ -10,6 +10,9 @@ const publicPaths = [
   "/sobre-a-praticagem/o-que-faz-um-pratico",
   "/sobre-a-praticagem/como-se-tornar-um-pratico",
   "/comprar",
+  "/termos-de-uso",
+  "/politica-de-privacidade",
+  "/politica-de-cookies",
 ];
 
 export default function sitemap() {

@@ -69,6 +69,10 @@ jobs:
           # Páginas críticas de aquisição
           curl -fsS "http://127.0.0.1:3000/login" | grep -q "Entrar"
           curl -fsS "http://127.0.0.1:3000/cadastro" | grep -q "Criar conta"
+          curl -fsS "http://127.0.0.1:3000/termos-de-uso" | grep -q "Termos de Uso"
+          curl -fsS "http://127.0.0.1:3000/politica-de-privacidade" | grep -q "Política de Privacidade"
+          curl -fsS "http://127.0.0.1:3000/politica-de-cookies" | grep -q "Política de Cookies"
+          curl -fsS "http://127.0.0.1:3000/verificar-email" | grep -q "Verifique sua caixa de entrada"
           curl -fsS "http://127.0.0.1:3000/plataforma" | grep -q "preparação"
           curl -fsS "http://127.0.0.1:3000/produtos" | grep -q "PSCPP"
 
@@ -94,6 +98,10 @@ jobs:
           TRAJ_HEADERS=$(curl -sS -o /dev/null -D - "http://127.0.0.1:3000/minha-trajetoria")
           echo "$TRAJ_HEADERS" | grep -Eq "HTTP/1.1 30[2378]|HTTP/1.1 307"
           echo "$TRAJ_HEADERS" | grep -qi "location:.*login"
+
+          # Privacidade: exportação deve falhar fechada sem sessão
+          EXPORT_STATUS=$(curl -sS -o /dev/null -w "%{http_code}" "http://127.0.0.1:3000/api/account/export")
+          test "$EXPORT_STATUS" = "401"
 
           # Checkout aceita apenas POST; GET não pode iniciar cobrança
           CHECKOUT_STATUS=$(curl -sS -o /dev/null -w "%{http_code}" "http://127.0.0.1:3000/api/payments/mercado-pago/checkout")

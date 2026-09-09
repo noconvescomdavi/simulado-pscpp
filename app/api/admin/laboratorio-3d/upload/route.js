@@ -2,11 +2,13 @@ import {getAdmin} from "../../../../../lib/admin";
 import {saveUpload} from "../../../../../lib/site-editor/design-server";
 import {upsertRipeam3DAsset} from "../../../../../lib/ripeam-3d-scenes";
 import {assertSameOrigin} from "../../../../../lib/security";
+import {logAdminAction} from "../../../../../lib/admin-audit";
 
 export const runtime="nodejs";
 
 export async function POST(request){
-  if(!(await getAdmin()))return Response.json({error:"Não autorizado"},{status:403});
+  const admin=await getAdmin();
+  if(!admin)return Response.json({error:"Não autorizado"},{status:403});
   try{
     await assertSameOrigin();
     const form=await request.formData();
@@ -31,6 +33,7 @@ export async function POST(request){
       tags:String(form.get("tags")||"").split(",").map(x=>x.trim()).filter(Boolean),
       metadata:{uploaded_from:"admin-laboratorio-3d"}
     });
+    await logAdminAction({admin,action:"ripeam3d_upload",entityType:"ripeam3d_asset",entityKey:asset?.id||asset?.url,afterData:{name:asset?.name,url:asset?.url,bytes}});
     return Response.json({ok:true,...result,asset});
   }catch(error){
     return Response.json({ok:false,error:String(error?.message||error)},{status:Number(error?.status)||500});

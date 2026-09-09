@@ -1,6 +1,8 @@
+const isProduction = process.env.NODE_ENV === "production";
+
 const contentSecurityPolicy = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https:",
+  isProduction ? "script-src 'self' 'unsafe-inline' https:" : "script-src 'self' 'unsafe-inline' 'unsafe-eval' https:",
   "style-src 'self' 'unsafe-inline' https:",
   "img-src 'self' data: blob: https:",
   "font-src 'self' data: https:",
@@ -18,48 +20,15 @@ const contentSecurityPolicy = [
 
 const securityHeaders = [
   { key: "Content-Security-Policy", value: contentSecurityPolicy },
-  {
-    key: "X-Content-Type-Options",
-    value: "nosniff",
-  },
-
-  // Permite que o próprio ESTIBORDO seja aberto dentro
-  // do iframe do Editor Visual.
-  // Continua bloqueando sites externos.
-  {
-    key: "X-Frame-Options",
-    value: "SAMEORIGIN",
-  },
-
-  {
-    key: "Referrer-Policy",
-    value: "strict-origin-when-cross-origin",
-  },
-
-  {
-    key: "Permissions-Policy",
-    value: "camera=(), geolocation=(), microphone=()",
-  },
-  {
-    key: "Strict-Transport-Security",
-    value: "max-age=31536000; includeSubDomains",
-  },
-  {
-    key: "X-DNS-Prefetch-Control",
-    value: "on",
-  },
-  {
-    key: "X-Permitted-Cross-Domain-Policies",
-    value: "none",
-  },
-  {
-    key: "Origin-Agent-Cluster",
-    value: "?1",
-  },
-  {
-    key: "Cross-Origin-Opener-Policy",
-    value: "same-origin-allow-popups",
-  },
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "X-Frame-Options", value: "SAMEORIGIN" },
+  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+  { key: "Permissions-Policy", value: "camera=(), geolocation=(), microphone=()" },
+  { key: "Strict-Transport-Security", value: "max-age=31536000; includeSubDomains" },
+  { key: "X-DNS-Prefetch-Control", value: "on" },
+  { key: "X-Permitted-Cross-Domain-Policies", value: "none" },
+  { key: "Origin-Agent-Cluster", value: "?1" },
+  { key: "Cross-Origin-Opener-Policy", value: "same-origin-allow-popups" },
 ];
 
 const nextConfig = {
@@ -73,60 +42,24 @@ const nextConfig = {
 
   async headers() {
     return [
-      {
-        source: "/:path*",
-        headers: securityHeaders,
-      },
-      {
-        source: "/admin/:path*",
-        headers: [{ key: "Cache-Control", value: "private, no-store, max-age=0" }],
-      },
-      {
-        source: "/api/auth/:path*",
-        headers: [{ key: "Cache-Control", value: "no-store, max-age=0" }],
-      },
-      {
-        source: "/api/site-editor/:path*",
-        headers: [{ key: "Cache-Control", value: "private, no-store, max-age=0" }],
-      },
+      { source: "/:path*", headers: securityHeaders },
+      { source: "/admin/:path*", headers: [{ key: "Cache-Control", value: "private, no-store, max-age=0" }, { key: "X-Robots-Tag", value: "noindex, nofollow" }] },
+      { source: "/api/auth/:path*", headers: [{ key: "Cache-Control", value: "no-store, max-age=0" }] },
+      { source: "/api/account/:path*", headers: [{ key: "Cache-Control", value: "private, no-store, max-age=0" }] },
+      { source: "/perfil/:path*", headers: [{ key: "Cache-Control", value: "private, no-store, max-age=0" }, { key: "X-Robots-Tag", value: "noindex, nofollow" }] },
+      { source: "/area-do-aluno/:path*", headers: [{ key: "Cache-Control", value: "private, no-store, max-age=0" }, { key: "X-Robots-Tag", value: "noindex, nofollow" }] },
+      { source: "/api/site-editor/:path*", headers: [{ key: "Cache-Control", value: "private, no-store, max-age=0" }] },
     ];
   },
 
   async redirects() {
     return [
-      {
-        source: "/tutor-ia",
-        destination: "/contramestre",
-        permanent: true,
-      },
-      {
-        source: "/conteúdos",
-        destination: "/conteudos",
-        permanent: true,
-      },
-      {
-        source: "/admin/métricas",
-        destination: "/admin/metricas",
-        permanent: true,
-      },
-      {
-        source: "/ripeam",
-        destination:
-          "/study-content/simulado/navegacao-aguas-restritas/ripeam/",
-        permanent: false,
-      },
-
-      {
-        source: "/cis",
-        destination: "/flashcards/cis",
-        permanent: false,
-      },
-
-      {
-        source: "/study-content/flashcards/flashcard-cis/:path*",
-        destination: "/flashcards/cis",
-        permanent: false,
-      },
+      { source: "/tutor-ia", destination: "/contramestre", permanent: true },
+      { source: "/conteúdos", destination: "/conteudos", permanent: true },
+      { source: "/admin/métricas", destination: "/admin/metricas", permanent: true },
+      { source: "/ripeam", destination: "/study-content/simulado/navegacao-aguas-restritas/ripeam/", permanent: false },
+      { source: "/cis", destination: "/flashcards/cis", permanent: false },
+      { source: "/study-content/flashcards/flashcard-cis/:path*", destination: "/flashcards/cis", permanent: false },
     ];
   },
 };
