@@ -366,13 +366,19 @@ export default function Ripeam3DClient(){
           </aside>}
         </div>
 
-        {diagnostics?.status==="loaded"&&<div className={styles.diagnostics}>
-          <span>Meshes <b>{diagnostics.meshCount}</b></span>
-          <span>Materiais <b>{diagnostics.materialCount}</b></span>
-          <span>Bounding box <b>{diagnostics.boundingBoxValid?"válido":"inválido"}</b></span>
-          <span>Frustum <b>{diagnostics.inFrustum?"OK":"fora"}</b></span>
-          <span>Runtime <b>{diagnostics.runtime}</b></span>
-        </div>}
+        {diagnostics?.status==="loaded"&&<>
+          <div className={styles.diagnostics}>
+            <span>Meshes <b>{diagnostics.meshCount}</b></span>
+            <span>Materiais <b>{diagnostics.materialCount}</b></span>
+            <span>Texturas <b>{diagnostics.textureCount??0}</b></span>
+            <span>Base Color <b>{diagnostics.baseColorMapCount??0}</b></span>
+            <span>UVs <b>{diagnostics.missingUvMeshCount?diagnostics.uvMeshCount+"/"+diagnostics.meshCount:"OK"}</b></span>
+            <span>Bounding box <b>{diagnostics.boundingBoxValid?"válido":"inválido"}</b></span>
+            <span>Frustum <b>{diagnostics.inFrustum?"OK":"fora"}</b></span>
+            <span>Runtime <b>{diagnostics.runtime}</b></span>
+          </div>
+          {diagnostics.textureless&&<div className={styles.textureWarning}><b>GLB sem texturas.</b><span>Este arquivo não contém mapas de textura incorporados. O viewer não consegue reconstruir texturas que foram removidas durante a otimização.</span></div>}
+        </>}
       </section>
     </section>
   </main>;
