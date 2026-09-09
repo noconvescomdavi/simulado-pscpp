@@ -130,6 +130,7 @@ export default function EditorClient(){
   const [auth,setAuth]=useState("checking");
   const [password,setPassword]=useState("");
   const [page,setPage]=useState("/");
+  const [siteMap,setSiteMap]=useState(SITE_MAP);
   const [viewport,setViewport]=useState("desktop");
   const [scope,setScope]=useState("page");
   const [design,setDesign]=useState(null);
@@ -170,12 +171,21 @@ export default function EditorClient(){
 
   const dirty=useMemo(()=>design&&original&&JSON.stringify(design)!==JSON.stringify(original),[design,original]);
 
+  async function refreshSiteMap(){
+    try{
+      const r=await fetch("/api/site-editor/pages",{cache:"no-store"});
+      const j=await r.json();
+      if(r.ok&&j.ok&&Array.isArray(j.groups)&&j.groups.length)setSiteMap(j.groups);
+    }catch{}
+  }
+
   async function load(){
     const r=await fetch("/api/site-editor/design",{cache:"no-store"});
     if(r.status===401){setAuth("login");return;}
     const j=await r.json();
     if(!j.ok) throw new Error(j.error||"Falha ao carregar editor.");
     setDesign(j.content);setOriginal(clone(j.content));setSha(j.sha||"");setUndoStack([]);setRedoStack([]);setAuth("ready");
+    void refreshSiteMap();
   }
 
   useEffect(()=>{load().catch(e=>{setStatus(e.message);setAuth("login")})},[]);
@@ -463,7 +473,7 @@ export default function EditorClient(){
     remember();
     const id="blk_"+Date.now().toString(36)+"_"+Math.random().toString(36).slice(2,6);
     const templates={
-      text:{text:"Novo texto",style:{}},button:{text:"Novo botão",href:"#",style:{}},image:{src:"/estibordo/logos/estibordo-logo-header.png",alt:"Imagem",style:{}},section:{title:"Nova seção",text:"Edite este conteúdo no painel.",style:{}},box:{title:"Nova caixa",text:"Conteúdo da caixa",style:{}},decorative:{text:"✦",style:{}},gallery:{images:[],style:{}},menu:{items:[["Início","/"],["Área do Aluno","/area-do-aluno"]],style:{}},form:{title:"Entre em contato",fields:["Nome","E-mail","Mensagem"],style:{}},video:{src:"",title:"Vídeo",style:{}},interactive:{title:"Conteúdo interativo",text:"Configure este bloco.",style:{}},list:{items:["Item 1","Item 2","Item 3"],style:{}},embed:{code:"",style:{}},social:{items:[["Instagram","#"],["YouTube","#"],["LinkedIn","#"]],style:{}},input:{placeholder:"Digite aqui",style:{}},widget:{title:"Widget",text:"Widget do app",style:{}},cms:{title:"CMS",text:"Conecte este bloco a uma fonte de dados.",style:{}},blog:{title:"Blog",text:"Bloco de posts.",style:{}},app:{title:"App",text:"Integração de aplicativo.",style:{}},api:{title:"API",text:"Bloco conectado a API.",style:{}},hero:{title:"Título de destaque",text:"Subtítulo estratégico da seção.",button:"Começar agora",href:"#",style:{}},cta:{title:"Pronto para avançar?",text:"Adicione uma chamada para ação clara.",button:"Começar",href:"#",style:{}},stats:{items:[["75%","Desempenho"],["1.250","Questões"],["18","Simulados"]],style:{}},socialbar:{items:[["Instagram","#"],["YouTube","#"],["LinkedIn","#"]],style:{}},cards:{items:[["Card 1","Descrição"],["Card 2","Descrição"],["Card 3","Descrição"]],style:{}}
+      text:{text:"Novo texto",style:{}},button:{text:"Novo botão",href:"#",style:{}},image:{src:"/estibordo/logos/estibordo-logo-header.png",alt:"Imagem",style:{}},section:{title:"Nova seção",text:"Edite este conteúdo no painel.",style:{}},box:{title:"Nova caixa",text:"Conteúdo da caixa",style:{}},decorative:{text:"✦",style:{}},gallery:{images:[],style:{}},menu:{items:[["Início","/"],["Área do Aluno","/area-do-aluno"]],style:{}},form:{title:"Entre em contato",fields:["Nome","E-mail","Mensagem"],style:{}},video:{src:"",title:"Vídeo",style:{}},interactive:{title:"Conteúdo interativo",text:"Configure este bloco.",style:{}},list:{items:["Item 1","Item 2","Item 3"],style:{}},embed:{code:"",style:{}},social:{items:[["Instagram","#"],["YouTube","#"],["LinkedIn","#"]],style:{}},input:{placeholder:"Digite aqui",style:{}},widget:{title:"Widget",text:"Widget do app",style:{}},cms:{title:"CMS",text:"Conecte este bloco a uma fonte de dados.",style:{}},blog:{title:"Blog",text:"Bloco de posts.",style:{}},app:{title:"App",text:"Integração de aplicativo.",style:{}},api:{title:"API",text:"Bloco conectado a API.",style:{}},hero:{title:"Título de destaque",text:"Subtítulo estratégico da seção.",button:"Começar agora",href:"#",style:{}},cta:{title:"Pronto para avançar?",text:"Adicione uma chamada para ação clara.",button:"Começar",href:"#",style:{}},stats:{items:[["75%","Desempenho"],["1.250","Questões"],["18","Simulados"]],style:{}},socialbar:{items:[["Instagram","#"],["YouTube","#"],["LinkedIn","#"]],style:{}},cards:{items:[["Card 1","Descrição"],["Card 2","Descrição"],["Card 3","Descrição"]],style:{}},features:{title:"Recursos",items:[["Velocidade","Experiência rápida e responsiva."],["Clareza","Hierarquia visual objetiva."],["Conversão","CTA orientado à ação."]],style:{}},pricing:{title:"Planos",items:[["Essencial","R$ 49","Para começar"],["Pro","R$ 89","Mais recursos"],["Elite","R$ 149","Experiência completa"]],style:{}},faq:{title:"Perguntas frequentes",items:[["Como funciona?","Edite a resposta aqui."],["Posso personalizar?","Sim, todos os blocos são editáveis."]],style:{}},testimonial:{quote:"Uma experiência de estudo muito mais clara e integrada.",author:"Aluno ESTIBORDO",style:{}},timeline:{title:"Jornada",items:[["01","Descoberta"],["02","Preparação"],["03","Domínio"]],style:{}},divider:{style:{}},spacer:{style:{height:"48px"}}
     };
     const block={id,type,...(templates[type]||{title:type,text:"Novo bloco",style:{}})};
     setDesign(prev=>{const n=clone(prev||{version:2,global:{favicon:"",elements:{},media:[]},pages:{}});n.pages||={};n.pages[page]||={elements:{},blocks:[],settings:{}};n.pages[page].blocks=[...(n.pages[page].blocks||[]),block];return n});
@@ -517,6 +527,8 @@ export default function EditorClient(){
 
   const preview=VIEWPORTS[viewport];
   const effectiveScale=fitScale*(zoom/100);
+  const previewSrc=page==="/__404"?"/__estibordo-system/404-preview":page;
+  const pageLabel=siteMap.flatMap(x=>x.pages||[]).find(x=>x[0]===page)?.[1]||page;
 
   return <main className="ev-app">
     <header className="ev-topbar">
@@ -541,16 +553,16 @@ export default function EditorClient(){
     <FlashcardManager open={flashcardManagerOpen} onClose={()=>setFlashcardManagerOpen(false)} initialSlug={page.startsWith("/flashcards/")?page.split("/")[2]:"cis"} onChanged={()=>setStatus("Flashcard salvo no banco. Atualize a prévia para conferir.")}/>
     <div className="ev-workspace">
       <aside className="ev-sitemap">
-        <div className="ev-side-title"><b>MAPA DO SITE</b><span>Escolha uma página para editar</span></div>
-        <div className="ev-site-scroll">{SITE_MAP.map(group=><section key={group.group}><h4>{group.group}</h4>{group.pages.map(([url,label])=><button className={page===url?"is-active":""} key={url} onClick={()=>{setPage(url);setTarget(null)}}><span>{label}</span><small>{url}</small></button>)}</section>)}</div>
+        <div className="ev-side-title"><b>MAPA DO SITE</b><span>Sincronizado automaticamente com a árvore do app</span><button type="button" onClick={()=>void refreshSiteMap()} title="Atualizar mapa do site">↻</button></div>
+        <div className="ev-site-scroll">{siteMap.map(group=><section key={group.group}><h4>{group.group}</h4>{group.pages.map(([url,label,meta])=><button className={page===url?"is-active":""} key={url} onClick={()=>{setPage(url);setTarget(null)}}><span>{label}{meta?.hidden?<em>oculta</em>:""}</span><small>{url}</small></button>)}</section>)}</div>
         <div className="ev-layers"><div className="ev-layers-head"><b>CAMADAS</b><button type="button" onClick={()=>refreshLayers()}>↻</button></div><div className="ev-layer-scroll">{layers.map(layer=><button type="button" key={layer.selector+"-"+layer.index} className={target?.selector===layer.selector?"is-active":""} onClick={()=>selectBySelector(layer.selector)}><small>{layer.tag}</small><span>{layer.label||layer.selector}</span></button>)}</div></div>
       </aside>
 
       <section className="ev-canvas">
-        <div className="ev-canvas-head"><div><b>{SITE_MAP.flatMap(x=>x.pages).find(x=>x[0]===page)?.[1]||page}</b><span>{page}</span></div><em>{moveMode?"Modo mover: selecione e arraste o elemento":`${preview.label} · zoom ${zoom}%`}</em></div>
+        <div className="ev-canvas-head"><div><b>{pageLabel}</b><span>{page}</span></div><em>{moveMode?"Modo mover: selecione e arraste o elemento":`${preview.label} · zoom ${zoom}%`}</em></div>
         <div className="ev-frame-area" ref={frameAreaRef}>
           <div className={`ev-frame-shell ev-${viewport}`} style={{width:`${preview.width*effectiveScale}px`,height:`${preview.height*effectiveScale}px`}}>
-            <iframe ref={iframeRef} key={page} src={page} onLoad={wireIframe} title="Prévia da página" style={{width:`${preview.width}px`,height:`${preview.height}px`,transform:`scale(${effectiveScale})`,transformOrigin:"top left"}}/>
+            <iframe ref={iframeRef} key={page} src={previewSrc} onLoad={wireIframe} title="Prévia da página" style={{width:`${preview.width}px`,height:`${preview.height}px`,transform:`scale(${effectiveScale})`,transformOrigin:"top left"}}/>
           </div>
         </div>
       </section>

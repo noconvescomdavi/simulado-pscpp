@@ -458,10 +458,12 @@ export default function ArteNavalFlashcardsClient({ deck, initialState }) {
   const [examTotal, setExamTotal] = useState(0);
   const [imageZoom, setImageZoom] = useState(false);
   const [noteOpen, setNoteOpen] = useState(false);
+  const [swipeOffset, setSwipeOffset] = useState(0);
 
   const shownAt = useRef(Date.now());
   const sessionRef = useRef({ id: null, mode: null });
   const toastTimer = useRef(null);
+  const swipeRef = useRef({ x: 0, y: 0, moved: false, suppressClick: false });
 
   const cardsById = useMemo(() => Object.fromEntries(cards.map((card) => [String(card.id), card])), [cards]);
   const orderedCards = useMemo(() => order.map((id) => cardsById[id]).filter(Boolean), [order, cardsById]);
@@ -581,6 +583,42 @@ export default function ArteNavalFlashcardsClient({ deck, initialState }) {
   function moveCard(delta) {
     if (!filtered.length) return;
     setCurrentIndex((index) => (index + delta + filtered.length) % filtered.length);
+  }
+
+  function handleCardTouchStart(event) {
+    const touch = event.touches?.[0];
+    if (!touch) return;
+    swipeRef.current = { x: touch.clientX, y: touch.clientY, moved: false, suppressClick: false };
+    setSwipeOffset(0);
+  }
+
+  function handleCardTouchMove(event) {
+    const touch = event.touches?.[0];
+    if (!touch) return;
+    const dx = touch.clientX - swipeRef.current.x;
+    const dy = touch.clientY - swipeRef.current.y;
+    if (Math.abs(dx) > Math.abs(dy) + 8) {
+      swipeRef.current.moved = Math.abs(dx) > 12;
+      setSwipeOffset(Math.max(-96, Math.min(96, dx)));
+    }
+  }
+
+  function handleCardTouchEnd() {
+    const dx = swipeOffset;
+    if (swipeRef.current.moved && Math.abs(dx) >= 52 && filtered.length > 1) {
+      swipeRef.current.suppressClick = true;
+      moveCard(dx < 0 ? 1 : -1);
+    }
+    setSwipeOffset(0);
+    window.setTimeout(() => { swipeRef.current.suppressClick = false; }, 220);
+  }
+
+  function handleCardClick() {
+    if (swipeRef.current.suppressClick || swipeRef.current.moved) {
+      swipeRef.current.moved = false;
+      return;
+    }
+    setFlipped((value) => !value);
   }
 
   function updateLocalAnswer(cardId, correct) {
@@ -883,7 +921,17 @@ export default function ArteNavalFlashcardsClient({ deck, initialState }) {
         {!examMode && current && (
           <>
             <div className={styles.flashcardWrap}>
-              <button type="button" className={`${styles.flashcard} ${flipped ? styles.flipped : ""} ${current?.effect==="glow"?styles.effectGlow:""} ${current?.effect==="float"?styles.effectFloat:""} ${current?.effect==="tilt"?styles.effectTilt:""} ${current?.transition==="fast"?styles.transitionFast:""} ${current?.transition==="soft"?styles.transitionSoft:""} ${current?.transition==="dramatic"?styles.transitionDramatic:""}`} onClick={() => setFlipped((value) => !value)} aria-label="Virar flashcard">
+              <article
+                className={`${styles.flashcard} ${flipped ? styles.flipped : ""} ${current?.effect==="glow"?styles.effectGlow:""} ${current?.effect==="float"?styles.effectFloat:""} ${current?.effect==="tilt"?styles.effectTilt:""} ${current?.transition==="fast"?styles.transitionFast:""} ${current?.transition==="soft"?styles.transitionSoft:""} ${current?.transition==="dramatic"?styles.transitionDramatic:""}`}
+                style={{ "--swipe-x": `${swipeOffset}px` }}
+                onClick={handleCardClick}
+                onTouchStart={handleCardTouchStart}
+                onTouchMove={handleCardTouchMove}
+                onTouchEnd={handleCardTouchEnd}
+                role="button"
+                tabIndex={0}
+                aria-label="Virar flashcard. Deslize para os lados para navegar."
+              >
                 <div className={styles.flashcardInner}>
                   <section className={`${styles.face} ${styles.front}`}>
                     <div className={styles.cardTopline}>
@@ -930,19 +978,19 @@ export default function ArteNavalFlashcardsClient({ deck, initialState }) {
                     <div className={styles.flipHint}>Toque para voltar <kbd>ESPAÇO</kbd></div>
                   </section>
                 </div>
-              </button>
-            </div>
-
-            <div className={styles.gradeRow}>
-              <button type="button" className={styles.wrong} onClick={() => gradeStudy(false)}><span>1</span> Ainda não sei</button>
-              <button type="button" className={`${styles.difficult} ${currentProgress.difficult ? styles.marked : ""}`} onClick={() => void toggleDifficult()}><span>2</span>{currentProgress.difficult ? "★ Difícil" : "☆ Marcar difícil"}</button>
-              <button type="button" className={styles.correct} onClick={() => gradeStudy(true)}><span>3</span> Sei</button>
-            </div>
-
-            <div className={styles.navigation}>
-              <button type="button" onClick={() => moveCard(-1)} disabled={filtered.length <= 1}>← Anterior</button>
-              <div><kbd>←</kbd><kbd>→</kbd> navegar · <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> classificar</div>
-              <button type="button" onClick={() => moveCard(1)} disabled={filtered.length <= 1}>Próximo →</button>
+                <div className={styles.cardDock} onClick={(event) => event.stopPropagation()}>
+                  <div className={styles.gradeRow}>
+                    <button type="button" className={styles.wrong} onClick={() => gradeStudy(false)}><span>1</span> Ainda não sei</button>
+                    <button type="button" className={`${styles.difficult} ${currentProgress.difficult ? styles.marked : ""}`} onClick={() => void toggleDifficult()}><span>2</span>{currentProgress.difficult ? "★ Difícil" : "☆ Marcar difícil"}</button>
+                    <button type="button" className={styles.correct} onClick={() => gradeStudy(true)}><span>3</span> Sei</button>
+                  </div>
+                  <div className={styles.navigation}>
+                    <button type="button" onClick={() => moveCard(-1)} disabled={filtered.length <= 1} aria-label="Cartão anterior">←</button>
+                    <div><span>Deslize</span><b>‹</b><small>para navegar</small><b>›</b></div>
+                    <button type="button" onClick={() => moveCard(1)} disabled={filtered.length <= 1} aria-label="Próximo cartão">→</button>
+                  </div>
+                </div>
+              </article>
             </div>
             <div className={styles.cardTools}>
               <button type="button" onClick={() => setImageZoom(true)}>⌕ Ampliar imagem</button>

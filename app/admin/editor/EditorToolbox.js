@@ -12,6 +12,9 @@ const GROUPS=[
   ]],
   ["Modelos",[
     ["hero","Hero pronto","H"],["cta","CTA pronto","→"],["stats","Gráfico / métricas","▥"],["socialbar","Ícones sociais","●"],["cards","Cards prontos","▤"]
+  ]],
+  ["Webdesigner Pro",[
+    ["features","Grade de recursos","✦"],["pricing","Tabela de preços","$"],["faq","FAQ / Accordion","?"],["testimonial","Depoimento","“"],["timeline","Linha do tempo","⋮"],["divider","Divisor","—"],["spacer","Espaçador","↕"]
   ]]
 ];
 
@@ -28,6 +31,7 @@ export default function EditorToolbox({open,onClose,onAdd,onAction,pageSettings,
       <div className="ev-drawer-scroll">
         {GROUPS.map(([title,items])=><section key={title}><h4>{title}</h4><div className="ev-add-grid">{items.map(([type,label,icon])=><button key={type} onClick={()=>onAdd(type)}><i>{icon}</i><span>{label}</span></button>)}</div></section>)}
         <section><h4>Aparência da página</h4>
+          <label className="ev-mini-field"><span>Layout mestre</span><select value={pageSettings.layoutPreset||"fluid"} onChange={e=>onPageSettings({layoutPreset:e.target.value})}><option value="fluid">Fluido responsivo</option><option value="contained">Conteúdo centralizado</option><option value="immersive">Imersivo / full bleed</option><option value="editorial">Editorial</option></select></label>
           <label className="ev-mini-field"><span>Tema de cor</span><select value={pageSettings.colorTheme||"estibordo"} onChange={e=>onPageSettings({colorTheme:e.target.value})}><option value="estibordo">ESTIBORDO</option><option value="light">Claro</option><option value="dark">Escuro</option><option value="ocean">Oceano</option></select></label>
           <label className="ev-mini-field"><span>Tema de texto</span><select value={pageSettings.textTheme||"default"} onChange={e=>onPageSettings({textTheme:e.target.value})}><option value="default">Padrão</option><option value="editorial">Editorial</option><option value="compact">Compacto</option><option value="display">Display</option></select></label>
           <label className="ev-mini-field"><span>Background</span><input value={pageSettings.background||""} placeholder="#071b2b ou URL" onChange={e=>onPageSettings({background:e.target.value})}/></label>

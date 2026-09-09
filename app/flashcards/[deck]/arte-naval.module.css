@@ -122,11 +122,12 @@
 .progressTrack { height: 5px; margin-bottom: 18px; overflow: hidden; background: var(--panel2); border-radius: 999px; }
 .progressTrack i { display: block; height: 100%; background: linear-gradient(90deg, var(--red), #ef5660); border-radius: inherit; transition: width .25s ease; }
 
-.flashcardWrap { max-width: 980px; margin: 0 auto; perspective: 1400px; }
-.flashcard { width: 100%; height: 620px; padding: 0; background: transparent; border: 0; cursor: pointer; perspective: 1400px; }
-.flashcardInner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .52s cubic-bezier(.2,.75,.2,1); }
+.flashcardWrap { max-width: 980px; margin: 0 auto; perspective: 1400px; overflow: hidden; border-radius: 26px; }
+.flashcard { position: relative; display: flex; flex-direction: column; gap: 10px; width: 100%; height: 700px; padding: 8px; background: color-mix(in srgb,var(--panel) 94%,transparent); border: 1px solid var(--line); border-radius: 26px; box-shadow: 0 22px 60px rgba(3,17,26,.12); cursor: pointer; perspective: 1400px; touch-action: pan-y; transform: translateX(var(--swipe-x,0)); transition: transform .18s ease, box-shadow .2s ease; }
+.flashcard:active { box-shadow: 0 14px 38px rgba(3,17,26,.1); }
+.flashcardInner { position: relative; flex: 1; min-height: 0; width: 100%; transform-style: preserve-3d; transition: transform .52s cubic-bezier(.2,.75,.2,1); }
 .flipped .flashcardInner { transform: rotateY(180deg); }
-.face { position: absolute; inset: 0; display: flex; flex-direction: column; overflow: hidden; text-align: left; background: var(--panel2); border: 1px solid var(--line); border-radius: 24px; box-shadow: 0 18px 50px rgba(3,17,26,.1); backface-visibility: hidden; }
+.face { position: absolute; inset: 0; display: flex; flex-direction: column; overflow: hidden; text-align: left; background: var(--panel2); border: 1px solid var(--line); border-radius: 19px; backface-visibility: hidden; }
 .front { transform: rotateY(0); }
 .back { color: #fff; background: linear-gradient(145deg,#071522,#0b2739); border-color: #294456; transform: rotateY(180deg); }
 
@@ -162,8 +163,10 @@
 .sourceLine { margin-top: 16px; }
 .sourceLine strong { display: block; margin-top: 4px; color: #8fb6c8; font-size: .72rem; }
 
-.gradeRow { display: grid; grid-template-columns: repeat(3,1fr); gap: 9px; max-width: 980px; margin: 13px auto 0; }
-.gradeRow button { padding: 12px 14px; color: var(--text); background: var(--panel2); border: 1px solid var(--line); border-radius: 12px; cursor: pointer; font-weight: 900; }
+.cardDock { display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: stretch; padding: 2px; border-radius: 17px; background: var(--panel); }
+.gradeRow { display: grid; grid-template-columns: repeat(3,1fr); gap: 7px; min-width: 0; margin: 0; }
+.gradeRow button { min-height: 48px; padding: 10px 12px; color: var(--text); background: var(--panel2); border: 1px solid var(--line); border-radius: 13px; cursor: pointer; font-weight: 900; transition: transform .16s ease, border-color .16s ease, background .16s ease; }
+.gradeRow button:hover { transform: translateY(-1px); }
 .gradeRow button span { display: inline-grid; place-items: center; width: 23px; height: 23px; margin-right: 7px; background: rgba(127,146,158,.13); border-radius: 6px; font-size: .68rem; }
 .gradeRow .wrong { color: #b9202c; border-color: rgba(205,40,52,.28); }
 .dark .gradeRow .wrong { color: #f36a73; }
@@ -171,10 +174,12 @@
 .dark .gradeRow .correct { color: #66d99c; }
 .gradeRow .difficult.marked { color: #f5c653; background: #3b2e13; border-color: #775b1b; }
 
-.navigation { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 12px; max-width: 980px; margin: 9px auto 0; }
-.navigation button { padding: 9px 13px; color: var(--text); background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; cursor: pointer; font-weight: 850; }
-.navigation > div { color: var(--muted); text-align: center; font-size: .68rem; }
-.navigation kbd { margin: 0 2px; }
+.navigation { display: grid; grid-template-columns: 42px minmax(110px,1fr) 42px; align-items: center; gap: 6px; min-width: 218px; margin: 0; padding-left: 8px; border-left: 1px solid var(--line); }
+.navigation button { display: grid; place-items: center; min-width: 42px; padding: 0; color: var(--text); background: var(--panel2); border: 1px solid var(--line); border-radius: 13px; cursor: pointer; font-size: 1.15rem; font-weight: 950; }
+.navigation > div { display: flex; align-items: center; justify-content: center; gap: 5px; color: var(--muted); text-align: center; white-space: nowrap; font-size: .63rem; }
+.navigation > div span { font-weight: 950; color: var(--text); }
+.navigation > div b { font-size: 1rem; }
+.navigation > div small { font-size: .61rem; }
 .emptyState { padding: 70px 20px; text-align: center; }
 .emptyState strong { font-size: 1.2rem; }
 .emptyState p { color: var(--muted); }
@@ -227,7 +232,7 @@
   .setupHead { flex-direction: column; align-items: flex-start; }
   .answerGrid { grid-template-columns: 1fr; gap: 10px; padding: 17px 22px; }
   .answerVisual { display: none; }
-  .flashcard { height: 590px; }
+  .flashcard { height: 660px; }
   .learningPanel { grid-template-columns: 1fr; }
   .learningNumbers { justify-content: flex-start; }
   .reset { width: max-content; }
@@ -253,16 +258,19 @@
   .filters { flex-wrap: nowrap; margin-right: -13px; padding-bottom: 4px; overflow-x: auto; }
   .filters button { white-space: nowrap; }
   .quickActions > span { width: 100%; margin-left: 0; }
-  .flashcard { height: 545px; }
+  .flashcard { height: 610px; }
   .visualStage { padding: 10px 8px 0; }
   .navalVisual { max-height: 270px; }
   .questionBlock { padding: 7px 13px 10px; }
   .questionBlock h2 { font-size: 1.65rem; }
   .questionBlock p { font-size: .82rem; }
   .cardTopline { padding: 9px 10px; }
-  .gradeRow { grid-template-columns: 1fr; }
-  .navigation { grid-template-columns: 1fr 1fr; }
-  .navigation > div { display: none; }
+  .cardDock { grid-template-columns: 1fr; }
+  .gradeRow { grid-template-columns: repeat(3,1fr); }
+  .gradeRow button { min-height: 44px; padding: 8px 5px; font-size: .69rem; }
+  .gradeRow button span { display: none; }
+  .navigation { grid-template-columns: 42px 1fr 42px; min-width: 0; padding: 7px 0 0; border-left: 0; border-top: 1px solid var(--line); }
+  .navigation > div { display: flex; }
   .options { grid-template-columns: 1fr; padding: 0 11px; }
   .examVisual { height: 240px; padding: 10px 8px 0; }
   .examPrompt { padding: 6px 12px 12px; }
