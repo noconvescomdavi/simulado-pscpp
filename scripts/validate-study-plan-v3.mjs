@@ -13,6 +13,7 @@ const sessionApi=read("app/api/study-plan/session/route.js");
 const learning=read("lib/learning-engine.js");
 const graph=read("lib/learning-graph.js");
 const nextConfig=read("next.config.mjs");
+const middleware=fs.existsSync("middleware.js")?read("middleware.js"):"";
 
 const start=integrated.indexOf("export async function getIntegratedStudyPlan");
 const end=integrated.indexOf("export async function setPlanTaskStatus",start);
@@ -46,6 +47,12 @@ assert.match(sessionApi,/heartbeat/,"API de sessão real não possui heartbeat")
 assert.match(learning,/calculateMasteryScore/,"Learning Engine perdeu cálculo de mastery");
 assert.match(learning,/getStudyTimeSummary/,"Learning Engine perdeu tempo real de estudo");
 assert.match(graph,/questionTaxonomy/,"Grafo de aprendizagem não usa taxonomia canônica");
-assert.match(nextConfig,/Content-Security-Policy/,"CSP não está configurada");
+assert.ok(/Content-Security-Policy/.test(nextConfig)||/Content-Security-Policy/.test(middleware),"CSP não está configurada");
+if(middleware){
+  assert.match(middleware,/threeCsp/,"CSP específica do runtime 3D ausente");
+  assert.match(middleware,/unsafe-eval/,"Runtime 3D não possui compatibilidade CSP necessária");
+  const strictBlock=middleware.slice(middleware.indexOf("const strictCsp"),middleware.indexOf("const threeCsp"));
+  assert.ok(!strictBlock.includes("unsafe-eval"),"CSP geral não deve liberar unsafe-eval");
+}
 
 console.log("Study Plan V3 invariants: OK");
