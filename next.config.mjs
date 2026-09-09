@@ -1,25 +1,4 @@
-const isProduction = process.env.NODE_ENV === "production";
-
-const contentSecurityPolicy = [
-  "default-src 'self'",
-  isProduction ? "script-src 'self' 'unsafe-inline' https:" : "script-src 'self' 'unsafe-inline' 'unsafe-eval' https:",
-  "style-src 'self' 'unsafe-inline' https:",
-  "img-src 'self' data: blob: https:",
-  "font-src 'self' data: https:",
-  "connect-src 'self' https: wss:",
-  "media-src 'self' blob: https:",
-  "worker-src 'self' blob:",
-  "child-src 'self' blob:",
-  "frame-src 'self' blob: https:",
-  "frame-ancestors 'self'",
-  "object-src 'none'",
-  "base-uri 'self'",
-  "form-action 'self'",
-  "upgrade-insecure-requests",
-].join("; ");
-
 const securityHeaders = [
-  { key: "Content-Security-Policy", value: contentSecurityPolicy },
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "X-Frame-Options", value: "SAMEORIGIN" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },

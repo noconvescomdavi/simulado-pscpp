@@ -422,7 +422,7 @@ body:has(#student-shell){background:#05131e}
     margin-left:260px!important;
     width:calc(100% - 260px)!important;
     max-width:none!important;
-    padding-top:92px;
+    padding-top:calc(92px + env(safe-area-inset-top, 0px));
   }
 }
 @media(max-width:960px){
@@ -430,7 +430,7 @@ body:has(#student-shell){background:#05131e}
     width:100%!important;
     max-width:none!important;
     margin-left:0!important;
-    padding-top:78px;
+    padding-top:calc(78px + env(safe-area-inset-top, 0px));
   }
 }
 
