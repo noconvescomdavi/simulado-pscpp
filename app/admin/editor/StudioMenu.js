@@ -1,5 +1,5 @@
 "use client";
-import {useMemo,useState} from "react";
+import {useEffect,useMemo,useState} from "react";
 import BlockTree from "./BlockTree";
 
 const ICONS=[
@@ -164,11 +164,13 @@ const MORGUE=[["Navios","ship"],["Portos","harbor"],["Oceano","ocean"],["Faróis
 const CATS=["Todos",...Array.from(new Set(ICONS.map(x=>x.c)))];
 function Icon({path}){return <svg viewBox="0 0 24 24"><path d={path}/></svg>}
 
-export default function StudioMenu({open,onClose,siteMap,page,onPageChange,layers,onSelectLayer,blocks,selectedBlockId,onSelectBlock,onOpenBuilder,onOpenFlashcards,media,onUploadMedia,onAddIcon,onAddLogo,onAddSignalFlag,onImportImage,customCode,onCustomCode,breakpoints,onBreakpoints}){
+export default function StudioMenu({open,onClose,replacementMode,replacementType,siteMap,page,onPageChange,layers,onSelectLayer,blocks,selectedBlockId,onSelectBlock,onOpenBuilder,onOpenFlashcards,media,onUploadMedia,onAddIcon,onAddLogo,onAddSignalFlag,onImportImage,customCode,onCustomCode,breakpoints,onBreakpoints}){
   const [tab,setTab]=useState("site");const [assetTab,setAssetTab]=useState("cis");const [asset,setAsset]=useState({url:"",name:"",source:"Morguefile",license:"Free Personal & Commercial Use"});const [iconCat,setIconCat]=useState("Todos");const [iconSearch,setIconSearch]=useState("");
+  useEffect(()=>{if(open&&replacementMode){setTab("assets");setAssetTab(replacementType==="signalFlag"?"cis":replacementType==="logo"?"logos":replacementType==="image"?"photos":"marine")}},[open,replacementMode,replacementType]);
   const totalPages=useMemo(()=>siteMap.reduce((n,g)=>n+(g.pages?.length||0),0),[siteMap]);
   const filtered=useMemo(()=>ICONS.filter(x=>(iconCat==="Todos"||x.c===iconCat)&&(!iconSearch||x.name.toLowerCase().includes(iconSearch.toLowerCase()))),[iconCat,iconSearch]);
   return <div className={"ev-studio-backdrop "+(open?"is-open":"")} onMouseDown={e=>e.target===e.currentTarget&&onClose()}><aside className="ev-studio-menu"><header><button className="ev-studio-close" onClick={onClose}>☰</button><div><b>ESTIBORDO STUDIO</b><span>{totalPages} páginas · ferramentas profissionais</span></div><button className="ev-studio-x" onClick={onClose}>×</button></header><nav>{[["site","Site"],["layers","Camadas"],["tools","Ferramentas"],["assets","Assets"],["code","Código"]].map(([id,label])=><button key={id} className={tab===id?"is-active":""} onClick={()=>setTab(id)}>{label}</button>)}</nav><div className="ev-studio-scroll">
+  {replacementMode&&<div className="ev-replace-banner"><b>↻ SUBSTITUIR OBJETO</b><span>Escolha um ícone, objeto marítimo, bandeira, logo ou imagem. Posição, tamanho, breakpoint e animações serão preservados.</span></div>}
   {tab==="site"&&siteMap.map(group=><section key={group.group}><h4>{group.group}</h4>{group.pages.map(([url,label,meta])=><button className={"ev-studio-page "+(page===url?"is-active":"")} key={url} onClick={()=>onPageChange(url)}><b>{label}</b><span>{url}</span>{meta?.hidden&&<em>oculta</em>}</button>)}</section>)}
   {tab==="layers"&&<><section><h4>DOM da página</h4><div className="ev-studio-layer-list">{layers.map(x=><button key={x.selector+x.index} onClick={()=>onSelectLayer(x.selector)}><small>{x.tag}</small><span>{x.label||x.selector}</span></button>)}</div></section><section><h4>Blocos & hierarquia</h4><BlockTree blocks={blocks} selectedId={selectedBlockId} onSelect={onSelectBlock}/></section></>}
   {tab==="tools"&&<><div className="ev-studio-tool-grid"><button onClick={onOpenBuilder}><i>＋</i><b>Page Builder</b><span>Blocos, templates e layouts</span></button><button onClick={onOpenFlashcards}><i>▣</i><b>Flashcards</b><span>Gerenciador acadêmico</span></button></div><section><h4>Responsividade / Breakpoints</h4><div className="ev-breakpoint-editor"><label><span>Tablet até</span><input type="number" value={breakpoints.tablet||1024} onChange={e=>onBreakpoints({tablet:Number(e.target.value)||1024})}/><small>px</small></label><label><span>Mobile até</span><input type="number" value={breakpoints.mobile||620} onChange={e=>onBreakpoints({mobile:Number(e.target.value)||620})}/><small>px</small></label></div></section></>}
