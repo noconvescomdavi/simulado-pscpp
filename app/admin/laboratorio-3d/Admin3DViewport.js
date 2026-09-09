@@ -176,7 +176,7 @@ export default function Admin3DViewport({
     while(r.objects.children.length)r.objects.remove(r.objects.children[0]);
 
     const roots=new Map();
-    let triangles=0,meshes=0,lights=0,models=0,modelErrors=0;
+    let triangles=0,meshes=0,lights=0,models=0,modelErrors=0,textures=0,estimatedTextureMB=0;
 
     const normalizeChild=(obj,target=8)=>{
       const box=new r.THREE.Box3().setFromObject(obj);
@@ -206,10 +206,17 @@ export default function Admin3DViewport({
           ["map","normalMap","roughnessMap","metalnessMap","aoMap","emissiveMap"].forEach(key=>{
             const t=m[key];
             if(!t?.isTexture)return;
+            if(!t.userData.__ripeamCounted){
+              t.userData.__ripeamCounted=true;textures++;
+              const img=t.image,w=Number(img?.width||0),h=Number(img?.height||0);
+              if(w&&h)estimatedTextureMB+=w*h*4*1.33/1024/1024;
+            }
             t.anisotropy=maxAnisotropy;
             if(key==="map"||key==="emissiveMap")t.colorSpace=r.THREE.SRGBColorSpace;
             t.needsUpdate=true;
           });
+          if(scene.settings?.wireframe&&"wireframe" in m)m.wireframe=true;
+          if(scene.settings?.xray){m.transparent=true;m.opacity=Math.min(Number(m.opacity??1),.28);m.depthWrite=false;}
           if(!custom)return;
           if("color" in m&&data.material?.color)m.color.set(data.material.color);
           if("roughness" in m&&data.material?.roughness!==undefined)m.roughness=Number(data.material.roughness);
@@ -297,11 +304,15 @@ export default function Admin3DViewport({
       }
 
       if(child)root.add(child);
+      if(scene.settings?.showAxes)root.add(new r.THREE.AxesHelper(.9));
       root.position.fromArray(data.position||[0,0,0]);
       root.rotation.set(...(data.rotation||[0,0,0]));
       root.scale.fromArray(data.scale||[1,1,1]);
       root.visible=data.visible!==false;
       roots.set(data.id,root);
+      if(scene.settings?.showBounds&&child){
+        try{const helper=new r.THREE.BoxHelper(child,0x63c8ff);helper.userData.editorHelper=true;root.add(helper)}catch{}
+      }
       return root;
     }
 
@@ -334,13 +345,14 @@ export default function Admin3DViewport({
       }
 
       r.editorRoots=roots;
-      propsRef.current.onStats?.({triangles,meshes,lights,models,modelErrors,objects:(scene.objects||[]).length});
+      const info=r.renderer.info;
+      propsRef.current.onStats?.({triangles,meshes,lights,models,modelErrors,textures,estimatedTextureMB:Number(estimatedTextureMB.toFixed(1)),drawCalls:info?.render?.calls||0,geometries:info?.memory?.geometries||0,objects:(scene.objects||[]).length});
       const found=roots.get(propsRef.current.selectedId);
       if(found&&!propsRef.current.readOnly){r.transform.attach(found);r.transform.setMode(propsRef.current.mode||"translate")}
     })();
 
     return()=>{cancelled=true};
-  },[scene.objects,scene.settings?.showSectors]);
+  },[scene.objects,scene.settings?.showSectors,scene.settings?.showBounds,scene.settings?.showAxes,scene.settings?.wireframe,scene.settings?.xray]);
 
   useEffect(()=>{
     const r=runtime.current;if(!r)return;
