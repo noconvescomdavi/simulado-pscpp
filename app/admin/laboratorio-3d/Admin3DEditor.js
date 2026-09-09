@@ -3,13 +3,14 @@ import {useEffect,useMemo,useRef,useState} from "react";
 import styles from "./laboratorio-3d.module.css";
 import Admin3DViewport from "./Admin3DViewport";
 import {CAMERA_PRESETS,DAY_SHAPES,LIGHT_PRESETS,SCENE_TEMPLATES,DECORATIVE_OBJECTS,makeObject} from "./editor-presets";
+import {ENVIRONMENT_PRESETS,DISPLAY_PRESETS,LIGHT_STACKS,MARITIME_ANCHORS,sceneCompleteness,performanceIssues} from "./editor-professional";
 import {RIPEAM_RULES,CONDITION_LABELS,PERIOD_LABELS,SERVICE_LABELS,SIDE_LABELS,getRule,getSemanticItem,semanticBreadcrumb,semanticLabel} from "./ripeam-semantic";
 
 const EMPTY={
   scene_key:"nova-cena",title:"Nova cena",rule_ref:"",card_title:"",description:"",status:"draft",
   config:{
     scenarioKey:"nova-cena",semantic:{ruleNumber:"",ruleItem:"",scenarioKey:"",condition:"",period:"",serviceStatus:"",side:"",towLength:"",fishingType:"",cardId:"",sourceRef:"",editorialNote:"",lockedToRule:false},objects:[],cards:[],timeline:{duration:10,loop:true,autoplay:false},
-    settings:{snapEnabled:true,snapPosition:.25,snapRotation:15,snapScale:.05,showGrid:true,showSectors:true,previewMode:"day"},
+    settings:{snapEnabled:true,snapPosition:.25,snapRotation:15,snapScale:.05,showGrid:true,showSectors:true,showBounds:false,showAxes:false,wireframe:false,xray:false,previewMode:"day"},
     environment:{background:"#071522",ambient:"#7897bc",ambientIntensity:.9,sun:"#fff0cf",sunIntensity:2.2,sunPosition:[6,14,9],water:"#063b55",exposure:.95,fog:"#07121d",fogDensity:.026},
     camera:{position:[14,7,15],target:[0,1,0],fov:43},
     editorCamera:{position:[14,7,15],target:[0,1,0],fov:43}
@@ -53,6 +54,9 @@ export default function Admin3DEditor(){
   const [abCompare,setAbCompare]=useState(null);
   const [importReport,setImportReport]=useState(null);
   const [showDiff,setShowDiff]=useState(false);
+  const [healthReport,setHealthReport]=useState([]);
+  const [healthBusy,setHealthBusy]=useState(false);
+  const [preflight,setPreflight]=useState(null);
   const fileRef=useRef(null);
 
   const cfg=scene.config||EMPTY.config;
@@ -401,6 +405,52 @@ export default function Admin3DEditor(){
     addObject({name:"Cabo de reboque",type:"cable",color:"#d9d0bb",cable:{fromId:models[0].id,toId:models[1].id,sag:.4}});
   }
 
+  function applyEnvironmentPreset(p){
+    mutate(s=>{s.config.environment={...s.config.environment,...p.environment};s.config.settings={...s.config.settings,...p.settings}});
+    setStatus("Ambiente aplicado: "+p.label+".");
+  }
+
+  function applyDisplayPreset(p){
+    mutate(s=>{s.config.settings={...s.config.settings,...p.settings}});
+    setStatus("Workspace visual: "+p.label+".");
+  }
+
+  function addLightStack(stack){
+    const model=cfg.objects.find(o=>o.type==="model");
+    const parentId=model?.id||null;
+    const baseY=4.2,spacing=.62;
+    mutate(s=>{
+      stack.colors.forEach((color,i)=>{
+        const presetKey=stack.presets[i];
+        const preset=LIGHT_PRESETS.find(p=>p.key===presetKey);
+        s.config.objects.push(makeObject({name:stack.label+" "+(i+1),type:"pointLight",color,lightPreset:presetKey,sector:preset?.sector||360,intensity:preset?.intensity||5,distance:preset?.distance||14,position:[0,baseY-i*spacing,0],parentId,anchorName:"masthead"}));
+      });
+    });
+    setStatus("Stack RIPEAM adicionado: "+stack.label+".");
+  }
+
+  async function runAssetHealthCheck(){
+    if(healthBusy)return;
+    setHealthBusy(true);setStatus("Executando Health Check de assets...");
+    const rows=[];
+    for(const asset of assets){
+      const item={name:asset.name,url:asset.url,type:asset.type,status:"OK",issues:[]};
+      try{
+        const response=await fetch(asset.url,{method:"HEAD",cache:"no-store"});
+        if(!response.ok){item.status="ERRO";item.issues.push("HTTP "+response.status);}
+      }catch{item.status="ERRO";item.issues.push("Falha de rede");}
+      const d=asset.metadata?.glbDiagnostics;
+      if(d?.missingUvMeshes){item.status=item.status==="ERRO"?"ERRO":"ALERTA";item.issues.push(d.missingUvMeshes+" mesh(es) sem UV");}
+      if(d?.embeddedTextures===false){item.status=item.status==="ERRO"?"ERRO":"ALERTA";item.issues.push("Textura externa");}
+      if((asset.bytes||0)>40*1024*1024){item.status=item.status==="ERRO"?"ERRO":"ALERTA";item.issues.push("Asset > 40 MB");}
+      if(!(usage[asset.url]||0))item.issues.push("Não utilizado");
+      rows.push(item);
+    }
+    setHealthReport(rows);setHealthBusy(false);
+    const bad=rows.filter(x=>x.status==="ERRO").length,warn=rows.filter(x=>x.status==="ALERTA").length;
+    setStatus("Health Check concluído: "+bad+" erro(s), "+warn+" alerta(s).");
+  }
+
   const validation=useMemo(()=>{
     const warnings=[],errors=[];
     const objects=cfg.objects||[],lights=objects.filter(o=>o.type?.includes("Light")),shapes=objects.filter(o=>o.type==="shape");
@@ -432,6 +482,7 @@ export default function Admin3DEditor(){
     if(semantic.lockedToRule&&(!semanticItem||scene.scene_key!==semantic.scenarioKey))errors.push("Vínculo semântico travado, mas a chave da cena diverge do cenário RIPEAM.");
     const duplicated=objects.map(o=>o.name).filter((n,i,a)=>a.indexOf(n)!==i);if(duplicated.length)warnings.push("Há objetos com nomes duplicados.");
     if(stats.triangles>350000)warnings.push("Cena pesada para mobile: mais de 350 mil triângulos.");
+    for(const issue of performanceIssues(stats))warnings.push("Performance: "+issue+".");
     return {errors,warnings};
   },[cfg.objects,semantic,semanticItem,activeRule,scene.scene_key,stats]);
 
@@ -460,7 +511,10 @@ export default function Admin3DEditor(){
 
   async function publishStudent(){
     if(busy)return;
-    if(validation.errors.length){setStatus("Atualização do aluno bloqueada: corrija os erros críticos.");setTab("scene");return}
+    const assetErrors=(healthReport||[]).filter(x=>x.status==="ERRO"&&cfg.objects.some(o=>o.assetUrl===x.url));
+    const pf={errors:[...validation.errors,...assetErrors.map(x=>"Asset indisponível: "+x.name)],warnings:[...validation.warnings],stats};
+    setPreflight(pf);
+    if(pf.errors.length){setStatus("Atualização do aluno bloqueada pelo preflight: "+pf.errors.length+" erro(s).");setTab("scene");return}
     const summary=publishDiff.length?publishDiff.slice(0,8).map(d=>"• "+d.label).join("\n"):"Nenhuma diferença detectada.";
     if(!window.confirm("ATUALIZAR ALUNO?\n\nEsta é a única ação que publica a working copy.\n\n"+summary+"\n\nConfirmar publicação?"))return;
     setBusy(true);setStatus("Validando e atualizando a cena do aluno...");
@@ -477,7 +531,8 @@ export default function Admin3DEditor(){
 
 
   const filteredAssets=assets.filter(a=>(a.name+" "+(a.category||"")+" "+(a.tags||[]).join(" ")).toLowerCase().includes(assetFilter.toLowerCase()));
-  const progress=String(cfg.objects?.length||0)+" objetos · "+String(cfg.cards?.length||0)+" cards";
+  const completeness=sceneCompleteness({semantic,objects:cfg.objects,stats,errors:validation.errors,warnings:validation.warnings});
+  const progress=String(cfg.objects?.length||0)+" objetos · "+String(cfg.cards?.length||0)+" cards · "+completeness+"% completo";
 
   return <div className={styles.editorShell}>
     <div className={styles.topbar}>
@@ -508,8 +563,10 @@ export default function Admin3DEditor(){
           <button onClick={createCable}>＋ Cabo</button><button onClick={()=>addObject({...DECORATIVE_OBJECTS[0]})}>＋ Bandeira CIS</button><button onClick={()=>{const m=cfg.objects.filter(o=>o.type==="model");if(m.length<2){setStatus("Adicione dois modelos para medir.");return}addObject({name:"Régua 3D",type:"measure",color:"#38bdf8",cable:{fromId:m[0].id,toId:m[1].id,sag:0}})}}>＋ Régua</button>
         </div>
         <h3>PRESETS RIPEAM</h3><div className={styles.presetList}>{LIGHT_PRESETS.map(p=><button key={p.key} onClick={()=>applyLightPreset(p)}><i style={{background:p.color}}/> {p.label}<small>{p.sector}°</small></button>)}</div>
+        <h3>STACKS RIPEAM</h3><div className={styles.presetList}>{LIGHT_STACKS.map(s=><button key={s.key} onClick={()=>addLightStack(s)}><span>⋮</span>{s.label}<small>{s.colors.length} luzes</small></button>)}</div>
 
-        <h3>OBJETOS DECORATIVOS</h3><div className={styles.presetList}>{DECORATIVE_OBJECTS.map(d=><button key={d.key} onClick={()=>addObject({...d})}><span>⚑</span>{d.label}<small>CIS</small></button>)}</div><h3>VALIDADOR SEMÂNTICO</h3><div className={validation.errors.length?styles.errors:validation.warnings.length?styles.warnings:styles.valid}>{validation.errors.map((w,i)=><p key={"e"+i}>✕ {w}</p>)}{validation.warnings.map((w,i)=><p key={"w"+i}>⚠ {w}</p>)}{!validation.errors.length&&!validation.warnings.length&&<p>✓ Cena coerente com o vínculo semântico configurado.</p>}</div>
+        <h3>OBJETOS DECORATIVOS</h3><div className={styles.presetList}>{DECORATIVE_OBJECTS.map(d=><button key={d.key} onClick={()=>addObject({...d})}><span>⚑</span>{d.label}<small>CIS</small></button>)}</div>
+        <h3>ASSET HEALTH</h3><button className={styles.full} disabled={healthBusy} onClick={runAssetHealthCheck}>{healthBusy?"Testando assets...":"Testar todos os assets"}</button>{healthReport.length>0&&<div className={styles.healthList}>{healthReport.map((h,i)=><p key={h.url+i} data-status={h.status}><b>{h.status}</b> {h.name}<small>{h.issues.join(" · ")||"OK"}</small></p>)}</div>}<h3>VALIDADOR SEMÂNTICO</h3><div className={validation.errors.length?styles.errors:validation.warnings.length?styles.warnings:styles.valid}>{validation.errors.map((w,i)=><p key={"e"+i}>✕ {w}</p>)}{validation.warnings.map((w,i)=><p key={"w"+i}>⚠ {w}</p>)}{!validation.errors.length&&!validation.warnings.length&&<p>✓ Cena coerente com o vínculo semântico configurado.</p>}</div>
       </aside>
 
       <section className={styles.centerPane}>
@@ -526,7 +583,8 @@ export default function Admin3DEditor(){
           <button onClick={()=>mutate(s=>{s.config.settings.showSectors=!s.config.settings.showSectors})}>◔ Setores</button>
           <button className={cfg.settings.previewMode==="night"?styles.active:""} onClick={()=>mutate(s=>{s.config.settings.previewMode=s.config.settings.previewMode==="day"?"night":"day"})}>☾ Dia/Noite</button>
           <button onClick={()=>setCompare(x=>!x)}>▥ Comparar</button>
-          <span>{stats.triangles.toLocaleString("pt-BR")} tri · {stats.meshes} meshes · {stats.lights} luzes · {stats.modelErrors?stats.modelErrors+" GLB com erro":"assets OK"}</span>
+          <select value="" onChange={e=>{const p=DISPLAY_PRESETS.find(x=>x.key===e.target.value);if(p)applyDisplayPreset(p)}}><option value="">Workspace...</option>{DISPLAY_PRESETS.map(p=><option key={p.key} value={p.key}>{p.label}</option>)}</select>
+          <span>{stats.triangles.toLocaleString("pt-BR")} tri · {stats.drawCalls||0} draws · {stats.textures||0} tex · {stats.estimatedTextureMB||0} MB VRAM · {stats.modelErrors?stats.modelErrors+" GLB com erro":"assets OK"}</span>
         </div>
 
         <div className={compare?styles.compareGrid:styles.singleViewport}>
@@ -562,7 +620,7 @@ export default function Admin3DEditor(){
         {tab==="object"&&obj&&<div className={styles.form}>
           <label>Nome<input value={obj.name} onChange={e=>patchObject({name:e.target.value})}/></label>
           <label>Hierarquia / pai<select value={obj.parentId||""} onChange={e=>patchObject({parentId:e.target.value||null})}><option value="">Raiz da cena</option>{cfg.objects.filter(o=>o.id!==obj.id&&o.type!=="cable").map(o=><option key={o.id} value={o.id}>{o.name}</option>)}</select></label>
-          <label>Anchor marítimo<select value={obj.anchorName||""} onChange={e=>patchObject({anchorName:e.target.value})}><option value="">Sem anchor</option><option value="masthead">Mastro / tope</option><option value="port">Bombordo (BB)</option><option value="starboard">Boreste (BE)</option><option value="stern">Popa / alcançado</option><option value="bow">Proa</option><option value="yard-port">Lais BB</option><option value="yard-starboard">Lais BE</option><option value="waterline">Linha d'água</option></select></label>
+          <label>Anchor marítimo<select value={obj.anchorName||""} onChange={e=>patchObject({anchorName:e.target.value})}><option value="">Sem anchor</option>{MARITIME_ANCHORS.map(([k,l])=><option key={k} value={k}>{l}</option>)}</select></label>
           <div className={styles.inlineChecks}><label><input type="checkbox" checked={obj.visible!==false} onChange={e=>patchObject({visible:e.target.checked})}/> Visível</label><label><input type="checkbox" checked={!!obj.locked} onChange={e=>patchObject({locked:e.target.checked})}/> Travado</label>{obj.type==="model"&&<label><input type="checkbox" checked={obj.normalize!==false} onChange={e=>patchObject({normalize:e.target.checked})}/> Normalizar</label>}</div>
 
           <div className={styles.vecTitle}>Posição</div><div className={styles.vec}>{["X","Y","Z"].map((x,i)=><label key={x}>{x}<input type="number" step=".1" value={obj.position[i]} onChange={e=>patchVec("position",i,e.target.value)}/></label>)}</div>
@@ -613,7 +671,7 @@ export default function Admin3DEditor(){
           <label>Descrição<textarea rows="4" value={scene.description} onChange={e=>{setScene(s=>({...s,description:e.target.value}));setLastEdit(Date.now())}}/></label>
           <div className={styles.inlineChecks}><label title="Autosave salva apenas a working copy; nunca atualiza o aluno."><input type="checkbox" checked={autosave} onChange={e=>setAutosave(e.target.checked)}/> Autosave privado</label><label><input type="checkbox" checked={cfg.settings.snapEnabled} onChange={e=>mutate(s=>{s.config.settings.snapEnabled=e.target.checked})}/> Snap</label></div>
           <h4>Snap</h4><label>Posição<input type="number" step=".05" value={cfg.settings.snapPosition} onChange={e=>mutate(s=>{s.config.settings.snapPosition=Number(e.target.value)})}/></label><label>Rotação °<input type="number" value={cfg.settings.snapRotation} onChange={e=>mutate(s=>{s.config.settings.snapRotation=Number(e.target.value)})}/></label><label>Escala<input type="number" step=".01" value={cfg.settings.snapScale} onChange={e=>mutate(s=>{s.config.settings.snapScale=Number(e.target.value)})}/></label>
-          <h4>Ambiente</h4>{[["background","Fundo"],["water","Água"],["ambient","Luz ambiente"],["sun","Sol"],["fog","Neblina"]].map(([k,l])=><label key={k}>{l}<input type="color" value={cfg.environment[k]} onChange={e=>mutate(s=>{s.config.environment[k]=e.target.value})}/></label>)}<label>Exposição<input type="range" min=".1" max="3" step=".05" value={cfg.environment.exposure} onChange={e=>mutate(s=>{s.config.environment.exposure=Number(e.target.value)})}/></label><label>Neblina<input type="range" min="0" max=".1" step=".001" value={cfg.environment.fogDensity} onChange={e=>mutate(s=>{s.config.environment.fogDensity=Number(e.target.value)})}/></label>
+          <h4>Ambiente</h4><div className={styles.miniActions}>{ENVIRONMENT_PRESETS.map(p=><button key={p.key} onClick={()=>applyEnvironmentPreset(p)}>{p.label}</button>)}</div>{[["background","Fundo"],["water","Água"],["ambient","Luz ambiente"],["sun","Sol"],["fog","Neblina"]].map(([k,l])=><label key={k}>{l}<input type="color" value={cfg.environment[k]} onChange={e=>mutate(s=>{s.config.environment[k]=e.target.value})}/></label>)}<label>Exposição<input type="range" min=".1" max="3" step=".05" value={cfg.environment.exposure} onChange={e=>mutate(s=>{s.config.environment.exposure=Number(e.target.value)})}/></label><label>Neblina<input type="range" min="0" max=".1" step=".001" value={cfg.environment.fogDensity} onChange={e=>mutate(s=>{s.config.environment.fogDensity=Number(e.target.value)})}/></label>
           <h4>Backup</h4><div className={styles.row}><button onClick={exportJson}>Exportar JSON</button><button onClick={()=>fileRef.current?.click()}>Importar JSON</button><input ref={fileRef} type="file" accept=".json" hidden onChange={e=>importJson(e.target.files?.[0])}/></div>
         </div>}
 
