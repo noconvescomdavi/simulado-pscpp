@@ -216,7 +216,7 @@ export default function Admin3DEditor(){
   function groupSelection(){
     const ids=selectedIds.length?selectedIds:(selected?[selected]:[]);
     if(ids.length<2){setStatus("Selecione pelo menos dois objetos com Shift/Ctrl.");return}
-    const group=makeObject({name:"Grupo",type:"hotspot",visible:false,hotspot:{title:"Grupo",body:"Container editorial"}});
+    const group=makeObject({name:"Grupo",type:"group",visible:true});
     mutate(s=>{s.config.objects.push(group);for(const o of s.config.objects)if(ids.includes(o.id))o.parentId=group.id});
     setSelected(group.id);setSelectedIds([group.id]);setStatus("Objetos agrupados.");
   }
@@ -577,7 +577,7 @@ export default function Admin3DEditor(){
         <h3>TEMPLATES · CRIAR NOVA CENA</h3><div className={styles.chips}>{SCENE_TEMPLATES.map(t=><button key={t.key} onClick={()=>applyTemplate(t)}>{t.label}</button>)}</div>
 
         <h3>OUTLINER</h3>
-        <div className={styles.miniActions}><button onClick={()=>bulkPatch({visible:false})}>Ocultar</button><button onClick={()=>bulkPatch({visible:true})}>Mostrar</button><button onClick={()=>bulkPatch({locked:true})}>Travar</button><button onClick={()=>bulkPatch({locked:false})}>Destravar</button><button onClick={groupSelection}>Agrupar</button></div><div className={styles.outliner}>{(cfg.objects||[]).map(o=><button key={o.id} className={(selectedIds.includes(o.id)||selected===o.id)?styles.active:""} onClick={e=>selectOutlinerObject(e,o.id)} style={{paddingLeft:8+(o.parentId?14:0)}}><span>{o.type.includes("Light")?"💡":o.type==="shape"?"◆":o.type==="cable"?"〰":o.type==="measure"?"↔":o.type==="hotspot"?"◉":"◫"}</span><b>{o.name}</b><small>{o.locked?"🔒":""}</small></button>)}</div>
+        <div className={styles.miniActions}><button onClick={()=>bulkPatch({visible:false})}>Ocultar</button><button onClick={()=>bulkPatch({visible:true})}>Mostrar</button><button onClick={()=>bulkPatch({locked:true})}>Travar</button><button onClick={()=>bulkPatch({locked:false})}>Destravar</button><button onClick={groupSelection}>Agrupar</button></div><div className={styles.outliner}>{(cfg.objects||[]).map(o=><button key={o.id} className={(selectedIds.includes(o.id)||selected===o.id)?styles.active:""} onClick={e=>selectOutlinerObject(e,o.id)} style={{paddingLeft:8+(o.parentId?14:0)}}><span>{o.type.includes("Light")?"💡":o.type==="shape"?"◆":o.type==="cable"?"〰":o.type==="measure"?"↔":o.type==="hotspot"?"◉":o.type==="group"?"▣":"◫"}</span><b>{o.name}</b><small>{o.locked?"🔒":""}</small></button>)}</div>
 
         <h3>ADICIONAR</h3>
         <div className={styles.addGrid}>
