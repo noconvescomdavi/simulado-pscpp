@@ -419,6 +419,15 @@ export default function Admin3DEditor(){
       if(have<count)warnings.push("Marca diurna esperada: "+count+" × "+(DAY_SHAPES.find(p=>p.shape===shape)?.label||shape)+".");
     }
     if(expected.cable&&!objects.some(o=>o.type==="cable"))warnings.push("Cenário de reboque sem cabo representado.");
+    const presetByKey=Object.fromEntries(LIGHT_PRESETS.map(p=>[p.key,p]));
+    for(const light of lights){
+      const preset=presetByKey[light.lightPreset];if(!preset)continue;
+      if(Math.abs(Number(light.sector||0)-Number(preset.sector))>.1)errors.push(light.name+": setor "+light.sector+"° diverge do preset RIPEAM "+preset.sector+"°.");
+      if(String(light.color||"").toLowerCase()!==String(preset.color||"").toLowerCase())warnings.push(light.name+": cor diverge do preset "+preset.label+".");
+    }
+    const port=lights.filter(l=>l.lightPreset==="port"),starboard=lights.filter(l=>l.lightPreset==="starboard");
+    if(port.some(l=>Number(l.heading||0)>0))warnings.push("Luz(es) de bombordo com heading positivo; revise orientação BB/BE.");
+    if(starboard.some(l=>Number(l.heading||0)<0))warnings.push("Luz(es) de boreste com heading negativo; revise orientação BB/BE.");
     if(semantic.ruleNumber==="29"&&semantic.serviceStatus!=="pilotage-duty")warnings.push("Regra 29: confirme se a embarcação está efetivamente em serviço de praticagem.");
     if(semantic.lockedToRule&&(!semanticItem||scene.scene_key!==semantic.scenarioKey))errors.push("Vínculo semântico travado, mas a chave da cena diverge do cenário RIPEAM.");
     const duplicated=objects.map(o=>o.name).filter((n,i,a)=>a.indexOf(n)!==i);if(duplicated.length)warnings.push("Há objetos com nomes duplicados.");
@@ -452,6 +461,8 @@ export default function Admin3DEditor(){
   async function publishStudent(){
     if(busy)return;
     if(validation.errors.length){setStatus("Atualização do aluno bloqueada: corrija os erros críticos.");setTab("scene");return}
+    const summary=publishDiff.length?publishDiff.slice(0,8).map(d=>"• "+d.label).join("\n"):"Nenhuma diferença detectada.";
+    if(!window.confirm("ATUALIZAR ALUNO?\n\nEsta é a única ação que publica a working copy.\n\n"+summary+"\n\nConfirmar publicação?"))return;
     setBusy(true);setStatus("Validando e atualizando a cena do aluno...");
     const payload={...scene,id:scene.systemScene?undefined:scene.id,status:"review",versionLabel:"Atualizar aluno",config:{...scene.config,scenarioKey:scene.scene_key}};
     const r=await fetch("/api/admin/laboratorio-3d",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"publish",scene:payload})});
@@ -515,7 +526,7 @@ export default function Admin3DEditor(){
           <button onClick={()=>mutate(s=>{s.config.settings.showSectors=!s.config.settings.showSectors})}>◔ Setores</button>
           <button className={cfg.settings.previewMode==="night"?styles.active:""} onClick={()=>mutate(s=>{s.config.settings.previewMode=s.config.settings.previewMode==="day"?"night":"day"})}>☾ Dia/Noite</button>
           <button onClick={()=>setCompare(x=>!x)}>▥ Comparar</button>
-          <span>{stats.triangles.toLocaleString("pt-BR")} tri · {stats.meshes} meshes · {stats.lights} luzes</span>
+          <span>{stats.triangles.toLocaleString("pt-BR")} tri · {stats.meshes} meshes · {stats.lights} luzes · {stats.modelErrors?stats.modelErrors+" GLB com erro":"assets OK"}</span>
         </div>
 
         <div className={compare?styles.compareGrid:styles.singleViewport}>
@@ -599,7 +610,7 @@ export default function Admin3DEditor(){
           <label>Chave técnica da cena<input value={scene.scene_key} disabled={!!semantic.lockedToRule} onChange={e=>{setScene(s=>({...s,scene_key:e.target.value}));setLastEdit(Date.now())}}/></label>
           <label>Card / cenário<input value={scene.card_title} onChange={e=>{setScene(s=>({...s,card_title:e.target.value}));setLastEdit(Date.now())}}/></label>
           <label>Descrição<textarea rows="4" value={scene.description} onChange={e=>{setScene(s=>({...s,description:e.target.value}));setLastEdit(Date.now())}}/></label>
-          <div className={styles.inlineChecks}><label title={scene.liveStudentScene?"Autosave é desativado em cenas ao vivo para evitar publicar alterações acidentais.":""}><input type="checkbox" checked={autosave&&!scene.liveStudentScene} disabled={!!scene.liveStudentScene} onChange={e=>setAutosave(e.target.checked)}/> Autosave</label><label><input type="checkbox" checked={cfg.settings.snapEnabled} onChange={e=>mutate(s=>{s.config.settings.snapEnabled=e.target.checked})}/> Snap</label></div>
+          <div className={styles.inlineChecks}><label title="Autosave salva apenas a working copy; nunca atualiza o aluno."><input type="checkbox" checked={autosave} onChange={e=>setAutosave(e.target.checked)}/> Autosave privado</label><label><input type="checkbox" checked={cfg.settings.snapEnabled} onChange={e=>mutate(s=>{s.config.settings.snapEnabled=e.target.checked})}/> Snap</label></div>
           <h4>Snap</h4><label>Posição<input type="number" step=".05" value={cfg.settings.snapPosition} onChange={e=>mutate(s=>{s.config.settings.snapPosition=Number(e.target.value)})}/></label><label>Rotação °<input type="number" value={cfg.settings.snapRotation} onChange={e=>mutate(s=>{s.config.settings.snapRotation=Number(e.target.value)})}/></label><label>Escala<input type="number" step=".01" value={cfg.settings.snapScale} onChange={e=>mutate(s=>{s.config.settings.snapScale=Number(e.target.value)})}/></label>
           <h4>Ambiente</h4>{[["background","Fundo"],["water","Água"],["ambient","Luz ambiente"],["sun","Sol"],["fog","Neblina"]].map(([k,l])=><label key={k}>{l}<input type="color" value={cfg.environment[k]} onChange={e=>mutate(s=>{s.config.environment[k]=e.target.value})}/></label>)}<label>Exposição<input type="range" min=".1" max="3" step=".05" value={cfg.environment.exposure} onChange={e=>mutate(s=>{s.config.environment.exposure=Number(e.target.value)})}/></label><label>Neblina<input type="range" min="0" max=".1" step=".001" value={cfg.environment.fogDensity} onChange={e=>mutate(s=>{s.config.environment.fogDensity=Number(e.target.value)})}/></label>
           <h4>Backup</h4><div className={styles.row}><button onClick={exportJson}>Exportar JSON</button><button onClick={()=>fileRef.current?.click()}>Importar JSON</button><input ref={fileRef} type="file" accept=".json" hidden onChange={e=>importJson(e.target.files?.[0])}/></div>
