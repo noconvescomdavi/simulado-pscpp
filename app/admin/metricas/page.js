@@ -1,9 +1,11 @@
+import {redirect} from "next/navigation";
+import {getAdmin} from "../../../lib/admin";
 import {query} from "../../../lib/db";
 export const dynamic="force-dynamic";
 
 function pct(a,b){return Number(b||0)?Math.round((Number(a||0)/Number(b))*1000)/10:0}
 
-export default async function Page(){
+export default async function Page(){if(!(await getAdmin("metrics.view")))redirect("/admin");
   const [answers, funnel, revenue, errors, learning] = await Promise.all([
     query(`select count(*)::int total,count(*) filter(where is_correct)::int correct from question_answers`),
     query(`

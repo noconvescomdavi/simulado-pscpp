@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 
 export async function GET() {
   const session = await getSession();
-  if (!session || !(await getAdmin())) {
+  if (!session || !(await getAdmin("support.manage"))) {
     return Response.json({ error: "Não autorizado" }, { status: 403 });
   }
 

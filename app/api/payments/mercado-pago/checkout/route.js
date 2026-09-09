@@ -4,6 +4,7 @@ import { getUserAccess } from "../../../../../lib/access";
 import { query } from "../../../../../lib/db";
 import { buildPreference, getPaymentConfig, mercadoPagoRequest } from "../../../../../lib/payments";
 import {assertSameOrigin} from "../../../../../lib/security";
+import {recordAppError} from "../../../../../lib/observability";
 
 export async function POST(request) {
   try { await assertSameOrigin(); } catch (error) { return Response.json({error:"Origem inválida."},{status:Number(error?.status)||403}); }
@@ -51,6 +52,7 @@ export async function POST(request) {
     return NextResponse.redirect(preference.init_point, 303);
   } catch (error) {
     console.error("Erro ao criar checkout Mercado Pago:", error);
+    await recordAppError("/api/payments/mercado-pago/checkout",error,{orderId,userId:session.id});
     if (orderId) {
       await query(
         "update payment_orders set status='failed',raw_status=$2,updated_at=now() where id=$1",

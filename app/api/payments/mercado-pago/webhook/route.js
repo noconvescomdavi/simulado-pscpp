@@ -2,6 +2,7 @@ import { getPaymentConfig, mercadoPagoRequest, normalizedPaymentStatus, paymentA
 import { withTransaction } from "../../../../../lib/db";
 import { ACCESS_DURATION_DAYS, PRODUCT_CODE, accessDateFromPayment } from "../../../../../lib/access";
 import { AI_TUTOR_DURATION_DAYS, AI_TUTOR_PRODUCT_CODE } from "../../../../../lib/ai-tutor";
+import {recordAppError} from "../../../../../lib/observability";
 
 export const dynamic = "force-dynamic";
 
@@ -101,6 +102,7 @@ export async function POST(request) {
     return Response.json({ ok: true, ...result });
   } catch (error) {
     console.error("Erro no webhook Mercado Pago:", error);
+    await recordAppError("/api/payments/mercado-pago/webhook",error,{source:"mercado_pago"});
     return Response.json({ error: "Falha temporária." }, { status: 500 });
   }
 }

@@ -385,7 +385,8 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         const liveCamera=liveConfig?.camera||null;
         const camera=new THREE.PerspectiveCamera(Number(liveCamera?.fov||45),1,.1,1000);
         const renderer=new THREE.WebGLRenderer({antialias:true,alpha:false,powerPreference:"high-performance"});
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+        const mobileViewport=window.matchMedia?.("(max-width: 900px)")?.matches;
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,mobileViewport?1.5:2));
         renderer.outputColorSpace=THREE.SRGBColorSpace;
         renderer.toneMapping=THREE.ACESFilmicToneMapping;
         renderer.toneMappingExposure=night?.82:1.02;
@@ -403,7 +404,8 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         controls.minPolarAngle=.04;
         controls.maxPolarAngle=Math.PI/2-.04;
 
-        const waterGeometry=new THREE.PlaneGeometry(400,400,72,72);
+        const waterSegments=mobileViewport?44:72;
+        const waterGeometry=new THREE.PlaneGeometry(400,400,waterSegments,waterSegments);
         const wp=waterGeometry.attributes.position;
         for(let i=0;i<wp.count;i++){
           const x=wp.getX(i),y=wp.getY(i);
@@ -664,8 +666,9 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
           if(camera.position.y<minY)camera.position.y=minY;
         };
 
+        let visible=!document.hidden;
         const animate=()=>{
-          if(cancelled)return;
+          if(cancelled||!visible)return;
           frames++;
           controls.update();
           enforceWaterline();
@@ -673,6 +676,12 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
           if(frames===2)onDiagnostics?.({...base,frames});
           raf=requestAnimationFrame(animate);
         };
+        const onVisibility=()=>{
+          visible=!document.hidden;
+          if(visible&&!raf)animate();
+          if(!visible&&raf){cancelAnimationFrame(raf);raf=0}
+        };
+        document.addEventListener("visibilitychange",onVisibility);
         animate();
 
         const setView=name=>{
@@ -705,7 +714,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
           });
         };
         highlightLight(highlightLightIndex);
-        runtime.current={renderer,controls,observer,vesselRoot,lightsRoot,shapesRoot,sectorsRoot,setView,zoomBy,highlightLight,reset:()=>setView("3d")};
+        runtime.current={renderer,controls,observer,onVisibility,vesselRoot,lightsRoot,shapesRoot,sectorsRoot,setView,zoomBy,highlightLight,reset:()=>setView("3d")};
       }catch(error){
         console.error("[RIPEAM 3D]",error);
         if(root){
@@ -723,6 +732,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
       const r=runtime.current;
       if(r){
         r.observer?.disconnect();
+        if(r.onVisibility)document.removeEventListener("visibilitychange",r.onVisibility);
         r.controls?.dispose();
         disposeObject(r.vesselRoot);
         disposeObject(r.lightsRoot);

@@ -1,10 +1,12 @@
+import {redirect} from "next/navigation";
+import {getAdmin} from "../../../lib/admin";
 import {query} from "../../../lib/db";
 import ContramestreLibrary from "./ContramestreLibrary";
 import styles from "./contramestre.module.css";
 
 export const dynamic="force-dynamic";
 
-export default async function ContramestreAdmin(){
+export default async function ContramestreAdmin(){if(!(await getAdmin("content.manage")))redirect("/admin");
   const [settings,files,usage]=await Promise.all([
     query("select vector_store_id,updated_at from ai_tutor_settings where id=1").catch(()=>({rows:[]})),
     query("select id,openai_file_id,filename,bytes,status,created_at from ai_tutor_library_files order by created_at desc limit 200").catch(()=>({rows:[]})),

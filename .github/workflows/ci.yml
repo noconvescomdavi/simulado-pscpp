@@ -112,4 +112,17 @@ jobs:
           test "$WEBHOOK_STATUS" = "503"
           grep -q "Integração indisponível" /tmp/webhook.json
 
+          # Browser smoke E2E: hidratação/renderização em Chrome headless real
+          CHROME=$(command -v google-chrome || command -v chromium || command -v chromium-browser || true)
+          if [ -z "$CHROME" ]; then
+            echo "Chrome/Chromium não encontrado na runner."
+            exit 1
+          fi
+          "$CHROME" --headless --no-sandbox --disable-gpu --dump-dom "http://127.0.0.1:3000/login" > /tmp/browser-login.html
+          "$CHROME" --headless --no-sandbox --disable-gpu --dump-dom "http://127.0.0.1:3000/cadastro" > /tmp/browser-cadastro.html
+          "$CHROME" --headless --no-sandbox --disable-gpu --dump-dom "http://127.0.0.1:3000/politica-de-privacidade" > /tmp/browser-privacy.html
+          grep -q "Entrar na plataforma" /tmp/browser-login.html
+          grep -q "Criar minha conta" /tmp/browser-cadastro.html
+          grep -q "Política de Privacidade" /tmp/browser-privacy.html
+
           echo "Smoke tests críticos concluídos."

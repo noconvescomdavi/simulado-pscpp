@@ -1,3 +1,5 @@
+import {redirect} from "next/navigation";
+import {getAdmin} from "../../../lib/admin";
 import {query} from "../../../lib/db";
 
 export const dynamic="force-dynamic";
@@ -6,7 +8,7 @@ function date(value){
   return value ? new Date(value).toLocaleDateString("pt-BR") : "—";
 }
 
-export default async function Page({searchParams}){
+export default async function Page({searchParams}){if(!(await getAdmin("users.manage")))redirect("/admin");
   const q=await searchParams;
   const r=await query(`
     select

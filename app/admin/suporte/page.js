@@ -1,10 +1,12 @@
+import {redirect} from "next/navigation";
+import {getAdmin} from "../../../lib/admin";
 import { query } from "../../../lib/db";
 import { ensureSupportSchema } from "../../../lib/support";
 import AdminSupportClient from "./AdminSupportClient";
 
 export const dynamic = "force-dynamic";
 
-export default async function AdminSupportPage() {
+export default async function AdminSupportPage(){if(!(await getAdmin("support.manage")))redirect("/admin");
   await ensureSupportSchema();
 
   const result = await query(

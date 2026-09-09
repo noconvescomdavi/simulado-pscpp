@@ -1,10 +1,12 @@
+import {redirect} from "next/navigation";
+import {getAdmin} from "../../../lib/admin";
 import "./coverage.css";
 import {getQuestionBank} from "../../../lib/question-banks";
 import {taxonomyCatalog,validateQuestionTaxonomy,SUBJECT_TAXONOMY} from "../../../lib/question-taxonomy";
 
 function status(n){return n===0?"critical":n<25?"low":n<=50?"target":"wide"}
 function label(s){return {critical:"CRÍTICO",low:"INSUFICIENTE",target:"META",wide:"COBERTURA AMPLA"}[s]}
-export default function Page(){
+export default async function Page(){if(!(await getAdmin("content.manage")))redirect("/admin");
  const catalog=taxonomyCatalog();
  const chapters=catalog.chapters.map(ch=>({...ch,count:0,topics:new Map()}));
  const index=new Map(chapters.map(ch=>[ch.chapter_id,ch]));

@@ -14,7 +14,7 @@ function safeDuration(value, fallback=30){
 export async function POST(req, { params }) {
   try {
     await assertSameOrigin();
-    const admin = await getAdmin();
+    const admin = await getAdmin("users.manage");
     if (!admin) return Response.json({ error: "Acesso negado." }, { status: 403 });
 
     const { id } = await params;

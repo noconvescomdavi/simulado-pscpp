@@ -1,6 +1,7 @@
 import {getSession} from "../../../../lib/auth";
 import {assertSameOrigin,consumeRateLimit,identityHash,rateLimitResponse} from "../../../../lib/security";
 import {AI_TUTOR_DAILY_LIMIT,ensureConversation,getAiTutorAccess,getTutorConversation,getTutorUsage,getTutorVectorStoreId,saveTutorExchange,tutorSystemPrompt} from "../../../../lib/ai-tutor";
+import {recordAppError} from "../../../../lib/observability";
 
 export const dynamic="force-dynamic";
 
@@ -65,6 +66,7 @@ export async function POST(request){
   const payload=await response.json().catch(()=>({}));
   if(!response.ok){
     console.error("OpenAI Tutor error",response.status,payload?.error?.code||payload?.error?.type||"unknown");
+    await recordAppError("/api/tutor/chat",new Error("OpenAI Tutor HTTP "+response.status),{status:response.status,code:payload?.error?.code||payload?.error?.type||"unknown"});
     return Response.json({error:"O Tutor IA está temporariamente indisponível."},{status:502});
   }
   const answer=outputText(payload);

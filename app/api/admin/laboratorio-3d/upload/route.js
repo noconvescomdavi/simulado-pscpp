@@ -7,7 +7,7 @@ import {logAdminAction} from "../../../../../lib/admin-audit";
 export const runtime="nodejs";
 
 export async function POST(request){
-  const admin=await getAdmin();
+  const admin=await getAdmin("ripeam.manage");
   if(!admin)return Response.json({error:"Não autorizado"},{status:403});
   try{
     await assertSameOrigin();

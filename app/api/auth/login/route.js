@@ -1,6 +1,7 @@
 import argon2 from "argon2";
 import { query } from "../../../../lib/db";
 import { createSession } from "../../../../lib/auth";
+import { beginAdminMfaChallenge } from "../../../../lib/admin-mfa";
 import { hasCurrentLegalConsent } from "../../../../lib/legal-consent";
 import {
   clientIpHash,
@@ -33,7 +34,7 @@ export async function POST(req) {
     if (!accountLimit.allowed) return rateLimitResponse(accountLimit);
 
     const result = await query(
-      "select id,email,password_hash,role,status,session_version,email_verified,email_verification_required_at from users where lower(email)=lower($1) limit 1",
+      "select id,email,password_hash,role,status,session_version,email_verified,email_verification_required_at,admin_mfa_enabled from users where lower(email)=lower($1) limit 1",
       [normalized]
     );
     const user = result.rows[0];
@@ -50,6 +51,11 @@ export async function POST(req) {
     }
     if (user.email_verification_required_at && !user.email_verified) {
       return Response.json({ error: "Confirme seu e-mail para entrar.", code: "EMAIL_NOT_VERIFIED", email: user.email }, { status: 403 });
+    }
+
+    if(user.role==="admin" && user.admin_mfa_enabled){
+      await beginAdminMfaChallenge(user);
+      return Response.json({ok:true,requiresAdminMfa:true});
     }
 
     await query("update users set last_login_at=now(),updated_at=now() where id=$1", [user.id]);

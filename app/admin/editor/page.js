@@ -1,3 +1,5 @@
+import {redirect} from "next/navigation";
+import {getAdmin} from "../../../lib/admin";
 import EditorClient from './EditorClient';
 import './editor.css';
 
@@ -6,6 +8,7 @@ export const metadata = {
   robots: { index: false, follow: false },
 };
 
-export default function SiteEditorPage() {
+export default async function SiteEditorPage(){
+  if(!(await getAdmin("content.manage")))redirect("/admin");
   return <EditorClient />;
 }

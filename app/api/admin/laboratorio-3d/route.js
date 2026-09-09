@@ -10,7 +10,7 @@ import {logAdminAction} from "../../../../lib/admin-audit";
 export const dynamic="force-dynamic";
 
 export async function GET(request){
-  if(!(await getAdmin()))return Response.json({error:"Não autorizado"},{status:403});
+  if(!(await getAdmin("ripeam.manage")))return Response.json({error:"Não autorizado"},{status:403});
   const url=new URL(request.url);
   const sceneId=String(url.searchParams.get("sceneId")||"");
   const [storedScenes,assets,versions,publications]=await Promise.all([
@@ -29,7 +29,7 @@ export async function GET(request){
 
 export async function POST(request){
   try{await assertSameOrigin();}catch(error){return Response.json({error:"Origem inválida."},{status:Number(error?.status)||403});}
-  const admin=await getAdmin();
+  const admin=await getAdmin("ripeam.manage");
   if(!admin)return Response.json({error:"Não autorizado"},{status:403});
   const body=await request.json().catch(()=>({}));
 

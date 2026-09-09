@@ -9,7 +9,7 @@ export async function POST(req, context) {
   } catch (error) {
     return Response.json({ error: "Origem inválida." }, { status: Number(error?.status) || 403 });
   }
-  const admin = await getAdmin();
+  const admin = await getAdmin("users.manage");
   if (!admin) return Response.json({ error: "Acesso negado." }, { status: 403 });
 
   const { id } = await context.params;

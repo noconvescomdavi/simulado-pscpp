@@ -2,6 +2,7 @@ import "./globals.css";
 import "./estibordo-polish.css";
 import SiteDesignRuntime from "./site-editor/SiteDesignRuntime";
 import PwaRuntime from "./components/PwaRuntime";
+import WebVitalsReporter from "./components/WebVitalsReporter";
 
 export const metadata = {
   metadataBase: new URL("https://simulado-pscpp.vercel.app"),
@@ -51,6 +52,7 @@ export default function RootLayout({ children }) {
         {children}
         <SiteDesignRuntime />
         <PwaRuntime />
+        <WebVitalsReporter />
       </body>
     </html>
   );
