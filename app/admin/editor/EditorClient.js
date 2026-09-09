@@ -133,6 +133,7 @@ export default function EditorClient(){
   const [siteMap,setSiteMap]=useState(SITE_MAP);
   const [viewport,setViewport]=useState("desktop");
   const [scope,setScope]=useState("page");
+  const [layerDrag,setLayerDrag]=useState(null);
   const [design,setDesign]=useState(null);
   const [original,setOriginal]=useState(null);
   const [sha,setSha]=useState("");
@@ -196,6 +197,11 @@ export default function EditorClient(){
   useEffect(()=>{moveModeRef.current=moveMode},[moveMode]);
   useEffect(()=>{gridRef.current=showGrid;try{iframeRef.current?.contentDocument?.documentElement?.classList.toggle("ev-editor-grid",showGrid)}catch{}},[showGrid]);
   useEffect(()=>{snapRef.current=snap},[snap]);
+  useEffect(()=>{
+    if(!target?.selector)return;
+    const timer=setTimeout(()=>selectBySelector(target.selector),60);
+    return ()=>clearTimeout(timer);
+  },[viewport]);
 
   useEffect(()=>{
     const area=frameAreaRef.current;
@@ -301,7 +307,10 @@ export default function EditorClient(){
     const selector=selectorFor(el); if(!selector)return;
     const current=scope==="global"?design?.global?.elements?.[selector]:design?.pages?.[page]?.elements?.[selector];
     const base=computedStyle(el);
-    const overrides={...(current?.style||{})};
+    const baseOverrides={...(current?.style||{})};
+    const responsiveOverrides=viewport==="desktop"?{}:{...(current?.responsive?.[viewport]?.style||{})};
+    const overrides=viewport==="desktop"?baseOverrides:responsiveOverrides;
+    const inherited=viewport==="desktop"?baseOverrides:{...baseOverrides,...(viewport==="mobile"?(current?.responsive?.tablet?.style||{}):{})};
     const a={
       text:el.children.length===0?(el.textContent||""):undefined,
       href:el.getAttribute?.("href")||undefined,
@@ -314,7 +323,7 @@ export default function EditorClient(){
     const ao={...(current?.attrs||{})};
     setLocked(Boolean(current?.locked));setCloneCount(Number(current?.cloneCount||0));
     setTarget({selector,tag:el.tagName.toLowerCase(),label:(el.innerText||el.textContent||el.getAttribute?.("alt")||el.tagName).trim().slice(0,120)});
-    setStyle({...base,...overrides});setStyleOverrides(overrides);
+    setStyle({...base,...inherited,...overrides});setStyleOverrides(overrides);
     setAttrs({...a,...ao});setAttrsOverrides(ao);setHidden(Boolean(current?.hidden));
     if(el.tagName==="IMG") setTab("media"); else if(el.children.length===0) setTab("content"); else setTab("design");
   }
@@ -392,16 +401,20 @@ export default function EditorClient(){
   function write(nextStyle=styleOverrides,nextAttrs=attrsOverrides,nextHidden=hidden,nextLocked=locked,nextCloneCount=cloneCount){
     if(!target?.selector)return;
     setDesign(prev=>{
-      const n=clone(prev||{version:2,global:{favicon:"",elements:{}},pages:{}});
-      n.version=2;n.global||={favicon:"",elements:{}};n.global.elements||={};n.pages||={};
-      const config={};
-      if(Object.keys(nextStyle).length)config.style={...nextStyle};
-      if(Object.keys(nextAttrs).length)config.attrs={...nextAttrs};
-      config.hidden=Boolean(nextHidden);
-      if(nextLocked)config.locked=true;
-      if(Number(nextCloneCount)>0)config.cloneCount=Math.min(10,Number(nextCloneCount));
-      if(scope==="global")n.global.elements[target.selector]=config;
-      else{n.pages[page]||={elements:{}};n.pages[page].elements||={};n.pages[page].elements[target.selector]=config;}
+      const n=clone(prev||{version:3,global:{favicon:"",elements:{}},pages:{}});
+      n.version=3;n.global||={favicon:"",elements:{}};n.global.elements||={};n.pages||={};
+      const holder=scope==="global"?n.global.elements:((n.pages[page]||={elements:{}}).elements||=( {} ));
+      const previous=holder[target.selector]||{};
+      const config={...previous,attrs:{...nextAttrs},hidden:Boolean(nextHidden)};
+      if(viewport==="desktop"){
+        config.style={...nextStyle};
+      }else{
+        config.responsive={...(previous.responsive||{})};
+        config.responsive[viewport]={...(config.responsive[viewport]||{}),style:{...nextStyle}};
+      }
+      if(nextLocked)config.locked=true;else delete config.locked;
+      if(Number(nextCloneCount)>0)config.cloneCount=Math.min(10,Number(nextCloneCount));else delete config.cloneCount;
+      holder[target.selector]=config;
       return n;
     });
   }
@@ -462,6 +475,50 @@ export default function EditorClient(){
   }
 
   function pageConfig(){return design?.pages?.[page]?.settings||{};}
+  function designSystem(){return design?.global?.designSystem||{};}
+  function components(){return design?.global?.components||[];}
+  function versions(){return design?.global?.versions||[];}
+
+  function updateDesignSystem(patch){
+    remember();
+    setDesign(prev=>{const n=clone(prev||{version:3,global:{elements:{}},pages:{}});n.global||={elements:{}};n.global.designSystem={...(n.global.designSystem||{}),...patch};return n});
+    setStatus("Design System atualizado. Salve para publicar.");
+    setTimeout(()=>iframeRef.current?.contentWindow?.location.reload(),50);
+  }
+
+  function saveSelectionAsComponent(){
+    if(!target?.selector)return;
+    const name=window.prompt("Nome do componente reutilizável:",target.label?.slice(0,40)||"Componente");
+    if(!name)return;
+    const source=record();
+    if(!source)return;
+    remember();
+    setDesign(prev=>{const n=clone(prev);n.global||={};n.global.components=[...(n.global.components||[]),{id:"cmp_"+Date.now().toString(36),name,config:clone(source),createdAt:new Date().toISOString()}].slice(-30);return n});
+    setStatus("Componente salvo na biblioteca global.");
+  }
+
+  function applyComponent(component){
+    if(!target?.selector||!component?.config)return;
+    remember();
+    setDesign(prev=>{const n=clone(prev);n.global||={elements:{}};n.global.elements||={};n.pages||={};const holder=scope==="global"?n.global.elements:((n.pages[page]||={elements:{}}).elements||=( {} ));holder[target.selector]={...clone(component.config)};return n});
+    setStatus(`Componente “${component.name}” aplicado. Salve para publicar.`);
+    setTimeout(()=>iframeRef.current?.contentWindow?.location.reload(),50);
+  }
+
+  function deleteComponent(id){
+    remember();
+    setDesign(prev=>{const n=clone(prev);n.global||={};n.global.components=(n.global.components||[]).filter(x=>x.id!==id);return n});
+  }
+
+  function restoreVersion(version){
+    if(!version?.snapshot)return;
+    if(!window.confirm("Restaurar este checkpoint? As alterações atuais não salvas serão substituídas."))return;
+    const restored=clone(version.snapshot);
+    restored.global||={};
+    restored.global.versions=clone(design?.global?.versions||[]);
+    setDesign(restored);setTarget(null);setStatus("Checkpoint restaurado. Revise e salve para publicar.");
+    setTimeout(()=>iframeRef.current?.contentWindow?.location.reload(),50);
+  }
 
   function updatePageSettings(patch){
     remember();
@@ -502,6 +559,18 @@ export default function EditorClient(){
     setStatus(delta<0?"Seção será movida para cima ao publicar.":"Seção será movida para baixo ao publicar.");
   }
 
+  function reorderLayer(from,to){
+    const fromIndex=layers.findIndex(x=>x.selector===from);
+    const toIndex=layers.findIndex(x=>x.selector===to);
+    if(fromIndex<0||toIndex<0||fromIndex===toIndex)return;
+    const delta=toIndex-fromIndex;
+    remember();
+    setDesign(prev=>{const n=clone(prev);n.pages||={};n.pages[page]||={elements:{}};n.pages[page].elements||={};const cfg=n.pages[page].elements[from]||={};cfg.moveDelta=(Number(cfg.moveDelta)||0)+delta;return n});
+    setStatus("Ordem da camada alterada por drag-and-drop. Salve para publicar.");
+    setLayerDrag(null);
+    setTimeout(()=>iframeRef.current?.contentWindow?.location.reload(),80);
+  }
+
   async function upload(file,mode="src"){
     if(!file)return;
     setUploading(true);setStatus("Enviando imagem...");
@@ -515,11 +584,14 @@ export default function EditorClient(){
   }
 
   async function save(){
-    if(!design)return;setSaving(true);setStatus("Publicando alterações...");
-    const r=await fetch("/api/site-editor/design/save",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({content:design,sha})});
+    if(!design)return;setSaving(true);setStatus("Criando checkpoint e publicando...");
+    const payload=clone(design);payload.version=3;payload.global||={};
+    const snapshot=clone(payload);if(snapshot.global)delete snapshot.global.versions;
+    payload.global.versions=[...(payload.global.versions||[]),{id:"ver_"+Date.now().toString(36),createdAt:new Date().toISOString(),page,label:pageLabel,snapshot}].slice(-6);
+    const r=await fetch("/api/site-editor/design/save",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({content:payload,sha})});
     const j=await r.json();setSaving(false);
     if(!r.ok){setStatus(j.error||"Falha ao salvar.");return;}
-    setSha(j.sha||sha);setOriginal(clone(design));setStatus("Publicado. A Vercel fará o deploy automaticamente.");
+    setDesign(payload);setSha(j.sha||sha);setOriginal(clone(payload));setStatus("Publicado com checkpoint. A Vercel fará o deploy automaticamente.");
   }
 
   if(auth==="checking")return <main className="ev-login"><div><b>ESTIBORDO EDITOR</b><p>Carregando editor visual…</p></div></main>;
@@ -537,6 +609,7 @@ export default function EditorClient(){
       <button className="ev-flash-main" type="button" onClick={()=>setFlashcardManagerOpen(true)}>▣ Flashcards</button>
       <div className="ev-device">
         {["desktop","tablet","mobile"].map(v=><button key={v} className={viewport===v?"is-active":""} onClick={()=>{setViewport(v);setZoom(100)}}>{v==="desktop"?"Desktop":v==="tablet"?"Tablet":"Mobile"}</button>)}
+        <span className="ev-breakpoint-badge">{viewport==="desktop"?"BASE":viewport.toUpperCase()}</span>
       </div>
       <div className="ev-toolbar">
         <button onClick={undo} disabled={!undoStack.length} title="Desfazer">↶</button>
@@ -549,13 +622,13 @@ export default function EditorClient(){
       <div className="ev-actions"><span className={dirty?"ev-dirty":"ev-saved"}>{dirty?"Alterações não publicadas":"Tudo salvo"}</span><a href={page} target="_blank">Abrir página ↗</a><button className="ev-publish" disabled={!dirty||saving} onClick={save}>{saving?"Publicando…":"Salvar e publicar"}</button></div>
     </header>
 
-    <EditorToolbox open={toolboxOpen} onClose={()=>setToolboxOpen(false)} onAdd={addBlock} onAction={toolboxAction} pageSettings={pageConfig()} onPageSettings={updatePageSettings} media={design?.global?.media||[]} onUploadMedia={uploadLibraryMedia}/>
+    <EditorToolbox open={toolboxOpen} onClose={()=>setToolboxOpen(false)} onAdd={addBlock} onAction={toolboxAction} pageSettings={pageConfig()} onPageSettings={updatePageSettings} media={design?.global?.media||[]} onUploadMedia={uploadLibraryMedia} designSystem={designSystem()} onDesignSystem={updateDesignSystem} components={components()} onApplyComponent={applyComponent} onDeleteComponent={deleteComponent} versions={versions()} onRestoreVersion={restoreVersion}/>
     <FlashcardManager open={flashcardManagerOpen} onClose={()=>setFlashcardManagerOpen(false)} initialSlug={page.startsWith("/flashcards/")?page.split("/")[2]:"cis"} onChanged={()=>setStatus("Flashcard salvo no banco. Atualize a prévia para conferir.")}/>
     <div className="ev-workspace">
       <aside className="ev-sitemap">
         <div className="ev-side-title"><b>MAPA DO SITE</b><span>Sincronizado automaticamente com a árvore do app</span><button type="button" onClick={()=>void refreshSiteMap()} title="Atualizar mapa do site">↻</button></div>
         <div className="ev-site-scroll">{siteMap.map(group=><section key={group.group}><h4>{group.group}</h4>{group.pages.map(([url,label,meta])=><button className={page===url?"is-active":""} key={url} onClick={()=>{setPage(url);setTarget(null)}}><span>{label}{meta?.hidden?<em>oculta</em>:""}</span><small>{url}</small></button>)}</section>)}</div>
-        <div className="ev-layers"><div className="ev-layers-head"><b>CAMADAS</b><button type="button" onClick={()=>refreshLayers()}>↻</button></div><div className="ev-layer-scroll">{layers.map(layer=><button type="button" key={layer.selector+"-"+layer.index} className={target?.selector===layer.selector?"is-active":""} onClick={()=>selectBySelector(layer.selector)}><small>{layer.tag}</small><span>{layer.label||layer.selector}</span></button>)}</div></div>
+        <div className="ev-layers"><div className="ev-layers-head"><b>CAMADAS</b><button type="button" onClick={()=>refreshLayers()}>↻</button></div><div className="ev-layer-scroll">{layers.map(layer=><button type="button" draggable key={layer.selector+"-"+layer.index} className={`${target?.selector===layer.selector?"is-active":""} ${layerDrag===layer.selector?"is-dragging":""}`} onDragStart={()=>setLayerDrag(layer.selector)} onDragEnd={()=>setLayerDrag(null)} onDragOver={e=>e.preventDefault()} onDrop={e=>{e.preventDefault();if(layerDrag)reorderLayer(layerDrag,layer.selector)}} onClick={()=>selectBySelector(layer.selector)}><i>⋮⋮</i><small>{layer.tag}</small><span>{layer.label||layer.selector}</span></button>)}</div></div>
       </aside>
 
       <section className="ev-canvas">
@@ -571,7 +644,8 @@ export default function EditorClient(){
         {!target ? <div className="ev-empty"><div className="ev-empty-icon">✦</div><h3>Selecione um elemento</h3><p>Clique em um texto, botão, imagem, card, cabeçalho ou menu na prévia. As ferramentas de edição aparecerão aqui.</p><div className="ev-tip"><b>Dica</b><span>Para cabeçalho, menu, logo ou rodapé, use o escopo <strong>Todo o site</strong>.</span></div></div> :
         <>
           <div className="ev-inspector-head"><div><span>{target.tag.toUpperCase()}</span><b>{target.label||"Elemento selecionado"}</b></div><code title={target.selector}>{target.selector}</code></div>
-          <div className="ev-object-tools"><button type="button" onClick={copyStyle}>Copiar estilo</button><button type="button" disabled={!styleClipboard} onClick={pasteStyle}>Colar estilo</button><button type="button" onClick={()=>bringForward(1)}>Frente +</button><button type="button" onClick={()=>bringForward(-1)}>Trás −</button></div>
+          <div className="ev-responsive-note"><b>{viewport==="desktop"?"BASE / DESKTOP":viewport.toUpperCase()}</b><span>{viewport==="desktop"?"Estilo base herdado pelos outros dispositivos.":"Alterações de estilo ficam exclusivas deste breakpoint."}</span></div>
+          <div className="ev-object-tools"><button type="button" onClick={copyStyle}>Copiar estilo</button><button type="button" disabled={!styleClipboard} onClick={pasteStyle}>Colar estilo</button><button type="button" onClick={saveSelectionAsComponent}>＋ Componente</button><button type="button" onClick={()=>bringForward(1)}>Frente +</button><button type="button" onClick={()=>bringForward(-1)}>Trás −</button></div>
           <div className="ev-section-actions"><button onClick={()=>moveSelected(-1)}>↑ Mover seção</button><button onClick={()=>moveSelected(1)}>↓ Mover seção</button><button onClick={()=>changeCloneCount(Math.min(10,cloneCount+1))}>Duplicar · Ctrl+D</button><button onClick={()=>toggleHidden(true)}>Excluir · Del</button></div>
           <div className="ev-scope"><span>Aplicar em</span><button className={scope==="page"?"is-active":""} onClick={()=>setScope("page")}>Só esta página</button><button className={scope==="global"?"is-active":""} onClick={()=>setScope("global")}>Todo o site</button></div>
           <nav className="ev-tabs">{[["content","Conteúdo"],["design","Design"],["media","Imagem"],["layout","Layout"]].map(([id,label])=><button key={id} className={tab===id?"is-active":""} onClick={()=>setTab(id)}>{label}</button>)}</nav>

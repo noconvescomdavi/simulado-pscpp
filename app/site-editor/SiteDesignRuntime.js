@@ -46,7 +46,13 @@ function applyRecord(record) {
         node.style.display = String(config.style.display);
       }
 
-      for (const [key, value] of Object.entries(config.style || {})) {
+      const width=window.innerWidth;
+      const responsiveStyle={
+        ...(config.style||{}),
+        ...(width<=1024?(config.responsive?.tablet?.style||{}):{}),
+        ...(width<=620?(config.responsive?.mobile?.style||{}):{})
+      };
+      for (const [key, value] of Object.entries(responsiveStyle)) {
         if (!SAFE_STYLE_KEYS.has(key)) continue;
         if (value === null || value === undefined || value === '') {
           node.style[key] = '';
@@ -133,6 +139,14 @@ function applyPageSettings(settings){
   document.documentElement.dataset.estibordoLayoutPreset=settings.layoutPreset||"";
 }
 
+function applyDesignSystem(tokens){
+  if(!tokens||typeof tokens!=="object")return;
+  const root=document.documentElement;
+  const map={primary:"--estibordo-primary",accent:"--estibordo-accent",surface:"--estibordo-surface",text:"--estibordo-text",radius:"--estibordo-radius",maxContentWidth:"--estibordo-content-max"};
+  Object.entries(map).forEach(([key,cssVar])=>{if(tokens[key])root.style.setProperty(cssVar,String(tokens[key]))});
+  if(tokens.fontFamily)document.body.style.fontFamily=String(tokens.fontFamily);
+}
+
 function applyFavicon(url) {
   const safe = safeUrl(url);
   if (!safe) return;
@@ -150,6 +164,7 @@ export default function SiteDesignRuntime() {
   useEffect(() => {
     const run = () => {
       if (window.location.pathname.startsWith('/admin/editor')) return;
+      applyDesignSystem(design?.global?.designSystem||{});
       applyRecord(design?.global?.elements || {});
       const routeKey=document.querySelector("[data-estibordo-not-found]")?"/__404":window.location.pathname;
       const page=design?.pages?.[routeKey]||{};
@@ -165,16 +180,17 @@ export default function SiteDesignRuntime() {
       window.__estibordoDesignTimer = window.setTimeout(run, 60);
     });
     observer.observe(document.body, { childList: true, subtree: true });
-    return () => observer.disconnect();
+    window.addEventListener("resize",run);
+    return () => {observer.disconnect();window.removeEventListener("resize",run);};
   }, []);
 
   return null;
 }
 
 const EDITOR_BLOCK_CSS = `
-.estibordo-editor-block-root{padding:28px;display:grid;gap:18px;max-width:1320px;margin:0 auto}
+.estibordo-editor-block-root{padding:28px;display:grid;gap:18px;max-width:var(--estibordo-content-max,1320px);margin:0 auto}
 .estibordo-editor-block{background:transparent;color:inherit}.evb-title{font-size:clamp(28px,4vw,48px);margin:0 0 10px}.evb-copy,.evb-text{font-size:16px;line-height:1.65}
-.evb-button{display:inline-flex;padding:12px 18px;border-radius:9px;background:#c8102e;color:#fff;font-weight:800;text-decoration:none}.evb-image,.evb-video{display:block;max-width:100%;border-radius:12px}
+.evb-button{display:inline-flex;padding:12px 18px;border-radius:var(--estibordo-radius,9px);background:var(--estibordo-primary,#c8102e);color:#fff;font-weight:800;text-decoration:none}.evb-image,.evb-video{display:block;max-width:100%;border-radius:12px}
 .evb-stats,.evb-cards,.evb-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.evb-stat,.evb-card,.evb-placeholder{padding:18px;border:1px solid rgba(120,160,190,.25);border-radius:12px;background:rgba(7,27,43,.08)}.evb-price{display:block;font-size:32px;margin:8px 0}.evb-faq{display:grid;gap:10px}.evb-faq-item{padding:14px 16px;border:1px solid rgba(120,160,190,.25);border-radius:12px}.evb-faq-item summary{font-weight:800;cursor:pointer}.evb-testimonial{margin:0;padding:28px;border-left:4px solid #c8102e;background:rgba(7,27,43,.06);border-radius:14px}.evb-testimonial p{font-size:clamp(22px,3vw,34px);font-weight:800}.evb-testimonial cite{font-style:normal;opacity:.7}.evb-timeline{display:flex;gap:14px;flex-wrap:wrap}.evb-timeline-item{display:flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid rgba(120,160,190,.25);border-radius:999px}.evb-divider{border:0;border-top:1px solid rgba(120,160,190,.35)}.evb-spacer{min-height:48px}
 html[data-estibordo-layout-preset="contained"] main{max-width:1280px;margin-inline:auto}html[data-estibordo-layout-preset="immersive"] main{max-width:none;width:100%}html[data-estibordo-layout-preset="editorial"] main{max-width:980px;margin-inline:auto}
 .evb-stat strong,.evb-stat span{display:block}.evb-stat strong{font-size:28px}.evb-menu,.evb-social{display:flex;gap:14px;flex-wrap:wrap}.evb-form{display:grid;gap:10px;max-width:620px}.evb-form input,.evb-form textarea,.evb-input{padding:12px;border:1px solid #cad7df;border-radius:8px}.evb-form button{padding:12px;border:0;border-radius:8px;background:#c8102e;color:#fff;font-weight:800}
