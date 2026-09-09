@@ -1,6 +1,8 @@
 "use client";
+import {useState} from "react";
 
 const GROUPS=[
+  ["Estrutura",[["container","Container","▣"],["group","Grupo","⌘"],["stack","Auto Stack","⇅"],["grid","Auto Grid","▦"]]],
   ["Básico",[
     ["text","Caixa de texto","T"],["button","Botão","▣"],["image","Imagem","▧"],["section","Seção / Faixa","═"],["box","Caixa","□"],["decorative","Decorativo","✦"]
   ]],
@@ -18,8 +20,7 @@ const GROUPS=[
   ]]
 ];
 
-export default function EditorToolbox({open,onClose,onAdd,onAction,pageSettings,onPageSettings,media,onUploadMedia,designSystem,onDesignSystem,components,onApplyComponent,onDeleteComponent,versions,onRestoreVersion}){
-  if(!open)return null;
+export default function EditorToolbox({open,onClose,onAdd,onAction,pageSettings,onPageSettings,media,onUploadMedia,designSystem,onDesignSystem,components,onApplyComponent,onDeleteComponent,versions,onRestoreVersion,onCreatePage,pageTemplates,onApplyPageTemplate}){const [newPage,setNewPage]=useState({title:"",slug:"",template:"landing"});if(!open)return null;
   return <div className="ev-drawer-backdrop" onMouseDown={e=>e.target===e.currentTarget&&onClose()}>
     <aside className="ev-drawer">
       <header><div><b>Ferramentas do Editor</b><span>Adicionar, configurar e estruturar a página</span></div><button onClick={onClose}>×</button></header>
@@ -28,7 +29,7 @@ export default function EditorToolbox({open,onClose,onAdd,onAction,pageSettings,
         <button onClick={()=>onAction("layers")}>Camadas</button>
         <button onClick={()=>onAction("section")}>Seções</button>
       </div>
-      <div className="ev-drawer-scroll">
+      <div className="ev-drawer-scroll"><section><h4>Criar página no Editor</h4><div className="ev-new-page-card"><label className="ev-mini-field"><span>Nome da página</span><input value={newPage.title} placeholder="Ex.: Curso de Arte Naval" onChange={e=>setNewPage(v=>({...v,title:e.target.value}))}/></label><label className="ev-mini-field"><span>Slug</span><input value={newPage.slug} placeholder="curso-arte-naval" onChange={e=>setNewPage(v=>({...v,slug:e.target.value}))}/></label><label className="ev-mini-field"><span>Template inicial</span><select value={newPage.template} onChange={e=>setNewPage(v=>({...v,template:e.target.value}))}>{(pageTemplates||[]).map(t=><option key={t.id} value={t.id}>{t.label}</option>)}</select></label><button type="button" className="ev-create-page" onClick={()=>onCreatePage(newPage)}>＋ Criar página</button><small>A página será criada em /paginas/slug e aparecerá automaticamente no mapa após publicar.</small></div></section><section><h4>Templates completos de página</h4><div className="ev-page-template-grid">{(pageTemplates||[]).map(t=><button type="button" key={t.id} onClick={()=>onApplyPageTemplate(t.id)}><b>{t.label}</b><small>Aplicar à página atual</small></button>)}</div></section>
         {GROUPS.map(([title,items])=><section key={title}><h4>{title}</h4><div className="ev-add-grid">{items.map(([type,label,icon])=><button key={type} onClick={()=>onAdd(type)}><i>{icon}</i><span>{label}</span></button>)}</div></section>)}
         <section><h4>Design System global</h4>
           <div className="ev-token-presets"><button type="button" onClick={()=>onDesignSystem({primary:"#c8102e",accent:"#55a7e6",surface:"#ffffff",text:"#071b2b",radius:"12px",fontFamily:"Arial"})}>ESTIBORDO</button><button type="button" onClick={()=>onDesignSystem({primary:"#111827",accent:"#7c3aed",surface:"#ffffff",text:"#111827",radius:"16px",fontFamily:"Arial"})}>Modern</button><button type="button" onClick={()=>onDesignSystem({primary:"#0b3b5b",accent:"#18c98a",surface:"#f7fbff",text:"#071b2b",radius:"20px",fontFamily:"Georgia"})}>Editorial</button></div>
@@ -46,7 +47,7 @@ export default function EditorToolbox({open,onClose,onAdd,onAction,pageSettings,
         <section><h4>Checkpoints de publicação</h4>
           <div className="ev-version-list">{(versions||[]).length?(versions||[]).slice().reverse().map(v=><button type="button" key={v.id} onClick={()=>onRestoreVersion(v)}><b>{v.label||v.page}</b><small>{new Date(v.createdAt).toLocaleString("pt-BR")}</small></button>):<p className="ev-drawer-empty">Os checkpoints aparecem aqui após cada publicação.</p>}</div>
         </section>
-        <section><h4>Aparência da página</h4>
+        <section><h4>Editor de layout da página</h4><div className="ev-page-layout-presets"><button type="button" onClick={()=>onPageSettings({layoutPreset:"fluid"})}>Fluido</button><button type="button" onClick={()=>onPageSettings({layoutPreset:"contained"})}>Centralizado</button><button type="button" onClick={()=>onPageSettings({layoutPreset:"immersive"})}>Full bleed</button><button type="button" onClick={()=>onPageSettings({layoutPreset:"editorial"})}>Editorial</button></div>
           <label className="ev-mini-field"><span>Layout mestre</span><select value={pageSettings.layoutPreset||"fluid"} onChange={e=>onPageSettings({layoutPreset:e.target.value})}><option value="fluid">Fluido responsivo</option><option value="contained">Conteúdo centralizado</option><option value="immersive">Imersivo / full bleed</option><option value="editorial">Editorial</option></select></label>
           <label className="ev-mini-field"><span>Tema de cor</span><select value={pageSettings.colorTheme||"estibordo"} onChange={e=>onPageSettings({colorTheme:e.target.value})}><option value="estibordo">ESTIBORDO</option><option value="light">Claro</option><option value="dark">Escuro</option><option value="ocean">Oceano</option></select></label>
           <label className="ev-mini-field"><span>Tema de texto</span><select value={pageSettings.textTheme||"default"} onChange={e=>onPageSettings({textTheme:e.target.value})}><option value="default">Padrão</option><option value="editorial">Editorial</option><option value="compact">Compacto</option><option value="display">Display</option></select></label>

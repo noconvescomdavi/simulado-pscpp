@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import EditorToolbox from "./EditorToolbox";
 import FlashcardManager from "./FlashcardManager";
+import BlockInspector from "./BlockInspector";
+import BlockTree from "./BlockTree";
 
 const SITE_MAP = [
   {group:"Institucional",pages:[
@@ -126,6 +128,13 @@ function ColorControl({label,value,onChange}){
   return <div className="ev-color-control"><span>{label}</span><div className="ev-color-row"><input className="ev-color-picker" type="color" value={safe} onChange={e=>onChange(e.target.value)}/><input value={value||""} placeholder="#FFFFFF" onChange={e=>onChange(e.target.value)}/></div><div className="ev-swatches">{PALETTE.map(c=><button type="button" key={c} title={c} style={{background:c}} onClick={()=>onChange(c)}/>)}</div></div>;
 }
 
+const CONTAINER_TYPES=new Set(["container","group","stack","grid"]);
+function findBlock(blocks,id){for(const block of blocks||[]){if(block.id===id)return block;const found=findBlock(block.children||[],id);if(found)return found}return null}
+function updateBlockTree(blocks,id,updater){return (blocks||[]).map(block=>{if(block.id===id)return updater(clone(block));if(block.children?.length)return {...block,children:updateBlockTree(block.children,id,updater)};return block})}
+function removeBlockTree(blocks,id){let removed=null;const walk=items=>(items||[]).flatMap(block=>{if(block.id===id){removed=block;return[]}return [{...block,children:block.children?.length?walk(block.children):block.children}]});return {blocks:walk(blocks),removed}}
+function pageTemplate(id,title="Nova página"){const uid=type=>({id:"blk_"+type+"_"+Math.random().toString(36).slice(2,8),type});const hero={...uid("hero"),title,text:"Preparação inteligente, visual e orientada a desempenho.",button:"Começar agora",href:"/cadastro",style:{paddingTop:"72px",paddingBottom:"72px"}};const features={...uid("features"),title:"Tudo o que você precisa em um só fluxo",items:[["Planejamento","Organize prioridades e metas."],["Prática","Questões, simulados e flashcards."],["Diagnóstico","Entenda erros e evolução."]],style:{}};const cta={...uid("cta"),title:"Pronto para avançar?",text:"Transforme estudo em rotina mensurável.",button:"Criar minha conta",href:"/cadastro",style:{}};if(id==="product")return [hero,{...uid("container"),title:"Produto",style:{display:"grid",gridTemplateColumns:"1.1fr .9fr",gap:"28px",alignItems:"center"},children:[{...uid("section"),title:"Recursos centrais",text:"Apresente benefícios, diferenciais e evidências.",style:{}},{...uid("stats"),items:[["7.000+","Questões"],["24/7","Acesso"],["100%","Online"]],style:{}}]},features,cta];if(id==="editorial")return [{...uid("section"),title,text:"Introdução editorial da página.",style:{maxWidth:"820px",marginLeft:"auto",marginRight:"auto",paddingTop:"64px",paddingBottom:"24px"}},{...uid("container"),title:"Conteúdo",style:{display:"grid",gridTemplateColumns:"minmax(0,1fr) 280px",gap:"36px"},children:[{...uid("text"),text:"Desenvolva o conteúdo principal aqui. Use blocos filhos para estruturar seções, imagens e chamadas.",style:{lineHeight:"1.75"}},{...uid("box"),title:"Resumo",text:"Pontos-chave, links e referências.",style:{}}]}];if(id==="dashboard")return [{...uid("container"),title:"Dashboard",style:{display:"grid",gridTemplateColumns:"260px minmax(0,1fr)",gap:"18px",minHeight:"70vh"},children:[{...uid("menu"),items:[["Visão geral","#"],["Métricas","#"],["Atividade","#"],["Configurações","#"]],style:{display:"flex",flexDirection:"column",gap:"8px"}},{...uid("grid"),title:"Painel",style:{display:"grid",gridTemplateColumns:"repeat(3,minmax(0,1fr))",gap:"14px"},children:[{...uid("stats"),items:[["68%","Prontidão"],["1.250","Questões"],["81%","Consistência"]],style:{}},{...uid("cards"),title:"Atalhos",items:[["Plano de estudos","Abrir planejamento"],["Revisão","Ver prioridades"],["Simulados","Treinar agora"]],style:{}}]}]}];if(id==="sales")return [hero,{...uid("testimonial"),quote:"Uma preparação mais organizada, visual e mensurável.",author:"ESTIBORDO",style:{}},features,{...uid("pricing"),title:"Escolha seu plano",items:[["Essencial","R$ 49","Base completa"],["Pro","R$ 89","Mais inteligência"],["Elite","R$ 149","Experiência máxima"]],style:{}},{...uid("faq"),title:"Perguntas frequentes",items:[["Como funciona?","Acesso online pela plataforma."],["Posso cancelar?","Consulte as condições comerciais vigentes."]],style:{}},cta];return [hero,features,cta]}
+const PAGE_TEMPLATE_OPTIONS=[{id:"landing",label:"Landing · Conversão"},{id:"product",label:"Produto · SaaS"},{id:"sales",label:"Vendas · Completa"},{id:"editorial",label:"Editorial · Conteúdo"},{id:"dashboard",label:"Dashboard · App"}];
+
 export default function EditorClient(){
   const [auth,setAuth]=useState("checking");
   const [password,setPassword]=useState("");
@@ -134,6 +143,7 @@ export default function EditorClient(){
   const [viewport,setViewport]=useState("desktop");
   const [scope,setScope]=useState("page");
   const [layerDrag,setLayerDrag]=useState(null);
+  const [selectedBlockId,setSelectedBlockId]=useState(null);
   const [design,setDesign]=useState(null);
   const [original,setOriginal]=useState(null);
   const [sha,setSha]=useState("");
@@ -171,6 +181,8 @@ export default function EditorClient(){
   const snapRef=useRef(snap);
 
   const dirty=useMemo(()=>design&&original&&JSON.stringify(design)!==JSON.stringify(original),[design,original]);
+  const selectedBlock=useMemo(()=>findBlock(design?.pages?.[page]?.blocks||[],selectedBlockId),[design,page,selectedBlockId]);
+  useEffect(()=>{if(!design||auth!=="ready")return;const timer=setTimeout(()=>{try{iframeRef.current?.contentWindow?.postMessage({type:"estibordo-editor-design",design},window.location.origin)}catch{}},45);return()=>clearTimeout(timer)},[design,page,auth]);
 
   async function refreshSiteMap(){
     try{
@@ -242,7 +254,7 @@ export default function EditorClient(){
   function restoreSnapshot(snapshot){
     if(!snapshot)return;
     setDesign(clone(snapshot));
-    setTarget(null);
+    setTarget(null);setSelectedBlockId(null);
     setStatus("Histórico restaurado. Salve para publicar.");
     setTimeout(()=>iframeRef.current?.contentWindow?.location.reload(),0);
   }
@@ -303,7 +315,7 @@ export default function EditorClient(){
     setStatus("Estilo aplicado. Salve para publicar.");
   }
 
-  function selectElement(el){
+  function selectElement(el){const blockEl=el?.closest?.("[data-estibordo-editor-block]");if(blockEl){const blockId=blockEl.getAttribute("data-estibordo-editor-block");if(blockId){setSelectedBlockId(blockId);setTarget(null);setStatus("Bloco do editor selecionado. Edite conteúdo, layout e hierarquia no painel.");return}}setSelectedBlockId(null);
     const selector=selectorFor(el); if(!selector)return;
     const current=scope==="global"?design?.global?.elements?.[selector]:design?.pages?.[page]?.elements?.[selector];
     const base=computedStyle(el);
@@ -340,7 +352,7 @@ export default function EditorClient(){
     `;
     doc.head.appendChild(s);
     doc.documentElement.classList.toggle("ev-editor-grid",gridRef.current);
-    refreshLayers(doc);
+    refreshLayers(doc);try{iframeRef.current?.contentWindow?.postMessage({type:"estibordo-editor-design",design},window.location.origin)}catch{}
     let hover,selected,drag=null;
 
     const over=e=>{if(drag)return;if(hover)hover.removeAttribute("data-ev-hover");hover=e.target;hover?.setAttribute("data-ev-hover","")};
@@ -526,15 +538,26 @@ export default function EditorClient(){
     setStatus("Configuração da página alterada. Salve para publicar.");
   }
 
+  function updateBlock(id,updater,message="Bloco atualizado. Salve para publicar."){remember();setDesign(prev=>{const n=clone(prev);n.pages||={};n.pages[page]||={elements:{},blocks:[],settings:{}};n.pages[page].blocks=updateBlockTree(n.pages[page].blocks||[],id,updater);return n});setStatus(message)}
+  function setBlockField(key,value){if(selectedBlockId)updateBlock(selectedBlockId,b=>({...b,[key]:value}))}
+  function setBlockStyle(key,value){if(!selectedBlockId)return;updateBlock(selectedBlockId,b=>{if(viewport==="desktop"){b.style={...(b.style||{})};if(value==="")delete b.style[key];else b.style[key]=value}else{b.responsive={...(b.responsive||{})};b.responsive[viewport]={...(b.responsive[viewport]||{}),style:{...(b.responsive?.[viewport]?.style||{})}};if(value==="")delete b.responsive[viewport].style[key];else b.responsive[viewport].style[key]=value}return b},"Layout do bloco atualizado.")}
+  function applyBlockLayoutPreset(preset){const presets={"stack-v":{display:"flex",flexDirection:"column",gap:"16px",alignItems:"stretch"},"stack-h":{display:"flex",flexDirection:"row",gap:"16px",alignItems:"center"},"grid-2":{display:"grid",gridTemplateColumns:"repeat(2,minmax(0,1fr))",gap:"18px"},"grid-3":{display:"grid",gridTemplateColumns:"repeat(3,minmax(0,1fr))",gap:"18px"},"sidebar":{display:"grid",gridTemplateColumns:"280px minmax(0,1fr)",gap:"24px"},"hero-split":{display:"grid",gridTemplateColumns:"1.15fr .85fr",gap:"34px",alignItems:"center"},"center":{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:"16px",textAlign:"center"},"bento":{display:"grid",gridTemplateColumns:"repeat(12,minmax(0,1fr))",gap:"14px"}};const patch=presets[preset];if(!patch||!selectedBlockId)return;updateBlock(selectedBlockId,b=>{if(viewport==="desktop")b.style={...(b.style||{}),...patch};else{b.responsive={...(b.responsive||{})};b.responsive[viewport]={...(b.responsive[viewport]||{}),style:{...(b.responsive?.[viewport]?.style||{}),...patch}}}return b},"Preset de layout aplicado.")}
+  function deleteBlock(id=selectedBlockId){if(!id)return;remember();setDesign(prev=>{const n=clone(prev);const r=removeBlockTree(n.pages?.[page]?.blocks||[],id);n.pages[page].blocks=r.blocks;return n});setSelectedBlockId(null);setStatus("Bloco removido. Salve para publicar.")}
+  function duplicateBlock(){if(!selectedBlock)return;remember();const copy=clone(selectedBlock);copy.id="blk_"+copy.type+"_"+Math.random().toString(36).slice(2,8);const duplicate=items=>(items||[]).flatMap(b=>b.id===selectedBlockId?[b,copy]:[{...b,children:b.children?.length?duplicate(b.children):b.children}]);setDesign(prev=>{const n=clone(prev);n.pages[page].blocks=duplicate(n.pages[page].blocks||[]);return n});setSelectedBlockId(copy.id);setStatus("Bloco duplicado.")}
+  function moveBlock(delta){if(!selectedBlockId)return;remember();const move=items=>{const arr=[...(items||[])];const i=arr.findIndex(x=>x.id===selectedBlockId);if(i>=0){const j=Math.max(0,Math.min(arr.length-1,i+delta));[arr[i],arr[j]]=[arr[j],arr[i]];return arr}return arr.map(b=>({...b,children:b.children?.length?move(b.children):b.children}))};setDesign(prev=>{const n=clone(prev);n.pages[page].blocks=move(n.pages[page].blocks||[]);return n});setStatus("Ordem do bloco alterada.")}
+  function wrapBlock(type){if(!selectedBlock)return;remember();const wrapper={id:"blk_"+type+"_"+Math.random().toString(36).slice(2,8),type,title:type==="group"?"Grupo":"Container",style:type==="group"?{}:{display:"flex",flexDirection:"column",gap:"16px"},children:[clone(selectedBlock)]};setDesign(prev=>{const n=clone(prev);const r=removeBlockTree(n.pages[page].blocks||[],selectedBlockId);n.pages[page].blocks=[...r.blocks,wrapper];return n});setSelectedBlockId(wrapper.id);setStatus("Bloco agrupado em nova hierarquia.")}
+  function promoteBlock(){if(!selectedBlockId)return;remember();setDesign(prev=>{const n=clone(prev);const r=removeBlockTree(n.pages[page].blocks||[],selectedBlockId);if(r.removed)n.pages[page].blocks=[...(r.blocks||[]),r.removed];return n});setStatus("Bloco movido para a raiz da página.")}
+  function createManagedPage({title,slug,template}){const clean=String(slug||title||"pagina").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9-]+/g,"-").replace(/^-+|-+$/g,"");if(!clean){setStatus("Informe um nome ou slug válido.");return}const route="/paginas/"+clean;if(design?.pages?.[route]){setStatus("Já existe uma página com este endereço.");setPage(route);return}remember();setDesign(prev=>{const n=clone(prev);n.pages||={};n.pages[route]={elements:{},blocks:pageTemplate(template,title||clean),settings:{seoTitle:title||clean,layoutPreset:"fluid",managed:true}};return n});setSiteMap(prev=>{const groups=clone(prev);let g=groups.find(x=>x.group==="Páginas criadas no editor");if(!g){g={group:"Páginas criadas no editor",pages:[]};groups.push(g)}g.pages.push([route,title||clean,{managed:true}]);return groups});setPage(route);setTarget(null);setSelectedBlockId(null);setToolboxOpen(false);setStatus("Página criada no editor. Revise o template e publique.")}
+  function applyPageTemplate(template){if((design?.pages?.[page]?.blocks||[]).length&&!window.confirm("Substituir os blocos atuais desta página pelo template selecionado?"))return;remember();setDesign(prev=>{const n=clone(prev);n.pages||={};n.pages[page]||={elements:{},settings:{}};n.pages[page].blocks=pageTemplate(template,pageLabel);return n});setSelectedBlockId(null);setStatus("Template completo aplicado à página.")}
   function addBlock(type){
     remember();
     const id="blk_"+Date.now().toString(36)+"_"+Math.random().toString(36).slice(2,6);
     const templates={
+      container:{title:"Container",style:{display:"flex",flexDirection:"column",gap:"16px"},children:[]},group:{title:"Grupo",style:{},children:[]},stack:{title:"Stack",style:{display:"flex",flexDirection:"column",gap:"16px"},children:[]},grid:{title:"Grid",style:{display:"grid",gridTemplateColumns:"repeat(2,minmax(0,1fr))",gap:"16px"},children:[]},
       text:{text:"Novo texto",style:{}},button:{text:"Novo botão",href:"#",style:{}},image:{src:"/estibordo/logos/estibordo-logo-header.png",alt:"Imagem",style:{}},section:{title:"Nova seção",text:"Edite este conteúdo no painel.",style:{}},box:{title:"Nova caixa",text:"Conteúdo da caixa",style:{}},decorative:{text:"✦",style:{}},gallery:{images:[],style:{}},menu:{items:[["Início","/"],["Área do Aluno","/area-do-aluno"]],style:{}},form:{title:"Entre em contato",fields:["Nome","E-mail","Mensagem"],style:{}},video:{src:"",title:"Vídeo",style:{}},interactive:{title:"Conteúdo interativo",text:"Configure este bloco.",style:{}},list:{items:["Item 1","Item 2","Item 3"],style:{}},embed:{code:"",style:{}},social:{items:[["Instagram","#"],["YouTube","#"],["LinkedIn","#"]],style:{}},input:{placeholder:"Digite aqui",style:{}},widget:{title:"Widget",text:"Widget do app",style:{}},cms:{title:"CMS",text:"Conecte este bloco a uma fonte de dados.",style:{}},blog:{title:"Blog",text:"Bloco de posts.",style:{}},app:{title:"App",text:"Integração de aplicativo.",style:{}},api:{title:"API",text:"Bloco conectado a API.",style:{}},hero:{title:"Título de destaque",text:"Subtítulo estratégico da seção.",button:"Começar agora",href:"#",style:{}},cta:{title:"Pronto para avançar?",text:"Adicione uma chamada para ação clara.",button:"Começar",href:"#",style:{}},stats:{items:[["75%","Desempenho"],["1.250","Questões"],["18","Simulados"]],style:{}},socialbar:{items:[["Instagram","#"],["YouTube","#"],["LinkedIn","#"]],style:{}},cards:{items:[["Card 1","Descrição"],["Card 2","Descrição"],["Card 3","Descrição"]],style:{}},features:{title:"Recursos",items:[["Velocidade","Experiência rápida e responsiva."],["Clareza","Hierarquia visual objetiva."],["Conversão","CTA orientado à ação."]],style:{}},pricing:{title:"Planos",items:[["Essencial","R$ 49","Para começar"],["Pro","R$ 89","Mais recursos"],["Elite","R$ 149","Experiência completa"]],style:{}},faq:{title:"Perguntas frequentes",items:[["Como funciona?","Edite a resposta aqui."],["Posso personalizar?","Sim, todos os blocos são editáveis."]],style:{}},testimonial:{quote:"Uma experiência de estudo muito mais clara e integrada.",author:"Aluno ESTIBORDO",style:{}},timeline:{title:"Jornada",items:[["01","Descoberta"],["02","Preparação"],["03","Domínio"]],style:{}},divider:{style:{}},spacer:{style:{height:"48px"}}
     };
     const block={id,type,...(templates[type]||{title:type,text:"Novo bloco",style:{}})};
-    setDesign(prev=>{const n=clone(prev||{version:2,global:{favicon:"",elements:{},media:[]},pages:{}});n.pages||={};n.pages[page]||={elements:{},blocks:[],settings:{}};n.pages[page].blocks=[...(n.pages[page].blocks||[]),block];return n});
-    setStatus("Elemento adicionado ao fim da página. Salve para publicar.");
+    setDesign(prev=>{const n=clone(prev||{version:4,global:{favicon:"",elements:{},media:[]},pages:{}});n.pages||={};n.pages[page]||={elements:{},blocks:[],settings:{}};if(selectedBlockId&&CONTAINER_TYPES.has(selectedBlock?.type))n.pages[page].blocks=updateBlockTree(n.pages[page].blocks||[],selectedBlockId,b=>({...b,children:[...(b.children||[]),block]}));else n.pages[page].blocks=[...(n.pages[page].blocks||[]),block];return n});setSelectedBlockId(id);setStatus(selectedBlockId&&CONTAINER_TYPES.has(selectedBlock?.type)?"Bloco inserido dentro do container selecionado.":"Bloco adicionado à página.");
     setTimeout(()=>iframeRef.current?.contentWindow?.location.reload(),50);
   }
 
@@ -585,7 +608,7 @@ export default function EditorClient(){
 
   async function save(){
     if(!design)return;setSaving(true);setStatus("Criando checkpoint e publicando...");
-    const payload=clone(design);payload.version=3;payload.global||={};
+    const payload=clone(design);payload.version=4;payload.global||={};
     const snapshot=clone(payload);if(snapshot.global)delete snapshot.global.versions;
     payload.global.versions=[...(payload.global.versions||[]),{id:"ver_"+Date.now().toString(36),createdAt:new Date().toISOString(),page,label:pageLabel,snapshot}].slice(-6);
     const r=await fetch("/api/site-editor/design/save",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({content:payload,sha})});
@@ -622,13 +645,13 @@ export default function EditorClient(){
       <div className="ev-actions"><span className={dirty?"ev-dirty":"ev-saved"}>{dirty?"Alterações não publicadas":"Tudo salvo"}</span><a href={page} target="_blank">Abrir página ↗</a><button className="ev-publish" disabled={!dirty||saving} onClick={save}>{saving?"Publicando…":"Salvar e publicar"}</button></div>
     </header>
 
-    <EditorToolbox open={toolboxOpen} onClose={()=>setToolboxOpen(false)} onAdd={addBlock} onAction={toolboxAction} pageSettings={pageConfig()} onPageSettings={updatePageSettings} media={design?.global?.media||[]} onUploadMedia={uploadLibraryMedia} designSystem={designSystem()} onDesignSystem={updateDesignSystem} components={components()} onApplyComponent={applyComponent} onDeleteComponent={deleteComponent} versions={versions()} onRestoreVersion={restoreVersion}/>
+    <EditorToolbox open={toolboxOpen} onClose={()=>setToolboxOpen(false)} onAdd={addBlock} onAction={toolboxAction} pageSettings={pageConfig()} onPageSettings={updatePageSettings} media={design?.global?.media||[]} onUploadMedia={uploadLibraryMedia} designSystem={designSystem()} onDesignSystem={updateDesignSystem} components={components()} onApplyComponent={applyComponent} onDeleteComponent={deleteComponent} versions={versions()} onRestoreVersion={restoreVersion} onCreatePage={createManagedPage} pageTemplates={PAGE_TEMPLATE_OPTIONS} onApplyPageTemplate={applyPageTemplate}/>
     <FlashcardManager open={flashcardManagerOpen} onClose={()=>setFlashcardManagerOpen(false)} initialSlug={page.startsWith("/flashcards/")?page.split("/")[2]:"cis"} onChanged={()=>setStatus("Flashcard salvo no banco. Atualize a prévia para conferir.")}/>
     <div className="ev-workspace">
       <aside className="ev-sitemap">
         <div className="ev-side-title"><b>MAPA DO SITE</b><span>Sincronizado automaticamente com a árvore do app</span><button type="button" onClick={()=>void refreshSiteMap()} title="Atualizar mapa do site">↻</button></div>
-        <div className="ev-site-scroll">{siteMap.map(group=><section key={group.group}><h4>{group.group}</h4>{group.pages.map(([url,label,meta])=><button className={page===url?"is-active":""} key={url} onClick={()=>{setPage(url);setTarget(null)}}><span>{label}{meta?.hidden?<em>oculta</em>:""}</span><small>{url}</small></button>)}</section>)}</div>
-        <div className="ev-layers"><div className="ev-layers-head"><b>CAMADAS</b><button type="button" onClick={()=>refreshLayers()}>↻</button></div><div className="ev-layer-scroll">{layers.map(layer=><button type="button" draggable key={layer.selector+"-"+layer.index} className={`${target?.selector===layer.selector?"is-active":""} ${layerDrag===layer.selector?"is-dragging":""}`} onDragStart={()=>setLayerDrag(layer.selector)} onDragEnd={()=>setLayerDrag(null)} onDragOver={e=>e.preventDefault()} onDrop={e=>{e.preventDefault();if(layerDrag)reorderLayer(layerDrag,layer.selector)}} onClick={()=>selectBySelector(layer.selector)}><i>⋮⋮</i><small>{layer.tag}</small><span>{layer.label||layer.selector}</span></button>)}</div></div>
+        <div className="ev-site-scroll">{siteMap.map(group=><section key={group.group}><h4>{group.group}</h4>{group.pages.map(([url,label,meta])=><button className={page===url?"is-active":""} key={url} onClick={()=>{setPage(url);setTarget(null);setSelectedBlockId(null)}}><span>{label}{meta?.hidden?<em>oculta</em>:""}</span><small>{url}</small></button>)}</section>)}</div>
+        <div className="ev-layers"><div className="ev-layers-head"><b>CAMADAS DOM</b><button type="button" onClick={()=>refreshLayers()}>↻</button></div><div className="ev-layer-scroll">{layers.map(layer=><button type="button" draggable key={layer.selector+"-"+layer.index} className={`${target?.selector===layer.selector?"is-active":""} ${layerDrag===layer.selector?"is-dragging":""}`} onDragStart={()=>setLayerDrag(layer.selector)} onDragEnd={()=>setLayerDrag(null)} onDragOver={e=>e.preventDefault()} onDrop={e=>{e.preventDefault();if(layerDrag)reorderLayer(layerDrag,layer.selector)}} onClick={()=>selectBySelector(layer.selector)}><i>⋮⋮</i><small>{layer.tag}</small><span>{layer.label||layer.selector}</span></button>)}</div></div><div className="ev-block-tree-panel"><div className="ev-layers-head"><b>BLOCOS & HIERARQUIA</b><small>{(design?.pages?.[page]?.blocks||[]).length} raiz</small></div><BlockTree blocks={design?.pages?.[page]?.blocks||[]} selectedId={selectedBlockId} onSelect={id=>{setSelectedBlockId(id);setTarget(null)}}/></div>
       </aside>
 
       <section className="ev-canvas">
@@ -641,7 +664,7 @@ export default function EditorClient(){
       </section>
 
       <aside className="ev-inspector">
-        {!target ? <div className="ev-empty"><div className="ev-empty-icon">✦</div><h3>Selecione um elemento</h3><p>Clique em um texto, botão, imagem, card, cabeçalho ou menu na prévia. As ferramentas de edição aparecerão aqui.</p><div className="ev-tip"><b>Dica</b><span>Para cabeçalho, menu, logo ou rodapé, use o escopo <strong>Todo o site</strong>.</span></div></div> :
+        {selectedBlock ? <BlockInspector block={selectedBlock} viewport={viewport} onField={setBlockField} onStyle={setBlockStyle} onLayoutPreset={applyBlockLayoutPreset} onMove={moveBlock} onDuplicate={duplicateBlock} onWrap={wrapBlock} onPromote={promoteBlock} onDelete={deleteBlock} isContainer={CONTAINER_TYPES.has(selectedBlock.type)}/> : !target ? <div className="ev-empty"><div className="ev-empty-icon">✦</div><h3>Selecione um elemento</h3><p>Clique em um texto, botão, imagem, card, cabeçalho ou menu na prévia. As ferramentas de edição aparecerão aqui.</p><div className="ev-tip"><b>Dica</b><span>Para cabeçalho, menu, logo ou rodapé, use o escopo <strong>Todo o site</strong>.</span></div></div> :
         <>
           <div className="ev-inspector-head"><div><span>{target.tag.toUpperCase()}</span><b>{target.label||"Elemento selecionado"}</b></div><code title={target.selector}>{target.selector}</code></div>
           <div className="ev-responsive-note"><b>{viewport==="desktop"?"BASE / DESKTOP":viewport.toUpperCase()}</b><span>{viewport==="desktop"?"Estilo base herdado pelos outros dispositivos.":"Alterações de estilo ficam exclusivas deste breakpoint."}</span></div>
@@ -676,10 +699,11 @@ export default function EditorClient(){
             </>}
 
             {tab==="layout"&&<>
+              <h4 className="ev-subtitle">LAYOUTS PRÉ-DEFINIDOS</h4><div className="ev-layout-preset-grid">{[["stack-v","Stack vertical"],["stack-h","Stack horizontal"],["grid-2","Grid 2"],["grid-3","Grid 3"],["sidebar","Sidebar"],["hero-split","Hero split"],["center","Centralizado"]].map(([id,label])=><button type="button" key={id} onClick={()=>{const presets={"stack-v":{display:"flex",flexDirection:"column",gap:"16px"},"stack-h":{display:"flex",flexDirection:"row",gap:"16px",alignItems:"center"},"grid-2":{display:"grid",gridTemplateColumns:"repeat(2,minmax(0,1fr))",gap:"18px"},"grid-3":{display:"grid",gridTemplateColumns:"repeat(3,minmax(0,1fr))",gap:"18px"},"sidebar":{display:"grid",gridTemplateColumns:"280px minmax(0,1fr)",gap:"24px"},"hero-split":{display:"grid",gridTemplateColumns:"1.15fr .85fr",gap:"34px",alignItems:"center"},"center":{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:"16px"}};const p=presets[id];remember();const so={...styleOverrides,...p};setStyle(s=>({...s,...p}));setStyleOverrides(so);try{const el=iframeRef.current?.contentDocument?.querySelector(target.selector);if(el)Object.entries(p).forEach(([k,v])=>el.style[k]=v)}catch{}write(so,attrsOverrides,hidden)}}>{label}</button>)}</div>
               <h4 className="ev-subtitle">DIMENSÕES</h4><div className="ev-grid2"><TextField label="Largura" value={style.width} onChange={v=>setStyleValue("width",v)} placeholder="auto"/><TextField label="Altura" value={style.height} onChange={v=>setStyleValue("height",v)} placeholder="auto"/></div>
               <h4 className="ev-subtitle">ESPAÇAMENTO INTERNO</h4><div className="ev-grid4">{["Top","Right","Bottom","Left"].map(side=><TextField key={side} label={side} value={style["padding"+side]} onChange={v=>setStyleValue("padding"+side,v)} placeholder="0px"/>)}</div>
               <h4 className="ev-subtitle">MARGENS</h4><div className="ev-grid4">{["Top","Right","Bottom","Left"].map(side=><TextField key={side} label={side} value={style["margin"+side]} onChange={v=>setStyleValue("margin"+side,v)} placeholder="0px"/>)}</div>
-              <div className="ev-grid2"><SelectField label="Display" value={style.display} onChange={v=>setStyleValue("display",v)} options={["block","inline-block","flex","grid","none"]}/><TextField label="Gap" value={style.gap} onChange={v=>setStyleValue("gap",v)} placeholder="12px"/></div>
+              <div className="ev-grid2"><SelectField label="Display" value={style.display} onChange={v=>setStyleValue("display",v)} options={["block","inline-block","flex","grid","none"]}/><TextField label="Gap" value={style.gap} onChange={v=>setStyleValue("gap",v)} placeholder="12px"/></div><TextField label="Colunas do Grid" value={style.gridTemplateColumns} onChange={v=>setStyleValue("gridTemplateColumns",v)} placeholder="repeat(3,minmax(0,1fr))"/>
               <div className="ev-grid2"><SelectField label="Direção flex" value={style.flexDirection} onChange={v=>setStyleValue("flexDirection",v)} options={["row","column","row-reverse","column-reverse"]}/><SelectField label="Alinhar itens" value={style.alignItems} onChange={v=>setStyleValue("alignItems",v)} options={["stretch","flex-start","center","flex-end"]}/></div>
               <TextField label="Opacidade" value={style.opacity} onChange={v=>setStyleValue("opacity",v)} placeholder="1"/>
               <h4 className="ev-subtitle">POSICIONAMENTO</h4>

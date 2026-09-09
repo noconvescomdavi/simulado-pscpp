@@ -1,9 +1,10 @@
 import { requireEditorAuth, routeError } from "../../../../lib/site-editor/server";
+import design from "../../../../data/site/editor-design.json";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const GROUP_ORDER = ["Institucional","Conta e acesso","Área do aluno","Administração","Outras páginas / ocultas"];
+const GROUP_ORDER = ["Institucional","Conta e acesso","Área do aluno","Páginas criadas no editor","Administração","Outras páginas / ocultas"];
 
 function humanize(segment) {
   return String(segment || "")
@@ -23,6 +24,7 @@ function routeFromFile(file) {
 function groupFor(route) {
   if (route === "/" || /^\/(plataforma|produtos|sobre-nos|sobre-a-praticagem|politica-|termos-de-uso|suporte)/.test(route)) return "Institucional";
   if (/^\/(login|cadastro|esqueci-minha-senha|redefinir-senha|verificar-email|mfa-admin|aceitar-termos|comprar|minhas-assinaturas|perfil)/.test(route)) return "Conta e acesso";
+  if (/^\/paginas\//.test(route)) return "Páginas criadas no editor";
   if (/^\/admin(?:\/|$)/.test(route)) return "Administração";
   if (/^\/(area-do-aluno|conteudos|flashcards|simulado|plano-de-estudos|revisao-inteligente|analise-de-fraquezas|ranking|contramestre|treino-adaptativo|tutor-ia|study-content)/.test(route)) return "Área do aluno";
   return "Outras páginas / ocultas";
@@ -64,12 +66,13 @@ export async function GET() {
       const last = route === "/" ? "Página inicial" : humanize(route.split("/").filter(Boolean).at(-1));
       pages.push({ route, label: last, hidden: isHidden(route), dynamic: /\[.+\]/.test(route) });
     }
+    for(const [route,config] of Object.entries(design?.pages||{})){if(!route.startsWith("/paginas/")||seen.has(route))continue;seen.add(route);pages.push({route,label:config?.settings?.seoTitle||humanize(route.split("/").pop()),hidden:false,managed:true})}
     pages.push({ route: "/__404", label: "Página 404", hidden: true, system: true });
     pages.sort((a,b) => a.route.localeCompare(b.route, "pt-BR"));
     const groups = GROUP_ORDER.map((group) => ({
       group,
       pages: pages.filter((p) => groupFor(p.route) === group || (p.system && group === "Outras páginas / ocultas"))
-        .map((p) => [p.route, p.label, { hidden: p.hidden, dynamic: p.dynamic, system: p.system }])
+        .map((p) => [p.route, p.label, { hidden: p.hidden, dynamic: p.dynamic, system: p.system, managed: p.managed }])
     })).filter((g) => g.pages.length);
     return Response.json({ ok: true, groups, total: pages.length });
   } catch (error) {
