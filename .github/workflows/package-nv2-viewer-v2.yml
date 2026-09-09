@@ -1,0 +1,29 @@
+name: Package NV2 Viewer V2
+
+on:
+  push:
+    branches: [nv2-viewer-v2]
+    paths:
+      - 'tools/nv2-viewer-v2/**'
+      - '.github/workflows/package-nv2-viewer-v2.yml'
+  workflow_dispatch:
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate JavaScript
+        run: |
+          node --check tools/nv2-viewer-v2/src/nv2.js
+          node --check tools/nv2-viewer-v2/src/viewer.js
+      - name: Validate Python probe
+        run: python -m py_compile tools/nv2-viewer-v2/nv2probe.py
+      - name: Package
+        run: |
+          cd tools
+          zip -r ../NV2ChartViewer-v2.zip nv2-viewer-v2
+      - uses: actions/upload-artifact@v4
+        with:
+          name: NV2ChartViewer-v2
+          path: NV2ChartViewer-v2.zip
