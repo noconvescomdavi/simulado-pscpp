@@ -548,7 +548,7 @@ export default function Admin3DEditor(){
     const presetByKey=Object.fromEntries(LIGHT_PRESETS.map(p=>[p.key,p]));
     for(const light of lights){
       const preset=presetByKey[light.lightPreset];if(!preset)continue;
-      if(Math.abs(Number(light.sector||0)-Number(preset.sector))>.1)errors.push(light.name+": setor "+light.sector+"° diverge do preset RIPEAM "+preset.sector+"°.");
+      if(Math.abs(Number(light.sector||0)-Number(preset.sector))>.1)warnings.push(light.name+": setor "+light.sector+"° diverge do preset RIPEAM "+preset.sector+"°; revise antes de publicar.");
       if(String(light.color||"").toLowerCase()!==String(preset.color||"").toLowerCase())warnings.push(light.name+": cor diverge do preset "+preset.label+".");
     }
     const port=lights.filter(l=>l.lightPreset==="port"),starboard=lights.filter(l=>l.lightPreset==="starboard");
@@ -590,7 +590,7 @@ export default function Admin3DEditor(){
     const assetErrors=(healthReport||[]).filter(x=>x.status==="ERRO"&&cfg.objects.some(o=>o.assetUrl===x.url));
     const geo=geometricRipeamIssues(cfg.objects||[]);
     const occ=occlusionCandidates(cfg.objects||[]);
-    const pf={errors:[...validation.errors,...geo,...assetErrors.map(x=>"Asset indisponível: "+x.name)],warnings:[...validation.warnings,...occ],stats};
+    const pf={errors:[...validation.errors,...assetErrors.map(x=>"Asset indisponível: "+x.name)],warnings:[...validation.warnings,...geo.map(x=>"Geometria: "+x),...occ],stats};
     setPreflight(pf);
     if(pf.errors.length){setStatus("Atualização do aluno bloqueada pelo preflight: "+pf.errors.length+" erro(s).");setTab("scene");return}
     const summary=publishDiff.length?publishDiff.slice(0,8).map(d=>"• "+d.label).join("\n"):"Nenhuma diferença detectada.";
@@ -628,7 +628,7 @@ export default function Admin3DEditor(){
         <button onClick={duplicateScene}>Duplicar cena</button><button onClick={()=>setScene(clone(EMPTY))}>＋ Nova cena</button>
         <select value={scene.status==="published"?"review":scene.status} onChange={e=>setScene(s=>({...s,status:e.target.value}))}><option value="draft">Rascunho</option><option value="review">Revisão</option><option value="archived">Arquivado</option></select>
         <button disabled={busy} onClick={()=>save(scene.status)}>Salvar rascunho</button><button onClick={restoreLocalRecovery} title="Cópia local; nunca publica">Recuperar local</button>{recovery&&<button onClick={discardLocalRecovery}>Limpar recuperação</button>}
-        <button onClick={()=>setShowDiff(v=>!v)} title="Ver alterações desde a última publicação">Diff ({publishDiff.length})</button><button className={styles.publish} disabled={busy||validation.errors.length>0} title={validation.errors.length?"Corrija os erros críticos antes de atualizar o aluno":"Única ação que envia a working copy atual para o aluno."} onClick={publishStudent}>{scene.liveStudentScene?"Atualizar aluno":"Adicionar ao aluno"}</button>
+        <button onClick={()=>setShowDiff(v=>!v)} title="Ver alterações desde a última publicação">Diff ({publishDiff.length})</button><button className={styles.publish} disabled={busy||validation.errors.length>0} title={validation.errors.length?validation.errors.join(" | "):"Única ação que envia a working copy atual para o aluno."} onClick={publishStudent}>{scene.liveStudentScene?"Atualizar aluno":"Adicionar ao aluno"}</button>{validation.errors.length>0&&<div className={styles.publishBlocker}><b>Bloqueio de publicação</b>{validation.errors.map((e,i)=><span key={i}>✕ {e}</span>)}</div>}
       </div>
     </div>
 
