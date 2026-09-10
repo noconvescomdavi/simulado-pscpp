@@ -348,6 +348,11 @@ function addNavigationLights(THREE,root,plan){
       point.position.copy(bulb.position);
       point.userData.ripeamLightIndex=index;
       root.add(point);
+      const halo=new THREE.Mesh(
+        new THREE.SphereGeometry(.23,12,8),
+        new THREE.MeshBasicMaterial({color,transparent:true,opacity:colorName==="white"?.18:.24,depthWrite:false,blending:THREE.AdditiveBlending})
+      );
+      halo.position.copy(bulb.position);halo.userData.ripeamLightIndex=index;halo.userData.ripeamHalo=true;root.add(halo);
     });
   }catch(error){
     console.error("[RIPEAM 3D] Falha isolada ao criar luzes",error);
@@ -433,7 +438,6 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         if(phase==="twilight"){scene.background=new THREE.Color(0x274d69);scene.add(new THREE.HemisphereLight(0x8aa9c7,0x102230,.65));}
 
         const liveCamera=liveConfig?.camera||null;
-        const phase=environmentPhase|| (night?"night":"day");
         const isNight=phase==="night",isTwilight=phase==="twilight";
         const camera=new THREE.PerspectiveCamera(Number(liveCamera?.fov||45),1,.1,1000);
         let renderer;
@@ -523,7 +527,9 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
               const vesselKey=sceneConfig.vessels[index];
               const config=MODEL_CONFIG[vesselKey];
               if(!config)continue;
-              const raw=await loadRawModel(THREE,config,undefined,renderer);
+              const raw=await loadRawModel(THREE,config,p=>updateLoadingOverlay(root,p,p===null?"Lendo modelo":"Carregando modelo","model"),renderer);
+              updateLoadingOverlay(root,100,"Modelo carregado","model");
+              updateLoadingOverlay(root,55,"Preparando texturas","textures");
               const model=prepareModel(THREE,raw,config);
               if(sceneConfig.vessels.length>1){model.position.x=index===0?5.2:-7.2;model.position.z=index===0?0:.15}
               vesselRoot.add(model);
@@ -574,6 +580,8 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
               else if(data.type==="spotLight")light=new THREE.SpotLight(color,data.intensity||3,data.distance||12,data.angle||.75,data.penumbra||.25);
               else light=new THREE.PointLight(color,data.intensity||3,data.distance||12);
               bulb.add(light);group.add(bulb);
+              const halo=new THREE.Mesh(new THREE.SphereGeometry(.24,12,8),new THREE.MeshBasicMaterial({color,transparent:true,opacity:.22,depthWrite:false,blending:THREE.AdditiveBlending}));
+              halo.userData.ripeamHalo=true;group.add(halo);
               group.position.fromArray(data.position||[0,0,0]);
               group.rotation.set(...(data.rotation||[0,0,0]));
               group.scale.fromArray(data.scale||[1,1,1]);
@@ -744,9 +752,9 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         vesselRoot.visible=!hideVessel;
         // RIPEAM: no cenário diurno mostramos somente as marcas diurnas;
         // no cenário noturno mostramos somente as luzes.
-        lightsRoot.visible=night&&!sceneConfig.encounter;
-        shapesRoot.visible=!night&&!sceneConfig.encounter;
-        sectorsRoot.visible=night&&showSectors&&!sceneConfig.encounter;
+        lightsRoot.visible=isNight&&!sceneConfig.encounter;
+        shapesRoot.visible=!isNight&&!sceneConfig.encounter;
+        sectorsRoot.visible=(isNight||teacherMode)&&showSectors&&!sceneConfig.encounter;
 
         camera.updateMatrixWorld(true);
         const frustum=new THREE.Frustum();
@@ -755,8 +763,15 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         const inFrustum=frustum.intersectsBox(unionBox);
         const aboveWaterline=unionBox.min.y>=-.02;
 
+        updateLoadingOverlay(root,100,"Texturas prontas","textures");
+        updateLoadingOverlay(root,25,"Preparando GPU","gpu");
+        try{if(renderer.compileAsync)await renderer.compileAsync(scene,camera);else renderer.compile(scene,camera);}catch{}
+        updateLoadingOverlay(root,100,"GPU pronta","gpu");
+        const cachedStates=await Promise.all(loadedFiles.map(async url=>isModelCached(url))).catch(()=>[]);
+        const offlineReady=cachedStates.length>0&&cachedStates.every(Boolean);
+        onOfflineStatus?.(offlineReady);
         let frames=0;
-        const base={status:"loaded",meshCount,materialCount,textureCount,baseColorMapCount,normalMapCount,roughnessMapCount,metalnessMapCount,aoMapCount,emissiveMapCount,uvMeshCount,missingUvMeshCount,textureless:textureCount===0,boundingBoxValid,inFrustum,aboveWaterline,frames:0,files:loadedFiles,runtime:"three-"+THREE_VERSION};
+        const base={status:"loaded",meshCount,materialCount,textureCount,baseColorMapCount,normalMapCount,roughnessMapCount,metalnessMapCount,aoMapCount,emissiveMapCount,uvMeshCount,missingUvMeshCount,textureless:textureCount===0,boundingBoxValid,inFrustum,aboveWaterline,frames:0,files:loadedFiles,runtime:"three-"+THREE_VERSION,quality:q.label,fallbackTier,offline:offlineReady};
         console.info("[RIPEAM 3D] diagnóstico técnico",{
           scene:sceneConfig.key,
           ...base,
@@ -786,7 +801,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
           enforceWaterline();
           renderer.render(scene,camera);
           if(frames===1){
-            updateLoadingOverlay(root,100,"Pronto");
+            updateLoadingOverlay(root,100,"Pronto","gpu");
             hideLoadingOverlay(root);
           }
           if(frames===2)onDiagnostics?.({...base,frames});
