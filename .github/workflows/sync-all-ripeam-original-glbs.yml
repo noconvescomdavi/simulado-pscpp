@@ -1,0 +1,90 @@
+name: Sync all RIPEAM original GLBs
+on:
+  push:
+    branches: [fix/ripeam-sync-all-original-glbs-20260910]
+permissions:
+  contents: write
+jobs:
+  sync:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/ripeam-sync-all-original-glbs-20260910
+      - name: Install gdown
+        run: python -m pip install --quiet gdown
+      - name: Download original GLBs from Google Drive
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public/models/ripeam
+          gdown 'https://drive.google.com/uc?id=1XxKC0xuqRTg4ec2050NH9x5ru5aoTFh2' -O 'public/models/ripeam/bulk_carrier.glb'
+          gdown 'https://drive.google.com/uc?id=1chrv9hqVf9RMWcvywegAKUgK-uUvW0jL' -O 'public/models/ripeam/barge.glb'
+          gdown 'https://drive.google.com/uc?id=1A1_6qsbbCL4CA8KhRdfyYJu15c1C3YGk' -O 'public/models/ripeam/fishing.glb'
+          gdown 'https://drive.google.com/uc?id=1XmgEZDBvJhf8DekZdiVpREzSbvsQ9bvS' -O 'public/models/ripeam/hidroavião.glb'
+          gdown 'https://drive.google.com/uc?id=1dfytF4GFWnqqqTLedEKNWib0sr_czPiH' -O 'public/models/ripeam/pilot_boat.glb'
+          gdown 'https://drive.google.com/uc?id=1BCllEtUly7dcNWcPAjrzNyJoXQygtsTI' -O 'public/models/ripeam/sailboat.glb'
+          gdown 'https://drive.google.com/uc?id=1TcJXlYk3BcjjxYscuAGxa4g-0FtDQVDV' -O 'public/models/ripeam/Tugboat.glb'
+          gdown 'https://drive.google.com/uc?id=1Wxfe8iADNkoyIf92uH9Vov83z37hi0Gj' -O 'public/models/ripeam/dredger.glb'
+          gdown 'https://drive.google.com/uc?id=1TFCticl5ngtSEUX4d8lC5EmR9zCPLcpz' -O 'public/models/ripeam/offshore.glb'
+          gdown 'https://drive.google.com/uc?id=1_ZdSHP9Xhm5EyvJgemd43U3f9mhUO8b9' -O 'public/models/ripeam/navy_remoção_de_minas.glb'
+      - name: Validate exact original sizes
+        shell: python
+        run: |
+          from pathlib import Path
+          expected={
+            'bulk_carrier.glb':1164280,
+            'barge.glb':4710192,
+            'fishing.glb':11102496,
+            'hidroavião.glb':2665584,
+            'pilot_boat.glb':11247344,
+            'sailboat.glb':13497212,
+            'Tugboat.glb':28138940,
+            'dredger.glb':4178788,
+            'offshore.glb':9352932,
+            'navy_remoção_de_minas.glb':4683556,
+          }
+          root=Path('public/models/ripeam')
+          for name,size in expected.items():
+            p=root/name
+            actual=p.stat().st_size
+            assert actual==size, f'{name}: esperado {size}, recebido {actual}'
+            print(f'OK {name}: {actual} bytes')
+      - name: Audit embedded materials and textures
+        shell: python
+        run: |
+          import json,struct
+          from pathlib import Path
+          for p in sorted(Path('public/models/ripeam').glob('*.glb')):
+            data=p.read_bytes(); off=12; doc=None
+            while off+8<=len(data):
+              ln,typ=struct.unpack_from('<II',data,off); off+=8
+              chunk=data[off:off+ln]; off+=ln
+              if typ==0x4E4F534A:
+                doc=json.loads(chunk.rstrip(b' \t\r\n\x00').decode('utf-8')); break
+            mats=doc.get('materials',[]) if doc else []
+            imgs=doc.get('images',[]) if doc else []
+            tex=doc.get('textures',[]) if doc else []
+            base=normal=mr=ao=emis=0
+            for m in mats:
+              pbr=m.get('pbrMetallicRoughness',{})
+              base+=int('baseColorTexture' in pbr)
+              mr+=int('metallicRoughnessTexture' in pbr)
+              normal+=int('normalTexture' in m)
+              ao+=int('occlusionTexture' in m)
+              emis+=int('emissiveTexture' in m)
+            print(f'AUDIT|{p.name}|materials={len(mats)}|textures={len(tex)}|images={len(imgs)}|base={base}|normal={normal}|mr={mr}|ao={ao}|emissive={emis}')
+      - name: Commit exact originals
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/models/ripeam/*.glb
+          if git diff --cached --quiet; then
+            echo 'All GLBs already match Google Drive originals.'
+          else
+            git commit -m 'fix(ripeam-3d): restore all original GLBs with textures'
+            git push origin HEAD:fix/ripeam-sync-all-original-glbs-20260910
+          fi
