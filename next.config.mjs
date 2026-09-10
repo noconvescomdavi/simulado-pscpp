@@ -28,6 +28,7 @@ const nextConfig = {
       { source: "/perfil/:path*", headers: [{ key: "Cache-Control", value: "private, no-store, max-age=0" }, { key: "X-Robots-Tag", value: "noindex, nofollow" }] },
       { source: "/area-do-aluno/:path*", headers: [{ key: "Cache-Control", value: "private, no-store, max-age=0" }, { key: "X-Robots-Tag", value: "noindex, nofollow" }] },
       { source: "/api/site-editor/:path*", headers: [{ key: "Cache-Control", value: "private, no-store, max-age=0" }] },
+      { source: "/models/ripeam/:path*", headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }] },
     ];
   },
 

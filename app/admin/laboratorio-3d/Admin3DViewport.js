@@ -5,6 +5,12 @@ import styles from "./laboratorio-3d.module.css";
 const THREE_VERSION="0.180.0";
 const CDN="https://esm.sh/three@"+THREE_VERSION;
 const MODEL_CACHE=new Map();
+const RIPEAM_ASSET_REV="textures-20260910-r1";
+const versionAssetUrl=url=>{
+  const value=String(url||"");
+  if(!value.startsWith("/models/ripeam/"))return value;
+  return value+(value.includes("?")?"&":"?")+"v="+RIPEAM_ASSET_REV;
+};
 
 function cloneCachedModel(source){
   const clone=source.clone(true);
@@ -42,6 +48,8 @@ export default function Admin3DViewport({
       if(dead||!mount.current)return;
 
       const root=mount.current;
+      // Nunca reutilizar entre montagens um GLB antigo que tenha o mesmo caminho.
+      MODEL_CACHE.clear();
       const sc=new THREE.Scene();
       const camera=new THREE.PerspectiveCamera(43,1,.1,1000);
       camera.position.set(14,7,15);
@@ -222,7 +230,11 @@ export default function Admin3DViewport({
           });
           if(scene.settings?.wireframe&&"wireframe" in m)m.wireframe=true;
           if(scene.settings?.xray){m.transparent=true;m.opacity=Math.min(Number(m.opacity??1),.28);m.depthWrite=false;}
-          if(!custom)return;
+          if(!custom){
+            if("envMapIntensity" in m)m.envMapIntensity=1.15;
+            m.needsUpdate=true;
+            return;
+          }
           if("color" in m&&data.material?.color)m.color.set(data.material.color);
           if("roughness" in m&&data.material?.roughness!==undefined)m.roughness=Number(data.material.roughness);
           if("metalness" in m&&data.material?.metalness!==undefined)m.metalness=Number(data.material.metalness);
@@ -268,10 +280,11 @@ export default function Admin3DViewport({
         if(data.assetUrl){
           try{
             const loader=r.loaders[data.assetType]||r.loaders.glb;
-            const cacheKey=(data.assetType||"glb")+":"+data.assetUrl;
+            const resolvedAssetUrl=versionAssetUrl(data.assetUrl);
+            const cacheKey=(data.assetType||"glb")+":"+resolvedAssetUrl;
             let source=MODEL_CACHE.get(cacheKey);
             if(!source){
-              const pending=loader.loadAsync(data.assetUrl).then(loaded=>loaded.scene||loaded).catch(error=>{MODEL_CACHE.delete(cacheKey);throw error});
+              const pending=loader.loadAsync(resolvedAssetUrl).then(loaded=>loaded.scene||loaded).catch(error=>{MODEL_CACHE.delete(cacheKey);throw error});
               MODEL_CACHE.set(cacheKey,pending);
               source=await pending;
               MODEL_CACHE.set(cacheKey,source);
