@@ -251,7 +251,7 @@ export default function EditorClient(){
     const area=frameAreaRef.current;
     if(!area)return;
     const updateFit=()=>{
-      const vp=VIEWPORTS[viewport];
+      const custom=(breakpoints().custom||[]).find(x=>x.id===viewport);const vp=VIEWPORTS[viewport]||{width:Math.max(360,Number(custom?.maxWidth)||1280),height:900};
       const availableWidth=Math.max(320,area.clientWidth-32);
       const availableHeight=Math.max(320,area.clientHeight-32);
       // Mantém a resolução real do dispositivo dentro do iframe e reduz apenas a representação visual.
@@ -397,7 +397,7 @@ export default function EditorClient(){
     const over=e=>{if(drag)return;if(hover)hover.removeAttribute("data-ev-hover");hover=e.target;hover?.setAttribute("data-ev-hover","")};
     const click=e=>{e.preventDefault();e.stopPropagation();if(drag||resize)return;if(e.target?.closest?.("[data-ev-resize-overlay]"))return;if(e.shiftKey){const d=describe(e.target);if(d){setMultiSelection(prev=>{const key=x=>x.kind==="block"?x.id:x.selector;const k=key(d),has=prev.some(x=>key(x)===k);const next=has?prev.filter(x=>key(x)!==k):[...prev,d];multiSelectionRef.current=next;setTimeout(paintMulti,0);return next})}return}if(selected)selected.removeAttribute("data-ev-selected");selected=e.target;selected.setAttribute("data-ev-selected","");selectElement(selected);setTimeout(updateResizeOverlay,0)};
 
-    let resize=null,resizeOverlay=null;
+    let resize=null,resizeOverlay=null,marquee=null;
 
     const clearResizeOverlay=()=>{resizeOverlay?.remove();resizeOverlay=null};
     const updateResizeOverlay=()=>{
@@ -439,6 +439,7 @@ export default function EditorClient(){
 
     const down=e=>{
       if(!moveModeRef.current)return;
+      if(e.altKey){e.preventDefault();e.stopPropagation();const box=doc.createElement("div");box.dataset.evMarquee="";Object.assign(box.style,{position:"fixed",left:e.clientX+"px",top:e.clientY+"px",width:"0px",height:"0px",border:"1px solid #8b5cf6",background:"rgba(139,92,246,.08)",zIndex:"2147483644",pointerEvents:"none"});doc.body.appendChild(box);marquee={startX:e.clientX,startY:e.clientY,box,pointerId:e.pointerId};return}
       if(e.pointerType==="mouse"&&e.button!==0)return;
       if(e.target?.closest?.("[data-ev-resize-overlay]"))return;
       e.preventDefault();e.stopPropagation();
@@ -455,6 +456,7 @@ export default function EditorClient(){
     };
 
     const move=e=>{
+      if(marquee){if(marquee.pointerId!==undefined&&e.pointerId!==marquee.pointerId)return;e.preventDefault();const l=Math.min(marquee.startX,e.clientX),t=Math.min(marquee.startY,e.clientY),w=Math.abs(e.clientX-marquee.startX),h=Math.abs(e.clientY-marquee.startY);Object.assign(marquee.box.style,{left:l+"px",top:t+"px",width:w+"px",height:h+"px"});return}
       if(resize){
         if(resize.pointerId!==undefined&&e.pointerId!==resize.pointerId)return;e.preventDefault();
         if(resize.dir==="rotate"){let angle=Math.atan2(e.clientY-resize.cy,e.clientX-resize.cx)*180/Math.PI+90;if(e.shiftKey)angle=Math.round(angle/15)*15;resize.el.style.transform=`rotate(${angle.toFixed(1)}deg)`;resize.next={transform:`rotate(${angle.toFixed(1)}deg)`};updateResizeOverlay();return}
@@ -488,6 +490,7 @@ export default function EditorClient(){
     };
 
     const up=e=>{
+      if(marquee){const r=marquee.box.getBoundingClientRect();marquee.box.remove();marquee=null;const candidates=[...doc.querySelectorAll("main *")].filter(n=>!n.closest("[data-ev-resize-overlay]")&&(n.children.length===0||n.hasAttribute("data-estibordo-editor-block")));const picked=[];for(const n of candidates){const nr=n.getBoundingClientRect();if(nr.width&&nr.height&&nr.left>=r.left&&nr.right<=r.right&&nr.top>=r.top&&nr.bottom<=r.bottom){const d=describe(n);if(d&&!picked.some(x=>x.kind===d.kind&&(x.id===d.id||x.selector===d.selector)))picked.push(d)}}const next=picked.slice(0,50);setMultiSelection(next);multiSelectionRef.current=next;setTimeout(paintMulti,0);setStatus(`${next.length} objeto(s) selecionado(s) por área.`);return}
       if(resize){
         const current=resize;resize=null;try{current.el.releasePointerCapture?.(current.pointerId)}catch{};
         if(current.next)persistPatch(current.el,current.blockId,current.next,"Objeto redimensionado livremente.");
@@ -652,7 +655,9 @@ export default function EditorClient(){
     setTimeout(()=>iframeRef.current?.contentWindow?.location.reload(),50);
   }
 
-  function breakpoints(){return design?.global?.breakpoints||{tablet:1024,mobile:620};}
+  function breakpoints(){return design?.global?.breakpoints||{tablet:1024,mobile:620,custom:[]};}
+  function addCustomBreakpoint(label="Laptop",maxWidth=1280){remember();setDesign(prev=>{const n=clone(prev);n.global||={};const bp={tablet:1024,mobile:620,custom:[],...(n.global.breakpoints||{})};const id=("bp_"+label.toLowerCase().replace(/[^a-z0-9]+/g,"_")+"_"+Math.random().toString(36).slice(2,5));bp.custom=[...(bp.custom||[]),{id,label,maxWidth:Number(maxWidth)||1280}].slice(0,8);n.global.breakpoints=bp;return n});setStatus("Breakpoint personalizado criado.")}
+  function removeCustomBreakpoint(id){remember();setDesign(prev=>{const n=clone(prev);n.global||={};const bp={tablet:1024,mobile:620,custom:[],...(n.global.breakpoints||{})};bp.custom=(bp.custom||[]).filter(x=>x.id!==id);n.global.breakpoints=bp;return n});if(viewport===id)setViewport("desktop");setStatus("Breakpoint removido.")}
   function updateBreakpoints(patch){remember();setDesign(prev=>{const n=clone(prev);n.global||={};n.global.breakpoints={tablet:1024,mobile:620,...(n.global.breakpoints||{}),...patch};return n});setStatus("Breakpoints atualizados.")}
   function customCode(){return design?.pages?.[page]?.customCode||{css:"",html:""};}
   function updateCustomCode(patch){remember();setDesign(prev=>{const n=clone(prev);n.pages||={};n.pages[page]||={elements:{},blocks:[],settings:{}};n.pages[page].customCode={...(n.pages[page].customCode||{}),...patch};return n});setStatus("Código customizado atualizado na prévia segura.")}
@@ -765,6 +770,19 @@ export default function EditorClient(){
   function pasteCurrentObject(){if(blockClipboard){remember();const copy=clone(blockClipboard);copy.id="blk_"+copy.type+"_"+Math.random().toString(36).slice(2,8);setDesign(prev=>{const n=clone(prev);n.pages[page].blocks=[...(n.pages[page].blocks||[]),copy];return n});setSelectedBlockId(copy.id);setStatus("Objeto colado.")}else pasteStyle()}
   function rotateSelected(delta){if(selectedBlockId){const st=viewport==="desktop"?(selectedBlock?.style||{}):(selectedBlock?.responsive?.[viewport]?.style||{});const m=String(st.transform||"").match(/rotate\((-?\d+(?:\.\d+)?)deg\)/);const angle=Number(m?.[1]||0)+delta;setBlockStyle("transform",`rotate(${angle}deg)`)}else if(target)setStyleValue("transform",`rotate(${delta}deg)`)}
 
+  function groupMulti(){
+    const ids=multiSelection.filter(x=>x.kind==="block").map(x=>x.id);if(ids.length<2){setStatus("Agrupamento múltiplo requer pelo menos dois blocos do Page Builder.");return}
+    remember();setDesign(prev=>{const n=clone(prev);let roots=n.pages?.[page]?.blocks||[],picked=[];for(const id of ids){const r=removeBlockTree(roots,id);roots=r.blocks;if(r.removed)picked.push(r.removed)}if(picked.length>1)roots.push({id:"blk_group_"+Math.random().toString(36).slice(2,8),type:"group",title:"Grupo",style:{position:"relative"},children:picked});n.pages[page].blocks=roots;return n});setMultiSelection([]);setStatus("Objetos agrupados.");
+  }
+  function distributeMulti(axis){
+    const doc=iframeRef.current?.contentDocument;if(!doc||multiSelection.length<3)return;
+    const desc=multiSelection.map(d=>({d,n:d.kind==="block"?doc.querySelector(`[data-estibordo-editor-block="${d.id}"]`):doc.querySelector(d.selector)})).filter(x=>x.n);
+    const sorted=desc.sort((a,b)=>axis==="x"?a.n.getBoundingClientRect().left-b.n.getBoundingClientRect().left:a.n.getBoundingClientRect().top-b.n.getBoundingClientRect().top);if(sorted.length<3)return;
+    const first=sorted[0].n.getBoundingClientRect(),last=sorted.at(-1).n.getBoundingClientRect(),totalSize=sorted.reduce((sum,x)=>sum+(axis==="x"?x.n.getBoundingClientRect().width:x.n.getBoundingClientRect().height),0);
+    const span=axis==="x"?(last.right-first.left):(last.bottom-first.top),gap=(span-totalSize)/(sorted.length-1);let cursor=axis==="x"?first.left:first.top;
+    for(const item of sorted){const r=item.n.getBoundingClientRect(),delta=cursor-(axis==="x"?r.left:r.top),cs=doc.defaultView.getComputedStyle(item.n),nums=String(cs.translate||"0 0").match(/-?\d+(?:\.\d+)?/g)||[];const tx=Number(nums[0]||0)+(axis==="x"?delta:0),ty=Number(nums[1]||0)+(axis==="y"?delta:0);const patch={position:"relative",translate:`${tx}px ${ty}px`};if(item.d.kind==="block")updateBlock(item.d.id,b=>{b.style={...(b.style||{}),...patch};return b},"Objetos distribuídos.");else setDesign(prev=>{const n=clone(prev);n.pages[page]||={elements:{}};n.pages[page].elements||={};const c=n.pages[page].elements[item.d.selector]||{};c.style={...(c.style||{}),...patch};n.pages[page].elements[item.d.selector]=c;return n});cursor+=(axis==="x"?r.width:r.height)+gap}setStatus("Objetos distribuídos uniformemente.");
+  }
+
   function alignMulti(action){
     const doc=iframeRef.current?.contentDocument;if(!doc||multiSelection.length<2)return;
     const nodes=multiSelection.map(x=>x.kind==="block"?doc.querySelector(`[data-estibordo-editor-block="${x.id}"]`):doc.querySelector(x.selector)).filter(Boolean);if(nodes.length<2)return;
@@ -811,7 +829,9 @@ export default function EditorClient(){
   if(auth==="checking")return <main className="ev-login"><div><b>ESTIBORDO EDITOR</b><p>Carregando editor visual…</p></div></main>;
   if(auth==="login")return <main className="ev-login"><form onSubmit={login}><b>ESTIBORDO EDITOR</b><h1>Editor visual</h1><p>Acesso exclusivo do administrador.</p><input type="password" value={password} onChange={e=>setPassword(e.target.value)} placeholder="Senha do editor" required/><button>Entrar no editor</button>{status&&<small>{status}</small>}</form></main>;
 
-  const preview=VIEWPORTS[viewport];
+  const customViewport=(breakpoints().custom||[]).find(x=>x.id===viewport);
+  const preview=VIEWPORTS[viewport]||{label:customViewport?.label||"Custom",width:Math.max(360,Number(customViewport?.maxWidth)||1280),height:900};
+  const viewportOptions=[["desktop","Desktop"],...(breakpoints().custom||[]).map(x=>[x.id,x.label]),["tablet","Tablet"],["mobile","Mobile"]];
   const effectiveScale=fitScale*(zoom/100);
   const previewSrc=page==="/__404"?"/__estibordo-system/404-preview":page;
   const pageLabel=siteMap.flatMap(x=>x.pages||[]).find(x=>x[0]===page)?.[1]||page;
@@ -821,8 +841,8 @@ export default function EditorClient(){
       <button className="ev-hamburger" type="button" onClick={()=>setStudioMenuOpen(true)} aria-label="Abrir ferramentas"><span></span><span></span><span></span></button>
       <div className="ev-brand"><b>ESTIBORDO</b><span>EDITOR STUDIO</span></div>
       <div className="ev-device">
-        {["desktop","tablet","mobile"].map(v=><button key={v} className={viewport===v?"is-active":""} onClick={()=>{setViewport(v);setZoom(100)}}>{v==="desktop"?"Desktop":v==="tablet"?"Tablet":"Mobile"}</button>)}
-        <span className="ev-breakpoint-badge">{viewport==="desktop"?"BASE":viewport.toUpperCase()}</span>
+        {viewportOptions.map(([v,label])=><button key={v} className={viewport===v?"is-active":""} onClick={()=>{setViewport(v);setZoom(100)}}>{label}</button>)}
+        <span className="ev-breakpoint-badge">{viewport==="desktop"?"BASE":viewport==="tablet"?"TABLET":viewport==="mobile"?"MOBILE":"CUSTOM"}</span>
       </div>
       <div className="ev-toolbar">
         <button onClick={undo} disabled={!undoStack.length} title="Desfazer">↶</button>
@@ -843,8 +863,8 @@ export default function EditorClient(){
       ["Adicionar bloco",()=>{setToolboxOpen(true)}],["Abrir assets",()=>{setStudioMenuOpen(true);setSelectionPanel("")}],["Selecionar camada",()=>{setSelectionPanel("layers");setStudioMenuOpen(true)}],["Selecionar objeto",()=>{setSelectionPanel("objects");setStudioMenuOpen(true)}],["Auditar página",runAudit],["Salvar rascunho",saveDraftNow],["Modo Dev",()=>setDevMode(v=>!v)],["Réguas",()=>setShowRulers(v=>!v)],["Safe Area",()=>setShowSafeArea(v=>!v)],["Grade",()=>setShowGrid(v=>!v)]
     ]}/>
     <EditorContextMenu menu={contextMenu} onClose={()=>setContextMenu(null)} onAction={action=>{setContextMenu(null);if(action==="duplicate")selectedBlockId?duplicateBlock():changeCloneCount(Math.min(10,cloneCount+1));if(action==="delete")selectedBlockId?deleteBlock():toggleHidden(true);if(action==="replace"&&selectedBlockId)openAssetReplacement();if(action==="front")selectedBlockId?setBlockStyle("zIndex",String(Number(selectedBlock?.style?.zIndex||0)+1)):bringForward(1);if(action==="back")selectedBlockId?setBlockStyle("zIndex",String(Number(selectedBlock?.style?.zIndex||0)-1)):bringForward(-1);if(action==="copy")copyCurrentObject();}}/>
-    <EditorProPanel open={proPanelOpen} onClose={()=>setProPanelOpen(false)} multiSelection={multiSelection} onAlign={alignMulti} onClearMulti={()=>setMultiSelection([])} draftStamp={draftStamp} onSaveDraft={saveDraftNow} onRestoreDraft={restoreDraft} onClearDraft={clearDraft} audits={auditResults} onAudit={runAudit} devMode={devMode} onDevMode={setDevMode} rulers={showRulers} onRulers={setShowRulers} safeArea={showSafeArea} onSafeArea={setShowSafeArea} miniMap={showMiniMap} onMiniMap={setShowMiniMap}/>
-    <StudioMenu open={studioMenuOpen} onClose={()=>{setStudioMenuOpen(false);setReplacementTargetId(null)}} replacementMode={Boolean(replacementTargetId)} replacementType={replacementTargetId?findBlock(design?.pages?.[page]?.blocks||[],replacementTargetId)?.type:""} selectionMode={selectionPanel} onSelectionMode={setSelectionPanel}  siteMap={siteMap} page={page} onPageChange={url=>{setPage(url);setTarget(null);setSelectedBlockId(null);setStudioMenuOpen(false)}} layers={layers} onSelectLayer={selector=>{selectBySelector(selector);setStudioMenuOpen(false)}} blocks={design?.pages?.[page]?.blocks||[]} selectedBlockId={selectedBlockId} onSelectBlock={id=>{setSelectedBlockId(id);setTarget(null);setStudioMenuOpen(false)}} onOpenBuilder={()=>{setStudioMenuOpen(false);setToolboxOpen(true)}} onOpenFlashcards={()=>{setStudioMenuOpen(false);setFlashcardManagerOpen(true)}} media={design?.global?.media||[]} onUploadMedia={uploadLibraryMedia} onAddIcon={addIconAsset} onAddLogo={addLogoAsset} onAddSignalFlag={addSignalFlag} onImportImage={importExternalImage} customCode={customCode()} onCustomCode={updateCustomCode} breakpoints={breakpoints()} onBreakpoints={updateBreakpoints}/>
+    <EditorProPanel open={proPanelOpen} onClose={()=>setProPanelOpen(false)} multiSelection={multiSelection} onAlign={alignMulti} onDistribute={distributeMulti} onGroupMulti={groupMulti} onClearMulti={()=>setMultiSelection([])} draftStamp={draftStamp} onSaveDraft={saveDraftNow} onRestoreDraft={restoreDraft} onClearDraft={clearDraft} audits={auditResults} onAudit={runAudit} devMode={devMode} onDevMode={setDevMode} rulers={showRulers} onRulers={setShowRulers} safeArea={showSafeArea} onSafeArea={setShowSafeArea} miniMap={showMiniMap} onMiniMap={setShowMiniMap}/>
+    <StudioMenu open={studioMenuOpen} onClose={()=>{setStudioMenuOpen(false);setReplacementTargetId(null)}} replacementMode={Boolean(replacementTargetId)} replacementType={replacementTargetId?findBlock(design?.pages?.[page]?.blocks||[],replacementTargetId)?.type:""} selectionMode={selectionPanel} onSelectionMode={setSelectionPanel}  siteMap={siteMap} page={page} onPageChange={url=>{setPage(url);setTarget(null);setSelectedBlockId(null);setStudioMenuOpen(false)}} layers={layers} onSelectLayer={selector=>{selectBySelector(selector);setStudioMenuOpen(false)}} blocks={design?.pages?.[page]?.blocks||[]} selectedBlockId={selectedBlockId} onSelectBlock={id=>{setSelectedBlockId(id);setTarget(null);setStudioMenuOpen(false)}} onOpenBuilder={()=>{setStudioMenuOpen(false);setToolboxOpen(true)}} onOpenFlashcards={()=>{setStudioMenuOpen(false);setFlashcardManagerOpen(true)}} media={design?.global?.media||[]} onUploadMedia={uploadLibraryMedia} onAddIcon={addIconAsset} onAddLogo={addLogoAsset} onAddSignalFlag={addSignalFlag} onImportImage={importExternalImage} customCode={customCode()} onCustomCode={updateCustomCode} breakpoints={breakpoints()} onBreakpoints={updateBreakpoints} onAddBreakpoint={addCustomBreakpoint} onRemoveBreakpoint={removeCustomBreakpoint}/>
     <EditorToolbox open={toolboxOpen} onClose={()=>setToolboxOpen(false)} onAdd={addBlock} onAction={toolboxAction} pageSettings={pageConfig()} onPageSettings={updatePageSettings} media={design?.global?.media||[]} onUploadMedia={uploadLibraryMedia} designSystem={designSystem()} onDesignSystem={updateDesignSystem} components={components()} onApplyComponent={applyComponent} onDeleteComponent={deleteComponent} versions={versions()} onRestoreVersion={restoreVersion} onCreatePage={createManagedPage} pageTemplates={PAGE_TEMPLATE_OPTIONS} onApplyPageTemplate={applyPageTemplate}/>
     <FlashcardManager open={flashcardManagerOpen} onClose={()=>setFlashcardManagerOpen(false)} initialSlug={page.startsWith("/flashcards/")?page.split("/")[2]:"cis"} onChanged={()=>setStatus("Flashcard salvo no banco. Atualize a prévia para conferir.")}/>
     <div className="ev-workspace">
@@ -854,6 +874,7 @@ export default function EditorClient(){
         <div className="ev-layers"><div className="ev-layers-head"><b>CAMADAS DOM</b><button type="button" onClick={()=>refreshLayers()}>↻</button></div><div className="ev-layer-scroll">{layers.map(layer=><button type="button" draggable key={layer.selector+"-"+layer.index} className={`${target?.selector===layer.selector?"is-active":""} ${layerDrag===layer.selector?"is-dragging":""}`} onDragStart={()=>setLayerDrag(layer.selector)} onDragEnd={()=>setLayerDrag(null)} onDragOver={e=>e.preventDefault()} onDrop={e=>{e.preventDefault();if(layerDrag)reorderLayer(layerDrag,layer.selector)}} onClick={()=>selectBySelector(layer.selector)}><i>⋮⋮</i><small>{layer.tag}</small><span>{layer.label||layer.selector}</span></button>)}</div></div><div className="ev-block-tree-panel"><div className="ev-layers-head"><b>BLOCOS & HIERARQUIA</b><small>{(design?.pages?.[page]?.blocks||[]).length} raiz</small></div><BlockTree blocks={design?.pages?.[page]?.blocks||[]} selectedId={selectedBlockId} onSelect={id=>{setSelectedBlockId(id);setTarget(null)}} onReparent={reparentBlock}/></div>
       </aside>
 
+      {showMiniMap&&<div className="ev-minimap"><header><b>{pageLabel}</b><span>{viewport}</span></header><div>{(design?.pages?.[page]?.blocks||[]).slice(0,18).map((b,i)=><i key={b.id||i} style={{width:(35+((i*17)%55))+"%"}} title={b.title||b.type}/>)}</div></div>}
       <section className="ev-canvas">
         <div className="ev-canvas-head"><div><b>{pageLabel}</b><span>{page}</span></div><div className="ev-selectors"><button type="button" onClick={()=>{setSelectionPanel("layers");setStudioMenuOpen(true)}}>Selecionar camada</button><button type="button" onClick={()=>{setSelectionPanel("objects");setStudioMenuOpen(true)}}>Selecionar objeto</button></div><em>{moveMode?"Drag & Drop universal ativo · arraste qualquer elemento":`${preview.label} · zoom ${zoom}%`}</em></div>
         <div className="ev-frame-area" ref={frameAreaRef}>

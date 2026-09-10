@@ -17,8 +17,9 @@ const SAFE_STYLE_KEYS = new Set([
   'textTransform','textDecoration','whiteSpace','cursor','translate','transform','transition','aspectRatio','mixBlendMode','clipPath'
 ]);
 
-let ACTIVE_BREAKPOINTS={tablet:1024,mobile:620};
-function setBreakpoints(value){ACTIVE_BREAKPOINTS={tablet:Math.max(621,Number(value?.tablet)||1024),mobile:Math.max(320,Number(value?.mobile)||620)}}
+let ACTIVE_BREAKPOINTS={tablet:1024,mobile:620,custom:[]};
+function setBreakpoints(value){ACTIVE_BREAKPOINTS={tablet:Math.max(621,Number(value?.tablet)||1024),mobile:Math.max(320,Number(value?.mobile)||620),custom:Array.isArray(value?.custom)?value.custom:[]}}
+function responsiveMerge(base,responsive){const width=window.innerWidth;let out={...(base||{})};for(const bp of [...(ACTIVE_BREAKPOINTS.custom||[])].sort((a,b)=>Number(b.maxWidth)-Number(a.maxWidth))){if(width<=Number(bp.maxWidth||0))out={...out,...(responsive?.[bp.id]?.style||{})}}if(width<=ACTIVE_BREAKPOINTS.tablet)out={...out,...(responsive?.tablet?.style||{})};if(width<=ACTIVE_BREAKPOINTS.mobile)out={...out,...(responsive?.mobile?.style||{})};return out}
 
 function safeUrl(value) {
   const v = String(value || '').trim();
@@ -49,12 +50,7 @@ function applyRecord(record) {
         node.style.display = String(config.style.display);
       }
 
-      const width=window.innerWidth;
-      const responsiveStyle={
-        ...(config.style||{}),
-        ...(width<=ACTIVE_BREAKPOINTS.tablet?(config.responsive?.tablet?.style||{}):{}),
-        ...(width<=ACTIVE_BREAKPOINTS.mobile?(config.responsive?.mobile?.style||{}):{})
-      };
+      const responsiveStyle=responsiveMerge(config.style||{},config.responsive||{});
       for (const [key, value] of Object.entries(responsiveStyle)) {
         if (!SAFE_STYLE_KEYS.has(key)) continue;
         if (value === null || value === undefined || value === '') {
@@ -96,7 +92,7 @@ function applyRecord(record) {
 }
 
 function el(tag, cls, text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;}
-function blockStyle(block){const width=window.innerWidth;return {...(block.style||{}),...(width<=ACTIVE_BREAKPOINTS.tablet?(block.responsive?.tablet?.style||{}):{}),...(width<=ACTIVE_BREAKPOINTS.mobile?(block.responsive?.mobile?.style||{}):{})}}
+function blockStyle(block){return responsiveMerge(block.style||{},block.responsive||{})}
 function renderBlock(block){
   const wrap=el("section","estibordo-editor-block estibordo-block-"+block.type);wrap.dataset.estibordoEditorBlock=block.id||"";
   const addText=(tag,value,cls)=>{if(value){const n=el(tag,cls,value);wrap.appendChild(n);return n}};
@@ -133,6 +129,10 @@ function renderBlock(block){
   Object.entries(blockStyle(block)).forEach(([k,v])=>{if(SAFE_STYLE_KEYS.has(k))wrap.style[k]=String(v)});
   if(block.layoutMode==="free")wrap.style.position="relative";if(block.layoutMode==="sticky"){wrap.style.position="sticky";wrap.style.top=wrap.style.top||"0px"}if(block.layoutMode==="fixed")wrap.style.position="fixed";
   if(block.constraintX==="center"){wrap.style.marginLeft="auto";wrap.style.marginRight="auto"}if(block.constraintX==="right"){wrap.style.marginLeft="auto"}if(block.constraintY==="bottom"){wrap.style.marginTop="auto"}
+  if(block.hoverBackground){wrap.addEventListener("mouseenter",()=>{wrap.dataset.estPrevBg=wrap.style.backgroundColor||"";wrap.style.backgroundColor=block.hoverBackground});wrap.addEventListener("mouseleave",()=>{wrap.style.backgroundColor=wrap.dataset.estPrevBg||""})}
+  if(block.focusOutline){wrap.tabIndex=wrap.tabIndex>=0?wrap.tabIndex:0;wrap.addEventListener("focus",()=>wrap.style.outline=block.focusOutline);wrap.addEventListener("blur",()=>wrap.style.outline="")}
+  if(block.pressedScale){wrap.addEventListener("pointerdown",()=>{wrap.dataset.estPrevTransform=wrap.style.transform||"";wrap.style.transform=(wrap.dataset.estPrevTransform||"")+" scale("+block.pressedScale+")"});wrap.addEventListener("pointerup",()=>wrap.style.transform=wrap.dataset.estPrevTransform||"")}
+  if(block.disabledOpacity&&block.disabled)wrap.style.opacity=block.disabledOpacity;
   if(block.prototypeAction&&block.prototypeAction!=="none"&&!wrap.dataset.estProto){wrap.dataset.estProto="1";wrap.style.cursor="pointer";wrap.addEventListener("click",e=>{const t=String(block.prototypeTarget||"");if(block.prototypeAction==="navigate"&&t)location.href=safeUrl(t)||t;if(block.prototypeAction==="scroll-to"&&t)document.querySelector(t)?.scrollIntoView({behavior:"smooth"});if(block.prototypeAction==="open-modal"&&t){const m=document.querySelector(`[data-estibordo-modal="${CSS.escape(t)}"]`);if(m)m.hidden=false}if(block.prototypeAction==="close-modal"){const m=wrap.closest("[data-estibordo-modal]");if(m)m.hidden=true}})}
   applyMotion(wrap,block.motion||{});if(["container","group","stack","grid"].includes(block.type)){const childWrap=wrap.querySelector(":scope > .evb-children");if(childWrap)Object.entries(blockStyle(block)).forEach(([k,v])=>{if(["display","flexDirection","justifyContent","alignItems","gap","gridTemplateColumns","gridTemplateRows","gridAutoFlow"].includes(k))childWrap.style[k]=String(v)});wrap.style.display="block"}return wrap;
 }
@@ -140,7 +140,7 @@ function applyBlocks(blocks){const signature=JSON.stringify(blocks||[]);const ex
   blocks.forEach(b=>root.appendChild(renderBlock(b)));
   const mount=document.querySelector("main")||document.body;mount.appendChild(root);
 }
-function applyMotion(node,motion){if(!node||!motion)return;node.dataset.estMotionEntrance=motion.entrance||"none";node.dataset.estMotionHover=motion.hover||"none";node.style.setProperty("--est-motion-duration",Math.max(80,Number(motion.duration)||500)+"ms");node.style.setProperty("--est-motion-delay",Math.max(0,Number(motion.delay)||0)+"ms");if(motion.click&&motion.click!=="none"&&!node.dataset.estMotionClickBound){node.dataset.estMotionClickBound="1";node.addEventListener("click",()=>{const frames=motion.click==="shake"?[{transform:"translateX(0)"},{transform:"translateX(-6px)"},{transform:"translateX(6px)"},{transform:"translateX(0)"}]:motion.click==="pop"?[{transform:"scale(1)"},{transform:"scale(1.08)"},{transform:"scale(1)"}]:[{transform:"scale(1)"},{transform:"scale(.96)"},{transform:"scale(1)"}];node.animate(frames,{duration:320,easing:"ease-out"})})}}
+function applyMotion(node,motion){if(!node||!motion)return;node.dataset.estMotionHover=motion.hover||"none";if(motion.trigger==="scroll"&&motion.entrance&&motion.entrance!=="none"){node.dataset.estMotionEntrance="none";node.style.opacity="0";const io=new IntersectionObserver(entries=>{for(const e of entries){if(e.isIntersecting){node.style.opacity="";node.dataset.estMotionEntrance=motion.entrance;io.disconnect()}}},{threshold:.16});io.observe(node)}else node.dataset.estMotionEntrance=motion.entrance||"none";node.style.setProperty("--est-motion-duration",Math.max(80,Number(motion.duration)||500)+"ms");node.style.setProperty("--est-motion-delay",Math.max(0,Number(motion.delay)||0)+"ms");if(motion.click&&motion.click!=="none"&&!node.dataset.estMotionClickBound){node.dataset.estMotionClickBound="1";node.addEventListener("click",()=>{const frames=motion.click==="shake"?[{transform:"translateX(0)"},{transform:"translateX(-6px)"},{transform:"translateX(6px)"},{transform:"translateX(0)"}]:motion.click==="pop"?[{transform:"scale(1)"},{transform:"scale(1.08)"},{transform:"scale(1)"}]:[{transform:"scale(1)"},{transform:"scale(.96)"},{transform:"scale(1)"}];node.animate(frames,{duration:320,easing:"ease-out"})})}}
 function sanitizeHtml(html){const parser=new DOMParser();const doc=parser.parseFromString(String(html||""),"text/html");doc.querySelectorAll("script,iframe,object,embed,link,style").forEach(n=>n.remove());doc.querySelectorAll("*").forEach(n=>Array.from(n.attributes).forEach(a=>{if(/^on/i.test(a.name)||(/^(href|src)$/i.test(a.name)&&/^(javascript|vbscript|data:text\/html)/i.test(a.value)))n.removeAttribute(a.name)}));return doc.body.innerHTML}
 function applyCustomCode(code){let style=document.getElementById("estibordo-custom-page-css");if(!style){style=document.createElement("style");style.id="estibordo-custom-page-css";document.head.appendChild(style)}const css=String(code?.css||"");if(style.textContent!==css)style.textContent=css;let root=document.querySelector("[data-estibordo-custom-html]");if(!root){root=document.createElement("div");root.dataset.estibordoCustomHtml="true";(document.querySelector("main")||document.body).appendChild(root)}const html=sanitizeHtml(code?.html||"");if(root.dataset.signature!==html){root.dataset.signature=html;root.innerHTML=html}}
 function applyPageSettings(settings){
