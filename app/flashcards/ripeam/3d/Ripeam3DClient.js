@@ -1,7 +1,8 @@
 "use client";
 
 import {useEffect,useMemo,useRef,useState} from "react";
-import RipeamThreeScene from "./RipeamThreeScene";
+import RipeamThreeScene,{MODEL_CONFIG} from "./RipeamThreeScene";
+import {preloadModels,preloadCandidates,cacheStats,cacheEntireModule,clearRipeamModelCache,connectionAllowsPreload} from "./student-viewer-v5";
 import styles from "./ripeam-3d.module.css";
 
 const LIGHT_INFO={
@@ -149,6 +150,18 @@ export default function Ripeam3DClient(){
   const [score,setScore]=useState({correct:0,total:0});
   const [highlightLight,setHighlightLight]=useState(-1);
   const [liveScene,setLiveScene]=useState(null);
+  const [environmentPhase,setEnvironmentPhase]=useState("day");
+  const [qualityMode,setQualityMode]=useState("auto");
+  const [freeOrbit,setFreeOrbit]=useState(false);
+  const [fogLevel,setFogLevel]=useState(0);
+  const [exposure,setExposure]=useState(1);
+  const [teacherMode,setTeacherMode]=useState(false);
+  const [soundEnabled,setSoundEnabled]=useState(false);
+  const [offlineReady,setOfflineReady]=useState(false);
+  const [offlineStats,setOfflineStats]=useState({supported:false,count:0,bytes:0});
+  const [offlineBusy,setOfflineBusy]=useState(false);
+  const [offlineProgress,setOfflineProgress]=useState(null);
+  const audioRef=useRef(null);
   const liveSceneStampRef=useRef("");
 
   const scene=useMemo(()=>SCENES.find(item=>item.key===selected)||SCENES[0],[selected]);
@@ -168,6 +181,43 @@ export default function Ripeam3DClient(){
     return {...activeScene,...activeVariant,variantId:activeVariant.id};
   },[labMode,activeScene,activeVariant,situation]);
   const lights=LIGHT_INFO[activeVariant.lightPlan]||[];
+
+  useEffect(()=>{if(labMode!=="identify")setNight(environmentPhase==="night")},[environmentPhase,labMode]);
+
+  useEffect(()=>{
+    let dead=false;
+    cacheStats().then(s=>{if(!dead)setOfflineStats(s)});
+    const current=(sceneConfig.vessels||[]).map(v=>MODEL_CONFIG[v]?.url).filter(Boolean);
+    const next=[];
+    const activeIndex=SCENES.findIndex(s=>s.key===activeScene.key);
+    for(let step=1;step<=2;step++){
+      const candidate=SCENES[(activeIndex+step+SCENES.length)%SCENES.length];
+      const vessel=candidate?.variants?.[0]?.vessels?.[0]||candidate?.vessels?.[0];
+      const url=MODEL_CONFIG[vessel]?.url;
+      if(url&&!current.includes(url)&&!next.includes(url))next.push(url);
+    }
+    const fallback=current.length?preloadCandidates(current[0],undefined,2):[];
+    const targets=next.length?next:fallback;
+    const timer=setTimeout(()=>{preloadModels(targets).then(()=>cacheStats()).then(s=>{if(!dead)setOfflineStats(s)}).catch(()=>{})},900);
+    return()=>{dead=true;clearTimeout(timer)};
+  },[sceneConfig.key,sceneConfig.variantId,activeScene.key]);
+
+  useEffect(()=>{
+    if(!soundEnabled){
+      try{audioRef.current?.ctx?.close?.()}catch{}
+      audioRef.current=null;return;
+    }
+    try{
+      const Ctx=window.AudioContext||window.webkitAudioContext;if(!Ctx)return;
+      const ctx=new Ctx(),buffer=ctx.createBuffer(1,ctx.sampleRate*2,ctx.sampleRate),data=buffer.getChannelData(0);
+      for(let i=0;i<data.length;i++)data[i]=(Math.random()*2-1)*.14;
+      const src=ctx.createBufferSource();src.buffer=buffer;src.loop=true;
+      const filter=ctx.createBiquadFilter();filter.type="lowpass";filter.frequency.value=420;
+      const gain=ctx.createGain();gain.gain.value=.035;
+      src.connect(filter).connect(gain).connect(ctx.destination);src.start();audioRef.current={ctx,src};
+    }catch{}
+    return()=>{try{audioRef.current?.ctx?.close?.()}catch{}audioRef.current=null};
+  },[soundEnabled]);
   const daymarks=DAYMARK_INFO[activeVariant.lightPlan]||["Sem marca diurna cadastrada."];
   const editorKey=EDITOR_SCENE_KEY[sceneConfig.variantId]||sceneConfig.key;
 
@@ -211,6 +261,7 @@ export default function Ripeam3DClient(){
   const startIdentify=()=>{
     setLabMode("identify");
     setNight(true);
+    setEnvironmentPhase("night");
     setDisplayMode("signals-only");
     setShowSectors(false);
     setIdentifyAnswer(null);
@@ -289,8 +340,10 @@ export default function Ripeam3DClient(){
           </div>
           <div className={styles.headingActions}>
             {labMode!=="identify"&&<div className={styles.environmentToggle}>
-              <button className={!night?styles.environmentActive:""} onClick={()=>{setNight(false);setDisplayMode("vessel");setShowSectors(false);setHighlightLight(-1)}}>☀ Diurno</button>
-              <button className={night?styles.environmentActive:""} onClick={()=>{setNight(true);setDisplayMode("vessel");setHighlightLight(-1)}}>☾ Noturno</button>
+              <button className={environmentPhase==="day"?styles.environmentActive:""} onClick={()=>{setEnvironmentPhase("day");setDisplayMode("vessel");setShowSectors(false);setHighlightLight(-1)}} title="Dia">☀</button>
+              <input className={styles.phaseSlider} aria-label="Dia, crepúsculo ou noite" type="range" min="0" max="2" step="1" value={environmentPhase==="day"?0:environmentPhase==="twilight"?1:2} onChange={e=>{const p=["day","twilight","night"][Number(e.target.value)];setEnvironmentPhase(p);setDisplayMode("vessel");setHighlightLight(-1)}}/>
+              <button className={environmentPhase==="night"?styles.environmentActive:""} onClick={()=>{setEnvironmentPhase("night");setDisplayMode("vessel");setHighlightLight(-1)}} title="Noite">☾</button>
+              <small>{environmentPhase==="day"?"Dia":environmentPhase==="twilight"?"Crepúsculo":"Noite"}</small>
             </div>}
             <div className={styles.status}>{diagnostics?.status==="loaded"?"Modelo 3D carregado":diagnostics?.status==="error"?"Falha no modelo":"Carregando"}</div>
           </div>
@@ -306,6 +359,22 @@ export default function Ripeam3DClient(){
           {night&&<button className={showSectors?styles.studyActive:""} onClick={()=>setShowSectors(v=>!v)}>Setores luminosos</button>}
         </div>}
 
+        <div className={styles.studentViewerSettings}>
+          <label>Qualidade <select value={qualityMode} onChange={e=>setQualityMode(e.target.value)}><option value="auto">Auto</option><option value="low">Baixa</option><option value="medium">Média</option><option value="high">Alta</option><option value="ultra">Ultra</option></select></label>
+          <button className={freeOrbit?styles.studyActive:""} onClick={()=>setFreeOrbit(v=>!v)}>Órbita {freeOrbit?"livre":"didática"}</button>
+          <label>Neblina <input type="range" min="0" max="1" step=".1" value={fogLevel} onChange={e=>setFogLevel(Number(e.target.value))}/></label>
+          <label>Exposição <input type="range" min=".7" max="1.3" step=".05" value={exposure} onChange={e=>setExposure(Number(e.target.value))}/></label>
+          <button className={soundEnabled?styles.studyActive:""} onClick={()=>setSoundEnabled(v=>!v)}>{soundEnabled?"🔊 Som":"🔇 Som"}</button>
+          <button className={teacherMode?styles.studyActive:""} onClick={()=>{setTeacherMode(v=>!v);if(!teacherMode)setShowSectors(true)}}>Modo professor</button>
+          <span className={offlineReady?styles.offlineReady:styles.offlineHint}>{offlineReady?"✓ Disponível offline":connectionAllowsPreload()?"Cache inteligente ativo":"Economia de dados"}</span>
+        </div>
+
+        <div className={styles.offlineBar}>
+          <span>Offline: <b>{offlineStats.count||0}</b> modelos · <b>{(Number(offlineStats.bytes||0)/1024/1024).toFixed(1)} MB</b></span>
+          <button disabled={offlineBusy} onClick={async()=>{setOfflineBusy(true);setOfflineProgress({percent:0});try{const s=await cacheEntireModule(setOfflineProgress);setOfflineStats(s);setOfflineReady(true)}catch{}finally{setOfflineBusy(false)}}}>{offlineBusy?"Baixando "+(offlineProgress?.percent||0)+"%":"Disponibilizar laboratório offline"}</button>
+          <button disabled={offlineBusy||!offlineStats.count} onClick={async()=>{await clearRipeamModelCache();setOfflineStats(await cacheStats());setOfflineReady(false)}}>Limpar modelos baixados</button>
+        </div>
+
         <div className={styles.viewerStudyGrid}>
           <RipeamThreeScene
             key={sceneConfig.key+"-"+sceneConfig.variantId+"-"+(night?"night":"day")+"-"+labMode+"-"+(situation?.id||"")}
@@ -316,15 +385,22 @@ export default function Ripeam3DClient(){
             showSectors={labMode==="explore"&&showSectors}
             highlightLightIndex={highlightLight}
             liveConfig={liveScene?.config||null}
+            environmentPhase={labMode==="identify"?"night":environmentPhase}
+            qualityMode={qualityMode}
+            freeOrbit={freeOrbit}
+            fogLevel={fogLevel}
+            exposure={exposure}
+            teacherMode={teacherMode}
+            onOfflineStatus={setOfflineReady}
           />
 
           {labMode==="explore"&&<aside className={styles.lightPanel}>
-            <div className={styles.lightPanelHeader}><b>{night?"Luzes noturnas":"Marcas diurnas"}</b><span>{night?lights.length:daymarks.length}</span></div>
+            <div className={styles.lightPanelHeader}><b>{night?"Luzes noturnas":"Marcas diurnas"}</b><span>{night?lights.length:daymarks.length}</span><button className={styles.infoButton} title="Explicação da regra">ⓘ</button></div>
             {night?<><div className={styles.lightDiagram}>
               {lights.slice(0,7).map((l,i)=><i key={i} className={styles["light"+(l[1].includes("Verde")?"Green":l[1].includes("Encarnada")?"Red":l[1].includes("Amarela")?"Yellow":"White")]} style={{top:(12+i*11)+"%"}} title={l[0]}/>)}
             </div>
             <ul>{lights.map((l,i)=><li key={i} className={highlightLight===i?styles.lightSelected:""} onClick={()=>setHighlightLight(highlightLight===i?-1:i)}><span className={styles.lightDot}></span><div><b>{l[0]}</b><small>{l[1]} · {l[2]} · {l[3]}</small></div></li>)}</ul></>:<div className={styles.daymarkPanel}>{daymarks.map((m,i)=><div key={i}><b>Marca RIPEAM</b><p>{m}</p></div>)}</div>}
-            <p className={styles.variantNote}>{activeVariant.note}</p>
+            <p className={styles.variantNote}>{activeVariant.note}</p>{teacherMode&&<div className={styles.teacherPanel}><b>Modo professor</b><p>Setores, ângulos, nomenclatura e justificativa RIPEAM permanecem visíveis para explicação orientada.</p><small>Setores usuais: bordo 112,5° · popa 135° · mastro 225° · circular 360°.</small></div>}
           </aside>}
 
           {labMode==="identify"&&<aside className={styles.quizPanel}>
@@ -373,7 +449,7 @@ export default function Ripeam3DClient(){
             <span>UVs <b>{diagnostics.missingUvMeshCount?diagnostics.uvMeshCount+"/"+diagnostics.meshCount:"OK"}</b></span>
             <span>Bounding box <b>{diagnostics.boundingBoxValid?"válido":"inválido"}</b></span>
             <span>Frustum <b>{diagnostics.inFrustum?"OK":"fora"}</b></span>
-            <span>Runtime <b>{diagnostics.runtime}</b></span>
+            <span>Qualidade <b>{diagnostics.quality||"Auto"}</b></span><span>{diagnostics.offline?"Offline":"Rede"} <b>{diagnostics.offline?"✓":"↻"}</b></span><span>Runtime <b>{diagnostics.runtime}</b></span>
           </div>
           {diagnostics.textureless&&<div className={styles.textureWarning}><b>GLB sem texturas.</b><span>Este arquivo não contém mapas de textura incorporados. O viewer não consegue reconstruir texturas que foram removidas durante a otimização.</span></div>}
         </>}
