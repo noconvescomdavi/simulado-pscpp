@@ -16,7 +16,7 @@ const GROUPS=[
     ["hero","Hero pronto","H"],["cta","CTA pronto","→"],["stats","Gráfico / métricas","▥"],["socialbar","Ícones sociais","●"],["cards","Cards prontos","▤"]
   ]],
   ["Webdesigner Pro",[
-    ["features","Grade de recursos","✦"],["pricing","Tabela de preços","$"],["faq","FAQ / Accordion","?"],["testimonial","Depoimento","“"],["timeline","Linha do tempo","⋮"],["divider","Divisor","—"],["spacer","Espaçador","↕"]
+    ["features","Grade de recursos","✦"],["pricing","Tabela de preços","$"],["faq","FAQ / Accordion","?"],["testimonial","Depoimento","“"],["timeline","Linha do tempo","⋮"],["modal","Modal","▣"],["popover","Popover","◩"],["tabs","Tabs","≡"],["divider","Divisor","—"],["spacer","Espaçador","↕"]
   ]]
 ];
 
@@ -39,7 +39,7 @@ export default function EditorToolbox({open,onClose,onAdd,onAction,pageSettings,
           <label className="ev-mini-field"><span>Texto</span><input type="color" value={designSystem.text||"#071b2b"} onChange={e=>onDesignSystem({text:e.target.value})}/></label>
           <label className="ev-mini-field"><span>Raio padrão</span><input value={designSystem.radius||"12px"} onChange={e=>onDesignSystem({radius:e.target.value})}/></label>
           <label className="ev-mini-field"><span>Fonte global</span><select value={designSystem.fontFamily||"Arial"} onChange={e=>onDesignSystem({fontFamily:e.target.value})}><option>Arial</option><option>Montserrat</option><option>Poppins</option><option>Georgia</option></select></label>
-          <label className="ev-mini-field"><span>Largura máxima de conteúdo</span><input value={designSystem.maxContentWidth||"1320px"} onChange={e=>onDesignSystem({maxContentWidth:e.target.value})}/></label>
+          <label className="ev-mini-field"><span>Largura máxima de conteúdo</span><input value={designSystem.maxContentWidth||"1320px"} onChange={e=>onDesignSystem({maxContentWidth:e.target.value})}/></label><label className="ev-mini-field"><span>Escala de spacing</span><input value={designSystem.spacingScale||"4,8,12,16,24,32,48,64"} onChange={e=>onDesignSystem({spacingScale:e.target.value})}/></label><label className="ev-mini-field"><span>Heading H1</span><input value={designSystem.h1||"clamp(36px,5vw,72px)"} onChange={e=>onDesignSystem({h1:e.target.value})}/></label><label className="ev-mini-field"><span>Body</span><input value={designSystem.body||"16px"} onChange={e=>onDesignSystem({body:e.target.value})}/></label>
         </section>
         <section><h4>Componentes reutilizáveis</h4>
           <div className="ev-component-list">{(components||[]).length?(components||[]).slice().reverse().map(c=><div key={c.id}><button type="button" onClick={()=>onApplyComponent(c)}><b>{c.name}</b><small>Aplicar à seleção</small></button><button type="button" className="danger" onClick={()=>onDeleteComponent(c.id)}>×</button></div>):<p className="ev-drawer-empty">Selecione um elemento e use “＋ Componente” para salvá-lo.</p>}</div>

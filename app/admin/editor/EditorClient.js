@@ -6,6 +6,9 @@ import FlashcardManager from "./FlashcardManager";
 import BlockInspector from "./BlockInspector";
 import BlockTree from "./BlockTree";
 import StudioMenu from "./StudioMenu";
+import EditorProPanel from "./EditorProPanel";
+import EditorCommandPalette from "./EditorCommandPalette";
+import EditorContextMenu from "./EditorContextMenu";
 
 const SITE_MAP = [
   {group:"Institucional",pages:[
@@ -168,6 +171,17 @@ export default function EditorClient(){
   const [studioMenuOpen,setStudioMenuOpen]=useState(false);
   const [replacementTargetId,setReplacementTargetId]=useState(null);
   const [selectionPanel,setSelectionPanel]=useState("");
+  const [multiSelection,setMultiSelection]=useState([]);
+  const [commandOpen,setCommandOpen]=useState(false);
+  const [contextMenu,setContextMenu]=useState(null);
+  const [proPanelOpen,setProPanelOpen]=useState(false);
+  const [devMode,setDevMode]=useState(false);
+  const [showRulers,setShowRulers]=useState(false);
+  const [showSafeArea,setShowSafeArea]=useState(false);
+  const [showMiniMap,setShowMiniMap]=useState(false);
+  const [auditResults,setAuditResults]=useState([]);
+  const [blockClipboard,setBlockClipboard]=useState(null);
+  const [draftStamp,setDraftStamp]=useState("");
   const [moveMode,setMoveMode]=useState(true);
   const [snapSize,setSnapSize]=useState(1);
   const [showGrid,setShowGrid]=useState(false);
@@ -188,6 +202,7 @@ export default function EditorClient(){
   const gridRef=useRef(showGrid);
   const snapRef=useRef(snap);
   const snapSizeRef=useRef(snapSize);
+  const multiSelectionRef=useRef(multiSelection);
 
   const dirty=useMemo(()=>design&&original&&JSON.stringify(design)!==JSON.stringify(original),[design,original]);
   const selectedBlock=useMemo(()=>findBlock(design?.pages?.[page]?.blocks||[],selectedBlockId),[design,page,selectedBlockId]);
@@ -219,6 +234,13 @@ export default function EditorClient(){
   useEffect(()=>{gridRef.current=showGrid;try{iframeRef.current?.contentDocument?.documentElement?.classList.toggle("ev-editor-grid",showGrid)}catch{}},[showGrid]);
   useEffect(()=>{snapRef.current=snap},[snap]);
   useEffect(()=>{snapSizeRef.current=snapSize},[snapSize]);
+  useEffect(()=>{multiSelectionRef.current=multiSelection},[multiSelection]);
+  useEffect(()=>{
+    if(!design||auth!=="ready"||!dirty)return;
+    const timer=setTimeout(()=>{try{localStorage.setItem("estibordo-editor-draft:"+page,JSON.stringify({ts:Date.now(),design}));setDraftStamp(new Date().toLocaleTimeString("pt-BR"))}catch{}},700);
+    return()=>clearTimeout(timer);
+  },[design,page,dirty,auth]);
+
   useEffect(()=>{
     if(!target?.selector)return;
     const timer=setTimeout(()=>selectBySelector(target.selector),60);
@@ -359,19 +381,21 @@ export default function EditorClient(){
       [data-ev-selected]{outline:3px solid #2f80ed!important;outline-offset:3px!important}
       [data-ev-selected]::after{content:"ARRASTE";position:absolute!important;right:0!important;top:-24px!important;padding:4px 7px!important;border-radius:5px!important;background:#2f80ed!important;color:white!important;font:700 9px/1 Arial!important;letter-spacing:.08em!important;z-index:2147483647!important;pointer-events:none!important}
       html.ev-editor-grid body{background-image:linear-gradient(rgba(30,58,95,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(30,58,95,.08) 1px,transparent 1px)!important;background-size:20px 20px!important}
-      [data-ev-dragging]{cursor:grabbing!important;user-select:none!important}
+      [data-ev-dragging]{cursor:grabbing!important;user-select:none!important}[data-ev-multi]{outline:2px solid #8b5cf6!important;outline-offset:2px!important}
       [data-ev-resize-overlay] span{position:absolute;width:10px;height:10px;border:2px solid #fff;background:#2f80ed;border-radius:2px;box-shadow:0 0 0 1px #2f80ed;pointer-events:auto}
       [data-ev-resize="nw"]{left:-6px;top:-6px;cursor:nwse-resize}[data-ev-resize="n"]{left:50%;top:-6px;transform:translateX(-50%);cursor:ns-resize}[data-ev-resize="ne"]{right:-6px;top:-6px;cursor:nesw-resize}
       [data-ev-resize="e"]{right:-6px;top:50%;transform:translateY(-50%);cursor:ew-resize}[data-ev-resize="se"]{right:-6px;bottom:-6px;cursor:nwse-resize}[data-ev-resize="s"]{left:50%;bottom:-6px;transform:translateX(-50%);cursor:ns-resize}
-      [data-ev-resize="sw"]{left:-6px;bottom:-6px;cursor:nesw-resize}[data-ev-resize="w"]{left:-6px;top:50%;transform:translateY(-50%);cursor:ew-resize}
+      [data-ev-resize="sw"]{left:-6px;bottom:-6px;cursor:nesw-resize}[data-ev-resize="w"]{left:-6px;top:50%;transform:translateY(-50%);cursor:ew-resize}[data-ev-resize="rotate"]{left:50%;top:-34px;transform:translateX(-50%);border-radius:50%;cursor:grab}[data-ev-resize="rotate"]::after{content:"";position:absolute;left:50%;top:9px;width:1px;height:18px;background:#2f80ed}
     `;
     doc.head.appendChild(s);
     doc.documentElement.classList.toggle("ev-editor-grid",gridRef.current);
     refreshLayers(doc);try{iframeRef.current?.contentWindow?.postMessage({type:"estibordo-editor-design",design},window.location.origin)}catch{}
     let hover,selected,drag=null;
 
+    const describe=el=>{const b=el?.closest?.("[data-estibordo-editor-block]");return b?{kind:"block",id:b.getAttribute("data-estibordo-editor-block")}:{kind:"dom",selector:selectorFor(el)}};
+    const paintMulti=()=>{doc.querySelectorAll("[data-ev-multi]").forEach(n=>n.removeAttribute("data-ev-multi"));for(const d of multiSelectionRef.current){const n=d.kind==="block"?doc.querySelector(`[data-estibordo-editor-block="${d.id}"]`):doc.querySelector(d.selector);n?.setAttribute("data-ev-multi","")}}
     const over=e=>{if(drag)return;if(hover)hover.removeAttribute("data-ev-hover");hover=e.target;hover?.setAttribute("data-ev-hover","")};
-    const click=e=>{e.preventDefault();e.stopPropagation();if(drag||resize)return;if(e.target?.closest?.("[data-ev-resize-overlay]"))return;if(selected)selected.removeAttribute("data-ev-selected");selected=e.target;selected.setAttribute("data-ev-selected","");selectElement(selected);setTimeout(updateResizeOverlay,0)};
+    const click=e=>{e.preventDefault();e.stopPropagation();if(drag||resize)return;if(e.target?.closest?.("[data-ev-resize-overlay]"))return;if(e.shiftKey){const d=describe(e.target);if(d){setMultiSelection(prev=>{const key=x=>x.kind==="block"?x.id:x.selector;const k=key(d),has=prev.some(x=>key(x)===k);const next=has?prev.filter(x=>key(x)!==k):[...prev,d];multiSelectionRef.current=next;setTimeout(paintMulti,0);return next})}return}if(selected)selected.removeAttribute("data-ev-selected");selected=e.target;selected.setAttribute("data-ev-selected","");selectElement(selected);setTimeout(updateResizeOverlay,0)};
 
     let resize=null,resizeOverlay=null;
 
@@ -382,7 +406,7 @@ export default function EditorClient(){
       const r=selected.getBoundingClientRect();
       const overlay=doc.createElement("div");overlay.setAttribute("data-ev-resize-overlay","");
       Object.assign(overlay.style,{position:"fixed",left:r.left+"px",top:r.top+"px",width:r.width+"px",height:r.height+"px",border:"1.5px solid #2f80ed",boxSizing:"border-box",zIndex:"2147483646",pointerEvents:"none"});
-      const dirs=["nw","n","ne","e","se","s","sw","w"];
+      const dirs=["nw","n","ne","e","se","s","sw","w","rotate"];
       for(const dir of dirs){const h=doc.createElement("span");h.dataset.evResize=dir;overlay.appendChild(h)}
       doc.body.appendChild(overlay);resizeOverlay=overlay;
     };
@@ -433,12 +457,15 @@ export default function EditorClient(){
     const move=e=>{
       if(resize){
         if(resize.pointerId!==undefined&&e.pointerId!==resize.pointerId)return;e.preventDefault();
+        if(resize.dir==="rotate"){let angle=Math.atan2(e.clientY-resize.cy,e.clientX-resize.cx)*180/Math.PI+90;if(e.shiftKey)angle=Math.round(angle/15)*15;resize.el.style.transform=`rotate(${angle.toFixed(1)}deg)`;resize.next={transform:`rotate(${angle.toFixed(1)}deg)`};updateResizeOverlay();return}
         const dx=e.clientX-resize.startX,dy=e.clientY-resize.startY,dir=resize.dir;
         let w=resize.width,h=resize.height,tx=resize.tx,ty=resize.ty;
         if(dir.includes("e"))w=Math.max(24,resize.width+dx);
         if(dir.includes("s"))h=Math.max(18,resize.height+dy);
         if(dir.includes("w")){w=Math.max(24,resize.width-dx);tx=resize.tx+(resize.width-w)}
         if(dir.includes("n")){h=Math.max(18,resize.height-dy);ty=resize.ty+(resize.height-h)}
+        if(e.shiftKey){const ratio=resize.width/Math.max(1,resize.height);if(Math.abs(dx)>=Math.abs(dy))h=w/ratio;else w=h*ratio}
+        if(e.altKey){tx=resize.tx-(w-resize.width)/2;ty=resize.ty-(h-resize.height)/2}
         resize.el.style.width=Math.round(w)+"px";resize.el.style.height=Math.round(h)+"px";resize.el.style.position="relative";resize.el.style.left="";resize.el.style.top="";resize.el.style.translate=Math.round(tx)+"px "+Math.round(ty)+"px";
         resize.next={width:Math.round(w)+"px",height:Math.round(h)+"px",position:"relative",left:"",top:"",right:"",bottom:"",translate:Math.round(tx)+"px "+Math.round(ty)+"px"};
         updateResizeOverlay();return;
@@ -450,7 +477,12 @@ export default function EditorClient(){
       if(!drag.activated&&Math.hypot(dx,dy)<2)return;
       drag.activated=true;
       const step=snapRef.current?Math.max(1,Number(snapSizeRef.current)||1):1;
-      drag.tx=Math.round((drag.baseTx+dx)/step)*step;drag.ty=Math.round((drag.baseTy+dy)/step)*step;
+      let nx=drag.baseTx+dx,ny=drag.baseTy+dy;
+      const r=drag.el.getBoundingClientRect(),siblings=[...(drag.el.parentElement?.children||[])].filter(n=>n!==drag.el&&n.nodeType===1);
+      let guideX=null,guideY=null;
+      for(const sib of siblings){const sr=sib.getBoundingClientRect();const testX=[[r.left+dx,sr.left],[r.right+dx,sr.right],[r.left+r.width/2+dx,sr.left+sr.width/2]];for(const [a,b] of testX){if(Math.abs(a-b)<=5){nx+=b-a;guideX=b;break}}const testY=[[r.top+dy,sr.top],[r.bottom+dy,sr.bottom],[r.top+r.height/2+dy,sr.top+sr.height/2]];for(const [a,b] of testY){if(Math.abs(a-b)<=5){ny+=b-a;guideY=b;break}}if(guideX||guideY)break}
+      doc.querySelectorAll("[data-ev-guide]").forEach(n=>n.remove());if(guideX!==null){const g=doc.createElement("i");g.dataset.evGuide="x";Object.assign(g.style,{position:"fixed",left:guideX+"px",top:"0",bottom:"0",width:"1px",background:"#ff2d7a",zIndex:"2147483645",pointerEvents:"none"});doc.body.appendChild(g)}if(guideY!==null){const g=doc.createElement("i");g.dataset.evGuide="y";Object.assign(g.style,{position:"fixed",top:guideY+"px",left:"0",right:"0",height:"1px",background:"#ff2d7a",zIndex:"2147483645",pointerEvents:"none"});doc.body.appendChild(g)}
+      drag.tx=Math.round(nx/step)*step;drag.ty=Math.round(ny/step)*step;
       drag.el.style.position="relative";drag.el.style.left="";drag.el.style.top="";drag.el.style.right="";drag.el.style.bottom="";drag.el.style.translate=drag.tx+"px "+drag.ty+"px";
       updateResizeOverlay();
     };
@@ -462,7 +494,7 @@ export default function EditorClient(){
         updateResizeOverlay();return;
       }
       if(!drag)return;
-      const currentDrag=drag;drag=null;currentDrag.el.removeAttribute("data-ev-dragging");try{currentDrag.el.releasePointerCapture?.(currentDrag.pointerId)}catch{}
+      const currentDrag=drag;drag=null;doc.querySelectorAll("[data-ev-guide]").forEach(n=>n.remove());currentDrag.el.removeAttribute("data-ev-dragging");try{currentDrag.el.releasePointerCapture?.(currentDrag.pointerId)}catch{}
       if(!currentDrag.activated){updateResizeOverlay();return}
       const patch={position:"relative",left:"",top:"",right:"",bottom:"",translate:currentDrag.tx+"px "+currentDrag.ty+"px"};
       persistPatch(currentDrag.el,currentDrag.blockId,patch,"Objeto movido sem colapsar o espaço original.");
@@ -475,12 +507,16 @@ export default function EditorClient(){
       e.preventDefault();e.stopPropagation();
       const rect=selected.getBoundingClientRect(),cs=doc.defaultView.getComputedStyle(selected),nums=String(cs.translate||"").match(/-?\d+(?:\.\d+)?/g)||[];
       const blockRoot=selected.closest?.("[data-estibordo-editor-block]");
-      resize={el:selected,blockId:blockRoot?.getAttribute("data-estibordo-editor-block")||null,dir:handle.dataset.evResize,startX:e.clientX,startY:e.clientY,width:rect.width,height:rect.height,tx:Number(nums[0]||0),ty:Number(nums[1]||0),pointerId:e.pointerId,next:null};
+      resize={el:selected,blockId:blockRoot?.getAttribute("data-estibordo-editor-block")||null,dir:handle.dataset.evResize,startX:e.clientX,startY:e.clientY,width:rect.width,height:rect.height,tx:Number(nums[0]||0),ty:Number(nums[1]||0),cx:rect.left+rect.width/2,cy:rect.top+rect.height/2,pointerId:e.pointerId,next:null};
       try{selected.setPointerCapture?.(e.pointerId)}catch{}
     };
 
+    const dbl=e=>{e.preventDefault();e.stopPropagation();const el=e.target;if(el.children.length||["IMG","SVG","VIDEO","INPUT","TEXTAREA"].includes(el.tagName))return;el.contentEditable="true";el.focus();const done=()=>{el.contentEditable="false";const b=el.closest?.("[data-estibordo-editor-block]");if(b){const id=b.getAttribute("data-estibordo-editor-block");const key=/title|h1|h2|h3/i.test(el.className+" "+el.tagName)?"title":"text";updateBlock(id,x=>({...x,[key]:el.textContent}),"Texto editado diretamente no canvas.")}else{const selector=selectorFor(el);setDesign(prev=>{const n=clone(prev);n.pages[pageRef.current]||={elements:{}};n.pages[pageRef.current].elements||={};const c=n.pages[pageRef.current].elements[selector]||{};c.attrs={...(c.attrs||{}),text:el.textContent};n.pages[pageRef.current].elements[selector]=c;return n});setStatus("Texto editado diretamente no canvas.")}};el.addEventListener("blur",done,{once:true})};
+    const ctx=e=>{e.preventDefault();e.stopPropagation();if(selected)selected.removeAttribute("data-ev-selected");selected=e.target;selected.setAttribute("data-ev-selected","");selectElement(selected);const frame=iframeRef.current?.getBoundingClientRect();setContextMenu({x:(frame?.left||0)+e.clientX,y:(frame?.top||0)+e.clientY})};
     doc.addEventListener("mouseover",over,true);
     doc.addEventListener("click",click,true);
+    doc.addEventListener("dblclick",dbl,true);
+    doc.addEventListener("contextmenu",ctx,true);
     doc.addEventListener("pointerdown",down,true);
     doc.addEventListener("pointerdown",resizeDown,true);
     doc.addEventListener("pointermove",move,true);
@@ -489,7 +525,7 @@ export default function EditorClient(){
     doc.defaultView.addEventListener("scroll",updateResizeOverlay,true);
     cleanupRef.current=()=>{
       clearResizeOverlay();
-      doc.removeEventListener("mouseover",over,true);doc.removeEventListener("click",click,true);
+      doc.removeEventListener("mouseover",over,true);doc.removeEventListener("click",click,true);doc.removeEventListener("dblclick",dbl,true);doc.removeEventListener("contextmenu",ctx,true);
       doc.removeEventListener("pointerdown",down,true);doc.removeEventListener("pointerdown",resizeDown,true);doc.removeEventListener("pointermove",move,true);doc.removeEventListener("pointerup",up,true);doc.removeEventListener("pointercancel",up,true);doc.defaultView.removeEventListener("scroll",updateResizeOverlay,true);s.remove()
     };  }
 
@@ -704,6 +740,39 @@ export default function EditorClient(){
     setTimeout(()=>iframeRef.current?.contentWindow?.location.reload(),80);
   }
 
+  function saveDraftNow(){try{localStorage.setItem("estibordo-editor-draft:"+page,JSON.stringify({ts:Date.now(),design}));setDraftStamp(new Date().toLocaleTimeString("pt-BR"));setStatus("Rascunho salvo localmente.")}catch{setStatus("Não foi possível salvar o rascunho local.")}}
+  function restoreDraft(){try{const raw=localStorage.getItem("estibordo-editor-draft:"+page);if(!raw){setStatus("Nenhum rascunho local encontrado.");return}const parsed=JSON.parse(raw);if(parsed?.design){remember();setDesign(parsed.design);setStatus("Rascunho restaurado. Revise antes de publicar.")}}catch{setStatus("Rascunho local inválido.")}}
+  function clearDraft(){try{localStorage.removeItem("estibordo-editor-draft:"+page);setDraftStamp("");setStatus("Rascunho local removido.")}catch{}}
+
+  function runAudit(){
+    const issues=[];const doc=iframeRef.current?.contentDocument;
+    if(!doc){setAuditResults([{level:"warn",title:"Prévia indisponível",detail:"Carregue a página para executar a auditoria."}]);return}
+    doc.querySelectorAll("img").forEach((img,i)=>{if(!img.getAttribute("alt"))issues.push({level:"error",title:"Imagem sem ALT",detail:`Imagem ${i+1} precisa de texto alternativo.`})});
+    const h1=doc.querySelectorAll("h1");if(h1.length===0)issues.push({level:"warn",title:"Sem H1",detail:"A página não possui um título H1."});if(h1.length>1)issues.push({level:"warn",title:"Múltiplos H1",detail:`Foram encontrados ${h1.length} títulos H1.`});
+    doc.querySelectorAll("a,button").forEach((el,i)=>{const r=el.getBoundingClientRect();if(r.width&&r.height&&(r.width<36||r.height<36))issues.push({level:"warn",title:"Alvo de toque pequeno",detail:`Controle ${i+1} mede ${Math.round(r.width)}×${Math.round(r.height)} px.`})});
+    const overflow=[...doc.querySelectorAll("body *")].filter(el=>{const r=el.getBoundingClientRect();return r.right>doc.documentElement.clientWidth+2||r.left<-2});if(overflow.length)issues.push({level:"error",title:"Overflow horizontal",detail:`${overflow.length} elemento(s) ultrapassam a viewport.`});
+    const media=(design?.global?.media||[]);if(media.length>80)issues.push({level:"warn",title:"Biblioteca de mídia extensa",detail:`${media.length} assets; considere arquivar itens não usados.`});
+    const seo=design?.pages?.[page]?.settings||{};if(!seo.seoTitle)issues.push({level:"warn",title:"SEO title ausente",detail:"Defina um título SEO para esta página."});if(!seo.seoDescription)issues.push({level:"warn",title:"Meta description ausente",detail:"Defina uma descrição para mecanismos de busca."});
+    if(!issues.length)issues.push({level:"ok",title:"Auditoria aprovada",detail:"Nenhum problema crítico detectado nos testes rápidos."});
+    setAuditResults(issues);setProPanelOpen(true);setStatus("Auditoria concluída.");
+  }
+
+  function nudgeSelection(dx,dy){
+    if(selectedBlockId){const b=selectedBlock;if(!b)return;const st=viewport==="desktop"?(b.style||{}):(b.responsive?.[viewport]?.style||{});const nums=String(st.translate||"0 0").match(/-?\d+(?:\.\d+)?/g)||[];setBlockStyle("translate",`${Number(nums[0]||0)+dx}px ${Number(nums[1]||0)+dy}px`);return}
+    if(target?.selector){const nums=String(style.translate||"0 0").match(/-?\d+(?:\.\d+)?/g)||[];setStyleValue("translate",`${Number(nums[0]||0)+dx}px ${Number(nums[1]||0)+dy}px`)}
+  }
+  function copyCurrentObject(){if(selectedBlock){setBlockClipboard(clone(selectedBlock));setStatus("Objeto copiado.")}else copyStyle()}
+  function pasteCurrentObject(){if(blockClipboard){remember();const copy=clone(blockClipboard);copy.id="blk_"+copy.type+"_"+Math.random().toString(36).slice(2,8);setDesign(prev=>{const n=clone(prev);n.pages[page].blocks=[...(n.pages[page].blocks||[]),copy];return n});setSelectedBlockId(copy.id);setStatus("Objeto colado.")}else pasteStyle()}
+  function rotateSelected(delta){if(selectedBlockId){const st=viewport==="desktop"?(selectedBlock?.style||{}):(selectedBlock?.responsive?.[viewport]?.style||{});const m=String(st.transform||"").match(/rotate\((-?\d+(?:\.\d+)?)deg\)/);const angle=Number(m?.[1]||0)+delta;setBlockStyle("transform",`rotate(${angle}deg)`)}else if(target)setStyleValue("transform",`rotate(${delta}deg)`)}
+
+  function alignMulti(action){
+    const doc=iframeRef.current?.contentDocument;if(!doc||multiSelection.length<2)return;
+    const nodes=multiSelection.map(x=>x.kind==="block"?doc.querySelector(`[data-estibordo-editor-block="${x.id}"]`):doc.querySelector(x.selector)).filter(Boolean);if(nodes.length<2)return;
+    const rects=nodes.map(n=>n.getBoundingClientRect());const minL=Math.min(...rects.map(r=>r.left)),maxR=Math.max(...rects.map(r=>r.right)),minT=Math.min(...rects.map(r=>r.top)),maxB=Math.max(...rects.map(r=>r.bottom));
+    nodes.forEach((n,i)=>{const r=rects[i];let dx=0,dy=0;if(action==="left")dx=minL-r.left;if(action==="center")dx=(minL+maxR-r.width)/2-r.left;if(action==="right")dx=maxR-r.right;if(action==="top")dy=minT-r.top;if(action==="middle")dy=(minT+maxB-r.height)/2-r.top;if(action==="bottom")dy=maxB-r.bottom;if(!dx&&!dy)return;const cs=doc.defaultView.getComputedStyle(n),nums=String(cs.translate||"0 0").match(/-?\d+(?:\.\d+)?/g)||[];const patch={position:"relative",translate:`${Number(nums[0]||0)+dx}px ${Number(nums[1]||0)+dy}px`};const desc=multiSelection[i];if(desc.kind==="block")updateBlock(desc.id,b=>{b.style={...(b.style||{}),...patch};return b},"Multi-seleção alinhada.");else{setDesign(prev=>{const d=clone(prev);d.pages[page]||={elements:{}};d.pages[page].elements||={};d.pages[page].elements[desc.selector]={...(d.pages[page].elements[desc.selector]||{}),style:{...(d.pages[page].elements[desc.selector]?.style||{}),...patch}};return d})}});
+    setStatus("Multi-seleção alinhada.");
+  }
+
   async function upload(file,mode="src"){
     if(!file)return;
     setUploading(true);setStatus("Enviando imagem...");
@@ -727,6 +796,18 @@ export default function EditorClient(){
     setDesign(payload);setSha(j.sha||sha);setOriginal(clone(payload));setStatus("Publicado com checkpoint. A Vercel fará o deploy automaticamente.");
   }
 
+  useEffect(()=>{
+    const onKey=e=>{
+      const tag=e.target?.tagName?.toLowerCase();if(tag==="input"||tag==="textarea"||e.target?.isContentEditable)return;
+      if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();setCommandOpen(true);return}
+      if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="c"){e.preventDefault();copyCurrentObject();return}
+      if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="v"){e.preventDefault();pasteCurrentObject();return}
+      if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="d"){e.preventDefault();selectedBlockId?duplicateBlock():changeCloneCount(Math.min(10,cloneCount+1));return}
+      if(e.key.startsWith("Arrow")){e.preventDefault();const step=e.shiftKey?10:1;nudgeSelection(e.key==="ArrowLeft"?-step:e.key==="ArrowRight"?step:0,e.key==="ArrowUp"?-step:e.key==="ArrowDown"?step:0);return}
+      if(e.key==="Delete"||e.key==="Backspace"){if(selectedBlockId){e.preventDefault();deleteBlock()}else if(target){e.preventDefault();toggleHidden(true)}}
+    };window.addEventListener("keydown",onKey);return()=>window.removeEventListener("keydown",onKey)
+  },[selectedBlockId,selectedBlock,target,style,blockClipboard,cloneCount,viewport]);
+
   if(auth==="checking")return <main className="ev-login"><div><b>ESTIBORDO EDITOR</b><p>Carregando editor visual…</p></div></main>;
   if(auth==="login")return <main className="ev-login"><form onSubmit={login}><b>ESTIBORDO EDITOR</b><h1>Editor visual</h1><p>Acesso exclusivo do administrador.</p><input type="password" value={password} onChange={e=>setPassword(e.target.value)} placeholder="Senha do editor" required/><button>Entrar no editor</button>{status&&<small>{status}</small>}</form></main>;
 
@@ -748,13 +829,21 @@ export default function EditorClient(){
         <button onClick={redo} disabled={!redoStack.length} title="Refazer">↷</button>
         <button className={moveMode?"is-active":""} onClick={()=>setMoveMode(v=>!v)} title="Drag & Drop universal para qualquer elemento">✥ DnD {moveMode?"ON":"OFF"}</button>
         <button className={showGrid?"is-active":""} onClick={()=>setShowGrid(v=>!v)} title="Mostrar grade"># Grade</button>
+        <button className={showRulers?"is-active":""} onClick={()=>setShowRulers(v=>!v)} title="Réguas">⌖ Réguas</button>
+        <button className={showSafeArea?"is-active":""} onClick={()=>setShowSafeArea(v=>!v)} title="Safe area">▣ Safe</button>
+        <button className={devMode?"is-active":""} onClick={()=>setDevMode(v=>!v)} title="Modo Dev">{"</>"} Dev</button>
         <button className={snap?"is-active":""} onClick={()=>setSnap(v=>!v)} title="Ativar/desativar snapping">⊞ Snap</button>
         <select className="ev-snap-size" value={snapSize} onChange={e=>setSnapSize(Number(e.target.value))} title="Precisão do snap"><option value="1">1 px</option><option value="5">5 px</option><option value="10">10 px</option><option value="20">20 px</option></select>
         <div className="ev-zoom"><button onClick={()=>setZoom(z=>Math.max(40,z-10))}>−</button><span>{zoom}%</span><button onClick={()=>setZoom(z=>Math.min(160,z+10))}>+</button><button onClick={()=>setZoom(100)}>100</button></div>
       </div>
-      <div className="ev-actions"><span className={dirty?"ev-dirty":"ev-saved"}>{dirty?"Alterações não publicadas":"Tudo salvo"}</span><a href={page} target="_blank">Abrir página ↗</a><button className="ev-publish" disabled={!dirty||saving} onClick={save}>{saving?"Publicando…":"Salvar e publicar"}</button></div>
+      <div className="ev-actions"><button className="ev-pro-open" onClick={()=>setProPanelOpen(true)}>PRO</button><button className="ev-audit-open" onClick={runAudit}>Auditar</button><span className={dirty?"ev-dirty":"ev-saved"}>{dirty?"Alterações não publicadas":"Tudo salvo"}</span><a href={page} target="_blank">Abrir página ↗</a><button className="ev-publish" disabled={!dirty||saving} onClick={save}>{saving?"Publicando…":"Salvar e publicar"}</button></div>
     </header>
 
+    <EditorCommandPalette open={commandOpen} onClose={()=>setCommandOpen(false)} commands={[
+      ["Adicionar bloco",()=>{setToolboxOpen(true)}],["Abrir assets",()=>{setStudioMenuOpen(true);setSelectionPanel("")}],["Selecionar camada",()=>{setSelectionPanel("layers");setStudioMenuOpen(true)}],["Selecionar objeto",()=>{setSelectionPanel("objects");setStudioMenuOpen(true)}],["Auditar página",runAudit],["Salvar rascunho",saveDraftNow],["Modo Dev",()=>setDevMode(v=>!v)],["Réguas",()=>setShowRulers(v=>!v)],["Safe Area",()=>setShowSafeArea(v=>!v)],["Grade",()=>setShowGrid(v=>!v)]
+    ]}/>
+    <EditorContextMenu menu={contextMenu} onClose={()=>setContextMenu(null)} onAction={action=>{setContextMenu(null);if(action==="duplicate")selectedBlockId?duplicateBlock():changeCloneCount(Math.min(10,cloneCount+1));if(action==="delete")selectedBlockId?deleteBlock():toggleHidden(true);if(action==="replace"&&selectedBlockId)openAssetReplacement();if(action==="front")selectedBlockId?setBlockStyle("zIndex",String(Number(selectedBlock?.style?.zIndex||0)+1)):bringForward(1);if(action==="back")selectedBlockId?setBlockStyle("zIndex",String(Number(selectedBlock?.style?.zIndex||0)-1)):bringForward(-1);if(action==="copy")copyCurrentObject();}}/>
+    <EditorProPanel open={proPanelOpen} onClose={()=>setProPanelOpen(false)} multiSelection={multiSelection} onAlign={alignMulti} onClearMulti={()=>setMultiSelection([])} draftStamp={draftStamp} onSaveDraft={saveDraftNow} onRestoreDraft={restoreDraft} onClearDraft={clearDraft} audits={auditResults} onAudit={runAudit} devMode={devMode} onDevMode={setDevMode} rulers={showRulers} onRulers={setShowRulers} safeArea={showSafeArea} onSafeArea={setShowSafeArea} miniMap={showMiniMap} onMiniMap={setShowMiniMap}/>
     <StudioMenu open={studioMenuOpen} onClose={()=>{setStudioMenuOpen(false);setReplacementTargetId(null)}} replacementMode={Boolean(replacementTargetId)} replacementType={replacementTargetId?findBlock(design?.pages?.[page]?.blocks||[],replacementTargetId)?.type:""} selectionMode={selectionPanel} onSelectionMode={setSelectionPanel}  siteMap={siteMap} page={page} onPageChange={url=>{setPage(url);setTarget(null);setSelectedBlockId(null);setStudioMenuOpen(false)}} layers={layers} onSelectLayer={selector=>{selectBySelector(selector);setStudioMenuOpen(false)}} blocks={design?.pages?.[page]?.blocks||[]} selectedBlockId={selectedBlockId} onSelectBlock={id=>{setSelectedBlockId(id);setTarget(null);setStudioMenuOpen(false)}} onOpenBuilder={()=>{setStudioMenuOpen(false);setToolboxOpen(true)}} onOpenFlashcards={()=>{setStudioMenuOpen(false);setFlashcardManagerOpen(true)}} media={design?.global?.media||[]} onUploadMedia={uploadLibraryMedia} onAddIcon={addIconAsset} onAddLogo={addLogoAsset} onAddSignalFlag={addSignalFlag} onImportImage={importExternalImage} customCode={customCode()} onCustomCode={updateCustomCode} breakpoints={breakpoints()} onBreakpoints={updateBreakpoints}/>
     <EditorToolbox open={toolboxOpen} onClose={()=>setToolboxOpen(false)} onAdd={addBlock} onAction={toolboxAction} pageSettings={pageConfig()} onPageSettings={updatePageSettings} media={design?.global?.media||[]} onUploadMedia={uploadLibraryMedia} designSystem={designSystem()} onDesignSystem={updateDesignSystem} components={components()} onApplyComponent={applyComponent} onDeleteComponent={deleteComponent} versions={versions()} onRestoreVersion={restoreVersion} onCreatePage={createManagedPage} pageTemplates={PAGE_TEMPLATE_OPTIONS} onApplyPageTemplate={applyPageTemplate}/>
     <FlashcardManager open={flashcardManagerOpen} onClose={()=>setFlashcardManagerOpen(false)} initialSlug={page.startsWith("/flashcards/")?page.split("/")[2]:"cis"} onChanged={()=>setStatus("Flashcard salvo no banco. Atualize a prévia para conferir.")}/>
@@ -768,12 +857,14 @@ export default function EditorClient(){
       <section className="ev-canvas">
         <div className="ev-canvas-head"><div><b>{pageLabel}</b><span>{page}</span></div><div className="ev-selectors"><button type="button" onClick={()=>{setSelectionPanel("layers");setStudioMenuOpen(true)}}>Selecionar camada</button><button type="button" onClick={()=>{setSelectionPanel("objects");setStudioMenuOpen(true)}}>Selecionar objeto</button></div><em>{moveMode?"Drag & Drop universal ativo · arraste qualquer elemento":`${preview.label} · zoom ${zoom}%`}</em></div>
         <div className="ev-frame-area" ref={frameAreaRef}>
-          <div className={`ev-frame-shell ev-${viewport}`} style={{width:`${preview.width*effectiveScale}px`,height:`${preview.height*effectiveScale}px`}}>
+          <div className={`ev-frame-shell ev-${viewport} ${showRulers?"has-rulers":""} ${showSafeArea?"has-safe-area":""}`} style={{width:`${preview.width*effectiveScale}px`,height:`${preview.height*effectiveScale}px`}}>
+            {showRulers&&<><div className="ev-ruler-x"/><div className="ev-ruler-y"/></>}{showSafeArea&&<div className="ev-safe-area-overlay"/>}
             <iframe ref={iframeRef} key={page} src={previewSrc} onLoad={wireIframe} title="Prévia da página" style={{width:`${preview.width}px`,height:`${preview.height}px`,transform:`scale(${effectiveScale})`,transformOrigin:"top left"}}/>
           </div>
         </div>
       </section>
 
+      {devMode&&(target||selectedBlock)&&<aside className="ev-dev-panel"><header><b>DEV MODE</b><span>{selectedBlock?.id||target?.selector}</span></header><pre>{JSON.stringify(selectedBlock||{selector:target?.selector,style:styleOverrides,attrs:attrsOverrides},null,2)}</pre></aside>}
       <aside className="ev-inspector">
         {selectedBlock ? <BlockInspector block={selectedBlock} viewport={viewport} onField={setBlockField} onStyle={setBlockStyle} onLayoutPreset={applyBlockLayoutPreset} onMove={moveBlock} onDuplicate={duplicateBlock} onWrap={wrapBlock} onPromote={promoteBlock} onDelete={deleteBlock} isContainer={CONTAINER_TYPES.has(selectedBlock.type)} onMotion={setBlockMotion} onReplace={openAssetReplacement}/> : !target ? <div className="ev-empty"><div className="ev-empty-icon">✦</div><h3>Selecione um elemento</h3><p>Clique em um texto, botão, imagem, card, cabeçalho ou menu na prévia. As ferramentas de edição aparecerão aqui.</p><div className="ev-tip"><b>Dica</b><span>Para cabeçalho, menu, logo ou rodapé, use o escopo <strong>Todo o site</strong>.</span></div></div> :
         <>
