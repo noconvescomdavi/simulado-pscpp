@@ -256,10 +256,19 @@ export default function Admin3DViewport({
             else if(channel==='uv'){m.wireframe=true;m.map=null;m.normalMap=null;m.color?.set?.('#69d2ff');}
             else if(channel==='normals'){m.wireframe=false;m.map=null;m.normalMap=null;m.color?.set?.('#7dd3fc');m.metalness=0;m.roughness=1;}
           }
+          const ra=data.renderAdjustments||{};
+          const brightness=Math.max(.02,Math.min(3,Number(ra.brightness??1)));
+          const objectExposure=Math.max(-4,Math.min(3,Number(ra.exposure??0)));
+          const lightScale=brightness*Math.pow(2,objectExposure);
+          if(m.color?.isColor){
+            if(!m.userData.__ripeamOriginalColor)m.userData.__ripeamOriginalColor=m.color.clone();
+            m.color.copy(m.userData.__ripeamOriginalColor).multiplyScalar(lightScale);
+          }
+          if("envMapIntensity" in m)m.envMapIntensity=1.15*Math.max(0,Math.min(3,Number(ra.environment??1)));
+          if("emissiveIntensity" in m&&m.emissive)m.emissiveIntensity=Math.max(0,Math.min(Number(m.emissiveIntensity??1),lightScale));
           if((scene.settings?.wireframe||data.wireframe)&&"wireframe" in m)m.wireframe=true;
           if(scene.settings?.xray){m.transparent=true;m.opacity=Math.min(Number(m.opacity??1),.28);m.depthWrite=false;}
           if(!custom){
-            if("envMapIntensity" in m)m.envMapIntensity=1.15;
             m.needsUpdate=true;
             return;
           }
