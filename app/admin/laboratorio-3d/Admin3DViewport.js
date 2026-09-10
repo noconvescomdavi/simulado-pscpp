@@ -5,11 +5,12 @@ import styles from "./laboratorio-3d.module.css";
 const THREE_VERSION="0.180.0";
 const CDN="https://esm.sh/three@"+THREE_VERSION;
 const MODEL_CACHE=new Map();
-const RIPEAM_ASSET_REV="textures-20260910-r1";
-const versionAssetUrl=url=>{
+const RIPEAM_ASSET_REV="textures-20260910-r2";
+const versionAssetUrl=(url,revision)=>{
   const value=String(url||"");
   if(!value.startsWith("/models/ripeam/"))return value;
-  return value+(value.includes("?")?"&":"?")+"v="+RIPEAM_ASSET_REV;
+  const rev=encodeURIComponent(String(revision||RIPEAM_ASSET_REV));
+  return value+(value.includes("?")?"&":"?")+"v="+rev;
 };
 
 function cloneCachedModel(source){
@@ -26,24 +27,25 @@ function cloneCachedModel(source){
 }
 
 export default function Admin3DViewport({
-  scene,selectedId,mode,onSelect,onTransform,onCameraChange,onStats,readOnly=false,playhead=0
+  scene,selectedId,mode,onSelect,onTransform,onCameraChange,onStats,onAssetDrop,readOnly=false,playhead=0
 }){
   const mount=useRef(null);
   const runtime=useRef(null);
   const propsRef=useRef({});
-  propsRef.current={scene,selectedId,mode,onSelect,onTransform,onCameraChange,onStats,readOnly,playhead};
+  propsRef.current={scene,selectedId,mode,onSelect,onTransform,onCameraChange,onStats,onAssetDrop,readOnly,playhead};
 
   useEffect(()=>{
     let dead=false;
     (async()=>{
       const THREE=await import(/* webpackIgnore: true */ CDN);
-      const [{OrbitControls},{TransformControls},{GLTFLoader},{FBXLoader},{OBJLoader},{RoomEnvironment}]=await Promise.all([
+      const [{OrbitControls},{TransformControls},{GLTFLoader},{FBXLoader},{OBJLoader},{RoomEnvironment},{MeshoptDecoder}]=await Promise.all([
         import(/* webpackIgnore: true */ CDN+"/examples/jsm/controls/OrbitControls.js"),
         import(/* webpackIgnore: true */ CDN+"/examples/jsm/controls/TransformControls.js"),
         import(/* webpackIgnore: true */ CDN+"/examples/jsm/loaders/GLTFLoader.js"),
         import(/* webpackIgnore: true */ CDN+"/examples/jsm/loaders/FBXLoader.js"),
         import(/* webpackIgnore: true */ CDN+"/examples/jsm/loaders/OBJLoader.js"),
-        import(/* webpackIgnore: true */ CDN+"/examples/jsm/environments/RoomEnvironment.js")
+        import(/* webpackIgnore: true */ CDN+"/examples/jsm/environments/RoomEnvironment.js"),
+        import(/* webpackIgnore: true */ CDN+"/examples/jsm/libs/meshopt_decoder.module.js")
       ]);
       if(dead||!mount.current)return;
 
@@ -110,6 +112,22 @@ export default function Admin3DViewport({
 
       const ray=new THREE.Raycaster();
       const mouse=new THREE.Vector2();
+      renderer.domElement.addEventListener("dragover",e=>{if(!propsRef.current.readOnly)e.preventDefault()});
+      renderer.domElement.addEventListener("drop",e=>{
+        if(propsRef.current.readOnly)return;
+        e.preventDefault();
+        try{
+          const asset=JSON.parse(e.dataTransfer?.getData("application/x-ripeam-asset")||"");
+          if(!asset?.url)return;
+          const rect=renderer.domElement.getBoundingClientRect();
+          mouse.x=((e.clientX-rect.left)/rect.width)*2-1;mouse.y=-((e.clientY-rect.top)/rect.height)*2+1;
+          ray.setFromCamera(mouse,camera);
+          const point=new THREE.Vector3();
+          const plane=new THREE.Plane(new THREE.Vector3(0,1,0),0);
+          ray.ray.intersectPlane(plane,point);
+          propsRef.current.onAssetDrop?.(asset,point?.toArray?.()||[0,0,0]);
+        }catch{}
+      });
       renderer.domElement.addEventListener("pointerdown",e=>{
         if(transform.dragging||propsRef.current.readOnly)return;
         const rect=renderer.domElement.getBoundingClientRect();
@@ -131,9 +149,13 @@ export default function Admin3DViewport({
       const ro=new ResizeObserver(resize);
       ro.observe(root);resize();
 
+      const glbLoader=new GLTFLoader();
+      const gltfLoader=new GLTFLoader();
+      glbLoader.setMeshoptDecoder?.(MeshoptDecoder);
+      gltfLoader.setMeshoptDecoder?.(MeshoptDecoder);
       runtime.current={
         THREE,sc,camera,renderer,orbit,grid,water,hemi,sun,objects,transform,ro,pmremGenerator,roomEnvironment,environmentTarget,raf:0,
-        loaders:{glb:new GLTFLoader(),gltf:new GLTFLoader(),fbx:new FBXLoader(),obj:new OBJLoader()}
+        loaders:{glb:glbLoader,gltf:gltfLoader,fbx:new FBXLoader(),obj:new OBJLoader()}
       };
 
       const tick=()=>{
@@ -190,6 +212,8 @@ export default function Admin3DViewport({
 
     const roots=new Map();
     let triangles=0,meshes=0,lights=0,models=0,modelErrors=0,textures=0,estimatedTextureMB=0;
+    const materialDiagnostics=[];
+    const materialSeen=new Set();
 
     const normalizeChild=(obj,target=8)=>{
       const box=new r.THREE.Box3().setFromObject(obj);
@@ -215,6 +239,11 @@ export default function Admin3DViewport({
         triangles+=idx?Math.floor(idx/3):Math.floor(pos/3);
         const mats=Array.isArray(o.material)?o.material:[o.material];
         mats.filter(Boolean).forEach(m=>{
+          if(!materialSeen.has(m.uuid)){
+            materialSeen.add(m.uuid);
+            const textureSlots=["map","normalMap","roughnessMap","metalnessMap","aoMap","emissiveMap"].filter(k=>m[k]?.isTexture);
+            materialDiagnostics.push({editorId:data.id,mesh:o.name||"Mesh",material:m.name||"Material",type:m.type||"Material",textureSlots,roughness:Number.isFinite(m.roughness)?m.roughness:null,metalness:Number.isFinite(m.metalness)?m.metalness:null,opacity:Number.isFinite(m.opacity)?m.opacity:null,transparent:!!m.transparent});
+          }
           // Ajustes técnicos seguros: preservam o material e as texturas do GLB.
           ["map","normalMap","roughnessMap","metalnessMap","aoMap","emissiveMap"].forEach(key=>{
             const t=m[key];
@@ -280,7 +309,7 @@ export default function Admin3DViewport({
         if(data.assetUrl){
           try{
             const loader=r.loaders[data.assetType]||r.loaders.glb;
-            const resolvedAssetUrl=versionAssetUrl(data.assetUrl);
+            const resolvedAssetUrl=versionAssetUrl(data.assetUrl,data.assetRevision||data.assetHash||data.version);
             const cacheKey=(data.assetType||"glb")+":"+resolvedAssetUrl;
             let source=MODEL_CACHE.get(cacheKey);
             if(!source){
@@ -302,8 +331,8 @@ export default function Admin3DViewport({
         child=new r.THREE.Mesh(new r.THREE.SphereGeometry(.18*Math.max(.2,Number(data.lightSize||1)),18,12),new r.THREE.MeshBasicMaterial({color}));
         let light;
         if(data.type==="directionalLight")light=new r.THREE.DirectionalLight(color,data.intensity||2);
-        else if(data.type==="spotLight")light=new r.THREE.SpotLight(color,data.intensity||3,data.distance||12,data.angle||.75,data.penumbra||.25);
-        else light=new r.THREE.PointLight(color,data.intensity||3,data.distance||12);
+        else if(data.type==="spotLight")light=new r.THREE.SpotLight(color,data.intensity||3,data.distance||12,data.angle||.75,data.penumbra||.25,data.decay??2);
+        else light=new r.THREE.PointLight(color,data.intensity||3,data.distance||12,data.decay??2);
         child.add(light);addSector(root,data);
         const gizmoLen=Math.max(1.3,Math.min(4,Number(data.distance||12)*.18)),h=Number(data.heading||0)*Math.PI/180;
         const pts=[new r.THREE.Vector3(0,0,0),new r.THREE.Vector3(Math.sin(h)*gizmoLen,0,Math.cos(h)*gizmoLen)];
@@ -340,10 +369,33 @@ export default function Admin3DViewport({
       for(const data of scene.objects||[])await build(data);
       if(cancelled)return;
 
+      const anchorBoxes=new Map();
+      for(const data of scene.objects||[]){
+        const root=roots.get(data.id);
+        if(!root||data.type!=="model")continue;
+        root.updateMatrixWorld(true);
+        const box=new r.THREE.Box3().setFromObject(root);
+        if(!box.isEmpty())anchorBoxes.set(data.id,box);
+      }
+      const anchorPoint=(parent,data)=>{
+        const box=anchorBoxes.get(data.parentId);if(!box)return null;
+        const min=box.min,max=box.max,c=box.getCenter(new r.THREE.Vector3());
+        const map={
+          masthead:[c.x,max.y,c.z],foremast:[c.x,min.y+(max.y-min.y)*.78,min.z+(max.z-min.z)*.28],aftermast:[c.x,min.y+(max.y-min.y)*.72,min.z+(max.z-min.z)*.72],
+          port:[min.x,c.y,c.z],starboard:[max.x,c.y,c.z],stern:[c.x,c.y,max.z],bow:[c.x,c.y,min.z],
+          "yard-port":[min.x,max.y-(max.y-min.y)*.12,c.z],"yard-starboard":[max.x,max.y-(max.y-min.y)*.12,c.z],
+          "flag-halyard":[c.x,max.y-(max.y-min.y)*.08,max.z-(max.z-min.z)*.22],waterline:[c.x,min.y+(max.y-min.y)*.18,c.z]
+        };
+        const world=map[data.anchorName];if(!world)return null;
+        const point=new r.THREE.Vector3(...world);
+        parent.updateMatrixWorld(true);
+        return parent.worldToLocal(point);
+      };
       for(const data of scene.objects||[]){
         const root=roots.get(data.id);if(!root)continue;
         const parent=data.parentId?roots.get(data.parentId):null;
         (parent||r.objects).add(root);
+        if(parent&&data.anchorName){const p=anchorPoint(parent,data);if(p)root.position.copy(p).add(new r.THREE.Vector3(...(data.anchorOffset||[0,0,0])))}
       }
 
       for(const data of scene.objects||[]){
@@ -366,7 +418,7 @@ export default function Admin3DViewport({
 
       r.editorRoots=roots;
       const info=r.renderer.info;
-      propsRef.current.onStats?.({triangles,meshes,lights,models,modelErrors,textures,estimatedTextureMB:Number(estimatedTextureMB.toFixed(1)),drawCalls:info?.render?.calls||0,geometries:info?.memory?.geometries||0,objects:(scene.objects||[]).length});
+      propsRef.current.onStats?.({triangles,meshes,lights,models,modelErrors,textures,materials:materialSeen.size,materialDiagnostics,estimatedTextureMB:Number(estimatedTextureMB.toFixed(1)),drawCalls:info?.render?.calls||0,geometries:info?.memory?.geometries||0,objects:(scene.objects||[]).length});
       const found=roots.get(propsRef.current.selectedId);
       if(found&&!propsRef.current.readOnly){r.transform.attach(found);r.transform.setMode(propsRef.current.mode||"translate")}
     })();

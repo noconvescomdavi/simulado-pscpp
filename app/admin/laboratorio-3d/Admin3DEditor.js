@@ -114,7 +114,7 @@ export default function Admin3DEditor(){
     const j=await r.json().catch(()=>({}));
     if(!r.ok){setStatus(j.error||"Não foi possível carregar as cenas.");return}
     setScenes(j.scenes||[]);
-    const persisted=(j.assets||[]).map(a=>({id:a.id,name:a.name,url:a.url,type:a.asset_type,category:a.category||"Uploads",tags:a.tags||[],bytes:a.bytes,triangles:a.triangles,metadata:a.metadata||{}}));
+    const persisted=(j.assets||[]).map(a=>({id:a.id,name:a.name,url:a.url,type:a.asset_type,category:a.category||"Uploads",tags:a.tags||[],bytes:a.bytes,triangles:a.triangles,metadata:a.metadata||{},assetRevision:a.metadata?.contentHash||a.metadata?.sourceSha||a.updated_at||a.bytes}));
     setAssets([...persisted,...BUILTIN.filter(b=>!persisted.some(a=>a.url===b.url))]);
     setVersions(j.versions||[]);
     if(j.scenes?.[0]&&!scene.id)openScene(j.scenes[0],false);
@@ -178,7 +178,25 @@ export default function Admin3DEditor(){
 
   function patchVec(key,i,v){
     if(!obj)return;
-    const a=[...(obj[key]||[0,0,0])];a[i]=Number(v)||0;patchObject({[key]:a});
+    const nextValue=Number(v)||0,oldValue=Number((obj[key]||[0,0,0])[i]||0),delta=nextValue-oldValue;
+    const ids=selectedIds.length?selectedIds:[obj.id];
+    if(ids.length<2){const a=[...(obj[key]||[0,0,0])];a[i]=nextValue;patchObject({[key]:a});return}
+    mutate(s=>{for(const o of s.config.objects){if(!ids.includes(o.id))continue;const a=[...(o[key]||[0,0,0])];a[i]=Number(a[i]||0)+delta;if(key==="scale")a[i]=Math.max(.001,a[i]);o[key]=a}});
+  }
+
+  function transformSelection(id,next){
+    const active=(cfg.objects||[]).find(o=>o.id===id);if(!active)return;
+    const ids=selectedIds.length?selectedIds:[id];
+    if(ids.length<2){patchObject(next);return}
+    const dp=(next.position||active.position).map((v,i)=>Number(v)-Number(active.position?.[i]||0));
+    const dr=(next.rotation||active.rotation).map((v,i)=>Number(v)-Number(active.rotation?.[i]||0));
+    const ds=(next.scale||active.scale).map((v,i)=>Number(v)-Number(active.scale?.[i]||1));
+    mutate(s=>{for(const o of s.config.objects){if(!ids.includes(o.id))continue;o.position=(o.position||[0,0,0]).map((v,i)=>Number(v)+dp[i]);o.rotation=(o.rotation||[0,0,0]).map((v,i)=>Number(v)+dr[i]);o.scale=(o.scale||[1,1,1]).map((v,i)=>Math.max(.001,Number(v)+ds[i]))}});
+  }
+
+  function dropAsset(asset,position){
+    addObject({name:asset.name,assetUrl:asset.url,assetType:asset.type||"glb",assetRevision:asset.assetRevision||asset.metadata?.contentHash||asset.bytes,type:"model",position:position||[0,0,0],normalize:true,material:{mode:"original"}});
+    setStatus("Asset posicionado por arrastar e soltar. Ajuste fino com Snap/Gizmo.");
   }
 
   function removeObject(){
@@ -369,12 +387,12 @@ export default function Admin3DEditor(){
     if(!r.ok){setStatus(j.error||"Falha no upload");return}
     const a={id:j.asset?.id,name:file.name,url:j.url,type:"glb",category:j.asset?.category||"Navios importados",bytes:file.size,metadata:j.asset?.metadata||{glbDiagnostics:report}};setAssets(x=>[a,...x.filter(y=>y.url!==a.url)]);
     if(mode==="replace"){setAbCompare({selectedId:obj.id,original:clone(obj),candidate:a});setCompare(false);setStatus("GLB validado. Compare A/B antes de confirmar a substituição.");}
-    else{addObject({name:a.name,assetUrl:a.url,assetType:"glb",type:"model",normalize:true,material:{mode:"original"}});setStatus("GLB validado e adicionado com material/texturas originais preservados.");}
+    else{addObject({name:a.name,assetUrl:a.url,assetType:"glb",assetRevision:a.metadata?.contentHash||a.bytes,type:"model",normalize:true,material:{mode:"original"}});setStatus("GLB validado e adicionado com material/texturas originais preservados.");}
   }
 
   function confirmReplacement(){
     if(!abCompare)return;const {selectedId,candidate}=abCompare;
-    mutate(s=>{const o=s.config.objects.find(x=>x.id===selectedId);if(o){o.name=candidate.name;o.assetUrl=candidate.url;o.assetType="glb";o.normalize=true;o.material={mode:"original",color:"#ffffff",roughness:.5,metalness:.05,opacity:1,emissive:"#000000",doubleSide:false}}});
+    mutate(s=>{const o=s.config.objects.find(x=>x.id===selectedId);if(o){o.name=candidate.name;o.assetUrl=candidate.url;o.assetType="glb";o.assetRevision=candidate.metadata?.contentHash||candidate.bytes;o.normalize=true;o.material={mode:"original",color:"#ffffff",roughness:.5,metalness:.05,opacity:1,emissive:"#000000",doubleSide:false}}});
     setAbCompare(null);setStatus("Substituição confirmada localmente. Clique em Atualizar aluno para publicar.");
   }
 
@@ -527,8 +545,15 @@ export default function Admin3DEditor(){
 
   async function publishStudent(){
     if(busy)return;
-    const assetErrors=(healthReport||[]).filter(x=>x.status==="ERRO"&&cfg.objects.some(o=>o.assetUrl===x.url));
-    const pf={errors:[...validation.errors,...assetErrors.map(x=>"Asset indisponível: "+x.name)],warnings:[...validation.warnings],stats};
+    setBusy(true);setStatus("Executando preflight obrigatório dos assets usados...");
+    const used=[...new Map((cfg.objects||[]).filter(o=>o.type==="model"&&o.assetUrl).map(o=>[o.assetUrl,o])).values()];
+    const assetErrors=[];
+    for(const model of used){
+      try{const r=await fetch(model.assetUrl,{method:"HEAD",cache:"no-store"});if(!r.ok)assetErrors.push("Asset indisponível: "+model.name+" (HTTP "+r.status+")")}
+      catch{assetErrors.push("Asset indisponível: "+model.name+" (falha de rede)")}
+    }
+    setBusy(false);
+    const pf={errors:[...validation.errors,...assetErrors],warnings:[...validation.warnings],stats};
     setPreflight(pf);
     if(pf.errors.length){setStatus("Atualização do aluno bloqueada pelo preflight: "+pf.errors.length+" erro(s).");setTab("scene");return}
     const summary=publishDiff.length?publishDiff.slice(0,8).map(d=>"• "+d.label).join("\n"):"Nenhuma diferença detectada.";
@@ -604,7 +629,7 @@ export default function Admin3DEditor(){
         </div>
 
         <div className={compare?styles.compareGrid:styles.singleViewport}>
-          <Admin3DViewport scene={cfg} selectedId={selected} mode={mode} playhead={playhead} onSelect={setSelected} onTransform={(id,t)=>{if(id===selected)patchObject(t)}} onCameraChange={cam=>setScene(s=>({...s,config:{...s.config,editorCamera:cam}}))} onStats={setStats}/>
+          <Admin3DViewport scene={cfg} selectedId={selected} mode={mode} playhead={playhead} onSelect={id=>{setSelected(id);setSelectedIds(id?[id]:[])}} onTransform={(id,t)=>{if(id===selected)transformSelection(id,t)}} onAssetDrop={dropAsset} onCameraChange={cam=>setScene(s=>({...s,config:{...s.config,editorCamera:cam}}))} onStats={setStats}/>
           {compare&&<Admin3DViewport scene={{...cfg,settings:{...cfg.settings,previewMode:cfg.settings.previewMode==="day"?"night":"day"}}} readOnly playhead={playhead} onStats={()=>{}}/>}{abCompare&&<Admin3DViewport scene={{...cfg,objects:(cfg.objects||[]).map(o=>o.id===abCompare.selectedId?{...o,name:abCompare.candidate.name,assetUrl:abCompare.candidate.url,assetType:"glb"}:o)}} readOnly playhead={playhead} onStats={()=>{}}/>}
         </div>
 
@@ -626,7 +651,7 @@ export default function Admin3DEditor(){
             <select value={importMode} onChange={e=>setImportMode(e.target.value)} title="Escolha se o GLB será adicionado ou substituirá o modelo selecionado"><option value="add">Adicionar novo navio</option><option value="replace">Substituir selecionado</option></select>
             <label><input type="file" accept=".glb,model/gltf-binary" onChange={e=>{upload(e.target.files?.[0],importMode);e.target.value=""}}/>＋ Importar GLB do PC</label>
           </div>
-          <div className={styles.assetGrid}>{filteredAssets.map((a,i)=>{const d=a.metadata?.glbDiagnostics;return <button key={a.url+i} onClick={()=>addObject({name:a.name,assetUrl:a.url,assetType:a.type,type:"model",normalize:true,material:{mode:"original"}})}><b>{a.name}</b><small>{String(a.type||"").toUpperCase()} · {a.category||"Asset"} · usado {usage[a.url]||0}x</small>{a.bytes&&<small>{(a.bytes/1024/1024).toFixed(1)} MB</small>}{d&&<small>{d.materials||0} materiais · {d.textures||0} texturas · UV {d.missingUvMeshes?"atenção":"OK"}</small>}</button>})}</div>
+          <div className={styles.assetGrid}>{filteredAssets.map((a,i)=>{const d=a.metadata?.glbDiagnostics;return <button key={a.url+i} draggable onDragStart={e=>{e.dataTransfer.effectAllowed="copy";e.dataTransfer.setData("application/x-ripeam-asset",JSON.stringify(a))}} title="Clique para adicionar no centro ou arraste para posicionar diretamente no viewport" onClick={()=>addObject({name:a.name,assetUrl:a.url,assetType:a.type,assetRevision:a.assetRevision||a.metadata?.contentHash||a.bytes,type:"model",normalize:true,material:{mode:"original"}})}><b>{a.name}</b><small>{String(a.type||"").toUpperCase()} · {a.category||"Asset"} · usado {usage[a.url]||0}x</small>{a.bytes&&<small>{(a.bytes/1024/1024).toFixed(1)} MB</small>}{d&&<small>{d.materials||0} materiais · {d.textures||0} texturas · UV {d.missingUvMeshes?"atenção":"OK"}</small>}</button>})}</div>
         </div>
       </section>
 
@@ -657,10 +682,11 @@ export default function Admin3DEditor(){
             <div className={styles.materialHint}>{(obj.material?.mode||"original")==="original"?"Base Color, Normal, Roughness, Metallic, AO, Emissive, UVs, transparência e materiais múltiplos são preservados do arquivo.":"As propriedades abaixo passam a sobrescrever os materiais importados."}</div>
             {obj.assetType==="glb"&&<button type="button" className={styles.assetDiagnosticButton} onClick={diagnoseCurrentAsset}>Diagnosticar materiais e texturas agora</button>}
             {objDiag&&<div className={styles.materialDiag}><b>Diagnóstico do asset</b><span>{objDiag.materials||0} materiais únicos · {objDiag.materialSlots||0} slots</span><span>{objDiag.textures||0} texturas · {objDiag.baseColorMaps||0} Base Color · {objDiag.normalMaps||0} Normal</span><span>{objDiag.roughnessMaps||0} Roughness · {objDiag.metalnessMaps||0} Metallic · {objDiag.aoMaps||0} AO · {objDiag.emissiveMaps||0} Emissive</span><span>UVs: {objDiag.missingUvMeshes?objDiag.missingUvMeshes+" mesh(es) sem UV":"OK"} · Materiais múltiplos: {objDiag.multiMaterialMeshes||0} mesh(es)</span><span>Texturas incorporadas: {objDiag.embeddedTextures===false?"não / referência externa detectada":"sim"}</span></div>}
+            {(stats.materialDiagnostics||[]).filter(m=>m.editorId===obj.id).length>0&&<details className={styles.materialDiag}><summary>Materiais em tempo real ({(stats.materialDiagnostics||[]).filter(m=>m.editorId===obj.id).length})</summary>{(stats.materialDiagnostics||[]).filter(m=>m.editorId===obj.id).slice(0,80).map((m,i)=><span key={i}><b>{m.material}</b> · {m.type} · mapas: {m.textureSlots.join(", ")||"nenhum"} · R {m.roughness??"—"} · M {m.metalness??"—"}</span>)}</details>}
             {obj.material?.mode==="custom"&&<><label>Cor<input type="color" value={obj.material?.color||"#ffffff"} onChange={e=>patchMaterial({color:e.target.value})}/></label><label>Emissive<input type="color" value={obj.material?.emissive||"#000000"} onChange={e=>patchMaterial({emissive:e.target.value})}/></label><label>Roughness<input type="range" min="0" max="1" step=".01" value={obj.material?.roughness??.5} onChange={e=>patchMaterial({roughness:Number(e.target.value)})}/></label><label>Metalness<input type="range" min="0" max="1" step=".01" value={obj.material?.metalness??.05} onChange={e=>patchMaterial({metalness:Number(e.target.value)})}/></label><label>Opacidade<input type="range" min="0" max="1" step=".01" value={obj.material?.opacity??1} onChange={e=>patchMaterial({opacity:Number(e.target.value)})}/></label><label><input type="checkbox" checked={!!obj.material?.doubleSide} onChange={e=>patchMaterial({doubleSide:e.target.checked})}/> Renderizar frente e verso</label></>}
             <label>LOD mobile<input type="checkbox" checked={!!obj.lod?.enabled} onChange={e=>patchObject({lod:{...(obj.lod||{}),enabled:e.target.checked}})}/></label></>}
 
-          {obj.type?.includes("Light")&&<><h4>Luz RIPEAM</h4><label>Cor<input type="color" value={obj.color} onChange={e=>patchObject({color:e.target.value})}/></label><label>Setor (°)<input type="number" min="0" max="360" step=".5" value={obj.sector||360} onChange={e=>patchObject({sector:Number(e.target.value)})}/></label><label>Rumo do setor (°)<input type="number" value={obj.heading||0} onChange={e=>patchObject({heading:Number(e.target.value)})}/></label><label>Intensidade<input type="range" min="0" max="20" step=".1" value={obj.intensity} onChange={e=>patchObject({intensity:Number(e.target.value)})}/></label><label>Alcance visual<input type="number" value={obj.distance} onChange={e=>patchObject({distance:Number(e.target.value)})}/></label></>}
+          {obj.type?.includes("Light")&&<><h4>Luz RIPEAM</h4><label>Cor<input type="color" value={obj.color} onChange={e=>patchObject({color:e.target.value})}/></label><label>Setor (°)<input type="number" min="0" max="360" step=".5" value={obj.sector||360} onChange={e=>patchObject({sector:Number(e.target.value)})}/></label><label>Rumo do setor (°)<input type="number" value={obj.heading||0} onChange={e=>patchObject({heading:Number(e.target.value)})}/></label><label>Intensidade<input type="range" min="0" max="40" step=".1" value={obj.intensity} onChange={e=>patchObject({intensity:Number(e.target.value)})}/><small>{Number(obj.intensity||0).toFixed(1)}</small></label><label>Tamanho visual da luz<input type="range" min=".2" max="5" step=".05" value={obj.lightSize||1} onChange={e=>patchObject({lightSize:Number(e.target.value)})}/><small>{Number(obj.lightSize||1).toFixed(2)}×</small></label><label>Alcance visual<input type="number" min="0" max="200" step=".5" value={obj.distance} onChange={e=>patchObject({distance:Number(e.target.value)})}/></label><label>Decay físico<input type="range" min="0" max="4" step=".1" value={obj.decay??2} onChange={e=>patchObject({decay:Number(e.target.value)})}/><small>{Number(obj.decay??2).toFixed(1)}</small></label>{obj.type==="spotLight"&&<><label>Ângulo do cone (rad)<input type="range" min=".05" max="1.55" step=".01" value={obj.angle??.75} onChange={e=>patchObject({angle:Number(e.target.value)})}/></label><label>Penumbra<input type="range" min="0" max="1" step=".01" value={obj.penumbra??.25} onChange={e=>patchObject({penumbra:Number(e.target.value)})}/></label></>}</>}
 
           {obj.type==="shape"&&<label>Marca diurna<select value={obj.shape||"ball"} onChange={e=>patchObject({shape:e.target.value})}>{DAY_SHAPES.map(s=><option key={s.key} value={s.shape}>{s.label}</option>)}</select></label>}
           {obj.type==="hotspot"&&<><label>Título<input value={obj.hotspot?.title||""} onChange={e=>patchObject({hotspot:{...(obj.hotspot||{}),title:e.target.value}})}/></label><label>Texto<textarea value={obj.hotspot?.body||""} onChange={e=>patchObject({hotspot:{...(obj.hotspot||{}),body:e.target.value}})}/></label></>}

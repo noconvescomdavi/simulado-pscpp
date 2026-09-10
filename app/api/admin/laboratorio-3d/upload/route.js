@@ -3,6 +3,7 @@ import {saveUpload} from "../../../../../lib/site-editor/design-server";
 import {upsertRipeam3DAsset} from "../../../../../lib/ripeam-3d-scenes";
 import {assertSameOrigin} from "../../../../../lib/security";
 import {logAdminAction} from "../../../../../lib/admin-audit";
+import {createHash} from "node:crypto";
 
 export const runtime="nodejs";
 
@@ -18,7 +19,9 @@ export async function POST(request){
     const bytes=Number(file?.size||0);
     if(bytes<100)return Response.json({ok:false,error:"GLB vazio ou inválido."},{status:400});
     if(bytes>80*1024*1024)return Response.json({ok:false,error:"GLB excede o limite seguro de 80 MB."},{status:413});
-    const head=new Uint8Array(await file.slice(0,12).arrayBuffer());
+    const fileBuffer=Buffer.from(await file.arrayBuffer());
+    const sha256=createHash("sha256").update(fileBuffer).digest("hex");
+    const head=new Uint8Array(fileBuffer.buffer,fileBuffer.byteOffset,12);
     const magic=String.fromCharCode(...head.slice(0,4));
     const version=head[4]|(head[5]<<8)|(head[6]<<16)|(head[7]<<24);
     const declared=head[8]|(head[9]<<8)|(head[10]<<16)|(head[11]<<24);
@@ -52,7 +55,7 @@ export async function POST(request){
       bytes:Number(file?.size||0),
       category:String(form.get("category")||""),
       tags:String(form.get("tags")||"").split(",").map(x=>x.trim()).filter(Boolean),
-      metadata:{uploaded_from:"admin-laboratorio-3d",glbDiagnostics:diagnostics,materialModeDefault:"original"}
+      metadata:{uploaded_from:"admin-laboratorio-3d",glbDiagnostics:diagnostics,materialModeDefault:"original",contentHash:sha256,cacheStrategy:"content-hash"}
     });
     await logAdminAction({admin,action:"ripeam3d_upload",entityType:"ripeam3d_asset",entityKey:asset?.id||asset?.url,afterData:{name:asset?.name,url:asset?.url,bytes}});
     return Response.json({ok:true,...result,asset});

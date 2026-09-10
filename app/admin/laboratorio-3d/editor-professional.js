@@ -23,7 +23,7 @@ export const LIGHT_STACKS=[
   {key:"ggg",label:"G-G-G · Remoção de minas",colors:["#35dc83","#35dc83","#35dc83"],presets:["allround-green","allround-green","allround-green"]}
 ];
 
-export const PERFORMANCE_BUDGET={triangles:350000,drawCalls:220,textures:80,estimatedTextureMB:256,models:12};
+export const PERFORMANCE_BUDGET={triangles:350000,drawCalls:220,textures:80,materials:180,estimatedTextureMB:256,models:12};
 
 export const MARITIME_ANCHORS=[
   ["masthead","Mastro / tope"],["foremast","Mastro de vante"],["aftermast","Mastro de ré"],
@@ -48,6 +48,8 @@ export function performanceIssues(stats={}){
   if((stats.triangles||0)>PERFORMANCE_BUDGET.triangles)issues.push("Triângulos acima do orçamento");
   if((stats.drawCalls||0)>PERFORMANCE_BUDGET.drawCalls)issues.push("Draw calls acima do orçamento");
   if((stats.textures||0)>PERFORMANCE_BUDGET.textures)issues.push("Texturas acima do orçamento");
+  if((stats.materials||0)>PERFORMANCE_BUDGET.materials)issues.push("Materiais acima do orçamento");
+  if((stats.modelErrors||0)>0)issues.push("Há modelos com falha de carregamento");
   if((stats.estimatedTextureMB||0)>PERFORMANCE_BUDGET.estimatedTextureMB)issues.push("VRAM estimada de texturas acima do orçamento");
   if((stats.models||0)>PERFORMANCE_BUDGET.models)issues.push("Modelos acima do orçamento recomendado");
   return issues;

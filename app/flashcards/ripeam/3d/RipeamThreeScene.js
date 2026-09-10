@@ -5,11 +5,11 @@ import styles from "./ripeam-3d.module.css";
 
 const THREE_VERSION="0.180.0";
 const SEA_LEVEL=0;
-const RIPEAM_ASSET_REV="textures-20260910-r1";
-const versionAssetUrl=url=>{
+const RIPEAM_ASSET_REV="textures-20260910-r2";
+const versionAssetUrl=(url,revision)=>{
   const value=String(url||"");
   if(!value.startsWith("/models/ripeam/"))return value;
-  return value+(value.includes("?")?"&":"?")+"v="+RIPEAM_ASSET_REV;
+  return value+(value.includes("?")?"&":"?")+"v="+encodeURIComponent(String(revision||RIPEAM_ASSET_REV));
 };
 let modernThreePromise=null;
 const browserImport=url=>new Function("u","return import(u)")(url);
@@ -18,13 +18,14 @@ async function getThree(){
   if(!modernThreePromise){
     modernThreePromise=(async()=>{
       const THREE=await browserImport("https://esm.sh/three@"+THREE_VERSION);
-      const [{GLTFLoader},{OrbitControls},{FBXLoader},{RoomEnvironment}]=await Promise.all([
+      const [{GLTFLoader},{OrbitControls},{FBXLoader},{RoomEnvironment},{MeshoptDecoder}]=await Promise.all([
         browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/loaders/GLTFLoader.js"),
         browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/controls/OrbitControls.js"),
         browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/loaders/FBXLoader.js"),
-        browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/environments/RoomEnvironment.js")
+        browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/environments/RoomEnvironment.js"),
+        browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/libs/meshopt_decoder.module.js")
       ]);
-      return {...THREE,GLTFLoader,OrbitControls,FBXLoader,RoomEnvironment};
+      return {...THREE,GLTFLoader,OrbitControls,FBXLoader,RoomEnvironment,MeshoptDecoder};
     })().catch(error=>{modernThreePromise=null;throw error;});
   }
   return modernThreePromise;
@@ -62,7 +63,8 @@ function loadProgress(loader,url,onProgress){
 
 async function loadRawModel(THREE,config,onProgress){
   if(config.type==="glb"){
-    const gltf=await loadProgress(new THREE.GLTFLoader(),versionAssetUrl(config.url),onProgress);
+    const loader=new THREE.GLTFLoader();loader.setMeshoptDecoder?.(THREE.MeshoptDecoder);
+    const gltf=await loadProgress(loader,versionAssetUrl(config.url,config.assetRevision||config.assetHash||config.version),onProgress);
     if(!gltf?.scene)throw new Error("GLB carregado sem scene.");
     gltf.scene.traverse?.(obj=>{
       if(!obj.isMesh||!obj.geometry)return;
