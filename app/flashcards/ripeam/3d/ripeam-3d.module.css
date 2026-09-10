@@ -128,3 +128,8 @@
   .controls{left:50%;right:auto;transform:translateX(-50%);max-width:92vw}
   .lightPanel{max-height:35dvh;overflow:auto}
 }
+
+.controlsVisible{opacity:1;transform:translateY(0);transition:opacity .22s ease,transform .22s ease}
+.controlsHidden{opacity:.16;transform:translateY(5px);transition:opacity .35s ease,transform .35s ease}
+.viewerShell:hover .controlsHidden,.viewerShell:focus-within .controlsHidden{opacity:1;transform:translateY(0)}
+@media (hover:none){.controlsHidden{opacity:.12}}
