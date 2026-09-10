@@ -167,6 +167,7 @@ export default function EditorClient(){
   const [flashcardManagerOpen,setFlashcardManagerOpen]=useState(false);
   const [studioMenuOpen,setStudioMenuOpen]=useState(false);
   const [replacementTargetId,setReplacementTargetId]=useState(null);
+  const [selectionPanel,setSelectionPanel]=useState("");
   const [moveMode,setMoveMode]=useState(true);
   const [snapSize,setSnapSize]=useState(1);
   const [showGrid,setShowGrid]=useState(false);
@@ -359,6 +360,10 @@ export default function EditorClient(){
       [data-ev-selected]::after{content:"ARRASTE";position:absolute!important;right:0!important;top:-24px!important;padding:4px 7px!important;border-radius:5px!important;background:#2f80ed!important;color:white!important;font:700 9px/1 Arial!important;letter-spacing:.08em!important;z-index:2147483647!important;pointer-events:none!important}
       html.ev-editor-grid body{background-image:linear-gradient(rgba(30,58,95,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(30,58,95,.08) 1px,transparent 1px)!important;background-size:20px 20px!important}
       [data-ev-dragging]{cursor:grabbing!important;user-select:none!important}
+      [data-ev-resize-overlay] span{position:absolute;width:10px;height:10px;border:2px solid #fff;background:#2f80ed;border-radius:2px;box-shadow:0 0 0 1px #2f80ed;pointer-events:auto}
+      [data-ev-resize="nw"]{left:-6px;top:-6px;cursor:nwse-resize}[data-ev-resize="n"]{left:50%;top:-6px;transform:translateX(-50%);cursor:ns-resize}[data-ev-resize="ne"]{right:-6px;top:-6px;cursor:nesw-resize}
+      [data-ev-resize="e"]{right:-6px;top:50%;transform:translateY(-50%);cursor:ew-resize}[data-ev-resize="se"]{right:-6px;bottom:-6px;cursor:nwse-resize}[data-ev-resize="s"]{left:50%;bottom:-6px;transform:translateX(-50%);cursor:ns-resize}
+      [data-ev-resize="sw"]{left:-6px;bottom:-6px;cursor:nesw-resize}[data-ev-resize="w"]{left:-6px;top:50%;transform:translateY(-50%);cursor:ew-resize}
     `;
     doc.head.appendChild(s);
     doc.documentElement.classList.toggle("ev-editor-grid",gridRef.current);
@@ -366,11 +371,52 @@ export default function EditorClient(){
     let hover,selected,drag=null;
 
     const over=e=>{if(drag)return;if(hover)hover.removeAttribute("data-ev-hover");hover=e.target;hover?.setAttribute("data-ev-hover","")};
-    const click=e=>{e.preventDefault();e.stopPropagation();if(drag)return;if(selected)selected.removeAttribute("data-ev-selected");selected=e.target;selected.setAttribute("data-ev-selected","");selectElement(selected)};
+    const click=e=>{e.preventDefault();e.stopPropagation();if(drag||resize)return;if(e.target?.closest?.("[data-ev-resize-overlay]"))return;if(selected)selected.removeAttribute("data-ev-selected");selected=e.target;selected.setAttribute("data-ev-selected","");selectElement(selected);setTimeout(updateResizeOverlay,0)};
+
+    let resize=null,resizeOverlay=null;
+
+    const clearResizeOverlay=()=>{resizeOverlay?.remove();resizeOverlay=null};
+    const updateResizeOverlay=()=>{
+      clearResizeOverlay();
+      if(!selected||!doc.contains(selected))return;
+      const r=selected.getBoundingClientRect();
+      const overlay=doc.createElement("div");overlay.setAttribute("data-ev-resize-overlay","");
+      Object.assign(overlay.style,{position:"fixed",left:r.left+"px",top:r.top+"px",width:r.width+"px",height:r.height+"px",border:"1.5px solid #2f80ed",boxSizing:"border-box",zIndex:"2147483646",pointerEvents:"none"});
+      const dirs=["nw","n","ne","e","se","s","sw","w"];
+      for(const dir of dirs){const h=doc.createElement("span");h.dataset.evResize=dir;overlay.appendChild(h)}
+      doc.body.appendChild(overlay);resizeOverlay=overlay;
+    };
+
+    const persistPatch=(el,blockId,patch,message)=>{
+      if(blockId){
+        updateBlock(blockId,b=>{if(viewport==="desktop")b.style={...(b.style||{}),...patch};else{b.responsive={...(b.responsive||{})};b.responsive[viewport]={...(b.responsive[viewport]||{}),style:{...(b.responsive?.[viewport]?.style||{}),...patch}}}return b;},message);
+        setSelectedBlockId(blockId);setTarget(null);return;
+      }
+      const selector=selectorFor(el);if(!selector)return;
+      remember();setStyle(s=>({...s,...patch}));setStyleOverrides(prev=>({...prev,...patch}));
+      setDesign(current=>{const n=clone(current||{version:5,global:{favicon:"",elements:{}},pages:{}});n.global||={favicon:"",elements:{}};n.global.elements||={};n.pages||={};const holder=scopeRef.current==="global"?n.global.elements:((n.pages[pageRef.current]||={elements:{}}).elements||=( {} ));const config=holder[selector]||{};if(viewport==="desktop")config.style={...(config.style||{}),...patch};else{config.responsive={...(config.responsive||{})};config.responsive[viewport]={...(config.responsive[viewport]||{}),style:{...(config.responsive?.[viewport]?.style||{}),...patch}}}holder[selector]=config;return n});
+      setStatus(message);
+    };
+
+    const normalizeForFreeMove=(el)=>{
+      const visual=el.getBoundingClientRect();
+      const cs=doc.defaultView.getComputedStyle(el);
+      const nums=String(cs.translate||"").match(/-?\d+(?:\.\d+)?/g)||[];
+      let baseTx=Number(nums[0]||0),baseTy=Number(nums[1]||0);
+      if(cs.position==="absolute"||cs.position==="fixed"){
+        const saved={position:el.style.position,left:el.style.left,top:el.style.top,right:el.style.right,bottom:el.style.bottom,margin:el.style.margin,translate:el.style.translate,width:el.style.width};
+        el.style.position="relative";el.style.left="";el.style.top="";el.style.right="";el.style.bottom="";el.style.margin="";el.style.translate="0px 0px";
+        const natural=el.getBoundingClientRect();
+        baseTx=Math.round(visual.left-natural.left);baseTy=Math.round(visual.top-natural.top);
+        el.style.position=saved.position;el.style.left=saved.left;el.style.top=saved.top;el.style.right=saved.right;el.style.bottom=saved.bottom;el.style.margin=saved.margin;el.style.translate=saved.translate;el.style.width=saved.width;
+      }
+      return {baseTx,baseTy};
+    };
 
     const down=e=>{
       if(!moveModeRef.current)return;
       if(e.pointerType==="mouse"&&e.button!==0)return;
+      if(e.target?.closest?.("[data-ev-resize-overlay]"))return;
       e.preventDefault();e.stopPropagation();
       if(selected)selected.removeAttribute("data-ev-selected");
       const blockRoot=e.target?.closest?.("[data-estibordo-editor-block]");
@@ -378,57 +424,74 @@ export default function EditorClient(){
       selected?.setAttribute("data-ev-selected","");
       selectElement(selected);
       const rect=selected.getBoundingClientRect();
-      const parent=selected.offsetParent||selected.parentElement||doc.body;
-      const parentRect=parent.getBoundingClientRect();
-      const baseX=Math.round(rect.left-parentRect.left+(parent.scrollLeft||0));
-      const baseY=Math.round(rect.top-parentRect.top+(parent.scrollTop||0));
-      drag={el:selected,blockId:blockRoot?.getAttribute("data-estibordo-editor-block")||null,startX:e.clientX,startY:e.clientY,baseX,baseY,x:baseX,y:baseY,width:Math.round(rect.width),height:Math.round(rect.height),original:selected.getAttribute("style")||"",activated:false,pointerId:e.pointerId};
+      const norm=normalizeForFreeMove(selected);
+      drag={el:selected,blockId:blockRoot?.getAttribute("data-estibordo-editor-block")||null,startX:e.clientX,startY:e.clientY,baseTx:norm.baseTx,baseTy:norm.baseTy,tx:norm.baseTx,ty:norm.baseTy,width:Math.round(rect.width),height:Math.round(rect.height),pointerId:e.pointerId,activated:false};
       selected.setAttribute("data-ev-dragging","");
       try{selected.setPointerCapture?.(e.pointerId)}catch{}
     };
 
     const move=e=>{
+      if(resize){
+        if(resize.pointerId!==undefined&&e.pointerId!==resize.pointerId)return;e.preventDefault();
+        const dx=e.clientX-resize.startX,dy=e.clientY-resize.startY,dir=resize.dir;
+        let w=resize.width,h=resize.height,tx=resize.tx,ty=resize.ty;
+        if(dir.includes("e"))w=Math.max(24,resize.width+dx);
+        if(dir.includes("s"))h=Math.max(18,resize.height+dy);
+        if(dir.includes("w")){w=Math.max(24,resize.width-dx);tx=resize.tx+(resize.width-w)}
+        if(dir.includes("n")){h=Math.max(18,resize.height-dy);ty=resize.ty+(resize.height-h)}
+        resize.el.style.width=Math.round(w)+"px";resize.el.style.height=Math.round(h)+"px";resize.el.style.position="relative";resize.el.style.left="";resize.el.style.top="";resize.el.style.translate=Math.round(tx)+"px "+Math.round(ty)+"px";
+        resize.next={width:Math.round(w)+"px",height:Math.round(h)+"px",position:"relative",left:"",top:"",right:"",bottom:"",translate:Math.round(tx)+"px "+Math.round(ty)+"px"};
+        updateResizeOverlay();return;
+      }
       if(!drag)return;
       if(drag.pointerId!==undefined&&e.pointerId!==undefined&&e.pointerId!==drag.pointerId)return;
       e.preventDefault();
       const dx=e.clientX-drag.startX,dy=e.clientY-drag.startY;
       if(!drag.activated&&Math.hypot(dx,dy)<2)return;
-      if(!drag.activated){
-        drag.activated=true;
-        drag.el.style.position="absolute";drag.el.style.width=drag.width+"px";drag.el.style.margin="0";drag.el.style.translate="none";
-        drag.el.style.zIndex=String(Math.max(1,Number(doc.defaultView.getComputedStyle(drag.el).zIndex)||1));
-      }
+      drag.activated=true;
       const step=snapRef.current?Math.max(1,Number(snapSizeRef.current)||1):1;
-      let x=drag.baseX+dx,y=drag.baseY+dy;x=Math.round(x/step)*step;y=Math.round(y/step)*step;
-      drag.x=x;drag.y=y;drag.el.style.left=x+"px";drag.el.style.top=y+"px";
+      drag.tx=Math.round((drag.baseTx+dx)/step)*step;drag.ty=Math.round((drag.baseTy+dy)/step)*step;
+      drag.el.style.position="relative";drag.el.style.left="";drag.el.style.top="";drag.el.style.right="";drag.el.style.bottom="";drag.el.style.translate=drag.tx+"px "+drag.ty+"px";
+      updateResizeOverlay();
     };
 
-    const up=()=>{
+    const up=e=>{
+      if(resize){
+        const current=resize;resize=null;try{current.el.releasePointerCapture?.(current.pointerId)}catch{};
+        if(current.next)persistPatch(current.el,current.blockId,current.next,"Objeto redimensionado livremente.");
+        updateResizeOverlay();return;
+      }
       if(!drag)return;
       const currentDrag=drag;drag=null;currentDrag.el.removeAttribute("data-ev-dragging");try{currentDrag.el.releasePointerCapture?.(currentDrag.pointerId)}catch{}
-      if(!currentDrag.activated){if(currentDrag.original)currentDrag.el.setAttribute("style",currentDrag.original);else currentDrag.el.removeAttribute("style");return}
-      const patch={position:"absolute",left:currentDrag.x+"px",top:currentDrag.y+"px",width:currentDrag.width+"px",translate:"none",marginLeft:"0px",marginTop:"0px"};
-      if(currentDrag.blockId){
-        updateBlock(currentDrag.blockId,b=>{if(viewport==="desktop")b.style={...(b.style||{}),...patch};else{b.responsive={...(b.responsive||{})};b.responsive[viewport]={...(b.responsive[viewport]||{}),style:{...(b.responsive?.[viewport]?.style||{}),...patch}}}return b;},"Posição absoluta pixel-perfect salva neste breakpoint.");
-        setSelectedBlockId(currentDrag.blockId);setTarget(null);
-      }else{
-        const selector=selectorFor(currentDrag.el);remember();setStyle(s=>({...s,...patch}));setStyleOverrides(prev=>({...prev,...patch}));
-        setDesign(current=>{const n=clone(current||{version:5,global:{favicon:"",elements:{}},pages:{}});n.global||={favicon:"",elements:{}};n.global.elements||={};n.pages||={};const holder=scopeRef.current==="global"?n.global.elements:((n.pages[pageRef.current]||={elements:{}}).elements||=( {} ));const config=holder[selector]||{};if(viewport==="desktop")config.style={...(config.style||{}),...patch};else{config.responsive={...(config.responsive||{})};config.responsive[viewport]={...(config.responsive[viewport]||{}),style:{...(config.responsive?.[viewport]?.style||{}),...patch}}}holder[selector]=config;return n});
-        setStatus("Posição absoluta pixel-perfect salva neste breakpoint.");
-      }
+      if(!currentDrag.activated){updateResizeOverlay();return}
+      const patch={position:"relative",left:"",top:"",right:"",bottom:"",translate:currentDrag.tx+"px "+currentDrag.ty+"px"};
+      persistPatch(currentDrag.el,currentDrag.blockId,patch,"Objeto movido sem colapsar o espaço original.");
+      updateResizeOverlay();
+    };
+
+    const resizeDown=e=>{
+      const handle=e.target?.closest?.("[data-ev-resize]");
+      if(!handle||!selected)return;
+      e.preventDefault();e.stopPropagation();
+      const rect=selected.getBoundingClientRect(),cs=doc.defaultView.getComputedStyle(selected),nums=String(cs.translate||"").match(/-?\d+(?:\.\d+)?/g)||[];
+      const blockRoot=selected.closest?.("[data-estibordo-editor-block]");
+      resize={el:selected,blockId:blockRoot?.getAttribute("data-estibordo-editor-block")||null,dir:handle.dataset.evResize,startX:e.clientX,startY:e.clientY,width:rect.width,height:rect.height,tx:Number(nums[0]||0),ty:Number(nums[1]||0),pointerId:e.pointerId,next:null};
+      try{selected.setPointerCapture?.(e.pointerId)}catch{}
     };
 
     doc.addEventListener("mouseover",over,true);
     doc.addEventListener("click",click,true);
     doc.addEventListener("pointerdown",down,true);
+    doc.addEventListener("pointerdown",resizeDown,true);
     doc.addEventListener("pointermove",move,true);
     doc.addEventListener("pointerup",up,true);
     doc.addEventListener("pointercancel",up,true);
+    doc.defaultView.addEventListener("scroll",updateResizeOverlay,true);
     cleanupRef.current=()=>{
+      clearResizeOverlay();
       doc.removeEventListener("mouseover",over,true);doc.removeEventListener("click",click,true);
-      doc.removeEventListener("pointerdown",down,true);doc.removeEventListener("pointermove",move,true);doc.removeEventListener("pointerup",up,true);doc.removeEventListener("pointercancel",up,true);s.remove()
-    };
-  }
+      doc.removeEventListener("pointerdown",down,true);doc.removeEventListener("pointerdown",resizeDown,true);doc.removeEventListener("pointermove",move,true);doc.removeEventListener("pointerup",up,true);doc.removeEventListener("pointercancel",up,true);doc.defaultView.removeEventListener("scroll",updateResizeOverlay,true);s.remove()
+    };  }
 
   function write(nextStyle=styleOverrides,nextAttrs=attrsOverrides,nextHidden=hidden,nextLocked=locked,nextCloneCount=cloneCount){
     if(!target?.selector)return;
@@ -692,7 +755,7 @@ export default function EditorClient(){
       <div className="ev-actions"><span className={dirty?"ev-dirty":"ev-saved"}>{dirty?"Alterações não publicadas":"Tudo salvo"}</span><a href={page} target="_blank">Abrir página ↗</a><button className="ev-publish" disabled={!dirty||saving} onClick={save}>{saving?"Publicando…":"Salvar e publicar"}</button></div>
     </header>
 
-    <StudioMenu open={studioMenuOpen} onClose={()=>{setStudioMenuOpen(false);setReplacementTargetId(null)}} replacementMode={Boolean(replacementTargetId)} replacementType={replacementTargetId?findBlock(design?.pages?.[page]?.blocks||[],replacementTargetId)?.type:""}  siteMap={siteMap} page={page} onPageChange={url=>{setPage(url);setTarget(null);setSelectedBlockId(null);setStudioMenuOpen(false)}} layers={layers} onSelectLayer={selector=>{selectBySelector(selector);setStudioMenuOpen(false)}} blocks={design?.pages?.[page]?.blocks||[]} selectedBlockId={selectedBlockId} onSelectBlock={id=>{setSelectedBlockId(id);setTarget(null);setStudioMenuOpen(false)}} onOpenBuilder={()=>{setStudioMenuOpen(false);setToolboxOpen(true)}} onOpenFlashcards={()=>{setStudioMenuOpen(false);setFlashcardManagerOpen(true)}} media={design?.global?.media||[]} onUploadMedia={uploadLibraryMedia} onAddIcon={addIconAsset} onAddLogo={addLogoAsset} onAddSignalFlag={addSignalFlag} onImportImage={importExternalImage} customCode={customCode()} onCustomCode={updateCustomCode} breakpoints={breakpoints()} onBreakpoints={updateBreakpoints}/>
+    <StudioMenu open={studioMenuOpen} onClose={()=>{setStudioMenuOpen(false);setReplacementTargetId(null)}} replacementMode={Boolean(replacementTargetId)} replacementType={replacementTargetId?findBlock(design?.pages?.[page]?.blocks||[],replacementTargetId)?.type:""} selectionMode={selectionPanel} onSelectionMode={setSelectionPanel}  siteMap={siteMap} page={page} onPageChange={url=>{setPage(url);setTarget(null);setSelectedBlockId(null);setStudioMenuOpen(false)}} layers={layers} onSelectLayer={selector=>{selectBySelector(selector);setStudioMenuOpen(false)}} blocks={design?.pages?.[page]?.blocks||[]} selectedBlockId={selectedBlockId} onSelectBlock={id=>{setSelectedBlockId(id);setTarget(null);setStudioMenuOpen(false)}} onOpenBuilder={()=>{setStudioMenuOpen(false);setToolboxOpen(true)}} onOpenFlashcards={()=>{setStudioMenuOpen(false);setFlashcardManagerOpen(true)}} media={design?.global?.media||[]} onUploadMedia={uploadLibraryMedia} onAddIcon={addIconAsset} onAddLogo={addLogoAsset} onAddSignalFlag={addSignalFlag} onImportImage={importExternalImage} customCode={customCode()} onCustomCode={updateCustomCode} breakpoints={breakpoints()} onBreakpoints={updateBreakpoints}/>
     <EditorToolbox open={toolboxOpen} onClose={()=>setToolboxOpen(false)} onAdd={addBlock} onAction={toolboxAction} pageSettings={pageConfig()} onPageSettings={updatePageSettings} media={design?.global?.media||[]} onUploadMedia={uploadLibraryMedia} designSystem={designSystem()} onDesignSystem={updateDesignSystem} components={components()} onApplyComponent={applyComponent} onDeleteComponent={deleteComponent} versions={versions()} onRestoreVersion={restoreVersion} onCreatePage={createManagedPage} pageTemplates={PAGE_TEMPLATE_OPTIONS} onApplyPageTemplate={applyPageTemplate}/>
     <FlashcardManager open={flashcardManagerOpen} onClose={()=>setFlashcardManagerOpen(false)} initialSlug={page.startsWith("/flashcards/")?page.split("/")[2]:"cis"} onChanged={()=>setStatus("Flashcard salvo no banco. Atualize a prévia para conferir.")}/>
     <div className="ev-workspace">
@@ -703,7 +766,7 @@ export default function EditorClient(){
       </aside>
 
       <section className="ev-canvas">
-        <div className="ev-canvas-head"><div><b>{pageLabel}</b><span>{page}</span></div><em>{moveMode?"Drag & Drop universal ativo · arraste qualquer elemento":`${preview.label} · zoom ${zoom}%`}</em></div>
+        <div className="ev-canvas-head"><div><b>{pageLabel}</b><span>{page}</span></div><div className="ev-selectors"><button type="button" onClick={()=>{setSelectionPanel("layers");setStudioMenuOpen(true)}}>Selecionar camada</button><button type="button" onClick={()=>{setSelectionPanel("objects");setStudioMenuOpen(true)}}>Selecionar objeto</button></div><em>{moveMode?"Drag & Drop universal ativo · arraste qualquer elemento":`${preview.label} · zoom ${zoom}%`}</em></div>
         <div className="ev-frame-area" ref={frameAreaRef}>
           <div className={`ev-frame-shell ev-${viewport}`} style={{width:`${preview.width*effectiveScale}px`,height:`${preview.height*effectiveScale}px`}}>
             <iframe ref={iframeRef} key={page} src={previewSrc} onLoad={wireIframe} title="Prévia da página" style={{width:`${preview.width}px`,height:`${preview.height}px`,transform:`scale(${effectiveScale})`,transformOrigin:"top left"}}/>
