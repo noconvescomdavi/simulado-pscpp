@@ -422,7 +422,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
       const hasLiveConfig=Array.isArray(editorObjects);
       const editorModels=editorObjects?.filter(o=>o.type==="model"&&o.visible!==false)||[];
       const urls=editorModels.length?editorModels.map(o=>o.assetUrl):sceneConfig.vessels.map(v=>MODEL_CONFIG[v]?.url||v);
-      root.innerHTML=`<div class="${styles.loading}" data-loading-overlay><b>CARREGANDO...</b><span class="${styles.loadingAsset}">${urls.join(" · ")}</span><div class="${styles.loadingTrack}" role="progressbar" aria-label="Carregando modelo 3D" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-progress-track><i data-progress-bar></i></div><strong data-progress>0%</strong><small data-loading-status>Preparando modelo 3D</small></div>`;
+      root.innerHTML=`<div class="${styles.loading}" data-loading-overlay><b>CARREGANDO...</b><span class="${styles.loadingAsset}">Carregando recursos do modelo</span><div class="${styles.loadingTrack}" role="progressbar" aria-label="Carregando modelo 3D" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-progress-track><i data-progress-bar></i></div><strong data-progress>0%</strong><small data-loading-status>Preparando modelo 3D</small></div>`;
       onDiagnostics?.({status:"loading",frames:0});
 
       try{
