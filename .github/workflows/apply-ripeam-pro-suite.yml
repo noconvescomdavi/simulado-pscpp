@@ -1,0 +1,167 @@
+name: Apply RIPEAM Pro Suite
+on:
+  push:
+    branches: [feat/ripeam-pro-suite-20260910]
+permissions:
+  contents: write
+jobs:
+  patch:
+    if: ${{ !contains(github.event.head_commit.message, '[pro-patch]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/ripeam-pro-suite-20260910
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply safe editor upgrades
+        shell: python
+        run: |
+          from pathlib import Path
+
+          def patch(path, old, new, count=1):
+              p=Path(path); s=p.read_text(encoding='utf-8')
+              n=s.replace(old,new,count)
+              if n==s:
+                  raise SystemExit(f'Pattern not found in {path}: {old[:120]!r}')
+              p.write_text(n,encoding='utf-8')
+
+          # --- Hash/versioned asset cache + advanced GLTF support in admin viewport ---
+          p='app/admin/laboratorio-3d/Admin3DViewport.js'
+          patch(p,
+          '''const RIPEAM_ASSET_REV="textures-20260910-r1";\nconst versionAssetUrl=url=>{\n  const value=String(url||"");\n  if(!value.startsWith("/models/ripeam/"))return value;\n  return value+(value.includes("?")?"&":"?")+"v="+RIPEAM_ASSET_REV;\n};''',
+          '''const RIPEAM_ASSET_REV="textures-20260910-r2";\nconst versionAssetUrl=(url,revision)=>{\n  const value=String(url||"");\n  if(!value.startsWith("/models/ripeam/"))return value;\n  const rev=encodeURIComponent(String(revision||RIPEAM_ASSET_REV));\n  return value+(value.includes("?")?"&":"?")+"v="+rev;\n};''')
+
+          patch(p,
+          '''      const [{OrbitControls},{TransformControls},{GLTFLoader},{FBXLoader},{OBJLoader},{RoomEnvironment}]=await Promise.all([\n        import(/* webpackIgnore: true */ CDN+"/examples/jsm/controls/OrbitControls.js"),\n        import(/* webpackIgnore: true */ CDN+"/examples/jsm/controls/TransformControls.js"),\n        import(/* webpackIgnore: true */ CDN+"/examples/jsm/loaders/GLTFLoader.js"),\n        import(/* webpackIgnore: true */ CDN+"/examples/jsm/loaders/FBXLoader.js"),\n        import(/* webpackIgnore: true */ CDN+"/examples/jsm/loaders/OBJLoader.js"),\n        import(/* webpackIgnore: true */ CDN+"/examples/jsm/environments/RoomEnvironment.js")\n      ]);''',
+          '''      const [{OrbitControls},{TransformControls},{GLTFLoader},{FBXLoader},{OBJLoader},{RoomEnvironment},{MeshoptDecoder}]=await Promise.all([\n        import(/* webpackIgnore: true */ CDN+"/examples/jsm/controls/OrbitControls.js"),\n        import(/* webpackIgnore: true */ CDN+"/examples/jsm/controls/TransformControls.js"),\n        import(/* webpackIgnore: true */ CDN+"/examples/jsm/loaders/GLTFLoader.js"),\n        import(/* webpackIgnore: true */ CDN+"/examples/jsm/loaders/FBXLoader.js"),\n        import(/* webpackIgnore: true */ CDN+"/examples/jsm/loaders/OBJLoader.js"),\n        import(/* webpackIgnore: true */ CDN+"/examples/jsm/environments/RoomEnvironment.js"),\n        import(/* webpackIgnore: true */ CDN+"/examples/jsm/libs/meshopt_decoder.module.js")\n      ]);''')
+
+          patch(p,
+          '''      runtime.current={\n        THREE,sc,camera,renderer,orbit,grid,water,hemi,sun,objects,transform,ro,pmremGenerator,roomEnvironment,environmentTarget,raf:0,\n        loaders:{glb:new GLTFLoader(),gltf:new GLTFLoader(),fbx:new FBXLoader(),obj:new OBJLoader()}\n      };''',
+          '''      const glbLoader=new GLTFLoader();\n      const gltfLoader=new GLTFLoader();\n      glbLoader.setMeshoptDecoder?.(MeshoptDecoder);\n      gltfLoader.setMeshoptDecoder?.(MeshoptDecoder);\n      runtime.current={\n        THREE,sc,camera,renderer,orbit,grid,water,hemi,sun,objects,transform,ro,pmremGenerator,roomEnvironment,environmentTarget,raf:0,\n        loaders:{glb:glbLoader,gltf:gltfLoader,fbx:new FBXLoader(),obj:new OBJLoader()}\n      };''')
+
+          patch(p,
+          '''    let triangles=0,meshes=0,lights=0,models=0,modelErrors=0,textures=0,estimatedTextureMB=0;''',
+          '''    let triangles=0,meshes=0,lights=0,models=0,modelErrors=0,textures=0,estimatedTextureMB=0;\n    const materialDiagnostics=[];\n    const materialSeen=new Set();''')
+
+          patch(p,
+          '''        mats.filter(Boolean).forEach(m=>{\n          // Ajustes técnicos seguros: preservam o material e as texturas do GLB.''',
+          '''        mats.filter(Boolean).forEach(m=>{\n          if(!materialSeen.has(m.uuid)){\n            materialSeen.add(m.uuid);\n            const textureSlots=["map","normalMap","roughnessMap","metalnessMap","aoMap","emissiveMap"].filter(k=>m[k]?.isTexture);\n            materialDiagnostics.push({editorId:data.id,mesh:o.name||"Mesh",material:m.name||"Material",type:m.type||"Material",textureSlots,roughness:Number.isFinite(m.roughness)?m.roughness:null,metalness:Number.isFinite(m.metalness)?m.metalness:null,opacity:Number.isFinite(m.opacity)?m.opacity:null,transparent:!!m.transparent});\n          }\n          // Ajustes técnicos seguros: preservam o material e as texturas do GLB.''')
+
+          patch(p,
+          '''            const resolvedAssetUrl=versionAssetUrl(data.assetUrl);''',
+          '''            const resolvedAssetUrl=versionAssetUrl(data.assetUrl,data.assetRevision||data.assetHash||data.version);''')
+
+          patch(p,
+          '''        if(data.type==="directionalLight")light=new r.THREE.DirectionalLight(color,data.intensity||2);\n        else if(data.type==="spotLight")light=new r.THREE.SpotLight(color,data.intensity||3,data.distance||12,data.angle||.75,data.penumbra||.25);\n        else light=new r.THREE.PointLight(color,data.intensity||3,data.distance||12);''',
+          '''        if(data.type==="directionalLight")light=new r.THREE.DirectionalLight(color,data.intensity||2);\n        else if(data.type==="spotLight")light=new r.THREE.SpotLight(color,data.intensity||3,data.distance||12,data.angle||.75,data.penumbra||.25,data.decay??2);\n        else light=new r.THREE.PointLight(color,data.intensity||3,data.distance||12,data.decay??2);''')
+
+          patch(p,
+          '''      for(const data of scene.objects||[]){\n        const root=roots.get(data.id);if(!root)continue;\n        const parent=data.parentId?roots.get(data.parentId):null;\n        (parent||r.objects).add(root);\n      }\n\n      for(const data of scene.objects||[]){''',
+          '''      const anchorBoxes=new Map();\n      for(const data of scene.objects||[]){\n        const root=roots.get(data.id);\n        if(!root||data.type!=="model")continue;\n        root.updateMatrixWorld(true);\n        const box=new r.THREE.Box3().setFromObject(root);\n        if(!box.isEmpty())anchorBoxes.set(data.id,box);\n      }\n      const anchorPoint=(parent,data)=>{\n        const box=anchorBoxes.get(data.parentId);if(!box)return null;\n        const min=box.min,max=box.max,c=box.getCenter(new r.THREE.Vector3());\n        const map={\n          masthead:[c.x,max.y,c.z],foremast:[c.x,min.y+(max.y-min.y)*.78,min.z+(max.z-min.z)*.28],aftermast:[c.x,min.y+(max.y-min.y)*.72,min.z+(max.z-min.z)*.72],\n          port:[min.x,c.y,c.z],starboard:[max.x,c.y,c.z],stern:[c.x,c.y,max.z],bow:[c.x,c.y,min.z],\n          "yard-port":[min.x,max.y-(max.y-min.y)*.12,c.z],"yard-starboard":[max.x,max.y-(max.y-min.y)*.12,c.z],\n          "flag-halyard":[c.x,max.y-(max.y-min.y)*.08,max.z-(max.z-min.z)*.22],waterline:[c.x,min.y+(max.y-min.y)*.18,c.z]\n        };\n        const world=map[data.anchorName];if(!world)return null;\n        const point=new r.THREE.Vector3(...world);\n        parent.updateMatrixWorld(true);\n        return parent.worldToLocal(point);\n      };\n      for(const data of scene.objects||[]){\n        const root=roots.get(data.id);if(!root)continue;\n        const parent=data.parentId?roots.get(data.parentId):null;\n        (parent||r.objects).add(root);\n        if(parent&&data.anchorName){const p=anchorPoint(parent,data);if(p)root.position.copy(p).add(new r.THREE.Vector3(...(data.anchorOffset||[0,0,0])))}\n      }\n\n      for(const data of scene.objects||[]){''')
+
+          patch(p,
+          '''      propsRef.current.onStats?.({triangles,meshes,lights,models,modelErrors,textures,estimatedTextureMB:Number(estimatedTextureMB.toFixed(1)),drawCalls:info?.render?.calls||0,geometries:info?.memory?.geometries||0,objects:(scene.objects||[]).length});''',
+          '''      propsRef.current.onStats?.({triangles,meshes,lights,models,modelErrors,textures,materials:materialSeen.size,materialDiagnostics,estimatedTextureMB:Number(estimatedTextureMB.toFixed(1)),drawCalls:info?.render?.calls||0,geometries:info?.memory?.geometries||0,objects:(scene.objects||[]).length});''')
+
+          # Drop assets directly on the water plane.
+          patch(p,
+          '''export default function Admin3DViewport({\n  scene,selectedId,mode,onSelect,onTransform,onCameraChange,onStats,readOnly=false,playhead=0\n}){''',
+          '''export default function Admin3DViewport({\n  scene,selectedId,mode,onSelect,onTransform,onCameraChange,onStats,onAssetDrop,readOnly=false,playhead=0\n}){''')
+          patch(p,
+          '''  propsRef.current={scene,selectedId,mode,onSelect,onTransform,onCameraChange,onStats,readOnly,playhead};''',
+          '''  propsRef.current={scene,selectedId,mode,onSelect,onTransform,onCameraChange,onStats,onAssetDrop,readOnly,playhead};''')
+          patch(p,
+          '''      renderer.domElement.addEventListener("pointerdown",e=>{\n        if(transform.dragging||propsRef.current.readOnly)return;''',
+          '''      renderer.domElement.addEventListener("dragover",e=>{if(!propsRef.current.readOnly)e.preventDefault()});\n      renderer.domElement.addEventListener("drop",e=>{\n        if(propsRef.current.readOnly)return;\n        e.preventDefault();\n        try{\n          const asset=JSON.parse(e.dataTransfer?.getData("application/x-ripeam-asset")||"");\n          if(!asset?.url)return;\n          const rect=renderer.domElement.getBoundingClientRect();\n          mouse.x=((e.clientX-rect.left)/rect.width)*2-1;mouse.y=-((e.clientY-rect.top)/rect.height)*2+1;\n          ray.setFromCamera(mouse,camera);\n          const point=new THREE.Vector3();\n          const plane=new THREE.Plane(new THREE.Vector3(0,1,0),0);\n          ray.ray.intersectPlane(plane,point);\n          propsRef.current.onAssetDrop?.(asset,point?.toArray?.()||[0,0,0]);\n        }catch{}\n      });\n      renderer.domElement.addEventListener("pointerdown",e=>{\n        if(transform.dragging||propsRef.current.readOnly)return;''')
+
+          # --- Admin editor: multi-transform, drop, material diagnostics, hard asset preflight ---
+          p='app/admin/laboratorio-3d/Admin3DEditor.js'
+          patch(p,
+          '''    const persisted=(j.assets||[]).map(a=>({id:a.id,name:a.name,url:a.url,type:a.asset_type,category:a.category||"Uploads",tags:a.tags||[],bytes:a.bytes,triangles:a.triangles,metadata:a.metadata||{}}));''',
+          '''    const persisted=(j.assets||[]).map(a=>({id:a.id,name:a.name,url:a.url,type:a.asset_type,category:a.category||"Uploads",tags:a.tags||[],bytes:a.bytes,triangles:a.triangles,metadata:a.metadata||{},assetRevision:a.metadata?.contentHash||a.metadata?.sourceSha||a.updated_at||a.bytes}));''')
+
+          patch(p,
+          '''  function patchVec(key,i,v){\n    if(!obj)return;\n    const a=[...(obj[key]||[0,0,0])];a[i]=Number(v)||0;patchObject({[key]:a});\n  }''',
+          '''  function patchVec(key,i,v){\n    if(!obj)return;\n    const nextValue=Number(v)||0,oldValue=Number((obj[key]||[0,0,0])[i]||0),delta=nextValue-oldValue;\n    const ids=selectedIds.length?selectedIds:[obj.id];\n    if(ids.length<2){const a=[...(obj[key]||[0,0,0])];a[i]=nextValue;patchObject({[key]:a});return}\n    mutate(s=>{for(const o of s.config.objects){if(!ids.includes(o.id))continue;const a=[...(o[key]||[0,0,0])];a[i]=Number(a[i]||0)+delta;if(key==="scale")a[i]=Math.max(.001,a[i]);o[key]=a}});\n  }\n\n  function transformSelection(id,next){\n    const active=(cfg.objects||[]).find(o=>o.id===id);if(!active)return;\n    const ids=selectedIds.length?selectedIds:[id];\n    if(ids.length<2){patchObject(next);return}\n    const dp=(next.position||active.position).map((v,i)=>Number(v)-Number(active.position?.[i]||0));\n    const dr=(next.rotation||active.rotation).map((v,i)=>Number(v)-Number(active.rotation?.[i]||0));\n    const ds=(next.scale||active.scale).map((v,i)=>Number(v)-Number(active.scale?.[i]||1));\n    mutate(s=>{for(const o of s.config.objects){if(!ids.includes(o.id))continue;o.position=(o.position||[0,0,0]).map((v,i)=>Number(v)+dp[i]);o.rotation=(o.rotation||[0,0,0]).map((v,i)=>Number(v)+dr[i]);o.scale=(o.scale||[1,1,1]).map((v,i)=>Math.max(.001,Number(v)+ds[i]))}});\n  }\n\n  function dropAsset(asset,position){\n    addObject({name:asset.name,assetUrl:asset.url,assetType:asset.type||"glb",assetRevision:asset.assetRevision||asset.metadata?.contentHash||asset.bytes,type:"model",position:position||[0,0,0],normalize:true,material:{mode:"original"}});\n    setStatus("Asset posicionado por arrastar e soltar. Ajuste fino com Snap/Gizmo.");\n  }''')
+
+          patch(p,
+          '''    else{addObject({name:a.name,assetUrl:a.url,assetType:"glb",type:"model",normalize:true,material:{mode:"original"}});setStatus("GLB validado e adicionado com material/texturas originais preservados.");}''',
+          '''    else{addObject({name:a.name,assetUrl:a.url,assetType:"glb",assetRevision:a.metadata?.contentHash||a.bytes,type:"model",normalize:true,material:{mode:"original"}});setStatus("GLB validado e adicionado com material/texturas originais preservados.");}''')
+
+          patch(p,
+          '''    mutate(s=>{const o=s.config.objects.find(x=>x.id===selectedId);if(o){o.name=candidate.name;o.assetUrl=candidate.url;o.assetType="glb";o.normalize=true;o.material={mode:"original",color:"#ffffff",roughness:.5,metalness:.05,opacity:1,emissive:"#000000",doubleSide:false}}});''',
+          '''    mutate(s=>{const o=s.config.objects.find(x=>x.id===selectedId);if(o){o.name=candidate.name;o.assetUrl=candidate.url;o.assetType="glb";o.assetRevision=candidate.metadata?.contentHash||candidate.bytes;o.normalize=true;o.material={mode:"original",color:"#ffffff",roughness:.5,metalness:.05,opacity:1,emissive:"#000000",doubleSide:false}}});''')
+
+          patch(p,
+          '''  async function publishStudent(){\n    if(busy)return;\n    const assetErrors=(healthReport||[]).filter(x=>x.status==="ERRO"&&cfg.objects.some(o=>o.assetUrl===x.url));\n    const pf={errors:[...validation.errors,...assetErrors.map(x=>"Asset indisponível: "+x.name)],warnings:[...validation.warnings],stats};''',
+          '''  async function publishStudent(){\n    if(busy)return;\n    setBusy(true);setStatus("Executando preflight obrigatório dos assets usados...");\n    const used=[...new Map((cfg.objects||[]).filter(o=>o.type==="model"&&o.assetUrl).map(o=>[o.assetUrl,o])).values()];\n    const assetErrors=[];\n    for(const model of used){\n      try{const r=await fetch(model.assetUrl,{method:"HEAD",cache:"no-store"});if(!r.ok)assetErrors.push("Asset indisponível: "+model.name+" (HTTP "+r.status+")")}\n      catch{assetErrors.push("Asset indisponível: "+model.name+" (falha de rede)")}\n    }\n    setBusy(false);\n    const pf={errors:[...validation.errors,...assetErrors],warnings:[...validation.warnings],stats};''')
+
+          patch(p,
+          '''          <Admin3DViewport scene={cfg} selectedId={selected} mode={mode} playhead={playhead} onSelect={setSelected} onTransform={(id,t)=>{if(id===selected)patchObject(t)}} onCameraChange={cam=>setScene(s=>({...s,config:{...s.config,editorCamera:cam}}))} onStats={setStats}/>''',
+          '''          <Admin3DViewport scene={cfg} selectedId={selected} mode={mode} playhead={playhead} onSelect={id=>{setSelected(id);setSelectedIds(id?[id]:[])}} onTransform={(id,t)=>{if(id===selected)transformSelection(id,t)}} onAssetDrop={dropAsset} onCameraChange={cam=>setScene(s=>({...s,config:{...s.config,editorCamera:cam}}))} onStats={setStats}/>''')
+
+          patch(p,
+          '''          <div className={styles.assetGrid}>{filteredAssets.map((a,i)=>{const d=a.metadata?.glbDiagnostics;return <button key={a.url+i} onClick={()=>addObject({name:a.name,assetUrl:a.url,assetType:a.type,type:"model",normalize:true,material:{mode:"original"}})}><b>{a.name}</b><small>{String(a.type||"").toUpperCase()} · {a.category||"Asset"} · usado {usage[a.url]||0}x</small>{a.bytes&&<small>{(a.bytes/1024/1024).toFixed(1)} MB</small>}{d&&<small>{d.materials||0} materiais · {d.textures||0} texturas · UV {d.missingUvMeshes?"atenção":"OK"}</small>}</button>})}</div>''',
+          '''          <div className={styles.assetGrid}>{filteredAssets.map((a,i)=>{const d=a.metadata?.glbDiagnostics;return <button key={a.url+i} draggable onDragStart={e=>{e.dataTransfer.effectAllowed="copy";e.dataTransfer.setData("application/x-ripeam-asset",JSON.stringify(a))}} title="Clique para adicionar no centro ou arraste para posicionar diretamente no viewport" onClick={()=>addObject({name:a.name,assetUrl:a.url,assetType:a.type,assetRevision:a.assetRevision||a.metadata?.contentHash||a.bytes,type:"model",normalize:true,material:{mode:"original"}})}><b>{a.name}</b><small>{String(a.type||"").toUpperCase()} · {a.category||"Asset"} · usado {usage[a.url]||0}x</small>{a.bytes&&<small>{(a.bytes/1024/1024).toFixed(1)} MB</small>}{d&&<small>{d.materials||0} materiais · {d.textures||0} texturas · UV {d.missingUvMeshes?"atenção":"OK"}</small>}</button>})}</div>''')
+
+          patch(p,
+          '''            {objDiag&&<div className={styles.materialDiag}><b>Diagnóstico do asset</b><span>{objDiag.materials||0} materiais únicos · {objDiag.materialSlots||0} slots</span><span>{objDiag.textures||0} texturas · {objDiag.baseColorMaps||0} Base Color · {objDiag.normalMaps||0} Normal</span><span>{objDiag.roughnessMaps||0} Roughness · {objDiag.metalnessMaps||0} Metallic · {objDiag.aoMaps||0} AO · {objDiag.emissiveMaps||0} Emissive</span><span>UVs: {objDiag.missingUvMeshes?objDiag.missingUvMeshes+" mesh(es) sem UV":"OK"} · Materiais múltiplos: {objDiag.multiMaterialMeshes||0} mesh(es)</span><span>Texturas incorporadas: {objDiag.embeddedTextures===false?"não / referência externa detectada":"sim"}</span></div>}''',
+          '''            {objDiag&&<div className={styles.materialDiag}><b>Diagnóstico do asset</b><span>{objDiag.materials||0} materiais únicos · {objDiag.materialSlots||0} slots</span><span>{objDiag.textures||0} texturas · {objDiag.baseColorMaps||0} Base Color · {objDiag.normalMaps||0} Normal</span><span>{objDiag.roughnessMaps||0} Roughness · {objDiag.metalnessMaps||0} Metallic · {objDiag.aoMaps||0} AO · {objDiag.emissiveMaps||0} Emissive</span><span>UVs: {objDiag.missingUvMeshes?objDiag.missingUvMeshes+" mesh(es) sem UV":"OK"} · Materiais múltiplos: {objDiag.multiMaterialMeshes||0} mesh(es)</span><span>Texturas incorporadas: {objDiag.embeddedTextures===false?"não / referência externa detectada":"sim"}</span></div>}\n            {(stats.materialDiagnostics||[]).filter(m=>m.editorId===obj.id).length>0&&<details className={styles.materialDiag}><summary>Materiais em tempo real ({(stats.materialDiagnostics||[]).filter(m=>m.editorId===obj.id).length})</summary>{(stats.materialDiagnostics||[]).filter(m=>m.editorId===obj.id).slice(0,80).map((m,i)=><span key={i}><b>{m.material}</b> · {m.type} · mapas: {m.textureSlots.join(", ")||"nenhum"} · R {m.roughness??"—"} · M {m.metalness??"—"}</span>)}</details>}''')
+
+          patch(p,
+          '''          {obj.type?.includes("Light")&&<><h4>Luz RIPEAM</h4><label>Cor<input type="color" value={obj.color} onChange={e=>patchObject({color:e.target.value})}/></label><label>Setor (°)<input type="number" min="0" max="360" step=".5" value={obj.sector||360} onChange={e=>patchObject({sector:Number(e.target.value)})}/></label><label>Rumo do setor (°)<input type="number" value={obj.heading||0} onChange={e=>patchObject({heading:Number(e.target.value)})}/></label><label>Intensidade<input type="range" min="0" max="20" step=".1" value={obj.intensity} onChange={e=>patchObject({intensity:Number(e.target.value)})}/></label><label>Alcance visual<input type="number" value={obj.distance} onChange={e=>patchObject({distance:Number(e.target.value)})}/></label></>}''',
+          '''          {obj.type?.includes("Light")&&<><h4>Luz RIPEAM</h4><label>Cor<input type="color" value={obj.color} onChange={e=>patchObject({color:e.target.value})}/></label><label>Setor (°)<input type="number" min="0" max="360" step=".5" value={obj.sector||360} onChange={e=>patchObject({sector:Number(e.target.value)})}/></label><label>Rumo do setor (°)<input type="number" value={obj.heading||0} onChange={e=>patchObject({heading:Number(e.target.value)})}/></label><label>Intensidade<input type="range" min="0" max="40" step=".1" value={obj.intensity} onChange={e=>patchObject({intensity:Number(e.target.value)})}/><small>{Number(obj.intensity||0).toFixed(1)}</small></label><label>Tamanho visual da luz<input type="range" min=".2" max="5" step=".05" value={obj.lightSize||1} onChange={e=>patchObject({lightSize:Number(e.target.value)})}/><small>{Number(obj.lightSize||1).toFixed(2)}×</small></label><label>Alcance visual<input type="number" min="0" max="200" step=".5" value={obj.distance} onChange={e=>patchObject({distance:Number(e.target.value)})}/></label><label>Decay físico<input type="range" min="0" max="4" step=".1" value={obj.decay??2} onChange={e=>patchObject({decay:Number(e.target.value)})}/><small>{Number(obj.decay??2).toFixed(1)}</small></label>{obj.type==="spotLight"&&<><label>Ângulo do cone (rad)<input type="range" min=".05" max="1.55" step=".01" value={obj.angle??.75} onChange={e=>patchObject({angle:Number(e.target.value)})}/></label><label>Penumbra<input type="range" min="0" max="1" step=".01" value={obj.penumbra??.25} onChange={e=>patchObject({penumbra:Number(e.target.value)})}/></label></>}</>}''')
+
+          # --- Server-side immutable content hash on GLB upload ---
+          p='app/api/admin/laboratorio-3d/upload/route.js'
+          patch(p,
+          '''import {logAdminAction} from "../../../../../lib/admin-audit";''',
+          '''import {logAdminAction} from "../../../../../lib/admin-audit";\nimport {createHash} from "node:crypto";''')
+          patch(p,
+          '''    const head=new Uint8Array(await file.slice(0,12).arrayBuffer());''',
+          '''    const fileBuffer=Buffer.from(await file.arrayBuffer());\n    const sha256=createHash("sha256").update(fileBuffer).digest("hex");\n    const head=new Uint8Array(fileBuffer.buffer,fileBuffer.byteOffset,12);''')
+          patch(p,
+          '''      metadata:{uploaded_from:"admin-laboratorio-3d",glbDiagnostics:diagnostics,materialModeDefault:"original"}''',
+          '''      metadata:{uploaded_from:"admin-laboratorio-3d",glbDiagnostics:diagnostics,materialModeDefault:"original",contentHash:sha256,cacheStrategy:"content-hash"}''')
+
+          # --- Student runtime: Meshopt + per-object revisioned URLs ---
+          p='app/flashcards/ripeam/3d/RipeamThreeScene.js'
+          patch(p,
+          '''const RIPEAM_ASSET_REV="textures-20260910-r1";\nconst versionAssetUrl=url=>{\n  const value=String(url||"");\n  if(!value.startsWith("/models/ripeam/"))return value;\n  return value+(value.includes("?")?"&":"?")+"v="+RIPEAM_ASSET_REV;\n};''',
+          '''const RIPEAM_ASSET_REV="textures-20260910-r2";\nconst versionAssetUrl=(url,revision)=>{\n  const value=String(url||"");\n  if(!value.startsWith("/models/ripeam/"))return value;\n  return value+(value.includes("?")?"&":"?")+"v="+encodeURIComponent(String(revision||RIPEAM_ASSET_REV));\n};''')
+          patch(p,
+          '''      const [{GLTFLoader},{OrbitControls},{FBXLoader},{RoomEnvironment}]=await Promise.all([\n        browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/loaders/GLTFLoader.js"),\n        browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/controls/OrbitControls.js"),\n        browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/loaders/FBXLoader.js"),\n        browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/environments/RoomEnvironment.js")\n      ]);\n      return {...THREE,GLTFLoader,OrbitControls,FBXLoader,RoomEnvironment};''',
+          '''      const [{GLTFLoader},{OrbitControls},{FBXLoader},{RoomEnvironment},{MeshoptDecoder}]=await Promise.all([\n        browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/loaders/GLTFLoader.js"),\n        browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/controls/OrbitControls.js"),\n        browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/loaders/FBXLoader.js"),\n        browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/environments/RoomEnvironment.js"),\n        browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/libs/meshopt_decoder.module.js")\n      ]);\n      return {...THREE,GLTFLoader,OrbitControls,FBXLoader,RoomEnvironment,MeshoptDecoder};''')
+          patch(p,
+          '''    const gltf=await loadProgress(new THREE.GLTFLoader(),versionAssetUrl(config.url),onProgress);''',
+          '''    const loader=new THREE.GLTFLoader();loader.setMeshoptDecoder?.(THREE.MeshoptDecoder);\n    const gltf=await loadProgress(loader,versionAssetUrl(config.url,config.assetRevision||config.assetHash||config.version),onProgress);''')
+
+          # Professional performance budget now includes materials and hard load errors.
+          p='app/admin/laboratorio-3d/editor-professional.js'
+          patch(p,
+          '''export const PERFORMANCE_BUDGET={triangles:350000,drawCalls:220,textures:80,estimatedTextureMB:256,models:12};''',
+          '''export const PERFORMANCE_BUDGET={triangles:350000,drawCalls:220,textures:80,materials:180,estimatedTextureMB:256,models:12};''')
+          patch(p,
+          '''  if((stats.textures||0)>PERFORMANCE_BUDGET.textures)issues.push("Texturas acima do orçamento");''',
+          '''  if((stats.textures||0)>PERFORMANCE_BUDGET.textures)issues.push("Texturas acima do orçamento");\n  if((stats.materials||0)>PERFORMANCE_BUDGET.materials)issues.push("Materiais acima do orçamento");\n  if((stats.modelErrors||0)>0)issues.push("Há modelos com falha de carregamento");''')
+
+          # Remove stale forbidden Rule 27(d) variants wherever accidentally reintroduced in the editor presets/client.
+          for fp in ['app/admin/laboratorio-3d/editor-presets.js','app/flashcards/ripeam/3d/Ripeam3DClient.js']:
+              q=Path(fp); txt=q.read_text(encoding='utf-8')
+              import re
+              txt=re.sub(r'\n\s*\{key:"dredge-port"[^\n]*\},?', '', txt)
+              txt=re.sub(r'\n\s*\{key:"dredge-anchor"[^\n]*\},?', '', txt)
+              q.write_text(txt,encoding='utf-8')
+
+          print('RIPEAM Pro Suite patch applied successfully')
+      - name: Commit patch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/admin/laboratorio-3d app/api/admin/laboratorio-3d app/flashcards/ripeam/3d
+          git diff --cached --check
+          git commit -m "feat(ripeam-3d): editor profissional, cache por hash e anchors [pro-patch]"
+          git push origin HEAD:feat/ripeam-pro-suite-20260910
