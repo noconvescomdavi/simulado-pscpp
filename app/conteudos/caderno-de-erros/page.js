@@ -49,6 +49,15 @@ export default async function ErrorNotebookPage() {
 
               <p className={styles.question}>{item.question}</p>
 
+              <div className={styles.attemptContext}>
+                <span><b>Última resposta:</b> {item.selected_answer || "—"}</span>
+                <span><b>Resposta correta:</b> {item.correct_answer || "—"}</span>
+                <span><b>Status:</b> {item.recovered ? "recuperada na última tentativa" : item.mastery_status}</span>
+                {item.last_attempt_at && (
+                  <span><b>Última tentativa:</b> {new Date(item.last_attempt_at).toLocaleString("pt-BR")}</span>
+                )}
+              </div>
+
               {item.explanation && (
                 <details>
                   <summary>Ver explicação</summary>
