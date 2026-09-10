@@ -17,7 +17,7 @@ const SAFE_STYLE_KEYS = new Set([
   'textTransform','textDecoration','whiteSpace','cursor','translate','transform','transition','aspectRatio','mixBlendMode','clipPath'
 ]);
 
-let ACTIVE_BREAKPOINTS={tablet:1024,mobile:620,custom:[]};let ACTIVE_COMPONENTS={};
+let ACTIVE_BREAKPOINTS={tablet:1024,mobile:620,custom:[]};let ACTIVE_COMPONENTS={};let ACTIVE_SYMBOLS={};let ACTIVE_COLLECTIONS={};
 function setBreakpoints(value){ACTIVE_BREAKPOINTS={tablet:Math.max(621,Number(value?.tablet)||1024),mobile:Math.max(320,Number(value?.mobile)||620),custom:Array.isArray(value?.custom)?value.custom:[]}}
 function responsiveMerge(base,responsive){const width=window.innerWidth;let out={...(base||{})};for(const bp of [...(ACTIVE_BREAKPOINTS.custom||[])].sort((a,b)=>Number(b.maxWidth)-Number(a.maxWidth))){if(width<=Number(bp.maxWidth||0))out={...out,...(responsive?.[bp.id]?.style||{})}}if(width<=ACTIVE_BREAKPOINTS.tablet)out={...out,...(responsive?.tablet?.style||{})};if(width<=ACTIVE_BREAKPOINTS.mobile)out={...out,...(responsive?.mobile?.style||{})};return out}
 
@@ -28,10 +28,16 @@ function safeUrl(value) {
   return v;
 }
 
+function resolveConfig(config){const symbol=config?.symbolRef&&ACTIVE_SYMBOLS[config.symbolRef]?.config;return symbol?{...symbol,...config,style:{...(symbol.style||{}),...(config.style||{})},attrs:{...(symbol.attrs||{}),...(config.attrs||{})},responsive:{...(symbol.responsive||{}),...(config.responsive||{})},motion:{...(symbol.motion||{}),...(config.motion||{})},states:{...(symbol.states||{}),...(config.states||{})},interactions:[...(symbol.interactions||[]),...(config.interactions||[])]}:config}
+function valueAt(obj,key){if(!obj||!key)return "";return String(key).split(".").reduce((v,k)=>v&&typeof v==="object"?v[k]:undefined,obj)}
+function bindNode(node,binding){if(!binding?.collection)return;const collection=ACTIVE_COLLECTIONS[binding.collection];if(!collection)return;let item;if(Array.isArray(collection)){const idx=Math.max(0,Number(binding.item)||0);item=collection[idx]}else item=binding.item?collection[binding.item]:collection;if(!item)return;const pairs=[["textKey","text"],["srcKey","src"],["hrefKey","href"],["altKey","alt"]];for(const [bk,attr] of pairs){const v=valueAt(item,binding[bk]);if(v===undefined||v===null||v==="")continue;if(attr==="text"&&node.children.length===0)node.textContent=String(v);else if(attr==="src"||attr==="href"){const u=safeUrl(v);if(u)node.setAttribute(attr,u)}else node.setAttribute(attr,String(v))}}
+function applyStates(node,states){if(!states||typeof states!=="object"||node.dataset.estStatesBound)return;node.dataset.estStatesBound="1";let prev={};node.addEventListener("mouseenter",()=>{prev.bg=node.style.backgroundColor;prev.color=node.style.color;prev.transform=node.style.transform;prev.opacity=node.style.opacity;if(states.hoverBackground)node.style.backgroundColor=states.hoverBackground;if(states.hoverColor)node.style.color=states.hoverColor;if(states.hoverTransform)node.style.transform=states.hoverTransform;if(states.hoverOpacity)node.style.opacity=states.hoverOpacity});node.addEventListener("mouseleave",()=>{node.style.backgroundColor=prev.bg||"";node.style.color=prev.color||"";node.style.transform=prev.transform||"";node.style.opacity=prev.opacity||""});if(states.focusOutline){node.tabIndex=node.tabIndex>=0?node.tabIndex:0;node.addEventListener("focus",()=>node.style.outline=states.focusOutline);node.addEventListener("blur",()=>node.style.outline="")}if(states.pressedTransform||states.pressedOpacity){node.addEventListener("pointerdown",()=>{if(states.pressedTransform)node.style.transform=states.pressedTransform;if(states.pressedOpacity)node.style.opacity=states.pressedOpacity});node.addEventListener("pointerup",()=>{node.style.transform=prev.transform||"";node.style.opacity=prev.opacity||""})}}
+function applyInteractions(node,items){if(!Array.isArray(items)||node.dataset.estInteractionsBound)return;node.dataset.estInteractionsBound="1";for(const item of items){const event={click:"click",hover:"mouseenter",dblclick:"dblclick",focus:"focus"}[item.event];if(!event)continue;node.addEventListener(event,()=>{const action=item.action,target=String(item.target||""),value=String(item.value||"");if(action==="navigate"&&target){const u=safeUrl(target);if(u)location.href=u}else if(action==="scroll"&&target){try{document.querySelector(target)?.scrollIntoView({behavior:"smooth"})}catch{}}else if(action==="show"&&target){try{document.querySelectorAll(target).forEach(n=>n.hidden=false)}catch{}}else if(action==="hide"&&target){try{document.querySelectorAll(target).forEach(n=>n.hidden=true)}catch{}}else if(action==="toggle"&&target){try{document.querySelectorAll(target).forEach(n=>n.hidden=!n.hidden)}catch{}}else if(action==="class"&&target&&value){try{document.querySelectorAll(target).forEach(n=>n.classList.toggle(value))}catch{}}})}}
 function applyRecord(record) {
   if (!record || typeof record !== 'object') return;
 
-  for (const [selector, config] of Object.entries(record)) {
+  for (const [selector, rawConfig] of Object.entries(record)) {
+    const config=resolveConfig(rawConfig)||{};
     if (!selector || !config || typeof config !== 'object') continue;
     let nodes = [];
     try { nodes = Array.from(document.querySelectorAll(selector)).filter((node) => !node.hasAttribute('data-estibordo-runtime-clone')); } catch { continue; }
@@ -73,6 +79,9 @@ function applyRecord(record) {
         if (node.textContent !== nextText) node.textContent = nextText;
       }
 
+      bindNode(node,config.dataBinding||{});
+      applyStates(node,config.states||{});
+      applyInteractions(node,config.interactions||[]);
       applyMotion(node,config.motion||{});
       const moveDelta=Number(config.moveDelta||0);
       if(moveDelta && !node.dataset.estibordoMoveApplied){let steps=Math.abs(moveDelta);while(steps--){if(moveDelta<0&&node.previousElementSibling)node.parentElement.insertBefore(node,node.previousElementSibling);else if(moveDelta>0&&node.nextElementSibling)node.parentElement.insertBefore(node.nextElementSibling,node)}node.dataset.estibordoMoveApplied="true";}
@@ -157,10 +166,11 @@ function applyPageSettings(settings){
 
 function applyDesignSystem(tokens){
   if(!tokens||typeof tokens!=="object")return;
+  const active=tokens.activeTheme&&tokens.themes?.[tokens.activeTheme]?{...tokens,...tokens.themes[tokens.activeTheme]}:tokens;
   const root=document.documentElement;
   const map={primary:"--estibordo-primary",accent:"--estibordo-accent",surface:"--estibordo-surface",text:"--estibordo-text",radius:"--estibordo-radius",maxContentWidth:"--estibordo-content-max",h1:"--estibordo-h1",body:"--estibordo-body"};
-  Object.entries(map).forEach(([key,cssVar])=>{if(tokens[key])root.style.setProperty(cssVar,String(tokens[key]))});
-  if(tokens.fontFamily)document.body.style.fontFamily=String(tokens.fontFamily);if(tokens.variables){try{const vars=typeof tokens.variables==="string"?JSON.parse(tokens.variables):tokens.variables;Object.entries(vars||{}).forEach(([k,v])=>root.style.setProperty("--"+String(k).replace(/^--/,""),String(v)))}catch{}}
+  Object.entries(map).forEach(([key,cssVar])=>{if(active[key])root.style.setProperty(cssVar,String(active[key]))});
+  if(active.fontFamily)document.body.style.fontFamily=String(active.fontFamily);if(active.variables){try{const vars=typeof active.variables==="string"?JSON.parse(active.variables):active.variables;Object.entries(vars||{}).forEach(([k,v])=>root.style.setProperty("--"+String(k).replace(/^--/,""),String(v)))}catch{}}
 }
 
 function applyFavicon(url) {
@@ -177,7 +187,7 @@ function applyFavicon(url) {
 }
 
 export default function SiteDesignRuntime() {
-  useEffect(() => {let activeDesign=design;try{const params=new URLSearchParams(location.search);if(params.get("estibordoDraft")==="1"){const draft=localStorage.getItem("estibordo-preview:"+location.pathname);if(draft)activeDesign=JSON.parse(draft)}}catch{}const run = () => {if (window.location.pathname.startsWith('/admin/editor')) return;setBreakpoints(activeDesign?.global?.breakpoints||{});ACTIVE_COMPONENTS=Object.fromEntries((activeDesign?.global?.blockComponents||[]).map(c=>[c.id,c]));applyDesignSystem(activeDesign?.global?.designSystem||{});applyRecord(activeDesign?.global?.elements || {});const routeKey=document.querySelector("[data-estibordo-not-found]")?"/__404":window.location.pathname;const page=activeDesign?.pages?.[routeKey]||{};
+  useEffect(() => {let activeDesign=design;try{const params=new URLSearchParams(location.search);if(params.get("estibordoDraft")==="1"){const draft=localStorage.getItem("estibordo-preview:"+location.pathname);if(draft)activeDesign=JSON.parse(draft)}}catch{}const run = () => {if (window.location.pathname.startsWith('/admin/editor')) return;setBreakpoints(activeDesign?.global?.breakpoints||{});ACTIVE_COMPONENTS=Object.fromEntries((activeDesign?.global?.blockComponents||[]).map(c=>[c.id,c]));ACTIVE_SYMBOLS=Object.fromEntries((activeDesign?.global?.elementSymbols||[]).map(c=>[c.id,c]));ACTIVE_COLLECTIONS=activeDesign?.global?.collections||{};applyDesignSystem(activeDesign?.global?.designSystem||{});applyRecord(activeDesign?.global?.elements || {});const routeKey=document.querySelector("[data-estibordo-not-found]")?"/__404":window.location.pathname;const page=activeDesign?.pages?.[routeKey]||{};
       applyRecord(page.elements || {});
       applyBlocks(page.blocks || []);
       applyPageSettings(page.settings || {});
