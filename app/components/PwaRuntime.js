@@ -11,7 +11,10 @@ export default function PwaRuntime() {
     document.documentElement.classList.toggle("pwa-standalone", standalone);
 
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("/sw.js").catch(() => {
+      navigator.serviceWorker.register("/sw.js", { updateViaCache: "none" }).then((registration) => {
+        // Verifica silenciosamente se existe uma versão mais nova do SW.
+        registration.update().catch(() => {});
+      }).catch(() => {
         // O PWA continua funcional mesmo se o registro falhar.
       });
     }
