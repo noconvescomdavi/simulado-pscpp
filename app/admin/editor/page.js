@@ -4,6 +4,8 @@ import EditorClient from './EditorClient';
 import EditorInteractionLayer from './EditorInteractionLayer';
 import EditorCoreGuard from './EditorCoreGuard';
 import EditorMaxSuite from './EditorMaxSuite';
+import EditorStudioEntry from './EditorStudioEntry';
+import EditorProductionGate from './EditorProductionGate';
 import './editor.css';
 import './editor-max.css';
 
@@ -14,5 +16,5 @@ export const metadata = {
 
 export default async function SiteEditorPage(){
   if(!(await getAdmin("content.manage")))redirect("/admin");
-  return <><EditorClient /><EditorInteractionLayer /><EditorCoreGuard /><EditorMaxSuite /></>;
+  return <><EditorClient /><EditorInteractionLayer /><EditorCoreGuard /><EditorMaxSuite /><EditorStudioEntry /><EditorProductionGate /></>;
 }
