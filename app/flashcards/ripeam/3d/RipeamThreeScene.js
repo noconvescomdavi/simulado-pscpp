@@ -26,13 +26,13 @@ async function getThree(){
 export const MODEL_CONFIG={
   "bulk-carrier":{url:"/models/ripeam/bulk_carrier.glb",type:"glb",scale:1,rotation:[-Math.PI/2,0,-Math.PI/2],waterline:0,waterlineRatio:.18},
   "tugboat":{url:"/models/ripeam/Tugboat.glb",type:"glb",scale:.55,rotation:[-Math.PI/2,0,0],waterline:0,waterlineRatio:.20},
-  "barge":{url:"/models/ripeam/barge.fbx",type:"fbx",scale:1,rotation:[-Math.PI/2,0,-Math.PI/2],waterline:0,waterlineRatio:.32},
+  "barge":{url:"/models/ripeam/barge.glb",type:"glb",scale:1,rotation:[-Math.PI/2,0,-Math.PI/2],waterline:0,waterlineRatio:.32},
   "sailboat":{url:"/models/ripeam/sailboat.glb",type:"glb",scale:.7,rotation:[0,0,0],waterline:0,waterlineRatio:.11},
-  "fishing-vessel":{url:"/models/ripeam/fishing_vessel.glb",type:"glb",scale:.72,rotation:[0,Math.PI/2,0],waterline:0,waterlineRatio:.20},
+  "fishing-vessel":{url:"/models/ripeam/fishing.glb",type:"glb",scale:.72,rotation:[0,Math.PI/2,0],waterline:0,waterlineRatio:.20},
   "dredger":{url:"/models/ripeam/dredger.glb",type:"glb",scale:1,rotation:[0,0,0],waterline:0,waterlineRatio:.19},
   "pilot-boat":{url:"/models/ripeam/pilot_boat.glb",type:"glb",scale:.55,rotation:[0,0,0],waterline:0,waterlineRatio:.18},
-  "mine-clearance":{url:"/models/ripeam/navy_mine_clearance.glb",type:"glb",scale:.72,rotation:[0,Math.PI/2,0],waterline:0,waterlineRatio:.18},
-  "seaplane":{url:"/models/ripeam/hidroaviao.glb",type:"glb",scale:.65,rotation:[0,Math.PI/2,0],waterline:0,waterlineRatio:.14}
+  "mine-clearance":{url:"/models/ripeam/navy_remoção_de_minas.glb",type:"glb",scale:.72,rotation:[0,Math.PI/2,0],waterline:0,waterlineRatio:.18},
+  "seaplane":{url:"/models/ripeam/hidroavião.glb",type:"glb",scale:.65,rotation:[0,Math.PI/2,0],waterline:0,waterlineRatio:.14}
 };
 
 function disposeObject(root){
@@ -59,6 +59,8 @@ async function loadRawModel(THREE,config,onProgress){
     if(!gltf?.scene)throw new Error("GLB carregado sem scene.");
     gltf.scene.traverse?.(obj=>{
       if(!obj.isMesh||!obj.geometry)return;
+      const position=obj.geometry.attributes?.position;
+      if(position?.array){for(let i=0;i<position.array.length;i++)if(!Number.isFinite(position.array[i]))position.array[i]=0;position.needsUpdate=true;obj.geometry.computeBoundingBox?.();obj.geometry.computeBoundingSphere?.();}
       if(!obj.geometry.attributes?.normal&&obj.geometry.attributes?.position){
         obj.geometry.computeVertexNormals();
         obj.geometry.attributes.normal.needsUpdate=true;
