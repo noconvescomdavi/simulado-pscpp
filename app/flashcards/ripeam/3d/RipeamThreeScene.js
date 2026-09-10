@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect,useRef} from "react";
+import {useEffect,useRef,useState} from "react";
 import styles from "./ripeam-3d.module.css";
 import {versionRipeamAssetUrl} from "../../../../lib/ripeam-asset-manifest";
 import {safePixelRatio,resolvedQuality,isModelCached} from "./student-viewer-v5";
@@ -412,8 +412,16 @@ function applyEditorMaterial(obj,data,maxAnisotropy,THREE){
 export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,environmentPhase,displayMode="vessel",showSectors=false,highlightLightIndex=-1,liveConfig=null,qualityMode="auto",freeOrbit=false,fogLevel=0,exposure=1,teacherMode=false,onOfflineStatus}){
   const mount=useRef(null);
   const runtime=useRef(null);
+  const [controlsVisible,setControlsVisible]=useState(true);
+  const controlsTimer=useRef(null);
+  const revealControls=()=>{
+    setControlsVisible(true);
+    clearTimeout(controlsTimer.current);
+    controlsTimer.current=setTimeout(()=>setControlsVisible(false),4200);
+  };
 
   useEffect(()=>{
+    revealControls();
     let cancelled=false;
     let raf=0;
 
@@ -795,8 +803,10 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
           if(displayMode==="vessel"&&vesselRoot){vesselRoot.rotation.z=Math.sin(now*.00075)*.0025;vesselRoot.position.y=SEA_LEVEL+Math.sin(now*.00062)*.012;}
           if(now-fpsLast>2200){
             const fps=fpsFrames*1000/(now-fpsLast);fpsFrames=0;fpsLast=now;
-            if(fps<26){lowFpsWindows++;if(lowFpsWindows>=2){dynamicScale=Math.max(.6,dynamicScale*.86);renderer.setPixelRatio(safePixelRatio(qualityMode,dynamicScale));lowFpsWindows=0;}}
-            else if(fps>48&&dynamicScale<1){dynamicScale=Math.min(1,dynamicScale+.08);renderer.setPixelRatio(safePixelRatio(qualityMode,dynamicScale));}
+            const mem=performance?.memory;
+            const pressure=mem?.jsHeapSizeLimit?mem.usedJSHeapSize/mem.jsHeapSizeLimit:0;
+            if(fps<26||pressure>.78){lowFpsWindows++;if(lowFpsWindows>=2){dynamicScale=Math.max(.58,dynamicScale*.84);renderer.setPixelRatio(safePixelRatio(qualityMode,dynamicScale));lowFpsWindows=0;}}
+            else if(fps>48&&pressure<.62&&dynamicScale<1){dynamicScale=Math.min(1,dynamicScale+.08);renderer.setPixelRatio(safePixelRatio(qualityMode,dynamicScale));}
           }
           enforceWaterline();
           renderer.render(scene,camera);
@@ -875,6 +885,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
     return()=>{
       cancelled=true;
       cancelAnimationFrame(raf);
+      clearTimeout(controlsTimer.current);
       const r=runtime.current;
       if(r){
         r.observer?.disconnect();
@@ -908,8 +919,8 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
     }
   };
 
-  return <div className={styles.viewerShell}>
-    <div className={styles.controls} aria-label="Controles de câmera">
+  return <div className={styles.viewerShell} onPointerMove={revealControls} onPointerDown={revealControls} onTouchStart={revealControls}>
+    <div className={`${styles.controls} ${controlsVisible?styles.controlsVisible:styles.controlsHidden}`} aria-label="Controles de câmera">
       <button onClick={()=>view("3d")}>3D</button><button onClick={()=>view("bow")}>Proa</button><button onClick={()=>view("stern")}>Popa</button>
       <button onClick={()=>view("port")}>BB</button><button onClick={()=>view("starboard")}>BE</button><button onClick={()=>view("top")}>↑</button>
       <button onClick={()=>view("bow-port")} title="3/4 proa bombordo">¾ BB</button><button onClick={()=>view("bow-starboard")} title="3/4 proa boreste">¾ BE</button>
