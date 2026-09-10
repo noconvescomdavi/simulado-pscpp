@@ -1,0 +1,29 @@
+name: RIPEAM Student Viewer V5
+on:
+  push:
+    branches: [feat/ripeam-student-viewer-v5-20260910]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Student viewer invariants
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q "PREPARANDO CENÁRIO 3D" app/flashcards/ripeam/3d/RipeamThreeScene.js
+          grep -q "cacheEntireModule" app/flashcards/ripeam/3d/Ripeam3DClient.js
+          grep -q "KTX2Loader" app/flashcards/ripeam/3d/RipeamThreeScene.js
+          grep -q "Modo professor" app/flashcards/ripeam/3d/Ripeam3DClient.js
+          grep -q "estibordo-ripeam-models-v1" public/sw.js
+          ! grep -q "/models/ripeam/bulk_carrier.glb</span>" app/flashcards/ripeam/3d/RipeamThreeScene.js
+      - name: Install
+        run: npm ci
+      - name: Build
+        run: npm run build
