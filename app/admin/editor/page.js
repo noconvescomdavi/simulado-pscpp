@@ -3,7 +3,9 @@ import {getAdmin} from "../../../lib/admin";
 import EditorClient from './EditorClient';
 import EditorInteractionLayer from './EditorInteractionLayer';
 import EditorCoreGuard from './EditorCoreGuard';
+import EditorMaxSuite from './EditorMaxSuite';
 import './editor.css';
+import './editor-max.css';
 
 export const metadata = {
   title: 'Editor visual | ESTIBORDO',
@@ -12,5 +14,5 @@ export const metadata = {
 
 export default async function SiteEditorPage(){
   if(!(await getAdmin("content.manage")))redirect("/admin");
-  return <><EditorClient /><EditorInteractionLayer /><EditorCoreGuard /></>;
+  return <><EditorClient /><EditorInteractionLayer /><EditorCoreGuard /><EditorMaxSuite /></>;
 }

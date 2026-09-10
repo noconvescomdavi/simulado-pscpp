@@ -1,6 +1,7 @@
 import "./globals.css";
 import "./estibordo-polish.css";
 import SiteDesignRuntime from "./site-editor/SiteDesignRuntime";
+import SiteDesignProRuntime from "./site-editor/SiteDesignProRuntime";
 import PwaRuntime from "./components/PwaRuntime";
 import WebVitalsReporter from "./components/WebVitalsReporter";
 
@@ -18,9 +19,7 @@ export const metadata = {
     title: "ESTIBORDO",
     statusBarStyle: "black-translucent"
   },
-  formatDetection: {
-    telephone: false
-  },
+  formatDetection: { telephone: false },
   icons: {
     icon: "/estibordo/icones/bandeira-hotel.svg",
     apple: [{ url: "/pwa-icon", sizes: "180x180", type: "image/png" }]
@@ -51,6 +50,7 @@ export default function RootLayout({ children }) {
       <body>
         {children}
         <SiteDesignRuntime />
+        <SiteDesignProRuntime />
         <PwaRuntime />
         <WebVitalsReporter />
       </body>
