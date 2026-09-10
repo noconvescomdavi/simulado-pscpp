@@ -627,7 +627,7 @@ export default function Admin3DEditor(){
         <button onClick={duplicateScene}>Duplicar cena</button><button onClick={()=>setScene(clone(EMPTY))}>＋ Nova cena</button>
         <select value={scene.status==="published"?"review":scene.status} onChange={e=>setScene(s=>({...s,status:e.target.value}))}><option value="draft">Rascunho</option><option value="review">Revisão</option><option value="archived">Arquivado</option></select>
         <button disabled={busy} onClick={()=>save(scene.status)}>Salvar rascunho</button><button onClick={restoreLocalRecovery} title="Cópia local; nunca publica">Recuperar local</button>{recovery&&<button onClick={discardLocalRecovery}>Limpar recuperação</button>}
-        <button onClick={()=>setShowDiff(v=>!v)} title="Ver alterações desde a última publicação">Diff ({publishDiff.length})</button><button className={styles.publish} disabled={busy} title="Publicação manual: validações e alertas não bloqueiam esta ação." onClick={publishStudent}>{scene.liveStudentScene?"Atualizar aluno":"Adicionar ao aluno"}</button>}
+        <button onClick={()=>setShowDiff(v=>!v)} title="Ver alterações desde a última publicação">Diff ({publishDiff.length})</button><button className={styles.publish} disabled={busy} title="Publicação manual: validações e alertas não bloqueiam esta ação." onClick={publishStudent}>{scene.liveStudentScene?"Atualizar aluno":"Adicionar ao aluno"}</button>
       </div>
     </div>
 
