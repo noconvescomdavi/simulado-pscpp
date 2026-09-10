@@ -19,8 +19,8 @@ jobs:
           set -euo pipefail
           mkdir -p public/models/ripeam
           python -m pip install --quiet gdown
-          gdown --fuzzy "https://drive.google.com/file/d/1TFCticl5ngtSEUX4d8lC5EmR9zCPLcpz/view" -O public/models/ripeam/offshore.glb
-          gdown --fuzzy "https://drive.google.com/file/d/1_ZdSHP9Xhm5EyvJgemd43U3f9mhUO8b9/view" -O "public/models/ripeam/navy_remoção_de_minas.glb"
+          gdown "1TFCticl5ngtSEUX4d8lC5EmR9zCPLcpz" -O public/models/ripeam/offshore.glb
+          gdown "1_ZdSHP9Xhm5EyvJgemd43U3f9mhUO8b9" -O "public/models/ripeam/navy_remoção_de_minas.glb"
           test "$(stat -c%s public/models/ripeam/offshore.glb)" -eq 9352932
           test "$(stat -c%s "public/models/ripeam/navy_remoção_de_minas.glb")" -eq 4683556
       - name: Commit binary assets
