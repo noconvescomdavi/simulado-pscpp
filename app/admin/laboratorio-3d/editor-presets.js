@@ -25,13 +25,13 @@ export const SCENE_TEMPLATES = [
   ]},
   {key:"tow-short",label:"Reboque ≤ 200 m",rule_ref:"24",card_title:"Reboque até 200 m",objects:[
     {name:"Tugboat",type:"model",assetUrl:"/models/ripeam/Tugboat.glb",assetType:"glb",position:[3,0,0],rotation:[0,0,0],scale:[1,1,1],normalize:true},
-    {name:"Barge",type:"model",assetUrl:"/models/ripeam/barge.fbx",assetType:"fbx",position:[-7,0,0],rotation:[0,0,0],scale:[1,1,1],normalize:true}
+    {name:"Barge",type:"model",assetUrl:"/models/ripeam/barge.glb",assetType:"glb",position:[-7,0,0],rotation:[0,0,0],scale:[1,1,1],normalize:true}
   ]},
   {key:"sail",label:"Embarcação a vela",rule_ref:"25",card_title:"Embarcação a vela",objects:[
     {name:"Sailboat",type:"model",assetUrl:"/models/ripeam/sailboat.glb",assetType:"glb",position:[0,0,0],rotation:[0,0,0],scale:[1,1,1],normalize:true}
   ]},
   {key:"fishing",label:"Pesca",rule_ref:"26",card_title:"Embarcação engajada na pesca",objects:[
-    {name:"Fishing Vessel",type:"model",assetUrl:"/models/ripeam/fishing_vessel.glb",assetType:"glb",position:[0,0,0],rotation:[0,0,0],scale:[1,1,1],normalize:true}
+    {name:"Fishing Vessel",type:"model",assetUrl:"/models/ripeam/fishing.glb",assetType:"glb",position:[0,0,0],rotation:[0,0,0],scale:[1,1,1],normalize:true}
   ]},
   {key:"pilot",label:"Praticagem",rule_ref:"29",card_title:"Embarcação de prático",objects:[
     {name:"Pilot Boat",type:"model",assetUrl:"/models/ripeam/pilot_boat.glb",assetType:"glb",position:[0,0,0],rotation:[0,0,0],scale:[1,1,1],normalize:true}
@@ -41,9 +41,6 @@ export const SCENE_TEMPLATES = [
     {name:"RAM vermelha superior",type:"pointLight",color:"#ff334b",sector:360,position:[0,4.05,0]},
     {name:"RAM branca",type:"pointLight",color:"#fff2ba",sector:360,position:[0,3.45,0]},
     {name:"RAM vermelha inferior",type:"pointLight",color:"#ff334b",sector:360,position:[0,2.85,0]}
-  ]},
-  {key:"dredge-port",label:"Dragagem — obstrução a bombordo",rule_ref:"27(d)",card_title:"Dragagem com lado de passagem a boreste",objects:[
-    {name:"Dredger",type:"model",assetUrl:"/models/ripeam/dredger.glb",assetType:"glb",position:[0,0,0],rotation:[0,0,0],scale:[1,1,1],normalize:true}
   ]},
   {key:"dredge-stbd",label:"Dragagem — obstrução a boreste",rule_ref:"27(d)",card_title:"Dragagem com lado de passagem a bombordo",objects:[
     {name:"Dredger",type:"model",assetUrl:"/models/ripeam/dredger.glb",assetType:"glb",position:[0,0,0],rotation:[0,0,0],scale:[1,1,1],normalize:true}
@@ -56,7 +53,7 @@ export const SCENE_TEMPLATES = [
     {name:"Cilindro",type:"shape",shape:"cylinder",position:[0,3.45,0]}
   ]},
   {key:"mine-clearance",label:"Remoção de minas",rule_ref:"27(f)",card_title:"Embarcação em operação de remoção de minas",objects:[
-    {name:"Mine Clearance",type:"model",assetUrl:"/models/ripeam/navy_mine_clearance.glb",assetType:"glb",position:[0,0,0],rotation:[0,0,0],scale:[1,1,1],normalize:true},
+    {name:"Mine Clearance",type:"model",assetUrl:"/models/ripeam/navy_remoção_de_minas.glb",assetType:"glb",position:[0,0,0],rotation:[0,0,0],scale:[1,1,1],normalize:true},
     {name:"Verde tope",type:"pointLight",color:"#35dc83",sector:360,position:[0,4.1,0]},
     {name:"Verde BB",type:"pointLight",color:"#35dc83",sector:360,position:[0,2.65,-1.45]},
     {name:"Verde BE",type:"pointLight",color:"#35dc83",sector:360,position:[0,2.65,1.45]}
@@ -73,7 +70,10 @@ export const SCENE_TEMPLATES = [
     {name:"Esfera 3",type:"shape",shape:"ball",position:[0,3,0]}
   ]},
   {key:"seaplane",label:"Hidroavião",rule_ref:"31",card_title:"Hidroavião na água",objects:[
-    {name:"Hidroavião",type:"model",assetUrl:"/models/ripeam/hidroaviao.glb",assetType:"glb",position:[0,0,0],rotation:[0,0,0],scale:[1,1,1],normalize:true}
+    {name:"Hidroavião",type:"model",assetUrl:"/models/ripeam/hidroavião.glb",assetType:"glb",position:[0,0,0],rotation:[0,0,0],scale:[1,1,1],normalize:true}
+  ]},
+  {key:"offshore",label:"Offshore",rule_ref:"",card_title:"Embarcação offshore",objects:[
+    {name:"Offshore",type:"model",assetUrl:"/models/ripeam/offshore.glb",assetType:"glb",position:[0,0,0],rotation:[0,0,0],scale:[1,1,1],normalize:true}
   ]}
 ];
 

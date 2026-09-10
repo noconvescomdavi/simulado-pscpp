@@ -19,12 +19,13 @@ const EMPTY={
 const BUILTIN=[
   {name:"Bulk Carrier",url:"/models/ripeam/bulk_carrier.glb",type:"glb",category:"Navios"},
   {name:"Tugboat",url:"/models/ripeam/Tugboat.glb",type:"glb",category:"Reboque"},
-  {name:"Barge",url:"/models/ripeam/barge.fbx",type:"fbx",category:"Reboque"},
+  {name:"Barge",url:"/models/ripeam/barge.glb",type:"glb",category:"Reboque"},
   {name:"Sailboat",url:"/models/ripeam/sailboat.glb",type:"glb",category:"Vela"},
-  {name:"Fishing Vessel",url:"/models/ripeam/fishing_vessel.glb",type:"glb",category:"Pesca"},
+  {name:"Fishing Vessel",url:"/models/ripeam/fishing.glb",type:"glb",category:"Pesca"},
   {name:"Pilot Boat",url:"/models/ripeam/pilot_boat.glb",type:"glb",category:"Praticagem"},
-  {name:"Mine Clearance",url:"/models/ripeam/navy_mine_clearance.glb",type:"glb",category:"Especial"},
-  {name:"Hidroavião",url:"/models/ripeam/hidroaviao.glb",type:"glb",category:"Regra 31"}
+  {name:"Mine Clearance",url:"/models/ripeam/navy_remoção_de_minas.glb",type:"glb",category:"Especial"},
+  {name:"Hidroavião",url:"/models/ripeam/hidroavião.glb",type:"glb",category:"Regra 31"},
+  {name:"Offshore",url:"/models/ripeam/offshore.glb",type:"glb",category:"Offshore"}
 ];
 const clone=x=>JSON.parse(JSON.stringify(x));
 const uid=()=>crypto.randomUUID();

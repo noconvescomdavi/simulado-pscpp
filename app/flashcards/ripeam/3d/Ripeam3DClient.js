@@ -56,9 +56,7 @@ const SCENES=[
     {id:"ram-anchor",label:"RAM fundeada",lightPlan:"ram",note:"Sinais de capacidade de manobra restrita combinados com a condição de fundeio."}
   ]},
   {key:"rule27d",rule:"27(d)",title:"Dragagem / operação submarina",vessels:["dredger"],variants:[
-    {id:"dredge-port",label:"Obstrução a bombordo",lightPlan:"dredgerPort",note:"Encarnadas no lado obstruído; verdes no lado por onde outra embarcação pode passar."},
     {id:"dredge-stbd",label:"Obstrução a boreste",lightPlan:"dredgerStbd",note:"Verdes no lado livre; encarnadas no lado da obstrução."},
-    {id:"dredge-anchor",label:"Draga fundeada",lightPlan:"dredgerPort",note:"Configuração de dragagem mantida durante a operação fundeada."}
   ]},
   {key:"rule27e",rule:"27(e)",title:"Reboque com restrição de manobra",vessels:["tugboat"],variants:[
     {id:"restricted-tow-short",label:"Reboque restrito ≤ 200 m",lightPlan:"ram",note:"Rebocador com capacidade de desvio severamente limitada pelo reboque."},
