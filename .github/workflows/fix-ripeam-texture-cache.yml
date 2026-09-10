@@ -1,0 +1,73 @@
+name: Fix RIPEAM texture cache
+on:
+  push:
+    branches: [fix/ripeam-texture-cache-20260910]
+permissions:
+  contents: write
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/ripeam-texture-cache-20260910
+      - name: Patch RIPEAM texture loading
+        shell: python
+        run: |
+          from pathlib import Path
+
+          p=Path('app/admin/laboratorio-3d/Admin3DViewport.js')
+          s=p.read_text(encoding='utf-8')
+          old='const MODEL_CACHE=new Map();\n'
+          new='const MODEL_CACHE=new Map();\nconst RIPEAM_ASSET_REV="textures-20260910-r1";\nconst versionAssetUrl=url=>{\n  const value=String(url||"");\n  if(!value.startsWith("/models/ripeam/"))return value;\n  return value+(value.includes("?")?"&":"?")+"v="+RIPEAM_ASSET_REV;\n};\n'
+          assert old in s
+          s=s.replace(old,new,1)
+          old='      const root=mount.current;\n      const sc=new THREE.Scene();\n'
+          new='      const root=mount.current;\n      // Nunca reutilizar entre montagens um GLB antigo que tenha o mesmo caminho.\n      MODEL_CACHE.clear();\n      const sc=new THREE.Scene();\n'
+          assert old in s
+          s=s.replace(old,new,1)
+          old='          if(!custom)return;\n          if("color" in m&&data.material?.color)m.color.set(data.material.color);\n'
+          new='          if(!custom){\n            if("envMapIntensity" in m)m.envMapIntensity=1.15;\n            m.needsUpdate=true;\n            return;\n          }\n          if("color" in m&&data.material?.color)m.color.set(data.material.color);\n'
+          assert old in s
+          s=s.replace(old,new,1)
+          old='            const loader=r.loaders[data.assetType]||r.loaders.glb;\n            const cacheKey=(data.assetType||"glb")+":"+data.assetUrl;\n            let source=MODEL_CACHE.get(cacheKey);\n            if(!source){\n              const pending=loader.loadAsync(data.assetUrl).then(loaded=>loaded.scene||loaded).catch(error=>{MODEL_CACHE.delete(cacheKey);throw error});\n'
+          new='            const loader=r.loaders[data.assetType]||r.loaders.glb;\n            const resolvedAssetUrl=versionAssetUrl(data.assetUrl);\n            const cacheKey=(data.assetType||"glb")+":"+resolvedAssetUrl;\n            let source=MODEL_CACHE.get(cacheKey);\n            if(!source){\n              const pending=loader.loadAsync(resolvedAssetUrl).then(loaded=>loaded.scene||loaded).catch(error=>{MODEL_CACHE.delete(cacheKey);throw error});\n'
+          assert old in s
+          s=s.replace(old,new,1)
+          p.write_text(s,encoding='utf-8')
+
+          p=Path('app/flashcards/ripeam/3d/RipeamThreeScene.js')
+          s=p.read_text(encoding='utf-8')
+          old='const SEA_LEVEL=0;\n'
+          new='const SEA_LEVEL=0;\nconst RIPEAM_ASSET_REV="textures-20260910-r1";\nconst versionAssetUrl=url=>{\n  const value=String(url||"");\n  if(!value.startsWith("/models/ripeam/"))return value;\n  return value+(value.includes("?")?"&":"?")+"v="+RIPEAM_ASSET_REV;\n};\n'
+          assert old in s
+          s=s.replace(old,new,1)
+          old='    const gltf=await loadProgress(new THREE.GLTFLoader(),config.url,onProgress);\n'
+          new='    const gltf=await loadProgress(new THREE.GLTFLoader(),versionAssetUrl(config.url),onProgress);\n'
+          assert old in s
+          s=s.replace(old,new,1)
+          p.write_text(s,encoding='utf-8')
+
+          p=Path('next.config.mjs')
+          s=p.read_text(encoding='utf-8')
+          old='      { source: "/api/site-editor/:path*", headers: [{ key: "Cache-Control", value: "private, no-store, max-age=0" }] },\n'
+          new=old+'      { source: "/models/ripeam/:path*", headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }] },\n'
+          assert old in s
+          s=s.replace(old,new,1)
+          p.write_text(s,encoding='utf-8')
+      - name: Verify no texture maps are overwritten
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q 'resolvedAssetUrl=versionAssetUrl(data.assetUrl)' app/admin/laboratorio-3d/Admin3DViewport.js
+          grep -q 'versionAssetUrl(config.url)' app/flashcards/ripeam/3d/RipeamThreeScene.js
+          grep -q 'models/ripeam/:path' next.config.mjs
+      - name: Commit patch
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/admin/laboratorio-3d/Admin3DViewport.js app/flashcards/ripeam/3d/RipeamThreeScene.js next.config.mjs
+          git commit -m "fix(ripeam-3d): force fresh textured GLB assets"
+          git push origin HEAD:fix/ripeam-texture-cache-20260910
