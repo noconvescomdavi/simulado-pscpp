@@ -1,0 +1,60 @@
+name: Audit RIPEAM GLB textures
+on:
+  push:
+    branches: [audit/ripeam-textures-20260909]
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit GLB texture maps
+        shell: python
+        run: |
+          import json, struct, pathlib
+          root=pathlib.Path("public/models/ripeam")
+          for p in sorted(root.glob("*.glb")):
+              try:
+                  data=p.read_bytes()
+                  if data[:4]!=b"glTF":
+                      print(f"REPORT|{p.name}|ERROR|not_glb")
+                      continue
+                  total=struct.unpack_from("<I",data,8)[0]
+                  off=12
+                  js=None
+                  while off+8<=len(data):
+                      ln,typ=struct.unpack_from("<II",data,off); off+=8
+                      chunk=data[off:off+ln]; off+=ln
+                      if typ==0x4E4F534A:
+                          js=json.loads(chunk.rstrip(b" \t\r\n\x00").decode("utf-8"))
+                          break
+                  if js is None:
+                      print(f"REPORT|{p.name}|ERROR|no_json")
+                      continue
+                  mats=js.get("materials",[])
+                  tex=js.get("textures",[])
+                  imgs=js.get("images",[])
+                  meshes=js.get("meshes",[])
+                  base=normal=mr=occ=emis=0
+                  used_mats=set()
+                  prims=uv_prims=0
+                  for m in mats:
+                      pmr=m.get("pbrMetallicRoughness",{})
+                      if "baseColorTexture" in pmr: base+=1
+                      if "metallicRoughnessTexture" in pmr: mr+=1
+                      if "normalTexture" in m: normal+=1
+                      if "occlusionTexture" in m: occ+=1
+                      if "emissiveTexture" in m: emis+=1
+                  for mesh in meshes:
+                      for prim in mesh.get("primitives",[]):
+                          prims+=1
+                          if "TEXCOORD_0" in prim.get("attributes",{}): uv_prims+=1
+                          if "material" in prim: used_mats.add(prim["material"])
+                  embedded=sum(1 for im in imgs if "bufferView" in im)
+                  external=sum(1 for im in imgs if "uri" in im)
+                  print("REPORT|{}|bytes={}|meshes={}|primitives={}|materials={}|used_materials={}|textures={}|images={}|embedded_images={}|external_images={}|baseColor={}|normal={}|metalRough={}|occlusion={}|emissive={}|uv_primitives={}/{}".format(
+                      p.name,len(data),len(meshes),prims,len(mats),len(used_mats),len(tex),len(imgs),embedded,external,base,normal,mr,occ,emis,uv_prims,prims
+                  ))
+              except Exception as e:
+                  print(f"REPORT|{p.name}|ERROR|{type(e).__name__}:{e}")
