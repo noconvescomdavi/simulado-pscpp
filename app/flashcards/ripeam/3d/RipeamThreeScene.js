@@ -393,8 +393,17 @@ function applyEditorMaterial(obj,data,maxAnisotropy,THREE){
         if(key==="map"||key==="emissiveMap")t.colorSpace=THREE.SRGBColorSpace;
         t.needsUpdate=true;
       });
+      const ra=data.renderAdjustments||{};
+      const brightness=Math.max(.02,Math.min(3,Number(ra.brightness??1)));
+      const objectExposure=Math.max(-4,Math.min(3,Number(ra.exposure??0)));
+      const lightScale=brightness*Math.pow(2,objectExposure);
+      if(m.color?.isColor){
+        if(!m.userData.__ripeamOriginalColor)m.userData.__ripeamOriginalColor=m.color.clone();
+        m.color.copy(m.userData.__ripeamOriginalColor).multiplyScalar(lightScale);
+      }
+      if("envMapIntensity" in m)m.envMapIntensity=1.15*Math.max(0,Math.min(3,Number(ra.environment??1)));
+      if("emissiveIntensity" in m&&m.emissive)m.emissiveIntensity=Math.max(0,Math.min(Number(m.emissiveIntensity??1),lightScale));
       if(!custom){
-        if("envMapIntensity" in m)m.envMapIntensity=1.15;
         m.needsUpdate=true;
         return;
       }
