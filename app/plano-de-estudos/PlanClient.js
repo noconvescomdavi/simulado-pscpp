@@ -97,6 +97,9 @@ export default function PlanClient({plan}){
         fixation:task.fixation||null,
         bibliography_key:task.bibliography_key||null,
         section_key:task.section_key||null,
+        reprogrammed:task.reprogrammed===true,
+        displayed_plan_date:day.iso,
+        source_plan_date:planDate,
         page_from:task.page_from||null,
         page_to:task.page_to||null
       }
