@@ -8,19 +8,27 @@ function hash(value){let h=2166136261;for(let i=0;i<value.length;i++){h^=value.c
 function clean(value){return String(value||"").trim().replace(/\s+/g," ")}
 function cssEscape(value){if(typeof CSS!=="undefined"&&CSS.escape)return CSS.escape(value);return String(value).replace(/([^a-zA-Z0-9_-])/g,"\\$1")}
 
-export function selectorForNode(el){
+function structuralSelector(el){
   if(!el||el.nodeType!==1)return "";
-  const editorId=el.getAttribute("data-editor-id");if(editorId)return `[data-editor-id="${cssEscape(editorId)}"]`;
   if(el.id)return `#${cssEscape(el.id)}`;
   const parts=[];let node=el;
   while(node&&node.nodeType===1&&node.tagName!=="HTML"){
     if(node.tagName==="BODY"){parts.unshift("body");break}
-    const tag=node.tagName.toLowerCase();const cls=[...node.classList].filter(x=>!x.startsWith("ev-")&&!x.startsWith("is-")).slice(0,2);
-    let part=tag+cls.map(x=>`.${cssEscape(x)}`).join("");const parent=node.parentElement;
+    const tag=node.tagName.toLowerCase();
+    const cls=[...node.classList].filter(x=>!x.startsWith("ev-")&&!x.startsWith("is-")&&!x.startsWith("ecp-")&&!x.startsWith("eic-")).slice(0,2);
+    let part=tag+cls.map(x=>`.${cssEscape(x)}`).join("");
+    const parent=node.parentElement;
     if(parent){const same=[...parent.children].filter(x=>x.tagName===node.tagName);if(same.length>1)part+=`:nth-of-type(${same.indexOf(node)+1})`}
     parts.unshift(part);node=parent;if(parts.length>=8)break;
   }
   return parts.join(" > ");
+}
+
+export function selectorForNode(el){
+  if(!el||el.nodeType!==1)return "";
+  const source=el.getAttribute("data-editor-source-selector");
+  if(source)return source;
+  return structuralSelector(el);
 }
 
 function adapterFor(el){
@@ -39,7 +47,7 @@ function adapterFor(el){
 
 export function editableTarget(raw){
   if(!raw||raw.nodeType!==1)return null;
-  if(raw.closest?.("[data-ev-resize-overlay],[data-ev-guide],[data-ev-marquee]"))return null;
+  if(raw.closest?.("[data-ev-resize-overlay],[data-ev-guide],[data-ev-marquee],[data-ecp-overlay]"))return null;
   const block=raw.closest?.("[data-estibordo-editor-block]");if(block)return block;
   const adapter=adapterFor(raw);
   if(adapter==="canvas"||adapter==="3d-viewer"){
@@ -57,7 +65,7 @@ export function breadcrumbFor(el){
 
 function isUseful(el){
   if(!el||el.nodeType!==1)return false;
-  if(el.closest?.("[data-ev-resize-overlay],[data-ev-guide],[data-ev-marquee]"))return false;
+  if(el.closest?.("[data-ev-resize-overlay],[data-ev-guide],[data-ev-marquee],[data-ecp-overlay]"))return false;
   const r=el.getBoundingClientRect?.();if(!r||r.width<2||r.height<2)return false;
   const cs=el.ownerDocument.defaultView.getComputedStyle(el);if(cs.display==="none"||cs.visibility==="hidden")return false;
   if(INTERACTIVE.has(el.tagName)||STRUCTURAL.has(el.tagName)||TEXTUAL.has(el.tagName))return true;
@@ -71,8 +79,10 @@ export function buildObjectRegistry(doc,route="/"){
   const seen=new Set(),rows=[];
   for(const original of candidates){
     const el=editableTarget(original);if(!el||seen.has(el))continue;seen.add(el);
-    const rawSelector=selectorForNode(el);const adapter=adapterFor(el);const stable=`obj_${hash(route+"|"+rawSelector+"|"+adapter)}`;
+    const rawSelector=el.getAttribute("data-editor-source-selector")||structuralSelector(el);
+    const adapter=adapterFor(el);const stable=`obj_${hash(route+"|"+rawSelector+"|"+adapter)}`;
     if(!el.hasAttribute("data-editor-id"))el.setAttribute("data-editor-id",stable);
+    if(rawSelector&&!el.hasAttribute("data-editor-source-selector"))el.setAttribute("data-editor-source-selector",rawSelector);
     const selector=`[data-editor-id="${stable}"]`;const rect=el.getBoundingClientRect();
     const label=clean(el.getAttribute("data-editor-name")||el.getAttribute("aria-label")||el.getAttribute("alt")||el.innerText||el.textContent||el.id||el.tagName).slice(0,96);
     const parent=el.parentElement?.closest?.("[data-editor-id]")?.getAttribute("data-editor-id")||null;
@@ -84,4 +94,4 @@ export function buildObjectRegistry(doc,route="/"){
   return {route,layers,objects,byId,stats:{total:rows.length,objects:objects.length,containers:rows.filter(x=>x.adapter==="container").length,controls:rows.filter(x=>x.adapter==="control").length,media:rows.filter(x=>x.adapter==="media").length,viewers:rows.filter(x=>x.adapter==="3d-viewer").length}};
 }
 
-export function registrySearch(items,query){const q=clean(query).toLowerCase();if(!q)return items;return items.filter(x=>[x.label,x.tag,x.adapter,x.breadcrumb,x.selector].some(v=>String(v||"").toLowerCase().includes(q)))}
+export function registrySearch(items,query){const q=clean(query).toLowerCase();if(!q)return items;return items.filter(x=>[x.label,x.tag,x.adapter,x.breadcrumb,x.sourceSelector,x.selector].some(v=>String(v||"").toLowerCase().includes(q)))}
