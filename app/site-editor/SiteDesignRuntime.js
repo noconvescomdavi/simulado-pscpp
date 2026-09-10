@@ -17,7 +17,7 @@ const SAFE_STYLE_KEYS = new Set([
   'textTransform','textDecoration','whiteSpace','cursor','translate','transform','transition','aspectRatio','mixBlendMode','clipPath'
 ]);
 
-let ACTIVE_BREAKPOINTS={tablet:1024,mobile:620,custom:[]};
+let ACTIVE_BREAKPOINTS={tablet:1024,mobile:620,custom:[]};let ACTIVE_COMPONENTS={};
 function setBreakpoints(value){ACTIVE_BREAKPOINTS={tablet:Math.max(621,Number(value?.tablet)||1024),mobile:Math.max(320,Number(value?.mobile)||620),custom:Array.isArray(value?.custom)?value.custom:[]}}
 function responsiveMerge(base,responsive){const width=window.innerWidth;let out={...(base||{})};for(const bp of [...(ACTIVE_BREAKPOINTS.custom||[])].sort((a,b)=>Number(b.maxWidth)-Number(a.maxWidth))){if(width<=Number(bp.maxWidth||0))out={...out,...(responsive?.[bp.id]?.style||{})}}if(width<=ACTIVE_BREAKPOINTS.tablet)out={...out,...(responsive?.tablet?.style||{})};if(width<=ACTIVE_BREAKPOINTS.mobile)out={...out,...(responsive?.mobile?.style||{})};return out}
 
@@ -94,6 +94,7 @@ function applyRecord(record) {
 function el(tag, cls, text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;}
 function blockStyle(block){return responsiveMerge(block.style||{},block.responsive||{})}
 function renderBlock(block){
+  if(block?.type==="componentInstance"&&block.componentRef&&ACTIVE_COMPONENTS[block.componentRef]){const master=ACTIVE_COMPONENTS[block.componentRef];block={...master.snapshot,...block,id:block.id,type:master.snapshot?.type||block.type,style:{...(master.snapshot?.style||{}),...(block.style||{})},responsive:{...(master.snapshot?.responsive||{}),...(block.responsive||{})}}}
   const wrap=el("section","estibordo-editor-block estibordo-block-"+block.type);wrap.dataset.estibordoEditorBlock=block.id||"";
   const addText=(tag,value,cls)=>{if(value){const n=el(tag,cls,value);wrap.appendChild(n);return n}};
   switch(block.type){
@@ -159,7 +160,7 @@ function applyDesignSystem(tokens){
   const root=document.documentElement;
   const map={primary:"--estibordo-primary",accent:"--estibordo-accent",surface:"--estibordo-surface",text:"--estibordo-text",radius:"--estibordo-radius",maxContentWidth:"--estibordo-content-max",h1:"--estibordo-h1",body:"--estibordo-body"};
   Object.entries(map).forEach(([key,cssVar])=>{if(tokens[key])root.style.setProperty(cssVar,String(tokens[key]))});
-  if(tokens.fontFamily)document.body.style.fontFamily=String(tokens.fontFamily);
+  if(tokens.fontFamily)document.body.style.fontFamily=String(tokens.fontFamily);if(tokens.variables){try{const vars=typeof tokens.variables==="string"?JSON.parse(tokens.variables):tokens.variables;Object.entries(vars||{}).forEach(([k,v])=>root.style.setProperty("--"+String(k).replace(/^--/,""),String(v)))}catch{}}
 }
 
 function applyFavicon(url) {
@@ -176,7 +177,7 @@ function applyFavicon(url) {
 }
 
 export default function SiteDesignRuntime() {
-  useEffect(() => {let activeDesign=design;const run = () => {if (window.location.pathname.startsWith('/admin/editor')) return;setBreakpoints(activeDesign?.global?.breakpoints||{});applyDesignSystem(activeDesign?.global?.designSystem||{});applyRecord(activeDesign?.global?.elements || {});const routeKey=document.querySelector("[data-estibordo-not-found]")?"/__404":window.location.pathname;const page=activeDesign?.pages?.[routeKey]||{};
+  useEffect(() => {let activeDesign=design;try{const params=new URLSearchParams(location.search);if(params.get("estibordoDraft")==="1"){const draft=localStorage.getItem("estibordo-preview:"+location.pathname);if(draft)activeDesign=JSON.parse(draft)}}catch{}const run = () => {if (window.location.pathname.startsWith('/admin/editor')) return;setBreakpoints(activeDesign?.global?.breakpoints||{});ACTIVE_COMPONENTS=Object.fromEntries((activeDesign?.global?.blockComponents||[]).map(c=>[c.id,c]));applyDesignSystem(activeDesign?.global?.designSystem||{});applyRecord(activeDesign?.global?.elements || {});const routeKey=document.querySelector("[data-estibordo-not-found]")?"/__404":window.location.pathname;const page=activeDesign?.pages?.[routeKey]||{};
       applyRecord(page.elements || {});
       applyBlocks(page.blocks || []);
       applyPageSettings(page.settings || {});
