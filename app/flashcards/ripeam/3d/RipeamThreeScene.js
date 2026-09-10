@@ -144,9 +144,32 @@ function makeMoonTexture(THREE){
   const texture=new THREE.CanvasTexture(canvas);texture.colorSpace=THREE.SRGBColorSpace;return texture;
 }
 
+
+function makeOceanNormalTexture(THREE){
+  const size=256,canvas=document.createElement("canvas");canvas.width=size;canvas.height=size;
+  const ctx=canvas.getContext("2d"),img=ctx.createImageData(size,size),d=img.data;
+  for(let y=0;y<size;y++)for(let x=0;x<size;x++){
+    const i=(y*size+x)*4;
+    const a=Math.sin(x*.11+y*.037)+Math.sin(x*.031-y*.083)*.7+Math.sin((x+y)*.019)*.55;
+    const b=Math.cos(y*.13-x*.043)+Math.sin(y*.027+x*.071)*.65;
+    const nx=Math.max(-1,Math.min(1,a*.34)),ny=Math.max(-1,Math.min(1,b*.34));
+    d[i]=Math.round((nx*.5+.5)*255);d[i+1]=Math.round((ny*.5+.5)*255);d[i+2]=245;d[i+3]=255;
+  }
+  ctx.putImageData(img,0,0);
+  const tex=new THREE.CanvasTexture(canvas);tex.wrapS=tex.wrapT=THREE.RepeatWrapping;tex.repeat.set(22,22);tex.anisotropy=8;return tex;
+}
+function makeCloudTexture(THREE){
+  const canvas=document.createElement("canvas");canvas.width=256;canvas.height=128;const ctx=canvas.getContext("2d");
+  const g=ctx.createRadialGradient(128,64,10,128,64,96);g.addColorStop(0,"rgba(255,255,255,.95)");g.addColorStop(.52,"rgba(255,255,255,.52)");g.addColorStop(1,"rgba(255,255,255,0)");
+  ctx.fillStyle=g;ctx.fillRect(0,0,256,128);const t=new THREE.CanvasTexture(canvas);t.colorSpace=THREE.SRGBColorSpace;return t;
+}
+function addDayClouds(THREE,scene,twilight=false){
+  const tex=makeCloudTexture(THREE),group=new THREE.Group();
+  for(let i=0;i<9;i++){const s=new THREE.Sprite(new THREE.SpriteMaterial({map:tex,transparent:true,opacity:twilight?.24:.46,depthWrite:false}));s.scale.set(30+((i*13)%22),10+((i*7)%7),1);s.position.set(-112+i*27,43+((i*17)%14),-90+((i*31)%165));group.add(s)}
+  scene.add(group);return group;
+}
 function addStaticNightEnvironment(THREE,scene){
   scene.background=new THREE.Color(0x01040a);
-  scene.fog=new THREE.FogExp2(0x010710,.0023);
 
   const sky=new THREE.Mesh(
     new THREE.SphereGeometry(220,40,24),
@@ -204,13 +227,22 @@ function addStaticNightEnvironment(THREE,scene){
   return {stars,moon,moonGlow,moonLight,ambient,hemi};
 }
 
-function addDayEnvironment(THREE,scene){
-  scene.background=new THREE.Color(0x78b8dc);
-  scene.add(new THREE.AmbientLight(0xffffff,.8));
-  scene.add(new THREE.HemisphereLight(0xddefff,0x16374d,1));
-  const sun=new THREE.DirectionalLight(0xffffff,1.4);
-  sun.position.set(8,14,10);
-  scene.add(sun);
+function addDayEnvironment(THREE,scene,twilight=false){
+  const sky=new THREE.Mesh(new THREE.SphereGeometry(240,40,24),new THREE.ShaderMaterial({
+    side:THREE.BackSide,depthWrite:false,
+    uniforms:{top:{value:new THREE.Color(twilight?0x31566e:0x2e84c4)},bottom:{value:new THREE.Color(twilight?0xd59478:0xc7ebfb)}},
+    vertexShader:"varying vec3 vPos;void main(){vPos=position;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}",
+    fragmentShader:"varying vec3 vPos;uniform vec3 top;uniform vec3 bottom;void main(){float h=clamp((normalize(vPos).y+.12)/1.12,0.0,1.0);gl_FragColor=vec4(mix(bottom,top,h),1.0);}"
+  }));scene.add(sky);
+  scene.add(new THREE.AmbientLight(twilight?0x9eb4c8:0xffffff,twilight?.45:.68));
+  scene.add(new THREE.HemisphereLight(twilight?0xb5c5d6:0xe6f5ff,0x17394f,twilight?.62:.9));
+  const sun=new THREE.DirectionalLight(twilight?0xffc07d:0xfff0ce,twilight?.85:1.65);
+  // Sol baixo de aproximadamente 15h, com luz lateral quente e sombras legíveis.
+  sun.position.set(12,8,-7);scene.add(sun);
+  const sunDisc=new THREE.Mesh(new THREE.SphereGeometry(3.2,24,16),new THREE.MeshBasicMaterial({color:twilight?0xffad6a:0xffe5ad}));
+  sunDisc.position.set(78,52,-96);scene.add(sunDisc);
+  addDayClouds(THREE,scene,twilight);
+  return {sky,sun,sunDisc};
 }
 
 function addOceanSurfaceDetail(THREE,scene,night){
@@ -451,8 +483,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         const scene=new THREE.Scene();
         const phase=environmentPhase|| (night?"night":"day");
         if(phase==="night")addStaticNightEnvironment(THREE,scene);
-        else addDayEnvironment(THREE,scene);
-        if(phase==="twilight"){scene.background=new THREE.Color(0x274d69);scene.add(new THREE.HemisphereLight(0x8aa9c7,0x102230,.65));}
+        else addDayEnvironment(THREE,scene,phase==="twilight");
 
         const liveCamera=liveConfig?.camera||null;
         const isNight=phase==="night",isTwilight=phase==="twilight";
@@ -497,30 +528,24 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         let settleTimer=0;
         controls.addEventListener("end",()=>{clearTimeout(settleTimer);settleTimer=setTimeout(()=>{dynamicScale=fallbackTier?.72:1;renderer.setPixelRatio(safePixelRatio(qualityMode,dynamicScale))},140)});
 
-        const waterSegments=mobileViewport?44:72;
-        const waterGeometry=new THREE.PlaneGeometry(400,400,waterSegments,waterSegments);
-        const wp=waterGeometry.attributes.position;
-        for(let i=0;i<wp.count;i++){
-          const x=wp.getX(i),y=wp.getY(i);
-          const z=Math.sin(x*.075)*.10+Math.cos(y*.09)*.08+Math.sin((x+y)*.045)*.06;
-          wp.setZ(i,z);
-        }
-        wp.needsUpdate=true;
-        waterGeometry.computeVertexNormals();
+        const waterSegments=mobileViewport?48:96;
+        const waterGeometry=new THREE.PlaneGeometry(420,420,waterSegments,waterSegments);
+        const oceanNormal=makeOceanNormalTexture(THREE);
         const water=new THREE.Mesh(
           waterGeometry,
-          new THREE.MeshStandardMaterial({
-            color:isNight?0x010810:isTwilight?0x064a69:0x075d86,
-            roughness:isNight?.64:.54,
-            metalness:isNight?.20:.06
+          new THREE.MeshPhysicalMaterial({
+            color:isNight?0x011120:isTwilight?0x053a58:0x043f6b,
+            normalMap:oceanNormal,normalScale:new THREE.Vector2(isNight?.32:.42,isNight?.32:.42),
+            roughness:isNight?.28:isTwilight?.23:.18,metalness:isNight?.12:.08,
+            clearcoat:isNight?.35:.55,clearcoatRoughness:.18,envMapIntensity:isNight?.4:isTwilight?.58:.8
           })
         );
-        water.rotation.x=-Math.PI/2;
-        water.position.y=SEA_LEVEL;
-        scene.add(water);
+        water.rotation.x=-Math.PI/2;water.position.y=SEA_LEVEL;scene.add(water);
         addOceanSurfaceDetail(THREE,scene,isNight);
         if(isNight)addMoonReflection(THREE,scene);
-        scene.fog=Number(fogLevel)>0?new THREE.FogExp2(isNight?0x08111a:0x9bbbc8,Math.min(.04,Number(fogLevel)*.012)):scene.fog;
+        const publishedFog=liveConfig?.environment?.fogEnabled===true?Number(liveConfig?.environment?.fogDensity||0):0;
+        const effectiveFog=Math.max(Number(fogLevel||0)*.012,publishedFog);
+        scene.fog=effectiveFog>0?new THREE.FogExp2(liveConfig?.environment?.fog||(isNight?"#07111e":"#b5cbd6"),Math.min(.08,effectiveFog)):null;
 
         const vesselRoot=new THREE.Group();
         const lightsRoot=new THREE.Group();
@@ -809,6 +834,8 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
           frames++;fpsFrames++;
           controls.update();
           const now=performance.now();
+          if(oceanNormal){oceanNormal.offset.x=(now*.000006)%1;oceanNormal.offset.y=(now*.0000035)%1}
+          if(waterGeometry?.attributes?.position&&frames%2===0){const p=waterGeometry.attributes.position;for(let i=0;i<p.count;i+=6){const x=p.getX(i),y=p.getY(i);p.setZ(i,Math.sin(x*.075+now*.00055)*.065+Math.cos(y*.06-now*.0004)*.045)}p.needsUpdate=true}
           if(displayMode==="vessel"&&vesselRoot){vesselRoot.rotation.z=Math.sin(now*.00075)*.0025;vesselRoot.position.y=SEA_LEVEL+Math.sin(now*.00062)*.012;}
           if(now-fpsLast>2200){
             const fps=fpsFrames*1000/(now-fpsLast);fpsFrames=0;fpsLast=now;
@@ -879,7 +906,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
           });
         };
         highlightLight(highlightLightIndex);
-        runtime.current={renderer,controls,observer,onVisibility,pmremGenerator,roomEnvironment,environmentTarget,vesselRoot,lightsRoot,shapesRoot,sectorsRoot,setView,zoomBy,highlightLight,focusVessel,reset:()=>setView("3d")};
+        runtime.current={renderer,controls,observer,onVisibility,pmremGenerator,roomEnvironment,environmentTarget,oceanNormal,vesselRoot,lightsRoot,shapesRoot,sectorsRoot,setView,zoomBy,highlightLight,focusVessel,reset:()=>setView("3d")};
       }catch(error){
         console.error("[RIPEAM 3D]",error);
         if(root){
@@ -898,6 +925,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
       const r=runtime.current;
       if(r){
         r.observer?.disconnect();
+        r.oceanNormal?.dispose?.();
         r.environmentTarget?.dispose?.();
         r.roomEnvironment?.dispose?.();
         r.pmremGenerator?.dispose?.();
