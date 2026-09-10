@@ -49,8 +49,6 @@ export default function Admin3DEditor(){
   const [compare,setCompare]=useState(false);
   const [playhead,setPlayhead]=useState(0);
   const [playing,setPlaying]=useState(false);
-  const [autosave,setAutosave]=useState(true);
-  const [lastEdit,setLastEdit]=useState(0);
   const [clipboard,setClipboard]=useState(null);
   const [publishedBaseline,setPublishedBaseline]=useState(null);
   const [abCompare,setAbCompare]=useState(null);
@@ -110,12 +108,6 @@ export default function Admin3DEditor(){
     raf=requestAnimationFrame(tick);return()=>cancelAnimationFrame(raf);
   },[playing,scene.config?.timeline?.duration,scene.config?.timeline?.loop]);
 
-  useEffect(()=>{
-    if(!lastEdit||!scene.id||!autosave)return;
-    const timer=setTimeout(()=>save("draft",{silent:true,versionLabel:"Autosave"}),1800);
-    return()=>clearTimeout(timer);
-  },[lastEdit,autosave,scene.id]);
-
   async function load(sceneId){
     const q=sceneId?"?sceneId="+encodeURIComponent(sceneId):"";
     const r=await fetch("/api/admin/laboratorio-3d"+q,{cache:"no-store"});
@@ -144,7 +136,6 @@ export default function Admin3DEditor(){
     setHistory(h=>[...h.slice(-49),clone(scene)]);
     setFuture([]);
     setScene(next);
-    setLastEdit(Date.now());
   }
 
   function mutate(fn){
@@ -156,7 +147,7 @@ export default function Admin3DEditor(){
       if(!h.length)return h;
       const prev=h[h.length-1];
       setFuture(f=>[clone(scene),...f].slice(0,50));
-      setScene(prev);setLastEdit(Date.now());
+      setScene(prev);
       return h.slice(0,-1);
     });
   }
@@ -166,7 +157,7 @@ export default function Admin3DEditor(){
       if(!f.length)return f;
       const next=f[0];
       setHistory(h=>[...h.slice(-49),clone(scene)]);
-      setScene(next);setLastEdit(Date.now());
+      setScene(next);
       return f.slice(1);
     });
   }
@@ -695,11 +686,11 @@ export default function Admin3DEditor(){
           <label>Nota editorial semântica<textarea rows="3" value={semantic.editorialNote||""} onChange={e=>mutate(s=>{s.config.semantic.editorialNote=e.target.value})}/></label>
 
           <h4>Identidade editorial</h4>
-          <label>Título<input value={scene.title} onChange={e=>{setScene(s=>({...s,title:e.target.value}));setLastEdit(Date.now())}}/></label>
-          <label>Chave técnica da cena<input value={scene.scene_key} disabled={!!semantic.lockedToRule} onChange={e=>{setScene(s=>({...s,scene_key:e.target.value}));setLastEdit(Date.now())}}/></label>
-          <label>Card / cenário<input value={scene.card_title} onChange={e=>{setScene(s=>({...s,card_title:e.target.value}));setLastEdit(Date.now())}}/></label>
-          <label>Descrição<textarea rows="4" value={scene.description} onChange={e=>{setScene(s=>({...s,description:e.target.value}));setLastEdit(Date.now())}}/></label>
-          <div className={styles.inlineChecks}><label title="Autosave salva apenas a working copy; nunca atualiza o aluno."><input type="checkbox" checked={autosave} onChange={e=>setAutosave(e.target.checked)}/> Autosave privado</label><label><input type="checkbox" checked={cfg.settings.snapEnabled} onChange={e=>mutate(s=>{s.config.settings.snapEnabled=e.target.checked})}/> Snap</label></div>
+          <label>Título<input value={scene.title} onChange={e=>setScene(s=>({...s,title:e.target.value}))}/></label>
+          <label>Chave técnica da cena<input value={scene.scene_key} disabled={!!semantic.lockedToRule} onChange={e=>setScene(s=>({...s,scene_key:e.target.value}))}/></label>
+          <label>Card / cenário<input value={scene.card_title} onChange={e=>setScene(s=>({...s,card_title:e.target.value}))}/></label>
+          <label>Descrição<textarea rows="4" value={scene.description} onChange={e=>setScene(s=>({...s,description:e.target.value}))}/></label>
+          <div className={styles.inlineChecks}><span title="Não há salvamento ou publicação automática.">Salvamento manual</span><label><input type="checkbox" checked={cfg.settings.snapEnabled} onChange={e=>mutate(s=>{s.config.settings.snapEnabled=e.target.checked})}/> Snap</label></div>
           <h4>Snap</h4><label>Posição<input type="number" step=".05" value={cfg.settings.snapPosition} onChange={e=>mutate(s=>{s.config.settings.snapPosition=Number(e.target.value)})}/></label><label>Rotação °<input type="number" value={cfg.settings.snapRotation} onChange={e=>mutate(s=>{s.config.settings.snapRotation=Number(e.target.value)})}/></label><label>Escala<input type="number" step=".01" value={cfg.settings.snapScale} onChange={e=>mutate(s=>{s.config.settings.snapScale=Number(e.target.value)})}/></label>
           <h4>Ambiente</h4><div className={styles.miniActions}>{ENVIRONMENT_PRESETS.map(p=><button key={p.key} onClick={()=>applyEnvironmentPreset(p)}>{p.label}</button>)}</div>{[["background","Fundo"],["water","Água"],["ambient","Luz ambiente"],["sun","Sol"],["fog","Neblina"]].map(([k,l])=><label key={k}>{l}<input type="color" value={cfg.environment[k]} onChange={e=>mutate(s=>{s.config.environment[k]=e.target.value})}/></label>)}<label>Exposição<input type="range" min=".1" max="3" step=".05" value={cfg.environment.exposure} onChange={e=>mutate(s=>{s.config.environment.exposure=Number(e.target.value)})}/></label><label>Neblina<input type="range" min="0" max=".1" step=".001" value={cfg.environment.fogDensity} onChange={e=>mutate(s=>{s.config.environment.fogDensity=Number(e.target.value)})}/></label>
           <h4>Backup</h4><div className={styles.row}><button onClick={exportJson}>Exportar JSON</button><button onClick={()=>fileRef.current?.click()}>Importar JSON</button><input ref={fileRef} type="file" accept=".json" hidden onChange={e=>importJson(e.target.files?.[0])}/></div>
