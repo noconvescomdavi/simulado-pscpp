@@ -1,0 +1,39 @@
+name: RIPEAM Editor Pro V4
+on:
+  push:
+    branches: [feat/ripeam-editor-pro-v4-20260910]
+permissions:
+  contents: write
+jobs:
+  implement:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Apply V4 upgrade
+        run: python scripts/upgrade-ripeam-v4.py
+      - name: GLB regression
+        run: node scripts/check-ripeam-glb-regression.mjs
+      - name: Static invariants
+        run: |
+          grep -q 'OrthographicCamera' app/admin/laboratorio-3d/Admin3DViewport.js
+          grep -q 'Auto-rig anchors' app/admin/laboratorio-3d/Admin3DEditor.js
+          grep -q 'Screenshot 4K' app/admin/laboratorio-3d/Admin3DEditor.js
+          grep -q 'Safe FPS' app/admin/laboratorio-3d/Admin3DEditor.js
+          grep -q 'sceneDependencies' app/admin/laboratorio-3d/Admin3DEditor.js
+          ! grep -q 'setTimeout(()=>save("draft"' app/admin/laboratorio-3d/Admin3DEditor.js
+      - name: Install
+        run: npm ci --ignore-scripts
+      - name: Build
+        run: npm run build
+      - name: Commit validated V4
+        run: |
+          rm -f .github/workflows/ripeam-v4.yml scripts/upgrade-ripeam-v4.py
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'feat(editor-3d): completa ferramentas avançadas v4'
+          git push origin HEAD:feat/ripeam-editor-pro-v4-20260910
