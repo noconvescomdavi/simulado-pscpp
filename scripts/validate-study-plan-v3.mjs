@@ -26,7 +26,11 @@ assert.match(getter,/loadStudyPlanSnapshot/,"Plano não está consumindo snapsho
 assert.match(snapshot,/student_plan_snapshots/,"Serviço de snapshot ausente");
 assert.match(snapshot,/TASK_PLANNED/,"Snapshot não registra TASK_PLANNED");
 assert.match(progress,/TASK_COMPLETED/,"Conclusão não está sendo registrada no event log");
-assert.match(progress,/student_plan_reschedules/,"Reprogramações não são encerradas na conclusão");
+assert.match(progress,/pg_advisory_xact_lock/,"Conclusão concorrente não possui lock transacional de idempotência");
+assert.match(progress,/if\(newlyDone\)\{[\s\S]*BACKLOG_ITEM_RESOLVED/,"Evento de resolução do backlog deve ocorrer apenas na primeira conclusão");
+assert.ok(!/update\s+student_plan_reschedules[\s\S]*status='completed'/i.test(progress),
+  "Conclusão voltou a depender da tabela de reprogramações");
+assert.match(client,/source_plan_date:planDate/,"Cliente não preserva a data original da tarefa reprogramada");
 
 for(const table of [
   "student_plan_snapshots",
