@@ -18,3 +18,5 @@
 .viewportToolbar select{background:#071620;border:1px solid #315064;color:#eaf3f8;border-radius:6px;padding:6px;font-size:8px}
 .healthList{display:grid;gap:5px;margin:7px 0 10px}.healthList p{margin:0;padding:6px 7px;border:1px solid #315064;border-radius:6px;background:#0a1d29;font-size:7px}.healthList p b{display:inline-block;min-width:45px}.healthList p small{display:block;margin-top:3px;color:#8fa9b8}.healthList p[data-status="ERRO"]{border-color:#8d2b3c;background:#35131a;color:#ffb0bc}.healthList p[data-status="ALERTA"]{border-color:#80651e;background:#2f280e;color:#f3df92}
 .form label small{font-size:7px;color:#8fa9b8}
+
+.assetGrid button[draggable="true"]{cursor:grab}.assetGrid button[draggable="true"]:active{cursor:grabbing}.materialDiag{max-height:280px;overflow:auto}.materialDiag span{display:block;overflow-wrap:anywhere}

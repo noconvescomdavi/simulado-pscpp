@@ -1,0 +1,14 @@
+export const PRO_CAPABILITIES={
+  materialInspector:true,hashCache:true,progressiveLoading:true,meshopt:true,draco:true,ktx2:true,
+  lod:true,advancedLighting:true,splitDayNight:true,assetManager:true,dragDrop:true,hierarchy:true,multiSelect:true,
+  maritimeAnchors:true,ripeamValidator:true,publishGuard:true,versioning:true,visualDiff:true,undoRedo:true,
+  localRecovery:true,performanceProfiler:true,bottleneckHints:true,publishThumbnail:true,jsonPortability:true
+};
+export function recoveryKey(sceneKey){return 'estibordo:ripeam3d:recovery:'+String(sceneKey||'nova-cena')}
+export function saveLocalRecovery(scene){if(typeof window==='undefined'||!scene)return;try{localStorage.setItem(recoveryKey(scene.scene_key),JSON.stringify({savedAt:new Date().toISOString(),scene}))}catch{}}
+export function readLocalRecovery(sceneKey){if(typeof window==='undefined')return null;try{return JSON.parse(localStorage.getItem(recoveryKey(sceneKey))||'null')}catch{return null}}
+export function clearLocalRecovery(sceneKey){if(typeof window!=='undefined')try{localStorage.removeItem(recoveryKey(sceneKey))}catch{}}
+export function safeTransformIssues(objects=[]){const issues=[];for(const o of objects){for(const k of ['position','rotation','scale']){const v=o?.[k];if(!Array.isArray(v)||v.length<3||!v.slice(0,3).every(Number.isFinite))issues.push((o?.name||'Objeto')+': '+k+' inválido.')}}return issues}
+export function bottleneckHints(stats={}){const out=[];if((stats.drawCalls||0)>220)out.push('Draw calls altos — use LOD/instancing para cenas densas.');if((stats.triangles||0)>350000)out.push('Geometria acima de 350 mil triângulos — configure LOD por distância.');if((stats.textures||0)>80)out.push('Muitas texturas simultâneas — prefira KTX2/Basis, nunca remover mapas.');if((stats.estimatedTextureMB||0)>256)out.push('VRAM estimada acima de 256 MB — comprima texturas sem alterar material.');if((stats.fps||60)<30)out.push('FPS abaixo de 30 — revise draw calls, geometria e LOD.');return out}
+export function kelvinToRgb(kelvin=6500){let t=Math.max(1000,Math.min(40000,Number(kelvin)||6500))/100,r,g,b;if(t<=66){r=255;g=99.4708025861*Math.log(t)-161.1195681661;b=t<=19?0:138.5177312231*Math.log(t-10)-305.0447927307}else{r=329.698727446*Math.pow(t-60,-.1332047592);g=288.1221695283*Math.pow(t-60,-.0755148492);b=255}const c=x=>Math.max(0,Math.min(255,Math.round(x))).toString(16).padStart(2,'0');return '#'+c(r)+c(g)+c(b)}
+export function makeThumbnailDataUrl(canvas,maxW=360,maxH=220){try{if(!canvas)return '';const q=Math.min(1,maxW/canvas.width,maxH/canvas.height),w=Math.max(1,Math.round(canvas.width*q)),h=Math.max(1,Math.round(canvas.height*q)),out=document.createElement('canvas');out.width=w;out.height=h;out.getContext('2d').drawImage(canvas,0,0,w,h);return out.toDataURL('image/webp',.68)}catch{return ''}}

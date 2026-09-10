@@ -5,6 +5,7 @@ import Admin3DViewport from "./Admin3DViewport";
 import {CAMERA_PRESETS,DAY_SHAPES,LIGHT_PRESETS,SCENE_TEMPLATES,DECORATIVE_OBJECTS,makeObject} from "./editor-presets";
 import {ENVIRONMENT_PRESETS,DISPLAY_PRESETS,LIGHT_STACKS,MARITIME_ANCHORS,sceneCompleteness,performanceIssues} from "./editor-professional";
 import {RIPEAM_RULES,CONDITION_LABELS,PERIOD_LABELS,SERVICE_LABELS,SIDE_LABELS,getRule,getSemanticItem,semanticBreadcrumb,semanticLabel} from "./ripeam-semantic";
+import {bottleneckHints,safeTransformIssues,saveLocalRecovery,readLocalRecovery,clearLocalRecovery,kelvinToRgb,makeThumbnailDataUrl} from "./editor-pro-suite";
 
 const EMPTY={
   scene_key:"nova-cena",title:"Nova cena",rule_ref:"",card_title:"",description:"",status:"draft",
@@ -57,6 +58,10 @@ export default function Admin3DEditor(){
   const [healthReport,setHealthReport]=useState([]);
   const [healthBusy,setHealthBusy]=useState(false);
   const [preflight,setPreflight]=useState(null);
+  const [loadProgress,setLoadProgress]=useState({});
+  const [materialInventory,setMaterialInventory]=useState([]);
+  const [recovery,setRecovery]=useState(null);
+  const captureCanvasRef=useRef(null);
   const fileRef=useRef(null);
 
   const cfg=scene.config||EMPTY.config;
@@ -83,6 +88,15 @@ export default function Admin3DEditor(){
   },[scenes]);
 
   useEffect(()=>{load()},[]);
+
+  useEffect(()=>{
+    if(!scene?.scene_key)return;
+    const timer=setTimeout(()=>{saveLocalRecovery(scene);setRecovery(readLocalRecovery(scene.scene_key))},900);
+    return()=>clearTimeout(timer);
+  },[scene]);
+
+  function restoreLocalRecovery(){const row=readLocalRecovery(scene.scene_key);if(!row?.scene){setStatus("Nenhuma recuperação local disponível.");return}commit({...clone(EMPTY),...row.scene,config:{...clone(EMPTY.config),...(row.scene.config||{})}});setStatus("Working copy recuperada localmente. O aluno não foi atualizado.")}
+  function discardLocalRecovery(){clearLocalRecovery(scene.scene_key);setRecovery(null);setStatus("Recuperação local descartada.")}
 
   useEffect(()=>{
     const handler=e=>{
@@ -475,6 +489,7 @@ export default function Admin3DEditor(){
     if(!objects.some(o=>o.type==="model")&&activeRule?.kind==="scene")errors.push("Nenhum modelo 3D na cena.");
     if(objects.some(o=>o.type==="model"&&!o.assetUrl))errors.push("Há modelo 3D sem asset associado.");
     if(stats.modelErrors>0)errors.push(stats.modelErrors+" modelo(s) falharam ao carregar no viewport.");
+    for(const issue of safeTransformIssues(objects))errors.push(issue);
     const expected=semanticItem?.expected||{};
     for(const [preset,count] of expected.lights||[]){
       const have=lights.filter(l=>l.lightPreset===preset).length;
@@ -534,7 +549,8 @@ export default function Admin3DEditor(){
     const summary=publishDiff.length?publishDiff.slice(0,8).map(d=>"• "+d.label).join("\n"):"Nenhuma diferença detectada.";
     if(!window.confirm("ATUALIZAR ALUNO?\n\nEsta é a única ação que publica a working copy.\n\n"+summary+"\n\nConfirmar publicação?"))return;
     setBusy(true);setStatus("Validando e atualizando a cena do aluno...");
-    const payload={...scene,id:scene.systemScene?undefined:scene.id,status:"review",versionLabel:"Atualizar aluno",config:{...scene.config,scenarioKey:scene.scene_key}};
+    const thumbnail=makeThumbnailDataUrl(captureCanvasRef.current);
+    const payload={...scene,id:scene.systemScene?undefined:scene.id,status:"review",versionLabel:"Atualizar aluno",config:{...scene.config,scenarioKey:scene.scene_key,previewThumbnail:thumbnail||scene.config?.previewThumbnail||""}};
     const r=await fetch("/api/admin/laboratorio-3d",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"publish",scene:payload})});
     const j=await r.json().catch(()=>({}));setBusy(false);
     if(!r.ok){setStatus(j.error||"Falha ao atualizar aluno");return}
@@ -557,7 +573,7 @@ export default function Admin3DEditor(){
         <button onClick={undo} disabled={!history.length}>↶ Undo</button><button onClick={redo} disabled={!future.length}>↷ Redo</button>
         <button onClick={duplicateScene}>Duplicar cena</button><button onClick={()=>setScene(clone(EMPTY))}>＋ Nova cena</button>
         <select value={scene.status==="published"?"review":scene.status} onChange={e=>setScene(s=>({...s,status:e.target.value}))}><option value="draft">Rascunho</option><option value="review">Revisão</option><option value="archived">Arquivado</option></select>
-        <button disabled={busy} onClick={()=>save(scene.status)}>Salvar rascunho</button>
+        <button disabled={busy} onClick={()=>save(scene.status)}>Salvar rascunho</button><button onClick={restoreLocalRecovery} title="Cópia local; nunca publica">Recuperar local</button>{recovery&&<button onClick={discardLocalRecovery}>Limpar recuperação</button>}
         <button onClick={()=>setShowDiff(v=>!v)} title="Ver alterações desde a última publicação">Diff ({publishDiff.length})</button><button className={styles.publish} disabled={busy||validation.errors.length>0} title={validation.errors.length?"Corrija os erros críticos antes de atualizar o aluno":"Única ação que envia a working copy atual para o aluno."} onClick={publishStudent}>{scene.liveStudentScene?"Atualizar aluno":"Adicionar ao aluno"}</button>
       </div>
     </div>
@@ -600,11 +616,11 @@ export default function Admin3DEditor(){
           <button className={cfg.settings.previewMode==="night"?styles.active:""} onClick={()=>mutate(s=>{s.config.settings.previewMode=s.config.settings.previewMode==="day"?"night":"day"})}>☾ Dia/Noite</button>
           <button onClick={()=>setCompare(x=>!x)}>▥ Comparar</button>
           <select value="" onChange={e=>{const p=DISPLAY_PRESETS.find(x=>x.key===e.target.value);if(p)applyDisplayPreset(p)}}><option value="">Workspace...</option>{DISPLAY_PRESETS.map(p=><option key={p.key} value={p.key}>{p.label}</option>)}</select>
-          <span>{stats.triangles.toLocaleString("pt-BR")} tri · {stats.drawCalls||0} draws · {stats.textures||0} tex · {stats.estimatedTextureMB||0} MB VRAM · {stats.modelErrors?stats.modelErrors+" GLB com erro":"assets OK"}</span>
+          <span>{stats.triangles.toLocaleString("pt-BR")} tri · {stats.drawCalls||0} draws · {stats.textures||0} tex · {stats.estimatedTextureMB||0} MB VRAM · {stats.fps||60} FPS · {stats.modelErrors?stats.modelErrors+" GLB com erro":"assets OK"}</span>
         </div>
 
-        <div className={compare?styles.compareGrid:styles.singleViewport}>
-          <Admin3DViewport scene={cfg} selectedId={selected} mode={mode} playhead={playhead} onSelect={setSelected} onTransform={(id,t)=>{if(id===selected)patchObject(t)}} onCameraChange={cam=>setScene(s=>({...s,config:{...s.config,editorCamera:cam}}))} onStats={setStats}/>
+        {Object.keys(loadProgress).length>0&&<div className={styles.materialHint}>Carregamento: {Object.values(loadProgress).slice(-4).map(p=>p.name+" "+(p.percent??"…")+"%").join(" · ")}</div>}{bottleneckHints(stats).length>0&&<div className={styles.warnings}><b>Profiler profissional</b>{bottleneckHints(stats).map((h,i)=><p key={i}>⚠ {h}</p>)}</div>}<div className={compare?styles.compareGrid:styles.singleViewport}>
+          <div onDragOver={e=>{e.preventDefault();e.dataTransfer.dropEffect="copy"}} onDrop={e=>{e.preventDefault();try{const a=JSON.parse(e.dataTransfer.getData("application/x-ripeam-asset")||"null");if(a?.url)addObject({name:a.name,assetUrl:a.url,assetType:a.type||"glb",type:"model",normalize:true,material:{mode:"original"}})}catch{}}}><Admin3DViewport scene={cfg} selectedId={selected} mode={mode} playhead={playhead} onSelect={setSelected} onTransform={(id,t)=>{if(id===selected)patchObject(t)}} onCameraChange={cam=>setScene(s=>({...s,config:{...s.config,editorCamera:cam}}))} onStats={setStats} onLoadProgress={p=>setLoadProgress(x=>({...x,[p.id]:p}))} onMaterialInventory={setMaterialInventory} onCaptureReady={canvas=>{captureCanvasRef.current=canvas}}/></div>
           {compare&&<Admin3DViewport scene={{...cfg,settings:{...cfg.settings,previewMode:cfg.settings.previewMode==="day"?"night":"day"}}} readOnly playhead={playhead} onStats={()=>{}}/>}{abCompare&&<Admin3DViewport scene={{...cfg,objects:(cfg.objects||[]).map(o=>o.id===abCompare.selectedId?{...o,name:abCompare.candidate.name,assetUrl:abCompare.candidate.url,assetType:"glb"}:o)}} readOnly playhead={playhead} onStats={()=>{}}/>}
         </div>
 
@@ -626,7 +642,7 @@ export default function Admin3DEditor(){
             <select value={importMode} onChange={e=>setImportMode(e.target.value)} title="Escolha se o GLB será adicionado ou substituirá o modelo selecionado"><option value="add">Adicionar novo navio</option><option value="replace">Substituir selecionado</option></select>
             <label><input type="file" accept=".glb,model/gltf-binary" onChange={e=>{upload(e.target.files?.[0],importMode);e.target.value=""}}/>＋ Importar GLB do PC</label>
           </div>
-          <div className={styles.assetGrid}>{filteredAssets.map((a,i)=>{const d=a.metadata?.glbDiagnostics;return <button key={a.url+i} onClick={()=>addObject({name:a.name,assetUrl:a.url,assetType:a.type,type:"model",normalize:true,material:{mode:"original"}})}><b>{a.name}</b><small>{String(a.type||"").toUpperCase()} · {a.category||"Asset"} · usado {usage[a.url]||0}x</small>{a.bytes&&<small>{(a.bytes/1024/1024).toFixed(1)} MB</small>}{d&&<small>{d.materials||0} materiais · {d.textures||0} texturas · UV {d.missingUvMeshes?"atenção":"OK"}</small>}</button>})}</div>
+          <div className={styles.assetGrid}>{filteredAssets.map((a,i)=>{const d=a.metadata?.glbDiagnostics;return <button key={a.url+i} draggable onDragStart={e=>{e.dataTransfer.setData("application/x-ripeam-asset",JSON.stringify(a));e.dataTransfer.effectAllowed="copy"}} onClick={()=>addObject({name:a.name,assetUrl:a.url,assetType:a.type,type:"model",normalize:true,material:{mode:"original"}})}><b>{a.name}</b><small>{String(a.type||"").toUpperCase()} · {a.category||"Asset"} · usado {usage[a.url]||0}x</small>{a.bytes&&<small>{(a.bytes/1024/1024).toFixed(1)} MB</small>}{d&&<small>{d.materials||0} materiais · {d.textures||0} texturas · UV {d.missingUvMeshes?"atenção":"OK"}</small>}</button>})}</div>
         </div>
       </section>
 
@@ -656,11 +672,11 @@ export default function Admin3DEditor(){
             </div>
             <div className={styles.materialHint}>{(obj.material?.mode||"original")==="original"?"Base Color, Normal, Roughness, Metallic, AO, Emissive, UVs, transparência e materiais múltiplos são preservados do arquivo.":"As propriedades abaixo passam a sobrescrever os materiais importados."}</div>
             {obj.assetType==="glb"&&<button type="button" className={styles.assetDiagnosticButton} onClick={diagnoseCurrentAsset}>Diagnosticar materiais e texturas agora</button>}
-            {objDiag&&<div className={styles.materialDiag}><b>Diagnóstico do asset</b><span>{objDiag.materials||0} materiais únicos · {objDiag.materialSlots||0} slots</span><span>{objDiag.textures||0} texturas · {objDiag.baseColorMaps||0} Base Color · {objDiag.normalMaps||0} Normal</span><span>{objDiag.roughnessMaps||0} Roughness · {objDiag.metalnessMaps||0} Metallic · {objDiag.aoMaps||0} AO · {objDiag.emissiveMaps||0} Emissive</span><span>UVs: {objDiag.missingUvMeshes?objDiag.missingUvMeshes+" mesh(es) sem UV":"OK"} · Materiais múltiplos: {objDiag.multiMaterialMeshes||0} mesh(es)</span><span>Texturas incorporadas: {objDiag.embeddedTextures===false?"não / referência externa detectada":"sim"}</span></div>}
+            {objDiag&&<div className={styles.materialDiag}><b>Diagnóstico do asset</b><span>{objDiag.materials||0} materiais únicos · {objDiag.materialSlots||0} slots</span><span>{objDiag.textures||0} texturas · {objDiag.baseColorMaps||0} Base Color · {objDiag.normalMaps||0} Normal</span><span>{objDiag.roughnessMaps||0} Roughness · {objDiag.metalnessMaps||0} Metallic · {objDiag.aoMaps||0} AO · {objDiag.emissiveMaps||0} Emissive</span><span>UVs: {objDiag.missingUvMeshes?objDiag.missingUvMeshes+" mesh(es) sem UV":"OK"} · Materiais múltiplos: {objDiag.multiMaterialMeshes||0} mesh(es)</span><span>Texturas incorporadas: {objDiag.embeddedTextures===false?"não / referência externa detectada":"sim"}</span></div>}{materialInventory.filter(m=>m.objectId===obj.id).length>0&&<div className={styles.materialDiag}><b>Materiais carregados na GPU</b>{materialInventory.filter(m=>m.objectId===obj.id).slice(0,60).map((m,i)=><span key={m.mesh+m.material+i}>{m.mesh} · {m.material} · {Object.entries(m.maps||{}).map(([k,v])=>k+" "+(v.width&&v.height?v.width+"×"+v.height:"map")).join(" · ")||"sem texture map"}</span>)}</div>}
             {obj.material?.mode==="custom"&&<><label>Cor<input type="color" value={obj.material?.color||"#ffffff"} onChange={e=>patchMaterial({color:e.target.value})}/></label><label>Emissive<input type="color" value={obj.material?.emissive||"#000000"} onChange={e=>patchMaterial({emissive:e.target.value})}/></label><label>Roughness<input type="range" min="0" max="1" step=".01" value={obj.material?.roughness??.5} onChange={e=>patchMaterial({roughness:Number(e.target.value)})}/></label><label>Metalness<input type="range" min="0" max="1" step=".01" value={obj.material?.metalness??.05} onChange={e=>patchMaterial({metalness:Number(e.target.value)})}/></label><label>Opacidade<input type="range" min="0" max="1" step=".01" value={obj.material?.opacity??1} onChange={e=>patchMaterial({opacity:Number(e.target.value)})}/></label><label><input type="checkbox" checked={!!obj.material?.doubleSide} onChange={e=>patchMaterial({doubleSide:e.target.checked})}/> Renderizar frente e verso</label></>}
-            <label>LOD mobile<input type="checkbox" checked={!!obj.lod?.enabled} onChange={e=>patchObject({lod:{...(obj.lod||{}),enabled:e.target.checked}})}/></label></>}
+            <label>LOD / distância<input type="checkbox" checked={!!obj.lod?.enabled} onChange={e=>patchObject({lod:{...(obj.lod||{}),enabled:e.target.checked}})}/></label>{obj.lod?.enabled&&<><label>Distância LOD<input type="number" min="5" max="1000" value={obj.lod?.farDistance||80} onChange={e=>patchObject({lod:{...(obj.lod||{}),farDistance:Number(e.target.value)}})}/></label><label><input type="checkbox" checked={!!obj.lod?.hideBeyond} onChange={e=>patchObject({lod:{...(obj.lod||{}),hideBeyond:e.target.checked}})}/> Ocultar além da distância</label><label>GLB LOD alternativo<input value={obj.lod?.farAssetUrl||""} placeholder="/models/ripeam/modelo_lod.glb" onChange={e=>patchObject({lod:{...(obj.lod||{}),farAssetUrl:e.target.value}})}/></label></>}</>}
 
-          {obj.type?.includes("Light")&&<><h4>Luz RIPEAM</h4><label>Cor<input type="color" value={obj.color} onChange={e=>patchObject({color:e.target.value})}/></label><label>Setor (°)<input type="number" min="0" max="360" step=".5" value={obj.sector||360} onChange={e=>patchObject({sector:Number(e.target.value)})}/></label><label>Rumo do setor (°)<input type="number" value={obj.heading||0} onChange={e=>patchObject({heading:Number(e.target.value)})}/></label><label>Intensidade<input type="range" min="0" max="20" step=".1" value={obj.intensity} onChange={e=>patchObject({intensity:Number(e.target.value)})}/></label><label>Alcance visual<input type="number" value={obj.distance} onChange={e=>patchObject({distance:Number(e.target.value)})}/></label></>}
+          {obj.type?.includes("Light")&&<><h4>Luz RIPEAM</h4><label>Cor<input type="color" value={obj.color} onChange={e=>patchObject({color:e.target.value})}/></label><label>Temperatura (K)<input type="number" min="1000" max="40000" step="100" value={obj.temperature||6500} onChange={e=>{const temperature=Number(e.target.value);patchObject({temperature,color:kelvinToRgb(temperature)})}}/></label><label>Setor (°)<input type="number" min="0" max="360" step=".5" value={obj.sector||360} onChange={e=>patchObject({sector:Number(e.target.value)})}/></label><label>Rumo do setor (°)<input type="number" value={obj.heading||0} onChange={e=>patchObject({heading:Number(e.target.value)})}/></label><label>Intensidade<input type="range" min="0" max="20" step=".1" value={obj.intensity} onChange={e=>patchObject({intensity:Number(e.target.value)})}/></label><label>Alcance visual<input type="number" value={obj.distance} onChange={e=>patchObject({distance:Number(e.target.value)})}/></label><label>Decay físico<input type="number" min="0" max="4" step=".1" value={obj.decay??2} onChange={e=>patchObject({decay:Number(e.target.value)})}/></label><label>Tamanho do foco<input type="range" min=".2" max="5" step=".1" value={obj.lightSize||1} onChange={e=>patchObject({lightSize:Number(e.target.value)})}/></label><label>Halo<input type="range" min="0" max="4" step=".1" value={obj.haloSize||1} onChange={e=>patchObject({haloSize:Number(e.target.value)})}/></label>{obj.type==="spotLight"&&<><label>Ângulo do feixe<input type="range" min=".05" max="1.5" step=".01" value={obj.angle||.75} onChange={e=>patchObject({angle:Number(e.target.value)})}/></label><label>Penumbra<input type="range" min="0" max="1" step=".01" value={obj.penumbra||.25} onChange={e=>patchObject({penumbra:Number(e.target.value)})}/></label></>}</>}
 
           {obj.type==="shape"&&<label>Marca diurna<select value={obj.shape||"ball"} onChange={e=>patchObject({shape:e.target.value})}>{DAY_SHAPES.map(s=><option key={s.key} value={s.shape}>{s.label}</option>)}</select></label>}
           {obj.type==="hotspot"&&<><label>Título<input value={obj.hotspot?.title||""} onChange={e=>patchObject({hotspot:{...(obj.hotspot||{}),title:e.target.value}})}/></label><label>Texto<textarea value={obj.hotspot?.body||""} onChange={e=>patchObject({hotspot:{...(obj.hotspot||{}),body:e.target.value}})}/></label></>}
