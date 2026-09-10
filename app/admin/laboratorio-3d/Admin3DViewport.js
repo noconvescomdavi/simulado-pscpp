@@ -31,12 +31,13 @@ export default function Admin3DViewport({
     let dead=false;
     (async()=>{
       const THREE=await import(/* webpackIgnore: true */ CDN);
-      const [{OrbitControls},{TransformControls},{GLTFLoader},{FBXLoader},{OBJLoader}]=await Promise.all([
+      const [{OrbitControls},{TransformControls},{GLTFLoader},{FBXLoader},{OBJLoader},{RoomEnvironment}]=await Promise.all([
         import(/* webpackIgnore: true */ CDN+"/examples/jsm/controls/OrbitControls.js"),
         import(/* webpackIgnore: true */ CDN+"/examples/jsm/controls/TransformControls.js"),
         import(/* webpackIgnore: true */ CDN+"/examples/jsm/loaders/GLTFLoader.js"),
         import(/* webpackIgnore: true */ CDN+"/examples/jsm/loaders/FBXLoader.js"),
-        import(/* webpackIgnore: true */ CDN+"/examples/jsm/loaders/OBJLoader.js")
+        import(/* webpackIgnore: true */ CDN+"/examples/jsm/loaders/OBJLoader.js"),
+        import(/* webpackIgnore: true */ CDN+"/examples/jsm/environments/RoomEnvironment.js")
       ]);
       if(dead||!mount.current)return;
 
@@ -49,6 +50,10 @@ export default function Admin3DViewport({
       renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));
       renderer.outputColorSpace=THREE.SRGBColorSpace;
       renderer.toneMapping=THREE.ACESFilmicToneMapping;
+      const pmremGenerator=new THREE.PMREMGenerator(renderer);
+      const roomEnvironment=new RoomEnvironment();
+      const environmentTarget=pmremGenerator.fromScene(roomEnvironment,.04);
+      sc.environment=environmentTarget.texture;
       root.innerHTML="";
       root.appendChild(renderer.domElement);
 
@@ -119,7 +124,7 @@ export default function Admin3DViewport({
       ro.observe(root);resize();
 
       runtime.current={
-        THREE,sc,camera,renderer,orbit,grid,water,hemi,sun,objects,transform,ro,raf:0,
+        THREE,sc,camera,renderer,orbit,grid,water,hemi,sun,objects,transform,ro,pmremGenerator,roomEnvironment,environmentTarget,raf:0,
         loaders:{glb:new GLTFLoader(),gltf:new GLTFLoader(),fbx:new FBXLoader(),obj:new OBJLoader()}
       };
 
@@ -139,7 +144,7 @@ export default function Admin3DViewport({
       const r=runtime.current;
       if(r){
         cancelAnimationFrame(r.raf);
-        r.ro?.disconnect();r.transform?.dispose?.();r.orbit?.dispose?.();r.renderer?.dispose?.();
+        r.ro?.disconnect();r.transform?.dispose?.();r.orbit?.dispose?.();r.environmentTarget?.dispose?.();r.roomEnvironment?.dispose?.();r.pmremGenerator?.dispose?.();r.renderer?.dispose?.();
         r.sc?.traverse?.(o=>{o.geometry?.dispose?.();if(o.material)(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>m?.dispose?.())});
       }
       runtime.current=null;

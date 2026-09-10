@@ -12,12 +12,13 @@ async function getThree(){
   if(!modernThreePromise){
     modernThreePromise=(async()=>{
       const THREE=await browserImport("https://esm.sh/three@"+THREE_VERSION);
-      const [{GLTFLoader},{OrbitControls},{FBXLoader}]=await Promise.all([
+      const [{GLTFLoader},{OrbitControls},{FBXLoader},{RoomEnvironment}]=await Promise.all([
         browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/loaders/GLTFLoader.js"),
         browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/controls/OrbitControls.js"),
-        browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/loaders/FBXLoader.js")
+        browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/loaders/FBXLoader.js"),
+        browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/environments/RoomEnvironment.js")
       ]);
-      return {...THREE,GLTFLoader,OrbitControls,FBXLoader};
+      return {...THREE,GLTFLoader,OrbitControls,FBXLoader,RoomEnvironment};
     })().catch(error=>{modernThreePromise=null;throw error;});
   }
   return modernThreePromise;
@@ -361,7 +362,11 @@ function applyEditorMaterial(obj,data,maxAnisotropy,THREE){
         if(key==="map"||key==="emissiveMap")t.colorSpace=THREE.SRGBColorSpace;
         t.needsUpdate=true;
       });
-      if(!custom)return;
+      if(!custom){
+        if("envMapIntensity" in m)m.envMapIntensity=1.15;
+        m.needsUpdate=true;
+        return;
+      }
       if("color" in m&&data.material?.color)m.color.set(data.material.color);
       if("roughness" in m&&data.material?.roughness!==undefined)m.roughness=Number(data.material.roughness);
       if("metalness" in m&&data.material?.metalness!==undefined)m.metalness=Number(data.material.metalness);
@@ -408,6 +413,13 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         renderer.toneMapping=THREE.ACESFilmicToneMapping;
         renderer.toneMappingExposure=night?.82:1.02;
         renderer.setClearColor(night?0x01040a:0x8cc7e8,1);
+        // IBL neutro para materiais glTF PBR. O background visual continua sendo
+        // o céu diurno/noturno; environment serve apenas às reflexões/BRDF.
+        const pmremGenerator=new THREE.PMREMGenerator(renderer);
+        pmremGenerator.compileEquirectangularShader();
+        const roomEnvironment=new THREE.RoomEnvironment();
+        const environmentTarget=pmremGenerator.fromScene(roomEnvironment,.04);
+        scene.environment=environmentTarget.texture;
         const maxAnisotropy=renderer.capabilities.getMaxAnisotropy();
 
         root.innerHTML="";
@@ -761,7 +773,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
           });
         };
         highlightLight(highlightLightIndex);
-        runtime.current={renderer,controls,observer,onVisibility,vesselRoot,lightsRoot,shapesRoot,sectorsRoot,setView,zoomBy,highlightLight,reset:()=>setView("3d")};
+        runtime.current={renderer,controls,observer,onVisibility,pmremGenerator,roomEnvironment,environmentTarget,vesselRoot,lightsRoot,shapesRoot,sectorsRoot,setView,zoomBy,highlightLight,reset:()=>setView("3d")};
       }catch(error){
         console.error("[RIPEAM 3D]",error);
         if(root){
@@ -779,6 +791,9 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
       const r=runtime.current;
       if(r){
         r.observer?.disconnect();
+        r.environmentTarget?.dispose?.();
+        r.roomEnvironment?.dispose?.();
+        r.pmremGenerator?.dispose?.();
         if(r.onVisibility)document.removeEventListener("visibilitychange",r.onVisibility);
         r.controls?.dispose();
         disposeObject(r.vesselRoot);
