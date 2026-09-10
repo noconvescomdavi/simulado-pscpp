@@ -2,6 +2,7 @@
 import {useEffect,useRef} from "react";
 import styles from "./laboratorio-3d.module.css";
 import {versionRipeamAssetUrl} from "../../../lib/ripeam-asset-manifest";
+import {RENDER_QUALITIES,NAMED_VIEWS,layerForObject} from "./editor-v3";
 
 const THREE_VERSION="0.180.0";
 const CDN="https://esm.sh/three@"+THREE_VERSION;
@@ -21,12 +22,12 @@ function cloneCachedModel(source){
 }
 
 export default function Admin3DViewport({
-  scene,selectedId,mode,onSelect,onTransform,onCameraChange,onStats,onLoadProgress,onMaterialInventory,onCaptureReady,readOnly=false,playhead=0
+  scene,selectedId,isolateId,mode,onSelect,onTransform,onCameraChange,onStats,onLoadProgress,onMaterialInventory,onCaptureReady,readOnly=false,playhead=0
 }){
   const mount=useRef(null);
   const runtime=useRef(null);
   const propsRef=useRef({});
-  propsRef.current={scene,selectedId,mode,onSelect,onTransform,onCameraChange,onStats,onLoadProgress,onMaterialInventory,onCaptureReady,readOnly,playhead};
+  propsRef.current={scene,selectedId,isolateId,mode,onSelect,onTransform,onCameraChange,onStats,onLoadProgress,onMaterialInventory,onCaptureReady,readOnly,playhead};
 
   useEffect(()=>{
     let dead=false;
@@ -53,7 +54,9 @@ export default function Admin3DViewport({
       camera.position.set(14,7,15);
 
       const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:"high-performance",preserveDrawingBuffer:true});
-      renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));
+      const initialQuality=RENDER_QUALITIES[propsRef.current.scene?.settings?.renderQuality||"high"]||RENDER_QUALITIES.high;
+      renderer.setPixelRatio(Math.min(devicePixelRatio,initialQuality.pixelRatio));
+      renderer.localClippingEnabled=true;
       renderer.outputColorSpace=THREE.SRGBColorSpace;
       renderer.toneMapping=THREE.ACESFilmicToneMapping;
       const pmremGenerator=new THREE.PMREMGenerator(renderer);
@@ -170,6 +173,9 @@ export default function Admin3DViewport({
     r.hemi.color.set(e.ambient||"#7897bc");r.hemi.intensity=Number(night?.55:(e.ambientIntensity||.9));
     r.sun.color.set(e.sun||"#fff0cf");r.sun.intensity=Number(night?.35:(e.sunIntensity||2.2));r.sun.position.fromArray(e.sunPosition||[6,14,9]);
     r.grid.visible=scene.settings?.showGrid!==false;
+    const q=RENDER_QUALITIES[scene.settings?.mobilePreview?"low":(scene.settings?.renderQuality||"high")]||RENDER_QUALITIES.high;r.renderer.setPixelRatio(Math.min(devicePixelRatio,q.pixelRatio));
+    const plane=scene.settings?.clipEnabled?new r.THREE.Plane(new r.THREE.Vector3(0,-1,0),Number(scene.settings?.clipY||0)):null;
+    r.sc.traverse(o=>{const mats=Array.isArray(o.material)?o.material:[o.material];mats.filter(Boolean).forEach(m=>{m.clippingPlanes=plane?[plane]:null;m.clipShadows=!!plane;m.needsUpdate=true})});
     if(c.position)r.camera.position.fromArray(c.position);
     if(c.target)r.orbit.target.fromArray(c.target);
     if(c.fov){r.camera.fov=Number(c.fov);r.camera.updateProjectionMatrix()}
@@ -232,6 +238,17 @@ export default function Admin3DViewport({
             if(key==="map"||key==="emissiveMap")t.colorSpace=r.THREE.SRGBColorSpace;
             t.needsUpdate=true;
           });
+          const channel=scene.settings?.materialChannel||'final';
+          if(channel!=='final'){
+            if(channel==='baseColor'){m.color?.set?.('#ffffff');if('map' in m)m.map=m.map||null;if('normalMap' in m)m.normalMap=null;if('roughnessMap' in m)m.roughnessMap=null;if('metalnessMap' in m)m.metalnessMap=null;if('aoMap' in m)m.aoMap=null;if('emissiveMap' in m)m.emissiveMap=null;}
+            else if(channel==='normal'){if('map' in m)m.map=m.normalMap||null;m.color?.set?.('#ffffff');}
+            else if(channel==='roughness'){if('map' in m)m.map=m.roughnessMap||null;m.color?.set?.('#ffffff');if('roughness' in m)m.roughness=1;if('metalness' in m)m.metalness=0;}
+            else if(channel==='metalness'){if('map' in m)m.map=m.metalnessMap||null;m.color?.set?.('#ffffff');if('metalness' in m)m.metalness=1;}
+            else if(channel==='ao'){if('map' in m)m.map=m.aoMap||null;m.color?.set?.('#ffffff');}
+            else if(channel==='emissive'){if('map' in m)m.map=m.emissiveMap||null;m.color?.set?.('#ffffff');}
+            else if(channel==='uv'){m.wireframe=true;m.map=null;m.normalMap=null;m.color?.set?.('#69d2ff');}
+            else if(channel==='normals'){m.wireframe=false;m.map=null;m.normalMap=null;m.color?.set?.('#7dd3fc');m.metalness=0;m.roughness=1;}
+          }
           if(scene.settings?.wireframe&&"wireframe" in m)m.wireframe=true;
           if(scene.settings?.xray){m.transparent=true;m.opacity=Math.min(Number(m.opacity??1),.28);m.depthWrite=false;}
           if(!custom){
@@ -332,8 +349,11 @@ export default function Admin3DViewport({
       const baseRot=data.rotation||[0,0,0];
       root.rotation.set(Number(baseRot[0]||0)+Number(data.heel||0)*Math.PI/180,Number(baseRot[1]||0),Number(baseRot[2]||0)+Number(data.trim||0)*Math.PI/180);
       root.scale.fromArray(data.scale||[1,1,1]);
-      root.visible=data.visible!==false;
+      const layer=(scene.layers||[]).find(l=>l.id===layerForObject(data));
+      const isolated=propsRef.current.isolateId;
+      root.visible=data.visible!==false&&layer?.visible!==false&&(!isolated||isolated===data.id);
       roots.set(data.id,root);
+      if(scene.settings?.showAnchors&&data.type==="model"&&child){try{const box=new r.THREE.Box3().setFromObject(child),min=box.min,max=box.max,mid=box.getCenter(new r.THREE.Vector3()),defs=[['bow',mid.x,mid.y,max.z],['stern',mid.x,mid.y,min.z],['port',min.x,mid.y,mid.z],['starboard',max.x,mid.y,mid.z],['masthead',mid.x,max.y,mid.z],['waterline',mid.x,0,mid.z]];for(const [name,x,y,z] of defs){const a=new r.THREE.Mesh(new r.THREE.SphereGeometry(.08,10,8),new r.THREE.MeshBasicMaterial({color:0x22d3ee,depthTest:false}));a.position.set(x,y,z);a.renderOrder=10;a.userData.editorHelper=true;a.userData.anchorName=name;root.add(a)}}catch{}}
       if(scene.settings?.showBounds&&child){
         try{const helper=new r.THREE.BoxHelper(child,0x63c8ff);helper.userData.editorHelper=true;root.add(helper)}catch{}
       }
@@ -377,7 +397,7 @@ export default function Admin3DViewport({
     })();
 
     return()=>{cancelled=true};
-  },[scene.objects,scene.settings?.showSectors,scene.settings?.showBounds,scene.settings?.showAxes,scene.settings?.wireframe,scene.settings?.xray]);
+  },[scene.objects,scene.layers,scene.settings?.showSectors,scene.settings?.showBounds,scene.settings?.showAxes,scene.settings?.showAnchors,scene.settings?.wireframe,scene.settings?.xray,scene.settings?.materialChannel,isolateId]);
 
   useEffect(()=>{
     const r=runtime.current;if(!r)return;

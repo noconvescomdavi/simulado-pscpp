@@ -5,6 +5,7 @@ import Admin3DViewport from "./Admin3DViewport";
 import {CAMERA_PRESETS,DAY_SHAPES,LIGHT_PRESETS,SCENE_TEMPLATES,DECORATIVE_OBJECTS,makeObject} from "./editor-presets";
 import {ENVIRONMENT_PRESETS,DISPLAY_PRESETS,LIGHT_STACKS,MARITIME_ANCHORS,sceneCompleteness,performanceIssues} from "./editor-professional";
 import {RIPEAM_RULES,CONDITION_LABELS,PERIOD_LABELS,SERVICE_LABELS,SIDE_LABELS,getRule,getSemanticItem,semanticBreadcrumb,semanticLabel} from "./ripeam-semantic";
+import {DEFAULT_LAYERS,MATERIAL_CHANNELS,NAMED_VIEWS,ensureV3Config,layerForObject,geometricRipeamIssues,occlusionCandidates} from "./editor-v3";
 import {bottleneckHints,safeTransformIssues,saveLocalRecovery,readLocalRecovery,clearLocalRecovery,kelvinToRgb,makeThumbnailDataUrl} from "./editor-pro-suite";
 
 const EMPTY={
@@ -139,7 +140,7 @@ export default function Admin3DEditor(){
       id:row.id,scene_key:row.scene_key,title:row.title,rule_ref:row.rule_ref||"",
       card_title:row.card_title||"",description:row.description||"",status:row.status,
       systemScene:!!row.systemScene,liveStudentScene:!!row.liveStudentScene,
-      config:{...clone(EMPTY.config),...(row.config||{}),settings:{...EMPTY.config.settings,...(row.config?.settings||{})}}
+      config:ensureV3Config({...clone(EMPTY.config),...(row.config||{}),settings:{...EMPTY.config.settings,...(row.config?.settings||{})}})
     });
     setSelected(null);setSelectedIds([]);setHistory([]);setFuture([]);setAbCompare(null);
     setPublishedBaseline(row.publishedSnapshot?clone(row.publishedSnapshot):(row.systemScene?clone(row):null));
@@ -299,6 +300,14 @@ export default function Admin3DEditor(){
     setStatus("Elementos semânticos ausentes foram adicionados como base de edição. Revise posições antes de publicar.");
   }
 
+  function setNamedView(key){const v=NAMED_VIEWS[key];if(!v)return;mutate(x=>{x.config.editorCamera={position:[...v.position],target:[...v.target],fov:v.fov};x.config.settings={...(x.config.settings||{}),orthographicView:v.orthographic?key:null}});}
+  function addCameraBookmark(){const cam=clone(cfg.editorCamera||cfg.camera);const name=window.prompt('Nome do bookmark de câmera','Vista '+((cfg.cameraBookmarks||[]).length+1));if(!name)return;mutate(x=>{x.config.cameraBookmarks=[...(x.config.cameraBookmarks||[]),{id:uid(),name,cam}]})}
+  function applyCameraBookmark(b){mutate(x=>{x.config.editorCamera=clone(b.cam)})}
+  function toggleLayer(id,key){mutate(x=>{x.config.layers=(x.config.layers||DEFAULT_LAYERS).map(l=>l.id===id?{...l,[key]:!l[key]}:l)})}
+  function addCollection(){const name=window.prompt('Nome da collection','Nova collection');if(!name)return;const ids=selectedIds.length?selectedIds:(selected?[selected]:[]);mutate(x=>{x.config.collections=[...(x.config.collections||[]),{id:uid(),name,objectIds:ids}]})}
+  function isolateSelected(){setIsolateId(v=>v===selected?null:selected||null)}
+  function focusSelected(){if(!obj)return;const p=obj.position||[0,0,0];mutate(x=>{x.config.editorCamera={position:[p[0]+10,p[1]+5,p[2]+10],target:[...p],fov:38}})}
+  function assignLayer(layerId){if(!selected)return;patchObject({layerId})}
   function duplicateScene(){
     const n=clone(scene);delete n.id;n.scene_key=(scene.scene_key||"scene")+"-copy";n.title=(scene.title||"Cena")+" — cópia";n.status="draft";commit(n);
   }
@@ -543,7 +552,9 @@ export default function Admin3DEditor(){
   async function publishStudent(){
     if(busy)return;
     const assetErrors=(healthReport||[]).filter(x=>x.status==="ERRO"&&cfg.objects.some(o=>o.assetUrl===x.url));
-    const pf={errors:[...validation.errors,...assetErrors.map(x=>"Asset indisponível: "+x.name)],warnings:[...validation.warnings],stats};
+    const geo=geometricRipeamIssues(cfg.objects||[]);
+    const occ=occlusionCandidates(cfg.objects||[]);
+    const pf={errors:[...validation.errors,...geo,...assetErrors.map(x=>"Asset indisponível: "+x.name)],warnings:[...validation.warnings,...occ],stats};
     setPreflight(pf);
     if(pf.errors.length){setStatus("Atualização do aluno bloqueada pelo preflight: "+pf.errors.length+" erro(s).");setTab("scene");return}
     const summary=publishDiff.length?publishDiff.slice(0,8).map(d=>"• "+d.label).join("\n"):"Nenhuma diferença detectada.";
@@ -563,10 +574,14 @@ export default function Admin3DEditor(){
 
 
   const filteredAssets=assets.filter(a=>(a.name+" "+(a.category||"")+" "+(a.tags||[]).join(" ")).toLowerCase().includes(assetFilter.toLowerCase()));
-  const completeness=sceneCompleteness({semantic,objects:cfg.objects,stats,errors:validation.errors,warnings:validation.warnings});
+  const geometricIssues=geometricRipeamIssues(cfg.objects||[]);
+  const occlusionWarnings=occlusionCandidates(cfg.objects||[]);
+  const completeness=sceneCompleteness({semantic,objects:cfg.objects,stats,errors:[...validation.errors,...geometricIssues],warnings:[...validation.warnings,...occlusionWarnings]});
   const progress=String(cfg.objects?.length||0)+" objetos · "+String(cfg.cards?.length||0)+" cards · "+completeness+"% completo";
 
-  return <div className={styles.editorShell}>
+  const commands=[['Salvar rascunho',()=>save(scene.status)],['Atualizar aluno',publishStudent],['Focar selecionado',focusSelected],['Isolar selecionado',isolateSelected],['Quad-view',()=>mutate(x=>{x.config.settings.quadView=!x.config.settings.quadView})],['Vista superior',()=>setNamedView('top')],['Vista bombordo',()=>setNamedView('port')],['Vista boreste',()=>setNamedView('starboard')],['Diagnosticar GLB',diagnoseCurrentAsset]].filter(([name])=>name.toLowerCase().includes(commandQuery.toLowerCase()));
+
+  return <div className={styles.editorShell}>{commandOpen&&<div className={styles.diffPanel}><b>COMMAND PALETTE · Ctrl+K</b><input autoFocus placeholder="Buscar comando..." value={commandQuery} onChange={e=>setCommandQuery(e.target.value)}/>{commands.map(([name,fn])=><button key={name} onClick={()=>{setCommandOpen(false);fn()}}>{name}</button>)}<button onClick={()=>setCommandOpen(false)}>Fechar</button></div>}
     <div className={styles.topbar}>
       <div><b>ESTIBORDO · EDITOR 3D PRO</b><span>{semanticLabel(semantic)} · {progress} · {scene.liveStudentScene?"AO VIVO NO ALUNO":scene.status}</span></div>
       <div className={styles.topActions}>
@@ -598,7 +613,8 @@ export default function Admin3DEditor(){
         <h3>STACKS RIPEAM</h3><div className={styles.presetList}>{LIGHT_STACKS.map(s=><button key={s.key} onClick={()=>addLightStack(s)}><span>⋮</span>{s.label}<small>{s.colors.length} luzes</small></button>)}</div>
 
         <h3>OBJETOS DECORATIVOS</h3><div className={styles.presetList}>{DECORATIVE_OBJECTS.map(d=><button key={d.key} onClick={()=>addObject({...d})}><span>⚑</span>{d.label}<small>CIS</small></button>)}</div>
-        <h3>ASSET HEALTH</h3><button className={styles.full} disabled={healthBusy} onClick={runAssetHealthCheck}>{healthBusy?"Testando assets...":"Testar todos os assets"}</button>{healthReport.length>0&&<div className={styles.healthList}>{healthReport.map((h,i)=><p key={h.url+i} data-status={h.status}><b>{h.status}</b> {h.name}<small>{h.issues.join(" · ")||"OK"}</small></p>)}</div>}<h3>VALIDADOR SEMÂNTICO</h3><div className={validation.errors.length?styles.errors:validation.warnings.length?styles.warnings:styles.valid}>{validation.errors.map((w,i)=><p key={"e"+i}>✕ {w}</p>)}{validation.warnings.map((w,i)=><p key={"w"+i}>⚠ {w}</p>)}{!validation.errors.length&&!validation.warnings.length&&<p>✓ Cena coerente com o vínculo semântico configurado.</p>}</div>
+        <h3>LAYERS / COLLECTIONS</h3><div className={styles.healthList}>{(cfg.layers||DEFAULT_LAYERS).map(l=><p key={l.id}><button onClick={()=>toggleLayer(l.id,"visible")}>{l.visible!==false?"👁":"◌"}</button> <button onClick={()=>toggleLayer(l.id,"locked")}>{l.locked?"🔒":"🔓"}</button> <b>{l.label}</b></p>)}</div><div className={styles.miniActions}><button onClick={addCollection}>＋ Collection da seleção</button></div>{(cfg.collections||[]).map(c=><div key={c.id} className={styles.semanticSummary}><b>{c.name}</b> · {c.objectIds?.length||0} objetos</div>)}
+        <h3>ASSET HEALTH</h3><button className={styles.full} disabled={healthBusy} onClick={runAssetHealthCheck}>{healthBusy?"Testando assets...":"Testar todos os assets"}</button>{healthReport.length>0&&<div className={styles.healthList}>{healthReport.map((h,i)=><p key={h.url+i} data-status={h.status}><b>{h.status}</b> {h.name}<small>{h.issues.join(" · ")||"OK"}</small></p>)}</div>}<h3>VALIDADOR SEMÂNTICO</h3><div className={validation.errors.length?styles.errors:validation.warnings.length?styles.warnings:styles.valid}>{validation.errors.map((w,i)=><p key={"e"+i}>✕ {w}</p>)}{validation.warnings.map((w,i)=><p key={"w"+i}>⚠ {w}</p>)}{geometricIssues.map((w,i)=><p key={"g"+i}>✕ Geometria: {w}</p>)}{occlusionWarnings.map((w,i)=><p key={"o"+i}>⚠ Oclusão: {w}</p>)}{!validation.errors.length&&!validation.warnings.length&&!geometricIssues.length&&!occlusionWarnings.length&&<p>✓ Cena coerente com o vínculo semântico configurado.</p>}</div>
       </aside>
 
       <section className={styles.centerPane}>
@@ -615,6 +631,12 @@ export default function Admin3DEditor(){
           <button onClick={()=>mutate(s=>{s.config.settings.showSectors=!s.config.settings.showSectors})}>◔ Setores</button>
           <button className={cfg.settings.previewMode==="night"?styles.active:""} onClick={()=>mutate(s=>{s.config.settings.previewMode=s.config.settings.previewMode==="day"?"night":"day"})}>☾ Dia/Noite</button>
           <button onClick={()=>setCompare(x=>!x)}>▥ Comparar</button>
+          <button className={cfg.settings?.quadView?styles.active:""} onClick={()=>mutate(x=>{x.config.settings.quadView=!x.config.settings.quadView})}>⊞ Quad-view</button>
+          <button className={isolateId?styles.active:""} onClick={isolateSelected} disabled={!selected}>◎ Isolar</button>
+          <button onClick={focusSelected} disabled={!selected}>⌖ Focar</button>
+          <select value={cfg.settings?.materialChannel||"final"} onChange={e=>mutate(x=>{x.config.settings.materialChannel=e.target.value})}>{MATERIAL_CHANNELS.map(c=><option key={c} value={c}>{c}</option>)}</select>
+          <select value={cfg.settings?.renderQuality||"high"} onChange={e=>mutate(x=>{x.config.settings.renderQuality=e.target.value})}><option value="low">Qualidade baixa</option><option value="medium">Qualidade média</option><option value="high">Qualidade alta</option><option value="ultra">Qualidade ultra</option></select>
+          <button className={cfg.settings?.mobilePreview?styles.active:""} onClick={()=>mutate(x=>{x.config.settings.mobilePreview=!x.config.settings.mobilePreview})}>▯ Mobile</button>
           <select value="" onChange={e=>{const p=DISPLAY_PRESETS.find(x=>x.key===e.target.value);if(p)applyDisplayPreset(p)}}><option value="">Workspace...</option>{DISPLAY_PRESETS.map(p=><option key={p.key} value={p.key}>{p.label}</option>)}</select>
           <span>{stats.triangles.toLocaleString("pt-BR")} tri · {stats.drawCalls||0} draws · {stats.textures||0} tex · {stats.estimatedTextureMB||0} MB VRAM · {stats.fps||60} FPS · {stats.modelErrors?stats.modelErrors+" GLB com erro":"assets OK"}</span>
         </div>
@@ -636,6 +658,7 @@ export default function Admin3DEditor(){
         <div className={styles.cameraBar}>
           <b>Câmera:</b>{Object.values(CAMERA_PRESETS).map(p=><button key={p.label} onClick={()=>setCameraPreset(p)}>{p.label}</button>)}<button onClick={saveStudentCamera}>Salvar câmera do aluno</button>
         </div>
+        <div className={styles.cameraBar}><b>Vistas técnicas:</b>{Object.entries(NAMED_VIEWS).map(([k,v])=><button key={k} onClick={()=>setNamedView(k)}>{v.label}</button>)}<button onClick={addCameraBookmark}>＋ Bookmark</button>{(cfg.cameraBookmarks||[]).map(b=><button key={b.id} onClick={()=>applyCameraBookmark(b)}>{b.name}</button>)}</div>
 
         {abCompare&&<div className={styles.abBar}><b>COMPARAÇÃO A/B</b><span>A = {abCompare.original.name}</span><span>B = {abCompare.candidate.name}</span><button onClick={confirmReplacement}>Confirmar B</button><button onClick={()=>setAbCompare(null)}>Cancelar</button></div>}{importReport&&<div className={importReport.ok?styles.importOk:styles.errors}><b>Pré-processamento GLB:</b> {importReport.ok?"OK":"FALHA"} · {importReport.meshes} meshes · {importReport.materials} materiais · {importReport.textures} texturas · {(importReport.bounds||[]).join(" × ")}{importReport.error?" · "+importReport.error:""}</div>}<div className={styles.assetShelf}>
           <div className={styles.assetHead}><b>Biblioteca persistente 3D</b><input placeholder="Buscar assets..." value={assetFilter} onChange={e=>setAssetFilter(e.target.value)}/>
@@ -653,6 +676,7 @@ export default function Admin3DEditor(){
           <label>Nome<input value={obj.name} onChange={e=>patchObject({name:e.target.value})}/></label>
           <label>Hierarquia / pai<select value={obj.parentId||""} onChange={e=>patchObject({parentId:e.target.value||null})}><option value="">Raiz da cena</option>{cfg.objects.filter(o=>o.id!==obj.id&&o.type!=="cable").map(o=><option key={o.id} value={o.id}>{o.name}</option>)}</select></label>
           <label>Anchor marítimo<select value={obj.anchorName||""} onChange={e=>patchObject({anchorName:e.target.value})}><option value="">Sem anchor</option>{MARITIME_ANCHORS.map(([k,l])=><option key={k} value={k}>{l}</option>)}</select></label>
+          <label>Layer<select value={obj.layerId||layerForObject(obj)} onChange={e=>assignLayer(e.target.value)}>{(cfg.layers||DEFAULT_LAYERS).map(l=><option key={l.id} value={l.id}>{l.label}</option>)}</select></label>
           <div className={styles.inlineChecks}><label><input type="checkbox" checked={obj.visible!==false} onChange={e=>patchObject({visible:e.target.checked})}/> Visível</label><label><input type="checkbox" checked={!!obj.locked} onChange={e=>patchObject({locked:e.target.checked})}/> Travado</label>{obj.type==="model"&&<label><input type="checkbox" checked={obj.normalize!==false} onChange={e=>patchObject({normalize:e.target.checked})}/> Normalizar</label>}</div>
 
           <div className={styles.vecTitle}>Posição</div><div className={styles.vec}>{["X","Y","Z"].map((x,i)=><label key={x}>{x}<input type="number" step=".1" value={obj.position[i]} onChange={e=>patchVec("position",i,e.target.value)}/></label>)}</div>
@@ -687,6 +711,7 @@ export default function Admin3DEditor(){
         {tab==="object"&&!obj&&<div className={styles.empty}>Selecione um objeto. Atalhos: G mover · R rotacionar · S escalar · Ctrl+C/Ctrl+V · Ctrl+D duplicar · Del excluir.</div>}
 
         {tab==="scene"&&<div className={styles.form}>
+          <h4>Viewport avançado</h4><div className={styles.inlineChecks}><label><input type="checkbox" checked={cfg.settings?.showAnchors!==false} onChange={e=>mutate(x=>{x.config.settings.showAnchors=e.target.checked})}/> Mostrar anchors</label><label><input type="checkbox" checked={!!cfg.settings?.clipEnabled} onChange={e=>mutate(x=>{x.config.settings.clipEnabled=e.target.checked})}/> Plano de corte</label></div>{cfg.settings?.clipEnabled&&<label>Altura do clipping Y<input type="range" min="-10" max="10" step=".1" value={cfg.settings?.clipY||0} onChange={e=>mutate(x=>{x.config.settings.clipY=Number(e.target.value)})}/></label>}
           <h4>Identidade RIPEAM</h4>
           <label>Regra<select value={semantic.ruleNumber||""} onChange={e=>selectSemantic(e.target.value,getRule(e.target.value)?.items?.[0]?.key||"")}><option value="">Selecione a Regra...</option>{RIPEAM_RULES.map(r=><option key={r.number} value={r.number}>Regra {r.number} — {r.title}</option>)}</select></label>
           <label>Item / cenário<select value={semantic.scenarioKey||""} disabled={!activeRule} onChange={e=>selectSemantic(semantic.ruleNumber,e.target.value)}><option value="">Selecione...</option>{(activeRule?.items||[]).map(i=><option key={i.key} value={i.key}>{activeRule.number}{i.item||""} — {i.label}</option>)}</select></label>
