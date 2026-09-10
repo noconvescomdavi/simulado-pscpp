@@ -167,7 +167,7 @@ DECLARE
   pk_cols text[];
 BEGIN
   SELECT c.conname,
-         array_agg(a.attname ORDER BY u.ord)
+         array_agg(a.attname::text ORDER BY u.ord)
     INTO pk_name, pk_cols
     FROM pg_constraint c
     JOIN LATERAL unnest(c.conkey) WITH ORDINALITY u(attnum,ord) ON true
