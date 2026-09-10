@@ -50,9 +50,34 @@ function disposeObject(root){
   });
 }
 
+function updateLoadingOverlay(root,percent,status){
+  const value=Number.isFinite(Number(percent))?Math.max(0,Math.min(100,Math.round(Number(percent)))):null;
+  const label=root?.querySelector?.("[data-progress]");
+  const bar=root?.querySelector?.("[data-progress-bar]");
+  const track=root?.querySelector?.("[data-progress-track]");
+  const state=root?.querySelector?.("[data-loading-status]");
+  if(label)label.textContent=value===null?"Carregando…":value+"%";
+  if(bar){
+    bar.style.width=value===null?"35%":value+"%";
+    bar.classList.toggle(styles.loadingIndeterminate,value===null);
+  }
+  if(track){
+    if(value===null)track.removeAttribute("aria-valuenow");
+    else track.setAttribute("aria-valuenow",String(value));
+  }
+  if(state&&status)state.textContent=status;
+}
+
+function hideLoadingOverlay(root){
+  const overlay=root?.querySelector?.("[data-loading-overlay]");
+  if(!overlay)return;
+  overlay.classList.add(styles.loadingDone);
+  window.setTimeout(()=>overlay.remove(),220);
+}
+
 function loadProgress(loader,url,onProgress){
   return new Promise((resolve,reject)=>loader.load(url,resolve,event=>{
-    if(!event?.total)return;
+    if(!event?.total){onProgress?.(null);return}
     onProgress?.(Math.round(event.loaded/event.total*100));
   },reject));
 }
@@ -397,7 +422,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
       const hasLiveConfig=Array.isArray(editorObjects);
       const editorModels=editorObjects?.filter(o=>o.type==="model"&&o.visible!==false)||[];
       const urls=editorModels.length?editorModels.map(o=>o.assetUrl):sceneConfig.vessels.map(v=>MODEL_CONFIG[v]?.url||v);
-      root.innerHTML=`<div class="${styles.loading}"><b>Carregando modelo 3D...</b><span>${urls.join(" · ")}</span><span data-progress></span></div>`;
+      root.innerHTML=`<div class="${styles.loading}" data-loading-overlay><b>CARREGANDO...</b><span class="${styles.loadingAsset}">${urls.join(" · ")}</span><div class="${styles.loadingTrack}" role="progressbar" aria-label="Carregando modelo 3D" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-progress-track><i data-progress-bar></i></div><strong data-progress>0%</strong><small data-loading-status>Preparando modelo 3D</small></div>`;
       onDiagnostics?.({status:"loading",frames:0});
 
       try{
@@ -426,7 +451,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         scene.environment=environmentTarget.texture;
         const maxAnisotropy=renderer.capabilities.getMaxAnisotropy();
 
-        root.innerHTML="";
+        // Mantém o overlay acima do canvas até o primeiro frame completo.
         root.appendChild(renderer.domElement);
 
         const controls=new THREE.OrbitControls(camera,renderer.domElement);
@@ -495,10 +520,10 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
             try{
               const config={url:data.assetUrl,type:data.assetType||"glb"};
               const raw=await loadRawModel(THREE,config,percent=>{
-                const progress=root.querySelector?.("[data-progress]");
-                if(progress)progress.textContent=percent+"%";
+                updateLoadingOverlay(root,percent,percent===null?"Lendo modelo do cache ou da rede":"Baixando modelo 3D");
               });
               if(cancelled)return;
+              updateLoadingOverlay(root,100,"Preparando materiais e texturas");
               if(data.normalize!==false)normalizeEditorChild(THREE,raw,8);
               raw.position.sub(new THREE.Vector3(...(data.pivot||[0,0,0])));
               applyEditorMaterial(raw,data,maxAnisotropy,THREE);
@@ -565,8 +590,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
                       let raw;
                       try{
                         raw=await loadRawModel(THREE,config,percent=>{
-                        const progress=root.querySelector?.("[data-progress]");
-                          if(progress)progress.textContent=`${percent}%`;
+                        updateLoadingOverlay(root,percent,percent===null?"Lendo modelo do cache ou da rede":"Baixando modelo 3D");
                         });
                       }catch(primaryError){
                         // Alguns GLBs antigos do laboratório falham no parser legado do Three r128.
@@ -576,6 +600,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
                         throw primaryError;
                       }
                       if(cancelled)return;
+                      updateLoadingOverlay(root,100,"Preparando materiais e texturas");
           
                       const model=prepareModel(THREE,raw,config);
                       if(sceneConfig.vessels.length>1){
@@ -736,6 +761,10 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
           controls.update();
           enforceWaterline();
           renderer.render(scene,camera);
+          if(frames===1){
+            updateLoadingOverlay(root,100,"Pronto");
+            hideLoadingOverlay(root);
+          }
           if(frames===2)onDiagnostics?.({...base,frames});
           raf=requestAnimationFrame(animate);
         };
