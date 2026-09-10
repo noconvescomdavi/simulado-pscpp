@@ -22,12 +22,12 @@ function cloneCachedModel(source){
 }
 
 export default function Admin3DViewport({
-  scene,selectedId,isolateId,mode,onSelect,onTransform,onCameraChange,onStats,onLoadProgress,onMaterialInventory,onCaptureReady,readOnly=false,playhead=0
+  scene,selectedId,isolateId,mode,onSelect,onTransform,onCameraChange,onStats,onLoadProgress,onMaterialInventory,onModelBounds,onCaptureReady,onCaptureApi,readOnly=false,playhead=0
 }){
   const mount=useRef(null);
   const runtime=useRef(null);
   const propsRef=useRef({});
-  propsRef.current={scene,selectedId,isolateId,mode,onSelect,onTransform,onCameraChange,onStats,onLoadProgress,onMaterialInventory,onCaptureReady,readOnly,playhead};
+  propsRef.current={scene,selectedId,isolateId,mode,onSelect,onTransform,onCameraChange,onStats,onLoadProgress,onMaterialInventory,onModelBounds,onCaptureReady,onCaptureApi,readOnly,playhead};
 
   useEffect(()=>{
     let dead=false;
@@ -50,7 +50,8 @@ export default function Admin3DViewport({
       // Nunca reutilizar entre montagens um GLB antigo que tenha o mesmo caminho.
       MODEL_CACHE.clear();
       const sc=new THREE.Scene();
-      const camera=new THREE.PerspectiveCamera(43,1,.1,1000);
+      const isOrthographic=!!propsRef.current.scene?.settings?.orthographicView;
+      const camera=isOrthographic?new THREE.OrthographicCamera(-10,10,10,-10,.1,1000):new THREE.PerspectiveCamera(43,1,.1,1000);
       camera.position.set(14,7,15);
 
       const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:"high-performance",preserveDrawingBuffer:true});
@@ -73,7 +74,8 @@ export default function Admin3DViewport({
         propsRef.current.onCameraChange?.({
           position:camera.position.toArray(),
           target:orbit.target.toArray(),
-          fov:camera.fov
+          fov:camera.isPerspectiveCamera?camera.fov:35,
+          zoom:camera.zoom,orthographic:camera.isOrthographicCamera
         });
       });
 
@@ -126,7 +128,7 @@ export default function Admin3DViewport({
       const resize=()=>{
         const w=root.clientWidth||900,h=root.clientHeight||620;
         renderer.setSize(w,h,false);
-        camera.aspect=w/h;
+        if(camera.isPerspectiveCamera)camera.aspect=w/h;else{const span=10,aspect=w/h;camera.left=-span*aspect;camera.right=span*aspect;camera.top=span;camera.bottom=-span;}
         camera.updateProjectionMatrix();
       };
       const ro=new ResizeObserver(resize);
@@ -135,14 +137,15 @@ export default function Admin3DViewport({
       const dracoLoader=new DRACOLoader();dracoLoader.setDecoderPath("https://www.gstatic.com/draco/versioned/decoders/1.5.7/");
       const ktx2Loader=new KTX2Loader();ktx2Loader.setTranscoderPath("https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/libs/basis/");ktx2Loader.detectSupport(renderer);
       const gltfLoader=new GLTFLoader();gltfLoader.setDRACOLoader(dracoLoader);gltfLoader.setKTX2Loader(ktx2Loader);gltfLoader.setMeshoptDecoder(MeshoptDecoder);
-      runtime.current={THREE,sc,camera,renderer,orbit,grid,water,hemi,sun,objects,transform,ro,pmremGenerator,roomEnvironment,environmentTarget,dracoLoader,ktx2Loader,raf:0,loaders:{glb:gltfLoader,gltf:gltfLoader,fbx:new FBXLoader(),obj:new OBJLoader()}};
+      runtime.current={THREE,sc,camera,renderer,orbit,grid,water,hemi,sun,objects,transform,ro,pmremGenerator,roomEnvironment,environmentTarget,dracoLoader,ktx2Loader,isOrthographic,raf:0,loaders:{glb:gltfLoader,gltf:gltfLoader,fbx:new FBXLoader(),obj:new OBJLoader()}};
       propsRef.current.onCaptureReady?.(renderer.domElement);
+      propsRef.current.onCaptureApi?.({capture:(width=3840,height=2160)=>{const size=new THREE.Vector2();renderer.getSize(size);const ratio=renderer.getPixelRatio(),oldAspect=camera.isPerspectiveCamera?camera.aspect:null,oldLR=camera.isOrthographicCamera?[camera.left,camera.right,camera.top,camera.bottom]:null;renderer.setPixelRatio(1);renderer.setSize(width,height,false);if(camera.isPerspectiveCamera)camera.aspect=width/height;else{const span=10,aspect=width/height;camera.left=-span*aspect;camera.right=span*aspect;camera.top=span;camera.bottom=-span}camera.updateProjectionMatrix();renderer.render(sc,camera);const data=renderer.domElement.toDataURL('image/png');renderer.setPixelRatio(ratio);renderer.setSize(size.x,size.y,false);if(camera.isPerspectiveCamera)camera.aspect=oldAspect;else [camera.left,camera.right,camera.top,camera.bottom]=oldLR;camera.updateProjectionMatrix();return data;}});
 
-      let fpsFrames=0,fpsLast=performance.now();
+      let fpsFrames=0,fpsLast=performance.now(),lowFpsSeconds=0,safeApplied=false;
       const tick=()=>{
         orbit.update();
-        if(runtime.current?.editorRoots){for(const [id,obj] of runtime.current.editorRoots){const data=(propsRef.current.scene?.objects||[]).find(x=>x.id===id),lod=data?.lod;if(lod?.enabled&&lod.hideBeyond&&Number(lod.farDistance)>0)obj.visible=data.visible!==false&&camera.position.distanceTo(obj.getWorldPosition(new THREE.Vector3()))<=Number(lod.farDistance)}}
-        renderer.render(sc,camera);fpsFrames++;const now=performance.now();if(now-fpsLast>=1000){runtime.current.fps=Math.round(fpsFrames*1000/(now-fpsLast));fpsFrames=0;fpsLast=now}
+        if(runtime.current?.editorRoots){for(const [id,obj] of runtime.current.editorRoots){const data=(propsRef.current.scene?.objects||[]).find(x=>x.id===id),lod=data?.lod;if(!lod?.enabled)continue;const dist=camera.position.distanceTo(obj.getWorldPosition(new THREE.Vector3())),farAt=Number(lod.farDistance||80),far=obj.userData?.lodFarChild,near=obj.children?.find(c=>c.userData?.__lodNear);if(far){if(near)near.visible=dist<farAt;far.visible=dist>=farAt}else if(lod.hideBeyond&&farAt>0)obj.visible=data.visible!==false&&dist<=farAt}}
+        renderer.render(sc,camera);fpsFrames++;const now=performance.now();if(now-fpsLast>=1000){runtime.current.fps=Math.round(fpsFrames*1000/(now-fpsLast));if(propsRef.current.scene?.settings?.safePerformance){lowFpsSeconds=runtime.current.fps<30?lowFpsSeconds+1:Math.max(0,lowFpsSeconds-1);if(lowFpsSeconds>=3&&!safeApplied){renderer.setPixelRatio(Math.min(devicePixelRatio,1));safeApplied=true}else if(lowFpsSeconds===0&&safeApplied&&runtime.current.fps>48){const q=RENDER_QUALITIES[propsRef.current.scene?.settings?.renderQuality||'high']||RENDER_QUALITIES.high;renderer.setPixelRatio(Math.min(devicePixelRatio,q.pixelRatio));safeApplied=false}}fpsFrames=0;fpsLast=now}
         if(runtime.current)runtime.current.raf=requestAnimationFrame(tick);
       };
       tick();
@@ -178,7 +181,7 @@ export default function Admin3DViewport({
     r.sc.traverse(o=>{const mats=Array.isArray(o.material)?o.material:[o.material];mats.filter(Boolean).forEach(m=>{m.clippingPlanes=plane?[plane]:null;m.clipShadows=!!plane;m.needsUpdate=true})});
     if(c.position)r.camera.position.fromArray(c.position);
     if(c.target)r.orbit.target.fromArray(c.target);
-    if(c.fov){r.camera.fov=Number(c.fov);r.camera.updateProjectionMatrix()}
+    if(r.camera.isPerspectiveCamera&&c.fov){r.camera.fov=Number(c.fov);r.camera.updateProjectionMatrix()}if(r.camera.isOrthographicCamera){r.camera.zoom=Number(c.zoom||1);r.camera.updateProjectionMatrix()}
   },[scene.environment,scene.editorCamera,scene.camera,scene.settings]);
 
   useEffect(()=>{
@@ -198,6 +201,7 @@ export default function Admin3DViewport({
     const roots=new Map();
     let triangles=0,meshes=0,lights=0,models=0,modelErrors=0,textures=0,estimatedTextureMB=0;
     const materialInventory=[];
+    const objectStats={};
 
     const normalizeChild=(obj,target=8)=>{
       const box=new r.THREE.Box3().setFromObject(obj);
@@ -214,21 +218,24 @@ export default function Admin3DViewport({
 
     const applyMaterial=(obj,data)=>{
       const custom=data.material?.mode==="custom";
+      const os=objectStats[data.id]||(objectStats[data.id]={name:data.name,triangles:0,meshes:0,textures:0,materials:0});
       const maxAnisotropy=r.renderer.capabilities.getMaxAnisotropy();
       obj.traverse?.(o=>{
         if(!o.isMesh)return;
-        meshes++;
+        meshes++;os.meshes++;
         const pos=o.geometry?.attributes?.position?.count||0;
         const idx=o.geometry?.index?.count;
-        triangles+=idx?Math.floor(idx/3):Math.floor(pos/3);
+        const tri=idx?Math.floor(idx/3):Math.floor(pos/3);triangles+=tri;os.triangles+=tri;
         const mats=Array.isArray(o.material)?o.material:[o.material];
         mats.filter(Boolean).forEach((m,materialIndex)=>{
+          os.materials++;
           const maps={};for(const key of ["map","normalMap","roughnessMap","metalnessMap","aoMap","emissiveMap"]){const t=m[key];if(t?.isTexture){const im=t.image;maps[key]={width:Number(im?.width||0),height:Number(im?.height||0)}}}
           materialInventory.push({objectId:data.id,objectName:data.name,mesh:o.name||("Mesh "+meshes),material:m.name||("Material "+materialIndex),type:m.type||"Material",maps,roughness:m.roughness,metalness:m.metalness,transparent:!!m.transparent});
           // Ajustes técnicos seguros: preservam o material e as texturas do GLB.
           ["map","normalMap","roughnessMap","metalnessMap","aoMap","emissiveMap"].forEach(key=>{
             const t=m[key];
             if(!t?.isTexture)return;
+            os.textures++;
             if(!t.userData.__ripeamCounted){
               t.userData.__ripeamCounted=true;textures++;
               const img=t.image,w=Number(img?.width||0),h=Number(img?.height||0);
@@ -249,7 +256,7 @@ export default function Admin3DViewport({
             else if(channel==='uv'){m.wireframe=true;m.map=null;m.normalMap=null;m.color?.set?.('#69d2ff');}
             else if(channel==='normals'){m.wireframe=false;m.map=null;m.normalMap=null;m.color?.set?.('#7dd3fc');m.metalness=0;m.roughness=1;}
           }
-          if(scene.settings?.wireframe&&"wireframe" in m)m.wireframe=true;
+          if((scene.settings?.wireframe||data.wireframe)&&"wireframe" in m)m.wireframe=true;
           if(scene.settings?.xray){m.transparent=true;m.opacity=Math.min(Number(m.opacity??1),.28);m.depthWrite=false;}
           if(!custom){
             if("envMapIntensity" in m)m.envMapIntensity=1.15;
@@ -313,7 +320,9 @@ export default function Admin3DViewport({
             child=cloneCachedModel(source);
             if(data.normalize!==false)normalizeChild(child,8);
             child.position.sub(new r.THREE.Vector3(...(data.pivot||[0,0,0])));
+            child.updateMatrixWorld(true);try{const bb=new r.THREE.Box3().setFromObject(child),cc=bb.getCenter(new r.THREE.Vector3());propsRef.current.onModelBounds?.(data.id,{min:bb.min.toArray(),max:bb.max.toArray(),center:cc.toArray()})}catch{}
             applyMaterial(child,data);
+            if(data.lod?.enabled&&data.lod?.farAssetUrl){try{const farUrl=versionRipeamAssetUrl(data.lod.farAssetUrl),farLoaded=await r.loaders.glb.loadAsync(farUrl),far=cloneCachedModel(farLoaded.scene||farLoaded);if(data.normalize!==false)normalizeChild(far,8);applyMaterial(far,{...data,name:data.name+' LOD'});far.visible=false;far.userData.__lodFar=true;child.userData.__lodNear=true;root.userData.lodFarChild=far;root.add(far)}catch(e){console.warn('LOD alternativo indisponível',e)}}
           }catch(error){modelErrors++;console.warn("Asset 3D indisponível",data.assetUrl,error)}
         }
         if(!child)child=new r.THREE.Mesh(new r.THREE.BoxGeometry(3,1,8),new r.THREE.MeshStandardMaterial({color:"#d8e4ea"}));
@@ -390,7 +399,7 @@ export default function Admin3DViewport({
 
       r.editorRoots=roots;
       const info=r.renderer.info;
-      propsRef.current.onStats?.({triangles,meshes,lights,models,modelErrors,textures,estimatedTextureMB:Number(estimatedTextureMB.toFixed(1)),drawCalls:info?.render?.calls||0,geometries:info?.memory?.geometries||0,objects:(scene.objects||[]).length,fps:r.fps||60});
+      propsRef.current.onStats?.({triangles,meshes,lights,models,modelErrors,textures,estimatedTextureMB:Number(estimatedTextureMB.toFixed(1)),drawCalls:info?.render?.calls||0,geometries:info?.memory?.geometries||0,objects:(scene.objects||[]).length,fps:r.fps||60,objectStats});
       propsRef.current.onMaterialInventory?.(materialInventory);
       const found=roots.get(propsRef.current.selectedId);
       if(found&&!propsRef.current.readOnly){r.transform.attach(found);r.transform.setMode(propsRef.current.mode||"translate")}
