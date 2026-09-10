@@ -3,6 +3,7 @@
 import {useEffect,useRef} from "react";
 import styles from "./ripeam-3d.module.css";
 import {versionRipeamAssetUrl} from "../../../../lib/ripeam-asset-manifest";
+import {safePixelRatio,resolvedQuality,isModelCached} from "./student-viewer-v5";
 
 const THREE_VERSION="0.180.0";
 const SEA_LEVEL=0;
@@ -13,15 +14,16 @@ async function getThree(){
   if(!modernThreePromise){
     modernThreePromise=(async()=>{
       const THREE=await browserImport("https://esm.sh/three@"+THREE_VERSION);
-      const [{GLTFLoader},{OrbitControls},{FBXLoader},{RoomEnvironment},{DRACOLoader},{MeshoptDecoder}]=await Promise.all([
+      const [{GLTFLoader},{OrbitControls},{FBXLoader},{RoomEnvironment},{DRACOLoader},{KTX2Loader},{MeshoptDecoder}]=await Promise.all([
         browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/loaders/GLTFLoader.js"),
         browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/controls/OrbitControls.js"),
         browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/loaders/FBXLoader.js"),
         browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/environments/RoomEnvironment.js"),
         browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/loaders/DRACOLoader.js"),
+        browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/loaders/KTX2Loader.js"),
         browserImport("https://esm.sh/three@"+THREE_VERSION+"/examples/jsm/libs/meshopt_decoder.module.js")
       ]);
-      return {...THREE,GLTFLoader,OrbitControls,FBXLoader,RoomEnvironment,DRACOLoader,MeshoptDecoder};
+      return {...THREE,GLTFLoader,OrbitControls,FBXLoader,RoomEnvironment,DRACOLoader,KTX2Loader,MeshoptDecoder};
     })().catch(error=>{modernThreePromise=null;throw error;});
   }
   return modernThreePromise;
@@ -50,20 +52,15 @@ function disposeObject(root){
   });
 }
 
-function updateLoadingOverlay(root,percent,status){
+function updateLoadingOverlay(root,percent,status,stage="model"){
   const value=Number.isFinite(Number(percent))?Math.max(0,Math.min(100,Math.round(Number(percent)))):null;
-  const label=root?.querySelector?.("[data-progress]");
-  const bar=root?.querySelector?.("[data-progress-bar]");
-  const track=root?.querySelector?.("[data-progress-track]");
+  const bar=root?.querySelector?.(`[data-stage="${stage}"] i`);
+  const label=root?.querySelector?.(`[data-stage="${stage}"] strong`);
   const state=root?.querySelector?.("[data-loading-status]");
-  if(label)label.textContent=value===null?"Carregando…":value+"%";
+  if(label)label.textContent=value===null?"…":value+"%";
   if(bar){
-    bar.style.width=value===null?"35%":value+"%";
+    bar.style.width=value===null?"30%":value+"%";
     bar.classList.toggle(styles.loadingIndeterminate,value===null);
-  }
-  if(track){
-    if(value===null)track.removeAttribute("aria-valuenow");
-    else track.setAttribute("aria-valuenow",String(value));
   }
   if(state&&status)state.textContent=status;
 }
@@ -82,9 +79,9 @@ function loadProgress(loader,url,onProgress){
   },reject));
 }
 
-async function loadRawModel(THREE,config,onProgress){
+async function loadRawModel(THREE,config,onProgress,renderer){
   if(config.type==="glb"){
-    const loader=new THREE.GLTFLoader();if(THREE.MeshoptDecoder)loader.setMeshoptDecoder(THREE.MeshoptDecoder);if(THREE.DRACOLoader){const draco=new THREE.DRACOLoader();draco.setDecoderPath("https://www.gstatic.com/draco/versioned/decoders/1.5.7/");loader.setDRACOLoader(draco)}
+    const loader=new THREE.GLTFLoader();if(THREE.MeshoptDecoder)loader.setMeshoptDecoder(THREE.MeshoptDecoder);if(THREE.DRACOLoader){const draco=new THREE.DRACOLoader();draco.setDecoderPath("https://www.gstatic.com/draco/versioned/decoders/1.5.7/");loader.setDRACOLoader(draco)}if(THREE.KTX2Loader&&renderer){const ktx2=new THREE.KTX2Loader();ktx2.setTranscoderPath("https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/libs/basis/");ktx2.detectSupport(renderer);loader.setKTX2Loader(ktx2)}
     const gltf=await loadProgress(loader,versionRipeamAssetUrl(config.url),onProgress);
     if(!gltf?.scene)throw new Error("GLB carregado sem scene.");
     gltf.scene.traverse?.(obj=>{
@@ -407,7 +404,7 @@ function applyEditorMaterial(obj,data,maxAnisotropy,THREE){
   });
 }
 
-export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,displayMode="vessel",showSectors=false,highlightLightIndex=-1,liveConfig=null}){
+export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,environmentPhase,displayMode="vessel",showSectors=false,highlightLightIndex=-1,liveConfig=null,qualityMode="auto",freeOrbit=false,fogLevel=0,exposure=1,teacherMode=false,onOfflineStatus}){
   const mount=useRef(null);
   const runtime=useRef(null);
 
@@ -422,7 +419,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
       const hasLiveConfig=Array.isArray(editorObjects);
       const editorModels=editorObjects?.filter(o=>o.type==="model"&&o.visible!==false)||[];
       const urls=editorModels.length?editorModels.map(o=>o.assetUrl):sceneConfig.vessels.map(v=>MODEL_CONFIG[v]?.url||v);
-      root.innerHTML=`<div class="${styles.loading}" data-loading-overlay><b>CARREGANDO...</b><span class="${styles.loadingAsset}">Carregando recursos do modelo</span><div class="${styles.loadingTrack}" role="progressbar" aria-label="Carregando modelo 3D" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-progress-track><i data-progress-bar></i></div><strong data-progress>0%</strong><small data-loading-status>Preparando modelo 3D</small></div>`;
+      root.innerHTML=`<div class="${styles.loading}" data-loading-overlay><div class="${styles.loadingSkeleton}"><i/><i/><i/></div><b>PREPARANDO CENÁRIO 3D</b><span class="${styles.loadingAsset}">Carregando recursos do modelo</span><div class="${styles.loadingStages}"><div data-stage="model"><span>Modelo</span><div class="${styles.loadingTrack}"><i></i></div><strong>0%</strong></div><div data-stage="textures"><span>Texturas</span><div class="${styles.loadingTrack}"><i></i></div><strong>0%</strong></div><div data-stage="gpu"><span>GPU</span><div class="${styles.loadingTrack}"><i></i></div><strong>0%</strong></div></div><small data-loading-status>Preparando modelo 3D</small></div>`;
       onDiagnostics?.({status:"loading",frames:0});
 
       try{
@@ -430,18 +427,31 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         if(cancelled||!mount.current)return;
 
         const scene=new THREE.Scene();
-        if(night)addStaticNightEnvironment(THREE,scene);
+        const phase=environmentPhase|| (night?"night":"day");
+        if(phase==="night")addStaticNightEnvironment(THREE,scene);
         else addDayEnvironment(THREE,scene);
+        if(phase==="twilight"){scene.background=new THREE.Color(0x274d69);scene.add(new THREE.HemisphereLight(0x8aa9c7,0x102230,.65));}
 
         const liveCamera=liveConfig?.camera||null;
+        const phase=environmentPhase|| (night?"night":"day");
+        const isNight=phase==="night",isTwilight=phase==="twilight";
         const camera=new THREE.PerspectiveCamera(Number(liveCamera?.fov||45),1,.1,1000);
-        const renderer=new THREE.WebGLRenderer({antialias:true,alpha:false,powerPreference:"high-performance"});
+        let renderer;
+        let fallbackTier=0;
+        try{renderer=new THREE.WebGLRenderer({antialias:true,alpha:false,powerPreference:"high-performance"});}
+        catch(primaryError){
+          fallbackTier=1;
+          renderer=new THREE.WebGLRenderer({antialias:false,alpha:false,powerPreference:"default"});
+          console.warn("[RIPEAM 3D] fallback WebGL ativado",primaryError);
+        }
         const mobileViewport=window.matchMedia?.("(max-width: 900px)")?.matches;
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,mobileViewport?1.5:2));
+        const q=resolvedQuality(qualityMode);
+        let dynamicScale=fallbackTier?.72:1;
+        renderer.setPixelRatio(safePixelRatio(qualityMode,dynamicScale));
         renderer.outputColorSpace=THREE.SRGBColorSpace;
         renderer.toneMapping=THREE.ACESFilmicToneMapping;
-        renderer.toneMappingExposure=night?.82:1.02;
-        renderer.setClearColor(night?0x01040a:0x8cc7e8,1);
+        renderer.toneMappingExposure=Math.max(.65,Math.min(1.35,Number(exposure||1)))*(isNight?.82:isTwilight?.92:1.02);
+        renderer.setClearColor(isNight?0x01040a:isTwilight?0x18334b:0x8cc7e8,1);
         // IBL neutro para materiais glTF PBR. O background visual continua sendo
         // o céu diurno/noturno; environment serve apenas às reflexões/BRDF.
         const pmremGenerator=new THREE.PMREMGenerator(renderer);
@@ -459,8 +469,12 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         controls.dampingFactor=.08;
         controls.enablePan=true;
         controls.enableZoom=true;
-        controls.minPolarAngle=.04;
-        controls.maxPolarAngle=Math.PI/2-.04;
+        controls.touches={ONE:THREE.TOUCH.ROTATE,TWO:THREE.TOUCH.DOLLY_PAN};
+        controls.minPolarAngle=freeOrbit?0:.04;
+        controls.maxPolarAngle=freeOrbit?Math.PI:Math.PI/2-.04;
+        controls.addEventListener("start",()=>{dynamicScale=Math.min(dynamicScale,.72);renderer.setPixelRatio(safePixelRatio(qualityMode,dynamicScale))});
+        let settleTimer=0;
+        controls.addEventListener("end",()=>{clearTimeout(settleTimer);settleTimer=setTimeout(()=>{dynamicScale=fallbackTier?.72:1;renderer.setPixelRatio(safePixelRatio(qualityMode,dynamicScale))},140)});
 
         const waterSegments=mobileViewport?44:72;
         const waterGeometry=new THREE.PlaneGeometry(400,400,waterSegments,waterSegments);
@@ -475,16 +489,17 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         const water=new THREE.Mesh(
           waterGeometry,
           new THREE.MeshStandardMaterial({
-            color:night?0x010810:0x075d86,
-            roughness:night?.64:.54,
-            metalness:night?.20:.06
+            color:isNight?0x010810:isTwilight?0x064a69:0x075d86,
+            roughness:isNight?.64:.54,
+            metalness:isNight?.20:.06
           })
         );
         water.rotation.x=-Math.PI/2;
         water.position.y=SEA_LEVEL;
         scene.add(water);
-        addOceanSurfaceDetail(THREE,scene,night);
-        if(night)addMoonReflection(THREE,scene);
+        addOceanSurfaceDetail(THREE,scene,isNight);
+        if(isNight)addMoonReflection(THREE,scene);
+        scene.fog=Number(fogLevel)>0?new THREE.FogExp2(isNight?0x08111a:0x9bbbc8,Math.min(.04,Number(fogLevel)*.012)):scene.fog;
 
         const vesselRoot=new THREE.Group();
         const lightsRoot=new THREE.Group();
@@ -508,7 +523,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
               const vesselKey=sceneConfig.vessels[index];
               const config=MODEL_CONFIG[vesselKey];
               if(!config)continue;
-              const raw=await loadRawModel(THREE,config);
+              const raw=await loadRawModel(THREE,config,undefined,renderer);
               const model=prepareModel(THREE,raw,config);
               if(sceneConfig.vessels.length>1){model.position.x=index===0?5.2:-7.2;model.position.z=index===0?0:.15}
               vesselRoot.add(model);
@@ -520,10 +535,11 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
             try{
               const config={url:data.assetUrl,type:data.assetType||"glb"};
               const raw=await loadRawModel(THREE,config,percent=>{
-                updateLoadingOverlay(root,percent,percent===null?"Lendo modelo do cache ou da rede":"Baixando modelo 3D");
-              });
+                updateLoadingOverlay(root,percent,percent===null?"Lendo modelo do cache ou da rede":"Baixando modelo 3D","model");
+              },renderer);
               if(cancelled)return;
-              updateLoadingOverlay(root,100,"Preparando materiais e texturas");
+              updateLoadingOverlay(root,100,"Modelo carregado","model");
+              updateLoadingOverlay(root,35,"Decodificando texturas","textures");
               if(data.normalize!==false)normalizeEditorChild(THREE,raw,8);
               raw.position.sub(new THREE.Vector3(...(data.pivot||[0,0,0])));
               applyEditorMaterial(raw,data,maxAnisotropy,THREE);
@@ -590,8 +606,8 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
                       let raw;
                       try{
                         raw=await loadRawModel(THREE,config,percent=>{
-                        updateLoadingOverlay(root,percent,percent===null?"Lendo modelo do cache ou da rede":"Baixando modelo 3D");
-                        });
+                        updateLoadingOverlay(root,percent,percent===null?"Lendo modelo do cache ou da rede":"Baixando modelo 3D","model");
+                        },renderer);
                       }catch(primaryError){
                         // Alguns GLBs antigos do laboratório falham no parser legado do Three r128.
                         // Para manter o pipeline simples, tentamos o mesmo asset via loader nativo
@@ -600,7 +616,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
                         throw primaryError;
                       }
                       if(cancelled)return;
-                      updateLoadingOverlay(root,100,"Preparando materiais e texturas");
+                      updateLoadingOverlay(root,100,"Modelo carregado","model");updateLoadingOverlay(root,55,"Preparando materiais e texturas","textures");
           
                       const model=prepareModel(THREE,raw,config);
                       if(sceneConfig.vessels.length>1){
@@ -755,10 +771,18 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         };
 
         let visible=!document.hidden;
+        let fpsFrames=0,fpsLast=performance.now(),lowFpsWindows=0;
         const animate=()=>{
           if(cancelled||!visible)return;
-          frames++;
+          frames++;fpsFrames++;
           controls.update();
+          const now=performance.now();
+          if(displayMode==="vessel"&&vesselRoot){vesselRoot.rotation.z=Math.sin(now*.00075)*.0025;vesselRoot.position.y=SEA_LEVEL+Math.sin(now*.00062)*.012;}
+          if(now-fpsLast>2200){
+            const fps=fpsFrames*1000/(now-fpsLast);fpsFrames=0;fpsLast=now;
+            if(fps<26){lowFpsWindows++;if(lowFpsWindows>=2){dynamicScale=Math.max(.6,dynamicScale*.86);renderer.setPixelRatio(safePixelRatio(qualityMode,dynamicScale));lowFpsWindows=0;}}
+            else if(fps>48&&dynamicScale<1){dynamicScale=Math.min(1,dynamicScale+.08);renderer.setPixelRatio(safePixelRatio(qualityMode,dynamicScale));}
+          }
           enforceWaterline();
           renderer.render(scene,camera);
           if(frames===1){
@@ -776,19 +800,34 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         document.addEventListener("visibilitychange",onVisibility);
         animate();
 
+        const tweenCamera=(to,target,duration=420)=>{
+          const from=camera.position.clone(),startTime=performance.now();
+          const step=now=>{const t=Math.min(1,(now-startTime)/duration),e=1-Math.pow(1-t,3);camera.position.lerpVectors(from,to,e);controls.target.lerp(target,e);camera.lookAt(controls.target);if(t<1)requestAnimationFrame(step)};requestAnimationFrame(step);
+        };
         const setView=name=>{
           const target=controls.target.clone();
           const d=Math.max(camera.position.distanceTo(target),distance*.8);
-          if(name==="bow")camera.position.set(target.x+d,target.y+d*.15,target.z);
-          else if(name==="stern")camera.position.set(target.x-d,target.y+d*.15,target.z);
-          else if(name==="port")camera.position.set(target.x,target.y+d*.15,target.z-d);
-          else if(name==="starboard")camera.position.set(target.x,target.y+d*.15,target.z+d);
-          else if(name==="top")camera.position.set(target.x,target.y+d,target.z+.001);
-          else camera.position.set(target.x+d*.8,target.y+d*.42,target.z+d*.8);
-          camera.lookAt(target);
-          enforceWaterline();
-          controls.update();
+          let to;
+          if(name==="bow")to=new THREE.Vector3(target.x+d,target.y+d*.15,target.z);
+          else if(name==="stern")to=new THREE.Vector3(target.x-d,target.y+d*.15,target.z);
+          else if(name==="port")to=new THREE.Vector3(target.x,target.y+d*.15,target.z-d);
+          else if(name==="starboard")to=new THREE.Vector3(target.x,target.y+d*.15,target.z+d);
+          else if(name==="top")to=new THREE.Vector3(target.x,target.y+d,target.z+.001);
+          else if(name==="bow-port")to=new THREE.Vector3(target.x+d*.72,target.y+d*.28,target.z-d*.72);
+          else if(name==="bow-starboard")to=new THREE.Vector3(target.x+d*.72,target.y+d*.28,target.z+d*.72);
+          else if(name==="stern-port")to=new THREE.Vector3(target.x-d*.72,target.y+d*.28,target.z-d*.72);
+          else if(name==="stern-starboard")to=new THREE.Vector3(target.x-d*.72,target.y+d*.28,target.z+d*.72);
+          else to=new THREE.Vector3(target.x+d*.8,target.y+d*.42,target.z+d*.8);
+          tweenCamera(to,target);
         };
+        camera.near=Math.max(.05,distance/500);camera.far=Math.max(250,distance*35);camera.updateProjectionMatrix();
+        controls.minDistance=Math.max(2,distance*.22);controls.maxDistance=Math.max(35,distance*5.5);
+        const focusVessel=()=>{
+          const box=new THREE.Box3().setFromObject(vesselRoot);if(box.isEmpty())return;
+          const center=box.getCenter(new THREE.Vector3()),size=box.getSize(new THREE.Vector3()),radius=Math.max(size.x,size.y,size.z);
+          const to=center.clone().add(new THREE.Vector3(radius*1.2,radius*.55,radius*1.2));tweenCamera(to,center,360);
+        };
+        renderer.domElement.addEventListener("dblclick",e=>{e.preventDefault();focusVessel()});
         const zoomBy=factor=>{
           const direction=camera.position.clone().sub(controls.target).multiplyScalar(factor);
           camera.position.copy(controls.target.clone().add(direction));
@@ -806,12 +845,12 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
           });
         };
         highlightLight(highlightLightIndex);
-        runtime.current={renderer,controls,observer,onVisibility,pmremGenerator,roomEnvironment,environmentTarget,vesselRoot,lightsRoot,shapesRoot,sectorsRoot,setView,zoomBy,highlightLight,reset:()=>setView("3d")};
+        runtime.current={renderer,controls,observer,onVisibility,pmremGenerator,roomEnvironment,environmentTarget,vesselRoot,lightsRoot,shapesRoot,sectorsRoot,setView,zoomBy,highlightLight,focusVessel,reset:()=>setView("3d")};
       }catch(error){
         console.error("[RIPEAM 3D]",error);
         if(root){
           const message=String(error?.message||error);
-          root.innerHTML=`<div class="${styles.error}"><b>Falha ao carregar modelo 3D.</b><span>${message}</span></div>`;
+          root.innerHTML=`<div class="${styles.error}"><b>Não foi possível preparar o 3D.</b><span>O modo de compatibilidade foi acionado. Tente recarregar a cena.</span></div>`;
         }
         onDiagnostics?.({status:"error",message:String(error?.message||error),frames:0});
       }
@@ -839,7 +878,7 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
       runtime.current=null;
       if(mount.current)mount.current.innerHTML="";
     };
-  },[sceneConfig,onDiagnostics,night,displayMode,showSectors,liveConfig]);
+  },[sceneConfig,onDiagnostics,night,environmentPhase,displayMode,showSectors,liveConfig,qualityMode,freeOrbit,fogLevel,exposure,teacherMode,onOfflineStatus]);
 
   useEffect(()=>{runtime.current?.highlightLight?.(highlightLightIndex)},[highlightLightIndex]);
 
@@ -855,10 +894,12 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
   };
 
   return <div className={styles.viewerShell}>
-    <div className={styles.controls}>
+    <div className={styles.controls} aria-label="Controles de câmera">
       <button onClick={()=>view("3d")}>3D</button><button onClick={()=>view("bow")}>Proa</button><button onClick={()=>view("stern")}>Popa</button>
-      <button onClick={()=>view("port")}>Bombordo</button><button onClick={()=>view("starboard")}>Boreste</button><button onClick={()=>view("top")}>Superior</button><button onClick={()=>runtime.current?.reset?.()}>Reset</button>
-      <button onClick={()=>zoom(.85)}>＋</button><button onClick={()=>zoom(1.18)}>−</button><button onClick={fullscreen}>Tela cheia</button>
+      <button onClick={()=>view("port")}>BB</button><button onClick={()=>view("starboard")}>BE</button><button onClick={()=>view("top")}>↑</button>
+      <button onClick={()=>view("bow-port")} title="3/4 proa bombordo">¾ BB</button><button onClick={()=>view("bow-starboard")} title="3/4 proa boreste">¾ BE</button>
+      <button onClick={()=>runtime.current?.focusVessel?.()} title="Centralizar embarcação">◎</button>
+      <button onClick={()=>zoom(.85)}>＋</button><button onClick={()=>zoom(1.18)}>−</button><button onClick={fullscreen}>⛶</button>
     </div>
     <div ref={mount} className={styles.viewport}/>
   </div>;
