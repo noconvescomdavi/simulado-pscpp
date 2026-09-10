@@ -58,3 +58,73 @@
 .loadingIndeterminate{width:35%!important;animation:ripeamLoadingSweep 1.05s ease-in-out infinite}
 @keyframes ripeamLoadingSweep{0%{transform:translateX(-120%)}50%{transform:translateX(95%)}100%{transform:translateX(310%)}}
 @media (prefers-reduced-motion:reduce){.loading,.loadingTrack i{transition:none}.loadingIndeterminate{animation:none;width:60%!important}}
+
+
+/* ===== Student Viewer V5 ===== */
+.loadingSkeleton{width:min(360px,78%);height:86px;border-radius:18px;border:1px solid rgba(95,190,235,.22);background:linear-gradient(90deg,rgba(255,255,255,.025),rgba(91,190,235,.08),rgba(255,255,255,.025));background-size:220% 100%;animation:ripeamSkeleton 1.35s linear infinite;display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;padding:10px}
+.loadingSkeleton i{display:block;border-radius:10px;background:rgba(126,211,250,.08)}
+@keyframes ripeamSkeleton{0%{background-position:220% 0}100%{background-position:-220% 0}}
+.loadingStages{display:grid;gap:8px;width:min(520px,88%);margin-top:8px}
+.loadingStages>div{display:grid;grid-template-columns:74px 1fr 42px;gap:10px;align-items:center;font-size:.78rem;color:#9fc4d8}
+.loadingStages strong{text-align:right;color:#dff5ff;font-variant-numeric:tabular-nums}
+.studentViewerSettings,.offlineBar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 12px;border-top:1px solid rgba(71,155,196,.25);background:rgba(4,21,33,.78);backdrop-filter:blur(10px)}
+.studentViewerSettings label,.offlineBar span{display:flex;align-items:center;gap:7px;font-size:.78rem;color:#9cc8de}
+.studentViewerSettings select,.studentViewerSettings input,.offlineBar button,.studentViewerSettings button{min-height:34px;border:1px solid #245a74;border-radius:10px;background:#082132;color:#d9f2ff;padding:5px 9px}
+.studentViewerSettings input[type="range"]{width:92px;padding:0}
+.offlineBar{justify-content:flex-end}
+.offlineBar span{margin-right:auto}
+.offlineReady,.offlineHint{font-size:.74rem;padding:5px 9px;border-radius:999px;border:1px solid rgba(75,191,144,.35);color:#a7f3d0;background:rgba(8,77,57,.18)}
+.offlineHint{border-color:rgba(93,171,209,.28);color:#a9cee1;background:rgba(20,66,88,.2)}
+.phaseSlider{width:86px!important;accent-color:#56bfe9}
+.environmentToggle small{min-width:70px;text-align:center;color:#9fc5d9;font-size:.72rem}
+.teacherPanel{margin-top:10px;padding:10px;border:1px solid rgba(81,175,218,.32);border-radius:12px;background:rgba(9,40,57,.7)}
+.teacherPanel b{color:#7dd8ff}.teacherPanel p,.teacherPanel small{display:block;margin:5px 0;color:#bed7e4;line-height:1.35}
+.infoButton{margin-left:auto!important;width:30px!important;height:30px!important;min-width:30px!important;border-radius:50%!important;padding:0!important}
+.viewerShell:fullscreen{background:#04131f;display:flex;flex-direction:column;width:100vw;height:100vh;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+.viewerShell:fullscreen .viewport{flex:1;height:auto!important;min-height:0}
+.viewerShell:fullscreen .controls{position:absolute;z-index:30;left:50%;bottom:max(16px,env(safe-area-inset-bottom));transform:translateX(-50%);top:auto;background:rgba(3,19,30,.78);backdrop-filter:blur(12px);border:1px solid rgba(81,177,219,.35);border-radius:16px;padding:7px;max-width:calc(100vw - 20px)}
+.controls{scrollbar-width:none}
+.controls::-webkit-scrollbar{display:none}
+.controls button{touch-action:manipulation}
+.viewport canvas{touch-action:none}
+.viewerCard{overflow:visible}
+.lightPanelHeader{display:flex;align-items:center;gap:8px}
+.loadingDone{opacity:0!important;transform:scale(.995);transition:opacity .22s ease,transform .22s ease}
+
+@media (max-width:900px){
+  .hero{min-height:auto;padding-top:max(8px,env(safe-area-inset-top))}
+  .viewerHeading{padding:10px 12px}
+  .viewerHeading h2{font-size:1.25rem;line-height:1.05;margin:2px 0}
+  .environmentToggle{gap:5px}
+  .environmentToggle button{min-width:42px;height:42px;padding:0;font-size:1.1rem}
+  .studyToolbar{padding:7px 10px;gap:6px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+  .studyToolbar::-webkit-scrollbar{display:none}
+  .studyToolbar button{min-height:38px;padding:7px 12px;font-size:.82rem}
+  .studentViewerSettings{gap:6px;padding:6px 8px;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none}
+  .studentViewerSettings>*{flex:0 0 auto}
+  .studentViewerSettings label{font-size:.7rem}
+  .studentViewerSettings select{max-width:88px}
+  .studentViewerSettings input[type="range"]{width:66px}
+  .offlineBar{padding:6px 8px;gap:6px}
+  .offlineBar span{width:100%;font-size:.72rem}
+  .offlineBar button{font-size:.72rem;min-height:34px}
+  .singleViewport,.compareGrid{position:relative}
+  .viewerShell{position:relative}
+  .controls{position:absolute!important;z-index:18;left:8px;right:8px;bottom:8px;top:auto!important;display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;gap:5px;padding:6px;background:rgba(2,18,29,.78);backdrop-filter:blur(12px);border:1px solid rgba(75,167,207,.35);border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.22)}
+  .controls button{flex:0 0 auto;min-width:46px!important;height:42px!important;padding:5px 9px!important;font-size:.78rem!important;border-radius:10px!important}
+  .viewport{min-height:54vh!important;height:54vh!important}
+  .viewerStudyGrid{display:block!important}
+  .lightPanel{position:relative!important;width:100%!important;max-height:none!important;border-left:0!important;border-top:1px solid rgba(74,156,195,.3);border-radius:18px 18px 0 0}
+  .lightPanel ul{max-height:38vh;overflow:auto}
+  .diagnostics{overflow-x:auto;display:flex;flex-wrap:nowrap;padding-bottom:5px}
+  .diagnostics span{flex:0 0 auto}
+}
+
+@media (max-width:900px) and (orientation:landscape){
+  .viewerCard{min-height:calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom))}
+  .viewerHeading,.studyToolbar,.studentViewerSettings,.offlineBar{padding-top:4px;padding-bottom:4px}
+  .viewerHeading p,.viewerHeading small{display:none}
+  .viewport{height:72dvh!important;min-height:72dvh!important}
+  .controls{left:50%;right:auto;transform:translateX(-50%);max-width:92vw}
+  .lightPanel{max-height:35dvh;overflow:auto}
+}
