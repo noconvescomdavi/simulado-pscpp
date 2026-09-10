@@ -20,3 +20,5 @@
 .form label small{font-size:7px;color:#8fa9b8}
 
 .assetGrid button[draggable="true"]{cursor:grab}.assetGrid button[draggable="true"]:active{cursor:grabbing}.materialDiag{max-height:280px;overflow:auto}.materialDiag span{display:block;overflow-wrap:anywhere}
+
+.publishBlocker{position:absolute;right:12px;top:56px;z-index:40;max-width:430px;padding:8px 10px;border:1px solid #a63d4d;border-radius:7px;background:#3b1219;color:#ffd9df;box-shadow:0 8px 24px #0008;font-size:8px}.publishBlocker b{display:block;margin-bottom:4px;color:#ff9dac}.publishBlocker span{display:block;margin-top:2px;white-space:normal}
