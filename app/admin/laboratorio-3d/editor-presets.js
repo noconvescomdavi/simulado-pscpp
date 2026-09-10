@@ -71,6 +71,9 @@ export const SCENE_TEMPLATES = [
   ]},
   {key:"seaplane",label:"Hidroavião",rule_ref:"31",card_title:"Hidroavião na água",objects:[
     {name:"Hidroavião",type:"model",assetUrl:"/models/ripeam/hidroavião.glb",assetType:"glb",position:[0,0,0],rotation:[0,0,0],scale:[1,1,1],normalize:true}
+  ]},
+  {key:"offshore",label:"Offshore",rule_ref:"",card_title:"Embarcação offshore",objects:[
+    {name:"Offshore",type:"model",assetUrl:"/models/ripeam/offshore.glb",assetType:"glb",position:[0,0,0],rotation:[0,0,0],scale:[1,1,1],normalize:true}
   ]}
 ];
 
