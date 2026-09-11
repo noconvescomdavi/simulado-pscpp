@@ -1,0 +1,73 @@
+name: Sync textured pilot boat
+on:
+  push:
+    branches: [asset/pilot-boat-textured-20260911]
+permissions:
+  contents: write
+jobs:
+  sync:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: asset/pilot-boat-textured-20260911
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Download new pilot boat from Drive
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --quiet gdown
+          gdown "1Y73RFpbB9IAkIiZUF1CBU65ZlFdLt3cL" -O public/models/ripeam/pilot_boat.glb
+          test "$(stat -c%s public/models/ripeam/pilot_boat.glb)" -eq 9573052
+      - name: Validate GLB textures
+        shell: python
+        run: |
+          import json,struct,pathlib,sys
+          p=pathlib.Path("public/models/ripeam/pilot_boat.glb")
+          data=p.read_bytes()
+          if data[:4]!=b"glTF": sys.exit("invalid glb")
+          off=12;doc=None
+          while off+8<=len(data):
+            ln,typ=struct.unpack_from("<II",data,off);off+=8
+            chunk=data[off:off+ln];off+=ln
+            if typ==0x4E4F534A:
+              doc=json.loads(chunk.rstrip(b" \t\r\n\x00").decode("utf-8"));break
+          if not doc: sys.exit("missing json")
+          mats=doc.get("materials",[]);imgs=doc.get("images",[]);tex=doc.get("textures",[])
+          base=normal=mr=0
+          for m in mats:
+            pbr=m.get("pbrMetallicRoughness",{})
+            base+=int("baseColorTexture" in pbr)
+            mr+=int("metallicRoughnessTexture" in pbr)
+            normal+=int("normalTexture" in m)
+          print(f"materials={len(mats)} textures={len(tex)} images={len(imgs)} base={base} normal={normal} mr={mr}")
+          if len(mats)<1 or len(tex)<3 or len(imgs)<3 or base<1 or normal<1 or mr<1:
+            sys.exit("pilot boat texture regression")
+      - name: Update RIPEAM asset hash
+        shell: python
+        run: |
+          import hashlib,re,pathlib
+          asset=pathlib.Path("public/models/ripeam/pilot_boat.glb").read_bytes()
+          h=hashlib.sha256(asset).hexdigest()[:16]
+          p=pathlib.Path("lib/ripeam-asset-manifest.js")
+          s=p.read_text(encoding="utf-8")
+          s2=re.sub(r'("/models/ripeam/pilot_boat\.glb":\s*")[0-9a-f]+(")',r'\g<1>'+h+r'\2',s)
+          if s2==s: raise SystemExit("pilot hash replacement failed")
+          p.write_text(s2,encoding="utf-8")
+          print("pilot hash",h)
+      - name: Build
+        run: |
+          npm ci
+          npm run build
+      - name: Commit validated asset
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/models/ripeam/pilot_boat.glb lib/ripeam-asset-manifest.js
+          git commit -m "feat(ripeam-3d): replace pilot boat with textured GLB"
+          git push origin HEAD:asset/pilot-boat-textured-20260911
