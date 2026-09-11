@@ -566,7 +566,7 @@ export default function Admin3DEditor(){
     if(!publishedBaseline)return [{kind:"new",label:"Cena ainda não possui baseline publicada nesta sessão."}];
     const before=publishedBaseline.config||{},after=scene.config||{},changes=[],bm=new Map((before.objects||[]).map(o=>[o.id,o]));
     for(const o of after.objects||[]){const p=bm.get(o.id);if(!p){changes.push({kind:"add",label:"Adicionado: "+o.name});continue}
-      for(const key of ["position","rotation","scale","assetUrl","visible","intensity","lightSize","distance","sector","heading","color"])if(JSON.stringify(p[key])!==JSON.stringify(o[key]))changes.push({kind:"edit",label:o.name+" · "+key+": "+JSON.stringify(p[key])+" → "+JSON.stringify(o[key])});bm.delete(o.id)}
+      for(const key of ["position","rotation","scale","assetUrl","visible","intensity","lightSize","distance","sector","heading","color","material","renderAdjustments","lod"])if(JSON.stringify(p[key])!==JSON.stringify(o[key]))changes.push({kind:"edit",label:o.name+" · "+key+": "+JSON.stringify(p[key])+" → "+JSON.stringify(o[key])});bm.delete(o.id)}
     for(const o of bm.values())changes.push({kind:"remove",label:"Removido: "+o.name});
     if(JSON.stringify(before.camera)!==JSON.stringify(after.camera))changes.push({kind:"edit",label:"Câmera inicial alterada."});
     if(JSON.stringify(before.environment)!==JSON.stringify(after.environment))changes.push({kind:"edit",label:"Ambiente alterado."});return changes;
