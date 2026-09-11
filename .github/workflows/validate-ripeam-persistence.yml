@@ -1,0 +1,19 @@
+name: Validate RIPEAM persistence fix
+on:
+  push:
+    branches: [fix/ripeam-render-adjustments-persist-20260911]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 20, cache: npm}
+      - run: |
+          grep -q "renderAdjustments:{" lib/ripeam-3d-scenes.js
+          grep -q '"renderAdjustments"' app/admin/laboratorio-3d/Admin3DEditor.js
+          grep -q 'fogEnabled:bool' lib/ripeam-3d-scenes.js
+      - run: npm ci
+      - run: npm run build
