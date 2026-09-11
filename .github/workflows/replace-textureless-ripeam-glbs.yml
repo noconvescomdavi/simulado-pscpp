@@ -1,0 +1,106 @@
+name: Replace textureless RIPEAM GLBs
+on:
+  push:
+    branches: [asset/replace-textureless-glbs-20260911]
+permissions:
+  contents: write
+jobs:
+  sync:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: asset/replace-textureless-glbs-20260911
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Download Drive candidates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --quiet gdown
+          mkdir -p /tmp/drive-glbs
+          gdown "1Wxfe8iADNkoyIf92uH9Vov83z37hi0Gj" -O /tmp/drive-glbs/dredger.glb
+          gdown "1TFCticl5ngtSEUX4d8lC5EmR9zCPLcpz" -O /tmp/drive-glbs/offshore.glb
+      - name: Compare textures and replace only improvements
+        shell: python
+        run: |
+          import json,struct,pathlib,hashlib,re,shutil,sys
+          root=pathlib.Path("public/models/ripeam")
+          manifest=pathlib.Path("lib/ripeam-asset-manifest.js")
+          def inspect(p):
+            data=p.read_bytes()
+            if data[:4]!=b"glTF": return {"ok":False}
+            off=12;doc=None
+            while off+8<=len(data):
+              ln,typ=struct.unpack_from("<II",data,off);off+=8
+              chunk=data[off:off+ln];off+=ln
+              if typ==0x4E4F534A:
+                doc=json.loads(chunk.rstrip(b" \t\r\n\x00").decode("utf-8"));break
+            if not doc:return {"ok":False}
+            mats=doc.get("materials",[]);tex=doc.get("textures",[]);imgs=doc.get("images",[])
+            base=normal=mr=ao=em=0
+            for m in mats:
+              pbr=m.get("pbrMetallicRoughness",{})
+              base+=int("baseColorTexture" in pbr)
+              mr+=int("metallicRoughnessTexture" in pbr)
+              normal+=int("normalTexture" in m)
+              ao+=int("occlusionTexture" in m)
+              em+=int("emissiveTexture" in m)
+            return {"ok":True,"materials":len(mats),"textures":len(tex),"images":len(imgs),"base":base,"normal":normal,"mr":mr,"ao":ao,"em":em}
+          changed=[]
+          for name in ["dredger.glb","offshore.glb"]:
+            current=root/name
+            candidate=pathlib.Path("/tmp/drive-glbs")/name
+            a,b=inspect(current),inspect(candidate)
+            print("COMPARE",name,"repo=",a,"drive=",b)
+            repo_maps=(a.get("textures",0),a.get("images",0),a.get("base",0)+a.get("normal",0)+a.get("mr",0)+a.get("ao",0)+a.get("em",0))
+            drive_maps=(b.get("textures",0),b.get("images",0),b.get("base",0)+b.get("normal",0)+b.get("mr",0)+b.get("ao",0)+b.get("em",0))
+            if b.get("ok") and drive_maps>repo_maps and b.get("textures",0)>0 and b.get("images",0)>0:
+              shutil.copy2(candidate,current)
+              h=hashlib.sha256(current.read_bytes()).hexdigest()[:16]
+              s=manifest.read_text(encoding="utf-8")
+              key="/models/ripeam/"+name
+              s2=re.sub(r'("'+re.escape(key)+r'":\s*")[0-9a-f]+(")',r'\g<1>'+h+r'\2',s)
+              if s2==s: raise SystemExit("manifest hash replacement failed for "+name)
+              manifest.write_text(s2,encoding="utf-8")
+              changed.append(name)
+              print("REPLACED",name,"hash",h)
+            else:
+              print("KEPT",name)
+          print("CHANGED",",".join(changed) if changed else "none")
+          pathlib.Path("/tmp/changed.txt").write_text("\n".join(changed))
+      - name: Validate all RIPEAM GLBs
+        shell: python
+        run: |
+          import json,struct,pathlib,sys
+          for p in sorted(pathlib.Path("public/models/ripeam").glob("*.glb")):
+            data=p.read_bytes()
+            if data[:4]!=b"glTF": sys.exit("invalid GLB: "+p.name)
+            off=12;doc=None
+            while off+8<=len(data):
+              ln,typ=struct.unpack_from("<II",data,off);off+=8
+              chunk=data[off:off+ln];off+=ln
+              if typ==0x4E4F534A:
+                doc=json.loads(chunk.rstrip(b" \t\r\n\x00").decode("utf-8"));break
+            if not doc: sys.exit("missing JSON: "+p.name)
+            print(f"GLB|{p.name}|materials={len(doc.get('materials',[]))}|textures={len(doc.get('textures',[]))}|images={len(doc.get('images',[]))}")
+      - name: Build
+        run: |
+          npm ci
+          npm run build
+      - name: Commit validated replacements
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -s /tmp/changed.txt ]; then
+            echo "No replacements needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/models/ripeam/*.glb lib/ripeam-asset-manifest.js
+          git commit -m "feat(ripeam-3d): replace textureless models with textured Drive versions"
+          git push origin HEAD:asset/replace-textureless-glbs-20260911
