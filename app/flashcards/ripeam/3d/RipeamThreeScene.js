@@ -611,8 +611,15 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
             }
           }
           // published light/shape/cable objects are rendered from the exact editor JSON
+          const signalPresetEnabled=liveConfig?.settings?.signalPresetMode!==false;
+          const publishedSignalVisible=data=>{
+            if(!signalPresetEnabled||phase==="twilight")return true;
+            if(data.type?.includes("Light"))return phase==="night";
+            if(data.type==="shape"||data.type==="flag")return phase!=="night";
+            return true;
+          };
           for(const data of editorObjects){
-            if(data.visible===false)continue;
+            if(data.visible===false||!publishedSignalVisible(data))continue;
             if(data.type?.includes("Light")){
               const group=new THREE.Group();
               const color=data.color||"#fff2ba";
@@ -794,8 +801,8 @@ export default function RipeamThreeScene({sceneConfig,onDiagnostics,night=false,
         vesselRoot.visible=!hideVessel;
         // RIPEAM: no cenário diurno mostramos somente as marcas diurnas;
         // no cenário noturno mostramos somente as luzes.
-        lightsRoot.visible=isNight&&!sceneConfig.encounter;
-        shapesRoot.visible=!isNight&&!sceneConfig.encounter;
+        lightsRoot.visible=(phase==="night")&&!sceneConfig.encounter;
+        shapesRoot.visible=(phase!=="night")&&!sceneConfig.encounter;
         sectorsRoot.visible=(isNight||teacherMode)&&showSectors&&!sceneConfig.encounter;
 
         camera.updateMatrixWorld(true);
