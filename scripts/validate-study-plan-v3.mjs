@@ -6,6 +6,7 @@ const read=(path)=>fs.readFileSync(path,"utf8");
 const integrated=read("lib/integrated-study-plan.js");
 const snapshot=read("lib/study-plan-snapshot.js");
 const progress=read("lib/study-plan-progress.js");
+const notebooks=read("lib/notebooks.js");
 const migration=read("db/migrations/022_learning_engine_v3.sql")+"\n"+read("db/migrations/023_learning_analytics_v3.sql");
 const client=read("app/plano-de-estudos/PlanClient.js");
 const unavailable=read("app/api/study-plan/unavailability/route.js");
@@ -31,6 +32,11 @@ assert.match(progress,/if\(newlyDone\)\{[\s\S]*BACKLOG_ITEM_RESOLVED/,"Evento de
 assert.ok(!/update\s+student_plan_reschedules[\s\S]*status='completed'/i.test(progress),
   "Conclusão voltou a depender da tabela de reprogramações");
 assert.match(client,/source_plan_date:planDate/,"Cliente não preserva a data original da tarefa reprogramada");
+assert.match(notebooks,/strictFixationMatch/,"Caderno diário não possui filtro estrito por obra/capítulo");
+assert.match(notebooks,/actualWork!==wantedWork/,"Fixação não exige correspondência exata da obra");
+assert.ok(!/fixationScore/.test(notebooks),"Fixação voltou a usar pontuação textual aproximada");
+assert.match(notebooks,/shuffle\(pool\)\.slice/,"Questões do capítulo não são limitadas somente após o filtro estrito");
+
 
 for(const table of [
   "student_plan_snapshots",
