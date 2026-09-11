@@ -412,7 +412,12 @@ export default function Admin3DViewport({
       root.scale.fromArray(data.scale||[1,1,1]);
       const layer=(scene.layers||[]).find(l=>l.id===layerForObject(data));
       const isolated=propsRef.current.isolateId;
-      root.visible=data.visible!==false&&layer?.visible!==false&&(!isolated||isolated===data.id);
+      const signalPreset=scene.settings?.signalPresetMode!==false;
+      const preview=scene.settings?.previewMode||"day";
+      const isNightSignal=data.type?.includes("Light");
+      const isDaySignal=data.type==="shape"||data.type==="flag";
+      const signalVisible=!signalPreset||preview==="twilight"||(!isNightSignal&&!isDaySignal)||(preview==="night"?isNightSignal:isDaySignal);
+      root.visible=data.visible!==false&&layer?.visible!==false&&(!isolated||isolated===data.id)&&signalVisible;
       roots.set(data.id,root);
       if(scene.settings?.showAnchors&&data.type==="model"&&child){try{const box=new r.THREE.Box3().setFromObject(child),min=box.min,max=box.max,mid=box.getCenter(new r.THREE.Vector3()),defs=[['bow',mid.x,mid.y,max.z],['stern',mid.x,mid.y,min.z],['port',min.x,mid.y,mid.z],['starboard',max.x,mid.y,mid.z],['masthead',mid.x,max.y,mid.z],['waterline',mid.x,0,mid.z]];for(const [name,x,y,z] of defs){const a=new r.THREE.Mesh(new r.THREE.SphereGeometry(.08,10,8),new r.THREE.MeshBasicMaterial({color:0x22d3ee,depthTest:false}));a.position.set(x,y,z);a.renderOrder=10;a.userData.editorHelper=true;a.userData.anchorName=name;root.add(a)}}catch{}}
       if(scene.settings?.showBounds&&child){
@@ -458,7 +463,7 @@ export default function Admin3DViewport({
     })();
 
     return()=>{cancelled=true};
-  },[scene.objects,scene.layers,scene.settings?.showSectors,scene.settings?.showBounds,scene.settings?.showAxes,scene.settings?.showAnchors,scene.settings?.wireframe,scene.settings?.xray,scene.settings?.materialChannel,isolateId]);
+  },[scene.objects,scene.layers,scene.settings?.showSectors,scene.settings?.showBounds,scene.settings?.showAxes,scene.settings?.showAnchors,scene.settings?.wireframe,scene.settings?.xray,scene.settings?.materialChannel,scene.settings?.previewMode,scene.settings?.signalPresetMode,isolateId]);
 
   useEffect(()=>{
     const r=runtime.current;if(!r)return;
