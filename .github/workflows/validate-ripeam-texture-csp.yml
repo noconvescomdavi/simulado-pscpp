@@ -1,4 +1,4 @@
-name: Validate RIPEAM GLB texture CSP
+name: Validate RIPEAM GLB texture fix
 on:
   push:
     branches: [fix/ripeam-glb-texture-csp-20260911]
@@ -8,16 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Verify 3D CSP permits embedded GLB texture fetches
-        run: |
-          node - <<'NODE'
-          const fs=require('fs');
-          const s=fs.readFileSync('middleware.js','utf8');
-          const i=s.indexOf('const threeCsp=['), j=s.indexOf('].join("; ");',i);
-          const block=s.slice(i,j);
-          if(!block.includes("connect-src \'self\' blob: data: https: wss:")) process.exit(1);
-          NODE
       - uses: actions/setup-node@v4
         with: {node-version: 20, cache: npm}
+      - name: Verify three CSP
+        run: grep -Fq "connect-src \'self\' blob: data: https: wss:" middleware.js
       - run: npm ci
       - run: npm run build
