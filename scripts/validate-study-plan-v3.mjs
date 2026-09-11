@@ -28,6 +28,11 @@ assert.match(snapshot,/student_plan_snapshots/,"Serviço de snapshot ausente");
 assert.match(snapshot,/TASK_PLANNED/,"Snapshot não registra TASK_PLANNED");
 assert.match(progress,/TASK_COMPLETED/,"Conclusão não está sendo registrada no event log");
 assert.match(progress,/pg_advisory_xact_lock/,"Conclusão concorrente não possui lock transacional de idempotência");
+assert.match(progress,/SAVEPOINT study_plan_aux/,"Gravações auxiliares do plano não estão isoladas por savepoint");
+assert.match(progress,/ROLLBACK TO SAVEPOINT study_plan_aux/,"Falha auxiliar pode deixar a transação principal abortada");
+assert.ok(!/client\.query\([\s\S]{0,400}student_plan_events[\s\S]{0,200}\.catch\(\(\)=>\{\}\)/.test(progress),
+  "Event log voltou a ignorar erro sem recuperar a transação PostgreSQL");
+
 assert.match(progress,/if\(newlyDone\)\{[\s\S]*BACKLOG_ITEM_RESOLVED/,"Evento de resolução do backlog deve ocorrer apenas na primeira conclusão");
 assert.ok(!/update\s+student_plan_reschedules[\s\S]*status='completed'/i.test(progress),
   "Conclusão voltou a depender da tabela de reprogramações");
