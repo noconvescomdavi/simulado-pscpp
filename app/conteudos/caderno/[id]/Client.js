@@ -237,7 +237,13 @@ export default function Client({
         status:"done",
         metadata:{source:"automatic_notebook_completion",notebook_id:notebook.id}
       })
-    }).catch(()=>{});
+    }).then(async response=>{
+      if(response.ok)return;
+      const payload=await response.json().catch(()=>({}));
+      throw new Error(payload.error||"Não foi possível atualizar a tarefa do plano.");
+    }).catch(error=>{
+      console.error("Falha ao sincronizar conclusão do caderno com o plano:",error);
+    });
   }, [result?.completed, planTask, notebook.id]);
 
   if (
@@ -306,6 +312,22 @@ export default function Client({
                 question.id,
               selected_answer:
                 selectedAnswer,
+              plan_task:
+                planTask?.plan_date &&
+                planTask?.task_key
+                  ? {
+                      plan_date:
+                        planTask.plan_date,
+                      task_key:
+                        planTask.task_key,
+                      task_type:
+                        planTask.task_type ||
+                        "questions",
+                      subject_slug:
+                        planTask.subject_slug ||
+                        question.subject,
+                    }
+                  : null,
             }),
           }
         );
