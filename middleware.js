@@ -24,7 +24,7 @@ const threeCsp=[
   "style-src \'self\' \'unsafe-inline\' https:",
   "img-src \'self\' data: blob: https:",
   "font-src \'self\' data: https:",
-  "connect-src \'self\' https: wss:",
+  "connect-src \'self\' blob: data: https: wss:",
   "media-src \'self\' blob: https:",
   "worker-src \'self\' blob:",
   "child-src \'self\' blob:",
