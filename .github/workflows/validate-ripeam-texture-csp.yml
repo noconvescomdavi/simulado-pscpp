@@ -1,16 +1,33 @@
 name: Validate RIPEAM GLB texture fix
 on:
   push:
-    branches: [fix/ripeam-glb-texture-csp-20260911]
-permissions: {contents: read}
+    branches:
+      - fix/ripeam-glb-texture-csp-20260911
+
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: {node-version: 20, cache: npm}
-      - name: Verify three CSP
-        run: grep -Fq "connect-src \'self\' blob: data: https: wss:" middleware.js
-      - run: npm ci
-      - run: npm run build
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Verify CSP
+        shell: bash
+        run: |
+          set -e
+          grep -F "connect-src 'self' blob: data: https: wss:" middleware.js
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
