@@ -28,7 +28,8 @@ const BUILTIN=[
   {name:"Pilot Boat",url:"/models/ripeam/pilot_boat.glb",type:"glb",category:"Praticagem"},
   {name:"Mine Clearance",url:"/models/ripeam/navy_remoção_de_minas.glb",type:"glb",category:"Especial"},
   {name:"Hidroavião",url:"/models/ripeam/hidroavião.glb",type:"glb",category:"Regra 31"},
-  {name:"Offshore",url:"/models/ripeam/offshore.glb",type:"glb",category:"Offshore"}
+  {name:"Offshore",url:"/models/ripeam/offshore.glb",type:"glb",category:"Offshore"},
+  {name:"Dredger",url:"/models/ripeam/dredger.glb",type:"glb",category:"Dragagem"}
 ];
 const clone=x=>JSON.parse(JSON.stringify(x));
 const uid=()=>crypto.randomUUID();
@@ -358,37 +359,50 @@ export default function Admin3DEditor(){
     const report={ok:false,name:file?.name||"",bytes:file?.size||0,meshes:0,materials:0,materialSlots:0,textures:0,baseColorMaps:0,normalMaps:0,roughnessMaps:0,metalnessMaps:0,aoMaps:0,emissiveMaps:0,uvMeshes:0,missingUvMeshes:0,multiMaterialMeshes:0,embeddedTextures:true,bounds:null,error:""};
     if(!file||!String(file.name).toLowerCase().endsWith(".glb")){report.error="O arquivo precisa ser .glb.";return report}
     if(file.size<100){report.error="Arquivo GLB vazio ou inválido.";return report}
-    const url=URL.createObjectURL(file);
     try{
-      const THREE=await import(/* webpackIgnore:true */ "https://esm.sh/three@0.180.0");
-      const {GLTFLoader}=await import(/* webpackIgnore:true */ "https://esm.sh/three@0.180.0/examples/jsm/loaders/GLTFLoader.js");
-      const gltf=await new GLTFLoader().loadAsync(url),root=gltf.scene;
-      const materialSet=new Set(),textureSet=new Set();
-      root.traverse(o=>{
-        if(!o.isMesh)return;
+      // Parse GLB 2.0 locally. Do not import Three.js from a CDN: CSP/ad blockers/offline
+      // mode made valid local files fail with the misleading error "Failed to fetch".
+      const buffer=await file.arrayBuffer(),view=new DataView(buffer);
+      if(buffer.byteLength<20)throw new Error("GLB truncado.");
+      const magic=view.getUint32(0,true),version=view.getUint32(4,true),declared=view.getUint32(8,true);
+      if(magic!==0x46546c67||version!==2||declared!==buffer.byteLength)throw new Error("Cabeçalho GLB 2.0 inválido ou arquivo truncado.");
+      let offset=12,json=null;
+      while(offset+8<=buffer.byteLength){
+        const length=view.getUint32(offset,true),type=view.getUint32(offset+4,true);offset+=8;
+        if(length<0||offset+length>buffer.byteLength)throw new Error("Chunk GLB inválido.");
+        if(type===0x4e4f534a){
+          const bytes=new Uint8Array(buffer,offset,length);
+          json=JSON.parse(new TextDecoder().decode(bytes).replace(/\\u0000+$/g,"").trim());
+          break;
+        }
+        offset+=length;
+      }
+      if(!json)throw new Error("GLB sem chunk JSON.");
+      const materials=json.materials||[],textures=json.textures||[],images=json.images||[],meshes=json.meshes||[],accessors=json.accessors||[];
+      report.materials=materials.length;report.textures=textures.length;
+      report.embeddedTextures=images.every(img=>Number.isInteger(img.bufferView)||String(img.uri||"").startsWith("data:"));
+      for(const mat of materials){
+        const pbr=mat.pbrMetallicRoughness||{};
+        if(pbr.baseColorTexture)report.baseColorMaps++;
+        if(pbr.metallicRoughnessTexture){report.roughnessMaps++;report.metalnessMaps++}
+        if(mat.normalTexture)report.normalMaps++;
+        if(mat.occlusionTexture)report.aoMaps++;
+        if(mat.emissiveTexture)report.emissiveMaps++;
+      }
+      const mins=[Infinity,Infinity,Infinity],maxs=[-Infinity,-Infinity,-Infinity];
+      for(const mesh of meshes)for(const primitive of mesh.primitives||[]){
         report.meshes++;
-        const hasUv=!!o.geometry?.attributes?.uv;
-        if(hasUv)report.uvMeshes++;else report.missingUvMeshes++;
-        const mats=(Array.isArray(o.material)?o.material:[o.material]).filter(Boolean);
-        report.materialSlots+=mats.length;
-        if(mats.length>1)report.multiMaterialMeshes++;
-        mats.forEach(m=>{
-          materialSet.add(m);
-          [["map","baseColorMaps"],["normalMap","normalMaps"],["roughnessMap","roughnessMaps"],["metalnessMap","metalnessMaps"],["aoMap","aoMaps"],["emissiveMap","emissiveMaps"]].forEach(([key,countKey])=>{
-            const t=m[key];
-            if(!t?.isTexture)return;
-            textureSet.add(t);report[countKey]++;
-            const src=String(t.image?.currentSrc||t.image?.src||"");
-            if(src&&!(src.startsWith("blob:")||src.startsWith("data:")))report.embeddedTextures=false;
-          });
-        });
-      });
-      report.materials=materialSet.size;report.textures=textureSet.size;
-      const box=new THREE.Box3().setFromObject(root),size=box.getSize(new THREE.Vector3());report.bounds=size.toArray().map(v=>Number(v.toFixed(3)));
+        if(primitive.attributes?.TEXCOORD_0!==undefined)report.uvMeshes++;else report.missingUvMeshes++;
+        if(Array.isArray(primitive.material))report.materialSlots+=primitive.material.length;else if(primitive.material!==undefined)report.materialSlots++;
+        if(Array.isArray(primitive.material)&&primitive.material.length>1)report.multiMaterialMeshes++;
+        const pos=accessors[primitive.attributes?.POSITION];
+        if(Array.isArray(pos?.min)&&Array.isArray(pos?.max))for(let i=0;i<3;i++){mins[i]=Math.min(mins[i],Number(pos.min[i]));maxs[i]=Math.max(maxs[i],Number(pos.max[i]))}
+      }
       if(report.meshes<1)throw new Error("GLB sem meshes renderizáveis.");
-      if(box.isEmpty()||!report.bounds.every(Number.isFinite))throw new Error("Bounding box inválida.");
+      if(mins.every(Number.isFinite)&&maxs.every(Number.isFinite))report.bounds=maxs.map((v,i)=>Number((v-mins[i]).toFixed(3)));
+      else report.bounds=null;
       report.ok=true;
-    }catch(error){report.error=String(error?.message||error)}finally{URL.revokeObjectURL(url)}
+    }catch(error){report.error=String(error?.message||error)}
     return report;
   }
 
