@@ -45,9 +45,9 @@ function normalizeOptions(options) {
 }
 
 function Result({ result }) {
-  const answered = Number(result?.answered || 0);
-  const correct = Number(result?.correct || 0);
-  const errors = Number(result?.errors || Math.max(0, answered - correct));
+  const answered = Number(result?.answered ?? result?.answered_count ?? 0);
+  const correct = Number(result?.correct ?? result?.correct_count ?? 0);
+  const errors = Number(result?.errors ?? result?.error_count ?? Math.max(0, answered - correct));
   const percent = Number(result?.score_percent || 0);
   const grade = Number(result?.grade_10 ?? percent / 10);
 
@@ -141,10 +141,11 @@ export default function Client({ subject, title, ready, facets, planTask }) {
   useEffect(() => {
     if (!exam || remaining > 0 || timeoutHandled.current) return;
     timeoutHandled.current = true;
-    load().finally(() => {
+    const action=state?.offline ? finish("timeout") : load();
+    Promise.resolve(action).finally(() => {
       timeoutHandled.current = false;
     });
-  }, [exam?.id, remaining]);
+  }, [exam?.id, remaining, state?.offline]);
 
   useEffect(() => {
     questionStartedAt.current = Date.now();
@@ -279,6 +280,16 @@ export default function Client({ subject, title, ready, facets, planTask }) {
       setState({ state: "finished", result: payload.result || payload });
       setAnswer(null);
       setPendingResult(null);
+    } catch(error) {
+      if(!navigator.onLine || error instanceof TypeError){
+        try{
+          const result=await finishOfflineExam(exam.id,reason);
+          setState({state:"finished",result:{...result,session_id:exam.id,subject,reason}});
+          setAnswer(null);setPendingResult(null);
+        }catch(fallback){setError(fallback.message||"Não foi possível finalizar o simulado offline.");}
+      }else{
+        setError(error.message||"Não foi possível finalizar o simulado.");
+      }
     } finally {
       setBusy(false);
     }
