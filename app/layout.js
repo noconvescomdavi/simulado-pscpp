@@ -4,6 +4,7 @@ import SiteDesignRuntime from "./site-editor/SiteDesignRuntime";
 import SiteDesignProRuntime from "./site-editor/SiteDesignProRuntime";
 import PwaRuntime from "./components/PwaRuntime";
 import WebVitalsReporter from "./components/WebVitalsReporter";
+import MobileAppRuntime from "./components/MobileAppRuntime";
 
 export const metadata = {
   metadataBase: new URL("https://simulado-pscpp.vercel.app"),
@@ -53,6 +54,7 @@ export default function RootLayout({ children }) {
         <SiteDesignProRuntime />
         <PwaRuntime />
         <WebVitalsReporter />
+        <MobileAppRuntime />
       </body>
     </html>
   );
