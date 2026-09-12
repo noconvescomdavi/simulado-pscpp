@@ -26,6 +26,15 @@ jobs:
       - name: Repository hygiene
         run: npm run check:repo
 
+      - name: Migration manifest
+        run: npm run validate:migrations
+
+      - name: Offline architecture invariants
+        run: npm run validate:offline
+
+      - name: Dependency security audit
+        run: npm run security:audit
+
       - name: Study Plan V3 invariants
         run: npm run validate:study-plan
 
