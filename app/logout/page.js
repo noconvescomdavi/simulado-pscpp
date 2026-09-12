@@ -1,8 +1,10 @@
 import styles from "./logout.module.css";
+import LogoutCleanup from "./LogoutCleanup";
 
 export default function LogoutPage() {
   return (
     <main className={styles.page}>
+      <LogoutCleanup />
       <section className={styles.card}>
         <img
           className={styles.logo}
