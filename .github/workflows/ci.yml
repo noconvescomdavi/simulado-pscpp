@@ -35,6 +35,9 @@ jobs:
       - name: Dependency security audit
         run: npm run security:audit
 
+      - name: Learning migration compatibility
+        run: npm run validate:learning-migrations
+
       - name: Study Plan V3 invariants
         run: npm run validate:study-plan
 
@@ -46,6 +49,9 @@ jobs:
 
       - name: Validate question banks
         run: npm run validate:questions
+
+      - name: Validate question taxonomy
+        run: npm run validate:taxonomy
 
       - name: Build
         env:
