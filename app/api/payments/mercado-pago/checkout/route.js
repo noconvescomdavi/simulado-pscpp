@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getSession } from "../../../../../lib/auth";
 import { getUserAccess } from "../../../../../lib/access";
 import { query } from "../../../../../lib/db";
-import { buildPreference, getPaymentConfig, mercadoPagoRequest } from "../../../../../lib/payments";
+import { buildPreference, getResolvedPaymentConfig, mercadoPagoRequest } from "../../../../../lib/payments";
 import {assertSameOrigin} from "../../../../../lib/security";
 import {recordAppError} from "../../../../../lib/observability";
 
@@ -20,7 +20,7 @@ export async function POST(request) {
     return NextResponse.redirect(new URL("/perfil?erro=Complete%20nome%2C%20CPF%20e%20telefone%20antes%20do%20pagamento.", request.url), 303);
   }
 
-  const config = getPaymentConfig();
+  const config = await getResolvedPaymentConfig();
   if (!config.ready) {
     return NextResponse.redirect(new URL("/comprar?erro=configuracao", request.url), 303);
   }
@@ -39,7 +39,7 @@ export async function POST(request) {
     const preference = await mercadoPagoRequest("/checkout/preferences", {
       method: "POST",
       idempotencyKey: orderId,
-      body: buildPreference({ orderId, email: session.email }),
+      body: buildPreference({ orderId, email: session.email, priceCents: config.priceCents }),
     });
     if (!preference?.id || !preference?.init_point) throw new Error("Preferência sem URL de checkout.");
 
