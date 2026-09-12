@@ -116,7 +116,11 @@ function Menu({ active = "", flashcardDecks = [] }) {
         <span className={styles.icon}>♛</span><span>Minhas Assinaturas</span>
       </a>
 
-      <a className={active === "offline" ? styles.active : ""} href="/offline">\n        <span className={styles.icon}>⇄</span><span>Modo Offline</span>\n      </a>\n\n      <a className={active === "suporte" ? styles.active : ""} href="/suporte">
+      <a className={active === "offline" ? styles.active : ""} href="/offline">
+        <span className={styles.icon}>⇄</span><span>Modo Offline</span>
+      </a>
+
+      <a className={active === "suporte" ? styles.active : ""} href="/suporte">
         <span className={styles.icon}>✉</span><span>Suporte</span>
       </a>
 
@@ -206,7 +210,8 @@ export default async function StudentHeader({ active = "" }) {
           <input name="q" aria-label="Pesquisar na plataforma" placeholder="Pesquisar na plataforma..." />
         </form>
 
-        <div className={styles.topActions}>\n          <OfflineSyncStatus />
+        <div className={styles.topActions}>
+          <OfflineSyncStatus />
           <a href="/minhas-assinaturas" title="Minhas Assinaturas">♛</a>
           <a href="/perfil" title="Meu Perfil">{displayName.slice(0, 1).toUpperCase()}</a>
         </div>
