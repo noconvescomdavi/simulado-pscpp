@@ -1,7 +1,8 @@
 import { getSession } from "../../../../lib/auth";
 import { getEntitlement } from "../../../../lib/entitlement";
-import { availableQuestionBanks, getQuestionBank, publicQuestion } from "../../../../lib/question-banks";
+import { getQuestionBank, publicQuestion } from "../../../../lib/question-banks";
 import { normalizeSubject } from "../../../../lib/subjects";
+import {clientIpHash,consumeRateLimit,rateLimitResponse} from "../../../../lib/security";
 
 function offlineQuestion(question, subject) {
   const safe = publicQuestion(question);
@@ -24,35 +25,31 @@ export async function GET(request) {
     return Response.json({ error: "Modo offline disponível para alunos com acesso ativo." }, { status: 403 });
   }
 
+  const limit=await clientIpHash().then(keyHash=>consumeRateLimit({action:"offline_chunk",keyHash,limit:240,windowSeconds:3600}));
+  if(!limit.allowed)return rateLimitResponse(limit);
+
   const url = new URL(request.url);
-  const requested = String(url.searchParams.get("subjects") || "")
-    .split(",")
-    .map(normalizeSubject)
-    .filter(Boolean);
+  const subject=normalizeSubject(url.searchParams.get("subject"));
+  const offset=Math.max(0,Math.trunc(Number(url.searchParams.get("offset"))||0));
+  const requestedLimit=Math.trunc(Number(url.searchParams.get("limit"))||500);
+  const take=Math.max(1,Math.min(500,requestedLimit));
+  if(!subject)return Response.json({error:"Matéria obrigatória."},{status:400});
 
-  const available = availableQuestionBanks().map((item) => item.slug);
-  const subjects = [...new Set((requested.length ? requested : available).filter((slug) => available.includes(slug)))];
+  const bank=getQuestionBank(subject);
+  if(!bank)return Response.json({error:"Banco de questões não encontrado."},{status:404});
+  const all=bank.questions||[];
+  const questions=all.slice(offset,offset+take).map(question=>offlineQuestion(question,subject));
+  const version=process.env.VERCEL_GIT_COMMIT_SHA||process.env.NEXT_PUBLIC_APP_VERSION||"dev";
 
-  const banks = subjects.map((subject) => {
-    const bank = getQuestionBank(subject);
-    return {
-      subject,
-      title: bank?.title || subject,
-      questions: (bank?.questions || []).map((question) => offlineQuestion(question, subject)),
-    };
-  });
-
-  return Response.json(
-    {
-      version: process.env.VERCEL_GIT_COMMIT_SHA || process.env.NEXT_PUBLIC_APP_VERSION || "dev",
-      generated_at: new Date().toISOString(),
-      banks,
-      total_questions: banks.reduce((sum, bank) => sum + bank.questions.length, 0),
-    },
-    {
-      headers: {
-        "Cache-Control": "private, no-store, max-age=0",
-      },
-    }
-  );
+  return Response.json({
+    version,
+    generated_at:new Date().toISOString(),
+    subject,
+    title:bank.title||subject,
+    offset,
+    limit:take,
+    total_questions:all.length,
+    next_offset:offset+questions.length<all.length?offset+questions.length:null,
+    questions
+  },{headers:{"Cache-Control":"private, no-store, max-age=0"}});
 }
