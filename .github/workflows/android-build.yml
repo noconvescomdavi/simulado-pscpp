@@ -75,6 +75,10 @@ jobs:
           ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
         run: node scripts/configure-release-signing.mjs
 
+      - name: Android lint
+        run: ./gradlew lintDebug
+        working-directory: mobile/android
+
       - name: Build debug APK
         run: ./gradlew assembleDebug
         working-directory: mobile/android
