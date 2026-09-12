@@ -181,6 +181,17 @@ async function processEvent(userId,event){
       return setBibliographyStatusAndMetrics(userId,payload);
     case "exam.snapshot":
       return syncExamSnapshot(userId,payload);
+    case "library.progress": {
+      const fileId=cleanId(payload.file_id);
+      const page=Math.max(1,Math.min(100000,Math.trunc(Number(payload.page)||1)));
+      const progress=Math.max(0,Math.min(100,Number(payload.progress_percent)||0));
+      const saved=await query(
+        "update student_drive_files set last_page=greatest(last_page,$3),progress_percent=greatest(progress_percent,$4),last_opened_at=now(),updated_at=now() where id=$1 and user_id=$2 returning id,last_page,progress_percent",
+        [fileId,userId,page,progress]
+      );
+      if(!saved.rowCount)throw new Error("Documento da biblioteca não encontrado.");
+      return {file:saved.rows[0]};
+    }
     default:
       throw new Error("Tipo de evento offline não suportado.");
   }
