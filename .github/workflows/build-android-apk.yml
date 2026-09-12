@@ -1,11 +1,6 @@
-name: Build ESTIBORDO Android APK
+name: LEGACY - Build ESTIBORDO Android APK
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "android/**"
-      - ".github/workflows/build-android-apk.yml"
   workflow_dispatch:
 
 permissions:
