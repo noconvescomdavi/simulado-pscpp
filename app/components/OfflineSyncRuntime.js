@@ -53,11 +53,13 @@ export default function OfflineSyncRuntime(){
     window.addEventListener("online",onOnline);
     window.addEventListener("offline",onOffline);
     navigator.serviceWorker?.addEventListener("message",onMessage);
-    const timer=setInterval(()=>{if(navigator.onLine)sync()},60_000);
+    const syncTimer=setInterval(()=>{if(navigator.onLine)sync()},60_000);
+    const preloadTimer=setInterval(()=>{if(navigator.onLine)preload()},15*60_000);
     if(navigator.onLine){sync();preload();}
     return()=>{
       remove();
-      clearInterval(timer);
+      clearInterval(syncTimer);
+      clearInterval(preloadTimer);
       window.removeEventListener("online",onOnline);
       window.removeEventListener("offline",onOffline);
       navigator.serviceWorker?.removeEventListener("message",onMessage);
