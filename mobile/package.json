@@ -10,7 +10,8 @@
     "android:run": "cap run android",
     "android:doctor": "cap doctor android",
     "android:assets": "node scripts/prepare-assets.mjs && npx @capacitor/assets generate --android --iconBackgroundColor '#061a2b' --iconBackgroundColorDark '#061a2b' --splashBackgroundColor '#061a2b' --splashBackgroundColorDark '#061a2b'",
-    "android:configure": "node scripts/configure-android.mjs"
+    "android:configure": "node scripts/configure-android.mjs",
+    "play:assets": "node scripts/generate-play-assets.mjs"
   },
   "dependencies": {
     "@capacitor/android": "8.5.1",
@@ -26,7 +27,8 @@
   "devDependencies": {
     "@capacitor/cli": "8.5.1",
     "typescript": "^5.9.2",
-    "@capacitor/assets": "^3.0.5"
+    "@capacitor/assets": "^3.0.5",
+    "sharp": "^0.34.3"
   },
   "engines": {
     "node": ">=22"
