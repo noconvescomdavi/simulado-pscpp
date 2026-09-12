@@ -1,4 +1,5 @@
 import {redirect} from "next/navigation";
+import {headers} from "next/headers";
 import {getSession} from "../../lib/auth";
 import {getUserAccess} from "../../lib/access";
 import {query} from "../../lib/db";
@@ -29,6 +30,8 @@ function statusLabel(status){
 }
 
 export default async function Page({searchParams}){
+  const h=await headers();
+  const androidApp=String(h.get("user-agent")||"").includes("ESTIBORDO-ANDROID");
   const s=await getSession();
   if(!s) redirect("/cadastro");
 
@@ -43,6 +46,29 @@ export default async function Page({searchParams}){
   const ready=Boolean(pr.rows[0]?.full_name&&pr.rows[0]?.cpf&&pr.rows[0]?.phone);
   const retorno=String(q?.retorno||"");
   const erro=String(q?.erro||"");
+
+  if(androidApp&&!a?.active){
+    return (
+      <>
+        <StudentHeader active="assinaturas"/>
+        <main className={styles.page}>
+          <section className={styles.hero}>
+            <div className={styles.copy}>
+              <span>ESTIBORDO PARA ANDROID</span>
+              <h1>Use sua conta normalmente no aplicativo.</h1>
+              <p>Compras não estão disponíveis nesta versão do aplicativo.</p>
+            </div>
+            <article className={styles.checkoutCard}>
+              <span className={styles.plan}>APLICATIVO ANDROID</span>
+              <h2>Compra indisponível no app</h2>
+              <p>Você pode continuar acessando os recursos já liberados na sua conta.</p>
+              <a className={styles.primary} href="/area-do-aluno">Voltar para a área do aluno</a>
+            </article>
+          </section>
+        </main>
+      </>
+    );
+  }
 
   return (
     <>
