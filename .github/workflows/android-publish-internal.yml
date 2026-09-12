@@ -52,7 +52,10 @@ jobs:
           test -n "$PLAY_JSON" || (echo "GOOGLE_PLAY_SERVICE_ACCOUNT_JSON ausente" && exit 1)
 
       - name: Install dependencies
-        run: npm install --no-audit --no-fund
+        run: npm install --ignore-scripts --no-fund
+
+      - name: Audit mobile dependencies
+        run: npm run security:audit
 
       - name: Generate Android project
         run: npx cap add android
@@ -92,6 +95,10 @@ jobs:
 
       - name: Build release AAB
         run: ./gradlew bundleRelease
+        working-directory: mobile/android
+
+      - name: Validate release bundle
+        run: test -s app/build/outputs/bundle/release/app-release.aab
         working-directory: mobile/android
 
       - name: Upload AAB artifact
