@@ -40,7 +40,10 @@ jobs:
         uses: android-actions/setup-android@v3
 
       - name: Install dependencies
-        run: npm install --no-audit --no-fund
+        run: npm install --ignore-scripts --no-fund
+
+      - name: Audit mobile dependencies
+        run: npm run security:audit
 
       - name: Generate Android project
         run: npx cap add android
@@ -80,7 +83,7 @@ jobs:
         run: node scripts/configure-release-signing.mjs
 
       - name: Android lint
-        run: ./gradlew lintDebug
+        run: ./gradlew lintDebug lintRelease
         working-directory: mobile/android
 
       - name: Build debug APK
