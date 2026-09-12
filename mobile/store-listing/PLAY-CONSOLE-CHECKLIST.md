@@ -6,7 +6,7 @@
 - Application ID: `br.com.estibordo.pscpp`
 - Categoria sugerida: Educação
 - Gratuito/pago: definir de acordo com o modelo comercial no momento da publicação
-- E-mail de suporte: preencher na Play Console
+- E-mail de suporte: `estibordopscpp@gmail.com`
 - Website: `https://simulado-pscpp.vercel.app/`
 - Política de privacidade: `https://simulado-pscpp.vercel.app/politica-de-privacidade`
 - Termos de uso: `https://simulado-pscpp.vercel.app/termos-de-uso`
