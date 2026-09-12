@@ -3,6 +3,7 @@ import { getEntitlement } from "../../../../../lib/entitlement";
 import { finishExam } from "../../../../../lib/exams";
 import { normalizeSubject, TRIAL_SUBJECT_SLUG } from "../../../../../lib/subjects";
 import {assertSameOrigin} from "../../../../../lib/security";
+import {evaluateAchievements} from "../../../../../lib/achievement-engine";
 
 export async function POST(request, { params }) {
   try { await assertSameOrigin(); } catch (error) { return Response.json({error:"Origem inválida."},{status:Number(error?.status)||403}); }
@@ -31,6 +32,7 @@ export async function POST(request, { params }) {
       reason
     );
 
+    await evaluateAchievements(session.id,{examResult:result}).catch(()=>{});
     return Response.json(result, { status: result.status || 200 });
   } catch (error) {
     console.error("Erro ao finalizar simulado:", error);

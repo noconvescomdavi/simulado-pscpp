@@ -8,12 +8,13 @@ import StudySessionTracker from "./StudySessionTracker";
 function Menu({ active = "", flashcardDecks = [] }) {
   return (
     <nav className={styles.nav} aria-label="Área do aluno">
-      <a className={active === "painel" ? styles.active : ""} href="/area-do-aluno">
-        <span className={styles.icon}>⌂</span><span>Início</span>
-      </a>
+      <a className={active === "painel" ? styles.active : ""} href="/area-do-aluno">\n        <span className={styles.icon}>⌂</span><span>Hoje</span>\n      </a>
 
       <a className={active === "perfil" ? styles.active : ""} href="/perfil">
         <span className={styles.icon}>♙</span><span>Perfil</span>
+      </a>
+      <a href="/preferencias">
+        <span className={styles.icon}>⚙</span><span>Personalização</span>
       </a>
 
       <details className={styles.group} open={["plano","adaptativo","hoje","revisao","fraquezas","trajetoria"].includes(active)}>
@@ -22,12 +23,7 @@ function Menu({ active = "", flashcardDecks = [] }) {
           <b className={styles.chevron}>⌄</b>
         </summary>
         <div className={styles.submenu}><div>
-          <a href="/plano-de-estudos">Plano de Estudos</a>
-          <a href="/hoje">Plano de Hoje</a>
-          <a href="/treino-adaptativo">Treino Adaptativo</a>
-          <a href="/revisao-inteligente">Revisão Inteligente</a>
-          <a href="/analise-de-fraquezas">Análise de Fraquezas</a>
-          <a href="/minha-trajetoria">Minha Trajetória</a>
+          <a href="/plano-de-estudos">Minha Rota</a>\n          <a href="/hoje">Plano de Hoje</a>\n          <a href="/treino-adaptativo">Treino Inteligente</a>\n          <a href="/centro-de-revisao">Centro de Revisão</a>\n          <a href="/analise-de-fraquezas">Desempenho e Fraquezas</a>\n          <a href="/minha-trajetoria">Minha Trajetória</a>
         </div></div>
       </details>
 
@@ -109,6 +105,9 @@ function Menu({ active = "", flashcardDecks = [] }) {
 
       <a className={active === "ranking" ? styles.active : ""} href="/ranking">
         <span className={styles.icon}>★</span><span>Ranking</span>
+      </a>
+      <a href="/conquistas">
+        <span className={styles.icon}>✦</span><span>Conquistas</span>
       </a>
 
       <a className={active === "assinaturas" ? styles.active : ""} href="/minhas-assinaturas">

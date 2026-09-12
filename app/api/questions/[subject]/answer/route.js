@@ -3,6 +3,7 @@ import { withTransaction } from "../../../../../lib/db";
 import { getQuestion } from "../../../../../lib/question-banks";
 import { normalizeSubject } from "../../../../../lib/subjects";
 import {refreshTopicMasteryForQuestion} from "../../../../../lib/learning-engine";
+import {evaluateAchievements} from "../../../../../lib/achievement-engine";
 
 const ANSWERS = new Set(["A", "B", "C", "D", "E"]);
 
@@ -54,7 +55,8 @@ export async function POST(request, { params }) {
     );
   });
 
-  await refreshTopicMasteryForQuestion(session.id,subject,question.id).catch(()=>{});
+  const mastery=await refreshTopicMasteryForQuestion(session.id,subject,question.id).catch(()=>null);
+  await evaluateAchievements(session.id).catch(()=>{});
 
   return Response.json({
     ok: true,
@@ -63,6 +65,5 @@ export async function POST(request, { params }) {
     correct_answer: question.correct_answer,
     is_correct: isCorrect,
     explanation: question.explanation,
-    source: question.source,
-  });
+    source: question.source,\n    learning: mastery?{topic:mastery.topic,mastery_score:mastery.mastery_score,confidence_score:mastery.confidence_score,errors:mastery.errors,answers:mastery.answers}:null,\n    next_actions:{review:"/centro-de-revisao",weakness:"/analise-de-fraquezas",smart_training:"/treino-adaptativo"},\n  });
 }

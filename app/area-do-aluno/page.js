@@ -9,6 +9,7 @@ import ExamCountdown from "../components/ExamCountdown";
 import DailyStudyPlan from "./DailyStudyPlan";
 import {getConsistency} from "../../lib/engagement";
 import {getIntegratedStudyPlan} from "../../lib/integrated-study-plan";
+import {getStudentInsights} from "../../lib/student-insights";
 import "./dashboard.css";
 
 function fmt(v){return new Intl.NumberFormat("pt-BR").format(Number(v||0))}
@@ -18,7 +19,7 @@ export default async function Area(){
   const session=await getSession();
   if(!session)redirect("/login");
 
-  const [access,progress,performance,profile,recentExams,dailyPlan,consistency]=await Promise.all([
+  const [access,progress,performance,profile,recentExams,dailyPlan,consistency,studentIntel]=await Promise.all([
     getUserAccess(session.id),
     query("select subject,percent from study_progress where user_id=$1",[session.id]),
     getUserMetrics(session.id),
@@ -58,7 +59,8 @@ export default async function Area(){
         first_pass:master.first_pass
       };
     }),
-    getConsistency(session.id)
+    getConsistency(session.id),
+    getStudentInsights(session.id).catch(()=>({insights:[],due:0}))
   ]);
 
   const active=access?.active===true;
@@ -98,6 +100,8 @@ export default async function Area(){
           <ExamCountdown/>
         </section>
 
+        <section className="commandDeck"><div><span>PRÓXIMA MISSÃO</span><h2>{dailyPlan?.tasks?.find(t=>!t.completed)?.title||"Sua rota está em dia"}</h2><p>{dailyPlan?.tasks?.find(t=>!t.completed)?.description||"Use a revisão inteligente ou faça um treino para continuar avançando."}</p><a href="/hoje">Continuar agora →</a></div><div className="commandSignals"><span><b>{dailyPlan?.master_readiness??readiness}</b> prontidão</span><span><b>{studentIntel?.due||0}</b> revisões agora</span><span><b>{dailyPlan?.tracking?.backlog_count||0}</b> pendências</span></div></section>
+
         <section className="studentFocusGrid">
           <article><span>PRÓXIMO PASSO</span><strong>{dailyPlan?.progress?.completed||0}/{dailyPlan?.progress?.total||0} tarefas</strong><small>{dailyPlan?.progress?.total?"Priorize o plano de hoje antes de abrir novas frentes.":"Configure seu plano para receber uma rota diária."}</small><a href="/hoje">Abrir plano de hoje →</a></article>
           <article><span>RITMO DA PREPARAÇÃO</span><strong>{dailyPlan?.tracking?.adherence_percent??100}% de aderência</strong><small>{dailyPlan?.tracking?.backlog_count||0} pendência(s) em aberto.</small><a href="/minha-trajetoria">Ver trajetória →</a></article>
@@ -105,6 +109,8 @@ export default async function Area(){
         </section>
 
         <DailyStudyPlan initialPlan={dailyPlan}/>
+
+        <section className="insightsPanel"><div className="sectionTitle"><div><h2>ESTIBORDO Insights</h2><p>O que seus dados sugerem fazer em seguida.</p></div><a href="/centro-de-revisao">Centro de Revisão →</a></div><div className="insightsGrid">{(studentIntel?.insights||[]).map((insight,index)=><a href={insight.href} key={index}><span>{insight.kind}</span><strong>{insight.title}</strong><p>{insight.text}</p><b>{insight.action} →</b></a>)}{!(studentIntel?.insights||[]).length&&<article><strong>Continue estudando</strong><p>Assim que houver dados suficientes, seus padrões e recomendações aparecerão aqui.</p></article>}</div></section>
 
         <section className="dashboardSection">
           <div className="sectionTitle"><div><h2>Acesso Rápido</h2><p>Escolha o recurso que deseja utilizar:</p></div></div>
@@ -115,7 +121,7 @@ export default async function Area(){
             <a className="quickCard purple" href="/flashcards/cis"><i>▤</i><div><strong>Flashcards CIS</strong><span>Treine o Código Internacional de Sinais</span></div><b>›</b></a>
             <a className="quickCard gold" href="#desempenho"><i>▥</i><div><strong>Meu Desempenho</strong><span>Acompanhe sua evolução</span></div><b>›</b></a>
             <a className={["quickCard","blue",!active?"premiumLocked":""].join(" ")} href="/plano-de-estudos"><i>◫</i><div><strong>Plano de Estudos</strong><span>Calendário inteligente até 01/11/2027</span></div><b>›</b></a>
-            <a className={["quickCard","purple",!active?"premiumLocked":""].join(" ")} href="/treino-adaptativo"><i>◎</i><div><strong>Treino Adaptativo</strong><span>Treine primeiro o que mais precisa</span></div><b>›</b></a>
+            <a className={["quickCard","purple",!active?"premiumLocked":""].join(" ")} href="/treino-adaptativo"><i>◎</i><div><strong>Treino Inteligente</strong><span>A plataforma escolhe o que mais precisa</span></div><b>›</b></a>\n            <a className={["quickCard","green",!active?"premiumLocked":""].join(" ")} href="/centro-de-revisao"><i>↻</i><div><strong>Centro de Revisão</strong><span>Erros, fraquezas e revisões em uma fila</span></div><b>›</b></a>
             <a className="quickCard ranking" href="/ranking"><i>★</i><div><strong>Ranking</strong><span>Compare seu desempenho acadêmico</span></div><b>›</b></a>
             <a className={["quickCard","maps",!active?"premiumLocked":""].join(" ")} href="/mapas-mentais"><i>🧠</i><div><strong>Mapas Mentais</strong><span>Construa e conecte suas anotações</span></div><b>›</b></a>
             <a className={["quickCard","gold",!active?"premiumLocked":""].join(" ")} href="/minha-trajetoria"><i>◉</i><div><strong>Minha Trajetória</strong><span>Domínio, aderência, tempo real e projeção até a prova</span></div><b>›</b></a>
