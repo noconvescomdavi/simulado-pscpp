@@ -8,10 +8,15 @@ const out = resolve(root, "store-assets");
 const logo = await readFile(logoPath);
 await mkdir(out, { recursive: true });
 
+const iconLogo = await sharp(logo, { density: 360 })
+  .resize({ width: 380, height: 380, fit: "inside", withoutEnlargement: false })
+  .png()
+  .toBuffer();
+
 await sharp({
   create: { width: 512, height: 512, channels: 4, background: "#07141f" }
 })
-  .composite([{ input: logo, gravity: "center", density: 360 }])
+  .composite([{ input: iconLogo, gravity: "center" }])
   .png()
   .toFile(resolve(out, "icon-512.png"));
 
