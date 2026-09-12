@@ -36,11 +36,21 @@ if (!manifest.includes('android:scheme="estibordo"')) {
   manifest = manifest.replace("</activity>", customSchemeFilter + "\n" + httpsFilter + "\n        </activity>");
 }
 
+if(!manifest.includes('android:usesCleartextTraffic="false"')){
+  manifest=manifest.replace("<application","<application\n        android:usesCleartextTraffic=\"false\"");
+}
 await writeFile(manifestPath, manifest, "utf8");
 
 let gradle = await readFile(gradlePath, "utf8");
 gradle = gradle.replace(/versionCode\s+\d+/, "versionCode " + versionCode);
 gradle = gradle.replace(/versionName\s+"[^"]+"/, 'versionName "' + versionName + '"');
+gradle = gradle.replace(/release\s*\{([\s\S]*?)\n\s*\}/,(match,body)=>{
+  let next=body;
+  if(!/minifyEnabled\s+true/.test(next))next=next.replace(/minifyEnabled\s+false/,"minifyEnabled true");
+  if(!/shrinkResources\s+true/.test(next))next+="\n            shrinkResources true";
+  if(!/proguardFiles/.test(next))next+="\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'";
+  return "release {"+next+"\n        }";
+});
 await writeFile(gradlePath, gradle, "utf8");
 
 console.log("Android configurado:", { versionName, versionCode });
