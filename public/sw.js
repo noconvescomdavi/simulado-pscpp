@@ -159,18 +159,7 @@ self.addEventListener("fetch", (event) => {
 });
 
 
-self.addEventListener("message",(event)=>{
-  if(event.data?.type!=="CACHE_OFFLINE_PAGE")return;
-  const path=String(event.data.path||"/offline");
-  event.waitUntil((async()=>{
-    try{
-      const response=await fetch(path,{credentials:"include",cache:"no-store"});
-      if(!response?.ok||response.redirected)return;
-      const cache=await caches.open(PAGE_CACHE);
-      await cache.put(path,response.clone());
-    }catch{}
-  })());
-});
+self.addEventListener("message",(event)=>{\n  if(event.data?.type==="CACHE_OFFLINE_PAGE"){\n    const path=String(event.data.path||"/offline");\n    event.waitUntil((async()=>{\n      try{\n        const response=await fetch(path,{credentials:"include",cache:"no-store"});\n        if(!response?.ok||response.redirected)return;\n        const cache=await caches.open(PAGE_CACHE);\n        await cache.put(path,response.clone());\n      }catch{}\n    })());\n    return;\n  }\n\n  if(event.data?.type==="CACHE_OFFLINE_ROUTES"){\n    const routes=[...new Set((Array.isArray(event.data.routes)?event.data.routes:[]).map(String).filter(path=>path.startsWith("/")))].slice(0,40);\n    event.waitUntil((async()=>{\n      const cache=await caches.open(PAGE_CACHE);\n      for(const path of routes){\n        try{\n          const response=await fetch(path,{credentials:"include",cache:"no-store"});\n          if(response?.ok&&!response.redirected)await cache.put(path,response.clone());\n        }catch{}\n      }\n    })());\n  }\n});
 
 self.addEventListener("sync",(event)=>{
   if(event.tag!=="estibordo-offline-sync")return;
