@@ -1,12 +1,22 @@
-# ESTIBORDO Android
+# ESTIBORDO Android — LEGADO
 
-Aplicativo Android da plataforma ESTIBORDO.
+Este diretório contém a primeira implementação Android baseada em WebView manual.
 
-- Package: br.com.estibordo.app
-- URL oficial: https://simulado-pscpp.vercel.app
-- minSdk: 24 (Android 7.0+)
-- targetSdk/compileSdk: 35
-- Build automatizado: GitHub Actions
-- O APK de uso direto é assinado automaticamente com chave de debug do build e não é destinado à publicação na Google Play.
+**Não use este projeto para publicar na Google Play.**
 
-O aplicativo preserva cookies/sessão do WebView, suporta seleção/upload de arquivos, downloads, permissões de câmera/microfone quando solicitadas por páginas e navegação externa para esquemas de aplicativos.
+O aplicativo Android oficial agora é mantido em `mobile/` com Capacitor 8 e Application ID:
+
+`br.com.estibordo.pscpp`
+
+Motivos da substituição:
+
+- target SDK 36;
+- plugins Capacitor oficiais;
+- deep links e App Links;
+- pipeline AAB assinado;
+- integração com Google Play Internal testing;
+- versionamento automático;
+- lint e validações;
+- suporte preparado para push/Firebase.
+
+Este diretório permanece temporariamente apenas como referência histórica para recursos implementados anteriormente, como downloads e upload de arquivos.
