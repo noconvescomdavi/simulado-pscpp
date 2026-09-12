@@ -7,12 +7,14 @@ export default function OfflineSyncStatus() {
   const [online, setOnline] = useState(true);
   const [pending, setPending] = useState(0);
   const [syncing, setSyncing] = useState(false);
+  const [installed, setInstalled] = useState(false);
 
   async function refresh() {
     setOnline(typeof navigator === "undefined" ? true : navigator.onLine);
     try {
       const status = await getOfflineStatus();
       setPending(Number(status?.pending || 0));
+      setInstalled(Boolean(status?.installed));
     } catch {}
   }
 
@@ -46,6 +48,7 @@ export default function OfflineSyncStatus() {
 
   let label = "Sincronizado";
   if (syncing) label = "Sincronizando…";
+  else if (online && !installed) label = "Preparando offline…";
   else if (!online && pending > 0) label = "Offline · " + pending + " pendência" + (pending === 1 ? "" : "s");
   else if (!online) label = "Offline";
   else if (pending > 0) label = pending + " pendência" + (pending === 1 ? "" : "s");
