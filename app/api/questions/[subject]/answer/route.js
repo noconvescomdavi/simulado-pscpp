@@ -65,5 +65,8 @@ export async function POST(request, { params }) {
     correct_answer: question.correct_answer,
     is_correct: isCorrect,
     explanation: question.explanation,
-    source: question.source,\n    learning: mastery?{topic:mastery.topic,mastery_score:mastery.mastery_score,confidence_score:mastery.confidence_score,errors:mastery.errors,answers:mastery.answers}:null,\n    next_actions:{review:"/centro-de-revisao",weakness:"/analise-de-fraquezas",smart_training:"/treino-adaptativo"},\n  });
+    source: question.source,
+    learning: mastery?{topic:mastery.topic,mastery_score:mastery.mastery_score,confidence_score:mastery.confidence_score,errors:mastery.errors,answers:mastery.answers}:null,
+    next_actions:{review:"/centro-de-revisao",weakness:"/analise-de-fraquezas",smart_training:"/treino-adaptativo"},
+  });
 }
