@@ -9,23 +9,13 @@ import { subjectLabel } from "../../../../lib/subjects";
 import { assertSameOrigin } from "../../../../lib/security";
 
 const ANSWERS = new Set(["A","B","C","D","E"]);
-const MAX_EVENTS = 500;
+const MAX_EVENTS = 50;
 
 function cleanId(value,max=180){ return String(value||"").trim().slice(0,max); }
 function parseDate(value,fallback){ const d=new Date(value||fallback||Date.now()); return Number.isNaN(d.getTime())?new Date(fallback||Date.now()):d; }
 function asArray(value){ return Array.isArray(value)?value:[]; }
 function score(correct,answered){ return answered?Math.round(correct/answered*10000)/100:0; }
 
-async function ensureSyncTable(){
-  await query(`create table if not exists offline_sync_events(
-    user_id uuid not null references users(id) on delete cascade,
-    event_id varchar(180) not null,
-    event_type varchar(60) not null,
-    device_id varchar(180),
-    processed_at timestamptz not null default now(),
-    primary key(user_id,event_id)
-  )`);
-}
 async function alreadyProcessed(userId,eventId){
   const r=await query("select 1 from offline_sync_events where user_id=$1 and event_id=$2 limit 1",[userId,eventId]);
   return Boolean(r.rowCount);
@@ -204,7 +194,6 @@ export async function POST(request){
   const entitlement=await getEntitlement(session.id);
   if(!entitlement.active)return Response.json({error:"Modo offline disponível para alunos com acesso ativo."},{status:403});
 
-  await ensureSyncTable();
   const body=await request.json().catch(()=>({}));
   const events=asArray(body.events).slice(0,MAX_EVENTS);
   const results=[];
@@ -225,6 +214,8 @@ export async function POST(request){
       results.push({id,ok:false,error:error?.message||"Falha ao sincronizar evento."});
     }
   }
+
+  await query("delete from offline_sync_events where user_id=$1 and processed_at < now() - interval '90 days'",[session.id]).catch(()=>{});
 
   return Response.json({ok:true,results,pending_failures:results.filter(x=>!x.ok).length},{
     headers:{"Cache-Control":"private, no-store, max-age=0"}
