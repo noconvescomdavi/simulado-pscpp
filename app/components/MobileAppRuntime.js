@@ -46,6 +46,7 @@ export default function MobileAppRuntime() {
     const Haptics = getPlugin("Haptics");
     const StatusBar = getPlugin("StatusBar");
     const SplashScreen = getPlugin("SplashScreen");
+    const PushNotifications = getPlugin("PushNotifications");
 
     const cleanup = [];
     let mounted = true;
@@ -86,6 +87,27 @@ export default function MobileAppRuntime() {
       async minimize() {
         if (App?.minimizeApp) return App.minimizeApp();
       },
+      push: {
+        async request() {
+          if (!PushNotifications) return { supported: false };
+          const current = await PushNotifications.checkPermissions?.();
+          let receive = current?.receive;
+          if (receive === "prompt" || receive === "prompt-with-rationale") {
+            const requested = await PushNotifications.requestPermissions?.();
+            receive = requested?.receive;
+          }
+          if (receive === "granted") {
+            await PushNotifications.register?.();
+            return { supported: true, granted: true };
+          }
+          return { supported: true, granted: false };
+        },
+        async status() {
+          if (!PushNotifications) return { supported: false };
+          const permissions = await PushNotifications.checkPermissions?.();
+          return { supported: true, receive: permissions?.receive || "unknown" };
+        }
+      },
     };
 
     (async () => {
@@ -105,6 +127,19 @@ export default function MobileAppRuntime() {
       });
 
       await registerListener(App, "appUrlOpen", ({ url }) => openDeepLink(url));
+
+      await registerListener(PushNotifications, "registration", ({ value }) => {
+        window.dispatchEvent(new CustomEvent("estibordo:push-token", { detail: { token: value } }));
+      });
+
+      await registerListener(PushNotifications, "registrationError", (error) => {
+        window.dispatchEvent(new CustomEvent("estibordo:push-error", { detail: error || {} }));
+      });
+
+      await registerListener(PushNotifications, "pushNotificationActionPerformed", ({ notification }) => {
+        const target = notification?.data?.url || notification?.data?.path;
+        if (target) openDeepLink(target);
+      });
 
       await registerListener(App, "backButton", ({ canGoBack }) => {
         if (canGoBack || history.length > 1) {
