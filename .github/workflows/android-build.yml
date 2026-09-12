@@ -47,6 +47,12 @@ jobs:
       - name: Generate ESTIBORDO icons and splash
         run: npm run android:assets
 
+      - name: Configure Android release metadata
+        env:
+          ESTIBORDO_VERSION_CODE: ${{ github.run_number }}
+          ESTIBORDO_VERSION_NAME: 1.0.${{ github.run_number }}
+        run: npm run android:configure
+
       - name: Verify Capacitor
         run: npx cap doctor android
 
