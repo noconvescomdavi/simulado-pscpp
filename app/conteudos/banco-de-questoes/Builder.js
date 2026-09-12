@@ -75,6 +75,7 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
             <span>
               <b>{x.title}</b>
               <small>{x.count?`${x.count} questões`:"Aguardando upload"}</small>
+              {x.ripeam_count>0&&<small><strong>{x.ripeam_count} RIPEAM</strong> · use o filtro abaixo para emitir somente essas</small>}
             </span>
           </label>
         ))}
