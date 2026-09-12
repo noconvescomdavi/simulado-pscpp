@@ -20,8 +20,8 @@ export async function GET(request) {
   if (!session) return Response.json({ error: "Não autenticado." }, { status: 401 });
 
   const entitlement = await getEntitlement(session.id);
-  if (!entitlement.active && !entitlement.trial) {
-    return Response.json({ error: "Acesso inativo." }, { status: 403 });
+  if (!entitlement.active) {
+    return Response.json({ error: "Modo offline disponível para alunos com acesso ativo." }, { status: 403 });
   }
 
   const url = new URL(request.url);
