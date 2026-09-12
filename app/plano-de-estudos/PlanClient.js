@@ -117,11 +117,21 @@ export default function PlanClient({plan}){
       }
 
       const savedAt=data.item?.completed_at||completedAt;
-      setWeek(w=>({...w,days:w.days.map(d=>({...d,tasks:d.tasks.map(t=>{
-        const sameSource=(t.source_plan_date||d.iso)===planDate&&t.key===task.key;
-        const sameDisplay=d.iso===day.iso&&(t.display_key||t.key)===(task.display_key||task.key);
-        return (sameSource||sameDisplay)?{...t,status:"done",completed_at:savedAt}:t;
-      })}))}));
+      setWeek(w=>({...w,days:w.days.map(d=>{
+        const tasks=d.tasks
+          // Uma cópia reprogramada representa apenas uma pendência em aberto.
+          // Quando a tarefa-fonte é concluída, ela deixa de existir no calendário.
+          .filter(t=>{
+            const sameSource=(t.source_plan_date||d.iso)===planDate&&t.key===task.key;
+            return !(t.reprogrammed&&sameSource);
+          })
+          .map(t=>{
+            const sameSource=(t.source_plan_date||d.iso)===planDate&&t.key===task.key;
+            const sameDisplay=d.iso===day.iso&&(t.display_key||t.key)===(task.display_key||task.key);
+            return (sameSource||sameDisplay)?{...t,status:"done",completed_at:savedAt}:t;
+          });
+        return {...d,tasks};
+      })}));
 
       const bp=data.bibliography?.progress||data.progress||null;
       if(task.type==="reading"&&bp){
