@@ -16,7 +16,8 @@ export async function GET(request,{params}){
     topic_id:url.searchParams.get("topic_id")||undefined,
     subtopic_id:url.searchParams.get("subtopic_id")||undefined,
     difficulty:url.searchParams.get("difficulty")||undefined,
-    style:url.searchParams.get("style")||undefined
+    style:url.searchParams.get("style")||undefined,
+    scenario_only:url.searchParams.get("scenario_only")||undefined
   };
   const bank=filterQuestionBank(subject,filters);
   if(!bank)return Response.json({error:"Matéria sem banco de questões"},{status:404});
