@@ -89,7 +89,7 @@ export default function QuestionFilterControls({
               checked={Boolean(value.scenario_only)}
               onChange={(event) => change("scenario_only", event.target.checked)}
             />
-            Somente situações de manobra / RIPEAM
+            Somente RIPEAM / situações de manobra
           </span>
         </label>
 
