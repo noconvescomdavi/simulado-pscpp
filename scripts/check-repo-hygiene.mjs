@@ -47,7 +47,11 @@ function walk(dir, relative = "") {
       /\.bak(?:-|$)/i.test(entry.name) ||
       /\.backup(?:-|\.|$)/i.test(entry.name) ||
       /\.old$/i.test(entry.name) ||
-      /\.py[cod]$/i.test(entry.name)
+      /\.py[cod]$/i.test(entry.name) ||
+      /\.tmp$/i.test(entry.name) ||
+      /\.patch$/i.test(entry.name) ||
+      /\.new\.[a-z0-9]+$/i.test(entry.name) ||
+      /(^|[_-])(temp|stop|no_more|delete-me)([_-]|$)/i.test(entry.name)
     ) {
       violations.push(rel);
     }
