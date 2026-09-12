@@ -17,6 +17,11 @@ export async function POST(req){
     return Response.json({ok:true,...result});
   }catch(error){
     console.error("Erro ao atualizar plano:",error);
-    return Response.json({error:"Não foi possível atualizar a tarefa."},{status:500});
+    const sqlState=typeof error?.code==="string"?error.code:null;
+    const stage=typeof error?.studyPlanStage==="string"?error.studyPlanStage:"route";
+    return Response.json({
+      error:"Não foi possível atualizar a tarefa.",
+      diagnostic:{stage,sqlstate:sqlState}
+    },{status:500});
   }
 }

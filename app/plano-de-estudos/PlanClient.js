@@ -108,7 +108,13 @@ export default function PlanClient({plan}){
     try{
       const r=await fetch("/api/study-plan/task",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
       const data=await r.json().catch(()=>({}));
-      if(!r.ok)throw new Error(data.error||"Não foi possível marcar a tarefa como feita.");
+      if(!r.ok){
+        const diagnostic=data?.diagnostic;
+        const suffix=diagnostic?.stage
+          ?" ["+diagnostic.stage+(diagnostic.sqlstate?"/"+diagnostic.sqlstate:"")+"]"
+          :"";
+        throw new Error((data.error||"Não foi possível marcar a tarefa como feita.")+suffix);
+      }
 
       const savedAt=data.item?.completed_at||completedAt;
       setWeek(w=>({...w,days:w.days.map(d=>({...d,tasks:d.tasks.map(t=>{
