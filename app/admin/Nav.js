@@ -10,6 +10,7 @@ const LINKS=[
   ["Simulados","/admin/simulados","content.manage"],
   ["Conteúdo","/admin/conteudo","content.manage"],
   ["Pagamentos","/admin/pagamentos","payments.view"],
+  ["Preços","/admin/precos","admin.manage"],
   ["Métricas","/admin/metricas","metrics.view"],
   ["Contramestre","/admin/contramestre","content.manage"],
   ["Suporte","/admin/suporte","support.manage"],
