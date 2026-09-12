@@ -191,7 +191,7 @@ export async function POST(request){
   const session=await getSession();
   if(!session)return Response.json({error:"Não autenticado."},{status:401});
   const entitlement=await getEntitlement(session.id);
-  if(!entitlement.active&&!entitlement.trial)return Response.json({error:"Acesso inativo."},{status:403});
+  if(!entitlement.active)return Response.json({error:"Modo offline disponível para alunos com acesso ativo."},{status:403});
 
   await ensureSyncTable();
   const body=await request.json().catch(()=>({}));
