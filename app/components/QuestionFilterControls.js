@@ -6,6 +6,7 @@ export const EMPTY_QUESTION_FILTERS = {
   work_id: "",
   chapter_id: "",
   module: "",
+  scenario_only: false,
   query: "",
 };
 
@@ -78,6 +79,18 @@ export default function QuestionFilterControls({
               </option>
             ))}
           </select>
+        </label>
+
+        <label>
+          Tipo de questão
+          <span className={styles.checkLine}>
+            <input
+              type="checkbox"
+              checked={Boolean(value.scenario_only)}
+              onChange={(event) => change("scenario_only", event.target.checked)}
+            />
+            Somente situações de manobra / RIPEAM
+          </span>
         </label>
 
         <label>
