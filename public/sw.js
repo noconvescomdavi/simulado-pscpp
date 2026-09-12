@@ -1,8 +1,10 @@
 const SHELL_CACHE = "estibordo-shell-v3";
-const PAGE_CACHE = "estibordo-pages-v1";
 const RIPEAM_MODEL_CACHE = "estibordo-ripeam-models-v1";
 const RIPEAM_RUNTIME_CACHE = "estibordo-ripeam-runtime-v1";
 const RIPEAM_MAX_MODEL_ENTRIES = 12;
+let PRIVATE_SCOPE = null;
+function privateCacheName(){return PRIVATE_SCOPE?`estibordo-private-pages-v2-${PRIVATE_SCOPE}`:null}
+function cleanScope(value){return String(value||"").replace(/[^a-zA-Z0-9_-]/g,"").slice(0,64)||null}
 const SHELL_ASSETS = ["/offline.html", "/pwa-icon", "/manifest.webmanifest"];
 
 self.addEventListener("install", (event) => {
@@ -19,7 +21,6 @@ self.addEventListener("activate", (event) => {
         keys
           .filter((key) =>
             (key.startsWith("estibordo-shell-") && key !== SHELL_CACHE) ||
-            (key.startsWith("estibordo-pages-") && key !== PAGE_CACHE) ||
             (key.startsWith("estibordo-ripeam-models-") && key !== RIPEAM_MODEL_CACHE) ||
             (key.startsWith("estibordo-ripeam-runtime-") && key !== RIPEAM_RUNTIME_CACHE)
           )
@@ -121,18 +122,17 @@ self.addEventListener("fetch", (event) => {
 
   if (request.mode === "navigate") {
     event.respondWith((async()=>{
-      const cache=await caches.open(PAGE_CACHE);
       try{
-        const response=await fetch(request);
-        if(response?.ok && !response.redirected){
-          try{await cache.put(request,response.clone())}catch{}
-        }
-        return response;
+        return await fetch(request);
       }catch{
-        const cached=await cache.match(request);
-        if(cached)return cached;
-        const offlineCenter=await cache.match("/offline");
-        if(offlineCenter)return offlineCenter;
+        const name=privateCacheName();
+        if(name){
+          const cache=await caches.open(name);
+          if(url.pathname==="/offline"){
+            const offlineCenter=await cache.match("/offline");
+            if(offlineCenter)return offlineCenter;
+          }
+        }
         return caches.match("/offline.html");
       }
     })());
@@ -160,14 +160,29 @@ self.addEventListener("fetch", (event) => {
 
 
 self.addEventListener("message",(event)=>{
-  if(event.data?.type!=="CACHE_OFFLINE_PAGE")return;
+  const type=event.data?.type;
+  if(type==="SET_PRIVATE_SCOPE"){
+    PRIVATE_SCOPE=cleanScope(event.data?.scope);
+    return;
+  }
+  if(type==="PURGE_PRIVATE_DATA"){
+    PRIVATE_SCOPE=null;
+    event.waitUntil((async()=>{
+      for(const name of await caches.keys()){
+        if(name.startsWith("estibordo-private-pages-")||name.startsWith("estibordo-reading-files-"))await caches.delete(name);
+      }
+    })());
+    return;
+  }
+  if(type!=="CACHE_OFFLINE_PAGE"||!PRIVATE_SCOPE)return;
   const path=String(event.data.path||"/offline");
+  if(path!=="/offline")return;
   event.waitUntil((async()=>{
     try{
       const response=await fetch(path,{credentials:"include",cache:"no-store"});
       if(!response?.ok||response.redirected)return;
-      const cache=await caches.open(PAGE_CACHE);
-      await cache.put(path,response.clone());
+      const cache=await caches.open(privateCacheName());
+      await cache.put("/offline",response.clone());
     }catch{}
   })());
 });
