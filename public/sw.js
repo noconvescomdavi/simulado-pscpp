@@ -158,18 +158,57 @@ self.addEventListener("fetch", (event) => {
   }
 });
 
+async function cacheOfflineRouteAndAssets(path, pageCache) {
+  const response = await fetch(path, { credentials: "include", cache: "no-store" });
+  if (!response?.ok || response.redirected) return false;
+
+  await pageCache.put(path, response.clone());
+
+  try {
+    const html = await response.clone().text();
+    const matches = [...html.matchAll(/(?:src|href)=["']([^"']+)["']/g)]
+      .map((match) => match[1])
+      .filter((asset) => asset.startsWith("/_next/static/") || asset.startsWith("/estibordo/"));
+
+    if (matches.length) {
+      const shell = await caches.open(SHELL_CACHE);
+      for (const asset of [...new Set(matches)].slice(0, 120)) {
+        try {
+          const cached = await shell.match(asset);
+          if (cached) continue;
+          const assetResponse = await fetch(asset, { cache: "reload" });
+          if (assetResponse?.ok) await shell.put(asset, assetResponse.clone());
+        } catch {}
+      }
+    }
+  } catch {}
+
+  return true;
+}
 
 self.addEventListener("message",(event)=>{
-  if(event.data?.type!=="CACHE_OFFLINE_PAGE")return;
-  const path=String(event.data.path||"/offline");
-  event.waitUntil((async()=>{
-    try{
-      const response=await fetch(path,{credentials:"include",cache:"no-store"});
-      if(!response?.ok||response.redirected)return;
+  if(event.data?.type==="CACHE_OFFLINE_PAGE"){
+    const path=String(event.data.path||"/offline");
+    event.waitUntil((async()=>{
+      try{
+        const cache=await caches.open(PAGE_CACHE);
+        await cacheOfflineRouteAndAssets(path,cache);
+      }catch{}
+    })());
+    return;
+  }
+
+  if(event.data?.type==="CACHE_OFFLINE_ROUTES"){
+    const routes=[...new Set((Array.isArray(event.data.routes)?event.data.routes:[]).map(String).filter(path=>path.startsWith("/")))].slice(0,40);
+    event.waitUntil((async()=>{
       const cache=await caches.open(PAGE_CACHE);
-      await cache.put(path,response.clone());
-    }catch{}
-  })());
+      for(const path of routes){
+        try{
+          await cacheOfflineRouteAndAssets(path,cache);
+        }catch{}
+      }
+    })());
+  }
 });
 
 self.addEventListener("sync",(event)=>{
