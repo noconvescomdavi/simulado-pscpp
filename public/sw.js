@@ -3,8 +3,24 @@ const RIPEAM_MODEL_CACHE = "estibordo-ripeam-models-v1";
 const RIPEAM_RUNTIME_CACHE = "estibordo-ripeam-runtime-v1";
 const RIPEAM_MAX_MODEL_ENTRIES = 12;
 let PRIVATE_SCOPE = null;
-function privateCacheName(){return PRIVATE_SCOPE?`estibordo-private-pages-v2-${PRIVATE_SCOPE}`:null}
+const SCOPE_CACHE="estibordo-private-scope-v1";
+function privateCacheName(scope){return scope?`estibordo-private-pages-v2-${scope}`:null}
 function cleanScope(value){return String(value||"").replace(/[^a-zA-Z0-9_-]/g,"").slice(0,64)||null}
+async function getPrivateScope(){
+  if(PRIVATE_SCOPE)return PRIVATE_SCOPE;
+  try{
+    const cache=await caches.open(SCOPE_CACHE);
+    const response=await cache.match("/__estibordo_private_scope__");
+    PRIVATE_SCOPE=cleanScope(response?await response.text():"");
+  }catch{}
+  return PRIVATE_SCOPE;
+}
+async function persistPrivateScope(scope){
+  PRIVATE_SCOPE=cleanScope(scope);
+  const cache=await caches.open(SCOPE_CACHE);
+  if(PRIVATE_SCOPE)await cache.put("/__estibordo_private_scope__",new Response(PRIVATE_SCOPE));
+  else await cache.delete("/__estibordo_private_scope__");
+}
 const SHELL_ASSETS = ["/offline.html", "/pwa-icon", "/manifest.webmanifest"];
 
 self.addEventListener("install", (event) => {
@@ -125,7 +141,8 @@ self.addEventListener("fetch", (event) => {
       try{
         return await fetch(request);
       }catch{
-        const name=privateCacheName();
+        const scope=await getPrivateScope();
+        const name=privateCacheName(scope);
         if(name){
           const cache=await caches.open(name);
           if(url.pathname==="/offline"){
@@ -162,26 +179,29 @@ self.addEventListener("fetch", (event) => {
 self.addEventListener("message",(event)=>{
   const type=event.data?.type;
   if(type==="SET_PRIVATE_SCOPE"){
-    PRIVATE_SCOPE=cleanScope(event.data?.scope);
+    event.waitUntil(persistPrivateScope(event.data?.scope));
     return;
   }
   if(type==="PURGE_PRIVATE_DATA"){
     PRIVATE_SCOPE=null;
     event.waitUntil((async()=>{
+      await caches.delete(SCOPE_CACHE);
       for(const name of await caches.keys()){
         if(name.startsWith("estibordo-private-pages-")||name.startsWith("estibordo-reading-files-"))await caches.delete(name);
       }
     })());
     return;
   }
-  if(type!=="CACHE_OFFLINE_PAGE"||!PRIVATE_SCOPE)return;
+  if(type!=="CACHE_OFFLINE_PAGE")return;
   const path=String(event.data.path||"/offline");
   if(path!=="/offline")return;
   event.waitUntil((async()=>{
     try{
+      const scope=await getPrivateScope();
+      if(!scope)return;
       const response=await fetch(path,{credentials:"include",cache:"no-store"});
       if(!response?.ok||response.redirected)return;
-      const cache=await caches.open(privateCacheName());
+      const cache=await caches.open(privateCacheName(scope));
       await cache.put("/offline",response.clone());
     }catch{}
   })());
