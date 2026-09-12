@@ -2,6 +2,7 @@
 import {useState} from "react";
 import QuestionFilterControls,{EMPTY_QUESTION_FILTERS} from "../../components/QuestionFilterControls";
 import styles from "./bank.module.css";
+import {createOfflineNotebook} from "../../../lib/offline-store";
 
 function mergeFacetList(items){
   const merged=new Map();
@@ -35,17 +36,32 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
 
   async function go(){
     setE("");
-    const r=await fetch("/api/question-notebooks",{
+    const body={
+      subjects:s,
+      count:trial?10:n,
+      filters:trial||fixation?EMPTY_QUESTION_FILTERS:filters,
+      fixation,
+      title:fixation?"Caderno de fixação — "+(fixation.chapter||fixation.section_key):null
+    };
+    if(!navigator.onLine){
+      try{
+        const notebook=await createOfflineNotebook(body);
+        location.href=`/offline?mode=notebook&id=${notebook.id}`;
+      }catch(error){setE(error.message||"Prepare o conteúdo offline antes de criar um caderno sem internet.")}
+      return;
+    }
+    let r;
+    try{r=await fetch("/api/question-notebooks",{
       method:"POST",
       headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({
-        subjects:s,
-        count:trial?10:n,
-        filters:trial||fixation?EMPTY_QUESTION_FILTERS:filters,
-        fixation,
-        title:fixation?"Caderno de fixação — "+(fixation.chapter||fixation.section_key):null
-      })
-    });
+      body:JSON.stringify(body)
+    });}catch(error){
+      try{
+        const notebook=await createOfflineNotebook(body);
+        location.href=`/offline?mode=notebook&id=${notebook.id}`;
+      }catch(fallback){setE(fallback.message||"Não foi possível criar o caderno.");}
+      return;
+    }
     const p=await r.json().catch(()=>({}));
 
     if(!r.ok){

@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import TrackedStudyLink from "../components/TrackedStudyLink";
 import {stopTrackedStudySession} from "../components/StudySessionTracker";
+import {queueStudyTask} from "../../lib/offline-store";
 
 export default function DailyStudyPlan({ initialPlan }) {
   const [plan, setPlan] = useState(initialPlan);
@@ -37,11 +38,7 @@ export default function DailyStudyPlan({ initialPlan }) {
       return {...current,tasks,progress:{...current.progress,total:tasks.length,completed,percent:tasks.length?Math.round(completed/tasks.length*100):0}};
     });
 
-    try {
-      const response = await fetch("/api/study-plan/task", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
+    const syncBody={
           kind:"task",
           plan_date:task.plan_date,
           task_key:task.key,
@@ -54,12 +51,23 @@ export default function DailyStudyPlan({ initialPlan }) {
           page_to:task.page_to||null,
           complete_bibliography_unit:task.type==="reading"&&!(task.page_from&&task.page_to),
           metadata:{title:task.title,description:task.description,href:task.href||null,source:"dashboard_master_plan"}
-        }),
+        };
+    try {
+      if(!navigator.onLine){
+        await queueStudyTask(syncBody);
+        await stopTrackedStudySession().catch(()=>{});
+        return;
+      }
+      const response = await fetch("/api/study-plan/task", {
+        method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(syncBody)
       });
       const data=await response.json().catch(()=>({}));
       if (!response.ok) throw new Error(data.error||"Não foi possível salvar a conclusão.");
       await stopTrackedStudySession().catch(()=>{});
     } catch (error) {
+      if(!navigator.onLine || error instanceof TypeError){
+        try{await queueStudyTask(syncBody);await stopTrackedStudySession().catch(()=>{});return}catch{}
+      }
       setPlan(previous);
       window.alert(error.message||"Não foi possível salvar a conclusão.");
     } finally {
