@@ -11,6 +11,7 @@
 - Política de privacidade: `https://simulado-pscpp.vercel.app/politica-de-privacidade`
 - Termos de uso: `https://simulado-pscpp.vercel.app/termos-de-uso`
 - Cancelamento/reembolso: `https://simulado-pscpp.vercel.app/cancelamento-e-reembolso`
+- URL de exclusão de conta: `https://simulado-pscpp.vercel.app/excluir-conta`
 
 ## Conteúdo obrigatório
 
