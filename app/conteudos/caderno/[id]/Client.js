@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import styles from "./caderno.module.css";
+import {cacheServerNotebook, answerOfflineNotebook} from "../../../../lib/offline-store";
 
 function questionKey(question) {
   return `${question.subject}:${question.id}`;
@@ -221,6 +222,8 @@ export default function Client({
 
   const planMarkedRef = useRef(false);
 
+  useEffect(()=>{cacheServerNotebook(notebook).catch(()=>{})},[notebook]);
+
   useEffect(() => {
     if (!result?.completed || planMarkedRef.current) return;
     if (!planTask?.plan_date || !planTask?.task_key) return;
@@ -296,6 +299,18 @@ export default function Client({
     setError("");
 
     try {
+      if(!navigator.onLine){
+        const payload=await answerOfflineNotebook(notebook.id,{
+          subject:question.subject,question_id:question.id,selected_answer:selectedAnswer,
+          plan_task:planTask?.plan_date&&planTask?.task_key?{
+            plan_date:planTask.plan_date,task_key:planTask.task_key,task_type:planTask.task_type||"questions",subject_slug:planTask.subject_slug||question.subject
+          }:null
+        });
+        const savedAnswer={selected_answer:payload.selected_answer,is_correct:payload.is_correct,correct_answer:payload.correct_answer,explanation:payload.explanation,source:payload.source};
+        setAnswers(current=>({...current,[key]:savedAnswer}));
+        if(payload.result?.completed){setResult(payload.result);setReviewing(false)}
+        return;
+      }
       const response =
         await fetch(
           `/api/question-notebooks/${notebook.id}/answer`,
@@ -388,10 +403,17 @@ export default function Client({
 
         setReviewing(false);
       }
-    } catch {
-      setError(
-        "Falha de comunicação ao salvar a resposta."
-      );
+    } catch (networkError) {
+      if(!navigator.onLine || networkError instanceof TypeError){
+        try{
+          const payload=await answerOfflineNotebook(notebook.id,{subject:question.subject,question_id:question.id,selected_answer:selectedAnswer,plan_task:planTask});
+          const savedAnswer={selected_answer:payload.selected_answer,is_correct:payload.is_correct,correct_answer:payload.correct_answer,explanation:payload.explanation,source:payload.source};
+          setAnswers(current=>({...current,[key]:savedAnswer}));
+          if(payload.result?.completed){setResult(payload.result);setReviewing(false)}
+          return;
+        }catch(error){setError(error.message||"O caderno não está preparado para uso offline.");return}
+      }
+      setError("Falha de comunicação ao salvar a resposta.");
     } finally {
       setSaving(false);
     }
