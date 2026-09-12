@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import {
   answerOfflineExam, answerOfflineNotebook, createOfflineExam, createOfflineNotebook,
-  downloadOfflinePack, finishOfflineExam, getOfflineNotebook, getOfflineQuestion,
+  ensureOfflinePackCurrent, finishOfflineExam, getOfflineNotebook, getOfflineQuestion,
   getOfflineStatus, hydrateOfflineExam, getOfflineExam, listOfflineExams,
   listOfflineNotebooks, onOfflineChange, syncOfflineQueue
 } from "../../lib/offline-store";
@@ -68,11 +68,12 @@ export default function OfflineCenter(){
   async function install(){
     setBusy("download");setMessage("");
     try{
-      const next=await downloadOfflinePack();
+      const result=await ensureOfflinePackCurrent({force:true});
+      const next=result.status;
       setStatus(next);
       await refresh();
       setMessage("✓ "+next.questions.toLocaleString("pt-BR")+" questões disponíveis offline.");
-    }catch(e){setMessage(e.message||"Falha ao preparar conteúdo offline.")}
+    }catch(e){setMessage(e.message||"Falha ao atualizar o banco offline.")}
     finally{setBusy("")}
   }
 
@@ -181,21 +182,21 @@ export default function OfflineCenter(){
     </main>;
   }
 
-  return <main style={{maxWidth:1050,margin:"0 auto",padding:"30px 18px 80px"}}>
+  return <main style={{maxWidth:1050,margin:"0 auto",padding:"30px 18px 80px",color:"#e8f1f7"}}>
     <p style={{fontWeight:900,letterSpacing:1}}>ESTIBORDO OFFLINE</p>
     <h1>Central Offline</h1>
-    <p>Prepare o dispositivo antes do embarque. Questões, simulados e cadernos continuam funcionando sem conexão; respostas e resultados são enviados automaticamente quando a internet voltar.</p>
+    <p>O ESTIBORDO mantém automaticamente todo o banco de questões disponível neste aparelho enquanto houver conexão. Depois disso, você pode criar quantos cadernos e simulados quiser mesmo ficando dias sem internet; respostas e resultados serão sincronizados quando a conexão voltar.</p>
     {message&&<p role="status" style={{padding:12,border:"1px solid #345",borderRadius:12}}>{message}</p>}
 
     <section style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(180px,1fr))",gap:12,margin:"24px 0"}}>
       <article><small>Status</small><h3>{online?"Online":"Offline"}</h3></article>
       <article><small>Questões locais</small><h3>{status?.questions?.toLocaleString("pt-BR")||0}</h3></article>
       <article><small>Aguardando sync</small><h3>{status?.pending||0}</h3></article>
-      <article><small>Última preparação</small><h3>{status?.downloaded_at?new Date(status.downloaded_at).toLocaleDateString("pt-BR"):"—"}</h3></article>
+      <article><small>Última atualização offline</small><h3>{status?.downloaded_at?new Date(status.downloaded_at).toLocaleDateString("pt-BR"):"—"}</h3></article>
     </section>
 
     <div style={{display:"flex",gap:10,flexWrap:"wrap",marginBottom:30}}>
-      <button onClick={install} disabled={busy==="download"||!online}>{busy==="download"?"Baixando…":status?.installed?"Atualizar conteúdo offline":"Preparar para ficar offline"}</button>
+      <button onClick={install} disabled={busy==="download"||!online}>{busy==="download"?"Atualizando banco…":"Atualizar banco offline agora"}</button>
       <button onClick={sync} disabled={busy==="sync"||!online}>{busy==="sync"?"Sincronizando…":"Sincronizar agora"}</button>
     </div>
 
@@ -207,7 +208,7 @@ export default function OfflineCenter(){
         <button onClick={makeNotebook} disabled={!status?.installed||busy==="notebook"}>Novo caderno offline</button>
         <button onClick={makeExam} disabled={!status?.installed||busy==="exam"}>Novo simulado offline</button>
       </div>
-      {!status?.installed&&<p>Primeiro use <strong>Preparar para ficar offline</strong> enquanto estiver conectado.</p>}
+      {!status?.installed&&<p><strong>Preparação automática em andamento.</strong> Mantenha a plataforma aberta e conectada até o banco aparecer como disponível; depois estes botões ficarão liberados também sem internet.</p>}
     </section>
 
     <section style={{marginTop:28}}>
