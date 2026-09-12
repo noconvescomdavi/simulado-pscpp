@@ -8,7 +8,8 @@ export const dynamic="force-dynamic";
 
 function outputText(payload){
   if(typeof payload?.output_text==="string")return payload.output_text.trim();
-  return (payload?.output||[]).flatMap(x=>x?.content||[]).filter(x=>x?.type==="output_text").map(x=>x.text||"").join("\n").trim();
+  return (payload?.output||[]).flatMap(x=>x?.content||[]).filter(x=>x?.type==="output_text").map(x=>x.text||"").join("
+").trim();
 }
 
 function fileSearchSources(payload){
@@ -44,7 +45,8 @@ export async function POST(request){
   const key=String(process.env.OPENAI_API_KEY||"").trim();
   if(!key)return Response.json({error:"Tutor IA ainda não foi ativado pelo administrador."},{status:503});
 
-  const studentContext=await getStudentInsights(session.id).catch(()=>null);\n  const conversationId=await ensureConversation(session.id,body.conversation_id,message);
+  const studentContext=await getStudentInsights(session.id).catch(()=>null);
+  const conversationId=await ensureConversation(session.id,body.conversation_id,message);
   const conversation=await getTutorConversation(session.id,conversationId);
   const history=(conversation?.messages||[]).slice(-16).map(m=>({role:m.role,content:m.content}));
   const model=String(process.env.OPENAI_TUTOR_MODEL||"gpt-5.6-luna").trim();
@@ -56,7 +58,10 @@ export async function POST(request){
     headers:{Authorization:`Bearer ${key}`,"Content-Type":"application/json"},
     body:JSON.stringify({
       model,
-      instructions:tutorSystemPrompt()+`\n\nCONTEXTO ATUAL DO ALUNO (use apenas quando relevante e nunca invente além destes dados):\n${JSON.stringify(studentContext?{readiness:studentContext.readiness,adherence:studentContext.adherence,backlog:studentContext.backlog,due_reviews:studentContext.due,weak_topic:studentContext.weak?{subject:studentContext.weak.subject_label,topic:studentContext.weak.topic,mastery:studentContext.weak.mastery_score,errors:studentContext.weak.errors}:null,study_time:studentContext.time}:null)}`,
+      instructions:tutorSystemPrompt()+`
+
+CONTEXTO ATUAL DO ALUNO (use apenas quando relevante e nunca invente além destes dados):
+${JSON.stringify(studentContext?{readiness:studentContext.readiness,adherence:studentContext.adherence,backlog:studentContext.backlog,due_reviews:studentContext.due,weak_topic:studentContext.weak?{subject:studentContext.weak.subject_label,topic:studentContext.weak.topic,mastery:studentContext.weak.mastery_score,errors:studentContext.weak.errors}:null,study_time:studentContext.time}:null)}`,
       input:[...history,{role:"user",content:message}],
       tools,
       include:vectorStoreId?["file_search_call.results"]:undefined,
