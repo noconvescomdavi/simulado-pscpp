@@ -2,7 +2,7 @@ import {NextResponse} from "next/server";
 
 const strictCsp=[
   "default-src \'self\'",
-  "script-src \'self\' \'unsafe-inline\' https:",
+  "script-src \'self\' \'unsafe-inline\' https://esm.sh https://www.gstatic.com https://cdn.jsdelivr.net",
   "style-src \'self\' \'unsafe-inline\' https:",
   "img-src \'self\' data: blob: https:",
   "font-src \'self\' data: https:",
@@ -20,7 +20,7 @@ const strictCsp=[
 
 const threeCsp=[
   "default-src \'self\'",
-  "script-src \'self\' \'unsafe-inline\' \'unsafe-eval\' https:",
+  "script-src \'self\' \'unsafe-inline\' \'unsafe-eval\' https://esm.sh https://www.gstatic.com https://cdn.jsdelivr.net",
   "style-src \'self\' \'unsafe-inline\' https:",
   "img-src \'self\' data: blob: https:",
   "font-src \'self\' data: https:",
