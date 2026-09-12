@@ -1,9 +1,9 @@
 import {redirect} from "next/navigation";
 import {getSession} from "../../lib/auth";
 import {getUserAccess} from "../../lib/access";
-import {getPaymentConfig,formatCurrencyFromCents} from "../../lib/payments";
+import {getResolvedPaymentConfig,getResolvedTutorPaymentConfig,formatCurrencyFromCents} from "../../lib/payments";
 import StudentHeader from "../components/StudentHeader";
-import {getAiTutorAccess,AI_TUTOR_PRICE_CENTS} from "../../lib/ai-tutor";
+import {getAiTutorAccess} from "../../lib/ai-tutor";
 
 function daysLeft(expiresAt){
   if(!expiresAt) return 0;
@@ -14,8 +14,12 @@ export default async function MinhasAssinaturas(){
   const session=await getSession();
   if(!session) redirect("/login?next=/minhas-assinaturas");
 
-  const [access,tutorAccess]=await Promise.all([getUserAccess(session.id),getAiTutorAccess(session.id)]);
-  const config=getPaymentConfig();
+  const [access,tutorAccess,config,tutorConfig]=await Promise.all([
+    getUserAccess(session.id),
+    getAiTutorAccess(session.id),
+    getResolvedPaymentConfig(),
+    getResolvedTutorPaymentConfig()
+  ]);
   const active=access?.active===true;
   const remaining=daysLeft(access?.expires_at);
 
@@ -55,7 +59,7 @@ export default async function MinhasAssinaturas(){
           <div>
             <span className={`subscriptionStatus ${tutorAccess?.active?"isActive":"isInactive"}`}>{tutorAccess?.active?"ATIVO":"ADICIONAL"}</span>
             <h2>⚓ CONTRAMESTRE</h2>
-            <p>Pacote adicional: <strong>{formatCurrencyFromCents(AI_TUTOR_PRICE_CENTS)}/mês</strong>.</p>
+            <p>Pacote adicional: <strong>{formatCurrencyFromCents(tutorConfig.priceCents)}/mês</strong>.</p>
           </div>
           <div className="subscriptionValidity">
             {tutorAccess?.active ? <><div><small>Válido até</small><strong>{new Date(tutorAccess.expires_at).toLocaleDateString("pt-BR")}</strong></div><a href="/contramestre">Abrir CONTRAMESTRE</a></> : <><p>CONTRAMESTRE especializado exclusivamente no universo PSCPP e marítimo.</p><a href="/contramestre">Conhecer e comprar</a></>}
