@@ -7,7 +7,9 @@ const config: CapacitorConfig = {
   server: {
     url: 'https://simulado-pscpp.vercel.app',
     cleartext: false,
-    androidScheme: 'https'
+    androidScheme: 'https',
+    allowNavigation: ['simulado-pscpp.vercel.app'],
+    errorPath: 'offline.html'
   },
   android: {
     allowMixedContent: false
