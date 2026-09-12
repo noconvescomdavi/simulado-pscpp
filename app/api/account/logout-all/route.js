@@ -8,5 +8,5 @@ export async function POST(request){
   if(!session)return Response.redirect(new URL("/login",request.url),303);
   await query("update users set session_version=coalesce(session_version,1)+1,updated_at=now() where id=$1",[session.id]);
   await clearSession();
-  return Response.redirect(new URL("/login?logout=all",request.url),303);
+  return Response.redirect(new URL("/logout?all=1",request.url),303);
 }
