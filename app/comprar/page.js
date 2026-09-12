@@ -3,7 +3,7 @@ import {headers} from "next/headers";
 import {getSession} from "../../lib/auth";
 import {getUserAccess} from "../../lib/access";
 import {query} from "../../lib/db";
-import {formatCurrencyFromCents,getPaymentConfig} from "../../lib/payments";
+import {formatCurrencyFromCents,getResolvedPaymentConfig} from "../../lib/payments";
 import StudentHeader from "../components/StudentHeader";
 import PaymentStatusPoller from "./PaymentStatusPoller";
 import styles from "./checkout.module.css";
@@ -42,7 +42,7 @@ export default async function Page({searchParams}){
     query("select full_name,cpf,phone from user_profiles where user_id=$1 limit 1",[s.id])
   ]);
 
-  const c=getPaymentConfig();
+  const c=await getResolvedPaymentConfig();
   const ready=Boolean(pr.rows[0]?.full_name&&pr.rows[0]?.cpf&&pr.rows[0]?.phone);
   const retorno=String(q?.retorno||"");
   const erro=String(q?.erro||"");
