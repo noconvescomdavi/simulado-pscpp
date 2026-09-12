@@ -1,0 +1,24 @@
+{
+  "name": "estibordo-android-shell",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Camada Android da plataforma ESTIBORDO.",
+  "scripts": {
+    "android:add": "cap add android",
+    "android:sync": "cap sync android",
+    "android:open": "cap open android",
+    "android:run": "cap run android",
+    "android:doctor": "cap doctor android"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.5.1",
+    "@capacitor/core": "8.5.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.5.1",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
