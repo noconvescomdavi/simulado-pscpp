@@ -48,6 +48,9 @@ jobs:
       - name: Generate ESTIBORDO icons and splash
         run: npm run android:assets
 
+      - name: Generate Play Store assets
+        run: npm run play:assets
+
       - name: Configure Android release metadata
         env:
           ESTIBORDO_VERSION_CODE: ${{ github.run_number }}
@@ -100,4 +103,11 @@ jobs:
         with:
           name: estibordo-release-aab
           path: mobile/android/app/build/outputs/bundle/release/app-release.aab
+          if-no-files-found: error
+
+      - name: Upload Play Store assets
+        uses: actions/upload-artifact@v4
+        with:
+          name: estibordo-play-store-assets
+          path: mobile/store-assets/
           if-no-files-found: error
