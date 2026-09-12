@@ -14,9 +14,6 @@ export default function PwaRuntime() {
       navigator.serviceWorker.register("/sw.js", { updateViaCache: "none" }).then((registration) => {
         // Verifica silenciosamente se existe uma versão mais nova do SW.
         registration.update().catch(() => {});
-        const warm=()=>registration.active?.postMessage({type:"CACHE_OFFLINE_PAGE",path:"/offline"});
-        if(registration.active)warm();
-        else navigator.serviceWorker.ready.then(warm).catch(()=>{});
       }).catch(() => {
         // O PWA continua funcional mesmo se o registro falhar.
       });
