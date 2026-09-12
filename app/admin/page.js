@@ -13,6 +13,6 @@ export default async function Page(){
     <div className="metric"><span>PAGAMENTOS</span><b>{p.approved||0}</b><small>pedidos aprovados</small></div>
     <div className="metric"><span>SIMULADOS</span><b>{e.exams||0}</b><small>sessões registradas</small></div>
    </section>
-   <section className="section"><div className="grid"><a className="card" href="/admin/usuarios"><h3>Gerenciar usuários</h3><p>Consulte alunos, status de conta e acessos.</p></a><a className="card" href="/admin/questoes"><h3>Bancos de questões</h3><p>Confira os bancos disponíveis e seus volumes.</p></a><a className="card" href="/admin/metricas"><h3>Métricas</h3><p>Acompanhe o uso e o desempenho da plataforma.</p></a></div></section>
+   <section className="section"><div className="grid"><a className="card" href="/admin/usuarios"><h3>Gerenciar usuários</h3><p>Consulte alunos, status de conta e acessos.</p></a><a className="card" href="/admin/questoes"><h3>Bancos de questões</h3><p>Confira os bancos disponíveis e seus volumes.</p></a><a className="card" href="/admin/metricas"><h3>Métricas</h3><p>Acompanhe o uso e o desempenho da plataforma.</p></a><a className="card" href="/admin/precos"><h3>Preços</h3><p>Altere assinatura anual e CONTRAMESTRE em um único lugar.</p></a></div></section>
  </main>
 }
