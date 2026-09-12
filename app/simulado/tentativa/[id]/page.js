@@ -80,6 +80,7 @@ export default async function Page({ params }) {
     .sort((a, b) => a.accuracy - b.accuracy);
 
   const avgResponseSeconds = responseCount ? Math.round(responseTotal / responseCount / 1000) : 0;
+  const recovery = subjectBreakdown.slice(0,3).filter(x=>x.accuracy<75);
 
   return (
     <>
@@ -114,6 +115,8 @@ export default async function Page({ params }) {
           </section>
         )}
 
+        {recovery.length>0 && <section className={styles.questions}><article><span>PLANO DE RECUPERAÇÃO</span><h2>Seu simulado revelou prioridades objetivas.</h2><p>Em vez de repetir a prova inteira, concentre a próxima sessão nos pontos que mais tiraram desempenho.</p>{recovery.map(item=><p key={item.subject}><strong>{item.label}: {item.accuracy.toFixed(1)}%</strong> · <a href={`/conteudos/banco-de-questoes?subject=${encodeURIComponent(item.subject)}`}>Treinar agora →</a></p>)}<p><a href="/centro-de-revisao">Abrir Centro de Revisão →</a></p></article></section>}
+
         <section className={styles.questions}>
           {ids.map((questionId, index) => {
             const question = getQuestion(exam.subject, questionId);
@@ -147,7 +150,9 @@ export default async function Page({ params }) {
                     )}
                     {question && (
                       <p>
-                        <a href={`/mapas-mentais?subject=${encodeURIComponent(question.source_subject || exam.subject)}&title=${encodeURIComponent(`Questão ${index + 1} — ${question.topic || "Revisão"}`)}&note=${encodeURIComponent((`Questão: ${question.question}\n\nMinha anotação:`).slice(0,700))}`}>
+                        <a href={`/mapas-mentais?subject=${encodeURIComponent(question.source_subject || exam.subject)}&title=${encodeURIComponent(`Questão ${index + 1} — ${question.topic || "Revisão"}`)}&note=${encodeURIComponent((`Questão: ${question.question}
+
+Minha anotação:`).slice(0,700))}`}>
                           🧠 Criar mapa desta questão →
                         </a>
                       </p>
