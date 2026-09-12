@@ -51,11 +51,15 @@ jobs:
         run: npx cap doctor android
 
       - name: Prepare upload keystore
-        if: ${{ env.ANDROID_KEYSTORE_BASE64 != '' }}
         env:
           ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
         run: |
-          printf '%s' "$ANDROID_KEYSTORE_BASE64" | base64 --decode > android/estibordo-upload.jks
+          if [ -n "$ANDROID_KEYSTORE_BASE64" ]; then
+            printf '%s' "$ANDROID_KEYSTORE_BASE64" | base64 --decode > android/estibordo-upload.jks
+            echo "Upload keystore preparado."
+          else
+            echo "Sem keystore configurado: AAB será gerado sem assinatura de upload."
+          fi
 
       - name: Configure release signing
         env:
