@@ -1,0 +1,4 @@
+import {Nav,Footer} from "../components";
+import DiagnosticClient from "./DiagnosticClient";
+export const metadata={title:"Diagnóstico Gratuito PSCPP | ESTIBORDO",description:"Faça um diagnóstico inicial gratuito e descubra como a ESTIBORDO transforma respostas em prioridades de estudo."};
+export default function Page(){return <><Nav/><main className="diagnosticPage"><section className="diagnosticHero"><span>DIAGNÓSTICO GRATUITO • PSCPP</span><h1>Descubra como você está hoje — e o que deveria estudar em seguida.</h1><p>Responda a uma avaliação curta demonstrativa. Ao final, você recebe um retrato inicial por área e uma rota sugerida para continuar.</p></section><DiagnosticClient/></main><Footer/></>}
