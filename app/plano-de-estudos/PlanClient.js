@@ -2,6 +2,7 @@
 import {useEffect,useMemo,useState} from "react";
 import styles from "./plano.module.css";
 import {startTrackedStudySession,stopTrackedStudySession} from "../components/StudySessionTracker";
+import {queueStudyTask} from "../../lib/offline-store";
 
 const dayNames=["DOM","SEG","TER","QUA","QUI","SEX","SÁB"];
 
@@ -106,6 +107,12 @@ export default function PlanClient({plan}){
     };
 
     try{
+      if(!navigator.onLine){
+        await queueStudyTask(body);
+        await stopTrackedStudySession().catch(()=>{});
+        setTaskMessages(m=>({...m,[key]:"✓ Salvo no dispositivo · sincronização pendente"}));
+        return;
+      }
       const r=await fetch("/api/study-plan/task",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
       const data=await r.json().catch(()=>({}));
       if(!r.ok){
@@ -142,7 +149,15 @@ export default function PlanClient({plan}){
       setTaskMessages(m=>({...m,[key]:"✓ Tarefa concluída"}));
       setTimeout(()=>setTaskMessages(m=>{const n={...m};delete n[key];return n}),2200);
     }catch(error){
-      // Reverte o estado otimista para não mostrar conclusão que não foi persistida.
+      if(!navigator.onLine || error instanceof TypeError){
+        try{
+          await queueStudyTask(body);
+          await stopTrackedStudySession().catch(()=>{});
+          setTaskMessages(m=>({...m,[key]:"✓ Salvo no dispositivo · sincronização pendente"}));
+          return;
+        }catch{}
+      }
+      // Reverte somente quando o servidor rejeita a alteração.
       setWeek(w=>({...w,days:w.days.map(d=>({...d,tasks:d.tasks.map(t=>{
         const sameDisplay=d.iso===day.iso&&(t.display_key||t.key)===(task.display_key||task.key);
         return sameDisplay?previousTask:t;
@@ -192,23 +207,22 @@ export default function PlanClient({plan}){
   async function markBibliographyDone(item){
     if(item.progress?.status==="done")return;
     const key="bib|"+item.bibliography_key+"|"+item.section_key;
+    const body={kind:"bibliography",bibliography_key:item.bibliography_key,section_key:item.section_key,subject_slug:item.subject_slug,status:"done"};
     setBusy(key);setMessage("");
-    const r=await fetch("/api/study-plan/task",{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({
-        kind:"bibliography",
-        bibliography_key:item.bibliography_key,
-        section_key:item.section_key,
-        subject_slug:item.subject_slug,
-        status:"done"
-      })
-    });
-    const data=await r.json().catch(()=>({}));
-    setBusy("");
-    if(!r.ok){setMessage(data.error||"Não foi possível atualizar a bibliografia.");return}
-    const bp=data.progress||{...(item.progress||{}),status:"done"};
-    setBibliography(list=>list.map(x=>x.bibliography_key===item.bibliography_key&&x.section_key===item.section_key?{...x,progress:bp}:x));
+    const optimistic={...(item.progress||{}),status:"done",completed_at:new Date().toISOString()};
+    setBibliography(list=>list.map(x=>x.bibliography_key===item.bibliography_key&&x.section_key===item.section_key?{...x,progress:optimistic}:x));
+    try{
+      if(!navigator.onLine){await queueStudyTask(body);setMessage("✓ Leitura salva no dispositivo · sincronização pendente.");return}
+      const r=await fetch("/api/study-plan/task",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+      const data=await r.json().catch(()=>({}));
+      if(!r.ok)throw new Error(data.error||"Não foi possível atualizar a bibliografia.");
+      const bp=data.progress||optimistic;
+      setBibliography(list=>list.map(x=>x.bibliography_key===item.bibliography_key&&x.section_key===item.section_key?{...x,progress:bp}:x));
+    }catch(error){
+      if(!navigator.onLine || error instanceof TypeError){await queueStudyTask(body);setMessage("✓ Leitura salva no dispositivo · sincronização pendente.");return}
+      setBibliography(list=>list.map(x=>x.bibliography_key===item.bibliography_key&&x.section_key===item.section_key?{...x,progress:item.progress}:x));
+      setMessage(error.message||"Não foi possível atualizar a bibliografia.");
+    }finally{setBusy("")}
   }
 
   const plannedTasks=week.days.flatMap(d=>d.tasks).filter(t=>!t.reprogrammed);
