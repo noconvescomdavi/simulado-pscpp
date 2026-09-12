@@ -17,7 +17,8 @@
     "security:audit": "npm audit --audit-level=high",
     "validate:study-plan": "node scripts/validate-study-plan-v3.mjs",
     "test:learning": "node scripts/test-learning-algorithms.mjs",
-    "validate:learning-migrations": "node scripts/validate-learning-migrations.mjs"
+    "validate:learning-migrations": "node scripts/validate-learning-migrations.mjs",
+    "validate:drive-library": "node scripts/validate-drive-library.mjs"
   },
   "dependencies": {
     "argon2": "^0.41.1",

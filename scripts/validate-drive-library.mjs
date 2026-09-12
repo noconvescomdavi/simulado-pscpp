@@ -1,0 +1,16 @@
+import fs from "node:fs";
+import assert from "node:assert/strict";
+const read=p=>fs.readFileSync(p,"utf8");
+const migration=read("db/migrations/024_google_drive_student_library.sql");
+const drive=read("lib/google-drive-library.js");
+const reader=read("app/minha-biblioteca/[id]/PdfReaderClient.js");
+const content=read("app/api/library/google/files/[id]/content/route.js");
+assert.match(migration,/google_drive_connections/,"Tabela de conexão Google Drive ausente");
+assert.match(migration,/student_drive_files/,"Tabela da biblioteca do aluno ausente");
+assert.match(drive,/drive\.file/,"Integração deve usar o escopo mínimo drive.file");
+assert.ok(!/auth\/drive\.readonly/.test(drive),"Integração não deve pedir acesso de leitura ao Drive inteiro");
+assert.match(content,/user_id=\$2/,"Download deve validar propriedade do documento");
+assert.match(content,/private, no-store/,"PDF privado não pode ser cacheado publicamente");
+assert.match(reader,/AdobeDC\.View/,"Adobe PDF Embed não está integrado");
+assert.match(reader,/PAGE_VIEW/,"Leitor não acompanha a página atual");
+console.log("Google Drive student library invariants: OK");

@@ -88,6 +88,10 @@ function Menu({ active = "", flashcardDecks = [] }) {
         </div></div>
       </details>
 
+      <a className={active === "biblioteca" ? styles.active : ""} href="/minha-biblioteca">
+        <span className={styles.icon}>▧</span><span>Minha Biblioteca</span>
+      </a>
+
       <details className={styles.group}>
         <summary>
           <span><b className={styles.icon}>▦</b> Central de Estudos</span>

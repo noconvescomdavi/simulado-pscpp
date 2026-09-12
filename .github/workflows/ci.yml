@@ -29,6 +29,9 @@ jobs:
       - name: Study Plan V3 invariants
         run: npm run validate:study-plan
 
+      - name: Google Drive library invariants
+        run: npm run validate:drive-library
+
       - name: Learning algorithm tests
         run: npm run test:learning
 
@@ -109,6 +112,15 @@ jobs:
           # Privacidade: exportação deve falhar fechada sem sessão
           EXPORT_STATUS=$(curl -sS -o /dev/null -w "%{http_code}" "http://127.0.0.1:3000/api/account/export")
           test "$EXPORT_STATUS" = "401"
+
+          # Biblioteca Google Drive: APIs privadas devem falhar fechadas sem sessão
+          for ENDPOINT in \
+            "/api/library/google/status" \
+            "/api/library/google/picker" \
+            "/api/library/google/files"; do
+            STATUS=$(curl -sS -o /dev/null -w "%{http_code}" "http://127.0.0.1:3000$ENDPOINT")
+            test "$STATUS" = "401"
+          done
 
           # Checkout aceita apenas POST; GET não pode iniciar cobrança
           CHECKOUT_STATUS=$(curl -sS -o /dev/null -w "%{http_code}" "http://127.0.0.1:3000/api/payments/mercado-pago/checkout")
