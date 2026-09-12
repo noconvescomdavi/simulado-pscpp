@@ -4,6 +4,7 @@ const config: CapacitorConfig = {
   appId: 'br.com.estibordo.pscpp',
   appName: 'ESTIBORDO',
   webDir: 'www',
+  appendUserAgent: ' ESTIBORDO-ANDROID',
   server: {
     url: 'https://simulado-pscpp.vercel.app',
     cleartext: false,
