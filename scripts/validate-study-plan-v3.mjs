@@ -30,6 +30,9 @@ assert.match(progress,/TASK_COMPLETED/,"Conclusão não está sendo registrada n
 assert.match(progress,/pg_advisory_xact_lock/,"Conclusão concorrente não possui lock transacional de idempotência");
 assert.match(progress,/update student_plan_task_progress[\s\S]*if\(!saved\.rowCount\)[\s\S]*insert into student_plan_task_progress/,
   "Conclusão deve usar UPDATE-first/INSERT-if-missing para tolerar drift de constraint");
+assert.match(progress,/status=\$6::varchar[\s\S]*when \$6::varchar='done'/,
+  "Status da conclusão precisa de cast explícito para evitar SQLSTATE 42P08");
+
 assert.ok(!/on conflict\(user_id,task_key,plan_date\)/i.test(
   progress.slice(progress.indexOf("export async function setPlanTaskStatusAndMetrics"),progress.indexOf("export async function setBibliographyStatusAndMetrics"))
 ),"Conclusão voltou a depender da constraint composta de student_plan_task_progress");
