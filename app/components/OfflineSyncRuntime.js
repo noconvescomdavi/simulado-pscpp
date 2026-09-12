@@ -1,18 +1,32 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { getOfflineStatus, onOfflineChange, syncOfflineQueue } from "../../lib/offline-store";
+import { ensureOfflinePackCurrent, getOfflineStatus, onOfflineChange, syncOfflineQueue } from "../../lib/offline-store";
 
 export default function OfflineSyncRuntime(){
   const [online,setOnline]=useState(true);
   const [status,setStatus]=useState({installed:false,pending:0,questions:0});
   const [syncing,setSyncing]=useState(false);
   const [recentSync,setRecentSync]=useState(false);
+  const [preloading,setPreloading]=useState(false);
 
   const refresh=useCallback(async()=>{
     setOnline(typeof navigator==="undefined"?true:navigator.onLine);
     try{setStatus(await getOfflineStatus())}catch{}
   },[]);
+
+  const preload=useCallback(async(force=false)=>{
+    if(typeof navigator!=="undefined"&&!navigator.onLine){await refresh();return}
+    setPreloading(true);
+    try{
+      await ensureOfflinePackCurrent({force});
+    }catch(error){
+      console.error("Falha no preload offline automático:",error);
+    }finally{
+      setPreloading(false);
+      await refresh();
+    }
+  },[refresh]);
 
   const sync=useCallback(async()=>{
     if(typeof navigator!=="undefined"&&!navigator.onLine){await refresh();return}
@@ -31,14 +45,14 @@ export default function OfflineSyncRuntime(){
   useEffect(()=>{
     refresh();
     const remove=onOfflineChange(refresh);
-    const onOnline=()=>{setOnline(true);sync()};
+    const onOnline=()=>{setOnline(true);sync();preload()};
     const onOffline=()=>{setOnline(false);refresh()};
     const onMessage=(event)=>{if(event.data?.type==="ESTIBORDO_SYNC_REQUEST")sync()};
     window.addEventListener("online",onOnline);
     window.addEventListener("offline",onOffline);
     navigator.serviceWorker?.addEventListener("message",onMessage);
     const timer=setInterval(()=>{if(navigator.onLine)sync()},60_000);
-    if(navigator.onLine)sync();
+    if(navigator.onLine){sync();preload();}
     return()=>{
       remove();
       clearInterval(timer);
@@ -46,13 +60,15 @@ export default function OfflineSyncRuntime(){
       window.removeEventListener("offline",onOffline);
       navigator.serviceWorker?.removeEventListener("message",onMessage);
     };
-  },[refresh,sync]);
+  },[refresh,sync,preload]);
 
-  const show=!online||syncing||status.pending>0||recentSync;
+  const show=!online||syncing||preloading||status.pending>0||recentSync;
   if(!show)return null;
   const label=!online
     ? `Offline · ${status.pending||0} pendente${status.pending===1?"":"s"}`
-    : syncing
+    : preloading
+      ? "Preparando offline automaticamente…"
+      : syncing
       ? "Sincronizando…"
       : status.pending>0
         ? `${status.pending} alteração${status.pending===1?"":"ões"} pendente${status.pending===1?"":"s"}`
