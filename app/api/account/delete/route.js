@@ -44,5 +44,5 @@ export async function POST(request){
   });
 
   await clearSession();
-  return Response.redirect(new URL("/?conta=excluida",request.url),303);
+  return Response.redirect(new URL("/logout?conta=excluida",request.url),303);
 }
