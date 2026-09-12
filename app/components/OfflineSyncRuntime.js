@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { getOfflineStatus, onOfflineChange, syncOfflineQueue } from "../../lib/offline-store";
+import { getOfflineStatus, onOfflineChange, syncOfflineQueue, setOfflineUserScope } from "../../lib/offline-store";
 
 export default function OfflineSyncRuntime(){
   const [online,setOnline]=useState(true);
@@ -29,7 +29,21 @@ export default function OfflineSyncRuntime(){
   },[refresh]);
 
   useEffect(()=>{
-    refresh();
+    (async()=>{
+      try{
+        const response=await fetch("/api/auth/me",{cache:"no-store"});
+        if(response.ok){
+          const payload=await response.json();
+          if(payload?.user?.id){
+            await setOfflineUserScope(payload.user.id);
+            const reg=await navigator.serviceWorker?.ready;
+            reg?.active?.postMessage({type:"SET_PRIVATE_SCOPE",scope:payload.user.id});
+            reg?.active?.postMessage({type:"CACHE_OFFLINE_PAGE",path:"/offline"});
+          }
+        }
+      }catch{}
+      await refresh();
+    })();
     const remove=onOfflineChange(refresh);
     const onOnline=()=>{setOnline(true);sync()};
     const onOffline=()=>{setOnline(false);refresh()};
