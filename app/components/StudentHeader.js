@@ -5,6 +5,7 @@ import { listFlashcardDecks } from "../../lib/flashcards";
 import styles from "./student-header.module.css";
 import StudySessionTracker from "./StudySessionTracker";
 import OfflineSyncStatus from "./OfflineSyncStatus";
+import StudentMobileMenu from "./StudentMobileMenu";
 
 function Menu({ active = "", flashcardDecks = [] }) {
   return (
@@ -182,9 +183,7 @@ export default async function StudentHeader({ active = "" }) {
       </aside>
 
       <header className={styles.topbar}>
-        <details className={styles.mobileNav}>
-          <summary aria-label="Abrir menu">☰</summary>
-          <div className={styles.mobilePanel}>
+        <StudentMobileMenu className={styles.mobileNav} panelClassName={styles.mobilePanel}>
             <div className={styles.mobileProfile}>
               <strong>{displayName}</strong>
               <small>{session?.email || ""}</small>
@@ -197,8 +196,7 @@ export default async function StudentHeader({ active = "" }) {
             <form action="/api/auth/logout" method="post">
               <button className={styles.mobileLogout} type="submit">Sair da Conta</button>
             </form>
-          </div>
-        </details>
+        </StudentMobileMenu>
 
         <a className={styles.mobileLogo} href="/area-do-aluno">
           <img src="/estibordo/logos/estibordo-logo-header.png" alt="ESTIBORDO" />
