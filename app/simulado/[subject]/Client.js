@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import QuestionFilterControls, { EMPTY_QUESTION_FILTERS } from "../../components/QuestionFilterControls";
 import styles from "./exam.module.css";
+import {cacheServerExam, createOfflineExam, getLatestOfflineExam, answerOfflineExam, finishOfflineExam, hydrateOfflineExam} from "../../../lib/offline-store";
 
 function clock(seconds) {
   const safe = Math.max(0, Number(seconds) || 0);
@@ -95,18 +96,34 @@ export default function Client({ subject, title, ready, facets, planTask }) {
 
   async function load() {
     setError("");
-    const response = await fetch(`/api/exams/${subject}`, { cache: "no-store" });
-    const payload = await response.json().catch(() => ({}));
-    if (!response.ok) {
-      setError(payload.error || "Não foi possível carregar o simulado.");
-      return;
-    }
-    setState(payload);
-    if (payload.state === "in_progress" && payload.exam) {
-      setIndex(Math.min(Number(payload.exam.answered_count || 0), Math.max(0, payload.exam.questions.length - 1)));
-      setAnswer(null);
-      setPendingResult(null);
-      questionStartedAt.current = Date.now();
+    try{
+      if(!navigator.onLine)throw new TypeError("offline");
+      const response = await fetch(`/api/exams/${subject}`, { cache: "no-store" });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        setError(payload.error || "Não foi possível carregar o simulado.");
+        return;
+      }
+      setState(payload);
+      if (payload.state === "in_progress" && payload.exam) {
+        await cacheServerExam(payload.exam,planTask).catch(()=>{});
+        setIndex(Math.min(Number(payload.exam.answered_count || 0), Math.max(0, payload.exam.questions.length - 1)));
+        setAnswer(null);
+        setPendingResult(null);
+        questionStartedAt.current = Date.now();
+      }
+    }catch(error){
+      if(!navigator.onLine || error instanceof TypeError){
+        const local=await getLatestOfflineExam(subject).catch(()=>null);
+        if(local){
+          setState({state:local.status==="in_progress"?"in_progress":"finished",exam:local.status==="in_progress"?local:null,result:local.status!=="in_progress"?local.result:null});
+          setIndex(Math.min(Number(local.answered_count||0),Math.max(0,(local.questions||[]).length-1)));
+          return;
+        }
+        setState({state:"available",can_start:true,offline:true});
+        return;
+      }
+      setError("Não foi possível carregar o simulado.");
     }
   }
 
@@ -150,6 +167,11 @@ export default function Client({ subject, title, ready, facets, planTask }) {
     setBusy(true);
     setError("");
     try {
+      if(!navigator.onLine){
+        const local=await createOfflineExam({subject,count:100,filters,title,planTask});
+        const exam=await hydrateOfflineExam(local);
+        setState({state:"in_progress",exam,offline:true});setIndex(0);setAnswer(null);setPendingResult(null);questionStartedAt.current=Date.now();return;
+      }
       const response = await fetch(`/api/exams/${subject}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -172,6 +194,14 @@ export default function Client({ subject, title, ready, facets, planTask }) {
       setAnswer(null);
       setPendingResult(null);
       questionStartedAt.current = Date.now();
+    } catch(error) {
+      if(!navigator.onLine || error instanceof TypeError){
+        try{
+          const local=await createOfflineExam({subject,count:100,filters,title,planTask});
+          const exam=await hydrateOfflineExam(local);
+          setState({state:"in_progress",exam,offline:true});setIndex(0);setAnswer(null);setPendingResult(null);questionStartedAt.current=Date.now();
+        }catch(fallback){setError(fallback.message||"Prepare o conteúdo offline antes de emitir um simulado sem internet.");}
+      }else{setError(error.message||"Não foi possível iniciar o simulado.");}
     } finally {
       setBusy(false);
     }
@@ -185,6 +215,12 @@ export default function Client({ subject, title, ready, facets, planTask }) {
     setBusy(true);
     setError("");
     try {
+      if(!navigator.onLine || state?.offline){
+        const payload=await answerOfflineExam(exam.id,{question_id:question.id,selected_answer:selectedAnswer,response_time_ms:Date.now()-questionStartedAt.current});
+        setAnswer(payload);if(payload.result)setPendingResult({...payload.result,session_id:exam.id});
+        setState(current=>({...current,exam:{...current.exam,answered_count:Number(current.exam.answered_count||0)+1,correct_count:Number(current.exam.correct_count||0)+(payload.is_correct?1:0)}}));
+        return;
+      }
       const response = await fetch(`/api/exams/${subject}/answer`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -208,6 +244,13 @@ export default function Client({ subject, title, ready, facets, planTask }) {
 
       setAnswer(payload);
       if (payload.result) setPendingResult(payload.result);
+    } catch(error) {
+      if(!navigator.onLine || error instanceof TypeError){
+        try{
+          const payload=await answerOfflineExam(exam.id,{question_id:question.id,selected_answer:selectedAnswer,response_time_ms:Date.now()-questionStartedAt.current});
+          setAnswer(payload);if(payload.result)setPendingResult({...payload.result,session_id:exam.id});
+        }catch(fallback){setError(fallback.message||"Não foi possível salvar a resposta offline.");}
+      }else{setError(error.message||"Não foi possível salvar a resposta.");}
     } finally {
       setBusy(false);
     }
@@ -218,6 +261,11 @@ export default function Client({ subject, title, ready, facets, planTask }) {
     setBusy(true);
     setError("");
     try {
+      if(!navigator.onLine || state?.offline){
+        const result=await finishOfflineExam(exam.id,reason);
+        setState({state:"finished",result:{...result,session_id:exam.id,subject,reason}});
+        setAnswer(null);setPendingResult(null);return;
+      }
       const response = await fetch(`/api/exams/${subject}/finish`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
