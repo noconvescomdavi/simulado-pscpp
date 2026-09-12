@@ -12,7 +12,3 @@ export async function POST(request) {
   return logoutRedirect(request);
 }
 
-export async function GET(request) {
-  await clearSession();
-  return logoutRedirect(request);
-}
