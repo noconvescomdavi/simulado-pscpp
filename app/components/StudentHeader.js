@@ -4,6 +4,7 @@ import { query } from "../../lib/db";
 import { listFlashcardDecks } from "../../lib/flashcards";
 import styles from "./student-header.module.css";
 import StudySessionTracker from "./StudySessionTracker";
+import OfflineSyncStatus from "./OfflineSyncStatus";
 
 function Menu({ active = "", flashcardDecks = [] }) {
   return (
@@ -114,6 +115,10 @@ function Menu({ active = "", flashcardDecks = [] }) {
         <span className={styles.icon}>♛</span><span>Minhas Assinaturas</span>
       </a>
 
+      <a className={active === "offline" ? styles.active : ""} href="/offline">
+        <span className={styles.icon}>⇄</span><span>Modo Offline</span>
+      </a>
+
       <a className={active === "suporte" ? styles.active : ""} href="/suporte">
         <span className={styles.icon}>✉</span><span>Suporte</span>
       </a>
@@ -205,6 +210,7 @@ export default async function StudentHeader({ active = "" }) {
         </form>
 
         <div className={styles.topActions}>
+          <OfflineSyncStatus />
           <a href="/minhas-assinaturas" title="Minhas Assinaturas">♛</a>
           <a href="/perfil" title="Meu Perfil">{displayName.slice(0, 1).toUpperCase()}</a>
         </div>
