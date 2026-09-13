@@ -1,135 +1,29 @@
 # Auditoria profunda de qualidade — bancos de questões
 
-Gerado em: 2026-09-13T23:55:28.853Z
+Gerado em: 2026-09-13T23:56:37.919Z
 
 Total de questões analisadas: **11796**
 Taxonomia V2: **11796**
 Questões da expansão V1 marcadas para revisão integral: **0**
-Flags: **6222** (críticas 3; altas 0; médias 3535; baixas 2684)
+Flags: **5143** (críticas 0; altas 0; médias 2459; baixas 2684)
 
 ## Por matéria
 
 | Matéria | Questões | Tópicos | Capítulos | Expansão V1 | Contexto | Distratores | Formatação | Estrutural |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| arte-naval | 1307 | 300 | 23 | 0 | 35 | 1011 | 45 | 0 |
-| manobrabilidade | 3899 | 560 | 46 | 0 | 0 | 1080 | 45 | 0 |
-| navegacao-aguas-restritas | 1797 | 1342 | 47 | 0 | 1 | 558 | 30 | 0 |
-| legislacao-regulamentacao | 1267 | 959 | 27 | 0 | 1 | 686 | 45 | 0 |
-| meteorologia-oceanografia | 1162 | 26 | 4 | 0 | 0 | 1596 | 45 | 0 |
-| comunicacoes | 1207 | 125 | 8 | 0 | 0 | 446 | 34 | 0 |
-| conhecimentos-gerais | 1157 | 217 | 7 | 0 | 1 | 522 | 41 | 0 |
+| arte-naval | 1307 | 300 | 23 | 0 | 35 | 859 | 0 | 0 |
+| manobrabilidade | 3899 | 560 | 46 | 0 | 0 | 978 | 0 | 0 |
+| navegacao-aguas-restritas | 1797 | 1342 | 47 | 0 | 1 | 489 | 0 | 0 |
+| legislacao-regulamentacao | 1267 | 959 | 27 | 0 | 1 | 534 | 0 | 0 |
+| meteorologia-oceanografia | 1162 | 26 | 4 | 0 | 0 | 1445 | 0 | 0 |
+| comunicacoes | 1207 | 125 | 8 | 0 | 0 | 369 | 0 | 0 |
+| conhecimentos-gerais | 1157 | 217 | 7 | 0 | 1 | 431 | 0 | 0 |
 
 ## Flags prioritárias (primeiras 250)
 
 | Gravidade | Matéria | ID | Código | Detalhe |
 |---|---|---|---|---|
-| critical | manobrabilidade | MAN-076 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
-| critical | manobrabilidade | MAN-090 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
-| critical | manobrabilidade | MAN-284 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
-| medium | arte-naval | ANV-0004 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0008 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0009 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0009 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0014 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0015 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0015 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0019 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0021 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0021 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0024 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0025 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0025 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0028 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0029 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0029 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0032 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0033 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0033 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0036 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0037 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0037 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0040 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0041 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0041 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0044 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0045 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0045 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0048 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0049 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0049 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0052 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0053 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0053 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0056 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0057 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0057 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0060 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0061 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0061 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0064 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0065 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0065 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0068 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0069 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0069 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0072 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0073 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0073 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0076 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0077 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0077 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0080 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0081 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0081 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0084 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0085 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0085 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0088 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0089 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0089 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0092 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0093 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0093 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0096 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0097 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0097 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0100 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0101 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0101 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0104 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0105 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0105 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0108 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0109 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0109 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0112 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0113 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0113 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0116 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0117 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0117 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0120 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0121 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0121 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
 | medium | arte-naval | ANV-0123 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0013. |
-| medium | arte-naval | ANV-0124 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0125 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0125 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0128 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0129 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0129 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0132 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0133 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0133 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0136 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0137 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0137 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0140 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0141 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0141 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
-| medium | arte-naval | ANV-0144 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0003. |
-| medium | arte-naval | ANV-0145 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0004. |
-| medium | arte-naval | ANV-0145 | SEQUENCE_FORMAT | Sequência V/F deveria conter 4 proposições; encontradas 0. |
 | medium | arte-naval | ANV-0148 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
 | medium | arte-naval | ANV-0149 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
 | medium | arte-naval | ANV-0150 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
@@ -273,6 +167,112 @@ Flags: **6222** (críticas 3; altas 0; médias 3535; baixas 2684)
 | medium | arte-naval | ANV-0286 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
 | medium | arte-naval | ANV-0287 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
 | medium | arte-naval | ANV-0288 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0002. |
+| medium | arte-naval | ANV-0289 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0290 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0291 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0292 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0293 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0294 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0295 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0296 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0017. |
+| medium | arte-naval | ANV-0297 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0001. |
+| medium | arte-naval | ANV-0298 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0012. |
+| medium | arte-naval | ANV-0299 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
+| medium | arte-naval | ANV-0300 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0011. |
+| medium | arte-naval | ANV-0303 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0039. |
+| medium | arte-naval | ANV-0306 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0067. |
+| medium | arte-naval | ANV-0326 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0119. |
+| medium | arte-naval | ANV-0333 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0067. |
+| medium | arte-naval | ANV-0338 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0139. |
+| medium | arte-naval | ANV-0347 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0317. |
+| medium | arte-naval | ANV-0348 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0318. |
+| medium | arte-naval | ANV-0351 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0321. |
+| medium | arte-naval | ANV-0356 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0324. |
+| medium | arte-naval | ANV-0358 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0325. |
+| medium | arte-naval | ANV-0364 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0330. |
+| medium | arte-naval | ANV-0372 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0139. |
+| medium | arte-naval | ANV-0375 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0341. |
+| medium | arte-naval | ANV-0377 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0314. |
+| medium | arte-naval | ANV-0381 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0317. |
+| medium | arte-naval | ANV-0382 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0318. |
+| medium | arte-naval | ANV-0385 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0321. |
+| medium | arte-naval | ANV-0387 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0353. |
+| medium | arte-naval | ANV-0390 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0324. |
+| medium | arte-naval | ANV-0392 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0325. |
+| medium | arte-naval | ANV-0398 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0330. |
+| medium | arte-naval | ANV-0399 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0103. |
+| medium | arte-naval | ANV-0401 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0305. |
+| medium | arte-naval | ANV-0409 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0139. |
+| medium | arte-naval | ANV-0410 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0373. |
+| medium | arte-naval | ANV-0411 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0312. |
+| medium | arte-naval | ANV-0412 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0341. |
+| medium | arte-naval | ANV-0414 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0043. |
+| medium | arte-naval | ANV-0418 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0317. |
+| medium | arte-naval | ANV-0419 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0318. |
+| medium | arte-naval | ANV-0422 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0321. |
+| medium | arte-naval | ANV-0424 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0353. |
+| medium | arte-naval | ANV-0427 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0324. |
+| medium | arte-naval | ANV-0429 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0325. |
+| medium | arte-naval | ANV-0430 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0393. |
+| medium | arte-naval | ANV-0431 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0360. |
+| medium | arte-naval | ANV-0435 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0330. |
+| medium | arte-naval | ANV-0449 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0139. |
+| medium | arte-naval | ANV-0450 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0311. |
+| medium | arte-naval | ANV-0452 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0341. |
+| medium | arte-naval | ANV-0459 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0317. |
+| medium | arte-naval | ANV-0460 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0318. |
+| medium | arte-naval | ANV-0464 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0321. |
+| medium | arte-naval | ANV-0469 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0324. |
+| medium | arte-naval | ANV-0471 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0325. |
+| medium | arte-naval | ANV-0477 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0330. |
+| medium | arte-naval | ANV-0481 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0366. |
+| medium | arte-naval | ANV-0483 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0368. |
+| medium | arte-naval | ANV-0488 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0131. |
+| medium | arte-naval | ANV-0491 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0139. |
+| medium | arte-naval | ANV-0492 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0339. |
+| medium | arte-naval | ANV-0494 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0341. |
+| medium | arte-naval | ANV-0497 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0315. |
+| medium | arte-naval | ANV-0503 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0035. |
+| medium | arte-naval | ANV-0516 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0314. |
+| medium | arte-naval | ANV-0523 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0314. |
+| medium | arte-naval | ANV-0532 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0147. |
+| medium | arte-naval | ANV-0534 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0018. |
+| medium | arte-naval | ANV-0550 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0404. |
+| medium | arte-naval | ANV-0551 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0031. |
+| medium | arte-naval | ANV-0558 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0047. |
+| medium | arte-naval | ANV-0578 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0314. |
+| medium | arte-naval | ANV-0582 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0087. |
+| medium | arte-naval | ANV-0584 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0475. |
+| medium | arte-naval | ANV-0598 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0013. |
+| medium | arte-naval | ANV-0600 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0394. |
+| medium | arte-naval | ANV-0602 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0027. |
+| medium | arte-naval | ANV-0605 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0063. |
+| medium | arte-naval | ANV-0616 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0079. |
+| medium | arte-naval | ANV-0621 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0091. |
+| medium | arte-naval | ANV-0648 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0608. |
+| medium | arte-naval | ANV-0651 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0611. |
+| medium | arte-naval | ANV-0658 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0617. |
+| medium | arte-naval | ANV-0659 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0618. |
+| medium | arte-naval | ANV-0663 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0091. |
+| medium | arte-naval | ANV-0665 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0099. |
+| medium | arte-naval | ANV-0668 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0626. |
+| medium | arte-naval | ANV-0670 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0628. |
+| medium | arte-naval | ANV-0672 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0127. |
+| medium | arte-naval | ANV-0676 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0634. |
+| medium | arte-naval | ANV-0683 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0051. |
+| medium | arte-naval | ANV-0690 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0608. |
+| medium | arte-naval | ANV-0693 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0611. |
+| medium | arte-naval | ANV-0701 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0023. |
+| medium | arte-naval | ANV-0708 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0055. |
+| medium | arte-naval | ANV-0710 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0143. |
+| medium | arte-naval | ANV-0722 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0715. |
+| medium | arte-naval | ANV-0736 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0135. |
+| medium | arte-naval | ANV-0749 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0603. |
+| medium | arte-naval | ANV-0751 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0007. |
+| medium | arte-naval | ANV-0777 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0715. |
+| medium | arte-naval | ANV-0778 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0107. |
+| medium | arte-naval | ANV-0781 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0083. |
+| medium | arte-naval | ANV-0783 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0674. |
 
 ## Critério
 
