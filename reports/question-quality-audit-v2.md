@@ -1,28 +1,105 @@
 # Auditoria profunda de qualidade — bancos de questões
 
-Gerado em: 2026-09-13T23:56:37.919Z
+Gerado em: 2026-09-13T23:59:42.208Z
 
 Total de questões analisadas: **11796**
 Taxonomia V2: **11796**
 Questões da expansão V1 marcadas para revisão integral: **0**
-Flags: **5143** (críticas 0; altas 0; médias 2459; baixas 2684)
+Flags: **4225** (críticas 73; altas 4; médias 1742; baixas 2406)
 
 ## Por matéria
 
 | Matéria | Questões | Tópicos | Capítulos | Expansão V1 | Contexto | Distratores | Formatação | Estrutural |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | arte-naval | 1307 | 300 | 23 | 0 | 35 | 859 | 0 | 0 |
-| manobrabilidade | 3899 | 560 | 46 | 0 | 0 | 978 | 0 | 0 |
-| navegacao-aguas-restritas | 1797 | 1342 | 47 | 0 | 1 | 489 | 0 | 0 |
-| legislacao-regulamentacao | 1267 | 959 | 27 | 0 | 1 | 534 | 0 | 0 |
-| meteorologia-oceanografia | 1162 | 26 | 4 | 0 | 0 | 1445 | 0 | 0 |
-| comunicacoes | 1207 | 125 | 8 | 0 | 0 | 369 | 0 | 0 |
-| conhecimentos-gerais | 1157 | 217 | 7 | 0 | 1 | 431 | 0 | 0 |
+| manobrabilidade | 3899 | 560 | 46 | 0 | 2 | 737 | 0 | 0 |
+| navegacao-aguas-restritas | 1797 | 1342 | 47 | 0 | 1 | 460 | 0 | 0 |
+| legislacao-regulamentacao | 1267 | 854 | 27 | 0 | 1 | 312 | 0 | 0 |
+| meteorologia-oceanografia | 1162 | 26 | 4 | 0 | 0 | 1106 | 0 | 0 |
+| comunicacoes | 1207 | 125 | 8 | 0 | 0 | 335 | 0 | 0 |
+| conhecimentos-gerais | 1157 | 217 | 7 | 0 | 1 | 376 | 0 | 0 |
 
 ## Flags prioritárias (primeiras 250)
 
 | Gravidade | Matéria | ID | Código | Detalhe |
 |---|---|---|---|---|
+| critical | comunicacoes | COM-1049 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | conhecimentos-gerais | CGE-0033 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | conhecimentos-gerais | CGE-0077 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | conhecimentos-gerais | CGE-0081 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | conhecimentos-gerais | CGE-0097 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | legislacao-regulamentacao | LEG-0904 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | legislacao-regulamentacao | LEG-0948 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | manobrabilidade | MAN-1598 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | manobrabilidade | MAN-3749 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | manobrabilidade | MAN-3797 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | manobrabilidade | MAN-3805 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | manobrabilidade | MAN-3883 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | manobrabilidade | MAN-3893 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | manobrabilidade | MAN-406 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | manobrabilidade | MAN-426 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | manobrabilidade | MAN-438 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | manobrabilidade | MAN-458 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | manobrabilidade | MAN-462 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | manobrabilidade | MAN-470 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | manobrabilidade | MAN-490 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | manobrabilidade | MAN-494 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | manobrabilidade | MAN-514 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | manobrabilidade | MAN-546 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | manobrabilidade | MAN-562 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | manobrabilidade | MAN-598 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | manobrabilidade | MAN-610 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | manobrabilidade | MAN-618 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | manobrabilidade | MAN-630 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | manobrabilidade | MAN-638 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | manobrabilidade | MAN-650 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0101 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0111 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0127 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0140 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0149 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0153 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0182 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0186 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0190 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0194 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0198 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0202 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0206 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0210 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0234 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0238 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0242 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0246 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0250 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0255 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0259 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0263 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0287 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0291 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0297 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0301 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0305 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0309 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0313 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0317 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0341 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0345 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0349 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0353 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0357 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0361 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0365 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0369 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0394 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0398 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0402 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0406 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| critical | meteorologia-oceanografia | MEO-0410 | OPTION_DUPLICATE_OR_EMPTY | Há alternativa vazia ou repetida. |
+| high | conhecimentos-gerais | CGE-1142 | DUPLICATE_STEM | Enunciado idêntico a CGE-1003. |
+| high | legislacao-regulamentacao | LEG-0389 | DUPLICATE_STEM | Enunciado idêntico a LEG-0234. |
+| high | manobrabilidade | MAN-3748 | DUPLICATE_STEM | Enunciado idêntico a MAN-406. |
+| high | manobrabilidade | MAN-3756 | DUPLICATE_STEM | Enunciado idêntico a MAN-364. |
 | medium | arte-naval | ANV-0123 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0013. |
 | medium | arte-naval | ANV-0148 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
 | medium | arte-naval | ANV-0149 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
@@ -196,83 +273,6 @@ Flags: **5143** (críticas 0; altas 0; médias 2459; baixas 2684)
 | medium | arte-naval | ANV-0381 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0317. |
 | medium | arte-naval | ANV-0382 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0318. |
 | medium | arte-naval | ANV-0385 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0321. |
-| medium | arte-naval | ANV-0387 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0353. |
-| medium | arte-naval | ANV-0390 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0324. |
-| medium | arte-naval | ANV-0392 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0325. |
-| medium | arte-naval | ANV-0398 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0330. |
-| medium | arte-naval | ANV-0399 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0103. |
-| medium | arte-naval | ANV-0401 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0305. |
-| medium | arte-naval | ANV-0409 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0139. |
-| medium | arte-naval | ANV-0410 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0373. |
-| medium | arte-naval | ANV-0411 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0312. |
-| medium | arte-naval | ANV-0412 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0341. |
-| medium | arte-naval | ANV-0414 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0043. |
-| medium | arte-naval | ANV-0418 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0317. |
-| medium | arte-naval | ANV-0419 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0318. |
-| medium | arte-naval | ANV-0422 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0321. |
-| medium | arte-naval | ANV-0424 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0353. |
-| medium | arte-naval | ANV-0427 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0324. |
-| medium | arte-naval | ANV-0429 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0325. |
-| medium | arte-naval | ANV-0430 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0393. |
-| medium | arte-naval | ANV-0431 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0360. |
-| medium | arte-naval | ANV-0435 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0330. |
-| medium | arte-naval | ANV-0449 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0139. |
-| medium | arte-naval | ANV-0450 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0311. |
-| medium | arte-naval | ANV-0452 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0341. |
-| medium | arte-naval | ANV-0459 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0317. |
-| medium | arte-naval | ANV-0460 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0318. |
-| medium | arte-naval | ANV-0464 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0321. |
-| medium | arte-naval | ANV-0469 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0324. |
-| medium | arte-naval | ANV-0471 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0325. |
-| medium | arte-naval | ANV-0477 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0330. |
-| medium | arte-naval | ANV-0481 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0366. |
-| medium | arte-naval | ANV-0483 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0368. |
-| medium | arte-naval | ANV-0488 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0131. |
-| medium | arte-naval | ANV-0491 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0139. |
-| medium | arte-naval | ANV-0492 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0339. |
-| medium | arte-naval | ANV-0494 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0341. |
-| medium | arte-naval | ANV-0497 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0315. |
-| medium | arte-naval | ANV-0503 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0035. |
-| medium | arte-naval | ANV-0516 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0314. |
-| medium | arte-naval | ANV-0523 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0314. |
-| medium | arte-naval | ANV-0532 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0147. |
-| medium | arte-naval | ANV-0534 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0018. |
-| medium | arte-naval | ANV-0550 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0404. |
-| medium | arte-naval | ANV-0551 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0031. |
-| medium | arte-naval | ANV-0558 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0047. |
-| medium | arte-naval | ANV-0578 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0314. |
-| medium | arte-naval | ANV-0582 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0087. |
-| medium | arte-naval | ANV-0584 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0475. |
-| medium | arte-naval | ANV-0598 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0013. |
-| medium | arte-naval | ANV-0600 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0394. |
-| medium | arte-naval | ANV-0602 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0027. |
-| medium | arte-naval | ANV-0605 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0063. |
-| medium | arte-naval | ANV-0616 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0079. |
-| medium | arte-naval | ANV-0621 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0091. |
-| medium | arte-naval | ANV-0648 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0608. |
-| medium | arte-naval | ANV-0651 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0611. |
-| medium | arte-naval | ANV-0658 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0617. |
-| medium | arte-naval | ANV-0659 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0618. |
-| medium | arte-naval | ANV-0663 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0091. |
-| medium | arte-naval | ANV-0665 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0099. |
-| medium | arte-naval | ANV-0668 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0626. |
-| medium | arte-naval | ANV-0670 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0628. |
-| medium | arte-naval | ANV-0672 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0127. |
-| medium | arte-naval | ANV-0676 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0634. |
-| medium | arte-naval | ANV-0683 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0051. |
-| medium | arte-naval | ANV-0690 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0608. |
-| medium | arte-naval | ANV-0693 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0611. |
-| medium | arte-naval | ANV-0701 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0023. |
-| medium | arte-naval | ANV-0708 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0055. |
-| medium | arte-naval | ANV-0710 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0143. |
-| medium | arte-naval | ANV-0722 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0715. |
-| medium | arte-naval | ANV-0736 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0135. |
-| medium | arte-naval | ANV-0749 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0603. |
-| medium | arte-naval | ANV-0751 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0007. |
-| medium | arte-naval | ANV-0777 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0715. |
-| medium | arte-naval | ANV-0778 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0107. |
-| medium | arte-naval | ANV-0781 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0083. |
-| medium | arte-naval | ANV-0783 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0674. |
 
 ## Critério
 
