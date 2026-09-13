@@ -34,7 +34,7 @@ export async function POST(req){
   const user=await withTransaction(async client=>{
    const exists=await client.query("select id from users where lower(email)=lower($1)",[email]);if(exists.rowCount)return null;
    const cpfExists=await client.query("select user_id from user_profiles where cpf_hash=$1",[cpfHash]);if(cpfExists.rowCount)throw Object.assign(new Error("CPF_ALREADY_EXISTS"),{code:"CPF_ALREADY_EXISTS"});
-   const ins=await client.query("insert into users(email,password_hash,email_verified,email_verification_required_at,auth_provider,student_mfa_requested) values($1,$2,false,now(),'password',$3) returning id,email,role,status,session_version",[email,hash,mfaRequested]);
+   const ins=await client.query("insert into users(email,password_hash,email_verified,email_verification_required_at,auth_provider) values($1,$2,false,now(),'password') returning id,email,role,status,session_version",[email,hash]);
    const created=ins.rows[0];
    await client.query(`insert into user_profiles(user_id,full_name,cpf_hash,cpf_enc,phone_enc,phone_last4,postal_code,address_enc,maritime_role,experience_level,profile_completed)
     values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,true)`,[created.id,fullName,cpfHash,encryptPii(cpf),encryptPii(phone),phone.slice(-4),postalCode||null,encryptPii(JSON.stringify(address)),maritimeRole||null,experience||null]);
