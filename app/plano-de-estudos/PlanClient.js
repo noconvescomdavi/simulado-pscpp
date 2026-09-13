@@ -257,7 +257,7 @@ export default function PlanClient({plan}){
 
     <section className={styles.trackingGrid}>
       <article><span>ADERÊNCIA · 30 DIAS</span><strong>{adherence}%</strong><small>{tracking.past_done||0} de {tracking.past_planned||0} metas concluídas</small></article>
-      <article className={backlogCount?styles.trackingWarn:""}><span>PENDÊNCIAS</span><strong>{backlogCount}</strong><small>{backlogMinutes} min estimados em aberto</small></article>
+      <a href="/plano-de-estudos/pendencias" className={backlogCount?styles.trackingWarn:""}><span>PENDÊNCIAS</span><strong>{backlogCount}</strong><small>{backlogMinutes} min estimados em aberto</small></a>
       <article><span>CARGA DIÁRIA</span><strong>{tracking.daily_capacity_minutes||plan.onboarding?.daily_minutes||0} min</strong><small>capacidade configurada</small></article>
       <article><span>TEMPO REAL · HOJE</span><strong>{tracking.study_time?.today_minutes||0} min</strong><small>{tracking.study_time?.week_minutes||0} min nos últimos 7 dias</small></article>
       <article><span>DOMÍNIO ESTIMADO</span><strong>{Math.round(Number(tracking.overall_mastery||0))}%</strong><small>Mastery Score combinado por tópico</small></article>
@@ -266,7 +266,7 @@ export default function PlanClient({plan}){
 
     {backlogCount>0&&<section className={styles.backlogPanel}>
       <div className={styles.sectionHead}><div><span>BACKLOG INTELIGENTE</span><h2>Pendências preservadas e redistribuídas</h2><p>As tarefas continuam registradas na data original e são recolocadas gradualmente nos próximos dias, sem apagar o histórico nem sobrecarregar o cronograma.</p></div><strong>{backlogCount}</strong></div>
-      <div className={styles.backlogList}>{(tracking.backlog||[]).slice(0,6).map(item=><div key={item.source_plan_date+"|"+item.key}><div><b>{item.title}</b><span>Original: {fmtDate(item.source_plan_date)} · ~{item.estimate_minutes} min</span></div><em>ATRASADA</em></div>)}</div>
+      <div className={styles.backlogList}>{(tracking.backlog||[]).slice(0,6).map(item=><a href={"/plano-de-estudos/pendencias#"+encodeURIComponent(item.source_plan_date+"|"+item.key)} key={item.source_plan_date+"|"+item.key}><div><b>{item.title}</b><span>Original: {fmtDate(item.source_plan_date)} · ~{item.estimate_minutes} min</span></div><em>ATRASADA</em></a>)}</div>
     </section>}
 
     <section className={styles.phaseBanner}>
