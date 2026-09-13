@@ -117,6 +117,44 @@ function scenario(id,base,seq){
   options:texts.map((t,i)=>({key:KEYS[i],text:t})),correct_answer:KEYS[desired],
   explanation:clean(base.explanation)||`A alternativa correta está de acordo com ${sourceLocator(base)}.`};
 }
+function moveCorrectTo(q,desired){
+ const current=String(q.correct_answer||'').toUpperCase();
+ const want=String(desired||'').toUpperCase();
+ if(!KEYS.includes(want)||current===want)return q;
+ const a=q.options.find(o=>o.key===current),b=q.options.find(o=>o.key===want);
+ if(!a||!b)return q;
+ const tmp=a.text;a.text=b.text;b.text=tmp;q.correct_answer=want;return q;
+}
+function hasDuplicateOptions(q){
+ const a=(q.options||[]).map(o=>norm(o.text));return a.some(x=>!x)||new Set(a).size!==a.length;
+}
+function ensureUniqueStems(qs){
+ const seen=new Map();
+ const prefaces=[
+  'Em uma revisão técnica conduzida antes da manobra,',
+  'Durante o briefing de passadiço,',
+  'Na preparação do Prático para a faina,',
+  'Ao revisar o conteúdo técnico aplicável,',
+  'Durante a conferência do plano de manobra,',
+  'Em uma avaliação técnica de bordo,',
+  'Na preparação para navegação em águas restritas,',
+  'Durante uma discussão técnica entre Comandante e Prático,'
+ ];
+ for(const q of qs){
+  let n=norm(q.question);
+  if(!seen.has(n)){seen.set(n,1);continue;}
+  if(!(q.tags||[]).includes('pscpp-style-v3')) continue;
+  const k=seen.get(n)||1;seen.set(n,k+1);
+  q.question=`${prefaces[(k-1)%prefaces.length]} considere especificamente o seguinte problema:\n${q.question}`;
+  n=norm(q.question);
+  let suffix=1;
+  while(seen.has(n)){
+    q.question=`${prefaces[(k+suffix-1)%prefaces.length]} ${q.question}`;
+    n=norm(q.question);suffix++;
+  }
+  seen.set(n,1);
+ }
+}
 function nextIdFactory(qs,subject){
  const matches=qs.map(q=>String(q.id||'').match(/^([A-Za-z]+)-(\d+)$/)).filter(Boolean);
  const pref=matches[0]?.[1]||subject.replace(/[^a-z]/gi,'').slice(0,4).toUpperCase();
@@ -144,6 +182,8 @@ for(const subject of SUBJECTS){
   else if(i%4===1) q=seqvf(old.id,choose(g,(i*5)%g.questions.length,4),i);
   else if(i%4===2) q=incorrect(old.id,choose(g,(i*7)%g.questions.length,5),i);
   else q=direct(old.id,g.questions[(i*11)%g.questions.length],i);
+  q=moveCorrectTo(q,key(old));
+  if(hasDuplicateOptions(q)) q=moveCorrectTo(direct(old.id,g.questions[(i*13+1)%g.questions.length],i),key(old));
   q.provenance.replaces_question_id=old.id;q.provenance.rewrite_reason='quality-audit-v2';qs[idx]=q;rewritten++;
  }
  const nextId=nextIdFactory(qs,subject);const added=[];
@@ -154,9 +194,12 @@ for(const subject of SUBJECTS){
   else if(i<40)q=incorrect(nextId(),choose(g,(i*7)%g.questions.length,5),i+1000);
   else if(i<45)q=scenario(nextId(),g.questions[(i*9)%g.questions.length],i+1000);
   else q=direct(nextId(),g.questions[(i*11)%g.questions.length],i+1000);
+  if(hasDuplicateOptions(q)) q=direct(q.id,g.questions[(i*13+2)%g.questions.length],i+1000);
   added.push(q);
  }
- qs.push(...added);bank.questions=qs;
+ qs.push(...added);
+ ensureUniqueStems(qs);
+ bank.questions=qs;
  if('total_questions'in bank)bank.total_questions=qs.length;
  if(bank.validation&&typeof bank.validation==='object')bank.validation.total=qs.length;
  if(bank.metadata&&typeof bank.metadata==='object'&&'total_questions'in bank.metadata)bank.metadata.total_questions=qs.length;
