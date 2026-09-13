@@ -15,7 +15,7 @@ export async function POST(req){
   const email=clean(body.email,320).toLowerCase(),password=String(body.password||""),acceptedTerms=body.accept_terms===true;
   const fullName=clean(body.full_name),cpf=digits(body.cpf),phone=digits(body.phone);
   const postalCode=digits(body.postal_code).slice(0,8),street=clean(body.street),number=clean(body.number,30),complement=clean(body.complement,100),neighborhood=clean(body.neighborhood,100),city=clean(body.city,100),state=clean(body.state,2).toUpperCase();
-  const maritimeRole=clean(body.maritime_role,80),experience=clean(body.experience_level,40),mfaRequested=body.enable_2fa===true;
+  const maritimeRole=clean(body.occupation_type||body.maritime_role,80),experience=clean(body.occupation_category||body.occupation_other||body.experience_level,120),mfaRequested=body.enable_2fa===true;
   if(!(await verifyTurnstile(body.turnstile_token)))return Response.json({error:"Não foi possível confirmar que você é uma pessoa. Atualize a verificação e tente novamente."},{status:400});
   const ipHash=await clientIpHash();
   const [ipLimit,emailLimit]=await Promise.all([

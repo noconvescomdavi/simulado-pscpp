@@ -6,7 +6,7 @@ export const dynamic="force-dynamic";
 function pct(a,b){return Number(b||0)?Math.round((Number(a||0)/Number(b))*1000)/10:0}
 
 export default async function Page(){if(!(await getAdmin("metrics.view")))redirect("/admin");
-  const [answers, funnel, revenue, errors, learning] = await Promise.all([
+  const [answers, funnel, revenue, errors, learning, audience] = await Promise.all([
     query(`select count(*)::int total,count(*) filter(where is_correct)::int correct from question_answers`),
     query(`
       select
@@ -28,7 +28,8 @@ export default async function Page(){if(!(await getAdmin("metrics.view")))redire
         (select coalesce(round(avg(mastery_score),1),0) from student_topic_mastery)::numeric avg_mastery,
         (select coalesce(sum(duration_seconds),0)::bigint from student_study_sessions where started_at>now()-interval '7 days')::bigint study_seconds_7d,
         (select count(*) from student_plan_unavailability where plan_date>=current_date-30)::int unavailable_days_30d
-    `).catch(()=>({rows:[{}]}))
+    `).catch(()=>({rows:[{}]})),
+    query(`select coalesce(maritime_role,\'nao_informado\') occupation_type,coalesce(experience_level,\'Não informado\') occupation_category,count(*)::int total from user_profiles group by 1,2 order by total desc`).catch(()=>({rows:[]}))
   ]);
 
   const x=answers.rows[0]||{},f=funnel.rows[0]||{},r=revenue.rows[0]||{},l=learning.rows[0]||{};
@@ -62,6 +63,11 @@ export default async function Page(){if(!(await getAdmin("metrics.view")))redire
       <article className="card"><span>DIAS INDISPONÍVEIS</span><h2>{l.unavailable_days_30d||0}</h2><p>informados pelos alunos em 30 dias</p></article>
     </div>
 
+    <h2 style={{marginTop:24}}>Perfil profissional do público</h2>
+    <div className="grid">
+      {audience.rows.map((a,i)=><article className="card" key={i}><span>{a.occupation_type==="aquaviario"?"MARÍTIMO/AQUAVIÁRIO":a.occupation_type==="nao_aquaviario"?"NÃO AQUAVIÁRIO":a.occupation_type==="outros"?"OUTROS":"NÃO INFORMADO"}</span><h2>{a.total}</h2><p>{a.occupation_category}</p></article>)}
+      {!audience.rows.length&&<article className="card"><p>Ainda não há dados profissionais cadastrados.</p></article>}
+    </div>
     <h2 style={{marginTop:24}}>Indicadores comerciais</h2>
     <div className="grid">
       <article className="card"><h3>Ativação → compra</h3><b>{pct(buyers,activated)}%</b></article>

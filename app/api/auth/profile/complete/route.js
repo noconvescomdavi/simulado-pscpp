@@ -21,7 +21,7 @@ export async function POST(req){
    await client.query(`insert into user_profiles(user_id,full_name,cpf_hash,cpf_enc,phone_enc,phone_last4,postal_code,address_enc,maritime_role,experience_level,profile_completed)
     values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,true)
     on conflict(user_id) do update set full_name=excluded.full_name,cpf_hash=excluded.cpf_hash,cpf_enc=excluded.cpf_enc,phone_enc=excluded.phone_enc,phone_last4=excluded.phone_last4,postal_code=excluded.postal_code,address_enc=excluded.address_enc,maritime_role=excluded.maritime_role,experience_level=excluded.experience_level,profile_completed=true,updated_at=now()`,
-    [s.id,fullName,cpfHash,encryptPii(cpf),encryptPii(phone),phone.slice(-4),postalCode||null,encryptPii(JSON.stringify(address)),clean(b.maritime_role,80)||null,clean(b.experience_level,40)||null]);
+    [s.id,fullName,cpfHash,encryptPii(cpf),encryptPii(phone),phone.slice(-4),postalCode||null,encryptPii(JSON.stringify(address)),clean(b.occupation_type||b.maritime_role,80)||null,clean(b.occupation_category||b.occupation_other||b.experience_level,120)||null]);
    await client.query("update users set student_mfa_requested=$2,updated_at=now() where id=$1",[s.id,b.enable_2fa===true]);
   });
   return Response.json({ok:true,next:b.enable_2fa===true?"/configurar-2fa":"/area-do-aluno"});
