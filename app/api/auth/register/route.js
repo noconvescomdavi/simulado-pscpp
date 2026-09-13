@@ -36,8 +36,8 @@ export async function POST(req){
    const cpfExists=await client.query("select user_id from user_profiles where cpf_hash=$1",[cpfHash]);if(cpfExists.rowCount)throw Object.assign(new Error("CPF_ALREADY_EXISTS"),{code:"CPF_ALREADY_EXISTS"});
    const ins=await client.query("insert into users(email,password_hash,email_verified,email_verification_required_at,auth_provider,student_mfa_requested) values($1,$2,false,now(),'password',$3) returning id,email,role,status,session_version",[email,hash,mfaRequested]);
    const created=ins.rows[0];
-   await client.query(`insert into user_profiles(user_id,full_name,cpf_hash,cpf_enc,phone_enc,phone_last4,postal_code,address_enc,maritime_role,experience_level)
-    values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)`,[created.id,fullName,cpfHash,encryptPii(cpf),encryptPii(phone),phone.slice(-4),postalCode||null,encryptPii(JSON.stringify(address)),maritimeRole||null,experience||null]);
+   await client.query(`insert into user_profiles(user_id,full_name,cpf_hash,cpf_enc,phone_enc,phone_last4,postal_code,address_enc,maritime_role,experience_level,profile_completed)
+    values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,true)`,[created.id,fullName,cpfHash,encryptPii(cpf),encryptPii(phone),phone.slice(-4),postalCode||null,encryptPii(JSON.stringify(address)),maritimeRole||null,experience||null]);
    await client.query("insert into user_access(user_id,product_code,status,lifetime) values($1,'pscpp-vitalicio','pending',false) on conflict do nothing",[created.id]);
    await client.query("insert into user_consents(user_id,terms_version,privacy_version,source,ip_hash) values($1,$2,$3,'registration',$4)",[created.id,TERMS_VERSION,PRIVACY_VERSION,ipHash]);
    return created;
