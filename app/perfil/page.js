@@ -4,6 +4,7 @@ import {query} from "../../lib/db";
 import {formatCpf} from "../../lib/profile";
 import StudentHeader from "../components/StudentHeader";
 import styles from "./profile.module.css";
+import ProfessionalFields from "./ProfessionalFields";
 
 export const dynamic="force-dynamic";
 
@@ -23,6 +24,14 @@ export default async function Page({searchParams}){
       <label>Telefone<input name="phone" defaultValue={p.phone||""}/></label>
       <label>WhatsApp (opcional)<input name="whatsapp" defaultValue={p.whatsapp||""}/></label>
       <label>UF (opcional)<input name="state" maxLength="2" defaultValue={p.state||""}/></label>
+      <div className={styles.professionBlock}>
+        <div className={styles.professionHead}>
+          <span>ATUAÇÃO PROFISSIONAL</span>
+          <strong>{p.experience_level||"Não informado"}</strong>
+          <small>{p.maritime_role==="aquaviario"?"Marítimo/Aquaviário":p.maritime_role==="nao_aquaviario"?"Não Aquaviário":p.maritime_role==="outros"?"Outros":"Atuação não informada"}</small>
+        </div>
+        <ProfessionalFields initialType={p.maritime_role||""} initialCategory={p.experience_level||""}/>
+      </div>
       <div className={styles.actions}><button>Salvar meus dados</button></div>
     </form>
 
