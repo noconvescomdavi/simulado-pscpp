@@ -3,7 +3,7 @@ import path from 'node:path';
 
 const root=process.cwd(), qdir=path.join(root,'data','questions'), rdir=path.join(root,'reports');
 const audit=JSON.parse(fs.readFileSync(path.join(rdir,'question-quality-audit-v2.json'),'utf8'));
-const SUBJECTS=['arte-naval','manobrabilidade','navegacao-aguas-restritas','legislacao-regulamentacao','meteorologia-oceanografia','comunicacoes','conhecimentos-gerais'];
+const SUBJECTS=['manobrabilidade','navegacao-aguas-restritas','legislacao-regulamentacao','meteorologia-oceanografia','comunicacoes','conhecimentos-gerais'];
 const KEYS=['A','B','C','D','E'];
 const LIMIT=300;
 const TARGET_CODES=new Set(['DUPLICATE_OPTION_SET','GENERIC_TEMPLATE_LANGUAGE']);
