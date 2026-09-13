@@ -1,5 +1,5 @@
-const SHELL_CACHE = "estibordo-shell-v3";
-const PAGE_CACHE = "estibordo-pages-v1";
+const SHELL_CACHE = "estibordo-shell-v4";
+const PAGE_CACHE = "estibordo-pages-v2";
 const RIPEAM_MODEL_CACHE = "estibordo-ripeam-models-v1";
 const RIPEAM_RUNTIME_CACHE = "estibordo-ripeam-runtime-v1";
 const RIPEAM_MAX_MODEL_ENTRIES = 12;
@@ -120,19 +120,30 @@ self.addEventListener("fetch", (event) => {
   }
 
   if (request.mode === "navigate") {
+    const offlineCapable =
+      url.pathname === "/offline" ||
+      url.pathname === "/area-do-aluno" ||
+      url.pathname === "/hoje" ||
+      url.pathname === "/simulado" ||
+      url.pathname.startsWith("/simulado/") ||
+      url.pathname === "/conteudos/banco-de-questoes" ||
+      url.pathname.startsWith("/conteudos/caderno/");
+
     event.respondWith((async()=>{
       const cache=await caches.open(PAGE_CACHE);
       try{
-        const response=await fetch(request);
-        if(response?.ok && !response.redirected){
+        const response=await fetch(request,{cache:"no-store"});
+        if(offlineCapable && response?.ok && !response.redirected){
           try{await cache.put(request,response.clone())}catch{}
         }
         return response;
       }catch{
-        const cached=await cache.match(request);
-        if(cached)return cached;
-        const offlineCenter=await cache.match("/offline");
-        if(offlineCenter)return offlineCenter;
+        if(offlineCapable){
+          const cached=await cache.match(request);
+          if(cached)return cached;
+          const offlineCenter=await cache.match("/offline");
+          if(offlineCenter)return offlineCenter;
+        }
         return caches.match("/offline.html");
       }
     })());
