@@ -10,7 +10,7 @@ import StudentMobileMenu from "./StudentMobileMenu";
 function Menu({ active = "", flashcardDecks = [] }) {
   return (
     <nav className={styles.nav} aria-label="Área do aluno">
-      <a className={active === "painel" ? styles.active : ""} href="/area-do-aluno">\n        <span className={styles.icon}>⌂</span><span>Hoje</span>\n      </a>
+      <a className={active === "painel" ? styles.active : ""} href="/area-do-aluno">        <span className={styles.icon}>⌂</span><span>Hoje</span>      </a>
 
       <a className={active === "perfil" ? styles.active : ""} href="/perfil">
         <span className={styles.icon}>♙</span><span>Perfil</span>
@@ -25,7 +25,7 @@ function Menu({ active = "", flashcardDecks = [] }) {
           <b className={styles.chevron}>⌄</b>
         </summary>
         <div className={styles.submenu}><div>
-          <a href="/plano-de-estudos">Minha Rota</a>\n          <a href="/hoje">Plano de Hoje</a>\n          <a href="/treino-adaptativo">Treino Inteligente</a>\n          <a href="/centro-de-revisao">Centro de Revisão</a>\n          <a href="/analise-de-fraquezas">Desempenho e Fraquezas</a>\n          <a href="/minha-trajetoria">Minha Trajetória</a>
+          <a href="/plano-de-estudos">Meu Plano de Estudos</a>          <a href="/hoje">Plano de Hoje</a>          <a href="/treino-adaptativo">Treino Inteligente</a>          <a href="/centro-de-revisao">Centro de Revisão</a>          <a href="/analise-de-fraquezas">Desempenho e Fraquezas</a>          <a href="/minha-trajetoria">Minha Trajetória</a>
         </div></div>
       </details>
 
