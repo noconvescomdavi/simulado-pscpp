@@ -15,9 +15,9 @@ export default function Cadastro(){
   const r=await fetch("/api/auth/register",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
   const j=await r.json();if(r.ok)location.href="/verificar-email?email="+encodeURIComponent(j.email||o.email);else setMsg(j.error||"Não foi possível criar a conta.");
  }
- function googleSignup(){if(!accepted){setMsg("Aceite os Termos de Uso e a Política de Privacidade antes de continuar com o Google.");return}location.href="/api/auth/google/start?intent=signup&terms=1"}
+ function googleSignup(){if(!accepted){setMsg("Para continuar com o Google, aceite primeiro os Termos de Uso e a Política de Privacidade.");document.getElementById("google-terms-consent")?.scrollIntoView({behavior:"smooth",block:"center"});return}location.href="/api/auth/google/start?intent=signup&terms=1"}
  return <><Nav/><main className="authPage authPageWide"><section className="authShell authShellWide"><div className="authStory"><span>COMECE SUA PREPARAÇÃO</span><h1>Crie uma conta mais completa e segura desde o primeiro acesso.</h1><p>Seus dados de conta ficam separados dos dados acadêmicos. CPF, telefone e endereço são tratados como informações pessoais protegidas.</p><ul><li>Verificação anti-bot</li><li>Login opcional com Google</li><li>reCAPTCHA no cadastro</li><li>Dados pessoais protegidos</li></ul></div><div className="authForm authFormWide"><div className="eyebrow">NOVO ALUNO</div><h2>Criar conta</h2><p>Preencha seus dados principais. Informações marítimas ajudam a personalizar a experiência e podem ser deixadas em branco.</p>
- <button type="button" className="googleAuthButton" onClick={googleSignup}><span>G</span> Continuar com Google</button><div className="authDivider"><span>ou cadastre com e-mail</span></div>
+ <button type="button" className="googleAuthButton" onClick={googleSignup}><span>G</span> Continuar com Google</button>{!accepted&&<div className="googleTermsHint">Para usar o Google, aceite os Termos de Uso e a Política de Privacidade no final do cadastro.</div>}<div className="authDivider"><span>ou cadastre com e-mail</span></div>
  <form onSubmit={submit}>
   <div className="authSectionTitle">Identificação</div><div className="authFieldsGrid">
    <div className="field fieldSpan2"><label>NOME COMPLETO</label><input name="full_name" autoComplete="name" required/></div>
@@ -45,7 +45,7 @@ export default function Cadastro(){
    <div className="field"><label>CONFIRMAR SENHA</label><div className="passwordWrap"><input name="confirm" type={showPassword?"text":"password"} autoComplete="new-password" minLength="10" required/><button type="button" className="passwordToggle" onClick={()=>setShowPassword(v=>!v)}>{showPassword?"Ocultar":"Mostrar"}</button></div></div>
   </div>
   <RecaptchaWidget/>
-  <label className="authCheck"><input name="accept_terms" type="checkbox" checked={accepted} onChange={e=>setAccepted(e.target.checked)} required/><span>Li e aceito os <a href="/termos-de-uso" target="_blank">Termos de Uso</a> e a <a href="/politica-de-privacidade" target="_blank">Política de Privacidade</a>.</span></label>
+  <label id="google-terms-consent" className="authCheck"><input name="accept_terms" type="checkbox" checked={accepted} onChange={e=>setAccepted(e.target.checked)} required/><span>Li e aceito os <a href="/termos-de-uso" target="_blank">Termos de Uso</a> e a <a href="/politica-de-privacidade" target="_blank">Política de Privacidade</a>.</span></label>
   <button className="btn primary full">Criar minha conta</button><div className="msg" role="status">{msg}</div>
  </form><div className="authFoot">Já possui uma conta? <a href="/login">Entrar</a></div></div></section></main><Footer/></>
 }
