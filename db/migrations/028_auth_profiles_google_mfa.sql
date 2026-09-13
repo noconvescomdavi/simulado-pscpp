@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS user_profiles (
   address_enc TEXT,
   maritime_role VARCHAR(80),
   experience_level VARCHAR(40),
+  profile_completed BOOLEAN NOT NULL DEFAULT FALSE,
   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
