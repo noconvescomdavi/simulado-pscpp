@@ -5,7 +5,7 @@ import {TERMS_VERSION,PRIVACY_VERSION} from "../../../../lib/legal";
 import {passwordPolicyError} from "../../../../lib/password-policy";
 import {clientIpHash,consumeRateLimit,identityHash,rateLimitResponse,assertSameOrigin} from "../../../../lib/security";
 import {digits,encryptPii,isValidCpf,piiHash} from "../../../../lib/pii";
-import {verifyTurnstile} from "../../../../lib/turnstile";
+import {verifyRecaptcha} from "../../../../lib/recaptcha";
 
 function clean(value,max=180){return String(value||"").trim().slice(0,max)}
 export async function POST(req){
@@ -15,8 +15,8 @@ export async function POST(req){
   const email=clean(body.email,320).toLowerCase(),password=String(body.password||""),acceptedTerms=body.accept_terms===true;
   const fullName=clean(body.full_name),cpf=digits(body.cpf),phone=digits(body.phone);
   const postalCode=digits(body.postal_code).slice(0,8),street=clean(body.street),number=clean(body.number,30),complement=clean(body.complement,100),neighborhood=clean(body.neighborhood,100),city=clean(body.city,100),state=clean(body.state,2).toUpperCase();
-  const maritimeRole=clean(body.occupation_type||body.maritime_role,80),experience=clean(body.occupation_category||body.occupation_other||body.experience_level,120),mfaRequested=body.enable_2fa===true;
-  if(!(await verifyTurnstile(body.turnstile_token)))return Response.json({error:"Não foi possível confirmar que você é uma pessoa. Atualize a verificação e tente novamente."},{status:400});
+  const maritimeRole=clean(body.occupation_type||body.maritime_role,80),experience=clean(body.occupation_category||body.occupation_other||body.experience_level,120);
+  if(!(await verifyRecaptcha(body.recaptcha_token)))return Response.json({error:"Não foi possível confirmar o reCAPTCHA. Faça a verificação e tente novamente."},{status:400});
   const ipHash=await clientIpHash();
   const [ipLimit,emailLimit]=await Promise.all([
    consumeRateLimit({action:"register_ip",keyHash:ipHash,limit:10,windowSeconds:3600}),
@@ -45,7 +45,7 @@ export async function POST(req){
   if(!user)return Response.json({error:"Já existe uma conta com este e-mail."},{status:409});
   const verification=await createEmailVerificationToken(user.id);let deliveryFailed=false;
   try{await sendVerificationEmail({to:user.email,verifyUrl:verification.url})}catch(e){deliveryFailed=true;console.error("Falha ao enviar verificação de e-mail:",e)}
-  return Response.json({ok:true,verificationRequired:true,email:user.email,deliveryFailed,mfaRequested});
+  return Response.json({ok:true,verificationRequired:true,email:user.email,deliveryFailed});
  }catch(error){
   if(error?.code==="CPF_ALREADY_EXISTS")return Response.json({error:"Este CPF já está vinculado a uma conta."},{status:409});
   console.error("Erro de cadastro:",error);return Response.json({error:"Não foi possível criar a conta."},{status:500});

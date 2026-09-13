@@ -1,7 +1,7 @@
 "use client";
 import {useState} from "react";
 import {Nav,Footer} from "../components";
-import TurnstileWidget from "../components/TurnstileWidget";
+import RecaptchaWidget from "../components/RecaptchaWidget";
 const AQUAVIARIO_GROUPS=[["1º GRUPO — MARÍTIMOS · CONVÉS",["CAPITÃO DE LONGO CURSO — CLC","CAPITÃO DE CABOTAGEM — CCB","PRIMEIRO OFICIAL DE NÁUTICA — 1ON","SEGUNDO OFICIAL DE NÁUTICA — 2ON","MESTRE DE CABOTAGEM — MCB","CONTRAMESTRE — CTR","MARINHEIRO DE CONVÉS — MNC","MOÇO DE CONVÉS — MOC","MARINHEIRO AUXILIAR DE CONVÉS — MAC"]],["1º GRUPO — MARÍTIMOS · MÁQUINAS",["OFICIAL SUPERIOR DE MÁQUINAS — OSM","PRIMEIRO OFICIAL DE MÁQUINAS — 1OM","SEGUNDO OFICIAL DE MÁQUINAS — 2OM","CONDUTOR DE MÁQUINAS — CDM","ELETRICISTA — ELT","MARINHEIRO DE MÁQUINAS — MNM","MOÇO DE MÁQUINAS — MOM","MARINHEIRO AUXILIAR DE MÁQUINAS — MAM"]],["2º GRUPO — FLUVIÁRIOS · CONVÉS",["CAPITÃO FLUVIAL — CFL","PILOTO FLUVIAL — PLF","MESTRE FLUVIAL — MFL","CONTRAMESTRE FLUVIAL — CMF","MARINHEIRO FLUVIAL DE CONVÉS — MFC","MARINHEIRO FLUVIAL AUXILIAR DE CONVÉS — MAF"]],["2º GRUPO — FLUVIÁRIOS · MÁQUINAS",["SUPERVISOR MAQUINISTA MOTORISTA FLUVIAL — SUF","CONDUTOR MAQUINISTA MOTORISTA FLUVIAL — CTF","MARINHEIRO FLUVIAL DE MÁQUINAS — MFM","MARINHEIRO FLUVIAL AUXILIAR DE MÁQUINAS — MMA"]],["3º GRUPO — PESCADORES · CONVÉS",["PATRÃO DE PESCA DE ALTO MAR — PAP","PATRÃO DE PESCA NA NAVEGAÇÃO INTERIOR — PPI","CONTRAMESTRE DE PESCA NA NAVEGAÇÃO INTERIOR — CPI","PESCADOR PROFISSIONAL ESPECIALIZADO — PEP","PESCADOR PROFISSIONAL — POP","APRENDIZ DE PESCA — APP"]],["3º GRUPO — PESCADORES · MÁQUINAS",["CONDUTOR MOTORISTA DE PESCA — CMP","MOTORISTA DE PESCA — MOP","APRENDIZ DE MOTORISTA — APM"]],["3º GRUPO — PESCADORES · SAÚDE/CÂMARA",["ENFERMEIRO — ENF","AUXILIAR DE SAÚDE — ASA","TAIFEIRO — TAA","COZINHEIRO — CZA"]],["4º GRUPO — MERGULHADORES",["MERGULHADOR QUE OPERA COM MISTURA GASOSA ARTIFICIAL — MGP","MERGULHADOR QUE OPERA COM AR COMPRIMIDO — MGE"]],["5º GRUPO — PRÁTICOS",["PRÁTICO — PRT","PRATICANTE DE PRÁTICO — PRP"]],["6º GRUPO — MANOBRA E DOCAGEM",["AGENTE DE MANOBRA E DOCAGEM — AMD"]]];
 const NAO_AQUAVIARIO=["ARRAIS AMADOR — ARA","MESTRE AMADOR — MTA","CAPITÃO AMADOR — CPA"];
 
@@ -11,12 +11,12 @@ export default function Cadastro(){
   e.preventDefault();const f=new FormData(e.currentTarget),o=Object.fromEntries(f);
   if(o.password!==o.confirm){setMsg("As senhas não coincidem.");return}
   setMsg("Criando sua conta...");
-  const payload={...o,accept_terms:o.accept_terms==="on",enable_2fa:o.enable_2fa==="on",turnstile_token:o["cf-turnstile-response"]||""};
+  const payload={...o,accept_terms:o.accept_terms==="on",recaptcha_token:o["g-recaptcha-response"]||""};
   const r=await fetch("/api/auth/register",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
   const j=await r.json();if(r.ok)location.href="/verificar-email?email="+encodeURIComponent(j.email||o.email);else setMsg(j.error||"Não foi possível criar a conta.");
  }
  function googleSignup(){if(!accepted){setMsg("Aceite os Termos de Uso e a Política de Privacidade antes de continuar com o Google.");return}location.href="/api/auth/google/start?intent=signup&terms=1"}
- return <><Nav/><main className="authPage authPageWide"><section className="authShell authShellWide"><div className="authStory"><span>COMECE SUA PREPARAÇÃO</span><h1>Crie uma conta mais completa e segura desde o primeiro acesso.</h1><p>Seus dados de conta ficam separados dos dados acadêmicos. CPF, telefone e endereço são tratados como informações pessoais protegidas.</p><ul><li>Verificação anti-bot</li><li>Login opcional com Google</li><li>2FA com aplicativo autenticador</li><li>Dados pessoais protegidos</li></ul></div><div className="authForm authFormWide"><div className="eyebrow">NOVO ALUNO</div><h2>Criar conta</h2><p>Preencha seus dados principais. Informações marítimas ajudam a personalizar a experiência e podem ser deixadas em branco.</p>
+ return <><Nav/><main className="authPage authPageWide"><section className="authShell authShellWide"><div className="authStory"><span>COMECE SUA PREPARAÇÃO</span><h1>Crie uma conta mais completa e segura desde o primeiro acesso.</h1><p>Seus dados de conta ficam separados dos dados acadêmicos. CPF, telefone e endereço são tratados como informações pessoais protegidas.</p><ul><li>Verificação anti-bot</li><li>Login opcional com Google</li><li>reCAPTCHA no cadastro</li><li>Dados pessoais protegidos</li></ul></div><div className="authForm authFormWide"><div className="eyebrow">NOVO ALUNO</div><h2>Criar conta</h2><p>Preencha seus dados principais. Informações marítimas ajudam a personalizar a experiência e podem ser deixadas em branco.</p>
  <button type="button" className="googleAuthButton" onClick={googleSignup}><span>G</span> Continuar com Google</button><div className="authDivider"><span>ou cadastre com e-mail</span></div>
  <form onSubmit={submit}>
   <div className="authSectionTitle">Identificação</div><div className="authFieldsGrid">
@@ -44,8 +44,7 @@ export default function Cadastro(){
    <div className="field"><label>SENHA</label><div className="passwordWrap"><input name="password" type={showPassword?"text":"password"} autoComplete="new-password" minLength="10" required/><button type="button" className="passwordToggle" onClick={()=>setShowPassword(v=>!v)}>{showPassword?"Ocultar":"Mostrar"}</button></div></div>
    <div className="field"><label>CONFIRMAR SENHA</label><div className="passwordWrap"><input name="confirm" type={showPassword?"text":"password"} autoComplete="new-password" minLength="10" required/><button type="button" className="passwordToggle" onClick={()=>setShowPassword(v=>!v)}>{showPassword?"Ocultar":"Mostrar"}</button></div></div>
   </div>
-  <label className="authCheck"><input name="enable_2fa" type="checkbox"/><span>Quero ativar autenticação em duas etapas (2FA) após confirmar meu e-mail.</span></label>
-  <TurnstileWidget/>
+  <RecaptchaWidget/>
   <label className="authCheck"><input name="accept_terms" type="checkbox" checked={accepted} onChange={e=>setAccepted(e.target.checked)} required/><span>Li e aceito os <a href="/termos-de-uso" target="_blank">Termos de Uso</a> e a <a href="/politica-de-privacidade" target="_blank">Política de Privacidade</a>.</span></label>
   <button className="btn primary full">Criar minha conta</button><div className="msg" role="status">{msg}</div>
  </form><div className="authFoot">Já possui uma conta? <a href="/login">Entrar</a></div></div></section></main><Footer/></>
