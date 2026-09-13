@@ -3,7 +3,6 @@ import {cookies} from "next/headers";
 import {query,withTransaction} from "../../../../../lib/db";
 import {exchangeGoogleAuthCode} from "../../../../../lib/google-auth";
 import {createSession} from "../../../../../lib/auth";
-import {beginStudentMfaChallenge} from "../../../../../lib/student-mfa";
 import {TERMS_VERSION,PRIVACY_VERSION} from "../../../../../lib/legal";
 import {clientIpHash} from "../../../../../lib/security";
 
@@ -43,7 +42,6 @@ export async function GET(request){
     });
     if(!user)return clear(NextResponse.redirect(new URL("/cadastro?erro="+encodeURIComponent("Não existe conta com este Google. Use Criar conta com Google."),base)));
     if(user.status!=="active")return clear(NextResponse.redirect(new URL("/login?erro="+encodeURIComponent("Conta indisponível."),base)));
-    if(user.student_mfa_enabled){await beginStudentMfaChallenge(user);return clear(NextResponse.redirect(new URL("/mfa",base)))}
     await query("update users set last_login_at=now(),updated_at=now() where id=$1",[user.id]);
     await createSession(user);
     const target=createdNow?"/completar-cadastro":(intent==="signup"?"/area-do-aluno?novo=1":"/area-do-aluno");
