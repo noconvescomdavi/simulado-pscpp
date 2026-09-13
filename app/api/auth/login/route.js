@@ -3,6 +3,8 @@ import { query } from "../../../../lib/db";
 import { createSession } from "../../../../lib/auth";
 import { beginAdminMfaChallenge } from "../../../../lib/admin-mfa";
 import { hasCurrentLegalConsent } from "../../../../lib/legal-consent";
+import {beginStudentMfaChallenge} from "../../../../lib/student-mfa";
+import {verifyTurnstile} from "../../../../lib/turnstile";
 import {
   clientIpHash,
   consumeRateLimit,
@@ -17,6 +19,7 @@ export async function POST(req) {
     const body = await req.json().catch(() => ({}));
     const normalized = String(body.email || "").trim().toLowerCase();
     const password = String(body.password || "");
+    if(!(await verifyTurnstile(body.turnstile_token)))return Response.json({error:"Não foi possível confirmar a verificação anti-bot."},{status:400});
 
     const [ipLimit, accountLimit] = await Promise.all([
       clientIpHash().then((keyHash) =>
@@ -34,7 +37,7 @@ export async function POST(req) {
     if (!accountLimit.allowed) return rateLimitResponse(accountLimit);
 
     const result = await query(
-      "select id,email,password_hash,role,status,session_version,email_verified,email_verification_required_at,admin_mfa_enabled from users where lower(email)=lower($1) limit 1",
+      "select id,email,password_hash,role,status,session_version,email_verified,email_verification_required_at,admin_mfa_enabled,student_mfa_enabled,student_mfa_requested from users where lower(email)=lower($1) limit 1",
       [normalized]
     );
     const user = result.rows[0];
@@ -58,10 +61,15 @@ export async function POST(req) {
       return Response.json({ok:true,requiresAdminMfa:true});
     }
 
+    if(user.role!=="admin" && user.student_mfa_enabled){
+      await beginStudentMfaChallenge(user);
+      return Response.json({ok:true,requiresMfa:true});
+    }
+
     await query("update users set last_login_at=now(),updated_at=now() where id=$1", [user.id]);
     await createSession(user);
     const requiresTerms = !(await hasCurrentLegalConsent(user.id));
-    return Response.json({ ok: true, requiresTerms });
+    return Response.json({ ok: true, requiresTerms, requiresMfaSetup: Boolean(user.student_mfa_requested && !user.student_mfa_enabled) });
   } catch (error) {
     console.error("Erro de login:", error);
     return Response.json({ error: "Não foi possível entrar." }, { status: 500 });

@@ -1,9 +1,48 @@
 "use client";
 import {useState} from "react";
 import {Nav,Footer} from "../components";
+import TurnstileWidget from "../components/TurnstileWidget";
+
 export default function Cadastro(){
- const [msg,setMsg]=useState("");
- const [showPassword,setShowPassword]=useState(false);
- async function submit(e){e.preventDefault();const f=new FormData(e.currentTarget);const o=Object.fromEntries(f);if(o.password!==o.confirm){setMsg("As senhas não coincidem.");return}setMsg("Criando sua conta...");const r=await fetch("/api/auth/register",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:o.email,password:o.password,accept_terms:o.accept_terms==="on"})});const j=await r.json();if(r.ok)location.href="/verificar-email?email="+encodeURIComponent(j.email||o.email);else setMsg(j.error||"Não foi possível criar a conta.");}
- return <><Nav/><main className="authPage"><section className="authShell"><div className="authStory"><span>COMECE SUA PREPARAÇÃO</span><h1>Organize hoje o caminho que você quer levar até a prova.</h1><p>Ao criar sua conta, o próximo passo é configurar seu perfil de estudos para que a plataforma possa organizar sua preparação.</p><ul><li>Questionário inicial de estudos</li><li>Plano até a data da prova</li><li>Bibliografia integrada ao planejamento</li><li>Ferramentas de prática e revisão</li></ul></div><div className="authForm"><div className="eyebrow">NOVO ALUNO</div><h2>Criar conta</h2><p>Você começa somente com e-mail e senha. Depois, configuramos seu plano de estudos.</p><form onSubmit={submit}><div className="field"><label htmlFor="cad-email">E-MAIL</label><input id="cad-email" name="email" type="email" autoComplete="email" placeholder="seu@email.com" required/></div><div className="field"><label htmlFor="cad-password">SENHA</label><div className="passwordWrap"><input id="cad-password" name="password" type={showPassword?"text":"password"} autoComplete="new-password" minLength="10" placeholder="Mínimo de 10 caracteres" required/><button type="button" className="passwordToggle" aria-label={showPassword?"Ocultar senha":"Mostrar senha"} onClick={()=>setShowPassword(v=>!v)}>{showPassword?"Ocultar":"Mostrar"}</button></div></div><div className="field"><label htmlFor="cad-confirm">CONFIRMAR SENHA</label><div className="passwordWrap"><input id="cad-confirm" name="confirm" type={showPassword?"text":"password"} autoComplete="new-password" minLength="10" placeholder="Repita a senha" required/><button type="button" className="passwordToggle" onClick={()=>setShowPassword(v=>!v)}>{showPassword?"Ocultar":"Mostrar"}</button></div></div><label style={{display:"flex",gap:9,alignItems:"flex-start",fontSize:11,lineHeight:1.5,color:"#607486",margin:"4px 0 12px"}}><input name="accept_terms" type="checkbox" required style={{marginTop:2}}/><span>Li e aceito os <a href="/termos-de-uso" target="_blank">Termos de Uso</a> e a <a href="/politica-de-privacidade" target="_blank">Política de Privacidade</a>.</span></label><button className="btn primary full">Criar minha conta</button><div className="msg" role="status">{msg}</div></form><div className="authFoot">Já possui uma conta? <a href="/login">Entrar</a></div></div></section></main><Footer/></>
+ const [msg,setMsg]=useState(""),[showPassword,setShowPassword]=useState(false),[accepted,setAccepted]=useState(false);
+ async function submit(e){
+  e.preventDefault();const f=new FormData(e.currentTarget),o=Object.fromEntries(f);
+  if(o.password!==o.confirm){setMsg("As senhas não coincidem.");return}
+  setMsg("Criando sua conta...");
+  const payload={...o,accept_terms:o.accept_terms==="on",enable_2fa:o.enable_2fa==="on",turnstile_token:o["cf-turnstile-response"]||""};
+  const r=await fetch("/api/auth/register",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+  const j=await r.json();if(r.ok)location.href="/verificar-email?email="+encodeURIComponent(j.email||o.email);else setMsg(j.error||"Não foi possível criar a conta.");
+ }
+ function googleSignup(){if(!accepted){setMsg("Aceite os Termos de Uso e a Política de Privacidade antes de continuar com o Google.");return}location.href="/api/auth/google/start?intent=signup&terms=1"}
+ return <><Nav/><main className="authPage authPageWide"><section className="authShell authShellWide"><div className="authStory"><span>COMECE SUA PREPARAÇÃO</span><h1>Crie uma conta mais completa e segura desde o primeiro acesso.</h1><p>Seus dados de conta ficam separados dos dados acadêmicos. CPF, telefone e endereço são tratados como informações pessoais protegidas.</p><ul><li>Verificação anti-bot</li><li>Login opcional com Google</li><li>2FA com aplicativo autenticador</li><li>Dados pessoais protegidos</li></ul></div><div className="authForm authFormWide"><div className="eyebrow">NOVO ALUNO</div><h2>Criar conta</h2><p>Preencha seus dados principais. Informações marítimas ajudam a personalizar a experiência e podem ser deixadas em branco.</p>
+ <button type="button" className="googleAuthButton" onClick={googleSignup}><span>G</span> Continuar com Google</button><div className="authDivider"><span>ou cadastre com e-mail</span></div>
+ <form onSubmit={submit}>
+  <div className="authSectionTitle">Identificação</div><div className="authFieldsGrid">
+   <div className="field fieldSpan2"><label>NOME COMPLETO</label><input name="full_name" autoComplete="name" required/></div>
+   <div className="field"><label>CPF</label><input name="cpf" inputMode="numeric" placeholder="000.000.000-00" required/></div>
+   <div className="field"><label>TELEFONE / WHATSAPP</label><input name="phone" inputMode="tel" autoComplete="tel" placeholder="(21) 99999-9999" required/></div>
+   <div className="field fieldSpan2"><label>E-MAIL</label><input name="email" type="email" autoComplete="email" placeholder="seu@email.com" required/></div>
+  </div>
+  <div className="authSectionTitle">Endereço <small>pode completar depois</small></div><div className="authFieldsGrid">
+   <div className="field"><label>CEP</label><input name="postal_code" inputMode="numeric" autoComplete="postal-code"/></div>
+   <div className="field"><label>ESTADO</label><input name="state" maxLength="2" placeholder="RJ"/></div>
+   <div className="field fieldSpan2"><label>ENDEREÇO</label><input name="street" autoComplete="address-line1"/></div>
+   <div className="field"><label>NÚMERO</label><input name="number"/></div>
+   <div className="field"><label>COMPLEMENTO</label><input name="complement" autoComplete="address-line2"/></div>
+   <div className="field"><label>BAIRRO</label><input name="neighborhood"/></div>
+   <div className="field"><label>CIDADE</label><input name="city" autoComplete="address-level2"/></div>
+  </div>
+  <div className="authSectionTitle">Contexto marítimo <small>opcional</small></div><div className="authFieldsGrid">
+   <div className="field"><label>ATUAÇÃO</label><select name="maritime_role" defaultValue=""><option value="">Prefiro não informar</option><option>Aquaviário</option><option>Oficial de Náutica</option><option>Contramestre</option><option>Comandante</option><option>Praticante</option><option>Estudante</option><option>Outro</option></select></div>
+   <div className="field"><label>NÍVEL DE EXPERIÊNCIA</label><select name="experience_level" defaultValue=""><option value="">Prefiro não informar</option><option>Iniciante</option><option>Intermediário</option><option>Avançado</option></select></div>
+  </div>
+  <div className="authSectionTitle">Segurança</div><div className="authFieldsGrid">
+   <div className="field"><label>SENHA</label><div className="passwordWrap"><input name="password" type={showPassword?"text":"password"} autoComplete="new-password" minLength="10" required/><button type="button" className="passwordToggle" onClick={()=>setShowPassword(v=>!v)}>{showPassword?"Ocultar":"Mostrar"}</button></div></div>
+   <div className="field"><label>CONFIRMAR SENHA</label><div className="passwordWrap"><input name="confirm" type={showPassword?"text":"password"} autoComplete="new-password" minLength="10" required/><button type="button" className="passwordToggle" onClick={()=>setShowPassword(v=>!v)}>{showPassword?"Ocultar":"Mostrar"}</button></div></div>
+  </div>
+  <label className="authCheck"><input name="enable_2fa" type="checkbox"/><span>Quero ativar autenticação em duas etapas (2FA) após confirmar meu e-mail.</span></label>
+  <TurnstileWidget/>
+  <label className="authCheck"><input name="accept_terms" type="checkbox" checked={accepted} onChange={e=>setAccepted(e.target.checked)} required/><span>Li e aceito os <a href="/termos-de-uso" target="_blank">Termos de Uso</a> e a <a href="/politica-de-privacidade" target="_blank">Política de Privacidade</a>.</span></label>
+  <button className="btn primary full">Criar minha conta</button><div className="msg" role="status">{msg}</div>
+ </form><div className="authFoot">Já possui uma conta? <a href="/login">Entrar</a></div></div></section></main><Footer/></>
 }
