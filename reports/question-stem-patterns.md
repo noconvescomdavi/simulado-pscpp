@@ -19,9 +19,26 @@
 | Ocorrências | Prefixo |
 |---:|---|
 | 299 | na terminologia de arte naval, qual termo corresponde a descricao tecnica a |
+| 28 | de acordo com o contido em “arte naval, v. 2”, analise as |
+| 20 | com base em “arte naval, v. 2”, coloque v (verdadeiro) ou f |
+| 13 | de acordo com o contido em “shiphandling for the mariner”, analise as |
 | 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
 | 12 | considere a questao tecnica a seguir: “qual alternativa descreve corretamente o significado |
+| 10 | de acordo com o contido em “arte naval, v. 1”, analise as |
+| 10 | com base em “arte naval, v. 1”, coloque v (verdadeiro) ou f |
+| 10 | de acordo com o contido em “arte naval, v. 2” (cap. 12, |
+| 9 | com base em “shiphandling for the mariner”, coloque v (verdadeiro) ou f |
+| 7 | de acordo com o contido em “resolution a.1045(27): pilot transfer arrangements” (anexo, |
+| 6 | com base no conteudo de “arte naval, v. 2”, em cap. 10, |
 | 6 | na preparacao para uma manobra, o oficial revisa o conceito definido como |
+| 5 | de acordo com o contido em “arte naval, v. 2” (cap. 10, |
+| 5 | com base no conteudo de “arte naval, v. 2”, em cap. 9, |
+| 5 | com base no conteudo de “arte naval, v. 1”, em cap. 1, |
+| 5 | em uma revisao tecnica conduzida antes da manobra, considere especificamente o seguinte |
+| 5 | com base no conteudo de “arte naval, v. 2”, em cap. 12, |
+| 5 | com base no conteudo de “arte naval, v. 2”, em cap. 11, |
+| 4 | com base no conteudo de “arte naval, v. 1”, em cap. 8, |
+| 4 | de acordo com o contido em “arte naval, v. 2” (cap. 9, |
 | 4 | qual alternativa descreve corretamente o significado ou a funcao de “volta de |
 
 ## manobrabilidade
@@ -42,7 +59,8 @@
 
 | Ocorrências | Prefixo |
 |---:|---|
-| 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
+| 18 | de acordo com o contido em “provision and display of manoeuvring information |
+| 11 | de acordo com o contido em “ship resistance and flow”, analise as |
 | 11 | nesse contexto, durante a analise de uma prova de mar em agua |
 | 11 | para essa avaliacao, durante a analise de uma prova de mar em |
 | 11 | sob essa otica, durante a analise de uma prova de mar em |
@@ -66,7 +84,6 @@
 | 11 | nesse contexto, na preparacao de um briefing tecnico para a equipe de |
 | 11 | para essa avaliacao, na preparacao de um briefing tecnico para a equipe |
 | 11 | sob essa otica, na preparacao de um briefing tecnico para a equipe |
-| 11 | ao concluir a analise, na preparacao de um briefing tecnico para a |
 
 ## navegacao-aguas-restritas
 
@@ -98,7 +115,10 @@
 | 20 | durante o planejamento de uma passagem noturna, qual conduta operacional atende ao |
 | 20 | ao avaliar a cadeia de erros, qual perigo decorre mais diretamente do |
 | 20 | com visibilidade variavel e espaco limitado, qual acao e coerente com o |
-| 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
+| 18 | de acordo com o contido em “navegacao: a ciencia e a arte |
+| 14 | de acordo com o contido em “colreg — international regulations for preventing |
+| 12 | de acordo com o contido em “convention on the international regulations for |
+| 10 | com base em “navegacao: a ciencia e a arte — volume i”, |
 | 9 | considerando capitulo 11 – regras especiais para evitar abalroamento, qual alternativa caracteriza |
 | 8 | no contexto de capitulo 11 – regras especiais para evitar abalroamento, qual |
 | 8 | em uma analise comparativa de capitulo 11 – regras especiais para evitar |
@@ -106,10 +126,8 @@
 | 8 | em uma analise comparativa de normam-511/dhn — navegacao e cartas nauticas, qual |
 | 8 | no contexto de normam-501/dhn — levantamentos hidrograficos, qual conceito corresponde a descricao: |
 | 8 | em uma analise comparativa de normam-501/dhn — levantamentos hidrograficos, qual associacao envolvendo |
-| 7 | em uma analise aprofundada de publicacao indicada — sem recorte adicional no |
-| 6 | considere a questao tecnica a seguir: “considerando part e, qual alternativa caracteriza |
-| 5 | considere a questao tecnica a seguir: “em uma analise comparativa de part |
-| 4 | considere o caso tecnico a seguir, relacionado a aplicacao em qualquer visibilidade: |
+| 8 | em uma revisao tecnica conduzida antes da manobra, considere especificamente o seguinte |
+| 7 | com base no conteudo de “navegacao: a ciencia e a arte — |
 
 ## legislacao-regulamentacao
 
@@ -130,30 +148,30 @@
 | Ocorrências | Prefixo |
 |---:|---|
 | 31 | sobre conteudo indicado no anexo 2-b, analise as afirmativas e assinale a |
-| 13 | considerando os conceitos adotados por normam-204/dpc, o que se afirma corretamente em |
+| 12 | considerando os conceitos adotados por normam-204/dpc, o que se afirma corretamente em |
 | 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
 | 12 | analise as quatro proposicoes sobre conteudo indicado no anexo 2-b e classifique-as |
-| 10 | no contexto de normam-602/dhn, qual enunciado define corretamente o conteudo de item |
 | 10 | no contexto de normam-204/dpc, qual enunciado define corretamente o conteudo de item |
-| 9 | no contexto de rlesta, qual enunciado define corretamente o conteudo de art. |
-| 8 | no texto de publicacoes nauticas da dhn, lista de auxilio radio - |
+| 9 | no contexto de normam-602/dhn, qual enunciado define corretamente o conteudo de item |
 | 8 | a luz de publicacoes nauticas da dhn, ao examinar lista de auxilio |
 | 8 | no contexto de decreto nº 2.596/1998 — rlesta, qual conceito corresponde a |
 | 8 | em uma analise comparativa de decreto nº 2.596/1998 — rlesta, qual associacao |
-| 7 | no contexto de normam-311/dpc, qual enunciado define corretamente o conteudo de item |
-| 7 | considerando os conceitos adotados por lei nº 2.180/1954, o que se afirma |
-| 7 | considerando capitulo iv – administracao do porto organizado, qual alternativa caracteriza corretamente |
-| 7 | no contexto de capitulo iv – administracao do porto organizado, qual conceito |
+| 7 | no texto de publicacoes nauticas da dhn, lista de auxilio radio - |
 | 7 | considerando capitulo viii – programa nacional de dragagem, qual alternativa caracteriza corretamente |
 | 7 | no contexto de capitulo viii – programa nacional de dragagem, qual conceito |
 | 7 | em uma analise comparativa de capitulo viii – programa nacional de dragagem, |
 | 6 | no contexto de lesta, qual enunciado define corretamente o conteudo de art. |
+| 6 | de acordo com o contido em “lei nº 14.813, de 15 de |
 | 6 | a luz de portaria mb/md nº 37/2022, ao examinar anexo a, art. |
+| 6 | no contexto de normam-311/dpc, qual enunciado define corretamente o conteudo de item |
+| 6 | no contexto de rlesta, qual enunciado define corretamente o conteudo de art. |
 | 6 | considerando os conceitos adotados por publicacoes nauticas da dhn, o que se |
-| 6 | considerando os conceitos adotados por normam-601/dhn, o que se afirma corretamente em |
+| 6 | considerando os conceitos adotados por lei nº 2.180/1954, o que se afirma |
 | 6 | considerando os conceitos adotados por ripeam/colreg, o que se afirma corretamente em |
-| 6 | em uma analise comparativa de capitulo iv – administracao do porto organizado, |
+| 6 | de acordo com o contido em “normas da autoridade maritima para o |
+| 6 | de acordo com o contido em “publicacoes de auxilio a navegacao da |
 | 6 | no contexto de capitulo vi – art. 17, qual conceito corresponde a |
+| 5 | no contexto de publicacoes nauticas da dhn, qual enunciado define corretamente o |
 
 ## meteorologia-oceanografia
 
@@ -173,31 +191,31 @@
 
 | Ocorrências | Prefixo |
 |---:|---|
-| 22 | sobre publicacao indicada — sem capitulos delimitados no anexo 2-b, analise as |
+| 37 | de acordo com o contido em “meteorologia e oceanografia”, analise as afirmativas |
+| 34 | com base em “meteorologia e oceanografia”, coloque v (verdadeiro) ou f (falso) |
+| 21 | de acordo com o contido em “meteorologia e oceanografia” (capitulo viii — |
+| 21 | sobre publicacao indicada — sem capitulos delimitados no anexo 2-b, analise as |
+| 15 | de acordo com o contido em “meteorologia e oceanografia” (capitulo x — |
 | 14 | ao interpretar informacoes de ventos em um produto ou observacao maritima, caso |
 | 13 | ao interpretar informacoes de sistemas atmosfericos em um produto ou observacao maritima, |
 | 12 | ao interpretar informacoes de ondas em um produto ou observacao maritima, caso |
 | 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
-| 11 | ao interpretar informacoes de mares em um produto ou observacao maritima, caso |
 | 11 | ao interpretar informacoes de pressao atmosferica em um produto ou observacao maritima, |
 | 11 | ao interpretar informacoes de elementos meteorologicos em um produto ou observacao maritima, |
-| 10 | considerando a relacao fisica ou operacional de correntes de densidade e correntes |
-| 10 | ao interpretar informacoes de correntes de densidade e correntes costeiras em um |
-| 10 | na comparacao tecnica de conceitos de correntes de densidade e correntes costeiras, |
+| 10 | em uma revisao tecnica conduzida antes da manobra, considere especificamente o seguinte |
 | 10 | ao interpretar informacoes de navegacao meteorologica em um produto ou observacao maritima, |
 | 10 | ao interpretar informacoes de navegacao de mau tempo em um produto ou |
 | 10 | considerando a relacao fisica ou operacional de navegacao de mau tempo, cenario |
 | 10 | ao interpretar informacoes de circulacao do ar em um produto ou observacao |
 | 10 | sobre capitulo 45 – nocoes de meteorologia para navegantes, analise as afirmativas |
-| 10 | em uma analise aprofundada de publicacao indicada — sem capitulos delimitados no |
-| 9 | na comparacao tecnica de conceitos de cartas de correntes de mares, cenario |
-| 9 | considerando a relacao fisica ou operacional de cartas de correntes de mares, |
-| 9 | ao interpretar informacoes de cartas de correntes de mares em um produto |
+| 9 | de acordo com o contido em “meteorologia e oceanografia” (capitulo xiii — |
 | 9 | ao interpretar informacoes de visibilidade e nevoeiros em um produto ou observacao |
 | 9 | considerando a relacao fisica ou operacional de cobertura do ceu e nuvens, |
 | 9 | ao interpretar informacoes de cobertura do ceu e nuvens em um produto |
 | 9 | na comparacao tecnica de conceitos de cobertura do ceu e nuvens, cenario |
 | 9 | ao interpretar informacoes de sistemas sinoticos em um produto ou observacao maritima, |
+| 8 | de acordo com o contido em “meteorologia e oceanografia” (capitulo ix — |
+| 8 | considerando a relacao fisica ou operacional de areas geradoras de vagas, cenario |
 
 ## comunicacoes
 
@@ -217,31 +235,31 @@
 
 | Ocorrências | Prefixo |
 |---:|---|
+| 26 | de acordo com o contido em “international code of signals for visual, |
+| 15 | com base em “international code of signals for visual, sound, and radio |
 | 14 | no contexto de smcp glossary — general terms, qual descricao corresponde corretamente |
 | 13 | no contexto de glossario tecnico do erog, qual descricao corresponde corretamente a |
+| 13 | de acordo com o contido em “international code of signals”, analise as |
 | 12 | qual termo ou sinal de glossario tecnico do erog corresponde a seguinte |
-| 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
 | 11 | ao revisar smcp glossary — general terms, um aluno encontrou o termo |
+| 11 | em uma revisao tecnica conduzida antes da manobra, considere especificamente o seguinte |
+| 11 | com base no conteudo de “international code of signals for visual, sound, |
 | 10 | em materia de unidade 3 — gmdss, assinale a definicao tecnicamente correta |
+| 10 | de acordo com o contido em “imo standard marine communication phrases”, analise |
 | 9 | considerando secao geral — distress; casualties; aids to navigation; manoeuvres; pilot, qual |
 | 8 | no contexto de secao geral — distress; casualties; aids to navigation; manoeuvres; |
 | 8 | em uma analise comparativa de secao geral — distress; casualties; aids to |
-| 8 | no contexto de apendices 1, 2 e 4, qual conceito corresponde a |
-| 8 | em uma analise comparativa de apendices 1, 2 e 4, qual associacao |
 | 7 | em materia de smcp glossary — general terms, assinale a definicao tecnicamente |
 | 7 | em materia de principios e procedimentos gerais do smcp, assinale a definicao |
 | 7 | em materia de unidade 1 — principios das radiocomunicacoes maritimas, assinale a |
+| 7 | de acordo com o contido em “especial de radioperador geral (erog)”, analise |
+| 7 | com base em “imo standard marine communication phrases”, coloque v (verdadeiro) ou |
 | 6 | qual termo ou sinal de smcp glossary — general terms corresponde a |
 | 6 | em materia de glossario tecnico do erog, assinale a definicao tecnicamente correta |
 | 6 | qual termo ou sinal de request for medical assistance corresponde a seguinte |
 | 5 | considerando a terminologia oficial de unidade 1 — principios das radiocomunicacoes maritimas, |
 | 5 | ao revisar unidade 1 — principios das radiocomunicacoes maritimas, um aluno encontrou |
 | 5 | em materia de identificacao maritima, assinale a definicao tecnicamente correta para “mid |
-| 5 | no contexto de request for medical assistance, qual descricao corresponde corretamente a |
-| 5 | sobre capitulos i a v, vii, viii, x, xi e xii, analise |
-| 5 | sobre secao geral — distress; casualties; aids to navigation; manoeuvres; pilot, analise |
-| 5 | sobre secao medica — request for medical assistance, chapter i, analise as |
-| 4 | ao revisar principios e procedimentos gerais do smcp, um aluno encontrou o |
 
 ## conhecimentos-gerais
 
@@ -263,27 +281,27 @@
 |---:|---|
 | 47 | uma analise de fadiga usa o trecho “module 1 — fatigue”. qual |
 | 45 | qual trecho em ingles integra o conteudo de “module 2 — fatigue |
-| 32 | na lista de publicacoes da interface navio/porto, em qual subject area esta |
+| 34 | de acordo com o contido em “ship/port interface: list of publications relevant |
 | 32 | no topico “module 1 — fatigue” das guidelines on fatigue, qual trecho |
+| 32 | de acordo com o contido em “planejamento portuario: recomendacoes para acessos nauticos”, |
 | 31 | ao consultar “module 2 — fatigue and the company”, qual item em |
 | 30 | no topico “module 3 — fatigue and the seafarer” das guidelines on |
 | 22 | ao consultar “module 5 — fatigue and ship design”, qual item em |
-| 21 | sobre publicacao indicada, analise as afirmativas e assinale a alternativa que apresenta |
+| 21 | na lista de publicacoes da interface navio/porto, em qual subject area esta |
+| 21 | com base no conteudo de “planejamento portuario: recomendacoes para acessos nauticos”, em |
+| 20 | com base em “planejamento portuario: recomendacoes para acessos nauticos”, coloque v (verdadeiro) |
+| 17 | de acordo com o contido em “planejamento portuario: recomendacoes para acessos nauticos” |
 | 15 | ao consultar “module 1 — fatigue”, qual item em ingles esta de |
 | 14 | uma analise de fadiga usa o trecho “module 3 — fatigue and |
 | 14 | uma analise de fadiga usa o trecho “module 2 — fatigue and |
 | 14 | qual trecho em ingles integra o conteudo de “module 3 — fatigue |
+| 12 | com base em “ship/port interface: list of publications relevant to the ship/port |
 | 12 | qual trecho em ingles integra o conteudo de “module 1 — fatigue” |
 | 12 | qual item e associado pela fonte ao topico “anexo i — regra |
-| 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
 | 11 | no topico “module 2 — fatigue and the company” das guidelines on |
 | 11 | ao consultar “module 3 — fatigue and the seafarer”, qual item em |
 | 10 | qual item e associado pela fonte ao topico “anexo ii — regra |
-| 9 | analise as quatro proposicoes sobre publicacao indicada e classifique-as como verdadeiras (v) |
 | 7 | qual trecho em ingles integra o conteudo de “module 4 — fatigue |
 | 7 | no topico “module 5 — fatigue and ship design” das guidelines on |
-| 6 | sobre capitulo 8 – analise de risco e planejamento portuario, analise as |
 | 5 | no topico “module 4 — fatigue awareness and training” das guidelines on |
-| 5 | qual item e associado pela fonte ao topico “convencao de 1973 — |
-| 5 | sobre capitulo 2 – vias de acesso a instalacoes portuarias, analise as |
 
