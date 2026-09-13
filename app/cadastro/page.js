@@ -2,9 +2,11 @@
 import {useState} from "react";
 import {Nav,Footer} from "../components";
 import TurnstileWidget from "../components/TurnstileWidget";
+const AQUAVIARIO_GROUPS=[["1º GRUPO — MARÍTIMOS · CONVÉS",["CAPITÃO DE LONGO CURSO — CLC","CAPITÃO DE CABOTAGEM — CCB","PRIMEIRO OFICIAL DE NÁUTICA — 1ON","SEGUNDO OFICIAL DE NÁUTICA — 2ON","MESTRE DE CABOTAGEM — MCB","CONTRAMESTRE — CTR","MARINHEIRO DE CONVÉS — MNC","MOÇO DE CONVÉS — MOC","MARINHEIRO AUXILIAR DE CONVÉS — MAC"]],["1º GRUPO — MARÍTIMOS · MÁQUINAS",["OFICIAL SUPERIOR DE MÁQUINAS — OSM","PRIMEIRO OFICIAL DE MÁQUINAS — 1OM","SEGUNDO OFICIAL DE MÁQUINAS — 2OM","CONDUTOR DE MÁQUINAS — CDM","ELETRICISTA — ELT","MARINHEIRO DE MÁQUINAS — MNM","MOÇO DE MÁQUINAS — MOM","MARINHEIRO AUXILIAR DE MÁQUINAS — MAM"]],["2º GRUPO — FLUVIÁRIOS · CONVÉS",["CAPITÃO FLUVIAL — CFL","PILOTO FLUVIAL — PLF","MESTRE FLUVIAL — MFL","CONTRAMESTRE FLUVIAL — CMF","MARINHEIRO FLUVIAL DE CONVÉS — MFC","MARINHEIRO FLUVIAL AUXILIAR DE CONVÉS — MAF"]],["2º GRUPO — FLUVIÁRIOS · MÁQUINAS",["SUPERVISOR MAQUINISTA MOTORISTA FLUVIAL — SUF","CONDUTOR MAQUINISTA MOTORISTA FLUVIAL — CTF","MARINHEIRO FLUVIAL DE MÁQUINAS — MFM","MARINHEIRO FLUVIAL AUXILIAR DE MÁQUINAS — MMA"]],["3º GRUPO — PESCADORES · CONVÉS",["PATRÃO DE PESCA DE ALTO MAR — PAP","PATRÃO DE PESCA NA NAVEGAÇÃO INTERIOR — PPI","CONTRAMESTRE DE PESCA NA NAVEGAÇÃO INTERIOR — CPI","PESCADOR PROFISSIONAL ESPECIALIZADO — PEP","PESCADOR PROFISSIONAL — POP","APRENDIZ DE PESCA — APP"]],["3º GRUPO — PESCADORES · MÁQUINAS",["CONDUTOR MOTORISTA DE PESCA — CMP","MOTORISTA DE PESCA — MOP","APRENDIZ DE MOTORISTA — APM"]],["3º GRUPO — PESCADORES · SAÚDE/CÂMARA",["ENFERMEIRO — ENF","AUXILIAR DE SAÚDE — ASA","TAIFEIRO — TAA","COZINHEIRO — CZA"]],["4º GRUPO — MERGULHADORES",["MERGULHADOR QUE OPERA COM MISTURA GASOSA ARTIFICIAL — MGP","MERGULHADOR QUE OPERA COM AR COMPRIMIDO — MGE"]],["5º GRUPO — PRÁTICOS",["PRÁTICO — PRT","PRATICANTE DE PRÁTICO — PRP"]],["6º GRUPO — MANOBRA E DOCAGEM",["AGENTE DE MANOBRA E DOCAGEM — AMD"]]];
+const NAO_AQUAVIARIO=["ARRAIS AMADOR — ARA","MESTRE AMADOR — MTA","CAPITÃO AMADOR — CPA"];
 
 export default function Cadastro(){
- const [msg,setMsg]=useState(""),[showPassword,setShowPassword]=useState(false),[accepted,setAccepted]=useState(false);
+ const [msg,setMsg]=useState(""),[showPassword,setShowPassword]=useState(false),[accepted,setAccepted]=useState(false),[atuacao,setAtuacao]=useState("");
  async function submit(e){
   e.preventDefault();const f=new FormData(e.currentTarget),o=Object.fromEntries(f);
   if(o.password!==o.confirm){setMsg("As senhas não coincidem.");return}
@@ -32,10 +34,12 @@ export default function Cadastro(){
    <div className="field"><label>BAIRRO</label><input name="neighborhood"/></div>
    <div className="field"><label>CIDADE</label><input name="city" autoComplete="address-level2"/></div>
   </div>
-  <div className="authSectionTitle">Contexto marítimo <small>opcional</small></div><div className="authFieldsGrid">
-   <div className="field"><label>ATUAÇÃO</label><select name="maritime_role" defaultValue=""><option value="">Prefiro não informar</option><option>Aquaviário</option><option>Oficial de Náutica</option><option>Contramestre</option><option>Comandante</option><option>Praticante</option><option>Estudante</option><option>Outro</option></select></div>
-   <div className="field"><label>NÍVEL DE EXPERIÊNCIA</label><select name="experience_level" defaultValue=""><option value="">Prefiro não informar</option><option>Iniciante</option><option>Intermediário</option><option>Avançado</option></select></div>
-  </div>
+  <div className="authSectionTitle">Atuação profissional <small>opcional</small></div><div className="authFieldsGrid">
+<div className="field"><label>ATUAÇÃO</label><select name="occupation_type" value={atuacao} onChange={e=>setAtuacao(e.target.value)}><option value="">Prefiro não informar</option><option value="aquaviario">Marítimo/Aquaviário</option><option value="nao_aquaviario">Não Aquaviário</option><option value="outros">Outros</option></select></div>
+{atuacao==="aquaviario"&&<div className="field"><label>CATEGORIA</label><select name="occupation_category" required><option value="">Selecione sua categoria</option>{AQUAVIARIO_GROUPS.map(([g,items])=><optgroup label={g} key={g}>{items.map(item=><option key={item}>{item}</option>)}</optgroup>)}</select></div>}
+{atuacao==="nao_aquaviario"&&<div className="field"><label>HABILITAÇÃO</label><select name="occupation_category" required><option value="">Selecione sua habilitação</option>{NAO_AQUAVIARIO.map(item=><option key={item}>{item}</option>)}</select></div>}
+{atuacao==="outros"&&<div className="field"><label>PROFISSÃO</label><input name="occupation_other" maxLength="120" required/></div>}
+</div>
   <div className="authSectionTitle">Segurança</div><div className="authFieldsGrid">
    <div className="field"><label>SENHA</label><div className="passwordWrap"><input name="password" type={showPassword?"text":"password"} autoComplete="new-password" minLength="10" required/><button type="button" className="passwordToggle" onClick={()=>setShowPassword(v=>!v)}>{showPassword?"Ocultar":"Mostrar"}</button></div></div>
    <div className="field"><label>CONFIRMAR SENHA</label><div className="passwordWrap"><input name="confirm" type={showPassword?"text":"password"} autoComplete="new-password" minLength="10" required/><button type="button" className="passwordToggle" onClick={()=>setShowPassword(v=>!v)}>{showPassword?"Ocultar":"Mostrar"}</button></div></div>
