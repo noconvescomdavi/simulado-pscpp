@@ -56,7 +56,14 @@ function correctOption(q) {
   return (q.options || []).find(o => String(o?.key || '').trim().toUpperCase() === key);
 }
 function optionSignature(q) {
-  return (q.options || []).map(o => norm(o?.text)).sort().join('|');
+  return (q.options || []).map(o => clean(o?.text).normalize('NFC').toLocaleLowerCase('pt-BR')).sort().join('|');
+}
+function hasDuplicateOrEmptyRawOptions(q) {
+  const opts=(q.options||[]).map(o=>clean(o?.text).normalize('NFC').toLocaleLowerCase('pt-BR'));
+  return opts.some(x=>!x) || new Set(opts).size!==opts.length;
+}
+function usesStandardMetaOptions(style) {
+  return ['Sequência V/F','Assertivas I–II–III','Assertivas I–IV','Verdadeiro/Falso'].includes(style);
 }
 function isExpansionV1(q) {
   return Array.isArray(q.tags) && q.tags.includes('expansao-formatos-v1');
@@ -143,7 +150,7 @@ for (const subject of SUBJECTS) {
       } else globalStemMap.set(key, q.id);
     }
     const optSig = optionSignature(q);
-    if (optSig) {
+    if (optSig && !usesStandardMetaOptions(style)) {
       const key = `${subject}|${optSig}`;
       if (globalOptionsMap.has(key) && globalOptionsMap.get(key) !== q.id) {
         distractorRisk++;
@@ -184,7 +191,9 @@ for (const subject of SUBJECTS) {
       }
     }
     if (style === 'Sequência V/F') {
-      const n = (String(q.question).match(/(?:^|\n)\s*[1-4][\.)]/g) || []).length;
+      const numbered = (String(q.question).match(/(?:^|\n)\s*[1-4][\.)]/g) || []).length;
+      const checkboxes = (String(q.question).match(/(?:^|\n)\s*\(\s*\)/g) || []).length;
+      const n = Math.max(numbered, checkboxes);
       if (n !== 4) {
         formattingRisk++;
         pushFlag(allFlags, subject, q, 'SEQUENCE_FORMAT', 'medium', `Sequência V/F deveria conter 4 proposições; encontradas ${n}.`);
@@ -202,7 +211,7 @@ for (const subject of SUBJECTS) {
 
     if (opts.length >= 4) {
       const normalizedOpts = opts.map(o => norm(o?.text));
-      if (normalizedOpts.some(x => !x) || new Set(normalizedOpts).size !== normalizedOpts.length) {
+      if (hasDuplicateOrEmptyRawOptions(q)) {
         distractorRisk++;
         pushFlag(allFlags, subject, q, 'OPTION_DUPLICATE_OR_EMPTY', 'critical', 'Há alternativa vazia ou repetida.');
       }
