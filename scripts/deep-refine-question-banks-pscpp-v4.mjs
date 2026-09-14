@@ -137,7 +137,22 @@ for(const sub of SUBJECTS){
    const q=i%3===0?makeAssertions(id,bases.slice(0,4),10000+i,want):i%3===1?makeVF(id,bases.slice(0,4),10000+i,want):makeIncorrect(id,bases,10000+i,want);
    q.provenance.method='pscpp-expansion-v4';added.push(q);
  }
- qs.push(...added);uniqueStems(qs);bank.questions=qs;
+ qs.push(...added);
+ // Any generated item with internally repeated alternatives is rebuilt as an
+ // assertion question, whose five meta-options are intentionally unique.
+ for(let ix=0;ix<qs.length;ix++){
+   const q=qs[ix];
+   if(!(q.tags||[]).includes('pscpp-style-v4')||rawUnique(q))continue;
+   const g=same(q,gs)||gs[ix%gs.length];
+   const bases=chooseDistinct(g,(ix*17)%g.questions.length,4,q.id);
+   if(bases.length===4){
+     const repaired=makeAssertions(q.id,bases,20000+ix,ans(q));
+     repaired.provenance.replaces_question_id=q.id;
+     repaired.provenance.repair_reason='duplicate-options-after-v4-generation';
+     qs[ix]=repaired;
+   }
+ }
+ uniqueStems(qs);bank.questions=qs;
  if('total_questions'in bank)bank.total_questions=qs.length;
  if(bank.validation&&typeof bank.validation==='object')bank.validation.total=qs.length;
  if(bank.metadata&&typeof bank.metadata==='object'&&'total_questions'in bank.metadata)bank.metadata.total_questions=qs.length;
