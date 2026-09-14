@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-09-14T20:04:15.593Z",
+  "generated_at": "2026-09-14T20:05:15.607Z",
   "version": "question-quality-audit-v2",
   "totals": {
     "questions": 12070,
     "v2": 12070,
     "expansion_v1": 0,
-    "flags": 2705,
+    "flags": 2622,
     "critical": 0,
     "high": 0,
-    "medium": 692,
+    "medium": 609,
     "low": 2013
   },
   "subjects": {
@@ -22,7 +22,7 @@
       "topics_with_8_or_more_questions": 29,
       "structural_flags": 0,
       "context_risk_flags": 37,
-      "distractor_risk_flags": 861,
+      "distractor_risk_flags": 839,
       "formatting_risk_flags": 0,
       "styles": {
         "Afirmativas combinadas": 160,
@@ -134,7 +134,7 @@
       "topics_with_8_or_more_questions": 66,
       "structural_flags": 0,
       "context_risk_flags": 0,
-      "distractor_risk_flags": 234,
+      "distractor_risk_flags": 232,
       "formatting_risk_flags": 0,
       "styles": {
         "Aplicada": 1008,
@@ -248,7 +248,7 @@
       "topics_with_8_or_more_questions": 0,
       "structural_flags": 0,
       "context_risk_flags": 0,
-      "distractor_risk_flags": 458,
+      "distractor_risk_flags": 456,
       "formatting_risk_flags": 0,
       "styles": {
         "Conceitual": 430,
@@ -361,7 +361,7 @@
       "topics_with_8_or_more_questions": 0,
       "structural_flags": 0,
       "context_risk_flags": 0,
-      "distractor_risk_flags": 244,
+      "distractor_risk_flags": 239,
       "formatting_risk_flags": 0,
       "styles": {
         "Conceitual": 199,
@@ -475,7 +475,7 @@
       "topics_with_8_or_more_questions": 21,
       "structural_flags": 0,
       "context_risk_flags": 0,
-      "distractor_risk_flags": 186,
+      "distractor_risk_flags": 138,
       "formatting_risk_flags": 0,
       "styles": {
         "Aplicada": 18,
@@ -588,7 +588,7 @@
       "topics_with_8_or_more_questions": 29,
       "structural_flags": 0,
       "context_risk_flags": 0,
-      "distractor_risk_flags": 330,
+      "distractor_risk_flags": 328,
       "formatting_risk_flags": 0,
       "styles": {
         "Aplicada": 339,
@@ -700,7 +700,7 @@
       "topics_with_8_or_more_questions": 33,
       "structural_flags": 0,
       "context_risk_flags": 0,
-      "distractor_risk_flags": 355,
+      "distractor_risk_flags": 353,
       "formatting_risk_flags": 0,
       "styles": {
         "Aplicada": 241,
@@ -6954,28 +6954,6 @@
     },
     {
       "subject": "arte-naval",
-      "id": "ANV-1332",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de ANV-1328.",
-      "style": "Assertivas I–V",
-      "topic": "içador mecânico de prático",
-      "chapter_id": "a1045::integral",
-      "topic_id": "old-247"
-    },
-    {
-      "subject": "arte-naval",
-      "id": "ANV-1333",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de ANV-1329.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "briefing e debriefing",
-      "chapter_id": "macelrevey::ch10",
-      "topic_id": "old-196"
-    },
-    {
-      "subject": "arte-naval",
       "id": "ANV-1335",
       "code": "DUPLICATE_OPTION_SET",
       "severity": "medium",
@@ -6984,226 +6962,6 @@
       "topic": "briefing e debriefing",
       "chapter_id": "macelrevey::ch10",
       "topic_id": "old-196"
-    },
-    {
-      "subject": "arte-naval",
-      "id": "ANV-1336",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de ANV-1328.",
-      "style": "Assertivas I–V",
-      "topic": "catau de reboque",
-      "chapter_id": "fonseca-arte-v1::ch8",
-      "topic_id": "anv1-8.32"
-    },
-    {
-      "subject": "arte-naval",
-      "id": "ANV-1337",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de ANV-1328.",
-      "style": "Assertivas I–V",
-      "topic": "studded link",
-      "chapter_id": "clark::ch6",
-      "topic_id": "old-207"
-    },
-    {
-      "subject": "arte-naval",
-      "id": "ANV-1338",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de ANV-1328.",
-      "style": "Assertivas I–V",
-      "topic": "detecção do movimento lateral",
-      "chapter_id": "macelrevey::ch5",
-      "topic_id": "old-177"
-    },
-    {
-      "subject": "arte-naval",
-      "id": "ANV-1339",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de ANV-1328.",
-      "style": "Assertivas I–V",
-      "topic": "simulador de manobra",
-      "chapter_id": "macelrevey::ch10",
-      "topic_id": "old-195"
-    },
-    {
-      "subject": "arte-naval",
-      "id": "ANV-1340",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de ANV-1328.",
-      "style": "Assertivas I–V",
-      "topic": "bochechas",
-      "chapter_id": "fonseca-arte-v1::ch1",
-      "topic_id": "anv1-1.19"
-    },
-    {
-      "subject": "arte-naval",
-      "id": "ANV-1341",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de ANV-1328.",
-      "style": "Assertivas I–V",
-      "topic": "redução antecipada de velocidade",
-      "chapter_id": "macelrevey::ch4",
-      "topic_id": "old-173"
-    },
-    {
-      "subject": "arte-naval",
-      "id": "ANV-1342",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de ANV-1328.",
-      "style": "Assertivas I–V",
-      "topic": "responsabilidade do comandante com prático a bordo",
-      "chapter_id": "macelrevey::ch11",
-      "topic_id": "old-197"
-    },
-    {
-      "subject": "arte-naval",
-      "id": "ANV-1343",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de ANV-1328.",
-      "style": "Assertivas I–V",
-      "topic": "borda-livre",
-      "chapter_id": "fonseca-arte-v1::ch2",
-      "topic_id": "anv1-2.28"
-    },
-    {
-      "subject": "arte-naval",
-      "id": "ANV-1344",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de ANV-1328.",
-      "style": "Assertivas I–V",
-      "topic": "navio de guerra",
-      "chapter_id": "fonseca-arte-v1::ch3",
-      "topic_id": "anv1-3.2a"
-    },
-    {
-      "subject": "arte-naval",
-      "id": "ANV-1345",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de ANV-1328.",
-      "style": "Assertivas I–V",
-      "topic": "registro da manobra",
-      "chapter_id": "macelrevey::ch12",
-      "topic_id": "old-200"
-    },
-    {
-      "subject": "arte-naval",
-      "id": "ANV-1346",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de ANV-1329.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "perno",
-      "chapter_id": "fonseca-arte-v1::ch9",
-      "topic_id": "old-013"
-    },
-    {
-      "subject": "arte-naval",
-      "id": "ANV-1347",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de ANV-1329.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "transmissão mecânica rígida",
-      "chapter_id": "fonseca-arte-v1::ch11",
-      "topic_id": "old-078"
-    },
-    {
-      "subject": "arte-naval",
-      "id": "ANV-1348",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de ANV-1329.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "velocidade de partida",
-      "chapter_id": "macelrevey::ch7",
-      "topic_id": "old-184"
-    },
-    {
-      "subject": "arte-naval",
-      "id": "ANV-1349",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de ANV-1329.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "balanço",
-      "chapter_id": "fonseca-arte-v1::ch12",
-      "topic_id": "old-149"
-    },
-    {
-      "subject": "arte-naval",
-      "id": "ANV-1350",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de ANV-1329.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "fazer socaire para o prático",
-      "chapter_id": "macelrevey::ch1",
-      "topic_id": "old-160"
-    },
-    {
-      "subject": "arte-naval",
-      "id": "ANV-1351",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de ANV-1329.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "manobra de navio de dois hélices",
-      "chapter_id": "macelrevey::ch9",
-      "topic_id": "old-194"
-    },
-    {
-      "subject": "arte-naval",
-      "id": "ANV-1352",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de ANV-1329.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "mordente",
-      "chapter_id": "fonseca-arte-v1::ch10",
-      "topic_id": "old-056"
-    },
-    {
-      "subject": "arte-naval",
-      "id": "ANV-1353",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de ANV-1329.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "squat",
-      "chapter_id": "macelrevey::ch2",
-      "topic_id": "old-164"
-    },
-    {
-      "subject": "arte-naval",
-      "id": "ANV-1354",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de ANV-1329.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "rebocador no cabo",
-      "chapter_id": "macelrevey::ch3",
-      "topic_id": "old-168"
-    },
-    {
-      "subject": "arte-naval",
-      "id": "ANV-1355",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de ANV-1329.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "retrieval line",
-      "chapter_id": "a1045::integral",
-      "topic_id": "old-236"
     },
     {
       "subject": "arte-naval",
@@ -7361,28 +7119,6 @@
     },
     {
       "subject": "comunicacoes",
-      "id": "COM-1232",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de COM-1228.",
-      "style": "Assertivas I–V",
-      "topic": "glossário técnico do EROG",
-      "chapter_id": "radioperador::integral",
-      "topic_id": "VI-radioperador-integral-com-erog-an2-glossario-tecnico-do-erog"
-    },
-    {
-      "subject": "comunicacoes",
-      "id": "COM-1233",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de COM-1229.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "SMCP Glossary — General terms",
-      "chapter_id": "smcp::s2",
-      "topic_id": "VI-smcp-s2-com-smcp-glo-gen-smcp-glossary-general-terms"
-    },
-    {
-      "subject": "comunicacoes",
       "id": "COM-1235",
       "code": "DUPLICATE_OPTION_SET",
       "severity": "medium",
@@ -7402,28 +7138,6 @@
       "topic": "Margem de Manobrabilidade mínima",
       "chapter_id": "normam224::integral",
       "topic_id": "VII-normam224-integral-cge-pp-fdaq-1-2-mm-margem-de-manobrabilidade-minima"
-    },
-    {
-      "subject": "conhecimentos-gerais",
-      "id": "CGE-1182",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de CGE-1178.",
-      "style": "Assertivas I–V",
-      "topic": "Navigable Waterways Planning",
-      "chapter_id": "fal6::integral",
-      "topic_id": "VII-fal6-integral-cge-pp-fal-10-navigable-waterways-planning"
-    },
-    {
-      "subject": "conhecimentos-gerais",
-      "id": "CGE-1183",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de CGE-1179.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Artigo XXVIII",
-      "chapter_id": "udhr::integral",
-      "topic_id": "VII-udhr-integral-cge-dh-dudh-artigo-xxviii-artigo-xxviii"
     },
     {
       "subject": "conhecimentos-gerais",
@@ -7449,61 +7163,6 @@
     },
     {
       "subject": "legislacao-regulamentacao",
-      "id": "LEG-0942",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de LEG-0236.",
-      "style": "Assertivas I–V",
-      "topic": "O registro de armador é cancelado por requerimento, falência, dissolução",
-      "chapter_id": "leg-extra-6::integral",
-      "topic_id": "IV-leg-extra-6-integral-leg-l7652-o-registro-de-armador-e-cancelado-por-requerimento-falencia-dissolucao"
-    },
-    {
-      "subject": "legislacao-regulamentacao",
-      "id": "LEG-0978",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de LEG-0467.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "O registro de armador é cancelado por requerimento, falência, dissolução",
-      "chapter_id": "leg-extra-6::integral",
-      "topic_id": "IV-leg-extra-6-integral-leg-l7652-o-registro-de-armador-e-cancelado-por-requerimento-falencia-dissolucao"
-    },
-    {
-      "subject": "legislacao-regulamentacao",
-      "id": "LEG-1288",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de LEG-0467.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Caso a multa seja elevada para as posses do infrator",
-      "chapter_id": "leg-doc-6::integral",
-      "topic_id": "IV-leg-doc-6-integral-leg-l2180-caso-a-multa-seja-elevada-para-as-posses-do-infrator"
-    },
-    {
-      "subject": "legislacao-regulamentacao",
-      "id": "LEG-1290",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de LEG-0236.",
-      "style": "Assertivas I–V",
-      "topic": "Dessa forma, conforme defendido por José Maria da Silva Paranhos",
-      "chapter_id": "leg-extra-2::integral",
-      "topic_id": "IV-leg-extra-2-integral-leg-pnd-dessa-forma-conforme-defendido-por-jose-maria-da-silva-paranhos"
-    },
-    {
-      "subject": "legislacao-regulamentacao",
-      "id": "LEG-1291",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de LEG-0467.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "por avaliação em simulador do tipo FMSS (Full Mission Shiphandling",
-      "chapter_id": "leg-doc-0::integral",
-      "topic_id": "IV-leg-doc-0-integral-leg-n204-por-avaliacao-em-simulador-do-tipo-fmss-full-mission-shiphandling"
-    },
-    {
-      "subject": "legislacao-regulamentacao",
       "id": "LEG-1293",
       "code": "DUPLICATE_OPTION_SET",
       "severity": "medium",
@@ -7523,28 +7182,6 @@
       "topic": "Leme compensado",
       "chapter_id": "pna-v3::ch9-s14",
       "topic_id": "I-pna-v3-ch9-s14-3-26-leme-compensado"
-    },
-    {
-      "subject": "manobrabilidade",
-      "id": "MAN-3924",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MAN-3920.",
-      "style": "Assertivas I–V",
-      "topic": "Similitude de modelos",
-      "chapter_id": "larsson-resistance::ch3",
-      "topic_id": "I-larsson-resistance-ch3-1-6-similitude-de-modelos"
-    },
-    {
-      "subject": "manobrabilidade",
-      "id": "MAN-3925",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MAN-3921.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Orientação operacional em mau tempo",
-      "chapter_id": "msc1228::s4",
-      "topic_id": "I-msc1228-s4-6-51-orientacao-operacional-em-mau-tempo"
     },
     {
       "subject": "manobrabilidade",
@@ -7570,28 +7207,6 @@
     },
     {
       "subject": "meteorologia-oceanografia",
-      "id": "MEO-0740",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "Sistemas atmosféricos",
-      "chapter_id": "miguens-met::ch45",
-      "topic_id": "V-miguens-met-ch45-15-sistemas-atmosfericos"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-0861",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Elementos meteorológicos",
-      "chapter_id": "met-0::integral",
-      "topic_id": "V-met-0-integral-16-elementos-meteorologicos"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
       "id": "MEO-0973",
       "code": "DUPLICATE_OPTION_SET",
       "severity": "medium",
@@ -7603,55 +7218,11 @@
     },
     {
       "subject": "meteorologia-oceanografia",
-      "id": "MEO-0979",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "Sistemas sinóticos",
-      "chapter_id": "met-0::integral",
-      "topic_id": "V-met-0-integral-20-sistemas-sinoticos"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-0996",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Interpretação de informações meteorológicas",
-      "chapter_id": "normam701::integral",
-      "topic_id": "V-normam701-integral-21-interpretacao-de-informacoes-meteorologicas"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
       "id": "MEO-0998",
       "code": "DUPLICATE_OPTION_SET",
       "severity": "medium",
       "detail": "Conjunto de alternativas idêntico ao de MEO-0981.",
       "style": "Estudo de caso PSCPP",
-      "topic": "Interpretação de informações meteorológicas",
-      "chapter_id": "normam701::integral",
-      "topic_id": "V-normam701-integral-21-interpretacao-de-informacoes-meteorologicas"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-0999",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "Serviço Meteorológico Marinho – SMM",
-      "chapter_id": "normam701::integral",
-      "topic_id": "V-normam701-integral-servico-meteorologico-marinho-smm"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1000",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
       "topic": "Interpretação de informações meteorológicas",
       "chapter_id": "normam701::integral",
       "topic_id": "V-normam701-integral-21-interpretacao-de-informacoes-meteorologicas"
@@ -7669,28 +7240,6 @@
     },
     {
       "subject": "meteorologia-oceanografia",
-      "id": "MEO-1051",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "Cartas de correntes de marés",
-      "chapter_id": "met-1::integral",
-      "topic_id": "V-met-1-integral-2-cartas-de-correntes-de-mares"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1052",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Navegação meteorológica",
-      "chapter_id": "met-1::integral",
-      "topic_id": "V-met-1-integral-8-navegacao-meteorologica"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
       "id": "MEO-1054",
       "code": "DUPLICATE_OPTION_SET",
       "severity": "medium",
@@ -7699,28 +7248,6 @@
       "topic": "Correntes de densidade e correntes costeiras",
       "chapter_id": "met-1::integral",
       "topic_id": "V-met-1-integral-3-correntes-de-densidade-e-correntes-costeiras"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1055",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "Marés",
-      "chapter_id": "met-1::integral",
-      "topic_id": "V-met-1-integral-1-mares"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1056",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Marés",
-      "chapter_id": "met-1::integral",
-      "topic_id": "V-met-1-integral-1-mares"
     },
     {
       "subject": "meteorologia-oceanografia",
@@ -7735,28 +7262,6 @@
     },
     {
       "subject": "meteorologia-oceanografia",
-      "id": "MEO-1059",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "Visibilidade e nevoeiros",
-      "chapter_id": "miguens-met::ch45",
-      "topic_id": "V-miguens-met-ch45-12-visibilidade-e-nevoeiros"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1060",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Cobertura do céu e nuvens",
-      "chapter_id": "miguens-met::ch45",
-      "topic_id": "V-miguens-met-ch45-13-cobertura-do-ceu-e-nuvens"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
       "id": "MEO-1062",
       "code": "DUPLICATE_OPTION_SET",
       "severity": "medium",
@@ -7765,28 +7270,6 @@
       "topic": "Sistemas sinóticos",
       "chapter_id": "met-0::integral",
       "topic_id": "V-met-0-integral-20-sistemas-sinoticos"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1063",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "Sistemas tropicais",
-      "chapter_id": "met-0::integral",
-      "topic_id": "V-met-0-integral-19-sistemas-tropicais"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1064",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Áreas geradoras de vagas",
-      "chapter_id": "met-1::integral",
-      "topic_id": "V-met-1-integral-5-areas-geradoras-de-vagas"
     },
     {
       "subject": "meteorologia-oceanografia",
@@ -7801,28 +7284,6 @@
     },
     {
       "subject": "meteorologia-oceanografia",
-      "id": "MEO-1067",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "Cartas piloto",
-      "chapter_id": "met-1::integral",
-      "topic_id": "V-met-1-integral-7-cartas-piloto"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1068",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Ondas",
-      "chapter_id": "met-1::integral",
-      "topic_id": "V-met-1-integral-4-ondas"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
       "id": "MEO-1070",
       "code": "DUPLICATE_OPTION_SET",
       "severity": "medium",
@@ -7834,28 +7295,6 @@
     },
     {
       "subject": "meteorologia-oceanografia",
-      "id": "MEO-1071",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "Climatologia",
-      "chapter_id": "met-1::integral",
-      "topic_id": "V-met-1-integral-6-climatologia"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1072",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Ondas",
-      "chapter_id": "met-1::integral",
-      "topic_id": "V-met-1-integral-4-ondas"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
       "id": "MEO-1139",
       "code": "DUPLICATE_OPTION_SET",
       "severity": "medium",
@@ -7864,28 +7303,6 @@
       "topic": "Cartas piloto",
       "chapter_id": "met-1::integral",
       "topic_id": "V-met-1-integral-7-cartas-piloto"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1143",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "Ondas",
-      "chapter_id": "met-1::integral",
-      "topic_id": "V-met-1-integral-4-ondas"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1147",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Correntes de densidade e correntes costeiras",
-      "chapter_id": "met-1::integral",
-      "topic_id": "V-met-1-integral-3-correntes-de-densidade-e-correntes-costeiras"
     },
     {
       "subject": "meteorologia-oceanografia",
@@ -7911,28 +7328,6 @@
     },
     {
       "subject": "meteorologia-oceanografia",
-      "id": "MEO-1150",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "Pressão atmosférica",
-      "chapter_id": "miguens-met::ch45",
-      "topic_id": "V-miguens-met-ch45-10-pressao-atmosferica"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1151",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Correntes de densidade e correntes costeiras",
-      "chapter_id": "met-1::integral",
-      "topic_id": "V-met-1-integral-3-correntes-de-densidade-e-correntes-costeiras"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
       "id": "MEO-1153",
       "code": "DUPLICATE_OPTION_SET",
       "severity": "medium",
@@ -7941,28 +7336,6 @@
       "topic": "Interpretação de informações meteorológicas",
       "chapter_id": "normam701::integral",
       "topic_id": "V-normam701-integral-21-interpretacao-de-informacoes-meteorologicas"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1154",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "Sistemas atmosféricos",
-      "chapter_id": "miguens-met::ch45",
-      "topic_id": "V-miguens-met-ch45-15-sistemas-atmosfericos"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1155",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Correntes de densidade e correntes costeiras",
-      "chapter_id": "met-1::integral",
-      "topic_id": "V-met-1-integral-3-correntes-de-densidade-e-correntes-costeiras"
     },
     {
       "subject": "meteorologia-oceanografia",
@@ -7977,28 +7350,6 @@
     },
     {
       "subject": "meteorologia-oceanografia",
-      "id": "MEO-1178",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "Elementos meteorológicos",
-      "chapter_id": "met-0::integral",
-      "topic_id": "V-met-0-integral-16-elementos-meteorologicos"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1179",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "CHM",
-      "chapter_id": "normam701::integral",
-      "topic_id": "V-normam701-integral-chm"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
       "id": "MEO-1181",
       "code": "DUPLICATE_OPTION_SET",
       "severity": "medium",
@@ -8010,28 +7361,6 @@
     },
     {
       "subject": "meteorologia-oceanografia",
-      "id": "MEO-1182",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "Sistemas tropicais",
-      "chapter_id": "met-0::integral",
-      "topic_id": "V-met-0-integral-19-sistemas-tropicais"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1183",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "METAREA V",
-      "chapter_id": "normam701::integral",
-      "topic_id": "V-normam701-integral-metarea-v"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
       "id": "MEO-1185",
       "code": "DUPLICATE_OPTION_SET",
       "severity": "medium",
@@ -8040,226 +7369,6 @@
       "topic": "Navegação de mau tempo",
       "chapter_id": "met-1::integral",
       "topic_id": "V-met-1-integral-9-navegacao-de-mau-tempo"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1186",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "Marés",
-      "chapter_id": "met-1::integral",
-      "topic_id": "V-met-1-integral-1-mares"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1187",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "CHM",
-      "chapter_id": "normam701::integral",
-      "topic_id": "V-normam701-integral-chm"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1188",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "Sistemas sinóticos",
-      "chapter_id": "met-0::integral",
-      "topic_id": "V-met-0-integral-20-sistemas-sinoticos"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1189",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "Sistemas atmosféricos",
-      "chapter_id": "miguens-met::ch45",
-      "topic_id": "V-miguens-met-ch45-15-sistemas-atmosfericos"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1190",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "Marés",
-      "chapter_id": "met-1::integral",
-      "topic_id": "V-met-1-integral-1-mares"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1191",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "Interpretação de informações meteorológicas",
-      "chapter_id": "normam701::integral",
-      "topic_id": "V-normam701-integral-21-interpretacao-de-informacoes-meteorologicas"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1192",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "Circulação do ar",
-      "chapter_id": "met-0::integral",
-      "topic_id": "V-met-0-integral-17-circulacao-do-ar"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1193",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "Pressão atmosférica",
-      "chapter_id": "miguens-met::ch45",
-      "topic_id": "V-miguens-met-ch45-10-pressao-atmosferica"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1194",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "Cartas de correntes de marés",
-      "chapter_id": "met-1::integral",
-      "topic_id": "V-met-1-integral-2-cartas-de-correntes-de-mares"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1195",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0641.",
-      "style": "Assertivas I–V",
-      "topic": "Interpretação de informações meteorológicas",
-      "chapter_id": "normam701::integral",
-      "topic_id": "V-normam701-integral-21-interpretacao-de-informacoes-meteorologicas"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1196",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Sistemas tropicais",
-      "chapter_id": "met-0::integral",
-      "topic_id": "V-met-0-integral-19-sistemas-tropicais"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1197",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Ventos",
-      "chapter_id": "miguens-met::ch45",
-      "topic_id": "V-miguens-met-ch45-11-ventos"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1198",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Ondas",
-      "chapter_id": "met-1::integral",
-      "topic_id": "V-met-1-integral-4-ondas"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1199",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Interpretação de informações meteorológicas",
-      "chapter_id": "normam701::integral",
-      "topic_id": "V-normam701-integral-21-interpretacao-de-informacoes-meteorologicas"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1200",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Atividades convectivas e cumulonimbus",
-      "chapter_id": "met-0::integral",
-      "topic_id": "V-met-0-integral-18-atividades-convectivas-e-cumulonimbus"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1201",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Ventos",
-      "chapter_id": "miguens-met::ch45",
-      "topic_id": "V-miguens-met-ch45-11-ventos"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1202",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Climatologia",
-      "chapter_id": "met-1::integral",
-      "topic_id": "V-met-1-integral-6-climatologia"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1203",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Interpretação de informações meteorológicas",
-      "chapter_id": "normam701::integral",
-      "topic_id": "V-normam701-integral-21-interpretacao-de-informacoes-meteorologicas"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1204",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Elementos meteorológicos",
-      "chapter_id": "met-0::integral",
-      "topic_id": "V-met-0-integral-16-elementos-meteorologicos"
-    },
-    {
-      "subject": "meteorologia-oceanografia",
-      "id": "MEO-1205",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de MEO-0704.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "Cobertura do céu e nuvens",
-      "chapter_id": "miguens-met::ch45",
-      "topic_id": "V-miguens-met-ch45-13-cobertura-do-ceu-e-nuvens"
     },
     {
       "subject": "meteorologia-oceanografia",
@@ -8381,28 +7490,6 @@
       "topic": "aproximação ao berço",
       "chapter_id": "nayak-nav::ch13",
       "topic_id": "III-nayak-nav-ch13-aproximacao-ao-berco"
-    },
-    {
-      "subject": "navegacao-aguas-restritas",
-      "id": "NAR-1822",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de NAR-1818.",
-      "style": "Assertivas I–V",
-      "topic": "comunicação eficaz",
-      "chapter_id": "swift-btm::ch6",
-      "topic_id": "III-swift-btm-ch6-comunicacao-eficaz"
-    },
-    {
-      "subject": "navegacao-aguas-restritas",
-      "id": "NAR-1823",
-      "code": "DUPLICATE_OPTION_SET",
-      "severity": "medium",
-      "detail": "Conjunto de alternativas idêntico ao de NAR-1819.",
-      "style": "Sequência V/F (5 itens)",
-      "topic": "derrota",
-      "chapter_id": "miguens-v1::ch1",
-      "topic_id": "III-miguens-v1-ch1-derrota"
     },
     {
       "subject": "navegacao-aguas-restritas",

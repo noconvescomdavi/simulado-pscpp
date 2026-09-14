@@ -20,14 +20,15 @@
 |---:|---|
 | 299 | na terminologia de arte naval, qual termo corresponde a descricao tecnica a |
 | 32 | de acordo com o contido em “arte naval, v. 2”, analise as |
-| 23 | de acordo com o contido em “shiphandling for the mariner”, analise as |
-| 20 | com base em “arte naval, v. 2”, coloque v (verdadeiro) ou f |
-| 13 | de acordo com o contido em “arte naval, v. 1”, analise as |
+| 28 | de acordo com o contido em “shiphandling for the mariner”, analise as |
+| 24 | com base em “arte naval, v. 2”, coloque v (verdadeiro) ou f |
+| 17 | de acordo com o contido em “arte naval, v. 1”, analise as |
+| 16 | com base em “shiphandling for the mariner”, coloque v (verdadeiro) ou f |
 | 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
 | 12 | com base em “shiphandling for the mariner”, julgue as proposicoes a seguir |
-| 11 | com base em “shiphandling for the mariner”, coloque v (verdadeiro) ou f |
 | 10 | com base em “arte naval, v. 1”, coloque v (verdadeiro) ou f |
 | 10 | de acordo com o contido em “arte naval, v. 2” (cap. 12, |
+| 10 | assinale a opcao que completa corretamente as lacunas abaixo, tendo como referencia |
 | 9 | de acordo com o contido em “resolution a.1045(27): pilot transfer arrangements”, analise |
 | 7 | de acordo com o contido em “resolution a.1045(27): pilot transfer arrangements” (anexo, |
 | 6 | com base no conteudo de “arte naval, v. 2”, em cap. 10, |
@@ -40,8 +41,8 @@
 | 5 | com base no conteudo de “arte naval, v. 2”, em cap. 11, |
 | 4 | com base no conteudo de “arte naval, v. 1”, em cap. 8, |
 | 4 | de acordo com o contido em “arte naval, v. 2” (cap. 9, |
-| 4 | qual alternativa descreve corretamente o significado ou a funcao de “volta de |
-| 4 | com base em “arte naval, v. 2”, julgue as proposicoes a seguir |
+| 4 | com base em “resolution a.1045(27): pilot transfer arrangements”, coloque v (verdadeiro) ou |
+| 4 | de acordo com o contido em “mooring and anchoring ships: principles and |
 
 ## manobrabilidade
 
@@ -193,11 +194,11 @@
 
 | Ocorrências | Prefixo |
 |---:|---|
-| 161 | de acordo com o contido em “meteorologia e oceanografia”, analise as afirmativas |
-| 119 | de acordo com o contido em “navegacao: a ciencia e a arte |
-| 117 | com base em “meteorologia e oceanografia”, coloque v (verdadeiro) ou f (falso) |
-| 106 | de acordo com o contido em “meteorologia: nocoes basicas”, analise as afirmativas |
-| 97 | com base em “navegacao: a ciencia e a arte — volume iii”, |
+| 164 | de acordo com o contido em “meteorologia e oceanografia”, analise as afirmativas |
+| 121 | de acordo com o contido em “navegacao: a ciencia e a arte |
+| 119 | com base em “meteorologia e oceanografia”, coloque v (verdadeiro) ou f (falso) |
+| 108 | de acordo com o contido em “meteorologia: nocoes basicas”, analise as afirmativas |
+| 100 | com base em “navegacao: a ciencia e a arte — volume iii”, |
 | 68 | com base em “meteorologia: nocoes basicas”, julgue as proposicoes a seguir e |
 | 49 | com base em “meteorologia e oceanografia”, julgue as proposicoes a seguir e |
 | 30 | no briefing conduzido antes da faina, durante uma analise tecnica de bordo, |
@@ -210,14 +211,14 @@
 | 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
 | 11 | de acordo com o contido em “meteorologia e oceanografia” (capitulo viii — |
 | 11 | durante uma analise tecnica de bordo, de acordo com o contido em |
+| 11 | com base em “normam-701/dhn — normas da autoridade maritima para as atividades |
+| 10 | de acordo com o contido em “normam-701/dhn — normas da autoridade maritima |
 | 10 | sobre capitulo 45 – nocoes de meteorologia para navegantes, analise as afirmativas |
-| 9 | com base em “normam-701/dhn — normas da autoridade maritima para as atividades |
+| 10 | assinale a opcao que completa corretamente as lacunas abaixo, tendo como referencia |
+| 9 | com base em “meteorologia: nocoes basicas”, coloque v (verdadeiro) ou f (falso) |
 | 8 | em uma revisao tecnica conduzida antes da manobra, considere especificamente o seguinte |
-| 8 | de acordo com o contido em “normam-701/dhn — normas da autoridade maritima |
 | 8 | analise as quatro proposicoes sobre publicacao indicada — sem capitulos delimitados no |
 | 7 | durante uma analise tecnica de bordo, considerando o conteudo de “meteorologia e |
-| 7 | considerando publicacao indicada — sem capitulos delimitados no anexo 2-b, com foco |
-| 7 | em uma analise aprofundada de publicacao indicada — sem capitulos delimitados no |
 
 ## comunicacoes
 
