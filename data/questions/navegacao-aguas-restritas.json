@@ -6,7 +6,7 @@
   "question_type": "multiple_choice_single_answer",
   "platform_note": "IDs estáveis; correct_answer utiliza uma das chaves A-E.",
   "validation": {
-    "total": 1797,
+    "total": 1817,
     "by_module": {
       "1. Planejamento da navegação em águas restritas": 180,
       "2. Execução, monitoramento e BRM": 120,
@@ -129903,16 +129903,16 @@
       "id": "NAR-1655",
       "subject": "III — Navegação em Águas Restritas",
       "module": "4. RIPEAM/COLREG — governo, navegação, luzes e sinais",
-      "topic": "Equipamento para sinais sonoros",
+      "topic": "Definições de sinais sonoros",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
       "taxonomy": {
         "subject_id": "III",
         "subject_slug": "navegacao-aguas-restritas",
         "bibliography_id": "colreg",
         "chapter_id": "colreg::part-D",
-        "topic_id": "III-colreg-part-D-nar-col-088-5-equipamento-para-sinais-sonoros",
+        "topic_id": "III-colreg-part-D-nar-col-087-1-definicoes-de-sinais-sonoros",
         "subtopic_id": null
       },
       "tracking": {
@@ -129931,65 +129931,67 @@
         "section": "Part D",
         "module": "4. RIPEAM/COLREG — governo, navegação, luzes e sinais",
         "topic": {
-          "id": "III-colreg-part-D-nar-col-088-5-equipamento-para-sinais-sonoros",
-          "title": "Equipamento para sinais sonoros"
+          "id": "III-colreg-part-D-nar-col-087-1-definicoes-de-sinais-sonoros",
+          "title": "Definições de sinais sonoros"
         }
       },
       "source": {
         "author": "INTERNATIONAL MARITIME ORGANIZATION",
         "title": "Convention on the International Regulations for Preventing Collisions at Sea (COLREG/RIPEAM)",
         "edition": "Consolidada com emendas até dezembro de 2013 (arquivo fornecido)",
-        "locator": "Regra 33(a)–(c)"
+        "locator": "Regra 32(a)–(f)"
       },
       "tags": [
         "col",
-        "equipamento-para-sinais-sonoros",
+        "definicoes-de-sinais-sonoros",
         "programa-01",
         "programa-04",
         "programa-17",
-        "programa-18",
         "programa-39",
         "navegacao-aguas-restritas",
         "colreg",
         "colreg::part-D",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "NAR-0440"
+          "NAR-0431",
+          "NAR-0435",
+          "NAR-0438",
+          "NAR-0442"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "NAR-1655",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0004",
-      "question": "De acordo com o contido em “Convention on the International Regulations for Preventing Collisions at Sea (COLREG/RIPEAM)” (Regra 33(a)–(c)), considere o seguinte problema técnico: Sem recorrer a exceções não declaradas, qual afirmação sobre Equipamento para sinais sonoros é válida? Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.AST.00001",
+      "question": "De acordo com o contido em “Convention on the International Regulations for Preventing Collisions at Sea (COLREG/RIPEAM)”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Definições de sinais sonoros”, considere a proposição: A embarcação que deve manter-se afastada deve, tanto quanto possível, agir antecipada e substancialmente.\nII) Sobre “Definições de sinais sonoros”, considere a proposição: O requisito deve ser entendido assim: Apito, apito curto e apito longo possuem definições próprias de duração e equipamento.\nIII) Sobre “Equipamento para sinais sonoros”, considere a proposição: A omissão pode levar a aplicar regra de cruzamento a alvo detectado apenas por radar em nevoeiro.\nIV) Sobre “Sinais de manobra e advertência”, considere a proposição: Sinalizar intenção no momento adequado e verificar se a outra embarcação compreendeu.",
       "options": [
         {
           "key": "A",
-          "text": "O requisito deve ser entendido assim: Sem contato visual em ou perto de visibilidade restrita, toda embarcação deve navegar em velocidade segura, ter máquinas prontas e avaliar alvo detectado por radar com cautela."
+          "text": "Apenas as afirmativas I e II são verdadeiras."
         },
         {
           "key": "B",
-          "text": "O requisito deve ser entendido assim: Apito, apito curto e apito longo possuem definições próprias de duração e equipamento."
+          "text": "Apenas as afirmativas I e III são verdadeiras."
         },
         {
           "key": "C",
-          "text": "O requisito deve ser entendido assim: A dotação de apito, sino e gongo varia com o comprimento da embarcação."
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "O requisito deve ser entendido assim: As Regras 11 a 18 aplicam-se a embarcações no visual uma da outra."
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
         },
         {
           "key": "E",
-          "text": "O requisito deve ser entendido assim: Embarcação a vela em movimento exibe luzes de bordo e de alcançado e pode usar sinais adicionais permitidos, enquanto embarcação a remo apresenta luz prescrita ou pronta."
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
         }
       ],
       "correct_answer": "C",
-      "explanation": "A dotação de apito, sino e gongo varia com o comprimento da embarcação. Na prática, deve-se manter equipamento exigido pronto e não substituir sinais prescritos por meio inadequado. Esse controle reduz o risco de não conseguir emitir sinal audível correspondente ao porte do navio."
+      "explanation": "A combinação correta é a alternativa C. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Regra 32(a)–(f)."
     },
     {
       "id": "NAR-1656",
@@ -132333,17 +132335,17 @@
     {
       "id": "NAR-1681",
       "subject": "III — Navegação em Águas Restritas",
-      "module": "2. Execução, monitoramento e BRM",
-      "topic": "Anomalia de software e cibersegurança",
+      "module": "5. Equipamentos e sistemas integrados do passadiço",
+      "topic": "Odômetros e registros de velocidade",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
       "taxonomy": {
         "subject_id": "III",
         "subject_slug": "navegacao-aguas-restritas",
         "bibliography_id": "ics-bpg",
         "chapter_id": "ics-bpg::ch5",
-        "topic_id": "III-ics-bpg-ch5-nar-mon-198-3-anomalia-de-software-e-ciberseguranca",
+        "topic_id": "III-ics-bpg-ch5-nar-eqp-167-4-odometros-e-registros-de-velocidade",
         "subtopic_id": null
       },
       "tracking": {
@@ -132360,68 +132362,71 @@
           "label": "Chapter 5"
         },
         "section": "Chapter 5",
-        "module": "2. Execução, monitoramento e BRM",
+        "module": "5. Equipamentos e sistemas integrados do passadiço",
         "topic": {
-          "id": "III-ics-bpg-ch5-nar-mon-198-3-anomalia-de-software-e-ciberseguranca",
-          "title": "Anomalia de software e cibersegurança"
+          "id": "III-ics-bpg-ch5-nar-eqp-167-4-odometros-e-registros-de-velocidade",
+          "title": "Odômetros e registros de velocidade"
         }
       },
       "source": {
         "author": "INTERNATIONAL CHAMBER OF SHIPPING",
         "title": "Bridge Procedures Guide",
         "edition": "6. ed., 2022",
-        "locator": "Chapter 5 — Operation and Maintenance of Bridge Equipment"
+        "locator": "Chapter 5, section 5.4 — Speed and distance measuring equipment"
       },
       "tags": [
-        "mon",
-        "anomalia-de-software-e-ciberseguranca",
-        "programa-11",
-        "programa-15",
+        "eqp",
+        "odometros-e-registros-de-velocidade",
+        "programa-01",
+        "programa-02",
+        "programa-05",
         "programa-16",
-        "programa-31",
+        "programa-20",
         "programa-36",
-        "programa-38",
         "navegacao-aguas-restritas",
         "ics-bpg",
         "ics-bpg::ch5",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "NAR-0988"
+          "NAR-0834",
+          "NAR-0837",
+          "NAR-0840",
+          "NAR-0843"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "NAR-1681",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0008",
-      "question": "De acordo com o contido em “Bridge Procedures Guide” (Chapter 5 — Operation and Maintenance of Bridge Equipment), considere o seguinte problema técnico: Uma auditoria identificou falha no controle “Anomalia de software e cibersegurança”. Qual ameaça operacional deve ser priorizada? Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.VF.00002",
+      "question": "Com base em “Bridge Procedures Guide”, julgue as proposições a seguir e assinale a sequência correta:\n( ) No tópico “Odômetros e registros de velocidade”, a resposta tecnicamente correta é “2 kn a favor.”.\n( ) Sobre “Ecobatímetro”, considere a proposição: Corrigir referência e comparar tendência de sondagens com carta, maré e calado.\n( ) Sobre “Ecobatímetro”, considere a proposição: O requisito deve ser entendido assim: O ecobatímetro mede intervalo do pulso acústico e a leitura depende de referência do transdutor, velocidade do som e ajustes.\n( ) Sobre “GNSS e DGNSS”, considere a proposição: A omissão pode levar a aceitar posição precisa na tela apesar de interferência ou datum incompatível.",
       "options": [
         {
           "key": "A",
-          "text": "A omissão pode levar a perder sinal fraco, alvo pequeno ou mudança que um sensor não mostra."
+          "text": "( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "B",
-          "text": "A omissão pode levar a corrigir tarde e produzir oscilação ou aproximação ao banco."
+          "text": "( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "C",
-          "text": "A omissão pode levar a sair da curva sem detectar excesso ou insuficiência de guinada."
+          "text": "( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "D",
-          "text": "A omissão pode levar a degradar atenção e decisão justamente no trecho mais exigente."
+          "text": "( F ) ( F ) ( V ) ( V )"
         },
         {
           "key": "E",
-          "text": "A omissão pode levar a propagar dado corrompido entre sistemas integrados."
+          "text": "( V ) ( V ) ( V ) ( V )"
         }
       ],
       "correct_answer": "E",
-      "explanation": "Comportamento inesperado pode decorrer de software, dados ou interferência e não deve ser ocultado por reinício irrefletido. Na prática, deve-se isolar o efeito, preservar evidência, usar modo alternativo e comunicar conforme procedimento. Esse controle reduz o risco de propagar dado corrompido entre sistemas integrados."
+      "explanation": "A sequência correta corresponde à alternativa E, conforme os conceitos reunidos em Chapter 5, section 5.4 — Speed and distance measuring equipment."
     },
     {
       "id": "NAR-1682",
@@ -133701,16 +133706,16 @@
       "id": "NAR-1696",
       "subject": "navegacao-aguas-restritas",
       "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
-      "topic": "período de adaptação",
+      "topic": "navio existente",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
       "taxonomy": {
         "subject_id": "III",
         "subject_slug": "navegacao-aguas-restritas",
         "bibliography_id": "colreg",
         "chapter_id": "colreg::part-E",
-        "topic_id": "III-colreg-part-E-periodo-de-adaptacao",
+        "topic_id": "III-colreg-part-E-navio-existente",
         "subtopic_id": null
       },
       "tracking": {
@@ -133729,8 +133734,8 @@
         "section": "Part E",
         "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
         "topic": {
-          "id": "III-colreg-part-E-periodo-de-adaptacao",
-          "title": "período de adaptação"
+          "id": "III-colreg-part-E-navio-existente",
+          "title": "navio existente"
         }
       },
       "source": {
@@ -133743,46 +133748,50 @@
         "navegacao-aguas-restritas",
         "colreg",
         "colreg::part-E",
-        "periodo-de-adaptacao",
+        "navio-existente",
         "cobertura-v2",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "NAR-1595"
+          "NAR-1600",
+          "NAR-1603",
+          "NAR-1606",
+          "NAR-1609",
+          "NAR-1586"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "NAR-1696",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0012",
-      "question": "De acordo com o contido em “COLREG — International Regulations for Preventing Collisions at Sea” (Part E), considere o seguinte problema técnico: Considerando Part E, qual alternativa caracteriza corretamente “período de adaptação”? Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.INC.00003",
+      "question": "Considerando o conteúdo de “COLREG — International Regulations for Preventing Collisions at Sea” (Part E), assinale a alternativa INCORRETA:",
       "options": [
         {
           "key": "A",
-          "text": "Embarcação cuja construção atende à condição temporal prevista na regra para aplicação de isenções transitórias."
+          "text": "Sobre “navio existente”, considere a proposição: navio existente — Embarcação cuja construção atende à condição temporal prevista na regra para aplicação de isenções transitórias."
         },
         {
           "key": "B",
-          "text": "Requisito de que a embarcação já satisfizesse as regras internacionais anteriores indicadas para poder beneficiar-se das isenções previstas."
+          "text": "Sobre “alcance luminoso”, considere a proposição: alcance luminoso — Desempenho de visibilidade das luzes para o qual a regra previu transição limitada em certos casos."
         },
         {
           "key": "C",
-          "text": "Prazo contado da entrada em vigor durante o qual determinada exigência nova podia permanecer dispensada para navios elegíveis."
+          "text": "Sobre “conversão para unidades métricas”, considere a proposição: luzes de mastro — Prazo contado da entrada em vigor durante o qual determinada exigência nova podia permanecer dispensada para navios elegíveis."
         },
         {
           "key": "D",
-          "text": "Equipamentos de sinalização visual cuja instalação pode ter recebido períodos de adaptação específicos na regra de isenções."
+          "text": "Sobre “isenção permanente específica”, considere a proposição: isenção permanente específica — Dispensa sem prazo apenas para item expressamente identificado na regra, não uma dispensa geral das regras."
         },
         {
           "key": "E",
-          "text": "Desempenho de visibilidade das luzes para o qual a regra previu transição limitada em certos casos."
+          "text": "Sobre “regra de isenções”, considere a proposição: Disposição transitória que estabelece condições específicas para certos navios existentes quando as regras entraram em vigor."
         }
       ],
       "correct_answer": "C",
-      "explanation": "“período de adaptação” corresponde a prazo contado da entrada em vigor durante o qual determinada exigência nova podia permanecer dispensada para navios elegíveis.."
+      "explanation": "A alternativa C é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
     },
     {
       "id": "NAR-1697",
@@ -135182,16 +135191,16 @@
       "id": "NAR-1712",
       "subject": "III — Navegação em Águas Restritas",
       "module": "4. RIPEAM/COLREG — governo, navegação, luzes e sinais",
-      "topic": "Embarcações a vela",
+      "topic": "Canais estreitos",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
       "taxonomy": {
         "subject_id": "III",
         "subject_slug": "navegacao-aguas-restritas",
         "bibliography_id": "colreg",
         "chapter_id": "colreg::part-B",
-        "topic_id": "III-colreg-part-B-nar-col-067-2-embarcacoes-a-vela",
+        "topic_id": "III-colreg-part-B-nar-col-064-2-canais-estreitos",
         "subtopic_id": null
       },
       "tracking": {
@@ -135210,63 +135219,69 @@
         "section": "Part B",
         "module": "4. RIPEAM/COLREG — governo, navegação, luzes e sinais",
         "topic": {
-          "id": "III-colreg-part-B-nar-col-067-2-embarcacoes-a-vela",
-          "title": "Embarcações a vela"
+          "id": "III-colreg-part-B-nar-col-064-2-canais-estreitos",
+          "title": "Canais estreitos"
         }
       },
       "source": {
         "author": "INTERNATIONAL MARITIME ORGANIZATION",
         "title": "Convention on the International Regulations for Preventing Collisions at Sea (COLREG/RIPEAM)",
         "edition": "Consolidada com emendas até dezembro de 2013 (arquivo fornecido)",
-        "locator": "Regra 12(a)–(b)"
+        "locator": "Regra 9(a)–(g)"
       },
       "tags": [
         "col",
-        "embarcacoes-a-vela",
-        "programa-02",
+        "canais-estreitos",
         "programa-04",
+        "programa-07",
+        "programa-33",
+        "programa-34",
+        "programa-35",
         "programa-39",
         "navegacao-aguas-restritas",
         "colreg",
         "colreg::part-B",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "NAR-0332"
+          "NAR-0317",
+          "NAR-0321",
+          "NAR-0325",
+          "NAR-0328"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "NAR-1712",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0016",
-      "question": "De acordo com o contido em “Convention on the International Regulations for Preventing Collisions at Sea (COLREG/RIPEAM)” (Regra 12(a)–(b)), considere o seguinte problema técnico: Com o navio ainda em condição recuperável, qual ação dá efeito prático ao controle “Embarcações a vela”? Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.AST.00004",
+      "question": "De acordo com o contido em “Convention on the International Regulations for Preventing Collisions at Sea (COLREG/RIPEAM)”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Canais estreitos”, considere a proposição: Determinar se há reboque pela popa, empurra, unidade composta ou objeto parcialmente submerso.\nII) Sobre “Esquemas de separação de tráfego”, considere a proposição: Luz de mastro, luzes de bordo, luz de alcançado, luz de reboque, luz circular e luz intermitente têm arcos e características definidos.\nIII) Sobre “Esquemas de separação de tráfego”, considere a proposição: O requisito deve ser entendido assim: Quem usa um TSS deve seguir a via no sentido geral, manter-se afastado da linha de separação e entrar ou sair com pequeno ângulo, quando praticável.\nIV) Sobre “Aplicação entre embarcações no visual”, considere a proposição: A omissão pode levar a aplicar regra de cruzamento a alvo detectado apenas por radar em nevoeiro.",
       "options": [
         {
           "key": "A",
-          "text": "Reduzir velocidade, evitar alterações perigosas prescritas e navegar com extrema precaução ao ouvir sinal aparentemente a vante do través."
+          "text": "Apenas as afirmativas I e II são verdadeiras."
         },
         {
           "key": "B",
-          "text": "Interpretar o conjunto completo, inclusive lado obstruído ou livre quando indicado."
+          "text": "Apenas as afirmativas I e III são verdadeiras."
         },
         {
           "key": "C",
-          "text": "Manter essas obrigações mesmo quando as embarcações estão no visual uma da outra."
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "Identificar amuras e barlavento antes de definir quem deve se manter afastada."
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
         },
         {
           "key": "E",
-          "text": "Manter equipamento exigido pronto e não substituir sinais prescritos por meio inadequado."
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
         }
       ],
       "correct_answer": "D",
-      "explanation": "Quando duas embarcações a vela se aproximam com risco, as obrigações dependem dos bordos em que recebem o vento e da posição a barlavento. Na prática, deve-se identificar amuras e barlavento antes de definir quem deve se manter afastada. Esse controle reduz o risco de decidir preferência apenas pelo rumo verdadeiro de cada veleiro."
+      "explanation": "A combinação correta é a alternativa D. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Regra 9(a)–(g)."
     },
     {
       "id": "NAR-1713",
@@ -136668,16 +136683,16 @@
       "id": "NAR-1728",
       "subject": "navegacao-aguas-restritas",
       "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
-      "topic": "longitude",
+      "topic": "projeção de Mercator",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
       "taxonomy": {
         "subject_id": "III",
         "subject_slug": "navegacao-aguas-restritas",
         "bibliography_id": "miguens-v1",
         "chapter_id": "miguens-v1::ch2",
-        "topic_id": "III-miguens-v1-ch2-longitude",
+        "topic_id": "III-miguens-v1-ch2-projecao-de-mercator",
         "subtopic_id": null
       },
       "tracking": {
@@ -136696,8 +136711,8 @@
         "section": "Capítulo 2",
         "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
         "topic": {
-          "id": "III-miguens-v1-ch2-longitude",
-          "title": "longitude"
+          "id": "III-miguens-v1-ch2-projecao-de-mercator",
+          "title": "projeção de Mercator"
         }
       },
       "source": {
@@ -136710,46 +136725,49 @@
         "navegacao-aguas-restritas",
         "miguens-v1",
         "miguens-v1::ch2",
-        "longitude",
+        "projecao-de-mercator",
         "cobertura-v2",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "NAR-1122"
+          "NAR-1123",
+          "NAR-1126",
+          "NAR-1129",
+          "NAR-1132"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "NAR-1728",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0020",
-      "question": "De acordo com o contido em “Navegação: a Ciência e a Arte — Volume I” (Capítulo 2), considere o seguinte problema técnico: No contexto de Capítulo 2, qual conceito corresponde à descrição: “Coordenada angular medida a leste ou oeste do meridiano de origem.”? Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.VF.00005",
+      "question": "Com base em “Navegação: a Ciência e a Arte — Volume I”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “projeção de Mercator”, considere a proposição: projeção de Mercator — Projeção conforme amplamente empregada em cartas náuticas, na qual loxodromias aparecem como linhas retas.\n( ) Sobre “datum geodésico”, considere a proposição: datum geodésico — Referencial matemático e geodésico ao qual as coordenadas da carta estão vinculadas.\n( ) Sobre “rosa dos ventos”, considere a proposição: latitude — Coordenada angular medida a leste ou oeste do meridiano de origem.\n( ) Sobre “atualização da carta”, considere a proposição: carta de maior escala — Incorporação de correções e avisos para manter as informações náuticas vigentes.",
       "options": [
         {
           "key": "A",
-          "text": "longitude"
+          "text": "( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "B",
-          "text": "escala da carta"
+          "text": "( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "C",
-          "text": "datum geodésico"
+          "text": "( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "D",
-          "text": "sondagem"
+          "text": "( F ) ( F ) ( V ) ( V )"
         },
         {
           "key": "E",
-          "text": "loxodromia"
+          "text": "( V ) ( V ) ( V ) ( V )"
         }
       ],
       "correct_answer": "A",
-      "explanation": "A descrição apresentada identifica “longitude”."
+      "explanation": "A sequência correta corresponde à alternativa A, conforme os conceitos reunidos em Capítulo 2."
     },
     {
       "id": "NAR-1729",
@@ -137026,16 +137044,16 @@
       "id": "NAR-1732",
       "subject": "navegacao-aguas-restritas",
       "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
-      "topic": "parallel index",
+      "topic": "monitoramento contínuo",
       "difficulty": "Difícil",
-      "style": "Assertivas I–IV",
-      "question_type": "Assertivas I–IV",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
       "taxonomy": {
         "subject_id": "III",
         "subject_slug": "navegacao-aguas-restritas",
         "bibliography_id": "miguens-v1",
         "chapter_id": "miguens-v1::ch7",
-        "topic_id": "III-miguens-v1-ch7-parallel-index",
+        "topic_id": "III-miguens-v1-ch7-monitoramento-continuo",
         "subtopic_id": null
       },
       "tracking": {
@@ -137054,8 +137072,8 @@
         "section": "Capítulo 7",
         "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
         "topic": {
-          "id": "III-miguens-v1-ch7-parallel-index",
-          "title": "parallel index"
+          "id": "III-miguens-v1-ch7-monitoramento-continuo",
+          "title": "monitoramento contínuo"
         }
       },
       "source": {
@@ -137068,49 +137086,50 @@
         "navegacao-aguas-restritas",
         "miguens-v1",
         "miguens-v1::ch7",
-        "parallel-index",
+        "monitoramento-continuo",
         "cobertura-v2",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "NAR-1254",
-          "NAR-1255",
           "NAR-1256",
-          "NAR-1257"
+          "NAR-1259",
+          "NAR-1262",
+          "NAR-1265",
+          "NAR-1268"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "NAR-1732",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.AST.0021",
-      "question": "De acordo com o contido em “Navegação: a Ciência e a Arte — Volume I”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) Sobre “parallel index”, é correto afirmar: parallel index — Linha paralela à derrota exibida no radar para monitorar afastamento de uma referência ou perigo.\nII) Sobre “verificação radar”, é correto afirmar: Uso de distância, marcação ou índice paralelo para confirmar o cumprimento de um limite de segurança.\nIII) No contexto de “monitoramento contínuo”, a associação “lado seguro” é tecnicamente aplicável.\nIV) Sobre “correção de maré”, é correto afirmar: monitoramento contínuo — Ajuste das profundidades disponíveis em função da altura de maré prevista ou observada.",
+      "topic_code": "PSCPP.V4.INC.00006",
+      "question": "Considerando o conteúdo de “Navegação: a Ciência e a Arte — Volume I” (Capítulo 7), assinale a alternativa INCORRETA:",
       "options": [
         {
           "key": "A",
-          "text": "As afirmativas I, II, III e IV são verdadeiras."
+          "text": "No contexto de “monitoramento contínuo”, a associação “monitoramento contínuo” é tecnicamente aplicável."
         },
         {
           "key": "B",
-          "text": "Apenas as afirmativas I e III são verdadeiras."
+          "text": "No contexto de “marcação de segurança”, a associação “marcação de segurança” é tecnicamente aplicável."
         },
         {
           "key": "C",
-          "text": "Apenas as afirmativas II e IV são verdadeiras."
+          "text": "No contexto de “isóbata de segurança”, a associação “isóbata de segurança” é tecnicamente aplicável."
         },
         {
           "key": "D",
-          "text": "Apenas as afirmativas III e IV são verdadeiras."
+          "text": "No contexto de “lado seguro”, a associação “lado seguro” é tecnicamente aplicável."
         },
         {
           "key": "E",
-          "text": "Apenas as afirmativas I e II são verdadeiras."
+          "text": "No contexto de “verificação radar”, a associação “círculo de perigo” é tecnicamente aplicável."
         }
       ],
       "correct_answer": "E",
-      "explanation": "A alternativa correta decorre dos conceitos reunidos no mesmo recorte bibliográfico: Capítulo 7."
+      "explanation": "A alternativa E é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
     },
     {
       "id": "NAR-1733",
@@ -142252,16 +142271,16 @@
       "id": "NAR-1789",
       "subject": "navegacao-aguas-restritas",
       "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
-      "topic": "drift da corrente",
+      "topic": "velocidade na água",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
       "taxonomy": {
         "subject_id": "III",
         "subject_slug": "navegacao-aguas-restritas",
         "bibliography_id": "miguens-v1",
         "chapter_id": "miguens-v1::ch5",
-        "topic_id": "III-miguens-v1-ch5-drift-da-corrente",
+        "topic_id": "III-miguens-v1-ch5-velocidade-na-agua",
         "subtopic_id": null
       },
       "tracking": {
@@ -142280,8 +142299,8 @@
         "section": "Capítulo 5",
         "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
         "topic": {
-          "id": "III-miguens-v1-ch5-drift-da-corrente",
-          "title": "drift da corrente"
+          "id": "III-miguens-v1-ch5-velocidade-na-agua",
+          "title": "velocidade na água"
         }
       },
       "source": {
@@ -142294,46 +142313,49 @@
         "navegacao-aguas-restritas",
         "miguens-v1",
         "miguens-v1::ch5",
-        "drift-da-corrente",
+        "velocidade-na-agua",
         "cobertura-v2",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "NAR-1215"
+          "NAR-1212",
+          "NAR-1215",
+          "NAR-1218",
+          "NAR-1198"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "NAR-1789",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0024",
-      "question": "De acordo com o contido em “Navegação: a Ciência e a Arte — Volume I” (Capítulo 5), considere o seguinte problema técnico: No contexto de Capítulo 5, qual conceito corresponde à descrição: “Velocidade da corrente que produz deslocamento em relação à água.”? Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.AST.00007",
+      "question": "De acordo com o contido em “Navegação: a Ciência e a Arte — Volume I”, analise as afirmativas abaixo e assinale a opção correta:\nI) No contexto de “velocidade na água”, a associação “atualização por fix” é tecnicamente aplicável.\nII) No contexto de “drift da corrente”, a associação “velocidade no fundo” é tecnicamente aplicável.\nIII) No contexto de “velocidade no fundo”, a associação “velocidade no fundo” é tecnicamente aplicável.\nIV) Sobre “rumo de governo”, considere a proposição: rumo de governo — Direção comandada para orientar o movimento da embarcação.",
       "options": [
         {
           "key": "A",
-          "text": "set da corrente"
+          "text": "Apenas as afirmativas I e II são verdadeiras."
         },
         {
           "key": "B",
-          "text": "abatimento"
+          "text": "Apenas as afirmativas I e III são verdadeiras."
         },
         {
           "key": "C",
-          "text": "rumo no fundo"
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "drift da corrente"
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
         },
         {
           "key": "E",
-          "text": "velocidade no fundo"
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
         }
       ],
       "correct_answer": "D",
-      "explanation": "A descrição apresentada identifica “drift da corrente”."
+      "explanation": "A combinação correta é a alternativa D. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Capítulo 5."
     },
     {
       "id": "NAR-1790",
@@ -142612,18 +142634,18 @@
     },
     {
       "id": "NAR-1793",
-      "subject": "navegacao-aguas-restritas",
-      "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
-      "topic": "embarcação engajada na pesca",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "4. RIPEAM/COLREG — governo, navegação, luzes e sinais",
+      "topic": "Responsabilidade",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
       "taxonomy": {
         "subject_id": "III",
         "subject_slug": "navegacao-aguas-restritas",
         "bibliography_id": "colreg",
         "chapter_id": "colreg::part-A",
-        "topic_id": "III-colreg-part-A-embarcacao-engajada-na-pesca",
+        "topic_id": "III-colreg-part-A-nar-col-057-2-responsabilidade",
         "subtopic_id": null
       },
       "tracking": {
@@ -142631,7 +142653,7 @@
         "work": {
           "id": "colreg",
           "title": "IMO COLREG — Consolidated Edition 2018",
-          "author": "International Maritime Organization"
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
         },
         "chapter": {
           "id": "colreg::part-A",
@@ -142640,62 +142662,71 @@
           "label": "Part A"
         },
         "section": "Part A",
-        "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
+        "module": "4. RIPEAM/COLREG — governo, navegação, luzes e sinais",
         "topic": {
-          "id": "III-colreg-part-A-embarcacao-engajada-na-pesca",
-          "title": "embarcação engajada na pesca"
+          "id": "III-colreg-part-A-nar-col-057-2-responsabilidade",
+          "title": "Responsabilidade"
         }
       },
       "source": {
-        "author": "International Maritime Organization",
-        "title": "COLREG — International Regulations for Preventing Collisions at Sea",
-        "edition": "Consolidated Edition 2018",
-        "locator": "Part A"
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Convention on the International Regulations for Preventing Collisions at Sea (COLREG/RIPEAM)",
+        "edition": "Consolidada com emendas até dezembro de 2013 (arquivo fornecido)",
+        "locator": "Regra 2(a)–(b)"
       },
       "tags": [
+        "col",
+        "responsabilidade",
+        "programa-04",
+        "programa-11",
+        "programa-15",
+        "programa-34",
+        "programa-36",
+        "programa-39",
         "navegacao-aguas-restritas",
         "colreg",
         "colreg::part-A",
-        "embarcacao-engajada-na-pesca",
-        "cobertura-v2",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "NAR-1580"
+          "NAR-0282",
+          "NAR-0286",
+          "NAR-0290",
+          "NAR-1573"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "NAR-1793",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0028",
-      "question": "De acordo com o contido em “COLREG — International Regulations for Preventing Collisions at Sea” (Part A), considere o seguinte problema técnico: Considerando Part A, qual alternativa caracteriza corretamente “embarcação engajada na pesca”? Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.VF.00008",
+      "question": "Com base em “Convention on the International Regulations for Preventing Collisions at Sea (COLREG/RIPEAM)”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Responsabilidade”, considere a proposição: Cumprir as regras considerando perigos especiais e circunstâncias que possam exigir afastamento para evitar perigo imediato.\n( ) Sobre “Definições gerais”, considere a proposição: Termos como embarcação de propulsão mecânica, a vela, engajada na pesca, sem governo e com capacidade de manobra restrita têm sentidos próprios no regulamento.\n( ) Sobre “Definições gerais”, considere a proposição: O requisito deve ser entendido assim: É ultrapassagem aproximar-se de direção superior a 22,5 graus por ante-a-ré do través e a embarcação que ultrapassa deve manter-se afastada até estar inteiramente livre.\n( ) Sobre “esquema de separação de tráfego”, considere a proposição: embarcação a vela — Embarcação pescando com equipamento que restringe sua manobrabilidade, conforme a definição das regras.",
       "options": [
         {
           "key": "A",
-          "text": "Embarcação pescando com equipamento que restringe sua manobrabilidade, conforme a definição das regras."
+          "text": "( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "B",
-          "text": "Medida de organização de tráfego que pode ser adotada pela Organização para áreas de navegação intensa."
+          "text": "( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "C",
-          "text": "Disposições locais permitidas para certas águas ou classes, desde que sejam tão compatíveis quanto possível com as regras internacionais."
+          "text": "( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "D",
-          "text": "Princípio segundo o qual o cumprimento literal não exime navio, armador, comandante ou tripulação das consequências de negligência."
+          "text": "( F ) ( F ) ( V ) ( V )"
         },
         {
           "key": "E",
-          "text": "Precauções que podem ser exigidas pela boa prática ou pelas circunstâncias especiais do caso."
+          "text": "( V ) ( V ) ( V ) ( V )"
         }
       ],
       "correct_answer": "A",
-      "explanation": "“embarcação engajada na pesca” corresponde a embarcação pescando com equipamento que restringe sua manobrabilidade, conforme a definição das regras.."
+      "explanation": "A sequência correta corresponde à alternativa A, conforme os conceitos reunidos em Regra 2(a)–(b)."
     },
     {
       "id": "NAR-1794",
@@ -142977,16 +143008,16 @@
       "id": "NAR-1797",
       "subject": "III — Navegação em Águas Restritas",
       "module": "5. Equipamentos e sistemas integrados do passadiço",
-      "topic": "Aquisição e acompanhamento de alvos",
+      "topic": "Desempenho de detecção radar",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
       "taxonomy": {
         "subject_id": "III",
         "subject_slug": "navegacao-aguas-restritas",
         "bibliography_id": "nav-doc-3",
         "chapter_id": "nav-doc-3::integral",
-        "topic_id": "III-nav-doc-3-integral-nar-eqp-101-3-aquisicao-e-acompanhamento-de-alvos",
+        "topic_id": "III-nav-doc-3-integral-nar-eqp-094-2-desempenho-de-deteccao-radar",
         "subtopic_id": null
       },
       "tracking": {
@@ -143005,66 +143036,1885 @@
         "section": "Publicação indicada — sem recorte adicional no Anexo 2-B",
         "module": "5. Equipamentos e sistemas integrados do passadiço",
         "topic": {
-          "id": "III-nav-doc-3-integral-nar-eqp-101-3-aquisicao-e-acompanhamento-de-alvos",
-          "title": "Aquisição e acompanhamento de alvos"
+          "id": "III-nav-doc-3-integral-nar-eqp-094-2-desempenho-de-deteccao-radar",
+          "title": "Desempenho de detecção radar"
         }
       },
       "source": {
         "author": "INTERNATIONAL MARITIME ORGANIZATION",
         "title": "Revised performance standards for radar equipment — Resolution MSC.192(79)",
         "edition": "2004",
-        "locator": "Anexo, section 5.25 — Target Tracking and Acquisition"
+        "locator": "Anexo, section 5.3 — Detection Performance and Anti-clutter Functions"
       },
       "tags": [
         "eqp",
-        "aquisicao-e-acompanhamento-de-alvos",
-        "programa-02",
-        "programa-11",
+        "desempenho-de-deteccao-radar",
+        "programa-01",
+        "programa-06",
         "programa-16",
         "programa-25",
         "programa-30",
-        "programa-39",
+        "programa-36",
         "navegacao-aguas-restritas",
         "nav-doc-3",
         "nav-doc-3::integral",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "NAR-0503"
+          "NAR-0467",
+          "NAR-0471",
+          "NAR-0475",
+          "NAR-0478",
+          "NAR-0482"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "NAR-1797",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0032",
-      "question": "De acordo com o contido em “Revised performance standards for radar equipment — Resolution MSC.192(79)” (Anexo, section 5.25 — Target Tracking and Acquisition), considere o seguinte problema técnico: O passadiço prosseguiu sem aplicar o controle “Aquisição e acompanhamento de alvos”. Qual vulnerabilidade foi criada? Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.INC.00009",
+      "question": "Considerando o conteúdo de “Revised performance standards for radar equipment — Resolution MSC.192(79)” (Anexo, section 5.3 — Detection Performance and Anti-clutter Functions), assinale a alternativa INCORRETA:",
       "options": [
         {
           "key": "A",
-          "text": "A omissão pode levar a alimentar radar e ECDIS com rumo incorreto não detectado."
+          "text": "Sobre “Desempenho de detecção radar”, considere a proposição: Otimizar o radar sem eliminar ecos fracos e confirmar alvos por varreduras sucessivas."
         },
         {
           "key": "B",
-          "text": "A omissão pode levar a suprimir alvo pequeno junto a chuva, mar ou costa."
+          "text": "Sobre “Alcance mínimo radar”, considere a proposição: O alcance mínimo limita a detecção de objetos muito próximos e varia com instalação e desempenho."
         },
         {
           "key": "C",
-          "text": "A omissão pode levar a silenciar aviso que indica degradação real do quadro de tráfego."
+          "text": "Sobre “Alcance mínimo radar”, considere a proposição: O requisito deve ser entendido assim: O alcance mínimo limita a detecção de objetos muito próximos e varia com instalação e desempenho."
         },
         {
           "key": "D",
-          "text": "A omissão pode levar a atribuir precisão adicional a dado apenas porque foi ampliado."
+          "text": "Sobre “Discriminação radar”, considere a proposição: A omissão pode levar a confundir dois alvos ou alvo e costa numa única mancha."
         },
         {
           "key": "E",
-          "text": "A omissão pode levar a manobrar com base em vetor inicial ainda instável."
+          "text": "Sobre “Escalas de distância”, considere a proposição: Identificar tipo e status do símbolo e confirmar sua natureza por fontes oficiais."
         }
       ],
       "correct_answer": "E",
-      "explanation": "O rastreamento exige aquisição válida e tempo para estabilizar antes de produzir dados confiáveis. Na prática, deve-se confirmar símbolo, qualidade e consistência de rumo, velocidade, CPA e TCPA. Esse controle reduz o risco de manobrar com base em vetor inicial ainda instável."
+      "explanation": "A alternativa E é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+    },
+    {
+      "id": "NAR-1798",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "4. RIPEAM/COLREG — governo, navegação, luzes e sinais",
+      "topic": "Responsabilidade",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "colreg",
+        "chapter_id": "colreg::part-A",
+        "topic_id": "III-colreg-part-A-nar-col-057-1-responsabilidade",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "navegacao-aguas-restritas",
+        "work": {
+          "id": "colreg",
+          "title": "IMO COLREG — Consolidated Edition 2018",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "colreg::part-A",
+          "number": "part-A",
+          "title": "Part A",
+          "label": "Part A"
+        },
+        "section": "Part A",
+        "module": "4. RIPEAM/COLREG — governo, navegação, luzes e sinais",
+        "topic": {
+          "id": "III-colreg-part-A-nar-col-057-1-responsabilidade",
+          "title": "Responsabilidade"
+        }
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Convention on the International Regulations for Preventing Collisions at Sea (COLREG/RIPEAM)",
+        "edition": "Consolidada com emendas até dezembro de 2013 (arquivo fornecido)",
+        "locator": "Regra 2(a)–(b)"
+      },
+      "tags": [
+        "col",
+        "responsabilidade",
+        "programa-04",
+        "programa-11",
+        "programa-15",
+        "programa-34",
+        "programa-36",
+        "programa-39",
+        "navegacao-aguas-restritas",
+        "colreg",
+        "colreg::part-A",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "NAR-0281",
+          "NAR-0285",
+          "NAR-0288",
+          "NAR-1572"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.AST.10001",
+      "question": "De acordo com o contido em “Convention on the International Regulations for Preventing Collisions at Sea (COLREG/RIPEAM)”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Responsabilidade”, considere a proposição: Nada nas regras exime embarcação, proprietário, comandante ou tripulação das consequências de negligência ou de precaução exigida pela prática marinheira.\nII) Sobre “Responsabilidade”, considere a proposição: O requisito deve ser entendido assim: Nada nas regras exime embarcação, proprietário, comandante ou tripulação das consequências de negligência ou de precaução exigida pela prática marinheira.\nIII) Sobre “Definições gerais”, considere a proposição: A omissão pode levar a passar pelo lado obstruído de operação com espaço limitado.\nIV) No contexto de “regras especiais”, a associação “embarcação” é tecnicamente aplicável.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A combinação correta é a alternativa A. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Regra 2(a)–(b)."
+    },
+    {
+      "id": "NAR-1799",
+      "subject": "navegacao-aguas-restritas",
+      "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
+      "topic": "agulha magnética",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "miguens-v1",
+        "chapter_id": "miguens-v1::ch11",
+        "topic_id": "III-miguens-v1-ch11-agulha-magnetica",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "navegacao-aguas-restritas",
+        "work": {
+          "id": "miguens-v1",
+          "title": "MIGUENS — Navegação: a Ciência e a Arte, Volume I",
+          "author": "Altineu Pires Miguens"
+        },
+        "chapter": {
+          "id": "miguens-v1::ch11",
+          "number": "ch11",
+          "title": "Capítulo 11",
+          "label": "Capítulo 11"
+        },
+        "section": "Capítulo 11",
+        "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
+        "topic": {
+          "id": "III-miguens-v1-ch11-agulha-magnetica",
+          "title": "agulha magnética"
+        }
+      },
+      "source": {
+        "author": "Altineu Pires Miguens",
+        "title": "Navegação: a Ciência e a Arte — Volume I",
+        "edition": "2ª Revisão, 2023",
+        "locator": "Capítulo 11"
+      },
+      "tags": [
+        "navegacao-aguas-restritas",
+        "miguens-v1",
+        "miguens-v1::ch11",
+        "agulha-magnetica",
+        "cobertura-v2",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "NAR-1334",
+          "NAR-1337",
+          "NAR-1340",
+          "NAR-1343"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.VF.10002",
+      "question": "Com base em “Navegação: a Ciência e a Arte — Volume I”, julgue as proposições a seguir e assinale a sequência correta:\n( ) No contexto de “agulha magnética”, a associação “agulha magnética” é tecnicamente aplicável.\n( ) No contexto de “sextante”, a associação “prumo de mão” é tecnicamente aplicável.\n( ) No contexto de “radar”, a associação “radar” é tecnicamente aplicável.\n( ) No contexto de “cronômetro”, a associação “agulha giroscópica” é tecnicamente aplicável.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "D",
+          "text": "( F ) ( F ) ( V ) ( V )"
+        },
+        {
+          "key": "E",
+          "text": "( V ) ( V ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A sequência correta corresponde à alternativa B, conforme os conceitos reunidos em Capítulo 11."
+    },
+    {
+      "id": "NAR-1800",
+      "subject": "navegacao-aguas-restritas",
+      "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
+      "topic": "GLONASS",
+      "difficulty": "Difícil",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "miguens-v3-nav",
+        "chapter_id": "miguens-v3-nav::ch37",
+        "topic_id": "III-miguens-v3-nav-ch37-glonass",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "navegacao-aguas-restritas",
+        "work": {
+          "id": "miguens-v3-nav",
+          "title": "MIGUENS — Navegação: a Ciência e a Arte, Volume III",
+          "author": "Altineu Pires Miguens"
+        },
+        "chapter": {
+          "id": "miguens-v3-nav::ch37",
+          "number": "ch37",
+          "title": "Capítulo 37",
+          "label": "Capítulo 37"
+        },
+        "section": "Capítulo 37",
+        "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
+        "topic": {
+          "id": "III-miguens-v3-nav-ch37-glonass",
+          "title": "GLONASS"
+        }
+      },
+      "source": {
+        "author": "Altineu Pires Miguens",
+        "title": "Navegação: a Ciência e a Arte — Volume III",
+        "edition": "1ª Revisão, 2026",
+        "locator": "Capítulo 37"
+      },
+      "tags": [
+        "navegacao-aguas-restritas",
+        "miguens-v3-nav",
+        "miguens-v3-nav::ch37",
+        "glonass",
+        "cobertura-v2",
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "NAR-1423",
+          "NAR-1426",
+          "NAR-1429",
+          "NAR-1432",
+          "NAR-1435"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.INC.10003",
+      "question": "Considerando o conteúdo de “Navegação: a Ciência e a Arte — Volume III” (Capítulo 37), assinale a alternativa INCORRETA:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sobre “GLONASS”, considere a proposição: GLONASS — Sistema global de navegação por satélite desenvolvido pela Rússia."
+        },
+        {
+          "key": "B",
+          "text": "Sobre “pseudodistância”, considere a proposição: pseudodistância — Medida de distância aparente obtida do tempo de propagação do sinal e usada no cálculo da posição."
+        },
+        {
+          "key": "C",
+          "text": "Sobre “geometria dos satélites”, considere a proposição: jamming — Transmissão enganosa que procura fazer o receptor calcular posição ou tempo falsos."
+        },
+        {
+          "key": "D",
+          "text": "Sobre “jamming”, considere a proposição: jamming — Interferência intencional ou não que reduz ou impede a recepção dos sinais de satélite."
+        },
+        {
+          "key": "E",
+          "text": "Sobre “GPS”, considere a proposição: GPS — Sistema GNSS dos Estados Unidos baseado em constelação de satélites e sinais de radionavegação."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A alternativa C é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+    },
+    {
+      "id": "NAR-1801",
+      "subject": "navegacao-aguas-restritas",
+      "module": "Praticagem e condução em canais, rios e portos",
+      "topic": "aproximação ao berço",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "nayak-nav",
+        "chapter_id": "nayak-nav::ch13",
+        "topic_id": "III-nayak-nav-ch13-aproximacao-ao-berco",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "navegacao-aguas-restritas",
+        "work": {
+          "id": "nayak-nav",
+          "title": "NAYAK — Theory and Practices of Marine Pilotage",
+          "author": "NAYAK, Santosha K."
+        },
+        "chapter": {
+          "id": "nayak-nav::ch13",
+          "number": "ch13",
+          "title": "Chapter 13",
+          "label": "Chapter 13"
+        },
+        "section": "Chapter 13",
+        "module": "Praticagem e condução em canais, rios e portos",
+        "topic": {
+          "id": "III-nayak-nav-ch13-aproximacao-ao-berco",
+          "title": "aproximação ao berço"
+        }
+      },
+      "source": {
+        "author": "NAYAK, Santosha K.",
+        "title": "Theory and Practices of Marine Pilotage",
+        "edition": "2. ed., 2021 (arquivo fornecido)",
+        "locator": "Chapter 13 — Manoeuvring Inside Harbour Limits"
+      },
+      "tags": [
+        "navegacao-aguas-restritas",
+        "nayak-nav",
+        "nayak-nav::ch13",
+        "aproximacao-ao-berco",
+        "cobertura-v2",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "NAR-1638",
+          "NAR-0896",
+          "NAR-0900",
+          "NAR-0903"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.AST.10004",
+      "question": "De acordo com o contido em “Theory and Practices of Marine Pilotage”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “aproximação ao berço”, considere a proposição: critério de aborto da manobra — Fase em que devem ser controlados separadamente velocidade longitudinal, velocidade lateral, ângulo de aproximação e energia restante.\nII) Sobre “Plano de rebocadores”, considere a proposição: Manter posição segura exige antecipar tendência, não apenas corrigir a posição instantânea.\nIII) Sobre “Plano de rebocadores”, considere a proposição: O requisito deve ser entendido assim: O emprego de rebocadores deve considerar força, direção, ponto de conexão, risco de girting e fase da manobra.\nIV) Sobre “Aproximação ao berço”, considere a proposição: A omissão pode levar a chegar ao cais com momento que defensas e rebocadores não absorvem.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A combinação correta é a alternativa D. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Chapter 13 — Manoeuvring Inside Harbour Limits."
+    },
+    {
+      "id": "NAR-1802",
+      "subject": "navegacao-aguas-restritas",
+      "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
+      "topic": "comunicação eficaz",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "swift-btm",
+        "chapter_id": "swift-btm::ch6",
+        "topic_id": "III-swift-btm-ch6-comunicacao-eficaz",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "navegacao-aguas-restritas",
+        "work": {
+          "id": "swift-btm",
+          "title": "SWIFT & BAILEY — Bridge Team Management, 2ª ed.",
+          "author": "A. J. Swift; T. J. Bailey"
+        },
+        "chapter": {
+          "id": "swift-btm::ch6",
+          "number": "ch6",
+          "title": "Chapter 6",
+          "label": "Chapter 6"
+        },
+        "section": "Chapter 6",
+        "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
+        "topic": {
+          "id": "III-swift-btm-ch6-comunicacao-eficaz",
+          "title": "comunicação eficaz"
+        }
+      },
+      "source": {
+        "author": "A. J. Swift; T. J. Bailey",
+        "title": "Bridge Team Management: a practical guide",
+        "edition": "2. ed., 2004",
+        "locator": "Chapter 6"
+      },
+      "tags": [
+        "navegacao-aguas-restritas",
+        "swift-btm",
+        "swift-btm::ch6",
+        "comunicacao-eficaz",
+        "cobertura-v2",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "NAR-1048",
+          "NAR-1051",
+          "NAR-1054",
+          "NAR-1057"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.VF.10005",
+      "question": "Com base em “Bridge Team Management: a practical guide”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “comunicação eficaz”, considere a proposição: comunicação eficaz — Transmissão concisa, inequívoca e confirmada das informações necessárias à operação segura.\n( ) Sobre “balanceamento de carga”, considere a proposição: balanceamento de carga — Redistribuição de tarefas quando um membro ou estação fica sobrecarregado.\n( ) Sobre “debriefing”, considere a proposição: debriefing — Revisão posterior da execução para identificar acertos, falhas e oportunidades de melhoria.\n( ) Sobre “decisão em equipe”, considere a proposição: decisão em equipe — Processo em que informações relevantes são compartilhadas antes de selecionar e executar uma alternativa.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "D",
+          "text": "( F ) ( F ) ( V ) ( V )"
+        },
+        {
+          "key": "E",
+          "text": "( V ) ( V ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A sequência correta corresponde à alternativa E, conforme os conceitos reunidos em Chapter 6."
+    },
+    {
+      "id": "NAR-1803",
+      "subject": "navegacao-aguas-restritas",
+      "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
+      "topic": "derrota",
+      "difficulty": "Difícil",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "miguens-v1",
+        "chapter_id": "miguens-v1::ch1",
+        "topic_id": "III-miguens-v1-ch1-derrota",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "navegacao-aguas-restritas",
+        "work": {
+          "id": "miguens-v1",
+          "title": "MIGUENS — Navegação: a Ciência e a Arte, Volume I",
+          "author": "Altineu Pires Miguens"
+        },
+        "chapter": {
+          "id": "miguens-v1::ch1",
+          "number": "ch1",
+          "title": "Capítulo 1",
+          "label": "Capítulo 1"
+        },
+        "section": "Capítulo 1",
+        "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
+        "topic": {
+          "id": "III-miguens-v1-ch1-derrota",
+          "title": "derrota"
+        }
+      },
+      "source": {
+        "author": "Altineu Pires Miguens",
+        "title": "Navegação: a Ciência e a Arte — Volume I",
+        "edition": "2ª Revisão, 2023",
+        "locator": "Capítulo 1"
+      },
+      "tags": [
+        "navegacao-aguas-restritas",
+        "miguens-v1",
+        "miguens-v1::ch1",
+        "derrota",
+        "cobertura-v2",
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "NAR-1111",
+          "NAR-1114",
+          "NAR-1117",
+          "NAR-1120",
+          "NAR-1098"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.INC.10006",
+      "question": "Considerando o conteúdo de “Navegação: a Ciência e a Arte — Volume I” (Capítulo 1), assinale a alternativa INCORRETA:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sobre “derrota”, considere a proposição: Razão entre distância percorrida e tempo, podendo ser referida à água ou ao fundo."
+        },
+        {
+          "key": "B",
+          "text": "Sobre “marcação”, considere a proposição: Direção angular de um objeto observada a partir da embarcação."
+        },
+        {
+          "key": "C",
+          "text": "Sobre “navegação visual”, considere a proposição: Determinação e controle da posição por observação de pontos de terra e auxílios visuais conhecidos."
+        },
+        {
+          "key": "D",
+          "text": "Sobre “navegação costeira”, considere a proposição: Navegação em que referências de terra e auxílios costeiros são usados regularmente para determinar a posição."
+        },
+        {
+          "key": "E",
+          "text": "Sobre “derrota”, considere a proposição: derrota — Trajetória planejada ou efetivamente seguida pela embarcação sobre a superfície terrestre."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A alternativa A é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+    },
+    {
+      "id": "NAR-1804",
+      "subject": "navegacao-aguas-restritas",
+      "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
+      "topic": "isóbata de segurança",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "miguens-v1",
+        "chapter_id": "miguens-v1::ch7",
+        "topic_id": "III-miguens-v1-ch7-isobata-de-seguranca",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "navegacao-aguas-restritas",
+        "work": {
+          "id": "miguens-v1",
+          "title": "MIGUENS — Navegação: a Ciência e a Arte, Volume I",
+          "author": "Altineu Pires Miguens"
+        },
+        "chapter": {
+          "id": "miguens-v1::ch7",
+          "number": "ch7",
+          "title": "Capítulo 7",
+          "label": "Capítulo 7"
+        },
+        "section": "Capítulo 7",
+        "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
+        "topic": {
+          "id": "III-miguens-v1-ch7-isobata-de-seguranca",
+          "title": "isóbata de segurança"
+        }
+      },
+      "source": {
+        "author": "Altineu Pires Miguens",
+        "title": "Navegação: a Ciência e a Arte — Volume I",
+        "edition": "2ª Revisão, 2023",
+        "locator": "Capítulo 7"
+      },
+      "tags": [
+        "navegacao-aguas-restritas",
+        "miguens-v1",
+        "miguens-v1::ch7",
+        "isobata-de-seguranca",
+        "cobertura-v2",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "NAR-1249",
+          "NAR-1252",
+          "NAR-1255",
+          "NAR-1258"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.AST.10007",
+      "question": "De acordo com o contido em “Navegação: a Ciência e a Arte — Volume I”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “isóbata de segurança”, considere a proposição: Linha de igual profundidade escolhida como limite compatível com o calado e a margem adotada.\nII) Sobre “lado seguro”, considere a proposição: Uso de distância, marcação ou índice paralelo para confirmar o cumprimento de um limite de segurança.\nIII) Sobre “verificação radar”, considere a proposição: Uso de distância, marcação ou índice paralelo para confirmar o cumprimento de um limite de segurança.\nIV) Sobre “linha de posição de segurança”, considere a proposição: Ajuste das profundidades disponíveis em função da altura de maré prevista ou observada.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A combinação correta é a alternativa B. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Capítulo 7."
+    },
+    {
+      "id": "NAR-1805",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "5. Equipamentos e sistemas integrados do passadiço",
+      "topic": "ENC e base do sistema",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "nav-doc-5",
+        "chapter_id": "nav-doc-5::integral",
+        "topic_id": "III-nav-doc-5-integral-nar-eqp-155-2-enc-e-base-do-sistema",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "navegacao-aguas-restritas",
+        "work": {
+          "id": "nav-doc-5",
+          "title": "IMO Resolution MSC.530(106)",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "nav-doc-5::integral",
+          "number": "integral",
+          "title": "Publicação indicada — sem recorte adicional no Anexo 2-B",
+          "label": "Publicação indicada — sem recorte adicional no Anexo 2-B"
+        },
+        "section": "Publicação indicada — sem recorte adicional no Anexo 2-B",
+        "module": "5. Equipamentos e sistemas integrados do passadiço",
+        "topic": {
+          "id": "III-nav-doc-5-integral-nar-eqp-155-2-enc-e-base-do-sistema",
+          "title": "ENC e base do sistema"
+        }
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Performance standards for ECDIS — Resolution MSC.530(106)/Rev.1",
+        "edition": "2024 (arquivo fornecido)",
+        "locator": "Anexo, sections 3 and 4 — Definitions, provision and updating"
+      },
+      "tags": [
+        "eqp",
+        "enc-e-base-do-sistema",
+        "programa-03",
+        "programa-16",
+        "programa-22",
+        "programa-29",
+        "programa-31",
+        "programa-36",
+        "navegacao-aguas-restritas",
+        "nav-doc-5",
+        "nav-doc-5::integral",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "NAR-0772",
+          "NAR-0776",
+          "NAR-0780",
+          "NAR-0783"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.VF.10008",
+      "question": "Com base em “Performance standards for ECDIS — Resolution MSC.530(106)/Rev.1”, julgue as proposições a seguir e assinale a sequência correta:\n( ) No tópico “ENC e base do sistema”, a resposta tecnicamente correta é “Testar transferência, cobertura, energia e competência da equipe antes da viagem.”.\n( ) Sobre “RCDS e carta raster”, considere a proposição: No modo raster, a RNC é imagem oficial georreferenciada e não oferece todas as funções vetoriais da ENC.\n( ) Sobre “RCDS e carta raster”, considere a proposição: O requisito deve ser entendido assim: Discriminação em distância e em azimute determina se alvos próximos aparecem separados.\n( ) Sobre “Display base e standard display”, considere a proposição: A omissão pode levar a navegar com apresentação depurada além do mínimo seguro.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "D",
+          "text": "( F ) ( F ) ( V ) ( V )"
+        },
+        {
+          "key": "E",
+          "text": "( V ) ( V ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A sequência correta corresponde à alternativa C, conforme os conceitos reunidos em Anexo, sections 3 and 4 — Definitions, provision and updating."
+    },
+    {
+      "id": "NAR-1806",
+      "subject": "navegacao-aguas-restritas",
+      "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
+      "topic": "intervalo de determinação da posição",
+      "difficulty": "Difícil",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "swift-btm",
+        "chapter_id": "swift-btm::ch4",
+        "topic_id": "III-swift-btm-ch4-intervalo-de-determinacao-da-posicao",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "navegacao-aguas-restritas",
+        "work": {
+          "id": "swift-btm",
+          "title": "SWIFT & BAILEY — Bridge Team Management, 2ª ed.",
+          "author": "A. J. Swift; T. J. Bailey"
+        },
+        "chapter": {
+          "id": "swift-btm::ch4",
+          "number": "ch4",
+          "title": "Chapter 4",
+          "label": "Chapter 4"
+        },
+        "section": "Chapter 4",
+        "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
+        "topic": {
+          "id": "III-swift-btm-ch4-intervalo-de-determinacao-da-posicao",
+          "title": "intervalo de determinação da posição"
+        }
+      },
+      "source": {
+        "author": "A. J. Swift; T. J. Bailey",
+        "title": "Bridge Team Management: a practical guide",
+        "edition": "2. ed., 2004",
+        "locator": "Chapter 4"
+      },
+      "tags": [
+        "navegacao-aguas-restritas",
+        "swift-btm",
+        "swift-btm::ch4",
+        "intervalo-de-determinacao-da-posicao",
+        "cobertura-v2",
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "NAR-1030",
+          "NAR-1033",
+          "NAR-1036",
+          "NAR-1039",
+          "NAR-1042"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.INC.10009",
+      "question": "Considerando o conteúdo de “Bridge Team Management: a practical guide” (Chapter 4), assinale a alternativa INCORRETA:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sobre “intervalo de determinação da posição”, considere a proposição: intervalo de determinação da posição."
+        },
+        {
+          "key": "B",
+          "text": "No contexto de “contingência”, a associação “contingência” é tecnicamente aplicável."
+        },
+        {
+          "key": "C",
+          "text": "No contexto de “comunicações externas”, a associação “comunicações externas” é tecnicamente aplicável."
+        },
+        {
+          "key": "D",
+          "text": "Sobre “execução do plano”, considere a proposição: intervalo de determinação da posição."
+        },
+        {
+          "key": "E",
+          "text": "No contexto de “plano de velocidade”, a associação “plano de velocidade” é tecnicamente aplicável."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A alternativa D é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+    },
+    {
+      "id": "NAR-1807",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "5. Equipamentos e sistemas integrados do passadiço",
+      "topic": "Agulhas magnética e giroscópica",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "ics-bpg",
+        "chapter_id": "ics-bpg::ch5",
+        "topic_id": "III-ics-bpg-ch5-nar-eqp-166-1-agulhas-magnetica-e-giroscopica",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "navegacao-aguas-restritas",
+        "work": {
+          "id": "ics-bpg",
+          "title": "ICS — Bridge Procedures Guide, 6ª ed.",
+          "author": "INTERNATIONAL CHAMBER OF SHIPPING"
+        },
+        "chapter": {
+          "id": "ics-bpg::ch5",
+          "number": "ch5",
+          "title": "Chapter 5",
+          "label": "Chapter 5"
+        },
+        "section": "Chapter 5",
+        "module": "5. Equipamentos e sistemas integrados do passadiço",
+        "topic": {
+          "id": "III-ics-bpg-ch5-nar-eqp-166-1-agulhas-magnetica-e-giroscopica",
+          "title": "Agulhas magnética e giroscópica"
+        }
+      },
+      "source": {
+        "author": "INTERNATIONAL CHAMBER OF SHIPPING",
+        "title": "Bridge Procedures Guide",
+        "edition": "6. ed., 2022",
+        "locator": "Chapter 5, section 5.3 — Compass systems"
+      },
+      "tags": [
+        "eqp",
+        "agulhas-magnetica-e-giroscopica",
+        "programa-01",
+        "programa-02",
+        "programa-16",
+        "programa-19",
+        "programa-36",
+        "navegacao-aguas-restritas",
+        "ics-bpg",
+        "ics-bpg::ch5",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "NAR-0826",
+          "NAR-0830",
+          "NAR-0833",
+          "NAR-0836"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.AST.10010",
+      "question": "De acordo com o contido em “Bridge Procedures Guide”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Agulhas magnética e giroscópica”, considere a proposição: Agulhas de princípios distintos possuem erros próprios e devem ser comparadas e verificadas regularmente.\nII) Sobre “Agulhas magnética e giroscópica”, considere a proposição: O requisito deve ser entendido assim: Agulhas de princípios distintos possuem erros próprios e devem ser comparadas e verificadas regularmente.\nIII) Sobre “Odômetros e registros de velocidade”, considere a proposição: A omissão pode levar a usar velocidade pela água como SOG ou inversamente.\nIV) Sobre “Ecobatímetro”, considere a proposição: O ecobatímetro mede intervalo do pulso acústico e a leitura depende de referência do transdutor, velocidade do som e ajustes.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A combinação correta é a alternativa E. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Chapter 5, section 5.3 — Compass systems."
+    },
+    {
+      "id": "NAR-1808",
+      "subject": "navegacao-aguas-restritas",
+      "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
+      "topic": "posição estimada",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "miguens-v1",
+        "chapter_id": "miguens-v1::ch5",
+        "topic_id": "III-miguens-v1-ch5-posicao-estimada",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "navegacao-aguas-restritas",
+        "work": {
+          "id": "miguens-v1",
+          "title": "MIGUENS — Navegação: a Ciência e a Arte, Volume I",
+          "author": "Altineu Pires Miguens"
+        },
+        "chapter": {
+          "id": "miguens-v1::ch5",
+          "number": "ch5",
+          "title": "Capítulo 5",
+          "label": "Capítulo 5"
+        },
+        "section": "Capítulo 5",
+        "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
+        "topic": {
+          "id": "III-miguens-v1-ch5-posicao-estimada",
+          "title": "posição estimada"
+        }
+      },
+      "source": {
+        "author": "Altineu Pires Miguens",
+        "title": "Navegação: a Ciência e a Arte — Volume I",
+        "edition": "2ª Revisão, 2023",
+        "locator": "Capítulo 5"
+      },
+      "tags": [
+        "navegacao-aguas-restritas",
+        "miguens-v1",
+        "miguens-v1::ch5",
+        "posicao-estimada",
+        "cobertura-v2",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "NAR-1196",
+          "NAR-1199",
+          "NAR-1202",
+          "NAR-1205"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.VF.10011",
+      "question": "Com base em “Navegação: a Ciência e a Arte — Volume I”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “posição estimada”, considere a proposição: Posição calculada a partir de uma posição anterior mediante rumo, velocidade, tempo e efeitos conhecidos ou estimados.\n( ) Sobre “velocidade na água”, considere a proposição: Velocidade da embarcação relativamente à massa d’água.\n( ) Sobre “drift da corrente”, considere a proposição: Direção para a qual a corrente desloca a embarcação.\n( ) Sobre “velocidade no fundo”, considere a proposição: Direção comandada para orientar o movimento da embarcação.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "D",
+          "text": "( F ) ( F ) ( V ) ( V )"
+        },
+        {
+          "key": "E",
+          "text": "( V ) ( V ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A sequência correta corresponde à alternativa A, conforme os conceitos reunidos em Capítulo 5."
+    },
+    {
+      "id": "NAR-1809",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "5. Equipamentos e sistemas integrados do passadiço",
+      "topic": "Alarmes operacionais radar",
+      "difficulty": "Difícil",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "nav-doc-3",
+        "chapter_id": "nav-doc-3::integral",
+        "topic_id": "III-nav-doc-3-integral-nar-eqp-102-5-alarmes-operacionais-radar",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "navegacao-aguas-restritas",
+        "work": {
+          "id": "nav-doc-3",
+          "title": "IMO Resolution MSC.192(79)",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "nav-doc-3::integral",
+          "number": "integral",
+          "title": "Publicação indicada — sem recorte adicional no Anexo 2-B",
+          "label": "Publicação indicada — sem recorte adicional no Anexo 2-B"
+        },
+        "section": "Publicação indicada — sem recorte adicional no Anexo 2-B",
+        "module": "5. Equipamentos e sistemas integrados do passadiço",
+        "topic": {
+          "id": "III-nav-doc-3-integral-nar-eqp-102-5-alarmes-operacionais-radar",
+          "title": "Alarmes operacionais radar"
+        }
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Revised performance standards for radar equipment — Resolution MSC.192(79)",
+        "edition": "2004",
+        "locator": "Anexo, section 5.29 — Operational Alarms"
+      },
+      "tags": [
+        "eqp",
+        "alarmes-operacionais-radar",
+        "programa-04",
+        "programa-11",
+        "programa-15",
+        "programa-16",
+        "programa-25",
+        "programa-30",
+        "programa-36",
+        "navegacao-aguas-restritas",
+        "nav-doc-3",
+        "nav-doc-3::integral",
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "NAR-0510",
+          "NAR-0513",
+          "NAR-0517",
+          "NAR-1797",
+          "NAR-0463"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.INC.10012",
+      "question": "Considerando o conteúdo de “Revised performance standards for radar equipment — Resolution MSC.192(79)” (Anexo, section 5.29 — Operational Alarms), assinale a alternativa INCORRETA:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sobre “Alarmes operacionais radar”, considere a proposição: O requisito deve ser entendido assim: Alarmes de alvo perigoso e perdido dependem de limites e qualidade do acompanhamento."
+        },
+        {
+          "key": "B",
+          "text": "Sobre “Associação de alvo AIS e radar”, considere a proposição: A omissão pode levar a suprimir alvo pequeno junto a chuva, mar ou costa."
+        },
+        {
+          "key": "C",
+          "text": "Sobre “Simulação de manobra ARPA”, considere a proposição: Inserir atraso e alteração plausíveis, avaliar todos os alvos e depois monitorar a execução."
+        },
+        {
+          "key": "D",
+          "text": "Sobre “Aquisição e acompanhamento de alvos”, considere a proposição: A omissão pode levar a manobrar com base em vetor inicial ainda instável."
+        },
+        {
+          "key": "E",
+          "text": "Sobre “Exatidão de distância e marcação radar”, considere a proposição: A omissão pode levar a transportar erro de marcação ou distância para posição e CPA."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A alternativa B é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+    },
+    {
+      "id": "NAR-1810",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "1. Planejamento da navegação em águas restritas",
+      "topic": "Dados meteorológicos",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "swift-btm",
+        "chapter_id": "swift-btm::ch2",
+        "topic_id": "III-swift-btm-ch2-nar-pla-005-1-dados-meteorologicos",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "navegacao-aguas-restritas",
+        "work": {
+          "id": "swift-btm",
+          "title": "SWIFT & BAILEY — Bridge Team Management, 2ª ed.",
+          "author": "SWIFT, A. J.; BAILEY, T. J."
+        },
+        "chapter": {
+          "id": "swift-btm::ch2",
+          "number": "ch2",
+          "title": "Chapter 2",
+          "label": "Chapter 2"
+        },
+        "section": "Chapter 2",
+        "module": "1. Planejamento da navegação em águas restritas",
+        "topic": {
+          "id": "III-swift-btm-ch2-nar-pla-005-1-dados-meteorologicos",
+          "title": "Dados meteorológicos"
+        }
+      },
+      "source": {
+        "author": "SWIFT, A. J.; BAILEY, T. J.",
+        "title": "Bridge Team Management: a practical guide",
+        "edition": "2. ed., 2004",
+        "locator": "Chapter 2 — Passage Appraisal"
+      },
+      "tags": [
+        "pla",
+        "dados-meteorologicos",
+        "programa-06",
+        "programa-15",
+        "programa-35",
+        "programa-38",
+        "navegacao-aguas-restritas",
+        "swift-btm",
+        "swift-btm::ch2",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "NAR-0021",
+          "NAR-0025",
+          "NAR-0003",
+          "NAR-0007"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.AST.10013",
+      "question": "De acordo com o contido em “Bridge Team Management: a practical guide”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Dados meteorológicos”, considere a proposição: O wheel-over point antecipa a guinada para que o navio complete a curva dentro do corredor seguro.\nII) Sobre “Dados meteorológicos”, considere a proposição: O requisito deve ser entendido assim: Vento, visibilidade, pressão e estado do mar influenciam rota, velocidade e recursos de passadiço.\nIII) Sobre “Apreciação da passagem”, considere a proposição: A omissão pode levar a aceitar um erro comum porque dois mostradores usam a mesma fonte.\nIV) Sobre “Cartas oficiais adequadas”, considere a proposição: Confirmar cobertura, escala, datum, edição e correções antes de lançar a derrota.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A combinação correta é a alternativa C. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Chapter 2 — Passage Appraisal."
+    },
+    {
+      "id": "NAR-1811",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "2. Execução, monitoramento e BRM",
+      "topic": "Registros da navegação",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "ics-bpg",
+        "chapter_id": "ics-bpg::ch2",
+        "topic_id": "III-ics-bpg-ch2-nar-mon-196-2-registros-da-navegacao",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "navegacao-aguas-restritas",
+        "work": {
+          "id": "ics-bpg",
+          "title": "ICS — Bridge Procedures Guide, 6ª ed.",
+          "author": "INTERNATIONAL CHAMBER OF SHIPPING"
+        },
+        "chapter": {
+          "id": "ics-bpg::ch2",
+          "number": "ch2",
+          "title": "Chapter 2",
+          "label": "Chapter 2"
+        },
+        "section": "Chapter 2",
+        "module": "2. Execução, monitoramento e BRM",
+        "topic": {
+          "id": "III-ics-bpg-ch2-nar-mon-196-2-registros-da-navegacao",
+          "title": "Registros da navegação"
+        }
+      },
+      "source": {
+        "author": "INTERNATIONAL CHAMBER OF SHIPPING",
+        "title": "Bridge Procedures Guide",
+        "edition": "6. ed., 2022",
+        "locator": "Chapter 2 — Effective Bridge Organisation"
+      },
+      "tags": [
+        "mon",
+        "registros-da-navegacao",
+        "programa-11",
+        "programa-35",
+        "programa-36",
+        "programa-38",
+        "navegacao-aguas-restritas",
+        "ics-bpg",
+        "ics-bpg::ch2",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "NAR-0977",
+          "NAR-0996",
+          "NAR-1000",
+          "NAR-0118"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.VF.10014",
+      "question": "Com base em “Bridge Procedures Guide”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Registros da navegação”, considere a proposição: Estabelecer limites e alarmes e verificar marcações e posições em intervalos adequados.\n( ) Sobre “Debriefing”, considere a proposição: Comportamento inesperado pode decorrer de software, dados ou interferência e não deve ser ocultado por reinício irrefletido.\n( ) Sobre “Debriefing”, considere a proposição: O requisito deve ser entendido assim: Debriefing identifica o que ocorreu, por que ocorreu e como melhorar procedimentos sem ocultar desvios.\n( ) Sobre “Composição da equipe”, considere a proposição: A omissão pode levar a sobrecarregar uma pessoa e perder a verificação cruzada.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "D",
+          "text": "( F ) ( F ) ( V ) ( V )"
+        },
+        {
+          "key": "E",
+          "text": "( V ) ( V ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A sequência correta corresponde à alternativa D, conforme os conceitos reunidos em Chapter 2 — Effective Bridge Organisation."
+    },
+    {
+      "id": "NAR-1812",
+      "subject": "navegacao-aguas-restritas",
+      "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
+      "topic": "rumo verdadeiro",
+      "difficulty": "Difícil",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "miguens-v1",
+        "chapter_id": "miguens-v1::ch3",
+        "topic_id": "III-miguens-v1-ch3-rumo-verdadeiro",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "navegacao-aguas-restritas",
+        "work": {
+          "id": "miguens-v1",
+          "title": "MIGUENS — Navegação: a Ciência e a Arte, Volume I",
+          "author": "Altineu Pires Miguens"
+        },
+        "chapter": {
+          "id": "miguens-v1::ch3",
+          "number": "ch3",
+          "title": "Capítulo 3",
+          "label": "Capítulo 3"
+        },
+        "section": "Capítulo 3",
+        "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
+        "topic": {
+          "id": "III-miguens-v1-ch3-rumo-verdadeiro",
+          "title": "rumo verdadeiro"
+        }
+      },
+      "source": {
+        "author": "Altineu Pires Miguens",
+        "title": "Navegação: a Ciência e a Arte — Volume I",
+        "edition": "2ª Revisão, 2023",
+        "locator": "Capítulo 3"
+      },
+      "tags": [
+        "navegacao-aguas-restritas",
+        "miguens-v1",
+        "miguens-v1::ch3",
+        "rumo-verdadeiro",
+        "cobertura-v2",
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "NAR-1153",
+          "NAR-1156",
+          "NAR-1159",
+          "NAR-1162",
+          "NAR-1165"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.INC.10015",
+      "question": "Considerando o conteúdo de “Navegação: a Ciência e a Arte — Volume I” (Capítulo 3), assinale a alternativa INCORRETA:",
+      "options": [
+        {
+          "key": "A",
+          "text": "No contexto de “rumo verdadeiro”, a associação “rumo verdadeiro” é tecnicamente aplicável."
+        },
+        {
+          "key": "B",
+          "text": "No contexto de “conversão de rumos”, a associação “conversão de rumos” é tecnicamente aplicável."
+        },
+        {
+          "key": "C",
+          "text": "No contexto de “norte verdadeiro”, a associação “norte verdadeiro” é tecnicamente aplicável."
+        },
+        {
+          "key": "D",
+          "text": "No contexto de “desvio da agulha”, a associação “desvio da agulha” é tecnicamente aplicável."
+        },
+        {
+          "key": "E",
+          "text": "No contexto de “agulha giroscópica”, a associação “rumo magnético” é tecnicamente aplicável."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A alternativa E é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+    },
+    {
+      "id": "NAR-1813",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "7. VTS e auxílios à navegação",
+      "topic": "Perigo novo",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "nav-doc-1",
+        "chapter_id": "nav-doc-1::integral",
+        "topic_id": "III-nav-doc-1-integral-nar-van-128-5-perigo-novo",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "navegacao-aguas-restritas",
+        "work": {
+          "id": "nav-doc-1",
+          "title": "NORMAM-601/DHN",
+          "author": "MARINHA DO BRASIL — DIRETORIA DE HIDROGRAFIA E NAVEGAÇÃO"
+        },
+        "chapter": {
+          "id": "nav-doc-1::integral",
+          "number": "integral",
+          "title": "Publicação indicada — sem recorte adicional no Anexo 2-B",
+          "label": "Publicação indicada — sem recorte adicional no Anexo 2-B"
+        },
+        "section": "Publicação indicada — sem recorte adicional no Anexo 2-B",
+        "module": "7. VTS e auxílios à navegação",
+        "topic": {
+          "id": "III-nav-doc-1-integral-nar-van-128-5-perigo-novo",
+          "title": "Perigo novo"
+        }
+      },
+      "source": {
+        "author": "MARINHA DO BRASIL — DIRETORIA DE HIDROGRAFIA E NAVEGAÇÃO",
+        "title": "NORMAM-601/DHN — Auxílios à Navegação",
+        "edition": "2023 (arquivo fornecido)",
+        "locator": "Capítulo 4 — Sinalização de perigos novos"
+      },
+      "tags": [
+        "van",
+        "perigo-novo",
+        "programa-04",
+        "programa-15",
+        "programa-22",
+        "programa-27",
+        "programa-28",
+        "navegacao-aguas-restritas",
+        "nav-doc-1",
+        "nav-doc-1::integral",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "NAR-0640",
+          "NAR-0643",
+          "NAR-0597",
+          "NAR-0601"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.AST.10016",
+      "question": "De acordo com o contido em “NORMAM-601/DHN — Auxílios à Navegação”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Perigo novo”, considere a proposição: O requisito deve ser entendido assim: Perigo recém-descoberto pode receber sinalização especial, inclusive duplicação temporária de sinais, até divulgação e consolidação da informação.\nII) Sobre “Sinalização fluvial, de pontes e estruturas”, considere a proposição: A omissão pode levar a escolher vão ou margem por analogia com balizamento marítimo inadequado.\nIII) Sobre “Conceito de auxílio à navegação”, considere a proposição: Consultar carta para conhecer a finalidade antes de escolher a ação de navegação.\nIV) Sobre “Sinais fixos e flutuantes”, considere a proposição: Sinal cardinal indica onde está a água navegável em relação ao sinal por cores, marcas de tope e ritmo luminoso.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A combinação correta é a alternativa A. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Capítulo 4 — Sinalização de perigos novos."
+    },
+    {
+      "id": "NAR-1814",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "6. SOLAS Capítulo V — segurança da navegação",
+      "topic": "Dotação para todas as embarcações",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "solas-2024",
+        "chapter_id": "solas-2024::ch-v",
+        "topic_id": "III-solas-2024-ch-v-nar-sol-112-1-dotacao-para-todas-as-embarcacoes",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "navegacao-aguas-restritas",
+        "work": {
+          "id": "solas-2024",
+          "title": "IMO SOLAS — Consolidated Edition 2024",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "solas-2024::ch-v",
+          "number": "ch-v",
+          "title": "Chapter V – Safety of Navigation",
+          "label": "Chapter V – Safety of Navigation"
+        },
+        "section": "Chapter V – Safety of Navigation",
+        "module": "6. SOLAS Capítulo V — segurança da navegação",
+        "topic": {
+          "id": "III-solas-2024-ch-v-nar-sol-112-1-dotacao-para-todas-as-embarcacoes",
+          "title": "Dotação para todas as embarcações"
+        }
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "SOLAS — Chapter V: Safety of Navigation",
+        "edition": "Consolidada até 1 July 2014 (arquivo fornecido)",
+        "locator": "Chapter V, regulation 19.2.1 — All ships irrespective of size"
+      },
+      "tags": [
+        "sol",
+        "dotacao-para-todas-as-embarcacoes",
+        "programa-01",
+        "programa-03",
+        "programa-16",
+        "programa-18",
+        "programa-19",
+        "programa-22",
+        "programa-27",
+        "programa-29",
+        "navegacao-aguas-restritas",
+        "solas-2024",
+        "solas-2024::ch-v",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "NAR-0556",
+          "NAR-0560",
+          "NAR-0563",
+          "NAR-0567"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.VF.10017",
+      "question": "Com base em “SOLAS — Chapter V: Safety of Navigation”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Dotação para todas as embarcações”, considere a proposição: A Regra V/19.2.1 estabelece funções básicas, incluindo bússola magnética independente de energia, meios de marcação, cartas e publicações, receptor GNSS ou equivalente e comunicações de emergência para governo.\n( ) Sobre “Dotação para todas as embarcações”, considere a proposição: O requisito deve ser entendido assim: Sistemas e equipamentos de navegação devem atender padrões de desempenho e ser aprovados conforme a Administração.\n( ) Sobre “Dotação a partir de 150 AB”, considere a proposição: A omissão pode levar a aplicar somente a lista geral a navio abrangido por requisito incremental.\n( ) Sobre “Dotação a partir de 300 AB”, considere a proposição: Identificar abrangência, pontos, formato e meio e enviar informação correta no momento requerido.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "D",
+          "text": "( F ) ( F ) ( V ) ( V )"
+        },
+        {
+          "key": "E",
+          "text": "( V ) ( V ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A sequência correta corresponde à alternativa B, conforme os conceitos reunidos em Chapter V, regulation 19.2.1 — All ships irrespective of size."
+    },
+    {
+      "id": "NAR-1815",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "4. RIPEAM/COLREG — governo, navegação, luzes e sinais",
+      "topic": "Sinais de perigo",
+      "difficulty": "Difícil",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "colreg",
+        "chapter_id": "colreg::part-D",
+        "topic_id": "III-colreg-part-D-nar-col-092-2-sinais-de-perigo",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "navegacao-aguas-restritas",
+        "work": {
+          "id": "colreg",
+          "title": "IMO COLREG — Consolidated Edition 2018",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "colreg::part-D",
+          "number": "part-D",
+          "title": "Part D",
+          "label": "Part D"
+        },
+        "section": "Part D",
+        "module": "4. RIPEAM/COLREG — governo, navegação, luzes e sinais",
+        "topic": {
+          "id": "III-colreg-part-D-nar-col-092-2-sinais-de-perigo",
+          "title": "Sinais de perigo"
+        }
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Convention on the International Regulations for Preventing Collisions at Sea (COLREG/RIPEAM)",
+        "edition": "Consolidada com emendas até dezembro de 2013 (arquivo fornecido)",
+        "locator": "Regra 37 e Anexo IV"
+      },
+      "tags": [
+        "col",
+        "sinais-de-perigo",
+        "programa-04",
+        "programa-15",
+        "programa-17",
+        "programa-39",
+        "navegacao-aguas-restritas",
+        "colreg",
+        "colreg::part-D",
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "NAR-0457",
+          "NAR-1655",
+          "NAR-0433",
+          "NAR-0437",
+          "NAR-0441"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.INC.10018",
+      "question": "Considerando o conteúdo de “Convention on the International Regulations for Preventing Collisions at Sea (COLREG/RIPEAM)” (Regra 37 e Anexo IV), assinale a alternativa INCORRETA:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sobre “Sinais de perigo”, considere a proposição: Reconhecer qualquer sinal de perigo e iniciar comunicações e ações cabíveis."
+        },
+        {
+          "key": "B",
+          "text": "Sobre “Equipamento para sinais sonoros”, considere a proposição: O requisito deve ser entendido assim: A dotação de apito, sino e gongo varia com o comprimento da embarcação."
+        },
+        {
+          "key": "C",
+          "text": "Sobre “Definições de sinais sonoros”, considere a proposição: A omissão pode levar a instalar ou interpretar luz com alcance incompatível com a classe do navio."
+        },
+        {
+          "key": "D",
+          "text": "Sobre “Equipamento para sinais sonoros”, considere a proposição: Manter equipamento exigido pronto e não substituir sinais prescritos por meio inadequado."
+        },
+        {
+          "key": "E",
+          "text": "Sobre “Sinais de manobra e advertência”, considere a proposição: No visual, sinais de um, dois ou três apitos curtos indicam manobras, e sinais de dúvida ou aproximação de curva têm sequências próprias."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A alternativa C é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+    },
+    {
+      "id": "NAR-1816",
+      "subject": "navegacao-aguas-restritas",
+      "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
+      "topic": "movimento verdadeiro",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "miguens-v1",
+        "chapter_id": "miguens-v1::ch14",
+        "topic_id": "III-miguens-v1-ch14-movimento-verdadeiro",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "navegacao-aguas-restritas",
+        "work": {
+          "id": "miguens-v1",
+          "title": "MIGUENS — Navegação: a Ciência e a Arte, Volume I",
+          "author": "Altineu Pires Miguens"
+        },
+        "chapter": {
+          "id": "miguens-v1::ch14",
+          "number": "ch14",
+          "title": "Capítulo 14",
+          "label": "Capítulo 14"
+        },
+        "section": "Capítulo 14",
+        "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
+        "topic": {
+          "id": "III-miguens-v1-ch14-movimento-verdadeiro",
+          "title": "movimento verdadeiro"
+        }
+      },
+      "source": {
+        "author": "Altineu Pires Miguens",
+        "title": "Navegação: a Ciência e a Arte — Volume I",
+        "edition": "2ª Revisão, 2023",
+        "locator": "Capítulo 14"
+      },
+      "tags": [
+        "navegacao-aguas-restritas",
+        "miguens-v1",
+        "miguens-v1::ch14",
+        "movimento-verdadeiro",
+        "cobertura-v2",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "NAR-1405",
+          "NAR-1408",
+          "NAR-1411",
+          "NAR-1414"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.AST.10019",
+      "question": "De acordo com o contido em “Navegação: a Ciência e a Arte — Volume I”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “movimento verdadeiro”, considere a proposição: Linha eletrônica de marcação usada para medir direção de um alvo ou referência.\nII) Sobre “ARPA”, considere a proposição: Grandeza derivada do tempo entre transmissão e recepção do eco.\nIII) Sobre “marcação radar”, considere a proposição: Direção do alvo medida na apresentação radar em referência adotada.\nIV) Sobre “ganho”, considere a proposição: Ajuste de amplificação do receptor que influencia a apresentação dos ecos.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A combinação correta é a alternativa D. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Capítulo 14."
+    },
+    {
+      "id": "NAR-1817",
+      "subject": "navegacao-aguas-restritas",
+      "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
+      "topic": "redução de velocidade",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "miguens-v3-nav",
+        "chapter_id": "miguens-v3-nav::ch42",
+        "topic_id": "III-miguens-v3-nav-ch42-reducao-de-velocidade",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "navegacao-aguas-restritas",
+        "work": {
+          "id": "miguens-v3-nav",
+          "title": "MIGUENS — Navegação: a Ciência e a Arte, Volume III",
+          "author": "Altineu Pires Miguens"
+        },
+        "chapter": {
+          "id": "miguens-v3-nav::ch42",
+          "number": "ch42",
+          "title": "Capítulo 42",
+          "label": "Capítulo 42"
+        },
+        "section": "Capítulo 42",
+        "module": "Cobertura bibliográfica — Navegação em Águas Restritas",
+        "topic": {
+          "id": "III-miguens-v3-nav-ch42-reducao-de-velocidade",
+          "title": "redução de velocidade"
+        }
+      },
+      "source": {
+        "author": "Altineu Pires Miguens",
+        "title": "Navegação: a Ciência e a Arte — Volume III",
+        "edition": "1ª Revisão, 2026",
+        "locator": "Capítulo 42"
+      },
+      "tags": [
+        "navegacao-aguas-restritas",
+        "miguens-v3-nav",
+        "miguens-v3-nav::ch42",
+        "reducao-de-velocidade",
+        "cobertura-v2",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "NAR-1518",
+          "NAR-1496",
+          "NAR-1499",
+          "NAR-1502"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.VF.10020",
+      "question": "Com base em “Navegação: a Ciência e a Arte — Volume III”, julgue as proposições a seguir e assinale a sequência correta:\n( ) No contexto de “redução de velocidade”, a associação “redução de velocidade” é tecnicamente aplicável.\n( ) Sobre “navegação com mau tempo”, considere a proposição: Condução que adapta rumo, velocidade e preparação do navio para reduzir riscos impostos por vento e mar severos.\n( ) Sobre “mar de través”, considere a proposição: Ondulação aproximadamente transversal, frequentemente associada a balanço acentuado.\n( ) Sobre “balanço sincronizado”, considere a proposição: Aumento de roll quando a frequência de encontro se aproxima da frequência natural de balanço.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "D",
+          "text": "( F ) ( F ) ( V ) ( V )"
+        },
+        {
+          "key": "E",
+          "text": "( V ) ( V ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A sequência correta corresponde à alternativa E, conforme os conceitos reunidos em Capítulo 42."
     }
   ]
 }

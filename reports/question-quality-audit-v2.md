@@ -1,23 +1,23 @@
 # Auditoria profunda de qualidade — bancos de questões
 
-Gerado em: 2026-09-14T00:01:07.542Z
+Gerado em: 2026-09-14T17:24:09.387Z
 
-Total de questões analisadas: **11796**
-Taxonomia V2: **11796**
+Total de questões analisadas: **11936**
+Taxonomia V2: **11936**
 Questões da expansão V1 marcadas para revisão integral: **0**
-Flags: **4271** (críticas 0; altas 0; médias 1817; baixas 2454)
+Flags: **3409** (críticas 0; altas 0; médias 1169; baixas 2240)
 
 ## Por matéria
 
 | Matéria | Questões | Tópicos | Capítulos | Expansão V1 | Contexto | Distratores | Formatação | Estrutural |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| arte-naval | 1307 | 300 | 23 | 0 | 35 | 859 | 0 | 0 |
-| manobrabilidade | 3899 | 560 | 46 | 0 | 0 | 744 | 0 | 0 |
-| navegacao-aguas-restritas | 1797 | 1342 | 47 | 0 | 1 | 460 | 0 | 0 |
-| legislacao-regulamentacao | 1267 | 854 | 27 | 0 | 0 | 313 | 0 | 0 |
-| meteorologia-oceanografia | 1162 | 26 | 4 | 0 | 0 | 1143 | 0 | 0 |
-| comunicacoes | 1207 | 125 | 8 | 0 | 0 | 335 | 0 | 0 |
-| conhecimentos-gerais | 1157 | 217 | 7 | 0 | 0 | 381 | 0 | 0 |
+| arte-naval | 1327 | 300 | 23 | 0 | 34 | 810 | 0 | 0 |
+| manobrabilidade | 3919 | 560 | 46 | 0 | 0 | 443 | 0 | 0 |
+| navegacao-aguas-restritas | 1817 | 1342 | 47 | 0 | 0 | 452 | 0 | 0 |
+| legislacao-regulamentacao | 1287 | 844 | 27 | 0 | 0 | 241 | 0 | 0 |
+| meteorologia-oceanografia | 1182 | 26 | 4 | 0 | 0 | 758 | 0 | 0 |
+| comunicacoes | 1227 | 125 | 8 | 0 | 0 | 323 | 0 | 0 |
+| conhecimentos-gerais | 1177 | 217 | 7 | 0 | 0 | 348 | 0 | 0 |
 
 ## Flags prioritárias (primeiras 250)
 

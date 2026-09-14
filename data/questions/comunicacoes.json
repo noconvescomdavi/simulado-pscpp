@@ -6,7 +6,7 @@
   "question_type": "multiple_choice_single_answer",
   "platform_note": "IDs estáveis; correct_answer utiliza uma das chaves A-E.",
   "validation": {
-    "total": 1207,
+    "total": 1227,
     "by_module": {
       "Código Internacional de Sinais — Código Geral": 215,
       "Código Internacional de Sinais — Instruções de sinalização": 70,
@@ -80816,41 +80816,16 @@
       "id": "COM-1049",
       "subject": "comunicacoes",
       "module": "Código Internacional de Sinais — Apêndices",
-      "topic_code": "PSCPP.REF.INC.0003",
-      "topic": "Alfa – A",
+      "topic": "Apêndice 1",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question": "De acordo com o contido em “International Code of Signals” (Appendices 1, 2 and 4), analise o seguinte problema técnico: Considerando Apêndices 1, 2 e 4, qual alternativa caracteriza corretamente “Alfa – A”? Assinale a alternativa correta.",
-      "options": [
-        {
-          "key": "A",
-          "text": "Combinação internacional N+C utilizada como sinal de perigo."
-        },
-        {
-          "key": "B",
-          "text": "Bandeira de letra única que significa que o navio está garrando/arrastando a âncora."
-        },
-        {
-          "key": "C",
-          "text": "Bandeira de letra única que indica mergulhador na água e requer que outras embarcações se mantenham bem afastadas e a baixa velocidade."
-        },
-        {
-          "key": "D",
-          "text": "Procedimento que usa linguagem e pronúncia padronizadas para reduzir ambiguidades na transmissão de sinais por voz."
-        },
-        {
-          "key": "E",
-          "text": "Parte do Código Internacional de Sinais dedicada aos sinais de perigo (Distress signals)."
-        }
-      ],
-      "correct_answer": "C",
-      "explanation": "“Alfa – A” corresponde a bandeira de letra única que indica mergulhador na água e requer que outras embarcações se mantenham bem afastadas e a baixa velocidade..",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
       "taxonomy": {
         "subject_id": "VI",
         "subject_slug": "comunicacoes",
         "bibliography_id": "ics",
         "chapter_id": "ics::appendices",
-        "topic_id": "VI-ics-appendices-alfa-a",
+        "topic_id": "VI-ics-appendices-apendice-1",
         "subtopic_id": null
       },
       "tracking": {
@@ -80869,8 +80844,8 @@
         "section": "Apêndices 1, 2 e 4",
         "module": "Código Internacional de Sinais — Apêndices",
         "topic": {
-          "id": "VI-ics-appendices-alfa-a",
-          "title": "Alfa – A"
+          "id": "VI-ics-appendices-apendice-1",
+          "title": "Apêndice 1"
         }
       },
       "source": {
@@ -80883,20 +80858,49 @@
         "comunicacoes",
         "ics",
         "ics::appendices",
-        "alfa-a",
+        "apendice-1",
         "cobertura-v2",
-        "pscpp-style-v3",
-        "pscpp-repair-v3"
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
       ],
-      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-repair-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "COM-1029"
+          "COM-1026",
+          "COM-1029",
+          "COM-1032",
+          "COM-1035"
         ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "COM-1049",
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
-      }
+        "rewrite_reason": "residual-medium-quality-v4"
+      },
+      "topic_code": "PSCPP.V4.AST.00001",
+      "question": "De acordo com o contido em “International Code of Signals”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Apêndice 1”, considere a proposição: Parte do Código Internacional de Sinais que apresenta a tabela das bandeiras de sinalização.\nII) Sobre “Alfa – A”, considere a proposição: Bandeira de letra única que indica mergulhador na água e requer que outras embarcações se mantenham bem afastadas e a baixa velocidade.\nIII) Sobre “Oscar – O”, considere a proposição: Bandeira de letra única que significa que o navio está garrando/arrastando a âncora.\nIV) Sobre “Yankee – Y”, considere a proposição: Bandeira de letra única que significa que o navio está garrando/arrastando a âncora.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A combinação correta é a alternativa C. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Appendices 1, 2 and 4."
     },
     {
       "id": "COM-1050",
@@ -81067,16 +81071,16 @@
       "id": "COM-1052",
       "subject": "comunicacoes",
       "module": "Código Internacional de Sinais — Apêndices",
-      "topic": "Apêndice 4",
+      "topic": "Uniform – U",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
       "taxonomy": {
         "subject_id": "VI",
         "subject_slug": "comunicacoes",
         "bibliography_id": "ics",
         "chapter_id": "ics::appendices",
-        "topic_id": "VI-ics-appendices-apendice-4",
+        "topic_id": "VI-ics-appendices-uniform-u",
         "subtopic_id": null
       },
       "tracking": {
@@ -81095,8 +81099,8 @@
         "section": "Apêndices 1, 2 e 4",
         "module": "Código Internacional de Sinais — Apêndices",
         "topic": {
-          "id": "VI-ics-appendices-apendice-4",
-          "title": "Apêndice 4"
+          "id": "VI-ics-appendices-uniform-u",
+          "title": "Uniform – U"
         }
       },
       "source": {
@@ -81109,47 +81113,49 @@
         "comunicacoes",
         "ics",
         "ics::appendices",
-        "apendice-4",
+        "uniform-u",
         "cobertura-v2",
-        "pscpp-style-v3",
-        "formato-pscpp-direta",
-        "pscpp-refinement-v3"
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "COM-1045"
+          "COM-1033",
+          "COM-1036",
+          "COM-1028",
+          "COM-1031"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "COM-1052",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0004",
-      "question": "De acordo com o contido em “International Code of Signals” (Appendices 1, 2 and 4), considere o seguinte problema técnico: De acordo com o contido em “International Code of Signals” (Appendices 1, 2 and 4), considere a situação/conceito a seguir: Em uma análise comparativa de Apêndices 1, 2 e 4, qual associação envolvendo “Apêndice 4” está correta? Assinale a opção correta. Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.VF.00002",
+      "question": "Com base em “International Code of Signals”, julgue as proposições a seguir e assinale a sequência correta:\n( ) No contexto de “Uniform – U”, a associação “Uniform – U” é tecnicamente aplicável.\n( ) No contexto de “November + Charlie”, a associação “Xray – X” é tecnicamente aplicável.\n( ) Sobre “Apêndice 4”, considere a proposição: Apêndice 4 — Parte do Código Internacional de Sinais dedicada aos procedimentos de radiotelefonia.\n( ) Sobre “Delta – D”, considere a proposição: Alfa – A — Bandeira de letra única associada a carregar, descarregar ou transportar carga perigosa.",
       "options": [
         {
           "key": "A",
-          "text": "Oscar – O — Bandeira de letra única que significa que o destinatário está se dirigindo para um perigo."
+          "text": "( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "B",
-          "text": "Apêndice 4 — Parte do Código Internacional de Sinais dedicada aos procedimentos de radiotelefonia."
+          "text": "( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "C",
-          "text": "Yankee – Y — Combinação internacional N+C utilizada como sinal de perigo."
+          "text": "( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "D",
-          "text": "Uniform – U — Bandeira de letra única que manda parar as intenções/manobras e observar os sinais do emissor."
+          "text": "( F ) ( F ) ( V ) ( V )"
         },
         {
           "key": "E",
-          "text": "Xray – X — Bandeira de letra única que significa que o navio está garrando/arrastando a âncora."
+          "text": "( V ) ( V ) ( V ) ( V )"
         }
       ],
       "correct_answer": "B",
-      "explanation": "A associação correta é “Apêndice 4 — Parte do Código Internacional de Sinais dedicada aos procedimentos de radiotelefonia.”; as demais opções trocam conceitos e descrições."
+      "explanation": "A sequência correta corresponde à alternativa B, conforme os conceitos reunidos em Appendices 1, 2 and 4."
     },
     {
       "id": "COM-1053",
@@ -82621,8 +82627,8 @@
       "module": "IMO SMCP — Glossário",
       "topic": "SMCP Glossary — General terms",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
       "taxonomy": {
         "subject_id": "VI",
         "subject_slug": "comunicacoes",
@@ -82655,54 +82661,58 @@
         "author": "International Maritime Organization (IMO)",
         "title": "IMO Standard Marine Communication Phrases",
         "edition": "Resolution A.918(22), adopted 29 November 2001",
-        "locator": "Glossary, General terms, verbete “Lifeboat station”"
+        "locator": "Glossary, General terms, verbete “Cable”"
       },
       "tags": [
         "SMCP",
         "glossary",
-        "Lifeboat station",
+        "Cable",
         "comunicacoes",
         "smcp",
         "smcp::s2",
         "smcp-glossary-general-terms",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "COM-0078"
+          "COM-0015",
+          "COM-0018",
+          "COM-0021",
+          "COM-0024",
+          "COM-0027"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "COM-1069",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0008",
-      "question": "De acordo com o contido em “IMO Standard Marine Communication Phrases” (Glossary, General terms, verbete “Lifeboat station”), considere o seguinte problema técnico: Assinale o termo de SMCP Glossary — General terms definido por: “Place assigned to crew and passengers to muster before being ordered into the lifeboats”. Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.INC.00003",
+      "question": "Considerando o conteúdo de “IMO Standard Marine Communication Phrases” (Glossary, General terms, verbete “Cable”), assinale a alternativa INCORRETA:",
       "options": [
         {
           "key": "A",
-          "text": "Abandon vessel (to)"
+          "text": "Sobre “SMCP Glossary — General terms”, considere a proposição: .1 Chain connecting a vessel to the anchor(s) .2 Wire or rope primarily used for mooring a ship .3 (Measurement) one hundred fathoms or one tenth of a nautical mile."
         },
         {
           "key": "B",
-          "text": "Lifeboat station"
+          "text": "No contexto de “SMCP Glossary — General terms”, a associação “Ordnance exercise” é tecnicamente aplicável."
         },
         {
           "key": "C",
-          "text": "Union purchase"
+          "text": "Sobre “SMCP Glossary — General terms”, considere a proposição: A method of towing vessels through polar ice by means of icebreaking tugs with a special stern notch suited to receive and hold the bow of the vessel to be towed."
         },
         {
           "key": "D",
-          "text": "Receiving point"
+          "text": "Sobre “SMCP Glossary — General terms”, considere a proposição: Vessel constrained by her draft."
         },
         {
           "key": "E",
-          "text": "Veering (of winds)"
+          "text": "Sobre “SMCP Glossary — General terms”, considere a proposição: That course which a vessel makes good over ground, after allowing for the effect of currents, tidal streams, and leeway caused by wind and sea."
         }
       ],
       "correct_answer": "B",
-      "explanation": "No SMCP, “Lifeboat station” corresponde a “Place assigned to crew and passengers to muster before being ordered into the lifeboats”. Empregar essa associação padronizada reduz ambiguidades na comunicação marítima."
+      "explanation": "A alternativa B é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
     },
     {
       "id": "COM-1070",
@@ -84918,16 +84928,16 @@
       "id": "COM-1094",
       "subject": "comunicacoes",
       "module": "Código Internacional de Sinais — Seção Geral",
-      "topic": "Z – Zulu",
+      "topic": "SO",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
       "taxonomy": {
         "subject_id": "VI",
         "subject_slug": "comunicacoes",
         "bibliography_id": "ics",
         "chapter_id": "ics::general",
-        "topic_id": "VI-ics-general-z-zulu",
+        "topic_id": "VI-ics-general-so",
         "subtopic_id": null
       },
       "tracking": {
@@ -84946,8 +84956,8 @@
         "section": "Seção Geral — Distress; Casualties; Aids to navigation; Manoeuvres; Pilot",
         "module": "Código Internacional de Sinais — Seção Geral",
         "topic": {
-          "id": "VI-ics-general-z-zulu",
-          "title": "Z – Zulu"
+          "id": "VI-ics-general-so",
+          "title": "SO"
         }
       },
       "source": {
@@ -84960,46 +84970,49 @@
         "comunicacoes",
         "ics",
         "ics::general",
-        "z-zulu",
+        "so",
         "cobertura-v2",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "COM-1014"
+          "COM-1022",
+          "COM-1025",
+          "COM-1001",
+          "COM-1004"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "COM-1094",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0012",
-      "question": "De acordo com o contido em “International Code of Signals” (General Section — Distress, Assistance, Manoeuvres and Pilot), considere o seguinte problema técnico: No contexto de Seção Geral — Distress; Casualties; Aids to navigation; Manoeuvres; Pilot, qual conceito corresponde à descrição: “Bandeira de letra única cujo significado geral inclui “I require a tug”.”? Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.AST.00004",
+      "question": "De acordo com o contido em “International Code of Signals”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “SO”, considere a proposição: Bandeira de letra única que significa “I require assistance”.\nII) Sobre “H – Hotel”, considere a proposição: Bandeira de letra única que indica que o navio tem prático a bordo.\nIII) Sobre “NC”, considere a proposição: Sinal que informa necessidade de médico.\nIV) Sobre “CD”, considere a proposição: Sinal que solicita assistência imediata.",
       "options": [
         {
           "key": "A",
-          "text": "V – Victor"
+          "text": "Apenas as afirmativas I e II são verdadeiras."
         },
         {
           "key": "B",
-          "text": "W – Whiskey"
+          "text": "Apenas as afirmativas I e III são verdadeiras."
         },
         {
           "key": "C",
-          "text": "Z – Zulu"
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "NC"
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
         },
         {
           "key": "E",
-          "text": "AC"
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
         }
       ],
       "correct_answer": "C",
-      "explanation": "A descrição apresentada identifica “Z – Zulu”."
+      "explanation": "A combinação correta é a alternativa C. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: General Section — Distress, Assistance, Manoeuvres and Pilot."
     },
     {
       "id": "COM-1095",
@@ -86393,16 +86406,16 @@
       "id": "COM-1110",
       "subject": "VI — Comunicações",
       "module": "Código Internacional de Sinais — Código Geral",
-      "topic": "Navigation—Hydrography—Warnings",
+      "topic": "Assistance",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
       "taxonomy": {
         "subject_id": "VI",
         "subject_slug": "comunicacoes",
         "bibliography_id": "ics",
         "chapter_id": "ics::chapters",
-        "topic_id": "VI-ics-chapters-com-cis-ch2-navigation-hydrography-warnings-navigation-hydrography-warnings",
+        "topic_id": "VI-ics-chapters-com-cis-ch2-assistance-assistance",
         "subtopic_id": null
       },
       "tracking": {
@@ -86421,62 +86434,65 @@
         "section": "Capítulos I a V, VII, VIII, X, XI e XII",
         "module": "Código Internacional de Sinais — Código Geral",
         "topic": {
-          "id": "VI-ics-chapters-com-cis-ch2-navigation-hydrography-warnings-navigation-hydrography-warnings",
-          "title": "Navigation—Hydrography—Warnings"
+          "id": "VI-ics-chapters-com-cis-ch2-assistance-assistance",
+          "title": "Assistance"
         }
       },
       "source": {
         "author": "National Imagery and Mapping Agency / IMCO",
         "title": "International Code of Signals for Visual, Sound, and Radio Communications",
         "edition": "United States Edition 1969, revised 2003 (versão autorizada pelo usuário)",
-        "locator": "Chapter 2, Seção temática — Navigation—Hydrography—Warnings, sinal MZ"
+        "locator": "Chapter 2, Seção temática — Assistance, sinal DF"
       },
       "tags": [
         "International Code of Signals",
-        "Navigation—Hydrography—Warnings",
-        "MZ",
+        "Assistance",
+        "DF",
         "comunicacoes",
         "ics",
         "ics::chapters",
-        "navigation-hydrography-warnings",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "assistance",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "COM-0816"
+          "COM-0679",
+          "COM-0682",
+          "COM-0685",
+          "COM-0688"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "COM-1110",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0016",
-      "question": "De acordo com o contido em “International Code of Signals for Visual, Sound, and Radio Communications” (Chapter 2, Seção temática — Navigation—Hydrography—Warnings, sinal MZ), considere o seguinte problema técnico: Assinale o termo de Navigation—Hydrography—Warnings definido por: “Navigation is dangerous in the area around lat… long…”. Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.VF.00005",
+      "question": "Com base em “International Code of Signals for Visual, Sound, and Radio Communications”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Assistance”, considere a proposição: I have… (number) serviceable boats.\n( ) No contexto de “Assistance”, a associação “CM” é tecnicamente aplicável.\n( ) Sobre “Assistance”, considere a proposição: I sighted disabled vessel in lat… long… at time indicated.\n( ) No contexto de “Assistance”, a associação “DF” é tecnicamente aplicável.",
       "options": [
         {
           "key": "A",
-          "text": "PN 3"
+          "text": "( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "B",
-          "text": "MZ"
+          "text": "( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "C",
-          "text": "NG 1"
+          "text": "( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "D",
-          "text": "PP 1"
+          "text": "( F ) ( F ) ( V ) ( V )"
         },
         {
           "key": "E",
-          "text": "QC 1"
+          "text": "( V ) ( V ) ( V ) ( V )"
         }
       ],
       "correct_answer": "B",
-      "explanation": "No Código Internacional de Sinais, “MZ” comunica “Navigation is dangerous in the area around lat… long…”. A identificação exata do sinal evita confundi-lo com grupos próximos do mesmo capítulo."
+      "explanation": "A sequência correta corresponde à alternativa B, conforme os conceitos reunidos em Chapter 2, Seção temática — Assistance, sinal DF."
     },
     {
       "id": "COM-1111",
@@ -87865,8 +87881,8 @@
       "module": "Código Internacional de Sinais — Seção Médica",
       "topic": "Request for medical assistance",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
       "taxonomy": {
         "subject_id": "VI",
         "subject_slug": "comunicacoes",
@@ -87899,55 +87915,58 @@
         "author": "National Imagery and Mapping Agency / IMCO",
         "title": "International Code of Signals for Visual, Sound, and Radio Communications",
         "edition": "United States Edition 1969, revised 2003 (versão autorizada pelo usuário)",
-        "locator": "Chapter 3, Section 2 — Request for medical assistance, sinal MGB"
+        "locator": "Chapter 3, Section 2 — Request for medical assistance, sinal MIU"
       },
       "tags": [
         "International Code of Signals",
         "Request for medical assistance",
-        "MGB",
+        "MIU",
         "comunicacoes",
         "ics",
         "ics::medical",
         "request-for-medical-assistance",
-        "pscpp-style-v3",
-        "formato-pscpp-direta",
-        "pscpp-refinement-v3"
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "COM-1126"
+          "COM-0901",
+          "COM-0904",
+          "COM-0907",
+          "COM-0910",
+          "COM-0913"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "COM-1126",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0020",
-      "question": "De acordo com o contido em “International Code of Signals for Visual, Sound, and Radio Communications” (Chapter 3, Section 2 — Request for medical assistance, sinal MGB), considere o seguinte problema técnico: De acordo com o contido em “International Code of Signals for Visual, Sound, and Radio Communications” (Chapter 3, Section 2 — Request for medical assistance, sinal MGB), considere a situação/conceito a seguir: Na fonte indicada, qual entrada corresponde a “Patient has a simple fracture at the body location indicated in Table M-1.”? Assinale a opção correta. Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.INC.00006",
+      "question": "Considerando o conteúdo de “International Code of Signals for Visual, Sound, and Radio Communications” (Chapter 3, Section 2 — Request for medical assistance, sinal MIU), assinale a alternativa INCORRETA:",
       "options": [
         {
           "key": "A",
-          "text": "MBP"
+          "text": "Sobre “Request for medical assistance”, considere a proposição: Patient has cramp pains and vomiting."
         },
         {
           "key": "B",
-          "text": "MFH"
+          "text": "No contexto de “Request for medical assistance”, a associação “MJJ” é tecnicamente aplicável."
         },
         {
           "key": "C",
-          "text": "MJW"
+          "text": "No contexto de “Request for medical assistance”, a associação “Urine contains blood.” é tecnicamente aplicável."
         },
         {
           "key": "D",
-          "text": "MGB"
+          "text": "No contexto de “Request for medical assistance”, a associação “MFW” é tecnicamente aplicável."
         },
         {
           "key": "E",
-          "text": "MAA"
+          "text": "Sobre “Request for medical assistance”, considere a proposição: Breathing is difficult when lying down."
         }
       ],
       "correct_answer": "D",
-      "explanation": "No Código Internacional de Sinais, “MGB” comunica “Patient has a simple fracture at the body location indicated in Table M-1.”. A identificação exata do sinal evita confundi-lo com grupos próximos do mesmo capítulo."
+      "explanation": "A alternativa D é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
     },
     {
       "id": "COM-1127",
@@ -88966,8 +88985,8 @@
       "module": "IMO SMCP — Glossário",
       "topic": "SMCP Glossary — General terms",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
       "taxonomy": {
         "subject_id": "VI",
         "subject_slug": "comunicacoes",
@@ -89000,54 +89019,57 @@
         "author": "International Maritime Organization (IMO)",
         "title": "IMO Standard Marine Communication Phrases",
         "edition": "Resolution A.918(22), adopted 29 November 2001",
-        "locator": "Glossary, General terms, verbete “Off air”"
+        "locator": "Glossary, General terms, verbete “Drop back (to)”"
       },
       "tags": [
         "SMCP",
         "glossary",
-        "Off air",
+        "Drop back (to)",
         "comunicacoes",
         "smcp",
         "smcp::s2",
         "smcp-glossary-general-terms",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "COM-0089"
+          "COM-0043",
+          "COM-0046",
+          "COM-0049",
+          "COM-0052"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "COM-1138",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0024",
-      "question": "De acordo com o contido em “IMO Standard Marine Communication Phrases” (Glossary, General terms, verbete “Off air”), considere o seguinte problema técnico: No contexto de SMCP Glossary — General terms, qual descrição corresponde corretamente a “Off air”? Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.AST.00007",
+      "question": "De acordo com o contido em “IMO Standard Marine Communication Phrases”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “SMCP Glossary — General terms”, considere a proposição: To increase the distance from the vessel ahead by reducing one's own speed.\nII) No contexto de “SMCP Glossary — General terms”, a associação “EPIRB” é tecnicamente aplicável.\nIII) Sobre “SMCP Glossary — General terms”, considere a proposição: Being driven along by the wind, tide or current.\nIV) No tópico “SMCP Glossary — General terms”, a resposta tecnicamente correta é “Let go (to)”.",
       "options": [
         {
           "key": "A",
-          "text": "When the transmissions of a radio station, etc., have broken down, been switched off or suspended"
+          "text": "Apenas as afirmativas I e II são verdadeiras."
         },
         {
           "key": "B",
-          "text": "All equipment, such as pilot ladder, accommodation ladder, hoist, etc., necessary for a safe transfer of the pilot"
+          "text": "Apenas as afirmativas I e III são verdadeiras."
         },
         {
           "key": "C",
-          "text": "Orders of the Master to the officer of the watch which he/she must comply with"
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "A clearly marked way in the vessel which has to be followed in case of an emergency"
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
         },
         {
           "key": "E",
-          "text": "Safe working load: maximum working load of lifting equipment that should not be exceeded"
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
         }
       ],
       "correct_answer": "A",
-      "explanation": "No SMCP, “Off air” corresponde a “When the transmissions of a radio station, etc., have broken down, been switched off or suspended”. Empregar essa associação padronizada reduz ambiguidades na comunicação marítima."
+      "explanation": "A combinação correta é a alternativa A. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Glossary, General terms, verbete “Drop back (to)”."
     },
     {
       "id": "COM-1139",
@@ -93840,16 +93862,16 @@
       "id": "COM-1192",
       "subject": "VI — Comunicações",
       "module": "IMO SMCP — Procedimentos gerais",
-      "topic": "soletração padronizada do SMCP",
+      "topic": "princípios e procedimentos gerais do SMCP",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
       "taxonomy": {
         "subject_id": "VI",
         "subject_slug": "comunicacoes",
         "bibliography_id": "smcp",
         "chapter_id": "smcp::s1",
-        "topic_id": "VI-smcp-s1-com-smcp-gen-spell-soletracao-padronizada-do-smcp",
+        "topic_id": "VI-smcp-s1-com-smcp-gen-principios-e-procedimentos-gerais-do-smcp",
         "subtopic_id": null
       },
       "tracking": {
@@ -93868,62 +93890,65 @@
         "section": "General",
         "module": "IMO SMCP — Procedimentos gerais",
         "topic": {
-          "id": "VI-smcp-s1-com-smcp-gen-spell-soletracao-padronizada-do-smcp",
-          "title": "soletração padronizada do SMCP"
+          "id": "VI-smcp-s1-com-smcp-gen-principios-e-procedimentos-gerais-do-smcp",
+          "title": "princípios e procedimentos gerais do SMCP"
         }
       },
       "source": {
         "author": "International Maritime Organization (IMO)",
         "title": "IMO Standard Marine Communication Phrases",
         "edition": "Resolution A.918(22), adopted 29 November 2001",
-        "locator": "General, item 2 — Spelling"
+        "locator": "General, item 5 — Distress, urgency and safety signals"
       },
       "tags": [
         "SMCP",
-        "spelling",
-        "V",
+        "procedimentos gerais",
+        "MAYDAY",
         "comunicacoes",
         "smcp",
         "smcp::s1",
-        "soletracao-padronizada-do-smcp",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "principios-e-procedimentos-gerais-do-smcp",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "COM-0182"
+          "COM-0235",
+          "COM-0238",
+          "COM-0241",
+          "COM-0244"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "COM-1192",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0028",
-      "question": "De acordo com o contido em “IMO Standard Marine Communication Phrases” (General, item 2 — Spelling), considere o seguinte problema técnico: Um operador precisa expressar “Victor”. Qual termo ou sinal padronizado deve identificar? Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.VF.00008",
+      "question": "Com base em “IMO Standard Marine Communication Phrases”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “princípios e procedimentos gerais do SMCP”, considere a proposição: anuncia uma mensagem de socorro.\n( ) Sobre “princípios e procedimentos gerais do SMCP”, considere a proposição: corresponde a “bad”, sinal apenas perceptível.\n( ) Sobre “princípios e procedimentos gerais do SMCP”, considere a proposição: dizer “Mistake”, depois “Correction” e transmitir a parte corrigida.\n( ) Sobre “princípios e procedimentos gerais do SMCP”, considere a proposição: pronunciar o número completo, como “Fifteen” para 15.",
       "options": [
         {
           "key": "A",
-          "text": "5"
+          "text": "( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "B",
-          "text": "F"
+          "text": "( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "C",
-          "text": "C"
+          "text": "( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "D",
-          "text": "R"
+          "text": "( F ) ( F ) ( V ) ( V )"
         },
         {
           "key": "E",
-          "text": "V"
+          "text": "( V ) ( V ) ( V ) ( V )"
         }
       ],
       "correct_answer": "E",
-      "explanation": "No SMCP, “V” corresponde a “Victor”. Empregar essa associação padronizada reduz ambiguidades na comunicação marítima."
+      "explanation": "A sequência correta corresponde à alternativa E, conforme os conceitos reunidos em General, item 5 — Distress, urgency and safety signals."
     },
     {
       "id": "COM-1193",
@@ -94566,16 +94591,16 @@
       "id": "COM-1200",
       "subject": "VI — Comunicações",
       "module": "IMO SMCP — Procedimentos gerais",
-      "topic": "soletração padronizada do SMCP",
+      "topic": "princípios e procedimentos gerais do SMCP",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
       "taxonomy": {
         "subject_id": "VI",
         "subject_slug": "comunicacoes",
         "bibliography_id": "smcp",
         "chapter_id": "smcp::s1",
-        "topic_id": "VI-smcp-s1-com-smcp-gen-spell-soletracao-padronizada-do-smcp",
+        "topic_id": "VI-smcp-s1-com-smcp-gen-principios-e-procedimentos-gerais-do-smcp",
         "subtopic_id": null
       },
       "tracking": {
@@ -94594,63 +94619,66 @@
         "section": "General",
         "module": "IMO SMCP — Procedimentos gerais",
         "topic": {
-          "id": "VI-smcp-s1-com-smcp-gen-spell-soletracao-padronizada-do-smcp",
-          "title": "soletração padronizada do SMCP"
+          "id": "VI-smcp-s1-com-smcp-gen-principios-e-procedimentos-gerais-do-smcp",
+          "title": "princípios e procedimentos gerais do SMCP"
         }
       },
       "source": {
         "author": "International Maritime Organization (IMO)",
         "title": "IMO Standard Marine Communication Phrases",
         "edition": "Resolution A.918(22), adopted 29 November 2001",
-        "locator": "General, item 2 — Spelling"
+        "locator": "General, item 9 — Repetition"
       },
       "tags": [
         "SMCP",
-        "spelling",
-        "Z",
+        "procedimentos gerais",
+        "pedido de repetição por falha de escuta",
         "comunicacoes",
         "smcp",
         "smcp::s1",
-        "soletracao-padronizada-do-smcp",
-        "pscpp-style-v3",
-        "formato-pscpp-direta",
-        "pscpp-refinement-v3"
+        "principios-e-procedimentos-gerais-do-smcp",
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "COM-1090"
+          "COM-0242",
+          "COM-0245",
+          "COM-0248",
+          "COM-1192",
+          "COM-0162"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "COM-1200",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0032",
-      "question": "De acordo com o contido em “IMO Standard Marine Communication Phrases” (General, item 2 — Spelling), considere o seguinte problema técnico: De acordo com o contido em “IMO Standard Marine Communication Phrases” (General, item 2 — Spelling), considere a situação/conceito a seguir: A descrição “Zulu” está associada a qual elemento de soletração padronizada do SMCP? Assinale a opção correta. Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.INC.00009",
+      "question": "Considerando o conteúdo de “IMO Standard Marine Communication Phrases” (General, item 9 — Repetition), assinale a alternativa INCORRETA:",
       "options": [
         {
           "key": "A",
-          "text": "Z"
+          "text": "Sobre “princípios e procedimentos gerais do SMCP”, considere a proposição: padronizar o idioma usado nas comunicações de navegação e a bordo."
         },
         {
           "key": "B",
-          "text": "R"
+          "text": "Sobre “princípios e procedimentos gerais do SMCP”, considere a proposição: expressar graus e minutos, com hemisférios N/S e E/W."
         },
         {
           "key": "C",
-          "text": "U"
+          "text": "Sobre “princípios e procedimentos gerais do SMCP”, considere a proposição: usar notação UTC de 24 horas; se for hora local, declará-la claramente."
         },
         {
           "key": "D",
-          "text": "T"
+          "text": "No contexto de “soletração padronizada do SMCP”, a associação “V” é tecnicamente aplicável."
         },
         {
           "key": "E",
-          "text": "H"
+          "text": "No contexto de “soletração padronizada do SMCP”, a associação “B” é tecnicamente aplicável."
         }
       ],
       "correct_answer": "A",
-      "explanation": "No SMCP, “Z” corresponde a “Zulu”. Empregar essa associação padronizada reduz ambiguidades na comunicação marítima."
+      "explanation": "A alternativa A é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
     },
     {
       "id": "COM-1201",
@@ -94933,16 +94961,16 @@
       "id": "COM-1204",
       "subject": "comunicacoes",
       "module": "Código Internacional de Sinais — Seção Geral",
-      "topic": "SO",
+      "topic": "G – Golf",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
       "taxonomy": {
         "subject_id": "VI",
         "subject_slug": "comunicacoes",
         "bibliography_id": "ics",
         "chapter_id": "ics::general",
-        "topic_id": "VI-ics-general-so",
+        "topic_id": "VI-ics-general-g-golf",
         "subtopic_id": null
       },
       "tracking": {
@@ -94961,8 +94989,8 @@
         "section": "Seção Geral — Distress; Casualties; Aids to navigation; Manoeuvres; Pilot",
         "module": "Código Internacional de Sinais — Seção Geral",
         "topic": {
-          "id": "VI-ics-general-so",
-          "title": "SO"
+          "id": "VI-ics-general-g-golf",
+          "title": "G – Golf"
         }
       },
       "source": {
@@ -94975,46 +95003,49 @@
         "comunicacoes",
         "ics",
         "ics::general",
-        "so",
+        "g-golf",
         "cobertura-v2",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "COM-1008"
+          "COM-1010",
+          "COM-1013",
+          "COM-1016",
+          "COM-1019"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "COM-1204",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0036",
-      "question": "De acordo com o contido em “International Code of Signals” (General Section — Distress, Assistance, Manoeuvres and Pilot), considere o seguinte problema técnico: No contexto de Seção Geral — Distress; Casualties; Aids to navigation; Manoeuvres; Pilot, qual conceito corresponde à descrição: “Sinal que determina que o outro navio pare imediatamente.”? Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.AST.00010",
+      "question": "De acordo com o contido em “International Code of Signals”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “G – Golf”, considere a proposição: Bandeira de letra única que, no significado geral, indica que o navio necessita de um prático.\nII) Sobre “W – Whiskey”, considere a proposição: Bandeira de letra única que indica que o navio tem prático a bordo.\nIII) Sobre “AC”, considere a proposição: Sinal que informa: estou abandonando meu navio.\nIV) Sobre “DV”, considere a proposição: Bandeira de letra única que significa “I require medical assistance”.",
       "options": [
         {
           "key": "A",
-          "text": "QX"
+          "text": "Apenas as afirmativas I e II são verdadeiras."
         },
         {
           "key": "B",
-          "text": "SO"
+          "text": "Apenas as afirmativas I e III são verdadeiras."
         },
         {
           "key": "C",
-          "text": "G – Golf"
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "H – Hotel"
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
         },
         {
           "key": "E",
-          "text": "V – Victor"
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
         }
       ],
       "correct_answer": "B",
-      "explanation": "A descrição apresentada identifica “SO”."
+      "explanation": "A combinação correta é a alternativa B. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: General Section — Distress, Assistance, Manoeuvres and Pilot."
     },
     {
       "id": "COM-1205",
@@ -95290,6 +95321,1804 @@
       ],
       "correct_answer": "E",
       "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+    },
+    {
+      "id": "COM-1208",
+      "subject": "comunicacoes",
+      "module": "Código Internacional de Sinais — Apêndices",
+      "topic": "Apêndice 1",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "ics",
+        "chapter_id": "ics::appendices",
+        "topic_id": "VI-ics-appendices-apendice-1",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "comunicacoes",
+        "work": {
+          "id": "ics",
+          "title": "IMO — International Code of Signals, 2005",
+          "author": "International Maritime Organization"
+        },
+        "chapter": {
+          "id": "ics::appendices",
+          "number": "appendices",
+          "title": "Apêndices 1, 2 e 4",
+          "label": "Apêndices 1, 2 e 4"
+        },
+        "section": "Apêndices 1, 2 e 4",
+        "module": "Código Internacional de Sinais — Apêndices",
+        "topic": {
+          "id": "VI-ics-appendices-apendice-1",
+          "title": "Apêndice 1"
+        }
+      },
+      "source": {
+        "author": "International Maritime Organization",
+        "title": "International Code of Signals",
+        "edition": "2005",
+        "locator": "Appendices 1, 2 and 4"
+      },
+      "tags": [
+        "comunicacoes",
+        "ics",
+        "ics::appendices",
+        "apendice-1",
+        "cobertura-v2",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "COM-1026",
+          "COM-1029",
+          "COM-1032",
+          "COM-1035"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.AST.10001",
+      "question": "De acordo com o contido em “International Code of Signals”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Apêndice 1”, considere a proposição: Parte do Código Internacional de Sinais dedicada aos sinais de perigo (Distress signals).\nII) Sobre “Alfa – A”, considere a proposição: Bandeira de letra única que indica mergulhador na água e requer que outras embarcações se mantenham bem afastadas e a baixa velocidade.\nIII) Sobre “Oscar – O”, considere a proposição: Bandeira de letra única que significa que o navio está garrando/arrastando a âncora.\nIV) Sobre “Yankee – Y”, considere a proposição: Bandeira de letra única que significa homem ao mar.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A combinação correta é a alternativa A. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Appendices 1, 2 and 4."
+    },
+    {
+      "id": "COM-1209",
+      "subject": "VI — Comunicações",
+      "module": "Código Internacional de Sinais — Seção Médica",
+      "topic": "Request for medical assistance",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "ics",
+        "chapter_id": "ics::medical",
+        "topic_id": "VI-ics-medical-com-cis-ch3-med-request-for-medical-assistance",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "comunicacoes",
+        "work": {
+          "id": "ics",
+          "title": "IMO — International Code of Signals, 2005",
+          "author": "National Imagery and Mapping Agency / IMCO"
+        },
+        "chapter": {
+          "id": "ics::medical",
+          "number": "medical",
+          "title": "Seção Médica — Request for Medical Assistance, Chapter I",
+          "label": "Seção Médica — Request for Medical Assistance, Chapter I"
+        },
+        "section": "Seção Médica — Request for Medical Assistance, Chapter I",
+        "module": "Código Internacional de Sinais — Seção Médica",
+        "topic": {
+          "id": "VI-ics-medical-com-cis-ch3-med-request-for-medical-assistance",
+          "title": "Request for medical assistance"
+        }
+      },
+      "source": {
+        "author": "National Imagery and Mapping Agency / IMCO",
+        "title": "International Code of Signals for Visual, Sound, and Radio Communications",
+        "edition": "United States Edition 1969, revised 2003 (versão autorizada pelo usuário)",
+        "locator": "Chapter 3, Section 2 — Request for medical assistance, sinal MDN"
+      },
+      "tags": [
+        "International Code of Signals",
+        "Request for medical assistance",
+        "MDN",
+        "comunicacoes",
+        "ics",
+        "ics::medical",
+        "request-for-medical-assistance",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "COM-0879",
+          "COM-0882",
+          "COM-0885",
+          "COM-0888"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.VF.10002",
+      "question": "Com base em “International Code of Signals for Visual, Sound, and Radio Communications”, julgue as proposições a seguir e assinale a sequência correta:\n( ) No contexto de “Request for medical assistance”, a associação “Pain is continuous.” é tecnicamente aplicável.\n( ) No contexto de “Request for medical assistance”, a associação “MJE” é tecnicamente aplicável.\n( ) No contexto de “Request for medical assistance”, a associação “Swelling is discharging.” é tecnicamente aplicável.\n( ) No tópico “Request for medical assistance”, a resposta tecnicamente correta é “MDT”.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "D",
+          "text": "( F ) ( F ) ( V ) ( V )"
+        },
+        {
+          "key": "E",
+          "text": "( V ) ( V ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A sequência correta corresponde à alternativa B, conforme os conceitos reunidos em Chapter 3, Section 2 — Request for medical assistance, sinal MDN."
+    },
+    {
+      "id": "COM-1210",
+      "subject": "VI — Comunicações",
+      "module": "IMO SMCP — Procedimentos gerais",
+      "topic": "soletração padronizada do SMCP",
+      "difficulty": "Difícil",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "smcp",
+        "chapter_id": "smcp::s1",
+        "topic_id": "VI-smcp-s1-com-smcp-gen-spell-soletracao-padronizada-do-smcp",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "comunicacoes",
+        "work": {
+          "id": "smcp",
+          "title": "IMO Standard Marine Communication Phrases — A.918(22)",
+          "author": "International Maritime Organization (IMO)"
+        },
+        "chapter": {
+          "id": "smcp::s1",
+          "number": "s1",
+          "title": "General",
+          "label": "General"
+        },
+        "section": "General",
+        "module": "IMO SMCP — Procedimentos gerais",
+        "topic": {
+          "id": "VI-smcp-s1-com-smcp-gen-spell-soletracao-padronizada-do-smcp",
+          "title": "soletração padronizada do SMCP"
+        }
+      },
+      "source": {
+        "author": "International Maritime Organization (IMO)",
+        "title": "IMO Standard Marine Communication Phrases",
+        "edition": "Resolution A.918(22), adopted 29 November 2001",
+        "locator": "General, item 2 — Spelling"
+      },
+      "tags": [
+        "SMCP",
+        "spelling",
+        "0",
+        "comunicacoes",
+        "smcp",
+        "smcp::s1",
+        "soletracao-padronizada-do-smcp",
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "COM-0187",
+          "COM-0190",
+          "COM-0193",
+          "COM-0196",
+          "COM-0224"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.INC.10003",
+      "question": "Considerando o conteúdo de “IMO Standard Marine Communication Phrases” (General, item 2 — Spelling), assinale a alternativa INCORRETA:",
+      "options": [
+        {
+          "key": "A",
+          "text": "No contexto de “soletração padronizada do SMCP”, a associação “ZEERO” é tecnicamente aplicável."
+        },
+        {
+          "key": "B",
+          "text": "No contexto de “soletração padronizada do SMCP”, a associação “3” é tecnicamente aplicável."
+        },
+        {
+          "key": "C",
+          "text": "No contexto de “soletração padronizada do SMCP”, a associação “Juliet” é tecnicamente aplicável."
+        },
+        {
+          "key": "D",
+          "text": "No tópico “soletração padronizada do SMCP”, a resposta tecnicamente correta é “9”."
+        },
+        {
+          "key": "E",
+          "text": "Sobre “princípios e procedimentos gerais do SMCP”, considere a proposição: message marker empregado para apresentar recomendação."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A alternativa C é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+    },
+    {
+      "id": "COM-1211",
+      "subject": "VI — Comunicações",
+      "module": "Código Internacional de Sinais — Código Geral",
+      "topic": "Distress",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "ics",
+        "chapter_id": "ics::chapters",
+        "topic_id": "VI-ics-chapters-com-cis-ch2-distress-distress",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "comunicacoes",
+        "work": {
+          "id": "ics",
+          "title": "IMO — International Code of Signals, 2005",
+          "author": "National Imagery and Mapping Agency / IMCO"
+        },
+        "chapter": {
+          "id": "ics::chapters",
+          "number": "chapters",
+          "title": "Capítulos I a V, VII, VIII, X, XI e XII",
+          "label": "Capítulos I a V, VII, VIII, X, XI e XII"
+        },
+        "section": "Capítulos I a V, VII, VIII, X, XI e XII",
+        "module": "Código Internacional de Sinais — Código Geral",
+        "topic": {
+          "id": "VI-ics-chapters-com-cis-ch2-distress-distress",
+          "title": "Distress"
+        }
+      },
+      "source": {
+        "author": "National Imagery and Mapping Agency / IMCO",
+        "title": "International Code of Signals for Visual, Sound, and Radio Communications",
+        "edition": "United States Edition 1969, revised 2003 (versão autorizada pelo usuário)",
+        "locator": "Chapter 2, Seção temática — Distress, sinal EA"
+      },
+      "tags": [
+        "International Code of Signals",
+        "Distress",
+        "EA",
+        "comunicacoes",
+        "ics",
+        "ics::chapters",
+        "distress",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "COM-0690",
+          "COM-0693",
+          "COM-0696",
+          "COM-0699"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.AST.10004",
+      "question": "De acordo com o contido em “International Code of Signals for Visual, Sound, and Radio Communications”, analise as afirmativas abaixo e assinale a opção correta:\nI) No contexto de “Distress”, a associação “EG” é tecnicamente aplicável.\nII) Sobre “Distress”, considere a proposição: I am listening on… MHz for signals of emergency position-indicating radiobeacons.\nIII) No tópico “Distress”, a resposta tecnicamente correta é “EK 2”.\nIV) Sobre “Distress”, considere a proposição: My position at time indicated was lat… long….",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A combinação correta é a alternativa D. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Chapter 2, Seção temática — Distress, sinal EA."
+    },
+    {
+      "id": "COM-1212",
+      "subject": "VI — Comunicações",
+      "module": "EROG — Terminologia e abreviaturas",
+      "topic": "glossário técnico do EROG",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "radioperador",
+        "chapter_id": "radioperador::integral",
+        "topic_id": "VI-radioperador-integral-com-erog-an2-glossario-tecnico-do-erog",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "comunicacoes",
+        "work": {
+          "id": "radioperador",
+          "title": "DPC — Manual do Curso Especial de Radioperador Geral",
+          "author": "Brasil — Diretoria de Portos e Costas"
+        },
+        "chapter": {
+          "id": "radioperador::integral",
+          "number": "integral",
+          "title": "Publicação indicada — sem capítulos delimitados no Anexo 2-B",
+          "label": "Publicação indicada — sem capítulos delimitados no Anexo 2-B"
+        },
+        "section": "Publicação indicada — sem capítulos delimitados no Anexo 2-B",
+        "module": "EROG — Terminologia e abreviaturas",
+        "topic": {
+          "id": "VI-radioperador-integral-com-erog-an2-glossario-tecnico-do-erog",
+          "title": "glossário técnico do EROG"
+        }
+      },
+      "source": {
+        "author": "Brasil — Diretoria de Portos e Costas",
+        "title": "Especial de Radioperador Geral (EROG)",
+        "edition": "3ª edição, Rio de Janeiro, 2011",
+        "locator": "Anexo 2 — Glossário, verbete “H24”"
+      },
+      "tags": [
+        "EROG",
+        "glossário",
+        "H24",
+        "comunicacoes",
+        "radioperador",
+        "radioperador::integral",
+        "glossario-tecnico-do-erog",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "COM-0303",
+          "COM-0306",
+          "COM-0309",
+          "COM-0312"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.VF.10005",
+      "question": "Com base em “Especial de Radioperador Geral (EROG)”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “glossário técnico do EROG”, considere a proposição: Serviço contínuo em todo o dia.\n( ) No contexto de “glossário técnico do EROG”, a associação “IAMSAR” é tecnicamente aplicável.\n( ) Sobre “glossário técnico do EROG”, considere a proposição: INMARSAT Mobile Number - Número INMARSAT.\n( ) No contexto de “glossário técnico do EROG”, a associação “INMARSAT B” é tecnicamente aplicável.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "D",
+          "text": "( F ) ( F ) ( V ) ( V )"
+        },
+        {
+          "key": "E",
+          "text": "( V ) ( V ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A sequência correta corresponde à alternativa E, conforme os conceitos reunidos em Anexo 2 — Glossário, verbete “H24”."
+    },
+    {
+      "id": "COM-1213",
+      "subject": "VI — Comunicações",
+      "module": "IMO SMCP — Glossário",
+      "topic": "SMCP Glossary — General terms",
+      "difficulty": "Difícil",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "smcp",
+        "chapter_id": "smcp::s2",
+        "topic_id": "VI-smcp-s2-com-smcp-glo-gen-smcp-glossary-general-terms",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "comunicacoes",
+        "work": {
+          "id": "smcp",
+          "title": "IMO Standard Marine Communication Phrases — A.918(22)",
+          "author": "International Maritime Organization (IMO)"
+        },
+        "chapter": {
+          "id": "smcp::s2",
+          "number": "s2",
+          "title": "Glossary",
+          "label": "Glossary"
+        },
+        "section": "Glossary",
+        "module": "IMO SMCP — Glossário",
+        "topic": {
+          "id": "VI-smcp-s2-com-smcp-glo-gen-smcp-glossary-general-terms",
+          "title": "SMCP Glossary — General terms"
+        }
+      },
+      "source": {
+        "author": "International Maritime Organization (IMO)",
+        "title": "IMO Standard Marine Communication Phrases",
+        "edition": "Resolution A.918(22), adopted 29 November 2001",
+        "locator": "Glossary, General terms, verbete “Hoist”"
+      },
+      "tags": [
+        "SMCP",
+        "glossary",
+        "Hoist",
+        "comunicacoes",
+        "smcp",
+        "smcp::s2",
+        "smcp-glossary-general-terms",
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "COM-0066",
+          "COM-0069",
+          "COM-0072",
+          "COM-0075",
+          "COM-0078"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.INC.10006",
+      "question": "Considerando o conteúdo de “IMO Standard Marine Communication Phrases” (Glossary, General terms, verbete “Hoist”), assinale a alternativa INCORRETA:",
+      "options": [
+        {
+          "key": "A",
+          "text": "No contexto de “SMCP Glossary — General terms”, a associação “Scene” é tecnicamente aplicável."
+        },
+        {
+          "key": "B",
+          "text": "Sobre “SMCP Glossary — General terms”, considere a proposição: To reduce the oxygen in a tank by inert gas to avoid an explosive atmosphere."
+        },
+        {
+          "key": "C",
+          "text": "No contexto de “SMCP Glossary — General terms”, a associação “Jettison (to) (of cargo)” é tecnicamente aplicável."
+        },
+        {
+          "key": "D",
+          "text": "Sobre “SMCP Glossary — General terms”, considere a proposição: On or towards the sheltered side of a ship; opposite of windward."
+        },
+        {
+          "key": "E",
+          "text": "No contexto de “SMCP Glossary — General terms”, a associação “Lifeboat station” é tecnicamente aplicável."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A alternativa A é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+    },
+    {
+      "id": "COM-1214",
+      "subject": "comunicacoes",
+      "module": "Código Internacional de Sinais — Seção Geral",
+      "topic": "H – Hotel",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "ics",
+        "chapter_id": "ics::general",
+        "topic_id": "VI-ics-general-h-hotel",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "comunicacoes",
+        "work": {
+          "id": "ics",
+          "title": "IMO — International Code of Signals, 2005",
+          "author": "International Maritime Organization"
+        },
+        "chapter": {
+          "id": "ics::general",
+          "number": "general",
+          "title": "Seção Geral — Distress; Casualties; Aids to navigation; Manoeuvres; Pilot",
+          "label": "Seção Geral — Distress; Casualties; Aids to navigation; Manoeuvres; Pilot"
+        },
+        "section": "Seção Geral — Distress; Casualties; Aids to navigation; Manoeuvres; Pilot",
+        "module": "Código Internacional de Sinais — Seção Geral",
+        "topic": {
+          "id": "VI-ics-general-h-hotel",
+          "title": "H – Hotel"
+        }
+      },
+      "source": {
+        "author": "International Maritime Organization",
+        "title": "International Code of Signals",
+        "edition": "2005",
+        "locator": "General Section — Distress, Assistance, Manoeuvres and Pilot"
+      },
+      "tags": [
+        "comunicacoes",
+        "ics",
+        "ics::general",
+        "h-hotel",
+        "cobertura-v2",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "COM-1025",
+          "COM-1001",
+          "COM-1004",
+          "COM-1007"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.AST.10007",
+      "question": "De acordo com o contido em “International Code of Signals”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “H – Hotel”, considere a proposição: Bandeira de letra única que indica que o navio tem prático a bordo.\nII) Sobre “NC”, considere a proposição: Sinal que informa que a embarcação está à deriva.\nIII) Sobre “CD”, considere a proposição: Sinal que solicita assistência imediata.\nIV) Sobre “RU”, considere a proposição: Sinal associado a homem ao mar e à necessidade de efetuar sua recolha.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A combinação correta é a alternativa B. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: General Section — Distress, Assistance, Manoeuvres and Pilot."
+    },
+    {
+      "id": "COM-1215",
+      "subject": "VI — Comunicações",
+      "module": "IMO SMCP — Introdução e organização",
+      "topic": "princípios e procedimentos gerais do SMCP",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "smcp",
+        "chapter_id": "smcp::s0",
+        "topic_id": "VI-smcp-s0-com-smcp-intro-principios-e-procedimentos-gerais-do-smcp",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "comunicacoes",
+        "work": {
+          "id": "smcp",
+          "title": "IMO Standard Marine Communication Phrases — A.918(22)",
+          "author": "International Maritime Organization (IMO)"
+        },
+        "chapter": {
+          "id": "smcp::s0",
+          "number": "s0",
+          "title": "Introduction",
+          "label": "Introduction"
+        },
+        "section": "Introduction",
+        "module": "IMO SMCP — Introdução e organização",
+        "topic": {
+          "id": "VI-smcp-s0-com-smcp-intro-principios-e-procedimentos-gerais-do-smcp",
+          "title": "princípios e procedimentos gerais do SMCP"
+        }
+      },
+      "source": {
+        "author": "International Maritime Organization (IMO)",
+        "title": "IMO Standard Marine Communication Phrases",
+        "edition": "Resolution A.918(22), adopted 29 November 2001",
+        "locator": "Introduction, item 4"
+      },
+      "tags": [
+        "SMCP",
+        "procedimentos gerais",
+        "block language",
+        "comunicacoes",
+        "smcp",
+        "smcp::s0",
+        "principios-e-procedimentos-gerais-do-smcp",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "COM-0214",
+          "COM-0217",
+          "COM-0220",
+          "COM-0198"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.VF.10008",
+      "question": "Com base em “IMO Standard Marine Communication Phrases”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “princípios e procedimentos gerais do SMCP”, considere a proposição: indicam parte da mensagem que pode ser acrescentada quando pertinente.\n( ) Sobre “princípios e procedimentos gerais do SMCP”, considere a proposição: devem ser dadas de forma completa, repetindo a frase apropriada.\n( ) Sobre “princípios e procedimentos gerais do SMCP”, considere a proposição: message marker empregado para formular pergunta.\n( ) No contexto de “princípios e procedimentos gerais do SMCP”, a associação “objetivo de segurança” é tecnicamente aplicável.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "D",
+          "text": "( F ) ( F ) ( V ) ( V )"
+        },
+        {
+          "key": "E",
+          "text": "( V ) ( V ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A sequência correta corresponde à alternativa C, conforme os conceitos reunidos em Introduction, item 4."
+    },
+    {
+      "id": "COM-1216",
+      "subject": "comunicacoes",
+      "module": "Código Internacional de Sinais — Apêndices",
+      "topic": "Oscar – O",
+      "difficulty": "Difícil",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "ics",
+        "chapter_id": "ics::appendices",
+        "topic_id": "VI-ics-appendices-oscar-o",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "comunicacoes",
+        "work": {
+          "id": "ics",
+          "title": "IMO — International Code of Signals, 2005",
+          "author": "International Maritime Organization"
+        },
+        "chapter": {
+          "id": "ics::appendices",
+          "number": "appendices",
+          "title": "Apêndices 1, 2 e 4",
+          "label": "Apêndices 1, 2 e 4"
+        },
+        "section": "Apêndices 1, 2 e 4",
+        "module": "Código Internacional de Sinais — Apêndices",
+        "topic": {
+          "id": "VI-ics-appendices-oscar-o",
+          "title": "Oscar – O"
+        }
+      },
+      "source": {
+        "author": "International Maritime Organization",
+        "title": "International Code of Signals",
+        "edition": "2005",
+        "locator": "Appendices 1, 2 and 4"
+      },
+      "tags": [
+        "comunicacoes",
+        "ics",
+        "ics::appendices",
+        "oscar-o",
+        "cobertura-v2",
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "COM-1032",
+          "COM-1035",
+          "COM-1049",
+          "COM-1027",
+          "COM-1030"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.INC.10009",
+      "question": "Considerando o conteúdo de “International Code of Signals” (Appendices 1, 2 and 4), assinale a alternativa INCORRETA:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sobre “Oscar – O”, considere a proposição: Bandeira de letra única que significa homem ao mar."
+        },
+        {
+          "key": "B",
+          "text": "Sobre “Yankee – Y”, considere a proposição: Bandeira de letra única que significa que o navio está garrando/arrastando a âncora."
+        },
+        {
+          "key": "C",
+          "text": "Sobre “Alfa – A”, considere a proposição: Bandeira de letra única que indica mergulhador na água e requer que outras embarcações se mantenham bem afastadas e a baixa velocidade."
+        },
+        {
+          "key": "D",
+          "text": "No contexto de “Apêndice 2”, a associação “Oscar – O” é tecnicamente aplicável."
+        },
+        {
+          "key": "E",
+          "text": "No contexto de “Bravo – B”, a associação “Bravo – B” é tecnicamente aplicável."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A alternativa D é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+    },
+    {
+      "id": "COM-1217",
+      "subject": "VI — Comunicações",
+      "module": "Código Internacional de Sinais — Seção Médica",
+      "topic": "Request for medical assistance",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "ics",
+        "chapter_id": "ics::medical",
+        "topic_id": "VI-ics-medical-com-cis-ch3-med-request-for-medical-assistance",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "comunicacoes",
+        "work": {
+          "id": "ics",
+          "title": "IMO — International Code of Signals, 2005",
+          "author": "National Imagery and Mapping Agency / IMCO"
+        },
+        "chapter": {
+          "id": "ics::medical",
+          "number": "medical",
+          "title": "Seção Médica — Request for Medical Assistance, Chapter I",
+          "label": "Seção Médica — Request for Medical Assistance, Chapter I"
+        },
+        "section": "Seção Médica — Request for Medical Assistance, Chapter I",
+        "module": "Código Internacional de Sinais — Seção Médica",
+        "topic": {
+          "id": "VI-ics-medical-com-cis-ch3-med-request-for-medical-assistance",
+          "title": "Request for medical assistance"
+        }
+      },
+      "source": {
+        "author": "National Imagery and Mapping Agency / IMCO",
+        "title": "International Code of Signals for Visual, Sound, and Radio Communications",
+        "edition": "United States Edition 1969, revised 2003 (versão autorizada pelo usuário)",
+        "locator": "Chapter 3, Section 2 — Request for medical assistance, sinal MML"
+      },
+      "tags": [
+        "International Code of Signals",
+        "Request for medical assistance",
+        "MML",
+        "comunicacoes",
+        "ics",
+        "ics::medical",
+        "request-for-medical-assistance",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "COM-0917",
+          "COM-0920",
+          "COM-0923",
+          "COM-0926"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.AST.10010",
+      "question": "De acordo com o contido em “International Code of Signals for Visual, Sound, and Radio Communications”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Request for medical assistance”, considere a proposição: I have had (indicate number) similar cases.\nII) No tópico “Request for medical assistance”, a resposta tecnicamente correta é “MNH”.\nIII) Sobre “Request for medical assistance”, considere a proposição: Patient is suffering from heat stroke.\nIV) No contexto de “Request for medical assistance”, a associação “MOV” é tecnicamente aplicável.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A combinação correta é a alternativa E. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Chapter 3, Section 2 — Request for medical assistance, sinal MML."
+    },
+    {
+      "id": "COM-1218",
+      "subject": "VI — Comunicações",
+      "module": "IMO SMCP — Procedimentos gerais",
+      "topic": "princípios e procedimentos gerais do SMCP",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "smcp",
+        "chapter_id": "smcp::s1",
+        "topic_id": "VI-smcp-s1-com-smcp-gen-principios-e-procedimentos-gerais-do-smcp",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "comunicacoes",
+        "work": {
+          "id": "smcp",
+          "title": "IMO Standard Marine Communication Phrases — A.918(22)",
+          "author": "International Maritime Organization (IMO)"
+        },
+        "chapter": {
+          "id": "smcp::s1",
+          "number": "s1",
+          "title": "General",
+          "label": "General"
+        },
+        "section": "General",
+        "module": "IMO SMCP — Procedimentos gerais",
+        "topic": {
+          "id": "VI-smcp-s1-com-smcp-gen-principios-e-procedimentos-gerais-do-smcp",
+          "title": "princípios e procedimentos gerais do SMCP"
+        }
+      },
+      "source": {
+        "author": "International Maritime Organization (IMO)",
+        "title": "IMO Standard Marine Communication Phrases",
+        "edition": "Resolution A.918(22), adopted 29 November 2001",
+        "locator": "General, item 17 — Geographical names"
+      },
+      "tags": [
+        "SMCP",
+        "procedimentos gerais",
+        "nomes geográficos",
+        "comunicacoes",
+        "smcp",
+        "smcp::s1",
+        "principios-e-procedimentos-gerais-do-smcp",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "COM-0249",
+          "COM-1200",
+          "COM-0163",
+          "COM-0166"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.VF.10011",
+      "question": "Com base em “IMO Standard Marine Communication Phrases”, julgue as proposições a seguir e assinale a sequência correta:\n( ) No contexto de “princípios e procedimentos gerais do SMCP”, a associação “nomes geográficos” é tecnicamente aplicável.\n( ) Quanto a . Assinale a opção correta, é correto afirmar: Z.\n( ) No contexto de “soletração padronizada do SMCP”, a associação “WUN” é tecnicamente aplicável.\n( ) No contexto de “soletração padronizada do SMCP”, a associação “D” é tecnicamente aplicável.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "D",
+          "text": "( F ) ( F ) ( V ) ( V )"
+        },
+        {
+          "key": "E",
+          "text": "( V ) ( V ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A sequência correta corresponde à alternativa A, conforme os conceitos reunidos em General, item 17 — Geographical names."
+    },
+    {
+      "id": "COM-1219",
+      "subject": "VI — Comunicações",
+      "module": "Código Internacional de Sinais — Código Geral",
+      "topic": "Towing—Tugs",
+      "difficulty": "Difícil",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "ics",
+        "chapter_id": "ics::chapters",
+        "topic_id": "VI-ics-chapters-com-cis-ch2-towing-tugs-towing-tugs",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "comunicacoes",
+        "work": {
+          "id": "ics",
+          "title": "IMO — International Code of Signals, 2005",
+          "author": "National Imagery and Mapping Agency / IMCO"
+        },
+        "chapter": {
+          "id": "ics::chapters",
+          "number": "chapters",
+          "title": "Capítulos I a V, VII, VIII, X, XI e XII",
+          "label": "Capítulos I a V, VII, VIII, X, XI e XII"
+        },
+        "section": "Capítulos I a V, VII, VIII, X, XI e XII",
+        "module": "Código Internacional de Sinais — Código Geral",
+        "topic": {
+          "id": "VI-ics-chapters-com-cis-ch2-towing-tugs-towing-tugs",
+          "title": "Towing—Tugs"
+        }
+      },
+      "source": {
+        "author": "National Imagery and Mapping Agency / IMCO",
+        "title": "International Code of Signals for Visual, Sound, and Radio Communications",
+        "edition": "United States Edition 1969, revised 2003 (versão autorizada pelo usuário)",
+        "locator": "Chapter 2, Seção temática — Towing—Tugs, sinal LB 3"
+      },
+      "tags": [
+        "International Code of Signals",
+        "Towing—Tugs",
+        "LB 3",
+        "comunicacoes",
+        "ics",
+        "ics::chapters",
+        "towing-tugs",
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "COM-0794",
+          "COM-0797",
+          "COM-0800",
+          "COM-0803",
+          "COM-0806"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.INC.10012",
+      "question": "Considerando o conteúdo de “International Code of Signals for Visual, Sound, and Radio Communications” (Chapter 2, Seção temática — Towing—Tugs, sinal LB 3), assinale a alternativa INCORRETA:",
+      "options": [
+        {
+          "key": "A",
+          "text": "No tópico “Towing—Tugs”, a resposta tecnicamente correta é “LB 3”."
+        },
+        {
+          "key": "B",
+          "text": "No contexto de “Towing—Tugs”, a associação “Is all ready for towing?” é tecnicamente aplicável."
+        },
+        {
+          "key": "C",
+          "text": "No contexto de “Towing—Tugs”, a associação “LJ 1” é tecnicamente aplicável."
+        },
+        {
+          "key": "D",
+          "text": "No contexto de “Canal—Channel—Fairway and Course”, a associação “The canal is not clear.” é tecnicamente aplicável."
+        },
+        {
+          "key": "E",
+          "text": "No contexto de “Canal—Channel—Fairway and Course”, a associação “MB 1” é tecnicamente aplicável."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A alternativa B é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+    },
+    {
+      "id": "COM-1220",
+      "subject": "VI — Comunicações",
+      "module": "EROG — Unidade 1 — Princípios das radiocomunicações marítimas",
+      "topic": "Unidade 1 — Princípios das radiocomunicações marítimas",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "radioperador",
+        "chapter_id": "radioperador::integral",
+        "topic_id": "VI-radioperador-integral-com-erog-1-1-1-unidade-1-principios-das-radiocomunicacoes-maritimas",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "comunicacoes",
+        "work": {
+          "id": "radioperador",
+          "title": "DPC — Manual do Curso Especial de Radioperador Geral",
+          "author": "Brasil — Diretoria de Portos e Costas"
+        },
+        "chapter": {
+          "id": "radioperador::integral",
+          "number": "integral",
+          "title": "Publicação indicada — sem capítulos delimitados no Anexo 2-B",
+          "label": "Publicação indicada — sem capítulos delimitados no Anexo 2-B"
+        },
+        "section": "Publicação indicada — sem capítulos delimitados no Anexo 2-B",
+        "module": "EROG — Unidade 1 — Princípios das radiocomunicações marítimas",
+        "topic": {
+          "id": "VI-radioperador-integral-com-erog-1-1-1-unidade-1-principios-das-radiocomunicacoes-maritimas",
+          "title": "Unidade 1 — Princípios das radiocomunicações marítimas"
+        }
+      },
+      "source": {
+        "author": "Brasil — Diretoria de Portos e Costas",
+        "title": "Especial de Radioperador Geral (EROG)",
+        "edition": "3ª edição, Rio de Janeiro, 2011",
+        "locator": "Item 1.1.1 — Terminologia"
+      },
+      "tags": [
+        "EROG",
+        "Unidade 1",
+        "dispersão",
+        "comunicacoes",
+        "radioperador",
+        "radioperador::integral",
+        "unidade-1-principios-das-radiocomunicacoes-maritimas",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "COM-0407",
+          "COM-0410",
+          "COM-0413",
+          "COM-0416"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.AST.10013",
+      "question": "De acordo com o contido em “Especial de Radioperador Geral (EROG)”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Unidade 1 — Princípios das radiocomunicações marítimas”, considere a proposição: É formada pela propagação no espaço/tempo de duas ondas associadas.\nII) Sobre “Unidade 1 — Princípios das radiocomunicações marítimas”, considere a proposição: São genericamente conhecidas como ondas hertzianas.\nIII) Sobre “Unidade 1 — Princípios das radiocomunicações marítimas”, considere a proposição: É estabelecido em cada Região de Busca e Salvamento Marítimo, e é o local de onde é coordenada e dirigida uma operação SAR.\nIV) Sobre “Unidade 1 — Princípios das radiocomunicações marítimas”, considere a proposição: São bem refletidos na camada D da ionosfera e, como a altura da camada D é da mesma ordem de grandeza dos comprimentos de onda em VLF, o efeito é que se forma um guia de ondas para os sinais de VLF entre o solo e a camada D.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A combinação correta é a alternativa C. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Item 1.1.1 — Terminologia."
+    },
+    {
+      "id": "COM-1221",
+      "subject": "VI — Comunicações",
+      "module": "IMO SMCP — Glossário",
+      "topic": "SMCP Glossary — General terms",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "smcp",
+        "chapter_id": "smcp::s2",
+        "topic_id": "VI-smcp-s2-com-smcp-glo-gen-smcp-glossary-general-terms",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "comunicacoes",
+        "work": {
+          "id": "smcp",
+          "title": "IMO Standard Marine Communication Phrases — A.918(22)",
+          "author": "International Maritime Organization (IMO)"
+        },
+        "chapter": {
+          "id": "smcp::s2",
+          "number": "s2",
+          "title": "Glossary",
+          "label": "Glossary"
+        },
+        "section": "Glossary",
+        "module": "IMO SMCP — Glossário",
+        "topic": {
+          "id": "VI-smcp-s2-com-smcp-glo-gen-smcp-glossary-general-terms",
+          "title": "SMCP Glossary — General terms"
+        }
+      },
+      "source": {
+        "author": "International Maritime Organization (IMO)",
+        "title": "IMO Standard Marine Communication Phrases",
+        "edition": "Resolution A.918(22), adopted 29 November 2001",
+        "locator": "Glossary, General terms, verbete “Berth”"
+      },
+      "tags": [
+        "SMCP",
+        "glossary",
+        "Berth",
+        "comunicacoes",
+        "smcp",
+        "smcp::s2",
+        "smcp-glossary-general-terms",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "COM-0008",
+          "COM-0011",
+          "COM-0014",
+          "COM-0017"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.VF.10014",
+      "question": "Com base em “IMO Standard Marine Communication Phrases”, julgue as proposições a seguir e assinale a sequência correta:\n( ) No contexto de “SMCP Glossary — General terms”, a associação “Located” é tecnicamente aplicável.\n( ) Sobre “SMCP Glossary — General terms”, considere a proposição: An area which cannot be scanned by the ship’s radar because it is shielded by parts of the superstructure, masts, etc.\n( ) No contexto de “SMCP Glossary — General terms”, a associação “Briefing” é tecnicamente aplicável.\n( ) Sobre “SMCP Glossary — General terms”, considere a proposição: A seamark, i.e. a buoy, indicating the north, east, south or west, i.e. the cardinal points from a fixed point such as a wreck, shallow water, banks, etc.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "D",
+          "text": "( F ) ( F ) ( V ) ( V )"
+        },
+        {
+          "key": "E",
+          "text": "( V ) ( V ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A sequência correta corresponde à alternativa D, conforme os conceitos reunidos em Glossary, General terms, verbete “Berth”."
+    },
+    {
+      "id": "COM-1222",
+      "subject": "comunicacoes",
+      "module": "Código Internacional de Sinais — Seção Geral",
+      "topic": "RU",
+      "difficulty": "Difícil",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "ics",
+        "chapter_id": "ics::general",
+        "topic_id": "VI-ics-general-ru",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "comunicacoes",
+        "work": {
+          "id": "ics",
+          "title": "IMO — International Code of Signals, 2005",
+          "author": "International Maritime Organization"
+        },
+        "chapter": {
+          "id": "ics::general",
+          "number": "general",
+          "title": "Seção Geral — Distress; Casualties; Aids to navigation; Manoeuvres; Pilot",
+          "label": "Seção Geral — Distress; Casualties; Aids to navigation; Manoeuvres; Pilot"
+        },
+        "section": "Seção Geral — Distress; Casualties; Aids to navigation; Manoeuvres; Pilot",
+        "module": "Código Internacional de Sinais — Seção Geral",
+        "topic": {
+          "id": "VI-ics-general-ru",
+          "title": "RU"
+        }
+      },
+      "source": {
+        "author": "International Maritime Organization",
+        "title": "International Code of Signals",
+        "edition": "2005",
+        "locator": "General Section — Distress, Assistance, Manoeuvres and Pilot"
+      },
+      "tags": [
+        "comunicacoes",
+        "ics",
+        "ics::general",
+        "ru",
+        "cobertura-v2",
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "COM-1021",
+          "COM-1024",
+          "COM-1204",
+          "COM-1003",
+          "COM-1006"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.INC.10015",
+      "question": "Considerando o conteúdo de “International Code of Signals” (General Section — Distress, Assistance, Manoeuvres and Pilot), assinale a alternativa INCORRETA:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sobre “RU”, considere a proposição: RU — Sinal que determina manter-se afastado porque o navio está manobrando com dificuldade."
+        },
+        {
+          "key": "B",
+          "text": "Sobre “G – Golf”, considere a proposição: G – Golf — Bandeira de letra única que, no significado geral, indica que o navio necessita de um prático."
+        },
+        {
+          "key": "C",
+          "text": "No contexto de “SO”, a associação “SO” é tecnicamente aplicável."
+        },
+        {
+          "key": "D",
+          "text": "Sobre “AN”, considere a proposição: AN — Sinal que informa necessidade de médico."
+        },
+        {
+          "key": "E",
+          "text": "Sobre “GW”, considere a proposição: CD — Sinal que informa que a embarcação está à deriva."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A alternativa E é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+    },
+    {
+      "id": "COM-1223",
+      "subject": "VI — Comunicações",
+      "module": "IMO SMCP — Introdução e organização",
+      "topic": "princípios e procedimentos gerais do SMCP",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "smcp",
+        "chapter_id": "smcp::s0",
+        "topic_id": "VI-smcp-s0-com-smcp-intro-principios-e-procedimentos-gerais-do-smcp",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "comunicacoes",
+        "work": {
+          "id": "smcp",
+          "title": "IMO Standard Marine Communication Phrases — A.918(22)",
+          "author": "International Maritime Organization (IMO)"
+        },
+        "chapter": {
+          "id": "smcp::s0",
+          "number": "s0",
+          "title": "Introduction",
+          "label": "Introduction"
+        },
+        "section": "Introduction",
+        "module": "IMO SMCP — Introdução e organização",
+        "topic": {
+          "id": "VI-smcp-s0-com-smcp-intro-principios-e-procedimentos-gerais-do-smcp",
+          "title": "princípios e procedimentos gerais do SMCP"
+        }
+      },
+      "source": {
+        "author": "International Maritime Organization (IMO)",
+        "title": "IMO Standard Marine Communication Phrases",
+        "edition": "Resolution A.918(22), adopted 29 November 2001",
+        "locator": "Introduction, item 4"
+      },
+      "tags": [
+        "SMCP",
+        "procedimentos gerais",
+        "princípio frase-evento",
+        "comunicacoes",
+        "smcp",
+        "smcp::s0",
+        "principios-e-procedimentos-gerais-do-smcp",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "COM-0218",
+          "COM-0221",
+          "COM-0199",
+          "COM-0202"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.AST.10016",
+      "question": "De acordo com o contido em “IMO Standard Marine Communication Phrases”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “princípios e procedimentos gerais do SMCP”, considere a proposição: deve haver uma frase para cada evento.\nII) Sobre “princípios e procedimentos gerais do SMCP”, considere a proposição: indicam o ponto em que a informação pertinente deve ser preenchida.\nIII) Sobre “princípios e procedimentos gerais do SMCP”, considere a proposição: reúne frases padronizadas adicionais de segurança para comunicação a bordo.\nIV) Sobre “princípios e procedimentos gerais do SMCP”, considere a proposição: deve observar estritamente os procedimentos radiotelefônicos pertinentes da ITU.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A combinação correta é a alternativa A. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Introduction, item 4."
+    },
+    {
+      "id": "COM-1224",
+      "subject": "comunicacoes",
+      "module": "Código Internacional de Sinais — Apêndices",
+      "topic": "Alfa – A",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "ics",
+        "chapter_id": "ics::appendices",
+        "topic_id": "VI-ics-appendices-alfa-a",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "comunicacoes",
+        "work": {
+          "id": "ics",
+          "title": "IMO — International Code of Signals, 2005",
+          "author": "International Maritime Organization"
+        },
+        "chapter": {
+          "id": "ics::appendices",
+          "number": "appendices",
+          "title": "Apêndices 1, 2 e 4",
+          "label": "Apêndices 1, 2 e 4"
+        },
+        "section": "Apêndices 1, 2 e 4",
+        "module": "Código Internacional de Sinais — Apêndices",
+        "topic": {
+          "id": "VI-ics-appendices-alfa-a",
+          "title": "Alfa – A"
+        }
+      },
+      "source": {
+        "author": "International Maritime Organization",
+        "title": "International Code of Signals",
+        "edition": "2005",
+        "locator": "Appendices 1, 2 and 4"
+      },
+      "tags": [
+        "comunicacoes",
+        "ics",
+        "ics::appendices",
+        "alfa-a",
+        "cobertura-v2",
+        "pscpp-style-v3",
+        "pscpp-repair-v3",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "COM-1049",
+          "COM-1027",
+          "COM-1030",
+          "COM-1033"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.VF.10017",
+      "question": "Com base em “International Code of Signals”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Alfa – A”, considere a proposição: Bandeira de letra única que indica mergulhador na água e requer que outras embarcações se mantenham bem afastadas e a baixa velocidade.\n( ) No contexto de “Apêndice 2”, a associação “Bravo – B” é tecnicamente aplicável.\n( ) No contexto de “Bravo – B”, a associação “Bravo – B” é tecnicamente aplicável.\n( ) No contexto de “Uniform – U”, a associação “Apêndice 1” é tecnicamente aplicável.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "D",
+          "text": "( F ) ( F ) ( V ) ( V )"
+        },
+        {
+          "key": "E",
+          "text": "( V ) ( V ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A sequência correta corresponde à alternativa B, conforme os conceitos reunidos em Appendices 1, 2 and 4."
+    },
+    {
+      "id": "COM-1225",
+      "subject": "VI — Comunicações",
+      "module": "Código Internacional de Sinais — Seção Médica",
+      "topic": "Request for medical assistance",
+      "difficulty": "Difícil",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "ics",
+        "chapter_id": "ics::medical",
+        "topic_id": "VI-ics-medical-com-cis-ch3-med-request-for-medical-assistance",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "comunicacoes",
+        "work": {
+          "id": "ics",
+          "title": "IMO — International Code of Signals, 2005",
+          "author": "National Imagery and Mapping Agency / IMCO"
+        },
+        "chapter": {
+          "id": "ics::medical",
+          "number": "medical",
+          "title": "Seção Médica — Request for Medical Assistance, Chapter I",
+          "label": "Seção Médica — Request for Medical Assistance, Chapter I"
+        },
+        "section": "Seção Médica — Request for Medical Assistance, Chapter I",
+        "module": "Código Internacional de Sinais — Seção Médica",
+        "topic": {
+          "id": "VI-ics-medical-com-cis-ch3-med-request-for-medical-assistance",
+          "title": "Request for medical assistance"
+        }
+      },
+      "source": {
+        "author": "National Imagery and Mapping Agency / IMCO",
+        "title": "International Code of Signals for Visual, Sound, and Radio Communications",
+        "edition": "United States Edition 1969, revised 2003 (versão autorizada pelo usuário)",
+        "locator": "Chapter 3, Section 2 — Request for medical assistance, sinal MFW"
+      },
+      "tags": [
+        "International Code of Signals",
+        "Request for medical assistance",
+        "MFW",
+        "comunicacoes",
+        "ics",
+        "ics::medical",
+        "request-for-medical-assistance",
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "COM-0889",
+          "COM-0892",
+          "COM-0895",
+          "COM-0898",
+          "COM-0901"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.INC.10018",
+      "question": "Considerando o conteúdo de “International Code of Signals for Visual, Sound, and Radio Communications” (Chapter 3, Section 2 — Request for medical assistance, sinal MFW), assinale a alternativa INCORRETA:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sobre “Request for medical assistance”, considere a proposição: Patient has a foreign body in wound."
+        },
+        {
+          "key": "B",
+          "text": "No contexto de “Request for medical assistance”, a associação “MGL” é tecnicamente aplicável."
+        },
+        {
+          "key": "C",
+          "text": "No contexto de “Request for medical assistance”, a associação “Patient cannot swallow.” é tecnicamente aplicável."
+        },
+        {
+          "key": "D",
+          "text": "No contexto de “Request for medical assistance”, a associação “MIA” é tecnicamente aplicável."
+        },
+        {
+          "key": "E",
+          "text": "Sobre “Request for medical assistance”, considere a proposição: Patient has cramp pains and vomiting."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A alternativa C é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+    },
+    {
+      "id": "COM-1226",
+      "subject": "VI — Comunicações",
+      "module": "IMO SMCP — Procedimentos gerais",
+      "topic": "soletração padronizada do SMCP",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "smcp",
+        "chapter_id": "smcp::s1",
+        "topic_id": "VI-smcp-s1-com-smcp-gen-spell-soletracao-padronizada-do-smcp",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "comunicacoes",
+        "work": {
+          "id": "smcp",
+          "title": "IMO Standard Marine Communication Phrases — A.918(22)",
+          "author": "International Maritime Organization (IMO)"
+        },
+        "chapter": {
+          "id": "smcp::s1",
+          "number": "s1",
+          "title": "General",
+          "label": "General"
+        },
+        "section": "General",
+        "module": "IMO SMCP — Procedimentos gerais",
+        "topic": {
+          "id": "VI-smcp-s1-com-smcp-gen-spell-soletracao-padronizada-do-smcp",
+          "title": "soletração padronizada do SMCP"
+        }
+      },
+      "source": {
+        "author": "International Maritime Organization (IMO)",
+        "title": "IMO Standard Marine Communication Phrases",
+        "edition": "Resolution A.918(22), adopted 29 November 2001",
+        "locator": "General, item 2 — Spelling"
+      },
+      "tags": [
+        "SMCP",
+        "spelling",
+        "7",
+        "comunicacoes",
+        "smcp",
+        "smcp::s1",
+        "soletracao-padronizada-do-smcp",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "COM-0194",
+          "COM-0197",
+          "COM-0225",
+          "COM-0228"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.AST.10019",
+      "question": "De acordo com o contido em “IMO Standard Marine Communication Phrases”, analise as afirmativas abaixo e assinale a opção correta:\nI) No contexto de “soletração padronizada do SMCP”, a associação “T” é tecnicamente aplicável.\nII) No contexto de “soletração padronizada do SMCP”, a associação “Lima” é tecnicamente aplicável.\nIII) No tópico “princípios e procedimentos gerais do SMCP”, a resposta tecnicamente correta é “Warning”.\nIV) No tópico “princípios e procedimentos gerais do SMCP”, a resposta tecnicamente correta é “Answer”.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A combinação correta é a alternativa D. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: General, item 2 — Spelling."
+    },
+    {
+      "id": "COM-1227",
+      "subject": "VI — Comunicações",
+      "module": "Código Internacional de Sinais — Instruções de sinalização",
+      "topic": "sinais de uma letra com complementos",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "ics",
+        "chapter_id": "ics::chapters",
+        "topic_id": "VI-ics-chapters-com-cis-ch1-comp-sinais-de-uma-letra-com-complementos",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "comunicacoes",
+        "work": {
+          "id": "ics",
+          "title": "IMO — International Code of Signals, 2005",
+          "author": "National Imagery and Mapping Agency / IMCO"
+        },
+        "chapter": {
+          "id": "ics::chapters",
+          "number": "chapters",
+          "title": "Capítulos I a V, VII, VIII, X, XI e XII",
+          "label": "Capítulos I a V, VII, VIII, X, XI e XII"
+        },
+        "section": "Capítulos I a V, VII, VIII, X, XI e XII",
+        "module": "Código Internacional de Sinais — Instruções de sinalização",
+        "topic": {
+          "id": "VI-ics-chapters-com-cis-ch1-comp-sinais-de-uma-letra-com-complementos",
+          "title": "sinais de uma letra com complementos"
+        }
+      },
+      "source": {
+        "author": "National Imagery and Mapping Agency / IMCO",
+        "title": "International Code of Signals for Visual, Sound, and Radio Communications",
+        "edition": "United States Edition 1969, revised 2003 (versão autorizada pelo usuário)",
+        "locator": "Chapter 1, Section 10 — Single letter signals with complements"
+      },
+      "tags": [
+        "International Code of Signals",
+        "complements",
+        "S + um ou mais algarismos",
+        "comunicacoes",
+        "ics",
+        "ics::chapters",
+        "sinais-de-uma-letra-com-complementos",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "COM-0963",
+          "COM-0966",
+          "COM-0969",
+          "COM-0972"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.VF.10020",
+      "question": "Com base em “International Code of Signals for Visual, Sound, and Radio Communications”, julgue as proposições a seguir e assinale a sequência correta:\n( ) No contexto de “sinais de uma letra com complementos”, a associação “S + um ou mais algarismos” é tecnicamente aplicável.\n( ) No contexto de “sinais de uma letra com complementos”, a associação “Greenwich Mean Time” é tecnicamente aplicável.\n( ) Sobre “procedimentos de sinalização e radiotelefonia”, considere a proposição: integram o General Signal Code.\n( ) Sobre “procedimentos de sinalização e radiotelefonia”, considere a proposição: qualquer método de comunicação cuja transmissão possa ser vista.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "D",
+          "text": "( F ) ( F ) ( V ) ( V )"
+        },
+        {
+          "key": "E",
+          "text": "( V ) ( V ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A sequência correta corresponde à alternativa E, conforme os conceitos reunidos em Chapter 1, Section 10 — Single letter signals with complements."
     }
   ]
 }

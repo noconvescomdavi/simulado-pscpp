@@ -6,7 +6,7 @@
   "question_type": "multiple_choice_single_answer",
   "platform_note": "IDs estáveis; correct_answer utiliza uma das chaves A-E.",
   "validation": {
-    "total": 1157,
+    "total": 1177,
     "by_module": {
       "Direitos Humanos — DUDH": 40,
       "Fatores Humanos — Fadiga": 355,
@@ -2686,52 +2686,10 @@
       "id": "CGE-0033",
       "subject": "VII — Conhecimentos Gerais",
       "module": "Planejamento Portuário — Interface navio/porto",
-      "topic_code": "PSCPP.REF.INC.0003",
       "topic": "Administration",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question": "De acordo com o contido em “Ship/port interface: list of publications relevant to the ship/port interface” (Anexo, subject area 1, publicação 1.5.1), analise o seguinte problema técnico: Uma equipe procura “The Principles of Modern Port Management and Organization (1992)” no anexo da FAL.6/Circ.14/Rev.2. Qual área temática deve consultar? Assinale a alternativa correta.",
-      "options": [
-        {
-          "key": "A",
-          "text": "Inspection of Ships"
-        },
-        {
-          "key": "B",
-          "text": "Facilitation"
-        },
-        {
-          "key": "C",
-          "text": "Security"
-        },
-        {
-          "key": "D",
-          "text": "Administration"
-        },
-        {
-          "key": "E",
-          "text": "Services"
-        }
-      ],
-      "correct_answer": "D",
-      "explanation": "O anexo da FAL.6/Circ.14/Rev.2 relaciona essa publicação à subject area 1, “Administration”. A classificação orienta a busca de referências específicas para a interface navio/porto.",
-      "source": {
-        "author": "International Maritime Organization (IMO)",
-        "title": "Ship/port interface: list of publications relevant to the ship/port interface",
-        "edition": "FAL.6/Circ.14/Rev.2, 2 April 2025",
-        "locator": "Anexo, subject area 1, publicação 1.5.1"
-      },
-      "tags": [
-        "interface navio/porto",
-        "publicações IMO",
-        "Administration",
-        "conhecimentos-gerais",
-        "fal6",
-        "fal6::integral",
-        "administration",
-        "pscpp-style-v3",
-        "pscpp-repair-v3"
-      ],
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
@@ -2760,15 +2718,61 @@
           "title": "Administration"
         }
       },
-      "question_type": "Múltipla escolha contextualizada",
+      "source": {
+        "author": "International Maritime Organization (IMO)",
+        "title": "Ship/port interface: list of publications relevant to the ship/port interface",
+        "edition": "FAL.6/Circ.14/Rev.2, 2 April 2025",
+        "locator": "Anexo, subject area 1, publicação 1.3.3"
+      },
+      "tags": [
+        "interface navio/porto",
+        "publicações IMO",
+        "Administration",
+        "conhecimentos-gerais",
+        "fal6",
+        "fal6::integral",
+        "administration",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
       "provenance": {
-        "method": "pscpp-repair-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "CGE-0006"
+          "CGE-0001",
+          "CGE-0006",
+          "CGE-0010",
+          "CGE-0013"
         ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "CGE-0033",
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
-      }
+        "rewrite_reason": "residual-medium-quality-v4"
+      },
+      "topic_code": "PSCPP.V4.AST.00001",
+      "question": "De acordo com o contido em “Ship/port interface: list of publications relevant to the ship/port interface”, analise as afirmativas abaixo e assinale a opção correta:\nI) No contexto de “Administration”, a associação “Risk” é tecnicamente aplicável.\nII) No contexto de “Administration”, a associação “Security” é tecnicamente aplicável.\nIII) Sobre “Berths (including Anchorages and Floating Terminals)”, considere a proposição: Berths (including Anchorages and Floating Terminals).\nIV) Sobre “Berths (including Anchorages and Floating Terminals)”, considere a proposição: Berths (including Anchorages and Floating Terminals).",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A combinação correta é a alternativa D. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Anexo, subject area 1, publicação 1.3.3."
     },
     {
       "id": "CGE-0034",
@@ -3509,16 +3513,16 @@
       "id": "CGE-0043",
       "subject": "VII — Conhecimentos Gerais",
       "module": "Planejamento Portuário — Interface navio/porto",
-      "topic": "Cooperation between Ports and Information Exchange",
+      "topic": "Berths (including Anchorages and Floating Terminals)",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
         "bibliography_id": "fal6",
         "chapter_id": "fal6::integral",
-        "topic_id": "VII-fal6-integral-cge-pp-fal-06-cooperation-between-ports-and-information-exchange",
+        "topic_id": "VII-fal6-integral-cge-pp-fal-02-berths-including-anchorages-and-floating-terminals",
         "subtopic_id": null
       },
       "tracking": {
@@ -3537,62 +3541,65 @@
         "section": "Publicação indicada",
         "module": "Planejamento Portuário — Interface navio/porto",
         "topic": {
-          "id": "VII-fal6-integral-cge-pp-fal-06-cooperation-between-ports-and-information-exchange",
-          "title": "Cooperation between Ports and Information Exchange"
+          "id": "VII-fal6-integral-cge-pp-fal-02-berths-including-anchorages-and-floating-terminals",
+          "title": "Berths (including Anchorages and Floating Terminals)"
         }
       },
       "source": {
         "author": "International Maritime Organization (IMO)",
         "title": "Ship/port interface: list of publications relevant to the ship/port interface",
         "edition": "FAL.6/Circ.14/Rev.2, 2 April 2025",
-        "locator": "Anexo, subject area 6, publicação 6.4.2"
+        "locator": "Anexo, subject area 2, publicação 2.3.17"
       },
       "tags": [
         "interface navio/porto",
         "publicações IMO",
-        "Cooperation between Ports and Information Exchange",
+        "Berths (including Anchorages and Floating Terminals)",
         "conhecimentos-gerais",
         "fal6",
         "fal6::integral",
-        "cooperation-between-ports-and-information-exchange",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "berths-including-anchorages-and-floating-terminals",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "CGE-0042"
+          "CGE-0011",
+          "CGE-0014",
+          "CGE-0018",
+          "CGE-0021"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "CGE-0043",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0004",
-      "question": "De acordo com o contido em “Ship/port interface: list of publications relevant to the ship/port interface” (Anexo, subject area 6, publicação 6.4.2), considere o seguinte problema técnico: Uma equipe procura “Peril at Sea and Salvage: A Guide for Masters” no anexo da FAL.6/Circ.14/Rev.2. Qual área temática deve consultar? Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.VF.00002",
+      "question": "Com base em “Ship/port interface: list of publications relevant to the ship/port interface”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Berths (including Anchorages and Floating Terminals)”, considere a proposição: Berths (including Anchorages and Floating Terminals).\n( ) Sobre “Berths (including Anchorages and Floating Terminals)”, considere a proposição: Berths (including Anchorages and Floating Terminals).\n( ) Sobre “Cargo and Passenger Handling at Ship/Shore Interface”, considere a proposição: Cargo and Passenger Handling at Ship/Shore Interface.\n( ) Sobre “Cargo and Passenger Handling at Ship/Shore Interface”, considere a proposição: Cargo and Passenger Handling at Ship/Shore Interface.",
       "options": [
         {
           "key": "A",
-          "text": "Environmental Protection"
+          "text": "( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "B",
-          "text": "Navigation"
+          "text": "( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "C",
-          "text": "Risk"
+          "text": "( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "D",
-          "text": "Navigable Waterways Planning"
+          "text": "( F ) ( F ) ( V ) ( V )"
         },
         {
           "key": "E",
-          "text": "Cooperation between Ports and Information Exchange"
+          "text": "( V ) ( V ) ( V ) ( V )"
         }
       ],
       "correct_answer": "E",
-      "explanation": "O anexo da FAL.6/Circ.14/Rev.2 relaciona essa publicação à subject area 6, “Cooperation between Ports and Information Exchange”. A classificação orienta a busca de referências específicas para a interface navio/porto."
+      "explanation": "A sequência correta corresponde à alternativa E, conforme os conceitos reunidos em Anexo, subject area 2, publicação 2.3.17."
     },
     {
       "id": "CGE-0044",
@@ -6295,58 +6302,16 @@
       "id": "CGE-0077",
       "subject": "VII — Conhecimentos Gerais",
       "module": "Planejamento Portuário — Interface navio/porto",
-      "topic_code": "PSCPP.REF.INC.0007",
-      "topic": "Berths (including Anchorages and Floating Terminals)",
+      "topic": "Cargo and Passenger Handling at Ship/Shore Interface",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question": "De acordo com o contido em “Ship/port interface: list of publications relevant to the ship/port interface” (Anexo, subject area 2, publicação 2.3.21), analise o seguinte problema técnico: Uma equipe procura “Estimating the Environmental Loads on Anchoring Systems” no anexo da FAL.6/Circ.14/Rev.2. Qual área temática deve consultar? Assinale a alternativa correta.",
-      "options": [
-        {
-          "key": "A",
-          "text": "Contingency Planning"
-        },
-        {
-          "key": "B",
-          "text": "Berths (including Anchorages and Floating Terminals)"
-        },
-        {
-          "key": "C",
-          "text": "Inspection of Ships"
-        },
-        {
-          "key": "D",
-          "text": "Communications"
-        },
-        {
-          "key": "E",
-          "text": "Facilitation"
-        }
-      ],
-      "correct_answer": "B",
-      "explanation": "O anexo da FAL.6/Circ.14/Rev.2 relaciona essa publicação à subject area 2, “Berths (including Anchorages and Floating Terminals)”. A classificação orienta a busca de referências específicas para a interface navio/porto.",
-      "source": {
-        "author": "International Maritime Organization (IMO)",
-        "title": "Ship/port interface: list of publications relevant to the ship/port interface",
-        "edition": "FAL.6/Circ.14/Rev.2, 2 April 2025",
-        "locator": "Anexo, subject area 2, publicação 2.3.21"
-      },
-      "tags": [
-        "interface navio/porto",
-        "publicações IMO",
-        "Berths (including Anchorages and Floating Terminals)",
-        "conhecimentos-gerais",
-        "fal6",
-        "fal6::integral",
-        "berths-including-anchorages-and-floating-terminals",
-        "pscpp-style-v3",
-        "pscpp-repair-v3"
-      ],
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
         "bibliography_id": "fal6",
         "chapter_id": "fal6::integral",
-        "topic_id": "VII-fal6-integral-cge-pp-fal-02-berths-including-anchorages-and-floating-terminals",
+        "topic_id": "VII-fal6-integral-cge-pp-fal-03-cargo-and-passenger-handling-at-ship-shore-interface",
         "subtopic_id": null
       },
       "tracking": {
@@ -6365,19 +6330,65 @@
         "section": "Publicação indicada",
         "module": "Planejamento Portuário — Interface navio/porto",
         "topic": {
-          "id": "VII-fal6-integral-cge-pp-fal-02-berths-including-anchorages-and-floating-terminals",
-          "title": "Berths (including Anchorages and Floating Terminals)"
+          "id": "VII-fal6-integral-cge-pp-fal-03-cargo-and-passenger-handling-at-ship-shore-interface",
+          "title": "Cargo and Passenger Handling at Ship/Shore Interface"
         }
       },
-      "question_type": "Múltipla escolha contextualizada",
+      "source": {
+        "author": "International Maritime Organization (IMO)",
+        "title": "Ship/port interface: list of publications relevant to the ship/port interface",
+        "edition": "FAL.6/Circ.14/Rev.2, 2 April 2025",
+        "locator": "Anexo, subject area 3, publicação 3.3.32"
+      },
+      "tags": [
+        "interface navio/porto",
+        "publicações IMO",
+        "Cargo and Passenger Handling at Ship/Shore Interface",
+        "conhecimentos-gerais",
+        "fal6",
+        "fal6::integral",
+        "cargo-and-passenger-handling-at-ship-shore-interface",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
       "provenance": {
-        "method": "pscpp-repair-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "CGE-0014"
+          "CGE-0023",
+          "CGE-0029",
+          "CGE-0033",
+          "CGE-0037"
         ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "CGE-0077",
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
-      }
+        "repair_reason": "duplicate-options-after-v4-generation"
+      },
+      "topic_code": "PSCPP.V4.AST.20077",
+      "question": "De acordo com o contido em “Ship/port interface: list of publications relevant to the ship/port interface”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Cargo and Passenger Handling at Ship/Shore Interface”, considere a proposição: Cargo and Passenger Handling at Ship/Shore Interface.\nII) Sobre “Communications”, considere a proposição: Cargo and Passenger Handling at Ship/Shore Interface.\nIII) No contexto de “Administration”, a associação “Administration” é tecnicamente aplicável.\nIV) Sobre “Contingency Planning”, considere a proposição: Cargo and Passenger Handling at Ship/Shore Interface.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A combinação correta é a alternativa B. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Anexo, subject area 3, publicação 3.3.32."
     },
     {
       "id": "CGE-0078",
@@ -6658,16 +6669,16 @@
       "id": "CGE-0081",
       "subject": "VII — Conhecimentos Gerais",
       "module": "Planejamento Portuário — Interface navio/porto",
-      "topic": "Navigable Waterways Planning",
+      "topic": "Communications",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
         "bibliography_id": "fal6",
         "chapter_id": "fal6::integral",
-        "topic_id": "VII-fal6-integral-cge-pp-fal-10-navigable-waterways-planning",
+        "topic_id": "VII-fal6-integral-cge-pp-fal-04-communications",
         "subtopic_id": null
       },
       "tracking": {
@@ -6686,77 +6697,80 @@
         "section": "Publicação indicada",
         "module": "Planejamento Portuário — Interface navio/porto",
         "topic": {
-          "id": "VII-fal6-integral-cge-pp-fal-10-navigable-waterways-planning",
-          "title": "Navigable Waterways Planning"
+          "id": "VII-fal6-integral-cge-pp-fal-04-communications",
+          "title": "Communications"
         }
       },
       "source": {
         "author": "International Maritime Organization (IMO)",
         "title": "Ship/port interface: list of publications relevant to the ship/port interface",
         "edition": "FAL.6/Circ.14/Rev.2, 2 April 2025",
-        "locator": "Anexo, subject area 10, publicação 10.1.5"
+        "locator": "Anexo, subject area 4, publicação 4.4.2"
       },
       "tags": [
         "interface navio/porto",
         "publicações IMO",
-        "Navigable Waterways Planning",
+        "Communications",
         "conhecimentos-gerais",
         "fal6",
         "fal6::integral",
-        "navigable-waterways-planning",
-        "pscpp-style-v3",
-        "formato-pscpp-direta",
-        "pscpp-repair-v3"
+        "communications",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
       ],
       "provenance": {
-        "method": "pscpp-repair-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "CGE-0022"
+          "CGE-0029",
+          "CGE-0033",
+          "CGE-0037",
+          "CGE-0041"
         ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "CGE-0081",
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.INC.0011",
-      "question": "De acordo com o contido em “Ship/port interface: list of publications relevant to the ship/port interface” (Anexo, subject area 10, publicação 10.1.5), analise o seguinte problema técnico: De acordo com o contido em “Ship/port interface: list of publications relevant to the ship/port interface” (Anexo, subject area 10, publicação 10.1.5), considere a situação/conceito a seguir: Uma equipe procura “The Involvement of Maritime Authorities in Marine Spatial Planning (June 2017) (R1010)” no anexo da FAL.6/Circ.14/Rev.2. Qual área temática deve consultar? Assinale a opção correta. Assinale a alternativa correta.",
+      "topic_code": "PSCPP.V4.AST.00004",
+      "question": "De acordo com o contido em “Ship/port interface: list of publications relevant to the ship/port interface”, analise as afirmativas abaixo e assinale a opção correta:\nI) No contexto de “Communications”, a associação “Communications” é tecnicamente aplicável.\nII) No contexto de “Administration”, a associação “Administration” é tecnicamente aplicável.\nIII) Sobre “Contingency Planning”, considere a proposição: Berths (including Anchorages and Floating Terminals).\nIV) No contexto de “Cooperation between Ports and Information Exchange”, a associação “Risk” é tecnicamente aplicável.",
       "options": [
         {
           "key": "A",
-          "text": "Navigable Waterways Planning"
+          "text": "Apenas as afirmativas I e II são verdadeiras."
         },
         {
           "key": "B",
-          "text": "Services"
+          "text": "Apenas as afirmativas I e III são verdadeiras."
         },
         {
           "key": "C",
-          "text": "Environmental Protection"
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "Navigation"
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
         },
         {
           "key": "E",
-          "text": "Risk"
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
         }
       ],
       "correct_answer": "A",
-      "explanation": "O anexo da FAL.6/Circ.14/Rev.2 relaciona essa publicação à subject area 10, “Navigable Waterways Planning”. A classificação orienta a busca de referências específicas para a interface navio/porto."
+      "explanation": "A combinação correta é a alternativa A. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Anexo, subject area 4, publicação 4.4.2."
     },
     {
       "id": "CGE-0082",
       "subject": "VII — Conhecimentos Gerais",
       "module": "Planejamento Portuário — Interface navio/porto",
-      "topic": "Navigable Waterways Planning",
+      "topic": "Contingency Planning",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
         "bibliography_id": "fal6",
         "chapter_id": "fal6::integral",
-        "topic_id": "VII-fal6-integral-cge-pp-fal-10-navigable-waterways-planning",
+        "topic_id": "VII-fal6-integral-cge-pp-fal-05-contingency-planning",
         "subtopic_id": null
       },
       "tracking": {
@@ -6775,63 +6789,65 @@
         "section": "Publicação indicada",
         "module": "Planejamento Portuário — Interface navio/porto",
         "topic": {
-          "id": "VII-fal6-integral-cge-pp-fal-10-navigable-waterways-planning",
-          "title": "Navigable Waterways Planning"
+          "id": "VII-fal6-integral-cge-pp-fal-05-contingency-planning",
+          "title": "Contingency Planning"
         }
       },
       "source": {
         "author": "International Maritime Organization (IMO)",
         "title": "Ship/port interface: list of publications relevant to the ship/port interface",
         "edition": "FAL.6/Circ.14/Rev.2, 2 April 2025",
-        "locator": "Anexo, subject area 10, publicação 10.1.5"
+        "locator": "Anexo, subject area 5, publicação 5.4.1"
       },
       "tags": [
         "interface navio/porto",
         "publicações IMO",
-        "Navigable Waterways Planning",
+        "Contingency Planning",
         "conhecimentos-gerais",
         "fal6",
         "fal6::integral",
-        "navigable-waterways-planning",
-        "pscpp-style-v3",
-        "formato-pscpp-direta",
-        "pscpp-refinement-v3"
+        "contingency-planning",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "CGE-0022"
+          "CGE-0038",
+          "CGE-0042",
+          "CGE-0047",
+          "CGE-0051"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "CGE-0082",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0012",
-      "question": "De acordo com o contido em “Ship/port interface: list of publications relevant to the ship/port interface” (Anexo, subject area 10, publicação 10.1.5), considere o seguinte problema técnico: De acordo com o contido em “Ship/port interface: list of publications relevant to the ship/port interface” (Anexo, subject area 10, publicação 10.1.5), considere a situação/conceito a seguir: Uma equipe procura “The Involvement of Maritime Authorities in Marine Spatial Planning (June 2017) (R1010)” no anexo da FAL.6/Circ.14/Rev.2. Qual área temática deve consultar? Assinale a opção correta. Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.VF.00005",
+      "question": "Com base em “Ship/port interface: list of publications relevant to the ship/port interface”, julgue as proposições a seguir e assinale a sequência correta:\n( ) No contexto de “Contingency Planning”, a associação “Contingency Planning” é tecnicamente aplicável.\n( ) No contexto de “Cooperation between Ports and Information Exchange”, a associação “Navigation” é tecnicamente aplicável.\n( ) Sobre “Cooperation between Ports and Information Exchange”, considere a proposição: Cooperation between Ports and Information Exchange.\n( ) Sobre “Security”, considere a proposição: Navigable Waterways Planning.",
       "options": [
         {
           "key": "A",
-          "text": "Environmental Protection"
+          "text": "( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "B",
-          "text": "Navigable Waterways Planning"
+          "text": "( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "C",
-          "text": "Services"
+          "text": "( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "D",
-          "text": "Navigation"
+          "text": "( F ) ( F ) ( V ) ( V )"
         },
         {
           "key": "E",
-          "text": "Risk"
+          "text": "( V ) ( V ) ( V ) ( V )"
         }
       ],
       "correct_answer": "B",
-      "explanation": "O anexo da FAL.6/Circ.14/Rev.2 relaciona essa publicação à subject area 10, “Navigable Waterways Planning”. A classificação orienta a busca de referências específicas para a interface navio/porto."
+      "explanation": "A sequência correta corresponde à alternativa B, conforme os conceitos reunidos em Anexo, subject area 5, publicação 5.4.1."
     },
     {
       "id": "CGE-0083",
@@ -7744,56 +7760,16 @@
       "id": "CGE-0094",
       "subject": "VII — Conhecimentos Gerais",
       "module": "Planejamento Portuário — Interface navio/porto",
-      "topic_code": "CGE.PP.FAL.12",
-      "topic": "Environmental Protection",
-      "difficulty": "Fácil",
-      "style": "Normativa",
-      "question": "Uma equipe procura “Climate Change Impacts and Adaptation: A Challenge for Global Ports – Information Note (2011)” no anexo da FAL.6/Circ.14/Rev.2. Qual área temática deve consultar?",
-      "options": [
-        {
-          "key": "A",
-          "text": "Administration"
-        },
-        {
-          "key": "B",
-          "text": "Berths (including Anchorages and Floating Terminals)"
-        },
-        {
-          "key": "C",
-          "text": "Environmental Protection"
-        },
-        {
-          "key": "D",
-          "text": "Inspection of Ships"
-        },
-        {
-          "key": "E",
-          "text": "Facilitation"
-        }
-      ],
-      "correct_answer": "C",
-      "explanation": "O anexo da FAL.6/Circ.14/Rev.2 relaciona essa publicação à subject area 12, “Environmental Protection”. A classificação orienta a busca de referências específicas para a interface navio/porto.",
-      "source": {
-        "author": "International Maritime Organization (IMO)",
-        "title": "Ship/port interface: list of publications relevant to the ship/port interface",
-        "edition": "FAL.6/Circ.14/Rev.2, 2 April 2025",
-        "locator": "Anexo, subject area 12, publicação 12.3.4"
-      },
-      "tags": [
-        "interface navio/porto",
-        "publicações IMO",
-        "Environmental Protection",
-        "conhecimentos-gerais",
-        "fal6",
-        "fal6::integral",
-        "environmental-protection"
-      ],
+      "topic": "Cooperation between Ports and Information Exchange",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
         "bibliography_id": "fal6",
         "chapter_id": "fal6::integral",
-        "topic_id": "VII-fal6-integral-cge-pp-fal-12-environmental-protection",
+        "topic_id": "VII-fal6-integral-cge-pp-fal-06-cooperation-between-ports-and-information-exchange",
         "subtopic_id": null
       },
       "tracking": {
@@ -7812,10 +7788,65 @@
         "section": "Publicação indicada",
         "module": "Planejamento Portuário — Interface navio/porto",
         "topic": {
-          "id": "VII-fal6-integral-cge-pp-fal-12-environmental-protection",
-          "title": "Environmental Protection"
+          "id": "VII-fal6-integral-cge-pp-fal-06-cooperation-between-ports-and-information-exchange",
+          "title": "Cooperation between Ports and Information Exchange"
         }
-      }
+      },
+      "source": {
+        "author": "International Maritime Organization (IMO)",
+        "title": "Ship/port interface: list of publications relevant to the ship/port interface",
+        "edition": "FAL.6/Circ.14/Rev.2, 2 April 2025",
+        "locator": "Anexo, subject area 6, publicação 6.2.1"
+      },
+      "tags": [
+        "interface navio/porto",
+        "publicações IMO",
+        "Cooperation between Ports and Information Exchange",
+        "conhecimentos-gerais",
+        "fal6",
+        "fal6::integral",
+        "cooperation-between-ports-and-information-exchange",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-deep-refine-v4",
+        "derived_from_question_ids": [
+          "CGE-0047",
+          "CGE-0051",
+          "CGE-0054",
+          "CGE-0057"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "CGE-0094",
+        "repair_reason": "duplicate-options-after-v4-generation"
+      },
+      "topic_code": "PSCPP.V4.AST.20094",
+      "question": "De acordo com o contido em “Ship/port interface: list of publications relevant to the ship/port interface”, analise as afirmativas abaixo e assinale a opção correta:\nI) No contexto de “Cooperation between Ports and Information Exchange”, a associação “Training and Procedures” é tecnicamente aplicável.\nII) No contexto de “Security”, a associação “Security” é tecnicamente aplicável.\nIII) No contexto de “Dangerous Cargoes”, a associação “Services” é tecnicamente aplicável.\nIV) No contexto de “Facilitation”, a associação “Facilitation” é tecnicamente aplicável.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A combinação correta é a alternativa C. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Anexo, subject area 6, publicação 6.2.1."
     },
     {
       "id": "CGE-0095",
@@ -7975,58 +8006,16 @@
       "id": "CGE-0097",
       "subject": "VII — Conhecimentos Gerais",
       "module": "Planejamento Portuário — Interface navio/porto",
-      "topic_code": "PSCPP.REF.INC.0015",
-      "topic": "Contingency Planning",
+      "topic": "Navigation",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question": "De acordo com o contido em “Ship/port interface: list of publications relevant to the ship/port interface” (Anexo, subject area 5, publicação 5.3.2), analise o seguinte problema técnico: A publicação “Guide to Contingency Planning for Marine Terminals Handling Liquefied Gases in Bulk (2001)”, editada por ICS/OCIMF/SIGTTO, integra qual categoria do inventário IMO? Assinale a alternativa correta.",
-      "options": [
-        {
-          "key": "A",
-          "text": "Environmental Protection"
-        },
-        {
-          "key": "B",
-          "text": "Navigable Waterways Planning"
-        },
-        {
-          "key": "C",
-          "text": "Contingency Planning"
-        },
-        {
-          "key": "D",
-          "text": "Navigation"
-        },
-        {
-          "key": "E",
-          "text": "Risk"
-        }
-      ],
-      "correct_answer": "C",
-      "explanation": "O anexo da FAL.6/Circ.14/Rev.2 relaciona essa publicação à subject area 5, “Contingency Planning”. A classificação orienta a busca de referências específicas para a interface navio/porto.",
-      "source": {
-        "author": "International Maritime Organization (IMO)",
-        "title": "Ship/port interface: list of publications relevant to the ship/port interface",
-        "edition": "FAL.6/Circ.14/Rev.2, 2 April 2025",
-        "locator": "Anexo, subject area 5, publicação 5.3.2"
-      },
-      "tags": [
-        "interface navio/porto",
-        "publicações IMO",
-        "Contingency Planning",
-        "conhecimentos-gerais",
-        "fal6",
-        "fal6::integral",
-        "contingency-planning",
-        "pscpp-style-v3",
-        "pscpp-repair-v3"
-      ],
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
         "bibliography_id": "fal6",
         "chapter_id": "fal6::integral",
-        "topic_id": "VII-fal6-integral-cge-pp-fal-05-contingency-planning",
+        "topic_id": "VII-fal6-integral-cge-pp-fal-11-navigation",
         "subtopic_id": null
       },
       "tracking": {
@@ -8045,19 +8034,67 @@
         "section": "Publicação indicada",
         "module": "Planejamento Portuário — Interface navio/porto",
         "topic": {
-          "id": "VII-fal6-integral-cge-pp-fal-05-contingency-planning",
-          "title": "Contingency Planning"
+          "id": "VII-fal6-integral-cge-pp-fal-11-navigation",
+          "title": "Navigation"
         }
       },
-      "question_type": "Múltipla escolha contextualizada",
+      "source": {
+        "author": "International Maritime Organization (IMO)",
+        "title": "Ship/port interface: list of publications relevant to the ship/port interface",
+        "edition": "FAL.6/Circ.14/Rev.2, 2 April 2025",
+        "locator": "Anexo, subject area 11, publicação 11.9.1"
+      },
+      "tags": [
+        "interface navio/porto",
+        "publicações IMO",
+        "Navigation",
+        "conhecimentos-gerais",
+        "fal6",
+        "fal6::integral",
+        "navigation",
+        "pscpp-style-v3",
+        "formato-pscpp-direta",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
       "provenance": {
-        "method": "pscpp-repair-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "CGE-0035"
+          "CGE-0056",
+          "CGE-0062",
+          "CGE-0065",
+          "CGE-0068"
         ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "CGE-0097",
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
-      }
+        "rewrite_reason": "residual-medium-quality-v4"
+      },
+      "topic_code": "PSCPP.V4.AST.00007",
+      "question": "De acordo com o contido em “Ship/port interface: list of publications relevant to the ship/port interface”, analise as afirmativas abaixo e assinale a opção correta:\nI) No contexto de “Navigation”, a associação “Inspection of Ships” é tecnicamente aplicável.\nII) No contexto de “Facilitation”, a associação “Facilitation” é tecnicamente aplicável.\nIII) No contexto de “Inspection of Ships”, a associação “Security” é tecnicamente aplicável.\nIV) No contexto de “Training and Procedures”, a associação “Training and Procedures” é tecnicamente aplicável.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A combinação correta é a alternativa C. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Anexo, subject area 11, publicação 11.9.1."
     },
     {
       "id": "CGE-0098",
@@ -8632,16 +8669,16 @@
       "id": "CGE-0105",
       "subject": "VII — Conhecimentos Gerais",
       "module": "Planejamento Portuário — Interface navio/porto",
-      "topic": "Navigable Waterways Planning",
+      "topic": "Inspection of Ships",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
         "bibliography_id": "fal6",
         "chapter_id": "fal6::integral",
-        "topic_id": "VII-fal6-integral-cge-pp-fal-10-navigable-waterways-planning",
+        "topic_id": "VII-fal6-integral-cge-pp-fal-09-inspection-of-ships",
         "subtopic_id": null
       },
       "tracking": {
@@ -8660,62 +8697,65 @@
         "section": "Publicação indicada",
         "module": "Planejamento Portuário — Interface navio/porto",
         "topic": {
-          "id": "VII-fal6-integral-cge-pp-fal-10-navigable-waterways-planning",
-          "title": "Navigable Waterways Planning"
+          "id": "VII-fal6-integral-cge-pp-fal-09-inspection-of-ships",
+          "title": "Inspection of Ships"
         }
       },
       "source": {
         "author": "International Maritime Organization (IMO)",
         "title": "Ship/port interface: list of publications relevant to the ship/port interface",
         "edition": "FAL.6/Circ.14/Rev.2, 2 April 2025",
-        "locator": "Anexo, subject area 10, publicação 10.3.1"
+        "locator": "Anexo, subject area 9, publicação 9.4.4"
       },
       "tags": [
         "interface navio/porto",
         "publicações IMO",
-        "Navigable Waterways Planning",
+        "Inspection of Ships",
         "conhecimentos-gerais",
         "fal6",
         "fal6::integral",
-        "navigable-waterways-planning",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "inspection-of-ships",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "CGE-0076"
+          "CGE-0066",
+          "CGE-0070",
+          "CGE-0074",
+          "CGE-0077"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "CGE-0105",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0016",
-      "question": "De acordo com o contido em “Ship/port interface: list of publications relevant to the ship/port interface” (Anexo, subject area 10, publicação 10.3.1), considere o seguinte problema técnico: Qual classificação temática a FAL.6/Circ.14/Rev.2 atribui à obra “Guidance for LNG Carriers Transiting the Panama Canal (June 2014)”? Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.VF.00008",
+      "question": "Com base em “Ship/port interface: list of publications relevant to the ship/port interface”, julgue as proposições a seguir e assinale a sequência correta:\n( ) No contexto de “Inspection of Ships”, a associação “Inspection of Ships” é tecnicamente aplicável.\n( ) No contexto de “Inspection of Ships”, a associação “Inspection of Ships” é tecnicamente aplicável.\n( ) Sobre “Navigable Waterways Planning”, considere a proposição: Navigable Waterways Planning.\n( ) Sobre “Berths (including Anchorages and Floating Terminals)”, considere a proposição: Berths (including Anchorages and Floating Terminals).",
       "options": [
         {
           "key": "A",
-          "text": "Dangerous Cargoes"
+          "text": "( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "B",
-          "text": "Contingency Planning"
+          "text": "( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "C",
-          "text": "Communications"
+          "text": "( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "D",
-          "text": "Cooperation between Ports and Information Exchange"
+          "text": "( F ) ( F ) ( V ) ( V )"
         },
         {
           "key": "E",
-          "text": "Navigable Waterways Planning"
+          "text": "( V ) ( V ) ( V ) ( V )"
         }
       ],
       "correct_answer": "E",
-      "explanation": "O anexo da FAL.6/Circ.14/Rev.2 relaciona essa publicação à subject area 10, “Navigable Waterways Planning”. A classificação orienta a busca de referências específicas para a interface navio/porto."
+      "explanation": "A sequência correta corresponde à alternativa E, conforme os conceitos reunidos em Anexo, subject area 9, publicação 9.4.4."
     },
     {
       "id": "CGE-0106",
@@ -9983,16 +10023,16 @@
       "id": "CGE-0121",
       "subject": "VII — Conhecimentos Gerais",
       "module": "Planejamento Portuário — Interface navio/porto",
-      "topic": "Administration",
+      "topic": "Dangerous Cargoes",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
         "bibliography_id": "fal6",
         "chapter_id": "fal6::integral",
-        "topic_id": "VII-fal6-integral-cge-pp-fal-01-administration",
+        "topic_id": "VII-fal6-integral-cge-pp-fal-07-dangerous-cargoes",
         "subtopic_id": null
       },
       "tracking": {
@@ -10011,62 +10051,65 @@
         "section": "Publicação indicada",
         "module": "Planejamento Portuário — Interface navio/porto",
         "topic": {
-          "id": "VII-fal6-integral-cge-pp-fal-01-administration",
-          "title": "Administration"
+          "id": "VII-fal6-integral-cge-pp-fal-07-dangerous-cargoes",
+          "title": "Dangerous Cargoes"
         }
       },
       "source": {
         "author": "International Maritime Organization (IMO)",
         "title": "Ship/port interface: list of publications relevant to the ship/port interface",
         "edition": "FAL.6/Circ.14/Rev.2, 2 April 2025",
-        "locator": "Anexo, subject area 1, publicação 1.1.5"
+        "locator": "Anexo, subject area 7, publicação 7.7.1"
       },
       "tags": [
         "interface navio/porto",
         "publicações IMO",
-        "Administration",
+        "Dangerous Cargoes",
         "conhecimentos-gerais",
         "fal6",
         "fal6::integral",
-        "administration",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "dangerous-cargoes",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "CGE-0002"
+          "CGE-0052",
+          "CGE-0055",
+          "CGE-0059",
+          "CGE-0064"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "CGE-0121",
-        "refinement_reason": "residual-medium-quality-flag"
+        "repair_reason": "duplicate-options-after-v4-generation"
       },
-      "topic_code": "PSCPP.REF.DIR.0020",
-      "question": "De acordo com o contido em “Ship/port interface: list of publications relevant to the ship/port interface” (Anexo, subject area 1, publicação 1.1.5), considere o seguinte problema técnico: Uma equipe procura “Resolution MSC.349(42), Appendix 3 – Elements to be Included in an Agreement for the Authorization of Recognized Organizations Acting on Behalf of the Administration,” no anexo da FAL.6/Circ.14/Rev.2. Qual área temática deve consultar? Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.AST.20121",
+      "question": "De acordo com o contido em “Ship/port interface: list of publications relevant to the ship/port interface”, analise as afirmativas abaixo e assinale a opção correta:\nI) No contexto de “Dangerous Cargoes”, a associação “Dangerous Cargoes” é tecnicamente aplicável.\nII) No contexto de “Dangerous Cargoes”, a associação “Dangerous Cargoes” é tecnicamente aplicável.\nIII) No contexto de “Facilitation”, a associação “Security” é tecnicamente aplicável.\nIV) Sobre “Facilitation”, considere a proposição: Navigable Waterways Planning.",
       "options": [
         {
           "key": "A",
-          "text": "Administration"
+          "text": "Apenas as afirmativas I e II são verdadeiras."
         },
         {
           "key": "B",
-          "text": "Risk"
+          "text": "Apenas as afirmativas I e III são verdadeiras."
         },
         {
           "key": "C",
-          "text": "Navigable Waterways Planning"
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "Navigation"
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
         },
         {
           "key": "E",
-          "text": "Environmental Protection"
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
         }
       ],
       "correct_answer": "A",
-      "explanation": "O anexo da FAL.6/Circ.14/Rev.2 relaciona essa publicação à subject area 1, “Administration”. A classificação orienta a busca de referências específicas para a interface navio/porto."
+      "explanation": "A combinação correta é a alternativa A. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Anexo, subject area 7, publicação 7.7.1."
     },
     {
       "id": "CGE-0122",
@@ -78355,16 +78398,16 @@
       "id": "CGE-1007",
       "subject": "VII — Conhecimentos Gerais",
       "module": "Planejamento Portuário — Vias de acesso",
-      "topic": "Distância de parada com auxílio de rebocadores (Pianc 121, 2014, p. 97)",
+      "topic": "Mudança de massa específica da água",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
         "bibliography_id": "conapra-port",
         "chapter_id": "conapra-port::ch2",
-        "topic_id": "VII-conapra-port-ch2-cge-pp-via-2-3-2-3-distancia-de-parada-com-auxilio-de-rebocadores-pianc-121-2014-p-97",
+        "topic_id": "VII-conapra-port-ch2-cge-pp-via-2-4-2-1-2-2-mudanca-de-massa-especifica-da-agua",
         "subtopic_id": null
       },
       "tracking": {
@@ -78383,62 +78426,65 @@
         "section": "Capítulo 2 – Vias de Acesso a Instalações Portuárias",
         "module": "Planejamento Portuário — Vias de acesso",
         "topic": {
-          "id": "VII-conapra-port-ch2-cge-pp-via-2-3-2-3-distancia-de-parada-com-auxilio-de-rebocadores-pianc-121-2014-p-97",
-          "title": "Distância de parada com auxílio de rebocadores (Pianc 121, 2014, p. 97)"
+          "id": "VII-conapra-port-ch2-cge-pp-via-2-4-2-1-2-2-mudanca-de-massa-especifica-da-agua",
+          "title": "Mudança de massa específica da água"
         }
       },
       "source": {
         "author": "Conselho Nacional de Praticagem (CONAPRA)",
         "title": "Planejamento Portuário: Recomendações para Acessos Náuticos",
         "edition": "1ª edição, 2022",
-        "locator": "Capítulo 2, seção 2.3.2.3 — Distância de parada com auxílio de rebocadores (Pianc 121, 2014, p. 97)"
+        "locator": "Capítulo 2, seção 2.4.2.1.2.2 — Mudança de massa específica da água"
       },
       "tags": [
         "Vias de acesso",
-        "Distância de parada com auxílio de rebocadores (Pianc 121, 2014, p. 97)",
-        "CGE.PP.VIA.2_3_2_3",
+        "Mudança de massa específica da água",
+        "CGE.PP.VIA.2_4_2_1_2_2",
         "conhecimentos-gerais",
         "conapra-port",
         "conapra-port::ch2",
-        "distancia-de-parada-com-auxilio-de-rebocadores-pianc-121-2014-p-97",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "mudanca-de-massa-especifica-da-agua",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "CGE-0159"
+          "CGE-0192",
+          "CGE-0195",
+          "CGE-0198",
+          "CGE-0201"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "CGE-1007",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0024",
-      "question": "De acordo com o contido em “Planejamento Portuário: Recomendações para Acessos Náuticos” (Capítulo 2, seção 2.3.2.3 — Distância de parada com auxílio de rebocadores (Pianc 121, 2014, p. 97)), considere o seguinte problema técnico: Em relação a “Distância de parada com auxílio de rebocadores (Pianc 121, 2014, p. 97)”, qual alternativa contém orientação, conceito ou requisito compatível com a publicação indicada? Considere especificamente a relação entre “distância / real”. Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.AST.00010",
+      "question": "De acordo com o contido em “Planejamento Portuário: Recomendações para Acessos Náuticos”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Mudança de massa específica da água”, considere a proposição: Além disso, podem existir níveis de profundidade com massas específicas diferentes para navios de grande calado, em regiões portuárias estuarinas.\nII) Sobre “Inclinação dinâmica transversal”, considere a proposição: A inclinação dinâmica transversal do navio de projeto, dada pelo vento ou pela interação casco/leme, pode ser obtida em modelos físicos e numéricos.\nIII) Sobre “Profundidade da água em áreas lodosas”, considere a proposição: Para casos de ultrapassagem, os valores apresentados devem ser aumentados e devem ser determinados por meio de Projeto Detalhado.\nIV) Sobre “Fator de tolerância para incertezas na dragagem”, considere a proposição: Os valores de Hkt e Tmax de um navio de projeto são basicamente invariáveis.",
       "options": [
         {
           "key": "A",
-          "text": "A distância real de parada (ver Figura 2.9.) é relativamente curta."
+          "text": "Apenas as afirmativas I e II são verdadeiras."
         },
         {
           "key": "B",
-          "text": "Os mesmos critérios aplicados ao Projeto Conceitual se aplicam no Projeto Detalhado."
+          "text": "Apenas as afirmativas I e III são verdadeiras."
         },
         {
           "key": "C",
-          "text": "Cargas com alto grau de periculosidade incluem LNG, LPG e algumas classes de produtos químicos."
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "J é o fator de calado, utilizando coeficientes de cobertura de 95%."
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
         },
         {
           "key": "E",
-          "text": "A curva de um canal de acesso é caracterizada por seu raio, R, e ângulo de curvatura, α."
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
         }
       ],
       "correct_answer": "A",
-      "explanation": "O capítulo associa esse critério ao dimensionamento, à operação segura ou à análise de risco dos acessos náuticos; as demais alternativas pertencem a outros tópicos do planejamento portuário. No recorte indicado, o conteúdo aplicável é: A distância real de parada (ver Figura 2.9.) é relativamente curta."
+      "explanation": "A combinação correta é a alternativa A. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Capítulo 2, seção 2.4.2.1.2.2 — Mudança de massa específica da água."
     },
     {
       "id": "CGE-1008",
@@ -79923,8 +79969,8 @@
       "module": "Planejamento Portuário — FDAQ",
       "topic": "Margem de Manobrabilidade mínima",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
@@ -79967,44 +80013,47 @@
         "normam224",
         "normam224::integral",
         "margem-de-manobrabilidade-minima",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "CGE-0421"
+          "CGE-0420",
+          "CGE-0423",
+          "CGE-0426",
+          "CGE-0429"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "CGE-1024",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0028",
-      "question": "De acordo com o contido em “NORMAM-224/DPC — Norma da Autoridade Marítima para Folga Dinâmica Abaixo da Quilha” (seção 1.2, alínea e — Margem de Manobrabilidade), considere o seguinte problema técnico: Para calado de 10,0 m, qual parcela controla a MM mínima recomendada: 5% do calado ou o piso fixo? Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.VF.00011",
+      "question": "Com base em “NORMAM-224/DPC — Norma da Autoridade Marítima para Folga Dinâmica Abaixo da Quilha”, julgue as proposições a seguir e assinale a sequência correta:\n( ) No contexto de “Margem de Manobrabilidade mínima”, a associação “0,70 m.” é tecnicamente aplicável.\n( ) Sobre “Margem de Manobrabilidade mínima”, considere a proposição: Manter 0,45 m, pois corresponde a 5%.\n( ) No tópico “Margem de Manobrabilidade mínima”, a resposta tecnicamente correta é “16,0 m.”.\n( ) Sobre “Margem de Manobrabilidade mínima”, considere a proposição: 0,625 m, pela média dos valores.",
       "options": [
         {
           "key": "A",
-          "text": "A média entre 0,50 m e 0,60 m."
+          "text": "( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "B",
-          "text": "O piso fixo de 0,60 m."
+          "text": "( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "C",
-          "text": "A soma de 0,60 m com 5% do calado."
+          "text": "( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "D",
-          "text": "Os 5% do calado, equivalentes a 0,50 m."
+          "text": "( F ) ( F ) ( V ) ( V )"
         },
         {
           "key": "E",
-          "text": "Nenhuma parcela, pois não há mínimo."
+          "text": "( V ) ( V ) ( V ) ( V )"
         }
       ],
       "correct_answer": "B",
-      "explanation": "Cinco por cento de 10,0 m equivalem a 0,50 m. A norma manda usar o maior valor, logo controla o piso de 0,60 m."
+      "explanation": "A sequência correta corresponde à alternativa B, conforme os conceitos reunidos em seção 1.2, alínea e — Margem de Manobrabilidade."
     },
     {
       "id": "CGE-1025",
@@ -82604,16 +82653,16 @@
       "id": "CGE-1053",
       "subject": "VII — Conhecimentos Gerais",
       "module": "Planejamento Portuário — Vias de acesso",
-      "topic": "Ângulo de inclinação do píer em relação à direção das forças ambientais",
+      "topic": "Bacia de evolução",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
         "bibliography_id": "conapra-port",
         "chapter_id": "conapra-port::ch2",
-        "topic_id": "VII-conapra-port-ch2-cge-pp-via-2-3-6-6-angulo-de-inclinacao-do-pier-em-relacao-a-direcao-das-forcas-ambientais",
+        "topic_id": "VII-conapra-port-ch2-cge-pp-via-2-4-3-1-bacia-de-evolucao",
         "subtopic_id": null
       },
       "tracking": {
@@ -82632,62 +82681,66 @@
         "section": "Capítulo 2 – Vias de Acesso a Instalações Portuárias",
         "module": "Planejamento Portuário — Vias de acesso",
         "topic": {
-          "id": "VII-conapra-port-ch2-cge-pp-via-2-3-6-6-angulo-de-inclinacao-do-pier-em-relacao-a-direcao-das-forcas-ambientais",
-          "title": "Ângulo de inclinação do píer em relação à direção das forças ambientais"
+          "id": "VII-conapra-port-ch2-cge-pp-via-2-4-3-1-bacia-de-evolucao",
+          "title": "Bacia de evolução"
         }
       },
       "source": {
         "author": "Conselho Nacional de Praticagem (CONAPRA)",
         "title": "Planejamento Portuário: Recomendações para Acessos Náuticos",
         "edition": "1ª edição, 2022",
-        "locator": "Capítulo 2, seção 2.3.6.6 — Ângulo de inclinação do píer em relação à direção das forças ambientais"
+        "locator": "Capítulo 2, seção 2.4.3.1 — Bacia de evolução"
       },
       "tags": [
         "Vias de acesso",
-        "Ângulo de inclinação do píer em relação à direção das forças ambientais",
-        "CGE.PP.VIA.2_3_6_6",
+        "Bacia de evolução",
+        "CGE.PP.VIA.2_4_3_1",
         "conhecimentos-gerais",
         "conapra-port",
         "conapra-port::ch2",
-        "angulo-de-inclinacao-do-pier-em-relacao-a-direcao-das-forcas-ambientais",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "bacia-de-evolucao",
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "CGE-0247"
+          "CGE-0206",
+          "CGE-0209",
+          "CGE-0212",
+          "CGE-0215",
+          "CGE-0218"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "CGE-1053",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0032",
-      "question": "De acordo com o contido em “Planejamento Portuário: Recomendações para Acessos Náuticos” (Capítulo 2, seção 2.3.6.6 — Ângulo de inclinação do píer em relação à direção das forças ambientais), considere o seguinte problema técnico: Qual item é associado pela fonte ao tópico “Ângulo de inclinação do píer em relação à direção das forças ambientais”? Considere especificamente a relação entre “correntes / sentido”. Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.INC.00012",
+      "question": "Considerando o conteúdo de “Planejamento Portuário: Recomendações para Acessos Náuticos” (Capítulo 2, seção 2.4.3.1 — Bacia de evolução), assinale a alternativa INCORRETA:",
       "options": [
         {
           "key": "A",
-          "text": "Wi é a margem de segurança em razão de fatores ambientais e locais (fatores 2 a 10), expressa em metros (m)."
+          "text": "Sobre “Bacia de evolução”, considere a proposição: A avaliação das dimensões da bacia de evolução deve ser feita por meio de simulação física e/ou numérica."
         },
         {
           "key": "B",
-          "text": "Um fundeadouro deve ter área suficiente para permitir que os navios de projeto se movam desimpedidos e com margem de segurança adequada."
+          "text": "Sobre “Fundeadouros”, considere a proposição: Devem ser detalhados o modelo empregado, as trações exercidas na amarra do ferro em função das forças ambientais, bem como a distância percorrida pelo navio por intervalo de tempo, em caso de ele garrar."
         },
         {
           "key": "C",
-          "text": "O tempo necessário para amarrar os rebocadores (B-C, na Figura 2.9.) depende da habilidade da tripulação e das condições ambientais."
+          "text": "Sobre “Terminais flutuantes”, considere a proposição: Deve-se observar que durante as manobras de atracação não é possível tracionar o cabo de amarração para trazer um navio de projeto junto ao terminal flutuante, com risco de tirá-lo de sua posição de fundeio."
         },
         {
           "key": "D",
-          "text": "Uma margem de segurança deve ser deixada para as incertezas do calado estático."
+          "text": "Sobre “Tipos”, considere a proposição: O canal com restrição lateral (R) é um intermediário entre os tipos aberto e com margens emersas."
         },
         {
           "key": "E",
-          "text": "As correntes no sentido longitudinal, em relação ao píer, devem ser inferiores a 3 nós e, no sentido transversal, inferiores a 0,75 nó."
+          "text": "Sobre “Tolerância para incertezas no calado estático”, considere a proposição: O calado do navio de projeto aumenta em aproximadamente 2% a 3% quando sai de água salgada para água doce, porque o volume de deslocamento do navio é inversamente proporcional à massa específica da água."
         }
       ],
       "correct_answer": "E",
-      "explanation": "O capítulo associa esse critério ao dimensionamento, à operação segura ou à análise de risco dos acessos náuticos; as demais alternativas pertencem a outros tópicos do planejamento portuário. No recorte indicado, o conteúdo aplicável é: As correntes no sentido longitudinal, em relação ao píer, devem ser inferiores a 3 nós e, no sentido transversal, inferiores a 0,75 nó."
+      "explanation": "A alternativa E é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
     },
     {
       "id": "CGE-1054",
@@ -84084,16 +84137,16 @@
       "id": "CGE-1069",
       "subject": "VII — Conhecimentos Gerais",
       "module": "Planejamento Portuário — Vias de acesso",
-      "topic": "Força devida à massa adicional para a condição puxar-empurrar",
+      "topic": "Introdução",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
         "bibliography_id": "conapra-port",
         "chapter_id": "conapra-port::ch2",
-        "topic_id": "VII-conapra-port-ch2-cge-pp-via-2-3-7-2-forca-devida-a-massa-adicional-para-a-condicao-puxar-empurrar",
+        "topic_id": "VII-conapra-port-ch2-cge-pp-via-2-1-introducao",
         "subtopic_id": null
       },
       "tracking": {
@@ -84112,62 +84165,65 @@
         "section": "Capítulo 2 – Vias de Acesso a Instalações Portuárias",
         "module": "Planejamento Portuário — Vias de acesso",
         "topic": {
-          "id": "VII-conapra-port-ch2-cge-pp-via-2-3-7-2-forca-devida-a-massa-adicional-para-a-condicao-puxar-empurrar",
-          "title": "Força devida à massa adicional para a condição puxar-empurrar"
+          "id": "VII-conapra-port-ch2-cge-pp-via-2-1-introducao",
+          "title": "Introdução"
         }
       },
       "source": {
         "author": "Conselho Nacional de Praticagem (CONAPRA)",
         "title": "Planejamento Portuário: Recomendações para Acessos Náuticos",
         "edition": "1ª edição, 2022",
-        "locator": "Capítulo 2, seção 2.3.7.2 — Força devida à massa adicional para a condição puxar-empurrar"
+        "locator": "Capítulo 2, seção 2.1 — Introdução"
       },
       "tags": [
         "Vias de acesso",
-        "Força devida à massa adicional para a condição puxar-empurrar",
-        "CGE.PP.VIA.2_3_7_2",
+        "Introdução",
+        "CGE.PP.VIA.2_1",
         "conhecimentos-gerais",
         "conapra-port",
         "conapra-port::ch2",
-        "forca-devida-a-massa-adicional-para-a-condicao-puxar-empurrar",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "introducao",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "CGE-0291"
+          "CGE-0213",
+          "CGE-0216",
+          "CGE-0219",
+          "CGE-0222"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "CGE-1069",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0036",
-      "question": "De acordo com o contido em “Planejamento Portuário: Recomendações para Acessos Náuticos” (Capítulo 2, seção 2.3.7.2 — Força devida à massa adicional para a condição puxar-empurrar), considere o seguinte problema técnico: No recorte bibliográfico referente a “Força devida à massa adicional para a condição puxar-empurrar”, assinale o trecho técnico correto. Considere especificamente a relação entre “força / lateral”. Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.AST.00013",
+      "question": "De acordo com o contido em “Planejamento Portuário: Recomendações para Acessos Náuticos”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Introdução”, considere a proposição: O squat depende muito da velocidade do navio e é acentuado em águas rasas, podendo se tornar crítico.\nII) Sobre “Fatores associados à profundidade”, considere a proposição: A seguir, são apresentadas recomendações que devem ser levadas em consideração no projeto de um canal de acesso, em relação aos três fatores associados às cotas verticais mencionados.\nIII) Sobre “Fatores relacionados ao navio de projeto”, considere a proposição: A seguir, são apresentadas recomendações que devem ser levadas em consideração no projeto de um canal de acesso, em relação aos três fatores associados às cotas verticais mencionados.\nIV) Sobre “Inclinação dinâmica em razão de vento e guinadas”, considere a proposição: SK = 0,9 B Sin∅WR em que SK é a cota vertical do afundamento da quilha de balanço, expressa em metros (m).",
       "options": [
         {
           "key": "A",
-          "text": "Ressalta-se que devem ser calculadas as forças aerodinâmicas e hidrodinâmicas atuantes nos navios atracados em um terminal."
+          "text": "Apenas as afirmativas I e II são verdadeiras."
         },
         {
           "key": "B",
-          "text": "A distância longitudinal entre navios atracados em um cais deve ser superior a 0,1LOA do maior navio de projeto atracado."
+          "text": "Apenas as afirmativas I e III são verdadeiras."
         },
         {
           "key": "C",
-          "text": "A força lateral de resistência associada à massa adicional é uma força de resistência que o meio fluido oferece quando se deseja acelerar ou desacelerar o navio."
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "Atenção especial, quando em curvas, deve ser dada para o ângulo de deriva adquirido pelo navio de projeto e o tempo para o navio efetuar as alterações de rumo e aproamento."
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
         },
         {
           "key": "E",
-          "text": "SK = 0,9 B Sin∅WR em que SK é a cota vertical do afundamento da quilha de balanço, expressa em metros (m)."
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
         }
       ],
       "correct_answer": "C",
-      "explanation": "O capítulo associa esse critério ao dimensionamento, à operação segura ou à análise de risco dos acessos náuticos; as demais alternativas pertencem a outros tópicos do planejamento portuário. No recorte indicado, o conteúdo aplicável é: A força lateral de resistência associada à massa adicional é uma força de resistência que o meio fluido oferece quando se deseja acelerar ou desacelerar o navio."
+      "explanation": "A combinação correta é a alternativa C. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Capítulo 2, seção 2.1 — Introdução."
     },
     {
       "id": "CGE-1070",
@@ -85281,16 +85337,16 @@
       "id": "CGE-1082",
       "subject": "VII — Conhecimentos Gerais",
       "module": "Meio Ambiente — MARPOL 73/78",
-      "topic": "Anexo I — Regra 23",
+      "topic": "Anexo II — Regra 12",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
         "bibliography_id": "marpol",
         "chapter_id": "marpol::integral",
-        "topic_id": "VII-marpol-integral-cge-ma-marpol-anexo-i-regra-23-anexo-i-regra-23",
+        "topic_id": "VII-marpol-integral-cge-ma-marpol-anexo-ii-regra-12-anexo-ii-regra-12",
         "subtopic_id": null
       },
       "tracking": {
@@ -85309,62 +85365,65 @@
         "section": "Publicação indicada",
         "module": "Meio Ambiente — MARPOL 73/78",
         "topic": {
-          "id": "VII-marpol-integral-cge-ma-marpol-anexo-i-regra-23-anexo-i-regra-23",
-          "title": "Anexo I — Regra 23"
+          "id": "VII-marpol-integral-cge-ma-marpol-anexo-ii-regra-12-anexo-ii-regra-12",
+          "title": "Anexo II — Regra 12"
         }
       },
       "source": {
         "author": "Brasil; International Maritime Organization (IMO)",
         "title": "Decreto nº 2.508/1998 — MARPOL 73/78",
         "edition": "Decreto de 4 de março de 1998, texto promulgado no Brasil",
-        "locator": "Anexo I, Regra 23"
+        "locator": "Anexo II, Regra 12"
       },
       "tags": [
         "MARPOL 73/78",
-        "Anexo I — Regra 23",
-        "CGE.MA.MARPOL.ANEXO_I.REGRA_23",
+        "Anexo II — Regra 12",
+        "CGE.MA.MARPOL.ANEXO_II.REGRA_12",
         "conhecimentos-gerais",
         "marpol",
         "marpol::integral",
-        "anexo-i-regra-23",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "anexo-ii-regra-12",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "CGE-0930"
+          "CGE-0900",
+          "CGE-0903",
+          "CGE-0906",
+          "CGE-0909"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "CGE-1082",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0040",
-      "question": "De acordo com o contido em “Decreto nº 2.508/1998 — MARPOL 73/78” (Anexo I, Regra 23), considere o seguinte problema técnico: Uma equipe técnica revisa o tópico “Anexo I — Regra 23”. Qual conteúdo integra corretamente essa parte da fonte? Considere especificamente a relação entre “redução / questão”. Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.VF.00014",
+      "question": "Com base em “Decreto nº 2.508/1998 — MARPOL 73/78”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Anexo II — Regra 12”, considere a proposição: Um Certificado emitido para um navio deixará de ser válido após a transferência de tal navio para a bandeira de um outro Estado, exceto como estipulado no parágrafo 7 desta Regra.\n( ) Sobre “Convenção de 1973 — Artigo 16”, considere a proposição: Uma emenda ao Protocolo II da Convenção estará sujeita a procedimentos idênticos aos das emendas a um Artigo da Convenção, como estabelecido na alínea (f) (I) deste parágrafo.\n( ) Sobre “Anexo I — Regra 12”, considere a proposição: Ao considerar o projeto do medidor do conteúdo de óleo a ser incorporado ao sistema, a Administração deverá ter atenção à especificações recomendadas pela Organização*.\n( ) Sobre “Anexo I — Regra 25”, considere a proposição: A Administração pode exigir ou permitir correções de superfície livre a serem calculadas para ângulo de banda de mais de 5 para os tanques parcialmente cheios.",
       "options": [
         {
           "key": "A",
-          "text": "Todos os outros navios devem atender aos requisitos do parágrafo (1) desta Regra tanto quanto seja possível e razoável."
+          "text": "( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "B",
-          "text": "A descarga no mar do lastro limpo ou segregado não estará sujeita a nenhuma exigência deste Anexo."
+          "text": "( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "C",
-          "text": "O lastro segregado e o lastro limpo podem ser descarregados abaixo da linha d'água nos portos e nos terminais ao largo."
+          "text": "( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "D",
-          "text": "Antes de proibir a entrada ou tomar qualquer medida, a Parte pode proceder a uma consulta à Administração do navio interessado."
+          "text": "( F ) ( F ) ( V ) ( V )"
         },
         {
           "key": "E",
-          "text": "A redução em questão será considerada apenas para o cálculo de O pela fórmula (III)."
+          "text": "( V ) ( V ) ( V ) ( V )"
         }
       ],
       "correct_answer": "E",
-      "explanation": "O dispositivo citado delimita um conceito, dever ou condição do regime de prevenção da poluição; as demais alternativas são regras de outras disposições da Convenção ou de seus anexos. No recorte indicado, o conteúdo aplicável é: A redução em questão será considerada apenas para o cálculo de O pela fórmula (III)."
+      "explanation": "A sequência correta corresponde à alternativa E, conforme os conceitos reunidos em Anexo II, Regra 12."
     },
     {
       "id": "CGE-1083",
@@ -90740,58 +90799,16 @@
       "id": "CGE-1142",
       "subject": "VII — Conhecimentos Gerais",
       "module": "Planejamento Portuário — Vias de acesso",
-      "topic_code": "PSCPP.INC.1035",
-      "topic": "Distância de parada sem auxílio de rebocadores",
+      "topic": "Fator W7 associado aos efeitos da superfície de fundo (Pianc 121, 2014, p. 87, Tabela 3.5.)",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question": "De acordo com o contido em “Planejamento Portuário: Recomendações para Acessos Náuticos” (Capítulo 2, seção 2.3.2.4 — Distância de parada sem auxílio de rebocadores), analise o seguinte problema técnico: Uma equipe técnica revisa o tópico “Distância de parada sem auxílio de rebocadores”. Qual conteúdo integra corretamente essa parte da fonte? Considere especificamente a relação entre “Métodos / cálculo”. Assinale a alternativa correta.",
-      "options": [
-        {
-          "key": "A",
-          "text": "Transições menores do que esse comprimento devem ser avaliadas no Projeto Detalhado, em um estudo de simulação de manobra."
-        },
-        {
-          "key": "B",
-          "text": "Um gráfico ou tabela deve ser apresentado detalhando os valores de tração nos cabos de reboque e o valor total de tração obtido em cada teste."
-        },
-        {
-          "key": "C",
-          "text": "O valor mínimo de 0,5m de margem de manobrabilidade deve ser garantido para manobras assistidas por rebocadores, independentemente do calado do navio."
-        },
-        {
-          "key": "D",
-          "text": "Todos os requisitos de espaços de manobra, distância entre navios, rebocadores e análise de risco especificados para píeres fixos, nos Projetos Conceitual e Detalhado, aplicam-se aos terminais flutuantes."
-        },
-        {
-          "key": "E",
-          "text": "Métodos para o cálculo da resistência ao avanço e o cálculo do empuxo do propulsor podem ser encontrados em Principles of Naval Architecture e outras publicações em hidrodinâmica do navio."
-        }
-      ],
-      "correct_answer": "E",
-      "explanation": "O capítulo associa esse critério ao dimensionamento, à operação segura ou à análise de risco dos acessos náuticos; as demais alternativas pertencem a outros tópicos do planejamento portuário. No recorte indicado, o conteúdo aplicável é: Métodos para o cálculo da resistência ao avanço e o cálculo do empuxo do propulsor podem ser encontrados em Principles of Naval Architecture e outras publicações em hidrodinâmica do navio.",
-      "source": {
-        "author": "Conselho Nacional de Praticagem (CONAPRA)",
-        "title": "Planejamento Portuário: Recomendações para Acessos Náuticos",
-        "edition": "1ª edição, 2022",
-        "locator": "Capítulo 2, seção 2.3.2.4 — Distância de parada sem auxílio de rebocadores"
-      },
-      "tags": [
-        "Vias de acesso",
-        "Distância de parada sem auxílio de rebocadores",
-        "CGE.PP.VIA.2_3_2_4",
-        "conhecimentos-gerais",
-        "conapra-port",
-        "conapra-port::ch2",
-        "distancia-de-parada-sem-auxilio-de-rebocadores",
-        "pscpp-style-v3",
-        "pscpp-repair-v3"
-      ],
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
         "bibliography_id": "conapra-port",
         "chapter_id": "conapra-port::ch2",
-        "topic_id": "VII-conapra-port-ch2-cge-pp-via-2-3-2-4-distancia-de-parada-sem-auxilio-de-rebocadores",
+        "topic_id": "VII-conapra-port-ch2-cge-pp-via-2-3-1-3-2-8-fator-w7-associado-aos-efeitos-da-superficie-de-fundo-pianc-121-2014-p-87-tabela-3-5",
         "subtopic_id": null
       },
       "tracking": {
@@ -90810,19 +90827,66 @@
         "section": "Capítulo 2 – Vias de Acesso a Instalações Portuárias",
         "module": "Planejamento Portuário — Vias de acesso",
         "topic": {
-          "id": "VII-conapra-port-ch2-cge-pp-via-2-3-2-4-distancia-de-parada-sem-auxilio-de-rebocadores",
-          "title": "Distância de parada sem auxílio de rebocadores"
+          "id": "VII-conapra-port-ch2-cge-pp-via-2-3-1-3-2-8-fator-w7-associado-aos-efeitos-da-superficie-de-fundo-pianc-121-2014-p-87-tabela-3-5",
+          "title": "Fator W7 associado aos efeitos da superfície de fundo (Pianc 121, 2014, p. 87, Tabela 3.5.)"
         }
       },
-      "question_type": "Múltipla escolha contextualizada",
+      "source": {
+        "author": "Conselho Nacional de Praticagem (CONAPRA)",
+        "title": "Planejamento Portuário: Recomendações para Acessos Náuticos",
+        "edition": "1ª edição, 2022",
+        "locator": "Capítulo 2, seção 2.3.1.3.2.8 — Fator W7 associado aos efeitos da superfície de fundo (Pianc 121, 2014, p. 87, Tabela 3.5.)"
+      },
+      "tags": [
+        "Vias de acesso",
+        "Fator W7 associado aos efeitos da superfície de fundo (Pianc 121, 2014, p. 87, Tabela 3.5.)",
+        "CGE.PP.VIA.2_3_1_3_2_8",
+        "conhecimentos-gerais",
+        "conapra-port",
+        "conapra-port::ch2",
+        "fator-w7-associado-aos-efeitos-da-superficie-de-fundo-pianc-121-2014-p-87-tabela-3-5",
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
+      ],
       "provenance": {
-        "method": "pscpp-repair-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "CGE-0160"
+          "CGE-0227",
+          "CGE-0230",
+          "CGE-0233",
+          "CGE-0236",
+          "CGE-0239"
         ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "CGE-1142",
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
-      }
+        "rewrite_reason": "residual-medium-quality-v4"
+      },
+      "topic_code": "PSCPP.V4.INC.00015",
+      "question": "Considerando o conteúdo de “Planejamento Portuário: Recomendações para Acessos Náuticos” (Capítulo 2, seção 2.3.1.3.2.8 — Fator W7 associado aos efeitos da superfície de fundo (Pianc 121, 2014, p. 87, Tabela 3.5.)), assinale a alternativa INCORRETA:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sobre “Fator W7 associado aos efeitos da superfície de fundo (Pianc 121, 2014, p. 87, Tabela 3.5.)”, considere a proposição: Sendo a profundidade superior a 1,5 vez o calado, esse efeito pode ser desprezado."
+        },
+        {
+          "key": "B",
+          "text": "Sobre “Largura do canal para grandes amplitudes de maré (Pianc 121, 2014, p. 90)”, considere a proposição: Sob essas condições e com base em um estudo de risco adequado, a largura do canal deve ser maior que o comprimento total do navio de projeto."
+        },
+        {
+          "key": "C",
+          "text": "Sobre “Comprimento do raio das curvas”, considere a proposição: São recomendados os seguintes critérios α ≤ 25° → RC > 3L Para α > 25°, o raio da curva, RC, em função do tipo de navio de projeto, deve ser maior que o apresentado na Tabela 2.14."
+        },
+        {
+          "key": "D",
+          "text": "Sobre “Área de embarque e desembarque de práticos”, considere a proposição: É necessário que exista área suficiente para permitir que o navio de projeto manobre com segurança, a fim de proporcionar sombra adequada para o transbordo do prático."
+        },
+        {
+          "key": "E",
+          "text": "Sobre “Bacia de evolução e os navios de projeto”, considere a proposição: Correntes longitudinais alteram a manobrabilidade do navio e afetam sua capacidade de parar."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A alternativa E é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
     },
     {
       "id": "CGE-1143",
@@ -91376,16 +91440,16 @@
       "id": "CGE-1149",
       "subject": "VII — Conhecimentos Gerais",
       "module": "Planejamento Portuário — Vias de acesso",
-      "topic": "Comprimento do raio das curvas",
+      "topic": "Tempo necessário para amarrar os rebocadores e manobrar para a posição (Pianc",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
         "bibliography_id": "conapra-port",
         "chapter_id": "conapra-port::ch2",
-        "topic_id": "VII-conapra-port-ch2-cge-pp-via-2-3-1-4-3-comprimento-do-raio-das-curvas",
+        "topic_id": "VII-conapra-port-ch2-cge-pp-via-2-3-2-2-tempo-necessario-para-amarrar-os-rebocadores-e-manobrar-para-a-posicao-pianc",
         "subtopic_id": null
       },
       "tracking": {
@@ -91404,62 +91468,65 @@
         "section": "Capítulo 2 – Vias de Acesso a Instalações Portuárias",
         "module": "Planejamento Portuário — Vias de acesso",
         "topic": {
-          "id": "VII-conapra-port-ch2-cge-pp-via-2-3-1-4-3-comprimento-do-raio-das-curvas",
-          "title": "Comprimento do raio das curvas"
+          "id": "VII-conapra-port-ch2-cge-pp-via-2-3-2-2-tempo-necessario-para-amarrar-os-rebocadores-e-manobrar-para-a-posicao-pianc",
+          "title": "Tempo necessário para amarrar os rebocadores e manobrar para a posição (Pianc"
         }
       },
       "source": {
         "author": "Conselho Nacional de Praticagem (CONAPRA)",
         "title": "Planejamento Portuário: Recomendações para Acessos Náuticos",
         "edition": "1ª edição, 2022",
-        "locator": "Capítulo 2, seção 2.3.1.4.3 — Comprimento do raio das curvas"
+        "locator": "Capítulo 2, seção 2.3.2.2 — Tempo necessário para amarrar os rebocadores e manobrar para a posição (Pianc"
       },
       "tags": [
         "Vias de acesso",
-        "Comprimento do raio das curvas",
-        "CGE.PP.VIA.2_3_1_4_3",
+        "Tempo necessário para amarrar os rebocadores e manobrar para a posição (Pianc",
+        "CGE.PP.VIA.2_3_2_2",
         "conhecimentos-gerais",
         "conapra-port",
         "conapra-port::ch2",
-        "comprimento-do-raio-das-curvas",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "tempo-necessario-para-amarrar-os-rebocadores-e-manobrar-para-a-posicao-pianc",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "CGE-0156"
+          "CGE-0234",
+          "CGE-0237",
+          "CGE-0240",
+          "CGE-0243"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "CGE-1149",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0044",
-      "question": "De acordo com o contido em “Planejamento Portuário: Recomendações para Acessos Náuticos” (Capítulo 2, seção 2.3.1.4.3 — Comprimento do raio das curvas), considere o seguinte problema técnico: No recorte bibliográfico referente a “Comprimento do raio das curvas”, assinale o trecho técnico correto. Considere especificamente a relação entre “restrição / comprimento”. Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.AST.00016",
+      "question": "De acordo com o contido em “Planejamento Portuário: Recomendações para Acessos Náuticos”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Tempo necessário para amarrar os rebocadores e manobrar para a posição (Pianc”, considere a proposição: LR é o comprimento do conjunto formado por cabo de reboque e rebocador, dado conforme a Tabela 2.17.\nII) Sobre “Profundidade do canal interno”, considere a proposição: Tendo sido viabilizada a geometria da largura do canal em tempo rápido, os resultados devem ser reavaliados em tempo real com o comando manual.\nIII) Sobre “Capacidade do fundeadouro (Pianc 121, 2014, p. 100)”, considere a proposição: LOA é o comprimento total do navio de projeto, expresso em metros (m); h é a profundidade local.\nIV) Sobre “Critérios para dimensões mínimas entre navios de projeto atracados em uma doca”, considere a proposição: (ver Tsinger, 1996 e Thoresen, 2014) A determinação das dimensões de uma doca, na qual os navios de projeto irão atracar, se faz por critérios que podem ser divididos em dois grupos.",
       "options": [
         {
           "key": "A",
-          "text": "WP é a margem de segurança que inclui a largura de passagem e a intensidade do tráfego (fatores 11 e 13), expressa em metros (m)."
+          "text": "Apenas as afirmativas I e II são verdadeiras."
         },
         {
           "key": "B",
-          "text": "O valor 2, expresso em metros (m), é o espaço mínimo requerido para as defensas inseridas entre os navios atracados a contrabordo."
+          "text": "Apenas as afirmativas I e III são verdadeiras."
         },
         {
           "key": "C",
-          "text": "Para que um simulador do meio ambiente possa ser utilizado em um projeto portuário, é fundamental que seu modelo numérico represente os aspectos físicos relevantes à navegação na área em estudo."
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "A restrição ao comprimento do navio (L) é feita em função do alinhamento do canal e do ângulo de deflexão α de suas curvas."
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
         },
         {
           "key": "E",
-          "text": "Ondulações no fundo náutico também podem afetar o squat do navio de projeto, caso ele esteja em águas relativamente rasas."
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
         }
       ],
       "correct_answer": "D",
-      "explanation": "O capítulo associa esse critério ao dimensionamento, à operação segura ou à análise de risco dos acessos náuticos; as demais alternativas pertencem a outros tópicos do planejamento portuário. No recorte indicado, o conteúdo aplicável é: A restrição ao comprimento do navio (L) é feita em função do alinhamento do canal e do ângulo de deflexão α de suas curvas."
+      "explanation": "A combinação correta é a alternativa D. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Capítulo 2, seção 2.3.2.2 — Tempo necessário para amarrar os rebocadores e manobrar para a posição (Pianc."
     },
     {
       "id": "CGE-1150",
@@ -91742,16 +91809,16 @@
       "id": "CGE-1153",
       "subject": "VII — Conhecimentos Gerais",
       "module": "Planejamento Portuário — Vias de acesso",
-      "topic": "Fator de tolerância para alteração no fundo entre dragagens",
+      "topic": "Profundidade",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
         "bibliography_id": "conapra-port",
         "chapter_id": "conapra-port::ch2",
-        "topic_id": "VII-conapra-port-ch2-cge-pp-via-2-4-2-1-5-2-fator-de-tolerancia-para-alteracao-no-fundo-entre-dragagens",
+        "topic_id": "VII-conapra-port-ch2-cge-pp-via-2-3-5-3-profundidade",
         "subtopic_id": null
       },
       "tracking": {
@@ -91770,62 +91837,65 @@
         "section": "Capítulo 2 – Vias de Acesso a Instalações Portuárias",
         "module": "Planejamento Portuário — Vias de acesso",
         "topic": {
-          "id": "VII-conapra-port-ch2-cge-pp-via-2-4-2-1-5-2-fator-de-tolerancia-para-alteracao-no-fundo-entre-dragagens",
-          "title": "Fator de tolerância para alteração no fundo entre dragagens"
+          "id": "VII-conapra-port-ch2-cge-pp-via-2-3-5-3-profundidade",
+          "title": "Profundidade"
         }
       },
       "source": {
         "author": "Conselho Nacional de Praticagem (CONAPRA)",
         "title": "Planejamento Portuário: Recomendações para Acessos Náuticos",
         "edition": "1ª edição, 2022",
-        "locator": "Capítulo 2, seção 2.4.2.1.5.2 — Fator de tolerância para alteração no fundo entre dragagens"
+        "locator": "Capítulo 2, seção 2.3.5.3 — Profundidade"
       },
       "tags": [
         "Vias de acesso",
-        "Fator de tolerância para alteração no fundo entre dragagens",
-        "CGE.PP.VIA.2_4_2_1_5_2",
+        "Profundidade",
+        "CGE.PP.VIA.2_3_5_3",
         "conhecimentos-gerais",
         "conapra-port",
         "conapra-port::ch2",
-        "fator-de-tolerancia-para-alteracao-no-fundo-entre-dragagens",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "profundidade",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "CGE-0200"
+          "CGE-0241",
+          "CGE-0244",
+          "CGE-0247",
+          "CGE-0250"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "CGE-1153",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0048",
-      "question": "De acordo com o contido em “Planejamento Portuário: Recomendações para Acessos Náuticos” (Capítulo 2, seção 2.4.2.1.5.2 — Fator de tolerância para alteração no fundo entre dragagens), considere o seguinte problema técnico: Uma equipe técnica revisa o tópico “Fator de tolerância para alteração no fundo entre dragagens”. Qual conteúdo integra corretamente essa parte da fonte? Considere especificamente a relação entre “valores / estimados”. Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.VF.00017",
+      "question": "Com base em “Planejamento Portuário: Recomendações para Acessos Náuticos”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Profundidade”, considere a proposição: As áreas de fundeio podem ser protegidas das ondas, de forma que os movimentos por elas causados sejam relativamente pequenos.\n( ) Sobre “Navios de projeto atracados com assistência de rebocadores (ROM 3.1-99)”, considere a proposição: LR é o comprimento do conjunto formado por cabo de reboque e rebocador, dado conforme a Tabela 2.17.\n( ) Sobre “Ângulo de inclinação do píer em relação à direção das forças ambientais”, considere a proposição: Uma margem de segurança deve ser deixada para as incertezas do calado estático.\n( ) Sobre “Altura do navio de projeto e calado aéreo”, considere a proposição: Para píeres vazados, o efeito de resistência associado à massa adicional é maior do que para píeres sólidos.",
       "options": [
         {
           "key": "A",
-          "text": "Os valores estimados de decréscimo de cotas de profundidade e largura, por mês e ano, devem ser discriminados em relatório técnico."
+          "text": "( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "B",
-          "text": "A controlabilidade do navio não é dependente apenas da massa específica da lama, mas também das características reológicas da lama."
+          "text": "( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "C",
-          "text": "Simulações devem ser feitas para as condições ambientais de projeto, e devem ser realizados testes com as diversas condições ambientais da instalação portuária em estudo, previstas anteriormente no Projeto Conceitual."
+          "text": "( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "D",
-          "text": "Com relação aos fatores associados ao navio, a ação do efeito squat é nula, a ação de ondas pode ser nula, devendo ser considerada a imersão devido à variação de massa específica da água."
+          "text": "( F ) ( F ) ( V ) ( V )"
         },
         {
           "key": "E",
-          "text": "Contudo, alterações no squat ocorrem em navios de projeto que se encontram em estado variável de velocidade."
+          "text": "( V ) ( V ) ( V ) ( V )"
         }
       ],
       "correct_answer": "A",
-      "explanation": "O capítulo associa esse critério ao dimensionamento, à operação segura ou à análise de risco dos acessos náuticos; as demais alternativas pertencem a outros tópicos do planejamento portuário. No recorte indicado, o conteúdo aplicável é: Os valores estimados de decréscimo de cotas de profundidade e largura, por mês e ano, devem ser discriminados em relatório técnico."
+      "explanation": "A sequência correta corresponde à alternativa A, conforme os conceitos reunidos em Capítulo 2, seção 2.3.5.3 — Profundidade."
     },
     {
       "id": "CGE-1154",
@@ -92108,16 +92178,16 @@
       "id": "CGE-1157",
       "subject": "VII — Conhecimentos Gerais",
       "module": "Planejamento Portuário — Vias de acesso",
-      "topic": "Navios de projeto atracados com assistência de rebocadores (ROM 3.1-99)",
+      "topic": "Força de tração estática (bollard pull) para garantir manobrabilidade",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
         "bibliography_id": "conapra-port",
         "chapter_id": "conapra-port::ch2",
-        "topic_id": "VII-conapra-port-ch2-cge-pp-via-2-3-6-4-2-navios-de-projeto-atracados-com-assistencia-de-rebocadores-rom-3-1-99",
+        "topic_id": "VII-conapra-port-ch2-cge-pp-via-2-3-7-1-forca-de-tracao-estatica-bollard-pull-para-garantir-manobrabilidade",
         "subtopic_id": null
       },
       "tracking": {
@@ -92136,62 +92206,1872 @@
         "section": "Capítulo 2 – Vias de Acesso a Instalações Portuárias",
         "module": "Planejamento Portuário — Vias de acesso",
         "topic": {
-          "id": "VII-conapra-port-ch2-cge-pp-via-2-3-6-4-2-navios-de-projeto-atracados-com-assistencia-de-rebocadores-rom-3-1-99",
-          "title": "Navios de projeto atracados com assistência de rebocadores (ROM 3.1-99)"
+          "id": "VII-conapra-port-ch2-cge-pp-via-2-3-7-1-forca-de-tracao-estatica-bollard-pull-para-garantir-manobrabilidade",
+          "title": "Força de tração estática (bollard pull) para garantir manobrabilidade"
         }
       },
       "source": {
         "author": "Conselho Nacional de Praticagem (CONAPRA)",
         "title": "Planejamento Portuário: Recomendações para Acessos Náuticos",
         "edition": "1ª edição, 2022",
-        "locator": "Capítulo 2, seção 2.3.6.4.2 — Navios de projeto atracados com assistência de rebocadores (ROM 3.1-99)"
+        "locator": "Capítulo 2, seção 2.3.7.1 — Força de tração estática (bollard pull) para garantir manobrabilidade"
       },
       "tags": [
         "Vias de acesso",
-        "Navios de projeto atracados com assistência de rebocadores (ROM 3.1-99)",
-        "CGE.PP.VIA.2_3_6_4_2",
+        "Força de tração estática (bollard pull) para garantir manobrabilidade",
+        "CGE.PP.VIA.2_3_7_1",
         "conhecimentos-gerais",
         "conapra-port",
         "conapra-port::ch2",
-        "navios-de-projeto-atracados-com-assistencia-de-rebocadores-rom-3-1-99",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "forca-de-tracao-estatica-bollard-pull-para-garantir-manobrabilidade",
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-deep-refine-v4",
         "derived_from_question_ids": [
-          "CGE-0244"
+          "CGE-0248",
+          "CGE-0251",
+          "CGE-0254",
+          "CGE-0257",
+          "CGE-0260"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "CGE-1157",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-quality-v4"
       },
-      "topic_code": "PSCPP.REF.DIR.0052",
-      "question": "De acordo com o contido em “Planejamento Portuário: Recomendações para Acessos Náuticos” (Capítulo 2, seção 2.3.6.4.2 — Navios de projeto atracados com assistência de rebocadores (ROM 3.1-99)), considere o seguinte problema técnico: Em relação a “Navios de projeto atracados com assistência de rebocadores (ROM 3.1-99)”, qual alternativa contém orientação, conceito ou requisito compatível com a publicação indicada? Considere especificamente a relação entre “comprimento / conjunto”. Assinale a opção correta.",
+      "topic_code": "PSCPP.V4.INC.00018",
+      "question": "Considerando o conteúdo de “Planejamento Portuário: Recomendações para Acessos Náuticos” (Capítulo 2, seção 2.3.7.1 — Força de tração estática (bollard pull) para garantir manobrabilidade), assinale a alternativa INCORRETA:",
       "options": [
         {
           "key": "A",
-          "text": "A avaliação deve ser feita em conjunto com a de rebocadores, discriminando o tipo, número, modo e posicionamento destes últimos."
+          "text": "Sobre “Força de tração estática (bollard pull) para garantir manobrabilidade”, considere a proposição: Recomenda-se que seja consultado o Capítulo 5 do livro Tug use in port, de Henk Hensen, para o cálculo do bollard pull necessário à garantia da manobrabilidade segura do navio assistido por rebocador."
         },
         {
           "key": "B",
-          "text": "Um fundeadouro deve ter área suficiente para permitir que os navios de projeto se movam desimpedidos e com margem de segurança adequada."
+          "text": "Sobre “Folga sobre o calado aéreo (FCA) (Pianc 121, 2014, p. 236)”, considere a proposição: A FCA deve levar em conta que linhas de transmissão de força cedem e arqueiam."
         },
         {
           "key": "C",
-          "text": "As áreas de fundeio podem ser protegidas das ondas, de forma que os movimentos por elas causados sejam relativamente pequenos."
+          "text": "Sobre “Simulação do meio ambiente”, considere a proposição: De forma genérica pode-se dizer que o aprofundamento decorrente de uma dragagem altera a maré e aumenta as taxas de assoreamento."
         },
         {
           "key": "D",
-          "text": "Em que Δ é o deslocamento do navio, expresso em toneladas (ton)."
+          "text": "Sobre “Margem de incerteza para o calado estático”, considere a proposição: Um documento técnico deve ser elaborado descrevendo a metodologia empregada na definição da margem de incerteza para o calado estático."
         },
         {
           "key": "E",
-          "text": "LR é o comprimento do conjunto formado por cabo de reboque e rebocador, dado conforme a Tabela 2.17."
+          "text": "Sobre “Inclinação dinâmica transversal”, considere a proposição: As forças de tração estática e de puxar-empurrar estabelecidas no Projeto Conceitual podem ser reavaliadas por meio de simulação física e numérica."
         }
       ],
       "correct_answer": "E",
-      "explanation": "O capítulo associa esse critério ao dimensionamento, à operação segura ou à análise de risco dos acessos náuticos; as demais alternativas pertencem a outros tópicos do planejamento portuário. No recorte indicado, o conteúdo aplicável é: LR é o comprimento do conjunto formado por cabo de reboque e rebocador, dado conforme a Tabela 2.17."
+      "explanation": "A alternativa E é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+    },
+    {
+      "id": "CGE-1158",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Planejamento Portuário — Vias de acesso",
+      "topic": "Introdução",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "conapra-port",
+        "chapter_id": "conapra-port::ch2",
+        "topic_id": "VII-conapra-port-ch2-cge-pp-via-2-1-introducao",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "conhecimentos-gerais",
+        "work": {
+          "id": "conapra-port",
+          "title": "CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos",
+          "author": "Conselho Nacional de Praticagem (CONAPRA)"
+        },
+        "chapter": {
+          "id": "conapra-port::ch2",
+          "number": "ch2",
+          "title": "Capítulo 2 – Vias de Acesso a Instalações Portuárias",
+          "label": "Capítulo 2 – Vias de Acesso a Instalações Portuárias"
+        },
+        "section": "Capítulo 2 – Vias de Acesso a Instalações Portuárias",
+        "module": "Planejamento Portuário — Vias de acesso",
+        "topic": {
+          "id": "VII-conapra-port-ch2-cge-pp-via-2-1-introducao",
+          "title": "Introdução"
+        }
+      },
+      "source": {
+        "author": "Conselho Nacional de Praticagem (CONAPRA)",
+        "title": "Planejamento Portuário: Recomendações para Acessos Náuticos",
+        "edition": "1ª edição, 2022",
+        "locator": "Capítulo 2, seção 2.1 — Introdução"
+      },
+      "tags": [
+        "Vias de acesso",
+        "Introdução",
+        "CGE.PP.VIA.2_1",
+        "conhecimentos-gerais",
+        "conapra-port",
+        "conapra-port::ch2",
+        "introducao",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "CGE-0129",
+          "CGE-0132",
+          "CGE-0135",
+          "CGE-0138"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.AST.10001",
+      "question": "De acordo com o contido em “Planejamento Portuário: Recomendações para Acessos Náuticos”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Introdução”, considere a proposição: Nos casos de dispensa de prático, especial atenção deve ser dada à coordenação de tráfego.\nII) Sobre “Profundidade do canal de acesso (Pianc 121, 2014, seção 2.1.)”, considere a proposição: Na fase inicial do Projeto Conceitual, podem ser utilizados como estimativa inicial da profundidade, em função da velocidade do navio, das ondas e das condições do fundo do canal, os valores listados na Tabela.\nIII) Sobre “Tolerância para incertezas no calado estático”, considere a proposição: O ângulo preferencial de inclinação do píer em relação à direção do vento dominante deve ser de 30 graus.\nIV) Sobre “Efeito squat, incluindo trim dinâmico”, considere a proposição: Cada instalação portuária, em função de suas características físicas e ambientais, possui identificação única, como se fosse uma “impressão digital” do porto.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A combinação correta é a alternativa A. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Capítulo 2, seção 2.1 — Introdução."
+    },
+    {
+      "id": "CGE-1159",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Meio Ambiente — MARPOL 73/78",
+      "topic": "Protocolo II — Artigo III",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "marpol",
+        "chapter_id": "marpol::integral",
+        "topic_id": "VII-marpol-integral-cge-ma-marpol-protocolo-ii-artigo-iii-protocolo-ii-artigo-iii",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "conhecimentos-gerais",
+        "work": {
+          "id": "marpol",
+          "title": "Decreto nº 2.508/1998 — MARPOL 73/78",
+          "author": "Brasil; International Maritime Organization (IMO)"
+        },
+        "chapter": {
+          "id": "marpol::integral",
+          "number": "integral",
+          "title": "Publicação indicada",
+          "label": "Publicação indicada"
+        },
+        "section": "Publicação indicada",
+        "module": "Meio Ambiente — MARPOL 73/78",
+        "topic": {
+          "id": "VII-marpol-integral-cge-ma-marpol-protocolo-ii-artigo-iii-protocolo-ii-artigo-iii",
+          "title": "Protocolo II — Artigo III"
+        }
+      },
+      "source": {
+        "author": "Brasil; International Maritime Organization (IMO)",
+        "title": "Decreto nº 2.508/1998 — MARPOL 73/78",
+        "edition": "Decreto de 4 de março de 1998, texto promulgado no Brasil",
+        "locator": "Protocolo II, Artigo III"
+      },
+      "tags": [
+        "MARPOL 73/78",
+        "Protocolo II — Artigo III",
+        "CGE.MA.MARPOL.PROTOCOLO_II.ARTIGO_III",
+        "conhecimentos-gerais",
+        "marpol",
+        "marpol::integral",
+        "protocolo-ii-artigo-iii",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "CGE-0822",
+          "CGE-0825",
+          "CGE-0828",
+          "CGE-0831"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.VF.10002",
+      "question": "Com base em “Decreto nº 2.508/1998 — MARPOL 73/78”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Protocolo II — Artigo III”, considere a proposição: O Tribunal será constituido de três membros: um Árbitro nomeado por cada Parte em disputa e um terceiro Árbitro que será nomeado entre os dois primeiros indicados e que agirá como seu Presidente.\n( ) Sobre “Protocolo II — Artigo VI”, considere a proposição: Somente são levados em conta os tanques de duplo fundo que estejam vazios ou carregando água limpa quando os tanques acima estejam com carga.\n( ) Sobre “Anexo I — Regra I”, considere a proposição: \"Transportador combinado\" significa um navio projetado para transportar óleo ou cargas sólidas a granel.\n( ) Sobre “Anexo I — Regra 12”, considere a proposição: \"Tanque de Retenção\" significa um tanque para a captação e depósito de esgoto.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "D",
+          "text": "( F ) ( F ) ( V ) ( V )"
+        },
+        {
+          "key": "E",
+          "text": "( V ) ( V ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A sequência correta corresponde à alternativa B, conforme os conceitos reunidos em Protocolo II, Artigo III."
+    },
+    {
+      "id": "CGE-1160",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Planejamento Portuário — Análise de risco",
+      "topic": "Isenções de praticagem",
+      "difficulty": "Difícil",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "conapra-port",
+        "chapter_id": "conapra-port::ch8",
+        "topic_id": "VII-conapra-port-ch8-cge-pp-ris-8-2-5-5-4-isencoes-de-praticagem",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "conhecimentos-gerais",
+        "work": {
+          "id": "conapra-port",
+          "title": "CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos",
+          "author": "Conselho Nacional de Praticagem (CONAPRA)"
+        },
+        "chapter": {
+          "id": "conapra-port::ch8",
+          "number": "ch8",
+          "title": "Capítulo 8 – Análise de Risco e Planejamento Portuário",
+          "label": "Capítulo 8 – Análise de Risco e Planejamento Portuário"
+        },
+        "section": "Capítulo 8 – Análise de Risco e Planejamento Portuário",
+        "module": "Planejamento Portuário — Análise de risco",
+        "topic": {
+          "id": "VII-conapra-port-ch8-cge-pp-ris-8-2-5-5-4-isencoes-de-praticagem",
+          "title": "Isenções de praticagem"
+        }
+      },
+      "source": {
+        "author": "Conselho Nacional de Praticagem (CONAPRA)",
+        "title": "Planejamento Portuário: Recomendações para Acessos Náuticos",
+        "edition": "1ª edição, 2022",
+        "locator": "Capítulo 8, seção 8.2.5.5.4 — Isenções de praticagem"
+      },
+      "tags": [
+        "Análise de risco",
+        "Isenções de praticagem",
+        "CGE.PP.RIS.8_2_5_5_4",
+        "conhecimentos-gerais",
+        "conapra-port",
+        "conapra-port::ch8",
+        "isencoes-de-praticagem",
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "CGE-0356",
+          "CGE-0359",
+          "CGE-0362",
+          "CGE-0365",
+          "CGE-0368"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.INC.10003",
+      "question": "Considerando o conteúdo de “Planejamento Portuário: Recomendações para Acessos Náuticos” (Capítulo 8, seção 8.2.5.5.4 — Isenções de praticagem), assinale a alternativa INCORRETA:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sobre “Isenções de praticagem”, considere a proposição: Nesse caso, a autoridade competente deve expedir certificados que comprovem a capacidade e o conhecimento desses comandantes."
+        },
+        {
+          "key": "B",
+          "text": "Sobre “Processo de análise de risco”, considere a proposição: A primeira refere-se à avaliação global da operação, quando são aplicadas ferramentas qualitativas para o isolamento dos fatores impactantes para o risco."
+        },
+        {
+          "key": "C",
+          "text": "Sobre “Recursos requeridos”, considere a proposição: Muitas vezes, entretanto, o impacto positivo dessa medida só pode ser indicado na fase de Projeto Detalhado."
+        },
+        {
+          "key": "D",
+          "text": "Sobre “Documentação dos resultados”, considere a proposição: Adicionalmente, os eventos de perigo listados podem ser ordenados segundo o seu nível de risco, e aqueles de menor tolerabilidade podem ser priorizados em etapas posteriores da análise ou do gerenciamento de risco."
+        },
+        {
+          "key": "E",
+          "text": "Sobre “Classificação e seleção de eventos significativos para o risco”, considere a proposição: Pela aplicação da matriz de risco é possível, então, selecionar os eventos com contribuição significativa para o risco."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A alternativa C é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+    },
+    {
+      "id": "CGE-1161",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Planejamento Portuário — FDAQ",
+      "topic": "Margem de Manobrabilidade mínima",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "normam224",
+        "chapter_id": "normam224::integral",
+        "topic_id": "VII-normam224-integral-cge-pp-fdaq-1-2-mm-margem-de-manobrabilidade-minima",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "conhecimentos-gerais",
+        "work": {
+          "id": "normam224",
+          "title": "NORMAM-224/DPC — Folga Dinâmica Abaixo da Quilha",
+          "author": "Marinha do Brasil — Diretoria de Portos e Costas"
+        },
+        "chapter": {
+          "id": "normam224::integral",
+          "number": "integral",
+          "title": "Publicação indicada",
+          "label": "Publicação indicada"
+        },
+        "section": "Publicação indicada",
+        "module": "Planejamento Portuário — FDAQ",
+        "topic": {
+          "id": "VII-normam224-integral-cge-pp-fdaq-1-2-mm-margem-de-manobrabilidade-minima",
+          "title": "Margem de Manobrabilidade mínima"
+        }
+      },
+      "source": {
+        "author": "Marinha do Brasil — Diretoria de Portos e Costas",
+        "title": "NORMAM-224/DPC — Norma da Autoridade Marítima para Folga Dinâmica Abaixo da Quilha",
+        "edition": "Edição 2023",
+        "locator": "seção 1.2, alínea e — Margem de Manobrabilidade"
+      },
+      "tags": [
+        "FDAQ",
+        "margem de manobrabilidade",
+        "cálculo",
+        "conhecimentos-gerais",
+        "normam224",
+        "normam224::integral",
+        "margem-de-manobrabilidade-minima",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "CGE-0424",
+          "CGE-0427",
+          "CGE-0430",
+          "CGE-0433"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.AST.10004",
+      "question": "De acordo com o contido em “NORMAM-224/DPC — Norma da Autoridade Marítima para Folga Dinâmica Abaixo da Quilha”, analise as afirmativas abaixo e assinale a opção correta:\nI) No tópico “Margem de Manobrabilidade mínima”, a resposta tecnicamente correta é “0,90 m.”.\nII) No contexto de “Margem de Manobrabilidade mínima”, a associação “20,0 m — 2,00 m.” é tecnicamente aplicável.\nIII) Sobre “Considerações iniciais”, considere a proposição: A NORMAM-224/DPC decorre do que estabelece a Lei nº 9.537/1997, que dispõe sobre a segurança do tráfego aquaviário - LESTA, e do Decreto nº 2.596/1998 - RLESTA, que a regulamenta.\nIV) Sobre “Monitoramento e armazenagem de dados ambientais”, considere a proposição: Na área de interesse para a implantação do sistema de cálculo e previsão de FDAQ, os seguintes dados ambientais devem ser adquiridos e armazenados pelo período de um ano.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A combinação correta é a alternativa D. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: seção 1.2, alínea e — Margem de Manobrabilidade."
+    },
+    {
+      "id": "CGE-1162",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Planejamento Portuário — Interface navio/porto",
+      "topic": "Inspection of Ships",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "fal6",
+        "chapter_id": "fal6::integral",
+        "topic_id": "VII-fal6-integral-cge-pp-fal-09-inspection-of-ships",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "conhecimentos-gerais",
+        "work": {
+          "id": "fal6",
+          "title": "IMO FAL.6/Circ.14/Rev.2 — Ship/Port Interface",
+          "author": "International Maritime Organization (IMO)"
+        },
+        "chapter": {
+          "id": "fal6::integral",
+          "number": "integral",
+          "title": "Publicação indicada",
+          "label": "Publicação indicada"
+        },
+        "section": "Publicação indicada",
+        "module": "Planejamento Portuário — Interface navio/porto",
+        "topic": {
+          "id": "VII-fal6-integral-cge-pp-fal-09-inspection-of-ships",
+          "title": "Inspection of Ships"
+        }
+      },
+      "source": {
+        "author": "International Maritime Organization (IMO)",
+        "title": "Ship/port interface: list of publications relevant to the ship/port interface",
+        "edition": "FAL.6/Circ.14/Rev.2, 2 April 2025",
+        "locator": "Anexo, subject area 9, publicação 9.1.4"
+      },
+      "tags": [
+        "interface navio/porto",
+        "publicações IMO",
+        "Inspection of Ships",
+        "conhecimentos-gerais",
+        "fal6",
+        "fal6::integral",
+        "inspection-of-ships",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "CGE-0070",
+          "CGE-0074",
+          "CGE-0077",
+          "CGE-0082"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.VF.10005",
+      "question": "Com base em “Ship/port interface: list of publications relevant to the ship/port interface”, julgue as proposições a seguir e assinale a sequência correta:\n( ) No contexto de “Inspection of Ships”, a associação “Inspection of Ships” é tecnicamente aplicável.\n( ) Sobre “Navigable Waterways Planning”, considere a proposição: Navigable Waterways Planning.\n( ) Sobre “Berths (including Anchorages and Floating Terminals)”, considere a proposição: Berths (including Anchorages and Floating Terminals).\n( ) Quanto a . Assinale a opção correta, é correto afirmar: Navigable Waterways Planning.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "D",
+          "text": "( F ) ( F ) ( V ) ( V )"
+        },
+        {
+          "key": "E",
+          "text": "( V ) ( V ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A sequência correta corresponde à alternativa E, conforme os conceitos reunidos em Anexo, subject area 9, publicação 9.1.4."
+    },
+    {
+      "id": "CGE-1163",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Direitos Humanos — DUDH",
+      "topic": "Artigo XXVIII",
+      "difficulty": "Difícil",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "udhr",
+        "chapter_id": "udhr::integral",
+        "topic_id": "VII-udhr-integral-cge-dh-dudh-artigo-xxviii-artigo-xxviii",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "conhecimentos-gerais",
+        "work": {
+          "id": "udhr",
+          "title": "ONU — Declaração Universal dos Direitos Humanos",
+          "author": "Organização das Nações Unidas (ONU)"
+        },
+        "chapter": {
+          "id": "udhr::integral",
+          "number": "integral",
+          "title": "Publicação indicada",
+          "label": "Publicação indicada"
+        },
+        "section": "Publicação indicada",
+        "module": "Direitos Humanos — DUDH",
+        "topic": {
+          "id": "VII-udhr-integral-cge-dh-dudh-artigo-xxviii-artigo-xxviii",
+          "title": "Artigo XXVIII"
+        }
+      },
+      "source": {
+        "author": "Organização das Nações Unidas (ONU)",
+        "title": "Declaração Universal dos Direitos Humanos",
+        "edition": "Edição UNIC Rio, março de 2025; texto adotado em 10 de dezembro de 1948",
+        "locator": "Artigo XXVIII"
+      },
+      "tags": [
+        "DUDH",
+        "Artigo XXVIII",
+        "CGE.DH.DUDH.ARTIGO_XXVIII",
+        "conhecimentos-gerais",
+        "udhr",
+        "udhr::integral",
+        "artigo-xxviii",
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "CGE-0986",
+          "CGE-0989",
+          "CGE-0992",
+          "CGE-0995",
+          "CGE-0998"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.INC.10006",
+      "question": "Considerando o conteúdo de “Declaração Universal dos Direitos Humanos” (Artigo XXVIII), assinale a alternativa INCORRETA:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sobre “Artigo XXVIII”, considere a proposição: Toda pessoa, vítima de perseguição, tem o direito de procurar e de gozar de asilo em outros países."
+        },
+        {
+          "key": "B",
+          "text": "Sobre “Artigo I”, considere a proposição: Todos os seres humanos nascem livres e iguais em dignidade e direitos."
+        },
+        {
+          "key": "C",
+          "text": "Sobre “Artigo XI”, considere a proposição: Também não será imposta pena mais forte do que aquela que, no momento da prática, seja aplicável ao ato delituoso."
+        },
+        {
+          "key": "D",
+          "text": "Sobre “Artigo XV”, considere a proposição: Todo ser humano tem direito a uma nacionalidade."
+        },
+        {
+          "key": "E",
+          "text": "Sobre “Artigo XXI”, considere a proposição: Esta vontade será expressa em eleições periódicas e legítimas, por sufrágio universal, por voto secreto ou processo equivalente que assegure a liberdade de voto."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A alternativa A é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+    },
+    {
+      "id": "CGE-1164",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Fatores Humanos — Fadiga",
+      "topic": "Module 2 — Fatigue and the company",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "fatigue",
+        "chapter_id": "fatigue::integral",
+        "topic_id": "VII-fatigue-integral-cge-fh-fat-m2-module-2-fatigue-and-the-company",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "conhecimentos-gerais",
+        "work": {
+          "id": "fatigue",
+          "title": "IMO MSC.1/Circ.1598 — Guidelines on Fatigue",
+          "author": "International Maritime Organization (IMO)"
+        },
+        "chapter": {
+          "id": "fatigue::integral",
+          "number": "integral",
+          "title": "Publicação indicada",
+          "label": "Publicação indicada"
+        },
+        "section": "Publicação indicada",
+        "module": "Fatores Humanos — Fadiga",
+        "topic": {
+          "id": "VII-fatigue-integral-cge-fh-fat-m2-module-2-fatigue-and-the-company",
+          "title": "Module 2 — Fatigue and the company"
+        }
+      },
+      "source": {
+        "author": "International Maritime Organization (IMO)",
+        "title": "Guidelines on Fatigue",
+        "edition": "MSC.1/Circ.1598, 24 January 2019",
+        "locator": "Annex, Module 2 — Fatigue and the company, paragraph 42"
+      },
+      "tags": [
+        "Fadiga",
+        "Module 2 — Fatigue and the company",
+        "CGE.FH.FAT.M2",
+        "conhecimentos-gerais",
+        "fatigue",
+        "fatigue::integral",
+        "module-2-fatigue-and-the-company",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "CGE-0532",
+          "CGE-0535",
+          "CGE-0538",
+          "CGE-0541"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.AST.10007",
+      "question": "De acordo com o contido em “Guidelines on Fatigue”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Module 2 — Fatigue and the company”, considere a proposição: However, there are a number of reasons why seafarers may not obtain adequate sleep.\nII) Sobre “Module 5 — Fatigue and ship design”, considere a proposição: At some stage, sleep must be obtained for physical and mental recovery to occur.\nIII) Sobre “Module 3 — Fatigue and the seafarer”, considere a proposição: Rest, apart from sleep, can be provided in the form of short breaks or changes in activities during the duty period.\nIV) Sobre “Module 1 — Fatigue”, considere a proposição: Ergonomic design is task-oriented: it takes into account differences that can be observed between the designed task and the way the task is actually performed.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A combinação correta é a alternativa B. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Annex, Module 2 — Fatigue and the company, paragraph 42."
+    },
+    {
+      "id": "CGE-1165",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Planejamento Portuário — Vias de acesso",
+      "topic": "Alterações na massa específica da água",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "conapra-port",
+        "chapter_id": "conapra-port::ch2",
+        "topic_id": "VII-conapra-port-ch2-cge-pp-via-2-3-1-2-3-2-alteracoes-na-massa-especifica-da-agua",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "conhecimentos-gerais",
+        "work": {
+          "id": "conapra-port",
+          "title": "CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos",
+          "author": "Conselho Nacional de Praticagem (CONAPRA)"
+        },
+        "chapter": {
+          "id": "conapra-port::ch2",
+          "number": "ch2",
+          "title": "Capítulo 2 – Vias de Acesso a Instalações Portuárias",
+          "label": "Capítulo 2 – Vias de Acesso a Instalações Portuárias"
+        },
+        "section": "Capítulo 2 – Vias de Acesso a Instalações Portuárias",
+        "module": "Planejamento Portuário — Vias de acesso",
+        "topic": {
+          "id": "VII-conapra-port-ch2-cge-pp-via-2-3-1-2-3-2-alteracoes-na-massa-especifica-da-agua",
+          "title": "Alterações na massa específica da água"
+        }
+      },
+      "source": {
+        "author": "Conselho Nacional de Praticagem (CONAPRA)",
+        "title": "Planejamento Portuário: Recomendações para Acessos Náuticos",
+        "edition": "1ª edição, 2022",
+        "locator": "Capítulo 2, seção 2.3.1.2.3.2 — Alterações na massa específica da água"
+      },
+      "tags": [
+        "Vias de acesso",
+        "Alterações na massa específica da água",
+        "CGE.PP.VIA.2_3_1_2_3_2",
+        "conhecimentos-gerais",
+        "conapra-port",
+        "conapra-port::ch2",
+        "alteracoes-na-massa-especifica-da-agua",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "CGE-0220",
+          "CGE-0223",
+          "CGE-0226",
+          "CGE-0229"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.VF.10008",
+      "question": "Com base em “Planejamento Portuário: Recomendações para Acessos Náuticos”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Alterações na massa específica da água”, considere a proposição: O tempo necessário para amarrar os rebocadores (B-C, na Figura 2.9.) depende da habilidade da tripulação e das condições ambientais.\n( ) Sobre “Tolerância para a resposta às ondas”, considere a proposição: Para um dado período de onda, a celeridade da onda é menor em águas rasas do que em águas profundas.\n( ) Sobre “Projeto Conceitual para seções retas de um canal (Pianc 121, 2014, item 3.1.5.)”, considere a proposição: Nos casos de elevações apreciáveis de maré ou de canais longos, influenciados pela maré, a tomada de decisão para fazer uso do canal deve decorrer da observação do ciclo de maré.\n( ) Sobre “Largura de passagem para canais com duas faixas de navegação (𝑊𝑊2)”, considere a proposição: Para casos de ultrapassagem, os valores apresentados devem ser aumentados e devem ser determinados por meio de Projeto Detalhado.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "D",
+          "text": "( F ) ( F ) ( V ) ( V )"
+        },
+        {
+          "key": "E",
+          "text": "( V ) ( V ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A sequência correta corresponde à alternativa C, conforme os conceitos reunidos em Capítulo 2, seção 2.3.1.2.3.2 — Alterações na massa específica da água."
+    },
+    {
+      "id": "CGE-1166",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Meio Ambiente — MARPOL 73/78",
+      "topic": "Anexo II — Regra 9",
+      "difficulty": "Difícil",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "marpol",
+        "chapter_id": "marpol::integral",
+        "topic_id": "VII-marpol-integral-cge-ma-marpol-anexo-ii-regra-9-anexo-ii-regra-9",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "conhecimentos-gerais",
+        "work": {
+          "id": "marpol",
+          "title": "Decreto nº 2.508/1998 — MARPOL 73/78",
+          "author": "Brasil; International Maritime Organization (IMO)"
+        },
+        "chapter": {
+          "id": "marpol::integral",
+          "number": "integral",
+          "title": "Publicação indicada",
+          "label": "Publicação indicada"
+        },
+        "section": "Publicação indicada",
+        "module": "Meio Ambiente — MARPOL 73/78",
+        "topic": {
+          "id": "VII-marpol-integral-cge-ma-marpol-anexo-ii-regra-9-anexo-ii-regra-9",
+          "title": "Anexo II — Regra 9"
+        }
+      },
+      "source": {
+        "author": "Brasil; International Maritime Organization (IMO)",
+        "title": "Decreto nº 2.508/1998 — MARPOL 73/78",
+        "edition": "Decreto de 4 de março de 1998, texto promulgado no Brasil",
+        "locator": "Anexo II, Regra 9"
+      },
+      "tags": [
+        "MARPOL 73/78",
+        "Anexo II — Regra 9",
+        "CGE.MA.MARPOL.ANEXO_II.REGRA_9",
+        "conhecimentos-gerais",
+        "marpol",
+        "marpol::integral",
+        "anexo-ii-regra-9",
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "CGE-0913",
+          "CGE-0916",
+          "CGE-0919",
+          "CGE-0922",
+          "CGE-0925"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.INC.10009",
+      "question": "Considerando o conteúdo de “Decreto nº 2.508/1998 — MARPOL 73/78” (Anexo II, Regra 9), assinale a alternativa INCORRETA:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sobre “Anexo II — Regra 9”, considere a proposição: A inspeção de um Livro de Registro de Carga e a retirada de uma cópia certificada, pela autoridade competente de acordo com este parágrafo será feita tão prontamente quanto possível, a fim de não atrasar excessivamente o navio."
+        },
+        {
+          "key": "B",
+          "text": "Sobre “Convenção de 1973 — Artigo 16”, considere a proposição: A menos que a Conferência decida de outro modo, a emenda será considerada como tendo sido aceita, devendo entrar em vigor de acordo com os procedimentos especificados para esse fim nas alíneas 2 (f) e (g) do presente artigo."
+        },
+        {
+          "key": "C",
+          "text": "Sobre “Anexo I — Regra 12”, considere a proposição: A quantidade total de água e óleo usada para a lavagem e recolhida em seguida a um tanque de armazenagem será registrada no Livro de Registro de Óleo."
+        },
+        {
+          "key": "D",
+          "text": "Sobre “Anexo II — Regra 4”, considere a proposição: Processos de ventilação, aprovados pela Administração, podem ser utilizados para remover os resíduos de carga de um tanque."
+        },
+        {
+          "key": "E",
+          "text": "Sobre “Convenção de 1973 — Artigo 2”, considere a proposição: Com relação a um navio autorizado a arvorar a bandeira de um Estado, a Administração é o Governo desse Estado."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A alternativa D é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+    },
+    {
+      "id": "CGE-1167",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Planejamento Portuário — Análise de risco",
+      "topic": "Áreas de embarque e desembarque",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "conapra-port",
+        "chapter_id": "conapra-port::ch8",
+        "topic_id": "VII-conapra-port-ch8-cge-pp-ris-8-2-5-5-5-areas-de-embarque-e-desembarque",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "conhecimentos-gerais",
+        "work": {
+          "id": "conapra-port",
+          "title": "CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos",
+          "author": "Conselho Nacional de Praticagem (CONAPRA)"
+        },
+        "chapter": {
+          "id": "conapra-port::ch8",
+          "number": "ch8",
+          "title": "Capítulo 8 – Análise de Risco e Planejamento Portuário",
+          "label": "Capítulo 8 – Análise de Risco e Planejamento Portuário"
+        },
+        "section": "Capítulo 8 – Análise de Risco e Planejamento Portuário",
+        "module": "Planejamento Portuário — Análise de risco",
+        "topic": {
+          "id": "VII-conapra-port-ch8-cge-pp-ris-8-2-5-5-5-areas-de-embarque-e-desembarque",
+          "title": "Áreas de embarque e desembarque"
+        }
+      },
+      "source": {
+        "author": "Conselho Nacional de Praticagem (CONAPRA)",
+        "title": "Planejamento Portuário: Recomendações para Acessos Náuticos",
+        "edition": "1ª edição, 2022",
+        "locator": "Capítulo 8, seção 8.2.5.5.5 — Áreas de embarque e desembarque"
+      },
+      "tags": [
+        "Análise de risco",
+        "Áreas de embarque e desembarque",
+        "CGE.PP.RIS.8_2_5_5_5",
+        "conhecimentos-gerais",
+        "conapra-port",
+        "conapra-port::ch8",
+        "areas-de-embarque-e-desembarque",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "CGE-0357",
+          "CGE-0360",
+          "CGE-0363",
+          "CGE-0366"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.AST.10010",
+      "question": "De acordo com o contido em “Planejamento Portuário: Recomendações para Acessos Náuticos”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Áreas de embarque e desembarque”, considere a proposição: Recomenda-se que análises de risco específicas sejam realizadas levando em consideração o tempo necessário para embarque e desembarque do prático e para sua troca de informações com o comandante do navio.\nII) Sobre “Análise qualitativa de risco”, considere a proposição: Para subsidiar a eventual seleção de técnicas, pode-se aplicar essa mesma norma, que discute a seleção de técnicas para cada fase do processo de avaliação de risco.\nIII) Sobre “Preparação para a análise”, considere a proposição: Os objetivos operacionais e requisitos básicos de operação também podem ajudar a definir ou identificar os eventos de perigo e o ambiente operacional.\nIV) Sobre “Análise quantitativa de risco”, considere a proposição: Descrições mais exaustivas podem ser encontradas na norma NBR ISO 31010:2012 (ABNT, 2012).",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A combinação correta é a alternativa E. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Capítulo 8, seção 8.2.5.5.5 — Áreas de embarque e desembarque."
+    },
+    {
+      "id": "CGE-1168",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Planejamento Portuário — FDAQ",
+      "topic": "Parecer da autoridade marítima",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "normam224",
+        "chapter_id": "normam224::integral",
+        "topic_id": "VII-normam224-integral-cge-pp-fdaq-3-1-parecer-da-autoridade-maritima",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "conhecimentos-gerais",
+        "work": {
+          "id": "normam224",
+          "title": "NORMAM-224/DPC — Folga Dinâmica Abaixo da Quilha",
+          "author": "Marinha do Brasil — Diretoria de Portos e Costas"
+        },
+        "chapter": {
+          "id": "normam224::integral",
+          "number": "integral",
+          "title": "Publicação indicada",
+          "label": "Publicação indicada"
+        },
+        "section": "Publicação indicada",
+        "module": "Planejamento Portuário — FDAQ",
+        "topic": {
+          "id": "VII-normam224-integral-cge-pp-fdaq-3-1-parecer-da-autoridade-maritima",
+          "title": "Parecer da autoridade marítima"
+        }
+      },
+      "source": {
+        "author": "Marinha do Brasil — Diretoria de Portos e Costas",
+        "title": "NORMAM-224/DPC — Norma da Autoridade Marítima para Folga Dinâmica Abaixo da Quilha",
+        "edition": "Edição 2023",
+        "locator": "seção 3.1 — Parecer da autoridade marítima"
+      },
+      "tags": [
+        "FDAQ",
+        "Parecer da autoridade marítima",
+        "CGE.PP.FDAQ.3_1",
+        "conhecimentos-gerais",
+        "normam224",
+        "normam224::integral",
+        "parecer-da-autoridade-maritima",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "CGE-0445",
+          "CGE-0448",
+          "CGE-0451",
+          "CGE-1024"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.VF.10011",
+      "question": "Com base em “NORMAM-224/DPC — Norma da Autoridade Marítima para Folga Dinâmica Abaixo da Quilha”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Parecer da autoridade marítima”, considere a proposição: Auxiliar o Serviço de Praticagem e as CP/DL/AG nos casos em que seja necessário estabelecer a impraticabilidade da barra ou impedir o tráfego dos navios em condições severas do estado do mar.\n( ) Sobre “Atribuições”, considere a proposição: Dessa forma é possível estabelecer um CMR dinâmico, ao invés de um valor fixo, para cada navio.\n( ) Sobre “Definições importantes para efeito desta norma”, considere a proposição: A NORMAM-224/DPC decorre do que estabelece a Lei nº 9.537/1997, que dispõe sobre a segurança do tráfego aquaviário - LESTA, e do Decreto nº 2.596/1998 - RLESTA, que a regulamenta.\n( ) Sobre “Margem de Manobrabilidade mínima”, considere a proposição: A soma de 0,60 m com 5% do calado.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "D",
+          "text": "( F ) ( F ) ( V ) ( V )"
+        },
+        {
+          "key": "E",
+          "text": "( V ) ( V ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A sequência correta corresponde à alternativa A, conforme os conceitos reunidos em seção 3.1 — Parecer da autoridade marítima."
+    },
+    {
+      "id": "CGE-1169",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Planejamento Portuário — Interface navio/porto",
+      "topic": "Inspection of Ships",
+      "difficulty": "Difícil",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "fal6",
+        "chapter_id": "fal6::integral",
+        "topic_id": "VII-fal6-integral-cge-pp-fal-09-inspection-of-ships",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "conhecimentos-gerais",
+        "work": {
+          "id": "fal6",
+          "title": "IMO FAL.6/Circ.14/Rev.2 — Ship/Port Interface",
+          "author": "International Maritime Organization (IMO)"
+        },
+        "chapter": {
+          "id": "fal6::integral",
+          "number": "integral",
+          "title": "Publicação indicada",
+          "label": "Publicação indicada"
+        },
+        "section": "Publicação indicada",
+        "module": "Planejamento Portuário — Interface navio/porto",
+        "topic": {
+          "id": "VII-fal6-integral-cge-pp-fal-09-inspection-of-ships",
+          "title": "Inspection of Ships"
+        }
+      },
+      "source": {
+        "author": "International Maritime Organization (IMO)",
+        "title": "Ship/port interface: list of publications relevant to the ship/port interface",
+        "edition": "FAL.6/Circ.14/Rev.2, 2 April 2025",
+        "locator": "Anexo, subject area 9, publicação 9.1.4"
+      },
+      "tags": [
+        "interface navio/porto",
+        "publicações IMO",
+        "Inspection of Ships",
+        "conhecimentos-gerais",
+        "fal6",
+        "fal6::integral",
+        "inspection-of-ships",
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "CGE-0070",
+          "CGE-0074",
+          "CGE-0077",
+          "CGE-0082",
+          "CGE-0087"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.INC.10012",
+      "question": "Considerando o conteúdo de “Ship/port interface: list of publications relevant to the ship/port interface” (Anexo, subject area 9, publicação 9.1.4), assinale a alternativa INCORRETA:",
+      "options": [
+        {
+          "key": "A",
+          "text": "No contexto de “Inspection of Ships”, a associação “Inspection of Ships” é tecnicamente aplicável."
+        },
+        {
+          "key": "B",
+          "text": "No contexto de “Navigable Waterways Planning”, a associação “Contingency Planning” é tecnicamente aplicável."
+        },
+        {
+          "key": "C",
+          "text": "Sobre “Berths (including Anchorages and Floating Terminals)”, considere a proposição: Berths (including Anchorages and Floating Terminals)."
+        },
+        {
+          "key": "D",
+          "text": "Quanto a . Assinale a opção correta, é correto afirmar: Navigable Waterways Planning."
+        },
+        {
+          "key": "E",
+          "text": "No contexto de “Navigation”, a associação “Navigation” é tecnicamente aplicável."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A alternativa B é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+    },
+    {
+      "id": "CGE-1170",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Direitos Humanos — DUDH",
+      "topic": "Artigo XVII",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "udhr",
+        "chapter_id": "udhr::integral",
+        "topic_id": "VII-udhr-integral-cge-dh-dudh-artigo-xvii-artigo-xvii",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "conhecimentos-gerais",
+        "work": {
+          "id": "udhr",
+          "title": "ONU — Declaração Universal dos Direitos Humanos",
+          "author": "Organização das Nações Unidas (ONU)"
+        },
+        "chapter": {
+          "id": "udhr::integral",
+          "number": "integral",
+          "title": "Publicação indicada",
+          "label": "Publicação indicada"
+        },
+        "section": "Publicação indicada",
+        "module": "Direitos Humanos — DUDH",
+        "topic": {
+          "id": "VII-udhr-integral-cge-dh-dudh-artigo-xvii-artigo-xvii",
+          "title": "Artigo XVII"
+        }
+      },
+      "source": {
+        "author": "Organização das Nações Unidas (ONU)",
+        "title": "Declaração Universal dos Direitos Humanos",
+        "edition": "Edição UNIC Rio, março de 2025; texto adotado em 10 de dezembro de 1948",
+        "locator": "Artigo XVII"
+      },
+      "tags": [
+        "DUDH",
+        "Artigo XVII",
+        "CGE.DH.DUDH.ARTIGO_XVII",
+        "conhecimentos-gerais",
+        "udhr",
+        "udhr::integral",
+        "artigo-xvii",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "CGE-0997",
+          "CGE-1000",
+          "CGE-0963",
+          "CGE-0966"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.AST.10013",
+      "question": "De acordo com o contido em “Declaração Universal dos Direitos Humanos”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Artigo XVII”, considere a proposição: Todos os seres humanos nascem livres e iguais em dignidade e direitos.\nII) Sobre “Artigo XXV”, considere a proposição: Todas as crianças, nascidas dentro ou fora do matrimônio, gozarão da mesma proteção social.\nIII) Sobre “Artigo III”, considere a proposição: Todas as pessoas em maioridade, sem qualquer restrição de raça, nacionalidade ou religião, têm o direito de contrair o matrimônio e fundar uma família.\nIV) Sobre “Artigo VI”, considere a proposição: Todo ser humano tem o direito de ser, em todos os lugares, reconhecido como pessoa perante a lei.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A combinação correta é a alternativa C. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Artigo XVII."
+    },
+    {
+      "id": "CGE-1171",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Fatores Humanos — Fadiga",
+      "topic": "Module 5 — Fatigue and ship design",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "fatigue",
+        "chapter_id": "fatigue::integral",
+        "topic_id": "VII-fatigue-integral-cge-fh-fat-m5-module-5-fatigue-and-ship-design",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "conhecimentos-gerais",
+        "work": {
+          "id": "fatigue",
+          "title": "IMO MSC.1/Circ.1598 — Guidelines on Fatigue",
+          "author": "International Maritime Organization (IMO)"
+        },
+        "chapter": {
+          "id": "fatigue::integral",
+          "number": "integral",
+          "title": "Publicação indicada",
+          "label": "Publicação indicada"
+        },
+        "section": "Publicação indicada",
+        "module": "Fatores Humanos — Fadiga",
+        "topic": {
+          "id": "VII-fatigue-integral-cge-fh-fat-m5-module-5-fatigue-and-ship-design",
+          "title": "Module 5 — Fatigue and ship design"
+        }
+      },
+      "source": {
+        "author": "International Maritime Organization (IMO)",
+        "title": "Guidelines on Fatigue",
+        "edition": "MSC.1/Circ.1598, 24 January 2019",
+        "locator": "Annex, Module 5 — Fatigue and ship design, paragraph 30"
+      },
+      "tags": [
+        "Fadiga",
+        "Module 5 — Fatigue and ship design",
+        "CGE.FH.FAT.M5",
+        "conhecimentos-gerais",
+        "fatigue",
+        "fatigue::integral",
+        "module-5-fatigue-and-ship-design",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "CGE-0623",
+          "CGE-0626",
+          "CGE-0629",
+          "CGE-0632"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.VF.10014",
+      "question": "Com base em “Guidelines on Fatigue”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Module 5 — Fatigue and ship design”, considere a proposição: Mixing tasks requiring high physical or mental work with low-demand tasks can be beneficial.\n( ) Sobre “Module 3 — Fatigue and the seafarer”, considere a proposição: The company should ensure all personnel have appropriate training.\n( ) Sobre “Module 2 — Fatigue and the company”, considere a proposição: Healthy sleep: the shipboard sleeping environment should provide for comfortable and good quality sleep (bedding, pillows, mattresses, adequate light management, etc.).\n( ) Sobre “Module 1 — Fatigue”, considere a proposição: During the first hours awake, the urge to sleep may go unnoticed, but as the amount of continuous wakefulness approaches 16 hours, awareness of the pressure to sleep is highly likely.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "D",
+          "text": "( F ) ( F ) ( V ) ( V )"
+        },
+        {
+          "key": "E",
+          "text": "( V ) ( V ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A sequência correta corresponde à alternativa D, conforme os conceitos reunidos em Annex, Module 5 — Fatigue and ship design, paragraph 30."
+    },
+    {
+      "id": "CGE-1172",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Planejamento Portuário — Vias de acesso",
+      "topic": "Tolerância para incertezas no calado estático",
+      "difficulty": "Difícil",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "conapra-port",
+        "chapter_id": "conapra-port::ch2",
+        "topic_id": "VII-conapra-port-ch2-cge-pp-via-2-3-1-2-3-1-tolerancia-para-incertezas-no-calado-estatico",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "conhecimentos-gerais",
+        "work": {
+          "id": "conapra-port",
+          "title": "CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos",
+          "author": "Conselho Nacional de Praticagem (CONAPRA)"
+        },
+        "chapter": {
+          "id": "conapra-port::ch2",
+          "number": "ch2",
+          "title": "Capítulo 2 – Vias de Acesso a Instalações Portuárias",
+          "label": "Capítulo 2 – Vias de Acesso a Instalações Portuárias"
+        },
+        "section": "Capítulo 2 – Vias de Acesso a Instalações Portuárias",
+        "module": "Planejamento Portuário — Vias de acesso",
+        "topic": {
+          "id": "VII-conapra-port-ch2-cge-pp-via-2-3-1-2-3-1-tolerancia-para-incertezas-no-calado-estatico",
+          "title": "Tolerância para incertezas no calado estático"
+        }
+      },
+      "source": {
+        "author": "Conselho Nacional de Praticagem (CONAPRA)",
+        "title": "Planejamento Portuário: Recomendações para Acessos Náuticos",
+        "edition": "1ª edição, 2022",
+        "locator": "Capítulo 2, seção 2.3.1.2.3.1 — Tolerância para incertezas no calado estático"
+      },
+      "tags": [
+        "Vias de acesso",
+        "Tolerância para incertezas no calado estático",
+        "CGE.PP.VIA.2_3_1_2_3_1",
+        "conhecimentos-gerais",
+        "conapra-port",
+        "conapra-port::ch2",
+        "tolerancia-para-incertezas-no-calado-estatico",
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "CGE-0311",
+          "CGE-0314",
+          "CGE-0317",
+          "CGE-0320",
+          "CGE-0323"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.INC.10015",
+      "question": "Considerando o conteúdo de “Planejamento Portuário: Recomendações para Acessos Náuticos” (Capítulo 2, seção 2.3.1.2.3.1 — Tolerância para incertezas no calado estático), assinale a alternativa INCORRETA:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sobre “Tolerância para incertezas no calado estático”, considere a proposição: Se o navio não estiver em águas parelhas, o calado máximo na proa ou na popa deve ser o empregado."
+        },
+        {
+          "key": "B",
+          "text": "Sobre “Fatores relacionados ao fundo (Pianc 121, 2014, p. 34)”, considere a proposição: A tolerância de dragagem destaca-se das demais por se tratar de um subsídio para as imprecisões da atividade de dragagem propriamente dita que não pode ser caracterizada por uma fórmula geral."
+        },
+        {
+          "key": "C",
+          "text": "Sobre “Configuração das curvas”, considere a proposição: Se duas curvas virarem na mesma direção, a distância entre elas deve ser superior a três comprimentos do maior navio de projeto, conforme Figura 8."
+        },
+        {
+          "key": "D",
+          "text": "Sobre “Bacia de evolução e os navios de projeto”, considere a proposição: Por exemplo, um navio de projeto com maior comprimento pode girar, na condição de calado leve ou intermediário, em uma dada área de evolução, em uma bacia com maior diâmetro e menor profundidade."
+        },
+        {
+          "key": "E",
+          "text": "Sobre “Força devida à massa adicional para a condição puxar-empurrar”, considere a proposição: Wci = 2Bmax + Lr + 20m Wci = 3Bmax + Lr em que Wci é a largura do canal interno, expressa em metros (m)."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A alternativa E é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+    },
+    {
+      "id": "CGE-1173",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Meio Ambiente — MARPOL 73/78",
+      "topic": "Anexo IV — Regra 1",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "marpol",
+        "chapter_id": "marpol::integral",
+        "topic_id": "VII-marpol-integral-cge-ma-marpol-anexo-iv-regra-1-anexo-iv-regra-1",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "conhecimentos-gerais",
+        "work": {
+          "id": "marpol",
+          "title": "Decreto nº 2.508/1998 — MARPOL 73/78",
+          "author": "Brasil; International Maritime Organization (IMO)"
+        },
+        "chapter": {
+          "id": "marpol::integral",
+          "number": "integral",
+          "title": "Publicação indicada",
+          "label": "Publicação indicada"
+        },
+        "section": "Publicação indicada",
+        "module": "Meio Ambiente — MARPOL 73/78",
+        "topic": {
+          "id": "VII-marpol-integral-cge-ma-marpol-anexo-iv-regra-1-anexo-iv-regra-1",
+          "title": "Anexo IV — Regra 1"
+        }
+      },
+      "source": {
+        "author": "Brasil; International Maritime Organization (IMO)",
+        "title": "Decreto nº 2.508/1998 — MARPOL 73/78",
+        "edition": "Decreto de 4 de março de 1998, texto promulgado no Brasil",
+        "locator": "Anexo IV, Regra 1"
+      },
+      "tags": [
+        "MARPOL 73/78",
+        "Anexo IV — Regra 1",
+        "CGE.MA.MARPOL.ANEXO_IV.REGRA_1",
+        "conhecimentos-gerais",
+        "marpol",
+        "marpol::integral",
+        "anexo-iv-regra-1",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "CGE-0851",
+          "CGE-0854",
+          "CGE-0857",
+          "CGE-0860"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.AST.10016",
+      "question": "De acordo com o contido em “Decreto nº 2.508/1998 — MARPOL 73/78”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Anexo IV — Regra 1”, considere a proposição: \"Navio não existente\" significa um navio que não é novo.\nII) Sobre “Convenção de 1973 — Artigo 6”, considere a proposição: Se a Administração estiver convicta de que dispõe de provas suficientes que permitam a abertura de um processo a respeito da alegada violação, deverá fazê-lo o mais cedo possível, de acordo com suas leis.\nIII) Sobre “Convenção de 1973 — Artigo 20”, considere a proposição: Tal Certificado será emitido pela Administração ou por pessoas ou organização por ele devidamente autorizadas.\nIV) Sobre “Protocolo II — Artigo VI”, considere a proposição: Para os propósitos da presente Convenção, salvo se for expressamente estipulado de outra maneira.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A combinação correta é a alternativa A. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Anexo IV, Regra 1."
+    },
+    {
+      "id": "CGE-1174",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Planejamento Portuário — Análise de risco",
+      "topic": "Treinamentos específicos",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "conapra-port",
+        "chapter_id": "conapra-port::ch8",
+        "topic_id": "VII-conapra-port-ch8-cge-pp-ris-8-2-5-6-treinamentos-especificos",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "conhecimentos-gerais",
+        "work": {
+          "id": "conapra-port",
+          "title": "CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos",
+          "author": "Conselho Nacional de Praticagem (CONAPRA)"
+        },
+        "chapter": {
+          "id": "conapra-port::ch8",
+          "number": "ch8",
+          "title": "Capítulo 8 – Análise de Risco e Planejamento Portuário",
+          "label": "Capítulo 8 – Análise de Risco e Planejamento Portuário"
+        },
+        "section": "Capítulo 8 – Análise de Risco e Planejamento Portuário",
+        "module": "Planejamento Portuário — Análise de risco",
+        "topic": {
+          "id": "VII-conapra-port-ch8-cge-pp-ris-8-2-5-6-treinamentos-especificos",
+          "title": "Treinamentos específicos"
+        }
+      },
+      "source": {
+        "author": "Conselho Nacional de Praticagem (CONAPRA)",
+        "title": "Planejamento Portuário: Recomendações para Acessos Náuticos",
+        "edition": "1ª edição, 2022",
+        "locator": "Capítulo 8, seção 8.2.5.6 — Treinamentos específicos"
+      },
+      "tags": [
+        "Análise de risco",
+        "Treinamentos específicos",
+        "CGE.PP.RIS.8_2_5_6",
+        "conhecimentos-gerais",
+        "conapra-port",
+        "conapra-port::ch8",
+        "treinamentos-especificos",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "CGE-0358",
+          "CGE-0361",
+          "CGE-0364",
+          "CGE-0367"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.VF.10017",
+      "question": "Com base em “Planejamento Portuário: Recomendações para Acessos Náuticos”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Treinamentos específicos”, considere a proposição: A maioria dos acidentes aquaviários é causada por erros humanos.\n( ) Sobre “Preliminary hazard analysis (PHA)”, considere a proposição: Pouco provável: quando é provável que o evento ocorra uma vez durante a vida útil de um conjunto de plantas portuárias semelhantes àquela em estudo.\n( ) Sobre “Realização da análise”, considere a proposição: Para cada parte do sistema, os analistas identificam os perigos e avaliam possíveis causas e efeitos dos incidentes potenciais envolvendo esses perigos.\n( ) Sobre “Identificação de perigos”, considere a proposição: A possibilidade de operar em condições em que apenas um dos limites seja excedido é limitada aos casos em que um estudo detalhado tenha sido conduzido para o local específico (e que tenha indicado essa possibilidade).",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "D",
+          "text": "( F ) ( F ) ( V ) ( V )"
+        },
+        {
+          "key": "E",
+          "text": "( V ) ( V ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A sequência correta corresponde à alternativa B, conforme os conceitos reunidos em Capítulo 8, seção 8.2.5.6 — Treinamentos específicos."
+    },
+    {
+      "id": "CGE-1175",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Planejamento Portuário — FDAQ",
+      "topic": "Definições importantes para efeito desta norma",
+      "difficulty": "Difícil",
+      "style": "Assinale a incorreta",
+      "question_type": "Assinale a incorreta",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "normam224",
+        "chapter_id": "normam224::integral",
+        "topic_id": "VII-normam224-integral-cge-pp-fdaq-1-2-definicoes-importantes-para-efeito-desta-norma",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "conhecimentos-gerais",
+        "work": {
+          "id": "normam224",
+          "title": "NORMAM-224/DPC — Folga Dinâmica Abaixo da Quilha",
+          "author": "Marinha do Brasil — Diretoria de Portos e Costas"
+        },
+        "chapter": {
+          "id": "normam224::integral",
+          "number": "integral",
+          "title": "Publicação indicada",
+          "label": "Publicação indicada"
+        },
+        "section": "Publicação indicada",
+        "module": "Planejamento Portuário — FDAQ",
+        "topic": {
+          "id": "VII-normam224-integral-cge-pp-fdaq-1-2-definicoes-importantes-para-efeito-desta-norma",
+          "title": "Definições importantes para efeito desta norma"
+        }
+      },
+      "source": {
+        "author": "Marinha do Brasil — Diretoria de Portos e Costas",
+        "title": "NORMAM-224/DPC — Norma da Autoridade Marítima para Folga Dinâmica Abaixo da Quilha",
+        "edition": "Edição 2023",
+        "locator": "seção 1.2 — Definições importantes para efeito desta norma"
+      },
+      "tags": [
+        "FDAQ",
+        "Definições importantes para efeito desta norma",
+        "CGE.PP.FDAQ.1_2",
+        "conhecimentos-gerais",
+        "normam224",
+        "normam224::integral",
+        "definicoes-importantes-para-efeito-desta-norma",
+        "pscpp-style-v4",
+        "formato-pscpp-incorreta-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "CGE-0431",
+          "CGE-0434",
+          "CGE-0437",
+          "CGE-0440",
+          "CGE-0443"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.INC.10018",
+      "question": "Considerando o conteúdo de “NORMAM-224/DPC — Norma da Autoridade Marítima para Folga Dinâmica Abaixo da Quilha” (seção 1.2 — Definições importantes para efeito desta norma), assinale a alternativa INCORRETA:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sobre “Definições importantes para efeito desta norma”, considere a proposição: Habilitação: titulação recebida após um processo de capacitação que confere as prerrogativas e responsabilidades inerentes ao exercício de uma profissão e ao provimento de um cargo, função ou incumbência."
+        },
+        {
+          "key": "B",
+          "text": "Sobre “Realização de corridas de avaliação e testes”, considere a proposição: O número de corridas necessárias e o seu período de realização são programados de acordo com a disponibilidade dos navios-tipo no porto para embarque dos sensores e ainda considerando, entre outros, os seguintes aspectos."
+        },
+        {
+          "key": "C",
+          "text": "Sobre “Definições importantes para efeito desta norma”, considere a proposição: O número de corridas necessárias e o seu período de realização são programados de acordo com a disponibilidade dos navios-tipo no porto para embarque dos sensores e ainda considerando, entre outros, os seguintes aspectos."
+        },
+        {
+          "key": "D",
+          "text": "Sobre “Realização de corridas de avaliação e testes”, considere a proposição: Deve ser apresentado à CP/DL/AG relatório específico descrevendo os testes realizados bem como os resultados obtidos."
+        },
+        {
+          "key": "E",
+          "text": "Sobre “Definições importantes para efeito desta norma”, considere a proposição: Para todos os efeitos a FAQ bruta não pode ser menor que a MM."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A alternativa C é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+    },
+    {
+      "id": "CGE-1176",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Planejamento Portuário — Interface navio/porto",
+      "topic": "Inspection of Ships",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–IV",
+      "question_type": "Assertivas I–IV",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "fal6",
+        "chapter_id": "fal6::integral",
+        "topic_id": "VII-fal6-integral-cge-pp-fal-09-inspection-of-ships",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "conhecimentos-gerais",
+        "work": {
+          "id": "fal6",
+          "title": "IMO FAL.6/Circ.14/Rev.2 — Ship/Port Interface",
+          "author": "International Maritime Organization (IMO)"
+        },
+        "chapter": {
+          "id": "fal6::integral",
+          "number": "integral",
+          "title": "Publicação indicada",
+          "label": "Publicação indicada"
+        },
+        "section": "Publicação indicada",
+        "module": "Planejamento Portuário — Interface navio/porto",
+        "topic": {
+          "id": "VII-fal6-integral-cge-pp-fal-09-inspection-of-ships",
+          "title": "Inspection of Ships"
+        }
+      },
+      "source": {
+        "author": "International Maritime Organization (IMO)",
+        "title": "Ship/port interface: list of publications relevant to the ship/port interface",
+        "edition": "FAL.6/Circ.14/Rev.2, 2 April 2025",
+        "locator": "Anexo, subject area 9, publicação 9.1.4"
+      },
+      "tags": [
+        "interface navio/porto",
+        "publicações IMO",
+        "Inspection of Ships",
+        "conhecimentos-gerais",
+        "fal6",
+        "fal6::integral",
+        "inspection-of-ships",
+        "pscpp-style-v4",
+        "formato-pscpp-assertivas-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "CGE-0070",
+          "CGE-0074",
+          "CGE-0077",
+          "CGE-0082"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.AST.10019",
+      "question": "De acordo com o contido em “Ship/port interface: list of publications relevant to the ship/port interface”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Inspection of Ships”, considere a proposição: Berths (including Anchorages and Floating Terminals).\nII) Sobre “Navigable Waterways Planning”, considere a proposição: Cargo and Passenger Handling at Ship/Shore Interface.\nIII) Sobre “Berths (including Anchorages and Floating Terminals)”, considere a proposição: Berths (including Anchorages and Floating Terminals).\nIV) Quanto a . Assinale a opção correta, é correto afirmar: Navigable Waterways Planning.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A combinação correta é a alternativa D. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Anexo, subject area 9, publicação 9.1.4."
+    },
+    {
+      "id": "CGE-1177",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Direitos Humanos — DUDH",
+      "topic": "Artigo VIII",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F",
+      "question_type": "Sequência V/F",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "udhr",
+        "chapter_id": "udhr::integral",
+        "topic_id": "VII-udhr-integral-cge-dh-dudh-artigo-viii-artigo-viii",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "conhecimentos-gerais",
+        "work": {
+          "id": "udhr",
+          "title": "ONU — Declaração Universal dos Direitos Humanos",
+          "author": "Organização das Nações Unidas (ONU)"
+        },
+        "chapter": {
+          "id": "udhr::integral",
+          "number": "integral",
+          "title": "Publicação indicada",
+          "label": "Publicação indicada"
+        },
+        "section": "Publicação indicada",
+        "module": "Direitos Humanos — DUDH",
+        "topic": {
+          "id": "VII-udhr-integral-cge-dh-dudh-artigo-viii-artigo-viii",
+          "title": "Artigo VIII"
+        }
+      },
+      "source": {
+        "author": "Organização das Nações Unidas (ONU)",
+        "title": "Declaração Universal dos Direitos Humanos",
+        "edition": "Edição UNIC Rio, março de 2025; texto adotado em 10 de dezembro de 1948",
+        "locator": "Artigo VIII"
+      },
+      "tags": [
+        "DUDH",
+        "Artigo VIII",
+        "CGE.DH.DUDH.ARTIGO_VIII",
+        "conhecimentos-gerais",
+        "udhr",
+        "udhr::integral",
+        "artigo-viii",
+        "pscpp-style-v4",
+        "formato-pscpp-vf-v4"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v4",
+        "derived_from_question_ids": [
+          "CGE-0968",
+          "CGE-0971",
+          "CGE-0974",
+          "CGE-0977"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V4.VF.10020",
+      "question": "Com base em “Declaração Universal dos Direitos Humanos”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Artigo VIII”, considere a proposição: Toda pessoa tem direito a receber dos tribunais nacionais competentes recurso efetivo para os atos que violem os direitos fundamentais que lhe sejam reconhecidos pela constituição ou pela lei.\n( ) Sobre “Artigo XII”, considere a proposição: Todo ser humano tem direito à proteção da lei contra tais interferências ou ataques.\n( ) Sobre “Artigo XV”, considere a proposição: Ninguém será arbitrariamente privado de sua nacionalidade, nem do direito de mudar de nacionalidade.\n( ) Sobre “Artigo XVIII”, considere a proposição: Este direito inclui a liberdade de mudar de religião ou crença e a liberdade de manifestar essa religião ou crença, pelo ensino, pela prática, pelo culto e pela observância, isolada ou coletivamente, em público ou em particular.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "D",
+          "text": "( F ) ( F ) ( V ) ( V )"
+        },
+        {
+          "key": "E",
+          "text": "( V ) ( V ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A sequência correta corresponde à alternativa E, conforme os conceitos reunidos em Artigo VIII."
     }
   ]
 }
