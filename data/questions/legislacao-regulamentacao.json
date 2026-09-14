@@ -6,7 +6,7 @@
   "question_type": "multiple_choice_single_answer",
   "platform_note": "IDs estáveis; correct_answer utiliza uma das chaves A-E. Fonte e gabarito somente devem ser revelados após o salvamento da resposta.",
   "validation": {
-    "total": 1287,
+    "total": 1293,
     "by_module": {
       "publicações náuticas da DHN": 70,
       "NORMAM-311/DPC — serviço de praticagem": 85,
@@ -19199,16 +19199,16 @@
       "id": "LEG-0236",
       "subject": "legislacao-regulamentacao",
       "module": "recomendações internacionais sobre praticagem",
-      "topic": "A comunicação no passadiço deve empregar o inglês ou outro",
+      "topic": "O intercâmbio de informações entre comandante e prático deve continuar",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "IV",
         "subject_slug": "legislacao-regulamentacao",
         "bibliography_id": "leg-extra-0",
         "chapter_id": "leg-extra-0::integral",
-        "topic_id": "IV-leg-extra-0-integral-leg-imo960-a-comunicacao-no-passadico-deve-empregar-o-ingles-ou-outro",
+        "topic_id": "IV-leg-extra-0-integral-leg-imo960-o-intercambio-de-informacoes-entre-comandante-e-pratico-deve-continuar",
         "subtopic_id": null
       },
       "tracking": {
@@ -19227,65 +19227,69 @@
         "section": "Conteúdo indicado no Anexo 2-B",
         "module": "recomendações internacionais sobre praticagem",
         "topic": {
-          "id": "IV-leg-extra-0-integral-leg-imo960-a-comunicacao-no-passadico-deve-empregar-o-ingles-ou-outro",
-          "title": "A comunicação no passadiço deve empregar o inglês ou outro"
+          "id": "IV-leg-extra-0-integral-leg-imo960-o-intercambio-de-informacoes-entre-comandante-e-pratico-deve-continuar",
+          "title": "O intercâmbio de informações entre comandante e prático deve continuar"
         }
       },
       "source": {
         "author": "International Maritime Organization",
         "title": "Resolution A.960(23) — Recommendations on training and certification and on operational procedures for maritime pilots other than deep-sea pilots",
         "edition": "adotada em 5 de dezembro de 2003",
-        "locator": "Anexo 2, item 4.1"
+        "locator": "Anexo 2, item 3.4"
       },
       "tags": [
         "PSCPP",
         "legislação",
         "imo960",
         "leg-imo960",
-        "aplicada",
+        "normativa",
         "difícil",
         "legislacao-regulamentacao",
         "leg-extra-0",
         "leg-extra-0::integral",
-        "a-comunicacao-no-passadico-deve-empregar-o-ingles-ou-outro",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "o-intercambio-de-informacoes-entre-comandante-e-pratico-deve-continuar",
+        "pscpp-style-v6",
+        "formato-pscpp-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-bibliographic-v6",
         "derived_from_question_ids": [
-          "LEG-0022"
+          "LEG-0011",
+          "LEG-0367",
+          "LEG-0691",
+          "LEG-0142",
+          "LEG-0520"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "LEG-0236",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-bibliographic-v6"
       },
-      "topic_code": "PSCPP.REF.DIR.0004",
-      "question": "De acordo com o contido em “Resolution A.960(23) — Recommendations on training and certification and on operational procedures for maritime pilots other than deep-sea pilots” (Anexo 2, item 4.1), considere o seguinte problema técnico: Um profissional precisa aplicar Anexo 2, item 4.1 de IMO Resolution A.960(23) a uma atividade envolvendo “A comunicação no passadiço deve empregar o inglês ou outro”. Qual orientação deve adotar? Assinale a opção correta.",
+      "topic_code": "PSCPP.V6.AST5.00001",
+      "question": "De acordo com o contido em “Resolution A.960(23) — Recommendations on training and certification and on operational procedures for maritime pilots other than deep-sea pilots”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) Sobre “O intercâmbio de informações entre comandante e prático deve continuar”, é correto associar o conceito à seguinte proposição: O intercâmbio de informações entre comandante e prático deve continuar durante toda a praticagem.\nII) Sobre “Comandante, oficiais do passadiço e prático compartilham a responsabilidade de”, é correto associar o conceito à seguinte proposição: O ponto de embarque e desembarque do prático deve permitir transferência segura, observadas as condições de mar e a regulamentação aplicável.\nIII) Sobre “Todo prático deve possuir licença ou certificado válido emitido pela”, é correto associar o conceito à seguinte proposição: Todo prático deve possuir licença ou certificado válido emitido pela autoridade competente para a área em que presta o serviço.\nIV) Sobre “O treinamento deve incluir manobra, uso de rebocadores, fundeio, emergência”, é correto associar o conceito à seguinte proposição: Todo prático deve possuir licença ou certificado válido emitido pela autoridade competente para a área em que presta o serviço.\nV) Sobre “O programa de treinamento deve combinar conhecimento local, experiência prática”, é correto associar o conceito à seguinte proposição: O programa de treinamento deve combinar conhecimento local, experiência prática supervisionada e avaliação pela autoridade competente.",
       "options": [
         {
           "key": "A",
-          "text": "O navio deve transmitir com antecedência a hora estimada de chegada ao ponto de embarque do prático e atualizar a informação quando houver alteração significativa."
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "A comunicação no passadiço deve empregar o inglês ou outro idioma comum a todos os envolvidos, com uso das Frases Padrão de Comunicação Marítima quando apropriado."
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "A autoridade competente deve estabelecer as áreas de praticagem obrigatória, os requisitos e os procedimentos para obtenção de certificado ou licença de prático."
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "O prático pode recusar ou interromper o serviço quando considerar que a operação apresenta perigo indevido, devendo comunicar a ocorrência à autoridade competente."
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "A autoridade competente deve assegurar que o candidato a prático tenha experiência de navegação apropriada e qualificação compatível com a zona de praticagem."
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "B",
-      "explanation": "A alternativa E corresponde a Anexo 2, item 4.1 de IMO Resolution A.960(23): A comunicação no passadiço deve empregar o inglês ou outro idioma comum a todos os envolvidos, com uso das Frases Padrão de Comunicação Marítima quando apropriado. As demais opções reproduzem conteúdos de outros pontos da mesma publicação e não o dispositivo solicitado."
+      "explanation": "A combinação correta é a alternativa B; as cinco proposições pertencem ao mesmo recorte bibliográfico: Anexo 2, item 3.4."
     },
     {
       "id": "LEG-0237",
@@ -38502,16 +38506,16 @@
       "id": "LEG-0467",
       "subject": "legislacao-regulamentacao",
       "module": "recomendações internacionais sobre praticagem",
-      "topic": "O treinamento deve incluir manobra, uso de rebocadores, fundeio, emergência",
+      "topic": "A autoridade competente deve assegurar que o candidato a prático",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
       "taxonomy": {
         "subject_id": "IV",
         "subject_slug": "legislacao-regulamentacao",
         "bibliography_id": "leg-extra-0",
         "chapter_id": "leg-extra-0::integral",
-        "topic_id": "IV-leg-extra-0-integral-leg-imo960-o-treinamento-deve-incluir-manobra-uso-de-rebocadores-fundeio-emergencia",
+        "topic_id": "IV-leg-extra-0-integral-leg-imo960-a-autoridade-competente-deve-assegurar-que-o-candidato-a-pratico",
         "subtopic_id": null
       },
       "tracking": {
@@ -38530,66 +38534,69 @@
         "section": "Conteúdo indicado no Anexo 2-B",
         "module": "recomendações internacionais sobre praticagem",
         "topic": {
-          "id": "IV-leg-extra-0-integral-leg-imo960-o-treinamento-deve-incluir-manobra-uso-de-rebocadores-fundeio-emergencia",
-          "title": "O treinamento deve incluir manobra, uso de rebocadores, fundeio, emergência"
+          "id": "IV-leg-extra-0-integral-leg-imo960-a-autoridade-competente-deve-assegurar-que-o-candidato-a-pratico",
+          "title": "A autoridade competente deve assegurar que o candidato a prático"
         }
       },
       "source": {
         "author": "International Maritime Organization",
         "title": "Resolution A.960(23) — Recommendations on training and certification and on operational procedures for maritime pilots other than deep-sea pilots",
         "edition": "adotada em 5 de dezembro de 2003",
-        "locator": "Anexo 1, item 5.2.3"
+        "locator": "Anexo 1, item 3.1"
       },
       "tags": [
         "PSCPP",
         "legislação",
         "imo960",
         "leg-imo960",
-        "normativa",
-        "difícil",
+        "conceitual",
+        "médio",
         "legislacao-regulamentacao",
         "leg-extra-0",
         "leg-extra-0::integral",
-        "o-treinamento-deve-incluir-manobra-uso-de-rebocadores-fundeio-emergencia",
-        "pscpp-style-v3",
-        "formato-pscpp-direta",
-        "pscpp-refinement-v3"
+        "a-autoridade-competente-deve-assegurar-que-o-candidato-a-pratico",
+        "pscpp-style-v6",
+        "formato-pscpp-vf-5"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-bibliographic-v6",
         "derived_from_question_ids": [
-          "LEG-0523"
+          "LEG-0516",
+          "LEG-0011",
+          "LEG-0367",
+          "LEG-0691",
+          "LEG-0142"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "LEG-0467",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-bibliographic-v6"
       },
-      "topic_code": "PSCPP.REF.DIR.0012",
-      "question": "De acordo com o contido em “Resolution A.960(23) — Recommendations on training and certification and on operational procedures for maritime pilots other than deep-sea pilots” (Anexo 1, item 5.2.3), considere o seguinte problema técnico: Durante o briefing de passadiço, considere especificamente o seguinte problema: De acordo com o contido em “Resolution A.960(23) — Recommendations on training and certification and on operational procedures for maritime pilots other than deep-sea pilots” (Anexo 1, item 5.2.3), considere a situação/conceito a seguir: No texto de IMO Resolution A.960(23), Anexo 1, item 5.2.3 aborda “O treinamento deve incluir manobra, uso de rebocadores, fundeio, emergência”. Assinale a alternativa compatível com esse dispositivo. Assinale a opção correta. Assinale a opção correta.",
+      "topic_code": "PSCPP.V6.VF5.00002",
+      "question": "Com base em “Resolution A.960(23) — Recommendations on training and certification and on operational procedures for maritime pilots other than deep-sea pilots”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) Sobre “A autoridade competente deve assegurar que o candidato a prático”, é correto associar o conceito à seguinte proposição: A autoridade competente deve assegurar que o candidato a prático tenha experiência de navegação apropriada e qualificação compatível com a zona de praticagem.\n( ) Sobre “O intercâmbio de informações entre comandante e prático deve continuar”, é correto associar o conceito à seguinte proposição: O intercâmbio de informações entre comandante e prático deve continuar durante toda a praticagem.\n( ) Sobre “Comandante, oficiais do passadiço e prático compartilham a responsabilidade de”, é correto associar o conceito à seguinte proposição: Comandante, oficiais do passadiço e prático compartilham a responsabilidade de manter comunicação eficaz e compreensão mútua da condução segura.\n( ) Sobre “Todo prático deve possuir licença ou certificado válido emitido pela”, é correto associar o conceito à seguinte proposição: O candidato deve conhecer os sistemas de comunicação, VTS, serviços de emergência e procedimentos de busca e salvamento locais.\n( ) Sobre “O treinamento deve incluir manobra, uso de rebocadores, fundeio, emergência”, é correto associar o conceito à seguinte proposição: O prático que deixa de exercer por período relevante pode ter de demonstrar conhecimento local recente antes de retomar o serviço.",
       "options": [
         {
           "key": "A",
-          "text": "O prático que deixa de exercer por período relevante pode ter de demonstrar conhecimento local recente antes de retomar o serviço."
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "B",
-          "text": "O candidato deve conhecer os sistemas de comunicação, VTS, serviços de emergência e procedimentos de busca e salvamento locais."
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "C",
-          "text": "O cartão de praticagem e outros dados escritos complementam, mas não substituem, o intercâmbio verbal entre comandante e prático."
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
         },
         {
           "key": "D",
-          "text": "O treinamento deve incluir manobra, uso de rebocadores, fundeio, emergência e limitações de diferentes tipos e tamanhos de navios."
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "E",
-          "text": "Todo prático deve possuir licença ou certificado válido emitido pela autoridade competente para a área em que presta o serviço."
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
         }
       ],
       "correct_answer": "D",
-      "explanation": "A alternativa E corresponde a Anexo 1, item 5.2.3 de IMO Resolution A.960(23): O treinamento deve incluir manobra, uso de rebocadores, fundeio, emergência e limitações de diferentes tipos e tamanhos de navios. As demais opções reproduzem conteúdos de outros pontos da mesma publicação e não o dispositivo solicitado."
+      "explanation": "A sequência correta é a da alternativa D, conforme Anexo 1, item 3.1."
     },
     {
       "id": "LEG-0468",
@@ -43252,16 +43259,16 @@
       "id": "LEG-0523",
       "subject": "legislacao-regulamentacao",
       "module": "recomendações internacionais sobre praticagem",
-      "topic": "Comandante, oficiais do passadiço e prático compartilham a responsabilidade de",
+      "topic": "A presença do prático a bordo não exonera o comandante",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Preenchimento de lacunas",
+      "question_type": "Preenchimento de lacunas",
       "taxonomy": {
         "subject_id": "IV",
         "subject_slug": "legislacao-regulamentacao",
         "bibliography_id": "leg-extra-0",
         "chapter_id": "leg-extra-0::integral",
-        "topic_id": "IV-leg-extra-0-integral-leg-imo960-comandante-oficiais-do-passadico-e-pratico-compartilham-a-responsabilidade-de",
+        "topic_id": "IV-leg-extra-0-integral-leg-imo960-a-presenca-do-pratico-a-bordo-nao-exonera-o-comandante",
         "subtopic_id": null
       },
       "tracking": {
@@ -43280,15 +43287,15 @@
         "section": "Conteúdo indicado no Anexo 2-B",
         "module": "recomendações internacionais sobre praticagem",
         "topic": {
-          "id": "IV-leg-extra-0-integral-leg-imo960-comandante-oficiais-do-passadico-e-pratico-compartilham-a-responsabilidade-de",
-          "title": "Comandante, oficiais do passadiço e prático compartilham a responsabilidade de"
+          "id": "IV-leg-extra-0-integral-leg-imo960-a-presenca-do-pratico-a-bordo-nao-exonera-o-comandante",
+          "title": "A presença do prático a bordo não exonera o comandante"
         }
       },
       "source": {
         "author": "International Maritime Organization",
         "title": "Resolution A.960(23) — Recommendations on training and certification and on operational procedures for maritime pilots other than deep-sea pilots",
         "edition": "adotada em 5 de dezembro de 2003",
-        "locator": "Anexo 2, item 2.2"
+        "locator": "Anexo 2, item 2.1"
       },
       "tags": [
         "PSCPP",
@@ -43296,49 +43303,53 @@
         "imo960",
         "leg-imo960",
         "conceitual",
-        "médio",
+        "difícil",
         "legislacao-regulamentacao",
         "leg-extra-0",
         "leg-extra-0::integral",
-        "comandante-oficiais-do-passadico-e-pratico-compartilham-a-responsabilidade-de",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "a-presenca-do-pratico-a-bordo-nao-exonera-o-comandante",
+        "pscpp-style-v6",
+        "formato-pscpp-lacunas-5"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-bibliographic-v6",
         "derived_from_question_ids": [
-          "LEG-0367"
+          "LEG-0090",
+          "LEG-0516",
+          "LEG-0011",
+          "LEG-0367",
+          "LEG-0691"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "LEG-0523",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-bibliographic-v6"
       },
-      "topic_code": "PSCPP.REF.DIR.0016",
-      "question": "De acordo com o contido em “Resolution A.960(23) — Recommendations on training and certification and on operational procedures for maritime pilots other than deep-sea pilots” (Anexo 2, item 2.2), considere o seguinte problema técnico: No contexto de IMO Resolution A.960(23), qual enunciado define corretamente o conteúdo de Anexo 2, item 2.2, relativo a “Comandante, oficiais do passadiço e prático compartilham a responsabilidade de”? Assinale a opção correta.",
+      "topic_code": "PSCPP.V6.LAC5.00003",
+      "question": "Tendo como referência “Resolution A.960(23) — Recommendations on training and certification and on operational procedures for maritime pilots other than deep-sea pilots”, complete corretamente as lacunas e assinale a opção que apresenta a sequência adequada:\n(I) A respeito de “A presença do prático a bordo não exonera o comandante”, como deve ser compreendido Anexo 2, item 2.1 de IMO Resolution A.960(23) = ______\n(II) A respeito de “A autoridade competente deve assegurar que o candidato a prático”, como deve ser compreendido Anexo 1, item 3.1 de IMO Resolution A.960(23) = ______\n(III) Conforme IMO Resolution A.960(23), qual disposição está expressamente associada a Anexo 2, item 3.4, que trata de “O intercâmbio de informações entre comandante e prático deve continuar” = ______\n(IV) No contexto de IMO Resolution A.960(23), qual enunciado define corretamente o conteúdo de Anexo 2, item 2.2, relativo a “Comandante, oficiais do passadiço e prático compartilham a responsabilidade de” = ______\n(V) No contexto de IMO Resolution A.960(23), qual enunciado define corretamente o conteúdo de Anexo 1, item 2.1, relativo a “Todo prático deve possuir licença ou certificado válido emitido pela” = ______",
       "options": [
         {
           "key": "A",
-          "text": "A autoridade competente deve verificar continuamente a competência e o conhecimento local recente dos práticos licenciados ou certificados."
+          "text": "Todo prático deve possuir licença ou certificado válido emitido pela autoridade competente para a área em que presta o serviço. — Comandante, oficiais do passadiço e prático compartilham a responsabilidade de manter comunicação eficaz e compreensão mútua da condução segura. — O intercâmbio de informações entre comandante e prático deve continuar durante toda a praticagem. — A autoridade competente deve assegurar que o candidato a prático tenha experiência de navegação apropriada e qualificação compatível com a zona de praticagem. — A presença do prático a bordo não exonera o comandante nem o oficial de quarto de seus deveres e obrigações relativos à segurança do navio."
         },
         {
           "key": "B",
-          "text": "A licença ou o certificado deve indicar a área de praticagem e quaisquer requisitos ou limitações locais definidos pela autoridade competente."
+          "text": "A autoridade competente deve assegurar que o candidato a prático tenha experiência de navegação apropriada e qualificação compatível com a zona de praticagem. — A presença do prático a bordo não exonera o comandante nem o oficial de quarto de seus deveres e obrigações relativos à segurança do navio. — O intercâmbio de informações entre comandante e prático deve continuar durante toda a praticagem. — Todo prático deve possuir licença ou certificado válido emitido pela autoridade competente para a área em que presta o serviço. — Comandante, oficiais do passadiço e prático compartilham a responsabilidade de manter comunicação eficaz e compreensão mútua da condução segura."
         },
         {
           "key": "C",
-          "text": "O ponto de embarque e desembarque do prático deve permitir transferência segura, observadas as condições de mar e a regulamentação aplicável."
+          "text": "O intercâmbio de informações entre comandante e prático deve continuar durante toda a praticagem. — A autoridade competente deve assegurar que o candidato a prático tenha experiência de navegação apropriada e qualificação compatível com a zona de praticagem. — A presença do prático a bordo não exonera o comandante nem o oficial de quarto de seus deveres e obrigações relativos à segurança do navio. — Comandante, oficiais do passadiço e prático compartilham a responsabilidade de manter comunicação eficaz e compreensão mútua da condução segura. — Todo prático deve possuir licença ou certificado válido emitido pela autoridade competente para a área em que presta o serviço."
         },
         {
           "key": "D",
-          "text": "A formação deve desenvolver a comunicação no passadiço e o gerenciamento de recursos do passadiço, com ênfase no intercâmbio de informações."
+          "text": "Comandante, oficiais do passadiço e prático compartilham a responsabilidade de manter comunicação eficaz e compreensão mútua da condução segura. — O intercâmbio de informações entre comandante e prático deve continuar durante toda a praticagem. — A autoridade competente deve assegurar que o candidato a prático tenha experiência de navegação apropriada e qualificação compatível com a zona de praticagem. — A presença do prático a bordo não exonera o comandante nem o oficial de quarto de seus deveres e obrigações relativos à segurança do navio. — Todo prático deve possuir licença ou certificado válido emitido pela autoridade competente para a área em que presta o serviço."
         },
         {
           "key": "E",
-          "text": "Comandante, oficiais do passadiço e prático compartilham a responsabilidade de manter comunicação eficaz e compreensão mútua da condução segura."
+          "text": "A presença do prático a bordo não exonera o comandante nem o oficial de quarto de seus deveres e obrigações relativos à segurança do navio. — A autoridade competente deve assegurar que o candidato a prático tenha experiência de navegação apropriada e qualificação compatível com a zona de praticagem. — O intercâmbio de informações entre comandante e prático deve continuar durante toda a praticagem. — Comandante, oficiais do passadiço e prático compartilham a responsabilidade de manter comunicação eficaz e compreensão mútua da condução segura. — Todo prático deve possuir licença ou certificado válido emitido pela autoridade competente para a área em que presta o serviço."
         }
       ],
       "correct_answer": "E",
-      "explanation": "A alternativa D corresponde a Anexo 2, item 2.2 de IMO Resolution A.960(23): Comandante, oficiais do passadiço e prático compartilham a responsabilidade de manter comunicação eficaz e compreensão mútua da condução segura. As demais opções reproduzem conteúdos de outros pontos da mesma publicação e não o dispositivo solicitado."
+      "explanation": "A sequência correta corresponde à alternativa E, segundo o conteúdo de Anexo 2, item 2.1."
     },
     {
       "id": "LEG-0524",
@@ -61676,16 +61687,16 @@
       "id": "LEG-0736",
       "subject": "legislacao-regulamentacao",
       "module": "registro da propriedade marítima",
-      "topic": "Concluído o registro ou a inscrição, o proprietário recebe a",
+      "topic": "A armação deve ser averbada antes da viagem, e quem",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Estudo de caso PSCPP",
+      "question_type": "Estudo de caso PSCPP",
       "taxonomy": {
         "subject_id": "IV",
         "subject_slug": "legislacao-regulamentacao",
         "bibliography_id": "leg-extra-6",
         "chapter_id": "leg-extra-6::integral",
-        "topic_id": "IV-leg-extra-6-integral-leg-l7652-concluido-o-registro-ou-a-inscricao-o-proprietario-recebe-a",
+        "topic_id": "IV-leg-extra-6-integral-leg-l7652-a-armacao-deve-ser-averbada-antes-da-viagem-e-quem",
         "subtopic_id": null
       },
       "tracking": {
@@ -61704,15 +61715,15 @@
         "section": "Conteúdo indicado no Anexo 2-B",
         "module": "registro da propriedade marítima",
         "topic": {
-          "id": "IV-leg-extra-6-integral-leg-l7652-concluido-o-registro-ou-a-inscricao-o-proprietario-recebe-a",
-          "title": "Concluído o registro ou a inscrição, o proprietário recebe a"
+          "id": "IV-leg-extra-6-integral-leg-l7652-a-armacao-deve-ser-averbada-antes-da-viagem-e-quem",
+          "title": "A armação deve ser averbada antes da viagem, e quem"
         }
       },
       "source": {
         "author": "Brasil",
         "title": "Lei nº 7.652, de 3 de fevereiro de 1988 — Registro da Propriedade Marítima",
         "edition": "texto atualizado digitalizado constante do pacote",
-        "locator": "art. 5º"
+        "locator": "art. 19, §§ 1º e 3º"
       },
       "tags": [
         "PSCPP",
@@ -61720,49 +61731,51 @@
         "lei7652",
         "leg-l7652",
         "normativa",
-        "médio",
+        "difícil",
         "legislacao-regulamentacao",
         "leg-extra-6",
         "leg-extra-6::integral",
-        "concluido-o-registro-ou-a-inscricao-o-proprietario-recebe-a",
+        "a-armacao-deve-ser-averbada-antes-da-viagem-e-quem",
         "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "pscpp-refinement-v3",
+        "pscpp-style-v6",
+        "formato-pscpp-caso-v6"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-bibliographic-v6",
         "derived_from_question_ids": [
-          "LEG-0105"
+          "LEG-0942"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "LEG-0736",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-bibliographic-v6"
       },
-      "topic_code": "PSCPP.REF.DIR.0076",
-      "question": "De acordo com o contido em “Lei nº 7.652, de 3 de fevereiro de 1988 — Registro da Propriedade Marítima” (art. 5º), considere o seguinte problema técnico: Conforme Lei nº 7.652/1988, qual disposição está expressamente associada a art. 5º, que trata de “Concluído o registro ou a inscrição, o proprietário recebe a”? Assinale a opção correta.",
+      "topic_code": "PSCPP.V6.CASO.00004",
+      "question": "O Prático Roberto, durante uma faina relacionada a “A armação deve ser averbada antes da viagem, e quem”, precisa aplicar corretamente o conteúdo de “Lei nº 7.652, de 3 de fevereiro de 1988 — Registro da Propriedade Marítima”. Considere o seguinte problema técnico: De acordo com o contido em “Lei nº 7.652, de 3 de fevereiro de 1988 — Registro da Propriedade Marítima” (art. 19, §§ 1º e 3º), considere o seguinte problema técnico: No texto de Lei nº 7.652/1988, art. 19, §§ 1º e 3º aborda “A armação deve ser averbada antes da viagem, e quem”. Assinale a alternativa compatível com esse dispositivo. Assinale a opção correta. Assinale a alternativa adequada.",
       "options": [
         {
           "key": "A",
-          "text": "A armação deve ser averbada antes da viagem, e quem a outorgar deve comunicá-la ao Tribunal Marítimo em até quinze dias do instrumento."
-        },
-        {
-          "key": "B",
-          "text": "Direitos reais e outros ônus sobre embarcações brasileiras devem ser registrados no Tribunal Marítimo para valer contra terceiros."
-        },
-        {
-          "key": "C",
           "text": "Concluído o registro ou a inscrição, o proprietário recebe a Provisão de Registro da Propriedade Marítima ou o Título de Inscrição."
         },
         {
+          "key": "B",
+          "text": "A Lei nº 7.652/1988 regula o registro da propriedade marítima, dos direitos reais e demais ônus sobre embarcações e o registro de armador."
+        },
+        {
+          "key": "C",
+          "text": "A armação deve ser averbada antes da viagem, e quem a outorgar deve comunicá-la ao Tribunal Marítimo em até quinze dias do instrumento."
+        },
+        {
           "key": "D",
-          "text": "Hipoteca ou outro gravame pode ser constituído em favor do construtor ou financiador mesmo durante a construção da embarcação."
+          "text": "O descumprimento das obrigações e prazos de registro sujeita o infrator às penalidades legais e pode impedir o tráfego até a regularização."
         },
         {
           "key": "E",
-          "text": "Direitos reais e ônus são lançados em livro próprio, averbados no registro de propriedade e anotados no título da embarcação."
+          "text": "Armador é a pessoa física ou jurídica que, em seu nome e sob sua responsabilidade, apresta a embarcação para utilizá-la com fins comerciais."
         }
       ],
       "correct_answer": "C",
-      "explanation": "A alternativa C corresponde a art. 5º de Lei nº 7.652/1988: Concluído o registro ou a inscrição, o proprietário recebe a Provisão de Registro da Propriedade Marítima ou o Título de Inscrição. As demais opções reproduzem conteúdos de outros pontos da mesma publicação e não o dispositivo solicitado."
+      "explanation": "A alternativa D corresponde a art. 19, §§ 1º e 3º de Lei nº 7.652/1988: A armação deve ser averbada antes da viagem, e quem a outorgar deve comunicá-la ao Tribunal Marítimo em até quinze dias do instrumento. As demais opções reproduzem conteúdos de outros pontos da mesma publicação e não o dispositivo solicitado."
     },
     {
       "id": "LEG-0737",
@@ -79667,16 +79680,16 @@
       "id": "LEG-0942",
       "subject": "legislacao-regulamentacao",
       "module": "registro da propriedade marítima",
-      "topic": "A armação deve ser averbada antes da viagem, e quem",
+      "topic": "O registro de armador é cancelado por requerimento, falência, dissolução",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "IV",
         "subject_slug": "legislacao-regulamentacao",
         "bibliography_id": "leg-extra-6",
         "chapter_id": "leg-extra-6::integral",
-        "topic_id": "IV-leg-extra-6-integral-leg-l7652-a-armacao-deve-ser-averbada-antes-da-viagem-e-quem",
+        "topic_id": "IV-leg-extra-6-integral-leg-l7652-o-registro-de-armador-e-cancelado-por-requerimento-falencia-dissolucao",
         "subtopic_id": null
       },
       "tracking": {
@@ -79695,15 +79708,15 @@
         "section": "Conteúdo indicado no Anexo 2-B",
         "module": "registro da propriedade marítima",
         "topic": {
-          "id": "IV-leg-extra-6-integral-leg-l7652-a-armacao-deve-ser-averbada-antes-da-viagem-e-quem",
-          "title": "A armação deve ser averbada antes da viagem, e quem"
+          "id": "IV-leg-extra-6-integral-leg-l7652-o-registro-de-armador-e-cancelado-por-requerimento-falencia-dissolucao",
+          "title": "O registro de armador é cancelado por requerimento, falência, dissolução"
         }
       },
       "source": {
         "author": "Brasil",
         "title": "Lei nº 7.652, de 3 de fevereiro de 1988 — Registro da Propriedade Marítima",
         "edition": "texto atualizado digitalizado constante do pacote",
-        "locator": "art. 19, §§ 1º e 3º"
+        "locator": "art. 24"
       },
       "tags": [
         "PSCPP",
@@ -79711,49 +79724,53 @@
         "lei7652",
         "leg-l7652",
         "normativa",
-        "difícil",
+        "médio",
         "legislacao-regulamentacao",
         "leg-extra-6",
         "leg-extra-6::integral",
-        "a-armacao-deve-ser-averbada-antes-da-viagem-e-quem",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "o-registro-de-armador-e-cancelado-por-requerimento-falencia-dissolucao",
+        "pscpp-style-v6",
+        "formato-pscpp-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-bibliographic-v6",
         "derived_from_question_ids": [
+          "LEG-0566",
+          "LEG-0229",
+          "LEG-0736",
+          "LEG-0105",
           "LEG-0586"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "LEG-0942",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-bibliographic-v6"
       },
-      "topic_code": "PSCPP.REF.DIR.0176",
-      "question": "De acordo com o contido em “Lei nº 7.652, de 3 de fevereiro de 1988 — Registro da Propriedade Marítima” (art. 19, §§ 1º e 3º), considere o seguinte problema técnico: No texto de Lei nº 7.652/1988, art. 19, §§ 1º e 3º aborda “A armação deve ser averbada antes da viagem, e quem”. Assinale a alternativa compatível com esse dispositivo. Assinale a opção correta.",
+      "topic_code": "PSCPP.V6.AST5.00005",
+      "question": "De acordo com o contido em “Lei nº 7.652, de 3 de fevereiro de 1988 — Registro da Propriedade Marítima”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) Sobre “O registro de armador é cancelado por requerimento, falência, dissolução”, é correto associar o conceito à seguinte proposição: O registro de armador é cancelado por requerimento, falência, dissolução, proibição de exercer o comércio ou fraude no registro, conforme o caso.\nII) Sobre “Embarcação mercante sujeita a registro somente pode operar sob administração”, é correto associar o conceito à seguinte proposição: Embarcação mercante sujeita a registro somente pode operar sob administração de pessoa ou entidade habilitada como armador.\nIII) Sobre “Concluído o registro ou a inscrição, o proprietário recebe a”, é correto associar o conceito à seguinte proposição: Concluído o registro ou a inscrição, o proprietário recebe a Provisão de Registro da Propriedade Marítima ou o Título de Inscrição.\nIV) Sobre “Concluído o registro ou a inscrição, o proprietário recebe a”, é correto associar o conceito à seguinte proposição: Direitos reais e ônus são lançados em livro próprio, averbados no registro de propriedade e anotados no título da embarcação.\nV) Sobre “A armação deve ser averbada antes da viagem, e quem”, é correto associar o conceito à seguinte proposição: A Lei nº 7.652/1988 regula o registro da propriedade marítima, dos direitos reais e demais ônus sobre embarcações e o registro de armador.",
       "options": [
         {
           "key": "A",
-          "text": "Concluído o registro ou a inscrição, o proprietário recebe a Provisão de Registro da Propriedade Marítima ou o Título de Inscrição."
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "A Lei nº 7.652/1988 regula o registro da propriedade marítima, dos direitos reais e demais ônus sobre embarcações e o registro de armador."
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "O descumprimento das obrigações e prazos de registro sujeita o infrator às penalidades legais e pode impedir o tráfego até a regularização."
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "A armação deve ser averbada antes da viagem, e quem a outorgar deve comunicá-la ao Tribunal Marítimo em até quinze dias do instrumento."
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "Armador é a pessoa física ou jurídica que, em seu nome e sob sua responsabilidade, apresta a embarcação para utilizá-la com fins comerciais."
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "D",
-      "explanation": "A alternativa D corresponde a art. 19, §§ 1º e 3º de Lei nº 7.652/1988: A armação deve ser averbada antes da viagem, e quem a outorgar deve comunicá-la ao Tribunal Marítimo em até quinze dias do instrumento. As demais opções reproduzem conteúdos de outros pontos da mesma publicação e não o dispositivo solicitado."
+      "explanation": "A combinação correta é a alternativa D; as cinco proposições pertencem ao mesmo recorte bibliográfico: art. 24."
     },
     {
       "id": "LEG-0943",
@@ -82803,16 +82820,16 @@
       "id": "LEG-0978",
       "subject": "legislacao-regulamentacao",
       "module": "registro da propriedade marítima",
-      "topic": "O registro de propriedade é cancelado nas hipóteses legais, como",
+      "topic": "O registro de armador é cancelado por requerimento, falência, dissolução",
       "difficulty": "Difícil",
-      "style": "Múltipla escolha contextualizada",
-      "question_type": "Múltipla escolha contextualizada",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
       "taxonomy": {
         "subject_id": "IV",
         "subject_slug": "legislacao-regulamentacao",
         "bibliography_id": "leg-extra-6",
         "chapter_id": "leg-extra-6::integral",
-        "topic_id": "IV-leg-extra-6-integral-leg-l7652-o-registro-de-propriedade-e-cancelado-nas-hipoteses-legais-como",
+        "topic_id": "IV-leg-extra-6-integral-leg-l7652-o-registro-de-armador-e-cancelado-por-requerimento-falencia-dissolucao",
         "subtopic_id": null
       },
       "tracking": {
@@ -82831,65 +82848,69 @@
         "section": "Conteúdo indicado no Anexo 2-B",
         "module": "registro da propriedade marítima",
         "topic": {
-          "id": "IV-leg-extra-6-integral-leg-l7652-o-registro-de-propriedade-e-cancelado-nas-hipoteses-legais-como",
-          "title": "O registro de propriedade é cancelado nas hipóteses legais, como"
+          "id": "IV-leg-extra-6-integral-leg-l7652-o-registro-de-armador-e-cancelado-por-requerimento-falencia-dissolucao",
+          "title": "O registro de armador é cancelado por requerimento, falência, dissolução"
         }
       },
       "source": {
         "author": "Brasil",
         "title": "Lei nº 7.652, de 3 de fevereiro de 1988 — Registro da Propriedade Marítima",
         "edition": "texto atualizado digitalizado constante do pacote",
-        "locator": "art. 22"
+        "locator": "art. 24"
       },
       "tags": [
         "PSCPP",
         "legislação",
         "lei7652",
         "leg-l7652",
-        "aplicada",
+        "normativa",
         "médio",
         "legislacao-regulamentacao",
         "leg-extra-6",
         "leg-extra-6::integral",
-        "o-registro-de-propriedade-e-cancelado-nas-hipoteses-legais-como",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "o-registro-de-armador-e-cancelado-por-requerimento-falencia-dissolucao",
+        "pscpp-style-v6",
+        "formato-pscpp-vf-5"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-bibliographic-v6",
         "derived_from_question_ids": [
-          "LEG-0172"
+          "LEG-0566",
+          "LEG-0942",
+          "LEG-0229",
+          "LEG-0736",
+          "LEG-0105"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "LEG-0978",
-        "refinement_reason": "residual-medium-quality-flag"
+        "rewrite_reason": "residual-medium-bibliographic-v6"
       },
-      "topic_code": "PSCPP.REF.DIR.0192",
-      "question": "De acordo com o contido em “Lei nº 7.652, de 3 de fevereiro de 1988 — Registro da Propriedade Marítima” (art. 22), considere o seguinte problema técnico: Para cumprir art. 22 de Lei nº 7.652/1988 em um caso que envolva “O registro de propriedade é cancelado nas hipóteses legais, como”, qual entendimento é correto? Assinale a opção correta.",
+      "topic_code": "PSCPP.V6.VF5.00006",
+      "question": "Com base em “Lei nº 7.652, de 3 de fevereiro de 1988 — Registro da Propriedade Marítima”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) Sobre “O registro de armador é cancelado por requerimento, falência, dissolução”, é correto associar o conceito à seguinte proposição: O pedido inicial, de transferência ou de averbação deve ser feito ao Tribunal Marítimo por intermédio da Capitania dos Portos ou órgão subordinado.\n( ) Sobre “A armação deve ser averbada antes da viagem, e quem”, é correto associar o conceito à seguinte proposição: A armação deve ser averbada antes da viagem, e quem a outorgar deve comunicá-la ao Tribunal Marítimo em até quinze dias do instrumento.\n( ) Sobre “Embarcação mercante sujeita a registro somente pode operar sob administração”, é correto associar o conceito à seguinte proposição: Embarcação mercante sujeita a registro somente pode operar sob administração de pessoa ou entidade habilitada como armador.\n( ) Sobre “Concluído o registro ou a inscrição, o proprietário recebe a”, é correto associar o conceito à seguinte proposição: Concluído o registro ou a inscrição, o proprietário recebe a Provisão de Registro da Propriedade Marítima ou o Título de Inscrição.\n( ) Sobre “Concluído o registro ou a inscrição, o proprietário recebe a”, é correto associar o conceito à seguinte proposição: A armação deve ser averbada antes da viagem, e quem a outorgar deve comunicá-la ao Tribunal Marítimo em até quinze dias do instrumento.",
       "options": [
         {
           "key": "A",
-          "text": "As embarcações brasileiras, exceto as da Marinha do Brasil, devem ser inscritas na Capitania dos Portos ou órgão subordinado da jurisdição do proprietário ou armador."
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "B",
-          "text": "O contrato levado a registro deve identificar a embarcação e declarar a existência do seguro, ressalvada a hipótese legal de gravame sobre embarcação em construção."
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "C",
-          "text": "O registro de propriedade é cancelado nas hipóteses legais, como perda da nacionalidade, perecimento, abandono, confisco, transferência ao exterior ou fraude registral."
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
         },
         {
           "key": "D",
-          "text": "A aquisição pode ocorrer por construção ou outro meio admitido, mas a transmissão da propriedade somente se consolida pelo registro ou, quando dispensado, pela inscrição marítima."
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "E",
-          "text": "Presume-se proprietário a pessoa física ou jurídica em cujo nome a embarcação estiver registrada ou inscrita, até decisão judicial transitada em julgado."
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
         }
       ],
       "correct_answer": "C",
-      "explanation": "A alternativa A corresponde a art. 22 de Lei nº 7.652/1988: O registro de propriedade é cancelado nas hipóteses legais, como perda da nacionalidade, perecimento, abandono, confisco, transferência ao exterior ou fraude registral. As demais opções reproduzem conteúdos de outros pontos da mesma publicação e não o dispositivo solicitado."
+      "explanation": "A sequência correta é a da alternativa C, conforme art. 24."
     },
     {
       "id": "LEG-0979",
@@ -109664,6 +109685,567 @@
       ],
       "correct_answer": "E",
       "explanation": "A sequência correta corresponde à alternativa E, conforme os conceitos reunidos em art. 2º."
+    },
+    {
+      "id": "LEG-1288",
+      "subject": "legislacao-regulamentacao",
+      "module": "Tribunal Marítimo",
+      "topic": "Caso a multa seja elevada para as posses do infrator",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "leg-doc-6",
+        "chapter_id": "leg-doc-6::integral",
+        "topic_id": "IV-leg-doc-6-integral-leg-l2180-caso-a-multa-seja-elevada-para-as-posses-do-infrator",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "legislacao-regulamentacao",
+        "work": {
+          "id": "leg-doc-6",
+          "title": "Lei nº 2.180/1954 — Tribunal Marítimo",
+          "author": "Brasil"
+        },
+        "chapter": {
+          "id": "leg-doc-6::integral",
+          "number": "integral",
+          "title": "Conteúdo indicado no Anexo 2-B",
+          "label": "Conteúdo indicado no Anexo 2-B"
+        },
+        "section": "Conteúdo indicado no Anexo 2-B",
+        "module": "Tribunal Marítimo",
+        "topic": {
+          "id": "IV-leg-doc-6-integral-leg-l2180-caso-a-multa-seja-elevada-para-as-posses-do-infrator",
+          "title": "Caso a multa seja elevada para as posses do infrator"
+        }
+      },
+      "source": {
+        "author": "Brasil",
+        "title": "Lei nº 2.180, de 5 de fevereiro de 1954 — Dispõe sobre o Tribunal Marítimo",
+        "edition": "texto atualizado constante do pacote",
+        "locator": "art. 131, Parágrafo único"
+      },
+      "tags": [
+        "PSCPP",
+        "legislação",
+        "lei2180",
+        "leg-l2180",
+        "normativa",
+        "fácil",
+        "legislacao-regulamentacao",
+        "leg-doc-6",
+        "leg-doc-6::integral",
+        "caso-a-multa-seja-elevada-para-as-posses-do-infrator",
+        "pscpp-style-v6",
+        "formato-pscpp-vf-5"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v6",
+        "derived_from_question_ids": [
+          "LEG-0310",
+          "LEG-0409",
+          "LEG-0487",
+          "LEG-0698",
+          "LEG-0024"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V6.VF5.10002",
+      "question": "Com base em “Lei nº 2.180, de 5 de fevereiro de 1954 — Dispõe sobre o Tribunal Marítimo”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) Sobre “Caso a multa seja elevada para as posses do infrator”, é correto associar o conceito à seguinte proposição: Caso a multa seja elevada para as posses do infrator, poderá ser permitido que o pagamento se efetue em quotas mensais, até dentro de um ano, no máximo.\n( ) Sobre “Quando a pena for a de multa e das custas”, é correto associar o conceito à seguinte proposição: No Tribunal o agravo será distribuído a um juiz desimpedido que pedirá sua inclusão em pauta para julgamento, com preferência nos trabalhos do dia, quando o relatará.\n( ) Sobre “O Juiz ou o Tribunal poderá ouvir terceiro a quem”, é correto associar o conceito à seguinte proposição: O Juiz ou o Tribunal poderá ouvir terceiro a quem as partes ou testemunhas se hajam referido como sabedor de fatos ou circunstâncias que influam na decisão do feito, ou ordenar que exibam documento que a esta interesse.\n( ) Sobre “Sempre que se discutir em juízo uma questão decorrente de”, é correto associar o conceito à seguinte proposição: Finda a instrução, será aberta vista dos autos por 10 (dez) dias, sucessivamente, ao autor e ao representando para que aduzam, por escrito, alegações finais, e em seguida serão os autos conclusos ao relator para pedido de julgamento.\n( ) Sobre “No Tribunal o agravo será distribuído a um juiz desimpedido”, é correto associar o conceito à seguinte proposição: No Tribunal o agravo será distribuído a um juiz desimpedido que pedirá sua inclusão em pauta para julgamento, com preferência nos trabalhos do dia, quando o relatará.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
+        },
+        {
+          "key": "D",
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "E",
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A sequência correta é a da alternativa B, conforme art. 131, Parágrafo único."
+    },
+    {
+      "id": "LEG-1289",
+      "subject": "legislacao-regulamentacao",
+      "module": "ordenação do transporte aquaviário",
+      "topic": "As embarcações estrangeiras somente poderão participar do transporte de mercadorias",
+      "difficulty": "Difícil",
+      "style": "Preenchimento de lacunas",
+      "question_type": "Preenchimento de lacunas",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "leg-extra-7",
+        "chapter_id": "leg-extra-7::integral",
+        "topic_id": "IV-leg-extra-7-integral-leg-l9432-as-embarcacoes-estrangeiras-somente-poderao-participar-do-transporte-de-mercadorias",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "legislacao-regulamentacao",
+        "work": {
+          "id": "leg-extra-7",
+          "title": "Lei nº 9.432/1997 — Transporte Aquaviário",
+          "author": "Brasil"
+        },
+        "chapter": {
+          "id": "leg-extra-7::integral",
+          "number": "integral",
+          "title": "Conteúdo indicado no Anexo 2-B",
+          "label": "Conteúdo indicado no Anexo 2-B"
+        },
+        "section": "Conteúdo indicado no Anexo 2-B",
+        "module": "ordenação do transporte aquaviário",
+        "topic": {
+          "id": "IV-leg-extra-7-integral-leg-l9432-as-embarcacoes-estrangeiras-somente-poderao-participar-do-transporte-de-mercadorias",
+          "title": "As embarcações estrangeiras somente poderão participar do transporte de mercadorias"
+        }
+      },
+      "source": {
+        "author": "Brasil",
+        "title": "Lei nº 9.432, de 8 de janeiro de 1997 — Ordenação do Transporte Aquaviário",
+        "edition": "texto atualizado constante do pacote",
+        "locator": "art. 7º"
+      },
+      "tags": [
+        "PSCPP",
+        "legislação",
+        "lei9432",
+        "leg-l9432",
+        "normativa",
+        "médio",
+        "legislacao-regulamentacao",
+        "leg-extra-7",
+        "leg-extra-7::integral",
+        "as-embarcacoes-estrangeiras-somente-poderao-participar-do-transporte-de-mercadorias",
+        "pscpp-style-v6",
+        "formato-pscpp-lacunas-5"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v6",
+        "derived_from_question_ids": [
+          "LEG-0197",
+          "LEG-0475",
+          "LEG-0708",
+          "LEG-0113",
+          "LEG-0239"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V6.LAC5.10003",
+      "question": "Tendo como referência “Lei nº 9.432, de 8 de janeiro de 1997 — Ordenação do Transporte Aquaviário”, complete corretamente as lacunas e assinale a opção que apresenta a sequência adequada:\n(I) À luz de Lei nº 9.432/1997, ao examinar art. 7º sobre “As embarcações estrangeiras somente poderão participar do transporte de mercadorias”, qual alternativa reproduz corretamente a norma = ______\n(II) No texto de Lei nº 9.432/1997, art. 12 aborda “extensivos às embarcações que operam na navegação de cabotagem e”. Assinale a alternativa compatível com esse dispositivo. = ______\n(III) Na preparação de uma operação relacionada a “A operação ou exploração da navegação interior de percurso internacional”, a equipe consulta art. 6º de Lei nº 9.432/1997. Qual providência está alinhada à fonte = ______\n(IV) Na preparação de uma operação relacionada a “Ato do Poder Executivo federal poderá dispor sobre quantitativos mínimos”, a equipe consulta art. 4º-A, Parágrafo único de Lei nº 9.432/1997. Qual providência está alinhada à fonte = ______\n(V) Ao aplicar o parâmetro quantitativo de art. 5º, § 3º de Lei nº 9.432/1997, referente a “O Poder Executivo poderá suspender a aplicação das disposições do”, qual alternativa contém corretamente os valores ou limites previstos = ______",
+      "options": [
+        {
+          "key": "A",
+          "text": "A operação ou exploração da navegação interior de percurso internacional é aberta às empresas de navegação e embarcações de todos os países, exclusivamente na forma dos acordos firmados pela União, atendido o princípio da reciprocidade. — São extensivos às embarcações que operam na navegação de cabotagem e nas navegações de apoio portuário e marítimo os preços de combustível cobrados às embarcações de longo curso. — As embarcações estrangeiras somente poderão participar do transporte de mercadorias na navegação de cabotagem e da navegação interior de percurso nacional, bem como da navegação de apoio portuário e da navegação de apoio marítimo, quando afretadas por empresas brasileiras de navegação, observado o disposto nos arts. 9º e 10. — Ato do Poder Executivo federal poderá dispor sobre quantitativos mínimos de vagas destinadas a praticantes para cada tipo de embarcação e operação, de modo a considerar as peculiaridades técnicas e os impactos econômicos desses quantitativos. — O Poder Executivo poderá suspender a aplicação das disposições do Decreto-Lei nº 666, de 2 de julho de 1969, e suas alterações, quando comprovada a inexistência ou indisponibilidade de embarcações operadas por empresas brasileiras de navegação, do tipo e porte adequados ao transporte pretendido, ou quando estas não oferecerem condições de preço e prazo compatíveis com o mercado internacional."
+        },
+        {
+          "key": "B",
+          "text": "São extensivos às embarcações que operam na navegação de cabotagem e nas navegações de apoio portuário e marítimo os preços de combustível cobrados às embarcações de longo curso. — As embarcações estrangeiras somente poderão participar do transporte de mercadorias na navegação de cabotagem e da navegação interior de percurso nacional, bem como da navegação de apoio portuário e da navegação de apoio marítimo, quando afretadas por empresas brasileiras de navegação, observado o disposto nos arts. 9º e 10. — A operação ou exploração da navegação interior de percurso internacional é aberta às empresas de navegação e embarcações de todos os países, exclusivamente na forma dos acordos firmados pela União, atendido o princípio da reciprocidade. — O Poder Executivo poderá suspender a aplicação das disposições do Decreto-Lei nº 666, de 2 de julho de 1969, e suas alterações, quando comprovada a inexistência ou indisponibilidade de embarcações operadas por empresas brasileiras de navegação, do tipo e porte adequados ao transporte pretendido, ou quando estas não oferecerem condições de preço e prazo compatíveis com o mercado internacional. — Ato do Poder Executivo federal poderá dispor sobre quantitativos mínimos de vagas destinadas a praticantes para cada tipo de embarcação e operação, de modo a considerar as peculiaridades técnicas e os impactos econômicos desses quantitativos."
+        },
+        {
+          "key": "C",
+          "text": "As embarcações estrangeiras somente poderão participar do transporte de mercadorias na navegação de cabotagem e da navegação interior de percurso nacional, bem como da navegação de apoio portuário e da navegação de apoio marítimo, quando afretadas por empresas brasileiras de navegação, observado o disposto nos arts. 9º e 10. — São extensivos às embarcações que operam na navegação de cabotagem e nas navegações de apoio portuário e marítimo os preços de combustível cobrados às embarcações de longo curso. — A operação ou exploração da navegação interior de percurso internacional é aberta às empresas de navegação e embarcações de todos os países, exclusivamente na forma dos acordos firmados pela União, atendido o princípio da reciprocidade. — Ato do Poder Executivo federal poderá dispor sobre quantitativos mínimos de vagas destinadas a praticantes para cada tipo de embarcação e operação, de modo a considerar as peculiaridades técnicas e os impactos econômicos desses quantitativos. — O Poder Executivo poderá suspender a aplicação das disposições do Decreto-Lei nº 666, de 2 de julho de 1969, e suas alterações, quando comprovada a inexistência ou indisponibilidade de embarcações operadas por empresas brasileiras de navegação, do tipo e porte adequados ao transporte pretendido, ou quando estas não oferecerem condições de preço e prazo compatíveis com o mercado internacional."
+        },
+        {
+          "key": "D",
+          "text": "Ato do Poder Executivo federal poderá dispor sobre quantitativos mínimos de vagas destinadas a praticantes para cada tipo de embarcação e operação, de modo a considerar as peculiaridades técnicas e os impactos econômicos desses quantitativos. — A operação ou exploração da navegação interior de percurso internacional é aberta às empresas de navegação e embarcações de todos os países, exclusivamente na forma dos acordos firmados pela União, atendido o princípio da reciprocidade. — São extensivos às embarcações que operam na navegação de cabotagem e nas navegações de apoio portuário e marítimo os preços de combustível cobrados às embarcações de longo curso. — As embarcações estrangeiras somente poderão participar do transporte de mercadorias na navegação de cabotagem e da navegação interior de percurso nacional, bem como da navegação de apoio portuário e da navegação de apoio marítimo, quando afretadas por empresas brasileiras de navegação, observado o disposto nos arts. 9º e 10. — O Poder Executivo poderá suspender a aplicação das disposições do Decreto-Lei nº 666, de 2 de julho de 1969, e suas alterações, quando comprovada a inexistência ou indisponibilidade de embarcações operadas por empresas brasileiras de navegação, do tipo e porte adequados ao transporte pretendido, ou quando estas não oferecerem condições de preço e prazo compatíveis com o mercado internacional."
+        },
+        {
+          "key": "E",
+          "text": "O Poder Executivo poderá suspender a aplicação das disposições do Decreto-Lei nº 666, de 2 de julho de 1969, e suas alterações, quando comprovada a inexistência ou indisponibilidade de embarcações operadas por empresas brasileiras de navegação, do tipo e porte adequados ao transporte pretendido, ou quando estas não oferecerem condições de preço e prazo compatíveis com o mercado internacional. — Ato do Poder Executivo federal poderá dispor sobre quantitativos mínimos de vagas destinadas a praticantes para cada tipo de embarcação e operação, de modo a considerar as peculiaridades técnicas e os impactos econômicos desses quantitativos. — A operação ou exploração da navegação interior de percurso internacional é aberta às empresas de navegação e embarcações de todos os países, exclusivamente na forma dos acordos firmados pela União, atendido o princípio da reciprocidade. — São extensivos às embarcações que operam na navegação de cabotagem e nas navegações de apoio portuário e marítimo os preços de combustível cobrados às embarcações de longo curso. — As embarcações estrangeiras somente poderão participar do transporte de mercadorias na navegação de cabotagem e da navegação interior de percurso nacional, bem como da navegação de apoio portuário e da navegação de apoio marítimo, quando afretadas por empresas brasileiras de navegação, observado o disposto nos arts. 9º e 10."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A sequência correta corresponde à alternativa C, segundo o conteúdo de art. 7º."
+    },
+    {
+      "id": "LEG-1290",
+      "subject": "legislacao-regulamentacao",
+      "module": "Política e Estratégia Nacional de Defesa",
+      "topic": "Dessa forma, conforme defendido por José Maria da Silva Paranhos",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "leg-extra-2",
+        "chapter_id": "leg-extra-2::integral",
+        "topic_id": "IV-leg-extra-2-integral-leg-pnd-dessa-forma-conforme-defendido-por-jose-maria-da-silva-paranhos",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "legislacao-regulamentacao",
+        "work": {
+          "id": "leg-extra-2",
+          "title": "Política Nacional de Defesa — 2025",
+          "author": "Ministério da Defesa"
+        },
+        "chapter": {
+          "id": "leg-extra-2::integral",
+          "number": "integral",
+          "title": "Conteúdo indicado no Anexo 2-B",
+          "label": "Conteúdo indicado no Anexo 2-B"
+        },
+        "section": "Conteúdo indicado no Anexo 2-B",
+        "module": "Política e Estratégia Nacional de Defesa",
+        "topic": {
+          "id": "IV-leg-extra-2-integral-leg-pnd-dessa-forma-conforme-defendido-por-jose-maria-da-silva-paranhos",
+          "title": "Dessa forma, conforme defendido por José Maria da Silva Paranhos"
+        }
+      },
+      "source": {
+        "author": "Ministério da Defesa",
+        "title": "Política Nacional de Defesa e Estratégia Nacional de Defesa",
+        "edition": "versão constante do pacote, associada ao ciclo 2024/2025",
+        "locator": "item 5.2, trecho 3, p. 14 do arquivo fornecido"
+      },
+      "tags": [
+        "PSCPP",
+        "legislação",
+        "pnd",
+        "leg-pnd",
+        "normativa",
+        "médio",
+        "legislacao-regulamentacao",
+        "leg-extra-2",
+        "leg-extra-2::integral",
+        "dessa-forma-conforme-defendido-por-jose-maria-da-silva-paranhos",
+        "pscpp-style-v6",
+        "formato-pscpp-assertivas-5"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v6",
+        "derived_from_question_ids": [
+          "LEG-0410",
+          "LEG-0482",
+          "LEG-0965",
+          "LEG-0224",
+          "LEG-0366"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V6.AST5.10005",
+      "question": "De acordo com o contido em “Política Nacional de Defesa e Estratégia Nacional de Defesa”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) Sobre “Dessa forma, conforme defendido por José Maria da Silva Paranhos”, é correto associar o conceito à seguinte proposição: A história, contudo, demonstra que as relações de força desempenham papel relevante na interação estatal, de forma que “nenhum Estado pode ser pacífico sem ser forte\", conforme defendido por José Maria da Silva Paranhos Júnior, Barão do Rio Branco, patrono da diplomacia brasileira.\nII) Sobre “ESTRATÉGIA NACIONAL DE DEFESA 37 A Capacidade de Proteção do”, é correto associar o conceito à seguinte proposição: ESTRATÉGIA NACIONAL DE DEFESA 37 A Capacidade de Proteção do território e da população brasileira exprime o mais relevante objetivo nacional, o de garantir a soberania, o patrimônio nacional e a integridade territorial.\nIII) Sobre “Tais questões poderão levar a ingerências em assuntos internos ou”, é correto associar o conceito à seguinte proposição: Portanto, o diálogo e a cooperação com outros países são fundamentais para o êxito da Estratégia Nacional de Defesa, por serem poderosos instrumentos de prevenção e de resolução de conflitos.\nIV) Sobre “Nesse sentido, o preparo do Poder Nacional consiste de um”, é correto associar o conceito à seguinte proposição: Nesse sentido, o preparo do Poder Nacional consiste de um conjunto de atividades executadas com o objetivo de fortalecê-lo, seja pela manutenção ou aperfeiçoamento do poder existente, seja por meio da transformação do potencial em poder.\nV) Sobre “A população brasileira, por sua vez, após longo período livre”, é correto associar o conceito à seguinte proposição: A população brasileira, por sua vez, após longo período livre de conflitos externos, tem a percepção desvanecida das ameaças, tendo em vista seu caráter difuso e mutante, ainda que o País tenha evoluído nas questões de segurança e de defesa nacionais.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A combinação correta é a alternativa E; as cinco proposições pertencem ao mesmo recorte bibliográfico: item 5.2, trecho 3, p. 14 do arquivo fornecido."
+    },
+    {
+      "id": "LEG-1291",
+      "subject": "legislacao-regulamentacao",
+      "module": "NORMAM-204/DPC — tráfego e permanência em AJB",
+      "topic": "por avaliação em simulador do tipo FMSS (Full Mission Shiphandling",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "leg-doc-0",
+        "chapter_id": "leg-doc-0::integral",
+        "topic_id": "IV-leg-doc-0-integral-leg-n204-por-avaliacao-em-simulador-do-tipo-fmss-full-mission-shiphandling",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "legislacao-regulamentacao",
+        "work": {
+          "id": "leg-doc-0",
+          "title": "NORMAM-204/DPC",
+          "author": "Marinha do Brasil — Diretoria de Portos e Costas"
+        },
+        "chapter": {
+          "id": "leg-doc-0::integral",
+          "number": "integral",
+          "title": "Conteúdo indicado no Anexo 2-B",
+          "label": "Conteúdo indicado no Anexo 2-B"
+        },
+        "section": "Conteúdo indicado no Anexo 2-B",
+        "module": "NORMAM-204/DPC — tráfego e permanência em AJB",
+        "topic": {
+          "id": "IV-leg-doc-0-integral-leg-n204-por-avaliacao-em-simulador-do-tipo-fmss-full-mission-shiphandling",
+          "title": "por avaliação em simulador do tipo FMSS (Full Mission Shiphandling"
+        }
+      },
+      "source": {
+        "author": "Marinha do Brasil — Diretoria de Portos e Costas",
+        "title": "Normas da Autoridade Marítima para Tráfego e Permanência de Embarcações em Águas Jurisdicionais Brasileiras",
+        "edition": "2025",
+        "locator": "item 5.3.2, a), p. 84 do arquivo fornecido"
+      },
+      "tags": [
+        "PSCPP",
+        "legislação",
+        "n204",
+        "leg-n204",
+        "conceitual",
+        "difícil",
+        "legislacao-regulamentacao",
+        "leg-doc-0",
+        "leg-doc-0::integral",
+        "por-avaliacao-em-simulador-do-tipo-fmss-full-mission-shiphandling",
+        "pscpp-style-v6",
+        "formato-pscpp-vf-5"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v6",
+        "derived_from_question_ids": [
+          "LEG-0979",
+          "LEG-0059",
+          "LEG-0137",
+          "LEG-0181",
+          "LEG-0232"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V6.VF5.10006",
+      "question": "Com base em “Normas da Autoridade Marítima para Tráfego e Permanência de Embarcações em Águas Jurisdicionais Brasileiras”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) Sobre “por avaliação em simulador do tipo FMSS (Full Mission Shiphandling”, é correto associar o conceito à seguinte proposição: por avaliação em simulador do tipo FMSS (Full Mission Shiphandling Simulator), e, também, por realização de operação piloto com o navio abastecedor-tipo que será empregado.\n( ) Sobre “Simulação Fast Time abrangendo os principais pontos críticos da via”, é correto associar o conceito à seguinte proposição: Simulação Fast Time abrangendo os principais pontos críticos da via, que deverão ser apresentados à CP/DL/AG e por ela ratificados, demonstrando que o comboio proposto cumpre, no mínimo, os mesmos parâmetros dos comboios que já operam naquela hidrovia;.\n( ) Sobre “possuir um canal de comunicações (coordenação) com a Estação Base”, é correto associar o conceito à seguinte proposição: A partida efetiva, também, deverá ser informada à CP, tão logo ocorra.\n( ) Sobre “A embarcação que estiver transportando cargas perigosas embaladas deverá possuir”, é correto associar o conceito à seguinte proposição: A embarcação que estiver transportando cargas perigosas embaladas deverá possuir cópias dos Manifestos de Mercadorias Perigosas para verificação do PSC/FSC, sendo uma cópia a bordo e outra cópia com o representante da embarcação do porto da estadia, conforme o modelo previsto na NORMAM-201/DPC.\n( ) Sobre “Cabe ressaltar, em especial, que o responsável pelo controle consultivo”, é correto associar o conceito à seguinte proposição: FUNDEIO OU PARADA NO MAR TERRITORIAL Quando, por qualquer motivo, a embarcação de bandeira nacional ou estrangeira, tenha que parar as máquinas ou fundear no mar territorial brasileiro, deverá comunicar o fato, de imediato, à Capitania dos Portos (CP) da área de jurisdição.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
+        },
+        {
+          "key": "D",
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "E",
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A sequência correta é a da alternativa A, conforme item 5.3.2, a), p. 84 do arquivo fornecido."
+    },
+    {
+      "id": "LEG-1292",
+      "subject": "legislacao-regulamentacao",
+      "module": "RLESTA — regulamentação da segurança do tráfego aquaviário",
+      "topic": "apresentar-se sem a dotação regulamentar: Penalidade: multa do grupo D",
+      "difficulty": "Difícil",
+      "style": "Preenchimento de lacunas",
+      "question_type": "Preenchimento de lacunas",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "leg-doc-7",
+        "chapter_id": "leg-doc-7::integral",
+        "topic_id": "IV-leg-doc-7-integral-leg-rlesta-apresentar-se-sem-a-dotacao-regulamentar-penalidade-multa-do-grupo-d",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "legislacao-regulamentacao",
+        "work": {
+          "id": "leg-doc-7",
+          "title": "Lei nº 9.537/1997 — LESTA",
+          "author": "Brasil"
+        },
+        "chapter": {
+          "id": "leg-doc-7::integral",
+          "number": "integral",
+          "title": "Conteúdo indicado no Anexo 2-B",
+          "label": "Conteúdo indicado no Anexo 2-B"
+        },
+        "section": "Conteúdo indicado no Anexo 2-B",
+        "module": "RLESTA — regulamentação da segurança do tráfego aquaviário",
+        "topic": {
+          "id": "IV-leg-doc-7-integral-leg-rlesta-apresentar-se-sem-a-dotacao-regulamentar-penalidade-multa-do-grupo-d",
+          "title": "apresentar-se sem a dotação regulamentar: Penalidade: multa do grupo D"
+        }
+      },
+      "source": {
+        "author": "Brasil",
+        "title": "Decreto nº 2.596, de 18 de maio de 1998 — Regulamenta a LESTA",
+        "edition": "texto atualizado constante do pacote",
+        "locator": "art. 15, I"
+      },
+      "tags": [
+        "PSCPP",
+        "legislação",
+        "rlesta",
+        "leg-rlesta",
+        "aplicada",
+        "médio",
+        "legislacao-regulamentacao",
+        "leg-doc-7",
+        "leg-doc-7::integral",
+        "apresentar-se-sem-a-dotacao-regulamentar-penalidade-multa-do-grupo-d",
+        "pscpp-style-v6",
+        "formato-pscpp-lacunas-5"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v6",
+        "derived_from_question_ids": [
+          "LEG-0589",
+          "LEG-0713",
+          "LEG-0838",
+          "LEG-0996",
+          "LEG-0081"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V6.LAC5.10007",
+      "question": "Tendo como referência “Decreto nº 2.596, de 18 de maio de 1998 — Regulamenta a LESTA”, complete corretamente as lacunas e assinale a opção que apresenta a sequência adequada:\n(I) Para cumprir art. 15, I de RLESTA em um caso que envolva “apresentar-se sem a dotação regulamentar: Penalidade: multa do grupo D”, qual entendimento é correto = ______\n(II) No contexto de LESTA, qual enunciado define corretamente o conteúdo de art. 33, relativo a “Os acidentes e fatos da navegação, definidos em lei específica” = ______\n(III) No texto de LESTA, art. 12 aborda “O serviço de praticagem consiste no conjunto de atividades profissionais”. Assinale a alternativa compatível com esse dispositivo. = ______\n(IV) Conforme LESTA, qual disposição está expressamente associada a art. 14, que trata de “O serviço de praticagem, considerado atividade essencial, deve estar permanentemente” = ______\n(V) No contexto de RLESTA, qual enunciado define corretamente o conteúdo de art. 1º, Parágrafo único, relativo a “Os grupos de aquaviários são constituídos pelas categorias constantes do” = ______",
+      "options": [
+        {
+          "key": "A",
+          "text": "Os acidentes e fatos da navegação, definidos em lei específica, aí incluídos os ocorridos nas plataformas, serão apurados por meio de inquérito administrativo instaurado pela autoridade marítima, para posterior julgamento no Tribunal Marítimo. — apresentar-se sem a dotação regulamentar: Penalidade: multa do grupo D ou suspensão do Certificado de habilitação até sessenta dias; — O serviço de praticagem consiste no conjunto de atividades profissionais de assessoria ao Comandante requeridas por força de peculiaridades locais que dificultem a livre e segura movimentação da embarcação. — Os grupos de aquaviários são constituídos pelas categorias constantes do Anexo I a este Regulamento. — O serviço de praticagem, considerado atividade essencial, deve estar permanentemente disponível nas zonas de praticagem estabelecidas."
+        },
+        {
+          "key": "B",
+          "text": "apresentar-se sem a dotação regulamentar: Penalidade: multa do grupo D ou suspensão do Certificado de habilitação até sessenta dias; — Os acidentes e fatos da navegação, definidos em lei específica, aí incluídos os ocorridos nas plataformas, serão apurados por meio de inquérito administrativo instaurado pela autoridade marítima, para posterior julgamento no Tribunal Marítimo. — O serviço de praticagem consiste no conjunto de atividades profissionais de assessoria ao Comandante requeridas por força de peculiaridades locais que dificultem a livre e segura movimentação da embarcação. — O serviço de praticagem, considerado atividade essencial, deve estar permanentemente disponível nas zonas de praticagem estabelecidas. — Os grupos de aquaviários são constituídos pelas categorias constantes do Anexo I a este Regulamento."
+        },
+        {
+          "key": "C",
+          "text": "O serviço de praticagem consiste no conjunto de atividades profissionais de assessoria ao Comandante requeridas por força de peculiaridades locais que dificultem a livre e segura movimentação da embarcação. — Os acidentes e fatos da navegação, definidos em lei específica, aí incluídos os ocorridos nas plataformas, serão apurados por meio de inquérito administrativo instaurado pela autoridade marítima, para posterior julgamento no Tribunal Marítimo. — apresentar-se sem a dotação regulamentar: Penalidade: multa do grupo D ou suspensão do Certificado de habilitação até sessenta dias; — O serviço de praticagem, considerado atividade essencial, deve estar permanentemente disponível nas zonas de praticagem estabelecidas. — Os grupos de aquaviários são constituídos pelas categorias constantes do Anexo I a este Regulamento."
+        },
+        {
+          "key": "D",
+          "text": "O serviço de praticagem, considerado atividade essencial, deve estar permanentemente disponível nas zonas de praticagem estabelecidas. — O serviço de praticagem consiste no conjunto de atividades profissionais de assessoria ao Comandante requeridas por força de peculiaridades locais que dificultem a livre e segura movimentação da embarcação. — Os acidentes e fatos da navegação, definidos em lei específica, aí incluídos os ocorridos nas plataformas, serão apurados por meio de inquérito administrativo instaurado pela autoridade marítima, para posterior julgamento no Tribunal Marítimo. — apresentar-se sem a dotação regulamentar: Penalidade: multa do grupo D ou suspensão do Certificado de habilitação até sessenta dias; — Os grupos de aquaviários são constituídos pelas categorias constantes do Anexo I a este Regulamento."
+        },
+        {
+          "key": "E",
+          "text": "Os grupos de aquaviários são constituídos pelas categorias constantes do Anexo I a este Regulamento. — O serviço de praticagem, considerado atividade essencial, deve estar permanentemente disponível nas zonas de praticagem estabelecidas. — O serviço de praticagem consiste no conjunto de atividades profissionais de assessoria ao Comandante requeridas por força de peculiaridades locais que dificultem a livre e segura movimentação da embarcação. — Os acidentes e fatos da navegação, definidos em lei específica, aí incluídos os ocorridos nas plataformas, serão apurados por meio de inquérito administrativo instaurado pela autoridade marítima, para posterior julgamento no Tribunal Marítimo. — apresentar-se sem a dotação regulamentar: Penalidade: multa do grupo D ou suspensão do Certificado de habilitação até sessenta dias;"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A sequência correta corresponde à alternativa B, segundo o conteúdo de art. 15, I."
+    },
+    {
+      "id": "LEG-1293",
+      "subject": "legislacao-regulamentacao",
+      "module": "Lei dos Portos — capítulos I, IV e VIII",
+      "topic": "As concessões, os arrendamentos e as autorizações de que trata",
+      "difficulty": "Difícil",
+      "style": "Estudo de caso PSCPP",
+      "question_type": "Estudo de caso PSCPP",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "lei12815",
+        "chapter_id": "lei12815::ch1",
+        "topic_id": "IV-lei12815-ch1-leg-l12815-as-concessoes-os-arrendamentos-e-as-autorizacoes-de-que-trata",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "legislacao-regulamentacao",
+        "work": {
+          "id": "lei12815",
+          "title": "Lei nº 12.815/2013",
+          "author": "Brasil"
+        },
+        "chapter": {
+          "id": "lei12815::ch1",
+          "number": "ch1",
+          "title": "Capítulo I – Definições e objetivos",
+          "label": "Capítulo I – Definições e objetivos"
+        },
+        "section": "Capítulo I – Definições e objetivos",
+        "module": "Lei dos Portos — capítulos I, IV e VIII",
+        "topic": {
+          "id": "IV-lei12815-ch1-leg-l12815-as-concessoes-os-arrendamentos-e-as-autorizacoes-de-que-trata",
+          "title": "As concessões, os arrendamentos e as autorizações de que trata"
+        }
+      },
+      "source": {
+        "author": "Brasil",
+        "title": "Lei nº 12.815, de 5 de junho de 2013",
+        "edition": "texto atualizado do pacote; somente Capítulos I, IV e VIII",
+        "locator": "art. 1º, § 3º"
+      },
+      "tags": [
+        "PSCPP",
+        "legislação",
+        "lei12815",
+        "leg-l12815",
+        "situacional",
+        "fácil",
+        "legislacao-regulamentacao",
+        "lei12815::ch1",
+        "as-concessoes-os-arrendamentos-e-as-autorizacoes-de-que-trata",
+        "pscpp-style-v3",
+        "pscpp-refinement-v3",
+        "pscpp-style-v6",
+        "formato-pscpp-caso-v6"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v6",
+        "derived_from_question_ids": [
+          "LEG-0379"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V6.CASO.10008",
+      "question": "O Prático Lúcia, durante uma faina relacionada a “As concessões, os arrendamentos e as autorizações de que trata”, precisa aplicar corretamente o conteúdo de “Lei nº 12.815, de 5 de junho de 2013”. Considere o seguinte problema técnico: De acordo com o contido em “Lei nº 12.815, de 5 de junho de 2013” (art. 1º, § 3º), considere o seguinte problema técnico: Durante uma verificação referente a “As concessões, os arrendamentos e as autorizações de que trata”, a equipe consulta art. 1º, § 3º de Lei nº 12.815/2013. Qual alternativa está de acordo com a fonte? Assinale a opção correta. Assinale a alternativa adequada.",
+      "options": [
+        {
+          "key": "A",
+          "text": "área do porto organizado: área delimitada por ato do Poder Executivo que compreende as instalações portuárias e a infraestrutura de proteção e de acesso ao porto organizado;"
+        },
+        {
+          "key": "B",
+          "text": "dragagem: obra ou serviço de engenharia que consiste na limpeza, desobstrução, remoção, derrocamento ou escavação de material do fundo de rios, lagos, mares, baías e canais;"
+        },
+        {
+          "key": "C",
+          "text": "As concessões, os arrendamentos e as autorizações de que trata esta Lei serão outorgados a pessoa jurídica que demonstre capacidade para seu desempenho, por sua conta e risco."
+        },
+        {
+          "key": "D",
+          "text": "As obras ou serviços de dragagem por resultado poderão contemplar mais de um porto, num mesmo contrato, quando essa medida for mais vantajosa para a administração pública."
+        },
+        {
+          "key": "E",
+          "text": "A indicação dos representantes das classes empresarial e trabalhadora a que alude o caput será feita pelos respectivos representantes no conselho de autoridade portuária."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A alternativa A corresponde a art. 1º, § 3º de Lei nº 12.815/2013: As concessões, os arrendamentos e as autorizações de que trata esta Lei serão outorgados a pessoa jurídica que demonstre capacidade para seu desempenho, por sua conta e risco. As demais opções reproduzem conteúdos de outros pontos da mesma publicação e não o dispositivo solicitado."
     }
   ]
 }

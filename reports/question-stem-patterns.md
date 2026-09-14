@@ -25,11 +25,11 @@
 | 13 | de acordo com o contido em “arte naval, v. 1”, analise as |
 | 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
 | 12 | com base em “shiphandling for the mariner”, julgue as proposicoes a seguir |
+| 11 | com base em “shiphandling for the mariner”, coloque v (verdadeiro) ou f |
 | 10 | com base em “arte naval, v. 1”, coloque v (verdadeiro) ou f |
 | 10 | de acordo com o contido em “arte naval, v. 2” (cap. 12, |
-| 9 | com base em “shiphandling for the mariner”, coloque v (verdadeiro) ou f |
+| 9 | de acordo com o contido em “resolution a.1045(27): pilot transfer arrangements”, analise |
 | 7 | de acordo com o contido em “resolution a.1045(27): pilot transfer arrangements” (anexo, |
-| 7 | de acordo com o contido em “resolution a.1045(27): pilot transfer arrangements”, analise |
 | 6 | com base no conteudo de “arte naval, v. 2”, em cap. 10, |
 | 6 | na preparacao para uma manobra, o oficial revisa o conceito definido como |
 | 5 | de acordo com o contido em “arte naval, v. 2” (cap. 10, |
@@ -64,28 +64,28 @@
 | 83 | de acordo com o contido em “principles of naval architecture, volume iii”, |
 | 43 | com base em “principles of naval architecture, volume iii”, julgue as proposicoes |
 | 42 | de acordo com o contido em “principles of naval architecture, volume ii”, |
-| 38 | de acordo com o contido em “ship resistance and flow”, analise as |
-| 32 | de acordo com o contido em “provision and display of manoeuvring information |
+| 39 | de acordo com o contido em “ship resistance and flow”, analise as |
+| 33 | de acordo com o contido em “provision and display of manoeuvring information |
 | 31 | de acordo com o contido em “revised guidance to the master for |
 | 28 | com base em “principles of naval architecture, volume iii”, coloque v (verdadeiro) |
 | 28 | de acordo com o contido em “standards for ship manoeuvrability”, analise as |
 | 28 | com base em “principles of naval architecture, volume ii”, julgue as proposicoes |
 | 27 | de acordo com o contido em “practical ship hydrodynamics”, analise as afirmativas |
+| 23 | com base em “revised guidance to the master for avoiding dangerous situations |
 | 23 | com base em “provision and display of manoeuvring information on board ships”, |
-| 22 | com base em “revised guidance to the master for avoiding dangerous situations |
-| 20 | no briefing conduzido antes da faina, durante uma analise tecnica de bordo, |
 | 18 | com base em “principles of naval architecture, volume ii”, coloque v (verdadeiro) |
 | 18 | de acordo com o contido em “lewis — principles of naval architecture, |
-| 16 | com base em “ship resistance and flow”, coloque v (verdadeiro) ou f |
+| 17 | com base em “ship resistance and flow”, coloque v (verdadeiro) ou f |
 | 16 | com base em “standards for ship manoeuvrability”, julgue as proposicoes a seguir |
-| 16 | ao revisar o plano de manobra, no briefing conduzido antes da faina, |
-| 16 | durante a preparacao do pratico, em uma avaliacao do passadico, ao revisar |
+| 16 | no briefing conduzido antes da faina, durante uma analise tecnica de bordo, |
 | 15 | de acordo com o contido em “principles of naval architecture, volume iii” |
 | 15 | com base em “ship resistance and flow”, julgue as proposicoes a seguir |
-| 14 | durante uma analise tecnica de bordo, durante a preparacao do pratico, em |
-| 13 | em uma avaliacao do passadico, ao revisar o plano de manobra, no |
+| 13 | ao revisar o plano de manobra, no briefing conduzido antes da faina, |
 | 12 | de acordo com o contido em “naval shiphandling”, analise as afirmativas abaixo |
+| 12 | em uma avaliacao do passadico, ao revisar o plano de manobra, no |
+| 12 | durante a preparacao do pratico, em uma avaliacao do passadico, ao revisar |
 | 11 | com base em “standards for ship manoeuvrability”, coloque v (verdadeiro) ou f |
+| 11 | de acordo com o contido em “naval shiphandling”, analise as afirmativas abaixo, |
 
 ## navegacao-aguas-restritas
 
@@ -117,9 +117,9 @@
 | 20 | durante o planejamento de uma passagem noturna, qual conduta operacional atende ao |
 | 20 | ao avaliar a cadeia de erros, qual perigo decorre mais diretamente do |
 | 20 | com visibilidade variavel e espaco limitado, qual acao e coerente com o |
-| 17 | com base em “navegacao: a ciencia e a arte — volume i”, |
+| 19 | com base em “navegacao: a ciencia e a arte — volume i”, |
 | 15 | de acordo com o contido em “navegacao: a ciencia e a arte |
-| 11 | de acordo com o contido em “convention on the international regulations for |
+| 12 | de acordo com o contido em “convention on the international regulations for |
 | 10 | de acordo com o contido em “colreg — international regulations for preventing |
 | 9 | considerando capitulo 11 – regras especiais para evitar abalroamento, qual alternativa caracteriza |
 | 8 | com base no conteudo de “navegacao: a ciencia e a arte — |
@@ -154,18 +154,17 @@
 | 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
 | 12 | analise as quatro proposicoes sobre conteudo indicado no anexo 2-b e classifique-as |
 | 11 | de acordo com o contido em “normas da autoridade maritima para trafego |
+| 11 | com base em “normas da autoridade maritima para trafego e permanencia de |
 | 10 | considerando os conceitos adotados por normam-204/dpc, o que se afirma corretamente em |
 | 10 | de acordo com o contido em “portaria mb/md nº 37, de 21 |
 | 10 | de acordo com o contido em “lei nº 9.537, de 11 de |
 | 10 | de acordo com o contido em “lei nº 2.180, de 5 de |
+| 10 | com base em “lei nº 2.180, de 5 de fevereiro de 1954 |
 | 10 | com base em “lei nº 9.537, de 11 de dezembro de 1997 |
-| 10 | com base em “normas da autoridade maritima para trafego e permanencia de |
 | 9 | no contexto de normam-602/dhn, qual enunciado define corretamente o conteudo de item |
 | 9 | com base em “portaria mb/md nº 37, de 21 de fevereiro de |
 | 9 | de acordo com o contido em “lei nº 12.815, de 5 de |
-| 9 | de acordo com o contido em “lei nº 7.652, de 3 de |
 | 9 | de acordo com o contido em “decreto nº 2.596, de 18 de |
-| 9 | com base em “lei nº 2.180, de 5 de fevereiro de 1954 |
 | 8 | no contexto de normam-204/dpc, qual enunciado define corretamente o conteudo de item |
 | 8 | com base no conteudo de “lei nº 9.537, de 11 de dezembro |
 | 8 | de acordo com o contido em “normas da autoridade maritima para embarcacoes |
@@ -173,7 +172,8 @@
 | 8 | no contexto de decreto nº 2.596/1998 — rlesta, qual conceito corresponde a |
 | 8 | em uma analise comparativa de decreto nº 2.596/1998 — rlesta, qual associacao |
 | 7 | com base em “lei nº 14.813, de 15 de janeiro de 2024”, |
-| 7 | de acordo com o contido em “resolution a.960(23) — recommendations on training |
+| 7 | de acordo com o contido em “politica nacional de defesa e estrategia |
+| 7 | de acordo com o contido em “lei nº 7.652, de 3 de |
 
 ## meteorologia-oceanografia
 
@@ -193,29 +193,29 @@
 
 | Ocorrências | Prefixo |
 |---:|---|
-| 156 | de acordo com o contido em “meteorologia e oceanografia”, analise as afirmativas |
-| 115 | de acordo com o contido em “navegacao: a ciencia e a arte |
-| 109 | com base em “meteorologia e oceanografia”, coloque v (verdadeiro) ou f (falso) |
-| 102 | de acordo com o contido em “meteorologia: nocoes basicas”, analise as afirmativas |
-| 95 | com base em “navegacao: a ciencia e a arte — volume iii”, |
+| 161 | de acordo com o contido em “meteorologia e oceanografia”, analise as afirmativas |
+| 119 | de acordo com o contido em “navegacao: a ciencia e a arte |
+| 117 | com base em “meteorologia e oceanografia”, coloque v (verdadeiro) ou f (falso) |
+| 106 | de acordo com o contido em “meteorologia: nocoes basicas”, analise as afirmativas |
+| 97 | com base em “navegacao: a ciencia e a arte — volume iii”, |
 | 68 | com base em “meteorologia: nocoes basicas”, julgue as proposicoes a seguir e |
 | 49 | com base em “meteorologia e oceanografia”, julgue as proposicoes a seguir e |
 | 30 | no briefing conduzido antes da faina, durante uma analise tecnica de bordo, |
-| 24 | ao revisar o plano de manobra, no briefing conduzido antes da faina, |
-| 23 | em uma avaliacao do passadico, ao revisar o plano de manobra, no |
-| 23 | durante a preparacao do pratico, em uma avaliacao do passadico, ao revisar |
+| 22 | ao revisar o plano de manobra, no briefing conduzido antes da faina, |
+| 21 | em uma avaliacao do passadico, ao revisar o plano de manobra, no |
 | 21 | sobre publicacao indicada — sem capitulos delimitados no anexo 2-b, analise as |
-| 16 | durante uma analise tecnica de bordo, durante a preparacao do pratico, em |
+| 18 | durante a preparacao do pratico, em uma avaliacao do passadico, ao revisar |
 | 15 | durante um briefing tecnico, de acordo com o contido em “meteorologia e |
-| 12 | de acordo com o contido em “meteorologia e oceanografia” (capitulo viii — |
+| 15 | durante uma analise tecnica de bordo, durante a preparacao do pratico, em |
 | 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
+| 11 | de acordo com o contido em “meteorologia e oceanografia” (capitulo viii — |
 | 11 | durante uma analise tecnica de bordo, de acordo com o contido em |
 | 10 | sobre capitulo 45 – nocoes de meteorologia para navegantes, analise as afirmativas |
-| 9 | em uma revisao tecnica conduzida antes da manobra, considere especificamente o seguinte |
-| 9 | de acordo com o contido em “normam-701/dhn — normas da autoridade maritima |
+| 9 | com base em “normam-701/dhn — normas da autoridade maritima para as atividades |
+| 8 | em uma revisao tecnica conduzida antes da manobra, considere especificamente o seguinte |
+| 8 | de acordo com o contido em “normam-701/dhn — normas da autoridade maritima |
 | 8 | analise as quatro proposicoes sobre publicacao indicada — sem capitulos delimitados no |
 | 7 | durante uma analise tecnica de bordo, considerando o conteudo de “meteorologia e |
-| 7 | com base em “normam-701/dhn — normas da autoridade maritima para as atividades |
 | 7 | considerando publicacao indicada — sem capitulos delimitados no anexo 2-b, com foco |
 | 7 | em uma analise aprofundada de publicacao indicada — sem capitulos delimitados no |
 
@@ -237,8 +237,8 @@
 
 | Ocorrências | Prefixo |
 |---:|---|
-| 21 | de acordo com o contido em “international code of signals”, analise as |
-| 21 | com base em “international code of signals for visual, sound, and radio |
+| 22 | de acordo com o contido em “international code of signals”, analise as |
+| 22 | com base em “international code of signals for visual, sound, and radio |
 | 18 | de acordo com o contido em “international code of signals for visual, |
 | 16 | com base no conteudo de “international code of signals for visual, sound, |
 | 16 | de acordo com o contido em “imo standard marine communication phrases”, analise |
@@ -247,13 +247,13 @@
 | 12 | qual termo ou sinal de glossario tecnico do erog corresponde a seguinte |
 | 11 | ao revisar smcp glossary — general terms, um aluno encontrou o termo |
 | 10 | em materia de unidade 3 — gmdss, assinale a definicao tecnicamente correta |
+| 10 | com base em “imo standard marine communication phrases”, coloque v (verdadeiro) ou |
 | 9 | considerando secao geral — distress; casualties; aids to navigation; manoeuvres; pilot, qual |
-| 9 | com base em “imo standard marine communication phrases”, coloque v (verdadeiro) ou |
+| 9 | de acordo com o contido em “especial de radioperador geral (erog)”, analise |
 | 8 | no contexto de secao geral — distress; casualties; aids to navigation; manoeuvres; |
 | 8 | em uma analise comparativa de secao geral — distress; casualties; aids to |
 | 8 | com base em “international code of signals”, coloque v (verdadeiro) ou f |
 | 8 | em uma revisao tecnica conduzida antes da manobra, considere especificamente o seguinte |
-| 8 | de acordo com o contido em “especial de radioperador geral (erog)”, analise |
 | 7 | em materia de smcp glossary — general terms, assinale a definicao tecnicamente |
 | 7 | em materia de principios e procedimentos gerais do smcp, assinale a definicao |
 | 7 | em materia de unidade 1 — principios das radiocomunicacoes maritimas, assinale a |
@@ -283,8 +283,8 @@
 |---:|---|
 | 47 | uma analise de fadiga usa o trecho “module 1 — fatigue”. qual |
 | 45 | qual trecho em ingles integra o conteudo de “module 2 — fatigue |
-| 44 | de acordo com o contido em “planejamento portuario: recomendacoes para acessos nauticos”, |
-| 35 | de acordo com o contido em “ship/port interface: list of publications relevant |
+| 45 | de acordo com o contido em “planejamento portuario: recomendacoes para acessos nauticos”, |
+| 36 | de acordo com o contido em “ship/port interface: list of publications relevant |
 | 32 | no topico “module 1 — fatigue” das guidelines on fatigue, qual trecho |
 | 31 | ao consultar “module 2 — fatigue and the company”, qual item em |
 | 30 | no topico “module 3 — fatigue and the seafarer” das guidelines on |

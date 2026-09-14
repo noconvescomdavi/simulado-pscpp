@@ -6,7 +6,7 @@
   "question_type": "multiple_choice_single_answer",
   "platform_note": "IDs estáveis; correct_answer utiliza uma das chaves A-E.",
   "validation": {
-    "total": 3919,
+    "total": 3927,
     "by_module": {
       "1. Resistência do navio e métodos de obtenção": 680,
       "2. Propulsão do navio e propulsores": 652,
@@ -312896,6 +312896,719 @@
       ],
       "correct_answer": "E",
       "explanation": "A sequência correta corresponde à alternativa E, conforme os conceitos reunidos em Chapters 1–8."
+    },
+    {
+      "id": "MAN-3920",
+      "subject": "Manobrabilidade do Navio",
+      "module": "6. Mar adverso e informações de manobra a bordo",
+      "topic": "Formas de informação de manobra",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "a601",
+        "chapter_id": "a601::s1",
+        "topic_id": "I-a601-s1-10-1-formas-de-informacao-de-manobra",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "a601",
+          "title": "IMO Resolution A.601(15) — Provision and Display of Manoeuvring Information",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "a601::s1",
+          "number": "s1",
+          "title": "1. Manoeuvring information",
+          "label": "1. Manoeuvring information"
+        },
+        "section": "1. Manoeuvring information",
+        "module": "6. Mar adverso e informações de manobra a bordo",
+        "topic": {
+          "id": "I-a601-s1-10-1-formas-de-informacao-de-manobra",
+          "title": "Formas de informação de manobra"
+        }
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Provision and Display of Manoeuvring Information on Board Ships",
+        "edition": "Resolution A.601(15), 19 Nov. 1987",
+        "locator": "Annex and appendices 1 to 3"
+      },
+      "tags": [
+        "mar adverso e informações de manobra",
+        "manobrabilidade",
+        "a601",
+        "a601::s1",
+        "formas-de-informacao-de-manobra",
+        "pscpp-style-v6",
+        "formato-pscpp-assertivas-5"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v6",
+        "derived_from_question_ids": [
+          "MAN-291",
+          "MAN-296",
+          "MAN-351",
+          "MAN-293",
+          "MAN-298"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V6.AST5.10001",
+      "question": "De acordo com o contido em “Provision and Display of Manoeuvring Information on Board Ships”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) Sobre “Formas de informação de manobra”, é correto associar o conceito à seguinte proposição: pilot card, wheelhouse poster e manoeuvring booklet.\nII) Sobre “Manoeuvring booklet”, é correto associar o conceito à seguinte proposição: reunir informação mais abrangente que o poster e admitir atualização ao longo da vida operacional.\nIII) Sobre “Pilot card”, é correto associar o conceito à seguinte proposição: Não contém informação de manobra.\nIV) Sobre “Preenchimento do pilot card”, é correto associar o conceito à seguinte proposição: não são necessários ensaios especiais de manobra; usam-se dados e condições disponíveis e atuais.\nV) No contexto de “Aplicação do pilot card”, a associação “apenas manoeuvring booklet.” está correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A combinação correta é a alternativa A; as cinco proposições pertencem ao mesmo recorte bibliográfico: Annex and appendices 1 to 3."
+    },
+    {
+      "id": "MAN-3921",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic": "Apêndices",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch7",
+        "topic_id": "I-larsson-resistance-ch7-1-9-apendices",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch7",
+          "number": "ch7",
+          "title": "Chapter 7",
+          "label": "Chapter 7"
+        },
+        "section": "Chapter 7",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch7-1-9-apendices",
+          "title": "Apêndices"
+        }
+      },
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "2010",
+        "locator": "Chapters 1-8"
+      },
+      "tags": [
+        "apêndices",
+        "resistência",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch7",
+        "apendices",
+        "pscpp-style-v6",
+        "formato-pscpp-vf-5"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v6",
+        "derived_from_question_ids": [
+          "MAN-309",
+          "MAN-3690",
+          "MAN-3696",
+          "MAN-3688",
+          "MAN-3693"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V6.VF5.10002",
+      "question": "Com base em “Ship Resistance and Flow”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) Sobre “Apêndices”, é correto associar o conceito à seguinte proposição: Apêndices imersos podem adicionar resistência ao casco nu e alterar o escoamento local.\n( ) No contexto de “vento verdadeiro”, a associação “ângulo de abatimento” está correta.\n( ) Sobre “ângulo de abatimento”, é correto associar o conceito à seguinte proposição: Condição de escoamento lateral que pode gerar sustentação e resistência induzida no casco e apêndices.\n( ) No contexto de “sustentação hidrodinâmica”, a associação “resistência de apêndices” está correta.\n( ) Sobre “resistência do ar”, é correto associar o conceito à seguinte proposição: Arrasto sobre a parte emersa do navio mesmo em ar inicialmente parado.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
+        },
+        {
+          "key": "D",
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "E",
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A sequência correta é a da alternativa B, conforme Chapters 1-8."
+    },
+    {
+      "id": "MAN-3922",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic": "Resistência de ondas",
+      "difficulty": "Difícil",
+      "style": "Preenchimento de lacunas",
+      "question_type": "Preenchimento de lacunas",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch5-s4",
+        "topic_id": "I-pna-v2-ch5-s4-1-2-resistencia-de-ondas",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V. (ed.)"
+        },
+        "chapter": {
+          "id": "pna-v2::ch5-s4",
+          "number": "ch5-s4",
+          "title": "Chapter V – Resistance — Section 4: Wave-Making Resistance",
+          "label": "Chapter V – Resistance — Section 4: Wave-Making Resistance"
+        },
+        "section": "Chapter V – Resistance — Section 4: Wave-Making Resistance",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-pna-v2-ch5-s4-1-2-resistencia-de-ondas",
+          "title": "Resistência de ondas"
+        }
+      },
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "3. ed., 1988-1989",
+        "locator": "Chapter V - Resistance, Sections 1, 3, 4 and 5"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch5-s4",
+        "resistencia-de-ondas",
+        "pscpp-style-v6",
+        "formato-pscpp-lacunas-5"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v6",
+        "derived_from_question_ids": [
+          "MAN-034",
+          "MAN-065",
+          "MAN-019",
+          "MAN-042",
+          "MAN-3535"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V6.LAC5.10003",
+      "question": "Tendo como referência “Principles of Naval Architecture, Volume II”, complete corretamente as lacunas e assinale a opção que apresenta a sequência adequada:\n(I) Com o aumento do número de Froude em um casco de deslocamento, a contribuição relativa da resistência de ondas, em geral: = ______\n(II) O uso de um bulbo de proa pode reduzir a resistência de ondas quando: = ______\n(III) A resistência de ondas existe porque o navio em deslocamento: = ______\n(IV) A resistência adicional em ondas do mar resulta, entre outros mecanismos, de: = ______\n(V) No contexto de Chapter V – Resistance — Section 4: Wave-Making Resistance, qual conceito corresponde à descrição: “Componentes do padrão de ondas que se propagam obliquamente para fora da trajetória do navio.” = ______",
+      "options": [
+        {
+          "key": "A",
+          "text": "transfere energia ao sistema de ondas gerado na superfície livre. — o sistema de ondas por ele gerado interfere favoravelmente com o sistema da proa na faixa de projeto. — torna-se mais importante e pode apresentar máximos e mínimos de interferência. — movimentos do navio, difração, radiação, impactos e alterações repetidas de área molhada e trim. — ondas divergentes"
+        },
+        {
+          "key": "B",
+          "text": "o sistema de ondas por ele gerado interfere favoravelmente com o sistema da proa na faixa de projeto. — torna-se mais importante e pode apresentar máximos e mínimos de interferência. — transfere energia ao sistema de ondas gerado na superfície livre. — ondas divergentes — movimentos do navio, difração, radiação, impactos e alterações repetidas de área molhada e trim."
+        },
+        {
+          "key": "C",
+          "text": "torna-se mais importante e pode apresentar máximos e mínimos de interferência. — o sistema de ondas por ele gerado interfere favoravelmente com o sistema da proa na faixa de projeto. — transfere energia ao sistema de ondas gerado na superfície livre. — movimentos do navio, difração, radiação, impactos e alterações repetidas de área molhada e trim. — ondas divergentes"
+        },
+        {
+          "key": "D",
+          "text": "movimentos do navio, difração, radiação, impactos e alterações repetidas de área molhada e trim. — transfere energia ao sistema de ondas gerado na superfície livre. — o sistema de ondas por ele gerado interfere favoravelmente com o sistema da proa na faixa de projeto. — torna-se mais importante e pode apresentar máximos e mínimos de interferência. — ondas divergentes"
+        },
+        {
+          "key": "E",
+          "text": "ondas divergentes — movimentos do navio, difração, radiação, impactos e alterações repetidas de área molhada e trim. — transfere energia ao sistema de ondas gerado na superfície livre. — o sistema de ondas por ele gerado interfere favoravelmente com o sistema da proa na faixa de projeto. — torna-se mais importante e pode apresentar máximos e mínimos de interferência."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A sequência correta corresponde à alternativa C, segundo o conteúdo de Chapter V - Resistance, Sections 1, 3, 4 and 5."
+    },
+    {
+      "id": "MAN-3923",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic": "Leme compensado",
+      "difficulty": "Difícil",
+      "style": "Estudo de caso PSCPP",
+      "question_type": "Estudo de caso PSCPP",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s14",
+        "topic_id": "I-pna-v3-ch9-s14-3-26-leme-compensado",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s14",
+          "number": "ch9-s14",
+          "title": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+          "label": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces"
+        },
+        "section": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-pna-v3-ch9-s14-3-26-leme-compensado",
+          "title": "Leme compensado"
+        }
+      },
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX — Controllability, selected Sections 1, 3, 4, 5, 6, 10, 12, 13 and 14"
+      },
+      "tags": [
+        "Superfícies de controle - lemes",
+        "Leme compensado",
+        "leme compensado",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s14",
+        "leme-compensado",
+        "pscpp-style-v6",
+        "formato-pscpp-caso-v6"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v6",
+        "derived_from_question_ids": [
+          "MAN-1134"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V6.CASO.10004",
+      "question": "O Prático Ari, durante uma faina relacionada a “Leme compensado”, precisa aplicar corretamente o conteúdo de “Principles of Naval Architecture, Volume III”. Considere o seguinte problema técnico: Sob essa ótica, na avaliação de desempenho após alteração da velocidade, o tópico Leme compensado precisa ser interpretado corretamente. qual conclusão é consistente com o comportamento esperado? Assinale a alternativa adequada.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise correta considera que, para leme compensado na avaliação de desempenho após alteração da velocidade, dispensa máquina do leme."
+        },
+        {
+          "key": "B",
+          "text": "É coerente afirmar que, para leme compensado na avaliação de desempenho após alteração da velocidade, é um propulsor azimutal."
+        },
+        {
+          "key": "C",
+          "text": "A interpretação adequada é que, para leme compensado na avaliação de desempenho após alteração da velocidade, tem toda a área necessariamente a ré do eixo."
+        },
+        {
+          "key": "D",
+          "text": "O princípio aplicável indica que, para leme compensado na avaliação de desempenho após alteração da velocidade, tem parte de sua área à vante do eixo de rotação para reduzir o momento na madre e esforço de acionamento."
+        },
+        {
+          "key": "E",
+          "text": "A conclusão técnica é que, para leme compensado na avaliação de desempenho após alteração da velocidade, não produz força lateral."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Neste cenário, a alternativa D é a única compatível com o princípio associado a Leme compensado: tem parte de sua área à vante do eixo de rotação para reduzir o momento na madre e esforço de acionamento. As demais opções introduzem relações incompatíveis com a definição, o mecanismo físico ou a condição operacional descrita na fonte indicada. O enquadramento desta questão considera especificamente na avaliação de desempenho após alteração da velocidade."
+    },
+    {
+      "id": "MAN-3924",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic": "Similitude de modelos",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch3",
+        "topic_id": "I-larsson-resistance-ch3-1-6-similitude-de-modelos",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch3",
+          "number": "ch3",
+          "title": "Chapter 3",
+          "label": "Chapter 3"
+        },
+        "section": "Chapter 3",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch3-1-6-similitude-de-modelos",
+          "title": "Similitude de modelos"
+        }
+      },
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "2010",
+        "locator": "Chapters 1–8"
+      },
+      "tags": [
+        "Resistência do navio e métodos de obtenção",
+        "Similitude de modelos",
+        "similitude de modelos",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch3",
+        "similitude-de-modelos",
+        "pscpp-style-v6",
+        "formato-pscpp-assertivas-5"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v6",
+        "derived_from_question_ids": [
+          "MAN-1708",
+          "MAN-1816",
+          "MAN-1923",
+          "MAN-2030",
+          "MAN-2086"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V6.AST5.10005",
+      "question": "De acordo com o contido em “Ship Resistance and Flow”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) Sobre “Similitude de modelos”, é correto associar o conceito à seguinte proposição: A análise correta considera que, para similitude de modelos durante o estudo de causas de aumento de esforço propulsivo, dispensa correções de escala.\nII) Sobre “Similitude de modelos”, é correto associar o conceito à seguinte proposição: A análise correta considera que, para similitude de modelos ao revisar um relatório de desempenho do casco e do sistema de governo, não permite, em geral, igualar simultaneamente Reynolds e Froude com o mesmo fluido e escala geométrica.\nIII) Sobre “Número de Froude”, é correto associar o conceito à seguinte proposição: A interpretação adequada é que, para número de froude ao verificar coerência entre teoria hidrodinâmica e observação de bordo, é usado apenas para propulsores.\nIV) Sobre “Número de Reynolds”, é correto associar o conceito à seguinte proposição: A interpretação adequada é que, para número de reynolds ao interpretar uma situação de manobra com perturbação ambiental, relaciona efeitos de inércia e viscosidade e é central na similitude viscosa.\nV) Sobre “Similitude de modelos”, é correto associar o conceito à seguinte proposição: A análise correta considera que, para similitude de modelos durante uma comparação entre duas configurações operacionais do mesmo navio, não permite, em geral, igualar simultaneamente Reynolds e Froude com o mesmo fluido e escala geométrica.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A combinação correta é a alternativa E; as cinco proposições pertencem ao mesmo recorte bibliográfico: Chapters 1–8."
+    },
+    {
+      "id": "MAN-3925",
+      "subject": "Manobrabilidade do Navio",
+      "module": "6. Mar adverso e informações de manobra a bordo",
+      "topic": "Orientação operacional em mau tempo",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1228",
+        "chapter_id": "msc1228::s4",
+        "topic_id": "I-msc1228-s4-6-51-orientacao-operacional-em-mau-tempo",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc1228",
+          "title": "IMO MSC.1/Circ.1228 — Revised Guidance in Adverse Weather",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+        },
+        "chapter": {
+          "id": "msc1228::s4",
+          "number": "s4",
+          "title": "4. Operational guidance",
+          "label": "4. Operational guidance"
+        },
+        "section": "4. Operational guidance",
+        "module": "6. Mar adverso e informações de manobra a bordo",
+        "topic": {
+          "id": "I-msc1228-s4-6-51-orientacao-operacional-em-mau-tempo",
+          "title": "Orientação operacional em mau tempo"
+        }
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Revised guidance to the master for avoiding dangerous situations in adverse weather and sea conditions",
+        "edition": "MSC.1/Circ.1228, 2007",
+        "locator": "Sections 1, 3 and 4.2"
+      },
+      "tags": [
+        "Mar adverso e informações de manobra a bordo",
+        "Orientação operacional em mau tempo",
+        "orientação operacional em mau tempo",
+        "manobrabilidade",
+        "msc1228",
+        "msc1228::s4",
+        "orientacao-operacional-em-mau-tempo",
+        "pscpp-style-v6",
+        "formato-pscpp-vf-5"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v6",
+        "derived_from_question_ids": [
+          "MAN-1321",
+          "MAN-1591",
+          "MAN-1861",
+          "MAN-2131",
+          "MAN-2401"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V6.VF5.10006",
+      "question": "Com base em “Revised guidance to the master for avoiding dangerous situations in adverse weather and sea conditions”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) Sobre “Orientação operacional em mau tempo”, é correto associar o conceito à seguinte proposição: A análise correta considera que, para orientação operacional em mau tempo na preparação de um briefing técnico para a equipe de navegação, inclui considerar alterações de rumo e velocidade para evitar combinações perigosas de período de encontro e condições de onda.\n( ) Sobre “Orientação operacional em mau tempo”, é correto associar o conceito à seguinte proposição: A análise correta considera que, para orientação operacional em mau tempo durante uma inspeção dos dados de manobrabilidade disponíveis a bordo, inclui considerar alterações de rumo e velocidade para evitar combinações perigosas de período de encontro e condições de onda.\n( ) Sobre “Orientação operacional em mau tempo”, é correto associar o conceito à seguinte proposição: A conclusão técnica é que, para orientação operacional em mau tempo ao revisar um relatório de desempenho do casco e do sistema de governo, trata apenas de consumo de combustível.\n( ) Sobre “Orientação operacional em mau tempo”, é correto associar o conceito à seguinte proposição: A análise correta considera que, para orientação operacional em mau tempo durante uma comparação entre duas configurações operacionais do mesmo navio, inclui considerar alterações de rumo e velocidade para evitar combinações perigosas de período de encontro e condições de onda.\n( ) Sobre “Orientação operacional em mau tempo”, é correto associar o conceito à seguinte proposição: A interpretação adequada é que, para orientação operacional em mau tempo ao avaliar uma condição de máquina diferente da condição usual, trata apenas de consumo de combustível.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
+        },
+        {
+          "key": "D",
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "E",
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A sequência correta é a da alternativa A, conforme Sections 1, 3 and 4.2."
+    },
+    {
+      "id": "MAN-3926",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic": "Cavitação",
+      "difficulty": "Difícil",
+      "style": "Preenchimento de lacunas",
+      "question_type": "Preenchimento de lacunas",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch6-s7",
+        "topic_id": "I-pna-v2-ch6-s7-2-15-cavitacao",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v2::ch6-s7",
+          "number": "ch6-s7",
+          "title": "Chapter VI – Propulsion — Section 7: Cavitation",
+          "label": "Chapter VI – Propulsion — Section 7: Cavitation"
+        },
+        "section": "Chapter VI – Propulsion — Section 7: Cavitation",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-pna-v2-ch6-s7-2-15-cavitacao",
+          "title": "Cavitação"
+        }
+      },
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "2nd Revision, 1988",
+        "locator": "Chapter VI — Propulsion, Sections 1, 2, 4, 6, 7 and 10"
+      },
+      "tags": [
+        "Propulsão do navio e propulsores",
+        "Cavitação",
+        "cavitação",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch6-s7",
+        "cavitacao",
+        "pscpp-style-v6",
+        "formato-pscpp-lacunas-5"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v6",
+        "derived_from_question_ids": [
+          "MAN-1825",
+          "MAN-2095",
+          "MAN-2365",
+          "MAN-2635",
+          "MAN-2905"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V6.LAC5.10007",
+      "question": "Tendo como referência “Principles of Naval Architecture, Volume II”, complete corretamente as lacunas e assinale a opção que apresenta a sequência adequada:\n(I) Para interpretar corretamente o caso, ao revisar um relatório de desempenho do casco e do sistema de governo, o tópico Cavitação precisa ser interpretado corretamente. qual conclusão é tecnicamente defensável à luz da fonte indicada = ______\n(II) Para interpretar corretamente o caso, durante uma comparação entre duas configurações operacionais do mesmo navio, o tópico Cavitação precisa ser interpretado corretamente. qual leitura evita uma interpretação hidrodinâmica incorreta = ______\n(III) Para interpretar corretamente o caso, ao avaliar uma condição de máquina diferente da condição usual, o tópico Cavitação precisa ser interpretado corretamente. qual conclusão é tecnicamente defensável à luz da fonte indicada = ______\n(IV) Para interpretar corretamente o caso, durante o planejamento de uma alteração de rumo de grande amplitude, o tópico Cavitação precisa ser interpretado corretamente. qual leitura evita uma interpretação hidrodinâmica incorreta = ______\n(V) Para interpretar corretamente o caso, na análise de uma transição entre avanço, redução e reversão de máquina, o tópico Cavitação precisa ser interpretado corretamente. qual conclusão é tecnicamente defensável à luz da fonte indicada = ______",
+      "options": [
+        {
+          "key": "A",
+          "text": "O princípio aplicável indica que, para cavitação durante uma comparação entre duas configurações operacionais do mesmo navio, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho. — O princípio aplicável indica que, para cavitação ao revisar um relatório de desempenho do casco e do sistema de governo, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho. — O princípio aplicável indica que, para cavitação ao avaliar uma condição de máquina diferente da condição usual, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho. — O princípio aplicável indica que, para cavitação na análise de uma transição entre avanço, redução e reversão de máquina, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho. — O princípio aplicável indica que, para cavitação durante o planejamento de uma alteração de rumo de grande amplitude, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho."
+        },
+        {
+          "key": "B",
+          "text": "O princípio aplicável indica que, para cavitação ao revisar um relatório de desempenho do casco e do sistema de governo, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho. — O princípio aplicável indica que, para cavitação durante uma comparação entre duas configurações operacionais do mesmo navio, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho. — O princípio aplicável indica que, para cavitação ao avaliar uma condição de máquina diferente da condição usual, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho. — O princípio aplicável indica que, para cavitação durante o planejamento de uma alteração de rumo de grande amplitude, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho. — O princípio aplicável indica que, para cavitação na análise de uma transição entre avanço, redução e reversão de máquina, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho."
+        },
+        {
+          "key": "C",
+          "text": "O princípio aplicável indica que, para cavitação ao avaliar uma condição de máquina diferente da condição usual, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho. — O princípio aplicável indica que, para cavitação durante uma comparação entre duas configurações operacionais do mesmo navio, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho. — O princípio aplicável indica que, para cavitação ao revisar um relatório de desempenho do casco e do sistema de governo, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho. — O princípio aplicável indica que, para cavitação durante o planejamento de uma alteração de rumo de grande amplitude, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho. — O princípio aplicável indica que, para cavitação na análise de uma transição entre avanço, redução e reversão de máquina, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho."
+        },
+        {
+          "key": "D",
+          "text": "O princípio aplicável indica que, para cavitação durante o planejamento de uma alteração de rumo de grande amplitude, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho. — O princípio aplicável indica que, para cavitação ao avaliar uma condição de máquina diferente da condição usual, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho. — O princípio aplicável indica que, para cavitação durante uma comparação entre duas configurações operacionais do mesmo navio, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho. — O princípio aplicável indica que, para cavitação ao revisar um relatório de desempenho do casco e do sistema de governo, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho. — O princípio aplicável indica que, para cavitação na análise de uma transição entre avanço, redução e reversão de máquina, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho."
+        },
+        {
+          "key": "E",
+          "text": "O princípio aplicável indica que, para cavitação na análise de uma transição entre avanço, redução e reversão de máquina, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho. — O princípio aplicável indica que, para cavitação durante o planejamento de uma alteração de rumo de grande amplitude, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho. — O princípio aplicável indica que, para cavitação ao avaliar uma condição de máquina diferente da condição usual, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho. — O princípio aplicável indica que, para cavitação durante uma comparação entre duas configurações operacionais do mesmo navio, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho. — O princípio aplicável indica que, para cavitação ao revisar um relatório de desempenho do casco e do sistema de governo, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A sequência correta corresponde à alternativa B, segundo o conteúdo de Chapter VI — Propulsion, Sections 1, 2, 4, 6, 7 and 10."
+    },
+    {
+      "id": "MAN-3927",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic": "Estol do leme",
+      "difficulty": "Difícil",
+      "style": "Estudo de caso PSCPP",
+      "question_type": "Estudo de caso PSCPP",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "I-bertram-ch6-7-5-estol-do-leme",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Chapter 6 – Ship manoeuvering",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-bertram-ch6-7-5-estol-do-leme",
+          "title": "Estol do leme"
+        }
+      },
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Chapter 6 - Ship Maneuvering"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch6",
+        "estol-do-leme",
+        "pscpp-style-v6",
+        "formato-pscpp-caso-v6"
+      ],
+      "provenance": {
+        "method": "pscpp-expansion-v6",
+        "derived_from_question_ids": [
+          "MAN-133"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      },
+      "topic_code": "PSCPP.V6.CASO.10008",
+      "question": "O Prático Lúcia, durante uma faina relacionada a “Estol do leme”, precisa aplicar corretamente o conteúdo de “Practical Ship Hydrodynamics”. Considere o seguinte problema técnico: O aumento do ângulo de leme além de certo valor pode reduzir a eficiência do controle porque ocorre: Assinale a alternativa adequada.",
+      "options": [
+        {
+          "key": "A",
+          "text": "eliminação da camada limite."
+        },
+        {
+          "key": "B",
+          "text": "aumento linear ilimitado da sustentação."
+        },
+        {
+          "key": "C",
+          "text": "separação intensa e estol, com forte aumento de arrasto e perda de crescimento da sustentação."
+        },
+        {
+          "key": "D",
+          "text": "redução do arrasto a zero."
+        },
+        {
+          "key": "E",
+          "text": "desaparecimento da pressão dinâmica."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Depois do ângulo crítico, o escoamento se descola amplamente; a resultante muda e o ganho de força lateral por grau de leme diminui."
     }
   ],
   "imported_at": "2026-09-02T15:44:35.714Z"
