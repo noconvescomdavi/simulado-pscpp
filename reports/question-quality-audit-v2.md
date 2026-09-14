@@ -1,21 +1,21 @@
 # Auditoria profunda de qualidade — bancos de questões
 
-Gerado em: 2026-09-14T17:25:14.849Z
+Gerado em: 2026-09-14T17:26:23.382Z
 
 Total de questões analisadas: **11936**
 Taxonomia V2: **11936**
 Questões da expansão V1 marcadas para revisão integral: **0**
-Flags: **2605** (críticas 0; altas 19; médias 616; baixas 1970)
+Flags: **2586** (críticas 0; altas 0; médias 616; baixas 1970)
 
 ## Por matéria
 
 | Matéria | Questões | Tópicos | Capítulos | Expansão V1 | Contexto | Distratores | Formatação | Estrutural |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | arte-naval | 1327 | 300 | 23 | 0 | 34 | 810 | 0 | 0 |
-| manobrabilidade | 3919 | 560 | 46 | 0 | 16 | 228 | 0 | 0 |
+| manobrabilidade | 3919 | 560 | 46 | 0 | 0 | 228 | 0 | 0 |
 | navegacao-aguas-restritas | 1817 | 1342 | 47 | 0 | 0 | 452 | 0 | 0 |
 | legislacao-regulamentacao | 1287 | 844 | 27 | 0 | 0 | 240 | 0 | 0 |
-| meteorologia-oceanografia | 1182 | 26 | 4 | 0 | 3 | 151 | 0 | 0 |
+| meteorologia-oceanografia | 1182 | 26 | 4 | 0 | 0 | 151 | 0 | 0 |
 | comunicacoes | 1227 | 125 | 8 | 0 | 0 | 323 | 0 | 0 |
 | conhecimentos-gerais | 1177 | 217 | 7 | 0 | 0 | 348 | 0 | 0 |
 
@@ -23,25 +23,6 @@ Flags: **2605** (críticas 0; altas 19; médias 616; baixas 1970)
 
 | Gravidade | Matéria | ID | Código | Detalhe |
 |---|---|---|---|---|
-| high | manobrabilidade | MAN-1117 | DUPLICATE_STEM | Enunciado idêntico a MAN-836. |
-| high | manobrabilidade | MAN-1598 | DUPLICATE_STEM | Enunciado idêntico a MAN-887. |
-| high | manobrabilidade | MAN-1750 | DUPLICATE_STEM | Enunciado idêntico a MAN-824. |
-| high | manobrabilidade | MAN-1845 | DUPLICATE_STEM | Enunciado idêntico a MAN-857. |
-| high | manobrabilidade | MAN-2020 | DUPLICATE_STEM | Enunciado idêntico a MAN-878. |
-| high | manobrabilidade | MAN-2217 | DUPLICATE_STEM | Enunciado idêntico a MAN-860. |
-| high | manobrabilidade | MAN-2329 | DUPLICATE_STEM | Enunciado idêntico a MAN-866. |
-| high | manobrabilidade | MAN-2502 | DUPLICATE_STEM | Enunciado idêntico a MAN-821. |
-| high | manobrabilidade | MAN-2700 | DUPLICATE_STEM | Enunciado idêntico a MAN-851. |
-| high | manobrabilidade | MAN-3037 | DUPLICATE_STEM | Enunciado idêntico a MAN-854. |
-| high | manobrabilidade | MAN-3126 | DUPLICATE_STEM | Enunciado idêntico a MAN-845. |
-| high | manobrabilidade | MAN-3474 | DUPLICATE_STEM | Enunciado idêntico a MAN-869. |
-| high | manobrabilidade | MAN-3834 | DUPLICATE_STEM | Enunciado idêntico a MAN-911. |
-| high | manobrabilidade | MAN-3908 | DUPLICATE_STEM | Enunciado idêntico a MAN-890. |
-| high | manobrabilidade | MAN-3914 | DUPLICATE_STEM | Enunciado idêntico a MAN-872. |
-| high | manobrabilidade | MAN-3917 | DUPLICATE_STEM | Enunciado idêntico a MAN-848. |
-| high | meteorologia-oceanografia | MEO-1163 | DUPLICATE_STEM | Enunciado idêntico a MEO-0990. |
-| high | meteorologia-oceanografia | MEO-1166 | DUPLICATE_STEM | Enunciado idêntico a MEO-0815. |
-| high | meteorologia-oceanografia | MEO-1172 | DUPLICATE_STEM | Enunciado idêntico a MEO-0576. |
 | medium | arte-naval | ANV-0123 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0013. |
 | medium | arte-naval | ANV-0148 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
 | medium | arte-naval | ANV-0149 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0005. |
@@ -273,6 +254,25 @@ Flags: **2605** (críticas 0; altas 19; médias 616; baixas 1970)
 | medium | arte-naval | ANV-0658 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0617. |
 | medium | arte-naval | ANV-0659 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0618. |
 | medium | arte-naval | ANV-0663 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0091. |
+| medium | arte-naval | ANV-0665 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0099. |
+| medium | arte-naval | ANV-0668 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0626. |
+| medium | arte-naval | ANV-0670 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0628. |
+| medium | arte-naval | ANV-0672 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0127. |
+| medium | arte-naval | ANV-0676 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0634. |
+| medium | arte-naval | ANV-0683 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0051. |
+| medium | arte-naval | ANV-0690 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0608. |
+| medium | arte-naval | ANV-0693 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0611. |
+| medium | arte-naval | ANV-0701 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0023. |
+| medium | arte-naval | ANV-0708 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0055. |
+| medium | arte-naval | ANV-0710 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0143. |
+| medium | arte-naval | ANV-0722 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0715. |
+| medium | arte-naval | ANV-0736 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0135. |
+| medium | arte-naval | ANV-0749 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0603. |
+| medium | arte-naval | ANV-0751 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0007. |
+| medium | arte-naval | ANV-0777 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0715. |
+| medium | arte-naval | ANV-0778 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0107. |
+| medium | arte-naval | ANV-0781 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0083. |
+| medium | arte-naval | ANV-0783 | DUPLICATE_OPTION_SET | Conjunto de alternativas idêntico ao de ANV-0674. |
 
 ## Critério
 
