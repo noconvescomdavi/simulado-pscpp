@@ -31293,16 +31293,56 @@
       "id": "MAN-406",
       "subject": "Manobrabilidade do Navio",
       "module": "6. Mar adverso e informações de manobra a bordo",
-      "topic": "Wheelhouse poster",
+      "topic_code": "PSCPP.REF.INC.0055",
+      "topic": "Manoeuvring booklet",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Provision and Display of Manoeuvring Information on Board Ships” (Annex and appendices 1 to 3), analise o seguinte problema técnico: O manoeuvring booklet distingue-se por: Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "reunir informação mais abrangente que o poster e admitir atualização ao longo da vida operacional."
+        },
+        {
+          "key": "B",
+          "text": "conter menos dados que o pilot card."
+        },
+        {
+          "key": "C",
+          "text": "ser usado apenas uma vez no estaleiro."
+        },
+        {
+          "key": "D",
+          "text": "não poder incorporar resultados de serviço."
+        },
+        {
+          "key": "E",
+          "text": "substituir todas as cartas náuticas."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O livreto consolida características, curvas, paradas, efeitos de vento e águas rasas e outros dados úteis, podendo ser enriquecido com experiência operacional.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Provision and Display of Manoeuvring Information on Board Ships",
+        "edition": "Resolution A.601(15), 19 Nov. 1987",
+        "locator": "Annex and appendices 1 to 3"
+      },
+      "tags": [
+        "mar adverso e informações de manobra",
+        "manobrabilidade",
+        "a601",
+        "a601::s1",
+        "manoeuvring-booklet",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
         "bibliography_id": "a601",
         "chapter_id": "a601::s1",
-        "topic_id": "I-a601-s1-6-7-wheelhouse-poster",
+        "topic_id": "I-a601-s1-10-1-3-manoeuvring-booklet",
         "subtopic_id": null
       },
       "tracking": {
@@ -31310,7 +31350,7 @@
         "work": {
           "id": "a601",
           "title": "IMO Resolution A.601(15) — Provision and Display of Manoeuvring Information",
-          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
         },
         "chapter": {
           "id": "a601::s1",
@@ -31321,65 +31361,19 @@
         "section": "1. Manoeuvring information",
         "module": "6. Mar adverso e informações de manobra a bordo",
         "topic": {
-          "id": "I-a601-s1-6-7-wheelhouse-poster",
-          "title": "Wheelhouse poster"
+          "id": "I-a601-s1-10-1-3-manoeuvring-booklet",
+          "title": "Manoeuvring booklet"
         }
       },
-      "source": {
-        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
-        "title": "Provision and Display of Manoeuvring Information on Board Ships",
-        "edition": "Resolution A.601(15), 1987",
-        "locator": "Section 1 — Manoeuvring information"
-      },
-      "tags": [
-        "wheelhouse poster",
-        "informação de manobra",
-        "manobrabilidade",
-        "a601",
-        "a601::s1",
-        "wheelhouse-poster",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-617",
-          "MAN-618",
-          "MAN-669",
-          "MAN-670",
-          "MAN-671"
+          "MAN-296"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-406",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0055",
-      "question": "Com base no conteúdo de “Provision and Display of Manoeuvring Information on Board Ships”, em Section 1 — Manoeuvring information, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Manoeuvring booklet”, é correto afirmar: É limitado ao nome do navio e porto de registro."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Manoeuvring booklet”, é correto afirmar: O manoeuvring booklet reúne informações mais detalhadas sobre características de manobra do navio."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Pilot card”, é correto afirmar: O pilot card é destinado a fornecer ao prático informações atualizadas sobre condição e características de manobra do navio."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Wheelhouse poster”, é correto afirmar: O wheelhouse poster apresenta informações de manobra de forma disponível à equipe de passadiço e ao prático."
-        },
-        {
-          "key": "E",
-          "text": "Sobre “Wheelhouse poster”, é correto afirmar: O wheelhouse poster apresenta informações de manobra de forma disponível à equipe de passadiço e ao prático."
-        }
-      ],
-      "correct_answer": "A",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-407",
@@ -33106,16 +33100,58 @@
       "id": "MAN-426",
       "subject": "Manobrabilidade do Navio",
       "module": "2. Propulsão do navio e propulsores",
-      "topic": "Jato d’água",
+      "topic_code": "PSCPP.REF.INC.0067",
+      "topic": "Propulsor de passo controlável",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Principles of Naval Architecture, Volume II” (Chapter VI — Propulsion, Sections 1, 2, 4, 6, 7 and 10), analise o seguinte problema técnico: Sob essa ótica, durante a revisão dos parâmetros usados em um modelo hidrodinâmico, o tópico Propulsor de passo controlável precisa ser interpretado corretamente. qual interpretação técnica é compatível com a bibliografia? Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise correta considera que, para propulsor de passo controlável durante a revisão dos parâmetros usados em um modelo hidrodinâmico, não altera o carregamento das pás."
+        },
+        {
+          "key": "B",
+          "text": "O princípio aplicável indica que, para propulsor de passo controlável durante a revisão dos parâmetros usados em um modelo hidrodinâmico, permite variar o passo das pás e, assim, controlar empuxo sem necessariamente inverter o sentido de rotação do eixo."
+        },
+        {
+          "key": "C",
+          "text": "É coerente afirmar que, para propulsor de passo controlável durante a revisão dos parâmetros usados em um modelo hidrodinâmico, não permite marcha a ré."
+        },
+        {
+          "key": "D",
+          "text": "A interpretação adequada é que, para propulsor de passo controlável durante a revisão dos parâmetros usados em um modelo hidrodinâmico, possui passo fixo por definição."
+        },
+        {
+          "key": "E",
+          "text": "A conclusão técnica é que, para propulsor de passo controlável durante a revisão dos parâmetros usados em um modelo hidrodinâmico, elimina qualquer risco de cavitação."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Neste cenário, a alternativa D é a única compatível com o princípio associado a Propulsor de passo controlável: permite variar o passo das pás e, assim, controlar empuxo sem necessariamente inverter o sentido de rotação do eixo. As demais opções introduzem relações incompatíveis com a definição, o mecanismo físico ou a condição operacional descrita na fonte indicada. O enquadramento desta questão considera especificamente durante a revisão dos parâmetros usados em um modelo hidrodinâmico.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "2nd Revision, 1988",
+        "locator": "Chapter VI — Propulsion, Sections 1, 2, 4, 6, 7 and 10"
+      },
+      "tags": [
+        "Propulsão do navio e propulsores",
+        "Propulsor de passo controlável",
+        "propulsor de passo controlável",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch6-s10",
+        "propulsor-de-passo-controlavel",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
         "bibliography_id": "pna-v2",
         "chapter_id": "pna-v2::ch6-s10",
-        "topic_id": "I-pna-v2-ch6-s10-2-10-jato-d-agua",
+        "topic_id": "I-pna-v2-ch6-s10-2-16-propulsor-de-passo-controlavel",
         "subtopic_id": null
       },
       "tracking": {
@@ -33134,65 +33170,19 @@
         "section": "Chapter VI – Propulsion — Section 10: Other propulsion devices",
         "module": "2. Propulsão do navio e propulsores",
         "topic": {
-          "id": "I-pna-v2-ch6-s10-2-10-jato-d-agua",
-          "title": "Jato d’água"
+          "id": "I-pna-v2-ch6-s10-2-16-propulsor-de-passo-controlavel",
+          "title": "Propulsor de passo controlável"
         }
       },
-      "source": {
-        "author": "LEWIS, Edward V.",
-        "title": "Principles of Naval Architecture, Volume II",
-        "edition": "2nd Revision, 1988",
-        "locator": "Chapters V-VI, selected sections listed in bibliografia.txt"
-      },
-      "tags": [
-        "waterjet",
-        "propulsão",
-        "manobrabilidade",
-        "pna-v2",
-        "pna-v2::ch6-s10",
-        "jato-d-agua",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-532",
-          "MAN-582",
-          "MAN-583",
-          "MAN-584",
-          "MAN-585"
+          "MAN-1394"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-426",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0067",
-      "question": "Durante um briefing técnico, Com base no conteúdo de “Principles of Naval Architecture, Volume II”, em Chapters V-VI, selected sections listed in bibliografia.txt, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Jato d’água”, é correto afirmar: Na propulsão por jato, o empuxo decorre da aceleração de uma massa de água através do sistema propulsivo."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Passo controlável”, é correto afirmar: Passo controlável significa diâmetro variável do hélice."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Propulsores contra-rotativos”, é correto afirmar: Propulsores contra-rotativos podem recuperar parte da energia rotacional do escoamento ao usar hélices coaxiais em sentidos opostos."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Propulsor cicloidal”, é correto afirmar: Propulsores de eixo vertical podem produzir empuxo vetorado pela variação cíclica da orientação das pás."
-        },
-        {
-          "key": "E",
-          "text": "Sobre “Jato d’água”, é correto afirmar: Na propulsão por jato, o empuxo decorre da aceleração de uma massa de água através do sistema propulsivo."
-        }
-      ],
-      "correct_answer": "B",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-427",
@@ -34200,16 +34190,16 @@
       "id": "MAN-438",
       "subject": "Manobrabilidade do Navio",
       "module": "4. Controlabilidade e padrões de manobrabilidade",
-      "topic": "Curva espiral direta",
+      "topic": "Curva espiral",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question_type": "Múltipla escolha contextualizada",
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
         "bibliography_id": "pna-v3",
         "chapter_id": "pna-v3::ch9-s4",
-        "topic_id": "I-pna-v3-ch9-s4-8-6-9-curva-espiral-direta",
+        "topic_id": "I-pna-v3-ch9-s4-4-7-curva-espiral",
         "subtopic_id": null
       },
       "tracking": {
@@ -34217,7 +34207,7 @@
         "work": {
           "id": "pna-v3",
           "title": "LEWIS — Principles of Naval Architecture, Volume III",
-          "author": "LEWIS, Edward V. (ed.)"
+          "author": "LEWIS, Edward V."
         },
         "chapter": {
           "id": "pna-v3::ch9-s4",
@@ -34228,64 +34218,61 @@
         "section": "Chapter IX — Section 4: Analysis of Course Keeping and Controls-fixed Stability",
         "module": "4. Controlabilidade e padrões de manobrabilidade",
         "topic": {
-          "id": "I-pna-v3-ch9-s4-8-6-9-curva-espiral-direta",
-          "title": "Curva espiral direta"
+          "id": "I-pna-v3-ch9-s4-4-7-curva-espiral",
+          "title": "Curva espiral"
         }
       },
       "source": {
-        "author": "LEWIS, Edward V. (ed.)",
+        "author": "LEWIS, Edward V.",
         "title": "Principles of Naval Architecture, Volume III",
-        "edition": "3. ed., 1988-1989",
-        "locator": "Chapter IX - Controllability, selected sections"
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX — Controllability, selected sections listed in bibliografia.txt"
       },
       "tags": [
-        "controlabilidade",
+        "curva espiral",
+        "estabilidade",
         "manobrabilidade",
         "pna-v3",
         "pna-v3::ch9-s4",
-        "curva-espiral-direta",
+        "curva-espiral",
         "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "pscpp-refinement-v3",
+        "pscpp-repair-v3"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-181",
-          "MAN-184",
-          "MAN-331",
-          "MAN-332",
-          "MAN-437"
+          "MAN-543"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-438",
-        "refinement_reason": "residual-medium-quality-flag"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
       },
       "topic_code": "PSCPP.REF.INC.0079",
-      "question": "Com base no conteúdo de “Principles of Naval Architecture, Volume III”, em Chapter IX - Controllability, selected sections, marque a alternativa INCORRETA:",
+      "question": "De acordo com o contido em “Principles of Naval Architecture, Volume III” (Chapter IX — Controllability, selected sections listed in bibliografia.txt), analise o seguinte problema técnico: Durante um briefing técnico, De acordo com o contido em “Principles of Naval Architecture, Volume III” (Chapter IX — Controllability, selected sections listed in bibliografia.txt), considere o seguinte problema técnico: Sobre Curva espiral, identifique a proposição compatível com a bibliografia indicada. Assinale a opção correta. Assinale a alternativa correta.",
       "options": [
         {
           "key": "A",
-          "text": "Sobre “Curva espiral direta”, é correto afirmar: a razão de guinada estacionária alcançada pelo navio."
+          "text": "Não envolve taxa de guinada."
         },
         {
           "key": "B",
-          "text": "Sobre “Curva espiral”, é correto afirmar: É um teste de cavitação do hélice."
+          "text": "O ensaio de espiral pode revelar características de estabilidade direcional por meio da relação entre ângulo de leme e taxa de guinada em regime."
         },
         {
           "key": "C",
-          "text": "Sobre “Estabilidade direcional”, é correto afirmar: Estabilidade direcional relaciona-se à tendência do navio de manter ou recuperar comportamento de rumo após pequenas perturbações, conforme a condição de controle analisada."
+          "text": "O ensaio mede apenas resistência de ondas."
         },
         {
           "key": "D",
-          "text": "Sobre “Espiral reversa”, é correto afirmar: permite obter a parte instável da relação leme-razão de guinada mediante controle da guinada."
+          "text": "Exige necessariamente parar o navio a cada ponto."
         },
         {
           "key": "E",
-          "text": "Sobre “Estabilidade direcional”, é correto afirmar: Estabilidade direcional relaciona-se à tendência do navio de manter ou recuperar comportamento de rumo após pequenas perturbações, conforme a condição de controle analisada."
+          "text": "É um teste de cavitação do hélice."
         }
       ],
       "correct_answer": "B",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+      "explanation": "A alternativa correta expressa a relação técnica indicada pela fonte para Curva espiral. O ensaio de espiral pode revelar características de estabilidade direcional por meio da relação entre ângulo de leme e taxa de guinada em regime."
     },
     {
       "id": "MAN-439",
@@ -36018,16 +36005,57 @@
       "id": "MAN-458",
       "subject": "Manobrabilidade do Navio",
       "module": "6. Mar adverso e informações de manobra a bordo",
-      "topic": "Manoeuvring booklet",
+      "topic_code": "PSCPP.REF.INC.0099",
+      "topic": "Wheelhouse poster",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Provision and Display of Manoeuvring Information on Board Ships” (Section 1 — Manoeuvring information), analise o seguinte problema técnico: Ao comparar condições de manobra envolvendo Wheelhouse poster, qual princípio permanece válido? Considere a situação sem efeitos extraordinários não mencionados. Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "É destinado apenas ao estaleiro."
+        },
+        {
+          "key": "B",
+          "text": "Substitui os comandos do leme."
+        },
+        {
+          "key": "C",
+          "text": "Não se relaciona às características de manobra."
+        },
+        {
+          "key": "D",
+          "text": "O wheelhouse poster apresenta informações de manobra de forma disponível à equipe de passadiço e ao prático."
+        },
+        {
+          "key": "E",
+          "text": "Deve permanecer inacessível no passadiço."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A alternativa correta expressa a relação técnica indicada pela fonte para Wheelhouse poster. O wheelhouse poster apresenta informações de manobra de forma disponível à equipe de passadiço e ao prático.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Provision and Display of Manoeuvring Information on Board Ships",
+        "edition": "Resolution A.601(15), 1987",
+        "locator": "Section 1 — Manoeuvring information"
+      },
+      "tags": [
+        "wheelhouse poster",
+        "informação de manobra",
+        "manobrabilidade",
+        "a601",
+        "a601::s1",
+        "wheelhouse-poster",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
         "bibliography_id": "a601",
         "chapter_id": "a601::s1",
-        "topic_id": "I-a601-s1-6-8-manoeuvring-booklet",
+        "topic_id": "I-a601-s1-6-7-wheelhouse-poster",
         "subtopic_id": null
       },
       "tracking": {
@@ -36046,65 +36074,19 @@
         "section": "1. Manoeuvring information",
         "module": "6. Mar adverso e informações de manobra a bordo",
         "topic": {
-          "id": "I-a601-s1-6-8-manoeuvring-booklet",
-          "title": "Manoeuvring booklet"
+          "id": "I-a601-s1-6-7-wheelhouse-poster",
+          "title": "Wheelhouse poster"
         }
       },
-      "source": {
-        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
-        "title": "Provision and Display of Manoeuvring Information on Board Ships",
-        "edition": "Resolution A.601(15), 1987",
-        "locator": "Section 1 — Manoeuvring information"
-      },
-      "tags": [
-        "manoeuvring booklet",
-        "informação de manobra",
-        "manobrabilidade",
-        "a601",
-        "a601::s1",
-        "manoeuvring-booklet",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-830",
-          "MAN-881",
-          "MAN-882",
-          "MAN-883",
-          "MAN-934"
+          "MAN-829"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-458",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0099",
-      "question": "Durante um briefing técnico, Com base no conteúdo de “Provision and Display of Manoeuvring Information on Board Ships”, em Section 1 — Manoeuvring information, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Manoeuvring booklet”, é correto afirmar: O manoeuvring booklet reúne informações mais detalhadas sobre características de manobra do navio."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Pilot card”, é correto afirmar: O pilot card é destinado a fornecer ao prático informações atualizadas sobre condição e características de manobra do navio."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Wheelhouse poster”, é correto afirmar: O wheelhouse poster apresenta informações de manobra de forma disponível à equipe de passadiço e ao prático."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Manoeuvring booklet”, é correto afirmar: Serve apenas para registrar consumo de combustível."
-        },
-        {
-          "key": "E",
-          "text": "Sobre “Pilot card”, é correto afirmar: O pilot card é destinado a fornecer ao prático informações atualizadas sobre condição e características de manobra do navio."
-        }
-      ],
-      "correct_answer": "D",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-459",
@@ -36379,10 +36361,51 @@
       "id": "MAN-462",
       "subject": "Manobrabilidade do Navio",
       "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "PSCPP.REF.INC.0103",
       "topic": "Resistência de ondas",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Principles of Naval Architecture, Volume II” (Chapters V-VI, selected sections listed in bibliografia.txt), analise o seguinte problema técnico: Na avaliação do comportamento do navio quanto a Resistência de ondas, é correto afirmar que: Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A resistência de formação de ondas está associada ao sistema de ondas gerado pelo casco em movimento."
+        },
+        {
+          "key": "B",
+          "text": "É causada exclusivamente pela rugosidade do casco."
+        },
+        {
+          "key": "C",
+          "text": "Só ocorre em navio parado."
+        },
+        {
+          "key": "D",
+          "text": "É idêntica à resistência do ar."
+        },
+        {
+          "key": "E",
+          "text": "Não depende do número de Froude."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A alternativa correta expressa a relação técnica indicada pela fonte para Resistência de ondas. A resistência de formação de ondas está associada ao sistema de ondas gerado pelo casco em movimento.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "2nd Revision, 1988",
+        "locator": "Chapters V-VI, selected sections listed in bibliografia.txt"
+      },
+      "tags": [
+        "ondas",
+        "Froude",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch5-s4",
+        "resistencia-de-ondas",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
@@ -36411,61 +36434,15 @@
           "title": "Resistência de ondas"
         }
       },
-      "source": {
-        "author": "LEWIS, Edward V.",
-        "title": "Principles of Naval Architecture, Volume II",
-        "edition": "2nd Revision, 1988",
-        "locator": "Chapters V-VI, selected sections listed in bibliografia.txt"
-      },
-      "tags": [
-        "ondas",
-        "Froude",
-        "manobrabilidade",
-        "pna-v2",
-        "pna-v2::ch5-s4",
-        "resistencia-de-ondas",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-886",
-          "MAN-939",
-          "MAN-992",
-          "MAN-3534",
-          "MAN-3535"
+          "MAN-833"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-462",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0103",
-      "question": "Na preparação para a faina, Com base no conteúdo de “Principles of Naval Architecture, Volume II”, em Chapters V-VI, selected sections listed in bibliografia.txt, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Resistência de ondas”, é correto afirmar: Só ocorre em navio parado."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Resistência de ondas”, é correto afirmar: A resistência de formação de ondas está associada ao sistema de ondas gerado pelo casco em movimento."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Resistência de ondas”, é correto afirmar: A resistência de formação de ondas está associada ao sistema de ondas gerado pelo casco em movimento."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “número de Froude”, é correto afirmar: Parâmetro adimensional que relaciona velocidade, gravidade e comprimento e governa a semelhança das ondas de gravidade."
-        },
-        {
-          "key": "E",
-          "text": "No contexto de “ondas divergentes”, a associação “ondas divergentes” é tecnicamente aplicável."
-        }
-      ],
-      "correct_answer": "A",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-463",
@@ -37108,10 +37085,51 @@
       "id": "MAN-470",
       "subject": "Manobrabilidade do Navio",
       "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "PSCPP.REF.INC.0111",
       "topic": "Coeficientes de hélice",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Practical Ship Hydrodynamics” (Chapters 2, 3 and 6), analise o seguinte problema técnico: Na avaliação do comportamento do navio quanto a Coeficientes de hélice, é correto afirmar que: Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Coeficientes adimensionais de empuxo e torque permitem comparar desempenho de hélices em condições semelhantes."
+        },
+        {
+          "key": "B",
+          "text": "Eles substituem a necessidade de velocidade e rotação em qualquer análise."
+        },
+        {
+          "key": "C",
+          "text": "Esses coeficientes dependem apenas do calado."
+        },
+        {
+          "key": "D",
+          "text": "Coeficientes adimensionais impedem comparação entre escalas."
+        },
+        {
+          "key": "E",
+          "text": "Empuxo e torque não podem ser adimensionalizados."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A alternativa correta expressa a relação técnica indicada pela fonte para Coeficientes de hélice. Coeficientes adimensionais de empuxo e torque permitem comparar desempenho de hélices em condições semelhantes.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2nd ed., 2012",
+        "locator": "Chapters 2, 3 and 6"
+      },
+      "tags": [
+        "hélice",
+        "coeficientes",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch2",
+        "coeficientes-de-helice",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
@@ -37140,61 +37158,15 @@
           "title": "Coeficientes de hélice"
         }
       },
-      "source": {
-        "author": "BERTRAM, Volker",
-        "title": "Practical Ship Hydrodynamics",
-        "edition": "2nd ed., 2012",
-        "locator": "Chapters 2, 3 and 6"
-      },
-      "tags": [
-        "hélice",
-        "coeficientes",
-        "manobrabilidade",
-        "bertram",
-        "bertram::ch2",
-        "coeficientes-de-helice",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-737",
-          "MAN-788",
-          "MAN-789",
-          "MAN-790",
-          "MAN-841"
+          "MAN-843"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-470",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0111",
-      "question": "Com base no conteúdo de “Practical Ship Hydrodynamics”, em Chapters 2, 3 and 6, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Coeficientes de hélice”, é correto afirmar: Esses coeficientes dependem apenas do calado."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Empuxo do propulsor”, é correto afirmar: O propulsor produz empuxo ao comunicar quantidade de movimento ao fluido."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Avanço do hélice”, é correto afirmar: A razão de avanço caracteriza a relação entre velocidade de avanço, rotação e diâmetro do hélice."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Coeficientes de hélice”, é correto afirmar: Coeficientes adimensionais de empuxo e torque permitem comparar desempenho de hélices em condições semelhantes."
-        },
-        {
-          "key": "E",
-          "text": "Sobre “Empuxo do propulsor”, é correto afirmar: O propulsor produz empuxo ao comunicar quantidade de movimento ao fluido."
-        }
-      ],
-      "correct_answer": "A",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-471",
@@ -38927,16 +38899,57 @@
       "id": "MAN-490",
       "subject": "Manobrabilidade do Navio",
       "module": "4. Controlabilidade e padrões de manobrabilidade",
-      "topic": "Curva espiral direta",
+      "topic_code": "PSCPP.REF.INC.0131",
+      "topic": "Curva espiral",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Principles of Naval Architecture, Volume III” (Chapter IX — Controllability, selected sections listed in bibliografia.txt), analise o seguinte problema técnico: Assinale a alternativa que melhor caracteriza Curva espiral no contexto da manobrabilidade. Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "É um teste de cavitação do hélice."
+        },
+        {
+          "key": "B",
+          "text": "O ensaio de espiral pode revelar características de estabilidade direcional por meio da relação entre ângulo de leme e taxa de guinada em regime."
+        },
+        {
+          "key": "C",
+          "text": "Exige necessariamente parar o navio a cada ponto."
+        },
+        {
+          "key": "D",
+          "text": "O ensaio mede apenas resistência de ondas."
+        },
+        {
+          "key": "E",
+          "text": "Não envolve taxa de guinada."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A alternativa correta expressa a relação técnica indicada pela fonte para Curva espiral. O ensaio de espiral pode revelar características de estabilidade direcional por meio da relação entre ângulo de leme e taxa de guinada em regime.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX — Controllability, selected sections listed in bibliografia.txt"
+      },
+      "tags": [
+        "curva espiral",
+        "estabilidade",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s4",
+        "curva-espiral",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
         "bibliography_id": "pna-v3",
         "chapter_id": "pna-v3::ch9-s4",
-        "topic_id": "I-pna-v3-ch9-s4-8-6-9-curva-espiral-direta",
+        "topic_id": "I-pna-v3-ch9-s4-4-7-curva-espiral",
         "subtopic_id": null
       },
       "tracking": {
@@ -38944,7 +38957,7 @@
         "work": {
           "id": "pna-v3",
           "title": "LEWIS — Principles of Naval Architecture, Volume III",
-          "author": "LEWIS, Edward V. (ed.)"
+          "author": "LEWIS, Edward V."
         },
         "chapter": {
           "id": "pna-v3::ch9-s4",
@@ -38955,64 +38968,19 @@
         "section": "Chapter IX — Section 4: Analysis of Course Keeping and Controls-fixed Stability",
         "module": "4. Controlabilidade e padrões de manobrabilidade",
         "topic": {
-          "id": "I-pna-v3-ch9-s4-8-6-9-curva-espiral-direta",
-          "title": "Curva espiral direta"
+          "id": "I-pna-v3-ch9-s4-4-7-curva-espiral",
+          "title": "Curva espiral"
         }
       },
-      "source": {
-        "author": "LEWIS, Edward V. (ed.)",
-        "title": "Principles of Naval Architecture, Volume III",
-        "edition": "3. ed., 1988-1989",
-        "locator": "Chapter IX - Controllability, selected sections"
-      },
-      "tags": [
-        "controlabilidade",
-        "manobrabilidade",
-        "pna-v3",
-        "pna-v3::ch9-s4",
-        "curva-espiral-direta",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-181",
-          "MAN-184",
-          "MAN-331",
-          "MAN-332",
-          "MAN-437"
+          "MAN-915"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-490",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0131",
-      "question": "Na preparação para a faina, Com base no conteúdo de “Principles of Naval Architecture, Volume III”, em Chapter IX - Controllability, selected sections, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Espiral reversa”, é correto afirmar: permite obter a parte instável da relação leme-razão de guinada mediante controle da guinada."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Curva espiral direta”, é correto afirmar: a potência do propulsor em água aberta."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Estabilidade direcional”, é correto afirmar: Estabilidade direcional relaciona-se à tendência do navio de manter ou recuperar comportamento de rumo após pequenas perturbações, conforme a condição de controle analisada."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Curva espiral”, é correto afirmar: O ensaio de espiral pode revelar características de estabilidade direcional por meio da relação entre ângulo de leme e taxa de guinada em regime."
-        },
-        {
-          "key": "E",
-          "text": "Sobre “Estabilidade direcional”, é correto afirmar: Estabilidade direcional relaciona-se à tendência do navio de manter ou recuperar comportamento de rumo após pequenas perturbações, conforme a condição de controle analisada."
-        }
-      ],
-      "correct_answer": "B",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-491",
@@ -39288,16 +39256,57 @@
       "id": "MAN-494",
       "subject": "Manobrabilidade do Navio",
       "module": "4. Controlabilidade e padrões de manobrabilidade",
-      "topic": "Movimento a ré",
+      "topic_code": "PSCPP.REF.INC.0135",
+      "topic": "Aceleração",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Principles of Naval Architecture, Volume III” (Chapter IX — Controllability, selected sections listed in bibliografia.txt), analise o seguinte problema técnico: Qual alternativa apresenta a relação física ou operacional correta para Aceleração? Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Velocidade muda instantaneamente para qualquer ordem."
+        },
+        {
+          "key": "B",
+          "text": "A aceleração independe da resultante de forças."
+        },
+        {
+          "key": "C",
+          "text": "A resposta de aceleração depende da diferença entre força propulsiva e resistência, além da inércia efetiva do sistema."
+        },
+        {
+          "key": "D",
+          "text": "A massa efetiva é sempre nula."
+        },
+        {
+          "key": "E",
+          "text": "Resistência e inércia não afetam aceleração."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A alternativa correta expressa a relação técnica indicada pela fonte para Aceleração. A resposta de aceleração depende da diferença entre força propulsiva e resistência, além da inércia efetiva do sistema.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX — Controllability, selected sections listed in bibliografia.txt"
+      },
+      "tags": [
+        "aceleração",
+        "dinâmica",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s10",
+        "aceleracao",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
         "bibliography_id": "pna-v3",
         "chapter_id": "pna-v3::ch9-s10",
-        "topic_id": "I-pna-v3-ch9-s10-4-10-movimento-a-re",
+        "topic_id": "I-pna-v3-ch9-s10-4-9-aceleracao",
         "subtopic_id": null
       },
       "tracking": {
@@ -39316,65 +39325,19 @@
         "section": "Chapter IX — Section 10: Accelerating, Stopping and Backing",
         "module": "4. Controlabilidade e padrões de manobrabilidade",
         "topic": {
-          "id": "I-pna-v3-ch9-s10-4-10-movimento-a-re",
-          "title": "Movimento a ré"
+          "id": "I-pna-v3-ch9-s10-4-9-aceleracao",
+          "title": "Aceleração"
         }
       },
-      "source": {
-        "author": "LEWIS, Edward V.",
-        "title": "Principles of Naval Architecture, Volume III",
-        "edition": "2nd Revision, 1989",
-        "locator": "Chapter IX — Controllability, selected sections listed in bibliografia.txt"
-      },
-      "tags": [
-        "ré",
-        "controle",
-        "manobrabilidade",
-        "pna-v3",
-        "pna-v3::ch9-s10",
-        "movimento-a-re",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-918",
-          "MAN-969",
-          "MAN-970",
-          "MAN-971",
-          "MAN-3883"
+          "MAN-758"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-494",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0135",
-      "question": "Com base no conteúdo de “Principles of Naval Architecture, Volume III”, em Chapter IX — Controllability, selected sections listed in bibliografia.txt, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Movimento a ré”, é correto afirmar: O comportamento hidrodinâmico e de controle a ré pode diferir substancialmente do comportamento avante."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Parada”, é correto afirmar: A manobra de parada avalia a capacidade de reduzir o movimento longitudinal após uma ordem de máquina apropriada."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Aceleração”, é correto afirmar: A aceleração independe da resultante de forças."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Movimento a ré”, é correto afirmar: O comportamento hidrodinâmico e de controle a ré pode diferir substancialmente do comportamento avante."
-        },
-        {
-          "key": "E",
-          "text": "Sobre “Aceleração”, é correto afirmar: A resposta de aceleração depende da diferença entre força propulsiva e resistência, além da inércia efetiva do sistema."
-        }
-      ],
-      "correct_answer": "C",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-495",
@@ -41102,18 +41065,59 @@
     },
     {
       "id": "MAN-514",
-      "subject": "manobrabilidade",
-      "module": "Cobertura bibliográfica — Manobrabilidade do Navio",
-      "topic": "efeito de escala viscoso",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "PSCPP.REF.INC.0155",
+      "topic": "Resistência friccional",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Principles of Naval Architecture, Volume II” (Chapters V-VI, selected sections listed in bibliografia.txt), analise o seguinte problema técnico: Qual afirmação descreve corretamente Resistência friccional? Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "É produzida apenas pela formação de ondas."
+        },
+        {
+          "key": "B",
+          "text": "É independente da viscosidade."
+        },
+        {
+          "key": "C",
+          "text": "Desaparece em casco real quando a velocidade aumenta."
+        },
+        {
+          "key": "D",
+          "text": "Atua somente acima da linha-d’água."
+        },
+        {
+          "key": "E",
+          "text": "A resistência friccional decorre das tensões viscosas tangenciais na superfície molhada."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A alternativa correta expressa a relação técnica indicada pela fonte para Resistência friccional. A resistência friccional decorre das tensões viscosas tangenciais na superfície molhada.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "2nd Revision, 1988",
+        "locator": "Chapters V-VI, selected sections listed in bibliografia.txt"
+      },
+      "tags": [
+        "fricção",
+        "viscosidade",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch5-s3",
+        "resistencia-friccional",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
         "bibliography_id": "pna-v2",
         "chapter_id": "pna-v2::ch5-s3",
-        "topic_id": "I-pna-v2-ch5-s3-efeito-de-escala-viscoso",
+        "topic_id": "I-pna-v2-ch5-s3-1-2-resistencia-friccional",
         "subtopic_id": null
       },
       "tracking": {
@@ -41121,7 +41125,7 @@
         "work": {
           "id": "pna-v2",
           "title": "LEWIS — Principles of Naval Architecture, Volume II",
-          "author": "E. V. Lewis (ed.)"
+          "author": "LEWIS, Edward V."
         },
         "chapter": {
           "id": "pna-v2::ch5-s3",
@@ -41130,66 +41134,21 @@
           "label": "Chapter V – Resistance — Section 3: Frictional Resistance"
         },
         "section": "Chapter V – Resistance — Section 3: Frictional Resistance",
-        "module": "Cobertura bibliográfica — Manobrabilidade do Navio",
+        "module": "1. Resistência do navio e métodos de obtenção",
         "topic": {
-          "id": "I-pna-v2-ch5-s3-efeito-de-escala-viscoso",
-          "title": "efeito de escala viscoso"
+          "id": "I-pna-v2-ch5-s3-1-2-resistencia-friccional",
+          "title": "Resistência friccional"
         }
       },
-      "source": {
-        "author": "E. V. Lewis (ed.)",
-        "title": "LEWIS — Principles of Naval Architecture, Volume II",
-        "edition": "Second Revision, 1988",
-        "locator": "Chapter V – Resistance — Section 3: Frictional Resistance"
-      },
-      "tags": [
-        "manobrabilidade",
-        "pna-v2",
-        "pna-v2::ch5-s3",
-        "efeito-de-escala-viscoso",
-        "cobertura-v2",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-3533",
-          "MAN-3893",
-          "MAN-008",
-          "MAN-302",
-          "MAN-461"
+          "MAN-302"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-514",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0155",
-      "question": "Com base no conteúdo de “LEWIS — Principles of Naval Architecture, Volume II”, em Chapter V – Resistance — Section 3: Frictional Resistance, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “efeito de escala viscoso”, é correto afirmar: Diferença entre modelo e navio causada pela impossibilidade prática de igualar simultaneamente Froude e Reynolds."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Resistência friccional”, é correto afirmar: A resistência friccional decorre das tensões viscosas tangenciais na superfície molhada."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Resistência friccional”, é correto afirmar: A área da superfície molhada."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Resistência friccional”, é correto afirmar: A resistência friccional decorre das tensões viscosas tangenciais na superfície molhada."
-        },
-        {
-          "key": "E",
-          "text": "Sobre “Resistência friccional”, é correto afirmar: Desaparece em casco real quando a velocidade aumenta."
-        }
-      ],
-      "correct_answer": "E",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-515",
@@ -44013,16 +43972,56 @@
       "id": "MAN-546",
       "subject": "Manobrabilidade do Navio",
       "module": "4. Controlabilidade e padrões de manobrabilidade",
-      "topic": "Parada",
+      "topic_code": "PSCPP.REF.INC.0187",
+      "topic": "Coasting",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Principles of Naval Architecture, Volume III” (Chapter IX - Controllability, selected sections), analise o seguinte problema técnico: A manobra de coasting consiste em: Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "aplicar toda força a ré imediatamente."
+        },
+        {
+          "key": "B",
+          "text": "reduzir a velocidade deixando o navio perder seguimento sem empuxo significativo a ré."
+        },
+        {
+          "key": "C",
+          "text": "executar círculo com 35° de leme."
+        },
+        {
+          "key": "D",
+          "text": "alternar leme e máquina a cada 10°."
+        },
+        {
+          "key": "E",
+          "text": "usar âncora em alta velocidade."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Com máquina parada ou desembragada, a resistência hidrodinâmica desacelera o navio; a distância costuma ser longa, mas evita reversão imediata.",
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "3. ed., 1988-1989",
+        "locator": "Chapter IX - Controllability, selected sections"
+      },
+      "tags": [
+        "controlabilidade",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s10",
+        "coasting",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
         "bibliography_id": "pna-v3",
         "chapter_id": "pna-v3::ch9-s10",
-        "topic_id": "I-pna-v3-ch9-s10-4-8-parada",
+        "topic_id": "I-pna-v3-ch9-s10-4-11-coasting",
         "subtopic_id": null
       },
       "tracking": {
@@ -44030,7 +44029,7 @@
         "work": {
           "id": "pna-v3",
           "title": "LEWIS — Principles of Naval Architecture, Volume III",
-          "author": "LEWIS, Edward V."
+          "author": "LEWIS, Edward V. (ed.)"
         },
         "chapter": {
           "id": "pna-v3::ch9-s10",
@@ -44041,64 +44040,19 @@
         "section": "Chapter IX — Section 10: Accelerating, Stopping and Backing",
         "module": "4. Controlabilidade e padrões de manobrabilidade",
         "topic": {
-          "id": "I-pna-v3-ch9-s10-4-8-parada",
-          "title": "Parada"
+          "id": "I-pna-v3-ch9-s10-4-11-coasting",
+          "title": "Coasting"
         }
       },
-      "source": {
-        "author": "LEWIS, Edward V.",
-        "title": "Principles of Naval Architecture, Volume III",
-        "edition": "2nd Revision, 1989",
-        "locator": "Chapter IX — Controllability, selected sections listed in bibliografia.txt"
-      },
-      "tags": [
-        "parada",
-        "stopping",
-        "manobrabilidade",
-        "pna-v3",
-        "pna-v3::ch9-s10",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-863",
-          "MAN-864",
-          "MAN-865",
-          "MAN-916",
-          "MAN-917"
+          "MAN-227"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-546",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0187",
-      "question": "Durante um briefing técnico, Com base no conteúdo de “Principles of Naval Architecture, Volume III”, em Chapter IX — Controllability, selected sections listed in bibliografia.txt, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Parada”, é correto afirmar: A manobra de parada avalia a capacidade de reduzir o movimento longitudinal após uma ordem de máquina apropriada."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Aceleração”, é correto afirmar: Velocidade muda instantaneamente para qualquer ordem."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Movimento a ré”, é correto afirmar: O comportamento hidrodinâmico e de controle a ré pode diferir substancialmente do comportamento avante."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Parada”, é correto afirmar: A manobra de parada avalia a capacidade de reduzir o movimento longitudinal após uma ordem de máquina apropriada."
-        },
-        {
-          "key": "E",
-          "text": "Sobre “Aceleração”, é correto afirmar: A resposta de aceleração depende da diferença entre força propulsiva e resistência, além da inércia efetiva do sistema."
-        }
-      ],
-      "correct_answer": "B",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-547",
@@ -45465,10 +45419,52 @@
       "id": "MAN-562",
       "subject": "Manobrabilidade do Navio",
       "module": "6. Mar adverso e informações de manobra a bordo",
+      "topic_code": "PSCPP.REF.INC.0203",
       "topic": "Orientação operacional em mau tempo",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Revised guidance to the master for avoiding dangerous situations in adverse weather and sea conditions” (Sections 1, 3 and 4.2), analise o seguinte problema técnico: Para essa avaliação, na revisão de um caso operacional com resposta assimétrica do navio, o tópico Orientação operacional em mau tempo precisa ser interpretado corretamente. qual conclusão é consistente com o comportamento esperado? Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise correta considera que, para orientação operacional em mau tempo na revisão de um caso operacional com resposta assimétrica do navio, dispensa observação das ondas."
+        },
+        {
+          "key": "B",
+          "text": "É coerente afirmar que, para orientação operacional em mau tempo na revisão de um caso operacional com resposta assimétrica do navio, trata apenas de consumo de combustível."
+        },
+        {
+          "key": "C",
+          "text": "A conclusão técnica é que, para orientação operacional em mau tempo na revisão de um caso operacional com resposta assimétrica do navio, inclui considerar alterações de rumo e velocidade para evitar combinações perigosas de período de encontro e condições de onda."
+        },
+        {
+          "key": "D",
+          "text": "A interpretação adequada é que, para orientação operacional em mau tempo na revisão de um caso operacional com resposta assimétrica do navio, proíbe qualquer redução de velocidade."
+        },
+        {
+          "key": "E",
+          "text": "O princípio aplicável indica que, para orientação operacional em mau tempo na revisão de um caso operacional com resposta assimétrica do navio, recomenda manter sempre rumo e velocidade independentemente do mar."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Neste cenário, a alternativa E é a única compatível com o princípio associado a Orientação operacional em mau tempo: inclui considerar alterações de rumo e velocidade para evitar combinações perigosas de período de encontro e condições de onda. As demais opções introduzem relações incompatíveis com a definição, o mecanismo físico ou a condição operacional descrita na fonte indicada. O enquadramento desta questão considera especificamente na revisão de um caso operacional com resposta assimétrica do navio.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Revised guidance to the master for avoiding dangerous situations in adverse weather and sea conditions",
+        "edition": "MSC.1/Circ.1228, 2007",
+        "locator": "Sections 1, 3 and 4.2"
+      },
+      "tags": [
+        "Mar adverso e informações de manobra a bordo",
+        "Orientação operacional em mau tempo",
+        "orientação operacional em mau tempo",
+        "manobrabilidade",
+        "msc1228",
+        "msc1228::s4",
+        "orientacao-operacional-em-mau-tempo",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
@@ -45497,63 +45493,15 @@
           "title": "Orientação operacional em mau tempo"
         }
       },
-      "source": {
-        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
-        "title": "Revised guidance to the master for avoiding dangerous situations in adverse weather and sea conditions",
-        "edition": "MSC.1/Circ.1228, 2007",
-        "locator": "Sections 1, 3 and 4.2"
-      },
-      "tags": [
-        "Mar adverso e informações de manobra a bordo",
-        "Orientação operacional em mau tempo",
-        "orientação operacional em mau tempo",
-        "manobrabilidade",
-        "msc1228",
-        "msc1228::s4",
-        "orientacao-operacional-em-mau-tempo",
-        "pscpp-style-v3",
-        "formato-pscpp-direta",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-403",
-          "MAN-456",
-          "MAN-509",
-          "MAN-562",
-          "MAN-615"
+          "MAN-3265"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-562",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0203",
-      "question": "Durante a conferência do plano, Com base no conteúdo de “Revised guidance to the master for avoiding dangerous situations in adverse weather and sea conditions”, em Sections 1, 3 and 4.2, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Orientação operacional em mau tempo”, é correto afirmar: A análise correta considera que, para orientação operacional em mau tempo na análise de uma transição entre avanço, redução e reversão de máquina, inclui considerar alterações de rumo e velocidade para evitar combinações perigosas de período de encontro e condições de onda."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Ataques sucessivos de ondas”, é correto afirmar: A orientação e a velocidade do navio podem ser ajustadas para reduzir exposição a condições perigosas de ondas, conforme a orientação operacional da IMO."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Ataques sucessivos de ondas”, é correto afirmar: Não existem medidas operacionais para reduzir exposição."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Ataques sucessivos de ondas”, é correto afirmar: A orientação e a velocidade do navio podem ser ajustadas para reduzir exposição a condições perigosas de ondas, conforme a orientação operacional da IMO."
-        },
-        {
-          "key": "E",
-          "text": "Sobre “Ataques sucessivos de ondas”, é correto afirmar: A orientação e a velocidade do navio podem ser ajustadas para reduzir exposição a condições perigosas de ondas, conforme a orientação operacional da IMO."
-        }
-      ],
-      "correct_answer": "C",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-563",
@@ -48737,16 +48685,57 @@
       "id": "MAN-598",
       "subject": "Manobrabilidade do Navio",
       "module": "4. Controlabilidade e padrões de manobrabilidade",
-      "topic": "Aceleração",
+      "topic_code": "PSCPP.REF.INC.0239",
+      "topic": "Movimento a ré",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Principles of Naval Architecture, Volume III” (Chapter IX — Controllability, selected sections listed in bibliografia.txt), analise o seguinte problema técnico: Qual alternativa apresenta a relação física ou operacional correta para Movimento a ré? Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Todo navio mantém a mesma estabilidade direcional nos dois sentidos."
+        },
+        {
+          "key": "B",
+          "text": "O comportamento hidrodinâmico e de controle a ré pode diferir substancialmente do comportamento avante."
+        },
+        {
+          "key": "C",
+          "text": "O escoamento a ré é sempre idêntico ao avante."
+        },
+        {
+          "key": "D",
+          "text": "Forças laterais desaparecem obrigatoriamente a ré."
+        },
+        {
+          "key": "E",
+          "text": "A posição do propulsor e leme não influencia manobra a ré."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A alternativa correta expressa a relação técnica indicada pela fonte para Movimento a ré. O comportamento hidrodinâmico e de controle a ré pode diferir substancialmente do comportamento avante.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX — Controllability, selected sections listed in bibliografia.txt"
+      },
+      "tags": [
+        "ré",
+        "controle",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s10",
+        "movimento-a-re",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
         "bibliography_id": "pna-v3",
         "chapter_id": "pna-v3::ch9-s10",
-        "topic_id": "I-pna-v3-ch9-s10-4-9-aceleracao",
+        "topic_id": "I-pna-v3-ch9-s10-4-10-movimento-a-re",
         "subtopic_id": null
       },
       "tracking": {
@@ -48765,65 +48754,19 @@
         "section": "Chapter IX — Section 10: Accelerating, Stopping and Backing",
         "module": "4. Controlabilidade e padrões de manobrabilidade",
         "topic": {
-          "id": "I-pna-v3-ch9-s10-4-9-aceleracao",
-          "title": "Aceleração"
+          "id": "I-pna-v3-ch9-s10-4-10-movimento-a-re",
+          "title": "Movimento a ré"
         }
       },
-      "source": {
-        "author": "LEWIS, Edward V.",
-        "title": "Principles of Naval Architecture, Volume III",
-        "edition": "2nd Revision, 1989",
-        "locator": "Chapter IX — Controllability, selected sections listed in bibliografia.txt"
-      },
-      "tags": [
-        "aceleração",
-        "dinâmica",
-        "manobrabilidade",
-        "pna-v3",
-        "pna-v3::ch9-s10",
-        "aceleracao",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-758",
-          "MAN-759",
-          "MAN-810",
-          "MAN-811",
-          "MAN-812"
+          "MAN-759"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-598",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0239",
-      "question": "Na preparação para a faina, Com base no conteúdo de “Principles of Naval Architecture, Volume III”, em Chapter IX — Controllability, selected sections listed in bibliografia.txt, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Aceleração”, é correto afirmar: A resposta de aceleração depende da diferença entre força propulsiva e resistência, além da inércia efetiva do sistema."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Aceleração”, é correto afirmar: A aceleração independe da resultante de forças."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Parada”, é correto afirmar: A manobra de parada avalia a capacidade de reduzir o movimento longitudinal após uma ordem de máquina apropriada."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Movimento a ré”, é correto afirmar: O comportamento hidrodinâmico e de controle a ré pode diferir substancialmente do comportamento avante."
-        },
-        {
-          "key": "E",
-          "text": "Sobre “Movimento a ré”, é correto afirmar: O comportamento hidrodinâmico e de controle a ré pode diferir substancialmente do comportamento avante."
-        }
-      ],
-      "correct_answer": "B",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-599",
@@ -49830,10 +49773,50 @@
       "id": "MAN-610",
       "subject": "Manobrabilidade do Navio",
       "module": "5. Efeitos ambientais, águas rasas e interações",
+      "topic_code": "PSCPP.REF.INC.0251",
       "topic": "Cross-flow",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Principles of Naval Architecture, Volume III” (Chapter IX — Controllability, selected sections listed in bibliografia.txt), analise o seguinte problema técnico: Para evitar uma interpretação equivocada de Cross-flow, deve-se considerar que: Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Não se aplica a forças transversais."
+        },
+        {
+          "key": "B",
+          "text": "Movimento lateral não gera força hidrodinâmica."
+        },
+        {
+          "key": "C",
+          "text": "Em velocidades muito baixas e movimento lateral relevante, modelos de cross-flow ajudam a representar forças transversais sobre o casco."
+        },
+        {
+          "key": "D",
+          "text": "Cross-flow é usado apenas para resistência do ar."
+        },
+        {
+          "key": "E",
+          "text": "O conceito exige alta velocidade longitudinal exclusivamente."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A alternativa correta expressa a relação técnica indicada pela fonte para Cross-flow. Em velocidades muito baixas e movimento lateral relevante, modelos de cross-flow ajudam a representar forças transversais sobre o casco.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX — Controllability, selected sections listed in bibliografia.txt"
+      },
+      "tags": [
+        "cross-flow",
+        "baixa velocidade",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s3",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
@@ -49862,60 +49845,15 @@
           "title": "Cross-flow"
         }
       },
-      "source": {
-        "author": "LEWIS, Edward V.",
-        "title": "Principles of Naval Architecture, Volume III",
-        "edition": "2nd Revision, 1989",
-        "locator": "Chapter IX — Controllability, selected sections listed in bibliografia.txt"
-      },
-      "tags": [
-        "cross-flow",
-        "baixa velocidade",
-        "manobrabilidade",
-        "pna-v3",
-        "pna-v3::ch9-s3",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-769",
-          "MAN-822",
-          "MAN-875",
-          "MAN-928",
-          "MAN-981"
+          "MAN-716"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-610",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0251",
-      "question": "Durante a conferência do plano, Com base no conteúdo de “Principles of Naval Architecture, Volume III”, em Chapter IX — Controllability, selected sections listed in bibliografia.txt, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Cross-flow”, é correto afirmar: Em velocidades muito baixas e movimento lateral relevante, modelos de cross-flow ajudam a representar forças transversais sobre o casco."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Cross-flow”, é correto afirmar: Em velocidades muito baixas e movimento lateral relevante, modelos de cross-flow ajudam a representar forças transversais sobre o casco."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Cross-flow”, é correto afirmar: Movimento lateral não gera força hidrodinâmica."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Cross-flow”, é correto afirmar: Em velocidades muito baixas e movimento lateral relevante, modelos de cross-flow ajudam a representar forças transversais sobre o casco."
-        },
-        {
-          "key": "E",
-          "text": "Sobre “Cross-flow”, é correto afirmar: Em velocidades muito baixas e movimento lateral relevante, modelos de cross-flow ajudam a representar forças transversais sobre o casco."
-        }
-      ],
-      "correct_answer": "C",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-611",
@@ -50554,16 +50492,57 @@
       "id": "MAN-618",
       "subject": "Manobrabilidade do Navio",
       "module": "6. Mar adverso e informações de manobra a bordo",
-      "topic": "Wheelhouse poster",
+      "topic_code": "PSCPP.REF.INC.0259",
+      "topic": "Pilot card",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Provision and Display of Manoeuvring Information on Board Ships” (Section 1 — Manoeuvring information), analise o seguinte problema técnico: Em uma discussão de passadiço sobre Pilot card, qual explicação está correta? Considere a situação sem efeitos extraordinários não mencionados. Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "O pilot card é destinado a fornecer ao prático informações atualizadas sobre condição e características de manobra do navio."
+        },
+        {
+          "key": "B",
+          "text": "É documento exclusivamente de carga."
+        },
+        {
+          "key": "C",
+          "text": "Não contém informação de manobra."
+        },
+        {
+          "key": "D",
+          "text": "É preparado apenas após o desembarque do prático."
+        },
+        {
+          "key": "E",
+          "text": "O pilot card substitui todas as cartas náuticas."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A alternativa correta expressa a relação técnica indicada pela fonte para Pilot card. O pilot card é destinado a fornecer ao prático informações atualizadas sobre condição e características de manobra do navio.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Provision and Display of Manoeuvring Information on Board Ships",
+        "edition": "Resolution A.601(15), 1987",
+        "locator": "Section 1 — Manoeuvring information"
+      },
+      "tags": [
+        "pilot card",
+        "informação de manobra",
+        "manobrabilidade",
+        "a601",
+        "a601::s1",
+        "pilot-card",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
         "bibliography_id": "a601",
         "chapter_id": "a601::s1",
-        "topic_id": "I-a601-s1-6-7-wheelhouse-poster",
+        "topic_id": "I-a601-s1-6-6-pilot-card",
         "subtopic_id": null
       },
       "tracking": {
@@ -50582,65 +50561,19 @@
         "section": "1. Manoeuvring information",
         "module": "6. Mar adverso e informações de manobra a bordo",
         "topic": {
-          "id": "I-a601-s1-6-7-wheelhouse-poster",
-          "title": "Wheelhouse poster"
+          "id": "I-a601-s1-6-6-pilot-card",
+          "title": "Pilot card"
         }
       },
-      "source": {
-        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
-        "title": "Provision and Display of Manoeuvring Information on Board Ships",
-        "edition": "Resolution A.601(15), 1987",
-        "locator": "Section 1 — Manoeuvring information"
-      },
-      "tags": [
-        "wheelhouse poster",
-        "informação de manobra",
-        "manobrabilidade",
-        "a601",
-        "a601::s1",
-        "wheelhouse-poster",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-829",
-          "MAN-830",
-          "MAN-881",
-          "MAN-882",
-          "MAN-883"
+          "MAN-669"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-618",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0259",
-      "question": "Em uma revisão conduzida pelo Prático, Com base no conteúdo de “Provision and Display of Manoeuvring Information on Board Ships”, em Section 1 — Manoeuvring information, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Wheelhouse poster”, é correto afirmar: Deve permanecer inacessível no passadiço."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Manoeuvring booklet”, é correto afirmar: O manoeuvring booklet reúne informações mais detalhadas sobre características de manobra do navio."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Pilot card”, é correto afirmar: O pilot card é destinado a fornecer ao prático informações atualizadas sobre condição e características de manobra do navio."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Wheelhouse poster”, é correto afirmar: O wheelhouse poster apresenta informações de manobra de forma disponível à equipe de passadiço e ao prático."
-        },
-        {
-          "key": "E",
-          "text": "Sobre “Manoeuvring booklet”, é correto afirmar: O manoeuvring booklet reúne informações mais detalhadas sobre características de manobra do navio."
-        }
-      ],
-      "correct_answer": "A",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-619",
@@ -51643,16 +51576,56 @@
       "id": "MAN-630",
       "subject": "Manobrabilidade do Navio",
       "module": "2. Propulsão do navio e propulsores",
-      "topic": "Coeficientes de hélice",
+      "topic_code": "PSCPP.REF.INC.0271",
+      "topic": "Número de avanço",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Practical Ship Hydrodynamics” (Chapters 2 and 3 - Propellers; Resistance and Propulsion), analise o seguinte problema técnico: O número de avanço J de um propulsor é expresso por: Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "J = VA/(nD)."
+        },
+        {
+          "key": "B",
+          "text": "J = nD/VA²."
+        },
+        {
+          "key": "C",
+          "text": "J = T/Q."
+        },
+        {
+          "key": "D",
+          "text": "J = VS/L."
+        },
+        {
+          "key": "E",
+          "text": "J = ρn²D⁴."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "J relaciona a velocidade média de avanço no disco com a velocidade característica de rotação nD.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Chapters 2 and 3 - Propellers; Resistance and Propulsion"
+      },
+      "tags": [
+        "propulsão",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch2",
+        "numero-de-avanco",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
         "bibliography_id": "bertram",
         "chapter_id": "bertram::ch2",
-        "topic_id": "I-bertram-ch2-2-3-coeficientes-de-helice",
+        "topic_id": "I-bertram-ch2-6-1-numero-de-avanco",
         "subtopic_id": null
       },
       "tracking": {
@@ -51671,65 +51644,19 @@
         "section": "Chapter 2 – Propellers",
         "module": "2. Propulsão do navio e propulsores",
         "topic": {
-          "id": "I-bertram-ch2-2-3-coeficientes-de-helice",
-          "title": "Coeficientes de hélice"
+          "id": "I-bertram-ch2-6-1-numero-de-avanco",
+          "title": "Número de avanço"
         }
       },
-      "source": {
-        "author": "BERTRAM, Volker",
-        "title": "Practical Ship Hydrodynamics",
-        "edition": "2nd ed., 2012",
-        "locator": "Chapters 2, 3 and 6"
-      },
-      "tags": [
-        "hélice",
-        "coeficientes",
-        "manobrabilidade",
-        "bertram",
-        "bertram::ch2",
-        "coeficientes-de-helice",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-737",
-          "MAN-788",
-          "MAN-789",
-          "MAN-790",
-          "MAN-841"
+          "MAN-084"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-630",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0271",
-      "question": "Na preparação para a faina, Com base no conteúdo de “Practical Ship Hydrodynamics”, em Chapters 2, 3 and 6, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Coeficientes de hélice”, é correto afirmar: Esses coeficientes dependem apenas do calado."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Empuxo do propulsor”, é correto afirmar: O propulsor produz empuxo ao comunicar quantidade de movimento ao fluido."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Avanço do hélice”, é correto afirmar: A razão de avanço caracteriza a relação entre velocidade de avanço, rotação e diâmetro do hélice."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Coeficientes de hélice”, é correto afirmar: Coeficientes adimensionais de empuxo e torque permitem comparar desempenho de hélices em condições semelhantes."
-        },
-        {
-          "key": "E",
-          "text": "Sobre “Empuxo do propulsor”, é correto afirmar: O propulsor produz empuxo ao comunicar quantidade de movimento ao fluido."
-        }
-      ],
-      "correct_answer": "A",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-631",
@@ -52370,16 +52297,57 @@
       "id": "MAN-638",
       "subject": "Manobrabilidade do Navio",
       "module": "2. Propulsão do navio e propulsores",
-      "topic": "Propulsores contra-rotativos",
+      "topic_code": "PSCPP.REF.INC.0279",
+      "topic": "Passo controlável",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Principles of Naval Architecture, Volume II” (Chapters V-VI, selected sections listed in bibliografia.txt), analise o seguinte problema técnico: Qual alternativa apresenta a relação física ou operacional correta para Passo controlável? Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Para obter empuxo reverso é obrigatório inverter o motor em todo CPP."
+        },
+        {
+          "key": "B",
+          "text": "O passo é geometricamente fixo em qualquer CPP."
+        },
+        {
+          "key": "C",
+          "text": "Passo controlável significa diâmetro variável do hélice."
+        },
+        {
+          "key": "D",
+          "text": "Hélices de passo controlável permitem variar o passo das pás sem necessariamente inverter o sentido de rotação do eixo."
+        },
+        {
+          "key": "E",
+          "text": "CPP não altera direção do empuxo."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A alternativa correta expressa a relação técnica indicada pela fonte para Passo controlável. Hélices de passo controlável permitem variar o passo das pás sem necessariamente inverter o sentido de rotação do eixo.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "2nd Revision, 1988",
+        "locator": "Chapters V-VI, selected sections listed in bibliografia.txt"
+      },
+      "tags": [
+        "CPP",
+        "passo controlável",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch6-s10",
+        "passo-controlavel",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
         "bibliography_id": "pna-v2",
         "chapter_id": "pna-v2::ch6-s10",
-        "topic_id": "I-pna-v2-ch6-s10-2-8-propulsores-contra-rotativos",
+        "topic_id": "I-pna-v2-ch6-s10-2-7-passo-controlavel",
         "subtopic_id": null
       },
       "tracking": {
@@ -52398,65 +52366,19 @@
         "section": "Chapter VI – Propulsion — Section 10: Other propulsion devices",
         "module": "2. Propulsão do navio e propulsores",
         "topic": {
-          "id": "I-pna-v2-ch6-s10-2-8-propulsores-contra-rotativos",
-          "title": "Propulsores contra-rotativos"
+          "id": "I-pna-v2-ch6-s10-2-7-passo-controlavel",
+          "title": "Passo controlável"
         }
       },
-      "source": {
-        "author": "LEWIS, Edward V.",
-        "title": "Principles of Naval Architecture, Volume II",
-        "edition": "2nd Revision, 1988",
-        "locator": "Chapters V-VI, selected sections listed in bibliografia.txt"
-      },
-      "tags": [
-        "contra-rotativos",
-        "propulsão",
-        "manobrabilidade",
-        "pna-v2",
-        "pna-v2::ch6-s10",
-        "propulsores-contra-rotativos",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-742",
-          "MAN-743",
-          "MAN-744",
-          "MAN-794",
-          "MAN-795"
+          "MAN-741"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-638",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0279",
-      "question": "Durante a conferência do plano, Com base no conteúdo de “Principles of Naval Architecture, Volume II”, em Chapters V-VI, selected sections listed in bibliografia.txt, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Propulsores contra-rotativos”, é correto afirmar: Propulsores contra-rotativos podem recuperar parte da energia rotacional do escoamento ao usar hélices coaxiais em sentidos opostos."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Propulsor cicloidal”, é correto afirmar: Propulsores de eixo vertical podem produzir empuxo vetorado pela variação cíclica da orientação das pás."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Jato d’água”, é correto afirmar: Na propulsão por jato, o empuxo decorre da aceleração de uma massa de água através do sistema propulsivo."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Passo controlável”, é correto afirmar: CPP não altera direção do empuxo."
-        },
-        {
-          "key": "E",
-          "text": "Sobre “Propulsores contra-rotativos”, é correto afirmar: Propulsores contra-rotativos podem recuperar parte da energia rotacional do escoamento ao usar hélices coaxiais em sentidos opostos."
-        }
-      ],
-      "correct_answer": "D",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-639",
@@ -53465,16 +53387,57 @@
       "id": "MAN-650",
       "subject": "Manobrabilidade do Navio",
       "module": "4. Controlabilidade e padrões de manobrabilidade",
-      "topic": "Estabilidade direcional",
+      "topic_code": "PSCPP.REF.INC.0291",
+      "topic": "Curva espiral",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Principles of Naval Architecture, Volume III” (Chapter IX — Controllability, selected sections listed in bibliografia.txt), analise o seguinte problema técnico: Na avaliação do comportamento do navio quanto a Curva espiral, é correto afirmar que: Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "É um teste de cavitação do hélice."
+        },
+        {
+          "key": "B",
+          "text": "Não envolve taxa de guinada."
+        },
+        {
+          "key": "C",
+          "text": "O ensaio mede apenas resistência de ondas."
+        },
+        {
+          "key": "D",
+          "text": "O ensaio de espiral pode revelar características de estabilidade direcional por meio da relação entre ângulo de leme e taxa de guinada em regime."
+        },
+        {
+          "key": "E",
+          "text": "Exige necessariamente parar o navio a cada ponto."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A alternativa correta expressa a relação técnica indicada pela fonte para Curva espiral. O ensaio de espiral pode revelar características de estabilidade direcional por meio da relação entre ângulo de leme e taxa de guinada em regime.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX — Controllability, selected sections listed in bibliografia.txt"
+      },
+      "tags": [
+        "curva espiral",
+        "estabilidade",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s4",
+        "curva-espiral",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
         "bibliography_id": "pna-v3",
         "chapter_id": "pna-v3::ch9-s4",
-        "topic_id": "I-pna-v3-ch9-s4-4-6-estabilidade-direcional",
+        "topic_id": "I-pna-v3-ch9-s4-4-7-curva-espiral",
         "subtopic_id": null
       },
       "tracking": {
@@ -53493,65 +53456,19 @@
         "section": "Chapter IX — Section 4: Analysis of Course Keeping and Controls-fixed Stability",
         "module": "4. Controlabilidade e padrões de manobrabilidade",
         "topic": {
-          "id": "I-pna-v3-ch9-s4-4-6-estabilidade-direcional",
-          "title": "Estabilidade direcional"
+          "id": "I-pna-v3-ch9-s4-4-7-curva-espiral",
+          "title": "Curva espiral"
         }
       },
-      "source": {
-        "author": "LEWIS, Edward V.",
-        "title": "Principles of Naval Architecture, Volume III",
-        "edition": "2nd Revision, 1989",
-        "locator": "Chapter IX — Controllability, selected sections listed in bibliografia.txt"
-      },
-      "tags": [
-        "estabilidade direcional",
-        "rumo",
-        "manobrabilidade",
-        "pna-v3",
-        "pna-v3::ch9-s4",
-        "estabilidade-direcional",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-331",
-          "MAN-332",
-          "MAN-437",
-          "MAN-438",
-          "MAN-490"
+          "MAN-862"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-650",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0291",
-      "question": "Em uma avaliação de bordo, Com base no conteúdo de “Principles of Naval Architecture, Volume III”, em Chapter IX — Controllability, selected sections listed in bibliografia.txt, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Curva espiral”, é correto afirmar: O ensaio de espiral pode revelar características de estabilidade direcional por meio da relação entre ângulo de leme e taxa de guinada em regime."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Curva espiral”, é correto afirmar: O ensaio de espiral pode revelar características de estabilidade direcional por meio da relação entre ângulo de leme e taxa de guinada em regime."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Estabilidade direcional”, é correto afirmar: Estabilidade direcional relaciona-se à tendência do navio de manter ou recuperar comportamento de rumo após pequenas perturbações, conforme a condição de controle analisada."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Estabilidade direcional”, é correto afirmar: Significa que o navio nunca pode guinar."
-        },
-        {
-          "key": "E",
-          "text": "Sobre “Estabilidade direcional”, é correto afirmar: Estabilidade direcional relaciona-se à tendência do navio de manter ou recuperar comportamento de rumo após pequenas perturbações, conforme a condição de controle analisada."
-        }
-      ],
-      "correct_answer": "D",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-651",
@@ -126174,16 +126091,56 @@
       "id": "MAN-1598",
       "subject": "Manobrabilidade do Navio",
       "module": "1. Resistência do navio e métodos de obtenção",
-      "topic": "Similaridade de Froude",
+      "topic_code": "PSCPP.REF.INC.0003",
+      "topic": "Similaridade geométrica",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Ship Resistance and Flow” (Chapters 1 to 8), analise o seguinte problema técnico: Na terminologia de similaridade, a igualdade de forma e de todas as razões lineares correspondentes entre modelo e navio é denominada: Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "similaridade térmica."
+        },
+        {
+          "key": "B",
+          "text": "similaridade dinâmica."
+        },
+        {
+          "key": "C",
+          "text": "similaridade geométrica."
+        },
+        {
+          "key": "D",
+          "text": "identidade de Reynolds."
+        },
+        {
+          "key": "E",
+          "text": "equivalência propulsiva."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Similaridade geométrica significa que todas as dimensões correspondentes mantêm uma razão de escala constante; cinemática e dinâmica acrescentam relações de movimento e forças.",
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Chapters 1 to 8"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch3",
+        "similaridade-geometrica",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
         "bibliography_id": "larsson-resistance",
         "chapter_id": "larsson-resistance::ch3",
-        "topic_id": "I-larsson-resistance-ch3-1-6-similaridade-de-froude",
+        "topic_id": "I-larsson-resistance-ch3-5-3-1-similaridade-geometrica",
         "subtopic_id": null
       },
       "tracking": {
@@ -126202,65 +126159,19 @@
         "section": "Chapter 3",
         "module": "1. Resistência do navio e métodos de obtenção",
         "topic": {
-          "id": "I-larsson-resistance-ch3-1-6-similaridade-de-froude",
-          "title": "Similaridade de Froude"
+          "id": "I-larsson-resistance-ch3-5-3-1-similaridade-geometrica",
+          "title": "Similaridade geométrica"
         }
       },
-      "source": {
-        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
-        "title": "Ship Resistance and Flow",
-        "edition": "2010",
-        "locator": "Chapters 1-8"
-      },
-      "tags": [
-        "Froude",
-        "ondas",
-        "manobrabilidade",
-        "larsson-resistance",
-        "larsson-resistance::ch3",
-        "similaridade-de-froude",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-518",
-          "MAN-570",
-          "MAN-571",
-          "MAN-623",
-          "MAN-624"
+          "MAN-025"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-1598",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0003",
-      "question": "Na preparação para a faina, Durante um briefing técnico, Com base no conteúdo de “Ship Resistance and Flow”, em Chapters 1-8, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Similaridade de Froude”, é correto afirmar: O número de Froude relaciona inércia e gravidade e é usado na similaridade dos fenômenos de ondas."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Similaridade de Reynolds”, é correto afirmar: O número de Reynolds relaciona efeitos inerciais e viscosos e é central na similaridade da parcela viscosa."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Similaridade de Froude”, é correto afirmar: É usado somente para cavitação."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Similaridade de Reynolds”, é correto afirmar: O número de Reynolds relaciona efeitos inerciais e viscosos e é central na similaridade da parcela viscosa."
-        },
-        {
-          "key": "E",
-          "text": "Sobre “Similaridade de Froude”, é correto afirmar: O número de Froude relaciona inércia e gravidade e é usado na similaridade dos fenômenos de ondas."
-        }
-      ],
-      "correct_answer": "C",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-1599",
@@ -291224,16 +291135,56 @@
       "id": "MAN-3748",
       "subject": "Manobrabilidade do Navio",
       "module": "6. Mar adverso e informações de manobra a bordo",
-      "topic": "Manoeuvring booklet",
+      "topic_code": "PSCPP.INC.0027",
+      "topic": "Limitações dos dados de manobra",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Provision and Display of Manoeuvring Information on Board Ships” (Annex and appendices 1 to 3), analise o seguinte problema técnico: Os dados do wheelhouse poster devem ser interpretados considerando que o desempenho real: Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "é invariável em qualquer condição ambiental."
+        },
+        {
+          "key": "B",
+          "text": "pode diferir por vento, ondas, corrente, profundidade, condição de carga e estado do casco."
+        },
+        {
+          "key": "C",
+          "text": "é sempre melhor que o registrado."
+        },
+        {
+          "key": "D",
+          "text": "depende somente do nome do estaleiro."
+        },
+        {
+          "key": "E",
+          "text": "não muda com calado ou trim."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Os resultados de referência são obtidos em condições definidas; fatores operacionais e ambientais alteram resistência, controle e trajetória.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Provision and Display of Manoeuvring Information on Board Ships",
+        "edition": "Resolution A.601(15), 19 Nov. 1987",
+        "locator": "Annex and appendices 1 to 3"
+      },
+      "tags": [
+        "mar adverso e informações de manobra",
+        "manobrabilidade",
+        "a601",
+        "a601::s1",
+        "limitacoes-dos-dados-de-manobra",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
         "bibliography_id": "a601",
         "chapter_id": "a601::s1",
-        "topic_id": "I-a601-s1-6-8-manoeuvring-booklet",
+        "topic_id": "I-a601-s1-10-1-2-limitacoes-dos-dados-de-manobra",
         "subtopic_id": null
       },
       "tracking": {
@@ -291241,7 +291192,7 @@
         "work": {
           "id": "a601",
           "title": "IMO Resolution A.601(15) — Provision and Display of Manoeuvring Information",
-          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
         },
         "chapter": {
           "id": "a601::s1",
@@ -291252,83 +291203,75 @@
         "section": "1. Manoeuvring information",
         "module": "6. Mar adverso e informações de manobra a bordo",
         "topic": {
-          "id": "I-a601-s1-6-8-manoeuvring-booklet",
-          "title": "Manoeuvring booklet"
+          "id": "I-a601-s1-10-1-2-limitacoes-dos-dados-de-manobra",
+          "title": "Limitações dos dados de manobra"
         }
       },
-      "source": {
-        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
-        "title": "Provision and Display of Manoeuvring Information on Board Ships",
-        "edition": "Resolution A.601(15), 1987",
-        "locator": "Section 1 — Manoeuvring information"
-      },
-      "tags": [
-        "manoeuvring booklet",
-        "informação de manobra",
-        "manobrabilidade",
-        "a601",
-        "a601::s1",
-        "manoeuvring-booklet",
-        "revisao-contextual-v2",
-        "formato-estudo-de-caso-v2",
-        "expansao-formatos-v2",
-        "pscpp-style-v3",
-        "formato-pscpp-incorreta"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-style-upgrade-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-3814",
-          "MAN-291",
-          "MAN-292",
-          "MAN-293",
-          "MAN-294"
+          "MAN-295"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-3748",
-        "rewrite_reason": "quality-audit-v2"
-      },
-      "topic_code": "PSCPP.INC.0027",
-      "question": "Com base no conteúdo de “Provision and Display of Manoeuvring Information on Board Ships”, em Section 1 — Manoeuvring information, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Manoeuvring booklet”, é tecnicamente correto afirmar: O manoeuvring booklet reúne informações mais detalhadas sobre características de manobra do navio."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Formas de informação de manobra”, é tecnicamente correto afirmar: ECDIS, radar e AIS, exclusivamente."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Pilot card”, é tecnicamente correto afirmar: comandante, com informações atualizadas da condição do navio para uso do prático."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Preenchimento do pilot card”, é tecnicamente correto afirmar: não são necessários ensaios especiais de manobra; usam-se dados e condições disponíveis e atuais."
-        },
-        {
-          "key": "E",
-          "text": "Sobre “Wheelhouse poster”, é tecnicamente correto afirmar: ficar permanentemente exposto no passadiço e apresentar, de forma acessível, dados gerais e características de manobra."
-        }
-      ],
-      "correct_answer": "B",
-      "explanation": "A alternativa B é a incorreta. O conceito correto para o ponto cobrado encontra-se no mesmo recorte bibliográfico indicado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-3749",
       "subject": "Manobrabilidade do Navio",
       "module": "6. Mar adverso e informações de manobra a bordo",
-      "topic": "Wheelhouse poster",
+      "topic_code": "PSCPP.REF.INC.0015",
+      "topic": "Pilot card",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Provision and Display of Manoeuvring Information on Board Ships” (Section 1 — Manoeuvring information), analise o seguinte problema técnico: Qual afirmação descreve corretamente Pilot card? Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "O pilot card é destinado a fornecer ao prático informações atualizadas sobre condição e características de manobra do navio."
+        },
+        {
+          "key": "B",
+          "text": "O pilot card substitui todas as cartas náuticas."
+        },
+        {
+          "key": "C",
+          "text": "É preparado apenas após o desembarque do prático."
+        },
+        {
+          "key": "D",
+          "text": "Não contém informação de manobra."
+        },
+        {
+          "key": "E",
+          "text": "É documento exclusivamente de carga."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A alternativa correta expressa a relação técnica indicada pela fonte para Pilot card. O pilot card é destinado a fornecer ao prático informações atualizadas sobre condição e características de manobra do navio.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Provision and Display of Manoeuvring Information on Board Ships",
+        "edition": "Resolution A.601(15), 1987",
+        "locator": "Section 1 — Manoeuvring information"
+      },
+      "tags": [
+        "pilot card",
+        "informação de manobra",
+        "manobrabilidade",
+        "a601",
+        "a601::s1",
+        "pilot-card",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
         "bibliography_id": "a601",
         "chapter_id": "a601::s1",
-        "topic_id": "I-a601-s1-6-7-wheelhouse-poster",
+        "topic_id": "I-a601-s1-6-6-pilot-card",
         "subtopic_id": null
       },
       "tracking": {
@@ -291347,65 +291290,19 @@
         "section": "1. Manoeuvring information",
         "module": "6. Mar adverso e informações de manobra a bordo",
         "topic": {
-          "id": "I-a601-s1-6-7-wheelhouse-poster",
-          "title": "Wheelhouse poster"
+          "id": "I-a601-s1-6-6-pilot-card",
+          "title": "Pilot card"
         }
       },
-      "source": {
-        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
-        "title": "Provision and Display of Manoeuvring Information on Board Ships",
-        "edition": "Resolution A.601(15), 1987",
-        "locator": "Section 1 — Manoeuvring information"
-      },
-      "tags": [
-        "wheelhouse poster",
-        "informação de manobra",
-        "manobrabilidade",
-        "a601",
-        "a601::s1",
-        "wheelhouse-poster",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-882",
-          "MAN-883",
-          "MAN-934",
-          "MAN-935",
-          "MAN-936"
+          "MAN-351"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-3749",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0015",
-      "question": "Durante a conferência do plano, Com base no conteúdo de “Provision and Display of Manoeuvring Information on Board Ships”, em Section 1 — Manoeuvring information, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Manoeuvring booklet”, é correto afirmar: É exclusivamente um certificado de classe."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Manoeuvring booklet”, é correto afirmar: O manoeuvring booklet reúne informações mais detalhadas sobre características de manobra do navio."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Pilot card”, é correto afirmar: O pilot card é destinado a fornecer ao prático informações atualizadas sobre condição e características de manobra do navio."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Wheelhouse poster”, é correto afirmar: O wheelhouse poster apresenta informações de manobra de forma disponível à equipe de passadiço e ao prático."
-        },
-        {
-          "key": "E",
-          "text": "Sobre “Wheelhouse poster”, é correto afirmar: O wheelhouse poster apresenta informações de manobra de forma disponível à equipe de passadiço e ao prático."
-        }
-      ],
-      "correct_answer": "A",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-3750",
@@ -291952,18 +291849,43 @@
     },
     {
       "id": "MAN-3756",
-      "subject": "Manobrabilidade do Navio",
-      "module": "2. Propulsão do navio e propulsores",
-      "topic": "Dedução de empuxo",
+      "subject": "manobrabilidade",
+      "module": "Cobertura bibliográfica — Manobrabilidade do Navio",
+      "topic_code": "PSCPP.INC.0035",
+      "topic": "potência efetiva",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “BERTRAM — Practical Ship Hydrodynamics, 2ª ed.” (Chapter 3 – Resistance and Propulsion), analise o seguinte problema técnico: No contexto de Chapter 3 – Resistance and Propulsion, qual conceito corresponde à descrição: “Produto entre resistência total em água calma e velocidade do navio.”? Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "dedução de empuxo"
+        },
+        {
+          "key": "B",
+          "text": "potência efetiva"
+        },
+        {
+          "key": "C",
+          "text": "ensaio de resistência"
+        },
+        {
+          "key": "D",
+          "text": "ensaio de autopropulsão"
+        },
+        {
+          "key": "E",
+          "text": "eficiência do casco"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A descrição apresentada identifica “potência efetiva”.",
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
         "bibliography_id": "bertram",
         "chapter_id": "bertram::ch3",
-        "topic_id": "I-bertram-ch3-6-7-2-deducao-de-empuxo",
+        "topic_id": "I-bertram-ch3-potencia-efetiva",
         "subtopic_id": null
       },
       "tracking": {
@@ -291971,7 +291893,7 @@
         "work": {
           "id": "bertram",
           "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
-          "author": "BERTRAM, Volker"
+          "author": "Volker Bertram"
         },
         "chapter": {
           "id": "bertram::ch3",
@@ -291980,66 +291902,36 @@
           "label": "Chapter 3 – Resistance and Propulsion"
         },
         "section": "Chapter 3 – Resistance and Propulsion",
-        "module": "2. Propulsão do navio e propulsores",
+        "module": "Cobertura bibliográfica — Manobrabilidade do Navio",
         "topic": {
-          "id": "I-bertram-ch3-6-7-2-deducao-de-empuxo",
-          "title": "Dedução de empuxo"
+          "id": "I-bertram-ch3-potencia-efetiva",
+          "title": "potência efetiva"
         }
       },
       "source": {
-        "author": "BERTRAM, Volker",
-        "title": "Practical Ship Hydrodynamics",
-        "edition": "2. ed., 2012",
-        "locator": "Chapters 2 and 3 - Propellers; Resistance and Propulsion"
+        "author": "Volker Bertram",
+        "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+        "edition": "2nd ed., 2012",
+        "locator": "Chapter 3 – Resistance and Propulsion"
       },
       "tags": [
-        "propulsão",
         "manobrabilidade",
         "bertram",
         "bertram::ch3",
-        "deducao-de-empuxo",
+        "potencia-efetiva",
+        "cobertura-v2",
         "pscpp-style-v3",
-        "formato-pscpp-incorreta"
+        "pscpp-repair-v3"
       ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-style-upgrade-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-094",
-          "MAN-095",
-          "MAN-096",
-          "MAN-097",
-          "MAN-098"
+          "MAN-3698"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-3756",
-        "rewrite_reason": "quality-audit-v2"
-      },
-      "topic_code": "PSCPP.INC.0035",
-      "question": "Com base no conteúdo de “Practical Ship Hydrodynamics”, em Chapters 2 and 3 - Propellers; Resistance and Propulsion, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Dedução de empuxo”, é tecnicamente correto afirmar: o empuxo requerido com o propulsor operando é maior que a resistência medida no ensaio de reboque do casco."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Esteira friccional”, é tecnicamente correto afirmar: na pressão atmosférica uniforme."
-        },
-        {
-          "key": "C",
-          "text": "No contexto de “Cálculo da esteira”, a associação “12 nós.” está correta."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Esteira nominal”, é tecnicamente correto afirmar: com o casco avançando, mas sem a ação aceleradora do propulsor."
-        },
-        {
-          "key": "E",
-          "text": "No contexto de “Fração de esteira”, a associação “w = 1 - VA/VS.” está correta."
-        }
-      ],
-      "correct_answer": "B",
-      "explanation": "A alternativa E é a incorreta. O conceito correto para o ponto cobrado encontra-se no mesmo recorte bibliográfico indicado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-3757",
@@ -295694,17 +295586,57 @@
     {
       "id": "MAN-3797",
       "subject": "Manobrabilidade do Navio",
-      "module": "5. Efeitos ambientais, águas rasas e interações",
-      "topic": "Curvas em corrente",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "PSCPP.REF.INC.0027",
+      "topic": "Hidrofólios e arrasto",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Naval Shiphandling” (Chapter 2 - Forces Affecting the Ship), analise o seguinte problema técnico: Em um apêndice perfilado, aumentar o ângulo de ataque dentro da faixa linear tende a: Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "eliminar simultaneamente sustentação e arrasto."
+        },
+        {
+          "key": "B",
+          "text": "aumentar a sustentação e também o arrasto, até a proximidade do estol."
+        },
+        {
+          "key": "C",
+          "text": "manter todas as forças constantes."
+        },
+        {
+          "key": "D",
+          "text": "reduzir a sustentação a zero em qualquer caso."
+        },
+        {
+          "key": "E",
+          "text": "afetar apenas a pressão atmosférica."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Na faixa pré-estol, o coeficiente de sustentação cresce aproximadamente com o ângulo, enquanto o arrasto também se eleva; após separação intensa, a eficiência cai.",
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Chapter 2 - Forces Affecting the Ship"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "crenshaw-naval-shiphandling",
+        "crenshaw-naval-shiphandling::ch2",
+        "hidrofolios-e-arrasto",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
         "bibliography_id": "crenshaw-naval-shiphandling",
         "chapter_id": "crenshaw-naval-shiphandling::ch2",
-        "topic_id": "I-crenshaw-naval-shiphandling-ch2-4-13-2-curvas-em-corrente",
+        "topic_id": "I-crenshaw-naval-shiphandling-ch2-5-7-1-hidrofolios-e-arrasto",
         "subtopic_id": null
       },
       "tracking": {
@@ -295721,66 +295653,21 @@
           "label": "Chapter 2 – Forces Affecting the Ship"
         },
         "section": "Chapter 2 – Forces Affecting the Ship",
-        "module": "5. Efeitos ambientais, águas rasas e interações",
+        "module": "1. Resistência do navio e métodos de obtenção",
         "topic": {
-          "id": "I-crenshaw-naval-shiphandling-ch2-4-13-2-curvas-em-corrente",
-          "title": "Curvas em corrente"
+          "id": "I-crenshaw-naval-shiphandling-ch2-5-7-1-hidrofolios-e-arrasto",
+          "title": "Hidrofólios e arrasto"
         }
       },
-      "source": {
-        "author": "CRENSHAW, Russell Sydnor",
-        "title": "Naval Shiphandling",
-        "edition": "4. ed., 1975",
-        "locator": "Chapter 2 - Forces Affecting the Ship"
-      },
-      "tags": [
-        "ambiente e águas restritas",
-        "manobrabilidade",
-        "crenshaw-naval-shiphandling",
-        "crenshaw-naval-shiphandling::ch2",
-        "curvas-em-corrente",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-249",
-          "MAN-301",
-          "MAN-310",
-          "MAN-407",
-          "MAN-416"
+          "MAN-054"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-3797",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0027",
-      "question": "Em uma revisão conduzida pelo Prático, Com base no conteúdo de “Naval Shiphandling”, em Chapter 2 - Forces Affecting the Ship, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Curvas em corrente”, é correto afirmar: a composição vetorial da velocidade do navio através da água com a corrente e o deslocamento durante a resposta de guinada."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Resistência total”, é correto afirmar: O equilíbrio longitudinal exige aceleração constante."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Resistência do ar”, é correto afirmar: A resistência aerodinâmica sobre a parte emersa cresce com a pressão dinâmica do escoamento relativo do ar."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Condição de carga e vento”, é correto afirmar: abater e guinar mais rapidamente sob ação do vento que o mesmo navio carregado."
-        },
-        {
-          "key": "E",
-          "text": "Sobre “Resistência do ar”, é correto afirmar: A resistência aerodinâmica sobre a parte emersa cresce com a pressão dinâmica do escoamento relativo do ar."
-        }
-      ],
-      "correct_answer": "B",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-3798",
@@ -296419,16 +296306,57 @@
       "id": "MAN-3805",
       "subject": "Manobrabilidade do Navio",
       "module": "6. Mar adverso e informações de manobra a bordo",
-      "topic": "Wheelhouse poster",
+      "topic_code": "PSCPP.REF.INC.0031",
+      "topic": "Manoeuvring booklet",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Provision and Display of Manoeuvring Information on Board Ships” (Section 1 — Manoeuvring information), analise o seguinte problema técnico: Qual alternativa apresenta a relação física ou operacional correta para Manoeuvring booklet? Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "O manoeuvring booklet reúne informações mais detalhadas sobre características de manobra do navio."
+        },
+        {
+          "key": "B",
+          "text": "Serve apenas para registrar consumo de combustível."
+        },
+        {
+          "key": "C",
+          "text": "Não pode conter resultados de manobra."
+        },
+        {
+          "key": "D",
+          "text": "É exclusivamente um certificado de classe."
+        },
+        {
+          "key": "E",
+          "text": "É limitado ao nome do navio e porto de registro."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A alternativa correta expressa a relação técnica indicada pela fonte para Manoeuvring booklet. O manoeuvring booklet reúne informações mais detalhadas sobre características de manobra do navio.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Provision and Display of Manoeuvring Information on Board Ships",
+        "edition": "Resolution A.601(15), 1987",
+        "locator": "Section 1 — Manoeuvring information"
+      },
+      "tags": [
+        "manoeuvring booklet",
+        "informação de manobra",
+        "manobrabilidade",
+        "a601",
+        "a601::s1",
+        "manoeuvring-booklet",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
         "bibliography_id": "a601",
         "chapter_id": "a601::s1",
-        "topic_id": "I-a601-s1-6-7-wheelhouse-poster",
+        "topic_id": "I-a601-s1-6-8-manoeuvring-booklet",
         "subtopic_id": null
       },
       "tracking": {
@@ -296447,65 +296375,19 @@
         "section": "1. Manoeuvring information",
         "module": "6. Mar adverso e informações de manobra a bordo",
         "topic": {
-          "id": "I-a601-s1-6-7-wheelhouse-poster",
-          "title": "Wheelhouse poster"
+          "id": "I-a601-s1-6-8-manoeuvring-booklet",
+          "title": "Manoeuvring booklet"
         }
       },
-      "source": {
-        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
-        "title": "Provision and Display of Manoeuvring Information on Board Ships",
-        "edition": "Resolution A.601(15), 1987",
-        "locator": "Section 1 — Manoeuvring information"
-      },
-      "tags": [
-        "wheelhouse poster",
-        "informação de manobra",
-        "manobrabilidade",
-        "a601",
-        "a601::s1",
-        "wheelhouse-poster",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-776",
-          "MAN-777",
-          "MAN-828",
-          "MAN-829",
-          "MAN-830"
+          "MAN-777"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-3805",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0031",
-      "question": "Em uma avaliação de bordo, Com base no conteúdo de “Provision and Display of Manoeuvring Information on Board Ships”, em Section 1 — Manoeuvring information, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Wheelhouse poster”, é correto afirmar: É destinado apenas ao estaleiro."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Manoeuvring booklet”, é correto afirmar: O manoeuvring booklet reúne informações mais detalhadas sobre características de manobra do navio."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Pilot card”, é correto afirmar: O pilot card é destinado a fornecer ao prático informações atualizadas sobre condição e características de manobra do navio."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Wheelhouse poster”, é correto afirmar: O wheelhouse poster apresenta informações de manobra de forma disponível à equipe de passadiço e ao prático."
-        },
-        {
-          "key": "E",
-          "text": "Sobre “Manoeuvring booklet”, é correto afirmar: O manoeuvring booklet reúne informações mais detalhadas sobre características de manobra do navio."
-        }
-      ],
-      "correct_answer": "A",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-3806",
@@ -303449,16 +303331,57 @@
       "id": "MAN-3883",
       "subject": "Manobrabilidade do Navio",
       "module": "4. Controlabilidade e padrões de manobrabilidade",
-      "topic": "Parada",
+      "topic_code": "PSCPP.REF.INC.0043",
+      "topic": "Movimento a ré",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Principles of Naval Architecture, Volume III” (Chapter IX — Controllability, selected sections listed in bibliografia.txt), analise o seguinte problema técnico: Qual afirmação descreve corretamente Movimento a ré? Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A posição do propulsor e leme não influencia manobra a ré."
+        },
+        {
+          "key": "B",
+          "text": "Todo navio mantém a mesma estabilidade direcional nos dois sentidos."
+        },
+        {
+          "key": "C",
+          "text": "O escoamento a ré é sempre idêntico ao avante."
+        },
+        {
+          "key": "D",
+          "text": "O comportamento hidrodinâmico e de controle a ré pode diferir substancialmente do comportamento avante."
+        },
+        {
+          "key": "E",
+          "text": "Forças laterais desaparecem obrigatoriamente a ré."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A alternativa correta expressa a relação técnica indicada pela fonte para Movimento a ré. O comportamento hidrodinâmico e de controle a ré pode diferir substancialmente do comportamento avante.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX — Controllability, selected sections listed in bibliografia.txt"
+      },
+      "tags": [
+        "ré",
+        "controle",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s10",
+        "movimento-a-re",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
         "bibliography_id": "pna-v3",
         "chapter_id": "pna-v3::ch9-s10",
-        "topic_id": "I-pna-v3-ch9-s10-4-8-parada",
+        "topic_id": "I-pna-v3-ch9-s10-4-10-movimento-a-re",
         "subtopic_id": null
       },
       "tracking": {
@@ -303477,64 +303400,19 @@
         "section": "Chapter IX — Section 10: Accelerating, Stopping and Backing",
         "module": "4. Controlabilidade e padrões de manobrabilidade",
         "topic": {
-          "id": "I-pna-v3-ch9-s10-4-8-parada",
-          "title": "Parada"
+          "id": "I-pna-v3-ch9-s10-4-10-movimento-a-re",
+          "title": "Movimento a ré"
         }
       },
-      "source": {
-        "author": "LEWIS, Edward V.",
-        "title": "Principles of Naval Architecture, Volume III",
-        "edition": "2nd Revision, 1989",
-        "locator": "Chapter IX — Controllability, selected sections listed in bibliografia.txt"
-      },
-      "tags": [
-        "parada",
-        "stopping",
-        "manobrabilidade",
-        "pna-v3",
-        "pna-v3::ch9-s10",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-439",
-          "MAN-440",
-          "MAN-441",
-          "MAN-492",
-          "MAN-493"
+          "MAN-335"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-3883",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0043",
-      "question": "Em uma revisão conduzida pelo Prático, Na preparação para a faina, Com base no conteúdo de “Principles of Naval Architecture, Volume III”, em Chapter IX — Controllability, selected sections listed in bibliografia.txt, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Parada”, é correto afirmar: A manobra de parada avalia a capacidade de reduzir o movimento longitudinal após uma ordem de máquina apropriada."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Aceleração”, é correto afirmar: A resposta de aceleração depende da diferença entre força propulsiva e resistência, além da inércia efetiva do sistema."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Parada”, é correto afirmar: A manobra de parada avalia a capacidade de reduzir o movimento longitudinal após uma ordem de máquina apropriada."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Movimento a ré”, é correto afirmar: O escoamento a ré é sempre idêntico ao avante."
-        },
-        {
-          "key": "E",
-          "text": "Sobre “Aceleração”, é correto afirmar: A resposta de aceleração depende da diferença entre força propulsiva e resistência, além da inércia efetiva do sistema."
-        }
-      ],
-      "correct_answer": "D",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-3884",
@@ -304348,18 +304226,43 @@
     },
     {
       "id": "MAN-3893",
-      "subject": "Manobrabilidade do Navio",
-      "module": "1. Resistência do navio e métodos de obtenção",
-      "topic": "Resistência friccional",
+      "subject": "manobrabilidade",
+      "module": "Cobertura bibliográfica — Manobrabilidade do Navio",
+      "topic_code": "PSCPP.REF.INC.0047",
+      "topic": "rugosidade do casco",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “LEWIS — Principles of Naval Architecture, Volume II” (Chapter V – Resistance — Section 3: Frictional Resistance), analise o seguinte problema técnico: Em uma análise comparativa de Chapter V – Resistance — Section 3: Frictional Resistance, qual associação envolvendo “rugosidade do casco” está correta? Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "espessura da camada limite — Parâmetro adimensional que relaciona efeitos de inércia e viscosidade e governa a semelhança do escoamento viscoso."
+        },
+        {
+          "key": "B",
+          "text": "separação do escoamento — Distância característica junto ao casco até a velocidade se aproximar da velocidade do escoamento externo."
+        },
+        {
+          "key": "C",
+          "text": "rugosidade do casco — Irregularidade superficial que tende a elevar o arrasto friccional em relação a uma superfície lisa."
+        },
+        {
+          "key": "D",
+          "text": "número de Reynolds — Região junto ao casco na qual os efeitos viscosos e os gradientes de velocidade são importantes."
+        },
+        {
+          "key": "E",
+          "text": "camada limite — Esforço tangencial no casco que, integrado sobre a superfície molhada, contribui para a resistência friccional."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A associação correta é “rugosidade do casco — Irregularidade superficial que tende a elevar o arrasto friccional em relação a uma superfície lisa.”; as demais opções trocam conceitos e descrições.",
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
         "bibliography_id": "pna-v2",
         "chapter_id": "pna-v2::ch5-s3",
-        "topic_id": "I-pna-v2-ch5-s3-1-2-resistencia-friccional",
+        "topic_id": "I-pna-v2-ch5-s3-rugosidade-do-casco",
         "subtopic_id": null
       },
       "tracking": {
@@ -304367,7 +304270,7 @@
         "work": {
           "id": "pna-v2",
           "title": "LEWIS — Principles of Naval Architecture, Volume II",
-          "author": "LEWIS, Edward V."
+          "author": "E. V. Lewis (ed.)"
         },
         "chapter": {
           "id": "pna-v2::ch5-s3",
@@ -304376,67 +304279,36 @@
           "label": "Chapter V – Resistance — Section 3: Frictional Resistance"
         },
         "section": "Chapter V – Resistance — Section 3: Frictional Resistance",
-        "module": "1. Resistência do navio e métodos de obtenção",
+        "module": "Cobertura bibliográfica — Manobrabilidade do Navio",
         "topic": {
-          "id": "I-pna-v2-ch5-s3-1-2-resistencia-friccional",
-          "title": "Resistência friccional"
+          "id": "I-pna-v2-ch5-s3-rugosidade-do-casco",
+          "title": "rugosidade do casco"
         }
       },
       "source": {
-        "author": "LEWIS, Edward V.",
-        "title": "Principles of Naval Architecture, Volume II",
-        "edition": "2nd Revision, 1988",
-        "locator": "Chapters V-VI, selected sections listed in bibliografia.txt"
+        "author": "E. V. Lewis (ed.)",
+        "title": "LEWIS — Principles of Naval Architecture, Volume II",
+        "edition": "Second Revision, 1988",
+        "locator": "Chapter V – Resistance — Section 3: Frictional Resistance"
       },
       "tags": [
-        "fricção",
-        "viscosidade",
         "manobrabilidade",
         "pna-v2",
         "pna-v2::ch5-s3",
-        "resistencia-friccional",
+        "rugosidade-do-casco",
+        "cobertura-v2",
         "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "pscpp-repair-v3"
       ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "MAN-885",
-          "MAN-938",
-          "MAN-991",
-          "MAN-3524",
-          "MAN-3525"
+          "MAN-3532"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MAN-3893",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0047",
-      "question": "Em uma avaliação de bordo, Com base no conteúdo de “Principles of Naval Architecture, Volume II”, em Chapters V-VI, selected sections listed in bibliografia.txt, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Resistência friccional”, é correto afirmar: A resistência friccional decorre das tensões viscosas tangenciais na superfície molhada."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Resistência friccional”, é correto afirmar: A resistência friccional decorre das tensões viscosas tangenciais na superfície molhada."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Resistência friccional”, é correto afirmar: Desaparece em casco real quando a velocidade aumenta."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “número de Reynolds”, é correto afirmar: Parâmetro adimensional que relaciona efeitos de inércia e viscosidade e governa a semelhança do escoamento viscoso."
-        },
-        {
-          "key": "E",
-          "text": "No contexto de “camada limite”, a associação “camada limite” é tecnicamente aplicável."
-        }
-      ],
-      "correct_answer": "C",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "MAN-3894",

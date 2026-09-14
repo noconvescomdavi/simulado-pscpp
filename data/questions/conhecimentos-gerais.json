@@ -2686,16 +2686,58 @@
       "id": "CGE-0033",
       "subject": "VII — Conhecimentos Gerais",
       "module": "Planejamento Portuário — Interface navio/porto",
-      "topic": "Cargo and Passenger Handling at Ship/Shore Interface",
+      "topic_code": "PSCPP.REF.INC.0003",
+      "topic": "Administration",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Ship/port interface: list of publications relevant to the ship/port interface” (Anexo, subject area 1, publicação 1.5.1), analise o seguinte problema técnico: Uma equipe procura “The Principles of Modern Port Management and Organization (1992)” no anexo da FAL.6/Circ.14/Rev.2. Qual área temática deve consultar? Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Inspection of Ships"
+        },
+        {
+          "key": "B",
+          "text": "Facilitation"
+        },
+        {
+          "key": "C",
+          "text": "Security"
+        },
+        {
+          "key": "D",
+          "text": "Administration"
+        },
+        {
+          "key": "E",
+          "text": "Services"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "O anexo da FAL.6/Circ.14/Rev.2 relaciona essa publicação à subject area 1, “Administration”. A classificação orienta a busca de referências específicas para a interface navio/porto.",
+      "source": {
+        "author": "International Maritime Organization (IMO)",
+        "title": "Ship/port interface: list of publications relevant to the ship/port interface",
+        "edition": "FAL.6/Circ.14/Rev.2, 2 April 2025",
+        "locator": "Anexo, subject area 1, publicação 1.5.1"
+      },
+      "tags": [
+        "interface navio/porto",
+        "publicações IMO",
+        "Administration",
+        "conhecimentos-gerais",
+        "fal6",
+        "fal6::integral",
+        "administration",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
         "bibliography_id": "fal6",
         "chapter_id": "fal6::integral",
-        "topic_id": "VII-fal6-integral-cge-pp-fal-03-cargo-and-passenger-handling-at-ship-shore-interface",
+        "topic_id": "VII-fal6-integral-cge-pp-fal-01-administration",
         "subtopic_id": null
       },
       "tracking": {
@@ -2714,66 +2756,19 @@
         "section": "Publicação indicada",
         "module": "Planejamento Portuário — Interface navio/porto",
         "topic": {
-          "id": "VII-fal6-integral-cge-pp-fal-03-cargo-and-passenger-handling-at-ship-shore-interface",
-          "title": "Cargo and Passenger Handling at Ship/Shore Interface"
+          "id": "VII-fal6-integral-cge-pp-fal-01-administration",
+          "title": "Administration"
         }
       },
-      "source": {
-        "author": "International Maritime Organization (IMO)",
-        "title": "Ship/port interface: list of publications relevant to the ship/port interface",
-        "edition": "FAL.6/Circ.14/Rev.2, 2 April 2025",
-        "locator": "Anexo, subject area 3, publicação 3.3.16"
-      },
-      "tags": [
-        "interface navio/porto",
-        "publicações IMO",
-        "Cargo and Passenger Handling at Ship/Shore Interface",
-        "conhecimentos-gerais",
-        "fal6",
-        "fal6::integral",
-        "cargo-and-passenger-handling-at-ship-shore-interface",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "CGE-0019",
-          "CGE-0020",
-          "CGE-0021",
-          "CGE-0022",
-          "CGE-0023"
+          "CGE-0006"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "CGE-0033",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0003",
-      "question": "Com base no conteúdo de “Ship/port interface: list of publications relevant to the ship/port interface”, em Anexo, subject area 3, publicação 3.3.16, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Cargo and Passenger Handling at Ship/Shore Interface”, é correto afirmar: Cargo and Passenger Handling at Ship/Shore Interface."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Cargo and Passenger Handling at Ship/Shore Interface”, é correto afirmar: Cargo and Passenger Handling at Ship/Shore Interface."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Navigable Waterways Planning”, é correto afirmar: Navigable Waterways Planning."
-        },
-        {
-          "key": "D",
-          "text": "No contexto de “Cargo and Passenger Handling at Ship/Shore Interface”, a associação “Inspection of Ships” é tecnicamente aplicável."
-        },
-        {
-          "key": "E",
-          "text": "Sobre “Cargo and Passenger Handling at Ship/Shore Interface”, é correto afirmar: Cargo and Passenger Handling at Ship/Shore Interface."
-        }
-      ],
-      "correct_answer": "D",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "CGE-0034",
@@ -6300,16 +6295,58 @@
       "id": "CGE-0077",
       "subject": "VII — Conhecimentos Gerais",
       "module": "Planejamento Portuário — Interface navio/porto",
-      "topic": "Dangerous Cargoes",
+      "topic_code": "PSCPP.REF.INC.0007",
+      "topic": "Berths (including Anchorages and Floating Terminals)",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Ship/port interface: list of publications relevant to the ship/port interface” (Anexo, subject area 2, publicação 2.3.21), analise o seguinte problema técnico: Uma equipe procura “Estimating the Environmental Loads on Anchoring Systems” no anexo da FAL.6/Circ.14/Rev.2. Qual área temática deve consultar? Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Contingency Planning"
+        },
+        {
+          "key": "B",
+          "text": "Berths (including Anchorages and Floating Terminals)"
+        },
+        {
+          "key": "C",
+          "text": "Inspection of Ships"
+        },
+        {
+          "key": "D",
+          "text": "Communications"
+        },
+        {
+          "key": "E",
+          "text": "Facilitation"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O anexo da FAL.6/Circ.14/Rev.2 relaciona essa publicação à subject area 2, “Berths (including Anchorages and Floating Terminals)”. A classificação orienta a busca de referências específicas para a interface navio/porto.",
+      "source": {
+        "author": "International Maritime Organization (IMO)",
+        "title": "Ship/port interface: list of publications relevant to the ship/port interface",
+        "edition": "FAL.6/Circ.14/Rev.2, 2 April 2025",
+        "locator": "Anexo, subject area 2, publicação 2.3.21"
+      },
+      "tags": [
+        "interface navio/porto",
+        "publicações IMO",
+        "Berths (including Anchorages and Floating Terminals)",
+        "conhecimentos-gerais",
+        "fal6",
+        "fal6::integral",
+        "berths-including-anchorages-and-floating-terminals",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
         "bibliography_id": "fal6",
         "chapter_id": "fal6::integral",
-        "topic_id": "VII-fal6-integral-cge-pp-fal-07-dangerous-cargoes",
+        "topic_id": "VII-fal6-integral-cge-pp-fal-02-berths-including-anchorages-and-floating-terminals",
         "subtopic_id": null
       },
       "tracking": {
@@ -6328,66 +6365,19 @@
         "section": "Publicação indicada",
         "module": "Planejamento Portuário — Interface navio/porto",
         "topic": {
-          "id": "VII-fal6-integral-cge-pp-fal-07-dangerous-cargoes",
-          "title": "Dangerous Cargoes"
+          "id": "VII-fal6-integral-cge-pp-fal-02-berths-including-anchorages-and-floating-terminals",
+          "title": "Berths (including Anchorages and Floating Terminals)"
         }
       },
-      "source": {
-        "author": "International Maritime Organization (IMO)",
-        "title": "Ship/port interface: list of publications relevant to the ship/port interface",
-        "edition": "FAL.6/Circ.14/Rev.2, 2 April 2025",
-        "locator": "Anexo, subject area 7, publicação 7.5.11"
-      },
-      "tags": [
-        "interface navio/porto",
-        "publicações IMO",
-        "Dangerous Cargoes",
-        "conhecimentos-gerais",
-        "fal6",
-        "fal6::integral",
-        "dangerous-cargoes",
-        "pscpp-style-v3",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "CGE-0053",
-          "CGE-0054",
-          "CGE-0055",
-          "CGE-0056",
-          "CGE-0057"
+          "CGE-0014"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "CGE-0077",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0007",
-      "question": "Com base no conteúdo de “Ship/port interface: list of publications relevant to the ship/port interface”, em Anexo, subject area 7, publicação 7.5.11, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "No contexto de “Dangerous Cargoes”, a associação “Dangerous Cargoes” é tecnicamente aplicável."
-        },
-        {
-          "key": "B",
-          "text": "No contexto de “Dangerous Cargoes”, a associação “Services” é tecnicamente aplicável."
-        },
-        {
-          "key": "C",
-          "text": "No contexto de “Dangerous Cargoes”, a associação “Dangerous Cargoes” é tecnicamente aplicável."
-        },
-        {
-          "key": "D",
-          "text": "No contexto de “Navigation”, a associação “Navigation” é tecnicamente aplicável."
-        },
-        {
-          "key": "E",
-          "text": "No contexto de “Facilitation”, a associação “Facilitation” é tecnicamente aplicável."
-        }
-      ],
-      "correct_answer": "B",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "CGE-0078",
@@ -6668,16 +6658,16 @@
       "id": "CGE-0081",
       "subject": "VII — Conhecimentos Gerais",
       "module": "Planejamento Portuário — Interface navio/porto",
-      "topic": "Navigation",
+      "topic": "Navigable Waterways Planning",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question_type": "Múltipla escolha contextualizada",
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
         "bibliography_id": "fal6",
         "chapter_id": "fal6::integral",
-        "topic_id": "VII-fal6-integral-cge-pp-fal-11-navigation",
+        "topic_id": "VII-fal6-integral-cge-pp-fal-10-navigable-waterways-planning",
         "subtopic_id": null
       },
       "tracking": {
@@ -6696,66 +6686,62 @@
         "section": "Publicação indicada",
         "module": "Planejamento Portuário — Interface navio/porto",
         "topic": {
-          "id": "VII-fal6-integral-cge-pp-fal-11-navigation",
-          "title": "Navigation"
+          "id": "VII-fal6-integral-cge-pp-fal-10-navigable-waterways-planning",
+          "title": "Navigable Waterways Planning"
         }
       },
       "source": {
         "author": "International Maritime Organization (IMO)",
         "title": "Ship/port interface: list of publications relevant to the ship/port interface",
         "edition": "FAL.6/Circ.14/Rev.2, 2 April 2025",
-        "locator": "Anexo, subject area 11, publicação 11.1.8"
+        "locator": "Anexo, subject area 10, publicação 10.1.5"
       },
       "tags": [
         "interface navio/porto",
         "publicações IMO",
-        "Navigation",
+        "Navigable Waterways Planning",
         "conhecimentos-gerais",
         "fal6",
         "fal6::integral",
-        "navigation",
+        "navigable-waterways-planning",
         "pscpp-style-v3",
-        "pscpp-refinement-v3"
+        "formato-pscpp-direta",
+        "pscpp-repair-v3"
       ],
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "CGE-0085",
-          "CGE-0087",
-          "CGE-0089",
-          "CGE-0090",
-          "CGE-0091"
+          "CGE-0022"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "CGE-0081",
-        "refinement_reason": "residual-medium-quality-flag"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
       },
       "topic_code": "PSCPP.REF.INC.0011",
-      "question": "Com base no conteúdo de “Ship/port interface: list of publications relevant to the ship/port interface”, em Anexo, subject area 11, publicação 11.1.8, marque a alternativa INCORRETA:",
+      "question": "De acordo com o contido em “Ship/port interface: list of publications relevant to the ship/port interface” (Anexo, subject area 10, publicação 10.1.5), analise o seguinte problema técnico: De acordo com o contido em “Ship/port interface: list of publications relevant to the ship/port interface” (Anexo, subject area 10, publicação 10.1.5), considere a situação/conceito a seguir: Uma equipe procura “The Involvement of Maritime Authorities in Marine Spatial Planning (June 2017) (R1010)” no anexo da FAL.6/Circ.14/Rev.2. Qual área temática deve consultar? Assinale a opção correta. Assinale a alternativa correta.",
       "options": [
         {
           "key": "A",
-          "text": "No contexto de “Navigation”, a associação “Contingency Planning” é tecnicamente aplicável."
+          "text": "Navigable Waterways Planning"
         },
         {
           "key": "B",
-          "text": "No contexto de “Navigation”, a associação “Navigation” é tecnicamente aplicável."
+          "text": "Services"
         },
         {
           "key": "C",
-          "text": "No contexto de “Administration”, a associação “Administration” é tecnicamente aplicável."
+          "text": "Environmental Protection"
         },
         {
           "key": "D",
-          "text": "No contexto de “Environmental Protection”, a associação “Environmental Protection” é tecnicamente aplicável."
+          "text": "Navigation"
         },
         {
           "key": "E",
-          "text": "No contexto de “Environmental Protection”, a associação “Environmental Protection” é tecnicamente aplicável."
+          "text": "Risk"
         }
       ],
       "correct_answer": "A",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+      "explanation": "O anexo da FAL.6/Circ.14/Rev.2 relaciona essa publicação à subject area 10, “Navigable Waterways Planning”. A classificação orienta a busca de referências específicas para a interface navio/porto."
     },
     {
       "id": "CGE-0082",
@@ -7989,10 +7975,52 @@
       "id": "CGE-0097",
       "subject": "VII — Conhecimentos Gerais",
       "module": "Planejamento Portuário — Interface navio/porto",
+      "topic_code": "PSCPP.REF.INC.0015",
       "topic": "Contingency Planning",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Ship/port interface: list of publications relevant to the ship/port interface” (Anexo, subject area 5, publicação 5.3.2), analise o seguinte problema técnico: A publicação “Guide to Contingency Planning for Marine Terminals Handling Liquefied Gases in Bulk (2001)”, editada por ICS/OCIMF/SIGTTO, integra qual categoria do inventário IMO? Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Environmental Protection"
+        },
+        {
+          "key": "B",
+          "text": "Navigable Waterways Planning"
+        },
+        {
+          "key": "C",
+          "text": "Contingency Planning"
+        },
+        {
+          "key": "D",
+          "text": "Navigation"
+        },
+        {
+          "key": "E",
+          "text": "Risk"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "O anexo da FAL.6/Circ.14/Rev.2 relaciona essa publicação à subject area 5, “Contingency Planning”. A classificação orienta a busca de referências específicas para a interface navio/porto.",
+      "source": {
+        "author": "International Maritime Organization (IMO)",
+        "title": "Ship/port interface: list of publications relevant to the ship/port interface",
+        "edition": "FAL.6/Circ.14/Rev.2, 2 April 2025",
+        "locator": "Anexo, subject area 5, publicação 5.3.2"
+      },
+      "tags": [
+        "interface navio/porto",
+        "publicações IMO",
+        "Contingency Planning",
+        "conhecimentos-gerais",
+        "fal6",
+        "fal6::integral",
+        "contingency-planning",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
@@ -8021,63 +8049,15 @@
           "title": "Contingency Planning"
         }
       },
-      "source": {
-        "author": "International Maritime Organization (IMO)",
-        "title": "Ship/port interface: list of publications relevant to the ship/port interface",
-        "edition": "FAL.6/Circ.14/Rev.2, 2 April 2025",
-        "locator": "Anexo, subject area 5, publicação 5.5.5"
-      },
-      "tags": [
-        "interface navio/porto",
-        "publicações IMO",
-        "Contingency Planning",
-        "conhecimentos-gerais",
-        "fal6",
-        "fal6::integral",
-        "contingency-planning",
-        "pscpp-style-v3",
-        "formato-pscpp-direta",
-        "pscpp-refinement-v3"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "CGE-0121",
-          "CGE-0122",
-          "CGE-0124",
-          "CGE-0125",
-          "CGE-0126"
+          "CGE-0035"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "CGE-0097",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0015",
-      "question": "Com base no conteúdo de “Ship/port interface: list of publications relevant to the ship/port interface”, em Anexo, subject area 5, publicação 5.5.5, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "No contexto de “Contingency Planning”, a associação “Contingency Planning” é tecnicamente aplicável."
-        },
-        {
-          "key": "B",
-          "text": "No contexto de “Environmental Protection”, a associação “Environmental Protection” é tecnicamente aplicável."
-        },
-        {
-          "key": "C",
-          "text": "No contexto de “Training and Procedures”, a associação “Facilitation” é tecnicamente aplicável."
-        },
-        {
-          "key": "D",
-          "text": "No contexto de “Training and Procedures”, a associação “Training and Procedures” é tecnicamente aplicável."
-        },
-        {
-          "key": "E",
-          "text": "No contexto de “Training and Procedures”, a associação “Training and Procedures” é tecnicamente aplicável."
-        }
-      ],
-      "correct_answer": "C",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "CGE-0098",
@@ -90760,16 +90740,58 @@
       "id": "CGE-1142",
       "subject": "VII — Conhecimentos Gerais",
       "module": "Planejamento Portuário — Vias de acesso",
-      "topic": "Configuração das curvas",
+      "topic_code": "PSCPP.INC.1035",
+      "topic": "Distância de parada sem auxílio de rebocadores",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “Planejamento Portuário: Recomendações para Acessos Náuticos” (Capítulo 2, seção 2.3.2.4 — Distância de parada sem auxílio de rebocadores), analise o seguinte problema técnico: Uma equipe técnica revisa o tópico “Distância de parada sem auxílio de rebocadores”. Qual conteúdo integra corretamente essa parte da fonte? Considere especificamente a relação entre “Métodos / cálculo”. Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Transições menores do que esse comprimento devem ser avaliadas no Projeto Detalhado, em um estudo de simulação de manobra."
+        },
+        {
+          "key": "B",
+          "text": "Um gráfico ou tabela deve ser apresentado detalhando os valores de tração nos cabos de reboque e o valor total de tração obtido em cada teste."
+        },
+        {
+          "key": "C",
+          "text": "O valor mínimo de 0,5m de margem de manobrabilidade deve ser garantido para manobras assistidas por rebocadores, independentemente do calado do navio."
+        },
+        {
+          "key": "D",
+          "text": "Todos os requisitos de espaços de manobra, distância entre navios, rebocadores e análise de risco especificados para píeres fixos, nos Projetos Conceitual e Detalhado, aplicam-se aos terminais flutuantes."
+        },
+        {
+          "key": "E",
+          "text": "Métodos para o cálculo da resistência ao avanço e o cálculo do empuxo do propulsor podem ser encontrados em Principles of Naval Architecture e outras publicações em hidrodinâmica do navio."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O capítulo associa esse critério ao dimensionamento, à operação segura ou à análise de risco dos acessos náuticos; as demais alternativas pertencem a outros tópicos do planejamento portuário. No recorte indicado, o conteúdo aplicável é: Métodos para o cálculo da resistência ao avanço e o cálculo do empuxo do propulsor podem ser encontrados em Principles of Naval Architecture e outras publicações em hidrodinâmica do navio.",
+      "source": {
+        "author": "Conselho Nacional de Praticagem (CONAPRA)",
+        "title": "Planejamento Portuário: Recomendações para Acessos Náuticos",
+        "edition": "1ª edição, 2022",
+        "locator": "Capítulo 2, seção 2.3.2.4 — Distância de parada sem auxílio de rebocadores"
+      },
+      "tags": [
+        "Vias de acesso",
+        "Distância de parada sem auxílio de rebocadores",
+        "CGE.PP.VIA.2_3_2_4",
+        "conhecimentos-gerais",
+        "conapra-port",
+        "conapra-port::ch2",
+        "distancia-de-parada-sem-auxilio-de-rebocadores",
+        "pscpp-style-v3",
+        "pscpp-repair-v3"
+      ],
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
         "bibliography_id": "conapra-port",
         "chapter_id": "conapra-port::ch2",
-        "topic_id": "VII-conapra-port-ch2-cge-pp-via-2-3-1-4-1-configuracao-das-curvas",
+        "topic_id": "VII-conapra-port-ch2-cge-pp-via-2-3-2-4-distancia-de-parada-sem-auxilio-de-rebocadores",
         "subtopic_id": null
       },
       "tracking": {
@@ -90788,64 +90810,19 @@
         "section": "Capítulo 2 – Vias de Acesso a Instalações Portuárias",
         "module": "Planejamento Portuário — Vias de acesso",
         "topic": {
-          "id": "VII-conapra-port-ch2-cge-pp-via-2-3-1-4-1-configuracao-das-curvas",
-          "title": "Configuração das curvas"
+          "id": "VII-conapra-port-ch2-cge-pp-via-2-3-2-4-distancia-de-parada-sem-auxilio-de-rebocadores",
+          "title": "Distância de parada sem auxílio de rebocadores"
         }
       },
-      "source": {
-        "author": "Conselho Nacional de Praticagem (CONAPRA)",
-        "title": "Planejamento Portuário: Recomendações para Acessos Náuticos",
-        "edition": "1ª edição, 2022",
-        "locator": "Capítulo 2, seção 2.3.1.4.1 — Configuração das curvas"
-      },
-      "tags": [
-        "Vias de acesso",
-        "Configuração das curvas",
-        "CGE.PP.VIA.2_3_1_4_1",
-        "conhecimentos-gerais",
-        "conapra-port",
-        "conapra-port::ch2",
-        "configuracao-das-curvas",
-        "pscpp-style-v3",
-        "formato-pscpp-incorreta"
-      ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-style-upgrade-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "CGE-0154",
-          "CGE-0155",
-          "CGE-0156",
-          "CGE-0157",
-          "CGE-0158"
+          "CGE-0160"
         ],
+        "replaces_question_id": "CGE-1142",
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
-      },
-      "topic_code": "PSCPP.INC.1035",
-      "question": "Com base no conteúdo de “Planejamento Portuário: Recomendações para Acessos Náuticos”, em Capítulo 2, seção 2.3.1.4.1 — Configuração das curvas, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Configuração das curvas”, é tecnicamente correto afirmar: O comportamento do navio e, consequentemente, a sinalização das curvas são diferentes para cada tipo."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Largura adicional em curvas (Pianc 121, 2014, item 3.1.6.1.)”, é tecnicamente correto afirmar: É recomendada a largura adicional, ΔWRT, para compensar o tempo de resposta, dada por ΔWRT = 0,4B."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Comprimento do raio das curvas”, é tecnicamente correto afirmar: A restrição ao comprimento do navio (L) é feita em função do alinhamento do canal e do ângulo de deflexão α de suas curvas."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Espaços de manobra”, é tecnicamente correto afirmar: Deve-se analisar o espaço de manobra, do ponto a montante de onde o navio de projeto começa a reduzir a velocidade ao ponto mais a jusante da área de giro."
-        },
-        {
-          "key": "E",
-          "text": "Sobre “Tempo necessário para amarrar os rebocadores e manobrar para a posição (Pianc”, é tecnicamente correto afirmar: Uma margem de segurança deve ser deixada para as incertezas do calado estático."
-        }
-      ],
-      "correct_answer": "E",
-      "explanation": "A alternativa E é a incorreta. O conceito correto para o ponto cobrado encontra-se no mesmo recorte bibliográfico indicado."
+      }
     },
     {
       "id": "CGE-1143",

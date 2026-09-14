@@ -80816,16 +80816,41 @@
       "id": "COM-1049",
       "subject": "comunicacoes",
       "module": "Código Internacional de Sinais — Apêndices",
-      "topic": "Yankee – Y",
+      "topic_code": "PSCPP.REF.INC.0003",
+      "topic": "Alfa – A",
       "difficulty": "Difícil",
-      "style": "Assinale a incorreta",
-      "question_type": "Assinale a incorreta",
+      "style": "Múltipla escolha contextualizada",
+      "question": "De acordo com o contido em “International Code of Signals” (Appendices 1, 2 and 4), analise o seguinte problema técnico: Considerando Apêndices 1, 2 e 4, qual alternativa caracteriza corretamente “Alfa – A”? Assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Combinação internacional N+C utilizada como sinal de perigo."
+        },
+        {
+          "key": "B",
+          "text": "Bandeira de letra única que significa que o navio está garrando/arrastando a âncora."
+        },
+        {
+          "key": "C",
+          "text": "Bandeira de letra única que indica mergulhador na água e requer que outras embarcações se mantenham bem afastadas e a baixa velocidade."
+        },
+        {
+          "key": "D",
+          "text": "Procedimento que usa linguagem e pronúncia padronizadas para reduzir ambiguidades na transmissão de sinais por voz."
+        },
+        {
+          "key": "E",
+          "text": "Parte do Código Internacional de Sinais dedicada aos sinais de perigo (Distress signals)."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "“Alfa – A” corresponde a bandeira de letra única que indica mergulhador na água e requer que outras embarcações se mantenham bem afastadas e a baixa velocidade..",
       "taxonomy": {
         "subject_id": "VI",
         "subject_slug": "comunicacoes",
         "bibliography_id": "ics",
         "chapter_id": "ics::appendices",
-        "topic_id": "VI-ics-appendices-yankee-y",
+        "topic_id": "VI-ics-appendices-alfa-a",
         "subtopic_id": null
       },
       "tracking": {
@@ -80844,8 +80869,8 @@
         "section": "Apêndices 1, 2 e 4",
         "module": "Código Internacional de Sinais — Apêndices",
         "topic": {
-          "id": "VI-ics-appendices-yankee-y",
-          "title": "Yankee – Y"
+          "id": "VI-ics-appendices-alfa-a",
+          "title": "Alfa – A"
         }
       },
       "source": {
@@ -80858,51 +80883,20 @@
         "comunicacoes",
         "ics",
         "ics::appendices",
-        "yankee-y",
+        "alfa-a",
         "cobertura-v2",
         "pscpp-style-v3",
-        "formato-pscpp-direta",
-        "pscpp-refinement-v3"
+        "pscpp-repair-v3"
       ],
+      "question_type": "Múltipla escolha contextualizada",
       "provenance": {
-        "method": "pscpp-refinement-v3",
+        "method": "pscpp-repair-v3",
         "derived_from_question_ids": [
-          "COM-1049",
-          "COM-1052",
-          "COM-1056",
-          "COM-1190",
-          "COM-1198"
+          "COM-1029"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "COM-1049",
-        "refinement_reason": "residual-medium-quality-flag"
-      },
-      "topic_code": "PSCPP.REF.INC.0003",
-      "question": "Durante um briefing técnico, Com base no conteúdo de “International Code of Signals”, em Appendices 1, 2 and 4, marque a alternativa INCORRETA:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sobre “Yankee – Y”, é correto afirmar: Bandeira de letra única que significa que o navio está garrando/arrastando a âncora."
-        },
-        {
-          "key": "B",
-          "text": "Sobre “Yankee – Y”, é correto afirmar: Bandeira de letra única que significa que o navio está garrando/arrastando a âncora."
-        },
-        {
-          "key": "C",
-          "text": "Sobre “Alfa – A”, é correto afirmar: Bandeira de letra única que significa que o navio está garrando/arrastando a âncora."
-        },
-        {
-          "key": "D",
-          "text": "Sobre “Oscar – O”, é correto afirmar: Bandeira de letra única que significa homem ao mar."
-        },
-        {
-          "key": "E",
-          "text": "No contexto de “November + Charlie”, a associação “November + Charlie” é tecnicamente aplicável."
-        }
-      ],
-      "correct_answer": "C",
-      "explanation": "A alternativa indicada pelo gabarito é a única incompatível com o recorte bibliográfico utilizado."
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+      }
     },
     {
       "id": "COM-1050",
