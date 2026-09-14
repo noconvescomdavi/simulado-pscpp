@@ -63,7 +63,7 @@ function hasDuplicateOrEmptyRawOptions(q) {
   return opts.some(x=>!x) || new Set(opts).size!==opts.length;
 }
 function usesStandardMetaOptions(style) {
-  return ['Sequência V/F','Assertivas I–II–III','Assertivas I–IV','Verdadeiro/Falso'].includes(style);
+  return ['Sequência V/F','Sequência V/F (5 itens)','Assertivas I–II–III','Assertivas I–IV','Assertivas I–V','Verdadeiro/Falso'].includes(style);
 }
 function isExpansionV1(q) {
   return Array.isArray(q.tags) && q.tags.includes('expansao-formatos-v1');
