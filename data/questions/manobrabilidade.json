@@ -313169,16 +313169,16 @@
       "id": "MAN-3923",
       "subject": "Manobrabilidade do Navio",
       "module": "3. Superfícies de controle - lemes",
-      "topic": "Leme compensado",
+      "topic": "Ângulo de ataque efetivo",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
         "bibliography_id": "pna-v3",
         "chapter_id": "pna-v3::ch9-s14",
-        "topic_id": "I-pna-v3-ch9-s14-3-26-leme-compensado",
+        "topic_id": "I-pna-v3-ch9-s14-7-7-angulo-de-ataque-efetivo",
         "subtopic_id": null
       },
       "tracking": {
@@ -313186,7 +313186,7 @@
         "work": {
           "id": "pna-v3",
           "title": "LEWIS — Principles of Naval Architecture, Volume III",
-          "author": "LEWIS, Edward V."
+          "author": "LEWIS, Edward V. (ed.)"
         },
         "chapter": {
           "id": "pna-v3::ch9-s14",
@@ -313197,60 +313197,64 @@
         "section": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
         "module": "3. Superfícies de controle - lemes",
         "topic": {
-          "id": "I-pna-v3-ch9-s14-3-26-leme-compensado",
-          "title": "Leme compensado"
+          "id": "I-pna-v3-ch9-s14-7-7-angulo-de-ataque-efetivo",
+          "title": "Ângulo de ataque efetivo"
         }
       },
       "source": {
-        "author": "LEWIS, Edward V.",
+        "author": "LEWIS, Edward V. (ed.)",
         "title": "Principles of Naval Architecture, Volume III",
-        "edition": "2nd Revision, 1989",
-        "locator": "Chapter IX — Controllability, selected Sections 1, 3, 4, 5, 6, 10, 12, 13 and 14"
+        "edition": "3. ed., 1988-1989",
+        "locator": "Chapter IX - Controllability, selected sections"
       },
       "tags": [
-        "Superfícies de controle - lemes",
-        "Leme compensado",
-        "leme compensado",
+        "lemes",
         "manobrabilidade",
         "pna-v3",
         "pna-v3::ch9-s14",
-        "leme-compensado",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "angulo-de-ataque-efetivo",
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-expansion-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "MAN-1134"
+          "MAN-131",
+          "MAN-138",
+          "MAN-321",
+          "MAN-483",
+          "MAN-1022"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "MAN-3923",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.10004",
-      "question": "O Prático Ari, durante uma faina relacionada a “Leme compensado”, precisa aplicar corretamente o conteúdo de “Principles of Naval Architecture, Volume III”. Considere o seguinte problema técnico: Sob essa ótica, na avaliação de desempenho após alteração da velocidade, o tópico Leme compensado precisa ser interpretado corretamente. qual conclusão é consistente com o comportamento esperado? Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.AST5.00001",
+      "question": "De acordo com o contido em “Principles of Naval Architecture, Volume III”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) Sobre “Ângulo de ataque efetivo”, considere a seguinte proposição: o escoamento local é afetado pela deriva, guinada, casco e propulsor.\nII) Sobre “Estrutura fixa e móvel”, considere a seguinte proposição: podem trabalhar com ângulos de ataque diferentes e forças que se combinam no conjunto.\nIII) Sobre “Força no leme”, considere a seguinte proposição: A força hidrodinâmica no leme depende do escoamento relativo e do ângulo de ataque, dentro do regime considerado.\nIV) Sobre “Momento de guinada do leme”, considere a seguinte proposição: A conclusão técnica é que, para momento de guinada do leme na avaliação de desempenho após alteração da velocidade, é medido em nós.\nV) Sobre “Momento de guinada do leme”, considere a seguinte proposição: É coerente afirmar que, para momento de guinada do leme durante a análise de uma prova de mar em água livre, não depende da posição longitudinal do leme.",
       "options": [
         {
           "key": "A",
-          "text": "A análise correta considera que, para leme compensado na avaliação de desempenho após alteração da velocidade, dispensa máquina do leme."
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "É coerente afirmar que, para leme compensado na avaliação de desempenho após alteração da velocidade, é um propulsor azimutal."
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "A interpretação adequada é que, para leme compensado na avaliação de desempenho após alteração da velocidade, tem toda a área necessariamente a ré do eixo."
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "O princípio aplicável indica que, para leme compensado na avaliação de desempenho após alteração da velocidade, tem parte de sua área à vante do eixo de rotação para reduzir o momento na madre e esforço de acionamento."
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "A conclusão técnica é que, para leme compensado na avaliação de desempenho após alteração da velocidade, não produz força lateral."
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "D",
-      "explanation": "Neste cenário, a alternativa D é a única compatível com o princípio associado a Leme compensado: tem parte de sua área à vante do eixo de rotação para reduzir o momento na madre e esforço de acionamento. As demais opções introduzem relações incompatíveis com a definição, o mecanismo físico ou a condição operacional descrita na fonte indicada. O enquadramento desta questão considera especificamente na avaliação de desempenho após alteração da velocidade."
+      "explanation": "A combinação correta é a alternativa D, conforme o recorte Chapter IX - Controllability, selected sections."
     },
     {
       "id": "MAN-3924",
@@ -313528,17 +313532,17 @@
     {
       "id": "MAN-3927",
       "subject": "Manobrabilidade do Navio",
-      "module": "3. Superfícies de controle - lemes",
-      "topic": "Estol do leme",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic": "Qualidades de manobra",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
       "taxonomy": {
         "subject_id": "I",
         "subject_slug": "manobrabilidade",
         "bibliography_id": "bertram",
         "chapter_id": "bertram::ch6",
-        "topic_id": "I-bertram-ch6-7-5-estol-do-leme",
+        "topic_id": "I-bertram-ch6-8-1-1-qualidades-de-manobra",
         "subtopic_id": null
       },
       "tracking": {
@@ -313555,10 +313559,10 @@
           "label": "Chapter 6 – Ship manoeuvering"
         },
         "section": "Chapter 6 – Ship manoeuvering",
-        "module": "3. Superfícies de controle - lemes",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
         "topic": {
-          "id": "I-bertram-ch6-7-5-estol-do-leme",
-          "title": "Estol do leme"
+          "id": "I-bertram-ch6-8-1-1-qualidades-de-manobra",
+          "title": "Qualidades de manobra"
         }
       },
       "source": {
@@ -313568,47 +313572,53 @@
         "locator": "Chapter 6 - Ship Maneuvering"
       },
       "tags": [
-        "lemes",
+        "controlabilidade",
         "manobrabilidade",
         "bertram",
         "bertram::ch6",
-        "estol-do-leme",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "qualidades-de-manobra",
+        "pscpp-cleanup-v8",
+        "cleanup-vf-5"
       ],
       "provenance": {
-        "method": "pscpp-expansion-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "MAN-133"
+          "MAN-200",
+          "MAN-140",
+          "MAN-155",
+          "MAN-325",
+          "MAN-141"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "MAN-3927",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.10008",
-      "question": "O Prático Lúcia, durante uma faina relacionada a “Estol do leme”, precisa aplicar corretamente o conteúdo de “Practical Ship Hydrodynamics”. Considere o seguinte problema técnico: O aumento do ângulo de leme além de certo valor pode reduzir a eficiência do controle porque ocorre: Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.VF5.00002",
+      "question": "Com base em “Practical Ship Hydrodynamics”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) Sobre “Qualidades de manobra”, considere a seguinte proposição: não envolve forças hidrodinâmicas.\n( ) Sobre “Comparação de lemes”, considere a seguinte proposição: maior coeficiente de sustentação máximo, especialmente útil em baixa velocidade.\n( ) Sobre “Lemes de alto desempenho”, considere a seguinte proposição: obter alta sustentação e grande capacidade de desviar o fluxo, inclusive em baixos seguimentos.\n( ) Sobre “Leme a baixa velocidade”, considere a seguinte proposição: Com pouca velocidade através da água, a eficácia de um leme convencional tende a diminuir, salvo contribuição relevante do escoamento propulsivo.\n( ) No contexto de “Balanceamento do leme”, a associação “fora d'água.” está correta.",
       "options": [
         {
           "key": "A",
-          "text": "eliminação da camada limite."
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "B",
-          "text": "aumento linear ilimitado da sustentação."
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "C",
-          "text": "separação intensa e estol, com forte aumento de arrasto e perda de crescimento da sustentação."
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
         },
         {
           "key": "D",
-          "text": "redução do arrasto a zero."
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "E",
-          "text": "desaparecimento da pressão dinâmica."
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
         }
       ],
       "correct_answer": "C",
-      "explanation": "Depois do ângulo crítico, o escoamento se descola amplamente; a resultante muda e o ganho de força lateral por grau de leme diminui."
+      "explanation": "A sequência correta é a alternativa C, conforme Chapter 6 - Ship Maneuvering."
     }
   ],
   "imported_at": "2026-09-02T15:44:35.714Z"

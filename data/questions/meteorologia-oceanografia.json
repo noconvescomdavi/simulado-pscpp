@@ -66300,17 +66300,17 @@
     {
       "id": "MEO-0734",
       "subject": "Meteorologia e Oceanografia",
-      "module": "13. Cobertura do céu e nuvens",
-      "topic": "Cobertura do céu e nuvens",
+      "module": "10. Pressão atmosférica",
+      "topic": "Pressão atmosférica",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "V",
         "subject_slug": "meteorologia-oceanografia",
         "bibliography_id": "miguens-met",
         "chapter_id": "miguens-met::ch45",
-        "topic_id": "V-miguens-met-ch45-13-cobertura-do-ceu-e-nuvens",
+        "topic_id": "V-miguens-met-ch45-10-pressao-atmosferica",
         "subtopic_id": null
       },
       "tracking": {
@@ -66327,63 +66327,67 @@
           "label": "Capítulo 45 – Noções de Meteorologia para Navegantes"
         },
         "section": "Capítulo 45 – Noções de Meteorologia para Navegantes",
-        "module": "13. Cobertura do céu e nuvens",
+        "module": "10. Pressão atmosférica",
         "topic": {
-          "id": "V-miguens-met-ch45-13-cobertura-do-ceu-e-nuvens",
-          "title": "Cobertura do céu e nuvens"
+          "id": "V-miguens-met-ch45-10-pressao-atmosferica",
+          "title": "Pressão atmosférica"
         }
       },
       "source": {
         "author": "MIGUENS, Altineu Pires",
         "title": "Navegação: a ciência e a arte — Volume III",
         "edition": "1ª revisão, 2026",
-        "locator": "Capítulo 45, seção 45.2.5 — Nuvens"
+        "locator": "Capítulo 45, seção 45.2.1 — Pressão"
       },
       "tags": [
-        "cobertura do céu e nuvens",
+        "pressão atmosférica",
         "pscpp",
         "meteorologia-oceanografia",
         "miguens-met",
         "miguens-met::ch45",
-        "cobertura-do-ceu-e-nuvens",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "pressao-atmosferica",
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-bibliographic-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "MEO-0603"
+          "MEO-0431",
+          "MEO-0436",
+          "MEO-0490",
+          "MEO-0557",
+          "MEO-0602"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MEO-0734",
-        "rewrite_reason": "residual-medium-bibliographic-v6"
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.00004",
-      "question": "O Prático Roberto, durante uma faina relacionada a “Cobertura do céu e nuvens”, precisa aplicar corretamente o conteúdo de “Navegação: a ciência e a arte — Volume III”. Considere o seguinte problema técnico: No estudo de Cobertura do céu e nuvens, item 1, Nuvens estratiformes são geralmente associadas a? Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.AST5.00001",
+      "question": "De acordo com o contido em “Navegação: a ciência e a arte — Volume III”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) Sobre “Pressão atmosférica”, considere a seguinte proposição: a força por unidade de área exercida pelo peso da coluna de ar.\nII) Sobre “Pressão atmosférica”, considere a seguinte proposição: maior gradiente horizontal de pressão.\nIII) Sobre “Ventos”, considere a seguinte proposição: força do gradiente de pressão e força de Coriolis.\nIV) No contexto de “Visibilidade e nevoeiros”, a associação “maré de sizígia” está correta.\nV) Sobre “Cobertura do céu e nuvens”, considere a seguinte proposição: tempo estável sem movimento vertical.",
       "options": [
         {
           "key": "A",
-          "text": "torres convectivas sempre intensas"
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "apenas granizo severo"
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "ausência total de condensação"
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "camadas extensas e movimento vertical relativamente fraco"
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "ondas oceânicas"
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "D",
-      "explanation": "Estratiformes tendem a apresentar grande extensão horizontal."
+      "explanation": "A combinação correta é a alternativa D, conforme o recorte Capítulo 45, seção 45.2.1 — Pressão."
     },
     {
       "id": "MEO-0735",
@@ -87704,17 +87708,17 @@
     {
       "id": "MEO-0973",
       "subject": "Meteorologia e Oceanografia",
-      "module": "19. Sistemas tropicais",
-      "topic": "Sistemas tropicais",
+      "module": "17. Circulação do ar",
+      "topic": "Circulação do ar",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
       "taxonomy": {
         "subject_id": "V",
         "subject_slug": "meteorologia-oceanografia",
         "bibliography_id": "met-0",
         "chapter_id": "met-0::integral",
-        "topic_id": "V-met-0-integral-19-sistemas-tropicais",
+        "topic_id": "V-met-0-integral-17-circulacao-do-ar",
         "subtopic_id": null
       },
       "tracking": {
@@ -87731,63 +87735,67 @@
           "label": "Publicação indicada — sem capítulos delimitados no Anexo 2-B"
         },
         "section": "Publicação indicada — sem capítulos delimitados no Anexo 2-B",
-        "module": "19. Sistemas tropicais",
+        "module": "17. Circulação do ar",
         "topic": {
-          "id": "V-met-0-integral-19-sistemas-tropicais",
-          "title": "Sistemas tropicais"
+          "id": "V-met-0-integral-17-circulacao-do-ar",
+          "title": "Circulação do ar"
         }
       },
       "source": {
         "author": "YNOUE, R. Y.; REBOITA, M. S.; AMBRIZZI, T.; SILVA, G. A. M.",
         "title": "Meteorologia: noções básicas",
         "edition": "Oficina de Textos, 2017",
-        "locator": "Capítulos de circulação geral e sistemas atmosféricos; ZCIT e ciclones"
+        "locator": "Capítulos 6, 8 e circulação geral — pressão e ventos"
       },
       "tags": [
-        "sistemas tropicais",
+        "circulação do ar",
         "pscpp",
         "meteorologia-oceanografia",
         "met-0",
         "met-0::integral",
-        "sistemas-tropicais",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "circulacao-do-ar",
+        "pscpp-cleanup-v8",
+        "cleanup-vf-5"
       ],
       "provenance": {
-        "method": "pscpp-bibliographic-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "MEO-0896"
+          "MEO-0811",
+          "MEO-0896",
+          "MEO-0936",
+          "MEO-0751",
+          "MEO-0756"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MEO-0973",
-        "rewrite_reason": "residual-medium-bibliographic-v6"
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.00008",
-      "question": "O Prático Ari, durante uma faina relacionada a “Sistemas tropicais”, precisa aplicar corretamente o conteúdo de “Meteorologia: noções básicas”. Considere o seguinte problema técnico: Ao interpretar informações de Sistemas tropicais em um produto ou observação marítima, caso 1, Os ventos alísios sopram predominantemente? Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.VF5.00002",
+      "question": "Com base em “Meteorologia: noções básicas”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) No contexto de “Circulação do ar”, a associação “nevoeiro apenas” está correta.\n( ) Sobre “Sistemas tropicais”, considere a seguinte proposição: dos anticiclones subtropicais em direção à faixa equatorial, com componente de leste.\n( ) Sobre “Sistemas sinóticos”, considere a seguinte proposição: de uma massa de ar frio sobre uma região ocupada por ar mais quente.\n( ) No contexto de “Elementos meteorológicos”, a associação “ao estado térmico do ar” está correta.\n( ) No contexto de “Elementos meteorológicos”, a associação “somente alta salinidade” está correta.",
       "options": [
         {
           "key": "A",
-          "text": "do equador para os polos com componente de oeste"
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "B",
-          "text": "sempre do sul para o norte"
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "C",
-          "text": "dos anticiclones subtropicais em direção à faixa equatorial, com componente de leste"
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
         },
         {
           "key": "D",
-          "text": "somente em tempestades"
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "E",
-          "text": "apenas sobre continentes"
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
         }
       ],
       "correct_answer": "C",
-      "explanation": "Os alísios são ventos persistentes de leste das baixas latitudes."
+      "explanation": "A sequência correta é a alternativa C, conforme Capítulos 6, 8 e circulação geral — pressão e ventos."
     },
     {
       "id": "MEO-0974",
@@ -89905,18 +89913,18 @@
     },
     {
       "id": "MEO-0998",
-      "subject": "Meteorologia e Oceanografia",
-      "module": "21. Interpretação de informações meteorológicas",
-      "topic": "Interpretação de informações meteorológicas",
+      "subject": "meteorologia-oceanografia",
+      "module": "NORMAM-701/DHN — Meteorologia Marítima",
+      "topic": "NORMAM-701/DHN",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "V",
         "subject_slug": "meteorologia-oceanografia",
         "bibliography_id": "normam701",
         "chapter_id": "normam701::integral",
-        "topic_id": "V-normam701-integral-21-interpretacao-de-informacoes-meteorologicas",
+        "topic_id": "V-normam701-integral-normam-701-dhn",
         "subtopic_id": null
       },
       "tracking": {
@@ -89924,7 +89932,7 @@
         "work": {
           "id": "normam701",
           "title": "NORMAM-701/DHN",
-          "author": "MARINHA DO BRASIL — DIRETORIA DE HIDROGRAFIA E NAVEGAÇÃO"
+          "author": "Marinha do Brasil — DHN"
         },
         "chapter": {
           "id": "normam701::integral",
@@ -89933,63 +89941,66 @@
           "label": "Publicação indicada — sem recorte adicional no Anexo 2-B"
         },
         "section": "Publicação indicada — sem recorte adicional no Anexo 2-B",
-        "module": "21. Interpretação de informações meteorológicas",
+        "module": "NORMAM-701/DHN — Meteorologia Marítima",
         "topic": {
-          "id": "V-normam701-integral-21-interpretacao-de-informacoes-meteorologicas",
-          "title": "Interpretação de informações meteorológicas"
+          "id": "V-normam701-integral-normam-701-dhn",
+          "title": "NORMAM-701/DHN"
         }
       },
       "source": {
-        "author": "MARINHA DO BRASIL — DIRETORIA DE HIDROGRAFIA E NAVEGAÇÃO",
-        "title": "NORMAM-701/DHN — Normas da Autoridade Marítima para as Atividades de Meteorologia Marítima",
-        "edition": "versão disponível no pacote de fontes",
-        "locator": "Seções sobre METEOROMARINHA, avisos de mau tempo, vento, ondas e visibilidade"
+        "author": "Marinha do Brasil — DHN",
+        "title": "NORMAM-701/DHN — Atividades de Meteorologia Marítima",
+        "edition": "Edição 2023, Mod. 1/2026",
+        "locator": "Introdução; capítulos 1 a 3; Portaria DHN/DGN/MB nº 31/2026"
       },
       "tags": [
-        "interpretação de informações meteorológicas",
-        "pscpp",
         "meteorologia-oceanografia",
         "normam701",
         "normam701::integral",
-        "interpretacao-de-informacoes-meteorologicas",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "normam-701-dhn",
+        "cobertura-v2",
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-bibliographic-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "MEO-0996"
+          "MET-0001",
+          "MEO-1149",
+          "MEO-0981",
+          "MET-0005",
+          "MEO-1223"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MEO-0998",
-        "rewrite_reason": "residual-medium-bibliographic-v6"
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.00012",
-      "question": "O Prático Lúcia, durante uma faina relacionada a “Interpretação de informações meteorológicas”, precisa aplicar corretamente o conteúdo de “NORMAM-701/DHN — Normas da Autoridade Marítima para as Atividades de Meteorologia Marítima”. Considere o seguinte problema técnico: Em uma situação operacional de navegação, no cenário 4 de Interpretação de informações meteorológicas, O METEOROMARINHA é? Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.AST5.00003",
+      "question": "De acordo com o contido em “NORMAM-701/DHN — Atividades de Meteorologia Marítima”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) Sobre “NORMAM-701/DHN”, considere a seguinte proposição: Organização da Marinha responsável pela operação do Serviço Meteorológico Marinho, sob supervisão da DHN.\nII) Sobre “CHM”, considere a seguinte proposição: Organização da Marinha responsável pela operação do Serviço Meteorológico Marinho, sob supervisão da DHN.\nIII) Sobre “Interpretação de informações meteorológicas”, considere a seguinte proposição: um boletim meteorológico marítimo da Marinha do Brasil com análise e previsão para áreas marítimas.\nIV) No contexto de “METEOROMARINHA”, a associação “METEOROMARINHA” está correta.\nV) No contexto de “Interpretação de informações meteorológicas”, a associação “somente salinidade e pH” está correta.",
       "options": [
         {
           "key": "A",
-          "text": "uma carta náutica de profundidades"
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "um relatório de manutenção de faróis"
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "um boletim meteorológico marítimo da Marinha do Brasil com análise e previsão para áreas marítimas"
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "uma tábua de marés exclusivamente"
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "um código de manobra"
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "C",
-      "explanation": "A NORMAM-701 descreve o METEOROMARINHA como boletim meteorológico com situação e previsão marítima."
+      "explanation": "A combinação correta é a alternativa C, conforme o recorte Introdução; capítulos 1 a 3; Portaria DHN/DGN/MB nº 31/2026."
     },
     {
       "id": "MEO-0999",
@@ -94835,17 +94846,17 @@
     {
       "id": "MEO-1050",
       "subject": "Meteorologia e Oceanografia",
-      "module": "4. Ondas",
-      "topic": "Ondas",
+      "module": "7. Cartas piloto",
+      "topic": "Cartas piloto",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
       "taxonomy": {
         "subject_id": "V",
         "subject_slug": "meteorologia-oceanografia",
         "bibliography_id": "met-1",
         "chapter_id": "met-1::integral",
-        "topic_id": "V-met-1-integral-4-ondas",
+        "topic_id": "V-met-1-integral-7-cartas-piloto",
         "subtopic_id": null
       },
       "tracking": {
@@ -94862,64 +94873,69 @@
           "label": "Publicação indicada — sem capítulos delimitados no Anexo 2-B"
         },
         "section": "Publicação indicada — sem capítulos delimitados no Anexo 2-B",
-        "module": "4. Ondas",
+        "module": "7. Cartas piloto",
         "topic": {
-          "id": "V-met-1-integral-4-ondas",
-          "title": "Ondas"
+          "id": "V-met-1-integral-7-cartas-piloto",
+          "title": "Cartas piloto"
         }
       },
       "source": {
         "author": "LOBO, Paulo Roberto Valgas; SOARES, Carlos Alberto",
         "title": "Meteorologia e oceanografia",
         "edition": "4. ed., Rio de Janeiro, 2019",
-        "locator": "Capítulo VIII — Ondas, Vagas e Marulhos"
+        "locator": "Capítulo XIII — Climatologia e Cartas Piloto"
       },
       "tags": [
-        "ondas",
+        "cartas piloto",
         "pscpp",
         "meteorologia-oceanografia",
         "met-1",
         "met-1::integral",
+        "cartas-piloto",
         "pscpp-style-v3",
-        "formato-pscpp-direta",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "pscpp-refinement-v3",
+        "pscpp-cleanup-v8",
+        "cleanup-vf-5"
       ],
       "provenance": {
-        "method": "pscpp-bibliographic-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "MEO-0016"
+          "MEO-0264",
+          "MEO-1139",
+          "MEO-0001",
+          "MEO-0006",
+          "MEO-0019"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MEO-1050",
-        "rewrite_reason": "residual-medium-bibliographic-v6"
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.00016",
-      "question": "O Prático Mariza, durante uma faina relacionada a “Ondas”, precisa aplicar corretamente o conteúdo de “Meteorologia e oceanografia”. Considere o seguinte problema técnico: De acordo com o contido em “Meteorologia e oceanografia” (Capítulo VIII — Ondas, Vagas e Marulhos), considere a situação/conceito a seguir: No estudo de Ondas, item 6, O comprimento de onda é? Assinale a opção correta. Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.VF5.00004",
+      "question": "Com base em “Meteorologia e oceanografia”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) Sobre “Cartas piloto”, considere a seguinte proposição: como apoio climatológico ao planejamento, em conjunto com previsões e avisos atuais.\n( ) No contexto de “Cartas piloto”, a associação “apenas em portos” está correta.\n( ) Sobre “Marés”, considere a seguinte proposição: atrações gravitacionais, sobretudo da Lua e do Sol, combinadas com a dinâmica do sistema Terra-Lua.\n( ) No contexto de “Marés”, a associação “níveis independentes da Lua” está correta.\n( ) Sobre “Áreas geradoras de vagas”, considere a seguinte proposição: vento mais intenso, maior duração e maior pista de atuação (fetch).",
       "options": [
         {
           "key": "A",
-          "text": "o intervalo entre duas preamares"
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "B",
-          "text": "a distância horizontal entre duas cristas consecutivas"
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "C",
-          "text": "a diferença entre crista e cavado"
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
         },
         {
           "key": "D",
-          "text": "a velocidade de propagação multiplicada pela altura"
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "E",
-          "text": "a profundidade crítica de arrebentação"
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
         }
       ],
       "correct_answer": "B",
-      "explanation": "Comprimento de onda é a periodicidade espacial da onda."
+      "explanation": "A sequência correta é a alternativa B, conforme Capítulo XIII — Climatologia e Cartas Piloto."
     },
     {
       "id": "MEO-1051",
@@ -95206,17 +95222,17 @@
     {
       "id": "MEO-1054",
       "subject": "Meteorologia e Oceanografia",
-      "module": "3. Correntes de densidade e correntes costeiras",
-      "topic": "Correntes de densidade e correntes costeiras",
+      "module": "1. Marés",
+      "topic": "Marés",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "V",
         "subject_slug": "meteorologia-oceanografia",
         "bibliography_id": "met-1",
         "chapter_id": "met-1::integral",
-        "topic_id": "V-met-1-integral-3-correntes-de-densidade-e-correntes-costeiras",
+        "topic_id": "V-met-1-integral-1-mares",
         "subtopic_id": null
       },
       "tracking": {
@@ -95233,66 +95249,67 @@
           "label": "Publicação indicada — sem capítulos delimitados no Anexo 2-B"
         },
         "section": "Publicação indicada — sem capítulos delimitados no Anexo 2-B",
-        "module": "3. Correntes de densidade e correntes costeiras",
+        "module": "1. Marés",
         "topic": {
-          "id": "V-met-1-integral-3-correntes-de-densidade-e-correntes-costeiras",
-          "title": "Correntes de densidade e correntes costeiras"
+          "id": "V-met-1-integral-1-mares",
+          "title": "Marés"
         }
       },
       "source": {
         "author": "LOBO, Paulo Roberto Valgas; SOARES, Carlos Alberto",
         "title": "Meteorologia e oceanografia",
         "edition": "4. ed., Rio de Janeiro, 2019",
-        "locator": "Capítulo X — Correntes Oceanicas e Costeiras"
+        "locator": "Capítulo IX — Marés"
       },
       "tags": [
-        "correntes de densidade e correntes costeiras",
+        "marés",
         "pscpp",
         "meteorologia-oceanografia",
         "met-1",
         "met-1::integral",
-        "correntes-de-densidade-e-correntes-costeiras",
-        "revisao-contextual-v2",
-        "formato-estudo-de-caso-v2",
-        "expansao-formatos-v2",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "mares",
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-bibliographic-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "MEO-1067"
+          "MEO-0002",
+          "MEO-0008",
+          "MEO-0020",
+          "MEO-0039",
+          "MEO-0059"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MEO-1054",
-        "rewrite_reason": "residual-medium-bibliographic-v6"
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.00020",
-      "question": "O Prático Sebastião, durante uma faina relacionada a “Correntes de densidade e correntes costeiras”, precisa aplicar corretamente o conteúdo de “Meteorologia e oceanografia”. Considere o seguinte problema técnico: Considere o caso técnico a seguir, relacionado a Correntes de densidade e correntes costeiras: Em uma situação operacional de navegação, no cenário 1 de Correntes de densidade e correntes costeiras, A direção de uma corrente costeira não deve ser inferida apenas? Assinale a alternativa tecnicamente adequada ao caso. Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.AST5.00005",
+      "question": "De acordo com o contido em “Meteorologia e oceanografia”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) Sobre “Marés”, considere a seguinte proposição: ao nível máximo alcançado pela maré em um ciclo local.\nII) Sobre “Cartas de correntes de marés”, considere a seguinte proposição: como velocidade, frequentemente em nós.\nIII) Sobre “Áreas geradoras de vagas”, considere a seguinte proposição: a distância entre navio e costa.\nIV) Sobre “Cartas de correntes de marés”, considere a seguinte proposição: direção e intensidade previstas da corrente em função da fase da maré ou do horário de referência.\nV) No contexto de “Cartas de correntes de marés”, a associação “somente à temperatura do ar” está correta.",
       "options": [
         {
           "key": "A",
-          "text": "da direção local do vento, porque outros mecanismos também podem controlá-la"
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "da leitura de uma carta específica de correntes"
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "de observações diretas repetidas"
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "de dados hidrográficos locais"
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "de previsões hidrodinâmicas"
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "A",
-      "explanation": "A alternativa correta é D. O vento é importante, mas a resposta costeira também depende de maré, geometria, estratificação e circulação regional."
+      "explanation": "A combinação correta é a alternativa A, conforme o recorte Capítulo IX — Marés."
     },
     {
       "id": "MEO-1055",
@@ -95577,17 +95594,17 @@
     {
       "id": "MEO-1058",
       "subject": "Meteorologia e Oceanografia",
-      "module": "11. Ventos",
-      "topic": "Ventos",
+      "module": "12. Visibilidade e nevoeiros",
+      "topic": "Visibilidade e nevoeiros",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
       "taxonomy": {
         "subject_id": "V",
         "subject_slug": "meteorologia-oceanografia",
         "bibliography_id": "miguens-met",
         "chapter_id": "miguens-met::ch45",
-        "topic_id": "V-miguens-met-ch45-11-ventos",
+        "topic_id": "V-miguens-met-ch45-12-visibilidade-e-nevoeiros",
         "subtopic_id": null
       },
       "tracking": {
@@ -95604,62 +95621,67 @@
           "label": "Capítulo 45 – Noções de Meteorologia para Navegantes"
         },
         "section": "Capítulo 45 – Noções de Meteorologia para Navegantes",
-        "module": "11. Ventos",
+        "module": "12. Visibilidade e nevoeiros",
         "topic": {
-          "id": "V-miguens-met-ch45-11-ventos",
-          "title": "Ventos"
+          "id": "V-miguens-met-ch45-12-visibilidade-e-nevoeiros",
+          "title": "Visibilidade e nevoeiros"
         }
       },
       "source": {
         "author": "MIGUENS, Altineu Pires",
         "title": "Navegação: a ciência e a arte — Volume III",
         "edition": "1ª revisão, 2026",
-        "locator": "Capítulo 45, seções 45.1.3 e 45.2.4 — circulação geral e vento"
+        "locator": "Capítulo 45, seção 45.2.6 — Visibilidade: nevoeiro e névoa seca"
       },
       "tags": [
-        "ventos",
+        "visibilidade e nevoeiros",
         "pscpp",
         "meteorologia-oceanografia",
         "miguens-met",
         "miguens-met::ch45",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "visibilidade-e-nevoeiros",
+        "pscpp-cleanup-v8",
+        "cleanup-vf-5"
       ],
       "provenance": {
-        "method": "pscpp-bibliographic-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "MEO-0489"
+          "MEO-0556",
+          "MEO-0601",
+          "MEO-0646",
+          "MEO-0687",
+          "MEO-0692"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MEO-1058",
-        "rewrite_reason": "residual-medium-bibliographic-v6"
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.00024",
-      "question": "O Prático Francisco, durante uma faina relacionada a “Ventos”, precisa aplicar corretamente o conteúdo de “Navegação: a ciência e a arte — Volume III”. Considere o seguinte problema técnico: Ao interpretar informações de Ventos em um produto ou observação marítima, caso 1, No hemisfério Norte, a força de Coriolis desvia o movimento do ar? Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.VF5.00006",
+      "question": "Com base em “Navegação: a ciência e a arte — Volume III”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) No contexto de “Visibilidade e nevoeiros”, a associação “precipitação sólida” está correta.\n( ) Sobre “Cobertura do céu e nuvens”, considere a seguinte proposição: condensação ou deposição do vapor d'água em partículas quando o ar atinge saturação adequada.\n( ) Sobre “Precipitação”, considere a seguinte proposição: a pressão torna-se uniforme globalmente.\n( ) Sobre “Sistemas atmosféricos”, considere a seguinte proposição: divergência em baixos níveis e subsidência.\n( ) Sobre “Sistemas atmosféricos”, considere a seguinte proposição: convecção profunda em cumulonimbus, com possibilidade de rajadas, granizo e descargas elétricas.",
       "options": [
         {
           "key": "A",
-          "text": "para a esquerda"
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "B",
-          "text": "sempre para sul"
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "C",
-          "text": "sempre para leste"
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
         },
         {
           "key": "D",
-          "text": "não produz qualquer desvio"
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "E",
-          "text": "para a direita de sua trajetória"
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
         }
       ],
       "correct_answer": "E",
-      "explanation": "No HN, Coriolis atua à direita do movimento."
+      "explanation": "A sequência correta é a alternativa E, conforme Capítulo 45, seção 45.2.6 — Visibilidade: nevoeiro e névoa seca."
     },
     {
       "id": "MEO-1059",
@@ -95940,17 +95962,17 @@
     {
       "id": "MEO-1062",
       "subject": "Meteorologia e Oceanografia",
-      "module": "20. Sistemas sinóticos",
-      "topic": "Sistemas sinóticos",
+      "module": "16. Elementos meteorológicos",
+      "topic": "Elementos meteorológicos",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "V",
         "subject_slug": "meteorologia-oceanografia",
         "bibliography_id": "met-0",
         "chapter_id": "met-0::integral",
-        "topic_id": "V-met-0-integral-20-sistemas-sinoticos",
+        "topic_id": "V-met-0-integral-16-elementos-meteorologicos",
         "subtopic_id": null
       },
       "tracking": {
@@ -95967,63 +95989,67 @@
           "label": "Publicação indicada — sem capítulos delimitados no Anexo 2-B"
         },
         "section": "Publicação indicada — sem capítulos delimitados no Anexo 2-B",
-        "module": "20. Sistemas sinóticos",
+        "module": "16. Elementos meteorológicos",
         "topic": {
-          "id": "V-met-0-integral-20-sistemas-sinoticos",
-          "title": "Sistemas sinóticos"
+          "id": "V-met-0-integral-16-elementos-meteorologicos",
+          "title": "Elementos meteorológicos"
         }
       },
       "source": {
         "author": "YNOUE, R. Y.; REBOITA, M. S.; AMBRIZZI, T.; SILVA, G. A. M.",
         "title": "Meteorologia: noções básicas",
         "edition": "Oficina de Textos, 2017",
-        "locator": "Capítulo 9 — Massas de ar, frentes, ciclones e anticiclones"
+        "locator": "Capítulos de temperatura, umidade, visibilidade, nuvens, precipitação, pressão e vento"
       },
       "tags": [
-        "sistemas sinóticos",
+        "elementos meteorológicos",
         "pscpp",
         "meteorologia-oceanografia",
         "met-0",
         "met-0::integral",
-        "sistemas-sinoticos",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "elementos-meteorologicos",
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-bibliographic-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
+          "MEO-0755",
+          "MEO-0809",
+          "MEO-0858",
+          "MEO-0899",
           "MEO-0939"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MEO-1062",
-        "rewrite_reason": "residual-medium-bibliographic-v6"
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.00028",
-      "question": "O Prático Aroldo, durante uma faina relacionada a “Sistemas sinóticos”, precisa aplicar corretamente o conteúdo de “Meteorologia: noções básicas”. Considere o seguinte problema técnico: Considerando a relação física ou operacional de Sistemas sinóticos, cenário 1, Oclusão frontal ocorre quando? Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.AST5.00007",
+      "question": "De acordo com o contido em “Meteorologia: noções básicas”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) No contexto de “Elementos meteorológicos”, a associação “passa para a fase líquida” está correta.\nII) Sobre “Circulação do ar”, considere a seguinte proposição: escoamento para fora da região e compensação por subsidência.\nIII) Sobre “Atividades convectivas e cumulonimbus”, considere a seguinte proposição: correntes ascendentes e descendentes intensas.\nIV) Sobre “Sistemas tropicais”, considere a seguinte proposição: a única condição necessária e suficiente.\nV) Sobre “Sistemas sinóticos”, considere a seguinte proposição: duas altas pressões se fundem necessariamente.",
       "options": [
         {
           "key": "A",
-          "text": "uma brisa marítima encontra uma brisa terrestre"
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "a maré enchente encontra a vazante"
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "duas altas pressões se fundem necessariamente"
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "uma frente fria alcança uma frente quente em um ciclone extratropical"
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "um ciclone tropical cruza o equador"
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "D",
-      "explanation": "Na evolução clássica extratropical, a frente fria mais rápida alcança a quente."
+      "explanation": "A combinação correta é a alternativa D, conforme o recorte Capítulos de temperatura, umidade, visibilidade, nuvens, precipitação, pressão e vento."
     },
     {
       "id": "MEO-1063",
@@ -96309,17 +96335,17 @@
     {
       "id": "MEO-1066",
       "subject": "Meteorologia e Oceanografia",
-      "module": "6. Climatologia",
-      "topic": "Climatologia",
+      "module": "4. Ondas",
+      "topic": "Ondas",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
       "taxonomy": {
         "subject_id": "V",
         "subject_slug": "meteorologia-oceanografia",
         "bibliography_id": "met-1",
         "chapter_id": "met-1::integral",
-        "topic_id": "V-met-1-integral-6-climatologia",
+        "topic_id": "V-met-1-integral-4-ondas",
         "subtopic_id": null
       },
       "tracking": {
@@ -96336,64 +96362,70 @@
           "label": "Publicação indicada — sem capítulos delimitados no Anexo 2-B"
         },
         "section": "Publicação indicada — sem capítulos delimitados no Anexo 2-B",
-        "module": "6. Climatologia",
+        "module": "4. Ondas",
         "topic": {
-          "id": "V-met-1-integral-6-climatologia",
-          "title": "Climatologia"
+          "id": "V-met-1-integral-4-ondas",
+          "title": "Ondas"
         }
       },
       "source": {
         "author": "LOBO, Paulo Roberto Valgas; SOARES, Carlos Alberto",
         "title": "Meteorologia e oceanografia",
         "edition": "4. ed., Rio de Janeiro, 2019",
-        "locator": "Capítulo XIII — Climatologia e Cartas Piloto"
+        "locator": "Capítulo VIII — Ondas, Vagas e Marulhos"
       },
       "tags": [
-        "climatologia",
+        "ondas",
         "pscpp",
         "meteorologia-oceanografia",
         "met-1",
         "met-1::integral",
         "pscpp-style-v3",
-        "pscpp-refinement-v3",
+        "formato-pscpp-direta",
         "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "formato-pscpp-caso-v6",
+        "pscpp-cleanup-v8",
+        "cleanup-vf-5"
       ],
       "provenance": {
-        "method": "pscpp-bibliographic-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "MEO-0095"
+          "MEO-1050",
+          "MEO-1181",
+          "MEO-0002",
+          "MEO-0008",
+          "MEO-0020"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MEO-1066",
-        "rewrite_reason": "residual-medium-bibliographic-v6"
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.00032",
-      "question": "O Prático Roberto, durante uma faina relacionada a “Climatologia”, precisa aplicar corretamente o conteúdo de “Meteorologia e oceanografia”. Considere o seguinte problema técnico: De acordo com o contido em “Meteorologia e oceanografia” (Capítulo XIII — Climatologia e Cartas Piloto), considere o seguinte problema técnico: Considerando a relação física ou operacional de Climatologia, cenário 13, Para planejamento de rota, informação climatológica é útil principalmente para? Assinale a opção correta. Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.VF5.00008",
+      "question": "Com base em “Meteorologia e oceanografia”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) Sobre “Ondas”, considere a seguinte proposição: a distância horizontal entre duas cristas consecutivas.\n( ) Sobre “Ondas”, considere a seguinte proposição: a distância horizontal entre cristas.\n( ) Sobre “Marés”, considere a seguinte proposição: ao nível máximo alcançado pela maré em um ciclo local.\n( ) No contexto de “Cartas de correntes de marés”, a associação “em graus Celsius” está correta.\n( ) Sobre “Áreas geradoras de vagas”, considere a seguinte proposição: a extensão da superfície aquática sobre a qual o vento sopra com direção aproximadamente constante.",
       "options": [
         {
           "key": "A",
-          "text": "substituir toda previsão meteorológica atual"
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "B",
-          "text": "avaliar padrões sazonais de vento, ondas, correntes e ocorrência de fenômenos"
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "C",
-          "text": "determinar com exatidão o tempo de uma hora específica meses antes"
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
         },
         {
           "key": "D",
-          "text": "eliminar a necessidade de cartas náuticas"
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "E",
-          "text": "fornecer apenas declinação magnética"
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
         }
       ],
       "correct_answer": "B",
-      "explanation": "Climatologia apoia decisões probabilísticas e sazonais, mas não substitui a previsão operacional atual."
+      "explanation": "A sequência correta é a alternativa B, conforme Capítulo VIII — Ondas, Vagas e Marulhos."
     },
     {
       "id": "MEO-1067",
@@ -96683,8 +96715,8 @@
       "module": "1. Marés",
       "topic": "Marés",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "V",
         "subject_slug": "meteorologia-oceanografia",
@@ -96726,44 +96758,48 @@
         "met-1",
         "met-1::integral",
         "mares",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-bibliographic-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "MEO-0006"
+          "MEO-0003",
+          "MEO-0011",
+          "MEO-0024",
+          "MEO-0047",
+          "MEO-0060"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MEO-1070",
-        "rewrite_reason": "residual-medium-bibliographic-v6"
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.00036",
-      "question": "O Prático Ari, durante uma faina relacionada a “Marés”, precisa aplicar corretamente o conteúdo de “Meteorologia e oceanografia”. Considere o seguinte problema técnico: Em uma situação operacional de navegação, no cenário 1 de Marés, Marés de quadratura tendem a apresentar? Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.AST5.00009",
+      "question": "De acordo com o contido em “Meteorologia e oceanografia”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) Sobre “Marés”, considere a seguinte proposição: o nível máximo previsto para sizígia.\nII) No contexto de “Correntes de densidade e correntes costeiras”, a associação “mais densa” está correta.\nIII) No contexto de “Climatologia”, a associação “um aviso de mau tempo” está correta.\nIV) Sobre “Ondas”, considere a seguinte proposição: a diferença vertical entre a crista e o cavado adjacente.\nV) Sobre “Ondas”, considere a seguinte proposição: está associada ao campo de vento local ou próximo, enquanto o marulho propagou-se para fora da área geradora.",
       "options": [
         {
           "key": "A",
-          "text": "amplitudes máximas, associadas à Lua nova"
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "correntes sempre nulas"
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "níveis independentes da Lua"
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "apenas uma preamar por dia"
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "amplitudes menores, associadas aos quartos crescente e minguante"
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "E",
-      "explanation": "Nos quartos, as componentes lunar e solar atuam aproximadamente em quadratura, reduzindo a amplitude resultante."
+      "explanation": "A combinação correta é a alternativa E, conforme o recorte Capítulo IX — Marés."
     },
     {
       "id": "MEO-1071",
@@ -102877,8 +102913,8 @@
       "module": "7. Cartas piloto",
       "topic": "Cartas piloto",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
       "taxonomy": {
         "subject_id": "V",
         "subject_slug": "meteorologia-oceanografia",
@@ -102921,45 +102957,49 @@
         "met-1::integral",
         "cartas-piloto",
         "pscpp-style-v3",
-        "pscpp-refinement-v3",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "formato-pscpp-direta",
+        "pscpp-cleanup-v8",
+        "cleanup-vf-5"
       ],
       "provenance": {
-        "method": "pscpp-bibliographic-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
+          "MEO-0028",
+          "MEO-0055",
+          "MEO-0063",
+          "MEO-0104",
           "MEO-0264"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MEO-1139",
-        "rewrite_reason": "residual-medium-bibliographic-v6"
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.00040",
-      "question": "O Prático Lúcia, durante uma faina relacionada a “Cartas piloto”, precisa aplicar corretamente o conteúdo de “Meteorologia e oceanografia”. Considere o seguinte problema técnico: De acordo com o contido em “Meteorologia e oceanografia” (Capítulo XIII — Climatologia e Cartas Piloto), considere o seguinte problema técnico: Em uma situação operacional de navegação, no cenário 10 de Cartas piloto, Cartas piloto devem ser usadas? Assinale a opção correta. Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.VF5.00010",
+      "question": "Com base em “Meteorologia e oceanografia”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) Sobre “Cartas piloto”, considere a seguinte proposição: informações climatológicas úteis à navegação, como ventos, correntes, ondas e frequência de fenômenos por área e época.\n( ) Sobre “Climatologia”, considere a seguinte proposição: exclusivamente de uma única tempestade.\n( ) Sobre “Navegação meteorológica”, considere a seguinte proposição: condições previstas ao longo do tempo e espaço, não apenas no ponto atual do navio.\n( ) Sobre “Correntes de densidade e correntes costeiras”, considere a seguinte proposição: da leitura de uma carta específica de correntes.\n( ) Sobre “Cartas piloto”, considere a seguinte proposição: como apoio climatológico ao planejamento, em conjunto com previsões e avisos atuais.",
       "options": [
         {
           "key": "A",
-          "text": "apenas em portos"
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "B",
-          "text": "como apoio climatológico ao planejamento, em conjunto com previsões e avisos atuais"
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "C",
-          "text": "como substitutas integrais de boletins meteorológicos atuais"
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
         },
         {
           "key": "D",
-          "text": "somente após a viagem"
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "E",
-          "text": "para corrigir a agulha magnética"
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
         }
       ],
       "correct_answer": "B",
-      "explanation": "Elas fornecem estatísticas históricas, não o estado meteorológico atual."
+      "explanation": "A sequência correta é a alternativa B, conforme Capítulo XIII — Climatologia e Cartas Piloto."
     },
     {
       "id": "MEO-1140",
@@ -103692,17 +103732,17 @@
     {
       "id": "MEO-1148",
       "subject": "Meteorologia e Oceanografia",
-      "module": "16. Elementos meteorológicos",
-      "topic": "Elementos meteorológicos",
+      "module": "19. Sistemas tropicais",
+      "topic": "Sistemas tropicais",
       "difficulty": "Difícil",
-      "style": "Preenchimento de lacunas",
-      "question_type": "Preenchimento de lacunas",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "V",
         "subject_slug": "meteorologia-oceanografia",
         "bibliography_id": "met-0",
         "chapter_id": "met-0::integral",
-        "topic_id": "V-met-0-integral-16-elementos-meteorologicos",
+        "topic_id": "V-met-0-integral-19-sistemas-tropicais",
         "subtopic_id": null
       },
       "tracking": {
@@ -103719,67 +103759,67 @@
           "label": "Publicação indicada — sem capítulos delimitados no Anexo 2-B"
         },
         "section": "Publicação indicada — sem capítulos delimitados no Anexo 2-B",
-        "module": "16. Elementos meteorológicos",
+        "module": "19. Sistemas tropicais",
         "topic": {
-          "id": "V-met-0-integral-16-elementos-meteorologicos",
-          "title": "Elementos meteorológicos"
+          "id": "V-met-0-integral-19-sistemas-tropicais",
+          "title": "Sistemas tropicais"
         }
       },
       "source": {
         "author": "YNOUE, R. Y.; REBOITA, M. S.; AMBRIZZI, T.; SILVA, G. A. M.",
         "title": "Meteorologia: noções básicas",
         "edition": "Oficina de Textos, 2017",
-        "locator": "Capítulos de temperatura, umidade, visibilidade, nuvens, precipitação, pressão e vento"
+        "locator": "Capítulos de circulação geral e sistemas atmosféricos; ZCIT e ciclones"
       },
       "tags": [
-        "elementos meteorológicos",
+        "sistemas tropicais",
         "pscpp",
         "meteorologia-oceanografia",
         "met-0",
         "met-0::integral",
-        "elementos-meteorologicos",
-        "pscpp-style-v6",
-        "formato-pscpp-lacunas-5"
+        "sistemas-tropicais",
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-bibliographic-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "MEO-0753",
-          "MEO-0807",
-          "MEO-0856",
           "MEO-0897",
-          "MEO-0937"
+          "MEO-0937",
+          "MEO-1062",
+          "MEO-0752",
+          "MEO-0806"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MEO-1148",
-        "rewrite_reason": "residual-medium-bibliographic-v6"
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.LAC5.00043",
-      "question": "Durante o briefing técnico, Tendo como referência “Meteorologia: noções básicas”, complete corretamente as lacunas e assinale a opção que apresenta a sequência adequada:\n(I) Considerando a relação física ou operacional de Elementos meteorológicos, cenário 1, Umidade relativa expressa = ______\n(II) Considerando a relação física ou operacional de Circulação do ar, cenário 1, Ar estável tende a = ______\n(III) Considerando a relação física ou operacional de Atividades convectivas e cumulonimbus, cenário 1, Convecção atmosférica envolve = ______\n(IV) No estudo de Sistemas tropicais, item 1, A ZCIT é caracterizada por = ______\n(V) Em uma situação operacional de navegação, no cenário 1 de Sistemas sinóticos, Uma frente quente corresponde, em termos gerais, ao avanço = ______",
+      "topic_code": "PSCPP.V8.AST5.00011",
+      "question": "De acordo com o contido em “Meteorologia: noções básicas”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) Sobre “Sistemas tropicais”, considere a seguinte proposição: convergência dos alísios, baixa pressão relativa e convecção frequente.\nII) No contexto de “Sistemas sinóticos”, a associação “da maré enchente” está correta.\nIII) Sobre “Sistemas sinóticos”, considere a seguinte proposição: uma frente fria alcança uma frente quente em um ciclone extratropical.\nIV) No contexto de “Elementos meteorológicos”, a associação “apenas a fase da Lua” está correta.\nV) Sobre “Circulação do ar”, considere a seguinte proposição: movimentos verticais e convecção quando parcelas são deslocadas.",
       "options": [
         {
           "key": "A",
-          "text": "resistir a deslocamentos verticais e favorecer movimentos mais estratificados — a relação entre o vapor presente e a quantidade correspondente à saturação, nas condições consideradas — movimento vertical do ar associado a diferenças de densidade e flutuabilidade — de ar mais quente sobre ar mais frio em recuo — convergência dos alísios, baixa pressão relativa e convecção frequente"
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "a relação entre o vapor presente e a quantidade correspondente à saturação, nas condições consideradas — resistir a deslocamentos verticais e favorecer movimentos mais estratificados — movimento vertical do ar associado a diferenças de densidade e flutuabilidade — convergência dos alísios, baixa pressão relativa e convecção frequente — de ar mais quente sobre ar mais frio em recuo"
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "movimento vertical do ar associado a diferenças de densidade e flutuabilidade — resistir a deslocamentos verticais e favorecer movimentos mais estratificados — a relação entre o vapor presente e a quantidade correspondente à saturação, nas condições consideradas — convergência dos alísios, baixa pressão relativa e convecção frequente — de ar mais quente sobre ar mais frio em recuo"
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "convergência dos alísios, baixa pressão relativa e convecção frequente — movimento vertical do ar associado a diferenças de densidade e flutuabilidade — resistir a deslocamentos verticais e favorecer movimentos mais estratificados — a relação entre o vapor presente e a quantidade correspondente à saturação, nas condições consideradas — de ar mais quente sobre ar mais frio em recuo"
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "de ar mais quente sobre ar mais frio em recuo — convergência dos alísios, baixa pressão relativa e convecção frequente — movimento vertical do ar associado a diferenças de densidade e flutuabilidade — resistir a deslocamentos verticais e favorecer movimentos mais estratificados — a relação entre o vapor presente e a quantidade correspondente à saturação, nas condições consideradas"
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "B",
-      "explanation": "A sequência correta corresponde à alternativa B, segundo o conteúdo de Capítulos de temperatura, umidade, visibilidade, nuvens, precipitação, pressão e vento."
+      "explanation": "A combinação correta é a alternativa B, conforme o recorte Capítulos de circulação geral e sistemas atmosféricos; ZCIT e ciclones."
     },
     {
       "id": "MEO-1149",
@@ -103787,8 +103827,8 @@
       "module": "NORMAM-701/DHN — Meteorologia Marítima",
       "topic": "CHM",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
       "taxonomy": {
         "subject_id": "V",
         "subject_slug": "meteorologia-oceanografia",
@@ -103829,44 +103869,48 @@
         "normam701::integral",
         "chm",
         "cobertura-v2",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "pscpp-cleanup-v8",
+        "cleanup-vf-5"
       ],
       "provenance": {
-        "method": "pscpp-bibliographic-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "MET-0004"
+          "MET-0004",
+          "MEO-1219",
+          "MEO-0984",
+          "MET-0003",
+          "MEO-1157"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MEO-1149",
-        "rewrite_reason": "residual-medium-bibliographic-v6"
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.00044",
-      "question": "O Prático Mariza, durante uma faina relacionada a “CHM”, precisa aplicar corretamente o conteúdo de “NORMAM-701/DHN — Atividades de Meteorologia Marítima”. Considere o seguinte problema técnico: Considerando NORMAM-701/DHN — Atividades de Meteorologia Marítima, qual alternativa caracteriza corretamente “CHM”? Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.VF5.00012",
+      "question": "Com base em “NORMAM-701/DHN — Atividades de Meteorologia Marítima”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) Sobre “CHM”, considere a seguinte proposição: Organização da Marinha responsável pela operação do Serviço Meteorológico Marinho, sob supervisão da DHN.\n( ) Sobre “Interpretação de informações meteorológicas”, considere a seguinte proposição: posição e configuração de centros de pressão, frentes, cavados, cristas e isóbaras.\n( ) Sobre “Interpretação de informações meteorológicas”, considere a seguinte proposição: visibilidade horizontal muito restrita.\n( ) Sobre “Serviço Meteorológico Marinho – SMM”, considere a seguinte proposição: NORMAM-701/DHN — Área marítima de responsabilidade do Brasil para a prestação e disseminação de informações meteorológicas marítimas.\n( ) No contexto de “Interpretação de informações meteorológicas”, a associação “apenas maré local” está correta.",
       "options": [
         {
           "key": "A",
-          "text": "Área marítima de responsabilidade do Brasil para a prestação e disseminação de informações meteorológicas marítimas."
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "B",
-          "text": "Conjunto de atividades de aquisição de dados e produção de análises e previsões meteoceanográficas para prover informações de segurança marítima na METAREA V."
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "C",
-          "text": "Boletim meteorológico do SMM emitido duas vezes ao dia e que inclui avisos de mau tempo em vigor."
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
         },
         {
           "key": "D",
-          "text": "Organização da Marinha responsável pela operação do Serviço Meteorológico Marinho, sob supervisão da DHN."
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "E",
-          "text": "Produtos de segurança marítima disseminados pelo SMM quando as condições previstas exigem alerta aos navegantes."
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
         }
       ],
       "correct_answer": "D",
-      "explanation": "“CHM” corresponde a organização da Marinha responsável pela operação do Serviço Meteorológico Marinho, sob supervisão da DHN.."
+      "explanation": "A sequência correta é a alternativa D, conforme Introdução; capítulos 1 a 3; Portaria DHN/DGN/MB nº 31/2026."
     },
     {
       "id": "MEO-1150",
@@ -104150,8 +104194,8 @@
       "module": "21. Interpretação de informações meteorológicas",
       "topic": "Interpretação de informações meteorológicas",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "V",
         "subject_slug": "meteorologia-oceanografia",
@@ -104193,44 +104237,48 @@
         "normam701",
         "normam701::integral",
         "interpretacao-de-informacoes-meteorologicas",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-bibliographic-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "MEO-0996"
+          "MEO-0985",
+          "MET-0004",
+          "MEO-1219",
+          "MEO-0984",
+          "MET-0003"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MEO-1153",
-        "rewrite_reason": "residual-medium-bibliographic-v6"
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.00048",
-      "question": "O Prático Sebastião, durante uma faina relacionada a “Interpretação de informações meteorológicas”, precisa aplicar corretamente o conteúdo de “NORMAM-701/DHN — Normas da Autoridade Marítima para as Atividades de Meteorologia Marítima”. Considere o seguinte problema técnico: Em uma situação operacional de navegação, no cenário 4 de Interpretação de informações meteorológicas, O METEOROMARINHA é? Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.AST5.00013",
+      "question": "De acordo com o contido em “NORMAM-701/DHN — Normas da Autoridade Marítima para as Atividades de Meteorologia Marítima”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) Sobre “Interpretação de informações meteorológicas”, considere a seguinte proposição: posição e configuração de centros de pressão, frentes, cavados, cristas e isóbaras.\nII) Sobre “CHM”, considere a seguinte proposição: Organização da Marinha responsável pela operação do Serviço Meteorológico Marinho, sob supervisão da DHN.\nIII) Sobre “Interpretação de informações meteorológicas”, considere a seguinte proposição: somente rumo magnético do navio.\nIV) Sobre “Interpretação de informações meteorológicas”, considere a seguinte proposição: visibilidade horizontal muito restrita.\nV) Sobre “Serviço Meteorológico Marinho – SMM”, considere a seguinte proposição: Programa de Navios Observadores Voluntários – VOS — Serviços satelitais usados na disseminação de boletins e avisos no contexto do GMDSS, conforme a atualização de 2026 da NORMAM-701/DHN.",
       "options": [
         {
           "key": "A",
-          "text": "um boletim meteorológico marítimo da Marinha do Brasil com análise e previsão para áreas marítimas"
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "uma carta náutica de profundidades"
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "um relatório de manutenção de faróis"
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "uma tábua de marés exclusivamente"
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "um código de manobra"
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "A",
-      "explanation": "A NORMAM-701 descreve o METEOROMARINHA como boletim meteorológico com situação e previsão marítima."
+      "explanation": "A combinação correta é a alternativa A, conforme o recorte Seções sobre METEOROMARINHA, avisos de mau tempo, vento, ondas e visibilidade."
     },
     {
       "id": "MEO-1154",
@@ -104516,8 +104564,8 @@
       "module": "21. Interpretação de informações meteorológicas",
       "topic": "Interpretação de informações meteorológicas",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
       "taxonomy": {
         "subject_id": "V",
         "subject_slug": "meteorologia-oceanografia",
@@ -104559,46 +104607,50 @@
         "normam701",
         "normam701::integral",
         "interpretacao-de-informacoes-meteorologicas",
-        "pscpp-style-v3",
-        "formato-pscpp-caso",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "pscpp-focused-extension-v7",
+        "dpc-caso-aplicado",
+        "pscpp-cleanup-v8",
+        "cleanup-vf-5"
       ],
       "provenance": {
-        "method": "pscpp-bibliographic-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "MEO-1149"
+          "MEO-1223",
+          "MEO-0985",
+          "MET-0004",
+          "MEO-1219",
+          "MEO-0984"
         ],
         "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
         "replaces_question_id": "MEO-1157",
-        "rewrite_reason": "residual-medium-bibliographic-v6"
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.00052",
-      "question": "O Prático Francisco, durante uma faina relacionada a “Interpretação de informações meteorológicas”, precisa aplicar corretamente o conteúdo de “NORMAM-701/DHN — Normas da Autoridade Marítima para as Atividades de Meteorologia Marítima”. Considere o seguinte problema técnico: Prático Claudionor, durante a preparação ou execução de uma faina relacionada a “Interpretação de informações meteorológicas”, precisa aplicar corretamente o conteúdo de “NORMAM-701/DHN — Normas da Autoridade Marítima para as Atividades de Meteorologia Marítima”. Considere o seguinte problema técnico: No estudo de Interpretação de informações meteorológicas, item 4, Ao interpretar carta sinótica, o navegante deve observar? Assinale a alternativa tecnicamente adequada. Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.VF5.00014",
+      "question": "Com base em “NORMAM-701/DHN — Normas da Autoridade Marítima para as Atividades de Meteorologia Marítima”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) Sobre “Interpretação de informações meteorológicas”, considere a seguinte proposição: apenas maré e declinação magnética.\n( ) Sobre “Interpretação de informações meteorológicas”, considere a seguinte proposição: posição e configuração de centros de pressão, frentes, cavados, cristas e isóbaras.\n( ) Sobre “CHM”, considere a seguinte proposição: Produtos de segurança marítima disseminados pelo SMM quando as condições previstas exigem alerta aos navegantes.\n( ) Sobre “Interpretação de informações meteorológicas”, considere a seguinte proposição: posição e configuração de centros de pressão, frentes, cavados, cristas e isóbaras.\n( ) Sobre “Interpretação de informações meteorológicas”, considere a seguinte proposição: visibilidade horizontal muito restrita.",
       "options": [
         {
           "key": "A",
-          "text": "somente profundidades"
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "B",
-          "text": "apenas luzes de navegação"
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "C",
-          "text": "somente rumo magnético do navio"
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
         },
         {
           "key": "D",
-          "text": "apenas maré local"
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "E",
-          "text": "posição e configuração de centros de pressão, frentes, cavados, cristas e isóbaras"
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
         }
       ],
       "correct_answer": "E",
-      "explanation": "Cartas sinóticas sintetizam o campo de pressão e sistemas atmosféricos."
+      "explanation": "A sequência correta é a alternativa E, conforme Seções sobre METEOROMARINHA, avisos de mau tempo, vento, ondas e visibilidade."
     },
     {
       "id": "MEO-1158",
@@ -106679,17 +106731,17 @@
     {
       "id": "MEO-1181",
       "subject": "Meteorologia e Oceanografia",
-      "module": "4. Ondas",
-      "topic": "Ondas",
+      "module": "6. Climatologia",
+      "topic": "Climatologia",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "V",
         "subject_slug": "meteorologia-oceanografia",
         "bibliography_id": "met-1",
         "chapter_id": "met-1::integral",
-        "topic_id": "V-met-1-integral-4-ondas",
+        "topic_id": "V-met-1-integral-6-climatologia",
         "subtopic_id": null
       },
       "tracking": {
@@ -106706,63 +106758,68 @@
           "label": "Publicação indicada — sem capítulos delimitados no Anexo 2-B"
         },
         "section": "Publicação indicada — sem capítulos delimitados no Anexo 2-B",
-        "module": "4. Ondas",
+        "module": "6. Climatologia",
         "topic": {
-          "id": "V-met-1-integral-4-ondas",
-          "title": "Ondas"
+          "id": "V-met-1-integral-6-climatologia",
+          "title": "Climatologia"
         }
       },
       "source": {
         "author": "LOBO, Paulo Roberto Valgas; SOARES, Carlos Alberto",
         "title": "Meteorologia e oceanografia",
         "edition": "4. ed., Rio de Janeiro, 2019",
-        "locator": "Capítulo VIII — Ondas, Vagas e Marulhos"
+        "locator": "Capítulo XIII — Climatologia e Cartas Piloto"
       },
       "tags": [
-        "ondas",
+        "climatologia",
         "pscpp",
         "meteorologia-oceanografia",
         "met-1",
         "met-1::integral",
-        "revisao-contextual-v2",
-        "formato-estudo-de-caso-v2",
-        "expansao-formatos-v2",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "pscpp-style-v3",
+        "pscpp-refinement-v3",
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-expansion-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "MEO-1069"
+          "MEO-0095",
+          "MEO-0139",
+          "MEO-1054",
+          "MEO-1185",
+          "MEO-0003"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "MEO-1181",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.10004",
-      "question": "O Prático Ari, durante uma faina relacionada a “Ondas”, precisa aplicar corretamente o conteúdo de “Meteorologia e oceanografia”. Considere o seguinte problema técnico: Considere o caso técnico a seguir, relacionado a Ondas: Em uma situação operacional de navegação, no cenário 1 de Ondas, A altura de onda é? Assinale a alternativa tecnicamente adequada ao caso. Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.AST5.00015",
+      "question": "De acordo com o contido em “Meteorologia e oceanografia”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) Sobre “Climatologia”, considere a seguinte proposição: avaliar padrões sazonais de vento, ondas, correntes e ocorrência de fenômenos.\nII) Sobre “Navegação de mau tempo”, considere a seguinte proposição: da evolução meteorológica e do estado do mar, com ajustes de rota e velocidade quando necessários.\nIII) Sobre “Correntes de densidade e correntes costeiras”, considere a seguinte proposição: da direção local do vento, porque outros mecanismos também podem controlá-la.\nIV) Sobre “Navegação de mau tempo”, considere a seguinte proposição: garantir que o navio sempre encontre as ondas de través.\nV) Sobre “Marés”, considere a seguinte proposição: o instante de maior corrente de vazante.",
       "options": [
         {
           "key": "A",
-          "text": "a distância horizontal entre cristas"
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "o período dividido pela frequência"
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "a profundidade abaixo da quilha"
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "a diferença vertical entre a crista e o cavado adjacente"
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "a velocidade orbital das partículas"
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "D",
-      "explanation": "A alternativa correta é C. Altura é uma diferença vertical entre crista e cavado."
+      "explanation": "A combinação correta é a alternativa D, conforme o recorte Capítulo XIII — Climatologia e Cartas Piloto."
     },
     {
       "id": "MEO-1182",
@@ -107036,17 +107093,17 @@
     {
       "id": "MEO-1185",
       "subject": "Meteorologia e Oceanografia",
-      "module": "9. Navegação de mau tempo",
-      "topic": "Navegação de mau tempo",
+      "module": "6. Climatologia",
+      "topic": "Climatologia",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
       "taxonomy": {
         "subject_id": "V",
         "subject_slug": "meteorologia-oceanografia",
         "bibliography_id": "met-1",
         "chapter_id": "met-1::integral",
-        "topic_id": "V-met-1-integral-9-navegacao-de-mau-tempo",
+        "topic_id": "V-met-1-integral-6-climatologia",
         "subtopic_id": null
       },
       "tracking": {
@@ -107063,63 +107120,70 @@
           "label": "Publicação indicada — sem capítulos delimitados no Anexo 2-B"
         },
         "section": "Publicação indicada — sem capítulos delimitados no Anexo 2-B",
-        "module": "9. Navegação de mau tempo",
+        "module": "6. Climatologia",
         "topic": {
-          "id": "V-met-1-integral-9-navegacao-de-mau-tempo",
-          "title": "Navegação de mau tempo"
+          "id": "V-met-1-integral-6-climatologia",
+          "title": "Climatologia"
         }
       },
       "source": {
         "author": "LOBO, Paulo Roberto Valgas; SOARES, Carlos Alberto",
         "title": "Meteorologia e oceanografia",
         "edition": "4. ed., Rio de Janeiro, 2019",
-        "locator": "Capítulo VIII — marinharia de mau tempo; Capítulo XIV — navegação meteorológica"
+        "locator": "Capítulo XIII — Climatologia e Cartas Piloto"
       },
       "tags": [
-        "navegação de mau tempo",
+        "climatologia",
         "pscpp",
         "meteorologia-oceanografia",
         "met-1",
         "met-1::integral",
-        "navegacao-de-mau-tempo",
         "pscpp-style-v3",
-        "formato-pscpp-direta",
+        "pscpp-refinement-v3",
         "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "formato-pscpp-caso-v6",
+        "pscpp-cleanup-v8",
+        "cleanup-vf-5"
       ],
       "provenance": {
-        "method": "pscpp-expansion-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "MEO-1139"
+          "MEO-1066",
+          "MEO-1218",
+          "MEO-0004",
+          "MEO-0012",
+          "MEO-0028"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "MEO-1185",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.10008",
-      "question": "O Prático Lúcia, durante uma faina relacionada a “Navegação de mau tempo”, precisa aplicar corretamente o conteúdo de “Meteorologia e oceanografia”. Considere o seguinte problema técnico: De acordo com o contido em “Meteorologia e oceanografia” (Capítulo VIII — marinharia de mau tempo; Capítulo XIV — navegação meteorológica), considere a situação/conceito a seguir: No estudo de Navegação de mau tempo, item 13, Em mau tempo, reduzir velocidade pode ser necessário para? Assinale a opção correta. Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.VF5.00016",
+      "question": "Com base em “Meteorologia e oceanografia”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) Sobre “Climatologia”, considere a seguinte proposição: fornecer apenas declinação magnética.\n( ) No contexto de “Ondas”, a associação “decresce com a profundidade” está correta.\n( ) Sobre “Marés”, considere a seguinte proposição: a diferença vertical entre uma preamar e a baixamar associada.\n( ) Sobre “Correntes de densidade e correntes costeiras”, considere a seguinte proposição: gradientes horizontais de densidade associados principalmente a temperatura e salinidade.\n( ) Sobre “Cartas piloto”, considere a seguinte proposição: apenas dados de máquinas do navio.",
       "options": [
         {
           "key": "A",
-          "text": "aumentar deliberadamente as cargas dinâmicas"
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "B",
-          "text": "garantir que o navio sempre encontre as ondas de través"
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "C",
-          "text": "limitar esforços, acelerações, embarque de água e impactos de slamming conforme a condição"
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
         },
         {
           "key": "D",
-          "text": "eliminar o efeito do vento"
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "E",
-          "text": "aumentar a frequência de encontro em todas as situações"
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
         }
       ],
       "correct_answer": "C",
-      "explanation": "A combinação de rumo e velocidade deve ser ajustada para reduzir respostas perigosas do navio."
+      "explanation": "A sequência correta é a alternativa C, conforme Capítulo XIII — Climatologia e Cartas Piloto."
     },
     {
       "id": "MEO-1186",
@@ -109840,8 +109904,8 @@
       "module": "20. Sistemas sinóticos",
       "topic": "Sistemas sinóticos",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "V",
         "subject_slug": "meteorologia-oceanografia",
@@ -109883,57 +109947,63 @@
         "met-0",
         "met-0::integral",
         "sistemas-sinoticos",
-        "pscpp-focused-extension-v7",
-        "dpc-caso-aplicado"
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-focused-extension-v7",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "MEO-0937"
+          "MEO-0936",
+          "MEO-0973",
+          "MEO-0751",
+          "MEO-0756",
+          "MEO-0810"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023; foco Arte Naval e Meteorologia"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "MEO-1216",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V7.CASO.1031",
-      "question": "O Prático Francisco encontra-se preparando uma manobra e acompanha continuamente carta sinótica, meteoromarinha e observações de bordo. Ao revisar o tópico “Sistemas sinóticos” em “Meteorologia: noções básicas”, depara-se com a seguinte questão técnica: Em uma situação operacional de navegação, no cenário 1 de Sistemas sinóticos, Uma frente quente corresponde, em termos gerais, ao avanço? Assinale a alternativa correta.",
+      "topic_code": "PSCPP.V8.AST5.00017",
+      "question": "De acordo com o contido em “Meteorologia: noções básicas”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) Sobre “Sistemas sinóticos”, considere a seguinte proposição: de uma massa de ar frio sobre uma região ocupada por ar mais quente.\nII) Sobre “Sistemas tropicais”, considere a seguinte proposição: dos anticiclones subtropicais em direção à faixa equatorial, com componente de leste.\nIII) No contexto de “Elementos meteorológicos”, a associação “ao rumo verdadeiro” está correta.\nIV) Sobre “Elementos meteorológicos”, considere a seguinte proposição: disponibilidade de água, ar relativamente seco e ventilação.\nV) No contexto de “Circulação do ar”, a associação “pressão relativamente alta” está correta.",
       "options": [
         {
           "key": "A",
-          "text": "de ar mais quente sobre ar mais frio em recuo"
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "de ar frio sob ar quente"
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "de água mais salina"
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "de uma baixa tropical sem contraste térmico"
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "da maré enchente"
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "A",
-      "explanation": "Frente quente marca avanço da massa quente."
+      "explanation": "A combinação correta é a alternativa A, conforme o recorte Capítulo 9 — Massas de ar, frentes, ciclones e anticiclones."
     },
     {
       "id": "MEO-1217",
       "subject": "Meteorologia e Oceanografia",
-      "module": "11. Ventos",
-      "topic": "Ventos",
+      "module": "13. Cobertura do céu e nuvens",
+      "topic": "Cobertura do céu e nuvens",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
       "taxonomy": {
         "subject_id": "V",
         "subject_slug": "meteorologia-oceanografia",
         "bibliography_id": "miguens-met",
         "chapter_id": "miguens-met::ch45",
-        "topic_id": "V-miguens-met-ch45-11-ventos",
+        "topic_id": "V-miguens-met-ch45-13-cobertura-do-ceu-e-nuvens",
         "subtopic_id": null
       },
       "tracking": {
@@ -109950,77 +110020,82 @@
           "label": "Capítulo 45 – Noções de Meteorologia para Navegantes"
         },
         "section": "Capítulo 45 – Noções de Meteorologia para Navegantes",
-        "module": "11. Ventos",
+        "module": "13. Cobertura do céu e nuvens",
         "topic": {
-          "id": "V-miguens-met-ch45-11-ventos",
-          "title": "Ventos"
+          "id": "V-miguens-met-ch45-13-cobertura-do-ceu-e-nuvens",
+          "title": "Cobertura do céu e nuvens"
         }
       },
       "source": {
         "author": "MIGUENS, Altineu Pires",
         "title": "Navegação: a ciência e a arte — Volume III",
         "edition": "1ª revisão, 2026",
-        "locator": "Capítulo 45, seções 45.1.3 e 45.2.4 — circulação geral e vento"
+        "locator": "Capítulo 45, seção 45.2.5 — Nuvens"
       },
       "tags": [
-        "ventos",
+        "cobertura do céu e nuvens",
         "pscpp",
         "meteorologia-oceanografia",
         "miguens-met",
         "miguens-met::ch45",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6",
-        "pscpp-focused-extension-v7",
-        "dpc-caso-aplicado"
+        "cobertura-do-ceu-e-nuvens",
+        "pscpp-cleanup-v8",
+        "cleanup-vf-5"
       ],
       "provenance": {
-        "method": "pscpp-focused-extension-v7",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "MEO-1058"
+          "MEO-0605",
+          "MEO-0686",
+          "MEO-0691",
+          "MEO-0433",
+          "MEO-0487"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023; foco Arte Naval e Meteorologia"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "MEO-1217",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V7.CASO.1032",
-      "question": "O Prático Mariza encontra-se preparando uma manobra e acompanha continuamente carta sinótica, meteoromarinha e observações de bordo. Ao revisar o tópico “Ventos” em “Navegação: a ciência e a arte — Volume III”, depara-se com a seguinte questão técnica: O Prático Francisco, durante uma faina relacionada a “Ventos”, precisa aplicar corretamente o conteúdo de “Navegação: a ciência e a arte — Volume III”. Considere o seguinte problema técnico: Ao interpretar informações de Ventos em um produto ou observação marítima, caso 1, No hemisfério Norte, a força de Coriolis desvia o movimento do ar? Assinale a alternativa adequada. Assinale a alternativa correta.",
+      "topic_code": "PSCPP.V8.VF5.00018",
+      "question": "Com base em “Navegação: a ciência e a arte — Volume III”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) Sobre “Cobertura do céu e nuvens”, considere a seguinte proposição: altas, compostas predominantemente por cristais de gelo.\n( ) No contexto de “Sistemas atmosféricos”, a associação “tempo sempre sem nuvens” está correta.\n( ) Sobre “Sistemas atmosféricos”, considere a seguinte proposição: ar frio avança e força o ar quente a subir.\n( ) Sobre “Pressão atmosférica”, considere a seguinte proposição: altura de uma coluna de água do mar.\n( ) Sobre “Ventos”, considere a seguinte proposição: das altas para as baixas pressões.",
       "options": [
         {
           "key": "A",
-          "text": "para a esquerda"
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "B",
-          "text": "para a direita de sua trajetória"
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "C",
-          "text": "sempre para sul"
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
         },
         {
           "key": "D",
-          "text": "sempre para leste"
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "E",
-          "text": "não produz qualquer desvio"
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
         }
       ],
       "correct_answer": "B",
-      "explanation": "No HN, Coriolis atua à direita do movimento."
+      "explanation": "A sequência correta é a alternativa B, conforme Capítulo 45, seção 45.2.5 — Nuvens."
     },
     {
       "id": "MEO-1218",
       "subject": "Meteorologia e Oceanografia",
-      "module": "4. Ondas",
-      "topic": "Ondas",
+      "module": "8. Navegação meteorológica",
+      "topic": "Navegação meteorológica",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "V",
         "subject_slug": "meteorologia-oceanografia",
         "bibliography_id": "met-1",
         "chapter_id": "met-1::integral",
-        "topic_id": "V-met-1-integral-4-ondas",
+        "topic_id": "V-met-1-integral-8-navegacao-meteorologica",
         "subtopic_id": null
       },
       "tracking": {
@@ -110037,62 +110112,69 @@
           "label": "Publicação indicada — sem capítulos delimitados no Anexo 2-B"
         },
         "section": "Publicação indicada — sem capítulos delimitados no Anexo 2-B",
-        "module": "4. Ondas",
+        "module": "8. Navegação meteorológica",
         "topic": {
-          "id": "V-met-1-integral-4-ondas",
-          "title": "Ondas"
+          "id": "V-met-1-integral-8-navegacao-meteorologica",
+          "title": "Navegação meteorológica"
         }
       },
       "source": {
         "author": "LOBO, Paulo Roberto Valgas; SOARES, Carlos Alberto",
         "title": "Meteorologia e oceanografia",
         "edition": "4. ed., Rio de Janeiro, 2019",
-        "locator": "Capítulo VIII — Ondas, Vagas e Marulhos"
+        "locator": "Capítulos XII e XIV — Navegação Meteorológica e Oceanográfica"
       },
       "tags": [
-        "ondas",
+        "navegação meteorológica",
         "pscpp",
         "meteorologia-oceanografia",
         "met-1",
         "met-1::integral",
+        "navegacao-meteorologica",
         "pscpp-style-v3",
-        "pscpp-refinement-v3",
-        "pscpp-focused-extension-v7",
-        "dpc-caso-aplicado"
+        "formato-pscpp-direta",
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-focused-extension-v7",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "MEO-0072"
+          "MEO-0099",
+          "MEO-0144",
+          "MEO-1066",
+          "MEO-0004",
+          "MEO-0012"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023; foco Arte Naval e Meteorologia"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "MEO-1218",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V7.CASO.1033",
-      "question": "O Prático Ari encontra-se preparando uma manobra e acompanha continuamente carta sinótica, meteoromarinha e observações de bordo. Ao revisar o tópico “Ondas” em “Meteorologia e oceanografia”, depara-se com a seguinte questão técnica: De acordo com o contido em “Meteorologia e oceanografia” (Capítulo VIII — Ondas, Vagas e Marulhos), considere o seguinte problema técnico: Considerando a relação física ou operacional de Ondas, cenário 10, Em águas profundas, o movimento orbital das partículas associado às ondas? Assinale a opção correta. Assinale a alternativa correta.",
+      "topic_code": "PSCPP.V8.AST5.00019",
+      "question": "De acordo com o contido em “Meteorologia e oceanografia”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) Sobre “Navegação meteorológica”, considere a seguinte proposição: usar apenas dados climatológicos históricos.\nII) Sobre “Áreas geradoras de vagas”, considere a seguinte proposição: vento persistente, intensidade suficiente e extensão de atuação sobre a água.\nIII) Sobre “Climatologia”, considere a seguinte proposição: avaliar padrões sazonais de vento, ondas, correntes e ocorrência de fenômenos.\nIV) Sobre “Marés”, considere a seguinte proposição: a diferença vertical entre uma preamar e a baixamar associada.\nV) Sobre “Correntes de densidade e correntes costeiras”, considere a seguinte proposição: exclusivamente por terremotos submarinos.",
       "options": [
         {
           "key": "A",
-          "text": "cresce indefinidamente com a profundidade"
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "é puramente horizontal em toda a coluna"
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "decresce com a profundidade"
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "é inexistente na superfície"
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "independe totalmente do comprimento de onda"
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "C",
-      "explanation": "A influência cinemática da onda atenua-se com a profundidade."
+      "explanation": "A combinação correta é a alternativa C, conforme o recorte Capítulos XII e XIV — Navegação Meteorológica e Oceanográfica."
     },
     {
       "id": "MEO-1219",
@@ -110100,8 +110182,376 @@
       "module": "21. Interpretação de informações meteorológicas",
       "topic": "Interpretação de informações meteorológicas",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "normam701",
+        "chapter_id": "normam701::integral",
+        "topic_id": "V-normam701-integral-21-interpretacao-de-informacoes-meteorologicas",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "meteorologia-oceanografia",
+        "work": {
+          "id": "normam701",
+          "title": "NORMAM-701/DHN",
+          "author": "MARINHA DO BRASIL — DIRETORIA DE HIDROGRAFIA E NAVEGAÇÃO"
+        },
+        "chapter": {
+          "id": "normam701::integral",
+          "number": "integral",
+          "title": "Publicação indicada — sem recorte adicional no Anexo 2-B",
+          "label": "Publicação indicada — sem recorte adicional no Anexo 2-B"
+        },
+        "section": "Publicação indicada — sem recorte adicional no Anexo 2-B",
+        "module": "21. Interpretação de informações meteorológicas",
+        "topic": {
+          "id": "V-normam701-integral-21-interpretacao-de-informacoes-meteorologicas",
+          "title": "Interpretação de informações meteorológicas"
+        }
+      },
+      "source": {
+        "author": "MARINHA DO BRASIL — DIRETORIA DE HIDROGRAFIA E NAVEGAÇÃO",
+        "title": "NORMAM-701/DHN — Normas da Autoridade Marítima para as Atividades de Meteorologia Marítima",
+        "edition": "versão disponível no pacote de fontes",
+        "locator": "Seções sobre METEOROMARINHA, avisos de mau tempo, vento, ondas e visibilidade"
+      },
+      "tags": [
+        "interpretação de informações meteorológicas",
+        "pscpp",
+        "meteorologia-oceanografia",
+        "normam701",
+        "normam701::integral",
+        "interpretacao-de-informacoes-meteorologicas",
+        "pscpp-cleanup-v8",
+        "cleanup-vf-5"
+      ],
+      "provenance": {
+        "method": "pscpp-cleanup-v8",
+        "derived_from_question_ids": [
+          "MEO-0982",
+          "MET-0001",
+          "MEO-1149",
+          "MEO-0981",
+          "MEO-0998"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "MEO-1219",
+        "cleanup_reason": "medium-audit-flag-v8"
+      },
+      "topic_code": "PSCPP.V8.VF5.00020",
+      "question": "Com base em “NORMAM-701/DHN — Normas da Autoridade Marítima para as Atividades de Meteorologia Marítima”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) Sobre “Interpretação de informações meteorológicas”, considere a seguinte proposição: tempo à superfície, ventos, ondas e visibilidade horizontal.\n( ) Sobre “NORMAM-701/DHN”, considere a seguinte proposição: Norma da Autoridade Marítima para as atividades de Meteorologia Marítima na área de responsabilidade brasileira.\n( ) Sobre “CHM”, considere a seguinte proposição: Organização da Marinha responsável pela operação do Serviço Meteorológico Marinho, sob supervisão da DHN.\n( ) Sobre “Interpretação de informações meteorológicas”, considere a seguinte proposição: uma tábua de marés exclusivamente.\n( ) No contexto de “Interpretação de informações meteorológicas”, a associação “um código de manobra” está correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
+        },
+        {
+          "key": "D",
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "E",
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A sequência correta é a alternativa D, conforme Seções sobre METEOROMARINHA, avisos de mau tempo, vento, ondas e visibilidade."
+    },
+    {
+      "id": "MEO-1220",
+      "subject": "Meteorologia e Oceanografia",
+      "module": "16. Elementos meteorológicos",
+      "topic": "Elementos meteorológicos",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "met-0",
+        "chapter_id": "met-0::integral",
+        "topic_id": "V-met-0-integral-16-elementos-meteorologicos",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "meteorologia-oceanografia",
+        "work": {
+          "id": "met-0",
+          "title": "YNOUE et al. — Meteorologia: Noções Básicas",
+          "author": "YNOUE, R. Y.; REBOITA, M. S.; AMBRIZZI, T.; SILVA, G. A. M."
+        },
+        "chapter": {
+          "id": "met-0::integral",
+          "number": "integral",
+          "title": "Publicação indicada — sem capítulos delimitados no Anexo 2-B",
+          "label": "Publicação indicada — sem capítulos delimitados no Anexo 2-B"
+        },
+        "section": "Publicação indicada — sem capítulos delimitados no Anexo 2-B",
+        "module": "16. Elementos meteorológicos",
+        "topic": {
+          "id": "V-met-0-integral-16-elementos-meteorologicos",
+          "title": "Elementos meteorológicos"
+        }
+      },
+      "source": {
+        "author": "YNOUE, R. Y.; REBOITA, M. S.; AMBRIZZI, T.; SILVA, G. A. M.",
+        "title": "Meteorologia: noções básicas",
+        "edition": "Oficina de Textos, 2017",
+        "locator": "Capítulos de temperatura, umidade, visibilidade, nuvens, precipitação, pressão e vento"
+      },
+      "tags": [
+        "elementos meteorológicos",
+        "pscpp",
+        "meteorologia-oceanografia",
+        "met-0",
+        "met-0::integral",
+        "elementos-meteorologicos",
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
+      ],
+      "provenance": {
+        "method": "pscpp-cleanup-v8",
+        "derived_from_question_ids": [
+          "MEO-0754",
+          "MEO-0808",
+          "MEO-0857",
+          "MEO-0898",
+          "MEO-0938"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "MEO-1220",
+        "cleanup_reason": "medium-audit-flag-v8"
+      },
+      "topic_code": "PSCPP.V8.AST5.00021",
+      "question": "De acordo com o contido em “Meteorologia: noções básicas”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) Sobre “Elementos meteorológicos”, considere a seguinte proposição: aumentar necessariamente a umidade relativa para 100%.\nII) Sobre “Circulação do ar”, considere a seguinte proposição: acúmulo de massa e movimento ascendente.\nIII) Sobre “Atividades convectivas e cumulonimbus”, considere a seguinte proposição: ausência de gradiente térmico.\nIV) Sobre “Sistemas tropicais”, considere a seguinte proposição: do calor liberado pela condensação do vapor fornecido pelo oceano quente.\nV) Sobre “Sistemas sinóticos”, considere a seguinte proposição: o limite entre massas de ar apresenta pouco deslocamento.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A combinação correta é a alternativa E, conforme o recorte Capítulos de temperatura, umidade, visibilidade, nuvens, precipitação, pressão e vento."
+    },
+    {
+      "id": "MEO-1221",
+      "subject": "Meteorologia e Oceanografia",
+      "module": "14. Precipitação",
+      "topic": "Precipitação",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "miguens-met",
+        "chapter_id": "miguens-met::ch45",
+        "topic_id": "V-miguens-met-ch45-14-precipitacao",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "meteorologia-oceanografia",
+        "work": {
+          "id": "miguens-met",
+          "title": "MIGUENS — Navegação: a Ciência e a Arte, Volume III",
+          "author": "MIGUENS, Altineu Pires"
+        },
+        "chapter": {
+          "id": "miguens-met::ch45",
+          "number": "ch45",
+          "title": "Capítulo 45 – Noções de Meteorologia para Navegantes",
+          "label": "Capítulo 45 – Noções de Meteorologia para Navegantes"
+        },
+        "section": "Capítulo 45 – Noções de Meteorologia para Navegantes",
+        "module": "14. Precipitação",
+        "topic": {
+          "id": "V-miguens-met-ch45-14-precipitacao",
+          "title": "Precipitação"
+        }
+      },
+      "source": {
+        "author": "MIGUENS, Altineu Pires",
+        "title": "Navegação: a ciência e a arte — Volume III",
+        "edition": "1ª revisão, 2026",
+        "locator": "Capítulo 45, seção 45.2.7 — Precipitação"
+      },
+      "tags": [
+        "precipitação",
+        "pscpp",
+        "meteorologia-oceanografia",
+        "miguens-met",
+        "miguens-met::ch45",
+        "precipitacao",
+        "pscpp-cleanup-v8",
+        "cleanup-vf-5"
+      ],
+      "provenance": {
+        "method": "pscpp-cleanup-v8",
+        "derived_from_question_ids": [
+          "MEO-0648",
+          "MEO-0689",
+          "MEO-0734",
+          "MEO-0431",
+          "MEO-0436"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "MEO-1221",
+        "cleanup_reason": "medium-audit-flag-v8"
+      },
+      "topic_code": "PSCPP.V8.VF5.00022",
+      "question": "Com base em “Navegação: a ciência e a arte — Volume III”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) Sobre “Precipitação”, considere a seguinte proposição: líquida composta por gotas de água.\n( ) No contexto de “Sistemas atmosféricos”, a associação “anti-horária” está correta.\n( ) No contexto de “Cobertura do céu e nuvens”, a associação “ondas oceânicas” está correta.\n( ) Sobre “Pressão atmosférica”, considere a seguinte proposição: a força por unidade de área exercida pelo peso da coluna de ar.\n( ) No contexto de “Pressão atmosférica”, a associação “ausência de vento” está correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
+        },
+        {
+          "key": "B",
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
+        },
+        {
+          "key": "C",
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
+        },
+        {
+          "key": "D",
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
+        },
+        {
+          "key": "E",
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A sequência correta é a alternativa A, conforme Capítulo 45, seção 45.2.7 — Precipitação."
+    },
+    {
+      "id": "MEO-1222",
+      "subject": "Meteorologia e Oceanografia",
+      "module": "3. Correntes de densidade e correntes costeiras",
+      "topic": "Correntes de densidade e correntes costeiras",
+      "difficulty": "Difícil",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "met-1",
+        "chapter_id": "met-1::integral",
+        "topic_id": "V-met-1-integral-3-correntes-de-densidade-e-correntes-costeiras",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "meteorologia-oceanografia",
+        "work": {
+          "id": "met-1",
+          "title": "LOBO & SOARES — Meteorologia e Oceanografia, 4ª ed.",
+          "author": "LOBO, Paulo Roberto Valgas; SOARES, Carlos Alberto"
+        },
+        "chapter": {
+          "id": "met-1::integral",
+          "number": "integral",
+          "title": "Publicação indicada — sem capítulos delimitados no Anexo 2-B",
+          "label": "Publicação indicada — sem capítulos delimitados no Anexo 2-B"
+        },
+        "section": "Publicação indicada — sem capítulos delimitados no Anexo 2-B",
+        "module": "3. Correntes de densidade e correntes costeiras",
+        "topic": {
+          "id": "V-met-1-integral-3-correntes-de-densidade-e-correntes-costeiras",
+          "title": "Correntes de densidade e correntes costeiras"
+        }
+      },
+      "source": {
+        "author": "LOBO, Paulo Roberto Valgas; SOARES, Carlos Alberto",
+        "title": "Meteorologia e oceanografia",
+        "edition": "4. ed., Rio de Janeiro, 2019",
+        "locator": "Capítulo X — Correntes Oceanicas e Costeiras"
+      },
+      "tags": [
+        "correntes de densidade e correntes costeiras",
+        "pscpp",
+        "meteorologia-oceanografia",
+        "met-1",
+        "met-1::integral",
+        "correntes-de-densidade-e-correntes-costeiras",
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
+      ],
+      "provenance": {
+        "method": "pscpp-cleanup-v8",
+        "derived_from_question_ids": [
+          "MEO-0102",
+          "MEO-0195",
+          "MEO-1070",
+          "MEO-0005",
+          "MEO-0016"
+        ],
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "MEO-1222",
+        "cleanup_reason": "medium-audit-flag-v8"
+      },
+      "topic_code": "PSCPP.V8.AST5.00023",
+      "question": "De acordo com o contido em “Meteorologia e oceanografia”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) Sobre “Correntes de densidade e correntes costeiras”, considere a seguinte proposição: vento, configuração da costa, maré e gradientes de densidade.\nII) Sobre “Cartas piloto”, considere a seguinte proposição: à pressão da praça de máquinas.\nIII) Sobre “Marés”, considere a seguinte proposição: amplitudes menores, associadas aos quartos crescente e minguante.\nIV) Sobre “Marés”, considere a seguinte proposição: próximo aos quartos crescente e minguante, com menor amplitude.\nV) Sobre “Ondas”, considere a seguinte proposição: a distância horizontal entre duas cristas consecutivas.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A combinação correta é a alternativa B, conforme o recorte Capítulo X — Correntes Oceanicas e Costeiras."
+    },
+    {
+      "id": "MEO-1223",
+      "subject": "Meteorologia e Oceanografia",
+      "module": "21. Interpretação de informações meteorológicas",
+      "topic": "Interpretação de informações meteorológicas",
+      "difficulty": "Difícil",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
       "taxonomy": {
         "subject_id": "V",
         "subject_slug": "meteorologia-oceanografia",
@@ -110147,386 +110597,48 @@
         "formato-pscpp-caso",
         "pscpp-style-v6",
         "formato-pscpp-caso-v6",
-        "pscpp-focused-extension-v7",
-        "dpc-caso-aplicado"
+        "pscpp-cleanup-v8",
+        "cleanup-vf-5"
       ],
       "provenance": {
-        "method": "pscpp-focused-extension-v7",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "MEO-1157"
-        ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023; foco Arte Naval e Meteorologia"
-      },
-      "topic_code": "PSCPP.V7.CASO.1034",
-      "question": "O Prático Roberto encontra-se preparando uma manobra e acompanha continuamente carta sinótica, meteoromarinha e observações de bordo. Ao revisar o tópico “Interpretação de informações meteorológicas” em “NORMAM-701/DHN — Normas da Autoridade Marítima para as Atividades de Meteorologia Marítima”, depara-se com a seguinte questão técnica: O Prático Francisco, durante uma faina relacionada a “Interpretação de informações meteorológicas”, precisa aplicar corretamente o conteúdo de “NORMAM-701/DHN — Normas da Autoridade Marítima para as Atividades de Meteorologia Marítima”. Considere o seguinte problema técnico: Prático Claudionor, durante a preparação ou execução de uma faina relacionada a “Interpretação de informações meteorológicas”, precisa aplicar corretamente o conteúdo de “NORMAM-701/DHN — Normas da Autoridade Marítima para as Atividades de Meteorologia Marítima”. Considere o seguinte problema técnico: No estudo de Interpretação de informações meteorológicas, item 4, Ao interpretar carta sinótica, o navegante deve observar? Assinale a alternativa tecnicamente adequada. Assinale a alternativa adequada. Assinale a alternativa correta.",
-      "options": [
-        {
-          "key": "A",
-          "text": "somente profundidades"
-        },
-        {
-          "key": "B",
-          "text": "apenas luzes de navegação"
-        },
-        {
-          "key": "C",
-          "text": "somente rumo magnético do navio"
-        },
-        {
-          "key": "D",
-          "text": "posição e configuração de centros de pressão, frentes, cavados, cristas e isóbaras"
-        },
-        {
-          "key": "E",
-          "text": "apenas maré local"
-        }
-      ],
-      "correct_answer": "D",
-      "explanation": "Cartas sinóticas sintetizam o campo de pressão e sistemas atmosféricos."
-    },
-    {
-      "id": "MEO-1220",
-      "subject": "Meteorologia e Oceanografia",
-      "module": "17. Circulação do ar",
-      "topic": "Circulação do ar",
-      "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
-      "taxonomy": {
-        "subject_id": "V",
-        "subject_slug": "meteorologia-oceanografia",
-        "bibliography_id": "met-0",
-        "chapter_id": "met-0::integral",
-        "topic_id": "V-met-0-integral-17-circulacao-do-ar",
-        "subtopic_id": null
-      },
-      "tracking": {
-        "subject_slug": "meteorologia-oceanografia",
-        "work": {
-          "id": "met-0",
-          "title": "YNOUE et al. — Meteorologia: Noções Básicas",
-          "author": "YNOUE, R. Y.; REBOITA, M. S.; AMBRIZZI, T.; SILVA, G. A. M."
-        },
-        "chapter": {
-          "id": "met-0::integral",
-          "number": "integral",
-          "title": "Publicação indicada — sem capítulos delimitados no Anexo 2-B",
-          "label": "Publicação indicada — sem capítulos delimitados no Anexo 2-B"
-        },
-        "section": "Publicação indicada — sem capítulos delimitados no Anexo 2-B",
-        "module": "17. Circulação do ar",
-        "topic": {
-          "id": "V-met-0-integral-17-circulacao-do-ar",
-          "title": "Circulação do ar"
-        }
-      },
-      "source": {
-        "author": "YNOUE, R. Y.; REBOITA, M. S.; AMBRIZZI, T.; SILVA, G. A. M.",
-        "title": "Meteorologia: noções básicas",
-        "edition": "Oficina de Textos, 2017",
-        "locator": "Capítulos 6, 8 e circulação geral — pressão e ventos"
-      },
-      "tags": [
-        "circulação do ar",
-        "pscpp",
-        "meteorologia-oceanografia",
-        "met-0",
-        "met-0::integral",
-        "circulacao-do-ar",
-        "pscpp-focused-extension-v7",
-        "dpc-caso-aplicado"
-      ],
-      "provenance": {
-        "method": "pscpp-focused-extension-v7",
-        "derived_from_question_ids": [
-          "MEO-0810"
-        ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023; foco Arte Naval e Meteorologia"
-      },
-      "topic_code": "PSCPP.V7.CASO.1035",
-      "question": "O Prático Lúcia encontra-se preparando uma manobra e acompanha continuamente carta sinótica, meteoromarinha e observações de bordo. Ao revisar o tópico “Circulação do ar” em “Meteorologia: noções básicas”, depara-se com a seguinte questão técnica: Em uma situação operacional de navegação, no cenário 1 de Circulação do ar, Cavado é uma região alongada de? Assinale a alternativa correta.",
-      "options": [
-        {
-          "key": "A",
-          "text": "pressão relativamente alta"
-        },
-        {
-          "key": "B",
-          "text": "temperatura constante"
-        },
-        {
-          "key": "C",
-          "text": "corrente marítima nula"
-        },
-        {
-          "key": "D",
-          "text": "salinidade máxima"
-        },
-        {
-          "key": "E",
-          "text": "pressão relativamente baixa"
-        }
-      ],
-      "correct_answer": "E",
-      "explanation": "Cavado é uma extensão alongada de baixa pressão."
-    },
-    {
-      "id": "MEO-1221",
-      "subject": "Meteorologia e Oceanografia",
-      "module": "10. Pressão atmosférica",
-      "topic": "Pressão atmosférica",
-      "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
-      "taxonomy": {
-        "subject_id": "V",
-        "subject_slug": "meteorologia-oceanografia",
-        "bibliography_id": "miguens-met",
-        "chapter_id": "miguens-met::ch45",
-        "topic_id": "V-miguens-met-ch45-10-pressao-atmosferica",
-        "subtopic_id": null
-      },
-      "tracking": {
-        "subject_slug": "meteorologia-oceanografia",
-        "work": {
-          "id": "miguens-met",
-          "title": "MIGUENS — Navegação: a Ciência e a Arte, Volume III",
-          "author": "MIGUENS, Altineu Pires"
-        },
-        "chapter": {
-          "id": "miguens-met::ch45",
-          "number": "ch45",
-          "title": "Capítulo 45 – Noções de Meteorologia para Navegantes",
-          "label": "Capítulo 45 – Noções de Meteorologia para Navegantes"
-        },
-        "section": "Capítulo 45 – Noções de Meteorologia para Navegantes",
-        "module": "10. Pressão atmosférica",
-        "topic": {
-          "id": "V-miguens-met-ch45-10-pressao-atmosferica",
-          "title": "Pressão atmosférica"
-        }
-      },
-      "source": {
-        "author": "MIGUENS, Altineu Pires",
-        "title": "Navegação: a ciência e a arte — Volume III",
-        "edition": "1ª revisão, 2026",
-        "locator": "Capítulo 45, seção 45.2.1 — Pressão"
-      },
-      "tags": [
-        "pressão atmosférica",
-        "pscpp",
-        "meteorologia-oceanografia",
-        "miguens-met",
-        "miguens-met::ch45",
-        "pressao-atmosferica",
-        "pscpp-focused-extension-v7",
-        "dpc-caso-aplicado"
-      ],
-      "provenance": {
-        "method": "pscpp-focused-extension-v7",
-        "derived_from_question_ids": [
-          "MEO-0436"
-        ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023; foco Arte Naval e Meteorologia"
-      },
-      "topic_code": "PSCPP.V7.CASO.1036",
-      "question": "O Prático Francisco encontra-se preparando uma manobra e acompanha continuamente carta sinótica, meteoromarinha e observações de bordo. Ao revisar o tópico “Pressão atmosférica” em “Navegação: a ciência e a arte — Volume III”, depara-se com a seguinte questão técnica: No estudo de Pressão atmosférica, item 1, Isóbaras mais próximas indicam, em geral? Assinale a alternativa correta.",
-      "options": [
-        {
-          "key": "A",
-          "text": "maior gradiente horizontal de pressão"
-        },
-        {
-          "key": "B",
-          "text": "menor gradiente de pressão"
-        },
-        {
-          "key": "C",
-          "text": "ausência de vento"
-        },
-        {
-          "key": "D",
-          "text": "maior visibilidade obrigatória"
-        },
-        {
-          "key": "E",
-          "text": "menor umidade relativa obrigatória"
-        }
-      ],
-      "correct_answer": "A",
-      "explanation": "O gradiente é maior quando a mesma variação de pressão ocorre em menor distância."
-    },
-    {
-      "id": "MEO-1222",
-      "subject": "Meteorologia e Oceanografia",
-      "module": "3. Correntes de densidade e correntes costeiras",
-      "topic": "Correntes de densidade e correntes costeiras",
-      "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
-      "taxonomy": {
-        "subject_id": "V",
-        "subject_slug": "meteorologia-oceanografia",
-        "bibliography_id": "met-1",
-        "chapter_id": "met-1::integral",
-        "topic_id": "V-met-1-integral-3-correntes-de-densidade-e-correntes-costeiras",
-        "subtopic_id": null
-      },
-      "tracking": {
-        "subject_slug": "meteorologia-oceanografia",
-        "work": {
-          "id": "met-1",
-          "title": "LOBO & SOARES — Meteorologia e Oceanografia, 4ª ed.",
-          "author": "LOBO, Paulo Roberto Valgas; SOARES, Carlos Alberto"
-        },
-        "chapter": {
-          "id": "met-1::integral",
-          "number": "integral",
-          "title": "Publicação indicada — sem capítulos delimitados no Anexo 2-B",
-          "label": "Publicação indicada — sem capítulos delimitados no Anexo 2-B"
-        },
-        "section": "Publicação indicada — sem capítulos delimitados no Anexo 2-B",
-        "module": "3. Correntes de densidade e correntes costeiras",
-        "topic": {
-          "id": "V-met-1-integral-3-correntes-de-densidade-e-correntes-costeiras",
-          "title": "Correntes de densidade e correntes costeiras"
-        }
-      },
-      "source": {
-        "author": "LOBO, Paulo Roberto Valgas; SOARES, Carlos Alberto",
-        "title": "Meteorologia e oceanografia",
-        "edition": "4. ed., Rio de Janeiro, 2019",
-        "locator": "Capítulo X — Correntes Oceanicas e Costeiras"
-      },
-      "tags": [
-        "correntes de densidade e correntes costeiras",
-        "pscpp",
-        "meteorologia-oceanografia",
-        "met-1",
-        "met-1::integral",
-        "correntes-de-densidade-e-correntes-costeiras",
-        "pscpp-focused-extension-v7",
-        "dpc-caso-aplicado"
-      ],
-      "provenance": {
-        "method": "pscpp-focused-extension-v7",
-        "derived_from_question_ids": [
-          "MEO-0102"
-        ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023; foco Arte Naval e Meteorologia"
-      },
-      "topic_code": "PSCPP.V7.CASO.1037",
-      "question": "O Prático Mariza encontra-se preparando uma manobra e acompanha continuamente carta sinótica, meteoromarinha e observações de bordo. Ao revisar o tópico “Correntes de densidade e correntes costeiras” em “Meteorologia e oceanografia”, depara-se com a seguinte questão técnica: Ao interpretar informações de Correntes de densidade e correntes costeiras em um produto ou observação marítima, caso 1, Uma corrente costeira pode ser fortemente influenciada por? Assinale a alternativa correta.",
-      "options": [
-        {
-          "key": "A",
-          "text": "somente pela rotação da hélice dos navios"
-        },
-        {
-          "key": "B",
-          "text": "vento, configuração da costa, maré e gradientes de densidade"
-        },
-        {
-          "key": "C",
-          "text": "apenas pela longitude geográfica"
-        },
-        {
-          "key": "D",
-          "text": "somente por ondas sísmicas"
-        },
-        {
-          "key": "E",
-          "text": "exclusivamente pela fase lunar"
-        }
-      ],
-      "correct_answer": "B",
-      "explanation": "Nas zonas costeiras, vários forçantes atuam simultaneamente sobre o escoamento."
-    },
-    {
-      "id": "MEO-1223",
-      "subject": "Meteorologia e Oceanografia",
-      "module": "21. Interpretação de informações meteorológicas",
-      "topic": "Interpretação de informações meteorológicas",
-      "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
-      "taxonomy": {
-        "subject_id": "V",
-        "subject_slug": "meteorologia-oceanografia",
-        "bibliography_id": "normam701",
-        "chapter_id": "normam701::integral",
-        "topic_id": "V-normam701-integral-21-interpretacao-de-informacoes-meteorologicas",
-        "subtopic_id": null
-      },
-      "tracking": {
-        "subject_slug": "meteorologia-oceanografia",
-        "work": {
-          "id": "normam701",
-          "title": "NORMAM-701/DHN",
-          "author": "MARINHA DO BRASIL — DIRETORIA DE HIDROGRAFIA E NAVEGAÇÃO"
-        },
-        "chapter": {
-          "id": "normam701::integral",
-          "number": "integral",
-          "title": "Publicação indicada — sem recorte adicional no Anexo 2-B",
-          "label": "Publicação indicada — sem recorte adicional no Anexo 2-B"
-        },
-        "section": "Publicação indicada — sem recorte adicional no Anexo 2-B",
-        "module": "21. Interpretação de informações meteorológicas",
-        "topic": {
-          "id": "V-normam701-integral-21-interpretacao-de-informacoes-meteorologicas",
-          "title": "Interpretação de informações meteorológicas"
-        }
-      },
-      "source": {
-        "author": "MARINHA DO BRASIL — DIRETORIA DE HIDROGRAFIA E NAVEGAÇÃO",
-        "title": "NORMAM-701/DHN — Normas da Autoridade Marítima para as Atividades de Meteorologia Marítima",
-        "edition": "versão disponível no pacote de fontes",
-        "locator": "Seções sobre METEOROMARINHA, avisos de mau tempo, vento, ondas e visibilidade"
-      },
-      "tags": [
-        "interpretação de informações meteorológicas",
-        "pscpp",
-        "meteorologia-oceanografia",
-        "normam701",
-        "normam701::integral",
-        "interpretacao-de-informacoes-meteorologicas",
-        "pscpp-focused-extension-v7",
-        "dpc-caso-aplicado"
-      ],
-      "provenance": {
-        "method": "pscpp-focused-extension-v7",
-        "derived_from_question_ids": [
+          "MEO-1157",
+          "MEO-0983",
+          "MET-0002",
+          "MEO-1153",
           "MEO-0982"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023; foco Arte Naval e Meteorologia"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "MEO-1223",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V7.CASO.1038",
-      "question": "O Prático Ari encontra-se preparando uma manobra e acompanha continuamente carta sinótica, meteoromarinha e observações de bordo. Ao revisar o tópico “Interpretação de informações meteorológicas” em “NORMAM-701/DHN — Normas da Autoridade Marítima para as Atividades de Meteorologia Marítima”, depara-se com a seguinte questão técnica: Na comparação técnica de conceitos de Interpretação de informações meteorológicas, cenário 1, qual alternativa completa corretamente: Segundo a NORMAM-701 do pacote, a previsão do METEOROMARINHA inclui parâmetros como? Assinale a alternativa correta.",
+      "topic_code": "PSCPP.V8.VF5.00024",
+      "question": "Com base em “NORMAM-701/DHN — Normas da Autoridade Marítima para as Atividades de Meteorologia Marítima”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) No contexto de “Interpretação de informações meteorológicas”, a associação “apenas maré local” está correta.\n( ) Sobre “Interpretação de informações meteorológicas”, considere a seguinte proposição: divulgar condições meteorológicas ou oceanográficas adversas previstas nas áreas cobertas.\n( ) No contexto de “METAREA V”, a associação “METAREA V” está correta.\n( ) Sobre “Interpretação de informações meteorológicas”, considere a seguinte proposição: um boletim meteorológico marítimo da Marinha do Brasil com análise e previsão para áreas marítimas.\n( ) No contexto de “Interpretação de informações meteorológicas”, a associação “apenas posição GNSS” está correta.",
       "options": [
         {
           "key": "A",
-          "text": "somente temperatura da praça de máquinas"
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "B",
-          "text": "apenas maré e declinação magnética"
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "C",
-          "text": "tempo à superfície, ventos, ondas e visibilidade horizontal"
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
         },
         {
           "key": "D",
-          "text": "somente salinidade e pH"
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "E",
-          "text": "apenas posição GNSS"
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
         }
       ],
       "correct_answer": "C",
-      "explanation": "A norma explicita previsão de tempo, ventos, ondas e visibilidade."
+      "explanation": "A sequência correta é a alternativa C, conforme Seções sobre METEOROMARINHA, avisos de mau tempo, vento, ondas e visibilidade."
     },
     {
       "id": "MEO-1224",
@@ -110534,8 +110646,8 @@
       "module": "19. Sistemas tropicais",
       "topic": "Sistemas tropicais",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "V",
         "subject_slug": "meteorologia-oceanografia",
@@ -110577,59 +110689,63 @@
         "met-0",
         "met-0::integral",
         "sistemas-tropicais",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6",
-        "pscpp-focused-extension-v7",
-        "dpc-caso-aplicado"
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-focused-extension-v7",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "MEO-0973"
+          "MEO-0896",
+          "MEO-0936",
+          "MEO-0973",
+          "MEO-0751",
+          "MEO-0756"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023; foco Arte Naval e Meteorologia"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "MEO-1224",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V7.CASO.1039",
-      "question": "O Prático Roberto encontra-se preparando uma manobra e acompanha continuamente carta sinótica, meteoromarinha e observações de bordo. Ao revisar o tópico “Sistemas tropicais” em “Meteorologia: noções básicas”, depara-se com a seguinte questão técnica: O Prático Ari, durante uma faina relacionada a “Sistemas tropicais”, precisa aplicar corretamente o conteúdo de “Meteorologia: noções básicas”. Considere o seguinte problema técnico: Ao interpretar informações de Sistemas tropicais em um produto ou observação marítima, caso 1, Os ventos alísios sopram predominantemente? Assinale a alternativa adequada. Assinale a alternativa correta.",
+      "topic_code": "PSCPP.V8.AST5.00025",
+      "question": "De acordo com o contido em “Meteorologia: noções básicas”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) Sobre “Sistemas tropicais”, considere a seguinte proposição: dos anticiclones subtropicais em direção à faixa equatorial, com componente de leste.\nII) Sobre “Sistemas sinóticos”, considere a seguinte proposição: de uma massa de ar frio sobre uma região ocupada por ar mais quente.\nIII) Sobre “Sistemas tropicais”, considere a seguinte proposição: dos anticiclones subtropicais em direção à faixa equatorial, com componente de leste.\nIV) No contexto de “Elementos meteorológicos”, a associação “à salinidade apenas” está correta.\nV) Sobre “Elementos meteorológicos”, considere a seguinte proposição: saturação completa obrigatória e ausência de energia.",
       "options": [
         {
           "key": "A",
-          "text": "do equador para os polos com componente de oeste"
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "sempre do sul para o norte"
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "somente em tempestades"
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "dos anticiclones subtropicais em direção à faixa equatorial, com componente de leste"
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "apenas sobre continentes"
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "D",
-      "explanation": "Os alísios são ventos persistentes de leste das baixas latitudes."
+      "explanation": "A combinação correta é a alternativa D, conforme o recorte Capítulos de circulação geral e sistemas atmosféricos; ZCIT e ciclones."
     },
     {
       "id": "MEO-1225",
       "subject": "Meteorologia e Oceanografia",
-      "module": "11. Ventos",
-      "topic": "Ventos",
+      "module": "15. Sistemas atmosféricos",
+      "topic": "Sistemas atmosféricos",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
       "taxonomy": {
         "subject_id": "V",
         "subject_slug": "meteorologia-oceanografia",
         "bibliography_id": "miguens-met",
         "chapter_id": "miguens-met::ch45",
-        "topic_id": "V-miguens-met-ch45-11-ventos",
+        "topic_id": "V-miguens-met-ch45-15-sistemas-atmosfericos",
         "subtopic_id": null
       },
       "tracking": {
@@ -110646,60 +110762,67 @@
           "label": "Capítulo 45 – Noções de Meteorologia para Navegantes"
         },
         "section": "Capítulo 45 – Noções de Meteorologia para Navegantes",
-        "module": "11. Ventos",
+        "module": "15. Sistemas atmosféricos",
         "topic": {
-          "id": "V-miguens-met-ch45-11-ventos",
-          "title": "Ventos"
+          "id": "V-miguens-met-ch45-15-sistemas-atmosfericos",
+          "title": "Sistemas atmosféricos"
         }
       },
       "source": {
         "author": "MIGUENS, Altineu Pires",
         "title": "Navegação: a ciência e a arte — Volume III",
         "edition": "1ª revisão, 2026",
-        "locator": "Capítulo 45, seções 45.1.3 e 45.2.4 — circulação geral e vento"
+        "locator": "Capítulo 45, seção 45.3 — ciclones, anticiclones, massas de ar, frentes e trovoadas"
       },
       "tags": [
-        "ventos",
+        "sistemas atmosféricos",
         "pscpp",
         "meteorologia-oceanografia",
         "miguens-met",
         "miguens-met::ch45",
-        "pscpp-focused-extension-v7",
-        "dpc-caso-aplicado"
+        "sistemas-atmosfericos",
+        "pscpp-cleanup-v8",
+        "cleanup-vf-5"
       ],
       "provenance": {
-        "method": "pscpp-focused-extension-v7",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "MEO-0491"
+          "MEO-0687",
+          "MEO-0692",
+          "MEO-1221",
+          "MEO-0434",
+          "MEO-0488"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023; foco Arte Naval e Meteorologia"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "MEO-1225",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V7.CASO.1040",
-      "question": "O Prático Lúcia encontra-se preparando uma manobra e acompanha continuamente carta sinótica, meteoromarinha e observações de bordo. Ao revisar o tópico “Ventos” em “Navegação: a ciência e a arte — Volume III”, depara-se com a seguinte questão técnica: Em uma situação operacional de navegação, no cenário 1 de Ventos, Perto da superfície, o atrito tende a? Assinale a alternativa correta.",
+      "topic_code": "PSCPP.V8.VF5.00026",
+      "question": "Com base em “Navegação: a ciência e a arte — Volume III”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) Sobre “Sistemas atmosféricos”, considere a seguinte proposição: ciclone tropical necessariamente.\n( ) Sobre “Sistemas atmosféricos”, considere a seguinte proposição: convecção profunda em cumulonimbus, com possibilidade de rajadas, granizo e descargas elétricas.\n( ) Sobre “Pressão atmosférica”, considere a seguinte proposição: menor umidade relativa obrigatória.\n( ) Sobre “Pressão atmosférica”, considere a seguinte proposição: registrar a evolução temporal da pressão atmosférica.\n( ) Sobre “Ventos”, considere a seguinte proposição: para a esquerda de sua trajetória.",
       "options": [
         {
           "key": "A",
-          "text": "aumentar indefinidamente a velocidade"
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "B",
-          "text": "eliminar o gradiente de pressão"
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "C",
-          "text": "inverter a rotação terrestre"
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
         },
         {
           "key": "D",
-          "text": "tornar Coriolis independente da velocidade"
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "E",
-          "text": "reduzir a velocidade do vento e alterar seu ângulo em relação às isóbaras"
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
         }
       ],
       "correct_answer": "E",
-      "explanation": "O atrito reduz a velocidade e modifica o balanço com Coriolis."
+      "explanation": "A sequência correta é a alternativa E, conforme Capítulo 45, seção 45.3 — ciclones, anticiclones, massas de ar, frentes e trovoadas."
     }
   ]
 }

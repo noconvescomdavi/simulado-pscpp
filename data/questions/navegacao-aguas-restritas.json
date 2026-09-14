@@ -145191,18 +145191,18 @@
     },
     {
       "id": "NAR-1821",
-      "subject": "navegacao-aguas-restritas",
-      "module": "Praticagem e condução em canais, rios e portos",
-      "topic": "aproximação ao berço",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "3. Praticagem e condução em canais, rios e portos",
+      "topic": "Plano de rebocadores",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "III",
         "subject_slug": "navegacao-aguas-restritas",
         "bibliography_id": "nayak-nav",
         "chapter_id": "nayak-nav::ch13",
-        "topic_id": "III-nayak-nav-ch13-aproximacao-ao-berco",
+        "topic_id": "III-nayak-nav-ch13-nar-pil-180-1-plano-de-rebocadores",
         "subtopic_id": null
       },
       "tracking": {
@@ -145219,10 +145219,10 @@
           "label": "Chapter 13"
         },
         "section": "Chapter 13",
-        "module": "Praticagem e condução em canais, rios e portos",
+        "module": "3. Praticagem e condução em canais, rios e portos",
         "topic": {
-          "id": "III-nayak-nav-ch13-aproximacao-ao-berco",
-          "title": "aproximação ao berço"
+          "id": "III-nayak-nav-ch13-nar-pil-180-1-plano-de-rebocadores",
+          "title": "Plano de rebocadores"
         }
       },
       "source": {
@@ -145232,47 +145232,57 @@
         "locator": "Chapter 13 — Manoeuvring Inside Harbour Limits"
       },
       "tags": [
+        "pil",
+        "plano-de-rebocadores",
+        "programa-14",
+        "programa-15",
+        "programa-34",
+        "programa-35",
         "navegacao-aguas-restritas",
         "nayak-nav",
         "nayak-nav::ch13",
-        "aproximacao-ao-berco",
-        "cobertura-v2",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-expansion-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "NAR-1638"
+          "NAR-0896",
+          "NAR-0902",
+          "NAR-0908",
+          "NAR-0925",
+          "NAR-1640"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "NAR-1821",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.10004",
-      "question": "O Prático Ari, durante uma faina relacionada a “aproximação ao berço”, precisa aplicar corretamente o conteúdo de “Theory and Practices of Marine Pilotage”. Considere o seguinte problema técnico: Em uma análise comparativa de Chapter 13, qual associação envolvendo “aproximação ao berço” está correta? Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.AST5.00001",
+      "question": "De acordo com o contido em “Theory and Practices of Marine Pilotage”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) Sobre “Plano de rebocadores”, considere a seguinte proposição: O emprego de rebocadores deve considerar força, direção, ponto de conexão, risco de girting e fase da manobra.\nII) Sobre “Aproximação ao berço”, considere a seguinte proposição: Estabelecer portões de velocidade e distância e abortar se a energia não puder ser dissipada.\nIII) Sobre “Critério de aborto na manobra”, considere a seguinte proposição: A omissão pode levar a continuar além do ponto em que parar ou sair deixou de ser viável.\nIV) Sobre “Corrente em manobra portuária”, considere a seguinte proposição: O requisito deve ser entendido assim: A aproximação deve permitir entrar estabilizado no eixo e no rumo requerido, considerando corrente e vento.\nV) No contexto de “emprego de rebocadores no porto”, a associação “margem de recuperação” está correta.",
       "options": [
         {
           "key": "A",
-          "text": "controle da energia de aproximação — Condução que integra espaço restrito, tráfego, vento, corrente, rebocadores, berço e capacidade de abortagem em um único plano operacional."
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "manobra dentro dos limites portuários — Planejamento que deve acordar comandos, limites operacionais, pontos de aplicação e resposta à perda de um rebocador antes da aproximação ao porto."
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "plano de rebocadores — Gatilho previamente acordado que compara posição, velocidade, falhas e ambiente para permitir abandonar a manobra enquanto ainda existe margem de recuperação."
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "aproximação ao berço — Fase em que devem ser controlados separadamente velocidade longitudinal, velocidade lateral, ângulo de aproximação e energia restante."
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "critério de aborto da manobra — Fase em que devem ser controlados separadamente velocidade longitudinal, velocidade lateral, ângulo de aproximação e energia restante."
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "D",
-      "explanation": "A associação correta é “aproximação ao berço — Fase em que devem ser controlados separadamente velocidade longitudinal, velocidade lateral, ângulo de aproximação e energia restante.”; as demais opções trocam conceitos e descrições."
+      "explanation": "A combinação correta é a alternativa D, conforme o recorte Chapter 13 — Manoeuvring Inside Harbour Limits."
     },
     {
       "id": "NAR-1822",
@@ -145545,16 +145555,16 @@
       "id": "NAR-1825",
       "subject": "III — Navegação em Águas Restritas",
       "module": "5. Equipamentos e sistemas integrados do passadiço",
-      "topic": "ENC e base do sistema",
+      "topic": "Display base e standard display",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
       "taxonomy": {
         "subject_id": "III",
         "subject_slug": "navegacao-aguas-restritas",
         "bibliography_id": "nav-doc-5",
         "chapter_id": "nav-doc-5::integral",
-        "topic_id": "III-nav-doc-5-integral-nar-eqp-155-2-enc-e-base-do-sistema",
+        "topic_id": "III-nav-doc-5-integral-nar-eqp-157-5-display-base-e-standard-display",
         "subtopic_id": null
       },
       "tracking": {
@@ -145573,64 +145583,69 @@
         "section": "Publicação indicada — sem recorte adicional no Anexo 2-B",
         "module": "5. Equipamentos e sistemas integrados do passadiço",
         "topic": {
-          "id": "III-nav-doc-5-integral-nar-eqp-155-2-enc-e-base-do-sistema",
-          "title": "ENC e base do sistema"
+          "id": "III-nav-doc-5-integral-nar-eqp-157-5-display-base-e-standard-display",
+          "title": "Display base e standard display"
         }
       },
       "source": {
         "author": "INTERNATIONAL MARITIME ORGANIZATION",
         "title": "Performance standards for ECDIS — Resolution MSC.530(106)/Rev.1",
         "edition": "2024 (arquivo fornecido)",
-        "locator": "Anexo, sections 3 and 4 — Definitions, provision and updating"
+        "locator": "Anexo, section 5 — Display of system database information"
       },
       "tags": [
         "eqp",
-        "enc-e-base-do-sistema",
-        "programa-03",
+        "display-base-e-standard-display",
+        "programa-01",
         "programa-16",
         "programa-22",
-        "programa-29",
         "programa-31",
         "programa-36",
         "navegacao-aguas-restritas",
         "nav-doc-5",
         "nav-doc-5::integral",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "pscpp-cleanup-v8",
+        "cleanup-vf-5"
       ],
       "provenance": {
-        "method": "pscpp-expansion-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "NAR-0772"
+          "NAR-0785",
+          "NAR-0790",
+          "NAR-0796",
+          "NAR-0802",
+          "NAR-0808"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "NAR-1825",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.10008",
-      "question": "O Prático Lúcia, durante uma faina relacionada a “ENC e base do sistema”, precisa aplicar corretamente o conteúdo de “Performance standards for ECDIS — Resolution MSC.530(106)/Rev.1”. Considere o seguinte problema técnico: No passadiço guarnecido para a fase crítica, qual é a conduta adequada quanto ao controle “ENC e base do sistema”? Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.VF5.00002",
+      "question": "Com base em “Performance standards for ECDIS — Resolution MSC.530(106)/Rev.1”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) Sobre “Display base e standard display”, considere a seguinte proposição: O requisito deve ser entendido assim: Apresentações de movimento verdadeiro ou relativo e estabilização pela água ou fundo mudam a interpretação dos vetores.\n( ) Sobre “Escala e overscale”, considere a seguinte proposição: O requisito deve ser entendido assim: ECDIS deve indicar quando a tela usa escala maior que a compilação dos dados ou quando existe dado mais detalhado disponível.\n( ) Sobre “Planejamento de rota no ECDIS”, considere a seguinte proposição: ECDIS deve permitir planejar segmentos retos e curvos e verificar a derrota contra perigos e áreas especiais.\n( ) Sobre “Monitoramento de rota no ECDIS”, considere a seguinte proposição: Confirmar sensores, limites e alertas e cruzar posição por meio independente.\n( ) Sobre “Alertas e indicações ECDIS”, considere a seguinte proposição: A omissão pode levar a navegar com apresentação depurada além do mínimo seguro.",
       "options": [
         {
           "key": "A",
-          "text": "Adequar escala e cobertura e investigar qualquer indicação de overscale."
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "B",
-          "text": "Verificar erros sistemáticos com alvos conhecidos antes de usar medidas como limite de segurança."
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "C",
-          "text": "Carregar cobertura oficial adequada e confirmar que dados e atualizações foram corretamente incorporados."
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
         },
         {
           "key": "D",
-          "text": "Conferir dados estáticos e posição da antena após alteração relevante."
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "E",
-          "text": "Testar transferência, cobertura, energia e competência da equipe antes da viagem."
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
         }
       ],
       "correct_answer": "C",
-      "explanation": "A ENC é dado vetorial oficial e a base do sistema resulta de sua transformação e atualizações para uso no ECDIS. Na prática, deve-se carregar cobertura oficial adequada e confirmar que dados e atualizações foram corretamente incorporados. Esse controle reduz o risco de planejar sobre dado não oficial ou base do sistema incompleta."
+      "explanation": "A sequência correta é a alternativa C, conforme Anexo, section 5 — Display of system database information."
     }
   ]
 }

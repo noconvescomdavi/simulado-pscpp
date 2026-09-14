@@ -97395,16 +97395,16 @@
       "id": "COM-1231",
       "subject": "VI — Comunicações",
       "module": "Código Internacional de Sinais — Código Geral",
-      "topic": "Distress",
+      "topic": "Abandon",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "VI",
         "subject_slug": "comunicacoes",
         "bibliography_id": "ics",
         "chapter_id": "ics::chapters",
-        "topic_id": "VI-ics-chapters-com-cis-ch2-distress-distress",
+        "topic_id": "VI-ics-chapters-com-cis-ch2-abandon-abandon",
         "subtopic_id": null
       },
       "tracking": {
@@ -97423,60 +97423,66 @@
         "section": "Capítulos I a V, VII, VIII, X, XI e XII",
         "module": "Código Internacional de Sinais — Código Geral",
         "topic": {
-          "id": "VI-ics-chapters-com-cis-ch2-distress-distress",
-          "title": "Distress"
+          "id": "VI-ics-chapters-com-cis-ch2-abandon-abandon",
+          "title": "Abandon"
         }
       },
       "source": {
         "author": "National Imagery and Mapping Agency / IMCO",
         "title": "International Code of Signals for Visual, Sound, and Radio Communications",
         "edition": "United States Edition 1969, revised 2003 (versão autorizada pelo usuário)",
-        "locator": "Chapter 2, Seção temática — Distress, sinal EA"
+        "locator": "Chapter 2, Seção temática — Abandon, sinal AC"
       },
       "tags": [
         "International Code of Signals",
-        "Distress",
-        "EA",
+        "Abandon",
+        "AC",
         "comunicacoes",
         "ics",
         "ics::chapters",
-        "distress",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "abandon",
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-expansion-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "COM-0690"
+          "COM-0651",
+          "COM-0656",
+          "COM-0661",
+          "COM-0666",
+          "COM-0671"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "COM-1231",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.10004",
-      "question": "O Prático Ari, durante uma faina relacionada a “Distress”, precisa aplicar corretamente o conteúdo de “International Code of Signals for Visual, Sound, and Radio Communications”. Considere o seguinte problema técnico: Em Distress, qual designação transmite a ideia “Have you sighted or heard of a vessel in distress? (Approximate position lat… long… or bearing… from place indicated, distance…).”? Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.AST5.00001",
+      "question": "De acordo com o contido em “International Code of Signals for Visual, Sound, and Radio Communications”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) No contexto de “Abandon”, a associação “I am abandoning my vessel.” está correta.\nII) No contexto de “Abandon”, a associação “AF 1” está correta.\nIII) Sobre “Assistance”, considere a seguinte proposição: I require immediate assistance; I have sprung a leak.\nIV) No contexto de “Assistance”, a associação “CV 3” está correta.\nV) No contexto de “Assistance”, a associação “Boat/raft is damaged.” está correta.",
       "options": [
         {
           "key": "A",
-          "text": "EK 2"
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "EJ 1"
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "FC 4"
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "EA"
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "EG"
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "D",
-      "explanation": "No Código Internacional de Sinais, “EA” comunica “Have you sighted or heard of a vessel in distress? (Approximate position lat… long… or bearing… from place indicated, distance…).”. A identificação exata do sinal evita confundi-lo com grupos próximos do mesmo capítulo."
+      "explanation": "A combinação correta é a alternativa D, conforme o recorte Chapter 2, Seção temática — Abandon, sinal AC."
     },
     {
       "id": "COM-1232",
@@ -97755,8 +97761,8 @@
       "module": "IMO SMCP — Introdução e organização",
       "topic": "princípios e procedimentos gerais do SMCP",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
       "taxonomy": {
         "subject_id": "VI",
         "subject_slug": "comunicacoes",
@@ -97789,52 +97795,58 @@
         "author": "International Maritime Organization (IMO)",
         "title": "IMO Standard Marine Communication Phrases",
         "edition": "Resolution A.918(22), adopted 29 November 2001",
-        "locator": "Introduction, item 4"
+        "locator": "Introduction, item 2"
       },
       "tags": [
         "SMCP",
         "procedimentos gerais",
-        "block language",
+        "organização por status STCW",
         "comunicacoes",
         "smcp",
         "smcp::s0",
         "principios-e-procedimentos-gerais-do-smcp",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "pscpp-cleanup-v8",
+        "cleanup-vf-5"
       ],
       "provenance": {
-        "method": "pscpp-expansion-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "COM-0214"
+          "COM-0209",
+          "COM-0214",
+          "COM-0219",
+          "COM-0198",
+          "COM-0203"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "COM-1235",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.10008",
-      "question": "O Prático Lúcia, durante uma faina relacionada a “princípios e procedimentos gerais do SMCP”, precisa aplicar corretamente o conteúdo de “IMO Standard Marine Communication Phrases”. Considere o seguinte problema técnico: Durante uma comunicação marítima, foi empregado “block language”. Segundo princípios e procedimentos gerais do SMCP, isso indica: Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.VF5.00002",
+      "question": "Com base em “IMO Standard Marine Communication Phrases”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) Sobre “princípios e procedimentos gerais do SMCP”, considere a seguinte proposição: não pretende substituir o International Code of Signals.\n( ) Sobre “princípios e procedimentos gerais do SMCP”, considere a seguinte proposição: pode omitir artigos e verbos funcionais sob pressão de tempo ou estresse.\n( ) No contexto de “princípios e procedimentos gerais do SMCP”, a associação “parênteses” está correta.\n( ) No contexto de “princípios e procedimentos gerais do SMCP”, a associação “objetivo de segurança” está correta.\n( ) Sobre “princípios e procedimentos gerais do SMCP”, considere a seguinte proposição: atende aos requisitos de comunicação verbal da STCW e da SOLAS, conforme emendadas.",
       "options": [
         {
           "key": "A",
-          "text": "emprega o inglês para intercâmbio verbal preciso entre marítimos de diferentes nações"
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "B",
-          "text": "auxiliar instituições de ensino marítimo a atender aos objetivos de comunicação segura"
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "C",
-          "text": "pode omitir artigos e verbos funcionais sob pressão de tempo ou estresse"
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
         },
         {
           "key": "D",
-          "text": "message marker empregado para comunicar uma determinação"
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "E",
-          "text": "indicam parte da mensagem que pode ser acrescentada quando pertinente"
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
         }
       ],
       "correct_answer": "C",
-      "explanation": "No SMCP, “block language” corresponde a “pode omitir artigos e verbos funcionais sob pressão de tempo ou estresse”. Empregar essa associação padronizada reduz ambiguidades na comunicação marítima."
+      "explanation": "A sequência correta é a alternativa C, conforme Introduction, item 2."
     }
   ]
 }

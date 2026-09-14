@@ -19,18 +19,18 @@
 | Ocorrências | Prefixo |
 |---:|---|
 | 299 | na terminologia de arte naval, qual termo corresponde a descricao tecnica a |
-| 32 | de acordo com o contido em “arte naval, v. 2”, analise as |
-| 28 | de acordo com o contido em “shiphandling for the mariner”, analise as |
-| 24 | com base em “arte naval, v. 2”, coloque v (verdadeiro) ou f |
+| 34 | de acordo com o contido em “arte naval, v. 2”, analise as |
+| 33 | de acordo com o contido em “shiphandling for the mariner”, analise as |
+| 26 | com base em “arte naval, v. 2”, coloque v (verdadeiro) ou f |
+| 19 | com base em “shiphandling for the mariner”, coloque v (verdadeiro) ou f |
 | 17 | de acordo com o contido em “arte naval, v. 1”, analise as |
-| 16 | com base em “shiphandling for the mariner”, coloque v (verdadeiro) ou f |
 | 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
 | 12 | com base em “shiphandling for the mariner”, julgue as proposicoes a seguir |
-| 10 | com base em “arte naval, v. 1”, coloque v (verdadeiro) ou f |
+| 11 | com base em “arte naval, v. 1”, coloque v (verdadeiro) ou f |
 | 10 | de acordo com o contido em “arte naval, v. 2” (cap. 12, |
-| 10 | assinale a opcao que completa corretamente as lacunas abaixo, tendo como referencia |
 | 9 | de acordo com o contido em “resolution a.1045(27): pilot transfer arrangements”, analise |
 | 7 | de acordo com o contido em “resolution a.1045(27): pilot transfer arrangements” (anexo, |
+| 7 | assinale a opcao que completa corretamente as lacunas abaixo, tendo como referencia |
 | 6 | com base no conteudo de “arte naval, v. 2”, em cap. 10, |
 | 6 | na preparacao para uma manobra, o oficial revisa o conceito definido como |
 | 5 | de acordo com o contido em “arte naval, v. 2” (cap. 10, |
@@ -62,7 +62,7 @@
 
 | Ocorrências | Prefixo |
 |---:|---|
-| 83 | de acordo com o contido em “principles of naval architecture, volume iii”, |
+| 84 | de acordo com o contido em “principles of naval architecture, volume iii”, |
 | 43 | com base em “principles of naval architecture, volume iii”, julgue as proposicoes |
 | 42 | de acordo com o contido em “principles of naval architecture, volume ii”, |
 | 39 | de acordo com o contido em “ship resistance and flow”, analise as |
@@ -85,8 +85,8 @@
 | 12 | de acordo com o contido em “naval shiphandling”, analise as afirmativas abaixo |
 | 12 | em uma avaliacao do passadico, ao revisar o plano de manobra, no |
 | 12 | durante a preparacao do pratico, em uma avaliacao do passadico, ao revisar |
+| 11 | com base em “practical ship hydrodynamics”, coloque v (verdadeiro) ou f (falso) |
 | 11 | com base em “standards for ship manoeuvrability”, coloque v (verdadeiro) ou f |
-| 11 | de acordo com o contido em “naval shiphandling”, analise as afirmativas abaixo, |
 
 ## navegacao-aguas-restritas
 
@@ -194,11 +194,11 @@
 
 | Ocorrências | Prefixo |
 |---:|---|
-| 164 | de acordo com o contido em “meteorologia e oceanografia”, analise as afirmativas |
-| 121 | de acordo com o contido em “navegacao: a ciencia e a arte |
-| 119 | com base em “meteorologia e oceanografia”, coloque v (verdadeiro) ou f (falso) |
-| 108 | de acordo com o contido em “meteorologia: nocoes basicas”, analise as afirmativas |
-| 100 | com base em “navegacao: a ciencia e a arte — volume iii”, |
+| 169 | de acordo com o contido em “meteorologia e oceanografia”, analise as afirmativas |
+| 123 | com base em “meteorologia e oceanografia”, coloque v (verdadeiro) ou f (falso) |
+| 122 | de acordo com o contido em “navegacao: a ciencia e a arte |
+| 113 | de acordo com o contido em “meteorologia: nocoes basicas”, analise as afirmativas |
+| 104 | com base em “navegacao: a ciencia e a arte — volume iii”, |
 | 68 | com base em “meteorologia: nocoes basicas”, julgue as proposicoes a seguir e |
 | 49 | com base em “meteorologia e oceanografia”, julgue as proposicoes a seguir e |
 | 30 | no briefing conduzido antes da faina, durante uma analise tecnica de bordo, |
@@ -208,14 +208,14 @@
 | 18 | durante a preparacao do pratico, em uma avaliacao do passadico, ao revisar |
 | 15 | durante um briefing tecnico, de acordo com o contido em “meteorologia e |
 | 15 | durante uma analise tecnica de bordo, durante a preparacao do pratico, em |
+| 14 | com base em “normam-701/dhn — normas da autoridade maritima para as atividades |
 | 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
 | 11 | de acordo com o contido em “meteorologia e oceanografia” (capitulo viii — |
 | 11 | durante uma analise tecnica de bordo, de acordo com o contido em |
-| 11 | com base em “normam-701/dhn — normas da autoridade maritima para as atividades |
-| 10 | de acordo com o contido em “normam-701/dhn — normas da autoridade maritima |
+| 11 | de acordo com o contido em “normam-701/dhn — normas da autoridade maritima |
+| 10 | com base em “meteorologia: nocoes basicas”, coloque v (verdadeiro) ou f (falso) |
 | 10 | sobre capitulo 45 – nocoes de meteorologia para navegantes, analise as afirmativas |
 | 10 | assinale a opcao que completa corretamente as lacunas abaixo, tendo como referencia |
-| 9 | com base em “meteorologia: nocoes basicas”, coloque v (verdadeiro) ou f (falso) |
 | 8 | em uma revisao tecnica conduzida antes da manobra, considere especificamente o seguinte |
 | 8 | analise as quatro proposicoes sobre publicacao indicada — sem capitulos delimitados no |
 | 7 | durante uma analise tecnica de bordo, considerando o conteudo de “meteorologia e |
@@ -240,15 +240,15 @@
 |---:|---|
 | 22 | de acordo com o contido em “international code of signals”, analise as |
 | 22 | com base em “international code of signals for visual, sound, and radio |
-| 18 | de acordo com o contido em “international code of signals for visual, |
+| 19 | de acordo com o contido em “international code of signals for visual, |
 | 16 | com base no conteudo de “international code of signals for visual, sound, |
 | 16 | de acordo com o contido em “imo standard marine communication phrases”, analise |
 | 14 | no contexto de smcp glossary — general terms, qual descricao corresponde corretamente |
 | 13 | no contexto de glossario tecnico do erog, qual descricao corresponde corretamente a |
 | 12 | qual termo ou sinal de glossario tecnico do erog corresponde a seguinte |
 | 11 | ao revisar smcp glossary — general terms, um aluno encontrou o termo |
+| 11 | com base em “imo standard marine communication phrases”, coloque v (verdadeiro) ou |
 | 10 | em materia de unidade 3 — gmdss, assinale a definicao tecnicamente correta |
-| 10 | com base em “imo standard marine communication phrases”, coloque v (verdadeiro) ou |
 | 9 | considerando secao geral — distress; casualties; aids to navigation; manoeuvres; pilot, qual |
 | 9 | de acordo com o contido em “especial de radioperador geral (erog)”, analise |
 | 8 | no contexto de secao geral — distress; casualties; aids to navigation; manoeuvres; |
@@ -290,7 +290,7 @@
 | 31 | ao consultar “module 2 — fatigue and the company”, qual item em |
 | 30 | no topico “module 3 — fatigue and the seafarer” das guidelines on |
 | 27 | com base no conteudo de “planejamento portuario: recomendacoes para acessos nauticos”, em |
-| 23 | com base em “planejamento portuario: recomendacoes para acessos nauticos”, coloque v (verdadeiro) |
+| 24 | com base em “planejamento portuario: recomendacoes para acessos nauticos”, coloque v (verdadeiro) |
 | 22 | com base em “ship/port interface: list of publications relevant to the ship/port |
 | 22 | ao consultar “module 5 — fatigue and ship design”, qual item em |
 | 18 | na lista de publicacoes da interface navio/porto, em qual subject area esta |

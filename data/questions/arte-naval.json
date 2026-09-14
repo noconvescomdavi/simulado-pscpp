@@ -101033,16 +101033,16 @@
       "id": "ANV-1331",
       "subject": "Arte Naval",
       "module": "Treinamento de shiphandling",
-      "topic": "simulador de manobra",
+      "topic": "briefing e debriefing",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "II",
         "subject_slug": "arte-naval",
         "bibliography_id": "macelrevey",
         "chapter_id": "macelrevey::ch10",
-        "topic_id": "old-195",
+        "topic_id": "old-196",
         "subtopic_id": null
       },
       "tracking": {
@@ -101058,59 +101058,65 @@
           "title": "Training",
           "label": "Capítulo 10 - Training"
         },
-        "section": "cap. 10, Shiphandling Simulators",
+        "section": "cap. 10, Briefing and Debriefing Sessions",
         "module": "Treinamento de shiphandling",
         "topic": {
-          "id": "old-195",
-          "title": "simulador de manobra"
+          "id": "old-196",
+          "title": "briefing e debriefing"
         }
       },
       "source": {
         "author": "MacELREVEY, Daniel H.; MacELREVEY, Daniel E.",
         "title": "Shiphandling for the Mariner",
         "edition": "4. ed., 2004",
-        "locator": "cap. 10, Shiphandling Simulators"
+        "locator": "cap. 10, Briefing and Debriefing Sessions"
       },
       "tags": [
         "Treinamento de shiphandling",
-        "simulador de manobra",
-        "Associação técnica",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "briefing e debriefing",
+        "Identificação técnica",
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-expansion-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "ANV-1130"
+          "ANV-0456",
+          "ANV-0933",
+          "ANV-1094",
+          "ANV-1123",
+          "ANV-1142"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "ANV-1331",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.10004",
-      "question": "O Prático Ari, durante uma faina relacionada a “simulador de manobra”, precisa aplicar corretamente o conteúdo de “Shiphandling for the Mariner”. Considere o seguinte problema técnico: A equipe precisa confirmar o significado técnico de “simulador de manobra”. Qual opção apresenta esse significado? Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.AST5.00001",
+      "question": "De acordo com o contido em “Shiphandling for the Mariner”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) No contexto de “briefing e debriefing”, a associação “briefing e debriefing” está correta.\nII) No contexto de “simulador de manobra”, a associação “simulador de manobra” está correta.\nIII) No contexto de “simulador de manobra”, a associação “simulador de manobra” está correta.\nIV) No contexto de “briefing e debriefing”, a associação “backing and filling” está correta.\nV) Sobre “simulador de manobra”, considere a seguinte proposição: preparação do exercício seguida de análise estruturada do desempenho.",
       "options": [
         {
           "key": "A",
-          "text": "preparação do exercício seguida de análise estruturada do desempenho"
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "conjunto de manobras práticas para reconhecer a resposta real do navio"
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "curva com grande ângulo de leme usada para observar giro e perda de velocidade"
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "ambiente de treinamento que reproduz respostas do navio e cenário operacional"
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "alternância coordenada de máquina e leme para girar com espaço limitado"
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "D",
-      "explanation": "“simulador de manobra” corresponde a ambiente de treinamento que reproduz respostas do navio e cenário operacional. A referência acrescenta que permite praticar decisões e emergências, mas não elimina a necessidade de experiência real."
+      "explanation": "A combinação correta é a alternativa D, conforme o recorte cap. 10, Briefing and Debriefing Sessions."
     },
     {
       "id": "ANV-1332",
@@ -101369,8 +101375,8 @@
       "module": "Treinamento de shiphandling",
       "topic": "briefing e debriefing",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
       "taxonomy": {
         "subject_id": "II",
         "subject_slug": "arte-naval",
@@ -101409,42 +101415,48 @@
         "Treinamento de shiphandling",
         "briefing e debriefing",
         "Identificação contextualizada",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "pscpp-cleanup-v8",
+        "cleanup-vf-5"
       ],
       "provenance": {
-        "method": "pscpp-expansion-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "ANV-1148"
+          "ANV-1095",
+          "ANV-1130",
+          "ANV-1143",
+          "ANV-0498",
+          "ANV-1027"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "ANV-1335",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.10008",
-      "question": "O Prático Lúcia, durante uma faina relacionada a “briefing e debriefing”, precisa aplicar corretamente o conteúdo de “Shiphandling for the Mariner”. Considere o seguinte problema técnico: Durante o planejamento de uma operação, foi apresentada a seguinte descrição técnica: preparação do exercício seguida de análise estruturada do desempenho. Além disso, transforma a simulação em aprendizagem ao ligar objetivos, ações, resultados e correções. Qual termo identifica corretamente o conceito? Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.VF5.00002",
+      "question": "Com base em “Shiphandling for the Mariner”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) No contexto de “briefing e debriefing”, a associação “master's trials” está correta.\n( ) Sobre “simulador de manobra”, considere a seguinte proposição: ambiente de treinamento que reproduz respostas do navio e cenário operacional.\n( ) Sobre “briefing e debriefing”, considere a seguinte proposição: preparação do exercício seguida de análise estruturada do desempenho.\n( ) No contexto de “simulador de manobra”, a associação “simulador de manobra” está correta.\n( ) No contexto de “simulador de manobra”, a associação “master's trials” está correta.",
       "options": [
         {
           "key": "A",
-          "text": "simulador de manobra"
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "B",
-          "text": "master's trials"
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "C",
-          "text": "briefing e debriefing"
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
         },
         {
           "key": "D",
-          "text": "hard turn em baixa velocidade"
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "E",
-          "text": "backing and filling"
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
         }
       ],
       "correct_answer": "C",
-      "explanation": "“briefing e debriefing” corresponde a preparação do exercício seguida de análise estruturada do desempenho. A referência acrescenta que transforma a simulação em aprendizagem ao ligar objetivos, ações, resultados e correções."
+      "explanation": "A sequência correta é a alternativa C, conforme cap. 10, Briefing and Debriefing Sessions."
     },
     {
       "id": "ANV-1336",
@@ -103535,16 +103547,16 @@
       "id": "ANV-1360",
       "subject": "Arte Naval",
       "module": "Atracação",
-      "topic": "estimativa de baixa velocidade",
+      "topic": "detecção do movimento lateral",
       "difficulty": "Difícil",
-      "style": "Preenchimento de lacunas",
-      "question_type": "Preenchimento de lacunas",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "II",
         "subject_slug": "arte-naval",
         "bibliography_id": "macelrevey",
         "chapter_id": "macelrevey::ch5",
-        "topic_id": "old-176",
+        "topic_id": "old-177",
         "subtopic_id": null
       },
       "tracking": {
@@ -103560,78 +103572,80 @@
           "title": "Docking",
           "label": "Capítulo 5 - Docking"
         },
-        "section": "cap. 5, Measuring Slow Rates of Speed",
+        "section": "cap. 5, Detecting Lateral Motion",
         "module": "Atracação",
         "topic": {
-          "id": "old-176",
-          "title": "estimativa de baixa velocidade"
+          "id": "old-177",
+          "title": "detecção do movimento lateral"
         }
       },
       "source": {
         "author": "MacELREVEY, Daniel H.; MacELREVEY, Daniel E.",
         "title": "Shiphandling for the Mariner",
         "edition": "4. ed., 2004",
-        "locator": "cap. 5, Measuring Slow Rates of Speed"
+        "locator": "cap. 5, Detecting Lateral Motion"
       },
       "tags": [
         "Atracação",
-        "estimativa de baixa velocidade",
-        "Identificação contextualizada",
-        "pscpp-focused-extension-v7",
-        "dpc-lacunas-5"
+        "detecção do movimento lateral",
+        "Identificação técnica",
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-focused-extension-v7",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "ANV-1045",
-          "ANV-1048",
-          "ANV-1081",
-          "ANV-0354",
-          "ANV-0467"
+          "ANV-0388",
+          "ANV-0853",
+          "ANV-1014",
+          "ANV-1079",
+          "ANV-0354"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023; foco Arte Naval e Meteorologia"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "ANV-1360",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V7.LAC5.1025",
-      "question": "Assinale a opção que completa corretamente as lacunas abaixo, tendo como referência “Shiphandling for the Mariner”:\nI) Uma equipe de bordo registrou o seguinte elemento ou efeito: avaliação do seguimento por referências externas e instrumentos sensíveis. Além disso, é crítica porque pequenas velocidades podem não ser percebidas visualmente até tarde. Qual é a nomenclatura técnica correspondente = ______\nII) Uma equipe de bordo registrou o seguinte elemento ou efeito: uso de pequenas ações oportunas em vez de força excessiva. Além disso, preserva opções e reduz a energia que terá de ser dissipada junto ao cais. Qual é a nomenclatura técnica correspondente = ______\nIII) Qual das descrições apresentadas corresponde a “quickwater”, conforme a referência indicada = ______\nIV) Na terminologia de Arte Naval, qual termo corresponde à descrição técnica a seguir: avaliação do seguimento por referências externas e instrumentos sensíveis = ______\nV) Na terminologia de Arte Naval, qual termo corresponde à descrição técnica a seguir: uso de pequenas ações oportunas em vez de força excessiva = ______",
+      "topic_code": "PSCPP.V8.AST5.00003",
+      "question": "De acordo com o contido em “Shiphandling for the Mariner”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) No contexto de “detecção do movimento lateral”, a associação “quickwater” está correta.\nII) Sobre “estimativa de baixa velocidade”, considere a seguinte proposição: avaliação do seguimento por referências externas e instrumentos sensíveis.\nIII) Sobre “finesse na atracação”, considere a seguinte proposição: avaliação do seguimento por referências externas e instrumentos sensíveis.\nIV) Sobre “estimativa de baixa velocidade”, considere a seguinte proposição: avaliação do seguimento por referências externas e instrumentos sensíveis.\nV) Sobre “estimativa de baixa velocidade”, considere a seguinte proposição: estimativa de baixa velocidade.",
       "options": [
         {
           "key": "A",
-          "text": "finesse na atracação — água acelerada pela máquina que alcança leme ou casco e altera a resposta — estimativa de baixa velocidade — finesse na atracação — estimativa de baixa velocidade"
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "finesse na atracação — estimativa de baixa velocidade — estimativa de baixa velocidade — água acelerada pela máquina que alcança leme ou casco e altera a resposta — finesse na atracação"
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "água acelerada pela máquina que alcança leme ou casco e altera a resposta — estimativa de baixa velocidade — estimativa de baixa velocidade — finesse na atracação — finesse na atracação"
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "estimativa de baixa velocidade — finesse na atracação — finesse na atracação — estimativa de baixa velocidade — água acelerada pela máquina que alcança leme ou casco e altera a resposta"
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "estimativa de baixa velocidade — finesse na atracação — água acelerada pela máquina que alcança leme ou casco e altera a resposta — estimativa de baixa velocidade — finesse na atracação"
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "E",
-      "explanation": "A sequência correta é a alternativa E, de acordo com cap. 5, Measuring Slow Rates of Speed."
+      "explanation": "A combinação correta é a alternativa E, conforme o recorte cap. 5, Detecting Lateral Motion."
     },
     {
       "id": "ANV-1361",
       "subject": "Arte Naval",
       "module": "Treinamento de shiphandling",
-      "topic": "briefing e debriefing",
+      "topic": "simulador de manobra",
       "difficulty": "Difícil",
-      "style": "Preenchimento de lacunas",
-      "question_type": "Preenchimento de lacunas",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
       "taxonomy": {
         "subject_id": "II",
         "subject_slug": "arte-naval",
         "bibliography_id": "macelrevey",
         "chapter_id": "macelrevey::ch10",
-        "topic_id": "old-196",
+        "topic_id": "old-195",
         "subtopic_id": null
       },
       "tracking": {
@@ -103647,63 +103661,65 @@
           "title": "Training",
           "label": "Capítulo 10 - Training"
         },
-        "section": "cap. 10, Briefing and Debriefing Sessions",
+        "section": "cap. 10, Shiphandling Simulators",
         "module": "Treinamento de shiphandling",
         "topic": {
-          "id": "old-196",
-          "title": "briefing e debriefing"
+          "id": "old-195",
+          "title": "simulador de manobra"
         }
       },
       "source": {
         "author": "MacELREVEY, Daniel H.; MacELREVEY, Daniel E.",
         "title": "Shiphandling for the Mariner",
         "edition": "4. ed., 2004",
-        "locator": "cap. 10, Briefing and Debriefing Sessions"
+        "locator": "cap. 10, Shiphandling Simulators"
       },
       "tags": [
         "Treinamento de shiphandling",
-        "briefing e debriefing",
-        "Identificação técnica",
-        "pscpp-focused-extension-v7",
-        "dpc-lacunas-5"
+        "simulador de manobra",
+        "Associação técnica",
+        "pscpp-cleanup-v8",
+        "cleanup-vf-5"
       ],
       "provenance": {
-        "method": "pscpp-focused-extension-v7",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "ANV-0456",
-          "ANV-0697",
-          "ANV-1027",
-          "ANV-1064",
-          "ANV-1110"
+          "ANV-1063",
+          "ANV-1111",
+          "ANV-1136",
+          "ANV-1331",
+          "ANV-0697"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023; foco Arte Naval e Meteorologia"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "ANV-1361",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V7.LAC5.1026",
-      "question": "Assinale a opção que completa corretamente as lacunas abaixo, tendo como referência “Shiphandling for the Mariner”:\nI) Na terminologia de Arte Naval, qual termo corresponde à descrição técnica a seguir: preparação do exercício seguida de análise estruturada do desempenho = ______\nII) Qual alternativa descreve corretamente o significado ou a função de “simulador de manobra”. = ______\nIII) Uma equipe de bordo registrou o seguinte elemento ou efeito: ambiente de treinamento que reproduz respostas do navio e cenário operacional. Além disso, permite praticar decisões e emergências, mas não elimina a necessidade de experiência real. Qual é a nomenclatura técnica correspondente = ______\nIV) Qual das descrições apresentadas corresponde a “briefing e debriefing”, conforme a referência indicada = ______\nV) Em uma avaliação sobre capítulo 10 - Training, que alternativa estabelece a relação correta para “simulador de manobra” = ______",
+      "topic_code": "PSCPP.V8.VF5.00004",
+      "question": "Com base em “Shiphandling for the Mariner”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) Sobre “simulador de manobra”, considere a seguinte proposição: ambiente de treinamento que reproduz respostas do navio e cenário operacional.\n( ) Sobre “briefing e debriefing”, considere a seguinte proposição: preparação do exercício seguida de análise estruturada do desempenho.\n( ) No contexto de “simulador de manobra”, a associação “master's trials” está correta.\n( ) Sobre “simulador de manobra”, considere a seguinte proposição: ambiente de treinamento que reproduz respostas do navio e cenário operacional.\n( ) Sobre “simulador de manobra”, considere a seguinte proposição: redução planejada das espias para a configuração mínima necessária.",
       "options": [
         {
           "key": "A",
-          "text": "briefing e debriefing — ambiente de treinamento que reproduz respostas do navio e cenário operacional — simulador de manobra — preparação do exercício seguida de análise estruturada do desempenho — ambiente de treinamento que reproduz respostas do navio e cenário operacional"
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "B",
-          "text": "ambiente de treinamento que reproduz respostas do navio e cenário operacional — briefing e debriefing — preparação do exercício seguida de análise estruturada do desempenho — simulador de manobra — ambiente de treinamento que reproduz respostas do navio e cenário operacional"
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "C",
-          "text": "simulador de manobra — preparação do exercício seguida de análise estruturada do desempenho — briefing e debriefing — ambiente de treinamento que reproduz respostas do navio e cenário operacional — ambiente de treinamento que reproduz respostas do navio e cenário operacional"
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
         },
         {
           "key": "D",
-          "text": "preparação do exercício seguida de análise estruturada do desempenho — ambiente de treinamento que reproduz respostas do navio e cenário operacional — ambiente de treinamento que reproduz respostas do navio e cenário operacional — briefing e debriefing — simulador de manobra"
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "E",
-          "text": "ambiente de treinamento que reproduz respostas do navio e cenário operacional — simulador de manobra — preparação do exercício seguida de análise estruturada do desempenho — ambiente de treinamento que reproduz respostas do navio e cenário operacional — briefing e debriefing"
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
         }
       ],
       "correct_answer": "A",
-      "explanation": "A sequência correta é a alternativa A, de acordo com cap. 10, Briefing and Debriefing Sessions."
+      "explanation": "A sequência correta é a alternativa A, conforme cap. 10, Shiphandling Simulators."
     },
     {
       "id": "ANV-1362",
@@ -103885,8 +103901,8 @@
       "module": "Relação mestre-prático e BRM",
       "topic": "bridge resource management",
       "difficulty": "Difícil",
-      "style": "Preenchimento de lacunas",
-      "question_type": "Preenchimento de lacunas",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "II",
         "subject_slug": "arte-naval",
@@ -103925,46 +103941,48 @@
         "Relação mestre-prático e BRM",
         "bridge resource management",
         "Associação técnica",
-        "pscpp-focused-extension-v7",
-        "dpc-lacunas-5"
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-focused-extension-v7",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "ANV-1066",
-          "ANV-1112",
-          "ANV-1125",
-          "ANV-1138",
-          "ANV-1145"
+          "ANV-1145",
+          "ANV-0688",
+          "ANV-1065",
+          "ANV-1113",
+          "ANV-1138"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023; foco Arte Naval e Meteorologia"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "ANV-1364",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V7.LAC5.1029",
-      "question": "Assinale a opção que completa corretamente as lacunas abaixo, tendo como referência “Shiphandling for the Mariner”:\nI) Qual das descrições apresentadas corresponde a “bridge resource management”, conforme a referência indicada = ______\nII) Em uma avaliação sobre capítulo 11 - Master/Pilot Relationship and Bridge Resource Management, que alternativa estabelece a relação correta para “responsabilidade do comandante com prático a bordo” = ______\nIII) Para reconhecer corretamente um item do capítulo 11 da obra, considere que ele corresponde a uso coordenado de pessoas, equipamentos e informações para condução segura; além disso, inclui comunicação aberta, verificação cruzada, consciência situacional e gestão da carga de trabalho. Qual opção deve ser escolhida = ______\nIV) Na preparação para uma manobra, o oficial revisa o conceito definido como dever permanente de acompanhar a navegação e intervir quando a segurança exigir. Além disso, a presença do prático não libera mestre e equipe de suas obrigações. A que termo a definição se refere = ______\nV) Assinale a formulação compatível com o emprego ou significado de “bridge resource management”. = ______",
+      "topic_code": "PSCPP.V8.AST5.00005",
+      "question": "De acordo com o contido em “Shiphandling for the Mariner”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) Sobre “bridge resource management”, considere a seguinte proposição: uso coordenado de pessoas, equipamentos e informações para condução segura.\nII) Sobre “bridge resource management”, considere a seguinte proposição: uso coordenado de pessoas, equipamentos e informações para condução segura.\nIII) Sobre “responsabilidade do comandante com prático a bordo”, considere a seguinte proposição: dever permanente de acompanhar a navegação e intervir quando a segurança exigir.\nIV) Sobre “bridge resource management”, considere a seguinte proposição: alternância coordenada de máquina e leme para girar com espaço limitado.\nV) No contexto de “responsabilidade do comandante com prático a bordo”, a associação “bridge resource management” está correta.",
       "options": [
         {
           "key": "A",
-          "text": "responsabilidade do comandante com prático a bordo — uso coordenado de pessoas, equipamentos e informações para condução segura — dever permanente de acompanhar a navegação e intervir quando a segurança exigir — uso coordenado de pessoas, equipamentos e informações para condução segura — bridge resource management"
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "dever permanente de acompanhar a navegação e intervir quando a segurança exigir — uso coordenado de pessoas, equipamentos e informações para condução segura — responsabilidade do comandante com prático a bordo — bridge resource management — uso coordenado de pessoas, equipamentos e informações para condução segura"
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "bridge resource management — responsabilidade do comandante com prático a bordo — uso coordenado de pessoas, equipamentos e informações para condução segura — uso coordenado de pessoas, equipamentos e informações para condução segura — dever permanente de acompanhar a navegação e intervir quando a segurança exigir"
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "uso coordenado de pessoas, equipamentos e informações para condução segura — dever permanente de acompanhar a navegação e intervir quando a segurança exigir — bridge resource management — responsabilidade do comandante com prático a bordo — uso coordenado de pessoas, equipamentos e informações para condução segura"
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "uso coordenado de pessoas, equipamentos e informações para condução segura — bridge resource management — responsabilidade do comandante com prático a bordo — dever permanente de acompanhar a navegação e intervir quando a segurança exigir — uso coordenado de pessoas, equipamentos e informações para condução segura"
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "D",
-      "explanation": "A sequência correta é a alternativa D, de acordo com cap. 11, Bridge Resource Management for Shiphandlers."
+      "explanation": "A combinação correta é a alternativa D, conforme o recorte cap. 11, Bridge Resource Management for Shiphandlers."
     },
     {
       "id": "ANV-1365",
@@ -104057,16 +104075,16 @@
       "id": "ANV-1366",
       "subject": "Arte Naval",
       "module": "Classificação dos navios",
-      "topic": "classificação geral dos navios",
+      "topic": "navio de combate",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
       "taxonomy": {
         "subject_id": "II",
         "subject_slug": "arte-naval",
         "bibliography_id": "fonseca-arte-v1",
         "chapter_id": "fonseca-arte-v1::ch3",
-        "topic_id": "anv1-3.1",
+        "topic_id": "anv1-3.2b",
         "subtopic_id": null
       },
       "tracking": {
@@ -104082,74 +104100,80 @@
           "title": "Classificação dos Navios",
           "label": "Capítulo 3 - Classificação dos Navios"
         },
-        "section": "cap. 3, item 3.1",
+        "section": "cap. 3, item 3.2",
         "module": "Classificação dos navios",
         "topic": {
-          "id": "anv1-3.1",
-          "title": "classificação geral dos navios"
+          "id": "anv1-3.2b",
+          "title": "navio de combate"
         }
       },
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 1",
         "edition": "8. ed., 2019",
-        "locator": "cap. 3, item 3.1"
+        "locator": "cap. 3, item 3.2"
       },
       "tags": [
         "Classificação dos navios",
-        "classificação geral dos navios",
-        "Situação aplicada",
-        "pscpp-focused-extension-v7",
-        "dpc-caso-aplicado"
+        "navio de combate",
+        "Associação técnica",
+        "pscpp-cleanup-v8",
+        "cleanup-vf-5"
       ],
       "provenance": {
-        "method": "pscpp-focused-extension-v7",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "ANV-0975"
+          "ANV-1005",
+          "ANV-1069",
+          "ANV-0390",
+          "ANV-0823",
+          "ANV-1004"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023; foco Arte Naval e Meteorologia"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "ANV-1366",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V7.CASO.1031",
-      "question": "Durante a preparação de uma faina de convés, o Prático Ari revisa “Arte Naval, v. 1” para confirmar um detalhe de “classificação geral dos navios”. Considere a seguinte situação técnica: Considere a descrição técnica a seguir: organização dos navios segundo finalidade, material de construção do casco e sistema de propulsão. A descrição inclui ainda esta característica: quanto à finalidade, inclui navios de guerra, hidroceanográficos, mercantes, de recreio e de serviços especiais. Qual nomenclatura corresponde ao caso apresentado? Assinale a alternativa correta.",
+      "topic_code": "PSCPP.V8.VF5.00006",
+      "question": "Com base em “Arte Naval, v. 1”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) Sobre “navio de combate”, considere a seguinte proposição: navio de guerra destinado a ações ofensivas.\n( ) Sobre “classificação geral dos navios”, considere a seguinte proposição: organização dos navios segundo finalidade, material de construção do casco e sistema de propulsão.\n( ) No contexto de “navio auxiliar”, a associação “navio de combate” está correta.\n( ) Sobre “classificação geral dos navios”, considere a seguinte proposição: organização dos navios segundo finalidade, material de construção do casco e sistema de propulsão.\n( ) Sobre “navio de guerra”, considere a seguinte proposição: navio de guerra destinado a ações ofensivas.",
       "options": [
         {
           "key": "A",
-          "text": "classificação geral dos navios"
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "B",
-          "text": "navio de guerra"
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "C",
-          "text": "navio de combate"
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
         },
         {
           "key": "D",
-          "text": "navio auxiliar"
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "E",
-          "text": "tênder"
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
         }
       ],
       "correct_answer": "A",
-      "explanation": "“classificação geral dos navios” é organização dos navios segundo finalidade, material de construção do casco e sistema de propulsão; quanto à finalidade, inclui navios de guerra, hidroceanográficos, mercantes, de recreio e de serviços especiais."
+      "explanation": "A sequência correta é a alternativa A, conforme cap. 3, item 3.2."
     },
     {
       "id": "ANV-1367",
       "subject": "Arte Naval",
       "module": "Operações do navio",
-      "topic": "registro da manobra",
+      "topic": "passage plan",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "II",
         "subject_slug": "arte-naval",
         "bibliography_id": "macelrevey",
         "chapter_id": "macelrevey::ch12",
-        "topic_id": "old-200",
+        "topic_id": "old-199",
         "subtopic_id": null
       },
       "tracking": {
@@ -104165,74 +104189,80 @@
           "title": "Vessel Operations",
           "label": "Capítulo 12 - Vessel Operations"
         },
-        "section": "cap. 12, Record Keeping",
+        "section": "cap. 12, Planning the Passage",
         "module": "Operações do navio",
         "topic": {
-          "id": "old-200",
-          "title": "registro da manobra"
+          "id": "old-199",
+          "title": "passage plan"
         }
       },
       "source": {
         "author": "MacELREVEY, Daniel H.; MacELREVEY, Daniel E.",
         "title": "Shiphandling for the Mariner",
         "edition": "4. ed., 2004",
-        "locator": "cap. 12, Record Keeping"
+        "locator": "cap. 12, Planning the Passage"
       },
       "tags": [
         "Operações do navio",
-        "registro da manobra",
+        "passage plan",
         "Identificação contextualizada",
-        "pscpp-focused-extension-v7",
-        "dpc-caso-aplicado"
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-focused-extension-v7",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
+          "ANV-1140",
+          "ANV-0915",
+          "ANV-1068",
+          "ANV-1126",
           "ANV-1141"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023; foco Arte Naval e Meteorologia"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "ANV-1367",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V7.CASO.1032",
-      "question": "Durante a preparação de uma faina de convés, o Prático Sebastião revisa “Shiphandling for the Mariner” para confirmar um detalhe de “registro da manobra”. Considere a seguinte situação técnica: Na preparação para uma manobra, o oficial revisa o conceito definido como documentação de ordens, horários, posições e eventos relevantes. Além disso, preserva evidência operacional e oferece material para avaliação e melhoria futura. A que termo a definição se refere? Assinale a alternativa correta.",
+      "topic_code": "PSCPP.V8.AST5.00007",
+      "question": "De acordo com o contido em “Shiphandling for the Mariner”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) No contexto de “passage plan”, a associação “passage plan” está correta.\nII) Sobre “registro da manobra”, considere a seguinte proposição: capacidade de manobra disponível.\nIII) Sobre “registro da manobra”, considere a seguinte proposição: documentação de ordens, horários, posições e eventos relevantes.\nIV) No contexto de “passage plan”, a associação “master's trials” está correta.\nV) No contexto de “registro da manobra”, a associação “registro da manobra” está correta.",
       "options": [
         {
           "key": "A",
-          "text": "passage plan"
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "registro da manobra"
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "master's trials"
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "hard turn em baixa velocidade"
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "backing and filling"
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "B",
-      "explanation": "“registro da manobra” corresponde a documentação de ordens, horários, posições e eventos relevantes. A referência acrescenta que preserva evidência operacional e oferece material para avaliação e melhoria futura."
+      "explanation": "A combinação correta é a alternativa B, conforme o recorte cap. 12, Planning the Passage."
     },
     {
       "id": "ANV-1368",
       "subject": "Arte Naval",
-      "module": "Poleame",
-      "topic": "caçoilo",
+      "module": "Acessórios do aparelho",
+      "topic": "manilha",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
       "taxonomy": {
         "subject_id": "II",
         "subject_slug": "arte-naval",
         "bibliography_id": "fonseca-arte-v1",
         "chapter_id": "fonseca-arte-v1::ch9",
-        "topic_id": "old-006",
+        "topic_id": "old-023",
         "subtopic_id": null
       },
       "tracking": {
@@ -104248,74 +104278,80 @@
           "title": "Poleame, Aparelhos de Laborar e Acessórios",
           "label": "Capítulo 9 - Poleame, Aparelhos de Laborar e Acessórios"
         },
-        "section": "cap. 9, seção A, item 9.2.c",
-        "module": "Poleame",
+        "section": "cap. 9, seção C, item 9.31",
+        "module": "Acessórios do aparelho",
         "topic": {
-          "id": "old-006",
-          "title": "caçoilo"
+          "id": "old-023",
+          "title": "manilha"
         }
       },
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 9, seção A, item 9.2.c"
+        "locator": "cap. 9, seção C, item 9.31"
       },
       "tags": [
-        "Poleame",
-        "caçoilo",
-        "Associação conceitual",
-        "pscpp-focused-extension-v7",
-        "dpc-caso-aplicado"
+        "Acessórios do aparelho",
+        "manilha",
+        "Identificação técnica",
+        "pscpp-cleanup-v8",
+        "cleanup-vf-5"
       ],
       "provenance": {
-        "method": "pscpp-focused-extension-v7",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "ANV-0761"
+          "ANV-0418",
+          "ANV-0487",
+          "ANV-0540",
+          "ANV-0605",
+          "ANV-0663"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023; foco Arte Naval e Meteorologia"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "ANV-1368",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V7.CASO.1033",
-      "question": "Durante a preparação de uma faina de convés, o Prático Aroldo revisa “Arte Naval, v. 2” para confirmar um detalhe de “caçoilo”. Considere a seguinte situação técnica: Qual alternativa descreve corretamente o significado ou a função de “caçoilo”. Assinale a alternativa correta.",
+      "topic_code": "PSCPP.V8.VF5.00008",
+      "question": "Com base em “Arte Naval, v. 2”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) No contexto de “manilha”, a associação “macaco” está correta.\n( ) No contexto de “poleame de laborar”, a associação “poleame de laborar” está correta.\n( ) No contexto de “bucha com redutor de atrito”, a associação “bucha com redutor de atrito” está correta.\n( ) Sobre “roldana móvel”, considere a seguinte proposição: roldana cujos mancais se deslocam com a carga.\n( ) Sobre “talha patente”, considere a seguinte proposição: relação entre o trabalho útil obtido e o trabalho fornecido.",
       "options": [
         {
           "key": "A",
-          "text": "caixa na qual duas ou mais roldanas trabalham no mesmo eixo"
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "B",
-          "text": "peça com um único olho largo, dotado de caneluras"
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "C",
-          "text": "pequena peça esférica ou cilíndrica cujos furos guiam cabos"
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
         },
         {
           "key": "D",
-          "text": "peça provida de roldana que dá retorno ao cabo"
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "E",
-          "text": "conjunto de peças que fixa ou dá retorno aos cabos do aparelho do navio"
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
         }
       ],
       "correct_answer": "C",
-      "explanation": "A opção correta apresenta a definição técnica de “caçoilo”: pequena peça esférica ou cilíndrica cujos furos guiam cabos; o tipo cilíndrico foi empregado nas enxárcias para separar cabos que tomariam direções diferentes."
+      "explanation": "A sequência correta é a alternativa C, conforme cap. 9, seção C, item 9.31."
     },
     {
       "id": "ANV-1369",
       "subject": "Arte Naval",
-      "module": "Transmissões do governo",
-      "topic": "telemotor",
+      "module": "Mastreação",
+      "topic": "mastreação",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "II",
         "subject_slug": "arte-naval",
         "bibliography_id": "fonseca-arte-v1",
         "chapter_id": "fonseca-arte-v1::ch11",
-        "topic_id": "old-081",
+        "topic_id": "old-088",
         "subtopic_id": null
       },
       "tracking": {
@@ -104331,74 +104367,80 @@
           "title": "Aparelho de governo, mastreação e aparelhos de carga",
           "label": "Capítulo 11 - Aparelho de governo, mastreação e aparelhos de carga"
         },
-        "section": "cap. 11, seção A, item 11.6",
-        "module": "Transmissões do governo",
+        "section": "cap. 11, seção B, item 11.14",
+        "module": "Mastreação",
         "topic": {
-          "id": "old-081",
-          "title": "telemotor"
+          "id": "old-088",
+          "title": "mastreação"
         }
       },
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, seção A, item 11.6"
+        "locator": "cap. 11, seção B, item 11.14"
       },
       "tags": [
-        "Transmissões do governo",
-        "telemotor",
-        "Identificação técnica",
-        "pscpp-focused-extension-v7",
-        "dpc-caso-aplicado"
+        "Mastreação",
+        "mastreação",
+        "Associação conceitual",
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-focused-extension-v7",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "ANV-0415"
+          "ANV-0637",
+          "ANV-0679",
+          "ANV-0755",
+          "ANV-0819",
+          "ANV-0877"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023; foco Arte Naval e Meteorologia"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "ANV-1369",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V7.CASO.1034",
-      "question": "Durante a preparação de uma faina de convés, o Prático Claudionor revisa “Arte Naval, v. 2” para confirmar um detalhe de “telemotor”. Considere a seguinte situação técnica: Na terminologia de Arte Naval, qual termo corresponde à descrição técnica a seguir: conjunto hidráulico transmissor-receptor que leva a ordem da roda ao servomotor Assinale a alternativa correta.",
+      "topic_code": "PSCPP.V8.AST5.00009",
+      "question": "De acordo com o contido em “Arte Naval, v. 2”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) Sobre “mastreação”, considere a seguinte proposição: conjunto formado pelos mastros e respectivos elementos de sustentação.\nII) Sobre “verga de sinais”, considere a seguinte proposição: peça transversal do mastro destinada à exibição de sinais.\nIII) Sobre “macarrões”, considere a seguinte proposição: golas metálicas que guarnecem as passagens dos gualdropes.\nIV) Sobre “roda do leme”, considere a seguinte proposição: punhos distribuídos no contorno exterior da roda do leme.\nV) Sobre “transmissão quadrantal”, considere a seguinte proposição: ligação entre roda e governo realizada por gualdropes.",
       "options": [
         {
           "key": "A",
-          "text": "transmissão hidráulica"
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "transmissão quadrantal"
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "transmissão mecânica rígida"
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "telemotor"
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "transmissão mecânica flexível"
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "D",
-      "explanation": "“telemotor” é conjunto hidráulico transmissor-receptor que leva a ordem da roda ao servomotor; usa dois tubos cheios de líquido incongelável e converte deslocamento em diferença de pressão."
+      "explanation": "A combinação correta é a alternativa D, conforme o recorte cap. 11, seção B, item 11.14."
     },
     {
       "id": "ANV-1370",
       "subject": "Arte Naval",
       "module": "Saída",
-      "topic": "velocidade de partida",
+      "topic": "course card",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
       "taxonomy": {
         "subject_id": "II",
         "subject_slug": "arte-naval",
         "bibliography_id": "macelrevey",
         "chapter_id": "macelrevey::ch7",
-        "topic_id": "old-184",
+        "topic_id": "old-185",
         "subtopic_id": null
       },
       "tracking": {
@@ -104414,74 +104456,80 @@
           "title": "Departure",
           "label": "Capítulo 7 - Departure"
         },
-        "section": "cap. 7, Departure Speed",
+        "section": "cap. 7, Course Card and Passage Planning",
         "module": "Saída",
         "topic": {
-          "id": "old-184",
-          "title": "velocidade de partida"
+          "id": "old-185",
+          "title": "course card"
         }
       },
       "source": {
         "author": "MacELREVEY, Daniel H.; MacELREVEY, Daniel E.",
         "title": "Shiphandling for the Mariner",
         "edition": "4. ed., 2004",
-        "locator": "cap. 7, Departure Speed"
+        "locator": "cap. 7, Course Card and Passage Planning"
       },
       "tags": [
         "Saída",
-        "velocidade de partida",
-        "Identificação técnica",
-        "pscpp-focused-extension-v7",
-        "dpc-caso-aplicado"
+        "course card",
+        "Associação técnica",
+        "pscpp-cleanup-v8",
+        "cleanup-vf-5"
       ],
       "provenance": {
-        "method": "pscpp-focused-extension-v7",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "ANV-0408"
+          "ANV-1018",
+          "ANV-1087",
+          "ANV-1106",
+          "ANV-0647",
+          "ANV-1053"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023; foco Arte Naval e Meteorologia"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "ANV-1370",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V7.CASO.1035",
-      "question": "Durante a preparação de uma faina de convés, o Prático Roberto revisa “Shiphandling for the Mariner” para confirmar um detalhe de “velocidade de partida”. Considere a seguinte situação técnica: Na terminologia de Arte Naval, qual termo corresponde à descrição técnica a seguir: seguimento escolhido para conservar governo sem reduzir excessivamente as margens Assinale a alternativa correta.",
+      "topic_code": "PSCPP.V8.VF5.00010",
+      "question": "Com base em “Shiphandling for the Mariner”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) Sobre “course card”, considere a seguinte proposição: margem real de controle remanescente para responder a tráfego e ambiente.\n( ) Sobre “velocidade de partida”, considere a seguinte proposição: seguimento escolhido para conservar governo sem reduzir excessivamente as margens.\n( ) Sobre “capacidade de manobra disponível”, considere a seguinte proposição: hard turn em baixa velocidade.\n( ) Sobre “course card”, considere a seguinte proposição: registro compacto de rumos, distâncias, referências e ações da derrota.\n( ) No contexto de “velocidade de partida”, a associação “velocidade de partida” está correta.",
       "options": [
         {
           "key": "A",
-          "text": "capacidade de manobra disponível"
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "B",
-          "text": "course card"
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "C",
-          "text": "detecção do movimento lateral"
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
         },
         {
           "key": "D",
-          "text": "simulador de manobra"
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "E",
-          "text": "velocidade de partida"
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
         }
       ],
       "correct_answer": "E",
-      "explanation": "“velocidade de partida” é seguimento escolhido para conservar governo sem reduzir excessivamente as margens; deve permitir parar ou corrigir antes do próximo perigo ou ponto de decisão."
+      "explanation": "A sequência correta é a alternativa E, conforme cap. 7, Course Card and Passage Planning."
     },
     {
       "id": "ANV-1371",
       "subject": "Arte Naval",
-      "module": "Navegação com mau tempo",
-      "topic": "comprimento de onda",
+      "module": "Reboque",
+      "topic": "fusível do dispositivo de reboque",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "II",
         "subject_slug": "arte-naval",
         "bibliography_id": "fonseca-arte-v1",
         "chapter_id": "fonseca-arte-v1::ch12",
-        "topic_id": "old-148",
+        "topic_id": "old-141",
         "subtopic_id": null
       },
       "tracking": {
@@ -104497,59 +104545,65 @@
           "title": "Manobra do Navio",
           "label": "Capítulo 12 - Manobra do Navio"
         },
-        "section": "cap. 12, seção G, item 12.82",
-        "module": "Navegação com mau tempo",
+        "section": "cap. 12, seção F, item 12.73.c",
+        "module": "Reboque",
         "topic": {
-          "id": "old-148",
-          "title": "comprimento de onda"
+          "id": "old-141",
+          "title": "fusível do dispositivo de reboque"
         }
       },
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção G, item 12.82"
+        "locator": "cap. 12, seção F, item 12.73.c"
       },
       "tags": [
-        "Navegação com mau tempo",
-        "comprimento de onda",
+        "Reboque",
+        "fusível do dispositivo de reboque",
         "Associação conceitual",
-        "pscpp-focused-extension-v7",
-        "dpc-caso-aplicado"
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-focused-extension-v7",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "ANV-0602"
+          "ANV-0790",
+          "ANV-0806",
+          "ANV-0829",
+          "ANV-0860",
+          "ANV-0870"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023; foco Arte Naval e Meteorologia"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "ANV-1371",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V7.CASO.1036",
-      "question": "Durante a preparação de uma faina de convés, o Prático Ari revisa “Arte Naval, v. 2” para confirmar um detalhe de “comprimento de onda”. Considere a seguinte situação técnica: Qual alternativa descreve corretamente o significado ou a função de “comprimento de onda”. Assinale a alternativa correta.",
+      "topic_code": "PSCPP.V8.AST5.00011",
+      "question": "De acordo com o contido em “Arte Naval, v. 2”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) Sobre “fusível do dispositivo de reboque”, considere a seguinte proposição: componente deliberadamente dimensionado para romper antes de elementos críticos.\nII) Sobre “correr com o tempo”, considere a seguinte proposição: navegar recebendo mar e vento predominantemente pela popa.\nIII) Sobre “hélice de passo controlado”, considere a seguinte proposição: arranjo em que o topo das pás gira em direção ao plano diametral na marcha a vante.\nIV) Sobre “ângulo de deriva”, considere a seguinte proposição: diferença entre a orientação longitudinal do navio e a tangente à trajetória.\nV) Sobre “cabo de reboque”, considere a seguinte proposição: componente deliberadamente dimensionado para romper antes de elementos críticos.",
       "options": [
         {
           "key": "A",
-          "text": "distância horizontal entre duas cristas consecutivas"
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "movimento angular alternado em torno do eixo transversal"
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "dispositivo lançado ao mar para criar arrasto hidrodinâmico"
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "governar com reduzido seguimento e orientação conveniente em relação ao mar"
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "distância vertical entre cava e crista"
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "A",
-      "explanation": "A opção correta apresenta a definição técnica de “comprimento de onda”: distância horizontal entre duas cristas consecutivas; relaciona-se ao período e à velocidade de propagação da onda."
+      "explanation": "A combinação correta é a alternativa A, conforme o recorte cap. 12, seção F, item 12.73.c."
     },
     {
       "id": "ANV-1372",
@@ -104640,8 +104694,8 @@
       "module": "Manobras especiais",
       "topic": "manobra de navio de dois hélices",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "II",
         "subject_slug": "arte-naval",
@@ -104680,57 +104734,63 @@
         "Manobras especiais",
         "manobra de navio de dois hélices",
         "Identificação contextualizada",
-        "pscpp-focused-extension-v7",
-        "dpc-caso-aplicado"
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-focused-extension-v7",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "ANV-1062"
+          "ANV-1109",
+          "ANV-0678",
+          "ANV-1060",
+          "ANV-1093",
+          "ANV-1120"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023; foco Arte Naval e Meteorologia"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "ANV-1373",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V7.CASO.1038",
-      "question": "Durante a preparação de uma faina de convés, o Prático Aroldo revisa “Shiphandling for the Mariner” para confirmar um detalhe de “manobra de navio de dois hélices”. Considere a seguinte situação técnica: Uma equipe de bordo registrou o seguinte elemento ou efeito: controle que combina empuxos independentes para translação e rotação. Além disso, máquinas em sentidos opostos podem gerar giro com pouco movimento longitudinal. Qual é a nomenclatura técnica correspondente? Assinale a alternativa correta.",
+      "topic_code": "PSCPP.V8.AST5.00013",
+      "question": "De acordo com o contido em “Shiphandling for the Mariner”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) No contexto de “manobra de navio de dois hélices”, a associação “entrada em eclusa” está correta.\nII) Sobre “entrada em eclusa”, considere a seguinte proposição: manobra de acesso a câmara estreita com pequena folga lateral.\nIII) No contexto de “entrada em eclusa”, a associação “entrada em eclusa” está correta.\nIV) Sobre “manobra de navio de dois hélices”, considere a seguinte proposição: controle que combina empuxos independentes para translação e rotação.\nV) Sobre “single-point mooring”, considere a seguinte proposição: manobra de acesso a câmara estreita com pequena folga lateral.",
       "options": [
         {
           "key": "A",
-          "text": "entrada em eclusa"
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "single-point mooring"
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "manobra de navio de dois hélices"
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "master's trials"
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "hard turn em baixa velocidade"
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "C",
-      "explanation": "“manobra de navio de dois hélices” corresponde a controle que combina empuxos independentes para translação e rotação. A referência acrescenta que máquinas em sentidos opostos podem gerar giro com pouco movimento longitudinal."
+      "explanation": "A combinação correta é a alternativa C, conforme o recorte cap. 9, Twin-Screw Ships."
     },
     {
       "id": "ANV-1374",
       "subject": "Arte Naval",
-      "module": "Âncoras",
-      "topic": "fateixa",
+      "module": "Amarras e acessórios",
+      "topic": "prova de tração da amarra",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
       "taxonomy": {
         "subject_id": "II",
         "subject_slug": "arte-naval",
         "bibliography_id": "fonseca-arte-v1",
         "chapter_id": "fonseca-arte-v1::ch10",
-        "topic_id": "old-038",
+        "topic_id": "old-052",
         "subtopic_id": null
       },
       "tracking": {
@@ -104746,59 +104806,65 @@
           "title": "Aparelhos de Fundear e Suspender",
           "label": "Capítulo 10 - Aparelhos de Fundear e Suspender"
         },
-        "section": "cap. 10, seção A, item 10.3.d",
-        "module": "Âncoras",
+        "section": "cap. 10, seção B, item 10.16.a",
+        "module": "Amarras e acessórios",
         "topic": {
-          "id": "old-038",
-          "title": "fateixa"
+          "id": "old-052",
+          "title": "prova de tração da amarra"
         }
       },
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 10, seção A, item 10.3.d"
+        "locator": "cap. 10, seção B, item 10.16.a"
       },
       "tags": [
-        "Âncoras",
-        "fateixa",
+        "Amarras e acessórios",
+        "prova de tração da amarra",
         "Identificação técnica",
-        "pscpp-focused-extension-v7",
-        "dpc-caso-aplicado"
+        "pscpp-cleanup-v8",
+        "cleanup-vf-5"
       ],
       "provenance": {
-        "method": "pscpp-focused-extension-v7",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "ANV-0509"
+          "ANV-0596",
+          "ANV-0656",
+          "ANV-0702",
+          "ANV-0716",
+          "ANV-0733"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023; foco Arte Naval e Meteorologia"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "ANV-1374",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V7.CASO.1039",
-      "question": "Durante a preparação de uma faina de convés, o Prático Claudionor revisa “Arte Naval, v. 2” para confirmar um detalhe de “fateixa”. Considere a seguinte situação técnica: Na terminologia de Arte Naval, qual termo corresponde à descrição técnica a seguir: ancorote sem cepo com quatro braços curvos dotados de patas e unhas Assinale a alternativa correta.",
+      "topic_code": "PSCPP.V8.VF5.00014",
+      "question": "Com base em “Arte Naval, v. 2”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) No contexto de “prova de tração da amarra”, a associação “prova de tração da amarra” está correta.\n( ) Sobre “ângulo de presa”, considere a seguinte proposição: ângulo geométrico relacionado à orientação das patas durante o unhamento.\n( ) Sobre “âncora patente”, considere a seguinte proposição: tipo sem cepo e com haste articulada aos braços.\n( ) Sobre “filame suficiente”, considere a seguinte proposição: barra montada perpendicularmente aos braços na âncora Almirantado.\n( ) Sobre “amarra”, considere a seguinte proposição: compartimento destinado a receber e armazenar a cadeia.",
       "options": [
         {
           "key": "A",
-          "text": "cepo"
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "B",
-          "text": "gata"
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "C",
-          "text": "anete"
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
         },
         {
           "key": "D",
-          "text": "fateixa"
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "E",
-          "text": "poita"
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
         }
       ],
       "correct_answer": "D",
-      "explanation": "“fateixa” é ancorote sem cepo com quatro braços curvos dotados de patas e unhas; empregada para fundear embarcações miúdas."
+      "explanation": "A sequência correta é a alternativa D, conforme cap. 10, seção B, item 10.16.a."
     },
     {
       "id": "ANV-1375",

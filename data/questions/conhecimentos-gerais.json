@@ -94352,8 +94352,8 @@
       "module": "Planejamento Portuário — FDAQ",
       "topic": "Margem de Manobrabilidade mínima",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Assertivas I–V",
+      "question_type": "Assertivas I–V",
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
@@ -94396,42 +94396,48 @@
         "normam224",
         "normam224::integral",
         "margem-de-manobrabilidade-minima",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "pscpp-cleanup-v8",
+        "cleanup-assertivas-5"
       ],
       "provenance": {
-        "method": "pscpp-expansion-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "CGE-0425"
+          "CGE-0420",
+          "CGE-0425",
+          "CGE-0430",
+          "CGE-0435",
+          "CGE-0440"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "CGE-1181",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.10004",
-      "question": "O Prático Ari, durante uma faina relacionada a “Margem de Manobrabilidade mínima”, precisa aplicar corretamente o conteúdo de “NORMAM-224/DPC — Norma da Autoridade Marítima para Folga Dinâmica Abaixo da Quilha”. Considere o seguinte problema técnico: Um navio de 15,0 m dispõe de FAQ bruta de 0,70 m. Considerando apenas o limite de MM da NORMAM, a condição atende ao mínimo? Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.AST5.00001",
+      "question": "De acordo com o contido em “NORMAM-224/DPC — Norma da Autoridade Marítima para Folga Dinâmica Abaixo da Quilha”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) No contexto de “Margem de Manobrabilidade mínima”, a associação “0,70 m.” está correta.\nII) Sobre “Margem de Manobrabilidade mínima”, considere a seguinte proposição: Não; a MM mínima recomendada é 0,75 m.\nIII) Sobre “Considerações iniciais”, considere a seguinte proposição: A NORMAM-224/DPC decorre do que estabelece a Lei nº 9.537/1997, que dispõe sobre a segurança do tráfego aquaviário - LESTA, e do Decreto nº 2.596/1998 - RLESTA, que a regulamenta.\nIV) Sobre “Parecer da autoridade marítima”, considere a seguinte proposição: Na área de interesse para a implantação do sistema de cálculo e previsão de FDAQ, os seguintes dados ambientais devem ser adquiridos e armazenados pelo período de um ano.\nV) Sobre “Realização de corridas de avaliação e testes”, considere a seguinte proposição: Dispõe sobre a segurança do tráfego aquaviário em águas sob jurisdição nacional e dá outras providências.",
       "options": [
         {
           "key": "A",
-          "text": "Não; a MM mínima é 1,50 m."
+          "text": "Apenas as afirmativas I, II e IV são verdadeiras."
         },
         {
           "key": "B",
-          "text": "Sim; basta superar 0,60 m."
+          "text": "Apenas as afirmativas I, III e V são verdadeiras."
         },
         {
           "key": "C",
-          "text": "Não; a MM mínima é 0,80 m."
+          "text": "Apenas as afirmativas II, III e IV são verdadeiras."
         },
         {
           "key": "D",
-          "text": "Não; a MM mínima recomendada é 0,75 m."
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
         },
         {
           "key": "E",
-          "text": "Sim; a MM mínima é 0,70 m."
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
         }
       ],
       "correct_answer": "D",
-      "explanation": "Cinco por cento de 15,0 m são 0,75 m, valor maior que 0,60 m. A FAQ bruta não pode ser menor que a MM."
+      "explanation": "A combinação correta é a alternativa D, conforme o recorte seção 1.2, alínea e — Margem de Manobrabilidade."
     },
     {
       "id": "CGE-1182",
@@ -94710,16 +94716,16 @@
       "id": "CGE-1185",
       "subject": "VII — Conhecimentos Gerais",
       "module": "Planejamento Portuário — Vias de acesso",
-      "topic": "Alterações na massa específica da água",
+      "topic": "Tolerância para a resposta às ondas",
       "difficulty": "Difícil",
-      "style": "Estudo de caso PSCPP",
-      "question_type": "Estudo de caso PSCPP",
+      "style": "Sequência V/F (5 itens)",
+      "question_type": "Sequência V/F (5 itens)",
       "taxonomy": {
         "subject_id": "VII",
         "subject_slug": "conhecimentos-gerais",
         "bibliography_id": "conapra-port",
         "chapter_id": "conapra-port::ch2",
-        "topic_id": "VII-conapra-port-ch2-cge-pp-via-2-3-1-2-3-2-alteracoes-na-massa-especifica-da-agua",
+        "topic_id": "VII-conapra-port-ch2-cge-pp-via-2-3-1-2-3-5-tolerancia-para-a-resposta-as-ondas",
         "subtopic_id": null
       },
       "tracking": {
@@ -94738,60 +94744,66 @@
         "section": "Capítulo 2 – Vias de Acesso a Instalações Portuárias",
         "module": "Planejamento Portuário — Vias de acesso",
         "topic": {
-          "id": "VII-conapra-port-ch2-cge-pp-via-2-3-1-2-3-2-alteracoes-na-massa-especifica-da-agua",
-          "title": "Alterações na massa específica da água"
+          "id": "VII-conapra-port-ch2-cge-pp-via-2-3-1-2-3-5-tolerancia-para-a-resposta-as-ondas",
+          "title": "Tolerância para a resposta às ondas"
         }
       },
       "source": {
         "author": "Conselho Nacional de Praticagem (CONAPRA)",
         "title": "Planejamento Portuário: Recomendações para Acessos Náuticos",
         "edition": "1ª edição, 2022",
-        "locator": "Capítulo 2, seção 2.3.1.2.3.2 — Alterações na massa específica da água"
+        "locator": "Capítulo 2, seção 2.3.1.2.3.5 — Tolerância para a resposta às ondas"
       },
       "tags": [
         "Vias de acesso",
-        "Alterações na massa específica da água",
-        "CGE.PP.VIA.2_3_1_2_3_2",
+        "Tolerância para a resposta às ondas",
+        "CGE.PP.VIA.2_3_1_2_3_5",
         "conhecimentos-gerais",
         "conapra-port",
         "conapra-port::ch2",
-        "alteracoes-na-massa-especifica-da-agua",
-        "pscpp-style-v6",
-        "formato-pscpp-caso-v6"
+        "tolerancia-para-a-resposta-as-ondas",
+        "pscpp-cleanup-v8",
+        "cleanup-vf-5"
       ],
       "provenance": {
-        "method": "pscpp-expansion-v6",
+        "method": "pscpp-cleanup-v8",
         "derived_from_question_ids": [
-          "CGE-0220"
+          "CGE-0140",
+          "CGE-0145",
+          "CGE-0150",
+          "CGE-0155",
+          "CGE-0160"
         ],
-        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023"
+        "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+        "replaces_question_id": "CGE-1185",
+        "cleanup_reason": "medium-audit-flag-v8"
       },
-      "topic_code": "PSCPP.V6.CASO.10008",
-      "question": "O Prático Lúcia, durante uma faina relacionada a “Alterações na massa específica da água”, precisa aplicar corretamente o conteúdo de “Planejamento Portuário: Recomendações para Acessos Náuticos”. Considere o seguinte problema técnico: Uma equipe técnica revisa o tópico “Alterações na massa específica da água”. Qual conteúdo integra corretamente essa parte da fonte? Considere especificamente a relação entre “Diferenças / massa”. Assinale a alternativa adequada.",
+      "topic_code": "PSCPP.V8.VF5.00002",
+      "question": "Com base em “Planejamento Portuário: Recomendações para Acessos Náuticos”, coloque V (verdadeiro) ou F (falso) nas proposições e assinale a sequência correta:\n( ) Sobre “Tolerância para a resposta às ondas”, considere a seguinte proposição: Na medida do possível, o fundeadouro deve ter pontos notáveis naturais ou artificiais que possibilitem o posicionamento seguro e preciso do navio na aproximação ou enquanto estiver fundeado.\n( ) Sobre “Fator W1 associado à velocidade do navio”, considere a seguinte proposição: Parte importante do processo de projeto, a velocidade do navio deve ser o primeiro item a ser definido.\n( ) Sobre “Nível de periculosidade da carga (W9)”, considere a seguinte proposição: Cargas com alto grau de periculosidade incluem LNG, LPG e algumas classes de produtos químicos.\n( ) Sobre “Largura adicional em curvas (Pianc 121, 2014, item 3.1.6.1.)”, considere a seguinte proposição: É recomendada a largura adicional, ΔWRT, para compensar o tempo de resposta, dada por ΔWRT = 0,4B.\n( ) Sobre “Distância de parada sem auxílio de rebocadores”, considere a seguinte proposição: Um gráfico ou tabela deve ser apresentado detalhando os valores de tração nos cabos de reboque e o valor total de tração obtido em cada teste.",
       "options": [
         {
           "key": "A",
-          "text": "A resposta de navios de projeto de grandes dimensões às ondas é insignificante nos casos em que os comprimentos de onda são curtos e quando a frequência de encontro navio-onda é alta e as ondas são de pouca altura."
+          "text": "( V ) ( V ) ( F ) ( V ) ( F )"
         },
         {
           "key": "B",
-          "text": "O cálculo da força total a ser fornecida por rebocadores utilizados para dar assistência ao navio depende de diversos fatores."
+          "text": "( V ) ( F ) ( V ) ( F ) ( V )"
         },
         {
           "key": "C",
-          "text": "Diferenças na massa específica da água em mar aberto e das águas internas em uma instalação portuária levam a alterações no calado e variações no trim de um navio."
+          "text": "( F ) ( V ) ( V ) ( V ) ( F )"
         },
         {
           "key": "D",
-          "text": "Wi é a margem de segurança em razão de fatores ambientais e locais (fatores 2 a 10), expressa em metros (m)."
+          "text": "( V ) ( V ) ( V ) ( F ) ( F )"
         },
         {
           "key": "E",
-          "text": "O tempo necessário para amarrar os rebocadores (B-C, na Figura 2.9.) depende da habilidade da tripulação e das condições ambientais."
+          "text": "( F ) ( V ) ( F ) ( V ) ( V )"
         }
       ],
       "correct_answer": "C",
-      "explanation": "O capítulo associa esse critério ao dimensionamento, à operação segura ou à análise de risco dos acessos náuticos; as demais alternativas pertencem a outros tópicos do planejamento portuário. No recorte indicado, o conteúdo aplicável é: Diferenças na massa específica da água em mar aberto e das águas internas em uma instalação portuária levam a alterações no calado e variações no trim de um navio."
+      "explanation": "A sequência correta é a alternativa C, conforme Capítulo 2, seção 2.3.1.2.3.5 — Tolerância para a resposta às ondas."
     }
   ]
 }
