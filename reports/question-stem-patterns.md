@@ -61,31 +61,31 @@
 
 | Ocorrências | Prefixo |
 |---:|---|
-| 60 | de acordo com o contido em “principles of naval architecture, volume iii”, |
-| 34 | de acordo com o contido em “principles of naval architecture, volume ii”, |
-| 30 | de acordo com o contido em “ship resistance and flow”, analise as |
+| 83 | de acordo com o contido em “principles of naval architecture, volume iii”, |
+| 43 | com base em “principles of naval architecture, volume iii”, julgue as proposicoes |
+| 42 | de acordo com o contido em “principles of naval architecture, volume ii”, |
+| 38 | de acordo com o contido em “ship resistance and flow”, analise as |
+| 32 | de acordo com o contido em “provision and display of manoeuvring information |
+| 31 | de acordo com o contido em “revised guidance to the master for |
 | 28 | com base em “principles of naval architecture, volume iii”, coloque v (verdadeiro) |
-| 26 | com base em “principles of naval architecture, volume iii”, julgue as proposicoes |
-| 25 | de acordo com o contido em “revised guidance to the master for |
-| 24 | de acordo com o contido em “provision and display of manoeuvring information |
-| 22 | de acordo com o contido em “practical ship hydrodynamics”, analise as afirmativas |
-| 21 | de acordo com o contido em “standards for ship manoeuvrability”, analise as |
-| 19 | com base em “provision and display of manoeuvring information on board ships”, |
-| 19 | com base em “principles of naval architecture, volume ii”, julgue as proposicoes |
+| 28 | de acordo com o contido em “standards for ship manoeuvrability”, analise as |
+| 28 | com base em “principles of naval architecture, volume ii”, julgue as proposicoes |
+| 27 | de acordo com o contido em “practical ship hydrodynamics”, analise as afirmativas |
+| 23 | com base em “provision and display of manoeuvring information on board ships”, |
+| 22 | com base em “revised guidance to the master for avoiding dangerous situations |
+| 20 | no briefing conduzido antes da faina, durante uma analise tecnica de bordo, |
 | 18 | com base em “principles of naval architecture, volume ii”, coloque v (verdadeiro) |
+| 18 | de acordo com o contido em “lewis — principles of naval architecture, |
 | 16 | com base em “ship resistance and flow”, coloque v (verdadeiro) ou f |
+| 16 | com base em “standards for ship manoeuvrability”, julgue as proposicoes a seguir |
+| 16 | ao revisar o plano de manobra, no briefing conduzido antes da faina, |
+| 16 | durante a preparacao do pratico, em uma avaliacao do passadico, ao revisar |
 | 15 | de acordo com o contido em “principles of naval architecture, volume iii” |
-| 15 | com base em “revised guidance to the master for avoiding dangerous situations |
-| 15 | de acordo com o contido em “lewis — principles of naval architecture, |
-| 12 | no briefing conduzido antes da faina, durante uma analise tecnica de bordo, |
+| 15 | com base em “ship resistance and flow”, julgue as proposicoes a seguir |
+| 14 | durante uma analise tecnica de bordo, durante a preparacao do pratico, em |
+| 13 | em uma avaliacao do passadico, ao revisar o plano de manobra, no |
+| 12 | de acordo com o contido em “naval shiphandling”, analise as afirmativas abaixo |
 | 11 | com base em “standards for ship manoeuvrability”, coloque v (verdadeiro) ou f |
-| 11 | de acordo com o contido em “naval shiphandling”, analise as afirmativas abaixo, |
-| 11 | nesse contexto, durante a analise de uma prova de mar em agua |
-| 11 | para essa avaliacao, durante a analise de uma prova de mar em |
-| 11 | sob essa otica, durante a analise de uma prova de mar em |
-| 11 | ao concluir a analise, ao revisar o planejamento de uma manobra portuaria, |
-| 11 | para interpretar corretamente o caso, ao revisar o planejamento de uma manobra |
-| 11 | sob essa otica, na avaliacao de desempenho apos alteracao da velocidade, o |
 
 ## navegacao-aguas-restritas
 
@@ -194,30 +194,30 @@
 | Ocorrências | Prefixo |
 |---:|---|
 | 156 | de acordo com o contido em “meteorologia e oceanografia”, analise as afirmativas |
+| 115 | de acordo com o contido em “navegacao: a ciencia e a arte |
 | 109 | com base em “meteorologia e oceanografia”, coloque v (verdadeiro) ou f (falso) |
-| 57 | de acordo com o contido em “navegacao: a ciencia e a arte |
+| 102 | de acordo com o contido em “meteorologia: nocoes basicas”, analise as afirmativas |
+| 95 | com base em “navegacao: a ciencia e a arte — volume iii”, |
+| 68 | com base em “meteorologia: nocoes basicas”, julgue as proposicoes a seguir e |
 | 49 | com base em “meteorologia e oceanografia”, julgue as proposicoes a seguir e |
-| 43 | com base em “navegacao: a ciencia e a arte — volume iii”, |
+| 30 | no briefing conduzido antes da faina, durante uma analise tecnica de bordo, |
+| 24 | ao revisar o plano de manobra, no briefing conduzido antes da faina, |
+| 23 | em uma avaliacao do passadico, ao revisar o plano de manobra, no |
+| 23 | durante a preparacao do pratico, em uma avaliacao do passadico, ao revisar |
 | 21 | sobre publicacao indicada — sem capitulos delimitados no anexo 2-b, analise as |
+| 16 | durante uma analise tecnica de bordo, durante a preparacao do pratico, em |
 | 15 | durante um briefing tecnico, de acordo com o contido em “meteorologia e |
-| 13 | ao interpretar informacoes de sistemas atmosfericos em um produto ou observacao maritima, |
 | 12 | de acordo com o contido em “meteorologia e oceanografia” (capitulo viii — |
-| 12 | no briefing conduzido antes da faina, durante uma analise tecnica de bordo, |
 | 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
-| 11 | ao interpretar informacoes de elementos meteorologicos em um produto ou observacao maritima, |
-| 10 | ao revisar o plano de manobra, no briefing conduzido antes da faina, |
-| 10 | ao interpretar informacoes de circulacao do ar em um produto ou observacao |
+| 11 | durante uma analise tecnica de bordo, de acordo com o contido em |
 | 10 | sobre capitulo 45 – nocoes de meteorologia para navegantes, analise as afirmativas |
 | 9 | em uma revisao tecnica conduzida antes da manobra, considere especificamente o seguinte |
-| 9 | em uma avaliacao do passadico, ao revisar o plano de manobra, no |
-| 9 | considerando a relacao fisica ou operacional de cobertura do ceu e nuvens, |
-| 9 | ao interpretar informacoes de cobertura do ceu e nuvens em um produto |
-| 9 | na comparacao tecnica de conceitos de cobertura do ceu e nuvens, cenario |
-| 9 | ao interpretar informacoes de sistemas sinoticos em um produto ou observacao maritima, |
-| 8 | durante a preparacao do pratico, em uma avaliacao do passadico, ao revisar |
-| 8 | ao interpretar informacoes de precipitacao em um produto ou observacao maritima, caso |
-| 8 | considerando a relacao fisica ou operacional de atividades convectivas e cumulonimbus, cenario |
-| 8 | ao interpretar informacoes de atividades convectivas e cumulonimbus em um produto ou |
+| 9 | de acordo com o contido em “normam-701/dhn — normas da autoridade maritima |
+| 8 | analise as quatro proposicoes sobre publicacao indicada — sem capitulos delimitados no |
+| 7 | durante uma analise tecnica de bordo, considerando o conteudo de “meteorologia e |
+| 7 | com base em “normam-701/dhn — normas da autoridade maritima para as atividades |
+| 7 | considerando publicacao indicada — sem capitulos delimitados no anexo 2-b, com foco |
+| 7 | em uma analise aprofundada de publicacao indicada — sem capitulos delimitados no |
 
 ## comunicacoes
 
