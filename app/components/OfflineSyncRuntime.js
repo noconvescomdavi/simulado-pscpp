@@ -21,6 +21,8 @@ export default function OfflineSyncRuntime(){
     try{
       const auth=await fetch("/api/auth/me",{cache:"no-store"});
       if(!auth.ok)return;
+      // Primeiro login conectado: persiste o armazenamento e baixa TODOS os bancos.
+      // Nas próximas sessões, o manifesto evita downloads desnecessários.
       await ensureOfflinePackCurrent({force});
     }catch(error){
       console.error("Falha no preload offline automático:",error);
