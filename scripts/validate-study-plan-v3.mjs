@@ -69,7 +69,7 @@ for(const table of [
   assert.ok(migration.includes(table),"Migration V3 não contém "+table);
 }
 
-assert.match(client,/Não consegui estudar hoje/,"Controle de indisponibilidade sumiu da UI");
+assert.match(client,/setUnavailable\(day,"other",true\)/,"Controle de indisponibilidade sumiu da UI");
 assert.match(unavailable,/DAY_UNAVAILABLE/,"Endpoint não registra indisponibilidade");
 assert.match(getter,/recoveryCapacity/,"Motor de recuperação não considera capacidade");
 assert.match(sessionApi,/heartbeat/,"API de sessão real não possui heartbeat");
