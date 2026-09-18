@@ -1,6 +1,182 @@
 {
   "title": "Questões inéditas PSCPP",
-  "status": "generation_pipeline",
-  "questions": [],
-  "note": "Corpus independente destinado exclusivamente a questões inéditas PSCPP aprovadas após rastreabilidade bibliográfica e auditoria."
+  "status": "generation_in_progress",
+  "questions": [
+    {
+      "id": "pscpp::generated::man::0001",
+      "bank": "PSCPP",
+      "origin": "generated_pscpp",
+      "pscpp_origin": "generated_pscpp",
+      "active": true,
+      "validation_status": "approved",
+      "source_subject": "simulado-pscpp",
+      "question": "Em águas restritas, um navio passa a apresentar simultaneamente aumento do calado médio e alteração dinâmica do trim em consequência do movimento. Qual termo técnico designa a combinação desses dois efeitos?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Bank suction"
+        },
+        {
+          "key": "B",
+          "text": "Squat"
+        },
+        {
+          "key": "C",
+          "text": "Advance"
+        },
+        {
+          "key": "D",
+          "text": "Transfer"
+        },
+        {
+          "key": "E",
+          "text": "Yaw checking"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Squat é a combinação do sinkage (aumento do calado médio) com o trim dinâmico produzido durante o movimento do navio.",
+      "pscpp_format": "situation",
+      "difficulty": "hard",
+      "cognitive_level": 3,
+      "module": "Manobrabilidade",
+      "topic": "Squat e águas restritas",
+      "tags": [
+        "squat",
+        "sinkage",
+        "trim dinâmico",
+        "águas restritas"
+      ],
+      "bibliography": {
+        "publication": "Shiphandling for the Mariner",
+        "edition": "4th edition",
+        "chapter": "Chapter 2 — Shiphandling in a Channel",
+        "locator": "The Basics of Squat; p. 84–85",
+        "file_id": "file_00000000fad081fd9e28cdcc2bcdbc11"
+      },
+      "source": {
+        "title": "Shiphandling for the Mariner — 4th edition",
+        "locator": "Chapter 2, The Basics of Squat; p. 84–85"
+      }
+    },
+    {
+      "id": "pscpp::generated::man::0002",
+      "bank": "PSCPP",
+      "origin": "generated_pscpp",
+      "pscpp_origin": "generated_pscpp",
+      "active": true,
+      "validation_status": "approved",
+      "source_subject": "simulado-pscpp",
+      "question": "Com relação ao squat durante a navegação em águas restritas, analise as afirmativas abaixo, identifique quais são verdadeiras e assinale a opção correta:",
+      "assertions": [
+        "I) O sinkage corresponde ao aumento corporal do calado médio do navio.",
+        "II) O trim dinâmico decorre da alteração de pressão e produz variação de calado ao longo do comprimento.",
+        "III) O squat resulta da combinação de sinkage e trim.",
+        "IV) A posição da maior alteração de calado independe da forma do casco.",
+        "V) A redução de velocidade de um navio profundamente carregado em canal raso é uma medida relevante para limitar o squat."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I, II e III são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I, III e IV são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas I, II, III e V são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas II, IV e V são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "Todas as afirmativas são verdadeiras."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "I, II e III correspondem às definições apresentadas na obra; IV é falsa porque a localização da maior mudança depende da forma do casco; V é compatível com a recomendação operacional de considerar o squat e reduzir a velocidade em canal raso.",
+      "pscpp_format": "assertions",
+      "difficulty": "very_hard",
+      "cognitive_level": 4,
+      "module": "Manobrabilidade",
+      "topic": "Squat e águas restritas",
+      "tags": [
+        "squat",
+        "sinkage",
+        "trim dinâmico",
+        "velocidade"
+      ],
+      "bibliography": {
+        "publication": "Shiphandling for the Mariner",
+        "edition": "4th edition",
+        "chapter": "Chapter 2 — Shiphandling in a Channel",
+        "locator": "The Basics of Squat; p. 84–85 e discussão subsequente",
+        "file_id": "file_00000000fad081fd9e28cdcc2bcdbc11"
+      },
+      "source": {
+        "title": "Shiphandling for the Mariner — 4th edition",
+        "locator": "Chapter 2, The Basics of Squat"
+      }
+    },
+    {
+      "id": "pscpp::generated::man::0003",
+      "bank": "PSCPP",
+      "origin": "generated_pscpp",
+      "pscpp_origin": "generated_pscpp",
+      "active": true,
+      "validation_status": "approved",
+      "source_subject": "simulado-pscpp",
+      "question": "Um navio de grande porte precisa reduzir o seguimento antes de embarcar o prático. Considerando os métodos de redução de headway discutidos em Shiphandling for the Mariner, assinale a opção correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "O uso da máquina a ré é sempre o método mais eficiente e dispensa espaço para a manobra."
+        },
+        {
+          "key": "B",
+          "text": "Uma grande alteração de rumo não pode ser empregada para reduzir o seguimento."
+        },
+        {
+          "key": "C",
+          "text": "O uso da máquina a ré é comum, mas pode ser pouco eficiente e exigir tempo e espaço, especialmente em navios grandes."
+        },
+        {
+          "key": "D",
+          "text": "A máquina a ré aumenta a eficiência do propulsor em relação à condição adiante."
+        },
+        {
+          "key": "E",
+          "text": "A redução do seguimento somente pode ser obtida por ação longitudinal da máquina."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A obra relaciona máquina a ré, guinada em torno de um rumo-base e grandes alterações de rumo entre os métodos possíveis, e ressalta limitações de eficiência, tempo e espaço no uso da máquina a ré.",
+      "pscpp_format": "operational",
+      "difficulty": "hard",
+      "cognitive_level": 3,
+      "module": "Manobrabilidade",
+      "topic": "Redução de seguimento",
+      "tags": [
+        "headway",
+        "stopping",
+        "máquina a ré",
+        "prático"
+      ],
+      "bibliography": {
+        "publication": "Shiphandling for the Mariner",
+        "edition": "4th edition",
+        "chapter": "Chapter 1 — Arrival",
+        "locator": "Stopping or Reducing Headway; p. 24",
+        "file_id": "file_00000000fad081fd9e28cdcc2bcdbc11"
+      },
+      "source": {
+        "title": "Shiphandling for the Mariner — 4th edition",
+        "locator": "Chapter 1, Stopping or Reducing Headway; p. 24"
+      }
+    }
+  ],
+  "note": "Corpus independente. Somente itens source-first com fonte integral verificada e validation_status=approved entram no pool."
 }
