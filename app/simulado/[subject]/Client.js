@@ -44,6 +44,12 @@ function normalizeOptions(options) {
   return [];
 }
 
+function QuestionBody({question}) {
+  const blocks=Array.isArray(question.contentBlocks)?question.contentBlocks:[];
+  const assertions=Array.isArray(question.assertions)?question.assertions:[];
+  return <>{blocks.map((b,i)=>b?.type==="text"?<p key={i}>{b.text}</p>:b?.type==="image"&&b.src?<figure key={i}><img src={b.src} alt={b.alt||"Recurso da questão"}/>{b.caption&&<figcaption>{b.caption}</figcaption>}</figure>:null)}{assertions.length>0&&<ol type="I">{assertions.map((a,i)=><li key={i}>{typeof a==="string"?a:a.text}</li>)}</ol>}</>;
+}
+
 function Result({ result }) {
   const answered = Number(result?.answered ?? result?.answered_count ?? 0);
   const correct = Number(result?.correct ?? result?.correct_count ?? 0);
@@ -370,6 +376,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
             .join(" · ")}
         </p>
         <h2>{question.question}</h2>
+        <QuestionBody question={question}/>
         {options.map((option) => (
           <button
             type="button"
