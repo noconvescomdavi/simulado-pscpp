@@ -1,0 +1,11 @@
+import { buildPscppExam, pscppBlueprint } from "../lib/pscpp-exam-bank.js";
+const exam=buildPscppExam("audit");
+const bp=pscppBlueprint();
+const ids=new Set(exam.map(q=>q.id));
+const bySubject=Object.fromEntries(Object.keys(bp.subject_quotas).map(s=>[s,exam.filter(q=>q.source_subject===s).length]));
+const errors=[];
+if(exam.length!==bp.size)errors.push(`expected ${bp.size}, got ${exam.length}`);
+if(ids.size!==exam.length)errors.push("duplicate ids");
+for(const [s,n] of Object.entries(bp.subject_quotas))if(bySubject[s]!==n)errors.push(`${s}: expected ${n}, got ${bySubject[s]}`);
+console.log(JSON.stringify({ok:!errors.length,total:exam.length,bySubject,errors},null,2));
+if(errors.length)process.exit(1);
