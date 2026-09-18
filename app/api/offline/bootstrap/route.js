@@ -30,7 +30,7 @@ export async function GET(request) {
     .map(normalizeSubject)
     .filter(Boolean);
 
-  const available = availableQuestionBanks().map((item) => item.slug);
+  const available = availableQuestionBanks({ includePscpp: true }).map((item) => item.slug);
   const subjects = [...new Set((requested.length ? requested : available).filter((slug) => available.includes(slug)))];
 
   const banks = subjects.map((subject) => {
