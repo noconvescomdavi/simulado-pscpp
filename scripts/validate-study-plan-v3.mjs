@@ -48,7 +48,7 @@ assert.ok(!/update\s+student_plan_reschedules[\s\S]*status='completed'/i.test(pr
 assert.match(client,/source_plan_date:planDate/,"Cliente não preserva a data original da tarefa reprogramada");
 assert.match(getter,/const backlogRows=historical\.filter\(x=>x\.status==="pending"\)/,
   "Backlog deve conter somente tarefas-fonte ainda pendentes");
-assert.match(client,/filter\(t=>\{[\s\S]*t\.reprogrammed&&sameSource[\s\S]*\}\)[\s\S]*map\(t=>/,
+assert.match(client,/tasks\.filter\(t=>![\s\S]*t\.reprogrammed[\s\S]*sameSource[\s\S]*\)\.map\(t=>/,
   "UI não remove automaticamente a cópia reprogramada após concluir a tarefa-fonte");
 
 assert.match(notebooks,/strictFixationMatch/,"Caderno diário não possui filtro estrito por obra/capítulo");
