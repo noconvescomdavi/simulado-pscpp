@@ -76,6 +76,7 @@ function structurallySafe(q, pending) {
   if (/afirmativ|assertiv|sequencia|verdadeiro|falso|incorreta|lacuna|estudo de caso/.test(style)) return false;
   if (hasMetaOption(q)) return false;
   if (exactNorm(correctText(q)) === exactNorm(topic(q))) return false;
+  if (fragmentRisk(q)) return false;
   return true;
 }
 function cloneMeta(base, {style, difficulty, tag, derivedIds, topicOverride}={}) {
@@ -108,6 +109,30 @@ function punct(s) {
     .trim();
 }
 function lowerFirst(s) { const x=clean(s); return x ? x[0].toLocaleLowerCase('pt-BR')+x.slice(1) : x; }
+
+function fragmentRisk(q) {
+  const stem=clean(q?.question), c=correctText(q), t=topic(q);
+  const raw=`${stem} ${c} ${t}`;
+  const markers=[
+    /(?:^|\s)(?:descrição|trecho|item|conteúdo|método|procedimento|dispositivo)\s*:\s*(?:este|esta|esse|essa)\b/i,
+    /\btrecho\s+\d+\b/i,
+    /\bqual alternativa reproduz corretamente\b/i,
+    /\bqual enunciado define corretamente o conteúdo de item\b/i,
+    /\bconteúdo indicado no anexo 2-b\b/i
+  ];
+  if (markers.some(re=>re.test(raw))) return true;
+  if (/^(?:este|esta|esse|essa|o referido|a referida)\b/i.test(c)) return true;
+  if (/[:;,]\s*$/.test(t) || /\b(?:de|do|da|dos|das|para|por|em|que|o|a)\s*$/i.test(t)) return true;
+  return false;
+}
+function examLikeStem(base) {
+  const src=sourceTitle(base), loc=clean(base?.source?.locator);
+  const c=correctText(base), t=topic(base);
+  if (fragmentRisk(base)) {
+    return `De acordo com “${src}”${loc?`, ${loc}`:''}, assinale a alternativa correta acerca de ${t || 'do conteúdo técnico indicado'}.`;
+  }
+  return clean(base.question);
+}
 function statement(q, truth, seed=0) {
   const option = truth ? correctOption(q) : wrongOptions(q)[seed % wrongOptions(q).length];
   const text = clean(option?.text);
@@ -261,7 +286,7 @@ function makeCase(original,base,seq) {
     id:original.id,
     ...cloneMeta(base,{style:'Estudo de caso',difficulty:seq%3===0?'Difícil':'Médio',tag:'formato-estudo-de-caso-v2'}),
     topic_code:original.topic_code || `REV.CASO.${String(seq+1).padStart(3,'0')}`,
-    question:punct(`Considere o caso técnico a seguir, relacionado a ${topic(base)}:\n${clean(base.question)}\nAssinale a alternativa tecnicamente adequada ao caso.`),
+    question:punct(`Considere a situação técnica relacionada a ${topic(base)}:\n${examLikeStem(base)}\nAssinale a alternativa tecnicamente adequada ao caso.`),
     ...rotated,
     explanation:`A alternativa correta é ${rotated.correct_answer}. ${clean(base.explanation)}`
   };
