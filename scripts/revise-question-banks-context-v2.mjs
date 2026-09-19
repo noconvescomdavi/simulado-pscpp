@@ -128,8 +128,11 @@ function statement(q, truth, seed=0) {
   if (/\b(é dada|e dada|é definido|e definido|é expressa|e expressa|corresponde|vale|resulta)\b.*[:?]$/i.test(stem) || /[=²³πλ η]/u.test(text)) {
     return `No tópico “${t}”, a relação técnica aplicável é “${text}”`;
   }
-  if (text.length >= 28) return `Sobre “${t}”, considere a proposição: ${text.replace(/[.]$/,'')}`;
-  return `No contexto de “${t}”, a associação “${text}” é tecnicamente aplicável`;
+  // A proposição deve ser autônoma. Não prefixar o tópico com metatexto
+  // ("Sobre X, considere..."), pois isso repete/cola metadados e pode
+  // associar um rótulo diferente ao conteúdo real da afirmação.
+  if (text.length >= 28) return text.replace(/[.]$/,'');
+  return `A associação “${text}” é tecnicamente aplicável no contexto técnico avaliado`;
 }
 function rotateOptions(base, desired) {
   const correct=correctText(base);
@@ -178,7 +181,7 @@ function makeVF(original, base, seq) {
     id: original.id,
     ...cloneMeta(base,{style:'Verdadeiro/Falso',difficulty:seq%3===0?'Médio':'Fácil',tag:'formato-vf-v2'}),
     topic_code: original.topic_code || `REV.VF.${String(seq+1).padStart(3,'0')}`,
-    question: punct(`Julgue a proposição a seguir como verdadeira ou falsa, considerando o contexto de ${chapter(base)}:\n“${claim}.”`),
+    question: punct(`Analise a proposição abaixo e determine se é verdadeira (V) ou falsa (F):\nI) ${claim}.`),
     options:[{key:'A',text:'Verdadeiro'},{key:'B',text:'Falso'}],
     correct_answer:truth?'A':'B',
     explanation:truth?`A proposição está correta. ${correctText(base)}.`:`A proposição está incorreta. Para “${topic(base)}”, a formulação correta é: ${correctText(base)}.`
@@ -191,7 +194,7 @@ function makeAssertions(original, bases, seq, forceId=null, difficulty='Difícil
     id:forceId || original.id,
     ...cloneMeta(bases[0],{style:'Assertivas I–IV',difficulty,tag:provenanceMethod==='hard-expansion-v2'?'expansao-dificil-v2':'formato-assertivas-14-v2',derivedIds:bases.map(x=>x.id),topicOverride:`${chapter(bases[0])} — assertivas I–IV`}),
     topic_code:forceId?`REV.DIFF.A14.${String(seq+1).padStart(4,'0')}`:(original.topic_code || `REV.A14.${String(seq+1).padStart(3,'0')}`),
-    question: punct(`Sobre ${chapter(bases[0])}, analise as afirmativas e assinale a alternativa que apresenta apenas as corretas:\nI. ${props[0]}.\nII. ${props[1]}.\nIII. ${props[2]}.\nIV. ${props[3]}.`),
+    question: punct(`De acordo com o conteúdo técnico indicado, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) ${props[0]}.\nII) ${props[1]}.\nIII) ${props[2]}.\nIV) ${props[3]}.`),
     options:comboOptions(idx),
     correct_answer:KEYS[idx],
     explanation:explanationAssertions(bases,pattern)
@@ -224,7 +227,7 @@ function makeSeq(original,bases,seq) {
     id:original.id,
     ...cloneMeta(bases[0],{style:'Sequência V/F',difficulty:'Difícil',tag:'formato-sequencia-vf-v2',derivedIds:bases.map(x=>x.id),topicOverride:`${chapter(bases[0])} — sequência V/F`}),
     topic_code:original.topic_code || `REV.SEQVF.${String(seq+1).padStart(3,'0')}`,
-    question:punct(`Analise as quatro proposições sobre ${chapter(bases[0])} e classifique-as como verdadeiras (V) ou falsas (F):\n1. ${props[0]}.\n2. ${props[1]}.\n3. ${props[2]}.\n4. ${props[3]}.\nAssinale a sequência correta.`),
+    question:punct(`Analise as proposições abaixo e determine se são verdadeiras (V) ou falsas (F):\nI) ${props[0]}.\nII) ${props[1]}.\nIII) ${props[2]}.\nIV) ${props[3]}.\nAssinale a sequência correta.`),
     options:labels.map((text,i)=>({key:KEYS[i],text})),
     correct_answer:KEYS[idx],
     explanation:`A sequência correta é ${labels[idx]}. Formulações de referência: ${bases.map((q,i)=>`${i+1}) ${correctText(q)}`).join(' ')}`
