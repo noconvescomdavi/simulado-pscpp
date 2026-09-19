@@ -11,6 +11,9 @@ function audit(q,kind){
   if(!q.question) errors.push(q.id+": missing question");
   if(!Array.isArray(q.options)||q.options.length!==5) errors.push(q.id+": must have exactly 5 options");
   if(!/^[A-E]$/.test(String(q.correct_answer||"").toUpperCase())) errors.push(q.id+": invalid answer");
+  const keys=(q.options||[]).map(o=>String(o?.key||"").toUpperCase());
+  if(keys.join("")!=="ABCDE"||new Set(keys).size!==5) errors.push(q.id+": invalid option keys");
+  if(/<PARSED TEXT FOR PAGE|Diretoria de Portos e Costas/.test(JSON.stringify(q))) errors.push(q.id+": PDF extraction artifact");
  }
  if(kind==="generated"&&q.active!==false){
   if(q.pscpp_origin!=="generated_pscpp") errors.push(q.id+": invalid generated origin");
