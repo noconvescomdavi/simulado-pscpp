@@ -136,16 +136,24 @@
       "file": "THE-SHIPHANDLERS-GUIDE-Rowe.pdf",
       "file_id": "file_00000000abd4820eae504f6e51c43348",
       "status": "verified_full_source"
+    },
+    {
+      "key": "bridge-team-management-ch1-7",
+      "publication": "Bridge Team Management",
+      "authors": "A. J. Swift; T. J. Bailey",
+      "edition": "2nd edition",
+      "year": null,
+      "file": "BTM 1-7.pdf",
+      "file_id": "libfile_96f6fdbb154481918c172aed9c9da2f6",
+      "verified_scope": "Chapters 1–7, 56 pages",
+      "verification_method": "Visual inspection and page-by-page OCR against rendered pages",
+      "status": "verified_scoped_source",
+      "eligible_for_generation": true
     }
   ],
   "unverified_or_reference_only": [
     {
       "publication": "Naval Shiphandling — R. S. Crenshaw Jr.",
-      "status": "not_yet_verified_as_full_source",
-      "eligible_for_generation": false
-    },
-    {
-      "publication": "Bridge Team Management — Swift & Bailey",
       "status": "not_yet_verified_as_full_source",
       "eligible_for_generation": false
     },
@@ -208,7 +216,8 @@
   "generation_policy": {
     "source_first": true,
     "eligible_status": [
-      "verified_full_source"
+      "verified_full_source",
+      "verified_scoped_source"
     ],
     "reference_only_materials_not_valid_as_primary_source": true
   },
