@@ -38,6 +38,9 @@ jobs:
       - name: Validate question banks
         run: npm run validate:questions
 
+      - name: Audit question formatting
+        run: npm run test:question-structure
+
       - name: Build
         env:
           DATABASE_URL: postgresql://placeholder:placeholder@localhost:5432/placeholder
