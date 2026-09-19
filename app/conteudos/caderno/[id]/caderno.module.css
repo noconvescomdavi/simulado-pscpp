@@ -25,3 +25,16 @@
 .page article>button{margin:6px 0;padding:9px 11px;font-size:clamp(13px,1vw,15px);line-height:1.35}
 @media(min-width:1100px){.page{max-width:1180px;padding-top:18px}.trace{margin-bottom:8px}}
 @media(max-width:700px){.page{padding:16px 10px}.questionHeading{font-size:14px;line-height:1.4}.page article{padding:13px}.page article>button{padding:9px}}
+/* Escala responsiva do caderno: aproveita a largura/altura real da tela sem truncar texto. */
+@media (min-width:1400px) and (max-height:1000px){
+  .page{max-width:1340px;padding:12px 16px}
+  .page>h1,.page>p{margin-block:6px}
+  .page article{padding:12px 16px}
+  .trace{margin-bottom:6px}
+  .questionHeading{font-size:13px;line-height:1.32;margin-bottom:8px}
+  .page article>button{margin:4px 0;padding:7px 10px;font-size:13px;line-height:1.25}
+}
+@media (min-width:1400px) and (max-height:850px){
+  .questionHeading{font-size:12px;line-height:1.26}
+  .page article>button{padding:6px 9px;font-size:12px}
+}
