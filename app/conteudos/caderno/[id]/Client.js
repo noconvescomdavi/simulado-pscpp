@@ -223,7 +223,8 @@ export default function Client({
   const [reviewing, setReviewing] =
     useState(false);
 
-  const [focusMode, setFocusMode] = useState(false);\n  const assessmentRef = useRef(null);
+  const [focusMode, setFocusMode] = useState(false);
+  const assessmentRef = useRef(null);
 
   const planMarkedRef = useRef(false);
 
@@ -458,7 +459,8 @@ export default function Client({
         {notebook.title}
       </h1>
 
-      <div ref={assessmentRef} className={`${styles.assessmentLayout} ${focusMode ? styles.focusMode : ""}`}>\n      {focusMode && <button type="button" className={styles.fullscreenExit} onClick={toggleFocusMode}>Sair da tela cheia</button>}
+      <div ref={assessmentRef} className={`${styles.assessmentLayout} ${focusMode ? styles.focusMode : ""}`}>
+      {focusMode && <button type="button" className={styles.fullscreenExit} onClick={toggleFocusMode}>Sair da tela cheia</button>}
       <article>
         <p className={styles.trace}>
           {[
