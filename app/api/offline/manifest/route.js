@@ -8,7 +8,7 @@ export async function GET(){
   const entitlement=await getEntitlement(session.id);
   if(!entitlement.active)return Response.json({error:"Modo offline disponível para alunos com acesso ativo."},{status:403});
 
-  const banks=availableQuestionBanks().map(item=>{
+  const banks=availableQuestionBanks({ includePscpp: true }).map(item=>{
     const bank=getQuestionBank(item.slug);
     return {subject:item.slug,title:bank?.title||item.slug,questions:(bank?.questions||[]).length};
   });

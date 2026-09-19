@@ -55,7 +55,7 @@ export default async function Page() {
   );
 
   const choices = entitlement.active
-    ? [{slug:ALL_SUBJECTS_SLUG,label:"Todas as matérias"}, ...SUBJECTS]
+    ? [{slug:"simulado-pscpp",label:"SIMULADO PSCPP"}, {slug:ALL_SUBJECTS_SLUG,label:"Todas as matérias"}, ...SUBJECTS]
     : [{slug:TRIAL_SUBJECT_SLUG,label:"Simulado de teste grátis"}];
 
   function cardDescription(item) {
@@ -84,8 +84,8 @@ export default async function Page() {
           <section style={{margin:"18px 0",border:"1px solid #1c6fa6",background:"#09243a",borderRadius:12,padding:16}}>
             <span style={{fontSize:9,color:"#72bdf0",fontWeight:900}}>MODO PROVA PSCPP</span>
             <h2 style={{margin:"5px 0 6px"}}>Simulação completa de prova</h2>
-            <p style={{margin:"0 0 10px",color:"#9ab4c6"}}>100 questões aleatórias de todas as matérias, 240 minutos, salvamento server-side e relatório pós-prova por disciplina.</p>
-            <a href="/simulado/todas-as-materias" style={{display:"inline-block",border:"1px solid #2384c1",background:"#0e5788",padding:"9px 12px",borderRadius:8,fontSize:9,fontWeight:900}}>Iniciar Modo Prova →</a>
+            <p style={{margin:"0 0 10px",color:"#9ab4c6"}}>100 questões selecionadas por blueprint PSCPP controlado, com distribuição disciplinar e diversidade bibliográfica.</p>
+            <a href="/simulado/simulado-pscpp" style={{display:"inline-block",border:"1px solid #2384c1",background:"#0e5788",padding:"9px 12px",borderRadius:8,fontSize:9,fontWeight:900}}>Iniciar Modo Prova →</a>
           </section>
         )}
 

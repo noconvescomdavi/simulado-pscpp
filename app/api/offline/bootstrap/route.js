@@ -30,7 +30,7 @@ export async function GET(request) {
     .map(normalizeSubject)
     .filter(Boolean);
 
-  const available = availableQuestionBanks().map((item) => item.slug);
+  const available = availableQuestionBanks({ includePscpp: true }).map((item) => item.slug);
   const subjects = [...new Set((requested.length ? requested : available).filter((slug) => available.includes(slug)))];
 
   const offset = Math.max(0, Math.trunc(Number(url.searchParams.get("offset")) || 0));
