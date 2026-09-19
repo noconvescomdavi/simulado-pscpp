@@ -58,7 +58,8 @@ export default function PwaRuntime() {
 
       window.addEventListener("online", onOnline);
       navigator.serviceWorker?.addEventListener("message", onServiceWorkerMessage);
-      requestSync();
+      // OfflineSyncRuntime é o único dono da sincronização periódica.
+      // Evita duas leituras/escritas concorrentes no IndexedDB durante o startup.
 
       const syncViewportHeight = () => {
         document.documentElement.style.setProperty("--app-height", window.innerHeight + "px");
