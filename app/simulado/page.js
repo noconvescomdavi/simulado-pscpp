@@ -55,13 +55,13 @@ export default async function Page() {
   );
 
   const choices = entitlement.active
-    ? [{slug:ALL_SUBJECTS_SLUG,label:"Todas as matérias"}, ...SUBJECTS]
+    ? [{slug:"simulado-pscpp",label:"SIMULADO PSCPP"}, {slug:ALL_SUBJECTS_SLUG,label:"Todas as matérias"}, ...SUBJECTS]
     : [{slug:TRIAL_SUBJECT_SLUG,label:"Simulado de teste grátis"}];
 
   function cardDescription(item) {
-    if (entitlement.trial) return "10 questões aleatórias entre as matérias · uma única emissão";
+    if (entitlement.trial) return "10 questões pela incidência histórica das matérias · uma única emissão";
     if (item.slug === ALL_SUBJECTS_SLUG) {
-      return `${totalQuestionCount.toLocaleString("pt-BR")} questões no banco · 100 questões aleatórias de todas as matérias · 240 minutos`;
+      return `${totalQuestionCount.toLocaleString("pt-BR")} questões no banco · 100 questões pela incidência das provas oficiais · 240 minutos`;
     }
     const count = questionCountBySlug[item.slug] ?? 0;
     const examSize = Math.min(100, count);
@@ -76,16 +76,16 @@ export default async function Page() {
         <h1>Simulados</h1>
         <p>
           {entitlement.trial
-            ? "Teste grátis: você pode emitir 1 simulado com 10 questões aleatórias entre as matérias disponíveis."
-            : "Escolha uma matéria ou gere um simulado misto com 100 questões aleatórias de todas as matérias."}
+            ? "Teste grátis: você pode emitir 1 simulado com 10 questões distribuídas conforme a incidência histórica das matérias."
+            : "Os simulados mistos seguem a distribuição estatística das provas oficiais; os simulados por matéria mantêm seleção controlada dentro da disciplina."}
         </p>
 
         {entitlement.active && (
           <section style={{margin:"18px 0",border:"1px solid #1c6fa6",background:"#09243a",borderRadius:12,padding:16}}>
             <span style={{fontSize:9,color:"#72bdf0",fontWeight:900}}>MODO PROVA PSCPP</span>
             <h2 style={{margin:"5px 0 6px"}}>Simulação completa de prova</h2>
-            <p style={{margin:"0 0 10px",color:"#9ab4c6"}}>100 questões aleatórias de todas as matérias, 240 minutos, salvamento server-side e relatório pós-prova por disciplina.</p>
-            <a href="/simulado/todas-as-materias" style={{display:"inline-block",border:"1px solid #2384c1",background:"#0e5788",padding:"9px 12px",borderRadius:8,fontSize:9,fontWeight:900}}>Iniciar Modo Prova →</a>
+            <p style={{margin:"0 0 10px",color:"#9ab4c6"}}>100 questões selecionadas pela incidência histórica das provas oficiais de 2006, 2008, 2011 e 2012, com composição disciplinar controlada.</p>
+            <a href="/simulado/simulado-pscpp" style={{display:"inline-block",border:"1px solid #2384c1",background:"#0e5788",padding:"9px 12px",borderRadius:8,fontSize:9,fontWeight:900}}>Iniciar Modo Prova →</a>
           </section>
         )}
 
