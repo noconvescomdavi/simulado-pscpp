@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import QuestionFilterControls, { EMPTY_QUESTION_FILTERS } from "../../components/QuestionFilterControls";
 import styles from "./exam.module.css";
+import StructuredQuestion from "../../components/StructuredQuestion";
 import {cacheServerExam, createOfflineExam, getLatestOfflineExam, answerOfflineExam, finishOfflineExam, hydrateOfflineExam} from "../../../lib/offline-store";
 
 function clock(seconds) {
@@ -369,7 +370,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
             .filter(Boolean)
             .join(" · ")}
         </p>
-        <h2>{question.question}</h2>
+        <h2 className={styles.questionHeading}><StructuredQuestion question={question} /></h2>
         {options.map((option) => (
           <button
             type="button"
