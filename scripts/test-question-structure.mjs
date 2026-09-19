@@ -1,0 +1,35 @@
+import fs from "node:fs";
+import path from "node:path";
+import assert from "node:assert/strict";
+import { classifyQuestionStructure } from "../lib/question-structure.js";
+
+const roots=["data/questions","data/question-extensions"];
+const files=roots.flatMap(root=>fs.existsSync(root)?fs.readdirSync(root).filter(x=>x.endsWith(".json")).map(x=>path.join(root,x)):[]);
+const stats={files:files.length,total:0,simple:0,assertions:0,true_false:0,correlation:0,structured_legacy:0};
+const ambiguous=[];
+for(const file of files){
+  const raw=JSON.parse(fs.readFileSync(file,"utf8").replace(/^\uFEFF/,""));
+  const questions=Array.isArray(raw)?raw:(raw.questions||[]);
+  for(const question of questions){
+    stats.total++;
+    const structure=classifyQuestionStructure(question);
+    stats[structure.type]=(stats[structure.type]||0)+1;
+    if(structure.confidence==="ambiguous") ambiguous.push({file,id:question.id,type:structure.type});
+    assert.equal(structure.options?.length ?? question.options?.length ?? 0, question.options?.length ?? 0, `options changed: ${file}#${question.id}`);
+    if(structure.type==="assertions"||structure.type==="true_false"){
+      const block=structure.blocks.find(x=>x.type==="assertions");
+      assert.ok(block?.items?.length>=2,`assertions not split: ${file}#${question.id}`);
+      assert.equal(block.items[0].label,"I",`first assertion changed: ${file}#${question.id}`);
+    }
+  }
+}
+const compact=classifyQuestionStructure({question:"Analise: I)Primeira. II)Segunda. III)Terceira.",options:["A","B"]});
+assert.equal(compact.type,"assertions");
+assert.deepEqual(compact.blocks[1].items.map(x=>x.label),["I","II","III"]);
+const vf=classifyQuestionStructure({question:"Analise as afirmativas e determine V/F: I) Um. II) Dois. III) Três.",options:["V-F-V","F-V-F"]});
+assert.equal(vf.type,"true_false");
+assert.deepEqual(vf.options,["V – F – V","F – V – F"]);
+const correlation=classifyQuestionStructure({question:"CORRELACIONE:\nCOLUNA A\nI. Golas\nII. Reclamos\nCOLUNA B\n( ) Definição 1\n( ) Definição 2",options:["II – I","I – II"]});
+assert.equal(correlation.type,"correlation");
+assert.ok(correlation.blocks.some(x=>x.type==="columns"));
+console.log(JSON.stringify({...stats,ambiguous_count:ambiguous.length,ambiguous:ambiguous.slice(0,50)},null,2));
