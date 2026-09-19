@@ -1,25 +1,25 @@
 # Revisão contextual V2 — bancos de questões
 
-Gerado em: 2026-09-07T15:14:03.372Z
+Gerado em: 2026-09-19T21:02:15.753Z
 
-Questões antes: **11201**
-Questões após: **11446**
-Enunciados baseline reformatados: **996**
-Questões problemáticas da expansão V1 substituídas no mesmo ID: **504**
-Novas questões de maior discriminação: **245**
-Ocorrências de rótulos crus do Anexo 2-B removidas de enunciados: **224**
+Questões antes: **12070**
+Questões após: **12070**
+Enunciados baseline reformatados: **0**
+Questões problemáticas da expansão V1 substituídas no mesmo ID: **0**
+Novas questões de maior discriminação: **0**
+Ocorrências de rótulos crus do Anexo 2-B removidas de enunciados: **128**
 
 Correções verificadas diretamente em fonte: ANV-0020, ANV-0519, ANV-0718, ANV-0940
 
 | Matéria | Antes | Depois | Reformatadas | V1 substituídas | Novas difíceis | Pool seguro |
 |---|---:|---:|---:|---:|---:|---:|
-| arte-naval | 1222 | 1257 | 996 | 72 | 35 | 381 |
-| manobrabilidade | 3814 | 3849 | 0 | 72 | 35 | 3587 |
-| navegacao-aguas-restritas | 1712 | 1747 | 0 | 72 | 35 | 1187 |
-| legislacao-regulamentacao | 1182 | 1217 | 0 | 72 | 35 | 990 |
-| meteorologia-oceanografia | 1077 | 1112 | 0 | 72 | 35 | 630 |
-| comunicacoes | 1122 | 1157 | 0 | 72 | 35 | 1002 |
-| conhecimentos-gerais | 1072 | 1107 | 0 | 72 | 35 | 863 |
+| arte-naval | 1375 | 1375 | 0 | 0 | 0 | 401 |
+| manobrabilidade | 3927 | 3927 | 0 | 0 | 0 | 2940 |
+| navegacao-aguas-restritas | 1825 | 1825 | 0 | 0 | 0 | 1186 |
+| legislacao-regulamentacao | 1293 | 1293 | 0 | 0 | 0 | 704 |
+| meteorologia-oceanografia | 1230 | 1230 | 0 | 0 | 0 | 68 |
+| comunicacoes | 1235 | 1235 | 0 | 0 | 0 | 993 |
+| conhecimentos-gerais | 1185 | 1185 | 0 | 0 | 0 | 863 |
 
 ## Política aplicada
 
