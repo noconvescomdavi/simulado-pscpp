@@ -23,7 +23,7 @@
 .questionHeading{font-size:clamp(14px,1.15vw,17px);font-weight:600;line-height:1.42;letter-spacing:-.006em;margin:0 0 12px}
 .page article{padding:clamp(14px,1.5vw,20px)}
 .page article>button{margin:6px 0;padding:9px 11px;font-size:clamp(13px,1vw,15px);line-height:1.35}
-@media(min-width:1100px){.page{max-width:1180px;padding-top:18px}.trace{margin-bottom:8px}}
+@media(min-width:1100px){.page{max-width:1298px;padding-top:18px}.trace{margin-bottom:8px}.assessmentLayout{grid-template-columns:minmax(0,1fr) 253px;gap:13px}.page article{padding:clamp(15px,1.65vw,22px)}.trace{font-size:13px}.questionHeading{font-size:clamp(15px,1.265vw,18.5px);line-height:1.42}.page article>button{margin:7px 0;padding:10px 12px;font-size:clamp(14px,1.1vw,16.5px);line-height:1.35}.answerCard{padding:13px}.answerGrid{gap:7px}.answerGrid button{font-size:12px}.answerCardHead{font-size:1.1em}.answerCardHead small{font-size:12px}.answerLegend{font-size:10px}}
 @media(max-width:700px){.page{padding:16px 10px}.questionHeading{font-size:14px;line-height:1.4}.page article{padding:13px}.page article>button{padding:9px}}
 /* Escala responsiva do caderno: aproveita a largura/altura real da tela sem truncar texto. */
 @media (min-width:1400px) and (max-height:1000px){
