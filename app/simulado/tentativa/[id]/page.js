@@ -6,6 +6,7 @@ import { getQuestion } from "../../../../lib/question-banks";
 import { subjectLabel } from "../../../../lib/subjects";
 import StudentHeader from "../../../components/StudentHeader";
 import styles from "./review.module.css";
+import StructuredQuestion from "../../../components/StructuredQuestion";
 
 function parseQuestionIds(value) {
   if (Array.isArray(value)) return value.map(String);
@@ -133,7 +134,7 @@ export default async function Page({ params }) {
                     ].filter(Boolean).join(" · ")}
                   </p>
                 )}
-                <h2>{index + 1}. {question?.question || questionId}</h2>
+                <h2>{index + 1}. <StructuredQuestion question={question || {question:String(questionId)}} /></h2>
                 {answer ? (
                   <>
                     <p>
