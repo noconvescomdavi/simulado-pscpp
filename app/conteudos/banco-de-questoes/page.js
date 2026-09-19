@@ -64,6 +64,11 @@ export default async function Page({searchParams}){
                       <time>{new Date(item.created_at).toLocaleDateString("pt-BR")}</time>
                     </div>
                     <h3>{item.title}</h3>
+                    <div className={styles.notebookScope}>
+                      {item.scope?.subjects?.length>0&&<p><strong>Assuntos:</strong> {item.scope.subjects.join(" · ")}</p>}
+                      {item.scope?.works?.length>0&&<p><strong>Livros/Publicações:</strong> {item.scope.works.slice(0,4).join(" · ")}{item.scope.works.length>4?` · +${item.scope.works.length-4}`:""}</p>}
+                      {item.scope?.chapters?.length>0&&item.scope.chapters.length<=5&&<p><strong>Capítulos:</strong> {item.scope.chapters.join(" · ")}</p>}
+                    </div>
                     <p>{item.answered_count} de {item.total_questions} questões respondidas</p>
                     <div className={styles.progressTrack}>
                       <i style={{width:`${item.total_questions?Math.min(100,Math.round((item.answered_count/item.total_questions)*100)):0}%`}} />
