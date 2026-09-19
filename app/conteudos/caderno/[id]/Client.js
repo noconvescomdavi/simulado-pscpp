@@ -221,6 +221,8 @@ export default function Client({
   const [reviewing, setReviewing] =
     useState(false);
 
+  const [focusMode, setFocusMode] = useState(false);
+
   const planMarkedRef = useRef(false);
 
   useEffect(()=>{cacheServerNotebook(notebook).catch(()=>{})},[notebook]);
@@ -421,16 +423,13 @@ export default function Client({
   }
 
   return (
-    <main className={styles.page}>
+    <main className={`${styles.page} ${focusMode ? styles.focusMode : ""}`}>
+      <div className={styles.assessmentToolbar}><div><strong>Questão {index + 1} de {questions.length}</strong><span>{Object.keys(answers).length} respondidas</span></div><button type="button" onClick={() => setFocusMode(value => !value)}>{focusMode ? "Sair da tela cheia" : "⛶ Full Screen"}</button></div>
       <h1>
         {notebook.title}
       </h1>
 
-      <p>
-        Questão {index + 1} de{" "}
-        {questions.length}
-      </p>
-
+      <div className={styles.assessmentLayout}>
       <article>
         <p className={styles.trace}>
           {[
@@ -585,6 +584,26 @@ export default function Client({
             )}
         </nav>
       </article>
+      <aside className={styles.answerCard}>
+        <div className={styles.answerCardHead}><strong>Cartão de respostas</strong><small>Questão {index + 1} de {questions.length}</small></div>
+        <div className={styles.answerGrid}>
+          {questions.map((item, itemIndex) => {
+            const itemAnswer = answers[questionKey(item)];
+            const status = itemAnswer ? (itemAnswer.is_correct ? "correct" : "wrong") : "pending";
+            return <button
+              type="button"
+              key={questionKey(item)}
+              title={itemAnswer ? (itemAnswer.is_correct ? "Correta" : "Incorreta") : "Não respondida"}
+              aria-label={`Questão ${itemIndex + 1}: ${itemAnswer ? (itemAnswer.is_correct ? "correta" : "incorreta") : "não respondida"}`}
+              data-status={status}
+              data-current={itemIndex === index ? "true" : "false"}
+              onClick={() => setIndex(itemIndex)}
+            >{itemIndex + 1}</button>;
+          })}
+        </div>
+        <div className={styles.answerLegend}><span><i data-kind="current" />Atual</span><span><i data-kind="correct" />Acerto</span><span><i data-kind="wrong" />Erro</span><span><i data-kind="pending" />Pendente</span></div>
+      </aside>
+      </div>
     </main>
   );
 }
