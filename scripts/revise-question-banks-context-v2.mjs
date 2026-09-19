@@ -215,7 +215,15 @@ function makeVF(original, base, seq) {
 }
 function makeAssertions(original, bases, seq, forceId=null, difficulty='Difícil', provenanceMethod='context-revision-v2') {
   const idx=seq%5, pattern=ASSERTION_PATTERNS[idx];
-  const props=bases.map((q,i)=>statement(q,pattern[i],seq+i));
+  // Em assertivas conceituais, cada item deve testar a DEFINIÇÃO do termo.
+  // A formulação verdadeira é a definição/descrição validada da própria base;
+  // a falsa usa uma definição plausível de outro conceito do mesmo grupo.
+  const props=bases.map((q,i)=> {
+    const own=clean(correctText(q)).replace(/[.]$/,'');
+    if (pattern[i]) return `${topic(q)}: ${own}`;
+    const donor=bases[(i+1)%bases.length];
+    return `${topic(q)}: ${clean(correctText(donor)).replace(/[.]$/,'')}`;
+  });
   const q={
     id:forceId || original.id,
     ...cloneMeta(bases[0],{style:'Assertivas I–IV',difficulty,tag:provenanceMethod==='hard-expansion-v2'?'expansao-dificil-v2':'formato-assertivas-14-v2',derivedIds:bases.map(x=>x.id),topicOverride:`${chapter(bases[0])} — assertivas I–IV`}),
@@ -247,7 +255,13 @@ function makeIncorrect(original,bases,seq,forceId=null,difficulty='Difícil',pro
 }
 function makeSeq(original,bases,seq) {
   const idx=seq%5, pattern=SEQ_PATTERNS[idx];
-  const props=bases.map((q,i)=>statement(q,pattern[i],seq+i));
+  // Sequência V/F conceitual: julgar definições, nunca fragmentos aleatórios.
+  const props=bases.map((q,i)=> {
+    const own=clean(correctText(q)).replace(/[.]$/,'');
+    if (pattern[i]) return `${topic(q)}: ${own}`;
+    const donor=bases[(i+1)%bases.length];
+    return `${topic(q)}: ${clean(correctText(donor)).replace(/[.]$/,'')}`;
+  });
   const labels=SEQ_PATTERNS.map(p=>p.map(v=>v?'V':'F').join(' – '));
   return {
     id:original.id,
