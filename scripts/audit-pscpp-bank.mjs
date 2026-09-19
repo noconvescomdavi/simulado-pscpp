@@ -33,8 +33,10 @@ if((official.questions||[]).length!==expected) errors.push(`official corpus mism
 const activeOfficial=(official.questions||[]).filter(q=>q.active!==false&&!q.annulled).length;
 const annulled=(official.questions||[]).filter(q=>q.annulled).length;
 const approvedGenerated=(generated.questions||[]).filter(q=>q.active!==false&&q.validation_status==="approved").length;
+const generatedTarget=Number(inventory.generated_question_target?.minimum_approved||0);
+if(process.env.PSCPP_FINAL_AUDIT==="1"&&approvedGenerated<generatedTarget) errors.push(`generated corpus below final target: ${approvedGenerated}/${generatedTarget}`);
 const normalized=s=>String(s||"").toLowerCase().replace(/[^a-z0-9áàâãéêíóôõúç ]/gi," ").replace(/\s+/g," ").trim();
 const texts=new Map();
 for(const q of [...(official.questions||[]),...(generated.questions||[])]){if(q.active===false||q.annulled)continue;const key=normalized(q.question);if(texts.has(key))errors.push(`exact semantic-text duplicate: ${texts.get(key)} / ${q.id}`);else texts.set(key,q.id)}
-console.log(JSON.stringify({ok:!errors.length,official_total:(official.questions||[]).length,official_active:activeOfficial,official_annulled:annulled,generated_approved:approvedGenerated,pool_active:activeOfficial+approvedGenerated,errors,warnings},null,2));
+console.log(JSON.stringify({ok:!errors.length,official_total:(official.questions||[]).length,official_active:activeOfficial,official_annulled:annulled,generated_approved:approvedGenerated,generated_target:generatedTarget,generated_remaining:Math.max(0,generatedTarget-approvedGenerated),pool_active:activeOfficial+approvedGenerated,errors,warnings},null,2));
 if(errors.length)process.exit(1);
