@@ -218,5 +218,29 @@
     "active": 254,
     "answer_key_changes": 1,
     "method": "Validated from official PDF answer-key typography/markers; 2011 Q24 answer-key change preserved."
+  },
+  "generated_question_target": {
+    "minimum_approved": 3000,
+    "current_requirement": "hard_completion_gate",
+    "official_questions_excluded_from_target": true,
+    "minimum_operational_pool": 3254
+  },
+  "generation_quality_gate": {
+    "no_mechanical_variants": true,
+    "no_unsupported_general_knowledge": true,
+    "source_first": true,
+    "required_fields": [
+      "question",
+      "options",
+      "correct_answer",
+      "explanation",
+      "pscpp_format",
+      "difficulty",
+      "cognitive_level",
+      "bibliography.publication",
+      "bibliography.locator",
+      "validation_status"
+    ],
+    "required_status": "approved"
   }
 }
