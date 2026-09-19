@@ -46,3 +46,5 @@ jobs:
           fi
           git commit -m "fix(questions): audit and normalize normal question bank"
           git push origin HEAD:fix/format-all-question-bank-v2
+
+# rerun after idempotency fix
