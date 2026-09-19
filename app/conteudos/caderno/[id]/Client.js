@@ -441,7 +441,7 @@ export default function Client({
             .filter(Boolean)
             .join(" · ")}
         </p>
-        <h2 className={styles.questionHeading}><StructuredQuestion question={question} /></h2>
+        <div className={styles.questionHeading}><StructuredQuestion question={question} /></div>
 
         {options.map(
           (option) => (
