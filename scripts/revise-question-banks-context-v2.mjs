@@ -17,7 +17,8 @@ const SUBJECTS = [
   'conhecimentos-gerais'
 ];
 const KEYS = ['A','B','C','D','E'];
-const NEW_HARD_PER_SUBJECT = 35;
+// Esta rotina é de correção/reformulação: não deve inflar o banco ao ser reexecutada.
+const NEW_HARD_PER_SUBJECT = 0;
 const ASSERTION_COMBO_OPTIONS = [
   'Apenas as afirmativas I e II estão corretas.',
   'Apenas as afirmativas I e III estão corretas.',
