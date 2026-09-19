@@ -16,7 +16,7 @@ for(const file of files){
     stats.total++;
     const structure=classifyQuestionStructure(question);
     stats[structure.type]=(stats[structure.type]||0)+1;
-    if(structure.confidence==="ambiguous") ambiguous.push({file,id:question.id,type:structure.type});
+    if(structure.confidence==="ambiguous") ambiguous.push({file,id:question.id,type:structure.type,text:String(question.question||"").slice(0,1200)});
     const text=String(question.question||"");
     if(/(?:^|\s)(?:I|II|III|IV|V|VI|VII|VIII|IX|X)[\).]\s*/m.test(text)) patterns.roman++;
     if(/\n/.test(text)) patterns.newlines++;
