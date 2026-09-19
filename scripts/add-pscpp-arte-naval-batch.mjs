@@ -108,6 +108,7 @@ const extractDescription = (question) => {
   return question.question
     .slice(start + marker.length)
     .replace(/\s*Assinale a opção correta\.?\s*$/i, "")
+    .replace(/\s*Qual nomenclatura corresponde ao caso apresentado\?\s*$/i, "")
     .trim()
     .replace(/[. ]+$/, "");
 };
@@ -129,7 +130,7 @@ const generated = selected.map((source, index) => {
   const topicKey = normalize(source.topic);
   const topicOccurrence = topicOccurrences.get(topicKey) || 0;
   topicOccurrences.set(topicKey, topicOccurrence + 1);
-  const reverse = index >= byTopic.size || !description;
+  const reverse = !description;
   const reviewContexts = [
     "Em uma revisão técnica do aparelho e das manobras do navio",
     "Durante o planejamento de uma operação a bordo",
@@ -138,7 +139,7 @@ const generated = selected.map((source, index) => {
   ];
   const questionText = reverse
     ? `${reviewContexts[topicOccurrence % reviewContexts.length]}, qual alternativa apresenta a definição correta de “${source.topic}”?`
-    : `Durante a preparação para uma manobra, foi registrada a seguinte descrição: “${description}”. Qual termo técnico corresponde a ela?`;
+    : `${reviewContexts[topicOccurrence % reviewContexts.length]}, foi registrada a seguinte descrição: “${description}”. Qual termo técnico corresponde a ela?`;
   const volume = /v\.\s*1/i.test(source.source?.title || "") ? 1 : 2;
   const chapterNumber = source.tracking?.chapter?.number || source.taxonomy?.chapter_id?.match(/ch(\d+)/)?.[1] || "";
 
