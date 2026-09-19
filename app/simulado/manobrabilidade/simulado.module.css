@@ -28,3 +28,7 @@
 /* Mantém alto contraste quando o aluno seleciona texto com mouse/toque. */
 .page ::selection{background:#145cc7;color:#fff;text-shadow:none}
 .page ::-moz-selection{background:#145cc7;color:#fff;text-shadow:none}
+
+.questionHeading{font-size:clamp(14px,1.15vw,17px);font-weight:600;line-height:1.42;letter-spacing:-.006em;margin:0 0 14px}
+@media(min-width:1100px){.questionCard{padding:20px 24px}.questionTags{margin:12px 0 9px}.options{gap:7px}.option{padding:9px 12px}.option b{width:30px;height:30px}}
+@media(max-width:700px){.questionHeading{font-size:14px;line-height:1.4}}
