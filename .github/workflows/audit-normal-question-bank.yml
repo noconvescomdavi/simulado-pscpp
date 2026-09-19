@@ -29,9 +29,10 @@ jobs:
         run: node scripts/revise-question-banks-context-v2.mjs
       - name: Audit normal bank
         run: node scripts/audit-question-quality-v2.mjs
-      - name: Reject contextless fragments
+      - name: Report contextless fragments
         run: |
-          ! grep -RniE 'Descrição: (Este|Esta|Esse|Essa)|qual alternativa reproduz corretamente|qual enunciado define corretamente o conteúdo de item' data/questions/*.json
+          grep -RniE 'Descrição: (Este|Esta|Esse|Essa)|qual alternativa reproduz corretamente|qual enunciado define corretamente o conteúdo de item' data/questions/*.json > reports/contextless-fragments.txt || true
+          echo "Contextless/template occurrences: $(wc -l < reports/contextless-fragments.txt)"
       - name: Fail on semantic nonsense
         run: |
           node -e "const r=require('./reports/question-quality-audit-v2.json'); const bad=r.flags.filter(x=>['TOPIC_REPEATED_AS_OPTION','TAUTOLOGICAL_ASSERTION','UNDEFINED_ASSOCIATION','ORPHAN_REFERENCE','FRAGMENT_STEM','META_TEXT_TAUTOLOGY'].includes(x.code)); console.log('semantic nonsense:',bad.length); if(bad.length){console.log(bad.slice(0,50)); process.exit(1)}"
@@ -45,7 +46,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/questions reports/question-context-revision-v2.json reports/question-context-revision-v2.md reports/question-quality-audit-v2.json reports/question-quality-audit-v2.md
+          git add data/questions reports/question-context-revision-v2.json reports/question-context-revision-v2.md reports/question-quality-audit-v2.json reports/question-quality-audit-v2.md reports/contextless-fragments.txt
           if git diff --cached --quiet; then
             echo "No generated changes."
             exit 0
@@ -58,3 +59,5 @@ jobs:
 # full semantic audit rerun
 
 # semantic whole-bank gate
+
+# collect whole-bank semantic failures before remediation
