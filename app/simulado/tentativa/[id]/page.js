@@ -134,7 +134,7 @@ export default async function Page({ params }) {
                     ].filter(Boolean).join(" · ")}
                   </p>
                 )}
-                <h2>{index + 1}. <StructuredQuestion question={question || {question:String(questionId)}} /></h2>
+                <div className={styles.questionHeading}><b>{index + 1}.</b> <StructuredQuestion question={question || {question:String(questionId)}} /></div>
                 {answer ? (
                   <>
                     <p>
