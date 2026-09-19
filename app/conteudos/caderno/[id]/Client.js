@@ -223,11 +223,38 @@ export default function Client({
   const [reviewing, setReviewing] =
     useState(false);
 
-  const [focusMode, setFocusMode] = useState(false);
+  const [focusMode, setFocusMode] = useState(false);\n  const assessmentRef = useRef(null);
 
   const planMarkedRef = useRef(false);
 
   useEffect(()=>{cacheServerNotebook(notebook).catch(()=>{})},[notebook]);
+
+  useEffect(() => {
+    const syncFullscreen = () => {
+      setFocusMode(document.fullscreenElement === assessmentRef.current);
+    };
+    document.addEventListener("fullscreenchange", syncFullscreen);
+    return () => document.removeEventListener("fullscreenchange", syncFullscreen);
+  }, []);
+
+  async function toggleFocusMode() {
+    try {
+      if (document.fullscreenElement === assessmentRef.current) {
+        await document.exitFullscreen();
+        return;
+      }
+      if (document.fullscreenElement) {
+        await document.exitFullscreen();
+      }
+      if (assessmentRef.current?.requestFullscreen) {
+        await assessmentRef.current.requestFullscreen();
+      } else {
+        setFocusMode((value) => !value);
+      }
+    } catch {
+      setFocusMode((value) => !value);
+    }
+  }
 
   useEffect(() => {
     if (!result?.completed || planMarkedRef.current) return;
@@ -425,13 +452,13 @@ export default function Client({
   }
 
   return (
-    <main className={`${styles.page} ${focusMode ? styles.focusMode : ""}`}>
-      <div className={styles.assessmentToolbar}><div><strong>Questão {index + 1} de {questions.length}</strong><span>{Object.keys(answers).length} respondidas</span></div><button type="button" onClick={() => setFocusMode(value => !value)}>{focusMode ? "Sair da tela cheia" : "⛶ Full Screen"}</button></div>
+    <main className={styles.page}>
+      <div className={styles.assessmentToolbar}><div><strong>Questão {index + 1} de {questions.length}</strong><span>{Object.keys(answers).length} respondidas</span></div><button type="button" onClick={toggleFocusMode}>{focusMode ? "Sair da tela cheia" : "⛶ Full Screen"}</button></div>
       <h1>
         {notebook.title}
       </h1>
 
-      <div className={styles.assessmentLayout}>
+      <div ref={assessmentRef} className={`${styles.assessmentLayout} ${focusMode ? styles.focusMode : ""}`}>\n      {focusMode && <button type="button" className={styles.fullscreenExit} onClick={toggleFocusMode}>Sair da tela cheia</button>}
       <article>
         <p className={styles.trace}>
           {[
