@@ -52,7 +52,7 @@ function QuestionBody({question}) {
   const image=question.image;
   return <div className={styles.questionBody}>
     {blocks.map((b,i)=>b?.type==="text"?<p key={i}>{b.text}</p>:b?.type==="image"&&b.src?<figure key={i}><img src={b.src} alt={b.alt||"Recurso da questão"}/>{b.caption&&<figcaption>{b.caption}</figcaption>}</figure>:null)}
-    {assertions.length>0&&<ol type="I">{assertions.map((a,i)=><li key={i}>{typeof a==="string"?a:a.text}</li>)}</ol>}
+    {assertions.length>0&&<div className={styles.assertions}>{assertions.map((a,i)=><p key={i}>{typeof a==="string"?a:a.text}</p>)}</div>}
     {headers.length>0&&rows.length>0&&<div className={styles.tableWrap}><table><thead><tr>{headers.map((h,i)=><th key={i}>{h}</th>)}</tr></thead><tbody>{rows.map((row,i)=><tr key={i}>{row.map((cell,j)=><td key={j}>{cell}</td>)}</tr>)}</tbody></table></div>}
     {image?.src&&<figure><img src={image.src} alt={image.alt||"Figura da questão"}/>{image.caption&&<figcaption>{image.caption}</figcaption>}</figure>}
   </div>;
