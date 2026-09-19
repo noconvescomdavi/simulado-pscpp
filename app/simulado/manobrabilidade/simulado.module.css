@@ -48,3 +48,7 @@
   .questionHeading{font-size:11px;line-height:1.23}
   .option{padding:6px 7px}.option span{font-size:11px}
 }
+
+.assessmentToolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 10px;padding:9px 12px;border:1px solid #29475a;border-radius:11px;background:#0b2233;color:#fff;position:sticky;top:84px;z-index:45}.assessmentToolbar>div{display:flex;align-items:baseline;gap:12px}.assessmentToolbar span{font-size:11px;color:#a9bdca}.assessmentToolbar button{border:1px solid #496579;border-radius:8px;background:#102f45;color:#fff;padding:8px 11px;font-weight:800;cursor:pointer}.questionNumber[data-status="correct"]{background:#e3f7ed;border-color:#75c6a1;color:#087a58}.questionNumber[data-status="wrong"]{background:#fff0f1;border-color:#e39aa3;color:#a62535}.questionCurrent{outline:2px solid var(--exam-red);outline-offset:1px}
+.focusMode{position:fixed;inset:0;z-index:10000;height:100dvh;overflow:auto}.focusMode>.header{display:none}.focusMode .main{max-width:1600px;padding-top:10px}.focusMode .assessmentToolbar{top:0}.focusMode .examHeading{display:none}.focusMode .sidebar{top:62px}
+@media(max-width:700px){.assessmentToolbar{top:72px;padding:7px 8px}.assessmentToolbar>div{display:grid;gap:1px}.assessmentToolbar button{padding:7px 8px;font-size:11px}.focusMode .assessmentToolbar{top:0}.focusMode .main{padding:6px}}
