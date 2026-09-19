@@ -111,10 +111,7 @@ function initialAnswers(notebook) {
   return result;
 }
 
-function Result({
-  result,
-  onReview,
-}) {
+function Result({ result, onReview, questions, answers }) {
   return (
     <main className={styles.page}>
       <section>
@@ -174,12 +171,17 @@ function Result({
           métricas de estudo.
         </p>
 
-        <button
-          type="button"
-          onClick={onReview}
-        >
-          Revisar respostas
-        </button>
+        <div className={styles.resultAnswerCard}>
+          <strong>Cartão de respostas</strong>
+          <p>Clique em uma questão para revisar.</p>
+          <div className={styles.answerGrid}>
+            {questions.map((item, itemIndex) => {
+              const itemAnswer = answers[questionKey(item)];
+              return <button type="button" key={questionKey(item)} data-status={itemAnswer?.is_correct ? "correct" : itemAnswer ? "wrong" : "pending"} onClick={() => onReview(itemIndex)}>{itemIndex + 1}</button>;
+            })}
+          </div>
+        </div>
+        <button type="button" onClick={() => onReview(0)}>Revisar respostas</button>
       </section>
     </main>
   );
@@ -259,9 +261,9 @@ export default function Client({
     return (
       <Result
         result={result}
-        onReview={() =>
-          setReviewing(true)
-        }
+        questions={questions}
+        answers={answers}
+        onReview={(reviewIndex = 0) => { setIndex(reviewIndex); setReviewing(true); }}
       />
     );
   }
