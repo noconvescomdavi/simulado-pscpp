@@ -123,8 +123,10 @@ function rotateBaseOptions(q, desiredIndex) {
   return fiveOptions(texts, correct, desiredIndex);
 }
 function statementFrom(q, truth, seed = 0) {
+  // Nunca colar topicLabel ao texto da proposição. O tópico é metadado e
+  // pode não formar uma frase semanticamente coerente com a alternativa.
   const text = truth ? correctText(q) : wrongTexts(q)[seed % wrongTexts(q).length];
-  return `${topicLabel(q)} — ${text}`;
+  return clean(text).replace(/[.]$/, '');
 }
 function withMeta(base, extra = {}) {
   const tags = [...new Set([...(Array.isArray(base.tags) ? base.tags : []), 'expansao-formatos-v1', extra.tag].filter(Boolean))];
@@ -152,7 +154,7 @@ function makeTrueFalse({ base, id, seq }) {
     ...withMeta(base, { style: 'Verdadeiro/Falso', tag: 'formato-vf', difficulty: seq % 3 === 0 ? 'Médio' : 'Fácil' }),
     style: 'Verdadeiro/Falso',
     topic_code: `FMT.VF.${String(seq + 1).padStart(3, '0')}`,
-    question: `Julgue a afirmativa a seguir, considerando ${chapterLabel(base)} e a referência ${sourceRef(base)}: “${statement}”.`,
+    question: `Analise a proposição abaixo e determine se é verdadeira (V) ou falsa (F):\nI) ${statement}.`,
     options: [{ key: 'A', text: 'Verdadeiro' }, { key: 'B', text: 'Falso' }],
     correct_answer: truth ? 'A' : 'B',
     explanation: truth
@@ -175,7 +177,7 @@ function makeAssertions({ bases, id, seq }) {
     ...withMeta(bases[0], { style: 'Assertivas I–II–III', tag: 'formato-assertivas-123', difficulty: seq % 2 ? 'Difícil' : 'Médio', derivedIds: bases.map(q => q.id), topic: `${chapterLabel(bases[0])} — assertivas` }),
     style: 'Assertivas I–II–III',
     topic_code: `FMT.A123.${String(seq + 1).padStart(3, '0')}`,
-    question: `Analise as assertivas sobre ${chapterLabel(bases[0])}:\nI. ${props[0]}.\nII. ${props[1]}.\nIII. ${props[2]}.\nAssinale a alternativa correta.`,
+    question: `De acordo com o conteúdo técnico indicado, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:\nI) ${props[0]}.\nII) ${props[1]}.\nIII) ${props[2]}.`,
     options: [
       { key: 'A', text: 'Apenas a assertiva I está correta.' },
       { key: 'B', text: 'Apenas a assertiva II está correta.' },
@@ -218,7 +220,7 @@ function makeSequenceVF({ bases, id, seq }) {
     ...withMeta(bases[0], { style: 'Sequência V/F', tag: 'formato-sequencia-vf', difficulty: 'Difícil', derivedIds: bases.map(q => q.id), topic: `${chapterLabel(bases[0])} — sequência V/F` }),
     style: 'Sequência V/F',
     topic_code: `FMT.SEQVF.${String(seq + 1).padStart(3, '0')}`,
-    question: `Julgue as proposições sobre ${chapterLabel(bases[0])} como verdadeiras (V) ou falsas (F):\n1. ${props[0]}.\n2. ${props[1]}.\n3. ${props[2]}.\n4. ${props[3]}.\nAssinale a sequência correta.`,
+    question: `Analise as proposições abaixo e determine se são verdadeiras (V) ou falsas (F):\nI) ${props[0]}.\nII) ${props[1]}.\nIII) ${props[2]}.\nIV) ${props[3]}.\nAssinale a sequência correta.`,
     options: labels.map((text, i) => ({ key: KEYS[i], text })),
     correct_answer: KEYS[pIndex],
     explanation: `A sequência correta é ${labels[pIndex]}. As formulações corretas dos quatro pontos são: ${bases.map((q, i) => `${i + 1}) ${correctText(q)}`).join(' ')}`
