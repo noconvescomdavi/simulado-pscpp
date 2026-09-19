@@ -19,3 +19,40 @@
 /* Mantém alto contraste quando o aluno seleciona texto com mouse/toque. */
 .page ::selection{background:#145cc7;color:#fff;text-shadow:none}
 .page ::-moz-selection{background:#145cc7;color:#fff;text-shadow:none}
+
+.questionHeading{font-size:clamp(14px,1.15vw,17px);font-weight:600;line-height:1.42;letter-spacing:-.006em;margin:0 0 12px}
+.page article{padding:clamp(14px,1.5vw,20px)}
+.page article>button{margin:6px 0;padding:9px 11px;font-size:clamp(13px,1vw,15px);line-height:1.35}
+@media(min-width:1100px){.page{max-width:1180px;padding-top:18px}.trace{margin-bottom:8px}}
+@media(max-width:700px){.page{padding:16px 10px}.questionHeading{font-size:14px;line-height:1.4}.page article{padding:13px}.page article>button{padding:9px}}
+/* Escala responsiva do caderno: aproveita a largura/altura real da tela sem truncar texto. */
+@media (min-width:1400px) and (max-height:1000px){
+  .page{max-width:1340px;padding:12px 16px}
+  .page>h1,.page>p{margin-block:6px}
+  .page article{padding:12px 16px}
+  .trace{margin-bottom:6px}
+  .questionHeading{font-size:13px;line-height:1.32;margin-bottom:8px}
+  .page article>button{margin:4px 0;padding:7px 10px;font-size:13px;line-height:1.25}
+}
+@media (min-width:1400px) and (max-height:850px){
+  .questionHeading{font-size:12px;line-height:1.26}
+  .page article>button{padding:6px 9px;font-size:12px}
+}
+
+/* Mobile: prioriza enunciado + alternativas na área útil, sem truncamento. */
+@media(max-width:700px){
+  .page{max-width:none;padding:8px 8px 18px}
+  .page>h1{font-size:18px;line-height:1.15;margin:4px 0}
+  .page>p{font-size:11px;margin:4px 0 7px}
+  .page article{padding:10px;border-radius:11px}
+  .trace{font-size:9px;margin:0 0 5px}
+  .questionHeading{font-size:clamp(11.5px,3.15vw,13px);line-height:1.28;margin:0 0 7px}
+  .page article>button{margin:4px 0;padding:7px 8px;border-radius:7px;font-size:clamp(11px,3vw,13px);line-height:1.25}
+  .page nav{margin-top:10px}
+}
+@media(max-width:430px) and (max-height:850px){
+  .page{padding:6px 6px 14px}
+  .page article{padding:8px}
+  .questionHeading{font-size:11px;line-height:1.23}
+  .page article>button{padding:6px 7px;font-size:11px;line-height:1.2}
+}

@@ -368,7 +368,7 @@ export default function SimuladoClient({ userEmail }) {
         <section className={styles.questionCard}>
           <div className={styles.questionTop}><div><span>QUESTÃO {exam.index + 1}</span><small>{question.id}</small></div><div className={styles.liveScore}><span>ACERTOS</span><strong>{exam.correct}</strong><small>{score}%</small></div></div>
           <div className={styles.questionTags}><span>{question.module}</span><span>{question.topic_code} · {question.topic}</span></div>
-          <h2><StructuredQuestion question={question} /></h2>
+          <div className={styles.questionHeading}><StructuredQuestion question={question} /></div>
 
           <div className={styles.options}>
             {question.options.map((option) => {
