@@ -391,7 +391,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
       </div>
 
       <div ref={assessmentRef} className={`${styles.assessmentLayout} ${focusMode ? styles.focusMode : ""}`}>
-      {focusMode && <button type="button" className={styles.fullscreenExit} onClick={toggleFocusMode}>Sair da tela cheia</button>}
+      {focusMode && <div className={styles.fullscreenControls}><b className={styles.fullscreenTimer}>{clock(remaining)}</b><button type="button" className={styles.fullscreenExit} onClick={toggleFocusMode}>Sair da tela cheia</button></div>}
       <article>
         <p className={styles.trace}>
           {[question.tracking?.work?.title,question.tracking?.chapter?.label,question.tracking?.module]
