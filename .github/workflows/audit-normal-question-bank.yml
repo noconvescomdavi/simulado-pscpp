@@ -1,0 +1,48 @@
+name: Audit normal question bank
+
+on:
+  push:
+    branches:
+      - fix/format-all-question-bank-v2
+    paths:
+      - ".github/workflows/audit-normal-question-bank.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit-and-fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/format-all-question-bank-v2
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Rebuild problematic generated questions
+        run: node scripts/revise-question-banks-context-v2.mjs
+      - name: Audit normal bank
+        run: node scripts/audit-question-quality-v2.mjs
+      - name: Validate question banks
+        run: npm run validate:questions
+      - name: Structural tests
+        run: npm run test:question-structure
+      - name: Build
+        run: npm run build
+      - name: Commit corrected normal-bank data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/questions reports/question-context-revision-v2.json reports/question-context-revision-v2.md reports/question-quality-audit-v2.json reports/question-quality-audit-v2.md
+          if git diff --cached --quiet; then
+            echo "No generated changes."
+            exit 0
+          fi
+          git commit -m "fix(questions): audit and normalize normal question bank"
+          git push origin HEAD:fix/format-all-question-bank-v2
