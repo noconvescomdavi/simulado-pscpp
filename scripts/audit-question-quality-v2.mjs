@@ -78,6 +78,29 @@ function pushFlag(flags, subject, q, code, severity, detail) {
   flags.push({ subject, id: q.id, code, severity, detail, style: formatOf(q), topic: q.topic, chapter_id: q?.taxonomy?.chapter_id, topic_id: q?.taxonomy?.topic_id });
 }
 
+function semanticNonsenseReasons(q) {
+  const reasons = [];
+  const stem = clean(q.question);
+  const opts = (q.options || []).map(o => clean(o?.text));
+  const joined = [stem, ...opts].join(' ');
+  const quoted = [...stem.matchAll(/[“"]([^”"]{3,180})[”"]/g)].map(m => clean(m[1]));
+
+  for (const x of quoted) {
+    const nx = norm(x);
+    if (nx && opts.some(o => norm(o) === nx)) reasons.push('TOPIC_REPEATED_AS_OPTION');
+  }
+  const m = stem.match(/Sobre\s+[“"]([^”"]+)[”"][^:]{0,80}:\s*([^.;\n]{3,180})/i);
+  if (m && norm(m[1]) === norm(m[2])) reasons.push('TAUTOLOGICAL_ASSERTION');
+  if (/\ba associação\s+[“"][^”"]+[”"]\s+(?:está|e)\s+correta\b/i.test(joined)) reasons.push('UNDEFINED_ASSOCIATION');
+  if (/\b(?:descrição|método|procedimento|sistema|dispositivo)\s*:\s*(?:este|esta|esse|essa)\b/i.test(joined)) reasons.push('ORPHAN_REFERENCE');
+  if (/\b(?:trecho|fragmento)\s+\d+\b/i.test(stem)) reasons.push('FRAGMENT_STEM');
+  if (/\b(?:é tecnicamente correto afirmar|considere a proposição)\s*:\s*[^.;\n]{1,160}$/i.test(stem) && quoted.length) {
+    const tail = stem.split(':').pop();
+    if (quoted.some(x => norm(x) === norm(tail))) reasons.push('META_TEXT_TAUTOLOGY');
+  }
+  return [...new Set(reasons)];
+}
+
 const allFlags = [];
 const subjectReports = {};
 const globalStemMap = new Map();
@@ -116,6 +139,12 @@ for (const subject of SUBJECTS) {
     const stemNorm = norm(stem);
     const opts = Array.isArray(q.options) ? q.options : [];
     const correct = correctOption(q);
+
+    const nonsense = semanticNonsenseReasons(q);
+    for (const code of nonsense) {
+      contextRisk++;
+      pushFlag(allFlags, subject, q, code, 'critical', 'Questão semanticamente sem nexo/autossuficiência; retirar do pool até reconstrução bibliográfica.');
+    }
 
     if (!q.id || !stem || !opts.length || !answerKey(q) || !correct) {
       structural++;
