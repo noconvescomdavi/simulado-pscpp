@@ -32,6 +32,9 @@ jobs:
       - name: Reject contextless fragments
         run: |
           ! grep -RniE 'Descrição: (Este|Esta|Esse|Essa)|qual alternativa reproduz corretamente|qual enunciado define corretamente o conteúdo de item' data/questions/*.json
+      - name: Fail on semantic nonsense
+        run: |
+          node -e "const r=require('./reports/question-quality-audit-v2.json'); const bad=r.flags.filter(x=>['TOPIC_REPEATED_AS_OPTION','TAUTOLOGICAL_ASSERTION','UNDEFINED_ASSOCIATION','ORPHAN_REFERENCE','FRAGMENT_STEM','META_TEXT_TAUTOLOGY'].includes(x.code)); console.log('semantic nonsense:',bad.length); if(bad.length){console.log(bad.slice(0,50)); process.exit(1)}"
       - name: Validate question banks
         run: npm run validate:questions
       - name: Structural tests
@@ -53,3 +56,5 @@ jobs:
 # rerun after idempotency fix
 
 # full semantic audit rerun
+
+# semantic whole-bank gate
