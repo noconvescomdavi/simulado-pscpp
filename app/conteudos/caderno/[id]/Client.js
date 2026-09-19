@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import styles from "./caderno.module.css";
+import StructuredQuestion from "../../../components/StructuredQuestion";
 import {cacheServerNotebook, answerOfflineNotebook} from "../../../../lib/offline-store";
 
 function questionKey(question) {
@@ -440,9 +441,7 @@ export default function Client({
             .filter(Boolean)
             .join(" · ")}
         </p>
-        <h2>
-          {question.question}
-        </h2>
+        <h2 className={styles.questionHeading}><StructuredQuestion question={question} /></h2>
 
         {options.map(
           (option) => (
