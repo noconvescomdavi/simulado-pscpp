@@ -33,12 +33,19 @@ export async function GET(request) {
   const available = availableQuestionBanks({ includePscpp: true }).map((item) => item.slug);
   const subjects = [...new Set((requested.length ? requested : available).filter((slug) => available.includes(slug)))];
 
+  const offset = Math.max(0, Math.trunc(Number(url.searchParams.get("offset")) || 0));
+  const limit = Math.max(25, Math.min(200, Math.trunc(Number(url.searchParams.get("limit")) || 100)));
+
   const banks = subjects.map((subject) => {
     const bank = getQuestionBank(subject);
+    const allQuestions = bank?.questions || [];
+    const questions = allQuestions.slice(offset, offset + limit).map((question) => offlineQuestion(question, subject));
     return {
       subject,
       title: bank?.title || subject,
-      questions: (bank?.questions || []).map((question) => offlineQuestion(question, subject)),
+      questions,
+      total_questions: allQuestions.length,
+      next_offset: offset + questions.length < allQuestions.length ? offset + questions.length : null,
     };
   });
 

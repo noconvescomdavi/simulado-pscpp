@@ -19,3 +19,50 @@
 /* Mantém alto contraste quando o aluno seleciona texto com mouse/toque. */
 .page ::selection{background:#145cc7;color:#fff;text-shadow:none}
 .page ::-moz-selection{background:#145cc7;color:#fff;text-shadow:none}
+
+.questionHeading{font-size:clamp(14px,1.15vw,17px);font-weight:600;line-height:1.42;letter-spacing:-.006em;margin:0 0 12px}
+.page article{padding:clamp(14px,1.5vw,20px)}
+.page article>button{margin:6px 0;padding:9px 11px;font-size:clamp(13px,1vw,15px);line-height:1.35}
+@media(min-width:1100px){.page{max-width:1298px;padding-top:18px}.trace{margin-bottom:8px}.assessmentLayout{grid-template-columns:minmax(0,1fr) 253px;gap:13px}.page article{padding:clamp(15px,1.65vw,22px)}.trace{font-size:13px}.questionHeading{font-size:clamp(15px,1.265vw,18.5px);line-height:1.42}.page article>button{margin:7px 0;padding:10px 12px;font-size:clamp(14px,1.1vw,16.5px);line-height:1.35}.answerCard{padding:13px}.answerGrid{gap:7px}.answerGrid button{font-size:12px}.answerCardHead{font-size:1.1em}.answerCardHead small{font-size:12px}.answerLegend{font-size:10px}}
+@media(max-width:700px){.page{padding:16px 10px}.questionHeading{font-size:14px;line-height:1.4}.page article{padding:13px}.page article>button{padding:9px}}
+/* Escala responsiva do caderno: aproveita a largura/altura real da tela sem truncar texto. */
+@media (min-width:1400px) and (max-height:1000px){
+  .page{max-width:1340px;padding:12px 16px}
+  .page>h1,.page>p{margin-block:6px}
+  .page article{padding:12px 16px}
+  .trace{margin-bottom:6px}
+  .questionHeading{font-size:13px;line-height:1.32;margin-bottom:8px}
+  .page article>button{margin:4px 0;padding:7px 10px;font-size:13px;line-height:1.25}
+}
+@media (min-width:1400px) and (max-height:850px){
+  .questionHeading{font-size:12px;line-height:1.26}
+  .page article>button{padding:6px 9px;font-size:12px}
+}
+
+/* Mobile: prioriza enunciado + alternativas na área útil, sem truncamento. */
+@media(max-width:700px){
+  .page{max-width:none;padding:8px 8px 18px}
+  .page>h1{font-size:18px;line-height:1.15;margin:4px 0}
+  .page>p{font-size:11px;margin:4px 0 7px}
+  .page article{padding:10px;border-radius:11px}
+  .trace{font-size:9px;margin:0 0 5px}
+  .questionHeading{font-size:clamp(11.5px,3.15vw,13px);line-height:1.28;margin:0 0 7px}
+  .page article>button{margin:4px 0;padding:7px 8px;border-radius:7px;font-size:clamp(11px,3vw,13px);line-height:1.25}
+  .page nav{margin-top:10px}
+}
+@media(max-width:430px) and (max-height:850px){
+  .page{padding:6px 6px 14px}
+  .page article{padding:8px}
+  .questionHeading{font-size:11px;line-height:1.23}
+  .page article>button{padding:6px 7px;font-size:11px;line-height:1.2}
+}
+
+.assessmentToolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 10px;padding:9px 12px;border:1px solid #29475a;border-radius:11px;background:#0b2233;color:#fff;position:sticky;top:8px;z-index:20}
+.assessmentToolbar>div{display:flex;align-items:baseline;gap:12px}.assessmentToolbar span{font-size:11px;color:#a9bdca}.assessmentToolbar button{border:1px solid #496579;border-radius:8px;background:#102f45;color:#fff;padding:8px 11px;font-weight:800;cursor:pointer}
+.assessmentLayout{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:12px;align-items:start}.assessmentLayout>article{min-width:0}
+.answerCard{position:sticky;top:66px;background:#fff;color:#071c2b;border:1px solid #dce4ea;border-radius:13px;padding:12px;max-height:calc(100vh - 82px);overflow:auto}.answerCardHead{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:10px}.answerCardHead small{color:#617383}
+.answerGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}.answerGrid button{aspect-ratio:1;border:1px solid #d2dce3;border-radius:7px;background:#f4f7f9;color:#405565;font-size:11px;font-weight:900;cursor:pointer;padding:0}.answerGrid button[data-status="correct"]{background:#e3f7ed;border-color:#75c6a1;color:#087a58}.answerGrid button[data-status="wrong"]{background:#fff0f1;border-color:#e39aa3;color:#a62535}.answerGrid button[data-current="true"]{outline:3px solid #1674b8;outline-offset:1px}.answerLegend{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px;font-size:9px;color:#617383}.answerLegend span{display:flex;align-items:center;gap:5px}.answerLegend i{width:9px;height:9px;border-radius:3px;background:#f4f7f9;border:1px solid #d2dce3}.answerLegend i[data-kind="current"]{background:#1674b8}.answerLegend i[data-kind="correct"]{background:#75c6a1}.answerLegend i[data-kind="wrong"]{background:#e39aa3}
+.resultAnswerCard{margin:18px 0;padding:14px;background:#fff;color:#071c2b;border-radius:13px}.resultAnswerCard .answerGrid{grid-template-columns:repeat(10,minmax(28px,1fr))}
+.focusMode{position:fixed;inset:0;z-index:10000;max-width:none!important;width:100%;height:100dvh;overflow:auto;margin:0!important;padding:58px 22px 22px!important;background:#071827;color:#e8f2f8;grid-template-columns:minmax(0,1fr) 290px;gap:16px;align-items:start;box-sizing:border-box}.focusMode:fullscreen{width:100%;height:100%;box-sizing:border-box}.fullscreenExit{position:fixed;top:10px;right:22px;z-index:10002;border:1px solid #496579;border-radius:8px;background:#102f45;color:#fff;padding:9px 13px;font-weight:800;cursor:pointer}.focusMode>article{padding:20px!important;border-radius:14px}.focusMode .trace{font-size:15px;line-height:1.3;margin-bottom:8px}.focusMode .questionHeading{font-size:clamp(18px,1.25vw,22px);line-height:1.42;margin-bottom:12px}.focusMode>article>button{font-size:clamp(16px,1.05vw,19px);line-height:1.35;padding:11px 13px;margin:7px 0}.focusMode nav button{font-size:18px;padding:9px 14px}.focusMode .answerCard{top:14px;max-height:calc(100dvh - 80px);padding:15px}.focusMode .answerCardHead{font-size:18px}.focusMode .answerCardHead small{font-size:13px}.focusMode .answerGrid{gap:8px}.focusMode .answerGrid button{font-size:13px}.focusMode .answerLegend{font-size:11px}
+@media(max-width:900px){.assessmentLayout{grid-template-columns:1fr}.answerCard{position:static;max-height:none}.answerGrid{grid-template-columns:repeat(10,minmax(0,1fr))}.focusMode{grid-template-columns:1fr}.focusMode .answerCard{position:static;max-height:none}}
+@media(max-width:700px){.assessmentToolbar{top:4px;padding:7px 8px}.assessmentToolbar>div{display:grid;gap:1px}.assessmentToolbar button{padding:7px 8px;font-size:11px}.answerCard{padding:9px}.answerGrid{grid-template-columns:repeat(8,minmax(0,1fr));gap:5px}.answerLegend{grid-template-columns:repeat(4,auto);justify-content:space-between}.focusMode{padding:6px!important}.focusMode .answerCard{display:block}}

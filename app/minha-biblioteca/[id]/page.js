@@ -9,13 +9,13 @@ export default async function ReaderPage({params}){
   const session=await getSession();
   if(!session)redirect("/login?next=/minha-biblioteca");
   const {id}=await params;
-  const result=await query("select id,name,last_page,progress_percent from student_drive_files where id=$1 and user_id=$2 limit 1",[id,session.id]).catch(()=>({rows:[]}));
+  const result=await query("select id,name,last_page,progress_percent from student_library_files where id=$1 and user_id=$2 limit 1",[id,session.id]).catch(()=>({rows:[]}));
   const file=result.rows[0];
   if(!file)notFound();
   return <>
     <StudentHeader active="biblioteca"/>
     <main className={styles.readerPage}>
-      <div className={styles.readerHead}><div><a href="/minha-biblioteca">← Minha Biblioteca</a><h1>{file.name}</h1></div><span>Arquivo armazenado no Google Drive</span></div>
+      <div className={styles.readerHead}><div><a href="/minha-biblioteca">← Minha Biblioteca</a><h1>{file.name}</h1></div><span>Arquivo privado da sua biblioteca</span></div>
       <PdfReaderClient file={file} adobeClientId={process.env.NEXT_PUBLIC_ADOBE_PDF_CLIENT_ID||""}/>
     </main>
   </>;

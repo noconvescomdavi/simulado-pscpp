@@ -1,0 +1,17 @@
+.question{min-width:0;max-width:100%}.content{display:grid;gap:14px}.stem{white-space:pre-wrap;overflow-wrap:anywhere;margin:0;line-height:1.65}.assertions{list-style:none;padding:0;margin:0;display:grid;gap:12px}.assertions li{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:9px;align-items:start;line-height:1.65;min-width:0}.assertions b{font-weight:800}.text{white-space:pre-wrap;overflow-wrap:anywhere;min-width:0}.columns{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:start}.columns section{min-width:0;border:1px solid rgba(120,140,155,.28);border-radius:10px;padding:14px}.columns h4{margin:0 0 10px;font-size:.78rem;letter-spacing:.08em}.columns section>div{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.65}.options{display:grid;gap:10px;margin-top:18px}.option{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:9px;align-items:start;min-width:0;line-height:1.55}@media(max-width:680px){.columns{grid-template-columns:1fr}.columns section{padding:12px}.content{gap:12px}.assertions{gap:11px}.options{gap:11px}.stem,.assertions li,.option,.columns section>div{font-size:inherit}}
+.items{list-style:none;padding:0;margin:0;display:grid;gap:10px}.items li{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:9px;align-items:start;line-height:1.65;min-width:0}.items b{font-weight:800}.content>p+p{margin-top:2px}
+/* Compact assessment presentation: preserve structure without forcing alternatives below the fold. */
+.content{gap:8px}.stem{line-height:1.42}.assertions{gap:7px}.assertions li{line-height:1.42}.items{gap:7px}.items li{line-height:1.42}.columns section>div{line-height:1.42}
+@media (min-width:1400px) and (max-height:1000px){.content{gap:5px}.assertions,.items{gap:4px}.stem,.assertions li,.items li,.columns section>div{line-height:1.32}}
+@media (min-width:1400px) and (max-height:850px){.content{gap:4px}.assertions,.items{gap:3px}.stem,.assertions li,.items li,.columns section>div{line-height:1.26}}
+
+@media(max-width:700px){
+  .content{gap:5px}.assertions,.items{gap:5px}
+  .stem,.assertions li,.items li,.columns section>div{line-height:1.28}
+  .assertions li,.items li{gap:6px}
+  .columns{gap:7px}.columns section{padding:8px}
+}
+@media(max-width:430px) and (max-height:850px){
+  .content{gap:3px}.assertions,.items{gap:3px}
+  .stem,.assertions li,.items li,.columns section>div{line-height:1.23}
+}

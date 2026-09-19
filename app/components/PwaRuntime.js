@@ -15,51 +15,14 @@ function isIosSafariBrowser() {
   return isIOS && isSafari && !standalone && !native;
 }
 
-async function recoverSafariServiceWorker() {
-  if (!isIosSafariBrowser() || !("serviceWorker" in navigator)) return false;
-
-  const key = "estibordo:safari-sw-recovery";
-  const alreadyRecovered = sessionStorage.getItem(key) === SAFARI_RECOVERY_VERSION;
-  const registrations = await navigator.serviceWorker.getRegistrations().catch(() => []);
-  const controlled = Boolean(navigator.serviceWorker.controller);
-
-  if (!registrations.length && !controlled) return false;
-
-  await Promise.all(registrations.map((registration) => registration.unregister().catch(() => false)));
-
-  if ("caches" in window) {
-    const names = await caches.keys().catch(() => []);
-    await Promise.all(
-      names
-        .filter((name) =>
-          name.startsWith("estibordo-shell-") ||
-          name.startsWith("estibordo-pages-")
-        )
-        .map((name) => caches.delete(name).catch(() => false))
-    );
-  }
-
-  if (controlled && !alreadyRecovered) {
-    sessionStorage.setItem(key, SAFARI_RECOVERY_VERSION);
-    const url = new URL(window.location.href);
-    url.searchParams.set("_safari_recover", SAFARI_RECOVERY_VERSION);
-    window.location.replace(url.toString());
-    return true;
-  }
-
-  return false;
-}
-
 export default function PwaRuntime() {
   useEffect(() => {
     let disposed = false;
 
     (async () => {
-      try {
-        const reloading = await recoverSafariServiceWorker();
-        if (reloading || disposed) return;
-      } catch {}
-
+      // Safari/iOS deve chegar ao conteúdo sem limpeza/reload síncrono de SW/cache.
+      // A antiga recuperação executava getRegistrations + caches.keys e podia
+      // recarregar a página antes da hidratação, produzindo uma tela branca longa.
       const standalone =
         window.matchMedia("(display-mode: standalone)").matches ||
         window.navigator.standalone === true;
@@ -95,7 +58,8 @@ export default function PwaRuntime() {
 
       window.addEventListener("online", onOnline);
       navigator.serviceWorker?.addEventListener("message", onServiceWorkerMessage);
-      requestSync();
+      // OfflineSyncRuntime é o único dono da sincronização periódica.
+      // Evita duas leituras/escritas concorrentes no IndexedDB durante o startup.
 
       const syncViewportHeight = () => {
         document.documentElement.style.setProperty("--app-height", window.innerHeight + "px");

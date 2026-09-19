@@ -46,8 +46,15 @@ export default function OfflineSyncRuntime(){
 
   useEffect(()=>{
     refresh();
+    let preloadStartTimer=null;
+    const schedulePreload=()=>{
+      clearTimeout(preloadStartTimer);
+      // Prioridade absoluta para render/hidratação. Em iPhone/Safari o banco começa
+      // somente depois que a interface já teve tempo de ficar interativa.
+      preloadStartTimer=setTimeout(()=>{if(navigator.onLine)preload()},8000);
+    };
     const remove=onOfflineChange(refresh);
-    const onOnline=()=>{setOnline(true);sync();preload()};
+    const onOnline=()=>{setOnline(true);sync();schedulePreload()};
     const onOffline=()=>{setOnline(false);refresh()};
     const onMessage=(event)=>{if(event.data?.type==="ESTIBORDO_SYNC_REQUEST")sync()};
     window.addEventListener("online",onOnline);
@@ -55,11 +62,16 @@ export default function OfflineSyncRuntime(){
     navigator.serviceWorker?.addEventListener("message",onMessage);
     const syncTimer=setInterval(()=>{if(navigator.onLine)sync()},60_000);
     const preloadTimer=setInterval(()=>{if(navigator.onLine)preload()},15*60_000);
-    if(navigator.onLine){sync();preload();}
+    if(navigator.onLine){
+      // Não disputar CPU/rede com a primeira pintura/hidratação.
+      // A fila será sincronizada pelo timer ou imediatamente quando a conexão voltar.
+      schedulePreload();
+    }
     return()=>{
       remove();
       clearInterval(syncTimer);
       clearInterval(preloadTimer);
+      clearTimeout(preloadStartTimer);
       window.removeEventListener("online",onOnline);
       window.removeEventListener("offline",onOffline);
       navigator.serviceWorker?.removeEventListener("message",onMessage);

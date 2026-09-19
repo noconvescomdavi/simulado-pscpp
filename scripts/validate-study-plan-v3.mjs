@@ -48,7 +48,7 @@ assert.ok(!/update\s+student_plan_reschedules[\s\S]*status='completed'/i.test(pr
 assert.match(client,/source_plan_date:planDate/,"Cliente não preserva a data original da tarefa reprogramada");
 assert.match(getter,/const backlogRows=historical\.filter\(x=>x\.status==="pending"\)/,
   "Backlog deve conter somente tarefas-fonte ainda pendentes");
-assert.match(client,/filter\(t=>\{[\s\S]*t\.reprogrammed&&sameSource[\s\S]*\}\)[\s\S]*map\(t=>/,
+assert.match(client,/tasks\.filter\(t=>!\(t\.reprogrammed&&\(t\.source_plan_date\|\|d\.iso\)===planDate&&t\.key===task\.key\)\)\.map\(t=>/,
   "UI não remove automaticamente a cópia reprogramada após concluir a tarefa-fonte");
 
 assert.match(notebooks,/strictFixationMatch/,"Caderno diário não possui filtro estrito por obra/capítulo");
@@ -69,7 +69,7 @@ for(const table of [
   assert.ok(migration.includes(table),"Migration V3 não contém "+table);
 }
 
-assert.match(client,/Não consegui estudar hoje/,"Controle de indisponibilidade sumiu da UI");
+assert.match(client,/async function setUnavailable\(day,reason,unavailable=true\)/,"Controle de indisponibilidade sumiu da UI");
 assert.match(unavailable,/DAY_UNAVAILABLE/,"Endpoint não registra indisponibilidade");
 assert.match(getter,/recoveryCapacity/,"Motor de recuperação não considera capacidade");
 assert.match(sessionApi,/heartbeat/,"API de sessão real não possui heartbeat");

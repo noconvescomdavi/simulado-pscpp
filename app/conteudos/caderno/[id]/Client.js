@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import styles from "./caderno.module.css";
+import StructuredQuestion from "../../../components/StructuredQuestion";
 import {cacheServerNotebook, answerOfflineNotebook} from "../../../../lib/offline-store";
 
 function questionKey(question) {
@@ -110,10 +111,7 @@ function initialAnswers(notebook) {
   return result;
 }
 
-function Result({
-  result,
-  onReview,
-}) {
+function Result({ result, onReview, questions, answers }) {
   return (
     <main className={styles.page}>
       <section>
@@ -173,12 +171,17 @@ function Result({
           métricas de estudo.
         </p>
 
-        <button
-          type="button"
-          onClick={onReview}
-        >
-          Revisar respostas
-        </button>
+        <div className={styles.resultAnswerCard}>
+          <strong>Cartão de respostas</strong>
+          <p>Clique em uma questão para revisar.</p>
+          <div className={styles.answerGrid}>
+            {questions.map((item, itemIndex) => {
+              const itemAnswer = answers[questionKey(item)];
+              return <button type="button" key={questionKey(item)} data-status={itemAnswer?.is_correct ? "correct" : itemAnswer ? "wrong" : "pending"} onClick={() => onReview(itemIndex)}>{itemIndex + 1}</button>;
+            })}
+          </div>
+        </div>
+        <button type="button" onClick={() => onReview(0)}>Revisar respostas</button>
       </section>
     </main>
   );
@@ -220,9 +223,39 @@ export default function Client({
   const [reviewing, setReviewing] =
     useState(false);
 
+  const [focusMode, setFocusMode] = useState(false);
+  const assessmentRef = useRef(null);
+
   const planMarkedRef = useRef(false);
 
   useEffect(()=>{cacheServerNotebook(notebook).catch(()=>{})},[notebook]);
+
+  useEffect(() => {
+    const syncFullscreen = () => {
+      setFocusMode(document.fullscreenElement === assessmentRef.current);
+    };
+    document.addEventListener("fullscreenchange", syncFullscreen);
+    return () => document.removeEventListener("fullscreenchange", syncFullscreen);
+  }, []);
+
+  async function toggleFocusMode() {
+    try {
+      if (document.fullscreenElement === assessmentRef.current) {
+        await document.exitFullscreen();
+        return;
+      }
+      if (document.fullscreenElement) {
+        await document.exitFullscreen();
+      }
+      if (assessmentRef.current?.requestFullscreen) {
+        await assessmentRef.current.requestFullscreen();
+      } else {
+        setFocusMode((value) => !value);
+      }
+    } catch {
+      setFocusMode((value) => !value);
+    }
+  }
 
   useEffect(() => {
     if (!result?.completed || planMarkedRef.current) return;
@@ -256,9 +289,9 @@ export default function Client({
     return (
       <Result
         result={result}
-        onReview={() =>
-          setReviewing(true)
-        }
+        questions={questions}
+        answers={answers}
+        onReview={(reviewIndex = 0) => { setIndex(reviewIndex); setReviewing(true); }}
       />
     );
   }
@@ -421,15 +454,13 @@ export default function Client({
 
   return (
     <main className={styles.page}>
+      <div className={styles.assessmentToolbar}><div><strong>Questão {index + 1} de {questions.length}</strong><span>{Object.keys(answers).length} respondidas</span></div><button type="button" onClick={toggleFocusMode}>{focusMode ? "Sair da tela cheia" : "⛶ Full Screen"}</button></div>
       <h1>
         {notebook.title}
       </h1>
 
-      <p>
-        Questão {index + 1} de{" "}
-        {questions.length}
-      </p>
-
+      <div ref={assessmentRef} className={`${styles.assessmentLayout} ${focusMode ? styles.focusMode : ""}`}>
+      {focusMode && <button type="button" className={styles.fullscreenExit} onClick={toggleFocusMode}>Sair da tela cheia</button>}
       <article>
         <p className={styles.trace}>
           {[
@@ -440,9 +471,7 @@ export default function Client({
             .filter(Boolean)
             .join(" · ")}
         </p>
-        <h2>
-          {question.question}
-        </h2>
+        <div className={styles.questionHeading}><StructuredQuestion question={question} /></div>
 
         {options.map(
           (option) => (
@@ -586,6 +615,26 @@ export default function Client({
             )}
         </nav>
       </article>
+      <aside className={styles.answerCard}>
+        <div className={styles.answerCardHead}><strong>Cartão de respostas</strong><small>Questão {index + 1} de {questions.length}</small></div>
+        <div className={styles.answerGrid}>
+          {questions.map((item, itemIndex) => {
+            const itemAnswer = answers[questionKey(item)];
+            const status = itemAnswer ? (itemAnswer.is_correct ? "correct" : "wrong") : "pending";
+            return <button
+              type="button"
+              key={questionKey(item)}
+              title={itemAnswer ? (itemAnswer.is_correct ? "Correta" : "Incorreta") : "Não respondida"}
+              aria-label={`Questão ${itemIndex + 1}: ${itemAnswer ? (itemAnswer.is_correct ? "correta" : "incorreta") : "não respondida"}`}
+              data-status={status}
+              data-current={itemIndex === index ? "true" : "false"}
+              onClick={() => setIndex(itemIndex)}
+            >{itemIndex + 1}</button>;
+          })}
+        </div>
+        <div className={styles.answerLegend}><span><i data-kind="current" />Atual</span><span><i data-kind="correct" />Acerto</span><span><i data-kind="wrong" />Erro</span><span><i data-kind="pending" />Pendente</span></div>
+      </aside>
+      </div>
     </main>
   );
 }

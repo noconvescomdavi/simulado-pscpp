@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import styles from "./simulado.module.css";
+import StructuredQuestion from "../../components/StructuredQuestion";
 
 const SUBJECT = "manobrabilidade";
 const EXAM_SIZE = 100;
@@ -43,6 +44,7 @@ function storedExam(snapshot) {
     questionStartedAt: snapshot.questionStartedAt,
     selected: snapshot.selected,
     correction: snapshot.correction,
+    outcomes: snapshot.outcomes || {},
   };
 }
 
@@ -66,6 +68,7 @@ function createExam(bank) {
     questionStartedAt: now,
     selected: null,
     correction: null,
+    outcomes: {},
   };
 }
 
@@ -86,6 +89,7 @@ function restoreExam(bank) {
       questionStartedAt: Number(saved.questionStartedAt) || Date.now(),
       selected: saved.selected || null,
       correction: saved.correction || null,
+      outcomes: saved.outcomes && typeof saved.outcomes === "object" ? saved.outcomes : {},
     };
   } catch {
     return null;
@@ -124,6 +128,7 @@ export default function SimuladoClient({ userEmail }) {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
   const [result, setResult] = useState(null);
+  const [focusMode, setFocusMode] = useState(false);
   const finishing = useRef(false);
 
   useEffect(() => {
@@ -278,6 +283,7 @@ export default function SimuladoClient({ userEmail }) {
         correct: exam.correct + (payload.is_correct ? 1 : 0),
         answered: exam.answered + 1,
         correction: payload,
+        outcomes: { ...(exam.outcomes || {}), [String(question.id)]: { is_correct: Boolean(payload.is_correct) } },
       };
       setExam(next);
       persistExam(next);
@@ -346,7 +352,7 @@ export default function SimuladoClient({ userEmail }) {
     </main>;
   }
 
-  return <div className={styles.page} data-theme={theme}>
+  return <div className={`${styles.page} ${focusMode ? styles.focusMode : ""}`} data-theme={theme}>
     <header className={styles.header}>
       <div className={styles.headerInner}>
         <a className={styles.brand} href="/"><img src="/estibordo/logos/estibordo-logo-header.png" alt="ESTIBORDO" /></a>
@@ -355,6 +361,7 @@ export default function SimuladoClient({ userEmail }) {
     </header>
 
     <main className={styles.main}>
+      <div className={styles.assessmentToolbar}><div><strong>Questão {exam.index + 1} de {exam.questions.length}</strong><span>{exam.answered} respondidas</span></div><button type="button" onClick={() => setFocusMode(value => !value)}>{focusMode ? "Sair da tela cheia" : "⛶ Full Screen"}</button></div>
       <div className={styles.examHeading}>
         <div><span className={styles.eyebrow}>PROVA INTERATIVA · MANOBRABILIDADE</span><h1>Simulado de Manobrabilidade</h1><p>100 questões aleatórias · correção comentada · máximo de 3 horas</p></div>
         <div className={`${styles.timer} ${timerWarning ? styles.timerWarning : ""}`}><span>Tempo restante</span><strong>{formatTime(remaining)}</strong></div>
@@ -367,7 +374,7 @@ export default function SimuladoClient({ userEmail }) {
         <section className={styles.questionCard}>
           <div className={styles.questionTop}><div><span>QUESTÃO {exam.index + 1}</span><small>{question.id}</small></div><div className={styles.liveScore}><span>ACERTOS</span><strong>{exam.correct}</strong><small>{score}%</small></div></div>
           <div className={styles.questionTags}><span>{question.module}</span><span>{question.topic_code} · {question.topic}</span></div>
-          <h2>{question.question}</h2>
+          <div className={styles.questionHeading}><StructuredQuestion question={question} /></div>
 
           <div className={styles.options}>
             {question.options.map((option) => {
@@ -390,7 +397,7 @@ export default function SimuladoClient({ userEmail }) {
 
         <aside className={styles.sidebar}>
           <section className={styles.sidebarCard}><span className={styles.sidebarLabel}>PROGRESSO DA PROVA</span><div className={styles.sidebarSummary}><div><strong>{exam.answered}</strong><span>respondidas</span></div><div><strong>{exam.correct}</strong><span>acertos</span></div><div><strong>{exam.answered - exam.correct}</strong><span>erros</span></div></div></section>
-          <section className={styles.sidebarCard}><div className={styles.navigatorHeading}><span className={styles.sidebarLabel}>QUESTÕES</span><small>Salve para avançar</small></div><div className={styles.questionGrid}>{numberedQuestions.map((item, index) => <span key={item.id} className={[styles.questionNumber, index < exam.index ? styles.questionAnswered : "", index === exam.index ? styles.questionCurrent : ""].filter(Boolean).join(" ")}>{item.number}</span>)}</div></section>
+          <section className={styles.sidebarCard}><div className={styles.navigatorHeading}><span className={styles.sidebarLabel}>QUESTÕES</span><small>Salve para avançar</small></div><div className={styles.questionGrid}>{numberedQuestions.map((item, index) => { const outcome=exam.outcomes?.[String(item.id)]; return <span key={item.id} data-status={outcome?.is_correct ? "correct" : outcome ? "wrong" : "pending"} className={[styles.questionNumber, outcome ? styles.questionAnswered : "", index === exam.index ? styles.questionCurrent : ""].filter(Boolean).join(" ")}>{item.number}</span>; })}</div></section>
           <a className={styles.backLink} href="/study-content/simulado/manobrabilidade">← Voltar ao conteúdo programático</a>
         </aside>
       </div>
