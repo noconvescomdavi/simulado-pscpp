@@ -5,13 +5,6 @@ const config: CapacitorConfig = {
   appName: 'ESTIBORDO',
   webDir: 'www',
   appendUserAgent: ' ESTIBORDO-ANDROID',
-  server: {
-    url: 'https://simulado-pscpp.vercel.app',
-    cleartext: false,
-    androidScheme: 'https',
-    allowNavigation: ['simulado-pscpp.vercel.app'],
-    errorPath: 'offline.html'
-  },
   android: {
     allowMixedContent: false
   }
