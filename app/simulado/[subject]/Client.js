@@ -391,7 +391,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
       </div>
 
       <div ref={assessmentRef} className={`${styles.assessmentLayout} ${focusMode ? styles.focusMode : ""}`}>
-      {focusMode && <div className={styles.fullscreenControls}><b className={styles.fullscreenTimer}>{clock(remaining)}</b><button type="button" className={styles.fullscreenExit} onClick={toggleFocusMode}>Sair da tela cheia</button></div>}
+      {focusMode && <button type="button" className={styles.fullscreenExit} onClick={toggleFocusMode}>Sair da tela cheia</button>}
       <article>
         <p className={styles.trace}>
           {[question.tracking?.work?.title,question.tracking?.chapter?.label,question.tracking?.module]
@@ -430,7 +430,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
           </div>
         )}
       </article>
-      <aside className={styles.answerCard}>
+      <aside className={styles.answerCard}>{focusMode && <div className={styles.answerCardTimer}>{clock(remaining)}</div>}
         <div className={styles.answerCardHead}><strong>Cartão de respostas</strong><small>Questão {index + 1} de {exam.questions.length}</small></div>
         <div className={styles.answerGrid}>
           {exam.questions.map((item, itemIndex) => {

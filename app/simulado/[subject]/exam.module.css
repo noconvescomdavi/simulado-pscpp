@@ -27,3 +27,5 @@
 @media(max-width:700px){.assessmentToolbar{top:4px;padding:7px 8px}.assessmentToolbar>div{display:grid;gap:1px}.assessmentToolbar button{padding:7px 8px;font-size:11px}.answerGrid{grid-template-columns:repeat(8,minmax(0,1fr));gap:5px}.answerLegend{grid-template-columns:repeat(4,auto);justify-content:space-between}.focusMode{padding:6px!important}}
 
 .fullscreenControls{position:absolute;top:12px;right:16px;z-index:20;display:flex;align-items:center;gap:14px}.fullscreenTimer{font-size:clamp(22px,2vw,32px);line-height:1;color:#fff;font-variant-numeric:tabular-nums;letter-spacing:.02em}.focusMode{position:relative;padding-top:62px}@media(max-width:700px){.fullscreenControls{left:12px;right:12px;justify-content:space-between}.fullscreenTimer{font-size:22px}.focusMode{padding-top:64px}}
+
+.answerCardTimer{font-size:clamp(24px,2.2vw,34px);font-weight:800;line-height:1;text-align:center;color:#071c2b;font-variant-numeric:tabular-nums;letter-spacing:.03em;padding:4px 4px 14px;margin-bottom:10px;border-bottom:1px solid #d8e1e7}
