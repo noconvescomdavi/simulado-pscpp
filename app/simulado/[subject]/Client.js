@@ -91,6 +91,8 @@ export default function Client({ subject, title, ready, facets, planTask }) {
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
   const [filters, setFilters] = useState({ ...EMPTY_QUESTION_FILTERS });
+  const [focusMode, setFocusMode] = useState(false);
+  const [answerMap, setAnswerMap] = useState({});
   const questionStartedAt = useRef(Date.now());
   const timeoutHandled = useRef(false);
   const planMarkedRef = useRef(false);
@@ -107,6 +109,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
       }
       setState(payload);
       if (payload.state === "in_progress" && payload.exam) {
+        setAnswerMap(Object.fromEntries((payload.exam.questions || []).filter(q => q.answer).map(q => [String(q.id), q.answer])));
         await cacheServerExam(payload.exam,planTask).catch(()=>{});
         setIndex(Math.min(Number(payload.exam.answered_count || 0), Math.max(0, payload.exam.questions.length - 1)));
         setAnswer(null);
@@ -219,7 +222,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
     try {
       if(!navigator.onLine || state?.offline){
         const payload=await answerOfflineExam(exam.id,{question_id:question.id,selected_answer:selectedAnswer,response_time_ms:Date.now()-questionStartedAt.current});
-        setAnswer(payload);if(payload.result)setPendingResult({...payload.result,session_id:exam.id});
+        setAnswer(payload);setAnswerMap(current=>({...current,[String(question.id)]:payload}));if(payload.result)setPendingResult({...payload.result,session_id:exam.id});
         setState(current=>({...current,exam:{...current.exam,answered_count:Number(current.exam.answered_count||0)+1,correct_count:Number(current.exam.correct_count||0)+(payload.is_correct?1:0)}}));
         return;
       }
@@ -245,12 +248,13 @@ export default function Client({ subject, title, ready, facets, planTask }) {
       }
 
       setAnswer(payload);
+      setAnswerMap(current=>({...current,[String(question.id)]:payload}));
       if (payload.result) setPendingResult(payload.result);
     } catch(error) {
       if(!navigator.onLine || error instanceof TypeError){
         try{
           const payload=await answerOfflineExam(exam.id,{question_id:question.id,selected_answer:selectedAnswer,response_time_ms:Date.now()-questionStartedAt.current});
-          setAnswer(payload);if(payload.result)setPendingResult({...payload.result,session_id:exam.id});
+          setAnswer(payload);setAnswerMap(current=>({...current,[String(question.id)]:payload}));if(payload.result)setPendingResult({...payload.result,session_id:exam.id});
         }catch(fallback){setError(fallback.message||"Não foi possível salvar a resposta offline.");}
       }else{setError(error.message||"Não foi possível salvar a resposta.");}
     } finally {
@@ -354,7 +358,8 @@ export default function Client({ subject, title, ready, facets, planTask }) {
   const options = normalizeOptions(question.options);
 
   return (
-    <main className={styles.page}>
+    <main className={`${styles.page} ${focusMode ? styles.focusMode : ""}`}>
+      <div className={styles.assessmentToolbar}><div><strong>Questão {index + 1} de {exam.questions.length}</strong><span>{Object.keys(answerMap).length} respondidas</span></div><button type="button" onClick={() => setFocusMode(value => !value)}>{focusMode ? "Sair da tela cheia" : "⛶ Full Screen"}</button></div>
       <div className={styles.top}>
         <div>
           <span>SIMULADO EM ANDAMENTO</span>
@@ -364,6 +369,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
         <b>{clock(remaining)}</b>
       </div>
 
+      <div className={styles.assessmentLayout}>
       <article>
         <p className={styles.trace}>
           {[question.tracking?.work?.title,question.tracking?.chapter?.label,question.tracking?.module]
@@ -402,6 +408,17 @@ export default function Client({ subject, title, ready, facets, planTask }) {
           </div>
         )}
       </article>
+      <aside className={styles.answerCard}>
+        <div className={styles.answerCardHead}><strong>Cartão de respostas</strong><small>Questão {index + 1} de {exam.questions.length}</small></div>
+        <div className={styles.answerGrid}>
+          {exam.questions.map((item, itemIndex) => {
+            const itemAnswer = answerMap[String(item.id)];
+            return <span key={item.id} data-status={itemAnswer?.is_correct ? "correct" : itemAnswer ? "wrong" : "pending"} data-current={itemIndex === index ? "true" : "false"} title={itemAnswer ? (itemAnswer.is_correct ? "Correta" : "Incorreta") : "Não respondida"}>{itemIndex + 1}</span>;
+          })}
+        </div>
+        <div className={styles.answerLegend}><span><i data-kind="current" />Atual</span><span><i data-kind="correct" />Acerto</span><span><i data-kind="wrong" />Erro</span><span><i data-kind="pending" />Pendente</span></div>
+      </aside>
+      </div>
 
       <button type="button" className={styles.finish} onClick={() => finish("manual")} disabled={busy}>
         Finalizar simulado agora

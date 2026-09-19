@@ -118,12 +118,22 @@ export default async function Page({ params }) {
 
         {recovery.length>0 && <section className={styles.questions}><article><span>PLANO DE RECUPERAÇÃO</span><h2>Seu simulado revelou prioridades objetivas.</h2><p>Em vez de repetir a prova inteira, concentre a próxima sessão nos pontos que mais tiraram desempenho.</p>{recovery.map(item=><p key={item.subject}><strong>{item.label}: {item.accuracy.toFixed(1)}%</strong> · <a href={`/conteudos/banco-de-questoes?subject=${encodeURIComponent(item.subject)}`}>Treinar agora →</a></p>)}<p><a href="/centro-de-revisao">Abrir Centro de Revisão →</a></p></article></section>}
 
+        <section className={styles.reviewAnswerCard}>
+          <div><strong>Cartão de respostas</strong><small>Clique para revisar a questão</small></div>
+          <nav className={styles.reviewAnswerGrid}>
+            {ids.map((questionId, index) => {
+              const itemAnswer = answerMap.get(String(questionId));
+              return <a key={`nav-${questionId}-${index}`} href={`#questao-${index + 1}`} data-status={itemAnswer?.is_correct ? "correct" : itemAnswer ? "wrong" : "pending"}>{index + 1}</a>;
+            })}
+          </nav>
+        </section>
+
         <section className={styles.questions}>
           {ids.map((questionId, index) => {
             const question = getQuestion(exam.subject, questionId);
             const answer = answerMap.get(String(questionId));
             return (
-              <article key={`${questionId}-${index}`}>
+              <article id={`questao-${index + 1}`} key={`${questionId}-${index}`}>
                 {question?.tracking && (
                   <p className={styles.trace}>
                     {[
