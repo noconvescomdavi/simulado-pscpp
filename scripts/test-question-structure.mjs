@@ -25,10 +25,14 @@ for(const file of files){
     if(structure.type==="simple" && text.length>280){patterns.longSimple++; if(suspicious.length<200)suspicious.push({file,id:question.id,length:text.length,text:text.slice(0,700)});}
     if(structure.type==="structured_legacy" && suspicious.length<200)suspicious.push({file,id:question.id,length:text.length,text:text.slice(0,700)});
     assert.equal(structure.options?.length ?? question.options?.length ?? 0, question.options?.length ?? 0, `options changed: ${file}#${question.id}`);
-    if(structure.type==="assertions"||structure.type==="true_false"){
+    if(structure.type==="assertions"){
       const block=structure.blocks.find(x=>x.type==="assertions");
       assert.ok(block?.items?.length>=2,`assertions not split: ${file}#${question.id}`);
       assert.equal(block.items[0].label,"I",`first assertion changed: ${file}#${question.id}`);
+    }
+    if(structure.type==="true_false"){
+      const block=structure.blocks.find(x=>x.type==="assertions"||x.type==="items");
+      assert.ok(block?.items?.length>=2,`V/F statements not split: ${file}#${question.id}`);
     }
   }
 }
