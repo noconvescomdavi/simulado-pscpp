@@ -5,7 +5,7 @@ import { classifyQuestionStructure } from "../lib/question-structure.js";
 
 const roots=["data/questions","data/question-extensions"];
 const files=roots.flatMap(root=>fs.existsSync(root)?fs.readdirSync(root).filter(x=>x.endsWith(".json")).map(x=>path.join(root,x)):[]);
-const stats={files:files.length,total:0,simple:0,assertions:0,true_false:0,correlation:0,structured_legacy:0};
+const stats={files:files.length,total:0,simple:0,assertions:0,true_false:0,statements:0,enumeration:0,paragraphs:0,correlation:0,structured_legacy:0};
 const ambiguous=[];
 const suspicious=[];
 const patterns={roman:0,newlines:0,embeddedLetters:0,numbered:0,longSimple:0};
@@ -41,4 +41,6 @@ assert.deepEqual(vf.options,["V – F – V","F – V – F"]);
 const correlation=classifyQuestionStructure({question:"CORRELACIONE:\nCOLUNA A\nI. Golas\nII. Reclamos\nCOLUNA B\n( ) Definição 1\n( ) Definição 2",options:["II – I","I – II"]});
 assert.equal(correlation.type,"correlation");
 assert.ok(correlation.blocks.some(x=>x.type==="columns"));
+assert.equal(stats.total, 12600, `unexpected bank total: ${stats.total}`);
+assert.equal(ambiguous.length, 0, `unformatted structured questions remain: ${ambiguous.length}`);
 console.log(JSON.stringify({...stats,patterns,ambiguous_count:ambiguous.length,ambiguous:ambiguous.slice(0,100),suspicious},null,2));
