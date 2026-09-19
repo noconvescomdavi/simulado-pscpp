@@ -29,6 +29,9 @@ jobs:
         run: node scripts/revise-question-banks-context-v2.mjs
       - name: Audit normal bank
         run: node scripts/audit-question-quality-v2.mjs
+      - name: Reject contextless fragments
+        run: |
+          ! grep -RniE 'Descrição: (Este|Esta|Esse|Essa)|qual alternativa reproduz corretamente|qual enunciado define corretamente o conteúdo de item' data/questions/*.json
       - name: Validate question banks
         run: npm run validate:questions
       - name: Structural tests
@@ -48,3 +51,5 @@ jobs:
           git push origin HEAD:fix/format-all-question-bank-v2
 
 # rerun after idempotency fix
+
+# full semantic audit rerun
