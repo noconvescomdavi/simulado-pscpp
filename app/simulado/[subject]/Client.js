@@ -435,7 +435,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
         <div className={styles.answerGrid}>
           {exam.questions.map((item, itemIndex) => {
             const itemAnswer = answerMap[String(item.id)];
-            return <span key={item.id} data-status={itemAnswer?.is_correct ? "correct" : itemAnswer ? "wrong" : "pending"} data-current={itemIndex === index ? "true" : "false"} title={itemAnswer ? (itemAnswer.is_correct ? "Correta" : "Incorreta") : "Não respondida"}>{itemIndex + 1}</span>;
+            return <button type="button" key={item.id} onClick={() => { setIndex(itemIndex); setAnswer(itemAnswer || null); setPendingResult(null); questionStartedAt.current = Date.now(); }} data-status={itemAnswer?.is_correct ? "correct" : itemAnswer ? "wrong" : "pending"} data-current={itemIndex === index ? "true" : "false"} title={itemAnswer ? (itemAnswer.is_correct ? "Correta" : "Incorreta") : "Não respondida"} aria-label={`Questão ${itemIndex + 1}: ${itemAnswer ? (itemAnswer.is_correct ? "correta" : "incorreta") : "não respondida"}`}>{itemIndex + 1}</button>;
           })}
         </div>
         <div className={styles.answerLegend}><span><i data-kind="current" />Atual</span><span><i data-kind="correct" />Acerto</span><span><i data-kind="wrong" />Erro</span><span><i data-kind="pending" />Pendente</span></div>
