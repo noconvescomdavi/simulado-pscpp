@@ -1,4 +1,7 @@
 import fs from 'node:fs';
+// LEGACY_GENERATOR_DISABLED: este script permanece somente como registro histórico.
+// A composição automática de proposições/distratores foi proibida após a auditoria integral PSCPP.
+throw new Error('Gerador legado desativado: não execute contra data/questions/*.json. Questões devem ser reconstruídas com suporte bibliográfico verificável.');
 import path from 'node:path';
 
 const root=process.cwd(), qdir=path.join(root,'data','questions'), rdir=path.join(root,'reports');
