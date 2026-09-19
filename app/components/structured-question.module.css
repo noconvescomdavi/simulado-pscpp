@@ -2,3 +2,5 @@
 .items{list-style:none;padding:0;margin:0;display:grid;gap:10px}.items li{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:9px;align-items:start;line-height:1.65;min-width:0}.items b{font-weight:800}.content>p+p{margin-top:2px}
 /* Compact assessment presentation: preserve structure without forcing alternatives below the fold. */
 .content{gap:8px}.stem{line-height:1.42}.assertions{gap:7px}.assertions li{line-height:1.42}.items{gap:7px}.items li{line-height:1.42}.columns section>div{line-height:1.42}
+@media (min-width:1400px) and (max-height:1000px){.content{gap:5px}.assertions,.items{gap:4px}.stem,.assertions li,.items li,.columns section>div{line-height:1.32}}
+@media (min-width:1400px) and (max-height:850px){.content{gap:4px}.assertions,.items{gap:3px}.stem,.assertions li,.items li,.columns section>div{line-height:1.26}}
