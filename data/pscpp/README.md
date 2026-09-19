@@ -9,4 +9,4 @@ Questões PSCPP podem usar os campos adicionais:
 - `cognitive_level`: recall, understanding, application, analysis
 - `assertions[]`, `contentBlocks[]`, `table`, `image`
 
-A emissão do SIMULADO PSCPP é feita por blueprint controlado em `lib/pscpp-exam-bank.js`, e não por sorteio uniforme do banco comum.
+A emissão do SIMULADO PSCPP é feita por blueprint histórico controlado em `lib/pscpp-exam-bank.js`. A composição por matéria reproduz a incidência observada nas 254 questões válidas das provas oficiais de 2006, 2008, 2011 e 2012; questões anuladas não entram na estatística. A seleção dentro de cada estrato varia por emissão, mas não existe sorteio uniforme do banco.
