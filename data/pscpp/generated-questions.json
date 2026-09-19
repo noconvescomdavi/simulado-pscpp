@@ -629,7 +629,505 @@
         "title": "Shiphandling for the Mariner — 4th edition",
         "locator": "Chapter 8, emergency use of anchors; p. 199–201"
       }
+    },
+    {
+      "bank": "PSCPP",
+      "origin": "generated_pscpp",
+      "pscpp_origin": "generated_pscpp",
+      "active": true,
+      "validation_status": "approved",
+      "source_subject": "simulado-pscpp",
+      "module": "Manobrabilidade",
+      "id": "pscpp::generated::man::0012",
+      "question": "Para estimar o efeito da velocidade sobre o squat, deve-se considerar prioritariamente qual velocidade?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A velocidade sobre o fundo."
+        },
+        {
+          "key": "B",
+          "text": "A velocidade através da água."
+        },
+        {
+          "key": "C",
+          "text": "A velocidade indicada pelo GPS, independentemente da corrente."
+        },
+        {
+          "key": "D",
+          "text": "A velocidade média das últimas 24 horas."
+        },
+        {
+          "key": "E",
+          "text": "Somente a rotação do eixo propulsor."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Na discussão de squat, a obra especifica que a velocidade relevante é a velocidade do navio através da água, e não a velocidade sobre o fundo.",
+      "pscpp_format": "direct",
+      "difficulty": "hard",
+      "cognitive_level": 3,
+      "topic": "Squat e velocidade através da água",
+      "tags": [
+        "squat",
+        "speed through water",
+        "corrente"
+      ],
+      "bibliography": {
+        "publication": "Shiphandling for the Mariner",
+        "edition": "4th edition",
+        "chapter": "Chapter 2 — Shiphandling in a Channel",
+        "locator": "The Basics of Squat; p. 86",
+        "file_id": "file_00000000fad081fd9e28cdcc2bcdbc11"
+      },
+      "source": {
+        "title": "Shiphandling for the Mariner — 4th edition",
+        "locator": "Chapter 2, The Basics of Squat; p. 86"
+      }
+    },
+    {
+      "bank": "PSCPP",
+      "origin": "generated_pscpp",
+      "pscpp_origin": "generated_pscpp",
+      "active": true,
+      "validation_status": "approved",
+      "source_subject": "simulado-pscpp",
+      "module": "Manobrabilidade",
+      "id": "pscpp::generated::man::0013",
+      "question": "Um navio mantém a mesma velocidade sobre o fundo, mas passa a navegar contra uma corrente mais intensa em canal raso. Considerando apenas a relação velocidade–squat discutida na obra, qual consequência é coerente?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A tendência de squat diminui porque a velocidade sobre o fundo permaneceu constante."
+        },
+        {
+          "key": "B",
+          "text": "A tendência de squat pode aumentar porque cresce a velocidade do navio através da água."
+        },
+        {
+          "key": "C",
+          "text": "A corrente não pode alterar o efeito de squat."
+        },
+        {
+          "key": "D",
+          "text": "O squat torna-se independente da velocidade."
+        },
+        {
+          "key": "E",
+          "text": "O squat necessariamente muda da proa para a popa."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A obra relaciona squat à velocidade através da água; contra corrente, a velocidade através da água pode ser maior que a velocidade sobre o fundo e intensificar o efeito.",
+      "pscpp_format": "situation",
+      "difficulty": "very_hard",
+      "cognitive_level": 4,
+      "topic": "Corrente e squat",
+      "tags": [
+        "squat",
+        "corrente",
+        "speed through water"
+      ],
+      "bibliography": {
+        "publication": "Shiphandling for the Mariner",
+        "edition": "4th edition",
+        "chapter": "Chapter 2 — Shiphandling in a Channel",
+        "locator": "The Basics of Squat; p. 86",
+        "file_id": "file_00000000fad081fd9e28cdcc2bcdbc11"
+      },
+      "source": {
+        "title": "Shiphandling for the Mariner — 4th edition",
+        "locator": "Chapter 2, The Basics of Squat; p. 86"
+      }
+    },
+    {
+      "bank": "PSCPP",
+      "origin": "generated_pscpp",
+      "pscpp_origin": "generated_pscpp",
+      "active": true,
+      "validation_status": "approved",
+      "source_subject": "simulado-pscpp",
+      "module": "Manobrabilidade",
+      "id": "pscpp::generated::man::0014",
+      "question": "Além da velocidade, qual conjunto contém apenas fatores explicitamente relacionados pela obra à magnitude do squat?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Razão calado/profundidade, razão entre áreas transversais navio/canal, coeficiente de bloco, deslocamento e aceleração."
+        },
+        {
+          "key": "B",
+          "text": "Cor do casco, bandeira, número de tripulantes, calado aéreo e potência do radar."
+        },
+        {
+          "key": "C",
+          "text": "Declinação magnética, desvio da agulha, altura do passadiço, comprimento da amarra e visibilidade."
+        },
+        {
+          "key": "D",
+          "text": "Frequência do VHF, porte bruto, número IMO, arqueação líquida e temperatura do óleo."
+        },
+        {
+          "key": "E",
+          "text": "Somente calado e comprimento total."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A obra enumera, entre os fatores de squat, relações geométricas navio/canal, coeficiente de bloco, deslocamento e taxa/período de aceleração.",
+      "pscpp_format": "direct",
+      "difficulty": "very_hard",
+      "cognitive_level": 4,
+      "topic": "Fatores de squat",
+      "tags": [
+        "squat",
+        "blockage",
+        "coeficiente de bloco",
+        "aceleração"
+      ],
+      "bibliography": {
+        "publication": "Shiphandling for the Mariner",
+        "edition": "4th edition",
+        "chapter": "Chapter 2 — Shiphandling in a Channel",
+        "locator": "The Basics of Squat; p. 85–86",
+        "file_id": "file_00000000fad081fd9e28cdcc2bcdbc11"
+      },
+      "source": {
+        "title": "Shiphandling for the Mariner — 4th edition",
+        "locator": "Chapter 2, factors affecting squat; p. 85–86"
+      }
+    },
+    {
+      "bank": "PSCPP",
+      "origin": "generated_pscpp",
+      "pscpp_origin": "generated_pscpp",
+      "active": true,
+      "validation_status": "approved",
+      "source_subject": "simulado-pscpp",
+      "module": "Manobrabilidade",
+      "id": "pscpp::generated::man::0015",
+      "question": "Em uma área restrita, o navio encontra fundo rochoso e não há conhecimento local específico que justifique maior velocidade. Qual abordagem é compatível com a discussão sobre UKC e velocidade segura?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Adotar maior velocidade para reduzir o tempo de exposição."
+        },
+        {
+          "key": "B",
+          "text": "Tratar o tipo de fundo como irrelevante."
+        },
+        {
+          "key": "C",
+          "text": "Considerar margem mais conservadora, pois a natureza do fundo integra a avaliação do risco de encalhe."
+        },
+        {
+          "key": "D",
+          "text": "Usar apenas a velocidade sobre o fundo para decidir."
+        },
+        {
+          "key": "E",
+          "text": "Ignorar a qualidade das cartas se houver ecobatímetro."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A obra inclui natureza do fundo, qualidade cartográfica, tipo de navio, estabilidade e outros fatores na avaliação de UKC e risco de encalhe; fundo rochoso justifica postura mais conservadora.",
+      "pscpp_format": "operational",
+      "difficulty": "hard",
+      "cognitive_level": 4,
+      "topic": "UKC e avaliação de risco",
+      "tags": [
+        "UKC",
+        "fundo rochoso",
+        "velocidade segura"
+      ],
+      "bibliography": {
+        "publication": "Shiphandling for the Mariner",
+        "edition": "4th edition",
+        "chapter": "Chapter 2 — Shiphandling in a Channel",
+        "locator": "Safe Speed for Minimum Underkeel Clearance; p. 96",
+        "file_id": "file_00000000fad081fd9e28cdcc2bcdbc11"
+      },
+      "source": {
+        "title": "Shiphandling for the Mariner — 4th edition",
+        "locator": "Chapter 2, Safe Speed for Minimum Underkeel Clearance; p. 96"
+      }
+    },
+    {
+      "bank": "PSCPP",
+      "origin": "generated_pscpp",
+      "pscpp_origin": "generated_pscpp",
+      "active": true,
+      "validation_status": "approved",
+      "source_subject": "simulado-pscpp",
+      "module": "Manobrabilidade",
+      "id": "pscpp::generated::man::0016",
+      "question": "No emprego de um rebocador convencional em cabo longo (hawser), qual risco operacional é destacado quando o navio usa velocidade ou máquina excessivas?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O rebocador pode ficar em posição transversal ao cabo e correr risco de emborcamento."
+        },
+        {
+          "key": "B",
+          "text": "O rebocador perde necessariamente toda capacidade de tração."
+        },
+        {
+          "key": "C",
+          "text": "O cabo deixa de transmitir força longitudinal."
+        },
+        {
+          "key": "D",
+          "text": "O navio perde automaticamente o governo."
+        },
+        {
+          "key": "E",
+          "text": "O rebocador passa a atuar como bow thruster."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A obra recomenda minimizar velocidade do navio e uso de máquina com rebocador convencional no hawser para evitar que o rebocador fique 'in irons', transversal ao cabo, situação perigosa que pode levá-lo a emborcar.",
+      "pscpp_format": "operational",
+      "difficulty": "very_hard",
+      "cognitive_level": 4,
+      "topic": "Uso de rebocadores em hawser",
+      "tags": [
+        "tug",
+        "hawser",
+        "girting",
+        "segurança"
+      ],
+      "bibliography": {
+        "publication": "Shiphandling for the Mariner",
+        "edition": "4th edition",
+        "chapter": "Chapter 3 — Use of Tugs",
+        "locator": "Tug on a Hawser; p. 110–111",
+        "file_id": "file_00000000fad081fd9e28cdcc2bcdbc11"
+      },
+      "source": {
+        "title": "Shiphandling for the Mariner — 4th edition",
+        "locator": "Chapter 3, Tug on a Hawser; p. 110–111"
+      }
+    },
+    {
+      "bank": "PSCPP",
+      "origin": "generated_pscpp",
+      "pscpp_origin": "generated_pscpp",
+      "active": true,
+      "validation_status": "approved",
+      "source_subject": "simulado-pscpp",
+      "module": "Manobrabilidade",
+      "id": "pscpp::generated::man::0017",
+      "question": "Segundo Shiphandling for the Mariner, a adequação do trabalho de um rebocador em hawser depende de vários fatores. Qual opção representa corretamente essa ideia?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Existe um único método universal, independente do porto e do tipo de rebocador."
+        },
+        {
+          "key": "B",
+          "text": "Projeto do rebocador, experiência do shiphandler e configuração física do porto influenciam o estilo de trabalho."
+        },
+        {
+          "key": "C",
+          "text": "Somente a potência nominal do rebocador determina o método."
+        },
+        {
+          "key": "D",
+          "text": "O uso de hawser é sempre inadequado em portos norte-americanos."
+        },
+        {
+          "key": "E",
+          "text": "O ponto de aplicação da força não possui importância."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A obra evita declarar superioridade universal de um estilo e relaciona o método ao projeto do rebocador, experiência/hábitos do shiphandler e layout físico do porto.",
+      "pscpp_format": "direct",
+      "difficulty": "hard",
+      "cognitive_level": 3,
+      "topic": "Uso de rebocadores",
+      "tags": [
+        "tug",
+        "hawser",
+        "shiphandling"
+      ],
+      "bibliography": {
+        "publication": "Shiphandling for the Mariner",
+        "edition": "4th edition",
+        "chapter": "Chapter 3 — Use of Tugs",
+        "locator": "Tug on a Hawser; p. 110–111",
+        "file_id": "file_00000000fad081fd9e28cdcc2bcdbc11"
+      },
+      "source": {
+        "title": "Shiphandling for the Mariner — 4th edition",
+        "locator": "Chapter 3, Tug on a Hawser; p. 110–111"
+      }
+    },
+    {
+      "bank": "PSCPP",
+      "origin": "generated_pscpp",
+      "pscpp_origin": "generated_pscpp",
+      "active": true,
+      "validation_status": "approved",
+      "source_subject": "simulado-pscpp",
+      "module": "Manobrabilidade",
+      "id": "pscpp::generated::man::0018",
+      "question": "Durante uma atracação com máquina a ré, forma-se quickwater ao longo do costado. Qual efeito inicial é descrito para um navio convencional?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O fluxo atinge primeiro a proa e lança a popa para o cais."
+        },
+        {
+          "key": "B",
+          "text": "O fluxo atinge primeiro o través e não produz momento de guinada."
+        },
+        {
+          "key": "C",
+          "text": "O fluxo atinge primeiro a alheta, afastando a popa e levando a proa em direção ao berço."
+        },
+        {
+          "key": "D",
+          "text": "O efeito surge apenas quando já existe forte seguimento a ré."
+        },
+        {
+          "key": "E",
+          "text": "O efeito é idêntico em qualquer bordo e geometria de berço."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A obra descreve o quickwater atingindo inicialmente a região da alheta; isso afasta a popa e tende a levar a proa em direção ao cais, antes de o fluxo avançar ao longo do casco.",
+      "pscpp_format": "situation",
+      "difficulty": "very_hard",
+      "cognitive_level": 4,
+      "topic": "Quickwater",
+      "tags": [
+        "quickwater",
+        "atracação",
+        "máquina a ré"
+      ],
+      "bibliography": {
+        "publication": "Shiphandling for the Mariner",
+        "edition": "4th edition",
+        "chapter": "Chapter 5 — Docking",
+        "locator": "Quickwater; p. 134–135",
+        "file_id": "file_00000000fad081fd9e28cdcc2bcdbc11"
+      },
+      "source": {
+        "title": "Shiphandling for the Mariner — 4th edition",
+        "locator": "Chapter 5, Quickwater; p. 134–135"
+      }
+    },
+    {
+      "bank": "PSCPP",
+      "origin": "generated_pscpp",
+      "pscpp_origin": "generated_pscpp",
+      "active": true,
+      "validation_status": "approved",
+      "source_subject": "simulado-pscpp",
+      "module": "Manobrabilidade",
+      "id": "pscpp::generated::man::0019",
+      "question": "O efeito de quickwater tende a ser mais pronunciado em qual situação?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Quando o escoamento ao lado do navio é confinado por baixio ou estrutura sólida do berço."
+        },
+        {
+          "key": "B",
+          "text": "Somente em águas profundas e totalmente abertas."
+        },
+        {
+          "key": "C",
+          "text": "Quando não há uso de máquina a ré."
+        },
+        {
+          "key": "D",
+          "text": "Apenas com navio fundeado."
+        },
+        {
+          "key": "E",
+          "text": "Quando o navio está em velocidade de mar."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O confinamento do fluxo por shoaling ou face sólida de cais/berço aumenta a pressão do quickwater sobre o casco.",
+      "pscpp_format": "direct",
+      "difficulty": "hard",
+      "cognitive_level": 3,
+      "topic": "Quickwater e confinamento",
+      "tags": [
+        "quickwater",
+        "berço",
+        "shoaling"
+      ],
+      "bibliography": {
+        "publication": "Shiphandling for the Mariner",
+        "edition": "4th edition",
+        "chapter": "Chapter 5 — Docking",
+        "locator": "Quickwater; p. 135",
+        "file_id": "file_00000000fad081fd9e28cdcc2bcdbc11"
+      },
+      "source": {
+        "title": "Shiphandling for the Mariner — 4th edition",
+        "locator": "Chapter 5, Quickwater; p. 135"
+      }
+    },
+    {
+      "bank": "PSCPP",
+      "origin": "generated_pscpp",
+      "pscpp_origin": "generated_pscpp",
+      "active": true,
+      "validation_status": "approved",
+      "source_subject": "simulado-pscpp",
+      "module": "Manobrabilidade",
+      "id": "pscpp::generated::man::0020",
+      "question": "Na desatracação de um navio atracado por boreste, o quickwater produzido ao dar máquina a ré pode ser utilizado deliberadamente. Qual sequência conceitual está de acordo com a obra?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O quickwater mantém a popa junto ao cais e aumenta o ângulo da proa indefinidamente."
+        },
+        {
+          "key": "B",
+          "text": "A popa começa a afastar-se; depois, o fluxo progride pelo casco e pode ajudar a controlar a guinada da proa."
+        },
+        {
+          "key": "C",
+          "text": "O efeito atua apenas na proa e não influencia movimento lateral."
+        },
+        {
+          "key": "D",
+          "text": "É necessário manter máquina a ré continuamente em potência máxima."
+        },
+        {
+          "key": "E",
+          "text": "O efeito é desprezível em comparação com qualquer corrente."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Na saída de um berço por boreste, a obra descreve o quickwater afastando inicialmente a popa e depois avançando ao longo do casco, podendo ajudar a controlar o movimento da proa e permitir uma saída mais limpa.",
+      "pscpp_format": "operational",
+      "difficulty": "very_hard",
+      "cognitive_level": 4,
+      "topic": "Quickwater na desatracação",
+      "tags": [
+        "quickwater",
+        "desatracação",
+        "starboard side"
+      ],
+      "bibliography": {
+        "publication": "Shiphandling for the Mariner",
+        "edition": "4th edition",
+        "chapter": "Chapter 6 — Undocking",
+        "locator": "Using Quickwater When Undocking; p. 141–142",
+        "file_id": "file_00000000fad081fd9e28cdcc2bcdbc11"
+      },
+      "source": {
+        "title": "Shiphandling for the Mariner — 4th edition",
+        "locator": "Chapter 6, Using Quickwater When Undocking; p. 141–142"
+      }
     }
   ],
-  "note": "Corpus independente. Somente itens source-first com fonte integral verificada e validation_status=approved entram no pool."
+  "note": "Corpus independente. Somente itens source-first com fonte integral verificada e validation_status=approved entram no pool.",
+  "target_minimum_approved": 3000
 }
