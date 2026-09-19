@@ -94,6 +94,15 @@ function semanticNonsenseReasons(q) {
   if (/\ba associação\s+[“"][^”"]+[”"]\s+(?:está|e)\s+correta\b/i.test(joined)) reasons.push('UNDEFINED_ASSOCIATION');
   if (/\b(?:descrição|método|procedimento|sistema|dispositivo)\s*:\s*(?:este|esta|esse|essa)\b/i.test(joined)) reasons.push('ORPHAN_REFERENCE');
   if (/\b(?:trecho|fragmento)\s+\d+\b/i.test(stem)) reasons.push('FRAGMENT_STEM');
+  // Padrões de "associação" sem relação explicitada: "No contexto de X, a associação X/Y está correta".
+  // Isso não formula uma proposição técnica julgável; apenas compara rótulos.
+  if (/\bno contexto de\s+[“"][^”"]+[”"]\s*,?\s*a associação\s+[“"][^”"]+[”"]\s+(?:está|e)\s+correta\b/i.test(joined))
+    reasons.push('LABEL_ASSOCIATION_WITHOUT_RELATION');
+  if (/\ba associação\s+[“"]([^”"]+)[”"]\s+(?:está|e)\s+correta\b/i.test(joined)) {
+    const am=joined.match(/\ba associação\s+[“"]([^”"]+)[”"]/i);
+    const cm=joined.match(/\bcontexto de\s+[“"]([^”"]+)[”"]/i);
+    if (am && cm && norm(am[1]) === norm(cm[1])) reasons.push('SELF_ASSOCIATION_TAUTOLOGY');
+  }
   if (/\b(?:é tecnicamente correto afirmar|considere a proposição)\s*:\s*[^.;\n]{1,160}$/i.test(stem) && quoted.length) {
     const tail = stem.split(':').pop();
     if (quoted.some(x => norm(x) === norm(tail))) reasons.push('META_TEXT_TAUTOLOGY');
