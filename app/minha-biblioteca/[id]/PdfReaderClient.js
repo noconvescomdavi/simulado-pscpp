@@ -42,7 +42,7 @@ export default function PdfReaderClient({file,adobeClientId}){
         return;
       }
       try{
-        const pdfResponse=await fetch("/api/library/google/files/"+file.id+"/content",{cache:"no-store"});
+        const pdfResponse=await fetch("/api/library/files/"+file.id+"/content",{cache:"no-store"});
         if(!pdfResponse.ok){const payload=await pdfResponse.json().catch(()=>({}));throw new Error(payload.error||"Não foi possível abrir o PDF.")}
         await cacheReadingResponse(file.id,pdfResponse.clone()).catch(()=>{});
         const buffer=await pdfResponse.arrayBuffer();
@@ -65,7 +65,7 @@ export default function PdfReaderClient({file,adobeClientId}){
           const currentPage=Number(event.data?.pageNumber||event.data?.page||0);
           if(!currentPage||currentPage===lastSent.current)return;
           lastSent.current=currentPage;setPage(currentPage);
-          fetch("/api/library/google/files/"+file.id+"/progress",{
+          fetch("/api/library/files/"+file.id+"/progress",{
             method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({page:currentPage})
           }).catch(()=>queueLibraryProgress(file.id,{page:currentPage,progress_percent:file.progress_percent}).catch(()=>{}));
         },{enablePDFAnalytics:true});
@@ -74,7 +74,7 @@ export default function PdfReaderClient({file,adobeClientId}){
           if(apis&&Number(file.last_page)>1)apis.gotoLocation(Number(file.last_page)).catch(()=>{});
         }
       }catch(err){
-        try{await useLocalReader(err.message||"Sem conexão com o Google Drive; usando cópia local.")}catch(localError){
+        try{await useLocalReader(err.message||"Sem conexão com o biblioteca privada; usando cópia local.")}catch(localError){
           if(!cancelled)setError(localError.message||err.message||"Não foi possível iniciar o leitor.");
         }
       }
@@ -88,7 +88,7 @@ export default function PdfReaderClient({file,adobeClientId}){
     setPage(current);
     try{
       if(navigator.onLine){
-        const response=await fetch("/api/library/google/files/"+file.id+"/progress",{
+        const response=await fetch("/api/library/files/"+file.id+"/progress",{
           method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({page:current,progress_percent:file.progress_percent||0})
         });
         if(!response.ok)throw new Error();
@@ -116,5 +116,5 @@ export default function PdfReaderClient({file,adobeClientId}){
     </div>;
   }
   if(error)return <div className={styles.readerError}><strong>Leitor indisponível</strong><p>{error}</p></div>;
-  return <div id="estibordo-adobe-reader" className={styles.reader}><div className={styles.loading}>Carregando PDF do Google Drive e preparando cópia offline...</div></div>;
+  return <div id="estibordo-adobe-reader" className={styles.reader}><div className={styles.loading}>Carregando PDF da biblioteca privada e preparando cópia offline...</div></div>;
 }
