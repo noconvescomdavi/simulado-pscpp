@@ -370,7 +370,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
             .filter(Boolean)
             .join(" · ")}
         </p>
-        <h2 className={styles.questionHeading}><StructuredQuestion question={question} /></h2>
+        <div className={styles.questionHeading}><StructuredQuestion question={question} /></div>
         {options.map((option) => (
           <button
             type="button"
