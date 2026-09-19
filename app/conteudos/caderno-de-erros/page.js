@@ -4,6 +4,7 @@ import { getEntitlement } from "../../../lib/entitlement";
 import { getErrorNotebook } from "../../../lib/study-engine";
 import StudentHeader from "../../components/StudentHeader";
 import styles from "./errors.module.css";
+import StructuredQuestion from "../../components/StructuredQuestion";
 
 export const dynamic = "force-dynamic";
 
@@ -47,7 +48,7 @@ export default async function ErrorNotebookPage() {
                 </div>
               </div>
 
-              <p className={styles.question}>{item.question}</p>
+              <div className={styles.question}><StructuredQuestion question={{question:item.question}} /></div>
 
               <div className={styles.attemptContext}>
                 <span><b>Última resposta:</b> {item.selected_answer || "—"}</span>
