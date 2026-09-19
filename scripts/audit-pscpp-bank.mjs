@@ -24,6 +24,8 @@ function audit(q,kind){
   if(!q.difficulty) errors.push(q.id+": missing difficulty");
   if(!q.cognitive_level) errors.push(q.id+": missing cognitive level");
   if(!q.bibliography?.locator) errors.push(q.id+": missing bibliography locator");
+  if(!["hard","very_hard","medium"].includes(q.difficulty)) errors.push(q.id+": invalid difficulty");
+  if(!Number.isInteger(q.cognitive_level)||q.cognitive_level<2||q.cognitive_level>5) errors.push(q.id+": invalid cognitive level");
  }
 }
 for(const q of official.questions||[]) audit(q,"official");
