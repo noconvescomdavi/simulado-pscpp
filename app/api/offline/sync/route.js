@@ -1,4 +1,4 @@
-import { getSession } from "../../../../lib/auth";
+import { getSession, getMobileSession } from "../../../../lib/auth";
 import { getEntitlement } from "../../../../lib/entitlement";
 import { query, withTransaction } from "../../../../lib/db";
 import { getQuestion } from "../../../../lib/question-banks";
@@ -198,8 +198,9 @@ async function processEvent(userId,event){
 }
 
 export async function POST(request){
-  try{ await assertSameOrigin(); }catch(error){ return Response.json({error:"Origem inválida."},{status:Number(error?.status)||403}); }
-  const session=await getSession();
+  const native=String(request.headers.get("user-agent")||"").includes("ESTIBORDO-ANDROID") && String(request.headers.get("authorization")||"").startsWith("Bearer ");
+  if(!native){ try{ await assertSameOrigin(); }catch(error){ return Response.json({error:"Origem inválida."},{status:Number(error?.status)||403}); } }
+  const session=native?await getMobileSession(request):await getSession();
   if(!session)return Response.json({error:"Não autenticado."},{status:401});
   const entitlement=await getEntitlement(session.id);
   if(!entitlement.active)return Response.json({error:"Modo offline disponível para alunos com acesso ativo."},{status:403});
