@@ -46,5 +46,6 @@ const correlation=classifyQuestionStructure({question:"CORRELACIONE:\nCOLUNA A\n
 assert.equal(correlation.type,"correlation");
 assert.ok(correlation.blocks.some(x=>x.type==="columns"));
 assert.equal(stats.total, 12600, `unexpected bank total: ${stats.total}`);
+if(ambiguous.length) console.error("AMBIGUOUS_FORMATTING", JSON.stringify(ambiguous));
 assert.equal(ambiguous.length, 0, `unformatted structured questions remain: ${ambiguous.length}`);
 console.log(JSON.stringify({...stats,patterns,ambiguous_count:ambiguous.length,ambiguous:ambiguous.slice(0,100),suspicious},null,2));
