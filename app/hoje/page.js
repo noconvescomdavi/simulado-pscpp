@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getSession } from "../../lib/auth";
 import { getEntitlement } from "../../lib/entitlement";
@@ -79,7 +80,7 @@ export default async function HojePage() {
             <span>BASE DE QUESTÕES</span>
             <h2>{plan.total_question_bank.toLocaleString("pt-BR")}</h2>
             <p>questões disponíveis nos bancos atuais da plataforma.</p>
-            <a href="/simulado">Ir para simulados →</a>
+            <Link href="/simulado">Ir para simulados →</Link>
           </article>
         </section>
       </main>
