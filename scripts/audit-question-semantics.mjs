@@ -17,6 +17,9 @@ const anglicisms=[
   [/\banchor cable\b/i,"Revisar tradução; em contexto de fundeio, normalmente 'amarra'."],
   [/\bshackle\b/i,"Revisar tradução contextual; não manter anglicismo se a fonte brasileira usa 'manilha'."]
 ];
+const leakingStem=[/[“"][^”"]{18,}[”"]/,/(?:relativo|referente|trata|sobre)\s+a\s+[“"][^”"]+[”"]/i,/(?:atividade|opera[cç][aã]o|procedimentos?)\s+envolvendo\s+[“"][^”"]+[”"]/i];
+const words=v=>norm(v).replace(/[^a-z0-9 ]/g," ").split(/\s+/).filter(x=>x.length>=4);
+const overlap=(a,b)=>{const A=new Set(words(a)),B=new Set(words(b));if(!A.size||!B.size)return 0;let n=0;for(const w of A)if(B.has(w))n++;return n/Math.min(A.size,B.size)};
 const templateRisks=[
   /descri[cç][aã]o t[eé]cnica [“"]?a seguir/i,
   /considere a seguinte caracter[ií]stica/i,
@@ -31,6 +34,7 @@ for(const subject of subjects){
     const all=[q.question,q.explanation,q.topic,q.module,...(q.options||[]).map(o=>o.text)].join("\n");
     for(const [rx,msg] of anglicisms) if(rx.test(all)) add(subject,q,"TERMINOLOGY_TRANSLATION","high",msg);
     if(templateRisks.some(rx=>rx.test(q.question||""))) add(subject,q,"ARTIFICIAL_TEMPLATE","high","Redação com artefato de geração; reescrever como questão natural no padrão PSCPP.");
+    if(leakingStem.some(rx=>rx.test(q.question||"")))add(subject,q,"STEM_SOURCE_FRAGMENT","critical","O enunciado contém fragmento textual da fonte que pode entregar o gabarito; reformular sem citar a continuação.");
     if(/descri[cç][aã]o de qu[eê]\??|descri[cç][aã]o:\s*este m[eé]todo/i.test(q.question||"")) add(subject,q,"MISSING_REFERENT","critical","Enunciado sem referente/contexto suficiente.");
     const key=String(q.correct_answer||"").toUpperCase();
     const exp=norm(q.explanation);
@@ -44,6 +48,7 @@ for(const subject of subjects){
     if(named.length && named.some(k=>k!==key)) add(subject,q,"ANSWER_EXPLANATION_CONFLICT","critical",`correct_answer=${key}, mas a explicação aponta ${[...new Set(named)].join(",")} como resposta correta.`);
     const correct=(q.options||[]).find(o=>String(o.key).toUpperCase()===key);
     if(!correct) add(subject,q,"MISSING_CORRECT_OPTION","critical","Gabarito não corresponde a alternativa existente.");
+    if(correct&&overlap(q.question,correct.text)>=.58)add(subject,q,"STEM_ANSWER_OVERLAP","critical","Sobreposição lexical excessiva entre enunciado e alternativa correta.");
     if(/s[aã]o verdadeiras as proposi[cç][oõ]es correspondentes [aà] alternativa\s+[a-e]/i.test(q.explanation||"")){
       const m=(q.explanation||"").match(/alternativa\s+([a-e])/i);
       if(m&&m[1].toUpperCase()!==key) add(subject,q,"ASSERTION_KEY_CONFLICT","critical",`Explicação aponta ${m[1].toUpperCase()}, JSON aponta ${key}.`);
@@ -61,4 +66,4 @@ fs.mkdirSync(path.join(root,"reports"),{recursive:true});
 fs.writeFileSync(path.join(root,"reports","question-semantic-audit.json"),JSON.stringify(summary,null,2)+"\n");
 console.log(JSON.stringify(summary.totals));
 console.log(JSON.stringify(summary.by_code,null,2));
-// Flags são relatório editorial. Falhas estruturais/gabarito continuam bloqueantes;\n// redação/terminologia são backlog de qualidade e não impedem build/deploy.\nconst blockingCodes=new Set(["MISSING_CORRECT_OPTION","ANSWER_EXPLANATION_CONFLICT","ASSERTION_KEY_CONFLICT","INCORRECT_KEY_CONFLICT"]);\nconst blocking=flags.filter(x=>blockingCodes.has(x.code));\nif(blocking.length){\n  console.error(JSON.stringify({blocking: blocking.length, by_code:Object.fromEntries([...new Set(blocking.map(x=>x.code))].map(code=>[code,blocking.filter(x=>x.code===code).length]))},null,2));\n  process.exitCode=2;\n}
+// Flags são relatório editorial. Falhas estruturais/gabarito continuam bloqueantes;\n// redação/terminologia são backlog de qualidade e não impedem build/deploy.\nconst blockingCodes=new Set(["MISSING_CORRECT_OPTION","ANSWER_EXPLANATION_CONFLICT","ASSERTION_KEY_CONFLICT","INCORRECT_KEY_CONFLICT","STEM_SOURCE_FRAGMENT","STEM_ANSWER_OVERLAP"]);\nconst blocking=flags.filter(x=>blockingCodes.has(x.code));\nif(blocking.length){\n  console.error(JSON.stringify({blocking: blocking.length, by_code:Object.fromEntries([...new Set(blocking.map(x=>x.code))].map(code=>[code,blocking.filter(x=>x.code===code).length]))},null,2));\n  process.exitCode=2;\n}
