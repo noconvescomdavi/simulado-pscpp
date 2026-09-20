@@ -1,0 +1,4004 @@
+{
+  "title": "Banco de Questões — Bloco PSCPP Caderno 002",
+  "block": "002",
+  "status": "approved",
+  "metrics": {
+    "total": 70,
+    "subjects": {
+      "manobrabilidade": 13,
+      "arte-naval": 17,
+      "navegacao-aguas-restritas": 9,
+      "legislacao-regulamentacao": 16,
+      "meteorologia-oceanografia": 6,
+      "comunicacoes": 4,
+      "conhecimentos-gerais": 5
+    },
+    "formats": {
+      "direct_or_situation": 43,
+      "assertions": 21,
+      "fill": 4,
+      "association": 2
+    }
+  },
+  "questions": [
+    {
+      "id": "MAN-B002-01",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Estabilidade dinâmica",
+      "topic_code": "MAN.B002.01",
+      "topic": "Estabilidade dinâmica",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Segundo a MSC/Circ.1053, um navio é dinamicamente estável em rumo reto quando, após pequena perturbação,",
+      "options": [
+        {
+          "key": "A",
+          "text": "retorna necessariamente ao rumo original sem qualquer desvio."
+        },
+        {
+          "key": "B",
+          "text": "assenta em novo rumo reto sem necessidade de leme corretivo."
+        },
+        {
+          "key": "C",
+          "text": "mantém razão de guinada constante diferente de zero."
+        },
+        {
+          "key": "D",
+          "text": "exige aplicações repetidas de leme para conservar trajetória reta."
+        },
+        {
+          "key": "E",
+          "text": "executa círculo de giro de raio mínimo."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A estabilidade dinâmica inerente em rumo reto é caracterizada pela acomodação em novo rumo reto sem leme corretivo.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "MAN-B002-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+        "locator": "Chapter 1 — General Principles"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "estabilidade dinâmica"
+      ]
+    },
+    {
+      "id": "MAN-B002-02",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Instabilidade direcional",
+      "topic_code": "MAN.B002.02",
+      "topic": "Instabilidade direcional",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Um navio só consegue manter rumo reto mediante correções repetidas de leme, embora o leme neutro esteja próximo de meio. À luz da MSC/Circ.1053, isso indica principalmente",
+      "options": [
+        {
+          "key": "A",
+          "text": "elevada estabilidade dinâmica inerente."
+        },
+        {
+          "key": "B",
+          "text": "instabilidade dinâmica inerente em rumo reto."
+        },
+        {
+          "key": "C",
+          "text": "ausência de força lateral no casco."
+        },
+        {
+          "key": "D",
+          "text": "impossibilidade de executar zig-zag."
+        },
+        {
+          "key": "E",
+          "text": "excesso de potência a ré."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Navios dinamicamente instáveis em rumo reto dependem de controle repetido de leme para manter o rumo.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "MAN-B002-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+        "locator": "Chapter 1 — General Principles"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "instabilidade direcional"
+      ]
+    },
+    {
+      "id": "MAN-B002-03",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Qualidades de manobra",
+      "topic_code": "MAN.B002.03",
+      "topic": "Qualidades de manobra",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Qual medida está diretamente associada à turning ability nos Explanatory Notes?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Track reach apenas."
+        },
+        {
+          "key": "B",
+          "text": "Primeiro overshoot do zig-zag apenas."
+        },
+        {
+          "key": "C",
+          "text": "Advance a 90° e tactical diameter associado à mudança de 180°."
+        },
+        {
+          "key": "D",
+          "text": "Tempo até dead in water apenas."
+        },
+        {
+          "key": "E",
+          "text": "Loop height do pullout apenas."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A turning ability é avaliada pelo giro hard-over, incluindo advance e tactical diameter.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "MAN-B002-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+        "locator": "Chapter 1 — General Principles"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "qualidades de manobra"
+      ]
+    },
+    {
+      "id": "MAN-B002-04",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Crash-stop",
+      "topic_code": "MAN.B002.04",
+      "topic": "Crash-stop",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 2,
+      "question": "Em um crash-stop, qual parâmetro é usado pela MSC/Circ.1053 como medida central da stopping ability?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Loop width."
+        },
+        {
+          "key": "B",
+          "text": "Track reach."
+        },
+        {
+          "key": "C",
+          "text": "Transfer a 90°."
+        },
+        {
+          "key": "D",
+          "text": "Primeiro overshoot."
+        },
+        {
+          "key": "E",
+          "text": "Ângulo de deriva em curva estabilizada."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Stopping ability é medida pelo track reach e pelo time to dead in water.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "MAN-B002-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+        "locator": "Chapter 1 — General Principles"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "crash-stop"
+      ]
+    },
+    {
+      "id": "MAN-B002-05",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Zig-zag 10/10",
+      "topic_code": "MAN.B002.05",
+      "topic": "Zig-zag 10/10",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "No teste zig-zag 10°/10°, o segundo execute ocorre quando",
+      "options": [
+        {
+          "key": "A",
+          "text": "a velocidade cai 10%."
+        },
+        {
+          "key": "B",
+          "text": "o navio completa 10° de guinada por segundo."
+        },
+        {
+          "key": "C",
+          "text": "o rumo desvia 10° do rumo original após aplicação inicial de 10° de leme."
+        },
+        {
+          "key": "D",
+          "text": "o leme atinge 20° no bordo oposto."
+        },
+        {
+          "key": "E",
+          "text": "o navio percorre dez comprimentos."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "O teste usa 10° de leme e reversão quando o desvio de rumo alcança 10°.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "MAN-B002-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+        "locator": "Chapter 1 — General Principles"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "zig-zag 10/10"
+      ]
+    },
+    {
+      "id": "MAN-B002-06",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Trim e estabilidade",
+      "topic_code": "MAN.B002.06",
+      "topic": "Trim e estabilidade",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Durante provas, um navio em condição de lastro apresenta trim pela popa. Segundo as notas explicativas, qual efeito pode ocorrer sobre a estabilidade direcional?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Tende necessariamente a torná-lo mais instável."
+        },
+        {
+          "key": "B",
+          "text": "Pode torná-lo consideravelmente mais estável que em calado sem trim."
+        },
+        {
+          "key": "C",
+          "text": "Elimina a influência da posição do centro de pressão."
+        },
+        {
+          "key": "D",
+          "text": "Torna o leme ineficaz."
+        },
+        {
+          "key": "E",
+          "text": "Não produz efeito mensurável na localização do centro de pressão."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A MSC/Circ.1053 destaca que trim pela popa pode aumentar significativamente a estabilidade dinâmica.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "MAN-B002-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+        "locator": "Chapter 1 — General Principles"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "trim e estabilidade"
+      ]
+    },
+    {
+      "id": "MAN-B002-07",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Yaw checking",
+      "topic_code": "MAN.B002.07",
+      "topic": "Yaw checking",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Yaw checking ability é a capacidade de",
+      "options": [
+        {
+          "key": "A",
+          "text": "produzir a maior razão de guinada possível."
+        },
+        {
+          "key": "B",
+          "text": "cancelar uma tendência de guinada mediante contra-leme, observável pelo overshoot."
+        },
+        {
+          "key": "C",
+          "text": "parar o navio apenas com máquina a ré."
+        },
+        {
+          "key": "D",
+          "text": "manter velocidade constante em curva."
+        },
+        {
+          "key": "E",
+          "text": "reduzir o diâmetro final sem uso de leme."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "É a resposta ao contra-leme aplicado durante uma condição de giro, medida pelo overshoot antes de cancelar a guinada.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "MAN-B002-07",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+        "locator": "Chapter 1 — General Principles"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "yaw checking"
+      ]
+    },
+    {
+      "id": "MAN-B002-08",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Turning versus stability",
+      "topic_code": "MAN.B002.08",
+      "topic": "Turning versus stability",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Dois projetos convencionais são comparados. O projeto A apresenta maior instabilidade dinâmica, mas boa eficácia de leme. Qual trade-off é coerente com a MSC/Circ.1053?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Maior instabilidade tende a favorecer turning ability, embora prejudique course-keeping."
+        },
+        {
+          "key": "B",
+          "text": "Maior instabilidade melhora simultaneamente todas as qualidades."
+        },
+        {
+          "key": "C",
+          "text": "Maior estabilidade sempre reduz o raio de giro."
+        },
+        {
+          "key": "D",
+          "text": "Yaw damping elevado necessariamente aumenta a turning ability."
+        },
+        {
+          "key": "E",
+          "text": "Course-keeping independe da estabilidade inerente."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "As notas destacam o compromisso: instabilidade pode favorecer capacidade de giro, enquanto maior damping/estabilidade tende a ampliar o raio.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "MAN-B002-08",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+        "locator": "Chapter 1 — General Principles"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "turning versus stability"
+      ]
+    },
+    {
+      "id": "MAN-B002-09",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Forças e momentos",
+      "topic_code": "MAN.B002.09",
+      "topic": "Forças e momentos",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "De acordo com a MSC/Circ.1053, analise as afirmativas sobre uma curva estabilizada.",
+      "assertions": [
+        "I) Em uma curva estabilizada há equilíbrio entre as forças e os momentos atuantes.",
+        "II) O momento de amortecimento devido à guinada resiste ao giro.",
+        "III) O momento de controle do leme pode superar ou equilibrar a resultante de outros momentos.",
+        "IV) A força lateral do leme é necessariamente a maior força lateral atuante durante toda manobra."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, II e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "I–III são compatíveis com o equilíbrio de forças e momentos; IV é falsa porque a força lateral do leme pode ser menor que outras forças, embora seu momento de controle seja decisivo.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "MAN-B002-09",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+        "locator": "Chapter 1 — General Principles"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "forças e momentos"
+      ]
+    },
+    {
+      "id": "MAN-B002-10",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Zig-zag",
+      "topic_code": "MAN.B002.10",
+      "topic": "Zig-zag",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Sobre os testes zig-zag padronizados, identifique as verdadeiras.",
+      "assertions": [
+        "I) Devem ser iniciados para boreste e bombordo.",
+        "II) O 10°/10° combina 10° de leme com 10° de desvio de rumo para os executes.",
+        "III) Overshoot angles estão entre as informações essenciais obtidas.",
+        "IV) O objetivo primário é determinar o track reach de parada."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Os testes 10/10 e 20/20 são executados nos dois bordos e fornecem overshoot e tempos de resposta; não são testes de stopping ability.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "MAN-B002-10",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+        "locator": "Chapter 1 — General Principles"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "zig-zag"
+      ]
+    },
+    {
+      "id": "MAN-B002-11",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Qualidades de manobra",
+      "topic_code": "MAN.B002.11",
+      "topic": "Qualidades de manobra",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Analise as relações entre as qualidades de manobra.",
+      "assertions": [
+        "I) Course-keeping avalia manutenção de trajetória reta sem oscilações excessivas de rumo ou leme.",
+        "II) Initial turning ability trata da resposta inicial a uma aplicação moderada de leme.",
+        "III) Course-keeping é medido primariamente pelo tactical diameter de uma curva hard-over.",
+        "IV) Stopping ability inclui track reach e time to dead in water."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e III."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "I, II e IV correspondem às definições; III confunde course-keeping com turning ability.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "MAN-B002-11",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+        "locator": "Chapter 1 — General Principles"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "qualidades de manobra"
+      ]
+    },
+    {
+      "id": "MAN-B002-12",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Turning circle",
+      "topic_code": "MAN.B002.12",
+      "topic": "Turning circle",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Sobre o turning circle test:",
+      "assertions": [
+        "I) A execução é precedida por aproximação estabilizada com razão de guinada nula.",
+        "II) O teste é realizado para ambos os bordos.",
+        "III) Advance, transfer e tactical diameter são informações essenciais.",
+        "IV) O teste substitui o zig-zag na avaliação de yaw checking."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A prova parte de aproximação estabilizada, é feita nos dois bordos e obtém advance, transfer e tactical diameter; IV é falsa.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "MAN-B002-12",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+        "locator": "Chapter 1 — General Principles"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "turning circle"
+      ]
+    },
+    {
+      "id": "MAN-B002-13",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Raio de curva",
+      "topic_code": "MAN.B002.13",
+      "topic": "Raio de curva",
+      "difficulty": "Médio",
+      "style": "Completar",
+      "pscpp_format": "fill",
+      "cognitive_level": 2,
+      "question": "Complete segundo a relação apresentada nas notas explicativas: em curva estabilizada, o raio R é dado por velocidade V dividida pela ______.",
+      "options": [
+        {
+          "key": "A",
+          "text": "aceleração longitudinal"
+        },
+        {
+          "key": "B",
+          "text": "razão de guinada"
+        },
+        {
+          "key": "C",
+          "text": "área do leme"
+        },
+        {
+          "key": "D",
+          "text": "potência a ré"
+        },
+        {
+          "key": "E",
+          "text": "altura metacêntrica"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A relação é R = V/ψ, sendo ψ a razão de guinada.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "MAN-B002-13",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+        "locator": "Chapter 1 — General Principles"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "raio de curva"
+      ]
+    },
+    {
+      "id": "ANV-B002-01",
+      "subject": "II — Arte Naval",
+      "module": "Estrutura longitudinal",
+      "topic_code": "ANV.B002.01",
+      "topic": "Estrutura longitudinal",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "De acordo com o contido no livro Arte Naval, assinale a opção que contenha apenas vigas ou elementos longitudinais da estrutura do casco metálico.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Cavernas, vaus e hastilhas."
+        },
+        {
+          "key": "B",
+          "text": "Quilha vertical, longarinas e sicordas."
+        },
+        {
+          "key": "C",
+          "text": "Cambotas, cavernas e vaus."
+        },
+        {
+          "key": "D",
+          "text": "Hastilhas, pés-de-carneiro e cavernas."
+        },
+        {
+          "key": "E",
+          "text": "Vaus, buçardas e cambotas."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O capítulo 1 classifica quilha vertical, chapa-quilha, longarinas/longitudinais, trincaniz e sicordas entre os elementos longitudinais.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch1",
+        "topic_id": "ANV-B002-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Volume 1, 8ª ed. (2019)",
+        "locator": "Capítulos 1 e 2 — Nomenclatura e Geometria do Navio"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "estrutura longitudinal"
+      ]
+    },
+    {
+      "id": "ANV-B002-02",
+      "subject": "II — Arte Naval",
+      "module": "Estrutura transversal",
+      "topic_code": "ANV.B002.02",
+      "topic": "Estrutura transversal",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Assinale a opção que contenha apenas elementos classificados no Arte Naval entre vigas ou peças transversais.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Caverna, vau e hastilha."
+        },
+        {
+          "key": "B",
+          "text": "Longarina, sicorda e trincaniz."
+        },
+        {
+          "key": "C",
+          "text": "Quilha vertical, vau e longarina."
+        },
+        {
+          "key": "D",
+          "text": "Chapa-quilha, caverna e sicorda."
+        },
+        {
+          "key": "E",
+          "text": "Trincaniz, cambota e longarina."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Cavernas, cavernas altas, vaus, hastilhas e cambotas compõem o grupo transversal.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch1",
+        "topic_id": "ANV-B002-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Volume 1, 8ª ed. (2019)",
+        "locator": "Capítulos 1 e 2 — Nomenclatura e Geometria do Navio"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "estrutura transversal"
+      ]
+    },
+    {
+      "id": "ANV-B002-03",
+      "subject": "II — Arte Naval",
+      "module": "Sicorda",
+      "topic_code": "ANV.B002.03",
+      "topic": "Sicorda",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 2,
+      "question": "No Arte Naval, a sicorda (deck girder) é classificada como",
+      "options": [
+        {
+          "key": "A",
+          "text": "reforço transversal do fundo duplo."
+        },
+        {
+          "key": "B",
+          "text": "elemento longitudinal associado à estrutura do convés."
+        },
+        {
+          "key": "C",
+          "text": "apêndice do casco."
+        },
+        {
+          "key": "D",
+          "text": "abertura no costado."
+        },
+        {
+          "key": "E",
+          "text": "peça exclusiva do aparelho de fundear."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A sicorda aparece no grupo de vigas e longitudinais da estrutura metálica.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch1",
+        "topic_id": "ANV-B002-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Volume 1, 8ª ed. (2019)",
+        "locator": "Capítulos 1 e 2 — Nomenclatura e Geometria do Navio"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "sicorda"
+      ]
+    },
+    {
+      "id": "ANV-B002-04",
+      "subject": "II — Arte Naval",
+      "module": "Trincaniz",
+      "topic_code": "ANV.B002.04",
+      "topic": "Trincaniz",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 2,
+      "question": "O trincaniz (stringer plate), conforme a nomenclatura estrutural apresentada por Fonseca, integra o grupo de",
+      "options": [
+        {
+          "key": "A",
+          "text": "vigas e longitudinais."
+        },
+        {
+          "key": "B",
+          "text": "vigas transversais."
+        },
+        {
+          "key": "C",
+          "text": "aberturas no casco."
+        },
+        {
+          "key": "D",
+          "text": "aparelhos de governo."
+        },
+        {
+          "key": "E",
+          "text": "superestruturas laterais."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O trincaniz é listado entre os elementos longitudinais.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch1",
+        "topic_id": "ANV-B002-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Volume 1, 8ª ed. (2019)",
+        "locator": "Capítulos 1 e 2 — Nomenclatura e Geometria do Navio"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "trincaniz"
+      ]
+    },
+    {
+      "id": "ANV-B002-05",
+      "subject": "II — Arte Naval",
+      "module": "Compartimentos",
+      "topic_code": "ANV.B002.05",
+      "topic": "Compartimentos",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Qual alternativa associa corretamente o termo à finalidade/localização indicada no capítulo de nomenclatura?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Paiol da amarra — compartimento destinado à acomodação da amarra."
+        },
+        {
+          "key": "B",
+          "text": "Coferdam — túnel para passagem do eixo propulsor."
+        },
+        {
+          "key": "C",
+          "text": "Túnel do eixo — tanque de colisão de vante."
+        },
+        {
+          "key": "D",
+          "text": "Fundo duplo — abertura de acesso ao convés."
+        },
+        {
+          "key": "E",
+          "text": "Escotilha — tanque profundo de combustível."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Paiol da amarra é o chain locker; as demais alternativas trocam conceitos de compartimentos e aberturas.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch1",
+        "topic_id": "ANV-B002-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Volume 1, 8ª ed. (2019)",
+        "locator": "Capítulos 1 e 2 — Nomenclatura e Geometria do Navio"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "compartimentos"
+      ]
+    },
+    {
+      "id": "ANV-B002-06",
+      "subject": "II — Arte Naval",
+      "module": "Geometria do navio",
+      "topic_code": "ANV.B002.06",
+      "topic": "Geometria do navio",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Qual termo designa a curvatura longitudinal associada à configuração do convés principal e ao limite superior do costado?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Alquebramento."
+        },
+        {
+          "key": "B",
+          "text": "Tosamento."
+        },
+        {
+          "key": "C",
+          "text": "Adelgaçamento."
+        },
+        {
+          "key": "D",
+          "text": "Altura do fundo."
+        },
+        {
+          "key": "E",
+          "text": "Boca moldada."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Tosamento (sheer) é o termo usado para essa curvatura longitudinal.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch1",
+        "topic_id": "ANV-B002-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Volume 1, 8ª ed. (2019)",
+        "locator": "Capítulos 1 e 2 — Nomenclatura e Geometria do Navio"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "geometria do navio"
+      ]
+    },
+    {
+      "id": "ANV-B002-07",
+      "subject": "II — Arte Naval",
+      "module": "Alquebramento",
+      "topic_code": "ANV.B002.07",
+      "topic": "Alquebramento",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "No vocabulário de geometria naval, alquebramento (hogging) refere-se à condição em que",
+      "options": [
+        {
+          "key": "A",
+          "text": "a quilha apresenta convexidade para cima."
+        },
+        {
+          "key": "B",
+          "text": "o convés apresenta apenas curvatura transversal."
+        },
+        {
+          "key": "C",
+          "text": "o navio aderna permanentemente para boreste."
+        },
+        {
+          "key": "D",
+          "text": "a roda de proa se projeta além do comprimento total."
+        },
+        {
+          "key": "E",
+          "text": "a boca máxima coincide obrigatoriamente com a boca moldada."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Hogging corresponde à curvatura longitudinal com convexidade para cima.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch1",
+        "topic_id": "ANV-B002-07",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Volume 1, 8ª ed. (2019)",
+        "locator": "Capítulos 1 e 2 — Nomenclatura e Geometria do Navio"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "alquebramento"
+      ]
+    },
+    {
+      "id": "ANV-B002-08",
+      "subject": "II — Arte Naval",
+      "module": "Planos de referência",
+      "topic_code": "ANV.B002.08",
+      "topic": "Planos de referência",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Qual conjunto contém apenas planos de referência indicados no plano de linhas?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Plano da base moldada, plano diametral e plano de meia-nau."
+        },
+        {
+          "key": "B",
+          "text": "Linha d'água, linha do alto e linha de baliza."
+        },
+        {
+          "key": "C",
+          "text": "Plano diametral, linha de centro e perpendicular a vante."
+        },
+        {
+          "key": "D",
+          "text": "Linha base, linha de centro e plano de meia-nau."
+        },
+        {
+          "key": "E",
+          "text": "Plano de flutuação, curva hidrostática e plano de balizas."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Os três planos de referência são base moldada, diametral e meia-nau; linhas são outra categoria.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch1",
+        "topic_id": "ANV-B002-08",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Volume 1, 8ª ed. (2019)",
+        "locator": "Capítulos 1 e 2 — Nomenclatura e Geometria do Navio"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "planos de referência"
+      ]
+    },
+    {
+      "id": "ANV-B002-09",
+      "subject": "II — Arte Naval",
+      "module": "Linhas do navio",
+      "topic_code": "ANV.B002.09",
+      "topic": "Linhas do navio",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 2,
+      "question": "No plano de linhas, são linhas do navio",
+      "options": [
+        {
+          "key": "A",
+          "text": "linha base, linha de centro e perpendiculares apenas."
+        },
+        {
+          "key": "B",
+          "text": "linhas-d'água, linhas do alto e linhas de balizas."
+        },
+        {
+          "key": "C",
+          "text": "quilha, sicorda e trincaniz."
+        },
+        {
+          "key": "D",
+          "text": "boca, pontal e calado."
+        },
+        {
+          "key": "E",
+          "text": "plano diametral, plano de meia-nau e plano da base."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A seção de plano de linhas distingue waterlines, buttock lines e body plan/balizas.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch1",
+        "topic_id": "ANV-B002-09",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Volume 1, 8ª ed. (2019)",
+        "locator": "Capítulos 1 e 2 — Nomenclatura e Geometria do Navio"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "linhas do navio"
+      ]
+    },
+    {
+      "id": "ANV-B002-10",
+      "subject": "II — Arte Naval",
+      "module": "Dimensões lineares",
+      "topic_code": "ANV.B002.10",
+      "topic": "Dimensões lineares",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 2,
+      "question": "Qual par reúne duas dimensões lineares tratadas separadamente no Arte Naval?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Pontal e calado."
+        },
+        {
+          "key": "B",
+          "text": "Empuxo e deslocamento."
+        },
+        {
+          "key": "C",
+          "text": "Metacentro e centro de carena."
+        },
+        {
+          "key": "D",
+          "text": "Tosamento e alquebramento."
+        },
+        {
+          "key": "E",
+          "text": "Flutuabilidade e reserva de flutuabilidade."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Pontal e calado são dimensões lineares; as demais opções misturam grandezas, pontos ou formas/condições.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch1",
+        "topic_id": "ANV-B002-10",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Volume 1, 8ª ed. (2019)",
+        "locator": "Capítulos 1 e 2 — Nomenclatura e Geometria do Navio"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "dimensões lineares"
+      ]
+    },
+    {
+      "id": "ANV-B002-11",
+      "subject": "II — Arte Naval",
+      "module": "Nomenclatura estrutural",
+      "topic_code": "ANV.B002.11",
+      "topic": "Nomenclatura estrutural",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "De acordo com o Arte Naval, analise as afirmativas e assinale a opção correta.",
+      "assertions": [
+        "I) Longarinas e longitudinais integram o sistema longitudinal.",
+        "II) Sicordas são elementos longitudinais do convés.",
+        "III) Hastilhas integram o grupo de elementos transversais.",
+        "IV) Vaus são classificados entre as vigas longitudinais.",
+        "V) Cambotas aparecem entre as peças transversais."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, III e V."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, II, III e V."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "I, II, III e V seguem a classificação estrutural; IV é falsa porque vau é transversal.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch1",
+        "topic_id": "ANV-B002-11",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Volume 1, 8ª ed. (2019)",
+        "locator": "Capítulos 1 e 2 — Nomenclatura e Geometria do Navio"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "nomenclatura estrutural"
+      ]
+    },
+    {
+      "id": "ANV-B002-12",
+      "subject": "II — Arte Naval",
+      "module": "Geometria e centros",
+      "topic_code": "ANV.B002.12",
+      "topic": "Geometria e centros",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "De acordo com o Arte Naval, identifique as afirmativas verdadeiras.",
+      "assertions": [
+        "I) Centro de carena também é referido como centro de empuxo ou de volume.",
+        "II) Centro de flutuação está associado à área do plano de flutuação.",
+        "III) Centro de gravidade e centro de carena são necessariamente coincidentes em qualquer condição.",
+        "IV) O livro distingue metacentro transversal de metacentro longitudinal.",
+        "V) Altura metacêntrica é tratada separadamente do raio metacêntrico."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II, IV e V."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, II, IV e V."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Centro de gravidade, centro de carena, centro de flutuação e metacentros são conceitos distintos; III os confunde.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch1",
+        "topic_id": "ANV-B002-12",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Volume 1, 8ª ed. (2019)",
+        "locator": "Capítulos 1 e 2 — Nomenclatura e Geometria do Navio"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "geometria e centros"
+      ]
+    },
+    {
+      "id": "ANV-B002-13",
+      "subject": "II — Arte Naval",
+      "module": "Dimensões e referências",
+      "topic_code": "ANV.B002.13",
+      "topic": "Dimensões e referências",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Analise as afirmativas sobre dimensões e referências geométricas.",
+      "assertions": [
+        "I) A perpendicular a vante e a perpendicular a ré são referências usadas para o comprimento entre perpendiculares.",
+        "II) Boca moldada e boca máxima são conceitos distintos.",
+        "III) Linha de centro é sinônimo de linha da base moldada.",
+        "IV) Calado possui variantes como calado moldado, de projeto e de escantilhão.",
+        "V) Pontal é uma dimensão transversal equivalente à boca."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, III e V."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, II, III e V."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "I, II e IV são relações corretas; III confunde linha de centro com linha base e V confunde pontal com boca.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch1",
+        "topic_id": "ANV-B002-13",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Volume 1, 8ª ed. (2019)",
+        "locator": "Capítulos 1 e 2 — Nomenclatura e Geometria do Navio"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "dimensões e referências"
+      ]
+    },
+    {
+      "id": "ANV-B002-14",
+      "subject": "II — Arte Naval",
+      "module": "Subdivisão do casco",
+      "topic_code": "ANV.B002.14",
+      "topic": "Subdivisão do casco",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Sobre subdivisão e compartimentos do casco, assinale a combinação correta.",
+      "assertions": [
+        "I) Fundo duplo é tratado na subdivisão do casco.",
+        "II) Coferdam e espaço vazio são conceitos de compartimentação.",
+        "III) Compartimentos ou tanques de colisão integram a subdivisão.",
+        "IV) Túnel do eixo é classificado como abertura no costado."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Fundo duplo, coferdam/espaço vazio e tanque de colisão são termos próprios da subdivisão; túnel do eixo não é abertura do costado.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch1",
+        "topic_id": "ANV-B002-14",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Volume 1, 8ª ed. (2019)",
+        "locator": "Capítulos 1 e 2 — Nomenclatura e Geometria do Navio"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "subdivisão do casco"
+      ]
+    },
+    {
+      "id": "ANV-B002-15",
+      "subject": "II — Arte Naval",
+      "module": "Peças e reforços",
+      "topic_code": "ANV.B002.15",
+      "topic": "Peças e reforços",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Analise as afirmativas.",
+      "assertions": [
+        "I) Roda de proa e cadaste aparecem entre reforços locais.",
+        "II) Pés-de-carneiro integram a relação de reforços locais.",
+        "III) Borboletas e chapas de reforço também aparecem nesse grupo.",
+        "IV) Sicorda é classificada como reforço local transversal."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, II e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Roda de proa, cadaste e pés-de-carneiro aparecem entre reforços locais; sicorda é longitudinal, não reforço transversal.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch1",
+        "topic_id": "ANV-B002-15",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Volume 1, 8ª ed. (2019)",
+        "locator": "Capítulos 1 e 2 — Nomenclatura e Geometria do Navio"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "peças e reforços"
+      ]
+    },
+    {
+      "id": "ANV-B002-16",
+      "subject": "II — Arte Naval",
+      "module": "Termos estruturais",
+      "topic_code": "ANV.B002.16",
+      "topic": "Termos estruturais",
+      "difficulty": "Muito Difícil",
+      "style": "Associação",
+      "pscpp_format": "association",
+      "cognitive_level": 4,
+      "question": "Associe os termos às classificações: 1) Sicorda; 2) Vau; 3) Hastilha; 4) Longarina; 5) Cambota.",
+      "options": [
+        {
+          "key": "A",
+          "text": "1 longitudinal; 2 transversal; 3 transversal; 4 longitudinal; 5 transversal."
+        },
+        {
+          "key": "B",
+          "text": "1 transversal; 2 longitudinal; 3 longitudinal; 4 transversal; 5 longitudinal."
+        },
+        {
+          "key": "C",
+          "text": "1 longitudinal; 2 longitudinal; 3 transversal; 4 transversal; 5 transversal."
+        },
+        {
+          "key": "D",
+          "text": "1 transversal; 2 transversal; 3 longitudinal; 4 longitudinal; 5 transversal."
+        },
+        {
+          "key": "E",
+          "text": "Todos são longitudinais."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Sicorda e longarina são longitudinais; vau, hastilha e cambota são transversais.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch1",
+        "topic_id": "ANV-B002-16",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Volume 1, 8ª ed. (2019)",
+        "locator": "Capítulos 1 e 2 — Nomenclatura e Geometria do Navio"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "termos estruturais"
+      ]
+    },
+    {
+      "id": "ANV-B002-17",
+      "subject": "II — Arte Naval",
+      "module": "Comprimentos",
+      "topic_code": "ANV.B002.17",
+      "topic": "Comprimentos",
+      "difficulty": "Médio",
+      "style": "Completar",
+      "pscpp_format": "fill",
+      "cognitive_level": 2,
+      "question": "Complete: o comprimento medido entre a perpendicular a vante e a perpendicular a ré é denominado comprimento ______.",
+      "options": [
+        {
+          "key": "A",
+          "text": "total"
+        },
+        {
+          "key": "B",
+          "text": "entre perpendiculares"
+        },
+        {
+          "key": "C",
+          "text": "de arqueação"
+        },
+        {
+          "key": "D",
+          "text": "alagável"
+        },
+        {
+          "key": "E",
+          "text": "no convés"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O CEP é definido pelas duas perpendiculares de referência.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch1",
+        "topic_id": "ANV-B002-17",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Volume 1, 8ª ed. (2019)",
+        "locator": "Capítulos 1 e 2 — Nomenclatura e Geometria do Navio"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "comprimentos"
+      ]
+    },
+    {
+      "id": "NAR-B002-01",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "Passage planning",
+      "topic_code": "NAR.B002.01",
+      "topic": "Passage planning",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Segundo Bridge Team Management, a ausência de um passage plan prejudica diretamente",
+      "options": [
+        {
+          "key": "A",
+          "text": "apenas o cálculo de combustível."
+        },
+        {
+          "key": "B",
+          "text": "a organização da equipe e a base comum para comunicação e monitoramento."
+        },
+        {
+          "key": "C",
+          "text": "somente o uso do radar."
+        },
+        {
+          "key": "D",
+          "text": "apenas a troca Master/Pilot."
+        },
+        {
+          "key": "E",
+          "text": "a determinação da arqueação do navio."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Swift relaciona planejamento, organização da ponte, comunicação e capacidade de detectar desvios.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "swift-btm",
+        "chapter_id": "swift-btm::ch1",
+        "topic_id": "NAR-B002-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "SWIFT & BAILEY — Bridge Team Management, 2ª ed. (2004)",
+        "locator": "Chapters 1–7 — Bridge Team Management"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "passage planning"
+      ]
+    },
+    {
+      "id": "NAR-B002-02",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "Error chain",
+      "topic_code": "NAR.B002.02",
+      "topic": "Error chain",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Durante a aproximação, uma configuração incorreta de equipamento não é detectada; depois ocorre identificação equivocada de um alvo e, por fim, cálculo incorreto de CPA. O caso ilustra",
+      "options": [
+        {
+          "key": "A",
+          "text": "uma única falha independente sem relação operacional."
+        },
+        {
+          "key": "B",
+          "text": "uma possível cadeia de erros que deveria ser interrompida por cross-checking."
+        },
+        {
+          "key": "C",
+          "text": "prova de que automação elimina erro humano."
+        },
+        {
+          "key": "D",
+          "text": "necessidade de abandonar o passage plan."
+        },
+        {
+          "key": "E",
+          "text": "falha exclusivamente do prático."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "BTM enfatiza que erros podem se encadear e devem ser detectados por organização, comunicação e cross-check.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "swift-btm",
+        "chapter_id": "swift-btm::ch1",
+        "topic_id": "NAR-B002-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "SWIFT & BAILEY — Bridge Team Management, 2ª ed. (2004)",
+        "locator": "Chapters 1–7 — Bridge Team Management"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "error chain"
+      ]
+    },
+    {
+      "id": "NAR-B002-03",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "Bridge team",
+      "topic_code": "NAR.B002.03",
+      "topic": "Bridge team",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "A finalidade central do bridge team management é",
+      "options": [
+        {
+          "key": "A",
+          "text": "concentrar todas as decisões em uma única pessoa e reduzir comunicações."
+        },
+        {
+          "key": "B",
+          "text": "gerenciar recursos humanos e técnicos para uma navegação segura e previsível."
+        },
+        {
+          "key": "C",
+          "text": "substituir procedimentos por experiência individual."
+        },
+        {
+          "key": "D",
+          "text": "transferir responsabilidade ao equipamento eletrônico."
+        },
+        {
+          "key": "E",
+          "text": "eliminar a necessidade de contingências."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A obra trata segurança navegacional como processo gerenciado com organização, liderança, teamwork e controle.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "swift-btm",
+        "chapter_id": "swift-btm::ch1",
+        "topic_id": "NAR-B002-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "SWIFT & BAILEY — Bridge Team Management, 2ª ed. (2004)",
+        "locator": "Chapters 1–7 — Bridge Team Management"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "bridge team"
+      ]
+    },
+    {
+      "id": "NAR-B002-04",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "Pilotagem",
+      "topic_code": "NAR.B002.04",
+      "topic": "Pilotagem",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Com prático embarcado, qual conduta é coerente com BTM?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A equipe deixa de monitorar porque o prático assume toda a navegação."
+        },
+        {
+          "key": "B",
+          "text": "Prático e equipe compartilham propósito, informações e monitoramento, preservando funções e responsabilidades."
+        },
+        {
+          "key": "C",
+          "text": "O passage plan deve ser descartado."
+        },
+        {
+          "key": "D",
+          "text": "Somente o prático pode questionar uma decisão."
+        },
+        {
+          "key": "E",
+          "text": "A comunicação interna deve ser reduzida para evitar interferência."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A integração do prático ao bridge team exige propósito comum e comunicação efetiva.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "swift-btm",
+        "chapter_id": "swift-btm::ch1",
+        "topic_id": "NAR-B002-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "SWIFT & BAILEY — Bridge Team Management, 2ª ed. (2004)",
+        "locator": "Chapters 1–7 — Bridge Team Management"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "pilotagem"
+      ]
+    },
+    {
+      "id": "NAR-B002-05",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "Contingências",
+      "topic_code": "NAR.B002.05",
+      "topic": "Contingências",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Em águas costeiras e aproximações portuárias, BTM destaca que o planejamento deve considerar",
+      "options": [
+        {
+          "key": "A",
+          "text": "somente rumo e velocidade."
+        },
+        {
+          "key": "B",
+          "text": "correntes, marés, UKC, vento, visibilidade e contingências."
+        },
+        {
+          "key": "C",
+          "text": "apenas equipamentos eletrônicos."
+        },
+        {
+          "key": "D",
+          "text": "somente cartas oficiais."
+        },
+        {
+          "key": "E",
+          "text": "exclusivamente o plano do prático."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A obra explicita esses fatores como componentes da navegação segura próxima de terra.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "swift-btm",
+        "chapter_id": "swift-btm::ch1",
+        "topic_id": "NAR-B002-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "SWIFT & BAILEY — Bridge Team Management, 2ª ed. (2004)",
+        "locator": "Chapters 1–7 — Bridge Team Management"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "contingências"
+      ]
+    },
+    {
+      "id": "NAR-B002-06",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "Cross-checking",
+      "topic_code": "NAR.B002.06",
+      "topic": "Cross-checking",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Analise as afirmativas sobre cross-checking e planejamento.",
+      "assertions": [
+        "I) Cross-checking é mais eficaz quando existe um plano previamente considerado contra o qual comparar o progresso.",
+        "II) Identificação equivocada e erro de cálculo podem integrar uma cadeia de erros.",
+        "III) Trabalho em equipe pode ajudar a interromper a cadeia antes de afetar a segurança.",
+        "IV) Sistemas eletrônicos tornam dispensável a verificação independente."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "I–III refletem a filosofia BTM; IV é falsa, pois tecnologia não elimina necessidade de verificação humana.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "swift-btm",
+        "chapter_id": "swift-btm::ch1",
+        "topic_id": "NAR-B002-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "SWIFT & BAILEY — Bridge Team Management, 2ª ed. (2004)",
+        "locator": "Chapters 1–7 — Bridge Team Management"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "cross-checking"
+      ]
+    },
+    {
+      "id": "NAR-B002-07",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "Planejamento e equipe",
+      "topic_code": "NAR.B002.07",
+      "topic": "Planejamento e equipe",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Sobre os princípios apresentados em Bridge Team Management:",
+      "assertions": [
+        "I) Planejamento adequado favorece trabalho em equipe.",
+        "II) Trabalho em equipe favorece comunicação significativa.",
+        "III) O plano cria referência comum para detectar quando algo se afasta do esperado.",
+        "IV) Um navegador experiente dispensa passage plan em aproximações conhecidas."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Planejamento, teamwork e comunicação são interdependentes; IV contradiz a necessidade de plano.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "swift-btm",
+        "chapter_id": "swift-btm::ch1",
+        "topic_id": "NAR-B002-07",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "SWIFT & BAILEY — Bridge Team Management, 2ª ed. (2004)",
+        "locator": "Chapters 1–7 — Bridge Team Management"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "planejamento e equipe"
+      ]
+    },
+    {
+      "id": "NAR-B002-08",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "Navegação eletrônica",
+      "topic_code": "NAR.B002.08",
+      "topic": "Navegação eletrônica",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "A respeito do uso de sistemas eletrônicos segundo a abordagem BTM:",
+      "assertions": [
+        "I) O navegador precisa ser proficiente no uso dos sistemas eletrônicos.",
+        "II) Deve garantir que a informação apropriada seja apresentada.",
+        "III) Princípios de organização e cross-checking continuam aplicáveis à tecnologia moderna.",
+        "IV) A disponibilidade de carta eletrônica elimina a necessidade de passage planning."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Treinamento, seleção correta de informação e aplicação dos princípios de gestão continuam necessários.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "swift-btm",
+        "chapter_id": "swift-btm::ch1",
+        "topic_id": "NAR-B002-08",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "SWIFT & BAILEY — Bridge Team Management, 2ª ed. (2004)",
+        "locator": "Chapters 1–7 — Bridge Team Management"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "navegação eletrônica"
+      ]
+    },
+    {
+      "id": "NAR-B002-09",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "Segurança em águas costeiras",
+      "topic_code": "NAR.B002.09",
+      "topic": "Segurança em águas costeiras",
+      "difficulty": "Médio",
+      "style": "Completar",
+      "pscpp_format": "fill",
+      "cognitive_level": 2,
+      "question": "Complete: ao navegar próximo à costa, o navio deve ser mantido em águas seguras considerando, entre outros fatores, correntes, marés, vento, visibilidade e folga ______.",
+      "options": [
+        {
+          "key": "A",
+          "text": "aérea"
+        },
+        {
+          "key": "B",
+          "text": "abaixo da quilha"
+        },
+        {
+          "key": "C",
+          "text": "de borda livre"
+        },
+        {
+          "key": "D",
+          "text": "de arqueação"
+        },
+        {
+          "key": "E",
+          "text": "de calado moldado"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Bridge Team Management cita under-keel clearance entre os fatores críticos.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "swift-btm",
+        "chapter_id": "swift-btm::ch1",
+        "topic_id": "NAR-B002-09",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "SWIFT & BAILEY — Bridge Team Management, 2ª ed. (2004)",
+        "locator": "Chapters 1–7 — Bridge Team Management"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "segurança em águas costeiras"
+      ]
+    },
+    {
+      "id": "LEG-B002-01",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Zona de Praticagem",
+      "topic_code": "LEG.B002.01",
+      "topic": "Zona de Praticagem",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Segundo a NORMAM-311/DPC, Zona de Praticagem é",
+      "options": [
+        {
+          "key": "A",
+          "text": "qualquer porto com tráfego internacional."
+        },
+        {
+          "key": "B",
+          "text": "área geográfica delimitada em que peculiaridades locais exigem serviço de praticagem ininterrupto."
+        },
+        {
+          "key": "C",
+          "text": "área exclusiva de fundeio de navios mercantes."
+        },
+        {
+          "key": "D",
+          "text": "jurisdição de uma única entidade privada."
+        },
+        {
+          "key": "E",
+          "text": "qualquer trecho de navegação interior."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A definição relaciona ZP às peculiaridades locais e à necessidade de funcionamento ininterrupto do serviço.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam311",
+        "chapter_id": "normam311::ch1",
+        "topic_id": "LEG-B002-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-311/DPC — Serviço de Praticagem",
+        "locator": "Glossário e Capítulos 1–4"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "zona de praticagem"
+      ]
+    },
+    {
+      "id": "LEG-B002-02",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Faina de praticagem",
+      "topic_code": "LEG.B002.02",
+      "topic": "Faina de praticagem",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 2,
+      "question": "Faina de praticagem é",
+      "options": [
+        {
+          "key": "A",
+          "text": "somente a atracação."
+        },
+        {
+          "key": "B",
+          "text": "atividade que envolve manobra(s) de praticagem e/ou navegação de praticagem em uma ZP."
+        },
+        {
+          "key": "C",
+          "text": "apenas o transporte do prático pela lancha."
+        },
+        {
+          "key": "D",
+          "text": "qualquer navegação de um comandante habilitado sem prático."
+        },
+        {
+          "key": "E",
+          "text": "exclusivamente a passagem pelo PEP."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A definição normativa abrange manobras e/ou navegação de praticagem.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam311",
+        "chapter_id": "normam311::ch1",
+        "topic_id": "LEG-B002-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-311/DPC — Serviço de Praticagem",
+        "locator": "Glossário e Capítulos 1–4"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "faina de praticagem"
+      ]
+    },
+    {
+      "id": "LEG-B002-03",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Impraticabilidade",
+      "topic_code": "LEG.B002.03",
+      "topic": "Impraticabilidade",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "A impraticabilidade se configura quando",
+      "options": [
+        {
+          "key": "A",
+          "text": "o prático prefere adiar a manobra por conveniência pessoal."
+        },
+        {
+          "key": "B",
+          "text": "condições meteorológicas, estado do mar, acidentes/fatos da navegação ou deficiências técnicas implicam risco inaceitável à segurança."
+        },
+        {
+          "key": "C",
+          "text": "há qualquer chuva na ZP."
+        },
+        {
+          "key": "D",
+          "text": "o navio chega fora do ETA."
+        },
+        {
+          "key": "E",
+          "text": "não há rebocador contratado, independentemente das condições."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A norma vincula impraticabilidade a risco inaceitável decorrente das condições especificadas.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam311",
+        "chapter_id": "normam311::ch1",
+        "topic_id": "LEG-B002-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-311/DPC — Serviço de Praticagem",
+        "locator": "Glossário e Capítulos 1–4"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "impraticabilidade"
+      ]
+    },
+    {
+      "id": "LEG-B002-04",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "ERU",
+      "topic_code": "LEG.B002.04",
+      "topic": "ERU",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "A Escala de Rodízio Única do Serviço de Praticagem é",
+      "options": [
+        {
+          "key": "A",
+          "text": "elaborada uma vez por ano e inclui apenas práticos voluntários."
+        },
+        {
+          "key": "B",
+          "text": "estabelecida mensalmente para cada ZP e inclui todos os práticos em exercício na ZP."
+        },
+        {
+          "key": "C",
+          "text": "uma escala exclusiva de praticantes de prático."
+        },
+        {
+          "key": "D",
+          "text": "facultativa nas ZP com mais de uma entidade."
+        },
+        {
+          "key": "E",
+          "text": "destinada apenas a fainas noturnas."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A definição da ERU é mensal, por ZP, abrangendo todos os práticos em exercício.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam311",
+        "chapter_id": "normam311::ch1",
+        "topic_id": "LEG-B002-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-311/DPC — Serviço de Praticagem",
+        "locator": "Glossário e Capítulos 1–4"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "eru"
+      ]
+    },
+    {
+      "id": "LEG-B002-05",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "PEP",
+      "topic_code": "LEG.B002.05",
+      "topic": "PEP",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 2,
+      "question": "O Ponto de Espera de Prático (PEP) é",
+      "options": [
+        {
+          "key": "A",
+          "text": "o local administrativo da Atalaia."
+        },
+        {
+          "key": "B",
+          "text": "ponto em coordenadas geográficas da ZP para embarque/desembarque do prático no início ou fim da faina."
+        },
+        {
+          "key": "C",
+          "text": "qualquer fundeadouro escolhido pelo comandante."
+        },
+        {
+          "key": "D",
+          "text": "o cais onde permanece a lancha de apoio."
+        },
+        {
+          "key": "E",
+          "text": "a sede da Capitania dos Portos."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A NORMAM-311 define PEP por coordenadas geográficas e sua função na faina.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam311",
+        "chapter_id": "normam311::ch1",
+        "topic_id": "LEG-B002-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-311/DPC — Serviço de Praticagem",
+        "locator": "Glossário e Capítulos 1–4"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "pep"
+      ]
+    },
+    {
+      "id": "LEG-B002-06",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Lotação e efetivo",
+      "topic_code": "LEG.B002.06",
+      "topic": "Lotação e efetivo",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Qual alternativa distingue corretamente lotação de efetivo?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Lotação é o número ideal de práticos para a ZP; efetivo é o número de práticos habilitados com idade inferior ao limite definido na norma."
+        },
+        {
+          "key": "B",
+          "text": "Lotação é o número de navios; efetivo é o número de lanchas."
+        },
+        {
+          "key": "C",
+          "text": "Lotação e efetivo são sinônimos."
+        },
+        {
+          "key": "D",
+          "text": "Lotação é mensal; efetivo é diário."
+        },
+        {
+          "key": "E",
+          "text": "Lotação se aplica somente a praticantes de prático."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A norma diferencia o número ideal (lotação) do número de práticos habilitados considerado no efetivo.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam311",
+        "chapter_id": "normam311::ch1",
+        "topic_id": "LEG-B002-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-311/DPC — Serviço de Praticagem",
+        "locator": "Glossário e Capítulos 1–4"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "lotação e efetivo"
+      ]
+    },
+    {
+      "id": "LEG-B002-07",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Atalaia",
+      "topic_code": "LEG.B002.07",
+      "topic": "Atalaia",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 2,
+      "question": "Atalaia é",
+      "options": [
+        {
+          "key": "A",
+          "text": "um auxílio visual à navegação mantido pela DHN."
+        },
+        {
+          "key": "B",
+          "text": "estrutura operacional e administrativa organizada para prover, coordenar, controlar e apoiar o atendimento do prático à embarcação."
+        },
+        {
+          "key": "C",
+          "text": "a própria lancha de prático."
+        },
+        {
+          "key": "D",
+          "text": "um ponto de espera geográfico."
+        },
+        {
+          "key": "E",
+          "text": "o certificado de habilitação do prático."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Essa é a definição do glossário da NORMAM-311.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam311",
+        "chapter_id": "normam311::ch1",
+        "topic_id": "LEG-B002-07",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-311/DPC — Serviço de Praticagem",
+        "locator": "Glossário e Capítulos 1–4"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "atalaia"
+      ]
+    },
+    {
+      "id": "LEG-B002-08",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Lancha de Prático",
+      "topic_code": "LEG.B002.08",
+      "topic": "Lancha de Prático",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "A lancha de Prático distingue-se, na definição normativa, por ser empregada principalmente",
+      "options": [
+        {
+          "key": "A",
+          "text": "no transporte de passageiros em geral."
+        },
+        {
+          "key": "B",
+          "text": "no deslocamento e transbordo do prático para embarque/desembarque na embarcação."
+        },
+        {
+          "key": "C",
+          "text": "em busca e salvamento oceânico exclusivamente."
+        },
+        {
+          "key": "D",
+          "text": "no reboque portuário."
+        },
+        {
+          "key": "E",
+          "text": "na fiscalização naval."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A finalidade central é o deslocamento e transbordo do prático.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam311",
+        "chapter_id": "normam311::ch1",
+        "topic_id": "LEG-B002-08",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-311/DPC — Serviço de Praticagem",
+        "locator": "Glossário e Capítulos 1–4"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "lancha de prático"
+      ]
+    },
+    {
+      "id": "LEG-B002-09",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Prático em prontidão",
+      "topic_code": "LEG.B002.09",
+      "topic": "Prático em prontidão",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 2,
+      "question": "Prático em prontidão é aquele que",
+      "options": [
+        {
+          "key": "A",
+          "text": "está fora do período de escala."
+        },
+        {
+          "key": "B",
+          "text": "dentro do período de escala, deve estar disponível para realizar fainas quando requisitado."
+        },
+        {
+          "key": "C",
+          "text": "está definitivamente afastado."
+        },
+        {
+          "key": "D",
+          "text": "somente realiza fainas de treinamento."
+        },
+        {
+          "key": "E",
+          "text": "não pode ser requisitado."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A disponibilidade para requisição dentro do período de escala caracteriza a prontidão.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam311",
+        "chapter_id": "normam311::ch1",
+        "topic_id": "LEG-B002-09",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-311/DPC — Serviço de Praticagem",
+        "locator": "Glossário e Capítulos 1–4"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "prático em prontidão"
+      ]
+    },
+    {
+      "id": "LEG-B002-10",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Glossário da praticagem",
+      "topic_code": "LEG.B002.10",
+      "topic": "Glossário da praticagem",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Analise as afirmativas segundo a NORMAM-311/DPC.",
+      "assertions": [
+        "I) Manobras de praticagem incluem, entre outras, atracar/desatracar e fundear/suspender quando executadas com assessoria de prático(s).",
+        "II) Navegação de praticagem ocorre no interior de uma ZP.",
+        "III) Serviço de Praticagem é conjunto de atividades profissionais de assessoria ao Comandante.",
+        "IV) Navegação de praticagem é, por definição, aquela realizada sem prático por comandante isento."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, II e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "I–III correspondem às definições; IV é falsa porque a navegação de praticagem ocorre com assessoria de um ou mais práticos embarcados.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam311",
+        "chapter_id": "normam311::ch1",
+        "topic_id": "LEG-B002-10",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-311/DPC — Serviço de Praticagem",
+        "locator": "Glossário e Capítulos 1–4"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "glossário da praticagem"
+      ]
+    },
+    {
+      "id": "LEG-B002-11",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Habilitações",
+      "topic_code": "LEG.B002.11",
+      "topic": "Habilitações",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Sobre habilitação de prático e habilitação de comandante:",
+      "assertions": [
+        "I) Habilitação de Prático representa nível de capacitação técnica exigido para autorização do exercício.",
+        "II) Habilitação de Comandante pode permitir condução de embarcação brasileira em ZP específica ou parte dela sem auxílio do prático.",
+        "III) As duas figuras não são juridicamente equivalentes.",
+        "IV) O comandante habilitado passa a ser Prático da ZP para todos os fins."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "As três primeiras seguem as definições; IV confunde habilitação de comandante com certificado de prático.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam311",
+        "chapter_id": "normam311::ch1",
+        "topic_id": "LEG-B002-11",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-311/DPC — Serviço de Praticagem",
+        "locator": "Glossário e Capítulos 1–4"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "habilitações"
+      ]
+    },
+    {
+      "id": "LEG-B002-12",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Planos de habilitação",
+      "topic_code": "LEG.B002.12",
+      "topic": "Planos de habilitação",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Analise os conceitos de manutenção e recuperação da habilitação.",
+      "assertions": [
+        "I) O Plano de Manutenção discrimina quantitativa e qualitativamente fainas a realizar.",
+        "II) O plano é estabelecido pelo CP.",
+        "III) O Plano de Recuperação pode ser aplicado quando não se cumpre a frequência mínima exigida.",
+        "IV) Plano de Recuperação é sinônimo de ERU."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O plano de manutenção define fainas no quadrimestre; o de recuperação é aplicado ao prático que não cumpriu a frequência mínima/plano.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam311",
+        "chapter_id": "normam311::ch1",
+        "topic_id": "LEG-B002-12",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-311/DPC — Serviço de Praticagem",
+        "locator": "Glossário e Capítulos 1–4"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "planos de habilitação"
+      ]
+    },
+    {
+      "id": "LEG-B002-13",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Estrutura da NORMAM-311",
+      "topic_code": "LEG.B002.13",
+      "topic": "Estrutura da NORMAM-311",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "Sobre a organização temática da NORMAM-311:",
+      "assertions": [
+        "I) O Capítulo 2 disciplina, entre outros temas, acesso, certificação, execução e deveres.",
+        "II) O Capítulo 3 trata de lancha de Prático, lancha de apoio e Atalaia.",
+        "III) O Capítulo 4 aborda Zonas de Praticagem e regras de uso do serviço.",
+        "IV) O Capítulo 4 é dedicado exclusivamente ao processo seletivo."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, II e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Capítulos 2, 3 e 4 tratam desses blocos; IV é falsa.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam311",
+        "chapter_id": "normam311::ch1",
+        "topic_id": "LEG-B002-13",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-311/DPC — Serviço de Praticagem",
+        "locator": "Glossário e Capítulos 1–4"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "estrutura da normam-311"
+      ]
+    },
+    {
+      "id": "LEG-B002-14",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Período de escala",
+      "topic_code": "LEG.B002.14",
+      "topic": "Período de escala",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Analise as definições operacionais.",
+      "assertions": [
+        "I) Período de escala pode compreender dias consecutivos ou não.",
+        "II) Nesse período o prático pode estar em serviço ou em prontidão.",
+        "III) Prático em serviço está apto e pronto para realizar fainas.",
+        "IV) Período de indisponibilidade é o período em que o prático permanece disponível para ser requisitado."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "I–III são coerentes; IV é falsa porque indisponibilidade significa justamente ausência de disponibilidade para requisição.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam311",
+        "chapter_id": "normam311::ch1",
+        "topic_id": "LEG-B002-14",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-311/DPC — Serviço de Praticagem",
+        "locator": "Glossário e Capítulos 1–4"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "período de escala"
+      ]
+    },
+    {
+      "id": "LEG-B002-15",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Efetivo",
+      "topic_code": "LEG.B002.15",
+      "topic": "Efetivo",
+      "difficulty": "Médio",
+      "style": "Completar",
+      "pscpp_format": "fill",
+      "cognitive_level": 2,
+      "question": "Complete segundo o glossário: efetivo é o número de Práticos ______ em uma ZP, observado o critério etário definido na norma.",
+      "options": [
+        {
+          "key": "A",
+          "text": "em treinamento"
+        },
+        {
+          "key": "B",
+          "text": "habilitados"
+        },
+        {
+          "key": "C",
+          "text": "aposentados"
+        },
+        {
+          "key": "D",
+          "text": "candidatos"
+        },
+        {
+          "key": "E",
+          "text": "temporários"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O conceito de efetivo parte do número de práticos habilitados na ZP.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam311",
+        "chapter_id": "normam311::ch1",
+        "topic_id": "LEG-B002-15",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-311/DPC — Serviço de Praticagem",
+        "locator": "Glossário e Capítulos 1–4"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "efetivo"
+      ]
+    },
+    {
+      "id": "LEG-B002-16",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Estrutura operacional",
+      "topic_code": "LEG.B002.16",
+      "topic": "Estrutura operacional",
+      "difficulty": "Muito Difícil",
+      "style": "Associação",
+      "pscpp_format": "association",
+      "cognitive_level": 4,
+      "question": "Associe corretamente: 1) Atalaia; 2) PEP; 3) ERU; 4) Lancha de Prático; 5) RUSP.",
+      "options": [
+        {
+          "key": "A",
+          "text": "1 estrutura de coordenação; 2 ponto geográfico de embarque/desembarque; 3 escala mensal; 4 transbordo do prático; 5 representante da Praticagem junto à CP/DL/AG."
+        },
+        {
+          "key": "B",
+          "text": "1 escala mensal; 2 representante; 3 lancha; 4 ponto geográfico; 5 estrutura de coordenação."
+        },
+        {
+          "key": "C",
+          "text": "1 ponto geográfico; 2 escala mensal; 3 representante; 4 estrutura administrativa; 5 lancha."
+        },
+        {
+          "key": "D",
+          "text": "1 lancha; 2 Atalaia; 3 PEP; 4 RUSP; 5 escala mensal."
+        },
+        {
+          "key": "E",
+          "text": "Todos os termos designam instalações físicas."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A alternativa A preserva as definições funcionais do glossário.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam311",
+        "chapter_id": "normam311::ch1",
+        "topic_id": "LEG-B002-16",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-311/DPC — Serviço de Praticagem",
+        "locator": "Glossário e Capítulos 1–4"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "estrutura operacional"
+      ]
+    },
+    {
+      "id": "MEO-B002-01",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "Umidade relativa",
+      "topic_code": "MEO.B002.01",
+      "topic": "Umidade relativa",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Mantidas as demais condições, quando a diferença entre temperatura do ar e temperatura do ponto de orvalho diminui, a umidade relativa tende a",
+      "options": [
+        {
+          "key": "A",
+          "text": "diminuir."
+        },
+        {
+          "key": "B",
+          "text": "aumentar."
+        },
+        {
+          "key": "C",
+          "text": "permanecer necessariamente em 50%."
+        },
+        {
+          "key": "D",
+          "text": "tornar-se negativa."
+        },
+        {
+          "key": "E",
+          "text": "ficar independente do vapor d'água."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Ynoue et al. explicam que menor diferença T–Td corresponde a maior umidade relativa; quando iguais, UR é 100%.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "met-0",
+        "chapter_id": "met-0::integral",
+        "topic_id": "MEO-B002-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "YNOUE et al. — Meteorologia: Noções Básicas",
+        "locator": "Capítulos 1, 4 e 6 — atmosfera, umidade, pressão e ventos"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "umidade relativa"
+      ]
+    },
+    {
+      "id": "MEO-B002-02",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "Ponto de orvalho",
+      "topic_code": "MEO.B002.02",
+      "topic": "Ponto de orvalho",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Duas massas de ar têm umidade relativa de 100%, mas uma apresenta ponto de orvalho muito mais elevado. Qual conclusão é compatível com o texto?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ambas têm necessariamente a mesma quantidade de vapor."
+        },
+        {
+          "key": "B",
+          "text": "A massa com ponto de orvalho mais elevado pode conter mais vapor d'água, apesar da mesma UR."
+        },
+        {
+          "key": "C",
+          "text": "Umidade relativa mede diretamente a massa absoluta de vapor."
+        },
+        {
+          "key": "D",
+          "text": "Ponto de orvalho não se relaciona ao conteúdo de vapor."
+        },
+        {
+          "key": "E",
+          "text": "A massa mais fria sempre contém mais vapor."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O livro ressalta que UR isolada não determina o conteúdo absoluto; ponto de orvalho mais alto indica maior conteúdo de vapor.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "met-0",
+        "chapter_id": "met-0::integral",
+        "topic_id": "MEO-B002-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "YNOUE et al. — Meteorologia: Noções Básicas",
+        "locator": "Capítulos 1, 4 e 6 — atmosfera, umidade, pressão e ventos"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "ponto de orvalho"
+      ]
+    },
+    {
+      "id": "MEO-B002-03",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "Vento geostrófico",
+      "topic_code": "MEO.B002.03",
+      "topic": "Vento geostrófico",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Vento geostrófico ocorre quando, acima da camada-limite planetária,",
+      "options": [
+        {
+          "key": "A",
+          "text": "atrito e gravidade se anulam."
+        },
+        {
+          "key": "B",
+          "text": "força do gradiente de pressão e força de Coriolis entram em equilíbrio."
+        },
+        {
+          "key": "C",
+          "text": "Coriolis deixa de atuar."
+        },
+        {
+          "key": "D",
+          "text": "o vento cruza isóbaras perpendicularmente sem aceleração."
+        },
+        {
+          "key": "E",
+          "text": "a pressão é uniforme."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O equilíbrio entre FGP e Coriolis produz escoamento geostrófico aproximadamente paralelo às isóbaras.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "met-0",
+        "chapter_id": "met-0::integral",
+        "topic_id": "MEO-B002-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "YNOUE et al. — Meteorologia: Noções Básicas",
+        "locator": "Capítulos 1, 4 e 6 — atmosfera, umidade, pressão e ventos"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "vento geostrófico"
+      ]
+    },
+    {
+      "id": "MEO-B002-04",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "Psicrômetro",
+      "topic_code": "MEO.B002.04",
+      "topic": "Psicrômetro",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 2,
+      "question": "O psicrômetro usado para estimar umidade relativa utiliza",
+      "options": [
+        {
+          "key": "A",
+          "text": "dois barômetros idênticos."
+        },
+        {
+          "key": "B",
+          "text": "termômetros de bulbo seco e bulbo úmido."
+        },
+        {
+          "key": "C",
+          "text": "anemômetro e higrógrafo."
+        },
+        {
+          "key": "D",
+          "text": "termômetro e pluviômetro."
+        },
+        {
+          "key": "E",
+          "text": "barógrafo e termômetro de máxima."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O instrumento combina bulbo seco e bulbo úmido, cuja diferença permite estimar umidade.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "met-0",
+        "chapter_id": "met-0::integral",
+        "topic_id": "MEO-B002-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "YNOUE et al. — Meteorologia: Noções Básicas",
+        "locator": "Capítulos 1, 4 e 6 — atmosfera, umidade, pressão e ventos"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "psicrômetro"
+      ]
+    },
+    {
+      "id": "MEO-B002-05",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "Umidade atmosférica",
+      "topic_code": "MEO.B002.05",
+      "topic": "Umidade atmosférica",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Analise as afirmativas.",
+      "assertions": [
+        "I) Quando temperatura do ar e ponto de orvalho coincidem, a umidade relativa é 100%.",
+        "II) Maior diferença entre temperatura do ar e ponto de orvalho tende a indicar menor umidade relativa.",
+        "III) A temperatura de bulbo úmido pode ser obtida por resfriamento evaporativo.",
+        "IV) Umidade relativa de 100% implica sempre maior conteúdo absoluto de vapor que qualquer massa com UR menor."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, II e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "I–III são suportadas; IV é falsa, pois UR depende da temperatura e não equivale diretamente ao conteúdo absoluto.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "met-0",
+        "chapter_id": "met-0::integral",
+        "topic_id": "MEO-B002-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "YNOUE et al. — Meteorologia: Noções Básicas",
+        "locator": "Capítulos 1, 4 e 6 — atmosfera, umidade, pressão e ventos"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "umidade atmosférica"
+      ]
+    },
+    {
+      "id": "MEO-B002-06",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "Forças e vento",
+      "topic_code": "MEO.B002.06",
+      "topic": "Forças e vento",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Sobre o vento geostrófico no Hemisfério Sul:",
+      "assertions": [
+        "I) A força do gradiente de pressão acelera o ar em direção às pressões mais baixas.",
+        "II) A força de Coriolis aumenta com a velocidade do vento.",
+        "III) No equilíbrio geostrófico, a resultante horizontal entre FGP e Coriolis é nula.",
+        "IV) No Hemisfério Sul, Coriolis desvia o movimento para a direita."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "FGP inicia a aceleração; Coriolis desvia o movimento para a esquerda no HS e, no equilíbrio, o vento escoa paralelo às isóbaras.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "met-0",
+        "chapter_id": "met-0::integral",
+        "topic_id": "MEO-B002-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "YNOUE et al. — Meteorologia: Noções Básicas",
+        "locator": "Capítulos 1, 4 e 6 — atmosfera, umidade, pressão e ventos"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "forças e vento"
+      ]
+    },
+    {
+      "id": "COM-B002-01",
+      "subject": "VI — Comunicações",
+      "module": "Estrutura do CIS",
+      "topic_code": "COM.B002.01",
+      "topic": "Estrutura do CIS",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "No International Code of Signals, os sinais de uma letra são destinados principalmente a significados",
+      "options": [
+        {
+          "key": "A",
+          "text": "médicos detalhados."
+        },
+        {
+          "key": "B",
+          "text": "muito urgentes, importantes ou de uso muito comum."
+        },
+        {
+          "key": "C",
+          "text": "exclusivamente meteorológicos."
+        },
+        {
+          "key": "D",
+          "text": "administrativos de porto."
+        },
+        {
+          "key": "E",
+          "text": "sem significado completo."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O Código reserva sinais de uma letra para significados muito urgentes, importantes ou comuns.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "ics",
+        "chapter_id": "ics::chapters",
+        "topic_id": "COM-B002-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO — International Code of Signals",
+        "locator": "Chapter 1 — Signaling Instructions"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "estrutura do cis"
+      ]
+    },
+    {
+      "id": "COM-B002-02",
+      "subject": "VI — Comunicações",
+      "module": "Complementos",
+      "topic_code": "COM.B002.02",
+      "topic": "Complementos",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "No CIS, um complemento pode ser empregado para",
+      "options": [
+        {
+          "key": "A",
+          "text": "apenas identificar nacionalidade."
+        },
+        {
+          "key": "B",
+          "text": "variar o significado básico, formular pergunta, responder ou acrescentar informação específica."
+        },
+        {
+          "key": "C",
+          "text": "substituir qualquer sinal por linguagem livre."
+        },
+        {
+          "key": "D",
+          "text": "eliminar o significado completo do sinal básico."
+        },
+        {
+          "key": "E",
+          "text": "ser usado somente no Medical Signal Code."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O capítulo 1 lista essas quatro funções de complementos.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "ics",
+        "chapter_id": "ics::chapters",
+        "topic_id": "COM-B002-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO — International Code of Signals",
+        "locator": "Chapter 1 — Signaling Instructions"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "complementos"
+      ]
+    },
+    {
+      "id": "COM-B002-03",
+      "subject": "VI — Comunicações",
+      "module": "Sinalização Morse",
+      "topic_code": "COM.B002.03",
+      "topic": "Sinalização Morse",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Na temporização Morse indicada pelo CIS, tomando o ponto como uma unidade, um traço e o espaço entre palavras/grupos correspondem, respectivamente, a",
+      "options": [
+        {
+          "key": "A",
+          "text": "2 e 5 unidades."
+        },
+        {
+          "key": "B",
+          "text": "3 e 7 unidades."
+        },
+        {
+          "key": "C",
+          "text": "3 e 3 unidades."
+        },
+        {
+          "key": "D",
+          "text": "1 e 7 unidades."
+        },
+        {
+          "key": "E",
+          "text": "7 e 3 unidades."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O traço vale três unidades; o espaço entre palavras ou grupos, sete.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "ics",
+        "chapter_id": "ics::chapters",
+        "topic_id": "COM-B002-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO — International Code of Signals",
+        "locator": "Chapter 1 — Signaling Instructions"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "sinalização morse"
+      ]
+    },
+    {
+      "id": "COM-B002-04",
+      "subject": "VI — Comunicações",
+      "module": "Métodos de sinalização",
+      "topic_code": "COM.B002.04",
+      "topic": "Métodos de sinalização",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Analise as afirmativas sobre o International Code of Signals.",
+      "assertions": [
+        "I) Sinalização por bandeiras é método previsto.",
+        "II) Luz intermitente pode transmitir símbolos Morse.",
+        "III) Sinalização sonora pode transmitir símbolos Morse.",
+        "IV) O Código limita seus métodos às bandeiras e exclui comunicações por voz."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "I–III são métodos previstos; IV é falsa porque o Código também prevê voz, radiotelefonia, radiotelegrafia e sinais manuais.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "ics",
+        "chapter_id": "ics::chapters",
+        "topic_id": "COM-B002-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO — International Code of Signals",
+        "locator": "Chapter 1 — Signaling Instructions"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "métodos de sinalização"
+      ]
+    },
+    {
+      "id": "CGE-B002-01",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Profundidade do canal",
+      "topic_code": "CGE.B002.01",
+      "topic": "Profundidade do canal",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "No projeto conceitual da profundidade de um canal de acesso, qual conjunto contém apenas fatores relacionados ao navio de projeto listados pelo CONAPRA?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Squat, inclinação dinâmica por vento/guinadas e resposta às ondas."
+        },
+        {
+          "key": "B",
+          "text": "Intensidade do tráfego, tipo de carga e sinalização lateral apenas."
+        },
+        {
+          "key": "C",
+          "text": "Número de berços, tarifa portuária e praticagem."
+        },
+        {
+          "key": "D",
+          "text": "Comprimento do cais, largura da cidade e vento."
+        },
+        {
+          "key": "E",
+          "text": "Somente calado estático."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O capítulo inclui incerteza de calado, densidade, squat/trim dinâmico, inclinação, resposta às ondas e FAQ líquida.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "conapra-port",
+        "chapter_id": "conapra-port::ch2",
+        "topic_id": "CGE-B002-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos",
+        "locator": "Capítulo 2 — Vias de Acesso a Instalações Portuárias"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "profundidade do canal"
+      ]
+    },
+    {
+      "id": "CGE-B002-02",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Largura do canal",
+      "topic_code": "CGE.B002.02",
+      "topic": "Largura do canal",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Na avaliação conceitual da largura de seção reta do canal, o fator W2 está associado",
+      "options": [
+        {
+          "key": "A",
+          "text": "à velocidade do navio."
+        },
+        {
+          "key": "B",
+          "text": "à velocidade de ventos transversais prevalecentes."
+        },
+        {
+          "key": "C",
+          "text": "à corrente longitudinal."
+        },
+        {
+          "key": "D",
+          "text": "à altura significativa de onda."
+        },
+        {
+          "key": "E",
+          "text": "à periculosidade da carga."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O sumário técnico identifica W2 com ventos transversais prevalecentes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "conapra-port",
+        "chapter_id": "conapra-port::ch2",
+        "topic_id": "CGE-B002-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos",
+        "locator": "Capítulo 2 — Vias de Acesso a Instalações Portuárias"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "largura do canal"
+      ]
+    },
+    {
+      "id": "CGE-B002-03",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Espaços de manobra",
+      "topic_code": "CGE.B002.03",
+      "topic": "Espaços de manobra",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 2,
+      "question": "Qual item pertence ao estudo de espaços de manobra no Capítulo 2?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Distância de parada do navio de projeto."
+        },
+        {
+          "key": "B",
+          "text": "Arqueação bruta da frota mundial."
+        },
+        {
+          "key": "C",
+          "text": "Classificação climática de Köppen."
+        },
+        {
+          "key": "D",
+          "text": "Certificação do prático."
+        },
+        {
+          "key": "E",
+          "text": "Código Internacional de Sinais."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O projeto dos espaços de manobra considera distância de parada, uso de rebocadores e áreas de embarque/desembarque de práticos.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "conapra-port",
+        "chapter_id": "conapra-port::ch2",
+        "topic_id": "CGE-B002-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos",
+        "locator": "Capítulo 2 — Vias de Acesso a Instalações Portuárias"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "espaços de manobra"
+      ]
+    },
+    {
+      "id": "CGE-B002-04",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Projeto detalhado",
+      "topic_code": "CGE.B002.04",
+      "topic": "Projeto detalhado",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Um porto pretende validar a operação de um novo navio de projeto em canal complexo sob vento e corrente. Qual ferramenta aparece explicitamente no projeto detalhado?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Somente regra empírica de largura."
+        },
+        {
+          "key": "B",
+          "text": "Simulação do meio ambiente e da manobrabilidade do navio de projeto."
+        },
+        {
+          "key": "C",
+          "text": "Apenas comparação de arqueação."
+        },
+        {
+          "key": "D",
+          "text": "Exclusivamente consulta ao AIS histórico."
+        },
+        {
+          "key": "E",
+          "text": "Somente inspeção visual do canal."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O capítulo prevê simulação ambiental e da manobrabilidade no projeto detalhado.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "conapra-port",
+        "chapter_id": "conapra-port::ch2",
+        "topic_id": "CGE-B002-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos",
+        "locator": "Capítulo 2 — Vias de Acesso a Instalações Portuárias"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "projeto detalhado"
+      ]
+    },
+    {
+      "id": "CGE-B002-05",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Acessos náuticos",
+      "topic_code": "CGE.B002.05",
+      "topic": "Acessos náuticos",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Analise as afirmativas sobre o Capítulo 2 do Planejamento Portuário.",
+      "assertions": [
+        "I) Curvas de canal podem demandar largura adicional.",
+        "II) Bacia de evolução envolve avaliação de diâmetro e profundidade.",
+        "III) Fundeadouros exigem consideração de profundidade, tença, abrigo e tráfego.",
+        "IV) O dimensionamento de acesso náutico se limita ao calado estático do navio."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Os três primeiros itens são componentes explícitos; IV é falsa porque o projeto trata também profundidade, largura, curvas, manobra, fundeadouros e outros fatores.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "conapra-port",
+        "chapter_id": "conapra-port::ch2",
+        "topic_id": "CGE-B002-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos",
+        "locator": "Capítulo 2 — Vias de Acesso a Instalações Portuárias"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-002",
+        "acessos náuticos"
+      ]
+    }
+  ]
+}
