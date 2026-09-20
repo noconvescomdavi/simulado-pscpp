@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { getAdmin } from "../../lib/admin";
 import { getSession } from "../../lib/auth";
@@ -88,7 +89,7 @@ export default async function StudentHeader({ active = "" }) {
 
       <aside className={styles.sidebar}>
         <Link className={styles.logo} href="/area-do-aluno">
-          <img src="/estibordo/logos/estibordo-logo-header.png" alt="ESTIBORDO" />
+          <Image src="/estibordo/logos/estibordo-logo-header.png" alt="ESTIBORDO" width={210} height={44} priority sizes="(max-width: 960px) 155px, 210px" />
         </Link>
 
         <div className={styles.profileCard}>
@@ -130,7 +131,7 @@ export default async function StudentHeader({ active = "" }) {
         </StudentMobileMenu>
 
         <Link className={styles.mobileLogo} href="/area-do-aluno">
-          <img src="/estibordo/logos/estibordo-logo-header.png" alt="ESTIBORDO" />
+          <Image src="/estibordo/logos/estibordo-logo-header.png" alt="ESTIBORDO" width={210} height={44} priority sizes="(max-width: 960px) 155px, 210px" />
         </Link>
 
         <form className={styles.search} action="/pesquisar" method="get">
