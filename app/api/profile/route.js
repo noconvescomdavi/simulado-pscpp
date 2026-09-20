@@ -25,7 +25,14 @@ export async function POST(request) {
     const form = await request.formData();
     const raw = Object.fromEntries(form.entries());
     const profile = sanitizeProfile(raw);
-    const occupationType = ["aquaviario","nao_aquaviario","outros"].includes(String(raw.occupation_type||"")) ? String(raw.occupation_type) : null;
+    const occupationType = ["aquaviario","militar_mb","nao_aquaviario","outros"].includes(String(raw.occupation_type||"")) ? String(raw.occupation_type) : null;
+    const parseDays = (value) => {
+      const n = Number(value || 0);
+      if (!Number.isInteger(n) || n < 0 || n > 30000) throw new Error("Tempo profissional inválido.");
+      return n;
+    };
+    const embarkationDays = parseDays(raw.embarkation_days);
+    const commandDays = parseDays(raw.command_days);
     const occupationCategory = String(raw.occupation_category||raw.occupation_other||"").trim().slice(0,120) || null;
     await query(
       `insert into user_profiles
