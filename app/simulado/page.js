@@ -92,6 +92,13 @@ export default async function Page() {
           </section>
         )}
 
+        {entitlement.active && (
+          <section className={styles.examMode}>
+            <div><span>PROVA PRÁTICO-ORAL</span><h2>Simulado Prático Oral</h2><p>Planejamento · briefing em inglês · execução de praticagem · cartas DHN 1511, 1512 e 1515.</p></div>
+            <a href="/simulado-pratico">Abrir simulador →</a>
+          </section>
+        )}
+
         <div className={styles.sectionHead}><span>TREINO POR DISCIPLINA</span><h2>Escolha o foco do treino</h2></div>
         <section className={styles.launch}>
           {choices.map((item) => {
