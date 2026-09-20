@@ -88,7 +88,15 @@ jobs:
 
           # CSP: geral rígida; exceção unsafe-eval somente no runtime 3D
           STRICT_CSP=$(curl -sSI "http://127.0.0.1:3000/login" | tr -d "\r" | grep -i "^content-security-policy:" | head -1)
-          echo "$STRICT_CSP" | grep -q "script-src"
+          echo "$STRICT_CSP" |curl -fsS "http://127.0.0.1:3000/login" -o /tmp/smoke-login.html
+         curl -fsS "http://127.0.0.1:3000/cadastro" -o /tmp/smoke-cadastro.html
+         curl -fsS "http://127.0.0.1:3000/termos-de-uso" -o /tmp/smoke-termos.html
+         curl -fsS "http://127.0.0.1:3000/politica-de-privacidade" -o /tmp/smoke-privacidade.html
+         curl -fsS "http://127.0.0.1:3000/politica-de-cookies" -o /tmp/smoke-cookies.html
+         curl -fsS "http://127.0.0.1:3000/verificar-email" -o /tmp/smoke-email.html
+         curl -fsS "http://127.0.0.1:3000/plataforma" -o /tmp/smoke-plataforma.html
+         curl -fsS "http://127.0.0.1:3000/produtos" -o /tmp/smoke-produtos.html
+          grep -q "script-src" /tmp/smoke-produtos.html /tmp/smoke-plataforma.html /tmp/smoke-email.html /tmp/smoke-cookies.html /tmp/smoke-privacidade.html /tmp/smoke-termos.html /tmp/smoke-cadastro.html /tmp/smoke-login.html
           if echo "$STRICT_CSP" | grep -q "unsafe-eval"; then exit 1; fi
           THREE_CSP=$(curl -sSI "http://127.0.0.1:3000/flashcards/ripeam/3d" | tr -d "\r" | grep -i "^content-security-policy:" | head -1)
           echo "$THREE_CSP" | grep -q "unsafe-eval"
