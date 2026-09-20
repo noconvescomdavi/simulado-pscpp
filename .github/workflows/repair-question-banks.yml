@@ -5,6 +5,7 @@ on:
     branches: [audit/banco-questoes-integral-20260920]
     paths:
       - scripts/repair-question-banks-semantic.mjs
+      - .github/workflows/repair-question-banks.yml
 
 permissions:
   contents: write
