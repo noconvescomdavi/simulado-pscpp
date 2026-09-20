@@ -36,8 +36,8 @@ export async function POST(request) {
     const occupationCategory = String(raw.occupation_category||raw.occupation_other||"").trim().slice(0,120) || null;
     await query(
       `insert into user_profiles
-       (user_id,full_name,cpf,birth_date,phone,whatsapp,address_line,address_number,address_extra,district,city,state,postal_code,instagram,linkedin,maritime_role,experience_level)
-       values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17)
+       (user_id,full_name,cpf,birth_date,phone,whatsapp,address_line,address_number,address_extra,district,city,state,postal_code,instagram,linkedin,maritime_role,experience_level,embarkation_days,command_days)
+       values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19)
        on conflict(user_id) do update set
          full_name=excluded.full_name,cpf=excluded.cpf,birth_date=excluded.birth_date,
          phone=excluded.phone,whatsapp=excluded.whatsapp,address_line=excluded.address_line,
@@ -45,11 +45,12 @@ export async function POST(request) {
          district=excluded.district,city=excluded.city,state=excluded.state,
          postal_code=excluded.postal_code,instagram=excluded.instagram,linkedin=excluded.linkedin,
          maritime_role=excluded.maritime_role,experience_level=excluded.experience_level,
+         embarkation_days=excluded.embarkation_days,command_days=excluded.command_days,
          updated_at=now()`,
       [session.id, profile.full_name, profile.cpf, profile.birth_date, profile.phone, profile.whatsapp,
         profile.address_line, profile.address_number, profile.address_extra, profile.district,
         profile.city, profile.state, profile.postal_code, profile.instagram, profile.linkedin,
-        occupationType, occupationCategory]
+        occupationType, occupationCategory, embarkationDays, commandDays]
     );
     return NextResponse.redirect(new URL("/perfil?salvo=1", request.url), 303);
   } catch (error) {
