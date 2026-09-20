@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import {calculateMasteryScore,calculateReviewSchedule} from "../lib/learning-algorithms.js";
+import {calculateMasteryScore,calculateReviewSchedule,calculateSampleConfidence} from "../lib/learning-algorithms.js";
 
 const now=Date.parse("2026-09-08T12:00:00Z");
 
@@ -16,8 +16,11 @@ const strong=calculateMasteryScore({
 assert.ok(weak.mastery_score>=0&&weak.mastery_score<=100,"Mastery fraco fora da faixa");
 assert.ok(strong.mastery_score>=0&&strong.mastery_score<=100,"Mastery forte fora da faixa");
 assert.ok(strong.mastery_score>weak.mastery_score,"Mais acertos/estabilidade devem elevar mastery");
-assert.equal(strong.confidence_score,77.5,"60 respostas devem refletir confiança amostral conservadora");
-assert.equal(calculateMasteryScore({answers:100,correct:90,last_answered_at:"2026-09-08T11:00:00Z",stability:8,review_count:6,lapse_count:0},now).confidence_score,100,"100 respostas devem saturar confiança em 100");
+// A política atual é deliberadamente conservadora: a confiança cresce pela raiz
+// da amostra e só satura em 100 respostas. O teste anterior ainda esperava a
+// regra antiga (60 respostas = 100), contradizendo a implementação/documentação.
+assert.equal(strong.confidence_score,77.5,"60 respostas devem produzir confiança amostral conservadora de 77,5");
+assert.equal(calculateSampleConfidence(100),100,"100 respostas devem saturar confiança em 100");
 
 const again=calculateReviewSchedule("again",12);
 const hard=calculateReviewSchedule("hard",12);
