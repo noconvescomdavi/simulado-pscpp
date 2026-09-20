@@ -6,7 +6,7 @@ const dir=path.join(root,"data","questions");
 const subjects=["arte-naval","manobrabilidade","navegacao-aguas-restritas","legislacao-regulamentacao","meteorologia-oceanografia","comunicacoes","conhecimentos-gerais"];
 const flags=[];
 const norm=v=>String(v??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
-const add=(s,q,code,severity,detail)=>flags.push({subject:s,id:q.id,code,severity,detail});
+const add=(s,q,code,severity,detail)=>flags.push({subject:s,id:q.id,code,severity,detail,question:q.question,options:q.options,correct_answer:q.correct_answer,explanation:q.explanation,source:q.source,reference:q.reference,locator:q.locator});
 
 const anglicisms=[
   [/\bshot(?:s)?(?: de amarra)?\b/i,"Use a terminologia brasileira 'quartel de amarra' (ou 'quartelada', quando a fonte assim empregar)."],
