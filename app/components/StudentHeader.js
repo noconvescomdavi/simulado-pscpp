@@ -64,7 +64,8 @@ function Menu({ active = "" }) {
   );
 }
 export default async function StudentHeader({ active = "" }) {
-  const [admin, session] = await Promise.all([getAdmin(), getSession()]);
+  const session = await getSession();
+  const admin = session?.role === "admin" ? await getAdmin() : null;
   let displayName = session?.email?.split("@")[0] || "Aluno";
 
   if (session?.id) {
@@ -72,7 +73,7 @@ export default async function StudentHeader({ active = "" }) {
       const profile = await query("select full_name from user_profiles where user_id=$1 limit 1", [session.id]);
       if (profile.rows[0]?.full_name) displayName = profile.rows[0].full_name;
     } catch {
-      // Mantém o cabeçalho funcional mesmo se perfil ou decks estiverem indisponíveis.
+      // Mantém o cabeçalho funcional mesmo se o perfil estiver indisponível.
     }
   }
 
