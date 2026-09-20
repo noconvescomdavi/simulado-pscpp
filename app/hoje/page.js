@@ -6,6 +6,7 @@ import { getIntegratedStudyPlan } from "../../lib/integrated-study-plan";
 import { getAdaptiveStudySnapshot } from "../../lib/learning-engine";
 import StudentHeader from "../components/StudentHeader";
 import TrackedStudyLink from "../components/TrackedStudyLink";
+import TodayExamCountdown from "./TodayExamCountdown";
 import styles from "./hoje.module.css";
 
 export const dynamic = "force-dynamic";
@@ -42,6 +43,8 @@ export default async function HojePage() {
             <small>{plan.study_time.today_minutes||0} min reais hoje · domínio {Math.round(Number(plan.mastery||0))}%</small>
           </div>
         </section>
+
+        <TodayExamCountdown />
 
         <section className={styles.tasks} aria-label="Próxima sessão recomendada">
           {adaptive.high_forgetting_risk>0&&<p className={styles.adaptiveNote}>{adaptive.high_forgetting_risk} tópico{adaptive.high_forgetting_risk===1?"":"s"} com risco alto de esquecimento · {adaptive.due_for_review} revisão{adaptive.due_for_review===1?"":"ões"} vencida{adaptive.due_for_review===1?"":"s"}.</p>}
