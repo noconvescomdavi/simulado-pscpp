@@ -25,7 +25,7 @@ function Menu({ active = "", flashcardDecks = [] }) {
         </div></div>
       </details>
 
-      <details className={styles.group} open={["simulados","adaptativo","revisao"].includes(active)}>
+      <details className={styles.group} open={["simulados","adaptativo","revisao","revisao-inteligente","erros"].includes(active)}>
         <summary><span><b className={styles.icon}>▣</b> Treinar</span><b className={styles.chevron}>⌄</b></summary>
         <div className={styles.submenu}><div>
           <Link href="/simulado">Simulados</Link>
@@ -33,6 +33,7 @@ function Menu({ active = "", flashcardDecks = [] }) {
           <Link href="/conteudos/banco-de-questoes#meus-cadernos">Meus Cadernos</Link>
           <Link href="/treino-adaptativo">Treino Inteligente</Link>
           <Link href="/centro-de-revisao">Centro de Revisão</Link>
+          <Link href="/revisao-inteligente">Revisão Inteligente</Link>
           <Link href="/conteudos/caderno-de-erros">Caderno de Erros</Link>
         </div></div>
       </details>
@@ -88,7 +89,7 @@ export default async function StudentHeader({ active = "" }) {
       <div id="student-shell" className={styles.shellMarker} />
 
       <aside className={styles.sidebar}>
-        <Link className={styles.logo} href="/area-do-aluno">
+        <Link className={styles.logo} href="/hoje">
           <Image src="/estibordo/logos/estibordo-logo-header.png" alt="ESTIBORDO" width={210} height={44} priority sizes="(max-width: 960px) 155px, 210px" />
         </Link>
 
@@ -130,7 +131,7 @@ export default async function StudentHeader({ active = "" }) {
             </form>
         </StudentMobileMenu>
 
-        <Link className={styles.mobileLogo} href="/area-do-aluno">
+        <Link className={styles.mobileLogo} href="/hoje">
           <Image src="/estibordo/logos/estibordo-logo-header.png" alt="ESTIBORDO" width={210} height={44} priority sizes="(max-width: 960px) 155px, 210px" />
         </Link>
 
