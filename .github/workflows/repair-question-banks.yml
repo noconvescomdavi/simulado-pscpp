@@ -1,0 +1,34 @@
+name: Repair Question Banks
+
+on:
+  push:
+    branches: [audit/banco-questoes-integral-20260920]
+    paths:
+      - scripts/repair-question-banks-semantic.mjs
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: audit/banco-questoes-integral-20260920
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Apply deterministic semantic repairs
+        run: node scripts/repair-question-banks-semantic.mjs
+      - name: Commit repaired banks
+        run: |
+          if git diff --quiet -- data/questions; then
+            echo "No bank changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/questions
+          git commit -m "fix: corrige gabaritos e terminologia dos bancos [auto-repair]"
+          git push origin HEAD:audit/banco-questoes-integral-20260920
