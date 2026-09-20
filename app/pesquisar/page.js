@@ -9,6 +9,7 @@ const ITEMS=[
 ["Minha Rota","Planejamento inteligente, calendário e bibliografia","/plano-de-estudos","Preparação"],
 ["Treino Inteligente","Questões escolhidas pelas suas fraquezas","/treino-adaptativo","Prática"],
 ["Centro de Revisão","Erros, fraquezas e repetição espaçada","/centro-de-revisao","Revisão"],
+["Revisão Inteligente","Fila adaptativa de repetição espaçada","/revisao-inteligente","Revisão"],
 ["Análise de Fraquezas","Diagnóstico por matéria e tópico","/analise-de-fraquezas","Desempenho"],
 ["Minha Trajetória","Aderência, domínio e projeção até a prova","/minha-trajetoria","Desempenho"],
 ["Simulados","Gerar e revisar simulados","/simulado","Prática"],
@@ -19,7 +20,13 @@ const ITEMS=[
 ["Laboratório RIPEAM 3D","Explorar, identificar e resolver situações RIPEAM","/flashcards/ripeam/3d","Laboratório"],
 ["Contramestre","Tutor acadêmico especializado","/contramestre","Tutor"],
 ["Minha Biblioteca","Bibliografia e arquivos de estudo","/minha-biblioteca","Estudo"],
-["Ranking","Desempenho comparativo","/ranking","Comunidade"]
+["Ranking","Desempenho comparativo","/ranking","Comunidade"],
+["Conquistas","Marcos de consistência, prática e domínio","/conquistas","Desempenho"],
+["Perfil","Dados pessoais e atuação profissional","/perfil","Conta"],
+["Personalização","Preferências da experiência de estudo","/preferencias","Conta"],
+["Minhas Assinaturas","Status e validade dos acessos","/minhas-assinaturas","Conta"],
+["Disponibilidade offline","Sincronização e recursos para uso sem internet","/offline","Conta"],
+["Ajuda e Suporte","Atendimento e registro de problemas","/suporte","Conta"]
 ];
 const norm=v=>String(v||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
 export default async function Page({searchParams}){
