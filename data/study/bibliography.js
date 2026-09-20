@@ -49,7 +49,9 @@ E("swift-btm","SWIFT & BAILEY — Bridge Team Management, 2ª ed.",[1,2,3,4,5,6,
 E("miguens-v1","MIGUENS — Navegação: a Ciência e a Arte, Volume I",[1,2,3,4,5,6,7,8,10,11,12,13,14].map(n=>S("ch"+n,"Capítulo "+n))),
 E("miguens-v3-nav","MIGUENS — Navegação: a Ciência e a Arte, Volume III",[37,38,40,42].map(n=>S("ch"+n,"Capítulo "+n))),
 E("ics-bpg","ICS — Bridge Procedures Guide, 6ª ed.",[2,3,5,6].map(n=>S("ch"+n,"Chapter "+n))),E("solas-2024","IMO SOLAS — Consolidated Edition 2024",[S("ch-v","Chapter V – Safety of Navigation")]),E("bento","BENTO — Navegação Integrada, 4ª ed.",[1,2,3,4].map(n=>S("ch"+n,"Capítulo "+n))),E("nayak-nav","NAYAK — Theory and Practices of Marine Pilotage",[5,6,13].map(n=>S("ch"+n,"Chapter "+n))),E("normam202","NORMAM-202/DPC",[S("ch11","Capítulo 11 – Regras Especiais para Evitar Abalroamento")]),
-...["NORMAM-511/DHN","NORMAM-601/DHN","NORMAM-602/DHN","IMO Resolution MSC.192(79)","IMO Resolution A.1106(29)","IMO Resolution MSC.530(106)","IMO MSC.1/Circ.738/Rev.2","IMO MSC.1/Circ.1580"].map((t,i)=>E("nav-doc-"+i,t,[S("integral","Publicação indicada — sem recorte adicional no Anexo 2-B")])),
+E("nav-normam601","NORMAM-601/DHN — Auxílios à Navegação",[S("ch2","Capítulo 2 — Definições, sinais, luzes, alcances e eficácia — arts. 2.1–2.49"),S("ch3-iala","Capítulo 3 — Sistema IALA Região B e sinalização complementar — arts. 3.1–3.19"),S("ch3-special","Capítulo 3 — Balizamentos especiais e estruturas offshore — arts. 3.20–3.55")],"NORMAM-601/DHN — sumário verificado na publicação do Drive"),
+E("nav-normam602","NORMAM-602/DHN — Serviço de Tráfego de Embarcações (VTS)",[S("ch1","Capítulo 1 — O Serviço de Tráfego de Embarcações — arts. 1.1–1.5"),S("ch2","Capítulo 2 — Implantação de um VTS — arts. 2.1–2.5"),S("ch3","Capítulo 3 — Serviço e operação de um VTS — arts. 3.1–3.6"),S("ch4","Capítulo 4 — Outros serviços: VTMIS, LPS e E-Navigation — arts. 4.1–4.4")],"NORMAM-602/DHN — sumário verificado na publicação do Drive"),
+...["NORMAM-511/DHN","IMO Resolution MSC.192(79)","IMO Resolution A.1106(29)","IMO Resolution MSC.530(106)","IMO MSC.1/Circ.738/Rev.2","IMO MSC.1/Circ.1580"].map((t,i)=>E("nav-doc-"+i,t,[S("integral","Publicação indicada — sem recorte adicional no Anexo 2-B")])),
 E("colreg","IMO COLREG — Consolidated Edition 2018",[...["A","B","C","D","E","F"].map(x=>S("part-"+x,"Part "+x)),S("annex-I","Annex I — Positioning and technical details of lights and shapes"),S("annex-II","Annex II — Additional signals for fishing vessels fishing in close proximity"),S("annex-III","Annex III — Technical details of sound signal appliances"),S("annex-IV","Annex IV — Distress signals")]),E("normam501","NORMAM-501/DHN",[S("integral","Publicação indicada — sem recorte adicional no Anexo 2-B")])
 ],
 "legislacao-regulamentacao":[
@@ -74,7 +76,60 @@ S("ch5-s3","Capítulo 5, Seção III — Ship to Barge (STB) — arts. 5.12–5.
 S("ch5-s4","Capítulo 5, Seção IV — Transshipment — arts. 5.17–5.18","Capítulo 5 — Seção IV: transbordo de granéis sólidos"),
 S("ch6","Capítulo 6 — Homologação de comboios fluviais — arts. 6.1–6.11","Capítulo 6 — Homologação de comboios fluviais")
 ],"NORMAM-204/DPC 2025 — sumário verificado na publicação"),
-...["NORMAM-302/DPC","NORMAM-311/DPC","NORMAM-601/DHN","NORMAM-112/DPC","NORMAM-602/DHN","Lei nº 2.180/1954 — Tribunal Marítimo","Lei nº 9.537/1997 — LESTA","Lei nº 14.813/2024 — Praticagem","Decreto nº 2.596/1998 — RLESTA","Portaria nº 37/MB/2022","IMO COLREG 1972","Publicações Náuticas da DHN","Serviço SAR no Brasil"].map((t,i)=>E("leg-doc-"+(i+1),t,[S("integral","Conteúdo indicado no Anexo 2-B")])),
+E("normam302","NORMAM-302/DPC — IAFN e ISAIM",[
+S("ch1-1","Capítulo 1 — IAFN: propósito, aplicação, competência, precedência e prazo — arts. 1.1–1.5"),
+S("ch1-2","Capítulo 1 — Acidentes e fatos da navegação; situações especiais — arts. 1.6–1.7"),
+S("ch1-3","Capítulo 1 — Provas e depoimento — arts. 1.8–1.9"),
+S("ch1-4","Capítulo 1 — Documentos, prazos e competências — arts. 1.10–1.12"),
+S("ch2-1","Capítulo 2 — ISAIM: propósito, aplicação, prazos e definições — arts. 2.1–2.5"),
+S("ch2-2","Capítulo 2 — Responsáveis, notificações, cooperação e relatórios — arts. 2.6–2.9"),
+S("annex","Anexo — Código de Investigação de Acidentes (CIA)")
+],"NORMAM-302/DPC — sumário verificado na publicação do Drive"),
+E("normam311","NORMAM-311/DPC — Serviço de Praticagem",[
+S("ch1","Capítulo 1 — Estrutura do Serviço de Praticagem — arts. 1.1–1.7"),
+S("ch2-s1a","Capítulo 2, Seção I — Processo seletivo — arts. 2.1–2.12"),
+S("ch2-s1b","Capítulo 2, Seção I — Seleção psicofísica, TSF e etapas finais — arts. 2.13–2.21"),
+S("ch2-s2","Capítulo 2, Seção II — Certificação, qualificação e habilitação — arts. 2.22–2.24"),
+S("ch2-s3","Capítulo 2, Seção III — Execução e ERU — arts. 2.25–2.27"),
+S("ch2-s4","Capítulo 2, Seção IV — Deveres e condições desfavoráveis — arts. 2.28–2.35"),
+S("ch2-s5-6","Capítulo 2, Seções V–VI — Afastamento e manutenção da habilitação — arts. 2.36–2.41"),
+S("ch2-s7","Capítulo 2, Seção VII — Certificado de Isenção de Praticagem — arts. 2.42–2.44"),
+S("ch2-s8-11","Capítulo 2, Seções VIII–XI — Lotação, exames, Praticagem do Brasil e atualização — arts. 2.45–2.51"),
+S("ch3","Capítulo 3 — Lancha de Prático, lancha de apoio e Atalaia — arts. 3.1–3.15"),
+S("ch4","Capítulo 4 — Zonas de Praticagem — arts. 4.1–4.5"),
+S("ch5","Capítulo 5 — Cobrança/reciprocidade — art. 5.1")
+],"NORMAM-311/DPC — sumário verificado na publicação do Drive"),
+E("normam601-leg","NORMAM-601/DHN — Auxílios à Navegação",[
+S("ch1","Capítulo 1 — Pressupostos básicos — arts. 1.1–1.8"),
+S("ch2-s1-2","Capítulo 2, Seções I–II — Conceitos principais e tipos de sinais — arts. 2.1–2.16"),
+S("ch2-s3-4","Capítulo 2, Seções III–IV — Auxílios radioelétricos e acessórios — arts. 2.17–2.24"),
+S("ch2-s5","Capítulo 2, Seção V — Luzes e características — arts. 2.25–2.42"),
+S("ch2-s6-7","Capítulo 2, Seções VI–VII — Alcances e índice de eficácia — arts. 2.43–2.49"),
+S("ch3-s1","Capítulo 3, Seção I — Sistema IALA Região B — arts. 3.1–3.14"),
+S("ch3-s2","Capítulo 3, Seção II — Sinalização náutica complementar — arts. 3.15–3.19"),
+S("ch3-s3-7","Capítulo 3, Seções III–VII — Balizamentos especiais e estruturas offshore — arts. 3.20–3.55"),
+S("ch4","Capítulo 4 — Estabelecimento, cancelamento e alteração de auxílios à navegação"),
+S("ch5","Capítulo 5 — Comunicação de alteração em auxílios à navegação"),
+S("ch6","Capítulo 6 — Disposições gerais")
+],"NORMAM-601/DHN — sumário verificado na publicação do Drive"),
+E("normam112","NORMAM-112/DPC — Cerimonial da Marinha Mercante",[
+S("ch1","Capítulo 1 — Propósito e responsabilidades — arts. 1.1–1.2"),
+S("ch2","Capítulo 2 — Honras — arts. 2.1–2.5"),
+S("ch3","Capítulo 3 — Honras fúnebres — arts. 3.1–3.3"),
+S("ch4","Capítulo 4 — Bandeira Nacional — arts. 4.1–4.5"),
+S("ch5a","Capítulo 5 — Embandeiramento — arts. 5.1–5.6"),
+S("ch5b","Capítulo 5 — Embandeiramento — arts. 5.7–5.11"),
+S("ch6","Capítulo 6 — Penalidades — art. 6.1")
+],"NORMAM-112/DPC — sumário verificado na publicação do Drive"),
+E("normam602-leg","NORMAM-602/DHN — Serviço de Tráfego de Embarcações (VTS)",[
+S("ch1","Capítulo 1 — O Serviço de Tráfego de Embarcações — arts. 1.1–1.5"),
+S("ch2","Capítulo 2 — Implantação de um VTS — arts. 2.1–2.5"),
+S("ch3a","Capítulo 3 — Serviço e operação — arts. 3.1–3.3"),
+S("ch3b","Capítulo 3 — Contingência, procedimentos e visitas técnicas — arts. 3.4–3.6"),
+S("ch4","Capítulo 4 — VTMIS, LPS e E-Navigation — arts. 4.1–4.4"),
+S("annexes","Anexos A–G — implantação, requisitos, pessoal, operação, auditorias e publicações IALA")
+],"NORMAM-602/DHN — sumário verificado na publicação do Drive"),
+...["Lei nº 2.180/1954 — Tribunal Marítimo","Lei nº 9.537/1997 — LESTA","Lei nº 14.813/2024 — Praticagem","Decreto nº 2.596/1998 — RLESTA","Portaria nº 37/MB/2022","IMO COLREG 1972","Publicações Náuticas da DHN","Serviço SAR no Brasil"].map((t,i)=>E("leg-doc-"+(i+6),t,[S("integral","Conteúdo indicado no Anexo 2-B")])),
 E("lei12815","Lei nº 12.815/2013",[S("ch1","Capítulo I – Definições e objetivos"),S("ch4","Capítulo IV – Administração do Porto Organizado"),S("ch8","Capítulo VIII – Programa nacional de dragagem")]),E("lc97","Lei Complementar nº 97/1999",[S("art17","Capítulo VI – Art. 17")]),
 ...["IMO Resolution A.960(23)","MD35-G-01 — Glossário das Forças Armadas, 5ª ed.","Política Nacional de Defesa — 2025","Decreto nº 12.481/2025 — Política Marítima Nacional","Decreto nº 2.256/1997","Lei nº 7.642/1987 — PEM","Lei nº 7.652/1988 — Registro da Propriedade Marítima","Lei nº 9.432/1997 — Transporte Aquaviário"].map((t,i)=>E("leg-extra-"+i,t,[S("integral","Conteúdo indicado no Anexo 2-B")]))
 ],
