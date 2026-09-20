@@ -10,127 +10,57 @@ import StudentMobileMenu from "./StudentMobileMenu";
 function Menu({ active = "", flashcardDecks = [] }) {
   return (
     <nav className={styles.nav} aria-label="Área do aluno">
-      <a className={active === "painel" ? styles.active : ""} href="/area-do-aluno">        <span className={styles.icon}>⌂</span><span>Hoje</span>      </a>
+      <a className={["painel","hoje"].includes(active) ? styles.active : ""} href="/hoje"><span className={styles.icon}>⌂</span><span>Hoje</span></a>
 
-      <a className={active === "perfil" ? styles.active : ""} href="/perfil">
-        <span className={styles.icon}>♙</span><span>Perfil</span>
-      </a>
-      <a href="/preferencias">
-        <span className={styles.icon}>⚙</span><span>Personalização</span>
-      </a>
-
-      <details className={styles.group} open={["plano","adaptativo","hoje","revisao","fraquezas","trajetoria"].includes(active)}>
-        <summary>
-          <span><b className={styles.icon}>◫</b> Minha Preparação</span>
-          <b className={styles.chevron}>⌄</b>
-        </summary>
+      <details className={styles.group} open={["conteudos","biblioteca","flashcards","mapas","ripeam3d"].includes(active)}>
+        <summary><span><b className={styles.icon}>▦</b> Estudar</span><b className={styles.chevron}>⌄</b></summary>
         <div className={styles.submenu}><div>
-          <a href="/plano-de-estudos">Meu Plano de Estudos</a>          <a href="/hoje">Plano de Hoje</a>          <a href="/treino-adaptativo">Treino Inteligente</a>          <a href="/centro-de-revisao">Centro de Revisão</a>          <a href="/analise-de-fraquezas">Desempenho e Fraquezas</a>          <a href="/minha-trajetoria">Minha Trajetória</a>
-        </div></div>
-      </details>
-
-      <details className={styles.group} open={active === "simulados"}>
-        <summary>
-          <span><b className={styles.icon}>▣</b> Simulados</span>
-          <b className={styles.chevron}>⌄</b>
-        </summary>
-        <div className={styles.submenu}><div>
-          <a href="/simulado">Gerar Simulado</a>
-          <a href="/simulado">Meus Simulados</a>
-          <a href="/area-do-aluno#desempenho">Desempenho</a>
-        </div></div>
-      </details>
-
-      <details className={styles.group} open={active === "conteudos"}>
-        <summary>
-          <span><b className={styles.icon}>☷</b> Banco de Questões</span>
-          <b className={styles.chevron}>⌄</b>
-        </summary>
-        <div className={styles.submenu}><div>
-          <a href="/conteudos/banco-de-questoes">Gerar Caderno</a>
-          <a href="/conteudos/banco-de-questoes#meus-cadernos">Meus Cadernos</a>
-          <a href="/conteudos/caderno-de-erros">Caderno de Erros</a>
           <a href="/conteudos">Central de Conteúdos</a>
+          <a href="/minha-biblioteca">Minha Biblioteca</a>
+          <a href="/flashcards">Flashcards</a>
+          <a href="/mapas-mentais">Mapas Mentais</a>
+          <a href="/flashcards/ripeam/3d">Laboratório RIPEAM 3D</a>
         </div></div>
       </details>
 
-      <details className={styles.group} open={active === "flashcards"}>
-        <summary>
-          <span><b className={styles.icon}>▤</b> Flashcards</span>
-          <b className={styles.chevron}>⌄</b>
-        </summary>
+      <details className={styles.group} open={["simulados","adaptativo","revisao"].includes(active)}>
+        <summary><span><b className={styles.icon}>▣</b> Treinar</span><b className={styles.chevron}>⌄</b></summary>
         <div className={styles.submenu}><div>
-          {flashcardDecks.map((deck) => (
-            <a href={`/flashcards/${deck.slug}`} key={deck.id}>
-              {deck.title}
-            </a>
-          ))}
-          <a href="/flashcards/meus-mapas">Dos meus mapas</a>
-          <a className={styles.submenuAll} href="/flashcards">Todos os Flashcards</a>
-        </div></div>
-      </details>
-
-      <a className={active === "ripeam3d" ? styles.active : ""} href="/flashcards/ripeam/3d">
-        <span className={styles.icon}>◈</span><span>Laboratório RIPEAM 3D</span>
-      </a>
-
-      <details className={styles.group} open={active === "mapas"}>
-        <summary>
-          <span><b className={styles.icon}>🧠</b> Mapas Mentais</span>
-          <b className={styles.chevron}>⌄</b>
-        </summary>
-        <div className={styles.submenu}><div>
-          <a href="/mapas-mentais">Meus Mapas Mentais</a>
-          <a href="/mapas-mentais?template=study">Criar Novo Mapa</a>
-          <a href="/flashcards/meus-mapas">Flashcards dos Mapas</a>
-        </div></div>
-      </details>
-
-      <a className={active === "biblioteca" ? styles.active : ""} href="/minha-biblioteca">
-        <span className={styles.icon}>▧</span><span>Minha Biblioteca</span>
-      </a>
-
-      <details className={styles.group}>
-        <summary>
-          <span><b className={styles.icon}>▦</b> Central de Estudos</span>
-          <b className={styles.chevron}>⌄</b>
-        </summary>
-        <div className={styles.submenu}><div>
-          <a href="/conteudos">Estudar por Matéria</a>
+          <a href="/simulado">Simulados</a>
+          <a href="/conteudos/banco-de-questoes">Banco de Questões</a>
+          <a href="/conteudos/banco-de-questoes#meus-cadernos">Meus Cadernos</a>
+          <a href="/treino-adaptativo">Treino Inteligente</a>
+          <a href="/centro-de-revisao">Centro de Revisão</a>
           <a href="/conteudos/caderno-de-erros">Caderno de Erros</a>
         </div></div>
       </details>
 
-      <a className={active === "tutor" ? styles.active : ""} href="/contramestre">
-        <span className={styles.icon}>⚓</span><span>Contramestre</span>
-      </a>
+      <details className={styles.group} open={["plano","fraquezas","trajetoria","ranking"].includes(active)}>
+        <summary><span><b className={styles.icon}>◎</b> Desempenho</span><b className={styles.chevron}>⌄</b></summary>
+        <div className={styles.submenu}><div>
+          <a href="/plano-de-estudos">Rota Inteligente</a>
+          <a href="/analise-de-fraquezas">Análise de Fraquezas</a>
+          <a href="/minha-trajetoria">Minha Trajetória</a>
+          <a href="/ranking">Ranking</a>
+          <a href="/conquistas">Conquistas</a>
+        </div></div>
+      </details>
 
-      <a className={active === "ranking" ? styles.active : ""} href="/ranking">
-        <span className={styles.icon}>★</span><span>Ranking</span>
-      </a>
-      <a href="/conquistas">
-        <span className={styles.icon}>✦</span><span>Conquistas</span>
-      </a>
+      <a className={active === "tutor" ? styles.active : ""} href="/contramestre"><span className={styles.icon}>⚓</span><span>Contramestre</span></a>
 
-      <a className={active === "assinaturas" ? styles.active : ""} href="/minhas-assinaturas">
-        <span className={styles.icon}>♛</span><span>Minhas Assinaturas</span>
-      </a>
-
-      <a className={active === "offline" ? styles.active : ""} href="/offline">
-        <span className={styles.icon}>⇄</span><span>Modo Offline</span>
-      </a>
-
-      <a className={active === "suporte" ? styles.active : ""} href="/suporte">
-        <span className={styles.icon}>✉</span><span>Suporte</span>
-      </a>
-
-      <div className={styles.divider} />
-
-      <a href="/"><span className={styles.icon}>◈</span><span>Home</span></a>
+      <details className={styles.group} open={["perfil","assinaturas","offline","suporte"].includes(active)}>
+        <summary><span><b className={styles.icon}>⚙</b> Conta e suporte</span><b className={styles.chevron}>⌄</b></summary>
+        <div className={styles.submenu}><div>
+          <a href="/perfil">Perfil</a>
+          <a href="/preferencias">Personalização</a>
+          <a href="/minhas-assinaturas">Minhas Assinaturas</a>
+          <a href="/offline">Disponibilidade offline</a>
+          <a href="/suporte">Ajuda e Suporte</a>
+        </div></div>
+      </details>
     </nav>
   );
 }
-
 export default async function StudentHeader({ active = "" }) {
   const [admin, session] = await Promise.all([getAdmin(), getSession()]);
   let displayName = session?.email?.split("@")[0] || "Aluno";
