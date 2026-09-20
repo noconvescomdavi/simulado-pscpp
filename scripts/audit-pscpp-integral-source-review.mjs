@@ -5,7 +5,7 @@ const root=process.cwd();
 const dir=path.join(root,'data','questions');
 const out=path.join(root,'reports','pscpp-integral-source-review.json');
 const subjects=['arte-naval','manobrabilidade','navegacao-aguas-restritas','legislacao-regulamentacao','meteorologia-oceanografia','comunicacoes','conhecimentos-gerais'];
-const legacy=new Set(['format-expansion-v1','pscpp-style-upgrade-v3','pscpp-deep-refine-v4','pscpp-deep-refine-v5','pscpp-refinement-v3','pscpp-repair-v3']);
+const legacy=new Set(['format-expansion-v1','pscpp-style-upgrade-v3','pscpp-deep-refine-v4','pscpp-deep-refine-v5','pscpp-refinement-v3','pscpp-repair-v3','pscpp-cleanup-v8','pscpp-bibliographic-v6','pscpp-focused-extension-v7']);
 const badPhrases=[
   /problema-base/i,/caracteriza[cç][aã]o tecnicamente correta/i,/a refer[eê]ncia\s/i,
   /em rela[cç][aã]o a .{1,100}, considere a seguinte caracter[ií]stica/i,
