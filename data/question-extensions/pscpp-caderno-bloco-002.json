@@ -35,11 +35,11 @@
       "options": [
         {
           "key": "A",
-          "text": "retorna necessariamente ao rumo original sem qualquer desvio."
+          "text": "assenta em novo rumo reto sem necessidade de leme corretivo."
         },
         {
           "key": "B",
-          "text": "assenta em novo rumo reto sem necessidade de leme corretivo."
+          "text": "retorna necessariamente ao rumo original sem qualquer desvio."
         },
         {
           "key": "C",
@@ -54,7 +54,7 @@
           "text": "executa círculo de giro de raio mínimo."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "A",
       "explanation": "A estabilidade dinâmica inerente em rumo reto é caracterizada pela acomodação em novo rumo reto sem leme corretivo.",
       "active": true,
       "validation_status": "approved",
@@ -204,7 +204,7 @@
         },
         {
           "key": "B",
-          "text": "Track reach."
+          "text": "Primeiro overshoot."
         },
         {
           "key": "C",
@@ -212,14 +212,14 @@
         },
         {
           "key": "D",
-          "text": "Primeiro overshoot."
+          "text": "Track reach."
         },
         {
           "key": "E",
           "text": "Ângulo de deriva em curva estabilizada."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "D",
       "explanation": "Stopping ability é medida pelo track reach e pelo time to dead in water.",
       "active": true,
       "validation_status": "approved",
@@ -263,7 +263,7 @@
         },
         {
           "key": "C",
-          "text": "o rumo desvia 10° do rumo original após aplicação inicial de 10° de leme."
+          "text": "o navio percorre dez comprimentos."
         },
         {
           "key": "D",
@@ -271,10 +271,10 @@
         },
         {
           "key": "E",
-          "text": "o navio percorre dez comprimentos."
+          "text": "o rumo desvia 10° do rumo original após aplicação inicial de 10° de leme."
         }
       ],
-      "correct_answer": "C",
+      "correct_answer": "E",
       "explanation": "O teste usa 10° de leme e reversão quando o desvio de rumo alcança 10°.",
       "active": true,
       "validation_status": "approved",
@@ -310,11 +310,11 @@
       "options": [
         {
           "key": "A",
-          "text": "Tende necessariamente a torná-lo mais instável."
+          "text": "Pode torná-lo consideravelmente mais estável que em calado sem trim."
         },
         {
           "key": "B",
-          "text": "Pode torná-lo consideravelmente mais estável que em calado sem trim."
+          "text": "Tende necessariamente a torná-lo mais instável."
         },
         {
           "key": "C",
@@ -329,7 +329,7 @@
           "text": "Não produz efeito mensurável na localização do centro de pressão."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "A",
       "explanation": "A MSC/Circ.1053 destaca que trim pela popa pode aumentar significativamente a estabilidade dinâmica.",
       "active": true,
       "validation_status": "approved",
@@ -420,7 +420,7 @@
       "options": [
         {
           "key": "A",
-          "text": "Maior instabilidade tende a favorecer turning ability, embora prejudique course-keeping."
+          "text": "Maior estabilidade sempre reduz o raio de giro."
         },
         {
           "key": "B",
@@ -428,7 +428,7 @@
         },
         {
           "key": "C",
-          "text": "Maior estabilidade sempre reduz o raio de giro."
+          "text": "Maior instabilidade tende a favorecer turning ability, embora prejudique course-keeping."
         },
         {
           "key": "D",
@@ -439,7 +439,7 @@
           "text": "Course-keeping independe da estabilidade inerente."
         }
       ],
-      "correct_answer": "A",
+      "correct_answer": "C",
       "explanation": "As notas destacam o compromisso: instabilidade pode favorecer capacidade de giro, enquanto maior damping/estabilidade tende a ampliar o raio.",
       "active": true,
       "validation_status": "approved",
@@ -481,7 +481,7 @@
       "options": [
         {
           "key": "A",
-          "text": "Apenas I, II e III."
+          "text": "Apenas I, II e IV."
         },
         {
           "key": "B",
@@ -493,14 +493,14 @@
         },
         {
           "key": "D",
-          "text": "Apenas I, II e IV."
+          "text": "Apenas I, II e III."
         },
         {
           "key": "E",
           "text": "Todas."
         }
       ],
-      "correct_answer": "A",
+      "correct_answer": "D",
       "explanation": "I–III são compatíveis com o equilíbrio de forças e momentos; IV é falsa porque a força lateral do leme pode ser menor que outras forças, embora seu momento de controle seja decisivo.",
       "active": true,
       "validation_status": "approved",
@@ -546,7 +546,7 @@
         },
         {
           "key": "B",
-          "text": "Apenas I, II e III."
+          "text": "Todas."
         },
         {
           "key": "C",
@@ -558,10 +558,10 @@
         },
         {
           "key": "E",
-          "text": "Todas."
+          "text": "Apenas I, II e III."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "E",
       "explanation": "Os testes 10/10 e 20/20 são executados nos dois bordos e fornecem overshoot e tempos de resposta; não são testes de stopping ability.",
       "active": true,
       "validation_status": "approved",
@@ -723,11 +723,11 @@
         },
         {
           "key": "B",
-          "text": "razão de guinada"
+          "text": "área do leme"
         },
         {
           "key": "C",
-          "text": "área do leme"
+          "text": "razão de guinada"
         },
         {
           "key": "D",
@@ -738,7 +738,7 @@
           "text": "altura metacêntrica"
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "C",
       "explanation": "A relação é R = V/ψ, sendo ψ a razão de guinada.",
       "active": true,
       "validation_status": "approved",
@@ -778,7 +778,7 @@
         },
         {
           "key": "B",
-          "text": "Quilha vertical, longarinas e sicordas."
+          "text": "Hastilhas, pés-de-carneiro e cavernas."
         },
         {
           "key": "C",
@@ -786,14 +786,14 @@
         },
         {
           "key": "D",
-          "text": "Hastilhas, pés-de-carneiro e cavernas."
+          "text": "Quilha vertical, longarinas e sicordas."
         },
         {
           "key": "E",
           "text": "Vaus, buçardas e cambotas."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "D",
       "explanation": "O capítulo 1 classifica quilha vertical, chapa-quilha, longarinas/longitudinais, trincaniz e sicordas entre os elementos longitudinais.",
       "active": true,
       "validation_status": "approved",
@@ -829,7 +829,7 @@
       "options": [
         {
           "key": "A",
-          "text": "Caverna, vau e hastilha."
+          "text": "Trincaniz, cambota e longarina."
         },
         {
           "key": "B",
@@ -845,10 +845,10 @@
         },
         {
           "key": "E",
-          "text": "Trincaniz, cambota e longarina."
+          "text": "Caverna, vau e hastilha."
         }
       ],
-      "correct_answer": "A",
+      "correct_answer": "E",
       "explanation": "Cavernas, cavernas altas, vaus, hastilhas e cambotas compõem o grupo transversal.",
       "active": true,
       "validation_status": "approved",
@@ -884,11 +884,11 @@
       "options": [
         {
           "key": "A",
-          "text": "reforço transversal do fundo duplo."
+          "text": "elemento longitudinal associado à estrutura do convés."
         },
         {
           "key": "B",
-          "text": "elemento longitudinal associado à estrutura do convés."
+          "text": "reforço transversal do fundo duplo."
         },
         {
           "key": "C",
@@ -903,7 +903,7 @@
           "text": "peça exclusiva do aparelho de fundear."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "A",
       "explanation": "A sicorda aparece no grupo de vigas e longitudinais da estrutura metálica.",
       "active": true,
       "validation_status": "approved",
@@ -939,11 +939,11 @@
       "options": [
         {
           "key": "A",
-          "text": "vigas e longitudinais."
+          "text": "vigas transversais."
         },
         {
           "key": "B",
-          "text": "vigas transversais."
+          "text": "vigas e longitudinais."
         },
         {
           "key": "C",
@@ -958,7 +958,7 @@
           "text": "superestruturas laterais."
         }
       ],
-      "correct_answer": "A",
+      "correct_answer": "B",
       "explanation": "O trincaniz é listado entre os elementos longitudinais.",
       "active": true,
       "validation_status": "approved",
@@ -994,7 +994,7 @@
       "options": [
         {
           "key": "A",
-          "text": "Paiol da amarra — compartimento destinado à acomodação da amarra."
+          "text": "Túnel do eixo — tanque de colisão de vante."
         },
         {
           "key": "B",
@@ -1002,7 +1002,7 @@
         },
         {
           "key": "C",
-          "text": "Túnel do eixo — tanque de colisão de vante."
+          "text": "Paiol da amarra — compartimento destinado à acomodação da amarra."
         },
         {
           "key": "D",
@@ -1013,7 +1013,7 @@
           "text": "Escotilha — tanque profundo de combustível."
         }
       ],
-      "correct_answer": "A",
+      "correct_answer": "C",
       "explanation": "Paiol da amarra é o chain locker; as demais alternativas trocam conceitos de compartimentos e aberturas.",
       "active": true,
       "validation_status": "approved",
@@ -1053,7 +1053,7 @@
         },
         {
           "key": "B",
-          "text": "Tosamento."
+          "text": "Altura do fundo."
         },
         {
           "key": "C",
@@ -1061,14 +1061,14 @@
         },
         {
           "key": "D",
-          "text": "Altura do fundo."
+          "text": "Tosamento."
         },
         {
           "key": "E",
           "text": "Boca moldada."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "D",
       "explanation": "Tosamento (sheer) é o termo usado para essa curvatura longitudinal.",
       "active": true,
       "validation_status": "approved",
@@ -1104,7 +1104,7 @@
       "options": [
         {
           "key": "A",
-          "text": "a quilha apresenta convexidade para cima."
+          "text": "a boca máxima coincide obrigatoriamente com a boca moldada."
         },
         {
           "key": "B",
@@ -1120,10 +1120,10 @@
         },
         {
           "key": "E",
-          "text": "a boca máxima coincide obrigatoriamente com a boca moldada."
+          "text": "a quilha apresenta convexidade para cima."
         }
       ],
-      "correct_answer": "A",
+      "correct_answer": "E",
       "explanation": "Hogging corresponde à curvatura longitudinal com convexidade para cima.",
       "active": true,
       "validation_status": "approved",
@@ -1269,7 +1269,7 @@
       "options": [
         {
           "key": "A",
-          "text": "Pontal e calado."
+          "text": "Metacentro e centro de carena."
         },
         {
           "key": "B",
@@ -1277,7 +1277,7 @@
         },
         {
           "key": "C",
-          "text": "Metacentro e centro de carena."
+          "text": "Pontal e calado."
         },
         {
           "key": "D",
@@ -1288,7 +1288,7 @@
           "text": "Flutuabilidade e reserva de flutuabilidade."
         }
       ],
-      "correct_answer": "A",
+      "correct_answer": "C",
       "explanation": "Pontal e calado são dimensões lineares; as demais opções misturam grandezas, pontos ou formas/condições.",
       "active": true,
       "validation_status": "approved",
@@ -1405,14 +1405,14 @@
         },
         {
           "key": "D",
-          "text": "Apenas I, II, IV e V."
+          "text": "Todas."
         },
         {
           "key": "E",
-          "text": "Todas."
+          "text": "Apenas I, II, IV e V."
         }
       ],
-      "correct_answer": "D",
+      "correct_answer": "E",
       "explanation": "Centro de gravidade, centro de carena, centro de flutuação e metacentros são conceitos distintos; III os confunde.",
       "active": true,
       "validation_status": "approved",
@@ -1577,7 +1577,7 @@
       "options": [
         {
           "key": "A",
-          "text": "Apenas I, II e III."
+          "text": "Apenas II e IV."
         },
         {
           "key": "B",
@@ -1585,7 +1585,7 @@
         },
         {
           "key": "C",
-          "text": "Apenas II e IV."
+          "text": "Apenas I, II e III."
         },
         {
           "key": "D",
@@ -1596,7 +1596,7 @@
           "text": "Todas."
         }
       ],
-      "correct_answer": "A",
+      "correct_answer": "C",
       "explanation": "Roda de proa, cadaste e pés-de-carneiro aparecem entre reforços locais; sicorda é longitudinal, não reforço transversal.",
       "active": true,
       "validation_status": "approved",
@@ -1632,7 +1632,7 @@
       "options": [
         {
           "key": "A",
-          "text": "1 longitudinal; 2 transversal; 3 transversal; 4 longitudinal; 5 transversal."
+          "text": "1 transversal; 2 transversal; 3 longitudinal; 4 longitudinal; 5 transversal."
         },
         {
           "key": "B",
@@ -1644,14 +1644,14 @@
         },
         {
           "key": "D",
-          "text": "1 transversal; 2 transversal; 3 longitudinal; 4 longitudinal; 5 transversal."
+          "text": "1 longitudinal; 2 transversal; 3 transversal; 4 longitudinal; 5 transversal."
         },
         {
           "key": "E",
           "text": "Todos são longitudinais."
         }
       ],
-      "correct_answer": "A",
+      "correct_answer": "D",
       "explanation": "Sicorda e longarina são longitudinais; vau, hastilha e cambota são transversais.",
       "active": true,
       "validation_status": "approved",
@@ -1691,7 +1691,7 @@
         },
         {
           "key": "B",
-          "text": "entre perpendiculares"
+          "text": "no convés"
         },
         {
           "key": "C",
@@ -1703,10 +1703,10 @@
         },
         {
           "key": "E",
-          "text": "no convés"
+          "text": "entre perpendiculares"
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "E",
       "explanation": "O CEP é definido pelas duas perpendiculares de referência.",
       "active": true,
       "validation_status": "approved",
@@ -1742,11 +1742,11 @@
       "options": [
         {
           "key": "A",
-          "text": "apenas o cálculo de combustível."
+          "text": "a organização da equipe e a base comum para comunicação e monitoramento."
         },
         {
           "key": "B",
-          "text": "a organização da equipe e a base comum para comunicação e monitoramento."
+          "text": "apenas o cálculo de combustível."
         },
         {
           "key": "C",
@@ -1761,7 +1761,7 @@
           "text": "a determinação da arqueação do navio."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "A",
       "explanation": "Swift relaciona planejamento, organização da ponte, comunicação e capacidade de detectar desvios.",
       "active": true,
       "validation_status": "approved",
@@ -1856,11 +1856,11 @@
         },
         {
           "key": "B",
-          "text": "gerenciar recursos humanos e técnicos para uma navegação segura e previsível."
+          "text": "substituir procedimentos por experiência individual."
         },
         {
           "key": "C",
-          "text": "substituir procedimentos por experiência individual."
+          "text": "gerenciar recursos humanos e técnicos para uma navegação segura e previsível."
         },
         {
           "key": "D",
@@ -1871,7 +1871,7 @@
           "text": "eliminar a necessidade de contingências."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "C",
       "explanation": "A obra trata segurança navegacional como processo gerenciado com organização, liderança, teamwork e controle.",
       "active": true,
       "validation_status": "approved",
@@ -1911,7 +1911,7 @@
         },
         {
           "key": "B",
-          "text": "Prático e equipe compartilham propósito, informações e monitoramento, preservando funções e responsabilidades."
+          "text": "Somente o prático pode questionar uma decisão."
         },
         {
           "key": "C",
@@ -1919,14 +1919,14 @@
         },
         {
           "key": "D",
-          "text": "Somente o prático pode questionar uma decisão."
+          "text": "Prático e equipe compartilham propósito, informações e monitoramento, preservando funções e responsabilidades."
         },
         {
           "key": "E",
           "text": "A comunicação interna deve ser reduzida para evitar interferência."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "D",
       "explanation": "A integração do prático ao bridge team exige propósito comum e comunicação efetiva.",
       "active": true,
       "validation_status": "approved",
@@ -1966,7 +1966,7 @@
         },
         {
           "key": "B",
-          "text": "correntes, marés, UKC, vento, visibilidade e contingências."
+          "text": "exclusivamente o plano do prático."
         },
         {
           "key": "C",
@@ -1978,10 +1978,10 @@
         },
         {
           "key": "E",
-          "text": "exclusivamente o plano do prático."
+          "text": "correntes, marés, UKC, vento, visibilidade e contingências."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "E",
       "explanation": "A obra explicita esses fatores como componentes da navegação segura próxima de terra.",
       "active": true,
       "validation_status": "approved",
@@ -2023,11 +2023,11 @@
       "options": [
         {
           "key": "A",
-          "text": "Apenas I e II."
+          "text": "Apenas I, II e III."
         },
         {
           "key": "B",
-          "text": "Apenas I, II e III."
+          "text": "Apenas I e II."
         },
         {
           "key": "C",
@@ -2042,7 +2042,7 @@
           "text": "Todas."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "A",
       "explanation": "I–III refletem a filosofia BTM; IV é falsa, pois tecnologia não elimina necessidade de verificação humana.",
       "active": true,
       "validation_status": "approved",
@@ -2084,11 +2084,11 @@
       "options": [
         {
           "key": "A",
-          "text": "Apenas I, II e III."
+          "text": "Apenas I e IV."
         },
         {
           "key": "B",
-          "text": "Apenas I e IV."
+          "text": "Apenas I, II e III."
         },
         {
           "key": "C",
@@ -2103,7 +2103,7 @@
           "text": "Todas."
         }
       ],
-      "correct_answer": "A",
+      "correct_answer": "B",
       "explanation": "Planejamento, teamwork e comunicação são interdependentes; IV contradiz a necessidade de plano.",
       "active": true,
       "validation_status": "approved",
@@ -2149,11 +2149,11 @@
         },
         {
           "key": "B",
-          "text": "Apenas I, II e III."
+          "text": "Apenas II e IV."
         },
         {
           "key": "C",
-          "text": "Apenas II e IV."
+          "text": "Apenas I, II e III."
         },
         {
           "key": "D",
@@ -2164,7 +2164,7 @@
           "text": "Todas."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "C",
       "explanation": "Treinamento, seleção correta de informação e aplicação dos princípios de gestão continuam necessários.",
       "active": true,
       "validation_status": "approved",
@@ -2204,7 +2204,7 @@
         },
         {
           "key": "B",
-          "text": "abaixo da quilha"
+          "text": "de arqueação"
         },
         {
           "key": "C",
@@ -2212,14 +2212,14 @@
         },
         {
           "key": "D",
-          "text": "de arqueação"
+          "text": "abaixo da quilha"
         },
         {
           "key": "E",
           "text": "de calado moldado"
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "D",
       "explanation": "Bridge Team Management cita under-keel clearance entre os fatores críticos.",
       "active": true,
       "validation_status": "approved",
@@ -2259,7 +2259,7 @@
         },
         {
           "key": "B",
-          "text": "área geográfica delimitada em que peculiaridades locais exigem serviço de praticagem ininterrupto."
+          "text": "qualquer trecho de navegação interior."
         },
         {
           "key": "C",
@@ -2271,10 +2271,10 @@
         },
         {
           "key": "E",
-          "text": "qualquer trecho de navegação interior."
+          "text": "área geográfica delimitada em que peculiaridades locais exigem serviço de praticagem ininterrupto."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "E",
       "explanation": "A definição relaciona ZP às peculiaridades locais e à necessidade de funcionamento ininterrupto do serviço.",
       "active": true,
       "validation_status": "approved",
@@ -2310,11 +2310,11 @@
       "options": [
         {
           "key": "A",
-          "text": "somente a atracação."
+          "text": "atividade que envolve manobra(s) de praticagem e/ou navegação de praticagem em uma ZP."
         },
         {
           "key": "B",
-          "text": "atividade que envolve manobra(s) de praticagem e/ou navegação de praticagem em uma ZP."
+          "text": "somente a atracação."
         },
         {
           "key": "C",
@@ -2329,7 +2329,7 @@
           "text": "exclusivamente a passagem pelo PEP."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "A",
       "explanation": "A definição normativa abrange manobras e/ou navegação de praticagem.",
       "active": true,
       "validation_status": "approved",
@@ -2424,11 +2424,11 @@
         },
         {
           "key": "B",
-          "text": "estabelecida mensalmente para cada ZP e inclui todos os práticos em exercício na ZP."
+          "text": "uma escala exclusiva de praticantes de prático."
         },
         {
           "key": "C",
-          "text": "uma escala exclusiva de praticantes de prático."
+          "text": "estabelecida mensalmente para cada ZP e inclui todos os práticos em exercício na ZP."
         },
         {
           "key": "D",
@@ -2439,7 +2439,7 @@
           "text": "destinada apenas a fainas noturnas."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "C",
       "explanation": "A definição da ERU é mensal, por ZP, abrangendo todos os práticos em exercício.",
       "active": true,
       "validation_status": "approved",
@@ -2479,7 +2479,7 @@
         },
         {
           "key": "B",
-          "text": "ponto em coordenadas geográficas da ZP para embarque/desembarque do prático no início ou fim da faina."
+          "text": "o cais onde permanece a lancha de apoio."
         },
         {
           "key": "C",
@@ -2487,14 +2487,14 @@
         },
         {
           "key": "D",
-          "text": "o cais onde permanece a lancha de apoio."
+          "text": "ponto em coordenadas geográficas da ZP para embarque/desembarque do prático no início ou fim da faina."
         },
         {
           "key": "E",
           "text": "a sede da Capitania dos Portos."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "D",
       "explanation": "A NORMAM-311 define PEP por coordenadas geográficas e sua função na faina.",
       "active": true,
       "validation_status": "approved",
@@ -2530,7 +2530,7 @@
       "options": [
         {
           "key": "A",
-          "text": "Lotação é o número ideal de práticos para a ZP; efetivo é o número de práticos habilitados com idade inferior ao limite definido na norma."
+          "text": "Lotação se aplica somente a praticantes de prático."
         },
         {
           "key": "B",
@@ -2546,10 +2546,10 @@
         },
         {
           "key": "E",
-          "text": "Lotação se aplica somente a praticantes de prático."
+          "text": "Lotação é o número ideal de práticos para a ZP; efetivo é o número de práticos habilitados com idade inferior ao limite definido na norma."
         }
       ],
-      "correct_answer": "A",
+      "correct_answer": "E",
       "explanation": "A norma diferencia o número ideal (lotação) do número de práticos habilitados considerado no efetivo.",
       "active": true,
       "validation_status": "approved",
@@ -2585,11 +2585,11 @@
       "options": [
         {
           "key": "A",
-          "text": "um auxílio visual à navegação mantido pela DHN."
+          "text": "estrutura operacional e administrativa organizada para prover, coordenar, controlar e apoiar o atendimento do prático à embarcação."
         },
         {
           "key": "B",
-          "text": "estrutura operacional e administrativa organizada para prover, coordenar, controlar e apoiar o atendimento do prático à embarcação."
+          "text": "um auxílio visual à navegação mantido pela DHN."
         },
         {
           "key": "C",
@@ -2604,7 +2604,7 @@
           "text": "o certificado de habilitação do prático."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "A",
       "explanation": "Essa é a definição do glossário da NORMAM-311.",
       "active": true,
       "validation_status": "approved",
@@ -2699,11 +2699,11 @@
         },
         {
           "key": "B",
-          "text": "dentro do período de escala, deve estar disponível para realizar fainas quando requisitado."
+          "text": "está definitivamente afastado."
         },
         {
           "key": "C",
-          "text": "está definitivamente afastado."
+          "text": "dentro do período de escala, deve estar disponível para realizar fainas quando requisitado."
         },
         {
           "key": "D",
@@ -2714,7 +2714,7 @@
           "text": "não pode ser requisitado."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "C",
       "explanation": "A disponibilidade para requisição dentro do período de escala caracteriza a prontidão.",
       "active": true,
       "validation_status": "approved",
@@ -2756,7 +2756,7 @@
       "options": [
         {
           "key": "A",
-          "text": "Apenas I, II e III."
+          "text": "Apenas I, II e IV."
         },
         {
           "key": "B",
@@ -2768,14 +2768,14 @@
         },
         {
           "key": "D",
-          "text": "Apenas I, II e IV."
+          "text": "Apenas I, II e III."
         },
         {
           "key": "E",
           "text": "Todas."
         }
       ],
-      "correct_answer": "A",
+      "correct_answer": "D",
       "explanation": "I–III correspondem às definições; IV é falsa porque a navegação de praticagem ocorre com assessoria de um ou mais práticos embarcados.",
       "active": true,
       "validation_status": "approved",
@@ -2821,7 +2821,7 @@
         },
         {
           "key": "B",
-          "text": "Apenas I, II e III."
+          "text": "Todas."
         },
         {
           "key": "C",
@@ -2833,10 +2833,10 @@
         },
         {
           "key": "E",
-          "text": "Todas."
+          "text": "Apenas I, II e III."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "E",
       "explanation": "As três primeiras seguem as definições; IV confunde habilitação de comandante com certificado de prático.",
       "active": true,
       "validation_status": "approved",
@@ -2939,11 +2939,11 @@
       "options": [
         {
           "key": "A",
-          "text": "Apenas I, II e III."
+          "text": "Apenas I, III e IV."
         },
         {
           "key": "B",
-          "text": "Apenas I, III e IV."
+          "text": "Apenas I, II e III."
         },
         {
           "key": "C",
@@ -2958,7 +2958,7 @@
           "text": "Todas."
         }
       ],
-      "correct_answer": "A",
+      "correct_answer": "B",
       "explanation": "Capítulos 2, 3 e 4 tratam desses blocos; IV é falsa.",
       "active": true,
       "validation_status": "approved",
@@ -3004,11 +3004,11 @@
         },
         {
           "key": "B",
-          "text": "Apenas I, II e III."
+          "text": "Apenas II e IV."
         },
         {
           "key": "C",
-          "text": "Apenas II e IV."
+          "text": "Apenas I, II e III."
         },
         {
           "key": "D",
@@ -3019,7 +3019,7 @@
           "text": "Todas."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "C",
       "explanation": "I–III são coerentes; IV é falsa porque indisponibilidade significa justamente ausência de disponibilidade para requisição.",
       "active": true,
       "validation_status": "approved",
@@ -3059,7 +3059,7 @@
         },
         {
           "key": "B",
-          "text": "habilitados"
+          "text": "candidatos"
         },
         {
           "key": "C",
@@ -3067,14 +3067,14 @@
         },
         {
           "key": "D",
-          "text": "candidatos"
+          "text": "habilitados"
         },
         {
           "key": "E",
           "text": "temporários"
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "D",
       "explanation": "O conceito de efetivo parte do número de práticos habilitados na ZP.",
       "active": true,
       "validation_status": "approved",
@@ -3110,7 +3110,7 @@
       "options": [
         {
           "key": "A",
-          "text": "1 estrutura de coordenação; 2 ponto geográfico de embarque/desembarque; 3 escala mensal; 4 transbordo do prático; 5 representante da Praticagem junto à CP/DL/AG."
+          "text": "Todos os termos designam instalações físicas."
         },
         {
           "key": "B",
@@ -3126,10 +3126,10 @@
         },
         {
           "key": "E",
-          "text": "Todos os termos designam instalações físicas."
+          "text": "1 estrutura de coordenação; 2 ponto geográfico de embarque/desembarque; 3 escala mensal; 4 transbordo do prático; 5 representante da Praticagem junto à CP/DL/AG."
         }
       ],
-      "correct_answer": "A",
+      "correct_answer": "E",
       "explanation": "A alternativa A preserva as definições funcionais do glossário.",
       "active": true,
       "validation_status": "approved",
@@ -3165,11 +3165,11 @@
       "options": [
         {
           "key": "A",
-          "text": "diminuir."
+          "text": "aumentar."
         },
         {
           "key": "B",
-          "text": "aumentar."
+          "text": "diminuir."
         },
         {
           "key": "C",
@@ -3184,7 +3184,7 @@
           "text": "ficar independente do vapor d'água."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "A",
       "explanation": "Ynoue et al. explicam que menor diferença T–Td corresponde a maior umidade relativa; quando iguais, UR é 100%.",
       "active": true,
       "validation_status": "approved",
@@ -3279,11 +3279,11 @@
         },
         {
           "key": "B",
-          "text": "força do gradiente de pressão e força de Coriolis entram em equilíbrio."
+          "text": "Coriolis deixa de atuar."
         },
         {
           "key": "C",
-          "text": "Coriolis deixa de atuar."
+          "text": "força do gradiente de pressão e força de Coriolis entram em equilíbrio."
         },
         {
           "key": "D",
@@ -3294,7 +3294,7 @@
           "text": "a pressão é uniforme."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "C",
       "explanation": "O equilíbrio entre FGP e Coriolis produz escoamento geostrófico aproximadamente paralelo às isóbaras.",
       "active": true,
       "validation_status": "approved",
@@ -3334,7 +3334,7 @@
         },
         {
           "key": "B",
-          "text": "termômetros de bulbo seco e bulbo úmido."
+          "text": "termômetro e pluviômetro."
         },
         {
           "key": "C",
@@ -3342,14 +3342,14 @@
         },
         {
           "key": "D",
-          "text": "termômetro e pluviômetro."
+          "text": "termômetros de bulbo seco e bulbo úmido."
         },
         {
           "key": "E",
           "text": "barógrafo e termômetro de máxima."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "D",
       "explanation": "O instrumento combina bulbo seco e bulbo úmido, cuja diferença permite estimar umidade.",
       "active": true,
       "validation_status": "approved",
@@ -3391,7 +3391,7 @@
       "options": [
         {
           "key": "A",
-          "text": "Apenas I, II e III."
+          "text": "Todas."
         },
         {
           "key": "B",
@@ -3407,10 +3407,10 @@
         },
         {
           "key": "E",
-          "text": "Todas."
+          "text": "Apenas I, II e III."
         }
       ],
-      "correct_answer": "A",
+      "correct_answer": "E",
       "explanation": "I–III são suportadas; IV é falsa, pois UR depende da temperatura e não equivale diretamente ao conteúdo absoluto.",
       "active": true,
       "validation_status": "approved",
@@ -3566,11 +3566,11 @@
         },
         {
           "key": "B",
-          "text": "variar o significado básico, formular pergunta, responder ou acrescentar informação específica."
+          "text": "substituir qualquer sinal por linguagem livre."
         },
         {
           "key": "C",
-          "text": "substituir qualquer sinal por linguagem livre."
+          "text": "variar o significado básico, formular pergunta, responder ou acrescentar informação específica."
         },
         {
           "key": "D",
@@ -3581,7 +3581,7 @@
           "text": "ser usado somente no Medical Signal Code."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "C",
       "explanation": "O capítulo 1 lista essas quatro funções de complementos.",
       "active": true,
       "validation_status": "approved",
@@ -3621,7 +3621,7 @@
         },
         {
           "key": "B",
-          "text": "3 e 7 unidades."
+          "text": "1 e 7 unidades."
         },
         {
           "key": "C",
@@ -3629,14 +3629,14 @@
         },
         {
           "key": "D",
-          "text": "1 e 7 unidades."
+          "text": "3 e 7 unidades."
         },
         {
           "key": "E",
           "text": "7 e 3 unidades."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "D",
       "explanation": "O traço vale três unidades; o espaço entre palavras ou grupos, sete.",
       "active": true,
       "validation_status": "approved",
@@ -3678,7 +3678,7 @@
       "options": [
         {
           "key": "A",
-          "text": "Apenas I, II e III."
+          "text": "Todas."
         },
         {
           "key": "B",
@@ -3694,10 +3694,10 @@
         },
         {
           "key": "E",
-          "text": "Todas."
+          "text": "Apenas I, II e III."
         }
       ],
-      "correct_answer": "A",
+      "correct_answer": "E",
       "explanation": "I–III são métodos previstos; IV é falsa porque o Código também prevê voz, radiotelefonia, radiotelegrafia e sinais manuais.",
       "active": true,
       "validation_status": "approved",
@@ -3843,7 +3843,7 @@
       "options": [
         {
           "key": "A",
-          "text": "Distância de parada do navio de projeto."
+          "text": "Classificação climática de Köppen."
         },
         {
           "key": "B",
@@ -3851,7 +3851,7 @@
         },
         {
           "key": "C",
-          "text": "Classificação climática de Köppen."
+          "text": "Distância de parada do navio de projeto."
         },
         {
           "key": "D",
@@ -3862,7 +3862,7 @@
           "text": "Código Internacional de Sinais."
         }
       ],
-      "correct_answer": "A",
+      "correct_answer": "C",
       "explanation": "O projeto dos espaços de manobra considera distância de parada, uso de rebocadores e áreas de embarque/desembarque de práticos.",
       "active": true,
       "validation_status": "approved",
@@ -3902,7 +3902,7 @@
         },
         {
           "key": "B",
-          "text": "Simulação do meio ambiente e da manobrabilidade do navio de projeto."
+          "text": "Exclusivamente consulta ao AIS histórico."
         },
         {
           "key": "C",
@@ -3910,14 +3910,14 @@
         },
         {
           "key": "D",
-          "text": "Exclusivamente consulta ao AIS histórico."
+          "text": "Simulação do meio ambiente e da manobrabilidade do navio de projeto."
         },
         {
           "key": "E",
           "text": "Somente inspeção visual do canal."
         }
       ],
-      "correct_answer": "B",
+      "correct_answer": "D",
       "explanation": "O capítulo prevê simulação ambiental e da manobrabilidade no projeto detalhado.",
       "active": true,
       "validation_status": "approved",
@@ -3959,7 +3959,7 @@
       "options": [
         {
           "key": "A",
-          "text": "Apenas I, II e III."
+          "text": "Todas."
         },
         {
           "key": "B",
@@ -3975,10 +3975,10 @@
         },
         {
           "key": "E",
-          "text": "Todas."
+          "text": "Apenas I, II e III."
         }
       ],
-      "correct_answer": "A",
+      "correct_answer": "E",
       "explanation": "Os três primeiros itens são componentes explícitos; IV é falsa porque o projeto trata também profundidade, largura, curvas, manobra, fundeadouros e outros fatores.",
       "active": true,
       "validation_status": "approved",
