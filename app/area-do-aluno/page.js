@@ -87,7 +87,7 @@ export default async function Area(){
       <StudentHeader active="painel"/>
       <main className="studentDashboardV2">
         <section className="studentWelcome">
-          <div><span>PAINEL DO ALUNO</span><h1>Olá, {name} <b>👋</b></h1><p>Disciplina, foco e resultado. Mantenha o rumo até a Praticagem.</p></div>
+          <div><span>HOJE</span><h1>Olá, {name} <b>👋</b></h1><p>Sua rota prioriza o que produz mais avanço agora.</p></div>
           <div className="studentMotto"><span>GRANDES CONQUISTAS</span><strong>COMEÇAM COM CONSISTÊNCIA.</strong></div>
         </section>
 
@@ -100,7 +100,7 @@ export default async function Area(){
           <ExamCountdown/>
         </section>
 
-        <section className="commandDeck"><div><span>PRÓXIMA MISSÃO</span><h2>{dailyPlan?.tasks?.find(t=>!t.completed)?.title||"Sua rota está em dia"}</h2><p>{dailyPlan?.tasks?.find(t=>!t.completed)?.description||"Use a revisão inteligente ou faça um treino para continuar avançando."}</p><a href="/hoje">Continuar agora →</a></div><div className="commandSignals"><span><b>{dailyPlan?.master_readiness??readiness}</b> prontidão</span><span><b>{studentIntel?.due||0}</b> revisões agora</span><span><b>{dailyPlan?.tracking?.backlog_count||0}</b> pendências</span></div></section>
+        <section className="commandDeck"><div><span>PRÓXIMA MISSÃO</span><h2>{dailyPlan?.tasks?.find(t=>!t.completed)?.title||"Sua rota está em dia"}</h2><p>{dailyPlan?.tasks?.find(t=>!t.completed)?.description||"Use a revisão inteligente ou faça um treino para continuar avançando."}</p><a className="commandPrimary" href="/hoje">Começar minha sessão →</a></div><div className="commandSignals"><span><b>{dailyPlan?.master_readiness??readiness}</b> prontidão</span><span><b>{studentIntel?.due||0}</b> revisões agora</span><span><b>{dailyPlan?.tracking?.backlog_count||0}</b> pendências</span></div></section>
 
         <section className="studentFocusGrid">
           <article><span>PRÓXIMO PASSO</span><strong>{dailyPlan?.progress?.completed||0}/{dailyPlan?.progress?.total||0} tarefas</strong><small>{dailyPlan?.progress?.total?"Priorize o plano de hoje antes de abrir novas frentes.":"Configure seu plano para receber uma rota diária."}</small><a href="/hoje">Abrir plano de hoje →</a></article>
