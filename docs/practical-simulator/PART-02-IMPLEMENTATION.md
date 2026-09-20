@@ -32,3 +32,10 @@ Status: em implementação na branch feature/simulado-pratico-oral.
 - Bridge controls e instrumentação final.
 - Persistência, replay e debrief técnico.
 - Testes unitários/integrados e validação mobile/offline.
+
+## Atualização 68%
+- Envelope físico retangular do casco disponível para detecção geométrica de allision/collision.
+- Berthing engine criado: distância ao berço, alinhamento e velocidade de aproximação.
+- Voyage Data Recorder em memória: estado de navegação, UKC e squat por passo.
+- Debrief técnico inicial: XTE máximo, UKC mínima e falha crítica.
+- Próximos gates: ligar estruturas/berços reais às cartas validadas; maré DHN integral; AtoN oficial; persistência/replay visual; testes.
