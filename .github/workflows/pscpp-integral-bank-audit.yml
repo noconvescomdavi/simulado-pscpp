@@ -35,6 +35,8 @@ jobs:
         run: npm run audit:pscpp:integral
       - name: Question structure tests
         run: npm run test:question-structure
+      - name: Quarantine policy tests
+        run: npm run test:question-quality-policy
       - name: Taxonomy validation
         run: npm run validate:taxonomy
       - name: Historical blueprint validation
