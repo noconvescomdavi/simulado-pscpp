@@ -25,7 +25,7 @@ function Menu({ active = "", flashcardDecks = [] }) {
         </div></div>
       </details>
 
-      <details className={styles.group} open={["simulados","adaptativo","revisao","revisao-inteligente","erros"].includes(active)}>
+      <details className={styles.group} open={["simulados","banco","cadernos","adaptativo","revisao","revisao-inteligente","erros"].includes(active)}>
         <summary><span><b className={styles.icon}>▣</b> Treinar</span><b className={styles.chevron}>⌄</b></summary>
         <div className={styles.submenu}><div>
           <Link href="/simulado">Simulados</Link>
