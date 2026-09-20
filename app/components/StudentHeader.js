@@ -3,13 +3,12 @@ import Link from "next/link";
 import { getAdmin } from "../../lib/admin";
 import { getSession } from "../../lib/auth";
 import { query } from "../../lib/db";
-import { listFlashcardDecks } from "../../lib/flashcards";
 import styles from "./student-header.module.css";
 import StudySessionTracker from "./StudySessionTracker";
 import OfflineSyncStatus from "./OfflineSyncStatus";
 import StudentMobileMenu from "./StudentMobileMenu";
 
-function Menu({ active = "", flashcardDecks = [] }) {
+function Menu({ active = "" }) {
   return (
     <nav className={styles.nav} aria-label="Área do aluno">
       <Link className={["painel","hoje"].includes(active) ? styles.active : ""} href="/hoje"><span className={styles.icon}>⌂</span><span>Hoje</span></Link>
@@ -67,17 +66,11 @@ function Menu({ active = "", flashcardDecks = [] }) {
 export default async function StudentHeader({ active = "" }) {
   const [admin, session] = await Promise.all([getAdmin(), getSession()]);
   let displayName = session?.email?.split("@")[0] || "Aluno";
-  let flashcardDecks = [];
 
   if (session?.id) {
     try {
-      const [profile, decks] = await Promise.all([
-        query("select full_name from user_profiles where user_id=$1 limit 1", [session.id]),
-        listFlashcardDecks(session.id),
-      ]);
-
+      const profile = await query("select full_name from user_profiles where user_id=$1 limit 1", [session.id]);
       if (profile.rows[0]?.full_name) displayName = profile.rows[0].full_name;
-      flashcardDecks = decks;
     } catch {
       // Mantém o cabeçalho funcional mesmo se perfil ou decks estiverem indisponíveis.
     }
@@ -102,7 +95,7 @@ export default async function StudentHeader({ active = "" }) {
           </div>
         </div>
 
-        <Menu active={active} flashcardDecks={flashcardDecks} />
+        <Menu active={active} />
 
         {admin && <Link className={styles.adminLink} href="/admin">Administração</Link>}
 
@@ -122,7 +115,7 @@ export default async function StudentHeader({ active = "" }) {
               <small>{session?.email || ""}</small>
             </div>
 
-            <Menu active={active} flashcardDecks={flashcardDecks} />
+            <Menu active={active} />
 
             {admin && <Link className={styles.adminLink} href="/admin">Administração</Link>}
 
