@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
+// Auditoria bloqueante executada após cada lote de reparos.
 const root=process.cwd();
 const dir=path.join(root,"data","questions");
 const subjects=["arte-naval","manobrabilidade","navegacao-aguas-restritas","legislacao-regulamentacao","meteorologia-oceanografia","comunicacoes","conhecimentos-gerais"];
