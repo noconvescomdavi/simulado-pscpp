@@ -9,6 +9,7 @@ export default function OfflineSyncRuntime(){
   const [syncing,setSyncing]=useState(false);
   const [recentSync,setRecentSync]=useState(false);
   const [preloading,setPreloading]=useState(false);
+  const [error,setError]=useState("");
 
   const refresh=useCallback(async()=>{
     setOnline(typeof navigator==="undefined"?true:navigator.onLine);
@@ -17,13 +18,13 @@ export default function OfflineSyncRuntime(){
 
   const preload=useCallback(async(force=false)=>{
     if(typeof navigator!=="undefined"&&!navigator.onLine){await refresh();return}
-    setPreloading(true);
+    setPreloading(true);setError("");
     try{
       const auth=await fetch("/api/auth/me",{cache:"no-store"});
       if(!auth.ok)return;
       await ensureOfflinePackCurrent({force});
     }catch(error){
-      console.error("Falha no preload offline automático:",error);
+      console.error("Falha no preload offline automático:",error);setError("Não foi possível atualizar o conteúdo offline. Tentaremos novamente.");
     }finally{
       setPreloading(false);
       await refresh();
@@ -32,12 +33,12 @@ export default function OfflineSyncRuntime(){
 
   const sync=useCallback(async()=>{
     if(typeof navigator!=="undefined"&&!navigator.onLine){await refresh();return}
-    setSyncing(true);
+    setSyncing(true);setError("");
     try{
       const result=await syncOfflineQueue();
       if(result?.synced>0){setRecentSync(true);setTimeout(()=>setRecentSync(false),3500)}
     }catch(error){
-      console.error("Falha na sincronização offline:",error);
+      console.error("Falha na sincronização offline:",error);setError("Alterações salvas neste dispositivo. A sincronização será tentada novamente.");
     }finally{
       setSyncing(false);
       await refresh();
@@ -78,9 +79,9 @@ export default function OfflineSyncRuntime(){
     };
   },[refresh,sync,preload]);
 
-  const show=!online||syncing||preloading||status.pending>0||recentSync;
+  const show=!online||syncing||preloading||status.pending>0||recentSync||error;
   if(!show)return null;
-  const label=!online
+  const label=error||(!online
     ? `Offline · ${status.pending||0} pendente${status.pending===1?"":"s"}`
     : preloading
       ? "Preparando offline automaticamente…"
@@ -88,11 +89,11 @@ export default function OfflineSyncRuntime(){
       ? "Sincronizando…"
       : status.pending>0
         ? `${status.pending} alteração${status.pending===1?"":"ões"} pendente${status.pending===1?"":"s"}`
-        : "✓ Tudo sincronizado";
+        : "✓ Tudo sincronizado");
 
   return <a
     href="/offline"
-    aria-live="polite"
+    aria-live="polite" role="status"
     title="Central offline ESTIBORDO"
     style={{
       position:"fixed",right:"max(12px, env(safe-area-inset-right))",
