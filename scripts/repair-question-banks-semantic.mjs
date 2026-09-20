@@ -34,6 +34,8 @@ for(const file of files){
   const p=path.join(dir,file), bank=JSON.parse(fs.readFileSync(p,"utf8"));
   let dirty=false;
   for(const q of bank.questions||[]){
+    // Remove questões geradas a partir de fragmentos truncados/corrompidos da NORMAM.
+    if(["LEG-0382","LEG-0602","LEG-1179","LEG-1273"].includes(q.id)){ q.__remove=true; dirty=true; continue; }
     const exp=String(q.explanation||"");
     let m=exp.match(/s[aã]o verdadeiras as proposi[cç][oõ]es correspondentes [aà] alternativa\s+([A-E])/i);
     if(m&&String(q.correct_answer).toUpperCase()!==m[1].toUpperCase()){
