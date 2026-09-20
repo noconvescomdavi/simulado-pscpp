@@ -3,6 +3,7 @@ import {getSession} from "../../lib/auth";
 import {getIntegratedStudyPlan} from "../../lib/integrated-study-plan";
 import {getLearningProfile,getStudyTimeSummary} from "../../lib/learning-engine";
 import {getLearningGraph} from "../../lib/learning-graph";
+import {getUserMetrics} from "../../lib/metrics";
 import StudentHeader from "../components/StudentHeader";
 import styles from "./trajectory.module.css";
 
@@ -16,11 +17,12 @@ function fmtDate(value){
 export default async function MinhaTrajetoria(){
   const session=await getSession();
   if(!session)redirect("/login?next=/minha-trajetoria");
-  const [plan,learning,time,graph]=await Promise.all([
+  const [plan,learning,time,graph,metrics]=await Promise.all([
     getIntegratedStudyPlan(session.id,0),
     getLearningProfile(session.id),
     getStudyTimeSummary(session.id),
-    getLearningGraph(session.id)
+    getLearningGraph(session.id),
+    getUserMetrics(session.id)
   ]);
   if(plan.needs_onboarding)redirect("/plano-de-estudos/configurar");
 
@@ -38,6 +40,19 @@ export default async function MinhaTrajetoria(){
       <article><span>CRONOGRAMA</span><strong>{status}</strong><small>capacidade de recuperação: {plan.tracking?.recovery_capacity_minutes||0} min</small></article>
       <article><span>1ª LEITURA</span><strong>{fmtDate(plan.first_pass?.projected_finish)}</strong><small>{plan.first_pass?.on_track?"ritmo compatível":"risco de atraso"}</small></article>
       <article><span>PRONTIDÃO</span><strong>{plan.readiness}%</strong><small>índice integrado ESTIBORDO</small></article>
+    </section>
+
+    <section className={styles.titleMetrics}>
+      <div className={styles.head}><div><span>AVALIAÇÃO PSCPP</span><h2>Simulados e Prova de Títulos</h2></div></div>
+      <div className={styles.titleMetricGrid}>
+        <article><span>MÉDIA DOS SIMULADOS</span><strong>{Number(metrics.overall.exam_average||0).toLocaleString("pt-BR",{minimumFractionDigits:1,maximumFractionDigits:1})}%</strong><small>média de todos os simulados concluídos</small></article>
+        <article><span>PROVA DE TÍTULOS</span><strong>{Number(metrics.overall.title_score||0).toLocaleString("pt-BR",{minimumFractionDigits:1,maximumFractionDigits:1})} / 10</strong><small>pontuação calculada conforme Edital PSCPP 2012</small></article>
+      </div>
+      <div className={styles.titleBreakdown}>
+        <div><span>Tempo de embarque</span><b>{Number(metrics.overall.title_score_breakdown?.embarkation||0).toFixed(1)} / 3</b></div>
+        <div><span>Categoria / posto</span><b>{Number(metrics.overall.title_score_breakdown?.category||0).toFixed(1)} / 2</b></div>
+        <div><span>Comando / praticagem</span><b>{Number(metrics.overall.title_score_breakdown?.command||0).toFixed(1)} / 5</b></div>
+      </div>
     </section>
 
     <section className={styles.graphSummary}>
