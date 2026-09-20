@@ -16,7 +16,8 @@ const strong=calculateMasteryScore({
 assert.ok(weak.mastery_score>=0&&weak.mastery_score<=100,"Mastery fraco fora da faixa");
 assert.ok(strong.mastery_score>=0&&strong.mastery_score<=100,"Mastery forte fora da faixa");
 assert.ok(strong.mastery_score>weak.mastery_score,"Mais acertos/estabilidade devem elevar mastery");
-assert.equal(strong.confidence_score,100,"60 respostas devem saturar confiança em 100");
+assert.equal(strong.confidence_score,77.5,"60 respostas devem refletir confiança amostral conservadora");
+assert.equal(calculateMasteryScore({answers:100,correct:90,last_answered_at:"2026-09-08T11:00:00Z",stability:8,review_count:6,lapse_count:0},now).confidence_score,100,"100 respostas devem saturar confiança em 100");
 
 const again=calculateReviewSchedule("again",12);
 const hard=calculateReviewSchedule("hard",12);
