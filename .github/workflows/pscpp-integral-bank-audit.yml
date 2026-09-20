@@ -1,6 +1,15 @@
 name: PSCPP Integral Bank Audit
 
 on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'data/questions/*.json'
+      - 'lib/question-banks.js'
+      - 'lib/question-quality-policy.js'
+      - 'scripts/**'
+      - 'package.json'
   push:
     branches:
       - feature/auditoria-integral-banco-normal-pscpp
