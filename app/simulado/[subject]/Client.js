@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import QuestionFilterControls, { EMPTY_QUESTION_FILTERS } from "../../components/QuestionFilterControls";
 import styles from "./exam.module.css";
 import StructuredQuestion from "../../components/StructuredQuestion";
-import {cacheServerExam, createOfflineExam, getLatestOfflineExam, answerOfflineExam, finishOfflineExam, hydrateOfflineExam} from "../../../lib/offline-store";
+import {cacheServerExam, createOfflineExam, getLatestOfflineExam, answerOfflineExam, finishOfflineExam, hydrateOfflineExam, setOfflineExamPaused} from "../../../lib/offline-store";
 
 function clock(seconds) {
   const safe = Math.max(0, Number(seconds) || 0);
@@ -143,7 +143,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
         return;
       }
       setState(payload);
-      if (payload.state === "in_progress" && payload.exam) {
+      if (["in_progress", "paused"].includes(payload.state) && payload.exam) {
         setAnswerMap(Object.fromEntries((payload.exam.questions || []).filter(q => q.answer).map(q => [String(q.id), q.answer])));
         await cacheServerExam(payload.exam,planTask).catch(()=>{});
         setIndex(Math.min(Number(payload.exam.current_index ?? payload.exam.answered_count ?? 0), Math.max(0, payload.exam.questions.length - 1)));
@@ -155,7 +155,9 @@ export default function Client({ subject, title, ready, facets, planTask }) {
       if(!navigator.onLine || error instanceof TypeError){
         const local=await getLatestOfflineExam(subject).catch(()=>null);
         if(local){
-          setState({state:local.status==="in_progress"?"in_progress":"finished",exam:local.status==="in_progress"?local:null,result:local.status!=="in_progress"?local.result:null,offline:true});
+          const active=["in_progress","paused"].includes(local.status);
+          setState({state:active?local.status:"finished",exam:active?local:null,result:active?null:local.result,offline:true});
+          setAnswerMap(Object.fromEntries((local.questions||[]).filter(q=>q.answer).map(q=>[String(q.id),q.answer])));
           setIndex(Math.min(Number(local.answered_count||0),Math.max(0,(local.questions||[]).length-1)));
           return;
         }
@@ -173,18 +175,21 @@ export default function Client({ subject, title, ready, facets, planTask }) {
   }, [subject]);
 
   const exam = state?.exam;
+  const paused = state?.state === "paused" || exam?.status === "paused";
   const remaining = exam
-    ? Math.max(0, Math.floor((new Date(exam.expires_at).getTime() - now) / 1000))
+    ? paused
+      ? Math.max(0, Number(exam.remaining_seconds) || 0)
+      : Math.max(0, Math.floor((new Date(exam.expires_at).getTime() - now) / 1000))
     : 0;
 
   useEffect(() => {
-    if (!exam || remaining > 0 || timeoutHandled.current) return;
+    if (!exam || paused || remaining > 0 || timeoutHandled.current) return;
     timeoutHandled.current = true;
     const action=state?.offline ? finish("timeout") : load();
     Promise.resolve(action).finally(() => {
       timeoutHandled.current = false;
     });
-  }, [exam?.id, remaining, state?.offline]);
+  }, [exam?.id, paused, remaining, state?.offline]);
 
   useEffect(() => {
     questionStartedAt.current = Date.now();
@@ -248,7 +253,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
   }
 
   async function choose(selectedAnswer) {
-    if (!exam || answer || busy) return;
+    if (!exam || answer || busy || paused) return;
     const question = exam.questions[index];
     if (!question) return;
 
@@ -292,6 +297,38 @@ export default function Client({ subject, title, ready, facets, planTask }) {
           setAnswer(payload);setAnswerMap(current=>({...current,[String(question.id)]:payload}));if(payload.result)setPendingResult({...payload.result,session_id:exam.id});
         }catch(fallback){setError(fallback.message||"Não foi possível salvar a resposta offline.");}
       }else{setError(error.message||"Não foi possível salvar a resposta.");}
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function togglePause() {
+    if (!exam || busy) return;
+    const action = paused ? "resume" : "pause";
+    setBusy(true);
+    setError("");
+    try {
+      if (!navigator.onLine || state?.offline) {
+        const updated = await setOfflineExamPaused(exam.id, action);
+        setState(current => ({ ...current, state: updated.status, exam: updated, offline: true }));
+      } else {
+        const response = await fetch(`/api/exams/${subject}/pause`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ session_id: exam.id, action }),
+        });
+        const payload = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          if (payload.result) setState({ state: "finished", result: payload.result });
+          else setError(payload.error || "Não foi possível atualizar a pausa do simulado.");
+          return;
+        }
+        setState(payload);
+        await cacheServerExam(payload.exam, planTask).catch(() => {});
+      }
+      questionStartedAt.current = Date.now();
+    } catch (error) {
+      setError(error.message || "Não foi possível atualizar a pausa do simulado.");
     } finally {
       setBusy(false);
     }
@@ -395,10 +432,16 @@ export default function Client({ subject, title, ready, facets, planTask }) {
 
   return (
     <main className={styles.page}>
-      <div className={styles.assessmentToolbar}><div><strong>Questão {index + 1} de {exam.questions.length}</strong><span>{Object.keys(answerMap).length} respondidas</span></div><button type="button" onClick={toggleFocusMode}>{focusMode ? "Sair da tela cheia" : "⛶ Full Screen"}</button></div>
+      <div className={styles.assessmentToolbar}>
+        <div><strong>Questão {index + 1} de {exam.questions.length}</strong><span>{Object.keys(answerMap).length} respondidas</span></div>
+        <div className={styles.toolbarActions}>
+          <button type="button" onClick={togglePause} disabled={busy}>{paused ? "Continuar Simulado" : "Pausar Simulado"}</button>
+          <button type="button" onClick={toggleFocusMode}>{focusMode ? "Sair da tela cheia" : "⛶ Full Screen"}</button>
+        </div>
+      </div>
       <div className={styles.top}>
         <div>
-          <span>SIMULADO EM ANDAMENTO</span>
+          <span>{paused ? "SIMULADO PAUSADO" : "SIMULADO EM ANDAMENTO"}</span>
           <h1>{title} · {index + 1}/{exam.questions.length}</h1>
           {Number(exam.answered_count || 0) > 0 && <small>{Number(exam.answered_count || 0)} respostas restauradas no cartão desta tentativa.</small>}
         </div>
@@ -406,7 +449,8 @@ export default function Client({ subject, title, ready, facets, planTask }) {
       </div>
 
       <div ref={assessmentRef} className={`${styles.assessmentLayout} ${focusMode ? styles.focusMode : ""}`}>
-      {focusMode && <button type="button" className={styles.fullscreenExit} onClick={toggleFocusMode}>Sair da tela cheia</button>}
+      {focusMode && <div className={styles.fullscreenActions}><button type="button" onClick={togglePause} disabled={busy}>{paused ? "Continuar Simulado" : "Pausar Simulado"}</button><button type="button" onClick={toggleFocusMode}>Sair da tela cheia</button></div>}
+      {paused && <div className={styles.pausedOverlay} role="status"><div><span>SIMULADO PAUSADO</span><h2>Seu tempo e suas respostas estão preservados.</h2><p>Continue quando estiver pronto. O cronômetro voltará a correr do ponto em que parou.</p><strong>{clock(remaining)}</strong><button type="button" onClick={togglePause} disabled={busy}>{busy ? "Continuando…" : "Continuar Simulado"}</button></div></div>}
       <article>
         <p className={styles.trace}>
           {[question.tracking?.work?.title,question.tracking?.chapter?.label,question.tracking?.module]
@@ -417,7 +461,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
         {options.map((option) => (
           <button
             type="button"
-            disabled={Boolean(answer) || busy || remaining === 0}
+            disabled={Boolean(answer) || busy || paused || remaining === 0}
             key={option.key}
             onClick={() => choose(option.key)}
           >
@@ -450,14 +494,14 @@ export default function Client({ subject, title, ready, facets, planTask }) {
         <div className={styles.answerGrid}>
           {exam.questions.map((item, itemIndex) => {
             const itemAnswer = answerMap[String(item.id)];
-            return <button type="button" key={item.id} onClick={() => { setIndex(itemIndex); setAnswer(itemAnswer || null); setPendingResult(null); questionStartedAt.current = Date.now(); }} data-status={itemAnswer?.is_correct ? "correct" : itemAnswer ? "wrong" : "pending"} data-current={itemIndex === index ? "true" : "false"} title={itemAnswer ? (itemAnswer.is_correct ? "Correta" : "Incorreta") : "Não respondida"} aria-label={`Questão ${itemIndex + 1}: ${itemAnswer ? (itemAnswer.is_correct ? "correta" : "incorreta") : "não respondida"}`}>{itemIndex + 1}</button>;
+            return <button type="button" disabled={paused} key={item.id} onClick={() => { setIndex(itemIndex); setAnswer(itemAnswer || null); setPendingResult(null); questionStartedAt.current = Date.now(); }} data-status={itemAnswer?.is_correct ? "correct" : itemAnswer ? "wrong" : "pending"} data-current={itemIndex === index ? "true" : "false"} title={itemAnswer ? (itemAnswer.is_correct ? "Correta" : "Incorreta") : "Não respondida"} aria-label={`Questão ${itemIndex + 1}: ${itemAnswer ? (itemAnswer.is_correct ? "correta" : "incorreta") : "não respondida"}`}>{itemIndex + 1}</button>;
           })}
         </div>
         <div className={styles.answerLegend}><span><i data-kind="current" />Atual</span><span><i data-kind="correct" />Acerto</span><span><i data-kind="wrong" />Erro</span><span><i data-kind="pending" />Pendente</span></div>
       </aside>
       </div>
 
-      <button type="button" className={styles.finish} onClick={() => finish("manual")} disabled={busy}>
+      <button type="button" className={styles.finish} onClick={() => finish("manual")} disabled={busy || paused}>
         Finalizar simulado agora
       </button>
       {error && <p role="alert">{error}</p>}
