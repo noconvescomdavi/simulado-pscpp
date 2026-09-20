@@ -55,3 +55,5 @@ for(const file of files){
   if(dirty){fs.writeFileSync(p,JSON.stringify(bank,null,2)+"\n");changed++;}
 }
 console.log(JSON.stringify({files_changed:changed,answer_keys_fixed:keys,terminology_replacements:terms,wording_rewrites:wording}));
+
+// repair-run: 2026-09-20T01:15Z
