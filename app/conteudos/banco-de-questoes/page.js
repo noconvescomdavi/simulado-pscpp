@@ -16,7 +16,7 @@ export default async function Page({searchParams}){
 
   const q=await searchParams;
   const history=await listNotebookHistory(s.id,30);
-  const requested=String(q?.materia||"").trim();
+  const requested=String(q?.materia||q?.subject||"").trim();
   const banks=availableQuestionBanks({includeFilters:true});
   const initialSubjects=requested&&banks.some(b=>b.slug===requested&&b.count)
     ? [requested]
@@ -24,7 +24,7 @@ export default async function Page({searchParams}){
 
   return (
     <>
-      <StudentHeader active="conteudos"/>
+      <StudentHeader active="banco"/>
       <main className={styles.page}>
         <span>QUESTÕES</span>
         <h1>Banco de questões</h1>

@@ -3,13 +3,12 @@ import Link from "next/link";
 import { getAdmin } from "../../lib/admin";
 import { getSession } from "../../lib/auth";
 import { query } from "../../lib/db";
-import { listFlashcardDecks } from "../../lib/flashcards";
 import styles from "./student-header.module.css";
 import StudySessionTracker from "./StudySessionTracker";
 import OfflineSyncStatus from "./OfflineSyncStatus";
 import StudentMobileMenu from "./StudentMobileMenu";
 
-function Menu({ active = "", flashcardDecks = [] }) {
+function Menu({ active = "" }) {
   return (
     <nav className={styles.nav} aria-label="Área do aluno">
       <Link className={["painel","hoje"].includes(active) ? styles.active : ""} href="/hoje"><span className={styles.icon}>⌂</span><span>Hoje</span></Link>
@@ -25,7 +24,7 @@ function Menu({ active = "", flashcardDecks = [] }) {
         </div></div>
       </details>
 
-      <details className={styles.group} open={["simulados","adaptativo","revisao"].includes(active)}>
+      <details className={styles.group} open={["simulados","banco","cadernos","adaptativo","revisao","revisao-inteligente","erros"].includes(active)}>
         <summary><span><b className={styles.icon}>▣</b> Treinar</span><b className={styles.chevron}>⌄</b></summary>
         <div className={styles.submenu}><div>
           <Link href="/simulado">Simulados</Link>
@@ -33,6 +32,7 @@ function Menu({ active = "", flashcardDecks = [] }) {
           <Link href="/conteudos/banco-de-questoes#meus-cadernos">Meus Cadernos</Link>
           <Link href="/treino-adaptativo">Treino Inteligente</Link>
           <Link href="/centro-de-revisao">Centro de Revisão</Link>
+          <Link href="/revisao-inteligente">Revisão Inteligente</Link>
           <Link href="/conteudos/caderno-de-erros">Caderno de Erros</Link>
         </div></div>
       </details>
@@ -64,21 +64,16 @@ function Menu({ active = "", flashcardDecks = [] }) {
   );
 }
 export default async function StudentHeader({ active = "" }) {
-  const [admin, session] = await Promise.all([getAdmin(), getSession()]);
+  const session = await getSession();
+  const admin = session?.role === "admin" ? await getAdmin() : null;
   let displayName = session?.email?.split("@")[0] || "Aluno";
-  let flashcardDecks = [];
 
   if (session?.id) {
     try {
-      const [profile, decks] = await Promise.all([
-        query("select full_name from user_profiles where user_id=$1 limit 1", [session.id]),
-        listFlashcardDecks(session.id),
-      ]);
-
+      const profile = await query("select full_name from user_profiles where user_id=$1 limit 1", [session.id]);
       if (profile.rows[0]?.full_name) displayName = profile.rows[0].full_name;
-      flashcardDecks = decks;
     } catch {
-      // Mantém o cabeçalho funcional mesmo se perfil ou decks estiverem indisponíveis.
+      // Mantém o cabeçalho funcional mesmo se o perfil estiver indisponível.
     }
   }
 
@@ -88,7 +83,7 @@ export default async function StudentHeader({ active = "" }) {
       <div id="student-shell" className={styles.shellMarker} />
 
       <aside className={styles.sidebar}>
-        <Link className={styles.logo} href="/area-do-aluno">
+        <Link className={styles.logo} href="/hoje">
           <Image src="/estibordo/logos/estibordo-logo-header.png" alt="ESTIBORDO" width={210} height={44} priority sizes="(max-width: 960px) 155px, 210px" />
         </Link>
 
@@ -101,7 +96,7 @@ export default async function StudentHeader({ active = "" }) {
           </div>
         </div>
 
-        <Menu active={active} flashcardDecks={flashcardDecks} />
+        <Menu active={active} />
 
         {admin && <Link className={styles.adminLink} href="/admin">Administração</Link>}
 
@@ -121,7 +116,7 @@ export default async function StudentHeader({ active = "" }) {
               <small>{session?.email || ""}</small>
             </div>
 
-            <Menu active={active} flashcardDecks={flashcardDecks} />
+            <Menu active={active} />
 
             {admin && <Link className={styles.adminLink} href="/admin">Administração</Link>}
 
@@ -130,7 +125,7 @@ export default async function StudentHeader({ active = "" }) {
             </form>
         </StudentMobileMenu>
 
-        <Link className={styles.mobileLogo} href="/area-do-aluno">
+        <Link className={styles.mobileLogo} href="/hoje">
           <Image src="/estibordo/logos/estibordo-logo-header.png" alt="ESTIBORDO" width={210} height={44} priority sizes="(max-width: 960px) 155px, 210px" />
         </Link>
 
