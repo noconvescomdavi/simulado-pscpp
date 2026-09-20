@@ -41,6 +41,9 @@ jobs:
       - name: Audit question formatting
         run: npm run test:question-structure
 
+      - name: Audit question semantics and terminology
+        run: npm run audit:questions:semantic
+
       - name: Build
         env:
           DATABASE_URL: postgresql://placeholder:placeholder@localhost:5432/placeholder
