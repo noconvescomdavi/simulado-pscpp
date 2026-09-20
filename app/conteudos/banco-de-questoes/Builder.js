@@ -76,8 +76,9 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
     location.href=`/conteudos/caderno/${p.notebook.id}`;
   }
 
+  const totalSelected=banks.filter(x=>s.includes(x.slug)).reduce((sum,x)=>sum+Number(x.count||0),0);
   return (
-    <section className={styles.box}>
+    <section className={styles.builderLayout}><div className={styles.box}>
       {fixation&&<p><strong>Modo fixação:</strong> o caderno usará somente as questões que correspondem ao conteúdo estudado. Se houver menos questões, o caderno será criado apenas com as disponíveis.</p>}
       <div className={styles.banks}>
         {banks.map(x=>(
@@ -120,7 +121,7 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
 
       {trial&&<p><strong>Teste gratuito:</strong> este será seu único caderno, com 10 questões aleatórias entre as matérias disponíveis.</p>}
       {e&&<p>{e}</p>}
-      <button onClick={go} disabled={!s.length}>{fixation?"Criar caderno de fixação":"Criar caderno com estes filtros"}</button>
-    </section>
+      <button onClick={go} disabled={!s.length}>{fixation?"Criar caderno de fixação":"Gerar caderno"}</button>
+    </div><aside className={styles.summary}><span>SEU CADERNO</span><strong>{trial?10:n} questões</strong><p>{s.length} matéria{s.length===1?"":"s"} selecionada{s.length===1?"":"s"} · {totalSelected.toLocaleString("pt-BR")} questões disponíveis</p><small>Estimativa de resolução: ~{Math.max(1,Math.round((trial?10:n)*1.2))} min</small><button onClick={go} disabled={!s.length}>{fixation?"Criar caderno de fixação":"Gerar caderno"}</button></aside></section>
   );
 }
