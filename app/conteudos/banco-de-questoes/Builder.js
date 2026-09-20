@@ -22,6 +22,7 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
   const [s,setS]=useState(initial.length?initial:available);
   const [n,setN]=useState(trial?10:(fixation?100:20));
   const [e,setE]=useState("");
+  const [busy,setBusy]=useState(false);
   const [filters,setFilters]=useState({...EMPTY_QUESTION_FILTERS});
   const facets={
     works:mergeFacetList(banks.flatMap(bank=>bank.filters?.works||[])),
@@ -35,7 +36,8 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
   }
 
   async function go(){
-    setE("");
+    if(busy)return;
+    setBusy(true);setE("");
     const body={
       subjects:s,
       count:trial?10:n,
@@ -47,7 +49,7 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
       try{
         const notebook=await createOfflineNotebook(body);
         location.href=`/offline?mode=notebook&id=${notebook.id}`;
-      }catch(error){setE(error.message||"Prepare o conteúdo offline antes de criar um caderno sem internet.")}
+      }catch(error){setE(error.message||"Prepare o conteúdo offline antes de criar um caderno sem internet.");setBusy(false)}
       return;
     }
     let r;
@@ -59,7 +61,7 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
       try{
         const notebook=await createOfflineNotebook(body);
         location.href=`/offline?mode=notebook&id=${notebook.id}`;
-      }catch(fallback){setE(fallback.message||"Não foi possível criar o caderno.");}
+      }catch(fallback){setE(fallback.message||"Não foi possível criar o caderno.");setBusy(false);}
       return;
     }
     const p=await r.json().catch(()=>({}));
@@ -69,7 +71,7 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
         location.href="/teste-gratis-excedido?recurso=caderno";
         return;
       }
-      setE(p.error||"Erro");
+      setE(p.error||"Erro");setBusy(false);
       return;
     }
 
@@ -121,7 +123,7 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
 
       {trial&&<p><strong>Teste gratuito:</strong> este será seu único caderno, com 10 questões aleatórias entre as matérias disponíveis.</p>}
       {e&&<p>{e}</p>}
-      <button onClick={go} disabled={!s.length}>{fixation?"Criar caderno de fixação":"Gerar caderno"}</button>
-    </div><aside className={styles.summary}><span>SEU CADERNO</span><strong>{trial?10:n} questões</strong><p>{s.length} matéria{s.length===1?"":"s"} selecionada{s.length===1?"":"s"} · {totalSelected.toLocaleString("pt-BR")} questões disponíveis</p><small>Estimativa de resolução: ~{Math.max(1,Math.round((trial?10:n)*1.2))} min</small><button onClick={go} disabled={!s.length}>{fixation?"Criar caderno de fixação":"Gerar caderno"}</button></aside></section>
+      <button onClick={go} disabled={!s.length||busy} aria-busy={busy}>{busy?"Preparando caderno…":fixation?"Criar caderno de fixação":"Gerar caderno"}</button>
+    </div><aside className={styles.summary}><span>SEU CADERNO</span><strong>{trial?10:n} questões</strong><p>{s.length} matéria{s.length===1?"":"s"} selecionada{s.length===1?"":"s"} · {totalSelected.toLocaleString("pt-BR")} questões disponíveis</p><small>Estimativa de resolução: ~{Math.max(1,Math.round((trial?10:n)*1.2))} min</small><button onClick={go} disabled={!s.length||busy} aria-busy={busy}>{busy?"Preparando caderno…":fixation?"Criar caderno de fixação":"Gerar caderno"}</button></aside></section>
   );
 }
