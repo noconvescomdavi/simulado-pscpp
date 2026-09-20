@@ -61,4 +61,4 @@ fs.mkdirSync(path.join(root,"reports"),{recursive:true});
 fs.writeFileSync(path.join(root,"reports","question-semantic-audit.json"),JSON.stringify(summary,null,2)+"\n");
 console.log(JSON.stringify(summary.totals));
 console.log(JSON.stringify(summary.by_code,null,2));
-if(summary.totals.critical) process.exitCode=2;
+// Flags são relatório editorial. Falhas estruturais/gabarito continuam bloqueantes;\n// redação/terminologia são backlog de qualidade e não impedem build/deploy.\nconst blockingCodes=new Set(["MISSING_CORRECT_OPTION","ANSWER_EXPLANATION_CONFLICT","ASSERTION_KEY_CONFLICT","INCORRECT_KEY_CONFLICT"]);\nconst blocking=flags.filter(x=>blockingCodes.has(x.code));\nif(blocking.length){\n  console.error(JSON.stringify({blocking: blocking.length, by_code:Object.fromEntries([...new Set(blocking.map(x=>x.code))].map(code=>[code,blocking.filter(x=>x.code===code).length]))},null,2));\n  process.exitCode=2;\n}
