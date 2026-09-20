@@ -1,0 +1,43 @@
+name: PSCPP Integral Bank Audit
+
+on:
+  push:
+    branches:
+      - feature/auditoria-integral-banco-normal-pscpp
+    paths:
+      - 'data/questions/*.json'
+      - 'scripts/audit-question-quality-v2.mjs'
+      - 'scripts/audit-pscpp-integral-source-review.mjs'
+      - 'scripts/validate-question-banks.mjs'
+      - 'package.json'
+      - '.github/workflows/pscpp-integral-bank-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Structural question validation
+        run: npm run validate:questions
+      - name: Semantic quality audit
+        run: node scripts/audit-question-quality-v2.mjs
+      - name: Integral source-review gate
+        run: npm run audit:pscpp:integral
+      - name: Question structure tests
+        run: npm run test:question-structure
+      - name: Taxonomy validation
+        run: npm run validate:taxonomy
+      - name: Historical blueprint validation
+        run: npm run validate:historical-blueprint
+      - name: Production build
+        run: npm run build
