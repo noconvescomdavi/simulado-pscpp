@@ -54,7 +54,27 @@ E("colreg","IMO COLREG — Consolidated Edition 2018",[...["A","B","C","D","E","
 ],
 "legislacao-regulamentacao":[
 E("normam201","NORMAM-201/DPC",[S("ch7","Capítulo 7 – Borda-livre e Estabilidade Intacta — arts. 7.1–7.3 e 7.10–7.14")]),
-...["NORMAM-204/DPC","NORMAM-302/DPC","NORMAM-311/DPC","NORMAM-601/DHN","NORMAM-112/DPC","NORMAM-602/DHN","Lei nº 2.180/1954 — Tribunal Marítimo","Lei nº 9.537/1997 — LESTA","Lei nº 14.813/2024 — Praticagem","Decreto nº 2.596/1998 — RLESTA","Portaria nº 37/MB/2022","IMO COLREG 1972","Publicações Náuticas da DHN","Serviço SAR no Brasil"].map((t,i)=>E("leg-doc-"+i,t,[S("integral","Conteúdo indicado no Anexo 2-B")])),
+E("normam204","NORMAM-204/DPC — Tráfego e Permanência de Embarcações em AJB",[
+S("ch1-intro","Capítulo 1 — Entrada, despacho e saída — arts. 1.1–1.4","Capítulo 1 — arts. 1.1–1.4: obrigatoriedade, dispensa, etapas e validade do despacho"),
+S("ch1-s1","Capítulo 1, Seção I — Procedimentos para despacho — arts. 1.5–1.12","Capítulo 1 — Seção I: procedimentos para despacho"),
+S("ch1-s2","Capítulo 1, Seção II — Casos especiais — arts. 1.13–1.14","Capítulo 1 — Seção II: casos especiais"),
+S("ch1-s3","Capítulo 1, Seção III — Tramitação — arts. 1.15–1.16","Capítulo 1 — Seção III: tramitação de informações"),
+S("ch1-s4","Capítulo 1, Seção IV — Disposições gerais — art. 1.17","Capítulo 1 — Seção IV: disposições gerais"),
+S("ch2-s1","Capítulo 2, Seção I — Tráfego em AJB — arts. 2.1–2.6","Capítulo 2 — Seção I: tráfego em AJB"),
+S("ch2-s2","Capítulo 2, Seção II — Informações sobre o tráfego — arts. 2.7–2.18","Capítulo 2 — Seção II: informações sobre o tráfego"),
+S("ch2-s3","Capítulo 2, Seção III — Sistemas de controle — arts. 2.19–2.23","Capítulo 2 — Seção III: SISTRAM, LRIT, SIMMAP e monitoramento"),
+S("ch3-s1","Capítulo 3, Seção I — Procedimento nos portos — arts. 3.1–3.4","Capítulo 3 — Seção I: procedimento nos portos"),
+S("ch3-s2","Capítulo 3, Seção II — Arribada e abrigo — art. 3.5","Capítulo 3 — Seção II: arribada e abrigo"),
+S("ch3-s3","Capítulo 3, Seção III — Fiscalização — arts. 3.6–3.7","Capítulo 3 — Seção III: fiscalização por autoridades nacionais"),
+S("ch3-s4","Capítulo 3, Seção IV — Situações especiais — art. 3.8","Capítulo 3 — Seção IV: embarcação fora de operação"),
+S("ch4","Capítulo 4 — Transbordo de pessoal — arts. 4.1–4.4","Capítulo 4 — Transbordo de pessoal entre embarcações em águas não abrigadas"),
+S("ch5-s1","Capítulo 5, Seção I — Bunkering — arts. 5.1–5.5","Capítulo 5 — Seção I: transferência de óleo / bunkering"),
+S("ch5-s2","Capítulo 5, Seção II — Ship to Ship (STS) — arts. 5.6–5.11","Capítulo 5 — Seção II: operações STS"),
+S("ch5-s3","Capítulo 5, Seção III — Ship to Barge (STB) — arts. 5.12–5.16","Capítulo 5 — Seção III: operações STB"),
+S("ch5-s4","Capítulo 5, Seção IV — Transshipment — arts. 5.17–5.18","Capítulo 5 — Seção IV: transbordo de granéis sólidos"),
+S("ch6","Capítulo 6 — Homologação de comboios fluviais — arts. 6.1–6.11","Capítulo 6 — Homologação de comboios fluviais")
+],"NORMAM-204/DPC 2025 — sumário verificado na publicação"),
+...["NORMAM-302/DPC","NORMAM-311/DPC","NORMAM-601/DHN","NORMAM-112/DPC","NORMAM-602/DHN","Lei nº 2.180/1954 — Tribunal Marítimo","Lei nº 9.537/1997 — LESTA","Lei nº 14.813/2024 — Praticagem","Decreto nº 2.596/1998 — RLESTA","Portaria nº 37/MB/2022","IMO COLREG 1972","Publicações Náuticas da DHN","Serviço SAR no Brasil"].map((t,i)=>E("leg-doc-"+(i+1),t,[S("integral","Conteúdo indicado no Anexo 2-B")])),
 E("lei12815","Lei nº 12.815/2013",[S("ch1","Capítulo I – Definições e objetivos"),S("ch4","Capítulo IV – Administração do Porto Organizado"),S("ch8","Capítulo VIII – Programa nacional de dragagem")]),E("lc97","Lei Complementar nº 97/1999",[S("art17","Capítulo VI – Art. 17")]),
 ...["IMO Resolution A.960(23)","MD35-G-01 — Glossário das Forças Armadas, 5ª ed.","Política Nacional de Defesa — 2025","Decreto nº 12.481/2025 — Política Marítima Nacional","Decreto nº 2.256/1997","Lei nº 7.642/1987 — PEM","Lei nº 7.652/1988 — Registro da Propriedade Marítima","Lei nº 9.432/1997 — Transporte Aquaviário"].map((t,i)=>E("leg-extra-"+i,t,[S("integral","Conteúdo indicado no Anexo 2-B")]))
 ],
