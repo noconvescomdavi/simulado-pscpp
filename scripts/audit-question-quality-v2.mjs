@@ -162,8 +162,12 @@ for (const subject of SUBJECTS) {
       'caracterização tecnicamente correta de',
       'problema-base',
       'a bibliografia atribui a esse item',
-      'a referência ',
-      'conceito da unidade'
+      'conceito da unidade',
+      'considere a seguinte característica',
+      'a descrição técnica a seguir',
+      'associação está correta',
+      'descrição: este método',
+      'descrição: esta função'
     ];
     for (const phrase of badTemplatePhrases) {
       if (norm(stem).includes(norm(phrase))) {
@@ -230,6 +234,41 @@ for (const subject of SUBJECTS) {
         distractorRisk++;
         pushFlag(allFlags, subject, q, 'LOW_DISTRACTOR_SIMILARITY', 'low', `Distratores lexicalmente muito afastados da correta (Jaccard médio ${avg.toFixed(3)}); revisar plausibilidade.`);
       }
+    }
+
+    // Auditoria semântica adicional exigida pelo padrão PSCPP.
+    // Não "corrige" conteúdo automaticamente: bloqueia/eleva itens que precisam de
+    // reconstrução com consulta à fonte, evitando perpetuar templates defeituosos.
+    const explanation = clean(q.explanation);
+    const answer = answerKey(q);
+    const explicitAnswer = explanation.match(/(?:alternativa|op[cç][aã]o)\s+([A-E])\b/i);
+    if (explicitAnswer && explicitAnswer[1].toUpperCase() !== answer) {
+      structural++;
+      pushFlag(allFlags, subject, q, 'EXPLANATION_ANSWER_MISMATCH', 'critical',
+        `Explicação declara ${explicitAnswer[1].toUpperCase()}, mas correct_answer é ${answer}.`);
+    }
+
+    if (/\b(?:descri[cç][aã]o|defini[cç][aã]o|caracter[ií]stica)\s*:\s*[^.!?]{0,18}$/i.test(stem)) {
+      contextRisk++;
+      pushFlag(allFlags, subject, q, 'ORPHAN_FRAGMENT', 'critical',
+        'Enunciado termina em fragmento/rotulagem sem proposição autossuficiente.');
+    }
+
+    const assertionLines = String(q.question || '').split(/\n/).filter(line => /^\s*(?:I|II|III|IV|V|[1-5])[\.)]/.test(line));
+    for (const line of assertionLines) {
+      const body = line.replace(/^\s*(?:I|II|III|IV|V|[1-5])[\.)]\s*/, '').trim();
+      if (body.length < 18 || !/[a-záàâãéêíóôõúç]{3,}/i.test(body)) {
+        contextRisk++;
+        pushFlag(allFlags, subject, q, 'ASSERTION_FRAGMENT', 'high',
+          'Há proposição curta/incompleta; V/F e assertivas devem avaliar afirmações semanticamente completas.');
+        break;
+      }
+    }
+
+    if (/\b(?:sobre|quanto a|acerca de)\s+[^,.:;?!]{1,50}[.:]?$/i.test(stem)) {
+      contextRisk++;
+      pushFlag(allFlags, subject, q, 'INCOMPLETE_REFERENCE', 'high',
+        'Enunciado aparenta depender de complemento/contexto ausente.');
     }
 
     if (stem.length < 18) {
