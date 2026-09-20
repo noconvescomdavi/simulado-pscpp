@@ -146,7 +146,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
       if (payload.state === "in_progress" && payload.exam) {
         setAnswerMap(Object.fromEntries((payload.exam.questions || []).filter(q => q.answer).map(q => [String(q.id), q.answer])));
         await cacheServerExam(payload.exam,planTask).catch(()=>{});
-        setIndex(Math.min(Number(payload.exam.answered_count || 0), Math.max(0, payload.exam.questions.length - 1)));
+        setIndex(Math.min(Number(payload.exam.current_index ?? payload.exam.answered_count ?? 0), Math.max(0, payload.exam.questions.length - 1)));
         setAnswer(null);
         setPendingResult(null);
         questionStartedAt.current = Date.now();
@@ -400,7 +400,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
         <div>
           <span>SIMULADO EM ANDAMENTO</span>
           <h1>{title} · {index + 1}/{exam.questions.length}</h1>
-          <small>{Number(exam.answered_count || 0)} respostas já estavam salvas quando esta sessão foi carregada.</small>
+          {Number(exam.answered_count || 0) > 0 && <small>{Number(exam.answered_count || 0)} respostas restauradas no cartão desta tentativa.</small>}
         </div>
         <b>{clock(remaining)}</b>
       </div>

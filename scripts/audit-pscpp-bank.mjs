@@ -23,7 +23,7 @@ function audit(q,kind){
   if(!/^[A-E]$/.test(String(q.correct_answer||"").toUpperCase())) errors.push(q.id+": invalid answer");
   const keys=(q.options||[]).map(o=>String(o?.key||"").toUpperCase());
   if(keys.join("")!=="ABCDE"||new Set(keys).size!==5) kind==="official"?recordOfficialIssue("invalid_option_keys",q):errors.push(q.id+": invalid option keys");
-  if(/<PARSED TEXT FOR PAGE|Diretoria de Portos e Costas/.test(JSON.stringify(q))) {
+  if(/<PARSED TEXT FOR PAGE|[\uFFFE\uFFFF]/.test(JSON.stringify(q))) {
    kind==="official"?recordOfficialIssue("extraction_artifact",q):errors.push(q.id+": PDF extraction artifact");
   }
  }
@@ -41,10 +41,20 @@ function audit(q,kind){
   const structured=["assertions","vf","true_false"].includes(q.pscpp_format);
   if(structured&&(!Array.isArray(q.assertions)||q.assertions.length<3)) errors.push(q.id+": structured format without assertions array");
   if(Array.isArray(q.assertions)&&q.assertions.some((item,index)=>!new RegExp(`^${["I","II","III","IV","V"][index]}\\)\\s+`).test(String(item)))) errors.push(q.id+": malformed structured assertion labels");
+  if(/<PARSED TEXT FOR PAGE|[\uFFFE\uFFFF]|Quanto a\s*\.|descri[cç][aã]o de qu[eê]\??/i.test(JSON.stringify(q))) errors.push(q.id+": editorial or extraction artifact");
+  const explanation=String(q.explanation||"");
+  const named=[...explanation.matchAll(/(?:corresponde à|correta é a|combinação correta é a) alternativa\s+([A-E])/gi)].map(match=>match[1].toUpperCase());
+  if(named.some(answer=>answer!==String(q.correct_answer||"").toUpperCase())) errors.push(q.id+": answer/explanation conflict");
  }
 }
 for(const q of official.questions||[]) audit(q,"official");
 for(const q of generated.questions||[]) audit(q,"generated");
+const activeOfficialBroken=(official.questions||[]).filter(q=>q.active!==false&&!q.annulled&&(
+ /<PARSED TEXT FOR PAGE|[\uFFFE\uFFFF]|^¾\s/m.test(JSON.stringify(q)) ||
+ !Array.isArray(q.options)||q.options.length!==5 ||
+ (q.options||[]).map(o=>String(o?.key||"").toUpperCase()).join("")!=="ABCDE"
+));
+if(activeOfficialBroken.length) errors.push(`active official presentation/extraction defects: ${activeOfficialBroken.map(q=>q.id).join(", ")}`);
 for(const [type,counts] of Object.entries(officialIssues)){
  const total=Object.values(counts).reduce((sum,count)=>sum+count,0);
  if(total) warn(`official legacy ${type}: ${total} item(s), by year ${JSON.stringify(counts)}; pending source-PDF visual repair`);
