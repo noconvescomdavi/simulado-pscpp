@@ -33,8 +33,14 @@ for(const subject of subjects){
     if(/descri[cç][aã]o de qu[eê]\??|descri[cç][aã]o:\s*este m[eé]todo/i.test(q.question||"")) add(subject,q,"MISSING_REFERENT","critical","Enunciado sem referente/contexto suficiente.");
     const key=String(q.correct_answer||"").toUpperCase();
     const exp=norm(q.explanation);
-    const named=[...exp.matchAll(/alternativa\s+([a-e])\b/g)].map(m=>m[1].toUpperCase());
-    if(named.length && named.some(k=>k!==key)) add(subject,q,"ANSWER_EXPLANATION_CONFLICT","critical",`correct_answer=${key}, mas a explicação menciona ${[...new Set(named)].join(",")} como resposta.`);
+    // Só marque conflito quando a explicação identificar explicitamente uma alternativa como correta.
+    const answerPatterns=[
+      /alternativa\s+([a-e])\s+(?:e|esta)\s+(?:a\s+)?(?:correta|resposta)/g,
+      /resposta\s+(?:correta\s+)?(?:e|:)\s*(?:a\s+)?alternativa\s+([a-e])/g,
+      /gabarito\s*[:=-]\s*([a-e])\b/g
+    ];
+    const named=answerPatterns.flatMap(rx=>[...exp.matchAll(rx)].map(m=>m[1].toUpperCase()));
+    if(named.length && named.some(k=>k!==key)) add(subject,q,"ANSWER_EXPLANATION_CONFLICT","critical",`correct_answer=${key}, mas a explicação aponta ${[...new Set(named)].join(",")} como resposta correta.`);
     const correct=(q.options||[]).find(o=>String(o.key).toUpperCase()===key);
     if(!correct) add(subject,q,"MISSING_CORRECT_OPTION","critical","Gabarito não corresponde a alternativa existente.");
     if(/s[aã]o verdadeiras as proposi[cç][oõ]es correspondentes [aà] alternativa\s+[a-e]/i.test(q.explanation||"")){
