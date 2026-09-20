@@ -46,15 +46,15 @@ export default function OfflineSyncStatus() {
     };
   }, [pending]);
 
-  let label = "Sincronizado";
+  let label = installed ? "✓ Disponível offline" : "Sincronizado";
   if (syncing) label = "Sincronizando…";
   else if (online && !installed) label = "Preparando offline…";
   else if (!online && pending > 0) label = "Offline · " + pending + " pendência" + (pending === 1 ? "" : "s");
-  else if (!online) label = "Offline";
+  else if (!online) label = installed ? "Offline · pode continuar estudando" : "Offline";
   else if (pending > 0) label = pending + " pendência" + (pending === 1 ? "" : "s");
 
   return (
-    <a href="/offline" title="Central Offline" style={{display:"inline-flex",alignItems:"center",gap:7,fontSize:12,textDecoration:"none",opacity:.9}}>
+    <a href="/offline" aria-live="polite" title="Central Offline" style={{display:"inline-flex",alignItems:"center",gap:7,fontSize:12,textDecoration:"none",opacity:.9}}>
       <i style={{width:8,height:8,borderRadius:999,display:"inline-block",background:online?"#46d17d":"#f3b33d"}} />
       <span>{label}</span>
     </a>
