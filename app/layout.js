@@ -1,3 +1,4 @@
+import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
 import "./estibordo-polish.css";
 import SiteDesignRuntime from "./site-editor/SiteDesignRuntime";
@@ -6,6 +7,9 @@ import PwaRuntime from "./components/PwaRuntime";
 import WebVitalsReporter from "./components/WebVitalsReporter";
 import MobileAppRuntime from "./components/MobileAppRuntime";
 import OfflineSyncRuntime from "./components/OfflineSyncRuntime";
+
+const montserrat=Montserrat({subsets:["latin"],display:"swap",variable:"--font-montserrat"});
+const poppins=Poppins({subsets:["latin"],weight:["500","600","700","800"],display:"swap",variable:"--font-poppins"});
 
 export const metadata = {
   metadataBase: new URL("https://simulado-pscpp.vercel.app"),
@@ -49,7 +53,7 @@ export default function RootLayout({ children }) {
         <meta name="theme-color" content="#07141f" />
         <link rel="apple-touch-startup-image" href="/pwa-splash" />
       </head>
-      <body>
+      <body className={`${montserrat.variable} ${poppins.variable}`}>
         {children}
         <SiteDesignRuntime />
         <SiteDesignProRuntime />
