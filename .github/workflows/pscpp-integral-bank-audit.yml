@@ -6,6 +6,9 @@ on:
       - main
     paths:
       - 'data/questions/*.json'
+      - 'data/pscpp/generated-batches/*.json'
+      - 'lib/generated-pscpp-batches.js'
+      - 'lib/pscpp-exam-bank.js'
       - 'lib/question-banks.js'
       - 'lib/question-quality-policy.js'
       - 'lib/learning-algorithms.js'
@@ -16,6 +19,9 @@ on:
       - feature/auditoria-integral-banco-normal-pscpp
     paths:
       - 'data/questions/*.json'
+      - 'data/pscpp/generated-batches/*.json'
+      - 'lib/generated-pscpp-batches.js'
+      - 'lib/pscpp-exam-bank.js'
       - 'lib/question-banks.js'
       - 'lib/question-quality-policy.js'
       - 'lib/learning-algorithms.js'
