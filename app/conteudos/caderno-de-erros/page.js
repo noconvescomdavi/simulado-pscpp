@@ -19,7 +19,7 @@ export default async function ErrorNotebookPage() {
 
   return (
     <>
-      <StudentHeader active="conteudos" />
+      <StudentHeader active="erros" />
       <main className={styles.page}>
         <span>REVISÃO INTELIGENTE</span>
         <h1>Caderno de erros</h1>
