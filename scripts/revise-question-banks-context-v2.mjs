@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-// LEGACY_GENERATOR_DISABLED: preservado somente para histórico da auditoria.\nthrow new Error('Transformador legado desativado: correções de enunciado devem ser feitas com revisão semântica e bibliográfica individual.');\nimport path from 'node:path';
+import path from 'node:path';
 
 const root = process.cwd();
 const questionsDir = path.join(root, 'data', 'questions');

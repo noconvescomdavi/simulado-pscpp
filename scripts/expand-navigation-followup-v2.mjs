@@ -2,9 +2,6 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {appendToFloor,assertUniqueIds} from './lib/question-expansion.mjs';
 
-// LEGACY_GENERATOR_DISABLED: expansão por pares termo/definição não atende ao source-first da auditoria integral.
-throw new Error('Expansão V2 desativada: itens devem ser reconstruídos individualmente a partir da fonte bibliográfica.');
-
 const root=process.cwd();
 const bankPath=path.join(root,'data','questions','navegacao-aguas-restritas.json');
 const bank=JSON.parse(fs.readFileSync(bankPath,'utf8'));

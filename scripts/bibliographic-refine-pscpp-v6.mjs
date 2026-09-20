@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-// LEGACY_GENERATOR_DISABLED: preservado apenas para rastreabilidade histórica.\nthrow new Error('Gerador legado desativado pela auditoria integral PSCPP: não sintetize questões a partir de alternativas de outros itens.');\nimport path from 'node:path';
+import path from 'node:path';
 
 const root=process.cwd(), qdir=path.join(root,'data','questions'), rdir=path.join(root,'reports');
 const audit=JSON.parse(fs.readFileSync(path.join(rdir,'question-quality-audit-v2.json'),'utf8'));

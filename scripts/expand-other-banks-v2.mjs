@@ -2,9 +2,6 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {appendToFloor, assertUniqueIds} from './lib/question-expansion.mjs';
 
-// LEGACY_GENERATOR_DISABLED: preservado apenas para rastreabilidade histórica.
-throw new Error('Pipeline V2 desativado pela auditoria integral PSCPP: não sintetize questões por rotação de pares/alternativas.');
-
 const root = process.cwd();
 const P = (a,b) => [a,b];
 

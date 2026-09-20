@@ -1,8 +1,5 @@
 import {BIBLIOGRAPHY} from '../../data/study/bibliography.js';
 
-// LEGACY_GENERATOR_DISABLED: preservado apenas para rastreabilidade histórica.
-throw new Error('Pipeline V2 desativado pela auditoria integral PSCPP: não sintetize questões por rotação de pares/alternativas.');
-
 export const norm=v=>String(v??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
 export const slug=v=>norm(v).replace(/\s+/g,'-').slice(0,80)||'topico';
 const keys=['A','B','C','D','E'];

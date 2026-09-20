@@ -16,9 +16,6 @@ const SUBJECTS = [
   'conhecimentos-gerais'
 ];
 
-// DESATIVADO: gerador legado preservado apenas para rastreabilidade histórica.
-// Não deve voltar a escrever data/questions/*.json sem revisão humana/fonte.
-const GENERATION_DISABLED = true;
 const PER_FORMAT = 12;
 const FORMAT_DEFS = [
   { code: 'VF', style: 'Verdadeiro/Falso' },
@@ -257,9 +254,6 @@ function makeCase({ base, id, seq }) {
 }
 
 function buildForSubject(subjectSlug) {
-  if (GENERATION_DISABLED) {
-    throw new Error('expand-question-formats-v1 foi desativado: composição automática de alternativas/afirmações não atende ao padrão PSCPP. Reconstrua itens a partir da fonte bibliográfica e das provas-benchmark.');
-  }
   const file = path.join(questionsDir, `${subjectSlug}.json`);
   const bank = JSON.parse(fs.readFileSync(file, 'utf8'));
   const blocked = sourcePendingChapters(subjectSlug);

@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import fs from "node:fs";
 import officialExams from "../data/pscpp/official-exams.json" with { type: "json" };
 import generatedQuestions from "../data/pscpp/generated-questions.json" with { type: "json" };
 import {
@@ -8,6 +9,14 @@ import {
   historicalQuotas,
   historicalSubject,
 } from "../lib/historical-exam-blueprint.js";
+
+const generatedBatchDirectory = new URL("../data/pscpp/generated-batches/", import.meta.url);
+const generatedBatchQuestions = fs.existsSync(generatedBatchDirectory)
+  ? fs.readdirSync(generatedBatchDirectory)
+    .filter((file) => /^batch_\d{3}\.json$/.test(file))
+    .sort()
+    .flatMap((file) => JSON.parse(fs.readFileSync(new URL(file, generatedBatchDirectory), "utf8")).questions || [])
+  : [];
 
 const activeOfficial = officialExams.questions.filter((question) => !question.annulled && question.active !== false);
 assert.equal(activeOfficial.length, HISTORICAL_SAMPLE.valid_questions);
@@ -28,7 +37,7 @@ const expected100 = {
 assert.deepEqual(historicalQuotas(100), expected100);
 
 for (const seed of ["alpha", "bravo", "charlie", "delta"]) {
-  const exam = buildHistoricalExam([...activeOfficial, ...generatedQuestions.questions], { seed, size: 100 });
+  const exam = buildHistoricalExam([...activeOfficial, ...generatedQuestions.questions, ...generatedBatchQuestions], { seed, size: 100 });
   assert.equal(exam.length, 100);
   assert.equal(new Set(exam.map((question) => question.id)).size, 100);
   const distribution = Object.fromEntries(Object.keys(expected100).map((subject) => [subject, 0]));

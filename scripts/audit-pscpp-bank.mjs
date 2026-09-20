@@ -1,7 +1,13 @@
 import fs from "node:fs";
+import path from "node:path";
 const root=new URL("../data/pscpp/",import.meta.url);
 const official=JSON.parse(fs.readFileSync(new URL("official-exams.json",root),"utf8"));
 const generated=JSON.parse(fs.readFileSync(new URL("generated-questions.json",root),"utf8"));
+const generatedBatchDir=new URL("generated-batches/",root);
+const generatedBatchQuestions=fs.existsSync(generatedBatchDir)
+ ? fs.readdirSync(generatedBatchDir).filter(file=>/^batch_\d{3}\.json$/.test(file)).sort().flatMap(file=>JSON.parse(fs.readFileSync(new URL(file,generatedBatchDir),"utf8")).questions||[])
+ : [];
+generated.questions=[...(generated.questions||[]),...generatedBatchQuestions];
 const inventory=JSON.parse(fs.readFileSync(new URL("source-inventory.json",root),"utf8"));
 const errors=[]; const warnings=[]; const ids=new Set();
 const warnOnce=new Set();

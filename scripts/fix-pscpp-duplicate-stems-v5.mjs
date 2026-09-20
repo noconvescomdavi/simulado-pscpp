@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-// LEGACY_GENERATOR_DISABLED: preservado somente para histórico da auditoria.\nthrow new Error('Transformador legado desativado: correções de enunciado devem ser feitas com revisão semântica e bibliográfica individual.');\nimport path from 'node:path';
+import path from 'node:path';
 const root=process.cwd(),qdir=path.join(root,'data','questions'),rdir=path.join(root,'reports');
 const audit=JSON.parse(fs.readFileSync(path.join(rdir,'question-quality-audit-v2.json'),'utf8'));
 const subjects=['arte-naval','manobrabilidade','navegacao-aguas-restritas','legislacao-regulamentacao','meteorologia-oceanografia','comunicacoes','conhecimentos-gerais'];

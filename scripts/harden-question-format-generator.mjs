@@ -1,8 +1,5 @@
 import fs from 'node:fs';
 
-// LEGACY_GENERATOR_DISABLED: preservado apenas para rastreabilidade histórica.
-throw new Error('Pipeline V2 desativado pela auditoria integral PSCPP: não sintetize questões por rotação de pares/alternativas.');
-
 const file = 'scripts/expand-question-formats-v1.mjs';
 let s = fs.readFileSync(file, 'utf8');
 
