@@ -66,7 +66,7 @@ export default async function Page() {
   function cardDescription(item) {
     if (entitlement.trial) return "10 questões pela incidência histórica das matérias · uma única emissão";
     if (item.slug === ALL_SUBJECTS_SLUG) {
-      return `${totalQuestionCount.toLocaleString("pt-BR")} questões no banco · 100 questões pela incidência das provas oficiais · 240 minutos`;
+      return `${totalQuestionCount.toLocaleString("pt-BR")} questões no banco · 70 questões pela incidência das provas oficiais · 240 minutos`;
     }
     const count = questionCountBySlug[item.slug] ?? 0;
     const examSize = Math.min(100, count);
@@ -87,7 +87,7 @@ export default async function Page() {
 
         {entitlement.active && (
           <section className={styles.examMode}>
-            <div><span>MODO PROVA PSCPP</span><h2>Simulação completa de prova</h2><p>100 questões · 240 minutos · composição disciplinar pela incidência histórica das provas oficiais.</p></div>
+            <div><span>MODO PROVA PSCPP</span><h2>Simulação completa de prova</h2><p>70 questões · 240 minutos · composição disciplinar pela incidência histórica das provas oficiais.</p></div>
             <a href="/simulado/simulado-pscpp">Iniciar prova →</a>
           </section>
         )}
