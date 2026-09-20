@@ -86,14 +86,13 @@ export default async function Page() {
         </p>
 
         {entitlement.active && (
-          <section style={{margin:"18px 0",border:"1px solid #1c6fa6",background:"#09243a",borderRadius:12,padding:16}}>
-            <span style={{fontSize:9,color:"#72bdf0",fontWeight:900}}>MODO PROVA PSCPP</span>
-            <h2 style={{margin:"5px 0 6px"}}>Simulação completa de prova</h2>
-            <p style={{margin:"0 0 10px",color:"#9ab4c6"}}>100 questões selecionadas pela incidência histórica das provas oficiais de 2006, 2008, 2011 e 2012, com composição disciplinar controlada.</p>
-            <a href="/simulado/simulado-pscpp" style={{display:"inline-block",border:"1px solid #2384c1",background:"#0e5788",padding:"9px 12px",borderRadius:8,fontSize:9,fontWeight:900}}>Iniciar Modo Prova →</a>
+          <section className={styles.examMode}>
+            <div><span>MODO PROVA PSCPP</span><h2>Simulação completa de prova</h2><p>100 questões · 240 minutos · composição disciplinar pela incidência histórica das provas oficiais.</p></div>
+            <a href="/simulado/simulado-pscpp">Iniciar prova →</a>
           </section>
         )}
 
+        <div className={styles.sectionHead}><span>TREINO POR DISCIPLINA</span><h2>Escolha o foco do treino</h2></div>
         <section className={styles.launch}>
           {choices.map((item) => {
             const href =

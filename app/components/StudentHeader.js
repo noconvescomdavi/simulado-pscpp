@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import { getAdmin } from "../../lib/admin";
 import { getSession } from "../../lib/auth";
 import { query } from "../../lib/db";
@@ -10,127 +12,57 @@ import StudentMobileMenu from "./StudentMobileMenu";
 function Menu({ active = "", flashcardDecks = [] }) {
   return (
     <nav className={styles.nav} aria-label="Área do aluno">
-      <a className={active === "painel" ? styles.active : ""} href="/area-do-aluno">        <span className={styles.icon}>⌂</span><span>Hoje</span>      </a>
+      <Link className={["painel","hoje"].includes(active) ? styles.active : ""} href="/hoje"><span className={styles.icon}>⌂</span><span>Hoje</span></Link>
 
-      <a className={active === "perfil" ? styles.active : ""} href="/perfil">
-        <span className={styles.icon}>♙</span><span>Perfil</span>
-      </a>
-      <a href="/preferencias">
-        <span className={styles.icon}>⚙</span><span>Personalização</span>
-      </a>
-
-      <details className={styles.group} open={["plano","adaptativo","hoje","revisao","fraquezas","trajetoria"].includes(active)}>
-        <summary>
-          <span><b className={styles.icon}>◫</b> Minha Preparação</span>
-          <b className={styles.chevron}>⌄</b>
-        </summary>
+      <details className={styles.group} open={["conteudos","biblioteca","flashcards","mapas","ripeam3d"].includes(active)}>
+        <summary><span><b className={styles.icon}>▦</b> Estudar</span><b className={styles.chevron}>⌄</b></summary>
         <div className={styles.submenu}><div>
-          <a href="/plano-de-estudos">Meu Plano de Estudos</a>          <a href="/hoje">Plano de Hoje</a>          <a href="/treino-adaptativo">Treino Inteligente</a>          <a href="/centro-de-revisao">Centro de Revisão</a>          <a href="/analise-de-fraquezas">Desempenho e Fraquezas</a>          <a href="/minha-trajetoria">Minha Trajetória</a>
+          <Link href="/conteudos">Central de Conteúdos</Link>
+          <Link href="/minha-biblioteca">Minha Biblioteca</Link>
+          <Link href="/flashcards">Flashcards</Link>
+          <Link href="/mapas-mentais">Mapas Mentais</Link>
+          <Link href="/flashcards/ripeam/3d">Laboratório RIPEAM 3D</Link>
         </div></div>
       </details>
 
-      <details className={styles.group} open={active === "simulados"}>
-        <summary>
-          <span><b className={styles.icon}>▣</b> Simulados</span>
-          <b className={styles.chevron}>⌄</b>
-        </summary>
+      <details className={styles.group} open={["simulados","adaptativo","revisao"].includes(active)}>
+        <summary><span><b className={styles.icon}>▣</b> Treinar</span><b className={styles.chevron}>⌄</b></summary>
         <div className={styles.submenu}><div>
-          <a href="/simulado">Gerar Simulado</a>
-          <a href="/simulado">Meus Simulados</a>
-          <a href="/area-do-aluno#desempenho">Desempenho</a>
+          <Link href="/simulado">Simulados</Link>
+          <Link href="/conteudos/banco-de-questoes">Banco de Questões</Link>
+          <Link href="/conteudos/banco-de-questoes#meus-cadernos">Meus Cadernos</Link>
+          <Link href="/treino-adaptativo">Treino Inteligente</Link>
+          <Link href="/centro-de-revisao">Centro de Revisão</Link>
+          <Link href="/conteudos/caderno-de-erros">Caderno de Erros</Link>
         </div></div>
       </details>
 
-      <details className={styles.group} open={active === "conteudos"}>
-        <summary>
-          <span><b className={styles.icon}>☷</b> Banco de Questões</span>
-          <b className={styles.chevron}>⌄</b>
-        </summary>
+      <details className={styles.group} open={["plano","fraquezas","trajetoria","ranking"].includes(active)}>
+        <summary><span><b className={styles.icon}>◎</b> Desempenho</span><b className={styles.chevron}>⌄</b></summary>
         <div className={styles.submenu}><div>
-          <a href="/conteudos/banco-de-questoes">Gerar Caderno</a>
-          <a href="/conteudos/banco-de-questoes#meus-cadernos">Meus Cadernos</a>
-          <a href="/conteudos/caderno-de-erros">Caderno de Erros</a>
-          <a href="/conteudos">Central de Conteúdos</a>
+          <Link href="/plano-de-estudos">Rota Inteligente</Link>
+          <Link href="/analise-de-fraquezas">Análise de Fraquezas</Link>
+          <Link href="/minha-trajetoria">Minha Trajetória</Link>
+          <Link href="/ranking">Ranking</Link>
+          <Link href="/conquistas">Conquistas</Link>
         </div></div>
       </details>
 
-      <details className={styles.group} open={active === "flashcards"}>
-        <summary>
-          <span><b className={styles.icon}>▤</b> Flashcards</span>
-          <b className={styles.chevron}>⌄</b>
-        </summary>
+      <Link className={active === "tutor" ? styles.active : ""} href="/contramestre"><span className={styles.icon}>⚓</span><span>Contramestre</span></Link>
+
+      <details className={styles.group} open={["perfil","assinaturas","offline","suporte"].includes(active)}>
+        <summary><span><b className={styles.icon}>⚙</b> Conta e suporte</span><b className={styles.chevron}>⌄</b></summary>
         <div className={styles.submenu}><div>
-          {flashcardDecks.map((deck) => (
-            <a href={`/flashcards/${deck.slug}`} key={deck.id}>
-              {deck.title}
-            </a>
-          ))}
-          <a href="/flashcards/meus-mapas">Dos meus mapas</a>
-          <a className={styles.submenuAll} href="/flashcards">Todos os Flashcards</a>
+          <Link href="/perfil">Perfil</Link>
+          <Link href="/preferencias">Personalização</Link>
+          <Link href="/minhas-assinaturas">Minhas Assinaturas</Link>
+          <Link href="/offline">Disponibilidade offline</Link>
+          <Link href="/suporte">Ajuda e Suporte</Link>
         </div></div>
       </details>
-
-      <a className={active === "ripeam3d" ? styles.active : ""} href="/flashcards/ripeam/3d">
-        <span className={styles.icon}>◈</span><span>Laboratório RIPEAM 3D</span>
-      </a>
-
-      <details className={styles.group} open={active === "mapas"}>
-        <summary>
-          <span><b className={styles.icon}>🧠</b> Mapas Mentais</span>
-          <b className={styles.chevron}>⌄</b>
-        </summary>
-        <div className={styles.submenu}><div>
-          <a href="/mapas-mentais">Meus Mapas Mentais</a>
-          <a href="/mapas-mentais?template=study">Criar Novo Mapa</a>
-          <a href="/flashcards/meus-mapas">Flashcards dos Mapas</a>
-        </div></div>
-      </details>
-
-      <a className={active === "biblioteca" ? styles.active : ""} href="/minha-biblioteca">
-        <span className={styles.icon}>▧</span><span>Minha Biblioteca</span>
-      </a>
-
-      <details className={styles.group}>
-        <summary>
-          <span><b className={styles.icon}>▦</b> Central de Estudos</span>
-          <b className={styles.chevron}>⌄</b>
-        </summary>
-        <div className={styles.submenu}><div>
-          <a href="/conteudos">Estudar por Matéria</a>
-          <a href="/conteudos/caderno-de-erros">Caderno de Erros</a>
-        </div></div>
-      </details>
-
-      <a className={active === "tutor" ? styles.active : ""} href="/contramestre">
-        <span className={styles.icon}>⚓</span><span>Contramestre</span>
-      </a>
-
-      <a className={active === "ranking" ? styles.active : ""} href="/ranking">
-        <span className={styles.icon}>★</span><span>Ranking</span>
-      </a>
-      <a href="/conquistas">
-        <span className={styles.icon}>✦</span><span>Conquistas</span>
-      </a>
-
-      <a className={active === "assinaturas" ? styles.active : ""} href="/minhas-assinaturas">
-        <span className={styles.icon}>♛</span><span>Minhas Assinaturas</span>
-      </a>
-
-      <a className={active === "offline" ? styles.active : ""} href="/offline">
-        <span className={styles.icon}>⇄</span><span>Modo Offline</span>
-      </a>
-
-      <a className={active === "suporte" ? styles.active : ""} href="/suporte">
-        <span className={styles.icon}>✉</span><span>Suporte</span>
-      </a>
-
-      <div className={styles.divider} />
-
-      <a href="/"><span className={styles.icon}>◈</span><span>Home</span></a>
     </nav>
   );
 }
-
 export default async function StudentHeader({ active = "" }) {
   const [admin, session] = await Promise.all([getAdmin(), getSession()]);
   let displayName = session?.email?.split("@")[0] || "Aluno";
@@ -156,9 +88,9 @@ export default async function StudentHeader({ active = "" }) {
       <div id="student-shell" className={styles.shellMarker} />
 
       <aside className={styles.sidebar}>
-        <a className={styles.logo} href="/area-do-aluno">
-          <img src="/estibordo/logos/estibordo-logo-header.png" alt="ESTIBORDO" />
-        </a>
+        <Link className={styles.logo} href="/area-do-aluno">
+          <Image src="/estibordo/logos/estibordo-logo-header.png" alt="ESTIBORDO" width={210} height={44} priority sizes="(max-width: 960px) 155px, 210px" />
+        </Link>
 
         <div className={styles.profileCard}>
           <div className={styles.avatar}>{displayName.slice(0, 1).toUpperCase()}</div>
@@ -171,11 +103,11 @@ export default async function StudentHeader({ active = "" }) {
 
         <Menu active={active} flashcardDecks={flashcardDecks} />
 
-        {admin && <a className={styles.adminLink} href="/admin">Administração</a>}
+        {admin && <Link className={styles.adminLink} href="/admin">Administração</Link>}
 
         <div className={styles.sidebarBottom}>
           <p>Algum problema com a plataforma?</p>
-          <a href="/suporte">Ajuda e Suporte</a>
+          <Link href="/suporte">Ajuda e Suporte</Link>
           <form action="/api/auth/logout" method="post">
             <button type="submit">↪ Sair da Conta</button>
           </form>
@@ -191,16 +123,16 @@ export default async function StudentHeader({ active = "" }) {
 
             <Menu active={active} flashcardDecks={flashcardDecks} />
 
-            {admin && <a className={styles.adminLink} href="/admin">Administração</a>}
+            {admin && <Link className={styles.adminLink} href="/admin">Administração</Link>}
 
             <form action="/api/auth/logout" method="post">
               <button className={styles.mobileLogout} type="submit">Sair da Conta</button>
             </form>
         </StudentMobileMenu>
 
-        <a className={styles.mobileLogo} href="/area-do-aluno">
-          <img src="/estibordo/logos/estibordo-logo-header.png" alt="ESTIBORDO" />
-        </a>
+        <Link className={styles.mobileLogo} href="/area-do-aluno">
+          <Image src="/estibordo/logos/estibordo-logo-header.png" alt="ESTIBORDO" width={210} height={44} priority sizes="(max-width: 960px) 155px, 210px" />
+        </Link>
 
         <form className={styles.search} action="/pesquisar" method="get">
           <span>⌕</span>
@@ -209,8 +141,8 @@ export default async function StudentHeader({ active = "" }) {
 
         <div className={styles.topActions}>
           <OfflineSyncStatus />
-          <a href="/minhas-assinaturas" title="Minhas Assinaturas">♛</a>
-          <a href="/perfil" title="Meu Perfil">{displayName.slice(0, 1).toUpperCase()}</a>
+          <Link href="/minhas-assinaturas" title="Minhas Assinaturas">♛</Link>
+          <Link href="/perfil" title="Meu Perfil">{displayName.slice(0, 1).toUpperCase()}</Link>
         </div>
       </header>
     </>

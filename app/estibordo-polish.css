@@ -95,3 +95,11 @@
  .authForm{padding:28px 22px}
 }
 @media(prefers-reduced-motion:reduce){:where(*,*::before,*::after){scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
+
+/* UX/UI audit 2026 — shared product design system */
+:root{--est-surface:#fff;--est-surface-subtle:#f7f9fb;--est-text-strong:#0b2233;--est-focus:#c51f2a;--est-space-1:4px;--est-space-2:8px;--est-space-3:12px;--est-space-4:16px;--est-space-5:24px;--est-space-6:32px;--est-radius-sm:8px;--est-radius-md:12px;--est-radius-lg:16px}
+:where(button,a,input,select,textarea){-webkit-tap-highlight-color:transparent}:where(button,a){touch-action:manipulation}:where(button,a,input,select,textarea):focus-visible{outline:3px solid rgba(197,31,42,.42);outline-offset:3px}:where(button,input,select,textarea){min-height:40px}:where(summary){cursor:pointer}:where(small){line-height:1.45}
+@media(max-width:760px){:where(button,a[class*="btn"],a[class*="button"],input,select){min-height:44px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+
+.routeSkeleton{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:42px 0 70px;min-height:70vh}.skeletonLine,.skeletonCard{background:linear-gradient(90deg,#e8eef2 25%,#f7f9fa 45%,#e8eef2 65%);background-size:300% 100%;animation:estSkeleton 1.35s ease-in-out infinite}.skeletonLine{height:12px;border-radius:999px;margin:10px 0}.skeletonEyebrow{width:110px;height:9px}.skeletonTitle{width:min(520px,75%);height:42px;border-radius:10px}.skeletonText{width:min(650px,90%)}.skeletonGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}.skeletonCard{height:150px;border-radius:16px;padding:20px;border:1px solid #e1e8ec}.skeletonCard .skeletonLine{background:#dce5ea;animation:none}.skeletonCardTitle{width:70%;height:20px}.skeletonShort{width:45%}@keyframes estSkeleton{0%{background-position:100% 0}100%{background-position:0 0}}@media(max-width:760px){.skeletonGrid{grid-template-columns:1fr}.routeSkeleton{padding-top:90px}.skeletonCard{height:110px}}

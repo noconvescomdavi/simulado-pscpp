@@ -66,10 +66,16 @@ export default function PwaRuntime() {
       };
 
       syncViewportHeight();
+      const syncVisualViewport=()=>{const vv=window.visualViewport;if(!vv)return;document.documentElement.style.setProperty("--visual-viewport-height",vv.height+"px");document.documentElement.style.setProperty("--keyboard-inset",Math.max(0,window.innerHeight-vv.height-vv.offsetTop)+"px")};
+      syncVisualViewport();
+      window.visualViewport?.addEventListener("resize",syncVisualViewport);
+      window.visualViewport?.addEventListener("scroll",syncVisualViewport);
       window.addEventListener("resize", syncViewportHeight);
       window.addEventListener("orientationchange", syncViewportHeight);
 
       window.__estibordoPwaCleanup = () => {
+        window.visualViewport?.removeEventListener("resize",syncVisualViewport);
+        window.visualViewport?.removeEventListener("scroll",syncVisualViewport);
         window.removeEventListener("resize", syncViewportHeight);
         window.removeEventListener("orientationchange", syncViewportHeight);
         window.removeEventListener("online", onOnline);
