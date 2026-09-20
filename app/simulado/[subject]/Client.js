@@ -213,7 +213,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
     setError("");
     try {
       if(!navigator.onLine){
-        const local=await createOfflineExam({subject,count:100,filters,title,planTask});
+        const local=await createOfflineExam({subject,count:subject==="simulado-pscpp"?70:100,filters,title,planTask});
         const exam=await hydrateOfflineExam(local);
         setState({state:"in_progress",exam,offline:true});setIndex(0);setAnswer(null);setPendingResult(null);questionStartedAt.current=Date.now();return;
       }
@@ -242,7 +242,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
     } catch(error) {
       if(!navigator.onLine || error instanceof TypeError){
         try{
-          const local=await createOfflineExam({subject,count:100,filters,title,planTask});
+          const local=await createOfflineExam({subject,count:subject==="simulado-pscpp"?70:100,filters,title,planTask});
           const exam=await hydrateOfflineExam(local);
           setState({state:"in_progress",exam,offline:true});setIndex(0);setAnswer(null);setPendingResult(null);questionStartedAt.current=Date.now();
         }catch(fallback){setError(fallback.message||"Prepare o conteúdo offline antes de emitir um simulado sem internet.");}
@@ -401,7 +401,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
       <main className={styles.page}>
         <span>SIMULADO</span>
         <h1>{title}</h1>
-        <p>{isPscpp?"100 questões compostas por blueprint controlado para reproduzir o perfil do PSCPP.":"Até 100 questões aleatórias. Você pode usar todo o banco ou restringir o sorteio por obra, capítulo, assunto e termo."}</p>
+        <p>{isPscpp?"70 questões compostas por blueprint estatístico baseado nas provas oficiais e ajustado ao programa atual.":"Até 100 questões aleatórias. Você pode usar todo o banco ou restringir o sorteio por obra, capítulo, assunto e termo."}</p>
         <p>Cada resposta é salva no servidor e não pode ser alterada depois do salvamento.</p>
         {!isPscpp && <QuestionFilterControls
           facets={facets}
