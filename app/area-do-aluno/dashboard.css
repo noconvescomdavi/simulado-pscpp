@@ -41,3 +41,15 @@
 
 .commandDeck .commandPrimary{display:inline-flex;align-items:center;justify-content:center;margin-top:14px;background:#c8102e;color:#fff;border:1px solid #d72b45;border-radius:9px;padding:11px 15px;font-size:10px;font-weight:900;box-shadow:0 8px 22px rgba(200,16,46,.2)}
 @media(max-width:650px){.commandDeck .commandPrimary{width:100%;min-height:44px}.studentFocusGrid{gap:9px}.studentFocusGrid article{min-height:0}.quickGrid{gap:9px}}
+
+
+.titleMetricsPanel{margin-top:22px;background:#fff;border:1px solid #dce5eb;border-radius:18px;padding:22px;box-shadow:0 12px 34px rgba(13,27,42,.06)}
+.titleMetricsTableWrap{overflow-x:auto}
+.titleMetricsTable{width:100%;border-collapse:collapse;font-size:13px;color:#31495d}
+.titleMetricsTable th,.titleMetricsTable td{padding:13px 14px;border-bottom:1px solid #e6edf1;text-align:left}
+.titleMetricsTable th{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#647585;background:#f8fafb}
+.titleMetricsTable td strong{font-size:18px;color:#17334a}
+.titleBreakdown{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
+.titleBreakdown span{display:flex;justify-content:space-between;gap:12px;padding:11px 12px;border:1px solid #e1e9ee;border-radius:10px;background:#f8fafb;font-size:12px;font-weight:750;color:#52697a}
+.titleBreakdown b{color:#17334a;white-space:nowrap}
+@media(max-width:760px){.titleBreakdown{grid-template-columns:1fr}.titleMetricsPanel{padding:16px}}
