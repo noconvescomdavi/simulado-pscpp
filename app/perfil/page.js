@@ -28,9 +28,9 @@ export default async function Page({searchParams}){
         <div className={styles.professionHead}>
           <span>ATUAÇÃO PROFISSIONAL</span>
           <strong>{p.experience_level||"Não informado"}</strong>
-          <small>{p.maritime_role==="aquaviario"?"Marítimo/Aquaviário":p.maritime_role==="nao_aquaviario"?"Não Aquaviário":p.maritime_role==="outros"?"Outros":"Atuação não informada"}</small>
+          <small>{p.maritime_role==="aquaviario"?"Marítimo/Aquaviário":p.maritime_role==="militar_mb"?"Militar / Ex-militar da MB":p.maritime_role==="nao_aquaviario"?"Não Aquaviário":p.maritime_role==="outros"?"Outros":"Atuação não informada"}</small>
         </div>
-        <ProfessionalFields initialType={p.maritime_role||""} initialCategory={p.experience_level||""}/>
+        <ProfessionalFields initialType={p.maritime_role||""} initialCategory={p.experience_level||""} initialEmbarkationDays={p.embarkation_days||0} initialCommandDays={p.command_days||0}/>
       </div>
       <div className={styles.actions}><button>Salvar meus dados</button></div>
     </form>

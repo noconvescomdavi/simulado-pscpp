@@ -149,6 +149,24 @@ export default async function Area(){
           </div>
         </section>
 
+        <section className="titleMetricsPanel">
+          <div className="sectionTitle"><div><h2>Métricas PSCPP</h2><p>Indicadores calculados separadamente para simulados e Prova de Títulos.</p></div></div>
+          <div className="titleMetricsTableWrap">
+            <table className="titleMetricsTable">
+              <thead><tr><th>Métrica</th><th>Resultado</th><th>Base</th></tr></thead>
+              <tbody>
+                <tr><td>Média de notas dos simulados</td><td><strong>{Number(performance.overall.exam_average||0).toLocaleString("pt-BR",{minimumFractionDigits:1,maximumFractionDigits:1})}%</strong></td><td>Somente simulados concluídos</td></tr>
+                <tr><td>Pontuação da Prova de Títulos</td><td><strong>{Number(performance.overall.title_score||0).toLocaleString("pt-BR",{minimumFractionDigits:1,maximumFractionDigits:1})} / 10</strong></td><td>Edital PSCPP 2012</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="titleBreakdown">
+            <span>Tempo de embarque <b>{Number(performance.overall.title_score_breakdown?.embarkation||0).toFixed(1)} / 3</b></span>
+            <span>Categoria / posto <b>{Number(performance.overall.title_score_breakdown?.category||0).toFixed(1)} / 2</b></span>
+            <span>Comando / praticagem <b>{Number(performance.overall.title_score_breakdown?.command||0).toFixed(1)} / 5</b></span>
+          </div>
+        </section>
+
         <section className="readinessPanel">
           <div className="readinessScore">
             <span>ÍNDICE DE PRONTIDÃO ESTIBORDO</span>
