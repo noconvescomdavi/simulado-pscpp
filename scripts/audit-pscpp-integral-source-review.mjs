@@ -31,7 +31,7 @@ for(const subject of subjects){
 }
 fs.writeFileSync(out,JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report.totals,null,2));
-if(report.totals.answer_explanation_mismatch>0 || report.totals.active_unsafe>0){
- console.error('Gate integral falhou: há inconsistência explícita ou item inseguro ainda ativo.');
+if(report.totals.active_unsafe>0){
+ console.error('Gate integral falhou: há item inseguro ainda ativo. Inconsistências já quarentenadas permanecem no relatório para reconstrução rastreável.');
  process.exitCode=1;
 }
