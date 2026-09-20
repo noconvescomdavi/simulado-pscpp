@@ -15,16 +15,22 @@ const GROUPS=[
 ["6º GRUPO — MANOBRA E DOCAGEM",["AGENTE DE MANOBRA E DOCAGEM — AMD"]]
 ];
 const AMADORES=["ARRAIS AMADOR — ARA","MESTRE AMADOR — MTA","CAPITÃO AMADOR — CPA"];
+const MB_POSTOS=[
+  "OFICIAL GENERAL / SUPERIOR — MB",
+  "CAPITÃO-TENENTE — MB",
+  "1º TENENTE — MB",
+  "2º TENENTE — MB"
+];
 
-export default function ProfessionalFields({initialType="",initialCategory=""}){
- const normalized=["aquaviario","nao_aquaviario","outros"].includes(initialType)?initialType:"";
+export default function ProfessionalFields({initialType="",initialCategory="",initialEmbarkationDays=0,initialCommandDays=0}){
+ const normalized=["aquaviario","militar_mb","nao_aquaviario","outros"].includes(initialType)?initialType:"";
  const [type,setType]=useState(normalized);
  return <div className={styles.professionGrid}>
    <label>Atuação
      <select name="occupation_type" value={type} onChange={e=>setType(e.target.value)}>
        <option value="">Prefiro não informar</option>
        <option value="aquaviario">Marítimo/Aquaviário</option>
-       <option value="nao_aquaviario">Não Aquaviário</option>
+       <option value="militar_mb">Militar / Ex-militar da MB</option>\n       <option value="nao_aquaviario">Não Aquaviário</option>
        <option value="outros">Outros</option>
      </select>
    </label>
@@ -32,6 +38,12 @@ export default function ProfessionalFields({initialType="",initialCategory=""}){
      <select name="occupation_category" defaultValue={initialCategory}>
        <option value="">Selecione sua categoria</option>
        {GROUPS.map(([group,items])=><optgroup label={group} key={group}>{items.map(item=><option key={item} value={item}>{item}</option>)}</optgroup>)}
+     </select>
+   </label>}
+   {type==="militar_mb"&&<label>Posto / Graduação
+     <select name="occupation_category" defaultValue={initialCategory}>
+       <option value="">Selecione o posto ou graduação</option>
+       {MB_POSTOS.map(item=><option key={item} value={item}>{item}</option>)}
      </select>
    </label>}
    {type==="nao_aquaviario"&&<label>Habilitação
