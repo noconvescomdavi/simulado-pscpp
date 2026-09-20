@@ -42,7 +42,20 @@ jobs:
         run: npm run test:question-structure
 
       - name: Audit question semantics and terminology
+        id: semantic_audit
+        continue-on-error: true
         run: npm run audit:questions:semantic
+
+      - name: Upload semantic audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: question-semantic-audit
+          path: reports/question-semantic-audit.json
+
+      - name: Enforce semantic audit
+        if: steps.semantic_audit.outcome == 'failure'
+        run: exit 1
 
       - name: Build
         env:
