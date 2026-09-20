@@ -70,11 +70,13 @@ async function syncExamSnapshot(userId,payload){
 
     const started=parseDate(payload.started_at);
     const expires=parseDate(payload.expires_at,new Date(started.getTime()+240*60*1000));
+    const paused=payload.status==="paused";
+    const remainingSeconds=paused?Math.max(0,Math.min(14400,Math.trunc(Number(payload.remaining_seconds)||0))):null;
     if(!existing.rowCount){
       await client.query(
-        `insert into exam_sessions(id,user_id,subject,status,question_ids,total_questions,current_index,answered_count,correct_count,started_at,expires_at,created_at,updated_at)
-         values($1,$2,$3,'in_progress',$4::jsonb,$5,0,0,0,$6,$7,now(),now())`,
-        [id,userId,subject,JSON.stringify(ids),ids.length,started.toISOString(),expires.toISOString()]
+        `insert into exam_sessions(id,user_id,subject,status,question_ids,total_questions,current_index,answered_count,correct_count,started_at,expires_at,paused_at,remaining_seconds,created_at,updated_at)
+         values($1,$2,$3,$4,$5::jsonb,$6,0,0,0,$7,$8,$9,$10,now(),now())`,
+        [id,userId,subject,paused?"paused":"in_progress",JSON.stringify(ids),ids.length,started.toISOString(),expires.toISOString(),paused?parseDate(payload.paused_at).toISOString():null,remainingSeconds]
       );
     }else if(existing.rows[0].subject!==subject){
       throw new Error("Matéria do simulado offline não corresponde à sessão existente.");
@@ -145,15 +147,18 @@ async function syncExamSnapshot(userId,payload){
       await client.query("update question_answers set attempt_id=$1 where session_id=$2 and attempt_id is null",[attemptId,id]);
     }
 
-    const status=wantsFinish?(payload.status==="expired"?"expired":"completed"):"in_progress";
+    const status=wantsFinish?(payload.status==="expired"?"expired":"completed"):(paused?"paused":"in_progress");
     await client.query(
       `update exam_sessions set
          status=$2,current_index=$3,answered_count=$3,correct_count=$4,
-         finished_at=case when $2='in_progress' then null else coalesce(finished_at,$5::timestamptz,now()) end,
-         finish_reason=case when $2='in_progress' then null else coalesce($6,finish_reason,'manual') end,
+         finished_at=case when $2 in ('in_progress','paused') then null else coalesce(finished_at,$5::timestamptz,now()) end,
+         finish_reason=case when $2 in ('in_progress','paused') then null else coalesce($6,finish_reason,'manual') end,
+         paused_at=case when $2='paused' then coalesce($8::timestamptz,paused_at,now()) else null end,
+         remaining_seconds=case when $2='paused' then $9 else null end,
+         expires_at=case when $2='in_progress' and status='paused' then now()+($10::int*interval '1 second') else expires_at end,
          attempt_id=coalesce(attempt_id,$7),updated_at=now()
        where id=$1`,
-      [id,status,answered,correct,payload.finished_at||null,cleanId(payload.finish_reason,24)||null,attemptId]
+      [id,status,answered,correct,payload.finished_at||null,cleanId(payload.finish_reason,24)||null,attemptId,payload.paused_at||null,remainingSeconds,Math.max(0,Math.min(14400,Math.trunc(Number(existing.rows[0]?.remaining_seconds)||Number(payload.remaining_seconds)||0)))]
     );
     return {session_id:id,answered,correct,status,attempt_id:attemptId};
   });
