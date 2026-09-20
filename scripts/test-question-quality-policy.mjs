@@ -6,5 +6,6 @@ assert.equal(isQuestionActive({ id:"OFF-1", active:false }), false);
 assert.equal(isQuestionActive({ id:"OFF-2", status:"quarantined" }), false);
 assert.equal(isQuestionActive({ id:"LEG-1", provenance:{method:"pscpp-style-upgrade-v3"} }), false);
 assert.equal(isQuestionActive({ id:"LEG-2", tags:["expansao-formatos-v1"] }), false);
+assert.equal(isQuestionActive({ id:"LEG-3", tags:["cobertura-v2"] }), false);
 assert.match(questionQualityState({ provenance:{method:"pscpp-bibliographic-v6"} }).reason, /^legacy-generator:/);
 console.log("Question quality policy: OK");
