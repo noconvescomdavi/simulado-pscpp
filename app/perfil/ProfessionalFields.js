@@ -30,7 +30,8 @@ export default function ProfessionalFields({initialType="",initialCategory="",in
      <select name="occupation_type" value={type} onChange={e=>setType(e.target.value)}>
        <option value="">Prefiro não informar</option>
        <option value="aquaviario">Marítimo/Aquaviário</option>
-       <option value="militar_mb">Militar / Ex-militar da MB</option>\n       <option value="nao_aquaviario">Não Aquaviário</option>
+       <option value="militar_mb">Militar / Ex-militar da MB</option>
+       <option value="nao_aquaviario">Não Aquaviário</option>
        <option value="outros">Outros</option>
      </select>
    </label>
@@ -55,5 +56,11 @@ export default function ProfessionalFields({initialType="",initialCategory="",in
    {type==="outros"&&<label>Profissão
      <input name="occupation_other" defaultValue={initialCategory} maxLength="120" placeholder="Informe sua profissão"/>
    </label>}
+   <label>Tempo de embarque (dias)
+     <input type="number" min="0" step="1" name="embarkation_days" defaultValue={initialEmbarkationDays||0} inputMode="numeric"/>
+   </label>
+   <label>Tempo de comando / praticagem (dias)
+     <input type="number" min="0" step="1" name="command_days" defaultValue={initialCommandDays||0} inputMode="numeric"/>
+   </label>
  </div>;
 }
