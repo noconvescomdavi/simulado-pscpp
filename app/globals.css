@@ -1,6 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
-
 *{box-sizing:border-box}
 :root{
   --navy:#0D1B2A;
@@ -12,11 +10,11 @@
   --line:rgba(255,255,255,.12);
 }
 html{background:var(--navy);scroll-behavior:smooth}
-body{margin:0;color:#0d1b2a;font-family:"Montserrat",Arial,sans-serif;background:var(--off)}
+body{margin:0;color:#0d1b2a;font-family:var(--font-montserrat),Arial,sans-serif;background:var(--off)}
 a{text-decoration:none;color:inherit}
 button,input{font:inherit}
 img{display:block;max-width:100%}
-h1,h2,h3,h4,.btn,.brand,.eyebrow{font-family:"Poppins",Arial,sans-serif}
+h1,h2,h3,h4,.btn,.brand,.eyebrow{font-family:var(--font-poppins),Arial,sans-serif}
 
 /* HEADER */
 .nav{height:78px;background:rgba(7,20,33,.98);color:#fff;position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(13px)}
