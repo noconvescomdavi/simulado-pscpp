@@ -16,7 +16,7 @@ const strong=calculateMasteryScore({
 assert.ok(weak.mastery_score>=0&&weak.mastery_score<=100,"Mastery fraco fora da faixa");
 assert.ok(strong.mastery_score>=0&&strong.mastery_score<=100,"Mastery forte fora da faixa");
 assert.ok(strong.mastery_score>weak.mastery_score,"Mais acertos/estabilidade devem elevar mastery");
-assert.equal(strong.confidence_score,100,"60 respostas devem saturar confiança em 100");
+assert.equal(strong.confidence_score,77.5,"60 respostas devem refletir a confiança conservadora sqrt(n/100); 100% exige ~100 respostas");
 
 const again=calculateReviewSchedule("again",12);
 const hard=calculateReviewSchedule("hard",12);
