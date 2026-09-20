@@ -8,6 +8,7 @@ on:
       - 'data/questions/*.json'
       - 'lib/question-banks.js'
       - 'lib/question-quality-policy.js'
+      - 'lib/learning-algorithms.js'
       - 'scripts/**'
       - 'package.json'
   push:
@@ -15,6 +16,9 @@ on:
       - feature/auditoria-integral-banco-normal-pscpp
     paths:
       - 'data/questions/*.json'
+      - 'lib/question-banks.js'
+      - 'lib/question-quality-policy.js'
+      - 'lib/learning-algorithms.js'
       - 'scripts/audit-question-quality-v2.mjs'
       - 'scripts/audit-pscpp-integral-source-review.mjs'
       - 'scripts/validate-question-banks.mjs'
@@ -36,6 +40,8 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      - name: Learning algorithm tests
+        run: npm run test:learning
       - name: Structural question validation
         run: npm run validate:questions
       - name: Semantic quality audit
