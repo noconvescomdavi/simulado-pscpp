@@ -18,5 +18,5 @@ export default async function Page({params,searchParams}){
   if(!n)notFound();
 
   const planTask={plan_date:String(q?.plan_date||""),task_key:String(q?.task_key||""),task_type:String(q?.task_type||"questions"),subject_slug:String(q?.subject_slug||"")};
-  return <><StudentHeader active="conteudos"/><Client notebook={n} planTask={planTask}/></>;
+  return <><StudentHeader active="cadernos"/><Client notebook={n} planTask={planTask}/></>;
 }
