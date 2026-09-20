@@ -1,0 +1,4003 @@
+{
+  "title": "Banco de Questões — Bloco PSCPP Caderno 001",
+  "block": "001",
+  "status": "approved",
+  "metrics": {
+    "total": 70,
+    "subjects": {
+      "manobrabilidade": 13,
+      "arte-naval": 17,
+      "navegacao-aguas-restritas": 9,
+      "legislacao-regulamentacao": 16,
+      "meteorologia-oceanografia": 6,
+      "comunicacoes": 4,
+      "conhecimentos-gerais": 5
+    },
+    "formats": {
+      "direct_or_situation": 43,
+      "assertions": 21,
+      "fill": 4,
+      "association": 2
+    }
+  },
+  "questions": [
+    {
+      "id": "MAN-B001-01",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Pressão dinâmica",
+      "topic_code": "MAN.B001.01",
+      "topic": "Pressão dinâmica",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Um navio entra em uma área onde a velocidade relativa da água junto ao casco dobra, mantendo-se a densidade. Desprezadas mudanças de geometria, qual tendência decorre da relação apresentada por Crenshaw para a pressão dinâmica?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Quadruplica."
+        },
+        {
+          "key": "B",
+          "text": "Permanece constante."
+        },
+        {
+          "key": "C",
+          "text": "Dobra."
+        },
+        {
+          "key": "D",
+          "text": "Cai à metade."
+        },
+        {
+          "key": "E",
+          "text": "Aumenta oito vezes."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A pressão dinâmica é proporcional ao quadrado da velocidade; dobrar V produz aproximadamente quatro vezes a pressão dinâmica.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "MAN-B001-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+        "locator": "Chapter 2 – Forces Affecting the Ship"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "pressão dinâmica"
+      ]
+    },
+    {
+      "id": "MAN-B001-02",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Forças controláveis",
+      "topic_code": "MAN.B001.02",
+      "topic": "Forças controláveis",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 2,
+      "question": "Qual conjunto contém apenas forças que, segundo Crenshaw, podem ser diretamente controladas a bordo durante a manobra?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Vento, corrente e leme."
+        },
+        {
+          "key": "B",
+          "text": "Propulsor, leme e espias."
+        },
+        {
+          "key": "C",
+          "text": "Corrente, aparelho de fundear e vento."
+        },
+        {
+          "key": "D",
+          "text": "Vento, propulsor e corrente."
+        },
+        {
+          "key": "E",
+          "text": "Corrente de maré, leme e vento."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Propulsor, leme, espias e aparelho de fundear são controláveis; vento e corrente são externos.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "MAN-B001-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+        "locator": "Chapter 2 – Forces Affecting the Ship"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "forças controláveis"
+      ]
+    },
+    {
+      "id": "MAN-B001-03",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Leme e corrente do hélice",
+      "topic_code": "MAN.B001.03",
+      "topic": "Leme e corrente do hélice",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Um navio praticamente sem seguimento recebe máquina adiante com o leme diretamente à ré do propulsor. Por que pode surgir força significativa no leme antes de o navio ganhar velocidade?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Porque a pressão estática aumenta uniformemente."
+        },
+        {
+          "key": "B",
+          "text": "Porque o casco deixa de produzir resistência."
+        },
+        {
+          "key": "C",
+          "text": "Porque a corrente do hélice aumenta a velocidade da água sobre o leme."
+        },
+        {
+          "key": "D",
+          "text": "Porque o leme passa a atuar como propulsor axial."
+        },
+        {
+          "key": "E",
+          "text": "Porque a densidade da água aumenta junto à popa."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A corrente do hélice pode produzir elevada velocidade relativa no leme, aumentando sua força mesmo sem seguimento apreciável.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "MAN-B001-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+        "locator": "Chapter 2 – Forces Affecting the Ship"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "leme e corrente do hélice"
+      ]
+    },
+    {
+      "id": "MAN-B001-04",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Hidrofólios",
+      "topic_code": "MAN.B001.04",
+      "topic": "Hidrofólios",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 2,
+      "question": "No tratamento de hidrofólios, a sustentação (lift) é definida como a componente da força de reação",
+      "options": [
+        {
+          "key": "A",
+          "text": "paralela ao fluxo livre relativo."
+        },
+        {
+          "key": "B",
+          "text": "sempre oposta ao empuxo do propulsor."
+        },
+        {
+          "key": "C",
+          "text": "paralela ao eixo longitudinal do navio em qualquer condição."
+        },
+        {
+          "key": "D",
+          "text": "perpendicular ao fluxo livre relativo."
+        },
+        {
+          "key": "E",
+          "text": "normal à superfície livre, independentemente do ângulo de ataque."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Lift é a componente perpendicular ao fluxo livre relativo; drag é a componente paralela.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "MAN-B001-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+        "locator": "Chapter 2 – Forces Affecting the Ship"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "hidrofólios"
+      ]
+    },
+    {
+      "id": "MAN-B001-05",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Pressão e movimento",
+      "topic_code": "MAN.B001.05",
+      "topic": "Pressão e movimento",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Analise as afirmativas sobre pressão e movimento na água e assinale a combinação correta.",
+      "assertions": [
+        "I) Em uma dada profundidade no mar, a pressão estática em repouso tende a se equilibrar.",
+        "II) O movimento da água introduz componente de pressão dinâmica.",
+        "III) A pressão dinâmica cresce com o quadrado da velocidade relativa.",
+        "IV) A água do mar é tratada como altamente compressível para explicar os efeitos de manobra.",
+        "V) Diferenças de pressão estão associadas às forças hidrodinâmicas relevantes à manobra."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II, III e V."
+        },
+        {
+          "key": "D",
+          "text": "Todas."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II, III e V."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "I, II, III e V decorrem do tratamento de Crenshaw; IV é falsa.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "MAN-B001-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+        "locator": "Chapter 2 – Forces Affecting the Ship"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "pressão e movimento"
+      ]
+    },
+    {
+      "id": "MAN-B001-06",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Separação e cavitação",
+      "topic_code": "MAN.B001.06",
+      "topic": "Separação e cavitação",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Sobre separação do escoamento e cavitação, assinale a opção correta.",
+      "assertions": [
+        "I) Separação pode alterar a distribuição de pressão e as forças resultantes.",
+        "II) Cavitação pode ocorrer quando a pressão local cai suficientemente para ocorrer vaporização.",
+        "III) Separação e cavitação são nomes equivalentes para o mesmo fenômeno.",
+        "IV) Ambos podem ocorrer em regiões de escoamento muito acelerado, como junto a hélices.",
+        "V) Cavitação exige aumento da pressão estática local acima da pressão ambiente."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II, III e V."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III, IV e V."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Separação e cavitação são fenômenos distintos; cavitação envolve queda de pressão até condição de vaporização.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "MAN-B001-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+        "locator": "Chapter 2 – Forces Affecting the Ship"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "separação e cavitação"
+      ]
+    },
+    {
+      "id": "MAN-B001-07",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Casco como hidrofólio",
+      "topic_code": "MAN.B001.07",
+      "topic": "Casco como hidrofólio",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Considere o comportamento do casco inclinado em relação ao escoamento.",
+      "assertions": [
+        "I) O casco pode desenvolver força lateral quando apresenta ângulo em relação ao fluxo.",
+        "II) Pode surgir momento de guinada tendendo a realinhar o navio com o escoamento.",
+        "III) Em curva estabilizada, há equilíbrio entre momentos hidrodinâmicos relevantes.",
+        "IV) O casco inclinado ao fluxo necessariamente aumenta indefinidamente a razão de guinada."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O casco pode desenvolver força lateral e momento de guinada restaurador; a proposição IV inverte essa tendência.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "MAN-B001-07",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+        "locator": "Chapter 2 – Forces Affecting the Ship"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "casco como hidrofólio"
+      ]
+    },
+    {
+      "id": "MAN-B001-08",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Pressão dinâmica",
+      "topic_code": "MAN.B001.08",
+      "topic": "Pressão dinâmica",
+      "difficulty": "Médio",
+      "style": "Completar",
+      "pscpp_format": "fill",
+      "cognitive_level": 2,
+      "question": "Complete corretamente: mantida a densidade, a pressão dinâmica é proporcional ao ______ da velocidade relativa.",
+      "options": [
+        {
+          "key": "A",
+          "text": "inverso"
+        },
+        {
+          "key": "B",
+          "text": "cubo"
+        },
+        {
+          "key": "C",
+          "text": "quadrado"
+        },
+        {
+          "key": "D",
+          "text": "logaritmo"
+        },
+        {
+          "key": "E",
+          "text": "valor absoluto sem expoente"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A expressão apresentada relaciona pressão dinâmica a V².",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "MAN-B001-08",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+        "locator": "Chapter 2 – Forces Affecting the Ship"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "pressão dinâmica"
+      ]
+    },
+    {
+      "id": "MAN-B001-09",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Vento e corrente",
+      "topic_code": "MAN.B001.09",
+      "topic": "Vento e corrente",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 3,
+      "question": "Um oficial compara qualitativamente vento e corrente como agentes externos. Qual raciocínio é tecnicamente adequado?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A densidade do ar torna qualquer vento mais intenso que qualquer corrente."
+        },
+        {
+          "key": "B",
+          "text": "Vento atua apenas acima de 30 nós."
+        },
+        {
+          "key": "C",
+          "text": "Corrente não produz diferença de pressão."
+        },
+        {
+          "key": "D",
+          "text": "A água é muito mais densa que o ar, mas velocidades de vento muito maiores podem produzir forças dinâmicas relevantes."
+        },
+        {
+          "key": "E",
+          "text": "A força de corrente independe da velocidade relativa."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A água é muito mais densa, porém a dependência com V² torna ventos fortes operacionalmente relevantes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "MAN-B001-09",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+        "locator": "Chapter 2 – Forces Affecting the Ship"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "vento e corrente"
+      ]
+    },
+    {
+      "id": "MAN-B001-10",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Ângulo de ataque",
+      "topic_code": "MAN.B001.10",
+      "topic": "Ângulo de ataque",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 2,
+      "question": "O ângulo de ataque de um hidrofólio é o ângulo entre",
+      "options": [
+        {
+          "key": "A",
+          "text": "a quilha e a superfície livre."
+        },
+        {
+          "key": "B",
+          "text": "a resultante lift-drag e a vertical."
+        },
+        {
+          "key": "C",
+          "text": "o eixo do propulsor e a linha de centro."
+        },
+        {
+          "key": "D",
+          "text": "o leme e o plano diametral, sempre."
+        },
+        {
+          "key": "E",
+          "text": "o hidrofólio e o fluxo livre relativo."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Crenshaw define AOA em relação ao fluxo livre relativo.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "MAN-B001-10",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+        "locator": "Chapter 2 – Forces Affecting the Ship"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "ângulo de ataque"
+      ]
+    },
+    {
+      "id": "MAN-B001-11",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Força no leme",
+      "topic_code": "MAN.B001.11",
+      "topic": "Força no leme",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Sobre a força produzida pelo leme, analise.",
+      "assertions": [
+        "I) A área do leme influencia a força hidrodinâmica.",
+        "II) O ângulo de ataque influencia a força produzida.",
+        "III) A velocidade da água sobre o leme pode diferir da velocidade do navio.",
+        "IV) A força no leme é independente da velocidade relativa da água."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Área, ângulo de ataque e pressão dinâmica influenciam a força; a velocidade local no leme pode diferir da velocidade do navio.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "MAN-B001-11",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+        "locator": "Chapter 2 – Forces Affecting the Ship"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "força no leme"
+      ]
+    },
+    {
+      "id": "MAN-B001-12",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Máquina a ré e governo",
+      "topic_code": "MAN.B001.12",
+      "topic": "Máquina a ré e governo",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Um navio ainda sem seguimento a ré recebe máquina atrás. Segundo o mecanismo descrito por Crenshaw, por que a ação inicial do leme pode ser limitada?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Porque o leme deixa de estar imerso."
+        },
+        {
+          "key": "B",
+          "text": "Porque a corrente sobre o leme pode ser pequena até existir seguimento a ré apreciável."
+        },
+        {
+          "key": "C",
+          "text": "Porque o leme fica mecanicamente travado."
+        },
+        {
+          "key": "D",
+          "text": "Porque a água perde densidade na popa."
+        },
+        {
+          "key": "E",
+          "text": "Porque a pressão dinâmica é máxima com velocidade zero."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Com máquina atrás, pode não haver corrente eficaz no leme até o navio adquirir sternway.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "MAN-B001-12",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+        "locator": "Chapter 2 – Forces Affecting the Ship"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "máquina a ré e governo"
+      ]
+    },
+    {
+      "id": "MAN-B001-13",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "Resistência e equilíbrio",
+      "topic_code": "MAN.B001.13",
+      "topic": "Resistência e equilíbrio",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 2,
+      "question": "Sob uma força propulsiva constante, a velocidade tende a estabilizar quando",
+      "options": [
+        {
+          "key": "A",
+          "text": "a resistência se torna nula."
+        },
+        {
+          "key": "B",
+          "text": "a pressão dinâmica desaparece."
+        },
+        {
+          "key": "C",
+          "text": "a resistência equilibra a força aplicada."
+        },
+        {
+          "key": "D",
+          "text": "o navio atinge necessariamente a velocidade de projeto."
+        },
+        {
+          "key": "E",
+          "text": "o leme fica a meio."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A aceleração cessa quando a resistência total equilibra a força aplicada.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "MAN-B001-13",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+        "locator": "Chapter 2 – Forces Affecting the Ship"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "resistência e equilíbrio"
+      ]
+    },
+    {
+      "id": "ANV-B001-01",
+      "subject": "II — Arte Naval",
+      "module": "Squat",
+      "topic_code": "ANV.B001.01",
+      "topic": "Squat",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 3,
+      "question": "Um navio aumenta a velocidade em canal raso e observa redução da folga sob a quilha associada a sinkage e alteração de trim. O fenômeno é",
+      "options": [
+        {
+          "key": "A",
+          "text": "bank cushion."
+        },
+        {
+          "key": "B",
+          "text": "transfer."
+        },
+        {
+          "key": "C",
+          "text": "advance."
+        },
+        {
+          "key": "D",
+          "text": "squat."
+        },
+        {
+          "key": "E",
+          "text": "yaw checking."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Squat combina sinkage e trim dinâmico em movimento.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "macelrevey",
+        "chapter_id": "macelrevey::ch2",
+        "topic_id": "ANV-B001-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "MacELREVEY — Shiphandling for the Mariner, 4ª ed.",
+        "locator": "Chapter 2 – Shiphandling in a Channel"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "squat"
+      ]
+    },
+    {
+      "id": "ANV-B001-02",
+      "subject": "II — Arte Naval",
+      "module": "Bank effect",
+      "topic_code": "ANV.B001.02",
+      "topic": "Bank effect",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Ao navegar muito próximo de uma margem, o navio apresenta pressão elevada na região de proa junto à margem e sucção na região de popa. O resultado típico é",
+      "options": [
+        {
+          "key": "A",
+          "text": "atração da proa e afastamento da popa."
+        },
+        {
+          "key": "B",
+          "text": "perda total do efeito do leme."
+        },
+        {
+          "key": "C",
+          "text": "ausência de momento de guinada."
+        },
+        {
+          "key": "D",
+          "text": "redução automática do squat."
+        },
+        {
+          "key": "E",
+          "text": "afastamento da proa e atração da popa."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Bank cushion tende a afastar a proa e bank suction tende a atrair a popa.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "macelrevey",
+        "chapter_id": "macelrevey::ch2",
+        "topic_id": "ANV-B001-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "MacELREVEY — Shiphandling for the Mariner, 4ª ed.",
+        "locator": "Chapter 2 – Shiphandling in a Channel"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "bank effect"
+      ]
+    },
+    {
+      "id": "ANV-B001-03",
+      "subject": "II — Arte Naval",
+      "module": "Planejamento de canal",
+      "topic_code": "ANV.B001.03",
+      "topic": "Planejamento de canal",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Em Shiphandling for the Mariner, a recomendação central antes de uma manobra em canal restrito é",
+      "options": [
+        {
+          "key": "A",
+          "text": "planejar antecipadamente considerando corrente, margens, profundidade e tráfego."
+        },
+        {
+          "key": "B",
+          "text": "improvisar a curva conforme a resposta do navio."
+        },
+        {
+          "key": "C",
+          "text": "manter sempre velocidade máxima de manobra."
+        },
+        {
+          "key": "D",
+          "text": "desconsiderar o trim se houver prático."
+        },
+        {
+          "key": "E",
+          "text": "usar somente referências eletrônicas."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O capítulo enfatiza planejamento prévio e integração das condições locais.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "macelrevey",
+        "chapter_id": "macelrevey::ch2",
+        "topic_id": "ANV-B001-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "MacELREVEY — Shiphandling for the Mariner, 4ª ed.",
+        "locator": "Chapter 2 – Shiphandling in a Channel"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "planejamento de canal"
+      ]
+    },
+    {
+      "id": "ANV-B001-04",
+      "subject": "II — Arte Naval",
+      "module": "Encontro entre navios",
+      "topic_code": "ANV.B001.04",
+      "topic": "Encontro entre navios",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Durante encontro com outro navio em canal estreito, qual medida preserva melhor margem de controle?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Aumentar ao máximo a velocidade."
+        },
+        {
+          "key": "B",
+          "text": "Reduzir a velocidade e conservar reserva de máquina para reforçar o governo se necessário."
+        },
+        {
+          "key": "C",
+          "text": "Parar a máquina em todos os casos."
+        },
+        {
+          "key": "D",
+          "text": "Aproximar-se da margem para ampliar a sucção."
+        },
+        {
+          "key": "E",
+          "text": "Usar máquina a ré durante todo o encontro."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Velocidade moderada reduz interação e mantém reserva de potência/governo.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "macelrevey",
+        "chapter_id": "macelrevey::ch2",
+        "topic_id": "ANV-B001-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "MacELREVEY — Shiphandling for the Mariner, 4ª ed.",
+        "locator": "Chapter 2 – Shiphandling in a Channel"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "encontro entre navios"
+      ]
+    },
+    {
+      "id": "ANV-B001-05",
+      "subject": "II — Arte Naval",
+      "module": "Ultrapassagem",
+      "topic_code": "ANV.B001.05",
+      "topic": "Ultrapassagem",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Uma ultrapassagem em canal estreito exige atenção especial porque",
+      "options": [
+        {
+          "key": "A",
+          "text": "a interação hidrodinâmica desaparece quando os navios têm rumos iguais."
+        },
+        {
+          "key": "B",
+          "text": "somente o navio ultrapassado sofre interação."
+        },
+        {
+          "key": "C",
+          "text": "mudanças de pressão entre os cascos podem gerar movimentos laterais e guinadas."
+        },
+        {
+          "key": "D",
+          "text": "a velocidade relativa não interfere no processo."
+        },
+        {
+          "key": "E",
+          "text": "o efeito de margem é necessariamente anulado."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A proximidade entre cascos em águas restritas produz campos de pressão capazes de alterar movimento lateral e guinada.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "macelrevey",
+        "chapter_id": "macelrevey::ch2",
+        "topic_id": "ANV-B001-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "MacELREVEY — Shiphandling for the Mariner, 4ª ed.",
+        "locator": "Chapter 2 – Shiphandling in a Channel"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "ultrapassagem"
+      ]
+    },
+    {
+      "id": "ANV-B001-06",
+      "subject": "II — Arte Naval",
+      "module": "UKC e manobra",
+      "topic_code": "ANV.B001.06",
+      "topic": "UKC e manobra",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Sobre folga sob a quilha e comportamento em águas rasas, analise.",
+      "assertions": [
+        "I) A redução da UKC pode alterar as características de governo.",
+        "II) A velocidade é variável crítica quando a UKC é limitada.",
+        "III) A manobra deve considerar efeitos transitórios, inclusive durante aceleração.",
+        "IV) UKC pequena elimina a influência do fundo sobre o escoamento."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "UKC reduzida pode modificar resposta de governo, aumentar squat relativo e exigir maior antecipação.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "macelrevey",
+        "chapter_id": "macelrevey::ch2",
+        "topic_id": "ANV-B001-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "MacELREVEY — Shiphandling for the Mariner, 4ª ed.",
+        "locator": "Chapter 2 – Shiphandling in a Channel"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "ukc e manobra"
+      ]
+    },
+    {
+      "id": "ANV-B001-07",
+      "subject": "II — Arte Naval",
+      "module": "Redução de seguimento",
+      "topic_code": "ANV.B001.07",
+      "topic": "Redução de seguimento",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Analise os métodos de redução de headway.",
+      "assertions": [
+        "I) Máquina a ré pode demandar tempo e espaço significativos em navios grandes.",
+        "II) Alterações de rumo podem contribuir para dissipar seguimento em condições adequadas.",
+        "III) A escolha do método depende do espaço disponível e das características do navio.",
+        "IV) Somente a reversão longitudinal da máquina pode reduzir headway."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e III."
+        },
+        {
+          "key": "B",
+          "text": "Todas."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II e III."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A obra discute máquina a ré, alterações de rumo e necessidade de espaço/tempo; não limita a redução de seguimento a um único método.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "macelrevey",
+        "chapter_id": "macelrevey::ch2",
+        "topic_id": "ANV-B001-07",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "MacELREVEY — Shiphandling for the Mariner, 4ª ed.",
+        "locator": "Chapter 2 – Shiphandling in a Channel"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "redução de seguimento"
+      ]
+    },
+    {
+      "id": "ANV-B001-08",
+      "subject": "II — Arte Naval",
+      "module": "Uso de âncoras",
+      "topic_code": "ANV.B001.08",
+      "topic": "Uso de âncoras",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Sobre a âncora como ferramenta de shiphandling:",
+      "assertions": [
+        "I) Pode ser empregada para auxiliar a parada ou controlar uma guinada em certas situações.",
+        "II) Seu emprego deve considerar profundidade, fundo, espaço e quantidade de amarra.",
+        "III) Pode integrar um plano de contingência previamente discutido.",
+        "IV) O uso de âncora dispensa avaliação do movimento do navio."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A âncora pode auxiliar controle e emergência, mas seu uso exige planejamento e avaliação de profundidade, fundo e espaço.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "macelrevey",
+        "chapter_id": "macelrevey::ch2",
+        "topic_id": "ANV-B001-08",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "MacELREVEY — Shiphandling for the Mariner, 4ª ed.",
+        "locator": "Chapter 2 – Shiphandling in a Channel"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "uso de âncoras"
+      ]
+    },
+    {
+      "id": "ANV-B001-09",
+      "subject": "II — Arte Naval",
+      "module": "Corrente e atracação",
+      "topic_code": "ANV.B001.09",
+      "topic": "Corrente e atracação",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Considere uma aproximação a cais sob corrente.",
+      "assertions": [
+        "I) Corrente pode ser utilizada como elemento de controle da manobra.",
+        "II) A velocidade sobre o fundo e a velocidade através da água podem diferir significativamente.",
+        "III) O plano deve considerar direção e intensidade da corrente.",
+        "IV) A presença de corrente torna irrelevante o uso de rebocadores."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A corrente pode ser usada a favor, mas exige avaliação do movimento sobre o fundo e da resposta do navio.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "macelrevey",
+        "chapter_id": "macelrevey::ch2",
+        "topic_id": "ANV-B001-09",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "MacELREVEY — Shiphandling for the Mariner, 4ª ed.",
+        "locator": "Chapter 2 – Shiphandling in a Channel"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "corrente e atracação"
+      ]
+    },
+    {
+      "id": "ANV-B001-10",
+      "subject": "II — Arte Naval",
+      "module": "Squat e velocidade",
+      "topic_code": "ANV.B001.10",
+      "topic": "Squat e velocidade",
+      "difficulty": "Difícil",
+      "style": "Completar",
+      "pscpp_format": "fill",
+      "cognitive_level": 3,
+      "question": "Complete: mantidas condições semelhantes, o squat tende a crescer aproximadamente com o ______ da velocidade.",
+      "options": [
+        {
+          "key": "A",
+          "text": "inverso"
+        },
+        {
+          "key": "B",
+          "text": "logaritmo"
+        },
+        {
+          "key": "C",
+          "text": "quadrado"
+        },
+        {
+          "key": "D",
+          "text": "valor constante"
+        },
+        {
+          "key": "E",
+          "text": "cubo sempre"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A regra prática clássica apresentada associa squat aproximadamente a V².",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "macelrevey",
+        "chapter_id": "macelrevey::ch2",
+        "topic_id": "ANV-B001-10",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "MacELREVEY — Shiphandling for the Mariner, 4ª ed.",
+        "locator": "Chapter 2 – Shiphandling in a Channel"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "squat e velocidade"
+      ]
+    },
+    {
+      "id": "ANV-B001-11",
+      "subject": "II — Arte Naval",
+      "module": "Directional stability",
+      "topic_code": "ANV.B001.11",
+      "topic": "Directional stability",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Um navio com maior estabilidade direcional tende, em termos gerais, a",
+      "options": [
+        {
+          "key": "A",
+          "text": "iniciar guinadas mais facilmente."
+        },
+        {
+          "key": "B",
+          "text": "ter sempre menor raio de giro."
+        },
+        {
+          "key": "C",
+          "text": "não responder ao leme."
+        },
+        {
+          "key": "D",
+          "text": "resistir mais à mudança de rumo."
+        },
+        {
+          "key": "E",
+          "text": "eliminar efeitos de águas rasas."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Estabilidade direcional implica maior tendência a manter o rumo, podendo dificultar o início da guinada.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "macelrevey",
+        "chapter_id": "macelrevey::ch2",
+        "topic_id": "ANV-B001-11",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "MacELREVEY — Shiphandling for the Mariner, 4ª ed.",
+        "locator": "Chapter 2 – Shiphandling in a Channel"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "directional stability"
+      ]
+    },
+    {
+      "id": "ANV-B001-12",
+      "subject": "II — Arte Naval",
+      "module": "Velocidade de aproximação",
+      "topic_code": "ANV.B001.12",
+      "topic": "Velocidade de aproximação",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Na aproximação final a um berço, por que a redução antecipada de velocidade é enfatizada?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Para eliminar totalmente vento e corrente."
+        },
+        {
+          "key": "B",
+          "text": "Para impedir qualquer movimento lateral."
+        },
+        {
+          "key": "C",
+          "text": "Para tornar desnecessárias espias e rebocadores."
+        },
+        {
+          "key": "D",
+          "text": "Para aumentar o squat."
+        },
+        {
+          "key": "E",
+          "text": "Para preservar tempo, espaço e opções de controle antes de a energia do navio se tornar crítica."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Reduzir cedo preserva margem de manobra e evita depender de ações tardias de grande intensidade.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "macelrevey",
+        "chapter_id": "macelrevey::ch2",
+        "topic_id": "ANV-B001-12",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "MacELREVEY — Shiphandling for the Mariner, 4ª ed.",
+        "locator": "Chapter 2 – Shiphandling in a Channel"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "velocidade de aproximação"
+      ]
+    },
+    {
+      "id": "ANV-B001-13",
+      "subject": "II — Arte Naval",
+      "module": "Passage planning",
+      "topic_code": "ANV.B001.13",
+      "topic": "Passage planning",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Um passage plan adequado deve",
+      "options": [
+        {
+          "key": "A",
+          "text": "abranger a derrota completa, inclusive águas de praticagem, e ser monitorado."
+        },
+        {
+          "key": "B",
+          "text": "abranger apenas o trecho oceânico."
+        },
+        {
+          "key": "C",
+          "text": "ser abandonado quando o prático embarca."
+        },
+        {
+          "key": "D",
+          "text": "conter apenas waypoints, sem contingências."
+        },
+        {
+          "key": "E",
+          "text": "ser imutável após a partida."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O planejamento cobre a passagem completa e deve ser monitorado e ajustado de forma controlada.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "macelrevey",
+        "chapter_id": "macelrevey::ch2",
+        "topic_id": "ANV-B001-13",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "MacELREVEY — Shiphandling for the Mariner, 4ª ed.",
+        "locator": "Chapter 2 – Shiphandling in a Channel"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "passage planning"
+      ]
+    },
+    {
+      "id": "ANV-B001-14",
+      "subject": "II — Arte Naval",
+      "module": "Pilot-master exchange",
+      "topic_code": "ANV.B001.14",
+      "topic": "Pilot-master exchange",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "No embarque do prático, a troca inicial de informações é relevante porque",
+      "options": [
+        {
+          "key": "A",
+          "text": "transfere integralmente o comando ao prático."
+        },
+        {
+          "key": "B",
+          "text": "permite alinhar plano, limitações do navio, condições locais e contingências."
+        },
+        {
+          "key": "C",
+          "text": "dispensa o bridge team de monitorar a navegação."
+        },
+        {
+          "key": "D",
+          "text": "substitui o passage plan."
+        },
+        {
+          "key": "E",
+          "text": "elimina a responsabilidade do comandante."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A troca Master/Pilot sustenta consciência situacional compartilhada sem transferir o comando.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "macelrevey",
+        "chapter_id": "macelrevey::ch2",
+        "topic_id": "ANV-B001-14",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "MacELREVEY — Shiphandling for the Mariner, 4ª ed.",
+        "locator": "Chapter 2 – Shiphandling in a Channel"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "pilot-master exchange"
+      ]
+    },
+    {
+      "id": "ANV-B001-15",
+      "subject": "II — Arte Naval",
+      "module": "Bridge resource management",
+      "topic_code": "ANV.B001.15",
+      "topic": "Bridge resource management",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Sobre a relação comandante-prático-equipe de passadiço:",
+      "assertions": [
+        "I) O plano de manobra deve ser compreendido pela equipe relevante.",
+        "II) Informações críticas devem ser comunicadas de forma clara.",
+        "III) A navegação e a execução da manobra devem continuar sendo monitoradas.",
+        "IV) A presença do prático torna desnecessária a intervenção do comandante diante de risco evidente."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A presença do prático não elimina monitoramento, comunicação ou responsabilidade do bridge team.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "macelrevey",
+        "chapter_id": "macelrevey::ch2",
+        "topic_id": "ANV-B001-15",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "MacELREVEY — Shiphandling for the Mariner, 4ª ed.",
+        "locator": "Chapter 2 – Shiphandling in a Channel"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "bridge resource management"
+      ]
+    },
+    {
+      "id": "ANV-B001-16",
+      "subject": "II — Arte Naval",
+      "module": "Planejamento de curva",
+      "topic_code": "ANV.B001.16",
+      "topic": "Planejamento de curva",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Ao planejar uma curva em canal, a equipe deve considerar principalmente",
+      "options": [
+        {
+          "key": "A",
+          "text": "apenas o rumo de saída."
+        },
+        {
+          "key": "B",
+          "text": "apenas a potência máxima do motor."
+        },
+        {
+          "key": "C",
+          "text": "somente a profundidade nominal da carta."
+        },
+        {
+          "key": "D",
+          "text": "posição de início, avanço/transferência, corrente, margem e capacidade de governo."
+        },
+        {
+          "key": "E",
+          "text": "exclusivamente a marcação visual de través."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A curva exige integração de geometria, hidrodinâmica, ambiente e referências de navegação.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "macelrevey",
+        "chapter_id": "macelrevey::ch2",
+        "topic_id": "ANV-B001-16",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "MacELREVEY — Shiphandling for the Mariner, 4ª ed.",
+        "locator": "Chapter 2 – Shiphandling in a Channel"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "planejamento de curva"
+      ]
+    },
+    {
+      "id": "ANV-B001-17",
+      "subject": "II — Arte Naval",
+      "module": "Aceleração em água rasa",
+      "topic_code": "ANV.B001.17",
+      "topic": "Aceleração em água rasa",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Com UKC crítica, por que acelerar progressivamente pode ser preferível a aplicar grande potência de uma vez?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Porque aceleração não afeta imersão dinâmica."
+        },
+        {
+          "key": "B",
+          "text": "Porque o navio passa a deslocar menos água."
+        },
+        {
+          "key": "C",
+          "text": "Porque a potência reduz a velocidade da água sob o casco."
+        },
+        {
+          "key": "D",
+          "text": "Porque o leme perde toda eficácia com baixa potência."
+        },
+        {
+          "key": "E",
+          "text": "Porque efeitos transitórios podem aumentar temporariamente a imersão/squat."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A aceleração pode produzir efeitos transitórios de imersão relevantes quando a UKC é pequena.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "macelrevey",
+        "chapter_id": "macelrevey::ch2",
+        "topic_id": "ANV-B001-17",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "MacELREVEY — Shiphandling for the Mariner, 4ª ed.",
+        "locator": "Chapter 2 – Shiphandling in a Channel"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "aceleração em água rasa"
+      ]
+    },
+    {
+      "id": "NAR-B001-01",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "Função do ECDIS",
+      "topic_code": "NAR.B001.01",
+      "topic": "Função do ECDIS",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 2,
+      "question": "Segundo os padrões de desempenho, a função primária do ECDIS é",
+      "options": [
+        {
+          "key": "A",
+          "text": "contribuir para a navegação segura."
+        },
+        {
+          "key": "B",
+          "text": "substituir o comandante na tomada de decisão."
+        },
+        {
+          "key": "C",
+          "text": "fornecer apenas dados AIS."
+        },
+        {
+          "key": "D",
+          "text": "eliminar a necessidade de sensores de posição."
+        },
+        {
+          "key": "E",
+          "text": "operar exclusivamente com cartas raster."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O item 1.1 estabelece que a função primária do ECDIS é contribuir para safe navigation.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "nav-doc-3",
+        "chapter_id": "nav-doc-3::integral",
+        "topic_id": "NAR-B001-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO Resolution MSC.530(106)/Rev.1 — ECDIS",
+        "locator": "Performance Standards for ECDIS"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "função do ecdis"
+      ]
+    },
+    {
+      "id": "NAR-B001-02",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "Safety contour",
+      "topic_code": "NAR.B001.02",
+      "topic": "Safety contour",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "O navegante seleciona um safety contour que não existe na base apresentada. O ECDIS deve, em regra,",
+      "options": [
+        {
+          "key": "A",
+          "text": "usar o contorno imediatamente mais raso."
+        },
+        {
+          "key": "B",
+          "text": "adotar o próximo contorno mais profundo e indicar a condição."
+        },
+        {
+          "key": "C",
+          "text": "desligar a função."
+        },
+        {
+          "key": "D",
+          "text": "usar sempre 10 m."
+        },
+        {
+          "key": "E",
+          "text": "substituir o safety contour pela safety depth."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O padrão determina o próximo contorno mais profundo quando o selecionado não estiver disponível.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "nav-doc-3",
+        "chapter_id": "nav-doc-3::integral",
+        "topic_id": "NAR-B001-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO Resolution MSC.530(106)/Rev.1 — ECDIS",
+        "locator": "Performance Standards for ECDIS"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "safety contour"
+      ]
+    },
+    {
+      "id": "NAR-B001-03",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "Display base",
+      "topic_code": "NAR.B001.03",
+      "topic": "Display base",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "No ECDIS, display base é",
+      "options": [
+        {
+          "key": "A",
+          "text": "todo o conteúdo disponível da ENC."
+        },
+        {
+          "key": "B",
+          "text": "a camada de radar sobreposta."
+        },
+        {
+          "key": "C",
+          "text": "o conteúdo que não pode ser removido da apresentação, embora isoladamente não seja suficiente para navegação segura."
+        },
+        {
+          "key": "D",
+          "text": "a rota planejada pelo usuário."
+        },
+        {
+          "key": "E",
+          "text": "qualquer dado inserido manualmente."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Display base é o conteúdo mínimo não removível e não é, por si só, suficiente para safe navigation.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "nav-doc-3",
+        "chapter_id": "nav-doc-3::integral",
+        "topic_id": "NAR-B001-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO Resolution MSC.530(106)/Rev.1 — ECDIS",
+        "locator": "Performance Standards for ECDIS"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "display base"
+      ]
+    },
+    {
+      "id": "NAR-B001-04",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "Atualizações ECDIS",
+      "topic_code": "NAR.B001.04",
+      "topic": "Atualizações ECDIS",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Sobre atualizações do ENDS/ECDIS:",
+      "assertions": [
+        "I) Atualizações oficiais devem poder ser aceitas e aplicadas à base do sistema.",
+        "II) Atualizações inseridas manualmente devem permitir verificação antes da aceitação final.",
+        "III) Informações inseridas manualmente devem ser distinguíveis das informações oficiais.",
+        "IV) O procedimento de atualização deve necessariamente interromper a apresentação em uso."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Atualizações oficiais devem ser aplicáveis automaticamente; entradas manuais devem ser verificáveis e distinguíveis.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "nav-doc-3",
+        "chapter_id": "nav-doc-3::integral",
+        "topic_id": "NAR-B001-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO Resolution MSC.530(106)/Rev.1 — ECDIS",
+        "locator": "Performance Standards for ECDIS"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "atualizações ecdis"
+      ]
+    },
+    {
+      "id": "NAR-B001-05",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "ENC e ENDS",
+      "topic_code": "NAR.B001.05",
+      "topic": "ENC e ENDS",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Analise as definições:",
+      "assertions": [
+        "I) ENC é emitida por ou sob autoridade governamental/hidrográfica competente e segue padrões IHO.",
+        "II) ENDS pode abranger dados de cartas e publicações náuticas.",
+        "III) A camada navegacional de base do ENDS é a ENC.",
+        "IV) Qualquer banco privado de dados, independentemente de autoridade e padrão, constitui ENC."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Todas."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II e III."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "ENC é base padronizada oficial; ENDS abrange dados de cartas/publicações e tem a ENC como camada navegacional de base.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "nav-doc-3",
+        "chapter_id": "nav-doc-3::integral",
+        "topic_id": "NAR-B001-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO Resolution MSC.530(106)/Rev.1 — ECDIS",
+        "locator": "Performance Standards for ECDIS"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "enc e ends"
+      ]
+    },
+    {
+      "id": "NAR-B001-06",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "Apresentação ECDIS",
+      "topic_code": "NAR.B001.06",
+      "topic": "Apresentação ECDIS",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Sobre apresentação no ECDIS:",
+      "assertions": [
+        "I) O standard display deve poder ser apresentado por uma única ação do operador.",
+        "II) O conteúdo do display base não deve ser removível.",
+        "III) O sistema deve indicar certas situações de uso de escala inadequada.",
+        "IV) O ECDIS deve impedir o usuário de consultar objetos associados a uma posição escolhida."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Standard display deve estar disponível por uma ação; display base não pode ser removido; escala inadequada gera indicação.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "nav-doc-3",
+        "chapter_id": "nav-doc-3::integral",
+        "topic_id": "NAR-B001-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO Resolution MSC.530(106)/Rev.1 — ECDIS",
+        "locator": "Performance Standards for ECDIS"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "apresentação ecdis"
+      ]
+    },
+    {
+      "id": "NAR-B001-07",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "Safety depth",
+      "topic_code": "NAR.B001.07",
+      "topic": "Safety depth",
+      "difficulty": "Difícil",
+      "style": "Completar",
+      "pscpp_format": "fill",
+      "cognitive_level": 3,
+      "question": "Complete: a safety depth é usada para enfatizar sondagens iguais ou ______ ao valor selecionado, quando sondagens pontuais estão exibidas.",
+      "options": [
+        {
+          "key": "A",
+          "text": "maiores"
+        },
+        {
+          "key": "B",
+          "text": "menores"
+        },
+        {
+          "key": "C",
+          "text": "idênticas apenas"
+        },
+        {
+          "key": "D",
+          "text": "independentes"
+        },
+        {
+          "key": "E",
+          "text": "sempre superiores em 30 m"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O padrão prevê destaque para sondagens iguais ou menores que a safety depth.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "nav-doc-3",
+        "chapter_id": "nav-doc-3::integral",
+        "topic_id": "NAR-B001-07",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO Resolution MSC.530(106)/Rev.1 — ECDIS",
+        "locator": "Performance Standards for ECDIS"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "safety depth"
+      ]
+    },
+    {
+      "id": "NAR-B001-08",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "Route exchange",
+      "topic_code": "NAR.B001.08",
+      "topic": "Route exchange",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Uma rota recebida digitalmente de terra é apresentada no ECDIS. Segundo a resolução, ela deve ser tratada como",
+      "options": [
+        {
+          "key": "A",
+          "text": "ordem obrigatória que substitui a decisão do comandante."
+        },
+        {
+          "key": "B",
+          "text": "garantia de segurança da derrota."
+        },
+        {
+          "key": "C",
+          "text": "indicação básica de intenção, preservada a discricionariedade do comandante."
+        },
+        {
+          "key": "D",
+          "text": "substituta da avaliação de perigos."
+        },
+        {
+          "key": "E",
+          "text": "autorização para ignorar SOLAS V/34."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Rotas trocadas ship-shore/shore-ship são indicação de intenção; a discricionariedade do comandante deve ser respeitada.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "nav-doc-3",
+        "chapter_id": "nav-doc-3::integral",
+        "topic_id": "NAR-B001-08",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO Resolution MSC.530(106)/Rev.1 — ECDIS",
+        "locator": "Performance Standards for ECDIS"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "route exchange"
+      ]
+    },
+    {
+      "id": "NAR-B001-09",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "RCDS",
+      "topic_code": "NAR.B001.09",
+      "topic": "RCDS",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "O modo RCDS é previsto quando",
+      "options": [
+        {
+          "key": "A",
+          "text": "o AIS falha."
+        },
+        {
+          "key": "B",
+          "text": "o radar está desligado."
+        },
+        {
+          "key": "C",
+          "text": "o comandante prefere imagem raster mesmo com ENC adequada, sem outras condições."
+        },
+        {
+          "key": "D",
+          "text": "a informação cartográfica relevante não está disponível na forma apropriada e o equipamento suporta esse modo conforme os padrões."
+        },
+        {
+          "key": "E",
+          "text": "a safety depth é inferior a 30 m."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "O padrão admite operação RCDS em condições especificadas quando a informação relevante não está disponível na forma apropriada.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "nav-doc-3",
+        "chapter_id": "nav-doc-3::integral",
+        "topic_id": "NAR-B001-09",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO Resolution MSC.530(106)/Rev.1 — ECDIS",
+        "locator": "Performance Standards for ECDIS"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "rcds"
+      ]
+    },
+    {
+      "id": "LEG-B001-01",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Conceito de praticagem",
+      "topic_code": "LEG.B001.01",
+      "topic": "Conceito de praticagem",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 2,
+      "question": "Pela LESTA, o serviço de praticagem consiste em",
+      "options": [
+        {
+          "key": "A",
+          "text": "atividade de comando temporário do navio pelo prático."
+        },
+        {
+          "key": "B",
+          "text": "atividade exclusiva de inspeção naval."
+        },
+        {
+          "key": "C",
+          "text": "fiscalização administrativa do tráfego aquaviário."
+        },
+        {
+          "key": "D",
+          "text": "serviço de rebocagem obrigatório."
+        },
+        {
+          "key": "E",
+          "text": "atividades profissionais de assessoria ao Comandante requeridas por peculiaridades locais."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O art. 12 define praticagem como assessoria ao Comandante em razão de peculiaridades locais.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "leg-doc-7",
+        "chapter_id": "leg-doc-7::integral",
+        "topic_id": "LEG-B001-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "Lei nº 9.537/1997 — LESTA",
+        "locator": "Lei nº 9.537/1997"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "conceito de praticagem"
+      ]
+    },
+    {
+      "id": "LEG-B001-02",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Autoridade do Comandante",
+      "topic_code": "LEG.B001.02",
+      "topic": "Autoridade do Comandante",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 3,
+      "question": "Durante a viagem, uma pessoa a bordo recusa ordem necessária à segurança. Qual premissa da LESTA é diretamente aplicável?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Todas as pessoas a bordo estão sujeitas à autoridade do Comandante."
+        },
+        {
+          "key": "B",
+          "text": "Somente tripulantes estão sujeitos ao Comandante."
+        },
+        {
+          "key": "C",
+          "text": "Passageiros respondem apenas ao armador."
+        },
+        {
+          "key": "D",
+          "text": "O prático substitui a autoridade do Comandante."
+        },
+        {
+          "key": "E",
+          "text": "A autoridade do Comandante existe apenas em porto."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O art. 9º estabelece a sujeição de todas as pessoas a bordo à autoridade do Comandante.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "leg-doc-7",
+        "chapter_id": "leg-doc-7::integral",
+        "topic_id": "LEG-B001-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "Lei nº 9.537/1997 — LESTA",
+        "locator": "Lei nº 9.537/1997"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "autoridade do comandante"
+      ]
+    },
+    {
+      "id": "LEG-B001-03",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Comunicação do Comandante",
+      "topic_code": "LEG.B001.03",
+      "topic": "Comunicação do Comandante",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 3,
+      "question": "O Comandante identifica alteração relevante em sinal náutico de auxílio à navegação. Pela LESTA, deve",
+      "options": [
+        {
+          "key": "A",
+          "text": "aguardar o próximo porto sem comunicar."
+        },
+        {
+          "key": "B",
+          "text": "comunicar à autoridade marítima."
+        },
+        {
+          "key": "C",
+          "text": "comunicar somente ao armador."
+        },
+        {
+          "key": "D",
+          "text": "lavrar IAFN a bordo."
+        },
+        {
+          "key": "E",
+          "text": "interromper obrigatoriamente a viagem."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A LESTA atribui ao Comandante o dever de comunicar alterações de sinais e obstáculos/estorvos à navegação.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "leg-doc-7",
+        "chapter_id": "leg-doc-7::integral",
+        "topic_id": "LEG-B001-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "Lei nº 9.537/1997 — LESTA",
+        "locator": "Lei nº 9.537/1997"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "comunicação do comandante"
+      ]
+    },
+    {
+      "id": "LEG-B001-04",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Inspeção naval",
+      "topic_code": "LEG.B001.04",
+      "topic": "Inspeção naval",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "A inspeção naval é caracterizada na LESTA como atividade",
+      "options": [
+        {
+          "key": "A",
+          "text": "judicial de apuração de acidentes."
+        },
+        {
+          "key": "B",
+          "text": "privada de classificação de navios."
+        },
+        {
+          "key": "C",
+          "text": "administrativa de fiscalização do cumprimento da lei, normas e atos aplicáveis nos campos definidos."
+        },
+        {
+          "key": "D",
+          "text": "exclusiva de controle aduaneiro."
+        },
+        {
+          "key": "E",
+          "text": "destinada apenas a embarcações estrangeiras."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A definição legal é técnico-administrativa/fiscalizatória nos campos de segurança, salvaguarda e prevenção da poluição.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "leg-doc-7",
+        "chapter_id": "leg-doc-7::integral",
+        "topic_id": "LEG-B001-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "Lei nº 9.537/1997 — LESTA",
+        "locator": "Lei nº 9.537/1997"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "inspeção naval"
+      ]
+    },
+    {
+      "id": "LEG-B001-05",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Atribuições da Autoridade Marítima",
+      "topic_code": "LEG.B001.05",
+      "topic": "Atribuições da Autoridade Marítima",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Analise as atribuições previstas na LESTA.",
+      "assertions": [
+        "I) Regulamentar o serviço de praticagem.",
+        "II) Estabelecer zonas de praticagem e especificar dispensas.",
+        "III) Executar inspeção naval.",
+        "IV) Transferir obrigatoriamente aos municípios toda fiscalização do tráfego aquaviário."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A autoridade marítima regulamenta praticagem, estabelece zonas/dispensas, executa inspeção naval e determina tripulação de segurança.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "leg-doc-7",
+        "chapter_id": "leg-doc-7::integral",
+        "topic_id": "LEG-B001-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "Lei nº 9.537/1997 — LESTA",
+        "locator": "Lei nº 9.537/1997"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "atribuições da autoridade marítima"
+      ]
+    },
+    {
+      "id": "LEG-B001-06",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Práticos e habilitação",
+      "topic_code": "LEG.B001.06",
+      "topic": "Práticos e habilitação",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Sobre a habilitação do prático:",
+      "assertions": [
+        "I) A inscrição como prático observa requisitos da autoridade marítima.",
+        "II) A habilitação é concedida especificamente para cada zona de praticagem.",
+        "III) A manutenção da habilitação depende da frequência mínima de manobras estabelecida.",
+        "IV) A habilitação é nacional e automaticamente válida em qualquer zona de praticagem."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Todas."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II e III."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A inscrição é específica por ZP após exame/estágio e a manutenção depende de frequência mínima de manobras.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "leg-doc-7",
+        "chapter_id": "leg-doc-7::integral",
+        "topic_id": "LEG-B001-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "Lei nº 9.537/1997 — LESTA",
+        "locator": "Lei nº 9.537/1997"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "práticos e habilitação"
+      ]
+    },
+    {
+      "id": "LEG-B001-07",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Serviço essencial de praticagem",
+      "topic_code": "LEG.B001.07",
+      "topic": "Serviço essencial de praticagem",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Sobre a disponibilidade do serviço de praticagem:",
+      "assertions": [
+        "I) O serviço é considerado atividade essencial.",
+        "II) Deve estar permanentemente disponível nas zonas estabelecidas.",
+        "III) A autoridade marítima pode estabelecer o número de práticos necessário por zona.",
+        "IV) A autoridade marítima não pode requisitar serviço de práticos em nenhuma hipótese."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A LESTA qualifica a praticagem como atividade essencial e prevê instrumentos para assegurar disponibilidade.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "leg-doc-7",
+        "chapter_id": "leg-doc-7::integral",
+        "topic_id": "LEG-B001-07",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "Lei nº 9.537/1997 — LESTA",
+        "locator": "Lei nº 9.537/1997"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "serviço essencial de praticagem"
+      ]
+    },
+    {
+      "id": "LEG-B001-08",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Medidas administrativas",
+      "topic_code": "LEG.B001.08",
+      "topic": "Medidas administrativas",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Considere as medidas administrativas da LESTA.",
+      "assertions": [
+        "I) Pode haver apreensão do certificado de habilitação.",
+        "II) Pode haver impedimento da saída de embarcação.",
+        "III) Medidas administrativas não eliminam, por si, a possibilidade de penalidades.",
+        "IV) Toda medida administrativa tem caráter penal e depende de sentença judicial."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Apreensão de habilitação, impedimento de saída e embargos estão entre as medidas; elas complementam penalidades.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "leg-doc-7",
+        "chapter_id": "leg-doc-7::integral",
+        "topic_id": "LEG-B001-08",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "Lei nº 9.537/1997 — LESTA",
+        "locator": "Lei nº 9.537/1997"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "medidas administrativas"
+      ]
+    },
+    {
+      "id": "LEG-B001-09",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Processo administrativo sancionador",
+      "topic_code": "LEG.B001.09",
+      "topic": "Processo administrativo sancionador",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Sobre o procedimento de penalidades:",
+      "assertions": [
+        "I) O procedimento administrativo inicia-se com o auto de infração.",
+        "II) Devem ser assegurados contraditório e ampla defesa.",
+        "III) O infrator dispõe do prazo legal para apresentar defesa após receber o auto.",
+        "IV) A revelia impede a continuidade do procedimento."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "O procedimento inicia com auto de infração e deve assegurar contraditório e ampla defesa; a lei fixa prazo para defesa.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "leg-doc-7",
+        "chapter_id": "leg-doc-7::integral",
+        "topic_id": "LEG-B001-09",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "Lei nº 9.537/1997 — LESTA",
+        "locator": "Lei nº 9.537/1997"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "processo administrativo sancionador"
+      ]
+    },
+    {
+      "id": "LEG-B001-10",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Tripulação de segurança",
+      "topic_code": "LEG.B001.10",
+      "topic": "Tripulação de segurança",
+      "difficulty": "Médio",
+      "style": "Completar",
+      "pscpp_format": "fill",
+      "cognitive_level": 2,
+      "question": "Complete: tripulação de segurança é a quantidade ______ de tripulantes necessária a operar a embarcação com segurança.",
+      "options": [
+        {
+          "key": "A",
+          "text": "máxima"
+        },
+        {
+          "key": "B",
+          "text": "eventual"
+        },
+        {
+          "key": "C",
+          "text": "média"
+        },
+        {
+          "key": "D",
+          "text": "mínima"
+        },
+        {
+          "key": "E",
+          "text": "facultativa"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A própria definição legal utiliza 'quantidade mínima'.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "leg-doc-7",
+        "chapter_id": "leg-doc-7::integral",
+        "topic_id": "LEG-B001-10",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "Lei nº 9.537/1997 — LESTA",
+        "locator": "Lei nº 9.537/1997"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "tripulação de segurança"
+      ]
+    },
+    {
+      "id": "LEG-B001-11",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Embarcação estrangeira",
+      "topic_code": "LEG.B001.11",
+      "topic": "Embarcação estrangeira",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Uma embarcação estrangeira submetida à inspeção apresenta condição operacional precária com ameaça à segurança. A LESTA permite à autoridade marítima, conforme o caso,",
+      "options": [
+        {
+          "key": "A",
+          "text": "somente aplicar advertência verbal."
+        },
+        {
+          "key": "B",
+          "text": "transferir o comando a um prático."
+        },
+        {
+          "key": "C",
+          "text": "apenas comunicar o Estado de bandeira, sem medida imediata."
+        },
+        {
+          "key": "D",
+          "text": "confiscar automaticamente a carga."
+        },
+        {
+          "key": "E",
+          "text": "ordenar medidas como não entrar, não sair, sair das águas jurisdicionais ou arribar em porto nacional."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O art. 5º prevê essas ordens diante das irregularidades e ameaças descritas.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "leg-doc-7",
+        "chapter_id": "leg-doc-7::integral",
+        "topic_id": "LEG-B001-11",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "Lei nº 9.537/1997 — LESTA",
+        "locator": "Lei nº 9.537/1997"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "embarcação estrangeira"
+      ]
+    },
+    {
+      "id": "LEG-B001-12",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Aquaviário",
+      "topic_code": "LEG.B001.12",
+      "topic": "Aquaviário",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 2,
+      "question": "Aquaviário, para a LESTA, é",
+      "options": [
+        {
+          "key": "A",
+          "text": "quem possui habilitação certificada pela autoridade marítima para operar embarcações em caráter profissional."
+        },
+        {
+          "key": "B",
+          "text": "qualquer passageiro embarcado."
+        },
+        {
+          "key": "C",
+          "text": "somente o comandante de navio mercante."
+        },
+        {
+          "key": "D",
+          "text": "todo trabalhador portuário."
+        },
+        {
+          "key": "E",
+          "text": "qualquer amador habilitado."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A definição legal distingue aquaviário profissional de amador.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "leg-doc-7",
+        "chapter_id": "leg-doc-7::integral",
+        "topic_id": "LEG-B001-12",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "Lei nº 9.537/1997 — LESTA",
+        "locator": "Lei nº 9.537/1997"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "aquaviário"
+      ]
+    },
+    {
+      "id": "LEG-B001-13",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Profissional não-tripulante",
+      "topic_code": "LEG.B001.13",
+      "topic": "Profissional não-tripulante",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 2,
+      "question": "Profissional não-tripulante é aquele que",
+      "options": [
+        {
+          "key": "A",
+          "text": "opera diretamente a embarcação como integrante da tripulação."
+        },
+        {
+          "key": "B",
+          "text": "presta serviço eventual a bordo sem exercer atribuições diretamente ligadas à operação da embarcação."
+        },
+        {
+          "key": "C",
+          "text": "é passageiro remunerado."
+        },
+        {
+          "key": "D",
+          "text": "possui necessariamente habilitação de prático."
+        },
+        {
+          "key": "E",
+          "text": "substitui o comandante."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "É a definição do art. 2º da LESTA.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "leg-doc-7",
+        "chapter_id": "leg-doc-7::integral",
+        "topic_id": "LEG-B001-13",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "Lei nº 9.537/1997 — LESTA",
+        "locator": "Lei nº 9.537/1997"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "profissional não-tripulante"
+      ]
+    },
+    {
+      "id": "LEG-B001-14",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Impedimento do Comandante",
+      "topic_code": "LEG.B001.14",
+      "topic": "Impedimento do Comandante",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 3,
+      "question": "Ocorrendo impedimento do Comandante, a substituição ocorre",
+      "options": [
+        {
+          "key": "A",
+          "text": "sempre pelo prático."
+        },
+        {
+          "key": "B",
+          "text": "pelo armador em terra."
+        },
+        {
+          "key": "C",
+          "text": "por outro tripulante segundo a precedência hierárquica estabelecida pela autoridade marítima."
+        },
+        {
+          "key": "D",
+          "text": "pelo passageiro mais antigo."
+        },
+        {
+          "key": "E",
+          "text": "por decisão da autoridade portuária, exclusivamente."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A LESTA determina substituição por tripulante conforme precedência hierárquica.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "leg-doc-7",
+        "chapter_id": "leg-doc-7::integral",
+        "topic_id": "LEG-B001-14",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "Lei nº 9.537/1997 — LESTA",
+        "locator": "Lei nº 9.537/1997"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "impedimento do comandante"
+      ]
+    },
+    {
+      "id": "LEG-B001-15",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Penalidades",
+      "topic_code": "LEG.B001.15",
+      "topic": "Penalidades",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Qual alternativa contém somente penalidades expressamente listadas na LESTA?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apreensão de carga, cassação de passaporte e multa."
+        },
+        {
+          "key": "B",
+          "text": "Prisão, multa e perda da nacionalidade."
+        },
+        {
+          "key": "C",
+          "text": "Advertência verbal, prisão e demissão."
+        },
+        {
+          "key": "D",
+          "text": "Multa, suspensão e cancelamento do certificado de habilitação."
+        },
+        {
+          "key": "E",
+          "text": "Interdição de porto, prisão e suspensão."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A lei lista multa, suspensão, cancelamento e demolição de obras/benfeitorias.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "leg-doc-7",
+        "chapter_id": "leg-doc-7::integral",
+        "topic_id": "LEG-B001-15",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "Lei nº 9.537/1997 — LESTA",
+        "locator": "Lei nº 9.537/1997"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "penalidades"
+      ]
+    },
+    {
+      "id": "LEG-B001-16",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "Prático e recusa",
+      "topic_code": "LEG.B001.16",
+      "topic": "Prático e recusa",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Um prático habilitado recusa injustificadamente prestar o serviço. Segundo a LESTA, essa conduta pode sujeitá-lo",
+      "options": [
+        {
+          "key": "A",
+          "text": "apenas a advertência."
+        },
+        {
+          "key": "B",
+          "text": "à perda definitiva na primeira ocorrência, sem processo."
+        },
+        {
+          "key": "C",
+          "text": "automaticamente à prisão."
+        },
+        {
+          "key": "D",
+          "text": "somente a multa aplicada pelo armador."
+        },
+        {
+          "key": "E",
+          "text": "à suspensão do certificado e, em reincidência, ao cancelamento."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O art. 15 prevê suspensão e, na reincidência, cancelamento.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "leg-doc-7",
+        "chapter_id": "leg-doc-7::integral",
+        "topic_id": "LEG-B001-16",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "Lei nº 9.537/1997 — LESTA",
+        "locator": "Lei nº 9.537/1997"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "prático e recusa"
+      ]
+    },
+    {
+      "id": "MEO-B001-01",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "Altura significativa",
+      "topic_code": "MEO.B001.01",
+      "topic": "Altura significativa",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "A altura significativa de onda é definida na NORMAM-701 como",
+      "options": [
+        {
+          "key": "A",
+          "text": "a média do terço superior das alturas de onda medidas em um intervalo."
+        },
+        {
+          "key": "B",
+          "text": "a maior onda individual observada."
+        },
+        {
+          "key": "C",
+          "text": "a média de todas as ondas dividida por três."
+        },
+        {
+          "key": "D",
+          "text": "a altura modal das ondas."
+        },
+        {
+          "key": "E",
+          "text": "o dobro da altura média."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A norma define Hs como média do terço superior.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "normam701",
+        "chapter_id": "normam701::integral",
+        "topic_id": "MEO-B001-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-701/DHN",
+        "locator": "NORMAM-701/DHN — Meteorologia Marítima"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "altura significativa"
+      ]
+    },
+    {
+      "id": "MEO-B001-02",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "Aviso de Mau Tempo",
+      "topic_code": "MEO.B001.02",
+      "topic": "Aviso de Mau Tempo",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Para área costeira, previsão de vento de 30 nós atende ao critério de aviso de mau tempo por vento?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Não, porque o limite costeiro é 34 nós."
+        },
+        {
+          "key": "B",
+          "text": "Sim, porque o critério costeiro é Força 7 ou superior, igual ou superior a 28 nós."
+        },
+        {
+          "key": "C",
+          "text": "Não, porque somente furacões geram aviso."
+        },
+        {
+          "key": "D",
+          "text": "Sim, mas apenas se houver onda de 4 m."
+        },
+        {
+          "key": "E",
+          "text": "Não, porque vento não é critério de aviso."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A norma estabelece Força 7/28 nós para áreas costeiras e Força 8/34 nós para oceânicas.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "normam701",
+        "chapter_id": "normam701::integral",
+        "topic_id": "MEO-B001-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-701/DHN",
+        "locator": "NORMAM-701/DHN — Meteorologia Marítima"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "aviso de mau tempo"
+      ]
+    },
+    {
+      "id": "MEO-B001-03",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "METEOROMARINHA",
+      "topic_code": "MEO.B001.03",
+      "topic": "METEOROMARINHA",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Sobre o boletim METEOROMARINHA:",
+      "assertions": [
+        "I) É emitido com referências de 0000Z e 1200Z.",
+        "II) Inclui avisos de mau tempo emitidos.",
+        "III) Inclui análise e previsão do tempo.",
+        "IV) É emitido somente quando existe ciclone tropical."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "É emitido duas vezes ao dia, com avisos, análise e previsão; a proposição IV é falsa.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "normam701",
+        "chapter_id": "normam701::integral",
+        "topic_id": "MEO-B001-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-701/DHN",
+        "locator": "NORMAM-701/DHN — Meteorologia Marítima"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "meteoromarinha"
+      ]
+    },
+    {
+      "id": "MEO-B001-04",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "VOS",
+      "topic_code": "MEO.B001.04",
+      "topic": "VOS",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Sobre o Programa de Navios Observadores Voluntários:",
+      "assertions": [
+        "I) Integra o esforço internacional de observação meteorológica.",
+        "II) Busca reduzir a baixa densidade de observações nos oceanos.",
+        "III) Os dados apoiam análise do tempo e modelos numéricos.",
+        "IV) No Brasil, o programa é coordenado exclusivamente por empresas privadas."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "O VOS reduz lacunas observacionais oceânicas e alimenta análise/modelos; no Brasil o CHM coordena esforços.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "normam701",
+        "chapter_id": "normam701::integral",
+        "topic_id": "MEO-B001-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-701/DHN",
+        "locator": "NORMAM-701/DHN — Meteorologia Marítima"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "vos"
+      ]
+    },
+    {
+      "id": "MEO-B001-05",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "METAREA",
+      "topic_code": "MEO.B001.05",
+      "topic": "METAREA",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 2,
+      "question": "METAREA é",
+      "options": [
+        {
+          "key": "A",
+          "text": "uma escala de estado do mar."
+        },
+        {
+          "key": "B",
+          "text": "um código de sinalização visual."
+        },
+        {
+          "key": "C",
+          "text": "um tipo de carta eletrônica."
+        },
+        {
+          "key": "D",
+          "text": "uma categoria de navio observador."
+        },
+        {
+          "key": "E",
+          "text": "área marítima sob responsabilidade de um país para elaboração e disseminação de previsões e avisos."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "É a definição normativa de METAREA.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "normam701",
+        "chapter_id": "normam701::integral",
+        "topic_id": "MEO-B001-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-701/DHN",
+        "locator": "NORMAM-701/DHN — Meteorologia Marítima"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "metarea"
+      ]
+    },
+    {
+      "id": "MEO-B001-06",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "Aviso de baixa visibilidade",
+      "topic_code": "MEO.B001.06",
+      "topic": "Aviso de baixa visibilidade",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 3,
+      "question": "A previsão indica visibilidade horizontal de 800 m em área da METAREA V. Pela NORMAM-701, essa condição",
+      "options": [
+        {
+          "key": "A",
+          "text": "enquadra-se no critério de aviso de baixa visibilidade, inferior a 1 km."
+        },
+        {
+          "key": "B",
+          "text": "não gera aviso porque o limite é 500 m."
+        },
+        {
+          "key": "C",
+          "text": "só é relevante se houver vento Força 8."
+        },
+        {
+          "key": "D",
+          "text": "é tratada exclusivamente pela Escala Douglas."
+        },
+        {
+          "key": "E",
+          "text": "não é produto do SMM."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Visibilidade inferior a 1 km é critério de Aviso de Baixa Visibilidade.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "normam701",
+        "chapter_id": "normam701::integral",
+        "topic_id": "MEO-B001-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-701/DHN",
+        "locator": "NORMAM-701/DHN — Meteorologia Marítima"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "aviso de baixa visibilidade"
+      ]
+    },
+    {
+      "id": "COM-B001-01",
+      "subject": "VI — Comunicações",
+      "module": "Finalidade do SMCP",
+      "topic_code": "COM.B001.01",
+      "topic": "Finalidade do SMCP",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "A padronização do SMCP busca principalmente",
+      "options": [
+        {
+          "key": "A",
+          "text": "substituir todos os idiomas a bordo."
+        },
+        {
+          "key": "B",
+          "text": "tornar comunicações de segurança precisas, simples e não ambíguas."
+        },
+        {
+          "key": "C",
+          "text": "eliminar comunicações internas."
+        },
+        {
+          "key": "D",
+          "text": "restringir o inglês a mensagens de socorro."
+        },
+        {
+          "key": "E",
+          "text": "substituir procedimentos GMDSS."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O foreword enfatiza precisão, simplicidade e ausência de ambiguidade para reduzir erros.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "smcp",
+        "chapter_id": "smcp::s1",
+        "topic_id": "COM-B001-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO Standard Marine Communication Phrases — A.918(22)",
+        "locator": "GENERAL"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "finalidade do smcp"
+      ]
+    },
+    {
+      "id": "COM-B001-02",
+      "subject": "VI — Comunicações",
+      "module": "Estrutura do SMCP",
+      "topic_code": "COM.B001.02",
+      "topic": "Estrutura do SMCP",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Analise a organização do SMCP.",
+      "assertions": [
+        "I) Há frases para comunicações externas.",
+        "II) Há frases para ordens de leme e máquina a bordo.",
+        "III) Há frases padronizadas para VTS e mensagens GMDSS.",
+        "IV) O SMCP exclui comunicações de praticagem."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "O documento contempla comunicações externas, a bordo, VTS e GMDSS; IV é falsa.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "smcp",
+        "chapter_id": "smcp::s1",
+        "topic_id": "COM-B001-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO Standard Marine Communication Phrases — A.918(22)",
+        "locator": "GENERAL"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "estrutura do smcp"
+      ]
+    },
+    {
+      "id": "COM-B001-03",
+      "subject": "VI — Comunicações",
+      "module": "Message markers",
+      "topic_code": "COM.B001.03",
+      "topic": "Message markers",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "association",
+      "cognitive_level": 3,
+      "question": "Associe a finalidade comunicacional ao uso de linguagem padronizada e assinale a opção correta: 1) Distress; 2) Urgency; 3) Safety.",
+      "options": [
+        {
+          "key": "A",
+          "text": "1 segurança; 2 socorro; 3 urgência, nessa ordem."
+        },
+        {
+          "key": "B",
+          "text": "1 rotina; 2 teste de rádio; 3 somente meteorologia."
+        },
+        {
+          "key": "C",
+          "text": "1 praticagem; 2 atracação; 3 fundeio."
+        },
+        {
+          "key": "D",
+          "text": "1 perigo grave/imediato; 2 situação urgente sem caracterizar necessariamente distress; 3 informação de segurança."
+        },
+        {
+          "key": "E",
+          "text": "As três categorias são equivalentes."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "O SMCP distingue tráfego de distress, urgency e safety conforme a natureza da comunicação.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "smcp",
+        "chapter_id": "smcp::s1",
+        "topic_id": "COM-B001-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO Standard Marine Communication Phrases — A.918(22)",
+        "locator": "GENERAL"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "message markers"
+      ]
+    },
+    {
+      "id": "COM-B001-04",
+      "subject": "VI — Comunicações",
+      "module": "Idioma de trabalho",
+      "topic_code": "COM.B001.04",
+      "topic": "Idioma de trabalho",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "A resolução recorda que, nas comunicações de segurança bridge-to-bridge e bridge-to-shore abrangidas, o idioma de trabalho é",
+      "options": [
+        {
+          "key": "A",
+          "text": "francês."
+        },
+        {
+          "key": "B",
+          "text": "latim marítimo."
+        },
+        {
+          "key": "C",
+          "text": "o idioma do Estado de bandeira, obrigatoriamente."
+        },
+        {
+          "key": "D",
+          "text": "qualquer idioma escolhido pelo operador VTS."
+        },
+        {
+          "key": "E",
+          "text": "inglês, salvo quando os diretamente envolvidos falam idioma comum diferente nas condições previstas."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A resolução remete ao SOLAS V/14.4 e ao uso do inglês, com a ressalva indicada.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "smcp",
+        "chapter_id": "smcp::s1",
+        "topic_id": "COM-B001-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO Standard Marine Communication Phrases — A.918(22)",
+        "locator": "GENERAL"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "idioma de trabalho"
+      ]
+    },
+    {
+      "id": "CGE-B001-01",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Definição de fadiga",
+      "topic_code": "CGE.B001.01",
+      "topic": "Definição de fadiga",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Segundo MSC.1/Circ.1598, fadiga é",
+      "options": [
+        {
+          "key": "A",
+          "text": "estado de comprometimento físico e/ou mental decorrente de fatores como sono inadequado, vigília prolongada, desalinhamento circadiano e esforço."
+        },
+        {
+          "key": "B",
+          "text": "apenas sonolência causada por turno noturno."
+        },
+        {
+          "key": "C",
+          "text": "qualquer redução voluntária de produtividade."
+        },
+        {
+          "key": "D",
+          "text": "doença exclusiva de tripulantes idosos."
+        },
+        {
+          "key": "E",
+          "text": "condição que só ocorre após 24 horas sem dormir."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A definição é ampla e inclui fatores de sono, vigília, ritmo circadiano e esforço.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "fatigue",
+        "chapter_id": "fatigue::integral",
+        "topic_id": "CGE-B001-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO MSC.1/Circ.1598 — Guidelines on Fatigue",
+        "locator": "Guidelines on Fatigue"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "definição de fadiga"
+      ]
+    },
+    {
+      "id": "CGE-B001-02",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Gestão da fadiga",
+      "topic_code": "CGE.B001.02",
+      "topic": "Gestão da fadiga",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Uma companhia pretende tratar fadiga apenas aumentando treinamentos, sem revisar carga de trabalho, descanso ou efetivo. À luz das Guidelines, a abordagem é",
+      "options": [
+        {
+          "key": "A",
+          "text": "suficiente, pois fadiga é problema de conhecimento."
+        },
+        {
+          "key": "B",
+          "text": "incompleta, pois a gestão deve ser abrangente e considerar carga operacional, tripulação, apoio e trabalho/descanso."
+        },
+        {
+          "key": "C",
+          "text": "obrigatória porque desenho do navio é irrelevante."
+        },
+        {
+          "key": "D",
+          "text": "adequada apenas em viagens curtas."
+        },
+        {
+          "key": "E",
+          "text": "suficiente se houver café disponível."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A orientação exige abordagem holística, não uma única medida isolada.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "fatigue",
+        "chapter_id": "fatigue::integral",
+        "topic_id": "CGE-B001-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO MSC.1/Circ.1598 — Guidelines on Fatigue",
+        "locator": "Guidelines on Fatigue"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "gestão da fadiga"
+      ]
+    },
+    {
+      "id": "CGE-B001-03",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Fatores de fadiga",
+      "topic_code": "CGE.B001.03",
+      "topic": "Fatores de fadiga",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Sobre fatores associados à fadiga:",
+      "assertions": [
+        "I) Sono restaurador insuficiente é causa relevante.",
+        "II) Trabalho em horários desalinhados com o ritmo circadiano pode contribuir.",
+        "III) Estresse e carga excessiva de trabalho podem contribuir.",
+        "IV) Habilidade e experiência tornam o indivíduo imune à fadiga."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Todas."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Sono insuficiente, baixa qualidade, desalinhamento circadiano, estresse e carga excessiva são fatores expressos; IV é falsa.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "fatigue",
+        "chapter_id": "fatigue::integral",
+        "topic_id": "CGE-B001-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO MSC.1/Circ.1598 — Guidelines on Fatigue",
+        "locator": "Guidelines on Fatigue"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "fatores de fadiga"
+      ]
+    },
+    {
+      "id": "CGE-B001-04",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Responsabilidade organizacional",
+      "topic_code": "CGE.B001.04",
+      "topic": "Responsabilidade organizacional",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Qual afirmação melhor representa a distribuição de responsabilidades proposta pelas Guidelines on Fatigue?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A fadiga é responsabilidade exclusiva do marítimo individual."
+        },
+        {
+          "key": "B",
+          "text": "Treinamento isolado elimina a necessidade de gestão de carga de trabalho."
+        },
+        {
+          "key": "C",
+          "text": "Somente a Administração marítima pode mitigar fadiga."
+        },
+        {
+          "key": "D",
+          "text": "A gestão envolve múltiplos atores e deve ser incorporada a sistemas de gestão, decisões de tripulação e fatores de projeto/operação."
+        },
+        {
+          "key": "E",
+          "text": "Fadiga não deve ser considerada na determinação de safe manning."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A circular adota abordagem multissetorial e recomenda consideração no SMS, safe manning, treinamento e projeto/operação.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "fatigue",
+        "chapter_id": "fatigue::integral",
+        "topic_id": "CGE-B001-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO MSC.1/Circ.1598 — Guidelines on Fatigue",
+        "locator": "Guidelines on Fatigue"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "responsabilidade organizacional"
+      ]
+    },
+    {
+      "id": "CGE-B001-05",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "Categorias de fatores",
+      "topic_code": "CGE.B001.05",
+      "topic": "Categorias de fatores",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "association",
+      "cognitive_level": 3,
+      "question": "Associe corretamente as categorias de fatores de fadiga apresentadas nas Guidelines.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sono; café; ruído; vento; corrente."
+        },
+        {
+          "key": "B",
+          "text": "Somente físicos e mentais."
+        },
+        {
+          "key": "C",
+          "text": "Meteorológicos; hidrográficos; jurídicos; comerciais; médicos."
+        },
+        {
+          "key": "D",
+          "text": "Pessoais; penais; administrativos; portuários; alfandegários."
+        },
+        {
+          "key": "E",
+          "text": "Individuais; gerenciais; específicos do navio; ambientais; operacionais."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "As Guidelines organizam as causas em cinco grupos gerais: seafarer-specific, management, ship-specific, environmental e operational.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "fatigue",
+        "chapter_id": "fatigue::integral",
+        "topic_id": "CGE-B001-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO MSC.1/Circ.1598 — Guidelines on Fatigue",
+        "locator": "Guidelines on Fatigue"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-001",
+        "categorias de fatores"
+      ]
+    }
+  ]
+}
