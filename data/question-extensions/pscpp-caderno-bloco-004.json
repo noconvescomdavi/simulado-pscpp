@@ -1,0 +1,4001 @@
+{
+  "title": "Banco de Questões — Bloco PSCPP Caderno 004",
+  "block": "004",
+  "status": "approved",
+  "metrics": {
+    "total": 70,
+    "subjects": {
+      "manobrabilidade": 13,
+      "arte-naval": 17,
+      "navegacao-aguas-restritas": 9,
+      "legislacao-regulamentacao": 16,
+      "meteorologia-oceanografia": 6,
+      "comunicacoes": 4,
+      "conhecimentos-gerais": 5
+    },
+    "formats": {
+      "direct_or_situation": 43,
+      "assertions": 21,
+      "fill": 4,
+      "association": 2
+    }
+  },
+  "questions": [
+    {
+      "id": "MAN-B004-01",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "resistência total RT",
+      "topic_code": "MAN.B004.01",
+      "topic": "resistência total RT",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Com base em LARSSON & RAVEN — Ship Resistance and Flow, assinale a alternativa tecnicamente correta sobre resistência total RT.",
+      "options": [
+        {
+          "key": "A",
+          "text": "é a resistência global ao avanço do navio e pode ser decomposta em componentes para análise"
+        },
+        {
+          "key": "B",
+          "text": "é sinônimo exclusivo de resistência de ondas RW"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "resistência total RT: é a resistência global ao avanço do navio e pode ser decomposta em componentes para análise.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch1",
+        "topic_id": "MAN-B004-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Chapters 1–2 — resistance fundamentals"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "resistência total rt"
+      ]
+    },
+    {
+      "id": "MAN-B004-02",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "resistência de atrito RF",
+      "topic_code": "MAN.B004.02",
+      "topic": "resistência de atrito RF",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Com base em LARSSON & RAVEN — Ship Resistance and Flow, assinale a alternativa tecnicamente correta sobre resistência de atrito RF.",
+      "options": [
+        {
+          "key": "A",
+          "text": "é componente produzida somente pela formação de ondas"
+        },
+        {
+          "key": "B",
+          "text": "é componente viscosa associada ao cisalhamento na superfície molhada"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "resistência de atrito RF: é componente viscosa associada ao cisalhamento na superfície molhada.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch1",
+        "topic_id": "MAN-B004-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Chapters 1–2 — resistance fundamentals"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "resistência de atrito rf"
+      ]
+    },
+    {
+      "id": "MAN-B004-03",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "resistência de ondas RW",
+      "topic_code": "MAN.B004.03",
+      "topic": "resistência de ondas RW",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 3,
+      "question": "Com base em LARSSON & RAVEN — Ship Resistance and Flow, assinale a alternativa tecnicamente correta sobre resistência de ondas RW.",
+      "options": [
+        {
+          "key": "A",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "B",
+          "text": "é idêntica à resistência de atrito de placa plana"
+        },
+        {
+          "key": "C",
+          "text": "é componente associada à geração do sistema de ondas pelo casco"
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "resistência de ondas RW: é componente associada à geração do sistema de ondas pelo casco.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch1",
+        "topic_id": "MAN-B004-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Chapters 1–2 — wave resistance"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "resistência de ondas rw"
+      ]
+    },
+    {
+      "id": "MAN-B004-04",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "resistência residual RR",
+      "topic_code": "MAN.B004.04",
+      "topic": "resistência residual RR",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Com base em LARSSON & RAVEN — Ship Resistance and Flow, assinale a alternativa tecnicamente correta sobre resistência residual RR.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "B",
+          "text": "é igual à resistência total acrescida da resistência de atrito"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "na abordagem clássica de Froude corresponde à resistência total menos a resistência de uma placa plana equivalente"
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "resistência residual RR: na abordagem clássica de Froude corresponde à resistência total menos a resistência de uma placa plana equivalente.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch1",
+        "topic_id": "MAN-B004-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Chapter 1 — Froude approach"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "resistência residual rr"
+      ]
+    },
+    {
+      "id": "MAN-B004-05",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "número de Froude",
+      "topic_code": "MAN.B004.05",
+      "topic": "número de Froude",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Com base em LARSSON & RAVEN — Ship Resistance and Flow, assinale a alternativa tecnicamente correta sobre número de Froude.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        },
+        {
+          "key": "B",
+          "text": "é parâmetro que representa somente efeitos viscosos"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "é parâmetro adimensional fundamental para similitude dos efeitos de gravidade e formação de ondas"
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "número de Froude: é parâmetro adimensional fundamental para similitude dos efeitos de gravidade e formação de ondas.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch1",
+        "topic_id": "MAN-B004-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Chapter 1 — similitude"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "número de froude"
+      ]
+    },
+    {
+      "id": "MAN-B004-06",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "número de Reynolds",
+      "topic_code": "MAN.B004.06",
+      "topic": "número de Reynolds",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Com base em LARSSON & RAVEN — Ship Resistance and Flow, assinale a alternativa tecnicamente correta sobre número de Reynolds.",
+      "options": [
+        {
+          "key": "A",
+          "text": "é parâmetro adimensional ligado à relação entre efeitos inerciais e viscosos"
+        },
+        {
+          "key": "B",
+          "text": "é usado apenas para descrever ondas de gravidade, sem relação com viscosidade"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "número de Reynolds: é parâmetro adimensional ligado à relação entre efeitos inerciais e viscosos.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch1",
+        "topic_id": "MAN-B004-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Chapter 1 — similitude"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "número de reynolds"
+      ]
+    },
+    {
+      "id": "MAN-B004-07",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "camada-limite",
+      "topic_code": "MAN.B004.07",
+      "topic": "camada-limite",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 3,
+      "question": "Com base em LARSSON & RAVEN — Ship Resistance and Flow, assinale a alternativa tecnicamente correta sobre camada-limite.",
+      "options": [
+        {
+          "key": "A",
+          "text": "é a superfície livre gerada exclusivamente por ondas divergentes"
+        },
+        {
+          "key": "B",
+          "text": "é região junto ao casco em que os efeitos viscosos e gradientes de velocidade são importantes"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "camada-limite: é região junto ao casco em que os efeitos viscosos e gradientes de velocidade são importantes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch2",
+        "topic_id": "MAN-B004-07",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Chapter 2 — viscous flow"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "camada-limite"
+      ]
+    },
+    {
+      "id": "MAN-B004-08",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "superfície molhada S",
+      "topic_code": "MAN.B004.08",
+      "topic": "superfície molhada S",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Com base em LARSSON & RAVEN — Ship Resistance and Flow, assinale a alternativa tecnicamente correta sobre superfície molhada S.",
+      "options": [
+        {
+          "key": "A",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "B",
+          "text": "é a área projetada lateral acima da linha-d'água"
+        },
+        {
+          "key": "C",
+          "text": "é a área do casco em contato com a água relevante para estimativas de resistência viscosa"
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "superfície molhada S: é a área do casco em contato com a água relevante para estimativas de resistência viscosa.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch2",
+        "topic_id": "MAN-B004-08",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Chapter 2 — viscous resistance"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "superfície molhada s"
+      ]
+    },
+    {
+      "id": "MAN-B004-09",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "efeito de águas rasas na resistência",
+      "topic_code": "MAN.B004.09",
+      "topic": "efeito de águas rasas na resistência",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "De acordo com LARSSON & RAVEN — Ship Resistance and Flow, analise as afirmativas, identifique as verdadeiras e assinale a opção correta.",
+      "assertions": [
+        "I) efeito de águas rasas na resistência: reduz necessariamente a resistência a zero.",
+        "II) Froude baseado na profundidade Fnh: relaciona a velocidade do navio com a profundidade e a gravidade.",
+        "III) coeficiente CT: é coeficiente adimensional associado à resistência total.",
+        "IV) coeficiente CW: é coeficiente associado à resistência de ondas."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas II, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II, III e IV."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A afirmativa I é a incorreta por atribuir definição incompatível a efeito de águas rasas na resistência.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch8",
+        "topic_id": "MAN-B004-09",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Chapter 8 — restricted/shallow water effects"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "efeito de águas rasas na resistência"
+      ]
+    },
+    {
+      "id": "MAN-B004-10",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "coeficiente CT",
+      "topic_code": "MAN.B004.10",
+      "topic": "coeficiente CT",
+      "difficulty": "Médio",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "De acordo com LARSSON & RAVEN — Ship Resistance and Flow, analise as afirmativas, identifique as verdadeiras e assinale a opção correta.",
+      "assertions": [
+        "I) coeficiente CT: é coeficiente adimensional associado à resistência total.",
+        "II) coeficiente CW: é coeficiente de resistência total exclusivamente viscosa.",
+        "III) potência efetiva PE: é potência associada ao produto da resistência do navio pela velocidade.",
+        "IV) resistência total RT: é a resistência global ao avanço do navio e pode ser decomposta em componentes para análise."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II, III e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas II e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, III e IV."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A afirmativa II é a incorreta por atribuir definição incompatível a coeficiente CW.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch1",
+        "topic_id": "MAN-B004-10",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Nomenclature — resistance coefficients"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "coeficiente ct"
+      ]
+    },
+    {
+      "id": "MAN-B004-11",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "potência efetiva PE",
+      "topic_code": "MAN.B004.11",
+      "topic": "potência efetiva PE",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "De acordo com LARSSON & RAVEN — Ship Resistance and Flow, analise as afirmativas, identifique as verdadeiras e assinale a opção correta.",
+      "assertions": [
+        "I) potência efetiva PE: é potência associada ao produto da resistência do navio pela velocidade.",
+        "II) resistência total RT: é a resistência global ao avanço do navio e pode ser decomposta em componentes para análise.",
+        "III) resistência de atrito RF: é componente produzida somente pela formação de ondas.",
+        "IV) resistência de ondas RW: é componente associada à geração do sistema de ondas pelo casco."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas II e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II, III e IV."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A afirmativa III é a incorreta por atribuir definição incompatível a resistência de atrito RF.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch1",
+        "topic_id": "MAN-B004-11",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Resistance and powering"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "potência efetiva pe"
+      ]
+    },
+    {
+      "id": "MAN-B004-12",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "resistência de atrito RF",
+      "topic_code": "MAN.B004.12",
+      "topic": "resistência de atrito RF",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "De acordo com LARSSON & RAVEN — Ship Resistance and Flow, analise as afirmativas, identifique as verdadeiras e assinale a opção correta.",
+      "assertions": [
+        "I) resistência de atrito RF: é componente viscosa associada ao cisalhamento na superfície molhada.",
+        "II) resistência de ondas RW: é componente associada à geração do sistema de ondas pelo casco.",
+        "III) resistência residual RR: na abordagem clássica de Froude corresponde à resistência total menos a resistência de uma placa plana equivalente.",
+        "IV) número de Froude: é parâmetro que representa somente efeitos viscosos."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas II e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II, III e IV."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A afirmativa IV é a incorreta por atribuir definição incompatível a número de Froude.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch1",
+        "topic_id": "MAN-B004-12",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Chapters 1–2 — resistance fundamentals"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "resistência de atrito rf"
+      ]
+    },
+    {
+      "id": "MAN-B004-13",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "potência efetiva PE",
+      "topic_code": "MAN.B004.13",
+      "topic": "potência efetiva PE",
+      "difficulty": "Médio",
+      "style": "Completar",
+      "pscpp_format": "fill",
+      "cognitive_level": 3,
+      "question": "Complete: “é potência associada ao produto da resistência do navio pela velocidade” corresponde ao conceito de ______.",
+      "options": [
+        {
+          "key": "A",
+          "text": "resistência de atrito RF"
+        },
+        {
+          "key": "B",
+          "text": "resistência total RT"
+        },
+        {
+          "key": "C",
+          "text": "potência efetiva PE"
+        },
+        {
+          "key": "D",
+          "text": "resistência de ondas RW"
+        },
+        {
+          "key": "E",
+          "text": "resistência residual RR"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A definição corresponde a potência efetiva PE.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch1",
+        "topic_id": "MAN-B004-13",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Resistance and powering"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "potência efetiva pe"
+      ]
+    },
+    {
+      "id": "ANV-B004-01",
+      "subject": "II — Arte Naval",
+      "module": "vivo do cabo",
+      "topic_code": "ANV.B004.01",
+      "topic": "vivo do cabo",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Com base em FONSECA — Arte Naval, Vol. 1, 8ª ed., assinale a alternativa tecnicamente correta sobre vivo do cabo.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "B",
+          "text": "é sempre a extremidade livre denominada chicote"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "é a parte submetida à tensão/esforço ou que deu volta em um objeto"
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "vivo do cabo: é a parte submetida à tensão/esforço ou que deu volta em um objeto.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch8",
+        "topic_id": "ANV-B004-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Trabalhos do Marinheiro"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "vivo do cabo"
+      ]
+    },
+    {
+      "id": "ANV-B004-02",
+      "subject": "II — Arte Naval",
+      "module": "seio do cabo",
+      "topic_code": "ANV.B004.02",
+      "topic": "seio do cabo",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Com base em FONSECA — Arte Naval, Vol. 1, 8ª ed., assinale a alternativa tecnicamente correta sobre seio do cabo.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        },
+        {
+          "key": "B",
+          "text": "é o nome dado exclusivamente à extremidade falcaçada"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "é a parte intermediária do cabo entre o vivo e o chicote"
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "seio do cabo: é a parte intermediária do cabo entre o vivo e o chicote.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch8",
+        "topic_id": "ANV-B004-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Trabalhos do Marinheiro"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "seio do cabo"
+      ]
+    },
+    {
+      "id": "ANV-B004-03",
+      "subject": "II — Arte Naval",
+      "module": "chicote",
+      "topic_code": "ANV.B004.03",
+      "topic": "chicote",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 3,
+      "question": "Com base em FONSECA — Arte Naval, Vol. 1, 8ª ed., assinale a alternativa tecnicamente correta sobre chicote.",
+      "options": [
+        {
+          "key": "A",
+          "text": "é a extremidade livre do cabo"
+        },
+        {
+          "key": "B",
+          "text": "é a parte permanentemente sob esforço denominada vivo"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "chicote: é a extremidade livre do cabo.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch8",
+        "topic_id": "ANV-B004-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Trabalhos do Marinheiro"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "chicote"
+      ]
+    },
+    {
+      "id": "ANV-B004-04",
+      "subject": "II — Arte Naval",
+      "module": "volta singela",
+      "topic_code": "ANV.B004.04",
+      "topic": "volta singela",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Com base em FONSECA — Arte Naval, Vol. 1, 8ª ed., assinale a alternativa tecnicamente correta sobre volta singela.",
+      "options": [
+        {
+          "key": "A",
+          "text": "é constituída obrigatoriamente por duas ou mais voltas completas"
+        },
+        {
+          "key": "B",
+          "text": "é uma única volta de circunferência em torno de um objeto, sem morder ou formar nó"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "volta singela: é uma única volta de circunferência em torno de um objeto, sem morder ou formar nó.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch8",
+        "topic_id": "ANV-B004-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Trabalhos do Marinheiro"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "volta singela"
+      ]
+    },
+    {
+      "id": "ANV-B004-05",
+      "subject": "II — Arte Naval",
+      "module": "voltas redondas",
+      "topic_code": "ANV.B004.05",
+      "topic": "voltas redondas",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Com base em FONSECA — Arte Naval, Vol. 1, 8ª ed., assinale a alternativa tecnicamente correta sobre voltas redondas.",
+      "options": [
+        {
+          "key": "A",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "B",
+          "text": "são uma única passagem sem envolver o objeto"
+        },
+        {
+          "key": "C",
+          "text": "são duas ou mais voltas de circunferência em torno do mesmo objeto"
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "voltas redondas: são duas ou mais voltas de circunferência em torno do mesmo objeto.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch8",
+        "topic_id": "ANV-B004-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Trabalhos do Marinheiro"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "voltas redondas"
+      ]
+    },
+    {
+      "id": "ANV-B004-06",
+      "subject": "II — Arte Naval",
+      "module": "nós e voltas",
+      "topic_code": "ANV.B004.06",
+      "topic": "nós e voltas",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Com base em FONSECA — Arte Naval, Vol. 1, 8ª ed., assinale a alternativa tecnicamente correta sobre nós e voltas.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "B",
+          "text": "são peças metálicas do poleame"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "são entrelaçamentos feitos à mão pelos quais cabos se prendem pelo chicote ou pelo seio"
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "nós e voltas: são entrelaçamentos feitos à mão pelos quais cabos se prendem pelo chicote ou pelo seio.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch8",
+        "topic_id": "ANV-B004-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Trabalhos do Marinheiro"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "nós e voltas"
+      ]
+    },
+    {
+      "id": "ANV-B004-07",
+      "subject": "II — Arte Naval",
+      "module": "resistência de nó ou volta",
+      "topic_code": "ANV.B004.07",
+      "topic": "resistência de nó ou volta",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 3,
+      "question": "Com base em FONSECA — Arte Naval, Vol. 1, 8ª ed., assinale a alternativa tecnicamente correta sobre resistência de nó ou volta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        },
+        {
+          "key": "B",
+          "text": "é sempre superior à resistência nominal do cabo"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "é inferior à do cabo íntegro porque dobras e distorções concentram esforços"
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "resistência de nó ou volta: é inferior à do cabo íntegro porque dobras e distorções concentram esforços.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch8",
+        "topic_id": "ANV-B004-07",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Resistência dos trabalhos"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "resistência de nó ou volta"
+      ]
+    },
+    {
+      "id": "ANV-B004-08",
+      "subject": "II — Arte Naval",
+      "module": "falcaça",
+      "topic_code": "ANV.B004.08",
+      "topic": "falcaça",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Com base em FONSECA — Arte Naval, Vol. 1, 8ª ed., assinale a alternativa tecnicamente correta sobre falcaça.",
+      "options": [
+        {
+          "key": "A",
+          "text": "é trabalho do marinheiro usado para impedir que a extremidade do cabo se desfaça/descoxe"
+        },
+        {
+          "key": "B",
+          "text": "é equipamento mecânico de fundeio"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "falcaça: é trabalho do marinheiro usado para impedir que a extremidade do cabo se desfaça/descoxe.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch8",
+        "topic_id": "ANV-B004-08",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Trabalhos do Marinheiro"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "falcaça"
+      ]
+    },
+    {
+      "id": "ANV-B004-09",
+      "subject": "II — Arte Naval",
+      "module": "costura",
+      "topic_code": "ANV.B004.09",
+      "topic": "costura",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Com base em FONSECA — Arte Naval, Vol. 1, 8ª ed., assinale a alternativa tecnicamente correta sobre costura.",
+      "options": [
+        {
+          "key": "A",
+          "text": "é sinônimo de volta singela em cabeço"
+        },
+        {
+          "key": "B",
+          "text": "é emenda/trabalho executado nos cabos e pode ser preferível para união permanente"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "costura: é emenda/trabalho executado nos cabos e pode ser preferível para união permanente.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch8",
+        "topic_id": "ANV-B004-09",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Costuras"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "costura"
+      ]
+    },
+    {
+      "id": "ANV-B004-10",
+      "subject": "II — Arte Naval",
+      "module": "estropo",
+      "topic_code": "ANV.B004.10",
+      "topic": "estropo",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Com base em FONSECA — Arte Naval, Vol. 1, 8ª ed., assinale a alternativa tecnicamente correta sobre estropo.",
+      "options": [
+        {
+          "key": "A",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "B",
+          "text": "é sinônimo de chicote do cabo"
+        },
+        {
+          "key": "C",
+          "text": "é trabalho/peça de cabo, corrente ou aço empregado para envolver ou sustentar objetos/cargas"
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "estropo: é trabalho/peça de cabo, corrente ou aço empregado para envolver ou sustentar objetos/cargas.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch8",
+        "topic_id": "ANV-B004-10",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Estropos"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "estropo"
+      ]
+    },
+    {
+      "id": "ANV-B004-11",
+      "subject": "II — Arte Naval",
+      "module": "aboçadura",
+      "topic_code": "ANV.B004.11",
+      "topic": "aboçadura",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "De acordo com FONSECA — Arte Naval, Vol. 1, 8ª ed., analise as afirmativas, identifique as verdadeiras e assinale a opção correta.",
+      "assertions": [
+        "I) aboçadura: é classificação de navio mercante.",
+        "II) alça: é formação de um olhal/loop permanente ou preparado em um cabo.",
+        "III) mão: é trabalho do marinheiro associado à formação de alça/olhal conforme o emprego descrito no capítulo.",
+        "IV) botão: é amarração feita para unir ou apertar partes de cabos/peças em trabalhos do marinheiro."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas II, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II, III e IV."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A afirmativa I é a incorreta por atribuir definição incompatível a aboçadura.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch8",
+        "topic_id": "ANV-B004-11",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Aboçaduras"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "aboçadura"
+      ]
+    },
+    {
+      "id": "ANV-B004-12",
+      "subject": "II — Arte Naval",
+      "module": "mão",
+      "topic_code": "ANV.B004.12",
+      "topic": "mão",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "De acordo com FONSECA — Arte Naval, Vol. 1, 8ª ed., analise as afirmativas, identifique as verdadeiras e assinale a opção correta.",
+      "assertions": [
+        "I) mão: é trabalho do marinheiro associado à formação de alça/olhal conforme o emprego descrito no capítulo.",
+        "II) botão: é instrumento de navegação astronômica.",
+        "III) pinhas: são trabalhos confeccionados com cabos, alguns com finalidade prática e outros ornamental.",
+        "IV) cabo solteiro: é pedaço de cabo sem aplicação especial imediata, disponível para emprego em diversos serviços."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II, III e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas II e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, III e IV."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A afirmativa II é a incorreta por atribuir definição incompatível a botão.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch8",
+        "topic_id": "ANV-B004-12",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Alças e mãos"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "mão"
+      ]
+    },
+    {
+      "id": "ANV-B004-13",
+      "subject": "II — Arte Naval",
+      "module": "pinhas",
+      "topic_code": "ANV.B004.13",
+      "topic": "pinhas",
+      "difficulty": "Médio",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "De acordo com FONSECA — Arte Naval, Vol. 1, 8ª ed., analise as afirmativas, identifique as verdadeiras e assinale a opção correta.",
+      "assertions": [
+        "I) pinhas: são trabalhos confeccionados com cabos, alguns com finalidade prática e outros ornamental.",
+        "II) cabo solteiro: é pedaço de cabo sem aplicação especial imediata, disponível para emprego em diversos serviços.",
+        "III) trabalhos do marinheiro: abrangem somente soldagem e rebitagem de estruturas metálicas.",
+        "IV) vivo do cabo: é a parte submetida à tensão/esforço ou que deu volta em um objeto."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas II e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II, III e IV."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A afirmativa III é a incorreta por atribuir definição incompatível a trabalhos do marinheiro.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch8",
+        "topic_id": "ANV-B004-13",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Pinhas"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "pinhas"
+      ]
+    },
+    {
+      "id": "ANV-B004-14",
+      "subject": "II — Arte Naval",
+      "module": "trabalhos do marinheiro",
+      "topic_code": "ANV.B004.14",
+      "topic": "trabalhos do marinheiro",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "De acordo com FONSECA — Arte Naval, Vol. 1, 8ª ed., analise as afirmativas, identifique as verdadeiras e assinale a opção correta.",
+      "assertions": [
+        "I) trabalhos do marinheiro: abrangem falcaças, nós, voltas, malhas, aboçaduras, botões, alças, mãos, estropos, costuras e outros trabalhos de cabos.",
+        "II) vivo do cabo: é a parte submetida à tensão/esforço ou que deu volta em um objeto.",
+        "III) seio do cabo: é a parte intermediária do cabo entre o vivo e o chicote.",
+        "IV) chicote: é a parte permanentemente sob esforço denominada vivo."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas II e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II, III e IV."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A afirmativa IV é a incorreta por atribuir definição incompatível a chicote.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch8",
+        "topic_id": "ANV-B004-14",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Trabalhos do Marinheiro"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "trabalhos do marinheiro"
+      ]
+    },
+    {
+      "id": "ANV-B004-15",
+      "subject": "II — Arte Naval",
+      "module": "seio do cabo",
+      "topic_code": "ANV.B004.15",
+      "topic": "seio do cabo",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "De acordo com FONSECA — Arte Naval, Vol. 1, 8ª ed., analise as afirmativas, identifique as verdadeiras e assinale a opção correta.",
+      "assertions": [
+        "I) seio do cabo: é o nome dado exclusivamente à extremidade falcaçada.",
+        "II) chicote: é a extremidade livre do cabo.",
+        "III) volta singela: é uma única volta de circunferência em torno de um objeto, sem morder ou formar nó.",
+        "IV) voltas redondas: são duas ou mais voltas de circunferência em torno do mesmo objeto."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas II e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II, III e IV."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A afirmativa I é a incorreta por atribuir definição incompatível a seio do cabo.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch8",
+        "topic_id": "ANV-B004-15",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Trabalhos do Marinheiro"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "seio do cabo"
+      ]
+    },
+    {
+      "id": "ANV-B004-16",
+      "subject": "II — Arte Naval",
+      "module": "trabalhos do marinheiro",
+      "topic_code": "ANV.B004.16",
+      "topic": "trabalhos do marinheiro",
+      "difficulty": "Muito Difícil",
+      "style": "Completar",
+      "pscpp_format": "fill",
+      "cognitive_level": 4,
+      "question": "Complete: “abrangem falcaças, nós, voltas, malhas, aboçaduras, botões, alças, mãos, estropos, costuras e outros trabalhos de cabos” corresponde ao conceito de ______.",
+      "options": [
+        {
+          "key": "A",
+          "text": "chicote"
+        },
+        {
+          "key": "B",
+          "text": "vivo do cabo"
+        },
+        {
+          "key": "C",
+          "text": "seio do cabo"
+        },
+        {
+          "key": "D",
+          "text": "trabalhos do marinheiro"
+        },
+        {
+          "key": "E",
+          "text": "volta singela"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A definição corresponde a trabalhos do marinheiro.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch8",
+        "topic_id": "ANV-B004-16",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Trabalhos do Marinheiro"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "trabalhos do marinheiro"
+      ]
+    },
+    {
+      "id": "ANV-B004-17",
+      "subject": "II — Arte Naval",
+      "module": "vivo do cabo",
+      "topic_code": "ANV.B004.17",
+      "topic": "vivo do cabo",
+      "difficulty": "Difícil",
+      "style": "Associação",
+      "pscpp_format": "association",
+      "cognitive_level": 3,
+      "question": "Associe os termos às definições e assinale a opção inteiramente correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Todas incorretas."
+        },
+        {
+          "key": "B",
+          "text": "1 e 2 trocados; demais corretos."
+        },
+        {
+          "key": "C",
+          "text": "2 e 3 trocados; demais corretos."
+        },
+        {
+          "key": "D",
+          "text": "4 e 5 trocados; demais corretos."
+        },
+        {
+          "key": "E",
+          "text": "1) vivo do cabo — é a parte submetida à tensão/esforço ou que deu volta em um objeto; 2) seio do cabo — é a parte intermediária do cabo entre o vivo e o chicote; 3) chicote — é a extremidade livre do cabo; 4) volta singela — é uma única volta de circunferência em torno de um objeto, sem morder ou formar nó; 5) voltas redondas — são duas ou mais voltas de circunferência em torno do mesmo objeto"
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A alternativa correta preserva todas as definições da fonte.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::ch8",
+        "topic_id": "ANV-B004-17",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Trabalhos do Marinheiro"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "vivo do cabo"
+      ]
+    },
+    {
+      "id": "NAR-B004-01",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "bridge team",
+      "topic_code": "NAR.B004.01",
+      "topic": "bridge team",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Com base em ICS — Bridge Procedures Guide, 6ª ed., assinale a alternativa tecnicamente correta sobre bridge team.",
+      "options": [
+        {
+          "key": "A",
+          "text": "é o pessoal no passadiço engajado na navegação do navio"
+        },
+        {
+          "key": "B",
+          "text": "é somente o comandante, excluídos OOW e demais membros"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "bridge team: é o pessoal no passadiço engajado na navegação do navio.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "ics-bpg",
+        "chapter_id": "ics-bpg::ch2",
+        "topic_id": "NAR-B004-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "ICS — Bridge Procedures Guide, 6ª ed.",
+        "locator": "Chapter 2 — Effective bridge organisation"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "bridge team"
+      ]
+    },
+    {
+      "id": "NAR-B004-02",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "BRM",
+      "topic_code": "NAR.B004.02",
+      "topic": "BRM",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Com base em ICS — Bridge Procedures Guide, 6ª ed., assinale a alternativa tecnicamente correta sobre BRM.",
+      "options": [
+        {
+          "key": "A",
+          "text": "substitui o passage plan por decisões individuais"
+        },
+        {
+          "key": "B",
+          "text": "organiza e utiliza recursos humanos e técnicos para apoiar navegação segura e decisões eficazes"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "BRM: organiza e utiliza recursos humanos e técnicos para apoiar navegação segura e decisões eficazes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "ics-bpg",
+        "chapter_id": "ics-bpg::ch2",
+        "topic_id": "NAR-B004-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "ICS — Bridge Procedures Guide, 6ª ed.",
+        "locator": "Chapter 2 — BRM"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "brm"
+      ]
+    },
+    {
+      "id": "NAR-B004-03",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "passage plan",
+      "topic_code": "NAR.B004.03",
+      "topic": "passage plan",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 3,
+      "question": "Com base em ICS — Bridge Procedures Guide, 6ª ed., assinale a alternativa tecnicamente correta sobre passage plan.",
+      "options": [
+        {
+          "key": "A",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "B",
+          "text": "deve ser abandonado assim que o prático embarca"
+        },
+        {
+          "key": "C",
+          "text": "deve ser preparado, executado e monitorado como referência comum para a passagem"
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "passage plan: deve ser preparado, executado e monitorado como referência comum para a passagem.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "ics-bpg",
+        "chapter_id": "ics-bpg::ch3",
+        "topic_id": "NAR-B004-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "ICS — Bridge Procedures Guide, 6ª ed.",
+        "locator": "Chapter 3 — Passage planning"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "passage plan"
+      ]
+    },
+    {
+      "id": "NAR-B004-04",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "parallel indexing",
+      "topic_code": "NAR.B004.04",
+      "topic": "parallel indexing",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Com base em ICS — Bridge Procedures Guide, 6ª ed., assinale a alternativa tecnicamente correta sobre parallel indexing.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "B",
+          "text": "é técnica usada apenas para medir calado aéreo"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "é técnica radar recomendada para verificar manutenção da derrota em águas costeiras e de praticagem"
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "parallel indexing: é técnica radar recomendada para verificar manutenção da derrota em águas costeiras e de praticagem.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "ics-bpg",
+        "chapter_id": "ics-bpg::ch5",
+        "topic_id": "NAR-B004-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "ICS — Bridge Procedures Guide, 6ª ed.",
+        "locator": "Chapter 5 — Radar monitoring"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "parallel indexing"
+      ]
+    },
+    {
+      "id": "NAR-B004-05",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "XTE",
+      "topic_code": "NAR.B004.05",
+      "topic": "XTE",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Com base em ICS — Bridge Procedures Guide, 6ª ed., assinale a alternativa tecnicamente correta sobre XTE.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        },
+        {
+          "key": "B",
+          "text": "é a altura do navio acima da linha-d'água"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "é o erro transversal em relação à derrota planejada"
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "XTE: é o erro transversal em relação à derrota planejada.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "ics-bpg",
+        "chapter_id": "ics-bpg::ch3",
+        "topic_id": "NAR-B004-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "ICS — Bridge Procedures Guide, 6ª ed.",
+        "locator": "Chapter 3 — Passage planning"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "xte"
+      ]
+    },
+    {
+      "id": "NAR-B004-06",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "air draught",
+      "topic_code": "NAR.B004.06",
+      "topic": "air draught",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "De acordo com ICS — Bridge Procedures Guide, 6ª ed., analise as afirmativas, identifique as verdadeiras e assinale a opção correta.",
+      "assertions": [
+        "I) air draught: é a distância da quilha ao fundo.",
+        "II) monitoramento ECDIS: requer verificar plano correto, configurações de segurança e disponibilidade/correção dos sensores.",
+        "III) planejamento de fundeio: integra o passage planning e deve considerar posição, profundidade, espaço, condições e contingências.",
+        "IV) pilotagem: exige integração do prático ao processo de navegação e troca de informações com a equipe."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas II, III e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas II e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II, III e IV."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A afirmativa I é a incorreta por atribuir definição incompatível a air draught.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "ics-bpg",
+        "chapter_id": "ics-bpg::ch3",
+        "topic_id": "NAR-B004-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "ICS — Bridge Procedures Guide, 6ª ed.",
+        "locator": "Definitions / passage planning"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "air draught"
+      ]
+    },
+    {
+      "id": "NAR-B004-07",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "planejamento de fundeio",
+      "topic_code": "NAR.B004.07",
+      "topic": "planejamento de fundeio",
+      "difficulty": "Médio",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "De acordo com ICS — Bridge Procedures Guide, 6ª ed., analise as afirmativas, identifique as verdadeiras e assinale a opção correta.",
+      "assertions": [
+        "I) planejamento de fundeio: integra o passage planning e deve considerar posição, profundidade, espaço, condições e contingências.",
+        "II) pilotagem: transfere automaticamente toda responsabilidade de navegação ao prático.",
+        "III) bridge team: é o pessoal no passadiço engajado na navegação do navio.",
+        "IV) BRM: organiza e utiliza recursos humanos e técnicos para apoiar navegação segura e decisões eficazes."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas II e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II, III e IV."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A afirmativa II é a incorreta por atribuir definição incompatível a pilotagem.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "ics-bpg",
+        "chapter_id": "ics-bpg::ch3",
+        "topic_id": "NAR-B004-07",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "ICS — Bridge Procedures Guide, 6ª ed.",
+        "locator": "Chapter 3 — Planning an anchorage"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "planejamento de fundeio"
+      ]
+    },
+    {
+      "id": "NAR-B004-08",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "bridge team",
+      "topic_code": "NAR.B004.08",
+      "topic": "bridge team",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "De acordo com ICS — Bridge Procedures Guide, 6ª ed., analise as afirmativas, identifique as verdadeiras e assinale a opção correta.",
+      "assertions": [
+        "I) bridge team: é o pessoal no passadiço engajado na navegação do navio.",
+        "II) BRM: organiza e utiliza recursos humanos e técnicos para apoiar navegação segura e decisões eficazes.",
+        "III) passage plan: deve ser abandonado assim que o prático embarca.",
+        "IV) parallel indexing: é técnica radar recomendada para verificar manutenção da derrota em águas costeiras e de praticagem."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas II e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II, III e IV."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A afirmativa III é a incorreta por atribuir definição incompatível a passage plan.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "ics-bpg",
+        "chapter_id": "ics-bpg::ch2",
+        "topic_id": "NAR-B004-08",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "ICS — Bridge Procedures Guide, 6ª ed.",
+        "locator": "Chapter 2 — Effective bridge organisation"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "bridge team"
+      ]
+    },
+    {
+      "id": "NAR-B004-09",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "pilotagem",
+      "topic_code": "NAR.B004.09",
+      "topic": "pilotagem",
+      "difficulty": "Difícil",
+      "style": "Completar",
+      "pscpp_format": "fill",
+      "cognitive_level": 3,
+      "question": "Complete: “exige integração do prático ao processo de navegação e troca de informações com a equipe” corresponde ao conceito de ______.",
+      "options": [
+        {
+          "key": "A",
+          "text": "passage plan"
+        },
+        {
+          "key": "B",
+          "text": "bridge team"
+        },
+        {
+          "key": "C",
+          "text": "BRM"
+        },
+        {
+          "key": "D",
+          "text": "pilotagem"
+        },
+        {
+          "key": "E",
+          "text": "parallel indexing"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A definição corresponde a pilotagem.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "ics-bpg",
+        "chapter_id": "ics-bpg::ch6",
+        "topic_id": "NAR-B004-09",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "ICS — Bridge Procedures Guide, 6ª ed.",
+        "locator": "Chapter 6 — Pilotage"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "pilotagem"
+      ]
+    },
+    {
+      "id": "LEG-B004-01",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "naufrágio",
+      "topic_code": "LEG.B004.01",
+      "topic": "naufrágio",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Com base em NORMAM-302/DPC — IAFN e ISAIM, assinale a alternativa tecnicamente correta sobre naufrágio.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        },
+        {
+          "key": "B",
+          "text": "é choque entre duas embarcações"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "é afundamento total ou parcial por perda de flutuabilidade decorrente de embarque de água nos espaços internos"
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "naufrágio: é afundamento total ou parcial por perda de flutuabilidade decorrente de embarque de água nos espaços internos.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::ch1-2",
+        "topic_id": "LEG-B004-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.1"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "naufrágio"
+      ]
+    },
+    {
+      "id": "LEG-B004-02",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "encalhe",
+      "topic_code": "LEG.B004.02",
+      "topic": "encalhe",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Com base em NORMAM-302/DPC — IAFN e ISAIM, assinale a alternativa tecnicamente correta sobre encalhe.",
+      "options": [
+        {
+          "key": "A",
+          "text": "é contato das obras vivas com o fundo, com resistência externa que dificulta ou impede a movimentação"
+        },
+        {
+          "key": "B",
+          "text": "é ato deliberado de pôr a embarcação em seco para evitar dano maior"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "encalhe: é contato das obras vivas com o fundo, com resistência externa que dificulta ou impede a movimentação.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::ch1-2",
+        "topic_id": "LEG-B004-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.1"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "encalhe"
+      ]
+    },
+    {
+      "id": "LEG-B004-03",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "colisão",
+      "topic_code": "LEG.B004.03",
+      "topic": "colisão",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 3,
+      "question": "Com base em NORMAM-302/DPC — IAFN e ISAIM, assinale a alternativa tecnicamente correta sobre colisão.",
+      "options": [
+        {
+          "key": "A",
+          "text": "é exclusivamente choque entre duas embarcações"
+        },
+        {
+          "key": "B",
+          "text": "é choque da embarcação/apêndices contra objeto que não seja outra embarcação, ou contra pessoa"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "colisão: é choque da embarcação/apêndices contra objeto que não seja outra embarcação, ou contra pessoa.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::ch1-2",
+        "topic_id": "LEG-B004-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.1"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "colisão"
+      ]
+    },
+    {
+      "id": "LEG-B004-04",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "abalroação",
+      "topic_code": "LEG.B004.04",
+      "topic": "abalroação",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Com base em NORMAM-302/DPC — IAFN e ISAIM, assinale a alternativa tecnicamente correta sobre abalroação.",
+      "options": [
+        {
+          "key": "A",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "B",
+          "text": "é choque contra cais, recife ou boia sem outra embarcação envolvida"
+        },
+        {
+          "key": "C",
+          "text": "é choque mecânico entre embarcações ou seus pertences e acessórios"
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "abalroação: é choque mecânico entre embarcações ou seus pertences e acessórios.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::ch1-2",
+        "topic_id": "LEG-B004-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.1"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "abalroação"
+      ]
+    },
+    {
+      "id": "LEG-B004-05",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "água aberta",
+      "topic_code": "LEG.B004.05",
+      "topic": "água aberta",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Com base em NORMAM-302/DPC — IAFN e ISAIM, assinale a alternativa tecnicamente correta sobre água aberta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "B",
+          "text": "é entrada programada de água de lastro por válvula operacional"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "é abertura nas obras vivas ou falha de estanqueidade que permite ingresso descontrolado de água ou descarga de líquido de tanques"
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "água aberta: é abertura nas obras vivas ou falha de estanqueidade que permite ingresso descontrolado de água ou descarga de líquido de tanques.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::ch1-2",
+        "topic_id": "LEG-B004-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.1"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "água aberta"
+      ]
+    },
+    {
+      "id": "LEG-B004-06",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "varação",
+      "topic_code": "LEG.B004.06",
+      "topic": "varação",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Com base em NORMAM-302/DPC — IAFN e ISAIM, assinale a alternativa tecnicamente correta sobre varação.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        },
+        {
+          "key": "B",
+          "text": "é sinônimo de encalhe acidental"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "é ato deliberado de encalhar ou pôr em seco a embarcação para evitar evento mais danoso"
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "varação: é ato deliberado de encalhar ou pôr em seco a embarcação para evitar evento mais danoso.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::ch1-2",
+        "topic_id": "LEG-B004-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.1"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "varação"
+      ]
+    },
+    {
+      "id": "LEG-B004-07",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "arribada",
+      "topic_code": "LEG.B004.07",
+      "topic": "arribada",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 3,
+      "question": "Com base em NORMAM-302/DPC — IAFN e ISAIM, assinale a alternativa tecnicamente correta sobre arribada.",
+      "options": [
+        {
+          "key": "A",
+          "text": "é entrada em porto ou lugar não previsto para a travessia, fora da escala programada ou destino"
+        },
+        {
+          "key": "B",
+          "text": "é qualquer saída do porto de origem"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "arribada: é entrada em porto ou lugar não previsto para a travessia, fora da escala programada ou destino.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::ch1-2",
+        "topic_id": "LEG-B004-07",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.1"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "arribada"
+      ]
+    },
+    {
+      "id": "LEG-B004-08",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "alijamento",
+      "topic_code": "LEG.B004.08",
+      "topic": "alijamento",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Com base em NORMAM-302/DPC — IAFN e ISAIM, assinale a alternativa tecnicamente correta sobre alijamento.",
+      "options": [
+        {
+          "key": "A",
+          "text": "é descarga comercial normal em terminal"
+        },
+        {
+          "key": "B",
+          "text": "é lançamento deliberado à água de carga ou bens para salvar embarcação, carga ou vidas"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "alijamento: é lançamento deliberado à água de carga ou bens para salvar embarcação, carga ou vidas.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::ch1-2",
+        "topic_id": "LEG-B004-08",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.1"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "alijamento"
+      ]
+    },
+    {
+      "id": "LEG-B004-09",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "mau aparelhamento",
+      "topic_code": "LEG.B004.09",
+      "topic": "mau aparelhamento",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Com base em NORMAM-302/DPC — IAFN e ISAIM, assinale a alternativa tecnicamente correta sobre mau aparelhamento.",
+      "options": [
+        {
+          "key": "A",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "B",
+          "text": "é excesso de tripulantes qualificados"
+        },
+        {
+          "key": "C",
+          "text": "é falta ou impropriedade de aparelhos, equipamentos, sobressalentes, acessórios ou materiais em desacordo com requisitos técnicos"
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "mau aparelhamento: é falta ou impropriedade de aparelhos, equipamentos, sobressalentes, acessórios ou materiais em desacordo com requisitos técnicos.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::ch1-2",
+        "topic_id": "LEG-B004-09",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.2"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "mau aparelhamento"
+      ]
+    },
+    {
+      "id": "LEG-B004-10",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "impropriedade para o serviço",
+      "topic_code": "LEG.B004.10",
+      "topic": "impropriedade para o serviço",
+      "difficulty": "Médio",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "De acordo com NORMAM-302/DPC — IAFN e ISAIM, analise as afirmativas, identifique as verdadeiras e assinale a opção correta.",
+      "assertions": [
+        "I) impropriedade para o serviço: é qualquer atraso comercial do navio.",
+        "II) deficiência de equipagem: é falta/deficiência na quantidade ou qualificação de tripulantes em desacordo com exigências regulamentares.",
+        "III) alteração da rota: é desvio da derrota programada que ponha em risco a expedição ou gere prejuízos.",
+        "IV) má estivação: inclui má peação, localização inadequada ou má arrumação que coloque em risco expedição, estabilidade, carga ou pessoas."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas II, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II, III e IV."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A afirmativa I é a incorreta por atribuir definição incompatível a impropriedade para o serviço.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::ch1-2",
+        "topic_id": "LEG-B004-10",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.2"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "impropriedade para o serviço"
+      ]
+    },
+    {
+      "id": "LEG-B004-11",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "alteração da rota",
+      "topic_code": "LEG.B004.11",
+      "topic": "alteração da rota",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "De acordo com NORMAM-302/DPC — IAFN e ISAIM, analise as afirmativas, identifique as verdadeiras e assinale a opção correta.",
+      "assertions": [
+        "I) alteração da rota: é desvio da derrota programada que ponha em risco a expedição ou gere prejuízos.",
+        "II) má estivação: é sinônimo de alijamento deliberado.",
+        "III) IAFN: é Inquérito Administrativo sobre Acidentes e Fatos da Navegação, instruído para tramitação ao Tribunal Marítimo.",
+        "IV) ISAIM: é Investigação de Segurança dos Acidentes e Incidentes Marítimos, com finalidade de segurança."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II, III e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas II e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, III e IV."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A afirmativa II é a incorreta por atribuir definição incompatível a má estivação.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::ch1-2",
+        "topic_id": "LEG-B004-11",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.2"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "alteração da rota"
+      ]
+    },
+    {
+      "id": "LEG-B004-12",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "IAFN",
+      "topic_code": "LEG.B004.12",
+      "topic": "IAFN",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "De acordo com NORMAM-302/DPC — IAFN e ISAIM, analise as afirmativas, identifique as verdadeiras e assinale a opção correta.",
+      "assertions": [
+        "I) IAFN: é Inquérito Administrativo sobre Acidentes e Fatos da Navegação, instruído para tramitação ao Tribunal Marítimo.",
+        "II) ISAIM: é Investigação de Segurança dos Acidentes e Incidentes Marítimos, com finalidade de segurança.",
+        "III) navio da Marinha do Brasil em atividade não comercial: sempre gera IAFN idêntico ao de navio mercante.",
+        "IV) naufrágio: é afundamento total ou parcial por perda de flutuabilidade decorrente de embarque de água nos espaços internos."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas II e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II, III e IV."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A afirmativa III é a incorreta por atribuir definição incompatível a navio da Marinha do Brasil em atividade não comercial.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::ch1-1",
+        "topic_id": "LEG-B004-12",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — propósito"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "iafn"
+      ]
+    },
+    {
+      "id": "LEG-B004-13",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "navio da Marinha do Brasil em atividade não comercial",
+      "topic_code": "LEG.B004.13",
+      "topic": "navio da Marinha do Brasil em atividade não comercial",
+      "difficulty": "Médio",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "De acordo com NORMAM-302/DPC — IAFN e ISAIM, analise as afirmativas, identifique as verdadeiras e assinale a opção correta.",
+      "assertions": [
+        "I) navio da Marinha do Brasil em atividade não comercial: em regra não enseja IAFN pela CP/DL, seguindo apuração própria prevista na norma.",
+        "II) naufrágio: é afundamento total ou parcial por perda de flutuabilidade decorrente de embarque de água nos espaços internos.",
+        "III) encalhe: é contato das obras vivas com o fundo, com resistência externa que dificulta ou impede a movimentação.",
+        "IV) colisão: é exclusivamente choque entre duas embarcações."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas II e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II, III e IV."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A afirmativa IV é a incorreta por atribuir definição incompatível a colisão.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::ch1-2",
+        "topic_id": "LEG-B004-13",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.7.1"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "navio da marinha do brasil em atividade não comercial"
+      ]
+    },
+    {
+      "id": "LEG-B004-14",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "encalhe",
+      "topic_code": "LEG.B004.14",
+      "topic": "encalhe",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "De acordo com NORMAM-302/DPC — IAFN e ISAIM, analise as afirmativas, identifique as verdadeiras e assinale a opção correta.",
+      "assertions": [
+        "I) encalhe: é ato deliberado de pôr a embarcação em seco para evitar dano maior.",
+        "II) colisão: é choque da embarcação/apêndices contra objeto que não seja outra embarcação, ou contra pessoa.",
+        "III) abalroação: é choque mecânico entre embarcações ou seus pertences e acessórios.",
+        "IV) água aberta: é abertura nas obras vivas ou falha de estanqueidade que permite ingresso descontrolado de água ou descarga de líquido de tanques."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas II e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II, III e IV."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A afirmativa I é a incorreta por atribuir definição incompatível a encalhe.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::ch1-2",
+        "topic_id": "LEG-B004-14",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.1"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "encalhe"
+      ]
+    },
+    {
+      "id": "LEG-B004-15",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "navio da Marinha do Brasil em atividade não comercial",
+      "topic_code": "LEG.B004.15",
+      "topic": "navio da Marinha do Brasil em atividade não comercial",
+      "difficulty": "Difícil",
+      "style": "Completar",
+      "pscpp_format": "fill",
+      "cognitive_level": 3,
+      "question": "Complete: “em regra não enseja IAFN pela CP/DL, seguindo apuração própria prevista na norma” corresponde ao conceito de ______.",
+      "options": [
+        {
+          "key": "A",
+          "text": "colisão"
+        },
+        {
+          "key": "B",
+          "text": "naufrágio"
+        },
+        {
+          "key": "C",
+          "text": "encalhe"
+        },
+        {
+          "key": "D",
+          "text": "navio da Marinha do Brasil em atividade não comercial"
+        },
+        {
+          "key": "E",
+          "text": "abalroação"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A definição corresponde a navio da Marinha do Brasil em atividade não comercial.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::ch1-2",
+        "topic_id": "LEG-B004-15",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.7.1"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "navio da marinha do brasil em atividade não comercial"
+      ]
+    },
+    {
+      "id": "LEG-B004-16",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "naufrágio",
+      "topic_code": "LEG.B004.16",
+      "topic": "naufrágio",
+      "difficulty": "Muito Difícil",
+      "style": "Associação",
+      "pscpp_format": "association",
+      "cognitive_level": 4,
+      "question": "Associe os termos às definições e assinale a opção inteiramente correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Todas incorretas."
+        },
+        {
+          "key": "B",
+          "text": "1 e 2 trocados; demais corretos."
+        },
+        {
+          "key": "C",
+          "text": "2 e 3 trocados; demais corretos."
+        },
+        {
+          "key": "D",
+          "text": "4 e 5 trocados; demais corretos."
+        },
+        {
+          "key": "E",
+          "text": "1) naufrágio — é afundamento total ou parcial por perda de flutuabilidade decorrente de embarque de água nos espaços internos; 2) encalhe — é contato das obras vivas com o fundo, com resistência externa que dificulta ou impede a movimentação; 3) colisão — é choque da embarcação/apêndices contra objeto que não seja outra embarcação, ou contra pessoa; 4) abalroação — é choque mecânico entre embarcações ou seus pertences e acessórios; 5) água aberta — é abertura nas obras vivas ou falha de estanqueidade que permite ingresso descontrolado de água ou descarga de líquido de tanques"
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A alternativa correta preserva todas as definições da fonte.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::ch1-2",
+        "topic_id": "LEG-B004-16",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.1"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "naufrágio"
+      ]
+    },
+    {
+      "id": "MEO-B004-01",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "altura significativa de onda",
+      "topic_code": "MEO.B004.01",
+      "topic": "altura significativa de onda",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Com base em NORMAM-701/DHN — Serviço Meteorológico Marinho, assinale a alternativa tecnicamente correta sobre altura significativa de onda.",
+      "options": [
+        {
+          "key": "A",
+          "text": "é média do terço superior das alturas de onda observadas/medidas no intervalo considerado"
+        },
+        {
+          "key": "B",
+          "text": "é a maior onda individual do período"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "altura significativa de onda: é média do terço superior das alturas de onda observadas/medidas no intervalo considerado.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "normam701",
+        "chapter_id": "normam701::integral",
+        "topic_id": "MEO-B004-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-701/DHN — Serviço Meteorológico Marinho",
+        "locator": "Definições e avisos de mau tempo"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "altura significativa de onda"
+      ]
+    },
+    {
+      "id": "MEO-B004-02",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "aviso de baixa visibilidade",
+      "topic_code": "MEO.B004.02",
+      "topic": "aviso de baixa visibilidade",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Com base em NORMAM-701/DHN — Serviço Meteorológico Marinho, assinale a alternativa tecnicamente correta sobre aviso de baixa visibilidade.",
+      "options": [
+        {
+          "key": "A",
+          "text": "é emitido apenas quando a visibilidade supera 10 km"
+        },
+        {
+          "key": "B",
+          "text": "é associado a previsão/observação de visibilidade horizontal inferior a 1 km"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "aviso de baixa visibilidade: é associado a previsão/observação de visibilidade horizontal inferior a 1 km.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "normam701",
+        "chapter_id": "normam701::integral",
+        "topic_id": "MEO-B004-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-701/DHN — Serviço Meteorológico Marinho",
+        "locator": "Critérios de avisos"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "aviso de baixa visibilidade"
+      ]
+    },
+    {
+      "id": "MEO-B004-03",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "METEOROMARINHA",
+      "topic_code": "MEO.B004.03",
+      "topic": "METEOROMARINHA",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 3,
+      "question": "Com base em NORMAM-701/DHN — Serviço Meteorológico Marinho, assinale a alternativa tecnicamente correta sobre METEOROMARINHA.",
+      "options": [
+        {
+          "key": "A",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "B",
+          "text": "é publicação anual de arqueação"
+        },
+        {
+          "key": "C",
+          "text": "é boletim com avisos, análise e previsão meteorológica marinha emitido em horários de referência definidos"
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "METEOROMARINHA: é boletim com avisos, análise e previsão meteorológica marinha emitido em horários de referência definidos.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "normam701",
+        "chapter_id": "normam701::integral",
+        "topic_id": "MEO-B004-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-701/DHN — Serviço Meteorológico Marinho",
+        "locator": "Boletim METEOROMARINHA"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "meteoromarinha"
+      ]
+    },
+    {
+      "id": "MEO-B004-04",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "Programa de Navios Observadores Voluntários",
+      "topic_code": "MEO.B004.04",
+      "topic": "Programa de Navios Observadores Voluntários",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Com base em NORMAM-701/DHN — Serviço Meteorológico Marinho, assinale a alternativa tecnicamente correta sobre Programa de Navios Observadores Voluntários.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "B",
+          "text": "destina-se exclusivamente a inspeção naval"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "amplia observações meteorológicas sobre oceanos e apoia análise e previsão"
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Programa de Navios Observadores Voluntários: amplia observações meteorológicas sobre oceanos e apoia análise e previsão.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "normam701",
+        "chapter_id": "normam701::integral",
+        "topic_id": "MEO-B004-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-701/DHN — Serviço Meteorológico Marinho",
+        "locator": "Navios Observadores Voluntários"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "programa de navios observadores voluntários"
+      ]
+    },
+    {
+      "id": "MEO-B004-05",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "METAREA",
+      "topic_code": "MEO.B004.05",
+      "topic": "METAREA",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "De acordo com NORMAM-701/DHN — Serviço Meteorológico Marinho, analise as afirmativas, identifique as verdadeiras e assinale a opção correta.",
+      "assertions": [
+        "I) METAREA: é uma escala de força do vento.",
+        "II) aviso de vento em área costeira: usa critério de vento forte inferior ao limiar adotado para área oceânica, conforme a norma.",
+        "III) altura significativa de onda: é média do terço superior das alturas de onda observadas/medidas no intervalo considerado.",
+        "IV) aviso de baixa visibilidade: é associado a previsão/observação de visibilidade horizontal inferior a 1 km."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II, III e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas II e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas II, III e IV."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A afirmativa I é a incorreta por atribuir definição incompatível a METAREA.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "normam701",
+        "chapter_id": "normam701::integral",
+        "topic_id": "MEO-B004-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-701/DHN — Serviço Meteorológico Marinho",
+        "locator": "Organização do SMM"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "metarea"
+      ]
+    },
+    {
+      "id": "MEO-B004-06",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "altura significativa de onda",
+      "topic_code": "MEO.B004.06",
+      "topic": "altura significativa de onda",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "De acordo com NORMAM-701/DHN — Serviço Meteorológico Marinho, analise as afirmativas, identifique as verdadeiras e assinale a opção correta.",
+      "assertions": [
+        "I) altura significativa de onda: é média do terço superior das alturas de onda observadas/medidas no intervalo considerado.",
+        "II) aviso de baixa visibilidade: é emitido apenas quando a visibilidade supera 10 km.",
+        "III) METEOROMARINHA: é boletim com avisos, análise e previsão meteorológica marinha emitido em horários de referência definidos.",
+        "IV) Programa de Navios Observadores Voluntários: amplia observações meteorológicas sobre oceanos e apoia análise e previsão."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas II e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II, III e IV."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A afirmativa II é a incorreta por atribuir definição incompatível a aviso de baixa visibilidade.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "normam701",
+        "chapter_id": "normam701::integral",
+        "topic_id": "MEO-B004-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-701/DHN — Serviço Meteorológico Marinho",
+        "locator": "Definições e avisos de mau tempo"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "altura significativa de onda"
+      ]
+    },
+    {
+      "id": "COM-B004-01",
+      "subject": "VI — Comunicações",
+      "module": "message marker INSTRUCTION",
+      "topic_code": "COM.B004.01",
+      "topic": "message marker INSTRUCTION",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Com base em IMO Standard Marine Communication Phrases — A.918(22), assinale a alternativa tecnicamente correta sobre message marker INSTRUCTION.",
+      "options": [
+        {
+          "key": "A",
+          "text": "identifica apenas intenção futura do próprio navio"
+        },
+        {
+          "key": "B",
+          "text": "identifica mensagem que contém instrução de autoridade/serviço competente"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "message marker INSTRUCTION: identifica mensagem que contém instrução de autoridade/serviço competente.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "smcp",
+        "chapter_id": "smcp::s1",
+        "topic_id": "COM-B004-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO Standard Marine Communication Phrases — A.918(22)",
+        "locator": "General — Message Markers"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "message marker instruction"
+      ]
+    },
+    {
+      "id": "COM-B004-02",
+      "subject": "VI — Comunicações",
+      "module": "message marker ADVICE",
+      "topic_code": "COM.B004.02",
+      "topic": "message marker ADVICE",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Com base em IMO Standard Marine Communication Phrases — A.918(22), assinale a alternativa tecnicamente correta sobre message marker ADVICE.",
+      "options": [
+        {
+          "key": "A",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "B",
+          "text": "é usado para anunciar distress"
+        },
+        {
+          "key": "C",
+          "text": "identifica uma recomendação/conselho operacional"
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "message marker ADVICE: identifica uma recomendação/conselho operacional.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "smcp",
+        "chapter_id": "smcp::s1",
+        "topic_id": "COM-B004-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO Standard Marine Communication Phrases — A.918(22)",
+        "locator": "General — Message Markers"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "message marker advice"
+      ]
+    },
+    {
+      "id": "COM-B004-03",
+      "subject": "VI — Comunicações",
+      "module": "message marker WARNING",
+      "topic_code": "COM.B004.03",
+      "topic": "message marker WARNING",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 3,
+      "question": "Com base em IMO Standard Marine Communication Phrases — A.918(22), assinale a alternativa tecnicamente correta sobre message marker WARNING.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "B",
+          "text": "é sinônimo obrigatório de ANSWER"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "identifica advertência sobre perigo/condição que requer atenção"
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "message marker WARNING: identifica advertência sobre perigo/condição que requer atenção.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "smcp",
+        "chapter_id": "smcp::s1",
+        "topic_id": "COM-B004-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO Standard Marine Communication Phrases — A.918(22)",
+        "locator": "General — Message Markers"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "message marker warning"
+      ]
+    },
+    {
+      "id": "COM-B004-04",
+      "subject": "VI — Comunicações",
+      "module": "message marker INFORMATION",
+      "topic_code": "COM.B004.04",
+      "topic": "message marker INFORMATION",
+      "difficulty": "Médio",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "De acordo com IMO Standard Marine Communication Phrases — A.918(22), analise as afirmativas, identifique as verdadeiras e assinale a opção correta.",
+      "assertions": [
+        "I) message marker INFORMATION: é usado apenas para ordem de leme.",
+        "II) message marker QUESTION: identifica uma pergunta.",
+        "III) message marker INSTRUCTION: identifica mensagem que contém instrução de autoridade/serviço competente.",
+        "IV) message marker ADVICE: identifica uma recomendação/conselho operacional."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II, III e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas II e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas II, III e IV."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A afirmativa I é a incorreta por atribuir definição incompatível a message marker INFORMATION.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "smcp",
+        "chapter_id": "smcp::s1",
+        "topic_id": "COM-B004-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO Standard Marine Communication Phrases — A.918(22)",
+        "locator": "General — Message Markers"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "message marker information"
+      ]
+    },
+    {
+      "id": "CGE-B004-01",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "PHA",
+      "topic_code": "CGE.B004.01",
+      "topic": "PHA",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Com base em CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos, assinale a alternativa tecnicamente correta sobre PHA.",
+      "options": [
+        {
+          "key": "A",
+          "text": "é método de análise qualitativa preliminar de perigos usado no processo de análise de risco"
+        },
+        {
+          "key": "B",
+          "text": "é método exclusivo de cálculo de resistência propulsiva"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "PHA: é método de análise qualitativa preliminar de perigos usado no processo de análise de risco.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "conapra-port",
+        "chapter_id": "conapra-port::ch8",
+        "topic_id": "CGE-B004-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos",
+        "locator": "Capítulo 8 — Análise de Risco"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "pha"
+      ]
+    },
+    {
+      "id": "CGE-B004-02",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "identificação de perigos",
+      "topic_code": "CGE.B004.02",
+      "topic": "identificação de perigos",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Com base em CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos, assinale a alternativa tecnicamente correta sobre identificação de perigos.",
+      "options": [
+        {
+          "key": "A",
+          "text": "é dispensável antes da seleção de eventos significativos"
+        },
+        {
+          "key": "B",
+          "text": "é etapa que subsidia a análise de risco no planejamento portuário"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "identificação de perigos: é etapa que subsidia a análise de risco no planejamento portuário.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "conapra-port",
+        "chapter_id": "conapra-port::ch8",
+        "topic_id": "CGE-B004-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos",
+        "locator": "Capítulo 8 — Análise de Risco"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "identificação de perigos"
+      ]
+    },
+    {
+      "id": "CGE-B004-03",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "áreas vulneráveis",
+      "topic_code": "CGE.B004.03",
+      "topic": "áreas vulneráveis",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 3,
+      "question": "Com base em CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos, assinale a alternativa tecnicamente correta sobre áreas vulneráveis.",
+      "options": [
+        {
+          "key": "A",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "B",
+          "text": "são irrelevantes quando há VTS"
+        },
+        {
+          "key": "C",
+          "text": "devem ser identificadas como subsídio à avaliação de risco"
+        },
+        {
+          "key": "D",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "áreas vulneráveis: devem ser identificadas como subsídio à avaliação de risco.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "conapra-port",
+        "chapter_id": "conapra-port::ch8",
+        "topic_id": "CGE-B004-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos",
+        "locator": "Capítulo 8 — Análise de Risco"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "áreas vulneráveis"
+      ]
+    },
+    {
+      "id": "CGE-B004-04",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "nível ALARP",
+      "topic_code": "CGE.B004.04",
+      "topic": "nível ALARP",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Com base em CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos, assinale a alternativa tecnicamente correta sobre nível ALARP.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Aplica-se somente fora do domínio indicado pela fonte."
+        },
+        {
+          "key": "B",
+          "text": "significa que nenhum tratamento de risco deve ser considerado"
+        },
+        {
+          "key": "C",
+          "text": "É sinônimo de conceito distinto sem ressalvas."
+        },
+        {
+          "key": "D",
+          "text": "é alvo de redução de risco para eventos de categoria média quando técnica e economicamente viável"
+        },
+        {
+          "key": "E",
+          "text": "Depende sempre de um único valor fixo, sem considerar contexto."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "nível ALARP: é alvo de redução de risco para eventos de categoria média quando técnica e economicamente viável.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "conapra-port",
+        "chapter_id": "conapra-port::ch8",
+        "topic_id": "CGE-B004-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos",
+        "locator": "Capítulo 8 — Matriz qualitativa de risco"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "nível alarp"
+      ]
+    },
+    {
+      "id": "CGE-B004-05",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "medidas de mitigação",
+      "topic_code": "CGE.B004.05",
+      "topic": "medidas de mitigação",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "De acordo com CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos, analise as afirmativas, identifique as verdadeiras e assinale a opção correta.",
+      "assertions": [
+        "I) medidas de mitigação: limitam-se exclusivamente ao aumento do calado permitido.",
+        "II) PHA: é método de análise qualitativa preliminar de perigos usado no processo de análise de risco.",
+        "III) identificação de perigos: é etapa que subsidia a análise de risco no planejamento portuário.",
+        "IV) áreas vulneráveis: devem ser identificadas como subsídio à avaliação de risco."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II, III e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas II e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas II, III e IV."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A afirmativa I é a incorreta por atribuir definição incompatível a medidas de mitigação.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "conapra-port",
+        "chapter_id": "conapra-port::ch8",
+        "topic_id": "CGE-B004-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos",
+        "locator": "Capítulo 8 — Medidas de mitigação"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "medidas de mitigação"
+      ]
+    }
+  ]
+}
