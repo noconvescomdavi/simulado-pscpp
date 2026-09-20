@@ -6,6 +6,7 @@ import {
   SUBJECTS,
   ALL_SUBJECTS_SLUG,
   TRIAL_SUBJECT_SLUG,
+  PSCPP_SUBJECT_SLUG,
   subjectLabel
 } from "../../lib/subjects";
 import { availableQuestionBanks } from "../../lib/question-banks";
@@ -39,12 +40,16 @@ export default async function Page() {
     [session.id]
   );
 
-  const questionBanks = availableQuestionBanks();
+  const questionBanks = availableQuestionBanks({ includePscpp: true });
   const questionCountBySlug = Object.fromEntries(
     questionBanks.map((bank) => [bank.slug, Number(bank.count || 0)])
   );
   const totalQuestionCount = questionBanks.reduce(
-    (total, bank) => total + Number(bank.count || 0), 0
+    (total, bank) =>
+      bank.slug === PSCPP_SUBJECT_SLUG
+        ? total
+        : total + Number(bank.count || 0),
+    0
   );
 
   const trialInProgress = history.rows.some(
@@ -55,7 +60,7 @@ export default async function Page() {
   );
 
   const choices = entitlement.active
-    ? [{slug:"simulado-pscpp",label:"SIMULADO PSCPP"}, {slug:ALL_SUBJECTS_SLUG,label:"Todas as matérias"}, ...SUBJECTS]
+    ? [{slug:PSCPP_SUBJECT_SLUG,label:"SIMULADO PSCPP"}, {slug:ALL_SUBJECTS_SLUG,label:"Todas as matérias"}, ...SUBJECTS]
     : [{slug:TRIAL_SUBJECT_SLUG,label:"Simulado de teste grátis"}];
 
   function cardDescription(item) {
