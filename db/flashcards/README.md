@@ -18,3 +18,10 @@ ou métricas de provas e simulados.
 
 O arquivo `002_seed_cis.sql` contém os 54 cartões do Código Internacional de Sinais
 importados do repositório `noconvescomdavi/flashcards_cis`.
+
+
+## Flashcards da bibliografia PSCPP
+
+O seed `006_seed_pscpp_bibliografia.sql` inicia os baralhos estratégicos das sete matérias do PSCPP 2027. Os decks usam `subject_slug` compatível com `data/study/bibliography.js`, permitindo organizar a tela por matéria e expandir progressivamente cada publicação/capítulo da bibliografia oficial cadastrada na aplicação.
+
+A regra editorial para os novos cartões é: pergunta/conceito curto na frente, resposta técnica direta no verso e macete apenas quando agregar valor de recuperação ativa. O conteúdo de prova não deve ser gerado por simples conversão mecânica de alternativas de múltipla escolha.

@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import styles from "./deck.module.css";
 
+function isPscppDeck(slug) { return String(slug || "").startsWith("pscpp-"); }
+
 function shuffle(items) {
   const arr = [...items];
   for (let i = arr.length - 1; i > 0; i--) {
@@ -1044,11 +1046,11 @@ export default function FlashcardsClient({ deck, initialState }) {
                       dangerouslySetInnerHTML={{ __html: renderCardVisual(current, deck.slug) }}
                     />
                     <div className={`${styles.codeBlock} ${deck.slug === "ripeam" ? styles.ripeamCodeBlock : ""}`}>
-                      <small>CÓDIGO</small>
-                      <strong>{current.code}</strong>
+                      <small>{isPscppDeck(deck.slug) ? "PERGUNTA" : "CÓDIGO"}</small>
+                      {!isPscppDeck(deck.slug) && <strong>{current.code}</strong>}
                       <span>{current.name || categoryLabel(current)}</span>
                     </div>
-                    <p>Toque no cartão para ver o significado</p>
+                    <p>{isPscppDeck(deck.slug) ? "Tente responder sem olhar. Toque para conferir." : "Toque no cartão para ver o significado"}</p>
                   </section>
 
                   <section className={`${styles.cardFace} ${styles.cardBack}`}>
@@ -1106,8 +1108,8 @@ export default function FlashcardsClient({ deck, initialState }) {
                   className={styles.examFlag}
                   dangerouslySetInnerHTML={{ __html: renderCardVisual(examCard, deck.slug) }}
                 />
-                <p>{deck.slug === "arte-naval-nomenclatura-navio" ? "Qual é o termo representado? / What term is represented?" : (language === "pt" ? "Qual é o significado deste sinal?" : "What is the meaning of this signal?")}</p>
-                <h2>{examCard.code}</h2>
+                <p>{deck.slug === "arte-naval-nomenclatura-navio" ? "Qual é o termo representado? / What term is represented?" : isPscppDeck(deck.slug) ? "Qual é a resposta correta para este conceito?" : (language === "pt" ? "Qual é o significado deste sinal?" : "What is the meaning of this signal?")}</p>
+                {!isPscppDeck(deck.slug) && <h2>{examCard.code}</h2>}
                 {examCard.name && <h3>{examCard.name}</h3>}
 
                 <div className={styles.options}>
