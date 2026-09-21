@@ -1,0 +1,4121 @@
+{
+  "title": "PSCPP Caderno — Bloco 066",
+  "questions": [
+    {
+      "id": "MAN-B066-01",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "resistência total RT + número de Froude",
+      "topic_code": "MAN.B066.01",
+      "topic": "Integração: resistência total RT e número de Froude",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 5,
+      "question": "Em uma situação operacional que envolve simultaneamente resistência total RT e número de Froude, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo LARSSON & RAVEN — Ship Resistance and Flow?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise conjunta exige reconhecer que é a resistência global ao avanço do navio e pode ser decomposta em componentes para análise e que é parâmetro adimensional fundamental para similitude dos efeitos de gravidade e formação de ondas."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que é a resistência global ao avanço do navio e pode ser decomposta em componentes para análise, pois número de Froude não interfere na avaliação."
+        },
+        {
+          "key": "C",
+          "text": "A análise deve considerar somente que é parâmetro adimensional fundamental para similitude dos efeitos de gravidade e formação de ondas, tornando dispensável verificar resistência total RT."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de resistência total RT e número de Froude são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de resistência total RT e número de Froude elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A análise conjunta exige reconhecer que é a resistência global ao avanço do navio e pode ser decomposta em componentes para análise e que é parâmetro adimensional fundamental para similitude dos efeitos de gravidade e formação de ondas.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::integracao-b066",
+        "topic_id": "MAN-B066-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Chapters 1–2 — resistance fundamentals — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "resistência total RT",
+        "número de Froude",
+        "integração"
+      ]
+    },
+    {
+      "id": "MAN-B066-02",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "resistência de atrito RF + número de Reynolds",
+      "topic_code": "MAN.B066.02",
+      "topic": "Integração: resistência de atrito RF e número de Reynolds",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente resistência de atrito RF e número de Reynolds, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo LARSSON & RAVEN — Ship Resistance and Flow?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é componente viscosa associada ao cisalhamento na superfície molhada, pois número de Reynolds não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise conjunta exige reconhecer que é componente viscosa associada ao cisalhamento na superfície molhada e que é parâmetro adimensional ligado à relação entre efeitos inerciais e viscosos."
+        },
+        {
+          "key": "C",
+          "text": "A análise deve considerar somente que é parâmetro adimensional ligado à relação entre efeitos inerciais e viscosos, tornando dispensável verificar resistência de atrito RF."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de resistência de atrito RF e número de Reynolds são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de resistência de atrito RF e número de Reynolds elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A análise conjunta exige reconhecer que é componente viscosa associada ao cisalhamento na superfície molhada e que é parâmetro adimensional ligado à relação entre efeitos inerciais e viscosos.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::integracao-b066",
+        "topic_id": "MAN-B066-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Chapters 1–2 — resistance fundamentals — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "resistência de atrito RF",
+        "número de Reynolds",
+        "integração"
+      ]
+    },
+    {
+      "id": "MAN-B066-03",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "resistência de ondas RW + camada-limite",
+      "topic_code": "MAN.B066.03",
+      "topic": "Integração: resistência de ondas RW e camada-limite",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente resistência de ondas RW e camada-limite, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo LARSSON & RAVEN — Ship Resistance and Flow?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é componente associada à geração do sistema de ondas pelo casco, pois camada-limite não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que é região junto ao casco em que os efeitos viscosos e gradientes de velocidade são importantes, tornando dispensável verificar resistência de ondas RW."
+        },
+        {
+          "key": "C",
+          "text": "A análise conjunta exige reconhecer que é componente associada à geração do sistema de ondas pelo casco e que é região junto ao casco em que os efeitos viscosos e gradientes de velocidade são importantes."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de resistência de ondas RW e camada-limite são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de resistência de ondas RW e camada-limite elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A análise conjunta exige reconhecer que é componente associada à geração do sistema de ondas pelo casco e que é região junto ao casco em que os efeitos viscosos e gradientes de velocidade são importantes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::integracao-b066",
+        "topic_id": "MAN-B066-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Chapters 1–2 — wave resistance — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "resistência de ondas RW",
+        "camada-limite",
+        "integração"
+      ]
+    },
+    {
+      "id": "MAN-B066-04",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "resistência residual RR + superfície molhada S",
+      "topic_code": "MAN.B066.04",
+      "topic": "Integração: resistência residual RR e superfície molhada S",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente resistência residual RR e superfície molhada S, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo LARSSON & RAVEN — Ship Resistance and Flow?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que na abordagem clássica de Froude corresponde à resistência total menos a resistência de uma placa plana equivalente, pois superfície molhada S não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que é a área do casco em contato com a água relevante para estimativas de resistência viscosa, tornando dispensável verificar resistência residual RR."
+        },
+        {
+          "key": "C",
+          "text": "Os conceitos de resistência residual RR e superfície molhada S são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "D",
+          "text": "A análise conjunta exige reconhecer que na abordagem clássica de Froude corresponde à resistência total menos a resistência de uma placa plana equivalente e que é a área do casco em contato com a água relevante para estimativas de resistência viscosa."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de resistência residual RR e superfície molhada S elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A análise conjunta exige reconhecer que na abordagem clássica de Froude corresponde à resistência total menos a resistência de uma placa plana equivalente e que é a área do casco em contato com a água relevante para estimativas de resistência viscosa.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::integracao-b066",
+        "topic_id": "MAN-B066-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Chapter 1 — Froude approach — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "resistência residual RR",
+        "superfície molhada S",
+        "integração"
+      ]
+    },
+    {
+      "id": "MAN-B066-05",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "número de Froude + efeito de águas rasas na resistência",
+      "topic_code": "MAN.B066.05",
+      "topic": "Integração: número de Froude e efeito de águas rasas na resistência",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 5,
+      "question": "Em uma situação operacional que envolve simultaneamente número de Froude e efeito de águas rasas na resistência, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo LARSSON & RAVEN — Ship Resistance and Flow?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é parâmetro adimensional fundamental para similitude dos efeitos de gravidade e formação de ondas, pois efeito de águas rasas na resistência não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que efeito de águas rasas na resistência: reduz necessariamente a resistência a zero, tornando dispensável verificar número de Froude."
+        },
+        {
+          "key": "C",
+          "text": "Os conceitos de número de Froude e efeito de águas rasas na resistência são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "D",
+          "text": "A presença simultânea de número de Froude e efeito de águas rasas na resistência elimina a necessidade de aplicar os critérios específicos de ambos."
+        },
+        {
+          "key": "E",
+          "text": "A análise conjunta exige reconhecer que é parâmetro adimensional fundamental para similitude dos efeitos de gravidade e formação de ondas e que efeito de águas rasas na resistência: reduz necessariamente a resistência a zero."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A análise conjunta exige reconhecer que é parâmetro adimensional fundamental para similitude dos efeitos de gravidade e formação de ondas e que efeito de águas rasas na resistência: reduz necessariamente a resistência a zero.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::integracao-b066",
+        "topic_id": "MAN-B066-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Chapter 1 — similitude — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "número de Froude",
+        "efeito de águas rasas na resistência",
+        "integração"
+      ]
+    },
+    {
+      "id": "MAN-B066-06",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "número de Reynolds + coeficiente CT",
+      "topic_code": "MAN.B066.06",
+      "topic": "Integração: número de Reynolds e coeficiente CT",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente número de Reynolds e coeficiente CT, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo LARSSON & RAVEN — Ship Resistance and Flow?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise conjunta exige reconhecer que é parâmetro adimensional ligado à relação entre efeitos inerciais e viscosos e que coeficiente CT: é coeficiente adimensional associado à resistência total."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que é parâmetro adimensional ligado à relação entre efeitos inerciais e viscosos, pois coeficiente CT não interfere na avaliação."
+        },
+        {
+          "key": "C",
+          "text": "A análise deve considerar somente que coeficiente CT: é coeficiente adimensional associado à resistência total, tornando dispensável verificar número de Reynolds."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de número de Reynolds e coeficiente CT são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de número de Reynolds e coeficiente CT elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A análise conjunta exige reconhecer que é parâmetro adimensional ligado à relação entre efeitos inerciais e viscosos e que coeficiente CT: é coeficiente adimensional associado à resistência total.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::integracao-b066",
+        "topic_id": "MAN-B066-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Chapter 1 — similitude — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "número de Reynolds",
+        "coeficiente CT",
+        "integração"
+      ]
+    },
+    {
+      "id": "MAN-B066-07",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "camada-limite + potência efetiva PE",
+      "topic_code": "MAN.B066.07",
+      "topic": "Integração: camada-limite e potência efetiva PE",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente camada-limite e potência efetiva PE, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo LARSSON & RAVEN — Ship Resistance and Flow?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é região junto ao casco em que os efeitos viscosos e gradientes de velocidade são importantes, pois potência efetiva PE não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise conjunta exige reconhecer que é região junto ao casco em que os efeitos viscosos e gradientes de velocidade são importantes e que potência efetiva PE: é potência associada ao produto da resistência do navio pela velocidade."
+        },
+        {
+          "key": "C",
+          "text": "A análise deve considerar somente que potência efetiva PE: é potência associada ao produto da resistência do navio pela velocidade, tornando dispensável verificar camada-limite."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de camada-limite e potência efetiva PE são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de camada-limite e potência efetiva PE elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A análise conjunta exige reconhecer que é região junto ao casco em que os efeitos viscosos e gradientes de velocidade são importantes e que potência efetiva PE: é potência associada ao produto da resistência do navio pela velocidade.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::integracao-b066",
+        "topic_id": "MAN-B066-07",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Chapter 2 — viscous flow — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "camada-limite",
+        "potência efetiva PE",
+        "integração"
+      ]
+    },
+    {
+      "id": "MAN-B066-08",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "superfície molhada S + resistência de atrito RF",
+      "topic_code": "MAN.B066.08",
+      "topic": "Integração: superfície molhada S e resistência de atrito RF",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente superfície molhada S e resistência de atrito RF, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo LARSSON & RAVEN — Ship Resistance and Flow?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é a área do casco em contato com a água relevante para estimativas de resistência viscosa, pois resistência de atrito RF não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que resistência de atrito RF: é componente viscosa associada ao cisalhamento na superfície molhada, tornando dispensável verificar superfície molhada S."
+        },
+        {
+          "key": "C",
+          "text": "A análise conjunta exige reconhecer que é a área do casco em contato com a água relevante para estimativas de resistência viscosa e que resistência de atrito RF: é componente viscosa associada ao cisalhamento na superfície molhada."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de superfície molhada S e resistência de atrito RF são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de superfície molhada S e resistência de atrito RF elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A análise conjunta exige reconhecer que é a área do casco em contato com a água relevante para estimativas de resistência viscosa e que resistência de atrito RF: é componente viscosa associada ao cisalhamento na superfície molhada.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::integracao-b066",
+        "topic_id": "MAN-B066-08",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Chapter 2 — viscous resistance — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "superfície molhada S",
+        "resistência de atrito RF",
+        "integração"
+      ]
+    },
+    {
+      "id": "MAN-B066-09",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "efeito de águas rasas na resistência + potência efetiva PE",
+      "topic_code": "MAN.B066.09",
+      "topic": "Integração: efeito de águas rasas na resistência e potência efetiva PE",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 5,
+      "question": "Com base em LARSSON & RAVEN — Ship Resistance and Flow, analise as proposições que integram efeito de águas rasas na resistência e potência efetiva PE, com foco em ciclo editorial 066, e assinale a opção correta.",
+      "assertions": [
+        "I) Efeito de águas rasas na resistência: reduz necessariamente a resistência a zero.",
+        "II) Potência efetiva PE.",
+        "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
+        "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "As proposições I, II e III são compatíveis com a fonte; a IV é falsa porque confunde conceitos complementares com conceitos equivalentes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::integracao-b066",
+        "topic_id": "MAN-B066-09",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Chapter 8 — restricted/shallow water effects — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "efeito de águas rasas na resistência",
+        "potência efetiva PE",
+        "integração"
+      ]
+    },
+    {
+      "id": "MAN-B066-10",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "coeficiente CT + resistência total RT",
+      "topic_code": "MAN.B066.10",
+      "topic": "Integração: coeficiente CT e resistência total RT",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Com base em LARSSON & RAVEN — Ship Resistance and Flow, analise as proposições que integram coeficiente CT e resistência total RT, com foco em ciclo editorial 066, e assinale a opção correta.",
+      "assertions": [
+        "I) Coeficiente CT: é coeficiente adimensional associado à resistência total.",
+        "II) É a resistência global ao avanço do navio e pode ser decomposta em componentes para análise.",
+        "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
+        "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "I, II, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II e III."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "As proposições I, II e III são compatíveis com a fonte; a IV é falsa porque confunde conceitos complementares com conceitos equivalentes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::integracao-b066",
+        "topic_id": "MAN-B066-10",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Nomenclature — resistance coefficients — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "coeficiente CT",
+        "resistência total RT",
+        "integração"
+      ]
+    },
+    {
+      "id": "MAN-B066-11",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "potência efetiva PE + resistência de atrito RF",
+      "topic_code": "MAN.B066.11",
+      "topic": "Integração: potência efetiva PE e resistência de atrito RF",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Com base em LARSSON & RAVEN — Ship Resistance and Flow, analise as proposições que integram potência efetiva PE e resistência de atrito RF, com foco em ciclo editorial 066, e assinale a opção correta.",
+      "assertions": [
+        "I) Potência efetiva PE: é potência associada ao produto da resistência do navio pela velocidade.",
+        "II) É componente viscosa associada ao cisalhamento na superfície molhada.",
+        "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
+        "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "As proposições I, II e III são compatíveis com a fonte; a IV é falsa porque confunde conceitos complementares com conceitos equivalentes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::integracao-b066",
+        "topic_id": "MAN-B066-11",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Resistance and powering — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "potência efetiva PE",
+        "resistência de atrito RF",
+        "integração"
+      ]
+    },
+    {
+      "id": "MAN-B066-12",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "resistência de atrito RF + resistência de ondas RW",
+      "topic_code": "MAN.B066.12",
+      "topic": "Integração: resistência de atrito RF e resistência de ondas RW",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Com base em LARSSON & RAVEN — Ship Resistance and Flow, analise as proposições que integram resistência de atrito RF e resistência de ondas RW, com foco em ciclo editorial 066, e assinale a opção correta.",
+      "assertions": [
+        "I) Resistência de atrito RF: é componente viscosa associada ao cisalhamento na superfície molhada.",
+        "II) É componente associada à geração do sistema de ondas pelo casco.",
+        "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
+        "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "As proposições I, II e III são compatíveis com a fonte; a IV é falsa porque confunde conceitos complementares com conceitos equivalentes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::integracao-b066",
+        "topic_id": "MAN-B066-12",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Chapters 1–2 — resistance fundamentals — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "resistência de atrito RF",
+        "resistência de ondas RW",
+        "integração"
+      ]
+    },
+    {
+      "id": "MAN-B066-13",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "potência efetiva PE + resistência residual RR",
+      "topic_code": "MAN.B066.13",
+      "topic": "Integração: potência efetiva PE e resistência residual RR",
+      "difficulty": "Muito Difícil",
+      "style": "Completar",
+      "pscpp_format": "fill",
+      "cognitive_level": 5,
+      "question": "Complete corretamente a relação técnica entre potência efetiva PE e resistência residual RR, conforme LARSSON & RAVEN — Ship Resistance and Flow, no enfoque de ciclo editorial 066: ______.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que potência efetiva PE, pois resistência residual RR não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que na abordagem clássica de Froude corresponde à resistência total menos a resistência de uma placa plana equivalente, tornando dispensável verificar potência efetiva PE."
+        },
+        {
+          "key": "C",
+          "text": "A análise conjunta exige reconhecer que potência efetiva PE e que na abordagem clássica de Froude corresponde à resistência total menos a resistência de uma placa plana equivalente."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de potência efetiva PE e resistência residual RR são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de potência efetiva PE e resistência residual RR elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A análise conjunta exige reconhecer que potência efetiva PE e que na abordagem clássica de Froude corresponde à resistência total menos a resistência de uma placa plana equivalente.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::integracao-b066",
+        "topic_id": "MAN-B066-13",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+        "locator": "Resistance and powering — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "potência efetiva PE",
+        "resistência residual RR",
+        "integração"
+      ]
+    },
+    {
+      "id": "ANV-B066-01",
+      "subject": "II — Arte Naval",
+      "module": "vivo do cabo + voltas redondas",
+      "topic_code": "ANV.B066.01",
+      "topic": "Integração: vivo do cabo e voltas redondas",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 5,
+      "question": "Em uma situação operacional que envolve simultaneamente vivo do cabo e voltas redondas, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo FONSECA — Arte Naval, Vol. 1, 8ª ed.?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é a parte submetida à tensão/esforço ou que deu volta em um objeto, pois voltas redondas não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que são duas ou mais voltas de circunferência em torno do mesmo objeto, tornando dispensável verificar vivo do cabo."
+        },
+        {
+          "key": "C",
+          "text": "Os conceitos de vivo do cabo e voltas redondas são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "D",
+          "text": "A análise conjunta exige reconhecer que é a parte submetida à tensão/esforço ou que deu volta em um objeto e que são duas ou mais voltas de circunferência em torno do mesmo objeto."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de vivo do cabo e voltas redondas elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A análise conjunta exige reconhecer que é a parte submetida à tensão/esforço ou que deu volta em um objeto e que são duas ou mais voltas de circunferência em torno do mesmo objeto.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::integracao-b066",
+        "topic_id": "ANV-B066-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Trabalhos do Marinheiro — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "vivo do cabo",
+        "voltas redondas",
+        "integração"
+      ]
+    },
+    {
+      "id": "ANV-B066-02",
+      "subject": "II — Arte Naval",
+      "module": "seio do cabo + nós e voltas",
+      "topic_code": "ANV.B066.02",
+      "topic": "Integração: seio do cabo e nós e voltas",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente seio do cabo e nós e voltas, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo FONSECA — Arte Naval, Vol. 1, 8ª ed.?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é a parte intermediária do cabo entre o vivo e o chicote, pois nós e voltas não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que são entrelaçamentos feitos à mão pelos quais cabos se prendem pelo chicote ou pelo seio, tornando dispensável verificar seio do cabo."
+        },
+        {
+          "key": "C",
+          "text": "Os conceitos de seio do cabo e nós e voltas são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "D",
+          "text": "A presença simultânea de seio do cabo e nós e voltas elimina a necessidade de aplicar os critérios específicos de ambos."
+        },
+        {
+          "key": "E",
+          "text": "A análise conjunta exige reconhecer que é a parte intermediária do cabo entre o vivo e o chicote e que são entrelaçamentos feitos à mão pelos quais cabos se prendem pelo chicote ou pelo seio."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A análise conjunta exige reconhecer que é a parte intermediária do cabo entre o vivo e o chicote e que são entrelaçamentos feitos à mão pelos quais cabos se prendem pelo chicote ou pelo seio.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::integracao-b066",
+        "topic_id": "ANV-B066-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Trabalhos do Marinheiro — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "seio do cabo",
+        "nós e voltas",
+        "integração"
+      ]
+    },
+    {
+      "id": "ANV-B066-03",
+      "subject": "II — Arte Naval",
+      "module": "chicote + resistência de nó ou volta",
+      "topic_code": "ANV.B066.03",
+      "topic": "Integração: chicote e resistência de nó ou volta",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente chicote e resistência de nó ou volta, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo FONSECA — Arte Naval, Vol. 1, 8ª ed.?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise conjunta exige reconhecer que é a extremidade livre do cabo e que é inferior à do cabo íntegro porque dobras e distorções concentram esforços."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que é a extremidade livre do cabo, pois resistência de nó ou volta não interfere na avaliação."
+        },
+        {
+          "key": "C",
+          "text": "A análise deve considerar somente que é inferior à do cabo íntegro porque dobras e distorções concentram esforços, tornando dispensável verificar chicote."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de chicote e resistência de nó ou volta são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de chicote e resistência de nó ou volta elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A análise conjunta exige reconhecer que é a extremidade livre do cabo e que é inferior à do cabo íntegro porque dobras e distorções concentram esforços.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::integracao-b066",
+        "topic_id": "ANV-B066-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Trabalhos do Marinheiro — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "chicote",
+        "resistência de nó ou volta",
+        "integração"
+      ]
+    },
+    {
+      "id": "ANV-B066-04",
+      "subject": "II — Arte Naval",
+      "module": "volta singela + falcaça",
+      "topic_code": "ANV.B066.04",
+      "topic": "Integração: volta singela e falcaça",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente volta singela e falcaça, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo FONSECA — Arte Naval, Vol. 1, 8ª ed.?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é uma única volta de circunferência em torno de um objeto, sem morder ou formar nó, pois falcaça não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise conjunta exige reconhecer que é uma única volta de circunferência em torno de um objeto, sem morder ou formar nó e que é trabalho do marinheiro usado para impedir que a extremidade do cabo se desfaça/descoxe."
+        },
+        {
+          "key": "C",
+          "text": "A análise deve considerar somente que é trabalho do marinheiro usado para impedir que a extremidade do cabo se desfaça/descoxe, tornando dispensável verificar volta singela."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de volta singela e falcaça são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de volta singela e falcaça elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A análise conjunta exige reconhecer que é uma única volta de circunferência em torno de um objeto, sem morder ou formar nó e que é trabalho do marinheiro usado para impedir que a extremidade do cabo se desfaça/descoxe.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::integracao-b066",
+        "topic_id": "ANV-B066-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Trabalhos do Marinheiro — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "volta singela",
+        "falcaça",
+        "integração"
+      ]
+    },
+    {
+      "id": "ANV-B066-05",
+      "subject": "II — Arte Naval",
+      "module": "voltas redondas + costura",
+      "topic_code": "ANV.B066.05",
+      "topic": "Integração: voltas redondas e costura",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 5,
+      "question": "Em uma situação operacional que envolve simultaneamente voltas redondas e costura, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo FONSECA — Arte Naval, Vol. 1, 8ª ed.?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que são duas ou mais voltas de circunferência em torno do mesmo objeto, pois costura não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que é emenda/trabalho executado nos cabos e pode ser preferível para união permanente, tornando dispensável verificar voltas redondas."
+        },
+        {
+          "key": "C",
+          "text": "A análise conjunta exige reconhecer que são duas ou mais voltas de circunferência em torno do mesmo objeto e que é emenda/trabalho executado nos cabos e pode ser preferível para união permanente."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de voltas redondas e costura são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de voltas redondas e costura elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A análise conjunta exige reconhecer que são duas ou mais voltas de circunferência em torno do mesmo objeto e que é emenda/trabalho executado nos cabos e pode ser preferível para união permanente.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::integracao-b066",
+        "topic_id": "ANV-B066-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Trabalhos do Marinheiro — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "voltas redondas",
+        "costura",
+        "integração"
+      ]
+    },
+    {
+      "id": "ANV-B066-06",
+      "subject": "II — Arte Naval",
+      "module": "nós e voltas + estropo",
+      "topic_code": "ANV.B066.06",
+      "topic": "Integração: nós e voltas e estropo",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente nós e voltas e estropo, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo FONSECA — Arte Naval, Vol. 1, 8ª ed.?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que são entrelaçamentos feitos à mão pelos quais cabos se prendem pelo chicote ou pelo seio, pois estropo não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que é trabalho/peça de cabo, corrente ou aço empregado para envolver ou sustentar objetos/cargas, tornando dispensável verificar nós e voltas."
+        },
+        {
+          "key": "C",
+          "text": "Os conceitos de nós e voltas e estropo são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "D",
+          "text": "A análise conjunta exige reconhecer que são entrelaçamentos feitos à mão pelos quais cabos se prendem pelo chicote ou pelo seio e que é trabalho/peça de cabo, corrente ou aço empregado para envolver ou sustentar objetos/cargas."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de nós e voltas e estropo elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A análise conjunta exige reconhecer que são entrelaçamentos feitos à mão pelos quais cabos se prendem pelo chicote ou pelo seio e que é trabalho/peça de cabo, corrente ou aço empregado para envolver ou sustentar objetos/cargas.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::integracao-b066",
+        "topic_id": "ANV-B066-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Trabalhos do Marinheiro — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "nós e voltas",
+        "estropo",
+        "integração"
+      ]
+    },
+    {
+      "id": "ANV-B066-07",
+      "subject": "II — Arte Naval",
+      "module": "resistência de nó ou volta + aboçadura",
+      "topic_code": "ANV.B066.07",
+      "topic": "Integração: resistência de nó ou volta e aboçadura",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente resistência de nó ou volta e aboçadura, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo FONSECA — Arte Naval, Vol. 1, 8ª ed.?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é inferior à do cabo íntegro porque dobras e distorções concentram esforços, pois aboçadura não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que aboçadura: é classificação de navio mercante, tornando dispensável verificar resistência de nó ou volta."
+        },
+        {
+          "key": "C",
+          "text": "Os conceitos de resistência de nó ou volta e aboçadura são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "D",
+          "text": "A presença simultânea de resistência de nó ou volta e aboçadura elimina a necessidade de aplicar os critérios específicos de ambos."
+        },
+        {
+          "key": "E",
+          "text": "A análise conjunta exige reconhecer que é inferior à do cabo íntegro porque dobras e distorções concentram esforços e que aboçadura: é classificação de navio mercante."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A análise conjunta exige reconhecer que é inferior à do cabo íntegro porque dobras e distorções concentram esforços e que aboçadura: é classificação de navio mercante.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::integracao-b066",
+        "topic_id": "ANV-B066-07",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Resistência dos trabalhos — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "resistência de nó ou volta",
+        "aboçadura",
+        "integração"
+      ]
+    },
+    {
+      "id": "ANV-B066-08",
+      "subject": "II — Arte Naval",
+      "module": "falcaça + mão",
+      "topic_code": "ANV.B066.08",
+      "topic": "Integração: falcaça e mão",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente falcaça e mão, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo FONSECA — Arte Naval, Vol. 1, 8ª ed.?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise conjunta exige reconhecer que é trabalho do marinheiro usado para impedir que a extremidade do cabo se desfaça/descoxe e que mão: é trabalho do marinheiro associado à formação de alça/olhal conforme o emprego descrito no capítulo."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que é trabalho do marinheiro usado para impedir que a extremidade do cabo se desfaça/descoxe, pois mão não interfere na avaliação."
+        },
+        {
+          "key": "C",
+          "text": "A análise deve considerar somente que mão: é trabalho do marinheiro associado à formação de alça/olhal conforme o emprego descrito no capítulo, tornando dispensável verificar falcaça."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de falcaça e mão são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de falcaça e mão elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A análise conjunta exige reconhecer que é trabalho do marinheiro usado para impedir que a extremidade do cabo se desfaça/descoxe e que mão: é trabalho do marinheiro associado à formação de alça/olhal conforme o emprego descrito no capítulo.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::integracao-b066",
+        "topic_id": "ANV-B066-08",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Trabalhos do Marinheiro — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "falcaça",
+        "mão",
+        "integração"
+      ]
+    },
+    {
+      "id": "ANV-B066-09",
+      "subject": "II — Arte Naval",
+      "module": "costura + pinhas",
+      "topic_code": "ANV.B066.09",
+      "topic": "Integração: costura e pinhas",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 5,
+      "question": "Em uma situação operacional que envolve simultaneamente costura e pinhas, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo FONSECA — Arte Naval, Vol. 1, 8ª ed.?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é emenda/trabalho executado nos cabos e pode ser preferível para união permanente, pois pinhas não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise conjunta exige reconhecer que é emenda/trabalho executado nos cabos e pode ser preferível para união permanente e que pinhas: são trabalhos confeccionados com cabos, alguns com finalidade prática e outros ornamental."
+        },
+        {
+          "key": "C",
+          "text": "A análise deve considerar somente que pinhas: são trabalhos confeccionados com cabos, alguns com finalidade prática e outros ornamental, tornando dispensável verificar costura."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de costura e pinhas são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de costura e pinhas elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A análise conjunta exige reconhecer que é emenda/trabalho executado nos cabos e pode ser preferível para união permanente e que pinhas: são trabalhos confeccionados com cabos, alguns com finalidade prática e outros ornamental.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::integracao-b066",
+        "topic_id": "ANV-B066-09",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Costuras — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "costura",
+        "pinhas",
+        "integração"
+      ]
+    },
+    {
+      "id": "ANV-B066-10",
+      "subject": "II — Arte Naval",
+      "module": "estropo + trabalhos do marinheiro",
+      "topic_code": "ANV.B066.10",
+      "topic": "Integração: estropo e trabalhos do marinheiro",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente estropo e trabalhos do marinheiro, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo FONSECA — Arte Naval, Vol. 1, 8ª ed.?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é trabalho/peça de cabo, corrente ou aço empregado para envolver ou sustentar objetos/cargas, pois trabalhos do marinheiro não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que trabalhos do marinheiro: abrangem falcaças, nós, voltas, malhas, aboçaduras, botões, alças, mãos, estropos, costuras e outros trabalhos de cabos, tornando dispensável verificar estropo."
+        },
+        {
+          "key": "C",
+          "text": "A análise conjunta exige reconhecer que é trabalho/peça de cabo, corrente ou aço empregado para envolver ou sustentar objetos/cargas e que trabalhos do marinheiro: abrangem falcaças, nós, voltas, malhas, aboçaduras, botões, alças, mãos, estropos, costuras e outros trabalhos de cabos."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de estropo e trabalhos do marinheiro são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de estropo e trabalhos do marinheiro elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A análise conjunta exige reconhecer que é trabalho/peça de cabo, corrente ou aço empregado para envolver ou sustentar objetos/cargas e que trabalhos do marinheiro: abrangem falcaças, nós, voltas, malhas, aboçaduras, botões, alças, mãos, estropos, costuras e outros trabalhos de cabos.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::integracao-b066",
+        "topic_id": "ANV-B066-10",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Estropos — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "estropo",
+        "trabalhos do marinheiro",
+        "integração"
+      ]
+    },
+    {
+      "id": "ANV-B066-11",
+      "subject": "II — Arte Naval",
+      "module": "aboçadura + seio do cabo",
+      "topic_code": "ANV.B066.11",
+      "topic": "Integração: aboçadura e seio do cabo",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Com base em FONSECA — Arte Naval, Vol. 1, 8ª ed., analise as proposições que integram aboçadura e seio do cabo, com foco em ciclo editorial 066, e assinale a opção correta.",
+      "assertions": [
+        "I) Aboçadura: é classificação de navio mercante.",
+        "II) Seio do cabo: é o nome dado exclusivamente à extremidade falcaçada.",
+        "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
+        "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "As proposições I, II e III são compatíveis com a fonte; a IV é falsa porque confunde conceitos complementares com conceitos equivalentes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::integracao-b066",
+        "topic_id": "ANV-B066-11",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Aboçaduras — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "aboçadura",
+        "seio do cabo",
+        "integração"
+      ]
+    },
+    {
+      "id": "ANV-B066-12",
+      "subject": "II — Arte Naval",
+      "module": "mão + trabalhos do marinheiro",
+      "topic_code": "ANV.B066.12",
+      "topic": "Integração: mão e trabalhos do marinheiro",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Com base em FONSECA — Arte Naval, Vol. 1, 8ª ed., analise as proposições que integram mão e trabalhos do marinheiro, com foco em ciclo editorial 066, e assinale a opção correta.",
+      "assertions": [
+        "I) Mão: é trabalho do marinheiro associado à formação de alça/olhal conforme o emprego descrito no capítulo.",
+        "II) Trabalhos do marinheiro.",
+        "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
+        "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "I, II, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II e III."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "As proposições I, II e III são compatíveis com a fonte; a IV é falsa porque confunde conceitos complementares com conceitos equivalentes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::integracao-b066",
+        "topic_id": "ANV-B066-12",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Alças e mãos — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "mão",
+        "trabalhos do marinheiro",
+        "integração"
+      ]
+    },
+    {
+      "id": "ANV-B066-13",
+      "subject": "II — Arte Naval",
+      "module": "pinhas + vivo do cabo",
+      "topic_code": "ANV.B066.13",
+      "topic": "Integração: pinhas e vivo do cabo",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 5,
+      "question": "Com base em FONSECA — Arte Naval, Vol. 1, 8ª ed., analise as proposições que integram pinhas e vivo do cabo, com foco em ciclo editorial 066, e assinale a opção correta.",
+      "assertions": [
+        "I) Pinhas: são trabalhos confeccionados com cabos, alguns com finalidade prática e outros ornamental.",
+        "II) É a parte submetida à tensão/esforço ou que deu volta em um objeto.",
+        "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
+        "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "As proposições I, II e III são compatíveis com a fonte; a IV é falsa porque confunde conceitos complementares com conceitos equivalentes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::integracao-b066",
+        "topic_id": "ANV-B066-13",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Pinhas — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "pinhas",
+        "vivo do cabo",
+        "integração"
+      ]
+    },
+    {
+      "id": "ANV-B066-14",
+      "subject": "II — Arte Naval",
+      "module": "trabalhos do marinheiro + vivo do cabo",
+      "topic_code": "ANV.B066.14",
+      "topic": "Integração: trabalhos do marinheiro e vivo do cabo",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Com base em FONSECA — Arte Naval, Vol. 1, 8ª ed., analise as proposições que integram trabalhos do marinheiro e vivo do cabo, com foco em ciclo editorial 066, e assinale a opção correta.",
+      "assertions": [
+        "I) Trabalhos do marinheiro: abrangem falcaças, nós, voltas, malhas, aboçaduras, botões, alças, mãos, estropos, costuras e outros trabalhos de cabos.",
+        "II) É a parte submetida à tensão/esforço ou que deu volta em um objeto.",
+        "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
+        "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "As proposições I, II e III são compatíveis com a fonte; a IV é falsa porque confunde conceitos complementares com conceitos equivalentes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::integracao-b066",
+        "topic_id": "ANV-B066-14",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Trabalhos do Marinheiro — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "trabalhos do marinheiro",
+        "vivo do cabo",
+        "integração"
+      ]
+    },
+    {
+      "id": "ANV-B066-15",
+      "subject": "II — Arte Naval",
+      "module": "seio do cabo + chicote",
+      "topic_code": "ANV.B066.15",
+      "topic": "Integração: seio do cabo e chicote",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Com base em FONSECA — Arte Naval, Vol. 1, 8ª ed., analise as proposições que integram seio do cabo e chicote, com foco em ciclo editorial 066, e assinale a opção correta.",
+      "assertions": [
+        "I) Seio do cabo: é o nome dado exclusivamente à extremidade falcaçada.",
+        "II) É a extremidade livre do cabo.",
+        "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
+        "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "As proposições I, II e III são compatíveis com a fonte; a IV é falsa porque confunde conceitos complementares com conceitos equivalentes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::integracao-b066",
+        "topic_id": "ANV-B066-15",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Trabalhos do Marinheiro — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "seio do cabo",
+        "chicote",
+        "integração"
+      ]
+    },
+    {
+      "id": "ANV-B066-16",
+      "subject": "II — Arte Naval",
+      "module": "trabalhos do marinheiro + chicote",
+      "topic_code": "ANV.B066.16",
+      "topic": "Integração: trabalhos do marinheiro e chicote",
+      "difficulty": "Difícil",
+      "style": "Completar",
+      "pscpp_format": "fill",
+      "cognitive_level": 4,
+      "question": "Complete corretamente a relação técnica entre trabalhos do marinheiro e chicote, conforme FONSECA — Arte Naval, Vol. 1, 8ª ed., no enfoque de ciclo editorial 066: ______.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que trabalhos do marinheiro, pois chicote não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que é a extremidade livre do cabo, tornando dispensável verificar trabalhos do marinheiro."
+        },
+        {
+          "key": "C",
+          "text": "Os conceitos de trabalhos do marinheiro e chicote são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "D",
+          "text": "A análise conjunta exige reconhecer que trabalhos do marinheiro e que é a extremidade livre do cabo."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de trabalhos do marinheiro e chicote elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A análise conjunta exige reconhecer que trabalhos do marinheiro e que é a extremidade livre do cabo.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::integracao-b066",
+        "topic_id": "ANV-B066-16",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Trabalhos do Marinheiro — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "trabalhos do marinheiro",
+        "chicote",
+        "integração"
+      ]
+    },
+    {
+      "id": "ANV-B066-17",
+      "subject": "II — Arte Naval",
+      "module": "vivo do cabo + volta singela",
+      "topic_code": "ANV.B066.17",
+      "topic": "Integração: vivo do cabo e volta singela",
+      "difficulty": "Muito Difícil",
+      "style": "Associação",
+      "pscpp_format": "association",
+      "cognitive_level": 5,
+      "question": "Relacione cinco conceitos examináveis de FONSECA — Arte Naval, Vol. 1, 8ª ed. às respectivas proposições, no enfoque de ciclo editorial 066, e assinale a associação integralmente correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "1 e 2 trocados; demais corretos."
+        },
+        {
+          "key": "B",
+          "text": "2 e 4 trocados; demais corretos."
+        },
+        {
+          "key": "C",
+          "text": "1 e 5 trocados; demais corretos."
+        },
+        {
+          "key": "D",
+          "text": "3 e 5 trocados; demais corretos."
+        },
+        {
+          "key": "E",
+          "text": "1) vivo do cabo — é a parte submetida à tensão/esforço ou que deu volta em um objeto; 2) volta singela — é uma única volta de circunferência em torno de um objeto, sem morder ou formar nó; 3) vivo do cabo — é a parte submetida à tensão/esforço ou que deu volta em um objeto; 4) seio do cabo — é a parte intermediária do cabo entre o vivo e o chicote; 5) chicote — é a extremidade livre do cabo"
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A alternativa indicada mantém todas as relações conceituais previstas na fonte.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v1",
+        "chapter_id": "fonseca-arte-v1::integracao-b066",
+        "topic_id": "ANV-B066-17",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "FONSECA — Arte Naval, Vol. 1, 8ª ed.",
+        "locator": "Capítulo 8 — Trabalhos do Marinheiro — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "vivo do cabo",
+        "volta singela",
+        "integração"
+      ]
+    },
+    {
+      "id": "NAR-B066-01",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "bridge team + XTE",
+      "topic_code": "NAR.B066.01",
+      "topic": "Integração: bridge team e XTE",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 5,
+      "question": "Em uma situação operacional que envolve simultaneamente bridge team e XTE, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo ICS — Bridge Procedures Guide, 6ª ed.?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise conjunta exige reconhecer que é o pessoal no passadiço engajado na navegação do navio e que é o erro transversal em relação à derrota planejada."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que é o pessoal no passadiço engajado na navegação do navio, pois XTE não interfere na avaliação."
+        },
+        {
+          "key": "C",
+          "text": "A análise deve considerar somente que é o erro transversal em relação à derrota planejada, tornando dispensável verificar bridge team."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de bridge team e XTE são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de bridge team e XTE elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A análise conjunta exige reconhecer que é o pessoal no passadiço engajado na navegação do navio e que é o erro transversal em relação à derrota planejada.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "ics-bpg",
+        "chapter_id": "ics-bpg::integracao-b066",
+        "topic_id": "NAR-B066-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "ICS — Bridge Procedures Guide, 6ª ed.",
+        "locator": "Chapter 2 — Effective bridge organisation — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "bridge team",
+        "XTE",
+        "integração"
+      ]
+    },
+    {
+      "id": "NAR-B066-02",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "BRM + air draught",
+      "topic_code": "NAR.B066.02",
+      "topic": "Integração: BRM e air draught",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente BRM e air draught, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo ICS — Bridge Procedures Guide, 6ª ed.?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que organiza e utiliza recursos humanos e técnicos para apoiar navegação segura e decisões eficazes, pois air draught não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise conjunta exige reconhecer que organiza e utiliza recursos humanos e técnicos para apoiar navegação segura e decisões eficazes e que air draught: é a distância da quilha ao fundo."
+        },
+        {
+          "key": "C",
+          "text": "A análise deve considerar somente que air draught: é a distância da quilha ao fundo, tornando dispensável verificar BRM."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de BRM e air draught são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de BRM e air draught elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A análise conjunta exige reconhecer que organiza e utiliza recursos humanos e técnicos para apoiar navegação segura e decisões eficazes e que air draught: é a distância da quilha ao fundo.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "ics-bpg",
+        "chapter_id": "ics-bpg::integracao-b066",
+        "topic_id": "NAR-B066-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "ICS — Bridge Procedures Guide, 6ª ed.",
+        "locator": "Chapter 2 — BRM — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "BRM",
+        "air draught",
+        "integração"
+      ]
+    },
+    {
+      "id": "NAR-B066-03",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "passage plan + planejamento de fundeio",
+      "topic_code": "NAR.B066.03",
+      "topic": "Integração: passage plan e planejamento de fundeio",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente passage plan e planejamento de fundeio, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo ICS — Bridge Procedures Guide, 6ª ed.?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que deve ser preparado, executado e monitorado como referência comum para a passagem, pois planejamento de fundeio não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que planejamento de fundeio: integra o passage planning e deve considerar posição, profundidade, espaço, condições e contingências, tornando dispensável verificar passage plan."
+        },
+        {
+          "key": "C",
+          "text": "A análise conjunta exige reconhecer que deve ser preparado, executado e monitorado como referência comum para a passagem e que planejamento de fundeio: integra o passage planning e deve considerar posição, profundidade, espaço, condições e contingências."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de passage plan e planejamento de fundeio são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de passage plan e planejamento de fundeio elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A análise conjunta exige reconhecer que deve ser preparado, executado e monitorado como referência comum para a passagem e que planejamento de fundeio: integra o passage planning e deve considerar posição, profundidade, espaço, condições e contingências.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "ics-bpg",
+        "chapter_id": "ics-bpg::integracao-b066",
+        "topic_id": "NAR-B066-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "ICS — Bridge Procedures Guide, 6ª ed.",
+        "locator": "Chapter 3 — Passage planning — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "passage plan",
+        "planejamento de fundeio",
+        "integração"
+      ]
+    },
+    {
+      "id": "NAR-B066-04",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "parallel indexing + bridge team",
+      "topic_code": "NAR.B066.04",
+      "topic": "Integração: parallel indexing e bridge team",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente parallel indexing e bridge team, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo ICS — Bridge Procedures Guide, 6ª ed.?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é técnica radar recomendada para verificar manutenção da derrota em águas costeiras e de praticagem, pois bridge team não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que bridge team: é o pessoal no passadiço engajado na navegação do navio, tornando dispensável verificar parallel indexing."
+        },
+        {
+          "key": "C",
+          "text": "Os conceitos de parallel indexing e bridge team são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "D",
+          "text": "A análise conjunta exige reconhecer que é técnica radar recomendada para verificar manutenção da derrota em águas costeiras e de praticagem e que bridge team: é o pessoal no passadiço engajado na navegação do navio."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de parallel indexing e bridge team elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A análise conjunta exige reconhecer que é técnica radar recomendada para verificar manutenção da derrota em águas costeiras e de praticagem e que bridge team: é o pessoal no passadiço engajado na navegação do navio.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "ics-bpg",
+        "chapter_id": "ics-bpg::integracao-b066",
+        "topic_id": "NAR-B066-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "ICS — Bridge Procedures Guide, 6ª ed.",
+        "locator": "Chapter 5 — Radar monitoring — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "parallel indexing",
+        "bridge team",
+        "integração"
+      ]
+    },
+    {
+      "id": "NAR-B066-05",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "XTE + pilotagem",
+      "topic_code": "NAR.B066.05",
+      "topic": "Integração: XTE e pilotagem",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 5,
+      "question": "Em uma situação operacional que envolve simultaneamente XTE e pilotagem, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo ICS — Bridge Procedures Guide, 6ª ed.?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é o erro transversal em relação à derrota planejada, pois pilotagem não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que pilotagem, tornando dispensável verificar XTE."
+        },
+        {
+          "key": "C",
+          "text": "Os conceitos de XTE e pilotagem são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "D",
+          "text": "A presença simultânea de XTE e pilotagem elimina a necessidade de aplicar os critérios específicos de ambos."
+        },
+        {
+          "key": "E",
+          "text": "A análise conjunta exige reconhecer que é o erro transversal em relação à derrota planejada e que pilotagem."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A análise conjunta exige reconhecer que é o erro transversal em relação à derrota planejada e que pilotagem.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "ics-bpg",
+        "chapter_id": "ics-bpg::integracao-b066",
+        "topic_id": "NAR-B066-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "ICS — Bridge Procedures Guide, 6ª ed.",
+        "locator": "Chapter 3 — Passage planning — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "XTE",
+        "pilotagem",
+        "integração"
+      ]
+    },
+    {
+      "id": "NAR-B066-06",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "air draught + bridge team",
+      "topic_code": "NAR.B066.06",
+      "topic": "Integração: air draught e bridge team",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Com base em ICS — Bridge Procedures Guide, 6ª ed., analise as proposições que integram air draught e bridge team, com foco em ciclo editorial 066, e assinale a opção correta.",
+      "assertions": [
+        "I) Air draught: é a distância da quilha ao fundo.",
+        "II) É o pessoal no passadiço engajado na navegação do navio.",
+        "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
+        "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "As proposições I, II e III são compatíveis com a fonte; a IV é falsa porque confunde conceitos complementares com conceitos equivalentes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "ics-bpg",
+        "chapter_id": "ics-bpg::integracao-b066",
+        "topic_id": "NAR-B066-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "ICS — Bridge Procedures Guide, 6ª ed.",
+        "locator": "Definitions / passage planning — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "air draught",
+        "bridge team",
+        "integração"
+      ]
+    },
+    {
+      "id": "NAR-B066-07",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "planejamento de fundeio + BRM",
+      "topic_code": "NAR.B066.07",
+      "topic": "Integração: planejamento de fundeio e BRM",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Com base em ICS — Bridge Procedures Guide, 6ª ed., analise as proposições que integram planejamento de fundeio e BRM, com foco em ciclo editorial 066, e assinale a opção correta.",
+      "assertions": [
+        "I) Planejamento de fundeio: integra o passage planning e deve considerar posição, profundidade, espaço, condições e contingências.",
+        "II) Organiza e utiliza recursos humanos e técnicos para apoiar navegação segura e decisões eficazes.",
+        "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
+        "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "As proposições I, II e III são compatíveis com a fonte; a IV é falsa porque confunde conceitos complementares com conceitos equivalentes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "ics-bpg",
+        "chapter_id": "ics-bpg::integracao-b066",
+        "topic_id": "NAR-B066-07",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "ICS — Bridge Procedures Guide, 6ª ed.",
+        "locator": "Chapter 3 — Planning an anchorage — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "planejamento de fundeio",
+        "BRM",
+        "integração"
+      ]
+    },
+    {
+      "id": "NAR-B066-08",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "bridge team + passage plan",
+      "topic_code": "NAR.B066.08",
+      "topic": "Integração: bridge team e passage plan",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Com base em ICS — Bridge Procedures Guide, 6ª ed., analise as proposições que integram bridge team e passage plan, com foco em ciclo editorial 066, e assinale a opção correta.",
+      "assertions": [
+        "I) Bridge team: é o pessoal no passadiço engajado na navegação do navio.",
+        "II) Deve ser preparado, executado e monitorado como referência comum para a passagem.",
+        "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
+        "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "As proposições I, II e III são compatíveis com a fonte; a IV é falsa porque confunde conceitos complementares com conceitos equivalentes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "ics-bpg",
+        "chapter_id": "ics-bpg::integracao-b066",
+        "topic_id": "NAR-B066-08",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "ICS — Bridge Procedures Guide, 6ª ed.",
+        "locator": "Chapter 2 — Effective bridge organisation — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "bridge team",
+        "passage plan",
+        "integração"
+      ]
+    },
+    {
+      "id": "NAR-B066-09",
+      "subject": "III — Navegação em Águas Restritas",
+      "module": "pilotagem + parallel indexing",
+      "topic_code": "NAR.B066.09",
+      "topic": "Integração: pilotagem e parallel indexing",
+      "difficulty": "Muito Difícil",
+      "style": "Completar",
+      "pscpp_format": "fill",
+      "cognitive_level": 5,
+      "question": "Complete corretamente a relação técnica entre pilotagem e parallel indexing, conforme ICS — Bridge Procedures Guide, 6ª ed., no enfoque de ciclo editorial 066: ______.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que pilotagem, pois parallel indexing não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que é técnica radar recomendada para verificar manutenção da derrota em águas costeiras e de praticagem, tornando dispensável verificar pilotagem."
+        },
+        {
+          "key": "C",
+          "text": "Os conceitos de pilotagem e parallel indexing são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "D",
+          "text": "A análise conjunta exige reconhecer que pilotagem e que é técnica radar recomendada para verificar manutenção da derrota em águas costeiras e de praticagem."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de pilotagem e parallel indexing elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A análise conjunta exige reconhecer que pilotagem e que é técnica radar recomendada para verificar manutenção da derrota em águas costeiras e de praticagem.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "III",
+        "subject_slug": "navegacao-aguas-restritas",
+        "bibliography_id": "ics-bpg",
+        "chapter_id": "ics-bpg::integracao-b066",
+        "topic_id": "NAR-B066-09",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "ICS — Bridge Procedures Guide, 6ª ed.",
+        "locator": "Chapter 6 — Pilotage — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "pilotagem",
+        "parallel indexing",
+        "integração"
+      ]
+    },
+    {
+      "id": "LEG-B066-01",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "naufrágio + água aberta",
+      "topic_code": "LEG.B066.01",
+      "topic": "Integração: naufrágio e água aberta",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 5,
+      "question": "Em uma situação operacional que envolve simultaneamente naufrágio e água aberta, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo NORMAM-302/DPC — IAFN e ISAIM?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é afundamento total ou parcial por perda de flutuabilidade decorrente de embarque de água nos espaços internos, pois água aberta não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que é abertura nas obras vivas ou falha de estanqueidade que permite ingresso descontrolado de água ou descarga de líquido de tanques, tornando dispensável verificar naufrágio."
+        },
+        {
+          "key": "C",
+          "text": "Os conceitos de naufrágio e água aberta são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "D",
+          "text": "A presença simultânea de naufrágio e água aberta elimina a necessidade de aplicar os critérios específicos de ambos."
+        },
+        {
+          "key": "E",
+          "text": "A análise conjunta exige reconhecer que é afundamento total ou parcial por perda de flutuabilidade decorrente de embarque de água nos espaços internos e que é abertura nas obras vivas ou falha de estanqueidade que permite ingresso descontrolado de água ou descarga de líquido de tanques."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A análise conjunta exige reconhecer que é afundamento total ou parcial por perda de flutuabilidade decorrente de embarque de água nos espaços internos e que é abertura nas obras vivas ou falha de estanqueidade que permite ingresso descontrolado de água ou descarga de líquido de tanques.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::integracao-b066",
+        "topic_id": "LEG-B066-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.1 — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "naufrágio",
+        "água aberta",
+        "integração"
+      ]
+    },
+    {
+      "id": "LEG-B066-02",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "encalhe + varação",
+      "topic_code": "LEG.B066.02",
+      "topic": "Integração: encalhe e varação",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente encalhe e varação, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo NORMAM-302/DPC — IAFN e ISAIM?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise conjunta exige reconhecer que é contato das obras vivas com o fundo, com resistência externa que dificulta ou impede a movimentação e que é ato deliberado de encalhar ou pôr em seco a embarcação para evitar evento mais danoso."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que é contato das obras vivas com o fundo, com resistência externa que dificulta ou impede a movimentação, pois varação não interfere na avaliação."
+        },
+        {
+          "key": "C",
+          "text": "A análise deve considerar somente que é ato deliberado de encalhar ou pôr em seco a embarcação para evitar evento mais danoso, tornando dispensável verificar encalhe."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de encalhe e varação são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de encalhe e varação elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A análise conjunta exige reconhecer que é contato das obras vivas com o fundo, com resistência externa que dificulta ou impede a movimentação e que é ato deliberado de encalhar ou pôr em seco a embarcação para evitar evento mais danoso.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::integracao-b066",
+        "topic_id": "LEG-B066-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.1 — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "encalhe",
+        "varação",
+        "integração"
+      ]
+    },
+    {
+      "id": "LEG-B066-03",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "colisão + arribada",
+      "topic_code": "LEG.B066.03",
+      "topic": "Integração: colisão e arribada",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente colisão e arribada, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo NORMAM-302/DPC — IAFN e ISAIM?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é choque da embarcação/apêndices contra objeto que não seja outra embarcação, ou contra pessoa, pois arribada não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise conjunta exige reconhecer que é choque da embarcação/apêndices contra objeto que não seja outra embarcação, ou contra pessoa e que é entrada em porto ou lugar não previsto para a travessia, fora da escala programada ou destino."
+        },
+        {
+          "key": "C",
+          "text": "A análise deve considerar somente que é entrada em porto ou lugar não previsto para a travessia, fora da escala programada ou destino, tornando dispensável verificar colisão."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de colisão e arribada são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de colisão e arribada elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A análise conjunta exige reconhecer que é choque da embarcação/apêndices contra objeto que não seja outra embarcação, ou contra pessoa e que é entrada em porto ou lugar não previsto para a travessia, fora da escala programada ou destino.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::integracao-b066",
+        "topic_id": "LEG-B066-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.1 — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "colisão",
+        "arribada",
+        "integração"
+      ]
+    },
+    {
+      "id": "LEG-B066-04",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "abalroação + alijamento",
+      "topic_code": "LEG.B066.04",
+      "topic": "Integração: abalroação e alijamento",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente abalroação e alijamento, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo NORMAM-302/DPC — IAFN e ISAIM?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é choque mecânico entre embarcações ou seus pertences e acessórios, pois alijamento não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que é lançamento deliberado à água de carga ou bens para salvar embarcação, carga ou vidas, tornando dispensável verificar abalroação."
+        },
+        {
+          "key": "C",
+          "text": "A análise conjunta exige reconhecer que é choque mecânico entre embarcações ou seus pertences e acessórios e que é lançamento deliberado à água de carga ou bens para salvar embarcação, carga ou vidas."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de abalroação e alijamento são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de abalroação e alijamento elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A análise conjunta exige reconhecer que é choque mecânico entre embarcações ou seus pertences e acessórios e que é lançamento deliberado à água de carga ou bens para salvar embarcação, carga ou vidas.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::integracao-b066",
+        "topic_id": "LEG-B066-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.1 — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "abalroação",
+        "alijamento",
+        "integração"
+      ]
+    },
+    {
+      "id": "LEG-B066-05",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "água aberta + mau aparelhamento",
+      "topic_code": "LEG.B066.05",
+      "topic": "Integração: água aberta e mau aparelhamento",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 5,
+      "question": "Em uma situação operacional que envolve simultaneamente água aberta e mau aparelhamento, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo NORMAM-302/DPC — IAFN e ISAIM?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é abertura nas obras vivas ou falha de estanqueidade que permite ingresso descontrolado de água ou descarga de líquido de tanques, pois mau aparelhamento não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que é falta ou impropriedade de aparelhos, equipamentos, sobressalentes, acessórios ou materiais em desacordo com requisitos técnicos, tornando dispensável verificar água aberta."
+        },
+        {
+          "key": "C",
+          "text": "Os conceitos de água aberta e mau aparelhamento são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "D",
+          "text": "A análise conjunta exige reconhecer que é abertura nas obras vivas ou falha de estanqueidade que permite ingresso descontrolado de água ou descarga de líquido de tanques e que é falta ou impropriedade de aparelhos, equipamentos, sobressalentes, acessórios ou materiais em desacordo com requisitos técnicos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de água aberta e mau aparelhamento elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A análise conjunta exige reconhecer que é abertura nas obras vivas ou falha de estanqueidade que permite ingresso descontrolado de água ou descarga de líquido de tanques e que é falta ou impropriedade de aparelhos, equipamentos, sobressalentes, acessórios ou materiais em desacordo com requisitos técnicos.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::integracao-b066",
+        "topic_id": "LEG-B066-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.1 — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "água aberta",
+        "mau aparelhamento",
+        "integração"
+      ]
+    },
+    {
+      "id": "LEG-B066-06",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "varação + impropriedade para o serviço",
+      "topic_code": "LEG.B066.06",
+      "topic": "Integração: varação e impropriedade para o serviço",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente varação e impropriedade para o serviço, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo NORMAM-302/DPC — IAFN e ISAIM?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é ato deliberado de encalhar ou pôr em seco a embarcação para evitar evento mais danoso, pois impropriedade para o serviço não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que impropriedade para o serviço: é qualquer atraso comercial do navio, tornando dispensável verificar varação."
+        },
+        {
+          "key": "C",
+          "text": "Os conceitos de varação e impropriedade para o serviço são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "D",
+          "text": "A presença simultânea de varação e impropriedade para o serviço elimina a necessidade de aplicar os critérios específicos de ambos."
+        },
+        {
+          "key": "E",
+          "text": "A análise conjunta exige reconhecer que é ato deliberado de encalhar ou pôr em seco a embarcação para evitar evento mais danoso e que impropriedade para o serviço: é qualquer atraso comercial do navio."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A análise conjunta exige reconhecer que é ato deliberado de encalhar ou pôr em seco a embarcação para evitar evento mais danoso e que impropriedade para o serviço: é qualquer atraso comercial do navio.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::integracao-b066",
+        "topic_id": "LEG-B066-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.1 — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "varação",
+        "impropriedade para o serviço",
+        "integração"
+      ]
+    },
+    {
+      "id": "LEG-B066-07",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "arribada + alteração da rota",
+      "topic_code": "LEG.B066.07",
+      "topic": "Integração: arribada e alteração da rota",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente arribada e alteração da rota, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo NORMAM-302/DPC — IAFN e ISAIM?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise conjunta exige reconhecer que é entrada em porto ou lugar não previsto para a travessia, fora da escala programada ou destino e que alteração da rota: é desvio da derrota programada que ponha em risco a expedição ou gere prejuízos."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que é entrada em porto ou lugar não previsto para a travessia, fora da escala programada ou destino, pois alteração da rota não interfere na avaliação."
+        },
+        {
+          "key": "C",
+          "text": "A análise deve considerar somente que alteração da rota: é desvio da derrota programada que ponha em risco a expedição ou gere prejuízos, tornando dispensável verificar arribada."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de arribada e alteração da rota são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de arribada e alteração da rota elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A análise conjunta exige reconhecer que é entrada em porto ou lugar não previsto para a travessia, fora da escala programada ou destino e que alteração da rota: é desvio da derrota programada que ponha em risco a expedição ou gere prejuízos.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::integracao-b066",
+        "topic_id": "LEG-B066-07",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.1 — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "arribada",
+        "alteração da rota",
+        "integração"
+      ]
+    },
+    {
+      "id": "LEG-B066-08",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "alijamento + IAFN",
+      "topic_code": "LEG.B066.08",
+      "topic": "Integração: alijamento e IAFN",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente alijamento e IAFN, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo NORMAM-302/DPC — IAFN e ISAIM?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é lançamento deliberado à água de carga ou bens para salvar embarcação, carga ou vidas, pois IAFN não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise conjunta exige reconhecer que é lançamento deliberado à água de carga ou bens para salvar embarcação, carga ou vidas e que iAFN: é Inquérito Administrativo sobre Acidentes e Fatos da Navegação, instruído para tramitação ao Tribunal Marítimo."
+        },
+        {
+          "key": "C",
+          "text": "A análise deve considerar somente que iAFN: é Inquérito Administrativo sobre Acidentes e Fatos da Navegação, instruído para tramitação ao Tribunal Marítimo, tornando dispensável verificar alijamento."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de alijamento e IAFN são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de alijamento e IAFN elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A análise conjunta exige reconhecer que é lançamento deliberado à água de carga ou bens para salvar embarcação, carga ou vidas e que iAFN: é Inquérito Administrativo sobre Acidentes e Fatos da Navegação, instruído para tramitação ao Tribunal Marítimo.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::integracao-b066",
+        "topic_id": "LEG-B066-08",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.1 — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "alijamento",
+        "IAFN",
+        "integração"
+      ]
+    },
+    {
+      "id": "LEG-B066-09",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "mau aparelhamento + navio da Marinha do Brasil em atividade não comercial",
+      "topic_code": "LEG.B066.09",
+      "topic": "Integração: mau aparelhamento e navio da Marinha do Brasil em atividade não comercial",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 5,
+      "question": "Em uma situação operacional que envolve simultaneamente mau aparelhamento e navio da Marinha do Brasil em atividade não comercial, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo NORMAM-302/DPC — IAFN e ISAIM?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é falta ou impropriedade de aparelhos, equipamentos, sobressalentes, acessórios ou materiais em desacordo com requisitos técnicos, pois navio da Marinha do Brasil em atividade não comercial não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que navio da Marinha do Brasil em atividade não comercial: em regra não enseja IAFN pela CP/DL, seguindo apuração própria prevista na norma, tornando dispensável verificar mau aparelhamento."
+        },
+        {
+          "key": "C",
+          "text": "A análise conjunta exige reconhecer que é falta ou impropriedade de aparelhos, equipamentos, sobressalentes, acessórios ou materiais em desacordo com requisitos técnicos e que navio da Marinha do Brasil em atividade não comercial: em regra não enseja IAFN pela CP/DL, seguindo apuração própria prevista na norma."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de mau aparelhamento e navio da Marinha do Brasil em atividade não comercial são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de mau aparelhamento e navio da Marinha do Brasil em atividade não comercial elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A análise conjunta exige reconhecer que é falta ou impropriedade de aparelhos, equipamentos, sobressalentes, acessórios ou materiais em desacordo com requisitos técnicos e que navio da Marinha do Brasil em atividade não comercial: em regra não enseja IAFN pela CP/DL, seguindo apuração própria prevista na norma.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::integracao-b066",
+        "topic_id": "LEG-B066-09",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.2 — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "mau aparelhamento",
+        "navio da Marinha do Brasil em atividade não comercial",
+        "integração"
+      ]
+    },
+    {
+      "id": "LEG-B066-10",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "impropriedade para o serviço + encalhe",
+      "topic_code": "LEG.B066.10",
+      "topic": "Integração: impropriedade para o serviço e encalhe",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Com base em NORMAM-302/DPC — IAFN e ISAIM, analise as proposições que integram impropriedade para o serviço e encalhe, com foco em ciclo editorial 066, e assinale a opção correta.",
+      "assertions": [
+        "I) Impropriedade para o serviço: é qualquer atraso comercial do navio.",
+        "II) Encalhe: é ato deliberado de pôr a embarcação em seco para evitar dano maior.",
+        "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
+        "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "As proposições I, II e III são compatíveis com a fonte; a IV é falsa porque confunde conceitos complementares com conceitos equivalentes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::integracao-b066",
+        "topic_id": "LEG-B066-10",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.2 — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "impropriedade para o serviço",
+        "encalhe",
+        "integração"
+      ]
+    },
+    {
+      "id": "LEG-B066-11",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "alteração da rota + navio da Marinha do Brasil em atividade não comercial",
+      "topic_code": "LEG.B066.11",
+      "topic": "Integração: alteração da rota e navio da Marinha do Brasil em atividade não comercial",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Com base em NORMAM-302/DPC — IAFN e ISAIM, analise as proposições que integram alteração da rota e navio da Marinha do Brasil em atividade não comercial, com foco em ciclo editorial 066, e assinale a opção correta.",
+      "assertions": [
+        "I) Alteração da rota: é desvio da derrota programada que ponha em risco a expedição ou gere prejuízos.",
+        "II) Navio da Marinha do Brasil em atividade não comercial.",
+        "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
+        "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "I, II, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II e III."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "As proposições I, II e III são compatíveis com a fonte; a IV é falsa porque confunde conceitos complementares com conceitos equivalentes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::integracao-b066",
+        "topic_id": "LEG-B066-11",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.2 — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "alteração da rota",
+        "navio da Marinha do Brasil em atividade não comercial",
+        "integração"
+      ]
+    },
+    {
+      "id": "LEG-B066-12",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "IAFN + naufrágio",
+      "topic_code": "LEG.B066.12",
+      "topic": "Integração: IAFN e naufrágio",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Com base em NORMAM-302/DPC — IAFN e ISAIM, analise as proposições que integram IAFN e naufrágio, com foco em ciclo editorial 066, e assinale a opção correta.",
+      "assertions": [
+        "I) IAFN: é Inquérito Administrativo sobre Acidentes e Fatos da Navegação, instruído para tramitação ao Tribunal Marítimo.",
+        "II) É afundamento total ou parcial por perda de flutuabilidade decorrente de embarque de água nos espaços internos.",
+        "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
+        "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "As proposições I, II e III são compatíveis com a fonte; a IV é falsa porque confunde conceitos complementares com conceitos equivalentes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::integracao-b066",
+        "topic_id": "LEG-B066-12",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — propósito — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "IAFN",
+        "naufrágio",
+        "integração"
+      ]
+    },
+    {
+      "id": "LEG-B066-13",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "navio da Marinha do Brasil em atividade não comercial + naufrágio",
+      "topic_code": "LEG.B066.13",
+      "topic": "Integração: navio da Marinha do Brasil em atividade não comercial e naufrágio",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 5,
+      "question": "Com base em NORMAM-302/DPC — IAFN e ISAIM, analise as proposições que integram navio da Marinha do Brasil em atividade não comercial e naufrágio, com foco em ciclo editorial 066, e assinale a opção correta.",
+      "assertions": [
+        "I) Navio da Marinha do Brasil em atividade não comercial: em regra não enseja IAFN pela CP/DL, seguindo apuração própria prevista na norma.",
+        "II) É afundamento total ou parcial por perda de flutuabilidade decorrente de embarque de água nos espaços internos.",
+        "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
+        "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "As proposições I, II e III são compatíveis com a fonte; a IV é falsa porque confunde conceitos complementares com conceitos equivalentes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::integracao-b066",
+        "topic_id": "LEG-B066-13",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.7.1 — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "navio da Marinha do Brasil em atividade não comercial",
+        "naufrágio",
+        "integração"
+      ]
+    },
+    {
+      "id": "LEG-B066-14",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "encalhe + colisão",
+      "topic_code": "LEG.B066.14",
+      "topic": "Integração: encalhe e colisão",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Com base em NORMAM-302/DPC — IAFN e ISAIM, analise as proposições que integram encalhe e colisão, com foco em ciclo editorial 066, e assinale a opção correta.",
+      "assertions": [
+        "I) Encalhe: é ato deliberado de pôr a embarcação em seco para evitar dano maior.",
+        "II) É choque da embarcação/apêndices contra objeto que não seja outra embarcação, ou contra pessoa.",
+        "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
+        "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "As proposições I, II e III são compatíveis com a fonte; a IV é falsa porque confunde conceitos complementares com conceitos equivalentes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::integracao-b066",
+        "topic_id": "LEG-B066-14",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.1 — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "encalhe",
+        "colisão",
+        "integração"
+      ]
+    },
+    {
+      "id": "LEG-B066-15",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "navio da Marinha do Brasil em atividade não comercial + colisão",
+      "topic_code": "LEG.B066.15",
+      "topic": "Integração: navio da Marinha do Brasil em atividade não comercial e colisão",
+      "difficulty": "Difícil",
+      "style": "Completar",
+      "pscpp_format": "fill",
+      "cognitive_level": 4,
+      "question": "Complete corretamente a relação técnica entre navio da Marinha do Brasil em atividade não comercial e colisão, conforme NORMAM-302/DPC — IAFN e ISAIM, no enfoque de ciclo editorial 066: ______.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que navio da Marinha do Brasil em atividade não comercial, pois colisão não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que é choque da embarcação/apêndices contra objeto que não seja outra embarcação, ou contra pessoa, tornando dispensável verificar navio da Marinha do Brasil em atividade não comercial."
+        },
+        {
+          "key": "C",
+          "text": "Os conceitos de navio da Marinha do Brasil em atividade não comercial e colisão são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "D",
+          "text": "A análise conjunta exige reconhecer que navio da Marinha do Brasil em atividade não comercial e que é choque da embarcação/apêndices contra objeto que não seja outra embarcação, ou contra pessoa."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de navio da Marinha do Brasil em atividade não comercial e colisão elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A análise conjunta exige reconhecer que navio da Marinha do Brasil em atividade não comercial e que é choque da embarcação/apêndices contra objeto que não seja outra embarcação, ou contra pessoa.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::integracao-b066",
+        "topic_id": "LEG-B066-15",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.7.1 — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "navio da Marinha do Brasil em atividade não comercial",
+        "colisão",
+        "integração"
+      ]
+    },
+    {
+      "id": "LEG-B066-16",
+      "subject": "IV — Legislação e Regulamentação",
+      "module": "naufrágio + abalroação",
+      "topic_code": "LEG.B066.16",
+      "topic": "Integração: naufrágio e abalroação",
+      "difficulty": "Difícil",
+      "style": "Associação",
+      "pscpp_format": "association",
+      "cognitive_level": 4,
+      "question": "Relacione cinco conceitos examináveis de NORMAM-302/DPC — IAFN e ISAIM às respectivas proposições, no enfoque de ciclo editorial 066, e assinale a associação integralmente correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "1 e 2 trocados; demais corretos."
+        },
+        {
+          "key": "B",
+          "text": "2 e 4 trocados; demais corretos."
+        },
+        {
+          "key": "C",
+          "text": "1 e 5 trocados; demais corretos."
+        },
+        {
+          "key": "D",
+          "text": "3 e 5 trocados; demais corretos."
+        },
+        {
+          "key": "E",
+          "text": "1) naufrágio — é afundamento total ou parcial por perda de flutuabilidade decorrente de embarque de água nos espaços internos; 2) abalroação — é choque mecânico entre embarcações ou seus pertences e acessórios; 3) naufrágio — é afundamento total ou parcial por perda de flutuabilidade decorrente de embarque de água nos espaços internos; 4) encalhe — é contato das obras vivas com o fundo, com resistência externa que dificulta ou impede a movimentação; 5) colisão — é choque da embarcação/apêndices contra objeto que não seja outra embarcação, ou contra pessoa"
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A alternativa indicada mantém todas as relações conceituais previstas na fonte.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "IV",
+        "subject_slug": "legislacao-regulamentacao",
+        "bibliography_id": "normam302",
+        "chapter_id": "normam302::integracao-b066",
+        "topic_id": "LEG-B066-16",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-302/DPC — IAFN e ISAIM",
+        "locator": "Capítulo 1 — art. 1.6.1 — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "naufrágio",
+        "abalroação",
+        "integração"
+      ]
+    },
+    {
+      "id": "MEO-B066-01",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "altura significativa de onda + METAREA",
+      "topic_code": "MEO.B066.01",
+      "topic": "Integração: altura significativa de onda e METAREA",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 5,
+      "question": "Em uma situação operacional que envolve simultaneamente altura significativa de onda e METAREA, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo NORMAM-701/DHN — Serviço Meteorológico Marinho?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise conjunta exige reconhecer que é média do terço superior das alturas de onda observadas/medidas no intervalo considerado e que mETAREA: é uma escala de força do vento."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que é média do terço superior das alturas de onda observadas/medidas no intervalo considerado, pois METAREA não interfere na avaliação."
+        },
+        {
+          "key": "C",
+          "text": "A análise deve considerar somente que mETAREA: é uma escala de força do vento, tornando dispensável verificar altura significativa de onda."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de altura significativa de onda e METAREA são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de altura significativa de onda e METAREA elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A análise conjunta exige reconhecer que é média do terço superior das alturas de onda observadas/medidas no intervalo considerado e que mETAREA: é uma escala de força do vento.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "normam701",
+        "chapter_id": "normam701::integracao-b066",
+        "topic_id": "MEO-B066-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-701/DHN — Serviço Meteorológico Marinho",
+        "locator": "Definições e avisos de mau tempo — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "altura significativa de onda",
+        "METAREA",
+        "integração"
+      ]
+    },
+    {
+      "id": "MEO-B066-02",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "aviso de baixa visibilidade + altura significativa de onda",
+      "topic_code": "MEO.B066.02",
+      "topic": "Integração: aviso de baixa visibilidade e altura significativa de onda",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente aviso de baixa visibilidade e altura significativa de onda, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo NORMAM-701/DHN — Serviço Meteorológico Marinho?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é associado a previsão/observação de visibilidade horizontal inferior a 1 km, pois altura significativa de onda não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise conjunta exige reconhecer que é associado a previsão/observação de visibilidade horizontal inferior a 1 km e que altura significativa de onda: é média do terço superior das alturas de onda observadas/medidas no intervalo considerado."
+        },
+        {
+          "key": "C",
+          "text": "A análise deve considerar somente que altura significativa de onda: é média do terço superior das alturas de onda observadas/medidas no intervalo considerado, tornando dispensável verificar aviso de baixa visibilidade."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de aviso de baixa visibilidade e altura significativa de onda são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de aviso de baixa visibilidade e altura significativa de onda elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A análise conjunta exige reconhecer que é associado a previsão/observação de visibilidade horizontal inferior a 1 km e que altura significativa de onda: é média do terço superior das alturas de onda observadas/medidas no intervalo considerado.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "normam701",
+        "chapter_id": "normam701::integracao-b066",
+        "topic_id": "MEO-B066-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-701/DHN — Serviço Meteorológico Marinho",
+        "locator": "Critérios de avisos — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "aviso de baixa visibilidade",
+        "altura significativa de onda",
+        "integração"
+      ]
+    },
+    {
+      "id": "MEO-B066-03",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "METEOROMARINHA + altura significativa de onda",
+      "topic_code": "MEO.B066.03",
+      "topic": "Integração: METEOROMARINHA e altura significativa de onda",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente METEOROMARINHA e altura significativa de onda, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo NORMAM-701/DHN — Serviço Meteorológico Marinho?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é boletim com avisos, análise e previsão meteorológica marinha emitido em horários de referência definidos, pois altura significativa de onda não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que é média do terço superior das alturas de onda observadas/medidas no intervalo considerado, tornando dispensável verificar METEOROMARINHA."
+        },
+        {
+          "key": "C",
+          "text": "A análise conjunta exige reconhecer que é boletim com avisos, análise e previsão meteorológica marinha emitido em horários de referência definidos e que é média do terço superior das alturas de onda observadas/medidas no intervalo considerado."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de METEOROMARINHA e altura significativa de onda são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de METEOROMARINHA e altura significativa de onda elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A análise conjunta exige reconhecer que é boletim com avisos, análise e previsão meteorológica marinha emitido em horários de referência definidos e que é média do terço superior das alturas de onda observadas/medidas no intervalo considerado.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "normam701",
+        "chapter_id": "normam701::integracao-b066",
+        "topic_id": "MEO-B066-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-701/DHN — Serviço Meteorológico Marinho",
+        "locator": "Boletim METEOROMARINHA — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "METEOROMARINHA",
+        "altura significativa de onda",
+        "integração"
+      ]
+    },
+    {
+      "id": "MEO-B066-04",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "Programa de Navios Observadores Voluntários + aviso de baixa visibilidade",
+      "topic_code": "MEO.B066.04",
+      "topic": "Integração: Programa de Navios Observadores Voluntários e aviso de baixa visibilidade",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente Programa de Navios Observadores Voluntários e aviso de baixa visibilidade, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo NORMAM-701/DHN — Serviço Meteorológico Marinho?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que amplia observações meteorológicas sobre oceanos e apoia análise e previsão, pois aviso de baixa visibilidade não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que é associado a previsão/observação de visibilidade horizontal inferior a 1 km, tornando dispensável verificar Programa de Navios Observadores Voluntários."
+        },
+        {
+          "key": "C",
+          "text": "Os conceitos de Programa de Navios Observadores Voluntários e aviso de baixa visibilidade são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "D",
+          "text": "A análise conjunta exige reconhecer que amplia observações meteorológicas sobre oceanos e apoia análise e previsão e que é associado a previsão/observação de visibilidade horizontal inferior a 1 km."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de Programa de Navios Observadores Voluntários e aviso de baixa visibilidade elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A análise conjunta exige reconhecer que amplia observações meteorológicas sobre oceanos e apoia análise e previsão e que é associado a previsão/observação de visibilidade horizontal inferior a 1 km.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "normam701",
+        "chapter_id": "normam701::integracao-b066",
+        "topic_id": "MEO-B066-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-701/DHN — Serviço Meteorológico Marinho",
+        "locator": "Navios Observadores Voluntários — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "Programa de Navios Observadores Voluntários",
+        "aviso de baixa visibilidade",
+        "integração"
+      ]
+    },
+    {
+      "id": "MEO-B066-05",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "METAREA + METEOROMARINHA",
+      "topic_code": "MEO.B066.05",
+      "topic": "Integração: METAREA e METEOROMARINHA",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 5,
+      "question": "Com base em NORMAM-701/DHN — Serviço Meteorológico Marinho, analise as proposições que integram METAREA e METEOROMARINHA, com foco em ciclo editorial 066, e assinale a opção correta.",
+      "assertions": [
+        "I) METAREA: é uma escala de força do vento.",
+        "II) É boletim com avisos, análise e previsão meteorológica marinha emitido em horários de referência definidos.",
+        "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
+        "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "I, II, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II e III."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "As proposições I, II e III são compatíveis com a fonte; a IV é falsa porque confunde conceitos complementares com conceitos equivalentes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "normam701",
+        "chapter_id": "normam701::integracao-b066",
+        "topic_id": "MEO-B066-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-701/DHN — Serviço Meteorológico Marinho",
+        "locator": "Organização do SMM — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "METAREA",
+        "METEOROMARINHA",
+        "integração"
+      ]
+    },
+    {
+      "id": "MEO-B066-06",
+      "subject": "V — Meteorologia, Oceanografia e Navegação",
+      "module": "altura significativa de onda + Programa de Navios Observadores Voluntários",
+      "topic_code": "MEO.B066.06",
+      "topic": "Integração: altura significativa de onda e Programa de Navios Observadores Voluntários",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Com base em NORMAM-701/DHN — Serviço Meteorológico Marinho, analise as proposições que integram altura significativa de onda e Programa de Navios Observadores Voluntários, com foco em ciclo editorial 066, e assinale a opção correta.",
+      "assertions": [
+        "I) Altura significativa de onda: é média do terço superior das alturas de onda observadas/medidas no intervalo considerado.",
+        "II) Amplia observações meteorológicas sobre oceanos e apoia análise e previsão.",
+        "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
+        "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "As proposições I, II e III são compatíveis com a fonte; a IV é falsa porque confunde conceitos complementares com conceitos equivalentes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "V",
+        "subject_slug": "meteorologia-oceanografia",
+        "bibliography_id": "normam701",
+        "chapter_id": "normam701::integracao-b066",
+        "topic_id": "MEO-B066-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "NORMAM-701/DHN — Serviço Meteorológico Marinho",
+        "locator": "Definições e avisos de mau tempo — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "altura significativa de onda",
+        "Programa de Navios Observadores Voluntários",
+        "integração"
+      ]
+    },
+    {
+      "id": "COM-B066-01",
+      "subject": "VI — Comunicações",
+      "module": "message marker INSTRUCTION + message marker INFORMATION",
+      "topic_code": "COM.B066.01",
+      "topic": "Integração: message marker INSTRUCTION e message marker INFORMATION",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 5,
+      "question": "Em uma situação operacional que envolve simultaneamente message marker INSTRUCTION e message marker INFORMATION, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo IMO Standard Marine Communication Phrases — A.918(22)?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que identifica mensagem que contém instrução de autoridade/serviço competente, pois message marker INFORMATION não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise conjunta exige reconhecer que identifica mensagem que contém instrução de autoridade/serviço competente e que message marker INFORMATION: é usado apenas para ordem de leme."
+        },
+        {
+          "key": "C",
+          "text": "A análise deve considerar somente que message marker INFORMATION: é usado apenas para ordem de leme, tornando dispensável verificar message marker INSTRUCTION."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de message marker INSTRUCTION e message marker INFORMATION são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de message marker INSTRUCTION e message marker INFORMATION elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A análise conjunta exige reconhecer que identifica mensagem que contém instrução de autoridade/serviço competente e que message marker INFORMATION: é usado apenas para ordem de leme.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "smcp",
+        "chapter_id": "smcp::integracao-b066",
+        "topic_id": "COM-B066-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO Standard Marine Communication Phrases — A.918(22)",
+        "locator": "General — Message Markers — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "message marker INSTRUCTION",
+        "message marker INFORMATION",
+        "integração"
+      ]
+    },
+    {
+      "id": "COM-B066-02",
+      "subject": "VI — Comunicações",
+      "module": "message marker ADVICE + message marker INSTRUCTION",
+      "topic_code": "COM.B066.02",
+      "topic": "Integração: message marker ADVICE e message marker INSTRUCTION",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente message marker ADVICE e message marker INSTRUCTION, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo IMO Standard Marine Communication Phrases — A.918(22)?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que identifica uma recomendação/conselho operacional, pois message marker INSTRUCTION não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que identifica mensagem que contém instrução de autoridade/serviço competente, tornando dispensável verificar message marker ADVICE."
+        },
+        {
+          "key": "C",
+          "text": "A análise conjunta exige reconhecer que identifica uma recomendação/conselho operacional e que identifica mensagem que contém instrução de autoridade/serviço competente."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de message marker ADVICE e message marker INSTRUCTION são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de message marker ADVICE e message marker INSTRUCTION elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A análise conjunta exige reconhecer que identifica uma recomendação/conselho operacional e que identifica mensagem que contém instrução de autoridade/serviço competente.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "smcp",
+        "chapter_id": "smcp::integracao-b066",
+        "topic_id": "COM-B066-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO Standard Marine Communication Phrases — A.918(22)",
+        "locator": "General — Message Markers — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "message marker ADVICE",
+        "message marker INSTRUCTION",
+        "integração"
+      ]
+    },
+    {
+      "id": "COM-B066-03",
+      "subject": "VI — Comunicações",
+      "module": "message marker WARNING + message marker ADVICE",
+      "topic_code": "COM.B066.03",
+      "topic": "Integração: message marker WARNING e message marker ADVICE",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente message marker WARNING e message marker ADVICE, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo IMO Standard Marine Communication Phrases — A.918(22)?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que identifica advertência sobre perigo/condição que requer atenção, pois message marker ADVICE não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que identifica uma recomendação/conselho operacional, tornando dispensável verificar message marker WARNING."
+        },
+        {
+          "key": "C",
+          "text": "Os conceitos de message marker WARNING e message marker ADVICE são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "D",
+          "text": "A análise conjunta exige reconhecer que identifica advertência sobre perigo/condição que requer atenção e que identifica uma recomendação/conselho operacional."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de message marker WARNING e message marker ADVICE elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A análise conjunta exige reconhecer que identifica advertência sobre perigo/condição que requer atenção e que identifica uma recomendação/conselho operacional.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "smcp",
+        "chapter_id": "smcp::integracao-b066",
+        "topic_id": "COM-B066-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO Standard Marine Communication Phrases — A.918(22)",
+        "locator": "General — Message Markers — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "message marker WARNING",
+        "message marker ADVICE",
+        "integração"
+      ]
+    },
+    {
+      "id": "COM-B066-04",
+      "subject": "VI — Comunicações",
+      "module": "message marker INFORMATION + message marker WARNING",
+      "topic_code": "COM.B066.04",
+      "topic": "Integração: message marker INFORMATION e message marker WARNING",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Com base em IMO Standard Marine Communication Phrases — A.918(22), analise as proposições que integram message marker INFORMATION e message marker WARNING, com foco em ciclo editorial 066, e assinale a opção correta.",
+      "assertions": [
+        "I) Message marker INFORMATION: é usado apenas para ordem de leme.",
+        "II) Identifica advertência sobre perigo/condição que requer atenção.",
+        "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
+        "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "I, II, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II e III."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "As proposições I, II e III são compatíveis com a fonte; a IV é falsa porque confunde conceitos complementares com conceitos equivalentes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VI",
+        "subject_slug": "comunicacoes",
+        "bibliography_id": "smcp",
+        "chapter_id": "smcp::integracao-b066",
+        "topic_id": "COM-B066-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "IMO Standard Marine Communication Phrases — A.918(22)",
+        "locator": "General — Message Markers — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "message marker INFORMATION",
+        "message marker WARNING",
+        "integração"
+      ]
+    },
+    {
+      "id": "CGE-B066-01",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "PHA + medidas de mitigação",
+      "topic_code": "CGE.B066.01",
+      "topic": "Integração: PHA e medidas de mitigação",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 5,
+      "question": "Em uma situação operacional que envolve simultaneamente PHA e medidas de mitigação, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise conjunta exige reconhecer que é método de análise qualitativa preliminar de perigos usado no processo de análise de risco e que medidas de mitigação: limitam-se exclusivamente ao aumento do calado permitido."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que é método de análise qualitativa preliminar de perigos usado no processo de análise de risco, pois medidas de mitigação não interfere na avaliação."
+        },
+        {
+          "key": "C",
+          "text": "A análise deve considerar somente que medidas de mitigação: limitam-se exclusivamente ao aumento do calado permitido, tornando dispensável verificar PHA."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de PHA e medidas de mitigação são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de PHA e medidas de mitigação elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A análise conjunta exige reconhecer que é método de análise qualitativa preliminar de perigos usado no processo de análise de risco e que medidas de mitigação: limitam-se exclusivamente ao aumento do calado permitido.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "conapra-port",
+        "chapter_id": "conapra-port::integracao-b066",
+        "topic_id": "CGE-B066-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos",
+        "locator": "Capítulo 8 — Análise de Risco — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "PHA",
+        "medidas de mitigação",
+        "integração"
+      ]
+    },
+    {
+      "id": "CGE-B066-02",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "identificação de perigos + PHA",
+      "topic_code": "CGE.B066.02",
+      "topic": "Integração: identificação de perigos e PHA",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente identificação de perigos e PHA, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é etapa que subsidia a análise de risco no planejamento portuário, pois PHA não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise conjunta exige reconhecer que é etapa que subsidia a análise de risco no planejamento portuário e que é método de análise qualitativa preliminar de perigos usado no processo de análise de risco."
+        },
+        {
+          "key": "C",
+          "text": "A análise deve considerar somente que é método de análise qualitativa preliminar de perigos usado no processo de análise de risco, tornando dispensável verificar identificação de perigos."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de identificação de perigos e PHA são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de identificação de perigos e PHA elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A análise conjunta exige reconhecer que é etapa que subsidia a análise de risco no planejamento portuário e que é método de análise qualitativa preliminar de perigos usado no processo de análise de risco.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "conapra-port",
+        "chapter_id": "conapra-port::integracao-b066",
+        "topic_id": "CGE-B066-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos",
+        "locator": "Capítulo 8 — Análise de Risco — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "identificação de perigos",
+        "PHA",
+        "integração"
+      ]
+    },
+    {
+      "id": "CGE-B066-03",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "áreas vulneráveis + identificação de perigos",
+      "topic_code": "CGE.B066.03",
+      "topic": "Integração: áreas vulneráveis e identificação de perigos",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente áreas vulneráveis e identificação de perigos, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que devem ser identificadas como subsídio à avaliação de risco, pois identificação de perigos não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que é etapa que subsidia a análise de risco no planejamento portuário, tornando dispensável verificar áreas vulneráveis."
+        },
+        {
+          "key": "C",
+          "text": "A análise conjunta exige reconhecer que devem ser identificadas como subsídio à avaliação de risco e que é etapa que subsidia a análise de risco no planejamento portuário."
+        },
+        {
+          "key": "D",
+          "text": "Os conceitos de áreas vulneráveis e identificação de perigos são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de áreas vulneráveis e identificação de perigos elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A análise conjunta exige reconhecer que devem ser identificadas como subsídio à avaliação de risco e que é etapa que subsidia a análise de risco no planejamento portuário.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "conapra-port",
+        "chapter_id": "conapra-port::integracao-b066",
+        "topic_id": "CGE-B066-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos",
+        "locator": "Capítulo 8 — Análise de Risco — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "áreas vulneráveis",
+        "identificação de perigos",
+        "integração"
+      ]
+    },
+    {
+      "id": "CGE-B066-04",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "nível ALARP + áreas vulneráveis",
+      "topic_code": "CGE.B066.04",
+      "topic": "Integração: nível ALARP e áreas vulneráveis",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Em uma situação operacional que envolve simultaneamente nível ALARP e áreas vulneráveis, qual avaliação de ciclo editorial 066 é tecnicamente correta segundo CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A análise deve considerar somente que é alvo de redução de risco para eventos de categoria média quando técnica e economicamente viável, pois áreas vulneráveis não interfere na avaliação."
+        },
+        {
+          "key": "B",
+          "text": "A análise deve considerar somente que devem ser identificadas como subsídio à avaliação de risco, tornando dispensável verificar nível ALARP."
+        },
+        {
+          "key": "C",
+          "text": "Os conceitos de nível ALARP e áreas vulneráveis são equivalentes e podem ser empregados como sinônimos."
+        },
+        {
+          "key": "D",
+          "text": "A análise conjunta exige reconhecer que é alvo de redução de risco para eventos de categoria média quando técnica e economicamente viável e que devem ser identificadas como subsídio à avaliação de risco."
+        },
+        {
+          "key": "E",
+          "text": "A presença simultânea de nível ALARP e áreas vulneráveis elimina a necessidade de aplicar os critérios específicos de ambos."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A análise conjunta exige reconhecer que é alvo de redução de risco para eventos de categoria média quando técnica e economicamente viável e que devem ser identificadas como subsídio à avaliação de risco.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "conapra-port",
+        "chapter_id": "conapra-port::integracao-b066",
+        "topic_id": "CGE-B066-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos",
+        "locator": "Capítulo 8 — Matriz qualitativa de risco — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "nível ALARP",
+        "áreas vulneráveis",
+        "integração"
+      ]
+    },
+    {
+      "id": "CGE-B066-05",
+      "subject": "VII — Conhecimentos Gerais",
+      "module": "medidas de mitigação + nível ALARP",
+      "topic_code": "CGE.B066.05",
+      "topic": "Integração: medidas de mitigação e nível ALARP",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 5,
+      "question": "Com base em CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos, analise as proposições que integram medidas de mitigação e nível ALARP, com foco em ciclo editorial 066, e assinale a opção correta.",
+      "assertions": [
+        "I) Medidas de mitigação: limitam-se exclusivamente ao aumento do calado permitido.",
+        "II) É alvo de redução de risco para eventos de categoria média quando técnica e economicamente viável.",
+        "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
+        "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "I, II, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II e III."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "As proposições I, II e III são compatíveis com a fonte; a IV é falsa porque confunde conceitos complementares com conceitos equivalentes.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "VII",
+        "subject_slug": "conhecimentos-gerais",
+        "bibliography_id": "conapra-port",
+        "chapter_id": "conapra-port::integracao-b066",
+        "topic_id": "CGE-B066-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "title": "CONAPRA — Planejamento Portuário: Recomendações para Acessos Náuticos",
+        "locator": "Capítulo 8 — Medidas de mitigação — integração operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-066",
+        "medidas de mitigação",
+        "nível ALARP",
+        "integração"
+      ]
+    }
+  ]
+}
