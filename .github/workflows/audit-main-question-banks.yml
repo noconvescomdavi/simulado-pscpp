@@ -1,0 +1,28 @@
+name: Audit Main Question Banks
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+    paths:
+      - 'data/questions/**'
+      - 'scripts/audit-full-question-bank.mjs'
+      - '.github/workflows/audit-main-question-banks.yml'
+  workflow_dispatch:
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Audit only data/questions
+        env:
+          QUESTIONS_MAIN_ONLY: "1"
+        run: node scripts/audit-full-question-bank.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: main-question-bank-audit
+          path: reports/full-question-bank-audit.json
