@@ -57,6 +57,9 @@ jobs:
         if: steps.semantic_audit.outcome == 'failure'
         run: exit 1
 
+      - name: Validate PSCPP exam blueprint
+        run: npm run validate:historical-blueprint
+
       - name: Build
         env:
           DATABASE_URL: postgresql://placeholder:placeholder@localhost:5432/placeholder
