@@ -1,0 +1,32 @@
+name: Build Arte Naval Cap2 Cap3 459
+on:
+  push:
+    branches: [feature/pscpp-arte-naval-cap2-cap3-459]
+permissions:
+  contents: write
+jobs:
+  build:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: feature/pscpp-arte-naval-cap2-cap3-459 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node scripts/build-arte-naval-cap23-459.mjs
+      - name: Validate generated bank
+        run: |
+          node - <<'NODE'
+          const j=require('./data/pscpp/arte-naval-cap2-cap3-459.json');
+          if(j.questions.length!==459) process.exit(1);
+          if(new Set(j.questions.map(q=>q.id)).size!==459) process.exit(1);
+          if(j.questions.some(q=>q.options?.length!==5||!q.correct_answer||!q.source?.locator)) process.exit(1);
+          console.log('VALID:',j.questions.length);
+          NODE
+      - name: Commit bank and loader
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pscpp/arte-naval-cap2-cap3-459.json lib/pscpp-exam-bank.js
+          git diff --cached --quiet || git commit -m "feat: integra 459 questões Arte Naval capítulos 2 e 3"
+          git push
