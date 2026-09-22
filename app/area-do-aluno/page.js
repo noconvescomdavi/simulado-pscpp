@@ -10,17 +10,22 @@ import DailyStudyPlan from "./DailyStudyPlan";
 import {getConsistency} from "../../lib/engagement";
 import {getIntegratedStudyPlan} from "../../lib/integrated-study-plan";
 import {getStudentInsights} from "../../lib/student-insights";
+import { unstable_cache } from "next/cache";
 import "./dashboard.css";
 
 function fmt(v){return new Intl.NumberFormat("pt-BR").format(Number(v||0))}
 function firstName(value){const text=String(value||"Aluno").trim();return text.split(/\s+/)[0]||"Aluno"}
+
+// Dados de referência que não precisam ser recalculados a cada navegação.
+// Mantemos os dados pessoais/atividade fora deste cache.
+const cachedAccess = unstable_cache(async(userId)=>getUserAccess(userId),["dashboard-access"],{revalidate:60});
 
 export default async function Area(){
   const session=await getSession();
   if(!session)redirect("/login");
 
   const [access,progress,performance,profile,recentExams,dailyPlan,consistency,studentIntel]=await Promise.all([
-    getUserAccess(session.id),
+    cachedAccess(session.id),
     query("select subject,percent from study_progress where user_id=$1",[session.id]),
     getUserMetrics(session.id),
     query("select full_name from user_profiles where user_id=$1 limit 1",[session.id]).catch(()=>({rows:[]})),

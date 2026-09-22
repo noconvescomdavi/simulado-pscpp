@@ -14,9 +14,7 @@ function Menu({ active = "" }) {
       <Link className={active === "painel" ? styles.active : ""} href="/area-do-aluno"><span className={styles.icon}>⌂</span><span>Hoje</span></Link>
 
       <Link className={active === "perfil" ? styles.active : ""} href="/perfil"><span className={styles.icon}>♙</span><span>Perfil</span></Link>
-      <Link href="/preferencias"><span className={styles.icon}>⚙</span><span>Personalização</span></Link>
-
-      <details className={styles.group} open={["plano","adaptativo","hoje","revisao","fraquezas","trajetoria"].includes(active)}>
+      <details className={styles.group} open={["plano","adaptativo","hoje","revisao","fraquezas","trajetoria","preferencias"].includes(active)}>
         <summary><span><b className={styles.icon}>◫</b> Minha Preparação</span><b className={styles.chevron}>⌄</b></summary>
         <div className={styles.submenu}><div>
           <Link href="/plano-de-estudos">Meu Plano de Estudos</Link>
@@ -25,6 +23,7 @@ function Menu({ active = "" }) {
           <Link href="/centro-de-revisao">Centro de Revisão</Link>
           <Link href="/analise-de-fraquezas">Desempenho e Fraquezas</Link>
           <Link href="/minha-trajetoria">Minha Trajetória</Link>
+          <Link href="/preferencias">Personalização</Link>
         </div></div>
       </details>
 
