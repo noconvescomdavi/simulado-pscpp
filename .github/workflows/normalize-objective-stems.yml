@@ -1,0 +1,32 @@
+name: Normalize All Objective Stems
+on:
+  push:
+    branches: [fix/todas-objetivas-formato-assunto]
+    paths: [scripts/normalize-all-objective-stems.mjs,.github/workflows/normalize-objective-stems.yml]
+permissions: {contents: write}
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: fix/todas-objetivas-formato-assunto}
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - id: normalize
+        continue-on-error: true
+        run: node scripts/normalize-all-objective-stems.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: objective-stem-normalization, path: reports/objective-stem-normalization.json}
+      - name: Commit normalized banks
+        run: |
+          if ! git diff --quiet -- data/questions; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/questions reports/objective-stem-normalization.json
+            git commit -m "fix: aplica formato por assunto a todas as objetivas"
+            git push origin HEAD:fix/todas-objetivas-formato-assunto
+          fi
+      - name: Enforce zero residual
+        if: steps.normalize.outcome == 'failure'
+        run: exit 1
