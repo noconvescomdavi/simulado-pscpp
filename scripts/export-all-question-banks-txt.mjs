@@ -11,3 +11,5 @@ const src=q.source?.title||q.reference?.title||q.source_title||q.bibliography||q
 const loc=q.locator||q.reference?.locator;if(loc)out+=`LOCALIZAÇÃO: ${typeof loc==="string"?loc:JSON.stringify(loc)}\n`;out+="\n";}
 }
 out=`TOTAL GERAL: ${total} QUESTÕES\n\n`+out;fs.mkdirSync("exports",{recursive:true});fs.writeFileSync("exports/ESTIBORDO-7-Bancos-Todas-as-Questoes.txt",out,"utf8");console.log({total,bytes:Buffer.byteLength(out)});
+
+// export-run
