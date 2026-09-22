@@ -1,0 +1,73 @@
+name: Build Arte Naval Cap8 501
+
+on:
+  push:
+    branches:
+      - feature/pscpp-arte-naval-cap8-504
+    paths:
+      - 'tmp/cap8.part6'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/pscpp-arte-naval-cap8-504
+          fetch-depth: 0
+      - name: Decode audited bank
+        run: |
+          cat tmp/cap8.part{1,2,3,4,5,6} | base64 -d | gzip -d > data/pscpp/arte-naval-cap8-501.json
+      - name: Validate and integrate loader
+        run: |
+          python - <<'PY'
+          import json,re
+          p='data/pscpp/arte-naval-cap8-501.json'
+          d=json.load(open(p,encoding='utf-8'))
+          q=d.get('questions',[])
+          assert len(q)==501, len(q)
+          ids=[x['id'] for x in q]
+          assert len(ids)==len(set(ids))==501
+          assert sum(x.get('pscpp_format')=='assertions' for x in q)==167
+          assert sum(x.get('pscpp_format')=='direct' for x in q)==167
+          assert sum(x.get('pscpp_format')=='true_false_sequence' for x in q)==167
+          for x in q:
+              assert x.get('bank')=='PSCPP'
+              assert x.get('origin')=='generated_pscpp'
+              assert x.get('pscpp_origin')=='generated_pscpp'
+              assert x.get('source_subject')=='simulado-pscpp'
+              assert x.get('module')=='Arte Naval'
+              assert len(x.get('options',[]))==5
+              keys=[o['key'] for o in x['options']]
+              assert keys==list('ABCDE')
+              assert x.get('correct_answer') in keys
+              loc=x.get('source',{}).get('locator','')
+              assert re.search(r'item 8\.\d+',loc)
+              assert 'p. ' in loc
+          lp='lib/pscpp-exam-bank.js'
+          s=open(lp,encoding='utf-8').read()
+          imp='import arteNavalCap8Questions from "../data/pscpp/arte-naval-cap8-501.json";'
+          if imp not in s:
+              anchor='import arteNavalCap23Questions from "../data/pscpp/arte-naval-cap2-cap3-459.json";'
+              if anchor in s: s=s.replace(anchor,anchor+'\n'+imp)
+              else: raise SystemExit('Import anchor not found')
+          entry='  ...valid(arteNavalCap8Questions.questions),'
+          if entry not in s:
+              anchor='  ...valid(arteNavalCap23Questions.questions),'
+              if anchor in s: s=s.replace(anchor,anchor+'\n'+entry)
+              else: raise SystemExit('Pool anchor not found')
+          open(lp,'w',encoding='utf-8').write(s)
+          print('OK: 501 questions, 167 per format, IDs/options/traceability validated.')
+          PY
+      - name: Remove temporary payload
+        run: rm -rf tmp/cap8.part*
+      - name: Commit generated bank
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pscpp/arte-naval-cap8-501.json lib/pscpp-exam-bank.js tmp
+          git commit -m "feat: integra 501 questões auditadas de Arte Naval capítulo 8"
+          git push
