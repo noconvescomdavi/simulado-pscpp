@@ -1,5 +1,5 @@
 import fs from "node:fs"; import zlib from "node:zlib";
-const raw=fs.readFileSync("scripts/data/arte-naval-cap8-inventory.json.gz.b64","utf8").trim();
+const raw=Array.from({length:8},(_,i)=>fs.readFileSync(`scripts/data/cap8-inv.part${i}`,"utf8").trim()).join("");
 const items=JSON.parse(zlib.gunzipSync(Buffer.from(raw,"base64")).toString("utf8"));
 const sections=[[1,23,"Seção A — Voltas"],[24,36,"Seção B — Nós dados com o chicote ou com o seio de um cabo sobre si mesmo"],[37,45,"Seção C — Nós dados para emendar dois cabos pelos chicotes"],[46,63,"Seção D — Trabalhos feitos nos chicotes dos cabos"],[64,76,"Seção E — Trabalhos para amarrar dois cabos ou dois objetos quaisquer"],[77,157,"Seção F — Trabalhos diversos"],[158,167,"Seção G — Estropos"]];
 const sec=n=>{const a=+n.split(".")[1];return sections.find(([l,h])=>a>=l&&a<=h)[2]};
