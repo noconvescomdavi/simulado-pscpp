@@ -1,0 +1,27 @@
+name: Validate Global Source Stems
+on:
+  push:
+    branches: [fix/global-source-stems-v3]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Syntax/import validation
+        run: node -e "import('./lib/question-quality.js').then(()=>console.log('question-quality import OK'))"
+      - name: Question bank validations
+        run: |
+          npm run validate:questions
+          npm run test:question-structure
+          npm run audit:questions:semantic
+      - name: Locator inventory
+        run: node scripts/audit-source-locator-stems.mjs
+      - name: Build
+        run: npm run build
