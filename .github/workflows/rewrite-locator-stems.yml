@@ -1,0 +1,23 @@
+name: Rewrite Locator-dependent Question Stems
+on:
+  push:
+    branches: [fix/enunciados-sem-decoracao-item]
+    paths: [scripts/rewrite-locator-dependent-stems.mjs]
+permissions:
+  contents: write
+jobs:
+  rewrite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: fix/enunciados-sem-decoracao-item}
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: node scripts/rewrite-locator-dependent-stems.mjs
+      - run: |
+          if git diff --quiet -- data/questions; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/questions
+          git commit -m "fix: reescreve enunciados por publicação e assunto"
+          git push origin HEAD:fix/enunciados-sem-decoracao-item
