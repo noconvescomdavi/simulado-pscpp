@@ -53,7 +53,7 @@ jobs:
       - name: Semantic quality audit
         run: node scripts/audit-question-quality-v2.mjs
       - name: Integral source-review gate
-        run: npm run audit:pscpp:integral
+        run: npm run audit:pscpp:final
       - name: Question structure tests
         run: npm run test:question-structure
       - name: Quarantine policy tests
