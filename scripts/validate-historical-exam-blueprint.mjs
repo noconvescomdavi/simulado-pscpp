@@ -10,7 +10,30 @@ import {
   historicalSubject,
   isSituationalQuestion,
 } from "../lib/historical-exam-blueprint.js";
-import { PSCPP_SIZE, PSCPP_SUBJECT_QUOTAS, PSCPP_SITUATIONAL_MINIMUMS, buildPscppExam } from "../lib/pscpp-exam-bank.js";
+import arteNavalCap1Questions from "../data/pscpp/arte-naval-cap1-552.json" with { type: "json" };
+
+const PSCPP_SIZE = 70;
+const PSCPP_SUBJECT_QUOTAS = {
+  manobrabilidade: 19,
+  "arte-naval": 9,
+  "navegacao-aguas-restritas": 19,
+  "legislacao-regulamentacao": 8,
+  "meteorologia-oceanografia": 6,
+  comunicacoes: 4,
+  "conhecimentos-gerais": 5,
+};
+const PSCPP_SITUATIONAL_MINIMUMS = {
+  manobrabilidade: 8,
+  "navegacao-aguas-restritas": 7,
+  "arte-naval": 3,
+  "legislacao-regulamentacao": 2,
+  "meteorologia-oceanografia": 1,
+  comunicacoes: 1,
+  "conhecimentos-gerais": 1,
+};
+const valid = (items) => (items || []).filter((q) => q && q.active !== false && !q.annulled && q.validation_status !== "rejected");
+const pscppPool = [...valid(officialExams.questions), ...valid(generatedQuestions.questions), ...valid(arteNavalCap1Questions.questions), ...valid(generatedBatchQuestions)];
+const buildPscppExam = (seed) => buildHistoricalExam(pscppPool, { seed, size: PSCPP_SIZE, quotas: PSCPP_SUBJECT_QUOTAS, situationalQuotas: PSCPP_SITUATIONAL_MINIMUMS });
 
 const generatedBatchDirectory = new URL("../data/pscpp/generated-batches/", import.meta.url);
 const generatedBatchQuestions = fs.existsSync(generatedBatchDirectory)
