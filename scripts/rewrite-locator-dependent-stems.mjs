@@ -16,3 +16,4 @@ const generic=pub? `De acordo com ${pub}, acerca de ${assunto}, assinale a alter
 q.question=generic;dirty=true;questions++;}
 if(dirty){fs.writeFileSync(p,JSON.stringify(bank,null,2)+"\n");changed++;}}
 console.log(JSON.stringify({files_changed:changed,questions_rewritten:questions}));
+// run: aplicar aos sete bancos antes do deploy
