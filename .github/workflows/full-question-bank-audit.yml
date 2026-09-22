@@ -1,0 +1,20 @@
+name: Full Question Bank Audit
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/audit-full-question-bank.mjs || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: full-question-bank-audit
+          path: reports/full-question-bank-audit.json
+      - run: |
+          node -e 'const r=require("./reports/full-question-bank-audit.json"); console.log(JSON.stringify({files:r.files_scanned,questions:r.questions_scanned,issues:r.issues,critical:r.critical,high:r.high,by_code:r.by_code},null,2))'
