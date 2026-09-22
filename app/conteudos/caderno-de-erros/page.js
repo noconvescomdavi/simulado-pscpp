@@ -8,14 +8,29 @@ import StructuredQuestion from "../../components/StructuredQuestion";
 
 export const dynamic = "force-dynamic";
 
-export default async function ErrorNotebookPage() {
+export default async function ErrorNotebookPage({searchParams}) {
   const session = await getSession();
   if (!session) redirect("/login?next=/conteudos/caderno-de-erros");
 
   const entitlement = await getEntitlement(session.id);
   if (!entitlement.active && !entitlement.trial) redirect("/comprar?locked=inactive");
 
-  const items = await getErrorNotebook(session.id, 100);
+  const q=await searchParams;
+  const weekly=String(q?.janela||"")==="semana";
+  const prioritizeRecurring=String(q?.prioridade||"")==="reincidentes";
+  let items = await getErrorNotebook(session.id, 100);
+  if(weekly){
+    const now=new Date();
+    const saoPauloDate=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Sao_Paulo",year:"numeric",month:"2-digit",day:"2-digit"}).format(now);
+    const today=new Date(saoPauloDate+"T12:00:00-03:00");
+    const dow=today.getDay();
+    const daysSinceSaturday=(dow+1)%7;
+    const saturday=new Date(today.getTime()-daysSinceSaturday*86400000);
+    const friday=new Date(saturday.getTime()+6*86400000);
+    const from=saturday.getTime(),to=friday.getTime()+86400000-1;
+    items=items.filter(x=>{const t=x.last_attempt_at?new Date(x.last_attempt_at).getTime():0;return t>=from&&t<=to;});
+  }
+  if(prioritizeRecurring)items=[...items].sort((a,b)=>Number(b.errors||0)-Number(a.errors||0));
 
   return (
     <>
@@ -24,7 +39,7 @@ export default async function ErrorNotebookPage() {
         <span>REVISÃO INTELIGENTE</span>
         <h1>Caderno de erros</h1>
         <p className={styles.intro}>
-          As questões que você errou aparecem aqui automaticamente, ordenadas por recorrência.
+          {weekly ? "Erros cometidos de sábado a quinta-feira, com reincidências primeiro." : "As questões que você errou aparecem aqui automaticamente, ordenadas por recorrência."}
         </p>
 
         <div className={styles.summary}>
