@@ -9,7 +9,7 @@ const bad=s=>/(?:\bitem\s+\d|\bsubitem\s+\d|\btrecho\s+\d|\bp\.\s*\d|p[aá]gina\
 let stats={scanned:0,objective:0,rewritten:0,by_file:{},missing_metadata:[]};
 for(const file of files){const p=path.join(dir,file),bank=JSON.parse(fs.readFileSync(p,"utf8"));let n=0;
 for(const q of bank.questions||[]){stats.scanned++;if(!objective(q))continue;stats.objective++;const old=String(q.question||"");if(!bad(old))continue;
-const publication=pub(q), assunto=topic(q);
+const publication=pub(q); let assunto=topic(q).replace(/\\s*\\((?:[^()]|\\([^()]*\\))*?(?:item|p\\.|página|tabela)\\s*[^)]*\\)\\s*/gi," ").replace(/,?\\s*(?:como visto|conforme visto) no item\\s+[\\w.()-]+[^,.;]*/gi,"").replace(/\\s{2,}/g," ").replace(/\\s+,/g,",").trim();
 if(!publication||!assunto){stats.missing_metadata.push({file,id:q.id,publication,assunto,question:old});continue;}
 q.question=`De acordo com ${publication}, acerca de ${assunto}, assinale a alternativa que apresenta corretamente a disposição, requisito ou conceito previsto na publicação.`;
 q.audit=q.audit||{};q.audit.locator_removed_from_stem=true;q.audit.previous_stem=old;n++;stats.rewritten++;}
@@ -19,3 +19,4 @@ for(const file of files){const bank=JSON.parse(fs.readFileSync(path.join(dir,fil
 stats.residual=residual.length;stats.residual_examples=residual.slice(0,50);
 fs.mkdirSync("reports",{recursive:true});fs.writeFileSync("reports/objective-stem-normalization.json",JSON.stringify(stats,null,2)+"\n");
 console.log(JSON.stringify(stats,null,2));if(residual.length||stats.missing_metadata.length)process.exitCode=2;
+// pass-2: higieniza localizadores incorporados ao campo de assunto
