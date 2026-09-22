@@ -9,6 +9,7 @@ import {
   historicalQuotas,
   historicalSubject,
 } from "../lib/historical-exam-blueprint.js";
+import { PSCPP_SIZE, PSCPP_SUBJECT_QUOTAS, buildPscppExam } from "../lib/pscpp-exam-bank.js";
 
 const generatedBatchDirectory = new URL("../data/pscpp/generated-batches/", import.meta.url);
 const generatedBatchQuestions = fs.existsSync(generatedBatchDirectory)
@@ -47,3 +48,18 @@ for (const seed of ["alpha", "bravo", "charlie", "delta"]) {
 
 console.log("Blueprint histórico: OK");
 console.log(JSON.stringify({ sample: HISTORICAL_SAMPLE, observed, quotas_70: expected70 }, null, 2));
+
+assert.equal(PSCPP_SIZE, 70);
+assert.equal(Object.values(PSCPP_SUBJECT_QUOTAS).reduce((sum, value) => sum + value, 0), 70);
+
+for (const seed of ["current-alpha", "current-bravo", "current-charlie", "current-delta"]) {
+  const exam = buildPscppExam(seed);
+  assert.equal(exam.length, 70);
+  assert.equal(new Set(exam.map((question) => question.id)).size, 70);
+  const distribution = Object.fromEntries(Object.keys(PSCPP_SUBJECT_QUOTAS).map((subject) => [subject, 0]));
+  for (const question of exam) distribution[historicalSubject(question)] += 1;
+  assert.deepEqual(distribution, PSCPP_SUBJECT_QUOTAS, `Distribuição híbrida inválida para seed ${seed}`);
+}
+
+console.log("Blueprint vigente PSCPP: OK");
+console.log(JSON.stringify({ size: PSCPP_SIZE, quotas: PSCPP_SUBJECT_QUOTAS }, null, 2));
