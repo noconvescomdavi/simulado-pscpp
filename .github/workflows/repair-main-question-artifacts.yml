@@ -1,6 +1,8 @@
 name: Repair Main Question Extraction Artifacts
 on:
   workflow_dispatch:
+  push:
+    branches: [fix/main-question-bank-extraction-artifacts]
 jobs:
   repair-preview:
     runs-on: ubuntu-latest
