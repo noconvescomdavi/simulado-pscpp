@@ -25,25 +25,25 @@ const observed = Object.fromEntries(Object.keys(HISTORICAL_SUBJECT_COUNTS).map((
 for (const question of activeOfficial) observed[historicalSubject(question)] += 1;
 assert.deepEqual(observed, HISTORICAL_SUBJECT_COUNTS, "A classificação histórica divergiu da amostra oficial");
 
-const expected100 = {
-  manobrabilidade: 36,
-  "navegacao-aguas-restritas": 30,
-  "legislacao-regulamentacao": 11,
-  "arte-naval": 10,
-  "meteorologia-oceanografia": 7,
-  comunicacoes: 6,
+const expected70 = {
+  manobrabilidade: 25,
+  "navegacao-aguas-restritas": 21,
+  "legislacao-regulamentacao": 8,
+  "arte-naval": 7,
+  "meteorologia-oceanografia": 5,
+  comunicacoes: 4,
   "conhecimentos-gerais": 0,
 };
-assert.deepEqual(historicalQuotas(100), expected100);
+assert.deepEqual(historicalQuotas(70), expected70);
 
 for (const seed of ["alpha", "bravo", "charlie", "delta"]) {
-  const exam = buildHistoricalExam([...activeOfficial, ...generatedQuestions.questions, ...generatedBatchQuestions], { seed, size: 100 });
-  assert.equal(exam.length, 100);
-  assert.equal(new Set(exam.map((question) => question.id)).size, 100);
-  const distribution = Object.fromEntries(Object.keys(expected100).map((subject) => [subject, 0]));
+  const exam = buildHistoricalExam([...activeOfficial, ...generatedQuestions.questions, ...generatedBatchQuestions], { seed, size: 70 });
+  assert.equal(exam.length, 70);
+  assert.equal(new Set(exam.map((question) => question.id)).size, 70);
+  const distribution = Object.fromEntries(Object.keys(expected70).map((subject) => [subject, 0]));
   for (const question of exam) distribution[historicalSubject(question)] += 1;
-  assert.deepEqual(distribution, expected100, `Distribuição inválida para seed ${seed}`);
+  assert.deepEqual(distribution, expected70, `Distribuição inválida para seed ${seed}`);
 }
 
 console.log("Blueprint histórico: OK");
-console.log(JSON.stringify({ sample: HISTORICAL_SAMPLE, observed, quotas_100: expected100 }, null, 2));
+console.log(JSON.stringify({ sample: HISTORICAL_SAMPLE, observed, quotas_70: expected70 }, null, 2));
