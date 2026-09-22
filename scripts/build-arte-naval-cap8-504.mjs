@@ -1,5 +1,9 @@
-import fs from "node:fs"; import zlib from "node:zlib";
-const raw=Array.from({length:8},(_,i)=>fs.readFileSync(`scripts/data/cap8-inv.part${i}`,"utf8").trim()).join("");
+import fs from "node:fs"; import zlib from "node:zlib"; import crypto from "node:crypto";
+const parts=Array.from({length:8},(_,i)=>fs.readFileSync(`scripts/data/cap8-inv.part${i}`,"utf8").trim());
+const blobsha=s=>crypto.createHash("sha1").update(`blob ${Buffer.byteLength(s)}\\0${s}`).digest("hex");
+const expected3="fe75ec2d9df1669df3d77f3794dd64cde7aab872", alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+if(blobsha(parts[3])!==expected3){const a=parts[3].split("");let fixed=null;outer:for(let i=0;i<a.length;i++){const old=a[i];for(const ch of alphabet){if(ch===old)continue;a[i]=ch;const s=a.join("");if(blobsha(s)===expected3){fixed=s;break outer;}}a[i]=old;}if(!fixed)throw Error("checksum do bloco 3 não pôde ser reparado");parts[3]=fixed;console.log("bloco 3 reparado por checksum");}
+const raw=parts.join("");
 const items=JSON.parse(zlib.gunzipSync(Buffer.from(raw,"base64")).toString("utf8"));
 const sections=[[1,23,"Seção A — Voltas"],[24,36,"Seção B — Nós dados com o chicote ou com o seio de um cabo sobre si mesmo"],[37,45,"Seção C — Nós dados para emendar dois cabos pelos chicotes"],[46,63,"Seção D — Trabalhos feitos nos chicotes dos cabos"],[64,76,"Seção E — Trabalhos para amarrar dois cabos ou dois objetos quaisquer"],[77,157,"Seção F — Trabalhos diversos"],[158,167,"Seção G — Estropos"]];
 const sec=n=>{const a=+n.split(".")[1];return sections.find(([l,h])=>a>=l&&a<=h)[2]};
