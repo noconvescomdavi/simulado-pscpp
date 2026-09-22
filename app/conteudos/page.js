@@ -27,7 +27,7 @@ export default async function Page() {
 
   const [metrics, allDecks] = await Promise.all([
     getUserMetrics(session.id),
-    listFlashcardDecks(session.id),
+    listFlashcardDecks(session.id, { syncBibliography: false }),
   ]);
 
   const decks = entitlement.trial

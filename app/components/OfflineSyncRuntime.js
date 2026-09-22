@@ -52,7 +52,12 @@ export default function OfflineSyncRuntime(){
       clearTimeout(preloadStartTimer);
       // Prioridade absoluta para render/hidratação. Em iPhone/Safari o banco começa
       // somente depois que a interface já teve tempo de ficar interativa.
-      preloadStartTimer=setTimeout(()=>{if(navigator.onLine)preload()},8000);
+      const start=()=>{if(navigator.onLine&&!document.hidden)preload()};
+      if("requestIdleCallback" in window){
+        preloadStartTimer=setTimeout(()=>window.requestIdleCallback(start,{timeout:15000}),15000);
+      }else{
+        preloadStartTimer=setTimeout(start,20000);
+      }
     };
     const remove=onOfflineChange(refresh);
     const onOnline=()=>{setOnline(true);sync();schedulePreload()};
@@ -62,7 +67,7 @@ export default function OfflineSyncRuntime(){
     window.addEventListener("offline",onOffline);
     navigator.serviceWorker?.addEventListener("message",onMessage);
     const syncTimer=setInterval(()=>{if(navigator.onLine)sync()},60_000);
-    const preloadTimer=setInterval(()=>{if(navigator.onLine)preload()},15*60_000);
+    const preloadTimer=setInterval(()=>{if(navigator.onLine&&!document.hidden)preload()},30*60_000);
     if(navigator.onLine){
       // Não disputar CPU/rede com a primeira pintura/hidratação.
       // A fila será sincronizada pelo timer ou imediatamente quando a conexão voltar.
