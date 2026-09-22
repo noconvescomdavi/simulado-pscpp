@@ -86,6 +86,15 @@ jobs:
           # Infraestrutura pública
           curl -fsS "http://127.0.0.1:3000/api/health?shallow=1"
 
+          # Aguarda também a primeira página SSR responder; o health pode ficar pronto antes do renderizador.
+          for i in {1..30}; do
+            if curl -fsS "http://127.0.0.1:3000/login" -o /tmp/smoke-ready.html; then
+              break
+            fi
+            sleep 1
+          done
+          test -s /tmp/smoke-ready.html
+
           # CSP: geral rígida; exceção unsafe-eval somente no runtime 3D
           STRICT_CSP=$(curl -sSI "http://127.0.0.1:3000/login" | tr -d "\r" | grep -i "^content-security-policy:" | head -1)
           echo "$STRICT_CSP" | grep -q "script-src"
@@ -96,14 +105,22 @@ jobs:
           curl -fsS "http://127.0.0.1:3000/sitemap.xml" >/dev/null
 
           # Páginas críticas de aquisição
-          curl -fsS "http://127.0.0.1:3000/login" | grep -q "Entrar"
-          curl -fsS "http://127.0.0.1:3000/cadastro" | grep -q "Criar conta"
-          curl -fsS "http://127.0.0.1:3000/termos-de-uso" | grep -q "Termos de Uso"
-          curl -fsS "http://127.0.0.1:3000/politica-de-privacidade" | grep -q "Política de Privacidade"
-          curl -fsS "http://127.0.0.1:3000/politica-de-cookies" | grep -q "Política de Cookies"
-          curl -fsS "http://127.0.0.1:3000/verificar-email" | grep -q "Verifique sua caixa de entrada"
-          curl -fsS "http://127.0.0.1:3000/plataforma" | grep -q "preparação"
-          curl -fsS "http://127.0.0.1:3000/produtos" | grep -q "PSCPP"
+          curl -fsS "http://127.0.0.1:3000/login" -o /tmp/smoke-login.html
+          grep -q "Entrar" /tmp/smoke-login.html
+          curl -fsS "http://127.0.0.1:3000/cadastro" -o /tmp/smoke-cadastro.html
+          grep -q "Criar conta" /tmp/smoke-cadastro.html
+          curl -fsS "http://127.0.0.1:3000/termos-de-uso" -o /tmp/smoke-termos.html
+          grep -q "Termos de Uso" /tmp/smoke-termos.html
+          curl -fsS "http://127.0.0.1:3000/politica-de-privacidade" -o /tmp/smoke-privacidade.html
+          grep -q "Política de Privacidade" /tmp/smoke-privacidade.html
+          curl -fsS "http://127.0.0.1:3000/politica-de-cookies" -o /tmp/smoke-cookies.html
+          grep -q "Política de Cookies" /tmp/smoke-cookies.html
+          curl -fsS "http://127.0.0.1:3000/verificar-email" -o /tmp/smoke-email.html
+          grep -q "Verifique sua caixa de entrada" /tmp/smoke-email.html
+          curl -fsS "http://127.0.0.1:3000/plataforma" -o /tmp/smoke-plataforma.html
+          grep -q "preparação" /tmp/smoke-plataforma.html
+          curl -fsS "http://127.0.0.1:3000/produtos" -o /tmp/smoke-produtos.html
+          grep -q "PSCPP" /tmp/smoke-produtos.html
 
           # /comprar exige autenticação e deve redirecionar sem sessão
           BUY_HEADERS=$(curl -sS -o /dev/null -D - "http://127.0.0.1:3000/comprar")
