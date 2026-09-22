@@ -1,5 +1,5 @@
 const SHELL_CACHE = "estibordo-shell-v4";
-const PAGE_CACHE = "estibordo-pages-v2";
+const PAGE_CACHE = "estibordo-pages-v3";
 const RIPEAM_MODEL_CACHE = "estibordo-ripeam-models-v1";
 const RIPEAM_RUNTIME_CACHE = "estibordo-ripeam-runtime-v1";
 const RIPEAM_MAX_MODEL_ENTRIES = 12;
@@ -120,32 +120,47 @@ self.addEventListener("fetch", (event) => {
   }
 
   if (request.mode === "navigate") {
-    const offlineCapable =
-      url.pathname === "/offline" ||
-      url.pathname === "/area-do-aluno" ||
-      url.pathname === "/hoje" ||
-      url.pathname === "/simulado" ||
-      url.pathname.startsWith("/simulado/") ||
-      url.pathname === "/conteudos/banco-de-questoes" ||
-      url.pathname.startsWith("/conteudos/caderno/");
+    const excluded =
+      url.pathname.startsWith("/admin") ||
+      url.pathname.startsWith("/login") ||
+      url.pathname.startsWith("/logout") ||
+      url.pathname.startsWith("/cadastro") ||
+      url.pathname.startsWith("/comprar") ||
+      url.pathname.startsWith("/mfa-admin") ||
+      url.pathname.startsWith("/aceitar-termos") ||
+      url.pathname.startsWith("/completar-cadastro") ||
+      url.pathname.startsWith("/redefinir-senha") ||
+      url.pathname.startsWith("/esqueci-minha-senha") ||
+      url.pathname.startsWith("/excluir-conta") ||
+      url.pathname.startsWith("/minhas-assinaturas") ||
+      url.pathname.startsWith("/perfil") ||
+      url.pathname.startsWith("/preferencias");
+    const cacheablePage = !excluded;
 
     event.respondWith((async()=>{
       const cache=await caches.open(PAGE_CACHE);
-      try{
-        const response=await fetch(request,{cache:"no-store"});
-        if(offlineCapable && response?.ok && !response.redirected){
-          try{await cache.put(request,response.clone())}catch{}
-        }
-        return response;
-      }catch{
-        if(offlineCapable){
-          const cached=await cache.match(request);
-          if(cached)return cached;
-          const offlineCenter=await cache.match("/offline");
-          if(offlineCenter)return offlineCenter;
-        }
-        return caches.match("/offline.html");
+      const cached=cacheablePage ? await cache.match(request) : null;
+      const network=(async()=>{
+        try{
+          const response=await fetch(request,{cache:"no-store"});
+          if(cacheablePage && response?.ok && !response.redirected){
+            try{await cache.put(request,response.clone())}catch{}
+          }
+          return response;
+        }catch{return null}
+      })();
+
+      // Stale-while-revalidate para navegação: páginas já visitadas abrem do
+      // dispositivo imediatamente, enquanto a versão nova é buscada em background.
+      if(cached){
+        event.waitUntil(network);
+        return cached;
       }
+      const response=await network;
+      if(response)return response;
+      const offlineCenter=await cache.match("/offline");
+      if(offlineCenter)return offlineCenter;
+      return caches.match("/offline.html");
     })());
     return;
   }
