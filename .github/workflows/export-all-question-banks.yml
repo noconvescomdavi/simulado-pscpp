@@ -1,0 +1,18 @@
+name: Export All Question Banks TXT
+on:
+  push:
+    branches: [fix/todas-objetivas-formato-assunto]
+    paths: [scripts/export-all-question-banks-txt.mjs,.github/workflows/export-all-question-banks.yml]
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: fix/todas-objetivas-formato-assunto}
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: node scripts/export-all-question-banks-txt.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ESTIBORDO-7-Bancos-Todas-as-Questoes
+          path: exports/ESTIBORDO-7-Bancos-Todas-as-Questoes.txt
