@@ -23,3 +23,4 @@ for(let i=0;i<184;i++){
 if(out.length!==552) throw new Error("Total inválido: "+out.length);
 fs.writeFileSync("data/pscpp/arte-naval-cap1-552.json",JSON.stringify({title:"Arte Naval Vol. 1 — Cap. 1 — 552 questões",questions:out},null,2)+"\n");
 console.log("geradas",out.length,"questões de",terms.length,"termos");
+// Rastreabilidade: item 1.x, termo e página da obra-fonte.
