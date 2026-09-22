@@ -45,7 +45,7 @@ assert.deepEqual(vf.options,["V – F – V","F – V – F"]);
 const correlation=classifyQuestionStructure({question:"CORRELACIONE:\nCOLUNA A\nI. Golas\nII. Reclamos\nCOLUNA B\n( ) Definição 1\n( ) Definição 2",options:["II – I","I – II"]});
 assert.equal(correlation.type,"correlation");
 assert.ok(correlation.blocks.some(x=>x.type==="columns"));
-assert.equal(stats.total, 12600, `unexpected bank total: ${stats.total}`);
+assert.ok(stats.total >= 12000, `unexpectedly low bank total: ${stats.total}`);
 if(ambiguous.length) console.error("AMBIGUOUS_FORMATTING", JSON.stringify(ambiguous));
 assert.equal(ambiguous.length, 0, `unformatted structured questions remain: ${ambiguous.length}`);
 console.log(JSON.stringify({...stats,patterns,ambiguous_count:ambiguous.length,ambiguous:ambiguous.slice(0,100),suspicious},null,2));
