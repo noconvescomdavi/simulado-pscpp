@@ -87,7 +87,7 @@ export default async function Area(){
       <StudentHeader active="painel"/>
       <main className="studentDashboardV2">
         <section className="studentWelcome">
-          <div><span>HOJE</span><h1>Olá, {name} <b>👋</b></h1><p>Sua rota prioriza o que produz mais avanço agora.</p></div>
+          <div><span>PAINEL DO ALUNO</span><h1>Olá, {name} <b>👋</b></h1><p>Disciplina, foco e resultado. Mantenha o rumo até a Praticagem.</p></div>
           <div className="studentMotto"><span>GRANDES CONQUISTAS</span><strong>COMEÇAM COM CONSISTÊNCIA.</strong></div>
         </section>
 
@@ -100,7 +100,7 @@ export default async function Area(){
           <ExamCountdown/>
         </section>
 
-        <section className="commandDeck"><div><span>PRÓXIMA MISSÃO</span><h2>{dailyPlan?.tasks?.find(t=>!t.completed)?.title||"Sua rota está em dia"}</h2><p>{dailyPlan?.tasks?.find(t=>!t.completed)?.description||"Use a revisão inteligente ou faça um treino para continuar avançando."}</p><a className="commandPrimary" href="/hoje">Começar minha sessão →</a></div><div className="commandSignals"><span><b>{dailyPlan?.master_readiness??readiness}</b> prontidão</span><span><b>{studentIntel?.due||0}</b> revisões agora</span><span><b>{dailyPlan?.tracking?.backlog_count||0}</b> pendências</span></div></section>
+        <section className="commandDeck"><div><span>PRÓXIMA MISSÃO</span><h2>{dailyPlan?.tasks?.find(t=>!t.completed)?.title||"Sua rota está em dia"}</h2><p>{dailyPlan?.tasks?.find(t=>!t.completed)?.description||"Use a revisão inteligente ou faça um treino para continuar avançando."}</p><a href="/hoje">Continuar agora →</a></div><div className="commandSignals"><span><b>{dailyPlan?.master_readiness??readiness}</b> prontidão</span><span><b>{studentIntel?.due||0}</b> revisões agora</span><span><b>{dailyPlan?.tracking?.backlog_count||0}</b> pendências</span></div></section>
 
         <section className="studentFocusGrid">
           <article><span>PRÓXIMO PASSO</span><strong>{dailyPlan?.progress?.completed||0}/{dailyPlan?.progress?.total||0} tarefas</strong><small>{dailyPlan?.progress?.total?"Priorize o plano de hoje antes de abrir novas frentes.":"Configure seu plano para receber uma rota diária."}</small><a href="/hoje">Abrir plano de hoje →</a></article>
@@ -146,24 +146,6 @@ export default async function Area(){
             <article><i>◷</i><div><span>Progresso</span><strong>{overall}%</strong><small>Conteúdo estudado</small></div></article>
             <article><i>◎</i><div><span>Domínio estimado</span><strong>{Math.round(Number(dailyPlan?.tracking?.overall_mastery||0))}%</strong><small>Mastery Score</small></div></article>
             <article><i>◴</i><div><span>Tempo real</span><strong>{dailyPlan?.tracking?.study_time?.week_minutes||0} min</strong><small>Últimos 7 dias</small></div></article>
-          </div>
-        </section>
-
-        <section className="titleMetricsPanel">
-          <div className="sectionTitle"><div><h2>Métricas PSCPP</h2><p>Indicadores calculados separadamente para simulados e Prova de Títulos.</p></div></div>
-          <div className="titleMetricsTableWrap">
-            <table className="titleMetricsTable">
-              <thead><tr><th>Métrica</th><th>Resultado</th><th>Base</th></tr></thead>
-              <tbody>
-                <tr><td>Média de notas dos simulados</td><td><strong>{Number(performance.overall.exam_average||0).toLocaleString("pt-BR",{minimumFractionDigits:1,maximumFractionDigits:1})}%</strong></td><td>Somente simulados concluídos</td></tr>
-                <tr><td>Pontuação da Prova de Títulos</td><td><strong>{Number(performance.overall.title_score||0).toLocaleString("pt-BR",{minimumFractionDigits:1,maximumFractionDigits:1})} / 10</strong></td><td>Edital PSCPP 2012</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div className="titleBreakdown">
-            <span>Tempo de embarque <b>{Number(performance.overall.title_score_breakdown?.embarkation||0).toFixed(1)} / 3</b></span>
-            <span>Categoria / posto <b>{Number(performance.overall.title_score_breakdown?.category||0).toFixed(1)} / 2</b></span>
-            <span>Comando / praticagem <b>{Number(performance.overall.title_score_breakdown?.command||0).toFixed(1)} / 5</b></span>
           </div>
         </section>
 
