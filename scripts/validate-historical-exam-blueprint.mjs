@@ -8,8 +8,9 @@ import {
   buildHistoricalExam,
   historicalQuotas,
   historicalSubject,
+  isSituationalQuestion,
 } from "../lib/historical-exam-blueprint.js";
-import { PSCPP_SIZE, PSCPP_SUBJECT_QUOTAS, buildPscppExam } from "../lib/pscpp-exam-bank.js";
+import { PSCPP_SIZE, PSCPP_SUBJECT_QUOTAS, PSCPP_SITUATIONAL_MINIMUMS, buildPscppExam } from "../lib/pscpp-exam-bank.js";
 
 const generatedBatchDirectory = new URL("../data/pscpp/generated-batches/", import.meta.url);
 const generatedBatchQuestions = fs.existsSync(generatedBatchDirectory)
@@ -51,6 +52,7 @@ console.log(JSON.stringify({ sample: HISTORICAL_SAMPLE, observed, quotas_70: exp
 
 assert.equal(PSCPP_SIZE, 70);
 assert.equal(Object.values(PSCPP_SUBJECT_QUOTAS).reduce((sum, value) => sum + value, 0), 70);
+assert.equal(Object.values(PSCPP_SITUATIONAL_MINIMUMS).reduce((sum, value) => sum + value, 0), 23);
 
 for (const seed of ["current-alpha", "current-bravo", "current-charlie", "current-delta"]) {
   const exam = buildPscppExam(seed);
@@ -59,6 +61,12 @@ for (const seed of ["current-alpha", "current-bravo", "current-charlie", "curren
   const distribution = Object.fromEntries(Object.keys(PSCPP_SUBJECT_QUOTAS).map((subject) => [subject, 0]));
   for (const question of exam) distribution[historicalSubject(question)] += 1;
   assert.deepEqual(distribution, PSCPP_SUBJECT_QUOTAS, `Distribuição híbrida inválida para seed ${seed}`);
+  const situationalDistribution = Object.fromEntries(Object.keys(PSCPP_SITUATIONAL_MINIMUMS).map((subject) => [subject, 0]));
+  for (const question of exam.filter(isSituationalQuestion)) situationalDistribution[historicalSubject(question)] += 1;
+  for (const [subject, minimum] of Object.entries(PSCPP_SITUATIONAL_MINIMUMS)) {
+    assert.ok(situationalDistribution[subject] >= minimum, `Mínimo situacional não atendido em ${subject} para seed ${seed}: ${situationalDistribution[subject]} < ${minimum}`);
+  }
+  assert.ok(exam.filter(isSituationalQuestion).length >= 23, `Simulado deve ter ao menos 23 questões situacionais para seed ${seed}`);
 }
 
 console.log("Blueprint vigente PSCPP: OK");
