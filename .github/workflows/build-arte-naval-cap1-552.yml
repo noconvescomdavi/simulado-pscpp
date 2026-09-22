@@ -1,0 +1,26 @@
+name: Build Arte Naval Cap1 552
+on:
+  push:
+    branches: [feature/pscpp-arte-naval-cap1-552]
+    paths: [scripts/build-arte-naval-cap1-552.mjs, .github/workflows/build-arte-naval-cap1-552.yml]
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: feature/pscpp-arte-naval-cap1-552 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node scripts/build-arte-naval-cap1-552.mjs
+      - name: Validate
+        run: |
+          node -e 'const j=require("./data/pscpp/arte-naval-cap1-552.json"); if(j.questions.length!==552) process.exit(1); console.log(j.questions.length)'
+      - name: Commit generated bank
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pscpp/arte-naval-cap1-552.json
+          git diff --cached --quiet || git commit -m "feat: gera 552 questões Arte Naval cap. 1"
+          git push
