@@ -1,0 +1,16 @@
+name: Count Arte Naval V1
+on:
+  push:
+    branches: [fix/todas-objetivas-formato-assunto]
+    paths: [scripts/count-arte-naval-v1.mjs,.github/workflows/count-arte-naval-v1.yml]
+jobs:
+  count:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: fix/todas-objetivas-formato-assunto}
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: node scripts/count-arte-naval-v1.mjs | tee arte-naval-v1-count.json
+      - uses: actions/upload-artifact@v4
+        with: {name: arte-naval-v1-count, path: arte-naval-v1-count.json}
