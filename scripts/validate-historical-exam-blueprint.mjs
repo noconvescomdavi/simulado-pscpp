@@ -8,7 +8,9 @@ import {
   buildHistoricalExam,
   historicalQuotas,
   historicalSubject,
+  isSituationalQuestion,
 } from "../lib/historical-exam-blueprint.js";
+import { PSCPP_SIZE, PSCPP_SUBJECT_QUOTAS, PSCPP_SITUATIONAL_MINIMUMS, buildPscppExam } from "../lib/pscpp-exam-bank.js";
 
 const generatedBatchDirectory = new URL("../data/pscpp/generated-batches/", import.meta.url);
 const generatedBatchQuestions = fs.existsSync(generatedBatchDirectory)
@@ -25,25 +27,47 @@ const observed = Object.fromEntries(Object.keys(HISTORICAL_SUBJECT_COUNTS).map((
 for (const question of activeOfficial) observed[historicalSubject(question)] += 1;
 assert.deepEqual(observed, HISTORICAL_SUBJECT_COUNTS, "A classificação histórica divergiu da amostra oficial");
 
-const expected100 = {
-  manobrabilidade: 36,
-  "navegacao-aguas-restritas": 30,
-  "legislacao-regulamentacao": 11,
-  "arte-naval": 10,
-  "meteorologia-oceanografia": 7,
-  comunicacoes: 6,
+const expected70 = {
+  manobrabilidade: 25,
+  "navegacao-aguas-restritas": 21,
+  "legislacao-regulamentacao": 8,
+  "arte-naval": 7,
+  "meteorologia-oceanografia": 5,
+  comunicacoes: 4,
   "conhecimentos-gerais": 0,
 };
-assert.deepEqual(historicalQuotas(100), expected100);
+assert.deepEqual(historicalQuotas(70), expected70);
 
 for (const seed of ["alpha", "bravo", "charlie", "delta"]) {
-  const exam = buildHistoricalExam([...activeOfficial, ...generatedQuestions.questions, ...generatedBatchQuestions], { seed, size: 100 });
-  assert.equal(exam.length, 100);
-  assert.equal(new Set(exam.map((question) => question.id)).size, 100);
-  const distribution = Object.fromEntries(Object.keys(expected100).map((subject) => [subject, 0]));
+  const exam = buildHistoricalExam([...activeOfficial, ...generatedQuestions.questions, ...generatedBatchQuestions], { seed, size: 70 });
+  assert.equal(exam.length, 70);
+  assert.equal(new Set(exam.map((question) => question.id)).size, 70);
+  const distribution = Object.fromEntries(Object.keys(expected70).map((subject) => [subject, 0]));
   for (const question of exam) distribution[historicalSubject(question)] += 1;
-  assert.deepEqual(distribution, expected100, `Distribuição inválida para seed ${seed}`);
+  assert.deepEqual(distribution, expected70, `Distribuição inválida para seed ${seed}`);
 }
 
 console.log("Blueprint histórico: OK");
-console.log(JSON.stringify({ sample: HISTORICAL_SAMPLE, observed, quotas_100: expected100 }, null, 2));
+console.log(JSON.stringify({ sample: HISTORICAL_SAMPLE, observed, quotas_70: expected70 }, null, 2));
+
+assert.equal(PSCPP_SIZE, 70);
+assert.equal(Object.values(PSCPP_SUBJECT_QUOTAS).reduce((sum, value) => sum + value, 0), 70);
+assert.equal(Object.values(PSCPP_SITUATIONAL_MINIMUMS).reduce((sum, value) => sum + value, 0), 23);
+
+for (const seed of ["current-alpha", "current-bravo", "current-charlie", "current-delta"]) {
+  const exam = buildPscppExam(seed);
+  assert.equal(exam.length, 70);
+  assert.equal(new Set(exam.map((question) => question.id)).size, 70);
+  const distribution = Object.fromEntries(Object.keys(PSCPP_SUBJECT_QUOTAS).map((subject) => [subject, 0]));
+  for (const question of exam) distribution[historicalSubject(question)] += 1;
+  assert.deepEqual(distribution, PSCPP_SUBJECT_QUOTAS, `Distribuição híbrida inválida para seed ${seed}`);
+  const situationalDistribution = Object.fromEntries(Object.keys(PSCPP_SITUATIONAL_MINIMUMS).map((subject) => [subject, 0]));
+  for (const question of exam.filter(isSituationalQuestion)) situationalDistribution[historicalSubject(question)] += 1;
+  for (const [subject, minimum] of Object.entries(PSCPP_SITUATIONAL_MINIMUMS)) {
+    assert.ok(situationalDistribution[subject] >= minimum, `Mínimo situacional não atendido em ${subject} para seed ${seed}: ${situationalDistribution[subject]} < ${minimum}`);
+  }
+  assert.ok(exam.filter(isSituationalQuestion).length >= 23, `Simulado deve ter ao menos 23 questões situacionais para seed ${seed}`);
+}
+
+console.log("Blueprint vigente PSCPP: OK");
+console.log(JSON.stringify({ size: PSCPP_SIZE, quotas: PSCPP_SUBJECT_QUOTAS }, null, 2));
