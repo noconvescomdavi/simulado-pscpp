@@ -9,7 +9,9 @@ import ExamCountdown from "../components/ExamCountdown";
 import DailyStudyPlan from "./DailyStudyPlan";
 import {getConsistency} from "../../lib/engagement";
 import {getIntegratedStudyPlan} from "../../lib/integrated-study-plan";
-import {getStudentInsights} from "../../lib/student-insights";
+import {buildStudentInsights} from "../../lib/student-insights";
+import {getLearningProfile,getStudyTimeSummary} from "../../lib/learning-engine";
+import {getReviewQueue} from "../../lib/engagement";
 import "./dashboard.css";
 
 function fmt(v){return new Intl.NumberFormat("pt-BR").format(Number(v||0))}
@@ -19,49 +21,30 @@ export default async function Area(){
   const session=await getSession();
   if(!session)redirect("/login");
 
-  const [access,progress,performance,profile,recentExams,dailyPlan,consistency,studentIntel]=await Promise.all([
+  const [access,progress,performance,profile,recentExams,masterPlan,consistency,learning,time,reviews]=await Promise.all([
     getUserAccess(session.id),
     query("select subject,percent from study_progress where user_id=$1",[session.id]),
     getUserMetrics(session.id),
     query("select full_name from user_profiles where user_id=$1 limit 1",[session.id]).catch(()=>({rows:[]})),
     query("select id,subject,status,answered_count,correct_count,started_at from exam_sessions where user_id=$1 order by started_at desc limit 4",[session.id]).catch(()=>({rows:[]})),
-    getIntegratedStudyPlan(session.id,0).then((master)=>{
-      if(master?.needs_onboarding)return null;
-      const today=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Sao_Paulo",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
-      const day=master.week?.days?.find(d=>d.iso===today);
-      const minutesByType={reading:Math.max(20,Number(master.onboarding?.reading_minutes_target||60)),questions:Math.max(20,Math.round(Number(master.onboarding?.daily_minutes||60)*.25)),review:Math.max(15,Math.round(Number(master.onboarding?.daily_minutes||60)*.15)),rereading:30,simulado:240};
-      const labels={reading:"LEITURA PROGRAMADA",questions:"QUESTÕES DE FIXAÇÃO",review:"REVISÃO INTELIGENTE",rereading:"RELEITURA SELETIVA",simulado:"SIMULADO"};
-      const tasks=(day?.tasks||[]).map(task=>({
-        ...task,
-        completed:task.status==="done",
-        minutes:minutesByType[task.type]||30,
-        target_label:labels[task.type]||String(task.type||"TAREFA").toUpperCase(),
-        plan_date:day?.iso
-      }));
-      return{
-        source:"integrated",
-        goal:{
-          daily_minutes:Number(master.onboarding?.daily_minutes||60),
-          weekly_questions:null,
-          questions_answered_today:null,
-          daily_question_target:null
-        },
-        progress:{
-          total:tasks.length,
-          completed:tasks.filter(t=>t.completed).length,
-          percent:tasks.length?Math.round(tasks.filter(t=>t.completed).length/tasks.length*100):0
-        },
-        tasks,
-        phase:master.phase,
-        bibliography_progress:master.bibliography_progress,
-        tracking:master.tracking,
-        master_readiness:master.readiness,
-        first_pass:master.first_pass
-      };
-    }),
+    getIntegratedStudyPlan(session.id,0),
     getConsistency(session.id),
-    getStudentInsights(session.id).catch(()=>({insights:[],due:0}))
+    getLearningProfile(session.id).catch(()=>({overall_mastery:0,subjects:[],weakest_topics:[]})),
+    getStudyTimeSummary(session.id).catch(()=>({today_minutes:0,week_minutes:0})),
+    getReviewQueue(session.id,20).catch(()=>[])
   ]);
+
+  const dailyPlan=(()=> {
+    const master=masterPlan;
+    if(master?.needs_onboarding)return null;
+    const today=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Sao_Paulo",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+    const day=master?.week?.days?.find(d=>d.iso===today);
+    const minutesByType={reading:Math.max(20,Number(master?.onboarding?.reading_minutes_target||60)),questions:Math.max(20,Math.round(Number(master?.onboarding?.daily_minutes||60)*.25)),review:Math.max(15,Math.round(Number(master?.onboarding?.daily_minutes||60)*.15)),rereading:30,simulado:240};
+    const labels={reading:"LEITURA PROGRAMADA",questions:"QUESTÕES DE FIXAÇÃO",review:"REVISÃO INTELIGENTE",rereading:"RELEITURA SELETIVA",simulado:"SIMULADO"};
+    const tasks=(day?.tasks||[]).map(task=>({...task,completed:task.status==="done",minutes:minutesByType[task.type]||30,target_label:labels[task.type]||String(task.type||"TAREFA").toUpperCase(),plan_date:day?.iso}));
+    return{source:"integrated",goal:{daily_minutes:Number(master?.onboarding?.daily_minutes||60),weekly_questions:null,questions_answered_today:null,daily_question_target:null},progress:{total:tasks.length,completed:tasks.filter(t=>t.completed).length,percent:tasks.length?Math.round(tasks.filter(t=>t.completed).length/tasks.length*100):0},tasks,phase:master?.phase,bibliography_progress:master?.bibliography_progress,tracking:master?.tracking,master_readiness:master?.readiness,first_pass:master?.first_pass};
+  })();
+  const studentIntel=buildStudentInsights({plan:masterPlan,learning,time,reviews,consistency,metrics:performance});
 
   const active=access?.active===true;
   const name=firstName(profile.rows[0]?.full_name||session.email.split("@")[0]);
