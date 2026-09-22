@@ -86,6 +86,15 @@ jobs:
           # Infraestrutura pública
           curl -fsS "http://127.0.0.1:3000/api/health?shallow=1"
 
+          # Aguarda também a primeira página SSR responder; o health pode ficar pronto antes do renderizador.
+          for i in {1..30}; do
+            if curl -fsS "http://127.0.0.1:3000/login" -o /tmp/smoke-ready.html; then
+              break
+            fi
+            sleep 1
+          done
+          test -s /tmp/smoke-ready.html
+
           # CSP: geral rígida; exceção unsafe-eval somente no runtime 3D
           STRICT_CSP=$(curl -sSI "http://127.0.0.1:3000/login" | tr -d "\r" | grep -i "^content-security-policy:" | head -1)
           echo "$STRICT_CSP" | grep -q "script-src"
