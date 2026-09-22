@@ -11,55 +11,79 @@ import StudentMobileMenu from "./StudentMobileMenu";
 function Menu({ active = "" }) {
   return (
     <nav className={styles.nav} aria-label="Área do aluno">
-      <Link className={["painel","hoje"].includes(active) ? styles.active : ""} href="/hoje"><span className={styles.icon}>⌂</span><span>Hoje</span></Link>
+      <Link className={active === "painel" ? styles.active : ""} href="/area-do-aluno"><span className={styles.icon}>⌂</span><span>Hoje</span></Link>
 
-      <details className={styles.group} open={["conteudos","biblioteca","flashcards","mapas","ripeam3d"].includes(active)}>
-        <summary><span><b className={styles.icon}>▦</b> Estudar</span><b className={styles.chevron}>⌄</b></summary>
+      <Link className={active === "perfil" ? styles.active : ""} href="/perfil"><span className={styles.icon}>♙</span><span>Perfil</span></Link>
+      <Link href="/preferencias"><span className={styles.icon}>⚙</span><span>Personalização</span></Link>
+
+      <details className={styles.group} open={["plano","adaptativo","hoje","revisao","fraquezas","trajetoria"].includes(active)}>
+        <summary><span><b className={styles.icon}>◫</b> Minha Preparação</span><b className={styles.chevron}>⌄</b></summary>
         <div className={styles.submenu}><div>
-          <Link href="/conteudos">Central de Conteúdos</Link>
-          <Link href="/minha-biblioteca">Minha Biblioteca</Link>
-          <Link href="/flashcards">Flashcards</Link>
-          <Link href="/mapas-mentais">Mapas Mentais</Link>
-          <Link href="/flashcards/ripeam/3d">Laboratório RIPEAM 3D</Link>
+          <Link href="/plano-de-estudos">Meu Plano de Estudos</Link>
+          <Link href="/hoje">Plano de Hoje</Link>
+          <Link href="/treino-adaptativo">Treino Inteligente</Link>
+          <Link href="/centro-de-revisao">Centro de Revisão</Link>
+          <Link href="/analise-de-fraquezas">Desempenho e Fraquezas</Link>
+          <Link href="/minha-trajetoria">Minha Trajetória</Link>
         </div></div>
       </details>
 
-      <details className={styles.group} open={["simulados","banco","cadernos","adaptativo","revisao","revisao-inteligente","erros"].includes(active)}>
-        <summary><span><b className={styles.icon}>▣</b> Treinar</span><b className={styles.chevron}>⌄</b></summary>
+      <details className={styles.group} open={active === "simulados"}>
+        <summary><span><b className={styles.icon}>▣</b> Simulados</span><b className={styles.chevron}>⌄</b></summary>
         <div className={styles.submenu}><div>
-          <Link href="/simulado">Simulados</Link>
-          <Link href="/conteudos/banco-de-questoes">Banco de Questões</Link>
+          <Link href="/simulado">Gerar Simulado</Link>
+          <Link href="/simulado">Meus Simulados</Link>
+          <Link href="/area-do-aluno#desempenho">Desempenho</Link>
+        </div></div>
+      </details>
+
+      <details className={styles.group} open={["conteudos","banco","cadernos","erros"].includes(active)}>
+        <summary><span><b className={styles.icon}>☷</b> Banco de Questões</span><b className={styles.chevron}>⌄</b></summary>
+        <div className={styles.submenu}><div>
+          <Link href="/conteudos/banco-de-questoes">Gerar Caderno</Link>
           <Link href="/conteudos/banco-de-questoes#meus-cadernos">Meus Cadernos</Link>
-          <Link href="/treino-adaptativo">Treino Inteligente</Link>
-          <Link href="/centro-de-revisao">Centro de Revisão</Link>
-          <Link href="/revisao-inteligente">Revisão Inteligente</Link>
+          <Link href="/conteudos/caderno-de-erros">Caderno de Erros</Link>
+          <Link href="/conteudos">Central de Conteúdos</Link>
+        </div></div>
+      </details>
+
+      <details className={styles.group} open={active === "flashcards"}>
+        <summary><span><b className={styles.icon}>▤</b> Flashcards</span><b className={styles.chevron}>⌄</b></summary>
+        <div className={styles.submenu}><div>
+          <Link href="/flashcards">Todos os Flashcards</Link>
+          <Link href="/flashcards/meus-mapas">Dos meus mapas</Link>
+        </div></div>
+      </details>
+
+      <Link className={active === "ripeam3d" ? styles.active : ""} href="/flashcards/ripeam/3d"><span className={styles.icon}>◈</span><span>Laboratório RIPEAM 3D</span></Link>
+
+      <details className={styles.group} open={active === "mapas"}>
+        <summary><span><b className={styles.icon}>🧠</b> Mapas Mentais</span><b className={styles.chevron}>⌄</b></summary>
+        <div className={styles.submenu}><div>
+          <Link href="/mapas-mentais">Meus Mapas Mentais</Link>
+          <Link href="/mapas-mentais?template=study">Criar Novo Mapa</Link>
+          <Link href="/flashcards/meus-mapas">Flashcards dos Mapas</Link>
+        </div></div>
+      </details>
+
+      <Link className={active === "biblioteca" ? styles.active : ""} href="/minha-biblioteca"><span className={styles.icon}>▧</span><span>Minha Biblioteca</span></Link>
+
+      <details className={styles.group}>
+        <summary><span><b className={styles.icon}>▦</b> Central de Estudos</span><b className={styles.chevron}>⌄</b></summary>
+        <div className={styles.submenu}><div>
+          <Link href="/conteudos">Estudar por Matéria</Link>
           <Link href="/conteudos/caderno-de-erros">Caderno de Erros</Link>
         </div></div>
       </details>
 
-      <details className={styles.group} open={["plano","fraquezas","trajetoria","ranking"].includes(active)}>
-        <summary><span><b className={styles.icon}>◎</b> Desempenho</span><b className={styles.chevron}>⌄</b></summary>
-        <div className={styles.submenu}><div>
-          <Link href="/plano-de-estudos">Rota Inteligente</Link>
-          <Link href="/analise-de-fraquezas">Análise de Fraquezas</Link>
-          <Link href="/minha-trajetoria">Minha Trajetória</Link>
-          <Link href="/ranking">Ranking</Link>
-          <Link href="/conquistas">Conquistas</Link>
-        </div></div>
-      </details>
-
       <Link className={active === "tutor" ? styles.active : ""} href="/contramestre"><span className={styles.icon}>⚓</span><span>Contramestre</span></Link>
-
-      <details className={styles.group} open={["perfil","assinaturas","offline","suporte"].includes(active)}>
-        <summary><span><b className={styles.icon}>⚙</b> Conta e suporte</span><b className={styles.chevron}>⌄</b></summary>
-        <div className={styles.submenu}><div>
-          <Link href="/perfil">Perfil</Link>
-          <Link href="/preferencias">Personalização</Link>
-          <Link href="/minhas-assinaturas">Minhas Assinaturas</Link>
-          <Link href="/offline">Disponibilidade offline</Link>
-          <Link href="/suporte">Ajuda e Suporte</Link>
-        </div></div>
-      </details>
+      <Link className={active === "ranking" ? styles.active : ""} href="/ranking"><span className={styles.icon}>★</span><span>Ranking</span></Link>
+      <Link href="/conquistas"><span className={styles.icon}>✦</span><span>Conquistas</span></Link>
+      <Link className={active === "assinaturas" ? styles.active : ""} href="/minhas-assinaturas"><span className={styles.icon}>♛</span><span>Minhas Assinaturas</span></Link>
+      <Link className={active === "offline" ? styles.active : ""} href="/offline"><span className={styles.icon}>⇄</span><span>Modo Offline</span></Link>
+      <Link className={active === "suporte" ? styles.active : ""} href="/suporte"><span className={styles.icon}>✉</span><span>Suporte</span></Link>
+      <div className={styles.divider} />
+      <Link href="/"><span className={styles.icon}>◈</span><span>Home</span></Link>
     </nav>
   );
 }
