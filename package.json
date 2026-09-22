@@ -23,7 +23,9 @@
     "validate:drive-library": "node scripts/validate-drive-library.mjs",
     "audit:pscpp": "node scripts/audit-pscpp-bank.mjs",
     "audit:pscpp:final": "PSCPP_FINAL_AUDIT=1 node scripts/audit-pscpp-bank.mjs",
-    "audit:questions:semantic": "node scripts/audit-question-semantics.mjs"
+    "audit:questions:semantic": "node scripts/audit-question-semantics.mjs",
+    "audit:questions:full": "node scripts/audit-full-question-bank.mjs",
+    "validate:questions:full": "npm run validate:questions && npm run audit:questions:semantic && npm run audit:questions:full"
   },
   "dependencies": {
     "argon2": "^0.41.1",
