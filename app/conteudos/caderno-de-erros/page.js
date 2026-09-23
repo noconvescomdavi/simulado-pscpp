@@ -74,9 +74,11 @@ export default async function ErrorNotebookPage({searchParams}) {
                 )}
               </div>
 
+              {(item.source_reference?.work||item.source_reference?.chapter||item.source_reference?.page||item.source_reference?.text)&&<div className={styles.attemptContext}><span><b>Onde revisar:</b> {[item.source_reference.work,item.source_reference.chapter,item.source_reference.page?`p. ${item.source_reference.page}`:null,item.source_reference.text].filter(Boolean).join(" · ")}</span></div>}
+
               {item.explanation && (
                 <details>
-                  <summary>Ver explicação</summary>
+                  <summary>Ver gabarito comentado</summary>
                   <p>{item.explanation}</p>
                 </details>
               )}
