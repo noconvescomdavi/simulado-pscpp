@@ -1,0 +1,22 @@
+name: Repair All Artificial Question Sources
+on:
+  push:
+    branches: [fix/full-context-legislation-stems]
+jobs:
+  repair:
+    if: ${{ !contains(github.event.head_commit.message || '', '[all-source-output]') }}
+    permissions: {contents: write}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 20}
+      - run: node scripts/repair-all-artificial-question-sources.mjs
+      - run: node scripts/audit-artificial-question-sources.mjs || true
+      - run: QUESTIONS_MAIN_ONLY=1 node scripts/audit-full-question-bank.mjs
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/questions data/question-restorations data/question-extensions reports
+          git commit -m "fix(questions): repair all artificial source-layer questions [all-source-output]" || exit 0
+          git push
