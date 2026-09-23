@@ -7,7 +7,7 @@ import {normalizeSubject,subjectLabel} from "../../lib/subjects";
 import StudentHeader from "../components/StudentHeader";
 import ExamCountdown from "../components/ExamCountdown";
 import DailyStudyPlan from "./DailyStudyPlan";
-import {getConsistency} from "../../lib/engagement";
+import {getConsistency} from "../../lib/engagement";\nimport {getLearningProfile} from "../../lib/learning-engine";
 import {getIntegratedStudyPlan} from "../../lib/integrated-study-plan";
 import {getStudentInsights} from "../../lib/student-insights";
 import { unstable_cache } from "next/cache";
@@ -24,51 +24,17 @@ export default async function Area(){
   const session=await getSession();
   if(!session)redirect("/login");
 
-  const [access,progress,performance,profile,recentExams,dailyPlan,consistency,studentIntel]=await Promise.all([
+  const [access,progress,performance,profile,recentExams,learning,consistency,studentIntel]=await Promise.all([
     cachedAccess(session.id),
     query("select subject,percent from study_progress where user_id=$1",[session.id]),
     getUserMetrics(session.id),
     query("select full_name from user_profiles where user_id=$1 limit 1",[session.id]).catch(()=>({rows:[]})),
     query("select id,subject,status,answered_count,correct_count,started_at from exam_sessions where user_id=$1 order by started_at desc limit 4",[session.id]).catch(()=>({rows:[]})),
-    getIntegratedStudyPlan(session.id,0).then((master)=>{
-      if(master?.needs_onboarding)return null;
-      const today=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Sao_Paulo",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
-      const day=master.week?.days?.find(d=>d.iso===today);
-      const minutesByType={reading:Math.max(20,Number(master.onboarding?.reading_minutes_target||60)),questions:Math.max(20,Math.round(Number(master.onboarding?.daily_minutes||60)*.25)),review:Math.max(15,Math.round(Number(master.onboarding?.daily_minutes||60)*.15)),rereading:30,simulado:240};
-      const labels={reading:"LEITURA PROGRAMADA",questions:"QUESTÕES DE FIXAÇÃO",review:"REVISÃO INTELIGENTE",rereading:"RELEITURA SELETIVA",simulado:"SIMULADO"};
-      const tasks=(day?.tasks||[]).map(task=>({
-        ...task,
-        completed:task.status==="done",
-        minutes:minutesByType[task.type]||30,
-        target_label:labels[task.type]||String(task.type||"TAREFA").toUpperCase(),
-        plan_date:day?.iso
-      }));
-      return{
-        source:"integrated",
-        goal:{
-          daily_minutes:Number(master.onboarding?.daily_minutes||60),
-          weekly_questions:null,
-          questions_answered_today:null,
-          daily_question_target:null
-        },
-        progress:{
-          total:tasks.length,
-          completed:tasks.filter(t=>t.completed).length,
-          percent:tasks.length?Math.round(tasks.filter(t=>t.completed).length/tasks.length*100):0
-        },
-        tasks,
-        phase:master.phase,
-        bibliography_progress:master.bibliography_progress,
-        tracking:master.tracking,
-        master_readiness:master.readiness,
-        first_pass:master.first_pass
-      };
-    }),
-    getConsistency(session.id),
+    getLearningProfile(session.id).catch(()=>({overall_mastery:0,subjects:[],weakest_topics:[]})),\n    getConsistency(session.id),
     getStudentInsights(session.id).catch(()=>({insights:[],due:0}))
   ]);
 
-  const active=access?.active===true;
+  const active=access?.active===true;\n  const mastery=Number(learning?.overall_mastery||0);
   const name=firstName(profile.rows[0]?.full_name||session.email.split("@")[0]);
   const pm=Object.fromEntries(progress.rows.map(r=>[normalizeSubject(r.subject),Number(r.percent||0)]));
   const pv=performance.subjects.map(s=>pm[s.slug]||0);
@@ -84,7 +50,7 @@ export default async function Area(){
     examCoverage*0.15+
     volumeScore*0.10
   );
-  const readiness=Number.isFinite(Number(dailyPlan?.master_readiness))?Number(dailyPlan.master_readiness):legacyReadiness;
+  const readiness=Math.round(Math.max(0,Math.min(100,mastery*.8+legacyReadiness*.2)));
   const readinessLabel=readiness>=85?"Muito forte":readiness>=70?"Competitivo":readiness>=50?"Em evolução":"Construindo base";
 
   return (
@@ -105,15 +71,15 @@ export default async function Area(){
           <ExamCountdown/>
         </section>
 
-        <section className="commandDeck"><div><span>PRÓXIMA MISSÃO</span><h2>{dailyPlan?.tasks?.find(t=>!t.completed)?.title||"Sua rota está em dia"}</h2><p>{dailyPlan?.tasks?.find(t=>!t.completed)?.description||"Use a revisão inteligente ou faça um treino para continuar avançando."}</p><a href="/hoje">Continuar agora →</a></div><div className="commandSignals"><span><b>{dailyPlan?.master_readiness??readiness}</b> prontidão</span><span><b>{studentIntel?.due||0}</b> revisões agora</span><span><b>{dailyPlan?.tracking?.backlog_count||0}</b> pendências</span></div></section>
+        <section className="commandDeck"><div><span>PRÓXIMA MISSÃO</span><h2>{"Abra o Plano de Hoje"}</h2><p>{"Seu plano detalhado é carregado somente quando você abre a área de estudo, reduzindo consumo e melhorando o painel."}</p><a href="/hoje">Continuar agora →</a></div><div className="commandSignals"><span><b>{readiness}</b> prontidão</span><span><b>{studentIntel?.due||0}</b> revisões agora</span><span><b>{0}</b> pendências</span></div></section>
 
         <section className="studentFocusGrid">
-          <article><span>PRÓXIMO PASSO</span><strong>{dailyPlan?.progress?.completed||0}/{dailyPlan?.progress?.total||0} tarefas</strong><small>{dailyPlan?.progress?.total?"Priorize o plano de hoje antes de abrir novas frentes.":"Configure seu plano para receber uma rota diária."}</small><a href="/hoje">Abrir plano de hoje →</a></article>
-          <article><span>RITMO DA PREPARAÇÃO</span><strong>{dailyPlan?.tracking?.adherence_percent??100}% de aderência</strong><small>{dailyPlan?.tracking?.backlog_count||0} pendência(s) em aberto.</small><a href="/minha-trajetoria">Ver trajetória →</a></article>
+          <article><span>PRÓXIMO PASSO</span><strong>{0}/{0} tarefas</strong><small>{false?"Priorize o plano de hoje antes de abrir novas frentes.":"Configure seu plano para receber uma rota diária."}</small><a href="/hoje">Abrir plano de hoje →</a></article>
+          <article><span>RITMO DA PREPARAÇÃO</span><strong>{100}% de aderência</strong><small>{0} pendência(s) em aberto.</small><a href="/minha-trajetoria">Ver trajetória →</a></article>
           <article><span>PONTO DE ATENÇÃO</span><strong>{weakest?weakest.label:"Aguardando dados"}</strong><small>{weakest?weakest.accuracy+"% de acerto — maior oportunidade de ganho.":"Responda questões para gerar o diagnóstico."}</small><a href="/analise-de-fraquezas">Abrir análise →</a></article>
         </section>
 
-        <DailyStudyPlan initialPlan={dailyPlan}/>
+        <DailyStudyPlan initialPlan={null}/>
 
         <section className="insightsPanel"><div className="sectionTitle"><div><h2>ESTIBORDO Insights</h2><p>O que seus dados sugerem fazer em seguida.</p></div><a href="/centro-de-revisao">Centro de Revisão →</a></div><div className="insightsGrid">{(studentIntel?.insights||[]).map((insight,index)=><a href={insight.href} key={index}><span>{insight.kind}</span><strong>{insight.title}</strong><p>{insight.text}</p><b>{insight.action} →</b></a>)}{!(studentIntel?.insights||[]).length&&<article><strong>Continue estudando</strong><p>Assim que houver dados suficientes, seus padrões e recomendações aparecerão aqui.</p></article>}</div></section>
 
@@ -149,8 +115,8 @@ export default async function Area(){
             <article><i>▤</i><div><span>Questões</span><strong>{fmt(performance.overall.questions)}</strong><small>Respondidas</small></div></article>
             <article><i>▥</i><div><span>Aproveitamento</span><strong>{performance.overall.accuracy}%</strong><small>Média geral</small></div></article>
             <article><i>◷</i><div><span>Progresso</span><strong>{overall}%</strong><small>Conteúdo estudado</small></div></article>
-            <article><i>◎</i><div><span>Domínio estimado</span><strong>{Math.round(Number(dailyPlan?.tracking?.overall_mastery||0))}%</strong><small>Mastery Score</small></div></article>
-            <article><i>◴</i><div><span>Tempo real</span><strong>{dailyPlan?.tracking?.study_time?.week_minutes||0} min</strong><small>Últimos 7 dias</small></div></article>
+            <article><i>◎</i><div><span>Domínio estimado</span><strong>{Math.round(Number(mastery))}%</strong><small>Mastery Score</small></div></article>
+            <article><i>◴</i><div><span>Tempo real</span><strong>{0} min</strong><small>Últimos 7 dias</small></div></article>
           </div>
         </section>
 
@@ -164,8 +130,8 @@ export default async function Area(){
             <div><span>Melhor disciplina</span><strong>{strongest?strongest.label:"Aguardando dados"}</strong><small>{strongest?`${strongest.accuracy}% de acerto`:"Responda questões para calcular"}</small></div>
             <div><span>Ponto de atenção</span><strong>{weakest?weakest.label:"Aguardando dados"}</strong><small>{weakest?`${weakest.accuracy}% de acerto`:"Responda questões para calcular"}</small></div>
             <div><span>Cobertura de simulados</span><strong>{examCoverage}%</strong><small>Meta de referência: 7 simulados</small></div>
-            <div><span>Aderência ao plano</span><strong>{dailyPlan?.tracking?.adherence_percent??100}%</strong><small>{dailyPlan?.tracking?.backlog_count||0} pendência(s) em aberto</small></div>
-            <div><span>1ª leitura projetada</span><strong>{dailyPlan?.first_pass?.projected_finish?new Date(dailyPlan.first_pass.projected_finish+"T12:00:00").toLocaleDateString("pt-BR"):"—"}</strong><small>{dailyPlan?.first_pass?.on_track?"Dentro do ritmo atual":"Risco de atraso no ritmo atual"}</small></div>
+            <div><span>Aderência ao plano</span><strong>{100}%</strong><small>{0} pendência(s) em aberto</small></div>
+            <div><span>1ª leitura projetada</span><strong>{null?new Date(null+"T12:00:00").toLocaleDateString("pt-BR"):"—"}</strong><small>{false?"Dentro do ritmo atual":"Risco de atraso no ritmo atual"}</small></div>
           </div>
         </section>
 
