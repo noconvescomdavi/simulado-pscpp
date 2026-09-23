@@ -52,8 +52,10 @@ jobs:
         run: npm run validate:questions
       - name: Semantic quality audit
         run: node scripts/audit-question-quality-v2.mjs
-      - name: Integral source-review gate
+      - name: Integral final bank audit
         run: npm run audit:pscpp:final
+      - name: Complete source-layer quality gate
+        run: node scripts/audit-pscpp-integral-source-review.mjs
       - name: Upload integral audit report
         if: always()
         uses: actions/upload-artifact@v4
