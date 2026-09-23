@@ -13,6 +13,7 @@ jobs:
           node-version: 20
       - run: node scripts/repair-main-question-extraction-artifacts.mjs
       - run: node scripts/repair-main-question-generic-templates.mjs
+      - run: node scripts/repair-main-question-explanation-keys.mjs
       - name: Audit repaired working tree
         env:
           QUESTIONS_MAIN_ONLY: "1"
@@ -24,4 +25,5 @@ jobs:
             data/questions/*.json
             reports/extraction-artifact-repair.json
             reports/generic-template-repair.json
+            reports/explanation-key-repair.json
             reports/full-question-bank-audit.json
