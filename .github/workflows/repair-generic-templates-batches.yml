@@ -16,6 +16,8 @@ jobs:
           node-version: 20
       - name: Repair 308 generic templates
         run: node scripts/repair-main-question-generic-templates.mjs
+      - name: Quarantine unresolved templates and duplicates
+        run: node scripts/quarantine-final-generic-and-duplicates.mjs
       - name: Audit all main question banks
         env:
           QUESTIONS_MAIN_ONLY: "1"
