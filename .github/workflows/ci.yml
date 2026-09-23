@@ -88,7 +88,7 @@ jobs:
 
           # Aguarda também a primeira página SSR responder; o health pode ficar pronto antes do renderizador.
           for i in {1..30}; do
-            if curl -fsS "http://127.0.0.1:3000/login" -o /tmp/smoke-ready.html; then
+            if curl -fsSL "http://127.0.0.1:3000/login" -o /tmp/smoke-ready.html; then
               break
             fi
             sleep 1
