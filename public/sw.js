@@ -140,23 +140,18 @@ self.addEventListener("fetch", (event) => {
     event.respondWith((async()=>{
       const cache=await caches.open(PAGE_CACHE);
       const cached=cacheablePage ? await cache.match(request) : null;
-      const network=(async()=>{
+        // A cached authenticated SSR page must not trigger a hidden server render
+      // on every navigation. Serve it immediately; real uncached visits refresh it.
+      if(cached)return cached;
+      const response=await (async()=>{
         try{
-          const response=await fetch(request,{cache:"no-store"});
-          if(cacheablePage && response?.ok && !response.redirected){
-            try{await cache.put(request,response.clone())}catch{}
+          const next=await fetch(request,{cache:"no-store"});
+          if(cacheablePage && next?.ok && !next.redirected){
+            try{await cache.put(request,next.clone())}catch{}
           }
-          return response;
+          return next;
         }catch{return null}
       })();
-
-      // Stale-while-revalidate para navegação: páginas já visitadas abrem do
-      // dispositivo imediatamente, enquanto a versão nova é buscada em background.
-      if(cached){
-        event.waitUntil(network);
-        return cached;
-      }
-      const response=await network;
       if(response)return response;
       const offlineCenter=await cache.match("/offline");
       if(offlineCenter)return offlineCenter;
