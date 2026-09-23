@@ -20,12 +20,14 @@ export default async function FixacaoPage({searchParams}){
   const publication=String(q?.publicacao||"").trim();
   const planDate=String(q?.plan_date||"").trim();
   const taskKey=String(q?.task_key||"").trim();
+  const pages=Math.max(0,Number(q?.paginas||0));
+  const fixationCount=Math.max(6,Math.min(30,pages?Math.round(pages*1.25):12));
 
   if(!subject||!bibliographyKey||!sectionKey)redirect("/plano-de-estudos");
 
   const result=await createNotebook(session.id,{
     subjects:[subject],
-    count:entitlement.trial?10:100,
+    count:entitlement.trial?Math.min(10,fixationCount):fixationCount,
     fixation:{
       bibliography_key:bibliographyKey,
       section_key:sectionKey,
