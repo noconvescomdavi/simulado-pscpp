@@ -32,7 +32,7 @@ const structuralIssues=q=>{
  const comboAssertions=options.some(o=>/^(?:apenas\s+)?(?:I|II|III|IV|V)(?:\s*[,e]\s*(?:I|II|III|IV|V))+/i.test(String(typeof o==='string'?o:o?.text||'').trim()));
  const vfOptions=options.some(o=>/^(?:\(\s*[VF]\s*\)\s*){2,}/i.test(String(typeof o==='string'?o:o?.text||'').trim()));
  if((comboAssertions||vfOptions)&&assertionCount<2)issues.push('MISSING_ASSERTIONS');
- if(/<\s*PARSED TEXT FOR PAGE|PARSED TEXT FOR PAGE|\[object Object\]/i.test(stem+' '+blob))issues.push('PARSING_ARTIFACT');
+ if(/<\s*PARSED TEXT FOR PAGE|PARSED TEXT FOR PAGE|\[object Object\]|\b(?:cacacarga|gragragrande|popopor|uu+um|tututubo|descacacarga|lugapopor|quadrangulapopor|ofjloatation)\b|\(art\.\s*\d+(?:\.\d+)?\}|\{[A-Z]\)/i.test(stem+' '+blob))issues.push('PARSING_ARTIFACT');
  if(/\bcorrelacione\b/i.test(stem)&&!/(?:\n|Coluna\s+I|1\))/i.test(stem))issues.push('MALFORMED_CORRELATION');
  if(options.length!==5)issues.push('OPTION_COUNT_'+options.length);
  const texts=options.map(o=>String(typeof o==='string'?o:o?.text||'').trim());
