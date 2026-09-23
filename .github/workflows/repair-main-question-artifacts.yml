@@ -26,7 +26,7 @@ jobs:
       - name: Audit repaired working tree
         env:
           QUESTIONS_MAIN_ONLY: "1"
-        run: node scripts/audit-full-question-bank.mjs || true
+        run: node scripts/audit-full-question-bank.mjs
       - name: Commit validated repaired banks
         shell: bash
         run: |
