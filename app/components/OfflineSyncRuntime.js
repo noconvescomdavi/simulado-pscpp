@@ -62,7 +62,7 @@ export default function OfflineSyncRuntime(){
     window.addEventListener("offline",onOffline);
     navigator.serviceWorker?.addEventListener("message",onMessage);
     const syncTimer=setInterval(()=>{if(navigator.onLine)sync()},60_000);
-    const preloadTimer=setInterval(()=>{if(navigator.onLine)preload()},15*60_000);
+    const preloadTimer=setInterval(()=>{if(navigator.onLine)preload()},6*60*60_000);
     if(navigator.onLine){
       // Não disputar CPU/rede com a primeira pintura/hidratação.
       // A fila será sincronizada pelo timer ou imediatamente quando a conexão voltar.
