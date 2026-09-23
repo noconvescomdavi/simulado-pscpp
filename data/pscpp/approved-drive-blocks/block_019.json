@@ -2162,8 +2162,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "arte-naval",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_irrecoverable_source_mismatch",
       "question": "Correlacione os termos às respectivas descrições, com base em FONSECA, Maurílio M. - Arte Naval, Volume 2: Considere o contexto específico identificado por ANV-B019-07.\n\nCOLUNA A\n1) anete\n2) polé\n3) grampo para cabo de aço\n4) boça da amarra\n\nCOLUNA B\na) Apenas as afirmativas I e II são verdadeiras.\nb) Apenas as afirmativas III e IV são verdadeiras.\nc) Apenas as afirmativas II e III são verdadeiras.\nd) Apenas as afirmativas I e III são verdadeiras.",
       "assertions": [
         "1) anete",
@@ -2275,7 +2275,9 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "ANV-B019-07",
         "source_block": 19
-      }
+      },
+      "quarantine_reason": "Questão de correlação contém descrições incompatíveis/contaminadas e os metadados bibliográficos não sustentam os termos apresentados; reconstrução segura exigiria inventar conteúdo ou referência.",
+      "editorial_status": "QUARENTENA_IRRECUPERÁVEL"
     },
     {
       "id": "ANV-B019-08",
