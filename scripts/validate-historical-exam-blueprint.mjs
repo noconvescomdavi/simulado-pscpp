@@ -18,7 +18,11 @@ const generatedBatchQuestions = fs.existsSync(generatedBatchDirectory)
     .flatMap((file) => JSON.parse(fs.readFileSync(new URL(file, generatedBatchDirectory), "utf8")).questions || [])
   : [];
 
-const sampleOfficial = officialExams.questions.filter((question) => !question.annulled);\nconst activeOfficial = sampleOfficial.filter((question) => question.active !== false);\nassert.equal(sampleOfficial.length, HISTORICAL_SAMPLE.valid_questions);\n\nconst observed = Object.fromEntries(Object.keys(HISTORICAL_SUBJECT_COUNTS).map((subject) => [subject, 0]));
+const sampleOfficial = officialExams.questions.filter((question) => !question.annulled);
+const activeOfficial = sampleOfficial.filter((question) => question.active !== false);
+assert.equal(sampleOfficial.length, HISTORICAL_SAMPLE.valid_questions);
+
+const observed = Object.fromEntries(Object.keys(HISTORICAL_SUBJECT_COUNTS).map((subject) => [subject, 0]));
 for (const question of sampleOfficial) observed[historicalSubject(question)] += 1;
 assert.deepEqual(observed, HISTORICAL_SUBJECT_COUNTS, "A classificação histórica divergiu da amostra oficial");
 
