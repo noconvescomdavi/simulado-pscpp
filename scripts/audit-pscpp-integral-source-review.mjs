@@ -67,7 +67,7 @@ report.pscpp_runtime_sources={}; report.totals.runtime_questions=0; report.total
 for(const [name,file] of pscppSources){
  if(!fs.existsSync(file))continue;
  const bank=JSON.parse(fs.readFileSync(file,'utf8')); const rows=[];
- for(const q of bank.questions||[]){const issues=structuralIssues(q);const state=questionQualityState(q);report.totals.runtime_questions++;if(!state.active)report.totals.runtime_inactive++;if(issues.length){report.totals.runtime_structural_issues+=issues.length;if(state.active)report.totals.runtime_active_structural_issues+=issues.length;rows.push({id:q.id,issues,state});}}
+ for(const q of bank.questions||[]){const issues=structuralIssues(q);const quality=questionQualityState(q);const state={...quality,active:quality.active&&issues.length===0,reason:!quality.active?quality.reason:(issues.length?"runtime-structural-quarantine":null)};report.totals.runtime_questions++;if(!state.active)report.totals.runtime_inactive++;if(issues.length){report.totals.runtime_structural_issues+=issues.length;if(state.active)report.totals.runtime_active_structural_issues+=issues.length;rows.push({id:q.id,issues,state});}}
  report.pscpp_runtime_sources[name]={questions:(bank.questions||[]).length,flagged:rows.length,review_ids:rows};
 }
 fs.writeFileSync(out,JSON.stringify(report,null,2)+'\n');
