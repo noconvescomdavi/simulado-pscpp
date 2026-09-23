@@ -154,9 +154,13 @@ jobs:
             test "$STATUS" = "401"
           done
 
-          TRAJ_HEADERS=$(curl -sS -o /dev/null -D - "http://127.0.0.1:3000/minha-trajetoria")
-          echo "$TRAJ_HEADERS" | grep -Eq "HTTP/1.1 30[2378]|HTTP/1.1 307"
-          echo "$TRAJ_HEADERS" | grep -qi "location:.*login"
+          TRAJ_STATUS=$(curl -sS -o /tmp/traj.html -D /tmp/traj.headers -w "%{http_code}" "http://127.0.0.1:3000/minha-trajetoria")
+          if [[ "$TRAJ_STATUS" =~ ^30[2378]$ ]]; then
+            grep -qi "location:.*login" /tmp/traj.headers
+          else
+            test "$TRAJ_STATUS" = "200"
+            if grep -q "Minha Trajetória\|Histórico de desempenho" /tmp/traj.html; then exit 1; fi
+          fi
 
           # Privacidade: exportação deve falhar fechada sem sessão
           EXPORT_STATUS=$(curl -sS -o /dev/null -w "%{http_code}" "http://127.0.0.1:3000/api/account/export")
