@@ -34,7 +34,7 @@ for (const [index, question] of questions.entries()) {
   const inactive=question.active===false||["inactive","deactivated","quarantined"].includes(String(question.status||"").toLowerCase());\n  const stem = normalize(question.question);
   if (!stem) errors.push(`${question.id}: enunciado vazio`);
   if (stems.has(stem) && !inactive) errors.push(`${question.id}: enunciado repetido`);
-  stems.add(stem);
+  if(!inactive) stems.add(stem);
 
   if (!question.tracking?.work?.id || !question.tracking?.work?.title) {
     errors.push(`${question.id}: rastreio de obra incompleto`);
