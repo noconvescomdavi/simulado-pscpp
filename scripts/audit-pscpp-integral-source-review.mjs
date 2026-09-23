@@ -47,7 +47,7 @@ const structuralIssues=q=>{
  if(roman.length>=2&&!/[\n\r]/.test(stem))issues.push('ASSERTIONS_FLATTENED_IN_STEM');
  return issues;
 };
-const report={generated_at:new Date().toISOString(),subjects:{},totals:{questions:0,active:0,quarantined:0,legacy:0,template_risk:0,answer_explanation_mismatch:0,active_unsafe:0}};
+const report={generated_at:new Date().toISOString(),subjects:{},runtime_inventory:[],totals:{questions:0,active:0,quarantined:0,legacy:0,template_risk:0,answer_explanation_mismatch:0,active_unsafe:0}};
 for(const subject of subjects){
  const bank=JSON.parse(fs.readFileSync(path.join(dir,subject+'.json'),'utf8'));
  const rows=[]; let active=0,quarantined=0,legacyCount=0,template=0,mismatch=0,activeUnsafe=0;
@@ -69,7 +69,32 @@ report.pscpp_runtime_sources={}; report.totals.runtime_questions=0; report.total
 for(const [name,file] of pscppSources){
  if(!fs.existsSync(file))continue;
  const bank=JSON.parse(fs.readFileSync(file,'utf8')); const rows=[];
- for(const q of bank.questions||[]){const issues=structuralIssues(q);const quality=questionQualityState(q);const state={...quality,active:quality.active&&issues.length===0,reason:!quality.active?quality.reason:(issues.length?"runtime-structural-quarantine":null)};report.totals.runtime_questions++;if(!state.active)report.totals.runtime_inactive++;if(issues.length){report.totals.runtime_structural_issues+=issues.length;if(state.active)report.totals.runtime_active_structural_issues+=issues.length;rows.push({id:q.id,issues,state});}}
+ for(const q of bank.questions||[]){
+  const issues=structuralIssues(q);
+  const quality=questionQualityState(q);
+  const baseActive=quality.active;
+  const effectiveActive=baseActive&&issues.length===0;
+  const state={...quality,active:effectiveActive,reason:!baseActive?quality.reason:(issues.length?"runtime-structural-quarantine":null)};
+  report.totals.runtime_questions++;
+  if(!effectiveActive)report.totals.runtime_inactive++;
+  if(issues.length){
+    report.totals.runtime_structural_issues+=issues.length;
+    if(baseActive)report.totals.runtime_active_structural_issues+=issues.length;
+    rows.push({id:q.id,issues,state});
+  }
+  report.runtime_inventory.push({
+    source_name:name,source_file:path.relative(root,file),id:q.id||null,
+    subject:q.subject||q.discipline||null,topic:q.topic||q.subtopic||null,
+    bibliography_id:q.bibliography_id||q?.source?.bibliography_id||null,
+    chapter_id:q.chapter_id||q?.source?.chapter_id||null,
+    question:q.question||"",assertions:Array.isArray(q.assertions)?q.assertions:[],
+    options:Array.isArray(q.options)?q.options:[],correct_answer:q.correct_answer||q.answer||null,
+    explanation:q.explanation||null,source:q.source||null,provenance:q.provenance||null,
+    validation_status:q.validation_status||null,explicit_active:q.active!==false,
+    quality_state:quality,issues,effective_active:effectiveActive,
+    editorial_status:issues.length?"REVIEW_REQUIRED":(effectiveActive?"APROVADA_AUTOMATICA":"REVIEW_INACTIVE")
+  });
+ }
  report.pscpp_runtime_sources[name]={questions:(bank.questions||[]).length,flagged:rows.length,review_ids:rows};
 }
 fs.writeFileSync(out,JSON.stringify(report,null,2)+'\n');
