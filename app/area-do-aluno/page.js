@@ -25,9 +25,9 @@ export default async function Area(){
   if(!session)redirect("/login");
 
   const [access,progress,performance,profile,recentExams,dailyPlan,consistency,studentIntel]=await Promise.all([
-    cachedAccess(session.id),
-    query("select subject,percent from study_progress where user_id=$1",[session.id]),
-    getUserMetrics(session.id),
+    cachedAccess(session.id).catch(()=>({active:false})),
+    query("select subject,percent from study_progress where user_id=$1",[session.id]).catch(()=>({rows:[]})),
+    getUserMetrics(session.id).catch(()=>({overall:{attempts:0,questions:0,accuracy:0},subjects:[]})),
     query("select full_name from user_profiles where user_id=$1 limit 1",[session.id]).catch(()=>({rows:[]})),
     query("select id,subject,status,answered_count,correct_count,started_at from exam_sessions where user_id=$1 order by started_at desc limit 4",[session.id]).catch(()=>({rows:[]})),
     getIntegratedStudyPlan(session.id,0).then((master)=>{
@@ -63,8 +63,8 @@ export default async function Area(){
         master_readiness:master.readiness,
         first_pass:master.first_pass
       };
-    }),
-    getConsistency(session.id),
+    }).catch(()=>null),
+    getConsistency(session.id).catch(()=>({streak:0,study_days:0,badges:[]})),
     getStudentInsights(session.id).catch(()=>({insights:[],due:0}))
   ]);
 
