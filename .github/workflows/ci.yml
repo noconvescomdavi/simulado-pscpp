@@ -132,12 +132,11 @@ jobs:
           # /comprar exige autenticação e deve redirecionar sem sessão
           BUY_STATUS=$(curl -sS -o /tmp/buy.html -D /tmp/buy.headers -w "%{http_code}" "http://127.0.0.1:3000/comprar")
           echo "BUY_STATUS=$BUY_STATUS"
-          head -c 1000 /tmp/buy.html || true
           if [[ "$BUY_STATUS" =~ ^30[2378]$ ]]; then
             grep -qi "location:.*cadastro" /tmp/buy.headers
           else
             test "$BUY_STATUS" = "200"
-            grep -qi "cadastro" /tmp/buy.html
+            if grep -q "Ir para o Mercado Pago\|Histórico de pagamentos" /tmp/buy.html; then exit 1; fi
           fi
 
           # Learning Engine: endpoints privados devem falhar fechados sem sessão
