@@ -3,7 +3,6 @@ import { redirect } from "next/navigation";
 import { getSession } from "../../lib/auth";
 import { getEntitlement } from "../../lib/entitlement";
 import { getIntegratedStudyPlan } from "../../lib/integrated-study-plan";
-import { getAdaptiveStudySnapshot } from "../../lib/learning-engine";
 import StudentHeader from "../components/StudentHeader";
 import TrackedStudyLink from "../components/TrackedStudyLink";
 import TodayExamCountdown from "./TodayExamCountdown";
@@ -18,7 +17,7 @@ export default async function HojePage() {
   const entitlement = await getEntitlement(session.id);
   if (!entitlement.active && !entitlement.trial) redirect("/comprar?locked=inactive");
 
-  const [integrated,adaptive] = await Promise.all([getIntegratedStudyPlan(session.id,0),getAdaptiveStudySnapshot(session.id)]);
+  const integrated = await getIntegratedStudyPlan(session.id,0);
   if(integrated.needs_onboarding) redirect("/plano-de-estudos/configurar");
   const todayIso=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Sao_Paulo",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
   const today=integrated.week.days.find(d=>d.iso===todayIso);
@@ -47,7 +46,7 @@ export default async function HojePage() {
         <TodayExamCountdown />
 
         <section className={styles.tasks} aria-label="Próxima sessão recomendada">
-          {adaptive.high_forgetting_risk>0&&<p className={styles.adaptiveNote}>{adaptive.high_forgetting_risk} tópico{adaptive.high_forgetting_risk===1?"":"s"} com risco alto de esquecimento · {adaptive.due_for_review} revisão{adaptive.due_for_review===1?"":"ões"} vencida{adaptive.due_for_review===1?"":"s"}.</p>}
+          
           {plan.tasks.map((task, index) => (
             <TrackedStudyLink href={task.href||"/plano-de-estudos"} className={styles.task} task={{...task,plan_date:todayIso,source:"today"}} key={`${task.type}-${index}`}>
               <div className={styles.order}>{index + 1}</div>
