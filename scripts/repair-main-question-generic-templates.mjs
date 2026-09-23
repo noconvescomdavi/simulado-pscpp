@@ -12,3 +12,5 @@ function rewrite(q,s){const src=title(q),loc=locator(q),ctx=loc?src+" — "+loc:
 let scanned=0,changed=0;const changes=[];
 for(const name of files){const p=path.join(dir,name),data=JSON.parse(fs.readFileSync(p,"utf8")),arr=Array.isArray(data)?data:data.questions;if(!Array.isArray(arr))continue;let fc=0;for(const q of arr){scanned++;const k=typeof q.question==="string"?"question":typeof q.stem==="string"?"stem":null;if(!k||!batchIds.has(q.id)||!generic.test(q[k]))continue;const before=q[k],after=rewrite(q,before);if(after!==before){q[k]=after;changed++;fc++;changes.push({file:name,id:q.id,before,after})}}if(fc)fs.writeFileSync(p,JSON.stringify(data,null,2)+"\n")}
 fs.mkdirSync("reports",{recursive:true});fs.writeFileSync("reports/generic-template-repair.json",JSON.stringify({questions_scanned:scanned,questions_changed:changed,changes},null,2)+"\n");console.log(JSON.stringify({questions_scanned:scanned,questions_changed:changed},null,2));
+
+// Batch repair validation trigger: 2026-09-22
