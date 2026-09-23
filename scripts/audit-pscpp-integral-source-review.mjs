@@ -6,6 +6,7 @@ const root=process.cwd();
 const dir=path.join(root,'data','questions');
 const pscppDir=path.join(root,'data','pscpp');
 const out=path.join(root,'reports','pscpp-integral-source-review.json');
+fs.mkdirSync(path.dirname(out),{recursive:true});
 const subjects=['arte-naval','manobrabilidade','navegacao-aguas-restritas','legislacao-regulamentacao','meteorologia-oceanografia','comunicacoes','conhecimentos-gerais'];
 const badPhrases=[
   /problema-base/i,/caracteriza[cç][aã]o tecnicamente correta/i,
