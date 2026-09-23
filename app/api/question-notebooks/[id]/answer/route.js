@@ -21,7 +21,8 @@ export async function POST(r,{params}){
     notebookId:id,
     subject:b.subject,
     questionId:b.question_id,
-    selectedAnswer:b.selected_answer
+    selectedAnswer:b.selected_answer,
+    responseTimeMs:b.response_time_ms
   });
 
   if(x?.ok){
