@@ -1,7 +1,10 @@
 import fs from "node:fs";import path from "node:path";
 const dir=path.join(process.cwd(),"data/questions"),files=fs.readdirSync(dir).filter(x=>x.endsWith(".json"));
 const generic=/(caracteriza[cç][aã]o tecnicamente correta|problema-base|a bibliografia atribui|conceito da unidade|descri[cç][aã]o t[eé]cnica a seguir)/i;
-const batchIds=new Set(Array.from({length:50},(_,i)=>`ANV-${String(301+i).padStart(4,"0")}`));
+const batches=[
+  [301,350],[351,400],[401,450],[451,500],[501,550],[551,600],[601,608]
+];
+const batchIds=new Set(batches.flatMap(([a,b])=>Array.from({length:b-a+1},(_,i)=>`ANV-${String(a+i).padStart(4,"0")}`)));
 const title=q=>String(q?.source?.title||q?.source?.work||q?.bibliography||q?.taxonomy?.bibliography||"a bibliografia indicada").trim();
 const locator=q=>String(q?.source?.locator||q?.source?.section||q?.taxonomy?.section_key||"").replace(/,?\s*trecho\s*\d+/gi,"").replace(/,?\s*\bp\.?\s*\d+(?:\s*[-–]\s*\d+)?(?:\s*do arquivo fornecido)?/gi,"").replace(/\b(?:do|no)\s+arquivo fornecido\b/gi,"").replace(/\s+,/g,",").replace(/,\s*,/g,", ").replace(/\s{2,}/g," ").trim().replace(/^,|,$/g,"").trim();
 function operator(s){if(/\bEXCETO\b/i.test(s))return"EXCETO";if(/\bINCORRETA\b/i.test(s))return"INCORRETA";if(/\bINCORRETO\b/i.test(s))return"INCORRETO";if(/\bN[AÃ]O\b/i.test(s))return"NÃO";return""}
