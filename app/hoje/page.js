@@ -22,7 +22,9 @@ export default async function HojePage() {
   if(integrated.needs_onboarding) redirect("/plano-de-estudos/configurar");
   const todayIso=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Sao_Paulo",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
   const today=integrated.week.days.find(d=>d.iso===todayIso);
-  const tasks=today?.tasks||[];\n  const plannedMinutes=tasks.reduce((sum,t)=>sum+Number(t.estimate_minutes||0),0);\n  const plan={tasks,goal:{daily_minutes:integrated.onboarding.daily_minutes},weak_topics:integrated.tracking?.weakest_topics||[],total_question_bank:integrated.metrics.total_question_bank||integrated.metrics.overall?.questions||0,study_time:integrated.tracking?.study_time||{},mastery:integrated.tracking?.overall_mastery||0};
+  const tasks=today?.tasks||[];
+  const plannedMinutes=tasks.reduce((sum,t)=>sum+Number(t.estimate_minutes||0),0);
+  const plan={tasks,goal:{daily_minutes:integrated.onboarding.daily_minutes},weak_topics:integrated.tracking?.weakest_topics||[],total_question_bank:integrated.metrics.total_question_bank||integrated.metrics.overall?.questions||0,study_time:integrated.tracking?.study_time||{},mastery:integrated.tracking?.overall_mastery||0};
 
   return (
     <>
