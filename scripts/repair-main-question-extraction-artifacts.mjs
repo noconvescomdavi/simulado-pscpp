@@ -5,7 +5,7 @@ const cleanText=s=>String(s??"")
  .replace(/<\s*PARSED TEXT FOR PAGE[^>]*>/gi," ")
  .replace(/PARSED TEXT FOR PAGE\s*:?\s*\d*/gi," ")
  .replace(/,?\s*trecho\s*\d+\s*,?/gi,", ")
- .replace(/,?\s*p\.?\s*\d+(?:\s*[-–]\s*\d+)?\s*(?:do arquivo fornecido)?\s*,?/gi,", ")
+ .replace(/,?\s*\bp\.?\s*\d+(?:\s*[-–]\s*\d+)?\s*(?:do arquivo fornecido)?\s*,?/gi,", ")
  .replace(/\b(?:do|no|extra[ií]do do)\s+arquivo fornecido\b/gi,"")
  .replace(/\b(?:texto|conte[uú]do)\s+extra[ií]do\b/gi,"")
  .replace(/\s+,/g,",").replace(/,\s*,/g,", ").replace(/\s{2,}/g," ").replace(/\s+([.;:!?])/g,"$1").trim();
