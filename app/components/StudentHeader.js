@@ -5,7 +5,6 @@ import { getSession } from "../../lib/auth";
 import { query } from "../../lib/db";\nimport {unstable_cache} from "next/cache";
 import styles from "./student-header.module.css";
 import StudySessionTracker from "./StudySessionTracker";
-import OfflineSyncStatus from "./OfflineSyncStatus";
 import StudentMobileMenu from "./StudentMobileMenu";
 
 const cachedProfileName=unstable_cache(async(userId)=>{\n  const profile=await query("select full_name from user_profiles where user_id=$1 limit 1",[userId]);\n  return profile.rows[0]?.full_name||null;\n},["student-header-profile"],{revalidate:300});\n\nfunction Menu({ active = "" }) {
@@ -79,7 +78,6 @@ const cachedProfileName=unstable_cache(async(userId)=>{\n  const profile=await q
       <Link className={active === "ranking" ? styles.active : ""} href="/ranking"><span className={styles.icon}>★</span><span>Ranking</span></Link>
       <Link href="/conquistas"><span className={styles.icon}>✦</span><span>Conquistas</span></Link>
       <Link className={active === "assinaturas" ? styles.active : ""} href="/minhas-assinaturas"><span className={styles.icon}>♛</span><span>Minhas Assinaturas</span></Link>
-      <Link className={active === "offline" ? styles.active : ""} href="/offline"><span className={styles.icon}>⇄</span><span>Modo Offline</span></Link>
       <Link className={active === "suporte" ? styles.active : ""} href="/suporte"><span className={styles.icon}>✉</span><span>Suporte</span></Link>
       <div className={styles.divider} />
       <Link href="/"><span className={styles.icon}>◈</span><span>Home</span></Link>
@@ -158,7 +156,6 @@ export default async function StudentHeader({ active = "" }) {
         </form>
 
         <div className={styles.topActions}>
-          <OfflineSyncStatus />
           <Link href="/minhas-assinaturas" title="Minhas Assinaturas">♛</Link>
           <Link href="/perfil" title="Meu Perfil">{displayName.slice(0, 1).toUpperCase()}</Link>
         </div>
