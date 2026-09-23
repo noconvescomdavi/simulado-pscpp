@@ -6,9 +6,7 @@ import {getUserMetrics} from "../../lib/metrics";
 import {normalizeSubject,subjectLabel} from "../../lib/subjects";
 import StudentHeader from "../components/StudentHeader";
 import ExamCountdown from "../components/ExamCountdown";
-import DailyStudyPlan from "./DailyStudyPlan";
 import {getConsistency} from "../../lib/engagement";\nimport {getLearningProfile} from "../../lib/learning-engine";
-import {getIntegratedStudyPlan} from "../../lib/integrated-study-plan";
 import {getStudentInsights} from "../../lib/student-insights";
 import { unstable_cache } from "next/cache";
 import "./dashboard.css";
@@ -71,15 +69,9 @@ export default async function Area(){
           <ExamCountdown/>
         </section>
 
-        <section className="commandDeck"><div><span>PRÓXIMA MISSÃO</span><h2>{"Abra o Plano de Hoje"}</h2><p>{"Seu plano detalhado é carregado somente quando você abre a área de estudo, reduzindo consumo e melhorando o painel."}</p><a href="/hoje">Continuar agora →</a></div><div className="commandSignals"><span><b>{readiness}</b> prontidão</span><span><b>{studentIntel?.due||0}</b> revisões agora</span><span><b>{0}</b> pendências</span></div></section>
+        <section className="commandDeck"><div><span>PRÓXIMA MISSÃO</span><h2>Abra o Plano de Hoje</h2><p>Leitura, fixação e revisão são carregadas sob demanda para manter o painel rápido.</p><a href="/hoje">Continuar agora →</a></div><div className="commandSignals"><span><b>{readiness}</b> prontidão</span><span><b>{studentIntel?.due||0}</b> revisões agora</span></div></section>
 
-        <section className="studentFocusGrid">
-          <article><span>PRÓXIMO PASSO</span><strong>{0}/{0} tarefas</strong><small>{false?"Priorize o plano de hoje antes de abrir novas frentes.":"Configure seu plano para receber uma rota diária."}</small><a href="/hoje">Abrir plano de hoje →</a></article>
-          <article><span>RITMO DA PREPARAÇÃO</span><strong>{100}% de aderência</strong><small>{0} pendência(s) em aberto.</small><a href="/minha-trajetoria">Ver trajetória →</a></article>
-          <article><span>PONTO DE ATENÇÃO</span><strong>{weakest?weakest.label:"Aguardando dados"}</strong><small>{weakest?weakest.accuracy+"% de acerto — maior oportunidade de ganho.":"Responda questões para gerar o diagnóstico."}</small><a href="/analise-de-fraquezas">Abrir análise →</a></article>
-        </section>
-
-        <DailyStudyPlan initialPlan={null}/>
+        <section className="studentFocusGrid"><article><span>PLANO DO DIA</span><strong>Carregamento sob demanda</strong><small>Abra a área Hoje para montar as tarefas atuais sem recalcular o plano em toda visita ao painel.</small><a href="/hoje">Abrir plano de hoje →</a></article><article><span>PONTO DE ATENÇÃO</span><strong>{weakest?weakest.label:"Aguardando dados"}</strong><small>{weakest?weakest.accuracy+"% de acerto — maior oportunidade de ganho.":"Responda questões para gerar o diagnóstico."}</small><a href="/treino-inteligente">Abrir treino →</a></article></section>\n\n
 
         <section className="insightsPanel"><div className="sectionTitle"><div><h2>ESTIBORDO Insights</h2><p>O que seus dados sugerem fazer em seguida.</p></div><a href="/centro-de-revisao">Centro de Revisão →</a></div><div className="insightsGrid">{(studentIntel?.insights||[]).map((insight,index)=><a href={insight.href} key={index}><span>{insight.kind}</span><strong>{insight.title}</strong><p>{insight.text}</p><b>{insight.action} →</b></a>)}{!(studentIntel?.insights||[]).length&&<article><strong>Continue estudando</strong><p>Assim que houver dados suficientes, seus padrões e recomendações aparecerão aqui.</p></article>}</div></section>
 
@@ -115,7 +107,7 @@ export default async function Area(){
             <article><i>▤</i><div><span>Questões</span><strong>{fmt(performance.overall.questions)}</strong><small>Respondidas</small></div></article>
             <article><i>▥</i><div><span>Aproveitamento</span><strong>{performance.overall.accuracy}%</strong><small>Média geral</small></div></article>
             <article><i>◷</i><div><span>Progresso</span><strong>{overall}%</strong><small>Conteúdo estudado</small></div></article>
-            <article><i>◎</i><div><span>Domínio estimado</span><strong>{Math.round(Number(mastery))}%</strong><small>Mastery Score</small></div></article>
+            <article><i>◎</i><div><span>Domínio estimado</span><strong>{Math.round(mastery)}%</strong><small>Mastery Score</small></div></article>
             <article><i>◴</i><div><span>Tempo real</span><strong>{0} min</strong><small>Últimos 7 dias</small></div></article>
           </div>
         </section>
