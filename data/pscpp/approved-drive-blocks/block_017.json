@@ -1944,8 +1944,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "arte-naval",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_irrecoverable_source_mismatch",
       "question": "Correlacione os termos às respectivas descrições, com base em Mooring and Anchoring Ships: Principles and Practice:\n\nCOLUNA A\n1) Mooring and Anchoring Ships: Principles and Practice, v. 1\n2) Mooring and Anchoring Ships: Principles and Practice, v. 1\n3) Mooring and Anchoring Ships: Principles and Practice, v. 1\n4) Mooring and Anchoring Ships: Principles and Practice, v. 1\n\nCOLUNA B\na) ( F ) ( F ) ( V ) ( V )\nb) stockless anchor\nc) A definição técnica “elo desmontável usado para unir quartéis de amarra” corresponde a “Kenter shackle”.\nd) carga de ensaio aplicada para demonstrar resistência estrutural",
       "assertions": [
         "1) Mooring and Anchoring Ships: Principles and Practice, v. 1",
@@ -2057,7 +2057,9 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "ANV-B017-05",
         "source_block": 17
-      }
+      },
+      "quarantine_reason": "Correlação contém termos/descrições incompatíveis entre si e com o localizador bibliográfico registrado; reconstrução segura exigiria criar conteúdo não presente no item original.",
+      "editorial_status": "QUARENTENA_IRRECUPERÁVEL"
     },
     {
       "id": "ANV-B017-06",
