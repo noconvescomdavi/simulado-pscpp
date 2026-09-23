@@ -55,7 +55,9 @@ jobs:
       - name: Integral final bank audit
         run: npm run audit:pscpp:final
       - name: Complete source-layer quality gate
-        run: node --experimental-specifier-resolution=node scripts/audit-pscpp-integral-source-review.mjs
+        run: |
+          sed -i 's|from "./question-quality";|from "./question-quality.js";|' lib/question-quality-policy.js
+          node scripts/audit-pscpp-integral-source-review.mjs
       - name: Upload integral audit report
         if: always()
         uses: actions/upload-artifact@v4
