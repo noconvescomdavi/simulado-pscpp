@@ -104,6 +104,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
   const [now, setNow] = useState(Date.now());
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
+  const [pauseBusy, setPauseBusy] = useState(false);
   const [filters, setFilters] = useState({ ...EMPTY_QUESTION_FILTERS });
   const [focusMode, setFocusMode] = useState(false);
   const assessmentRef = useRef(null);
@@ -303,9 +304,9 @@ export default function Client({ subject, title, ready, facets, planTask }) {
   }
 
   async function togglePause() {
-    if (!exam || busy) return;
+    if (!exam || pauseBusy) return;
     const action = paused ? "resume" : "pause";
-    setBusy(true);
+    setPauseBusy(true);
     setError("");
     try {
       if (!navigator.onLine || state?.offline) {
@@ -330,7 +331,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
     } catch (error) {
       setError(error.message || "Não foi possível atualizar a pausa do simulado.");
     } finally {
-      setBusy(false);
+      setPauseBusy(false);
     }
   }
 
@@ -435,7 +436,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
       <div className={styles.assessmentToolbar}>
         <div><strong>Questão {index + 1} de {exam.questions.length}</strong><span>{Object.keys(answerMap).length} respondidas</span></div>
         <div className={styles.toolbarActions}>
-          <button type="button" onClick={togglePause} disabled={busy}>{paused ? "Continuar Simulado" : "Pausar Simulado"}</button>
+          <button type="button" onClick={togglePause} disabled={pauseBusy}>{pauseBusy ? "Aguarde…" : paused ? "Continuar Simulado" : "Pausar Simulado"}</button>
           <button type="button" onClick={toggleFocusMode}>{focusMode ? "Sair da tela cheia" : "⛶ Full Screen"}</button>
         </div>
       </div>
