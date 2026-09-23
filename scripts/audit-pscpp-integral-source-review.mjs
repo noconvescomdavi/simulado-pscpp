@@ -43,7 +43,8 @@ const structuralIssues=q=>{
  const wordset=t=>new Set(t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,' ').split(/\s+/).filter(w=>w.length>=4));
  const sim=(a,b)=>{const A=wordset(a),B=wordset(b);if(!A.size||!B.size)return 0;let n=0;for(const w of A)if(B.has(w))n++;return n/Math.min(A.size,B.size)};
  const answer=String(q.correct_answer||q.answer||'').trim().toUpperCase(); const ci=/^[A-E]$/.test(answer)?answer.charCodeAt(0)-65:-1;
- if(ci>=0&&texts[ci]){const ss=texts.map(t=>sim(stem,t));const order=[...ss].sort((a,b)=>b-a);if(ss[ci]===order[0]&&order[0]-Number(order[1]||0)>=.28)issues.push('ANSWER_LEAK_OR_SIMILARITY_CUE');
+ const format=String(q.pscpp_format||q.format||'').toLowerCase(); const semanticHeuristicsApplicable=q.origin!=='official_exam'&&!comboAssertions&&!vfOptions&&!['correlation','true_false','assertion_combination'].includes(format);
+ if(ci>=0&&texts[ci]&&semanticHeuristicsApplicable){const ss=texts.map(t=>sim(stem,t));const order=[...ss].sort((a,b)=>b-a);if(ss[ci]===order[0]&&order[0]-Number(order[1]||0)>=.28)issues.push('ANSWER_LEAK_OR_SIMILARITY_CUE');
  const cross=texts.map((t,i)=>i===ci?1:sim(texts[ci],t));if(cross.filter((v,i)=>i!==ci&&v<.08).length>=3)issues.push('WEAK_OR_HETEROGENEOUS_DISTRACTORS');
  const lens=texts.map(t=>wordset(t).size).sort((a,b)=>a-b),median=lens[Math.floor(lens.length/2)]||1;if(wordset(texts[ci]).size>Math.max(median*1.8,median+10))issues.push('ANSWER_LENGTH_CUE');}
  const roman=inlineAssertionLabels;const expectedRoman=['I','II','III','IV','V'];if(roman.length>=2&&roman.some((label,index)=>label!==expectedRoman[index]))issues.push('ASSERTION_NUMBERING_FORMAT');
