@@ -46,7 +46,7 @@ const structuralIssues=q=>{
  if(ci>=0&&texts[ci]){const ss=texts.map(t=>sim(stem,t));const order=[...ss].sort((a,b)=>b-a);if(ss[ci]===order[0]&&order[0]-Number(order[1]||0)>=.28)issues.push('ANSWER_LEAK_OR_SIMILARITY_CUE');
  const cross=texts.map((t,i)=>i===ci?1:sim(texts[ci],t));if(cross.filter((v,i)=>i!==ci&&v<.08).length>=3)issues.push('WEAK_OR_HETEROGENEOUS_DISTRACTORS');
  const lens=texts.map(t=>wordset(t).size).sort((a,b)=>a-b),median=lens[Math.floor(lens.length/2)]||1;if(wordset(texts[ci]).size>Math.max(median*1.8,median+10))issues.push('ANSWER_LENGTH_CUE');}
- const roman=inlineAssertionLabels;if(roman.length>=2&&new Set(roman).size!==roman.length)issues.push('ASSERTION_NUMBERING_FORMAT');
+ const roman=inlineAssertionLabels;const expectedRoman=['I','II','III','IV','V'];if(roman.length>=2&&roman.some((label,index)=>label!==expectedRoman[index]))issues.push('ASSERTION_NUMBERING_FORMAT');
  if(roman.length>=2&&!/[\n\r]/.test(stem))issues.push('ASSERTIONS_FLATTENED_IN_STEM');
  return issues;
 };
