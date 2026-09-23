@@ -26,10 +26,12 @@ const structuralIssues=q=>{
  const stem=String(q.question||''); const assertions=Array.isArray(q.assertions)?q.assertions:[]; const options=Array.isArray(q.options)?q.options:[];
  const blob=options.map(o=>String(typeof o==='string'?o:o?.text||'')).join(' ');
  const issues=[];
- const inlineAssertionLabels=[...stem.matchAll(/(?:^|\n|\s)(I{1,3}|IV|V)\s*[).:-]/g)].map(m=>m[1]);
- const assertionCount=Math.max(assertions.length,new Set(inlineAssertionLabels).size);
+ const inlineAssertionLabels=[...stem.matchAll(/(?:^|\n|\s)\(?\s*(I|II|III|IV|V)\s*\)?\s*[.:-]?\s+/g)].map(m=>m[1]);
+ const vfBulletCount=(stem.match(/\(\s*\)\s+/g)||[]).length;
+ const assertionCount=Math.max(assertions.length,new Set(inlineAssertionLabels).size,vfBulletCount);
  const comboAssertions=options.some(o=>/^(?:apenas\s+)?(?:I|II|III|IV|V)(?:\s*[,e]\s*(?:I|II|III|IV|V))+/i.test(String(typeof o==='string'?o:o?.text||'').trim()));
- if((/analis[ea].*(afirmativ|assertiv)|identifique.*(?:verdadeir|fals)|julgue.*(?:item|afirmativ)/i.test(stem)||comboAssertions)&&assertionCount<2)issues.push('MISSING_ASSERTIONS');
+ const vfOptions=options.some(o=>/^(?:\(\s*[VF]\s*\)\s*){2,}/i.test(String(typeof o==='string'?o:o?.text||'').trim()));
+ if((comboAssertions||vfOptions)&&assertionCount<2)issues.push('MISSING_ASSERTIONS');
  if(/<\s*PARSED TEXT FOR PAGE|PARSED TEXT FOR PAGE|\[object Object\]/i.test(stem+' '+blob))issues.push('PARSING_ARTIFACT');
  if(/\bcorrelacione\b/i.test(stem)&&!/(?:\n|Coluna\s+I|1\))/i.test(stem))issues.push('MALFORMED_CORRELATION');
  if(options.length!==5)issues.push('OPTION_COUNT_'+options.length);
