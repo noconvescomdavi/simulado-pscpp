@@ -107,6 +107,7 @@ jobs:
           echo "THREE_CSP_OK"
           curl -fsS "http://127.0.0.1:3000/robots.txt" >/dev/null
           curl -fsS "http://127.0.0.1:3000/sitemap.xml" >/dev/null
+          echo "PUBLIC_INFRA_OK"
 
           # Páginas críticas de aquisição
           curl -fsS "http://127.0.0.1:3000/login" -o /tmp/smoke-login.html
@@ -125,6 +126,8 @@ jobs:
           grep -q "preparação" /tmp/smoke-plataforma.html
           curl -fsS "http://127.0.0.1:3000/produtos" -o /tmp/smoke-produtos.html
           grep -q "PSCPP" /tmp/smoke-produtos.html
+
+          echo "PUBLIC_PAGES_OK"
 
           # /comprar exige autenticação e deve redirecionar sem sessão
           BUY_HEADERS=$(curl -sS -o /dev/null -D - "http://127.0.0.1:3000/comprar")
