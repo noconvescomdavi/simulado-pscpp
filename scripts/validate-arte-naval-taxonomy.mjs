@@ -31,7 +31,8 @@ for (const [index, question] of questions.entries()) {
   if (ids.has(question.id)) errors.push(`${question.id}: ID repetido`);
   ids.add(question.id);
 
-  const inactive=question.active===false||["inactive","deactivated","quarantined"].includes(String(question.status||"").toLowerCase());\n  const stem = normalize(question.question);
+  const inactive=question.active===false||["inactive","deactivated","quarantined"].includes(String(question.status||"").toLowerCase());
+  const stem = normalize(question.question);
   if (!stem) errors.push(`${question.id}: enunciado vazio`);
   if (stems.has(stem) && !inactive) errors.push(`${question.id}: enunciado repetido`);
   if(!inactive) stems.add(stem);
