@@ -53,7 +53,7 @@ const structuralIssues=q=>{
 };
 const DETERMINISTIC_ISSUES=new Set(['MISSING_ASSERTIONS','PARSING_ARTIFACT','MALFORMED_CORRELATION','DUPLICATE_OPTIONS','ASSERTION_NUMBERING_FORMAT','ASSERTIONS_FLATTENED_IN_STEM']);
 const isDeterministicIssue=issue=>DETERMINISTIC_ISSUES.has(issue)||/^OPTION_COUNT_/.test(issue);
-const report={generated_at:new Date().toISOString(),subjects:{},runtime_inventory:[],totals:{questions:0,active:0,quarantined:0,legacy:0,template_risk:0,answer_explanation_mismatch:0,active_unsafe:0}};
+const report={generated_at:new Date().toISOString(),audit_scope:{runtime_sources:75,review_mode:'editorial-integral'},subjects:{},runtime_inventory:[],totals:{questions:0,active:0,quarantined:0,legacy:0,template_risk:0,answer_explanation_mismatch:0,active_unsafe:0}};
 for(const subject of subjects){
  const bank=JSON.parse(fs.readFileSync(path.join(dir,subject+'.json'),'utf8'));
  const rows=[]; let active=0,quarantined=0,legacyCount=0,template=0,mismatch=0,activeUnsafe=0;
