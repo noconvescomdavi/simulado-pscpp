@@ -131,6 +131,7 @@ jobs:
 
           # /comprar exige autenticação e deve redirecionar sem sessão
           BUY_HEADERS=$(curl -sS -o /dev/null -D - "http://127.0.0.1:3000/comprar")
+          echo "$BUY_HEADERS"
           echo "$BUY_HEADERS" | grep -Eq "HTTP/1.1 30[2378]|HTTP/1.1 307"
           echo "$BUY_HEADERS" | grep -qi "location:.*cadastro"
 
