@@ -2162,8 +2162,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "arte-naval",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_irrecoverable_source_mismatch",
       "question": "Correlacione os termos às respectivas descrições, com base em IMO Resolution A.1045(27) — Pilot Transfer Arrangements:\n\nCOLUNA A\n1) Resolution A.1045(27): Pilot Transfer Arrangements\n2) retrieval line\n3) Resolution A.1045(27): Pilot Transfer Arrangements\n4) Resolution A.1045(27): Pilot Transfer Arrangements\n\nCOLUNA B\na) distância horizontal à plataforma\nb) Apenas as afirmativas I e IV são verdadeiras.\nc) Apenas as afirmativas III e IV são verdadeiras.\nd) ( V ) ( V ) ( F ) ( F )",
       "assertions": [
         "1) Resolution A.1045(27): Pilot Transfer Arrangements",
@@ -2275,7 +2275,9 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "ANV-B015-07",
         "source_block": 15
-      }
+      },
+      "quarantine_reason": "Correlação contém termos/descrições incompatíveis entre si e com o localizador bibliográfico registrado; reconstrução segura exigiria criar conteúdo não presente no item original.",
+      "editorial_status": "QUARENTENA_IRRECUPERÁVEL"
     },
     {
       "id": "ANV-B015-08",
