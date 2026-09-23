@@ -92,7 +92,7 @@ for(const [name,file] of pscppSources){
     rows.push({id:q.id,issues,state});
   }
   report.runtime_inventory.push({
-    source_name:name,source_file:path.relative(root,file),id:q.id||null,
+    source_name:name,source_file:path.relative(root,file),id:q.id||null,origin:q.origin||q.pscpp_origin||null,format:q.pscpp_format||q.format||null,stored_editorial_status:q.editorial_status||null,
     subject:q.subject||q.discipline||null,topic:q.topic||q.subtopic||null,
     bibliography_id:q.bibliography_id||q?.source?.bibliography_id||null,
     chapter_id:q.chapter_id||q?.source?.chapter_id||null,
