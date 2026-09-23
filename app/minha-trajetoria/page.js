@@ -64,11 +64,11 @@ export default async function MinhaTrajetoria(){
     </section>
 
     <section className={styles.subjects}>
-      <div className={styles.head}><div><span>MAPA DE DOMÍNIO</span><h2>Desempenho por disciplina</h2></div></div>
-      <div className={styles.subjectGrid}>{learning.subjects.map(subject=><article key={subject.slug}>
-        <div className={styles.subjectHead}><div><strong>{subject.label}</strong><small>{subject.topics} tópicos medidos · {subject.critical_topics} críticos</small></div><b>{Math.round(Number(subject.mastery_score||0))}%</b></div>
+      <div className={styles.head}><div><span>MAPA DE DOMÍNIO</span><h2>Conteúdo programático por matéria, obra, capítulo e tópico</h2><p>Tópicos sem respostas permanecem visíveis como “Não avaliado”; ausência de evidência não é tratada como domínio.</p></div></div>
+      <div className={styles.subjectGrid}>{graph.subjects.map(subject=><article key={subject.slug}>
+        <div className={styles.subjectHead}><div><strong>{subject.title}</strong><small>{subject.measured_topics} tópicos medidos · {subject.bibliography_units} unidades bibliográficas</small></div><b>{Math.round(Number(subject.mastery_score||0))}%</b></div>
         <div className={styles.bar}><i style={{width:Math.max(2,Number(subject.mastery_score||0))+"%"}}/></div>
-        {subject.weakest?.length>0&&<div className={styles.weakest}>{subject.weakest.map(topic=><div key={topic.key}><span>{topic.topic}</span><b>{Math.round(Number(topic.mastery_score||0))}%</b></div>)}</div>}
+        <div className={styles.weakest}>{subject.works.map(work=><div key={work.id}><strong>{work.title}</strong>{work.chapters.map(ch=><div key={ch.id}><small>{ch.label}</small>{ch.topics.map(topic=><div key={topic.id}><span>{topic.label}</span><b>{Number(topic.confidence_score||0)<=0?"Não avaliado":Math.round(Number(topic.mastery_score||0))+"%"}</b></div>)}</div>)}</div>)}</div>
       </article>)}</div>
     </section>
 
