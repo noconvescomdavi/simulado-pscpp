@@ -2,13 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { getAdmin } from "../../lib/admin";
 import { getSession } from "../../lib/auth";
-import { query } from "../../lib/db";
+import { query } from "../../lib/db";\nimport {unstable_cache} from "next/cache";
 import styles from "./student-header.module.css";
 import StudySessionTracker from "./StudySessionTracker";
 import OfflineSyncStatus from "./OfflineSyncStatus";
 import StudentMobileMenu from "./StudentMobileMenu";
 
-function Menu({ active = "" }) {
+const cachedProfileName=unstable_cache(async(userId)=>{\n  const profile=await query("select full_name from user_profiles where user_id=$1 limit 1",[userId]);\n  return profile.rows[0]?.full_name||null;\n},["student-header-profile"],{revalidate:300});\n\nfunction Menu({ active = "" }) {
   return (
     <nav className={styles.nav} aria-label="Área do aluno">
       <Link className={active === "painel" ? styles.active : ""} href="/area-do-aluno"><span className={styles.icon}>⌂</span><span>Hoje</span></Link>
