@@ -25,3 +25,7 @@ Nesta branch, o banco editorial aprovado foi preparado em `data/pscpp/approved-d
 `lib/pscpp-exam-bank.js` passa a incluir `approvedPscppDriveQuestions` em `getPscppPool()`.
 
 A emissão permanece sob `buildHistoricalExam()`; portanto o mecanismo de seleção histórica existente não foi substituído.
+
+
+## Production redeploy
+Redeploy manual disparado em 2026-09-23 para publicar a integração B001–B020 em produção.
