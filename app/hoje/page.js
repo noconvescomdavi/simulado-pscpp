@@ -37,7 +37,7 @@ export default async function HojePage() {
             </p>
           </div>
           <div className={styles.goal}>
-            <small>PREPARAÇÃO ESTIMADA · {adaptive.readiness_score}%</small>
+            <small>PREPARAÇÃO ESTIMADA · {integrated.readiness}%</small>
             <strong>{plan.goal.daily_minutes}</strong>
             <span>minutos planejados</span>
             <small>{plan.study_time.today_minutes||0} min reais hoje · domínio {Math.round(Number(plan.mastery||0))}%</small>
