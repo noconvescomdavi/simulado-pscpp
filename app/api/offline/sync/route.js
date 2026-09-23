@@ -14,7 +14,7 @@ const MAX_EVENTS = 500;
 function cleanId(value,max=180){ return String(value||"").trim().slice(0,max); }
 function parseDate(value,fallback){ const d=new Date(value||fallback||Date.now()); return Number.isNaN(d.getTime())?new Date(fallback||Date.now()):d; }
 function asArray(value){ return Array.isArray(value)?value:[]; }
-function score(correct,answered){ return answered?Math.round(correct/answered*10000)/100:0; }
+function score(correct,total){ return total?Math.round(correct/total*10000)/100:0; }
 
 async function ensureSyncTable(){
   await query(`create table if not exists offline_sync_events(
@@ -141,7 +141,7 @@ async function syncExamSnapshot(userId,payload){
       const attempt=await client.query(
         `insert into exam_attempts(user_id,module,subject,score_percent,correct_answers,wrong_answers,total_questions,duration_seconds,created_at)
          values($1,$2,$3,$4,$5,$6,$7,$8,$9) returning id`,
-        [userId,`Simulado de ${subjectLabel(subject)} — ${ids.length} questões`,subject,score(correct,answered),correct,Math.max(0,answered-correct),answered,duration,parseDate(payload.finished_at).toISOString()]
+        [userId,`Simulado de ${subjectLabel(subject)} — ${ids.length} questões`,subject,score(correct,ids.length),correct,Math.max(0,answered-correct),ids.length,duration,parseDate(payload.finished_at).toISOString()]
       );
       attemptId=attempt.rows[0].id;
       await client.query("update question_answers set attempt_id=$1 where session_id=$2 and attempt_id is null",[attemptId,id]);
@@ -176,6 +176,7 @@ async function processEvent(userId,event){
         subject:payload.subject,
         questionId:payload.question_id,
         selectedAnswer:payload.selected_answer,
+        responseTimeMs:payload.response_time_ms,
       });
       if(result?.status&&result.status>=400&&!(result.status===409&&result.locked))throw new Error(result.error||"Falha ao sincronizar resposta.");
       return {notebook_id:payload.notebook_id,duplicate:Boolean(result?.locked&&result?.status===409)};

@@ -227,6 +227,9 @@ export default function Client({
   const assessmentRef = useRef(null);
 
   const planMarkedRef = useRef(false);
+  const questionStartedAt = useRef(Date.now());
+
+  useEffect(() => { questionStartedAt.current = Date.now(); }, [index, notebook.id]);
 
   useEffect(()=>{cacheServerNotebook(notebook).catch(()=>{})},[notebook]);
 
@@ -334,7 +337,7 @@ export default function Client({
     try {
       if(!navigator.onLine){
         const payload=await answerOfflineNotebook(notebook.id,{
-          subject:question.subject,question_id:question.id,selected_answer:selectedAnswer,
+          subject:question.subject,question_id:question.id,selected_answer:selectedAnswer,response_time_ms:Date.now()-questionStartedAt.current,
           plan_task:planTask?.plan_date&&planTask?.task_key?{
             plan_date:planTask.plan_date,task_key:planTask.task_key,task_type:planTask.task_type||"questions",subject_slug:planTask.subject_slug||question.subject
           }:null
@@ -360,6 +363,7 @@ export default function Client({
                 question.id,
               selected_answer:
                 selectedAnswer,
+              response_time_ms: Date.now() - questionStartedAt.current,
               plan_task:
                 planTask?.plan_date &&
                 planTask?.task_key
@@ -439,7 +443,7 @@ export default function Client({
     } catch (networkError) {
       if(!navigator.onLine || networkError instanceof TypeError){
         try{
-          const payload=await answerOfflineNotebook(notebook.id,{subject:question.subject,question_id:question.id,selected_answer:selectedAnswer,plan_task:planTask});
+          const payload=await answerOfflineNotebook(notebook.id,{subject:question.subject,question_id:question.id,selected_answer:selectedAnswer,response_time_ms:Date.now()-questionStartedAt.current,plan_task:planTask});
           const savedAnswer={selected_answer:payload.selected_answer,is_correct:payload.is_correct,correct_answer:payload.correct_answer,explanation:payload.explanation,source:payload.source};
           setAnswers(current=>({...current,[key]:savedAnswer}));
           if(payload.result?.completed){setResult(payload.result);setReviewing(false)}
