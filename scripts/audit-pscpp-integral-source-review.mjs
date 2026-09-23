@@ -50,6 +50,8 @@ const structuralIssues=q=>{
  if(roman.length>=2&&!/[\n\r]/.test(stem))issues.push('ASSERTIONS_FLATTENED_IN_STEM');
  return issues;
 };
+const DETERMINISTIC_ISSUES=new Set(['MISSING_ASSERTIONS','PARSING_ARTIFACT','MALFORMED_CORRELATION','DUPLICATE_OPTIONS','ASSERTION_NUMBERING_FORMAT','ASSERTIONS_FLATTENED_IN_STEM']);
+const isDeterministicIssue=issue=>DETERMINISTIC_ISSUES.has(issue)||/^OPTION_COUNT_/.test(issue);
 const report={generated_at:new Date().toISOString(),subjects:{},runtime_inventory:[],totals:{questions:0,active:0,quarantined:0,legacy:0,template_risk:0,answer_explanation_mismatch:0,active_unsafe:0}};
 for(const subject of subjects){
  const bank=JSON.parse(fs.readFileSync(path.join(dir,subject+'.json'),'utf8'));
@@ -68,21 +70,24 @@ for(const subject of subjects){
  report.subjects[subject]={questions:(bank.questions||[]).length,active,quarantined,legacy:legacyCount,template_risk:template,answer_explanation_mismatch:mismatch,active_unsafe:activeUnsafe,review_ids:rows};
  for(const [k,v] of Object.entries({questions:(bank.questions||[]).length,active,quarantined,legacy:legacyCount,template_risk:template,answer_explanation_mismatch:mismatch,active_unsafe:activeUnsafe})) report.totals[k]+=v;
 }
-report.pscpp_runtime_sources={}; report.totals.runtime_questions=0; report.totals.runtime_structural_issues=0; report.totals.runtime_active_structural_issues=0; report.totals.runtime_inactive=0;
+report.pscpp_runtime_sources={}; report.totals.runtime_questions=0; report.totals.runtime_structural_issues=0; report.totals.runtime_active_structural_issues=0; report.totals.runtime_semantic_review_flags=0; report.totals.runtime_inactive=0;
 for(const [name,file] of pscppSources){
  if(!fs.existsSync(file))continue;
  const bank=JSON.parse(fs.readFileSync(file,'utf8')); const rows=[];
  for(const q of bank.questions||[]){
   const issues=structuralIssues(q);
   const quality=questionQualityState(q);
+  const deterministicIssues=issues.filter(isDeterministicIssue);
+  const semanticReviewFlags=issues.filter(issue=>!isDeterministicIssue(issue));
   const baseActive=quality.active;
-  const effectiveActive=baseActive&&issues.length===0;
-  const state={...quality,active:effectiveActive,reason:!baseActive?quality.reason:(issues.length?"runtime-structural-quarantine":null)};
+  const effectiveActive=baseActive&&deterministicIssues.length===0;
+  const state={...quality,active:effectiveActive,reason:!baseActive?quality.reason:(deterministicIssues.length?"runtime-structural-quarantine":null)};
   report.totals.runtime_questions++;
   if(!effectiveActive)report.totals.runtime_inactive++;
   if(issues.length){
-    report.totals.runtime_structural_issues+=issues.length;
-    if(baseActive)report.totals.runtime_active_structural_issues+=issues.length;
+    report.totals.runtime_structural_issues+=deterministicIssues.length;
+    report.totals.runtime_semantic_review_flags+=semanticReviewFlags.length;
+    if(baseActive)report.totals.runtime_active_structural_issues+=deterministicIssues.length;
     rows.push({id:q.id,issues,state});
   }
   report.runtime_inventory.push({
@@ -94,7 +99,7 @@ for(const [name,file] of pscppSources){
     options:Array.isArray(q.options)?q.options:[],correct_answer:q.correct_answer||q.answer||null,
     explanation:q.explanation||null,source:q.source||null,provenance:q.provenance||null,
     validation_status:q.validation_status||null,explicit_active:q.active!==false,
-    quality_state:quality,issues,effective_active:effectiveActive,
+    quality_state:quality,issues,deterministic_issues:deterministicIssues,semantic_review_flags:semanticReviewFlags,effective_active:effectiveActive,
     editorial_status:issues.length?"REVIEW_REQUIRED":(effectiveActive?"APROVADA_AUTOMATICA":"REVIEW_INACTIVE")
   });
  }
