@@ -3927,32 +3927,32 @@
       "source_subject": "navegacao-aguas-restritas",
       "active": true,
       "validation_status": "approved",
-      "question": "A aquisição automática/manual de alvos no radar serve para:",
+      "question": "Segundo a Resolução MSC.192(79), a aquisição manual ou automática de um alvo radar tem por finalidade principal:",
       "assertions": null,
       "options": [
         {
           "key": "A",
-          "text": "controlar leme diretamente."
+          "text": "iniciar o acompanhamento do alvo pela função de Target Tracking, permitindo calcular e apresentar informações de movimento."
         },
         {
           "key": "B",
-          "text": "permitir acompanhamento e cálculo de parâmetros de movimento relativo/verdadeiro."
+          "text": "associar obrigatoriamente todo eco radar a um alvo AIS antes que possa ser acompanhado."
         },
         {
           "key": "C",
-          "text": "medir profundidade."
+          "text": "executar automaticamente uma trial manoeuvre assim que o alvo entra no alcance selecionado."
         },
         {
           "key": "D",
-          "text": "emitir cartas."
+          "text": "converter o radar para estabilização pelo fundo e impedir o uso de estabilização pelo mar."
         },
         {
           "key": "E",
-          "text": "substituir AIS."
+          "text": "criar uma posição passada do alvo sem mantê-lo sob acompanhamento nas varreduras seguintes."
         }
       ],
-      "correct_answer": "B",
-      "explanation": "Aquisição é etapa do tracking radar/ARPA.",
+      "correct_answer": "A",
+      "explanation": "A MSC.192(79), §5.25.1, estabelece que alvos radar podem ser adquiridos manual ou automaticamente e acompanhados pela função automática de Target Tracking.",
       "distractor_analysis": {
         "A": "INCORRETA — “controlar leme diretamente.” não corresponde ao conceito/procedimento sustentado pela fonte. Aquisição é etapa do tracking radar/ARPA.",
         "B": "CORRETA — Aquisição é etapa do tracking radar/ARPA.",
@@ -4034,7 +4034,8 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "NAR-B007-04",
         "source_block": 7
-      }
+      },
+      "editorial_status": "RECONSTRUÍDA"
     },
     {
       "id": "NAR-B007-05",
@@ -4518,32 +4519,32 @@
       "source_subject": "navegacao-aguas-restritas",
       "active": true,
       "validation_status": "approved",
-      "question": "Trails no radar podem ajudar o navegador a:",
+      "question": "Segundo a Resolução MSC.192(79), qual é a utilidade operacional dos target trails no radar?",
       "assertions": null,
       "options": [
         {
           "key": "A",
-          "text": "visualizar tendência de movimento dos alvos ao longo do tempo."
+          "text": "Evidenciar, ao longo de um intervalo selecionável, a tendência de movimento dos alvos, com indicação do tempo e do modo do trail."
         },
         {
           "key": "B",
-          "text": "determinar profundidade."
+          "text": "Substituir o target tracking e fornecer CPA/TCPA mesmo quando nenhum alvo estiver adquirido."
         },
         {
           "key": "C",
-          "text": "medir vento verdadeiro."
+          "text": "Exibir somente a posição instantânea do alvo, eliminando qualquer informação histórica após cada varredura."
         },
         {
           "key": "D",
-          "text": "calcular calado."
+          "text": "Apresentar exclusivamente true trails, pois relative trails não são previstos para os modos de movimento verdadeiro."
         },
         {
           "key": "E",
-          "text": "acionar automaticamente o leme."
+          "text": "Apagar necessariamente trails e posições passadas sempre que houver mudança de escala ou recentramento da imagem radar."
         }
       ],
       "correct_answer": "A",
-      "explanation": "Trails facilitam percepção de movimento relativo.",
+      "explanation": "A MSC.192(79), §5.23, prevê trails de duração variável, com indicação de tempo e modo, permitindo true ou relative trails; eles ajudam a perceber a evolução do movimento dos alvos.",
       "distractor_analysis": {
         "A": "CORRETA — Trails facilitam percepção de movimento relativo.",
         "B": "INCORRETA — “determinar profundidade.” não corresponde ao conceito/procedimento sustentado pela fonte. Trails facilitam percepção de movimento relativo.",
@@ -4625,7 +4626,8 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "NAR-B007-09",
         "source_block": 7
-      }
+      },
+      "editorial_status": "RECONSTRUÍDA"
     },
     {
       "id": "LEG-B007-01",
