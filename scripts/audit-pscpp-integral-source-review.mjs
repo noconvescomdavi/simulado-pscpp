@@ -26,7 +26,7 @@ const structuralIssues=q=>{
  const stem=String(q.question||''); const assertions=Array.isArray(q.assertions)?q.assertions:[]; const options=Array.isArray(q.options)?q.options:[];
  const blob=options.map(o=>String(typeof o==='string'?o:o?.text||'')).join(' ');
  const issues=[];
- const inlineAssertionLabels=[...stem.matchAll(/(?:^|\n|\s)\(?\s*(I|II|III|IV|V)\s*\)?\s*[.:-]?\s+/g)].map(m=>m[1]);
+ const inlineAssertionLabels=[...stem.matchAll(/(?:^|\n)\s*(IV|III|II|I|V)\s*[).:-]\s*/g)].map(m=>m[1]);
  const vfBulletCount=(stem.match(/\(\s*\)\s+/g)||[]).length;
  const assertionCount=Math.max(assertions.length,new Set(inlineAssertionLabels).size,vfBulletCount);
  const comboAssertions=options.some(o=>/^(?:apenas\s+)?(?:I|II|III|IV|V)(?:\s*[,e]\s*(?:I|II|III|IV|V))+/i.test(String(typeof o==='string'?o:o?.text||'').trim()));
