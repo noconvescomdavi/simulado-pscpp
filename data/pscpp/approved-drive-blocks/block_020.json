@@ -2162,8 +2162,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "arte-naval",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_irrecoverable_source_mismatch",
       "question": "Correlacione os termos às respectivas descrições, com base em Shiphandling for the Mariner: Considere o contexto específico identificado por ANV-B020-07.\n\nCOLUNA A\n1) Shiphandling for the Mariner\n2) Shiphandling for the Mariner\n3) Shiphandling for the Mariner\n4) Shiphandling for the Mariner\n\nCOLUNA B\na) ( V ) ( V ) ( V ) ( V )\nb) ( V ) ( V ) ( F ) ( F )\nc) Apenas as afirmativas I e III são verdadeiras.\nd) assentar a âncora",
       "assertions": [
         "1) Shiphandling for the Mariner",
@@ -2275,7 +2275,9 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "ANV-B020-07",
         "source_block": 20
-      }
+      },
+      "quarantine_reason": "Correlação contém termos/descrições incompatíveis entre si e com o localizador bibliográfico registrado; reconstrução segura exigiria criar conteúdo não presente no item original.",
+      "editorial_status": "QUARENTENA_IRRECUPERÁVEL"
     },
     {
       "id": "ANV-B020-08",
