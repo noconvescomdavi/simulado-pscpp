@@ -52,8 +52,19 @@ jobs:
         run: npm run validate:questions
       - name: Semantic quality audit
         run: node scripts/audit-question-quality-v2.mjs
-      - name: Integral source-review gate
+      - name: Integral final bank audit
         run: npm run audit:pscpp:final
+      - name: Complete source-layer quality gate
+        run: |
+          sed -i 's|from "./question-quality";|from "./question-quality.js";|' lib/question-quality-policy.js
+          node scripts/audit-pscpp-integral-source-review.mjs
+      - name: Upload integral audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pscpp-integral-source-review
+          path: reports/pscpp-integral-source-review.json
+          if-no-files-found: error
       - name: Question structure tests
         run: npm run test:question-structure
       - name: Taxonomy validation

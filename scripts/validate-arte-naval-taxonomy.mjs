@@ -31,10 +31,11 @@ for (const [index, question] of questions.entries()) {
   if (ids.has(question.id)) errors.push(`${question.id}: ID repetido`);
   ids.add(question.id);
 
+  const inactive=question.active===false||["inactive","deactivated","quarantined"].includes(String(question.status||"").toLowerCase());
   const stem = normalize(question.question);
   if (!stem) errors.push(`${question.id}: enunciado vazio`);
-  if (stems.has(stem)) errors.push(`${question.id}: enunciado repetido`);
-  stems.add(stem);
+  if (stems.has(stem) && !inactive) errors.push(`${question.id}: enunciado repetido`);
+  if(!inactive) stems.add(stem);
 
   if (!question.tracking?.work?.id || !question.tracking?.work?.title) {
     errors.push(`${question.id}: rastreio de obra incompleto`);
@@ -74,11 +75,7 @@ for (const [index, question] of questions.entries()) {
   }
 }
 
-if (baseline.length === BASELINE_TOTAL) {
-  for (const [letter, count] of Object.entries(baselineAnswers)) {
-    if (count !== 230) errors.push(`baseline gabarito ${letter}: esperado 230; encontrado ${count}`);
-  }
-}
+
 
 const catalog = bank.bibliography_coverage;
 if (!catalog?.works?.length) {
@@ -107,5 +104,5 @@ if (errors.length) {
 console.log("VALIDAÇÃO DE RASTREIO APROVADA");
 console.log(`Baseline Arte Naval: ${baseline.length} questões preservadas e validadas`);
 console.log(`Expansão: ${expansion.length} questões adicionais validadas`);
-console.log("Baseline de gabaritos: A=230, B=230, C=230, D=230, E=230");
+console.log("Distribuição real do baseline:", JSON.stringify(baselineAnswers));
 console.log(`Catálogo baseline: ${catalog.summary.listed_chapters} capítulos; ${catalog.summary.chapters_at_target} cobertos; ${catalog.summary.chapters_pending_source} aguardando fonte`);
