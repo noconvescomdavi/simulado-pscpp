@@ -481,7 +481,7 @@
       "pscpp_origin": "official_exam",
       "year": 2006,
       "number": 11,
-      "active": true,
+      "active": false,
       "annulled": false,
       "source_subject": "simulado-pscpp",
       "source_id": "2006-011",
@@ -512,12 +512,13 @@
       "pscpp_format": "situation",
       "difficulty": "official",
       "cognitive_level": "official",
-      "validation_status": "validated_official",
+      "validation_status": "quarantined_incomplete_extraction",
       "source": {
         "title": "PSCPP/2006 — prova oficial",
         "locator": "Questão 11"
       },
-      "source_file": "prova_escrita_2006(3).pdf"
+      "source_file": "prova_escrita_2006(3).pdf",
+      "quarantine_reason": "Quatro alternativas (A-D) estão vazias na extração disponível; questão insolúvel no runtime até reconstrução fiel a partir da prova oficial."
     },
     {
       "id": "pscpp::official::2006::012",
