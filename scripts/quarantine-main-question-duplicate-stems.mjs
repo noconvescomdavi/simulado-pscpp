@@ -1,0 +1,8 @@
+import fs from "node:fs";import path from "node:path";
+const dir=path.join(process.cwd(),"data/questions"),files=fs.readdirSync(dir).filter(f=>f.endsWith(".json"));
+const norm=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/\s+/g," ").trim();
+let scanned=0,quarantined=0;const groups=[];
+for(const name of files){const p=path.join(dir,name),data=JSON.parse(fs.readFileSync(p,"utf8")),arr=Array.isArray(data)?data:data.questions;if(!Array.isArray(arr))continue;const seen=new Map();let changed=false;
+for(const q of arr){scanned++;if(q.active===false||["inactive","deactivated","quarantined"].includes(String(q.status||"").toLowerCase()))continue;const stem=norm(q.question||q.stem);if(!stem)continue;if(!seen.has(stem)){seen.set(stem,q);continue}const keep=seen.get(stem);q.active=false;q.status="quarantined";q.quality={...(q.quality||{}),quarantine_reason:"duplicate_stem_requires_source_review",duplicate_of:keep.id,quarantined_at:"2026-09-22"};quarantined++;changed=true;groups.push({file:name,kept:keep.id,quarantined:q.id,stem:q.question||q.stem,kept_answer:keep.correct_answer,quarantined_answer:q.correct_answer});}
+if(changed)fs.writeFileSync(p,JSON.stringify(data,null,2)+"\n");}
+fs.mkdirSync("reports",{recursive:true});fs.writeFileSync("reports/duplicate-quarantine.json",JSON.stringify({questions_scanned:scanned,quarantined,groups},null,2)+"\n");console.log(JSON.stringify({questions_scanned:scanned,quarantined},null,2));
