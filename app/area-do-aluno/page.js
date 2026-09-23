@@ -6,7 +6,8 @@ import {getUserMetrics} from "../../lib/metrics";
 import {normalizeSubject,subjectLabel} from "../../lib/subjects";
 import StudentHeader from "../components/StudentHeader";
 import ExamCountdown from "../components/ExamCountdown";
-import {getConsistency} from "../../lib/engagement";\nimport {getLearningProfile} from "../../lib/learning-engine";
+import {getConsistency} from "../../lib/engagement";
+import {getLearningProfile} from "../../lib/learning-engine";
 import {getStudentInsights} from "../../lib/student-insights";
 import { unstable_cache } from "next/cache";
 import "./dashboard.css";
@@ -28,11 +29,13 @@ export default async function Area(){
     getUserMetrics(session.id),
     query("select full_name from user_profiles where user_id=$1 limit 1",[session.id]).catch(()=>({rows:[]})),
     query("select id,subject,status,answered_count,correct_count,started_at from exam_sessions where user_id=$1 order by started_at desc limit 4",[session.id]).catch(()=>({rows:[]})),
-    getLearningProfile(session.id).catch(()=>({overall_mastery:0,subjects:[],weakest_topics:[]})),\n    getConsistency(session.id),
+    getLearningProfile(session.id).catch(()=>({overall_mastery:0,subjects:[],weakest_topics:[]})),
+    getConsistency(session.id),
     getStudentInsights(session.id).catch(()=>({insights:[],due:0}))
   ]);
 
-  const active=access?.active===true;\n  const mastery=Number(learning?.overall_mastery||0);
+  const active=access?.active===true;
+  const mastery=Number(learning?.overall_mastery||0);
   const name=firstName(profile.rows[0]?.full_name||session.email.split("@")[0]);
   const pm=Object.fromEntries(progress.rows.map(r=>[normalizeSubject(r.subject),Number(r.percent||0)]));
   const pv=performance.subjects.map(s=>pm[s.slug]||0);
@@ -71,7 +74,9 @@ export default async function Area(){
 
         <section className="commandDeck"><div><span>PRÓXIMA MISSÃO</span><h2>Abra o Plano de Hoje</h2><p>Leitura, fixação e revisão são carregadas sob demanda para manter o painel rápido.</p><a href="/hoje">Continuar agora →</a></div><div className="commandSignals"><span><b>{readiness}</b> prontidão</span><span><b>{studentIntel?.due||0}</b> revisões agora</span></div></section>
 
-        <section className="studentFocusGrid"><article><span>PLANO DO DIA</span><strong>Carregamento sob demanda</strong><small>Abra a área Hoje para montar as tarefas atuais sem recalcular o plano em toda visita ao painel.</small><a href="/hoje">Abrir plano de hoje →</a></article><article><span>PONTO DE ATENÇÃO</span><strong>{weakest?weakest.label:"Aguardando dados"}</strong><small>{weakest?weakest.accuracy+"% de acerto — maior oportunidade de ganho.":"Responda questões para gerar o diagnóstico."}</small><a href="/treino-inteligente">Abrir treino →</a></article></section>\n\n
+        <section className="studentFocusGrid"><article><span>PLANO DO DIA</span><strong>Carregamento sob demanda</strong><small>Abra a área Hoje para montar as tarefas atuais sem recalcular o plano em toda visita ao painel.</small><a href="/hoje">Abrir plano de hoje →</a></article><article><span>PONTO DE ATENÇÃO</span><strong>{weakest?weakest.label:"Aguardando dados"}</strong><small>{weakest?weakest.accuracy+"% de acerto — maior oportunidade de ganho.":"Responda questões para gerar o diagnóstico."}</small><a href="/treino-inteligente">Abrir treino →</a></article></section>
+
+
 
         <section className="insightsPanel"><div className="sectionTitle"><div><h2>ESTIBORDO Insights</h2><p>O que seus dados sugerem fazer em seguida.</p></div><a href="/centro-de-revisao">Centro de Revisão →</a></div><div className="insightsGrid">{(studentIntel?.insights||[]).map((insight,index)=><a href={insight.href} key={index}><span>{insight.kind}</span><strong>{insight.title}</strong><p>{insight.text}</p><b>{insight.action} →</b></a>)}{!(studentIntel?.insights||[]).length&&<article><strong>Continue estudando</strong><p>Assim que houver dados suficientes, seus padrões e recomendações aparecerão aqui.</p></article>}</div></section>
 
@@ -84,7 +89,8 @@ export default async function Area(){
             <a className="quickCard purple" href="/flashcards/cis"><i>▤</i><div><strong>Flashcards CIS</strong><span>Treine o Código Internacional de Sinais</span></div><b>›</b></a>
             <a className="quickCard gold" href="#desempenho"><i>▥</i><div><strong>Meu Desempenho</strong><span>Acompanhe sua evolução</span></div><b>›</b></a>
             <a className={["quickCard","blue",!active?"premiumLocked":""].join(" ")} href="/plano-de-estudos"><i>◫</i><div><strong>Plano de Estudos</strong><span>Calendário inteligente até 01/11/2027</span></div><b>›</b></a>
-            <a className={["quickCard","purple",!active?"premiumLocked":""].join(" ")} href="/treino-adaptativo"><i>◎</i><div><strong>Treino Inteligente</strong><span>A plataforma escolhe o que mais precisa</span></div><b>›</b></a>\n            <a className={["quickCard","green",!active?"premiumLocked":""].join(" ")} href="/centro-de-revisao"><i>↻</i><div><strong>Centro de Revisão</strong><span>Erros, fraquezas e revisões em uma fila</span></div><b>›</b></a>
+            <a className={["quickCard","purple",!active?"premiumLocked":""].join(" ")} href="/treino-adaptativo"><i>◎</i><div><strong>Treino Inteligente</strong><span>A plataforma escolhe o que mais precisa</span></div><b>›</b></a>
+            <a className={["quickCard","green",!active?"premiumLocked":""].join(" ")} href="/centro-de-revisao"><i>↻</i><div><strong>Centro de Revisão</strong><span>Erros, fraquezas e revisões em uma fila</span></div><b>›</b></a>
             <a className="quickCard ranking" href="/ranking"><i>★</i><div><strong>Ranking</strong><span>Compare seu desempenho acadêmico</span></div><b>›</b></a>
             <a className={["quickCard","maps",!active?"premiumLocked":""].join(" ")} href="/mapas-mentais"><i>🧠</i><div><strong>Mapas Mentais</strong><span>Construa e conecte suas anotações</span></div><b>›</b></a>
             <a className={["quickCard","gold",!active?"premiumLocked":""].join(" ")} href="/minha-trajetoria"><i>◉</i><div><strong>Minha Trajetória</strong><span>Domínio, aderência, tempo real e projeção até a prova</span></div><b>›</b></a>
