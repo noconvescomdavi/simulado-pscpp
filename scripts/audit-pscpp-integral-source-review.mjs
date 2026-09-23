@@ -26,7 +26,9 @@ const structuralIssues=q=>{
  const stem=String(q.question||''); const assertions=Array.isArray(q.assertions)?q.assertions:[]; const options=Array.isArray(q.options)?q.options:[];
  const blob=options.map(o=>String(typeof o==='string'?o:o?.text||'')).join(' ');
  const issues=[];
- if((/analis[ea].*(afirmativ|assertiv)|identifique.*(?:verdadeir|fals)|julgue.*(?:item|afirmativ)/i.test(stem)||/(?:apenas|todas).*(?:\bI\b|\bII\b|\bIII\b|afirmativ|assertiv)/i.test(blob))&&assertions.length<2)issues.push('MISSING_ASSERTIONS');
+ const inlineAssertionLabels=[...stem.matchAll(/(?:^|\n|\s)(I{1,3}|IV|V)\s*[).:-]/g)].map(m=>m[1]);
+ const assertionCount=Math.max(assertions.length,new Set(inlineAssertionLabels).size);
+ if((/analis[ea].*(afirmativ|assertiv)|identifique.*(?:verdadeir|fals)|julgue.*(?:item|afirmativ)/i.test(stem)||/(?:apenas|todas).*(?:\bI\b|\bII\b|\bIII\b|afirmativ|assertiv)/i.test(blob))&&assertionCount<2)issues.push('MISSING_ASSERTIONS');
  if(/<\s*PARSED TEXT FOR PAGE|PARSED TEXT FOR PAGE|\[object Object\]/i.test(stem+' '+blob))issues.push('PARSING_ARTIFACT');
  if(/\bcorrelacione\b/i.test(stem)&&!/(?:\n|Coluna\s+I|1\))/i.test(stem))issues.push('MALFORMED_CORRELATION');
  if(options.length!==5)issues.push('OPTION_COUNT_'+options.length);
@@ -41,8 +43,8 @@ const structuralIssues=q=>{
  if(ci>=0&&texts[ci]){const ss=texts.map(t=>sim(stem,t));const order=[...ss].sort((a,b)=>b-a);if(ss[ci]===order[0]&&order[0]-Number(order[1]||0)>=.28)issues.push('ANSWER_LEAK_OR_SIMILARITY_CUE');
  const cross=texts.map((t,i)=>i===ci?1:sim(texts[ci],t));if(cross.filter((v,i)=>i!==ci&&v<.08).length>=3)issues.push('WEAK_OR_HETEROGENEOUS_DISTRACTORS');
  const lens=texts.map(t=>wordset(t).size).sort((a,b)=>a-b),median=lens[Math.floor(lens.length/2)]||1;if(wordset(texts[ci]).size>Math.max(median*1.8,median+10))issues.push('ANSWER_LENGTH_CUE');}
- const roman=[...stem.matchAll(/(?:^|\n|\s)(I{1,3}|IV|V)\s*[).:-]/g)].map(m=>m[1]);if(roman.length>=2&&new Set(roman).size!==roman.length)issues.push('ASSERTION_NUMBERING_FORMAT');
- if(/\bI\b/.test(stem)&&/\bV\b/.test(stem)&&!/[\n\r]/.test(stem))issues.push('ASSERTIONS_FLATTENED_IN_STEM');
+ const roman=inlineAssertionLabels;if(roman.length>=2&&new Set(roman).size!==roman.length)issues.push('ASSERTION_NUMBERING_FORMAT');
+ if(roman.length>=2&&!/[\n\r]/.test(stem))issues.push('ASSERTIONS_FLATTENED_IN_STEM');
  return issues;
 };
 const report={generated_at:new Date().toISOString(),subjects:{},totals:{questions:0,active:0,quarantined:0,legacy:0,template_risk:0,answer_explanation_mismatch:0,active_unsafe:0}};
