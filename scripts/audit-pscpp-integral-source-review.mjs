@@ -62,16 +62,16 @@ for(const subject of subjects){
  report.subjects[subject]={questions:(bank.questions||[]).length,active,quarantined,legacy:legacyCount,template_risk:template,answer_explanation_mismatch:mismatch,active_unsafe:activeUnsafe,review_ids:rows};
  for(const [k,v] of Object.entries({questions:(bank.questions||[]).length,active,quarantined,legacy:legacyCount,template_risk:template,answer_explanation_mismatch:mismatch,active_unsafe:activeUnsafe})) report.totals[k]+=v;
 }
-report.pscpp_runtime_sources={}; report.totals.runtime_questions=0; report.totals.runtime_structural_issues=0; report.totals.runtime_inactive=0;
+report.pscpp_runtime_sources={}; report.totals.runtime_questions=0; report.totals.runtime_structural_issues=0; report.totals.runtime_active_structural_issues=0; report.totals.runtime_inactive=0;
 for(const [name,file] of pscppSources){
  if(!fs.existsSync(file))continue;
  const bank=JSON.parse(fs.readFileSync(file,'utf8')); const rows=[];
- for(const q of bank.questions||[]){const issues=structuralIssues(q);const state=questionQualityState(q);report.totals.runtime_questions++;if(!state.active)report.totals.runtime_inactive++;if(issues.length){report.totals.runtime_structural_issues+=issues.length;rows.push({id:q.id,issues,state});}}
+ for(const q of bank.questions||[]){const issues=structuralIssues(q);const state=questionQualityState(q);report.totals.runtime_questions++;if(!state.active)report.totals.runtime_inactive++;if(issues.length){report.totals.runtime_structural_issues+=issues.length;if(state.active)report.totals.runtime_active_structural_issues+=issues.length;rows.push({id:q.id,issues,state});}}
  report.pscpp_runtime_sources[name]={questions:(bank.questions||[]).length,flagged:rows.length,review_ids:rows};
 }
 fs.writeFileSync(out,JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report.totals,null,2));
-if(report.totals.active_unsafe>0){
+if(report.totals.active_unsafe>0 || report.totals.runtime_active_structural_issues>0){
  console.error('Gate integral falhou: há item inseguro ainda ativo. Inconsistências já quarentenadas permanecem no relatório para reconstrução rastreável.');
  process.exitCode=1;
 }
