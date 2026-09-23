@@ -28,8 +28,8 @@
     "validate:questions:full": "npm run validate:questions && npm run audit:questions:semantic && npm run audit:questions:full",
     "audit:questions:main": "QUESTIONS_MAIN_ONLY=1 node scripts/audit-full-question-bank.mjs",
     "audit:questions:main:win": "set QUESTIONS_MAIN_ONLY=1&& node scripts/audit-full-question-bank.mjs",
-    "build:cloudflare": "opennextjs-cloudflare build",
-    "deploy:cloudflare": "wrangler deploy"
+    "build:cloudflare": "npx -y -p @opennextjs/cloudflare@1.20.6 -p wrangler@4.37.1 opennextjs-cloudflare build",
+    "deploy:cloudflare": "npx -y wrangler@4.37.1 deploy"
   },
   "dependencies": {
     "argon2": "^0.41.1",
@@ -45,8 +45,5 @@
   "overrides": {
     "postcss": "8.5.28"
   },
-  "devDependencies": {
-    "@opennextjs/cloudflare": "^1.20.6",
-    "wrangler": "^4.137.0"
-  }
+  "devDependencies": {}
 }
