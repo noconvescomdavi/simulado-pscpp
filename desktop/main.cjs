@@ -44,6 +44,7 @@ async function startServer() {
   const log = msg => { try { fs.appendFileSync(logFile, new Date().toISOString()+" "+msg+"\\n"); } catch {} };
   const serverDir = app.isPackaged ? path.join(process.resourcesPath, "server") : process.cwd();
   const serverFile = app.isPackaged ? path.join(serverDir, "server.js") : require.resolve("next/dist/bin/next");
+  const nodeBinary = app.isPackaged ? path.join(process.resourcesPath, "node", "node.exe") : process.execPath;
   const args = app.isPackaged ? [serverFile] : [serverFile, "dev", "-p", String(PORT), "-H", HOST];
   const migrationsDir = app.isPackaged ? path.join(process.resourcesPath, "db", "migrations") : path.join(process.cwd(), "db", "migrations");
   const env = {
