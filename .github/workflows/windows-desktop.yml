@@ -36,6 +36,11 @@ jobs:
         run: npm run validate:questions
       - name: Build standalone web application
         run: npm run desktop:build:web
+      - name: Bundle Node runtime
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path desktop/runtime | Out-Null
+          Copy-Item (Get-Command node).Source desktop/runtime/node.exe
       - name: Package Windows installer
         run: npx electron-builder --win nsis --x64 --publish never
       - name: Smoke test packaged desktop app
