@@ -40,6 +40,9 @@ function waitForServer(timeoutMs = 60000) {
 
 async function startServer() {
   const userData = app.getPath("userData");
+  const logFile = path.join(userData, "desktop-server.log");
+  fs.mkdirSync(userData, { recursive: true });
+  const log = msg => { try { fs.appendFileSync(logFile, new Date().toISOString()+" "+msg+"\\n"); } catch {} };
   const serverDir = app.isPackaged ? path.join(process.resourcesPath, "server") : process.cwd();
   const serverFile = app.isPackaged ? path.join(serverDir, "server.js") : require.resolve("next/dist/bin/next");
   const args = app.isPackaged ? [serverFile] : [serverFile, "dev", "-p", String(PORT), "-H", HOST];
@@ -58,9 +61,10 @@ async function startServer() {
     NEXT_PUBLIC_APP_URL: `http://${HOST}:${PORT}`
   };
   serverProcess = spawn(process.execPath, args, { cwd: serverDir, env, windowsHide: true, stdio: ["ignore","pipe","pipe"] });
-  serverProcess.stdout.on("data", d => console.log("[PSCPP]", String(d).trim()));
-  serverProcess.stderr.on("data", d => console.error("[PSCPP]", String(d).trim()));
-  serverProcess.on("exit", code => { if (!app.isQuitting && code) console.error("Servidor local encerrou:", code); });
+  serverProcess.stdout.on("data", d => { console.log("[PSCPP]", String(d).trim()); log("[stdout] "+String(d).trim()); });
+  serverProcess.stderr.on("data", d => { console.error("[PSCPP]", String(d).trim()); log("[stderr] "+String(d).trim()); });
+  serverProcess.on("error", err => log("[spawn-error] "+err.stack));
+  serverProcess.on("exit", code => { log("[exit] code="+code); if (!app.isQuitting && code) console.error("Servidor local encerrou:", code); });
   await waitForServer();
 }
 
