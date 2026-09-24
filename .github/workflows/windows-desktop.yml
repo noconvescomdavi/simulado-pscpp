@@ -53,7 +53,14 @@ jobs:
                 if ($health.ok -eq $true -and $health.desktop -eq $true) { $ready = $true; break }
               } catch {}
             }
-            if (!$ready) {\n              $logs = Get-ChildItem -Path $env:USERPROFILE -Filter "desktop-server.log" -Recurse -ErrorAction SilentlyContinue\n              foreach ($log in $logs) { Write-Host "=== $($log.FullName) ==="; Get-Content $log.FullName -Tail 200 }\n              throw "Servidor local do aplicativo não ficou pronto."\n            }
+            if (!$ready) {
+              $logs = Get-ChildItem -Path $env:USERPROFILE -Filter "desktop-server.log" -Recurse -ErrorAction SilentlyContinue
+              foreach ($log in $logs) {
+                Write-Host "=== $($log.FullName) ==="
+                Get-Content $log.FullName -Tail 200
+              }
+              throw "Servidor local do aplicativo não ficou pronto."
+            }
             $session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
             $response = Invoke-WebRequest -Uri "http://127.0.0.1:32145/api/desktop/bootstrap" -WebSession $session -MaximumRedirection 5 -TimeoutSec 60
             if ($response.StatusCode -ne 200) { throw "Bootstrap offline falhou: HTTP $($response.StatusCode)" }
