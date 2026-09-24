@@ -16,6 +16,7 @@ const securityHeaders = [
 
 const nextConfig = {
   poweredByHeader: false,
+  output: "standalone",
 
   outputFileTracingIncludes: {
     "/study-content/**": [
