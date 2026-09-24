@@ -48,7 +48,7 @@ async function startServer() {
   const migrationsDir = app.isPackaged ? path.join(process.resourcesPath, "db", "migrations") : path.join(process.cwd(), "db", "migrations");
   const env = {
     ...process.env,
-    ELECTRON_RUN_AS_NODE: "1",
+
     NODE_ENV: app.isPackaged ? "production" : "development",
     PORT: String(PORT),
     HOSTNAME: HOST,
