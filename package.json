@@ -1,6 +1,6 @@
 {
   "name": "simulados-pscpp",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -29,7 +29,10 @@
     "audit:questions:main": "QUESTIONS_MAIN_ONLY=1 node scripts/audit-full-question-bank.mjs",
     "audit:questions:main:win": "set QUESTIONS_MAIN_ONLY=1&& node scripts/audit-full-question-bank.mjs",
     "build:cloudflare": "npm install --no-save --package-lock=false @opennextjs/cloudflare@1.20.6 wrangler@4.137.0 && opennextjs-cloudflare build",
-    "deploy:cloudflare": "opennextjs-cloudflare deploy"
+    "deploy:cloudflare": "opennextjs-cloudflare deploy",
+    "desktop:dev": "cross-env PSCPP_DESKTOP=1 electron .",
+    "desktop:build:web": "cross-env PSCPP_DESKTOP=1 next build",
+    "desktop:dist": "npm run desktop:build:web && electron-builder --win nsis"
   },
   "dependencies": {
     "argon2": "^0.41.1",
@@ -37,7 +40,8 @@
     "next": "^15.5.2",
     "pg": "^8.13.1",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "@electric-sql/pglite": "^0.3.14"
   },
   "engines": {
     "node": ">=20"
@@ -45,5 +49,58 @@
   "overrides": {
     "postcss": "8.5.28"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^38.1.2",
+    "electron-builder": "^26.0.12"
+  },
+  "main": "desktop/main.cjs",
+  "build": {
+    "appId": "br.com.noconves.pscpp",
+    "productName": "ESTIBORDO PSCPP",
+    "asar": true,
+    "files": [
+      "desktop/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": ".next/standalone",
+        "to": "server"
+      },
+      {
+        "from": ".next/static",
+        "to": "server/.next/static"
+      },
+      {
+        "from": "public",
+        "to": "server/public"
+      },
+      {
+        "from": "protected-content",
+        "to": "server/protected-content"
+      },
+      {
+        "from": "db/migrations",
+        "to": "db/migrations"
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "artifactName": "ESTIBORDO-PSCPP-Setup-${version}.${ext}"
+  }
 }
