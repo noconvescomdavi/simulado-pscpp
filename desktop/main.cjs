@@ -1,5 +1,4 @@
-const { app, BrowserWindow, shell, dialog } = require("electron");
-const { spawn } = require("child_process");
+const { app, BrowserWindow, shell, dialog, utilityProcess } = require("electron");
 const crypto = require("crypto");
 const fs = require("fs");
 const path = require("path");
@@ -60,10 +59,10 @@ async function startServer() {
     AUTH_SESSION_DAYS: "90",
     NEXT_PUBLIC_APP_URL: `http://${HOST}:${PORT}`
   };
-  serverProcess = spawn(process.execPath, args, { cwd: serverDir, env, windowsHide: true, stdio: ["ignore","pipe","pipe"] });
+  serverProcess = utilityProcess.fork(serverFile, app.isPackaged ? [] : ["dev", "-p", String(PORT), "-H", HOST], { cwd: serverDir, env, stdio: "pipe", serviceName: "ESTIBORDO Local Server" });
   serverProcess.stdout.on("data", d => { console.log("[PSCPP]", String(d).trim()); log("[stdout] "+String(d).trim()); });
   serverProcess.stderr.on("data", d => { console.error("[PSCPP]", String(d).trim()); log("[stderr] "+String(d).trim()); });
-  serverProcess.on("error", err => log("[spawn-error] "+err.stack));
+  serverProcess.on("spawn", () => log("[spawn] local server started"));
   serverProcess.on("exit", code => { log("[exit] code="+code); if (!app.isQuitting && code) console.error("Servidor local encerrou:", code); });
   await waitForServer();
 }
