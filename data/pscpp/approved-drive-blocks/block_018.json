@@ -2728,9 +2728,9 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "arte-naval",
-      "active": true,
-      "validation_status": "approved",
-      "question": "Correlacione os termos às respectivas descrições, com base em Arte Naval — Volume 1: Considere o contexto específico identificado por ANV-B018-12.",
+      "active": false,
+      "validation_status": "quarantined_irrecoverable_source_mismatch",
+      "question": "Correlacione os termos às respectivas descrições, com base em Arte Naval — Volume 1: Considere o contexto específico identificado por ANV-B018-12.\n\nCOLUNA A\n1) volta de fiador\n2) volta redonda mordida e cote\n3) nó torto\n4) navio de guerra\n\nCOLUNA B\na) Apenas as afirmativas III e IV são verdadeiras.\nb) Apenas as afirmativas III e IV são verdadeiras.\nc) Apenas as afirmativas II e IV são verdadeiras.\nd) Apenas as afirmativas I e III são verdadeiras.",
       "assertions": [
         "1) volta de fiador",
         "2) volta redonda mordida e cote",
@@ -2841,7 +2841,9 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "ANV-B018-12",
         "source_block": 18
-      }
+      },
+      "quarantine_reason": "Questão de correlação contém descrições incompatíveis/contaminadas e os metadados bibliográficos não sustentam os termos apresentados; reconstrução segura exigiria inventar conteúdo ou referência.",
+      "editorial_status": "QUARENTENA_IRRECUPERÁVEL"
     },
     {
       "id": "ANV-B018-13",
@@ -7061,7 +7063,7 @@
       "source_subject": "comunicacoes",
       "active": true,
       "validation_status": "approved",
-      "question": "Correlacione os termos às respectivas descrições, com base em Curso Especial de Radioperador Geral (EROG): Considere o contexto específico identificado por COM-B018-02.",
+      "question": "Correlacione os termos às respectivas descrições, com base em Curso Especial de Radioperador Geral (EROG): Considere o contexto específico identificado por COM-B018-02.\n\nCOLUNA A\n1) AB\n2) Acknowledge - Recibo.\n3) ADE\n4) AIS\n\nCOLUNA B\na) Arqueação bruta\nb) ACK\nc) Equipamento acima do convés – referente ao INMARSAT.\nd) Sistema de identificação automático.",
       "assertions": [
         "1) AB",
         "2) Acknowledge - Recibo.",

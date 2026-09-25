@@ -26,10 +26,13 @@ const structuralIssues=q=>{
  const stem=String(q.question||''); const assertions=Array.isArray(q.assertions)?q.assertions:[]; const options=Array.isArray(q.options)?q.options:[];
  const blob=options.map(o=>String(typeof o==='string'?o:o?.text||'')).join(' ');
  const issues=[];
- const inlineAssertionLabels=[...stem.matchAll(/(?:^|\n|\s)(I{1,3}|IV|V)\s*[).:-]/g)].map(m=>m[1]);
- const assertionCount=Math.max(assertions.length,new Set(inlineAssertionLabels).size);
- if((/analis[ea].*(afirmativ|assertiv)|identifique.*(?:verdadeir|fals)|julgue.*(?:item|afirmativ)/i.test(stem)||/(?:apenas|todas).*(?:\bI\b|\bII\b|\bIII\b|afirmativ|assertiv)/i.test(blob))&&assertionCount<2)issues.push('MISSING_ASSERTIONS');
- if(/<\s*PARSED TEXT FOR PAGE|PARSED TEXT FOR PAGE|\[object Object\]/i.test(stem+' '+blob))issues.push('PARSING_ARTIFACT');
+ const inlineAssertionLabels=[...stem.matchAll(/(?:^|\n)\s*(IV|III|II|I|V)\s*[).:-]\s*/g)].map(m=>m[1]);
+ const vfBulletCount=(stem.match(/\(\s*\)\s+/g)||[]).length;
+ const assertionCount=Math.max(assertions.length,new Set(inlineAssertionLabels).size,vfBulletCount);
+ const comboAssertions=options.some(o=>/^(?:apenas\s+)?(?:I|II|III|IV|V)(?:\s*[,e]\s*(?:I|II|III|IV|V))+/i.test(String(typeof o==='string'?o:o?.text||'').trim()));
+ const vfOptions=options.some(o=>/^(?:\(\s*[VF]\s*\)\s*){2,}/i.test(String(typeof o==='string'?o:o?.text||'').trim()));
+ if((comboAssertions||vfOptions)&&assertionCount<2)issues.push('MISSING_ASSERTIONS');
+ if(/<\s*PARSED TEXT FOR PAGE|PARSED TEXT FOR PAGE|\[object Object\]|\b(?:cacacarga|gragragrande|popopor|uu+um|tututubo|descacacarga|lugapopor|quadrangulapopor|ofjloatation)\b|\(art\.\s*\d+(?:\.\d+)?\}|\{[A-Z]\)/i.test(stem+' '+blob))issues.push('PARSING_ARTIFACT');
  if(/\bcorrelacione\b/i.test(stem)&&!/(?:\n|Coluna\s+I|1\))/i.test(stem))issues.push('MALFORMED_CORRELATION');
  if(options.length!==5)issues.push('OPTION_COUNT_'+options.length);
  const texts=options.map(o=>String(typeof o==='string'?o:o?.text||'').trim());
@@ -40,14 +43,17 @@ const structuralIssues=q=>{
  const wordset=t=>new Set(t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,' ').split(/\s+/).filter(w=>w.length>=4));
  const sim=(a,b)=>{const A=wordset(a),B=wordset(b);if(!A.size||!B.size)return 0;let n=0;for(const w of A)if(B.has(w))n++;return n/Math.min(A.size,B.size)};
  const answer=String(q.correct_answer||q.answer||'').trim().toUpperCase(); const ci=/^[A-E]$/.test(answer)?answer.charCodeAt(0)-65:-1;
- if(ci>=0&&texts[ci]){const ss=texts.map(t=>sim(stem,t));const order=[...ss].sort((a,b)=>b-a);if(ss[ci]===order[0]&&order[0]-Number(order[1]||0)>=.28)issues.push('ANSWER_LEAK_OR_SIMILARITY_CUE');
+ const format=String(q.pscpp_format||q.format||'').toLowerCase(); const semanticHeuristicsApplicable=q.origin!=='official_exam'&&!comboAssertions&&!vfOptions&&!['correlation','true_false','assertion_combination'].includes(format);
+ if(ci>=0&&texts[ci]&&semanticHeuristicsApplicable){const ss=texts.map(t=>sim(stem,t));const order=[...ss].sort((a,b)=>b-a);if(ss[ci]===order[0]&&order[0]-Number(order[1]||0)>=.28)issues.push('ANSWER_LEAK_OR_SIMILARITY_CUE');
  const cross=texts.map((t,i)=>i===ci?1:sim(texts[ci],t));if(cross.filter((v,i)=>i!==ci&&v<.08).length>=3)issues.push('WEAK_OR_HETEROGENEOUS_DISTRACTORS');
  const lens=texts.map(t=>wordset(t).size).sort((a,b)=>a-b),median=lens[Math.floor(lens.length/2)]||1;if(wordset(texts[ci]).size>Math.max(median*1.8,median+10))issues.push('ANSWER_LENGTH_CUE');}
- const roman=inlineAssertionLabels;if(roman.length>=2&&new Set(roman).size!==roman.length)issues.push('ASSERTION_NUMBERING_FORMAT');
+ const roman=inlineAssertionLabels;const expectedRoman=['I','II','III','IV','V'];if(roman.length>=2&&roman.some((label,index)=>label!==expectedRoman[index]))issues.push('ASSERTION_NUMBERING_FORMAT');
  if(roman.length>=2&&!/[\n\r]/.test(stem))issues.push('ASSERTIONS_FLATTENED_IN_STEM');
  return issues;
 };
-const report={generated_at:new Date().toISOString(),subjects:{},totals:{questions:0,active:0,quarantined:0,legacy:0,template_risk:0,answer_explanation_mismatch:0,active_unsafe:0}};
+const DETERMINISTIC_ISSUES=new Set(['MISSING_ASSERTIONS','PARSING_ARTIFACT','MALFORMED_CORRELATION','DUPLICATE_OPTIONS','ASSERTION_NUMBERING_FORMAT','ASSERTIONS_FLATTENED_IN_STEM']);
+const isDeterministicIssue=issue=>DETERMINISTIC_ISSUES.has(issue)||/^OPTION_COUNT_/.test(issue);
+const report={generated_at:new Date().toISOString(),audit_scope:{runtime_sources:75,review_mode:'editorial-integral'},subjects:{},runtime_inventory:[],totals:{questions:0,active:0,quarantined:0,legacy:0,template_risk:0,answer_explanation_mismatch:0,active_unsafe:0}};
 for(const subject of subjects){
  const bank=JSON.parse(fs.readFileSync(path.join(dir,subject+'.json'),'utf8'));
  const rows=[]; let active=0,quarantined=0,legacyCount=0,template=0,mismatch=0,activeUnsafe=0;
@@ -65,11 +71,39 @@ for(const subject of subjects){
  report.subjects[subject]={questions:(bank.questions||[]).length,active,quarantined,legacy:legacyCount,template_risk:template,answer_explanation_mismatch:mismatch,active_unsafe:activeUnsafe,review_ids:rows};
  for(const [k,v] of Object.entries({questions:(bank.questions||[]).length,active,quarantined,legacy:legacyCount,template_risk:template,answer_explanation_mismatch:mismatch,active_unsafe:activeUnsafe})) report.totals[k]+=v;
 }
-report.pscpp_runtime_sources={}; report.totals.runtime_questions=0; report.totals.runtime_structural_issues=0; report.totals.runtime_active_structural_issues=0; report.totals.runtime_inactive=0;
+report.pscpp_runtime_sources={}; report.totals.runtime_questions=0; report.totals.runtime_structural_issues=0; report.totals.runtime_active_structural_issues=0; report.totals.runtime_semantic_review_flags=0; report.totals.runtime_inactive=0;
 for(const [name,file] of pscppSources){
  if(!fs.existsSync(file))continue;
  const bank=JSON.parse(fs.readFileSync(file,'utf8')); const rows=[];
- for(const q of bank.questions||[]){const issues=structuralIssues(q);const quality=questionQualityState(q);const state={...quality,active:quality.active&&issues.length===0,reason:!quality.active?quality.reason:(issues.length?"runtime-structural-quarantine":null)};report.totals.runtime_questions++;if(!state.active)report.totals.runtime_inactive++;if(issues.length){report.totals.runtime_structural_issues+=issues.length;if(state.active)report.totals.runtime_active_structural_issues+=issues.length;rows.push({id:q.id,issues,state});}}
+ for(const q of bank.questions||[]){
+  const issues=structuralIssues(q);
+  const quality=questionQualityState(q);
+  const deterministicIssues=issues.filter(isDeterministicIssue);
+  const semanticReviewFlags=issues.filter(issue=>!isDeterministicIssue(issue));
+  const baseActive=quality.active;
+  const effectiveActive=baseActive&&deterministicIssues.length===0;
+  const state={...quality,active:effectiveActive,reason:!baseActive?quality.reason:(deterministicIssues.length?"runtime-structural-quarantine":null)};
+  report.totals.runtime_questions++;
+  if(!effectiveActive)report.totals.runtime_inactive++;
+  if(issues.length){
+    report.totals.runtime_structural_issues+=deterministicIssues.length;
+    report.totals.runtime_semantic_review_flags+=semanticReviewFlags.length;
+    if(baseActive)report.totals.runtime_active_structural_issues+=deterministicIssues.length;
+    rows.push({id:q.id,issues,state});
+  }
+  report.runtime_inventory.push({
+    source_name:name,source_file:path.relative(root,file),id:q.id||null,origin:q.origin||q.pscpp_origin||null,format:q.pscpp_format||q.format||null,stored_editorial_status:q.editorial_status||null,
+    subject:q.subject||q.discipline||null,topic:q.topic||q.subtopic||null,
+    bibliography_id:q.bibliography_id||q?.source?.bibliography_id||null,
+    chapter_id:q.chapter_id||q?.source?.chapter_id||null,
+    question:q.question||"",assertions:Array.isArray(q.assertions)?q.assertions:[],
+    options:Array.isArray(q.options)?q.options:[],correct_answer:q.correct_answer||q.answer||null,
+    explanation:q.explanation||null,source:q.source||null,provenance:q.provenance||null,
+    validation_status:q.validation_status||null,explicit_active:q.active!==false,
+    quality_state:quality,issues,deterministic_issues:deterministicIssues,semantic_review_flags:semanticReviewFlags,effective_active:effectiveActive,
+    editorial_status:issues.length?"REVIEW_REQUIRED":(effectiveActive?"APROVADA_AUTOMATICA":"REVIEW_INACTIVE")
+  });
+ }
  report.pscpp_runtime_sources[name]={questions:(bank.questions||[]).length,flagged:rows.length,review_ids:rows};
 }
 fs.writeFileSync(out,JSON.stringify(report,null,2)+'\n');

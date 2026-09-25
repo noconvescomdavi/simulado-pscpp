@@ -2162,9 +2162,9 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "arte-naval",
-      "active": true,
-      "validation_status": "approved",
-      "question": "Correlacione os termos às respectivas descrições, com base em IMO Resolution A.1045(27) — Pilot Transfer Arrangements:",
+      "active": false,
+      "validation_status": "quarantined_irrecoverable_source_mismatch",
+      "question": "Correlacione os termos às respectivas descrições, com base em IMO Resolution A.1045(27) — Pilot Transfer Arrangements:\n\nCOLUNA A\n1) Resolution A.1045(27): Pilot Transfer Arrangements\n2) retrieval line\n3) Resolution A.1045(27): Pilot Transfer Arrangements\n4) Resolution A.1045(27): Pilot Transfer Arrangements\n\nCOLUNA B\na) distância horizontal à plataforma\nb) Apenas as afirmativas I e IV são verdadeiras.\nc) Apenas as afirmativas III e IV são verdadeiras.\nd) ( V ) ( V ) ( F ) ( F )",
       "assertions": [
         "1) Resolution A.1045(27): Pilot Transfer Arrangements",
         "2) retrieval line",
@@ -2275,7 +2275,9 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "ANV-B015-07",
         "source_block": 15
-      }
+      },
+      "quarantine_reason": "Correlação contém termos/descrições incompatíveis entre si e com o localizador bibliográfico registrado; reconstrução segura exigiria criar conteúdo não presente no item original.",
+      "editorial_status": "QUARENTENA_IRRECUPERÁVEL"
     },
     {
       "id": "ANV-B015-08",
@@ -7179,7 +7181,7 @@
       "source_subject": "comunicacoes",
       "active": true,
       "validation_status": "approved",
-      "question": "Correlacione os termos às respectivas descrições, com base em Curso Especial de Radioperador Geral (EROG): Considere o contexto específico identificado por COM-B015-03.",
+      "question": "Correlacione os termos às respectivas descrições, com base em Curso Especial de Radioperador Geral (EROG): Considere o contexto específico identificado por COM-B015-03.\n\nCOLUNA A\n1) AB\n2) Acknowledge - Recibo.\n3) ADE\n4) AIS\n\nCOLUNA B\na) Arqueação bruta\nb) ACK\nc) Equipamento acima do convés – referente ao INMARSAT.\nd) Sistema de identificação automático.",
       "assertions": [
         "1) AB",
         "2) Acknowledge - Recibo.",
