@@ -1,0 +1,84 @@
+name: Windows Desktop Build
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - feature/windows-desktop-offline
+    paths:
+      - "app/**"
+      - "lib/**"
+      - "desktop/**"
+      - "db/**"
+      - "public/**"
+      - "protected-content/**"
+      - "package.json"
+      - "next.config.mjs"
+      - ".github/workflows/windows-desktop.yml"
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    timeout-minutes: 45
+    env:
+      PSCPP_DESKTOP: "1"
+      AUTH_SECRET: "desktop-build-only-secret-not-used-at-runtime-000000000000"
+      NEXT_PUBLIC_APP_URL: "http://127.0.0.1:32145"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Validate question banks
+        run: npm run validate:questions
+      - name: Build standalone web application
+        run: npm run desktop:build:web
+      - name: Bundle Node runtime
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path desktop/runtime | Out-Null
+          Copy-Item (Get-Command node).Source desktop/runtime/node.exe
+      - name: Package Windows installer
+        run: npx electron-builder --win nsis --x64 --publish never
+      - name: Smoke test packaged desktop app
+        shell: pwsh
+        run: |
+          $exe = Join-Path $PWD "dist\\win-unpacked\\ESTIBORDO PSCPP.exe"
+          if (!(Test-Path $exe)) { throw "Executável empacotado não encontrado: $exe" }
+          $proc = Start-Process -FilePath $exe -PassThru
+          try {
+            $ready = $false
+            for ($i=0; $i -lt 30; $i++) {
+              Start-Sleep -Seconds 1
+              try {
+                $health = Invoke-RestMethod -Uri "http://127.0.0.1:32145/api/desktop/health" -TimeoutSec 1
+                if ($health.ok -eq $true -and $health.desktop -eq $true) { $ready = $true; break }
+              } catch {}
+            }
+            if (!$ready) {
+              $logs = Get-ChildItem -Path $env:USERPROFILE -Filter "desktop-server.log" -Recurse -ErrorAction SilentlyContinue
+              foreach ($log in $logs) {
+                Write-Host "=== $($log.FullName) ==="
+                Get-Content $log.FullName -Tail 200
+              }
+              throw "Servidor local do aplicativo não ficou pronto."
+            }
+            $session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
+            $response = Invoke-WebRequest -Uri "http://127.0.0.1:32145/api/desktop/bootstrap" -WebSession $session -MaximumRedirection 5 -TimeoutSec 60
+            if ($response.StatusCode -ne 200) { throw "Bootstrap offline falhou: HTTP $($response.StatusCode)" }
+            $me = Invoke-RestMethod -Uri "http://127.0.0.1:32145/api/auth/me" -WebSession $session -TimeoutSec 10
+            if (!$me.user.id) { throw "Sessão offline não foi criada." }
+          } finally {
+            Stop-Process -Name "ESTIBORDO PSCPP" -Force -ErrorAction SilentlyContinue
+            Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue
+          }
+      - name: Upload Windows installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: ESTIBORDO-PSCPP-Windows-x64
+          path: dist/ESTIBORDO-PSCPP-Setup-*.exe
+          if-no-files-found: error
+          retention-days: 30
