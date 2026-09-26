@@ -1,3 +1,5 @@
+import {isStandaloneBuild} from "../../../lib/standalone/mode";
+import StandaloneErrors from "./StandaloneErrors";
 import { redirect } from "next/navigation";
 import { getSession } from "../../../lib/auth";
 import { getEntitlement } from "../../../lib/entitlement";
@@ -8,7 +10,7 @@ import StructuredQuestion from "../../components/StructuredQuestion";
 
 export const dynamic = "force-dynamic";
 
-export default async function ErrorNotebookPage({searchParams}) {
+async function WebErrorNotebookPage({searchParams}) {
   const session = await getSession();
   if (!session) redirect("/login?next=/conteudos/caderno-de-erros");
 
@@ -103,3 +105,5 @@ export default async function ErrorNotebookPage({searchParams}) {
     </>
   );
 }
+
+export default async function ErrorNotebookPage(props){if(isStandaloneBuild())return <StandaloneErrors/>;return WebErrorNotebookPage(props);}
