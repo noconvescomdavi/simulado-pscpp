@@ -1,0 +1,5 @@
+import fs from "node:fs/promises";import path from "node:path";
+const source=process.env.ESTIBORDO_PRIVATE_SEED||path.resolve(".standalone-private/seed.json");const dest=path.resolve("public/standalone-private/seed.json");
+const raw=JSON.parse(await fs.readFile(source,"utf8"));const expected=String(process.env.ESTIBORDO_STANDALONE_ACCOUNT_EMAIL||"").trim().toLowerCase();if(expected&&String(raw?.account_email||"").trim().toLowerCase()!==expected)throw new Error("O seed privado não pertence à conta standalone informada para este build.");
+const forbidden=/(password|hash|token|secret|mfa|oauth|database_url|session_cookie)/i;function scrub(v){if(Array.isArray(v))return v.map(scrub);if(v&&typeof v==="object")return Object.fromEntries(Object.entries(v).filter(([k])=>!forbidden.test(k)).map(([k,x])=>[k,scrub(x)]));return v}
+const seed=scrub({...raw,schema_version:2,source:"private-sql-export"});delete seed.account_email;await fs.mkdir(path.dirname(dest),{recursive:true});await fs.writeFile(dest,JSON.stringify(seed));console.log("Standalone seed prepared:",dest);

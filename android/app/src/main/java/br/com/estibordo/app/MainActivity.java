@@ -24,12 +24,13 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.webkit.WebResourceResponse;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-    private static final String HOME_URL = "https://simulado-pscpp.vercel.app";
+    private static final String LOCAL_HOST = "127.0.0.1";
     private static final int FILE_CHOOSER_REQUEST = 1001;
     private static final int PERMISSION_REQUEST = 1002;
 
@@ -37,6 +38,9 @@ public class MainActivity extends Activity {
     private ProgressBar progressBar;
     private ValueCallback<Uri[]> filePathCallback;
     private PermissionRequest pendingWebPermission;
+    private LocalHttpServer localServer;
+    private EstibordoDatabase localDatabase;
+    private String homeUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,9 +63,13 @@ public class MainActivity extends Activity {
 
         setContentView(root);
         configureWebView();
+        localDatabase = new EstibordoDatabase(this); localDatabase.getWritableDatabase();
+        webView.addJavascriptInterface(new LocalDataBridge(localDatabase), "EstibordoLocal");
+        try { localServer = new LocalHttpServer(this); homeUrl = "http://" + LOCAL_HOST + ":" + localServer.start() + "/area-do-aluno/"; }
+        catch (Exception e) { Toast.makeText(this, "Falha ao iniciar o aplicativo local.", Toast.LENGTH_LONG).show(); return; }
 
         if (savedInstanceState == null) {
-            webView.loadUrl(HOME_URL);
+            webView.loadUrl(homeUrl);
         } else {
             webView.restoreState(savedInstanceState);
         }
@@ -72,19 +80,21 @@ public class MainActivity extends Activity {
         settings.setJavaScriptEnabled(true);
         settings.setDomStorageEnabled(true);
         settings.setDatabaseEnabled(true);
-        settings.setAllowFileAccess(true);
+        settings.setAllowFileAccess(false);
+        settings.setAllowFileAccessFromFileURLs(false);
+        settings.setAllowUniversalAccessFromFileURLs(false);
         settings.setAllowContentAccess(true);
         settings.setMediaPlaybackRequiresUserGesture(false);
         settings.setLoadWithOverviewMode(true);
         settings.setUseWideViewPort(true);
         settings.setBuiltInZoomControls(false);
         settings.setDisplayZoomControls(false);
-        settings.setMixedContentMode(WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE);
+        settings.setMixedContentMode(WebSettings.MIXED_CONTENT_NEVER_ALLOW);
         settings.setUserAgentString(settings.getUserAgentString() + " ESTIBORDO-Android/1.0");
 
         CookieManager cookies = CookieManager.getInstance();
-        cookies.setAcceptCookie(true);
-        cookies.setAcceptThirdPartyCookies(webView, true);
+        cookies.setAcceptCookie(false);
+        cookies.setAcceptThirdPartyCookies(webView, false);
 
         webView.setWebViewClient(new EstibordoWebViewClient());
         webView.setWebChromeClient(new EstibordoChromeClient());
@@ -120,9 +130,8 @@ public class MainActivity extends Activity {
 
         private boolean handleUri(Uri uri) {
             String scheme = uri.getScheme();
-            if ("http".equalsIgnoreCase(scheme) || "https".equalsIgnoreCase(scheme)) {
-                return false;
-            }
+            if ("http".equalsIgnoreCase(scheme) && LOCAL_HOST.equalsIgnoreCase(uri.getHost())) return false;
+            if ("http".equalsIgnoreCase(scheme) || "https".equalsIgnoreCase(scheme)) { openExternal(uri); return true; }
 
             if ("intent".equalsIgnoreCase(scheme)) {
                 try {
@@ -275,6 +284,9 @@ public class MainActivity extends Activity {
             pendingWebPermission = null;
         }
     }
+
+    @Override
+    protected void onDestroy() { if (localServer != null) localServer.stop(); if (localDatabase != null) localDatabase.close(); if (webView != null) webView.destroy(); super.onDestroy(); }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {

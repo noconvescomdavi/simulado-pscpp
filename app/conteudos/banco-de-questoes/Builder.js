@@ -3,6 +3,7 @@ import {useState} from "react";
 import QuestionFilterControls,{EMPTY_QUESTION_FILTERS} from "../../components/QuestionFilterControls";
 import styles from "./bank.module.css";
 import {createOfflineNotebook} from "../../../lib/offline-store";
+import {standaloneEnabled} from "../../../lib/standalone/runtime";
 
 function mergeFacetList(items){
   const merged=new Map();
@@ -45,7 +46,7 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
       fixation,
       title:fixation?"Caderno de fixação — "+(fixation.chapter||fixation.section_key):null
     };
-    if(!navigator.onLine){
+    if(standaloneEnabled()||!navigator.onLine){
       try{
         const notebook=await createOfflineNotebook(body);
         location.href=`/offline?mode=notebook&id=${notebook.id}`;

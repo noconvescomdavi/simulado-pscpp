@@ -1,3 +1,5 @@
+import StandaloneSimulados from "./StandaloneSimulados";
+import {isStandaloneBuild} from "../../lib/standalone/mode";
 import { redirect } from "next/navigation";
 import { getSession } from "../../lib/auth";
 import { getEntitlement } from "../../lib/entitlement";
@@ -25,7 +27,7 @@ function percent(correct, answered) {
   return total ? Math.round((Number(correct || 0) / total) * 10000) / 100 : 0;
 }
 
-export default async function Page() {
+async function WebSimulados() {
   const session = await getSession();
   if (!session) redirect("/login");
 
@@ -141,3 +143,5 @@ export default async function Page() {
     </>
   );
 }
+
+export default async function Page(){if(isStandaloneBuild())return <StandaloneSimulados/>;return WebSimulados();}

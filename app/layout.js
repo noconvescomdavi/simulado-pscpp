@@ -7,6 +7,7 @@ import PwaRuntime from "./components/PwaRuntime";
 import WebVitalsReporter from "./components/WebVitalsReporter";
 import MobileAppRuntime from "./components/MobileAppRuntime";
 import CommandPaletteShortcut from "./components/CommandPaletteShortcut";
+import StandaloneRuntime from "./components/StandaloneRuntime";
 
 const montserrat=Montserrat({subsets:["latin"],display:"swap",variable:"--font-montserrat"});
 const poppins=Poppins({subsets:["latin"],weight:["500","600","700","800"],display:"swap",variable:"--font-poppins"});
@@ -44,17 +45,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
       <head>
-        <link rel="apple-touch-icon" sizes="180x180" href="/pwa-icon" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/estibordo/logos/estibordo-logo-header.png" />
         <link rel="manifest" href="/manifest.webmanifest" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-title" content="ESTIBORDO" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="theme-color" content="#07141f" />
-        <link rel="apple-touch-startup-image" href="/pwa-splash" />
+
       </head>
       <body className={`${montserrat.variable} ${poppins.variable}`}>
         {children}
+        <StandaloneRuntime />
         <SiteDesignRuntime />
         <SiteDesignProRuntime />
         <PwaRuntime />
