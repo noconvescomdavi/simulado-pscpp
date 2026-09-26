@@ -1,0 +1,3 @@
+import fs from "node:fs/promises";import {spawn} from "node:child_process";
+const api="app/api",park=".standalone-build-api";let moved=false;async function exists(p){try{await fs.access(p);return true}catch{return false}}async function restore(){if(moved&&await exists(park)){await fs.rename(park,api);moved=false}}
+try{if(await exists(park))await fs.rm(park,{recursive:true,force:true});if(await exists(api)){await fs.rename(api,park);moved=true}const child=spawn(process.platform==="win32"?"npx.cmd":"npx",["next","build"],{stdio:"inherit",env:{...process.env,NEXT_PUBLIC_ESTIBORDO_STANDALONE:"1"}});const code=await new Promise((resolve,reject)=>{child.on("error",reject);child.on("exit",resolve)});if(code!==0)process.exitCode=code;}finally{await restore()}
