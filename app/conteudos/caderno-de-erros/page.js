@@ -8,7 +8,6 @@ import StudentHeader from "../../components/StudentHeader";
 import styles from "./errors.module.css";
 import StructuredQuestion from "../../components/StructuredQuestion";
 
-export const dynamic = "force-dynamic";
 
 async function WebErrorNotebookPage({searchParams}) {
   const session = await getSession();
