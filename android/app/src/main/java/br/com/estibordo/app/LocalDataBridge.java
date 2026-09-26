@@ -7,6 +7,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public final class LocalDataBridge {
+  public static final String BRIDGE_NAME="EstibordoLocal";
   private final EstibordoDatabase helper;
   LocalDataBridge(EstibordoDatabase helper){this.helper=helper;}
   private String table(String name){
