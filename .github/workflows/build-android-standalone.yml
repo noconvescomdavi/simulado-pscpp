@@ -41,6 +41,8 @@ jobs:
           test -d out/_next/static
           find out/_next/static -type f | grep -q .
           grep -q "/_next/static" out/area-do-aluno/index.html
+          test "$(find out/_next/static -type f -name "*.js" | wc -l)" -gt 0
+          test "$(find out/_next/static -type f -name "*.css" | wc -l)" -gt 0
       - name: Copy bundle into Android assets
         run: |
           rm -rf android/app/src/main/assets/www
