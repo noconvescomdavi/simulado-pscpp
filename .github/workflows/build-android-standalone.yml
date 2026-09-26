@@ -68,6 +68,10 @@ jobs:
           grep -q "127.0.0.1" android/app/src/main/java/br/com/estibordo/app/MainActivity.java
           grep -q "ServerSocket" android/app/src/main/java/br/com/estibordo/app/LocalHttpServer.java
           grep -q "SQLiteOpenHelper" android/app/src/main/java/br/com/estibordo/app/EstibordoDatabase.java
+          grep -q "addJavascriptInterface" android/app/src/main/java/br/com/estibordo/app/MainActivity.java
+          grep -q "EstibordoLocal" android/app/src/main/java/br/com/estibordo/app/LocalDataBridge.java
+          grep -q "exam_sessions" lib/standalone/android-store.js
+          grep -q "getLatestOfflineExam" app/simulado/\\[subject\\]/Client.js
           test -f data/manifest.json
       - name: Build APK
         working-directory: android
