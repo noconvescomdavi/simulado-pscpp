@@ -9,7 +9,6 @@ import StudentHeader from "../components/StudentHeader";
 import AdaptiveClient from "../treino-adaptativo/AdaptiveClient";
 import styles from "../treino-adaptativo/adaptive.module.css";
 
-export const dynamic="force-dynamic";
 async function WebTreinoInteligente(){
  const s=await getSession(); if(!s)redirect("/login?next=/treino-inteligente");
  const [plan,reviews,consistency,topics]=await Promise.all([
