@@ -1,0 +1,60 @@
+name: Build ESTIBORDO Standalone Android APK
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "android/**"
+      - "app/**"
+      - "lib/standalone/**"
+      - "lib/offline-store.js"
+      - "next.config.mjs"
+      - "package.json"
+      - ".github/workflows/build-android-standalone.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build-standalone-apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+      - run: npm ci
+      - name: Zero-server audit
+        run: npm run audit:standalone
+      - name: Build standalone web bundle
+        env:
+          NEXT_PUBLIC_ESTIBORDO_STANDALONE: "1"
+        run: npm run build:standalone
+      - name: Verify exported entrypoint
+        run: test -f out/area-do-aluno/index.html
+      - name: Copy bundle into Android assets
+        run: |
+          rm -rf android/app/src/main/assets/www
+          mkdir -p android/app/src/main/assets/www
+          cp -R out/. android/app/src/main/assets/www/
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - uses: android-actions/setup-android@v3
+      - run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.11.1"
+      - name: Build APK
+        working-directory: android
+        run: gradle --no-daemon assembleDebug
+      - name: Verify APK has bundled site
+        run: unzip -l android/app/build/outputs/apk/debug/app-debug.apk | grep -q "assets/www/area-do-aluno/index.html"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ESTIBORDO-Standalone-Android
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
