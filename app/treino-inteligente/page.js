@@ -1,3 +1,5 @@
+import {isStandaloneBuild} from "../../lib/standalone/mode";
+import StandaloneTraining from "./StandaloneTraining";
 import {redirect} from "next/navigation";
 import {getSession} from "../../lib/auth";
 import {getIntegratedStudyPlan} from "../../lib/integrated-study-plan";
@@ -8,7 +10,7 @@ import AdaptiveClient from "../treino-adaptativo/AdaptiveClient";
 import styles from "../treino-adaptativo/adaptive.module.css";
 
 export const dynamic="force-dynamic";
-export default async function TreinoInteligente(){
+async function WebTreinoInteligente(){
  const s=await getSession(); if(!s)redirect("/login?next=/treino-inteligente");
  const [plan,reviews,consistency,topics]=await Promise.all([
   getIntegratedStudyPlan(s.id,0),getReviewQueue(s.id,60),getConsistency(s.id),
@@ -30,3 +32,4 @@ export default async function TreinoInteligente(){
   </section>
  </main></>;
 }
+export default async function TreinoInteligente(){if(isStandaloneBuild())return <StandaloneTraining/>;return WebTreinoInteligente();}
