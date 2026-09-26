@@ -39,6 +39,7 @@ public class MainActivity extends Activity {
     private ValueCallback<Uri[]> filePathCallback;
     private PermissionRequest pendingWebPermission;
     private LocalHttpServer localServer;
+    private EstibordoDatabase localDatabase;
     private String homeUrl;
 
     @Override
@@ -62,6 +63,7 @@ public class MainActivity extends Activity {
 
         setContentView(root);
         configureWebView();
+        localDatabase = new EstibordoDatabase(this); localDatabase.getWritableDatabase();
         try { localServer = new LocalHttpServer(this); homeUrl = "http://" + LOCAL_HOST + ":" + localServer.start() + "/area-do-aluno/"; }
         catch (Exception e) { Toast.makeText(this, "Falha ao iniciar o aplicativo local.", Toast.LENGTH_LONG).show(); return; }
 
@@ -283,7 +285,7 @@ public class MainActivity extends Activity {
     }
 
     @Override
-    protected void onDestroy() { if (localServer != null) localServer.stop(); if (webView != null) webView.destroy(); super.onDestroy(); }
+    protected void onDestroy() { if (localServer != null) localServer.stop(); if (localDatabase != null) localDatabase.close(); if (webView != null) webView.destroy(); super.onDestroy(); }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
