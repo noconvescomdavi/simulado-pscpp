@@ -22,7 +22,9 @@ export default async function HojePage() {
   if(integrated.needs_onboarding) redirect("/plano-de-estudos/configurar");
   const todayIso=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Sao_Paulo",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
   const today=integrated.week.days.find(d=>d.iso===todayIso);
-  const plan={tasks:today?.tasks||[],goal:{daily_minutes:integrated.onboarding.daily_minutes},weak_topics:integrated.tracking?.weakest_topics||[],total_question_bank:integrated.metrics.total_question_bank||integrated.metrics.overall?.questions||0,study_time:integrated.tracking?.study_time||{},mastery:integrated.tracking?.overall_mastery||0};
+  const tasks=today?.tasks||[];
+  const plannedMinutes=tasks.reduce((sum,t)=>sum+Number(t.estimate_minutes||0),0);
+  const plan={tasks,goal:{daily_minutes:integrated.onboarding.daily_minutes},weak_topics:integrated.tracking?.weakest_topics||[],total_question_bank:integrated.metrics.total_question_bank||integrated.metrics.overall?.questions||0,study_time:integrated.tracking?.study_time||{},mastery:integrated.tracking?.overall_mastery||0};
 
   return (
     <>
@@ -38,8 +40,8 @@ export default async function HojePage() {
           </div>
           <div className={styles.goal}>
             <small>PREPARAÇÃO ESTIMADA · {integrated.readiness}%</small>
-            <strong>{plan.goal.daily_minutes}</strong>
-            <span>minutos planejados</span>
+            <strong>{plannedMinutes}</strong>
+            <span>min previstos nas tarefas · capacidade {plan.goal.daily_minutes} min</span>
             <small>{plan.study_time.today_minutes||0} min reais hoje · domínio {Math.round(Number(plan.mastery||0))}%</small>
           </div>
         </section>
@@ -52,7 +54,7 @@ export default async function HojePage() {
             <TrackedStudyLink href={task.href||"/plano-de-estudos"} className={styles.task} task={{...task,plan_date:todayIso,source:"today"}} key={`${task.type}-${index}`}>
               <div className={styles.order}>{index + 1}</div>
               <div>
-                <span>{task.type==="reading"?(task.pages?task.pages+" PÁGINAS":"LEITURA"):task.type==="questions"?(task.target_questions||"")+" QUESTÕES":task.type.toUpperCase()}</span>
+                <span>{task.type==="reading"?(task.pages?task.pages+" PÁGINAS":"LEITURA"):task.type==="questions"?"QUESTÕES DE FIXAÇÃO":task.type==="review"?"REVISÃO":task.type==="simulado"?"SIMULADO PSCPP":task.type.toUpperCase()}</span>
                 <h2>{task.title}</h2>
                 <p>{task.description}</p>{task.reason&&<small>Por quê: {task.reason}.</small>}
               </div>
