@@ -91,9 +91,20 @@ public class MainActivity extends Activity {
                         } catch (java.io.IOException second) { return null; }
                     }
                     try {
-                        String mime = android.webkit.MimeTypeMap.getSingleton().getMimeTypeFromExtension(android.webkit.MimeTypeMap.getFileExtensionFromUrl(clean));
-                        if (mime == null) mime = "application/octet-stream";
-                        return new WebResourceResponse(mime, "UTF-8", input);
+                        String lower = clean.toLowerCase(java.util.Locale.ROOT);
+                        String mime;
+                        if (lower.endsWith(".js") || lower.endsWith(".mjs")) mime = "application/javascript";
+                        else if (lower.endsWith(".css")) mime = "text/css";
+                        else if (lower.endsWith(".html")) mime = "text/html";
+                        else if (lower.endsWith(".json")) mime = "application/json";
+                        else if (lower.endsWith(".svg")) mime = "image/svg+xml";
+                        else if (lower.endsWith(".woff2")) mime = "font/woff2";
+                        else if (lower.endsWith(".woff")) mime = "font/woff";
+                        else if (lower.endsWith(".png")) mime = "image/png";
+                        else if (lower.endsWith(".jpg") || lower.endsWith(".jpeg")) mime = "image/jpeg";
+                        else if (lower.endsWith(".webp")) mime = "image/webp";
+                        else { mime = android.webkit.MimeTypeMap.getSingleton().getMimeTypeFromExtension(android.webkit.MimeTypeMap.getFileExtensionFromUrl(clean)); if (mime == null) mime = "application/octet-stream"; }
+                        return new WebResourceResponse(mime, null, 200, "OK", java.util.Collections.singletonMap("Cache-Control","no-cache"), input);
                     } catch (Exception e) { try { input.close(); } catch (Exception ignored) {} return null; }
                 }).build();
         WebSettings settings = webView.getSettings();
