@@ -1,5 +1,5 @@
-import StandaloneGate from "../components/StandaloneGate";
 import StandaloneSimulados from "./StandaloneSimulados";
+import {isStandaloneBuild} from "../../lib/standalone/mode";
 import { redirect } from "next/navigation";
 import { getSession } from "../../lib/auth";
 import { getEntitlement } from "../../lib/entitlement";
@@ -144,4 +144,4 @@ async function WebSimulados() {
   );
 }
 
-export default function Page(){return <StandaloneGate standalone={<StandaloneSimulados/>} web={<WebSimulados/>}/>;}
+export default async function Page(){if(isStandaloneBuild())return <StandaloneSimulados/>;return WebSimulados();}
