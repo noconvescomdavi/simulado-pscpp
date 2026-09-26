@@ -7,6 +7,7 @@ import PwaRuntime from "./components/PwaRuntime";
 import WebVitalsReporter from "./components/WebVitalsReporter";
 import MobileAppRuntime from "./components/MobileAppRuntime";
 import CommandPaletteShortcut from "./components/CommandPaletteShortcut";
+import StandaloneRuntime from "./components/StandaloneRuntime";
 
 const montserrat=Montserrat({subsets:["latin"],display:"swap",variable:"--font-montserrat"});
 const poppins=Poppins({subsets:["latin"],weight:["500","600","700","800"],display:"swap",variable:"--font-poppins"});
@@ -55,6 +56,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${montserrat.variable} ${poppins.variable}`}>
         {children}
+        <StandaloneRuntime />
         <SiteDesignRuntime />
         <SiteDesignProRuntime />
         <PwaRuntime />
