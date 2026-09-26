@@ -5,6 +5,7 @@ import QuestionFilterControls, { EMPTY_QUESTION_FILTERS } from "../../components
 import styles from "./exam.module.css";
 import StructuredQuestion from "../../components/StructuredQuestion";
 import {cacheServerExam, createOfflineExam, getLatestOfflineExam, answerOfflineExam, finishOfflineExam, hydrateOfflineExam, setOfflineExamPaused} from "../../../lib/offline-store";
+import {standaloneEnabled} from "../../../lib/standalone/runtime";
 
 function clock(seconds) {
   const safe = Math.max(0, Number(seconds) || 0);
@@ -136,7 +137,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
   async function load() {
     setError("");
     try{
-      if(!navigator.onLine)throw new TypeError("offline");
+      if(standaloneEnabled()||!navigator.onLine)throw new TypeError("offline");
       const response = await fetch(`/api/exams/${subject}`, { cache: "no-store" });
       const payload = await response.json().catch(() => ({}));
       if (!response.ok) {
@@ -213,7 +214,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
     setBusy(true);
     setError("");
     try {
-      if(!navigator.onLine){
+      if(standaloneEnabled()||!navigator.onLine){
         const local=await createOfflineExam({subject,count:100,filters,title,planTask});
         const exam=await hydrateOfflineExam(local);
         setState({state:"in_progress",exam,offline:true});setIndex(0);setAnswer(null);setPendingResult(null);questionStartedAt.current=Date.now();return;
@@ -309,7 +310,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
     setPauseBusy(true);
     setError("");
     try {
-      if (!navigator.onLine || state?.offline) {
+      if (standaloneEnabled() || !navigator.onLine || state?.offline) {
         const updated = await setOfflineExamPaused(exam.id, action);
         setState(current => ({ ...current, state: updated.status, exam: updated, offline: true }));
       } else {
