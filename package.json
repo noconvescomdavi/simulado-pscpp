@@ -31,7 +31,7 @@
     "build:cloudflare": "npm install --no-save --package-lock=false @opennextjs/cloudflare@1.20.6 wrangler@4.137.0 && opennextjs-cloudflare build",
     "deploy:cloudflare": "opennextjs-cloudflare deploy",
     "audit:standalone": "node scripts/audit-standalone-runtime.mjs",
-    "build:standalone": "NEXT_PUBLIC_ESTIBORDO_STANDALONE=1 next build"
+    "build:standalone": "node scripts/build-standalone.mjs"
   },
   "dependencies": {
     "argon2": "^0.41.1",
