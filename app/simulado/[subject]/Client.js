@@ -154,7 +154,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
         questionStartedAt.current = Date.now();
       }
     }catch(error){
-      if(!navigator.onLine || error instanceof TypeError){
+      if(standaloneEnabled() || !navigator.onLine || error instanceof TypeError){
         const local=await getLatestOfflineExam(subject).catch(()=>null);
         if(local){
           const active=["in_progress","paused"].includes(local.status);
@@ -202,7 +202,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
     if (!result || planMarkedRef.current) return;
     if (!planTask?.plan_date || !planTask?.task_key) return;
     planMarkedRef.current = true;
-    fetch('/api/study-plan/task', {
+    standaloneEnabled()?Promise.resolve():fetch('/api/study-plan/task', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({kind:'task',plan_date:planTask.plan_date,task_key:planTask.task_key,task_type:'simulado',subject_slug:planTask.subject_slug||subject,status:'done',metadata:{source:'automatic_exam_completion',session_id:result.session_id||null}})
@@ -242,7 +242,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
       setPendingResult(null);
       questionStartedAt.current = Date.now();
     } catch(error) {
-      if(!navigator.onLine || error instanceof TypeError){
+      if(standaloneEnabled() || !navigator.onLine || error instanceof TypeError){
         try{
           const local=await createOfflineExam({subject,count:100,filters,title,planTask});
           const exam=await hydrateOfflineExam(local);
@@ -262,7 +262,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
     setBusy(true);
     setError("");
     try {
-      if(!navigator.onLine || state?.offline){
+      if(standaloneEnabled() || !navigator.onLine || state?.offline){
         const payload=await answerOfflineExam(exam.id,{question_id:question.id,selected_answer:selectedAnswer,response_time_ms:Date.now()-questionStartedAt.current});
         setAnswer(payload);setAnswerMap(current=>({...current,[String(question.id)]:payload}));if(payload.result)setPendingResult({...payload.result,session_id:exam.id});
         setState(current=>({...current,exam:{...current.exam,answered_count:Number(current.exam.answered_count||0)+1,correct_count:Number(current.exam.correct_count||0)+(payload.is_correct?1:0)}}));
@@ -293,7 +293,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
       setAnswerMap(current=>({...current,[String(question.id)]:payload}));
       if (payload.result) setPendingResult(payload.result);
     } catch(error) {
-      if(!navigator.onLine || error instanceof TypeError){
+      if(standaloneEnabled() || !navigator.onLine || error instanceof TypeError){
         try{
           const payload=await answerOfflineExam(exam.id,{question_id:question.id,selected_answer:selectedAnswer,response_time_ms:Date.now()-questionStartedAt.current});
           setAnswer(payload);setAnswerMap(current=>({...current,[String(question.id)]:payload}));if(payload.result)setPendingResult({...payload.result,session_id:exam.id});
@@ -341,7 +341,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
     setBusy(true);
     setError("");
     try {
-      if(!navigator.onLine || state?.offline){
+      if(standaloneEnabled() || !navigator.onLine || state?.offline){
         const result=await finishOfflineExam(exam.id,reason);
         setState({state:"finished",result:{...result,session_id:exam.id,subject,reason}});
         setAnswer(null);setPendingResult(null);return;
@@ -360,7 +360,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
       setAnswer(null);
       setPendingResult(null);
     } catch(error) {
-      if(!navigator.onLine || error instanceof TypeError){
+      if(standaloneEnabled() || !navigator.onLine || error instanceof TypeError){
         try{
           const result=await finishOfflineExam(exam.id,reason);
           setState({state:"finished",result:{...result,session_id:exam.id,subject,reason},offline:true});
