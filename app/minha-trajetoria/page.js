@@ -1,3 +1,5 @@
+import {isStandaloneBuild} from "../../lib/standalone/mode";
+import StandaloneTrajectory from "./StandaloneTrajectory";
 import {redirect} from "next/navigation";
 import {getSession} from "../../lib/auth";
 import {getIntegratedStudyPlan} from "../../lib/integrated-study-plan";
@@ -14,7 +16,7 @@ function fmtDate(value){
   return new Date(value+"T12:00:00").toLocaleDateString("pt-BR");
 }
 
-export default async function MinhaTrajetoria(){
+async function WebTrajectory(){
   const session=await getSession();
   if(!session)redirect("/login?next=/minha-trajetoria");
   const [plan,learning,time,graph,metrics]=await Promise.all([
@@ -83,3 +85,5 @@ export default async function MinhaTrajetoria(){
     </section>
   </main></>;
 }
+
+export default async function MinhaTrajetoria(){if(isStandaloneBuild())return <StandaloneTrajectory/>;return WebTrajectory();}
