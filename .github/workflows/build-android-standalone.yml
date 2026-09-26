@@ -32,8 +32,15 @@ jobs:
         env:
           NEXT_PUBLIC_ESTIBORDO_STANDALONE: "1"
         run: npm run build:standalone
-      - name: Verify exported entrypoint
-        run: test -f out/area-do-aluno/index.html
+      - name: Verify standalone routes and assets
+        run: |
+          test -f out/area-do-aluno/index.html
+          test -f out/simulado/index.html
+          test -f out/perfil/index.html
+          test -f out/minha-trajetoria/index.html
+          test -d out/_next/static
+          find out/_next/static -type f | grep -q .
+          grep -q "/_next/static" out/area-do-aluno/index.html
       - name: Copy bundle into Android assets
         run: |
           rm -rf android/app/src/main/assets/www
