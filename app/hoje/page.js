@@ -11,7 +11,6 @@ import TrackedStudyLink from "../components/TrackedStudyLink";
 import TodayExamCountdown from "./TodayExamCountdown";
 import styles from "./hoje.module.css";
 
-export const dynamic = "force-dynamic";
 
 async function WebHojePage() {
   const session = await getSession();
