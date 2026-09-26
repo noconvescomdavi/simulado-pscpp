@@ -1,3 +1,5 @@
+import {isStandaloneBuild} from "../../../lib/standalone/mode";
+import StandaloneBank from "./StandaloneBank";
 import {redirect} from "next/navigation";
 import {getSession} from "../../../lib/auth";
 import {getEntitlement} from "../../../lib/entitlement";
@@ -7,7 +9,7 @@ import StudentHeader from "../../components/StudentHeader";
 import Builder from "./Builder";
 import styles from "./bank.module.css";
 
-export default async function Page({searchParams}){
+async function WebBank({searchParams}){
   const s=await getSession();
   if(!s)redirect("/login");
 
@@ -96,3 +98,5 @@ export default async function Page({searchParams}){
     </>
   );
 }
+
+export default async function Page({searchParams}){if(isStandaloneBuild())return <StandaloneBank/>;return WebBank({searchParams});}

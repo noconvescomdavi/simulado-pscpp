@@ -1,0 +1,1 @@
+"use client";import {useEffect} from "react";import {ensureStandaloneReady,standaloneEnabled} from "../../lib/standalone/runtime";export default function StandaloneRuntime(){useEffect(()=>{if(!standaloneEnabled())return;window.__ESTIBORDO_STANDALONE__=true;ensureStandaloneReady().catch(error=>console.error("Standalone bootstrap:",error))},[]);return null}

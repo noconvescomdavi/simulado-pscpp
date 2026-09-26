@@ -24,12 +24,15 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.webkit.WebResourceResponse;
+import androidx.webkit.WebViewAssetLoader;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-    private static final String HOME_URL = "https://simulado-pscpp.vercel.app";
+    private static final String APP_HOST = "appassets.androidplatform.net";
+    private static final String HOME_URL = "https://" + APP_HOST + "/area-do-aluno/";
     private static final int FILE_CHOOSER_REQUEST = 1001;
     private static final int PERMISSION_REQUEST = 1002;
 
@@ -37,6 +40,7 @@ public class MainActivity extends Activity {
     private ProgressBar progressBar;
     private ValueCallback<Uri[]> filePathCallback;
     private PermissionRequest pendingWebPermission;
+    private WebViewAssetLoader assetLoader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,11 +72,48 @@ public class MainActivity extends Activity {
     }
 
     private void configureWebView() {
+        assetLoader = new WebViewAssetLoader.Builder()
+                .setDomain(APP_HOST)
+                .addPathHandler("/", path -> {
+                    String clean = path == null ? "" : path;
+                    if (clean.startsWith("/")) clean = clean.substring(1);
+                    if (clean.isEmpty()) clean = "area-do-aluno/index.html";
+                    String assetPath = "www/" + clean;
+                    java.io.InputStream input;
+                    try {
+                        input = getAssets().open(assetPath);
+                    } catch (java.io.IOException first) {
+                        try {
+                            if (!clean.endsWith("/")) clean += "/";
+                            clean += "index.html";
+                            assetPath = "www/" + clean;
+                            input = getAssets().open(assetPath);
+                        } catch (java.io.IOException second) { return null; }
+                    }
+                    try {
+                        String lower = clean.toLowerCase(java.util.Locale.ROOT);
+                        String mime;
+                        if (lower.endsWith(".js") || lower.endsWith(".mjs")) mime = "application/javascript";
+                        else if (lower.endsWith(".css")) mime = "text/css";
+                        else if (lower.endsWith(".html")) mime = "text/html";
+                        else if (lower.endsWith(".json")) mime = "application/json";
+                        else if (lower.endsWith(".svg")) mime = "image/svg+xml";
+                        else if (lower.endsWith(".woff2")) mime = "font/woff2";
+                        else if (lower.endsWith(".woff")) mime = "font/woff";
+                        else if (lower.endsWith(".png")) mime = "image/png";
+                        else if (lower.endsWith(".jpg") || lower.endsWith(".jpeg")) mime = "image/jpeg";
+                        else if (lower.endsWith(".webp")) mime = "image/webp";
+                        else { mime = android.webkit.MimeTypeMap.getSingleton().getMimeTypeFromExtension(android.webkit.MimeTypeMap.getFileExtensionFromUrl(clean)); if (mime == null) mime = "application/octet-stream"; }
+                        return new WebResourceResponse(mime, null, 200, "OK", java.util.Collections.singletonMap("Cache-Control","no-cache"), input);
+                    } catch (Exception e) { try { input.close(); } catch (Exception ignored) {} return null; }
+                }).build();
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
         settings.setDomStorageEnabled(true);
         settings.setDatabaseEnabled(true);
-        settings.setAllowFileAccess(true);
+        settings.setAllowFileAccess(false);
+        settings.setAllowFileAccessFromFileURLs(false);
+        settings.setAllowUniversalAccessFromFileURLs(false);
         settings.setAllowContentAccess(true);
         settings.setMediaPlaybackRequiresUserGesture(false);
         settings.setLoadWithOverviewMode(true);
@@ -83,8 +124,8 @@ public class MainActivity extends Activity {
         settings.setUserAgentString(settings.getUserAgentString() + " ESTIBORDO-Android/1.0");
 
         CookieManager cookies = CookieManager.getInstance();
-        cookies.setAcceptCookie(true);
-        cookies.setAcceptThirdPartyCookies(webView, true);
+        cookies.setAcceptCookie(false);
+        cookies.setAcceptThirdPartyCookies(webView, false);
 
         webView.setWebViewClient(new EstibordoWebViewClient());
         webView.setWebChromeClient(new EstibordoChromeClient());
@@ -109,6 +150,16 @@ public class MainActivity extends Activity {
 
     private class EstibordoWebViewClient extends WebViewClient {
         @Override
+        public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
+            return assetLoader.shouldInterceptRequest(request.getUrl());
+        }
+
+        @Override
+        public WebResourceResponse shouldInterceptRequest(WebView view, String url) {
+            return assetLoader.shouldInterceptRequest(Uri.parse(url));
+        }
+
+        @Override
         public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
             return handleUri(request.getUrl());
         }
@@ -120,9 +171,8 @@ public class MainActivity extends Activity {
 
         private boolean handleUri(Uri uri) {
             String scheme = uri.getScheme();
-            if ("http".equalsIgnoreCase(scheme) || "https".equalsIgnoreCase(scheme)) {
-                return false;
-            }
+            if ("https".equalsIgnoreCase(scheme) && APP_HOST.equalsIgnoreCase(uri.getHost())) return false;
+            if ("http".equalsIgnoreCase(scheme) || "https".equalsIgnoreCase(scheme)) { openExternal(uri); return true; }
 
             if ("intent".equalsIgnoreCase(scheme)) {
                 try {
