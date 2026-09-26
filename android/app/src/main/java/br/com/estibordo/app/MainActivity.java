@@ -24,12 +24,15 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.webkit.WebResourceResponse;
+import androidx.webkit.WebViewAssetLoader;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-    private static final String HOME_URL = "file:///android_asset/www/area-do-aluno/index.html";
+    private static final String APP_HOST = "appassets.androidplatform.net";
+    private static final String HOME_URL = "https://" + APP_HOST + "/area-do-aluno/";
     private static final int FILE_CHOOSER_REQUEST = 1001;
     private static final int PERMISSION_REQUEST = 1002;
 
@@ -37,6 +40,7 @@ public class MainActivity extends Activity {
     private ProgressBar progressBar;
     private ValueCallback<Uri[]> filePathCallback;
     private PermissionRequest pendingWebPermission;
+    private WebViewAssetLoader assetLoader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,12 +72,26 @@ public class MainActivity extends Activity {
     }
 
     private void configureWebView() {
+        assetLoader = new WebViewAssetLoader.Builder()
+                .setDomain(APP_HOST)
+                .addPathHandler("/", path -> {
+                    String clean = path == null ? "" : path;
+                    if (clean.startsWith("/")) clean = clean.substring(1);
+                    if (clean.isEmpty()) clean = "area-do-aluno/index.html";
+                    if (clean.endsWith("/")) clean += "index.html";
+                    try {
+                        java.io.InputStream input = getAssets().open("www/" + clean);
+                        String mime = android.webkit.MimeTypeMap.getSingleton().getMimeTypeFromExtension(android.webkit.MimeTypeMap.getFileExtensionFromUrl(clean));
+                        if (mime == null) mime = "application/octet-stream";
+                        return new WebResourceResponse(mime, "UTF-8", input);
+                    } catch (java.io.IOException e) { return null; }
+                }).build();
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
         settings.setDomStorageEnabled(true);
         settings.setDatabaseEnabled(true);
-        settings.setAllowFileAccess(true);
-        settings.setAllowFileAccessFromFileURLs(true);
+        settings.setAllowFileAccess(false);
+        settings.setAllowFileAccessFromFileURLs(false);
         settings.setAllowUniversalAccessFromFileURLs(false);
         settings.setAllowContentAccess(true);
         settings.setMediaPlaybackRequiresUserGesture(false);
@@ -111,6 +129,16 @@ public class MainActivity extends Activity {
 
     private class EstibordoWebViewClient extends WebViewClient {
         @Override
+        public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
+            return assetLoader.shouldInterceptRequest(request.getUrl());
+        }
+
+        @Override
+        public WebResourceResponse shouldInterceptRequest(WebView view, String url) {
+            return assetLoader.shouldInterceptRequest(Uri.parse(url));
+        }
+
+        @Override
         public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
             return handleUri(request.getUrl());
         }
@@ -122,11 +150,8 @@ public class MainActivity extends Activity {
 
         private boolean handleUri(Uri uri) {
             String scheme = uri.getScheme();
-            if ("file".equalsIgnoreCase(scheme)) return false;
-            if ("http".equalsIgnoreCase(scheme) || "https".equalsIgnoreCase(scheme)) {
-                openExternal(uri);
-                return true;
-            }
+            if ("https".equalsIgnoreCase(scheme) && APP_HOST.equalsIgnoreCase(uri.getHost())) return false;
+            if ("http".equalsIgnoreCase(scheme) || "https".equalsIgnoreCase(scheme)) { openExternal(uri); return true; }
 
             if ("intent".equalsIgnoreCase(scheme)) {
                 try {
