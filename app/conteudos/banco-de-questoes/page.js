@@ -99,4 +99,4 @@ async function WebBank({searchParams}){
   );
 }
 
-export default async function Page({searchParams}){if(isStandaloneBuild()){const q=await searchParams;return <StandaloneBank requested={String(q?.materia||q?.subject||"").trim()} fixation={q?.modo==="fixacao"?{bibliography_key:q?.bibliografia||"",section_key:q?.secao||"",chapter:q?.capitulo||""}:null}/>;}return WebBank({searchParams});}
+export default async function Page({searchParams}){if(isStandaloneBuild())return <StandaloneBank/>;return WebBank({searchParams});}\n
