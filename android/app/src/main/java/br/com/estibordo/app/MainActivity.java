@@ -64,6 +64,7 @@ public class MainActivity extends Activity {
         setContentView(root);
         configureWebView();
         localDatabase = new EstibordoDatabase(this); localDatabase.getWritableDatabase();
+        webView.addJavascriptInterface(new LocalDataBridge(localDatabase), "EstibordoLocal");
         try { localServer = new LocalHttpServer(this); homeUrl = "http://" + LOCAL_HOST + ":" + localServer.start() + "/area-do-aluno/"; }
         catch (Exception e) { Toast.makeText(this, "Falha ao iniciar o aplicativo local.", Toast.LENGTH_LONG).show(); return; }
 
