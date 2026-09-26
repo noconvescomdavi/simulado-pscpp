@@ -1,3 +1,5 @@
+import {isStandaloneBuild} from "../../lib/standalone/mode";
+import StandaloneToday from "./StandaloneToday";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getSession } from "../../lib/auth";
@@ -11,7 +13,7 @@ import styles from "./hoje.module.css";
 
 export const dynamic = "force-dynamic";
 
-export default async function HojePage() {
+async function WebHojePage() {
   const session = await getSession();
   if (!session) redirect("/login?next=/hoje");
 
@@ -93,3 +95,4 @@ export default async function HojePage() {
     </>
   );
 }
+export default async function HojePage(){if(isStandaloneBuild())return <StandaloneToday/>;return WebHojePage();}
