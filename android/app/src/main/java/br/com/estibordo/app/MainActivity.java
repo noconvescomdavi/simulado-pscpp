@@ -29,7 +29,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-    private static final String HOME_URL = "https://simulado-pscpp.vercel.app";
+    private static final String HOME_URL = "file:///android_asset/www/area-do-aluno/index.html";
     private static final int FILE_CHOOSER_REQUEST = 1001;
     private static final int PERMISSION_REQUEST = 1002;
 
@@ -73,6 +73,8 @@ public class MainActivity extends Activity {
         settings.setDomStorageEnabled(true);
         settings.setDatabaseEnabled(true);
         settings.setAllowFileAccess(true);
+        settings.setAllowFileAccessFromFileURLs(true);
+        settings.setAllowUniversalAccessFromFileURLs(false);
         settings.setAllowContentAccess(true);
         settings.setMediaPlaybackRequiresUserGesture(false);
         settings.setLoadWithOverviewMode(true);
@@ -83,8 +85,8 @@ public class MainActivity extends Activity {
         settings.setUserAgentString(settings.getUserAgentString() + " ESTIBORDO-Android/1.0");
 
         CookieManager cookies = CookieManager.getInstance();
-        cookies.setAcceptCookie(true);
-        cookies.setAcceptThirdPartyCookies(webView, true);
+        cookies.setAcceptCookie(false);
+        cookies.setAcceptThirdPartyCookies(webView, false);
 
         webView.setWebViewClient(new EstibordoWebViewClient());
         webView.setWebChromeClient(new EstibordoChromeClient());
@@ -120,8 +122,10 @@ public class MainActivity extends Activity {
 
         private boolean handleUri(Uri uri) {
             String scheme = uri.getScheme();
+            if ("file".equalsIgnoreCase(scheme)) return false;
             if ("http".equalsIgnoreCase(scheme) || "https".equalsIgnoreCase(scheme)) {
-                return false;
+                openExternal(uri);
+                return true;
             }
 
             if ("intent".equalsIgnoreCase(scheme)) {
