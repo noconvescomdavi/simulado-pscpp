@@ -76,11 +76,12 @@ function Result({ result }) {
           <div><small>Aproveitamento</small><strong>{percent.toFixed(2)}%</strong></div>
           <div><small>Acertos</small><strong>{correct}</strong></div>
           <div><small>Erros</small><strong>{errors}</strong></div>
+          <div><small>Em branco</small><strong>{blank}</strong></div>
           <div><small>Respondidas</small><strong>{answered}</strong></div>
           <div><small>Questões emitidas</small><strong>{Number(result?.total_questions || 0)}</strong></div>
         </div>
         {result?.reason === "timeout" && (
-          <p>O período de 240 minutos terminou. Somente as questões efetivamente respondidas foram contabilizadas.</p>
+          <p>O período de 240 minutos terminou. As questões não respondidas foram registradas como em branco e não acrescentam pontuação.</p>
         )}
         {result?.next_available_at && (
           <p>Próxima emissão: {new Date(result.next_available_at).toLocaleString("pt-BR")}</p>
@@ -402,7 +403,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
       <main className={styles.page}>
         <span>SIMULADO</span>
         <h1>{title}</h1>
-        <p>{isPscpp?"100 questões compostas por blueprint controlado para reproduzir o perfil do PSCPP.":"Até 100 questões aleatórias. Você pode usar todo o banco ou restringir o sorteio por obra, capítulo, assunto e termo."}</p>
+        <p>{isPscpp?"100 questões: 25 Manobrabilidade, 25 Navegação e 10 de cada uma das demais disciplinas, com diversidade conceitual obrigatória.":"Até 100 questões aleatórias. Você pode usar todo o banco ou restringir o sorteio por obra, capítulo, assunto e termo."}</p>
         <p>Cada resposta é salva no servidor e não pode ser alterada depois do salvamento.</p>
         {!isPscpp && <QuestionFilterControls
           facets={facets}
