@@ -71,7 +71,7 @@ jobs:
           grep -q "addJavascriptInterface" android/app/src/main/java/br/com/estibordo/app/MainActivity.java
           grep -q "EstibordoLocal" android/app/src/main/java/br/com/estibordo/app/LocalDataBridge.java
           grep -q "androidPut" lib/standalone/android-store.js
-          grep -q "getLatestOfflineExam" app/simulado/\\[subject\\]/Client.js
+          grep -q "getLatestOfflineExam" 'app/simulado/[subject]/Client.js'
           test -f data/manifest.json
       - name: Build APK
         working-directory: android
