@@ -28,6 +28,8 @@ jobs:
           node-version: "20"
           cache: npm
       - run: npm ci
+      - name: Audit Android local persistence
+        run: npm run audit:android:local-persistence
       - name: Validate PSCPP fixed matrix
         run: npm run test:pscpp:fixed
       - name: Zero-server audit
