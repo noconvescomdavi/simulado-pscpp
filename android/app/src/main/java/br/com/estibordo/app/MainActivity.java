@@ -78,13 +78,23 @@ public class MainActivity extends Activity {
                     String clean = path == null ? "" : path;
                     if (clean.startsWith("/")) clean = clean.substring(1);
                     if (clean.isEmpty()) clean = "area-do-aluno/index.html";
-                    if (clean.endsWith("/")) clean += "index.html";
+                    String assetPath = "www/" + clean;
+                    java.io.InputStream input;
                     try {
-                        java.io.InputStream input = getAssets().open("www/" + clean);
+                        input = getAssets().open(assetPath);
+                    } catch (java.io.IOException first) {
+                        try {
+                            if (!clean.endsWith("/")) clean += "/";
+                            clean += "index.html";
+                            assetPath = "www/" + clean;
+                            input = getAssets().open(assetPath);
+                        } catch (java.io.IOException second) { return null; }
+                    }
+                    try {
                         String mime = android.webkit.MimeTypeMap.getSingleton().getMimeTypeFromExtension(android.webkit.MimeTypeMap.getFileExtensionFromUrl(clean));
                         if (mime == null) mime = "application/octet-stream";
                         return new WebResourceResponse(mime, "UTF-8", input);
-                    } catch (java.io.IOException e) { return null; }
+                    } catch (Exception e) { try { input.close(); } catch (Exception ignored) {} return null; }
                 }).build();
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
