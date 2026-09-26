@@ -84,4 +84,14 @@ if(middleware){
   assert.ok(!strictBlock.includes("unsafe-eval"),"CSP geral não deve liberar unsafe-eval");
 }
 
+
+// Regressão do fluxo de pausa/retomada dos simulados.
+const examClient=read("app/simulado/[subject]/Client.js");
+const examsLib=read("lib/exams.js");
+assert.match(examClient,/const paused = state\?\.state === "paused" \|\| exam\?\.status === "paused"/,"Cliente perdeu detecção de simulado pausado");
+assert.match(examClient,/paused[\s\S]*remaining_seconds/,"Cronômetro pausado não usa remaining_seconds");
+assert.match(examClient,/setOfflineExamPaused\(exam\.id, action\)/,"Pausa offline não está conectada");
+assert.match(examsLib,/session\.is_expired && session\.status === "in_progress"/,"Sessão pausada pode ser expirada incorretamente");
+assert.match(examsLib,/expires_at=now\(\)\+\(coalesce\(remaining_seconds,0\)\*interval '1 second'\)/,"Retomada não recompõe expires_at pelo tempo restante");
+
 console.log("Study Plan V3 invariants: OK");
