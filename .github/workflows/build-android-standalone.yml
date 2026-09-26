@@ -28,6 +28,8 @@ jobs:
           node-version: "20"
           cache: npm
       - run: npm ci
+      - name: Validate PSCPP fixed matrix
+        run: npm run test:pscpp:fixed
       - name: Zero-server audit
         run: npm run audit:standalone
       - name: Build standalone web bundle
