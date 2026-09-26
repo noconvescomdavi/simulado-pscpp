@@ -99,4 +99,4 @@ async function WebBank({searchParams}){
   );
 }
 
-export default async function Page({searchParams}){if(isStandaloneBuild())return <StandaloneBank/>;return WebBank({searchParams});}\n
+export default async function Page({searchParams}){if(isStandaloneBuild())return <StandaloneBank/>;return WebBank({searchParams});}
