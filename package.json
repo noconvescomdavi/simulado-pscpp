@@ -32,7 +32,7 @@
     "deploy:cloudflare": "opennextjs-cloudflare deploy",
     "audit:standalone": "node scripts/audit-standalone-runtime.mjs",
     "build:standalone": "node scripts/build-standalone.mjs",
-    "test:pscpp:fixed": "node scripts/test-pscpp-fixed-matrix.mjs"
+    "test:pscpp:fixed": "node --experimental-specifier-resolution=node scripts/test-pscpp-fixed-matrix.mjs"
   },
   "dependencies": {
     "argon2": "^0.41.1",
