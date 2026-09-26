@@ -8,7 +8,6 @@ import StudentHeader from "../components/StudentHeader";
 import styles from "./profile.module.css";
 import ProfessionalFields from "./ProfessionalFields";
 
-export const dynamic="force-dynamic";
 
 async function WebProfile({searchParams}){
   const s=await getSession();
