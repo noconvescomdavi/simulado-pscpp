@@ -81,6 +81,7 @@ public class MainActivity extends Activity {
     private void configureWebView() {
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
+        WebView.setWebContentsDebuggingEnabled(true);
         settings.setDomStorageEnabled(true);
         settings.setDatabaseEnabled(true);
         settings.setAllowFileAccess(false);
@@ -160,12 +161,13 @@ public class MainActivity extends Activity {
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             progressBar.setVisibility(View.VISIBLE);
+            view.evaluateJavascript("window.__ESTIBORDO_BOOT_ERRORS=[];window.onerror=function(m,s,l){window.__ESTIBORDO_BOOT_ERRORS.push(String(m)+' @ '+String(s)+':'+l);};window.onunhandledrejection=function(e){window.__ESTIBORDO_BOOT_ERRORS.push('Promise: '+String(e.reason));};", null);
         }
 
         @Override
         public void onPageFinished(WebView view, String url) {
             progressBar.setVisibility(View.GONE);
-            view.evaluateJavascript("document.body && document.body.innerText.trim().length", value -> { if ("0".equals(value)) Toast.makeText(MainActivity.this, "A interface carregou sem conteúdo visível. Verifique o erro exibido em seguida.", Toast.LENGTH_LONG).show(); });
+            view.evaluateJavascript("JSON.stringify({text:(document.body&&document.body.innerText||'').trim().length,html:(document.body&&document.body.innerHTML||'').length,errors:window.__ESTIBORDO_BOOT_ERRORS||[]})", value -> { if (value != null && value.contains("\\\"text\\\":0")) Toast.makeText(MainActivity.this, "Falha ao renderizar a interface: " + value, Toast.LENGTH_LONG).show(); });
             CookieManager.getInstance().flush();
         }
     }
