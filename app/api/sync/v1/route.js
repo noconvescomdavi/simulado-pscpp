@@ -1,5 +1,6 @@
 import {getSession} from "../../../../lib/auth";
 import {withTransaction} from "../../../../lib/db";
+import {getDesktopBearerSession} from "../../../../lib/desktop-auth-token";
 
 const ALLOWED=new Set(["study_progress","exam_session","question_answer","question_notebook","study_plan_item","student_preferences"]);
 const MAX_EVENTS=200;
@@ -10,7 +11,7 @@ function normalizeEvent(raw){
  return{id,device_id:String(raw.device_id||"").slice(0,180),entity_type,entity_id,operation:raw.operation==="delete"?"delete":"upsert",base_version:Math.max(0,Number(raw.base_version)||0),payload:raw.payload&&typeof raw.payload==="object"?raw.payload:{},created_at:raw.created_at||null};
 }
 export async function POST(request){
- const session=await getSession();if(!session)return Response.json({error:"Não autenticado."},{status:401});
+ const session=(await getDesktopBearerSession(request))||(await getSession());if(!session)return Response.json({error:"Não autenticado."},{status:401});
  const body=await request.json().catch(()=>({}));if(Number(body.protocol_version)!==1)return Response.json({error:"Versão de sincronização incompatível.",code:"SYNC_PROTOCOL_VERSION"},{status:409});
  const events=(Array.isArray(body.events)?body.events:[]).slice(0,MAX_EVENTS).map(normalizeEvent).filter(Boolean),cursor=safeCursor(body.cursor);
  try{
