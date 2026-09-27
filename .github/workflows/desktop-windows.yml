@@ -1,0 +1,59 @@
+name: Desktop Windows
+
+on:
+  push:
+    branches: [feature/estibordo-windows]
+  pull_request:
+    paths:
+      - "desktop/**"
+      - "package.json"
+      - "package-lock.json"
+      - "next.config.mjs"
+      - ".github/workflows/desktop-windows.yml"
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    env:
+      DATABASE_URL: postgresql://placeholder:placeholder@localhost:5432/placeholder
+      AUTH_SECRET: ci-only-secret-ci-only-secret-ci-only
+      AUTH_SESSION_DAYS: 30
+      NEXT_PUBLIC_APP_URL: http://127.0.0.1:3210
+      CSC_IDENTITY_AUTO_DISCOVERY: "false"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Repository hygiene
+        run: npm run check:repo
+
+      - name: Build desktop installer
+        run: npm run build:desktop
+
+      - name: Verify installer
+        shell: pwsh
+        run: |
+          $installer = Get-ChildItem dist-desktop -Filter "ESTIBORDO-Setup-*.exe" | Select-Object -First 1
+          if (-not $installer) { throw "Instalador Windows não foi gerado." }
+          if ($installer.Length -lt 1MB) { throw "Instalador Windows inválido ou vazio." }
+          Write-Host "INSTALLER_OK $($installer.FullName) $($installer.Length)"
+
+      - name: Upload installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: estibordo-windows-installer
+          path: dist-desktop/ESTIBORDO-Setup-*.exe
+          if-no-files-found: error
+          retention-days: 14
