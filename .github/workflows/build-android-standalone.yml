@@ -85,6 +85,8 @@ jobs:
       - name: Build APK
         working-directory: android
         run: gradle --no-daemon assembleDebug
+      - name: Enable KVM acceleration
+        run: sudo chmod 666 /dev/kvm || true
       - name: Android persistence tests on emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
