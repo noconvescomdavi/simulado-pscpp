@@ -93,7 +93,7 @@ function createSyncEngine({ db, getSession, apiBaseUrl, onStatus = () => {} }) {
             db.prepare(`INSERT OR REPLACE INTO sync_conflicts
               (id,entity_type,entity_id,local_version,remote_version,local_payload_json,remote_payload_json,resolution,created_at,resolved_at)
               VALUES(?,?,?,?,?,?,?,?,?,?)`).run(resolutionId,result.entity_type,result.entity_id,result.local_version??null,result.remote_version??null,JSON.stringify(result.local_payload??null),JSON.stringify(result.remote_payload??null),"auto_merge",stamp,stamp);
-            db.prepare(`INSERT OR IGNORE INTO sync_outbox(event_id,user_id,device_id,entity_type,entity_id,operation,base_version,payload_json,state,attempts,created_at,updated_at)
+            db.prepare(`INSERT OR IGNORE INTO sync_outbox(event_id,user_id,device_id,entity_type,entity_id,operation,base_version,payload_json,state,attempt_count,created_at,updated_at)
               VALUES(?,?,?,?,?,'upsert',?,?,'pending',0,?,?)`).run(retryId,session.userId||session.id||merged.user_id,id,result.entity_type,result.entity_id,Number(result.remote_version)||0,JSON.stringify(merged),stamp,stamp);
           }
         }
@@ -107,8 +107,8 @@ function createSyncEngine({ db, getSession, apiBaseUrl, onStatus = () => {} }) {
       onStatus({ ok: true, cursor: body.cursor || null });
       return { ok: true, applied: body.results?.length || 0, changes: body.changes?.length || 0 };
     } catch (error) {
-      const retryAt=new Date(Date.now()+Math.min(300000,5000*Math.pow(2,Math.min(6,Number(db.prepare("SELECT COALESCE(MAX(attempts),0) n FROM sync_outbox WHERE state IN ('pending','retry')").get()?.n||0))))).toISOString();
-      db.prepare("UPDATE sync_outbox SET state='retry',attempts=attempts+1,next_attempt_at=?,last_error=?,updated_at=? WHERE state IN ('pending','retry')").run(retryAt,String(error.message||error),stamp);
+      const retryAt=new Date(Date.now()+Math.min(300000,5000*Math.pow(2,Math.min(6,Number(db.prepare("SELECT COALESCE(MAX(attempt_count),0) n FROM sync_outbox WHERE state IN ('pending','retry')").get()?.n||0))))).toISOString();
+      db.prepare("UPDATE sync_outbox SET state='retry',attempt_count=attempt_count+1,next_attempt_at=?,last_error=?,updated_at=? WHERE state IN ('pending','retry')").run(retryAt,String(error.message||error),stamp);
       db.prepare(`INSERT INTO sync_state(scope,last_attempt_at,last_error,updated_at)
         VALUES('account',?,?,?) ON CONFLICT(scope) DO UPDATE SET last_attempt_at=excluded.last_attempt_at,
         last_error=excluded.last_error,updated_at=excluded.updated_at`).run(stamp, String(error.message || error), stamp);
