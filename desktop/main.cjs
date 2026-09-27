@@ -4,7 +4,7 @@ const net = require("node:net");
 const path = require("node:path");
 const http = require("node:http");
 const { openLocalDatabase, getSyncStatus } = require("./local-db.cjs");
-const { loadSession } = require("./secure-store.cjs");
+const { loadSession, saveSession } = require("./secure-store.cjs");
 const { createSyncEngine } = require("./sync-engine.cjs");
 const { startLocalBridge } = require("./local-bridge.cjs");
 
@@ -111,7 +111,7 @@ async function createWindow() {
     onStatus: (status) => console.log("[sync]", status),
   });
   syncEngine.start();
-  localBridge = await startLocalBridge({ db: localDb, syncEngine, host: HOST });
+  localBridge = await startLocalBridge({ db: localDb, syncEngine, secureStore: { loadSession, saveSession }, apiBaseUrl: process.env.ESTIBORDO_API_BASE_URL || "", host: HOST });
   startLocalServer(port, localBridge);
   await waitForServer(localOrigin);
   console.log("[local-first]", getSyncStatus(localDb));
