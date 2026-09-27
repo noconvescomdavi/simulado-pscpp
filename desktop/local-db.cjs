@@ -1,7 +1,7 @@
 const path = require("node:path");
 const Database = require("better-sqlite3");
 
-const SCHEMA_VERSION = 1;
+const SCHEMA_VERSION = 2;
 
 function nowIso() { return new Date().toISOString(); }
 
@@ -140,6 +140,12 @@ function migrate(db) {
         created_at TEXT NOT NULL,
         resolved_at TEXT
       );
+      CREATE TABLE IF NOT EXISTS question_notebooks (
+        id TEXT PRIMARY KEY,user_id TEXT NOT NULL,title TEXT NOT NULL,subjects_json TEXT NOT NULL DEFAULT '[]',
+        question_refs_json TEXT NOT NULL DEFAULT '[]',answers_json TEXT NOT NULL DEFAULT '{}',total_questions INTEGER NOT NULL DEFAULT 0,
+        version INTEGER NOT NULL DEFAULT 1,created_at TEXT NOT NULL,updated_at TEXT NOT NULL
+      );
+      CREATE INDEX IF NOT EXISTS question_notebooks_user_updated_idx ON question_notebooks(user_id,updated_at DESC);
       CREATE TABLE IF NOT EXISTS content_snapshots (
         content_key TEXT PRIMARY KEY,
         version TEXT NOT NULL,
