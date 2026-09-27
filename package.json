@@ -29,7 +29,10 @@
     "audit:questions:main": "QUESTIONS_MAIN_ONLY=1 node scripts/audit-full-question-bank.mjs",
     "audit:questions:main:win": "set QUESTIONS_MAIN_ONLY=1&& node scripts/audit-full-question-bank.mjs",
     "build:cloudflare": "npm install --no-save --package-lock=false @opennextjs/cloudflare@1.20.6 wrangler@4.137.0 && opennextjs-cloudflare build",
-    "deploy:cloudflare": "opennextjs-cloudflare deploy"
+    "deploy:cloudflare": "opennextjs-cloudflare deploy",
+    "build:desktop:next": "cross-env ESTIBORDO_DESKTOP=1 next build",
+    "prepare:desktop": "node desktop/prepare-standalone.mjs",
+    "build:desktop": "npm run build:desktop:next && npm run prepare:desktop && electron-builder --win nsis"
   },
   "dependencies": {
     "argon2": "^0.41.1",
@@ -45,5 +48,39 @@
   "overrides": {
     "postcss": "8.5.28"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^38.1.2",
+    "electron-builder": "^26.0.12"
+  },
+  "main": "desktop/main.cjs",
+  "build": {
+    "appId": "br.com.estibordo.pscpp",
+    "productName": "ESTIBORDO",
+    "artifactName": "ESTIBORDO-Setup-${version}.${ext}",
+    "directories": {
+      "output": "dist-desktop"
+    },
+    "files": [
+      "desktop/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "desktop/runtime",
+        "to": "runtime"
+      }
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
 }
