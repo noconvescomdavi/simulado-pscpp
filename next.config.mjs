@@ -14,8 +14,11 @@ const securityHeaders = [
   { key: "Cross-Origin-Opener-Policy", value: "same-origin-allow-popups" },
 ];
 
+const desktopBuild = process.env.ESTIBORDO_DESKTOP === "1";
+
 const nextConfig = {
   poweredByHeader: false,
+  ...(desktopBuild ? { output: "standalone" } : {}),
 
   // Keep large data/content files out of the Cloudflare Worker server bundle.\n  // They are runtime/static resources and must not be traced into handler.mjs.\n  outputFileTracingExcludes: {\n    "/*": [\n      "./scripts/**/*",\n      "./reports/**/*",\n      "./audit/**/*",\n      "./backups/**/*",\n      "./docs/**/*",\n      "./public/**/*",\n      "./protected-content/**/*"\n    ],\n    "/study-content/**": [\n      "./scripts/**/*",\n      "./reports/**/*",\n      "./audit/**/*",\n      "./backups/**/*",\n      "./docs/**/*",\n      "./public/**/*"\n    ]\n  },
 
