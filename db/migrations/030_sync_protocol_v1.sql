@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS sync_entity_versions (
   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   PRIMARY KEY(user_id,entity_type,entity_id)
 );
-CREATE INDEX IF NOT EXISTS sync_entity_versions_user_updated_idx ON sync_entity_versions(user_id,updated_at,id) WHERE false;
+CREATE INDEX IF NOT EXISTS sync_entity_versions_user_updated_idx ON sync_entity_versions(user_id,updated_at DESC);
 
 CREATE TABLE IF NOT EXISTS sync_change_log (
   seq BIGSERIAL PRIMARY KEY,
