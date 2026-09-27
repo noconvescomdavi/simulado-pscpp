@@ -88,10 +88,9 @@ jobs:
       - name: Android persistence tests on emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 35
+          api-level: 34
           arch: x86_64
           profile: pixel_2
-          disable-animations: true
           script: cd android && gradle --no-daemon connectedDebugAndroidTest
       - name: Verify APK has bundled site
         run: |
