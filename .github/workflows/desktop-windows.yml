@@ -34,7 +34,21 @@ jobs:
           cache: npm
 
       - name: Install
-        run: npm install --package-lock=false
+        run: npm install
+
+      - name: Export updated lockfile
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path lockfile-out | Out-Null
+          Copy-Item package-lock.json lockfile-out/package-lock.json
+
+      - name: Upload updated lockfile
+        uses: actions/upload-artifact@v4
+        with:
+          name: desktop-package-lock
+          path: lockfile-out/package-lock.json
+          if-no-files-found: error
+          retention-days: 1
 
       - name: Repository hygiene
         run: npm run check:repo
