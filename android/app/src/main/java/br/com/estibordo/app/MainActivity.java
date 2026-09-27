@@ -1,13 +1,11 @@
 package br.com.estibordo.app;
 
-import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DownloadManager;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,7 +15,6 @@ import android.view.View;
 import android.webkit.CookieManager;
 import android.webkit.DownloadListener;
 import android.webkit.GeolocationPermissions;
-import android.webkit.PermissionRequest;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.ConsoleMessage;
@@ -33,12 +30,10 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
     private static final String LOCAL_HOST = "127.0.0.1";
     private static final int FILE_CHOOSER_REQUEST = 1001;
-    private static final int PERMISSION_REQUEST = 1002;
 
     private WebView webView;
     private ProgressBar progressBar;
     private ValueCallback<Uri[]> filePathCallback;
-    private PermissionRequest pendingWebPermission;
     private LocalHttpServer localServer;
     private EstibordoDatabase localDatabase;
     private String homeUrl;
@@ -212,32 +207,6 @@ public class MainActivity extends Activity {
         }
 
         @Override
-        public void onPermissionRequest(PermissionRequest request) {
-            runOnUiThread(() -> {
-                boolean wantsCamera = false;
-                boolean wantsMic = false;
-                for (String resource : request.getResources()) {
-                    if (PermissionRequest.RESOURCE_VIDEO_CAPTURE.equals(resource)) wantsCamera = true;
-                    if (PermissionRequest.RESOURCE_AUDIO_CAPTURE.equals(resource)) wantsMic = true;
-                }
-
-                boolean cameraOk = !wantsCamera || checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED;
-                boolean micOk = !wantsMic || checkSelfPermission(Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED;
-
-                if (cameraOk && micOk) {
-                    request.grant(request.getResources());
-                    return;
-                }
-
-                pendingWebPermission = request;
-                java.util.ArrayList<String> permissions = new java.util.ArrayList<>();
-                if (wantsCamera && !cameraOk) permissions.add(Manifest.permission.CAMERA);
-                if (wantsMic && !micOk) permissions.add(Manifest.permission.RECORD_AUDIO);
-                requestPermissions(permissions.toArray(new String[0]), PERMISSION_REQUEST);
-            });
-        }
-
-        @Override
         public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
             callback.invoke(origin, false, false);
         }
@@ -287,23 +256,6 @@ public class MainActivity extends Activity {
             return;
         }
         super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == PERMISSION_REQUEST && pendingWebPermission != null) {
-            boolean allGranted = true;
-            for (int result : grantResults) {
-                if (result != PackageManager.PERMISSION_GRANTED) {
-                    allGranted = false;
-                    break;
-                }
-            }
-            if (allGranted) pendingWebPermission.grant(pendingWebPermission.getResources());
-            else pendingWebPermission.deny();
-            pendingWebPermission = null;
-        }
     }
 
     @Override
