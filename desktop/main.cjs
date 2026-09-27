@@ -3,6 +3,7 @@ const { spawn } = require("node:child_process");
 const net = require("node:net");
 const path = require("node:path");
 const http = require("node:http");
+const crypto = require("node:crypto");
 const { openLocalDatabase, getSyncStatus } = require("./local-db.cjs");
 const { loadSession, saveSession } = require("./secure-store.cjs");
 const { createSyncEngine } = require("./sync-engine.cjs");
@@ -55,7 +56,15 @@ function runtimeRoot() {
     : path.join(__dirname, "runtime");
 }
 
-function startLocalServer(port, bridge) {
+function localAuthSecret(db) {
+  const row=db.prepare("SELECT value_json FROM local_settings WHERE key='local_auth_secret'").get();
+  if(row){try{return JSON.parse(row.value_json)}catch{}}
+  const value=crypto.randomBytes(48).toString("base64url");
+  db.prepare("INSERT OR REPLACE INTO local_settings(key,value_json,updated_at) VALUES(?,?,?)").run("local_auth_secret",JSON.stringify(value),new Date().toISOString());
+  return value;
+}
+
+function startLocalServer(port, bridge, authSecret) {
   const root = runtimeRoot();
   const serverEntry = path.join(root, "server.js");
   const env = {
@@ -67,6 +76,7 @@ function startLocalServer(port, bridge) {
     ESTIBORDO_LOCAL_BRIDGE_URL: `http://${HOST}:${bridge.port}`,
     ESTIBORDO_LOCAL_BRIDGE_TOKEN: bridge.token,
     NEXT_PUBLIC_APP_URL: `http://${HOST}:${port}`,
+    AUTH_SECRET: authSecret,
   };
 
   serverProcess = spawn(process.execPath, [serverEntry], {
@@ -111,8 +121,9 @@ async function createWindow() {
     onStatus: (status) => console.log("[sync]", status),
   });
   syncEngine.start();
+  const authSecret=localAuthSecret(localDb);
   localBridge = await startLocalBridge({ db: localDb, syncEngine, secureStore: { loadSession, saveSession }, apiBaseUrl: process.env.ESTIBORDO_API_BASE_URL || "", host: HOST });
-  startLocalServer(port, localBridge);
+  startLocalServer(port, localBridge, authSecret);
   await waitForServer(localOrigin);
   console.log("[local-first]", getSyncStatus(localDb));
 
