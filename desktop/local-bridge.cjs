@@ -58,6 +58,22 @@ function startLocalBridge({db,syncEngine,host="127.0.0.1"}) {
           FROM exam_sessions WHERE user_id=? AND status IN ('completed','expired') ORDER BY COALESCE(finished_at,updated_at) DESC LIMIT ?`).all(userId,limit);
         return json(res,200,{attempts:rows.map(x=>({...x,wrong_answers:Math.max(0,x.answered_count-x.correct_count),score_percent:x.total_questions?Math.round(x.correct_count/x.total_questions*10000)/100:0}))});
       }
+      if(req.method==="GET"&&url.pathname==="/v1/notebooks"){
+        const userId=url.searchParams.get("user_id"),id=url.searchParams.get("id");
+        if(id){const row=db.prepare("SELECT * FROM question_notebooks WHERE user_id=? AND id=?").get(userId,id)||null;return json(res,200,{notebook:row})}
+        return json(res,200,{notebooks:db.prepare("SELECT * FROM question_notebooks WHERE user_id=? ORDER BY updated_at DESC LIMIT 100").all(userId)});
+      }
+      if(req.method==="PUT"&&url.pathname==="/v1/notebooks"){
+        const b=await readBody(req),t=stamp(),id=String(b.id||crypto.randomUUID());
+        const tx=db.transaction(()=>{
+          db.prepare(`INSERT INTO question_notebooks(id,user_id,title,subjects_json,question_refs_json,answers_json,total_questions,version,created_at,updated_at)
+            VALUES(?,?,?,?,?,?,?,1,?,?) ON CONFLICT(id) DO UPDATE SET title=excluded.title,subjects_json=excluded.subjects_json,
+            question_refs_json=excluded.question_refs_json,answers_json=excluded.answers_json,total_questions=excluded.total_questions,
+            version=question_notebooks.version+1,updated_at=excluded.updated_at`).run(id,b.user_id,b.title||"Caderno",JSON.stringify(b.subjects||[]),JSON.stringify(b.question_refs||[]),JSON.stringify(b.answers||{}),b.total_questions||0,b.created_at||t,t);
+          const row=db.prepare("SELECT * FROM question_notebooks WHERE id=?").get(id);
+          enqueue(db,{event_id:b.event_id||`notebook:${id}:v${row.version}`,user_id:b.user_id,device_id:syncEngine.deviceId,entity_type:"question_notebook",entity_id:id,operation:"upsert",base_version:Math.max(0,row.version-1),payload:row,created_at:t});
+        });tx();return json(res,200,{ok:true,id});
+      }
       if(req.method==="GET"&&url.pathname==="/v1/exams"){
         const userId=url.searchParams.get("user_id"),subject=url.searchParams.get("subject");
         const row=db.prepare("SELECT * FROM exam_sessions WHERE user_id=? AND subject=? ORDER BY updated_at DESC LIMIT 1").get(userId,subject)||null;
