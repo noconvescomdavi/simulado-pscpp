@@ -12,6 +12,16 @@ function deviceId(db) {
 }
 
 function createSyncEngine({ db, getSession, apiBaseUrl, onStatus = () => {} }) {
+  function mergeConflict(result){
+    const l=result.local_payload||{},r=result.remote_payload||{};
+    if(result.entity_type==="study_progress")return {...r,...l,percent:Math.max(Number(r.percent)||0,Number(l.percent)||0),completed_items:Math.max(Number(r.completed_items)||0,Number(l.completed_items)||0),total_items:Math.max(Number(r.total_items)||0,Number(l.total_items)||0)};
+    if(result.entity_type==="exam_session"||result.entity_type==="question_notebook"){
+      const parse=v=>{try{return typeof v==="string"?JSON.parse(v):v||{}}catch{return {}}};
+      const answers={...parse(r.answers_json||r.answers),...parse(l.answers_json||l.answers)};
+      return {...r,...l,answers_json:JSON.stringify(answers),answers};
+    }
+    return {...r,...l};
+  }
   let timer = null;
   let running = false;
   const id = deviceId(db);
@@ -53,6 +63,18 @@ function createSyncEngine({ db, getSession, apiBaseUrl, onStatus = () => {} }) {
           db.prepare(`INSERT INTO student_preferences(user_id,value_json,version,created_at,updated_at) VALUES(?,?,?,?,?)
             ON CONFLICT(user_id) DO UPDATE SET value_json=excluded.value_json,version=excluded.version,updated_at=excluded.updated_at
             WHERE excluded.version>=student_preferences.version`).run(payload.user_id,payload.value_json||JSON.stringify(payload.value||{}),change.version,payload.created_at||t,t);
+        } else if(change.entity_type==="exam_session"){
+          db.prepare(`INSERT INTO exam_sessions(id,user_id,subject,status,question_ids_json,answers_json,total_questions,answered_count,correct_count,started_at,expires_at,paused_at,remaining_seconds,finished_at,finish_reason,version,created_at,updated_at)
+            VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET status=excluded.status,answers_json=excluded.answers_json,
+            answered_count=excluded.answered_count,correct_count=excluded.correct_count,finished_at=excluded.finished_at,finish_reason=excluded.finish_reason,
+            version=excluded.version,updated_at=excluded.updated_at WHERE excluded.version>=exam_sessions.version`)
+            .run(change.entity_id,payload.user_id,payload.subject,payload.status||"in_progress",payload.question_ids_json||"[]",payload.answers_json||"{}",payload.total_questions||0,payload.answered_count||0,payload.correct_count||0,payload.started_at||t,payload.expires_at||null,payload.paused_at||null,payload.remaining_seconds??null,payload.finished_at||null,payload.finish_reason||null,change.version,payload.created_at||t,t);
+        } else if(change.entity_type==="question_notebook"){
+          db.prepare(`INSERT INTO question_notebooks(id,user_id,title,subjects_json,question_refs_json,answers_json,total_questions,version,created_at,updated_at)
+            VALUES(?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET title=excluded.title,subjects_json=excluded.subjects_json,
+            question_refs_json=excluded.question_refs_json,answers_json=excluded.answers_json,total_questions=excluded.total_questions,
+            version=excluded.version,updated_at=excluded.updated_at WHERE excluded.version>=question_notebooks.version`)
+            .run(change.entity_id,payload.user_id,payload.title||"Caderno",payload.subjects_json||"[]",payload.question_refs_json||"[]",payload.answers_json||"{}",payload.total_questions||0,change.version,payload.created_at||t,t);
         } else if(change.entity_type==="study_plan_item"){
           db.prepare(`INSERT INTO study_plan_items(id,user_id,plan_date,task_key,status,payload_json,completed_at,version,created_at,updated_at)
             VALUES(?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET status=excluded.status,payload_json=excluded.payload_json,
@@ -66,14 +88,13 @@ function createSyncEngine({ db, getSession, apiBaseUrl, onStatus = () => {} }) {
           if (result.status === "applied" || result.status === "duplicate") {
             db.prepare("DELETE FROM sync_outbox WHERE event_id=?").run(result.id);
           } else if (result.status === "conflict") {
-            db.prepare("UPDATE sync_outbox SET state='conflict',updated_at=? WHERE event_id=?").run(stamp, result.id);
+            const merged=mergeConflict(result),resolutionId=crypto.randomUUID(),retryId=crypto.randomUUID();
+            db.prepare("DELETE FROM sync_outbox WHERE event_id=?").run(result.id);
             db.prepare(`INSERT OR REPLACE INTO sync_conflicts
               (id,entity_type,entity_id,local_version,remote_version,local_payload_json,remote_payload_json,resolution,created_at,resolved_at)
-              VALUES(?,?,?,?,?,?,?,?,?,NULL)`).run(
-                crypto.randomUUID(), result.entity_type, result.entity_id, result.local_version ?? null,
-                result.remote_version ?? null, JSON.stringify(result.local_payload ?? null),
-                JSON.stringify(result.remote_payload ?? null), null, stamp
-              );
+              VALUES(?,?,?,?,?,?,?,?,?,?)`).run(resolutionId,result.entity_type,result.entity_id,result.local_version??null,result.remote_version??null,JSON.stringify(result.local_payload??null),JSON.stringify(result.remote_payload??null),"auto_merge",stamp,stamp);
+            db.prepare(`INSERT OR IGNORE INTO sync_outbox(event_id,user_id,device_id,entity_type,entity_id,operation,base_version,payload_json,state,attempts,created_at,updated_at)
+              VALUES(?,?,?,?,?,'upsert',?,?,'pending',0,?,?)`).run(retryId,session.userId||session.id||merged.user_id,id,result.entity_type,result.entity_id,Number(result.remote_version)||0,JSON.stringify(merged),stamp,stamp);
           }
         }
         db.prepare(`INSERT INTO sync_state(scope,cursor,last_success_at,last_attempt_at,last_error,updated_at)
@@ -86,6 +107,8 @@ function createSyncEngine({ db, getSession, apiBaseUrl, onStatus = () => {} }) {
       onStatus({ ok: true, cursor: body.cursor || null });
       return { ok: true, applied: body.results?.length || 0, changes: body.changes?.length || 0 };
     } catch (error) {
+      const retryAt=new Date(Date.now()+Math.min(300000,5000*Math.pow(2,Math.min(6,Number(db.prepare("SELECT COALESCE(MAX(attempts),0) n FROM sync_outbox WHERE state IN ('pending','retry')").get()?.n||0))))).toISOString();
+      db.prepare("UPDATE sync_outbox SET state='retry',attempts=attempts+1,next_attempt_at=?,last_error=?,updated_at=? WHERE state IN ('pending','retry')").run(retryAt,String(error.message||error),stamp);
       db.prepare(`INSERT INTO sync_state(scope,last_attempt_at,last_error,updated_at)
         VALUES('account',?,?,?) ON CONFLICT(scope) DO UPDATE SET last_attempt_at=excluded.last_attempt_at,
         last_error=excluded.last_error,updated_at=excluded.updated_at`).run(stamp, String(error.message || error), stamp);
