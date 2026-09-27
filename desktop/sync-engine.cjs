@@ -41,7 +41,27 @@ function createSyncEngine({ db, getSession, apiBaseUrl, onStatus = () => {} }) {
       });
       if (!response.ok) throw new Error(`SYNC_HTTP_${response.status}`);
       const body = await response.json();
+      function applyRemote(change) {
+        const payload=change.payload||{}, t=payload.updated_at||stamp;
+        if(change.operation==="delete")return;
+        if(change.entity_type==="study_progress"){
+          db.prepare(`INSERT INTO study_progress(user_id,subject,percent,completed_items,total_items,studied_items_json,version,created_at,updated_at)
+            VALUES(?,?,?,?,?,?,?, ?,?) ON CONFLICT(user_id,subject) DO UPDATE SET percent=excluded.percent,completed_items=excluded.completed_items,
+            total_items=excluded.total_items,studied_items_json=excluded.studied_items_json,version=excluded.version,updated_at=excluded.updated_at
+            WHERE excluded.version>=study_progress.version`).run(payload.user_id,payload.subject,payload.percent||0,payload.completed_items||0,payload.total_items||0,payload.studied_items_json||"[]",change.version,payload.created_at||t,t);
+        } else if(change.entity_type==="student_preferences"){
+          db.prepare(`INSERT INTO student_preferences(user_id,value_json,version,created_at,updated_at) VALUES(?,?,?,?,?)
+            ON CONFLICT(user_id) DO UPDATE SET value_json=excluded.value_json,version=excluded.version,updated_at=excluded.updated_at
+            WHERE excluded.version>=student_preferences.version`).run(payload.user_id,payload.value_json||JSON.stringify(payload.value||{}),change.version,payload.created_at||t,t);
+        } else if(change.entity_type==="study_plan_item"){
+          db.prepare(`INSERT INTO study_plan_items(id,user_id,plan_date,task_key,status,payload_json,completed_at,version,created_at,updated_at)
+            VALUES(?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET status=excluded.status,payload_json=excluded.payload_json,
+            completed_at=excluded.completed_at,version=excluded.version,updated_at=excluded.updated_at WHERE excluded.version>=study_plan_items.version`)
+            .run(change.entity_id,payload.user_id,payload.plan_date,payload.task_key,payload.status||"pending",payload.payload_json||"{}",payload.completed_at||null,change.version,payload.created_at||t,t);
+        }
+      }
       const tx = db.transaction(() => {
+        for (const change of body.changes || []) applyRemote(change);
         for (const result of body.results || []) {
           if (result.status === "applied" || result.status === "duplicate") {
             db.prepare("DELETE FROM sync_outbox WHERE event_id=?").run(result.id);
