@@ -81,6 +81,7 @@ jobs:
           grep -q "VERSION=2" android/app/src/main/java/br/com/estibordo/app/EstibordoDatabase.java
           grep -q "journal" android/app/src/main/java/br/com/estibordo/app/EstibordoDatabase.java
           test -f android/app/src/androidTest/java/br/com/estibordo/app/DatabasePersistenceTest.java
+          test -f android/app/src/androidTest/java/br/com/estibordo/app/LocalHttpServerTest.java
           test -f data/manifest.json
       - name: Build APK
         working-directory: android
