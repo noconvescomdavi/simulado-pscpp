@@ -22,4 +22,15 @@ await cp(path.join(root, ".next", "static"), path.join(runtime, ".next", "static
 await cp(path.join(root, "public"), path.join(runtime, "public"), { recursive: true });
 
 await stat(path.join(runtime, "server.js"));
+
+const forbidden = ["DATABASE_URL=", "postgresql://", "postgres://"];
+async function scanTextFile(file) {
+  const { readFile } = await import("node:fs/promises");
+  const body = await readFile(file, "utf8").catch(() => "");
+  for (const token of forbidden) {
+    if (body.includes(token)) throw new Error(`Segredo/conexão PostgreSQL detectado no runtime desktop: ${file}`);
+  }
+}
+await scanTextFile(path.join(runtime, ".env"));
+await scanTextFile(path.join(runtime, ".env.local"));
 console.log("Runtime desktop preparado em desktop/runtime.");
