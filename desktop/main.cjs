@@ -6,6 +6,7 @@ const http = require("node:http");
 const { openLocalDatabase, getSyncStatus } = require("./local-db.cjs");
 const { loadSession } = require("./secure-store.cjs");
 const { createSyncEngine } = require("./sync-engine.cjs");
+const { startLocalBridge } = require("./local-bridge.cjs");
 
 const HOST = "127.0.0.1";
 let serverProcess = null;
@@ -13,6 +14,7 @@ let mainWindow = null;
 let localOrigin = null;
 let localDb = null;
 let syncEngine = null;
+let localBridge = null;
 
 function getFreePort() {
   return new Promise((resolve, reject) => {
@@ -53,7 +55,7 @@ function runtimeRoot() {
     : path.join(__dirname, "runtime");
 }
 
-function startLocalServer(port) {
+function startLocalServer(port, bridge) {
   const root = runtimeRoot();
   const serverEntry = path.join(root, "server.js");
   const env = {
@@ -62,6 +64,8 @@ function startLocalServer(port) {
     PORT: String(port),
     ESTIBORDO_DESKTOP: "1",
     ESTIBORDO_LOCAL_DB_PATH: path.join(app.getPath("userData"), "estibordo.sqlite3"),
+    ESTIBORDO_LOCAL_BRIDGE_URL: `http://${HOST}:${bridge.port}`,
+    ESTIBORDO_LOCAL_BRIDGE_TOKEN: bridge.token,
     NEXT_PUBLIC_APP_URL: `http://${HOST}:${port}`,
   };
 
@@ -99,9 +103,6 @@ function isAllowedNavigation(rawUrl) {
 async function createWindow() {
   const port = await getFreePort();
   localOrigin = `http://${HOST}:${port}`;
-  startLocalServer(port);
-  await waitForServer(localOrigin);
-
   localDb = openLocalDatabase(app.getPath("userData"));
   syncEngine = createSyncEngine({
     db: localDb,
@@ -110,6 +111,9 @@ async function createWindow() {
     onStatus: (status) => console.log("[sync]", status),
   });
   syncEngine.start();
+  localBridge = await startLocalBridge({ db: localDb, syncEngine, host: HOST });
+  startLocalServer(port, localBridge);
+  await waitForServer(localOrigin);
   console.log("[local-first]", getSyncStatus(localDb));
 
   mainWindow = new BrowserWindow({
@@ -149,6 +153,8 @@ async function createWindow() {
 app.on("before-quit", () => {
   app.isQuitting = true;
   syncEngine?.stop();
+  localBridge?.server?.close();
+  localBridge = null;
   localDb?.close();
   localDb = null;
   stopLocalServer();
