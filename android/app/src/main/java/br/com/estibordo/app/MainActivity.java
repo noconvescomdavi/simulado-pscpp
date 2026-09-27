@@ -85,7 +85,7 @@ public class MainActivity extends Activity {
         settings.setAllowFileAccess(false);
         settings.setAllowFileAccessFromFileURLs(false);
         settings.setAllowUniversalAccessFromFileURLs(false);
-        settings.setAllowContentAccess(true);
+        settings.setAllowContentAccess(false);
         settings.setMediaPlaybackRequiresUserGesture(false);
         settings.setLoadWithOverviewMode(true);
         settings.setUseWideViewPort(true);
@@ -147,6 +147,13 @@ public class MainActivity extends Activity {
 
             openExternal(uri);
             return true;
+        }
+
+        @Override
+        public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
+            Uri uri=request.getUrl();
+            if ("http".equalsIgnoreCase(uri.getScheme()) && LOCAL_HOST.equalsIgnoreCase(uri.getHost())) return null;
+            return new WebResourceResponse("text/plain", "UTF-8", 403, "Blocked", java.util.Collections.emptyMap(), new java.io.ByteArrayInputStream(new byte[0]));
         }
 
         @Override
