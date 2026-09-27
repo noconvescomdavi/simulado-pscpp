@@ -163,7 +163,7 @@ public class MainActivity extends Activity {
         @Override
         public void onPageFinished(WebView view, String url) {
             progressBar.setVisibility(View.GONE);
-            view.evaluateJavascript("JSON.stringify({text:(document.body&&document.body.innerText||'').trim().length,html:(document.body&&document.body.innerHTML||'').length,errors:window.__ESTIBORDO_BOOT_ERRORS||[]})", value -> { if (value != null && value.contains("\\\"text\\\":0")) Toast.makeText(MainActivity.this, "Falha ao renderizar a interface: " + value, Toast.LENGTH_LONG).show(); });
+            view.evaluateJavascript("JSON.stringify({text:(document.body&&document.body.innerText||'').trim().length,html:(document.body&&document.body.innerHTML||'').length,errors:window.__ESTIBORDO_BOOT_ERRORS||[]})", value -> { if (value != null && value.contains("\\\"text\\\":0")) new AlertDialog.Builder(MainActivity.this).setTitle("Falha ao iniciar a interface").setMessage(value).setPositiveButton("Tentar novamente",(d,w)->webView.reload()).setNegativeButton("Fechar",(d,w)->finish()).show(); });
             CookieManager.getInstance().flush();
         }
     }
