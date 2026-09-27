@@ -6,6 +6,7 @@ import styles from "./exam.module.css";
 import StructuredQuestion from "../../components/StructuredQuestion";
 import {cacheServerExam, createOfflineExam, getLatestOfflineExam, answerOfflineExam, finishOfflineExam, hydrateOfflineExam, setOfflineExamPaused} from "../../../lib/offline-store";
 import {standaloneEnabled} from "../../../lib/standalone/runtime";
+import {saveLocalStudyTask} from "../../../lib/standalone/services";
 
 function clock(seconds) {
   const safe = Math.max(0, Number(seconds) || 0);
@@ -202,7 +203,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
     if (!result || planMarkedRef.current) return;
     if (!planTask?.plan_date || !planTask?.task_key) return;
     planMarkedRef.current = true;
-    standaloneEnabled()?Promise.resolve():fetch('/api/study-plan/task', {
+    standaloneEnabled()?saveLocalStudyTask({kind:"task",plan_date:planTask.plan_date,task_key:planTask.task_key,task_type:"simulado",subject_slug:planTask.subject_slug||subject,status:"done",metadata:{source:"automatic_exam_completion",session_id:result.session_id||null}}):fetch('/api/study-plan/task', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({kind:'task',plan_date:planTask.plan_date,task_key:planTask.task_key,task_type:'simulado',subject_slug:planTask.subject_slug||subject,status:'done',metadata:{source:'automatic_exam_completion',session_id:result.session_id||null}})
