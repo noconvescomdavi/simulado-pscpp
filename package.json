@@ -32,7 +32,7 @@
     "deploy:cloudflare": "opennextjs-cloudflare deploy",
     "build:desktop:next": "cross-env ESTIBORDO_DESKTOP=1 next build",
     "prepare:desktop": "node desktop/prepare-standalone.mjs",
-    "build:desktop": "npm run build:desktop:next && npm run prepare:desktop && electron-builder --win nsis"
+    "build:desktop": "npm run build:desktop:next && npm run prepare:desktop && electron-builder --win nsis --publish never"
   },
   "dependencies": {
     "argon2": "^0.41.1",
