@@ -1,13 +1,11 @@
 package br.com.estibordo.app;
 
-import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DownloadManager;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,26 +15,28 @@ import android.view.View;
 import android.webkit.CookieManager;
 import android.webkit.DownloadListener;
 import android.webkit.GeolocationPermissions;
-import android.webkit.PermissionRequest;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
+import android.webkit.ConsoleMessage;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.webkit.WebResourceResponse;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-    private static final String HOME_URL = "https://simulado-pscpp.vercel.app";
+    private static final String LOCAL_HOST = "127.0.0.1";
     private static final int FILE_CHOOSER_REQUEST = 1001;
-    private static final int PERMISSION_REQUEST = 1002;
 
     private WebView webView;
     private ProgressBar progressBar;
     private ValueCallback<Uri[]> filePathCallback;
-    private PermissionRequest pendingWebPermission;
+    private LocalHttpServer localServer;
+    private EstibordoDatabase localDatabase;
+    private String homeUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +46,7 @@ public class MainActivity extends Activity {
         root.setBackgroundColor(0xFF07111F);
 
         webView = new WebView(this);
+        webView.setId(R.id.estibordo_webview);
         progressBar = new ProgressBar(this, null, android.R.attr.progressBarStyleHorizontal);
         progressBar.setMax(100);
 
@@ -59,9 +60,15 @@ public class MainActivity extends Activity {
 
         setContentView(root);
         configureWebView();
+        localDatabase = new EstibordoDatabase(this); localDatabase.getWritableDatabase();
+        try { new PrivateSeedImporter(this, localDatabase).installIfPresent(); }
+        catch (Exception e) { Toast.makeText(this, "Falha ao importar os dados locais.", Toast.LENGTH_LONG).show(); }
+        webView.addJavascriptInterface(new LocalDataBridge(localDatabase), "EstibordoLocal");
+        try { localServer = new LocalHttpServer(this); homeUrl = "http://" + LOCAL_HOST + ":" + localServer.start() + "/area-do-aluno/"; }
+        catch (Exception e) { Toast.makeText(this, "Falha ao iniciar o aplicativo local.", Toast.LENGTH_LONG).show(); return; }
 
         if (savedInstanceState == null) {
-            webView.loadUrl(HOME_URL);
+            webView.loadUrl(homeUrl);
         } else {
             webView.restoreState(savedInstanceState);
         }
@@ -70,21 +77,24 @@ public class MainActivity extends Activity {
     private void configureWebView() {
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
+        WebView.setWebContentsDebuggingEnabled(true);
         settings.setDomStorageEnabled(true);
         settings.setDatabaseEnabled(true);
-        settings.setAllowFileAccess(true);
-        settings.setAllowContentAccess(true);
+        settings.setAllowFileAccess(false);
+        settings.setAllowFileAccessFromFileURLs(false);
+        settings.setAllowUniversalAccessFromFileURLs(false);
+        settings.setAllowContentAccess(false);
         settings.setMediaPlaybackRequiresUserGesture(false);
         settings.setLoadWithOverviewMode(true);
         settings.setUseWideViewPort(true);
         settings.setBuiltInZoomControls(false);
         settings.setDisplayZoomControls(false);
-        settings.setMixedContentMode(WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE);
+        settings.setMixedContentMode(WebSettings.MIXED_CONTENT_NEVER_ALLOW);
         settings.setUserAgentString(settings.getUserAgentString() + " ESTIBORDO-Android/1.0");
 
         CookieManager cookies = CookieManager.getInstance();
-        cookies.setAcceptCookie(true);
-        cookies.setAcceptThirdPartyCookies(webView, true);
+        cookies.setAcceptCookie(false);
+        cookies.setAcceptThirdPartyCookies(webView, false);
 
         webView.setWebViewClient(new EstibordoWebViewClient());
         webView.setWebChromeClient(new EstibordoChromeClient());
@@ -120,9 +130,8 @@ public class MainActivity extends Activity {
 
         private boolean handleUri(Uri uri) {
             String scheme = uri.getScheme();
-            if ("http".equalsIgnoreCase(scheme) || "https".equalsIgnoreCase(scheme)) {
-                return false;
-            }
+            if ("http".equalsIgnoreCase(scheme) && LOCAL_HOST.equalsIgnoreCase(uri.getHost())) return false;
+            if ("http".equalsIgnoreCase(scheme) || "https".equalsIgnoreCase(scheme)) { openExternal(uri); return true; }
 
             if ("intent".equalsIgnoreCase(scheme)) {
                 try {
@@ -139,18 +148,34 @@ public class MainActivity extends Activity {
         }
 
         @Override
+        public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
+            Uri uri=request.getUrl();
+            if ("http".equalsIgnoreCase(uri.getScheme()) && LOCAL_HOST.equalsIgnoreCase(uri.getHost())) return null;
+            return new WebResourceResponse("text/plain", "UTF-8", 403, "Blocked", java.util.Collections.emptyMap(), new java.io.ByteArrayInputStream(new byte[0]));
+        }
+
+        @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             progressBar.setVisibility(View.VISIBLE);
+            view.evaluateJavascript("window.__ESTIBORDO_BOOT_ERRORS=[];window.onerror=function(m,s,l){window.__ESTIBORDO_BOOT_ERRORS.push(String(m)+' @ '+String(s)+':'+l);};window.onunhandledrejection=function(e){window.__ESTIBORDO_BOOT_ERRORS.push('Promise: '+String(e.reason));};", null);
         }
 
         @Override
         public void onPageFinished(WebView view, String url) {
             progressBar.setVisibility(View.GONE);
+            view.evaluateJavascript("JSON.stringify({text:(document.body&&document.body.innerText||'').trim().length,html:(document.body&&document.body.innerHTML||'').length,errors:window.__ESTIBORDO_BOOT_ERRORS||[]})", value -> { if (value != null && value.contains("\\\"text\\\":0")) new AlertDialog.Builder(MainActivity.this).setTitle("Falha ao iniciar a interface").setMessage(value).setPositiveButton("Tentar novamente",(d,w)->webView.reload()).setNegativeButton("Fechar",(d,w)->finish()).show(); });
             CookieManager.getInstance().flush();
         }
     }
 
     private class EstibordoChromeClient extends WebChromeClient {
+        @Override
+        public boolean onConsoleMessage(ConsoleMessage message) {
+            if (message.messageLevel() == ConsoleMessage.MessageLevel.ERROR) {
+                runOnUiThread(() -> Toast.makeText(MainActivity.this, "Erro da interface: " + message.message(), Toast.LENGTH_LONG).show());
+            }
+            return true;
+        }
         @Override
         public void onProgressChanged(WebView view, int newProgress) {
             progressBar.setProgress(newProgress);
@@ -179,32 +204,6 @@ public class MainActivity extends Activity {
                 Toast.makeText(MainActivity.this, "Nenhum seletor de arquivos disponível.", Toast.LENGTH_SHORT).show();
                 return false;
             }
-        }
-
-        @Override
-        public void onPermissionRequest(PermissionRequest request) {
-            runOnUiThread(() -> {
-                boolean wantsCamera = false;
-                boolean wantsMic = false;
-                for (String resource : request.getResources()) {
-                    if (PermissionRequest.RESOURCE_VIDEO_CAPTURE.equals(resource)) wantsCamera = true;
-                    if (PermissionRequest.RESOURCE_AUDIO_CAPTURE.equals(resource)) wantsMic = true;
-                }
-
-                boolean cameraOk = !wantsCamera || checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED;
-                boolean micOk = !wantsMic || checkSelfPermission(Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED;
-
-                if (cameraOk && micOk) {
-                    request.grant(request.getResources());
-                    return;
-                }
-
-                pendingWebPermission = request;
-                java.util.ArrayList<String> permissions = new java.util.ArrayList<>();
-                if (wantsCamera && !cameraOk) permissions.add(Manifest.permission.CAMERA);
-                if (wantsMic && !micOk) permissions.add(Manifest.permission.RECORD_AUDIO);
-                requestPermissions(permissions.toArray(new String[0]), PERMISSION_REQUEST);
-            });
         }
 
         @Override
@@ -260,21 +259,7 @@ public class MainActivity extends Activity {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == PERMISSION_REQUEST && pendingWebPermission != null) {
-            boolean allGranted = true;
-            for (int result : grantResults) {
-                if (result != PackageManager.PERMISSION_GRANTED) {
-                    allGranted = false;
-                    break;
-                }
-            }
-            if (allGranted) pendingWebPermission.grant(pendingWebPermission.getResources());
-            else pendingWebPermission.deny();
-            pendingWebPermission = null;
-        }
-    }
+    protected void onDestroy() { if (localServer != null) localServer.stop(); if (localDatabase != null) localDatabase.close(); if (webView != null) webView.destroy(); super.onDestroy(); }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {

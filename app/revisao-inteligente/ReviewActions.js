@@ -1,5 +1,7 @@
 "use client";
 import {useState} from "react";
+import {standaloneEnabled} from "../../lib/standalone/runtime";
+import {gradeLocalReview} from "../../lib/standalone/services";
 
 export default function ReviewActions({sourceKey,dueAt}){
   const [saved,setSaved]=useState(false);
@@ -9,6 +11,7 @@ export default function ReviewActions({sourceKey,dueAt}){
     if(busy)return;
     setBusy(true);
     try{
+      if(standaloneEnabled()){await gradeLocalReview(sourceKey,quality);setSaved(true);return;}
       const r=await fetch("/api/review-queue",{
         method:"POST",
         headers:{"Content-Type":"application/json"},

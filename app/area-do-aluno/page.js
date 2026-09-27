@@ -1,3 +1,5 @@
+import {isStandaloneBuild} from "../../lib/standalone/mode";
+import StandaloneDashboard from "./StandaloneDashboard";
 import {redirect} from "next/navigation";
 import {getSession} from "../../lib/auth";
 import {getUserAccess} from "../../lib/access";
@@ -19,7 +21,7 @@ function firstName(value){const text=String(value||"Aluno").trim();return text.s
 // Mantemos os dados pessoais/atividade fora deste cache.
 const cachedAccess = unstable_cache(async(userId)=>getUserAccess(userId),["dashboard-access"],{revalidate:60});
 
-export default async function Area(){
+async function WebArea(){
   const session=await getSession();
   if(!session)redirect("/login");
 
@@ -168,3 +170,5 @@ export default async function Area(){
     </>
   );
 }
+
+export default async function Area(){if(isStandaloneBuild())return <StandaloneDashboard/>;return WebArea();}

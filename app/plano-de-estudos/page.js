@@ -1,3 +1,5 @@
+import {isStandaloneBuild} from "../../lib/standalone/mode";
+import StandalonePlan from "./StandalonePlan";
 import { redirect } from "next/navigation";
 import { getSession } from "../../lib/auth";
 import { ACCESS_FEATURES,canUseFeature,getEntitlement,premiumRedirect } from "../../lib/entitlement";
@@ -6,9 +8,8 @@ import StudentHeader from "../components/StudentHeader";
 import PlanClient from "./PlanClient";
 import styles from "./plano.module.css";
 
-export const dynamic="force-dynamic";
 
-export default async function PlanoDeEstudos({searchParams}){
+async function WebPlanoDeEstudos({searchParams}){
   const session=await getSession();
   if(!session)redirect("/login?next=/plano-de-estudos");
   const entitlement=await getEntitlement(session.id);
@@ -19,3 +20,5 @@ export default async function PlanoDeEstudos({searchParams}){
   if(plan.needs_onboarding)redirect("/plano-de-estudos/configurar");
   return <><StudentHeader active="plano"/><PlanClient plan={plan}/></>;
 }
+
+export default async function PlanoDeEstudos({searchParams}){if(isStandaloneBuild())return <StandalonePlan/>;return WebPlanoDeEstudos({searchParams});}

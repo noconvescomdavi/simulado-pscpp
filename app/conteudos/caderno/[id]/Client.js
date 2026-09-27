@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./caderno.module.css";
 import StructuredQuestion from "../../../components/StructuredQuestion";
 import {cacheServerNotebook, answerOfflineNotebook} from "../../../../lib/offline-store";
+import {standaloneEnabled} from "../../../../lib/standalone/runtime";
 
 function questionKey(question) {
   return `${question.subject}:${question.id}`;
@@ -335,7 +336,7 @@ export default function Client({
     setError("");
 
     try {
-      if(!navigator.onLine){
+      if(standaloneEnabled()||!navigator.onLine){
         const payload=await answerOfflineNotebook(notebook.id,{
           subject:question.subject,question_id:question.id,selected_answer:selectedAnswer,response_time_ms:Date.now()-questionStartedAt.current,
           plan_task:planTask?.plan_date&&planTask?.task_key?{

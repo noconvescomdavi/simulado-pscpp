@@ -1,0 +1,22 @@
+package br.com.estibordo.app;
+
+import android.content.Context;
+import java.io.*;
+import java.net.*;
+import java.util.*;
+import java.util.concurrent.*;
+
+public final class LocalHttpServer {
+  private final Context context;
+  private final ExecutorService pool=Executors.newCachedThreadPool();
+  private ServerSocket server;
+  public LocalHttpServer(Context context){this.context=context.getApplicationContext();}
+  public int start() throws IOException {server=new ServerSocket();server.bind(new InetSocketAddress(InetAddress.getByName("127.0.0.1"),0));int port=server.getLocalPort();pool.execute(this::loop);return port;}
+  public void stop(){try{if(server!=null)server.close();}catch(Exception ignored){}pool.shutdownNow();}
+  private void loop(){while(server!=null&&!server.isClosed()){try{Socket s=server.accept();pool.execute(()->serve(s));}catch(Exception e){if(server!=null&&!server.isClosed())e.printStackTrace();}}}
+  private void serve(Socket socket){try{BufferedReader r=new BufferedReader(new InputStreamReader(socket.getInputStream(),"UTF-8"));String line=r.readLine();if(line==null)return;String[] parts=line.split(" ");String method=parts.length>0?parts[0]:"";String raw=parts.length>1?parts[1]:"/";while((line=r.readLine())!=null&&!line.isEmpty()){}if(!"GET".equals(method)&&!"HEAD".equals(method)){write(socket,"405 Method Not Allowed","text/plain",new ByteArrayInputStream("Method not allowed".getBytes("UTF-8")),"HEAD".equals(method));return;}String path=URLDecoder.decode(raw.split("\\?",2)[0],"UTF-8");if(path.indexOf(0)>=0||path.contains("..")||path.contains("\\\\")){write(socket,"400 Bad Request","text/plain",new ByteArrayInputStream("Bad path".getBytes("UTF-8")),"HEAD".equals(method));return;}if(path.startsWith("/"))path=path.substring(1);if(path.isEmpty())path="area-do-aluno/index.html";String resolved=resolve(path);InputStream in=resolved==null?null:open(resolved);if(in==null){write(socket,"404 Not Found","text/plain",new ByteArrayInputStream(("Not found: "+path).getBytes("UTF-8")),"HEAD".equals(method));return;}write(socket,"200 OK",mime(resolved),in,"HEAD".equals(method));}catch(Exception ignored){}finally{try{socket.close();}catch(Exception ignored){}}}
+  private String resolve(String path){String p=path;while(p.endsWith("/")&&p.length()>0)p=p.substring(0,p.length()-1);if(p.isEmpty())p="area-do-aluno";String[] candidates=p.contains(".")?new String[]{p}:new String[]{p+"/index.html",p+".html",p};for(String candidate:candidates){InputStream in=open(candidate);if(in!=null){try{in.close();}catch(Exception ignored){}return candidate;}}return null;}
+  private InputStream open(String path){try{return context.getAssets().open("www/"+path);}catch(Exception e){return null;}}
+  private void write(Socket s,String status,String mime,InputStream in,boolean head)throws IOException{ByteArrayOutputStream body=new ByteArrayOutputStream();byte[] b=new byte[16384];for(int n;(n=in.read(b))!=-1;)body.write(b,0,n);in.close();byte[] bytes=body.toByteArray();OutputStream o=s.getOutputStream();String headers="HTTP/1.1 "+status+"\\r\\nContent-Type: "+mime+"\\r\\nContent-Length: "+bytes.length+"\\r\\nCache-Control: no-cache\\r\\nConnection: close\\r\\n\\r\\n";o.write(headers.getBytes("UTF-8"));if(!head)o.write(bytes);o.flush();}
+  private String mime(String p){String x=p.toLowerCase(Locale.ROOT);if(x.endsWith(".html")||!x.contains("."))return "text/html; charset=utf-8";if(x.endsWith(".js")||x.endsWith(".mjs"))return "application/javascript; charset=utf-8";if(x.endsWith(".css"))return "text/css; charset=utf-8";if(x.endsWith(".json"))return "application/json; charset=utf-8";if(x.endsWith(".svg"))return "image/svg+xml";if(x.endsWith(".png"))return "image/png";if(x.endsWith(".jpg")||x.endsWith(".jpeg"))return "image/jpeg";if(x.endsWith(".webp"))return "image/webp";if(x.endsWith(".woff2"))return "font/woff2";return "application/octet-stream";}
+}

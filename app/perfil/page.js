@@ -1,3 +1,5 @@
+import {isStandaloneBuild} from "../../lib/standalone/mode";
+import StandaloneProfile from "./StandaloneProfile";
 import {redirect} from "next/navigation";
 import {getSession} from "../../lib/auth";
 import {query} from "../../lib/db";
@@ -6,9 +8,8 @@ import StudentHeader from "../components/StudentHeader";
 import styles from "./profile.module.css";
 import ProfessionalFields from "./ProfessionalFields";
 
-export const dynamic="force-dynamic";
 
-export default async function Page({searchParams}){
+async function WebProfile({searchParams}){
   const s=await getSession();
   if(!s)redirect("/login?next=/perfil");
   const p=(await query("select * from user_profiles where user_id=$1 limit 1",[s.id])).rows[0]||{};
@@ -44,3 +45,5 @@ export default async function Page({searchParams}){
     <div className={styles.legalLinks}><a href="/politica-de-privacidade">Política de Privacidade</a><a href="/termos-de-uso">Termos de Uso</a><a href="/politica-de-cookies">Cookies</a></div>
   </section></main></>;
 }
+
+export default async function Page(props){if(isStandaloneBuild())return <StandaloneProfile/>;return WebProfile(props);}
