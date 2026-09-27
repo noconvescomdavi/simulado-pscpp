@@ -20,6 +20,7 @@ import android.webkit.GeolocationPermissions;
 import android.webkit.PermissionRequest;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
+import android.webkit.ConsoleMessage;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -164,11 +165,19 @@ public class MainActivity extends Activity {
         @Override
         public void onPageFinished(WebView view, String url) {
             progressBar.setVisibility(View.GONE);
+            view.evaluateJavascript("document.body && document.body.innerText.trim().length", value -> { if ("0".equals(value)) Toast.makeText(MainActivity.this, "A interface carregou sem conteúdo visível. Verifique o erro exibido em seguida.", Toast.LENGTH_LONG).show(); });
             CookieManager.getInstance().flush();
         }
     }
 
     private class EstibordoChromeClient extends WebChromeClient {
+        @Override
+        public boolean onConsoleMessage(ConsoleMessage message) {
+            if (message.messageLevel() == ConsoleMessage.MessageLevel.ERROR) {
+                runOnUiThread(() -> Toast.makeText(MainActivity.this, "Erro da interface: " + message.message(), Toast.LENGTH_LONG).show());
+            }
+            return true;
+        }
         @Override
         public void onProgressChanged(WebView view, int newProgress) {
             progressBar.setProgress(newProgress);
