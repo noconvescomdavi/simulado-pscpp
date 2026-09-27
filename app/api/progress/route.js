@@ -2,6 +2,7 @@ import { getSession } from "../../../lib/auth";
 import { query } from "../../../lib/db";
 import { normalizeSubject } from "../../../lib/subjects";
 import {assertSameOrigin} from "../../../lib/security";
+import {desktopLocal,isDesktopRuntime} from "../../../lib/desktop-local";
 
 function safeWholeNumber(value, maximum = 100000) {
   return Math.max(0, Math.min(maximum, Math.trunc(Number(value) || 0)));
@@ -11,10 +12,8 @@ export async function GET() {
   const session = await getSession();
   if (!session) return Response.json({ error: "Não autenticado" }, { status: 401 });
 
-  const result = await query(
-    "select subject,percent,completed_items,total_items,updated_at from study_progress where user_id=$1 order by subject",
-    [session.id]
-  );
+  if(isDesktopRuntime()){const local=await desktopLocal(`/v1/progress?user_id=${encodeURIComponent(session.id)}`);return Response.json(local,{headers:{"Cache-Control":"private, no-store"}})}
+  const result = await query("select subject,percent,completed_items,total_items,updated_at from study_progress where user_id=$1 order by subject",[session.id]);
 
   return Response.json(
     { progress: result.rows },
@@ -40,6 +39,8 @@ export async function POST(request) {
   }
 
   const percent = Math.round((completedItems / totalItems) * 10000) / 100;
+
+  if(isDesktopRuntime()){await desktopLocal("/v1/progress",{method:"PUT",body:{user_id:session.id,subject,percent,completed_items:completedItems,total_items:totalItems}});return Response.json({ok:true,percent,local:true})}
 
   await query(
     `insert into study_progress(user_id,subject,percent,completed_items,total_items)
