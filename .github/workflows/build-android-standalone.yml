@@ -76,6 +76,9 @@ jobs:
           grep -q "getLatestOfflineExam" 'app/simulado/[subject]/Client.js'
           grep -q "private_seed_installed" android/app/src/main/java/br/com/estibordo/app/PrivateSeedImporter.java
           grep -q "PrivateSeedImporter" android/app/src/main/java/br/com/estibordo/app/MainActivity.java
+          grep -q "VERSION=2" android/app/src/main/java/br/com/estibordo/app/EstibordoDatabase.java
+          grep -q "journal" android/app/src/main/java/br/com/estibordo/app/EstibordoDatabase.java
+          test -f android/app/src/androidTest/java/br/com/estibordo/app/DatabasePersistenceTest.java
           test -f data/manifest.json
       - name: Build APK
         working-directory: android
