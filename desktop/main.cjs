@@ -3,11 +3,16 @@ const { spawn } = require("node:child_process");
 const net = require("node:net");
 const path = require("node:path");
 const http = require("node:http");
+const { openLocalDatabase, getSyncStatus } = require("./local-db.cjs");
+const { loadSession } = require("./secure-store.cjs");
+const { createSyncEngine } = require("./sync-engine.cjs");
 
 const HOST = "127.0.0.1";
 let serverProcess = null;
 let mainWindow = null;
 let localOrigin = null;
+let localDb = null;
+let syncEngine = null;
 
 function getFreePort() {
   return new Promise((resolve, reject) => {
@@ -56,6 +61,7 @@ function startLocalServer(port) {
     HOSTNAME: HOST,
     PORT: String(port),
     ESTIBORDO_DESKTOP: "1",
+    ESTIBORDO_LOCAL_DB_PATH: path.join(app.getPath("userData"), "estibordo.sqlite3"),
     NEXT_PUBLIC_APP_URL: `http://${HOST}:${port}`,
   };
 
@@ -96,6 +102,16 @@ async function createWindow() {
   startLocalServer(port);
   await waitForServer(localOrigin);
 
+  localDb = openLocalDatabase(app.getPath("userData"));
+  syncEngine = createSyncEngine({
+    db: localDb,
+    getSession: loadSession,
+    apiBaseUrl: process.env.ESTIBORDO_API_BASE_URL || "",
+    onStatus: (status) => console.log("[sync]", status),
+  });
+  syncEngine.start();
+  console.log("[local-first]", getSyncStatus(localDb));
+
   mainWindow = new BrowserWindow({
     width: 1440,
     height: 920,
@@ -132,6 +148,9 @@ async function createWindow() {
 
 app.on("before-quit", () => {
   app.isQuitting = true;
+  syncEngine?.stop();
+  localDb?.close();
+  localDb = null;
   stopLocalServer();
 });
 
