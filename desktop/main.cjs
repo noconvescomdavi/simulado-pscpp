@@ -10,6 +10,7 @@ const { createSyncEngine } = require("./sync-engine.cjs");
 const { startLocalBridge } = require("./local-bridge.cjs");
 
 const HOST = "127.0.0.1";
+const REMOTE_API = process.env.ESTIBORDO_API_BASE_URL || "https://simulado-pscpp.vercel.app";
 let serverProcess = null;
 let mainWindow = null;
 let localOrigin = null;
@@ -117,12 +118,12 @@ async function createWindow() {
   syncEngine = createSyncEngine({
     db: localDb,
     getSession: loadSession,
-    apiBaseUrl: process.env.ESTIBORDO_API_BASE_URL || "",
+    apiBaseUrl: REMOTE_API,
     onStatus: (status) => console.log("[sync]", status),
   });
   syncEngine.start();
   const authSecret=localAuthSecret(localDb);
-  localBridge = await startLocalBridge({ db: localDb, syncEngine, secureStore: { loadSession, saveSession }, apiBaseUrl: process.env.ESTIBORDO_API_BASE_URL || "", host: HOST });
+  localBridge = await startLocalBridge({ db: localDb, syncEngine, secureStore: { loadSession, saveSession }, apiBaseUrl: REMOTE_API, host: HOST });
   startLocalServer(port, localBridge, authSecret);
   await waitForServer(localOrigin);
   console.log("[local-first]", getSyncStatus(localDb));
