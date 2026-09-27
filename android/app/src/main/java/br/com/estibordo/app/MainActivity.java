@@ -51,6 +51,7 @@ public class MainActivity extends Activity {
         root.setBackgroundColor(0xFF07111F);
 
         webView = new WebView(this);
+        webView.setId(R.id.estibordo_webview);
         progressBar = new ProgressBar(this, null, android.R.attr.progressBarStyleHorizontal);
         progressBar.setMax(100);
 
