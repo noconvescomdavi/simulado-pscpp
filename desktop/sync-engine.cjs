@@ -101,6 +101,8 @@ function createSyncEngine({ db, getSession, apiBaseUrl, onStatus = () => {} }) {
     void syncNow();
   }
   function stop() { if (timer) clearInterval(timer); timer = null; }
+  function online(){ void syncNow(); }
+  if(globalThis.addEventListener)globalThis.addEventListener("online",online);
   return { syncNow, start, stop, deviceId: id };
 }
 
