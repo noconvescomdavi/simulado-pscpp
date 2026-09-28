@@ -1,0 +1,56 @@
+{
+  "stage": "3",
+  "status": "homologated",
+  "date": "2026-09-28",
+  "branch": "audit/pscpp-editorial-complete-20260923",
+  "evidence": {
+    "historical_full_scan": {
+      "files": 139,
+      "records": 23259,
+      "critical_before": 3293,
+      "critical_breakdown": {
+        "DUPLICATE_ID": 3279,
+        "EMPTY_OPTION": 13,
+        "ORPHAN_FRAGMENT": 1
+      }
+    },
+    "duplicate_analysis": {
+      "duplicate_ids_cross_file": 3279,
+      "duplicate_ids_same_file": 0,
+      "runtime_control": "dedupe by id and normalized stem before snapshots"
+    },
+    "source_repairs": {
+      "quarantined_structural": 14,
+      "empty_options": 13,
+      "orphan_fragment": 1,
+      "policy": "quarantine; no invented reconstruction"
+    },
+    "semantic_active": {
+      "flags": 0,
+      "critical": 0,
+      "high": 0,
+      "generated_at": "2026-09-28T16:18:40.053Z"
+    },
+    "main_banks_active": {
+      "files": 7,
+      "records": 12070,
+      "issues": 0,
+      "critical": 0,
+      "high": 0,
+      "generated_at": "2026-09-28T16:18:40.941Z"
+    },
+    "runtime_controls": [
+      "isQuestionActive quality gate",
+      "dedupe IDs",
+      "dedupe normalized stems",
+      "PSCPP structural safety filter",
+      "quarantined/inactive exclusion"
+    ],
+    "archived_high_findings": {
+      "duplicate_stems_same_file": 915,
+      "generic_templates": 298,
+      "runtime_effect": "blocked/deduped before exposure; retained in source history"
+    }
+  },
+  "phase4_required": "Synchronize 22 main commits, regenerate runtime snapshots, rerun all gates/build before merge."
+}
