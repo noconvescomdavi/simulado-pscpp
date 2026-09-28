@@ -2,13 +2,10 @@ import {redirect} from "next/navigation";
 import {getSession} from "../../lib/auth";
 import {getUserAccess} from "../../lib/access";
 import {query} from "../../lib/db";
-import {getUserMetrics} from "../../lib/metrics";
-import {normalizeSubject,subjectLabel} from "../../lib/subjects";
+import {normalizeSubject,subjectLabel,SUBJECTS} from "../../lib/subjects";
 import StudentHeader from "../components/StudentHeader";
 import ExamCountdown from "../components/ExamCountdown";
-import {getConsistency} from "../../lib/engagement";
-import {getLearningProfile} from "../../lib/learning-engine";
-import {getStudentInsights} from "../../lib/student-insights";
+import {consistencyFromDays} from "../../lib/engagement";
 import { unstable_cache } from "next/cache";
 import "./dashboard.css";
 
@@ -19,20 +16,35 @@ function firstName(value){const text=String(value||"Aluno").trim();return text.s
 // Mantemos os dados pessoais/atividade fora deste cache.
 const cachedAccess = unstable_cache(async(userId)=>getUserAccess(userId),["dashboard-access"],{revalidate:60});
 
+export const preferredRegion = "gru1";
+
 export default async function Area(){
   const session=await getSession();
   if(!session)redirect("/login");
 
-  const [access,progress,performance,profile,recentExams,learning,consistency,studentIntel]=await Promise.all([
+  const [access,progress,performance,profile,recentExams,learning,studyDays,studentIntel]=await Promise.all([
     cachedAccess(session.id),
     query("select subject,percent from study_progress where user_id=$1",[session.id]),
-    getUserMetrics(session.id),
+    Promise.all([
+      query(`select subject,count(*)::int attempts,coalesce(sum(duration_seconds),0)::int duration_seconds from exam_attempts where user_id=$1 group by subject`,[session.id]),
+      query(`select subject,coalesce(sum(answer_count),0)::int questions,coalesce(sum(correct_count),0)::int correct,coalesce(sum(error_count),0)::int errors from question_stats where user_id=$1 and answer_count>0 group by subject`,[session.id])
+    ]).then(([attempts,answers])=>{
+      const am=new Map(),qm=new Map();
+      for(const r of attempts.rows){const key=normalizeSubject(r.subject),v=am.get(key)||{attempts:0,duration_seconds:0};v.attempts+=Number(r.attempts||0);v.duration_seconds+=Number(r.duration_seconds||0);am.set(key,v)}
+      for(const r of answers.rows){const key=normalizeSubject(r.subject),v=qm.get(key)||{questions:0,correct:0,errors:0};v.questions+=Number(r.questions||0);v.correct+=Number(r.correct||0);v.errors+=Number(r.errors||0);qm.set(key,v)}
+      const subjects=SUBJECTS.map(s=>{const a=am.get(s.slug)||{},q=qm.get(s.slug)||{};const questions=Number(q.questions||0),correct=Number(q.correct||0);return{...s,attempts:Number(a.attempts||0),duration_seconds:Number(a.duration_seconds||0),questions,correct,errors:Number(q.errors||0),accuracy:questions?Math.round(correct/questions*1000)/10:0}});
+      const overall=subjects.reduce((x,s)=>({attempts:x.attempts+s.attempts,duration_seconds:x.duration_seconds+s.duration_seconds,questions:x.questions+s.questions,correct:x.correct+s.correct,errors:x.errors+s.errors}),{attempts:0,duration_seconds:0,questions:0,correct:0,errors:0});
+      overall.accuracy=overall.questions?Math.round(overall.correct/overall.questions*1000)/10:0;
+      const totalAnswered=answers.rows.reduce((sum,row)=>sum+Number(row.questions||0),0);
+      return{subjects,overall,totalAnswered};
+    }),
     query("select full_name from user_profiles where user_id=$1 limit 1",[session.id]).catch(()=>({rows:[]})),
     query("select id,subject,status,answered_count,correct_count,started_at from exam_sessions where user_id=$1 order by started_at desc limit 4",[session.id]).catch(()=>({rows:[]})),
-    getLearningProfile(session.id).catch(()=>({overall_mastery:0,subjects:[],weakest_topics:[]})),
-    getConsistency(session.id),
-    getStudentInsights(session.id).catch(()=>({insights:[],due:0}))
+    query(`select subject_slug,topic_code,topic_label,mastery_score,confidence_score,answers,errors,last_activity_at from student_topic_mastery where user_id=$1 order by mastery_score asc,errors desc`,[session.id]).then(r=>{const topics=r.rows.map(x=>({...x,subject:x.subject_slug,topic:x.topic_label}));const populated=new Map();for(const x of topics){const a=populated.get(x.subject)||{sum:0,weight:0};const w=Math.max(1,Number(x.confidence_score||0));a.sum+=Number(x.mastery_score||0)*w;a.weight+=w;populated.set(x.subject,a)}const vals=[...populated.values()].map(x=>x.weight?x.sum/x.weight:0);return{overall_mastery:vals.length?Math.round(vals.reduce((a,b)=>a+b,0)/vals.length*10)/10:0,weakest_topics:topics.slice(0,10)}}).catch(()=>({overall_mastery:0,weakest_topics:[]})),
+    query(`select study_date from study_days where user_id=$1 and activity_count>0 order by study_date desc limit 365`,[session.id]),
+    query(`select count(*)::int as due from student_review_queue where user_id=$1 and source_type='topic' and state<>'suspended' and due_at<=now()`,[session.id]).then(r=>({due:Number(r.rows[0]?.due||0)})).catch(()=>({due:0}))
   ]);
+  const consistency=consistencyFromDays(studyDays.rows,performance.totalAnswered);
 
   const active=access?.active===true;
   const mastery=Number(learning?.overall_mastery||0);
@@ -53,10 +65,14 @@ export default async function Area(){
   );
   const readiness=Math.round(Math.max(0,Math.min(100,mastery*.8+legacyReadiness*.2)));
   const readinessLabel=readiness>=85?"Muito forte":readiness>=70?"Competitivo":readiness>=50?"Em evolução":"Construindo base";
+  const weakTopic=learning?.weakest_topics?.[0]||null;
+  const dashboardInsights=[];
+  if(weakTopic)dashboardInsights.push({kind:"weakness",title:"Maior oportunidade de ganho",text:`${weakTopic.topic} está com domínio estimado de ${Math.round(Number(weakTopic.mastery_score||0))}% e ${weakTopic.errors||0} erros registrados.`,action:"Corrigir esta fraqueza",href:`/conteudos/banco-de-questoes?subject=${encodeURIComponent(weakTopic.subject)}`});
+  if(Number(studentIntel?.due||0)>0)dashboardInsights.push({kind:"review",title:"Revisões vencendo hoje",text:`Você tem ${studentIntel.due} prioridade(s) de revisão.`,action:"Começar revisão",href:"/revisao-inteligente"});
 
   return (
     <>
-      <StudentHeader active="painel"/>
+      <StudentHeader active="painel" session={session}/>
       <main className="studentDashboardV2">
         <section className="studentWelcome">
           <div><span>PAINEL DO ALUNO</span><h1>Olá, {name} <b>👋</b></h1><p>Disciplina, foco e resultado. Mantenha o rumo até a Praticagem.</p></div>
@@ -78,7 +94,7 @@ export default async function Area(){
 
 
 
-        <section className="insightsPanel"><div className="sectionTitle"><div><h2>ESTIBORDO Insights</h2><p>O que seus dados sugerem fazer em seguida.</p></div><a href="/centro-de-revisao">Centro de Revisão →</a></div><div className="insightsGrid">{(studentIntel?.insights||[]).map((insight,index)=><a href={insight.href} key={index}><span>{insight.kind}</span><strong>{insight.title}</strong><p>{insight.text}</p><b>{insight.action} →</b></a>)}{!(studentIntel?.insights||[]).length&&<article><strong>Continue estudando</strong><p>Assim que houver dados suficientes, seus padrões e recomendações aparecerão aqui.</p></article>}</div></section>
+        <section className="insightsPanel"><div className="sectionTitle"><div><h2>ESTIBORDO Insights</h2><p>O que seus dados sugerem fazer em seguida.</p></div><a href="/centro-de-revisao">Centro de Revisão →</a></div><div className="insightsGrid">{dashboardInsights.map((insight,index)=><a href={insight.href} key={index}><span>{insight.kind}</span><strong>{insight.title}</strong><p>{insight.text}</p><b>{insight.action} →</b></a>)}{!dashboardInsights.length&&<article><strong>Continue estudando</strong><p>Assim que houver dados suficientes, seus padrões e recomendações aparecerão aqui.</p></article>}</div></section>
 
         <section className="dashboardSection">
           <div className="sectionTitle"><div><h2>Acesso Rápido</h2><p>Escolha o recurso que deseja utilizar:</p></div></div>

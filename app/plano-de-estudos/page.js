@@ -7,6 +7,7 @@ import PlanClient from "./PlanClient";
 import styles from "./plano.module.css";
 
 export const dynamic="force-dynamic";
+export const preferredRegion="gru1";
 
 export default async function PlanoDeEstudos({searchParams}){
   const session=await getSession();
@@ -17,5 +18,5 @@ export default async function PlanoDeEstudos({searchParams}){
   const week=Math.max(-8,Math.min(80,Number(q?.semana||0)));
   const plan=await getIntegratedStudyPlan(session.id,week);
   if(plan.needs_onboarding)redirect("/plano-de-estudos/configurar");
-  return <><StudentHeader active="plano"/><PlanClient plan={plan}/></>;
+  return <><StudentHeader active="plano" session={session}/><PlanClient plan={plan}/></>;
 }
