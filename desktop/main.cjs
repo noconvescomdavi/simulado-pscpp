@@ -1,13 +1,41 @@
-const { app, BrowserWindow, shell } = require("electron");
+const { app, BrowserWindow, dialog, shell } = require("electron");
 const { spawn } = require("node:child_process");
+const fs = require("node:fs");
 const net = require("node:net");
 const path = require("node:path");
 const http = require("node:http");
 const crypto = require("node:crypto");
-const { openLocalDatabase, getSyncStatus } = require("./local-db.cjs");
-const { loadSession, saveSession, clearSession } = require("./secure-store.cjs");
-const { createSyncEngine } = require("./sync-engine.cjs");
-const { startLocalBridge } = require("./local-bridge.cjs");
+// Keep native modules out of top-level initialization so load failures are recorded.
+let logFile;
+function log(stage, detail) {
+  const line = `${new Date().toISOString()} ${stage}${detail ? `: ${detail}` : ""}\n`;
+  try {
+    if (!logFile) {
+      const dir = path.join(app.getPath("userData"), "logs");
+      fs.mkdirSync(dir, { recursive: true });
+      logFile = path.join(dir, "startup.log");
+    }
+    fs.appendFileSync(logFile, line);
+  } catch (error) {
+    console.error("Could not write startup log", error);
+  }
+}
+function describe(error) {
+  return String(error?.stack || error?.message || error).replace(/(Bearer\s+)[^\s]+/gi, "$1[redacted]");
+}
+let startupFailed = false;
+function failStartup(error) {
+  if (startupFailed || app.isQuitting) return;
+  startupFailed = true;
+  log("STARTUP_FAILED", describe(error));
+  const message = `O ESTIBORDO não conseguiu iniciar.\n\n${String(error?.message || error)}\n\nRegistro do erro: ${logFile || "indisponível"}`;
+  try { dialog.showErrorBox("Falha ao iniciar o ESTIBORDO", message); }
+  catch (dialogError) { log("ERROR_DIALOG_FAILED", describe(dialogError)); }
+  app.quit();
+}
+process.on("uncaughtException", failStartup);
+process.on("unhandledRejection", failStartup);
+log("START", `version=${app.getVersion()} packaged=${app.isPackaged}`);
 
 const HOST = "127.0.0.1";
 function remoteApiOrigin(raw) {
@@ -17,7 +45,7 @@ function remoteApiOrigin(raw) {
   }
   return url.origin;
 }
-const REMOTE_API = remoteApiOrigin(process.env.ESTIBORDO_API_BASE_URL || "https://simulado-pscpp.vercel.app");
+let REMOTE_API;
 let serverProcess = null;
 let mainWindow = null;
 let localOrigin = null;
@@ -98,12 +126,12 @@ function startLocalServer(port, bridge, authSecret) {
     stdio: ["ignore", "pipe", "pipe"],
   });
 
-  serverProcess.stdout?.on("data", (chunk) => console.log("[next]", String(chunk).trim()));
-  serverProcess.stderr?.on("data", (chunk) => console.error("[next]", String(chunk).trim()));
+  serverProcess.once("error", (error) => failStartup(error));
+  serverProcess.stdout?.on("data", (chunk) => log("NEXT_STDOUT", String(chunk).trim()));
+  serverProcess.stderr?.on("data", (chunk) => log("NEXT_STDERR", String(chunk).trim()));
   serverProcess.once("exit", (code, signal) => {
-    if (!app.isQuitting && mainWindow && !mainWindow.isDestroyed()) {
-      console.error("Servidor local encerrado inesperadamente.", { code, signal });
-    }
+    log("NEXT_EXIT", `code=${code} signal=${signal}`);
+    if (!app.isQuitting && !startupFailed) failStartup(new Error(`Servidor local encerrado (código ${code}, sinal ${signal}).`));
   });
 }
 
@@ -123,9 +151,18 @@ function isAllowedNavigation(rawUrl) {
 }
 
 async function createWindow() {
+  log("ELECTRON_READY");
+  REMOTE_API = remoteApiOrigin(process.env.ESTIBORDO_API_BASE_URL || "https://simulado-pscpp.vercel.app");
+  const { openLocalDatabase, getSyncStatus } = require("./local-db.cjs");
+  const { loadSession, saveSession, clearSession } = require("./secure-store.cjs");
+  const { createSyncEngine } = require("./sync-engine.cjs");
+  const { startLocalBridge } = require("./local-bridge.cjs");
+  log("MODULES_LOADED");
   const port = await getFreePort();
   localOrigin = `http://${HOST}:${port}`;
+  fs.mkdirSync(app.getPath("userData"), { recursive: true });
   localDb = openLocalDatabase(app.getPath("userData"));
+  log("SQLITE_READY");
   syncEngine = createSyncEngine({
     db: localDb,
     getSession: loadSession,
@@ -142,14 +179,16 @@ async function createWindow() {
       localDb.prepare("UPDATE local_profile SET entitlement_status='reauth_required',updated_at=? WHERE user_id=?").run(t,String(userId));
     },
     apiBaseUrl: REMOTE_API,
-    onStatus: (status) => console.log("[sync]", status),
+    onStatus: (status) => log("SYNC", JSON.stringify(status)),
   });
   syncEngine.start();
   const authSecret=localAuthSecret(localDb);
   localBridge = await startLocalBridge({ db: localDb, syncEngine, secureStore: { loadSession, saveSession, clearSession }, apiBaseUrl: REMOTE_API, host: HOST });
+  log("BRIDGE_READY");
   startLocalServer(port, localBridge, authSecret);
   await waitForServer(localOrigin);
-  console.log("[local-first]", getSyncStatus(localDb));
+  if (startupFailed) return;
+  log("NEXT_READY", JSON.stringify(getSyncStatus(localDb)));
 
   mainWindow = new BrowserWindow({
     width: 1440,
@@ -181,12 +220,24 @@ async function createWindow() {
     }
   });
 
-  mainWindow.once("ready-to-show", () => mainWindow?.show());
+  mainWindow.webContents.on("did-fail-load", (_event, code, description, url, isMainFrame) => {
+    log("PAGE_LOAD_FAILED", `code=${code} description=${description} main=${isMainFrame} url=${url}`);
+    if (isMainFrame) failStartup(new Error(`A interface local não carregou: ${description} (${code}).`));
+  });
+  mainWindow.webContents.on("render-process-gone", (_event, details) => {
+    log("RENDER_GONE", `reason=${details.reason} exitCode=${details.exitCode}`);
+    failStartup(new Error(`A interface encerrou: ${details.reason} (${details.exitCode}).`));
+  });
+  mainWindow.once("ready-to-show", () => { if (!mainWindow?.isDestroyed()) mainWindow.show(); });
   await mainWindow.loadURL(localOrigin);
+  if (startupFailed) return;
+  if (!mainWindow.isVisible()) mainWindow.show();
+  log("WINDOW_VISIBLE");
 }
 
 app.on("before-quit", () => {
   app.isQuitting = true;
+  log("QUIT");
   syncEngine?.stop();
   localBridge?.server?.close();
   localBridge = null;
@@ -197,8 +248,4 @@ app.on("before-quit", () => {
 
 app.on("window-all-closed", () => app.quit());
 
-app.whenReady().then(createWindow).catch((error) => {
-  console.error(error);
-  stopLocalServer();
-  app.quit();
-});
+app.whenReady().then(createWindow).catch(failStartup);
