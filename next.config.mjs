@@ -28,7 +28,7 @@ const nextConfig = {
   async headers() {
     return [
       { source: "/:path*", headers: securityHeaders },
-      { source: "/flashcards/ripeam/3d/:path*", headers: [{ key: "Content-Security-Policy", value: threeCsp }] },
+      { source: "/flashcards/ripeam/3d/:path*", headers: [{ key: "Content-Security-Policy", value: threeCsp }] },\n      { source: "/admin/laboratorio-3d/:path*", headers: [{ key: "Content-Security-Policy", value: threeCsp }] },
       { source: "/admin/:path*", headers: [{ key: "Cache-Control", value: "private, no-store, max-age=0" }, { key: "X-Robots-Tag", value: "noindex, nofollow" }] },
       { source: "/api/auth/:path*", headers: [{ key: "Cache-Control", value: "no-store, max-age=0" }] },
       { source: "/api/account/:path*", headers: [{ key: "Cache-Control", value: "private, no-store, max-age=0" }] },
