@@ -31,6 +31,8 @@ const templateRisks=[
 for(const subject of subjects){
   const bank=JSON.parse(fs.readFileSync(path.join(dir,subject+".json"),"utf8"));
   for(const q of bank.questions||[]){
+    // A auditoria editorial bloqueante cobre somente o pool elegível ao runtime.
+    if(q.active===false || q.__remove===true || q.status==="quarantined") continue;
     const all=[q.question,q.explanation,q.topic,q.module,...(q.options||[]).map(o=>o.text)].join("\n");
     for(const [rx,msg] of anglicisms) if(rx.test(all)) add(subject,q,"TERMINOLOGY_TRANSLATION","high",msg);
     if(templateRisks.some(rx=>rx.test(q.question||""))) add(subject,q,"ARTIFICIAL_TEMPLATE","high","Redação com artefato de geração; reescrever como questão natural no padrão PSCPP.");
