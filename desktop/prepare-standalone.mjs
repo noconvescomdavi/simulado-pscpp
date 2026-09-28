@@ -22,6 +22,7 @@ await cp(path.join(root, ".next", "static"), path.join(runtime, ".next", "static
 await cp(path.join(root, "public"), path.join(runtime, "public"), { recursive: true });
 
 await stat(path.join(runtime, "server.js"));
+await stat(path.join(runtime, "node_modules", "next", "dist", "server", "lib", "start-server.js"));
 
 const forbidden = ["DATABASE_URL=", "postgresql://", "postgres://"];
 async function scanTextFile(file) {

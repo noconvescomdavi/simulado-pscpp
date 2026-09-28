@@ -70,12 +70,17 @@
     },
     "files": [
       "desktop/**/*",
+      "!desktop/runtime/**",
       "package.json"
     ],
     "extraResources": [
       {
         "from": "desktop/runtime",
         "to": "runtime"
+      },
+      {
+        "from": "desktop/runtime/node_modules",
+        "to": "runtime/node_modules"
       }
     ],
     "win": {

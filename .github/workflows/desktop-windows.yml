@@ -53,6 +53,10 @@ jobs:
           $installer = Get-ChildItem dist-desktop -Filter "ESTIBORDO-Setup-*.exe" | Select-Object -First 1
           if (-not $installer) { throw "Instalador Windows não foi gerado." }
           if ($installer.Length -lt 1MB) { throw "Instalador Windows inválido ou vazio." }
+          $runtime = Join-Path (Resolve-Path dist-desktop/win-unpacked) "resources/runtime"
+          if (-not (Test-Path (Join-Path $runtime "node_modules/next/dist/server/lib/start-server.js"))) {
+            throw "Next.js não foi incluído no runtime instalado."
+          }
           Write-Host "INSTALLER_OK $($installer.FullName) $($installer.Length)"
 
       - name: Install and launch ESTIBORDO
@@ -64,6 +68,9 @@ jobs:
           if ($setup.ExitCode -ne 0) { throw "Falha na instalação NSIS: $($setup.ExitCode)" }
           $app = Join-Path $target "ESTIBORDO.exe"
           if (-not (Test-Path $app)) { throw "Executável instalado ausente: $app" }
+          if (-not (Test-Path (Join-Path $target "resources/runtime/node_modules/next/dist/server/lib/start-server.js"))) {
+            throw "Next.js não foi incluído no instalador."
+          }
           $process = Start-Process -FilePath $app -PassThru
           try {
             $deadline = (Get-Date).AddSeconds(60)
