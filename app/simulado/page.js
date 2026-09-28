@@ -15,6 +15,7 @@ import styles from "./simulados.module.css";
 
 const STATUS = {
   in_progress: "Em andamento",
+  paused: "Pausado",
   completed: "Concluído",
   expired: "Tempo encerrado",
   abandoned: "Encerrado"
@@ -53,10 +54,10 @@ export default async function Page() {
   );
 
   const trialInProgress = history.rows.some(
-    (exam) => exam.subject === TRIAL_SUBJECT_SLUG && exam.status === "in_progress"
+    (exam) => exam.subject === TRIAL_SUBJECT_SLUG && ["in_progress","paused"].includes(exam.status)
   );
   const trialConsumed = history.rows.some(
-    (exam) => exam.subject === TRIAL_SUBJECT_SLUG && exam.status !== "in_progress"
+    (exam) => exam.subject === TRIAL_SUBJECT_SLUG && !["in_progress","paused"].includes(exam.status)
   );
 
   const choices = entitlement.active
@@ -113,7 +114,7 @@ export default async function Page() {
         <div className={styles.history}>
           {history.rows.length ? (
             history.rows.map((exam) => {
-              const inProgress = exam.status === "in_progress";
+              const inProgress = ["in_progress","paused"].includes(exam.status);
               const href = inProgress
                 ? `/simulado/${exam.subject}`
                 : `/simulado/tentativa/${exam.id}`;
