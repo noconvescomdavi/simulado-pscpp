@@ -97,8 +97,8 @@ export default async function StudentHeader({ active = "", session: providedSess
 
   if (session?.id) {
     try {
-      const profile = await query("select full_name from user_profiles where user_id=$1 limit 1", [session.id]);
-      if (profile.rows[0]?.full_name) displayName = profile.rows[0].full_name;
+      const fullName = await cachedProfileName(session.id);
+      if (fullName) displayName = fullName;
     } catch {
       // Mantém o cabeçalho funcional mesmo se o perfil estiver indisponível.
     }

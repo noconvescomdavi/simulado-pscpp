@@ -1,9 +1,9 @@
 import {redirect} from "next/navigation";
 import {getSession} from "../../lib/auth";
 import {getIntegratedStudyPlan} from "../../lib/integrated-study-plan";
-import {getLearningProfile,getStudyTimeSummary} from "../../lib/learning-engine";
 import {getLearningGraph} from "../../lib/learning-graph";
-import {getUserMetrics} from "../../lib/metrics";
+import {query} from "../../lib/db";
+import {calculateTitleScore} from "../../lib/title-score";
 import StudentHeader from "../components/StudentHeader";
 import styles from "./trajectory.module.css";
 
@@ -17,14 +17,31 @@ function fmtDate(value){
 export default async function MinhaTrajetoria(){
   const session=await getSession();
   if(!session)redirect("/login?next=/minha-trajetoria");
-  const [plan,learning,time,graph,metrics]=await Promise.all([
+  const [plan,graph,titleProfile]=await Promise.all([
     getIntegratedStudyPlan(session.id,0),
-    getLearningProfile(session.id),
-    getStudyTimeSummary(session.id),
     getLearningGraph(session.id),
-    getUserMetrics(session.id)
+    query(`select maritime_role,experience_level,embarkation_days,command_days from user_profiles where user_id=$1 limit 1`,[session.id]).catch(()=>({rows:[]}))
   ]);
   if(plan.needs_onboarding)redirect("/plano-de-estudos/configurar");
+  const learning={overall_mastery:Number(plan.tracking?.overall_mastery||0)};
+  const time=plan.tracking?.study_time||{week_minutes:0};
+  const profile=titleProfile.rows[0]||{};
+  const titleScore=calculateTitleScore({
+    category:profile.experience_level,
+    occupationType:profile.maritime_role,
+    embarkationDays:profile.embarkation_days,
+    commandDays:profile.command_days
+  });
+  const metricSubjects=plan.metrics?.subjects||[];
+  const examAttempts=metricSubjects.reduce((sum,row)=>sum+Number(row.attempts||0),0);
+  const examAverage=examAttempts
+    ? metricSubjects.reduce((sum,row)=>sum+Number(row.average_score||0)*Number(row.attempts||0),0)/examAttempts
+    : 0;
+  const metrics={overall:{
+    exam_average:examAverage,
+    title_score:titleScore.total,
+    title_score_breakdown:titleScore
+  }};
 
   const status=plan.tracking?.schedule_health==="behind"?"Atrasado":plan.tracking?.schedule_health==="attention"?"Atenção":"Em dia";
   return <><StudentHeader active="trajetoria"/><main className={styles.page}>
