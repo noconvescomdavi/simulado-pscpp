@@ -12,7 +12,7 @@ const montserrat=Montserrat({subsets:["latin"],display:"swap",variable:"--font-m
 const poppins=Poppins({subsets:["latin"],weight:["500","600","700","800"],display:"swap",variable:"--font-poppins"});
 
 export const metadata = {
-  metadataBase: new URL("https://simulado-pscpp.vercel.app"),
+  metadataBase: new URL("https://estibordo-pscpp.vercel.app"),
   title: {
     default: "ESTIBORDO | Plataforma de estudos PSCPP",
     template: "%s | ESTIBORDO"

@@ -56,4 +56,4 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           TAG="android-build-${GITHUB_RUN_NUMBER}"
-          gh release create "$TAG" ESTIBORDO-Android.apk             --title "ESTIBORDO Android APK - Build ${GITHUB_RUN_NUMBER}"             --notes "APK instalável da plataforma ESTIBORDO para testes e uso direto em aparelho Android. Este pacote carrega a plataforma oficial https://simulado-pscpp.vercel.app e recebe automaticamente as atualizações do site."
+          gh release create "$TAG" ESTIBORDO-Android.apk             --title "ESTIBORDO Android APK - Build ${GITHUB_RUN_NUMBER}"             --notes "APK instalável da plataforma ESTIBORDO para testes e uso direto em aparelho Android. Este pacote carrega a plataforma oficial https://estibordo-pscpp.vercel.app e recebe automaticamente as atualizações do site."
