@@ -7,6 +7,7 @@ import PlanClient from "./PlanClient";
 import styles from "./plano.module.css";
 
 export const dynamic="force-dynamic";
+export const preferredRegion="gru1";
 
 export default async function PlanoDeEstudos({searchParams}){
   const session=await getSession();
