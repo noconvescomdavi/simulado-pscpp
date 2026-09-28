@@ -82,6 +82,9 @@ function Result({ result }) {
         {result?.reason === "timeout" && (
           <p>O período de 240 minutos terminou. Somente as questões efetivamente respondidas foram contabilizadas.</p>
         )}
+        {result?.reason === "content_updated" && (
+          <p>Este simulado foi encerrado porque algumas questões foram retiradas para revisão. As respostas salvas foram preservadas; você já pode iniciar um novo simulado.</p>
+        )}
         {result?.next_available_at && (
           <p>Próxima emissão: {new Date(result.next_available_at).toLocaleString("pt-BR")}</p>
         )}
