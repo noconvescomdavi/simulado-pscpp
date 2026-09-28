@@ -17,7 +17,7 @@ const anglicisms=[
   [/\banchor cable\b/i,"Revisar tradução; em contexto de fundeio, normalmente 'amarra'."],
   [/\bshackle\b/i,"Revisar tradução contextual; não manter anglicismo se a fonte brasileira usa 'manilha'."]
 ];
-const leakingStem=[/[“"][^”"]{18,}[”"]/,/(?:relativo|referente|trata|sobre)\s+a\s+[“"][^”"]+[”"]/i,/(?:atividade|opera[cç][aã]o|procedimentos?)\s+envolvendo\s+[“"][^”"]+[”"]/i];
+const leakingStem=[/(?:relativo|referente|trata)\\s+a\\s+[“"][^”"]+[”"]/i,/(?:atividade|opera[cç][aã]o|procedimentos?)\\s+envolvendo\\s+[“"][^”"]+[”"]/i];
 const words=v=>norm(v).replace(/[^a-z0-9 ]/g," ").split(/\s+/).filter(x=>x.length>=4);
 const overlap=(a,b)=>{const A=new Set(words(a)),B=new Set(words(b));if(!A.size||!B.size)return 0;let n=0;for(const w of A)if(B.has(w))n++;return n/Math.min(A.size,B.size)};
 const templateRisks=[
@@ -50,7 +50,8 @@ for(const subject of subjects){
     if(named.length && named.some(k=>k!==key)) add(subject,q,"ANSWER_EXPLANATION_CONFLICT","critical",`correct_answer=${key}, mas a explicação aponta ${[...new Set(named)].join(",")} como resposta correta.`);
     const correct=(q.options||[]).find(o=>String(o.key).toUpperCase()===key);
     if(!correct) add(subject,q,"MISSING_CORRECT_OPTION","critical","Gabarito não corresponde a alternativa existente.");
-    const assertionLike=/\\n\\s*(?:I|II|III|IV)[).]/.test(q.question||"") || /assertivas|verdadeiro|falso/i.test(String(q.question_type||"")+" "+String(q.style||""));\n    if(correct&&!assertionLike&&overlap(q.question,correct.text)>=.58)add(subject,q,"STEM_ANSWER_OVERLAP","high","Sobreposição lexical elevada em questão não-assertiva; requer revisão editorial, mas não prova vazamento de gabarito.");
+    const assertionLike=/\n\s*(?:I|II|III|IV)[).]/.test(q.question||"") || /assertivas|verdadeiro|falso/i.test(String(q.question_type||"")+" "+String(q.style||""));
+    if(correct&&!assertionLike&&overlap(q.question,correct.text)>=.58)add(subject,q,"STEM_ANSWER_OVERLAP","high","Sobreposição lexical elevada em questão não-assertiva; requer revisão editorial, mas não prova vazamento de gabarito.");
     if(/s[aã]o verdadeiras as proposi[cç][oõ]es correspondentes [aà] alternativa\s+[a-e]/i.test(q.explanation||"")){
       const m=(q.explanation||"").match(/alternativa\s+([a-e])/i);
       if(m&&m[1].toUpperCase()!==key) add(subject,q,"ASSERTION_KEY_CONFLICT","critical",`Explicação aponta ${m[1].toUpperCase()}, JSON aponta ${key}.`);
@@ -68,4 +69,9 @@ fs.mkdirSync(path.join(root,"reports"),{recursive:true});
 fs.writeFileSync(path.join(root,"reports","question-semantic-audit.json"),JSON.stringify(summary,null,2)+"\n");
 console.log(JSON.stringify(summary.totals));
 console.log(JSON.stringify(summary.by_code,null,2));
-// Flags são relatório editorial. Falhas estruturais/gabarito continuam bloqueantes;\n// redação/terminologia são backlog de qualidade e não impedem build/deploy.\nconst blockingCodes=new Set(["MISSING_CORRECT_OPTION","ANSWER_EXPLANATION_CONFLICT","ASSERTION_KEY_CONFLICT","INCORRECT_KEY_CONFLICT","MISSING_REFERENT","ARTIFICIAL_TEMPLATE"]);\nconst blocking=flags.filter(x=>blockingCodes.has(x.code));\nif(blocking.length){\n  console.error(JSON.stringify({blocking: blocking.length, by_code:Object.fromEntries([...new Set(blocking.map(x=>x.code))].map(code=>[code,blocking.filter(x=>x.code===code).length]))},null,2));\n  process.exitCode=2;\n}
+// Flags são relatório editorial. Falhas estruturais/gabarito continuam bloqueantes;\n// redação/terminologia são backlog de qualidade e não impedem build/deploy.\nconst blockingCodes=new Set(["MISSING_CORRECT_OPTION","ANSWER_EXPLANATION_CONFLICT","ASSERTION_KEY_CONFLICT","INCORRECT_KEY_CONFLICT","MISSING_REFERENT","ARTIFICIAL_TEMPLATE"]);
+const blocking=flags.filter(x=>blockingCodes.has(x.code));
+if(blocking.length){
+  console.error(JSON.stringify({blocking:blocking.length,by_code:Object.fromEntries([...new Set(blocking.map(x=>x.code))].map(code=>[code,blocking.filter(x=>x.code===code).length]))},null,2));
+  process.exitCode=2;
+}
