@@ -1,7 +1,7 @@
 name: Desktop Windows
 
 permissions:
-  contents: write
+  contents: read
 
 on:
   push:
@@ -20,7 +20,6 @@ jobs:
     runs-on: windows-latest
     timeout-minutes: 30
     env:
-      DATABASE_URL: postgresql://placeholder:placeholder@localhost:5432/placeholder
       AUTH_SECRET: ci-only-secret-ci-only-secret-ci-only
       AUTH_SESSION_DAYS: 30
       NEXT_PUBLIC_APP_URL: http://127.0.0.1:3210
@@ -39,22 +38,11 @@ jobs:
       - name: Install
         run: npm ci
 
-      - name: Persist updated lockfile
-        if: github.event_name == 'push'
-        shell: pwsh
-        run: |
-          if (git diff --quiet -- package-lock.json) {
-            Write-Host "LOCKFILE_ALREADY_SYNCED"
-          } else {
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add package-lock.json
-            git commit -m "desktop: sincronizar package-lock"
-            git push origin HEAD:feature/estibordo-windows
-          }
-
       - name: Repository hygiene
         run: npm run check:repo
+
+      - name: Desktop authentication cycle
+        run: npm run test:desktop:auth
 
       - name: Build desktop installer
         run: npm run build:desktop
@@ -66,6 +54,25 @@ jobs:
           if (-not $installer) { throw "Instalador Windows não foi gerado." }
           if ($installer.Length -lt 1MB) { throw "Instalador Windows inválido ou vazio." }
           Write-Host "INSTALLER_OK $($installer.FullName) $($installer.Length)"
+
+      - name: Install and launch ESTIBORDO
+        shell: pwsh
+        run: |
+          $installer = (Get-ChildItem dist-desktop -Filter "ESTIBORDO-Setup-*.exe" | Select-Object -First 1).FullName
+          $target = Join-Path $env:RUNNER_TEMP "ESTIBORDO-installed"
+          $setup = Start-Process -FilePath $installer -ArgumentList @('/S', "/D=$target") -Wait -PassThru
+          if ($setup.ExitCode -ne 0) { throw "Falha na instalação NSIS: $($setup.ExitCode)" }
+          $app = Join-Path $target "ESTIBORDO.exe"
+          if (-not (Test-Path $app)) { throw "Executável instalado ausente: $app" }
+          $process = Start-Process -FilePath $app -PassThru
+          try {
+            Start-Sleep -Seconds 15
+            $process.Refresh()
+            if ($process.HasExited) { throw "ESTIBORDO.exe encerrou após a instalação: $($process.ExitCode)" }
+            Write-Host "INSTALLED_APP_STARTED $app"
+          } finally {
+            Stop-Process -Id $process.Id -Force -ErrorAction SilentlyContinue
+          }
 
       - name: Upload installer
         uses: actions/upload-artifact@v4

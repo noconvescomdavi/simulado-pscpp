@@ -42,7 +42,8 @@ function needsThreeRuntime(pathname){
 
 export function middleware(request){
   const response=NextResponse.next();
-  response.headers.set("Content-Security-Policy",needsThreeRuntime(request.nextUrl.pathname)?threeCsp:strictCsp);
+  const policy=needsThreeRuntime(request.nextUrl.pathname)?threeCsp:strictCsp;
+  response.headers.set("Content-Security-Policy",process.env.ESTIBORDO_DESKTOP==="1"?policy.replace(/; upgrade-insecure-requests$/,""):policy);
   return response;
 }
 

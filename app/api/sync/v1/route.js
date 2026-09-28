@@ -13,7 +13,16 @@ function normalizeEvent(raw){
 export async function POST(request){
  const session=(await getDesktopBearerSession(request))||(await getSession());if(!session)return Response.json({error:"Não autenticado."},{status:401});
  const body=await request.json().catch(()=>({}));if(Number(body.protocol_version)!==1)return Response.json({error:"Versão de sincronização incompatível.",code:"SYNC_PROTOCOL_VERSION"},{status:409});
+ if(session.desktopToken){
+  if(body.device_id!==session.deviceId)return Response.json({error:"Dispositivo inválido."},{status:403});
+  const {query}=await import("../../../../lib/db");
+  const account=await query("select status,session_version,role from users where id=$1 limit 1",[session.id]);
+  const user=account.rows[0];
+  if(!user||user.status!=="active"||user.role==="admin"||Number(user.session_version||1)!==session.sessionVersion)return Response.json({error:"Sessão revogada."},{status:401});
+ }
  const events=(Array.isArray(body.events)?body.events:[]).slice(0,MAX_EVENTS).map(normalizeEvent).filter(Boolean),cursor=safeCursor(body.cursor);
+ if(events.some(event=>event.device_id!==body.device_id||event.payload.user_id&&String(event.payload.user_id)!==String(session.id)))
+  return Response.json({error:"Evento não pertence à conta ou ao dispositivo."},{status:403});
  try{
   const payload=await withTransaction(async client=>{
    const results=[];
@@ -28,7 +37,7 @@ export async function POST(request){
       results.push(result);continue;
     }
     const next=currentVersion+1;
-    const storedPayload=event.operation==="delete"?{}:{...event.payload,version:next,updated_at:new Date().toISOString()};
+    const storedPayload=event.operation==="delete"?{}:{...event.payload,user_id:String(session.id),version:next,updated_at:new Date().toISOString()};
     await client.query(`insert into sync_entity_versions(user_id,entity_type,entity_id,version,payload,updated_at) values($1,$2,$3,$4,$5::jsonb,now())
       on conflict(user_id,entity_type,entity_id) do update set version=excluded.version,payload=excluded.payload,updated_at=now()`,[session.id,event.entity_type,event.entity_id,next,JSON.stringify(storedPayload)]);
     const change=await client.query("insert into sync_change_log(user_id,entity_type,entity_id,version,operation,payload) values($1,$2,$3,$4,$5,$6::jsonb) returning seq",[session.id,event.entity_type,event.entity_id,next,event.operation,JSON.stringify(storedPayload)]);

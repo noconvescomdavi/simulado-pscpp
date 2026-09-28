@@ -5,7 +5,7 @@ const path = require("node:path");
 const http = require("node:http");
 const crypto = require("node:crypto");
 const { openLocalDatabase, getSyncStatus } = require("./local-db.cjs");
-const { loadSession, saveSession } = require("./secure-store.cjs");
+const { loadSession, saveSession, clearSession } = require("./secure-store.cjs");
 const { createSyncEngine } = require("./sync-engine.cjs");
 const { startLocalBridge } = require("./local-bridge.cjs");
 
@@ -69,7 +69,10 @@ function startLocalServer(port, bridge, authSecret) {
   const root = runtimeRoot();
   const serverEntry = path.join(root, "server.js");
   const env = {
-    ...process.env,
+    PATH: process.env.PATH,
+    SystemRoot: process.env.SystemRoot,
+    TEMP: process.env.TEMP,
+    TMP: process.env.TMP,
     HOSTNAME: HOST,
     PORT: String(port),
     ESTIBORDO_DESKTOP: "1",
@@ -118,12 +121,19 @@ async function createWindow() {
   syncEngine = createSyncEngine({
     db: localDb,
     getSession: loadSession,
+    saveSession,
+    onRenew: (fresh) => {
+      const t=new Date().toISOString();
+      const entitlement=fresh.entitlement?.active?"active":fresh.entitlement?.trial?"trial":String(fresh.entitlement?.status||"inactive");
+      localDb.prepare("UPDATE local_profile SET entitlement_status=?,entitlement_checked_at=?,last_online_auth_at=?,updated_at=? WHERE user_id=?")
+        .run(entitlement,t,t,t,String(fresh.user.id));
+    },
     apiBaseUrl: REMOTE_API,
     onStatus: (status) => console.log("[sync]", status),
   });
   syncEngine.start();
   const authSecret=localAuthSecret(localDb);
-  localBridge = await startLocalBridge({ db: localDb, syncEngine, secureStore: { loadSession, saveSession }, apiBaseUrl: REMOTE_API, host: HOST });
+  localBridge = await startLocalBridge({ db: localDb, syncEngine, secureStore: { loadSession, saveSession, clearSession }, apiBaseUrl: REMOTE_API, host: HOST });
   startLocalServer(port, localBridge, authSecret);
   await waitForServer(localOrigin);
   console.log("[local-first]", getSyncStatus(localDb));

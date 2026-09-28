@@ -16,6 +16,13 @@ function readBody(req) {
   });
 }
 function stamp(){return new Date().toISOString()}
+function saveProfile(db,payload,email){
+  const t=stamp(),status=payload.entitlement?.active?"active":payload.entitlement?.trial?"trial":String(payload.entitlement?.status||"inactive");
+  db.prepare(`INSERT INTO local_profile(user_id,email,role,entitlement_status,entitlement_checked_at,last_online_auth_at,created_at,updated_at)
+    VALUES(?,?,?,?,?,?,?,?) ON CONFLICT(user_id) DO UPDATE SET email=excluded.email,role=excluded.role,entitlement_status=excluded.entitlement_status,
+    entitlement_checked_at=excluded.entitlement_checked_at,last_online_auth_at=excluded.last_online_auth_at,updated_at=excluded.updated_at`)
+    .run(String(payload.user.id),payload.user.email||email,payload.user.role||"student",status,t,t,t,t);
+}
 function startLocalBridge({db,syncEngine,secureStore,apiBaseUrl,host="127.0.0.1"}) {
   const token=crypto.randomBytes(32).toString("hex");
   const server=http.createServer(async(req,res)=>{
@@ -25,23 +32,47 @@ function startLocalBridge({db,syncEngine,secureStore,apiBaseUrl,host="127.0.0.1"
       if(req.method==="POST"&&url.pathname==="/v1/auth/bootstrap"){
         if(!apiBaseUrl)return json(res,503,{error:"API_REMOTE_NOT_CONFIGURED"});
         const b=await readBody(req);
-        const response=await fetch(new URL("/api/desktop/auth",apiBaseUrl),{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:b.email,password:b.password,device_id:syncEngine.deviceId})});
+        const response=await fetch(new URL("/api/desktop/auth",apiBaseUrl),{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:b.email,password:b.password,device_id:syncEngine.deviceId}),signal:AbortSignal.timeout(12000)});
         const payload=await response.json().catch(()=>({}));
         if(!response.ok)return json(res,response.status,payload);
         if(!payload.access_token||!payload.user?.id)return json(res,502,{error:"INVALID_AUTH_RESPONSE"});
+        const existing=db.prepare("SELECT user_id FROM local_profile LIMIT 1").get();
+        if(existing&&String(existing.user_id)!==String(payload.user.id))return json(res,409,{error:"Este dispositivo já contém dados offline de outra conta. Use o perfil original."});
         await secureStore.saveSession({accessToken:payload.access_token,refreshToken:payload.refresh_token||null,expiresAt:payload.expires_at||null,userId:String(payload.user.id)});
-        const t=stamp(),status=payload.entitlement?.active?"active":payload.entitlement?.trial?"trial":String(payload.entitlement?.status||"inactive");
-        db.prepare(`INSERT INTO local_profile(user_id,email,role,entitlement_status,entitlement_checked_at,last_online_auth_at,created_at,updated_at)
-          VALUES(?,?,?,?,?,?,?,?) ON CONFLICT(user_id) DO UPDATE SET email=excluded.email,role=excluded.role,entitlement_status=excluded.entitlement_status,
-          entitlement_checked_at=excluded.entitlement_checked_at,last_online_auth_at=excluded.last_online_auth_at,updated_at=excluded.updated_at`)
-          .run(String(payload.user.id),payload.user.email||b.email,payload.user.role||"student",status,t,t,t,t);
+        saveProfile(db,payload,b.email);
+        void syncEngine.syncNow();
         return json(res,200,{ok:true,user:payload.user,entitlement:payload.entitlement,expires_at:payload.expires_at});
+      }
+      if(req.method==="POST"&&url.pathname==="/v1/auth/renew"){
+        const session=await secureStore.loadSession();
+        if(!session?.accessToken)return json(res,401,{error:"Sessão indisponível."});
+        const response=await fetch(new URL("/api/desktop/auth",apiBaseUrl),{method:"PUT",headers:{"Authorization":`Bearer ${session.accessToken}`,"Content-Type":"application/json"},body:JSON.stringify({device_id:syncEngine.deviceId}),signal:AbortSignal.timeout(12000)});
+        const payload=await response.json().catch(()=>({}));
+        if(!response.ok)return json(res,response.status,payload);
+        if(!payload.access_token||String(payload.user?.id)!==String(session.userId))return json(res,502,{error:"INVALID_AUTH_RESPONSE"});
+        await secureStore.saveSession({...session,accessToken:payload.access_token,expiresAt:payload.expires_at});
+        saveProfile(db,payload,payload.user.email);
+        return json(res,200,{ok:true,entitlement:payload.entitlement,expires_at:payload.expires_at});
+      }
+      if(req.method==="POST"&&url.pathname==="/v1/auth/logout"){
+        await secureStore.clearSession();
+        return json(res,200,{ok:true});
       }
       if(req.method==="GET"&&url.pathname==="/v1/status")return json(res,200,{ok:true,sync:getSyncStatus(db)});
       if(req.method==="POST"&&url.pathname==="/v1/sync")return json(res,200,await syncEngine.syncNow());
       if(req.method==="GET"&&url.pathname==="/v1/profile"){
         const row=db.prepare("SELECT * FROM local_profile ORDER BY updated_at DESC LIMIT 1").get()||null;
         return json(res,200,{profile:row});
+      }
+      if(req.method==="GET"&&url.pathname==="/v1/dashboard"){
+        const userId=url.searchParams.get("user_id");
+        const profile=db.prepare("SELECT user_id,email FROM local_profile WHERE user_id=?").get(userId);
+        if(!profile)return json(res,404,{error:"Perfil local indisponível."});
+        const progress=db.prepare("SELECT subject,percent FROM study_progress WHERE user_id=?").all(userId);
+        const attempts=db.prepare("SELECT id,subject,status,answered_count,correct_count,started_at FROM exam_sessions WHERE user_id=? AND status IN ('completed','expired') ORDER BY started_at DESC LIMIT 4").all(userId);
+        const subjects=db.prepare("SELECT subject,COUNT(*) questions,SUM(is_correct) correct FROM question_answers WHERE user_id=? GROUP BY subject").all(userId);
+        const total=subjects.reduce((n,row)=>n+row.questions,0),correct=subjects.reduce((n,row)=>n+row.correct,0);
+        return json(res,200,{progress,attempts,subjects,overall:{attempts:db.prepare("SELECT COUNT(*) n FROM exam_sessions WHERE user_id=? AND status IN ('completed','expired')").get(userId).n,questions:total,accuracy:total?Math.round(correct/total*1000)/10:0}});
       }
       if(req.method==="PUT"&&url.pathname==="/v1/profile"){
         const b=await readBody(req),t=stamp();
@@ -108,7 +139,10 @@ function startLocalBridge({db,syncEngine,secureStore,apiBaseUrl,host="127.0.0.1"
         });tx();return json(res,200,{ok:true,id});
       }
       return json(res,404,{error:"not_found"});
-    }catch(error){return json(res,500,{error:String(error.message||error)})}
+    }catch(error){
+      if(error.name==="TimeoutError"||error.name==="AbortError"||error instanceof TypeError)return json(res,503,{error:"Servidor online indisponível. Confira sua conexão."});
+      return json(res,500,{error:String(error.message||error)});
+    }
   });
   return new Promise((resolve,reject)=>{
     server.once("error",reject);

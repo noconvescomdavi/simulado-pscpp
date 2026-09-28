@@ -11,7 +11,7 @@ function deviceId(db) {
   return value;
 }
 
-function createSyncEngine({ db, getSession, apiBaseUrl, onStatus = () => {} }) {
+function createSyncEngine({ db, getSession, saveSession, onRenew, apiBaseUrl, onStatus = () => {} }) {
   function mergeConflict(result){
     const l=result.local_payload||{},r=result.remote_payload||{};
     if(result.entity_type==="study_progress")return {...r,...l,percent:Math.max(Number(r.percent)||0,Number(l.percent)||0),completed_items:Math.max(Number(r.completed_items)||0,Number(l.completed_items)||0),total_items:Math.max(Number(r.total_items)||0,Number(l.total_items)||0)};
@@ -28,17 +28,28 @@ function createSyncEngine({ db, getSession, apiBaseUrl, onStatus = () => {} }) {
 
   async function syncNow() {
     if (running) return { skipped: true };
-    const session = await getSession();
+    let session = await getSession();
     if (!session?.accessToken || !apiBaseUrl) return { offline: true };
+    if(session.expiresAt&&Date.parse(session.expiresAt)-Date.now()<3*86400000){
+      try{
+        const renewal=await fetch(new URL("/api/desktop/auth",apiBaseUrl),{method:"PUT",headers:{"Authorization":`Bearer ${session.accessToken}`,"Content-Type":"application/json"},body:JSON.stringify({device_id:id}),signal:AbortSignal.timeout(12000)});
+        if(!renewal.ok)return {ok:false,error:`AUTH_RENEW_HTTP_${renewal.status}`};
+        const fresh=await renewal.json();
+        if(!fresh.access_token||String(fresh.user?.id)!==String(session.userId))return {ok:false,error:"INVALID_AUTH_RESPONSE"};
+        session={...session,accessToken:fresh.access_token,expiresAt:fresh.expires_at};
+        await saveSession?.(session);
+        await onRenew?.(fresh);
+      }catch(error){return {ok:false,error:String(error.message||error)}}
+    }
     running = true;
     const stamp = new Date().toISOString();
     try {
       const state = db.prepare("SELECT cursor FROM sync_state WHERE scope='account'").get();
       const events = db.prepare(`
         SELECT * FROM sync_outbox
-        WHERE state IN ('pending','retry') AND (next_attempt_at IS NULL OR next_attempt_at <= ?)
+        WHERE user_id=? AND state IN ('pending','retry') AND (next_attempt_at IS NULL OR next_attempt_at <= ?)
         ORDER BY created_at ASC LIMIT ?
-      `).all(stamp, MAX_BATCH).map(row => ({
+      `).all(session.userId,stamp, MAX_BATCH).map(row => ({
         id: row.event_id, device_id: row.device_id, entity_type: row.entity_type,
         entity_id: row.entity_id, operation: row.operation, base_version: row.base_version,
         created_at: row.created_at, payload: JSON.parse(row.payload_json)
@@ -47,7 +58,7 @@ function createSyncEngine({ db, getSession, apiBaseUrl, onStatus = () => {} }) {
       const response = await fetch(new URL("/api/sync/v1", apiBaseUrl), {
         method: "POST",
         headers: { "Authorization": `Bearer ${session.accessToken}`, "Content-Type": "application/json" },
-        body: JSON.stringify({ protocol_version: 1, device_id: id, cursor: state?.cursor || null, events })
+        body: JSON.stringify({ protocol_version: 1, device_id: id, cursor: state?.cursor || null, events }),signal:AbortSignal.timeout(15000)
       });
       if (!response.ok) throw new Error(`SYNC_HTTP_${response.status}`);
       const body = await response.json();

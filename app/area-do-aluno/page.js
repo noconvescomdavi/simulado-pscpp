@@ -10,6 +10,8 @@ import {getConsistency} from "../../lib/engagement";
 import {getLearningProfile} from "../../lib/learning-engine";
 import {getStudentInsights} from "../../lib/student-insights";
 import { unstable_cache } from "next/cache";
+import {desktopLocal,isDesktopRuntime} from "../../lib/desktop-local";
+import {SUBJECTS} from "../../lib/subjects";
 import "./dashboard.css";
 
 function fmt(v){return new Intl.NumberFormat("pt-BR").format(Number(v||0))}
@@ -23,7 +25,15 @@ export default async function Area(){
   const session=await getSession();
   if(!session)redirect("/login");
 
-  const [access,progress,performance,profile,recentExams,learning,consistency,studentIntel]=await Promise.all([
+  const desktop=isDesktopRuntime();
+  const local=desktop?await desktopLocal(`/v1/dashboard?user_id=${encodeURIComponent(session.id)}`):null;
+  const [access,progress,performance,profile,recentExams,learning,consistency,studentIntel]=desktop?[
+    await getUserAccess(session.id),
+    {rows:local.progress},
+    {overall:local.overall,subjects:SUBJECTS.map(subject=>{const row=local.subjects.find(item=>normalizeSubject(item.subject)===subject.slug);return {...subject,questions:row?.questions||0,accuracy:row?.questions?Math.round(row.correct/row.questions*1000)/10:0}})},
+    {rows:[]},{rows:local.attempts},{overall_mastery:0,subjects:[],weakest_topics:[]},
+    {streak:0,study_days:0,badges:[]},{insights:[],due:0}
+  ]:await Promise.all([
     cachedAccess(session.id),
     query("select subject,percent from study_progress where user_id=$1",[session.id]),
     getUserMetrics(session.id),

@@ -73,6 +73,7 @@ export async function POST(req) {
     return Response.json({ ok: true, requiresTerms });
   } catch (error) {
     console.error("Erro de login:", error);
+    if(isDesktopRuntime()&&error.status)return Response.json({error:error.message,code:error.code},{status:error.status});
     return Response.json({ error: "Não foi possível entrar." }, { status: 500 });
   }
 }

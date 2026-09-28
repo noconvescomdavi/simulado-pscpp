@@ -32,10 +32,12 @@
     "deploy:cloudflare": "opennextjs-cloudflare deploy",
     "build:desktop:next": "cross-env ESTIBORDO_DESKTOP=1 next build",
     "prepare:desktop": "node desktop/prepare-standalone.mjs",
-    "build:desktop": "npm run test:desktop:local-first && npm run test:desktop:sync && npm run test:desktop:cycle && npm run build:desktop:next && npm run prepare:desktop && electron-builder --win nsis --publish never",
+    "build:desktop": "npm run test:desktop:local-first && npm run test:desktop:sync && npm run test:desktop:cycle && npm run test:desktop:auth && npm run build:desktop:next && npm run prepare:desktop && npm run test:desktop:runtime && electron-builder --win nsis --publish never",
     "test:desktop:local-first": "node scripts/test-desktop-local-first.mjs",
     "test:desktop:sync": "node scripts/test-sync-protocol-v1.mjs",
-    "test:desktop:cycle": "node scripts/test-desktop-sync-cycle.mjs"
+    "test:desktop:cycle": "node scripts/test-desktop-sync-cycle.mjs",
+    "test:desktop:auth": "node scripts/test-desktop-auth-cycle.mjs",
+    "test:desktop:runtime": "node scripts/test-desktop-runtime-smoke.mjs"
   },
   "dependencies": {
     "argon2": "^0.41.1",
