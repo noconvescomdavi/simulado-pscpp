@@ -5,7 +5,7 @@ import {query} from "../../lib/db";
 import {normalizeSubject,subjectLabel,SUBJECTS} from "../../lib/subjects";
 import StudentHeader from "../components/StudentHeader";
 import ExamCountdown from "../components/ExamCountdown";
-import {consistencyFromDays} from "../../lib/engagement";
+import {consistencyFromDays} from "../../lib/consistency-summary";
 import { unstable_cache } from "next/cache";
 import "./dashboard.css";
 
@@ -22,6 +22,7 @@ export default async function Area(){
   const session=await getSession();
   if(!session)redirect("/login");
 
+  const dataStarted=Date.now();
   const [access,progress,performance,profile,recentExams,learning,studyDays,studentIntel]=await Promise.all([
     cachedAccess(session.id),
     query("select subject,percent from study_progress where user_id=$1",[session.id]),
@@ -44,6 +45,7 @@ export default async function Area(){
     query(`select study_date from study_days where user_id=$1 and activity_count>0 order by study_date desc limit 365`,[session.id]),
     query(`select count(*)::int as due from student_review_queue where user_id=$1 and source_type='topic' and state<>'suspended' and due_at<=now()`,[session.id]).then(r=>({due:Number(r.rows[0]?.due||0)})).catch(()=>({due:0}))
   ]);
+  if(Date.now()-dataStarted>500)console.warn("[perf] dashboard_data_slow",{elapsed_ms:Date.now()-dataStarted});
   const consistency=consistencyFromDays(studyDays.rows,performance.totalAnswered);
 
   const active=access?.active===true;

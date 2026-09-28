@@ -12,7 +12,7 @@ const inputs = [
 ];
 for (const directory of directories) {
   for (const file of await readdir(new URL(`${directory}/`, root))) {
-    if (file.endsWith(".json") && file !== "runtime-active-banks.json") inputs.push(`${directory}/${file}`);
+    if (file.endsWith(".json") && !file.startsWith("runtime-")) inputs.push(`${directory}/${file}`);
   }
 }
 const digest = createHash("sha256");
