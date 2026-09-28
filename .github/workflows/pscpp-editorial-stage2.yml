@@ -1,0 +1,23 @@
+name: PSCPP Editorial Stage 2
+on:
+  push:
+    branches: [audit/pscpp-editorial-complete-20260923]
+jobs:
+  quarantine:
+    if: ${{ !contains(github.event.head_commit.message || '', '[stage2-output]') }}
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: node scripts/quarantine-pscpp-editorial-stage2.mjs
+      - run: node scripts/audit-question-semantics.mjs || true
+      - run: QUESTIONS_MAIN_ONLY=1 node scripts/audit-full-question-bank.mjs
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/questions reports
+          git commit -m "fix(questions): quarantine proven editorial defects [stage2-output]" || exit 0
+          git push
