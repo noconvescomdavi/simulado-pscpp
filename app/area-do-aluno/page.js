@@ -2,12 +2,10 @@ import {redirect} from "next/navigation";
 import {getSession} from "../../lib/auth";
 import {getUserAccess} from "../../lib/access";
 import {query} from "../../lib/db";
-import {getUserMetrics} from "../../lib/metrics";
-import {normalizeSubject,subjectLabel} from "../../lib/subjects";
+import {normalizeSubject,subjectLabel,SUBJECTS} from "../../lib/subjects";
 import StudentHeader from "../components/StudentHeader";
 import ExamCountdown from "../components/ExamCountdown";
 import {getConsistency} from "../../lib/engagement";
-import {getLearningProfile} from "../../lib/learning-engine";
 import { unstable_cache } from "next/cache";
 import "./dashboard.css";
 
@@ -18,6 +16,8 @@ function firstName(value){const text=String(value||"Aluno").trim();return text.s
 // Mantemos os dados pessoais/atividade fora deste cache.
 const cachedAccess = unstable_cache(async(userId)=>getUserAccess(userId),["dashboard-access"],{revalidate:60});
 
+export const preferredRegion = "gru1";
+
 export default async function Area(){
   const session=await getSession();
   if(!session)redirect("/login");
@@ -25,10 +25,20 @@ export default async function Area(){
   const [access,progress,performance,profile,recentExams,learning,consistency,studentIntel]=await Promise.all([
     cachedAccess(session.id),
     query("select subject,percent from study_progress where user_id=$1",[session.id]),
-    getUserMetrics(session.id),
+    Promise.all([
+      query(`select subject,count(*)::int attempts,coalesce(sum(duration_seconds),0)::int duration_seconds from exam_attempts where user_id=$1 group by subject`,[session.id]),
+      query(`select subject,coalesce(sum(answer_count),0)::int questions,coalesce(sum(correct_count),0)::int correct,coalesce(sum(error_count),0)::int errors from question_stats where user_id=$1 and answer_count>0 group by subject`,[session.id])
+    ]).then(([attempts,answers])=>{
+      const am=new Map(attempts.rows.map(r=>[normalizeSubject(r.subject),r]));
+      const qm=new Map(answers.rows.map(r=>[normalizeSubject(r.subject),r]));
+      const subjects=SUBJECTS.map(s=>{const a=am.get(s.slug)||{},q=qm.get(s.slug)||{};const questions=Number(q.questions||0),correct=Number(q.correct||0);return{...s,attempts:Number(a.attempts||0),duration_seconds:Number(a.duration_seconds||0),questions,correct,errors:Number(q.errors||0),accuracy:questions?Math.round(correct/questions*1000)/10:0}});
+      const overall=subjects.reduce((x,s)=>({attempts:x.attempts+s.attempts,duration_seconds:x.duration_seconds+s.duration_seconds,questions:x.questions+s.questions,correct:x.correct+s.correct,errors:x.errors+s.errors}),{attempts:0,duration_seconds:0,questions:0,correct:0,errors:0});
+      overall.accuracy=overall.questions?Math.round(overall.correct/overall.questions*1000)/10:0;
+      return{subjects,overall};
+    }),
     query("select full_name from user_profiles where user_id=$1 limit 1",[session.id]).catch(()=>({rows:[]})),
     query("select id,subject,status,answered_count,correct_count,started_at from exam_sessions where user_id=$1 order by started_at desc limit 4",[session.id]).catch(()=>({rows:[]})),
-    getLearningProfile(session.id).catch(()=>({overall_mastery:0,subjects:[],weakest_topics:[]})),
+    query(`select subject_slug,topic_code,topic_label,mastery_score,confidence_score,answers,errors,last_activity_at from student_topic_mastery where user_id=$1 order by mastery_score asc,errors desc`,[session.id]).then(r=>{const topics=r.rows.map(x=>({...x,subject:x.subject_slug,topic:x.topic_label}));const populated=new Map();for(const x of topics){const a=populated.get(x.subject)||{sum:0,weight:0};const w=Math.max(1,Number(x.confidence_score||0));a.sum+=Number(x.mastery_score||0)*w;a.weight+=w;populated.set(x.subject,a)}const vals=[...populated.values()].map(x=>x.weight?x.sum/x.weight:0);return{overall_mastery:vals.length?Math.round(vals.reduce((a,b)=>a+b,0)/vals.length*10)/10:0,weakest_topics:topics.slice(0,10)}}).catch(()=>({overall_mastery:0,weakest_topics:[]})),
     getConsistency(session.id),
     query(`select count(*)::int as due from student_review_queue where user_id=$1 and source_type='topic' and state<>'suspended' and due_at<=now()`,[session.id]).then(r=>({due:Number(r.rows[0]?.due||0)})).catch(()=>({due:0}))
   ]);
