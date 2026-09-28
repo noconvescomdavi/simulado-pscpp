@@ -29,7 +29,15 @@
     "audit:questions:main": "QUESTIONS_MAIN_ONLY=1 node scripts/audit-full-question-bank.mjs",
     "audit:questions:main:win": "set QUESTIONS_MAIN_ONLY=1&& node scripts/audit-full-question-bank.mjs",
     "build:cloudflare": "npm install --no-save --package-lock=false @opennextjs/cloudflare@1.20.6 wrangler@4.137.0 && opennextjs-cloudflare build",
-    "deploy:cloudflare": "opennextjs-cloudflare deploy"
+    "deploy:cloudflare": "opennextjs-cloudflare deploy",
+    "build:desktop:next": "cross-env ESTIBORDO_DESKTOP=1 next build",
+    "prepare:desktop": "node desktop/prepare-standalone.mjs",
+    "build:desktop": "npm run test:desktop:local-first && npm run test:desktop:sync && npm run test:desktop:cycle && npm run test:desktop:auth && npm run build:desktop:next && npm run prepare:desktop && npm run test:desktop:runtime && electron-builder --win nsis --publish never",
+    "test:desktop:local-first": "node scripts/test-desktop-local-first.mjs",
+    "test:desktop:sync": "node scripts/test-sync-protocol-v1.mjs",
+    "test:desktop:cycle": "node scripts/test-desktop-sync-cycle.mjs",
+    "test:desktop:auth": "node scripts/test-desktop-auth-cycle.mjs",
+    "test:desktop:runtime": "node scripts/test-desktop-runtime-smoke.mjs"
   },
   "dependencies": {
     "argon2": "^0.41.1",
@@ -37,7 +45,9 @@
     "next": "^15.5.2",
     "pg": "^8.13.1",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "better-sqlite3": "^12.2.0",
+    "keytar": "^7.9.0"
   },
   "engines": {
     "node": ">=20"
@@ -45,5 +55,44 @@
   "overrides": {
     "postcss": "8.5.28"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^38.1.2",
+    "electron-builder": "^26.0.12"
+  },
+  "main": "desktop/main.cjs",
+  "build": {
+    "appId": "br.com.estibordo.pscpp",
+    "productName": "ESTIBORDO",
+    "artifactName": "ESTIBORDO-Setup-${version}.${ext}",
+    "directories": {
+      "output": "dist-desktop"
+    },
+    "files": [
+      "desktop/**/*",
+      "!desktop/runtime/**",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "desktop/runtime",
+        "to": "runtime"
+      },
+      {
+        "from": "desktop/runtime/node_modules",
+        "to": "runtime/node_modules"
+      }
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
 }

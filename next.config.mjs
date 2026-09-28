@@ -14,8 +14,18 @@ const securityHeaders = [
   { key: "Cross-Origin-Opener-Policy", value: "same-origin-allow-popups" },
 ];
 
+const desktopBuild = process.env.ESTIBORDO_DESKTOP === "1";
+const desktopHeaders = securityHeaders
+  .filter(({key}) => key !== "Strict-Transport-Security")
+  .map((header) => header.key === "Content-Security-Policy"
+    ? {...header, value: header.value.replace(/; upgrade-insecure-requests$/, "")}
+    : header);
+
 const nextConfig = {
   poweredByHeader: false,
+  ...(desktopBuild ? { output: "standalone" } : {}),
+  ...(desktopBuild ? { experimental: { cpus: 2 } } : {}),
+  env: { NEXT_PUBLIC_ESTIBORDO_DESKTOP: desktopBuild ? "1" : "0" },
 
   // Keep large data/content files out of the Cloudflare Worker server bundle.\n  // They are runtime/static resources and must not be traced into handler.mjs.\n  outputFileTracingExcludes: {\n    "/*": [\n      "./scripts/**/*",\n      "./reports/**/*",\n      "./audit/**/*",\n      "./backups/**/*",\n      "./docs/**/*",\n      "./public/**/*",\n      "./protected-content/**/*"\n    ],\n    "/study-content/**": [\n      "./scripts/**/*",\n      "./reports/**/*",\n      "./audit/**/*",\n      "./backups/**/*",\n      "./docs/**/*",\n      "./public/**/*"\n    ]\n  },
 
@@ -27,7 +37,7 @@ const nextConfig = {
 
   async headers() {
     return [
-      { source: "/:path*", headers: securityHeaders },
+      { source: "/:path*", headers: desktopBuild ? desktopHeaders : securityHeaders },
       { source: "/flashcards/ripeam/3d/:path*", headers: [{ key: "Content-Security-Policy", value: threeCsp }] },
       { source: "/admin/:path*", headers: [{ key: "Cache-Control", value: "private, no-store, max-age=0" }, { key: "X-Robots-Tag", value: "noindex, nofollow" }] },
       { source: "/api/auth/:path*", headers: [{ key: "Cache-Control", value: "no-store, max-age=0" }] },

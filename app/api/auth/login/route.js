@@ -4,6 +4,7 @@ import { createSession } from "../../../../lib/auth";
 import { beginAdminMfaChallenge } from "../../../../lib/admin-mfa";
 import { hasCurrentLegalConsent } from "../../../../lib/legal-consent";
 import {verifyRecaptcha} from "../../../../lib/recaptcha";
+import {desktopLocal,isDesktopRuntime} from "../../../../lib/desktop-local";
 import {
   clientIpHash,
   consumeRateLimit,
@@ -18,6 +19,11 @@ export async function POST(req) {
     const body = await req.json().catch(() => ({}));
     const normalized = String(body.email || "").trim().toLowerCase();
     const password = String(body.password || "");
+    if(isDesktopRuntime()){
+      const local=await desktopLocal("/v1/auth/bootstrap",{method:"POST",body:{email:normalized,password}});
+      await createSession({id:local.user.id,email:local.user.email,role:local.user.role,session_version:1});
+      return Response.json({ok:true,requiresTerms:false,desktop:true,entitlement:local.entitlement},{headers:{"Cache-Control":"no-store"}});
+    }
     if(!(await verifyRecaptcha(body.recaptcha_token)))return Response.json({error:"Não foi possível confirmar o reCAPTCHA."},{status:400});
 
     const [ipLimit, accountLimit] = await Promise.all([
@@ -67,6 +73,7 @@ export async function POST(req) {
     return Response.json({ ok: true, requiresTerms });
   } catch (error) {
     console.error("Erro de login:", error);
+    if(isDesktopRuntime()&&error.status)return Response.json({error:error.message,code:error.code},{status:error.status});
     return Response.json({ error: "Não foi possível entrar." }, { status: 500 });
   }
 }

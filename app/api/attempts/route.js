@@ -1,9 +1,12 @@
 import { getSession } from "../../../lib/auth";
 import { query } from "../../../lib/db";
+import {desktopLocal,isDesktopRuntime} from "../../../lib/desktop-local";
 
 export async function GET() {
   const session = await getSession();
   if (!session) return Response.json({ error: "Não autenticado" }, { status: 401 });
+
+  if(isDesktopRuntime()){const local=await desktopLocal(`/v1/attempts?user_id=${encodeURIComponent(session.id)}&limit=50`);return Response.json(local,{headers:{"Cache-Control":"private, no-store"}})}
 
   const result = await query(
     `select id,module,subject,score_percent,correct_answers,wrong_answers,

@@ -1,0 +1,116 @@
+name: Desktop Windows
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: [feature/estibordo-windows]
+  pull_request:
+    paths:
+      - "desktop/**"
+      - "package.json"
+      - "package-lock.json"
+      - "next.config.mjs"
+      - ".github/workflows/desktop-windows.yml"
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    env:
+      AUTH_SECRET: ci-only-secret-ci-only-secret-ci-only
+      AUTH_SESSION_DAYS: 30
+      NEXT_PUBLIC_APP_URL: http://127.0.0.1:3210
+      CSC_IDENTITY_AUTO_DISCOVERY: "false"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Repository hygiene
+        run: npm run check:repo
+
+      - name: Desktop authentication cycle
+        run: npm run test:desktop:auth
+
+      - name: Build desktop installer
+        run: npm run build:desktop
+
+      - name: Verify installer
+        shell: pwsh
+        run: |
+          $installer = Get-ChildItem dist-desktop -Filter "ESTIBORDO-Setup-*.exe" | Select-Object -First 1
+          if (-not $installer) { throw "Instalador Windows não foi gerado." }
+          if ($installer.Length -lt 1MB) { throw "Instalador Windows inválido ou vazio." }
+          $runtime = Join-Path (Resolve-Path dist-desktop/win-unpacked) "resources/runtime"
+          if (-not (Test-Path (Join-Path $runtime "node_modules/next/dist/server/lib/start-server.js"))) {
+            throw "Next.js não foi incluído no runtime instalado."
+          }
+          Write-Host "INSTALLER_OK $($installer.FullName) $($installer.Length)"
+
+      - name: Install and launch ESTIBORDO
+        shell: pwsh
+        run: |
+          $installer = (Get-ChildItem dist-desktop -Filter "ESTIBORDO-Setup-*.exe" | Select-Object -First 1).FullName
+          $target = Join-Path $env:RUNNER_TEMP "ESTIBORDO-installed"
+          $setup = Start-Process -FilePath $installer -ArgumentList @('/S', "/D=$target") -Wait -PassThru
+          if ($setup.ExitCode -ne 0) { throw "Falha na instalação NSIS: $($setup.ExitCode)" }
+          $app = Join-Path $target "ESTIBORDO.exe"
+          if (-not (Test-Path $app)) { throw "Executável instalado ausente: $app" }
+          if (-not (Test-Path (Join-Path $target "resources/runtime/node_modules/next/dist/server/lib/start-server.js"))) {
+            throw "Next.js não foi incluído no instalador."
+          }
+          $process = Start-Process -FilePath $app -PassThru
+          try {
+            $deadline = (Get-Date).AddSeconds(60)
+            $visible = $false
+            while ((Get-Date) -lt $deadline) {
+              Start-Sleep -Seconds 2
+              $process.Refresh()
+              if ($process.HasExited) { throw "ESTIBORDO.exe encerrou após a instalação: $($process.ExitCode)" }
+              if ($process.MainWindowHandle -ne 0 -and $process.MainWindowTitle -like '*ESTIBORDO*') {
+                $visible = $true
+                break
+              }
+            }
+            if (-not $visible) { throw "ESTIBORDO.exe permaneceu aberto sem exibir a janela." }
+            Start-Sleep -Seconds 10
+            $process.Refresh()
+            if ($process.HasExited) { throw "ESTIBORDO.exe encerrou após exibir a janela: $($process.ExitCode)" }
+            Write-Host "INSTALLED_WINDOW_VISIBLE $app $($process.MainWindowTitle)"
+          } catch {
+            Get-ChildItem -Path $env:APPDATA -Filter startup.log -Recurse -ErrorAction SilentlyContinue |
+              Where-Object { $_.FullName -match 'ESTIBORDO|simulados-pscpp' } |
+              ForEach-Object { Write-Host "STARTUP_LOG $($_.FullName)"; Get-Content $_.FullName -Tail 80 }
+            throw
+          } finally {
+            Stop-Process -Id $process.Id -Force -ErrorAction SilentlyContinue
+          }
+
+      - name: Upload startup diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: estibordo-windows-startup-log
+          path: ~/AppData/Roaming/**/logs/startup.log
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Upload installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: estibordo-windows-installer
+          path: dist-desktop/ESTIBORDO-Setup-*.exe
+          if-no-files-found: error
+          retention-days: 14

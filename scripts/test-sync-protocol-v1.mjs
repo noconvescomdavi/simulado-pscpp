@@ -1,0 +1,12 @@
+import fs from "node:fs";import assert from "node:assert/strict";
+const sql=fs.readFileSync("db/migrations/030_sync_protocol_v1.sql","utf8");
+for(const name of ["sync_entity_versions","sync_change_log","offline_sync_events"])assert.match(sql,new RegExp(name,"i"));
+for(const field of ["entity_type","entity_id","version","payload","seq"])assert.match(sql,new RegExp("\\b"+field+"\\b","i"));
+const route=fs.readFileSync("app/api/sync/v1/route.js","utf8");
+for(const token of ["protocol_version","base_version","duplicate","conflict","cursor","has_more"])assert.ok(route.includes(token),token);
+assert.ok(route.includes("MAX_EVENTS=200"));
+const engine=fs.readFileSync("desktop/sync-engine.cjs","utf8");
+assert.ok(engine.includes("/api/sync/v1"));
+assert.ok(engine.includes("sync_conflicts"));
+assert.ok(engine.includes("sync_outbox"));
+console.log("Sync protocol v1 invariants OK");
