@@ -17,7 +17,27 @@ const securityHeaders = [
 const nextConfig = {
   poweredByHeader: false,
 
-  // Keep large data/content files out of the Cloudflare Worker server bundle.\n  // They are runtime/static resources and must not be traced into handler.mjs.\n  outputFileTracingExcludes: {\n    "/*": [\n      "./scripts/**/*",\n      "./reports/**/*",\n      "./audit/**/*",\n      "./backups/**/*",\n      "./docs/**/*",\n      "./public/**/*",\n      "./protected-content/**/*"\n    ],\n    "/study-content/**": [\n      "./scripts/**/*",\n      "./reports/**/*",\n      "./audit/**/*",\n      "./backups/**/*",\n      "./docs/**/*",\n      "./public/**/*"\n    ]\n  },
+  // Keep large data/content files out of the Cloudflare Worker server bundle.
+  // They are runtime/static resources and must not be traced into handler.mjs.
+  outputFileTracingExcludes: {
+    "/*": [
+      "./scripts/**/*",
+      "./reports/**/*",
+      "./audit/**/*",
+      "./backups/**/*",
+      "./docs/**/*",
+      "./public/**/*",
+      "./protected-content/**/*"
+    ],
+    "/study-content/**": [
+      "./scripts/**/*",
+      "./reports/**/*",
+      "./audit/**/*",
+      "./backups/**/*",
+      "./docs/**/*",
+      "./public/**/*"
+    ]
+  },
 
   outputFileTracingIncludes: {
     "/study-content/**": [
@@ -28,7 +48,8 @@ const nextConfig = {
   async headers() {
     return [
       { source: "/:path*", headers: securityHeaders },
-      { source: "/flashcards/ripeam/3d/:path*", headers: [{ key: "Content-Security-Policy", value: threeCsp }] },\n      { source: "/admin/laboratorio-3d/:path*", headers: [{ key: "Content-Security-Policy", value: threeCsp }] },
+      { source: "/flashcards/ripeam/3d/:path*", headers: [{ key: "Content-Security-Policy", value: threeCsp }] },
+      { source: "/admin/laboratorio-3d/:path*", headers: [{ key: "Content-Security-Policy", value: threeCsp }] },
       { source: "/admin/:path*", headers: [{ key: "Cache-Control", value: "private, no-store, max-age=0" }, { key: "X-Robots-Tag", value: "noindex, nofollow" }] },
       { source: "/api/auth/:path*", headers: [{ key: "Cache-Control", value: "no-store, max-age=0" }] },
       { source: "/api/account/:path*", headers: [{ key: "Cache-Control", value: "private, no-store, max-age=0" }] },
