@@ -50,6 +50,12 @@
       "duplicate_stems_same_file": 915,
       "generic_templates": 298,
       "runtime_effect": "blocked/deduped before exposure; retained in source history"
+    },
+    "vercel_preview": {
+      "root_cause": "literal escaped newline sequences in lib/question-banks.js caused Next.js lint_or_type_error",
+      "fix_commit": "7c9ff7f28f80e74168e9b0fbb29a9687582c0960",
+      "production_main_status": "READY",
+      "preview_recheck": "pending Vercel Git ingestion"
     }
   },
   "phase4_required": "Synchronize 22 main commits, regenerate runtime snapshots, rerun all gates/build before merge."
