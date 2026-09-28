@@ -12,6 +12,9 @@ const templateRisks=[
   /a bibliografia atribui/i,
   /problema-base/i
 ];
+const norm=v=>String(v??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+const words=v=>norm(v).replace(/[^a-z0-9 ]/g," ").split(/\s+/).filter(x=>x.length>=4);
+const overlap=(a,b)=>{const A=new Set(words(a)),B=new Set(words(b));if(!A.size||!B.size)return 0;let n=0;for(const w of A)if(B.has(w))n++;return n/Math.min(A.size,B.size)};
 let changed=0;
 const rows=[];
 for(const subject of subjects){
@@ -21,6 +24,12 @@ for(const subject of subjects){
     let reason=null;
     if(objective.has(q.id)) reason="missing_referent_or_cross_fragment_stem";
     else if(templateRisks.some(rx=>rx.test(q.question||""))) reason="artificial_template_requires_source_rewrite";
+    else {
+      const key=String(q.correct_answer||"").toUpperCase();
+      const correct=(q.options||[]).find(o=>String(o.key).toUpperCase()===key);
+      const assertionLike=/\n\s*(?:I|II|III|IV)[).]/.test(q.question||"") || /assertivas|verdadeiro|falso/i.test(String(q.question_type||"")+" "+String(q.style||""));
+      if(q.active!==false && q.__remove!==true && q.status!=="quarantined" && correct && !assertionLike && overlap(q.question,correct.text)>=.58) reason="stem_answer_overlap_requires_source_rewrite";
+    }
     if(!reason) continue;
     rows.push({subject,id:q.id,reason,was_active:q.active!==false});
     if(q.active!==false || q.status!=="quarantined"){
