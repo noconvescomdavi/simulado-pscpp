@@ -87,7 +87,7 @@ export default async function Page() {
 
         {entitlement.active && (
           <section className={styles.examMode}>
-            <div><span>MODO PROVA PSCPP</span><h2>Simulação completa de prova</h2><p>100 questões · 240 minutos · composição disciplinar pela incidência histórica das provas oficiais.</p></div>
+            <div><span>MODO PROVA PSCPP</span><h2>Simulação completa de prova</h2><p>100 questões · 240 minutos · 25 de Manobrabilidade, 25 de Navegação em Águas Restritas e 10 de cada uma das outras cinco disciplinas.</p></div>
             <a href="/simulado/simulado-pscpp">Iniciar prova →</a>
           </section>
         )}

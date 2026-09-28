@@ -405,7 +405,7 @@ export default function Client({ subject, title, ready, facets, planTask }) {
       <main className={styles.page}>
         <span>SIMULADO</span>
         <h1>{title}</h1>
-        <p>{isPscpp?"100 questões compostas por blueprint controlado para reproduzir o perfil do PSCPP.":"Até 100 questões aleatórias. Você pode usar todo o banco ou restringir o sorteio por obra, capítulo, assunto e termo."}</p>
+        <p>{isPscpp?"100 questões: 25 de Manobrabilidade, 25 de Navegação em Águas Restritas e 10 de cada uma das outras cinco disciplinas.":"Até 100 questões aleatórias. Você pode usar todo o banco ou restringir o sorteio por obra, capítulo, assunto e termo."}</p>
         <p>Cada resposta é salva no servidor e não pode ser alterada depois do salvamento.</p>
         {!isPscpp && <QuestionFilterControls
           facets={facets}
