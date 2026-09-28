@@ -111,13 +111,14 @@ function initialAnswers(notebook) {
   return result;
 }
 
-function Result({ result, onReview, questions, answers }) {
+function Result({ result, onReview, questions, answers, unavailableCount = 0 }) {
   return (
     <main className={styles.page}>
       <section>
         <p>Caderno concluído</p>
 
         <h1>Resultado</h1>
+        {unavailableCount > 0 && <p>{unavailableCount} questões deste caderno foram retiradas do banco após revisão. O histórico de respostas foi preservado; este resultado é histórico.</p>}
 
         <div>
           <p>NOTA</p>
@@ -198,6 +199,7 @@ export default function Client({
     )
       ? notebook.questions
       : [];
+  const unavailableCount = Number(notebook?.unavailable_count || 0);
 
   const [index, setIndex] =
     useState(0);
@@ -285,6 +287,19 @@ export default function Client({
     });
   }, [result?.completed, planTask, notebook.id]);
 
+  if (unavailableCount > 0 && questions.length === 0) {
+    return (
+      <main className={styles.page}>
+        <section>
+          <h1>Caderno arquivado para revisão</h1>
+          <p>As {unavailableCount} questões deste caderno foram retiradas do banco ativo após revisão de qualidade. Suas {notebook.result?.answered_count || 0} respostas continuam salvas, mas não há questões válidas para continuar este caderno.</p>
+          <p>O histórico registra {notebook.result?.correct_count || 0} acertos e {notebook.result?.error_count || 0} erros. Esses números não são uma nova nota.</p>
+          <a href="/conteudos/banco-de-questoes">Criar outro caderno</a>
+        </section>
+      </main>
+    );
+  }
+
   if (
     result?.completed &&
     !reviewing
@@ -294,6 +309,7 @@ export default function Client({
         result={result}
         questions={questions}
         answers={answers}
+        unavailableCount={unavailableCount}
         onReview={(reviewIndex = 0) => { setIndex(reviewIndex); setReviewing(true); }}
       />
     );
@@ -458,7 +474,8 @@ export default function Client({
 
   return (
     <main className={styles.page}>
-      <div className={styles.assessmentToolbar}><div><strong>Questão {index + 1} de {questions.length}</strong><span>{Object.keys(answers).length} respondidas</span></div><button type="button" onClick={toggleFocusMode}>{focusMode ? "Sair da tela cheia" : "⛶ Full Screen"}</button></div>
+      {unavailableCount > 0 && <p role="status">{unavailableCount} questões deste caderno foram retiradas do banco após revisão de qualidade. As respostas anteriores permanecem salvas; este caderno não poderá ser concluído com as questões retiradas. <a href="/conteudos/banco-de-questoes">Criar outro caderno</a>.</p>}
+      <div className={styles.assessmentToolbar}><div><strong>Questão {index + 1} de {questions.length} disponíveis</strong><span>{unavailableCount > 0 ? `${notebook.result?.answered_count || 0} respostas no histórico` : `${Object.keys(answers).length} respondidas`}</span></div><button type="button" onClick={toggleFocusMode}>{focusMode ? "Sair da tela cheia" : "⛶ Full Screen"}</button></div>
       <h1>
         {notebook.title}
       </h1>

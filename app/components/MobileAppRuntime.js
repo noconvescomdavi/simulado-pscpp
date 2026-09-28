@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-const APP_HOST = "simulado-pscpp.vercel.app";
+const APP_HOST = "estibordo-pscpp.vercel.app";
 
 function getCapacitor() {
   if (typeof window === "undefined") return null;

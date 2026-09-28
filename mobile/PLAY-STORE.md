@@ -7,7 +7,7 @@
 - Plataforma: Android
 - Formato de publicação: Android App Bundle (AAB)
 - Target SDK: 36
-- Site carregado pelo app: `https://simulado-pscpp.vercel.app`
+- Site carregado pelo app: `https://estibordo-pscpp.vercel.app`
 
 ## Estratégia de atualização
 

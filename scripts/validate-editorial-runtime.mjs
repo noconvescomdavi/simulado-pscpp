@@ -1,0 +1,12 @@
+import assert from "node:assert/strict";
+import {readFile} from "node:fs/promises";
+import {isPscppEditoriallyEligible} from "../lib/pscpp-exam-selection.js";
+
+const notebook=JSON.parse(await readFile(new URL("../data/questions/runtime-active-banks.json",import.meta.url),"utf8"));
+const pscpp=JSON.parse(await readFile(new URL("../data/pscpp/runtime-active-questions.json",import.meta.url),"utf8"));
+const questions=[...Object.values(notebook.banks).flatMap(bank=>bank.questions),...pscpp.questions];
+const broken=/cacacarga|gragragrande|popopor|guru pés|\beuum\b|\bentre entre\b|Considere A definição técnica “|A descrição inclui ainda esta característica:/i;
+const findings=questions.filter(q=>[q.question,q.explanation,...(q.options||[]).map(o=>typeof o==="string"?o:o?.text)].some(v=>broken.test(String(v||""))));
+assert.equal(findings.length,0,`Artefatos editoriais conhecidos em ${findings.map(q=>q.id).slice(0,12).join(", ")}`);
+assert.equal(pscpp.questions.filter(q=>!isPscppEditoriallyEligible(q)).length,11);
+console.log(`Auditoria determinística: ${questions.length} itens, 0 artefatos conhecidos, 11 itens tabulares retidos de novos sorteios`);

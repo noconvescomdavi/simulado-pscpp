@@ -28,7 +28,7 @@ const httpsFilter = [
   "                <action android:name=\"android.intent.action.VIEW\" />",
   "                <category android:name=\"android.intent.category.DEFAULT\" />",
   "                <category android:name=\"android.intent.category.BROWSABLE\" />",
-  "                <data android:scheme=\"https\" android:host=\"simulado-pscpp.vercel.app\" />",
+  "                <data android:scheme=\"https\" android:host=\"estibordo-pscpp.vercel.app\" />",
   "            </intent-filter>"
 ].join("\n");
 

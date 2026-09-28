@@ -6,8 +6,8 @@
 
 - Criptografia em trânsito: **Sim** — a plataforma e o shell Android usam HTTPS.
 - Exclusão de conta: **Sim** — disponível no perfil autenticado e por recurso web público.
-- URL de exclusão: `https://simulado-pscpp.vercel.app/excluir-conta`.
-- Política de privacidade: `https://simulado-pscpp.vercel.app/politica-de-privacidade`.
+- URL de exclusão: `https://estibordo-pscpp.vercel.app/excluir-conta`.
+- Política de privacidade: `https://estibordo-pscpp.vercel.app/politica-de-privacidade`.
 
 ## Categorias que a plataforma pode coletar
 

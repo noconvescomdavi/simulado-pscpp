@@ -9,12 +9,13 @@ import {
   PSCPP_SUBJECT_SLUG,
   subjectLabel
 } from "../../lib/subjects";
-import { availableQuestionBanks } from "../../lib/question-banks";
+import { availableQuestionBanks } from "../../lib/question-summary";
 import StudentHeader from "../components/StudentHeader";
 import styles from "./simulados.module.css";
 
 const STATUS = {
   in_progress: "Em andamento",
+  paused: "Pausado",
   completed: "Concluído",
   expired: "Tempo encerrado",
   abandoned: "Encerrado"
@@ -33,7 +34,7 @@ export default async function Page() {
   if (!entitlement.active && !entitlement.trial) redirect("/comprar");
 
   const history = await query(
-    `select *
+    `select id,subject,status,answered_count,correct_count,started_at
        from exam_sessions
       where user_id=$1
       order by started_at desc`,
@@ -53,10 +54,10 @@ export default async function Page() {
   );
 
   const trialInProgress = history.rows.some(
-    (exam) => exam.subject === TRIAL_SUBJECT_SLUG && exam.status === "in_progress"
+    (exam) => exam.subject === TRIAL_SUBJECT_SLUG && ["in_progress","paused"].includes(exam.status)
   );
   const trialConsumed = history.rows.some(
-    (exam) => exam.subject === TRIAL_SUBJECT_SLUG && exam.status !== "in_progress"
+    (exam) => exam.subject === TRIAL_SUBJECT_SLUG && !["in_progress","paused"].includes(exam.status)
   );
 
   const choices = entitlement.active
@@ -87,7 +88,7 @@ export default async function Page() {
 
         {entitlement.active && (
           <section className={styles.examMode}>
-            <div><span>MODO PROVA PSCPP</span><h2>Simulação completa de prova</h2><p>100 questões · 240 minutos · composição disciplinar pela incidência histórica das provas oficiais.</p></div>
+            <div><span>MODO PROVA PSCPP</span><h2>Simulação completa de prova</h2><p>100 questões · 240 minutos · 25 de Manobrabilidade, 25 de Navegação em Águas Restritas e 10 de cada uma das outras cinco disciplinas.</p></div>
             <a href="/simulado/simulado-pscpp">Iniciar prova →</a>
           </section>
         )}
@@ -113,7 +114,7 @@ export default async function Page() {
         <div className={styles.history}>
           {history.rows.length ? (
             history.rows.map((exam) => {
-              const inProgress = exam.status === "in_progress";
+              const inProgress = ["in_progress","paused"].includes(exam.status);
               const href = inProgress
                 ? `/simulado/${exam.subject}`
                 : `/simulado/tentativa/${exam.id}`;

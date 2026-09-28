@@ -1,4 +1,4 @@
-const baseUrl = "https://simulado-pscpp.vercel.app";
+const baseUrl = "https://estibordo-pscpp.vercel.app";
 
 const publicPaths = [
   "/",

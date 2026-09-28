@@ -6,10 +6,10 @@ const config: CapacitorConfig = {
   webDir: 'www',
   appendUserAgent: ' ESTIBORDO-ANDROID',
   server: {
-    url: 'https://simulado-pscpp.vercel.app',
+    url: 'https://estibordo-pscpp.vercel.app',
     cleartext: false,
     androidScheme: 'https',
-    allowNavigation: ['simulado-pscpp.vercel.app'],
+    allowNavigation: ['estibordo-pscpp.vercel.app'],
     errorPath: 'offline.html'
   },
   android: {

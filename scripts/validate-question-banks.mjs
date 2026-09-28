@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const root = path.join(process.cwd(), "data", "questions");
-const files = fs.readdirSync(root).filter((name) => name.endsWith(".json"));
+const files = fs.readdirSync(root).filter((name) => name.endsWith(".json") && !name.startsWith("runtime-"));
 
 let errors = 0;
 let total = 0;

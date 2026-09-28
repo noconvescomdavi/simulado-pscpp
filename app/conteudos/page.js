@@ -1,11 +1,13 @@
 import { redirect } from "next/navigation";
 import { getSession } from "../../lib/auth";
 import { getEntitlement } from "../../lib/entitlement";
-import { getUserMetrics } from "../../lib/metrics";
+import { getContentMetrics } from "../../lib/content-metrics";
 import { listFlashcardDecks } from "../../lib/flashcards";
 import { SUBJECTS } from "../../lib/subjects";
 import StudentHeader from "../components/StudentHeader";
 import styles from "./conteudos.module.css";
+
+export const preferredRegion = "gru1";
 
 function pct(value) {
   const n = Number(value || 0);
@@ -26,7 +28,7 @@ export default async function Page() {
   }
 
   const [metrics, allDecks] = await Promise.all([
-    getUserMetrics(session.id),
+    getContentMetrics(session.id),
     listFlashcardDecks(session.id),
   ]);
 
@@ -40,7 +42,7 @@ export default async function Page() {
 
   return (
     <>
-      <StudentHeader active="conteudos" />
+      <StudentHeader active="conteudos" session={session}/>
 
       <main className={styles.page}>
         <section className={styles.hero}>

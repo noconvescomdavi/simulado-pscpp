@@ -6,7 +6,7 @@ Camada Android isolada da aplicação web principal.
 
 O aplicativo usa Capacitor como runtime Android e carrega a plataforma publicada em:
 
-https://simulado-pscpp.vercel.app
+https://estibordo-pscpp.vercel.app
 
 Assim, conteúdo e funcionalidades web publicados na Vercel podem chegar ao aplicativo sem exigir uma nova versão do APK/AAB. Alterações nativas continuam exigindo uma nova versão na Google Play.
 

@@ -6,15 +6,15 @@ import SiteDesignProRuntime from "./site-editor/SiteDesignProRuntime";
 import PwaRuntime from "./components/PwaRuntime";
 import WebVitalsReporter from "./components/WebVitalsReporter";
 import MobileAppRuntime from "./components/MobileAppRuntime";
-import OfflineSyncRuntime from "./components/OfflineSyncRuntime";
 import CommandPaletteShortcut from "./components/CommandPaletteShortcut";
-import RouteCacheRuntime from "./components/RouteCacheRuntime";
 
 const montserrat=Montserrat({subsets:["latin"],display:"swap",variable:"--font-montserrat"});
+export const preferredRegion = "gru1";
+
 const poppins=Poppins({subsets:["latin"],weight:["500","600","700","800"],display:"swap",variable:"--font-poppins"});
 
 export const metadata = {
-  metadataBase: new URL("https://simulado-pscpp.vercel.app"),
+  metadataBase: new URL("https://estibordo-pscpp.vercel.app"),
   title: {
     default: "ESTIBORDO | Plataforma de estudos PSCPP",
     template: "%s | ESTIBORDO"
@@ -62,9 +62,7 @@ export default function RootLayout({ children }) {
         <PwaRuntime />
         <WebVitalsReporter />
         <MobileAppRuntime />
-        <OfflineSyncRuntime />
         <CommandPaletteShortcut />
-        <RouteCacheRuntime />
       </body>
     </html>
   );

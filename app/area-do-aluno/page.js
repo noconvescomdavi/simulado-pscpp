@@ -2,14 +2,10 @@ import {redirect} from "next/navigation";
 import {getSession} from "../../lib/auth";
 import {getUserAccess} from "../../lib/access";
 import {query} from "../../lib/db";
-import {getUserMetrics} from "../../lib/metrics";
-import {normalizeSubject,subjectLabel} from "../../lib/subjects";
+import {normalizeSubject,subjectLabel,SUBJECTS} from "../../lib/subjects";
 import StudentHeader from "../components/StudentHeader";
 import ExamCountdown from "../components/ExamCountdown";
-import DailyStudyPlan from "./DailyStudyPlan";
-import {getConsistency} from "../../lib/engagement";
-import {getIntegratedStudyPlan} from "../../lib/integrated-study-plan";
-import {getStudentInsights} from "../../lib/student-insights";
+import {consistencyFromDays} from "../../lib/consistency-summary";
 import { unstable_cache } from "next/cache";
 import "./dashboard.css";
 
@@ -20,55 +16,40 @@ function firstName(value){const text=String(value||"Aluno").trim();return text.s
 // Mantemos os dados pessoais/atividade fora deste cache.
 const cachedAccess = unstable_cache(async(userId)=>getUserAccess(userId),["dashboard-access"],{revalidate:60});
 
+export const preferredRegion = "gru1";
+
 export default async function Area(){
   const session=await getSession();
   if(!session)redirect("/login");
 
-  const [access,progress,performance,profile,recentExams,dailyPlan,consistency,studentIntel]=await Promise.all([
+  const dataStarted=Date.now();
+  const [access,progress,performance,profile,recentExams,learning,studyDays,studentIntel]=await Promise.all([
     cachedAccess(session.id),
     query("select subject,percent from study_progress where user_id=$1",[session.id]),
-    getUserMetrics(session.id),
+    Promise.all([
+      query(`select subject,count(*)::int attempts,coalesce(sum(duration_seconds),0)::int duration_seconds from exam_attempts where user_id=$1 group by subject`,[session.id]),
+      query(`select subject,coalesce(sum(answer_count),0)::int questions,coalesce(sum(correct_count),0)::int correct,coalesce(sum(error_count),0)::int errors from question_stats where user_id=$1 and answer_count>0 group by subject`,[session.id])
+    ]).then(([attempts,answers])=>{
+      const am=new Map(),qm=new Map();
+      for(const r of attempts.rows){const key=normalizeSubject(r.subject),v=am.get(key)||{attempts:0,duration_seconds:0};v.attempts+=Number(r.attempts||0);v.duration_seconds+=Number(r.duration_seconds||0);am.set(key,v)}
+      for(const r of answers.rows){const key=normalizeSubject(r.subject),v=qm.get(key)||{questions:0,correct:0,errors:0};v.questions+=Number(r.questions||0);v.correct+=Number(r.correct||0);v.errors+=Number(r.errors||0);qm.set(key,v)}
+      const subjects=SUBJECTS.map(s=>{const a=am.get(s.slug)||{},q=qm.get(s.slug)||{};const questions=Number(q.questions||0),correct=Number(q.correct||0);return{...s,attempts:Number(a.attempts||0),duration_seconds:Number(a.duration_seconds||0),questions,correct,errors:Number(q.errors||0),accuracy:questions?Math.round(correct/questions*1000)/10:0}});
+      const overall=subjects.reduce((x,s)=>({attempts:x.attempts+s.attempts,duration_seconds:x.duration_seconds+s.duration_seconds,questions:x.questions+s.questions,correct:x.correct+s.correct,errors:x.errors+s.errors}),{attempts:0,duration_seconds:0,questions:0,correct:0,errors:0});
+      overall.accuracy=overall.questions?Math.round(overall.correct/overall.questions*1000)/10:0;
+      const totalAnswered=answers.rows.reduce((sum,row)=>sum+Number(row.questions||0),0);
+      return{subjects,overall,totalAnswered};
+    }),
     query("select full_name from user_profiles where user_id=$1 limit 1",[session.id]).catch(()=>({rows:[]})),
     query("select id,subject,status,answered_count,correct_count,started_at from exam_sessions where user_id=$1 order by started_at desc limit 4",[session.id]).catch(()=>({rows:[]})),
-    getIntegratedStudyPlan(session.id,0).then((master)=>{
-      if(master?.needs_onboarding)return null;
-      const today=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Sao_Paulo",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
-      const day=master.week?.days?.find(d=>d.iso===today);
-      const minutesByType={reading:Math.max(20,Number(master.onboarding?.reading_minutes_target||60)),questions:Math.max(20,Math.round(Number(master.onboarding?.daily_minutes||60)*.25)),review:Math.max(15,Math.round(Number(master.onboarding?.daily_minutes||60)*.15)),rereading:30,simulado:240};
-      const labels={reading:"LEITURA PROGRAMADA",questions:"QUESTÕES DE FIXAÇÃO",review:"REVISÃO INTELIGENTE",rereading:"RELEITURA SELETIVA",simulado:"SIMULADO"};
-      const tasks=(day?.tasks||[]).map(task=>({
-        ...task,
-        completed:task.status==="done",
-        minutes:minutesByType[task.type]||30,
-        target_label:labels[task.type]||String(task.type||"TAREFA").toUpperCase(),
-        plan_date:day?.iso
-      }));
-      return{
-        source:"integrated",
-        goal:{
-          daily_minutes:Number(master.onboarding?.daily_minutes||60),
-          weekly_questions:null,
-          questions_answered_today:null,
-          daily_question_target:null
-        },
-        progress:{
-          total:tasks.length,
-          completed:tasks.filter(t=>t.completed).length,
-          percent:tasks.length?Math.round(tasks.filter(t=>t.completed).length/tasks.length*100):0
-        },
-        tasks,
-        phase:master.phase,
-        bibliography_progress:master.bibliography_progress,
-        tracking:master.tracking,
-        master_readiness:master.readiness,
-        first_pass:master.first_pass
-      };
-    }),
-    getConsistency(session.id),
-    getStudentInsights(session.id).catch(()=>({insights:[],due:0}))
+    query(`select subject_slug,topic_code,topic_label,mastery_score,confidence_score,answers,errors,last_activity_at from student_topic_mastery where user_id=$1 order by mastery_score asc,errors desc`,[session.id]).then(r=>{const topics=r.rows.map(x=>({...x,subject:x.subject_slug,topic:x.topic_label}));const populated=new Map();for(const x of topics){const a=populated.get(x.subject)||{sum:0,weight:0};const w=Math.max(1,Number(x.confidence_score||0));a.sum+=Number(x.mastery_score||0)*w;a.weight+=w;populated.set(x.subject,a)}const vals=[...populated.values()].map(x=>x.weight?x.sum/x.weight:0);return{overall_mastery:vals.length?Math.round(vals.reduce((a,b)=>a+b,0)/vals.length*10)/10:0,weakest_topics:topics.slice(0,10)}}).catch(()=>({overall_mastery:0,weakest_topics:[]})),
+    query(`select study_date from study_days where user_id=$1 and activity_count>0 order by study_date desc limit 365`,[session.id]),
+    query(`select count(*)::int as due from student_review_queue where user_id=$1 and source_type='topic' and state<>'suspended' and due_at<=now()`,[session.id]).then(r=>({due:Number(r.rows[0]?.due||0)})).catch(()=>({due:0}))
   ]);
+  if(Date.now()-dataStarted>500)console.warn("[perf] dashboard_data_slow",{elapsed_ms:Date.now()-dataStarted});
+  const consistency=consistencyFromDays(studyDays.rows,performance.totalAnswered);
 
   const active=access?.active===true;
+  const mastery=Number(learning?.overall_mastery||0);
   const name=firstName(profile.rows[0]?.full_name||session.email.split("@")[0]);
   const pm=Object.fromEntries(progress.rows.map(r=>[normalizeSubject(r.subject),Number(r.percent||0)]));
   const pv=performance.subjects.map(s=>pm[s.slug]||0);
@@ -84,12 +65,16 @@ export default async function Area(){
     examCoverage*0.15+
     volumeScore*0.10
   );
-  const readiness=Number.isFinite(Number(dailyPlan?.master_readiness))?Number(dailyPlan.master_readiness):legacyReadiness;
+  const readiness=Math.round(Math.max(0,Math.min(100,mastery*.8+legacyReadiness*.2)));
   const readinessLabel=readiness>=85?"Muito forte":readiness>=70?"Competitivo":readiness>=50?"Em evolução":"Construindo base";
+  const weakTopic=learning?.weakest_topics?.[0]||null;
+  const dashboardInsights=[];
+  if(weakTopic)dashboardInsights.push({kind:"weakness",title:"Maior oportunidade de ganho",text:`${weakTopic.topic} está com domínio estimado de ${Math.round(Number(weakTopic.mastery_score||0))}% e ${weakTopic.errors||0} erros registrados.`,action:"Corrigir esta fraqueza",href:`/conteudos/banco-de-questoes?subject=${encodeURIComponent(weakTopic.subject)}`});
+  if(Number(studentIntel?.due||0)>0)dashboardInsights.push({kind:"review",title:"Revisões vencendo hoje",text:`Você tem ${studentIntel.due} prioridade(s) de revisão.`,action:"Começar revisão",href:"/revisao-inteligente"});
 
   return (
     <>
-      <StudentHeader active="painel"/>
+      <StudentHeader active="painel" session={session}/>
       <main className="studentDashboardV2">
         <section className="studentWelcome">
           <div><span>PAINEL DO ALUNO</span><h1>Olá, {name} <b>👋</b></h1><p>Disciplina, foco e resultado. Mantenha o rumo até a Praticagem.</p></div>
@@ -105,17 +90,13 @@ export default async function Area(){
           <ExamCountdown/>
         </section>
 
-        <section className="commandDeck"><div><span>PRÓXIMA MISSÃO</span><h2>{dailyPlan?.tasks?.find(t=>!t.completed)?.title||"Sua rota está em dia"}</h2><p>{dailyPlan?.tasks?.find(t=>!t.completed)?.description||"Use a revisão inteligente ou faça um treino para continuar avançando."}</p><a href="/hoje">Continuar agora →</a></div><div className="commandSignals"><span><b>{dailyPlan?.master_readiness??readiness}</b> prontidão</span><span><b>{studentIntel?.due||0}</b> revisões agora</span><span><b>{dailyPlan?.tracking?.backlog_count||0}</b> pendências</span></div></section>
+        <section className="commandDeck"><div><span>PRÓXIMA MISSÃO</span><h2>Abra o Plano de Hoje</h2><p>Leitura, fixação e revisão são carregadas sob demanda para manter o painel rápido.</p><a href="/hoje">Continuar agora →</a></div><div className="commandSignals"><span><b>{readiness}</b> prontidão</span><span><b>{studentIntel?.due||0}</b> revisões agora</span></div></section>
 
-        <section className="studentFocusGrid">
-          <article><span>PRÓXIMO PASSO</span><strong>{dailyPlan?.progress?.completed||0}/{dailyPlan?.progress?.total||0} tarefas</strong><small>{dailyPlan?.progress?.total?"Priorize o plano de hoje antes de abrir novas frentes.":"Configure seu plano para receber uma rota diária."}</small><a href="/hoje">Abrir plano de hoje →</a></article>
-          <article><span>RITMO DA PREPARAÇÃO</span><strong>{dailyPlan?.tracking?.adherence_percent??100}% de aderência</strong><small>{dailyPlan?.tracking?.backlog_count||0} pendência(s) em aberto.</small><a href="/minha-trajetoria">Ver trajetória →</a></article>
-          <article><span>PONTO DE ATENÇÃO</span><strong>{weakest?weakest.label:"Aguardando dados"}</strong><small>{weakest?weakest.accuracy+"% de acerto — maior oportunidade de ganho.":"Responda questões para gerar o diagnóstico."}</small><a href="/analise-de-fraquezas">Abrir análise →</a></article>
-        </section>
+        <section className="studentFocusGrid"><article><span>PLANO DO DIA</span><strong>Carregamento sob demanda</strong><small>Abra a área Hoje para montar as tarefas atuais sem recalcular o plano em toda visita ao painel.</small><a href="/hoje">Abrir plano de hoje →</a></article><article><span>PONTO DE ATENÇÃO</span><strong>{weakest?weakest.label:"Aguardando dados"}</strong><small>{weakest?weakest.accuracy+"% de acerto — maior oportunidade de ganho.":"Responda questões para gerar o diagnóstico."}</small><a href="/treino-inteligente">Abrir treino →</a></article></section>
 
-        <DailyStudyPlan initialPlan={dailyPlan}/>
 
-        <section className="insightsPanel"><div className="sectionTitle"><div><h2>ESTIBORDO Insights</h2><p>O que seus dados sugerem fazer em seguida.</p></div><a href="/centro-de-revisao">Centro de Revisão →</a></div><div className="insightsGrid">{(studentIntel?.insights||[]).map((insight,index)=><a href={insight.href} key={index}><span>{insight.kind}</span><strong>{insight.title}</strong><p>{insight.text}</p><b>{insight.action} →</b></a>)}{!(studentIntel?.insights||[]).length&&<article><strong>Continue estudando</strong><p>Assim que houver dados suficientes, seus padrões e recomendações aparecerão aqui.</p></article>}</div></section>
+
+        <section className="insightsPanel"><div className="sectionTitle"><div><h2>ESTIBORDO Insights</h2><p>O que seus dados sugerem fazer em seguida.</p></div><a href="/centro-de-revisao">Centro de Revisão →</a></div><div className="insightsGrid">{dashboardInsights.map((insight,index)=><a href={insight.href} key={index}><span>{insight.kind}</span><strong>{insight.title}</strong><p>{insight.text}</p><b>{insight.action} →</b></a>)}{!dashboardInsights.length&&<article><strong>Continue estudando</strong><p>Assim que houver dados suficientes, seus padrões e recomendações aparecerão aqui.</p></article>}</div></section>
 
         <section className="dashboardSection">
           <div className="sectionTitle"><div><h2>Acesso Rápido</h2><p>Escolha o recurso que deseja utilizar:</p></div></div>
@@ -126,7 +107,8 @@ export default async function Area(){
             <a className="quickCard purple" href="/flashcards/cis"><i>▤</i><div><strong>Flashcards CIS</strong><span>Treine o Código Internacional de Sinais</span></div><b>›</b></a>
             <a className="quickCard gold" href="#desempenho"><i>▥</i><div><strong>Meu Desempenho</strong><span>Acompanhe sua evolução</span></div><b>›</b></a>
             <a className={["quickCard","blue",!active?"premiumLocked":""].join(" ")} href="/plano-de-estudos"><i>◫</i><div><strong>Plano de Estudos</strong><span>Calendário inteligente até 01/11/2027</span></div><b>›</b></a>
-            <a className={["quickCard","purple",!active?"premiumLocked":""].join(" ")} href="/treino-adaptativo"><i>◎</i><div><strong>Treino Inteligente</strong><span>A plataforma escolhe o que mais precisa</span></div><b>›</b></a>\n            <a className={["quickCard","green",!active?"premiumLocked":""].join(" ")} href="/centro-de-revisao"><i>↻</i><div><strong>Centro de Revisão</strong><span>Erros, fraquezas e revisões em uma fila</span></div><b>›</b></a>
+            <a className={["quickCard","purple",!active?"premiumLocked":""].join(" ")} href="/treino-adaptativo"><i>◎</i><div><strong>Treino Inteligente</strong><span>A plataforma escolhe o que mais precisa</span></div><b>›</b></a>
+            <a className={["quickCard","green",!active?"premiumLocked":""].join(" ")} href="/centro-de-revisao"><i>↻</i><div><strong>Centro de Revisão</strong><span>Erros, fraquezas e revisões em uma fila</span></div><b>›</b></a>
             <a className="quickCard ranking" href="/ranking"><i>★</i><div><strong>Ranking</strong><span>Compare seu desempenho acadêmico</span></div><b>›</b></a>
             <a className={["quickCard","maps",!active?"premiumLocked":""].join(" ")} href="/mapas-mentais"><i>🧠</i><div><strong>Mapas Mentais</strong><span>Construa e conecte suas anotações</span></div><b>›</b></a>
             <a className={["quickCard","gold",!active?"premiumLocked":""].join(" ")} href="/minha-trajetoria"><i>◉</i><div><strong>Minha Trajetória</strong><span>Domínio, aderência, tempo real e projeção até a prova</span></div><b>›</b></a>
@@ -149,8 +131,8 @@ export default async function Area(){
             <article><i>▤</i><div><span>Questões</span><strong>{fmt(performance.overall.questions)}</strong><small>Respondidas</small></div></article>
             <article><i>▥</i><div><span>Aproveitamento</span><strong>{performance.overall.accuracy}%</strong><small>Média geral</small></div></article>
             <article><i>◷</i><div><span>Progresso</span><strong>{overall}%</strong><small>Conteúdo estudado</small></div></article>
-            <article><i>◎</i><div><span>Domínio estimado</span><strong>{Math.round(Number(dailyPlan?.tracking?.overall_mastery||0))}%</strong><small>Mastery Score</small></div></article>
-            <article><i>◴</i><div><span>Tempo real</span><strong>{dailyPlan?.tracking?.study_time?.week_minutes||0} min</strong><small>Últimos 7 dias</small></div></article>
+            <article><i>◎</i><div><span>Domínio estimado</span><strong>{Math.round(mastery)}%</strong><small>Mastery Score</small></div></article>
+            <article><i>◴</i><div><span>Tempo real</span><strong>{0} min</strong><small>Últimos 7 dias</small></div></article>
           </div>
         </section>
 
@@ -164,8 +146,8 @@ export default async function Area(){
             <div><span>Melhor disciplina</span><strong>{strongest?strongest.label:"Aguardando dados"}</strong><small>{strongest?`${strongest.accuracy}% de acerto`:"Responda questões para calcular"}</small></div>
             <div><span>Ponto de atenção</span><strong>{weakest?weakest.label:"Aguardando dados"}</strong><small>{weakest?`${weakest.accuracy}% de acerto`:"Responda questões para calcular"}</small></div>
             <div><span>Cobertura de simulados</span><strong>{examCoverage}%</strong><small>Meta de referência: 7 simulados</small></div>
-            <div><span>Aderência ao plano</span><strong>{dailyPlan?.tracking?.adherence_percent??100}%</strong><small>{dailyPlan?.tracking?.backlog_count||0} pendência(s) em aberto</small></div>
-            <div><span>1ª leitura projetada</span><strong>{dailyPlan?.first_pass?.projected_finish?new Date(dailyPlan.first_pass.projected_finish+"T12:00:00").toLocaleDateString("pt-BR"):"—"}</strong><small>{dailyPlan?.first_pass?.on_track?"Dentro do ritmo atual":"Risco de atraso no ritmo atual"}</small></div>
+            <div><span>Aderência ao plano</span><strong>{100}%</strong><small>{0} pendência(s) em aberto</small></div>
+            <div><span>1ª leitura projetada</span><strong>{null?new Date(null+"T12:00:00").toLocaleDateString("pt-BR"):"—"}</strong><small>{false?"Dentro do ritmo atual":"Risco de atraso no ritmo atual"}</small></div>
           </div>
         </section>
 
