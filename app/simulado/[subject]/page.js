@@ -1,7 +1,7 @@
 import {redirect,notFound} from "next/navigation";
 import {getSession} from "../../../lib/auth";
 import {getEntitlement} from "../../../lib/entitlement";
-import {getQuestionBank,getQuestionFilterFacets} from "../../../lib/question-banks";
+import {getQuestionCatalogCount,getQuestionFilterFacets} from "../../../lib/question-catalog";
 import {normalizeSubject,subjectLabel,TRIAL_SUBJECT_SLUG} from "../../../lib/subjects";
 import StudentHeader from "../../components/StudentHeader";
 import Client from "./Client";
@@ -20,8 +20,8 @@ export default async function Page({params,searchParams}){
     redirect("/comprar");
   }
 
-  const b=getQuestionBank(normalized);
-  if(!b) notFound();
+  const count=getQuestionCatalogCount(normalized);
+  if(count===null) notFound();
   const facets=trialAllowed?{works:[],chapters:[],modules:[]}:getQuestionFilterFacets(normalized);
 
   return (
@@ -30,7 +30,7 @@ export default async function Page({params,searchParams}){
       <Client
         subject={normalized}
         title={subjectLabel(normalized)}
-        ready={(b.questions||[]).length>0}
+        ready={count>0}
         trial={trialAllowed}
         facets={facets}
         planTask={{plan_date:String(q?.plan_date||''),task_key:String(q?.task_key||''),task_type:'simulado',subject_slug:normalized}}

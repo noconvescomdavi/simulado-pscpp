@@ -9,7 +9,7 @@ import {
   PSCPP_SUBJECT_SLUG,
   subjectLabel
 } from "../../lib/subjects";
-import { availableQuestionBanks } from "../../lib/question-banks";
+import { availableQuestionBanks } from "../../lib/question-summary";
 import StudentHeader from "../components/StudentHeader";
 import styles from "./simulados.module.css";
 
@@ -34,7 +34,7 @@ export default async function Page() {
   if (!entitlement.active && !entitlement.trial) redirect("/comprar");
 
   const history = await query(
-    `select *
+    `select id,subject,status,answered_count,correct_count,started_at
        from exam_sessions
       where user_id=$1
       order by started_at desc`,
