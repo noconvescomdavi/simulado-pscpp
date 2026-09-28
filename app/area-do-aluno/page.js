@@ -72,7 +72,7 @@ export default async function Area(){
 
   return (
     <>
-      <StudentHeader active="painel"/>
+      <StudentHeader active="painel" session={session}/>
       <main className="studentDashboardV2">
         <section className="studentWelcome">
           <div><span>PAINEL DO ALUNO</span><h1>Olá, {name} <b>👋</b></h1><p>Disciplina, foco e resultado. Mantenha o rumo até a Praticagem.</p></div>

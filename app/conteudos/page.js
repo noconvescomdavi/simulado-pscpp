@@ -42,7 +42,7 @@ export default async function Page() {
 
   return (
     <>
-      <StudentHeader active="conteudos" />
+      <StudentHeader active="conteudos" session={session}/>
 
       <main className={styles.page}>
         <section className={styles.hero}>

@@ -26,7 +26,7 @@ export default async function HojePage() {
 
   return (
     <>
-      <StudentHeader active="hoje" />
+      <StudentHeader active="hoje" session={session}/>
       <main className={styles.page}>
         <section className={styles.hero}>
           <div>
