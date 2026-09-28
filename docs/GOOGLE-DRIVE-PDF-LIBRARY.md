@@ -10,18 +10,18 @@ Os PDFs dos alunos permanecem no Google Drive de cada aluno. A ESTIBORDO armazen
 - `NEXT_PUBLIC_GOOGLE_DRIVE_APP_ID` (Project Number do Google Cloud)
 - `NEXT_PUBLIC_ADOBE_PDF_CLIENT_ID`
 - `GOOGLE_TOKEN_ENCRYPTION_SECRET` (recomendado; mínimo 32 caracteres)
-- `NEXT_PUBLIC_APP_URL=https://simulado-pscpp.vercel.app`
+- `NEXT_PUBLIC_APP_URL=https://estibordo-pscpp.vercel.app`
 
 ## Google Cloud
 
 Ative Google Drive API e Google Picker API. Crie um OAuth 2.0 Client ID do tipo Web application.
-Authorized JavaScript origin: `https://simulado-pscpp.vercel.app`.
-Authorized redirect URI: `https://simulado-pscpp.vercel.app/api/library/google/callback`.
+Authorized JavaScript origin: `https://estibordo-pscpp.vercel.app`.
+Authorized redirect URI: `https://estibordo-pscpp.vercel.app/api/library/google/callback`.
 O sistema solicita somente `https://www.googleapis.com/auth/drive.file`.
 
 ## Adobe
 
-Crie uma credencial PDF Embed API para o domínio `simulado-pscpp.vercel.app` e salve o Client ID em `NEXT_PUBLIC_ADOBE_PDF_CLIENT_ID`.
+Crie uma credencial PDF Embed API para o domínio `estibordo-pscpp.vercel.app` e salve o Client ID em `NEXT_PUBLIC_ADOBE_PDF_CLIENT_ID`.
 
 ## Banco
 

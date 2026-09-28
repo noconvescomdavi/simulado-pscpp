@@ -7,11 +7,11 @@
 - Categoria sugerida: Educação
 - Gratuito/pago: definir de acordo com o modelo comercial no momento da publicação
 - E-mail de suporte: `estibordopscpp@gmail.com`
-- Website: `https://simulado-pscpp.vercel.app/`
-- Política de privacidade: `https://simulado-pscpp.vercel.app/politica-de-privacidade`
-- Termos de uso: `https://simulado-pscpp.vercel.app/termos-de-uso`
-- Cancelamento/reembolso: `https://simulado-pscpp.vercel.app/cancelamento-e-reembolso`
-- URL de exclusão de conta: `https://simulado-pscpp.vercel.app/excluir-conta`
+- Website: `https://estibordo-pscpp.vercel.app/`
+- Política de privacidade: `https://estibordo-pscpp.vercel.app/politica-de-privacidade`
+- Termos de uso: `https://estibordo-pscpp.vercel.app/termos-de-uso`
+- Cancelamento/reembolso: `https://estibordo-pscpp.vercel.app/cancelamento-e-reembolso`
+- URL de exclusão de conta: `https://estibordo-pscpp.vercel.app/excluir-conta`
 
 ## Conteúdo obrigatório
 

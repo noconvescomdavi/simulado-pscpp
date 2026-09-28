@@ -28,6 +28,6 @@ export default function robots() {
         ],
       },
     ],
-    sitemap: "https://simulado-pscpp.vercel.app/sitemap.xml",
+    sitemap: "https://estibordo-pscpp.vercel.app/sitemap.xml",
   };
 }
