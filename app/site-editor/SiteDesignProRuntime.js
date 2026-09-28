@@ -1,5 +1,6 @@
 'use client';
 import {useEffect} from 'react';
+import {usePathname} from 'next/navigation';
 import baseDesign from '../../data/site/editor-design.json';
 
 function safeUrl(value){const v=String(value||'').trim();return /^(javascript|vbscript|data:text\/html)/i.test(v)?'':v}
@@ -11,4 +12,4 @@ function bindAdvanced(record){if(!record||typeof record!=='object')return;for(co
   }}
 }
 function applyAdvanced(design){const routeKey=document.querySelector('[data-estibordo-not-found]')?'/__404':location.pathname;bindAdvanced(design?.global?.elements||{});bindAdvanced(design?.pages?.[routeKey]?.elements||{});const ds=design?.global?.designSystem||{};if(ds.variables&&typeof ds.variables==='object'){for(const [k,v] of Object.entries(ds.variables))document.documentElement.style.setProperty('--'+String(k).replace(/^--/,''),String(v))}}
-export default function SiteDesignProRuntime(){useEffect(()=>{let active=baseDesign;const run=()=>{if(location.pathname.startsWith('/admin/editor'))return;applyAdvanced(active)};const msg=e=>{if(e.origin!==location.origin||e.data?.type!=='estibordo-editor-design'||!e.data?.design)return;active=e.data.design;run()};window.addEventListener('message',msg);run();const mo=new MutationObserver(()=>{clearTimeout(window.__estibordoProRuntimeTimer);window.__estibordoProRuntimeTimer=setTimeout(run,120)});mo.observe(document.body,{subtree:true,childList:true});return()=>{window.removeEventListener('message',msg);mo.disconnect()}},[]);return null}
+export default function SiteDesignProRuntime(){const pathname=usePathname();useEffect(()=>{let active=baseDesign;const run=()=>{if(location.pathname.startsWith('/admin/editor'))return;applyAdvanced(active)};const msg=e=>{if(e.origin!==location.origin||e.data?.type!=='estibordo-editor-design'||!e.data?.design)return;active=e.data.design;run()};window.addEventListener('message',msg);run();return()=>{window.removeEventListener('message',msg)}},[pathname]);return null}
