@@ -16,6 +16,7 @@ const securityHeaders = [
 
 const nextConfig = {
   poweredByHeader: false,
+  output: "standalone",
 
   // Keep large data/content files out of the Cloudflare Worker server bundle.
   // They are runtime/static resources and must not be traced into handler.mjs.
