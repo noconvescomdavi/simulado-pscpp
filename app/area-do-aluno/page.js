@@ -8,7 +8,6 @@ import StudentHeader from "../components/StudentHeader";
 import ExamCountdown from "../components/ExamCountdown";
 import {getConsistency} from "../../lib/engagement";
 import {getLearningProfile} from "../../lib/learning-engine";
-import {getStudentInsights} from "../../lib/student-insights";
 import { unstable_cache } from "next/cache";
 import "./dashboard.css";
 
@@ -31,7 +30,7 @@ export default async function Area(){
     query("select id,subject,status,answered_count,correct_count,started_at from exam_sessions where user_id=$1 order by started_at desc limit 4",[session.id]).catch(()=>({rows:[]})),
     getLearningProfile(session.id).catch(()=>({overall_mastery:0,subjects:[],weakest_topics:[]})),
     getConsistency(session.id),
-    getStudentInsights(session.id).catch(()=>({insights:[],due:0}))
+    query(`select count(*)::int as due from student_review_queue where user_id=$1 and source_type='topic' and state<>'suspended' and due_at<=now()`,[session.id]).then(r=>({due:Number(r.rows[0]?.due||0)})).catch(()=>({due:0}))
   ]);
 
   const active=access?.active===true;
@@ -53,6 +52,10 @@ export default async function Area(){
   );
   const readiness=Math.round(Math.max(0,Math.min(100,mastery*.8+legacyReadiness*.2)));
   const readinessLabel=readiness>=85?"Muito forte":readiness>=70?"Competitivo":readiness>=50?"Em evolução":"Construindo base";
+  const weakTopic=learning?.weakest_topics?.[0]||null;
+  const dashboardInsights=[];
+  if(weakTopic)dashboardInsights.push({kind:"weakness",title:"Maior oportunidade de ganho",text:`${weakTopic.topic} está com domínio estimado de ${Math.round(Number(weakTopic.mastery_score||0))}% e ${weakTopic.errors||0} erros registrados.`,action:"Corrigir esta fraqueza",href:`/conteudos/banco-de-questoes?subject=${encodeURIComponent(weakTopic.subject)}`});
+  if(Number(studentIntel?.due||0)>0)dashboardInsights.push({kind:"review",title:"Revisões vencendo hoje",text:`Você tem ${studentIntel.due} prioridade(s) de revisão.`,action:"Começar revisão",href:"/revisao-inteligente"});
 
   return (
     <>
@@ -78,7 +81,7 @@ export default async function Area(){
 
 
 
-        <section className="insightsPanel"><div className="sectionTitle"><div><h2>ESTIBORDO Insights</h2><p>O que seus dados sugerem fazer em seguida.</p></div><a href="/centro-de-revisao">Centro de Revisão →</a></div><div className="insightsGrid">{(studentIntel?.insights||[]).map((insight,index)=><a href={insight.href} key={index}><span>{insight.kind}</span><strong>{insight.title}</strong><p>{insight.text}</p><b>{insight.action} →</b></a>)}{!(studentIntel?.insights||[]).length&&<article><strong>Continue estudando</strong><p>Assim que houver dados suficientes, seus padrões e recomendações aparecerão aqui.</p></article>}</div></section>
+        <section className="insightsPanel"><div className="sectionTitle"><div><h2>ESTIBORDO Insights</h2><p>O que seus dados sugerem fazer em seguida.</p></div><a href="/centro-de-revisao">Centro de Revisão →</a></div><div className="insightsGrid">{dashboardInsights.map((insight,index)=><a href={insight.href} key={index}><span>{insight.kind}</span><strong>{insight.title}</strong><p>{insight.text}</p><b>{insight.action} →</b></a>)}{!dashboardInsights.length&&<article><strong>Continue estudando</strong><p>Assim que houver dados suficientes, seus padrões e recomendações aparecerão aqui.</p></article>}</div></section>
 
         <section className="dashboardSection">
           <div className="sectionTitle"><div><h2>Acesso Rápido</h2><p>Escolha o recurso que deseja utilizar:</p></div></div>
