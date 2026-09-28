@@ -10,12 +10,22 @@
 - Erros da API propagados ao login e timeout explícito para ausência de rede.
 - Ambiente do Next local montado por lista explícita, sem herdar `DATABASE_URL` ou segredos de servidor.
 - Dashboard do aluno lê progresso e histórico SQLite no desktop.
+- Teste grátis e vencimento da licença seguem a mesma regra de entitlement da plataforma web.
+- Concessão offline Ed25519 assinada pelo servidor e vinculada à conta/dispositivo; validade de até 30 dias, verificada localmente sem incorporar segredo do servidor ao executável.
+- Revogação confirmada por HTTP 401/403 bloqueia a sessão local e mantém a outbox para recuperação após novo login.
+- Cadastro e recuperação de senha abrem o serviço HTTPS; login Google e reCAPTCHA não são apresentados como opções do desktop.
+- Status de conexão reflete o resultado real da sincronização, sem afirmar `online` antes de sucesso.
 
 ## Gate pendente
 
-1. Rotas acadêmicas de simulados, cadernos, respostas, correções e plano ainda utilizam leituras/escritas PostgreSQL no runtime Next local. Migrar esses domínios para SQLite/JSON antes de homologar o uso offline.
-2. O protocolo `/api/sync/v1` mantém entidades em `sync_entity_versions`; a experiência web existente usa tabelas específicas. Integrar alterações sincronizadas aos dados canônicos da plataforma e testar alterações originadas no servidor.
-3. Testar login e serviços online com conta de homologação, revogação, renovação e acesso expirado contra API HTTPS real.
-4. Executar instalador e fluxo de usuário no Windows real: login, fechamento, desconexão total, novo início, simulados/cadernos, reinício, reconexão e conflitos.
+1. Publicar a branch de trabalho para disponibilizar `/api/desktop/auth` no servidor e executar o gate Windows. O push ao repositório público foi bloqueado pela revisão automática nesta sessão; `main` permanece intacta.
+2. Testar login, concessão, revogação, renovação e licença vencida com conta de homologação contra a API HTTPS real. Os testes atuais usam servidor remoto simulado.
+3. Executar o instalador atualizado no Windows e validar autenticação inicial, reabertura offline, renovação e logout no aplicativo instalado.
 
-Os testes de SQLite, protocolo, ciclo retry/conflito e autenticação mockada não substituem esses gates. Não avançar a fase como aprovada nem fazer merge em `main` até a homologação funcional.
+## Escopo das fases seguintes
+
+- Fase 6: migrar simulados, cadernos, respostas, correções e plano para SQLite/JSON; essas rotas ainda utilizam PostgreSQL no Next local.
+- Fase 7: integrar `/api/sync/v1` às tabelas canônicas usadas pela plataforma web e testar mudanças originadas no servidor.
+- Fase 8: homologar o fluxo completo do aluno online/offline, com instalador Windows e resolução de conflitos.
+
+Os testes locais de SQLite, protocolo, concessão assinada, revogação, runtime Next e reinício offline passaram. A Fase 5 permanece **pendente** até os três gates acima. Não fazer merge em `main` antes da homologação final das Fases 6 a 8.

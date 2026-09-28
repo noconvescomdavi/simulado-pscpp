@@ -7,7 +7,7 @@ export async function GET(){
   if(!session)return Response.json({error:"Não autenticado."},{status:401});
   if(!isDesktopRuntime())return Response.json({error:"Disponível somente no aplicativo desktop."},{status:404});
   const payload=await desktopLocal("/v1/status");
-  return Response.json({...payload,online:true},{headers:{"Cache-Control":"no-store"}});
+  return Response.json(payload,{headers:{"Cache-Control":"no-store"}});
 }
 export async function POST(){
   const session=await getSession();

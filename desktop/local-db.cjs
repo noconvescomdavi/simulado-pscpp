@@ -1,7 +1,7 @@
 const path = require("node:path");
 const Database = require("better-sqlite3");
 
-const SCHEMA_VERSION = 2;
+const SCHEMA_VERSION = 3;
 
 function nowIso() { return new Date().toISOString(); }
 
@@ -26,6 +26,8 @@ function migrate(db) {
         role TEXT NOT NULL DEFAULT 'student',
         entitlement_status TEXT,
         entitlement_checked_at TEXT,
+        entitlement_expires_at TEXT,
+        entitlement_lifetime INTEGER NOT NULL DEFAULT 0,
         last_online_auth_at TEXT,
         created_at TEXT NOT NULL,
         updated_at TEXT NOT NULL
@@ -154,6 +156,9 @@ function migrate(db) {
         metadata_json TEXT NOT NULL DEFAULT '{}'
       );
     `);
+    const profileColumns=new Set(db.pragma("table_info(local_profile)").map(column=>column.name));
+    if(!profileColumns.has("entitlement_expires_at"))db.exec("ALTER TABLE local_profile ADD COLUMN entitlement_expires_at TEXT");
+    if(!profileColumns.has("entitlement_lifetime"))db.exec("ALTER TABLE local_profile ADD COLUMN entitlement_lifetime INTEGER NOT NULL DEFAULT 0");
     db.pragma(`user_version = ${SCHEMA_VERSION}`);
   });
   tx();

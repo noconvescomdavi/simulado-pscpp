@@ -10,7 +10,14 @@ const { createSyncEngine } = require("./sync-engine.cjs");
 const { startLocalBridge } = require("./local-bridge.cjs");
 
 const HOST = "127.0.0.1";
-const REMOTE_API = process.env.ESTIBORDO_API_BASE_URL || "https://simulado-pscpp.vercel.app";
+function remoteApiOrigin(raw) {
+  const url = new URL(raw);
+  if (url.protocol !== "https:" || url.username || url.password || url.search || url.hash || url.pathname !== "/") {
+    throw new Error("A API remota do ESTIBORDO precisa ser uma origem HTTPS sem credenciais.");
+  }
+  return url.origin;
+}
+const REMOTE_API = remoteApiOrigin(process.env.ESTIBORDO_API_BASE_URL || "https://simulado-pscpp.vercel.app");
 let serverProcess = null;
 let mainWindow = null;
 let localOrigin = null;
@@ -79,6 +86,7 @@ function startLocalServer(port, bridge, authSecret) {
     ESTIBORDO_LOCAL_DB_PATH: path.join(app.getPath("userData"), "estibordo.sqlite3"),
     ESTIBORDO_LOCAL_BRIDGE_URL: `http://${HOST}:${bridge.port}`,
     ESTIBORDO_LOCAL_BRIDGE_TOKEN: bridge.token,
+    ESTIBORDO_REMOTE_API_ORIGIN: REMOTE_API,
     NEXT_PUBLIC_APP_URL: `http://${HOST}:${port}`,
     AUTH_SECRET: authSecret,
   };
@@ -125,8 +133,13 @@ async function createWindow() {
     onRenew: (fresh) => {
       const t=new Date().toISOString();
       const entitlement=fresh.entitlement?.active?"active":fresh.entitlement?.trial?"trial":String(fresh.entitlement?.status||"inactive");
-      localDb.prepare("UPDATE local_profile SET entitlement_status=?,entitlement_checked_at=?,last_online_auth_at=?,updated_at=? WHERE user_id=?")
-        .run(entitlement,t,t,t,String(fresh.user.id));
+      localDb.prepare("UPDATE local_profile SET entitlement_status=?,entitlement_checked_at=?,entitlement_expires_at=?,entitlement_lifetime=?,last_online_auth_at=?,updated_at=? WHERE user_id=?")
+        .run(entitlement,t,fresh.entitlement?.expires_at||null,fresh.entitlement?.lifetime?1:0,t,t,String(fresh.user.id));
+    },
+    onAuthRejected: async (userId) => {
+      await clearSession();
+      const t=new Date().toISOString();
+      localDb.prepare("UPDATE local_profile SET entitlement_status='reauth_required',updated_at=? WHERE user_id=?").run(t,String(userId));
     },
     apiBaseUrl: REMOTE_API,
     onStatus: (status) => console.log("[sync]", status),

@@ -1,6 +1,7 @@
 const crypto = require("node:crypto");
 const http = require("node:http");
 const { getSyncStatus, enqueue } = require("./local-db.cjs");
+const {verifyOfflineGrant,verifiedEntitlement}=require("./offline-grant.cjs");
 
 function json(res, status, body) {
   const data = Buffer.from(JSON.stringify(body));
@@ -18,10 +19,11 @@ function readBody(req) {
 function stamp(){return new Date().toISOString()}
 function saveProfile(db,payload,email){
   const t=stamp(),status=payload.entitlement?.active?"active":payload.entitlement?.trial?"trial":String(payload.entitlement?.status||"inactive");
-  db.prepare(`INSERT INTO local_profile(user_id,email,role,entitlement_status,entitlement_checked_at,last_online_auth_at,created_at,updated_at)
-    VALUES(?,?,?,?,?,?,?,?) ON CONFLICT(user_id) DO UPDATE SET email=excluded.email,role=excluded.role,entitlement_status=excluded.entitlement_status,
-    entitlement_checked_at=excluded.entitlement_checked_at,last_online_auth_at=excluded.last_online_auth_at,updated_at=excluded.updated_at`)
-    .run(String(payload.user.id),payload.user.email||email,payload.user.role||"student",status,t,t,t,t);
+  db.prepare(`INSERT INTO local_profile(user_id,email,role,entitlement_status,entitlement_checked_at,entitlement_expires_at,entitlement_lifetime,last_online_auth_at,created_at,updated_at)
+    VALUES(?,?,?,?,?,?,?,?,?,?) ON CONFLICT(user_id) DO UPDATE SET email=excluded.email,role=excluded.role,entitlement_status=excluded.entitlement_status,
+    entitlement_checked_at=excluded.entitlement_checked_at,entitlement_expires_at=excluded.entitlement_expires_at,
+    entitlement_lifetime=excluded.entitlement_lifetime,last_online_auth_at=excluded.last_online_auth_at,updated_at=excluded.updated_at`)
+    .run(String(payload.user.id),payload.user.email||email,payload.user.role||"student",status,t,payload.entitlement?.expires_at||null,payload.entitlement?.lifetime?1:0,t,t,t);
 }
 function startLocalBridge({db,syncEngine,secureStore,apiBaseUrl,host="127.0.0.1"}) {
   const token=crypto.randomBytes(32).toString("hex");
@@ -32,13 +34,14 @@ function startLocalBridge({db,syncEngine,secureStore,apiBaseUrl,host="127.0.0.1"
       if(req.method==="POST"&&url.pathname==="/v1/auth/bootstrap"){
         if(!apiBaseUrl)return json(res,503,{error:"API_REMOTE_NOT_CONFIGURED"});
         const b=await readBody(req);
-        const response=await fetch(new URL("/api/desktop/auth",apiBaseUrl),{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:b.email,password:b.password,device_id:syncEngine.deviceId}),signal:AbortSignal.timeout(12000)});
+        const response=await fetch(new URL("/api/desktop/auth",apiBaseUrl),{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:b.email,password:b.password,device_id:syncEngine.deviceId}),signal:AbortSignal.timeout(12000),redirect:"error"});
         const payload=await response.json().catch(()=>({}));
         if(!response.ok)return json(res,response.status,payload);
         if(!payload.access_token||!payload.user?.id)return json(res,502,{error:"INVALID_AUTH_RESPONSE"});
+        if(!verifiedEntitlement(payload,payload.user.id,syncEngine.deviceId))return json(res,502,{error:"INVALID_OFFLINE_GRANT"});
         const existing=db.prepare("SELECT user_id FROM local_profile LIMIT 1").get();
         if(existing&&String(existing.user_id)!==String(payload.user.id))return json(res,409,{error:"Este dispositivo já contém dados offline de outra conta. Use o perfil original."});
-        await secureStore.saveSession({accessToken:payload.access_token,refreshToken:payload.refresh_token||null,expiresAt:payload.expires_at||null,userId:String(payload.user.id)});
+        await secureStore.saveSession({accessToken:payload.access_token,expiresAt:payload.expires_at||null,userId:String(payload.user.id),offlineGrant:payload.offline_grant,offlinePublicKey:payload.offline_public_key});
         saveProfile(db,payload,b.email);
         void syncEngine.syncNow();
         return json(res,200,{ok:true,user:payload.user,entitlement:payload.entitlement,expires_at:payload.expires_at});
@@ -46,11 +49,12 @@ function startLocalBridge({db,syncEngine,secureStore,apiBaseUrl,host="127.0.0.1"
       if(req.method==="POST"&&url.pathname==="/v1/auth/renew"){
         const session=await secureStore.loadSession();
         if(!session?.accessToken)return json(res,401,{error:"Sessão indisponível."});
-        const response=await fetch(new URL("/api/desktop/auth",apiBaseUrl),{method:"PUT",headers:{"Authorization":`Bearer ${session.accessToken}`,"Content-Type":"application/json"},body:JSON.stringify({device_id:syncEngine.deviceId}),signal:AbortSignal.timeout(12000)});
+        const response=await fetch(new URL("/api/desktop/auth",apiBaseUrl),{method:"PUT",headers:{"Authorization":`Bearer ${session.accessToken}`,"Content-Type":"application/json"},body:JSON.stringify({device_id:syncEngine.deviceId}),signal:AbortSignal.timeout(12000),redirect:"error"});
         const payload=await response.json().catch(()=>({}));
         if(!response.ok)return json(res,response.status,payload);
         if(!payload.access_token||String(payload.user?.id)!==String(session.userId))return json(res,502,{error:"INVALID_AUTH_RESPONSE"});
-        await secureStore.saveSession({...session,accessToken:payload.access_token,expiresAt:payload.expires_at});
+        if(!verifiedEntitlement(payload,session.userId,syncEngine.deviceId))return json(res,502,{error:"INVALID_OFFLINE_GRANT"});
+        await secureStore.saveSession({...session,accessToken:payload.access_token,expiresAt:payload.expires_at,offlineGrant:payload.offline_grant,offlinePublicKey:payload.offline_public_key});
         saveProfile(db,payload,payload.user.email);
         return json(res,200,{ok:true,entitlement:payload.entitlement,expires_at:payload.expires_at});
       }
@@ -58,11 +62,18 @@ function startLocalBridge({db,syncEngine,secureStore,apiBaseUrl,host="127.0.0.1"
         await secureStore.clearSession();
         return json(res,200,{ok:true});
       }
-      if(req.method==="GET"&&url.pathname==="/v1/status")return json(res,200,{ok:true,sync:getSyncStatus(db)});
+      if(req.method==="GET"&&url.pathname==="/v1/status"){
+        const connectivity=syncEngine.getConnectivity?.()||"unknown";
+        return json(res,200,{ok:true,online:connectivity==="online",connectivity,sync:getSyncStatus(db)});
+      }
       if(req.method==="POST"&&url.pathname==="/v1/sync")return json(res,200,await syncEngine.syncNow());
       if(req.method==="GET"&&url.pathname==="/v1/profile"){
         const row=db.prepare("SELECT * FROM local_profile ORDER BY updated_at DESC LIMIT 1").get()||null;
-        return json(res,200,{profile:row});
+        const session=await secureStore.loadSession();
+        const grant=verifyOfflineGrant(session?.offlineGrant,session?.offlinePublicKey,{userId:session?.userId,deviceId:syncEngine.deviceId});
+        if(!row||row.entitlement_status==="reauth_required"||!grant||String(row.user_id)!==String(grant.sub))return json(res,200,{profile:null});
+        return json(res,200,{profile:{...row,entitlement_status:grant.entitlement.status,entitlement_expires_at:grant.entitlement.expires_at,
+          entitlement_lifetime:grant.entitlement.lifetime?1:0,last_online_auth_at:grant.issued_at,entitlement_checked_at:grant.issued_at}});
       }
       if(req.method==="GET"&&url.pathname==="/v1/dashboard"){
         const userId=url.searchParams.get("user_id");

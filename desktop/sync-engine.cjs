@@ -1,4 +1,5 @@
 const crypto = require("node:crypto");
+const {verifiedEntitlement}=require("./offline-grant.cjs");
 
 const DEFAULT_INTERVAL_MS = 30_000;
 const MAX_BATCH = 200;
@@ -11,7 +12,7 @@ function deviceId(db) {
   return value;
 }
 
-function createSyncEngine({ db, getSession, saveSession, onRenew, apiBaseUrl, onStatus = () => {} }) {
+function createSyncEngine({ db, getSession, saveSession, onRenew, onAuthRejected, apiBaseUrl, onStatus = () => {} }) {
   function mergeConflict(result){
     const l=result.local_payload||{},r=result.remote_payload||{};
     if(result.entity_type==="study_progress")return {...r,...l,percent:Math.max(Number(r.percent)||0,Number(l.percent)||0),completed_items:Math.max(Number(r.completed_items)||0,Number(l.completed_items)||0),total_items:Math.max(Number(r.total_items)||0,Number(l.total_items)||0)};
@@ -24,24 +25,33 @@ function createSyncEngine({ db, getSession, saveSession, onRenew, apiBaseUrl, on
   }
   let timer = null;
   let running = false;
+  let connectivity = "unknown";
   const id = deviceId(db);
 
   async function syncNow() {
     if (running) return { skipped: true };
-    let session = await getSession();
-    if (!session?.accessToken || !apiBaseUrl) return { offline: true };
+    running = true;
+    let session;
+    try { session = await getSession(); }
+    catch(error){ running=false; return {ok:false,error:String(error.message||error)}; }
+    if (!session?.accessToken || !apiBaseUrl) { running=false; connectivity="offline"; return { offline: true }; }
     if(session.expiresAt&&Date.parse(session.expiresAt)-Date.now()<3*86400000){
       try{
-        const renewal=await fetch(new URL("/api/desktop/auth",apiBaseUrl),{method:"PUT",headers:{"Authorization":`Bearer ${session.accessToken}`,"Content-Type":"application/json"},body:JSON.stringify({device_id:id}),signal:AbortSignal.timeout(12000)});
-        if(!renewal.ok)return {ok:false,error:`AUTH_RENEW_HTTP_${renewal.status}`};
+        const renewal=await fetch(new URL("/api/desktop/auth",apiBaseUrl),{method:"PUT",headers:{"Authorization":`Bearer ${session.accessToken}`,"Content-Type":"application/json"},body:JSON.stringify({device_id:id}),signal:AbortSignal.timeout(12000),redirect:"error"});
+        if(!renewal.ok){
+          if([401,403].includes(renewal.status))await onAuthRejected?.(session.userId);
+          connectivity=renewal.status>=500?"offline":"auth_required";
+          running=false;
+          return {ok:false,error:`AUTH_RENEW_HTTP_${renewal.status}`};
+        }
         const fresh=await renewal.json();
-        if(!fresh.access_token||String(fresh.user?.id)!==String(session.userId))return {ok:false,error:"INVALID_AUTH_RESPONSE"};
-        session={...session,accessToken:fresh.access_token,expiresAt:fresh.expires_at};
+        if(!fresh.access_token||String(fresh.user?.id)!==String(session.userId)){running=false;return {ok:false,error:"INVALID_AUTH_RESPONSE"}}
+        if(!verifiedEntitlement(fresh,session.userId,id)){running=false;return {ok:false,error:"INVALID_OFFLINE_GRANT"}}
+        session={...session,accessToken:fresh.access_token,expiresAt:fresh.expires_at,offlineGrant:fresh.offline_grant,offlinePublicKey:fresh.offline_public_key};
         await saveSession?.(session);
         await onRenew?.(fresh);
-      }catch(error){return {ok:false,error:String(error.message||error)}}
+      }catch(error){connectivity="offline";running=false;return {ok:false,error:String(error.message||error)}}
     }
-    running = true;
     const stamp = new Date().toISOString();
     try {
       const state = db.prepare("SELECT cursor FROM sync_state WHERE scope='account'").get();
@@ -58,9 +68,12 @@ function createSyncEngine({ db, getSession, saveSession, onRenew, apiBaseUrl, on
       const response = await fetch(new URL("/api/sync/v1", apiBaseUrl), {
         method: "POST",
         headers: { "Authorization": `Bearer ${session.accessToken}`, "Content-Type": "application/json" },
-        body: JSON.stringify({ protocol_version: 1, device_id: id, cursor: state?.cursor || null, events }),signal:AbortSignal.timeout(15000)
+        body: JSON.stringify({ protocol_version: 1, device_id: id, cursor: state?.cursor || null, events }),signal:AbortSignal.timeout(15000),redirect:"error"
       });
-      if (!response.ok) throw new Error(`SYNC_HTTP_${response.status}`);
+      if (!response.ok){
+        if([401,403].includes(response.status))await onAuthRejected?.(session.userId);
+        throw new Error(`SYNC_HTTP_${response.status}`);
+      }
       const body = await response.json();
       function applyRemote(change) {
         const payload=change.payload||{}, t=payload.updated_at||stamp;
@@ -115,11 +128,13 @@ function createSyncEngine({ db, getSession, saveSession, onRenew, apiBaseUrl, on
           .run(body.cursor || state?.cursor || null, stamp, stamp, stamp);
       });
       tx();
+      connectivity="online";
       onStatus({ ok: true, cursor: body.cursor || null });
       return { ok: true, applied: body.results?.length || 0, changes: body.changes?.length || 0 };
     } catch (error) {
-      const retryAt=new Date(Date.now()+Math.min(300000,5000*Math.pow(2,Math.min(6,Number(db.prepare("SELECT COALESCE(MAX(attempt_count),0) n FROM sync_outbox WHERE state IN ('pending','retry')").get()?.n||0))))).toISOString();
-      db.prepare("UPDATE sync_outbox SET state='retry',attempt_count=attempt_count+1,next_attempt_at=?,last_error=?,updated_at=? WHERE state IN ('pending','retry')").run(retryAt,String(error.message||error),stamp);
+      connectivity=/SYNC_HTTP_(401|403)/.test(String(error.message))?"auth_required":"offline";
+      const retryAt=new Date(Date.now()+Math.min(300000,5000*Math.pow(2,Math.min(6,Number(db.prepare("SELECT COALESCE(MAX(attempt_count),0) n FROM sync_outbox WHERE user_id=? AND state IN ('pending','retry')").get(session.userId)?.n||0))))).toISOString();
+      db.prepare("UPDATE sync_outbox SET state='retry',attempt_count=attempt_count+1,next_attempt_at=?,last_error=?,updated_at=? WHERE user_id=? AND state IN ('pending','retry')").run(retryAt,String(error.message||error),stamp,session.userId);
       db.prepare(`INSERT INTO sync_state(scope,last_attempt_at,last_error,updated_at)
         VALUES('account',?,?,?) ON CONFLICT(scope) DO UPDATE SET last_attempt_at=excluded.last_attempt_at,
         last_error=excluded.last_error,updated_at=excluded.updated_at`).run(stamp, String(error.message || error), stamp);
@@ -137,7 +152,7 @@ function createSyncEngine({ db, getSession, saveSession, onRenew, apiBaseUrl, on
   function stop() { if (timer) clearInterval(timer); timer = null; }
   function online(){ void syncNow(); }
   if(globalThis.addEventListener)globalThis.addEventListener("online",online);
-  return { syncNow, start, stop, deviceId: id };
+  return { syncNow, start, stop, deviceId: id, getConnectivity:()=>connectivity };
 }
 
 module.exports = { createSyncEngine };

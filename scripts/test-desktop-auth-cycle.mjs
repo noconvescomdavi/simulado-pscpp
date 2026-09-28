@@ -4,10 +4,17 @@ import http from "node:http";
 import os from "node:os";
 import path from "node:path";
 import {createRequire} from "node:module";
+import {testGrant} from "./desktop-test-grant.mjs";
 
 const require=createRequire(import.meta.url);
 const {openLocalDatabase}=require("../desktop/local-db.cjs");
 const {startLocalBridge}=require("../desktop/local-bridge.cjs");
+const {verifyOfflineGrant}=require("../desktop/offline-grant.cjs");
+process.env.AUTH_SECRET="desktop-auth-test-secret-12345678901234567890";
+const {issueOfflineGrant}=await import("../lib/desktop-auth-token.js");
+const signed=issueOfflineGrant({id:"server-user"},"server-device",{status:"active",active:true,trial:false,lifetime:true,expires_at:null});
+assert.equal(verifyOfflineGrant(signed.token,signed.public_key,{userId:"server-user",deviceId:"server-device"})?.sub,"server-user");
+assert.equal(verifyOfflineGrant(signed.token,signed.public_key,{userId:"server-user",deviceId:"other-device"}),null);
 const dir=fs.mkdtempSync(path.join(os.tmpdir(),"estibordo-auth-"));
 const db=openLocalDatabase(dir);
 let session=null,syncCalls=0;
@@ -23,7 +30,8 @@ const remote=http.createServer((req,res)=>{
       res.statusCode=403;return res.end(JSON.stringify({error:"Dispositivo inválido"}));
     }
     const userId=body.email==="other@example.com"?"other":id;
-    res.end(JSON.stringify({access_token:req.method==="PUT"?"renewed-token":"initial-token",expires_at:new Date(Date.now()+30*86400000).toISOString(),user:{id:userId,email:body.email||"student@example.com",role:"student"},entitlement:{active:true,status:"active"}}));
+    const entitlement={active:true,trial:false,status:"active",expires_at:null,lifetime:true};
+    res.end(JSON.stringify({access_token:req.method==="PUT"?"renewed-token":"initial-token",expires_at:new Date(Date.now()+30*86400000).toISOString(),user:{id:userId,email:body.email||"student@example.com",role:"student"},entitlement,...testGrant(userId,body.device_id,entitlement)}));
   });
 });
 await new Promise(resolve=>remote.listen(0,"127.0.0.1",resolve));
@@ -37,7 +45,18 @@ try{
   assert.equal(login.status,200);
   assert.equal(session.userId,id);
   assert.equal(db.prepare("select entitlement_status from local_profile where user_id=?").get(id).entitlement_status,"active");
+  const originalGrant=session.offlineGrant;
+  db.prepare("UPDATE local_profile SET entitlement_status='revoked',entitlement_lifetime=0 WHERE user_id=?").run(id);
+  const profileResponse=await fetch(`http://127.0.0.1:${bridge.port}/v1/profile`,{headers:{Authorization:`Bearer ${bridge.token}`}});
+  assert.equal((await profileResponse.json()).profile.entitlement_status,"active","SQLite editado não altera o direito assinado.");
+  session.offlineGrant=`${originalGrant.slice(0,-2)}xx`;
+  const forgedResponse=await fetch(`http://127.0.0.1:${bridge.port}/v1/profile`,{headers:{Authorization:`Bearer ${bridge.token}`}});
+  assert.equal((await forgedResponse.json()).profile,null,"Assinatura adulterada deve negar acesso offline.");
+  session.offlineGrant=originalGrant;
+  db.prepare("UPDATE local_profile SET entitlement_status='active',entitlement_lifetime=1 WHERE user_id=?").run(id);
   assert.equal(syncCalls,1);
+  const status=await fetch(`http://127.0.0.1:${bridge.port}/v1/status`,{headers:{Authorization:`Bearer ${bridge.token}`}});
+  assert.equal((await status.json()).online,false,"Status não pode afirmar conexão sem sincronização comprovada.");
   const dashboard=await fetch(`http://127.0.0.1:${bridge.port}/v1/dashboard?user_id=${id}`,{headers:{Authorization:`Bearer ${bridge.token}`}});
   assert.equal(dashboard.status,200);
   assert.equal((await dashboard.json()).overall.questions,0);
