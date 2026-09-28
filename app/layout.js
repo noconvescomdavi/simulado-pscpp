@@ -9,6 +9,8 @@ import MobileAppRuntime from "./components/MobileAppRuntime";
 import CommandPaletteShortcut from "./components/CommandPaletteShortcut";
 
 const montserrat=Montserrat({subsets:["latin"],display:"swap",variable:"--font-montserrat"});
+export const preferredRegion = "gru1";
+
 const poppins=Poppins({subsets:["latin"],weight:["500","600","700","800"],display:"swap",variable:"--font-poppins"});
 
 export const metadata = {
