@@ -351,4 +351,7 @@ md.push('Esta auditoria é estrutural, textual e heurística. Flags baixas/médi
 
 fs.writeFileSync(path.join(reportDir, 'question-quality-audit-v2.md'), md.join('\n') + '\n');
 console.log(JSON.stringify(summary.totals, null, 2));
+console.log('BLOCKING_FLAGS_START');
+console.log(JSON.stringify(allFlags.filter(f => f.severity === 'critical' || f.severity === 'high'), null, 2));
+console.log('BLOCKING_FLAGS_END');
 for (const subject of SUBJECTS) console.log(subject, subjectReports[subject]);
