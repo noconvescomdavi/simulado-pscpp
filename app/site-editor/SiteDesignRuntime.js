@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import design from '../../data/site/editor-design.json';
 
 const SAFE_STYLE_KEYS = new Set([
@@ -192,6 +193,7 @@ function applyFavicon(url) {
 }
 
 export default function SiteDesignRuntime() {
+  const pathname=usePathname();
   useEffect(() => {let activeDesign=design;try{const params=new URLSearchParams(location.search);if(params.get("estibordoDraft")==="1"){const draft=localStorage.getItem("estibordo-preview:"+location.pathname);if(draft)activeDesign=JSON.parse(draft)}}catch{}const run = () => {if (window.location.pathname.startsWith('/admin/editor')) return;setBreakpoints(activeDesign?.global?.breakpoints||{});ACTIVE_COMPONENTS=Object.fromEntries((activeDesign?.global?.blockComponents||[]).map(c=>[c.id,c]));ACTIVE_SYMBOLS=Object.fromEntries((activeDesign?.global?.elementSymbols||[]).map(c=>[c.id,c]));ACTIVE_COLLECTIONS=activeDesign?.global?.collections||{};ACTIVE_VECTORS=Object.fromEntries((activeDesign?.global?.vectorAssets||[]).map(c=>[c.id,c]));applyDesignSystem(activeDesign?.global?.designSystem||{});applyRecord(activeDesign?.global?.elements || {});const routeKey=document.querySelector("[data-estibordo-not-found]")?"/__404":window.location.pathname;const page=activeDesign?.pages?.[routeKey]||{};
       applyRecord(page.elements || {});
       applyBlocks(page.blocks || []);
@@ -201,14 +203,9 @@ export default function SiteDesignRuntime() {
     };
 
     const onMessage=(event)=>{if(event.origin!==window.location.origin||event.data?.type!=="estibordo-editor-design"||!event.data?.design)return;activeDesign=event.data.design;run()};window.addEventListener("message",onMessage);run();
-    const observer = new MutationObserver(() => {
-      window.clearTimeout(window.__estibordoDesignTimer);
-      window.__estibordoDesignTimer = window.setTimeout(run, 60);
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
     window.addEventListener("resize",run);
-    return () => {observer.disconnect();window.removeEventListener("resize",run);window.removeEventListener("message",onMessage);};
-  }, []);
+    return () => {window.removeEventListener("resize",run);window.removeEventListener("message",onMessage);};
+  }, [pathname]);
 
   return null;
 }
