@@ -2,7 +2,7 @@ name: Full Question Bank Audit
 on:
   pull_request:
     branches: [main]
-  workflow_dispatch:
+  push:\n    branches: [audit/pscpp-editorial-complete-20260923]\n  workflow_dispatch:
 jobs:
   audit:
     runs-on: ubuntu-latest
