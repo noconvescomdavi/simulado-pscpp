@@ -13,7 +13,7 @@ const files=[
   "data/questions/comunicacoes.json",
   "data/questions/conhecimentos-gerais.json",
 ];
-const locatorTarget=/qual disposição (?:pertence|está expressamente associada) a|o que se afirma corretamente em\s+(?:art|item|anexo|cap[ií]tulo|se[cç][aã]o)|recorre a\s+(?:art|item|anexo|cap[ií]tulo|se[cç][aã]o).+qual regra deve observar|requisitos estabelecidos em\s+(?:art|item|anexo|cap[ií]tulo|se[cç][aã]o)/i;
+const locatorTarget=/qual disposição (?:pertence|está expressamente associada) a|o que se afirma corretamente em\\s+(?:art|item|anexo|cap[ií]tulo|se[cç][aã]o)|recorre a\\s+(?:art|item|anexo|cap[ií]tulo|se[cç][aã]o).+qual regra deve observar|requisitos estabelecidos em\\s+(?:art|item|anexo|cap[ií]tulo|se[cç][aã]o)|qual enunciado define corretamente o conteúdo de\\s+(?:art|item|anexo|cap[ií]tulo|se[cç][aã]o|regra)|(?:art|item|anexo|cap[ií]tulo|se[cç][aã]o|regra)\\s+[^,.]{1,40}\\s+aborda\\s+[“"]|Para cumprir\\s+(?:art|item|anexo|cap[ií]tulo|se[cç][aã]o|regra)|como deve ser compreendido\\s+(?:art|item|anexo|cap[ií]tulo|se[cç][aã]o|regra)/i;
 const report={generated_at:new Date().toISOString(),files:[],totals:{questions:0,active:0,source_candidates:0,runtime_remaining:0}};
 for(const rel of files){
  const raw=JSON.parse(fs.readFileSync(path.join(root,rel),"utf8")); const slug=path.basename(rel,".json"); const bank=applyQuestionRestorations(slug,raw); let sourceCandidates=0,runtimeRemaining=0,active=0;
