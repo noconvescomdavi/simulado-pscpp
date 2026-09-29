@@ -18,31 +18,31 @@
 
 | Ocorrências | Prefixo |
 |---:|---|
-| 299 | na terminologia de arte naval, qual termo corresponde a descricao tecnica a |
 | 34 | de acordo com o contido em “arte naval, v. 2”, analise as |
 | 33 | de acordo com o contido em “shiphandling for the mariner”, analise as |
 | 26 | com base em “arte naval, v. 2”, coloque v (verdadeiro) ou f |
+| 26 | de acordo com mooring and anchoring ships: principles and practice, v. 1 |
+| 22 | de acordo com arte naval, v. 2 — cap. 11, secao a, |
+| 21 | de acordo com arte naval, v. 2 — cap. 10, secao a, |
 | 19 | com base em “shiphandling for the mariner”, coloque v (verdadeiro) ou f |
 | 17 | de acordo com o contido em “arte naval, v. 1”, analise as |
+| 16 | de acordo com arte naval, v. 2 — cap. 9, secao a, |
+| 14 | de acordo com arte naval, v. 2 — cap. 10, secao b, |
+| 12 | de acordo com arte naval, v. 2 — cap. 12, secao e, |
+| 12 | de acordo com arte naval, v. 2 — cap. 12, secao c, |
 | 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
 | 12 | com base em “shiphandling for the mariner”, julgue as proposicoes a seguir |
 | 11 | com base em “arte naval, v. 1”, coloque v (verdadeiro) ou f |
-| 10 | de acordo com o contido em “arte naval, v. 2” (cap. 12, |
+| 10 | de acordo com arte naval, v. 2 — cap. 12, secao d, |
 | 9 | de acordo com o contido em “resolution a.1045(27): pilot transfer arrangements”, analise |
-| 7 | de acordo com o contido em “resolution a.1045(27): pilot transfer arrangements” (anexo, |
+| 9 | de acordo com arte naval, v. 2 — cap. 12, secao a, |
+| 9 | de acordo com arte naval, v. 2 — cap. 12, secao f, |
+| 8 | de acordo com o contido em “arte naval, v. 2” (cap. 12, |
+| 7 | de acordo com arte naval, v. 2 — cap. 10, secao c, |
+| 7 | de acordo com arte naval, v. 2 — cap. 12, secao g, |
 | 7 | assinale a opcao que completa corretamente as lacunas abaixo, tendo como referencia |
 | 6 | com base no conteudo de “arte naval, v. 2”, em cap. 10, |
 | 6 | na preparacao para uma manobra, o oficial revisa o conceito definido como |
-| 5 | de acordo com o contido em “arte naval, v. 2” (cap. 10, |
-| 5 | com base no conteudo de “arte naval, v. 2”, em cap. 9, |
-| 5 | com base no conteudo de “arte naval, v. 1”, em cap. 1, |
-| 5 | em uma revisao tecnica conduzida antes da manobra, considere especificamente o seguinte |
-| 5 | com base no conteudo de “arte naval, v. 2”, em cap. 12, |
-| 5 | com base no conteudo de “arte naval, v. 2”, em cap. 11, |
-| 4 | com base no conteudo de “arte naval, v. 1”, em cap. 8, |
-| 4 | de acordo com o contido em “arte naval, v. 2” (cap. 9, |
-| 4 | com base em “resolution a.1045(27): pilot transfer arrangements”, coloque v (verdadeiro) ou |
-| 4 | de acordo com o contido em “mooring and anchoring ships: principles and |
 
 ## manobrabilidade
 
@@ -154,27 +154,27 @@
 | 12 | de acordo com o contido em “normas da autoridade maritima para o |
 | 12 | julgue a proposicao a seguir como verdadeira ou falsa, considerando o contexto |
 | 12 | analise as quatro proposicoes sobre conteudo indicado no anexo 2-b e classifique-as |
-| 11 | de acordo com o contido em “normas da autoridade maritima para trafego |
 | 11 | com base em “normas da autoridade maritima para trafego e permanencia de |
 | 10 | considerando os conceitos adotados por normam-204/dpc, o que se afirma corretamente em |
 | 10 | de acordo com o contido em “portaria mb/md nº 37, de 21 |
 | 10 | de acordo com o contido em “lei nº 9.537, de 11 de |
 | 10 | de acordo com o contido em “lei nº 2.180, de 5 de |
+| 10 | de acordo com o contido em “normas da autoridade maritima para trafego |
 | 10 | com base em “lei nº 2.180, de 5 de fevereiro de 1954 |
+| 10 | de acordo com a normam 204/dpc — normas da autoridade maritima para |
 | 10 | com base em “lei nº 9.537, de 11 de dezembro de 1997 |
 | 9 | no contexto de normam-602/dhn, qual enunciado define corretamente o conteudo de item |
 | 9 | com base em “portaria mb/md nº 37, de 21 de fevereiro de |
 | 9 | de acordo com o contido em “lei nº 12.815, de 5 de |
 | 9 | de acordo com o contido em “decreto nº 2.596, de 18 de |
+| 8 | de acordo com a normas da autoridade maritima para o cerimonial da |
 | 8 | no contexto de normam-204/dpc, qual enunciado define corretamente o conteudo de item |
 | 8 | com base no conteudo de “lei nº 9.537, de 11 de dezembro |
 | 8 | de acordo com o contido em “normas da autoridade maritima para embarcacoes |
 | 8 | de acordo com o contido em “decreto nº 12.481, de 2 de |
+| 8 | de acordo com a normas da autoridade maritima para o servico de |
 | 8 | no contexto de decreto nº 2.596/1998 — rlesta, qual conceito corresponde a |
 | 8 | em uma analise comparativa de decreto nº 2.596/1998 — rlesta, qual associacao |
-| 7 | com base em “lei nº 14.813, de 15 de janeiro de 2024”, |
-| 7 | de acordo com o contido em “politica nacional de defesa e estrategia |
-| 7 | de acordo com o contido em “lei nº 7.652, de 3 de |
 
 ## meteorologia-oceanografia
 
@@ -284,7 +284,7 @@
 |---:|---|
 | 47 | uma analise de fadiga usa o trecho “module 1 — fatigue”. qual |
 | 45 | qual trecho em ingles integra o conteudo de “module 2 — fatigue |
-| 45 | de acordo com o contido em “planejamento portuario: recomendacoes para acessos nauticos”, |
+| 44 | de acordo com o contido em “planejamento portuario: recomendacoes para acessos nauticos”, |
 | 36 | de acordo com o contido em “ship/port interface: list of publications relevant |
 | 32 | no topico “module 1 — fatigue” das guidelines on fatigue, qual trecho |
 | 31 | ao consultar “module 2 — fatigue and the company”, qual item em |
