@@ -8,7 +8,7 @@ const output = new URL("../data/questions/runtime-active-banks.json", import.met
 const directories = ["data/questions", "data/question-extensions", "data/question-restorations"];
 const inputs = [
   "lib/question-banks-source.js", "lib/question-restorations.js",
-  "lib/question-quality-policy.js", "lib/question-quality.js",
+  "lib/question-quality-policy.js", "lib/question-quality.js", "lib/question-editorial-normalization.js",
 ];
 for (const directory of directories) {
   for (const file of await readdir(new URL(`${directory}/`, root))) {
