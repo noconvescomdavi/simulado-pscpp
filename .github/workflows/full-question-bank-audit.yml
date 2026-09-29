@@ -2,6 +2,8 @@ name: Full Question Bank Audit
 on:
   pull_request:
     branches: [main]
+  push:
+    branches: [audit/pscpp-editorial-complete-20260923]
   workflow_dispatch:
 jobs:
   audit:
@@ -11,7 +13,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: node scripts/audit-full-question-bank.mjs || true
+      - run: node scripts/audit-full-question-bank.mjs
       - uses: actions/upload-artifact@v4
         with:
           name: full-question-bank-audit

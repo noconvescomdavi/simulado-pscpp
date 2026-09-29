@@ -1,0 +1,16 @@
+name: PSCPP Editorial Stage 2
+on:
+  workflow_dispatch:
+jobs:
+  quarantine:
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: node scripts/quarantine-pscpp-editorial-stage2.mjs
+      - run: node scripts/audit-question-semantics.mjs
+      - run: QUESTIONS_MAIN_ONLY=1 node scripts/audit-full-question-bank.mjs
+      - run: git diff --exit-code data/questions reports

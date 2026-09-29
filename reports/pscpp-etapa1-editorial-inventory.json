@@ -1,0 +1,36 @@
+{
+  "stage": "ETAPA_1_INVENTARIO_EDITORIAL",
+  "source_run_id": 35927878500,
+  "source_commit": "8852d67b8aa794e3e8e7d90b0b77b69628f9ddaa",
+  "totals": {
+    "flags": 8198,
+    "unique_questions": 6886,
+    "objective_defects": 4,
+    "strong_editorial_candidates": 183,
+    "heuristic_source_review": 6699,
+    "multi_flag_questions": 1273
+  },
+  "by_code": {
+    "STEM_ANSWER_OVERLAP": 1275,
+    "STEM_SOURCE_FRAGMENT": 6730,
+    "MISSING_REFERENT": 4,
+    "ARTIFICIAL_TEMPLATE": 165,
+    "TERMINOLOGY_TRANSLATION": 24
+  },
+  "unique_by_subject": {
+    "arte-naval": 689,
+    "comunicacoes": 730,
+    "conhecimentos-gerais": 1125,
+    "legislacao-regulamentacao": 1267,
+    "manobrabilidade": 1048,
+    "meteorologia-oceanografia": 1150,
+    "navegacao-aguas-restritas": 877
+  },
+  "objective_defects": [
+    {"subject":"legislacao-regulamentacao","id":"LEG-0382","codes":["MISSING_REFERENT","STEM_ANSWER_OVERLAP","STEM_SOURCE_FRAGMENT"]},
+    {"subject":"legislacao-regulamentacao","id":"LEG-0602","codes":["MISSING_REFERENT","STEM_SOURCE_FRAGMENT"]},
+    {"subject":"legislacao-regulamentacao","id":"LEG-1179","codes":["MISSING_REFERENT","STEM_ANSWER_OVERLAP","STEM_SOURCE_FRAGMENT"]},
+    {"subject":"legislacao-regulamentacao","id":"LEG-1273","codes":["MISSING_REFERENT","STEM_SOURCE_FRAGMENT"]}
+  ],
+  "classification_note": "MISSING_REFERENT is an objective incomplete-stem defect. ARTIFICIAL_TEMPLATE and TERMINOLOGY_TRANSLATION are strong editorial candidates. STEM_SOURCE_FRAGMENT and STEM_ANSWER_OVERLAP alone are heuristic signals requiring source comparison; they are not treated as proven defects solely from regex/lexical overlap."
+}

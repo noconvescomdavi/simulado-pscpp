@@ -2162,9 +2162,9 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "arte-naval",
-      "active": true,
-      "validation_status": "approved",
-      "question": "Correlacione os termos às respectivas descrições, com base em IMO Resolution A.1108(29) — Amendments to A.1045(27):",
+      "active": false,
+      "validation_status": "quarantined_irrecoverable_source_mismatch",
+      "question": "Correlacione os termos às respectivas descrições, com base em IMO Resolution A.1108(29) — Amendments to A.1045(27):\n\nCOLUNA A\n1) montantes de pega após a emenda de 2015\n2) montantes de pega após a emenda de 2015\n3) Giro curto e circular em velocidade baixa\n4) Governo dos navios de um ou mais hélices e um ou dois lemes\n\nCOLUNA B\na) Apenas as afirmativas II e IV são verdadeiras.\nb) dois apoios separados e rigidamente fixados à estrutura no acesso por escada de borda\nc) Apenas as afirmativas II e IV são verdadeiras.\nd) montantes de pega após a emenda de 2015",
       "assertions": [
         "1) montantes de pega após a emenda de 2015",
         "2) montantes de pega após a emenda de 2015",
@@ -2275,7 +2275,9 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "ANV-B016-07",
         "source_block": 16
-      }
+      },
+      "quarantine_reason": "Questão de correlação contém descrições incompatíveis/contaminadas e os metadados bibliográficos não sustentam os termos apresentados; reconstrução segura exigiria inventar conteúdo ou referência.",
+      "editorial_status": "QUARENTENA_IRRECUPERÁVEL"
     },
     {
       "id": "ANV-B016-08",
@@ -7291,7 +7293,7 @@
       "source_subject": "comunicacoes",
       "active": true,
       "validation_status": "approved",
-      "question": "Correlacione os termos às respectivas descrições, com base em International Code of Signals, Pub. 102: Considere o contexto específico identificado por COM-B016-04.",
+      "question": "Correlacione os termos às respectivas descrições, com base em International Code of Signals, Pub. 102: Considere o contexto específico identificado por COM-B016-04.\n\nCOLUNA A\n1) AC\n2) AE 1\n3) I shall abandon my vessel unless you will remain by me, ready to assist.\n4) AF\n\nCOLUNA B\na) I am abandoning my vessel.\nb) I (or crew of vessel indicated) wish to abandon my (or their) vessel, but have not the means.\nc) AE 2\nd) I do not intend to abandon my vessel.",
       "assertions": [
         "1) AC",
         "2) AE 1",

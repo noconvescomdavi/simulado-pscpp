@@ -73,3 +73,6 @@ jobs:
         run: npm run validate:historical-blueprint
       - name: Production build
         run: npm run build
+
+      - name: Audit locator-dependent stems in common banks
+        run: node scripts/audit-locator-dependent-stems.mjs
