@@ -1,0 +1,64 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: estibordo
+      POSTGRES_PASSWORD: estibordo_dev
+      POSTGRES_DB: estibordo
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U estibordo -d estibordo"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: on-failure
+
+  migrate:
+    image: postgres:16-alpine
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./db:/db:ro
+      - ./scripts/base44-migrate.sh:/migrate.sh:ro
+    environment:
+      PGPASSWORD: estibordo_dev
+    entrypoint: ["/bin/sh", "/migrate.sh"]
+    restart: "no"
+
+  web:
+    image: node:22
+    depends_on:
+      postgres:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    volumes:
+      - .:/app
+    working_dir: /app
+    env_file:
+      - ./.env.base44-defaults
+      - /run/base44/app.env
+    environment:
+      - DATABASE_URL=postgresql://estibordo:estibordo_dev@postgres:5432/estibordo
+      - NEXT_PUBLIC_APP_URL=https://3000-${BASE44_PUBLIC_HOST_SUFFIX}
+      - AUTH_SESSION_DAYS=30
+      - NEXT_PUBLIC_SITE_NAME=ESTIBORDO
+      - PSCPP_ANNUAL_PRICE_CENTS=259900
+      - NODE_ENV=development
+      - BASE44_PUBLIC_HOST_SUFFIX=${BASE44_PUBLIC_HOST_SUFFIX}
+      - __VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS
+    command: ["sh", "-ec", "npm install && npm run generate:pscpp-bank && npm run generate:question-banks && npm run generate:question-catalog && npm run generate:flashcard-decks && exec npx next dev -H 0.0.0.0 -p 3000"]
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"fetch('http://127.0.0.1:3000/api/health?shallow=1').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))\""]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 90s
+    restart: on-failure
+
+volumes:
+  pgdata:

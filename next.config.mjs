@@ -17,6 +17,11 @@ const securityHeaders = [
 const nextConfig = {
   poweredByHeader: false,
 
+  // Allow the Base44 preview origin to access dev assets/HMR.
+  allowedDevOrigins: process.env.BASE44_PUBLIC_HOST_SUFFIX
+    ? ["3000-" + process.env.BASE44_PUBLIC_HOST_SUFFIX]
+    : [],
+
   // Keep large data/content files out of the Cloudflare Worker server bundle.
   // They are runtime/static resources and must not be traced into handler.mjs.
   outputFileTracingExcludes: {
