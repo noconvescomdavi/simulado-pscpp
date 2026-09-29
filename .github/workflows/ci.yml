@@ -71,6 +71,9 @@ jobs:
           NEXT_PUBLIC_APP_URL: http://127.0.0.1:3000
         run: npm run build
 
+      - name: Legislation notebook content and editorial regression
+        run: npm run test:legislation-content && npm run validate:editorial-runtime
+
       - name: HTTP smoke E2E
         env:
           DATABASE_URL: postgresql://placeholder:placeholder@localhost:5432/placeholder
