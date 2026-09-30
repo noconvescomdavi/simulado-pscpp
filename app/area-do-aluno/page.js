@@ -6,6 +6,7 @@ import {normalizeSubject,subjectLabel,SUBJECTS} from "../../lib/subjects";
 import StudentHeader from "../components/StudentHeader";
 import ExamCountdown from "../components/ExamCountdown";
 import {consistencyFromDays} from "../../lib/consistency-summary";
+import {getStudyTimeSummary} from "../../lib/learning-summary";
 import { unstable_cache } from "next/cache";
 import "./dashboard.css";
 
@@ -23,7 +24,7 @@ export default async function Area(){
   if(!session)redirect("/login");
 
   const dataStarted=Date.now();
-  const [access,progress,performance,profile,recentExams,learning,studyDays,studentIntel]=await Promise.all([
+  const [access,progress,performance,profile,recentExams,learning,studyDays,studentIntel,studyTime,planProgress]=await Promise.all([
     cachedAccess(session.id),
     query("select subject,percent from study_progress where user_id=$1",[session.id]),
     Promise.all([
@@ -43,7 +44,9 @@ export default async function Area(){
     query("select id,subject,status,answered_count,correct_count,started_at from exam_sessions where user_id=$1 order by started_at desc limit 4",[session.id]).catch(()=>({rows:[]})),
     query(`select subject_slug,topic_code,topic_label,mastery_score,confidence_score,answers,errors,last_activity_at from student_topic_mastery where user_id=$1 order by mastery_score asc,errors desc`,[session.id]).then(r=>{const topics=r.rows.map(x=>({...x,subject:x.subject_slug,topic:x.topic_label}));const populated=new Map();for(const x of topics){const a=populated.get(x.subject)||{sum:0,weight:0};const w=Math.max(1,Number(x.confidence_score||0));a.sum+=Number(x.mastery_score||0)*w;a.weight+=w;populated.set(x.subject,a)}const vals=[...populated.values()].map(x=>x.weight?x.sum/x.weight:0);return{overall_mastery:vals.length?Math.round(vals.reduce((a,b)=>a+b,0)/vals.length*10)/10:0,weakest_topics:topics.slice(0,10)}}).catch(()=>({overall_mastery:0,weakest_topics:[]})),
     query(`select study_date from study_days where user_id=$1 and activity_count>0 order by study_date desc limit 365`,[session.id]),
-    query(`select count(*)::int as due from student_review_queue where user_id=$1 and source_type='topic' and state<>'suspended' and due_at<=now()`,[session.id]).then(r=>({due:Number(r.rows[0]?.due||0)})).catch(()=>({due:0}))
+    query(`select count(*)::int as due from student_review_queue where user_id=$1 and source_type='topic' and state<>'suspended' and due_at<=now()`,[session.id]).then(r=>({due:Number(r.rows[0]?.due||0)})).catch(()=>({due:0})),
+    getStudyTimeSummary(session.id),
+    query(`select count(*) filter(where status='pending')::int pending,count(*) filter(where status='done')::int done from student_plan_task_progress where user_id=$1`,[session.id]).then(r=>r.rows[0]||{pending:0,done:0}).catch(()=>({pending:0,done:0}))
   ]);
   if(Date.now()-dataStarted>500)console.warn("[perf] dashboard_data_slow",{elapsed_ms:Date.now()-dataStarted});
   const consistency=consistencyFromDays(studyDays.rows,performance.totalAnswered);
@@ -132,7 +135,7 @@ export default async function Area(){
             <article><i>▥</i><div><span>Aproveitamento</span><strong>{performance.overall.accuracy}%</strong><small>Média geral</small></div></article>
             <article><i>◷</i><div><span>Progresso</span><strong>{overall}%</strong><small>Conteúdo estudado</small></div></article>
             <article><i>◎</i><div><span>Domínio estimado</span><strong>{Math.round(mastery)}%</strong><small>Mastery Score</small></div></article>
-            <article><i>◴</i><div><span>Tempo real</span><strong>{0} min</strong><small>Últimos 7 dias</small></div></article>
+            <article><i>◴</i><div><span>Tempo real</span><strong>{fmt(studyTime.week_minutes)} min</strong><small>Últimos 7 dias</small></div></article>
           </div>
         </section>
 
@@ -146,7 +149,7 @@ export default async function Area(){
             <div><span>Melhor disciplina</span><strong>{strongest?strongest.label:"Aguardando dados"}</strong><small>{strongest?`${strongest.accuracy}% de acerto`:"Responda questões para calcular"}</small></div>
             <div><span>Ponto de atenção</span><strong>{weakest?weakest.label:"Aguardando dados"}</strong><small>{weakest?`${weakest.accuracy}% de acerto`:"Responda questões para calcular"}</small></div>
             <div><span>Cobertura de simulados</span><strong>{examCoverage}%</strong><small>Meta de referência: 7 simulados</small></div>
-            <div><span>Aderência ao plano</span><strong>{100}%</strong><small>{0} pendência(s) em aberto</small></div>
+            <div><span>Pendências do plano</span><strong>{fmt(planProgress.pending)}</strong><small>{fmt(planProgress.done)} tarefa(s) concluída(s) no histórico</small></div>
             <div><span>1ª leitura projetada</span><strong>{null?new Date(null+"T12:00:00").toLocaleDateString("pt-BR"):"—"}</strong><small>{false?"Dentro do ritmo atual":"Risco de atraso no ritmo atual"}</small></div>
           </div>
         </section>
