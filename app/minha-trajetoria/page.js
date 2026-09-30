@@ -85,7 +85,7 @@ export default async function MinhaTrajetoria(){
       <div className={styles.subjectGrid}>{graph.subjects.map(subject=><article key={subject.slug}>
         <div className={styles.subjectHead}><div><strong>{subject.title}</strong><small>{subject.measured_topics} tópicos medidos · {subject.bibliography_units} unidades bibliográficas</small></div><b>{Math.round(Number(subject.mastery_score||0))}%</b></div>
         <div className={styles.bar}><i style={{width:Math.max(2,Number(subject.mastery_score||0))+"%"}}/></div>
-        <div className={styles.weakest}>{subject.works.map(work=><div key={work.id}><strong>{work.title}</strong>{work.chapters.map(ch=><div key={ch.id}><small>{ch.label}</small>{ch.topics.map(topic=><div key={topic.id}><span>{topic.label}</span><b>{Number(topic.confidence_score||0)<=0?"Não avaliado":Math.round(Number(topic.mastery_score||0))+"%"}</b></div>)}</div>)}</div>)}</div>
+        <div className={styles.weakest}>{subject.works.map(work=><details key={work.id}><summary><strong>{work.title}</strong></summary>{work.chapters.map(ch=><details key={ch.id}><summary><small>{ch.label}</small></summary>{ch.topics.map(topic=><div key={topic.id}><span>{topic.label}</span><b>{Number(topic.confidence_score||0)<=0?"Não avaliado":Math.round(Number(topic.mastery_score||0))+"%"}</b></div>)}</details>)}</details>)}</div>
       </article>)}</div>
     </section>
 
@@ -94,7 +94,7 @@ export default async function MinhaTrajetoria(){
       <i/>
       <div><span>META INTERNA</span><strong>15/07/2027</strong><small>margem operacional da 1ª leitura</small></div>
       <i/>
-      <div><span>1ª PASSAGEM</span><strong>01/08/2027</strong><small>100% da bibliografia ao menos uma vez</small></div>
+      <div><span>1ª PASSAGEM</span><strong>30/07/2027</strong><small>100% da bibliografia ao menos uma vez</small></div>
       <i/>
       <div><span>PROVA</span><strong>01/11/2027</strong><small>reta final de revisão pesada</small></div>
     </section>
