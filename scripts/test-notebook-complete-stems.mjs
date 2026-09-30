@@ -40,7 +40,13 @@ for (const edit of pack.edits) {
   const html = renderToStaticMarkup(React.createElement(StructuredQuestion, { question: notebookPublicQuestion(question) }));
   const escaped = text => renderToStaticMarkup(React.createElement("span", null, text)).slice(6, -7);
   const before = report.questions.find(q => q.bank === edit.bank && q.id === edit.id);
-  assert.equal(question.correct_answer, before.correct_answer, `Answer letter changed: ${edit.id}`);
+  if (before) {
+    assert.equal(question.correct_answer, before.correct_answer, `Answer letter changed: ${edit.id}`);
+  } else {
+    assert.ok(edit.source_file, `New restoration without source_file: ${edit.id}`);
+    assert.equal(edit.options, undefined, `New stem-only restoration must not replace options: ${edit.id}`);
+    assert.equal(edit.explanation, undefined, `New stem-only restoration must not replace explanation: ${edit.id}`);
+  }
   if (edit.association_pairs) {
     assert.equal(structure.type, "correlation");
     assert.ok(html.includes("COLUNA A") && html.includes("COLUNA B"));
@@ -57,8 +63,10 @@ for (const edit of pack.edits) {
       assert.equal(new Set(option.text.split(" – ")).size, edit.association_pairs.length);
     }
   } else {
-    assert.equal(digest(question.options), before.options_sha256, `Options changed: ${edit.id}`);
-    assert.equal(digest(question.explanation), before.explanation_sha256, `Explanation changed: ${edit.id}`);
+    if (before) {
+      assert.equal(digest(question.options), before.options_sha256, `Options changed: ${edit.id}`);
+      assert.equal(digest(question.explanation), before.explanation_sha256, `Explanation changed: ${edit.id}`);
+    }
     if (edit.reasons.includes("inline_assertions_removed")) {
       const items = structure.blocks.flatMap(b => b.type === "assertions" ? b.items : []);
       assert.ok(items.length >= 2, `Unparsed inline statements: ${edit.id}`);
