@@ -32,11 +32,9 @@ export default async function MinhaTrajetoria(){
     embarkationDays:profile.embarkation_days,
     commandDays:profile.command_days
   });
-  const metricSubjects=plan.metrics?.subjects||[];
-  const examAttempts=metricSubjects.reduce((sum,row)=>sum+Number(row.attempts||0),0);
-  const examAverage=examAttempts
-    ? metricSubjects.reduce((sum,row)=>sum+Number(row.average_score||0)*Number(row.attempts||0),0)/examAttempts
-    : 0;
+  const examOverall=await query(`select count(*)::int attempts,coalesce(avg(score_percent),0)::numeric average_score from exam_attempts where user_id=$1`,[session.id]).then(r=>r.rows[0]||{}).catch(()=>({attempts:0,average_score:0}));
+  const examAttempts=Number(examOverall.attempts||0);
+  const examAverage=Number(examOverall.average_score||0);
   const metrics={overall:{
     exam_average:examAverage,
     title_score:titleScore.total,
@@ -62,7 +60,7 @@ export default async function MinhaTrajetoria(){
     <section className={styles.titleMetrics}>
       <div className={styles.head}><div><span>AVALIAÇÃO PSCPP</span><h2>Simulados e Prova de Títulos</h2></div></div>
       <div className={styles.titleMetricGrid}>
-        <article><span>MÉDIA DOS SIMULADOS</span><strong>{Number(metrics.overall.exam_average||0).toLocaleString("pt-BR",{minimumFractionDigits:1,maximumFractionDigits:1})}%</strong><small>média de todos os simulados concluídos</small></article>
+        <article><span>MÉDIA DOS SIMULADOS</span><strong>{Number(metrics.overall.exam_average||0).toLocaleString("pt-BR",{minimumFractionDigits:1,maximumFractionDigits:1})}%</strong><small>{examAttempts} simulado(s) registrado(s)</small></article>
         <article><span>PROVA DE TÍTULOS</span><strong>{Number(metrics.overall.title_score||0).toLocaleString("pt-BR",{minimumFractionDigits:1,maximumFractionDigits:1})} / 10</strong><small>pontuação calculada conforme Edital PSCPP 2012</small></article>
       </div>
       <div className={styles.titleBreakdown}>
@@ -85,7 +83,7 @@ export default async function MinhaTrajetoria(){
       <div className={styles.subjectGrid}>{graph.subjects.map(subject=><article key={subject.slug}>
         <div className={styles.subjectHead}><div><strong>{subject.title}</strong><small>{subject.measured_topics} tópicos medidos · {subject.bibliography_units} unidades bibliográficas</small></div><b>{Math.round(Number(subject.mastery_score||0))}%</b></div>
         <div className={styles.bar}><i style={{width:Math.max(2,Number(subject.mastery_score||0))+"%"}}/></div>
-        <div className={styles.weakest}>{subject.works.map(work=><div key={work.id}><strong>{work.title}</strong>{work.chapters.map(ch=><div key={ch.id}><small>{ch.label}</small>{ch.topics.map(topic=><div key={topic.id}><span>{topic.label}</span><b>{Number(topic.confidence_score||0)<=0?"Não avaliado":Math.round(Number(topic.mastery_score||0))+"%"}</b></div>)}</div>)}</div>)}</div>
+        <div className={styles.weakest}>{subject.works.map(work=><details key={work.id} className={styles.work}><summary><strong>{work.title}</strong><span>{work.chapters.length} capítulo(s)</span></summary><div className={styles.chapterGrid}>{work.chapters.map(ch=><details key={ch.id} className={styles.chapter}><summary><small>{ch.label}</small><span>{ch.topics.length} tópico(s)</span></summary><div className={styles.topicGrid}>{ch.topics.map(topic=><div key={topic.id} className={styles.topic}><span>{topic.label}</span><b>{Number(topic.confidence_score||0)<=0?"Não avaliado":Math.round(Number(topic.mastery_score||0))+"%"}</b></div>)}</div></details>)}</div></details>)}</div>
       </article>)}</div>
     </section>
 
