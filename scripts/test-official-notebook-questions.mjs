@@ -71,7 +71,7 @@ async function query(sql,params=[]){
   return {rows:[],rowCount:1};
 }
 const source=await readFile(new URL("../lib/notebooks.js",import.meta.url),"utf8");
-const executable=source.replace(/^import[\s\S]*?;\s*$/gm,"")
+const executable=source.replace(/^\uFEFF/,"").replace(/^import[\s\S]*?;\s*$/gm,"")
   .replace(/^export \{[^}]*\} from [^;]*;/gm,"").replace(/\bexport /g,"");
 const dependencies={randomInt,query,withTransaction:fn=>fn({query}),getQuestionBank,getQuestion,
   publicQuestion,filterQuestions,normalizeQuestionFilters,questionTaxonomy,normalizeSubject,
