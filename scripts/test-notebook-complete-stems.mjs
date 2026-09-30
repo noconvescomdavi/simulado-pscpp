@@ -87,6 +87,27 @@ for (const [bank, data] of Object.entries(banks)) {
 const activeFragoso = (banks["arte-naval"]?.questions || []).filter(
   question => question?.taxonomy?.bibliography_id === "fragoso"
 );
+if (activeFragoso.length !== 144) {
+  const arteSource = JSON.parse(fs.readFileSync(new URL("../data/questions/arte-naval.json", import.meta.url), "utf8"));
+  const [{ applyQuestionRestorations, applyContentEditorialRestoration }, { reformulateLeakingStem }, { normalizeEditorialStem }, { restoreCompleteNotebookStem }, { questionQualityState }] = await Promise.all([
+    import("../lib/question-restorations.js"),
+    import("../lib/question-quality.js"),
+    import("../lib/question-editorial-normalization.js"),
+    import("../lib/notebook-stem-restorations.js"),
+    import("../lib/question-quality-policy.js"),
+  ]);
+  const restored = applyQuestionRestorations("arte-naval", arteSource);
+  const activeIds = new Set(activeFragoso.map(question => String(question.id)));
+  const diagnostics = (restored.questions || [])
+    .filter(question => question?.taxonomy?.bibliography_id === "fragoso")
+    .map(question => applyContentEditorialRestoration("arte-naval", question))
+    .map(reformulateLeakingStem)
+    .map(normalizeEditorialStem)
+    .map(question => restoreCompleteNotebookStem("arte-naval", question))
+    .filter(question => !activeIds.has(String(question.id)))
+    .map(question => ({ id: question.id, reason: questionQualityState(question).reason, question: question.question, correct_answer: question.correct_answer }));
+  console.error("FRAGOSO_INACTIVE_DIAGNOSTICS", JSON.stringify(diagnostics, null, 2));
+}
 assert.equal(activeFragoso.length, 144, "As 144 questões de Rebocadores Portuários devem permanecer ativas no banco de cadernos");
 assert.equal(audited, 9823);
 assert.equal(pack.edits.length, 474);
