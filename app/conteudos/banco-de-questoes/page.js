@@ -5,6 +5,7 @@ import {availableQuestionBanks} from "../../../lib/question-catalog";
 import {listNotebookHistory} from "../../../lib/notebook-history";
 import StudentHeader from "../../components/StudentHeader";
 import Builder from "./Builder";
+import {officialNotebookMetadata} from "../../../lib/official-notebook-questions";
 import styles from "./bank.module.css";
 
 export default async function Page({searchParams}){
@@ -17,7 +18,7 @@ export default async function Page({searchParams}){
   const q=await searchParams;
   const history=await listNotebookHistory(s.id,30);
   const requested=String(q?.materia||q?.subject||"").trim();
-  const banks=availableQuestionBanks({includeFilters:true});
+  const banks=availableQuestionBanks({includeFilters:true}).map(bank=>({...bank,...officialNotebookMetadata(bank.slug)}));
   const initialSubjects=requested&&banks.some(b=>b.slug===requested&&b.count)
     ? [requested]
     : [];
@@ -30,7 +31,7 @@ export default async function Page({searchParams}){
         <h1>Banco de questões</h1>
         <p>{e.trial
           ?"Período de testes: gere 1 bloco com 10 questões."
-          :"Marque as matérias, filtre por obra, capítulo ou assunto e gere um caderno de 1 a 100 questões."}</p>
+          :"Marque as matérias, filtre por obra, capítulo, assunto ou provas anteriores e gere um caderno de 1 a 100 questões."}</p>
         <Builder
           banks={banks}
           trial={e.trial}

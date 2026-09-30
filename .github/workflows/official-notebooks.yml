@@ -1,0 +1,23 @@
+name: Official notebooks
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  historical-notebooks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Generate runtime banks and catalog
+        run: |
+          node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-pscpp-runtime-bank.mjs
+          node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-question-banks.mjs
+          node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-question-catalog.mjs
+      - name: Official source and notebook lifecycle regression
+        run: node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-official-notebook-questions.mjs
+      - name: Existing catalog equivalence
+        run: node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-runtime-question-catalog.mjs

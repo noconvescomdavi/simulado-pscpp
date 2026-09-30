@@ -25,14 +25,27 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
   const [busy,setBusy]=useState(false);
   const [filters,setFilters]=useState({...EMPTY_QUESTION_FILTERS});
   const facets={
-    works:mergeFacetList(banks.flatMap(bank=>bank.filters?.works||[])),
-    chapters:mergeFacetList(banks.flatMap(bank=>bank.filters?.chapters||[])),
-    modules:mergeFacetList(banks.flatMap(bank=>bank.filters?.modules||[])),
+    works:mergeFacetList(banks.flatMap(bank=>(filters.official_only?bank.official_filters:bank.filters)?.works||[])),
+    chapters:mergeFacetList(banks.flatMap(bank=>(filters.official_only?bank.official_filters:bank.filters)?.chapters||[])),
+    modules:mergeFacetList(banks.flatMap(bank=>(filters.official_only?bank.official_filters:bank.filters)?.modules||[])),
   };
 
   function toggleSubject(slug){
     setS(current=>current.includes(slug)?current.filter(item=>item!==slug):[...current,slug]);
-    setFilters({...EMPTY_QUESTION_FILTERS});
+    setFilters({...EMPTY_QUESTION_FILTERS,official_only:filters.official_only,exam_year:filters.exam_year});
+  }
+
+  function bankCount(bank, next=filters){
+    return next.official_only
+      ? Number(next.exam_year ? bank.official_year_counts?.[next.exam_year]||0 : bank.official_count||0)
+      : Number(bank.count||0);
+  }
+
+  function changeFilters(next){
+    if(next.official_only){
+      setS(current=>current.filter(slug=>banks.some(bank=>bank.slug===slug&&bankCount(bank,next)>0)));
+    }
+    setFilters(next);
   }
 
   async function go(){
@@ -78,23 +91,23 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
     location.href=`/conteudos/caderno/${p.notebook.id}`;
   }
 
-  const totalSelected=banks.filter(x=>s.includes(x.slug)).reduce((sum,x)=>sum+Number(x.count||0),0);
+  const totalSelected=banks.filter(x=>s.includes(x.slug)).reduce((sum,x)=>sum+bankCount(x),0);
   return (
     <section className={styles.builderLayout}><div className={styles.box}>
       {fixation&&<p><strong>Modo fixação:</strong> o caderno usará somente as questões que correspondem ao conteúdo estudado. Se houver menos questões, o caderno será criado apenas com as disponíveis.</p>}
       <div className={styles.banks}>
         {banks.map(x=>(
-          <label key={x.slug} className={!x.count?styles.off:""}>
+          <label key={x.slug} className={!bankCount(x)?styles.off:""}>
             <input
               type="checkbox"
-              disabled={!x.count}
+              disabled={!bankCount(x)}
               checked={s.includes(x.slug)}
               onChange={()=>toggleSubject(x.slug)}
             />
             <span>
               <b>{x.title}</b>
-              <small>{x.count?`${x.count} questões`:"Aguardando upload"}</small>
-              {x.ripeam_count>0&&<small><strong>{x.ripeam_count} RIPEAM</strong> · use o filtro abaixo para emitir somente essas</small>}
+              <small>{bankCount(x)?`${bankCount(x)} questões`:filters.official_only?"Sem questões oficiais neste recorte":"Aguardando upload"}</small>
+              {!filters.official_only&&x.ripeam_count>0&&<small><strong>{x.ripeam_count} RIPEAM</strong> · use o filtro abaixo para emitir somente essas</small>}
             </span>
           </label>
         ))}
@@ -104,7 +117,8 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
         <QuestionFilterControls
           facets={facets}
           value={filters}
-          onChange={setFilters}
+          onChange={changeFilters}
+          allowOfficial
           subjects={s}
         />
       )}

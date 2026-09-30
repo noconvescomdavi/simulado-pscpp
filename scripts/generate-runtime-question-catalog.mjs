@@ -3,6 +3,7 @@ import {createHash} from "node:crypto";
 import {readFile,writeFile} from "node:fs/promises";
 import {buildQuestionFilterFacets,isRipeamQuestion,questionTaxonomy} from "../lib/question-filters.js";
 import {isPscppEditoriallyEligible} from "../lib/pscpp-exam-selection.js";
+import {selectOfficialNotebookQuestions} from "../lib/official-notebook-questions.js";
 
 const root=new URL("../",import.meta.url);
 const output=new URL("../data/questions/runtime-question-catalog.json",import.meta.url);
@@ -11,7 +12,7 @@ const scopeOutput=new URL("../data/questions/runtime-notebook-scope.json",import
 const notebook=JSON.parse(await readFile(new URL("data/questions/runtime-active-banks.json",root),"utf8"));
 const pscpp=JSON.parse(await readFile(new URL("data/pscpp/runtime-active-questions.json",root),"utf8"));
 const digest=createHash("sha256");
-for(const source of ["lib/question-filters.js","lib/pscpp-exam-selection.js","lib/subjects.js"]){
+for(const source of ["lib/question-filters.js","lib/pscpp-exam-selection.js","lib/subjects.js","lib/official-notebook-questions.js","lib/historical-exam-blueprint.js","data/pscpp/official-exams.json"]){
   digest.update(source).update(await readFile(new URL(source,root)));
 }
 const sourceHash=digest.update(notebook.source_hash).update(pscpp.source_hash).digest("hex");
@@ -40,6 +41,13 @@ if(process.argv.includes("--check")){
       }];
     }))
   ]));
+  for(const q of selectOfficialNotebookQuestions(Object.keys(notebook.banks))){
+    const taxonomy=questionTaxonomy(q,q.source_subject);
+    scope_index[q.source_subject][String(q.id)]={
+      work_id:taxonomy.work?.id||null,work_label:taxonomy.work?.title||null,
+      chapter_id:taxonomy.chapter?.id||null,chapter_label:taxonomy.chapter?.label||null
+    };
+  }
   const eligible=pscpp.questions.filter(isPscppEditoriallyEligible);
   banks.push({slug:"simulado-pscpp",title:"SIMULADO PSCPP",count:eligible.length,
     ripeam_count:eligible.filter(isRipeamQuestion).length,
