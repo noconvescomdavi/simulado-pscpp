@@ -84,7 +84,11 @@ for (const [bank, data] of Object.entries(banks)) {
     if (missingPairs) assert.ok(structure.blocks.some(b => b.type === "columns"), `Association without columns: ${bank}/${q.id}`);
   }
 }
-assert.equal(audited, 9711);
+const activeFragoso = (banks["arte-naval"]?.questions || []).filter(
+  question => question?.taxonomy?.bibliography_id === "fragoso"
+);
+assert.equal(activeFragoso.length, 144, "As 144 questões de Rebocadores Portuários devem permanecer ativas no banco de cadernos");
+assert.equal(audited, 9823);
 assert.equal(pack.edits.length, 474);
 assert.equal(Object.keys(byBank).length, 7);
 assert.deepEqual(reasons, {inline_assertions_removed: 346, fill_sentence_removed: 10, association_columns_missing: 45, empty_fill_context: 72, incomplete_association_command: 1});
