@@ -16,6 +16,7 @@ on:
       - 'package.json'
   push:
     branches:
+      - main
       - feature/auditoria-integral-banco-normal-pscpp
     paths:
       - 'data/questions/*.json'
