@@ -1,5 +1,6 @@
 import {redirect} from "next/navigation";
 import {getSession} from "../../lib/auth";
+import {getIntegratedStudyPlan} from "../../lib/integrated-study-plan";
 import {getUserAccess} from "../../lib/access";
 import {query} from "../../lib/db";
 import {normalizeSubject,subjectLabel,SUBJECTS} from "../../lib/subjects";
@@ -23,7 +24,7 @@ export default async function Area(){
   if(!session)redirect("/login");
 
   const dataStarted=Date.now();
-  const [access,progress,performance,profile,recentExams,learning,studyDays,studentIntel]=await Promise.all([
+  const [access,progress,performance,profile,recentExams,learning,studyDays,studentIntel,integratedPlan]=await Promise.all([
     cachedAccess(session.id),
     query("select subject,percent from study_progress where user_id=$1",[session.id]),
     Promise.all([
@@ -47,6 +48,12 @@ export default async function Area(){
   ]);
   if(Date.now()-dataStarted>500)console.warn("[perf] dashboard_data_slow",{elapsed_ms:Date.now()-dataStarted});
   const consistency=consistencyFromDays(studyDays.rows,performance.totalAnswered);
+  const tracking=integratedPlan?.tracking||{};
+  const weekMinutes=Number(tracking?.study_time?.week_minutes||0);
+  const adherence=Number(tracking?.adherence_percent??0);
+  const backlogCount=Number(tracking?.backlog_count||0);
+  const projectedFinish=integratedPlan?.first_pass?.projected_finish||null;
+  const projectedOnTrack=integratedPlan?.first_pass?.on_track===true;
 
   const active=access?.active===true;
   const mastery=Number(learning?.overall_mastery||0);
@@ -57,7 +64,8 @@ export default async function Area(){
   const ranked=[...performance.subjects].filter(s=>s.questions>0).sort((a,b)=>b.accuracy-a.accuracy);
   const strongest=ranked[0]||null;
   const weakest=ranked.length?ranked[ranked.length-1]:null;
-  const examCoverage=Math.min(100,Math.round((Number(performance.overall.attempts||0)/7)*100));
+  const examAttempts=Number(integratedPlan?.metrics?.overall?.attempts??performance.overall.attempts??0);
+  const examCoverage=Math.min(100,Math.round((examAttempts/7)*100));
   const volumeScore=Math.min(100,Math.round((Number(performance.overall.questions||0)/1000)*100));
   const legacyReadiness=Math.round(
     Number(performance.overall.accuracy||0)*0.45+
@@ -127,12 +135,12 @@ export default async function Area(){
         <section className="dashboardSection" id="desempenho">
           <div className="sectionTitle"><div><h2>Meu Progresso</h2><p>Acompanhe seus estudos em tempo real:</p></div><a href="#disciplinas">Ver estatísticas completas →</a></div>
           <div className="statsGridV2">
-            <article><i>◎</i><div><span>Simulados</span><strong>{fmt(performance.overall.attempts)}</strong><small>Realizados</small></div></article>
+            <article><i>◎</i><div><span>Simulados</span><strong>{fmt(examAttempts)}</strong><small>Realizados</small></div></article>
             <article><i>▤</i><div><span>Questões</span><strong>{fmt(performance.overall.questions)}</strong><small>Respondidas</small></div></article>
             <article><i>▥</i><div><span>Aproveitamento</span><strong>{performance.overall.accuracy}%</strong><small>Média geral</small></div></article>
             <article><i>◷</i><div><span>Progresso</span><strong>{overall}%</strong><small>Conteúdo estudado</small></div></article>
             <article><i>◎</i><div><span>Domínio estimado</span><strong>{Math.round(mastery)}%</strong><small>Mastery Score</small></div></article>
-            <article><i>◴</i><div><span>Tempo real</span><strong>{0} min</strong><small>Últimos 7 dias</small></div></article>
+            <article><i>◴</i><div><span>Tempo real</span><strong>{fmt(weekMinutes)} min</strong><small>Últimos 7 dias</small></div></article>
           </div>
         </section>
 
@@ -146,8 +154,8 @@ export default async function Area(){
             <div><span>Melhor disciplina</span><strong>{strongest?strongest.label:"Aguardando dados"}</strong><small>{strongest?`${strongest.accuracy}% de acerto`:"Responda questões para calcular"}</small></div>
             <div><span>Ponto de atenção</span><strong>{weakest?weakest.label:"Aguardando dados"}</strong><small>{weakest?`${weakest.accuracy}% de acerto`:"Responda questões para calcular"}</small></div>
             <div><span>Cobertura de simulados</span><strong>{examCoverage}%</strong><small>Meta de referência: 7 simulados</small></div>
-            <div><span>Aderência ao plano</span><strong>{100}%</strong><small>{0} pendência(s) em aberto</small></div>
-            <div><span>1ª leitura projetada</span><strong>{null?new Date(null+"T12:00:00").toLocaleDateString("pt-BR"):"—"}</strong><small>{false?"Dentro do ritmo atual":"Risco de atraso no ritmo atual"}</small></div>
+            <div><span>Aderência ao plano</span><strong>{adherence}%</strong><small>{backlogCount} pendência(s) em aberto</small></div>
+            <div><span>1ª leitura projetada</span><strong>{projectedFinish?new Date(projectedFinish+"T12:00:00").toLocaleDateString("pt-BR"):"—"}</strong><small>{projectedOnTrack?"Dentro do ritmo atual":"Risco de atraso no ritmo atual"}</small></div>
           </div>
         </section>
 
