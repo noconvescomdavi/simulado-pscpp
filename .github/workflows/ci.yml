@@ -42,7 +42,7 @@ jobs:
         run: npm run test:question-structure
 
       - name: Complete assertion stems and shared component regression
-        run: npm run test:complete-question-stems
+        run: npm run generate:pscpp-bank && npm run generate:question-banks && npm run test:complete-question-stems && npm run test:notebook-complete-stems
 
       - name: Apply editorial stage 2 quarantine
         run: node scripts/quarantine-pscpp-editorial-stage2.mjs

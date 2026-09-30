@@ -10,6 +10,7 @@
     "validate:questions": "node scripts/validate-question-banks.mjs",
     "test:question-structure": "node scripts/test-question-structure.mjs",
     "test:complete-question-stems": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-complete-question-stems.mjs",
+    "test:notebook-complete-stems": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-notebook-complete-stems.mjs",
     "validate:taxonomy:master": "node scripts/validate-question-taxonomy.mjs",
     "validate:taxonomy:arte-naval": "node scripts/validate-arte-naval-taxonomy.mjs",
     "validate:taxonomy": "npm run validate:taxonomy:master && npm run validate:taxonomy:arte-naval",
