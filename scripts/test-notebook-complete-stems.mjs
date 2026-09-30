@@ -109,8 +109,8 @@ if (activeFragoso.length !== 144) {
   console.error("FRAGOSO_INACTIVE_DIAGNOSTICS", JSON.stringify(diagnostics, null, 2));
 }
 assert.equal(activeFragoso.length, 144, "As 144 questões de Rebocadores Portuários devem permanecer ativas no banco de cadernos");
-assert.equal(audited, 9823);
-assert.equal(pack.edits.length, 474);
+assert.equal(audited, 9855);
+assert.equal(pack.edits.length, 506);
 assert.equal(Object.keys(byBank).length, 7);
-assert.deepEqual(reasons, {inline_assertions_removed: 346, fill_sentence_removed: 10, association_columns_missing: 45, empty_fill_context: 72, incomplete_association_command: 1});
+assert.deepEqual(reasons, {inline_assertions_removed: 365, fill_sentence_removed: 10, association_columns_missing: 45, empty_fill_context: 72, incomplete_association_command: 1, source_stem_replaced_by_runtime_normalization: 13});
 console.log(JSON.stringify({verified:pack.edits.length,by_bank:byBank,reasons,component_html_verified:true},null,2));
