@@ -1,0 +1,69 @@
+name: Rebuild arte-naval once
+
+on:
+  push:
+    branches:
+      - feature/rebocadores-portuarios-144
+    paths:
+      - .github/workflows/rebuild-arte-naval-once.yml
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Rebuild arte-naval.json
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .tmp-rebocadores/part_*.txt > data/questions/arte-naval.json
+
+      - name: Validate bank
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const p = 'data/questions/arte-naval.json';
+          const d = JSON.parse(fs.readFileSync(p, 'utf8'));
+          const qs = d.questions || [];
+          if (qs.length !== 1519) throw new Error('Expected 1519 questions, got ' + qs.length);
+          const added = qs.slice(-144);
+          if (added[0]?.id !== 'ANV-1376') throw new Error('First added ID mismatch');
+          if (added.at(-1)?.id !== 'ANV-1519') throw new Error('Last added ID mismatch');
+          const fragoso = added.filter(q => q?.taxonomy?.bibliography_id === 'fragoso');
+          if (fragoso.length !== 144) throw new Error('Expected 144 Fragoso questions, got ' + fragoso.length);
+          const valid = added.filter(q =>
+            Array.isArray(q.options) &&
+            q.options.length === 5 &&
+            ['A','B','C','D','E'].includes(q.correct_answer)
+          );
+          if (valid.length !== 144) throw new Error('Invalid options/answers in added questions');
+          const catalog = d?.bibliography_coverage?.works?.find(w => w.id === 'fragoso');
+          if (catalog?.question_count !== 144) throw new Error('Fragoso catalog count mismatch');
+          console.log(JSON.stringify({
+            total: qs.length,
+            first: added[0].id,
+            last: added.at(-1).id,
+            fragoso: fragoso.length,
+            valid: valid.length,
+            catalog: catalog.question_count
+          }));
+          NODE
+
+      - name: Commit rebuilt bank and remove staging chunks
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .tmp-rebocadores
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data/questions/arte-naval.json .tmp-rebocadores
+          git commit -m "feat(arte-naval): adiciona 144 questões de Rebocadores Portuários"
+          git push origin HEAD:feature/rebocadores-portuarios-144
