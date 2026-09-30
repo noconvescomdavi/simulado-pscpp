@@ -3,6 +3,8 @@
 import styles from "./question-filters.module.css";
 
 export const EMPTY_QUESTION_FILTERS = {
+  official_only: false,
+  exam_year: "",
   work_id: "",
   chapter_id: "",
   module: "",
@@ -23,6 +25,7 @@ export default function QuestionFilterControls({
   onChange,
   subjects = [],
   disabled = false,
+  allowOfficial = false,
 }) {
   const works = forSubjects(facets?.works, subjects);
   const modules = forSubjects(facets?.modules, subjects);
@@ -37,12 +40,33 @@ export default function QuestionFilterControls({
   }
 
   const hasHierarchy = works.length || chapters.length || modules.length;
-  if (!hasHierarchy) return null;
+  if (!hasHierarchy && !allowOfficial) return null;
 
   return (
     <fieldset className={styles.filters} disabled={disabled}>
       <legend>Filtrar o conteúdo das questões</legend>
       <p>Escolha os campos desejados. Os filtros vazios incluem todo o conteúdo selecionado.</p>
+
+      {allowOfficial && (
+        <label className={styles.checkLine}>
+          <input type="checkbox" checked={Boolean(value.official_only)}
+            onChange={event => onChange({...EMPTY_QUESTION_FILTERS, official_only: event.target.checked})} />
+          Somente questões oficiais de provas anteriores
+        </label>
+      )}
+      {allowOfficial && value.official_only && (
+        <>
+          <p>Enunciados originais de 2006, 2008, 2011 e 2012. Questões anuladas e itens com extração incompleta ficam de fora. Se houver menos questões, o caderno terá apenas as disponíveis.</p>
+          <label>
+            Ano da prova
+            <select value={value.exam_year || ""} onChange={event => onChange({...EMPTY_QUESTION_FILTERS,
+              official_only: true, exam_year: event.target.value})}>
+              <option value="">Todos os anos</option>
+              {[2006, 2008, 2011, 2012].map(year => <option key={year} value={year}>{year}</option>)}
+            </select>
+          </label>
+        </>
+      )}
 
       <div className={styles.grid}>
         <label>
