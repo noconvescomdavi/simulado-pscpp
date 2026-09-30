@@ -4,7 +4,7 @@ import { classifyQuestionStructure } from "../../lib/question-structure";
 function Text({children}){return <span className={styles.text}>{children}</span>}
 
 export default function StructuredQuestion({question,showOptions=false,optionRenderer}){
-  const structure=question?.structure || classifyQuestionStructure(question);
+  const structure=classifyQuestionStructure(question);
   const blocks=structure?.blocks?.length?structure.blocks:[{type:"stem",text:question?.question||""}];
   const options=structure?.options?.length===question?.options?.length?structure.options:(question?.options||[]);
   return <div className={styles.question} data-question-structure={structure?.type||"simple"}>
