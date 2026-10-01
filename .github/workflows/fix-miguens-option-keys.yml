@@ -1,0 +1,53 @@
+name: Fix Miguens Option Keys
+
+on:
+  push:
+    branches: [feature/miguens-v3-bancos-378]
+    paths:
+      - .github/workflows/fix-miguens-option-keys.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/miguens-v3-bancos-378
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Fix option keys
+        run: node scripts/fix-miguens-option-keys.mjs
+      - name: Validate integrated questions
+        run: |
+          node - <<'NODE'
+          const fs = require("fs");
+          const cases = [
+            ["data/questions/navegacao-aguas-restritas.json", /^NAV-MIGV3-C(37|38|40|42)-/, 255, 2080],
+            ["data/questions/meteorologia-oceanografia.json", /^MEO-MIGV3-C45-/, 123, 1353]
+          ];
+          for (const [path, re, expectedNew, expectedTotal] of cases) {
+            const bank = JSON.parse(fs.readFileSync(path, "utf8"));
+            if (bank.questions.length !== expectedTotal) throw new Error(path + ": total " + bank.questions.length);
+            const qs = bank.questions.filter(q => re.test(String(q.id || "")));
+            if (qs.length !== expectedNew) throw new Error(path + ": novas " + qs.length);
+            for (const q of qs) {
+              const keys = (q.options || []).map(o => o.key);
+              if (keys.join("") !== "ABCDE") throw new Error(q.id + ": opções " + keys.join(","));
+              if (!keys.includes(q.correct_answer)) throw new Error(q.id + ": gabarito inválido");
+              if ((q.options || []).some(o => "letter" in o)) throw new Error(q.id + ": campo letter remanescente");
+            }
+          }
+          console.log("Schema das 378 questões Miguens validado.");
+          NODE
+      - name: Commit corrected banks
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/questions/navegacao-aguas-restritas.json data/questions/meteorologia-oceanografia.json
+          git diff --cached --quiet || git commit -m "fix(questions): alinha schema das opções Miguens"
+          git push
