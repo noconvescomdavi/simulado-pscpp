@@ -1,15 +1,30 @@
 import fs from "node:fs";
-const path="data/questions/manobrabilidade.json";
-const bank=JSON.parse(fs.readFileSync(path,"utf8"));
-let changed=0, questions=0;
-for(const q of bank.questions||[]){
-  if(!String(q.id||"").startsWith("MAN-NSH-C02-")) continue;
-  questions++;
-  for(const option of q.options||[]){
-    if(!option.key && option.letter){ option.key=String(option.letter).trim().toUpperCase(); changed++; }
+
+const targets = [
+  { path: "data/questions/manobrabilidade.json", prefix: "MAN-NSH-C02-", expectedQuestions: 162, label: "Naval Shiphandling Chapter 2" },
+  { path: "data/questions/arte-naval.json", prefix: "AN-C10-", expectedQuestions: 108, label: "Arte Naval Chapter 10" },
+];
+
+let totalQuestions = 0;
+let totalKeys = 0;
+for (const target of targets) {
+  const bank = JSON.parse(fs.readFileSync(target.path, "utf8"));
+  let questions = 0;
+  let keys = 0;
+  for (const q of bank.questions || []) {
+    if (!String(q.id || "").startsWith(target.prefix)) continue;
+    questions++;
+    for (const option of q.options || []) {
+      if (!option.key && option.letter) {
+        option.key = String(option.letter).trim().toUpperCase();
+        keys++;
+      }
+    }
   }
+  if (questions !== target.expectedQuestions) throw new Error(`${target.label}: esperadas ${target.expectedQuestions} questões; encontradas ${questions}`);
+  fs.writeFileSync(target.path, JSON.stringify(bank, null, 2) + "\n");
+  totalQuestions += questions;
+  totalKeys += keys;
+  console.log(`${target.label}: ${questions} questões, ${keys} chaves normalizadas.`);
 }
-if(questions!==162) throw new Error(`Esperadas 162 questões do Capítulo 2; encontradas ${questions}`);
-if(changed!==810) throw new Error(`Esperadas 810 chaves normalizadas; alteradas ${changed}`);
-fs.writeFileSync(path,JSON.stringify(bank,null,2)+"\n");
-console.log(`Normalizadas ${changed} alternativas em ${questions} questões.`);
+console.log(`Total: ${totalQuestions} questões; ${totalKeys} alternativas normalizadas.`);
