@@ -33,7 +33,7 @@ for (const file of files) {
     }
 
     const options = Array.isArray(q.options) ? q.options : [];
-    const keys = options.map((o) => String(o?.key || "").trim().toUpperCase()).filter(Boolean);
+    const keys = options.map((o) => String(o?.key || (/^MAN-NSH-C02-/i.test(String(q.id || "")) ? o?.letter : "") || "").trim().toUpperCase()).filter(Boolean);
 
     if (options.length < 2) {
       console.error(`${prefix}: menos de 2 alternativas`);
