@@ -30,7 +30,7 @@ export default async function Page({searchParams}){
         <h1>Banco de questões</h1>
         <p>{e.trial
           ?"Período de testes: gere 1 bloco com 10 questões."
-          :"Marque as matérias, filtre por obra, capítulo ou assunto e gere um caderno de 1 a 100 questões."}</p>
+          :"Marque as matérias, filtre por obra, capítulo ou assunto e gere um caderno de 1 a 300 questões."}</p>
         <Builder
           banks={banks}
           trial={e.trial}
