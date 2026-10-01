@@ -7,6 +7,7 @@ export const EMPTY_QUESTION_FILTERS = {
   chapter_id: "",
   module: "",
   scenario_only: false,
+  official_exam_only: false,
   query: "",
 };
 
@@ -23,6 +24,7 @@ export default function QuestionFilterControls({
   onChange,
   subjects = [],
   disabled = false,
+  showOfficialExamFilter = true,
 }) {
   const works = forSubjects(facets?.works, subjects);
   const modules = forSubjects(facets?.modules, subjects);
@@ -33,11 +35,15 @@ export default function QuestionFilterControls({
   function change(field, nextValue) {
     const next = { ...value, [field]: nextValue };
     if (field === "work_id") next.chapter_id = "";
+    if (field === "official_exam_only" && nextValue) {
+      next.work_id = "";
+      next.chapter_id = "";
+      next.module = "";
+    }
     onChange(next);
   }
 
   const hasHierarchy = works.length || chapters.length || modules.length;
-  if (!hasHierarchy) return null;
 
   return (
     <fieldset className={styles.filters} disabled={disabled}>
@@ -45,7 +51,7 @@ export default function QuestionFilterControls({
       <p>Escolha os campos desejados. Os filtros vazios incluem todo o conteúdo selecionado.</p>
 
       <div className={styles.grid}>
-        <label>
+        {hasHierarchy && <label>
           Obra
           <select value={value.work_id} onChange={(event) => change("work_id", event.target.value)}>
             <option value="">Todas as obras</option>
@@ -55,9 +61,9 @@ export default function QuestionFilterControls({
               </option>
             ))}
           </select>
-        </label>
+        </label>}
 
-        <label>
+        {hasHierarchy && <label>
           Capítulo
           <select value={value.chapter_id} onChange={(event) => change("chapter_id", event.target.value)}>
             <option value="">Todos os capítulos</option>
@@ -67,9 +73,9 @@ export default function QuestionFilterControls({
               </option>
             ))}
           </select>
-        </label>
+        </label>}
 
-        <label>
+        {hasHierarchy && <label>
           Assunto
           <select value={value.module} onChange={(event) => change("module", event.target.value)}>
             <option value="">Todos os assuntos</option>
@@ -79,7 +85,19 @@ export default function QuestionFilterControls({
               </option>
             ))}
           </select>
-        </label>
+        </label>}
+
+        {showOfficialExamFilter && <label>
+          Origem
+          <span className={styles.checkLine}>
+            <input
+              type="checkbox"
+              checked={Boolean(value.official_exam_only)}
+              onChange={(event) => change("official_exam_only", event.target.checked)}
+            />
+            Somente provas anteriores (254 no acervo · 252 ativas)
+          </span>
+        </label>}
 
         <label>
           Tipo de questão
