@@ -19,8 +19,9 @@ const generatedBatchQuestions = fs.existsSync(generatedBatchDirectory)
   : [];
 
 const sampleOfficial = officialExams.questions.filter((question) => !question.annulled);
-const activeOfficial = sampleOfficial.filter((question) => question.active !== false);
+const activeOfficial = sampleOfficial.filter((question) => question.active !== false && question.validation_status !== "rejected" && !String(question.validation_status || "").startsWith("quarantined"));
 assert.equal(sampleOfficial.length, HISTORICAL_SAMPLE.valid_questions);
+assert.equal(activeOfficial.length, HISTORICAL_SAMPLE.valid_questions, "Todas as 254 questões oficiais não anuladas devem estar ativas");
 
 const observed = Object.fromEntries(Object.keys(HISTORICAL_SUBJECT_COUNTS).map((subject) => [subject, 0]));
 for (const question of sampleOfficial) observed[historicalSubject(question)] += 1;
