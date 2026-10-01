@@ -10,7 +10,7 @@ const inputFiles = [
   ...((await readdir(data)).filter((file) => file.endsWith(".json") && file !== "runtime-active-questions.json").map((file) => `data/pscpp/${file}`)),
   ...((await readdir(new URL("generated-batches/", data))).filter((file) => file.endsWith(".json")).map((file) => `data/pscpp/generated-batches/${file}`)),
   "lib/pscpp-exam-source.js", "lib/generated-pscpp-batches.js", "lib/approved-pscpp-drive-blocks.js",
-  "lib/question-quality-policy.js", "lib/question-quality.js",
+  "lib/question-quality-policy.js", "lib/question-quality.js", "lib/miguens-cap45-review.js", "data/question-restorations/miguens-cap45-reviewed.json",
 ];
 const digest = createHash("sha256");
 for (const path of inputFiles.sort()) {

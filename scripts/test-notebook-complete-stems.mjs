@@ -26,6 +26,7 @@ compiled.require = (specifier) => specifier.endsWith(".css") ? {}
 compiled._compile(code, filename);
 const StructuredQuestion = compiled.exports.default;
 
+const cap45Review = JSON.parse(fs.readFileSync(new URL("../data/question-restorations/miguens-cap45-reviewed.json", import.meta.url)));
 const pack = JSON.parse(fs.readFileSync(new URL("../data/question-restorations/notebook-complete-stems.json", import.meta.url)));
 const banks = JSON.parse(fs.readFileSync(new URL("../data/questions/runtime-active-banks.json", import.meta.url))).banks;
 const digest = value => createHash("sha256").update(JSON.stringify(value)).digest("hex");
@@ -35,6 +36,17 @@ const reasons = {};
 for (const edit of pack.edits) {
   const question = banks[edit.bank].questions.find(q => q.id === edit.id);
   assert.ok(question, `Inactive or missing corrected question: ${edit.bank}/${edit.id}`);
+  const replacement = cap45Review.edits.find(e => e.pool === "Cadernos" && e.id === edit.id);
+  if (replacement) {
+    assert.equal(question.question, replacement.question.question);
+    assert.deepEqual(question.assertions, replacement.question.assertions);
+    assert.equal(question.correct_answer, replacement.question.correct_answer);
+    const html = renderToStaticMarkup(React.createElement(StructuredQuestion, { question: notebookPublicQuestion(question) }));
+    assert.ok(html.includes("assertion"), `Reviewed propositions must render: ${edit.id}`);
+    byBank[edit.bank] = (byBank[edit.bank] || 0) + 1;
+    for (const reason of edit.reasons) reasons[reason] = (reasons[reason] || 0) + 1;
+    continue;
+  }
   assert.equal(question.question, edit.question);
   const structure = classifyQuestionStructure(question);
   const html = renderToStaticMarkup(React.createElement(StructuredQuestion, { question: notebookPublicQuestion(question) }));
@@ -117,7 +129,7 @@ if (activeFragoso.length !== 144) {
   console.error("FRAGOSO_INACTIVE_DIAGNOSTICS", JSON.stringify(diagnostics, null, 2));
 }
 assert.equal(activeFragoso.length, 144, "As 144 questões de Rebocadores Portuários devem permanecer ativas no banco de cadernos");
-assert.equal(audited, 9855);
+assert.equal(audited, 9855 - cap45Review.edits.filter(e => e.pool === "Cadernos" && !e.question.active).length);
 assert.equal(pack.edits.length, 506);
 assert.equal(Object.keys(byBank).length, 7);
 assert.deepEqual(reasons, {inline_assertions_removed: 365, fill_sentence_removed: 10, association_columns_missing: 45, empty_fill_context: 72, incomplete_association_command: 1, source_stem_replaced_by_runtime_normalization: 13});
