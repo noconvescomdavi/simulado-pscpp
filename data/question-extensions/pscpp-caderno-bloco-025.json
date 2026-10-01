@@ -533,7 +533,7 @@
       "question": "Com base em LARSSON & RAVEN — Ship Resistance and Flow, analise as proposições que integram coeficiente CT e potência efetiva PE, com foco em diagnóstico de desvios, e assinale a opção correta.",
       "assertions": [
         "I) Coeficiente CT: é coeficiente adimensional associado à resistência total.",
-        "II) Potência efetiva PE.",
+        "II) Potência efetiva (PE) é a potência necessária para vencer a resistência total do casco à velocidade considerada, expressa pela relação PE = RT × V.",
         "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
         "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
       ],
@@ -1475,7 +1475,7 @@
       "question": "Com base em FONSECA — Arte Naval, Vol. 1, 8ª ed., analise as proposições que integram pinhas e trabalhos do marinheiro, com foco em diagnóstico de desvios, e assinale a opção correta.",
       "assertions": [
         "I) Pinhas: são trabalhos confeccionados com cabos, alguns com finalidade prática e outros ornamental.",
-        "II) Trabalhos do marinheiro.",
+        "II) Trabalhos do marinheiro abrangem confecções e serviços executados com cabos, incluindo nós, voltas, costuras, falcaças, pinhas e outros trabalhos de marinharia.",
         "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
         "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
       ],
@@ -1893,27 +1893,27 @@
       "options": [
         {
           "key": "A",
-          "text": "A análise deve considerar somente que deve ser preparado, executado e monitorado como referência comum para a passagem, pois air draught não interfere na avaliação."
+          "text": "A análise deve considerar apenas o passage plan, pois o air draught não interfere na segurança da passagem sob obstáculos elevados."
         },
         {
           "key": "B",
-          "text": "A análise deve considerar somente que air draught: é a distância da quilha ao fundo, tornando dispensável verificar passage plan."
+          "text": "A análise deve considerar apenas o air draught, dispensando a verificação e o monitoramento do passage plan."
         },
         {
           "key": "C",
-          "text": "Os conceitos de passage plan e air draught são equivalentes e podem ser empregados como sinônimos."
+          "text": "Passage plan e air draught são conceitos equivalentes e podem ser empregados como sinônimos."
         },
         {
           "key": "D",
-          "text": "A presença simultânea de passage plan e air draught elimina a necessidade de aplicar os critérios específicos de ambos."
+          "text": "A consideração do air draught elimina a necessidade de aplicar os critérios de planejamento, execução e monitoramento da passagem."
         },
         {
           "key": "E",
-          "text": "A análise conjunta exige reconhecer que deve ser preparado, executado e monitorado como referência comum para a passagem e que air draught: é a distância da quilha ao fundo."
+          "text": "A análise conjunta exige que o passage plan seja preparado, executado e monitorado como referência comum para a passagem e que o air draught (calado aéreo) seja verificado como a distância vertical da linha d’água ao ponto mais alto do navio, especialmente quando houver restrições de altura."
         }
       ],
       "correct_answer": "E",
-      "explanation": "A análise conjunta exige reconhecer que deve ser preparado, executado e monitorado como referência comum para a passagem e que air draught: é a distância da quilha ao fundo.",
+      "explanation": "O passage plan deve ser preparado, executado e monitorado durante a passagem. Air draught (calado aéreo) é a distância vertical entre a linha d’água e o ponto mais alto do navio; sua verificação é essencial quando a derrota envolve pontes, cabos, pórticos ou outras limitações de altura. A distância entre a quilha e o fundo corresponde à folga abaixo da quilha (UKC/FAQ), não ao air draught.",
       "active": true,
       "validation_status": "approved",
       "taxonomy": {
@@ -2062,10 +2062,10 @@
       "cognitive_level": 4,
       "question": "Com base em ICS — Bridge Procedures Guide, 6ª ed., analise as proposições que integram air draught e pilotagem, com foco em diagnóstico de desvios, e assinale a opção correta.",
       "assertions": [
-        "I) Air draught: é a distância da quilha ao fundo.",
-        "II) Pilotagem.",
-        "III) Na avaliação operacional, os dois aspectos devem ser verificados de forma coordenada, sem que um substitua o outro.",
-        "IV) Os dois conceitos são equivalentes e, por isso, a verificação de um torna dispensável a do outro."
+        "I) Air draught (calado aéreo) é a distância vertical entre a linha d’água e o ponto mais alto do navio.",
+        "II) A pilotagem deve ser integrada ao planejamento e ao monitoramento da passagem, com troca de informações entre o prático, o comandante e a equipe do passadiço.",
+        "III) Na avaliação operacional, air draught e pilotagem devem ser verificados de forma coordenada, sem que um substitua o outro.",
+        "IV) Air draught e pilotagem são conceitos equivalentes e, por isso, a verificação de um torna dispensável a do outro."
       ],
       "options": [
         {
@@ -2090,7 +2090,7 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "As proposições I, II e III são compatíveis com a fonte; a IV é falsa porque confunde conceitos complementares com conceitos equivalentes.",
+      "explanation": "As proposições I, II e III são compatíveis com a fonte. Air draught é o calado aéreo, medido verticalmente da linha d’água ao ponto mais alto do navio; a pilotagem integra o planejamento e o monitoramento da passagem. A IV é falsa porque trata conceitos distintos como equivalentes.",
       "active": true,
       "validation_status": "approved",
       "taxonomy": {
