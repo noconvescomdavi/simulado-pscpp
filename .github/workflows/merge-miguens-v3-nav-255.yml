@@ -1,0 +1,43 @@
+name: Merge Miguens V3 Nav 255
+
+on:
+  push:
+    branches: [feature/miguens-v3-bancos-378]
+    paths:
+      - .github/workflows/merge-miguens-v3-nav-255.yml
+
+permissions:
+  contents: write
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/miguens-v3-bancos-378
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Merge 255 questões
+        run: node scripts/merge-miguens-v3-nav-255.mjs
+      - name: Validate generated bank
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const j = JSON.parse(fs.readFileSync('data/questions/navegacao-aguas-restritas.json','utf8'));
+          if (j.questions.length !== 2080) throw new Error('Total inválido: ' + j.questions.length);
+          const ids = j.questions.map(q => q.id);
+          if (new Set(ids).size !== ids.length) throw new Error('IDs duplicados');
+          const m = j.questions.filter(q => /^NAV-MIGV3-C(37|38|40|42)-/.test(q.id));
+          if (m.length !== 255) throw new Error('Miguens inseridas: ' + m.length);
+          console.log(JSON.stringify({ total: j.questions.length, miguens: m.length }));
+          NODE
+      - name: Commit generated bank
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/questions/navegacao-aguas-restritas.json
+          git diff --cached --quiet || git commit -m "feat(questions): integra 255 questões Miguens V3 em navegação"
+          git push
