@@ -31,10 +31,11 @@ const read=path=>JSON.parse(readFileSync(new URL('../'+path,import.meta.url),'ut
 const report=read('reports/notebook-context-stems.json');
 const edits=read('data/question-restorations/notebook-context-stems.json').edits;
 const banks=read('data/questions/runtime-active-banks.json').banks;
+const cap45Review=read('data/question-restorations/miguens-cap45-reviewed.json');
 const hash=value=>createHash('sha256').update(JSON.stringify(value??null)).digest('hex');
 assert.equal(edits.length,report.corrected);
 assert.equal(new Set(edits.map(e=>`${e.bank}::${e.id}`)).size,edits.length);
-assert.equal(Object.entries(banks).filter(([slug])=>slug!=='situacoes-de-manobra-ripeam').reduce((n,[,b])=>n+b.questions.length,0),report.audited);
+assert.equal(Object.entries(banks).filter(([slug])=>slug!=='situacoes-de-manobra-ripeam').reduce((n,[,b])=>n+b.questions.length,0),report.audited-cap45Review.edits.filter(e=>e.pool==="Cadernos"&&!e.question.active).length);
 for(const edit of edits){
  const q=banks[edit.bank].questions.find(q=>q.id===edit.id);
  const baseline=report.questions.find(q=>q.bank===edit.bank&&q.id===edit.id);
@@ -50,4 +51,4 @@ for(const edit of edits){
  }
  assert.notEqual(baseline.before,edit.question,`${edit.id}: actual restored context`);
 }
-console.log(`Contextos restaurados: ${edits.length}; ${report.audited} questões ativas; alternativas, comentários, fontes e gabaritos preservados.`);
+console.log(`Contextos restaurados: ${edits.length}; ${report.audited-cap45Review.edits.filter(e=>e.pool==="Cadernos"&&!e.question.active).length} questões ativas; alternativas, comentários, fontes e gabaritos preservados.`);
