@@ -99,7 +99,7 @@ function Result({ result }) {
 }
 
 
-export default function Client({ subject, title, ready, facets, planTask }) {
+export default function Client({ subject, title, ready, facets, planTask, trial = false }) {
   const [state, setState] = useState(null);
   const [index, setIndex] = useState(0);
   const [answer, setAnswer] = useState(null);
@@ -405,14 +405,15 @@ export default function Client({ subject, title, ready, facets, planTask }) {
       <main className={styles.page}>
         <span>SIMULADO</span>
         <h1>{title}</h1>
-        <p>{isPscpp?"100 questões: 25 de Manobrabilidade, 25 de Navegação em Águas Restritas e 10 de cada uma das outras cinco disciplinas.":"Até 100 questões aleatórias. Você pode usar todo o banco ou restringir o sorteio por obra, capítulo, assunto e termo."}</p>
+        <p>{isPscpp?"100 questões. No modo normal, aplica a matriz 25/25/10/10/10/10/10; com “Somente provas anteriores”, sorteia exclusivamente nas provas oficiais de 2006, 2008, 2011 e 2012 (254 não anuladas no acervo; 252 atualmente ativas, com 2 em quarentena editorial).":"Até 100 questões aleatórias. Você pode usar todo o banco ou restringir o sorteio por obra, capítulo, assunto, origem e termo."}</p>
         <p>Cada resposta é salva no servidor e não pode ser alterada depois do salvamento.</p>
-        {!isPscpp && <QuestionFilterControls
+        {!trial && <QuestionFilterControls
           facets={facets}
           value={filters}
           onChange={setFilters}
           subjects={[subject]}
           disabled={busy || state.can_start === false}
+          showOfficialExamFilter={isPscpp}
         />}
         <button type="button" onClick={start} disabled={busy || state.can_start === false}>Criar e iniciar simulado</button>
         {state.can_start === false && state.next_available_at && (

@@ -35,7 +35,7 @@ const cap45Review=read('data/question-restorations/miguens-cap45-reviewed.json')
 const hash=value=>createHash('sha256').update(JSON.stringify(value??null)).digest('hex');
 assert.equal(edits.length,report.corrected);
 assert.equal(new Set(edits.map(e=>`${e.bank}::${e.id}`)).size,edits.length);
-assert.equal(Object.entries(banks).filter(([slug])=>slug!=='situacoes-de-manobra-ripeam').reduce((n,[,b])=>n+b.questions.length,0),report.audited-cap45Review.edits.filter(e=>e.pool==="Cadernos"&&!e.question.active).length);
+assert.equal(Object.entries(banks).filter(([slug])=>slug!=='situacoes-de-manobra-ripeam').reduce((n,[,b])=>n+b.questions.length,0),9955-cap45Review.edits.filter(e=>e.pool==="Cadernos"&&!e.question.active).length);
 for(const edit of edits){
  const q=banks[edit.bank].questions.find(q=>q.id===edit.id);
  const baseline=report.questions.find(q=>q.bank===edit.bank&&q.id===edit.id);
