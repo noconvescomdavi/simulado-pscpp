@@ -20,7 +20,7 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
   const available=banks.filter(x=>x.count).map(x=>x.slug);
   const initial=initialSubjects.filter(slug=>available.includes(slug));
   const [s,setS]=useState(initial.length?initial:available);
-  const [n,setN]=useState(trial?10:(fixation?100:20));
+  const [n,setN]=useState(trial?10:(fixation?300:20));
   const [e,setE]=useState("");
   const [busy,setBusy]=useState(false);
   const [filters,setFilters]=useState({...EMPTY_QUESTION_FILTERS});
@@ -117,10 +117,10 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
         <input
           type="number"
           min={trial?10:1}
-          max={trial?10:100}
+          max={trial?10:300}
           disabled={trial}
           value={trial?10:n}
-          onChange={x=>setN(Math.max(1,Math.min(100,+x.target.value||1)))}
+          onChange={x=>setN(Math.max(1,Math.min(300,+x.target.value||1)))}
         />
       </label>
 

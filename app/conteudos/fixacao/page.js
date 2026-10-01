@@ -25,7 +25,7 @@ export default async function FixacaoPage({searchParams}){
 
   const result=await createNotebook(session.id,{
     subjects:[subject],
-    count:entitlement.trial?10:100,
+    count:entitlement.trial?10:300,
     fixation:{
       bibliography_key:bibliographyKey,
       section_key:sectionKey,
