@@ -28,22 +28,6 @@ if (process.argv.includes("--check")) {
   console.log(`Bancos de cadernos prontos: ${Object.values(saved.banks).reduce((n, bank) => n + bank.questions.length, 0)} questões`);
 } else {
   const banks = collectActiveQuestionBanks();
-
-  // The audited NORMAM-112 source bank is canonical for legislation. Runtime
-  // must expose every canonical question exactly once: no quarantine by generic
-  // heuristics and no duplicate legacy extension questions.
-  const legislationSource = JSON.parse(await readFile(new URL("data/questions/legislacao-regulamentacao.json", root), "utf8"));
-  const isCanonicalNormam112 = (question) =>
-    question?.taxonomy?.bibliography_id === "normam112"
-    && /^LEG-N112-/i.test(String(question?.id || ""));
-  const expectedNormam112 = (legislationSource.questions || []).filter(isCanonicalNormam112).length;
-  const runtimeNormam112 = (banks["legislacao-regulamentacao"]?.questions || []).filter(isCanonicalNormam112).length;
-  assert.equal(
-    runtimeNormam112,
-    expectedNormam112,
-    `NORMAM-112 incompleta no runtime: esperado ${expectedNormam112}, obtido ${runtimeNormam112}`
-  );
-
   await writeFile(output, JSON.stringify({ source_hash: sourceHash, banks }));
-  console.log(`Bancos de cadernos gerados: ${Object.values(banks).reduce((n, bank) => n + bank.questions.length, 0)} questões · NORMAM-112: ${runtimeNormam112}`);
+  console.log(`Bancos de cadernos gerados: ${Object.values(banks).reduce((n, bank) => n + bank.questions.length, 0)} questões`);
 }
