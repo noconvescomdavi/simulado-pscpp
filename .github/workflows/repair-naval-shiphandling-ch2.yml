@@ -2,6 +2,7 @@ name: Repair Naval Shiphandling Chapter 2 schema
 on:
   push:
     branches: [fix/manobrabilidade-ch2-option-keys]
+  workflow_dispatch:
 permissions:
   contents: write
 jobs:
