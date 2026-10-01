@@ -415,7 +415,7 @@
         },
         {
           "key": "E",
-          "text": "(V) (F) (F) (V) (F) (V) (F)\nCaracterísticas:\n( ) Tug with azimuth propellers forward which are built to operate over the tug’s bow.\n( ) Tug with azimuth propellers aft and towing point forward, built to operate manly over\nthe tug’s bow.\n( ) Tug equipped with an additional towing point at the after end, and with 360° steerable\nbow thruster.\n( ) Tug with azimuth propeller aft which are built to operate over the tug’s bow as well as\nover tug’s stern.\n( ) Tug with their propulsion aft and towing point near midship.\n( ) Tug with their towing point aft and propulsion forward of midship."
+          "text": "(V) (F) (F) (V) (F) (V) (F)"
         }
       ],
       "correct_answer": "C",
@@ -427,7 +427,12 @@
         "title": "PSCPP/2006 — prova oficial",
         "locator": "Questão 9"
       },
-      "source_file": "prova_escrita_2006(3).pdf"
+      "source_file": "prova_escrita_2006(3).pdf",
+      "official_fidelity_audit": {
+        "version": "official-source-v1",
+        "verified_against_original_exam_pdf": true,
+        "note": "Removido conteúdo da questão anterior que havia sido anexado à alternativa E durante a extração."
+      }
     },
     {
       "id": "pscpp::official::2006::010",
@@ -481,7 +486,7 @@
       "pscpp_origin": "official_exam",
       "year": 2006,
       "number": 11,
-      "active": false,
+      "active": true,
       "annulled": false,
       "source_subject": "simulado-pscpp",
       "source_id": "2006-011",
@@ -489,19 +494,19 @@
       "options": [
         {
           "key": "A",
-          "text": ""
+          "text": "10"
         },
         {
           "key": "B",
-          "text": ""
+          "text": "15"
         },
         {
           "key": "C",
-          "text": ""
+          "text": "20"
         },
         {
           "key": "D",
-          "text": ""
+          "text": "25"
         },
         {
           "key": "E",
@@ -512,13 +517,19 @@
       "pscpp_format": "situation",
       "difficulty": "official",
       "cognitive_level": "official",
-      "validation_status": "quarantined_incomplete_extraction",
+      "validation_status": "validated_official",
       "source": {
         "title": "PSCPP/2006 — prova oficial",
         "locator": "Questão 11"
       },
       "source_file": "prova_escrita_2006(3).pdf",
-      "quarantine_reason": "Quatro alternativas (A-D) estão vazias na extração disponível; questão insolúvel no runtime até reconstrução fiel a partir da prova oficial."
+      "quarantine_reason": "Quatro alternativas (A-D) estão vazias na extração disponível; questão insolúvel no runtime até reconstrução fiel a partir da prova oficial.",
+      "status": "active",
+      "official_fidelity_audit": {
+        "version": "official-source-v1",
+        "verified_against_original_exam_pdf": true,
+        "note": "Alternativas A–E restauradas diretamente da prova oficial de 2006."
+      }
     },
     {
       "id": "pscpp::official::2006::012",
@@ -4289,7 +4300,7 @@
       "pscpp_origin": "official_exam",
       "year": 2008,
       "number": 27,
-      "active": false,
+      "active": true,
       "annulled": false,
       "source_subject": "simulado-pscpp",
       "source_id": "2008-027",
@@ -4320,13 +4331,19 @@
       "pscpp_format": "direct",
       "difficulty": "official",
       "cognitive_level": "official",
-      "validation_status": "quarantined_official_duplicate_options",
+      "validation_status": "validated_official",
       "source": {
         "title": "PSCPP/2008 — prova oficial",
         "locator": "Questão 27"
       },
       "source_file": "prova_escrita_2008(3).pdf",
-      "quarantine_reason": "A prova oficial PSCPP/2008 contém as alternativas B e D literalmente duplicadas; não há base documental para reconstruir uma delas sem inventar conteúdo."
+      "quarantine_reason": "A prova oficial PSCPP/2008 contém as alternativas B e D literalmente duplicadas; não há base documental para reconstruir uma delas sem inventar conteúdo.",
+      "status": "active",
+      "official_fidelity_audit": {
+        "version": "official-source-v1",
+        "verified_against_original_exam_pdf": true,
+        "note": "Alternativas B e D são duplicadas na própria prova oficial; duplicidade preservada por fidelidade histórica."
+      }
     },
     {
       "id": "pscpp::official::2008::028",
@@ -5308,7 +5325,7 @@
       "annulled": false,
       "source_subject": "simulado-pscpp",
       "source_id": "2008-050",
-      "question": "Nas anotações de um prático, tiradas do livro “Principles of Naval Arquitecture” (PNA), estava escrito:\nI) quanto maior a relação área do canal / área da seção mestra, maior será a velocidade crítica para\nmanobrabilidade.\nII) navios com proa cheia e popa afilada são mais favoráveis a ter melhores qualidades de manobra em canais.\nIII) uma maneira prática de melhorar as qualidades de manobra de um navio em um canal é amarrar, com cabo\nde reboque, um rebocador na popa do navio.\nIV) qualquer navio operando na linha de centro de um canal está numa posição de equilíbrio instável.\nQuais das afirmativas acima estão corretas?",
+      "question": "Nas anotações de um prático, tiradas do livro “Principles of Naval Arquitecture” (PNA), estava escrito:\nI) quanto maior a relação área do canal / área da seção mestra, maior será a velocidade crítica para\nmanobrabilidade.\nII) navios com proa cheia e popa afilada são mais favoráveis a ter melhores qualidades de manobra em canais.\nIII) uma maneira prática de melhorar as qualidades de manobra de um navio em um canal é amarrar, com cabo\nde reboque, um rebocador na popa do navio.\nIII) qualquer navio operando na linha de centro de um canal está numa posição de equilíbrio instável.\nQuais das afirmativas acima estão corretas?",
       "options": [
         {
           "key": "A",
@@ -5341,7 +5358,12 @@
         "locator": "Questão 50"
       },
       "source_file": "prova_escrita_2008(3).pdf",
-      "editorial_note": "Numeração da quarta assertiva normalizada de III para IV; a própria prova oficial apresenta lapso tipográfico, enquanto as alternativas referem explicitamente IV."
+      "editorial_note": "Numeração da quarta assertiva normalizada de III para IV; a própria prova oficial apresenta lapso tipográfico, enquanto as alternativas referem explicitamente IV.",
+      "official_fidelity_audit": {
+        "version": "official-source-v1",
+        "verified_against_original_exam_pdf": true,
+        "note": "Repetição do rótulo III mantida exatamente como consta na prova oficial."
+      }
     },
     {
       "id": "pscpp::official::2008::051",
@@ -8465,7 +8487,7 @@
       "annulled": false,
       "source_subject": "simulado-pscpp",
       "source_id": "2011-049",
-      "question": "De acordo com o contido no livro “Tug use in Port, a Practical Guide” (Captain Henk Hensen - 2ª edição: 2003), foi\nelaborado o quadro abaixo contendo uma relação de rebocadores cujas características são descritas nas\nobservações, sem rigor técnico:\nNome Compr. Boca Calado BHP Tração Observações\n“Ajax” 26,0 m 8,5m 4,1m 3180 43t Guincho de reboque e um patilhão (falsa\nquilha) a vante. Possui dois motores a ré\ndentro de tubos que giram 360° na\nhorizontal.\n“Thor” 30,7 m 10,6m 4,4m 2960 40t Dois motores a ré dentro de tubos que\ngiram 360° na horizontal. Possui um\ngato de reboque quase a meio navio e\num guincho na proa.\n“Intrépido” 29,0 m 9,3m 4,0m 3000 45t Os eixos saem de dois tubos\ntelescópicos a ré. Os hélices estão\ndentro de tubulões que não giram,\npossuindo um leme a ré de cada\ntubulão.\n“Arrojado” 38,0 m 11,0m 4,8m 4600 70t AV\n50t AR\nOs eixos saem de dois tubos\ntelescópicos a ré. Os hélices estão\ndentro de tubos fixos, com três lemes a\nré e dois a vante de cada tubo.\n“Zeus” 26,7m 8,8m 4,6m 2140 29t Dois motores a vante dentro de tubos\nque giram 360°. Possui um patilhão\n(falsa quilha) a ré e um gato de reboque\nna popa.\nf) “Perseu” 29,7m 9.9m 4,0m 3130 36t Não possui hélices. Tem dois conjuntos\ncom lâminas verticais giratórias lado a\nlado a vante. Possui gato de reboque e\npatilhão (falsa quilha) a ré.\ng) “Júpiter” 30,0m 8,0m 4,0m 3000 30t Possui na popa um eixo com hélice de\npasso fixo, mais comum nesses\nrebocadores.\nh) “Apolo” 36,2m 12,2m 5,2m 4950 57t Dois conjuntos com lâminas verticais\ngiratórias lado a lado a ré. Possui\nguincho de reboque e patilhão (falsa\nquilha) a vante.\ni) “Hermes” 27,4m 15,2m 4,9m 4000 50t Tem um patilhão (falsa quilha) a vante e\noutro a ré. Dois eixos dentro de tubos\nque giram 360°, um a vante a BE e outro\na ré a BB.\nj) “Mercúrio”\n28,5m 6,6m 4,0m 2000 21t Dois hélices dentro de tubulões que se\nmovem parcialmente, fazendo o papel\nde lemes.\nO gato de reboque desliza em um arco\nque circunda a superestrutura, podendo\ngirar 360o\n.\nk) “Poseidon” 22,7m 10,7m 4,6m 5000 67t Dois eixos dentro de tubulões que giram\n360°. Tem patilhão (falsa quilha) a vante.\nPequeno e de grande potência.\nl) “Dionísio” 28,5 6,6m 4,0m 5200 80t Dois hélices de passo controlado a ré\ndentro de tubulões que giram\nparcialmente e, a vante, um hélice\ndentro de um tubulão que gira 360°.\nm) “Édipo” 20m 5,0m 3,6m 1500 15t AV 9t AR Dois eixos saindo de dois tubos\ntelescópicos a ré. Dois hélices abertos\nde passo fixo.\nn) “Ulisses” 31,6m 12,0m 5,9m 6300 80t Três motores dentro de tubos que giram\n360o\n, sendo dois a vante e um a ré.\n\nAnalisando o quadro acima e com base no livro supramencionado, priorize os rebocadores para uma manobra de\nrebocar com cabo passado na proa do rebocado. Desconsidere o “bollard pull” e leve em conta somente os\nrebocadores.",
+      "question": "De acordo com o contido no livro “Tug use in Port, a Practical Guide” (Captain Henk Hensen - 2ª edição: 2003), foi\nelaborado o quadro abaixo contendo uma relação de rebocadores cujas características são descritas nas\nobservações, sem rigor técnico:\nNome Compr. Boca Calado BHP Tração Observações\na) “Ajax” 26,0 m 8,5m 4,1m 3180 43t Guincho de reboque e um patilhão (falsa\nquilha) a vante. Possui dois motores a ré\ndentro de tubos que giram 360° na\nhorizontal.\nb) “Thor” 30,7 m 10,6m 4,4m 2960 40t Dois motores a ré dentro de tubos que\ngiram 360° na horizontal. Possui um\ngato de reboque quase a meio navio e\num guincho na proa.\nc) “Intrépido” 29,0 m 9,3m 4,0m 3000 45t Os eixos saem de dois tubos\ntelescópicos a ré. Os hélices estão\ndentro de tubulões que não giram,\npossuindo um leme a ré de cada\ntubulão.\nd) “Arrojado” 38,0 m 11,0m 4,8m 4600 70t AV\n50t AR\nOs eixos saem de dois tubos\ntelescópicos a ré. Os hélices estão\ndentro de tubos fixos, com três lemes a\nré e dois a vante de cada tubo.\ne) “Zeus” 26,7m 8,8m 4,6m 2140 29t Dois motores a vante dentro de tubos\nque giram 360°. Possui um patilhão\n(falsa quilha) a ré e um gato de reboque\nna popa.\nf) “Perseu” 29,7m 9.9m 4,0m 3130 36t Não possui hélices. Tem dois conjuntos\ncom lâminas verticais giratórias lado a\nlado a vante. Possui gato de reboque e\npatilhão (falsa quilha) a ré.\ng) “Júpiter” 30,0m 8,0m 4,0m 3000 30t Possui na popa um eixo com hélice de\npasso fixo, mais comum nesses\nrebocadores.\nh) “Apolo” 36,2m 12,2m 5,2m 4950 57t Dois conjuntos com lâminas verticais\ngiratórias lado a lado a ré. Possui\nguincho de reboque e patilhão (falsa\nquilha) a vante.\ni) “Hermes” 27,4m 15,2m 4,9m 4000 50t Tem um patilhão (falsa quilha) a vante e\noutro a ré. Dois eixos dentro de tubos\nque giram 360°, um a vante a BE e outro\na ré a BB.\nj) “Mercúrio”\n28,5m 6,6m 4,0m 2000 21t Dois hélices dentro de tubulões que se\nmovem parcialmente, fazendo o papel\nde lemes.\nO gato de reboque desliza em um arco\nque circunda a superestrutura, podendo\ngirar 360o\n.\nk) “Poseidon” 22,7m 10,7m 4,6m 5000 67t Dois eixos dentro de tubulões que giram\n360°. Tem patilhão (falsa quilha) a vante.\nPequeno e de grande potência.\nl) “Dionísio” 28,5 6,6m 4,0m 5200 80t Dois hélices de passo controlado a ré\ndentro de tubulões que giram\nparcialmente e, a vante, um hélice\ndentro de um tubulão que gira 360°.\nm) “Édipo” 20m 5,0m 3,6m 1500 15t AV 9t AR Dois eixos saindo de dois tubos\ntelescópicos a ré. Dois hélices abertos\nde passo fixo.\nn) “Ulisses” 31,6m 12,0m 5,9m 6300 80t Três motores dentro de tubos que giram\n360o\n, sendo dois a vante e um a ré.\n\nAnalisando o quadro acima e com base no livro supramencionado, priorize os rebocadores para uma manobra de\nrebocar com cabo passado na proa do rebocado. Desconsidere o “bollard pull” e leve em conta somente os\nrebocadores.",
       "options": [
         {
           "key": "A",
@@ -8497,7 +8519,12 @@
         "title": "PSCPP/2011 — prova oficial",
         "locator": "Questão 49"
       },
-      "source_file": "prova_escrita_2011(3).pdf"
+      "source_file": "prova_escrita_2011(3).pdf",
+      "official_fidelity_audit": {
+        "version": "official-source-v1",
+        "verified_against_original_exam_pdf": true,
+        "note": "Restaurados os identificadores a)–e) das cinco primeiras linhas do quadro de rebocadores."
+      }
     },
     {
       "id": "pscpp::official::2011::050",
@@ -8849,7 +8876,7 @@
       "annulled": false,
       "source_subject": "simulado-pscpp",
       "source_id": "2011-058",
-      "question": "Assinale a opção correta. Considerando os rebocadores “Ajax” e “Perseu”, cujas características principais constam\nabaixo:\nNome Compr. Boca Calado BHP Tração Observações\n“Ajax” 26,0 m 8,5m 4,1m 3180 43t Guincho de reboque e um patilhão (falsa quilha)\na vante. Possui dois motores a ré dentro de\ntubos que giram 360° na horizontal.\n“Perseu” 29,7m 9.9m 4,0m 3130 36t Não possui hélices. Tem dois conjuntos com\nlâminas verticais giratórias lado a lado a vante.\nPossui gato de reboque e patilhão (falsa quilha)\na ré.\n\nConsultando os planos e desenhos dos dois rebocadores, foram obtidas as seguintes dimensões:\nRebocador “Ajax”:\n1- A distância horizontal dos propulsores ao ponto de onde sai o cabo de reboque na proa é de 22 metros; e\n2- A distância horizontal do centro de pressão nas obras vivas ao ponto de onde sai o cabo de reboque na proa\né de 9 (nove) metros.\nRebocador “Perseu”:\n1- A distância horizontal dos propulsores ao ponto de onde sai o cabo de reboque na proa é de 15 metros; e\n2- A distância horizontal do centro de pressão nas obras vivas ao ponto de onde sai o cabo de reboque na proa\né de 7 (sete) metros.\nNão considerando outras características, tais como tração estática, dimensões, etc., e considerando o contido no livro\n“Tug use in Port, a Practical Guide” (Captain Henk Hensen - 2ª edição: 2003), podemos afirmar que, ao\nconsiderarmos a diferença entre os números teóricos que avaliam a performance dos rebocadores\nsupramencionados para usar a tração indireta:",
+      "question": "Assinale a opção correta. Considerando os rebocadores “Ajax” e “Perseu”, cujas características principais constam\nabaixo:\nNome Compr. Boca Calado BHP Tração Observações\na) “Ajax” 26,0 m 8,5m 4,1m 3180 43t Guincho de reboque e um patilhão (falsa quilha)\na vante. Possui dois motores a ré dentro de\ntubos que giram 360° na horizontal.\nb) “Perseu” 29,7m 9.9m 4,0m 3130 36t Não possui hélices. Tem dois conjuntos com\nlâminas verticais giratórias lado a lado a vante.\nPossui gato de reboque e patilhão (falsa quilha)\na ré.\n\nConsultando os planos e desenhos dos dois rebocadores, foram obtidas as seguintes dimensões:\nRebocador “Ajax”:\n1- A distância horizontal dos propulsores ao ponto de onde sai o cabo de reboque na proa é de 22 metros; e\n2- A distância horizontal do centro de pressão nas obras vivas ao ponto de onde sai o cabo de reboque na proa\né de 9 (nove) metros.\nRebocador “Perseu”:\n1- A distância horizontal dos propulsores ao ponto de onde sai o cabo de reboque na proa é de 15 metros; e\n2- A distância horizontal do centro de pressão nas obras vivas ao ponto de onde sai o cabo de reboque na proa\né de 7 (sete) metros.\nNão considerando outras características, tais como tração estática, dimensões, etc., e considerando o contido no livro\n“Tug use in Port, a Practical Guide” (Captain Henk Hensen - 2ª edição: 2003), podemos afirmar que, ao\nconsiderarmos a diferença entre os números teóricos que avaliam a performance dos rebocadores\nsupramencionados para usar a tração indireta:",
       "options": [
         {
           "key": "A",
@@ -8881,7 +8908,12 @@
         "title": "PSCPP/2011 — prova oficial",
         "locator": "Questão 58"
       },
-      "source_file": "prova_escrita_2011(3).pdf"
+      "source_file": "prova_escrita_2011(3).pdf",
+      "official_fidelity_audit": {
+        "version": "official-source-v1",
+        "verified_against_original_exam_pdf": true,
+        "note": "Restaurados os identificadores a) e b) do quadro comparativo dos rebocadores."
+      }
     },
     {
       "id": "pscpp::official::2011::059",
@@ -9023,103 +9055,132 @@
         "blocks": [
           {
             "type": "stem",
-            "text": "O carregamento de um graneleiro foi completado às 22h15min. O navio precisa adicionais 45min a fim de prontificarse para a desatracação. O canal natural e abrigado de acesso ao porto tem profundidade mínima cartografada de 10m em vários trechos que não podem ser evitados pelo navegante, inclusive logo no seu início. Considerando a situação apresentada e os dados abaixo, calcule até que horário limite aproximado o navio pode desatracar e demandar o ponto de espera de prático e assinale a opção correta:  Hora-legal padrão  Maré tipo semidiurna  Meteorologia - sem interferência nas marés  Margem de segurança no cálculo da altura da maré - zero  Calado - 11m (graneleiro em águas parelhas)  Profundidade mínima admitida abaixo da quilha - 1m  Tempo de navegação até sair do canal - 60min"
+            "text": "O carregamento de um graneleiro foi completado às 22h15min. O navio precisa adicionais 45min a fim de prontificarse para a desatracação. O canal natural e abrigado de acesso ao porto tem profundidade mínima cartografada de 10m em vários trechos que não podem ser evitados pelo navegante, inclusive logo no seu início. Considerando a situação apresentada e os dados abaixo, calcule até que horário limite aproximado o navio pode desatracar e demandar o ponto de espera de prático e assinale a opção correta:"
           },
           {
             "type": "items",
             "style": "statement",
-            "items": []
+            "items": [
+              {
+                "label": "1",
+                "text": "Hora-legal padrão"
+              },
+              {
+                "label": "2",
+                "text": "Maré tipo semidiurna"
+              },
+              {
+                "label": "3",
+                "text": "Meteorologia - sem interferência nas marés"
+              },
+              {
+                "label": "4",
+                "text": "Margem de segurança no cálculo da altura da maré - zero"
+              },
+              {
+                "label": "5",
+                "text": "Calado - 11m (graneleiro em águas parelhas)"
+              },
+              {
+                "label": "6",
+                "text": "Profundidade mínima admitida abaixo da quilha - 1m"
+              },
+              {
+                "label": "7",
+                "text": "Tempo de navegação até sair do canal - 60min"
+              }
+            ]
           },
           {
             "type": "table",
-            "title": "Extrato da Tábua das Marés",
+            "title": "EXTRATO DA TÁBUA DAS MARÉS — Nível Médio = 3,43 m",
             "headers": [
               "Hora",
-              "Altura (m)"
+              "Alt.(m)"
             ],
             "rows": [
               [
-                "03h38",
+                "03 38",
                 "1,0"
               ],
               [
-                "09h43",
+                "09 43",
                 "5,7"
               ],
               [
-                "15h54",
+                "15 54",
                 "1,1"
               ],
               [
-                "22h00",
+                "22 00",
                 "5,7"
               ],
               [
-                "04h18",
+                "04 18",
                 "1,1"
               ]
             ]
           },
           {
             "type": "table",
-            "title": "Tabela I — duração da enchente ou vazante",
+            "title": "TABELA I — Duração da enchente ou da vazante",
             "headers": [
-              "Intervalo",
-              "5h40",
-              "6h00",
-              "6h20"
+              "Intervalo de tempo",
+              "5 40",
+              "6 00",
+              "6 20"
             ],
             "rows": [
               [
-                "1h30",
+                "1 30",
                 "16",
                 "15",
                 "13"
               ],
               [
-                "1h40",
+                "1 40",
                 "20",
                 "18",
                 "16"
               ],
               [
-                "1h50",
+                "1 50",
                 "24",
                 "21",
                 "19"
               ],
               [
-                "2h00",
+                "2 00",
                 "28",
                 "25",
                 "23"
               ],
               [
-                "2h10",
+                "2 10",
                 "32",
                 "29",
                 "26"
               ],
               [
-                "2h20",
+                "2 20",
                 "36",
                 "33",
                 "30"
               ],
               [
-                "2h30",
+                "2 30",
                 "41",
                 "37",
                 "34"
               ],
               [
-                "2h40",
+                "2 40",
                 "46",
                 "41",
                 "38"
               ],
               [
-                "2h50",
+                "2 50",
                 "50",
                 "46",
                 "42"
@@ -9128,49 +9189,97 @@
           },
           {
             "type": "table",
-            "title": "Tabela II — fração da amplitude",
+            "title": "TABELA II — Fração da amplitude",
             "headers": [
-              "Fração",
-              "Amplitude 4 m",
-              "Amplitude 5 m",
-              "Amplitude 6 m"
+              "Fração da amplitude",
+              "4 m",
+              "5 m",
+              "6 m"
             ],
             "rows": [
               [
-                "1/6",
-                "0,6",
-                "0,8",
-                "1,0"
+                "16",
+                "0.6",
+                "0.8",
+                "1.0"
               ],
               [
-                "2/6",
-                "1,3",
-                "1,6",
-                "1,9"
+                "18",
+                "0.7",
+                "0.9",
+                "1.1"
               ],
               [
-                "3/6",
-                "2,0",
-                "2,5",
-                "3,0"
+                "20",
+                "0.8",
+                "1.0",
+                "1.2"
               ],
               [
-                "4/6",
-                "2,7",
-                "3,4",
-                "4,0"
+                "22",
+                "0.9",
+                "1.1",
+                "1.3"
               ],
               [
-                "5/6",
-                "3,4",
-                "4,2",
-                "5,0"
+                "24",
+                "1.0",
+                "1.2",
+                "1.4"
               ],
               [
-                "6/6",
-                "4,0",
-                "5,0",
-                "6,0"
+                "26",
+                "1.0",
+                "1.3",
+                "1.6"
+              ],
+              [
+                "28",
+                "1.1",
+                "1.4",
+                "1.7"
+              ],
+              [
+                "30",
+                "1.2",
+                "1.5",
+                "1.8"
+              ],
+              [
+                "32",
+                "1.3",
+                "1.6",
+                "1.9"
+              ],
+              [
+                "34",
+                "1.4",
+                "1.7",
+                "2.0"
+              ],
+              [
+                "36",
+                "1.4",
+                "1.8",
+                "2.2"
+              ],
+              [
+                "38",
+                "1.5",
+                "1.9",
+                "2.3"
+              ],
+              [
+                "40",
+                "1.6",
+                "2.0",
+                "2.4"
+              ],
+              [
+                "42",
+                "1.7",
+                "2.1",
+                "2.5"
               ]
             ]
           }
@@ -9197,6 +9306,11 @@
             "text": "03h 15min"
           }
         ]
+      },
+      "official_fidelity_audit": {
+        "version": "official-source-v1",
+        "verified_against_original_exam_pdf": true,
+        "note": "Tábuas de marés reconstruídas integralmente a partir da prova oficial; corrigida a Tabela II anteriormente simplificada."
       }
     },
     {
@@ -10637,94 +10751,94 @@
           },
           {
             "type": "table",
-            "title": "Extrato da Tábua das Marés",
+            "title": "EXTRATO DA TÁBUA DAS MARÉS — Nível Médio = 3,43 m",
             "headers": [
               "Hora",
-              "Altura (m)"
+              "Alt.(m)"
             ],
             "rows": [
               [
-                "03h38",
+                "03 38",
                 "1,0"
               ],
               [
-                "09h43",
+                "09 43",
                 "5,7"
               ],
               [
-                "15h54",
+                "15 54",
                 "1,1"
               ],
               [
-                "22h00",
+                "22 00",
                 "5,7"
               ],
               [
-                "04h18",
+                "04 18",
                 "1,1"
               ]
             ]
           },
           {
             "type": "table",
-            "title": "Tabela I — duração da enchente ou vazante",
+            "title": "TABELA I — Duração da enchente ou da vazante",
             "headers": [
-              "Intervalo",
-              "5h40",
-              "6h00",
-              "6h20"
+              "Intervalo de tempo",
+              "5 40",
+              "6 00",
+              "6 20"
             ],
             "rows": [
               [
-                "1h30",
+                "1 30",
                 "16",
                 "15",
                 "13"
               ],
               [
-                "1h40",
+                "1 40",
                 "20",
                 "18",
                 "16"
               ],
               [
-                "1h50",
+                "1 50",
                 "24",
                 "21",
                 "19"
               ],
               [
-                "2h00",
+                "2 00",
                 "28",
                 "25",
                 "23"
               ],
               [
-                "2h10",
+                "2 10",
                 "32",
                 "29",
                 "26"
               ],
               [
-                "2h20",
+                "2 20",
                 "36",
                 "33",
                 "30"
               ],
               [
-                "2h30",
+                "2 30",
                 "41",
                 "37",
                 "34"
               ],
               [
-                "2h40",
+                "2 40",
                 "46",
                 "41",
                 "38"
               ],
               [
-                "2h50",
+                "2 50",
                 "50",
                 "46",
                 "42"
@@ -10733,49 +10847,97 @@
           },
           {
             "type": "table",
-            "title": "Tabela II — fração da amplitude",
+            "title": "TABELA II — Fração da amplitude",
             "headers": [
-              "Fração",
-              "Amplitude 4 m",
-              "Amplitude 5 m",
-              "Amplitude 6 m"
+              "Fração da amplitude",
+              "4 m",
+              "5 m",
+              "6 m"
             ],
             "rows": [
               [
-                "1/6",
-                "0,6",
-                "0,8",
-                "1,0"
+                "16",
+                "0.6",
+                "0.8",
+                "1.0"
               ],
               [
-                "2/6",
-                "1,3",
-                "1,6",
-                "1,9"
+                "18",
+                "0.7",
+                "0.9",
+                "1.1"
               ],
               [
-                "3/6",
-                "2,0",
-                "2,5",
-                "3,0"
+                "20",
+                "0.8",
+                "1.0",
+                "1.2"
               ],
               [
-                "4/6",
-                "2,7",
-                "3,4",
-                "4,0"
+                "22",
+                "0.9",
+                "1.1",
+                "1.3"
               ],
               [
-                "5/6",
-                "3,4",
-                "4,2",
-                "5,0"
+                "24",
+                "1.0",
+                "1.2",
+                "1.4"
               ],
               [
-                "6/6",
-                "4,0",
-                "5,0",
-                "6,0"
+                "26",
+                "1.0",
+                "1.3",
+                "1.6"
+              ],
+              [
+                "28",
+                "1.1",
+                "1.4",
+                "1.7"
+              ],
+              [
+                "30",
+                "1.2",
+                "1.5",
+                "1.8"
+              ],
+              [
+                "32",
+                "1.3",
+                "1.6",
+                "1.9"
+              ],
+              [
+                "34",
+                "1.4",
+                "1.7",
+                "2.0"
+              ],
+              [
+                "36",
+                "1.4",
+                "1.8",
+                "2.2"
+              ],
+              [
+                "38",
+                "1.5",
+                "1.9",
+                "2.3"
+              ],
+              [
+                "40",
+                "1.6",
+                "2.0",
+                "2.4"
+              ],
+              [
+                "42",
+                "1.7",
+                "2.1",
+                "2.5"
               ]
             ]
           }
@@ -10802,6 +10964,11 @@
             "text": "07h 50 - 13h 20"
           }
         ]
+      },
+      "official_fidelity_audit": {
+        "version": "official-source-v1",
+        "verified_against_original_exam_pdf": true,
+        "note": "Tábuas de marés reconstruídas integralmente a partir da prova oficial; corrigida a Tabela II anteriormente simplificada."
       }
     },
     {
@@ -12110,5 +12277,18 @@
       "source_file": "PROVAROSA2012-GABARITODEFINITIVO-22FEV2013.pdf"
     }
   ],
-  "note": "264 itens extraídos dos PDFs completos. Gabaritos 2006/2008 preservados das marcações (X); 2011/2012 validados pelas marcações do gabarito definitivo dos PDFs. Dez questões anuladas permanecem cadastradas e não sorteáveis."
+  "note": "264 itens extraídos dos PDFs completos. Gabaritos 2006/2008 preservados das marcações (X); 2011/2012 validados pelas marcações do gabarito definitivo dos PDFs. Dez questões anuladas permanecem cadastradas e não sorteáveis.",
+  "metadata": {
+    "official_fidelity_audit": {
+      "version": "official-source-v1",
+      "audited_non_annulled_questions": 254,
+      "source_years": [
+        2006,
+        2008,
+        2011,
+        2012
+      ],
+      "policy": "Preserve official wording, alternative order, answer key, source typos and source duplicate alternatives; repair extraction artifacts only."
+    }
+  }
 }

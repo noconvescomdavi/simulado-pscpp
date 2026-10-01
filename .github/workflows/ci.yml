@@ -35,6 +35,9 @@ jobs:
       - name: Learning algorithm tests
         run: npm run test:learning
 
+      - name: Official PSCPP source fidelity
+        run: npm run generate:pscpp-bank && npm run validate:historical-blueprint
+
       - name: Validate question banks
         run: npm run validate:questions
 
