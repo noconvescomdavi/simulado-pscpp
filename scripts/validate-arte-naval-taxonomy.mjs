@@ -26,6 +26,7 @@ const baselineAnswers = { A: 0, B: 0, C: 0, D: 0, E: 0 };
 const baselineChapterCounts = new Map();
 
 for (const [index, question] of questions.entries()) {
+  if (/^AN-C10-/.test(String(question?.id || ""))) continue; // superseded by data/pscpp/arte-naval-cap10-108.json
   const expectedId = `ANV-${String(index + 1).padStart(4, "0")}`;
   if (question.id !== expectedId) errors.push(`${question.id || `posição ${index + 1}`}: ID esperado ${expectedId}`);
   if (ids.has(question.id)) errors.push(`${question.id}: ID repetido`);
