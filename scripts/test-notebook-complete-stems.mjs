@@ -40,7 +40,13 @@ for (const edit of pack.edits) {
   const html = renderToStaticMarkup(React.createElement(StructuredQuestion, { question: notebookPublicQuestion(question) }));
   const escaped = text => renderToStaticMarkup(React.createElement("span", null, text)).slice(6, -7);
   const before = report.questions.find(q => q.bank === edit.bank && q.id === edit.id);
-  assert.equal(question.correct_answer, before.correct_answer, `Answer letter changed: ${edit.id}`);
+  if (before) {
+    assert.equal(question.correct_answer, before.correct_answer, `Answer letter changed: ${edit.id}`);
+  } else {
+    assert.ok(edit.source_file, `New restoration without source_file: ${edit.id}`);
+    assert.equal(edit.options, undefined, `New stem-only restoration must not replace options: ${edit.id}`);
+    assert.equal(edit.explanation, undefined, `New stem-only restoration must not replace explanation: ${edit.id}`);
+  }
   if (edit.association_pairs) {
     assert.equal(structure.type, "correlation");
     assert.ok(html.includes("COLUNA A") && html.includes("COLUNA B"));
@@ -57,8 +63,10 @@ for (const edit of pack.edits) {
       assert.equal(new Set(option.text.split(" – ")).size, edit.association_pairs.length);
     }
   } else {
-    assert.equal(digest(question.options), before.options_sha256, `Options changed: ${edit.id}`);
-    assert.equal(digest(question.explanation), before.explanation_sha256, `Explanation changed: ${edit.id}`);
+    if (before) {
+      assert.equal(digest(question.options), before.options_sha256, `Options changed: ${edit.id}`);
+      assert.equal(digest(question.explanation), before.explanation_sha256, `Explanation changed: ${edit.id}`);
+    }
     if (edit.reasons.includes("inline_assertions_removed")) {
       const items = structure.blocks.flatMap(b => b.type === "assertions" ? b.items : []);
       assert.ok(items.length >= 2, `Unparsed inline statements: ${edit.id}`);
@@ -84,8 +92,33 @@ for (const [bank, data] of Object.entries(banks)) {
     if (missingPairs) assert.ok(structure.blocks.some(b => b.type === "columns"), `Association without columns: ${bank}/${q.id}`);
   }
 }
-assert.equal(audited, 9711);
-assert.equal(pack.edits.length, 474);
+const activeFragoso = (banks["arte-naval"]?.questions || []).filter(
+  question => question?.taxonomy?.bibliography_id === "fragoso"
+);
+if (activeFragoso.length !== 144) {
+  const arteSource = JSON.parse(fs.readFileSync(new URL("../data/questions/arte-naval.json", import.meta.url), "utf8"));
+  const [{ applyQuestionRestorations, applyContentEditorialRestoration }, { reformulateLeakingStem }, { normalizeEditorialStem }, { restoreCompleteNotebookStem }, { questionQualityState }] = await Promise.all([
+    import("../lib/question-restorations.js"),
+    import("../lib/question-quality.js"),
+    import("../lib/question-editorial-normalization.js"),
+    import("../lib/notebook-stem-restorations.js"),
+    import("../lib/question-quality-policy.js"),
+  ]);
+  const restored = applyQuestionRestorations("arte-naval", arteSource);
+  const activeIds = new Set(activeFragoso.map(question => String(question.id)));
+  const diagnostics = (restored.questions || [])
+    .filter(question => question?.taxonomy?.bibliography_id === "fragoso")
+    .map(question => applyContentEditorialRestoration("arte-naval", question))
+    .map(reformulateLeakingStem)
+    .map(normalizeEditorialStem)
+    .map(question => restoreCompleteNotebookStem("arte-naval", question))
+    .filter(question => !activeIds.has(String(question.id)))
+    .map(question => ({ id: question.id, reason: questionQualityState(question).reason, question: question.question, correct_answer: question.correct_answer }));
+  console.error("FRAGOSO_INACTIVE_DIAGNOSTICS", JSON.stringify(diagnostics, null, 2));
+}
+assert.equal(activeFragoso.length, 144, "As 144 questões de Rebocadores Portuários devem permanecer ativas no banco de cadernos");
+assert.equal(audited, 9855);
+assert.equal(pack.edits.length, 506);
 assert.equal(Object.keys(byBank).length, 7);
-assert.deepEqual(reasons, {inline_assertions_removed: 346, fill_sentence_removed: 10, association_columns_missing: 45, empty_fill_context: 72, incomplete_association_command: 1});
+assert.deepEqual(reasons, {inline_assertions_removed: 365, fill_sentence_removed: 10, association_columns_missing: 45, empty_fill_context: 72, incomplete_association_command: 1, source_stem_replaced_by_runtime_normalization: 13});
 console.log(JSON.stringify({verified:pack.edits.length,by_bank:byBank,reasons,component_html_verified:true},null,2));
