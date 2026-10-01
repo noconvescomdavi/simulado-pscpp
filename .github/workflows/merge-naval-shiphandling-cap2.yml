@@ -1,0 +1,192 @@
+name: Merge Naval Shiphandling Chapter 2 bank
+
+on:
+  push:
+    branches:
+      - feature/naval-shiphandling-cap2-162q-20260930
+    paths:
+      - ".github/workflows/merge-naval-shiphandling-cap2.yml"
+      - "tmp/naval-shiphandling-cap2-source.json"
+
+permissions:
+  contents: write
+
+jobs:
+  merge-bank:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/naval-shiphandling-cap2-162q-20260930
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Merge and validate 162 questions
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+
+          const targetPath = 'data/questions/manobrabilidade.json';
+          const sourcePath = 'tmp/naval-shiphandling-cap2-source.json';
+          const src = JSON.parse(fs.readFileSync(sourcePath, 'utf8'));
+          const dst = JSON.parse(fs.readFileSync(targetPath, 'utf8'));
+
+          if (!Array.isArray(src.questions) || src.questions.length !== 162) {
+            throw new Error(`Source must contain 162 questions; got ${src.questions?.length}`);
+          }
+          if (!Array.isArray(dst.questions)) throw new Error('Target questions array missing');
+
+          const M1='1. Resistência do navio e métodos de obtenção';
+          const M2='2. Propulsão do navio e propulsores';
+          const M3='3. Superfícies de controle - lemes';
+          const M4='4. Controlabilidade e padrões de manobrabilidade';
+          const M5='5. Efeitos ambientais, águas rasas e interações';
+          const M6='6. Mar adverso e informações de manobra a bordo';
+
+          function ucNum(q) {
+            const s=q.tracking?.coverage_unit||q.subtopic||q.id;
+            const m=String(s).match(/UC(\d{2})/i);
+            return m ? Number(m[1]) : NaN;
+          }
+          function moduleFor(n) {
+            if(n>=1&&n<=7)return M1;
+            if(n>=8&&n<=13)return M3;
+            if(n>=14&&n<=34)return M2;
+            if(n>=35&&n<=41)return M1;
+            if(n>=42&&n<=43)return M5;
+            if(n===44)return M1;
+            if(n===45)return M6;
+            if(n===46)return M1;
+            if(n>=47&&n<=53)return M5;
+            if(n===54)return M4;
+            throw new Error(`No canonical module mapping for UC${n}`);
+          }
+          function slugify(s) {
+            return String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+              .toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').replace(/-+/g,'-');
+          }
+          function countBy(arr,getter) {
+            const o={};
+            for(const q of arr){
+              const k=getter(q);
+              if(k!==undefined&&k!==null&&k!=='')o[k]=(o[k]||0)+1;
+            }
+            return o;
+          }
+
+          const transformed=src.questions.map(q=>{
+            const n=ucNum(q);
+            const uc=`UC${String(n).padStart(2,'0')}`;
+            const mod=moduleFor(n);
+            const topicTitle=q.tracking?.topic_title||q.topic;
+            const topicId=`I-crenshaw-naval-shiphandling-ch2-${uc.toLowerCase()}-${slugify(topicTitle)}`;
+            const tags=Array.from(new Set([
+              ...(q.tags||[]).map(t=>t==='arte-naval'?'manobrabilidade':t),
+              'manobrabilidade','crenshaw-naval-shiphandling','crenshaw-naval-shiphandling::ch2'
+            ])).filter(t=>t!=='arte-naval');
+
+            return {
+              ...q,
+              id:String(q.id).replace(/^AN-NSH-C02-/,'MAN-NSH-C02-'),
+              subject:'Manobrabilidade do Navio',
+              module:mod,
+              topic_code:String(q.topic_code||`AN-NSH-C02-${uc}`).replace(/^AN-NSH-C02-/,'MAN-NSH-C02-'),
+              taxonomy:{
+                subject_id:'I',
+                subject_slug:'manobrabilidade',
+                bibliography_id:'crenshaw-naval-shiphandling',
+                chapter_id:'crenshaw-naval-shiphandling::ch2',
+                topic_id:topicId,
+                subtopic_id:uc
+              },
+              tracking:{
+                subject_slug:'manobrabilidade',
+                work:{id:'crenshaw-naval-shiphandling',title:'CRENSHAW — Naval Shiphandling, 4ª ed.',author:'CRENSHAW, Russell Sydnor'},
+                chapter:{id:'crenshaw-naval-shiphandling::ch2',number:'ch2',title:'Chapter 2 – Forces Affecting the Ship',label:'Chapter 2 – Forces Affecting the Ship'},
+                section:q.tracking?.section||q.source?.locator||'Chapter 2 – Forces Affecting the Ship',
+                module:mod,
+                topic:{id:topicId,title:topicTitle},
+                coverage_unit:uc
+              },
+              source:{...(q.source||{}),author:'CRENSHAW, Russell Sydnor',title:'Naval Shiphandling',edition:'4. ed., 1975'},
+              tags,
+              validation:{
+                ...(q.validation||{}),
+                authority:'CRENSHAW — Naval Shiphandling, 4ª ed.',
+                verified_chapter:true,
+                verified_locator:true,
+                verified_on:'2026-09-30',
+                review:'Capítulo 2 retaxonomizado para Manobrabilidade do Navio e revalidado para integração no banco principal.',
+                source_verified:true,
+                key_verified:true,
+                duplicate_checked:true,
+                program_alignment_checked:true
+              }
+            };
+          });
+
+          const ids=transformed.map(q=>q.id);
+          if(new Set(ids).size!==162) throw new Error('Transformed IDs are not unique');
+          const existingIds=new Set(dst.questions.map(q=>q.id));
+          const collisions=ids.filter(id=>existingIds.has(id));
+          if(collisions.length) throw new Error(`ID collisions: ${collisions.slice(0,10).join(', ')}`);
+
+          const ucCounts={}, formatCounts={}, answerCounts={};
+          const existingTexts=new Set(dst.questions.map(q=>String(q.question||'').trim().toLowerCase().replace(/\s+/g,' ')));
+          let badOptions=0,badKeys=0,missingExplanation=0,badDistractors=0,exactDup=0;
+          for(const q of transformed){
+            const uc=q.tracking.coverage_unit;
+            ucCounts[uc]=(ucCounts[uc]||0)+1;
+            formatCounts[q.pscpp_format]=(formatCounts[q.pscpp_format]||0)+1;
+            answerCounts[q.correct_answer]=(answerCounts[q.correct_answer]||0)+1;
+            const letters=(q.options||[]).map(o=>o.letter);
+            if((q.options||[]).length!==5||letters.join('')!=='ABCDE')badOptions++;
+            if(!letters.includes(q.correct_answer))badKeys++;
+            if(!String(q.explanation||'').trim())missingExplanation++;
+            if(!q.distractor_analysis||Object.keys(q.distractor_analysis).length<5)badDistractors++;
+            const nq=String(q.question||'').trim().toLowerCase().replace(/\s+/g,' ');
+            if(existingTexts.has(nq))exactDup++;
+          }
+          const badUc=Object.entries(ucCounts).filter(([,v])=>v!==3);
+          if(Object.keys(ucCounts).length!==54||badUc.length||badOptions||badKeys||missingExplanation||badDistractors||exactDup){
+            throw new Error(JSON.stringify({coverageUnits:Object.keys(ucCounts).length,badUc,badOptions,badKeys,missingExplanation,badDistractors,exactDup}));
+          }
+
+          const merged=[...dst.questions,...transformed];
+          dst.questions=merged;
+          dst.validation={
+            ...(dst.validation||{}),
+            total:merged.length,
+            by_module:countBy(merged,q=>q.module),
+            by_difficulty:countBy(merged,q=>q.difficulty),
+            by_style:countBy(merged,q=>q.style),
+            answer_balance:countBy(merged,q=>q.correct_answer),
+            last_sync:'2026-09-30T22:41:00-03:00'
+          };
+
+          fs.writeFileSync(targetPath, JSON.stringify(dst,null,2)+'\n');
+
+          console.log(JSON.stringify({
+            before:merged.length-transformed.length,
+            added:transformed.length,
+            after:merged.length,
+            coverageUnits:Object.keys(ucCounts).length,
+            formatCounts,
+            answerCounts,
+            newModuleDistribution:countBy(transformed,q=>q.module)
+          },null,2));
+          NODE
+
+      - name: Commit merged bank and remove staging files
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/questions/manobrabilidade.json
+          git rm -f "tmp/naval-shiphandling-cap2-source.json" ".github/workflows/merge-naval-shiphandling-cap2.yml"
+          git commit -m "feat(questions): integrate Naval Shiphandling chapter 2 into manobrabilidade"
+          git push origin HEAD:feature/naval-shiphandling-cap2-162q-20260930
