@@ -80,7 +80,7 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
 
   const totalSelected=banks.filter(x=>s.includes(x.slug)).reduce((sum,x)=>sum+Number(x.count||0),0);
   const availabilityText=filters.official_exam_only
-    ?"Acervo histórico: 254 questões não anuladas · 252 ativas · 2 em quarentena editorial"
+    ?"Acervo histórico: 254 questões oficiais não anuladas · 254 ativas"
     :`${totalSelected.toLocaleString("pt-BR")} questões disponíveis`;
   return (
     <section className={styles.builderLayout}><div className={styles.box}>
