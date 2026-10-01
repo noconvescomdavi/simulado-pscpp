@@ -55,3 +55,5 @@ jobs:
           git add data/questions/navegacao-aguas-restritas.json data/questions/meteorologia-oceanografia.json
           git diff --cached --quiet || git commit -m "fix(questions): remove localizadores dos enunciados Miguens"
           git push
+
+# retry-after-solas-locator-fix
