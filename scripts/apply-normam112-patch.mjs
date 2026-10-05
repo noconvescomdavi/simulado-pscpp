@@ -11,8 +11,8 @@ const patches = {};
 for (const file of patchFiles) {
   Object.assign(patches, JSON.parse(fs.readFileSync(file, "utf8")));
 }
-if (Object.keys(patches).length !== 96) {
-  throw new Error(`Esperadas 96 questões no patch; encontradas ${Object.keys(patches).length}.`);
+if (Object.keys(patches).length !== 101) {
+  throw new Error(`Esperadas 101 questões no patch; encontradas ${Object.keys(patches).length}.`);
 }
 
 const byId = new Map(questions.map((q, i) => [q.id, i]));
