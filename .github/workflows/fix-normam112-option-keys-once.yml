@@ -1,0 +1,32 @@
+name: Fix NORMAM-112 option keys once
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/fix-normam112-option-keys-once.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Normalize NORMAM-112 option schema
+        run: node scripts/fix-normam112-option-keys.mjs
+
+      - name: Commit normalized bank
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/questions/legislacao-regulamentacao.json
+          git diff --cached --quiet && exit 1
+          git commit -m "fix(questions): normalize NORMAM-112 option keys"
+          git push origin HEAD:main
