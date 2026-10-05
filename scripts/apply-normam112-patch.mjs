@@ -1,7 +1,7 @@
 import fs from "node:fs";
 
 const bankPath = "data/questions/legislacao-regulamentacao.json";
-const patchFiles = [1,2,3,4,5].map(n => `scripts/tmp/n112patch_0${n}.json`);
+const patchFiles = [1,2,3,4,5,6].map(n => `scripts/tmp/n112patch_0${n}.json`);
 
 const bank = JSON.parse(fs.readFileSync(bankPath, "utf8"));
 const questions = Array.isArray(bank) ? bank : (bank.questions || bank.questoes || bank.items);
