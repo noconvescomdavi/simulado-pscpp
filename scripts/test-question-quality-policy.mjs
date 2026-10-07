@@ -12,6 +12,29 @@ assert.equal(isQuestionActive({ id:"LEG-3", tags:["cobertura-v2"] }), false);
 assert.equal(isQuestionActive({ id:"LEG-4", tags:["revisao-contextual-v2"] }), false);
 assert.equal(isQuestionActive({ id:"BAD-1", correct_answer:"B", explanation:"A alternativa A é a correta." }), false);
 assert.equal(isQuestionActive({ id:"BAD-2", question:"A descrição técnica a seguir corresponde a qual opção?" }), false);
+assert.equal(isQuestionActive({
+  id:"BAD-ASSERTION-OPTION",
+  question:"Analise as afirmativas:",
+  assertions:["I) Apenas as afirmativas II e IV são verdadeiras.","II) Conteúdo técnico válido."],
+  options:[{text:"A"},{text:"B"},{text:"C"},{text:"D"},{text:"E"}]
+}), false);
+assert.equal(isQuestionActive({
+  id:"BAD-ASSERTION-VF",
+  question:"Analise as afirmativas:",
+  assertions:["I) ( V ) ( F ) ( V ) ( F ).","II) Conteúdo técnico válido."],
+  options:[{text:"A"},{text:"B"},{text:"C"},{text:"D"},{text:"E"}]
+}), false);
+assert.equal(isQuestionActive({
+  id:"BAD-GENERIC-DEFS",
+  question:"Assinale a alternativa correta.",
+  options:[
+    {text:"Sobre “termo A”, é tecnicamente correto afirmar: definição A."},
+    {text:"Sobre “termo B”, é tecnicamente correto afirmar: definição B."},
+    {text:"Sobre “termo C”, é tecnicamente correto afirmar: definição C."},
+    {text:"Alternativa D"},
+    {text:"Alternativa E"}
+  ]
+}), false);
 assert.match(questionQualityState({ provenance:{method:"pscpp-bibliographic-v6"} }).reason, /^legacy-generator:/);
 const subjects=["arte-naval","comunicacoes","conhecimentos-gerais","legislacao-regulamentacao","manobrabilidade","meteorologia-oceanografia","navegacao-aguas-restritas"];
 for (const subject of subjects) {
