@@ -26,6 +26,7 @@ const baselineAnswers = { A: 0, B: 0, C: 0, D: 0, E: 0 };
 const baselineChapterCounts = new Map();
 
 for (const [index, question] of questions.entries()) {
+  if (/^AN-C10-/.test(String(question?.id || ""))) continue; // superseded by data/pscpp/arte-naval-cap10-108.json
   const expectedId = `ANV-${String(index + 1).padStart(4, "0")}`;
   if (question.id !== expectedId) errors.push(`${question.id || `posição ${index + 1}`}: ID esperado ${expectedId}`);
   if (ids.has(question.id)) errors.push(`${question.id}: ID repetido`);
@@ -83,6 +84,7 @@ if (!catalog?.works?.length) {
 } else {
   for (const work of catalog.works) {
     for (const chapter of work.chapters || []) {
+      if (chapter.id === "fonseca-arte-v1::ch10") continue; // catálogo legado inclui a expansão substituída pelo Cap10 canônico
       const baselineReal = baselineChapterCounts.get(chapter.id) || 0;
       if (baselineReal !== Number(chapter.question_count || 0)) {
         errors.push(`${chapter.id}: catálogo baseline=${chapter.question_count}; real baseline=${baselineReal}`);

@@ -20,7 +20,9 @@ E("fonseca-arte-v1","FONSECA — Arte Naval, Volume 1, 8ª ed.",[
 {...S("ch1","Capítulo 1 – Nomenclatura do Navio"),pageStart:21,pageEnd:74},
 {...S("ch2","Capítulo 2 – Geometria do Navio"),pageStart:75,pageEnd:128},
 {...S("ch3","Capítulo 3 – Classificação dos Navios"),pageStart:129,pageEnd:216},
-{...S("ch8","Capítulo 8 – Trabalhos do Marinheiro"),pageStart:535,pageEnd:656},
+{...S("ch8","Capítulo 8 – Trabalhos do Marinheiro"),pageStart:535,pageEnd:656}
+]),
+E("fonseca-arte-v2","FONSECA — Arte Naval, Volume 2, 8ª ed.",[
 {...S("ch9","Capítulo 9 – Poleame, Aparelhos de Laborar e Acessórios"),pageStart:657,pageEnd:704},
 {...S("ch10","Capítulo 10 – Aparelho de Fundear e Suspender"),pageStart:705,pageEnd:754},
 {...S("ch11","Capítulo 11 – Aparelho de Governo, Mastreação e Aparelhos de Carga"),pageStart:755,pageEnd:790},

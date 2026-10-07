@@ -53,7 +53,7 @@ function answerKey(q) {
 }
 function correctOption(q) {
   const key = answerKey(q);
-  return (q.options || []).find(o => String(o?.key || '').trim().toUpperCase() === key);
+  return (q.options || []).find(o => String(o?.key || o?.letter || '').trim().toUpperCase() === key);
 }
 function optionSignature(q) {
   return (q.options || []).map(o => clean(o?.text).normalize('NFC').toLocaleLowerCase('pt-BR')).sort().join('|');

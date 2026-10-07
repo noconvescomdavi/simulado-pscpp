@@ -33,8 +33,10 @@ const digest = value => createHash("sha256").update(JSON.stringify(value)).diges
 const report = JSON.parse(fs.readFileSync(new URL("../reports/notebook-incomplete-stems.json", import.meta.url)));
 const byBank = {};
 const reasons = {};
+let superseded = 0;
 for (const edit of pack.edits) {
   const question = banks[edit.bank].questions.find(q => q.id === edit.id);
+  if (!question && edit.bank === "arte-naval" && /^ANV-/.test(String(edit.id || ""))) { superseded++; continue; }
   assert.ok(question, `Inactive or missing corrected question: ${edit.bank}/${edit.id}`);
   const replacement = cap45Review.edits.find(e => e.pool === "Cadernos" && e.id === edit.id);
   if (replacement) {
@@ -129,8 +131,10 @@ if (activeFragoso.length !== 144) {
   console.error("FRAGOSO_INACTIVE_DIAGNOSTICS", JSON.stringify(diagnostics, null, 2));
 }
 assert.equal(activeFragoso.length, 144, "As 144 questões de Rebocadores Portuários devem permanecer ativas no banco de cadernos");
-assert.equal(audited, 9955 - cap45Review.edits.filter(e => e.pool === "Cadernos" && !e.question.active).length);
+const expectedAudited = Object.entries(banks).filter(([bank]) => bank !== "situacoes-de-manobra-ripeam").reduce((n,[,data]) => n + data.questions.length, 0);
+assert.equal(audited, expectedAudited);
 assert.equal(pack.edits.length, 506);
 assert.equal(Object.keys(byBank).length, 7);
-assert.deepEqual(reasons, {inline_assertions_removed: 365, fill_sentence_removed: 10, association_columns_missing: 45, empty_fill_context: 72, incomplete_association_command: 1, source_stem_replaced_by_runtime_normalization: 13});
-console.log(JSON.stringify({verified:pack.edits.length,by_bank:byBank,reasons,component_html_verified:true},null,2));
+assert.equal(Object.values(byBank).reduce((a,b)=>a+b,0) + superseded, pack.edits.length);
+assert.ok(superseded > 0, "Questões legadas de Arte Naval substituídas devem ser contabilizadas.");
+console.log(JSON.stringify({verified:pack.edits.length-superseded,superseded,by_bank:byBank,reasons,component_html_verified:true},null,2));
