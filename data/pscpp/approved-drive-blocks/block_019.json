@@ -682,8 +682,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "manobrabilidade",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "À luz de IMO Resolution A.601(15) - Provision and Display of Manoeuvring Information on Board Ships, julgue as proposições referentes a \"Pilot Card\":",
       "assertions": [
         "I) ( V ) ( F ) ( V ) ( F ).",
@@ -792,6 +792,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "MAN-B019-07",
         "source_block": 19
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -912,8 +921,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "manobrabilidade",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com BERTRAM, Volker — Practical Ship Hydrodynamics, e considerando \"Definições, Parâmetros e Geometria do Propulsor tipo Hélice\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas I e III são verdadeiras.",
@@ -1022,6 +1031,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "MAN-B019-09",
         "source_block": 19
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -1142,8 +1160,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "manobrabilidade",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com Naval Shiphandling, e considerando \"Tipos de Resistência em mar calmo, sem vento, sem ondas e em águas profundas\", analise as afirmativas:",
       "assertions": [
         "I) As afirmativas I, II, III e IV são verdadeiras.",
@@ -1252,6 +1270,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "MAN-B019-11",
         "source_block": 19
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -1932,8 +1959,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "arte-naval",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "À luz de Shiphandling for the Mariner, julgue as proposições referentes a \"Giro curto e circular em velocidade baixa\":",
       "assertions": [
         "I) ( V ) ( V ) ( F ) ( F ).",
@@ -2042,6 +2069,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "ANV-B019-05",
         "source_block": 19
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -2163,7 +2199,7 @@
       "pscpp_origin": "generated_pscpp",
       "source_subject": "arte-naval",
       "active": false,
-      "validation_status": "quarantined_irrecoverable_source_mismatch",
+      "validation_status": "quarantined_semantic_contamination",
       "question": "Correlacione os termos às respectivas descrições, com base em FONSECA, Maurílio M. - Arte Naval, Volume 2: Considere o contexto específico identificado por ANV-B019-07.\n\nCOLUNA A\n1) anete\n2) polé\n3) grampo para cabo de aço\n4) boça da amarra\n\nCOLUNA B\na) Apenas as afirmativas I e II são verdadeiras.\nb) Apenas as afirmativas III e IV são verdadeiras.\nc) Apenas as afirmativas II e III são verdadeiras.\nd) Apenas as afirmativas I e III são verdadeiras.",
       "assertions": [
         "1) anete",
@@ -2277,7 +2313,16 @@
         "source_block": 19
       },
       "quarantine_reason": "Questão de correlação contém descrições incompatíveis/contaminadas e os metadados bibliográficos não sustentam os termos apresentados; reconstrução segura exigiria inventar conteúdo ou referência.",
-      "editorial_status": "QUARENTENA_IRRECUPERÁVEL"
+      "editorial_status": "QUARENTENA_IRRECUPERÁVEL",
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
+      }
     },
     {
       "id": "ANV-B019-08",
@@ -2397,8 +2442,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "arte-naval",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com o contido em “Arte Naval, v. 1”, analise as afirmativas abaixo, identifique as verdadeiras e assinale a opção correta:",
       "assertions": [
         "I) No contexto de “bochechas”, a associação “extremidade de ré do navio” está correta.",
@@ -2507,6 +2552,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "ANV-B019-09",
         "source_block": 19
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -2627,8 +2681,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "arte-naval",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com FONSECA, Maurílio M. - Arte Naval, Volume 2, e considerando \"Amarrações especiais\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas I e II são verdadeiras.",
@@ -2737,6 +2791,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "ANV-B019-11",
         "source_block": 19
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -3193,8 +3256,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "arte-naval",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com Shiphandling for the Mariner, e considerando \"Troca de atracadouro (manobra de cabeços), considerando as correntes locais\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas III e IV estão corretas.",
@@ -3303,6 +3366,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "ANV-B019-16",
         "source_block": 19
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -3759,8 +3831,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "navegacao-aguas-restritas",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "À luz de NORMAM-601/DHN — Auxílios à Navegação, julgue as proposições referentes a \"Sinalização de cais, píeres, molhes, enrocamentos, marinas,\":",
       "assertions": [
         "I) ( F ) ( F ) ( V ) ( V ).",
@@ -3869,6 +3941,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "NAR-B019-04",
         "source_block": 19
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -3989,8 +4070,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "navegacao-aguas-restritas",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com ICS Bridge Procedures Guide, e considerando \"O pilot card\", analise as afirmativas:",
       "assertions": [
         "I) As afirmativas I, II, III e IV são verdadeiras.",
@@ -4099,6 +4180,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "NAR-B019-06",
         "source_block": 19
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -4219,8 +4309,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "navegacao-aguas-restritas",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com COLREG 1972 / RIPEAM — Consolidated text, e considerando \"Regras especiais para evitar abalroamento na Navegação Interior\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas I e III são verdadeiras.",
@@ -4329,6 +4419,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "NAR-B019-08",
         "source_block": 19
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -4561,8 +4660,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "legislacao-regulamentacao",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com IMO Resolution A.960(23) — Recommendations on training and certification and operational procedures for maritime pilots, e considerando \"Serviço de Praticagem no Brasil\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas I e III são verdadeiras.",
@@ -4671,6 +4770,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "LEG-B019-02",
         "source_block": 19
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -4679,8 +4787,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "legislacao-regulamentacao",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "À luz de IMO Resolution A.960(23) — Recommendations on training and certification and operational procedures for maritime pilots, julgue as proposições referentes a \"Serviço de Praticagem no Brasil\":",
       "assertions": [
         "I) ( V ) ( V ) ( V ) ( V ).",
@@ -4789,6 +4897,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "LEG-B019-03",
         "source_block": 19
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -4909,8 +5026,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "legislacao-regulamentacao",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com MARINHA DO BRASIL — NORMAM-201/DPC, e considerando \"Inquéritos Administrativos sobre Acidentes e Fatos da Navegação\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas II e IV são verdadeiras.",
@@ -5019,6 +5136,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "LEG-B019-05",
         "source_block": 19
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -5139,8 +5265,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "legislacao-regulamentacao",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "Antes de uma operação do N/M Marajó, surge uma questão regulamentar diretamente ligada a a regulamentação da atividade de praticagem. Na discussão, surge a seguinte questão técnica: De acordo com Resolution A.960(23) — Recommendations on training and certification and on operational procedures for maritime pilots other than deep-sea pilots, acerca de A autoridade competente deve estabelecer as áreas de praticagem obrigatória, assinale a alternativa que apresenta corretamente a disposição, requisito ou conceito previsto na publicação.",
       "assertions": null,
       "options": [
@@ -5243,6 +5369,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "LEG-B019-07",
         "source_block": 19
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -6035,8 +6170,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "legislacao-regulamentacao",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com MARINHA DO BRASIL - NORMAM-112/DPC - Cerimonial da Marinha Mercante, e considerando \"Recomendações IMO sobre treinamento, certificação e procedimentos operacionais para\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas I e III são verdadeiras.",
@@ -6145,6 +6280,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "LEG-B019-15",
         "source_block": 19
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -6377,8 +6521,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "meteorologia-oceanografia",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com NORMAM-701/DHN — Atividades de Meteorologia Marítima, e considerando \"Medições de ondas geradas pelo vento e ondas swell\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas I e III são verdadeiras.",
@@ -6487,6 +6631,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "MET-B019-02",
         "source_block": 19
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -6725,8 +6878,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "meteorologia-oceanografia",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "Na aproximação costeira do N/M Amazônia Azul, a evolução meteorológica exige avaliação de normam-701/dhn — normas da autoridade marítima para as atividades de meteorologia marítima e de seu efeito sobre a manobra. Na discussão, surge a seguinte questão técnica: Com base no conteúdo de “NORMAM-701/DHN — Normas da Autoridade Marítima para as Atividades de Meteorologia Marítima”, em Seções sobre METEOROMARINHA, avisos de mau tempo, vento, ondas e visibilidade, marque a alternativa INCORRETA:",
       "assertions": null,
       "options": [
@@ -6829,6 +6982,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "MET-B019-05",
         "source_block": 19
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -7294,8 +7456,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "comunicacoes",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com International Code of Signals, Pub. 102, e considerando \"Código Internacional de Sinais (CIS)\", analise as afirmativas: Considere o contexto específico identificado por COM-B019-04.",
       "assertions": [
         "I) Apenas as afirmativas I e III são verdadeiras.",
@@ -7404,6 +7566,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "COM-B019-04",
         "source_block": 19
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -7524,8 +7695,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "conhecimentos-gerais",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com Planejamento Portuário — Recomendações para Acessos Náuticos, e considerando \"Aspectos gerais sobre projetos de canais de acesso\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas III e IV são verdadeiras.",
@@ -7634,6 +7805,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "CGE-B019-02",
         "source_block": 19
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -7866,8 +8046,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "conhecimentos-gerais",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com Planejamento Portuário — Recomendações para Acessos Náuticos, e considerando \"Gerenciando a pressão na manobra\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas I e II são verdadeiras.",
@@ -7976,6 +8156,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "CGE-B019-05",
         "source_block": 19
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     }
   ]
