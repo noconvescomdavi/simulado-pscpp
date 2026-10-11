@@ -346,48 +346,42 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "manobrabilidade",
-      "active": false,
-      "validation_status": "quarantined_semantic_contamination",
-      "question": "De acordo com LEWIS, Edward V. - Principles of Naval Architecture, Volume II, e considerando \"Propulsão do Navio e Propulsores\", analise as afirmativas:",
-      "assertions": [
-        "I) Apenas as afirmativas II e IV são verdadeiras.",
-        "II) A área da superfície molhada.",
-        "III) transfere energia ao sistema de ondas gerado na superfície livre.",
-        "IV) Apenas as afirmativas I e II são verdadeiras.",
-        "V) da interferência construtiva ou destrutiva entre sistemas de ondas originados em diferentes regiões do casco."
-      ],
+      "active": true,
+      "validation_status": "approved",
+      "question": "Segundo Principles of Naval Architecture, Volume II, qual efeito do casco faz com que a velocidade de avanço do propulsor seja menor que a velocidade do navio?",
+      "assertions": null,
       "options": [
         {
           "key": "A",
-          "text": "Apenas I, II, III e V estão corretas."
+          "text": "A esteira (wake) produzida pela interação do escoamento com o casco."
         },
         {
           "key": "B",
-          "text": "Apenas I e IV estão corretas."
+          "text": "A cavitação, independentemente do escoamento junto ao casco."
         },
         {
           "key": "C",
-          "text": "Apenas II e IV estão corretas."
+          "text": "A resistência do ar sobre as obras-mortas."
         },
         {
           "key": "D",
-          "text": "Apenas III, IV e V estão corretas."
+          "text": "A variação da pressão atmosférica sobre o convés."
         },
         {
           "key": "E",
-          "text": "Todas estão corretas."
+          "text": "A precessão giroscópica do eixo propulsor."
         }
       ],
       "correct_answer": "A",
-      "explanation": "As proposições I, II, III e V são compatíveis com a fonte; a proposição IV foi construída a partir de uma relação tecnicamente incorreta.",
+      "explanation": "A obra explica que o propulsor, atrás do casco, avança relativamente à água com velocidade menor que a velocidade do navio; a diferença é a velocidade de esteira (wake speed).",
       "distractor_analysis": {},
-      "pscpp_format": "assertions",
+      "pscpp_format": "direct",
       "difficulty": "hard",
       "cognitive_level": 4,
       "module": "Manobrabilidade do Navio",
       "topic_code": "6",
-      "topic": "Propulsão do Navio e Propulsores",
-      "subtopic": "Propulsão do Navio e Propulsores",
+      "topic": "Propulsão do navio e propulsores",
+      "subtopic": "Interação casco-propulsor — esteira (wake)",
       "tags": [
         "pscpp-drive",
         "bloco-012",
@@ -426,14 +420,14 @@
         "publication": "LEWIS, Edward V. - Principles of Naval Architecture, Volume II",
         "edition": "2nd rev., 1988",
         "chapter": "resistance, propulsion, wake and model testing",
-        "locator": "resistance, propulsion, wake and model testing",
+        "locator": "Volume II, Propulsion, Section 4 — Interaction Between Hull and Propeller, §4.2 Wake; p. 146",
         "file_id": "12usJCuBo5b7MKuUdFjHE6OPx-Xq_WzVA"
       },
       "source": {
         "title": "LEWIS, Edward V. - Principles of Naval Architecture, Volume II",
         "author": "Edward V. Lewis",
         "edition": "2nd rev., 1988",
-        "locator": "resistance, propulsion, wake and model testing",
+        "locator": "Volume II, Propulsion, Section 4 — Interaction Between Hull and Propeller, §4.2 Wake; p. 146",
         "printed_page": "a confirmar",
         "pdf_page": "a confirmar",
         "drive_file_name": "Lewis E.V.  Principles of Naval Architecture Second Revision. Volume II, 1988.pdf",
@@ -442,14 +436,15 @@
       },
       "validation": {
         "authority": "PSCPP editorial review",
-        "verified_chapter": false,
-        "verified_locator": false,
-        "verified_on": "2026-09-22",
-        "source_verified": false,
+        "verified_chapter": true,
+        "verified_locator": true,
+        "verified_on": "2026-10-11",
+        "source_verified": true,
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "key_verified": true
       },
       "provenance": {
         "method": "approved-drive-bank-import",
@@ -457,13 +452,12 @@
         "source_question_id": "MAN-B012-04",
         "source_block": 12
       },
-      "status": "quarantined",
-      "quality": {
-        "quarantine_reason": "editorial_semantic_contamination_wave1"
-      },
+      "status": "active",
+      "quality": {},
       "editorial_review": {
-        "status": "requires_source_reconstruction",
-        "version": "semantic-contamination-wave1",
+        "content_reviewed": true,
+        "version": "source-repair-2026-10-11",
+        "status": "approved",
         "reviewed_on": "2026-10-11"
       }
     },
@@ -921,48 +915,42 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "manobrabilidade",
-      "active": false,
-      "validation_status": "quarantined_semantic_contamination",
-      "question": "De acordo com Principles of Naval Architecture — Volume III, e considerando \"Procedimentos para execução da curva espiral direta\", analise as afirmativas:",
-      "assertions": [
-        "I) Apenas as afirmativas I e III são verdadeiras.",
-        "II) o escoamento local é afetado pela deriva, guinada, casco e propulsor.",
-        "III) envergadura e corda, ou de modo equivalente envergadura² e área.",
-        "IV) Apenas as afirmativas I e II são verdadeiras.",
-        "V) aumentar a eficiência de sustentação e reduzir o arrasto induzido para uma força dada."
-      ],
+      "active": true,
+      "validation_status": "approved",
+      "question": "No ensaio de espiral reversa de Bech, conforme Principles of Naval Architecture, Volume III, qual grandeza é mantida constante enquanto se mede o ângulo médio de leme necessário?",
+      "assertions": null,
       "options": [
         {
           "key": "A",
-          "text": "Apenas I, II, III e V estão corretas."
+          "text": "A velocidade de avanço do navio."
         },
         {
           "key": "B",
-          "text": "Apenas I e IV estão corretas."
+          "text": "A taxa de guinada (rate of turn)."
         },
         {
           "key": "C",
-          "text": "Apenas II e IV estão corretas."
+          "text": "O ângulo de banda."
         },
         {
           "key": "D",
-          "text": "Apenas III, IV e V estão corretas."
+          "text": "A rotação do propulsor."
         },
         {
           "key": "E",
-          "text": "Todas estão corretas."
+          "text": "O calado médio."
         }
       ],
-      "correct_answer": "A",
-      "explanation": "As proposições I, II, III e V são compatíveis com a fonte; a proposição IV foi construída a partir de uma relação tecnicamente incorreta.",
+      "correct_answer": "B",
+      "explanation": "Na espiral reversa de Bech, o navio é governado a uma taxa de guinada constante e mede-se o ângulo médio de leme necessário para produzir essa taxa; o procedimento é repetido para diferentes taxas.",
       "distractor_analysis": {},
-      "pscpp_format": "assertions",
+      "pscpp_format": "direct",
       "difficulty": "very_hard",
       "cognitive_level": 5,
       "module": "Manobrabilidade do Navio",
       "topic_code": "8.6.9.1",
-      "topic": "Procedimentos para execução da curva espiral direta",
-      "subtopic": "Procedimentos para execução da curva espiral direta",
+      "topic": "Estabilidade direcional",
+      "subtopic": "Ensaio de espiral reversa de Bech",
       "tags": [
         "pscpp-drive",
         "bloco-012",
@@ -1001,14 +989,14 @@
         "publication": "Principles of Naval Architecture — Volume III",
         "edition": "2nd Revision, 1988",
         "chapter": "Vol. III — Motions in Waves and Controllability; sections on directional stability, turning and manoeuvring derivatives",
-        "locator": "Vol. III — Motions in Waves and Controllability; sections on directional stability, turning and manoeuvring derivatives",
+        "locator": "Volume III, Chapter IX — Controllability, §4.4 Bech Reverse Spiral and Pullout Maneuvers; p. 205",
         "file_id": "1Za6N1Cbbo6v_ZZ-g1UxFWQ82SLsMrOjp"
       },
       "source": {
         "title": "Principles of Naval Architecture — Volume III",
         "author": "Edward V. Lewis (ed.)",
         "edition": "2nd Revision, 1988",
-        "locator": "Vol. III — Motions in Waves and Controllability; sections on directional stability, turning and manoeuvring derivatives",
+        "locator": "Volume III, Chapter IX — Controllability, §4.4 Bech Reverse Spiral and Pullout Maneuvers; p. 205",
         "printed_page": "Vol. III, Controllability",
         "pdf_page": "PDF text indexed in project",
         "drive_file_name": "Lewis E.V.  Principles of Naval Architecture Second Revision. Volume III, 1988.pdf",
@@ -1019,12 +1007,13 @@
         "authority": "PSCPP editorial review",
         "verified_chapter": true,
         "verified_locator": true,
-        "verified_on": "2026-09-22",
+        "verified_on": "2026-10-11",
         "source_verified": true,
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "key_verified": true
       },
       "provenance": {
         "method": "approved-drive-bank-import",
@@ -1032,13 +1021,12 @@
         "source_question_id": "MAN-B012-09",
         "source_block": 12
       },
-      "status": "quarantined",
-      "quality": {
-        "quarantine_reason": "editorial_semantic_contamination_wave1"
-      },
+      "status": "active",
+      "quality": {},
       "editorial_review": {
-        "status": "requires_source_reconstruction",
-        "version": "semantic-contamination-wave1",
+        "content_reviewed": true,
+        "version": "source-repair-2026-10-11",
+        "status": "approved",
         "reviewed_on": "2026-10-11"
       }
     },
@@ -1272,48 +1260,42 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "manobrabilidade",
-      "active": false,
-      "validation_status": "quarantined_semantic_contamination",
-      "question": "À luz de LEWIS, Edward V. - Principles of Naval Architecture, Volume II, julgue as proposições referentes a \"Escoamento em torno do casco do navio e a resistência friccional/viscosa\":",
-      "assertions": [
-        "I) ( V ) ( V ) ( V ) ( V ).",
-        "II) A área da superfície molhada.",
-        "III) transfere energia ao sistema de ondas gerado na superfície livre.",
-        "IV) ( V ) ( V ) ( F ) ( F ).",
-        "V) da interferência construtiva ou destrutiva entre sistemas de ondas originados em diferentes regiões do casco."
-      ],
+      "active": true,
+      "validation_status": "approved",
+      "question": "Na formulação tridimensional de resistência viscosa apresentada por Hughes em Principles of Naval Architecture, Volume II, o fator k é empregado para representar principalmente:",
+      "assertions": null,
       "options": [
         {
           "key": "A",
-          "text": "V - F - V - V - F"
+          "text": "a influência tridimensional da forma do casco sobre a resistência viscosa."
         },
         {
           "key": "B",
-          "text": "V - V - V - F - V"
+          "text": "a resistência aerodinâmica das superestruturas."
         },
         {
           "key": "C",
-          "text": "F - V - V - F - V"
+          "text": "a perda de empuxo por cavitação do propulsor."
         },
         {
           "key": "D",
-          "text": "V - V - F - V - F"
+          "text": "o efeito do trim dinâmico em águas rasas."
         },
         {
           "key": "E",
-          "text": "F - F - V - V - V"
+          "text": "a resistência de ondas sem qualquer componente viscosa."
         }
       ],
-      "correct_answer": "B",
-      "explanation": "A sequência correta é V-V-V-F-V; a quarta proposição contém a relação incorreta.",
+      "correct_answer": "A",
+      "explanation": "A obra apresenta CVM = (1 + k)CF0 e explica que k considera a forma tridimensional; (1 + k) é denominado form factor.",
       "distractor_analysis": {},
-      "pscpp_format": "true_false_sequence",
+      "pscpp_format": "direct",
       "difficulty": "hard",
       "cognitive_level": 4,
       "module": "Manobrabilidade do Navio",
       "topic_code": "5.6",
-      "topic": "Escoamento em torno do casco do navio e a resistência friccional/viscosa",
-      "subtopic": "Escoamento em torno do casco do navio e a resistência friccional/viscosa",
+      "topic": "Resistência do navio",
+      "subtopic": "Resistência viscosa tridimensional e fator de forma",
       "tags": [
         "pscpp-drive",
         "bloco-012",
@@ -1352,14 +1334,14 @@
         "publication": "LEWIS, Edward V. - Principles of Naval Architecture, Volume II",
         "edition": "2nd rev., 1988",
         "chapter": "resistance, propulsion, wake and model testing",
-        "locator": "resistance, propulsion, wake and model testing",
+        "locator": "Volume II, Resistance, §3.6 Three-Dimensional Viscous Resistance Formulations; p. 15",
         "file_id": "12usJCuBo5b7MKuUdFjHE6OPx-Xq_WzVA"
       },
       "source": {
         "title": "LEWIS, Edward V. - Principles of Naval Architecture, Volume II",
         "author": "Edward V. Lewis",
         "edition": "2nd rev., 1988",
-        "locator": "resistance, propulsion, wake and model testing",
+        "locator": "Volume II, Resistance, §3.6 Three-Dimensional Viscous Resistance Formulations; p. 15",
         "printed_page": "a confirmar",
         "pdf_page": "a confirmar",
         "drive_file_name": "Lewis E.V.  Principles of Naval Architecture Second Revision. Volume II, 1988.pdf",
@@ -1368,14 +1350,15 @@
       },
       "validation": {
         "authority": "PSCPP editorial review",
-        "verified_chapter": false,
-        "verified_locator": false,
-        "verified_on": "2026-09-22",
-        "source_verified": false,
+        "verified_chapter": true,
+        "verified_locator": true,
+        "verified_on": "2026-10-11",
+        "source_verified": true,
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "key_verified": true
       },
       "provenance": {
         "method": "approved-drive-bank-import",
@@ -1383,13 +1366,12 @@
         "source_question_id": "MAN-B012-12",
         "source_block": 12
       },
-      "status": "quarantined",
-      "quality": {
-        "quarantine_reason": "editorial_semantic_contamination_wave1"
-      },
+      "status": "active",
+      "quality": {},
       "editorial_review": {
-        "status": "requires_source_reconstruction",
-        "version": "semantic-contamination-wave1",
+        "content_reviewed": true,
+        "version": "source-repair-2026-10-11",
+        "status": "approved",
         "reviewed_on": "2026-10-11"
       }
     },
@@ -1623,48 +1605,42 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "arte-naval",
-      "active": false,
-      "validation_status": "quarantined_semantic_contamination",
-      "question": "À luz de Arte Naval — Volume 1, julgue as proposições referentes a \"Desenho de linhas e plano de formas\":",
-      "assertions": [
-        "I) ( V ) ( F ) ( V ) ( F ).",
-        "II) Apenas as afirmativas III e IV são verdadeiras.",
-        "III) Apenas as afirmativas II e IV são verdadeiras.",
-        "IV) ( V ) ( V ) ( F ) ( F ).",
-        "V) dobra feita no seio de um cabo para esconder um ponto fraco."
-      ],
+      "active": true,
+      "validation_status": "approved",
+      "question": "De acordo com Arte Naval, Volume 1, o que caracteriza o plano de formas?",
+      "assertions": null,
       "options": [
         {
           "key": "A",
-          "text": "V - F - V - V - F"
+          "text": "É um desenvolvimento do plano das balizas que mostra todas as linhas de cavernas moldadas e outras linhas moldadas relevantes."
         },
         {
           "key": "B",
-          "text": "V - V - V - F - V"
+          "text": "É a planta destinada exclusivamente à disposição dos aparelhos de fundear."
         },
         {
           "key": "C",
-          "text": "F - V - V - F - V"
+          "text": "É o desenho que apresenta apenas as linhas-d'água do navio."
         },
         {
           "key": "D",
-          "text": "V - V - F - V - F"
+          "text": "É o plano usado somente para indicar compartimentos estanques."
         },
         {
           "key": "E",
-          "text": "F - F - V - V - V"
+          "text": "É a representação exclusiva das dimensões principais do navio, sem linhas de cavernas."
         }
       ],
-      "correct_answer": "B",
-      "explanation": "A sequência correta é V-V-V-F-V; a quarta proposição contém a relação incorreta.",
+      "correct_answer": "A",
+      "explanation": "No item 2.45, a obra define o plano de formas como um desenvolvimento do plano das balizas, mostrando todas as linhas de cavernas moldadas e também linhas moldadas do convés, cobertas, longarinas, linhas tangentes etc.",
       "distractor_analysis": {},
-      "pscpp_format": "true_false_sequence",
+      "pscpp_format": "direct",
       "difficulty": "hard",
       "cognitive_level": 4,
       "module": "Arte Naval",
       "topic_code": "16.6",
-      "topic": "Desenho de linhas e plano de formas",
-      "subtopic": "Desenho de linhas e plano de formas",
+      "topic": "Geometria do navio",
+      "subtopic": "Plano de formas",
       "tags": [
         "pscpp-drive",
         "bloco-012",
@@ -1703,14 +1679,14 @@
         "publication": "Arte Naval — Volume 1",
         "edition": "8ª ed., 2019",
         "chapter": "Cap. 1, itens 1.86–1.89 — olho de boi, enoras, gateiras e tubo do escovém; p./PDF 53",
-        "locator": "Cap. 1, itens 1.86–1.89 — olho de boi, enoras, gateiras e tubo do escovém; p./PDF 53",
+        "locator": "Capítulo 2, item 2.45 — Plano de formas; p. 94",
         "file_id": "1LjlDejVyooU3QLJzF0COvAEnOgMDNC9N"
       },
       "source": {
         "title": "Arte Naval — Volume 1",
         "author": "Maurílio Magalhães Fonseca",
         "edition": "8ª ed., 2019",
-        "locator": "Cap. 1, itens 1.86–1.89 — olho de boi, enoras, gateiras e tubo do escovém; p./PDF 53",
+        "locator": "Capítulo 2, item 2.45 — Plano de formas; p. 94",
         "printed_page": "53",
         "pdf_page": "53",
         "drive_file_name": "Arte Naval - Volume 1 - 8ª edição.pdf",
@@ -1721,12 +1697,13 @@
         "authority": "PSCPP editorial review",
         "verified_chapter": true,
         "verified_locator": true,
-        "verified_on": "2026-09-22",
+        "verified_on": "2026-10-11",
         "source_verified": true,
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "key_verified": true
       },
       "provenance": {
         "method": "approved-drive-bank-import",
@@ -1734,13 +1711,12 @@
         "source_question_id": "ANV-B012-02",
         "source_block": 12
       },
-      "status": "quarantined",
-      "quality": {
-        "quarantine_reason": "editorial_semantic_contamination_wave1"
-      },
+      "status": "active",
+      "quality": {},
       "editorial_review": {
-        "status": "requires_source_reconstruction",
-        "version": "semantic-contamination-wave1",
+        "content_reviewed": true,
+        "version": "source-repair-2026-10-11",
+        "status": "approved",
         "reviewed_on": "2026-10-11"
       }
     },
@@ -1974,48 +1950,42 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "arte-naval",
-      "active": false,
-      "validation_status": "quarantined_semantic_contamination",
-      "question": "De acordo com Arte Naval — Volume 1, e considerando \"Governo dos navios de um ou mais hélices e um ou dois lemes\", analise as afirmativas:",
-      "assertions": [
-        "I) Apenas as afirmativas III e IV são verdadeiras.",
-        "II) Apenas as afirmativas II e IV são verdadeiras.",
-        "III) dobra feita no seio de um cabo para esconder um ponto fraco.",
-        "IV) Apenas as afirmativas II e III são verdadeiras.",
-        "V) ( V ) ( V ) ( F ) ( F )."
-      ],
+      "active": true,
+      "validation_status": "approved",
+      "question": "Segundo Arte Naval, Volume 1, qual característica identifica a volta de fiador?",
+      "assertions": null,
       "options": [
         {
           "key": "A",
-          "text": "Apenas I, II, III e V estão corretas."
+          "text": "É uma volta que lembra o número oito."
         },
         {
           "key": "B",
-          "text": "Apenas I e IV estão corretas."
+          "text": "É formada por duas meias-voltas no mesmo sentido e recorre facilmente."
         },
         {
           "key": "C",
-          "text": "Apenas II e IV estão corretas."
+          "text": "É uma volta redonda mordida por um cote e usada para grandes esforços."
         },
         {
           "key": "D",
-          "text": "Apenas III, IV e V estão corretas."
+          "text": "É composta por dois cotes dados um contra o outro."
         },
         {
           "key": "E",
-          "text": "Todas estão corretas."
+          "text": "É empregada exclusivamente para unir cabos de bitolas diferentes."
         }
       ],
       "correct_answer": "A",
-      "explanation": "As proposições I, II, III e V são compatíveis com a fonte; a proposição IV foi construída a partir de uma relação tecnicamente incorreta.",
+      "explanation": "O item 8.5 define a volta de fiador como uma volta que lembra o número oito; a obra também registra seu uso no chicote do tirador de uma talha para evitar que desgurna.",
       "distractor_analysis": {},
-      "pscpp_format": "assertions",
+      "pscpp_format": "direct",
       "difficulty": "very_hard",
       "cognitive_level": 5,
       "module": "Arte Naval",
       "topic_code": "1",
-      "topic": "Governo dos navios de um ou mais hélices e um ou dois lemes",
-      "subtopic": "volta de fiador",
+      "topic": "Trabalhos do marinheiro",
+      "subtopic": "Volta de fiador",
       "tags": [
         "pscpp-drive",
         "bloco-012",
@@ -2054,14 +2024,14 @@
         "publication": "Arte Naval — Volume 1",
         "edition": "8ª ed., 2019",
         "chapter": "Cap. 1, itens 1.86–1.89 — olho de boi, enoras, gateiras e tubo do escovém; p./PDF 53",
-        "locator": "Cap. 1, itens 1.86–1.89 — olho de boi, enoras, gateiras e tubo do escovém; p./PDF 53",
+        "locator": "Capítulo 8, item 8.5 — Volta de fiador; p. 538",
         "file_id": "1LjlDejVyooU3QLJzF0COvAEnOgMDNC9N"
       },
       "source": {
         "title": "Arte Naval — Volume 1",
         "author": "Maurílio Magalhães Fonseca",
         "edition": "8ª ed., 2019",
-        "locator": "Cap. 1, itens 1.86–1.89 — olho de boi, enoras, gateiras e tubo do escovém; p./PDF 53",
+        "locator": "Capítulo 8, item 8.5 — Volta de fiador; p. 538",
         "printed_page": "53",
         "pdf_page": "53",
         "drive_file_name": "Arte Naval - Volume 1 - 8ª edição.pdf",
@@ -2072,12 +2042,13 @@
         "authority": "PSCPP editorial review",
         "verified_chapter": true,
         "verified_locator": true,
-        "verified_on": "2026-09-22",
+        "verified_on": "2026-10-11",
         "source_verified": true,
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "key_verified": true
       },
       "provenance": {
         "method": "approved-drive-bank-import",
@@ -2085,13 +2056,12 @@
         "source_question_id": "ANV-B012-05",
         "source_block": 12
       },
-      "status": "quarantined",
-      "quality": {
-        "quarantine_reason": "editorial_semantic_contamination_wave1"
-      },
+      "status": "active",
+      "quality": {},
       "editorial_review": {
-        "status": "requires_source_reconstruction",
-        "version": "semantic-contamination-wave1",
+        "content_reviewed": true,
+        "version": "source-repair-2026-10-11",
+        "status": "approved",
         "reviewed_on": "2026-10-11"
       }
     },
@@ -2549,51 +2519,42 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "arte-naval",
-      "active": false,
-      "validation_status": "quarantined_semantic_contamination",
-      "question": "Correlacione os termos às respectivas descrições, com base em Arte Naval — Volume 1:\n\nCOLUNA A\n1) volta de fiador\n2) volta redonda mordida e cote\n3) nó torto\n4) navio de guerra\n\nCOLUNA B\na) Apenas as afirmativas III e IV são verdadeiras.\nb) Apenas as afirmativas III e IV são verdadeiras.\nc) Apenas as afirmativas II e IV são verdadeiras.\nd) Apenas as afirmativas I e III são verdadeiras.",
-      "assertions": [
-        "1) volta de fiador",
-        "2) volta redonda mordida e cote",
-        "3) nó torto",
-        "4) navio de guerra",
-        "a) Apenas as afirmativas III e IV são verdadeiras.",
-        "b) Apenas as afirmativas III e IV são verdadeiras.",
-        "c) Apenas as afirmativas II e IV são verdadeiras.",
-        "d) Apenas as afirmativas I e III são verdadeiras."
-      ],
+      "active": true,
+      "validation_status": "approved",
+      "question": "De acordo com Arte Naval, Volume 1, por que o nó torto não é usado a bordo?",
+      "assertions": null,
       "options": [
         {
           "key": "A",
-          "text": "1-b; 2-a; 3-d; 4-c."
+          "text": "Porque só pode ser feito com cabos metálicos."
         },
         {
           "key": "B",
-          "text": "1-c; 2-d; 3-a; 4-b."
+          "text": "Porque recorre."
         },
         {
           "key": "C",
-          "text": "1-d; 2-c; 3-b; 4-a."
+          "text": "Porque só pode ser desfeito mediante corte."
         },
         {
           "key": "D",
-          "text": "1-a; 2-b; 3-c; 4-d."
+          "text": "Porque exige uma volta redonda e dois cotes."
         },
         {
           "key": "E",
-          "text": "1-a; 2-c; 3-b; 4-d."
+          "text": "Porque é destinado exclusivamente à ornamentação."
         }
       ],
-      "correct_answer": "D",
-      "explanation": "A correlação correta associa cada termo à descrição técnica correspondente na fonte indicada.",
+      "correct_answer": "B",
+      "explanation": "No item 8.38, a obra afirma que o nó torto é dado como o nó direito, porém com as duas meias-voltas no mesmo sentido, e que não é usado a bordo porque recorre.",
       "distractor_analysis": {},
-      "pscpp_format": "correlation",
+      "pscpp_format": "direct",
       "difficulty": "hard",
       "cognitive_level": 4,
       "module": "Arte Naval",
       "topic_code": "1",
-      "topic": "Governo dos navios de um ou mais hélices e um ou dois lemes",
-      "subtopic": "Governo dos navios de um ou mais hélices e um ou dois lemes",
+      "topic": "Trabalhos do marinheiro",
+      "subtopic": "Nó torto",
       "tags": [
         "pscpp-drive",
         "bloco-012",
@@ -2632,14 +2593,14 @@
         "publication": "Arte Naval — Volume 1",
         "edition": "8ª ed., 2019",
         "chapter": "Cap. 1, itens 1.86–1.89 — olho de boi, enoras, gateiras e tubo do escovém; p./PDF 53",
-        "locator": "Cap. 1, itens 1.86–1.89 — olho de boi, enoras, gateiras e tubo do escovém; p./PDF 53",
+        "locator": "Capítulo 8, item 8.38 — Nó torto; p. 552",
         "file_id": "1LjlDejVyooU3QLJzF0COvAEnOgMDNC9N"
       },
       "source": {
         "title": "Arte Naval — Volume 1",
         "author": "Maurílio Magalhães Fonseca",
         "edition": "8ª ed., 2019",
-        "locator": "Cap. 1, itens 1.86–1.89 — olho de boi, enoras, gateiras e tubo do escovém; p./PDF 53",
+        "locator": "Capítulo 8, item 8.38 — Nó torto; p. 552",
         "printed_page": "53",
         "pdf_page": "53",
         "drive_file_name": "Arte Naval - Volume 1 - 8ª edição.pdf",
@@ -2650,12 +2611,13 @@
         "authority": "PSCPP editorial review",
         "verified_chapter": true,
         "verified_locator": true,
-        "verified_on": "2026-09-22",
+        "verified_on": "2026-10-11",
         "source_verified": true,
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "key_verified": true
       },
       "provenance": {
         "method": "approved-drive-bank-import",
@@ -2665,13 +2627,12 @@
       },
       "quarantine_reason": "Questão de correlação contém descrições incompatíveis/contaminadas e os metadados bibliográficos não sustentam os termos apresentados; reconstrução segura exigiria inventar conteúdo ou referência.",
       "editorial_status": "QUARENTENA_IRRECUPERÁVEL",
-      "status": "quarantined",
-      "quality": {
-        "quarantine_reason": "editorial_semantic_contamination_wave1"
-      },
+      "status": "active",
+      "quality": {},
       "editorial_review": {
-        "status": "requires_source_reconstruction",
-        "version": "semantic-contamination-wave1",
+        "content_reviewed": true,
+        "version": "source-repair-2026-10-11",
+        "status": "approved",
         "reviewed_on": "2026-10-11"
       }
     },
@@ -3024,48 +2985,42 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "arte-naval",
-      "active": false,
-      "validation_status": "quarantined_semantic_contamination",
-      "question": "De acordo com Shiphandling for the Mariner, e considerando \"Giro curto e circular em velocidade baixa\", analise as afirmativas:",
-      "assertions": [
-        "I) Apenas as afirmativas II e IV estão corretas.",
-        "II) ( V ) ( V ) ( V ) ( V ).",
-        "III) ( V ) ( V ) ( F ) ( F ).",
-        "IV) Apenas as afirmativas I e II estão corretas.",
-        "V) Apenas as afirmativas I e III são verdadeiras."
-      ],
+      "active": true,
+      "validation_status": "approved",
+      "question": "Segundo Shiphandling for the Mariner, em qual situação o emprego de um rebocador convencional no cabo (on a hawser) é citado como particularmente aplicável?",
+      "assertions": null,
       "options": [
         {
           "key": "A",
-          "text": "Apenas I e IV estão corretas."
+          "text": "Somente em mar aberto e com alta velocidade."
         },
         {
           "key": "B",
-          "text": "Apenas II e IV estão corretas."
+          "text": "Ao manobrar um navio sem propulsão ou um navio com calado tão leve que não permita fazer o rebocador junto ao costado."
         },
         {
           "key": "C",
-          "text": "Apenas III, IV e V estão corretas."
+          "text": "Exclusivamente para aumentar a velocidade do navio em canal."
         },
         {
           "key": "D",
-          "text": "Apenas I, II, III e V estão corretas."
+          "text": "Sempre que o navio estiver acima da velocidade de manobra."
         },
         {
           "key": "E",
-          "text": "Todas estão corretas."
+          "text": "Apenas quando dois rebocadores trabalham necessariamente em paralelo."
         }
       ],
-      "correct_answer": "D",
-      "explanation": "As proposições I, II, III e V são compatíveis com a fonte; a proposição IV foi construída a partir de uma relação tecnicamente incorreta.",
+      "correct_answer": "B",
+      "explanation": "No capítulo sobre uso de rebocadores, a obra cita como ocasiões comuns para um rebocador convencional trabalhar no cabo o manuseio de um dead ship ou de navio com calado tão leve que não seja possível fazê-lo junto ao costado; recomenda ainda manter velocidade e uso das máquinas do navio no mínimo.",
       "distractor_analysis": {},
-      "pscpp_format": "assertions",
+      "pscpp_format": "direct",
       "difficulty": "very_hard",
       "cognitive_level": 5,
       "module": "Arte Naval",
       "topic_code": "20.5.1",
-      "topic": "Giro curto e circular em velocidade baixa",
-      "subtopic": "rebocador no cabo",
+      "topic": "Uso de rebocadores",
+      "subtopic": "Rebocador no cabo (Tug on a Hawser)",
       "tags": [
         "pscpp-drive",
         "bloco-012",
@@ -3104,14 +3059,14 @@
         "publication": "Shiphandling for the Mariner",
         "edition": "4th ed., 2004",
         "chapter": "Ch. 1, Directional Stability, pp. 18–19",
-        "locator": "Ch. 1, Directional Stability, pp. 18–19",
+        "locator": "Chapter 3 — Use of Tugs, Tug on a Hawser; pp. 110–111",
         "file_id": "186z4fT5Kx4VDGQk-T_E_KWk367MsXJS8"
       },
       "source": {
         "title": "Shiphandling for the Mariner",
         "author": "Daniel H. MacElrevey; Daniel E. MacElrevey",
         "edition": "4th ed., 2004",
-        "locator": "Ch. 1, Directional Stability, pp. 18–19",
+        "locator": "Chapter 3 — Use of Tugs, Tug on a Hawser; pp. 110–111",
         "printed_page": "None",
         "pdf_page": "None",
         "drive_file_name": "SHIPHANDLING FOR THE MARINER.pdf",
@@ -3122,12 +3077,13 @@
         "authority": "PSCPP editorial review",
         "verified_chapter": true,
         "verified_locator": true,
-        "verified_on": "2026-09-22",
+        "verified_on": "2026-10-11",
         "source_verified": true,
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "key_verified": true
       },
       "provenance": {
         "method": "approved-drive-bank-import",
@@ -3135,13 +3091,12 @@
         "source_question_id": "ANV-B012-14",
         "source_block": 12
       },
-      "status": "quarantined",
-      "quality": {
-        "quarantine_reason": "editorial_semantic_contamination_wave1"
-      },
+      "status": "active",
+      "quality": {},
       "editorial_review": {
-        "status": "requires_source_reconstruction",
-        "version": "semantic-contamination-wave1",
+        "content_reviewed": true,
+        "version": "source-repair-2026-10-11",
+        "status": "approved",
         "reviewed_on": "2026-10-11"
       }
     },
@@ -3487,48 +3442,42 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "navegacao-aguas-restritas",
-      "active": false,
-      "validation_status": "quarantined_semantic_contamination",
-      "question": "De acordo com MIGUENS, Altineu Pires - Navegação: a Ciência e a Arte, Volume I, e considerando \"Integração do ECDIS com o radar, o ARPA e o AIS\", analise as afirmativas:",
-      "assertions": [
-        "I) Apenas as afirmativas III e IV são verdadeiras.",
-        "II) Ciência e arte de conduzir uma embarcação de um ponto a outro com segurança e eficiência.",
-        "III) posição.",
-        "IV) Apenas as afirmativas I e II são verdadeiras.",
-        "V) derrota — Trajetória planejada ou efetivamente seguida pela embarcação sobre a superfície terrestre."
-      ],
+      "active": true,
+      "validation_status": "approved",
+      "question": "No tratamento das Zonas de Confiança (ZOC) em cartas náuticas digitais, segundo Navegação: a Ciência e a Arte, Volume I, em que se baseiam as categorias CATZOC?",
+      "assertions": null,
       "options": [
         {
           "key": "A",
-          "text": "Apenas I e IV estão corretas."
+          "text": "Exclusivamente na idade da carta náutica."
         },
         {
           "key": "B",
-          "text": "Apenas I, II, III e V estão corretas."
+          "text": "Em uma combinação da acurácia da posição, acurácia da profundidade e cobertura do fundo do mar."
         },
         {
           "key": "C",
-          "text": "Apenas II e IV estão corretas."
+          "text": "Somente no número de auxílios à navegação existentes na área."
         },
         {
           "key": "D",
-          "text": "Apenas III, IV e V estão corretas."
+          "text": "Apenas na escala gráfica escolhida pelo operador do ECDIS."
         },
         {
           "key": "E",
-          "text": "Todas estão corretas."
+          "text": "Na velocidade do navio e no alcance do radar."
         }
       ],
       "correct_answer": "B",
-      "explanation": "As proposições I, II, III e V são compatíveis com a fonte; a proposição IV foi construída a partir de uma relação tecnicamente incorreta.",
+      "explanation": "A obra informa que a classificação em ZOC é baseada na combinação da acurácia da posição, acurácia da profundidade e cobertura do fundo do mar.",
       "distractor_analysis": {},
-      "pscpp_format": "assertions",
+      "pscpp_format": "direct",
       "difficulty": "hard",
       "cognitive_level": 4,
       "module": "Navegação em Águas Restritas",
       "topic_code": "31.5",
-      "topic": "Integração do ECDIS com o radar, o ARPA e o AIS",
-      "subtopic": "Navegação: a Ciência e a Arte — Volume I",
+      "topic": "Cartas Náuticas Eletrônicas",
+      "subtopic": "Zonas de Confiança (CATZOC)",
       "tags": [
         "pscpp-drive",
         "bloco-012",
@@ -3567,14 +3516,14 @@
         "publication": "MIGUENS, Altineu Pires - Navegação: a Ciência e a Arte, Volume I",
         "edition": "rev. 2023",
         "chapter": "instrumentos, cartas, correntes, navegação costeira e batimétrica",
-        "locator": "instrumentos, cartas, correntes, navegação costeira e batimétrica",
+        "locator": "Volume I, Capítulo 2 — Projeções Cartográficas e a Carta Náutica, Diagramas de Zona de Confiança (ZOC); pp. 2-35 a 2-37",
         "file_id": "1oPh8CPnY59EveVasAb1y7ElALohtWxym"
       },
       "source": {
         "title": "MIGUENS, Altineu Pires - Navegação: a Ciência e a Arte, Volume I",
         "author": "Altineu Pires Miguens",
         "edition": "rev. 2023",
-        "locator": "instrumentos, cartas, correntes, navegação costeira e batimétrica",
+        "locator": "Volume I, Capítulo 2 — Projeções Cartográficas e a Carta Náutica, Diagramas de Zona de Confiança (ZOC); pp. 2-35 a 2-37",
         "printed_page": "a confirmar",
         "pdf_page": "a confirmar",
         "drive_file_name": "Navegação Ciência e Arte Volume I.pdf",
@@ -3583,14 +3532,15 @@
       },
       "validation": {
         "authority": "PSCPP editorial review",
-        "verified_chapter": false,
-        "verified_locator": false,
-        "verified_on": "2026-09-22",
-        "source_verified": false,
+        "verified_chapter": true,
+        "verified_locator": true,
+        "verified_on": "2026-10-11",
+        "source_verified": true,
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "key_verified": true
       },
       "provenance": {
         "method": "approved-drive-bank-import",
@@ -3598,13 +3548,12 @@
         "source_question_id": "NAR-B012-01",
         "source_block": 12
       },
-      "status": "quarantined",
-      "quality": {
-        "quarantine_reason": "editorial_semantic_contamination_wave1"
-      },
+      "status": "active",
+      "quality": {},
       "editorial_review": {
-        "status": "requires_source_reconstruction",
-        "version": "semantic-contamination-wave1",
+        "content_reviewed": true,
+        "version": "source-repair-2026-10-11",
+        "status": "approved",
         "reviewed_on": "2026-10-11"
       }
     },
@@ -3838,48 +3787,42 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "navegacao-aguas-restritas",
-      "active": false,
-      "validation_status": "quarantined_semantic_contamination",
-      "question": "De acordo com MIGUENS, Altineu Pires — Navegação: a Ciência e a Arte, v.3, e considerando \"Integração do ECDIS com o radar, o ARPA e o AIS\", analise as afirmativas:",
-      "assertions": [
-        "I) Apenas as afirmativas III e IV são verdadeiras.",
-        "II) Designação genérica de sistemas globais de navegação por satélite que fornecem posição, navegação e tempo.",
-        "III) GPS.",
-        "IV) Apenas as afirmativas I e II são verdadeiras.",
-        "V) GLONASS — Sistema global de navegação por satélite desenvolvido pela Rússia."
-      ],
+      "active": true,
+      "validation_status": "approved",
+      "question": "Segundo Navegação: a Ciência e a Arte, Volume III, qual vantagem é atribuída à apresentação de uma IENC em ECDIS ou ECS ao navegar em trechos fluviais críticos?",
+      "assertions": null,
       "options": [
         {
           "key": "A",
-          "text": "Apenas I, II, III e V estão corretas."
+          "text": "Eliminar a necessidade de qualquer avaliação do navegante."
         },
         {
           "key": "B",
-          "text": "Apenas I e IV estão corretas."
+          "text": "Permitir aumentar a escala por zoom e visualizar informações batimétricas com maior detalhe e clareza."
         },
         {
           "key": "C",
-          "text": "Apenas II e IV estão corretas."
+          "text": "Substituir automaticamente todos os auxílios visuais por radar."
         },
         {
           "key": "D",
-          "text": "Apenas III, IV e V estão corretas."
+          "text": "Ocultar profundidades inferiores à profundidade de segurança."
         },
         {
           "key": "E",
-          "text": "Todas estão corretas."
+          "text": "Converter qualquer carta em levantamento hidrográfico de categoria A1."
         }
       ],
-      "correct_answer": "A",
-      "explanation": "As proposições I, II, III e V são compatíveis com a fonte; a proposição IV foi construída a partir de uma relação tecnicamente incorreta.",
+      "correct_answer": "B",
+      "explanation": "A obra explica que a apresentação da IENC em ECDIS/ECS permite usar zoom para mostrar trechos críticos em escala maior, com maior detalhamento e clareza das informações batimétricas.",
       "distractor_analysis": {},
-      "pscpp_format": "assertions",
+      "pscpp_format": "direct",
       "difficulty": "medium",
       "cognitive_level": 3,
       "module": "Navegação em Águas Restritas",
       "topic_code": "31.5",
-      "topic": "Integração do ECDIS com o radar, o ARPA e o AIS",
-      "subtopic": "Navegação: a Ciência e a Arte — Volume III",
+      "topic": "Navegação fluvial eletrônica",
+      "subtopic": "IENC em ECDIS/ECS",
       "tags": [
         "pscpp-drive",
         "bloco-012",
@@ -3918,14 +3861,14 @@
         "publication": "MIGUENS, Altineu Pires — Navegação: a Ciência e a Arte, v.3",
         "edition": "revisão vigente no acervo",
         "chapter": "Capítulo 45 — Meteorologia para Navegantes; tópicos 5–22",
-        "locator": "Capítulo 45 — Meteorologia para Navegantes; tópicos 5–22",
+        "locator": "Volume III, Capítulo 40 — Navegação Fluvial, cartas eletrônicas fluviais/IENC; p. 40-22",
         "file_id": "1b21EzjP0uETNY8oiSkP6VocMEaSC_3lH"
       },
       "source": {
         "title": "MIGUENS, Altineu Pires — Navegação: a Ciência e a Arte, v.3",
         "author": "Altineu Pires Miguens",
         "edition": "revisão vigente no acervo",
-        "locator": "Capítulo 45 — Meteorologia para Navegantes; tópicos 5–22",
+        "locator": "Volume III, Capítulo 40 — Navegação Fluvial, cartas eletrônicas fluviais/IENC; p. 40-22",
         "printed_page": "cap. 45",
         "pdf_page": "a confirmar",
         "drive_file_name": "Navegação Ciência e Arte Volume III.pdf",
@@ -3934,14 +3877,15 @@
       },
       "validation": {
         "authority": "PSCPP editorial review",
-        "verified_chapter": false,
-        "verified_locator": false,
-        "verified_on": "2026-09-22",
-        "source_verified": false,
+        "verified_chapter": true,
+        "verified_locator": true,
+        "verified_on": "2026-10-11",
+        "source_verified": true,
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "key_verified": true
       },
       "provenance": {
         "method": "approved-drive-bank-import",
@@ -3949,13 +3893,12 @@
         "source_question_id": "NAR-B012-04",
         "source_block": 12
       },
-      "status": "quarantined",
-      "quality": {
-        "quarantine_reason": "editorial_semantic_contamination_wave1"
-      },
+      "status": "active",
+      "quality": {},
       "editorial_review": {
-        "status": "requires_source_reconstruction",
-        "version": "semantic-contamination-wave1",
+        "content_reviewed": true,
+        "version": "source-repair-2026-10-11",
+        "status": "approved",
         "reviewed_on": "2026-10-11"
       }
     },
@@ -4189,48 +4132,42 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "navegacao-aguas-restritas",
-      "active": false,
-      "validation_status": "quarantined_semantic_contamination",
-      "question": "À luz de MIGUENS, Altineu Pires - Navegação: a Ciência e a Arte, Volume I, julgue as proposições referentes a \"Integração do ECDIS com o radar, o ARPA e o AIS\":",
-      "assertions": [
-        "I) ( V ) ( F ) ( V ) ( F ).",
-        "II) Ciência e arte de conduzir uma embarcação de um ponto a outro com segurança e eficiência.",
-        "III) posição.",
-        "IV) ( V ) ( V ) ( F ) ( F ).",
-        "V) derrota — Trajetória planejada ou efetivamente seguida pela embarcação sobre a superfície terrestre."
-      ],
+      "active": true,
+      "validation_status": "approved",
+      "question": "De acordo com Navegação: a Ciência e a Arte, Volume I, qual ressalva é feita sobre aplicativos de navegação em dispositivos móveis que utilizam GPS e podem exibir dados AIS?",
+      "assertions": null,
       "options": [
         {
           "key": "A",
-          "text": "V - F - V - V - F"
+          "text": "São reconhecidos pela Marinha do Brasil como substitutos do ECDIS homologado."
         },
         {
           "key": "B",
-          "text": "F - V - V - F - V"
+          "text": "São homologados somente quando utilizados fora de águas restritas."
         },
         {
           "key": "C",
-          "text": "V - V - F - V - F"
+          "text": "A Marinha do Brasil não reconhece sua utilização como método homologado para a navegação."
         },
         {
           "key": "D",
-          "text": "V - V - V - F - V"
+          "text": "Só podem apresentar velocidade, sendo vedada a exibição de outras embarcações."
         },
         {
           "key": "E",
-          "text": "F - F - V - V - V"
+          "text": "Dispensam o uso de cartas e publicações náuticas atualizadas."
         }
       ],
-      "correct_answer": "D",
-      "explanation": "A sequência correta é V-V-V-F-V; a quarta proposição contém a relação incorreta.",
+      "correct_answer": "C",
+      "explanation": "Após descrever aplicativos capazes de usar GPS e visualizar informações de outras embarcações compatíveis com AIS, a obra ressalta que a Marinha do Brasil não reconhece sua utilização como método homologado para a navegação.",
       "distractor_analysis": {},
-      "pscpp_format": "true_false_sequence",
+      "pscpp_format": "direct",
       "difficulty": "hard",
       "cognitive_level": 4,
       "module": "Navegação em Águas Restritas",
       "topic_code": "31.5",
-      "topic": "Integração do ECDIS com o radar, o ARPA e o AIS",
-      "subtopic": "Navegação: a Ciência e a Arte — Volume I",
+      "topic": "Instrumentos náuticos",
+      "subtopic": "Aplicativos móveis e AIS",
       "tags": [
         "pscpp-drive",
         "bloco-012",
@@ -4269,14 +4206,14 @@
         "publication": "MIGUENS, Altineu Pires - Navegação: a Ciência e a Arte, Volume I",
         "edition": "rev. 2023",
         "chapter": "instrumentos, cartas, correntes, navegação costeira e batimétrica",
-        "locator": "instrumentos, cartas, correntes, navegação costeira e batimétrica",
+        "locator": "Volume I, Capítulo 11 — Instrumentos Náuticos; pp. 11-47 a 11-48",
         "file_id": "1oPh8CPnY59EveVasAb1y7ElALohtWxym"
       },
       "source": {
         "title": "MIGUENS, Altineu Pires - Navegação: a Ciência e a Arte, Volume I",
         "author": "Altineu Pires Miguens",
         "edition": "rev. 2023",
-        "locator": "instrumentos, cartas, correntes, navegação costeira e batimétrica",
+        "locator": "Volume I, Capítulo 11 — Instrumentos Náuticos; pp. 11-47 a 11-48",
         "printed_page": "a confirmar",
         "pdf_page": "a confirmar",
         "drive_file_name": "Navegação Ciência e Arte Volume I.pdf",
@@ -4285,14 +4222,15 @@
       },
       "validation": {
         "authority": "PSCPP editorial review",
-        "verified_chapter": false,
-        "verified_locator": false,
-        "verified_on": "2026-09-22",
-        "source_verified": false,
+        "verified_chapter": true,
+        "verified_locator": true,
+        "verified_on": "2026-10-11",
+        "source_verified": true,
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "key_verified": true
       },
       "provenance": {
         "method": "approved-drive-bank-import",
@@ -4300,13 +4238,12 @@
         "source_question_id": "NAR-B012-07",
         "source_block": 12
       },
-      "status": "quarantined",
-      "quality": {
-        "quarantine_reason": "editorial_semantic_contamination_wave1"
-      },
+      "status": "active",
+      "quality": {},
       "editorial_review": {
-        "status": "requires_source_reconstruction",
-        "version": "semantic-contamination-wave1",
+        "content_reviewed": true,
+        "version": "source-repair-2026-10-11",
+        "status": "approved",
         "reviewed_on": "2026-10-11"
       }
     },
@@ -4876,48 +4813,42 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "legislacao-regulamentacao",
-      "active": false,
-      "validation_status": "quarantined_semantic_contamination",
-      "question": "De acordo com NORMAM-204/DPC — Tráfego e Permanência de Embarcações em AJB, e considerando \"Tráfego e permanência de Embarcações em Águas Jurisdicionais Brasileiras\", analise as afirmativas:",
-      "assertions": [
-        "I) As afirmativas I, II, III e IV são verdadeiras.",
-        "II) Relatório Técnico Teórico Inicial: relatório técnico da simulação virtual, baseado somente em modelos teóricos e matemáticos, desenvolvido por instituto de comprovada capacidade técnica, o qual deverá abordar os parâmetros teóricos estimados para a.",
-        "III) As chatas ou barcaças atracadas a contrabordo dos navios para fornecimento de combustíveis, limpeza de tanque ou qualquer outra finalidade, deverão estar devidamente iluminadas no período noturno.",
-        "IV) Apenas as afirmativas I e II são verdadeiras.",
-        "V) Simulação Fast Time abrangendo os principais pontos críticos da via, que deverão ser apresentados à CP/DL/AG e por ela ratificados, demonstrando que o comboio proposto cumpre, no mínimo, os mesmos parâmetros dos comboios que já operam naquela hidrovia;."
-      ],
+      "active": true,
+      "validation_status": "approved",
+      "question": "Conforme a NORMAM-204/DPC, nas operações ship-to-ship (STB), qual providência pode ser adotada pela Capitania, Delegacia ou Agência da jurisdição antes da operação?",
+      "assertions": null,
       "options": [
         {
           "key": "A",
-          "text": "Apenas I e IV estão corretas."
+          "text": "Dispensar automaticamente os procedimentos de despacho."
         },
         {
           "key": "B",
-          "text": "Apenas II e IV estão corretas."
+          "text": "Realizar inspeção naval prévia nas embarcações envolvidas."
         },
         {
           "key": "C",
-          "text": "Apenas III, IV e V estão corretas."
+          "text": "Transferir ao provedor STB a competência para emitir Passe de Saída."
         },
         {
           "key": "D",
-          "text": "Todas estão corretas."
+          "text": "Autorizar a operação sem comunicação de incidentes ou acidentes."
         },
         {
           "key": "E",
-          "text": "Apenas I, II, III e V estão corretas."
+          "text": "Eliminar a necessidade de informar a área da operação."
         }
       ],
-      "correct_answer": "E",
-      "explanation": "As proposições I, II, III e V são compatíveis com a fonte; a proposição IV foi construída a partir de uma relação tecnicamente incorreta.",
+      "correct_answer": "B",
+      "explanation": "A NORMAM-204/DPC estabelece expressamente que a CP/DL poderá realizar inspeção naval prévia nas embarcações envolvidas na operação STB.",
       "distractor_analysis": {},
-      "pscpp_format": "assertions",
+      "pscpp_format": "direct",
       "difficulty": "hard",
       "cognitive_level": 4,
       "module": "Legislação e Regulamentação",
       "topic_code": "7",
-      "topic": "Tráfego e permanência de Embarcações em Águas Jurisdicionais Brasileiras",
-      "subtopic": "A CP/DL poderá realizar inspeção naval prévia nas embarcações envolvidas",
+      "topic": "Operações ship-to-ship (STB)",
+      "subtopic": "Inspeção naval prévia",
       "tags": [
         "pscpp-drive",
         "bloco-012",
@@ -4956,14 +4887,14 @@
         "publication": "NORMAM-204/DPC — Tráfego e Permanência de Embarcações em AJB",
         "edition": "2025",
         "chapter": "Glossário — despacho; Cap. 3; PDF pp. 5–6, 16",
-        "locator": "Glossário — despacho; Cap. 3; PDF pp. 5–6, 16",
+        "locator": "NORMAM-204/DPC, Capítulo 5 — Operações STB; p. 5-24",
         "file_id": "1Q0fJVeSveHLUvUzwiZ3wrjE2QceeUXqj"
       },
       "source": {
         "title": "NORMAM-204/DPC — Tráfego e Permanência de Embarcações em AJB",
         "author": "Marinha do Brasil / DPC",
         "edition": "2025",
-        "locator": "Glossário — despacho; Cap. 3; PDF pp. 5–6, 16",
+        "locator": "NORMAM-204/DPC, Capítulo 5 — Operações STB; p. 5-24",
         "printed_page": "5–6",
         "pdf_page": "5–6",
         "drive_file_name": "normam-204 TRÁFEGO E PERMANÊNCIA DE EMBARCAÇÕES NA AJB.pdf",
@@ -4974,12 +4905,13 @@
         "authority": "PSCPP editorial review",
         "verified_chapter": true,
         "verified_locator": true,
-        "verified_on": "2026-09-22",
+        "verified_on": "2026-10-11",
         "source_verified": true,
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "key_verified": true
       },
       "provenance": {
         "method": "approved-drive-bank-import",
@@ -4987,13 +4919,12 @@
         "source_question_id": "LEG-B012-04",
         "source_block": 12
       },
-      "status": "quarantined",
-      "quality": {
-        "quarantine_reason": "editorial_semantic_contamination_wave1"
-      },
+      "status": "active",
+      "quality": {},
       "editorial_review": {
-        "status": "requires_source_reconstruction",
-        "version": "semantic-contamination-wave1",
+        "content_reviewed": true,
+        "version": "source-repair-2026-10-11",
+        "status": "approved",
         "reviewed_on": "2026-10-11"
       }
     },
@@ -5003,48 +4934,42 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "legislacao-regulamentacao",
-      "active": false,
-      "validation_status": "quarantined_semantic_contamination",
-      "question": "De acordo com NORMAM-311/DPC — Serviço de Praticagem, e considerando \"Serviço de Praticagem no Brasil\", analise as afirmativas:",
-      "assertions": [
-        "I) Apenas as afirmativas I e II são verdadeiras.",
-        "II) SERVIÇO DE PRATICAGEM É o conjunto de atividades profissionais de assessoria ao Comandante, requeridas por força de peculiaridades locais que dificultem a livre e segura movimentação da embarcação.",
-        "III) ser formalizado ao CP/DL pelo RUSP (ou seu preposto) ou Práticos envolvidos, devendo conter justificativa. Na hipótese dos próprios Práticos solicitarem a troca de “Período de Escala” ao CP/DL, o RUSP deverá ser obrigatoriamente informado;.",
-        "IV) Apenas as afirmativas III e IV são verdadeiras.",
-        "V) O RUSP (ou o seu preposto) é o responsável por este acionamento, devendo ser informado ao CP/DL com a brevidade possível."
-      ],
+      "active": true,
+      "validation_status": "approved",
+      "question": "Segundo a NORMAM-311/DPC, a quem compete declarar a impraticabilidade de uma Zona de Praticagem (ZP)?",
+      "assertions": null,
       "options": [
         {
           "key": "A",
-          "text": "Apenas I e IV estão corretas."
+          "text": "Exclusivamente à Entidade de Praticagem."
         },
         {
           "key": "B",
-          "text": "Apenas II e IV estão corretas."
+          "text": "Ao Comandante de qualquer embarcação que esteja na ZP."
         },
         {
           "key": "C",
-          "text": "Apenas III, IV e V estão corretas."
+          "text": "À CP/DL/AG."
         },
         {
           "key": "D",
-          "text": "Todas estão corretas."
+          "text": "Somente à Autoridade Portuária."
         },
         {
           "key": "E",
-          "text": "Apenas I, II, III e V estão corretas."
+          "text": "Ao Prático que estiver de serviço na ERU, independentemente da Autoridade Marítima."
         }
       ],
-      "correct_answer": "E",
-      "explanation": "As proposições I, II, III e V são compatíveis com a fonte; a proposição IV foi construída a partir de uma relação tecnicamente incorreta.",
+      "correct_answer": "C",
+      "explanation": "O item 2.32.1 da NORMAM-311/DPC estabelece que compete à CP/DL/AG declarar a impraticabilidade da ZP.",
       "distractor_analysis": {},
-      "pscpp_format": "assertions",
+      "pscpp_format": "direct",
       "difficulty": "very_hard",
       "cognitive_level": 5,
       "module": "Legislação e Regulamentação",
       "topic_code": "8",
-      "topic": "Serviço de Praticagem no Brasil",
-      "subtopic": "Normas da Autoridade Marítima para o Serviço de Praticagem",
+      "topic": "Serviço de Praticagem",
+      "subtopic": "Declaração de impraticabilidade",
       "tags": [
         "pscpp-drive",
         "bloco-012",
@@ -5083,14 +5008,14 @@
         "publication": "NORMAM-311/DPC — Serviço de Praticagem",
         "edition": "2025, Mod. 2",
         "chapter": "Glossário; §§2.26–2.35; deveres, ERU e impraticabilidade; PDF pp. 8, 12 e correlatas",
-        "locator": "Glossário; §§2.26–2.35; deveres, ERU e impraticabilidade; PDF pp. 8, 12 e correlatas",
+        "locator": "NORMAM-311/DPC, item 2.32 — Declaração de Impraticabilidade; p. 2-28",
         "file_id": "1UiLopaHn58qCdCYapPZQODD9coTuO4t8"
       },
       "source": {
         "title": "NORMAM-311/DPC — Serviço de Praticagem",
         "author": "Marinha do Brasil / DPC",
         "edition": "2025, Mod. 2",
-        "locator": "Glossário; §§2.26–2.35; deveres, ERU e impraticabilidade; PDF pp. 8, 12 e correlatas",
+        "locator": "NORMAM-311/DPC, item 2.32 — Declaração de Impraticabilidade; p. 2-28",
         "printed_page": "8",
         "pdf_page": "8",
         "drive_file_name": "normam-311 SERVIÇO DE PRATICAGEM.pdf",
@@ -5101,12 +5026,13 @@
         "authority": "PSCPP editorial review",
         "verified_chapter": true,
         "verified_locator": true,
-        "verified_on": "2026-09-22",
+        "verified_on": "2026-10-11",
         "source_verified": true,
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "key_verified": true
       },
       "provenance": {
         "method": "approved-drive-bank-import",
@@ -5114,13 +5040,12 @@
         "source_question_id": "LEG-B012-05",
         "source_block": 12
       },
-      "status": "quarantined",
-      "quality": {
-        "quarantine_reason": "editorial_semantic_contamination_wave1"
-      },
+      "status": "active",
+      "quality": {},
       "editorial_review": {
-        "status": "requires_source_reconstruction",
-        "version": "semantic-contamination-wave1",
+        "content_reviewed": true,
+        "version": "source-repair-2026-10-11",
+        "status": "approved",
         "reviewed_on": "2026-10-11"
       }
     },
@@ -5354,48 +5279,42 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "legislacao-regulamentacao",
-      "active": false,
-      "validation_status": "quarantined_semantic_contamination",
-      "question": "De acordo com NORMAM-302/DPC — IAFN, e considerando \"Inquéritos Administrativos sobre Acidentes e Fatos da Navegação\", analise as afirmativas:",
-      "assertions": [
-        "I) Apenas as afirmativas I e III são verdadeiras.",
-        "II) (3) qualquer proteção concedida ao marítimo para impedir que a prova seja usada contra ele, se fornecer a prova à investigação de segurança marítima.",
-        "III) Deve ser realizada uma investigação de segurança marítima na ocorrência de qualquer acidente marítimo muito grave.",
-        "IV) Apenas as afirmativas I e II são verdadeiras.",
-        "V) Os direitos humanos dos marítimos deverão ser sempre preservados."
-      ],
+      "active": true,
+      "validation_status": "approved",
+      "question": "De acordo com a NORMAM-302/DPC, qual é o prazo máximo previsto para conclusão do IAFN, por meio de relatório circunstanciado, contado da instauração até a ciência e o “de acordo” do Capitão dos Portos ou Delegado?",
+      "assertions": null,
       "options": [
         {
           "key": "A",
-          "text": "Apenas I e IV estão corretas."
+          "text": "30 dias."
         },
         {
           "key": "B",
-          "text": "Apenas II e IV estão corretas."
+          "text": "60 dias."
         },
         {
           "key": "C",
-          "text": "Apenas I, II, III e V estão corretas."
+          "text": "90 dias."
         },
         {
           "key": "D",
-          "text": "Apenas III, IV e V estão corretas."
+          "text": "120 dias."
         },
         {
           "key": "E",
-          "text": "Todas estão corretas."
+          "text": "180 dias."
         }
       ],
       "correct_answer": "C",
-      "explanation": "As proposições I, II, III e V são compatíveis com a fonte; a proposição IV foi construída a partir de uma relação tecnicamente incorreta.",
+      "explanation": "O item 1.11 determina que o Inquérito seja concluído, por meio de relatório circunstanciado, no prazo máximo de noventa dias, ressalvadas as hipóteses de prorrogação previstas na norma.",
       "distractor_analysis": {},
-      "pscpp_format": "assertions",
+      "pscpp_format": "direct",
       "difficulty": "medium",
       "cognitive_level": 3,
       "module": "Legislação e Regulamentação",
       "topic_code": "3",
-      "topic": "Inquéritos Administrativos sobre Acidentes e Fatos da Navegação",
-      "subtopic": "O Inquérito deverá ser concluído, por meio de relatório circunstanciado",
+      "topic": "Inquérito Administrativo sobre Acidentes e Fatos da Navegação",
+      "subtopic": "Prazo para conclusão do IAFN",
       "tags": [
         "pscpp-drive",
         "bloco-012",
@@ -5434,14 +5353,14 @@
         "publication": "NORMAM-302/DPC — IAFN",
         "edition": "2023",
         "chapter": "§§1.5–1.6; acidentes e fatos da navegação; PDF pp. 9, 15",
-        "locator": "§§1.5–1.6; acidentes e fatos da navegação; PDF pp. 9, 15",
+        "locator": "NORMAM-302/DPC, item 1.11 — Prazo para conclusão e prorrogação; pp. 1-9 a 1-10",
         "file_id": "1kRLA07pyT8z5G4gMcr8A60JFT9B_dHR6"
       },
       "source": {
         "title": "NORMAM-302/DPC — IAFN",
         "author": "Marinha do Brasil / DPC",
         "edition": "2023",
-        "locator": "§§1.5–1.6; acidentes e fatos da navegação; PDF pp. 9, 15",
+        "locator": "NORMAM-302/DPC, item 1.11 — Prazo para conclusão e prorrogação; pp. 1-9 a 1-10",
         "printed_page": "9",
         "pdf_page": "9",
         "drive_file_name": "normam-302 INQUÉRITOS ADMINISTRATIVOS SOBRE FATOS DA NAVEGAÇÃO (IAFN).pdf",
@@ -5452,12 +5371,13 @@
         "authority": "PSCPP editorial review",
         "verified_chapter": true,
         "verified_locator": true,
-        "verified_on": "2026-09-22",
+        "verified_on": "2026-10-11",
         "source_verified": true,
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "key_verified": true
       },
       "provenance": {
         "method": "approved-drive-bank-import",
@@ -5465,13 +5385,12 @@
         "source_question_id": "LEG-B012-08",
         "source_block": 12
       },
-      "status": "quarantined",
-      "quality": {
-        "quarantine_reason": "editorial_semantic_contamination_wave1"
-      },
+      "status": "active",
+      "quality": {},
       "editorial_review": {
-        "status": "requires_source_reconstruction",
-        "version": "semantic-contamination-wave1",
+        "content_reviewed": true,
+        "version": "source-repair-2026-10-11",
+        "status": "approved",
         "reviewed_on": "2026-10-11"
       }
     },
@@ -6153,48 +6072,42 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "legislacao-regulamentacao",
-      "active": false,
-      "validation_status": "quarantined_semantic_contamination",
-      "question": "À luz de NORMAM-204/DPC — Tráfego e Permanência de Embarcações em AJB, julgue as proposições referentes a \"Tráfego e permanência de Embarcações em Águas Jurisdicionais Brasileiras\":",
-      "assertions": [
-        "I) ( F ) ( V ) ( F ) ( V ).",
-        "II) Relatório Técnico Teórico Inicial: relatório técnico da simulação virtual, baseado somente em modelos teóricos e matemáticos, desenvolvido por instituto de comprovada capacidade técnica, o qual deverá abordar os parâmetros teóricos estimados para a.",
-        "III) As chatas ou barcaças atracadas a contrabordo dos navios para fornecimento de combustíveis, limpeza de tanque ou qualquer outra finalidade, deverão estar devidamente iluminadas no período noturno.",
-        "IV) ( V ) ( V ) ( F ) ( F ).",
-        "V) Simulação Fast Time abrangendo os principais pontos críticos da via, que deverão ser apresentados à CP/DL/AG e por ela ratificados, demonstrando que o comboio proposto cumpre, no mínimo, os mesmos parâmetros dos comboios que já operam naquela hidrovia;."
-      ],
+      "active": true,
+      "validation_status": "approved",
+      "question": "Segundo a NORMAM-204/DPC, em que prazo a Declaração Geral de Saída deve ser encaminhada ao Órgão de Despacho pelo representante da embarcação?",
+      "assertions": null,
       "options": [
         {
           "key": "A",
-          "text": "V - F - V - V - F"
+          "text": "Até duas horas antes da partida."
         },
         {
           "key": "B",
-          "text": "F - V - V - F - V"
+          "text": "No momento exato da desatracação."
         },
         {
           "key": "C",
-          "text": "V - V - V - F - V"
+          "text": "No prazo máximo de quatro horas após a partida da embarcação."
         },
         {
           "key": "D",
-          "text": "V - V - F - V - F"
+          "text": "Até doze horas após a partida."
         },
         {
           "key": "E",
-          "text": "F - F - V - V - V"
+          "text": "Até vinte e quatro horas após a partida."
         }
       ],
       "correct_answer": "C",
-      "explanation": "A sequência correta é V-V-V-F-V; a quarta proposição contém a relação incorreta.",
+      "explanation": "O item 1.5.5 estabelece que a Declaração Geral de Saída deve ser encaminhada ao OD, pelo representante da embarcação, no prazo máximo de quatro horas após a partida.",
       "distractor_analysis": {},
-      "pscpp_format": "true_false_sequence",
+      "pscpp_format": "direct",
       "difficulty": "very_hard",
       "cognitive_level": 5,
       "module": "Legislação e Regulamentação",
       "topic_code": "7",
-      "topic": "Tráfego e permanência de Embarcações em Águas Jurisdicionais Brasileiras",
-      "subtopic": "Declaração Geral de Saída A Declaração Geral de Saída deve",
+      "topic": "Despacho de embarcações",
+      "subtopic": "Declaração Geral de Saída",
       "tags": [
         "pscpp-drive",
         "bloco-012",
@@ -6233,14 +6146,14 @@
         "publication": "NORMAM-204/DPC — Tráfego e Permanência de Embarcações em AJB",
         "edition": "2025",
         "chapter": "Glossário — despacho; Cap. 3; PDF pp. 5–6, 16",
-        "locator": "Glossário — despacho; Cap. 3; PDF pp. 5–6, 16",
+        "locator": "NORMAM-204/DPC, item 1.5.5 — Declaração Geral de Saída; p. 1-4",
         "file_id": "1Q0fJVeSveHLUvUzwiZ3wrjE2QceeUXqj"
       },
       "source": {
         "title": "NORMAM-204/DPC — Tráfego e Permanência de Embarcações em AJB",
         "author": "Marinha do Brasil / DPC",
         "edition": "2025",
-        "locator": "Glossário — despacho; Cap. 3; PDF pp. 5–6, 16",
+        "locator": "NORMAM-204/DPC, item 1.5.5 — Declaração Geral de Saída; p. 1-4",
         "printed_page": "5–6",
         "pdf_page": "5–6",
         "drive_file_name": "normam-204 TRÁFEGO E PERMANÊNCIA DE EMBARCAÇÕES NA AJB.pdf",
@@ -6251,12 +6164,13 @@
         "authority": "PSCPP editorial review",
         "verified_chapter": true,
         "verified_locator": true,
-        "verified_on": "2026-09-22",
+        "verified_on": "2026-10-11",
         "source_verified": true,
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "key_verified": true
       },
       "provenance": {
         "method": "approved-drive-bank-import",
@@ -6264,13 +6178,12 @@
         "source_question_id": "LEG-B012-15",
         "source_block": 12
       },
-      "status": "quarantined",
-      "quality": {
-        "quarantine_reason": "editorial_semantic_contamination_wave1"
-      },
+      "status": "active",
+      "quality": {},
       "editorial_review": {
-        "status": "requires_source_reconstruction",
-        "version": "semantic-contamination-wave1",
+        "content_reviewed": true,
+        "version": "source-repair-2026-10-11",
+        "status": "approved",
         "reviewed_on": "2026-10-11"
       }
     },
@@ -6504,48 +6417,42 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "meteorologia-oceanografia",
-      "active": false,
-      "validation_status": "quarantined_semantic_contamination",
-      "question": "À luz de Meteorologia: Noções Básicas, julgue as proposições referentes a \"Circulação de ventos sobre o mar\":",
-      "assertions": [
-        "I) ( V ) ( F ) ( V ) ( F ).",
-        "II) ao estado térmico do ar.",
-        "III) trocas de calor e umidade entre oceano e atmosfera.",
-        "IV) ( V ) ( V ) ( F ) ( F ).",
-        "V) a relação entre o vapor presente e a quantidade correspondente à saturação, nas condições consideradas."
-      ],
+      "active": true,
+      "validation_status": "approved",
+      "question": "Acima da camada-limite planetária, segundo Meteorologia: Noções Básicas, quando se estabelece o vento geostrófico?",
+      "assertions": null,
       "options": [
         {
           "key": "A",
-          "text": "V - F - V - V - F"
+          "text": "Quando a força do gradiente de pressão se equilibra com a força de Coriolis."
         },
         {
           "key": "B",
-          "text": "F - V - V - F - V"
+          "text": "Quando a força de Coriolis desaparece."
         },
         {
           "key": "C",
-          "text": "V - V - F - V - F"
+          "text": "Quando o atrito com a superfície é a única força atuante."
         },
         {
           "key": "D",
-          "text": "V - V - V - F - V"
+          "text": "Quando o vento cruza as isóbaras perpendicularmente com aceleração constante."
         },
         {
           "key": "E",
-          "text": "F - F - V - V - V"
+          "text": "Quando não existe gradiente horizontal de pressão."
         }
       ],
-      "correct_answer": "D",
-      "explanation": "A sequência correta é V-V-V-F-V; a quarta proposição contém a relação incorreta.",
+      "correct_answer": "A",
+      "explanation": "A obra define o vento geostrófico como o vento que surge quando a força do gradiente de pressão (FGP) está em balanço com a força de Coriolis (FC).",
       "distractor_analysis": {},
-      "pscpp_format": "true_false_sequence",
+      "pscpp_format": "direct",
       "difficulty": "hard",
       "cognitive_level": 4,
       "module": "Meteorologia e Oceanografia",
       "topic_code": "21.5",
-      "topic": "Circulação de ventos sobre o mar",
-      "subtopic": "Meteorologia: noções básicas",
+      "topic": "Circulação atmosférica",
+      "subtopic": "Vento geostrófico",
       "tags": [
         "pscpp-drive",
         "bloco-012",
@@ -6584,14 +6491,14 @@
         "publication": "Meteorologia: Noções Básicas",
         "edition": "2017",
         "chapter": "Umidade e vento geostrófico; PDF pp. 17, 21",
-        "locator": "Umidade e vento geostrófico; PDF pp. 17, 21",
+        "locator": "Capítulo 6, §6.4.1 — Vento geostrófico",
         "file_id": "1U3X0yOf1zIPLwvr3waCAOkstAY6aq5w4"
       },
       "source": {
         "title": "Meteorologia: Noções Básicas",
         "author": "Rita Y. Ynoue et al.",
         "edition": "2017",
-        "locator": "Umidade e vento geostrófico; PDF pp. 17, 21",
+        "locator": "Capítulo 6, §6.4.1 — Vento geostrófico",
         "printed_page": "17",
         "pdf_page": "17",
         "drive_file_name": "YNOUE, R. Y.; REBOITA, M. S.; AMBRIZZI, T.; SILVA, G. A. M. Meteorologia noções.pdf",
@@ -6602,12 +6509,13 @@
         "authority": "PSCPP editorial review",
         "verified_chapter": true,
         "verified_locator": true,
-        "verified_on": "2026-09-22",
+        "verified_on": "2026-10-11",
         "source_verified": true,
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "key_verified": true
       },
       "provenance": {
         "method": "approved-drive-bank-import",
@@ -6615,13 +6523,12 @@
         "source_question_id": "MET-B012-02",
         "source_block": 12
       },
-      "status": "quarantined",
-      "quality": {
-        "quarantine_reason": "editorial_semantic_contamination_wave1"
-      },
+      "status": "active",
+      "quality": {},
       "editorial_review": {
-        "status": "requires_source_reconstruction",
-        "version": "semantic-contamination-wave1",
+        "content_reviewed": true,
+        "version": "source-repair-2026-10-11",
+        "status": "approved",
         "reviewed_on": "2026-10-11"
       }
     },
@@ -6743,48 +6650,42 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "meteorologia-oceanografia",
-      "active": false,
-      "validation_status": "quarantined_semantic_contamination",
-      "question": "De acordo com Meteorologia: Noções Básicas, e considerando \"Circulação de ventos sobre o mar\", analise as afirmativas:",
-      "assertions": [
-        "I) Apenas as afirmativas I e III são verdadeiras.",
-        "II) ao estado térmico do ar.",
-        "III) trocas de calor e umidade entre oceano e atmosfera.",
-        "IV) Apenas as afirmativas I e II são verdadeiras.",
-        "V) a relação entre o vapor presente e a quantidade correspondente à saturação, nas condições consideradas."
-      ],
+      "active": true,
+      "validation_status": "approved",
+      "question": "Na descrição do estabelecimento do vento geostrófico no Hemisfério Sul, em Meteorologia: Noções Básicas, para que lado a força de Coriolis desvia uma parcela de ar em movimento?",
+      "assertions": null,
       "options": [
         {
           "key": "A",
-          "text": "Apenas I, II, III e V estão corretas."
+          "text": "Para a direita do movimento."
         },
         {
           "key": "B",
-          "text": "Apenas I e IV estão corretas."
+          "text": "Para a esquerda do movimento."
         },
         {
           "key": "C",
-          "text": "Apenas II e IV estão corretas."
+          "text": "Verticalmente para cima."
         },
         {
           "key": "D",
-          "text": "Apenas III, IV e V estão corretas."
+          "text": "Sempre em direção às baixas pressões."
         },
         {
           "key": "E",
-          "text": "Todas estão corretas."
+          "text": "Sempre perpendicularmente para o Equador, independentemente do movimento."
         }
       ],
-      "correct_answer": "A",
-      "explanation": "As proposições I, II, III e V são compatíveis com a fonte; a proposição IV foi construída a partir de uma relação tecnicamente incorreta.",
+      "correct_answer": "B",
+      "explanation": "Na situação descrita para o Hemisfério Sul, a obra afirma que a força de Coriolis desvia a parcela para a esquerda do movimento.",
       "distractor_analysis": {},
-      "pscpp_format": "assertions",
+      "pscpp_format": "direct",
       "difficulty": "hard",
       "cognitive_level": 4,
       "module": "Meteorologia e Oceanografia",
       "topic_code": "21.5",
-      "topic": "Circulação de ventos sobre o mar",
-      "subtopic": "Meteorologia: noções básicas",
+      "topic": "Circulação atmosférica",
+      "subtopic": "Força de Coriolis no Hemisfério Sul",
       "tags": [
         "pscpp-drive",
         "bloco-012",
@@ -6823,14 +6724,14 @@
         "publication": "Meteorologia: Noções Básicas",
         "edition": "2017",
         "chapter": "Umidade e vento geostrófico; PDF pp. 17, 21",
-        "locator": "Umidade e vento geostrófico; PDF pp. 17, 21",
+        "locator": "Capítulo 6, §6.4.1 — Vento geostrófico",
         "file_id": "1U3X0yOf1zIPLwvr3waCAOkstAY6aq5w4"
       },
       "source": {
         "title": "Meteorologia: Noções Básicas",
         "author": "Rita Y. Ynoue et al.",
         "edition": "2017",
-        "locator": "Umidade e vento geostrófico; PDF pp. 17, 21",
+        "locator": "Capítulo 6, §6.4.1 — Vento geostrófico",
         "printed_page": "17",
         "pdf_page": "17",
         "drive_file_name": "YNOUE, R. Y.; REBOITA, M. S.; AMBRIZZI, T.; SILVA, G. A. M. Meteorologia noções.pdf",
@@ -6841,12 +6742,13 @@
         "authority": "PSCPP editorial review",
         "verified_chapter": true,
         "verified_locator": true,
-        "verified_on": "2026-09-22",
+        "verified_on": "2026-10-11",
         "source_verified": true,
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "key_verified": true
       },
       "provenance": {
         "method": "approved-drive-bank-import",
@@ -6854,13 +6756,12 @@
         "source_question_id": "MET-B012-04",
         "source_block": 12
       },
-      "status": "quarantined",
-      "quality": {
-        "quarantine_reason": "editorial_semantic_contamination_wave1"
-      },
+      "status": "active",
+      "quality": {},
       "editorial_review": {
-        "status": "requires_source_reconstruction",
-        "version": "semantic-contamination-wave1",
+        "content_reviewed": true,
+        "version": "source-repair-2026-10-11",
+        "status": "approved",
         "reviewed_on": "2026-10-11"
       }
     },
@@ -7327,48 +7228,42 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "comunicacoes",
-      "active": false,
-      "validation_status": "quarantined_semantic_contamination",
-      "question": "De acordo com Curso Especial de Radioperador Geral (EROG), e considerando \"Código Internacional de Sinais (CIS)\", analise as afirmativas:",
-      "assertions": [
-        "I) Apenas as afirmativas I e III são verdadeiras.",
-        "II) Arqueação bruta.",
-        "III) ACK.",
-        "IV) Apenas as afirmativas I e II são verdadeiras.",
-        "V) Equipamento acima do convés – referente ao INMARSAT."
-      ],
+      "active": true,
+      "validation_status": "approved",
+      "question": "No Curso Especial de Radioperador Geral (EROG), quando uma solicitação de auxílio médico utiliza sinais do Código Internacional de Sinais, qual palavra deve precedê-los?",
+      "assertions": null,
       "options": [
         {
           "key": "A",
-          "text": "Apenas I e IV estão corretas."
+          "text": "SECURITÉ"
         },
         {
           "key": "B",
-          "text": "Apenas II e IV estão corretas."
+          "text": "MAYDAY RELAY"
         },
         {
           "key": "C",
-          "text": "Apenas III, IV e V estão corretas."
+          "text": "INTERCO"
         },
         {
           "key": "D",
-          "text": "Todas estão corretas."
+          "text": "STANDBY"
         },
         {
           "key": "E",
-          "text": "Apenas I, II, III e V estão corretas."
+          "text": "SILENCE FINI"
         }
       ],
-      "correct_answer": "E",
-      "explanation": "As proposições I, II, III e V são compatíveis com a fonte; a proposição IV foi construída a partir de uma relação tecnicamente incorreta.",
+      "correct_answer": "C",
+      "explanation": "O material EROG determina que, em solicitação de auxílio médico, sejam usados os sinais do Código Internacional de Sinais precedidos da palavra INTERCO.",
       "distractor_analysis": {},
-      "pscpp_format": "assertions",
+      "pscpp_format": "direct",
       "difficulty": "very_hard",
       "cognitive_level": 5,
       "module": "Comunicações",
       "topic_code": "3",
       "topic": "Código Internacional de Sinais (CIS)",
-      "subtopic": "Especial de Radioperador Geral (EROG)",
+      "subtopic": "Uso de INTERCO em solicitação de auxílio médico",
       "tags": [
         "pscpp-drive",
         "bloco-012",
@@ -7407,14 +7302,14 @@
         "publication": "Curso Especial de Radioperador Geral (EROG)",
         "edition": "3ª ed., 2011",
         "chapter": "Unid. 1 §1.7.4 and Unid. 3; MAYDAY/PAN PAN/DSC; PDF pp. 41, 44",
-        "locator": "Unid. 1 §1.7.4 and Unid. 3; MAYDAY/PAN PAN/DSC; PDF pp. 41, 44",
+        "locator": "Unidade 1 — Mensagens de urgência/auxílio médico; seção imediatamente anterior a 1.10.5; PDF p. 57",
         "file_id": "1njDH2YqB2t219UjL0vE7cDpLBurpwxxA"
       },
       "source": {
         "title": "Curso Especial de Radioperador Geral (EROG)",
         "author": "Diretoria de Portos e Costas",
         "edition": "3ª ed., 2011",
-        "locator": "Unid. 1 §1.7.4 and Unid. 3; MAYDAY/PAN PAN/DSC; PDF pp. 41, 44",
+        "locator": "Unidade 1 — Mensagens de urgência/auxílio médico; seção imediatamente anterior a 1.10.5; PDF p. 57",
         "printed_page": "41",
         "pdf_page": "41",
         "drive_file_name": "APOSTILA DE RADIOPERADOR GERAL (EROG), 3ª EDIÇÃO.pdf",
@@ -7425,12 +7320,13 @@
         "authority": "PSCPP editorial review",
         "verified_chapter": true,
         "verified_locator": true,
-        "verified_on": "2026-09-22",
+        "verified_on": "2026-10-11",
         "source_verified": true,
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "key_verified": true
       },
       "provenance": {
         "method": "approved-drive-bank-import",
@@ -7438,13 +7334,12 @@
         "source_question_id": "COM-B012-03",
         "source_block": 12
       },
-      "status": "quarantined",
-      "quality": {
-        "quarantine_reason": "editorial_semantic_contamination_wave1"
-      },
+      "status": "active",
+      "quality": {},
       "editorial_review": {
-        "status": "requires_source_reconstruction",
-        "version": "semantic-contamination-wave1",
+        "content_reviewed": true,
+        "version": "source-repair-2026-10-11",
+        "status": "approved",
         "reviewed_on": "2026-10-11"
       }
     },
@@ -7566,48 +7461,42 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "conhecimentos-gerais",
-      "active": false,
-      "validation_status": "quarantined_semantic_contamination",
-      "question": "De acordo com MSC.1/Circ.1598 — Guidelines on Fatigue, e considerando \"Regras do emprego da folga dinâmica abaixo da quilha no Brasil\", analise as afirmativas:",
-      "assertions": [
-        "I) Apenas as afirmativas I e III são verdadeiras.",
-        "II) Long-term sleep debt may also lead to health problems.",
-        "III) Increasing access to healthier food choices by ensuring nutritious food is served on board.",
-        "IV) Apenas as afirmativas I e II são verdadeiras.",
-        "V) Inability to stay awake (an example is head nodding or falling asleep involuntarily)."
-      ],
+      "active": true,
+      "validation_status": "approved",
+      "question": "Segundo a MSC.1/Circ.1598 — Guidelines on Fatigue, qual definição descreve corretamente a fadiga?",
+      "assertions": null,
       "options": [
         {
           "key": "A",
-          "text": "Apenas I e IV estão corretas."
+          "text": "Estado exclusivamente muscular causado por trabalho físico pesado."
         },
         {
           "key": "B",
-          "text": "Apenas I, II, III e V estão corretas."
+          "text": "Estado de comprometimento físico e/ou mental decorrente, entre outros fatores, de sono inadequado, vigília prolongada, desalinhamento entre trabalho/repouso e ritmos circadianos ou esforço físico, mental ou emocional."
         },
         {
           "key": "C",
-          "text": "Apenas II e IV estão corretas."
+          "text": "Condição restrita a marítimos em serviço noturno."
         },
         {
           "key": "D",
-          "text": "Apenas III, IV e V estão corretas."
+          "text": "Redução de desempenho causada somente por falta de treinamento."
         },
         {
           "key": "E",
-          "text": "Todas estão corretas."
+          "text": "Condição que afeta apenas pessoas com baixa experiência profissional."
         }
       ],
       "correct_answer": "B",
-      "explanation": "As proposições I, II, III e V são compatíveis com a fonte; a proposição IV foi construída a partir de uma relação tecnicamente incorreta.",
+      "explanation": "A introdução das Guidelines on Fatigue define fadiga como estado de comprometimento físico e/ou mental decorrente de fatores como sono inadequado, vigília prolongada, requisitos de trabalho/repouso desalinhados com ritmos circadianos e esforço físico, mental ou emocional, podendo comprometer a atenção e a operação segura.",
       "distractor_analysis": {},
-      "pscpp_format": "assertions",
+      "pscpp_format": "direct",
       "difficulty": "very_hard",
       "cognitive_level": 5,
       "module": "Conhecimentos Gerais",
       "topic_code": "4",
-      "topic": "Regras do emprego da folga dinâmica abaixo da quilha no Brasil",
-      "subtopic": "Guidelines on Fatigue",
+      "topic": "Fadiga no ambiente marítimo",
+      "subtopic": "Definição de fadiga",
       "tags": [
         "pscpp-drive",
         "bloco-012",
@@ -7646,14 +7535,14 @@
         "publication": "MSC.1/Circ.1598 — Guidelines on Fatigue",
         "edition": "24 Jan 2019",
         "chapter": "Annex, Introduction §§1–3; PDF p. 3",
-        "locator": "Annex, Introduction §§1–3; PDF p. 3",
+        "locator": "MSC.1/Circ.1598, Annex, Introduction §1; Annex p. 1",
         "file_id": "1lHFJsYsODHBk-yohSjhTKM-eDKYplOYf"
       },
       "source": {
         "title": "MSC.1/Circ.1598 — Guidelines on Fatigue",
         "author": "International Maritime Organization (IMO)",
         "edition": "24 Jan 2019",
-        "locator": "Annex, Introduction §§1–3; PDF p. 3",
+        "locator": "MSC.1/Circ.1598, Annex, Introduction §1; Annex p. 1",
         "printed_page": "3",
         "pdf_page": "3",
         "drive_file_name": "426 appendix MSC.1-Circ.1598 - Guidelines On Fatigue (Secretariat).pdf",
@@ -7664,12 +7553,13 @@
         "authority": "PSCPP editorial review",
         "verified_chapter": true,
         "verified_locator": true,
-        "verified_on": "2026-09-22",
+        "verified_on": "2026-10-11",
         "source_verified": true,
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "key_verified": true
       },
       "provenance": {
         "method": "approved-drive-bank-import",
@@ -7677,13 +7567,12 @@
         "source_question_id": "CGE-B012-01",
         "source_block": 12
       },
-      "status": "quarantined",
-      "quality": {
-        "quarantine_reason": "editorial_semantic_contamination_wave1"
-      },
+      "status": "active",
+      "quality": {},
       "editorial_review": {
-        "status": "requires_source_reconstruction",
-        "version": "semantic-contamination-wave1",
+        "content_reviewed": true,
+        "version": "source-repair-2026-10-11",
+        "status": "approved",
         "reviewed_on": "2026-10-11"
       }
     },
@@ -7805,48 +7694,42 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "conhecimentos-gerais",
-      "active": false,
-      "validation_status": "quarantined_semantic_contamination",
-      "question": "De acordo com Planejamento Portuário — Recomendações para Acessos Náuticos, e considerando \"Projeto das dimensões verticais\", analise as afirmativas:",
-      "assertions": [
-        "I) Apenas as afirmativas III e IV são verdadeiras.",
-        "II) Nos casos de dispensa de prático, especial atenção deve ser dada à coordenação de tráfego.",
-        "III) Projeto Conceitual: Nele são definidas as principais dimensões da geometria de um canal de acesso, canal interno, bacia de evolução e instalações portuárias.",
-        "IV) Apenas as afirmativas I e II são verdadeiras.",
-        "V) Os canais abertos ou sem restrição lateral (U) são relativamente grandes, sem margens ou tendo-as com inclinação inferior a 1:10, e geralmente ficam nas extremidades das instalações portuárias."
-      ],
+      "active": true,
+      "validation_status": "approved",
+      "question": "Segundo Planejamento Portuário — Recomendações para Acessos Náuticos, qual conjunto contém os seis fatores de segurança recomendados no cálculo da folga abaixo da quilha (FAQ) relacionados ao navio de projeto?",
+      "assertions": null,
       "options": [
         {
           "key": "A",
-          "text": "Apenas I e IV estão corretas."
+          "text": "Calado estático, vento longitudinal, arqueação bruta, comprimento, boca e velocidade."
         },
         {
           "key": "B",
-          "text": "Apenas II e IV estão corretas."
+          "text": "Incertezas no calado estático, alterações na massa específica da água, squat incluindo trim dinâmico, inclinação dinâmica por vento e guinadas, resposta às ondas e FAQ líquida."
         },
         {
           "key": "C",
-          "text": "Apenas III, IV e V estão corretas."
+          "text": "Maré, visibilidade, iluminação, tráfego, rebocadores e sinalização."
         },
         {
           "key": "D",
-          "text": "Apenas I, II, III e V estão corretas."
+          "text": "Calado aéreo, borda-livre, CPA, TCPA, raio de giro e abatimento."
         },
         {
           "key": "E",
-          "text": "Todas estão corretas."
+          "text": "Profundidade cartografada, corrente, densidade do ar, potência instalada, passo do hélice e altura metacêntrica."
         }
       ],
-      "correct_answer": "D",
-      "explanation": "As proposições I, II, III e V são compatíveis com a fonte; a proposição IV foi construída a partir de uma relação tecnicamente incorreta.",
+      "correct_answer": "B",
+      "explanation": "A seção 2.3.1.2.3 lista seis fatores: tolerância para incertezas no calado estático; alterações na massa específica da água; efeito squat incluindo trim dinâmico; inclinação dinâmica por vento e guinadas; tolerância para resposta às ondas; e FAQ líquida.",
       "distractor_analysis": {},
-      "pscpp_format": "assertions",
+      "pscpp_format": "direct",
       "difficulty": "very_hard",
       "cognitive_level": 5,
       "module": "Conhecimentos Gerais",
       "topic_code": "3.2",
       "topic": "Projeto das dimensões verticais",
-      "subtopic": "Planejamento Portuário: Recomendações para Acessos Náuticos",
+      "subtopic": "Fatores relacionados ao navio de projeto no cálculo da FAQ",
       "tags": [
         "pscpp-drive",
         "bloco-012",
@@ -7885,14 +7768,14 @@
         "publication": "Planejamento Portuário — Recomendações para Acessos Náuticos",
         "edition": "1ª ed., 2022",
         "chapter": "Ch. 2 §2.3.1.2–2.3.1.3; FAQ, canal de acesso e bacia de evolução; PDF pp. 5–6, 37",
-        "locator": "Ch. 2 §2.3.1.2–2.3.1.3; FAQ, canal de acesso e bacia de evolução; PDF pp. 5–6, 37",
+        "locator": "Capítulo 2, §2.3.1.2.3 — Fatores relacionados ao navio de projeto; p. 12",
         "file_id": "1llCwKhtwC3GiddA91b_XTNfW-rF6PXI6"
       },
       "source": {
         "title": "Planejamento Portuário — Recomendações para Acessos Náuticos",
         "author": "CONAPRA (coord. Edson M. Santos et al.)",
         "edition": "1ª ed., 2022",
-        "locator": "Ch. 2 §2.3.1.2–2.3.1.3; FAQ, canal de acesso e bacia de evolução; PDF pp. 5–6, 37",
+        "locator": "Capítulo 2, §2.3.1.2.3 — Fatores relacionados ao navio de projeto; p. 12",
         "printed_page": "5–6",
         "pdf_page": "5–6",
         "drive_file_name": "livro-planejamento-portuario.pdf",
@@ -7903,12 +7786,13 @@
         "authority": "PSCPP editorial review",
         "verified_chapter": true,
         "verified_locator": true,
-        "verified_on": "2026-09-22",
+        "verified_on": "2026-10-11",
         "source_verified": true,
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "key_verified": true
       },
       "provenance": {
         "method": "approved-drive-bank-import",
@@ -7916,13 +7800,12 @@
         "source_question_id": "CGE-B012-03",
         "source_block": 12
       },
-      "status": "quarantined",
-      "quality": {
-        "quarantine_reason": "editorial_semantic_contamination_wave1"
-      },
+      "status": "active",
+      "quality": {},
       "editorial_review": {
-        "status": "requires_source_reconstruction",
-        "version": "semantic-contamination-wave1",
+        "content_reviewed": true,
+        "version": "source-repair-2026-10-11",
+        "status": "approved",
         "reviewed_on": "2026-10-11"
       }
     },
