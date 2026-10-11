@@ -1,0 +1,32 @@
+name: Fix Arte Naval and Manobrabilidade option keys once
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/fix-arte-manobra-option-keys-once.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Normalize option schema
+        run: node scripts/fix-question-option-keys-arte-manobra.mjs
+
+      - name: Commit normalized banks
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/questions/arte-naval.json data/questions/manobrabilidade.json
+          git diff --cached --quiet && exit 1
+          git commit -m "fix(questions): normalize Arte Naval and Manobrabilidade option keys"
+          git push origin HEAD:main
