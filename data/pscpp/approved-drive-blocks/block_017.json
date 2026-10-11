@@ -10,8 +10,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "manobrabilidade",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_structural_option_leak",
       "question": "De acordo com LEWIS, Edward V. - Principles of Naval Architecture, Volume II, e considerando \"Influência da viscosidade no padrão de ondas irradiado pelo navio\", analise as afirmativas:",
       "assertions": [
         "I) As afirmativas I, II, III e IV são verdadeiras.",
@@ -113,13 +113,19 @@
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "audit_hotfix": {
+          "date": "2026-10-11",
+          "reason": "option-like answer text leaked into assertion/enunciado",
+          "action": "quarantined_from_runtime_pending_source_repair"
+        }
       },
       "provenance": {
         "method": "approved-drive-bank-import",
         "source_bank_id": "pscpp-drive",
         "source_question_id": "MAN-B017-01",
-        "source_block": 17
+        "source_block": 17,
+        "quarantine_reason": "structural_option_leak_2026-10-11"
       }
     },
     {
@@ -1366,8 +1372,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "manobrabilidade",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_structural_option_leak",
       "question": "De acordo com Principles of Naval Architecture — Volume III, e considerando \"Análise do sinal das amplitudes do mar\", analise as afirmativas:",
       "assertions": [
         "I) As afirmativas I, II, III e IV são verdadeiras.",
@@ -1469,13 +1475,19 @@
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "audit_hotfix": {
+          "date": "2026-10-11",
+          "reason": "option-like answer text leaked into assertion/enunciado",
+          "action": "quarantined_from_runtime_pending_source_repair"
+        }
       },
       "provenance": {
         "method": "approved-drive-bank-import",
         "source_bank_id": "pscpp-drive",
         "source_question_id": "MAN-B017-13",
-        "source_block": 17
+        "source_block": 17,
+        "quarantine_reason": "structural_option_leak_2026-10-11"
       }
     },
     {
@@ -1596,8 +1608,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "arte-naval",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_structural_option_leak",
       "question": "De acordo com Mooring and Anchoring Ships: Principles and Practice, e considerando \"As operações de fundeio do navio com duas âncoras\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas III e IV são verdadeiras.",
@@ -1699,13 +1711,19 @@
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "audit_hotfix": {
+          "date": "2026-10-11",
+          "reason": "option-like answer text leaked into assertion/enunciado",
+          "action": "quarantined_from_runtime_pending_source_repair"
+        }
       },
       "provenance": {
         "method": "approved-drive-bank-import",
         "source_bank_id": "pscpp-drive",
         "source_question_id": "ANV-B017-02",
-        "source_block": 17
+        "source_block": 17,
+        "quarantine_reason": "structural_option_leak_2026-10-11"
       }
     },
     {
@@ -2179,8 +2197,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "arte-naval",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_structural_option_leak",
       "question": "De acordo com FONSECA, Maurílio M. - Arte Naval, Volume 2, e considerando \"Gerenciamento das condições ambientais durante a manobrabilidade\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas I e II são verdadeiras.",
@@ -2282,13 +2300,19 @@
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "audit_hotfix": {
+          "date": "2026-10-11",
+          "reason": "option-like answer text leaked into assertion/enunciado",
+          "action": "quarantined_from_runtime_pending_source_repair"
+        }
       },
       "provenance": {
         "method": "approved-drive-bank-import",
         "source_bank_id": "pscpp-drive",
         "source_question_id": "ANV-B017-07",
-        "source_block": 17
+        "source_block": 17,
+        "quarantine_reason": "structural_option_leak_2026-10-11"
       }
     },
     {
@@ -3765,8 +3789,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "navegacao-aguas-restritas",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_structural_option_leak",
       "question": "De acordo com NORMAM-601/DHN — Auxílios à Navegação, e considerando \"Emprego do AIS na sinalização náutica\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas I e II são verdadeiras.",
@@ -3868,13 +3892,19 @@
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "audit_hotfix": {
+          "date": "2026-10-11",
+          "reason": "option-like answer text leaked into assertion/enunciado",
+          "action": "quarantined_from_runtime_pending_source_repair"
+        }
       },
       "provenance": {
         "method": "approved-drive-bank-import",
         "source_bank_id": "pscpp-drive",
         "source_question_id": "NAR-B017-04",
-        "source_block": 17
+        "source_block": 17,
+        "quarantine_reason": "structural_option_leak_2026-10-11"
       }
     },
     {
@@ -4107,8 +4137,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "navegacao-aguas-restritas",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_structural_option_leak",
       "question": "De acordo com MIGUENS, Altineu Pires - Navegação: a Ciência e a Arte, Volume I, e considerando \"Rumo a ser seguido (correntes de maré e margem de manobra)\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas III e IV são verdadeiras.",
@@ -4210,13 +4240,19 @@
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "audit_hotfix": {
+          "date": "2026-10-11",
+          "reason": "option-like answer text leaked into assertion/enunciado",
+          "action": "quarantined_from_runtime_pending_source_repair"
+        }
       },
       "provenance": {
         "method": "approved-drive-bank-import",
         "source_bank_id": "pscpp-drive",
         "source_question_id": "NAR-B017-07",
-        "source_block": 17
+        "source_block": 17,
+        "quarantine_reason": "structural_option_leak_2026-10-11"
       }
     },
     {
@@ -4673,8 +4709,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "legislacao-regulamentacao",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_structural_option_leak",
       "question": "De acordo com NORMAM-311/DPC — Serviço de Praticagem, e considerando \"Serviço de Praticagem no Brasil\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas II e IV estão corretas.",
@@ -4776,13 +4812,19 @@
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "audit_hotfix": {
+          "date": "2026-10-11",
+          "reason": "option-like answer text leaked into assertion/enunciado",
+          "action": "quarantined_from_runtime_pending_source_repair"
+        }
       },
       "provenance": {
         "method": "approved-drive-bank-import",
         "source_bank_id": "pscpp-drive",
         "source_question_id": "LEG-B017-03",
-        "source_block": 17
+        "source_block": 17,
+        "quarantine_reason": "structural_option_leak_2026-10-11"
       }
     },
     {
@@ -5351,8 +5393,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "legislacao-regulamentacao",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_structural_option_leak",
       "question": "De acordo com NORMAM-302/DPC — IAFN, e considerando \"Recomendações IMO sobre treinamento, certificação e procedimentos operacionais para\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas III e IV são verdadeiras.",
@@ -5454,13 +5496,19 @@
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "audit_hotfix": {
+          "date": "2026-10-11",
+          "reason": "option-like answer text leaked into assertion/enunciado",
+          "action": "quarantined_from_runtime_pending_source_repair"
+        }
       },
       "provenance": {
         "method": "approved-drive-bank-import",
         "source_bank_id": "pscpp-drive",
         "source_question_id": "LEG-B017-09",
-        "source_block": 17
+        "source_block": 17,
+        "quarantine_reason": "structural_option_leak_2026-10-11"
       }
     },
     {
@@ -5917,8 +5965,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "legislacao-regulamentacao",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_structural_option_leak",
       "question": "De acordo com Lei nº 9.537/1997 — LESTA, e considerando \"Recomendações IMO sobre treinamento, certificação e procedimentos operacionais para\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas I e II são verdadeiras.",
@@ -6020,13 +6068,19 @@
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "audit_hotfix": {
+          "date": "2026-10-11",
+          "reason": "option-like answer text leaked into assertion/enunciado",
+          "action": "quarantined_from_runtime_pending_source_repair"
+        }
       },
       "provenance": {
         "method": "approved-drive-bank-import",
         "source_bank_id": "pscpp-drive",
         "source_question_id": "LEG-B017-14",
-        "source_block": 17
+        "source_block": 17,
+        "quarantine_reason": "structural_option_leak_2026-10-11"
       }
     },
     {
@@ -6831,8 +6885,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "meteorologia-oceanografia",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_structural_option_leak",
       "question": "De acordo com Meteorologia e Oceanografia — Usuário Navegante, v. I, e considerando \"Medições de ondas geradas pelo vento e ondas swell\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas II e IV são verdadeiras.",
@@ -6934,13 +6988,19 @@
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "audit_hotfix": {
+          "date": "2026-10-11",
+          "reason": "option-like answer text leaked into assertion/enunciado",
+          "action": "quarantined_from_runtime_pending_source_repair"
+        }
       },
       "provenance": {
         "method": "approved-drive-bank-import",
         "source_bank_id": "pscpp-drive",
         "source_question_id": "MET-B017-06",
-        "source_block": 17
+        "source_block": 17,
+        "quarantine_reason": "structural_option_leak_2026-10-11"
       }
     },
     {
@@ -7173,8 +7233,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "comunicacoes",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_structural_option_leak",
       "question": "De acordo com IMO Standard Marine Communication Phrases — Resolution A.918(22), e considerando \"Código Internacional de Sinais (CIS)\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas I e II são verdadeiras.",
@@ -7276,13 +7336,19 @@
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "audit_hotfix": {
+          "date": "2026-10-11",
+          "reason": "option-like answer text leaked into assertion/enunciado",
+          "action": "quarantined_from_runtime_pending_source_repair"
+        }
       },
       "provenance": {
         "method": "approved-drive-bank-import",
         "source_bank_id": "pscpp-drive",
         "source_question_id": "COM-B017-03",
-        "source_block": 17
+        "source_block": 17,
+        "quarantine_reason": "structural_option_leak_2026-10-11"
       }
     },
     {
@@ -7748,8 +7814,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "conhecimentos-gerais",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_structural_option_leak",
       "question": "De acordo com Planejamento Portuário — Recomendações para Acessos Náuticos, e considerando \"Planejamento portuário – Aspectos Náuticos\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas II e IV são verdadeiras.",
@@ -7851,13 +7917,19 @@
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "audit_hotfix": {
+          "date": "2026-10-11",
+          "reason": "option-like answer text leaked into assertion/enunciado",
+          "action": "quarantined_from_runtime_pending_source_repair"
+        }
       },
       "provenance": {
         "method": "approved-drive-bank-import",
         "source_bank_id": "pscpp-drive",
         "source_question_id": "CGE-B017-04",
-        "source_block": 17
+        "source_block": 17,
+        "quarantine_reason": "structural_option_leak_2026-10-11"
       }
     },
     {
@@ -7866,8 +7938,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "conhecimentos-gerais",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_structural_option_leak",
       "question": "De acordo com Planejamento Portuário — Recomendações para Acessos Náuticos, e considerando \"Projeto das dimensões verticais\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas I e III são verdadeiras.",
@@ -7969,13 +8041,19 @@
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "audit_hotfix": {
+          "date": "2026-10-11",
+          "reason": "option-like answer text leaked into assertion/enunciado",
+          "action": "quarantined_from_runtime_pending_source_repair"
+        }
       },
       "provenance": {
         "method": "approved-drive-bank-import",
         "source_bank_id": "pscpp-drive",
         "source_question_id": "CGE-B017-05",
-        "source_block": 17
+        "source_block": 17,
+        "quarantine_reason": "structural_option_leak_2026-10-11"
       }
     }
   ]
