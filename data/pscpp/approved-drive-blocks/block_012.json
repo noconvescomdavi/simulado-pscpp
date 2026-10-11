@@ -346,8 +346,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "manobrabilidade",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com LEWIS, Edward V. - Principles of Naval Architecture, Volume II, e considerando \"Propulsão do Navio e Propulsores\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas II e IV são verdadeiras.",
@@ -456,6 +456,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "MAN-B012-04",
         "source_block": 12
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -912,8 +921,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "manobrabilidade",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com Principles of Naval Architecture — Volume III, e considerando \"Procedimentos para execução da curva espiral direta\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas I e III são verdadeiras.",
@@ -1022,6 +1031,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "MAN-B012-09",
         "source_block": 12
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -1254,8 +1272,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "manobrabilidade",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "À luz de LEWIS, Edward V. - Principles of Naval Architecture, Volume II, julgue as proposições referentes a \"Escoamento em torno do casco do navio e a resistência friccional/viscosa\":",
       "assertions": [
         "I) ( V ) ( V ) ( V ) ( V ).",
@@ -1364,6 +1382,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "MAN-B012-12",
         "source_block": 12
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -1596,8 +1623,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "arte-naval",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "À luz de Arte Naval — Volume 1, julgue as proposições referentes a \"Desenho de linhas e plano de formas\":",
       "assertions": [
         "I) ( V ) ( F ) ( V ) ( F ).",
@@ -1706,6 +1733,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "ANV-B012-02",
         "source_block": 12
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -1938,8 +1974,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "arte-naval",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com Arte Naval — Volume 1, e considerando \"Governo dos navios de um ou mais hélices e um ou dois lemes\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas III e IV são verdadeiras.",
@@ -2048,6 +2084,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "ANV-B012-05",
         "source_block": 12
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -2505,7 +2550,7 @@
       "pscpp_origin": "generated_pscpp",
       "source_subject": "arte-naval",
       "active": false,
-      "validation_status": "quarantined_irrecoverable_source_mismatch",
+      "validation_status": "quarantined_semantic_contamination",
       "question": "Correlacione os termos às respectivas descrições, com base em Arte Naval — Volume 1:\n\nCOLUNA A\n1) volta de fiador\n2) volta redonda mordida e cote\n3) nó torto\n4) navio de guerra\n\nCOLUNA B\na) Apenas as afirmativas III e IV são verdadeiras.\nb) Apenas as afirmativas III e IV são verdadeiras.\nc) Apenas as afirmativas II e IV são verdadeiras.\nd) Apenas as afirmativas I e III são verdadeiras.",
       "assertions": [
         "1) volta de fiador",
@@ -2619,7 +2664,16 @@
         "source_block": 12
       },
       "quarantine_reason": "Questão de correlação contém descrições incompatíveis/contaminadas e os metadados bibliográficos não sustentam os termos apresentados; reconstrução segura exigiria inventar conteúdo ou referência.",
-      "editorial_status": "QUARENTENA_IRRECUPERÁVEL"
+      "editorial_status": "QUARENTENA_IRRECUPERÁVEL",
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
+      }
     },
     {
       "id": "ANV-B012-11",
@@ -2741,46 +2795,40 @@
       "source_subject": "arte-naval",
       "active": true,
       "validation_status": "approved",
-      "question": "De acordo com FONSECA, Maurílio M. - Arte Naval, Volume 2, e considerando \"Governo dos navios de um ou mais hélices e um ou dois lemes\", analise as afirmativas:",
-      "assertions": [
-        "I) Apenas as afirmativas II e IV são verdadeiras.",
-        "II) Apenas as afirmativas I e II são verdadeiras.",
-        "III) ( V ) ( F ) ( V ) ( F ).",
-        "IV) Apenas as afirmativas I e III são verdadeiras.",
-        "V) A definição técnica “ensaio destrutivo usado para confirmar a carga de rompimento” corresponde a “prova de ruptura da amarra”."
-      ],
+      "question": "Segundo Arte Naval, Volume 2, no leme à mão empregado comumente em embarcações miúdas, quais são os elementos que constituem o aparelho de governo?",
+      "assertions": null,
       "options": [
         {
           "key": "A",
-          "text": "Apenas I e IV estão corretas."
+          "text": "Roda do leme, telemotor e servomotor."
         },
         {
           "key": "B",
-          "text": "Apenas I, II, III e V estão corretas."
+          "text": "Roda do leme, gualdropes e leme."
         },
         {
           "key": "C",
-          "text": "Apenas II e IV estão corretas."
+          "text": "Cana do leme, bomba hidráulica e servomotor."
         },
         {
           "key": "D",
-          "text": "Apenas III, IV e V estão corretas."
+          "text": "Roda do leme, quadrante e motor elétrico."
         },
         {
           "key": "E",
-          "text": "Todas estão corretas."
+          "text": "Telemotor, gualdropes e máquina do leme."
         }
       ],
       "correct_answer": "B",
-      "explanation": "As proposições I, II, III e V são compatíveis com a fonte; a proposição IV foi construída a partir de uma relação tecnicamente incorreta.",
+      "explanation": "No item 11.3, a obra descreve o leme à mão como o aparelho de governo mais simples, empregado comumente em embarcações miúdas, constituído por roda do leme, gualdropes e leme.",
       "distractor_analysis": {},
-      "pscpp_format": "assertions",
-      "difficulty": "very_hard",
-      "cognitive_level": 5,
+      "pscpp_format": "direct",
+      "difficulty": "medium",
+      "cognitive_level": 2,
       "module": "Arte Naval",
-      "topic_code": "1",
-      "topic": "Governo dos navios de um ou mais hélices e um ou dois lemes",
-      "subtopic": "leme à mão",
+      "topic_code": "11.3",
+      "topic": "Aparelho de governo",
+      "subtopic": "Leme à mão",
       "tags": [
         "pscpp-drive",
         "bloco-012",
@@ -2797,58 +2845,65 @@
         "subject_id": "II",
         "subject_slug": "arte-naval",
         "bibliography_id": "1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec",
-        "chapter_id": "manobras, cabos, fundeio, reboque e aparelhos",
-        "topic_id": "1",
-        "subtopic_id": "leme à mão"
+        "chapter_id": "Capítulo 11 — Aparelho de governo, mastreação e aparelhos de carga",
+        "topic_id": "11.3",
+        "subtopic_id": "Leme à mão"
       },
       "tracking": {
         "subject_slug": "arte-naval",
         "work_id": "1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec",
         "work_title": "FONSECA, Maurílio M. - Arte Naval, Volume 2",
         "work_author": "Maurílio M. Fonseca",
-        "chapter_id": "manobras, cabos, fundeio, reboque e aparelhos",
-        "chapter_number": null,
-        "chapter_title": null,
-        "chapter_label": "manobras, cabos, fundeio, reboque e aparelhos",
-        "section": "manobras, cabos, fundeio, reboque e aparelhos",
+        "chapter_id": "Capítulo 11 — Aparelho de governo, mastreação e aparelhos de carga",
+        "chapter_number": "11",
+        "chapter_title": "Aparelho de governo, mastreação e aparelhos de carga",
+        "chapter_label": "Capítulo 11",
+        "section": "11.3 — Leme à mão",
         "module": "Arte Naval",
-        "topic_id": "1",
-        "topic_title": "Governo dos navios de um ou mais hélices e um ou dois lemes"
+        "topic_id": "11.3",
+        "topic_title": "Leme à mão"
       },
       "bibliography": {
         "publication": "FONSECA, Maurílio M. - Arte Naval, Volume 2",
         "edition": "8ª ed.",
-        "chapter": "manobras, cabos, fundeio, reboque e aparelhos",
-        "locator": "manobras, cabos, fundeio, reboque e aparelhos",
+        "chapter": "Capítulo 11 — Aparelho de governo",
+        "locator": "Item 11.3 — Leme à mão; p. 756",
         "file_id": "1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec"
       },
       "source": {
         "title": "FONSECA, Maurílio M. - Arte Naval, Volume 2",
         "author": "Maurílio M. Fonseca",
         "edition": "8ª ed.",
-        "locator": "manobras, cabos, fundeio, reboque e aparelhos",
-        "printed_page": "a confirmar",
-        "pdf_page": "a confirmar",
+        "locator": "Capítulo 11, item 11.3 — Leme à mão; p. 756",
+        "printed_page": "756",
+        "pdf_page": "756",
         "drive_file_name": "Arte Naval - Volume 2 - 8ª edição.pdf",
         "drive_file_id": "1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec",
         "drive_url": "https://drive.google.com/file/d/1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec/view"
       },
       "validation": {
         "authority": "PSCPP editorial review",
-        "verified_chapter": false,
-        "verified_locator": false,
-        "verified_on": "2026-09-22",
-        "source_verified": false,
+        "verified_chapter": true,
+        "verified_locator": true,
+        "verified_on": "2026-10-11",
+        "source_verified": true,
         "answer_key_checked": true,
         "second_answer_check": true,
         "duplicate_check": true,
-        "approved_by_user": true
+        "approved_by_user": true,
+        "key_verified": true
       },
       "provenance": {
         "method": "approved-drive-bank-import",
         "source_bank_id": "pscpp-drive",
         "source_question_id": "ANV-B012-12",
         "source_block": 12
+      },
+      "status": "active",
+      "editorial_review": {
+        "content_reviewed": true,
+        "version": "source-repair-2026-10-11",
+        "basis": "Arte Naval v.2, item 11.3"
       }
     },
     {
@@ -2969,8 +3024,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "arte-naval",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com Shiphandling for the Mariner, e considerando \"Giro curto e circular em velocidade baixa\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas II e IV estão corretas.",
@@ -3079,6 +3134,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "ANV-B012-14",
         "source_block": 12
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -3423,8 +3487,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "navegacao-aguas-restritas",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com MIGUENS, Altineu Pires - Navegação: a Ciência e a Arte, Volume I, e considerando \"Integração do ECDIS com o radar, o ARPA e o AIS\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas III e IV são verdadeiras.",
@@ -3533,6 +3597,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "NAR-B012-01",
         "source_block": 12
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -3765,8 +3838,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "navegacao-aguas-restritas",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com MIGUENS, Altineu Pires — Navegação: a Ciência e a Arte, v.3, e considerando \"Integração do ECDIS com o radar, o ARPA e o AIS\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas III e IV são verdadeiras.",
@@ -3875,6 +3948,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "NAR-B012-04",
         "source_block": 12
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -4107,8 +4189,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "navegacao-aguas-restritas",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "À luz de MIGUENS, Altineu Pires - Navegação: a Ciência e a Arte, Volume I, julgue as proposições referentes a \"Integração do ECDIS com o radar, o ARPA e o AIS\":",
       "assertions": [
         "I) ( V ) ( F ) ( V ) ( F ).",
@@ -4217,6 +4299,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "NAR-B012-07",
         "source_block": 12
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -4785,8 +4876,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "legislacao-regulamentacao",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com NORMAM-204/DPC — Tráfego e Permanência de Embarcações em AJB, e considerando \"Tráfego e permanência de Embarcações em Águas Jurisdicionais Brasileiras\", analise as afirmativas:",
       "assertions": [
         "I) As afirmativas I, II, III e IV são verdadeiras.",
@@ -4895,6 +4986,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "LEG-B012-04",
         "source_block": 12
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -4903,8 +5003,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "legislacao-regulamentacao",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com NORMAM-311/DPC — Serviço de Praticagem, e considerando \"Serviço de Praticagem no Brasil\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas I e II são verdadeiras.",
@@ -5013,6 +5113,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "LEG-B012-05",
         "source_block": 12
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -5245,8 +5354,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "legislacao-regulamentacao",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com NORMAM-302/DPC — IAFN, e considerando \"Inquéritos Administrativos sobre Acidentes e Fatos da Navegação\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas I e III são verdadeiras.",
@@ -5355,6 +5464,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "LEG-B012-08",
         "source_block": 12
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -6035,8 +6153,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "legislacao-regulamentacao",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "À luz de NORMAM-204/DPC — Tráfego e Permanência de Embarcações em AJB, julgue as proposições referentes a \"Tráfego e permanência de Embarcações em Águas Jurisdicionais Brasileiras\":",
       "assertions": [
         "I) ( F ) ( V ) ( F ) ( V ).",
@@ -6145,6 +6263,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "LEG-B012-15",
         "source_block": 12
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -6377,8 +6504,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "meteorologia-oceanografia",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "À luz de Meteorologia: Noções Básicas, julgue as proposições referentes a \"Circulação de ventos sobre o mar\":",
       "assertions": [
         "I) ( V ) ( F ) ( V ) ( F ).",
@@ -6487,6 +6614,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "MET-B012-02",
         "source_block": 12
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -6607,8 +6743,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "meteorologia-oceanografia",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com Meteorologia: Noções Básicas, e considerando \"Circulação de ventos sobre o mar\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas I e III são verdadeiras.",
@@ -6717,6 +6853,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "MET-B012-04",
         "source_block": 12
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -7182,8 +7327,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "comunicacoes",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com Curso Especial de Radioperador Geral (EROG), e considerando \"Código Internacional de Sinais (CIS)\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas I e III são verdadeiras.",
@@ -7292,6 +7437,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "COM-B012-03",
         "source_block": 12
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -7412,8 +7566,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "conhecimentos-gerais",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com MSC.1/Circ.1598 — Guidelines on Fatigue, e considerando \"Regras do emprego da folga dinâmica abaixo da quilha no Brasil\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas I e III são verdadeiras.",
@@ -7522,6 +7676,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "CGE-B012-01",
         "source_block": 12
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
@@ -7642,8 +7805,8 @@
       "origin": "generated_pscpp",
       "pscpp_origin": "generated_pscpp",
       "source_subject": "conhecimentos-gerais",
-      "active": true,
-      "validation_status": "approved",
+      "active": false,
+      "validation_status": "quarantined_semantic_contamination",
       "question": "De acordo com Planejamento Portuário — Recomendações para Acessos Náuticos, e considerando \"Projeto das dimensões verticais\", analise as afirmativas:",
       "assertions": [
         "I) Apenas as afirmativas III e IV são verdadeiras.",
@@ -7752,6 +7915,15 @@
         "source_bank_id": "pscpp-drive",
         "source_question_id": "CGE-B012-03",
         "source_block": 12
+      },
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "editorial_semantic_contamination_wave1"
+      },
+      "editorial_review": {
+        "status": "requires_source_reconstruction",
+        "version": "semantic-contamination-wave1",
+        "reviewed_on": "2026-10-11"
       }
     },
     {
