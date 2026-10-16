@@ -23,11 +23,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: feature/pianc121-cge-cap1-quarentena
+          persist-credentials: true
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
       - name: Apply consolidated PIANC release if still quarantined
-        if: github.event_name == 'push'
         run: |
           python - <<'PY'
           import json,subprocess
