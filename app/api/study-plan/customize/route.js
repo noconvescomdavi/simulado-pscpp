@@ -98,7 +98,7 @@ export async function POST(request){
     // A semana é congelada antes da mudança. O snapshot passa a armazenar a
     // personalização e a identidade da tarefa original fica no payload.
     await persistStudyPlanSnapshot(session.id,plan);
-    if(action==="postpone"&&offset<80){
+    if(action==="postpone"&&!task.reprogrammed&&offset<80){
       const following=await getIntegratedStudyPlan(session.id,offset+1);
       if(!following.needs_onboarding)await persistStudyPlanSnapshot(session.id,following);
     }
