@@ -190,6 +190,12 @@ export async function POST(request){
           [session.id,planDate,task.type]
         );
         const oldTail=queue.rows.filter(row=>!(row.task_key===taskKey&&isoDate(row.original_plan_date)===originalDate));
+        // Uma nova postergação substitui qualquer agendamento ativo anterior
+        // da mesma tarefa, inclusive aquele cuja data já ficou para trás.
+        await client.query(
+          "update student_plan_reschedules set status='cancelled' where user_id=$1 and task_key=$2 and original_plan_date=$3::date and reason='manual_queue_tail' and status='active'",
+          [session.id,taskKey,originalDate]
+        );
         const nextDate=new Date(planDate+"T12:00:00Z");
         nextDate.setUTCDate(nextDate.getUTCDate()+1);
         const allocated=distributeDeferredTail({
