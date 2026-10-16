@@ -29,7 +29,7 @@ export function TaskEditor({plan,day,task,onClose}){
   <section className={styles.modal} role="dialog" aria-modal="true" aria-labelledby="edit-plan-title">
    <header className={styles.dialogHead}><div><span>PLANEJAMENTO MANUAL</span><h2 id="edit-plan-title">Editar atividade</h2><p>{labelDate(day.iso)}</p></div><button aria-label="Fechar" onClick={onClose}>✕</button></header>
    <form className={styles.editForm} onSubmit={submit}>
-    <label>Atividade<select value={kind} onChange={e=>setKind(e.target.value)}>{Object.entries(types).map(([v,t])=><option key={v} value={v}>{t}</option>)}</select></label>
+    <label>Atividade<select value={kind} onChange={e=>setKind(e.target.value)}>{Object.entries(types).filter(([v])=>v!=="simulado"||task.type==="simulado").filter(([v])=>task.type!=="simulado"||v==="simulado").map(([v,t])=><option key={v} value={v}>{t}</option>)}</select></label>
     <label>Disciplina<select value={subject} onChange={e=>{setSubject(e.target.value);setBib("");setSection("");setFrom("");setTo("")}}>{plan.metrics.subjects.map(x=><option key={x.slug} value={x.slug}>{x.label}</option>)}</select></label>
     {kind==="reading"&&<>
      <label>Obra da bibliografia<select required value={bib} onChange={e=>{setBib(e.target.value);setSection("");setFrom("");setTo("")}}><option value="">Selecionar obra...</option>{publications.map(([key,value])=><option key={key} value={key}>{value}</option>)}</select></label>
