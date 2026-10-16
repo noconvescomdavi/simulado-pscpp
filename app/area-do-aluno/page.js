@@ -123,6 +123,7 @@ export default async function Area(){
           <div className="statsGridV2">
             <article><i>◎</i><div><span>Simulados</span><strong>{fmt(performance.overall.attempts)}</strong><small>Realizados</small></div></article>
             <article><i>▤</i><div><span>Questões</span><strong>{fmt(performance.overall.questions)}</strong><small>Respondidas</small></div></article>
+            <article><i>▤</i><div><span>Média dos Cadernos</span><strong>{performance.overall.notebook_answered?performance.overall.notebook_average+"%":"—"}</strong><small>{fmt(performance.overall.notebook_correct)} acertos · {fmt(performance.overall.notebook_wrong)} erros · {fmt(performance.overall.notebook_answered)} respostas</small></div></article>
             <article><i>▥</i><div><span>Aproveitamento</span><strong>{performance.overall.accuracy}%</strong><small>Média geral</small></div></article>
             <article><i>◷</i><div><span>Progresso</span><strong>{overall}%</strong><small>Bibliografia concluída ({fmt(bibliographyProgress.done)}/{fmt(bibliographyProgress.total)})</small></div></article>
             <article><i>◎</i><div><span>Domínio estimado</span><strong>{Math.round(mastery)}%</strong><small>Mastery Score</small></div></article>
