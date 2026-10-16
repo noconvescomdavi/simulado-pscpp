@@ -15,13 +15,35 @@ base=json.loads(base_path.read_text(encoding='utf-8'))
 addon=json.loads(addon_path.read_text(encoding='utf-8'))
 assert isinstance(base.get('questions'),list)
 assert base.get('schema_version')==addon.get('schema_version')
+def align_pianc_taxonomy(question):
+    """Align with the bibliography catalog, preserving stable question IDs."""
+    t=question['taxonomy']
+    if t.get('bibliography_id') not in ('pianc121','pianc-channels'):
+        raise ValueError('Unexpected bibliography ID')
+    t['bibliography_id']='pianc-channels'
+    t['chapter_id']='pianc-channels::ch1'
+    t['topic_id']=t['topic_id'].replace('VII-pianc121-ch1-','VII-pianc-channels-ch1-')
+    question['tracking']['work']['id']='pianc-channels'
+    question['tracking']['chapter']['id']='pianc-channels::ch1'
+    question['tracking']['topic']['id']=t['topic_id']
+    question.setdefault('tags',[])
+    question['tags']=['pianc-channels' if x=='pianc121' else ('pianc-channels::ch1' if x=='pianc121::ch1' else x) for x in question['tags']]
+    return question
+
 existing={q['id']:q for q in base['questions']}
 merged=0
+updated=0
 for q in addon['questions']:
     assert q['active'] is False and q['status']=='quarantined'
+    q=align_pianc_taxonomy(q)
     if q['id'] in existing:
-        if existing[q['id']]!=q:
-            raise SystemExit(f'CONFLITO: {q["id"]} já existe com conteúdo diferente; merge abortado')
+        old=existing[q['id']]
+        if old['taxonomy'].get('bibliography_id') not in ('pianc121','pianc-channels'):
+            raise SystemExit('Unexpected existing record: '+q['id'])
+        old=align_pianc_taxonomy(old)
+        if old!=q:
+            raise SystemExit('CONFLITO DE CONTEUDO: '+q['id'])
+        updated+=1
     else:
         base['questions'].append(q)
         existing[q['id']]=q
@@ -44,7 +66,7 @@ validation['by_module']=dict(sorted(Counter(q.get('module','') for q in base['qu
 validation['by_difficulty']=dict(sorted(Counter(q.get('difficulty','') for q in base['questions']).items()))
 validation['by_style']=dict(sorted(Counter(q.get('style','') for q in base['questions']).items()))
 validation['answer_balance']=dict(sorted(Counter(q['correct_answer'] for q in base['questions']).items()))
-validation['pianc121_quarantine_count']=sum(q.get('taxonomy',{}).get('bibliography_id')=='pianc121' and q.get('active') is False for q in base['questions'])
+validation['pianc121_quarantine_count']=sum(q.get('taxonomy',{}).get('bibliography_id')=='pianc-channels' and q.get('active') is False for q in base['questions'])
 validation['metadata_recalculated_from_questions']=True
 output_path.parent.mkdir(parents=True,exist_ok=True)
 output_path.write_text(json.dumps(base,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
