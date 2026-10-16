@@ -21,13 +21,13 @@ export function TaskEditor({plan,day,task,onClose}){
  const unit=sections.find(x=>x.section_key===section);
  function chooseSection(key){setSection(key);const u=sections.find(x=>x.section_key===key);setFrom(u?.page_start??"");setTo(u?.page_start==null?"":Math.min(Number(u.page_end||u.page_start),Number(u.page_start)+11))}
  async function submit(event){event.preventDefault();setSaving(true);setError("");try{
-   await saveChange({action:"edit",week:plan.week.offset,plan_date:day.iso,task_key:task.key,task_type:kind,subject_slug:subject,bibliography_key:bib,section_key:section,
+   await saveChange({action:task.key?"edit":"add",week:plan.week.offset,plan_date:day.iso,task_key:task.key||null,task_type:kind,subject_slug:subject,bibliography_key:bib,section_key:section,
      page_from:from===""?null:Number(from),page_to:to===""?null:Number(to),target_questions:Number(quantity),estimate_minutes:Number(minutes)});
    window.location.reload();
  }catch(e){setError(e.message);setSaving(false)}}
  return <div className={styles.shade} onMouseDown={e=>{if(e.target===e.currentTarget)onClose()}}>
   <section className={styles.modal} role="dialog" aria-modal="true" aria-labelledby="edit-plan-title">
-   <header className={styles.dialogHead}><div><span>PLANEJAMENTO MANUAL</span><h2 id="edit-plan-title">Editar atividade</h2><p>{labelDate(day.iso)}</p></div><button aria-label="Fechar" onClick={onClose}>✕</button></header>
+   <header className={styles.dialogHead}><div><span>PLANEJAMENTO MANUAL</span><h2 id="edit-plan-title">{task.key?"Editar atividade":"Adicionar atividade"}</h2><p>{labelDate(day.iso)}</p></div><button aria-label="Fechar" onClick={onClose}>✕</button></header>
    <form className={styles.editForm} onSubmit={submit}>
     <label>Atividade<select value={kind} onChange={e=>setKind(e.target.value)}>{Object.entries(types).filter(([v])=>v!=="simulado"||task.type==="simulado").filter(([v])=>task.type!=="simulado"||v==="simulado").map(([v,t])=><option key={v} value={v}>{t}</option>)}</select></label>
     <label>Disciplina<select value={subject} onChange={e=>{setSubject(e.target.value);setBib("");setSection("");setFrom("");setTo("")}}>{plan.metrics.subjects.map(x=><option key={x.slug} value={x.slug}>{x.label}</option>)}</select></label>
@@ -41,7 +41,7 @@ export function TaskEditor({plan,day,task,onClose}){
     {kind!=="simulado"&&<label>Duração estimada em minutos<input type="number" min="10" max="360" value={minutes} onChange={e=>setMinutes(e.target.value)}/></label>}
     <p className={styles.hint}>Mudanças manuais não apagam conclusões anteriores. A edição pode alterar a cobertura planejada da bibliografia.</p>
     {error&&<p role="alert" className={styles.error}>{error}</p>}
-    <footer className={styles.footer}><button type="button" onClick={onClose}>Cancelar</button><button className={styles.primary} disabled={saving||kind==="reading"&&(!bib||!section)} type="submit">{saving?"Salvando...":"Salvar alterações"}</button></footer>
+    <footer className={styles.footer}><button type="button" onClick={onClose}>Cancelar</button><button className={styles.primary} disabled={saving||kind==="reading"&&(!bib||!section)} type="submit">{saving?"Salvando...":task.key?"Salvar alterações":"Adicionar atividade"}</button></footer>
    </form>
   </section>
  </div>
@@ -55,6 +55,7 @@ export function TaskExtraActions({plan,day,task}){
 }
 export default function PlanControls({plan}){
  const [open,setOpen]=useState(false),[edit,setEdit]=useState(false),[month,setMonth]=useState(today().slice(0,7)),[days,setDays]=useState([]);
+ const [addDate,setAddDate]=useState(plan.week.days.find(d=>d.active&&d.iso>=today())?.iso||plan.week.days.find(d=>d.active)?.iso||plan.week.start);
  const [loading,setLoading]=useState(false),[error,setError]=useState(""),[selected,setSelected]=useState(today()),[chosen,setChosen]=useState(null);
  useEffect(()=>{if(!open)return;const controller=new AbortController();setLoading(true);setError("");setDays([]);
  fetch("/api/study-plan/calendar?month="+month,{signal:controller.signal}).then(async r=>{const json=await r.json();if(!r.ok)throw new Error(json.error||"Falha no calendário");return json})
@@ -68,7 +69,8 @@ export default function PlanControls({plan}){
  return <section className={styles.controlBar}>
   <div className={styles.barHead}><div><span>PLANEJAMENTO PERSONALIZÁVEL</span><h2>Seu cronograma, no seu ritmo</h2><p>Visualize semanas e meses ou ajuste uma tarefa manualmente.</p></div>
    <div className={styles.barActions}><button className={styles.primary} onClick={()=>setOpen(v=>!v)}>▦ {open?"Ocultar Calendário":"Ver Calendário"}</button><button onClick={()=>setEdit(v=>!v)}>✎ {edit?"Fechar Editor":"Editar Plano"}</button></div></div>
-  {edit&&<div className={styles.editChooser}><h3>Editar esta semana</h3><p>Selecione uma atividade pendente.</p><div className={styles.choiceGrid}>{available.map(({day,task})=><button key={day.iso+"|"+task.key} onClick={()=>setChosen({day,task})}><small>{day.iso.slice(8,10)+"/"+day.iso.slice(5,7)} · {types[task.type]}</small><strong>{task.title}</strong></button>)}</div>{!available.length&&<p>Não há tarefas pendentes nesta semana.</p>}</div>}
+  {edit&&<div className={styles.editChooser}><h3>Editar esta semana</h3><p>Selecione uma atividade pendente.</p><div className={styles.addRow}><label>Adicionar atividade no dia <select value={addDate} onChange={e=>setAddDate(e.target.value)}>{plan.week.days.filter(day=>day.active&&day.iso>=today()).map(day=><option key={day.iso} value={day.iso}>{labelDate(day.iso)}</option>)}</select></label><button disabled={!plan.week.days.some(d=>d.iso===addDate&&d.active&&d.iso>=today())} onClick={()=>setChosen({day:plan.week.days.find(d=>d.iso===addDate),task:{key:null,type:"reading",subject:plan.metrics.subjects[0]?.slug}})}>＋ Adicionar tarefa</button></div>
+   <div className={styles.choiceGrid}>{available.map(({day,task})=><button key={day.iso+"|"+task.key} onClick={()=>setChosen({day,task})}><small>{day.iso.slice(8,10)+"/"+day.iso.slice(5,7)} · {types[task.type]}</small><strong>{task.title}</strong></button>)}</div>{!available.length&&<p>Não há tarefas pendentes nesta semana.</p>}</div>}
   {open&&<div className={styles.calendarPanel}>
    <div className={styles.monthHead}><button aria-label="Mês anterior" onClick={()=>setMonth(v=>moveMonth(v,-1))}>‹</button><h3>{new Intl.DateTimeFormat("pt-BR",{month:"long",year:"numeric"}).format(first)}</h3><button aria-label="Próximo mês" onClick={()=>setMonth(v=>moveMonth(v,1))}>›</button></div>
    <div className={styles.calendarGrid}>{["SEG","TER","QUA","QUI","SEX","SÁB","DOM"].map(s=><strong className={styles.weekName} key={s}>{s}</strong>)}
