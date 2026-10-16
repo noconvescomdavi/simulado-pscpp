@@ -25,3 +25,17 @@ jobs:
         with:
           node-version: '22'
       - run: node scripts/test-pianc121-cge-quarantine.mjs
+      - name: Generate runtime caderno banks
+        run: node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-question-banks.mjs
+      - name: Assert quarantined PIANC questions are excluded from runtime
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          const runtime=JSON.parse(fs.readFileSync('data/questions/runtime-active-banks.json','utf8'));
+          const bank=runtime.banks['conhecimentos-gerais'];
+          assert.ok(bank && Array.isArray(bank.questions));
+          const leaked=bank.questions.filter(q=>String(q.id||'').startsWith('CGE-PIANC121-C1-'));
+          assert.equal(leaked.length,0,'PIANC questions leaked into active runtime');
+          console.log('PASS: no PIANC quarantine questions in generated runtime bank.');
+          NODE
