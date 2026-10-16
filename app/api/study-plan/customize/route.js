@@ -265,6 +265,20 @@ export async function POST(request){
           await client.query("delete from student_plan_snapshot_tasks where id=$1",[row.id]);
         }
         const rotated=values.slice(1).map(v=>({...v,payload:{...v.payload,postponed_manually:false}}));
+        if(current.task_type==="questions"){
+          // Não apresentar uma fixação de outro capítulo como se fosse relativa
+          // à leitura do mesmo dia após a antecipação manual.
+          for(let i=0;i<rotated.length;i++){
+            const slot=slots[i];
+            const reading=all.rows.find(row=>row.snapshot_id===slot.snapshot_id&&isoDate(row.plan_date)===isoDate(slot.plan_date)&&row.task_type==="reading");
+            const fixation=rotated[i].payload.fixation;
+            if(!reading||!fixation)continue;
+            if(reading.payload?.bibliography_key!==fixation.bibliography_key||reading.payload?.section_key!==fixation.section_key){
+              rotated[i].payload.advanced_out_of_sequence=true;
+              rotated[i].payload.description="Fixação antecipada de outra leitura. Estude o capítulo associado antes de abrir estas questões: "+(fixation.chapter||fixation.publication||"conteúdo indicado")+".";
+            }
+          }
+        }
         for(let i=0;i<rotated.length;i++){
           const slot=slots[i],next=rotated[i];
           await client.query("insert into student_plan_snapshot_tasks(snapshot_id,user_id,plan_date,task_key,task_type,subject_slug,position,payload) values($1,$2,$3::date,$4,$5,$6,$7,$8::jsonb)",
