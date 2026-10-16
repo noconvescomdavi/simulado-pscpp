@@ -1,0 +1,24 @@
+name: Study Plan Customization Regression
+
+on:
+  pull_request:
+    paths:
+      - "app/plano-de-estudos/**"
+      - "app/api/study-plan/**"
+      - "lib/integrated-study-plan.js"
+      - "lib/study-plan-progress.js"
+      - "lib/study-plan-manual-queue.mjs"
+      - "scripts/test-study-plan-manual-queue.mjs"
+      - ".github/workflows/study-plan-customization.yml"
+  workflow_dispatch:
+
+jobs:
+  study-plan-queue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Validate global queue rules
+        run: node --test scripts/test-study-plan-manual-queue.mjs
