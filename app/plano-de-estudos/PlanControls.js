@@ -48,9 +48,9 @@ export function TaskEditor({plan,day,task,onClose}){
 }
 export function TaskExtraActions({plan,day,task}){
  const [editor,setEditor]=useState(false),[loading,setLoading]=useState(false),[error,setError]=useState("");
- const disabled=loading||task.status==="done"||task.reprogrammed;
- async function postpone(){if(!window.confirm("Postergar esta tarefa para o final da fila semanal e antecipar a próxima atividade pendente do mesmo tipo?"))return;
-  setLoading(true);setError("");try{await saveChange({action:"postpone",week:plan.week.offset,plan_date:day.iso,task_key:task.key});window.location.reload()}catch(e){setError(e.message);setLoading(false)}}
+ const disabled=loading||task.status==="done"||(task.reprogrammed&&!task.postponed_manually);
+ async function postpone(){if(!window.confirm("Postergar esta tarefa para o fim da fila global da categoria? As demais atividades pendentes serão antecipadas quando houver disponibilidade."))return;
+  setLoading(true);setError("");try{await saveChange({action:"postpone",week:plan.week.offset,plan_date:day.iso,task_key:task.key,source_plan_date:task.source_plan_date||day.iso});window.location.reload()}catch(e){setError(e.message);setLoading(false)}}
  return <><div className={styles.extraButtons}><button disabled={disabled} className={styles.postpone} onClick={postpone}>{loading?"Aguarde...":"↻ Postergar"}</button><button disabled={disabled} onClick={()=>setEditor(true)}>✎ Editar</button></div>{error&&<p role="alert" className={styles.error}>{error}</p>}{editor&&<TaskEditor plan={plan} day={day} task={task} onClose={()=>setEditor(false)}/>}</>
 }
 export default function PlanControls({plan}){
