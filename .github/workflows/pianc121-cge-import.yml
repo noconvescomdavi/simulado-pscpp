@@ -1,0 +1,42 @@
+name: Import PIANC 121 into CGE (quarantine)
+on:
+  push:
+    branches: [feature/pianc121-cge-cap1-quarentena]
+    paths:
+      - '.github/workflows/pianc121-cge-import.yml'
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/pianc121-cge-cap1-quarentena
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Merge PIANC 121, preserve quarantine
+        run: |
+          python scripts/merge_pianc121_cge_cap1.py data/questions/conhecimentos-gerais.json /tmp/conhecimentos-gerais-merged.json
+          mv /tmp/conhecimentos-gerais-merged.json data/questions/conhecimentos-gerais.json
+          python - <<'PY'
+          import json
+          p='data/questions/conhecimentos-gerais.json'
+          d=json.load(open(p,encoding='utf-8'))
+          q=[x for x in d['questions'] if x['id'].startswith('CGE-PIANC121-C1-')]
+          assert len(q)==46, len(q)
+          assert all(x.get('active') is False and x.get('status')=='quarantined' for x in q)
+          assert len({x['id'] for x in d['questions']})==len(d['questions'])
+          print('OK: 46 PIANC questions quarantined; total',len(d['questions']))
+          PY
+      - name: Commit integration to feature branch
+        run: |
+          if ! git diff --quiet -- data/questions/conhecimentos-gerais.json; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add data/questions/conhecimentos-gerais.json
+            git commit -m 'feat(cge): merge 46 PIANC 121 questions in quarantine'
+            git push origin HEAD:feature/pianc121-cge-cap1-quarentena
+          fi
