@@ -4,6 +4,8 @@ on:
     branches: [feature/pianc121-cge-cap1-quarentena]
     paths:
       - '.github/workflows/pianc121-cge-import.yml'
+      - 'scripts/merge_pianc121_cge_cap1.py'
+      - 'data/questions/imports/pianc121-cap1-quarentena.json'
 permissions:
   contents: write
 jobs:
