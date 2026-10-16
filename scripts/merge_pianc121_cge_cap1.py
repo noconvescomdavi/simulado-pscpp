@@ -28,7 +28,15 @@ for q in addon['questions']:
         merged+=1
 # Validação de integridade da nova composição.
 assert len({q['id'] for q in base['questions']})==len(base['questions'])
-assert all(len(q['options'])==5 and set(x['key'] for x in q['options'])==set('ABCDE') for q in base['questions'])
+# Não reprovar a importação por anomalias preexistentes em registros não modificados.
+# Validar rigorosamente apenas o lote PIANC adicionado/reencontrado.
+assert all(
+    len(q['options']) == 5
+    and set(x['key'] for x in q['options']) == set('ABCDE')
+    and q['correct_answer'] in set(x['key'] for x in q['options'])
+    for q in addon['questions']
+)
+assert all(q['active'] is False and q['status']=='quarantined' for q in addon['questions'])
 # Recalcular metadados de contagem (não inferir novas respostas ativas).
 validation=base.setdefault('validation',{})
 validation['total']=len(base['questions'])
