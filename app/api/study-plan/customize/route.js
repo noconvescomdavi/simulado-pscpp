@@ -46,6 +46,26 @@ function makeTask(input,subject,unit,old){
   throw new Error("Tipo de tarefa não permitido.");
 }
 
+
+async function syncFixation(client,userId,snapshotId,planDate,reading){
+  if(reading?.type!=="reading")return;
+  const result=await client.query("select id,task_key,payload from student_plan_snapshot_tasks where snapshot_id=$1 and plan_date=$2::date and task_type='questions' order by position limit 1 for update",[snapshotId,planDate]);
+  const row=result.rows[0];
+  if(!row)return;
+  const original=row.payload?.source_plan_date||planDate;
+  const progress=await client.query("select status from student_plan_task_progress where user_id=$1 and task_key=$2 and plan_date=$3::date",[userId,row.task_key,original]);
+  if(progress.rows[0]?.status==="done")return;
+  const fixation={bibliography_key:reading.bibliography_key,section_key:reading.section_key,
+    publication:reading.title,chapter:reading.chapter,page_from:reading.page_from,page_to:reading.page_to};
+  const params=new URLSearchParams({materia:reading.subject,bibliografia:reading.bibliography_key,secao:reading.section_key,
+    capitulo:reading.chapter||"",publicacao:reading.title||"",plan_date:original,task_key:row.task_key});
+  const payload={...row.payload,subject:reading.subject,
+    title:"Questões de fixação — "+(reading.chapter||reading.title),
+    description:"Questões relacionadas à leitura programada: "+reading.title+" — "+reading.description+".",
+    target_questions:null,fixation,href:"/conteudos/fixacao?"+params.toString()};
+  await client.query("update student_plan_snapshot_tasks set subject_slug=$2,payload=$3::jsonb where id=$1",[row.id,reading.subject,JSON.stringify(payload)]);
+}
+
 export async function POST(request){
   const session=await getSession();
   if(!session)return bad("Não autenticado.",401);
@@ -88,6 +108,7 @@ export async function POST(request){
           const payload=makeTask(body,subject,unit,current);
           await client.query("update student_plan_snapshot_tasks set task_type=$2,subject_slug=$3,payload=$4::jsonb where id=$1",
             [current.id,payload.type,payload.subject,JSON.stringify(payload)]);
+          if(payload.type==="reading")await syncFixation(client,session.id,id,planDate,payload);
           await client.query("insert into student_plan_events(user_id,event_type,task_key,plan_date,subject_slug,metadata) values($1,'TASK_EDITED_MANUALLY',$2,$3::date,$4,$5::jsonb)",
             [session.id,current.task_key,planDate,payload.subject,JSON.stringify({before:current.payload,after:payload})]);
           return {action,affected:1};
@@ -99,7 +120,12 @@ export async function POST(request){
         for(const row of typeRows){
           const origin=row.payload?.source_plan_date||isoDate(row.plan_date);
           const progress=await client.query("select status from student_plan_task_progress where user_id=$1 and task_key=$2 and plan_date=$3::date",[session.id,row.task_key,origin]);
-          if(progress.rows[0]?.status!=="done")pending.push(row);
+          if(progress.rows[0]?.status==="done")continue;
+          if(row.task_type==="reading"){
+            const doneReading=await client.query("select status from student_bibliography_progress where user_id=$1 and bibliography_key=$2 and section_key=$3",[session.id,row.payload?.bibliography_key||"",row.payload?.section_key||""]);
+            if(doneReading.rows[0]?.status==="done")continue;
+          }
+          pending.push(row);
         }
         const index=pending.findIndex(row=>row.id===current.id);
         if(index<0)throw new Error("Tarefa indisponível para postergação.");
@@ -120,6 +146,7 @@ export async function POST(request){
           await client.query("insert into student_plan_snapshot_tasks(snapshot_id,user_id,plan_date,task_key,task_type,subject_slug,position,payload) values($1,$2,$3::date,$4,$5,$6,$7,$8::jsonb)",
             [id,session.id,isoDate(slot.plan_date),next.key,next.type,next.subject,slot.position,JSON.stringify(next.payload)]);
         }
+        if(current.task_type==="reading")for(let i=0;i<slots.length;i++)await syncFixation(client,session.id,id,isoDate(slots[i].plan_date),rotated[i].payload);
         await client.query("insert into student_plan_events(user_id,event_type,task_key,plan_date,subject_slug,metadata) values($1,'TASK_POSTPONED_MANUALLY',$2,$3::date,$4,$5::jsonb)",
           [session.id,taskKey,planDate,current.subject_slug,JSON.stringify({source_plan_date:originalDate,target_plan_date:isoDate(slots[slots.length-1].plan_date),scope:"weekly_pending_queue",moved:slots.length})]);
         return {action,affected:slots.length,new_date:isoDate(slots[slots.length-1].plan_date)};
