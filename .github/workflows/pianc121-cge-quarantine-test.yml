@@ -1,0 +1,76 @@
+name: Validate PIANC 121 CGE Quarantine
+on:
+  push:
+    branches: [feature/pianc121-cge-cap1-quarentena]
+    paths:
+      - 'scripts/test-pianc121-cge-quarantine.mjs'
+      - 'data/questions/conhecimentos-gerais.json'
+      - 'lib/question-quality-policy.js'
+      - 'lib/question-taxonomy.js'
+      - '.github/workflows/pianc121-cge-quarantine-test.yml'
+      - 'scripts/apply_pianc121_editorial_patch.py'
+      - 'data/questions/patches/pianc121-cap1-editorial-001.json'
+  pull_request:
+    paths:
+      - 'scripts/test-pianc121-cge-quarantine.mjs'
+      - 'data/questions/conhecimentos-gerais.json'
+      - 'lib/question-quality-policy.js'
+      - 'lib/question-taxonomy.js'
+permissions:
+  contents: write
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/pianc121-cge-cap1-quarentena
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Apply consolidated PIANC release if still quarantined
+        run: |
+          python - <<'PY'
+          import json,subprocess
+          from pathlib import Path
+          bank=json.loads(Path('data/questions/conhecimentos-gerais.json').read_text())
+          pianc=[q for q in bank['questions'] if str(q.get('id','')).startswith('CGE-PIANC121-C1-')]
+          assert len(pianc)==46
+          if all(q.get('active') is True and q.get('status')=='approved' for q in pianc):
+              print('PIANC already released: no new commit needed')
+          else:
+              assert all(q.get('active') is False and q.get('status')=='quarantined' for q in pianc)
+              workflow=Path('.github/workflows/pianc121-release-once.yml').read_text()
+              names=[
+                  'Apply consolidated PIANC editorial release',
+                  'Update focused regression test',
+                  'Verify 46 active questions in real generated runtime',
+                  'Update PIANC runtime regression workflow',
+                  'Commit only after all PIANC release validations pass'
+              ]
+              for name in names:
+                  marker='      - name: '+name+'\n        run: |\n'
+                  i=workflow.find(marker)
+                  if i<0: raise RuntimeError('Missing release step '+name)
+                  tail=workflow[i+len(marker):]
+                  nxt=tail.find('\n      - name: ')
+                  if nxt>=0: tail=tail[:nxt]
+                  cmd='\n'.join(x[10:] if x.startswith('          ') else x for x in tail.splitlines())
+                  subprocess.run(['bash','-eo','pipefail','-c',cmd],check=True)
+          PY
+      - run: node scripts/test-pianc121-cge-quarantine.mjs
+      - name: Generate runtime caderno banks
+        run: node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-question-banks.mjs
+      - name: Assert quarantined PIANC questions are excluded from runtime
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          const runtime=JSON.parse(fs.readFileSync('data/questions/runtime-active-banks.json','utf8'));
+          const bank=runtime.banks['conhecimentos-gerais'];
+          assert.ok(bank && Array.isArray(bank.questions));
+          const leaked=bank.questions.filter(q=>String(q.id||'').startsWith('CGE-PIANC121-C1-'));
+          assert.equal(leaked.length,46,'PIANC questions absent from active runtime');
+          console.log('PASS: 46 PIANC released to runtime.');
+          NODE
