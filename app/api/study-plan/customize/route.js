@@ -149,6 +149,10 @@ export async function POST(request){
               "insert into student_plan_task_progress(user_id,task_key,plan_date,task_type,subject_slug,status,metadata) values($1,$2,$3::date,$4,$5,'pending',$6::jsonb)",
               [session.id,newKey,planDate,payload.type,payload.subject,JSON.stringify(payload)]
             );
+            // Se a tarefa nova preencher uma vaga de leitura, a fixação
+            // existente precisa seguir a obra/seção recém-escolhida.
+            if(payload.type==="reading"&&!all.rows.some(row=>isoDate(row.plan_date)===planDate&&row.task_type==="reading"))
+              await syncFixation(client,session.id,id,planDate,payload);
             await client.query("insert into student_plan_events(user_id,event_type,task_key,plan_date,subject_slug,metadata) values($1,'TASK_ADDED_MANUALLY',$2,$3::date,$4,$5::jsonb)",
               [session.id,newKey,planDate,payload.subject,JSON.stringify({task:payload})]);
             return {action,affected:1,task_key:newKey};
