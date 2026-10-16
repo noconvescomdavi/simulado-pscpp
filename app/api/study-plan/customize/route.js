@@ -186,7 +186,7 @@ export async function POST(request){
           estimate_minutes:task.estimate_minutes||originalPayload.estimate_minutes||null,
           postponed_manually:true};
         const queue=await client.query(
-          "select id,task_key,original_plan_date,target_plan_date,metadata,created_at from student_plan_reschedules where user_id=$1 and reason='manual_queue_tail' and status='active' and target_plan_date >= $2::date and metadata->>'type'=$3 order by created_at,id for update",
+          "select r.id,r.task_key,r.original_plan_date,r.target_plan_date,r.metadata,r.created_at from student_plan_reschedules r left join student_plan_task_progress p on p.user_id=r.user_id and p.task_key=r.task_key and p.plan_date=r.original_plan_date where r.user_id=$1 and r.reason='manual_queue_tail' and r.status='active' and r.target_plan_date >= $2::date and r.metadata->>'type'=$3 and (p.status is null or p.status<>'done') order by r.created_at,r.id for update of r",
           [session.id,planDate,task.type]
         );
         const oldTail=queue.rows.filter(row=>!(row.task_key===taskKey&&isoDate(row.original_plan_date)===originalDate));
