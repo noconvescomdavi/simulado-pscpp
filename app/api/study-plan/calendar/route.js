@@ -1,3 +1,4 @@
+import { ACCESS_FEATURES,canUseFeature,getEntitlement } from "../../../../lib/entitlement";
 import { getSession } from "../../../../lib/auth";
 import { getIntegratedStudyPlan } from "../../../../lib/integrated-study-plan";
 export const dynamic="force-dynamic";
@@ -8,6 +9,7 @@ const today=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"America/Sao_Paulo",ye
 export async function GET(request){
   const session=await getSession();
   if(!session)return Response.json({error:"Não autenticado."},{status:401});
+  if(!canUseFeature(await getEntitlement(session.id),ACCESS_FEATURES.STUDY_PLAN))return Response.json({error:"Acesso ao plano de estudos não autorizado."},{status:403});
   const month=new URL(request.url).searchParams.get("month");
   if(!/^\d{4}-(0[1-9]|1[0-2])$/.test(month||""))
     return Response.json({error:"Mês inválido."},{status:400});
