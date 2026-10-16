@@ -84,15 +84,19 @@ export async function POST(request){
     // A semana é congelada antes da mudança. O snapshot passa a armazenar a
     // personalização e a identidade da tarefa original fica no payload.
     await persistStudyPlanSnapshot(session.id,plan);
+    if(action==="postpone"&&offset<80){
+      const following=await getIntegratedStudyPlan(session.id,offset+1);
+      if(!following.needs_onboarding)await persistStudyPlanSnapshot(session.id,following);
+    }
     let result;
     try{
       result=await withTransaction(async(client)=>{
         await client.query("select pg_advisory_xact_lock(hashtext($1),hashtext($2))",[String(session.id),"customize|"+plan.week.start]);
-        const snapshot=await client.query("select id from student_plan_snapshots where user_id=$1 and week_start=$2::date for update",[session.id,plan.week.start]);
-        const id=snapshot.rows[0]?.id;
+        const snapshot=await client.query("select id,week_start from student_plan_snapshots where user_id=$1 and week_start >=$2::date order by week_start asc for update",[session.id,plan.week.start]);
+        const id=snapshot.rows.find(row=>isoDate(row.week_start)===plan.week.start)?.id;
         if(!id)throw new Error("Planejamento semanal não encontrado.");
-        const all=await client.query("select id,plan_date,task_key,task_type,subject_slug,position,payload from student_plan_snapshot_tasks where snapshot_id=$1 order by plan_date,position,id for update",[id]);
-        const current=all.rows.find(row=>isoDate(row.plan_date)===planDate&&row.task_key===taskKey);
+        const all=await client.query("select id,snapshot_id,plan_date,task_key,task_type,subject_slug,position,payload from student_plan_snapshot_tasks where snapshot_id=any($1::bigint[]) order by plan_date,position,id for update",[snapshot.rows.map(row=>row.id)]);
+        const current=all.rows.find(row=>row.snapshot_id===id&&isoDate(row.plan_date)===planDate&&row.task_key===taskKey);
         if(!current)throw new Error("A tarefa foi alterada. Atualize a página.");
         const originalDate=current.payload?.source_plan_date||planDate;
         const done=await client.query("select status from student_plan_task_progress where user_id=$1 and task_key=$2 and plan_date=$3::date",[session.id,taskKey,originalDate]);
@@ -129,7 +133,7 @@ export async function POST(request){
         }
         const index=pending.findIndex(row=>row.id===current.id);
         if(index<0)throw new Error("Tarefa indisponível para postergação.");
-        if(index===pending.length-1)throw new Error("Esta é a última tarefa pendente deste tipo na semana. Abra a próxima semana para reorganizar as atividades.");
+        if(index===pending.length-1)throw new Error("Esta é a última atividade pendente deste tipo no cronograma já programado.");
         const slots=pending.slice(index);
         const values=slots.map(row=>({
           key:row.task_key,type:row.task_type,subject:row.subject_slug,
@@ -140,15 +144,15 @@ export async function POST(request){
         for(const row of slots){
           await client.query("delete from student_plan_snapshot_tasks where id=$1",[row.id]);
         }
-        const rotated=[...values.slice(1),{...values[0],payload:{...values[0].payload,postponed_manually:true}}];
+        const rotated=[...values.slice(1).map(v=>({...v,payload:{...v.payload,postponed_manually:false}})),{...values[0],payload:{...values[0].payload,postponed_manually:true}}];
         for(let i=0;i<slots.length;i++){
           const slot=slots[i],next=rotated[i];
           await client.query("insert into student_plan_snapshot_tasks(snapshot_id,user_id,plan_date,task_key,task_type,subject_slug,position,payload) values($1,$2,$3::date,$4,$5,$6,$7,$8::jsonb)",
-            [id,session.id,isoDate(slot.plan_date),next.key,next.type,next.subject,slot.position,JSON.stringify(next.payload)]);
+            [slot.snapshot_id,session.id,isoDate(slot.plan_date),next.key,next.type,next.subject,slot.position,JSON.stringify(next.payload)]);
         }
-        if(current.task_type==="reading")for(let i=0;i<slots.length;i++)await syncFixation(client,session.id,id,isoDate(slots[i].plan_date),rotated[i].payload);
+        if(current.task_type==="reading")for(let i=0;i<slots.length;i++)await syncFixation(client,session.id,slots[i].snapshot_id,isoDate(slots[i].plan_date),rotated[i].payload);
         await client.query("insert into student_plan_events(user_id,event_type,task_key,plan_date,subject_slug,metadata) values($1,'TASK_POSTPONED_MANUALLY',$2,$3::date,$4,$5::jsonb)",
-          [session.id,taskKey,planDate,current.subject_slug,JSON.stringify({source_plan_date:originalDate,target_plan_date:isoDate(slots[slots.length-1].plan_date),scope:"weekly_pending_queue",moved:slots.length})]);
+          [session.id,taskKey,planDate,current.subject_slug,JSON.stringify({source_plan_date:originalDate,target_plan_date:isoDate(slots[slots.length-1].plan_date),scope:"persisted_future_pending_queue",moved:slots.length})]);
         return {action,affected:slots.length,new_date:isoDate(slots[slots.length-1].plan_date)};
       });
     }catch(error){
