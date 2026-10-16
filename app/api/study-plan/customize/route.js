@@ -70,6 +70,20 @@ async function syncFixation(client,userId,snapshotId,planDate,reading){
   await client.query("update student_plan_snapshot_tasks set subject_slug=$2,payload=$3::jsonb where id=$1",[row.id,reading.subject,JSON.stringify(payload)]);
 }
 
+async function clearOrphanFixation(client,userId,snapshotId,planDate){
+  const r=await client.query("select id,task_key,subject_slug,payload from student_plan_snapshot_tasks where snapshot_id=$1 and plan_date=$2::date and task_type='questions' order by position limit 1 for update",[snapshotId,planDate]);
+  const row=r.rows[0];if(!row)return;
+  const original=row.payload?.source_plan_date||planDate;
+  const progress=await client.query("select status from student_plan_task_progress where user_id=$1 and task_key=$2 and plan_date=$3::date",[userId,row.task_key,original]);
+  if(progress.rows[0]?.status==="done")return;
+  const subject=row.subject_slug||row.payload?.subject||"";
+  const payload={...row.payload,fixation:null,title:"Questões de fixação — conteúdo complementar",
+    description:"A leitura deste dia foi remanejada. Escolha uma nova leitura em Editar Plano para vincular as questões automaticamente, ou utilize o banco de questões desta disciplina.",
+    target_questions:Math.max(10,Number(row.payload?.target_questions)||20),
+    href:"/conteudos/banco-de-questoes?materia="+encodeURIComponent(subject)};
+  await client.query("update student_plan_snapshot_tasks set payload=$2::jsonb where id=$1",[row.id,JSON.stringify(payload)]);
+}
+
 export async function POST(request){
   const session=await getSession();
   if(!session)return bad("Não autenticado.",401);
@@ -250,7 +264,12 @@ export async function POST(request){
           await client.query("insert into student_plan_snapshot_tasks(snapshot_id,user_id,plan_date,task_key,task_type,subject_slug,position,payload) values($1,$2,$3::date,$4,$5,$6,$7,$8::jsonb)",
             [slot.snapshot_id,session.id,isoDate(slot.plan_date),next.key,next.type,next.subject,slot.position,JSON.stringify(next.payload)]);
         }
-        if(current.task_type==="reading")for(let i=0;i<rotated.length;i++)await syncFixation(client,session.id,slots[i].snapshot_id,isoDate(slots[i].plan_date),rotated[i].payload);
+        if(current.task_type==="reading"){
+          for(let i=0;i<rotated.length;i++)
+            await syncFixation(client,session.id,slots[i].snapshot_id,isoDate(slots[i].plan_date),rotated[i].payload);
+          const finalSlot=slots[slots.length-1];
+          await clearOrphanFixation(client,session.id,finalSlot.snapshot_id,isoDate(finalSlot.plan_date));
+        }
         await client.query("insert into student_plan_events(user_id,event_type,task_key,plan_date,subject_slug,metadata) values($1,'TASK_POSTPONED_MANUALLY',$2,$3::date,$4,$5::jsonb)",
           [session.id,taskKey,planDate,current.subject_slug,JSON.stringify({source_plan_date:originalDate,target_plan_date:destination,scope:"global_tail",moved:slots.length,promoted:rotated.length})]);
         return {action,affected:slots.length,new_date:destination,promoted:rotated.length};
