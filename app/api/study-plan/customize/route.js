@@ -126,6 +126,9 @@ export async function POST(request){
             }
           }
           const subject=SUBJECTS.find(item=>item.slug===safe(body.subject_slug,120));
+          // Um domingo deve manter exatamente um Simulado PSCPP.
+          if((current.task_type==="simulado")!== (body.task_type==="simulado"))
+            throw new Error("O Simulado PSCPP de domingo é obrigatório e não pode ser substituído ou duplicado.");
           if(body.task_type==="simulado"&&new Date(planDate+"T12:00:00").getDay()!==0)throw new Error("O Simulado PSCPP obrigatório está reservado ao domingo.");
           const payload=makeTask(body,subject,unit,current);
           await client.query("update student_plan_snapshot_tasks set task_type=$2,subject_slug=$3,payload=$4::jsonb where id=$1",
