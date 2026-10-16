@@ -1,0 +1,939 @@
+{
+  "source_commit_blob": "c900e476fe65868d468fd84dcdd0ab428633ac9e",
+  "questions": 46,
+  "lexical_flagged": 40,
+  "key_length_outliers": 13,
+  "review_required": 41,
+  "verified_first_pass": 46,
+  "release_ready": 0,
+  "observations": "Markers and answer length are triage clues, not conclusive errors. Rewrite must preserve single defensible answer and fidelity to PIANC original.",
+  "questions_detail": [
+    {
+      "id": "CGE-PIANC121-C1-1-1",
+      "topic": "Escopo: abrangência do dimensionamento e das condições operacionais",
+      "key": "B",
+      "correct_answer_length": 145,
+      "incorrect_avg_length": 155,
+      "correct_length_ratio": 0.93,
+      "lexical_markers": [],
+      "requires_human_review": false
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-2",
+      "topic": "Introdução: integração de segurança, geometria e operação",
+      "key": "E",
+      "correct_answer_length": 150,
+      "incorrect_avg_length": 153,
+      "correct_length_ratio": 0.98,
+      "lexical_markers": [
+        {
+          "option": "A",
+          "terms": [
+            "somente"
+          ]
+        },
+        {
+          "option": "D",
+          "terms": [
+            "exclusivamente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-2-1",
+      "topic": "Termos de referência: delimitação do mandato técnico do WG 49",
+      "key": "C",
+      "correct_answer_length": 171,
+      "incorrect_avg_length": 145,
+      "correct_length_ratio": 1.18,
+      "lexical_markers": [
+        {
+          "option": "A",
+          "terms": [
+            "independentemente"
+          ]
+        },
+        {
+          "option": "B",
+          "terms": [
+            "exclusivamente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-2-1-1",
+      "topic": "Objetivo: fundamento técnico da atualização das diretrizes",
+      "key": "A",
+      "correct_answer_length": 153,
+      "incorrect_avg_length": 153,
+      "correct_length_ratio": 1,
+      "lexical_markers": [
+        {
+          "option": "B",
+          "terms": [
+            "exclusivamente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-2-1-2",
+      "topic": "Matérias investigadas: integração de efeitos hidrodinâmicos, fatores humanos e margens",
+      "key": "D",
+      "correct_answer_length": 173,
+      "incorrect_avg_length": 150,
+      "correct_length_ratio": 1.15,
+      "lexical_markers": [
+        {
+          "option": "A",
+          "terms": [
+            "somente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-2-2",
+      "topic": "Estrutura do relatório e etapas de projeto",
+      "key": "D",
+      "correct_answer_length": 126,
+      "incorrect_avg_length": 127,
+      "correct_length_ratio": 0.99,
+      "lexical_markers": [
+        {
+          "option": "B",
+          "terms": [
+            "obrigatoriamente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-2-3",
+      "topic": "Relatórios relacionados e documentos substituídos",
+      "key": "C",
+      "correct_answer_length": 140,
+      "incorrect_avg_length": 111,
+      "correct_length_ratio": 1.26,
+      "lexical_markers": [
+        {
+          "option": "A",
+          "terms": [
+            "somente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-2-4",
+      "topic": "Composição do grupo de trabalho",
+      "key": "E",
+      "correct_answer_length": 135,
+      "incorrect_avg_length": 121,
+      "correct_length_ratio": 1.12,
+      "lexical_markers": [
+        {
+          "option": "B",
+          "terms": [
+            "somente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-2-5",
+      "topic": "Reuniões do grupo de trabalho",
+      "key": "A",
+      "correct_answer_length": 138,
+      "incorrect_avg_length": 124,
+      "correct_length_ratio": 1.12,
+      "lexical_markers": [],
+      "requires_human_review": false
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-2-6",
+      "topic": "Agradecimentos e contribuições técnicas",
+      "key": "B",
+      "correct_answer_length": 165,
+      "incorrect_avg_length": 125,
+      "correct_length_ratio": 1.33,
+      "lexical_markers": [
+        {
+          "option": "C",
+          "terms": [
+            "somente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-3",
+      "topic": "Integração dos aspectos do projeto de canais",
+      "key": "C",
+      "correct_answer_length": 163,
+      "incorrect_avg_length": 141,
+      "correct_length_ratio": 1.15,
+      "lexical_markers": [],
+      "requires_human_review": false
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-3-1",
+      "topic": "Configuração marítima dos portos",
+      "key": "A",
+      "correct_answer_length": 101,
+      "incorrect_avg_length": 99,
+      "correct_length_ratio": 1.02,
+      "lexical_markers": [
+        {
+          "option": "D",
+          "terms": [
+            "Somente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-3-2",
+      "topic": "Considerações para dimensionamento de canais de acesso",
+      "key": "E",
+      "correct_answer_length": 160,
+      "incorrect_avg_length": 139,
+      "correct_length_ratio": 1.15,
+      "lexical_markers": [
+        {
+          "option": "A",
+          "terms": [
+            "elimina",
+            "necessariamente"
+          ]
+        },
+        {
+          "option": "C",
+          "terms": [
+            "somente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-3-3",
+      "topic": "Definições de canal de acesso, canal externo, canal interno e fairway",
+      "key": "B",
+      "correct_answer_length": 174,
+      "incorrect_avg_length": 147,
+      "correct_length_ratio": 1.18,
+      "lexical_markers": [
+        {
+          "option": "A",
+          "terms": [
+            "obrigatoriamente"
+          ]
+        },
+        {
+          "option": "E",
+          "terms": [
+            "Somente",
+            "exclusivamente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-3-4",
+      "topic": "Critérios gerais: integração de geometria, operação e assistência",
+      "key": "D",
+      "correct_answer_length": 209,
+      "incorrect_avg_length": 172,
+      "correct_length_ratio": 1.21,
+      "lexical_markers": [
+        {
+          "option": "E",
+          "terms": [
+            "elimina"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-3-4-1",
+      "topic": "Critérios básicos: segurança, disponibilidade e investimento",
+      "key": "C",
+      "correct_answer_length": 159,
+      "incorrect_avg_length": 154,
+      "correct_length_ratio": 1.04,
+      "lexical_markers": [
+        {
+          "option": "A",
+          "terms": [
+            "somente"
+          ]
+        },
+        {
+          "option": "B",
+          "terms": [
+            "necessariamente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-3-4-2",
+      "topic": "Elementos que definem um canal de navegação",
+      "key": "A",
+      "correct_answer_length": 158,
+      "incorrect_avg_length": 148,
+      "correct_length_ratio": 1.07,
+      "lexical_markers": [
+        {
+          "option": "B",
+          "terms": [
+            "somente"
+          ]
+        },
+        {
+          "option": "E",
+          "terms": [
+            "exclusivamente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-3-4-3",
+      "topic": "Características dos navios: deslocamento, DWT, GT e calado",
+      "key": "E",
+      "correct_answer_length": 193,
+      "incorrect_avg_length": 156,
+      "correct_length_ratio": 1.24,
+      "lexical_markers": [
+        {
+          "option": "C",
+          "terms": [
+            "exclusivamente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-3-4-4",
+      "topic": "Limites operacionais e condições ambientais",
+      "key": "B",
+      "correct_answer_length": 232,
+      "incorrect_avg_length": 163,
+      "correct_length_ratio": 1.42,
+      "lexical_markers": [],
+      "requires_human_review": false
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-3-4-5",
+      "topic": "Fatores humanos e incertezas de projeto",
+      "key": "D",
+      "correct_answer_length": 236,
+      "incorrect_avg_length": 169,
+      "correct_length_ratio": 1.4,
+      "lexical_markers": [
+        {
+          "option": "B",
+          "terms": [
+            "somente",
+            "exclusivamente"
+          ]
+        },
+        {
+          "option": "C",
+          "terms": [
+            "elimina"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-3-5",
+      "topic": "Dados ambientais: integração entre coleta de dados e decisões de projeto",
+      "key": "C",
+      "correct_answer_length": 246,
+      "incorrect_avg_length": 160,
+      "correct_length_ratio": 1.54,
+      "lexical_markers": [
+        {
+          "option": "D",
+          "terms": [
+            "dispensa"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-3-5-1",
+      "topic": "Requisitos de dados e tratamento de incertezas",
+      "key": "A",
+      "correct_answer_length": 252,
+      "incorrect_avg_length": 157,
+      "correct_length_ratio": 1.61,
+      "lexical_markers": [
+        {
+          "option": "C",
+          "terms": [
+            "exclusivamente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-3-5-2",
+      "topic": "Maré, calado aéreo e correntes transversais no projeto do canal",
+      "key": "B",
+      "correct_answer_length": 229,
+      "incorrect_avg_length": 154,
+      "correct_length_ratio": 1.49,
+      "lexical_markers": [
+        {
+          "option": "D",
+          "terms": [
+            "exclusivamente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-3-5-3",
+      "topic": "Ferramentas analíticas, numéricas e físicas de modelagem",
+      "key": "E",
+      "correct_answer_length": 190,
+      "incorrect_avg_length": 155,
+      "correct_length_ratio": 1.23,
+      "lexical_markers": [
+        {
+          "option": "B",
+          "terms": [
+            "exclusivamente"
+          ]
+        },
+        {
+          "option": "C",
+          "terms": [
+            "sempre"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-3-6",
+      "topic": "Elementos dimensionais: distinção entre fatores verticais e horizontais",
+      "key": "B",
+      "correct_answer_length": 268,
+      "incorrect_avg_length": 163,
+      "correct_length_ratio": 1.64,
+      "lexical_markers": [
+        {
+          "option": "D",
+          "terms": [
+            "somente",
+            "somente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-3-6-1",
+      "topic": "Profundidade do canal e incertezas de referência",
+      "key": "C",
+      "correct_answer_length": 309,
+      "incorrect_avg_length": 180,
+      "correct_length_ratio": 1.71,
+      "lexical_markers": [
+        {
+          "option": "B",
+          "terms": [
+            "necessariamente"
+          ]
+        },
+        {
+          "option": "D",
+          "terms": [
+            "elimina"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-3-6-2",
+      "topic": "Largura e configuração do canal",
+      "key": "E",
+      "correct_answer_length": 193,
+      "incorrect_avg_length": 125,
+      "correct_length_ratio": 1.54,
+      "lexical_markers": [
+        {
+          "option": "A",
+          "terms": [
+            "independentemente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-3-6-3",
+      "topic": "Interdependência entre dimensões verticais e horizontais",
+      "key": "A",
+      "correct_answer_length": 178,
+      "incorrect_avg_length": 133,
+      "correct_length_ratio": 1.34,
+      "lexical_markers": [
+        {
+          "option": "B",
+          "terms": [
+            "somente"
+          ]
+        },
+        {
+          "option": "D",
+          "terms": [
+            "necessariamente"
+          ]
+        },
+        {
+          "option": "E",
+          "terms": [
+            "exclusivamente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-3-7",
+      "topic": "Verificação dos critérios de projeto",
+      "key": "B",
+      "correct_answer_length": 150,
+      "incorrect_avg_length": 130,
+      "correct_length_ratio": 1.15,
+      "lexical_markers": [
+        {
+          "option": "C",
+          "terms": [
+            "exclusivamente"
+          ]
+        },
+        {
+          "option": "E",
+          "terms": [
+            "independentemente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-3-7-1",
+      "topic": "Verificação determinística",
+      "key": "D",
+      "correct_answer_length": 271,
+      "incorrect_avg_length": 140,
+      "correct_length_ratio": 1.94,
+      "lexical_markers": [
+        {
+          "option": "A",
+          "terms": [
+            "exclusivamente"
+          ]
+        },
+        {
+          "option": "E",
+          "terms": [
+            "somente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-3-7-2",
+      "topic": "Verificação probabilística das dimensões de canais",
+      "key": "E",
+      "correct_answer_length": 192,
+      "incorrect_avg_length": 125,
+      "correct_length_ratio": 1.54,
+      "lexical_markers": [],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-3-8",
+      "topic": "Coeficientes e margens de segurança",
+      "key": "A",
+      "correct_answer_length": 205,
+      "incorrect_avg_length": 142,
+      "correct_length_ratio": 1.45,
+      "lexical_markers": [
+        {
+          "option": "B",
+          "terms": [
+            "exclusivamente"
+          ]
+        },
+        {
+          "option": "D",
+          "terms": [
+            "somente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-4",
+      "topic": "Filosofia do projeto de canais de acesso",
+      "key": "D",
+      "correct_answer_length": 164,
+      "incorrect_avg_length": 144,
+      "correct_length_ratio": 1.14,
+      "lexical_markers": [
+        {
+          "option": "B",
+          "terms": [
+            "somente"
+          ]
+        },
+        {
+          "option": "E",
+          "terms": [
+            "necessariamente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-4-1",
+      "topic": "Etapas do processo e modernização de canais",
+      "key": "B",
+      "correct_answer_length": 190,
+      "incorrect_avg_length": 154,
+      "correct_length_ratio": 1.23,
+      "lexical_markers": [
+        {
+          "option": "A",
+          "terms": [
+            "elimina",
+            "somente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-4-1-1",
+      "topic": "Projeto conceitual e seleção de alternativas",
+      "key": "C",
+      "correct_answer_length": 201,
+      "incorrect_avg_length": 150,
+      "correct_length_ratio": 1.34,
+      "lexical_markers": [
+        {
+          "option": "A",
+          "terms": [
+            "exclusivamente"
+          ]
+        },
+        {
+          "option": "B",
+          "terms": [
+            "exclusivamente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-4-1-2",
+      "topic": "Projeto detalhado: validação do projeto conceitual",
+      "key": "D",
+      "correct_answer_length": 185,
+      "incorrect_avg_length": 141,
+      "correct_length_ratio": 1.31,
+      "lexical_markers": [
+        {
+          "option": "C",
+          "terms": [
+            "exclusivamente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-4-2",
+      "topic": "Metodologia integrada de projeto do canal",
+      "key": "B",
+      "correct_answer_length": 201,
+      "incorrect_avg_length": 159,
+      "correct_length_ratio": 1.27,
+      "lexical_markers": [],
+      "requires_human_review": false
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-4-2-1",
+      "topic": "Navio de projeto: escolha de embarcações críticas por parâmetro",
+      "key": "C",
+      "correct_answer_length": 201,
+      "incorrect_avg_length": 139,
+      "correct_length_ratio": 1.45,
+      "lexical_markers": [
+        {
+          "option": "B",
+          "terms": [
+            "obrigatoriamente"
+          ]
+        },
+        {
+          "option": "D",
+          "terms": [
+            "exclusivamente"
+          ]
+        },
+        {
+          "option": "E",
+          "terms": [
+            "sempre"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-4-2-2",
+      "topic": "Profundidade, largura e alinhamento: interdependência",
+      "key": "E",
+      "correct_answer_length": 201,
+      "incorrect_avg_length": 119,
+      "correct_length_ratio": 1.69,
+      "lexical_markers": [
+        {
+          "option": "A",
+          "terms": [
+            "independentemente"
+          ]
+        },
+        {
+          "option": "C",
+          "terms": [
+            "somente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-4-2-3",
+      "topic": "Auxílios à navegação: percepção dos limites do canal",
+      "key": "B",
+      "correct_answer_length": 176,
+      "incorrect_avg_length": 145,
+      "correct_length_ratio": 1.22,
+      "lexical_markers": [
+        {
+          "option": "D",
+          "terms": [
+            "independentemente"
+          ]
+        },
+        {
+          "option": "E",
+          "terms": [
+            "exclusivamente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-4-3",
+      "topic": "Filosofia probabilística de dimensionamento",
+      "key": "B",
+      "correct_answer_length": 203,
+      "incorrect_avg_length": 156,
+      "correct_length_ratio": 1.3,
+      "lexical_markers": [
+        {
+          "option": "C",
+          "terms": [
+            "elimina"
+          ]
+        },
+        {
+          "option": "E",
+          "terms": [
+            "exclusivamente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-4-3-1",
+      "topic": "Análise de tráfego e avaliação comparativa do risco",
+      "key": "E",
+      "correct_answer_length": 255,
+      "incorrect_avg_length": 138,
+      "correct_length_ratio": 1.85,
+      "lexical_markers": [
+        {
+          "option": "A",
+          "terms": [
+            "necessariamente"
+          ]
+        },
+        {
+          "option": "B",
+          "terms": [
+            "independentemente"
+          ]
+        },
+        {
+          "option": "D",
+          "terms": [
+            "exclusivamente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-4-3-2",
+      "topic": "Dimensionamento vertical probabilístico e combinação de extremos",
+      "key": "A",
+      "correct_answer_length": 250,
+      "incorrect_avg_length": 152,
+      "correct_length_ratio": 1.65,
+      "lexical_markers": [
+        {
+          "option": "B",
+          "terms": [
+            "sempre"
+          ]
+        },
+        {
+          "option": "C",
+          "terms": [
+            "somente"
+          ]
+        },
+        {
+          "option": "E",
+          "terms": [
+            "exclusivamente",
+            "independentemente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-4-3-3",
+      "topic": "Verificação probabilística da largura do canal",
+      "key": "C",
+      "correct_answer_length": 227,
+      "incorrect_avg_length": 151,
+      "correct_length_ratio": 1.5,
+      "lexical_markers": [
+        {
+          "option": "A",
+          "terms": [
+            "somente"
+          ]
+        },
+        {
+          "option": "E",
+          "terms": [
+            "obrigatoriamente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-4-4",
+      "topic": "Escopo da avaliação de risco nas operações portuárias",
+      "key": "D",
+      "correct_answer_length": 226,
+      "incorrect_avg_length": 144,
+      "correct_length_ratio": 1.57,
+      "lexical_markers": [
+        {
+          "option": "B",
+          "terms": [
+            "somente"
+          ]
+        },
+        {
+          "option": "C",
+          "terms": [
+            "exclusivamente"
+          ]
+        },
+        {
+          "option": "E",
+          "terms": [
+            "somente"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    },
+    {
+      "id": "CGE-PIANC121-C1-1-4-5",
+      "topic": "Modernização e reutilização segura de canais existentes",
+      "key": "E",
+      "correct_answer_length": 287,
+      "incorrect_avg_length": 157,
+      "correct_length_ratio": 1.83,
+      "lexical_markers": [
+        {
+          "option": "A",
+          "terms": [
+            "exclusivamente"
+          ]
+        },
+        {
+          "option": "B",
+          "terms": [
+            "obrigatoriamente",
+            "sempre"
+          ]
+        },
+        {
+          "option": "C",
+          "terms": [
+            "elimina"
+          ]
+        }
+      ],
+      "requires_human_review": true
+    }
+  ]
+}
