@@ -18,5 +18,5 @@ export default async function PlanoDeEstudos({searchParams}){
   const week=Math.max(-8,Math.min(80,Number(q?.semana||0)));
   const plan=await getIntegratedStudyPlan(session.id,week);
   if(plan.needs_onboarding)redirect("/plano-de-estudos/configurar");
-  return <><StudentHeader active="plano" session={session}/><PlanClient plan={plan}/></>;
+  return <><StudentHeader active="plano" session={session} studyDashboard/><PlanClient plan={plan} initialDay={/^\d{4}-\d{2}-\d{2}$/.test(String(q?.dia||""))?String(q.dia):null}/></>;
 }

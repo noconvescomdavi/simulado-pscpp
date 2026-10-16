@@ -90,7 +90,7 @@ function Menu({ active = "" }) {
     </nav>
   );
 }
-export default async function StudentHeader({ active = "", session: providedSession }) {
+export default async function StudentHeader({ active = "", session: providedSession, studyDashboard = false }) {
   const session = providedSession ?? await getSession();
   const admin = session?.role === "admin" ? await getAdmin() : null;
   let displayName = session?.email?.split("@")[0] || "Aluno";
@@ -136,7 +136,7 @@ export default async function StudentHeader({ active = "", session: providedSess
         </div>
       </aside>
 
-      <header className={styles.topbar}>
+      <header className={studyDashboard?styles.topbar+" "+styles.studyTopbar:styles.topbar}>
         <StudentMobileMenu className={styles.mobileNav} panelClassName={styles.mobilePanel}>
             <div className={styles.mobileProfile}>
               <strong>{displayName}</strong>

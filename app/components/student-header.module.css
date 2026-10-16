@@ -38,3 +38,7 @@
     max-height:calc(100dvh - 75px - env(safe-area-inset-top, 0px));
   }
 }
+
+/* O dashboard tem cabecalho proprio no desktop; manter navegacao mobile. */
+.studyTopbar{display:none}
+@media(max-width:960px){.studyTopbar{display:flex}}
