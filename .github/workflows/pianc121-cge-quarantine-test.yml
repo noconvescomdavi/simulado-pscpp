@@ -48,13 +48,13 @@ jobs:
                   'Commit only after all PIANC release validations pass'
               ]
               for name in names:
-                  marker='      - name: '+name+'\\n        run: |\\n'
+                  marker='      - name: '+name+'\n        run: |\n'
                   i=workflow.find(marker)
                   if i<0: raise RuntimeError('Missing release step '+name)
                   tail=workflow[i+len(marker):]
-                  nxt=tail.find('\\n      - name: ')
+                  nxt=tail.find('\n      - name: ')
                   if nxt>=0: tail=tail[:nxt]
-                  cmd='\\n'.join(x[10:] if x.startswith('          ') else x for x in tail.splitlines())
+                  cmd='\n'.join(x[10:] if x.startswith('          ') else x for x in tail.splitlines())
                   subprocess.run(['bash','-eo','pipefail','-c',cmd],check=True)
           PY
       - run: node scripts/test-pianc121-cge-quarantine.mjs
