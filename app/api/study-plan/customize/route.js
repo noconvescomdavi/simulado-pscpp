@@ -5,7 +5,7 @@ import { persistStudyPlanSnapshot } from "../../../../lib/study-plan-snapshot";
 import { withTransaction } from "../../../../lib/db";
 import { SUBJECTS } from "../../../../lib/subjects";
 import { bibliographyUnits } from "../../../../data/study/bibliography";
-import { lastEligibleStudyDate } from "../../../../lib/study-plan-manual-queue.mjs";
+import { lastEligibleStudyDate,distributeDeferredTail } from "../../../../lib/study-plan-manual-queue.mjs";
 import { randomUUID } from "node:crypto";
 
 export const dynamic="force-dynamic";
@@ -171,20 +171,49 @@ export async function POST(request){
           title:task.title,description:task.description,href:task.href,source_plan_date:originalDate,
           estimate_minutes:task.estimate_minutes||originalPayload.estimate_minutes||null,
           postponed_manually:true};
-        await client.query(
-          "update student_plan_reschedules set status='cancelled' where user_id=$1 and task_key=$2 and original_plan_date=$3::date and reason='manual_queue_tail' and status='active'",
-          [session.id,taskKey,originalDate]
+        const queue=await client.query(
+          "select id,task_key,original_plan_date,target_plan_date,metadata,created_at from student_plan_reschedules where user_id=$1 and reason='manual_queue_tail' and status='active' and target_plan_date >= $2::date and metadata->>'type'=$3 order by created_at,id for update",
+          [session.id,planDate,task.type]
         );
+        const oldTail=queue.rows.filter(row=>!(row.task_key===taskKey&&isoDate(row.original_plan_date)===originalDate));
+        const nextDate=new Date(planDate+"T12:00:00Z");
+        nextDate.setUTCDate(nextDate.getUTCDate()+1);
+        const allocated=distributeDeferredTail({
+          taskType:task.type,count:oldTail.length+1,fromDate:nextDate.toISOString().slice(0,10),
+          examDate:plan.exam_date,firstPassDeadline:plan.first_pass_deadline,
+          studyDays:plan.onboarding?.study_days||[],
+          unavailableDates:(plan.tracking?.unavailable_days||[]).map(item=>item.plan_date)
+        });
+        if(!allocated)throw new Error("Não existem dias de estudo suficientes antes do prazo para postergar todas as atividades desta categoria.");
+        const destination=allocated[allocated.length-1];
+        if(queue.rows.length)await client.query(
+          "update student_plan_reschedules set status='cancelled' where id=any($1::bigint[])",
+          [queue.rows.map(row=>row.id)]
+        );
+        const shifts=[];
+        for(let i=0;i<oldTail.length;i++){
+          const old=oldTail[i],next=allocated[i],origin=isoDate(old.original_plan_date);
+          await client.query(
+            "insert into student_plan_reschedules(user_id,task_key,original_plan_date,target_plan_date,reason,status,metadata,created_at) values($1,$2,$3::date,$4::date,'manual_queue_tail','active',$5::jsonb,$6::timestamptz) on conflict(user_id,task_key,original_plan_date,target_plan_date) do update set status='active',completed_at=null,metadata=excluded.metadata,created_at=excluded.created_at",
+            [session.id,old.task_key,origin,next,JSON.stringify(old.metadata||{}),old.created_at]
+          );
+          const before=isoDate(old.target_plan_date);
+          if(before!==next)shifts.push({task_key:old.task_key,from:before,to:next});
+        }
         await client.query(
-          "insert into student_plan_reschedules(user_id,task_key,original_plan_date,target_plan_date,reason,status,metadata) values($1,$2,$3::date,$4::date,'manual_queue_tail','active',$5::jsonb) on conflict(user_id,task_key,original_plan_date,target_plan_date) do update set status='active',completed_at=null,metadata=excluded.metadata",
-          [session.id,taskKey,originalDate,terminal,JSON.stringify(deferredPayload)]
+          "insert into student_plan_reschedules(user_id,task_key,original_plan_date,target_plan_date,reason,status,metadata,created_at) values($1,$2,$3::date,$4::date,'manual_queue_tail','active',$5::jsonb,now()) on conflict(user_id,task_key,original_plan_date,target_plan_date) do update set status='active',completed_at=null,metadata=excluded.metadata,created_at=excluded.created_at",
+          [session.id,taskKey,originalDate,destination,JSON.stringify(deferredPayload)]
+        );
+        if(shifts.length)await client.query(
+          "insert into student_plan_events(user_id,event_type,plan_date,metadata) values($1,'TASK_TAIL_QUEUE_REBALANCED',$2::date,$3::jsonb)",
+          [session.id,planDate,JSON.stringify({category:task.type,changes:shifts})]
         );
         // O backlog adaptativo não está nos snapshots: nesse caso removê-lo
         // da recuperação automática e reservá-lo ao final já é suficiente.
         if(!current){
           await client.query("insert into student_plan_events(user_id,event_type,task_key,plan_date,subject_slug,metadata) values($1,'TASK_POSTPONED_MANUALLY',$2,$3::date,$4,$5::jsonb)",
-            [session.id,taskKey,originalDate,task.subject||null,JSON.stringify({source_plan_date:originalDate,target_plan_date:terminal,scope:"global_tail",from_backlog:true})]);
-          return {action,affected:1,new_date:terminal,backlog:true};
+            [session.id,taskKey,originalDate,task.subject||null,JSON.stringify({source_plan_date:originalDate,target_plan_date:destination,scope:"global_tail",from_backlog:true})]);
+          return {action,affected:1,new_date:destination,backlog:true};
         }
         const typeRows=all.rows.filter(row=>row.task_type===current.task_type&&isoDate(row.plan_date)>=planDate);
         const pending=[];
@@ -223,8 +252,8 @@ export async function POST(request){
         }
         if(current.task_type==="reading")for(let i=0;i<rotated.length;i++)await syncFixation(client,session.id,slots[i].snapshot_id,isoDate(slots[i].plan_date),rotated[i].payload);
         await client.query("insert into student_plan_events(user_id,event_type,task_key,plan_date,subject_slug,metadata) values($1,'TASK_POSTPONED_MANUALLY',$2,$3::date,$4,$5::jsonb)",
-          [session.id,taskKey,planDate,current.subject_slug,JSON.stringify({source_plan_date:originalDate,target_plan_date:terminal,scope:"global_tail",moved:slots.length,promoted:rotated.length})]);
-        return {action,affected:slots.length,new_date:terminal,promoted:rotated.length};
+          [session.id,taskKey,planDate,current.subject_slug,JSON.stringify({source_plan_date:originalDate,target_plan_date:destination,scope:"global_tail",moved:slots.length,promoted:rotated.length})]);
+        return {action,affected:slots.length,new_date:destination,promoted:rotated.length};
       });
     }catch(error){
       if(/Não existe outra atividade/.test(String(error.message)))return bad(error.message,409);
