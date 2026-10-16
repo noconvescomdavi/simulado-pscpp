@@ -4,6 +4,7 @@ import { getIntegratedStudyPlan } from "../../../../lib/integrated-study-plan";
 import { persistStudyPlanSnapshot } from "../../../../lib/study-plan-snapshot";
 import { withTransaction } from "../../../../lib/db";
 import { SUBJECTS } from "../../../../lib/subjects";
+import { bibliographyUnits } from "../../../../data/study/bibliography";
 
 export const dynamic="force-dynamic";
 const isoDate=value=>value instanceof Date?value.toISOString().slice(0,10):String(value||"").slice(0,10);
@@ -109,6 +110,10 @@ export async function POST(request){
           if(body.task_type==="reading"){
             const selected=await client.query("select subject_slug,bibliography_key,section_key,publication_title,section_label,chapter_label,page_start,page_end from study_bibliography_catalog where bibliography_key=$1 and section_key=$2 and required=true limit 1",[safe(body.bibliography_key,180),safe(body.section_key,180)]);
             unit=selected.rows[0]||null;
+            if(!unit){
+              const fallback=bibliographyUnits().find(item=>item.bibliography_key===safe(body.bibliography_key,180)&&item.section_key===safe(body.section_key,180));
+              if(fallback)unit={...fallback,publication_title:fallback.publication,section_label:fallback.section,chapter_label:fallback.chapter};
+            }
           }
           const subject=SUBJECTS.find(item=>item.slug===safe(body.subject_slug,120));
           if(body.task_type==="simulado"&&new Date(planDate+"T12:00:00").getDay()!==0)throw new Error("O Simulado PSCPP obrigatório está reservado ao domingo.");
