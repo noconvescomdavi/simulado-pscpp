@@ -5,6 +5,7 @@ import { persistStudyPlanSnapshot } from "../../../../lib/study-plan-snapshot";
 import { withTransaction } from "../../../../lib/db";
 import { SUBJECTS } from "../../../../lib/subjects";
 import { bibliographyUnits } from "../../../../data/study/bibliography";
+import { lastEligibleStudyDate } from "../../../../lib/study-plan-manual-queue.mjs";
 
 export const dynamic="force-dynamic";
 const isoDate=value=>value instanceof Date?value.toISOString().slice(0,10):String(value||"").slice(0,10);
@@ -82,8 +83,16 @@ export async function POST(request){
     if(plan.needs_onboarding)return bad("Conclua o questionário inicial.",409);
     const day=plan.week.days.find(item=>item.iso===planDate);
     if(!day||!day.active)return bad("Data indisponível neste plano.",409);
-    const task=day.tasks.find(item=>item.key===taskKey);
-    if(!task||task.status==="done"||task.reprogrammed)return bad("Selecione uma tarefa programada e pendente.",409);
+    const sourceParam=safe(body.source_plan_date,10);
+    const task=day.tasks.find(item=>item.key===taskKey&&(!sourceParam||(item.source_plan_date||day.iso)===sourceParam));
+    if(!task||task.status==="done"||(action==="edit"&&task.reprogrammed))return bad("Selecione uma tarefa pendente válida.",409);
+    const sourcePlanDate=task.source_plan_date||planDate;
+    const terminal=action==="postpone"?lastEligibleStudyDate({
+      taskType:task.type,fromDate:planDate,examDate:plan.exam_date,firstPassDeadline:plan.first_pass_deadline,
+      studyDays:plan.onboarding?.study_days||[]
+    }):null;
+    if(action==="postpone"&&(!terminal||terminal<=planDate))
+      return bad("Não existe um dia posterior elegível antes do prazo final desta atividade.",409);
     // A semana é congelada antes da mudança. O snapshot passa a armazenar a
     // personalização e a identidade da tarefa original fica no payload.
     await persistStudyPlanSnapshot(session.id,plan);
@@ -100,8 +109,9 @@ export async function POST(request){
         if(!id)throw new Error("Planejamento semanal não encontrado.");
         const all=await client.query("select id,snapshot_id,plan_date,task_key,task_type,subject_slug,position,payload from student_plan_snapshot_tasks where snapshot_id=any($1::bigint[]) order by plan_date,position,id for update",[snapshot.rows.map(row=>row.id)]);
         const current=all.rows.find(row=>row.snapshot_id===id&&isoDate(row.plan_date)===planDate&&row.task_key===taskKey);
-        if(!current)throw new Error("A tarefa foi alterada. Atualize a página.");
-        const originalDate=current.payload?.source_plan_date||planDate;
+        if(!current&&!task.reprogrammed)throw new Error("A tarefa foi alterada. Atualize a página.");
+        if(action==="edit"&&!current)throw new Error("Não é possível editar esta pendência pelo calendário; primeiro escolha uma tarefa da semana.");
+        const originalDate=current?.payload?.source_plan_date||sourcePlanDate;
         await client.query("select pg_advisory_xact_lock(hashtext($1),hashtext($2))",[String(session.id),taskKey+"|"+originalDate]);
         const done=await client.query("select status from student_plan_task_progress where user_id=$1 and task_key=$2 and plan_date=$3::date for update",[session.id,taskKey,originalDate]);
         if(done.rows[0]?.status==="done")throw new Error("Tarefa já concluída.");
@@ -125,8 +135,28 @@ export async function POST(request){
             [session.id,current.task_key,planDate,payload.subject,JSON.stringify({before:current.payload,after:payload})]);
           return {action,affected:1};
         }
-        // Reordena a fila de tarefas PENDENTES deste tipo: a próxima ocupa
-        // a vaga liberada e a postergada vai para o final da fila semanal.
+        // Guarda a tarefa no final do horizonte elegível, sem congelar dezenas
+        // de semanas e sem deslocar tarefas já concluídas.
+        const originalPayload=current?.payload||task;
+        const deferredPayload={...originalPayload,key:taskKey,type:task.type,subject:task.subject,
+          title:task.title,description:task.description,href:task.href,source_plan_date:originalDate,
+          estimate_minutes:task.estimate_minutes||originalPayload.estimate_minutes||null,
+          postponed_manually:true};
+        await client.query(
+          "update student_plan_reschedules set status='cancelled' where user_id=$1 and task_key=$2 and original_plan_date=$3::date and reason='manual_queue_tail' and status='active'",
+          [session.id,taskKey,originalDate]
+        );
+        await client.query(
+          "insert into student_plan_reschedules(user_id,task_key,original_plan_date,target_plan_date,reason,status,metadata) values($1,$2,$3::date,$4::date,'manual_queue_tail','active',$5::jsonb) on conflict(user_id,task_key,original_plan_date,target_plan_date) do update set status='active',completed_at=null,metadata=excluded.metadata",
+          [session.id,taskKey,originalDate,terminal,JSON.stringify(deferredPayload)]
+        );
+        // O backlog adaptativo não está nos snapshots: nesse caso removê-lo
+        // da recuperação automática e reservá-lo ao final já é suficiente.
+        if(!current){
+          await client.query("insert into student_plan_events(user_id,event_type,task_key,plan_date,subject_slug,metadata) values($1,'TASK_POSTPONED_MANUALLY',$2,$3::date,$4,$5::jsonb)",
+            [session.id,taskKey,originalDate,task.subject||null,JSON.stringify({source_plan_date:originalDate,target_plan_date:terminal,scope:"global_tail",from_backlog:true})]);
+          return {action,affected:1,new_date:terminal,backlog:true};
+        }
         const typeRows=all.rows.filter(row=>row.task_type===current.task_type&&isoDate(row.plan_date)>=planDate);
         const pending=[];
         for(const row of typeRows){
@@ -142,7 +172,8 @@ export async function POST(request){
         }
         const index=pending.findIndex(row=>row.id===current.id);
         if(index<0)throw new Error("Tarefa indisponível para postergação.");
-        if(index===pending.length-1)throw new Error("Esta é a última atividade pendente deste tipo no cronograma já programado.");
+        // Quando não há outra tarefa programada, a vaga atual permanece disponível
+        // para edição manual; a atividade original continua preservada na fila final.
         const slots=pending.slice(index);
         const values=slots.map(row=>({
           key:row.task_key,type:row.task_type,subject:row.subject_slug,
@@ -153,16 +184,16 @@ export async function POST(request){
         for(const row of slots){
           await client.query("delete from student_plan_snapshot_tasks where id=$1",[row.id]);
         }
-        const rotated=[...values.slice(1).map(v=>({...v,payload:{...v.payload,postponed_manually:false}})),{...values[0],payload:{...values[0].payload,postponed_manually:true}}];
-        for(let i=0;i<slots.length;i++){
+        const rotated=values.slice(1).map(v=>({...v,payload:{...v.payload,postponed_manually:false}}));
+        for(let i=0;i<rotated.length;i++){
           const slot=slots[i],next=rotated[i];
           await client.query("insert into student_plan_snapshot_tasks(snapshot_id,user_id,plan_date,task_key,task_type,subject_slug,position,payload) values($1,$2,$3::date,$4,$5,$6,$7,$8::jsonb)",
             [slot.snapshot_id,session.id,isoDate(slot.plan_date),next.key,next.type,next.subject,slot.position,JSON.stringify(next.payload)]);
         }
-        if(current.task_type==="reading")for(let i=0;i<slots.length;i++)await syncFixation(client,session.id,slots[i].snapshot_id,isoDate(slots[i].plan_date),rotated[i].payload);
+        if(current.task_type==="reading")for(let i=0;i<rotated.length;i++)await syncFixation(client,session.id,slots[i].snapshot_id,isoDate(slots[i].plan_date),rotated[i].payload);
         await client.query("insert into student_plan_events(user_id,event_type,task_key,plan_date,subject_slug,metadata) values($1,'TASK_POSTPONED_MANUALLY',$2,$3::date,$4,$5::jsonb)",
-          [session.id,taskKey,planDate,current.subject_slug,JSON.stringify({source_plan_date:originalDate,target_plan_date:isoDate(slots[slots.length-1].plan_date),scope:"persisted_future_pending_queue",moved:slots.length})]);
-        return {action,affected:slots.length,new_date:isoDate(slots[slots.length-1].plan_date)};
+          [session.id,taskKey,planDate,current.subject_slug,JSON.stringify({source_plan_date:originalDate,target_plan_date:terminal,scope:"global_tail",moved:slots.length,promoted:rotated.length})]);
+        return {action,affected:slots.length,new_date:terminal,promoted:rotated.length};
       });
     }catch(error){
       if(/última tarefa/.test(String(error.message)))return bad(error.message,409);
