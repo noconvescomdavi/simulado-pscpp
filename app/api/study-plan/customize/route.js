@@ -101,7 +101,8 @@ export async function POST(request){
         const current=all.rows.find(row=>row.snapshot_id===id&&isoDate(row.plan_date)===planDate&&row.task_key===taskKey);
         if(!current)throw new Error("A tarefa foi alterada. Atualize a página.");
         const originalDate=current.payload?.source_plan_date||planDate;
-        const done=await client.query("select status from student_plan_task_progress where user_id=$1 and task_key=$2 and plan_date=$3::date",[session.id,taskKey,originalDate]);
+        await client.query("select pg_advisory_xact_lock(hashtext($1),hashtext($2))",[String(session.id),taskKey+"|"+originalDate]);
+        const done=await client.query("select status from student_plan_task_progress where user_id=$1 and task_key=$2 and plan_date=$3::date for update",[session.id,taskKey,originalDate]);
         if(done.rows[0]?.status==="done")throw new Error("Tarefa já concluída.");
         if(action==="edit"){
           let unit=null;
@@ -125,7 +126,8 @@ export async function POST(request){
         const pending=[];
         for(const row of typeRows){
           const origin=row.payload?.source_plan_date||isoDate(row.plan_date);
-          const progress=await client.query("select status from student_plan_task_progress where user_id=$1 and task_key=$2 and plan_date=$3::date",[session.id,row.task_key,origin]);
+          if(row.task_key!==taskKey||origin!==originalDate)await client.query("select pg_advisory_xact_lock(hashtext($1),hashtext($2))",[String(session.id),row.task_key+"|"+origin]);
+          const progress=await client.query("select status from student_plan_task_progress where user_id=$1 and task_key=$2 and plan_date=$3::date for update",[session.id,row.task_key,origin]);
           if(progress.rows[0]?.status==="done")continue;
           if(row.task_type==="reading"){
             const doneReading=await client.query("select status from student_bibliography_progress where user_id=$1 and bibliography_key=$2 and section_key=$3",[session.id,row.payload?.bibliography_key||"",row.payload?.section_key||""]);
