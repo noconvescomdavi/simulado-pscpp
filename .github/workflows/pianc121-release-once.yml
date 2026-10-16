@@ -32,7 +32,15 @@ jobs:
               assert len(arr)==46,len(arr)
               for q in arr:
                   assert q.get('active') is False and q.get('status')=='quarantined',q['id']
-                  assert q['taxonomy']['bibliography_id']=='pianc-channels' and q['taxonomy']['chapter_id']=='pianc-channels::ch1'
+                  if q['taxonomy']['bibliography_id']=='pianc121':
+            q['taxonomy']['bibliography_id']='pianc-channels'
+            q['taxonomy']['chapter_id']='pianc-channels::ch1'
+            q['taxonomy']['topic_id']=q['taxonomy']['topic_id'].replace('VII-pianc121-ch1-','VII-pianc-channels-ch1-')
+            q['tracking']['work']['id']='pianc-channels'
+            q['tracking']['chapter']['id']='pianc-channels::ch1'
+            q['tracking']['topic']['id']=q['taxonomy']['topic_id']
+            q['tags']=['pianc-channels' if x=='pianc121' else ('pianc-channels::ch1' if x=='pianc121::ch1' else x) for x in q.get('tags',[])]
+        assert q['taxonomy']['bibliography_id']=='pianc-channels' and q['taxonomy']['chapter_id']=='pianc-channels::ch1'
                   assert len(q['options'])==5 and {x['key'] for x in q['options']}==set('ABCDE')
                   assert q['correct_answer'] in set('ABCDE')
                   if q['id'] in overrides:
@@ -44,7 +52,8 @@ jobs:
                   q.setdefault('quality',{})['quarantine_reason']=None
                   q['quality']['editorial_status']='approved_pianc121_cap1'
                   q['quality']['release_revision']='PIANC121-C1-2026-10-16'
-              if 'validation' in bank:
+              if 'publication_policy' in bank: bank['publication_policy']='Questions released after editorial review'
+    if 'validation' in bank:
                   bank['validation']['pianc121_quarantine_count']=0
                   bank['validation']['pianc121_active_count']=46
               assert len({q['id'] for q in bank['questions']})==len(bank['questions'])
