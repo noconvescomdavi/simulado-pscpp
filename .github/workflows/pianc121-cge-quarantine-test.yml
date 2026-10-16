@@ -8,6 +8,8 @@ on:
       - 'lib/question-quality-policy.js'
       - 'lib/question-taxonomy.js'
       - '.github/workflows/pianc121-cge-quarantine-test.yml'
+      - 'scripts/apply_pianc121_editorial_patch.py'
+      - 'data/questions/patches/pianc121-cap1-editorial-001.json'
   pull_request:
     paths:
       - 'scripts/test-pianc121-cge-quarantine.mjs'
@@ -15,7 +17,7 @@ on:
       - 'lib/question-quality-policy.js'
       - 'lib/question-taxonomy.js'
 permissions:
-  contents: read
+  contents: write
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -24,6 +26,17 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Apply reviewed PIANC patch
+        if: github.event_name == 'push'
+        run: |
+          python scripts/apply_pianc121_editorial_patch.py
+          if ! git diff --quiet -- data/questions/conhecimentos-gerais.json data/questions/imports/pianc121-cap1-quarentena.json; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add data/questions/conhecimentos-gerais.json data/questions/imports/pianc121-cap1-quarentena.json
+            git commit -m 'fix(cge): apply reviewed PIANC 1.3.4.2 correction'
+            git push origin HEAD:feature/pianc121-cge-cap1-quarentena
+          fi
       - run: node scripts/test-pianc121-cge-quarantine.mjs
       - name: Generate runtime caderno banks
         run: node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-question-banks.mjs
