@@ -1,0 +1,27 @@
+name: Validate PIANC 121 CGE Quarantine
+on:
+  push:
+    branches: [feature/pianc121-cge-cap1-quarentena]
+    paths:
+      - 'scripts/test-pianc121-cge-quarantine.mjs'
+      - 'data/questions/conhecimentos-gerais.json'
+      - 'lib/question-quality-policy.js'
+      - 'lib/question-taxonomy.js'
+      - '.github/workflows/pianc121-cge-quarantine-test.yml'
+  pull_request:
+    paths:
+      - 'scripts/test-pianc121-cge-quarantine.mjs'
+      - 'data/questions/conhecimentos-gerais.json'
+      - 'lib/question-quality-policy.js'
+      - 'lib/question-taxonomy.js'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/test-pianc121-cge-quarantine.mjs
