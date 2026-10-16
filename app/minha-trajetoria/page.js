@@ -64,7 +64,7 @@ export default async function MinhaTrajetoria(){
     <section className={styles.titleMetrics}>
       <div className={styles.head}><div><span>AVALIAÇÃO PSCPP</span><h2>Simulados e Prova de Títulos</h2></div></div>
       <div className={styles.titleMetricGrid}>
-        <article><span>MÉDIA DOS SIMULADOS</span><strong>{examAttempts?Number(metrics.overall.exam_average).toLocaleString("pt-BR",{minimumFractionDigits:1,maximumFractionDigits:1})+"%":"Não avaliado"}</strong><small>{examAttempts} simulado(s) encerrado(s) com nota</small></article>
+        <article><span>MÉDIA DOS SIMULADOS</span><strong>{examAttempts?Number(metrics.overall.exam_average).toLocaleString("pt-BR",{minimumFractionDigits:1,maximumFractionDigits:1})+"%":"Não avaliado"}</strong><small>{studyMetrics.overall.exam_correct||0} acertos · {studyMetrics.overall.exam_wrong||0} erros · {studyMetrics.overall.exam_answered||0} respondidas em {examAttempts} simulado(s)</small></article>
         <article><span>PROVA DE TÍTULOS</span><strong>{Number(metrics.overall.title_score||0).toLocaleString("pt-BR",{minimumFractionDigits:1,maximumFractionDigits:1})} / 10</strong><small>pontuação calculada conforme Edital PSCPP 2012</small></article>
       </div>
       <div className={styles.titleBreakdown}>
