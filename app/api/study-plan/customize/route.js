@@ -103,7 +103,7 @@ export async function POST(request){
     let result;
     try{
       result=await withTransaction(async(client)=>{
-        await client.query("select pg_advisory_xact_lock(hashtext($1),hashtext($2))",[String(session.id),"customize|"+plan.week.start]);
+        await client.query("select pg_advisory_xact_lock(hashtext($1),hashtext($2))",[String(session.id),"customize|global"]);
         const snapshot=await client.query("select id,week_start from student_plan_snapshots where user_id=$1 and week_start >=$2::date order by week_start asc for update",[session.id,plan.week.start]);
         const id=snapshot.rows.find(row=>isoDate(row.week_start)===plan.week.start)?.id;
         if(!id)throw new Error("Planejamento semanal não encontrado.");
@@ -172,8 +172,10 @@ export async function POST(request){
         }
         const index=pending.findIndex(row=>row.id===current.id);
         if(index<0)throw new Error("Tarefa indisponível para postergação.");
-        // Quando não há outra tarefa programada, a vaga atual permanece disponível
-        // para edição manual; a atividade original continua preservada na fila final.
+        // Nunca deixamos a atividade de hoje sem substituta: se não existir
+        // próxima tarefa elegível, é necessário editar o dia manualmente.
+        if(index===pending.length-1)
+          throw new Error("Não existe outra atividade pendente desta categoria para antecipar. Use Editar Plano.");
         const slots=pending.slice(index);
         const values=slots.map(row=>({
           key:row.task_key,type:row.task_type,subject:row.subject_slug,
@@ -196,7 +198,7 @@ export async function POST(request){
         return {action,affected:slots.length,new_date:terminal,promoted:rotated.length};
       });
     }catch(error){
-      if(/última tarefa/.test(String(error.message)))return bad(error.message,409);
+      if(/Não existe outra atividade/.test(String(error.message)))return bad(error.message,409);
       throw error;
     }
     return Response.json({ok:true,...result},{headers:{"Cache-Control":"no-store"}});
