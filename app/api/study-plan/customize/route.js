@@ -1,3 +1,4 @@
+import { ACCESS_FEATURES,canUseFeature,getEntitlement } from "../../../../lib/entitlement";
 import { getSession } from "../../../../lib/auth";
 import { getIntegratedStudyPlan } from "../../../../lib/integrated-study-plan";
 import { persistStudyPlanSnapshot } from "../../../../lib/study-plan-snapshot";
@@ -69,6 +70,7 @@ async function syncFixation(client,userId,snapshotId,planDate,reading){
 export async function POST(request){
   const session=await getSession();
   if(!session)return bad("Não autenticado.",401);
+  if(!canUseFeature(await getEntitlement(session.id),ACCESS_FEATURES.STUDY_PLAN))return Response.json({error:"Acesso ao plano de estudos não autorizado."},{status:403});
   try{
     const body=await request.json().catch(()=>({}));
     const action=safe(body.action,16);
