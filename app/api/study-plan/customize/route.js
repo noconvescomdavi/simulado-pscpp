@@ -6,6 +6,7 @@ import { withTransaction } from "../../../../lib/db";
 import { SUBJECTS } from "../../../../lib/subjects";
 import { bibliographyUnits } from "../../../../data/study/bibliography";
 import { lastEligibleStudyDate } from "../../../../lib/study-plan-manual-queue.mjs";
+import { randomUUID } from "node:crypto";
 
 export const dynamic="force-dynamic";
 const isoDate=value=>value instanceof Date?value.toISOString().slice(0,10):String(value||"").slice(0,10);
@@ -76,17 +77,18 @@ export async function POST(request){
   try{
     const body=await request.json().catch(()=>({}));
     const action=safe(body.action,16);
-    if(!["postpone","edit"].includes(action))return bad("Ação inválida.");
+    if(!["postpone","edit","add"].includes(action))return bad("Ação inválida.");
     const planDate=safe(body.plan_date,10),taskKey=safe(body.task_key,220),offset=weekOffset(body.week);
-    if(!isDate(planDate)||!taskKey||planDate<today())return bad("Somente tarefas pendentes de hoje ou de datas futuras podem ser alteradas.");
+    if(!isDate(planDate)||(action!=="add"&&!taskKey)||planDate<today())return bad("Selecione uma data válida de hoje ou do futuro.");
     const plan=await getIntegratedStudyPlan(session.id,offset);
     if(plan.needs_onboarding)return bad("Conclua o questionário inicial.",409);
     const day=plan.week.days.find(item=>item.iso===planDate);
     if(!day||!day.active)return bad("Data indisponível neste plano.",409);
     const sourceParam=safe(body.source_plan_date,10);
-    const task=day.tasks.find(item=>item.key===taskKey&&(!sourceParam||(item.source_plan_date||day.iso)===sourceParam));
-    if(!task||task.status==="done"||(action==="edit"&&task.reprogrammed))return bad("Selecione uma tarefa pendente válida.",409);
-    const sourcePlanDate=task.source_plan_date||planDate;
+    const task=action==="add"?null:day.tasks.find(item=>item.key===taskKey&&(!sourceParam||(item.source_plan_date||day.iso)===sourceParam));
+    if(action!=="add"&&(!task||task.status==="done"||(action==="edit"&&task.reprogrammed)))
+      return bad("Selecione uma tarefa pendente válida.",409);
+    const sourcePlanDate=task?.source_plan_date||planDate;
     const terminal=action==="postpone"?lastEligibleStudyDate({
       taskType:task.type,fromDate:planDate,examDate:plan.exam_date,firstPassDeadline:plan.first_pass_deadline,
       studyDays:plan.onboarding?.study_days||[]
@@ -108,14 +110,16 @@ export async function POST(request){
         const id=snapshot.rows.find(row=>isoDate(row.week_start)===plan.week.start)?.id;
         if(!id)throw new Error("Planejamento semanal não encontrado.");
         const all=await client.query("select id,snapshot_id,plan_date,task_key,task_type,subject_slug,position,payload from student_plan_snapshot_tasks where snapshot_id=any($1::bigint[]) order by plan_date,position,id for update",[snapshot.rows.map(row=>row.id)]);
-        const current=all.rows.find(row=>row.snapshot_id===id&&isoDate(row.plan_date)===planDate&&row.task_key===taskKey);
-        if(!current&&!task.reprogrammed)throw new Error("A tarefa foi alterada. Atualize a página.");
+        const current=action==="add"?null:all.rows.find(row=>row.snapshot_id===id&&isoDate(row.plan_date)===planDate&&row.task_key===taskKey);
+        if(action!=="add"&&!current&&!task.reprogrammed)throw new Error("A tarefa foi alterada. Atualize a página.");
         if(action==="edit"&&!current)throw new Error("Não é possível editar esta pendência pelo calendário; primeiro escolha uma tarefa da semana.");
         const originalDate=current?.payload?.source_plan_date||sourcePlanDate;
-        await client.query("select pg_advisory_xact_lock(hashtext($1),hashtext($2))",[String(session.id),taskKey+"|"+originalDate]);
-        const done=await client.query("select status from student_plan_task_progress where user_id=$1 and task_key=$2 and plan_date=$3::date for update",[session.id,taskKey,originalDate]);
-        if(done.rows[0]?.status==="done")throw new Error("Tarefa já concluída.");
-        if(action==="edit"){
+        if(action!=="add"){
+          await client.query("select pg_advisory_xact_lock(hashtext($1),hashtext($2))",[String(session.id),taskKey+"|"+originalDate]);
+          const done=await client.query("select status from student_plan_task_progress where user_id=$1 and task_key=$2 and plan_date=$3::date for update",[session.id,taskKey,originalDate]);
+          if(done.rows[0]?.status==="done")throw new Error("Tarefa já concluída.");
+        }
+        if(action==="edit"||action==="add"){
           let unit=null;
           if(body.task_type==="reading"){
             const selected=await client.query("select subject_slug,bibliography_key,section_key,publication_title,section_label,chapter_label,page_start,page_end from study_bibliography_catalog where bibliography_key=$1 and section_key=$2 and required=true limit 1",[safe(body.bibliography_key,180),safe(body.section_key,180)]);
@@ -127,10 +131,28 @@ export async function POST(request){
           }
           const subject=SUBJECTS.find(item=>item.slug===safe(body.subject_slug,120));
           // Um domingo deve manter exatamente um Simulado PSCPP.
-          if((current.task_type==="simulado")!== (body.task_type==="simulado"))
+          if(action==="edit"&&((current.task_type==="simulado")!==(body.task_type==="simulado")))
             throw new Error("O Simulado PSCPP de domingo é obrigatório e não pode ser substituído ou duplicado.");
+          if(action==="add"&&body.task_type==="simulado")
+            throw new Error("O Simulado PSCPP já é programado automaticamente para todos os domingos.");
           if(body.task_type==="simulado"&&new Date(planDate+"T12:00:00").getDay()!==0)throw new Error("O Simulado PSCPP obrigatório está reservado ao domingo.");
-          const payload=makeTask(body,subject,unit,current);
+          const payload=makeTask(body,subject,unit,current||{payload:{},plan_date:planDate});
+          if(action==="add"){
+            const newKey="manual|"+planDate+"|"+randomUUID();
+            const assigned=all.rows.filter(row=>isoDate(row.plan_date)===planDate);
+            const position=Math.min(32000,Math.max(-1,...assigned.map(row=>Number(row.position)||0))+1);
+            await client.query(
+              "insert into student_plan_snapshot_tasks(snapshot_id,user_id,plan_date,task_key,task_type,subject_slug,position,payload) values($1,$2,$3::date,$4,$5,$6,$7,$8::jsonb)",
+              [id,session.id,planDate,newKey,payload.type,payload.subject,position,JSON.stringify(payload)]
+            );
+            await client.query(
+              "insert into student_plan_task_progress(user_id,task_key,plan_date,task_type,subject_slug,status,metadata) values($1,$2,$3::date,$4,$5,'pending',$6::jsonb)",
+              [session.id,newKey,planDate,payload.type,payload.subject,JSON.stringify(payload)]
+            );
+            await client.query("insert into student_plan_events(user_id,event_type,task_key,plan_date,subject_slug,metadata) values($1,'TASK_ADDED_MANUALLY',$2,$3::date,$4,$5::jsonb)",
+              [session.id,newKey,planDate,payload.subject,JSON.stringify({task:payload})]);
+            return {action,affected:1,task_key:newKey};
+          }
           await client.query("update student_plan_snapshot_tasks set task_type=$2,subject_slug=$3,payload=$4::jsonb where id=$1",
             [current.id,payload.type,payload.subject,JSON.stringify(payload)]);
           if(payload.type==="reading")await syncFixation(client,session.id,id,planDate,payload);
