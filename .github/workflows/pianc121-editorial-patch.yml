@@ -1,0 +1,45 @@
+name: Apply PIANC editorial patch (quarantine only)
+on:
+  push:
+    branches: [feature/pianc121-cge-cap1-quarentena]
+    paths:
+      - '.github/workflows/pianc121-editorial-patch.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/pianc121-cge-cap1-quarentena
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Apply reviewed patch to bank and import source
+        run: python scripts/apply_pianc121_editorial_patch.py
+      - name: Validate edited question and quarantine
+        run: |
+          python - <<'PY'
+          import json
+          a=json.load(open('data/questions/conhecimentos-gerais.json',encoding='utf-8'))
+          b=json.load(open('data/questions/imports/pianc121-cap1-quarentena.json',encoding='utf-8'))
+          for bank in (a,b):
+              q=[x for x in bank['questions'] if x['id'].startswith('CGE-PIANC121-C1-')]
+              assert len(q)==46
+              assert all(x['active'] is False and x['status']=='quarantined' for x in q)
+              target=next(x for x in q if x['id']=='CGE-PIANC121-C1-1-3-4-2')
+              assert target['quality']['editorial_patch']=='PIANC121-C1-EDITORIAL-001'
+              assert target['correct_answer']=='A'
+          print('PASS: both files updated, 46 items quarantined')
+          PY
+      - name: Commit patch to feature branch
+        run: |
+          if ! git diff --quiet -- data/questions/conhecimentos-gerais.json data/questions/imports/pianc121-cap1-quarentena.json; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add data/questions/conhecimentos-gerais.json data/questions/imports/pianc121-cap1-quarentena.json
+            git commit -m 'fix(cge): reduce PIANC C1 section 1.3.4.2 conceptual overlap'
+            git push origin HEAD:feature/pianc121-cge-cap1-quarentena
+          fi
