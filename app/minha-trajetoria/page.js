@@ -3,6 +3,8 @@ import {getSession} from "../../lib/auth";
 import {getIntegratedStudyPlan} from "../../lib/integrated-study-plan";
 import {getLearningGraph} from "../../lib/learning-graph";
 import {query} from "../../lib/db";
+import {getUserMetrics} from "../../lib/metrics";
+import {getBibliographyCompletion} from "../../lib/bibliography-completion";
 import {calculateTitleScore} from "../../lib/title-score";
 import StudentHeader from "../components/StudentHeader";
 import styles from "./trajectory.module.css";
@@ -17,10 +19,12 @@ function fmtDate(value){
 export default async function MinhaTrajetoria(){
   const session=await getSession();
   if(!session)redirect("/login?next=/minha-trajetoria");
-  const [plan,graph,titleProfile]=await Promise.all([
+  const [plan,graph,titleProfile,studyMetrics,bibliographyProgress]=await Promise.all([
     getIntegratedStudyPlan(session.id,0),
     getLearningGraph(session.id),
-    query(`select maritime_role,experience_level,embarkation_days,command_days from user_profiles where user_id=$1 limit 1`,[session.id]).catch(()=>({rows:[]}))
+    query(`select maritime_role,experience_level,embarkation_days,command_days from user_profiles where user_id=$1 limit 1`,[session.id]).catch(()=>({rows:[]})),
+    getUserMetrics(session.id),
+    getBibliographyCompletion(session.id)
   ]);
   if(plan.needs_onboarding)redirect("/plano-de-estudos/configurar");
   const learning={overall_mastery:Number(plan.tracking?.overall_mastery||0)};
@@ -32,11 +36,8 @@ export default async function MinhaTrajetoria(){
     embarkationDays:profile.embarkation_days,
     commandDays:profile.command_days
   });
-  const metricSubjects=plan.metrics?.subjects||[];
-  const examAttempts=metricSubjects.reduce((sum,row)=>sum+Number(row.attempts||0),0);
-  const examAverage=examAttempts
-    ? metricSubjects.reduce((sum,row)=>sum+Number(row.average_score||0)*Number(row.attempts||0),0)/examAttempts
-    : 0;
+  const examAttempts=Number(studyMetrics.overall.attempts||0);
+  const examAverage=Number(studyMetrics.overall.exam_average||0);
   const metrics={overall:{
     exam_average:examAverage,
     title_score:titleScore.total,
@@ -57,12 +58,13 @@ export default async function MinhaTrajetoria(){
       <article><span>CRONOGRAMA</span><strong>{status}</strong><small>capacidade de recuperação: {plan.tracking?.recovery_capacity_minutes||0} min</small></article>
       <article><span>1ª LEITURA</span><strong>{fmtDate(plan.first_pass?.projected_finish)}</strong><small>{plan.first_pass?.on_track?"ritmo compatível":"risco de atraso"}</small></article>
       <article><span>PRONTIDÃO</span><strong>{plan.readiness}%</strong><small>índice integrado ESTIBORDO</small></article>
+      <article><span>BIBLIOGRAFIA CONCLUÍDA</span><strong>{bibliographyProgress.percent}%</strong><small>{bibliographyProgress.done} de {bibliographyProgress.total} unidades obrigatórias</small></article>
     </section>
 
     <section className={styles.titleMetrics}>
       <div className={styles.head}><div><span>AVALIAÇÃO PSCPP</span><h2>Simulados e Prova de Títulos</h2></div></div>
       <div className={styles.titleMetricGrid}>
-        <article><span>MÉDIA DOS SIMULADOS</span><strong>{Number(metrics.overall.exam_average||0).toLocaleString("pt-BR",{minimumFractionDigits:1,maximumFractionDigits:1})}%</strong><small>média de todos os simulados concluídos</small></article>
+        <article><span>MÉDIA DOS SIMULADOS</span><strong>{examAttempts?Number(metrics.overall.exam_average).toLocaleString("pt-BR",{minimumFractionDigits:1,maximumFractionDigits:1})+"%":"Não avaliado"}</strong><small>{examAttempts} simulado(s) encerrado(s) com nota</small></article>
         <article><span>PROVA DE TÍTULOS</span><strong>{Number(metrics.overall.title_score||0).toLocaleString("pt-BR",{minimumFractionDigits:1,maximumFractionDigits:1})} / 10</strong><small>pontuação calculada conforme Edital PSCPP 2012</small></article>
       </div>
       <div className={styles.titleBreakdown}>
