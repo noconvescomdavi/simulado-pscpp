@@ -1,5 +1,21 @@
 # Testes e evidências — checkpoint inicial
 
+## Atualização: releitura histórica integral
+
+`audit-pscpp-historical-benchmark.py` passou após conferir 264 registros, 255
+corpos disponíveis e os gabaritos dos 254 válidos. Asserções verificam hashes
+dos PDFs, sequência de números, cinco opções, pontos, classificação manual,
+marcas X e respostas vermelhas (coordenadas e cor em CSV). Nenhum gabarito foi
+aceito apenas por vir da planilha. Aviso de configuração de camadas do PDF
+2012 preservado; trechos críticos renderizados e inspecionados.
+
+`test-question-source-provenance.mjs` passou novamente. `git diff --check`
+passou. `validate-pscpp-editorial-evidence.mjs` segue falhando corretamente:
+0/14.086 ocorrências aprovadas; merge não permitido. Nenhum texto de questão
+ativa ou pipeline de execução foi alterado neste lote histórico; build anterior
+não é apresentado como nova execução. Relatório vigente do benchmark em
+`BENCHMARK_REVISAO_INTEGRAL.md`, separado do checkpoint estrutural anterior.
+
 Fonte baseline: `012b562b0eb6f7fec78773b339e4a53b3643e791`.
 Nenhuma questão de conteúdo foi alterada nesta etapa.
 

@@ -1,4 +1,8 @@
-# Benchmark histórico — recomputação estrutural provisória
+# Benchmark histórico — recomputação estrutural provisória (checkpoint anterior)
+
+**Superado pela releitura individual em `BENCHMARK_REVISAO_INTEGRAL.md`.**
+Este registro preserva a etapa anterior e seus resultados heurísticos, não os
+totais finais da classificação manual. Pendências descritas abaixo são históricas.
 
 As quatro provas foram extraídas integralmente com `pdftotext -layout`. O script
 recupera a sequência completa de numeração e as cinco alternativas de todos os
