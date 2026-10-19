@@ -1,0 +1,51 @@
+{
+  "checkpoint_version": 1,
+  "created_at_utc": "2026-10-19T02:22:35.805683+00:00",
+  "task_status": "in_progress_not_approved",
+  "branch": "feature/auditoria-integral-padrao-banca-pscpp",
+  "source_baseline_sha": "012b562b0eb6f7fec78773b339e4a53b3643e791",
+  "current_stage": "inventory_runtime_reconciliation_and_historical_benchmark",
+  "physical_records": 27435,
+  "bank_source_records_including_patches": 27113,
+  "runtime_occurrences": 14086,
+  "runtime_unique_ids": 13715,
+  "individual_editorial_approved_occurrences": 0,
+  "primary_source_partial_checks": 3,
+  "historical_extraction_count": 264,
+  "historical_full_editorial_read_completed": false,
+  "merge_permitted": false,
+  "gates": {
+    "1": "partial: local JSON pipelines reconciled; full consumers/offline and production checks pending",
+    "2": "failed: 0 approved individual evidence records",
+    "3": "pending: 3 partial source checks, full primary verification outstanding",
+    "4": "pending: six historical format disagreements; subject/cognitive recalibration outstanding",
+    "5": "partial: 102 runtime duplicate IDs removed; semantic duplicate analysis pending",
+    "6": "failed: editorial-runtime and notebook-complete-stems tests fail; production build passes",
+    "7": "pending: SQL schema inspected read-only; no migrations or production mutations",
+    "8": "pending: no merge; baseline deployment READY is not audit release"
+  },
+  "known_findings": {
+    "locator_candidates": 77,
+    "combination_without_parsed_assertions_candidates": 256,
+    "noncanonical_subject_records": 20,
+    "selection_excluded_records_retained": 11
+  },
+  "production_baseline": {
+    "id": "dpl_rRAELJq5jYiofCKZriDuVdLvaonf",
+    "url": "estibordo-pscpp-7e5qmb5hl-estibordo.vercel.app",
+    "sha": "012b562b0eb6f7fec78773b339e4a53b3643e791",
+    "state": "READY",
+    "project_id": "prj_Mh3oj4yvjVE0PcYiuvPcv839sejY",
+    "team_id": "team_n8yGTY7O9r3Y19SWfZDI7iP2"
+  },
+  "next_actions": [
+    "Read all four historical exams editorially and confirm final keys using colored answers/figures; reconcile six format disagreements and subject matrix.",
+    "Verify official Annexes 2-A/2-B provenance, revisions and edital; map complete work/chapter/item trees.",
+    "Review every active effective version, starting with TRIAGEM_RUNTIME.json; source supports three cap9 items but no complete editorial approvals yet.",
+    "Fix 77 locator candidates and 256 missing-proposition candidates only after primary verification, preserving original IDs and evidence.",
+    "Inspect 20 PSCPP records classified as ii — arte naval and normalize taxonomy with regression tests.",
+    "Reconcile offline/production consumers and all hashes, complete every gate, then sync main, revalidate, review PR, merge and verify production."
+  ],
+  "resume_command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/audit-pscpp-runtime-inventory.mjs",
+  "resume_instruction": "Continue this branch from CHECKPOINT.json, preserving baseline/. Do not treat pending rows as approved. Reobtain the attached dossier if needed; its hashes are in INTEGRIDADE_DOSSIE.json. Follow the original Prompt-Mestre. Do not merge while any gate remains pending or failed."
+}
