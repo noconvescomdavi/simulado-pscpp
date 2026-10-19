@@ -28,6 +28,11 @@ e estabilidade quando apenas um arquivo alheio muda.
 
 ## Questões
 
-Questões reescritas: 0; substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
+Questões reescritas: 1 (ANV-0005); substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
+Conferência e justificativas completas em `REVISAO_ANV_0005.md`. Fonte primária
+volume 1, art. 8.18, p. impressa 543/PDF 541; apoio diagnóstico nos arts. 8.2 e
+8.7. Corrigido distrator ambíguo e preservadas quatro proposições na apresentação.
+ID, opções e gabarito preservados. Não há aprovação de release: rechecagem e
+alinhamento final ao programa/edital ainda pendentes.
 Não atribuir aprovação aos registros apenas por preservação ou triagem.
 As pendências editoriais são mantidas nos relatórios e nos gates.

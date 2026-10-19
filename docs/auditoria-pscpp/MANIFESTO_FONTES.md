@@ -47,3 +47,17 @@ publicada no repositório.
 A bibliografia fornecida menciona v.1 junto aos capítulos 9 a 12, mas o corpo
 do volume 2 começa no capítulo 9. Registrar a divergência em vez de corrigir
 referências por suposição. Demais obras e vigência normativa ainda pendentes.
+
+## Avanço de proveniência e segundo exemplar primário
+
+A página oficial da DPC confirma a revisão dos Anexos 2-A e 2-B e fornece os
+links de programa e bibliografia. Os PDFs oficiais retornaram 502/timeout/503;
+não foi provada identidade binária com os arquivos do Drive. Evidência e
+limitações em `PROVENIENCIA_OFICIAL_ANEXOS.json`; edital-alvo ainda não confirmado.
+
+Arte Naval, volume 1, 8ª edição revista e ampliada, SDM, Rio de Janeiro, 2019:
+título/ficha e arts. 8.2, 8.7, 8.18 conferidos em texto e páginas renderizadas.
+Drive ID `1LjlDejVyooU3QLJzF0COvAEnOgMDNC9N`, 39.831.575 bytes,
+SHA-256 `792beebaea10aaff4b65288c0cfc3dd76c507f779297ee42583d078a7ec1dd20`.
+Fonte da correção de ANV-0005, descrita em `REVISAO_ANV_0005.md`, sem aprovação
+de release. Não publicada cópia integral do livro.

@@ -1,4 +1,21 @@
-# Testes e evidências — checkpoint inicial
+# Testes e evidências — checkpoints e evolução
+
+## Correção primária de ANV-0005
+
+Teste `test-pscpp-audit-anv0005.mjs`: passou, quatro proposições no HTML real
+e exatamente um ID efetivo alterado; outros 12.101 registros dos cadernos
+idênticos ao commit congelado `309ec933`. Requer histórico Git contendo esse
+commit, não checkout raso sem a referência. Unicidade dos cadernos (12.102) e
+matriz fixa passaram novamente. A execução da matriz sem o loader JSON falhou
+na configuração; reexecução com loader previsto passou, sem alteração do teste.
+Teste geral de enunciados segue falhando, agora em ANV-0007. Gate editorial
+segue 0/14.086. Build completo iniciado; não registrar aprovação antes do fim.
+
+Inventários físicos/efetivos e hashes regenerados. Triagem reproduz o predicado
+do teste existente: 252 candidatos de proposições e 77 de localizadores.
+De 256 para 252 houve uma correção e três falsos positivos confirmados
+(`RESOLUCOES_TRIAGEM.json`), não quatro correções bibliográficas. Nenhum teste
+relaxado; `git diff --check` passou.
 
 ## Atualização: releitura histórica integral
 
@@ -17,7 +34,8 @@ não é apresentado como nova execução. Relatório vigente do benchmark em
 `BENCHMARK_REVISAO_INTEGRAL.md`, separado do checkpoint estrutural anterior.
 
 Fonte baseline: `012b562b0eb6f7fec78773b339e4a53b3643e791`.
-Nenhuma questão de conteúdo foi alterada nesta etapa.
+No checkpoint inicial abaixo não havia alteração de conteúdo; os lotes acima
+registram a evolução posterior sem reescrever resultados antigos.
 
 | Verificação | Antes | Após correção de integração |
 |---|---|---|

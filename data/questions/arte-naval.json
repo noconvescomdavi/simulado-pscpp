@@ -348,9 +348,11 @@
       "module": "Trabalhos do marinheiro",
       "topic_code": "anv1-8.18",
       "topic": "volta redonda mordida e cote",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "Sobre “volta redonda mordida e cote”, analise as afirmativas a seguir e assinale a alternativa que apresenta apenas as corretas:\nI. Em relação a “volta redonda mordida e cote”, considere: os dois chicotes saem entre os cotes em sentidos contrários.\nII. “volta redonda mordida e cote” designa resistência inferior à do próprio cabo em que são feitos.\nIII. Em relação a “volta redonda mordida e cote”, considere: dada em torno de objeto fixo com volta redonda e cote, mordendo-se depois o chicote.\nIV. “volta redonda mordida e cote” designa volta que dificilmente recorre e se aperta à medida que cresce o esforço.",
+      "pscpp_format": "assertion_combination",
+      "cognitive_level": 2,
+      "question": "Segundo a descrição de Fonseca em Arte Naval, volume 1, analise as afirmativas sobre a volta redonda mordida e cote e assinale a alternativa que reúne todas as corretas:\nI. A obra a apresenta como uma volta ainda em uso corrente para prender adriças e escotas de velas.\nII. Sua montagem é feita no seio livre do cabo, dispensando um objeto fixo em torno do qual se dê a volta.\nIII. Depois da volta redonda e do cote em torno de um objeto fixo, o chicote fica mordido por sua passagem alternada sobre uma volta e sob a outra.\nIV. Ela oferece resistência a recorrer, e o aumento da tração tende a apertá-la.",
       "options": [
         {
           "key": "A",
@@ -374,12 +376,23 @@
         }
       ],
       "correct_answer": "E",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “volta redonda mordida e cote”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "São corretas III e IV. O art. 8.18 descreve a construção em torno de objeto fixo, com o chicote mordido entre as voltas, e o aperto que aumenta com o esforço. I é falsa: a obra registra o emprego em adriças e escotas como antigo e informa o desuso. II é falsa porque elimina o objeto fixo exigido na construção descrita. A redução geral da resistência de um cabo com nós ou voltas, tratada no art. 8.2, não foi usada como distrator falso específico.",
+      "distractor_analysis": {
+        "A": "Incorreta: inclui II, que dispensa indevidamente o objeto fixo, e omite IV, verdadeira.",
+        "B": "Incorreta: I e II são falsas; a obra registra desuso e montagem em torno de objeto fixo.",
+        "C": "Incorreta: III é verdadeira, mas I contradiz o desuso registrado; também omite IV.",
+        "D": "Incorreta: IV é verdadeira, mas II elimina o objeto fixo; também omite III.",
+        "E": "Correta: III descreve a montagem e IV o comportamento sob tração; I e II contradizem o art. 8.18."
+      },
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 1",
         "edition": "8. ed., 2019",
-        "locator": "cap. 8, item 8.18"
+        "locator": "cap. 8, art. 8.18, p. 543",
+        "printed_page": 543,
+        "pdf_page": 541,
+        "drive_file_id": "1LjlDejVyooU3QLJzF0COvAEnOgMDNC9N",
+        "sha256": "792beebaea10aaff4b65288c0cfc3dd76c507f779297ee42583d078a7ec1dd20"
       },
       "tags": [
         "Trabalhos do marinheiro",

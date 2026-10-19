@@ -1,6 +1,7 @@
 {
   "checkpoint_version": 1,
   "created_at_utc": "2026-10-19T02:22:35.805683+00:00",
+  "updated_at_utc": "2026-10-19T13:45:59Z",
   "task_status": "in_progress_not_approved",
   "branch": "feature/auditoria-integral-padrao-banca-pscpp",
   "source_baseline_sha": "012b562b0eb6f7fec78773b339e4a53b3643e791",
@@ -10,7 +11,10 @@
   "runtime_occurrences": 14086,
   "runtime_unique_ids": 13715,
   "individual_editorial_approved_occurrences": 0,
-  "primary_source_partial_checks": 3,
+  "primary_source_partial_checks": 4,
+  "individually_corrected_questions": 1,
+  "corrected_question_ids": ["ANV-0005"],
+  "primary_content_correction_is_release_approval": false,
   "historical_extraction_count": 264,
   "historical_full_editorial_read_completed": true,
   "historical_records_individually_checked": 264,
@@ -23,16 +27,19 @@
   "gates": {
     "1": "partial: local JSON pipelines reconciled; full consumers/offline and production checks pending",
     "2": "failed: 0 approved individual evidence records",
-    "3": "pending: 3 partial source checks, full primary verification outstanding",
+    "3": "pending: 4 partial source checks; ANV-0005 corrected against primary text/figures; official annex links confirmed but PDFs unavailable for binary comparison; final edition/program/edital alignment and all other questions outstanding",
     "4": "partial: 264 records individually checked, 255 available texts read, 254 observed keys reconciled; subject/points/cognitive/language matrices recorded; active-bank calibration and format targets not yet approved",
     "5": "partial: 102 runtime duplicate IDs removed; semantic duplicate analysis pending",
-    "6": "failed: editorial-runtime and notebook-complete-stems tests fail; production build passes",
+    "6": "failed: editorial-runtime remains 77 candidates; notebook-complete-stems now fails ANV-0007; dedicated ANV-0005 rendered-HTML/hash regression and uniqueness/matrix pass; new production build running at checkpoint",
     "7": "pending: SQL schema inspected read-only; no migrations or production mutations",
     "8": "pending: no merge; baseline deployment READY is not audit release"
   },
   "known_findings": {
     "locator_candidates": 77,
-    "combination_without_parsed_assertions_candidates": 256,
+    "combination_without_parsed_assertions_candidates": 252,
+    "previous_combination_candidates": 256,
+    "combination_candidates_corrected": 1,
+    "combination_false_positives_resolved_without_content_change": 3,
     "noncanonical_subject_records": 20,
     "selection_excluded_records_retained": 11
   },
@@ -47,8 +54,8 @@
   "next_actions": [
     "Historical read complete for all available texts; use BENCHMARK_REVISAO_INTEGRAL.md and manual TSV rather than superseded structural counts. Do not equate historical key observation with current technical correctness.",
     "Verify official Annexes 2-A/2-B provenance, revisions and edital; map complete work/chapter/item trees.",
-    "Review every active effective version, starting with TRIAGEM_RUNTIME.json; source supports three cap9 items but no complete editorial approvals yet.",
-    "Fix 77 locator candidates and 256 missing-proposition candidates only after primary verification, preserving original IDs and evidence.",
+    "Review every active effective version, starting with TRIAGEM_RUNTIME.json. ANV-0005 has a documented primary correction, not final approval. Four source checks recorded; complete independent recheck/program alignment before accepting any evidence ledger row.",
+    "Fix 77 locator candidates and 252 missing-proposition candidates only after primary verification, preserving IDs and evidence. Next failing item ANV-0007 must be traced through restorations (raw source is a different version).",
     "Inspect 20 PSCPP records classified as ii — arte naval and normalize taxonomy with regression tests.",
     "Reconcile offline/production consumers and all hashes, complete every gate, then sync main, revalidate, review PR, merge and verify production."
   ],
