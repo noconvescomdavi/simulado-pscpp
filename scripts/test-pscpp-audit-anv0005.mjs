@@ -10,20 +10,54 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { classifyQuestionStructure } from '../lib/question-structure.js';
 import { publicQuestion } from '../lib/question-banks.js';
 
-const frozen = '309ec933f90e0242cd7c7334d89fbba572fbbc2b';
+const correctionLog = JSON.parse(fs.readFileSync('docs/auditoria-pscpp/CORRECOES_RUNTIME.json'));
+const frozen = correctionLog.baseline_commit;
 const stable = value => Array.isArray(value) ? value.map(stable)
   : value && typeof value === 'object'
     ? Object.fromEntries(Object.keys(value).sort().map(key => [key, stable(value[key])])) : value;
 const hash = value => createHash('sha256').update(JSON.stringify(stable(value))).digest('hex');
-const before = gunzipSync(execFileSync('git', ['show', `${frozen}:docs/auditoria-pscpp/INVENTARIO_RUNTIME.jsonl.gz`], {maxBuffer:64*1024*1024}))
-  .toString().split('\n').filter(Boolean).map(JSON.parse).filter(r => r.consumer === 'cadernos');
+const frozenRuntime = gunzipSync(execFileSync('git', ['show', `${frozen}:docs/auditoria-pscpp/INVENTARIO_RUNTIME.jsonl.gz`], {maxBuffer:64*1024*1024}))
+  .toString().split('\n').filter(Boolean).map(JSON.parse);
+const before = frozenRuntime.filter(r => r.consumer === 'cadernos');
+const examBefore = frozenRuntime.filter(r => r.consumer === 'simulado_pscpp');
+const examAfter = JSON.parse(fs.readFileSync('data/pscpp/runtime-active-questions.json')).questions;
+assert.equal(examAfter.length, examBefore.length);
+const examHashes = new Map(examBefore.map(q => [q.id,q.hash]));
+assert.equal(new Set(examAfter.map(q => q.id)).size, examAfter.length);
+assert.deepEqual(examAfter.map(q => q.id).sort(), examBefore.map(q => q.id).sort());
+for (const q of examAfter) assert.equal(hash(q), examHashes.get(q.id), `Unrelated PSCPP content changed: ${q.id}`);
 const banks = JSON.parse(fs.readFileSync('data/questions/runtime-active-banks.json')).banks;
 const after = Object.values(banks).flatMap(bank => bank.questions);
 assert.equal(after.length, before.length, 'Correction must not add or remove active IDs');
+assert.equal(new Set(after.map(q => q.id)).size, after.length, 'No duplicate IDs after correction');
+assert.deepEqual(after.map(q => q.id).sort(), before.map(q => q.id).sort(), 'Active ID membership changed');
 const previous = new Map(before.map(r => [r.id, r.hash]));
 assert.equal(previous.size, before.length);
 const changed = after.filter(q => hash(q) !== previous.get(q.id)).map(q => q.id);
-assert.deepEqual(changed, ['ANV-0005'], 'Unrelated effective content changed');
+assert.deepEqual(changed.sort(), correctionLog.corrections.map(q => q.id).sort(), 'Unrelated effective content changed');
+for (const correction of correctionLog.corrections) {
+  const q = after.find(q => q.id === correction.id);
+  assert.equal(previous.get(q.id), correction.before_hash, `Frozen before hash changed: ${q.id}`);
+  assert.equal(hash(q), correction.after_hash, `Effective corrected hash changed: ${q.id}`);
+  assert.equal(q.correct_answer, correction.key);
+  assert.equal(q.source.printed_page, correction.printed_page);
+  assert.equal(q.source.pdf_page, correction.pdf_page);
+  assert.equal(q.provenance?.mass_reformulation, undefined, `Corrected propositions were reformulated: ${q.id}`);
+  // Independently recompute the answer combination from the source-reviewed
+  // truth vector, rather than merely checking an unchanged answer letter.
+  // The vector is manual primary-source evidence, not automated proof of truth.
+  assert.equal(correction.proposition_truths.length, 4);
+  assert.ok(correction.proposition_truths.every(value => typeof value === 'boolean'));
+  const labels = ['I','II','III','IV'];
+  const correctSet = labels.filter((_,i) => correction.proposition_truths[i]).sort().join(',');
+  const matches = q.options.filter(option => {
+    const terms = [...option.text.matchAll(/\b(?:IV|III|II|I)\b/g)].map(m => m[0]);
+    assert.equal(new Set(terms).size, terms.length, `Repeated proposition label: ${q.id}/${option.key}`);
+    return terms.sort().join(',') === correctSet;
+  });
+  assert.equal(matches.length, 1, `Answer combination is not unique: ${q.id}`);
+  assert.equal(matches[0].key, q.correct_answer, `Truth-vector resolution disagrees with key: ${q.id}`);
+}
 const question = after.find(q => q.id === 'ANV-0005');
 const raw = JSON.parse(fs.readFileSync('data/questions/arte-naval.json')).questions.find(q => q.id === question.id);
 assert.equal(question.question, raw.question, 'Pipeline must preserve the individually corrected propositions');
@@ -49,11 +83,20 @@ const componentRequire = createRequire(filename);
 compiled.require = specifier => specifier.endsWith('.css') ? {}
   : specifier === '../../lib/question-structure' ? {classifyQuestionStructure} : componentRequire(specifier);
 compiled._compile(code, filename);
-const html = renderToStaticMarkup(React.createElement(compiled.exports.default, {question:publicQuestion(question)}));
-for (const item of items) {
-  const escaped = renderToStaticMarkup(React.createElement('span', null, item.text)).slice(6,-7);
-  assert.ok(html.includes(escaped), `Proposition absent from rendered HTML: ${item.label}`);
+let rendered = 0;
+for (const correction of correctionLog.corrections) {
+  const q = after.find(q => q.id === correction.id);
+  const props = classifyQuestionStructure(q).blocks.filter(b => b.type === 'assertions' || b.type === 'items').flatMap(b => b.items || []);
+  assert.equal(props.length, 4, `All four propositions must be parsed: ${q.id}`);
+  assert.equal(new Set(q.options.map(o => o.text)).size, 5);
+  for (const option of q.options) assert.ok(q.distractor_analysis?.[option.key], `Missing alternative rationale: ${q.id}/${option.key}`);
+  const html = renderToStaticMarkup(React.createElement(compiled.exports.default, {question:publicQuestion(q)}));
+  for (const item of props) {
+    const escaped = renderToStaticMarkup(React.createElement('span', null, item.text)).slice(6,-7);
+    assert.ok(html.includes(escaped), `Proposition absent from rendered HTML: ${q.id}/${item.label}`);
+    rendered++;
+  }
 }
 console.log(JSON.stringify({id:question.id, before_hash:previous.get(question.id), after_hash:hash(question),
-  changed_effective_ids:changed, preserved_occurrences:after.length-1, propositions_rendered:items.length,
+  changed_effective_ids:changed, preserved_occurrences:after.length-correctionLog.corrections.length, propositions_rendered:rendered,
   editorial_release_approval:false},null,2));

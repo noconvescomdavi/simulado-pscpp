@@ -1626,6 +1626,10 @@
     "lib/question-quality-policy.js",
     "lib/question-structure.js"
   ],
+  "scripts/audit-pscpp-runtime-triage.mjs": [
+    "lib/question-locator-audit.js",
+    "lib/question-structure.js"
+  ],
   "scripts/audit-question-quality-v2.mjs": [],
   "scripts/audit-question-semantics.mjs": [],
   "scripts/bibliographic-refine-pscpp-v6.mjs": [],
@@ -1755,6 +1759,10 @@
   "scripts/test-pianc121-cge-quarantine.mjs": [
     "lib/question-quality-policy.js",
     "lib/question-taxonomy.js"
+  ],
+  "scripts/test-pscpp-audit-anv0005.mjs": [
+    "lib/question-banks.js",
+    "lib/question-structure.js"
   ],
   "scripts/test-question-quality-policy.mjs": [
     "lib/question-quality-policy.js"

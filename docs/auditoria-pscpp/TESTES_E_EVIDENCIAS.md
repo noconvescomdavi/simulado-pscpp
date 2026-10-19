@@ -1,5 +1,22 @@
 # Testes e evidências — checkpoints e evolução
 
+## Lote 002 — três novas correções primárias
+
+Regressão de correções passou: hashes anteriores/posteriores dos quatro IDs
+de `CORRECOES_RUNTIME.json`, 16 proposições no HTML real, justificativas a–e,
+12.098 outros registros dos cadernos e todas as 1.984 questões PSCPP sem mudança.
+O teste foi ampliado com três deltas explícitos, não flexibilizado para aceitar
+mudanças arbitrárias. `check:pscpp-bank` passou. Cadernos, catálogo e flashcards
+regenerados. Teste geral ainda falha em ANV-0020. Triagem: 249 candidatos sem
+proposições e 77 por localizador; quatro correções e três falsos positivos desde
+o conjunto inicial de 256. Sete verificações bibliográficas parciais, zero
+aprovações integrais de release.
+
+Build iniciado no lote anterior: inconclusivo para a árvore atual porque os
+insumos foram modificados posteriormente. Seu eventual sucesso não certifica
+este lote. Novo build em checkpoint estável continua obrigatório; não foi
+usado um build anterior para aprovar dados posteriores.
+
 ## Correção primária de ANV-0005
 
 Teste `test-pscpp-audit-anv0005.mjs`: passou, quatro proposições no HTML real

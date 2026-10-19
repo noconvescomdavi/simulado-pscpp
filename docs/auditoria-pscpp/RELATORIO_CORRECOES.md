@@ -28,7 +28,10 @@ e estabilidade quando apenas um arquivo alheio muda.
 
 ## Questões
 
-Questões reescritas: 1 (ANV-0005); substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
+Questões reescritas: 4 (ANV-0005/0007/0016/0023); substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
+Lote 002: `REVISAO_ARTE_NAVAL_LOTE_002.md`, fonte primária arts. 8.2/8.14/8.19–8.20.
+Corrigidas as restaurações prevalentes, mantendo conceitos efetivamente servidos,
+IDs, opções e gabaritos. Dezesseis proposições renderizadas no teste de regressão.
 Conferência e justificativas completas em `REVISAO_ANV_0005.md`. Fonte primária
 volume 1, art. 8.18, p. impressa 543/PDF 541; apoio diagnóstico nos arts. 8.2 e
 8.7. Corrigido distrator ambíguo e preservadas quatro proposições na apresentação.
