@@ -1,0 +1,85 @@
+{
+  "repo": "noconvescomdavi/simulado-pscpp",
+  "commit": "012b562b0eb6f7fec78773b339e4a53b3643e791",
+  "date": "2026-10-19",
+  "method": "heurística de enunciados artificiais e padronização genérica com classes ALTA/MÉDIA; revisão humana pendente",
+  "base_banks": {
+    "files": 7,
+    "total_questions": 13658,
+    "flagged": 4076,
+    "unique_ids": 4076,
+    "high": 2809,
+    "medium": 1267,
+    "by_bank": [
+      [
+        "Manobrabilidade",
+        4089,
+        2888
+      ],
+      [
+        "Arte Naval",
+        2272,
+        156
+      ],
+      [
+        "Navegação em Águas Restritas",
+        2080,
+        86
+      ],
+      [
+        "Legislação e Regulamentação",
+        1398,
+        163
+      ],
+      [
+        "Meteorologia e Oceanografia",
+        1353,
+        558
+      ],
+      [
+        "Comunicações",
+        1235,
+        109
+      ],
+      [
+        "Conhecimentos Gerais",
+        1231,
+        116
+      ]
+    ]
+  },
+  "secondary": {
+    "restauracoes": {
+      "files": 28,
+      "items": 2623,
+      "flagged": 101
+    },
+    "extensoes": {
+      "files": 39,
+      "items": 2434,
+      "flagged": 0
+    },
+    "blocos_aprovados": {
+      "files": 20,
+      "items": 1400,
+      "flagged": 208
+    },
+    "gerados_e_imports": {
+      "files": 3,
+      "items": 546,
+      "flagged": 0
+    }
+  },
+  "raw_candidates": 4385,
+  "unique_candidate_ids": 4327,
+  "duplicate_mentions": 58,
+  "secondary_ids_absent_from_main": 251,
+  "example_id": "MAN-2537",
+  "limitations": [
+    "Triagem lexical-semântica por padrões explícitos, não auditoria bibliográfica individual",
+    "Restaurations e blocos podem não estar ativos na aplicação; runtime requer reconciliação de precedência e status",
+    "O mesmo ID em duas fontes pode representar versões distintas",
+    "Questões sinalizadas como MÉDIA requerem revisão manual para excluir falsos positivos",
+    "Relatórios não modificam o conteúdo das questões e não fazem merge"
+  ]
+}
