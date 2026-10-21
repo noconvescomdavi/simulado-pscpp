@@ -31,6 +31,12 @@ const pack = JSON.parse(fs.readFileSync(new URL("../data/question-restorations/n
 const banks = JSON.parse(fs.readFileSync(new URL("../data/questions/runtime-active-banks.json", import.meta.url))).banks;
 const digest = value => createHash("sha256").update(JSON.stringify(value)).digest("hex");
 const report = JSON.parse(fs.readFileSync(new URL("../reports/notebook-incomplete-stems.json", import.meta.url)));
+// Primary-source audit revisions supersede the frozen stem-only explanation.
+// Require the exact full effective hash and primary restoration, never a blanket exemption.
+const primaryCorrections = JSON.parse(fs.readFileSync(new URL("../docs/auditoria-pscpp/CORRECOES_RUNTIME.json", import.meta.url))).corrections;
+const primaryRestorations = JSON.parse(fs.readFileSync(new URL("../data/question-restorations/arte-naval.json", import.meta.url))).questions;
+const stable = value => Array.isArray(value) ? value.map(stable) : value && typeof value === "object"
+  ? Object.fromEntries(Object.keys(value).sort().map(key => [key, stable(value[key])])) : value;
 const byBank = {};
 const reasons = {};
 for (const edit of pack.edits) {
@@ -77,7 +83,16 @@ for (const edit of pack.edits) {
   } else {
     if (before) {
       assert.equal(digest(question.options), before.options_sha256, `Options changed: ${edit.id}`);
-      assert.equal(digest(question.explanation), before.explanation_sha256, `Explanation changed: ${edit.id}`);
+      const correction = edit.bank === "arte-naval" && primaryCorrections.find(row => row.id === edit.id);
+      if (correction) {
+        const primary = primaryRestorations.find(row => row.id === edit.id);
+        assert.ok(primary, `Primary restoration missing: ${edit.id}`);
+        assert.equal(digest(stable(question)), correction.after_hash, `Primary effective hash changed: ${edit.id}`);
+        assert.equal(question.question, primary.question, `Primary stem overwritten: ${edit.id}`);
+        assert.equal(question.explanation, primary.explanation, `Primary explanation overwritten: ${edit.id}`);
+      } else {
+        assert.equal(digest(question.explanation), before.explanation_sha256, `Explanation changed: ${edit.id}`);
+      }
     }
     if (edit.reasons.includes("inline_assertions_removed")) {
       const items = structure.blocks.flatMap(b => b.type === "assertions" ? b.items : []);

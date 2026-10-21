@@ -173,3 +173,41 @@ Projeto Vercel observado: `estibordo-pscpp`; baseline de produção
 `dpl_rRAELJq5jYiofCKZriDuVdLvaonf`, estado READY, mesmo SHA de main.
 Esse estado precede a auditoria e não comprova deploy desta branch.
 Não houve merge, release de auditoria ou smoke test autenticado.
+
+## Lote 007 — ANV-0043/0044/0045
+
+Base 155fafeb. Fonte normativa oficial consultada em 21/10/2026 e páginas de
+Arte Naval conferidas; relatório REVISAO_ARTE_NAVAL_LOTE_007.md.
+
+| Verificação executada | Resultado |
+|---|---|
+| generate:question-banks | Passou, 12.102 registros |
+| npm run build, insumos finais | Passou, compilação, lint/tipos, 101 páginas; hashes dos três arquivos fonte estáveis |
+| test-pscpp-audit-anv0005.mjs, após build | Passou, 14 deltas exatos; 56 proposições no HTML; texto/explicação iguais às fontes; 12.088 outros cadernos e 1.984 PSCPP preservados |
+| validate-runtime-question-banks.mjs | Passou, IDs únicos em 12.102 cadernos |
+| validate-pscpp-exam-selection.mjs | Passou, matriz fixa e diversidade disponível |
+| test-question-source-provenance.mjs, após patch tardio/build | Passou, precedência e fingerprints transitivos |
+| check:pscpp-bank | Passou, 1.984, incluindo 254 históricas |
+| audit-pscpp-runtime-inventory.mjs, revisão final | Passou; contagens 27.435 / 14.086 / 13.715 preservadas |
+| audit-pscpp-runtime-triage.mjs | 241 candidatos sem proposições e 77 de localizador |
+| test-notebook-complete-stems.mjs, após build | Falha esperada em ANV-0046, combinação sem proposições |
+| validate-editorial-runtime.mjs | Falha nos mesmos 77 localizadores de legislação |
+| validate-pscpp-editorial-evidence.mjs | Saída 2, 0/14.086 aprovações; merge proibido |
+| git diff --check | Passou |
+
+Foi necessário sincronizar os dois enunciados em notebook-complete-stems,
+pois o patch tardio substituía os textos recém-revisados. O teste geral antes
+falhou no hash da explicação de ANV-0044: snapshot legado era de correção só
+do enunciado. Para revisões primárias documentadas, agora exige hash integral
+exato do registro e igualdade com texto/explicação da fonte; demais itens
+mantêm a exigência do snapshot legado. A regressão dedicada ganhou a mesma
+verificação de identidade fonte/runtime em todos os 14 itens. Nenhuma falha
+editorial foi suprimida nem item excluído; a falha geral avançou para ANV-0046.
+
+Uma primeira consulta à regressão ocorreu antes do término da geração e leu
+o snapshot antigo: falhou por divergência de deltas. Foi descartada como
+validação e repetida após término, sem alteração de critérios. Um primeiro
+build passou antes de sincronizar o patch tardio; o build final foi executado
+novamente com esses insumos definitivos. Avisos preexistentes de autoprefixer
+e configuração npm preservados. Logs privados preservam todas as tentativas.
+Sem merge, deploy de auditoria ou alteração de dados de usuários.

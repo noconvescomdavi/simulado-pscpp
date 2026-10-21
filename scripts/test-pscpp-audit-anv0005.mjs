@@ -39,6 +39,12 @@ for (const correction of correctionLog.corrections) {
   const q = after.find(q => q.id === correction.id);
   assert.equal(previous.get(q.id), correction.before_hash, `Frozen before hash changed: ${q.id}`);
   assert.equal(hash(q), correction.after_hash, `Effective corrected hash changed: ${q.id}`);
+  const primaryFile = q.id === 'ANV-0005' || q.id === 'ANV-0020'
+    ? 'data/questions/arte-naval.json' : 'data/question-restorations/arte-naval.json';
+  const primary = JSON.parse(fs.readFileSync(primaryFile)).questions.find(row => row.id === q.id);
+  assert.ok(primary, `Missing reviewed source: ${q.id}`);
+  assert.equal(q.question, primary.question, `Reviewed stem overwritten downstream: ${q.id}`);
+  assert.equal(q.explanation, primary.explanation, `Reviewed explanation overwritten downstream: ${q.id}`);
   assert.equal(q.correct_answer, correction.key);
   assert.equal(q.source.printed_page, correction.printed_page);
   assert.equal(q.source.pdf_page, correction.pdf_page);

@@ -30,3 +30,7 @@ Oito correções primárias acumuladas e onze conferências parciais. Triagem de
 Lote 006: 11 correções primárias e 14 conferências parciais acumuladas;
 0/14.086 aprovações finais. Candidatos sem proposições 245 → 242;
 localizadores 77 → 77. Contagens físicas/efetivas/IDs e matriz fixa preservadas.
+
+Lote 007: 14 correções primárias, 17 conferências parciais; 0/14.086 aprovações
+finais. Candidatos de proposições 242 → 241; localizadores 77. ANV-0044/0045
+já tinham proposições e não são contadas como correções dessa triagem.
