@@ -55,3 +55,7 @@ cinco opções e resposta E. Quatro proposições visíveis e alternativas
 justificadas; revisão e sobreposições em REVISAO_ARTE_NAVAL_LOTE_004.md.
 Acumulado: sete correções primárias, dez conferências parciais, zero
 aprovações finais. Nenhuma produção alterada.
+
+## Lote 005 — ANV-0037
+
+Restauração prevalente corrigida com arts. 12.19/12.21, pp. 819–820/PDF 180–181. Quatro proposições preservadas no HTML; vetor V/F/F/V, resposta B única e cinco justificativas. Oitava correção primária, décima primeira conferência parcial, zero aprovações finais. Sem merge. Detalhes em REVISAO_ARTE_NAVAL_LOTE_005.md.

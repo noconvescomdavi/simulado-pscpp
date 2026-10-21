@@ -22,3 +22,7 @@ legítimas: investigar precedência, sem rotular todos como defeitos.
 Os denominadores completos de conteúdo, idioma, dificuldade, letra e formato
 ainda exigem revisão. Não há métrica de qualidade aprovada por amostragem.
 `baseline/` conserva o inventário efetivo anterior à correção de carregamento.
+
+## Lote 005
+
+Oito correções primárias acumuladas e onze conferências parciais. Triagem de proposições 246 → 245; localizadores 77 → 77. Mesmos 12.102 cadernos e 1.984 PSCPP, 14.086 ocorrências e 13.715 IDs únicos. Regressão: oito deltas exatos, 32 proposições renderizadas, outros 12.094 cadernos e todas as PSCPP preservados. Zero aprovações finais; benchmark descritivo e matriz obrigatória inalterados.

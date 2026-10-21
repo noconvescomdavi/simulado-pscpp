@@ -2350,9 +2350,9 @@
       "module": "Atracação e desatracação",
       "topic_code": "old-104",
       "topic": "plano de atracação",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “plano de atracação”, identifique as verdadeiras e assinale a opção correta:\nI) A bibliografia atribui a esse item a seguinte característica: deve considerar bordo, maré, vento, profundidade, posição final e meios disponíveis.\nII) “plano de atracação” designa espia que parte da proa e é passada para ré no cais.\nIII) A bibliografia atribui a esse item a seguinte característica: opõe-se principalmente ao movimento do navio para ré.\nIV) “plano de atracação” designa sequência antecipada de aproximação, emprego de máquinas, rebocadores e espias.",
+      "question": "Na preparação da atracação, a análise do cais e o preparo das estações devem anteceder a aproximação. Segundo Arte Naval, volume 2, examine as afirmações e escolha o conjunto completo das corretas:\nI. O planejamento deve avaliar profundidade e condições do cais, variação de maré, vento, defensas e pontos disponíveis para amarração.\nII. A verificação da corrente e da variação de maré deve ficar para depois de iniciada a aproximação, quando o efeito desses fatores se torna observável.\nIII. Na preparação para atracar, deve ficar pronto para largar o ferro do bordo de atracação, em vez do ferro do bordo oposto.\nIV. Antes da aproximação, devem ser comunicados às estações de proa, popa e meio-navio o local e o bordo de atracação.",
       "options": [
         {
           "key": "A",
@@ -2376,12 +2376,16 @@
         }
       ],
       "correct_answer": "B",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “plano de atracação”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "I e IV são verdadeiras. O art. 12.19 inclui a análise das condições do cais, maré, meteorologia, defensas e pontos de amarração no planejamento antecipado. O art. 12.21 determina providências anteriores à aproximação, incluindo divulgar local e bordo às estações (2), deixar pronto o ferro do bordo oposto ao de atracação (3) e verificar corrente e variação de maré (9). II adia indevidamente uma verificação prévia; III troca o bordo do ferro a preparar. Portanto, apenas I e IV são verdadeiras: alternativa B.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção C, itens 12.19–12.23"
+        "locator": "cap. 12, seção C, arts. 12.19 e 12.21 (2), (3) e (9), pp. 819–820",
+        "printed_page": 819,
+        "pdf_page": 180,
+        "drive_file_id": "1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Atracação e desatracação",
@@ -2421,6 +2425,15 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "pscpp_format": "assertion_combination",
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Incorreta: I é verdadeira, mas II adia para a aproximação uma verificação prevista na preparação; falta IV.",
+        "B": "Correta: reúne todas e somente as verdadeiras, I e IV, relativas ao planejamento antecipado e à informação das estações.",
+        "C": "Incorreta: II adia a verificação de corrente e maré, e III troca o bordo do ferro a preparar; faltam I e IV.",
+        "D": "Incorreta: IV é verdadeira, mas II adia a verificação de corrente e maré; falta I.",
+        "E": "Incorreta: IV é verdadeira, mas III indica o ferro do bordo de atracação, quando a obra determina o do bordo oposto; falta I."
       }
     },
     {

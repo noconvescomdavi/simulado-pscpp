@@ -1,5 +1,27 @@
 # Testes e evidências — checkpoints e evolução
 
+## Lote 005 — ANV-0037
+
+`npm run build`: primeira tentativa compilou e gerou 101 páginas, mas saiu 1
+por ENOTEMPTY ao remover `.next/export`. Não foi declarada aprovada.
+Pasta gerada preservada fora do repo; nova execução com `.next` limpa passou
+(exit 0), incluindo geração, compilação, lint/tipos e páginas estáticas.
+Nenhuma mudança de insumos entre tentativas; hashes em CHECKPOINT.json.
+Avisos preexistentes de npm/autoprefixer preservados.
+
+`test-pscpp-audit-anv0005.mjs` passou: oito deltas exatos desde baseline,
+32 proposições no HTML real, respostas únicas recompostas pelos vetores e
+justificativas A–E. Outros 12.094 cadernos e todas as 1.984 PSCPP preservados.
+Unicidade de 12.102 cadernos, matriz fixa, precedência/fingerprints e
+`check:pscpp-bank` passaram. Regressão repetida após o build também passou.
+Inventários e triagem regenerados: 245 candidatos sem proposições e 77 por
+localizador. Teste geral ainda falha em ANV-0038; teste de localizadores falha
+com os mesmos 77 achados. Gate de evidência saiu 2, 0/14.086 aprovados.
+Nenhum teste relaxado; nenhuma aprovação final, merge ou deploy.
+Oitava correção primária e décima primeira conferência parcial, documentadas
+em REVISAO_ARTE_NAVAL_LOTE_005.md.
+
+
 ## Lote 004 — ANV-0025
 
 `npm run build`: passou (exit 0), com geração, compilação, lint/tipos e
