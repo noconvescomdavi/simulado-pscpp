@@ -2442,9 +2442,9 @@
       "module": "Evoluções",
       "topic_code": "old-135",
       "topic": "interação no cruzamento",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “interação no cruzamento”, identifique as verdadeiras e assinale a opção correta:\nI) “interação no cruzamento” designa forças variáveis entre navios que passam próximos em canal.\nII) A bibliografia atribui a esse item a seguinte característica: exige velocidade reduzida, separação disponível e antecipação das fases de atração e repulsão.\nIII) A bibliografia atribui a esse item a seguinte característica: a reação inicial inclui alarme, lançamento de meios de flutuação e comunicação às estações.\nIV) “interação no cruzamento” designa diferença entre a orientação longitudinal do navio e a tangente à trajetória.",
+      "question": "Dois navios se cruzam num canal, em rumos paralelos e a pequena distância um do outro. Segundo Arte Naval, volume 2, examine as afirmações sobre as interações hidrodinâmicas dessa passagem e escolha o conjunto completo das corretas:\nI. Convém que ambos mantenham velocidade reduzida e que se tenha atenção ao leme para não agravar as tendências provocadas pela interação.\nII. Na aproximação das bochechas, as ondas formadas nas proas tendem a provocar repulsão entre elas.\nIII. Na passagem pelo través, as correntes da popa de um navio e as ondas da proa do outro se reforçam, afastando os navios lateralmente.\nIV. Quando as alhetas ficam na mesma altura, os filetes líquidos das popas e a sucção dos hélices tendem a repelir mutuamente as duas popas.",
       "options": [
         {
           "key": "A",
@@ -2468,12 +2468,16 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “interação no cruzamento”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "I e II são verdadeiras. No art. 12.61, Fonseca recomenda velocidade reduzida e atenção ao leme para não aumentar as tendências da interação. Na aproximação, as ondas de proa produzem repulsão das bochechas. Na passagem pelo través, a obra descreve equilíbrio entre as correntes de popa de um navio e as ondas de proa do outro, mantendo-os paralelos; III está incorreta. Com as alhetas na mesma altura, os filetes líquidos e a sucção dos hélices tendem a atrair as popas, tornando IV falsa. Portanto, apenas I e II são verdadeiras: alternativa C.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção E, item 12.61"
+        "locator": "cap. 12, seção E, art. 12.61, pp. 887–888, fig. 12-36",
+        "printed_page": 887,
+        "pdf_page": 248,
+        "drive_file_id": "1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Evoluções",
@@ -2493,7 +2497,7 @@
           "title": "Manobra do Navio",
           "label": "Capítulo 12 - Manobra do Navio"
         },
-        "section": "cap. 12, seção E, item 12.61",
+        "section": "cap. 12, seção E, art. 12.61, pp. 887–888, fig. 12-36",
         "module": "Evoluções",
         "topic": {
           "id": "old-135",
@@ -2513,6 +2517,15 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "pscpp_format": "assertion_combination",
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Incorreta: II é verdadeira, mas IV troca a atração final das popas por repulsão; falta I.",
+        "B": "Incorreta: II é verdadeira, mas III troca o equilíbrio na passagem pelo través por reforço e afastamento; falta I.",
+        "C": "Correta: reúne todas e somente as verdadeiras, I e II, sobre velocidade, cuidado com o leme e repulsão das bochechas.",
+        "D": "Incorreta: I é verdadeira, mas III atribui afastamento à fase em que a obra descreve equilíbrio; falta II.",
+        "E": "Incorreta: III e IV são falsas; faltam I e II. O equilíbrio na passagem pelo través e a atração final das popas foram invertidos."
       }
     },
     {
@@ -2521,9 +2534,9 @@
       "module": "Geometria do navio",
       "topic_code": "anv1-2.23",
       "topic": "centro de flutuação",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “centro de flutuação”, identifique as verdadeiras e assinale a opção correta:\nI) “centro de flutuação” designa maior largura do casco medida entre as faces internas do chapeamento do costado.\nII) A bibliografia atribui a esse item a seguinte característica: constitui referência importante para alterações de trim causadas por movimentação de pesos.\nIII) “centro de flutuação” designa centro de gravidade da área do plano de flutuação.\nIV) A bibliografia atribui a esse item a seguinte característica: sua posição varia quando pesos são embarcados, desembarcados ou movimentados.",
+      "question": "Para interpretar alterações de calado e compasso, é necessário distinguir o centro de flutuação dos demais centros geométricos do navio. Considerando as definições e o tratamento de variações de peso de Arte Naval, volume 1, examine as afirmações e escolha o conjunto completo das corretas:\nI. O centro de flutuação é o centro de gravidade do volume de água deslocada pelo navio.\nII. No tratamento de embarque de peso com seu centro de gravidade na vertical do centro de flutuação, a obra considera variações iguais dos calados a vante e a ré, sem alteração do compasso.\nIII. Para uma determinada flutuação, o centro de flutuação corresponde ao centro de gravidade da área do plano de flutuação.\nIV. A posição longitudinal do centro de flutuação coincide necessariamente com a seção a meio-navio, qualquer que seja a forma da área de flutuação.",
       "options": [
         {
           "key": "A",
@@ -2547,12 +2560,16 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “centro de flutuação”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "II e III são verdadeiras. O art. 2.23 define o CF a partir da área de flutuação, enquanto o centro do volume de água deslocada é o centro de carena (art. 2.22); I confunde esses centros. O art. 2.88 trata o embarque de peso na vertical do CF como imersão paralela, com a mesma variação dos calados AV e AR e sem mudança de compasso, sustentando II. A posição do CF deve ser obtida das curvas hidrostáticas; o mesmo art. 2.88 dá, para navios de guerra em flutuação normal, posição aproximada por ante a ré do meio do comprimento entre perpendiculares. Logo, a coincidência obrigatória com a seção a meio-navio em IV é falsa. Apenas II e III são verdadeiras: alternativa D.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 1",
         "edition": "8. ed., 2019",
-        "locator": "cap. 2, item 2.23"
+        "locator": "cap. 2, arts. 2.22–2.23 e 2.88, pp. 82–83 e 122",
+        "printed_page": 83,
+        "pdf_page": 83,
+        "drive_file_id": "1LjlDejVyooU3QLJzF0COvAEnOgMDNC9N",
+        "sha256": "792beebaea10aaff4b65288c0cfc3dd76c507f779297ee42583d078a7ec1dd20"
       },
       "tags": [
         "Geometria do navio",
@@ -2572,7 +2589,7 @@
           "title": "Geometria do Navio",
           "label": "Capítulo 2 - Geometria do Navio"
         },
-        "section": "cap. 2, item 2.23",
+        "section": "cap. 2, arts. 2.22–2.23 e 2.88, pp. 82–83 e 122",
         "module": "Geometria do navio",
         "topic": {
           "id": "anv1-2.23",
@@ -2592,6 +2609,15 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "pscpp_format": "assertion_combination",
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Incorreta: II é verdadeira, mas I define o centro de carena, não o centro de flutuação; falta III.",
+        "B": "Incorreta: III é verdadeira, mas IV impõe coincidência com meio-navio que não consta da definição e é contrariada pelo exemplo do art. 2.88; falta II.",
+        "C": "Incorreta: III é verdadeira, mas I usa o volume deslocado em lugar da área de flutuação; falta II.",
+        "D": "Correta: reúne todas e somente as verdadeiras, II e III, sobre embarque na vertical do CF e sua definição pela área de flutuação.",
+        "E": "Incorreta: I e IV são falsas; faltam II e III. Confundem-se o centro de carena com o CF e a posição deste com uma seção fixa do casco."
       }
     },
     {
@@ -2679,9 +2705,9 @@
       "module": "Poleame",
       "topic_code": "old-015",
       "topic": "bucha com redutor de atrito",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “bucha com redutor de atrito”, identifique as verdadeiras e assinale a opção correta:\nI) “bucha com redutor de atrito” designa peça de madeira dura com três olhos e goivado externo.\nII) “bucha com redutor de atrito” designa bucha com pequenos cilindros resistentes entre ela e o perno.\nIII) A bibliografia atribui a esse item a seguinte característica: permite que bucha e cilindros rolem em superfícies distintas, diminuindo o atrito.\nIV) A bibliografia atribui a esse item a seguinte característica: possui olhos e goivado, mas não proporciona redução do esforço.",
+      "question": "Em um aparelho de laborar, a roldana pode empregar uma bucha com redutor de atrito. Segundo a descrição desse tipo em Arte Naval, volume 2, examine as afirmações sobre sua construção e funcionamento e escolha o conjunto completo das corretas:\nI. Os pequenos cilindros redutores ficam entre a face externa da bucha e o aro da roldana.\nII. O furo central da bucha é guarnecido com pequenos cilindros de bronze muito duro.\nIII. Durante o movimento rotativo, a bucha gira em torno dos cilindros, e estes giram em torno do perno, reduzindo o atrito.\nIV. Os pequenos cilindros permanecem solidários ao perno durante o giro, funcionando como espaçadores imóveis.",
       "options": [
         {
           "key": "A",
@@ -2705,12 +2731,16 @@
         }
       ],
       "correct_answer": "A",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “bucha com redutor de atrito”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "II e III são verdadeiras. No art. 9.5.1.b, os pequenos cilindros de bronze muito duro guarnecem o furo central da bucha, entre ela e o perno. A bucha gira em torno dos cilindros e estes em torno do perno, reduzindo o atrito. I desloca os cilindros para fora da bucha; IV elimina o movimento dos cilindros descrito na obra. Portanto, apenas II e III são verdadeiras: alternativa A.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 9, seção A, item 9.5.1.b"
+        "locator": "cap. 9, seção A, art. 9.5.1.b, p. 663, fig. 9-14",
+        "printed_page": 663,
+        "pdf_page": 24,
+        "drive_file_id": "1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Poleame",
@@ -2730,7 +2760,7 @@
           "title": "Poleame, Aparelhos de Laborar e Acessórios",
           "label": "Capítulo 9 - Poleame, Aparelhos de Laborar e Acessórios"
         },
-        "section": "cap. 9, seção A, item 9.5.1.b",
+        "section": "cap. 9, seção A, art. 9.5.1.b, p. 663, fig. 9-14",
         "module": "Poleame",
         "topic": {
           "id": "old-015",
@@ -2750,6 +2780,15 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "pscpp_format": "assertion_combination",
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Correta: reúne todas e somente as verdadeiras, II e III, sobre os cilindros no furo central e os movimentos relativos que reduzem o atrito.",
+        "B": "Incorreta: III é verdadeira, mas I coloca os cilindros na face externa da bucha, em vez de no furo central; falta II.",
+        "C": "Incorreta: III é verdadeira, mas IV torna os cilindros imóveis, contrariando seu giro em torno do perno; falta II.",
+        "D": "Incorreta: I e IV são falsas; faltam II e III. A localização e o funcionamento dos cilindros são alterados.",
+        "E": "Incorreta: II é verdadeira, mas I desloca os cilindros para fora da bucha; falta III."
       }
     },
     {

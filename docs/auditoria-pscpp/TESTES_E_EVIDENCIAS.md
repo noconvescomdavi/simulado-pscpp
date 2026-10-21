@@ -1,5 +1,24 @@
 # Testes e evidências — checkpoints e evolução
 
+## Lote 006 — ANV-0038/0039/0041
+
+`npm run build` passou (exit 0), incluindo regeneração dos bancos, catálogo e
+flashcards, compilação, lint/tipos e 101 páginas estáticas. Insumos de questões
+estáveis durante o build; SHA-256 em CHECKPOINT.json. Avisos preexistentes
+de npm/autoprefixer preservados. Não é validação de produção.
+
+`test-pscpp-audit-anv0005.mjs` passou: onze deltas exatos contra baseline,
+44 proposições no HTML real, vetores recompostos com resposta única e
+justificativas A–E. 12.091 outros cadernos e todas as 1.984 PSCPP preservados.
+Unicidade de 12.102 cadernos, matriz fixa e precedência/fingerprints passaram.
+Inventários e triagem regenerados: 242 candidatos sem proposições e 77 por
+localizador. Teste geral de enunciados saiu 1, agora em ANV-0043. Localizadores
+saíram 1 com os mesmos 77 achados; gate de evidência saiu 2, 0/14.086 aprovados.
+Nenhum teste ou normalizador foi relaxado. Onze correções e quatorze
+conferências parciais; zero aprovações finais, sem merge ou deploy.
+Regressão repetida após o build passou; `check:pscpp-bank` também passou.
+Detalhes primários, figuras e sobreposições em REVISAO_ARTE_NAVAL_LOTE_006.md.
+
 ## Lote 005 — ANV-0037
 
 `npm run build`: primeira tentativa compilou e gerou 101 páginas, mas saiu 1

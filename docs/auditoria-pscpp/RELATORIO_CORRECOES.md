@@ -28,7 +28,7 @@ e estabilidade quando apenas um arquivo alheio muda.
 
 ## Questões
 
-Questões reescritas: 7 (ANV-0005/0007/0016/0020/0021/0023/0025); substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
+Questões reescritas acumuladas: 11 (ANV-0005/0007/0016/0020/0021/0023/0025/0037/0038/0039/0041); substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
 Lote 002: `REVISAO_ARTE_NAVAL_LOTE_002.md`, fonte primária arts. 8.2/8.14/8.19–8.20.
 Corrigidas as restaurações prevalentes, mantendo conceitos efetivamente servidos,
 IDs, opções e gabaritos. Dezesseis proposições renderizadas no teste de regressão.
@@ -59,3 +59,8 @@ aprovações finais. Nenhuma produção alterada.
 ## Lote 005 — ANV-0037
 
 Restauração prevalente corrigida com arts. 12.19/12.21, pp. 819–820/PDF 180–181. Quatro proposições preservadas no HTML; vetor V/F/F/V, resposta B única e cinco justificativas. Oitava correção primária, décima primeira conferência parcial, zero aprovações finais. Sem merge. Detalhes em REVISAO_ARTE_NAVAL_LOTE_005.md.
+
+Lote 006: `REVISAO_ARTE_NAVAL_LOTE_006.md`. Corrigidas ANV-0038/0039/0041
+nas restaurações prevalentes, com fontes primárias e figuras conferidas.
+Acumulado: onze correções, quatorze conferências parciais, zero aprovações finais.
+Triagem: 242 candidatos sem proposições e 77 por localizador.

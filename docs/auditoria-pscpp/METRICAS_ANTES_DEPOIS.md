@@ -26,3 +26,7 @@ ainda exigem revisão. Não há métrica de qualidade aprovada por amostragem.
 ## Lote 005
 
 Oito correções primárias acumuladas e onze conferências parciais. Triagem de proposições 246 → 245; localizadores 77 → 77. Mesmos 12.102 cadernos e 1.984 PSCPP, 14.086 ocorrências e 13.715 IDs únicos. Regressão: oito deltas exatos, 32 proposições renderizadas, outros 12.094 cadernos e todas as PSCPP preservados. Zero aprovações finais; benchmark descritivo e matriz obrigatória inalterados.
+
+Lote 006: 11 correções primárias e 14 conferências parciais acumuladas;
+0/14.086 aprovações finais. Candidatos sem proposições 245 → 242;
+localizadores 77 → 77. Contagens físicas/efetivas/IDs e matriz fixa preservadas.
