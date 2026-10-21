@@ -28,7 +28,7 @@ e estabilidade quando apenas um arquivo alheio muda.
 
 ## Questões
 
-Questões reescritas: 4 (ANV-0005/0007/0016/0023); substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
+Questões reescritas: 6 (ANV-0005/0007/0016/0020/0021/0023); substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
 Lote 002: `REVISAO_ARTE_NAVAL_LOTE_002.md`, fonte primária arts. 8.2/8.14/8.19–8.20.
 Corrigidas as restaurações prevalentes, mantendo conceitos efetivamente servidos,
 IDs, opções e gabaritos. Dezesseis proposições renderizadas no teste de regressão.
@@ -39,3 +39,10 @@ ID, opções e gabarito preservados. Não há aprovação de release: rechecagem
 alinhamento final ao programa/edital ainda pendentes.
 Não atribuir aprovação aos registros apenas por preservação ou triagem.
 As pendências editoriais são mantidas nos relatórios e nos gates.
+
+Lote 003: `REVISAO_ARTE_NAVAL_LOTE_003.md`. Duas correções adicionais,
+art. 12.32 v.2 (mudar bordo) e art. 2.27 v.1 (reserva de flutuabilidade).
+ANV-0020 vem diretamente do principal; ANV-0021 vem da restauração prevalente.
+Corrigida ambiguidade técnica da antiga IV de ANV-0021, além da perda das
+proposições. Cinco alternativas e gabaritos E/A preservados. Total de nove
+conferências parciais; zero aprovações finais. Nenhum original apagado.

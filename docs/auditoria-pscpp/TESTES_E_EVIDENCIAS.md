@@ -1,5 +1,23 @@
 # Testes e evidências — checkpoints e evolução
 
+## Lote 003 — duas novas correções e build completo
+
+`npm run build`: passou (exit 0), incluindo geração PSCPP/cadernos/catálogo/
+flashcards, compilação, lint/tipos e páginas estáticas. Insumos de questões
+permaneceram estáveis durante o build; hashes em CHECKPOINT.json. Avisos
+preexistentes de autoprefixer e configuração npm não foram ocultados. Isso não
+valida revisão editorial de 100% do banco nem fluxo autenticado de produção.
+
+`test-pscpp-audit-anv0005.mjs`: passou, seis deltas exatos desde baseline
+309ec933, 24 proposições no HTML real, justificativas A–E e recomposição de
+conjuntos únicos. 12.096 outros cadernos e todas as 1.984 questões PSCPP
+preservados. Teste geral de enunciados ainda falha, agora em ANV-0025.
+Matriz fixa, precedência/fingerprints de fontes e `check:pscpp-bank` passaram.
+Inventário e triagem regenerados: 247 candidatos sem proposições e 77 por
+localizador. Gate de evidência permanece 0/14.086; teste editorial de
+localizadores permanece falho com 77 achados. Nenhum teste foi relaxado.
+Detalhes primários e sobreposições semânticas em REVISAO_ARTE_NAVAL_LOTE_003.md.
+
 ## Lote 002 — três novas correções primárias
 
 Regressão de correções passou: hashes anteriores/posteriores dos quatro IDs

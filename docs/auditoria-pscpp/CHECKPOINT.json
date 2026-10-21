@@ -1,7 +1,7 @@
 {
   "checkpoint_version": 1,
   "created_at_utc": "2026-10-19T02:22:35.805683+00:00",
-  "updated_at_utc": "2026-10-19T14:05:19.151Z",
+  "updated_at_utc": "2026-10-21T20:05:51.553900+00:00",
   "task_status": "in_progress_not_approved",
   "branch": "feature/auditoria-integral-padrao-banca-pscpp",
   "source_baseline_sha": "012b562b0eb6f7fec78773b339e4a53b3643e791",
@@ -11,9 +11,16 @@
   "runtime_occurrences": 14086,
   "runtime_unique_ids": 13715,
   "individual_editorial_approved_occurrences": 0,
-  "primary_source_partial_checks": 7,
-  "individually_corrected_questions": 4,
-  "corrected_question_ids": ["ANV-0005", "ANV-0007", "ANV-0016", "ANV-0023"],
+  "primary_source_partial_checks": 9,
+  "individually_corrected_questions": 6,
+  "corrected_question_ids": [
+    "ANV-0005",
+    "ANV-0007",
+    "ANV-0016",
+    "ANV-0020",
+    "ANV-0021",
+    "ANV-0023"
+  ],
   "primary_content_correction_is_release_approval": false,
   "historical_extraction_count": 264,
   "historical_full_editorial_read_completed": true,
@@ -22,23 +29,29 @@
   "historical_annulled_notices_without_body": 9,
   "historical_valid_keys_observed_and_reconciled": 254,
   "historical_technical_answers_revalidated_against_current_bibliography": false,
-  "historical_manual_format_counts": {"A":149,"B":55,"C":21,"D":22,"E":7},
+  "historical_manual_format_counts": {
+    "A": 149,
+    "B": 55,
+    "C": 21,
+    "D": 22,
+    "E": 7
+  },
   "merge_permitted": false,
   "gates": {
     "1": "partial: local JSON pipelines reconciled; full consumers/offline and production checks pending",
     "2": "failed: 0 approved individual evidence records",
-    "3": "pending: 7 partial primary checks, 4 corrected questions with per-option rationales and visual source confirmation; official annex links confirmed but PDFs unavailable for binary comparison; independent recheck, final program/edital alignment and remaining questions outstanding",
+    "3": "pending: 9 partial primary checks and 6 corrected questions with per-option rationales and visual source confirmation; independent editorial recheck, final program/edital alignment and remaining bank outstanding",
     "4": "partial: 264 records individually checked, 255 available texts read, 254 observed keys reconciled; subject/points/cognitive/language matrices recorded; active-bank calibration and format targets not yet approved",
     "5": "partial: 102 runtime duplicate IDs removed; semantic duplicate analysis pending",
-    "6": "failed: editorial-runtime remains 77 candidates; notebook-complete-stems now fails ANV-0020; correction regression covers 4 exact hash deltas and 16 rendered propositions; previous build attempt is inconclusive for current tree because inputs changed; fresh build required in stable checkpoint",
+    "6": "failed: editorial-runtime has 77 locator candidates; notebook-complete-stems fails ANV-0025; dedicated regression passes 6 exact hash deltas and 24 rendered propositions; fresh full build passed on unchanged source inputs of lot 003, not editorial release approval",
     "7": "pending: SQL schema inspected read-only; no migrations or production mutations",
     "8": "pending: no merge; baseline deployment READY is not audit release"
   },
   "known_findings": {
     "locator_candidates": 77,
-    "combination_without_parsed_assertions_candidates": 249,
+    "combination_without_parsed_assertions_candidates": 247,
     "previous_combination_candidates": 256,
-    "combination_candidates_corrected": 4,
+    "combination_candidates_corrected": 6,
     "combination_false_positives_resolved_without_content_change": 3,
     "noncanonical_subject_records": 20,
     "selection_excluded_records_retained": 11
@@ -54,11 +67,27 @@
   "next_actions": [
     "Historical read complete for all available texts; use BENCHMARK_REVISAO_INTEGRAL.md and manual TSV rather than superseded structural counts. Do not equate historical key observation with current technical correctness.",
     "Verify official Annexes 2-A/2-B provenance, revisions and edital; map complete work/chapter/item trees.",
-    "Review every active effective version, starting with TRIAGEM_RUNTIME.json. Four primary corrections and seven partial source checks are documented, not finally approved. Complete independent recheck/program alignment before accepting any evidence ledger row.",
-    "Fix 77 locator candidates and 249 missing-proposition candidates only after primary verification. Next failing item ANV-0020 is changing berthing side (Arte Naval v2, 12.32); trace prevailing restoration instead of assuming raw source wins.",
+    "Review every active effective version. Six primary corrections and nine partial source checks are documented in three reports, not finally approved; complete independent editorial recheck/program alignment and global semantic review.",
+    "Fix 77 locator and 247 missing-proposition candidates only with primary support. Next failing ID ANV-0025: inspect prevailing restoration and all later transformations. Lot 003 corrected ANV-0020 in main source (no restoration) and ANV-0021 in prevailing restoration; refer to REVISAO_ARTE_NAVAL_LOTE_003.md.",
     "Inspect 20 PSCPP records classified as ii — arte naval and normalize taxonomy with regression tests.",
     "Reconcile offline/production consumers and all hashes, complete every gate, then sync main, revalidate, review PR, merge and verify production."
   ],
   "resume_command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/audit-pscpp-runtime-inventory.mjs",
-  "resume_instruction": "Continue this branch from CHECKPOINT.json, preserving baseline/. Do not treat pending rows as approved. Reobtain the attached dossier if needed; its hashes are in INTEGRIDADE_DOSSIE.json. Follow the original Prompt-Mestre. Do not merge while any gate remains pending or failed."
+  "resume_instruction": "Continue this branch from CHECKPOINT.json, preserving baseline/. Do not treat pending rows as approved. Reobtain the attached dossier if needed; its hashes are in INTEGRIDADE_DOSSIE.json. Follow the original Prompt-Mestre. Do not merge while any gate remains pending or failed.",
+  "source_checkpoint_sha": "f11c1e49fbf24895ad8ac547edfd3e89fb7fd101",
+  "last_completed_batch": "003: ANV-0020 and ANV-0021; no production mutation",
+  "last_build": {
+    "command": "npm run build",
+    "result": "passed",
+    "source_checkpoint_sha": "f11c1e49fbf24895ad8ac547edfd3e89fb7fd101",
+    "source_changes": [
+      "data/questions/arte-naval.json:ANV-0020",
+      "data/question-restorations/arte-naval.json:ANV-0021"
+    ],
+    "source_sha256": {
+      "data/questions/arte-naval.json": "2742387495bdfd713a8651b4ab6815999bae8d49cca3bbaf1de8d0cef0b53d0c",
+      "data/question-restorations/arte-naval.json": "71172934731b198e79ceb36f88817d3d92c7bea4c95c338917fe7e2be1cb6606"
+    },
+    "release_approval": false
+  }
 }

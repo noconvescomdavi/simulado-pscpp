@@ -1057,9 +1057,9 @@
       "module": "Geometria do navio",
       "topic_code": "anv1-2.27",
       "topic": "reserva de flutuabilidade",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “reserva de flutuabilidade”, identifique as verdadeiras e assinale a opção correta:\nI) A bibliografia atribui a esse item a seguinte característica: normalmente expressa como percentagem do volume deslocado e depende da borda-livre.\nII) “reserva de flutuabilidade” designa volume da parte estanque do navio situada acima da superfície da água.\nIII) “reserva de flutuabilidade” designa força vertical resultante da pressão da água sobre a superfície imersa do casco.\nIV) A bibliografia atribui a esse item a seguinte característica: sua marcação limita o calado e contribui para preservar a reserva de flutuabilidade.",
+      "question": "Ao avaliar a reserva de flutuabilidade de um navio, considere os conceitos de Arte Naval, volume 1. Analise as afirmações e escolha o conjunto completo das corretas:\nI. Essa reserva é expressa em percentagem do volume deslocado e é função da borda-livre.\nII. Corresponde ao volume da parte do navio acima da superfície da água que pode ser tornada estanque.\nIII. Corresponde ao volume da parte do navio já imersa, em vez de considerar a parte acima da superfície da água.\nIV. Quanto menor essa reserva, maior a capacidade do navio de suportar um acidente no mar.",
       "options": [
         {
           "key": "A",
@@ -1083,12 +1083,16 @@
         }
       ],
       "correct_answer": "A",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “reserva de flutuabilidade”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "I e II estão corretas. No art. 2.27, a reserva de flutuabilidade é o volume acima da superfície da água que pode ser tornado estanque; exprime-se em percentagem do volume deslocado e é função da borda-livre. III confunde esse volume de reserva com a parte já imersa. IV inverte a relação apresentada na obra: uma reserva menor reduz a capacidade de suportar um acidente no mar. Superestruturas que possam ser estanques podem integrar essa reserva, conforme o navio; não se restringe a definição ao volume já submerso.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 1",
         "edition": "8. ed., 2019",
-        "locator": "cap. 2, item 2.27"
+        "locator": "cap. 2, art. 2.27, p. 86; fig. 2-8, p. 83",
+        "printed_page": 86,
+        "pdf_page": 86,
+        "drive_file_id": "1LjlDejVyooU3QLJzF0COvAEnOgMDNC9N",
+        "sha256": "792beebaea10aaff4b65288c0cfc3dd76c507f779297ee42583d078a7ec1dd20"
       },
       "tags": [
         "Geometria do navio",
@@ -1128,6 +1132,15 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "pscpp_format": "assertion_combination",
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Correta: reúne todas e somente as verdadeiras, I e II.",
+        "B": "Incorreta: III troca a reserva acima da água pelo volume já imerso e IV inverte sua importância em avaria; faltam I e II.",
+        "C": "Incorreta: II é verdadeira, mas III confunde a localização do volume; também falta I.",
+        "D": "Incorreta: II é verdadeira, mas IV inverte o efeito da redução da reserva; também falta I.",
+        "E": "Incorreta: I é verdadeira, mas III substitui o volume de reserva pelo volume imerso; também falta II."
       }
     },
     {
