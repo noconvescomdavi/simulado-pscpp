@@ -9,6 +9,7 @@
     "check:repo": "node scripts/check-repo-hygiene.mjs",
     "validate:questions": "node scripts/validate-question-banks.mjs",
     "test:question-structure": "node scripts/test-question-structure.mjs",
+    "test:question-repeat-policy": "node --test scripts/test-question-repeat-policy.mjs",
     "test:complete-question-stems": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-complete-question-stems.mjs",
     "test:notebook-context-stems": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-notebook-context-stems.mjs",
     "test:notebook-complete-stems": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-notebook-complete-stems.mjs",
