@@ -1,5 +1,20 @@
 # Testes e evidências — checkpoints e evolução
 
+## Lote 004 — ANV-0025
+
+`npm run build`: passou (exit 0), com geração, compilação, lint/tipos e
+páginas estáticas. Hashes dos insumos estáveis em CHECKPOINT.json.
+Regressão `test-pscpp-audit-anv0005.mjs` passou: sete deltas exatos desde
+baseline, 28 proposições no HTML real, conjuntos e justificativas A–E;
+12.095 outros cadernos e todas as 1.984 questões PSCPP preservados.
+Unicidade dos 12.102 cadernos, matriz fixa e precedência/fingerprints passaram.
+Inventários e triagem regenerados: 246 candidatos sem proposições, 77 por
+localizador. Teste geral de enunciados ainda falha em ANV-0037; teste de
+localizadores falha com 77 achados. Gate de evidência falha, 0/14.086 aprovados.
+Nenhum teste relaxado. Sétima correção primária, décima conferência parcial;
+sem aprovação de release, merge ou deploy. Continuidade HOURLY confirmada
+ativa pelo conector, preservando a exigência de retomar o HEAD remoto.
+
 ## Lote 003 — duas novas correções e build completo
 
 `npm run build`: passou (exit 0), incluindo geração PSCPP/cadernos/catálogo/

@@ -1394,9 +1394,9 @@
       "module": "Âncoras",
       "topic_code": "old-026",
       "topic": "aparelho de fundear e suspender",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “aparelho de fundear e suspender”, identifique as verdadeiras e assinale a opção correta:\nI) “aparelho de fundear e suspender” designa conjunto de âncoras, amarras, máquinas de suspender e acessórios.\nII) A bibliografia atribui a esse item a seguinte característica: permite manter o navio no fundeadouro e recolher o ferro quando necessário.\nIII) A bibliografia atribui a esse item a seguinte característica: constitui o ponto em que a amarra é talingada ao ferro.\nIV) “aparelho de fundear e suspender” designa vértice exterior da pata.",
+      "question": "Na descrição do aparelho de fundear e suspender apresentada em Arte Naval, volume 2, considere a composição do conjunto e a função de seus acessórios. Analise as afirmações e escolha o conjunto completo das corretas:\nI. O aparelho compreende âncoras, amarras, máquinas de suspender e acessórios das amarras.\nII. A coroa de Barbotin possui cavidades que prendem a amarra elo por elo, permitindo alá-la.\nIII. O escovém é o conduto por onde a amarra desce do convés ao paiol.\nIV. As boças da amarra são destinadas a aumentar o esforço sobre o freio do cabrestante quando o navio porta pela amarra.",
       "options": [
         {
           "key": "A",
@@ -1420,12 +1420,16 @@
         }
       ],
       "correct_answer": "E",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “aparelho de fundear e suspender”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "I e II são verdadeiras, conforme a composição do aparelho e o funcionamento da coroa de Barbotin descritos no art. 10.1. III é falsa: o conduto entre o convés e o paiol é a buzina da amarra; o escovém dá passagem à amarra para o exterior e, no caso da âncora tipo patente descrita na obra, aloja sua haste quando fora de uso. IV é falsa: as boças aguentam a amarra retirando esforço do freio, inclusive quando o navio está portando pela amarra. A única alternativa que reúne todas e somente as verdadeiras é E.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 10, seção A, item 10.1"
+        "locator": "cap. 10, seção A, art. 10.1, pp. 705–706",
+        "printed_page": 705,
+        "pdf_page": 66,
+        "drive_file_id": "1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Âncoras",
@@ -1465,6 +1469,15 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "pscpp_format": "assertion_combination",
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Incorreta: II é verdadeira, mas IV inverte a função das boças; falta I.",
+        "B": "Incorreta: I é verdadeira, mas III atribui ao escovém a função da buzina da amarra; falta II.",
+        "C": "Incorreta: III troca o conduto de descida ao paiol e IV inverte o efeito das boças sobre o freio; faltam I e II.",
+        "D": "Incorreta: I é verdadeira, mas IV aumenta um esforço que as boças devem retirar do freio; falta II.",
+        "E": "Correta: reúne todas e somente as verdadeiras, I e II."
       }
     },
     {
