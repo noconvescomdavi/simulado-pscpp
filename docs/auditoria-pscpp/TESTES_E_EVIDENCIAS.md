@@ -211,3 +211,30 @@ build passou antes de sincronizar o patch tardio; o build final foi executado
 novamente com esses insumos definitivos. Avisos preexistentes de autoprefixer
 e configuração npm preservados. Logs privados preservam todas as tentativas.
 Sem merge, deploy de auditoria ou alteração de dados de usuários.
+
+## Lote 008 — ANV-0046
+
+Base 9664750e; revisão primária em REVISAO_ARTE_NAVAL_LOTE_008.md.
+
+| Verificação executada | Resultado |
+|---|---|
+| generate:question-banks | Passou, 12.102 registros |
+| npm run build | Passou, compilação, lint/tipos e 101 páginas; hashes fonte estáveis |
+| test-pscpp-audit-anv0005.mjs, antes e após build | Passou, 15 deltas exatos, 60 proposições no HTML, igualdade fonte/runtime e combinação única; 12.087 outros cadernos e 1.984 PSCPP preservados |
+| validate-runtime-question-banks.mjs | Passou, 12.102 registros, IDs únicos |
+| validate-pscpp-exam-selection.mjs | Passou, matriz fixa |
+| test-question-source-provenance.mjs | Passou, precedência e fingerprints transitivos |
+| check:pscpp-bank | Passou, 1.984 registros, incluindo 254 históricas |
+| audit-pscpp-runtime-inventory.mjs | Passou, 27.435 físicos / 14.086 ocorrências / 13.715 IDs |
+| audit-pscpp-runtime-triage.mjs | 240 candidatos sem proposições e 77 localizadores |
+| test-notebook-complete-stems.mjs | Falha preservada em ANV-0047, combinação sem proposições |
+| validate-editorial-runtime.mjs | Falha preservada, mesmos 77 localizadores |
+| validate-pscpp-editorial-evidence.mjs, após inventário concluído | Saída 2; 0/14.086 aprovações; merge proibido |
+
+A primeira consulta ao gate ocorreu durante a escrita do inventário e não foi
+usada como evidência final; repetida após término da geração. Não houve alteração
+de critérios nem supressão de testes. Build mantém os avisos preexistentes de npm
+http-proxy e autoprefixer. Logs privados em audit-private/lote008.
+Push de terminal indisponível por ausência de credencial HTTPS; publicação pela
+integração GitHub, com verificação de blobs/árvore e ref sem force.
+Sem merge, deploy desta auditoria ou alteração de dados de usuários.

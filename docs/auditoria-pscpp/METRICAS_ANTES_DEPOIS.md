@@ -34,3 +34,7 @@ localizadores 77 → 77. Contagens físicas/efetivas/IDs e matriz fixa preservad
 Lote 007: 14 correções primárias, 17 conferências parciais; 0/14.086 aprovações
 finais. Candidatos de proposições 242 → 241; localizadores 77. ANV-0044/0045
 já tinham proposições e não são contadas como correções dessa triagem.
+
+Lote 008: 15 correções primárias e 18 conferências parciais acumuladas;
+0/14.086 aprovações finais. Candidatos de proposições 241 → 240;
+localizadores 77. IDs e contagens físicas/efetivas preservados.

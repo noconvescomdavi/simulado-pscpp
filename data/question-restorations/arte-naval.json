@@ -3148,9 +3148,9 @@
       "module": "Aparelho de governo",
       "topic_code": "old-074",
       "topic": "servomotor hidrelétrico",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “servomotor hidrelétrico”, identifique as verdadeiras e assinale a opção correta:\nI) A bibliografia atribui a esse item a seguinte característica: oferece alta eficiência e pode usar motor de menor potência que uma solução elétrica equivalente.\nII) A bibliografia atribui a esse item a seguinte característica: deve repetir e cumprir as vozes de leme, mantendo informação clara sobre o rumo.\nIII) “servomotor hidrelétrico” designa punhos distribuídos no contorno exterior da roda do leme.\nIV) “servomotor hidrelétrico” designa sistema em que bomba e cilindros hidráulicos aplicam força à cana do leme.",
+      "question": "Segundo Arte Naval, volume 2, considere o servomotor hidrelétrico descrito no art. 11.4.c. Examine as afirmações e escolha o conjunto completo das corretas:\nI. O motor elétrico aciona a bomba hidráulica e permanece em funcionamento, com velocidade constante, durante a viagem.\nII. A inversão do movimento do líquido exige inverter a rotação do motor elétrico que aciona a bomba.\nIII. O regulador de pressão da bomba destina-se a aumentar a pressão além do limite de sobrecarga.\nIV. O mecanismo de controle, comandado pela roda do leme, regula o débito e o sentido de escoamento do líquido na bomba.",
       "options": [
         {
           "key": "A",
@@ -3174,12 +3174,16 @@
         }
       ],
       "correct_answer": "A",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “servomotor hidrelétrico”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "I e IV são verdadeiras no sistema descrito: o motor elétrico mantém velocidade constante em viagem, enquanto o mecanismo de controle regula o débito e o sentido do líquido. II é falsa porque a inversão é obtida pelo mecanismo de controle, que troca os lados de pressão e aspiração, sem exigir inversão do motor elétrico. III inverte a finalidade do regulador, que impede a sobrecarga. Apenas I e IV são verdadeiras, alternativa A. Fonte: Arte Naval, v. 2, 8ª ed., art. 11.4.c, pp. 758–759, fig. 11-4.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, seção A, item 11.4.c"
+        "locator": "cap. 11, seção A, art. 11.4.c, pp. 758–759, fig. 11-4",
+        "printed_page": 758,
+        "pdf_page": 119,
+        "drive_file_id": "1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Aparelho de governo",
@@ -3199,7 +3203,7 @@
           "title": "Aparelho de governo, mastreação e aparelhos de carga",
           "label": "Capítulo 11 - Aparelho de governo, mastreação e aparelhos de carga"
         },
-        "section": "cap. 11, seção A, item 11.4.c",
+        "section": "cap. 11, seção A, art. 11.4.c, pp. 758–759, fig. 11-4",
         "module": "Aparelho de governo",
         "topic": {
           "id": "old-074",
@@ -3219,6 +3223,15 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "cognitive_level": 2,
+      "pscpp_format": "assertion_combination",
+      "distractor_analysis": {
+        "A": "Correta: I descreve o acionamento contínuo da bomba e IV identifica o controle do débito e do sentido do líquido.",
+        "B": "Incorreta: IV é verdadeira, mas II troca a atuação do mecanismo de controle por uma exigência de inversão do motor; falta I.",
+        "C": "Incorreta: I é verdadeira, mas III inverte a função protetora do regulador; falta IV.",
+        "D": "Incorreta: II e III são falsas; omite as duas verdadeiras, I e IV.",
+        "E": "Incorreta: IV é verdadeira, mas III atribui ao regulador a função oposta à descrita; falta I."
       }
     },
     {
