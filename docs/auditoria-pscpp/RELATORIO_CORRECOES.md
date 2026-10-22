@@ -99,3 +99,12 @@ art. 12.40, p. 843 (PDF 204), Arte Naval v. 2, 8ª edição. Quatro proposiçõe
 F/V/F/V e cinco justificativas; gabarito D preservado. Referência delimitada e
 texto efetivo conferido no pipeline. Acumulado: 18 correções primárias, 21
 conferências parciais; zero aprovações finais. Sem merge.
+
+## Lote 012 — ANV-0050
+
+Corrigida restauração prevalente de centro de gravidade do navio, com arts.
+2.21–2.22, p. 82/PDF 82, figura 2-7 conferida. Vetor V/F/V/F, gabarito E
+e cinco alternativas preservados, cinco justificativas e referência rastreável.
+Texto sobrevive ao pipeline sem normalizador ou teste relaxado. Relatório
+REVISAO_ARTE_NAVAL_LOTE_012.md. Acumulado: 19 correções primárias e 22
+conferências bibliográficas parciais, zero aprovações finais. Próxima ANV-0064.

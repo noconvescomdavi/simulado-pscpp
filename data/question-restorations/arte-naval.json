@@ -3516,9 +3516,9 @@
       "module": "Geometria do navio",
       "topic_code": "anv1-2.21",
       "topic": "centro de gravidade do navio",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “centro de gravidade do navio”, identifique as verdadeiras e assinale a opção correta:\nI) “centro de gravidade do navio” designa ponto de aplicação da resultante de todos os pesos de bordo.\nII) A bibliografia atribui a esse item a seguinte característica: inclui as projeções estruturais consideradas na medição do extremo a extremo.\nIII) A bibliografia atribui a esse item a seguinte característica: sua posição varia quando pesos são embarcados, desembarcados ou movimentados.\nIV) “centro de gravidade do navio” designa centro de gravidade do volume de água deslocado pela carena.",
+      "question": "Ao examinar a distribuição dos pesos de um navio, considere o centro de gravidade descrito em Arte Naval, volume 1. Analise as afirmações e escolha o conjunto completo das corretas:\nI. O peso do navio pode ser considerado como uma força concentrada no ponto de aplicação da resultante de todos os pesos de bordo.\nII. A posição vertical desse ponto é a mesma nos diferentes projetos de navios, independentemente da distribuição dos pesos.\nIII. A distribuição de carga nos tanques, nos porões e no convés pode alterar a posição desse ponto.\nIV. Esse ponto é definido como o centro de gravidade do volume de água deslocado pela carena.",
       "options": [
         {
           "key": "A",
@@ -3542,12 +3542,16 @@
         }
       ],
       "correct_answer": "E",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “centro de gravidade do navio”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "I e III estão corretas. O art. 2.21 define o centro de gravidade do navio como ponto de aplicação da resultante de todos os pesos de bordo e relaciona sua posição à distribuição da carga. II é falsa: a posição vertical varia de acordo com o projeto, e a distribuição de carga pode alterar a posição do centro de gravidade. IV confunde o centro de gravidade do navio com o centro de carena, definido no art. 2.22 pelo volume de água deslocado. Não se afirma que qualquer movimentação de carga necessariamente altere o centro de gravidade resultante: movimentos compensados podem manter sua posição.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 1",
         "edition": "8. ed., 2019",
-        "locator": "cap. 2, item 2.21"
+        "locator": "cap. 2, arts. 2.21–2.22, p. 82, fig. 2-7",
+        "printed_page": 82,
+        "pdf_page": 82,
+        "drive_file_id": "1LjlDejVyooU3QLJzF0COvAEnOgMDNC9N",
+        "sha256": "792beebaea10aaff4b65288c0cfc3dd76c507f779297ee42583d078a7ec1dd20"
       },
       "tags": [
         "Geometria do navio",
@@ -3587,6 +3591,15 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "pscpp_format": "assertion_combination",
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Incorreta: I é verdadeira, mas II fixa indevidamente a posição vertical; também falta III.",
+        "B": "Incorreta: II fixa indevidamente a posição vertical e IV troca o centro de gravidade do navio pelo centro de carena; faltam I e III.",
+        "C": "Incorreta: III é verdadeira, mas II contradiz a variação da posição vertical; também falta I.",
+        "D": "Incorreta: I é verdadeira, mas IV define o centro de carena; também falta III.",
+        "E": "Correta: I apresenta o ponto de aplicação do peso resultante e III relaciona sua posição à distribuição da carga."
       }
     },
     {

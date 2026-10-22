@@ -61,3 +61,11 @@ cadernos e todas as 1.984 PSCPP preservados; matriz disciplinar inalterada.
 preservados. Matriz disciplinar de 100 inalterada.
 
 Triagem regenerada: 237 candidatos sem proposições (238 antes), 77 localizadores.
+
+## Lote 012
+
+19 correções primárias / 22 conferências bibliográficas parciais / 0 aprovações
+finais em 14.086 ocorrências. Triagem sem proposições: 237 → 236; localizadores: 77.
+Mantidos 27.435 registros físicos, 14.086 ocorrências e 13.715 IDs.
+Regressão: 19 deltas efetivos exatos, 76 proposições renderizadas; 12.083 outros
+cadernos e 1.984 PSCPP preservados. Matriz 25/25/10/10/10/10/10 preservada.
