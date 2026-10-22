@@ -91,3 +91,11 @@ Vetor V/V/F/F, gabarito C e opções preservados, cinco justificativas. Acumulad
 17 correções primárias, 20 conferências parciais; zero aprovações finais.
 Triagem: 238 candidatos sem proposições e 77 localizadores.
 Relatório REVISAO_ARTE_NAVAL_LOTE_010.md.
+
+## Lote 011 — ANV-0049
+
+Corrigida a restauração prevalente de círculo de giro no fundeio com suporte no
+art. 12.40, p. 843 (PDF 204), Arte Naval v. 2, 8ª edição. Quatro proposições
+F/V/F/V e cinco justificativas; gabarito D preservado. Referência delimitada e
+texto efetivo conferido no pipeline. Acumulado: 18 correções primárias, 21
+conferências parciais; zero aprovações finais. Sem merge.

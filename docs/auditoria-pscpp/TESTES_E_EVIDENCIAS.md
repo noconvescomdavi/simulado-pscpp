@@ -290,3 +290,31 @@ usada como evidência da correção. Edição aplicada no diretório correto e g
 repetida antes dos testes. Logs privados em audit-private/lote010. Avisos
 preexistentes npm http-proxy e autoprefixer mantidos. Sem merge, deploy desta
 auditoria ou alterações de usuários. git diff --check passou.
+
+## Lote 011 — ANV-0049
+
+Base c9ef6710; fonte primária e inspeção visual em REVISAO_ARTE_NAVAL_LOTE_011.md.
+
+| Verificação | Resultado real |
+|---|---|
+| generate:question-banks | Passou, 12.102 questões |
+| npm run build | Passou, compilação, lint/tipos e 101 páginas |
+| test-pscpp-audit-anv0005.mjs, após geração concluída e após build | Passou, 18 deltas exatos, 72 proposições no HTML, combinação única e igualdade fonte/runtime; 12.084 outros cadernos e 1.984 PSCPP preservados |
+| validate-runtime-question-banks.mjs | Passou, 12.102 questões com IDs únicos |
+| validate-pscpp-exam-selection.mjs | Passou, matriz fixa 25/25/10/10/10/10/10 |
+| test-question-source-provenance.mjs | Passou, precedência e fingerprints |
+| check:pscpp-bank | Passou, 1.984 questões, 254 históricas |
+| test-notebook-complete-stems.mjs | Falha preservada, próxima ANV-0050 |
+| validate-editorial-runtime.mjs | Falha preservada, 77 localizadores |
+
+Uma tentativa inicial de regressão leu o snapshot antes de a geração terminar e
+falhou por conteúdo desatualizado. Não foi usada como validação; o hash provisório
+foi substituído pelo efetivo, e a regressão repetida após término da geração
+passou antes e depois do build. Nenhum teste ou critério foi relaxado.
+Logs privados em audit-private/lote011; avisos preexistentes npm http-proxy e
+autoprefixer preservados. Sem merge, deploy da auditoria ou alteração de usuários.
+
+Inventário regenerado após build: 27.435 físicos / 14.086 ocorrências / 13.715 IDs.
+Triagem: 237 candidatos sem proposições e 77 localizadores. Gate de evidência
+executado após término do inventário: saída 2, 0/14.086 aprovações e
+merge_permitted=false. git diff --check passou.

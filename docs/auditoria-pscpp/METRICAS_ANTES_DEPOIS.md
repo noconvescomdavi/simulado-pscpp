@@ -52,3 +52,12 @@ Candidatos sem proposições 239 → 238; localizadores 77 → 77.
 14.086 ocorrências e 13.715 IDs preservados; zero aprovações editoriais finais.
 Regressão: 17 deltas desde baseline, 68 proposições no HTML, 12.085 outros
 cadernos e todas as 1.984 PSCPP preservados; matriz disciplinar inalterada.
+
+## Lote 011
+
+18 correções primárias (17 anteriores + ANV-0049), 21 conferências parciais,
+0/14.086 ocorrências com aprovação editorial final. Regressão: 18 deltas exatos,
+72 proposições renderizadas; 12.084 outros cadernos e todas as 1.984 PSCPP
+preservados. Matriz disciplinar de 100 inalterada.
+
+Triagem regenerada: 237 candidatos sem proposições (238 antes), 77 localizadores.

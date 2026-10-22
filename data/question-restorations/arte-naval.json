@@ -3424,9 +3424,9 @@
       "module": "Fundeio e amarração",
       "topic_code": "old-118",
       "topic": "círculo de giro no fundeio",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “círculo de giro no fundeio”, identifique as verdadeiras e assinale a opção correta:\nI) A bibliografia atribui a esse item a seguinte característica: deve terminar com pequeno seguimento compatível com o controle da saída da amarra.\nII) “círculo de giro no fundeio” designa área varrida pelo navio ao rabear em torno do ponto de presa.\nIII) “círculo de giro no fundeio” designa informação de que o ferro se desprendeu do fundo.\nIV) A bibliografia atribui a esse item a seguinte característica: seu raio depende do filame, do comprimento do navio e da geometria do sistema.",
+      "question": "Na escolha de um fundeadouro para um navio a um só ferro, a equipe verifica o espaço livre necessário para o giro. Considere o critério apresentado em Arte Naval, volume 2, para essa área e analise as afirmações:\nI. No critério da obra, a soma do filame com o comprimento do navio corresponde ao diâmetro do círculo livre de obstruções.\nII. O raio do círculo livre de obstruções é obtido somando o filame ao comprimento do navio.\nIII. Mantido o comprimento do navio, um aumento do filame reduz o raio exigido por esse critério.\nIV. Dois navios de igual comprimento, mas com filames diferentes, necessitam de raios diferentes pelo critério da obra.\nAssinale a opção que reúne todas as afirmações corretas.",
       "options": [
         {
           "key": "A",
@@ -3450,12 +3450,16 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “círculo de giro no fundeio”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "II e IV estão corretas. No art. 12.40, o espaço livre de obstruções para o giro no fundeio é representado por um círculo cujo raio é a soma do filame com o comprimento do navio. I confunde raio e diâmetro. III inverte a relação: mantendo o comprimento do navio, aumentar o filame aumenta o raio pelo mesmo incremento. IV decorre dessa relação, pois filames diferentes produzem raios diferentes para navios de igual comprimento. Trata-se do critério de espaço apresentado na obra, não de uma reconstrução exata da trajetória real do navio ou de dispensa da avaliação das condições locais.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção D, itens 12.40–12.43"
+        "locator": "cap. 12, seção D, art. 12.40, p. 843",
+        "printed_page": 843,
+        "pdf_page": 204,
+        "drive_file_id": "1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Fundeio e amarração",
@@ -3475,7 +3479,7 @@
           "title": "Manobra do Navio",
           "label": "Capítulo 12 - Manobra do Navio"
         },
-        "section": "cap. 12, seção D, itens 12.40–12.43",
+        "section": "cap. 12, seção D, art. 12.40",
         "module": "Fundeio e amarração",
         "topic": {
           "id": "old-118",
@@ -3495,6 +3499,15 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "pscpp_format": "assertion_combination",
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Incorreta: II é verdadeira, mas III inverte o efeito de aumentar o filame; também falta IV.",
+        "B": "Incorreta: IV é verdadeira, mas I toma como diâmetro a soma que define o raio; também falta II.",
+        "C": "Incorreta: I confunde raio e diâmetro e III inverte a relação com o filame; faltam II e IV.",
+        "D": "Correta: II reproduz a relação do art. 12.40 e IV aplica essa relação a navios de igual comprimento.",
+        "E": "Incorreta: II é verdadeira, mas I confunde raio e diâmetro; também falta IV."
       }
     },
     {
