@@ -10123,9 +10123,9 @@
       "module": "Governo de navio de dois hélices",
       "topic_code": "old-103",
       "topic": "hélice de passo controlado",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “hélice de passo controlado”, identifique as verdadeiras e assinale a opção correta:\nI) “hélice de passo controlado” designa arranjo em que o topo das pás gira afastando-se do plano diametral na marcha a vante.\nII) A bibliografia atribui a esse item a seguinte característica: pode passar de avante para ré sem inverter o sentido de rotação do eixo.\nIII) “hélice de passo controlado” designa propulsor cujo ângulo das pás varia para alterar módulo e sentido do empuxo.\nIV) A bibliografia atribui a esse item a seguinte característica: permite aproveitar individualmente o fluxo dos propulsores para ampliar o controle.",
+      "question": "Sobre a hélice de passo controlável descrita por Fonseca, analise as proposições e escolha o conjunto completo das corretas.\nI) O passo permanece fixo durante a manobra; a velocidade do navio é controlada exclusivamente pela alteração da rotação do eixo.\nII) A passagem de adiante para atrás pode ser comandada pela inversão do passo, sem inverter a rotação da máquina.\nIII) A mudança do passo altera a potência exigida da máquina, sendo necessário adequar a alimentação de combustível para sustentar a carga no mesmo regime de rotações.\nIV) A distância de parada inferior a dois comprimentos, citada na obra para alguns navios-varredores, deve ser tomada como limite garantido para qualquer navio que possua esse sistema.",
       "options": [
         {
           "key": "A",
@@ -10149,12 +10149,15 @@
         }
       ],
       "correct_answer": "A",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “hélice de passo controlado”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "Somente II e III são verdadeiras (alternativa A). Em Fonseca, art. 12.18, pp. 818–819, a inclinação das pás varia por comando hidráulico, modificando o passo. A inversão de marcha ocorre pelo ajuste do passo, sem exigir inversão da máquina. A alteração do passo modifica a carga e a potência exigida, com adequação do combustível para o mesmo regime de RPM; a obra também menciona controle automático. I substitui esse mecanismo pelo funcionamento de passo fixo. IV generaliza indevidamente um exemplo de alguns navios-varredores: não é garantia universal de distância de parada.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção B, item 12.18"
+        "locator": "cap. 12, seção B, art. 12.18, pp. 818–819",
+        "printed_page": 818,
+        "pdf_page": 179,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Governo de navio de dois hélices",
@@ -10174,7 +10177,7 @@
           "title": "Manobra do Navio",
           "label": "Capítulo 12 - Manobra do Navio"
         },
-        "section": "cap. 12, seção B, item 12.18",
+        "section": "cap. 12, seção B, art. 12.18, pp. 818–819",
         "module": "Governo de navio de dois hélices",
         "topic": {
           "id": "old-103",
@@ -10194,6 +10197,14 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "II e III são o conjunto completo: inversão do passo sem inversão da máquina (p. 818) e adequação de potência/combustível à carga no mesmo RPM (p. 819).",
+        "B": "II é verdadeira, mas IV transforma um exemplo restrito a alguns navios-varredores em garantia para todos; falta III.",
+        "C": "II é verdadeira; I é falsa porque a inclinação das pás e o passo variam; falta III.",
+        "D": "III é verdadeira, mas IV generaliza indevidamente a distância de parada; falta II.",
+        "E": "III é verdadeira; I descreve passo invariável e contradiz o mecanismo; falta II."
       }
     },
     {

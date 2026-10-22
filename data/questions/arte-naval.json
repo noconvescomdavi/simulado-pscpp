@@ -62906,36 +62906,39 @@
       "topic": "hélice de passo controlado",
       "difficulty": "Médio",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “hélice de passo controlado”.",
+      "question": "Na explicação de Fonseca sobre o sistema de passo controlável, qual relação entre o ajuste das pás e o funcionamento da máquina está correta?",
       "options": [
         {
           "key": "A",
-          "text": "arranjo em que o topo das pás gira em direção ao plano diametral na marcha a vante"
+          "text": "A mudança do passo permite conservar o mesmo regime de rotações sem modificar a potência exigida, mantendo inalterada a alimentação de combustível."
         },
         {
           "key": "B",
-          "text": "uso de um propulsor adiante e outro atrás"
+          "text": "A alteração da inclinação das pás dispensa a adequação da potência à carga, pois o mecanismo hidráulico fornece também a energia de propulsão."
         },
         {
           "key": "C",
-          "text": "arranjo em que o topo das pás gira afastando-se do plano diametral na marcha a vante"
+          "text": "Para obter marcha atrás, a regulagem das pás deve ser acompanhada obrigatoriamente da inversão da rotação da máquina."
         },
         {
           "key": "D",
-          "text": "propulsor cujo ângulo das pás varia para alterar módulo e sentido do empuxo"
+          "text": "A variação do passo modifica a potência exigida; para sustentar a carga no mesmo regime de rotações, ajusta-se o combustível, havendo sistemas com controle automático."
         },
         {
           "key": "E",
-          "text": "configuração que posiciona uma porta de leme na descarga de cada hélice"
+          "text": "O mesmo regime de rotações somente pode ser mantido se o passo ficar fixo; qualquer mudança da inclinação das pás exige parar a máquina."
         }
       ],
       "correct_answer": "D",
-      "explanation": "A opção correta apresenta a definição técnica de “hélice de passo controlado”: propulsor cujo ângulo das pás varia para alterar módulo e sentido do empuxo; pode passar de avante para ré sem inverter o sentido de rotação do eixo.",
+      "explanation": "A alternativa D reúne as relações descritas no art. 12.18, pp. 818–819: as pás mudam de inclinação, alterando o passo e a potência exigida da máquina. A alimentação de combustível deve corresponder à carga para manter o mesmo regime de RPM; a obra registra sistemas que automatizam esse controle. A inversão do passo permite obter marcha atrás sem a inversão da máquina. Isso não significa potência ou consumo invariáveis, nem que o circuito hidráulico substitua a energia fornecida pela máquina.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção B, item 12.18"
+        "locator": "cap. 12, seção B, art. 12.18, pp. 818–819",
+        "printed_page": 818,
+        "pdf_page": 179,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Governo de navio de dois hélices",
@@ -62955,7 +62958,7 @@
           "title": "Manobra do Navio",
           "label": "Capítulo 12 - Manobra do Navio"
         },
-        "section": "cap. 12, seção B, item 12.18",
+        "section": "cap. 12, seção B, art. 12.18, pp. 818–819",
         "module": "Governo de navio de dois hélices",
         "topic": {
           "id": "old-103",
@@ -62969,6 +62972,14 @@
         "chapter_id": "fonseca-arte-v1::ch12",
         "topic_id": "old-103",
         "subtopic_id": null
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Falsa: manter o regime de RPM não significa manter potência e combustível invariáveis; a carga varia com o passo (p. 819).",
+        "B": "Falsa: o mecanismo hidráulico comanda a inclinação das pás; a obra continua exigindo potência da máquina para suportar a carga (pp. 818–819).",
+        "C": "Falsa: a inversão do passo substitui a necessidade de inverter a máquina na passagem para atrás descrita na obra (p. 818).",
+        "D": "Correta: relaciona mudança de passo, potência exigida, combustível e manutenção do regime de RPM, incluindo a possibilidade de controle automático (p. 819).",
+        "E": "Falsa: a obra descreve a mudança do passo com a máquina sustentando a carga no mesmo regime de RPM, sem impor sua parada (p. 819)."
       }
     },
     {
@@ -73725,38 +73736,41 @@
       "module": "Governo de navio de dois hélices",
       "topic_code": "old-103",
       "topic": "hélice de passo controlado",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Situação aplicada",
-      "question": "Considere A definição técnica “propulsor cujo ângulo das pás varia para alterar módulo e sentido do empuxo. A descrição inclui ainda esta característica: pode passar de avante para ré sem inverter o sentido de rotação do eixo. Qual nomenclatura corresponde ao caso apresentado?",
+      "question": "Um navio recebe ordem de dar atrás. No sistema descrito por Fonseca, o eixo continua girando no mesmo sentido, enquanto um mecanismo hidráulico muda a inclinação das pás para produzir o efeito solicitado. Qual configuração de propulsão corresponde ao caso?",
       "options": [
         {
           "key": "A",
-          "text": "hélices para dentro"
+          "text": "Hélice de passo fixo acionada por máquina reversível."
         },
         {
           "key": "B",
-          "text": "hélice de passo controlado"
+          "text": "Hélice de passo controlado, também chamada de passo controlável."
         },
         {
           "key": "C",
-          "text": "máquinas em sentidos opostos"
+          "text": "Hélice de passo fixo acionada por transmissão com inversor."
         },
         {
           "key": "D",
-          "text": "hélices para fora"
+          "text": "Par de hélices de passo fixo girando para fora."
         },
         {
           "key": "E",
-          "text": "navio de dois lemes"
+          "text": "Par de hélices de passo fixo girando para dentro."
         }
       ],
       "correct_answer": "B",
-      "explanation": "“hélice de passo controlado” é propulsor cujo ângulo das pás varia para alterar módulo e sentido do empuxo; pode passar de avante para ré sem inverter o sentido de rotação do eixo.",
+      "explanation": "A alternativa B identifica o princípio do art. 12.18, p. 818: o mecanismo hidráulico altera a inclinação das pás e o passo, permitindo inverter a marcha sem inverter a máquina. Uma máquina reversível ou uma transmissão inversora com hélice de passo fixo não corresponde à mudança hidráulica da inclinação das pás do caso. A rotação para dentro ou para fora de um par de hélices de passo fixo também não define esse mecanismo. O caso exige identificar o princípio, sem calcular distância de parada ou prescrever comandos para uma instalação real.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção B, item 12.18"
+        "locator": "cap. 12, seção B, art. 12.18, pp. 818–819",
+        "printed_page": 818,
+        "pdf_page": 179,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Governo de navio de dois hélices",
@@ -73776,7 +73790,7 @@
           "title": "Manobra do Navio",
           "label": "Capítulo 12 - Manobra do Navio"
         },
-        "section": "cap. 12, seção B, item 12.18",
+        "section": "cap. 12, seção B, art. 12.18, pp. 818–819",
         "module": "Governo de navio de dois hélices",
         "topic": {
           "id": "old-103",
@@ -73790,6 +73804,14 @@
         "chapter_id": "fonseca-arte-v1::ch12",
         "topic_id": "old-103",
         "subtopic_id": null
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Falsa: a máquina reversível com passo fixo não corresponde ao eixo mantendo o sentido e às pás mudando de inclinação por mecanismo hidráulico.",
+        "B": "Correta: a mudança da inclinação das pás e do passo, com inversão da marcha sem inverter a máquina, é o princípio descrito por Fonseca (p. 818).",
+        "C": "Falsa: o inversor de transmissão com passo fixo não produz a alteração da inclinação das pás descrita no caso.",
+        "D": "Falsa: a disposição de um par de hélices girando para fora não satisfaz a condição expressa de mudança hidráulica da inclinação das pás de passo fixo.",
+        "E": "Falsa: girar para dentro descreve o sentido relativo de rotação do par, sem fornecer a variação hidráulica das pás exigida pelo caso."
       }
     },
     {

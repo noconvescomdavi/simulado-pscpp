@@ -305,3 +305,20 @@ Acumulado 53 correções/56 conferências parciais, zero aprovações finais.
 Ver REVISAO_ARTE_NAVAL_LOTE_028.md e CORRECOES_RUNTIME.json.
 Rechecagem independente, versão oficial, estados e semântica pendentes.
 Sem merge/deploy; oito gates seguem pendentes/falhos.
+
+
+## Lote 029 — hélice de passo controlável
+
+ANV-0131/0829/0977 corrigidas individualmente com Fonseca v.2, 8ª ed., 2019,
+art.12.18 pp.818–819/PDF179–180. Texto e imagens cobrindo o artigo inteiro
+conferidos; nenhuma figura requerida. SHA256 recalculado. Mecanismo hidráulico,
+inversão do passo sem inversão da máquina e adequação de potência/combustível
+à carga no mesmo RPM. Exemplo de parada de alguns navios-varredores não
+universalizado; sem parâmetros de fabricante ou comando de instalação real.
+Quinze justificativas, keys A/D/B e IDs preservados, formatos B/A/A.
+Restauração 0131 corrigida; principal concorrente de cabo de leva integralmente
+intacto, sem inferir flags ausentes. Nenhum ID ativado/removido. Contrato
+direto só +0829/0977; normalizadores/filtros/gates sem alteração.
+Acumulado 56 correções/59 conferências parciais, zero aprovações finais.
+Ver REVISAO_ARTE_NAVAL_LOTE_029.md e CORRECOES_RUNTIME.json. Rechecagem
+independente, versão oficial, estados e semântica pendentes. Sem merge/deploy.

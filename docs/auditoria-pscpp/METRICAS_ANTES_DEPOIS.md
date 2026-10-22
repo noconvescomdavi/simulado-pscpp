@@ -295,3 +295,23 @@ Regressão: 36 combinadas/144 proposições HTML, dezessete diretas/85 opções;
 12.049 outros cadernos e 1.984 PSCPP inalterados. Matriz de 100 em
 25/25/10/10/10/10/10 preservada. Nenhum ID ativado/removido; versão física
 concorrente de 0129 continua com suas flags de quarentena.
+
+
+## Lote 029
+
+| Métrica | Antes | Depois |
+|---|---:|---:|
+| Correções primárias acumuladas | 53 | 56 |
+| Conferências bibliográficas parciais | 56 | 59 |
+| Aprovações editoriais finais | 0 | 0 |
+| Candidatos sem proposições | 219 | 218 |
+| Candidatos por localizador | 77 | 77 |
+| Registros físicos | 27435 | 27435 |
+| Ocorrências efetivas | 14086 | 14086 |
+| IDs únicos efetivos | 13715 | 13715 |
+
+0131 estava na triagem; 0829/0977 fora dela. Acumulados 35 candidatos
+corrigidos, 21 correções fora da triagem e três falsos positivos anteriores.
+Regressão: 37 combinadas/148 proposições HTML, dezenove diretas/95 opções;
+12.046 outros cadernos e 1.984 PSCPP inalterados. Matriz de 100 em
+25/25/10/10/10/10/10 preservada. Nenhum ID ativado/removido.
