@@ -322,3 +322,23 @@ direto só +0829/0977; normalizadores/filtros/gates sem alteração.
 Acumulado 56 correções/59 conferências parciais, zero aprovações finais.
 Ver REVISAO_ARTE_NAVAL_LOTE_029.md e CORRECOES_RUNTIME.json. Rechecagem
 independente, versão oficial, estados e semântica pendentes. Sem merge/deploy.
+
+
+## Lote 030 — saia da máquina de suspender
+
+ANV-0134/0832/0978 corrigidas individualmente com Fonseca v.2, 8ª ed., 2019,
+10.28 p.738 e 10.29.b–g pp.740–742; referência principal 10.29.e p.741/PDF102.
+Texto/imagens PDF99–103 e figuras 10-23a/10-23b conferidos; SHA256 recalculado.
+Saia lisa para espias/cabos distinguida da coroa dentada para elos, embreagem,
+freio e linguete. Nenhum procedimento de pinos/freio ou limite de carga de
+instalação real inventado. Quinze justificativas; keys D/B/C, IDs e formatos
+B/A/A preservados. L2/Médio proposto para 0134/0832; L1/Fácil para 0978,
+identificação contextual sem promover artificialmente a decisão operacional.
+Restauração 0134 corrigida; principal concorrente de prova de ruptura/misto
+integralmente intacto, sem inferir flags ausentes. Nenhum ID ativado/removido.
+Pré-checagem 0978 acusou continuidade lexical; comando local ajustado para
+eixo vertical antes da geração/registro. Contrato direto só +0832/0978;
+normalizadores/filtros/gates sem alteração. Acumulado 59 correções/62
+conferências parciais, zero aprovações finais. Ver relatório 030 e ledger.
+Rechecagem independente, versão oficial, estados e semântica pendentes.
+Sem merge/deploy/dados de usuários.

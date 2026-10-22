@@ -10371,9 +10371,9 @@
       "module": "Máquinas de suspender",
       "topic_code": "old-064",
       "topic": "saia do cabrestante",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “saia do cabrestante”, identifique as verdadeiras e assinale a opção correta:\nI) A bibliografia atribui a esse item a seguinte característica: não possui as cavidades próprias da coroa que trabalha com os elos da amarra.\nII) “saia do cabrestante” designa mecanismo que controla ou impede a rotação da coroa.\nIII) A bibliografia atribui a esse item a seguinte característica: pode movimentar amarras ou cabos conforme os tambores e coroas instalados.\nIV) “saia do cabrestante” designa tambor liso destinado a trabalhar cabos por atrito.",
+      "question": "Sobre a saia e as demais peças da máquina de suspender descritas por Fonseca, analise as proposições e escolha o conjunto completo das corretas.\nI) A saia é um tambor de periferia lisa empregado na manobra de espias ou de outros cabos que exijam grande esforço.\nII) Os dentes e recessos que recebem os elos da amarra são características da periferia da saia, em lugar da coroa.\nIII) A função que define a saia é ligar ou desligar a coroa de Barbotin de seu eixo, como a embreagem principal.\nIV) A saia pode ser montada no mesmo eixo da coroa; essa possibilidade não torna iguais as funções das duas peças.",
       "options": [
         {
           "key": "A",
@@ -10397,12 +10397,15 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “saia do cabrestante”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "Somente I e IV são verdadeiras (alternativa D). Fonseca, art. 10.29.e, p. 741, descreve a saia como tambor de periferia lisa usado nas espias e em outras manobras de cabos que necessitem grande esforço, podendo compartilhar o eixo com a coroa. O art. 10.29.b, p. 740, atribui à coroa os dentes que recebem os elos da amarra; o art. 10.29.f, p. 741, atribui à embreagem principal a ligação da coroa a seu eixo. II confunde saia e coroa; III confunde saia e embreagem. Compartilhar um eixo não elimina essas diferenças.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 10, seção C, item 10.29.e"
+        "locator": "cap. 10, seção C, art. 10.28, p. 738, e art. 10.29.b–g, pp. 740–742",
+        "printed_page": 741,
+        "pdf_page": 102,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Máquinas de suspender",
@@ -10422,7 +10425,7 @@
           "title": "Aparelhos de Fundear e Suspender",
           "label": "Capítulo 10 - Aparelhos de Fundear e Suspender"
         },
-        "section": "cap. 10, seção C, item 10.29.e",
+        "section": "cap. 10, seção C, art. 10.28, p. 738, e art. 10.29.b–g, pp. 740–742",
         "module": "Máquinas de suspender",
         "topic": {
           "id": "old-064",
@@ -10442,6 +10445,14 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "I é verdadeira, mas II transfere para a saia os dentes e recessos da coroa; falta IV.",
+        "B": "I é verdadeira, mas III atribui à saia a função da embreagem principal; falta IV.",
+        "C": "IV é verdadeira, mas III confunde a saia com a ligação da coroa ao eixo; falta I.",
+        "D": "I e IV são o conjunto completo: periferia lisa para cabos e possibilidade de mesmo eixo, preservando a distinção funcional (art. 10.29.e, p. 741).",
+        "E": "IV é verdadeira; II é falsa porque os elos trabalham na coroa dentada, não na periferia lisa da saia; falta I."
       }
     },
     {

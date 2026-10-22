@@ -315,3 +315,23 @@ corrigidos, 21 correções fora da triagem e três falsos positivos anteriores.
 Regressão: 37 combinadas/148 proposições HTML, dezenove diretas/95 opções;
 12.046 outros cadernos e 1.984 PSCPP inalterados. Matriz de 100 em
 25/25/10/10/10/10/10 preservada. Nenhum ID ativado/removido.
+
+
+## Lote 030
+
+| Métrica | Antes | Depois |
+|---|---:|---:|
+| Correções primárias acumuladas | 56 | 59 |
+| Conferências bibliográficas parciais | 59 | 62 |
+| Aprovações editoriais finais | 0 | 0 |
+| Candidatos sem proposições | 218 | 217 |
+| Candidatos por localizador | 77 | 77 |
+| Registros físicos | 27435 | 27435 |
+| Ocorrências efetivas | 14086 | 14086 |
+| IDs únicos efetivos | 13715 | 13715 |
+
+0134 estava na triagem; 0832/0978 fora dela. Acumulados 36 candidatos
+corrigidos, 23 correções fora da triagem e três falsos positivos anteriores.
+Regressão: 38 combinadas/152 proposições HTML, 21 diretas/105 opções;
+12.043 outros cadernos e 1.984 PSCPP inalterados. Matriz de 100 em
+25/25/10/10/10/10/10 preservada. Nenhum ID ativado/removido.
