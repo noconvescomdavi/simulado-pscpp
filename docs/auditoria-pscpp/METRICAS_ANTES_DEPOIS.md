@@ -112,3 +112,23 @@ Combinações corrigidas acumuladas 24; cinco correções fora dessa triagem;
 três falsos positivos resolvidos anteriormente. 26 combinadas verificadas
 no HTML (104 proposições); três diretas com 15 opções preservadas pelo adaptador.
 Matriz de 100 em 25/25/10/10/10/10/10 preservada. Zero certificação integral.
+
+## Lote 020
+
+| Métrica | Antes | Depois |
+|---|---:|---:|
+| Correções primárias acumuladas | 29 | 33 |
+| Conferências primárias parciais | 32 | 36 |
+| Aprovações editoriais finais | 0 | 0 |
+| Candidatos sem proposições | 229 | 227 |
+| Candidatos por localizador | 77 | 77 |
+| Registros físicos | 27435 | 27435 |
+| Ocorrências efetivas | 14086 | 14086 |
+| IDs únicos efetivos | 13715 | 13715 |
+
+ANV-0096/0097 eram candidatos sem proposições; ANV-0794/0795 estavam fora
+dessa triagem. Acumulados: 26 combinadas corrigidas na triagem, sete correções
+fora dela e três falsos positivos anteriores sem alteração de conteúdo.
+Regressão: 28 combinadas/112 proposições no HTML real, cinco diretas/25 opções
+preservadas no adaptador; 12.069 outros cadernos e 1.984 PSCPP inalterados.
+Matriz fixa 100 em 25/25/10/10/10/10/10 preservada. Zero certificação integral.

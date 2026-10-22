@@ -146,3 +146,19 @@ Acumulado 29 correções/32 conferências parciais, zero aprovações finais.
 Regressão: 29 deltas exatos, 104 proposições renderizadas, 15 opções diretas
 preservadas. Demais 12.073 cadernos e 1.984 PSCPP sem alteração efetiva.
 Sem merge/deploy; revisão independente, programa oficial e deduplicação pendentes.
+
+## Lote 020 — Almirantado e provas das amarras
+
+Corrigidas individualmente ANV-0096/0794 e ANV-0097/0795, com Fonseca v.2,
+8ª ed., 2019, 10.3.a (pp.707–708/PDF68–69) e 10.16.a–b (p.727/PDF88).
+Textos, páginas e figuras de contexto inspecionados. Cepo, patas, proporções
+e tradeoff operacional distinguidos; prova de resistência de todos os quartéis
+a cerca de 2/3 da carga nominal diferenciada da ruptura de amostra de três
+elos; exceção do aço estampado ao recozimento preservada. Removida condição
+genérica de deformação não demonstrada no artigo citado.
+Duas restaurações e duas diretas no principal, keys A/B/D/E, IDs e estilos
+preservados; vinte justificativas específicas. Nenhum normalizador alterado.
+Acumulado 33 correções/36 conferências parciais, zero aprovações finais.
+Ver REVISAO_ARTE_NAVAL_LOTE_020.md e hashes em CORRECOES_RUNTIME.json.
+Sobreposição entre variantes registrada; impedimento global de coexistência,
+rechecagem independente e alinhamento oficial/programático pendentes. Sem merge/deploy.

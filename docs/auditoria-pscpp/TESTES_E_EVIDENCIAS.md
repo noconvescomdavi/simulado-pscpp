@@ -565,3 +565,48 @@ Scripts Node executados com `--no-warnings --experimental-loader
 aos dois IDs documentados; cálculo e preservação das alternativas acrescentados.
 Nenhuma mudança de normalizador ou redução de gates. Verdade primária depende
 da leitura; testes não equivalem à rechecagem editorial independente.
+
+## Lote 020 — resultados executados
+
+- `npm run validate:question-catalog`: exit 0; catálogo/filtros/escopos válidos.
+
+- `npm run generate:question-banks`: exit 0; 12.102 questões.
+- `scripts/test-pscpp-audit-anv0005.mjs`: exit 0 antes/depois do build; 33
+  deltas exatos desde a base congelada, 112 proposições no HTML real e 25
+  opções diretas preservadas pelo adaptador; 12.069 outros cadernos e 1.984
+  PSCPP sem alteração efetiva. Contrato direto inclui expressamente 0794/0795.
+- `scripts/validate-runtime-question-banks.mjs`: exit 0, 12.102/IDs únicos.
+- `scripts/validate-pscpp-exam-selection.mjs`: exit 0, matriz fixa preservada.
+- `scripts/test-question-source-provenance.mjs`: exit 0.
+- `npm run check:pscpp-bank`: exit 0, 1.984 questões/254 históricas; mensagem
+  de fidelidade do gerador não comprova correção técnica atual.
+- `scripts/test-notebook-complete-stems.mjs`: exit 1, próxima ANV-0100;
+  critério não relaxado. `scripts/validate-editorial-runtime.mjs`: exit 1,
+  mesmos 77 localizadores.
+- `scripts/audit-pscpp-runtime-triage.mjs`: exit 0, 227/77 candidatos.
+- `scripts/audit-pscpp-runtime-inventory.mjs`: exit 0; 27.435 físicos, 14.086
+  ocorrências e 13.715 IDs; 33 hashes corrigidos comparados ao inventário.
+- `scripts/validate-pscpp-editorial-evidence.mjs`: exit 2 depois do inventário;
+  0 aceitos/14.086 pendentes ou inválidos, merge_permitted=false.
+- `NEXT_TELEMETRY_DISABLED=1 npm run build`: exit 0 na cópia isolada /tmp;
+  compilação, lint/types, 101 páginas e tabela de rotas confirmados.
+  Usada cópia isolada devido à falha ENOTEMPTY do workspace registrada no
+  lote 019; não se declarou resolvida essa falha. Todos os arquivos rastreados
+  fora de docs/auditoria-pscpp comparados byte a byte com a origem.
+- A primeira comparação pós-build identificou catálogo local ainda antigo;
+  executados `npm run generate:question-catalog` e `npm run
+  generate:flashcard-decks`, ambos exit 0. Seis artefatos gerados (dois bancos,
+  catálogo, facetas, escopo e flashcards) comparados com igualdade binária
+  após regeneração; nenhuma divergência aceita. Avisos não bloqueantes npm
+  http-proxy e autoprefixer registrados no log de build.
+
+Scripts Node executados com `--no-warnings --experimental-loader
+./scripts/pscpp-json-loader.mjs`. Nenhum normalizador alterado ou gate reduzido.
+Rechecagem editorial independente, deduplicação semântica global, programa
+oficial e reconciliação offline/produção permanecem pendentes.
+
+Após a leitura final do diff, a opção E de ANV-0794 passou a confundir metade
+com um quarto do peso, evitando o valor fisicamente denunciador de peso total.
+Geração local, catálogo, flashcards, inventário, gate e regressão repetidos;
+build final repetido na cópia isolada com a fonte final estável. Build anterior
+à sincronização desse refinamento não foi usado para certificar a versão final.
