@@ -8001,9 +8001,9 @@
       "module": "Governo de navio de um hélice",
       "topic_code": "old-094",
       "topic": "corrente de descarga do hélice",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “corrente de descarga do hélice”, identifique as verdadeiras e assinale a opção correta:\nI) A bibliografia atribui a esse item a seguinte característica: quando dirigido sobre o leme, pode produzir governo mesmo com pouco seguimento do navio.\nII) “corrente de descarga do hélice” designa condição em que o navio ainda recua após a inversão para vante.\nIII) A bibliografia atribui a esse item a seguinte característica: exige velocidade moderada, antecipação e consideração de squat, interação e menor margem de evolução.\nIV) “corrente de descarga do hélice” designa jato acelerado lançado pelo propulsor.",
+      "question": "Considere um navio convencional de um hélice, com leme a ré do propulsor, no modelo de Fonseca sem influência externa de vento ou corrente. Analise as proposições sobre a corrente de descarga e escolha o conjunto completo das corretas.\nI) Partindo do repouso, com o leme carregado para um bordo, dar adiante pode iniciar a guinada da proa para esse bordo pela descarga sobre o leme.\nII) A corrente de descarga não participa do movimento rotativo das pás.\nIII) Com o hélice dando atrás, a corrente de descarga é dirigida sobre o leme, como na marcha adiante.\nIV) No escoamento descrito, a sucção tem direção sensivelmente paralela ao eixo, enquanto a descarga também participa do movimento rotativo das pás.",
       "options": [
         {
           "key": "A",
@@ -8027,12 +8027,15 @@
         }
       ],
       "correct_answer": "E",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “corrente de descarga do hélice”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "I e IV são verdadeiras. Em 12.6.1, com o navio inicialmente parado e o leme carregado, a descarga pode atuar na porta do leme ao dar adiante, iniciando a guinada antes de o navio ganhar velocidade. Em 12.3, a sucção é sensivelmente paralela ao eixo e a descarga participa da rotação das pás. II nega essa participação e é falsa. III também é falsa: dando atrás, a descarga é dirigida contra a popa; a corrente que passa pelo leme em direção a vante é a sucção. O único conjunto completo é I e IV, alternativa E. O modelo não substitui experiências de manobra no navio, ressalvadas pela própria obra.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção A, item 12.6"
+        "locator": "cap. 12, seção A, arts. 12.3, 12.5 e 12.6.1, pp. 795–798",
+        "printed_page": 795,
+        "pdf_page": 156,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Governo de navio de um hélice",
@@ -8052,7 +8055,7 @@
           "title": "Manobra do Navio",
           "label": "Capítulo 12 - Manobra do Navio"
         },
-        "section": "cap. 12, seção A, item 12.6",
+        "section": "cap. 12, seção A, arts. 12.3, 12.5 e 12.6.1, pp. 795–798",
         "module": "Governo de navio de um hélice",
         "topic": {
           "id": "old-094",
@@ -8072,6 +8075,14 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "I é verdadeira, mas III confunde o destino da descarga dando atrás e omite IV.",
+        "B": "IV é verdadeira, mas III é falsa e I foi omitida.",
+        "C": "II e III são falsas; omite ambas as verdadeiras I e IV.",
+        "D": "IV é verdadeira, mas II nega a componente rotativa da descarga e I foi omitida.",
+        "E": "I e IV são as únicas verdadeiras: governo inicial pela descarga e distinção entre os escoamentos."
       }
     },
     {

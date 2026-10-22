@@ -649,3 +649,44 @@ Scripts Node com `--no-warnings --experimental-loader
 o novo ID documentado ANV-0798; nenhum normalizador alterado. Correção
 bibliográfica parcial não é rechecagem editorial independente nem aprovação
 programática, semântica global ou de release.
+
+## Lote 022 — resultados executados
+
+- `npm run generate:question-banks`: exit 0, 12.102 questões.
+- `scripts/test-pscpp-audit-anv0005.mjs`: exit 0 antes/depois do build; 37
+  deltas exatos desde a base congelada; igualdade fonte/runtime, IDs intactos;
+  120 proposições no HTML real e 35 opções diretas preservadas pelo adaptador;
+  12.065 outros cadernos e 1.984 PSCPP sem alteração efetiva.
+- `scripts/validate-runtime-question-banks.mjs`: exit 0.
+- `scripts/validate-pscpp-exam-selection.mjs`: exit 0, matriz fixa preservada.
+- `scripts/test-question-source-provenance.mjs`: exit 0.
+- `npm run check:pscpp-bank`: exit 0, 1.984 questões/254 históricas; mensagem
+  de fidelidade do gerador não comprova correção técnica atual.
+- `scripts/generate-runtime-question-catalog.mjs`,
+  `scripts/generate-runtime-flashcard-decks.mjs` e
+  `scripts/validate-runtime-question-catalog.mjs`: exit 0, catálogo/filtros/
+  contagens válidos e flashcards regenerados.
+- `scripts/test-notebook-complete-stems.mjs`: exit 1, próxima ANV-0108;
+  `scripts/validate-editorial-runtime.mjs`: exit 1, mesmos 77 localizadores.
+- `scripts/audit-pscpp-runtime-triage.mjs`: exit 0, 225/77 candidatos.
+- `scripts/audit-pscpp-runtime-inventory.mjs`: exit 0, 27.435 físicos/14.086
+  ocorrências/13.715 IDs; 37 hashes corrigidos conferidos no inventário.
+- `scripts/validate-pscpp-editorial-evidence.mjs`: exit 2 após inventário;
+  zero aceitos/14.086 pendentes ou inválidos, merge_permitted=false.
+- Comparação das fontes físicas com HEAD comprovou alterações somente nos
+  dois registros planejados; ANV-0105 principal permaneceu
+  inalterada campo a campo com active=false, status=quarantined e demais campos. Corrigida
+  apenas a restauração sobre descarga já consumida antes deste lote.
+- `NEXT_TELEMETRY_DISABLED=1 npm run build`: exit 0 na cópia isolada /tmp;
+  compilação, lint/types, 101 páginas e tabela de rotas confirmados. Falha
+  ENOTEMPTY do workspace observada no lote 019 não declarada resolvida.
+- Fontes/data/config rastreados fora dos relatórios e seis artefatos gerados
+  (bancos, catálogo, facetas, escopo e flashcards) idênticos byte a byte entre
+  origem e cópia. Avisos npm http-proxy, autoprefixer e serialização de avisos
+  do cache Webpack registrados, sem impedir o build.
+
+Scripts Node com `--no-warnings --experimental-loader
+./scripts/pscpp-json-loader.mjs`. Contrato direto estendido somente a ANV-0803;
+nenhum normalizador alterado, gate reduzido ou falha global suprimida.
+Rechecagem editorial independente, programa/edital oficial, estados globais,
+cobertura, unicidade semântica e offline/produção pendentes.

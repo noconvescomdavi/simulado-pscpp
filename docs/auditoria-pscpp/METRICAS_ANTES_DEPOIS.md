@@ -152,3 +152,23 @@ positivos anteriores sem alteração de conteúdo. Regressão de 29 combinadas
 com 116 proposições no HTML e seis diretas/30 opções preservadas pelo adaptador.
 12.067 outros cadernos e 1.984 PSCPP inalterados; matriz 100 em
 25/25/10/10/10/10/10 preservada. Sem certificação integral.
+
+## Lote 022
+
+| Métrica | Antes | Depois |
+|---|---:|---:|
+| Correções primárias acumuladas | 35 | 37 |
+| Conferências primárias parciais | 38 | 40 |
+| Aprovações editoriais finais | 0 | 0 |
+| Candidatos sem proposições | 226 | 225 |
+| Candidatos por localizador | 77 | 77 |
+| Registros físicos | 27435 | 27435 |
+| Ocorrências efetivas | 14086 | 14086 |
+| IDs únicos efetivos | 13715 | 13715 |
+
+ANV-0105 estava na triagem e ANV-0803 fora dela. Acumulados 28 candidatos
+corrigidos, nove correções fora dessa triagem e três falsos positivos anteriores
+sem alteração de conteúdo. Regressão de 30 combinadas/120 proposições no HTML,
+sete diretas/35 opções preservadas pelo adaptador. 12.065 outros cadernos e
+1.984 PSCPP inalterados; matriz de 100 em 25/25/10/10/10/10/10 preservada.
+Nenhum ID ativado/removido; quarentena física concorrente de 0105 intacta.

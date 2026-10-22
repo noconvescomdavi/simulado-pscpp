@@ -177,3 +177,21 @@ Acumulado 35 correções e 38 conferências parciais; zero aprovações finais.
 Hashes em CORRECOES_RUNTIME.json; evidência em REVISAO_ARTE_NAVAL_LOTE_021.md.
 Variantes compartilham competência; prevenção global de coexistência na mesma
 prova, rechecagem independente e programa/edital oficiais pendentes. Sem merge/deploy.
+
+## Lote 022 — corrente de descarga do hélice
+
+ANV-0105/0803 corrigidas individualmente com Fonseca, Arte Naval v.2, 8ª ed.,
+2019, arts.12.3/12.5/12.6.1, pp.795–798/PDF156–159. Textos, imagens, figuras
+12-2a/b/c e tabela de contexto conferidos; hash do PDF recalculado.
+Explicitados um hélice, leme a ré do propulsor, repouso inicial e modelo sem
+vento/corrente externos. Distintas descarga, sucção e esteira; guinada inicial
+pela descarga sem exigir seguimento prévio; referência à necessidade de
+experiências por navio mantida. Sem cálculo ou valores operacionais inventados.
+Restauração prevalente de 0105 e direta principal de 0803, keys E/C e IDs
+preservados; dez justificativas. Locator/tracking.section detalhados.
+A versão principal de 0105, em quarentena e sobre outro conteúdo, foi preservada
+com suas flags; a restauração já fazia parte do runtime antes deste lote.
+Acumulado 37 correções/40 conferências parciais, zero aprovações finais.
+Ver REVISAO_ARTE_NAVAL_LOTE_022.md e hashes em CORRECOES_RUNTIME.json.
+Sem merge/deploy; estados globais, rechecagem independente, programa oficial
+e deduplicação semântica/coexistência permanecem pendentes.

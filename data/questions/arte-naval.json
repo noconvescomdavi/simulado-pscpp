@@ -60933,36 +60933,39 @@
       "topic": "corrente de descarga do hélice",
       "difficulty": "Médio",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “corrente de descarga do hélice”.",
+      "question": "Um navio convencional de um hélice, com leme a ré do propulsor, está inicialmente parado. Carrega-se o leme para um bordo e dá-se adiante. No modelo de Fonseca, sem vento ou corrente externos, que ação pode iniciar a guinada para esse bordo antes de o navio adquirir velocidade?",
       "options": [
         {
           "key": "A",
-          "text": "condição transitória em que o casco ainda avança apesar do propulsor em reversão"
+          "text": "A corrente de sucção incide transversalmente na porta do leme e produz a ação evolutiva na marcha adiante."
         },
         {
           "key": "B",
-          "text": "força lateral produzida pelo escoamento sobre o leme angulado"
+          "text": "A corrente da esteira produz o esforço predominante sobre o leme antes de o casco adquirir seguimento."
         },
         {
           "key": "C",
-          "text": "jato acelerado lançado pelo propulsor"
+          "text": "A corrente de descarga incide sobre a porta do leme já carregado, produzindo ação evolutiva antes de haver seguimento apreciável."
         },
         {
           "key": "D",
-          "text": "componente transversal do empuxo do propulsor"
+          "text": "A pressão lateral das pás predomina sobre a descarga na porta do leme e explica, por si só, a guinada para o bordo do leme."
         },
         {
           "key": "E",
-          "text": "escoamento que chega ao propulsor após acompanhar o casco"
+          "text": "O movimento do casco através da água é indispensável; a rotação do hélice não pode iniciar o governo a partir do repouso."
         }
       ],
       "correct_answer": "C",
-      "explanation": "A opção correta apresenta a definição técnica de “corrente de descarga do hélice”: jato acelerado lançado pelo propulsor; quando dirigido sobre o leme, pode produzir governo mesmo com pouco seguimento do navio.",
+      "explanation": "A alternativa C corresponde à situação de 12.6.1: partindo do repouso, com leme carregado e hélice dando adiante, a descarga incide na porta do leme e pode iniciar a guinada. A confunde descarga com sucção, cujo escoamento na marcha adiante é sensivelmente paralelo ao eixo e não produz o efeito indicado em 12.3. B antecipa indevidamente a esteira decorrente do deslocamento do casco, descrita em 12.5. D inverte a comparação de forças: no caso descrito, a descarga sobre o leme supera a pressão lateral das pás. E ignora o governo inicial pela descarga. A obra ressalva a necessidade de experiências em cada navio; não se garante igual resposta em qualquer arranjo ou condição externa.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção A, item 12.6"
+        "locator": "cap. 12, seção A, arts. 12.3, 12.5 e 12.6.1, pp. 795–798",
+        "printed_page": 795,
+        "pdf_page": 156,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Governo de navio de um hélice",
@@ -60982,7 +60985,7 @@
           "title": "Manobra do Navio",
           "label": "Capítulo 12 - Manobra do Navio"
         },
-        "section": "cap. 12, seção A, item 12.6",
+        "section": "cap. 12, seção A, arts. 12.3, 12.5 e 12.6.1, pp. 795–798",
         "module": "Governo de navio de um hélice",
         "topic": {
           "id": "old-094",
@@ -60996,6 +60999,14 @@
         "chapter_id": "fonseca-arte-v1::ch12",
         "topic_id": "old-094",
         "subtopic_id": null
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Na marcha adiante descrita, a sucção é paralela ao eixo; o efeito sobre o leme carregado vem da descarga, art. 12.3.",
+        "B": "A esteira de 12.5 decorre do movimento do casco; não explica o efeito inicial da descarga partindo do repouso.",
+        "C": "É a incidência da descarga na porta do leme carregado ao dar adiante, descrita em 12.6.1.",
+        "D": "O texto atribui à descarga sobre o leme força maior que a pressão lateral das pás nessa situação, e não o inverso.",
+        "E": "O caso de 12.6.1 permite iniciar a guinada antes de adquirir velocidade, pela água posta em movimento pelo hélice."
       }
     },
     {
