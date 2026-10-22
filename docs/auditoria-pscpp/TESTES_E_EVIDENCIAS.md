@@ -375,3 +375,32 @@ Temporários preexistentes preservados. Sem merge, deploy desta auditoria ou
 alterações de usuários.
 
 Build com .next limpa passou, saída explícita 0: compilação, lint/tipos e 101 páginas. Regressão após build passou novamente, 20 deltas e 80 proposições renderizadas. Avisos preexistentes npm http-proxy e autoprefixer preservados. git diff --check passou.
+
+## Lote 014 — ANV-0067 e ANV-0765
+
+Base 232582b5; fonte e imagens em REVISAO_ARTE_NAVAL_LOTE_014.md.
+
+| Verificação | Resultado real |
+|---|---|
+| generate:question-banks, após edição concluída | Passou, saída 0, 12.102 questões |
+| npm run build, .next anterior preservada fora do repositório | Passou, saída 0, compilação, lint/tipos e 101 páginas |
+| test-pscpp-audit-anv0005.mjs, antes e após build | Passou, saída 0, 22 deltas exatos, 84 proposições no HTML, cinco opções diretas preservadas pelo adaptador, enunciado direto no HTML, combinação única e igualdade fonte/runtime; 12.080 outros cadernos e 1.984 PSCPP preservados |
+| validate-runtime-question-banks.mjs | Passou, saída 0, 12.102 questões com IDs únicos |
+| validate-pscpp-exam-selection.mjs | Passou, saída 0, matriz fixa 25/25/10/10/10/10/10 |
+| test-question-source-provenance.mjs | Passou, saída 0, precedência e fingerprints |
+| check:pscpp-bank | Passou, saída 0, 1.984 questões e 254 históricas |
+| audit-pscpp-runtime-inventory.mjs | Passou, saída 0, 27.435 físicos / 14.086 ocorrências / 13.715 IDs |
+| audit-pscpp-runtime-triage.mjs | 234 candidatos sem proposições e 77 localizadores |
+| test-notebook-complete-stems.mjs | Falha preservada, saída 1, próxima ANV-0068 |
+| validate-editorial-runtime.mjs | Falha preservada, saída 1, 77 localizadores |
+| validate-pscpp-editorial-evidence.mjs, após inventário concluído | Saída 2, 0/14.086 aprovações; merge_permitted=false |
+
+Primeiro script de edição falhou por ausência de provenance na vizinha antes de
+gravar as fontes. A geração sem alterações subsequente não foi evidência de
+correção. Script ajustado para preservar/criar o objeto existente quando necessário,
+editação concluída e geração repetida. Redações finais conferidas contra o
+normalizador antes da geração; nenhuma regra relaxada. A regressão ganhou contrato
+explícito para a questão direta ANV-0765; contratos combinados e gates mantidos.
+Avisos preexistentes npm http-proxy e autoprefixer preservados. Logs privados em
+audit-private/lote014. git diff --check passou. Sem merge, deploy desta auditoria
+ou alterações de usuários. Temporários preexistentes preservados.

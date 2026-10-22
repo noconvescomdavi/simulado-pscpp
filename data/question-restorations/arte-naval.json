@@ -4879,10 +4879,10 @@
       "subject": "Arte Naval",
       "module": "Amarras e acessórios",
       "topic_code": "old-049",
-      "topic": "quartel do torneio",
-      "difficulty": "Difícil",
+      "topic": "quartel do tornel",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “quartel do torneio”, identifique as verdadeiras e assinale a opção correta:\nI) “quartel do torneio” designa abertura tubular no costado por onde passa a amarra.\nII) “quartel do torneio” designa primeiro trecho da amarra, ligado ao navio por um torneio.\nIII) A bibliografia atribui a esse item a seguinte característica: permite reduzir a transmissão de torção para o restante da cadeia.\nIV) A bibliografia atribui a esse item a seguinte característica: realizado em amostras ou segmentos conforme as regras de fabricação e classificação.",
+      "question": "Considere o quartel do tornel na constituição das amarras dos navios de guerra descrita em Arte Naval, volume 2. Analise as proposições e escolha o conjunto completo das corretas:\nI) Esse quartel curto constitui a extremidade da amarra ligada ao navio, junto ao paiol.\nII) Seu comprimento é de 5 braças e ele constitui a extremidade da amarra ligada à âncora.\nIII) Na extremidade oposta à âncora, o tornel liga esse trecho curto ao primeiro quartel da amarra, permitindo o giro relativo à âncora.\nIV) O tornel pode gurnir na coroa do cabrestante juntamente com os elos comuns.",
       "options": [
         {
           "key": "A",
@@ -4906,16 +4906,20 @@
         }
       ],
       "correct_answer": "B",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “quartel do torneio”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "II e III são verdadeiras; I e IV são falsas. No arranjo descrito para navios de guerra, o quartel do tornel é o trecho curto de 5 braças da extremidade ligada à âncora. Na outra extremidade, o tornel o liga ao primeiro quartel da amarra e permite que ela gire em relação à âncora. O tornel não pode gurnir na coroa do cabrestante. O livro distingue esse arranjo do dos mercantes, que não têm esse quartel curto. Fonte: Fonseca, Arte Naval, v. 2, 8ª ed., art. 10.12.a, p. 720, fig. 10-12 na p. 721.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 10, seção B, item 10.12.a"
+        "locator": "cap. 10, seção B, art. 10.12.a, pp. 720–721, fig. 10-12",
+        "printed_page": 720,
+        "pdf_page": 81,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+        "drive_id": "1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec"
       },
       "tags": [
         "Amarras e acessórios",
-        "quartel do torneio",
+        "quartel do tornel",
         "Afirmativas combinadas"
       ],
       "tracking": {
@@ -4935,7 +4939,7 @@
         "module": "Amarras e acessórios",
         "topic": {
           "id": "old-049",
-          "title": "quartel do torneio"
+          "title": "quartel do tornel"
         }
       },
       "taxonomy": {
@@ -4950,8 +4954,22 @@
         "audit_restore": {
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
+        },
+        "primary_source_review": {
+          "batch": "014",
+          "status": "primary_content_corrected_not_final_approval",
+          "source_visual_checked": true,
+          "independent_recheck_pending": true
         }
-      }
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: I troca a extremidade da âncora pela do navio e IV permite indevidamente a passagem do tornel pela coroa; omite II e III.",
+        "B": "Correta: II identifica comprimento e posição e III identifica ligação e função do tornel; são as duas verdadeiras.",
+        "C": "Incorreta: inclui IV, contrária à impossibilidade de o tornel gurnir na coroa, e omite III.",
+        "D": "Incorreta: inclui IV falsa e omite II verdadeira.",
+        "E": "Incorreta: inclui I, que coloca o quartel curto junto ao paiol, e omite III verdadeira."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0068",

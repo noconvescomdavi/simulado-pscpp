@@ -39,7 +39,7 @@ for (const correction of correctionLog.corrections) {
   const q = after.find(q => q.id === correction.id);
   assert.equal(previous.get(q.id), correction.before_hash, `Frozen before hash changed: ${q.id}`);
   assert.equal(hash(q), correction.after_hash, `Effective corrected hash changed: ${q.id}`);
-  const primaryFile = q.id === 'ANV-0005' || q.id === 'ANV-0020'
+  const primaryFile = q.id === 'ANV-0005' || q.id === 'ANV-0020' || q.id === 'ANV-0765'
     ? 'data/questions/arte-naval.json' : 'data/question-restorations/arte-naval.json';
   const primary = JSON.parse(fs.readFileSync(primaryFile)).questions.find(row => row.id === q.id);
   assert.ok(primary, `Missing reviewed source: ${q.id}`);
@@ -49,6 +49,15 @@ for (const correction of correctionLog.corrections) {
   assert.equal(q.source.printed_page, correction.printed_page);
   assert.equal(q.source.pdf_page, correction.pdf_page);
   assert.equal(q.provenance?.mass_reformulation, undefined, `Corrected propositions were reformulated: ${q.id}`);
+  if (correction.format === 'direct') {
+    assert.equal(q.id, 'ANV-0765', 'Only the documented direct repair uses this contract');
+    assert.equal(q.options.length, 5);
+    assert.equal(new Set(q.options.map(o => o.text)).size, 5);
+    assert.deepEqual(q.options.map(o => o.key), ['A','B','C','D','E']);
+    assert.equal(q.options.find(o => o.key === q.correct_answer)?.text, correction.primary_checked_answer);
+    assert.equal(correction.proposition_truths, undefined);
+    continue;
+  }
   // Independently recompute the answer combination from the source-reviewed
   // truth vector, rather than merely checking an unchanged answer letter.
   // The vector is manual primary-source evidence, not automated proof of truth.
@@ -90,13 +99,22 @@ compiled.require = specifier => specifier.endsWith('.css') ? {}
   : specifier === '../../lib/question-structure' ? {classifyQuestionStructure} : componentRequire(specifier);
 compiled._compile(code, filename);
 let rendered = 0;
+let directOptionsPreserved = 0;
 for (const correction of correctionLog.corrections) {
   const q = after.find(q => q.id === correction.id);
   const props = classifyQuestionStructure(q).blocks.filter(b => b.type === 'assertions' || b.type === 'items').flatMap(b => b.items || []);
-  assert.equal(props.length, 4, `All four propositions must be parsed: ${q.id}`);
+  assert.equal(props.length, correction.format === 'direct' ? 0 : 4, `Expected proposition count: ${q.id}`);
   assert.equal(new Set(q.options.map(o => o.text)).size, 5);
   for (const option of q.options) assert.ok(q.distractor_analysis?.[option.key], `Missing alternative rationale: ${q.id}/${option.key}`);
   const html = renderToStaticMarkup(React.createElement(compiled.exports.default, {question:publicQuestion(q)}));
+  if (correction.format === 'direct') {
+    const escaped = renderToStaticMarkup(React.createElement('span', null, q.question)).slice(6,-7);
+    assert.ok(html.includes(escaped), `Direct stem absent from rendered HTML: ${q.id}`);
+    // StructuredQuestion renders the stem; options are passed separately by the
+    // notebook adapter. Verify that publicQuestion preserves every option.
+    assert.deepEqual(publicQuestion(q).options, q.options);
+    directOptionsPreserved += q.options.length;
+  }
   for (const item of props) {
     const escaped = renderToStaticMarkup(React.createElement('span', null, item.text)).slice(6,-7);
     assert.ok(html.includes(escaped), `Proposition absent from rendered HTML: ${q.id}/${item.label}`);
@@ -105,4 +123,4 @@ for (const correction of correctionLog.corrections) {
 }
 console.log(JSON.stringify({id:question.id, before_hash:previous.get(question.id), after_hash:hash(question),
   changed_effective_ids:changed, preserved_occurrences:after.length-correctionLog.corrections.length, propositions_rendered:rendered,
-  editorial_release_approval:false},null,2));
+  direct_options_preserved:directOptionsPreserved, editorial_release_approval:false},null,2));
