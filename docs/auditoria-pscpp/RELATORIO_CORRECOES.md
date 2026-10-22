@@ -132,3 +132,17 @@ Máquina de reboque conferida em Arte Naval v. 2, 8ª ed., art. 12.71, p. 909/PD
 ## Lote 018 — Correção ANV-0085
 
 Amarrar com regeira conferido em Arte Naval v. 2, 8ª ed., art. 12.51, p. 866/PDF 227. Restauração corrigida, quatro proposições F/V/F/V, chave E e cinco justificativas. Saída pela popa, finalidade de orientação e alternativas de fixação explicitadas; não se exige ancorote adicional. Acumulado: 26 correções primárias e 29 conferências parciais; zero aprovações finais. Triagem: 231 → 230 sem proposições; 77 localizadores. Próxima falha confirmada ANV-0092. Vizinha ANV-0783 lida; sobreposição registrada sem correção/aprovação da vizinha. Ver REVISAO_ARTE_NAVAL_LOTE_018.md.
+
+## Lote 019 — fio fusível de reboque
+
+Corrigidas individualmente ANV-0092/0790/0964, tópico old-141, com Fonseca v.2,
+8ª ed., 2019, 12.73.c, p.911/PDF272. O fio indica aproximação do limite
+de alongamento; não foi validada a antiga definição sacrificial. Distratores
+conferidos também em 12.73.b/d/e/f, p.911–912. Restauração prevalente de 0092
+e JSON principal de 0790/0964 corrigidos; keys B/E/D e três formatos preservados.
+Cinco justificativas por registro, cálculo hipotético 100→126m = 26% e hashes
+antes/depois documentados. Fonte/imagens privadas. Ver REVISAO_ARTE_NAVAL_LOTE_019.md.
+Acumulado 29 correções/32 conferências parciais, zero aprovações finais.
+Regressão: 29 deltas exatos, 104 proposições renderizadas, 15 opções diretas
+preservadas. Demais 12.073 cadernos e 1.984 PSCPP sem alteração efetiva.
+Sem merge/deploy; revisão independente, programa oficial e deduplicação pendentes.

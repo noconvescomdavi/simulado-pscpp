@@ -529,3 +529,39 @@ e cinco opções diretas anteriores preservadas. Validação de runtime passou, 
 14.086 ocorrências, 13.715 IDs. Gate após inventário concluído: saída 2,
 0/14.086 aprovações, merge_permitted=false. git diff --check passou.
 Isso não aprova editorialmente o banco.
+
+## Lote 019 — resultados executados
+
+- `npm run generate:question-banks`: exit 0, 12.102 questões.
+- `scripts/test-pscpp-audit-anv0005.mjs`: exit 0 antes/depois do build; 29
+  deltas exatos desde a base congelada, IDs preservados, 12.073 outras
+  ocorrências dos cadernos e 1.984 PSCPP sem alteração, 104 proposições no HTML
+  real, 15 opções diretas preservadas pelo adaptador e cálculo 100→126 = 26%.
+- `scripts/validate-runtime-question-banks.mjs`: exit 0.
+- `scripts/validate-pscpp-exam-selection.mjs`: exit 0, matriz fixa preservada.
+- `scripts/test-question-source-provenance.mjs`: exit 0.
+- `npm run check:pscpp-bank`: exit 0; 1.984 questões, 254 históricas observadas
+  preservadas; essa mensagem do gerador não comprova correção técnica atual.
+- `scripts/test-notebook-complete-stems.mjs`: exit 1, próxima falha ANV-0096;
+  não relaxado.
+- `scripts/validate-editorial-runtime.mjs`: exit 1, mesmos 77 localizadores.
+- `scripts/audit-pscpp-runtime-triage.mjs`: exit 0, 229/77 candidatos.
+- `scripts/audit-pscpp-runtime-inventory.mjs`: exit 0; 27.435 registros físicos,
+  14.086 ocorrências efetivas/13.715 IDs; inventários e manifesto regenerados.
+- `scripts/validate-pscpp-editorial-evidence.mjs`: exit 2, 0 aceitos / 14.086
+  pendentes ou inválidos; GATE_EVIDENCIAS regenerado, merge_permitted=false.
+- `NEXT_TELEMETRY_DISABLED=1 npm run build`: duas tentativas no workspace
+  saíram 1 após compilação, lint/types e 101 páginas: ENOTEMPTY removendo
+  .next/export (500.html presente). Saídas preservadas, incluindo .next anterior.
+  Build completo da cópia isolada em /tmp saiu 0, com compilação, lint/types,
+  101 páginas e tabela de rotas. Todos os arquivos rastreados foram comparados
+  byte a byte com a origem; seis artefatos gerados (bancos, catálogo, facetas,
+  escopo e flashcards) também idênticos. Nenhuma causa interna do erro de
+  limpeza foi comprovada. Avisos não bloqueantes npm http-proxy e autoprefixer
+  end/flex-end registrados. Regressão final após esse build saiu 0.
+
+Scripts Node executados com `--no-warnings --experimental-loader
+./scripts/pscpp-json-loader.mjs`. Contrato direto da regressão estendido somente
+aos dois IDs documentados; cálculo e preservação das alternativas acrescentados.
+Nenhuma mudança de normalizador ou redução de gates. Verdade primária depende
+da leitura; testes não equivalem à rechecagem editorial independente.

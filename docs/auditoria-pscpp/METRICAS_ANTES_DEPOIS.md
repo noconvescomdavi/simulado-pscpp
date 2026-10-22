@@ -93,3 +93,22 @@ Máquina de reboque conferida em Arte Naval v. 2, 8ª ed., art. 12.71, p. 909/PD
 ## Lote 018 — Métricas ANV-0085
 
 Amarrar com regeira conferido em Arte Naval v. 2, 8ª ed., art. 12.51, p. 866/PDF 227. Restauração corrigida, quatro proposições F/V/F/V, chave E e cinco justificativas. Saída pela popa, finalidade de orientação e alternativas de fixação explicitadas; não se exige ancorote adicional. Acumulado: 26 correções primárias e 29 conferências parciais; zero aprovações finais. Triagem: 231 → 230 sem proposições; 77 localizadores. Próxima falha confirmada ANV-0092. Vizinha ANV-0783 lida; sobreposição registrada sem correção/aprovação da vizinha. Ver REVISAO_ARTE_NAVAL_LOTE_018.md.
+
+## Lote 019
+
+| Métrica | Antes | Depois |
+|---|---:|---:|
+| Correções primárias acumuladas | 26 | 29 |
+| Conferências primárias parciais | 29 | 32 |
+| Aprovações editoriais finais | 0 | 0 |
+| Candidatos sem proposições | 230 | 229 |
+| Candidatos por localizador | 77 | 77 |
+| Registros físicos | 27435 | 27435 |
+| Ocorrências efetivas | 14086 | 14086 |
+| IDs únicos efetivos | 13715 | 13715 |
+
+ANV-0092 na triagem; ANV-0790/0964 fora dela com o mesmo erro técnico.
+Combinações corrigidas acumuladas 24; cinco correções fora dessa triagem;
+três falsos positivos resolvidos anteriormente. 26 combinadas verificadas
+no HTML (104 proposições); três diretas com 15 opções preservadas pelo adaptador.
+Matriz de 100 em 25/25/10/10/10/10/10 preservada. Zero certificação integral.

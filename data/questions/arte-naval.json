@@ -59950,36 +59950,39 @@
       "topic": "fusível do dispositivo de reboque",
       "difficulty": "Médio",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “fusível do dispositivo de reboque”.",
+      "question": "No dispositivo de reboque descrito por Fonseca, qual descrição corresponde à função do fusível associado ao cabo de náilon?",
       "options": [
         {
           "key": "A",
-          "text": "arranjo em que rebocador e rebocado permanecem amarrados lado a lado"
+          "text": "Passar o cabo de leva de um navio para o outro."
         },
         {
           "key": "B",
-          "text": "elemento resistente que transmite a tração entre rebocador e rebocado"
+          "text": "Passar o cabo de reboque para o navio rebocado."
         },
         {
           "key": "C",
-          "text": "cabo auxiliar empregado para controlar ou reter parte do dispositivo"
+          "text": "Controlar o pagamento do cabo de reboque durante a passagem do dispositivo."
         },
         {
           "key": "D",
-          "text": "guincho projetado para controlar comprimento e tensão do cabo"
+          "text": "Constituir um trecho adicional do dispositivo para aumentar seu peso ou facilitar a fixação."
         },
         {
           "key": "E",
-          "text": "componente deliberadamente dimensionado para romper antes de elementos críticos"
+          "text": "Indicar, por meio de um fio em cada extremidade do cabo, a aproximação do limite de alongamento do náilon."
         }
       ],
       "correct_answer": "E",
-      "explanation": "A opção correta apresenta a definição técnica de “fusível do dispositivo de reboque”: componente deliberadamente dimensionado para romper antes de elementos críticos; limita danos à estrutura ou ao equipamento quando a carga excede o valor previsto.",
+      "explanation": "A alternativa E corresponde ao art. 12.73.c: o fio fusível indica a aproximação do limite de alongamento do náilon. O texto alerta que alongamento superior a 25% do comprimento inicial pode causar perda permanente da capacidade de tração. As alternativas A, B, C e D descrevem, respectivamente, cabo mensageiro, cabo de leva, trapa e virador; não a função do fusível.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção F, item 12.73.c"
+        "locator": "cap. 12, seção F, art. 12.73.c, p. 911",
+        "printed_page": 911,
+        "pdf_page": 272,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Reboque",
@@ -60013,6 +60016,14 @@
         "chapter_id": "fonseca-arte-v1::ch12",
         "topic_id": "old-141",
         "subtopic_id": null
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "É a função do cabo mensageiro, art. 12.73.d, p. 912.",
+        "B": "É a função do cabo de leva, art. 12.73.e, p. 912.",
+        "C": "É a função da trapa durante a passagem, art. 12.73.f, p. 912.",
+        "D": "Descreve o virador opcional, art. 12.73.b, p. 911.",
+        "E": "É a indicação de aproximação do limite de alongamento descrita em 12.73.c, p. 911."
       }
     },
     {
@@ -72607,38 +72618,41 @@
       "module": "Reboque",
       "topic_code": "old-141",
       "topic": "fusível do dispositivo de reboque",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Situação aplicada",
-      "question": "Considere A definição técnica “componente deliberadamente dimensionado para romper antes de elementos críticos. A descrição inclui ainda esta característica: limita danos à estrutura ou ao equipamento quando a carga excede o valor previsto. Qual nomenclatura corresponde ao caso apresentado?",
+      "question": "Em uma situação hipotética, um cabo de reboque de náilon com comprimento inicial de 100 m atinge 126 m sob carga. Considerando o critério descrito por Fonseca e a finalidade do fio fusível, qual interpretação está correta?",
       "options": [
         {
           "key": "A",
-          "text": "reboque a contrabordo"
+          "text": "O fusível deve provocar a ruptura do cabo de reboque antes dos demais elementos, pois funciona como elo sacrificial."
         },
         {
           "key": "B",
-          "text": "cabo de reboque"
+          "text": "O fusível serve para passar o cabo de leva entre os navios, independentemente do alongamento observado."
         },
         {
           "key": "C",
-          "text": "trapa"
+          "text": "O alongamento indicado é de 26%, mas os fusíveis são dispensados quando o virador também é de náilon."
         },
         {
           "key": "D",
-          "text": "fusível do dispositivo de reboque"
+          "text": "O alongamento é de 26% do comprimento inicial e supera os 25% descritos; o fio em cada extremidade indica a aproximação desse limite, cuja ultrapassagem pode reduzir permanentemente a capacidade de tração."
         },
         {
           "key": "E",
-          "text": "máquina de reboque"
+          "text": "O alongamento deve ser calculado sobre os 126 m finais; por ser aproximadamente 20,6%, não supera o limite de 25%."
         }
       ],
       "correct_answer": "D",
-      "explanation": "“fusível do dispositivo de reboque” é componente deliberadamente dimensionado para romper antes de elementos críticos; limita danos à estrutura ou ao equipamento quando a carga excede o valor previsto.",
+      "explanation": "O alongamento relativo é (126 − 100)/100 × 100 = 26%. O denominador é o comprimento inicial. Assim, supera os 25% mencionados em 12.73.c, condição que pode causar perda permanente da capacidade de tração. O fio fusível indica a aproximação desse limite; o artigo não o define como elo sacrificial nem como mensageiro. Viradores de náilon também utilizam fusíveis. A alternativa D é a única correta; o cenário é hipotético e não demonstra ruptura obrigatória do cabo.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção F, item 12.73.c"
+        "locator": "cap. 12, seção F, art. 12.73.c, p. 911",
+        "printed_page": 911,
+        "pdf_page": 272,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Reboque",
@@ -72672,6 +72686,14 @@
         "chapter_id": "fonseca-arte-v1::ch12",
         "topic_id": "old-141",
         "subtopic_id": null
+      },
+      "cognitive_level": 3,
+      "distractor_analysis": {
+        "A": "Confunde indicação de alongamento com ruptura deliberada do cabo, função não atribuída ao fusível no artigo.",
+        "B": "A passagem do cabo de leva cabe ao mensageiro, art. 12.73.d, e não ao fusível.",
+        "C": "O cálculo de 26% está correto, mas 12.73.c determina a mesma finalidade de indicação nos viradores de náilon.",
+        "D": "Usa o comprimento inicial como base, obtém 26% e conserva o caráter possível da perda permanente e a finalidade indicadora do fio.",
+        "E": "Usa a base errada: 26/126 × 100 ≈ 20,6%, mas a fonte exige comparação com o comprimento inicial de 100 m."
       }
     },
     {
