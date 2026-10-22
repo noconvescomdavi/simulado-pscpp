@@ -69,3 +69,7 @@ finais em 14.086 ocorrências. Triagem sem proposições: 237 → 236; localizad
 Mantidos 27.435 registros físicos, 14.086 ocorrências e 13.715 IDs.
 Regressão: 19 deltas efetivos exatos, 76 proposições renderizadas; 12.083 outros
 cadernos e 1.984 PSCPP preservados. Matriz 25/25/10/10/10/10/10 preservada.
+
+## Lote 013 — Métricas ANV-0064
+
+Nó de escota dobrado conferido em Arte Naval v. 1, 8ª ed., art. 8.40, p. 552/PDF 550 e figura 8-36. Restauração corrigida, ambiguidade da antiga IV eliminada; quatro proposições V/V/F/F, gabarito D e cinco justificativas. Vinte correções primárias e 23 conferências parciais; zero aprovações finais. Triagem: 236 → 235 candidatos sem proposições; 77 localizadores mantidos. Próxima falha ANV-0067. Sobreposição com ANV-0762 registrada, sem aprovação da vizinha. Ver REVISAO_ARTE_NAVAL_LOTE_013.md.

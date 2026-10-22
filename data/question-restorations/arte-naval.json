@@ -4630,9 +4630,9 @@
       "module": "Trabalhos do marinheiro",
       "topic_code": "anv1-8.40",
       "topic": "nó de escota dobrado",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “nó de escota dobrado”, identifique as verdadeiras e assinale a opção correta:\nI) “nó de escota dobrado” designa variante do nó de escota em que o chicote faz uma volta redonda para maior segurança.\nII) A bibliografia atribui a esse item a seguinte característica: empregado para emendar espias, sobretudo quando uma possui alça ou quando têm tamanhos diferentes.\nIII) A bibliografia atribui a esse item a seguinte característica: utilizada para amarrar mastros, antenas e, em geral, objetos leves.\nIV) “nó de escota dobrado” designa nó usado para unir dois cabos pelos chicotes ou ligar um chicote a olhal, mão ou alça.",
+      "question": "Na emenda de espias, considere o nó de escota dobrado descrito em Arte Naval, volume 1. Analise as proposições e escolha o conjunto completo das corretas:\nI) Em relação ao nó de escota singelo, o chicote faz uma volta redonda, aumentando a segurança da ligação.\nII) Pode ser empregado na emenda de duas espias, sendo particularmente indicado quando uma delas tem alça.\nIII) Seu emprego na emenda de espias exige que ambas tenham a mesma bitola.\nIV) Na emenda de espias de grossuras diferentes, a alça deve ser formada pela espia mais fina.",
       "options": [
         {
           "key": "A",
@@ -4656,12 +4656,16 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “nó de escota dobrado”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "I e II são verdadeiras; III e IV são falsas. O nó de escota dobrado acrescenta uma volta redonda do chicote em relação ao singelo e é empregado na emenda de espias, especialmente quando uma tem alça ou quando suas grossuras diferem. Nesse último caso, a espia mais grossa forma a alça. Assim, não se exige igualdade de bitolas e não se atribui a alça à espia mais fina. Fonte: Fonseca, Arte Naval, v. 1, 8ª ed., art. 8.40, p. 552, fig. 8-36; art. 8.39 como contexto.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 1",
         "edition": "8. ed., 2019",
-        "locator": "cap. 8, item 8.40"
+        "locator": "cap. 8, arts. 8.39–8.40, p. 552, figs. 8-35–8-36",
+        "printed_page": 552,
+        "pdf_page": 550,
+        "sha256": "792beebaea10aaff4b65288c0cfc3dd76c507f779297ee42583d078a7ec1dd20",
+        "drive_id": "1LjlDejVyooU3QLJzF0COvAEnOgMDNC9N"
       },
       "tags": [
         "Trabalhos do marinheiro",
@@ -4700,8 +4704,22 @@
         "audit_restore": {
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
+        },
+        "primary_source_review": {
+          "batch": "013",
+          "status": "primary_content_corrected_not_final_approval",
+          "source_visual_checked": true,
+          "independent_recheck_pending": true
         }
-      }
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: inclui IV, que inverte a escolha da espia que forma a alça, e omite II, verdadeira.",
+        "B": "Incorreta: reúne III e IV, ambas falsas; não há exigência de bitolas iguais e a espia mais grossa forma a alça.",
+        "C": "Incorreta: inclui III, que exclui indevidamente a aplicação a espias de bitolas diferentes, e omite II.",
+        "D": "Correta: I descreve a volta redonda adicional e II uma aplicação expressamente indicada; são as duas verdadeiras.",
+        "E": "Incorreta: inclui IV, que atribui a alça à espia mais fina, e omite I, verdadeira."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0065",

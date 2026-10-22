@@ -343,3 +343,35 @@ isolada confirmou o erro de localizadores e registrou lista completa. Nenhum
 critério foi relaxado. Logs privados em audit-private/lote012. Avisos npm e
 autoprefixer preexistentes mantidos. git diff --check passou. Sem merge, deploy
 desta auditoria ou alterações de usuários.
+
+## Lote 013 — ANV-0064
+
+Base 04e99e5f; fonte, imagem e julgamento em REVISAO_ARTE_NAVAL_LOTE_013.md.
+
+| Verificação | Resultado real |
+|---|---|
+| generate:question-banks, após ajuste final | Passou, 12.102 questões |
+| test-pscpp-audit-anv0005.mjs | Passou: 20 deltas exatos, 80 proposições no HTML real, combinação única, igualdade fonte/runtime; 12.082 outros cadernos e 1.984 PSCPP preservados |
+| validate-runtime-question-banks.mjs | Passou, 12.102 questões com IDs únicos |
+| validate-pscpp-exam-selection.mjs | Passou, matriz fixa 25/25/10/10/10/10/10 |
+| test-question-source-provenance.mjs | Passou, precedência e fingerprints |
+| check:pscpp-bank | Passou, 1.984 questões e 254 históricas |
+| audit-pscpp-runtime-inventory.mjs | Passou, 27.435 físicos / 14.086 ocorrências / 13.715 IDs |
+| audit-pscpp-runtime-triage.mjs | 235 candidatos sem proposições e 77 localizadores |
+| test-notebook-complete-stems.mjs | Falha preservada, próxima ANV-0067 |
+| validate-editorial-runtime.mjs | Falha preservada, 77 localizadores |
+| validate-pscpp-editorial-evidence.mjs | Saída 2, 0/14.086 aprovações; merge_permitted=false |
+
+A primeira redação ainda sofreu normalização por sobreposição lexical com a
+alternativa de combinação. A regressão detectou a remoção; essa tentativa não
+foi aceita. Redação ajustada sem alterar o normalizador, critérios ou gabarito,
+geração concluída e hash efetivo recalculado; regressão repetida passou.
+Build com insumos provisórios interrompido; build com redação final compilou e
+gerou 101 páginas, mas saiu 1 no cleanup ENOTEMPTY em .next/export/_next.
+Saída preservada fora do repositório; nova tentativa com .next limpa documentada
+abaixo. Inventário repetido após log inicialmente incompleto para registrar saída
+explícita 0. Logs privados em audit-private/lote013. Nenhum teste relaxado.
+Temporários preexistentes preservados. Sem merge, deploy desta auditoria ou
+alterações de usuários.
+
+Build com .next limpa passou, saída explícita 0: compilação, lint/tipos e 101 páginas. Regressão após build passou novamente, 20 deltas e 80 proposições renderizadas. Avisos preexistentes npm http-proxy e autoprefixer preservados. git diff --check passou.

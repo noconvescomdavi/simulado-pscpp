@@ -108,3 +108,7 @@ e cinco alternativas preservados, cinco justificativas e referência rastreável
 Texto sobrevive ao pipeline sem normalizador ou teste relaxado. Relatório
 REVISAO_ARTE_NAVAL_LOTE_012.md. Acumulado: 19 correções primárias e 22
 conferências bibliográficas parciais, zero aprovações finais. Próxima ANV-0064.
+
+## Lote 013 — Correção ANV-0064
+
+Nó de escota dobrado conferido em Arte Naval v. 1, 8ª ed., art. 8.40, p. 552/PDF 550 e figura 8-36. Restauração corrigida, ambiguidade da antiga IV eliminada; quatro proposições V/V/F/F, gabarito D e cinco justificativas. Vinte correções primárias e 23 conferências parciais; zero aprovações finais. Triagem: 236 → 235 candidatos sem proposições; 77 localizadores mantidos. Próxima falha ANV-0067. Sobreposição com ANV-0762 registrada, sem aprovação da vizinha. Ver REVISAO_ARTE_NAVAL_LOTE_013.md.
