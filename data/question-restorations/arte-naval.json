@@ -7595,9 +7595,9 @@
       "module": "Atracação e desatracação",
       "topic_code": "old-116",
       "topic": "atracação mediterrânea",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “atracação mediterrânea”, identifique as verdadeiras e assinale a opção correta:\nI) A bibliografia atribui a esse item a seguinte característica: opõe-se principalmente ao movimento do navio para vante.\nII) “atracação mediterrânea” designa amarração com uma extremidade do navio junto ao cais e ferros ou amarras na extremidade oposta.\nIII) A bibliografia atribui a esse item a seguinte característica: maximiza o uso linear do cais e exige posicionamento preciso das âncoras.\nIV) “atracação mediterrânea” designa espia que sai da proa e segue para vante no cais.",
+      "question": "Sobre a atracação mediterrânea descrita por Fonseca, analise as proposições e escolha o conjunto completo das corretas.\nI) O estaiamento da proa torna esse tipo de atracação seguro mesmo com rajadas fortes de vento pelo través.\nII) Na configuração com os próprios ferros, o navio fica perpendicular ao cais, com a popa amarrada por espias e dois ferros a vante segurando a proa.\nIII) Ao planejar a posição dos ferros, deve-se deixar distância suficiente do cais para que o navio gire claro de outros ao suspender.\nIV) A abertura recomendada entre as amarras é de aproximadamente 90°.",
       "options": [
         {
           "key": "A",
@@ -7621,12 +7621,15 @@
         }
       ],
       "correct_answer": "E",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “atracação mediterrânea”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "II e III são verdadeiras. O art. 12.38 descreve a popa amarrada ao cais e dois ferros a vante, mantendo o navio perpendicular ao cais; a posição dos ferros deve permitir o giro livre de outros navios ao suspender. I é falsa: o texto alerta que esse tipo de atracação não é seguro sob fortes rajadas de través. IV é falsa: a abertura indicada é em torno de 50°, não 90°. Apenas II e III formam o conjunto completo, alternativa E. O artigo também admite substituição posterior pelo dispositivo permanente disponível no porto; isso não invalida a configuração inicial com os próprios ferros.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção C, item 12.38"
+        "locator": "cap. 12, seção C, art. 12.38, p. 838",
+        "printed_page": 838,
+        "pdf_page": 199,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Atracação e desatracação",
@@ -7666,6 +7669,14 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "I e IV são falsas: o estaiamento não elimina a restrição a rajadas fortes de través, e a abertura indicada é cerca de 50°.",
+        "B": "III é verdadeira, mas I é falsa e II foi omitida.",
+        "C": "II é verdadeira, mas I é falsa e III foi omitida.",
+        "D": "II é verdadeira, mas IV troca os cerca de 50° por 90° e omite III.",
+        "E": "II e III são as únicas verdadeiras: configuração inicial e distância para girar livre ao suspender."
       }
     },
     {

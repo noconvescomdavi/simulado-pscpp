@@ -162,3 +162,18 @@ Acumulado 33 correções/36 conferências parciais, zero aprovações finais.
 Ver REVISAO_ARTE_NAVAL_LOTE_020.md e hashes em CORRECOES_RUNTIME.json.
 Sobreposição entre variantes registrada; impedimento global de coexistência,
 rechecagem independente e alinhamento oficial/programático pendentes. Sem merge/deploy.
+
+## Lote 021 — atracação mediterrânea
+
+ANV-0100 e ANV-0798 corrigidas individualmente com Fonseca, Arte Naval v.2,
+8ª ed., 2019, 12.38, p.838/PDF199; continuação e figura 12-19 na p.839/PDF200
+inspecionadas como contexto. Restituição das quatro proposições na restauração
+prevalente e reformulação fundamentada da direta no principal. Keys E/C, IDs,
+competência e formatos principais preservados; dez justificativas específicas.
+Popa ao cais/dois ferros a vante, restrição a fortes rajadas de través, posição
+dos ferros para giro livre ao suspender, abertura aproximada de 50° e cálculo
+do filame explicitados sem generalizar para todo navio/porto. Sem cálculo novo.
+Acumulado 35 correções e 38 conferências parciais; zero aprovações finais.
+Hashes em CORRECOES_RUNTIME.json; evidência em REVISAO_ARTE_NAVAL_LOTE_021.md.
+Variantes compartilham competência; prevenção global de coexistência na mesma
+prova, rechecagem independente e programa/edital oficiais pendentes. Sem merge/deploy.

@@ -39,7 +39,7 @@ for (const correction of correctionLog.corrections) {
   const q = after.find(q => q.id === correction.id);
   assert.equal(previous.get(q.id), correction.before_hash, `Frozen before hash changed: ${q.id}`);
   assert.equal(hash(q), correction.after_hash, `Effective corrected hash changed: ${q.id}`);
-  const primaryFile = ['ANV-0005','ANV-0020','ANV-0765','ANV-0790','ANV-0964','ANV-0794','ANV-0795'].includes(q.id)
+  const primaryFile = ['ANV-0005','ANV-0020','ANV-0765','ANV-0790','ANV-0964','ANV-0794','ANV-0795','ANV-0798'].includes(q.id)
     ? 'data/questions/arte-naval.json' : 'data/question-restorations/arte-naval.json';
   const primary = JSON.parse(fs.readFileSync(primaryFile)).questions.find(row => row.id === q.id);
   assert.ok(primary, `Missing reviewed source: ${q.id}`);
@@ -50,7 +50,7 @@ for (const correction of correctionLog.corrections) {
   assert.equal(q.source.pdf_page, correction.pdf_page);
   assert.equal(q.provenance?.mass_reformulation, undefined, `Corrected propositions were reformulated: ${q.id}`);
   if (correction.format === 'direct') {
-    assert.ok(['ANV-0765','ANV-0790','ANV-0964','ANV-0794','ANV-0795'].includes(q.id), 'Only documented direct repairs use this contract');
+    assert.ok(['ANV-0765','ANV-0790','ANV-0964','ANV-0794','ANV-0795','ANV-0798'].includes(q.id), 'Only documented direct repairs use this contract');
     if (q.id === 'ANV-0964') {
       const {initial, final, threshold, percent} = correction.calculation;
       assert.equal((final-initial)/initial*100, percent);

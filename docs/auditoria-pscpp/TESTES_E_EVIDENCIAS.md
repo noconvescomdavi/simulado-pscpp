@@ -610,3 +610,42 @@ com um quarto do peso, evitando o valor fisicamente denunciador de peso total.
 Geração local, catálogo, flashcards, inventário, gate e regressão repetidos;
 build final repetido na cópia isolada com a fonte final estável. Build anterior
 à sincronização desse refinamento não foi usado para certificar a versão final.
+
+## Lote 021 — resultados executados
+
+- `npm run generate:question-banks`: exit 0, 12.102 questões.
+- `scripts/test-pscpp-audit-anv0005.mjs`: exit 0 antes/depois do build; 35
+  deltas exatos desde a base congelada, igualdade fonte/runtime e IDs intactos;
+  116 proposições no HTML real, 30 opções diretas preservadas pelo adaptador;
+  12.067 outros cadernos e 1.984 PSCPP sem alteração efetiva.
+- `scripts/validate-runtime-question-banks.mjs`: exit 0.
+- `scripts/validate-pscpp-exam-selection.mjs`: exit 0, matriz fixa preservada.
+- `scripts/test-question-source-provenance.mjs`: exit 0.
+- `npm run check:pscpp-bank`: exit 0, 1.984 questões/254 históricas; mensagem
+  do gerador sobre fidelidade não comprova correção técnica atual.
+- `scripts/generate-runtime-question-catalog.mjs`,
+  `scripts/generate-runtime-flashcard-decks.mjs` e
+  `scripts/validate-runtime-question-catalog.mjs`: exit 0, catálogo/contagens/
+  filtros completos e flashcards regenerados.
+- `scripts/test-notebook-complete-stems.mjs`: exit 1, próxima ANV-0105.
+  `scripts/validate-editorial-runtime.mjs`: exit 1, mesmos 77 localizadores.
+  Critérios não relaxados.
+- `scripts/audit-pscpp-runtime-triage.mjs`: exit 0, 226/77 candidatos.
+- `scripts/audit-pscpp-runtime-inventory.mjs`: exit 0, 27.435 físicos/14.086
+  ocorrências/13.715 IDs; 35 hashes corrigidos comparados ao inventário.
+- `scripts/validate-pscpp-editorial-evidence.mjs`: exit 2 após inventário;
+  zero aceitos/14.086 pendentes ou inválidos, merge_permitted=false.
+- `NEXT_TELEMETRY_DISABLED=1 npm run build`: confirmação na cópia isolada
+  saiu 0 com compilação, lint/types, 101 páginas e tabela de rotas. Primeiro
+  exit 0 tinha log incompleto após os geradores e não foi aceito como prova
+  de build completo. Logs preservados. Falha ENOTEMPTY do workspace observada
+  no lote 019 não declarada resolvida; usada cópia isolada /tmp.
+- Fontes/data/config rastreados fora dos relatórios e seis artefatos gerados
+  (bancos, catálogo, facetas, escopo e flashcards) idênticos byte a byte entre
+  origem e cópia. Avisos não bloqueantes npm http-proxy/autoprefixer registrados.
+
+Scripts Node com `--no-warnings --experimental-loader
+./scripts/pscpp-json-loader.mjs`. Contrato direto da regressão inclui somente
+o novo ID documentado ANV-0798; nenhum normalizador alterado. Correção
+bibliográfica parcial não é rechecagem editorial independente nem aprovação
+programática, semântica global ou de release.

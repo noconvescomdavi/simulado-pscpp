@@ -132,3 +132,23 @@ fora dela e três falsos positivos anteriores sem alteração de conteúdo.
 Regressão: 28 combinadas/112 proposições no HTML real, cinco diretas/25 opções
 preservadas no adaptador; 12.069 outros cadernos e 1.984 PSCPP inalterados.
 Matriz fixa 100 em 25/25/10/10/10/10/10 preservada. Zero certificação integral.
+
+## Lote 021
+
+| Métrica | Antes | Depois |
+|---|---:|---:|
+| Correções primárias acumuladas | 33 | 35 |
+| Conferências primárias parciais | 36 | 38 |
+| Aprovações editoriais finais | 0 | 0 |
+| Candidatos sem proposições | 227 | 226 |
+| Candidatos por localizador | 77 | 77 |
+| Registros físicos | 27435 | 27435 |
+| Ocorrências efetivas | 14086 | 14086 |
+| IDs únicos efetivos | 13715 | 13715 |
+
+ANV-0100 estava na triagem; ANV-0798 fora dela. Acumulados: 27 correções de
+candidatos sem proposições, oito correções fora dessa triagem e três falsos
+positivos anteriores sem alteração de conteúdo. Regressão de 29 combinadas
+com 116 proposições no HTML e seis diretas/30 opções preservadas pelo adaptador.
+12.067 outros cadernos e 1.984 PSCPP inalterados; matriz 100 em
+25/25/10/10/10/10/10 preservada. Sem certificação integral.
