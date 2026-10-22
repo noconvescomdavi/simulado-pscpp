@@ -231,3 +231,21 @@ Acumulado 41 correções/44 conferências parciais, zero aprovações finais.
 Ver REVISAO_ARTE_NAVAL_LOTE_024.md e CORRECOES_RUNTIME.json.
 Rechecagem independente, alinhamento oficial, estados globais e semântica pendentes.
 Sem merge/deploy; oito gates seguem pendentes/falhos.
+
+
+## Lote 025 — transmissão elétrica selsyn
+
+ANV-0116/0814/0972 corrigidas individualmente com Fonseca v.2, 8ª ed., 2019,
+11.5.c pp.760–761/PDF121–122, contrastes 11.5.a/b, 11.6 e 11.7.b. Texto e
+imagens pp.758–763/PDF119–124, figuras11-3/11-4/11-5 conferidos; hash recalculado.
+Distintos comando elétrico transmissor/receptor e potência para acionar o leme.
+Expresso emprego no controle de bomba de servomotor hidrelétrico sem confundir
+com transmissão hidráulica do comando. Diferenciados telemotor, eixos, gualdropes
+e quadrantal. Sem precisão/fabricante/desempenho inventados.
+Keys A/D/B, IDs e formatos B/A/A preservados; quinze justificativas. Restauração
+0116 corrigida; principal divergente de outro tema e seus campos intactos.
+Nenhum normalizador/filtro/gate alterado; contrato direto acrescido só 0814/0972.
+Acumulado 44 correções/47 conferências parciais, zero aprovações finais.
+Ver REVISAO_ARTE_NAVAL_LOTE_025.md e CORRECOES_RUNTIME.json.
+Rechecagem independente, versão oficial, estados globais e semântica pendentes.
+Sem merge/deploy; oito gates seguem pendentes/falhos.

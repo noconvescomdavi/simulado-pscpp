@@ -8898,9 +8898,9 @@
       "module": "Transmissões do governo",
       "topic_code": "old-080",
       "topic": "transmissão elétrica selsyn",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “transmissão elétrica selsyn”, identifique as verdadeiras e assinale a opção correta:\nI) “transmissão elétrica selsyn” designa par de motores autossincronizados que reproduz eletricamente o giro de comando.\nII) A bibliografia atribui a esse item a seguinte característica: o receptor acompanha velocidade e deslocamento angular do transmissor.\nIII) “transmissão elétrica selsyn” designa ligação feita por vergalhões ou eixos.\nIV) A bibliografia atribui a esse item a seguinte característica: sofre perdas por atrito e exige inspeção de cabos, correntes, roldanas e tensões.",
+      "question": "Sobre a transmissão elétrica selsyn entre a roda do leme e o servomotor descrita por Fonseca, analise as proposições e escolha o conjunto completo das corretas.\nI) O sistema utiliza dois motores de corrente alternada, um transmissor comandado pela roda e um receptor ligado ao controle do servomotor.\nII) O rotor receptor acompanha o movimento do transmissor em velocidade e deslocamento angular; no emprego com servomotor hidrelétrico, pode atuar no controle da bomba.\nIII) A comunicação entre transmissor e receptor ocorre por diferença de pressão em dois tubos de cobre cheios de líquido.\nIV) A ligação entre as estações de governo exige uma linha de eixos com juntas universais e engrenagens cônicas para transmitir o comando.",
       "options": [
         {
           "key": "A",
@@ -8924,12 +8924,15 @@
         }
       ],
       "correct_answer": "A",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “transmissão elétrica selsyn”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "I e II são verdadeiras no art. 11.5.c: o par transmissor-receptor é elétrico, de corrente alternada, e o rotor receptor acompanha velocidade e deslocamento angular do rotor transmissor. A p. 761 apresenta seu emprego no mecanismo de controle da bomba de um servomotor hidrelétrico; transmitir o comando não equivale a acionar diretamente a madre do leme. III descreve o telemotor hidráulico do art. 11.6, não o selsyn, que usa condutores elétricos. IV atribui ao selsyn o arranjo de transmissão mecânica rígida descrito em 11.5.a. Apenas I e II formam o conjunto completo, alternativa A. A descrição é a do sistema na edição consultada; não se trata de especificação de precisão ou de desempenho de qualquer equipamento real.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, seção A, item 11.5.c"
+        "locator": "cap. 11, seção A, art. 11.5.c, pp. 760–761; contrastes 11.5.a/b, p. 760, 11.6, pp. 761–763, e 11.7.b, p. 763",
+        "printed_page": 760,
+        "pdf_page": 121,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Transmissões do governo",
@@ -8949,7 +8952,7 @@
           "title": "Aparelho de governo, mastreação e aparelhos de carga",
           "label": "Capítulo 11 - Aparelho de governo, mastreação e aparelhos de carga"
         },
-        "section": "cap. 11, seção A, item 11.5.c",
+        "section": "cap. 11, seção A, art. 11.5.c, pp. 760–761; contrastes 11.5.a/b, p. 760, 11.6, pp. 761–763, e 11.7.b, p. 763",
         "module": "Transmissões do governo",
         "topic": {
           "id": "old-080",
@@ -8969,6 +8972,14 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "I e II são as únicas verdadeiras: arquitetura elétrica e acompanhamento do rotor, com atuação no controle do servomotor.",
+        "B": "I é verdadeira, mas III é hidráulica; falta II.",
+        "C": "I é verdadeira, mas IV descreve transmissão mecânica rígida; falta II.",
+        "D": "III descreve telemotor e IV transmissão mecânica rígida; ambas são falsas para o selsyn.",
+        "E": "II é verdadeira, mas III é falsa e I foi omitida."
       }
     },
     {

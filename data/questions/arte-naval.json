@@ -61771,36 +61771,39 @@
       "topic": "transmissão elétrica selsyn",
       "difficulty": "Médio",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “transmissão elétrica selsyn”.",
+      "question": "Qual arranjo corresponde à transmissão elétrica selsyn entre a roda do leme e o mecanismo de controle do servomotor, na descrição de Fonseca?",
       "options": [
         {
           "key": "A",
-          "text": "comando transmitido por pressão líquida em tubulações protegidas"
+          "text": "Cilindros transmissor e receptor comunicam-se por tubos de cobre cheios de líquido, transmitindo diferenças de pressão."
         },
         {
           "key": "B",
-          "text": "conjunto hidráulico transmissor-receptor que leva a ordem da roda ao servomotor"
+          "text": "Vergalhões ou eixos levam mecanicamente o comando, com juntas universais e engrenagens cônicas nas mudanças de direção."
         },
         {
           "key": "C",
-          "text": "ligação entre roda e governo realizada por gualdropes"
+          "text": "Gualdropes constituem a ligação flexível pela qual o comando é transmitido mecanicamente."
         },
         {
           "key": "D",
-          "text": "par de motores autossincronizados que reproduz eletricamente o giro de comando"
+          "text": "Um transmissor comandado pela roda comunica-se por condutores elétricos com um receptor cujo rotor acompanha o giro do transmissor."
         },
         {
           "key": "E",
-          "text": "ligação em que o esforço do servomotor atua sobre um quadrante solidário à madre"
+          "text": "Uma pequena roda dentada acionada pela máquina engrena em um setor dentado fixado rigidamente à cana do leme."
         }
       ],
       "correct_answer": "D",
-      "explanation": "A opção correta apresenta a definição técnica de “transmissão elétrica selsyn”: par de motores autossincronizados que reproduz eletricamente o giro de comando; o receptor acompanha velocidade e deslocamento angular do transmissor.",
+      "explanation": "A alternativa D descreve o selsyn do art. 11.5.c, pp. 760–761. A corresponde ao telemotor hidráulico, art. 11.6. B descreve a transmissão mecânica rígida e C a flexível, art. 11.5.a. E descreve a transmissão quadrantal entre máquina e leme, art. 11.7.b, p. 763, que pertence a outra etapa da cadeia de governo. O receptor selsyn atua no mecanismo de controle do servomotor; no exemplo hidrelétrico, atua no controle da bomba. Não se deve confundir a transmissão elétrica da ordem com a fonte de potência que movimenta o leme.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, seção A, item 11.5.c"
+        "locator": "cap. 11, seção A, art. 11.5.c, pp. 760–761; contrastes 11.5.a/b, p. 760, 11.6, pp. 761–763, e 11.7.b, p. 763",
+        "printed_page": 760,
+        "pdf_page": 121,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Transmissões do governo",
@@ -61820,7 +61823,7 @@
           "title": "Aparelho de governo, mastreação e aparelhos de carga",
           "label": "Capítulo 11 - Aparelho de governo, mastreação e aparelhos de carga"
         },
-        "section": "cap. 11, seção A, item 11.5.c",
+        "section": "cap. 11, seção A, art. 11.5.c, pp. 760–761; contrastes 11.5.a/b, p. 760, 11.6, pp. 761–763, e 11.7.b, p. 763",
         "module": "Transmissões do governo",
         "topic": {
           "id": "old-080",
@@ -61834,6 +61837,14 @@
         "chapter_id": "fonseca-arte-v1::ch11",
         "topic_id": "old-080",
         "subtopic_id": null
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Transmissão hidráulica por telemotor, não elétrica; art. 11.6.",
+        "B": "É transmissão mecânica rígida; os eixos transmitem o movimento, art. 11.5.a.",
+        "C": "É transmissão mecânica flexível por gualdropes, art. 11.5.a.",
+        "D": "Corresponde ao par transmissor-receptor ligado por condutores, art. 11.5.c.",
+        "E": "É transmissão quadrantal da máquina ao leme, outra etapa; art. 11.7.b."
       }
     },
     {
@@ -73274,38 +73285,41 @@
       "module": "Transmissões do governo",
       "topic_code": "old-080",
       "topic": "transmissão elétrica selsyn",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Situação aplicada",
-      "question": "Considere A definição técnica “par de motores autossincronizados que reproduz eletricamente o giro de comando. A descrição inclui ainda esta característica: o receptor acompanha velocidade e deslocamento angular do transmissor. Qual nomenclatura corresponde ao caso apresentado?",
+      "question": "Em um sistema de governo descrito conforme Fonseca, a roda comanda um motor-piloto. Condutores elétricos ligam esse transmissor a um receptor cujo rotor acompanha a velocidade e o deslocamento angular do transmissor. O receptor atua no controle de uma bomba hidráulica. Qual é a transmissão do comando entre a roda e o controle do servomotor nesse arranjo?",
       "options": [
         {
           "key": "A",
-          "text": "transmissão hidráulica"
+          "text": "Transmissão hidráulica por diferença de pressão em uma rede de líquido."
         },
         {
           "key": "B",
-          "text": "transmissão elétrica selsyn"
+          "text": "Transmissão elétrica selsyn."
         },
         {
           "key": "C",
-          "text": "telemotor"
+          "text": "Transmissão mecânica rígida por eixos."
         },
         {
           "key": "D",
-          "text": "transmissão mecânica flexível"
+          "text": "Transmissão mecânica flexível por gualdropes."
         },
         {
           "key": "E",
-          "text": "transmissão quadrantal"
+          "text": "Transmissão quadrantal entre a máquina e a cana do leme."
         }
       ],
       "correct_answer": "B",
-      "explanation": "“transmissão elétrica selsyn” é par de motores autossincronizados que reproduz eletricamente o giro de comando; o receptor acompanha velocidade e deslocamento angular do transmissor.",
+      "explanation": "A alternativa B é a única correta. A transmissão do comando é elétrica selsyn, conforme 11.5.c, pois o par motor-piloto/receptor se comunica por condutores e reproduz o movimento dos rotores. A existência de uma bomba hidráulica no servomotor não transforma essa ligação de comando em transmissão hidráulica: a p. 761 cita expressamente esse emprego do selsyn. A exigiria comunicação por pressão líquida; C e D exigiriam, respectivamente, eixos ou gualdropes; E se refere à transmissão entre máquina e leme, não à ligação perguntada. O caso testa a distinção entre transmissão da ordem e acionamento do leme, sem requerer cálculo ou modelo específico de fabricante.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, seção A, item 11.5.c"
+        "locator": "cap. 11, seção A, art. 11.5.c, pp. 760–761; contrastes 11.5.a/b, p. 760, 11.6, pp. 761–763, e 11.7.b, p. 763",
+        "printed_page": 760,
+        "pdf_page": 121,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Transmissões do governo",
@@ -73325,7 +73339,7 @@
           "title": "Aparelho de governo, mastreação e aparelhos de carga",
           "label": "Capítulo 11 - Aparelho de governo, mastreação e aparelhos de carga"
         },
-        "section": "cap. 11, seção A, item 11.5.c",
+        "section": "cap. 11, seção A, art. 11.5.c, pp. 760–761; contrastes 11.5.a/b, p. 760, 11.6, pp. 761–763, e 11.7.b, p. 763",
         "module": "Transmissões do governo",
         "topic": {
           "id": "old-080",
@@ -73339,6 +73353,14 @@
         "chapter_id": "fonseca-arte-v1::ch11",
         "topic_id": "old-080",
         "subtopic_id": null
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Confunde a bomba do servomotor com o meio de transmissão do comando, que no caso é elétrico.",
+        "B": "Par transmissor-receptor por condutores, com acompanhamento dos rotores: selsyn, art. 11.5.c.",
+        "C": "O caso não descreve uma linha de eixos para transmitir o comando; art. 11.5.a.",
+        "D": "O caso não descreve gualdropes, que caracterizam a transmissão mecânica flexível.",
+        "E": "Classifica a etapa máquina-leme, enquanto a pergunta delimita roda-controle do servomotor; art. 11.7.b."
       }
     },
     {
