@@ -494,3 +494,38 @@ check:pscpp-bank passou, saída 0, 1.984 questões e 254 históricas. Inventári
 saída 0: 27.435 físicos, 14.086 ocorrências, 13.715 IDs. Gate após inventário:
 saída 2, 0/14.086 aprovações, merge_permitted=false. git diff --check passou.
 Isso não aprova editorialmente o banco.
+
+## Lote 018 — ANV-0085
+
+Base bcd4a7db; fonte e imagem em REVISAO_ARTE_NAVAL_LOTE_018.md.
+
+| Verificação | Resultado real |
+|---|---|
+| generate:question-banks | Passou, saída 0, 12.102 questões |
+| test-pscpp-audit-anv0005.mjs, após geração concluída | Passou, saída 0, 26 deltas exatos, 100 proposições no HTML, cinco opções diretas anteriores preservadas; igualdade fonte/runtime e combinação única; 12.076 outros cadernos e 1.984 PSCPP preservados |
+| validate-pscpp-exam-selection.mjs | Passou, saída 0, matriz fixa 25/25/10/10/10/10/10 |
+| test-question-source-provenance.mjs | Passou, saída 0, precedência e fingerprints |
+| check:pscpp-bank | Passou, saída 0, 1.984 questões e 254 históricas |
+| audit-pscpp-runtime-triage.mjs | Passou, 230 candidatos sem proposições e 77 localizadores |
+| test-notebook-complete-stems.mjs | Falha preservada, saída 1, próxima ANV-0092 |
+| validate-editorial-runtime.mjs | Falha preservada, saída 1, 77 localizadores |
+
+Nenhum normalizador ou teste alterado neste lote. Redação final conferida contra
+o normalizador antes da geração. Logs privados em audit-private/lote018.
+Avisos preexistentes npm http-proxy/autoprefixer preservados. Temporários
+preexistentes e .next anterior preservados. Sem merge, deploy desta auditoria ou
+alterações de usuários. Resultados finais de build, inventário e gate abaixo.
+
+A primeira execução de build saiu 0 mas seu log terminou após o banner Next;
+não foi aceita isoladamente como prova de build completo. A confirmação ficou
+sem avanço após o banner, com processo Next ainda ativo; encerrada somente essa
+árvore de processos do lote, preservando .next fora do repositório. Nova tentativa
+com .next limpa e NEXT_TELEMETRY_DISABLED=1 passou, saída 0: compilação, lint/tipos,
+101 páginas e tabela final de rotas (build-clean-confirm.log). Não se conclui que
+a telemetria tenha sido a causa, nem se alteraram código ou critérios de teste.
+Regressão após build passou, saída 0: 26 deltas exatos, 100 proposições no HTML
+e cinco opções diretas anteriores preservadas. Validação de runtime passou, saída
+0, 12.102 questões e IDs únicos. Inventário passou, saída 0: 27.435 físicos,
+14.086 ocorrências, 13.715 IDs. Gate após inventário concluído: saída 2,
+0/14.086 aprovações, merge_permitted=false. git diff --check passou.
+Isso não aprova editorialmente o banco.

@@ -6369,9 +6369,9 @@
       "module": "Fundeio e amarração",
       "topic_code": "old-125",
       "topic": "amarrar com regeira",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “amarrar com regeira”, identifique as verdadeiras e assinale a opção correta:\nI) A bibliografia atribui a esse item a seguinte característica: marca a transição para recolhimento livre, ainda sujeito a lama, objetos ou enroscamentos.\nII) “amarrar com regeira” designa empregar cabo ou amarra adicional para controlar posição ou orientação.\nIII) “amarrar com regeira” designa informação de que o ferro chegou à região do escovém.\nIV) A bibliografia atribui a esse item a seguinte característica: útil quando se deseja limitar o rabeio ou manter o navio em direção determinada.",
+      "question": "Considere a amarração com regeira descrita em Arte Naval, volume 2. Analise as proposições e escolha o conjunto completo das corretas:\nI) O chicote da regeira sai pela proa, em vez de sair pela popa, no arranjo descrito.\nII) A regeira pode ser empregada para tirar o navio da linha do vento ou da corrente e mantê-lo na orientação desejada.\nIII) O emprego da regeira exige fundear um ancorote adicional, não sendo possível obter o mesmo efeito aproveitando a própria amarra do navio.\nIV) O chicote que sai pela popa pode fazer fixo no seio da amarra que está fora do navio ou no arganéu da boia em que ele está amarrado.",
       "options": [
         {
           "key": "A",
@@ -6395,12 +6395,16 @@
         }
       ],
       "correct_answer": "E",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “amarrar com regeira”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "II e IV são verdadeiras; I e III são falsas. A regeira é um virador ou espia cujo chicote sai pela popa e permite ao navio sair da linha do vento ou da corrente para assumir a orientação desejada. Pode ser fixada no anete de um ferro, no seio da amarra fora do navio ou no arganéu de uma boia. A obra também descreve obter o efeito sem espiar um ancorote, aboçando a regeira no seio da própria amarra; portanto, um ancorote adicional não é indispensável. Fonte: Fonseca, Arte Naval, v. 2, 8ª ed., art. 12.51, p. 866.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção D, item 12.51"
+        "locator": "cap. 12, seção D, art. 12.51, p. 866",
+        "printed_page": 866,
+        "pdf_page": 227,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+        "drive_id": "1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec"
       },
       "tags": [
         "Fundeio e amarração",
@@ -6439,8 +6443,22 @@
         "audit_restore": {
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
+        },
+        "primary_source_review": {
+          "batch": "018",
+          "status": "primary_content_corrected_not_final_approval",
+          "source_visual_checked": true,
+          "independent_recheck_pending": true
         }
-      }
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: inclui I, que troca a saída pela popa por uma saída pela proa, e omite IV verdadeira.",
+        "B": "Incorreta: inclui III, que exige ancorote adicional apesar da alternativa de aproveitar a própria amarra, e omite II verdadeira.",
+        "C": "Incorreta: reúne I e III, ambas falsas: a saída é pela popa e não é indispensável espiar ancorote adicional.",
+        "D": "Incorreta: inclui III falsa e omite IV verdadeira; II isoladamente não torna o conjunto correto.",
+        "E": "Correta: II expressa a finalidade de orientação e IV dois pontos de fixação descritos no artigo; são as duas verdadeiras."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0086",

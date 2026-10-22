@@ -1,7 +1,7 @@
 {
   "checkpoint_version": 1,
   "created_at_utc": "2026-10-19T02:22:35.805683+00:00",
-  "updated_at_utc": "2026-10-22T09:07:15.287100+00:00",
+  "updated_at_utc": "2026-10-22T10:08:01.998103+00:00",
   "task_status": "in_progress_not_approved",
   "branch": "feature/auditoria-integral-padrao-banca-pscpp",
   "source_baseline_sha": "012b562b0eb6f7fec78773b339e4a53b3643e791",
@@ -11,8 +11,8 @@
   "runtime_occurrences": 14086,
   "runtime_unique_ids": 13715,
   "individual_editorial_approved_occurrences": 0,
-  "primary_source_partial_checks": 28,
-  "individually_corrected_questions": 25,
+  "primary_source_partial_checks": 29,
+  "individually_corrected_questions": 26,
   "corrected_question_ids": [
     "ANV-0005",
     "ANV-0007",
@@ -38,7 +38,8 @@
     "ANV-0765",
     "ANV-0068",
     "ANV-0073",
-    "ANV-0076"
+    "ANV-0076",
+    "ANV-0085"
   ],
   "primary_content_correction_is_release_approval": false,
   "historical_extraction_count": 264,
@@ -59,18 +60,18 @@
   "gates": {
     "1": "partial: local JSON pipelines reconciled; full consumers/offline and production checks pending",
     "2": "failed: 0 approved individual evidence records",
-    "3": "pending: 28 partial primary checks and 25 corrected questions; independent editorial recheck, official program/edital alignment and remaining bank outstanding",
+    "3": "pending: 29 partial primary checks and 26 corrected questions; independent editorial recheck, official program/edital alignment and remaining bank outstanding",
     "4": "partial: 264 records individually checked, 255 available texts read, 254 observed keys reconciled; subject/points/cognitive/language matrices recorded; active-bank calibration and format targets not yet approved",
     "5": "partial: 102 runtime duplicate IDs removed; semantic duplicate analysis pending",
-    "6": "partial: 77 locator candidates; notebook-complete-stems fails ANV-0085; regression passes 25 exact hash deltas, source/runtime equality, 96 rendered propositions and five direct options preserved; lot 017 full build confirmed passed; not release approval",
+    "6": "partial: 77 locator candidates; notebook-complete-stems fails ANV-0092; regression passes 26 exact hash deltas, source/runtime equality, 100 rendered propositions and five direct options preserved; lot 018 clean retry build passed; not release approval",
     "7": "pending: SQL schema inspected read-only; no migrations or production mutations",
     "8": "pending: no merge; baseline deployment READY is not audit release"
   },
   "known_findings": {
     "locator_candidates": 77,
-    "combination_without_parsed_assertions_candidates": 231,
+    "combination_without_parsed_assertions_candidates": 230,
     "previous_combination_candidates": 256,
-    "combination_candidates_corrected": 22,
+    "combination_candidates_corrected": 23,
     "combination_false_positives_resolved_without_content_change": 3,
     "noncanonical_subject_records": 20,
     "selection_excluded_records_retained": 11,
@@ -87,29 +88,29 @@
   "next_actions": [
     "Historical read complete for all available texts; use BENCHMARK_REVISAO_INTEGRAL.md and manual TSV rather than superseded structural counts. Do not equate historical key observation with current technical correctness.",
     "Verify official Annexes 2-A/2-B provenance, revisions and edital; map complete work/chapter/item trees.",
-    "Review every active effective version. Twenty-five primary corrections and twenty-eight partial checks documented; independent editorial recheck/program alignment and global semantic review outstanding.",
-    "Fix locator and missing-proposition candidates using primary support. Next failing ID ANV-0085: inspect prevailing restoration AND downstream patches. Lot 017 corrected ANV-0076 (towing winch response to tension/slack, not quarantined stern mooring); see REVISAO_ARTE_NAVAL_LOTE_017.md. Neighbor ANV-0774 read; global same-competence enforcement pending.",
+    "Review every active effective version. Twenty-six primary corrections and twenty-nine partial checks documented; independent editorial recheck/program alignment and global semantic review outstanding.",
+    "Fix locator and missing-proposition candidates using primary support. Next failing ID ANV-0092: inspect prevailing restoration AND downstream patches. Lot 018 corrected ANV-0085 (regeira mooring, not competing stopping/mixed VF source); see REVISAO_ARTE_NAVAL_LOTE_018.md. Neighbor ANV-0783 read; global same-competence enforcement pending.",
     "Inspect 20 PSCPP records classified as ii — arte naval and normalize taxonomy with regression tests.",
     "Reconcile offline/production consumers and all hashes, complete every gate, then sync main, revalidate, review PR, merge and verify production."
   ],
   "resume_command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/audit-pscpp-runtime-inventory.mjs",
   "resume_instruction": "Continue this branch from CHECKPOINT.json, preserving baseline/. Do not treat pending rows as approved. Reobtain the attached dossier if needed; its hashes are in INTEGRIDADE_DOSSIE.json. Follow the original Prompt-Mestre. Do not merge while any gate remains pending or failed.",
-  "source_checkpoint_sha": "44bfc1e1edaefd33b06259785a15abf318071517",
-  "last_completed_batch": "017: ANV-0076; primary source and effective pipeline checked; no production mutation",
+  "source_checkpoint_sha": "bcd4a7db974f887eae78ee51e3e3e988321a8b59",
+  "last_completed_batch": "018: ANV-0085; primary source and effective pipeline checked; no production mutation",
   "last_build": {
-    "command": "npm run build",
-    "result": "passed_confirmed_repeat",
-    "source_checkpoint_sha": "44bfc1e1edaefd33b06259785a15abf318071517",
+    "command": "NEXT_TELEMETRY_DISABLED=1 npm run build",
+    "result": "passed_clean_retry",
+    "source_checkpoint_sha": "bcd4a7db974f887eae78ee51e3e3e988321a8b59",
     "source_changes": [
-      "data/question-restorations/arte-naval.json:ANV-0076"
+      "data/question-restorations/arte-naval.json:ANV-0085"
     ],
     "source_sha256": {
       "data/questions/arte-naval.json": "47fd42b4540021d1d4158dd34b50dbdc1b7d113fad502838e51f37b12293792b",
-      "data/question-restorations/arte-naval.json": "5993906cd6e5b380c17b7460bb269ab0a0db2de9c3f2dfe28b97979f35a43990",
+      "data/question-restorations/arte-naval.json": "1299d5b1192b05c71022ab986d1c390f90a3a61d4145a9ba0794a9e2b8c087c5",
       "data/question-restorations/notebook-complete-stems.json": "95c79a49d6a367e67cc58441d2579302caaaa4dd22f72de32bd5aff004a2f7d2"
     },
     "release_approval": false,
-    "note": "First exit 0 had incomplete log ending at catalog generation, not accepted alone. Repeat exited 0 with compilation, lint/types, 101 pages and final route table. Regression before and after confirmed build passed. Previous .next preserved; no test/normalizer changed."
+    "note": "Initial exit 0 had incomplete log; confirmation stalled after Next banner and was stopped, preserving output. Clean .next retry with telemetry disabled exited 0: compilation, lint/types, 101 pages and route table. No root cause assigned to telemetry. Regression before/after passed; no normalizer/test changed."
   },
   "continuation_automation": {
     "id": "6ad9195b550c8191bf6738126d23a44e",
