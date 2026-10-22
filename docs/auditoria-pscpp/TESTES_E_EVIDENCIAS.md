@@ -404,3 +404,33 @@ explícito para a questão direta ANV-0765; contratos combinados e gates mantido
 Avisos preexistentes npm http-proxy e autoprefixer preservados. Logs privados em
 audit-private/lote014. git diff --check passou. Sem merge, deploy desta auditoria
 ou alterações de usuários. Temporários preexistentes preservados.
+
+## Lote 015 — ANV-0068
+
+Base 02fbe012; fonte, páginas e imagem em REVISAO_ARTE_NAVAL_LOTE_015.md.
+
+| Verificação | Resultado real |
+|---|---|
+| generate:question-banks | Passou, saída 0, 12.102 questões |
+| test-pscpp-audit-anv0005.mjs, após geração concluída | Passou, saída 0, 23 deltas exatos, 88 proposições no HTML, cinco opções diretas anteriores preservadas; igualdade fonte/runtime e combinação única; 12.079 outros cadernos e 1.984 PSCPP preservados |
+| validate-runtime-question-banks.mjs | Passou, saída 0, 12.102 questões com IDs únicos |
+| validate-pscpp-exam-selection.mjs | Passou, saída 0, matriz fixa 25/25/10/10/10/10/10 |
+| test-question-source-provenance.mjs | Passou, saída 0, precedência e fingerprints |
+| check:pscpp-bank | Passou, saída 0, 1.984 questões e 254 históricas |
+| audit-pscpp-runtime-triage.mjs | Passou, 233 candidatos sem proposições e 77 localizadores |
+| test-notebook-complete-stems.mjs | Falha preservada, saída 1, próxima ANV-0073 |
+| validate-editorial-runtime.mjs | Falha preservada, saída 1, 77 localizadores |
+
+Nenhum normalizador ou teste alterado neste lote. Redação final conferida contra
+o normalizador antes da geração. Não se assumiu a próxima questão pelo número
+sequencial: o teste confirmou ANV-0073. Logs privados em audit-private/lote015.
+Avisos preexistentes npm http-proxy/autoprefixer preservados. Temporários
+preexistentes e .next anterior preservados. Sem merge, deploy desta auditoria ou
+alterações de usuários. Resultados finais de build, inventário e gate abaixo.
+
+Build completo com .next limpa passou, saída 0: compilação, lint/tipos e 101 páginas.
+Regressão após build passou novamente, saída 0, 23 deltas exatos, 88 proposições
+no HTML e cinco opções diretas anteriores preservadas. Inventário passou com
+saída 0: 27.435 físicos, 14.086 ocorrências, 13.715 IDs. Gate executado após
+inventário concluído: saída 2, 0/14.086 aprovações, merge_permitted=false.
+git diff --check passou. Isso não aprova editorialmente o banco.

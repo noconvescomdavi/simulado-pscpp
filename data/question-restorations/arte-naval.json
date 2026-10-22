@@ -4977,9 +4977,9 @@
       "module": "Aparelho de governo",
       "topic_code": "old-066",
       "topic": "aparelho de governo",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “aparelho de governo”, identifique as verdadeiras e assinale a opção correta:\nI) A bibliografia atribui a esse item a seguinte característica: faz cessar o movimento do servomotor a vapor ou hidrelétrico no ponto desejado.\nII) “aparelho de governo” designa sistema que permite ao timoneiro orientar o leme e governar o navio.\nIII) “aparelho de governo” designa comando rotativo montado em eixo horizontal para ordenar a posição do leme.\nIV) A bibliografia atribui a esse item a seguinte característica: reúne roda, transmissões, servomotor e o próprio leme.",
+      "question": "Considere o aparelho de governo descrito em Arte Naval, volume 2. Analise as proposições e escolha o conjunto completo das corretas:\nI) Na constituição apresentada para o aparelho de governo, o leme fica fora do conjunto, que termina na máquina do leme.\nII) Nos navios em movimento, o grande esforço necessário para girar o leme justifica um aparelho que permita a um só homem governar com facilidade.\nIII) Roda do leme e servomotor são denominações equivalentes da mesma máquina intermediária que movimenta o leme.\nIV) A constituição apresentada compreende roda do leme, transmissão entre roda e máquina do leme, servomotor, transmissão entre máquina e leme e o próprio leme.",
       "options": [
         {
           "key": "A",
@@ -5003,12 +5003,16 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “aparelho de governo”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "II e IV são verdadeiras; I e III são falsas. O aparelho de governo permite que um só homem governe com facilidade apesar do grande esforço necessário para girar o leme nos navios em movimento. Sua constituição inclui o próprio leme e duas transmissões, além da roda e do servomotor. A roda do leme é o comando rotativo do timoneiro, enquanto o servomotor é a máquina intermediária; não são sinônimos. Fonte: Fonseca, Arte Naval, v. 2, 8ª ed., arts. 11.1–11.2, pp. 755–756, fig. 11-1.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, seção A, item 11.1"
+        "locator": "cap. 11, seção A, arts. 11.1–11.2, pp. 755–756, fig. 11-1",
+        "printed_page": 755,
+        "pdf_page": 116,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+        "drive_id": "1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec"
       },
       "tags": [
         "Aparelho de governo",
@@ -5047,8 +5051,22 @@
         "audit_restore": {
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
+        },
+        "primary_source_review": {
+          "batch": "015",
+          "status": "primary_content_corrected_not_final_approval",
+          "source_visual_checked": true,
+          "independent_recheck_pending": true
         }
-      }
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: inclui I, que exclui indevidamente o leme do conjunto, e omite IV verdadeira.",
+        "B": "Incorreta: inclui I falsa e omite II verdadeira; IV isoladamente não torna o conjunto correto.",
+        "C": "Correta: II explica a necessidade do aparelho e IV apresenta seus cinco componentes; são as duas verdadeiras.",
+        "D": "Incorreta: reúne I e III, ambas falsas: o leme integra o conjunto e a roda não é o servomotor.",
+        "E": "Incorreta: inclui III, que confunde roda do leme com servomotor, e omite II verdadeira."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0069",
