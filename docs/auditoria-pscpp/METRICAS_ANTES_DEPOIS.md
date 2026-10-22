@@ -232,3 +232,23 @@ corrigidos, treze correções fora da triagem e três falsos positivos anteriore
 Regressão: 33 combinadas/132 proposições HTML, onze diretas/55 opções;
 12.058 outros cadernos e 1.984 PSCPP inalterados. Matriz 100 em
 25/25/10/10/10/10/10 preservada. Nenhum ID ativado/removido.
+
+
+## Lote 026
+
+| Métrica | Antes | Depois |
+|---|---:|---:|
+| Correções primárias acumuladas | 44 | 48 |
+| Conferências bibliográficas parciais | 47 | 51 |
+| Aprovações editoriais finais | 0 | 0 |
+| Candidatos sem proposições | 222 | 221 |
+| Candidatos por localizador | 77 | 77 |
+| Registros físicos | 27435 | 27435 |
+| Ocorrências efetivas | 14086 | 14086 |
+| IDs únicos efetivos | 13715 | 13715 |
+
+0125 estava na triagem; 0823/0975/1034 fora dela. Acumulados 32 candidatos
+corrigidos, dezesseis correções fora da triagem e três falsos positivos anteriores.
+Regressão: 34 combinadas/136 proposições HTML, catorze diretas/70 opções;
+12.054 outros cadernos e 1.984 PSCPP inalterados. Matriz100 em
+25/25/10/10/10/10/10 preservada. Nenhum ID ativado/removido.

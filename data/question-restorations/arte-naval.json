@@ -9615,9 +9615,9 @@
       "module": "Classificação dos navios",
       "topic_code": "anv1-3.1",
       "topic": "classificação geral dos navios",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “classificação geral dos navios”, identifique as verdadeiras e assinale a opção correta:\nI) A bibliografia atribui a esse item a seguinte característica: quanto à finalidade, inclui navios de guerra, hidroceanográficos, mercantes, de recreio e de serviços especiais.\nII) “classificação geral dos navios” designa organização dos navios segundo finalidade, material de construção do casco e sistema de propulsão.\nIII) A bibliografia atribui a esse item a seguinte característica: deve arvorar flâmula ou pavilhão e a bandeira do país a que pertence.\nIV) “classificação geral dos navios” designa navio empregado no apoio, suprimento, manutenção ou reparo de outros navios e instalações navais.",
+      "question": "Sobre a classificação geral dos navios e embarcações menores apresentada por Fonseca, analise as proposições e escolha o conjunto completo das corretas.\nI) Guerra, hidroceanografia, atividade mercante, recreio e serviços especiais correspondem aos grupos apresentados quanto ao fim a que se destinam.\nII) Ferro-cimento pertence à classificação pelo material do casco, enquanto sem propulsão é uma categoria apresentada quanto ao sistema de propulsão.\nIII) A expressão de recreio identifica o material de construção do casco.\nIV) A expressão de ferro ou de aço identifica o fim a que o navio se destina.",
       "options": [
         {
           "key": "A",
@@ -9641,12 +9641,16 @@
         }
       ],
       "correct_answer": "E",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “classificação geral dos navios”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "I e II são verdadeiras: o art. 3.1 distingue finalidade, material do casco e sistema de propulsão. A finalidade abrange os cinco grupos citados; ferro-cimento é material, e a classificação por propulsão inclui a ausência de propulsão. III é falsa porque recreio indica finalidade. IV é falsa porque ferro ou aço identifica material do casco. Apenas I e II constituem o conjunto completo, alternativa E. Uma mesma embarcação pode receber atributos dos diferentes critérios; estes não devem ser confundidos com classes particulares de navios de guerra.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 1",
         "edition": "8. ed., 2019",
-        "locator": "cap. 3, item 3.1"
+        "locator": "cap. 3, seção A, art. 3.1, abertura p. [129] / PDF 129",
+        "printed_page": 129,
+        "pdf_page": 129,
+        "page_note": "A abertura do capítulo não exibe algarismo de página; 129 é a posição na sequência, seguida pela página impressa 130.",
+        "sha256": "792beebaea10aaff4b65288c0cfc3dd76c507f779297ee42583d078a7ec1dd20"
       },
       "tags": [
         "Classificação dos navios",
@@ -9666,7 +9670,7 @@
           "title": "Classificação dos Navios",
           "label": "Capítulo 3 - Classificação dos Navios"
         },
-        "section": "cap. 3, item 3.1",
+        "section": "cap. 3, seção A, art. 3.1, abertura p. [129] / PDF 129",
         "module": "Classificação dos navios",
         "topic": {
           "id": "anv1-3.1",
@@ -9686,6 +9690,14 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "II é verdadeira, mas IV troca material por finalidade e I foi omitida.",
+        "B": "I é verdadeira, mas IV é falsa e II foi omitida.",
+        "C": "II é verdadeira, mas III troca finalidade por material e I foi omitida.",
+        "D": "III e IV são falsas por inverterem os critérios; omite I e II.",
+        "E": "I e II são as únicas verdadeiras, distinguindo os três critérios do art. 3.1."
       }
     },
     {

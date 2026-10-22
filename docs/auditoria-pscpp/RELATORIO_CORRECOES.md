@@ -249,3 +249,21 @@ Acumulado 44 correções/47 conferências parciais, zero aprovações finais.
 Ver REVISAO_ARTE_NAVAL_LOTE_025.md e CORRECOES_RUNTIME.json.
 Rechecagem independente, versão oficial, estados globais e semântica pendentes.
 Sem merge/deploy; oito gates seguem pendentes/falhos.
+
+
+## Lote 026 — classificação geral dos navios
+
+ANV-0125/0823/0975/1034 corrigidas individualmente com Fonseca v.1, 8ª ed.,
+2019, 3.1 na abertura p.[129]/PDF129. Abertura sem algarismo impresso;
+paginação inferida pela sequência antes da p.130 e explicitada em source.page_note.
+Texto/imagens PDF129–131 conferidos; SHA256 recalculado. Distintos finalidade,
+material do casco e propulsão, incluindo a categoria sem propulsão. Casos
+hipotéticos sem inferir regras legais de registro/habilitação.
+Keys E/C/E/D, IDs e formatos B/A/A/A preservados; vinte justificativas.
+Restauração ANV-0125 corrigida; principal divergente e demais registros intactos.
+Redação local resolveu sobreposição lexical que substituía os casos ANV-0975/1034;
+nenhum normalizador/filtro/gate alterado. Contrato direto só +0823/0975/1034.
+Acumulado 48 correções/51 conferências parciais, zero aprovações finais.
+Ver REVISAO_ARTE_NAVAL_LOTE_026.md e CORRECOES_RUNTIME.json.
+Rechecagem independente, oficialidade/edital, estados e semântica pendentes.
+Sem merge/deploy; oito gates seguem pendentes/falhos.
