@@ -5390,9 +5390,9 @@
       "module": "Governo de navio de um hélice",
       "topic_code": "old-097",
       "topic": "parada com máquina atrás toda força",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “parada com máquina atrás toda força”, identifique as verdadeiras e assinale a opção correta:\nI) “parada com máquina atrás toda força” designa manobra de emergência para retirar seguimento de vante.\nII) A bibliografia atribui a esse item a seguinte característica: pode deslocar a popa para um bordo, sobretudo durante a marcha a ré.\nIII) “parada com máquina atrás toda força” designa condição transitória em que o casco ainda avança apesar do propulsor em reversão.\nIV) A bibliografia atribui a esse item a seguinte característica: a distância de parada depende de deslocamento, velocidade inicial, potência, tempo de reversão e ambiente.",
+      "question": "Considere a manobra de máquina atrás toda força, estando em marcha a vante, nos navios de um hélice estudados em Arte Naval, volume 2. Analise as proposições e escolha o conjunto completo das corretas:\nI) A manobra pode ser empregada para evitar abalroamento e também para retirar seguimento ao tomar uma boia, fundear ou atracar.\nII) A emissão da ordem produz imediatamente a rotação retrógrada do hélice, sem intervalo dependente das características da instalação ou da condição de marcha.\nIII) O espaço percorrido até parar é fixo em comprimentos do navio, sem influência de vento, correnteza ou pouca profundidade.\nIV) A tendência de guinar para boreste durante essa manobra não deve ser generalizada a todos os navios de um hélice; o comportamento precisa ser conhecido no próprio navio.",
       "options": [
         {
           "key": "A",
@@ -5416,12 +5416,16 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “parada com máquina atrás toda força”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "I e IV são verdadeiras; II e III são falsas. O art. 12.7 inclui tanto a prevenção de abalroamento quanto a retirada de seguimento em outras manobras. Há intervalo entre a ordem e sua execução, dependente da instalação e da condição de marcha; a inversão não é instantânea. O mesmo artigo ressalva que a tendência de guinar para BE não é universal e recomenda testar o comportamento de cada navio. O art. 12.8 não fixa uma distância imutável: vento, correnteza e pouco fundo influem no espaço percorrido. Os exemplos e estimativas da obra não substituem o comportamento conhecido da embarcação. Fonte: Fonseca, Arte Naval, v. 2, 8ª ed., arts. 12.7–12.8, pp. 805–808.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção A, itens 12.7–12.8"
+        "locator": "cap. 12, seção A, arts. 12.7–12.8, pp. 805–808, figs. 12-6–12-7",
+        "printed_page": 805,
+        "pdf_page": 166,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+        "drive_id": "1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec"
       },
       "tags": [
         "Governo de navio de um hélice",
@@ -5460,8 +5464,22 @@
         "audit_restore": {
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
+        },
+        "primary_source_review": {
+          "batch": "016",
+          "status": "primary_content_corrected_not_final_approval",
+          "source_visual_checked": true,
+          "independent_recheck_pending": true
         }
-      }
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: inclui III, que nega a influência ambiental na distância de parada, e omite IV verdadeira.",
+        "B": "Incorreta: inclui II, que elimina indevidamente o intervalo entre ordem e execução, e omite IV verdadeira.",
+        "C": "Correta: I apresenta as finalidades descritas e IV preserva a ressalva contra generalizar a guinada; são as duas verdadeiras.",
+        "D": "Incorreta: reúne II e III, ambas falsas: a resposta à ordem não é instantânea e a distância não é fixa e independente do ambiente.",
+        "E": "Incorreta: inclui II falsa e omite I verdadeira; IV isoladamente não torna o conjunto correto."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0074",
