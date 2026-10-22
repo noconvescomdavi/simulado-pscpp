@@ -3332,9 +3332,9 @@
       "module": "Evoluções",
       "topic_code": "old-136",
       "topic": "interação na ultrapassagem",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “interação na ultrapassagem”, identifique as verdadeiras e assinale a opção correta:\nI) A bibliografia atribui a esse item a seguinte característica: pode produzir sucção e alteração de rumo durante o período em que os cascos permanecem lado a lado.\nII) “interação na ultrapassagem” designa efeito hidrodinâmico prolongado entre embarcações com velocidades próximas.\nIII) “interação na ultrapassagem” designa distância transversal em relação à derrota inicial durante a curva.\nIV) A bibliografia atribui a esse item a seguinte característica: decorre da força lateral e da posição do ponto de giro antes de a trajetória se estabelecer.",
+      "question": "Segundo Arte Naval, volume 2, um navio de grande porte alcança um navio pequeno a curta distância. Sobre a interação hidrodinâmica nessa situação, examine as afirmações e escolha o conjunto completo das corretas:\nI. O movimento da água provocado pelo navio maior pode prejudicar o governo do navio pequeno.\nII. A obra destaca o perigo dessa aproximação quando as velocidades dos dois navios são aproximadamente iguais.\nIII. Depois da passagem do navio maior, sua corrente de esteira repele a proa do pequeno, afastando-a da alheta do navio que o alcançou.\nIV. Se o pequeno começar a guinar para a derrota do maior por ação da onda de proa, carregar todo o leme para o bordo contrário assegura a interrupção dessa guinada.",
       "options": [
         {
           "key": "A",
@@ -3358,12 +3358,16 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “interação na ultrapassagem”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "I e II são verdadeiras: o art. 12.62 descreve a perturbação do governo do pequeno pelo movimento da água do navio maior e destaca o perigo com velocidades aproximadamente iguais. III inverte a ação da esteira: após a passagem, ela atrai a proa do pequeno, que tende a aproximar-se da alheta do maior. IV transforma em garantia uma ação que pode ser insuficiente; no caso descrito, mesmo todo o leme contrário pode não impedir a guinada induzida. O conjunto completo é I e II, alternativa C. Fonte: Arte Naval, v. 2, 8ª ed., art. 12.62, p. 888, fig. 12-37. O enunciado explicita a situação e não exige consultar a figura.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção E, item 12.62"
+        "locator": "cap. 12, seção E, art. 12.62, p. 888, fig. 12-37",
+        "printed_page": 888,
+        "pdf_page": 249,
+        "drive_file_id": "1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Evoluções",
@@ -3383,7 +3387,7 @@
           "title": "Manobra do Navio",
           "label": "Capítulo 12 - Manobra do Navio"
         },
-        "section": "cap. 12, seção E, item 12.62",
+        "section": "cap. 12, seção E, art. 12.62, p. 888, fig. 12-37",
         "module": "Evoluções",
         "topic": {
           "id": "old-136",
@@ -3403,6 +3407,15 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "cognitive_level": 2,
+      "pscpp_format": "assertion_combination",
+      "distractor_analysis": {
+        "A": "Incorreta: I é verdadeira, mas III inverte a atração da proa pela esteira; falta II.",
+        "B": "Incorreta: II é verdadeira, mas III descreve repulsão onde a obra descreve atração; falta I.",
+        "C": "Correta: I descreve a perturbação do governo e II identifica a condição de velocidades próximas destacada na obra.",
+        "D": "Incorreta: I é verdadeira, mas IV garante eficácia do leme que a obra não assegura; falta II.",
+        "E": "Incorreta: III inverte o efeito da esteira e IV garante indevidamente o controle da guinada; omite I e II."
       }
     },
     {

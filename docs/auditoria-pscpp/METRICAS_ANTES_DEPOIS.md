@@ -44,3 +44,11 @@ localizadores 77. IDs e contagens físicas/efetivas preservados.
 ANV-0047: quatro proposições restauradas e tecnicamente reescritas, gabarito B
 preservado. Acumulado 16 correções primárias, 19 conferências parciais e zero
 aprovações finais. Runtime preservado em 12.102 cadernos + 1.984 PSCPP.
+
+## Lote 010
+
+ANV-0048: 17 correções primárias / 20 conferências parciais acumuladas.
+Candidatos sem proposições 239 → 238; localizadores 77 → 77.
+14.086 ocorrências e 13.715 IDs preservados; zero aprovações editoriais finais.
+Regressão: 17 deltas desde baseline, 68 proposições no HTML, 12.085 outros
+cadernos e todas as 1.984 PSCPP preservados; matriz disciplinar inalterada.

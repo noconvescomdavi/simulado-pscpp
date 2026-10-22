@@ -82,3 +82,12 @@ ANV-0047 corrigida na restauração prevalente, fonte primária pp. 832/835 de A
 Naval v. 2. Quatro proposições F/V/F/V, gabarito B, cinco justificativas; preservadas
 identidade ativa, opções e matriz. 16 correções primárias e 19 conferências parciais
 acumuladas. Não representam aprovação final. Relatório REVISAO_ARTE_NAVAL_LOTE_009.md.
+
+## Lote 010
+
+ANV-0048 corrigida na restauração prevalente: interação na ultrapassagem. Fonte
+primária Arte Naval v. 2, art. 12.62, p. 888, figura 12-37 conferida visualmente.
+Vetor V/V/F/F, gabarito C e opções preservados, cinco justificativas. Acumulado:
+17 correções primárias, 20 conferências parciais; zero aprovações finais.
+Triagem: 238 candidatos sem proposições e 77 localizadores.
+Relatório REVISAO_ARTE_NAVAL_LOTE_010.md.

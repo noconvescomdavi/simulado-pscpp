@@ -264,3 +264,29 @@ Inventário regenerado após término do build: 27.435 registros físicos, 14.08
 ocorrências e 13.715 IDs preservados. Triagem: 239 candidatos sem proposições e
 77 localizadores. Gate de evidência executado depois do inventário: saída 2,
 0/14.086 aprovações, merge_permitted=false. git diff --check passou.
+
+## Lote 010 — ANV-0048
+
+Base cd0a7ba6; evidência primária em REVISAO_ARTE_NAVAL_LOTE_010.md.
+
+| Verificação | Resultado real |
+|---|---|
+| generate:question-banks | Passou, 12.102 questões |
+| npm run build | Passou, compilação, lint/tipos e 101 páginas; hashes das três fontes estáveis |
+| test-pscpp-audit-anv0005.mjs, antes e após build | Passou, 17 deltas exatos, 68 proposições no HTML, combinação única e igualdade fonte/runtime; 12.085 outros cadernos e 1.984 PSCPP preservados |
+| validate-runtime-question-banks.mjs | Passou, 12.102 questões com IDs únicos |
+| validate-pscpp-exam-selection.mjs | Passou, matriz fixa 25/25/10/10/10/10/10 |
+| test-question-source-provenance.mjs | Passou, precedência e fingerprints |
+| check:pscpp-bank | Passou, 1.984 questões, 254 históricas |
+| audit-pscpp-runtime-inventory.mjs | Passou, 27.435 físicos / 14.086 ocorrências / 13.715 IDs |
+| audit-pscpp-runtime-triage.mjs | 238 candidatos sem proposições, 77 localizadores |
+| test-notebook-complete-stems.mjs | Falha preservada, próxima ANV-0049 |
+| validate-editorial-runtime.mjs | Falha preservada, 77 localizadores |
+| validate-pscpp-editorial-evidence.mjs, após inventário concluído | Saída 2, 0/14.086 aprovações, merge_permitted=false |
+
+Nenhum teste ou critério relaxado. Tentativa inicial de edição usou diretório
+incorreto e falhou antes de escrever; a geração sem alteração subsequente não foi
+usada como evidência da correção. Edição aplicada no diretório correto e geração
+repetida antes dos testes. Logs privados em audit-private/lote010. Avisos
+preexistentes npm http-proxy e autoprefixer mantidos. Sem merge, deploy desta
+auditoria ou alterações de usuários. git diff --check passou.
