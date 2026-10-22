@@ -9954,9 +9954,9 @@
       "module": "Fundeio e amarração",
       "topic_code": "old-124",
       "topic": "amarração com dois ferros",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “amarração com dois ferros”, identifique as verdadeiras e assinale a opção correta:\nI) A bibliografia atribui a esse item a seguinte característica: pode reduzir o setor de rabeio, mas exige evitar e desfazer voltas entre as amarras.\nII) “amarração com dois ferros” designa condição em que a carga ambiental é transmitida ao ferro pela cadeia tesada.\nIII) “amarração com dois ferros” designa arranjo que usa duas âncoras para restringir o movimento do navio.\nIV) A bibliografia atribui a esse item a seguinte característica: deve terminar com pequeno seguimento compatível com o controle da saída da amarra.",
+      "question": "Sobre a amarração com dois ferros descrita por Fonseca, analise as proposições e escolha o conjunto completo das corretas.\nI) No arranjo apresentado, os ferros ficam afastados e a proa aproximadamente a meia distância deles, buscando restringir a área em que o navio rabeia.\nII) Quando o navio se mantém filado à corrente no alinhamento dos ferros, o esforço é necessariamente repartido em duas metades iguais entre as amarras.\nIII) O anilho exige amarração tesa para trabalhar adequadamente e sua colocação não dispensa vigiar as voltas entre as amarras.\nIV) O emprego de dois ferros mantém o navio imóvel, sem girar para filar ao vento ou à corrente.",
       "options": [
         {
           "key": "A",
@@ -9980,12 +9980,15 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “amarração com dois ferros”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "I e III são verdadeiras. O art. 12.46.1 descreve dois ferros afastados, proa aproximadamente a meia distância e giro em área menor; a p. 857 condiciona o funcionamento do anilho à amarração tesa, e 12.48 exige vigilância porque sua mera colocação não impede voltas. II é falsa: na condição expressa de navio filado no alinhamento, a p. 858 indica que ele porta por uma das amarras, não que divide o esforço em metades iguais. IV é falsa: o arranjo admite que o navio gire para filar à corrente ou ao vento; restringir a área de rabeio não significa imobilizar o casco. Apenas I e III formam o conjunto completo, alternativa D. As condições de alinhamento e tensão não devem ser convertidas em regra universal de carga ou em projeto operacional de fundeio.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção D, itens 12.46–12.49"
+        "locator": "cap. 12, seção D, art. 12.46.1, pp. 856–858, e art. 12.48, pp. 864–865",
+        "printed_page": 856,
+        "pdf_page": 217,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Fundeio e amarração",
@@ -10005,7 +10008,7 @@
           "title": "Manobra do Navio",
           "label": "Capítulo 12 - Manobra do Navio"
         },
-        "section": "cap. 12, seção D, itens 12.46–12.49",
+        "section": "cap. 12, seção D, art. 12.46.1, pp. 856–858, e art. 12.48, pp. 864–865",
         "module": "Fundeio e amarração",
         "topic": {
           "id": "old-124",
@@ -10025,6 +10028,14 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "III é verdadeira, mas II presume divisão igual de esforço na condição em que a obra indica uma só amarra portando; falta I.",
+        "B": "III é verdadeira, mas IV nega o giro previsto no arranjo e omite I.",
+        "C": "II é falsa pela condição de alinhamento e IV por confundir área restrita com imobilidade.",
+        "D": "I e III são as únicas verdadeiras: geometria/finalidade e condições de funcionamento/vigilância do anilho.",
+        "E": "I é verdadeira, mas II é falsa e III foi omitida."
       }
     },
     {

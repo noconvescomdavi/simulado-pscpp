@@ -274,3 +274,24 @@ Regressão: 35 combinadas/140 proposições HTML, dezesseis diretas/80 opções;
 25/25/10/10/10/10/10 preservada. Nenhum ID ativado/removido no estado final.
 Snapshot intermediário com 12.101 cadernos foi rejeitado, não publicado como
 validado e substituído pelo inventário final com 12.102.
+
+
+## Lote 028
+
+| Métrica | Antes | Depois |
+|---|---:|---:|
+| Correções primárias acumuladas | 51 | 53 |
+| Conferências bibliográficas parciais | 54 | 56 |
+| Aprovações editoriais finais | 0 | 0 |
+| Candidatos sem proposições | 220 | 219 |
+| Candidatos por localizador | 77 | 77 |
+| Registros físicos | 27435 | 27435 |
+| Ocorrências efetivas | 14086 | 14086 |
+| IDs únicos efetivos | 13715 | 13715 |
+
+0129 estava na triagem; 0827 fora dela. Acumulados 34 candidatos corrigidos,
+dezenove correções fora da triagem e três falsos positivos anteriores.
+Regressão: 36 combinadas/144 proposições HTML, dezessete diretas/85 opções;
+12.049 outros cadernos e 1.984 PSCPP inalterados. Matriz de 100 em
+25/25/10/10/10/10/10 preservada. Nenhum ID ativado/removido; versão física
+concorrente de 0129 continua com suas flags de quarentena.

@@ -287,3 +287,21 @@ Ver REVISAO_ARTE_NAVAL_LOTE_027.md e CORRECOES_RUNTIME.json.
 Rechecagem independente, versão oficial, estados e semântica pendentes.
 PR informou mergeable=false no preflight; causa não inferida, sem tentativa
 de merge. Sem merge/deploy; oito gates seguem pendentes/falhos.
+
+
+## Lote 028 — amarração com dois ferros
+
+ANV-0129/0827 corrigidas individualmente com Fonseca v.2, 8ª ed., 2019,
+12.46.1 pp.856–858/PDF217–219 e 12.48 pp.864–865/PDF225–226. Texto/imagens e
+figuras 12-21/12-22/12-23 conferidos; contexto 12.49 e figura 12-27 inspecionados.
+SHA256 recalculado. Geometria/proa entre ferros e área restrita distinguidas
+de imobilidade. Divisão igual de esforço não presumida na condição em que a
+obra indica uma amarra portando. Anilho condicionado à tensão e à vigilância.
+Sem filame/ângulo/tensão admissível inventados ou obrigação portuária atual.
+Keys D/B, IDs e formatos B/A preservados; dez justificativas.
+Restauração 0129 corrigida; principal divergente em quarentena e todos seus
+campos/flags intactos. Nenhum normalizador/filtro/gate alterado; contrato só +0827.
+Acumulado 53 correções/56 conferências parciais, zero aprovações finais.
+Ver REVISAO_ARTE_NAVAL_LOTE_028.md e CORRECOES_RUNTIME.json.
+Rechecagem independente, versão oficial, estados e semântica pendentes.
+Sem merge/deploy; oito gates seguem pendentes/falhos.

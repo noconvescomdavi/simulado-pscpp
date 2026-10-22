@@ -861,3 +861,38 @@ completa repetida. Não se usou apenas o código de saída para declarar build.
 
 Reconsulta de publicação no mesmo HEAD retornou mergeable=true; observação
 inicial false mantida como histórico, sem inferir causa ou aprovar merge.
+
+
+## Lote 028 — resultados efetivos
+
+- Regressão antes/depois do build: exit 0, 53 deltas exatos, igualdade
+  fonte/runtime, 144 proposições renderizadas e 85 opções diretas; 12.049
+  outros cadernos e 1.984 PSCPP inalterados. Contrato direto só +0827.
+- Runtime e seleção: exit 0; IDs e matriz fixa 100 em 25/25/10/10/10/10/10
+  preservados. Proveniência/fingerprints: exit 0.
+- check:pscpp-bank: exit 0, 1.984 questões/254 históricas; mensagem do
+  gerador não comprova correção técnica atual.
+- Geração de catálogo/flashcards e validação do catálogo: exit 0.
+- test-notebook-complete-stems: exit 1, próxima ANV-0131.
+  validate-editorial-runtime: exit 1, 77 localizadores. Triagem: exit 0, 219/77.
+- Inventário: exit 0, 27.435 físicos, 14.086 ocorrências, 13.715 IDs;
+  todos os 53 hashes corrigidos conferidos contra o inventário final.
+- Gate editorial após inventário: exit 2, zero aceitos/14.086 pendentes;
+  merge_permitted=false. Nenhuma aprovação final inventada.
+- Diff físico: somente 0129 na restauração e 0827 no principal; principal
+  divergente 0129 e todos os demais registros/campos intactos, inclusive
+  active=false/status=quarantined da versão física concorrente.
+- auditQuestion sem achados e cadeia de transformações preservando os dois
+  enunciados antes da geração; depois, igualdade efetiva pela regressão.
+- NEXT_TELEMETRY_DISABLED=1 npm run build: exit 0 em cópia isolada /tmp.
+  Wrapper verificou exit_zero/compiled/types/pages/routes=true: compilação,
+  lint/types, 101 páginas e rotas confirmados, não só código de saída. Fontes/
+  data/config rastreados fora dos relatórios e seis artefatos gerados idênticos
+  byte a byte. ENOTEMPTY do workspace no lote019 não declarado resolvido.
+  Avisos npm http-proxy, autoprefixer e cache Webpack sem impedir build.
+
+Scripts Node com --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs.
+Nenhum normalizador/filtro/gate relaxado. Grupo 12.70 e demais achados mantidos
+com seus limites, sem checks/aprovações adicionais. Rechecagem independente,
+programa/edital oficial, estados, cobertura, semântica e offline/produção
+pendentes. Sem merge/deploy ou dados de usuários.
