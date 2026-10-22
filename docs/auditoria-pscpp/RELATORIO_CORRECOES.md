@@ -75,3 +75,10 @@ prevalente, com art. 11.4.c, pp. 758–759 e fig. 11-4 conferidos.
 Gabarito A e cinco opções preservados; quatro proposições e cinco justificativas.
 Acumulado: 15 correções, 18 conferências parciais, zero aprovações finais.
 Triagem: 240 candidatos sem proposições, 77 localizadores.
+
+## Lote 009
+
+ANV-0047 corrigida na restauração prevalente, fonte primária pp. 832/835 de Arte
+Naval v. 2. Quatro proposições F/V/F/V, gabarito B, cinco justificativas; preservadas
+identidade ativa, opções e matriz. 16 correções primárias e 19 conferências parciais
+acumuladas. Não representam aprovação final. Relatório REVISAO_ARTE_NAVAL_LOTE_009.md.

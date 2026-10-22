@@ -3240,9 +3240,9 @@
       "module": "Atracação e desatracação",
       "topic_code": "old-112",
       "topic": "vento para fora do cais",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “vento para fora do cais”, identifique as verdadeiras e assinale a opção correta:\nI) A bibliografia atribui a esse item a seguinte característica: a máquina é ajustada para manter governo com pequena velocidade relativa ao cais.\nII) A bibliografia atribui a esse item a seguinte característica: requer aproximação e espias planejadas para controlar o afastamento lateral.\nIII) “vento para fora do cais” designa espia que sai da proa e segue para vante no cais.\nIV) “vento para fora do cais” designa vento que tende a afastar o navio da posição de atracação.",
+      "question": "Segundo Arte Naval, volume 2, considere as manobras descritas para vento ou corrente que provoque abatimento para fora do cais. Examine as afirmações e escolha o conjunto completo das corretas:\nI. Na atracação em cais totalmente safo, com bastante abatimento para fora, a passagem das espias de proa e popa deve ser adiada até depois de o navio parar, para evitar que elas interfiram com a redução do seguimento.\nII. Na situação de atracação da afirmativa I, a obra prevê passar as espias de proa e popa prontamente para terra, evitando que o abatimento afaste o navio do local de atracação.\nIII. Para largar do cais com vento ou corrente para fora, a obra recomenda manter somente um espringue de popa, usando-o como ponto de giro para abrir a proa.\nIV. Para largar nessa condição, a obra recomenda conservar um través avante e outro a ré, solecá-los até obter afastamento do cais e então largá-los.",
       "options": [
         {
           "key": "A",
@@ -3266,12 +3266,16 @@
         }
       ],
       "correct_answer": "B",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “vento para fora do cais”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "II e IV são verdadeiras. Na atracação em cais safo com bastante abatimento para fora, o art. 12.30 prevê passar prontamente para terra as espias de proa e popa, evitando o afastamento. I inverte essa prioridade ao adiar a passagem. Na desatracação com vento ou corrente para fora, o art. 12.33.4 prevê manter dois traveses e solecá-los antes de largar. III transfere para essa condição o espringue de popa empregado na saída com corrente pela proa (art. 12.33.2). O conjunto completo é II e IV, alternativa B. Fonte: Arte Naval, v. 2, 8ª ed., arts. 12.30 e 12.33.2/4, pp. 832 e 835. As recomendações referem-se às condições delimitadas pela obra.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção C, itens 12.30 e 12.33.4"
+        "locator": "cap. 12, seção C, arts. 12.30 e 12.33.2/4, pp. 832 e 835",
+        "printed_page": 832,
+        "pdf_page": 193,
+        "drive_file_id": "1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Atracação e desatracação",
@@ -3291,7 +3295,7 @@
           "title": "Manobra do Navio",
           "label": "Capítulo 12 - Manobra do Navio"
         },
-        "section": "cap. 12, seção C, itens 12.30 e 12.33.4",
+        "section": "cap. 12, seção C, arts. 12.30 e 12.33.2/4, pp. 832 e 835",
         "module": "Atracação e desatracação",
         "topic": {
           "id": "old-112",
@@ -3311,6 +3315,15 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "cognitive_level": 2,
+      "pscpp_format": "assertion_combination",
+      "distractor_analysis": {
+        "A": "Incorreta: IV é verdadeira, mas III confunde o procedimento para vento ou corrente para fora com a saída com corrente pela proa; falta II.",
+        "B": "Correta: II identifica a necessidade de passar prontamente as espias na atracação com abatimento para fora; IV descreve a saída controlada por dois traveses.",
+        "C": "Incorreta: II é verdadeira, mas I adia indevidamente a passagem das espias; falta IV.",
+        "D": "Incorreta: I adia a passagem das espias e III troca o procedimento de desatracação; omite as verdadeiras II e IV.",
+        "E": "Incorreta: IV é verdadeira, mas I contraria a prioridade de passar as espias para evitar o afastamento; falta II."
       }
     },
     {

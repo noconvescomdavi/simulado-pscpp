@@ -1,7 +1,7 @@
 {
   "checkpoint_version": 1,
   "created_at_utc": "2026-10-19T02:22:35.805683+00:00",
-  "updated_at_utc": "2026-10-21T23:59:37.028610+00:00",
+  "updated_at_utc": "2026-10-22T00:59:31.279359+00:00",
   "task_status": "in_progress_not_approved",
   "branch": "feature/auditoria-integral-padrao-banca-pscpp",
   "source_baseline_sha": "012b562b0eb6f7fec78773b339e4a53b3643e791",
@@ -11,8 +11,8 @@
   "runtime_occurrences": 14086,
   "runtime_unique_ids": 13715,
   "individual_editorial_approved_occurrences": 0,
-  "primary_source_partial_checks": 18,
-  "individually_corrected_questions": 15,
+  "primary_source_partial_checks": 19,
+  "individually_corrected_questions": 16,
   "corrected_question_ids": [
     "ANV-0005",
     "ANV-0007",
@@ -28,7 +28,8 @@
     "ANV-0043",
     "ANV-0044",
     "ANV-0045",
-    "ANV-0046"
+    "ANV-0046",
+    "ANV-0047"
   ],
   "primary_content_correction_is_release_approval": false,
   "historical_extraction_count": 264,
@@ -49,18 +50,18 @@
   "gates": {
     "1": "partial: local JSON pipelines reconciled; full consumers/offline and production checks pending",
     "2": "failed: 0 approved individual evidence records",
-    "3": "pending: 18 partial primary checks and 15 corrected questions; independent editorial recheck, official program/edital alignment and remaining bank outstanding",
+    "3": "pending: 19 partial primary checks and 16 corrected questions; independent editorial recheck, official program/edital alignment and remaining bank outstanding",
     "4": "partial: 264 records individually checked, 255 available texts read, 254 observed keys reconciled; subject/points/cognitive/language matrices recorded; active-bank calibration and format targets not yet approved",
     "5": "partial: 102 runtime duplicate IDs removed; semantic duplicate analysis pending",
-    "6": "partial: 77 locator candidates; notebook-complete-stems fails ANV-0047; regression passes 15 exact hash deltas, primary-to-runtime stem/explanation equality and 60 rendered propositions; lot 008 build passed, not release approval",
+    "6": "partial: 77 locator candidates; notebook-complete-stems fails ANV-0048; regression passes 16 exact hash deltas, source/runtime equality and 64 rendered propositions; lot 009 build passed, not release approval",
     "7": "pending: SQL schema inspected read-only; no migrations or production mutations",
     "8": "pending: no merge; baseline deployment READY is not audit release"
   },
   "known_findings": {
     "locator_candidates": 77,
-    "combination_without_parsed_assertions_candidates": 240,
+    "combination_without_parsed_assertions_candidates": 239,
     "previous_combination_candidates": 256,
-    "combination_candidates_corrected": 13,
+    "combination_candidates_corrected": 14,
     "combination_false_positives_resolved_without_content_change": 3,
     "noncanonical_subject_records": 20,
     "selection_excluded_records_retained": 11,
@@ -77,25 +78,25 @@
   "next_actions": [
     "Historical read complete for all available texts; use BENCHMARK_REVISAO_INTEGRAL.md and manual TSV rather than superseded structural counts. Do not equate historical key observation with current technical correctness.",
     "Verify official Annexes 2-A/2-B provenance, revisions and edital; map complete work/chapter/item trees.",
-    "Review every active effective version. Fifteen primary corrections and eighteen partial source checks documented, not finally approved; independent editorial recheck/program alignment and global semantic review outstanding.",
-    "Fix 77 locator and 240 missing-proposition candidates with primary support. Next failing ID ANV-0047: inspect prevailing restoration AND downstream patches. Lot 008 corrected ANV-0046, servomotor hidrelétrico (not the competing main-file transmission topic); see REVISAO_ARTE_NAVAL_LOTE_008.md.",
+    "Review every active effective version. Sixteen primary corrections and nineteen partial source checks documented, not finally approved; independent editorial recheck/program alignment and global semantic review outstanding.",
+    "Fix locator and missing-proposition candidates using primary support; see current known_findings. Next failing ID ANV-0048: inspect prevailing restoration AND downstream patches. Lot 009 corrected ANV-0047 (wind/current away from quay, not the competing advance topic); see REVISAO_ARTE_NAVAL_LOTE_009.md.",
     "Inspect 20 PSCPP records classified as ii — arte naval and normalize taxonomy with regression tests.",
     "Reconcile offline/production consumers and all hashes, complete every gate, then sync main, revalidate, review PR, merge and verify production."
   ],
   "resume_command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/audit-pscpp-runtime-inventory.mjs",
   "resume_instruction": "Continue this branch from CHECKPOINT.json, preserving baseline/. Do not treat pending rows as approved. Reobtain the attached dossier if needed; its hashes are in INTEGRIDADE_DOSSIE.json. Follow the original Prompt-Mestre. Do not merge while any gate remains pending or failed.",
-  "source_checkpoint_sha": "9664750ea501d8ef8e2ed3cef9dd912cc265634a",
-  "last_completed_batch": "008: ANV-0046; primary source and effective pipeline checked; no production mutation",
+  "source_checkpoint_sha": "a5d849fa00bf3d8833bb596009f3e0a9666c4a58",
+  "last_completed_batch": "009: ANV-0047; primary source and effective pipeline checked; no production mutation",
   "last_build": {
     "command": "npm run build",
     "result": "passed",
-    "source_checkpoint_sha": "9664750ea501d8ef8e2ed3cef9dd912cc265634a",
+    "source_checkpoint_sha": "a5d849fa00bf3d8833bb596009f3e0a9666c4a58",
     "source_changes": [
-      "data/question-restorations/arte-naval.json:ANV-0046"
+      "data/question-restorations/arte-naval.json:ANV-0047"
     ],
     "source_sha256": {
       "data/questions/arte-naval.json": "2742387495bdfd713a8651b4ab6815999bae8d49cca3bbaf1de8d0cef0b53d0c",
-      "data/question-restorations/arte-naval.json": "52a83ecb1a7ea978db645713fb56e0d49b76fb72717b00333bf0fb2070394071",
+      "data/question-restorations/arte-naval.json": "f07332760a2f936482b2429923afbd3d30fadebb7ca9a5155d0b5a94a917efcc",
       "data/question-restorations/notebook-complete-stems.json": "95c79a49d6a367e67cc58441d2579302caaaa4dd22f72de32bd5aff004a2f7d2"
     },
     "release_approval": false,

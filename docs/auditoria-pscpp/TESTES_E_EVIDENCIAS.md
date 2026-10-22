@@ -238,3 +238,29 @@ http-proxy e autoprefixer. Logs privados em audit-private/lote008.
 Push de terminal indisponível por ausência de credencial HTTPS; publicação pela
 integração GitHub, com verificação de blobs/árvore e ref sem force.
 Sem merge, deploy desta auditoria ou alteração de dados de usuários.
+
+## Lote 009 — ANV-0047
+
+Base a5d849fa; revisão primária em REVISAO_ARTE_NAVAL_LOTE_009.md.
+
+| Verificação executada | Resultado |
+|---|---|
+| generate:question-banks | Passou, 12.102 questões |
+| npm run build | Passou, compilação, lint/tipos e 101 páginas; hashes fonte estáveis |
+| test-pscpp-audit-anv0005.mjs, antes e após build | Passou, 16 deltas exatos, 64 proposições no HTML, combinação única e igualdade fonte/runtime; 12.086 outros cadernos e 1.984 PSCPP preservados |
+| validate-runtime-question-banks.mjs | Passou, 12.102 questões com IDs únicos |
+| validate-pscpp-exam-selection.mjs | Passou, matriz fixa |
+| test-question-source-provenance.mjs | Passou, precedência e fingerprints transitivos |
+| check:pscpp-bank | Passou, 1.984 questões, 254 históricas |
+| test-notebook-complete-stems.mjs | Falha preservada, próxima ANV-0048 |
+| validate-editorial-runtime.mjs | Falha preservada nos mesmos 77 localizadores |
+
+Nenhum teste, normalizador ou critério foi relaxado. Inspeção visual de duas páginas
+primárias e leitura dos vizinhos semânticos registradas no relatório do lote.
+Logs privados em audit-private/lote009. Avisos preexistentes npm http-proxy e
+autoprefixer mantidos. Sem merge, deploy da auditoria ou alteração de usuários.
+
+Inventário regenerado após término do build: 27.435 registros físicos, 14.086
+ocorrências e 13.715 IDs preservados. Triagem: 239 candidatos sem proposições e
+77 localizadores. Gate de evidência executado depois do inventário: saída 2,
+0/14.086 aprovações, merge_permitted=false. git diff --check passou.

@@ -38,3 +38,9 @@ já tinham proposições e não são contadas como correções dessa triagem.
 Lote 008: 15 correções primárias e 18 conferências parciais acumuladas;
 0/14.086 aprovações finais. Candidatos de proposições 241 → 240;
 localizadores 77. IDs e contagens físicas/efetivas preservados.
+
+### Lote 009
+
+ANV-0047: quatro proposições restauradas e tecnicamente reescritas, gabarito B
+preservado. Acumulado 16 correções primárias, 19 conferências parciais e zero
+aprovações finais. Runtime preservado em 12.102 cadernos + 1.984 PSCPP.
