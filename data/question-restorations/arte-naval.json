@@ -8249,9 +8249,9 @@
       "module": "Navegação com mau tempo",
       "topic_code": "old-152",
       "topic": "correr com o tempo",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “correr com o tempo”, identifique as verdadeiras e assinale a opção correta:\nI) “correr com o tempo” designa navegar recebendo mar e vento predominantemente pela popa.\nII) A bibliografia atribui a esse item a seguinte característica: faz proa e popa subirem e descerem sucessivamente.\nIII) “correr com o tempo” designa dispositivo lançado ao mar para criar arrasto hidrodinâmico.\nIV) A bibliografia atribui a esse item a seguinte característica: exige evitar surf-riding, guinadas bruscas e perda de governo nas ondas.",
+      "question": "Sobre a manobra de correr com o tempo descrita por Fonseca, respeitadas as diferenças entre navios e condições de mar, analise as proposições e escolha o conjunto completo das corretas.\nI) A manobra pode consistir em pôr o mar na alheta e navegar com velocidade reduzida.\nII) A manobra exige igualar a velocidade do navio à das ondas para fugir às vagas.\nIII) Uma mesma conduta pode ser seguida rigidamente, independentemente das formas do navio e das condições de vento e mar.\nIV) O texto admite deixar o navio abater com a máquina parada e o mar de popa, sem apresentar essa opção como regra inflexível para todos os casos.",
       "options": [
         {
           "key": "A",
@@ -8275,12 +8275,15 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “correr com o tempo”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "I e IV são verdadeiras: a abertura de 12.86 admite mar na alheta com velocidade reduzida ou abatimento com máquina parada e mar de popa. A continuidade do artigo ressalva as diferenças entre navios e condições de vento e mar, impedindo transformar uma dessas possibilidades em regra rígida. II é falsa: o autor contrasta sua descrição com a antiga ideia de fugir às ondas em grande velocidade; não exige igualar as velocidades. III é falsa pela ressalva expressa de variabilidade. O único conjunto completo é I e IV, alternativa C. Trata-se da definição na edição consultada, não de escolha operacional universal para enfrentar um temporal.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção G, item 12.86"
+        "locator": "cap. 12, seção G, art. 12.86, pp. 933–935; contraste com art. 12.85, p. 932",
+        "printed_page": 933,
+        "pdf_page": 294,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Navegação com mau tempo",
@@ -8300,7 +8303,7 @@
           "title": "Manobra do Navio",
           "label": "Capítulo 12 - Manobra do Navio"
         },
-        "section": "cap. 12, seção G, item 12.86",
+        "section": "cap. 12, seção G, art. 12.86, pp. 933–935; contraste com art. 12.85, p. 932",
         "module": "Navegação com mau tempo",
         "topic": {
           "id": "old-152",
@@ -8320,6 +8323,14 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "IV é verdadeira, mas II exige uma igualdade de velocidades que não corresponde à descrição adotada e omite I.",
+        "B": "I é verdadeira, mas II é falsa e IV foi omitida.",
+        "C": "I e IV são as únicas verdadeiras: possibilidades da definição com a ressalva de adequação ao navio e às condições.",
+        "D": "IV é verdadeira, mas III impõe rigidez contrariada pelo texto e I foi omitida.",
+        "E": "II e III são falsas; omite ambas as verdadeiras I e IV."
       }
     },
     {

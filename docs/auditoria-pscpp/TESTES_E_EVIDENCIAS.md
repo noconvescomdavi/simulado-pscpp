@@ -690,3 +690,35 @@ Scripts Node com `--no-warnings --experimental-loader
 nenhum normalizador alterado, gate reduzido ou falha global suprimida.
 Rechecagem editorial independente, programa/edital oficial, estados globais,
 cobertura, unicidade semântica e offline/produção pendentes.
+
+
+## Lote 023 — resultados efetivos
+
+- Regressão antes/depois do build: exit 0, 39 deltas exatos, igualdade
+  fonte/runtime, 124 proposições renderizadas e 40 opções diretas; 12.063
+  outros cadernos e 1.984 PSCPP inalterados. Contrato direto acrescido só 0806.
+- Runtime e seleção de prova: exit 0; IDs e matriz fixa 100 em
+  25/25/10/10/10/10/10 preservados. Proveniência/fingerprints: exit 0.
+- check:pscpp-bank: exit 0, 1.984 questões e 254 históricas; mensagem do
+  gerador não certifica correção técnica atual.
+- Geração de catálogo/flashcards e validação do catálogo: exit 0.
+- test-notebook-complete-stems: exit 1, próxima ANV-0111.
+  validate-editorial-runtime: exit 1, 77 localizadores. Triagem: exit 0, 224/77.
+- Inventário: exit 0, 27.435 físicos, 14.086 ocorrências, 13.715 IDs. Todos
+  os 39 hashes corrigidos conferidos contra o inventário final.
+- Gate editorial após inventário: exit 2, zero aceitos/14.086 pendentes;
+  merge_permitted=false. REVISOES_EDITORIAIS.jsonl sem aprovações inventadas.
+- Diff físico confirmou somente ANV-0108 na restauração e 0806 no principal;
+  todos os campos/flags da versão principal em quarentena de 0108 intactos.
+- Primeira geração excluiu 0108 por falso localizador no normalizador;
+  comando tornou explícito o objeto técnico. Nova geração preservou IDs e
+  quatro proposições. Nenhum normalizador/política relaxado.
+- NEXT_TELEMETRY_DISABLED=1 npm run build: exit 0 em cópia isolada /tmp,
+  compilação, lint/types, 101 páginas e tabela de rotas. Fontes/data/config
+  rastreados fora dos relatórios e seis artefatos gerados idênticos byte a byte.
+  Falha ENOTEMPTY do workspace no lote 019 não declarada resolvida. Avisos
+  npm http-proxy, autoprefixer e cache Webpack sem impedir build.
+
+Scripts Node com --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs.
+Rechecagem independente, fonte/edital oficial, estados globais, cobertura,
+unicidade semântica e offline/produção pendentes. Sem merge/deploy.

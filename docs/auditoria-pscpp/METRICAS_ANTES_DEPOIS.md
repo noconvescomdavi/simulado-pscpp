@@ -172,3 +172,23 @@ sem alteração de conteúdo. Regressão de 30 combinadas/120 proposições no H
 sete diretas/35 opções preservadas pelo adaptador. 12.065 outros cadernos e
 1.984 PSCPP inalterados; matriz de 100 em 25/25/10/10/10/10/10 preservada.
 Nenhum ID ativado/removido; quarentena física concorrente de 0105 intacta.
+
+
+## Lote 023
+
+| Métrica | Antes | Depois |
+|---|---:|---:|
+| Correções primárias acumuladas | 37 | 39 |
+| Conferências bibliográficas parciais | 40 | 42 |
+| Aprovações editoriais finais | 0 | 0 |
+| Candidatos sem proposições | 225 | 224 |
+| Candidatos por localizador | 77 | 77 |
+| Registros físicos | 27435 | 27435 |
+| Ocorrências efetivas | 14086 | 14086 |
+| IDs únicos efetivos | 13715 | 13715 |
+
+ANV-0108 estava na triagem; 0806 fora dela. Acumulados 29 candidatos
+corrigidos, dez correções fora da triagem e três falsos positivos anteriores.
+Regressão: 31 combinadas/124 proposições HTML, oito diretas/40 opções;
+12.063 outros cadernos e 1.984 PSCPP inalterados. Matriz 100 em
+25/25/10/10/10/10/10 preservada. Nenhum ID ativado/removido.

@@ -195,3 +195,22 @@ Acumulado 37 correções/40 conferências parciais, zero aprovações finais.
 Ver REVISAO_ARTE_NAVAL_LOTE_022.md e hashes em CORRECOES_RUNTIME.json.
 Sem merge/deploy; estados globais, rechecagem independente, programa oficial
 e deduplicação semântica/coexistência permanecem pendentes.
+
+
+## Lote 023 — correr com o tempo
+
+ANV-0108/0806 corrigidas individualmente com Fonseca v.2, 8ª ed., 2019,
+12.86 pp.933–935/PDF294–296, contraste 12.85 p.932/PDF293. Texto e imagens
+lidos; hash recalculado. Definição com mar na alheta e velocidade reduzida
+ou abatimento com máquina parada e mar de popa, respeitadas as diferenças
+de navios e condições de mar; rejeitada generalização operacional rígida.
+Keys C/A, IDs e competência preservados; dez justificativas. Restauração
+efetiva 0108 corrigida; versão principal em quarentena de outro tema intacta.
+Objeto explícito no comando resolveu falso localizador na normalização;
+quatro proposições persistem até HTML. Nenhum filtro global alterado.
+Passagem da p.933 sobre duros/altura metacêntrica registrada para rechecagem,
+sem validá-la nem usá-la como premissa. Par old-152 compartilha competência;
+prevenção de coexistência e revisão semântica global pendentes.
+Acumulado 39 correções/42 conferências parciais, zero aprovações finais.
+Ver REVISAO_ARTE_NAVAL_LOTE_023.md e CORRECOES_RUNTIME.json.
+Sem merge/deploy; oito gates seguem pendentes/falhos.
