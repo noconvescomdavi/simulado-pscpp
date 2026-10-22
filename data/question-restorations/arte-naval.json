@@ -9864,9 +9864,9 @@
       "module": "Evoluções",
       "topic_code": "old-132",
       "topic": "abatimento na curva",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “abatimento na curva”, identifique as verdadeiras e assinale a opção correta:\nI) “abatimento na curva” designa deslocamento inicial para o bordo oposto ao da guinada.\nII) A bibliografia atribui a esse item a seguinte característica: representa a fase permanente da evolução, depois dos efeitos transitórios iniciais.\nIII) “abatimento na curva” designa distância medida na direção do rumo inicial até ponto definido da curva.\nIV) A bibliografia atribui a esse item a seguinte característica: decorre da força lateral e da posição do ponto de giro antes de a trajetória se estabelecer.",
+      "question": "Sobre o abatimento na curva de giro definido por Fonseca, analise as proposições e escolha o conjunto completo das corretas.\nI) É um caimento para o bordo contrário ao da guinada, observado no início da evolução.\nII) Corresponde à fase circular permanente da evolução, em vez de um caimento inicial.\nIII) É a distância medida ao longo da direção do rumo inicial até a proa ter guinado 90 graus.\nIV) Sua medida é tomada na direção normal ao rumo inicial.",
       "options": [
         {
           "key": "A",
@@ -9890,12 +9890,15 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “abatimento na curva”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "I e IV são verdadeiras: o art. 12.56.1.f define abatimento como caimento inicial para o bordo contrário ao da guinada, medido na direção normal, isto é, perpendicular ao rumo inicial. II é falsa: troca esse caimento inicial pela fase circular da trajetória. III é falsa: a distância na direção do rumo inicial até 90 graus é o avanço, art. 12.56.1.b. Apenas I e IV formam o conjunto completo, alternativa C. O item pede identificar a grandeza e sua referência de medição; não quantifica forças nem estabelece posição universal do centro de giro.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção E, item 12.56.1.f"
+        "locator": "cap. 12, seção E, art. 12.56.1.f, p. 875; contrastes 12.56.1.a–g, pp. 874–875, figs. 12-31/12-32",
+        "printed_page": 875,
+        "pdf_page": 236,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Evoluções",
@@ -9915,7 +9918,7 @@
           "title": "Manobra do Navio",
           "label": "Capítulo 12 - Manobra do Navio"
         },
-        "section": "cap. 12, seção E, item 12.56.1.f",
+        "section": "cap. 12, seção E, art. 12.56.1.f, p. 875; contrastes 12.56.1.a–g, pp. 874–875, figs. 12-31/12-32",
         "module": "Evoluções",
         "topic": {
           "id": "old-132",
@@ -9935,6 +9938,14 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "I é verdadeira, mas III descreve avanço e IV foi omitida.",
+        "B": "IV é verdadeira, mas III é falsa para abatimento e I foi omitida.",
+        "C": "I e IV são as únicas verdadeiras: caimento inicial oposto à guinada e medição normal ao rumo inicial.",
+        "D": "IV é verdadeira, mas II substitui o caimento inicial pela fase circular e omite I.",
+        "E": "I é verdadeira, mas II é falsa e IV foi omitida."
       }
     },
     {

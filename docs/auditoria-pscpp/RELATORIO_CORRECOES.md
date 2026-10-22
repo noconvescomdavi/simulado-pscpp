@@ -267,3 +267,23 @@ Acumulado 48 correções/51 conferências parciais, zero aprovações finais.
 Ver REVISAO_ARTE_NAVAL_LOTE_026.md e CORRECOES_RUNTIME.json.
 Rechecagem independente, oficialidade/edital, estados e semântica pendentes.
 Sem merge/deploy; oito gates seguem pendentes/falhos.
+
+
+## Lote 027 — abatimento na curva
+
+ANV-0128/0826/0976 corrigidas individualmente com Fonseca v.2, 8ª ed., 2019,
+12.56.1.f p.875/PDF236; contrastes a–g pp.874–875 e contexto p.876. Texto,
+imagens e figuras12-31/12-32 conferidos; SHA256 recalculado. Distintos fase
+inicial, bordo contrário e direção normal ao rumo inicial; avanço, afastamento,
+diâmetro tático e ângulo de deriva utilizados como distratores pertinentes.
+Não se extrapolou a explicação causal antiga nem posição universal do centro
+de giro; caso classifica observação dada, sem prever valor do caimento.
+Keys C/A/A, IDs e formatos B/A/A preservados; quinze justificativas.
+Restauração ANV-0128 corrigida; principal divergente e demais registros intactos.
+Falso positivo de continuidade em ANV-0976 corrigido localmente; runtime/IDs
+reconciliados. Nenhum normalizador/filtro/gate relaxado; contrato só +0826/0976.
+Acumulado 51 correções/54 conferências parciais, zero aprovações finais.
+Ver REVISAO_ARTE_NAVAL_LOTE_027.md e CORRECOES_RUNTIME.json.
+Rechecagem independente, versão oficial, estados e semântica pendentes.
+PR informou mergeable=false no preflight; causa não inferida, sem tentativa
+de merge. Sem merge/deploy; oito gates seguem pendentes/falhos.

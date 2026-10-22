@@ -252,3 +252,25 @@ corrigidos, dezesseis correções fora da triagem e três falsos positivos anter
 Regressão: 34 combinadas/136 proposições HTML, catorze diretas/70 opções;
 12.054 outros cadernos e 1.984 PSCPP inalterados. Matriz100 em
 25/25/10/10/10/10/10 preservada. Nenhum ID ativado/removido.
+
+
+## Lote 027
+
+| Métrica | Antes | Depois |
+|---|---:|---:|
+| Correções primárias acumuladas | 48 | 51 |
+| Conferências bibliográficas parciais | 51 | 54 |
+| Aprovações editoriais finais | 0 | 0 |
+| Candidatos sem proposições | 221 | 220 |
+| Candidatos por localizador | 77 | 77 |
+| Registros físicos | 27435 | 27435 |
+| Ocorrências efetivas | 14086 | 14086 |
+| IDs únicos efetivos | 13715 | 13715 |
+
+0128 estava na triagem; 0826/0976 fora dela. Acumulados 33 candidatos
+corrigidos, dezoito correções fora da triagem e três falsos positivos anteriores.
+Regressão: 35 combinadas/140 proposições HTML, dezesseis diretas/80 opções;
+12.051 outros cadernos e 1.984 PSCPP inalterados. Matriz100 em
+25/25/10/10/10/10/10 preservada. Nenhum ID ativado/removido no estado final.
+Snapshot intermediário com 12.101 cadernos foi rejeitado, não publicado como
+validado e substituído pelo inventário final com 12.102.

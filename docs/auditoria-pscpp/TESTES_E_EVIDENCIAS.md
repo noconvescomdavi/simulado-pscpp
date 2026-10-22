@@ -818,3 +818,46 @@ Nenhum normalizador/filtro/gate relaxado. Grupo 12.70 e pendência terminológic
 do lote023 mantidos sem checks/aprovações adicionais. Rechecagem independente,
 programa/edital oficial, estados, cobertura, semântica e offline/produção pendentes.
 Sem merge/deploy ou dados de usuários.
+
+
+## Lote 027 — resultados efetivos
+
+- Regressão antes/depois do build final: exit 0, 51 deltas exatos, igualdade
+  fonte/runtime, 140 proposições renderizadas e 80 opções diretas; 12.051
+  outros cadernos e 1.984 PSCPP inalterados. Contrato direto só +0826/0976.
+- Runtime e seleção: exit 0; IDs e matriz fixa de 100 em 25/25/10/10/10/10/10
+  preservados. Proveniência/fingerprints: exit 0.
+- check:pscpp-bank: exit 0, 1.984 questões/254 históricas; mensagem do
+  gerador não comprova correção técnica atual.
+- Geração de catálogo/flashcards e validação do catálogo: exit 0.
+- test-notebook-complete-stems: exit 1, próxima ANV-0129.
+  validate-editorial-runtime: exit 1, 77 localizadores. Triagem: exit 0, 220/77.
+- Inventário final: exit 0, 27.435 físicos, 14.086 ocorrências, 13.715 IDs.
+  Todos os 51 hashes corrigidos conferidos contra o inventário final.
+- Gate editorial após inventário final: exit 2, zero aceitos/14.086 pendentes;
+  merge_permitted=false. Nenhuma aprovação final inventada.
+- Diff físico: somente ANV-0128 na restauração e 0826/0976 no principal; principal
+  divergente de ANV-0128 e todos os demais registros/campos intactos.
+- Primeira geração excluiu ANV-0976 por falso positivo de continuidade/similaridade:
+  snapshot 12.101 rejeitado pela regressão; registro abortado antes de gravar
+  linhas incompletas. Comando ajustado, auditQuestion sem achados; geração,
+  inventário e testes repetidos com 12.102. Primeiro build intermediário não
+  serve de validação do lote; build final usou exclusivamente as fontes finais.
+- NEXT_TELEMETRY_DISABLED=1 npm run build: exit 0 final em cópia isolada /tmp,
+  compilação, lint/types, 101 páginas e tabela de rotas. Fontes/data/config
+  rastreados fora dos relatórios e seis artefatos gerados idênticos byte a byte.
+  ENOTEMPTY do workspace no lote019 não declarado resolvido. Avisos npm
+  http-proxy, autoprefixer e cache Webpack sem impedir build.
+
+Scripts Node com --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs.
+Nenhum normalizador/filtro/gate relaxado. Grupo 12.70 e passagem terminológica
+mantidos sem checks/aprovações adicionais. Rechecagem independente, programa/edital
+oficial, estados, cobertura, semântica, offline/produção e revisão final de main
+pendentes. PR informou mergeable=false no preflight; sem tentativa de merge/deploy.
+
+Tentativa posterior com exit 0 mas log sem compilação foi rejeitada; wrapper
+verificou explicitamente exit_zero/compiled/types/pages/routes=true na execução
+completa repetida. Não se usou apenas o código de saída para declarar build.
+
+Reconsulta de publicação no mesmo HEAD retornou mergeable=true; observação
+inicial false mantida como histórico, sem inferir causa ou aprovar merge.
