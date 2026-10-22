@@ -61400,36 +61400,39 @@
       "topic": "catenária do reboque",
       "difficulty": "Médio",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “catenária do reboque”.",
+      "question": "Ao distinguir os elementos e os efeitos presentes em um reboque pela popa, qual descrição corresponde à catenária considerada por Fonseca no amortecimento das lupadas?",
       "options": [
         {
           "key": "A",
-          "text": "arranjo em que rebocador e rebocado permanecem amarrados lado a lado"
+          "text": "Disposição em que rebocador e rebocado seguem amarrados lado a lado."
         },
         {
           "key": "B",
-          "text": "elemento resistente que transmite a tração entre rebocador e rebocado"
+          "text": "Resistência do cabo à ruptura, avaliada em relação ao seu diâmetro."
         },
         {
           "key": "C",
-          "text": "guincho projetado para controlar comprimento e tensão do cabo"
+          "text": "Mecanismo de sarilho que soleca o cabo quando a tensão ultrapassa o ajuste da máquina."
         },
         {
           "key": "D",
-          "text": "curvatura suspensa assumida pelo cabo entre as embarcações"
+          "text": "Curvatura do dispositivo de reboque, favorecida pelo peso, que proporciona elasticidade adicional ao sistema."
         },
         {
           "key": "E",
-          "text": "cabo intermediário usado para transportar o componente principal do reboque"
+          "text": "Elasticidade própria do material de um cabo de fibra, considerada separadamente do efeito de sua curvatura."
         }
       ],
       "correct_answer": "D",
-      "explanation": "A opção correta apresenta a definição técnica de “catenária do reboque”: curvatura suspensa assumida pelo cabo entre as embarcações; fornece elasticidade geométrica e ajuda a amortecer variações de tração.",
+      "explanation": "A alternativa D identifica a curvatura que proporciona elasticidade adicional ao reboque, conforme o art. 12.70, pp. 907–908. A descreve reboque a contrabordo, art. 12.69, p. 906. B trata de resistência à ruptura em relação ao diâmetro, e não de geometria. C descreve a atuação da máquina de reboque, art. 12.71, p. 909. E corresponde à elasticidade própria da fibra, que o texto distingue da elasticidade adicional associada à curvatura. Maior curvatura não é vantagem ilimitada: o mesmo artigo aponta risco de arrastar no fundo em reboque comprido inteiramente de amarra. Não se estabelece um ajuste operacional numérico.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção F, itens 12.70 e 12.76"
+        "locator": "cap. 12, seção F, art. 12.70, pp. 907–909; contraste com arts. 12.69, p. 906, e 12.71, p. 909",
+        "printed_page": 907,
+        "pdf_page": 268,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Reboque",
@@ -61449,7 +61452,7 @@
           "title": "Manobra do Navio",
           "label": "Capítulo 12 - Manobra do Navio"
         },
-        "section": "cap. 12, seção F, itens 12.70 e 12.76",
+        "section": "cap. 12, seção F, art. 12.70, pp. 907–909; contraste com arts. 12.69, p. 906, e 12.71, p. 909",
         "module": "Reboque",
         "topic": {
           "id": "old-145",
@@ -61463,6 +61466,14 @@
         "chapter_id": "fonseca-arte-v1::ch12",
         "topic_id": "old-145",
         "subtopic_id": null
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "É o arranjo a contrabordo, não a curvatura do dispositivo; art. 12.69, p. 906.",
+        "B": "Resistência à ruptura e curvatura são propriedades distintas; o art. 12.70 lista resistência relativa ao diâmetro como vantagem do aço.",
+        "C": "É a máquina de reboque que soleca por excesso de tensão; art. 12.71, p. 909.",
+        "D": "É a curvatura responsável pela elasticidade adicional descrita no art. 12.70; o peso da amarra contribui para essa curvatura.",
+        "E": "O art. 12.70 distingue elasticidade própria da fibra e efeito adicional da curvatura; não são a mesma descrição."
       }
     },
     {

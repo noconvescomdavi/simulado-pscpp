@@ -214,3 +214,20 @@ prevenção de coexistência e revisão semântica global pendentes.
 Acumulado 39 correções/42 conferências parciais, zero aprovações finais.
 Ver REVISAO_ARTE_NAVAL_LOTE_023.md e CORRECOES_RUNTIME.json.
 Sem merge/deploy; oito gates seguem pendentes/falhos.
+
+
+## Lote 024 — catenária do reboque
+
+ANV-0111/0809 corrigidas individualmente com Fonseca v.2, 8ª ed., 2019,
+12.70 pp.907–909/PDF268–270; contexto 12.69 pp.906–907 e contraste 12.71 p.909.
+Texto/imagens das quatro páginas e figura12-47 conferidos; hash recalculado.
+Distintas elasticidade própria da fibra e adicional pela curvatura; explicitado
+o risco de catenária excessiva tocar o fundo em reboque comprido de amarra.
+Keys A/D, IDs e formatos B/A preservados; dez justificativas. Fonte prevalente
+0111 corrigida; principal de outro tema e provenance insegura intacto. Nenhum
+normalizador ou filtro alterado. Três modelos do item12.70 preservados, defeitos
+e sobreposição registrados para revisão; nenhum contado como aprovação/check.
+Acumulado 41 correções/44 conferências parciais, zero aprovações finais.
+Ver REVISAO_ARTE_NAVAL_LOTE_024.md e CORRECOES_RUNTIME.json.
+Rechecagem independente, alinhamento oficial, estados globais e semântica pendentes.
+Sem merge/deploy; oito gates seguem pendentes/falhos.

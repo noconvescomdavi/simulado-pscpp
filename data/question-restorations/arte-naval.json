@@ -8497,9 +8497,9 @@
       "module": "Reboque",
       "topic_code": "old-145",
       "topic": "catenária do reboque",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “catenária do reboque”, identifique as verdadeiras e assinale a opção correta:\nI) “catenária do reboque” designa cabo intermediário usado para transportar o componente principal do reboque.\nII) A bibliografia atribui a esse item a seguinte característica: facilita a manobra do cabo de reboque e reduz movimento indesejado no convés.\nIII) “catenária do reboque” designa curvatura suspensa assumida pelo cabo entre as embarcações.\nIV) A bibliografia atribui a esse item a seguinte característica: fornece elasticidade geométrica e ajuda a amortecer variações de tração.",
+      "question": "Sobre a catenária do reboque, considerando a distinção entre elasticidade própria do cabo e curvatura apresentada por Fonseca, analise as proposições e assinale o conjunto completo das corretas.\nI) A elasticidade própria dos cabos de fibra dispensa curvatura adicional para amortecer lupadas em mar grosso.\nII) O emprego de amarra em todo o comprimento do reboque elimina o risco de o dispositivo arrastar no fundo.\nIII) A curvatura do dispositivo de reboque contribui com elasticidade adicional para amortecer esticões.\nIV) No reboque comprido constituído inteiramente por amarra, o peso excessivo pode produzir catenária demasiadamente grande, com risco de arrastar no fundo.",
       "options": [
         {
           "key": "A",
@@ -8523,12 +8523,15 @@
         }
       ],
       "correct_answer": "A",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “catenária do reboque”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "III e IV são verdadeiras. O art. 12.70 distingue a elasticidade própria dos cabos de fibra da elasticidade adicional proporcionada pela curvatura; também explica que a curvatura da amarra devida ao peso amortece esticões. Na p. 908, adverte que uma amarra empregada em todo o reboque comprido pode formar catenária excessiva e arrastar no fundo. I é falsa: a flutuabilidade dos cabos de fibra pode impedir curvatura suficiente para o amortecimento adicional em mar grosso; sua elasticidade própria não dispensa esse efeito. II é falsa por negar o risco explicitamente apontado. Apenas III e IV compõem o conjunto completo, alternativa A. Não se deduz um comprimento operacional universal nem uma relação numérica sem os dados da faina.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção F, itens 12.70 e 12.76"
+        "locator": "cap. 12, seção F, art. 12.70, pp. 907–909; contraste com arts. 12.69, p. 906, e 12.71, p. 909",
+        "printed_page": 907,
+        "pdf_page": 268,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Reboque",
@@ -8548,7 +8551,7 @@
           "title": "Manobra do Navio",
           "label": "Capítulo 12 - Manobra do Navio"
         },
-        "section": "cap. 12, seção F, itens 12.70 e 12.76",
+        "section": "cap. 12, seção F, art. 12.70, pp. 907–909; contraste com arts. 12.69, p. 906, e 12.71, p. 909",
         "module": "Reboque",
         "topic": {
           "id": "old-145",
@@ -8568,6 +8571,14 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "III e IV são as únicas verdadeiras: amortecimento adicional pela curvatura e limite do seu crescimento em reboque inteiramente de amarra.",
+        "B": "IV é verdadeira, mas II nega o risco de arrastar no fundo e omite III.",
+        "C": "III é verdadeira, mas II é falsa e IV foi omitida.",
+        "D": "I confunde elasticidade própria com dispensa de curvatura adicional; II nega um risco descrito. Ambas são falsas.",
+        "E": "IV é verdadeira, mas I é falsa e III foi omitida."
       }
     },
     {

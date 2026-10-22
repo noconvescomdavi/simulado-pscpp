@@ -192,3 +192,23 @@ corrigidos, dez correções fora da triagem e três falsos positivos anteriores.
 Regressão: 31 combinadas/124 proposições HTML, oito diretas/40 opções;
 12.063 outros cadernos e 1.984 PSCPP inalterados. Matriz 100 em
 25/25/10/10/10/10/10 preservada. Nenhum ID ativado/removido.
+
+
+## Lote 024
+
+| Métrica | Antes | Depois |
+|---|---:|---:|
+| Correções primárias acumuladas | 39 | 41 |
+| Conferências bibliográficas parciais | 42 | 44 |
+| Aprovações editoriais finais | 0 | 0 |
+| Candidatos sem proposições | 224 | 223 |
+| Candidatos por localizador | 77 | 77 |
+| Registros físicos | 27435 | 27435 |
+| Ocorrências efetivas | 14086 | 14086 |
+| IDs únicos efetivos | 13715 | 13715 |
+
+ANV-0111 estava na triagem; 0809 fora dela. Acumulados 30 candidatos
+corrigidos, onze correções fora da triagem e três falsos positivos anteriores.
+Regressão: 32 combinadas/128 proposições HTML, nove diretas/45 opções;
+12.061 outros cadernos e 1.984 PSCPP inalterados. Matriz 100 em
+25/25/10/10/10/10/10 preservada. Nenhum ID ativado/removido.
