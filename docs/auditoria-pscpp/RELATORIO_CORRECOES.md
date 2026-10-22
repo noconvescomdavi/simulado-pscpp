@@ -342,3 +342,26 @@ normalizadores/filtros/gates sem alteração. Acumulado 59 correções/62
 conferências parciais, zero aprovações finais. Ver relatório 030 e ledger.
 Rechecagem independente, versão oficial, estados e semântica pendentes.
 Sem merge/deploy/dados de usuários.
+
+
+## Lote 031 — reboque a contrabordo
+
+ANV-0138/0836 corrigidas individualmente com Fonseca v.2, 8ª ed., 2019,
+art.12.80 no corpo, p.923/PDF284. Texto/imagem do artigo, sumário PDF13 e
+p.924/PDF285 conferidos; SHA256 recalculado. Sumário lista contrabordo 12.81,
+mas corpo 12.80: divergência visual registrada em source.numbering_note e
+evidências, sem inferir errata oficial nem renumerar modelos da cobertura.
+Alheta, defensas, espias e bordo interno da curva fechada distinguidos de
+ligação afastada e bordo externo. Alegação legada de baixa velocidade não
+atribuída ao recorte sem suporte; sem limite numérico ou projeto de instalação
+real inventado. Dez justificativas, keys C/A e formatos B/A preservados.
+L2/Médio proposto sem calibração psicométrica ou decisão L4. Restauração 0138
+corrigida; principal concorrente afastamento/misto intacto, sem inferir flags
+ausentes. Nenhum ID ativado/removido. Contrato direto só +0836; nenhum
+normalizador/filtro/gate alterado. Acumulado 61 correções/64 conferências
+parciais, zero aprovações finais. Ver REVISAO_ARTE_NAVAL_LOTE_031.md e ledger.
+Comando 0836 delimitado a uma única curva fechada após a primeira validação;
+geração/hashes/regressão/catálogo/build repetidos. Build inicial preservado
+como intermediário, sem aprovar a redação posterior.
+Rechecagem independente, versão oficial, estados e semântica pendentes.
+Sem merge/deploy/dados de usuários.
