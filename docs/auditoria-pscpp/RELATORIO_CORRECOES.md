@@ -28,7 +28,7 @@ e estabilidade quando apenas um arquivo alheio muda.
 
 ## Questões
 
-Acumulado vigente após lote 035: **70 IDs corrigidos distintos**, 73 conferências bibliográficas parciais, zero aprovações finais. Relação completa e sem recontagem em CHECKPOINT.json e CORRECOES_RUNTIME.json; números dos parágrafos de lotes abaixo são históricos. Substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
+Acumulado vigente após lote 036: **75 IDs corrigidos distintos**, 78 conferências bibliográficas parciais, zero aprovações finais. Relação completa e sem recontagem em CHECKPOINT.json e CORRECOES_RUNTIME.json; números dos parágrafos de lotes abaixo são históricos. Substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
 Lote 002: `REVISAO_ARTE_NAVAL_LOTE_002.md`, fonte primária arts. 8.2/8.14/8.19–8.20.
 Corrigidas as restaurações prevalentes, mantendo conceitos efetivamente servidos,
 IDs, opções e gabaritos. Dezesseis proposições renderizadas no teste de regressão.
@@ -442,3 +442,26 @@ os conjuntos de proposições da combinada permanecem os mesmos.
 
 
 Julgamentos, precedência e divergência de numeração em REVISAO_ARTE_NAVAL_LOTE_035.md. Acumulado:70 correções/73 conferências parciais/zero aprovações finais.
+
+
+## Lote 036 — relatório individual
+
+| ID | Defeito encontrado | Correção concreta | Fonte verificada | Gabarito |
+|---|---|---|---|---|
+| ANV-0151 | answer-leak-v1 removia I–IV; afirmações por definição misturavam compensação com localização da máquina e função do timoneiro. | Quatro proposições sobre realimentação a vapor/hidrelétrica e confusões com marcha contínua/retorno a meio. Explicação, cinco justificativas, página/PDF/hash; enunciado integral preservado. | 11.4.d p.759/PDF120; contraste11.4.e pp.759–760/PDF120–121 | A mantido; V/F/V/F |
+| ANV-0849 | Pergunta por definição era convertida em comando bibliográfico genérico, com distratores de objetos heterogêneos. | Novo caso da parada após a roda deixar de girar; cinco interpretações paralelas, explicação e cinco justificativas; fonte exata. Não entrega a resposta no comando. | Mesmos localizadores | D mantido |
+| ANV-0152 | I–IV desapareciam no carregamento; a afirmação sobre grande redução/menor velocidade tinha escopo impreciso e a explicação não julgava cada item. | Quatro proposições sobre conjunto fixo/móvel, beta, objetivo, retorno e nomes dos chicotes. Removidas generalizações sem hipóteses; explicação e cinco justificativas; página/PDF/hash. | 9.13 p.668/PDF29, fig.9-16; continuação p.669/PDF30 | B mantido; F/V/F/V |
+| ANV-0850 | Comando genérico e alternativas misturavam conjunto, componente, tipo e grandeza sem distinção editorial suficiente. | Enunciado autossuficiente e cinco descrições sobre constituição/objetivo, com erros localizáveis; explicação e cinco justificativas; referência verificada. | Mesmos localizadores | E mantido |
+| ANV-0984 | Artefato de extração no principal e definição vaga; a opção de tipo particular podia competir com o nome genérico. Dificuldade/aplicação operacional superestimadas. | Texto limpo pede expressamente a designação genérica do conjunto; cinco opções distinguem sistema, componentes e retorno. Explicação e cinco justificativas; fonte exata, L1/Fácil propostos. | Mesmos localizadores | D mantido |
+
+Cinco correções primárias parciais, não aprovações finais. Formatos B/A/B/A/A
+preservados; IDs, competências e gabaritos A/D/B/E/D mantidos (a ordem da tabela
+é151/849/152/850/984). Cinco alternativas A–E por registro. Os conjuntos das
+combinadas não foram mudados; as opções diretas foram reescritas. 151/152:
+Difícil→Médio/L2;849/850 Médio/L2;984 Difícil→Fácil/L1. São propostas editoriais,
+sem calibração psicométrica ou histórica aprovada. O rótulo legado Situação
+aplicada de984 foi preservado para filtros, sem promover reconhecimento de
+nomenclatura a aplicação operacional real.
+
+
+Julgamentos, precedência e limites em REVISAO_ARTE_NAVAL_LOTE_036.md. Acumulado:75 correções/78 conferências parciais/zero aprovações finais.

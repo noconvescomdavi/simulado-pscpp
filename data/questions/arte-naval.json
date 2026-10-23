@@ -13239,9 +13239,9 @@
       "module": "Aparelho de governo",
       "topic_code": "old-075",
       "topic": "mecanismo compensador",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "Sobre “mecanismo compensador”, analise as afirmativas a seguir e assinale a alternativa que apresenta apenas as corretas:\nI. “mecanismo compensador” designa realimentação que neutraliza o comando quando o leme alcança o ângulo pedido.\nII. Em relação a “mecanismo compensador”, considere: costuma ser instalada na popa, próxima à madre, para evitar transmissões longas.\nIII. Em relação a “mecanismo compensador”, considere: faz cessar o movimento do servomotor a vapor ou hidrelétrico no ponto desejado.\nIV. “mecanismo compensador” designa marinheiro encarregado de manobrar o leme conforme as ordens recebidas.",
+      "question": "Nos servomotores a vapor e hidrelétricos descritos por Fonseca, analise as proposições sobre o mecanismo compensador e escolha o conjunto completo das corretas.\nI) Na instalação a vapor, o movimento da própria máquina tende a neutralizar na válvula de distribuição o efeito produzido pela roda do leme.\nII) Quando a roda deixa de girar, a compensação mantém a máquina a vapor em marcha para levar o leme até o limite de seu curso.\nIII) No sistema hidrelétrico, o movimento da cana ou dos junços atua no mecanismo de controle para levá-lo à posição neutra após o movimento da roda.\nIV) A compensação tem por finalidade trazer automaticamente o leme a meio depois de cada alteração de ângulo.",
       "options": [
         {
           "key": "A",
@@ -13265,12 +13265,15 @@
         }
       ],
       "correct_answer": "A",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “mecanismo compensador”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "Somente I e III são verdadeiras (alternativa A). O art. 11.4.d, p. 759, descreve a ação da própria máquina sobre a válvula de vapor e da cana ou dos junços sobre o controle hidrelétrico. A compensação permite parar o movimento no ângulo desejado. II troca a parada por marcha até o limite; IV confunde manter o ângulo pedido com retornar o leme a meio. A descrição do servomotor elétrico por alavanca em 11.4.e é outro caso e não deve ser generalizada para estes dois sistemas.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, seção A, item 11.4.d"
+        "locator": "cap. 11, seção A, art. 11.4.d, p. 759/PDF 120; contraste 11.4.e, pp. 759–760/PDF 120–121",
+        "printed_page": 759,
+        "pdf_page": 120,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Aparelho de governo",
@@ -13290,7 +13293,7 @@
           "title": "Aparelho de governo, mastreação e aparelhos de carga",
           "label": "Capítulo 11 - Aparelho de governo, mastreação e aparelhos de carga"
         },
-        "section": "cap. 11, seção A, item 11.4.d",
+        "section": "cap. 11, seção A, art. 11.4.d, p. 759/PDF 120; contraste 11.4.e, pp. 759–760/PDF 120–121",
         "module": "Aparelho de governo",
         "topic": {
           "id": "old-075",
@@ -13304,7 +13307,15 @@
         "chapter_id": "fonseca-arte-v1::ch11",
         "topic_id": "old-075",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "I e III são o conjunto completo: realimentação para neutralizar o controle e parar no ângulo desejado (11.4.d).",
+        "B": "III é verdadeira, mas IV troca a posição desejada pelo retorno automático a meio; falta I.",
+        "C": "II e IV são falsas: inventam marcha até o limite e retorno obrigatório a meio.",
+        "D": "I é verdadeira, mas II elimina a parada compensada; falta III.",
+        "E": "III é verdadeira, mas II mantém a marcha indevidamente; falta I."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0152",
@@ -13312,9 +13323,9 @@
       "module": "Aparelhos de laborar",
       "topic_code": "old-016",
       "topic": "aparelho de laborar",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "Sobre “aparelho de laborar”, analise as afirmativas a seguir e assinale a alternativa que apresenta apenas as corretas:\nI. Em relação a “aparelho de laborar”, considere: oferece grande redução de esforço, embora normalmente opere com menor velocidade.\nII. Em relação a “aparelho de laborar”, considere: o ganho de força depende da disposição dos ramos que sustentam o poleame móvel.\nIII. “aparelho de laborar” designa configuração em que o poleame acompanha o peso movimentado.\nIV. “aparelho de laborar” designa associação de cabos e poleames destinada a içar ou arriar pesos.",
+      "question": "Sobre o aparelho de laborar e sua nomenclatura, conforme Fonseca, analise as proposições e escolha o conjunto completo das corretas.\nI) Um cabo passando apenas por um moitão fixo, para mudar a direção do esforço sem multiplicá-lo, constitui o aparelho de laborar definido pela obra.\nII) O objetivo do aparelho é manobrar um peso com esforço menor do que o necessário com um simples cabo.\nIII) O chicote preso à orelha de um dos moitões ou cadernais é o tirador, enquanto o chicote por onde se ala é a arreigada fixa.\nIV) O sistema reúne poleame fixo e móvel com um cabo aparelhado, chamado beta.",
       "options": [
         {
           "key": "A",
@@ -13338,12 +13349,15 @@
         }
       ],
       "correct_answer": "B",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “aparelho de laborar”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "Somente II e IV são verdadeiras (alternativa B). O art. 9.13, p. 668, define o sistema por poleame fixo e móvel com beta e indica a redução de esforço como objetivo. I descreve um retorno, sem multiplicação de potência. III inverte os nomes: arreigada fixa é o chicote preso à orelha; tirador é o chicote por onde se ala. A figura 9-16 confirma essas relações. Não se atribui vantagem mecânica numérica ou desempenho real sem hipóteses e geometria suficientes.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 9, seção B, item 9.13"
+        "locator": "cap. 9, seção B, art. 9.13, p. 668/PDF 29, fig. 9-16; continuação p. 669/PDF 30",
+        "printed_page": 668,
+        "pdf_page": 29,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Aparelhos de laborar",
@@ -13363,7 +13377,7 @@
           "title": "Poleame, Aparelhos de Laborar e Acessórios",
           "label": "Capítulo 9 - Poleame, Aparelhos de Laborar e Acessórios"
         },
-        "section": "cap. 9, seção B, item 9.13",
+        "section": "cap. 9, seção B, art. 9.13, p. 668/PDF 29, fig. 9-16; continuação p. 669/PDF 30",
         "module": "Aparelhos de laborar",
         "topic": {
           "id": "old-016",
@@ -13377,7 +13391,15 @@
         "chapter_id": "fonseca-arte-v1::ch9",
         "topic_id": "old-016",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "IV é verdadeira, mas I descreve um simples retorno; falta II.",
+        "B": "II e IV são o conjunto completo: objetivo de reduzir esforço e composição com poleame fixo/móvel e beta.",
+        "C": "I descreve retorno e III troca tirador por arreigada fixa; ambas falsas.",
+        "D": "II é verdadeira, mas I não é o aparelho definido; falta IV.",
+        "E": "II é verdadeira, mas III inverte os chicotes; falta IV."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0153",
@@ -64449,36 +64471,39 @@
       "topic": "mecanismo compensador",
       "difficulty": "Médio",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “mecanismo compensador”.",
+      "question": "Em uma instalação de governo a vapor descrita por Fonseca, o timoneiro deixa de girar a roda após ordenar um novo ângulo. Qual ação do mecanismo compensador explica a parada do leme na posição desejada?",
       "options": [
         {
           "key": "A",
-          "text": "comando rotativo montado em eixo horizontal para ordenar a posição do leme"
+          "text": "O comando continua atuando para levar o leme ao limite de seu curso, mesmo com a roda parada."
         },
         {
           "key": "B",
-          "text": "sistema que permite ao timoneiro orientar o leme e governar o navio"
+          "text": "O comando é invertido para devolver automaticamente o leme a meio após a alteração de ângulo."
         },
         {
           "key": "C",
-          "text": "golas metálicas que guarnecem as passagens dos gualdropes"
+          "text": "A válvula fica na posição de admissão até que o timoneiro desloque a roda no sentido contrário."
         },
         {
           "key": "D",
-          "text": "realimentação que neutraliza o comando quando o leme alcança o ângulo pedido"
+          "text": "O movimento da máquina neutraliza o efeito da roda sobre a válvula, fazendo parar a máquina e o leme no ângulo desejado."
         },
         {
           "key": "E",
-          "text": "punhos distribuídos no contorno exterior da roda do leme"
+          "text": "O movimento é interrompido pelo freio do servomotor elétrico por alavanca, aplicado à instalação a vapor."
         }
       ],
       "correct_answer": "D",
-      "explanation": "A opção correta apresenta a definição técnica de “mecanismo compensador”: realimentação que neutraliza o comando quando o leme alcança o ângulo pedido; faz cessar o movimento do servomotor a vapor ou hidrelétrico no ponto desejado.",
+      "explanation": "A alternativa D descreve o art. 11.4.d, p. 759: na instalação a vapor, a própria máquina tende a neutralizar o efeito da roda sobre a válvula, parando o leme no ângulo desejado. A mantém a marcha; B impõe retorno a meio; C exige comando contrário inexistente nessa descrição. E transfere o freio do servomotor elétrico descrito em 11.4.e, p. 760, para outro sistema.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, seção A, item 11.4.d"
+        "locator": "cap. 11, seção A, art. 11.4.d, p. 759/PDF 120; contraste 11.4.e, pp. 759–760/PDF 120–121",
+        "printed_page": 759,
+        "pdf_page": 120,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Aparelho de governo",
@@ -64498,7 +64523,7 @@
           "title": "Aparelho de governo, mastreação e aparelhos de carga",
           "label": "Capítulo 11 - Aparelho de governo, mastreação e aparelhos de carga"
         },
-        "section": "cap. 11, seção A, item 11.4.d",
+        "section": "cap. 11, seção A, art. 11.4.d, p. 759/PDF 120; contraste 11.4.e, pp. 759–760/PDF 120–121",
         "module": "Aparelho de governo",
         "topic": {
           "id": "old-075",
@@ -64512,7 +64537,15 @@
         "chapter_id": "fonseca-arte-v1::ch11",
         "topic_id": "old-075",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Contraria a função de parar no ângulo desejado; não há marcha obrigatória até o limite.",
+        "B": "A compensação não equivale a retorno automático do leme a meio.",
+        "C": "A própria máquina neutraliza a válvula; a descrição não exige inverter a roda para pará-la.",
+        "D": "Correta: o controle é neutralizado pela ação da máquina e o movimento cessa no ângulo desejado.",
+        "E": "O freio pertence ao caso elétrico por alavanca de 11.4.e; não explica a instalação a vapor de 11.4.d."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0850",
@@ -64522,36 +64555,39 @@
       "topic": "aparelho de laborar",
       "difficulty": "Médio",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “aparelho de laborar”.",
+      "question": "Qual descrição reúne a constituição do aparelho de laborar e o objetivo atribuído a ele por Fonseca, distinguindo-o de um simples retorno?",
       "options": [
         {
           "key": "A",
-          "text": "configuração em que o poleame acompanha o peso movimentado"
+          "text": "Um moitão fixo com cabo para mudar a direção do esforço, sem multiplicação de potência."
         },
         {
           "key": "B",
-          "text": "aparelho mecânico compacto destinado à movimentação de pesos"
+          "text": "Poleame fixo e móvel com beta, chamando tirador ao chicote preso e arreigada fixa ao chicote por onde se ala."
         },
         {
           "key": "C",
-          "text": "relação entre o trabalho útil obtido e o trabalho fornecido"
+          "text": "Poleame fixo e móvel sem cabo aparelhado, transmitindo o esforço diretamente entre as caixas."
         },
         {
           "key": "D",
-          "text": "emprego de um moitão fixo para mudar a direção do esforço"
+          "text": "Dois poleames ambos fixos, com cabo disposto somente para alterar a direção de tração."
         },
         {
           "key": "E",
-          "text": "associação de cabos e poleames destinada a içar ou arriar pesos"
+          "text": "Poleame fixo e móvel com um cabo aparelhado, para manobrar um peso com esforço menor do que com um simples cabo."
         }
       ],
       "correct_answer": "E",
-      "explanation": "A opção correta apresenta a definição técnica de “aparelho de laborar”: associação de cabos e poleames destinada a içar ou arriar pesos; o ganho de força depende da disposição dos ramos que sustentam o poleame móvel.",
+      "explanation": "A alternativa E corresponde ao art. 9.13, p. 668, e à figura 9-16. A e D descrevem desvios de direção sem o poleame móvel que compõe o aparelho; B inverte os nomes dos chicotes; C elimina o cabo chamado beta. O ganho em força é o objetivo descrito, sem fixar um valor numérico para qualquer montagem.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 9, seção B, item 9.13"
+        "locator": "cap. 9, seção B, art. 9.13, p. 668/PDF 29, fig. 9-16; continuação p. 669/PDF 30",
+        "printed_page": 668,
+        "pdf_page": 29,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Aparelhos de laborar",
@@ -64571,7 +64607,7 @@
           "title": "Poleame, Aparelhos de Laborar e Acessórios",
           "label": "Capítulo 9 - Poleame, Aparelhos de Laborar e Acessórios"
         },
-        "section": "cap. 9, seção B, item 9.13",
+        "section": "cap. 9, seção B, art. 9.13, p. 668/PDF 29, fig. 9-16; continuação p. 669/PDF 30",
         "module": "Aparelhos de laborar",
         "topic": {
           "id": "old-016",
@@ -64585,7 +64621,15 @@
         "chapter_id": "fonseca-arte-v1::ch9",
         "topic_id": "old-016",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "É retorno: muda a direção sem multiplicar potência e não reúne parte fixa e móvel.",
+        "B": "Inverte a nomenclatura dos chicotes: preso é arreigada fixa; por onde se ala é tirador.",
+        "C": "O cabo aparelhado, denominado beta, é parte da definição e não pode ser eliminado.",
+        "D": "Sem parte móvel, não corresponde à constituição definida em 9.13.",
+        "E": "Correta: reúne a constituição e o objetivo expressos em 9.13 e fig.9-16."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0851",
@@ -74369,38 +74413,41 @@
       "module": "Aparelhos de laborar",
       "topic_code": "old-016",
       "topic": "aparelho de laborar",
-      "difficulty": "Difícil",
+      "difficulty": "Fácil",
       "style": "Situação aplicada",
-      "question": "Considere A definição técnica “associação de cabos e poleames destinada a içar ou arriar pesos. A descrição inclui ainda esta característica: o ganho de força depende da disposição dos ramos que sustentam o poleame móvel. Qual nomenclatura corresponde ao caso apresentado?",
+      "question": "Um sistema reúne moitões ou cadernais, com uma parte fixa e outra móvel, e um cabo neles aparelhado. Busca-se a designação genérica do conjunto completo, e não de um componente ou de uma função isolada. Qual é essa designação segundo Fonseca?",
       "options": [
         {
           "key": "A",
-          "text": "moitão móvel"
+          "text": "Moitão móvel."
         },
         {
           "key": "B",
-          "text": "talha patente"
+          "text": "Tirador."
         },
         {
           "key": "C",
-          "text": "rendimento do aparelho"
+          "text": "Arreigada fixa."
         },
         {
           "key": "D",
-          "text": "aparelho de laborar"
+          "text": "Aparelho de laborar."
         },
         {
           "key": "E",
-          "text": "retorno"
+          "text": "Retorno."
         }
       ],
       "correct_answer": "D",
-      "explanation": "“aparelho de laborar” é associação de cabos e poleames destinada a içar ou arriar pesos; o ganho de força depende da disposição dos ramos que sustentam o poleame móvel.",
+      "explanation": "A alternativa D nomeia o conjunto definido em 9.13, p. 668, e representado na figura 9-16. Moitão móvel é um componente; tirador e arreigada fixa são chicotes da beta; retorno apenas muda a direção do cabo sem multiplicação de potência. A pergunta exige o nome genérico do sistema, sem confundi-lo com um tipo particular ou uma de suas partes.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 9, seção B, item 9.13"
+        "locator": "cap. 9, seção B, art. 9.13, p. 668/PDF 29, fig. 9-16; continuação p. 669/PDF 30",
+        "printed_page": 668,
+        "pdf_page": 29,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Aparelhos de laborar",
@@ -74420,7 +74467,7 @@
           "title": "Poleame, Aparelhos de Laborar e Acessórios",
           "label": "Capítulo 9 - Poleame, Aparelhos de Laborar e Acessórios"
         },
-        "section": "cap. 9, seção B, item 9.13",
+        "section": "cap. 9, seção B, art. 9.13, p. 668/PDF 29, fig. 9-16; continuação p. 669/PDF 30",
         "module": "Aparelhos de laborar",
         "topic": {
           "id": "old-016",
@@ -74434,7 +74481,15 @@
         "chapter_id": "fonseca-arte-v1::ch9",
         "topic_id": "old-016",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Nomeia um componente móvel, não o sistema completo.",
+        "B": "É o chicote da beta por onde se ala, não o conjunto.",
+        "C": "É o chicote preso à orelha do poleame, não o conjunto.",
+        "D": "Correta: designação genérica do sistema com poleame fixo/móvel e beta em 9.13.",
+        "E": "É um desvio da direção do cabo, sem multiplicação de potência, distinto do conjunto definido."
+      },
+      "cognitive_level": 1
     },
     {
       "id": "ANV-0985",

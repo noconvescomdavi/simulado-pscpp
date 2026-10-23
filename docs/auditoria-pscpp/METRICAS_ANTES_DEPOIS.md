@@ -408,3 +408,16 @@ IDs mantidos. Formatos B/A e keys C/A. Propostas0148 Médio/L2 (antesDifícil),
 0846 Médio/L3, sem calibração aprovada. Nenhum ID/modelo criado, removido ou
 reativado;0347 continua excluído pelo filtro já existente e inalterado. Duas
 variantes ativas da competência, coexistência e revisão semântica ainda pendentes.
+
+
+## Lote 036
+
+Cinco correções novas distintas:151/152/849/850/984; acumulado70→75.
+Conferências parciais73→78;zero aprovações finais. Sem proposições212→210;
+localizadores77→77.27.435 físicos,14.086 ocorrências (12.102 cadernos/1.984 PSCPP),
+13.715 IDs mantidos. Formatos B/B/A/A/A;keys A/B/D/E/D nessa ordem. Propostas:
+151/152 Médio/L2 (antesDifícil),849/850 Médio/L2,984 Fácil/L1 (antesDifícil).
+Sem calibração histórica/psicométrica aprovada. Nenhum modelo criado, removido
+ou reativado. Dois grupos de competência:2 e3 variantes ativas, não devem
+coexistir dentro do grupo na mesma prova. Semântica global/prevenção pendentes.
+0350/0351 preservados fora do runtime, sem nova contagem de revisão/correção.
