@@ -39,7 +39,7 @@ for (const correction of correctionLog.corrections) {
   const q = after.find(q => q.id === correction.id);
   assert.equal(previous.get(q.id), correction.before_hash, `Frozen before hash changed: ${q.id}`);
   assert.equal(hash(q), correction.after_hash, `Effective corrected hash changed: ${q.id}`);
-  const primaryFile = ['ANV-0005','ANV-0020','ANV-0765','ANV-0790','ANV-0964','ANV-0794','ANV-0795','ANV-0798','ANV-0803','ANV-0806','ANV-0809','ANV-0814','ANV-0972','ANV-0823','ANV-0975','ANV-1034','ANV-0826','ANV-0976','ANV-0827','ANV-0829','ANV-0977','ANV-0832','ANV-0978','ANV-0836','ANV-0841','ANV-0981','ANV-0843','ANV-0845','ANV-0148','ANV-0846','ANV-0151','ANV-0152','ANV-0849','ANV-0850','ANV-0984','ANV-0163','ANV-0164','ANV-0861','ANV-0862','ANV-0988','ANV-0165','ANV-0863','ANV-0166','ANV-0864','ANV-0179','ANV-0877','ANV-0993','ANV-0378','ANV-0181','ANV-0879','ANV-0190','ANV-0888','ANV-0198','ANV-0199','ANV-0897','ANV-0200','ANV-0898','ANV-1000','ANV-0203','ANV-0601','ANV-0901','ANV-0204','ANV-0602','ANV-0213','ANV-0611','ANV-0214','ANV-0612','ANV-0218','ANV-0616','ANV-0906'].includes(q.id)
+  const primaryFile = ['ANV-0005','ANV-0020','ANV-0765','ANV-0790','ANV-0964','ANV-0794','ANV-0795','ANV-0798','ANV-0803','ANV-0806','ANV-0809','ANV-0814','ANV-0972','ANV-0823','ANV-0975','ANV-1034','ANV-0826','ANV-0976','ANV-0827','ANV-0829','ANV-0977','ANV-0832','ANV-0978','ANV-0836','ANV-0841','ANV-0981','ANV-0843','ANV-0845','ANV-0148','ANV-0846','ANV-0151','ANV-0152','ANV-0849','ANV-0850','ANV-0984','ANV-0163','ANV-0164','ANV-0861','ANV-0862','ANV-0988','ANV-0165','ANV-0863','ANV-0166','ANV-0864','ANV-0179','ANV-0877','ANV-0993','ANV-0378','ANV-0181','ANV-0879','ANV-0190','ANV-0888','ANV-0198','ANV-0199','ANV-0897','ANV-0200','ANV-0898','ANV-1000','ANV-0203','ANV-0601','ANV-0901','ANV-0204','ANV-0602','ANV-0213','ANV-0611','ANV-0214','ANV-0612','ANV-0218','ANV-0616','ANV-0906','ANV-0221','ANV-0619','AN-C10-1014-M1','AN-C10-1014-M2','AN-C10-1014-M3'].includes(q.id)
     ? 'data/questions/arte-naval.json' : 'data/question-restorations/arte-naval.json';
   const primary = JSON.parse(fs.readFileSync(primaryFile)).questions.find(row => row.id === q.id);
   assert.ok(primary, `Missing reviewed source: ${q.id}`);
@@ -50,7 +50,7 @@ for (const correction of correctionLog.corrections) {
   assert.equal(q.source.pdf_page, correction.pdf_page);
   assert.equal(q.provenance?.mass_reformulation, undefined, `Corrected propositions were reformulated: ${q.id}`);
   if (correction.format === 'direct') {
-    assert.ok(['ANV-0765','ANV-0790','ANV-0964','ANV-0794','ANV-0795','ANV-0798','ANV-0803','ANV-0806','ANV-0809','ANV-0814','ANV-0972','ANV-0823','ANV-0975','ANV-1034','ANV-0826','ANV-0976','ANV-0827','ANV-0829','ANV-0977','ANV-0832','ANV-0978','ANV-0836','ANV-0841','ANV-0981','ANV-0843','ANV-0845','ANV-0846','ANV-0849','ANV-0850','ANV-0984','ANV-0861','ANV-0862','ANV-0988','ANV-0863','ANV-0864','ANV-0877','ANV-0993','ANV-0378','ANV-0879','ANV-0888','ANV-0897','ANV-0898','ANV-1000','ANV-0601','ANV-0901','ANV-0602','ANV-0611','ANV-0612','ANV-0616','ANV-0906'].includes(q.id), 'Only documented direct repairs use this contract');
+    assert.ok(['ANV-0765','ANV-0790','ANV-0964','ANV-0794','ANV-0795','ANV-0798','ANV-0803','ANV-0806','ANV-0809','ANV-0814','ANV-0972','ANV-0823','ANV-0975','ANV-1034','ANV-0826','ANV-0976','ANV-0827','ANV-0829','ANV-0977','ANV-0832','ANV-0978','ANV-0836','ANV-0841','ANV-0981','ANV-0843','ANV-0845','ANV-0846','ANV-0849','ANV-0850','ANV-0984','ANV-0861','ANV-0862','ANV-0988','ANV-0863','ANV-0864','ANV-0877','ANV-0993','ANV-0378','ANV-0879','ANV-0888','ANV-0897','ANV-0898','ANV-1000','ANV-0601','ANV-0901','ANV-0602','ANV-0611','ANV-0612','ANV-0616','ANV-0906','ANV-0619','AN-C10-1014-M2'].includes(q.id), 'Only documented direct repairs use this contract');
     if (q.id === 'ANV-0964') {
       const {initial, final, threshold, percent} = correction.calculation;
       assert.equal((final-initial)/initial*100, percent);
@@ -78,6 +78,20 @@ for (const correction of correctionLog.corrections) {
   // The vector is manual primary-source evidence, not automated proof of truth.
   assert.equal(correction.proposition_truths.length, 4);
   assert.ok(correction.proposition_truths.every(value => typeof value === 'boolean'));
+  if (correction.format === 'true_false') {
+    assert.equal(q.id, 'AN-C10-1014-M3', 'Only documented V/F repairs use this contract');
+    const expectedSequence = correction.proposition_truths.map(value => value ? 'V' : 'F').join(',');
+    const sequences = q.options.map(option => {
+      const terms = option.text.match(/\b[VF]\b/g) || [];
+      assert.equal(terms.length, correction.proposition_truths.length, `Incomplete V/F option: ${q.id}/${option.key}`);
+      return {key:option.key, sequence:terms.join(',')};
+    });
+    assert.equal(new Set(sequences.map(row => row.sequence)).size, q.options.length);
+    const matches = sequences.filter(row => row.sequence === expectedSequence);
+    assert.equal(matches.length, 1, `V/F answer is not unique: ${q.id}`);
+    assert.equal(matches[0].key, q.correct_answer, `V/F sequence disagrees with key: ${q.id}`);
+    continue;
+  }
   const labels = ['I','II','III','IV'];
   const correctSet = labels.filter((_,i) => correction.proposition_truths[i]).sort().join(',');
   const matches = q.options.filter(option => {

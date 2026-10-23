@@ -492,3 +492,7 @@ Corrigidas95→98 IDs distintos;conferências98→101;aprovações0→0. Triagem
 ## Lote049
 
 107→110 IDs corrigidos distintos;110→113 conferências bibliográficas parciais;zero aprovações finais. Sem proposições196→195;localizadores77→77. Regressão110 deltas,240 proposições renderizadas,250 opções diretas,11.992 cadernos e1.984PSCPP intactos. Só0218/0616/0906 mudam desde048;C/A/A mantidos;formatosB/A/A,L2/L3/L2 propostos. População ativa e matriz100 preservadas. Sem incrementos para0079/0417/1152/1334. Escopo normativo e diferença de exemplares576 documentados;ver relatório049.
+
+## Lote050
+
+110→115 IDs corrigidos distintos;113→118 conferências bibliográficas parciais;zero aprovações finais. Sem proposições195→194;localizadores77→77. Regressão115 deltas,252 proposições renderizadas,260 opções diretas,11.987cadernos e1.984PSCPP intactos. Só0221/0619 e3modelosAN-C10-1014 mudam desde049;A/D/E/B/A mantidos,formatosB/A/B/A/C,L2/L3/L2/L1/L2 propostos. RegimeM1/M2/M3,população ativa e matriz100 preservados. Sem incrementos para0010/0420/0907. Ver relatório050.
