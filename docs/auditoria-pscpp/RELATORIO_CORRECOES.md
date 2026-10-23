@@ -28,7 +28,7 @@ e estabilidade quando apenas um arquivo alheio muda.
 
 ## Questões
 
-Acumulado vigente após lote 040: **88 IDs corrigidos distintos**, 91 conferências bibliográficas parciais, zero aprovações finais. Relação completa e sem recontagem em CHECKPOINT.json e CORRECOES_RUNTIME.json; números dos parágrafos de lotes abaixo são históricos. Substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
+Acumulado vigente após lote 041: **90 IDs corrigidos distintos**, 93 conferências bibliográficas parciais, zero aprovações finais. Relação completa e sem recontagem em CHECKPOINT.json e CORRECOES_RUNTIME.json; números dos parágrafos de lotes abaixo são históricos. Substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
 Lote 002: `REVISAO_ARTE_NAVAL_LOTE_002.md`, fonte primária arts. 8.2/8.14/8.19–8.20.
 Corrigidas as restaurações prevalentes, mantendo conceitos efetivamente servidos,
 IDs, opções e gabaritos. Dezesseis proposições renderizadas no teste de regressão.
@@ -518,3 +518,13 @@ Texto/imagens conferidos;dez justificativas. Correções parciais,zero aprovaç�
 | ANV-0993 | Artefato textual de extração e identificação ambígua pelo simples uso de quadrante;dificuldade superestimada. | Texto limpo especifica o engrenamento;opções,explicação e cinco justificativas reescritas;Fácil/L1 propostos e fonte precisa. | Mesmos localizadores | C mantido |
 
 Quatro IDs já ativos corrigidos no principal;vinte justificativas,texto/imagens e hashes conferidos. Correções parciais,zero aprovações finais. Build/regressão passaram;falhas gerais mantidas. Acumulado88/91/0;triagem205/77;próxima independente0181. Report040 documenta distinção de etapas e quatro variantes da mesma competência,sem alteração do regime de três modelos. Sem merge/deploy.
+
+
+## Lote041 — montantes de pega,redação2015
+
+| ID | Defeito encontrado | Correção concreta | Fonte conferida | Gabarito |
+|---|---|---|---|---|
+| ANV-0181 | Proposições desapareciam no carregamento;misturavam proibição de içadores e área do carretel com montantes,sem fixação completa nem altura mínima explícita. | Reescritas quatro proposições sobre fixação à estrutura,vedação de prender à escada,referência de altura no topo da borda e limites dimensionais;explicação,cinco justificativas e referência oficial com hash. | IMO A.1108(29),2015,anexo5.2,p.2/PDF3;contraste5.1 | A mantido;F/V/F/V |
+| ANV-0879 | Enunciado virava comando bibliográfico genérico;opções de competências alheias e ausência de justificativas individuais. | Criado caso com cinco propostas de montagem;comparados0,65/0,75 m,28/32 mm,1,10/1,2 m e fixação à estrutura versus à escada;explicação e cinco justificativas. | Mesmos localizadores,texto e imagem | D mantido |
+
+Duas correções parciais,dez justificativas;zero aprovações finais. Fonte oficial A1108 anexo5.2 p2/PDF3,texto/imagem e hash conferidos. Critérios de2015 explícitos,referências de altura/fixação e mínimos corrigidos. Build/regressão passaram;falhas gerais conhecidas mantidas. Acumulado90/93/0,triagem204/77,próxima independente0190. Limites normativos e estado0380 no relatório041/JSON041. Pendência de HEAD local040 resolvida por fast-forward de árvore limpa,sem commit duplicado. Sem merge/deploy.
