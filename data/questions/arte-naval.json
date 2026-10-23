@@ -18285,9 +18285,9 @@
       "module": "Acesso do prático ao convés",
       "topic_code": "old-248",
       "topic": "costado desobstruído",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "Sobre “costado desobstruído”, analise as afirmativas a seguir e assinale a alternativa que apresenta apenas as corretas:\nI. Em relação a “costado desobstruído”, considere: devem ficar entre 0,7 m e 0,8 m entre si, ter ao menos 32 mm de diâmetro e subir 1,2 m acima da borda.\nII. “costado desobstruído” designa faixa livre para permitir aproximação segura da lancha.\nIII. “costado desobstruído” designa volume desobstruído junto ao carretel da escada.\nIV. Em relação a “costado desobstruído”, considere: deve ter ao menos 6 m, salvo exceções específicas para certos navios menores que 90 m.",
+      "question": "Segundo a redação de 2011 da resolução A.1045(27), quanto ao costado livre para a aproximação da lancha do prático, analise as proposições e escolha o conjunto completo das corretas.\nI) Qualquer navio com menos de 90 m fica automaticamente dispensado do vão de 6 m, bastando seu comprimento.\nII) Quando cintas salientes ou outros elementos construtivos puderem impedir a aproximação segura, seu recorte deve proporcionar pelo menos 6 m de costado desobstruído.\nIII) A dispensa do vão de 6 m também elimina a necessidade de outras medidas para o embarque e desembarque seguro.\nIV) Para navio offshore especializado com menos de 90 m, a dispensa prevista depende da impraticabilidade desse vão, determinada pela Administração, com outras medidas adequadas de segurança.",
       "options": [
         {
           "key": "A",
@@ -18311,12 +18311,17 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “costado desobstruído”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "A alternativa C reúne II e IV. A seção 6 vincula o recorte à aproximação da lancha e prevê condição específica para navios offshore especializados, ou outros similares, com menos de 90 m: impraticabilidade do vão determinada pela Administração e outras medidas adequadas para embarque e desembarque seguro. I torna a exceção automática e genérica; III retira a salvaguarda que o texto mantém. A pergunta examina a redação de 2011, sem certificar uma instalação ou a consolidação normativa atual.",
       "source": {
         "author": "IMO",
         "title": "Resolution A.1045(27): Pilot Transfer Arrangements",
-        "edition": "2011",
-        "locator": "anexo, seção 6"
+        "edition": "2011, adopted 30 November 2011",
+        "locator": "Annex section 6, printed p. 5/PDF 6; contrast 7.1.3 same page",
+        "printed_page": 5,
+        "pdf_page": 6,
+        "sha256": "d5c0bfb3fad8bd548669e7953669129da8261ed64a69d8b10b54a6181d4c3578",
+        "url": "https://wwwcdn.imo.org/localresources/en/OurWork/Safety/Documents/A.1045%2827%29.pdf",
+        "normative_note": "Pergunta explicitamente sobre o texto de 2011. A1108 altera5.1/5.2, não6. MSC576 seção10 e efeito futuro condicionados conferidos; consolidação normativa completa, aplicação brasileira e alinhamento ao edital pendentes."
       },
       "tags": [
         "Acesso do prático ao convés",
@@ -18345,6 +18350,14 @@
         "chapter_id": "a1045::integral",
         "topic_id": "old-248",
         "subtopic_id": null
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "II é verdadeira, mas I transforma o comprimento em dispensa automática; falta IV.",
+        "B": "IV é verdadeira, mas III elimina indevidamente as medidas alternativas; falta II.",
+        "C": "II e IV são as únicas verdadeiras e preservam as condições da recomendação.",
+        "D": "I e III são falsas: nem a dispensa é automática nem a segurança alternativa é eliminada.",
+        "E": "II é verdadeira, mas III é falsa; falta IV."
       }
     },
     {
@@ -47534,36 +47547,41 @@
       "topic": "costado desobstruído",
       "difficulty": "Médio",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “costado desobstruído”.",
+      "question": "Na análise da faixa livre para a lancha do prático, cintas salientes impedem sua aproximação segura. Segundo a redação de 2011 da A.1045(27), qual proposta reúne as condições da exceção ao vão de 6 m?",
       "options": [
         {
           "key": "A",
-          "text": "faixa livre para permitir aproximação segura da lancha"
+          "text": "Navio offshore especializado de 85 m, com impraticabilidade determinada pela Administração e outras medidas adequadas para embarque e desembarque seguro."
         },
         {
           "key": "B",
-          "text": "dois apoios separados e rigidamente fixados à estrutura no acesso por escada de borda"
+          "text": "Navio offshore especializado de 90 m, com impraticabilidade determinada pela Administração e outras medidas adequadas para embarque e desembarque seguro."
         },
         {
           "key": "C",
-          "text": "equipamento cuja utilização para transferência é vedada"
+          "text": "Navio offshore especializado de 85 m, dispensado pelo comprimento mesmo com o vão praticável, e com outras medidas adequadas para transferência segura."
         },
         {
           "key": "D",
-          "text": "volume desobstruído junto ao carretel da escada"
+          "text": "Navio offshore especializado de 85 m, com impraticabilidade decidida apenas pelo comandante e outras medidas adequadas para embarque e desembarque seguro."
         },
         {
           "key": "E",
-          "text": "degrau alongado que reduz a tendência de torção da escada"
+          "text": "Navio offshore especializado de 85 m, com impraticabilidade determinada pela Administração, ficando dispensadas outras medidas para embarque e desembarque seguro."
         }
       ],
       "correct_answer": "A",
-      "explanation": "A opção correta apresenta a definição técnica de “costado desobstruído”: faixa livre para permitir aproximação segura da lancha; deve ter ao menos 6 m, salvo exceções específicas para certos navios menores que 90 m.",
+      "explanation": "A alternativa A reúne tipo de navio, comprimento inferior a 90 m, impraticabilidade determinada pela Administração e medidas alternativas adequadas. O valor didático de 85 m satisfaz 85 < 90; 90 m não satisfaz o limite estrito. C dispensa a impraticabilidade, D troca a autoridade indicada e E elimina as medidas de segurança. A proposta é avaliada somente quanto à exceção descrita na redação de 2011, não quanto à conformidade de todo o arranjo ou de uma embarcação real.",
       "source": {
         "author": "IMO",
         "title": "Resolution A.1045(27): Pilot Transfer Arrangements",
-        "edition": "2011",
-        "locator": "anexo, seção 6"
+        "edition": "2011, adopted 30 November 2011",
+        "locator": "Annex section 6, printed p. 5/PDF 6; contrast 7.1.3 same page",
+        "printed_page": 5,
+        "pdf_page": 6,
+        "sha256": "d5c0bfb3fad8bd548669e7953669129da8261ed64a69d8b10b54a6181d4c3578",
+        "url": "https://wwwcdn.imo.org/localresources/en/OurWork/Safety/Documents/A.1045%2827%29.pdf",
+        "normative_note": "Pergunta explicitamente sobre o texto de 2011. A1108 altera5.1/5.2, não6. MSC576 seção10 e efeito futuro condicionados conferidos; consolidação normativa completa, aplicação brasileira e alinhamento ao edital pendentes."
       },
       "tags": [
         "Acesso do prático ao convés",
@@ -47592,6 +47610,14 @@
         "chapter_id": "a1045::integral",
         "topic_id": "old-248",
         "subtopic_id": null
+      },
+      "cognitive_level": 3,
+      "distractor_analysis": {
+        "A": "85 m é inferior a90 m; a proposta reúne a classe indicada, a determinação da Administração e as medidas alternativas.",
+        "B": "90 m é igual ao limite, não inferior; a exceção textual não inclui esse comprimento.",
+        "C": "O comprimento sozinho não dispensa a condição de impraticabilidade determinada pela Administração.",
+        "D": "O comandante não substitui a determinação da Administração exigida na exceção.",
+        "E": "A dispensa do vão mantém a necessidade de outras medidas adequadas para transferência segura."
       }
     },
     {
@@ -68954,38 +68980,43 @@
       "module": "Acesso do prático ao convés",
       "topic_code": "old-248",
       "topic": "costado desobstruído",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Situação aplicada",
-      "question": "Considere A definição técnica “faixa livre para permitir aproximação segura da lancha. A descrição inclui ainda esta característica: deve ter ao menos 6 m, salvo exceções específicas para certos navios menores que 90 m. Qual nomenclatura corresponde ao caso apresentado?",
+      "question": "Na verificação da aproximação da lancha do prático, encontra-se uma cinta saliente que impede sua chegada à borda. Qual área é objeto da recomendação de recortar essa saliência, segundo a redação de 2011 da A.1045(27)?",
       "options": [
         {
           "key": "A",
-          "text": "costado desobstruído"
+          "text": "O trecho externo do costado a liberar para a aproximação segura da lancha."
         },
         {
           "key": "B",
-          "text": "montantes de pega após a emenda de 2015"
+          "text": "O espaço interno de acesso ao convés a manter livre ao redor do carretel."
         },
         {
           "key": "C",
-          "text": "içador mecânico de prático"
+          "text": "A abertura entre os montantes de pega no ponto de passagem pela borda."
         },
         {
           "key": "D",
-          "text": "área livre no ponto de acesso"
+          "text": "A separação horizontal entre a escada de prático e a plataforma inferior da escada de portaló."
         },
         {
           "key": "E",
-          "text": "spreader step"
+          "text": "A extensão lateral dos degraus alongados destinada a limitar a torção da escada."
         }
       ],
       "correct_answer": "A",
-      "explanation": "“costado desobstruído” é faixa livre para permitir aproximação segura da lancha; deve ter ao menos 6 m, salvo exceções específicas para certos navios menores que 90 m.",
+      "explanation": "A alternativa A identifica o trecho externo do costado tratado pela seção 6. O espaço de circulação junto ao carretel é objeto distinto, descrito em 7.1.3; montantes, plataforma e degraus alongados tampouco substituem essa faixa externa. O recorte visa permitir a aproximação da lancha; o mínimo de 6 m e a exceção condicionada devem ser lidos no contexto da redação de 2011. Não se certifica a segurança integral do arranjo.",
       "source": {
         "author": "IMO",
         "title": "Resolution A.1045(27): Pilot Transfer Arrangements",
-        "edition": "2011",
-        "locator": "anexo, seção 6"
+        "edition": "2011, adopted 30 November 2011",
+        "locator": "Annex section 6, printed p. 5/PDF 6; contrast 7.1.3 same page",
+        "printed_page": 5,
+        "pdf_page": 6,
+        "sha256": "d5c0bfb3fad8bd548669e7953669129da8261ed64a69d8b10b54a6181d4c3578",
+        "url": "https://wwwcdn.imo.org/localresources/en/OurWork/Safety/Documents/A.1045%2827%29.pdf",
+        "normative_note": "Pergunta explicitamente sobre o texto de 2011. A1108 altera5.1/5.2, não6. MSC576 seção10 e efeito futuro condicionados conferidos; consolidação normativa completa, aplicação brasileira e alinhamento ao edital pendentes."
       },
       "tags": [
         "Acesso do prático ao convés",
@@ -69014,6 +69045,14 @@
         "chapter_id": "a1045::integral",
         "topic_id": "old-248",
         "subtopic_id": null
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Identifica a faixa externa do costado que o recorte deve liberar para a lancha.",
+        "B": "Confunde a aproximação externa com a área interna de acesso junto ao carretel, tratada em7.1.3.",
+        "C": "Troca a faixa do costado pelo espaço entre apoios de pega; é outro objeto de projeto.",
+        "D": "Troca o recorte da saliência pela geometria do arranjo combinado de escadas.",
+        "E": "Troca a aproximação da lancha pelo componente que limita a torção da escada."
       }
     },
     {
