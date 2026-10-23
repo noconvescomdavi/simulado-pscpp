@@ -19571,9 +19571,9 @@
       "module": "Geometria do navio",
       "topic_code": "anv1-2.33",
       "topic": "altura metacêntrica",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "Sobre “altura metacêntrica”, analise as afirmativas a seguir e assinale a alternativa que apresenta apenas as corretas:\nI. “altura metacêntrica” designa maior largura do casco medida entre as faces internas do chapeamento do costado.\nII. Em relação a “altura metacêntrica”, considere: altura metacêntrica transversal positiva caracteriza equilíbrio inicial estável.\nIII. “altura metacêntrica” designa distância entre o centro de gravidade do navio e o metacentro.\nIV. Em relação a “altura metacêntrica”, considere: inclui as projeções estruturais consideradas na medição do extremo a extremo.",
+      "question": "Segundo Fonseca, Arte Naval, v. 1, 8ª ed. (2019), analise as proposições sobre altura metacêntrica transversal e escolha o conjunto completo das corretas:\nI. A altura metacêntrica transversal é a distância MC, entre o metacentro e o centro de carena.\nII. Na análise do equilíbrio transversal inicial, M acima de G corresponde a altura metacêntrica positiva e equilíbrio estável.\nIII. A distância entre o centro de gravidade G e o metacentro transversal M é denominada altura metacêntrica transversal.\nIV. O braço de endireitamento GZ tem sempre o mesmo valor de GM, independentemente do ângulo de inclinação.",
       "options": [
         {
           "key": "A",
@@ -19597,12 +19597,15 @@
         }
       ],
       "correct_answer": "E",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “altura metacêntrica”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "A alternativa E reúne II e III. A definição de altura metacêntrica transversal usa G e M; a distância MC é o raio metacêntrico transversal, tornando I falsa. No equilíbrio inicial, M acima de G corresponde a GM positivo e equilíbrio estável. IV confunde GM com GZ: na aproximação metacêntrica apresentada pela obra, GZ = GM sen θ. Essa relação não estabelece igualdade universal entre as duas distâncias nem substitui a análise de estabilidade em grandes ângulos.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 1",
         "edition": "8. ed., 2019",
-        "locator": "cap. 2, item 2.33"
+        "locator": "cap. 2, item 2.33; contexto 2.29/2.31, pp. 87–89; fig. 2-7 p.82",
+        "printed_page": 89,
+        "pdf_page": 89,
+        "sha256": "792beebaea10aaff4b65288c0cfc3dd76c507f779297ee42583d078a7ec1dd20"
       },
       "tags": [
         "Geometria do navio",
@@ -19636,6 +19639,14 @@
         "chapter_id": "fonseca-arte-v1::ch2",
         "topic_id": "anv1-2.33",
         "subtopic_id": null
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Inclui I falsa e omite II verdadeira.",
+        "B": "Inclui IV falsa e omite II verdadeira.",
+        "C": "Inclui I falsa e omite III verdadeira.",
+        "D": "Reúne I e IV, ambas falsas.",
+        "E": "Reúne exatamente II e III, as proposições verdadeiras."
       }
     },
     {
@@ -48868,36 +48879,39 @@
       "topic": "altura metacêntrica",
       "difficulty": "Médio",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “altura metacêntrica”.",
+      "question": "Um esquema didático de estabilidade transversal inicial usa a mesma referência vertical K para dois pontos: o metacentro M está 7,8 m acima de K e o centro de gravidade G está 6,6 m acima de K. O navio está aprumado e M e G pertencem à mesma vertical. Segundo a definição geométrica de Fonseca em Arte Naval, v. 1, qual é o valor de GM nessa condição?",
       "options": [
         {
           "key": "A",
-          "text": "distância vertical entre a superfície da água e o ponto mais baixo da quilha"
+          "text": "14,4 m."
         },
         {
           "key": "B",
-          "text": "força vertical resultante da pressão da água sobre a superfície imersa do casco"
+          "text": "−1,2 m, indicando M abaixo de G."
         },
         {
           "key": "C",
-          "text": "distância entre o centro de gravidade do navio e o metacentro"
+          "text": "1,2 m."
         },
         {
           "key": "D",
-          "text": "maior largura do casco medida entre as faces internas do chapeamento do costado"
+          "text": "6,6 m."
         },
         {
           "key": "E",
-          "text": "princípio segundo o qual um corpo imerso recebe empuxo igual ao peso do volume de fluido deslocado"
+          "text": "7,8 m."
         }
       ],
       "correct_answer": "C",
-      "explanation": "A opção correta apresenta a definição técnica de “altura metacêntrica”: distância entre o centro de gravidade do navio e o metacentro; altura metacêntrica transversal positiva caracteriza equilíbrio inicial estável.",
+      "explanation": "A alternativa C apresenta GM = 7,8 − 6,6 = 1,2 m. As duas alturas partem da mesma referência e M está acima de G, portanto a separação orientada GM é positiva. Somar as alturas não fornece a distância entre os pontos; subtrair na ordem inversa troca o sinal. Os dados são didáticos novos. O resultado descreve a geometria inicial e não comprova atendimento a todos os critérios de estabilidade de uma embarcação.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 1",
         "edition": "8. ed., 2019",
-        "locator": "cap. 2, item 2.33"
+        "locator": "cap. 2, item 2.33 p.89; contexto 2.29 pp.87–88; fig.2-7 p.82",
+        "printed_page": 89,
+        "pdf_page": 89,
+        "sha256": "792beebaea10aaff4b65288c0cfc3dd76c507f779297ee42583d078a7ec1dd20"
       },
       "tags": [
         "Geometria do navio",
@@ -48931,6 +48945,14 @@
         "chapter_id": "fonseca-arte-v1::ch2",
         "topic_id": "anv1-2.33",
         "subtopic_id": null
+      },
+      "cognitive_level": 3,
+      "distractor_analysis": {
+        "A": "Soma as duas alturas, 7,8 + 6, 6 = 14,4 m, em vez de calcular a separação.",
+        "B": "Inverte a ordem:6,6 − 7,8 = −1,2 m e a posição relativa, embora M esteja acima de G.",
+        "C": "Subtrai alturas com a mesma referência:7,8 − 6, 6 = 1,2 m.",
+        "D": "Repete a altura de G acima de K, sem descontá-la da altura de M.",
+        "E": "Repete a altura de M acima de K, sem descontar a altura de G."
       }
     },
     {
