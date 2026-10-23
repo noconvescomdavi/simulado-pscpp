@@ -483,3 +483,8 @@ Corrigidas95→98 IDs distintos;conferências98→101;aprovações0→0. Triagem
 ## Lote047
 
 103→105 IDs corrigidos distintos;106→108 conferências bibliográficas parciais;zero aprovações finais. Sem proposições198→197;localizadores77→77. Regressão105 deltas,232 proposições renderizadas,235 opções diretas,11.997 cadernos e1.984PSCPP intactos contra baseline. Só0213/0611 mudam desde046;C/A mantidos;formatosB/A;L2/L3 propostos. População ativa e matriz100 preservadas. Conferência externa histórica SOLAS e consulta MCA não fecham consolidação atual/edital. Sem incrementos para0036/0412 ou15 modelos existentes;ver relatório047.
+
+
+## Lote048
+
+105→107 IDs corrigidos distintos;108→110 conferências bibliográficas parciais;zero aprovações finais. Sem proposições197→196;localizadores77→77. Regressão107 deltas,236 proposições renderizadas,240 opções diretas,11.995 cadernos e1.984PSCPP intactos. Só0214/0612 mudam desde047;D/B mantidos;formatosB/A,L2/L2 propostos. População ativa e matriz100 preservadas;nenhum incremento para0042/0078/0413;ver relatório048.

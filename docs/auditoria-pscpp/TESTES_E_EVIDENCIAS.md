@@ -1454,3 +1454,18 @@ Entre046 e047,somente0213/0611 mudam no inventário efetivo e arquivo principal.
 Falhas reais mantidas:test-notebook-complete-stems exit1ANV-0142;validate-editorial-runtime exit1 com77 localizadores;validate-pscpp-editorial-evidence exit2,zero aprovadas/14.086 pendentes. Gate regenerado após inventário e todos os hashes conferidos. REVISOES_EDITORIAIS.jsonl inalterado. Testes estruturais não substituem revisão editorial independente,inventário completo de emendas,vigência/aplicabilidade brasileira,programa/edital ou prevenção semântica global.
 
 Fonte,escopo normativo e tabela individual:REVISAO_ARTE_NAVAL_LOTE_047.md e EVIDENCIA_NORMATIVA_047.json.
+
+
+## Lote048
+
+Build completo isolado final `npm run build`: exit0; compilação,lint/tipos,101 páginas e rotas confirmados. Todos os arquivos rastreados fora de docs,incluindo regressão,iguais byte a byte à cópia testada; seis artefatos gerados idênticos. Uma tentativa inicial de copiar nomes Unicode com git ls-files sem -z falhou antes do build; corrigida para -z. Uma geração e um build intermediários usaram insumos anteriores ao ajuste de alternative_rationales para o campo consumidor distractor_analysis; a regressão detectou o hash divergente e falhou. Esses resultados não validam a árvore final. Regeneração e novo build completo com insumos finais estáveis passaram. Não se declara resolvido o antigo ENOTEMPTY da árvore original.
+
+Passaram geração PSCPP/cadernos/catálogo/flashcards; validate-runtime-question-banks,validate-pscpp-exam-selection,test-question-source-provenance,validate-runtime-question-catalog,test-pscpp-audit-anv0005,audit-pscpp-runtime-triage/inventory e npm run check:pscpp-bank. Node com loader pscpp-json-loader. Regressão final antes/depois do build:107 deltas exatos acumulados,11.995 cadernos e todas1.984 PSCPP intactos frente à baseline congelada; composição ativa preservada;236 proposições renderizadas e240 opções diretas preservadas. Nenhuma asserção relaxada: apenas IDs documentados acrescidos aos contratos de fonte/direta.
+
+Entre047 e048,só0214/0612 mudam no arquivo principal e inventário efetivo. Objetos principais integralmente iguais ao runtime; todos107 hashes corrigidos coincidem com inventário. Hashes antes/depois em CORRECOES_RUNTIME.json/CONFERENCIAS_BIBLIOGRAFICAS.jsonl. Metadados de topo,0042/0078/0413,restaurações e demais objetos intactos. Nenhuma ativação ou nova quarentena. Matriz exata100=25/25/10/10/10/10/10 preservada.
+
+Falhas reais mantidas:test-notebook-complete-stems exit1 emANV-0142;validate-editorial-runtime exit1 com77 localizadores;validate-pscpp-editorial-evidence exit2,zero aprovadas/14.086 pendentes. Gate regenerado após inventário e todos os hashes conferidos;REVISOES_EDITORIAIS.jsonl inalterado. Testes e releitura desta sessão não substituem rechecagem independente,programa/edital oficial,revisão semântica global ou consolidação normativa.
+
+Acumulado107 IDs corrigidos distintos,110 conferências bibliográficas parciais,zero aprovações finais. Triagem196 sem proposições,77 localizadores;57 candidatos corrigidos,3 falsos positivos anteriores sem mudança,50 correções fora dessa triagem.27.435 físicos,14.086 ocorrências(12.102cadernos+1.984PSCPP),13.715 IDs únicos preservados. Próxima independenteANV-0218,costado desobstruído(IMO A1045 Annex6),sujeita à conferência normativa;0142/0840 e0176/0874 permanecem com fonte pendente,sem recontagem de busca. Todos8 gates pendentes/falhos,merge_permitted=false. Sem merge,deploy ou mutação de produção/usuários.
+
+Fonte e tabela individual:REVISAO_ARTE_NAVAL_LOTE_048.md.
