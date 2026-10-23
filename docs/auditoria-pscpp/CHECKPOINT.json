@@ -1,7 +1,7 @@
 {
   "checkpoint_version": 1,
   "created_at_utc": "2026-10-19T02:22:35.805683+00:00",
-  "updated_at_utc": "2026-10-23T09:06:28.776453+00:00",
+  "updated_at_utc": "2026-10-23T10:09:17.934404+00:00",
   "task_status": "in_progress_not_approved",
   "branch": "feature/auditoria-integral-padrao-banca-pscpp",
   "source_baseline_sha": "012b562b0eb6f7fec78773b339e4a53b3643e791",
@@ -11,8 +11,8 @@
   "runtime_occurrences": 14086,
   "runtime_unique_ids": 13715,
   "individual_editorial_approved_occurrences": 0,
-  "primary_source_partial_checks": 93,
-  "individually_corrected_questions": 90,
+  "primary_source_partial_checks": 95,
+  "individually_corrected_questions": 92,
   "corrected_question_ids": [
     "ANV-0005",
     "ANV-0007",
@@ -103,7 +103,9 @@
     "ANV-0877",
     "ANV-0993",
     "ANV-0181",
-    "ANV-0879"
+    "ANV-0879",
+    "ANV-0190",
+    "ANV-0888"
   ],
   "primary_content_correction_is_release_approval": false,
   "historical_extraction_count": 264,
@@ -124,22 +126,22 @@
   "gates": {
     "1": "partial: local JSON pipelines reconciled; full consumers/offline and production checks pending",
     "2": "failed: 0 approved individual evidence records",
-    "3": "pending:93 partial primary checks and90 corrected questions;independent recheck,official program/edital,complete source/normative alignment and remaining bank outstanding;0142/0840 and0176/0874 source unresolved;lot041 confined to2015 wording,not current consolidated certification",
+    "3": "pending:95 partial primary checks and92 corrected questions;independent recheck,official program/edital,complete source/normative alignment and remaining bank outstanding;0142/0840 and0176/0874 source unresolved;prior scope/findings retained",
     "4": "partial: 264 records individually checked, 255 available texts read, 254 observed keys reconciled; subject/points/cognitive/language matrices recorded; active-bank calibration and format targets not yet approved",
     "5": "partial: 102 runtime duplicate IDs removed; semantic duplicate analysis pending",
-    "6": "partial:77 locator candidates;notebook-complete-stems fails source-blocked0142;next independent0190;regression90 deltas/204 propositions/195 direct options;isolated complete build passed;not release approval",
+    "6": "partial:77 locator candidates;notebook-complete-stems fails source-blocked0142;next independent0198;regression92 deltas/208 propositions/200 direct options;isolated complete build passed;not release approval",
     "7": "pending: SQL schema inspected read-only; no migrations or production mutations",
     "8": "pending: no merge; baseline deployment READY is not audit release"
   },
   "known_findings": {
     "locator_candidates": 77,
-    "combination_without_parsed_assertions_candidates": 204,
+    "combination_without_parsed_assertions_candidates": 203,
     "previous_combination_candidates": 256,
-    "combination_candidates_corrected": 49,
+    "combination_candidates_corrected": 50,
     "combination_false_positives_resolved_without_content_change": 3,
     "noncanonical_subject_records": 20,
     "selection_excluded_records_retained": 11,
-    "editorial_corrections_outside_missing_proposition_triage": 41,
+    "editorial_corrections_outside_missing_proposition_triage": 42,
     "source_state_reconciliation_example": {
       "id": "ANV-0105",
       "physical_main_version": "quarantined/inactive; different swing-circle content preserved unchanged",
@@ -176,7 +178,7 @@
       "quarantine_applied": false,
       "primary_check_count_increment": 0,
       "editorial_approval": false,
-      "next_independent_candidate": "ANV-0190"
+      "next_independent_candidate": "ANV-0198"
     },
     "normative_scope_lot034": {
       "report": "EVIDENCIA_NORMATIVA_034.json",
@@ -267,7 +269,19 @@
       "report": "REVISAO_ARTE_NAVAL_LOTE_041.md",
       "status": "Unchanged original absent runtime;raw policy active,after two existing transforms inactive stem-quotes-source-answer. No physical flags inferred,activation/quarantine or counted review."
     },
-    "local_head_recovery_lot041": "Previous run lost environment after remote publication040. On return local tracked tree clean and older,not exact staged/remote tree. Fast-forward fetched83efac78 without duplicate commit or dropping untracked;no assumption that previous reset completed."
+    "local_head_recovery_lot041": "Previous run lost environment after remote publication040. On return local tracked tree clean and older,not exact staged/remote tree. Fast-forward fetched83efac78 without duplicate commit or dropping untracked;no assumption that previous reset completed.",
+    "physical_runtime_state_lot042": {
+      "ids": [
+        "ANV-0389"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_042.md",
+      "status": "Unchanged original absent runtime;raw policy active,after two existing transforms inactive stem-quotes-source-answer. No inferred physical flags,activation/quarantine or counted review."
+    },
+    "combination_ambiguity_lot042": {
+      "id": "ANV-0190",
+      "report": "REVISAO_ARTE_NAVAL_LOTE_042.md",
+      "finding": "Old I limiting lateral separation was compatible with wind toward berth yet excluded by keyE. Replaced with explicit false reversal;newF/F/V/V resolves uniquelyE. OldIV energy assertion not counted as independently revalidated;replaced with directly sourced departure difficulty. No universal operational prescription."
+    }
   },
   "production_baseline": {
     "id": "dpl_rRAELJq5jYiofCKZriDuVdLvaonf",
@@ -280,29 +294,29 @@
   "next_actions": [
     "Historical read complete for all available texts; use BENCHMARK_REVISAO_INTEGRAL.md and manual TSV rather than superseded structural counts. Do not equate historical key observation with current technical correctness.",
     "Verify official Annexes 2-A/2-B provenance, revisions and edital; map complete work/chapter/item trees.",
-    "Review every active effective version.90 primary corrections,93 partial checks,zero final approvals. Complete independent recheck,official program/edital,full bibliography/normative inventory and global semantic review;resolve0142/0840 and0176/0874 source impediment honestly.",
-    "Continue independent0190. Lot041 corrected0181/0879 in main,stanchion fixation/height/dimensions explicitly under2015 text;10 rationales and normative scope041.0380 unchanged/excluded after transforms. Source1108/572 freshly reobtained,same hashes034;576 operative page only checked,no full standards approval. Preserve prior findings;all gates and final main sync/checks before merge.",
+    "Review every active effective version.92 primary corrections,95 partial checks,zero final approvals. Complete independent recheck,official program/edital,full bibliography/normative inventory and global semantic review;resolve0142/0840 and0176/0874 source impediment honestly.",
+    "Continue independent0198. Lot042 corrected0190/0888 in main,wind-induced inward drift risks at berth approach/departure,10 rationales. Old0190 I ambiguity explicitly resolved with new false proposition,not blind legacy-key approval.0389 unchanged/excluded after existing transforms. Preserve prior findings;all gates and final main sync/checks before merge.",
     "Inspect 20 PSCPP records classified as ii — arte naval and normalize taxonomy with regression tests.",
     "Reconcile offline/production consumers and all hashes, complete every gate, then sync main, revalidate, review PR, merge and verify production."
   ],
   "resume_command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/audit-pscpp-runtime-inventory.mjs",
   "resume_instruction": "Continue this branch from CHECKPOINT.json, preserving baseline/. Do not treat pending rows as approved. Reobtain the attached dossier if needed; its hashes are in INTEGRIDADE_DOSSIE.json. Follow the original Prompt-Mestre. Do not merge while any gate remains pending or failed.",
-  "source_checkpoint_sha": "83efac78dec42dd4cc08f78c9ed65dc2f34803a1",
-  "last_completed_batch": "041: ANV-0181/0879 handhold stanchions,2015 amendment;10 alternative rationales;no production mutation",
+  "source_checkpoint_sha": "bfb93218d0c860112ae44956e421b44fbcb1c1d0",
+  "last_completed_batch": "042: ANV-0190/0888 wind setting vessel toward berth;10 alternative rationales;no production mutation",
   "last_build": {
     "command": "npm run build with NEXT_TELEMETRY_DISABLED=1 and npm_config_update_notifier=false",
     "result": "passed_isolated_copy",
-    "source_checkpoint_sha": "83efac78dec42dd4cc08f78c9ed65dc2f34803a1",
+    "source_checkpoint_sha": "bfb93218d0c860112ae44956e421b44fbcb1c1d0",
     "source_changes": [
-      "data/questions/arte-naval.json:ANV-0181/0879"
+      "data/questions/arte-naval.json:ANV-0190/0888"
     ],
     "source_sha256": {
-      "data/questions/arte-naval.json": "02dc596f8af04e16f5d045fefd0a6ee4eb0ae152b03329e427e1b932fb90afc5",
+      "data/questions/arte-naval.json": "eb49b4890c8ffbe756b86db667b39f1676bd248e2746caa676675b5b78c6d9ee",
       "data/question-restorations/arte-naval.json": "6607132d2a946fc22cca613b05e3591e2ecab69e1967e867ece7b2432d855a0d",
       "data/question-restorations/notebook-complete-stems.json": "95c79a49d6a367e67cc58441d2579302caaaa4dd22f72de32bd5aff004a2f7d2"
     },
     "release_approval": false,
-    "note": "One isolated full build exit0 with compile/lint/types/101pages/routes markers. All tracked non-docs and6 generated artifacts equal tested copy. Regression before/after passed. Only0181/0879 main changed;0380/restorations/blocked pairs untouched. No heuristic relaxation,new active IDs,production mutation or final approval. Prior ENOTEMPTY not declared resolved."
+    "note": "One isolated full build exit0,compile/lint/types/101pages/routes markers. Tracked non-docs and6 generated artifacts equal tested copy. Regression before/after passed. Only0190/0888 main changed;0389/restorations/blocked pairs untouched. No heuristic relaxation,new active IDs,production mutation or final approval. Prior ENOTEMPTY not declared resolved."
   },
   "continuation_automation": {
     "id": "6ad9195b550c8191bf6738126d23a44e",

@@ -28,7 +28,7 @@ e estabilidade quando apenas um arquivo alheio muda.
 
 ## Questões
 
-Acumulado vigente após lote 041: **90 IDs corrigidos distintos**, 93 conferências bibliográficas parciais, zero aprovações finais. Relação completa e sem recontagem em CHECKPOINT.json e CORRECOES_RUNTIME.json; números dos parágrafos de lotes abaixo são históricos. Substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
+Acumulado vigente após lote 042: **92 IDs corrigidos distintos**, 95 conferências bibliográficas parciais, zero aprovações finais. Relação completa e sem recontagem em CHECKPOINT.json e CORRECOES_RUNTIME.json; números dos parágrafos de lotes abaixo são históricos. Substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
 Lote 002: `REVISAO_ARTE_NAVAL_LOTE_002.md`, fonte primária arts. 8.2/8.14/8.19–8.20.
 Corrigidas as restaurações prevalentes, mantendo conceitos efetivamente servidos,
 IDs, opções e gabaritos. Dezesseis proposições renderizadas no teste de regressão.
@@ -528,3 +528,13 @@ Quatro IDs já ativos corrigidos no principal;vinte justificativas,texto/imagens
 | ANV-0879 | Enunciado virava comando bibliográfico genérico;opções de competências alheias e ausência de justificativas individuais. | Criado caso com cinco propostas de montagem;comparados0,65/0,75 m,28/32 mm,1,10/1,2 m e fixação à estrutura versus à escada;explicação e cinco justificativas. | Mesmos localizadores,texto e imagem | D mantido |
 
 Duas correções parciais,dez justificativas;zero aprovações finais. Fonte oficial A1108 anexo5.2 p2/PDF3,texto/imagem e hash conferidos. Critérios de2015 explícitos,referências de altura/fixação e mínimos corrigidos. Build/regressão passaram;falhas gerais conhecidas mantidas. Acumulado90/93/0,triagem204/77,próxima independente0190. Limites normativos e estado0380 no relatório041/JSON041. Pendência de HEAD local040 resolvida por fast-forward de árvore limpa,sem commit duplicado. Sem merge/deploy.
+
+
+## Lote042 — vento para dentro do cais
+
+| ID | Defeito encontrado | Correção concreta | Fonte conferida | Gabarito |
+|---|---|---|---|---|
+| ANV-0190 | Proposições desapareciam;I antiga era compatível com o vento para dentro embora excluída pelo gabarito;II misturava outra amarração e a explicação não justificava o conjunto. | Reescritas quatro proposições com juízos inequívocos sobre sentido do abatimento,risco na atracação e dificuldade na largada;explicação,cinco justificativas e páginas/hash. | Arte Naval v.2,8ª ed.,12.30 pp.831–832/PDF192–193 e12.33.5 pp.835–836/PDF196–197 | E mantido;F/F/V/V |
+| ANV-0888 | Definição virava comando bibliográfico genérico;opções heterogêneas e justificativa apenas nominal. | Criado enunciado com cinco avaliações conjuntas da atracação/desatracação sob abatimento para dentro;explicação e cinco justificativas individuais;referência precisa. | Mesmos localizadores,texto e imagem | C mantido |
+
+Duas correções parciais,dez justificativas;zero aprovações finais. Fonte12.30 pp831–832/PDF192–193 e12.33.5 pp835–836/PDF196–197,texto/imagens/hash conferidos. Resolvida ambiguidade da antigaI que não sustentava exclusão pelo gabarito;novo conjunto inequívoco. Build/regressão passaram;falhas gerais conhecidas mantidas. Acumulado92/95/0,triagem203/77,próxima independente0198. Estado0389 e limites no relatório042. Sem merge/deploy.
