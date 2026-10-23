@@ -28,7 +28,7 @@ e estabilidade quando apenas um arquivo alheio muda.
 
 ## Questões
 
-Acumulado vigente após lote 043: **95 IDs corrigidos distintos**, 98 conferências bibliográficas parciais, zero aprovações finais. Relação completa e sem recontagem em CHECKPOINT.json e CORRECOES_RUNTIME.json; números dos parágrafos de lotes abaixo são históricos. Substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
+Acumulado vigente após lote 044: **98 IDs corrigidos distintos**, 101 conferências bibliográficas parciais, zero aprovações finais. Relação completa e sem recontagem em CHECKPOINT.json e CORRECOES_RUNTIME.json; números dos parágrafos de lotes abaixo são históricos. Substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
 Lote 002: `REVISAO_ARTE_NAVAL_LOTE_002.md`, fonte primária arts. 8.2/8.14/8.19–8.20.
 Corrigidas as restaurações prevalentes, mantendo conceitos efetivamente servidos,
 IDs, opções e gabaritos. Dezesseis proposições renderizadas no teste de regressão.
@@ -549,3 +549,14 @@ Duas correções parciais,dez justificativas;zero aprovações finais. Fonte12.3
 | ANV-0897 | Comando virava referência genérica;alternativas heterogêneas e explicação sem comparação verificável. | Enunciado e cinco avaliações da ação do leme reescritos;mantido o caráter de admissão qualitativa do texto;explicação,cinco justificativas,páginas/hash. | Mesmos localizadores do v.2,texto e imagem | B mantido |
 
 Três correções parciais,quinze justificativas;zero aprovações finais. V1 2.50 pp94–95/PDF94–95 econtexto2.46–2.49/contraste2.55 p96;V2 12.10 pp810–811/PDF171–172,texto/imagens/hashes conferidos. Build/regressão passaram;falhas gerais conhecidas mantidas. Acumulado95/98/0,triagem201/77,próxima independente0200. Estados0397/0896/0398 inalterados,não contados. Fonte figurada/inferência geométrica e admissão qualitativa do autor explicitadas no relatório043. Sem merge/deploy.
+
+
+## Lote044 — pressão lateral das pás
+
+| ID | Defeito encontrado | Correção concreta | Fonte conferida | Gabarito |
+|---|---|---|---|---|
+| ANV-0200 | I–IV desapareciam;pressão lateral,esteira e descarga eram misturadas,com condições de passo/efeito insuficientes e explicação genérica. | Reescritas quatro proposições sobre reações transversais,esteira,passo direito e tendências da popa;explicitado efeito isolado e limite de leme a meio;explicação,cinco justificativas e páginas/hash. | Arte Naval v.2,8ª ed.,12.4 pp.796–797/PDF157–158,quadro p.797;contrastes12.3 pp.795–796 e12.5 p.797;escopo12.6 p.798/PDF159 | E mantido;V/F/V/F |
+| ANV-0898 | Enunciado virava comando bibliográfico genérico;alternativas misturavam condições transitórias e fenômenos distintos. | Criada comparação AV/AR da tendência da popa para um hélice de passo direito,isolada dos demais efeitos;cinco combinações com justificativas e referência precisa. | Mesmos localizadores,texto e imagem | C mantido |
+| ANV-1000 | Artefato de extração e definição genérica sem distinção entre fenômenos;dificuldade superestimada. | Texto limpo identifica a origem das reações;cinco fenômenos de governo distinguíveis,explicação e justificativas;Fácil/L1 propostos e fonte exata. | Mesmos localizadores | E mantido |
+
+Três correções parciais,quinze justificativas;zero aprovações finais. V2 12.4 pp796–797/PDF157–158,quadro p797,contrastes12.3/12.5 eescopo12.6 pp795–798;texto/imagens/hash conferidos. Passo direito,efeito isolado e limites expressos;sem garantir guinada total. Build/regressão passaram;falhas gerais conhecidas mantidas. Acumulado98/101/0,triagem200/77,próxima independente0203.0399 explicitamente inativa/quarentenada anteriormente,sem alteração/contagem. Sem merge/deploy.

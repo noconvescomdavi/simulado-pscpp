@@ -16919,9 +16919,9 @@
       "module": "Governo de navio de um hélice",
       "topic_code": "old-092",
       "topic": "pressão lateral das pás",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "Sobre “pressão lateral das pás”, analise as afirmativas a seguir e assinale a alternativa que apresenta apenas as corretas:\nI. Em relação a “pressão lateral das pás”, considere: pode deslocar a popa para um bordo, sobretudo durante a marcha a ré.\nII. “pressão lateral das pás” designa escoamento que chega ao propulsor após acompanhar o casco.\nIII. “pressão lateral das pás” designa componente transversal do empuxo do propulsor.\nIV. Em relação a “pressão lateral das pás”, considere: o jato do hélice sobre o leme pode iniciar a guinada antes de cessar a sternway.",
+      "question": "Considere a pressão lateral das pás no esquema apresentado por Fonseca para um navio de um hélice de passo direito. Analise as proposições e escolha o conjunto completo das corretas.\nI) O texto associa a rotação do hélice ao aparecimento de reações na água em sentido transversal.\nII) Esse fenômeno é definido como a massa de água arrastada pelo casco em movimento por atrito da carena.\nIII) Ao isolar esse efeito no esquema, a fonte indica tendência de a popa cair para boreste na marcha avante e para bombordo na marcha a ré.\nIV) O efeito só pode existir com o leme angulado, desaparecendo necessariamente quando ele está a meio.",
       "options": [
         {
           "key": "A",
@@ -16945,12 +16945,15 @@
         }
       ],
       "correct_answer": "E",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “pressão lateral das pás”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "I e III são verdadeiras no esquema estudado. O item 12.4 descreve reações transversais originadas pela rotação; o quadro da p.797 distingue as tendências da popa para um hélice de passo direito: BE em marcha AV e BB em marcha AR. II descreve a corrente da esteira, de 12.5. IV atribui à posição do leme uma condição inexistente: o quadro não apaga a pressão lateral com leme a meio. A fonte limita o efeito sensível sobretudo ao início do movimento ou às pás superiores emersas. Trata-se do efeito isolado, não da soma das forças nem de uma garantia da guinada em qualquer navio.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção A, item 12.4"
+        "locator": "cap.12,seção A,item12.4 pp.796–797/PDF157–158 e quadro-resumo p.797;contrastes12.3 pp.795–796/PDF156–157 e12.5 p.797;escopo12.6 p.798/PDF159",
+        "printed_page": 796,
+        "pdf_page": 157,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Governo de navio de um hélice",
@@ -16984,7 +16987,15 @@
         "chapter_id": "fonseca-arte-v1::ch12",
         "topic_id": "old-092",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: I é verdadeira, mas IV exige indevidamente leme angulado para o efeito existir.",
+        "B": "Incorreta: II descreve esteira e IV impõe condição falsa ao leme; ambas são falsas.",
+        "C": "Incorreta: I é verdadeira, mas II troca a pressão lateral pela corrente da esteira.",
+        "D": "Incorreta: III é verdadeira no esquema, mas IV confunde o efeito do propulsor com a condição de leme angulado.",
+        "E": "Correta: somente I e III preservam a origem transversal e as tendências da popa para o hélice de passo direito no esquema."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0201",
@@ -68252,36 +68263,39 @@
       "topic": "pressão lateral das pás",
       "difficulty": "Médio",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “pressão lateral das pás”.",
+      "question": "Segundo Fonseca, para um navio de um hélice de passo direito, quais tendências da popa são atribuídas especificamente à pressão lateral das pás, isolada dos demais efeitos?",
       "options": [
         {
           "key": "A",
-          "text": "força lateral produzida pelo escoamento sobre o leme angulado"
+          "text": "Bombordo em marcha avante e boreste em marcha a ré."
         },
         {
           "key": "B",
-          "text": "condição transitória em que o casco ainda avança apesar do propulsor em reversão"
+          "text": "Boreste tanto em marcha avante quanto em marcha a ré."
         },
         {
           "key": "C",
-          "text": "componente transversal do empuxo do propulsor"
+          "text": "Boreste em marcha avante e bombordo em marcha a ré."
         },
         {
           "key": "D",
-          "text": "condição em que o navio ainda recua após a inversão para vante"
+          "text": "Bombordo tanto em marcha avante quanto em marcha a ré."
         },
         {
           "key": "E",
-          "text": "escoamento que chega ao propulsor após acompanhar o casco"
+          "text": "Nenhuma tendência transversal em marcha avante ou a ré."
         }
       ],
       "correct_answer": "C",
-      "explanation": "A opção correta apresenta a definição técnica de “pressão lateral das pás”: componente transversal do empuxo do propulsor; pode deslocar a popa para um bordo, sobretudo durante a marcha a ré.",
+      "explanation": "A alternativa C corresponde à linha pressão lateral das pás do quadro da p.797: popa para BE em AV e para BB em AR, no hélice de passo direito. A inverte os sentidos; B e D eliminam a inversão entre marchas; E elimina o efeito transversal. A leitura não deve ser confundida com a linha corrente de descarga nem com a guinada resultante. O quadro ressalva o efeito sensível no início do movimento ou com pás superiores emersas; não se promete igual resultado para qualquer instalação ou condição.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção A, item 12.4"
+        "locator": "cap.12,seção A,item12.4 pp.796–797/PDF157–158 e quadro-resumo p.797;contrastes12.3 pp.795–796/PDF156–157 e12.5 p.797;escopo12.6 p.798/PDF159",
+        "printed_page": 796,
+        "pdf_page": 157,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Governo de navio de um hélice",
@@ -68315,7 +68329,15 @@
         "chapter_id": "fonseca-arte-v1::ch12",
         "topic_id": "old-092",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: inverte as duas tendências da linha examinada.",
+        "B": "Incorreta: mantém BE na marcha AR, quando o esquema indica BB.",
+        "C": "Correta: mantém BE em AV e BB em AR para o efeito isolado do hélice de passo direito.",
+        "D": "Incorreta: mantém BB na marcha AV, quando o esquema indica BE.",
+        "E": "Incorreta: nega as reações transversais que o item e o quadro descrevem."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0899",
@@ -75818,38 +75840,41 @@
       "module": "Governo de navio de um hélice",
       "topic_code": "old-092",
       "topic": "pressão lateral das pás",
-      "difficulty": "Difícil",
+      "difficulty": "Fácil",
       "style": "Situação aplicada",
-      "question": "Considere A definição técnica “componente transversal do empuxo do propulsor. A descrição inclui ainda esta característica: pode deslocar a popa para um bordo, sobretudo durante a marcha a ré. Qual nomenclatura corresponde ao caso apresentado?",
+      "question": "Ao tratar do governo de um navio de um hélice, Fonseca descreve reações na água em sentido transversal originadas pela rotação do propulsor. Qual fenômeno é identificado por essa descrição?",
       "options": [
         {
           "key": "A",
-          "text": "efeito do leme"
+          "text": "Corrente da esteira."
         },
         {
           "key": "B",
-          "text": "seguimento para vante com máquina atrás"
+          "text": "Corrente de descarga."
         },
         {
           "key": "C",
-          "text": "seguimento para ré com máquina adiante"
+          "text": "Corrente de sucção."
         },
         {
           "key": "D",
-          "text": "corrente da esteira"
+          "text": "Ação do leme."
         },
         {
           "key": "E",
-          "text": "pressão lateral das pás"
+          "text": "Pressão lateral das pás."
         }
       ],
       "correct_answer": "E",
-      "explanation": "“pressão lateral das pás” é componente transversal do empuxo do propulsor; pode deslocar a popa para um bordo, sobretudo durante a marcha a ré.",
+      "explanation": "A alternativa E identifica o fenômeno nomeado em 12.4. A corrente da esteira decorre do arrasto de água com o casco; a descarga e a sucção são escoamentos descritos em 12.3; a ação do leme é outro efeito de governo. A questão pede identificar a origem das reações citadas, sem reduzir a guinada total a um único efeito ou quantificar forças.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção A, item 12.4"
+        "locator": "cap.12,seção A,item12.4 pp.796–797/PDF157–158 e quadro-resumo p.797;contrastes12.3 pp.795–796/PDF156–157 e12.5 p.797;escopo12.6 p.798/PDF159",
+        "printed_page": 796,
+        "pdf_page": 157,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Governo de navio de um hélice",
@@ -75883,7 +75908,15 @@
         "chapter_id": "fonseca-arte-v1::ch12",
         "topic_id": "old-092",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: 12.5 trata do arrasto de água com o casco em movimento, não da reação transversal citada.",
+        "B": "Incorreta: 12.3 descreve a água lançada pelo hélice como corrente de descarga.",
+        "C": "Incorreta: 12.3 descreve a água que aflui para o hélice como corrente de sucção.",
+        "D": "Incorreta: a ação do leme é distinta do fenômeno identificado pela rotação do propulsor em 12.4.",
+        "E": "Correta: o item 12.4 dá esse nome às reações transversais descritas."
+      },
+      "cognitive_level": 1
     },
     {
       "id": "ANV-1001",

@@ -1392,3 +1392,28 @@ Falhas reais mantidas:test-notebook-complete-stems exit1ANV-0142;validate-editor
 - npm run check:pscpp-bank:exit0
 
 Base e006fd3555fe3345e3d8595f1a9f927d361c6dd6;v1/v2 PDF hashes recalculated,five pages text/images inspected.95 inventory hashes matched;main/runtime exact. Report043 records figure-based geometry,comparative scope and excluded originals.
+
+
+## Lote044
+
+Build completo isolado `npm run build`:exit0,marcadores compile/lint/types/101páginas/rotas presentes. Todos os arquivos rastreados fora de docs,incluindo regressão,iguais byte a byte à cópia testada. Seis artefatos gerados idênticos. O erro anterior ENOTEMPTY da árvore de trabalho não é declarado resolvido. Apenas0200/0898/1000 alteradas no principal;metadados de topo,restaurações,0399 e pares bloqueados intactos. Todos os98 hashes corrigidos conferidos no inventário gzip.
+
+Passaram geração de bancos/catálogo/flashcards,validate-runtime-question-banks,validate-pscpp-exam-selection,test-question-source-provenance,validate-runtime-question-catalog,audit-pscpp-runtime-triage/inventory,test-pscpp-audit-anv0005 e npm run check:pscpp-bank. Node com loader pscpp-json-loader. Regressão antes/depois do build passou;matriz100 exata preservada.
+
+Falhas reais mantidas:test-notebook-complete-stems exit1ANV-0142;validate-editorial-runtime exit1,77 localizadores;validate-pscpp-editorial-evidence exit2,zero aprovadas/14086 pendentes. Build/testes estruturais não fecham rechecagem independente,programa/edital,inventário completo de fontes/normas ou revisão semântica global.
+
+- generate-runtime-question-catalog.mjs:exit0
+- generate-runtime-flashcard-decks.mjs:exit0
+- validate-runtime-question-banks.mjs:exit0
+- validate-pscpp-exam-selection.mjs:exit0
+- test-question-source-provenance.mjs:exit0
+- validate-runtime-question-catalog.mjs:exit0
+- test-notebook-complete-stems.mjs:exit1
+- validate-editorial-runtime.mjs:exit1
+- audit-pscpp-runtime-triage.mjs:exit0
+- audit-pscpp-runtime-inventory.mjs:exit0
+- validate-pscpp-editorial-evidence.mjs:exit2
+- test-pscpp-audit-anv0005.mjs:exit0
+- npm run check:pscpp-bank:exit0
+
+Base 2014d0ad2d72a92f7c5084550934a10ac699c3f0;v2 PDF hash recalculated,five pages text/images including summarytable inspected.98 inventory hashes matched;main/runtime exact. Report044 records right-handed/isolated scope and prior quarantine0399 unchanged.
