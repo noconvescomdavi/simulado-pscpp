@@ -11105,9 +11105,9 @@
       "module": "Trabalhos do marinheiro",
       "topic_code": "anv1-8.7",
       "topic": "volta de fiel singela",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “volta de fiel singela”, identifique as verdadeiras e assinale a opção correta:\nI) A bibliografia atribui a esse item a seguinte característica: os dois chicotes saem entre os cotes em sentidos contrários.\nII) A bibliografia atribui a esse item a seguinte característica: empregada somente para ornamentação.\nIII) “volta de fiel singela” designa volta formada por dois cotes dados um contra o outro.\nIV) “volta de fiel singela” designa dobra feita no seio de um cabo para esconder um ponto fraco.",
+      "question": "Sobre a volta de fiel singela descrita por Fonseca, analise as proposições e escolha o conjunto completo das corretas.\nI) É formada por dois cotes dados um contra o outro, com os chicotes saindo entre eles em sentidos contrários.\nII) A alternância da tensão dispensa remate, pois a montagem singela impede por si só que a volta recorra em qualquer condição.\nIII) A obra admite sua execução pelo chicote ou pelo seio e indica remate com cote ou botão quando a tensão não for constante.\nIV) Sua característica é possuir uma volta adicional entre o primeiro e o último cote, diferença que a separa da volta de fiel dobrada.",
       "options": [
         {
           "key": "A",
@@ -11131,12 +11131,15 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “volta de fiel singela”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "Somente I e III são verdadeiras (alternativa C). Fonseca, art. 8.7, p. 538, descreve dois cotes opostos e chicotes em sentidos contrários, além da execução pelo chicote (fig. 8-5) ou pelo seio (fig. 8-6, p. 539). A indicação de emprego com tensão constante vem acompanhada de remate com cote ou botão nos outros casos. II elimina indevidamente esse cuidado. IV troca as identidades: a volta adicional entre os cotes distingue a volta de fiel dobrada (art. 8.8, pp. 538–539). Não se atribui carga admissível, garantia universal ou aplicação de sustentação de pessoas à volta singela.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 1",
         "edition": "8. ed., 2019",
-        "locator": "cap. 8, item 8.7"
+        "locator": "cap. 8, art. 8.7, p. 538, figs. 8-5/8-6, pp. 538–539; contrastes 8.5–8.6 e 8.8–8.9",
+        "printed_page": 538,
+        "pdf_page": 536,
+        "sha256": "792beebaea10aaff4b65288c0cfc3dd76c507f779297ee42583d078a7ec1dd20"
       },
       "tags": [
         "Trabalhos do marinheiro",
@@ -11156,7 +11159,7 @@
           "title": "Trabalhos do Marinheiro",
           "label": "Capítulo 8 - Trabalhos do Marinheiro"
         },
-        "section": "cap. 8, item 8.7",
+        "section": "cap. 8, art. 8.7, p. 538, figs. 8-5/8-6, pp. 538–539; contrastes 8.5–8.6 e 8.8–8.9",
         "module": "Trabalhos do marinheiro",
         "topic": {
           "id": "anv1-8.7",
@@ -11176,6 +11179,14 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "III é verdadeira, mas II dispensa o remate justamente quando a tensão não é constante; falta I.",
+        "B": "II e IV são falsas: uma elimina o remate e a outra atribui à singela a volta adicional da dobrada; faltam I e III.",
+        "C": "I e III são o conjunto completo: geometria dos cotes/chicotes, execução pelo chicote ou seio e condição de remate (art. 8.7 e figs. 8-5/8-6).",
+        "D": "I é verdadeira, mas II transforma a montagem singela em garantia sob qualquer variação da tensão; falta III.",
+        "E": "III é verdadeira, mas IV inverte a diferença entre singela e dobrada; falta I."
       }
     },
     {

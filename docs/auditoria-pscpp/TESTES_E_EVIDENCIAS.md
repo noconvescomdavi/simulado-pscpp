@@ -1010,3 +1010,42 @@ renumerar modelos. Nenhum normalizador/filtro/gate relaxado. Grupo 12.70 e
 demais achados mantidos com seus limites, sem checks/aprovações adicionais.
 Rechecagem independente, programa/edital oficial, estados, cobertura, semântica
 e offline/produção pendentes. Sem merge/deploy ou dados de usuários.
+
+
+## Lote 032 — resultados efetivos
+
+- Regressão antes/depois do build: exit 0, 64 deltas exatos, igualdade
+  fonte/runtime, 160 proposições renderizadas e 120 opções diretas; 12.038
+  outros cadernos e 1.984 PSCPP inalterados. Contrato direto só +0841/0981.
+- Runtime, seleção e proveniência/fingerprints: exit 0; IDs e matriz fixa
+  de 100 em 25/25/10/10/10/10/10 preservados.
+- check:pscpp-bank: exit 0, 1.984 questões/254 históricas; mensagem do
+  gerador não comprova correção técnica atual.
+- Geração de catálogo/flashcards e validação do catálogo: exit 0.
+- test-notebook-complete-stems: exit 1, continua ANV-0142, fonte impedida
+  documentada sem reescrita inventada. Próxima candidata independente ANV-0145.
+  validate-editorial-runtime: exit 1, 77 localizadores. Triagem: exit 0, 215/77.
+- Inventário: exit 0, 27.435 físicos, 14.086 ocorrências, 13.715 IDs;
+  todos os 64 hashes corrigidos conferidos contra o inventário final.
+- Gate editorial após inventário: exit 2, zero aceitos/14.086 pendentes;
+  merge_permitted=false. Nenhuma aprovação final inventada.
+- Diff físico: somente 0143 na restauração e 0841/0981 no principal;
+  principal concorrente 0143, par 0142/0840 e todos os demais registros/campos
+  intactos. Flags ausentes não inferidas; ativação efetiva inalterada.
+- auditQuestion sem achados, política ativa e transformações preservando
+  integralmente os três objetos antes da geração; depois, igualdade pela
+  regressão. Nenhum dos três IDs consta de notebook-complete-stems.
+- NEXT_TELEMETRY_DISABLED=1 npm run build: exit 0 em cópia isolada /tmp.
+  Wrapper verificou exit_zero/compiled/types/pages/routes=true: compilação,
+  lint/types, 101 páginas e rotas confirmados, não só código de saída. Fontes/
+  data/config rastreados fora dos relatórios e seis artefatos gerados idênticos
+  byte a byte. ENOTEMPTY do workspace no lote 019 não declarado resolvido.
+  Avisos npm http-proxy, autoprefixer e cache Webpack sem impedir build.
+
+Scripts Node com --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs.
+Diagnóstico de fonte não equivale a revisão aprovada: 0142/0840 não alteradas
+nem contadas como conferências primárias; busca bibliográfica incompleta
+explicitamente registrada. Nenhum normalizador/filtro/gate relaxado; modelos
+e demais achados anteriores mantidos com seus limites. Rechecagem independente,
+fonte, programa/edital oficial, estados, cobertura, semântica e offline/produção
+pendentes. Sem merge/deploy ou dados de usuários.

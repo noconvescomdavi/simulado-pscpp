@@ -365,3 +365,28 @@ geração/hashes/regressão/catálogo/build repetidos. Build inicial preservado
 como intermediário, sem aprovar a redação posterior.
 Rechecagem independente, versão oficial, estados e semântica pendentes.
 Sem merge/deploy/dados de usuários.
+
+
+## Lote 032 — volta de fiel singela e impedimento de fonte
+
+ANV-0143/0841/0981 corrigidas individualmente com Fonseca v.1, 8ª ed., 2019,
+8.7 p.538/PDF536 e figura 8-6 p.539/PDF537; contrastes 8.5/8.6/8.8/8.9
+e texto/imagens pp.537–539/PDF535–537 conferidos. SHA256 recalculado. Dois
+cotes opostos, chicotes contrários, execução pelo chicote/seio e condição de
+tensão/remate distinguidos de fiador, cote, dobrada e volta redonda e cotes.
+Quinze justificativas; keys C/A/A, IDs e formatos B/A/A preservados. L2/Médio
+proposto para 0143/0841; L1/Fácil para 0981, sem calibração aprovada ou decisão L4.
+Restauração 0143 corrigida; principal concorrente nó torto intacto, flags
+ausentes não inferidas. Nenhum ID ativado/removido ou normalizador/filtro/gate
+relaxado; contrato direto só +0841/0981. Acumulado 64 correções/67 conferências
+parciais, zero aprovações finais. Ver REVISAO_ARTE_NAVAL_LOTE_032.md.
+
+ANV-0142/0840 não alteradas: volume 2 anuncia propulsores em sumário 11.13, mas
+corpo 11.13 p.779 trata de aparelho fixo. Busca e limitações documentadas em
+BUSCA_FONTE_PROPULSORES_032.json; zero conferências de conteúdo/aprovações
+para o par. Sem concluir busca em toda bibliografia, não se declarou
+irrecuperabilidade nem se aplicou quarentena ou troca silenciosa de obra/
+competência. Próxima candidata independente 0145; falha geral continua 0142.
+Manifesto e inventário de fontes anotados, sem certificar integralmente o livro.
+Rechecagem independente, fonte pendente, versão oficial, estados, semântica
+e offline/produção pendentes. Sem merge/deploy/dados de usuários.

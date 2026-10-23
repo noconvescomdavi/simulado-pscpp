@@ -1,0 +1,76 @@
+{
+  "checked_at_utc": "2026-10-23T00:03:31.358594+00:00",
+  "question_ids": [
+    "ANV-0142",
+    "ANV-0840"
+  ],
+  "status": "source_not_located_in_declared_body_not_approved_not_irrecoverable",
+  "declared_source": {
+    "title": "Arte Naval, v. 2",
+    "edition": "8. ed., 2019",
+    "locator": "cap. 11, seção A, item 11.13",
+    "drive_id": "1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec",
+    "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
+  },
+  "observations": [
+    {
+      "pdf_page": 11,
+      "scope": "contents image and extracted text",
+      "finding": "Lists 11.11 electronic steering command, 11.12 azimuth propulsion steering and 11.13 lateral propulsor; mastreação begins with 11.14."
+    },
+    {
+      "printed_pages": [
+        775,
+        776
+      ],
+      "pdf_pages": [
+        136,
+        137
+      ],
+      "scope": "images and text at section boundary",
+      "finding": "Body proceeds from 11.10 steering tests to section B mastreação at 11.11 and mastros at 11.12, with no intervening propulsor articles at that boundary."
+    },
+    {
+      "printed_page": 779,
+      "pdf_page": 140,
+      "scope": "body image and text",
+      "finding": "Body 11.13 is Aparelho fixo, following the mastros illustrations; it does not substantiate the declared bow-thruster claims."
+    }
+  ],
+  "local_search": {
+    "scope": "Full extracted text of both supplied volumes; selected volume 2 boundary/contents images. Not an inspection of every PDF image.",
+    "terms": [
+      "11.13",
+      "propulsor lateral",
+      "bow thruster",
+      "stern thruster",
+      "azimut",
+      "túnel/tunel"
+    ],
+    "finding": "Volume 2 target heading found in contents; declared body passage not located. Volume 1 art. 3.10.3 p. 160/PDF 160 mentions bow thruster in NDCC context, which is insufficient for the general speed/force/government claims under review.",
+    "volume1_sha256": "792beebaea10aaff4b65288c0cfc3dd76c507f779297ee42583d078a7ec1dd20"
+  },
+  "public_search": {
+    "queries": [
+      "site.marinha.mil.br \"propulsor lateral\" \"11.13\"",
+      "site.marinha.mil.br \"bow thruster\" \"velocidade\""
+    ],
+    "outcome": "Results included norms, secondary academic text and a forum; none was accepted as the declared Fonseca passage. Snippets and unrelated normative references were not used to approve technical claims or infer current rules.",
+    "candidate_not_used": "https://repositorio.marinha.mil.br/bitstream/20.500.14867/843940/1/00000479.pdf"
+  },
+  "drive_inventory_scope": "159-file inventory inspected for named full works. Other full works not fetched/read in this search; bibliography-wide search incomplete.",
+  "disposition": {
+    "question_content_changed": false,
+    "active_id_membership_changed": false,
+    "quarantine_applied": false,
+    "partial_primary_check_count_increment": 0,
+    "editorial_approval": false,
+    "reason": "Unresolved edition/exemplar/body discrepancy, not a completed irrecoverability search. No fabrication, no blind change to another competency or work. Gate remains closed."
+  },
+  "next": [
+    "Obtain a verifiable exemplar/passage matching the declared edition or verify an appropriate primary bibliographic source and explicitly reconcile metadata.",
+    "Review global chapter11 contents/body mapping independently; do not blindly renumber or invalidate unrelated verified pages.",
+    "Keep blocked IDs pending while proceeding to other correctable candidates, next ANV-0145 after lot 032."
+  ],
+  "evidence_report": "REVISAO_ARTE_NAVAL_LOTE_032.md"
+}

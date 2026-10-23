@@ -355,3 +355,24 @@ Regressão: 38 combinadas/152 proposições HTML, 21 diretas/105 opções;
 Regressão: 39 combinadas/156 proposições HTML, 22 diretas/110 opções;
 12.041 outros cadernos e 1.984 PSCPP inalterados. Matriz de 100 em
 25/25/10/10/10/10/10 preservada. Nenhum ID ativado/removido.
+
+
+## Lote 032
+
+| Métrica | Antes | Depois |
+|---|---:|---:|
+| Correções primárias acumuladas | 61 | 64 |
+| Conferências bibliográficas parciais | 64 | 67 |
+| Aprovações editoriais finais | 0 | 0 |
+| Candidatos sem proposições | 216 | 215 |
+| Candidatos por localizador | 77 | 77 |
+| Registros físicos | 27435 | 27435 |
+| Ocorrências efetivas | 14086 | 14086 |
+| IDs únicos efetivos | 13715 | 13715 |
+
+0143 estava na triagem; 0841/0981 fora dela. Acumulados 38 candidatos corrigidos,
+26 correções fora da triagem e três falsos positivos anteriores.
+Regressão: 40 combinadas/160 proposições HTML, 24 diretas/120 opções;
+12.038 outros cadernos e 1.984 PSCPP inalterados. Matriz de 100 em
+25/25/10/10/10/10/10 preservada. Nenhum ID ativado/removido. Diagnóstico
+de 0142/0840 acrescenta zero correções, zero checks primários e zero aprovações.

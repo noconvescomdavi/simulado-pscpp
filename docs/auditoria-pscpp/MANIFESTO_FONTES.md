@@ -61,3 +61,20 @@ Drive ID `1LjlDejVyooU3QLJzF0COvAEnOgMDNC9N`, 39.831.575 bytes,
 SHA-256 `792beebaea10aaff4b65288c0cfc3dd76c507f779297ee42583d078a7ec1dd20`.
 Fonte da correção de ANV-0005, descrita em `REVISAO_ANV_0005.md`, sem aprovação
 de release. Não publicada cópia integral do livro.
+
+
+## Observação do lote 032 — sumário e corpo do exemplar de Arte Naval v.2
+
+No PDF SHA256 6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1,
+o sumário PDF 11 anuncia artigos de governo 11.11–11.13; o corpo p.776/PDF 137
+inicia mastreação 11.11 e p.779/PDF 140 traz 11.13 Aparelho fixo. As imagens
+confirmam a divergência nos pontos observados; causa e reconciliação com
+outro exemplar/edição ainda pendentes. ANV-0142/0840 não foram aprovadas,
+reescritas nem contadas como conferências primárias. Busca no texto extraído
+não equivale a prova de ausência em todas as imagens ou demais obras.
+Ver BUSCA_FONTE_PROPULSORES_032.json e REVISAO_ARTE_NAVAL_LOTE_032.md.
+A existência de título no sumário não comprova presença/conteúdo do artigo.
+O arquivo continua marcado como apenas parcialmente conferido, sem inferir
+errata oficial, defeito geral de toda edição ou invalidade de cada página
+anteriormente lida. Registros existentes continuam sujeitos à rechecagem e
+aos gates. Nenhum livro/imagem integral foi publicado.
