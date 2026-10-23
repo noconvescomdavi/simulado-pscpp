@@ -438,3 +438,8 @@ prova;semântica global/prevenção pendentes.0362/0363 sem nova contagem de rev
 ## Lote038
 
 Corrigidas80→82 IDs distintos;conferências83→85;aprovações0→0. Triagem208→207 combinações,77→77 localizadores. Registros27435,ocorrências14086 (12102+1984),IDs13715 inalterados. Regressão82 deltas/192 proposições/170 opções diretas,12020 cadernos intactos. Report038:0165/0863;nenhum ID novo/quarentena.
+
+
+## Lote039
+
+Corrigidas82→84 IDs distintos;conferências85→87;aprovações0→0. Triagem207→206 combinações,77→77 localizadores. Registros27435,ocorrências14086 (12102+1984),IDs13715 intactos. Regressão84 deltas/196 proposições/175 opções diretas,12018 cadernos intactos. Report039:0166/0864;nenhum ID novo/quarentena.0176/0874 apenas impedimento correlato documentado,sem contagem.

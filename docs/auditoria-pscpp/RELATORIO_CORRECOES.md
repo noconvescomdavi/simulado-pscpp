@@ -28,7 +28,7 @@ e estabilidade quando apenas um arquivo alheio muda.
 
 ## Questões
 
-Acumulado vigente após lote 038: **82 IDs corrigidos distintos**, 85 conferências bibliográficas parciais, zero aprovações finais. Relação completa e sem recontagem em CHECKPOINT.json e CORRECOES_RUNTIME.json; números dos parágrafos de lotes abaixo são históricos. Substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
+Acumulado vigente após lote 039: **84 IDs corrigidos distintos**, 87 conferências bibliográficas parciais, zero aprovações finais. Relação completa e sem recontagem em CHECKPOINT.json e CORRECOES_RUNTIME.json; números dos parágrafos de lotes abaixo são históricos. Substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
 Lote 002: `REVISAO_ARTE_NAVAL_LOTE_002.md`, fonte primária arts. 8.2/8.14/8.19–8.20.
 Corrigidas as restaurações prevalentes, mantendo conceitos efetivamente servidos,
 IDs, opções e gabaritos. Dezesseis proposições renderizadas no teste de regressão.
@@ -496,3 +496,13 @@ Julgamentos, fontes e limites em REVISAO_ARTE_NAVAL_LOTE_037.md. Acumulado:80 co
 | ANV-0863 | Definição virava comando bibliográfico genérico; alternativas misturavam outros conceitos de propulsão. | Criado caso qualitativo com cinco comparações sobre a ação dos lemes; enunciado, alternativas, explicação e cinco justificativas; referência exata. | Mesmos localizadores, texto e imagem | C mantido |
 
 Fonte e figuras conferidas em texto/imagem; dez justificativas. Correções parciais, zero aprovações finais. Build completo e regressão passaram; três gates de testes gerais mantêm as falhas conhecidas. Acumulado82/85/0;triagem207/77. Detalhes, hashes e limites em REVISAO_ARTE_NAVAL_LOTE_038.md. Sem merge/deploy.
+
+
+## Lote039 — seguimento a ré e hélice adiante
+
+| ID | Defeito encontrado | Correção concreta | Fonte conferida | Gabarito |
+|---|---|---|---|---|
+| ANV-0166 | O carregamento apagava I–IV; proposições misturavam definição, ação do leme e regras de águas limitadas, sem explicação específica. | Reescritas quatro proposições sobre as ações consideradas, exclusão da sucção, limite da previsão com leme a meio e influência do seguimento; explicação, cinco justificativas e páginas/hash. | Fonseca,Arte Naval v.2,8ª ed.,12.6.4,pp.803–804/PDF164–165,fig.12-5; escopo12.6 p.798/PDF159 | A mantido;V/F/V/F |
+| ANV-0864 | Enunciado virava comando bibliográfico genérico e opções misturavam conceitos heterogêneos. | Criado cenário de avaliação de previsão de guinada com leme a meio; cinco alternativas comparáveis, explicação e cinco justificativas; referência exata. | Mesmos localizadores, texto e imagem | D mantido |
+
+Texto/imagens conferidos;dez justificativas. Correções parciais,zero aprovações finais. Build/regressão passaram;falhas gerais conhecidas mantidas. Acumulado84/87/0;triagem206/77. Report039 detalha limites e estado0365.0176/0874 compartilham localizador do impedimento032,sem nova correção/conferência;próxima independente0179. Sem merge/deploy.

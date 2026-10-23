@@ -14384,9 +14384,9 @@
       "module": "Governo de navio de um hélice",
       "topic_code": "old-096",
       "topic": "seguimento para ré com máquina adiante",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "Sobre “seguimento para ré com máquina adiante”, analise as afirmativas a seguir e assinale a alternativa que apresenta apenas as corretas:\nI. “seguimento para ré com máquina adiante” designa condição em que o navio ainda recua após a inversão para vante.\nII. “seguimento para ré com máquina adiante” designa força lateral produzida pelo escoamento sobre o leme angulado.\nIII. Em relação a “seguimento para ré com máquina adiante”, considere: o jato do hélice sobre o leme pode iniciar a guinada antes de cessar a sternway.\nIV. Em relação a “seguimento para ré com máquina adiante”, considere: exige velocidade moderada, antecipação e consideração de squat, interação e menor margem de evolução.",
+      "question": "Considere a situação estudada por Fonseca para um navio de um hélice, ainda com seguimento para ré, mas com o hélice dando adiante. Analise as proposições e escolha o conjunto completo das corretas.\nI) O texto considera a ação do leme, a pressão lateral das pás e a corrente de descarga na análise do governo nessa situação.\nII) A corrente de sucção é apontada como a única causa do governo, tornando desprezíveis as outras ações.\nIII) Com o leme a meio, a tendência teórica atribuída à pressão lateral não permite generalizar na prática para que bordo o navio guinará.\nIV) A intensidade do seguimento para ré pode ser desconsiderada ao comparar os efeitos que atuam sobre o leme.",
       "options": [
         {
           "key": "A",
@@ -14410,12 +14410,15 @@
         }
       ],
       "correct_answer": "A",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “seguimento para ré com máquina adiante”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "I e III são verdadeiras. O item 12.6.4 enumera a ação do leme, a pressão lateral das pás e a descarga, excluindo o efeito da sucção no governo desse caso. Com leme a meio, ressalva que o efeito reduzido da pressão lateral impede generalizar a guinada prática. II atribui à sucção um papel negado pelo texto. IV ignora que muito seguimento para ré pode aumentar o efeito do leme na comparação descrita. São considerações qualitativas do arranjo estudado, sem garantia universal de manobra; a abertura do item 12.6 exige experiências em cada navio e desconsidera vento e corrente.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção A, item 12.6.4"
+        "locator": "cap. 12, seção A, item 12.6.4, pp. 803–804/PDF 164–165, fig. 12-5; escopo 12.6 p. 798/PDF 159",
+        "printed_page": 803,
+        "pdf_page": 164,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Governo de navio de um hélice",
@@ -14449,7 +14452,15 @@
         "chapter_id": "fonseca-arte-v1::ch12",
         "topic_id": "old-096",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Correta: I enumera as três ações consideradas e III conserva a ressalva sobre a previsão prática com leme a meio.",
+        "B": "Incorreta: III é verdadeira, mas II atribui à sucção um efeito que o texto nega nesse caso.",
+        "C": "Incorreta: I é verdadeira, mas IV ignora a influência do seguimento para ré na comparação das ações.",
+        "D": "Incorreta: II e IV são falsas; a sucção não é a causa única e o seguimento não pode ser descartado.",
+        "E": "Incorreta: III é verdadeira, mas IV é falsa; o conjunto também omite I."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0167",
@@ -65649,36 +65660,39 @@
       "topic": "seguimento para ré com máquina adiante",
       "difficulty": "Médio",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “seguimento para ré com máquina adiante”.",
+      "question": "Um aluno analisa o caso de um navio de um hélice que ainda se move para ré, com o hélice dando adiante e o leme a meio. Ele usa a tendência teórica da pressão lateral para garantir o bordo da guinada prática. Qual avaliação corresponde à ressalva de Arte Naval?",
       "options": [
         {
           "key": "A",
-          "text": "situação em que margens, fundo e espaço disponível alteram a manobra"
+          "text": "A previsão é garantida, pois a tendência teórica determina invariavelmente a guinada de qualquer navio nessa condição."
         },
         {
           "key": "B",
-          "text": "manobra de emergência para retirar seguimento de vante"
+          "text": "A previsão é garantida, pois a corrente de sucção substitui as demais ações e elimina a influência das características do navio."
         },
         {
           "key": "C",
-          "text": "força lateral produzida pelo escoamento sobre o leme angulado"
+          "text": "A previsão é garantida, pois leme a meio faz desaparecer a pressão lateral das pás e impõe uma guinada constante."
         },
         {
           "key": "D",
-          "text": "condição em que o navio ainda recua após a inversão para vante"
+          "text": "A previsão não é garantida: o texto ressalva o efeito reduzido da pressão lateral e impede generalizar a guinada prática."
         },
         {
           "key": "E",
-          "text": "jato acelerado lançado pelo propulsor"
+          "text": "A previsão é garantida, pois o seguimento para ré deixa de existir imediatamente quando o hélice passa a dar adiante."
         }
       ],
       "correct_answer": "D",
-      "explanation": "A opção correta apresenta a definição técnica de “seguimento para ré com máquina adiante”: condição em que o navio ainda recua após a inversão para vante; o jato do hélice sobre o leme pode iniciar a guinada antes de cessar a sternway.",
+      "explanation": "A ressalva do item 12.6.4 distingue a tendência teórica da previsão prática: com leme a meio, o efeito da pressão lateral é reduzido e não se pode generalizar o bordo da guinada. O texto não transforma a sucção em causa dominante, não elimina a pressão lateral nem afirma parada instantânea do movimento a ré. A abertura do item 12.6 lembra a necessidade de experiências em cada navio; o modelo não inclui vento e corrente. A questão avalia o limite da previsão, sem prescrever uma manobra real.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção A, item 12.6.4"
+        "locator": "cap. 12, seção A, item 12.6.4, pp. 803–804/PDF 164–165, fig. 12-5; escopo 12.6 p. 798/PDF 159",
+        "printed_page": 803,
+        "pdf_page": 164,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Governo de navio de um hélice",
@@ -65712,7 +65726,15 @@
         "chapter_id": "fonseca-arte-v1::ch12",
         "topic_id": "old-096",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: transforma uma tendência teórica em resultado universal, contrariando a ressalva expressa.",
+        "B": "Incorreta: o texto nega efeito da corrente de sucção no governo desse caso e não elimina as características individuais.",
+        "C": "Incorreta: leme a meio não apaga a pressão lateral; é justamente seu efeito reduzido que limita a previsão prática.",
+        "D": "Correta: mantém a distinção entre tendência teórica e previsão prática, conforme a ressalva do item.",
+        "E": "Incorreta: inverte a premissa do caso, no qual o navio ainda tem seguimento para ré com o hélice dando adiante."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0865",
