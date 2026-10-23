@@ -468,3 +468,8 @@ Corrigidas92→95 IDs distintos;conferências95→98;aprovações0→0. Triagem2
 ## Lote044
 
 Corrigidas95→98 IDs distintos;conferências98→101;aprovações0→0. Triagem201→200 combinações,77→77 localizadores. Registros27435,ocorrências14086 (12102+1984),IDs13715 intactos. Regressão98 deltas/220 proposições/215 opções diretas,12004 cadernos intactos.0200/0898/1000;nenhum ID novo/quarentena;0399 sem contagem.
+
+
+## Lote 045
+
+98→101 IDs corrigidos distintos; 101→104 conferências bibliográficas parciais; zero aprovações finais. Sem proposições 200→199; localizadores 77→77. Deltas acumulados 101; proposições renderizadas 224; opções diretas 225; 12.001 cadernos e 1.984 PSCPP inalterados frente à baseline. População ativa e matriz de 100 preservadas. ANV-0203/0601/0901: C/A/A mantidos, formatos B/A/A, níveis propostos L2/L2/L1. Nenhum incremento para 0402/0117. Ver tabela e limites no relatório045.

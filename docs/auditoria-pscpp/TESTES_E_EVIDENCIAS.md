@@ -1417,3 +1417,14 @@ Falhas reais mantidas:test-notebook-complete-stems exit1ANV-0142;validate-editor
 - npm run check:pscpp-bank:exit0
 
 Base 2014d0ad2d72a92f7c5084550934a10ac699c3f0;v2 PDF hash recalculated,five pages text/images including summarytable inspected.98 inventory hashes matched;main/runtime exact. Report044 records right-handed/isolated scope and prior quarantine0399 unchanged.
+
+
+## Lote 045
+
+Build completo isolado `npm run build`: exit 0, compilação, lint/tipos, 101 páginas e rotas confirmados. Todos os insumos rastreados fora de docs, incluindo o script de regressão, são byte a byte iguais à cópia testada. Os seis artefatos gerados são idênticos. O incidente anterior ENOTEMPTY da árvore original não é declarado resolvido.
+
+Passaram geração de bancos PSCPP/cadernos, catálogo e flashcards; validate-runtime-question-banks, validate-pscpp-exam-selection, test-question-source-provenance, validate-runtime-question-catalog, test-pscpp-audit-anv0005, audit-pscpp-runtime-triage/inventory e npm run check:pscpp-bank. Node com loader pscpp-json-loader. Regressão antes/depois do build: 101 deltas exatos contra baseline congelada; 12.001 ocorrências de cadernos e todas as 1.984 PSCPP preservadas; composição ativa intacta; 224 proposições renderizadas; 225 opções diretas preservadas. As cinco opções de cada correção têm justificativas. Todos os 101 hashes corrigidos correspondem ao inventário final. Só ANV-0203/0601/0901 mudaram no arquivo principal, com metadados de topo e demais objetos intactos; restaurações não foram editadas. Hashes antes/depois em CORRECOES_RUNTIME.json e CONFERENCIAS_BIBLIOGRAFICAS.jsonl.
+
+Falhas reais mantidas: test-notebook-complete-stems exit 1 em ANV-0142; validate-editorial-runtime exit 1 com 77 localizadores; validate-pscpp-editorial-evidence exit 2, zero aprovadas e 14.086 pendentes. O gate de evidências foi regenerado depois do inventário e seus hashes conferidos, sem aprovação artificial. A matriz de 100 questões em 25/25/10/10/10/10/10 foi preservada. Testes estruturais e a releitura desta sessão não equivalem à rechecagem editorial independente final.
+
+Fonte, julgamentos, tabela individual e limites: REVISAO_ARTE_NAVAL_LOTE_045.md.

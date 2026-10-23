@@ -17149,9 +17149,9 @@
       "module": "Máquinas de suspender",
       "topic_code": "old-062",
       "topic": "freio da máquina de suspender",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "Sobre “freio da máquina de suspender”, analise as afirmativas a seguir e assinale a alternativa que apresenta apenas as corretas:\nI. Em relação a “freio da máquina de suspender”, considere: antes da partida devem ser conferidos freio, embreagem, lubrificação e área de trabalho.\nII. “freio da máquina de suspender” designa máquina de suspender com eixo de trabalho horizontal.\nIII. Em relação a “freio da máquina de suspender”, considere: empregado para regular a saída da amarra ao largar o ferro.\nIV. “freio da máquina de suspender” designa mecanismo que controla ou impede a rotação da coroa.",
+      "question": "Segundo Fonseca, quanto aos dispositivos de frenagem da máquina de suspender, analise as proposições e escolha o conjunto completo das corretas.\nI) A cinta do freio mecânico pode substituir as boças para aguentar a amarra com o navio no mar e o ferro em cima.\nII) Apertar a cinta do freio mecânico realiza a ligação da coroa ao seu eixo que compete à embreagem.\nIII) O freio mecânico descrito possui cinta de aço em anel, apertada sobre um flange da coroa por parafuso comandado por volante ou por alavanca.\nIV) Nos guinchos elétricos citados pelo autor, há freios cujos discos de fricção são apertados por molas quando falta corrente.",
       "options": [
         {
           "key": "A",
@@ -17175,12 +17175,15 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “freio da máquina de suspender”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "A alternativa C é a única correta: III e IV são verdadeiras. No item 10.29.d, o freio mecânico atua por cinta sobre o flange; o freio elétrico descrito usa molas para apertar os discos na falta de corrente. I é falsa: para aguentar a amarra no mar com o ferro em cima, o texto indica as boças, não a cinta. II confunde a frenagem com o acoplamento coroa–eixo da embreagem, descrito em 10.29.f. A mesma seção restringe o uso da cinta para reduzir a velocidade da amarra já correndo sob o peso do ferro; a largada pelo freio em 10.35.a não autoriza tratar essa cinta como regulador genérico de velocidade. A descrição é bibliográfica: a operação de cada máquina exige instruções do fabricante, como ressalva 10.28.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 10, seção C, itens 10.29.d e 10.35"
+        "locator": "cap. 10, seção C, itens 10.29.d/f, p. 741/PDF 102; contrastes 10.28, p. 738/PDF 99 e 10.29.b/c/e/g, pp. 740–742/PDF 101–103; largada 10.35.a, pp. 750–751/PDF 111–112",
+        "printed_page": 741,
+        "pdf_page": 102,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Máquinas de suspender",
@@ -17214,7 +17217,15 @@
         "chapter_id": "fonseca-arte-v1::ch10",
         "topic_id": "old-062",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "I e II são falsas: a cinta não substitui as boças na condição de I, nem exerce o acoplamento da embreagem em II.",
+        "B": "I é falsa e III é verdadeira; o conjunto ainda omite IV, também verdadeira.",
+        "C": "III e IV correspondem aos dois tipos de freio descritos em10.29.d; são as únicas proposições verdadeiras.",
+        "D": "IV é verdadeira, mas I é falsa; falta III.",
+        "E": "IV é verdadeira, mas II atribui à cinta a função da embreagem; falta III."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0204",
@@ -46352,36 +46363,39 @@
       "topic": "freio da máquina de suspender",
       "difficulty": "Médio",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “freio da máquina de suspender”.",
+      "question": "Na máquina de suspender descrita por Fonseca, que associação de funções corresponde, respectivamente, ao freio mecânico de cinta e à embreagem da coroa?",
       "options": [
         {
           "key": "A",
-          "text": "mecanismo que controla ou impede a rotação da coroa"
+          "text": "Aplicar atrito ao flange da coroa; ligar ou desligar a coroa de seu eixo."
         },
         {
           "key": "B",
-          "text": "mecanismo que conecta ou separa a coroa do acionamento"
+          "text": "Ligar ou desligar a coroa de seu eixo; aplicar atrito ao flange da coroa."
         },
         {
           "key": "C",
-          "text": "roda moldada com cavidades que engrenam elo por elo na amarra"
+          "text": "Aplicar atrito ao flange da coroa; manter a coroa permanentemente solidária ao eixo."
         },
         {
           "key": "D",
-          "text": "acionar o equipamento para movimentar a amarra"
+          "text": "Manter a coroa permanentemente solidária ao eixo; ligar ou desligar a coroa de seu eixo."
         },
         {
           "key": "E",
-          "text": "máquina cujo eixo de trabalho principal é vertical"
+          "text": "Ligar ou desligar a coroa de seu eixo; manter a coroa permanentemente livre do eixo."
         }
       ],
       "correct_answer": "A",
-      "explanation": "A opção correta apresenta a definição técnica de “freio da máquina de suspender”: mecanismo que controla ou impede a rotação da coroa; empregado para regular a saída da amarra ao largar o ferro.",
+      "explanation": "A alternativa A é a correta. Em10.29.d, a cinta do freio é apertada sobre um flange da coroa, produzindo a ação de frenagem. Em10.29.f e10.28, a embreagem permite ligar ou desligar a coroa de seu eixo. Ela não é uma união permanente nem mantém a coroa sempre livre. Não se deve confundir o acoplamento com o freio, nem estender a descrição à regulação indiscriminada da velocidade da amarra durante a largada. O autor exige conhecer as instruções específicas da máquina do navio.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 10, seção C, itens 10.29.d e 10.35"
+        "locator": "cap. 10, seção C, itens 10.29.d/f, p. 741/PDF 102; contrastes 10.28, p. 738/PDF 99 e 10.29.b/c/e/g, pp. 740–742/PDF 101–103; largada 10.35.a, pp. 750–751/PDF 111–112",
+        "printed_page": 741,
+        "pdf_page": 102,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Máquinas de suspender",
@@ -46415,7 +46429,15 @@
         "chapter_id": "fonseca-arte-v1::ch10",
         "topic_id": "old-062",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Associa corretamente a ação da cinta sobre o flange à frenagem e a ligação/desligamento coroa–eixo à embreagem.",
+        "B": "Inverte as funções: atribui ao freio o acoplamento e à embreagem a ação da cinta.",
+        "C": "A primeira função está correta; a embreagem permite desligar a coroa, não a mantém permanentemente solidária ao eixo.",
+        "D": "A segunda função está correta; o freio não é uma ligação permanente da coroa ao eixo.",
+        "E": "A primeira função é da embreagem; além disso, a embreagem também pode ligar a coroa ao eixo, não a deixa permanentemente livre."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0602",
@@ -68491,38 +68513,41 @@
       "module": "Máquinas de suspender",
       "topic_code": "old-062",
       "topic": "freio da máquina de suspender",
-      "difficulty": "Difícil",
+      "difficulty": "Fácil",
       "style": "Situação aplicada",
-      "question": "Considere A definição técnica “mecanismo que controla ou impede a rotação da coroa. A descrição inclui ainda esta característica: empregado para regular a saída da amarra ao largar o ferro. Qual nomenclatura corresponde ao caso apresentado?",
+      "question": "Uma descrição de máquina de suspender apresenta uma cinta de aço em forma de anel, apertada sobre um flange da coroa por parafuso comandado por volante ou por alavanca. Qual dispositivo corresponde a esse arranjo?",
       "options": [
         {
           "key": "A",
-          "text": "freio da máquina de suspender"
+          "text": "Freio mecânico da máquina de suspender."
         },
         {
           "key": "B",
-          "text": "embreagem"
+          "text": "Embreagem da coroa."
         },
         {
           "key": "C",
-          "text": "coroa de Barbotin"
+          "text": "Coroa de Barbotin."
         },
         {
           "key": "D",
-          "text": "virar a máquina de suspender"
+          "text": "Saia da máquina de suspender."
         },
         {
           "key": "E",
-          "text": "cabrestante"
+          "text": "Linguetes da manobra manual."
         }
       ],
       "correct_answer": "A",
-      "explanation": "“freio da máquina de suspender” é mecanismo que controla ou impede a rotação da coroa; empregado para regular a saída da amarra ao largar o ferro.",
+      "explanation": "A alternativa A é a correta: a cinta sobre o flange caracteriza o freio mecânico descrito em 10.29.d. A embreagem acopla a coroa ao eixo; a coroa aloja os elos; a saia é um tambor liso para cabos; os linguetes apoiam-se em dentes para impedir o movimento contrário na manobra manual. O mecanismo de cinta não deve ser apresentado como regulador genérico da velocidade da amarra já correndo sob o peso do ferro, uso restringido pelo autor. A identificação não dispensa as instruções da máquina específica.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 10, seção C, itens 10.29.d e 10.35"
+        "locator": "cap. 10, seção C, itens 10.29.d/f, p. 741/PDF 102; contrastes 10.28, p. 738/PDF 99 e 10.29.b/c/e/g, pp. 740–742/PDF 101–103; largada 10.35.a, pp. 750–751/PDF 111–112",
+        "printed_page": 741,
+        "pdf_page": 102,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Máquinas de suspender",
@@ -68556,7 +68581,15 @@
         "chapter_id": "fonseca-arte-v1::ch10",
         "topic_id": "old-062",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "É o dispositivo de cinta que aperta o flange, conforme 10.29.d.",
+        "B": "A embreagem de 10.29.f liga a coroa ao eixo; não é o arranjo de cinta no flange.",
+        "C": "A coroa de 10.29.b é a roda com recessos e dentes que recebe a amarra, não a cinta que atua sobre seu flange.",
+        "D": "A saia de 10.29.e é tambor liso para manobrar cabos, não o mecanismo de frenagem descrito.",
+        "E": "Os linguetes de 10.29.g são barras que se apoiam em dentes para impedir movimento contrário; não formam uma cinta sobre o flange."
+      },
+      "cognitive_level": 1
     },
     {
       "id": "ANV-0902",
