@@ -78,3 +78,16 @@ O arquivo continua marcado como apenas parcialmente conferido, sem inferir
 errata oficial, defeito geral de toda edição ou invalidade de cada página
 anteriormente lida. Registros existentes continuam sujeitos à rechecagem e
 aos gates. Nenhum livro/imagem integral foi publicado.
+
+
+## Lote034 — içadores mecânicos de prático
+
+Fontes oficiais IMO obtidas em22/10/2026: A.1045(27), seção4 p.4/PDF5 e
+dispositivo operativo3 p.1/PDF2; A.1108(29), anexo p.2/PDF3; MSC.572(110),
+dispositivos operativos2/3 PDF2 e futura V/23.10 p.3/PDF4. Texto/imagens
+conferidos nos localizadores declarados; hashes/URLs/limites em
+EVIDENCIA_NORMATIVA_034.json. A emenda2015 altera5.1/5.2, não a seção4.
+MSC.572 prevê2028-01-01 condicionado à aceitação; não foi antecipada.
+A checagem de passagens não certifica toda vigência normativa/edital. Não se
+afirmou identidade binária dos PDFs oficiais com as cópias Drive. Dois checks
+parciais de questões, sem aprovação final; sem publicar PDFs integrais.

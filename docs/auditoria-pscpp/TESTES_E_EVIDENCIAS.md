@@ -1084,3 +1084,41 @@ Scripts Node com --no-warnings --experimental-loader ./scripts/pscpp-json-loader
 Registros locais/logs preservados em audit-private/lote033; livros/imagens privados.
 Rechecagem independente, programa/edital, cobertura, estados, semântica global e
 offline/produção pendentes. Sem merge/deploy/dados de usuários.
+
+
+## Lote 034 — resultados efetivos
+
+- Regressão antes/depois do build: exit 0, 68 deltas exatos acumulados;
+  168 proposições renderizadas e 130 opções diretas preservadas. 12.034 outros
+  cadernos e 1.984 PSCPP intactos; igualdade integral fonte/runtime para147/845.
+- Runtime, seleção e matriz fixa100 em25/25/10/10/10/10/10, proveniência/
+  fingerprints, catálogo e check:pscpp-bank passaram (exit0).
+  Catálogo/flashcards regenerados. Nenhum normalizador/filtro/gate relaxado;
+  contrato direto somente+0845.
+- Triagem exit0: 213 candidatos sem proposições/77 localizadores.
+  test-notebook-complete-stems exit1 emANV-0142; validate-editorial-runtime
+  exit1 nos77 localizadores. Falhas preservadas, sem supressão.
+- Inventário exit0: 27.435 físicos,14.086 ocorrências e13.715 IDs; todos os68
+  hashes corrigidos conferidos. Gate editorial após inventário exit2:0 aceitos/
+  14.086 pendentes; merge_permitted=false.
+- Diff físico: somente0147 restauração/0845 principal. Principal0147 sobre
+  dimensões do degrau, par0142/0840 e outros objetos/campos inalterados.
+  Ativação efetiva mantida; flags ausentes não inferidas. Nenhum dos dois
+  IDs consta de notebook-complete-stems.
+- auditQuestion sem achados; política ativa; reformulateLeakingStem e
+  normalizeEditorialStem preservaram ambos integralmente antes da geração.
+- Um build completo em cópia isolada /tmp: exit0 e marcadores explícitos
+  de compilação,lint/types,101/101 páginas e tabela de rotas. Output capturado
+  após conclusão para evitar logs persistidos incompletos. Todos os arquivos
+  rastreados fora de docs, inclusive script de regressão ampliado, idênticos
+  aos da cópia; seis artefatos gerados idênticos byte a byte. Avisos npm
+  http-proxy/autoprefixer/cache preservados. ENOTEMPTY do workspace em lote019
+  não declarado resolvido por build em /tmp.
+
+Scripts Node com --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs.
+PDFs oficiais IMO, hashes, imagens e logs privados em audit-private/lote034.
+EVIDENCIA_NORMATIVA_034.json contém apenas metadados e inferências delimitadas.
+O comando de processos retornou erro de enumeração; não se afirma busca global
+por escritores. Árvore rastreada limpa inicialmente e publicação com lease.
+Programa/edital, rechecagem independente, versões normativas completas, cobertura,
+estados, semântica global e offline/produção pendentes. Sem merge/deploy/usuários.

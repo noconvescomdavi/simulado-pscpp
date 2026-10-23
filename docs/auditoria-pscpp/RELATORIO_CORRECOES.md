@@ -28,7 +28,7 @@ e estabilidade quando apenas um arquivo alheio muda.
 
 ## Questões
 
-Acumulado vigente após lote 033: **66 IDs corrigidos distintos**, 69 conferências bibliográficas parciais, zero aprovações finais. Relação completa e sem recontagem em CHECKPOINT.json e CORRECOES_RUNTIME.json; números dos parágrafos de lotes abaixo são históricos. Substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
+Acumulado vigente após lote 034: **68 IDs corrigidos distintos**, 71 conferências bibliográficas parciais, zero aprovações finais. Relação completa e sem recontagem em CHECKPOINT.json e CORRECOES_RUNTIME.json; números dos parágrafos de lotes abaixo são históricos. Substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
 Lote 002: `REVISAO_ARTE_NAVAL_LOTE_002.md`, fonte primária arts. 8.2/8.14/8.19–8.20.
 Corrigidas as restaurações prevalentes, mantendo conceitos efetivamente servidos,
 IDs, opções e gabaritos. Dezesseis proposições renderizadas no teste de regressão.
@@ -407,3 +407,20 @@ preservados. Não há cálculos nem figura ausente necessária às respostas.
 
 
 Detalhes de julgamento, precedência e limites em REVISAO_ARTE_NAVAL_LOTE_033.md. Acumulado: 66 correções, 69 conferências parciais, zero aprovações finais.
+
+
+## Lote 034 — relatório individual
+
+| ID | Defeito encontrado | Correção concreta | Fonte/localizador | Gabarito |
+|---|---|---|---|---|
+| ANV-0147 | A restauração prevalente misturava definições de assuntos distintos e recebia answer-leak-v1, que apagava I–IV, deixando conjuntos sem proposições. | Reescritas quatro proposições sobre a vedação e as falsas permissões por supervisão, escada paralela ou teste. Explicação e cinco justificativas específicas; referência, páginas, URL, hash e limites de versão. Carregamento preserva o objeto integral. | A.1045(27), anexo seção 4, p. 4/PDF 5; dispositivo operativo 3/PDF 2; A.1108(29) e MSC.572(110) como confrontos de versão | B mantido; F/V/F/V |
+| ANV-0845 | Pergunta por definição era convertida em comando bibliográfico genérico; os distratores eram objetos heterogêneos de outros arranjos. | Novo cenário de transferência, cinco decisões paralelas e justificativas individuais. Teste, oficial, escada disponível e consentimento não criam as permissões sugeridas. Fonte exata e limites adicionados; texto preservado no runtime. | Mesmos localizadores | E mantido |
+
+Duas correções primárias parciais; nenhuma aprovação editorial final.
+ANV-0147 passa de Difícil a Médio/L2 proposto, pela compreensão da vedação;
+ANV-0845 mantém Médio, com L3 proposto pela aplicação a um cenário explícito.
+Sem alegação de calibração psicométrica/histórica. Formatos B/A, IDs, conceitos,
+keys e cinco letras A–E preservados. Sem cálculos nem figura necessária ausente.
+
+
+Fonte e revisão delimitada de versões em EVIDENCIA_NORMATIVA_034.json; análise completa em REVISAO_ARTE_NAVAL_LOTE_034.md. Acumulado: 68 correções, 71 conferências parciais, zero aprovações finais.

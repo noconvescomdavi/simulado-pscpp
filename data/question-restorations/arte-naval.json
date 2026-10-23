@@ -11438,9 +11438,9 @@
       "module": "Acesso do prático ao convés",
       "topic_code": "old-247",
       "topic": "içador mecânico de prático",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “içador mecânico de prático”, identifique as verdadeiras e assinale a opção correta:\nI) “içador mecânico de prático” designa volume desobstruído junto ao carretel da escada.\nII) “içador mecânico de prático” designa equipamento cuja utilização para transferência é vedada.\nIII) A bibliografia atribui a esse item a seguinte característica: deve ter ao menos 6 m, salvo exceções específicas para certos navios menores que 90 m.\nIV) A bibliografia atribui a esse item a seguinte característica: a proibição decorre da regra V/23 da SOLAS e é reiterada pela recomendação.",
+      "question": "Quanto ao emprego de içadores mecânicos para transferência de práticos, segundo a Resolução A.1045(27), analise as proposições e escolha o conjunto completo das corretas.\nI) O equipamento pode ser usado na transferência se a operação for acompanhada por um oficial responsável.\nII) A utilização desse equipamento é vedada para a transferência do prático.\nIII) A disponibilidade de uma escada de prático ao lado do equipamento torna admissível seu emprego.\nIV) Um teste de funcionamento satisfatório, por si só, não afasta a vedação de uso.",
       "options": [
         {
           "key": "A",
@@ -11464,12 +11464,17 @@
         }
       ],
       "correct_answer": "B",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “içador mecânico de prático”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "Somente II e IV são verdadeiras (alternativa B). A seção 4 do anexo da Resolução A.1045(27), p. 4/PDF 5, registra a proibição de uso de içadores mecânicos de prático pela SOLAS V/23. Não estabelece permissão por acompanhamento de oficial, presença de escada paralela ou teste satisfatório. I e III criam exceções ausentes do dispositivo; IV aplica a proibição ao caso de um equipamento testado. A A.1108(29) modifica os parágrafos 5.1 e 5.2, sem alterar essa seção. Não se antecipam disposições da MSC.572(110) previstas para 2028.",
       "source": {
         "author": "IMO",
         "title": "Resolution A.1045(27): Pilot Transfer Arrangements",
-        "edition": "2011",
-        "locator": "anexo, seção 4"
+        "edition": "2011; confronto com A.1108(29), 2015, sem alteração da seção 4",
+        "locator": "anexo, seção 4, p. 4/PDF 5; dispositivo operativo 3, p. 1/PDF 2",
+        "printed_page": 4,
+        "pdf_page": 5,
+        "sha256": "d5c0bfb3fad8bd548669e7953669129da8261ed64a69d8b10b54a6181d4c3578",
+        "url": "https://wwwcdn.imo.org/localresources/en/OurWork/Safety/Documents/A.1045%2827%29.pdf",
+        "version_note": "Questão limitada à proibição da seção 4. A.1108(29) altera 5.1/5.2. MSC.572(110) prevê nova redação de V/23 e entrada em vigor em 2028 condicionada à aceitação; não aplicada antecipadamente. Alinhamento ao edital e revisão normativa integral pendentes."
       },
       "tags": [
         "Acesso do prático ao convés",
@@ -11484,7 +11489,7 @@
           "author": "IMO"
         },
         "chapter": null,
-        "section": "anexo, seção 4",
+        "section": "anexo, seção 4, p. 4/PDF 5; dispositivo operativo 3, p. 1/PDF 2",
         "module": "Acesso do prático ao convés",
         "topic": {
           "id": "old-247",
@@ -11504,6 +11509,14 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "III é falsa: escada ao lado não cria exceção; IV é verdadeira, mas falta II.",
+        "B": "II e IV formam o conjunto completo: vedação de uso e impossibilidade de afastá-la apenas por teste satisfatório (seção 4).",
+        "C": "II é verdadeira, mas III cria permissão inexistente; falta IV.",
+        "D": "I e III são falsas: supervisão e disponibilidade de escada não autorizam o içador.",
+        "E": "IV é verdadeira, mas I cria exceção por supervisão; falta II."
       }
     }
   ]

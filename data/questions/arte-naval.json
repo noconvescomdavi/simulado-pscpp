@@ -64125,36 +64125,41 @@
       "topic": "içador mecânico de prático",
       "difficulty": "Médio",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “içador mecânico de prático”.",
+      "question": "Antes do embarque de um prático, propõe-se utilizar um içador mecânico recém-testado, com um oficial acompanhando a operação e uma escada de prático disponível ao lado. Segundo a Resolução A.1045(27), qual decisão é compatível com a regra relativa a esse equipamento?",
       "options": [
         {
           "key": "A",
-          "text": "faixa livre para permitir aproximação segura da lancha"
+          "text": "Autorizar a transferência pelo içador, pois o teste recente supre a restrição de uso."
         },
         {
           "key": "B",
-          "text": "volume desobstruído junto ao carretel da escada"
+          "text": "Autorizar a transferência pelo içador, desde que o oficial acompanhe toda a operação."
         },
         {
           "key": "C",
-          "text": "dois apoios separados e rigidamente fixados à estrutura no acesso por escada de borda"
+          "text": "Autorizar a transferência pelo içador, usando a escada paralela como meio de reserva."
         },
         {
           "key": "D",
-          "text": "quantidade máxima de degraus entre separadores sucessivos"
+          "text": "Autorizar a transferência pelo içador, desde que o prático concorde com esse procedimento."
         },
         {
           "key": "E",
-          "text": "equipamento cuja utilização para transferência é vedada"
+          "text": "Rejeitar a transferência pelo içador, pois as condições apresentadas não afastam a vedação."
         }
       ],
       "correct_answer": "E",
-      "explanation": "A opção correta apresenta a definição técnica de “içador mecânico de prático”: equipamento cuja utilização para transferência é vedada; a proibição decorre da regra V/23 da SOLAS e é reiterada pela recomendação.",
+      "explanation": "A alternativa E é a única compatível com a seção 4 do anexo da Resolução A.1045(27), p. 4/PDF 5: a utilização de içadores mecânicos de prático é proibida pela SOLAS V/23. Teste recente, acompanhamento de oficial, escada disponível e concordância do prático não constituem exceções nesse dispositivo. A A.1108(29) altera somente 5.1/5.2; a questão não antecipa a nova redação prevista na MSC.572(110) para 2028. A rejeição do içador não certifica, por si, a conformidade da escada alternativa.",
       "source": {
         "author": "IMO",
         "title": "Resolution A.1045(27): Pilot Transfer Arrangements",
-        "edition": "2011",
-        "locator": "anexo, seção 4"
+        "edition": "2011; confronto com A.1108(29), 2015, sem alteração da seção 4",
+        "locator": "anexo, seção 4, p. 4/PDF 5; dispositivo operativo 3, p. 1/PDF 2",
+        "printed_page": 4,
+        "pdf_page": 5,
+        "sha256": "d5c0bfb3fad8bd548669e7953669129da8261ed64a69d8b10b54a6181d4c3578",
+        "url": "https://wwwcdn.imo.org/localresources/en/OurWork/Safety/Documents/A.1045%2827%29.pdf",
+        "version_note": "Questão limitada à proibição da seção 4. A.1108(29) altera 5.1/5.2. MSC.572(110) prevê nova redação de V/23 e entrada em vigor em 2028 condicionada à aceitação; não aplicada antecipadamente. Alinhamento ao edital e revisão normativa integral pendentes."
       },
       "tags": [
         "Acesso do prático ao convés",
@@ -64169,7 +64174,7 @@
           "author": "IMO"
         },
         "chapter": null,
-        "section": "anexo, seção 4",
+        "section": "anexo, seção 4, p. 4/PDF 5; dispositivo operativo 3, p. 1/PDF 2",
         "module": "Acesso do prático ao convés",
         "topic": {
           "id": "old-247",
@@ -64183,6 +64188,14 @@
         "chapter_id": "a1045::integral",
         "topic_id": "old-247",
         "subtopic_id": null
+      },
+      "cognitive_level": 3,
+      "distractor_analysis": {
+        "A": "Teste satisfatório não afasta a vedação de utilização do equipamento (seção 4).",
+        "B": "Acompanhamento por oficial não é exceção à vedação (seção 4).",
+        "C": "Disponibilidade de escada paralela não autoriza transferir o prático pelo içador (seção 4).",
+        "D": "Concordância do prático não cria permissão de uso ausente do dispositivo (seção 4).",
+        "E": "Correta: nenhuma condição do cenário afasta a proibição. A conformidade do meio alternativo exige avaliação própria."
       }
     },
     {

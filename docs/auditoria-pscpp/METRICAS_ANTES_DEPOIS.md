@@ -387,3 +387,13 @@ localizadores77→77. Cadernos12.102 e PSCPP1.984 preservados,14.086 ocorrência
 0843 Médio/L2. Propostas editoriais sem calibração aprovada. Nenhum modelo
 criado/removido. Mesma competência, coexistência em uma prova ainda impedimento
 semântico a resolver globalmente; nenhuma alegação de deduplicação concluída.
+
+
+## Lote 034
+
+Duas novas correções distintas: ANV-0147/0845. Acumulado66→68; conferências
+parciais69→71; zero aprovações finais. Sem proposições214→213; localizadores
+77→77. 27.435 físicos,14.086 ocorrências (12.102 cadernos/1.984 PSCPP),13.715
+IDs preservados. Formatos B/A, keys B/E. Propostas:147 Médio/L2 (antesDifícil),
+845 Médio/L3 (cenário), sem calibração aprovada. Nenhum ID/modelo criado/removido.
+Mesma competência nas duas variantes; deduplicação semântica global pendente.
