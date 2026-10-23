@@ -15339,9 +15339,9 @@
       "module": "Transmissões do governo",
       "topic_code": "old-082",
       "topic": "transmissão quadrantal",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "Sobre “transmissão quadrantal”, analise as afirmativas a seguir e assinale a alternativa que apresenta apenas as corretas:\nI. Em relação a “transmissão quadrantal”, considere: transforma o movimento do mecanismo em rotação controlada do leme.\nII. “transmissão quadrantal” designa ligação em que o esforço do servomotor atua sobre um quadrante solidário à madre.\nIII. “transmissão quadrantal” designa conjunto hidráulico transmissor-receptor que leva a ordem da roda ao servomotor.\nIV. Em relação a “transmissão quadrantal”, considere: admite redes duplicadas afastadas, mas bolhas de ar ou gás prejudicam seu funcionamento.",
+      "question": "Na ligação entre a máquina do leme e o leme descrita por Fonseca como transmissão quadrantal, analise as proposições e escolha o conjunto completo das corretas.\nI) A máquina do leme aciona uma pequena roda dentada que engrena em um setor dentado.\nII) O setor dentado é rigidamente fixado à cana do leme.\nIII) O elemento que transmite o esforço ao setor é necessariamente um cabo sem fim enrolado em um tambor, em lugar do engrenamento.\nIV) O mecanismo descrito consiste somente em dois motores elétricos autossincronizados que transmitem o comando da roda ao servomotor.",
       "options": [
         {
           "key": "A",
@@ -15365,12 +15365,15 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “transmissão quadrantal”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "I e II são verdadeiras: o item 11.7.b descreve a roda dentada acionada pela máquina e o setor dentado fixado à cana do leme. III substitui esse engrenamento pelo mecanismo de tambor do item 11.7.c. IV descreve a transmissão elétrica de comando entre roda e servomotor do item 11.5.c, em outra etapa do sistema. A referência à cana segue o texto primário; não se reduz o arranjo à afirmação genérica de um quadrante solidário à madre.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, seção A, item 11.7.b"
+        "locator": "cap. 11,seção A,item 11.7.b,p.763/PDF124;contrastes 11.7.a/c/d e 11.5.b/c–11.6,pp.760–761/PDF121–122;fig.11-6,p.764/PDF125 como contraste",
+        "printed_page": 763,
+        "pdf_page": 124,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Transmissões do governo",
@@ -15404,7 +15407,15 @@
         "chapter_id": "fonseca-arte-v1::ch11",
         "topic_id": "old-082",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: III descreve a ligação por tambor e IV a transmissão elétrica de comando; ambas são falsas para o mecanismo pedido.",
+        "B": "Incorreta: I é verdadeira, mas III substitui o engrenamento por cabo e tambor.",
+        "C": "Incorreta: II é verdadeira, mas IV confunde a transmissão ao leme com a transmissão elétrica de comando.",
+        "D": "Correta: I e II formam a cadeia máquina, roda dentada, setor dentado e cana descrita em 11.7.b.",
+        "E": "Incorreta: I é verdadeira, mas IV descreve outra etapa do sistema e o conjunto omite II."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0180",
@@ -29867,36 +29878,39 @@
       "topic": "transmissão quadrantal",
       "difficulty": "Fácil",
       "style": "Identificação técnica",
-      "question": "De acordo com Arte Naval, v. 2 — cap. 11, seção A, item 11.7.b, qual termo corresponde à seguinte descrição técnica: ligação em que o esforço do servomotor atua sobre um quadrante solidário à madre?",
+      "question": "No mecanismo quadrantal descrito por Fonseca, qual componente recebe diretamente o engrenamento da pequena roda dentada acionada pela máquina do leme?",
       "options": [
         {
           "key": "A",
-          "text": "transmissão mecânica flexível"
+          "text": "Um tambor sobre o qual se enrola um cabo sem fim."
         },
         {
           "key": "B",
-          "text": "transmissão hidráulica"
+          "text": "Um cursor que se desloca sobre uma rosca do duplo parafuso."
         },
         {
           "key": "C",
-          "text": "transmissão quadrantal"
+          "text": "Um setor dentado rigidamente fixado à cana do leme."
         },
         {
           "key": "D",
-          "text": "transmissão mecânica rígida"
+          "text": "Uma barra ligada diretamente a uma extremidade da cana do leme."
         },
         {
           "key": "E",
-          "text": "transmissão elétrica selsyn"
+          "text": "O cilindro receptor hidráulico do telemotor de comando."
         }
       ],
       "correct_answer": "C",
-      "explanation": "“transmissão quadrantal” é ligação em que o esforço do servomotor atua sobre um quadrante solidário à madre; transforma o movimento do mecanismo em rotação controlada do leme.",
+      "explanation": "A roda dentada engrena no setor dentado rigidamente fixado à cana, conforme 11.7.b. O tambor, o cursor do parafuso e as barras pertencem aos outros mecanismos de11.7. O cilindro receptor é componente do telemotor de comando de11.6, em outra etapa do sistema.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, seção A, item 11.7.b"
+        "locator": "cap. 11,seção A,item 11.7.b,p.763/PDF124;contrastes 11.7.a/c/d e 11.5.b/c–11.6,pp.760–761/PDF121–122;fig.11-6,p.764/PDF125 como contraste",
+        "printed_page": 763,
+        "pdf_page": 124,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Transmissões do governo",
@@ -29930,7 +29944,15 @@
         "chapter_id": "fonseca-arte-v1::ch11",
         "topic_id": "old-082",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: o tambor integra o mecanismo de cabo ou corrente sem fim, 11.7.c.",
+        "B": "Incorreta: o cursor integra o mecanismo por parafuso sem fim, 11.7.d.",
+        "C": "Correta: o setor dentado fixado à cana recebe o engrenamento da roda acionada pela máquina, 11.7.b.",
+        "D": "Incorreta: as barras pertencem à ligação direta descrita em11.7.a.",
+        "E": "Incorreta: o receptor hidráulico pertence ao telemotor de comando, 11.6; não é o setor engrenado."
+      },
+      "cognitive_level": 1
     },
     {
       "id": "ANV-0379",
@@ -66615,36 +66637,39 @@
       "topic": "transmissão quadrantal",
       "difficulty": "Médio",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “transmissão quadrantal”.",
+      "question": "Na transmissão quadrantal entre a máquina do leme e o leme, qual cadeia mecânica corresponde à descrição de Arte Naval?",
       "options": [
         {
           "key": "A",
-          "text": "ligação entre roda e governo realizada por gualdropes"
+          "text": "A máquina move um tambor com cabo sem fim cujos chicotes atuam nas extremidades de um setor."
         },
         {
           "key": "B",
-          "text": "ligação em que o esforço do servomotor atua sobre um quadrante solidário à madre"
+          "text": "A máquina move uma pequena roda dentada que engrena em um setor dentado rigidamente fixado à cana do leme."
         },
         {
           "key": "C",
-          "text": "comando transmitido por pressão líquida em tubulações protegidas"
+          "text": "A máquina move um duplo parafuso de roscas opostas com cursores e tirantes ligados à cana."
         },
         {
           "key": "D",
-          "text": "ligação feita por vergalhões ou eixos"
+          "text": "A máquina atua por duas barras ligadas às duas extremidades da cana,sem roda dentada e setor engrenados."
         },
         {
           "key": "E",
-          "text": "par de motores autossincronizados que reproduz eletricamente o giro de comando"
+          "text": "O comando passa apenas entre dois motores autossincronizados,um transmissor e um receptor,sem o mecanismo descrito entre máquina e leme."
         }
       ],
       "correct_answer": "B",
-      "explanation": "A opção correta apresenta a definição técnica de “transmissão quadrantal”: ligação em que o esforço do servomotor atua sobre um quadrante solidário à madre; transforma o movimento do mecanismo em rotação controlada do leme.",
+      "explanation": "A cadeia pedida está em 11.7.b: a máquina aciona a pequena roda dentada, que engrena no setor dentado fixado à cana. O cabo em tambor, as barras diretas e o duplo parafuso são outros meios de transmissão ao leme; os motores autossincronizados pertencem à transmissão elétrica de comando entre roda e servomotor. A simples presença de um setor não basta para identificar o tipo: é necessário distinguir o modo de acionamento.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, seção A, item 11.7.b"
+        "locator": "cap. 11,seção A,item 11.7.b,p.763/PDF124;contrastes 11.7.a/c/d e 11.5.b/c–11.6,pp.760–761/PDF121–122;fig.11-6,p.764/PDF125 como contraste",
+        "printed_page": 763,
+        "pdf_page": 124,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Transmissões do governo",
@@ -66678,7 +66703,15 @@
         "chapter_id": "fonseca-arte-v1::ch11",
         "topic_id": "old-082",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: descreve a transmissão de tambor do item 11.7.c, apesar de também mencionar um setor.",
+        "B": "Correta: mantém o engrenamento e a fixação à cana especificados no item 11.7.b.",
+        "C": "Incorreta: descreve a transmissão por parafuso sem fim do item 11.7.d.",
+        "D": "Incorreta: corresponde à transmissão direta do item 11.7.a.",
+        "E": "Incorreta: descreve o comando elétrico do item 11.5.c, em outra ligação do sistema."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0878",
@@ -75180,38 +75213,41 @@
       "module": "Transmissões do governo",
       "topic_code": "old-082",
       "topic": "transmissão quadrantal",
-      "difficulty": "Difícil",
+      "difficulty": "Fácil",
       "style": "Situação aplicada",
-      "question": "Considere A definição técnica “ligação em que o esforço do servomotor atua sobre um quadrante solidário à madre. A descrição inclui ainda esta característica: transforma o movimento do mecanismo em rotação controlada do leme. Qual nomenclatura corresponde ao caso apresentado?",
+      "question": "Uma máquina do leme aciona uma pequena roda dentada engrenada em um setor dentado rigidamente fixado à cana do leme. Qual é a denominação técnica do arranjo formado por esses componentes mecânicos?",
       "options": [
         {
           "key": "A",
-          "text": "transmissão mecânica flexível"
+          "text": "Transmissão direta por barras."
         },
         {
           "key": "B",
-          "text": "transmissão hidráulica"
+          "text": "Transmissão de tambor por cabo sem fim."
         },
         {
           "key": "C",
-          "text": "transmissão quadrantal"
+          "text": "Transmissão quadrantal."
         },
         {
           "key": "D",
-          "text": "transmissão mecânica rígida"
+          "text": "Transmissão por parafuso sem fim."
         },
         {
           "key": "E",
-          "text": "transmissão elétrica selsyn"
+          "text": "Transmissão hidráulica de comando por telemotor."
         }
       ],
       "correct_answer": "C",
-      "explanation": "“transmissão quadrantal” é ligação em que o esforço do servomotor atua sobre um quadrante solidário à madre; transforma o movimento do mecanismo em rotação controlada do leme.",
+      "explanation": "O engrenamento da pequena roda com o setor dentado fixado à cana identifica o tipo quadrantal do item 11.7.b. Barras, tambor e parafuso são outros mecanismos listados em 11.7; o telemotor transmite comando hidráulico entre roda e servomotor, conforme 11.5.b/11.6. O enunciado especifica o engrenamento para evitar confusão com o setor usado na transmissão de tambor.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, seção A, item 11.7.b"
+        "locator": "cap. 11,seção A,item 11.7.b,p.763/PDF124;contrastes 11.7.a/c/d e 11.5.b/c–11.6,pp.760–761/PDF121–122;fig.11-6,p.764/PDF125 como contraste",
+        "printed_page": 763,
+        "pdf_page": 124,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Transmissões do governo",
@@ -75245,7 +75281,15 @@
         "chapter_id": "fonseca-arte-v1::ch11",
         "topic_id": "old-082",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: a transmissão direta usa barras ligadas às extremidades da cana, 11.7.a.",
+        "B": "Incorreta: a transmissão de tambor usa cabo ou corrente sem fim, 11.7.c; isso não é o engrenamento descrito.",
+        "C": "Correta: a pequena roda dentada engrena no setor fixado à cana, 11.7.b.",
+        "D": "Incorreta: o tipo por parafuso sem fim usa cursores e tirantes com roscas opostas, 11.7.d.",
+        "E": "Incorreta: o telemotor transmite comando hidráulico entre roda e servomotor, 11.5.b/11.6; é outra etapa do sistema."
+      },
+      "cognitive_level": 1
     },
     {
       "id": "ANV-0994",

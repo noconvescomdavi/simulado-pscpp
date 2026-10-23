@@ -28,7 +28,7 @@ e estabilidade quando apenas um arquivo alheio muda.
 
 ## Questões
 
-Acumulado vigente após lote 039: **84 IDs corrigidos distintos**, 87 conferências bibliográficas parciais, zero aprovações finais. Relação completa e sem recontagem em CHECKPOINT.json e CORRECOES_RUNTIME.json; números dos parágrafos de lotes abaixo são históricos. Substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
+Acumulado vigente após lote 040: **88 IDs corrigidos distintos**, 91 conferências bibliográficas parciais, zero aprovações finais. Relação completa e sem recontagem em CHECKPOINT.json e CORRECOES_RUNTIME.json; números dos parágrafos de lotes abaixo são históricos. Substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
 Lote 002: `REVISAO_ARTE_NAVAL_LOTE_002.md`, fonte primária arts. 8.2/8.14/8.19–8.20.
 Corrigidas as restaurações prevalentes, mantendo conceitos efetivamente servidos,
 IDs, opções e gabaritos. Dezesseis proposições renderizadas no teste de regressão.
@@ -506,3 +506,15 @@ Fonte e figuras conferidas em texto/imagem; dez justificativas. Correções parc
 | ANV-0864 | Enunciado virava comando bibliográfico genérico e opções misturavam conceitos heterogêneos. | Criado cenário de avaliação de previsão de guinada com leme a meio; cinco alternativas comparáveis, explicação e cinco justificativas; referência exata. | Mesmos localizadores, texto e imagem | D mantido |
 
 Texto/imagens conferidos;dez justificativas. Correções parciais,zero aprovações finais. Build/regressão passaram;falhas gerais conhecidas mantidas. Acumulado84/87/0;triagem206/77. Report039 detalha limites e estado0365.0176/0874 compartilham localizador do impedimento032,sem nova correção/conferência;próxima independente0179. Sem merge/deploy.
+
+
+## Lote040 — transmissão quadrantal
+
+| ID | Defeito encontrado | Correção concreta | Fonte conferida | Gabarito |
+|---|---|---|---|---|
+| ANV-0179 | I–IV desapareciam no carregamento; conceitos do comando roda/servomotor eram misturados à ligação máquina/leme e a fixação era imprecisa. | Quatro proposições sobre engrenamento,fixação do setor à cana e contrastes com tambor/controle elétrico;explicação,cinco justificativas e referência com páginas/hash. | Arte Naval v.2,8ª ed.,11.7.b,p.763/PDF124;contrastes11.7.a/c/d e11.5.b/c–11.6 pp.760–761/PDF121–122 | D mantido;V/V/F/F |
+| ANV-0378 | Versão ativa preservava comando por descrição bibliográfica e definição genérica de quadrante solidário à madre,sem distinguir o acionamento ou justificar opções. | Enunciado pede o componente que recebe o engrenamento;cinco componentes alternativos,explicação e cinco justificativas;setor fixado à cana explicitado. | Mesmos localizadores;fig.11-6 p.764/PDF125 como contraste | C mantido |
+| ANV-0877 | Definição virava comando genérico e opções confundiam etapas do sistema. | Enunciado e cinco cadeias mecânicas reescritos para distinguir quadrantal,tambor,direta,parafuso e comando elétrico;cinco justificativas. | Mesmos localizadores | B mantido |
+| ANV-0993 | Artefato textual de extração e identificação ambígua pelo simples uso de quadrante;dificuldade superestimada. | Texto limpo especifica o engrenamento;opções,explicação e cinco justificativas reescritas;Fácil/L1 propostos e fonte precisa. | Mesmos localizadores | C mantido |
+
+Quatro IDs já ativos corrigidos no principal;vinte justificativas,texto/imagens e hashes conferidos. Correções parciais,zero aprovações finais. Build/regressão passaram;falhas gerais mantidas. Acumulado88/91/0;triagem205/77;próxima independente0181. Report040 documenta distinção de etapas e quatro variantes da mesma competência,sem alteração do regime de três modelos. Sem merge/deploy.

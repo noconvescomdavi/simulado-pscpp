@@ -1292,3 +1292,28 @@ Falhas reais mantidas:test-notebook-complete-stems exit1 emANV-0142;validate-edi
 - npm run check:pscpp-bank:exit0
 
 Base 6d77ffd876b20fa41449243ca888720d6b3cbdc2;source PDF hash recalculated,text/images inspected.84 inventory hashes matched. Report039/table/ledger persistent. Documentary relation0176/0874 to032,no new primary review count.
+
+
+## Lote040
+
+Build completo isolado `npm run build`:exit0,marcadores compile/lint/types/101páginas/rotas presentes. Todos os arquivos rastreados fora de docs,incluindo a regressão,coincidem byte a byte com a cópia testada. Seis artefatos gerados idênticos. O erro anterior ENOTEMPTY da árvore de trabalho não é declarado resolvido. Apenas0179/0378/0877/0993 alteradas no banco principal;metadados de topo,restaurações e pares bloqueados inalterados. Todos os88 hashes de correção conferidos no inventário gzip.
+
+Passaram geração de bancos/catálogo/flashcards,validate-runtime-question-banks,validate-pscpp-exam-selection,test-question-source-provenance,validate-runtime-question-catalog,audit-pscpp-runtime-triage/inventory,test-pscpp-audit-anv0005 e npm run check:pscpp-bank. Node com loader pscpp-json-loader. Regressão antes/depois do build passou;matriz100 exata preservada.
+
+Falhas reais mantidas:test-notebook-complete-stems exit1ANV-0142;validate-editorial-runtime exit1,77 localizadores;validate-pscpp-editorial-evidence exit2,zero aprovadas/14086 pendentes. Testes estruturais e build não substituem rechecagem independente,conformidade completa ao edital e revisão semântica global.
+
+- generate-runtime-question-catalog.mjs:exit0
+- generate-runtime-flashcard-decks.mjs:exit0
+- validate-runtime-question-banks.mjs:exit0
+- validate-pscpp-exam-selection.mjs:exit0
+- test-question-source-provenance.mjs:exit0
+- validate-runtime-question-catalog.mjs:exit0
+- test-notebook-complete-stems.mjs:exit1
+- validate-editorial-runtime.mjs:exit1
+- audit-pscpp-runtime-triage.mjs:exit0
+- audit-pscpp-runtime-inventory.mjs:exit0
+- validate-pscpp-editorial-evidence.mjs:exit2
+- test-pscpp-audit-anv0005.mjs:exit0
+- npm run check:pscpp-bank:exit0
+
+Base fc67141c2fa36c5c872c79da11be24974a8d2f8b;PDF hash recalculated,text/images inspected.88 inventory hashes matched. Report040/table/ledger persistent. Four active old-082 variants corrected,not inferred inactive from previous physical originals.

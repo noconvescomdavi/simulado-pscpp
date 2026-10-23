@@ -443,3 +443,8 @@ Corrigidas80→82 IDs distintos;conferências83→85;aprovações0→0. Triagem2
 ## Lote039
 
 Corrigidas82→84 IDs distintos;conferências85→87;aprovações0→0. Triagem207→206 combinações,77→77 localizadores. Registros27435,ocorrências14086 (12102+1984),IDs13715 intactos. Regressão84 deltas/196 proposições/175 opções diretas,12018 cadernos intactos. Report039:0166/0864;nenhum ID novo/quarentena.0176/0874 apenas impedimento correlato documentado,sem contagem.
+
+
+## Lote040
+
+Corrigidas84→88 IDs distintos;conferências87→91;aprovações0→0. Triagem206→205 combinações,77→77 localizadores. Registros27435,ocorrências14086 (12102+1984),IDs13715 intactos. Regressão88 deltas/200 proposições/190 opções diretas,12014 cadernos intactos. Report040:0179/0378/0877/0993;nenhum ID novo/quarentena ou alteração de regime de três modelos.
