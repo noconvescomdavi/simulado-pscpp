@@ -458,3 +458,8 @@ Corrigidas88→90 IDs distintos;conferências91→93;aprovações0→0. Triagem2
 ## Lote042
 
 Corrigidas90→92 IDs distintos;conferências93→95;aprovações0→0. Triagem204→203 combinações,77→77 localizadores. Registros27435,ocorrências14086 (12102+1984),IDs13715 intactos. Regressão92 deltas/208 proposições/200 opções diretas,12010 cadernos intactos.0190/0888;nenhum ID novo/quarentena;0389 sem contagem.
+
+
+## Lote043
+
+Corrigidas92→95 IDs distintos;conferências95→98;aprovações0→0. Triagem203→201 combinações,77→77 localizadores. Registros27435,ocorrências14086 (12102+1984),IDs13715 intactos. Regressão95 deltas/216 proposições/205 opções diretas,12007 cadernos intactos.0198/0199/0897;nenhum ID novo/quarentena;0397/0896/0398 sem contagem.

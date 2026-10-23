@@ -28,7 +28,7 @@ e estabilidade quando apenas um arquivo alheio muda.
 
 ## Questões
 
-Acumulado vigente após lote 042: **92 IDs corrigidos distintos**, 95 conferências bibliográficas parciais, zero aprovações finais. Relação completa e sem recontagem em CHECKPOINT.json e CORRECOES_RUNTIME.json; números dos parágrafos de lotes abaixo são históricos. Substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
+Acumulado vigente após lote 043: **95 IDs corrigidos distintos**, 98 conferências bibliográficas parciais, zero aprovações finais. Relação completa e sem recontagem em CHECKPOINT.json e CORRECOES_RUNTIME.json; números dos parágrafos de lotes abaixo são históricos. Substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
 Lote 002: `REVISAO_ARTE_NAVAL_LOTE_002.md`, fonte primária arts. 8.2/8.14/8.19–8.20.
 Corrigidas as restaurações prevalentes, mantendo conceitos efetivamente servidos,
 IDs, opções e gabaritos. Dezesseis proposições renderizadas no teste de regressão.
@@ -538,3 +538,14 @@ Duas correções parciais,dez justificativas;zero aprovações finais. Fonte ofi
 | ANV-0888 | Definição virava comando bibliográfico genérico;opções heterogêneas e justificativa apenas nominal. | Criado enunciado com cinco avaliações conjuntas da atracação/desatracação sob abatimento para dentro;explicação e cinco justificativas individuais;referência precisa. | Mesmos localizadores,texto e imagem | C mantido |
 
 Duas correções parciais,dez justificativas;zero aprovações finais. Fonte12.30 pp831–832/PDF192–193 e12.33.5 pp835–836/PDF196–197,texto/imagens/hash conferidos. Resolvida ambiguidade da antigaI que não sustentava exclusão pelo gabarito;novo conjunto inequívoco. Build/regressão passaram;falhas gerais conhecidas mantidas. Acumulado92/95/0,triagem203/77,próxima independente0198. Estado0389 e limites no relatório042. Sem merge/deploy.
+
+
+## Lote043 — CEP e comparação dos giros de dois hélices
+
+| ID | Defeito encontrado | Correção concreta | Fonte conferida | Gabarito |
+|---|---|---|---|---|
+| ANV-0198 | I–IV desapareciam;referência restrita à linha de projeto e distratores misturavam medidas e centro de gravidade,sem justificativas individuais. | Reescritas quatro proposições sobre PP,linha de referência,plano diametral e distinção de extremos/apêndices;explicação,cinco justificativas,páginas/figuras/hash. | Arte Naval v.1,8ª ed.,2.50 pp.94–95/PDF94–95,fig.2-13;contexto2.46–2.49 p.94;contraste2.55 p.96/PDF96,fig.2-14 | C mantido;V/V/F/F |
+| ANV-0199 | Proposições desapareciam;definições de outros dispositivos e conjugado genérico não sustentavam julgamento técnico claro. | Quatro proposições sobre sentidos comparados,distinção de giro/número de lemes,dependência geométrica do conjugado e comparação qualitativa do autor;cinco justificativas e fonte exata. | Arte Naval v.2,8ª ed.,12.10 pp.810–811/PDF171–172 | D mantido;F/F/V/V |
+| ANV-0897 | Comando virava referência genérica;alternativas heterogêneas e explicação sem comparação verificável. | Enunciado e cinco avaliações da ação do leme reescritos;mantido o caráter de admissão qualitativa do texto;explicação,cinco justificativas,páginas/hash. | Mesmos localizadores do v.2,texto e imagem | B mantido |
+
+Três correções parciais,quinze justificativas;zero aprovações finais. V1 2.50 pp94–95/PDF94–95 econtexto2.46–2.49/contraste2.55 p96;V2 12.10 pp810–811/PDF171–172,texto/imagens/hashes conferidos. Build/regressão passaram;falhas gerais conhecidas mantidas. Acumulado95/98/0,triagem201/77,próxima independente0200. Estados0397/0896/0398 inalterados,não contados. Fonte figurada/inferência geométrica e admissão qualitativa do autor explicitadas no relatório043. Sem merge/deploy.
