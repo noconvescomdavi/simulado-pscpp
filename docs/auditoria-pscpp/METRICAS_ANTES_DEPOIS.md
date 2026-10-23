@@ -500,3 +500,7 @@ Corrigidas95→98 IDs distintos;conferências98→101;aprovações0→0. Triagem
 ## Lote051
 
 115→120 IDs corrigidos distintos;118→123 conferências bibliográficas parciais;zero aprovações finais. Sem proposições194→193;localizadores77→77. Regressão120 deltas,260 proposições renderizadas,275 opções diretas,11.982cadernos e1.984PSCPP intactos. Só0223/0621 e3modelosAN-C09-916 mudam desde050;C/A/B/C/A mantidos,formatosB/A/A/A/C,L2/L3/L3/L3/L2 propostos. Modelos calculation/calculation/VF,população e matriz100 preservados. Casos novos75%,0,80 e175kgf com3contratos de cálculo.Sem incremento para0422;ver relatório051.
+
+## Lote052
+
+Seis novas correções parciais;126 IDs acumulados,129 conferências,zero aprovações. Triagem193→191 sem proposições;77 localizadores. Regressão126 deltas/272 proposições/290 opções;composição e matriz100 preservadas. Relatório individual:REVISAO_ARTE_NAVAL_LOTE_052.md. Todos8gates pendentes/falhos.

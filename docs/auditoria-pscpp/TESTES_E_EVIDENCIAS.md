@@ -1515,3 +1515,15 @@ Falhas reais mantidas:test-notebook-complete-stems exit1 emANV-0142;validate-edi
 Acumulado120 IDs corrigidos distintos,123 conferências bibliográficas parciais,zero aprovações finais. Triagem193 sem proposições,77 localizadores;60 candidatos corrigidos,3 falsos positivos anteriores sem mudança,60 correções fora dessa triagem.27.435 físicos,14.086ocorrências(12.102cadernos+1.984PSCPP),13.715IDs únicos preservados. Próxima independenteANV-0227,atracação com corrente pela proa,Fonseca v2 12.28. Pares0142/0840 e0176/0874 com fonte pendente,sem recontagem de buscas. Todos8gates pendentes/falhos,merge_permitted=false. Sem merge,deploy ou mutação de produção/usuários.
 
 Fonte e tabela individual:REVISAO_ARTE_NAVAL_LOTE_051.md.
+
+## Lote052
+
+Build completo isolado com insumos finais estáveis: `npm run build`,exit0;compilação,lint/tipos,101 páginas e rotas confirmados. Todos os arquivos rastreados fora de docs e os seis artefatos gerados foram comparados byte a byte com a cópia testada. O antigo ENOTEMPTY da árvore original não é declarado resolvido.
+
+Passaram geração PSCPP/cadernos/catálogo/flashcards;validate-runtime-question-banks,validate-pscpp-exam-selection,test-question-source-provenance,validate-runtime-question-catalog,test-pscpp-audit-anv0005,audit-pscpp-runtime-triage/inventory e npm run check:pscpp-bank. Regressão antes/depois do build:126 deltas acumulados exatos,11.976 ocorrências de cadernos e todas1.984PSCPP inalteradas contra baseline congelada;272 proposições renderizadas e290 opções diretas preservadas. Matriz exata100=25/25/10/10/10/10/10 preservada. Inclusão dos novos IDs no contrato correto e V/F com quatro julgamentos,sequências distintas e chave única;nenhuma asserção anterior relaxada.
+
+Entre051 e052,somente os seis IDs da tabela mudam no principal/inventário efetivo. Objetos finais iguais integralmente ao runtime;metadados de topo,0426 e demais objetos intactos;restaurações/extensões não alteradas. Todos126 hashes corrigidos correspondem ao inventário. Hashes antes/depois no CORRECOES_RUNTIME.json e CONFERENCIAS_BIBLIOGRAFICAS.jsonl. Composição ativa inalterada;nenhuma ativação ou quarentena nova.
+
+Falhas reais: test-notebook-complete-stems exit1 emANV-0142;validate-editorial-runtime exit1,77 localizadores;validate-pscpp-editorial-evidence exit2,zero aprovadas/14.086 pendentes. Gate regenerado depois do inventário,todos hashes conferidos;REVISOES_EDITORIAIS.jsonl inalterado.
+
+Acumulado126 IDs distintos corrigidos,129 conferências primárias parciais,zero aprovações finais. Triagem191 sem proposições e77 localizadores;62 candidatos corrigidos,3 falsos positivos anteriores sem mudança e64 correções fora da triagem.27.435 físicos,14.086 ocorrências(12.102 cadernos+1.984PSCPP),13.715 IDs únicos. Próxima independenteANV-0235,altura metacêntrica,Fonseca v1 2.33. Impedimentos0142/0840 e0176/0874 mantidos,sem recontagem.
