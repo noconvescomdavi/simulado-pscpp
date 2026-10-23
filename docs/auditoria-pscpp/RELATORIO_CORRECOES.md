@@ -28,7 +28,7 @@ e estabilidade quando apenas um arquivo alheio muda.
 
 ## Questões
 
-Acumulado vigente após lote 036: **75 IDs corrigidos distintos**, 78 conferências bibliográficas parciais, zero aprovações finais. Relação completa e sem recontagem em CHECKPOINT.json e CORRECOES_RUNTIME.json; números dos parágrafos de lotes abaixo são históricos. Substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
+Acumulado vigente após lote 037: **80 IDs corrigidos distintos**, 83 conferências bibliográficas parciais, zero aprovações finais. Relação completa e sem recontagem em CHECKPOINT.json e CORRECOES_RUNTIME.json; números dos parágrafos de lotes abaixo são históricos. Substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
 Lote 002: `REVISAO_ARTE_NAVAL_LOTE_002.md`, fonte primária arts. 8.2/8.14/8.19–8.20.
 Corrigidas as restaurações prevalentes, mantendo conceitos efetivamente servidos,
 IDs, opções e gabaritos. Dezesseis proposições renderizadas no teste de regressão.
@@ -465,3 +465,24 @@ nomenclatura a aplicação operacional real.
 
 
 Julgamentos, precedência e limites em REVISAO_ARTE_NAVAL_LOTE_036.md. Acumulado:75 correções/78 conferências parciais/zero aprovações finais.
+
+
+## Lote 037 — relatório individual
+
+| ID | Defeito encontrado | Correção concreta | Fonte conferida | Gabarito |
+|---|---|---|---|---|
+| ANV-0163 | answer-leak-v1 apagava I–IV; proposições por definição misturavam aproximação com amarração a dois ferros e explicação genérica. | Quatro proposições sobre ambiente, governo, controle da parada e uso indevido da amarra. Escopo limitado à aproximação, sem generalizar técnica de largada. Explicação, cinco justificativas, páginas/PDF/hash. | v.2,12.42.2 pp.847–848/PDF208–209 | C mantido; F/V/V/F |
+| ANV-0861 | Definição virava comando bibliográfico genérico e alternativas heterogêneas. | Cinco critérios paralelos de planejamento de aproximação; enunciado, explicação e cinco justificativas específicos; referência exata. | Mesmos localizadores | A mantido |
+| ANV-0164 | I–IV desapareciam; conceitos de altura metacêntrica/centro eram misturados ao princípio e a condição de equilíbrio ficava genérica. | Quatro proposições sobre sentido/intensidade do empuxo, volume deslocado e equilíbrio livre. Explicação, cinco justificativas, páginas/hash e figura de suporte. | v.1,2.25 pp.84–85/PDF84–85, fig.2-9; contexto2.24/2.26 | D mantido; F/V/F/V |
+| ANV-0862 | Comando genérico e distratores sobre grandezas não comparáveis. | Caso qualitativo de mesmo peso em águas de densidades diferentes; cinco relações empuxo/volume, explicação derivada explicitamente e cinco justificativas; fonte exata. | Mesmos localizadores | B mantido |
+| ANV-0988 | Artefato de extração no principal e mistura de princípio, força, dimensões e pontos; dificuldade superestimada. | Texto limpo pede o nome da relação; opções distinguem princípio, empuxo, flutuabilidade e centros. Explicação e cinco justificativas; Fácil/L1 propostos. | Mesmos localizadores | C mantido |
+
+Cinco correções primárias parciais, não aprovações finais. IDs, competências e
+keys mantidos; formatos B/A/B/A/A na ordem da tabela. Cinco alternativas A–E.
+Conjuntos das combinadas mantidos; alternativas diretas reescritas.163/164:
+Difícil→Médio/L2;861/862 Médio/L2;988 Difícil→Fácil/L1. São propostas editoriais,
+sem calibração histórica/psicométrica aprovada. Rótulo legado Situação aplicada
+mantido em988 para filtros, sem chamar nomenclatura de aplicação operacional.
+
+
+Julgamentos, fontes e limites em REVISAO_ARTE_NAVAL_LOTE_037.md. Acumulado:80 correções/83 conferências parciais/zero aprovações finais.

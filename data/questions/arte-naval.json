@@ -14132,9 +14132,9 @@
       "module": "Fundeio e amarração",
       "topic_code": "old-119",
       "topic": "aproximação para o fundeio",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "Sobre “aproximação para o fundeio”, analise as afirmativas a seguir e assinale a alternativa que apresenta apenas as corretas:\nI. Em relação a “aproximação para o fundeio”, considere: útil quando se deseja limitar o rabeio ou manter o navio em direção determinada.\nII. Em relação a “aproximação para o fundeio”, considere: deve terminar com pequeno seguimento compatível com o controle da saída da amarra.\nIII. “aproximação para o fundeio” designa fase em que rumo e velocidade são ajustados para largar o ferro no ponto previsto.\nIV. “aproximação para o fundeio” designa arranjo que usa duas âncoras para restringir o movimento do navio.",
+      "question": "No planejamento e na execução da aproximação ao ponto de fundeio descritos por Fonseca, analise as proposições e escolha o conjunto completo das corretas.\nI) O seguimento deve ser tão elevado quanto possível, deixando para a amarra a função de parar o navio depois da largada.\nII) Deve-se conservar seguimento suficiente para governar, sem que ele seja tão grande que dificulte parar sobre o ponto pretendido.\nIII) A aproximação deve considerar a visibilidade, o vento e a corrente para que o ferro seja largado no local desejado.\nIV) Uma vez escolhido o ponto na carta, as condições de vento e corrente deixam de influenciar o rumo de aproximação.",
       "options": [
         {
           "key": "A",
@@ -14158,12 +14158,15 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “aproximação para o fundeio”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "Somente II e III são verdadeiras (alternativa C). O item 12.42.2, pp. 847–848, relaciona a aproximação ao local de largada e às condições de visibilidade, vento e corrente, exigindo controle do seguimento para governar e parar. I atribui à amarra a parada do navio, expressamente rejeitada no texto; IV elimina fatores que a obra manda considerar. A questão trata dos critérios de aproximação e não transforma em regra universal uma técnica específica de largada, para a qual o mesmo item apresenta condições e casos distintos.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção D, item 12.42.2"
+        "locator": "cap. 12, seção D, item 12.42.2, pp. 847–848/PDF 208–209",
+        "printed_page": 847,
+        "pdf_page": 208,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Fundeio e amarração",
@@ -14183,7 +14186,7 @@
           "title": "Manobra do Navio",
           "label": "Capítulo 12 - Manobra do Navio"
         },
-        "section": "cap. 12, seção D, item 12.42.2",
+        "section": "cap. 12, seção D, item 12.42.2, pp. 847–848/PDF 208–209",
         "module": "Fundeio e amarração",
         "topic": {
           "id": "old-119",
@@ -14197,7 +14200,15 @@
         "chapter_id": "fonseca-arte-v1::ch12",
         "topic_id": "old-119",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "II é verdadeira, mas I transfere indevidamente a parada à amarra; falta III.",
+        "B": "III é verdadeira, mas I exige seguimento máximo e uso da amarra para parar; falta II.",
+        "C": "II e III são o conjunto completo: governo/parada controlados e consideração das condições ambientais.",
+        "D": "I e IV são falsas: a amarra não deve parar sozinha o navio e o ambiente não pode ser ignorado.",
+        "E": "II é verdadeira, mas IV exclui vento e corrente; falta III."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0164",
@@ -14205,9 +14216,9 @@
       "module": "Geometria do navio",
       "topic_code": "anv1-2.25",
       "topic": "princípio de Arquimedes",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "Sobre “princípio de Arquimedes”, analise as afirmativas a seguir e assinale a alternativa que apresenta apenas as corretas:\nI. “princípio de Arquimedes” designa distância entre o centro de gravidade do navio e o metacentro.\nII. “princípio de Arquimedes” designa princípio segundo o qual um corpo imerso recebe empuxo igual ao peso do volume de fluido deslocado.\nIII. Em relação a “princípio de Arquimedes”, considere: também chamado centro de empuxo ou centro de volume.\nIV. Em relação a “princípio de Arquimedes”, considere: para um navio em equilíbrio, o empuxo iguala o peso total do navio.",
+      "question": "Segundo a exposição de Fonseca sobre o princípio de Arquimedes, analise as proposições e escolha o conjunto completo das corretas.\nI) A força exercida pelo fluido sobre o corpo imerso, resultante do empuxo, tem sentido vertical para baixo.\nII) Um corpo total ou parcialmente mergulhado recebe empuxo igual ao peso do volume de fluido que desloca.\nIII) Para um corpo parcialmente mergulhado, o volume de fluido deslocado corresponde necessariamente a todo o volume externo do corpo, inclusive a parte emersa.\nIV) Para o navio flutuando livremente, em repouso e em águas tranquilas, o empuxo equilibra seu peso.",
       "options": [
         {
           "key": "A",
@@ -14231,12 +14242,15 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “princípio de Arquimedes”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "Somente II e IV são verdadeiras (alternativa D). Em 2.25, pp. 84–85, o empuxo é vertical para cima e tem intensidade igual ao peso do fluido deslocado. Para a flutuação livre em repouso descrita, iguala o peso do navio. I inverte o sentido. III inclui indevidamente a parte emersa no volume deslocado, contrariando a cavidade imersa representada na figura 2-9. A igualdade com o peso do corpo foi limitada ao caso de equilíbrio livre, não a qualquer corpo imerso sujeito a outras forças.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 1",
         "edition": "8. ed., 2019",
-        "locator": "cap. 2, item 2.25"
+        "locator": "cap. 2, item 2.25, pp. 84–85/PDF 84–85, fig. 2-9; contexto 2.24 e 2.26",
+        "printed_page": 84,
+        "pdf_page": 84,
+        "sha256": "792beebaea10aaff4b65288c0cfc3dd76c507f779297ee42583d078a7ec1dd20"
       },
       "tags": [
         "Geometria do navio",
@@ -14256,7 +14270,7 @@
           "title": "Geometria do Navio",
           "label": "Capítulo 2 - Geometria do Navio"
         },
-        "section": "cap. 2, item 2.25",
+        "section": "cap. 2, item 2.25, pp. 84–85/PDF 84–85, fig. 2-9; contexto 2.24 e 2.26",
         "module": "Geometria do navio",
         "topic": {
           "id": "anv1-2.25",
@@ -14270,7 +14284,15 @@
         "chapter_id": "fonseca-arte-v1::ch2",
         "topic_id": "anv1-2.25",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "II é verdadeira, mas III inclui a parte emersa no volume deslocado; falta IV.",
+        "B": "II é verdadeira, mas I inverte o sentido do empuxo; falta IV.",
+        "C": "IV é verdadeira, mas III usa o volume total, não só o deslocado; falta II.",
+        "D": "II e IV formam o conjunto completo: peso do fluido deslocado e equilíbrio livre do navio.",
+        "E": "IV é verdadeira, mas I orienta o empuxo para baixo; falta II."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0165",
@@ -65364,36 +65386,39 @@
       "topic": "aproximação para o fundeio",
       "difficulty": "Médio",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “aproximação para o fundeio”.",
+      "question": "Ao preparar a aproximação de um navio ao ponto escolhido para fundear, qual critério corresponde ao exposto por Fonseca sobre rumo, ambiente e controle do seguimento?",
       "options": [
         {
           "key": "A",
-          "text": "fase em que rumo e velocidade são ajustados para largar o ferro no ponto previsto"
+          "text": "Considerar visibilidade, vento e corrente; conservar governo sem adquirir seguimento que dificulte parar sobre o ponto."
         },
         {
           "key": "B",
-          "text": "condição em que a carga ambiental é transmitida ao ferro pela cadeia tesada"
+          "text": "Fixar o rumo apenas pela posição marcada na carta; desconsiderar o efeito do vento e da corrente na aproximação."
         },
         {
           "key": "C",
-          "text": "área varrida pelo navio ao rabear em torno do ponto de presa"
+          "text": "Aproximar com o maior seguimento possível; deixar à amarra a tarefa de parar o navio após a largada."
         },
         {
           "key": "D",
-          "text": "área escolhida para manter o navio por meio da âncora"
+          "text": "Eliminar desde o início todo seguimento de governo; manter o navio sem movimento durante toda a aproximação."
         },
         {
           "key": "E",
-          "text": "arranjo que usa duas âncoras para restringir o movimento do navio"
+          "text": "Manter rumo e velocidade inicialmente escolhidos; compensar qualquer desvio somente depois de o ferro ser largado."
         }
       ],
       "correct_answer": "A",
-      "explanation": "A opção correta apresenta a definição técnica de “aproximação para o fundeio”: fase em que rumo e velocidade são ajustados para largar o ferro no ponto previsto; deve terminar com pequeno seguimento compatível com o controle da saída da amarra.",
+      "explanation": "A alternativa A reúne os critérios do item 12.42.2, pp. 847–848. B ignora fatores ambientais; C transfere a parada à amarra; D elimina o seguimento necessário ao governo durante a aproximação; E impede ajustes antes da largada. O texto distingue aproximação e técnicas de largada: não se extrai daqui velocidade numérica, rumo único ou procedimento universal de fundeio.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção D, item 12.42.2"
+        "locator": "cap. 12, seção D, item 12.42.2, pp. 847–848/PDF 208–209",
+        "printed_page": 847,
+        "pdf_page": 208,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Fundeio e amarração",
@@ -65413,7 +65438,7 @@
           "title": "Manobra do Navio",
           "label": "Capítulo 12 - Manobra do Navio"
         },
-        "section": "cap. 12, seção D, item 12.42.2",
+        "section": "cap. 12, seção D, item 12.42.2, pp. 847–848/PDF 208–209",
         "module": "Fundeio e amarração",
         "topic": {
           "id": "old-119",
@@ -65427,7 +65452,15 @@
         "chapter_id": "fonseca-arte-v1::ch12",
         "topic_id": "old-119",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Correta: integra posição pretendida, ambiente e seguimento compatível com governo e parada.",
+        "B": "A posição na carta não elimina vento/corrente, que podem exigir ajuste do rumo.",
+        "C": "O item rejeita permitir que a amarra, por si só, pare o navio.",
+        "D": "A obra exige seguimento suficiente para governar durante a aproximação.",
+        "E": "Rumo e seguimento precisam ser compatibilizados com a posição desejada antes da largada."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0862",
@@ -65437,36 +65470,39 @@
       "topic": "princípio de Arquimedes",
       "difficulty": "Médio",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “princípio de Arquimedes”.",
+      "question": "Um navio conserva o mesmo peso ao passar entre águas tranquilas de densidades diferentes e flutua livremente em repouso em cada uma delas. Qual comparação do empuxo e do volume deslocado decorre do princípio exposto por Fonseca?",
       "options": [
         {
           "key": "A",
-          "text": "força vertical resultante da pressão da água sobre a superfície imersa do casco"
+          "text": "O empuxo aumenta na água mais densa, embora o peso e o volume deslocado permaneçam os mesmos."
         },
         {
           "key": "B",
-          "text": "princípio segundo o qual um corpo imerso recebe empuxo igual ao peso do volume de fluido deslocado"
+          "text": "O empuxo continua igual ao peso do navio; na água mais densa, o volume deslocado é menor."
         },
         {
           "key": "C",
-          "text": "maior largura do casco medida entre as faces internas do chapeamento do costado"
+          "text": "O empuxo diminui na água mais densa, pois o volume deslocado aumenta para manter o equilíbrio."
         },
         {
           "key": "D",
-          "text": "ponto de aplicação da resultante de todos os pesos de bordo"
+          "text": "O empuxo permanece igual ao peso, mas o volume deslocado é maior na água mais densa."
         },
         {
           "key": "E",
-          "text": "distância entre as perpendiculares de vante e de ré"
+          "text": "O empuxo é igual ao peso apenas na água menos densa; na mais densa, deixa de equilibrá-lo."
         }
       ],
       "correct_answer": "B",
-      "explanation": "A opção correta apresenta a definição técnica de “princípio de Arquimedes”: princípio segundo o qual um corpo imerso recebe empuxo igual ao peso do volume de fluido deslocado; para um navio em equilíbrio, o empuxo iguala o peso total do navio.",
+      "explanation": "A alternativa B aplica 2.25, pp. 84–85: em cada equilíbrio livre, o empuxo iguala o mesmo peso do navio e também o peso da água deslocada. Se cada unidade de volume da água mais densa pesa mais, é preciso menor volume para perfazer esse peso. A, C e E rompem a igualdade das forças nas condições dadas; D inverte a relação entre densidade e volume. Trata-se de inferência qualitativa dessas igualdades, sem números ou extrapolação para variações de carregamento.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 1",
         "edition": "8. ed., 2019",
-        "locator": "cap. 2, item 2.25"
+        "locator": "cap. 2, item 2.25, pp. 84–85/PDF 84–85, fig. 2-9; contexto 2.24 e 2.26",
+        "printed_page": 84,
+        "pdf_page": 84,
+        "sha256": "792beebaea10aaff4b65288c0cfc3dd76c507f779297ee42583d078a7ec1dd20"
       },
       "tags": [
         "Geometria do navio",
@@ -65486,7 +65522,7 @@
           "title": "Geometria do Navio",
           "label": "Capítulo 2 - Geometria do Navio"
         },
-        "section": "cap. 2, item 2.25",
+        "section": "cap. 2, item 2.25, pp. 84–85/PDF 84–85, fig. 2-9; contexto 2.24 e 2.26",
         "module": "Geometria do navio",
         "topic": {
           "id": "anv1-2.25",
@@ -65500,7 +65536,15 @@
         "chapter_id": "fonseca-arte-v1::ch2",
         "topic_id": "anv1-2.25",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Com o mesmo peso em equilíbrio livre, o empuxo não pode aumentar nem conservar obrigatoriamente o volume.",
+        "B": "Correta: empuxo igual ao mesmo peso em ambos os casos; maior densidade exige menor volume deslocado.",
+        "C": "Diminuição de empuxo violaria o equilíbrio; maior volume em água mais densa também inverte a relação.",
+        "D": "Conserva corretamente a igualdade de forças, mas aumenta o volume quando a densidade cresce.",
+        "E": "A condição de equilíbrio livre impõe igualdade nas duas águas, não em apenas uma."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0863",
@@ -74716,38 +74760,41 @@
       "module": "Geometria do navio",
       "topic_code": "anv1-2.25",
       "topic": "princípio de Arquimedes",
-      "difficulty": "Difícil",
+      "difficulty": "Fácil",
       "style": "Situação aplicada",
-      "question": "Considere A definição técnica “princípio segundo o qual um corpo imerso recebe empuxo igual ao peso do volume de fluido deslocado. A descrição inclui ainda esta característica: para um navio em equilíbrio, o empuxo iguala o peso total do navio. Qual nomenclatura corresponde ao caso apresentado?",
+      "question": "Uma proposição relaciona a força vertical para cima recebida por um corpo total ou parcialmente imerso ao peso do fluido que ele desloca. Qual denominação identifica essa relação na exposição de Fonseca?",
       "options": [
         {
           "key": "A",
-          "text": "empuxo"
+          "text": "Empuxo."
         },
         {
           "key": "B",
-          "text": "boca moldada"
+          "text": "Flutuabilidade."
         },
         {
           "key": "C",
-          "text": "princípio de Arquimedes"
+          "text": "Princípio de Arquimedes."
         },
         {
           "key": "D",
-          "text": "centro de gravidade do navio"
+          "text": "Centro de empuxo."
         },
         {
           "key": "E",
-          "text": "comprimento entre perpendiculares"
+          "text": "Centro de gravidade."
         }
       ],
       "correct_answer": "C",
-      "explanation": "“princípio de Arquimedes” é princípio segundo o qual um corpo imerso recebe empuxo igual ao peso do volume de fluido deslocado; para um navio em equilíbrio, o empuxo iguala o peso total do navio.",
+      "explanation": "A alternativa C nomeia o princípio enunciado em 2.25, pp. 84–85. Empuxo é a força; flutuabilidade é a propriedade tratada em 2.26; centro de empuxo é seu ponto de aplicação; centro de gravidade é onde se aplica a resultante dos pesos, conforme o contexto de 2.24. A pergunta pede o nome da relação física, distinguindo-o dessas grandezas, propriedades e pontos.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 1",
         "edition": "8. ed., 2019",
-        "locator": "cap. 2, item 2.25"
+        "locator": "cap. 2, item 2.25, pp. 84–85/PDF 84–85, fig. 2-9; contexto 2.24 e 2.26",
+        "printed_page": 84,
+        "pdf_page": 84,
+        "sha256": "792beebaea10aaff4b65288c0cfc3dd76c507f779297ee42583d078a7ec1dd20"
       },
       "tags": [
         "Geometria do navio",
@@ -74767,7 +74814,7 @@
           "title": "Geometria do Navio",
           "label": "Capítulo 2 - Geometria do Navio"
         },
-        "section": "cap. 2, item 2.25",
+        "section": "cap. 2, item 2.25, pp. 84–85/PDF 84–85, fig. 2-9; contexto 2.24 e 2.26",
         "module": "Geometria do navio",
         "topic": {
           "id": "anv1-2.25",
@@ -74781,7 +74828,15 @@
         "chapter_id": "fonseca-arte-v1::ch2",
         "topic_id": "anv1-2.25",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "É o nome da força, não o princípio que relaciona sua intensidade ao peso do fluido deslocado.",
+        "B": "É uma propriedade de flutuação tratada em 2.26, não o nome do princípio solicitado.",
+        "C": "Correta: denominação expressa em 2.25 para a relação enunciada.",
+        "D": "É o ponto de aplicação do empuxo, não a relação física.",
+        "E": "É o ponto de aplicação da resultante dos pesos, não o princípio solicitado."
+      },
+      "cognitive_level": 1
     },
     {
       "id": "ANV-0989",

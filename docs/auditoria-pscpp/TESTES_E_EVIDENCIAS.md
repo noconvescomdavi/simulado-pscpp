@@ -1199,3 +1199,46 @@ sem cálculo/ganho numérico extrapolado ou figura necessária ausente. Logs/ima
 privados em audit-private/lote036; nenhum livro integral publicado. Rechecagem
 independente, programa/edital, cobertura, estados, semântica e offline/produção
 pendentes. Sem merge/deploy em produção ou mudanças de usuários.
+
+
+## Lote 037 — resultados efetivos
+
+- Regressão antes/depois do build:exit0;80 deltas exatos acumulados,188
+  proposições HTML e165 opções diretas preservadas.12.022 outros cadernos e
+  1.984 PSCPP intactos. Igualdade completa fonte/runtime dos cinco novos.
+- Runtime, seleção/matriz fixa100 em25/25/10/10/10/10/10, proveniência/
+  fingerprints, catálogo e check:pscpp-bank:exit0. Catálogo/flashcards regenerados.
+  Fonte principal+163/164/861/862/988;direto+861/862/988. Nenhum normalizador,
+  filtro ou gate relaxado; nenhuma falha suprimida.
+- Triagem exit0:208 candidatos sem proposições/77 localizadores.
+  test-notebook-complete-stems exit1 emANV-0142; validate-editorial-runtime
+  exit1 nos77 localizadores. Gates continuam bloqueados.
+- Inventário exit0:27.435 físicos,14.086 ocorrências e13.715 IDs; todos os80
+  hashes corrigidos conferidos. Gate editorial posterior exit2:zero aceitos/
+  14.086 pendentes;merge_permitted=false.
+- Diff físico exatamente163/164/861/862/988 no principal. Demais objetos/
+  campos,0362/0363,restaurações e par0142/0840 preservados. Nenhum ID criado/
+  removido/reativado;nenhum dos cinco consta de notebook-complete-stems.
+  0362/0363 ausentes do runtime; política após os transformadores existentes
+  inativa por stem-quotes-source-answer (bruto0362 já inativo por similaridade,
+  bruto0363 ativo). Sem nova quarentena,flags inferidas ou checks desses dois.
+- auditQuestion sem achados e política ativa nas cinco versões finais; os
+  transformadores preservam integralmente os objetos.988 intermediária falhou
+  por sobreposição lexical e foi corrigida antes da geração/regressão finais,
+  sem alterar critérios. Ausência de mass_reformulation verificada.
+- Um build completo em /tmp:exit0;compilação,lint/types,101/101 páginas e
+  tabela de rotas explicitamente confirmados. Todos os rastreados fora de docs,
+  inclusive regressão ampliada,idênticos à cópia;seis artefatos gerados idênticos
+  byte a byte. Avisos npm http-proxy/autoprefixer/cache preservados. ENOTEMPTY
+  prévio do workspace não declarado resolvido por build em /tmp.
+
+Scripts Node com --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs.
+Fonte v.2:12.42.2 pp.847–848/PDF208–209;v.1:2.25 pp.84–85/PDF84–85,fig.2-9,
+contexto2.24 pp.83–84/fig.2-8 e2.26 p.85. Texto/imagens conferidos;igualdade de
+forças limitada à flutuação livre em repouso. Inferência qualitativa de862
+explicitada no relatório:E=P=ρgV sob g comum e P constante. Sem cálculo de
+calado/valores numéricos ou figura necessária ausente. Aproximação de fundeio
+não confundida com técnica universal de largada. Logs/imagens privados em
+audit-private/lote037;nenhum livro integral publicado. Rechecagem independente,
+programa/edital,cobertura,estados,semântica e offline/produção pendentes.
+Sem merge/deploy em produção ou usuários alterados.

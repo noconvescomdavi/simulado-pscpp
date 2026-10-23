@@ -421,3 +421,15 @@ Sem calibração histórica/psicométrica aprovada. Nenhum modelo criado, removi
 ou reativado. Dois grupos de competência:2 e3 variantes ativas, não devem
 coexistir dentro do grupo na mesma prova. Semântica global/prevenção pendentes.
 0350/0351 preservados fora do runtime, sem nova contagem de revisão/correção.
+
+
+## Lote 037
+
+Cinco novas correções distintas:163/164/861/862/988;acumulado75→80.
+Conferências parciais78→83;zero aprovações finais. Sem proposições210→208;
+localizadores77→77.27.435 físicos,14.086 ocorrências (12.102 cadernos/1.984 PSCPP),
+13.715 IDs preservados. Formatos B/B/A/A/A e keys C/D/A/B/C nessa ordem.
+Propostas163/164 Médio/L2 (antesDifícil),861/862 Médio/L2,988 Fácil/L1
+(antesDifícil),sem calibração aprovada. Nenhum modelo criado/removido/reativado.
+Dois grupos com2/3 variantes ativas não devem coexistir dentro do grupo em uma
+prova;semântica global/prevenção pendentes.0362/0363 sem nova contagem de revisão.
