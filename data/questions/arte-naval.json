@@ -18677,9 +18677,9 @@
       "module": "Aparelhos de laborar",
       "topic_code": "old-019",
       "topic": "rendimento do aparelho",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "Sobre “rendimento do aparelho”, analise as afirmativas a seguir e assinale a alternativa que apresenta apenas as corretas:\nI. “rendimento do aparelho” designa relação entre o trabalho útil obtido e o trabalho fornecido.\nII. Em relação a “rendimento do aparelho”, considere: oferece grande redução de esforço, embora normalmente opere com menor velocidade.\nIII. Em relação a “rendimento do aparelho”, considere: inferior à unidade por causa das perdas, especialmente as de atrito.\nIV. “rendimento do aparelho” designa associação de cabos e poleames destinada a içar ou arriar pesos.",
+      "question": "Segundo Fonseca, quanto ao rendimento de um aparelho de laborar em içamento, analise as proposições e escolha o conjunto completo das corretas.\nI) Sendo P o peso, F a força real no tirador e n o número de partes de cabo que chegam ao cadernal móvel, o rendimento é R = P/(nF), com P e F na mesma unidade de força.\nII) O rendimento é o próprio número total de roldanas, independentemente da força real aplicada ao tirador.\nIII) Para os mesmos P e n, um aumento da força real necessária ao içamento corresponde a menor rendimento.\nIV) A estimativa de resistência passiva de 10% do peso por roldana é uma taxa exata e universal, independente do cabo e do poleame.",
       "options": [
         {
           "key": "A",
@@ -18703,12 +18703,16 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “rendimento do aparelho”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "A alternativa C reúne I e III. A definição R = P/(nF) distingue rendimento da multiplicação de potência; mantendo P e n positivos, aumentar F reduz R. II confunde a grandeza com uma contagem de componentes. IV transforma uma estimativa aproximada em lei universal, apesar da dependência de rigidez, atritos, bitola e dimensões do poleame descrita na obra. Não se afirma que a antiga proposição sobre redução de esforço fosse falsa apenas por estar fora da chave: ela foi substituída por conteúdo inequívoco e pertinente.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 9, seção B, item 9.16"
+        "locator": "cap. 9, item 9.16, pp. 673–675/PDF 34–36; contexto 9.15.e p. 672/PDF 33",
+        "printed_page": 673,
+        "pdf_page": 34,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+        "scope_note": "Definição e modelo aproximado da edição2019; forças expressas em kgf nos dados didáticos. Não é taxa universal de atrito nem dimensionamento/certificação de içamento."
       },
       "tags": [
         "Aparelhos de laborar",
@@ -18742,6 +18746,14 @@
         "chapter_id": "fonseca-arte-v1::ch9",
         "topic_id": "old-019",
         "subtopic_id": null
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "I é verdadeira, mas II troca rendimento por número de roldanas; falta III.",
+        "B": "III é verdadeira, mas IV torna exata e universal uma aproximação; falta I.",
+        "C": "I e III são verdadeiras e constituem o único conjunto completo.",
+        "D": "I é verdadeira, mas IV é falsa; falta III.",
+        "E": "II e IV são falsas: contagem de roldanas e estimativa percentual não definem rendimento universal."
       }
     },
     {
@@ -47951,36 +47963,40 @@
       "topic": "rendimento do aparelho",
       "difficulty": "Médio",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “rendimento do aparelho”.",
+      "question": "Em um ensaio didático de içamento uniforme, o peso é P = 600 kgf, a força real no tirador é F = 200 kgf e há n = 4 partes de cabo sustentando o cadernal móvel. Usando a definição de Fonseca, qual é o rendimento do aparelho, em porcentagem?",
       "options": [
         {
           "key": "A",
-          "text": "relação entre o trabalho útil obtido e o trabalho fornecido"
+          "text": "75%"
         },
         {
           "key": "B",
-          "text": "associação de cabos e poleames destinada a içar ou arriar pesos"
+          "text": "25%"
         },
         {
           "key": "C",
-          "text": "aparelho mecânico compacto destinado à movimentação de pesos"
+          "text": "300%"
         },
         {
           "key": "D",
-          "text": "emprego de um moitão fixo para mudar a direção do esforço"
+          "text": "133,3%"
         },
         {
           "key": "E",
-          "text": "configuração em que o poleame acompanha o peso movimentado"
+          "text": "8,3%"
         }
       ],
       "correct_answer": "A",
-      "explanation": "A opção correta apresenta a definição técnica de “rendimento do aparelho”: relação entre o trabalho útil obtido e o trabalho fornecido; inferior à unidade por causa das perdas, especialmente as de atrito.",
+      "explanation": "A alternativa A é a correta. R = P/(nF) = 600/(4 × 200) = 0,75 = 75%. P e F são forças na mesma unidade, e o rendimento é adimensional. Os dados são didáticos; F é a força real medida, não a força ideal P/n. Não se calcula capacidade segura de trabalho de cabos ou acessórios a partir desse rendimento.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 9, seção B, item 9.16"
+        "locator": "cap. 9, item 9.16, pp. 673–675/PDF 34–36; contexto 9.15.e p. 672/PDF 33",
+        "printed_page": 673,
+        "pdf_page": 34,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+        "scope_note": "Definição e modelo aproximado da edição2019; forças expressas em kgf nos dados didáticos. Não é taxa universal de atrito nem dimensionamento/certificação de içamento."
       },
       "tags": [
         "Aparelhos de laborar",
@@ -48014,6 +48030,14 @@
         "chapter_id": "fonseca-arte-v1::ch9",
         "topic_id": "old-019",
         "subtopic_id": null
+      },
+      "cognitive_level": 3,
+      "distractor_analysis": {
+        "A": "600/(4 × 200) = 0,75; multiplicar por 100 fornece 75%.",
+        "B": "25% é o complemento100%−75%, confundindo a perda com o rendimento.",
+        "C": "600/200 = 3 desconsidera n;300% confunde vantagem mecânica real com rendimento.",
+        "D": "4 × 200/600 = 1,333… inverte a relação correta;133,3% não é o rendimento.",
+        "E": "200/(4 × 600) = 0,0833… inverte as grandezas sem conservar o denominador correto."
       }
     },
     {
@@ -134717,42 +134741,42 @@
       "topic_code": "AN-C09-916",
       "topic": "Rendimento de um aparelho de laborar",
       "subtopic": "Art. 9.16",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "PSCPP",
       "pscpp_format": "calculation",
-      "cognitive_level": 5,
-      "question": "Para um aparelho com peso P, força real F aplicada ao tirador e n partes de cabo que vão ter ao cadernal móvel, o rendimento R é dado por:",
+      "cognitive_level": 3,
+      "question": "Em um ensaio didático de içamento uniforme, P = 800 kgf, F = 250 kgf é a força real no tirador e n = 4 partes de cabo chegam ao cadernal móvel. Qual expressão e valor representam o rendimento definido por Fonseca?",
       "statements": null,
       "options": [
         {
           "key": "A",
-          "text": "R=nP/F"
+          "text": "R = P/F = 3,20"
         },
         {
           "key": "B",
-          "text": "R=P/(nF)"
+          "text": "R = P/(nF) = 0,80"
         },
         {
           "key": "C",
-          "text": "R=F/(nP)"
+          "text": "R = F/(nP) = 0,078125"
         },
         {
           "key": "D",
-          "text": "R=P·n·F"
+          "text": "R = nF/P = 1,25"
         },
         {
           "key": "E",
-          "text": "R=(P+F)/n"
+          "text": "R = nP/F = 12,80"
         }
       ],
       "correct_answer": "B",
-      "explanation": "O art. 9.16 define o rendimento pela relação R=P/(nF).",
+      "explanation": "A alternativa B é a correta: R = 800/(4 × 250) = 0,80, equivalente a 80%. A multiplicação real P/F é 3,20; compará-la à multiplicação teórica n = 4 fornece 3,20/4 = 0,80. P e F devem estar em unidades compatíveis de força. Os demais quocientes ou produtos não correspondem à definição de rendimento.",
       "distractor_analysis": {
-        "A": "INCORRETA — A alternativa diverge da definição, relação ou procedimento apresentado no Art. 9.16.",
-        "B": "CORRETA — O art. 9.16 define o rendimento pela relação R=P/(nF).",
-        "C": "INCORRETA — A alternativa diverge da definição, relação ou procedimento apresentado no Art. 9.16.",
-        "D": "INCORRETA — A alternativa diverge da definição, relação ou procedimento apresentado no Art. 9.16.",
-        "E": "INCORRETA — A alternativa diverge da definição, relação ou procedimento apresentado no Art. 9.16."
+        "A": "P/F = 3,20 é a multiplicação real, ainda não dividida pela teórica n.",
+        "B": "P/(nF) = 800/(4 × 250) = 0,80 é adimensional e corresponde à definição.",
+        "C": "F/(nP) = 0,078125 troca peso e força no quociente.",
+        "D": "nF/P = 1,25 é o inverso do rendimento calculado.",
+        "E": "nP/F = 12,80 multiplica por n onde a definição exige dividir."
       },
       "active": true,
       "validation_status": "approved",
@@ -134779,15 +134803,17 @@
         "topic_title": "Rendimento de um aparelho de laborar"
       },
       "source": {
-        "author": "Maurílio M. Fonseca",
-        "title": "Arte Naval - Volume 2 - 8ª edição",
-        "edition": "8ª edição, 2019",
-        "locator": "Capítulo 9, art. 9.16 — Rendimento de um aparelho de laborar; p. 673–675",
-        "printed_page": "673–675",
-        "pdf_page": null,
+        "author": "FONSECA, Maurílio M.",
+        "title": "Arte Naval, v. 2",
+        "edition": "8. ed., 2019",
+        "locator": "cap. 9, item 9.16, pp. 673–675/PDF 34–36; contexto 9.15.e p. 672/PDF 33",
+        "printed_page": 673,
+        "pdf_page": 34,
         "drive_file_name": "Arte Naval - Volume 2 - 8ª edição.pdf",
         "drive_file_id": "1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec",
-        "drive_url": "https://drive.google.com/file/d/1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec/view"
+        "drive_url": "https://drive.google.com/file/d/1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec/view",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+        "scope_note": "Definição e modelo aproximado da edição2019; forças expressas em kgf nos dados didáticos. Não é taxa universal de atrito nem dimensionamento/certificação de içamento."
       },
       "tags": [
         "pscpp",
@@ -134820,42 +134846,42 @@
       "topic_code": "AN-C09-916",
       "topic": "Rendimento de um aparelho de laborar",
       "subtopic": "Art. 9.16",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "PSCPP",
       "pscpp_format": "calculation",
-      "cognitive_level": 5,
-      "question": "Uma talha dobrada, com tirador no cadernal fixo, iça 400 kg. No cálculo aproximado da obra, considerando quatro roldanas e 10% do peso por roldana como resistência passiva, qual força deve ser aplicada ao tirador?",
+      "cognitive_level": 3,
+      "question": "Uma talha dobrada iça uniformemente um peso P = 500 kgf. O tirador sai do cadernal fixo; há n = 4 partes de cabo sustentando a parte móvel e o cabo labora em m = 4 roldanas. Adote o cálculo aproximado descrito por Fonseca: acrescentar ao peso uma resistência passiva de 10% de P por roldana e dividir o total por n. Qual força resulta no tirador?",
       "statements": null,
       "options": [
         {
           "key": "A",
-          "text": "100 kgf"
+          "text": "125 kgf"
         },
         {
           "key": "B",
-          "text": "120 kgf"
+          "text": "150 kgf"
         },
         {
           "key": "C",
-          "text": "140 kgf"
+          "text": "175 kgf"
         },
         {
           "key": "D",
-          "text": "160 kgf"
+          "text": "200 kgf"
         },
         {
           "key": "E",
-          "text": "200 kgf"
+          "text": "250 kgf"
         }
       ],
       "correct_answer": "C",
-      "explanation": "O peso equivalente fica acrescido de 40%: F=1,4×400/4=140 kgf. É o próprio exemplo apresentado no art. 9.16.",
+      "explanation": "A alternativa C é a correta. As quatro parcelas de 0,10 × 500 somam 200 kgf;F = (500 + 200)/4 = 175 kgf. Sem as resistências, o valor ideal seria 125 kgf; a aproximação aumenta a força em 40%. Os 500 kgf são dado didático novo, não transcrição do exemplo de 400 da obra. A soma de parcelas referidas a P não equivale a aplicar sucessivamente um fator 0,90 a cada tensão, nem constitui certificação de capacidade segura de içamento.",
       "distractor_analysis": {
-        "A": "INCORRETA — A alternativa diverge da definição, relação ou procedimento apresentado no Art. 9.16.",
-        "B": "INCORRETA — A alternativa diverge da definição, relação ou procedimento apresentado no Art. 9.16.",
-        "C": "CORRETA — O peso equivalente fica acrescido de 40%: F=1,4×400/4=140 kgf. É o próprio exemplo apresentado no art. 9.16.",
-        "D": "INCORRETA — A alternativa diverge da definição, relação ou procedimento apresentado no Art. 9.16.",
-        "E": "INCORRETA — A alternativa diverge da definição, relação ou procedimento apresentado no Art. 9.16."
+        "A": "500/4 = 125 kgf omite todas as resistências passivas.",
+        "B": "1,20 × 500/4 = 150 kgf conta somente duas parcelas de 10%, não quatro.",
+        "C": "(1 + 4 × 0,10) × 500/4 = 175 kgf aplica a hipótese fornecida.",
+        "D": "1,60 × 500/4 = 200 kgf corresponderia a seis parcelas de 10%, não às quatro informadas.",
+        "E": "2 × 500/4 = 250 kgf duplica o esforço ideal; a hipótese aumenta-o em 40%, não 100%."
       },
       "active": true,
       "validation_status": "approved",
@@ -134882,15 +134908,17 @@
         "topic_title": "Rendimento de um aparelho de laborar"
       },
       "source": {
-        "author": "Maurílio M. Fonseca",
-        "title": "Arte Naval - Volume 2 - 8ª edição",
-        "edition": "8ª edição, 2019",
-        "locator": "Capítulo 9, art. 9.16 — Rendimento de um aparelho de laborar; p. 673–675",
-        "printed_page": "673–675",
-        "pdf_page": null,
+        "author": "FONSECA, Maurílio M.",
+        "title": "Arte Naval, v. 2",
+        "edition": "8. ed., 2019",
+        "locator": "cap. 9, item 9.16, pp. 673–675/PDF 34–36; contexto 9.15.e p. 672/PDF 33",
+        "printed_page": 674,
+        "pdf_page": 35,
         "drive_file_name": "Arte Naval - Volume 2 - 8ª edição.pdf",
         "drive_file_id": "1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec",
-        "drive_url": "https://drive.google.com/file/d/1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec/view"
+        "drive_url": "https://drive.google.com/file/d/1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec/view",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+        "scope_note": "Definição e modelo aproximado da edição2019; forças expressas em kgf nos dados didáticos. Não é taxa universal de atrito nem dimensionamento/certificação de içamento."
       },
       "tags": [
         "pscpp",
@@ -134923,11 +134951,11 @@
       "topic_code": "AN-C09-916",
       "topic": "Rendimento de um aparelho de laborar",
       "subtopic": "Art. 9.16",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "PSCPP",
       "pscpp_format": "true_false",
-      "cognitive_level": 4,
-      "question": "Julgue:\nI. A multiplicação teórica é reduzida na prática pela rigidez do cabo e principalmente pelos atritos.\nII. Para cálculo aproximado a bordo, pode-se avaliar a resistência passiva em 10% do peso por roldana em que o cabo labora.\nIII. Para cabo usado e seco, a obra admite aproximadamente 8% por roldana.\nIV. Para qualquer tipo de aparelho, o rendimento tende a aumentar à medida que cresce o número de roldanas.",
+      "cognitive_level": 2,
+      "question": "Segundo Fonseca, julgue as proposições sobre rendimento e estimativas de resistência passiva em aparelhos de laborar e escolha a sequência V/F.\nI) A rigidez do cabo e os atritos reduzem a multiplicação prática em relação à consideração teórica sem perdas.\nII) No cálculo aproximado apresentado para uso a bordo, as resistências passivas podem ser avaliadas em 10% do peso por roldana em que o cabo labora.\nIII) Para cabo usado e seco, o texto admite uma estimativa de 8% do peso por roldana.\nIV) Mantida a estimativa de 10% do peso por roldana, aumentar o número de roldanas em que o cabo labora eleva o rendimento calculado.",
       "statements": null,
       "options": [
         {
@@ -134952,13 +134980,13 @@
         }
       ],
       "correct_answer": "A",
-      "explanation": "I, II e III estão corretas. A IV é falsa: a obra afirma que o rendimento diminui com o aumento do número de roldanas.",
+      "explanation": "A alternativa A apresenta V, V, V, F. I descreve as perdas;II e III são estimativas distintas e condicionadas da obra, não taxas universais. No modelo aproximado F = P(1 + 0,10m)/n, o rendimento é R = 1/(1 + 0,10m): aumentar m reduz esse rendimento, tornando IV falsa. Essa derivação é restrita ao modelo, sem comparação universal entre equipamentos de construção diferente.",
       "distractor_analysis": {
-        "A": "CORRETA — I, II e III estão corretas. A IV é falsa: a obra afirma que o rendimento diminui com o aumento do número de roldanas.",
-        "B": "INCORRETA — A alternativa diverge da definição, relação ou procedimento apresentado no Art. 9.16.",
-        "C": "INCORRETA — A alternativa diverge da definição, relação ou procedimento apresentado no Art. 9.16.",
-        "D": "INCORRETA — A alternativa diverge da definição, relação ou procedimento apresentado no Art. 9.16.",
-        "E": "INCORRETA — A alternativa diverge da definição, relação ou procedimento apresentado no Art. 9.16."
+        "A": "V/V/V/F coincide com a definição e as estimativas condicionadas do texto.",
+        "B": "II é verdadeira como estimativa aproximada; esta opção a classifica falsamente.",
+        "C": "I é verdadeira e IV é falsa; esta opção inverte ambas.",
+        "D": "III é verdadeira no caso de cabo usado e seco;IV é falsa no modelo mantido.",
+        "E": "I e II são verdadeiras; esta opção erra ambos os julgamentos."
       },
       "active": true,
       "validation_status": "approved",
@@ -134985,15 +135013,17 @@
         "topic_title": "Rendimento de um aparelho de laborar"
       },
       "source": {
-        "author": "Maurílio M. Fonseca",
-        "title": "Arte Naval - Volume 2 - 8ª edição",
-        "edition": "8ª edição, 2019",
-        "locator": "Capítulo 9, art. 9.16 — Rendimento de um aparelho de laborar; p. 673–675",
-        "printed_page": "673–675",
-        "pdf_page": null,
+        "author": "FONSECA, Maurílio M.",
+        "title": "Arte Naval, v. 2",
+        "edition": "8. ed., 2019",
+        "locator": "cap. 9, item 9.16, pp. 673–675/PDF 34–36; contexto 9.15.e p. 672/PDF 33",
+        "printed_page": 674,
+        "pdf_page": 35,
         "drive_file_name": "Arte Naval - Volume 2 - 8ª edição.pdf",
         "drive_file_id": "1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec",
-        "drive_url": "https://drive.google.com/file/d/1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec/view"
+        "drive_url": "https://drive.google.com/file/d/1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec/view",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+        "scope_note": "Definição e modelo aproximado da edição2019; forças expressas em kgf nos dados didáticos. Não é taxa universal de atrito nem dimensionamento/certificação de içamento."
       },
       "tags": [
         "pscpp",

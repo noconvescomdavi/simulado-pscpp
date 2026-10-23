@@ -1499,3 +1499,19 @@ Falhas reais mantidas:test-notebook-complete-stems exit1 emANV-0142;validate-edi
 Acumulado115 IDs corrigidos distintos,118 conferências bibliográficas parciais,zero aprovações finais. Triagem194 sem proposições,77 localizadores;59 candidatos corrigidos,3 falsos positivos anteriores sem mudança,56 correções fora dessa triagem.27.435 físicos,14.086ocorrências(12.102cadernos+1.984PSCPP),13.715IDs únicos preservados. Próxima independenteANV-0223,rendimento do aparelho,Fonseca v2 9.16. Pares0142/0840 e0176/0874 com fonte pendente,sem recontagem de buscas. Todos8gates pendentes/falhos,merge_permitted=false. Sem merge,deploy ou mutação de produção/usuários.
 
 Fonte e tabela individual:REVISAO_ARTE_NAVAL_LOTE_050.md.
+
+## Lote051
+
+Build completo isolado final com insumos estáveis `npm run build`:exit0,compilação,lint/tipos,101 páginas e rotas confirmados. Todos os arquivos rastreados fora de docs,incluindo regressão,iguais byte a byte à cópia testada;seis artefatos gerados idênticos. Após acabamento de espaçamento das explicações,geração/testes e build foram repetidos com os hashes finais;resultados intermediários não validam a árvore final. O antigo ENOTEMPTY da árvore original não é declarado resolvido.
+
+Passaram geração PSCPP/cadernos/catálogo/flashcards;validate-runtime-question-banks,validate-pscpp-exam-selection,test-question-source-provenance,validate-runtime-question-catalog,test-pscpp-audit-anv0005,audit-pscpp-runtime-triage/inventory e npm run check:pscpp-bank. Node com loader pscpp-json-loader. Regressão antes/depois do build:120 deltas exatos acumulados,11.982cadernos e todas1.984PSCPP intactos contra baseline congelada;composição ativa preservada;260 proposições renderizadas e275 opções diretas preservadas.
+
+Três contratos de cálculo verificam unidadeskgf,coordenadas do enunciado e equações;0621/M1 também conferem o valor exibido da resposta e R em(0,1];M2 confere força e hipótese de quatro roldanas. ContratoV/F preserva quatro julgamentos por opção,sequências distintas e única correspondência com a chave. Nenhuma asserção anterior foi relaxada;apenas IDs documentados e verificações adicionais. Vetores manuais e testes não substituem verdade bibliográfica ou rechecagem independente. Regime de três modelos,formatos calculation/calculation/true_false e flags legadas preservados,sem aprovação editorial final.
+
+Entre050 e051,somente0223/0621/AN-C09-916-M1/M2/M3 mudam no principal e inventário efetivo. Objetos principais integralmente iguais ao runtime;todos120 hashes corrigidos correspondem ao inventário. Hashes antes/depois em CORRECOES_RUNTIME.json/CONFERENCIAS_BIBLIOGRAFICAS.jsonl. Metadados de topo,0422 e demais objetos/restaurações intactos. Sem ativação ou nova quarentena. Matriz exata100=25/25/10/10/10/10/10 preservada.
+
+Falhas reais mantidas:test-notebook-complete-stems exit1 emANV-0142;validate-editorial-runtime exit1 com77 localizadores;validate-pscpp-editorial-evidence exit2,zero aprovadas/14.086pendentes. Gate regenerado após inventário,todos hashes conferidos,REVISOES_EDITORIAIS.jsonl inalterado. Programa/edital,revisão semântica global,consumidores/offline e consolidação normativa completa pendentes.
+
+Acumulado120 IDs corrigidos distintos,123 conferências bibliográficas parciais,zero aprovações finais. Triagem193 sem proposições,77 localizadores;60 candidatos corrigidos,3 falsos positivos anteriores sem mudança,60 correções fora dessa triagem.27.435 físicos,14.086ocorrências(12.102cadernos+1.984PSCPP),13.715IDs únicos preservados. Próxima independenteANV-0227,atracação com corrente pela proa,Fonseca v2 12.28. Pares0142/0840 e0176/0874 com fonte pendente,sem recontagem de buscas. Todos8gates pendentes/falhos,merge_permitted=false. Sem merge,deploy ou mutação de produção/usuários.
+
+Fonte e tabela individual:REVISAO_ARTE_NAVAL_LOTE_051.md.

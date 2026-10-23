@@ -496,3 +496,7 @@ Corrigidas95→98 IDs distintos;conferências98→101;aprovações0→0. Triagem
 ## Lote050
 
 110→115 IDs corrigidos distintos;113→118 conferências bibliográficas parciais;zero aprovações finais. Sem proposições195→194;localizadores77→77. Regressão115 deltas,252 proposições renderizadas,260 opções diretas,11.987cadernos e1.984PSCPP intactos. Só0221/0619 e3modelosAN-C10-1014 mudam desde049;A/D/E/B/A mantidos,formatosB/A/B/A/C,L2/L3/L2/L1/L2 propostos. RegimeM1/M2/M3,população ativa e matriz100 preservados. Sem incrementos para0010/0420/0907. Ver relatório050.
+
+## Lote051
+
+115→120 IDs corrigidos distintos;118→123 conferências bibliográficas parciais;zero aprovações finais. Sem proposições194→193;localizadores77→77. Regressão120 deltas,260 proposições renderizadas,275 opções diretas,11.982cadernos e1.984PSCPP intactos. Só0223/0621 e3modelosAN-C09-916 mudam desde050;C/A/B/C/A mantidos,formatosB/A/A/A/C,L2/L3/L3/L3/L2 propostos. Modelos calculation/calculation/VF,população e matriz100 preservados. Casos novos75%,0,80 e175kgf com3contratos de cálculo.Sem incremento para0422;ver relatório051.
