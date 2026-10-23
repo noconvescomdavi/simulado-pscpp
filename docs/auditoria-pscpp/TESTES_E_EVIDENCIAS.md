@@ -1441,3 +1441,16 @@ Entre o checkpoint045 e046, o inventário efetivo muda somente0204/0602. Seus ob
 Falhas reais mantidas:test-notebook-complete-stems exit1 em ANV-0142;validate-editorial-runtime exit1 com77 localizadores;validate-pscpp-editorial-evidence exit2,zero aprovadas/14.086 pendentes. Gate regenerado depois do inventário,com todos os hashes conferidos. REVISOES_EDITORIAIS.jsonl permanece inalterado. Testes estruturais e releitura desta sessão não substituem revisão independente,aderência oficial ao programa/edital e validação semântica global.
 
 Tabela individual,fonte,limites e achados dos modelos:REVISAO_ARTE_NAVAL_LOTE_046.md.
+
+
+## Lote047
+
+Build completo isolado `npm run build`:exit0,compilação,lint/tipos,101 páginas e rotas confirmados. Todos os arquivos rastreados fora de docs,incluindo regressão,iguais byte a byte à cópia testada;seis artefatos gerados idênticos. O incidente anterior ENOTEMPTY da árvore original não é declarado resolvido.
+
+Passaram geração PSCPP/cadernos/catálogo/flashcards;validate-runtime-question-banks,validate-pscpp-exam-selection,test-question-source-provenance,validate-runtime-question-catalog,test-pscpp-audit-anv0005,audit-pscpp-runtime-triage/inventory e npm run check:pscpp-bank. Node com loader pscpp-json-loader. Regressão antes/depois do build:105 deltas exatos acumulados contra baseline congelada;11.997 cadernos e todas1.984 PSCPP intactos;composição ativa preservada;232 proposições renderizadas e235 opções diretas preservadas. Nenhuma asserção foi relaxada;apenas IDs documentados acrescidos aos contratos de fonte/direta.
+
+Entre046 e047,somente0213/0611 mudam no inventário efetivo e arquivo principal. Seus objetos principais são integralmente iguais ao runtime final. Todos105 hashes corrigidos correspondem ao inventário;hashes antes/depois em CORRECOES_RUNTIME.json/CONFERENCIAS_BIBLIOGRAFICAS.jsonl. Metadados de topo,0036/0412,restaurações,modelos e demais objetos intactos. Sem ativação ou nova quarentena. Matriz exata100=25/25/10/10/10/10/10 preservada.
+
+Falhas reais mantidas:test-notebook-complete-stems exit1ANV-0142;validate-editorial-runtime exit1 com77 localizadores;validate-pscpp-editorial-evidence exit2,zero aprovadas/14.086 pendentes. Gate regenerado após inventário e todos os hashes conferidos. REVISOES_EDITORIAIS.jsonl inalterado. Testes estruturais não substituem revisão editorial independente,inventário completo de emendas,vigência/aplicabilidade brasileira,programa/edital ou prevenção semântica global.
+
+Fonte,escopo normativo e tabela individual:REVISAO_ARTE_NAVAL_LOTE_047.md e EVIDENCIA_NORMATIVA_047.json.
