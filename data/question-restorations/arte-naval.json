@@ -11269,9 +11269,9 @@
       "module": "Transmissões do governo",
       "topic_code": "old-078",
       "topic": "transmissão mecânica rígida",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "De acordo com a bibliografia de Arte Naval, analise as afirmativas sobre “transmissão mecânica rígida”, identifique as verdadeiras e assinale a opção correta:\nI) A bibliografia atribui a esse item a seguinte característica: o receptor acompanha velocidade e deslocamento angular do transmissor.\nII) “transmissão mecânica rígida” designa ligação feita por vergalhões ou eixos.\nIII) A bibliografia atribui a esse item a seguinte característica: usa juntas universais em pequenas mudanças de direção e engrenagens cônicas nas maiores.\nIV) “transmissão mecânica rígida” designa conjunto hidráulico transmissor-receptor que leva a ordem da roda ao servomotor.",
+      "question": "Sobre a transmissão mecânica rígida entre a roda do leme e o servomotor descrita por Fonseca, analise as proposições e escolha o conjunto completo das corretas.\nI) O comando é levado por condutores elétricos a um motor receptor, cujo rotor acompanha o movimento do transmissor.\nII) A ligação utiliza vergalhões de ferro nas embarcações miúdas ou eixos nas maiores.\nIII) As pequenas mudanças de direção dos eixos empregam juntas universais; as maiores, engrenagens cônicas.\nIV) A ordem é transmitida por pressão líquida em tubulações, com um telemotor hidráulico.",
       "options": [
         {
           "key": "A",
@@ -11295,12 +11295,15 @@
         }
       ],
       "correct_answer": "E",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “transmissão mecânica rígida”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "Somente II e III são verdadeiras (alternativa E). No art. 11.5.a, p. 760, Fonseca descreve vergalhões de ferro ou eixos e distingue juntas universais tipo Cardan para pequenas mudanças de direção de engrenagens cônicas para as maiores. I descreve a transmissão elétrica por motores selsyn (11.5.c, pp. 760–761); IV descreve a transmissão hidráulica com telemotor (11.5.b e 11.6), não a mecânica rígida.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, seção A, item 11.5.a"
+        "locator": "cap. 11, art. 11.5.a, p. 760; contrastes 11.5.b–c e 11.6, pp. 760–761",
+        "printed_page": 760,
+        "pdf_page": 121,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Transmissões do governo",
@@ -11320,7 +11323,7 @@
           "title": "Aparelho de governo, mastreação e aparelhos de carga",
           "label": "Capítulo 11 - Aparelho de governo, mastreação e aparelhos de carga"
         },
-        "section": "cap. 11, seção A, item 11.5.a",
+        "section": "cap. 11, art. 11.5.a, p. 760; contrastes 11.5.b–c e 11.6, pp. 760–761",
         "module": "Transmissões do governo",
         "topic": {
           "id": "old-078",
@@ -11340,6 +11343,14 @@
           "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
           "reason": "restored-before-legacy-generators"
         }
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "I e IV são falsas: correspondem, respectivamente, às transmissões elétrica e hidráulica; faltam II e III.",
+        "B": "III é verdadeira, mas I descreve o par elétrico transmissor-receptor; falta II.",
+        "C": "III é verdadeira, mas IV introduz pressão líquida e telemotor; falta II.",
+        "D": "II é verdadeira, mas IV pertence à transmissão hidráulica; falta III.",
+        "E": "II e III formam o único conjunto completo: elementos rígidos e mudanças de direção por juntas universais ou engrenagens cônicas (11.5.a, p. 760)."
       }
     },
     {

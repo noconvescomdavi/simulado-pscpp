@@ -376,3 +376,14 @@ Regressão: 40 combinadas/160 proposições HTML, 24 diretas/120 opções;
 12.038 outros cadernos e 1.984 PSCPP inalterados. Matriz de 100 em
 25/25/10/10/10/10/10 preservada. Nenhum ID ativado/removido. Diagnóstico
 de 0142/0840 acrescenta zero correções, zero checks primários e zero aprovações.
+
+
+## Lote033
+
+Duas novas correções distintas (ANV-0145/0843); acumulado66. Conferências
+primárias parciais67→69; aprovações finais0. Sem proposições215→214;
+localizadores77→77. Cadernos12.102 e PSCPP1.984 preservados,14.086 ocorrências/
+13.715 IDs e27.435 físicos. Formatos B/A, keys E/C. 0145 Difícil→Médio/L2;
+0843 Médio/L2. Propostas editoriais sem calibração aprovada. Nenhum modelo
+criado/removido. Mesma competência, coexistência em uma prova ainda impedimento
+semântico a resolver globalmente; nenhuma alegação de deduplicação concluída.

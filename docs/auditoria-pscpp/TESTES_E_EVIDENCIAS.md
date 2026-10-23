@@ -1049,3 +1049,38 @@ explicitamente registrada. Nenhum normalizador/filtro/gate relaxado; modelos
 e demais achados anteriores mantidos com seus limites. Rechecagem independente,
 fonte, programa/edital oficial, estados, cobertura, semântica e offline/produção
 pendentes. Sem merge/deploy ou dados de usuários.
+
+
+## Lote 033 — resultados efetivos
+
+- Regressão antes/depois do build: exit0; 66 deltas exatos acumulados,
+  fonte/runtime idênticos; 164 proposições renderizadas e 125 opções diretas.
+  12.036 outros cadernos e 1.984 PSCPP inalterados. Só +0843 no contrato direto.
+- Runtime, seleção/matriz fixa 100 em 25/25/10/10/10/10/10, proveniência/
+  fingerprints e catálogo: exit0. Catálogo/flashcards regenerados; check:pscpp-bank exit0.
+- Triagem: exit0, 214 candidatos sem proposições e77 localizadores.
+  test-notebook-complete-stems exit1 em ANV-0142; validate-editorial-runtime
+  exit1 nos77 localizadores. Nenhum teste relaxado ou suprimido.
+- Inventário exit0: 27.435 físicos,14.086 ocorrências,13.715 IDs. Todos os66
+  hashes corrigidos conferidos. Gate editorial posterior exit2: zero aceitos/
+  14.086 pendentes; merge_permitted=false.
+- Diff físico: somente0145 na restauração e0843 no principal. Principal0145
+  sobre gualdropes, par0142/0840 e demais registros/campos intactos. Nenhuma
+  nova ativação ou remoção. Nenhum dos dois IDs consta de notebook-complete-stems.
+- auditQuestion sem achados, política ativa e transformações preservando
+  integralmente os objetos antes da geração; igualdade completa depois.
+- Build completo em cópia isolada /tmp: retry exit0, compilação/lint/types,
+  geração101/101 e tabela de rotas explicitamente conferidos. Fontes/data/config
+  rastreados fora dos relatórios idênticos, exceto o script de regressão
+  ampliado após a cópia e executado no checkout. Seis artefatos gerados
+  idênticos byte a byte. Primeiro comando retornou0,
+  mas log persistido terminava no catálogo sem marcadores finais; não usado
+  para certificar build. Lançamento redundante de terceira tentativa encerrado
+  durante geração antes da compilação; aprovação técnica usa o retry completo.
+  Avisos npm http-proxy/autoprefixer/cache Webpack preservados. Incidente
+  ENOTEMPTY do workspace em lote019 não declarado resolvido.
+
+Scripts Node com --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs.
+Registros locais/logs preservados em audit-private/lote033; livros/imagens privados.
+Rechecagem independente, programa/edital, cobertura, estados, semântica global e
+offline/produção pendentes. Sem merge/deploy/dados de usuários.

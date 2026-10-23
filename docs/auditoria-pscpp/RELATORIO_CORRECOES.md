@@ -28,7 +28,7 @@ e estabilidade quando apenas um arquivo alheio muda.
 
 ## Questões
 
-Questões reescritas acumuladas: 15 (ANV-0005/0007/0016/0020/0021/0023/0025/0037/0038/0039/0041/0043/0044/0045/0046); substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
+Acumulado vigente após lote 033: **66 IDs corrigidos distintos**, 69 conferências bibliográficas parciais, zero aprovações finais. Relação completa e sem recontagem em CHECKPOINT.json e CORRECOES_RUNTIME.json; números dos parágrafos de lotes abaixo são históricos. Substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
 Lote 002: `REVISAO_ARTE_NAVAL_LOTE_002.md`, fonte primária arts. 8.2/8.14/8.19–8.20.
 Corrigidas as restaurações prevalentes, mantendo conceitos efetivamente servidos,
 IDs, opções e gabaritos. Dezesseis proposições renderizadas no teste de regressão.
@@ -390,3 +390,20 @@ competência. Próxima candidata independente 0145; falha geral continua 0142.
 Manifesto e inventário de fontes anotados, sem certificar integralmente o livro.
 Rechecagem independente, fonte pendente, versão oficial, estados, semântica
 e offline/produção pendentes. Sem merge/deploy/dados de usuários.
+
+
+## Lote 033 — relatório individual
+
+| ID | Defeito encontrado | Correção concreta | Fonte verificada | Gabarito |
+|---|---|---|---|---|
+| ANV-0145 | A restauração prevalente tinha redação genérica e afirmações próximas de definições literais. O reformulador answer-leak-v1 removia as quatro proposições, deixando opções por conjuntos sem os itens a julgar. | Reescritas I–IV: contraste elétrico, elementos rígidos, juntas/engrenagens e contraste hidráulico. Explicação e cinco justificativas específicas; página impressa/PDF e hash adicionados. Fonte e runtime agora contêm o mesmo objeto, sem reformulação destrutiva. | v.2,11.5.a p.760/PDF121;11.5.b–c e11.6 pp.760–761/PDF121–122 | E mantido; F/V/V/F, somente II e III |
+| ANV-0843 | O comando de identificação por definição sofria a mesma reformulação para pergunta bibliográfica genérica; alternativas curtas não testavam de forma homogênea a distinção de elementos e mudanças de direção. | Enunciado explícito sobre transmissão rígida; cinco opções reescritas para contrastar elementos e recursos de transmissão. Explicação e cinco justificativas, referência exata e hash adicionados. Objeto integral preservado no runtime. | Mesmos localizadores | C mantido |
+
+Ambas são correções primárias parciais, não aprovações editoriais finais.
+Propostas L2/Médio, sem alegação de calibração psicométrica ou histórica.
+ANV-0145 antes rotulada Difícil; ajustada a Médio pela compreensão de distinções.
+ANV-0843 mantém Médio. Formatos B/A, IDs, conceitos, filtros e opções A–E
+preservados. Não há cálculos nem figura ausente necessária às respostas.
+
+
+Detalhes de julgamento, precedência e limites em REVISAO_ARTE_NAVAL_LOTE_033.md. Acumulado: 66 correções, 69 conferências parciais, zero aprovações finais.
