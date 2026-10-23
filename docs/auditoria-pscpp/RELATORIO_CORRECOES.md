@@ -28,7 +28,7 @@ e estabilidade quando apenas um arquivo alheio muda.
 
 ## Questões
 
-Acumulado vigente após lote 037: **80 IDs corrigidos distintos**, 83 conferências bibliográficas parciais, zero aprovações finais. Relação completa e sem recontagem em CHECKPOINT.json e CORRECOES_RUNTIME.json; números dos parágrafos de lotes abaixo são históricos. Substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
+Acumulado vigente após lote 038: **82 IDs corrigidos distintos**, 85 conferências bibliográficas parciais, zero aprovações finais. Relação completa e sem recontagem em CHECKPOINT.json e CORRECOES_RUNTIME.json; números dos parágrafos de lotes abaixo são históricos. Substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
 Lote 002: `REVISAO_ARTE_NAVAL_LOTE_002.md`, fonte primária arts. 8.2/8.14/8.19–8.20.
 Corrigidas as restaurações prevalentes, mantendo conceitos efetivamente servidos,
 IDs, opções e gabaritos. Dezesseis proposições renderizadas no teste de regressão.
@@ -486,3 +486,13 @@ mantido em988 para filtros, sem chamar nomenclatura de aplicação operacional.
 
 
 Julgamentos, fontes e limites em REVISAO_ARTE_NAVAL_LOTE_037.md. Acumulado:80 correções/83 conferências parciais/zero aprovações finais.
+
+
+## Lote 038 — dois lemes
+
+| ID | Defeito encontrado | Correção concreta | Fonte conferida | Gabarito |
+|---|---|---|---|---|
+| ANV-0165 | O carregamento substituía o enunciado por comando genérico e apagava I–IV; as proposições confundiam arranjo dos lemes, máquinas em sentidos opostos e rotação das pás. | Reescritas quatro proposições sobre posição dos lemes, atuação da descarga e predominância no caso adiante/atrás; explicação e cinco justificativas; referência com páginas/hash. | Arte Naval v.2,8ª ed.,12.16,pp.815–816/PDF176–177,figs.12-9/12-10 | E mantido;F/V/V/F |
+| ANV-0863 | Definição virava comando bibliográfico genérico; alternativas misturavam outros conceitos de propulsão. | Criado caso qualitativo com cinco comparações sobre a ação dos lemes; enunciado, alternativas, explicação e cinco justificativas; referência exata. | Mesmos localizadores, texto e imagem | C mantido |
+
+Fonte e figuras conferidas em texto/imagem; dez justificativas. Correções parciais, zero aprovações finais. Build completo e regressão passaram; três gates de testes gerais mantêm as falhas conhecidas. Acumulado82/85/0;triagem207/77. Detalhes, hashes e limites em REVISAO_ARTE_NAVAL_LOTE_038.md. Sem merge/deploy.

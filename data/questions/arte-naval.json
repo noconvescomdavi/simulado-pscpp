@@ -14300,9 +14300,9 @@
       "module": "Governo de navio de dois hélices",
       "topic_code": "old-102",
       "topic": "navio de dois lemes",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "Sobre “navio de dois lemes”, analise as afirmativas a seguir e assinale a alternativa que apresenta apenas as corretas:\nI. “navio de dois lemes” designa uso de um propulsor adiante e outro atrás.\nII. “navio de dois lemes” designa configuração que posiciona uma porta de leme na descarga de cada hélice.\nIII. Em relação a “navio de dois lemes”, considere: permite aproveitar individualmente o fluxo dos propulsores para ampliar o controle.\nIV. Em relação a “navio de dois lemes”, considere: apresenta comportamento transversal diferente do conjunto cujas pás superiores giram para fora.",
+      "question": "Em um navio com dois hélices e dois lemes, instalados diretamente atrás dos respectivos hélices, analise as proposições e escolha o conjunto completo das corretas:\nI) A descarga dos hélices não contribui para a ação dos lemes, pois somente o movimento do casco produz escoamento sobre eles.\nII) A instalação de cada leme diretamente atrás de um hélice permite que sua corrente de descarga atue sobre o leme.\nIII) Na situação descrita pela fonte, com uma máquina adiante e outra atrás, o leme situado atrás do hélice que dá adiante exerce o efeito predominante.\nIV) Nessa mesma situação, as forças laterais dos dois lemes são necessariamente iguais e se anulam.",
       "options": [
         {
           "key": "A",
@@ -14326,12 +14326,15 @@
         }
       ],
       "correct_answer": "E",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “navio de dois lemes”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "II e III são verdadeiras. A descarga de cada hélice atua diretamente sobre o leme colocado a ré dele. Com uma máquina adiante e outra atrás, o texto descreve a predominância da força lateral do leme atrás do hélice que dá adiante sobre a oposição do outro. I nega a contribuição da descarga; IV impõe igualdade e anulação que a fonte não descreve. A comparação é qualitativa e limitada ao arranjo apresentado, sem garantir um resultado universal para qualquer navio ou condição.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção B, item 12.16"
+        "locator": "cap. 12, seção B, item 12.16, pp. 815–816/PDF 176–177, figs. 12-9 e 12-10",
+        "printed_page": 815,
+        "pdf_page": 176,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Governo de navio de dois hélices",
@@ -14365,7 +14368,15 @@
         "chapter_id": "fonseca-arte-v1::ch12",
         "topic_id": "old-102",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: II é verdadeira, mas IV é falsa; a fonte descreve predominância, não igualdade das forças laterais.",
+        "B": "Incorreta: III é verdadeira, mas IV é falsa; falta II, que descreve a atuação da descarga.",
+        "C": "Incorreta: I é falsa porque a descarga contribui para a ação do leme; III é verdadeira.",
+        "D": "Incorreta: I e IV são falsas; negam a contribuição da descarga e impõem cancelamento indevido.",
+        "E": "Correta: somente II e III correspondem ao posicionamento dos lemes e à predominância descritos na fonte."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0166",
@@ -65554,36 +65565,39 @@
       "topic": "navio de dois lemes",
       "difficulty": "Médio",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “navio de dois lemes”.",
+      "question": "Considere dois lemes instalados diretamente atrás dos respectivos hélices. Na situação descrita em Arte Naval, uma máquina dá adiante e a outra dá atrás. Qual comparação entre as ações dos lemes corresponde ao texto?",
       "options": [
         {
           "key": "A",
-          "text": "uso de um propulsor adiante e outro atrás"
+          "text": "As forças laterais dos dois lemes têm necessariamente o mesmo módulo e se anulam."
         },
         {
           "key": "B",
-          "text": "arranjo em que o topo das pás gira afastando-se do plano diametral na marcha a vante"
+          "text": "O leme atrás do hélice que dá atrás exerce a força lateral predominante."
         },
         {
           "key": "C",
-          "text": "configuração que posiciona uma porta de leme na descarga de cada hélice"
+          "text": "O leme atrás do hélice que dá adiante exerce força lateral predominante sobre a oposição do outro leme."
         },
         {
           "key": "D",
-          "text": "propulsor cujo ângulo das pás varia para alterar módulo e sentido do empuxo"
+          "text": "A descarga dos hélices não contribui para a ação de nenhum dos lemes."
         },
         {
           "key": "E",
-          "text": "arranjo em que o topo das pás gira em direção ao plano diametral na marcha a vante"
+          "text": "O efeito de cada leme depende exclusivamente do movimento do casco, sem influência da máquina correspondente."
         }
       ],
       "correct_answer": "C",
-      "explanation": "A opção correta apresenta a definição técnica de “navio de dois lemes”: configuração que posiciona uma porta de leme na descarga de cada hélice; permite aproveitar individualmente o fluxo dos propulsores para ampliar o controle.",
+      "explanation": "Para o arranjo e a situação descritos, a fonte atribui maior efeito ao leme atrás do hélice que dá adiante: sua força lateral predomina sobre a oposição do outro leme. O posicionamento diretamente a ré dos hélices permite a atuação das correntes de descarga. Não se afirma igualdade de forças, predominância do hélice atrás nem independência das máquinas. Não se extrapola essa comparação qualitativa para uma garantia de manobra em qualquer navio.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção B, item 12.16"
+        "locator": "cap. 12, seção B, item 12.16, pp. 815–816/PDF 176–177, figs. 12-9 e 12-10",
+        "printed_page": 815,
+        "pdf_page": 176,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Governo de navio de dois hélices",
@@ -65617,7 +65631,15 @@
         "chapter_id": "fonseca-arte-v1::ch12",
         "topic_id": "old-102",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: a fonte descreve forças de efeitos desiguais, com predominância de uma delas, não cancelamento necessário.",
+        "B": "Incorreta: inverte a predominância atribuída ao leme atrás do hélice que dá adiante.",
+        "C": "Correta: reproduz a comparação qualitativa da força lateral apresentada no item 12.16.",
+        "D": "Incorreta: a descarga atua diretamente nos lemes posicionados atrás dos hélices.",
+        "E": "Incorreta: exclui a contribuição da descarga e sua dependência da condição da máquina."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0864",

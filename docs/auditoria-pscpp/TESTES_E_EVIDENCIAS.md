@@ -1242,3 +1242,28 @@ não confundida com técnica universal de largada. Logs/imagens privados em
 audit-private/lote037;nenhum livro integral publicado. Rechecagem independente,
 programa/edital,cobertura,estados,semântica e offline/produção pendentes.
 Sem merge/deploy em produção ou usuários alterados.
+
+
+## Lote038
+
+Build completo isolado `npm run build`: exit0; marcadores compile/lint/types/101 páginas/rotas presentes. Todos os arquivos rastreados fora de docs coincidem byte a byte com a cópia testada, incluindo o script de regressão. Seis artefatos gerados idênticos. O erro anterior ENOTEMPTY da árvore de trabalho não é declarado resolvido. Dois registros físicos apenas alterados, metadados de topo preservados; restaurações e0364 inalteradas. Inventário gzip conferido contra todos os82 hashes corrigidos.
+
+Com Node e loader pscpp-json-loader: geração de bancos, catálogo e flashcards; validate-runtime-question-banks; validate-pscpp-exam-selection; test-question-source-provenance; validate-runtime-question-catalog; audit-pscpp-runtime-triage/inventory; regressão test-pscpp-audit-anv0005 passaram. `npm run check:pscpp-bank` passou. Regressão repetida após build passou. Matriz100 exata preservada.
+
+Falhas reais mantidas: test-notebook-complete-stems exit1 em ANV-0142;validate-editorial-runtime exit1 com77 localizadores;validate-pscpp-editorial-evidence exit2,zero evidências aprovadas/14086 pendentes. Build e testes estruturais não substituem aprovação individual. Sem rechecagem independente concluída, conformidade completa ao edital ou deduplicação semântica global.
+
+- generate-runtime-question-catalog.mjs:exit0
+- generate-runtime-flashcard-decks.mjs:exit0
+- validate-runtime-question-banks.mjs:exit0
+- validate-pscpp-exam-selection.mjs:exit0
+- test-question-source-provenance.mjs:exit0
+- validate-runtime-question-catalog.mjs:exit0
+- test-notebook-complete-stems.mjs:exit1
+- validate-editorial-runtime.mjs:exit1
+- audit-pscpp-runtime-triage.mjs:exit0
+- audit-pscpp-runtime-inventory.mjs:exit0
+- validate-pscpp-editorial-evidence.mjs:exit2
+- test-pscpp-audit-anv0005.mjs:exit0
+- npm run check:pscpp-bank:exit0
+
+HEAD base 43c7a5f8646e14cfc421186db38e03d98c7e717e; source PDFs hash verified; report038 has individual table, decisions and limits. Before/after hashes persistent in ledger. All82 inventory hashes matched. No final editorial approval.
