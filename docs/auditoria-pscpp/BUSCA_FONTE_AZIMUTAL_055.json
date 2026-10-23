@@ -1,0 +1,67 @@
+{
+  "checked_at_utc": "2026-10-23T22:56:50.796007+00:00",
+  "question_ids": [
+    "ANV-0253",
+    "ANV-0651"
+  ],
+  "status": "declared_source_body_mismatch_not_approved_not_irrecoverable",
+  "declared_source": {
+    "title": "Arte Naval,v.2",
+    "edition": "8ed2019",
+    "locator": "11.12",
+    "drive_id": "1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec",
+    "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
+  },
+  "observations": [
+    {
+      "pdf_page": 11,
+      "scope": "fresh image/text check",
+      "finding": "Contents lists11.12 azimuth propulsion steering."
+    },
+    {
+      "printed_page": 776,
+      "pdf_page": 137,
+      "scope": "fresh image/text check",
+      "finding": "Body11.12 isMastros,inSectionBafter11.11Mastreação;doesnot substantiate declaredazimuth claims."
+    }
+  ],
+  "scope_limits": "Application of documented032 discrepancy to newly inspected0253/0651 identity;not new bibliography-wideabsenceproof.Not allbookimages/otherprimaryworks inspected.No verified azimuth technicalfigure/passage and no officialerratum inferred.",
+  "previous_search": "BUSCA_FONTE_PROPULSORES_032.json",
+  "records": [
+    {
+      "id": "ANV-0253",
+      "consumer": "cadernos",
+      "effective_hash": "42080adaf4f52f80914e09c46cbd88bac90627ab83fc4f06f41f859ccd332790",
+      "physical_main_hash": "aa548e9efb89f893606516e7fa4aac95ecaad827e43c2933f43200e7313961d4",
+      "source_records": [
+        {
+          "file": "data/questions/arte-naval.json",
+          "pointer": "/questions/252",
+          "hash": "aa548e9efb89f893606516e7fa4aac95ecaad827e43c2933f43200e7313961d4"
+        }
+      ]
+    },
+    {
+      "id": "ANV-0651",
+      "consumer": "cadernos",
+      "effective_hash": "237bedc9e600d4888b5415c699e75d853f511d458e8b7a3a368744b8e76ecb11",
+      "physical_main_hash": "85f0ee5f551c60647975c2507d0aee93012b12e76c15ab90765ec7c7a509bc88",
+      "source_records": [
+        {
+          "file": "data/questions/arte-naval.json",
+          "pointer": "/questions/650",
+          "hash": "85f0ee5f551c60647975c2507d0aee93012b12e76c15ab90765ec7c7a509bc88"
+        }
+      ]
+    }
+  ],
+  "disposition": {
+    "content_changed": false,
+    "quarantine_applied": false,
+    "active_membership_changed": false,
+    "primary_check_count_increment": 0,
+    "editorial_approval": false
+  },
+  "next": "Locate verifiablematchingexemplar/passage orappropriateprimarybibliographicwork andexplicitlyreconcilemetadata;keep pending,no blindrenumbering or competency substitution.",
+  "evidence_report": "REVISAO_ARTE_NAVAL_LOTE_055.md"
+}
