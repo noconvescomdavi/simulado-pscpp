@@ -28,7 +28,7 @@ e estabilidade quando apenas um arquivo alheio muda.
 
 ## Questões
 
-Acumulado vigente após lote 034: **68 IDs corrigidos distintos**, 71 conferências bibliográficas parciais, zero aprovações finais. Relação completa e sem recontagem em CHECKPOINT.json e CORRECOES_RUNTIME.json; números dos parágrafos de lotes abaixo são históricos. Substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
+Acumulado vigente após lote 035: **70 IDs corrigidos distintos**, 73 conferências bibliográficas parciais, zero aprovações finais. Relação completa e sem recontagem em CHECKPOINT.json e CORRECOES_RUNTIME.json; números dos parágrafos de lotes abaixo são históricos. Substituídas: 0; novas: 0; quarentenadas nesta etapa: 0.
 Lote 002: `REVISAO_ARTE_NAVAL_LOTE_002.md`, fonte primária arts. 8.2/8.14/8.19–8.20.
 Corrigidas as restaurações prevalentes, mantendo conceitos efetivamente servidos,
 IDs, opções e gabaritos. Dezesseis proposições renderizadas no teste de regressão.
@@ -424,3 +424,21 @@ keys e cinco letras A–E preservados. Sem cálculos nem figura necessária ause
 
 
 Fonte e revisão delimitada de versões em EVIDENCIA_NORMATIVA_034.json; análise completa em REVISAO_ARTE_NAVAL_LOTE_034.md. Acumulado: 68 correções, 71 conferências parciais, zero aprovações finais.
+
+
+## Lote 035 — relatório individual
+
+| ID | Defeito encontrado | Correção concreta | Fonte/localizador verificado | Gabarito |
+|---|---|---|---|---|
+| ANV-0148 | answer-leak-v1 apagava I–IV; redação confundia o grampo com outros acessórios e citava 9.35 sem registrar a divergência. | Reescritas quatro proposições sobre constituição, U/base e inspeção do aperto. Retirada afirmação genérica de espaçamento. Explicação e cinco justificativas específicas; locator corrigido para o corpo 9.32, páginas/hash e nota do sumário adicionados. Proposições preservadas no runtime. | v.2, corpo9.32, pp.692–693/PDF53–54, figs.9-40/9-41; sumárioPDF10; contraste9.26 p.687/PDF48 | C mantido; F/V/V/F |
+| ANV-0846 | Comando por definição era convertido em pergunta bibliográfica genérica; opções descreviam acessórios distintos, com localizador não reconciliado. | Novo cenário de montagem invertida; cinco alternativas paralelas sobre U/base e inspeção/reaperto. Explicação e cinco justificativas, páginas/hash e numeração reconciliada com nota. Fonte/runtime integralmente iguais. | Mesmos localizadores | A mantido |
+
+Duas correções primárias parciais, sem aprovação editorial final.
+0148: Difícil→Médio/L2 proposto, pela compreensão dos elementos e cuidados.
+0846: Médio mantido/L3 proposto, por aplicação à montagem descrita. Sem alegação
+de calibração psicométrica/histórica. IDs, competência, formatos B/A, opções
+A–E e keys preservados. Somente as alternativas da direta foram reescritas;
+os conjuntos de proposições da combinada permanecem os mesmos.
+
+
+Julgamentos, precedência e divergência de numeração em REVISAO_ARTE_NAVAL_LOTE_035.md. Acumulado:70 correções/73 conferências parciais/zero aprovações finais.

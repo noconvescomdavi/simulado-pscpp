@@ -91,3 +91,13 @@ MSC.572 prevê2028-01-01 condicionado à aceitação; não foi antecipada.
 A checagem de passagens não certifica toda vigência normativa/edital. Não se
 afirmou identidade binária dos PDFs oficiais com as cópias Drive. Dois checks
 parciais de questões, sem aprovação final; sem publicar PDFs integrais.
+
+
+## Lote035 — sumário/corpo de Grampos
+
+No mesmo exemplar de Arte Naval v.2, SHA2566afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1,
+o sumárioPDF10 anuncia9.35 Grampos, enquanto corpo pp.692–693/PDF53–54 traz
+9.32 e figuras9-40/9-41. Texto/imagens conferidos; corrigidos locators de0148/0846
+para corpo9.32, com source.numbering_note. Sem inferir errata oficial ou invalidar
+o exemplar inteiro; cobertura/reconciliação global pendentes. Nenhum modelo
+renumerado e nenhuma conferência/aprovação adicional para variantes não revistas.

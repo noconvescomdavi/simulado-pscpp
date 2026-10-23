@@ -397,3 +397,14 @@ parciais69→71; zero aprovações finais. Sem proposições214→213; localizad
 IDs preservados. Formatos B/A, keys B/E. Propostas:147 Médio/L2 (antesDifícil),
 845 Médio/L3 (cenário), sem calibração aprovada. Nenhum ID/modelo criado/removido.
 Mesma competência nas duas variantes; deduplicação semântica global pendente.
+
+
+## Lote 035
+
+Duas novas correções distintas:0148/0846. Acumulado68→70; conferências
+parciais71→73; zero aprovações finais. Sem proposições213→212; localizadores
+77→77. 27.435 físicos,14.086 ocorrências (12.102 cadernos/1.984 PSCPP),13.715
+IDs mantidos. Formatos B/A e keys C/A. Propostas0148 Médio/L2 (antesDifícil),
+0846 Médio/L3, sem calibração aprovada. Nenhum ID/modelo criado, removido ou
+reativado;0347 continua excluído pelo filtro já existente e inalterado. Duas
+variantes ativas da competência, coexistência e revisão semântica ainda pendentes.

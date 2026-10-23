@@ -1,7 +1,7 @@
 {
   "checkpoint_version": 1,
   "created_at_utc": "2026-10-19T02:22:35.805683+00:00",
-  "updated_at_utc": "2026-10-23T02:07:42.339374+00:00",
+  "updated_at_utc": "2026-10-23T03:03:26.059207+00:00",
   "task_status": "in_progress_not_approved",
   "branch": "feature/auditoria-integral-padrao-banca-pscpp",
   "source_baseline_sha": "012b562b0eb6f7fec78773b339e4a53b3643e791",
@@ -11,8 +11,8 @@
   "runtime_occurrences": 14086,
   "runtime_unique_ids": 13715,
   "individual_editorial_approved_occurrences": 0,
-  "primary_source_partial_checks": 71,
-  "individually_corrected_questions": 68,
+  "primary_source_partial_checks": 73,
+  "individually_corrected_questions": 70,
   "corrected_question_ids": [
     "ANV-0005",
     "ANV-0007",
@@ -81,7 +81,9 @@
     "ANV-0145",
     "ANV-0843",
     "ANV-0147",
-    "ANV-0845"
+    "ANV-0845",
+    "ANV-0148",
+    "ANV-0846"
   ],
   "primary_content_correction_is_release_approval": false,
   "historical_extraction_count": 264,
@@ -102,22 +104,22 @@
   "gates": {
     "1": "partial: local JSON pipelines reconciled; full consumers/offline and production checks pending",
     "2": "failed: 0 approved individual evidence records",
-    "3": "pending: 71 partial primary checks and 68 corrected questions; ANV-0142/0840 source unresolved; lot034 official IMO source passages/version scope checked, complete normative and official program/edital alignment pending; independent recheck and remaining bank outstanding",
+    "3": "pending:73 partial primary checks and70 corrected questions; lot035 contents9.35/body9.32 divergence disclosed; ANV-0142/0840 source unresolved; independent recheck, official program/edital and complete normative alignment/remaining bank outstanding",
     "4": "partial: 264 records individually checked, 255 available texts read, 254 observed keys reconciled; subject/points/cognitive/language matrices recorded; active-bank calibration and format targets not yet approved",
     "5": "partial: 102 runtime duplicate IDs removed; semantic duplicate analysis pending",
-    "6": "partial: 77 locator candidates; notebook-complete-stems fails source-blocked ANV-0142; next independent candidate ANV-0148; regression passes68 exact hash deltas, source/runtime equality,168 rendered propositions and130 direct options preserved; lot034 isolated full build passed with explicit compile/types/101pages/routes markers; not release approval",
+    "6": "partial:77 locator candidates; notebook-complete-stems fails source-blocked ANV-0142; next independent candidate ANV-0151; regression passes70 exact hash deltas, source/runtime equality,172 rendered propositions and135 direct options preserved; lot035 isolated complete build passed with explicit compile/types/101pages/routes markers; not release approval",
     "7": "pending: SQL schema inspected read-only; no migrations or production mutations",
     "8": "pending: no merge; baseline deployment READY is not audit release"
   },
   "known_findings": {
     "locator_candidates": 77,
-    "combination_without_parsed_assertions_candidates": 213,
+    "combination_without_parsed_assertions_candidates": 212,
     "previous_combination_candidates": 256,
-    "combination_candidates_corrected": 40,
+    "combination_candidates_corrected": 41,
     "combination_false_positives_resolved_without_content_change": 3,
     "noncanonical_subject_records": 20,
     "selection_excluded_records_retained": 11,
-    "editorial_corrections_outside_missing_proposition_triage": 28,
+    "editorial_corrections_outside_missing_proposition_triage": 29,
     "source_state_reconciliation_example": {
       "id": "ANV-0105",
       "physical_main_version": "quarantined/inactive; different swing-circle content preserved unchanged",
@@ -154,7 +156,7 @@
       "quarantine_applied": false,
       "primary_check_count_increment": 0,
       "editorial_approval": false,
-      "next_independent_candidate": "ANV-0148"
+      "next_independent_candidate": "ANV-0151"
     },
     "normative_scope_lot034": {
       "report": "EVIDENCIA_NORMATIVA_034.json",
@@ -166,6 +168,16 @@
       "checked_amendment": "A.1108(29) changes5.1/5.2, not4",
       "future_text": "MSC.572(110) operative2/3 and replacement V/23.10; entry2028-01-01 conditional on acceptance; not applied prematurely",
       "limits": "Complete normative revisions inventory, consolidated current SOLAS and official target-edital alignment remain pending; no binary identity with Drive copies claimed."
+    },
+    "source_numbering_divergence_ch9_lot035": {
+      "ids": [
+        "ANV-0148",
+        "ANV-0846"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_035.md",
+      "observed": "Fonseca v2 8ed contents PDF10 lists9.35 Grampos; body9.32 pp692–693/PDF53–54 and figures9-40/9-41. Text/images checked; body numbering adopted with source.numbering_note.",
+      "limits": "No official erratum inferred, no global renumbering/model change; full source/coverage tree reconciliation pending.",
+      "related_physical_record": "ANV-0347 old-025: unchanged; absent from runtime; policy excludes as answer-leak:answer_similarity_leak. No inferred physical status flags, new quarantine, correction or primary check count."
     }
   },
   "production_baseline": {
@@ -179,30 +191,29 @@
   "next_actions": [
     "Historical read complete for all available texts; use BENCHMARK_REVISAO_INTEGRAL.md and manual TSV rather than superseded structural counts. Do not equate historical key observation with current technical correctness.",
     "Verify official Annexes 2-A/2-B provenance, revisions and edital; map complete work/chapter/item trees.",
-    "Review every active effective version. Sixty-eight primary corrections and seventy-one partial checks documented; independent recheck/program alignment/global semantic review outstanding. Resolve ANV-0142/0840 primary-source impediment without assuming titles/snippets prove contents. Lot034 official IMO evidence has explicit version limits, not final normative certification.",
-    "Earliest failing ID ANV-0142 remains source-blocked; BUSCA_FONTE_PROPULSORES_032.json. Continue independent candidates from ANV-0148. Lot034 corrected0147/0845 in existing effective sources; main0147 step-dimensions version unchanged. Read EVIDENCIA_NORMATIVA_034.json and report034 for exact source hashes and conditional2028 timeline; do not apply future rules prematurely. Keep prior source-numbering, terminology and model-group findings pending. Final main sync/checks and all gates required before merge.",
+    "Review every active effective version. Seventy primary corrections and seventy-three partial source checks documented, zero final approvals; independent recheck/program/edital alignment/global semantic review outstanding. Resolve ANV-0142/0840 source impediment without treating titles/snippets as proof; keep lot034 normative limits and conditional future timeline.",
+    "Earliest failureANV-0142 source-blocked; continue independent candidates fromANV-0151. Lot035 corrected0148/0846 in main; third physical old-025 ANV-0347 remains excluded by existing policy and unchanged. Report035 records body9.32 versus contents9.35, exact pages/figures, no global renumbering. Keep prior source-numbering, terminology, model and normative findings pending. Final main synchronization/checks and all gates required before merge.",
     "Inspect 20 PSCPP records classified as ii — arte naval and normalize taxonomy with regression tests.",
     "Reconcile offline/production consumers and all hashes, complete every gate, then sync main, revalidate, review PR, merge and verify production."
   ],
   "resume_command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/audit-pscpp-runtime-inventory.mjs",
   "resume_instruction": "Continue this branch from CHECKPOINT.json, preserving baseline/. Do not treat pending rows as approved. Reobtain the attached dossier if needed; its hashes are in INTEGRIDADE_DOSSIE.json. Follow the original Prompt-Mestre. Do not merge while any gate remains pending or failed.",
-  "source_checkpoint_sha": "8509400ca3073a64111505f41f7c9425b9a73c15",
-  "last_completed_batch": "034: ANV-0147/0845; mechanical pilot hoists prohibition, official IMO passages and version scope; no production mutation",
+  "source_checkpoint_sha": "294d3d6849c1c11367ea42be62fca66e070e486d",
+  "last_completed_batch": "035: ANV-0148/0846; wire rope clips, U/base orientation and inspection; body9.32 versus contents9.35 disclosed; no production mutation",
   "last_build": {
     "command": "npm run build with NEXT_TELEMETRY_DISABLED=1 and npm_config_update_notifier=false",
     "result": "passed_isolated_copy",
-    "source_checkpoint_sha": "8509400ca3073a64111505f41f7c9425b9a73c15",
+    "source_checkpoint_sha": "294d3d6849c1c11367ea42be62fca66e070e486d",
     "source_changes": [
-      "data/question-restorations/arte-naval.json:ANV-0147",
-      "data/questions/arte-naval.json:ANV-0845"
+      "data/questions/arte-naval.json:ANV-0148/0846"
     ],
     "source_sha256": {
-      "data/questions/arte-naval.json": "21f8c998c25a1bd5251f131cbc71553b55ba1be09a0cefbf747675c9752086e2",
+      "data/questions/arte-naval.json": "4070384c375a5e2a6fd862f1fbdbaabca99a7d085cdc062455c446215e643deb",
       "data/question-restorations/arte-naval.json": "6607132d2a946fc22cca613b05e3591e2ecab69e1967e867ece7b2432d855a0d",
       "data/question-restorations/notebook-complete-stems.json": "95c79a49d6a367e67cc58441d2579302caaaa4dd22f72de32bd5aff004a2f7d2"
     },
     "release_approval": false,
-    "note": "One isolated build invocation with output captured atomically after completion: exit0 and compile/types/101pages/routes markers all confirmed. Every tracked file outside docs matched build copy, including amended regression script; six generated artifacts byte-identical. Regression before/after passed. Prior workspace ENOTEMPTY finding remains recorded. Only0845 added to direct contract; no normalizer/filter/gate relaxation, new active IDs or production mutation."
+    "note": "One isolated full build:exit0 and compile/lint/types/101pages/routes markers verified. Every tracked file outside docs, including amended regression script, matched copy; six generated artifacts byte-identical. Regression before/after passed. Only0148/0846 physical main objects changed;0347, all restorations and blocked pair unchanged. Main-source contract+0148/+0846, direct contract+0846. No normalizer/filter/gate relaxation, activation or production mutation. Workspace ENOTEMPTY prior finding not declared resolved."
   },
   "continuation_automation": {
     "id": "6ad9195b550c8191bf6738126d23a44e",

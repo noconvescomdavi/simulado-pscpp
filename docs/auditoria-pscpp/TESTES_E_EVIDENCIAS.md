@@ -1122,3 +1122,41 @@ O comando de processos retornou erro de enumeração; não se afirma busca globa
 por escritores. Árvore rastreada limpa inicialmente e publicação com lease.
 Programa/edital, rechecagem independente, versões normativas completas, cobertura,
 estados, semântica global e offline/produção pendentes. Sem merge/deploy/usuários.
+
+
+## Lote 035 — resultados efetivos
+
+- Regressão antes/depois do build: exit 0; 70 deltas exatos acumulados,
+  172 proposições HTML e 135 opções diretas preservadas. 12.032 outros cadernos
+  e 1.984 PSCPP intactos. Igualdade completa fonte/runtime para0148/0846.
+- Runtime, seleção/matriz fixa de100 em25/25/10/10/10/10/10, proveniência/
+  fingerprints, catálogo e check:pscpp-bank: exit0. Catálogo e flashcards
+  regenerados. Contrato fonte principal+0148/+0846; direto apenas+0846.
+- Triagem exit0:212 candidatos sem proposições/77 localizadores.
+  test-notebook-complete-stems exit1 emANV-0142; validate-editorial-runtime
+  exit1 nos77 localizadores. Nenhuma falha suprimida, teste ou filtro relaxado.
+- Inventário exit0:27.435 físicos,14.086 ocorrências e13.715 IDs. Todos os70
+  hashes corrigidos conferidos. Gate editorial posterior exit2:zero aceitos/
+  14.086 pendentes; merge_permitted=false.
+- Diff físico só0148/0846 no principal; todos os demais objetos/campos,0347,
+  restaurações e par0142/0840 intactos. Sem nova ativação/remoção. Nenhum dos
+  dois IDs consta de notebook-complete-stems. Physical0347 ausente do runtime;
+  questionQualityState retorna inactive por answer-leak:answer_similarity_leak.
+  Nenhuma flag física inferida, aprovação ou nova quarentena aplicada.
+- auditQuestion sem achados; política ativa e reformulateLeakingStem/
+  normalizeEditorialStem preservando os dois objetos antes da geração;
+  igualdade integral posterior. Nenhum normalizador alterado.
+- Um build completo em /tmp:exit0; compilação,lint/types,101/101 páginas e
+  tabela de rotas explicitamente confirmados. Todos os rastreados fora de docs,
+  inclusive regressão ampliada, idênticos à cópia; seis artefatos gerados
+  idênticos byte a byte. Avisos npm http-proxy/autoprefixer/cache preservados.
+  ENOTEMPTY prévio do workspace não declarado resolvido por build em /tmp.
+
+Scripts Node com --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs.
+Texto/imagens e hashes conferidos no art.9.32 pp.692–693/PDF53–54, figuras9-40/
+9-41; sumárioPDF10 e contraste9.26 p.687/PDF48. Divergência9.35/9.32 registrada
+sem inferir errata ou renumerar outros modelos. Não se extrapolaram percentuais,
+torque, espaçamento ou dimensionamento real. Logs/imagens privados preservados
+em audit-private/lote035; nenhum livro integral publicado. Rechecagem independente,
+programa/edital, cobertura, estados, semântica e offline/produção pendentes.
+Sem merge, deploy em produção ou alteração de usuários.
