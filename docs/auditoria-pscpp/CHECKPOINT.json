@@ -1,7 +1,7 @@
 {
   "checkpoint_version": 1,
   "created_at_utc": "2026-10-19T02:22:35.805683+00:00",
-  "updated_at_utc": "2026-10-23T13:14:39.168315+00:00",
+  "updated_at_utc": "2026-10-23T14:05:14.113726+00:00",
   "task_status": "in_progress_not_approved",
   "branch": "feature/auditoria-integral-padrao-banca-pscpp",
   "source_baseline_sha": "012b562b0eb6f7fec78773b339e4a53b3643e791",
@@ -11,8 +11,8 @@
   "runtime_occurrences": 14086,
   "runtime_unique_ids": 13715,
   "individual_editorial_approved_occurrences": 0,
-  "primary_source_partial_checks": 104,
-  "individually_corrected_questions": 101,
+  "primary_source_partial_checks": 106,
+  "individually_corrected_questions": 103,
   "corrected_question_ids": [
     "ANV-0005",
     "ANV-0007",
@@ -114,7 +114,9 @@
     "ANV-1000",
     "ANV-0203",
     "ANV-0601",
-    "ANV-0901"
+    "ANV-0901",
+    "ANV-0204",
+    "ANV-0602"
   ],
   "primary_content_correction_is_release_approval": false,
   "historical_extraction_count": 264,
@@ -135,22 +137,22 @@
   "gates": {
     "1": "partial: local JSON pipelines reconciled; full consumers/offline and production checks pending",
     "2": "failed: 0 approved individual evidence records",
-    "3": "pending:104 partial primary checks and101 corrected IDs;independent recheck,official program/edital,complete source/normative alignment and remaining bank outstanding;0142/0840 and0176/0874 source unresolved;prior findings retained",
+    "3": "pending:106 partial primary checks and103 corrected IDs;independent recheck,official program/edital,complete source/normative alignment and remaining bank outstanding;0142/0840 and0176/0874 source unresolved;prior findings retained",
     "4": "partial: 264 records individually checked, 255 available texts read, 254 observed keys reconciled; subject/points/cognitive/language matrices recorded; active-bank calibration and format targets not yet approved",
     "5": "partial: 102 runtime duplicate IDs removed; semantic duplicate analysis pending",
-    "6": "partial:77 locator candidates;notebook-complete-stems fails source-blocked0142;next independent0204;regression101 deltas/224 propositions/225 direct options;isolated complete build passed;not release approval",
+    "6": "partial:77 locator candidates;notebook-complete-stems fails source-blocked0142;next independent0213;regression103 deltas/228 propositions/230 direct options;isolated complete build passed;not release approval",
     "7": "pending: SQL schema inspected read-only; no migrations or production mutations",
     "8": "pending: no merge; baseline deployment READY is not audit release"
   },
   "known_findings": {
     "locator_candidates": 77,
-    "combination_without_parsed_assertions_candidates": 199,
+    "combination_without_parsed_assertions_candidates": 198,
     "previous_combination_candidates": 256,
-    "combination_candidates_corrected": 54,
+    "combination_candidates_corrected": 55,
     "combination_false_positives_resolved_without_content_change": 3,
     "noncanonical_subject_records": 20,
     "selection_excluded_records_retained": 11,
-    "editorial_corrections_outside_missing_proposition_triage": 47,
+    "editorial_corrections_outside_missing_proposition_triage": 48,
     "source_state_reconciliation_example": {
       "id": "ANV-0105",
       "physical_main_version": "quarantined/inactive; different swing-circle content preserved unchanged",
@@ -187,7 +189,7 @@
       "quarantine_applied": false,
       "primary_check_count_increment": 0,
       "editorial_approval": false,
-      "next_independent_candidate": "ANV-0204"
+      "next_independent_candidate": "ANV-0213"
     },
     "normative_scope_lot034": {
       "report": "EVIDENCIA_NORMATIVA_034.json",
@@ -339,6 +341,33 @@
       "report": "REVISAO_ARTE_NAVAL_LOTE_045.md",
       "source": "V2 10.29.d/f p741/PDF102;context10.28 p738/PDF99;contrasts10.29.b/c/e/g pp740–742/PDF101–103;10.35.a pp750–751/PDF111–112",
       "scope": "Distinguish mechanical band/flange,clutch and electric spring-applied friction discs.10.29.d restricts reducing running-chain speed and holding at sea with anchor up;10.35 release procedure not generalized speed regulation.No universal machine prescription.Old0203 prestart proposition not deemed false just by key exclusion."
+    },
+    "physical_runtime_state_lot046": {
+      "ids": [
+        "ANV-0027",
+        "ANV-0403",
+        "ANV-1199"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_046.md",
+      "status": "Unchanged:0403 raw policy active then excluded stem-quotes-source-answer;1199 explicitly inactive/quarantined;0027 physical legacy wavelength excluded,effective old-110 defensa restoration unchanged.No activation,new quarantine or counted review;global identity reconciliation pending."
+    },
+    "wavelength_scope_lot046": {
+      "ids": [
+        "ANV-0204",
+        "ANV-0602"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_046.md",
+      "source": "V2 12.82.a pp924–925/PDF285–286",
+      "scope": "Geometric definitions;synthetic regular train four simultaneous crests0/40/80/120m,three40m intervals.No universal half-length crest/trough claim,no dispersion/encounter-period inference.Fig12-54 is towing,not a wave figure."
+    },
+    "related_three_model_group_lot046": {
+      "ids": [
+        "AN-C12-I12-82-M1",
+        "AN-C12-I12-82-M2",
+        "AN-C12-I12-82-M3"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_046.md",
+      "status": "Existing active three-model regime preserved unchanged.Visible literal negation/repetition and generic distractors recorded;not corrected,approved or counted primary checks.Full individual physics/editorial review and semantic prevention pending;not all chapter content presumed same concept."
     }
   },
   "production_baseline": {
@@ -352,29 +381,29 @@
   "next_actions": [
     "Historical read complete for all available texts; use BENCHMARK_REVISAO_INTEGRAL.md and manual TSV rather than superseded structural counts. Do not equate historical key observation with current technical correctness.",
     "Verify official Annexes 2-A/2-B provenance, revisions and edital; map complete work/chapter/item trees.",
-    "Review every active effective version.101 primary corrections,104 partial checks,zero final approvals. Complete independent recheck,official program/edital,full bibliography/normative inventory and global semantic review;resolve0142/0840 and0176/0874 source impediment honestly.",
-    "Continue independent0204. Lot045 corrected0203/0601/0901 main-sourced brake variants,15 rationales. Distinguish band/flange,clutch and electric discs;do not infer generic speed-regulation authorization from10.35.0402 excluded unchanged;0117 effective anchor restoration unchanged;no increment. Prior findings pending;all gates and final main sync/checks before merge.",
+    "Review every active effective version.103 primary corrections,106 partial checks,zero final approvals. Complete independent recheck,official program/edital,full bibliography/normative inventory and global semantic review;resolve0142/0840 and0176/0874 source impediment honestly.",
+    "Continue independent0213. Lot046 corrected0204/0602 main-sourced wavelength questions,10 rationales;geometry and four-crest/three-interval calculation verified.0027 effective defensa restoration,0403/1199 excluded,and three12.82 models unchanged;no increment.Models have editorial findings requiring full review.Prior findings/all gates and final main sync/checks before merge.",
     "Inspect 20 PSCPP records classified as ii — arte naval and normalize taxonomy with regression tests.",
     "Reconcile offline/production consumers and all hashes, complete every gate, then sync main, revalidate, review PR, merge and verify production."
   ],
   "resume_command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/audit-pscpp-runtime-inventory.mjs",
   "resume_instruction": "Continue this branch from CHECKPOINT.json, preserving baseline/. Do not treat pending rows as approved. Reobtain the attached dossier if needed; its hashes are in INTEGRIDADE_DOSSIE.json. Follow the original Prompt-Mestre. Do not merge while any gate remains pending or failed.",
-  "source_checkpoint_sha": "205c630355e7e3a680d9e68cf78f96a0265e14dc",
-  "last_completed_batch": "045: ANV-0203/0601/0901 freio da máquina de suspender;15 rationales;no production mutation",
+  "source_checkpoint_sha": "ed4aee50d31c26a0f1297481a8af7b9ea08a3f1a",
+  "last_completed_batch": "046: ANV-0204/0602 wavelength geometry;10 rationales and four-crest calculation;no production mutation",
   "last_build": {
     "command": "npm run build with NEXT_TELEMETRY_DISABLED=1 and npm_config_update_notifier=false",
     "result": "passed_isolated_copy",
-    "source_checkpoint_sha": "205c630355e7e3a680d9e68cf78f96a0265e14dc",
+    "source_checkpoint_sha": "ed4aee50d31c26a0f1297481a8af7b9ea08a3f1a",
     "source_changes": [
-      "data/questions/arte-naval.json:ANV-0203/0601/0901"
+      "data/questions/arte-naval.json:ANV-0204/0602"
     ],
     "source_sha256": {
-      "data/questions/arte-naval.json": "303fb693c6656973bb9108d81d94901af930d25530152a2cfc52ac829eca0149",
+      "data/questions/arte-naval.json": "c8c85a5db17cdefc31f1bf19d1a696ee55f6f68dfcd85ea6237dc4f49ede2252",
       "data/question-restorations/arte-naval.json": "6607132d2a946fc22cca613b05e3591e2ecab69e1967e867ece7b2432d855a0d",
       "data/question-restorations/notebook-complete-stems.json": "95c79a49d6a367e67cc58441d2579302caaaa4dd22f72de32bd5aff004a2f7d2"
     },
     "release_approval": false,
-    "note": "One isolated full build exit0,compile/lint/types/101pages/routes.Tracked non-docs and6 artifacts equal tested copy.Regression before/after passed.Only3 main changes;0402,0117,restorations/blocked pairs intact.No heuristic relaxation,new active IDs,production mutation or final approval.Prior ENOTEMPTY not declared resolved."
+    "note": "One isolated full build exit0,compile/lint/types/101pages/routes.Tracked non-docs and6 artifacts equal tested copy.Regression before/after passed.Only2 main changes;0027/0403/1199,three12.82 models,restorations/blocked pairs intact.No relaxed assertions,new active IDs,production mutation or final approval.Prior ENOTEMPTY not declared resolved."
   },
   "continuation_automation": {
     "id": "6ad9195b550c8191bf6738126d23a44e",

@@ -17233,9 +17233,9 @@
       "module": "Navegação com mau tempo",
       "topic_code": "old-148",
       "topic": "comprimento de onda",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "Sobre “comprimento de onda”, analise as afirmativas a seguir e assinale a alternativa que apresenta apenas as corretas:\nI. “comprimento de onda” designa distância vertical entre cava e crista.\nII. “comprimento de onda” designa distância horizontal entre duas cristas consecutivas.\nIII. Em relação a “comprimento de onda”, considere: relaciona-se ao período e à velocidade de propagação da onda.\nIV. Em relação a “comprimento de onda”, considere: busca diminuir esforços e movimentos perigosos em condições severas.",
+      "question": "Segundo Fonseca, quanto às medidas de um trem periódico de ondas, analise as proposições e escolha o conjunto completo das corretas.\nI) A distância vertical do cavado à crista é o comprimento de onda.\nII) A distância horizontal entre duas cristas consecutivas, medida na direção de propagação, é o comprimento de onda.\nIII) A distância entre dois cavados consecutivos também corresponde a um comprimento de onda.\nIV) A distância horizontal entre uma crista e o cavado adjacente representa um comprimento de onda completo.",
       "options": [
         {
           "key": "A",
@@ -17259,12 +17259,15 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “comprimento de onda”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "A alternativa D é a única correta: II e III são verdadeiras. Em 12.82.a, Fonseca define o comprimento pela distância entre duas cristas ou dois cavados consecutivos. I confunde essa dimensão com a altura, medida verticalmente do cavado à crista. IV usa pontos de fases diferentes; um intervalo completo deve reunir duas cristas consecutivas ou dois cavados consecutivos. Não se afirma que qualquer perfil real de onda tenha exatamente meia distância horizontal entre crista e cavado. O período é uma medida de tempo em ponto fixo e a celeridade é a velocidade de propagação, grandezas distintas do comprimento.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção G, item 12.82"
+        "locator": "cap. 12, seção G, item 12.82.a, pp. 924–925/PDF 285–286; comprimento e altura p. 924/PDF 285; período/celeridade como contraste",
+        "printed_page": 924,
+        "pdf_page": 285,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Navegação com mau tempo",
@@ -17298,7 +17301,15 @@
         "chapter_id": "fonseca-arte-v1::ch12",
         "topic_id": "old-148",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "I confunde altura com comprimento e IV não delimita um ciclo completo; ambas são falsas.",
+        "B": "III é verdadeira, mas IV não representa o intervalo completo; falta II.",
+        "C": "II é verdadeira, mas IV é falsa; falta III.",
+        "D": "II e III usam pontos consecutivos de mesma fase, conforme a definição de comprimento; são as únicas verdadeiras.",
+        "E": "III é verdadeira, mas I descreve a altura da onda; falta II."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0205",
@@ -46447,36 +46458,39 @@
       "topic": "comprimento de onda",
       "difficulty": "Médio",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “comprimento de onda”.",
+      "question": "Num trem regular de ondas, quatro cristas consecutivas ocupam as posições horizontais 0 m, 40 m, 80 m e 120 m, medidas na direção de propagação em um mesmo instante. Qual é o comprimento de onda desse trem?",
       "options": [
         {
           "key": "A",
-          "text": "movimento angular alternado em torno do eixo transversal"
+          "text": "30 m."
         },
         {
           "key": "B",
-          "text": "distância horizontal entre duas cristas consecutivas"
+          "text": "40 m."
         },
         {
           "key": "C",
-          "text": "dispositivo lançado ao mar para criar arrasto hidrodinâmico"
+          "text": "60 m."
         },
         {
           "key": "D",
-          "text": "governar com reduzido seguimento e orientação conveniente em relação ao mar"
+          "text": "80 m."
         },
         {
           "key": "E",
-          "text": "distância vertical entre cava e crista"
+          "text": "120 m."
         }
       ],
       "correct_answer": "B",
-      "explanation": "A opção correta apresenta a definição técnica de “comprimento de onda”: distância horizontal entre duas cristas consecutivas; relaciona-se ao período e à velocidade de propagação da onda.",
+      "explanation": "A alternativa B é a correta. O comprimento é a separação entre duas cristas consecutivas: 40 − 0 = 40 m; os intervalos seguintes, 80 − 40 e 120 − 80, também valem 40 m. Quatro cristas consecutivas delimitam três intervalos completos; portanto, 120/3 = 40 m. Dividir a extensão total pelo número de cristas, em vez do número de intervalos, daria 30 m. Os valores do enunciado são dados didáticos, não medições transcritas do livro. A resolução aplica a definição de 12.82.a, sem converter período aparente ou usar relações de dispersão.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção G, item 12.82"
+        "locator": "cap. 12, seção G, item 12.82.a, pp. 924–925/PDF 285–286; comprimento e altura p. 924/PDF 285; período/celeridade como contraste",
+        "printed_page": 924,
+        "pdf_page": 285,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Navegação com mau tempo",
@@ -46510,7 +46524,15 @@
         "chapter_id": "fonseca-arte-v1::ch12",
         "topic_id": "old-148",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "30 m resulta de 120/4, usando o número de cristas em lugar dos três intervalos entre elas.",
+        "B": "40 m é cada separação consecutiva e também 120/3; é o único comprimento compatível com todos os dados.",
+        "C": "60 m resulta de dividir 120 por dois, embora quatro cristas consecutivas delimitem três intervalos.",
+        "D": "80 m corresponde, por exemplo, da primeira à terceira crista, abrangendo dois comprimentos, não um.",
+        "E": "120 m é a extensão da primeira à quarta crista, abrangendo três comprimentos, não um."
+      },
+      "cognitive_level": 3
     },
     {
       "id": "ANV-0603",

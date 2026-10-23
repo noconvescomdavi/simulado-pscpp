@@ -1428,3 +1428,16 @@ Passaram geração de bancos PSCPP/cadernos, catálogo e flashcards; validate-ru
 Falhas reais mantidas: test-notebook-complete-stems exit 1 em ANV-0142; validate-editorial-runtime exit 1 com 77 localizadores; validate-pscpp-editorial-evidence exit 2, zero aprovadas e 14.086 pendentes. O gate de evidências foi regenerado depois do inventário e seus hashes conferidos, sem aprovação artificial. A matriz de 100 questões em 25/25/10/10/10/10/10 foi preservada. Testes estruturais e a releitura desta sessão não equivalem à rechecagem editorial independente final.
 
 Fonte, julgamentos, tabela individual e limites: REVISAO_ARTE_NAVAL_LOTE_045.md.
+
+
+## Lote046
+
+Build completo isolado `npm run build`: exit0; compilação, lint/tipos,101 páginas e rotas confirmados. Todos os arquivos rastreados fora de docs, incluindo regressão, iguais byte a byte à cópia testada; seis artefatos gerados idênticos. Não se declara resolvido o incidente anterior ENOTEMPTY da árvore original.
+
+Passaram geração PSCPP/cadernos/catálogo/flashcards; validate-runtime-question-banks,validate-pscpp-exam-selection,test-question-source-provenance,validate-runtime-question-catalog,test-pscpp-audit-anv0005,audit-pscpp-runtime-triage/inventory e npm run check:pscpp-bank. Node com loader pscpp-json-loader. Regressão antes/depois do build:103 deltas exatos acumulados contra baseline congelada;11.999 cadernos e todas1.984 PSCPP intactos;composição ativa preservada;228 proposições renderizadas e230 opções diretas preservadas. O novo contrato de cálculo confere as três diferenças entre posições,120/3=40m,coordenadas presentes no enunciado e valor da opção correta. Nenhuma asserção foi relaxada.
+
+Entre o checkpoint045 e046, o inventário efetivo muda somente0204/0602. Seus objetos principais são integralmente iguais ao runtime. Todos103 hashes corrigidos correspondem ao inventário final; hashes antes/depois em CORRECOES_RUNTIME.json e CONFERENCIAS_BIBLIOGRAFICAS.jsonl. Metadados de topo,0027/0403/1199,três modelos e demais objetos/restaurações intactos; nenhuma ativação ou nova quarentena. A matriz exata100=25/25/10/10/10/10/10 continua preservada.
+
+Falhas reais mantidas:test-notebook-complete-stems exit1 em ANV-0142;validate-editorial-runtime exit1 com77 localizadores;validate-pscpp-editorial-evidence exit2,zero aprovadas/14.086 pendentes. Gate regenerado depois do inventário,com todos os hashes conferidos. REVISOES_EDITORIAIS.jsonl permanece inalterado. Testes estruturais e releitura desta sessão não substituem revisão independente,aderência oficial ao programa/edital e validação semântica global.
+
+Tabela individual,fonte,limites e achados dos modelos:REVISAO_ARTE_NAVAL_LOTE_046.md.
