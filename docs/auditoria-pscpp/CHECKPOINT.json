@@ -1,0 +1,956 @@
+{
+  "checkpoint_version": 1,
+  "created_at_utc": "2026-10-19T02:22:35.805683+00:00",
+  "updated_at_utc": "2026-10-24T14:12:05.524608+00:00",
+  "task_status": "in_progress_not_approved",
+  "branch": "feature/auditoria-integral-padrao-banca-pscpp",
+  "source_baseline_sha": "012b562b0eb6f7fec78773b339e4a53b3643e791",
+  "current_stage": "historical_manual_benchmark_checkpoint_then_primary_bibliography_and_active_review",
+  "physical_records": 27435,
+  "bank_source_records_including_patches": 27113,
+  "runtime_occurrences": 14086,
+  "runtime_unique_ids": 13715,
+  "individual_editorial_approved_occurrences": 0,
+  "primary_source_partial_checks": 216,
+  "individually_corrected_questions": 213,
+  "corrected_question_ids": [
+    "ANV-0005",
+    "ANV-0007",
+    "ANV-0016",
+    "ANV-0023",
+    "ANV-0020",
+    "ANV-0021",
+    "ANV-0025",
+    "ANV-0037",
+    "ANV-0038",
+    "ANV-0039",
+    "ANV-0041",
+    "ANV-0043",
+    "ANV-0044",
+    "ANV-0045",
+    "ANV-0046",
+    "ANV-0047",
+    "ANV-0048",
+    "ANV-0049",
+    "ANV-0050",
+    "ANV-0064",
+    "ANV-0067",
+    "ANV-0765",
+    "ANV-0068",
+    "ANV-0073",
+    "ANV-0076",
+    "ANV-0085",
+    "ANV-0092",
+    "ANV-0790",
+    "ANV-0964",
+    "ANV-0096",
+    "ANV-0097",
+    "ANV-0794",
+    "ANV-0795",
+    "ANV-0100",
+    "ANV-0798",
+    "ANV-0105",
+    "ANV-0803",
+    "ANV-0108",
+    "ANV-0806",
+    "ANV-0111",
+    "ANV-0809",
+    "ANV-0116",
+    "ANV-0814",
+    "ANV-0972",
+    "ANV-0125",
+    "ANV-0823",
+    "ANV-0975",
+    "ANV-1034",
+    "ANV-0128",
+    "ANV-0826",
+    "ANV-0976",
+    "ANV-0129",
+    "ANV-0827",
+    "ANV-0131",
+    "ANV-0829",
+    "ANV-0977",
+    "ANV-0134",
+    "ANV-0832",
+    "ANV-0978",
+    "ANV-0138",
+    "ANV-0836",
+    "ANV-0143",
+    "ANV-0841",
+    "ANV-0981",
+    "ANV-0145",
+    "ANV-0843",
+    "ANV-0147",
+    "ANV-0845",
+    "ANV-0148",
+    "ANV-0846",
+    "ANV-0151",
+    "ANV-0152",
+    "ANV-0849",
+    "ANV-0850",
+    "ANV-0984",
+    "ANV-0163",
+    "ANV-0164",
+    "ANV-0861",
+    "ANV-0862",
+    "ANV-0988",
+    "ANV-0165",
+    "ANV-0863",
+    "ANV-0166",
+    "ANV-0864",
+    "ANV-0179",
+    "ANV-0378",
+    "ANV-0877",
+    "ANV-0993",
+    "ANV-0181",
+    "ANV-0879",
+    "ANV-0190",
+    "ANV-0888",
+    "ANV-0198",
+    "ANV-0199",
+    "ANV-0897",
+    "ANV-0200",
+    "ANV-0898",
+    "ANV-1000",
+    "ANV-0203",
+    "ANV-0601",
+    "ANV-0901",
+    "ANV-0204",
+    "ANV-0602",
+    "ANV-0213",
+    "ANV-0611",
+    "ANV-0214",
+    "ANV-0612",
+    "ANV-0218",
+    "ANV-0616",
+    "ANV-0906",
+    "ANV-0221",
+    "ANV-0619",
+    "AN-C10-1014-M1",
+    "AN-C10-1014-M2",
+    "AN-C10-1014-M3",
+    "ANV-0223",
+    "ANV-0621",
+    "AN-C09-916-M1",
+    "AN-C09-916-M2",
+    "AN-C09-916-M3",
+    "ANV-0227",
+    "ANV-0625",
+    "ANV-0909",
+    "AN-C12-1228-M1",
+    "AN-C12-1228-M2",
+    "AN-C12-1228-M3",
+    "ANV-0235",
+    "ANV-0633",
+    "ANV-0237",
+    "ANV-0635",
+    "AN-C12-125-M1",
+    "AN-C12-125-M2",
+    "AN-C12-125-M3",
+    "ANV-0254",
+    "ANV-0652",
+    "ANV-0256",
+    "ANV-0654",
+    "AN-C11-115b-M1",
+    "AN-C11-115b-M2",
+    "AN-C11-115b-M3",
+    "ANV-0262",
+    "ANV-0660",
+    "AN-C10-1016-M1",
+    "AN-C10-1016-M2",
+    "AN-C10-1016-M3",
+    "ANV-0263",
+    "ANV-0661",
+    "ANV-0921",
+    "AN-C11-114e-M1",
+    "AN-C11-114e-M2",
+    "AN-C11-114e-M3",
+    "ANV-0269",
+    "ANV-0667",
+    "ANV-0923",
+    "AN-C12-1237-M1",
+    "AN-C12-1237-M2",
+    "AN-C12-1237-M3",
+    "ANV-0276",
+    "ANV-0674",
+    "AN-C12-1243-M1",
+    "AN-C12-1243-M2",
+    "AN-C12-1243-M3",
+    "ANV-0278",
+    "ANV-0676",
+    "ANV-0926",
+    "AN-C12-1215-M1",
+    "AN-C12-1215-M2",
+    "AN-C12-1215-M3",
+    "ANV-0279",
+    "ANV-0677",
+    "AN-C12-1263-M1",
+    "AN-C12-1263-M2",
+    "AN-C12-1263-M3",
+    "ANV-0283",
+    "ANV-0681",
+    "AN-C10-1032-M1",
+    "AN-C10-1032-M2",
+    "AN-C10-1032-M3",
+    "AN-C10-1036-M2",
+    "AN-C10-1036-M3",
+    "ANV-0288",
+    "ANV-0686",
+    "AN-C09-91-M1",
+    "AN-C09-91-M2",
+    "AN-C09-91-M3",
+    "AN-C09-93-M1",
+    "AN-C09-93-M2",
+    "AN-C09-93-M3",
+    "ANV-0295",
+    "ANV-0693",
+    "ANV-0298",
+    "ANV-0696",
+    "AN-C11-115a-M1",
+    "AN-C11-115a-M2",
+    "AN-C11-115a-M3",
+    "AN-C11-112-M1",
+    "AN-C11-112-M2",
+    "AN-C11-112-M3",
+    "ANV-0819",
+    "AN-C11-113-M1",
+    "AN-C11-113-M2",
+    "AN-C11-113-M3",
+    "ANV-0185",
+    "ANV-0734",
+    "ANV-0883",
+    "AN-C11-114-M1",
+    "AN-C11-114-M2",
+    "AN-C11-114-M3",
+    "AN-C11-114a-M2",
+    "AN-C11-114a-M3",
+    "AN-C11-114b-M1",
+    "AN-C11-114b-M2",
+    "AN-C11-114b-M3"
+  ],
+  "primary_content_correction_is_release_approval": false,
+  "historical_extraction_count": 264,
+  "historical_full_editorial_read_completed": true,
+  "historical_records_individually_checked": 264,
+  "historical_available_full_texts_read": 255,
+  "historical_annulled_notices_without_body": 9,
+  "historical_valid_keys_observed_and_reconciled": 254,
+  "historical_technical_answers_revalidated_against_current_bibliography": false,
+  "historical_manual_format_counts": {
+    "A": 149,
+    "B": 55,
+    "C": 21,
+    "D": 22,
+    "E": 7
+  },
+  "merge_permitted": false,
+  "gates": {
+    "1": "partial: local JSON pipelines reconciled; full consumers/offline and production checks pending",
+    "2": "failed: 0 approved individual evidence records",
+    "3": "pending: 216 partial primary checks and 213 corrected IDs; independent recheck, official program/edital, complete bibliography/current applicability and semantic prevention pending; source impediments and12.15AR unresolved",
+    "4": "partial: 264 records individually checked, 255 available texts read, 254 observed keys reconciled; subject/points/cognitive/language matrices recorded; active-bank calibration and format targets not yet approved",
+    "5": "partial: 102 runtime duplicate IDs removed; semantic duplicate analysis pending",
+    "6": "partial: 77 locator candidates; notebook-complete-stems fails0142; next AN-C11-114c-M1; regression213 exactdeltas/468propositions/480directoptions; isolated fullbuild integral log and stable inputs confirmed; not release approval",
+    "7": "pending: SQL schema inspected read-only; no migrations or production mutations",
+    "8": "pending: no merge; baseline deployment READY is not audit release"
+  },
+  "known_findings": {
+    "locator_candidates": 77,
+    "combination_without_parsed_assertions_candidates": 165,
+    "previous_combination_candidates": 256,
+    "combination_candidates_corrected": 88,
+    "combination_false_positives_resolved_without_content_change": 3,
+    "noncanonical_subject_records": 20,
+    "selection_excluded_records_retained": 11,
+    "editorial_corrections_outside_missing_proposition_triage": 125,
+    "source_state_reconciliation_example": {
+      "id": "ANV-0105",
+      "physical_main_version": "quarantined/inactive; different swing-circle content preserved unchanged",
+      "existing_effective_runtime_version": "old-094 propeller discharge restoration, already loaded before lot 022; corrected in place",
+      "global_version_state_reconciliation": "pending; no active IDs added and no physical quarantine flags changed"
+    },
+    "source_passage_recheck_pending": "Fonseca v2 8ed p933/PDF294: association of duros with pequena altura metacêntrica needs terminology/edition/errata recheck; not validated or used as a premise in lot 023",
+    "related_three_model_group_pending": {
+      "ids": [
+        "AN-C12-I12-70-M1",
+        "AN-C12-I12-70-M2",
+        "AN-C12-I12-70-M3"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_024.md",
+      "status": "defects/overlap recorded; three existing models preserved, no approval or counted individual primary check"
+    },
+    "page_number_note": "Lot026: Arte Naval v1 cap3 opening has no printed numeral; p.[129] is inferred from sequence before printed130, PDF129 exact; source.page_note and evidence ledger disclose inference.",
+    "pr_mergeability_observation": {
+      "head": "f15c38db79ccd101c341480aff124a4382dfab69",
+      "mergeable": false,
+      "date": "2026-10-22",
+      "status": "Initial metadata false; publication preflight returned true on same head. Cause not inferred. Does not approve merge; final main synchronization/check review and all eight gates remain pending.",
+      "publication_preflight_mergeable": true
+    },
+    "source_numbering_divergence": "Lot031: Fonseca v2 8ed contents PDF13 lists 12.80 small-craft tow / 12.81 alongside tow; body p923/PDF284 reverses those titles. ANV-0138/0836 adopt body12.80 with source.numbering_note and evidence. Images verify divergence, not just OCR. No official erratum inferred; full coverage-tree/other references reconciliation pending. No chapter-item models renumbered/removed.",
+    "blocked_primary_source": {
+      "ids": [
+        "ANV-0142",
+        "ANV-0840"
+      ],
+      "report": "BUSCA_FONTE_PROPULSORES_032.json",
+      "reason": "Declared volume2 11.13 lateral-propulsor heading appears in contents PDF11; body section transition p776/PDF137 and 11.13 p779/PDF140 instead cover mastreação/aparelho fixo. Cause and correct exemplar/passage unresolved. Text search is not full-image/bibliography-wide absence proof.",
+      "content_changed": false,
+      "quarantine_applied": false,
+      "primary_check_count_increment": 0,
+      "editorial_approval": false,
+      "next_independent_candidate": "ANV-0263"
+    },
+    "normative_scope_lot034": {
+      "report": "EVIDENCIA_NORMATIVA_034.json",
+      "ids": [
+        "ANV-0147",
+        "ANV-0845"
+      ],
+      "source": "IMO A.1045(27), Annex4 printed4/PDF5; operative3 unnumbered page/PDF2 (p1 inferred)",
+      "checked_amendment": "A.1108(29) changes5.1/5.2, not4",
+      "future_text": "MSC.572(110) operative2/3 and replacement V/23.10; entry2028-01-01 conditional on acceptance; not applied prematurely",
+      "limits": "Complete normative revisions inventory, consolidated current SOLAS and official target-edital alignment remain pending; no binary identity with Drive copies claimed."
+    },
+    "source_numbering_divergence_ch9_lot035": {
+      "ids": [
+        "ANV-0148",
+        "ANV-0846"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_035.md",
+      "observed": "Fonseca v2 8ed contents PDF10 lists9.35 Grampos; body9.32 pp692–693/PDF53–54 and figures9-40/9-41. Text/images checked; body numbering adopted with source.numbering_note.",
+      "limits": "No official erratum inferred, no global renumbering/model change; full source/coverage tree reconciliation pending.",
+      "related_physical_record": "ANV-0347 old-025: unchanged; absent from runtime; policy excludes as answer-leak:answer_similarity_leak. No inferred physical status flags, new quarantine, correction or primary check count."
+    },
+    "physical_runtime_state_lot036": {
+      "ids": [
+        "ANV-0350",
+        "ANV-0351"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_036.md",
+      "status": "Unchanged physical originals; absent from runtime. Raw object policy active=true, after existing reformulation/editorial normalization policy active=false reason stem-quotes-source-answer. No flags inferred, activation/quarantine/review increment or normalizer change."
+    },
+    "physical_runtime_state_lot037": {
+      "ids": [
+        "ANV-0362",
+        "ANV-0363"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_037.md",
+      "status": "Unchanged physical originals; absent from runtime. Raw0362 inactive answer-leak:answer_similarity_leak; raw0363 active. After existing two transforms both inactive stem-quotes-source-answer. No physical flags inferred, new quarantine/activation or counted individual review."
+    },
+    "physical_runtime_state_lot038": {
+      "ids": [
+        "ANV-0364"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_038.md",
+      "status": "Unchanged original absent runtime; raw policy active, after two existing transforms inactive stem-quotes-source-answer. No physical flags inferred, activation/quarantine or counted review."
+    },
+    "related_declared_source_impediment_lot039": {
+      "ids": [
+        "ANV-0176",
+        "ANV-0874"
+      ],
+      "topic": "old-087 stern thruster",
+      "locator": "11.13",
+      "prior_search": "BUSCA_FONTE_PROPULSORES_032.json",
+      "report": "REVISAO_ARTE_NAVAL_LOTE_039.md",
+      "status": "Same declared-source discrepancy identified by documentary comparison;not a new search or proof of absence;content unchanged,no quarantine,no primary check increment."
+    },
+    "physical_runtime_state_lot039": {
+      "ids": [
+        "ANV-0365"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_039.md",
+      "status": "Unchanged original absent runtime;raw policy active,after two existing transforms inactive stem-quotes-source-answer. No physical flags inferred,activation/quarantine or counted review."
+    },
+    "quadrantal_transmission_lot040": {
+      "ids": [
+        "ANV-0179",
+        "ANV-0378",
+        "ANV-0877",
+        "ANV-0993"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_040.md",
+      "source": "11.7.b p763/PDF124;contrast11.7.a/c/d and11.5.b/c–11.6 pp760–761/PDF121–122;fig11-6 p764/PDF125",
+      "status": "All4 versions already active and main-sourced. Explicit pinion/sector/tiller chain replaces generic rudder-stock wording;component and stage distinctions checked. Four variants same competency,not eligible to coexist in one proof;global semantic prevention and independent review pending. No three-model regime changed."
+    },
+    "normative_scope_lot041": {
+      "ids": [
+        "ANV-0181",
+        "ANV-0879"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_041.md",
+      "evidence": "EVIDENCIA_NORMATIVA_041.json",
+      "scope": "A1108 Annex5.2 p2/PDF3,contrast5.1. Explicit2015 wording;not vessel/consolidated compliance. Official1108/572 hashes match034. MSC576 operative1–3 p1/PDF1 image checked only,not full16 pages;future2028 text not prematurely applied. Drive equivalence/edital/full normative inventory unresolved."
+    },
+    "physical_runtime_state_lot041": {
+      "ids": [
+        "ANV-0380"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_041.md",
+      "status": "Unchanged original absent runtime;raw policy active,after two existing transforms inactive stem-quotes-source-answer. No physical flags inferred,activation/quarantine or counted review."
+    },
+    "local_head_recovery_lot041": "Previous run lost environment after remote publication040. On return local tracked tree clean and older,not exact staged/remote tree. Fast-forward fetched83efac78 without duplicate commit or dropping untracked;no assumption that previous reset completed.",
+    "physical_runtime_state_lot042": {
+      "ids": [
+        "ANV-0389"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_042.md",
+      "status": "Unchanged original absent runtime;raw policy active,after two existing transforms inactive stem-quotes-source-answer. No inferred physical flags,activation/quarantine or counted review."
+    },
+    "combination_ambiguity_lot042": {
+      "id": "ANV-0190",
+      "report": "REVISAO_ARTE_NAVAL_LOTE_042.md",
+      "finding": "Old I limiting lateral separation was compatible with wind toward berth yet excluded by keyE. Replaced with explicit false reversal;newF/F/V/V resolves uniquelyE. OldIV energy assertion not counted as independently revalidated;replaced with directly sourced departure difficulty. No universal operational prescription."
+    },
+    "physical_runtime_state_lot043": {
+      "ids": [
+        "ANV-0397",
+        "ANV-0896",
+        "ANV-0398"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_043.md",
+      "status": "Unchanged and absent runtime.0397 explicit inactive/quarantined before/after;0896 raw stem-quotes-source-answer then answer_similarity_leak;0398 raw active then stem-quotes-source-answer. No inferred physical flags,new activation/quarantine or counted review."
+    },
+    "source_scope_lot043": {
+      "report": "REVISAO_ARTE_NAVAL_LOTE_043.md",
+      "length": "0198 parallel direction supported by2.47 normal PP and fig2-13,not literal claim of2.50 or project-only rule;do not assert all length measures always unequal.",
+      "propeller": "0199/0897 preserve source admission of somewhat greater rudder effect for outward arrangement;not universal modern-installation law or checked upper-blade direction diagram."
+    },
+    "physical_runtime_state_lot044": {
+      "ids": [
+        "ANV-0399"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_044.md",
+      "status": "Unchanged explicit active=false/status quarantined,legacy duplicate_stem_requires_source_review dated2026-09-22;absent runtime,policy explicitly-inactive before/after. No new quarantine,irrecoverability claim,activation or counted review."
+    },
+    "source_scope_lot044": {
+      "ids": [
+        "ANV-0200",
+        "ANV-0898",
+        "ANV-1000"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_044.md",
+      "source": "V2 12.4 pp796–797/PDF157–158 and summary tablep797;contrasts12.3/12.5,scope12.6",
+      "scope": "Right-handed single propeller,isolated transverse effect,not total yaw;table caveat initial movement/upper blades emerged retained. Distinct from discharge/suction/wake and rudder. No quantitative force model or universal modern-installation validation."
+    },
+    "physical_runtime_state_lot045": {
+      "ids": [
+        "ANV-0402",
+        "ANV-0117"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_045.md",
+      "status": "0402 unchanged absent runtime,raw policy active then stem-quotes-source-answer after existing transforms.0117 physical legacy freio version excluded;effective old-041 anchor restoration unchanged. No new quarantine,activation or counted review;global physical/runtime identity reconciliation pending."
+    },
+    "source_scope_lot045": {
+      "ids": [
+        "ANV-0203",
+        "ANV-0601",
+        "ANV-0901"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_045.md",
+      "source": "V2 10.29.d/f p741/PDF102;context10.28 p738/PDF99;contrasts10.29.b/c/e/g pp740–742/PDF101–103;10.35.a pp750–751/PDF111–112",
+      "scope": "Distinguish mechanical band/flange,clutch and electric spring-applied friction discs.10.29.d restricts reducing running-chain speed and holding at sea with anchor up;10.35 release procedure not generalized speed regulation.No universal machine prescription.Old0203 prestart proposition not deemed false just by key exclusion."
+    },
+    "physical_runtime_state_lot046": {
+      "ids": [
+        "ANV-0027",
+        "ANV-0403",
+        "ANV-1199"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_046.md",
+      "status": "Unchanged:0403 raw policy active then excluded stem-quotes-source-answer;1199 explicitly inactive/quarantined;0027 physical legacy wavelength excluded,effective old-110 defensa restoration unchanged.No activation,new quarantine or counted review;global identity reconciliation pending."
+    },
+    "wavelength_scope_lot046": {
+      "ids": [
+        "ANV-0204",
+        "ANV-0602"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_046.md",
+      "source": "V2 12.82.a pp924–925/PDF285–286",
+      "scope": "Geometric definitions;synthetic regular train four simultaneous crests0/40/80/120m,three40m intervals.No universal half-length crest/trough claim,no dispersion/encounter-period inference.Fig12-54 is towing,not a wave figure."
+    },
+    "related_three_model_group_lot046": {
+      "ids": [
+        "AN-C12-I12-82-M1",
+        "AN-C12-I12-82-M2",
+        "AN-C12-I12-82-M3"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_046.md",
+      "status": "Existing active three-model regime preserved unchanged.Visible literal negation/repetition and generic distractors recorded;not corrected,approved or counted primary checks.Full individual physics/editorial review and semantic prevention pending;not all chapter content presumed same concept."
+    },
+    "physical_runtime_state_lot047": {
+      "ids": [
+        "ANV-0036",
+        "ANV-0412"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_047.md",
+      "status": "Unchanged:0412 raw policy active then stem-quotes-source-answer after existing transforms;0036 physical legacy emergency-steering excluded,effective old-071 gualdropes restoration intact.No activation,new quarantine or counted review."
+    },
+    "normative_scope_lot047": {
+      "ids": [
+        "ANV-0213",
+        "ANV-0611"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_047.md",
+      "evidence": "EVIDENCIA_NORMATIVA_047.json",
+      "scope": "Fonseca2019 11.10.d2–4 p775/PDF136;4 book pages text/images.Historical primary2000 SOLAS amendments,UKTS42(2003),V26 printed113–114/PDF115–116 text/images,not full128 pages;cover metadata text only.MCA guidance published2025-02-13 sections33.1–4 confirmsV26 reference/instructions inUK context,not complete currentV26.4/Brazilian implementation.Questions explicitly book2019;no timing/numeric-law claim.No current-consolidation,Drive identity or target-edital approval."
+    },
+    "related_three_model_groups_lot047": {
+      "groups": [
+        "AN-C11-1110",
+        "AN-C11-1110a",
+        "AN-C11-1110b",
+        "AN-C11-1110c",
+        "AN-C11-1110d"
+      ],
+      "count": 15,
+      "status": "Active groups identified from inventory and preserved;not full individual editorial read or counted source checks.Full normative/editorial review and semantic prevention pending."
+    },
+    "physical_runtime_state_lot048": {
+      "ids": [
+        "ANV-0042",
+        "ANV-0078",
+        "ANV-0413"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_048.md",
+      "status": "Unchanged:0413 raw policy active then stem-quotes-source-answer after transforms;0042/0078 physical legacy singelo excluded,effective cote8.6 and volta da ribeira8.10 restorations intact.No activation,new quarantine or counted review."
+    },
+    "ambiguity_scope_lot048": {
+      "ids": [
+        "ANV-0214",
+        "ANV-0612"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_048.md",
+      "scope": "V1 8.39 p552/PDF550;contrast8.37–8.40,figs8-33–36;3pages549–551 text/images.Old0214 III not judged false merely by key;replaced with explicit incorrect gato requirement.Direct0612 overlapping broad definitions replaced by5 comparable orientations.No universal rope/load safety certification.No associated activeAN models located through item/topic metadata;not global semantic absence proof."
+    },
+    "physical_runtime_state_lot049": {
+      "ids": [
+        "ANV-0079",
+        "ANV-0417",
+        "ANV-1152",
+        "ANV-1334"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_049.md",
+      "status": "Unchanged:0417 raw active then stem-quotes-source-answer;0079 physical legacy excluded,effectiveold239 material dos cabos laterais restoration intact;1152 legacy-tag excluded;1334 explicitly inactive/quarantined.No new quarantine,activation or counted review."
+    },
+    "normative_scope_lot049": {
+      "ids": [
+        "ANV-0218",
+        "ANV-0616",
+        "ANV-0906"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_049.md",
+      "evidence": "EVIDENCIA_NORMATIVA_049.json",
+      "scope": "A1045 Annex6 p5/PDF6,explicit2011. A1108 changes5.1/5.2. MSC572 conditional future dates andMSC576 operative1–3/8 plusAnnex10 p8/PDF9 text/images checked,not full16pages/currentconsolidation. Current KnowledgeCentre576 binary differs from priorOurWork/Pilotage record;no equivalence/cause inferred.2011 questions preserve6m,strict<90m,Administration andother safety measures;85m didactic case."
+    },
+    "physical_runtime_state_lot050": {
+      "ids": [
+        "ANV-0010",
+        "ANV-0420",
+        "ANV-0907"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_050.md",
+      "status": "Unchanged:0420 raw active then stem-quotes-source-answer;0907 rawstem_answer_continuation thenstem_answer_overlap;0010 physicallegacy excluded,effectiveold038 fateixa restoration intact.No activation,new quarantine or counted review."
+    },
+    "three_model_revision_lot050": {
+      "ids": [
+        "AN-C10-1014-M1",
+        "AN-C10-1014-M2",
+        "AN-C10-1014-M3"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_050.md",
+      "scope": "All3 individually source-checked/partially corrected;B/A/C formats preserved;legacyvalidation flags unchanged and not accepted as approval.V2 10.14 pp723–725/PDF84–86,3pages text/images.Repeated colors distinguish adjacent positions,not unique fullsequence identifiers.Along withold0510221/0619 variants,same competency may not coexist inproof;global prevention pending.",
+      "editorial_approval": false
+    },
+    "physical_runtime_state_lot051": {
+      "ids": [
+        "ANV-0422"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_051.md",
+      "status": "Unchanged absent runtime;raw policy active then stem-quotes-source-answer after previous transforms.No newactivation,quarantine or counted review."
+    },
+    "three_model_revision_lot051": {
+      "ids": [
+        "AN-C09-916-M1",
+        "AN-C09-916-M2",
+        "AN-C09-916-M3"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_051.md",
+      "scope": "All3 individually source-checked/partially corrected;calculation/calculation/VF formats andlegacyapproved flags preserved,not accepted as editorialapproval.V2 9.16 pp673–675/PDF34–36,context672/PDF33,4pages text/images.PandF sameforce units,n counts supportingparts,mdistinct roldanas;10%modelapproximate.Bothold019 andAN-C09-916 variants maynot coexist inproof;globalprevention pending.",
+      "editorial_approval": false
+    },
+    "source_figure_discrepancy_lot051": {
+      "report": "REVISAO_ARTE_NAVAL_LOTE_051.md",
+      "observed": "Fig9-22 p673/PDF34 visually printsF=15/15P in5thcolumn andduplicatesEstralheirasingela heading.Not used as premise;body9.15.e/9.16 supports explicit4part/4roldana cases.No officialerratum or inferred correction claimed."
+    },
+    "physical_runtime_state_lot052": {
+      "ids": [
+        "ANV-0426"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_052.md",
+      "status": "Unchanged absent runtime;raw policy active,after previous transforms stem-quotes-source-answer.No activation,new quarantine or counted primary check."
+    },
+    "three_model_revision_lot052": {
+      "ids": [
+        "AN-C12-1228-M1",
+        "AN-C12-1228-M2",
+        "AN-C12-1228-M3"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_052.md",
+      "scope": "V2 12.28 pp830–831/PDF191–192;context829/PDF190;3pages text/images,fig12-15/16.Three models individually partially corrected;assertion_combination/conceptual/true_false andlegacyvalidation preserved.Not releaseapproval.Six variants old111/anv2-12.28 samecompetency mustnotcoexist inproof;global semantic prevention pending.",
+      "editorial_approval": false
+    },
+    "physical_runtime_state_lot053": {
+      "ids": [
+        "ANV-0434"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_053.md",
+      "status": "Unchanged absent runtime;raw policy active,after previous transforms stem-quotes-source-answer.No activation,new quarantine or counted check."
+    },
+    "related_pscpp_pending_lot053": {
+      "records": [
+        {
+          "id": "pscpp::generated::anv::0117",
+          "hash": "6f4576f089f269f7cb28de60015e51d021495ab2781f043f34e8a4997b16f9e8",
+          "sources": [
+            {
+              "file": "data/pscpp/generated-questions.json",
+              "pointer": "/questions/116",
+              "hash": "6f4576f089f269f7cb28de60015e51d021495ab2781f043f34e8a4997b16f9e8"
+            }
+          ]
+        },
+        {
+          "id": "pscpp::generated::anv-cap23::2-33::assert",
+          "hash": "202fcdbd38193f06c1138f7d2e9e30ec83f625c9d419b003324eb10e775733f2",
+          "sources": [
+            {
+              "file": "data/pscpp/arte-naval-cap2-cap3-459.json",
+              "pointer": "/questions/96",
+              "hash": "94206a017f88abb89d9b4ff9e71b20188fb1144f819de18b9a77fc43f7c7718a"
+            }
+          ]
+        },
+        {
+          "id": "pscpp::generated::anv-cap23::2-33::direct",
+          "hash": "c331ba9d81c9723800f539d59ff340ec44087530d252f5e4872dd75343580f9e",
+          "sources": [
+            {
+              "file": "data/pscpp/arte-naval-cap2-cap3-459.json",
+              "pointer": "/questions/97",
+              "hash": "c331ba9d81c9723800f539d59ff340ec44087530d252f5e4872dd75343580f9e"
+            }
+          ]
+        },
+        {
+          "id": "pscpp::generated::anv::2696",
+          "hash": "472231bbc46e387b37c8d1ff027e61506b964b77145b6e7dae8434a501242e90",
+          "sources": [
+            {
+              "file": "data/pscpp/generated-batches/batch_054.json",
+              "pointer": "/questions/45",
+              "hash": "299cbd1d745115bb9bb73969e7a5ec5622f5c85f4f7a3f11a71ecf10db83ee1d"
+            }
+          ]
+        }
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_053.md",
+      "status": "Additional structured-field inspection:0117 andcap23assert have5assertions each andclassifier recognizesassertions;absence inbase stem isnot proof ofrender failure.Cap23assert hasmixed/truncated premises,direct hastruncatedanswer,2696 generic/mixed/L5;0117L5/fulltechnicalreview pending.All4unchanged,no correction/fullprimaryreview increment;crossconsumer semanticprevention pending."
+    },
+    "source_scope_lot053": {
+      "report": "REVISAO_ARTE_NAVAL_LOTE_053.md",
+      "source": "V1 2.33 p89/PDF89;context87–88/PDF87–88;fig2-7 p82/PDF82;4pages text/images",
+      "scope": "GM separated fromMC/GZ,initial equilibrium only.SyntheticsameKheights7.8/6.6m yieldpositive1.2m.No stabilitycertificate or large-anglefixedmetacenter assumption.P87CF/anyanglewording not used asuniversalpremise,noofficialerratum claimed."
+    },
+    "physical_runtime_state_lot054": {
+      "ids": [
+        "ANV-0436"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_054.md",
+      "status": "Unchanged absent runtime;raw policy active,after previous transforms stem-quotes-source-answer.No activation,new quarantine or counted check."
+    },
+    "untracked_preservation_lot054": "One additional untracked temporary appeared afterinitialsnapshot,origin undetermined.Preserved originaltemporaries andadditionalfile;size/mtime/SHA256 stable inrechecks.No trackedsource drift againsttestedcopy orunexpected effective changes.No claimof global successfulprocess enumeration.",
+    "three_model_revision_lot054": {
+      "ids": [
+        "AN-C12-125-M1",
+        "AN-C12-125-M2",
+        "AN-C12-125-M3"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_054.md",
+      "scope": "V2 12.5 p797/PDF158 incltable;context795–798/PDF156–159;4pages text/images,fig12-2a/b/c.Three models individually partiallycorrected;assertion_combination/conceptual/true_false andlegacyvalidation preserved.Wake separatefromdischarge;1/10estimate notuniversal.5variants old093/anv2-12.5 samecompetency maynotcoexist;globalprevention pending.",
+      "editorial_approval": false
+    },
+    "physical_runtime_state_lot055": {
+      "ids": [
+        "ANV-0453",
+        "ANV-0918"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_055.md",
+      "status": "Unchanged absent runtime;0453 rawanswer_similarity_leak thenstem-quotes-source-answer;0918 answer_similarity_leak before/after.No newactivation/quarantine or countedchecks."
+    },
+    "azimuth_declared_source_lot055": {
+      "ids": [
+        "ANV-0253",
+        "ANV-0651"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_055.md",
+      "evidence": "BUSCA_FONTE_AZIMUTAL_055.json",
+      "scope": "FreshcontentsPDF11 andbodyp776/PDF137 text/images confirmdeclared11.12 mismatch:contentsazimuth,bodyMastros.Applies032findingto0253/0651,nobibliography-wideabsenceproof.No verifiedazimuthpassage/figure,contentunchanged,noquarantine,zero checkincrement."
+    },
+    "page_number_note_lot055": "V1chapter8opening hasno printednumeral;[535] inferred immediatelybeforeprinted536.PDF533 exact;source.page_note andledger discloseinference.Report055.Two definitionpages text/images,fig8-1context.No resistance/loading approval.",
+    "physical_runtime_state_lot056": {
+      "ids": [
+        "ANV-0455"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_056.md",
+      "status": "Unchanged absent runtime;rawpolicyactive thenstem-quotes-source-answer afterexistingtransforms.No activation,newquarantine orcountedcheck."
+    },
+    "three_model_revision_lot056": {
+      "ids": [
+        "AN-C11-115b-M1",
+        "AN-C11-115b-M2",
+        "AN-C11-115b-M3"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_056.md",
+      "scope": "V2 11.5.b p760/PDF121;context759–762/PDF120–123 andfig11-5;4pages text/images.Hydrauliccommand distinguishedfromservoactuation;0654oldtelemotoroptionoverlappedcategory,notdeemedfalsebykey.Three modelformats andlegacyvalidation preserved,notacceptedapproval.Fivevariantsold079/anv2-11.5.b samecompetency maynotcoexist;globalsemanticprevention pending.",
+      "editorial_approval": false
+    },
+    "physical_runtime_state_lot057": {
+      "ids": [
+        "ANV-0461"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_057.md",
+      "status": "Unchanged absent runtime;rawpolicyactive thenstem-quotes-source-answer afterexistingtransforms.No activation,newquarantine orcountedcheck."
+    },
+    "three_model_revision_lot057": {
+      "ids": [
+        "AN-C10-1016-M1",
+        "AN-C10-1016-M2",
+        "AN-C10-1016-M3"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_057.md",
+      "scope": "V2 10.16 pp726–727/PDF87–88;contrast10.17 pp727–728/PDF88–89;3pages text/images.Fig10-15stampedlinkcontext,notrupturediagram.Book2019scopeonly,notmodernclassacceptance.Three modelformats,statementsnull andlegacyvalidation preserved;M1/M3alreadyparsed,no inventedrestorationcount.5variantsold053/AN-C10-1016 samecompetency maynotcoexist;globalprevention pending.",
+      "editorial_approval": false
+    },
+    "source_AR_sentence_lot061": {
+      "report": "REVISAO_ARTE_NAVAL_LOTE_061.md",
+      "source": "Fonseca v2 8ed2019,12.15,p813/PDF174;contrastp814/PDF175",
+      "pdf_sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+      "observed": "Image confirms duplicated AR condition with differing rudder directions;example on814 distinguishes AV/AR.Not merely OCR.No official erratum inferred.",
+      "status": "edition/errata reconciliation and independent recheck pending;conflicting AR instruction not used as premise;questions scope starts from rest or explicit AV headway"
+    },
+    "physical_runtime_state_lot061": {
+      "ids": [
+        "ANV-0477"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_061.md",
+      "status": "Unchanged absent runtime;raw policy active then stem-quotes-source-answer after existing transforms.No activation,new quarantine or counted check."
+    },
+    "physical_runtime_state_lot062": {
+      "ids": [
+        "ANV-0478"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_062.md",
+      "status": "Unchanged absent runtime;raw policy active then stem-quotes-source-answer after existing transforms.No activation,new quarantine or counted check."
+    },
+    "three_model_revision_lot062": {
+      "ids": [
+        "AN-C12-1263-M1",
+        "AN-C12-1263-M2",
+        "AN-C12-1263-M3"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_062.md",
+      "scope": "12.6.3pp800–803/PDF161–164,fig12-4;8unique primary/context pages text/images.One right-handed propeller;hull AV distinct from machine AR;opposed suction,pre-reversalhelm and limited control.Three formats andlegacy flags preserved,not accepted as approval.Five old095/anv2-12.6.3 variants maynotcoexist inproof;global semantic prevention pending.",
+      "editorial_approval": false
+    },
+    "physical_runtime_state_lot063": {
+      "ids": [
+        "ANV-0482",
+        "AN-C10-1036-M1"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_063.md",
+      "status": "Both unchanged/absent runtime.0482 raw active then stem-quotes-source-answer.1036M1 raw stem-quotes-source-answer then missing-assertions.No activation,new quarantine or counted full check.1036 model1 defects remain pending;all3 physical models preserved."
+    },
+    "three_model_revision_lot063": {
+      "ids": [
+        "AN-C10-1032-M1",
+        "AN-C10-1032-M2",
+        "AN-C10-1032-M3",
+        "AN-C10-1036-M2",
+        "AN-C10-1036-M3"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_063.md",
+      "scope": "1032all3 and1036twoalreadyactive models individually source-checked/partiallycorrected.All3formats ineachphysicalgroup preserved.1036M1 excluded/pending unchanged;no wholeitem approval.10.32p747/PDF108,10.36pp752–753/PDF113–114,context748/PDF109,4pages text/images.Legacyflags notacceptedapproval.10percent is edition-bound recall,not modernnorm/compliance.Solventpassage read but not prescribed.Current equipment/normative mapping and semantic prevention pending.",
+      "editorial_approval": false
+    },
+    "physical_runtime_state_lot064": {
+      "ids": [
+        "ANV-0487"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_064.md",
+      "status": "Unchanged/absent runtime;raw active then stem-quotes-source-answer after existing transforms.No activation,new quarantine or counted check."
+    },
+    "page_number_note_lot064": "V2 chapter9opening hasno printednumeral;[657] inferred immediatelybeforeprinted658.PDF18 exact.Source.page_note andpartialledger discloseinference.Report064.Fivepages text/images,fig9-1 through9-11.",
+    "three_model_revision_lot064": {
+      "ids": [
+        "AN-C09-91-M1",
+        "AN-C09-91-M2",
+        "AN-C09-91-M3",
+        "AN-C09-93-M1",
+        "AN-C09-93-M2",
+        "AN-C09-93-M3"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_064.md",
+      "scope": "Both3model groups individually source-checked/partiallycorrected;all3formats andlegacyflags preserved,notacceptedapproval.V2 9.1opening/PDF18,[657]inferred;9.2pp658–659/PDF19–20;9.3pp659–661/PDF20–22,5pages/fig9-1–11.No universal forcegain orloadcalculation.Classvsinstance overlap removed,patesca closing distinguishedfromopenpole.Historicaltypes scopedtobook.Old003/91/93 competency overlaps maynotcoexist inproof;globalsemantic prevention pending.",
+      "editorial_approval": false
+    },
+    "physical_runtime_state_lot065": {
+      "ids": [
+        "ANV-0494"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_065.md",
+      "status": "Unchanged/absent runtime;raw active then stem-quotes-source-answer.No activation,new quarantine or counted check."
+    },
+    "source_scope_lot065": {
+      "report": "REVISAO_ARTE_NAVAL_LOTE_065.md",
+      "source": "11.10.d(1)–(4)p775/PDF136;context774–776/PDF135–137;threepages text/images",
+      "scope": "Only0295/0693corrected.Main equals effective and both transformations invariant after commandrepair.No heuristics/flags changed.Three1110models broader/pending unchanged;no wholeitem approval.Auxiliary officialweb comparison inCONSULTA_NORMATIVA_GOVERNO_065.json not current2026consolidation/Brazilian applicability proof."
+    },
+    "physical_runtime_state_lot066": {
+      "ids": [
+        "ANV-0497"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_066.md",
+      "status": "Unchanged/absent runtime;raw active then stem-quotes-source-answer.No activation,new quarantine or counted check."
+    },
+    "three_model_revision_lot066": {
+      "ids": [
+        "ANV-0298",
+        "ANV-0696",
+        "AN-C11-115a-M1",
+        "AN-C11-115a-M2",
+        "AN-C11-115a-M3"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_066.md",
+      "source": "11.5.a p760/PDF121;11.3 pp756–757/PDF117–118,fig11-2;openingPDF116 additionalcontext",
+      "scope": "Four unique pages text/images;opening unnumbered[755]inferred not usedas question locator.Fig11-2 includes rigidsegments,not called all-flexible.No universal maintenance prescription orforcecalculation.All5main objects equal effective and unchanged through both transforms.0298/115aM1missingpropositions restored;115aM3VF structurerepaired.Three-model regime/legacyflags preserved;not final approval.Equipment applicability,program/edital andsemantic prevention pending.",
+      "editorial_approval": false
+    },
+    "physical_runtime_state_lot067": {
+      "ids": [
+        "ANV-0320"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_067.md",
+      "status": "Unchanged/absent runtime;raw andtransformed policy answer-leak:stem_answer_continuation.No activation,new quarantine orcounted check."
+    },
+    "three_model_revision_lot067": {
+      "ids": [
+        "AN-C11-112-M1",
+        "AN-C11-112-M2",
+        "AN-C11-112-M3",
+        "ANV-0819"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_067.md",
+      "source": "11.2 pp[755]–756/PDF116–117,fig11-1;context11.1/11.3",
+      "scope": "Two pages text/images;opening unnumbered[755]inferred beforeprinted756,source notes/ledger disclose.M2exact756/PDF117.No figuremeasurement/calculation.Bookarrangement,forwardmotion andtimoneirofacingforward explicit;secondwheel description notuniversal modernrequirement.All4main objects equal effective and invariantthroughbothtransforms.Only112M1restores4missingpropositions;M3alreadyparsed4.Threeformats/legacyflags preserved,notacceptedapproval.Globalsemantic prevention/officialprogram/independent recheck pending.",
+      "editorial_approval": false
+    },
+    "physical_runtime_state_lot068": {
+      "ids": [
+        "ANV-0384",
+        "ANV-0535"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_068.md",
+      "status": "Both unchanged/absent runtime.0384explicitlyinactive before/after;0535rawactive thenanswer-leak:stem_answer_continuation.No activation,newquarantine orcounted check.0145previouslycorrected effective restoration preserved;different physicaloriginal not reedited/recounted."
+    },
+    "three_model_revision_lot068": {
+      "ids": [
+        "AN-C11-113-M1",
+        "AN-C11-113-M2",
+        "AN-C11-113-M3",
+        "ANV-0185",
+        "ANV-0734",
+        "ANV-0883"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_068.md",
+      "source": "11.3 p756/PDF117,fig11-2 p757/PDF118;two pages text/images",
+      "scope": "Figurecontains rigidsegments,macacos/molas;not all-flexible cable.Nofiguremeasurement/calculation.Only113M1 restores4missingpropositions;M3/0185alreadyparsed4.0185main andprevalent notebook-complete-stems question synchronized;onlythatrestorefield changed.Existing automaticcomplete-stem flag preserved,notacceptedapproval.All6runtime objects match expectedafter pipeline.All3formats/legacyflags preserved;equipmentapplicability/officialprogram/independentrecheck/globalsemanticprevention pending.",
+      "editorial_approval": false
+    },
+    "physical_runtime_state_lot069": {
+      "ids": [
+        "AN-C11-114a-M1"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_069.md",
+      "status": "Unchanged/absent runtime;rawanswer-leak:stem_answer_continuation then generic-or-undefined-object.No activation,newquarantine orcounted check.M1physicallypreserved/pending;onlytwo alreadyactive114amodelscorrected."
+    },
+    "three_model_revision_lot069": {
+      "ids": [
+        "AN-C11-114-M1",
+        "AN-C11-114-M2",
+        "AN-C11-114-M3",
+        "AN-C11-114a-M2",
+        "AN-C11-114a-M3"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_069.md",
+      "source": "11.4.a p757/PDF118;contextb–e pp758–760/PDF119–121,4pages text/images,fig11-2/11-3/11-4",
+      "scope": "Only114M1 restores4missingpropositions;bothM3alreadyparsed4.All5mainobjects equalruntime/invariantthroughbothtransforms.Nofiguremeasurement,powercalculation oruniversalcostefficiencyclaim.Lowspeedactuation notallmotorslowRPM;generalwheeldenomination notuniversalwheelrequirement,electricleverexplicit.Historicalcompartment/couraca descriptions scoped tobook,notmodernnorms.114all3formats and114aall3physicalmodels retained;114aM1excludedpending unchanged.Legacyflags notacceptedapproval.Globalsemanticprevention,officialprogram/applicability andindependentrecheck pending.",
+      "editorial_approval": false
+    },
+    "three_model_revision_lot070": {
+      "ids": [
+        "AN-C11-114b-M1",
+        "AN-C11-114b-M2",
+        "AN-C11-114b-M3"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_070.md",
+      "source": "11.4.b pp757–758/PDF118–119,fig11-3;context11.4.d p759/PDF120 and10.30.c(1)p743/PDF104",
+      "scope": "Four pages read in text/images; printed pages verified. No figure measurements/calculations. Historical employment scoped to book. Wheel command not exclusive: compensator also acts on valve. Neutral valve does not mean rudder can only stop amidships. Main and effective objects identical/invariant through transforms. M1 restores4missingpropositions;M3alreadyparsed4. Three models/keys/formats/legacyflags preserved; not approval. Official program/applicability,independent recheck andsemantic prevention pending.",
+      "editorial_approval": false
+    }
+  },
+  "production_baseline": {
+    "id": "dpl_rRAELJq5jYiofCKZriDuVdLvaonf",
+    "url": "estibordo-pscpp-7e5qmb5hl-estibordo.vercel.app",
+    "sha": "012b562b0eb6f7fec78773b339e4a53b3643e791",
+    "state": "READY",
+    "project_id": "prj_Mh3oj4yvjVE0PcYiuvPcv839sejY",
+    "team_id": "team_n8yGTY7O9r3Y19SWfZDI7iP2"
+  },
+  "next_actions": [
+    "Historical read complete for all available texts; use BENCHMARK_REVISAO_INTEGRAL.md and manual TSV rather than superseded structural counts. Do not equate historical key observation with current technical correctness.",
+    "Verify official Annexes 2-A/2-B provenance, revisions and edital; map complete work/chapter/item trees.",
+    "Review every active effective version.213 primary corrections,216 partial checks,zero final approvals.Independent recheck,official program/edital,bibliography/current applicability andsemantic prevention pending.Preserve source impediments,excluded1036M1/114aM1 and12.15AR issue.",
+    "Continue independent AN-C11-114c-M1(hydroelectric steering servo),examining allthree models and relevant crossreferences. Lot070 correctedallthree114bmodels;11.4.b pp757–758/PDF118–119,fig11-3,context11.4.d p759/PDF120 and10.30.c(1)p743/PDF104. OnlyM1restoresmissingpropositions;M3alreadyparsed4. Valve-neutral/machine-stopped not universal rudder-amidships;compensatoralsoacts. All8gates pending/failing;no merge/deploy.",
+    "Inspect 20 PSCPP records classified as ii — arte naval and normalize taxonomy with regression tests.",
+    "Reconcile offline/production consumers and all hashes, complete every gate, then sync main, revalidate, review PR, merge and verify production."
+  ],
+  "resume_command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/audit-pscpp-runtime-inventory.mjs",
+  "resume_instruction": "Continue this branch from CHECKPOINT.json, preserving baseline/. Do not treat pending rows as approved. Reobtain the attached dossier if needed; its hashes are in INTEGRIDADE_DOSSIE.json. Follow the original Prompt-Mestre. Do not merge while any gate remains pending or failed.",
+  "source_checkpoint_sha": "f177ca98cac8183f545272a099cb5444642a4978",
+  "last_completed_batch": "070: three AN-C11-114b models; steam steering servo, valve/admission/machine state, compensator distinction; 15 rationales; M1 restored; zero final approvals",
+  "last_build": {
+    "command": "npm run build in isolated copy; first exit0 log incomplete; second npm run build exit0 with integral log confirmed",
+    "result": "passed_isolated_copy_integral_log_confirmed",
+    "source_checkpoint_sha": "f177ca98cac8183f545272a099cb5444642a4978",
+    "source_changes": [
+      "data/questions/arte-naval.json:AN-C11-114b-M1,AN-C11-114b-M2,AN-C11-114b-M3"
+    ],
+    "source_sha256": {
+      "data/questions/arte-naval.json": "a3d71df5dac8dbe5325ab036084acdc1f798ce97bbd2fa9b71bc08fafbac1a35",
+      "data/question-restorations/arte-naval.json": "6607132d2a946fc22cca613b05e3591e2ecab69e1967e867ece7b2432d855a0d",
+      "data/question-restorations/notebook-complete-stems.json": "c38a800239f618928b876486f98d50f1aa36b7f4a819d36ac3d9b6ad52183c8c"
+    },
+    "release_approval": false,
+    "note": "Compile/lint/types/101pages/routes confirmed;all tracked non-docs and6generated artifacts byte-identical.213exactdeltas,468propositions,480directoptions.Three neweffectiveIDs only.Zero final approval."
+  },
+  "continuation_automation": {
+    "id": "6ad9195b550c8191bf6738126d23a44e",
+    "enabled_confirmed": true,
+    "recurrence": "HOURLY",
+    "timezone": "America/Sao_Paulo",
+    "latest_confirmation": "2026-10-21",
+    "note": "Read latest remote checkpoint first; platform availability is required; no concurrent writers."
+  }
+}
