@@ -21661,9 +21661,9 @@
       "module": "Aparelho de governo",
       "topic_code": "old-076",
       "topic": "servomotor elétrico",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "Sobre “servomotor elétrico”, analise as afirmativas a seguir e assinale a alternativa que apresenta apenas as corretas:\nI. “servomotor elétrico” designa acionamento cujo sentido depende de uma alavanca de controle elétrico.\nII. “servomotor elétrico” designa punhos distribuídos no contorno exterior da roda do leme.\nIII. Em relação a “servomotor elétrico”, considere: costuma ser instalada na popa, próxima à madre, para evitar transmissões longas.\nIV. Em relação a “servomotor elétrico”, considere: mantém o leme parado por freio quando a alavanca retorna à posição neutra.",
+      "question": "Segundo Arte Naval, volume 2, edição de 2019, examine as afirmações sobre o servomotor elétrico por alavanca e escolha o conjunto completo das corretas:\nI. O comando elétrico determina o sentido do movimento do motor e, consequentemente, do leme.\nII. Levar a alavanca à posição neutra faz o leme retornar automaticamente a meio.\nIII. Ao neutralizar a alavanca, o motor continua girando até o leme atingir o limite do bordo selecionado.\nIV. Um freio conserva o leme no ângulo desejado depois que seu movimento é interrompido.",
       "options": [
         {
           "key": "A",
@@ -21687,12 +21687,15 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “servomotor elétrico”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "Somente I e IV são verdadeiras (alternativa C). Em 11.4.e, pp. 759–760, o comando elétrico determina o movimento; a alavanca a meio corresponde ao motor parado. O leme permanece no ângulo alcançado por ação de um freio. Neutralizar a alavanca não significa centralizar o leme nem manter o motor em marcha até um limite. A descrição é a da instalação apresentada na edição de 2019, sem generalização a todos os sistemas elétricos de governo.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, seção A, item 11.4.e"
+        "locator": "cap. 11, seção A, item 11.4.e, pp. 759–760/PDF 120–121; contraste 11.4.d, p. 759/PDF 120",
+        "printed_page": "759–760",
+        "pdf_page": "120–121",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Aparelho de governo",
@@ -21726,7 +21729,15 @@
         "chapter_id": "fonseca-arte-v1::ch11",
         "topic_id": "old-076",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Inclui II, falsa: alavanca a meio não ordena retorno automático do leme a meio; omite IV.",
+        "B": "II e III são falsas: a posição neutra para o motor, sem centralização automática nem marcha até o limite.",
+        "C": "I e IV são verdadeiras: comando elétrico do movimento e retenção do ângulo por freio.",
+        "D": "Inclui III, falsa por manter o motor girando com a alavanca neutra; omite I.",
+        "E": "Inclui II, falsa por confundir posição da alavanca com posição do leme; omite I."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0264",
@@ -51014,36 +51025,39 @@
       "topic": "servomotor elétrico",
       "difficulty": "Médio",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “servomotor elétrico”.",
+      "question": "No servomotor elétrico por alavanca descrito em Arte Naval, volume 2, edição de 2019, qual associação entre posição do comando e resposta do aparelho está correta?",
       "options": [
         {
           "key": "A",
-          "text": "acionamento cujo sentido depende de uma alavanca de controle elétrico"
+          "text": "Direita: movimento para boreste; esquerda: movimento para bombordo."
         },
         {
           "key": "B",
-          "text": "máquina comandada a distância que fornece força para movimentar o leme"
+          "text": "Direita: movimento para bombordo; esquerda: movimento para boreste."
         },
         {
           "key": "C",
-          "text": "instalação simples em que a roda transmite movimento ao leme por gualdropes"
+          "text": "A meio: retorno automático do leme ao centro; fora do neutro: retenção do ângulo."
         },
         {
           "key": "D",
-          "text": "comando rotativo montado em eixo horizontal para ordenar a posição do leme"
+          "text": "A meio: motor em marcha; no ângulo desejado: parada por compensador hidráulico."
         },
         {
           "key": "E",
-          "text": "marinheiro encarregado de manobrar o leme conforme as ordens recebidas"
+          "text": "Fora do neutro: motor parado; a meio: movimento para o último bordo escolhido."
         }
       ],
       "correct_answer": "A",
-      "explanation": "A opção correta apresenta a definição técnica de “servomotor elétrico”: acionamento cujo sentido depende de uma alavanca de controle elétrico; mantém o leme parado por freio quando a alavanca retorna à posição neutra.",
+      "explanation": "A alternativa A corresponde a 11.4.e, pp. 759–760. Alavanca para a direita inicia o movimento do motor e do leme para boreste; para a esquerda, move o leme para bombordo. A meio, o motor fica parado e o freio mantém o ângulo alcançado. Não se exige que o leme volte a meio para parar. A antiga descrição genérica de servomotor também abrangia a modalidade elétrica; por isso as alternativas foram substituídas por associações específicas, em vez de declarar falsa a categoria geral.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, seção A, item 11.4.e"
+        "locator": "cap. 11, seção A, item 11.4.e, pp. 759–760/PDF 120–121; contraste 11.4.d, p. 759/PDF 120",
+        "printed_page": "759–760",
+        "pdf_page": "120–121",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Aparelho de governo",
@@ -51077,7 +51091,15 @@
         "chapter_id": "fonseca-arte-v1::ch11",
         "topic_id": "old-076",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "A direção do comando corresponde à do leme: direita para boreste, esquerda para bombordo.",
+        "B": "Inverte os bordos: direita não comanda bombordo nem esquerda comanda boreste na descrição da obra.",
+        "C": "Confunde a posição neutra da alavanca com uma ordem de centralização automática do leme.",
+        "D": "Contraria o motor parado com alavanca a meio e transfere o compensador hidráulico para esse caso.",
+        "E": "Inverte as condições de marcha e parada: é fora do neutro que o comando movimenta o leme."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0662",
@@ -70276,38 +70298,41 @@
       "module": "Aparelho de governo",
       "topic_code": "old-076",
       "topic": "servomotor elétrico",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Situação aplicada",
-      "question": "Considere A definição técnica “acionamento cujo sentido depende de uma alavanca de controle elétrico. A descrição inclui ainda esta característica: mantém o leme parado por freio quando a alavanca retorna à posição neutra. Qual nomenclatura corresponde ao caso apresentado?",
+      "question": "Em uma instalação por alavanca como a descrita para o servomotor elétrico em Arte Naval, volume 2, edição de 2019, o leme já está a boreste e ainda gira nesse sentido. O operador deseja interromper o movimento e conservar o ângulo alcançado. Qual procedimento e resultado correspondem à descrição da obra?",
       "options": [
         {
           "key": "A",
-          "text": "servomotor elétrico"
+          "text": "Levar a alavanca a meio; o motor para e o freio retém o ângulo."
         },
         {
           "key": "B",
-          "text": "servomotor"
+          "text": "Manter a alavanca à direita; o motor para e o freio retém o ângulo."
         },
         {
           "key": "C",
-          "text": "leme à mão"
+          "text": "Levar a alavanca à esquerda; o motor para e o freio retém o ângulo."
         },
         {
           "key": "D",
-          "text": "roda do leme"
+          "text": "Levar a alavanca a meio; o motor conduz o leme automaticamente ao centro."
         },
         {
           "key": "E",
-          "text": "timoneiro"
+          "text": "Levar a alavanca a meio; o motor continua e o compensador hidráulico o detém."
         }
       ],
       "correct_answer": "A",
-      "explanation": "“servomotor elétrico” é acionamento cujo sentido depende de uma alavanca de controle elétrico; mantém o leme parado por freio quando a alavanca retorna à posição neutra.",
+      "explanation": "A alternativa A aplica 11.4.e, p. 760: a posição neutra da alavanca corresponde ao motor parado, e um freio mantém o leme no ângulo desejado. Manter o comando para a direita prolonga o movimento para boreste; comandar para a esquerda movimenta o leme para bombordo. A posição a meio do comando não implica retorno automático do leme ao centro. Trata-se de interpretação do funcionamento descrito, não de instrução de emergência ou certificação de uma instalação real.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, seção A, item 11.4.e"
+        "locator": "cap. 11, seção A, item 11.4.e, pp. 759–760/PDF 120–121; contraste 11.4.d, p. 759/PDF 120",
+        "printed_page": "759–760",
+        "pdf_page": "120–121",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Aparelho de governo",
@@ -70341,7 +70366,15 @@
         "chapter_id": "fonseca-arte-v1::ch11",
         "topic_id": "old-076",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Neutralizar a alavanca para o motor e permite ao freio conservar o ângulo já atingido.",
+        "B": "Manter o comando para a direita conserva a ordem de movimento para boreste, em vez de pará-lo.",
+        "C": "Levar a alavanca para a esquerda comanda movimento para bombordo, em vez de reter o ângulo.",
+        "D": "A posição neutra para o motor, mas não centraliza automaticamente o leme.",
+        "E": "O caso descrito não mantém o motor em marcha nem depende de compensador hidráulico para parar."
+      },
+      "cognitive_level": 3
     },
     {
       "id": "ANV-0922",
@@ -143277,12 +143310,15 @@
       "subject": "Arte Naval",
       "module": "Máquina do leme",
       "topic": "Servomotor elétrico",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.4.e, p. 759–760"
+        "locator": "cap. 11, seção A, item 11.4.e, pp. 759–760/PDF 120–121; contraste 11.4.d, p. 759/PDF 120",
+        "printed_page": "759–760",
+        "pdf_page": "120–121",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -143316,7 +143352,7 @@
       "topic_code": "AN.C11.11.4.e.M1",
       "style": "Afirmativas combinadas",
       "question_type": "assertion_combination",
-      "question": "Com base em Arte Naval, v. 2, art. 11.4.e, analise as afirmativas:\nI. No servomotor elétrico, o sentido e a amplitude do movimento do motor e do leme são dados por mecanismo de controle elétrico.\nII. Com a alavanca a meio, o motor elétrico fica parado; para a direita move o leme para boreste e para a esquerda move-o para bombordo.\nIII. Com a alavanca a meio, o motor elétrico permanece girando para manter o leme centralizado.\nIV. O servomotor elétrico exige mecanismo compensador hidráulico para manter o leme na posição desejada.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "question": "Segundo Arte Naval, volume 2, edição de 2019, examine as afirmações sobre o servomotor elétrico por alavanca e escolha o conjunto completo das corretas:\nI. O mecanismo elétrico de controle pode ser instalado na casa do leme ou em outras estações de governo.\nII. Deslocar a alavanca para a direita comanda o movimento do leme para boreste; para a esquerda, para bombordo.\nIII. Na posição neutra da alavanca, o motor permanece em marcha para centralizar o leme.\nIV. A retenção do ângulo desejado depende de mecanismo compensador hidráulico, em vez de freio.",
       "options": [
         {
           "key": "A",
@@ -143340,7 +143376,7 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "As afirmativas corretas reproduzem o conteúdo técnico do item de referência. I: No servomotor elétrico, o sentido e a amplitude do movimento do motor e do leme são dados por mecanismo de controle elétrico. II: Com a alavanca a meio, o motor elétrico fica parado; para a direita move o leme para boreste e para a esquerda move-o para bombordo. III: Com a alavanca a meio, o motor elétrico permanece girando para manter o leme centralizado. IV: O servomotor elétrico exige mecanismo compensador hidráulico para manter o leme na posição desejada.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "explanation": "Somente I e II são verdadeiras (alternativa D). O item 11.4.e, pp. 759–760, admite o controle nas estações de governo e relaciona direita/boreste e esquerda/bombordo. Com a alavanca a meio, o motor está parado; o freio mantém o leme no ângulo desejado. III inventa marcha e centralização no neutro. IV transfere para esse caso a necessidade de compensação discutida em 11.4.d para outros tipos de servomotor.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC09",
@@ -143350,18 +143386,29 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
-      }
+      },
+      "distractor_analysis": {
+        "A": "Inclui III, falsa por manter o motor em marcha no neutro; omite II.",
+        "B": "Inclui IV, falsa por substituir o freio por compensador hidráulico; omite I.",
+        "C": "III e IV são falsas: o motor para no neutro e o freio mantém o leme.",
+        "D": "I e II são verdadeiras: localização do controle e correspondência dos bordos.",
+        "E": "Inclui III e IV, ambas falsas; somente I e II estão corretas."
+      },
+      "cognitive_level": 2
     },
     {
       "subject": "Arte Naval",
       "module": "Máquina do leme",
       "topic": "Servomotor elétrico",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.4.e, p. 759–760"
+        "locator": "cap. 11, seção A, item 11.4.e, pp. 759–760/PDF 120–121; contraste 11.4.d, p. 759/PDF 120",
+        "printed_page": "759–760",
+        "pdf_page": "120–121",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -143395,31 +143442,31 @@
       "topic_code": "AN.C11.11.4.e.M2",
       "style": "Múltipla escolha conceitual",
       "question_type": "conceptual",
-      "question": "Por que o servomotor elétrico descrito no art. 11.4.e dispensa mecanismo compensador?",
+      "question": "Por que o servomotor elétrico por alavanca apresentado em Arte Naval, volume 2, edição de 2019, não necessita do mecanismo compensador descrito para os tipos a vapor e hidrelétrico?",
       "options": [
         {
           "key": "A",
-          "text": "Porque o leme retorna sempre automaticamente a meio por ação de molas."
+          "text": "Porque molas devolvem o leme ao centro quando o comando deixa de atuar."
         },
         {
           "key": "B",
-          "text": "Porque a roda do leme atua diretamente na madre sem servomotor."
+          "text": "Porque o motor permanece em marcha e seu torque conserva o ângulo pedido."
         },
         {
           "key": "C",
-          "text": "Porque a bomba hidráulica neutraliza mecanicamente qualquer deslocamento."
+          "text": "Porque os junços neutralizam o comando da bomba quando o ângulo é atingido."
         },
         {
           "key": "D",
-          "text": "Porque o sistema utiliza gualdropes que bloqueiam o leme ao cessar o comando."
+          "text": "Porque neutralizar a alavanca comanda o retorno automático do leme ao centro."
         },
         {
           "key": "E",
-          "text": "Porque o leme só se movimenta enquanto a alavanca está fora da posição neutra e é mantido na posição desejada por um freio."
+          "text": "Porque neutralizar a alavanca para o motor e o freio conserva o ângulo pedido."
         }
       ],
       "correct_answer": "E",
-      "explanation": "Porque o leme só se movimenta enquanto a alavanca está fora da posição neutra e é mantido na posição desejada por um freio.",
+      "explanation": "A alternativa E explica o caso de 11.4.e, pp. 759–760: o comando fora do neutro produz movimento; o retorno da alavanca a meio para o motor, e o freio conserva a posição do leme. Já 11.4.d descreve a compensação dos tipos a vapor e hidrelétrico. A distinção não significa que toda instalação elétrica existente dispense realimentação ou outros controles; o enunciado se limita à configuração da obra.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC09",
@@ -143429,18 +143476,29 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
-      }
+      },
+      "distractor_analysis": {
+        "A": "A fonte não descreve retorno por molas: o freio conserva o ângulo desejado, que pode estar fora do centro.",
+        "B": "Alavanca a meio corresponde ao motor parado, e a retenção é feita pelo freio, não pelo torque de marcha contínua.",
+        "C": "Transfere o mecanismo de controle do sistema hidrelétrico para a instalação elétrica por alavanca.",
+        "D": "A posição neutra não ordena retorno automático ao centro; o ângulo já atingido é conservado.",
+        "E": "O operador interrompe o movimento neutralizando o comando; o motor para e o freio mantém o ângulo."
+      },
+      "cognitive_level": 2
     },
     {
       "subject": "Arte Naval",
       "module": "Máquina do leme",
       "topic": "Servomotor elétrico",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.4.e, p. 759–760"
+        "locator": "cap. 11, seção A, item 11.4.e, pp. 759–760/PDF 120–121; contraste 11.4.d, p. 759/PDF 120",
+        "printed_page": "759–760",
+        "pdf_page": "120–121",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -143474,7 +143532,7 @@
       "topic_code": "AN.C11.11.4.e.M3",
       "style": "Sequência V/F",
       "question_type": "true_false",
-      "question": "Com base no art. 11.4.e de Arte Naval, v. 2, julgue as afirmativas:\n( ) O sistema permite eliminar a roda do leme, substituindo-a por uma simples alavanca de controle.\n( ) Não há mecanismo compensador; o leme permanece na posição desejada por meio de um freio.\n( ) Com a alavanca a meio, o motor elétrico permanece girando para manter o leme centralizado.\n( ) No servomotor elétrico, o sentido e a amplitude do movimento do motor e do leme são dados por mecanismo de controle elétrico.\nAssinale a sequência correta.",
+      "question": "Na configuração de servomotor elétrico por alavanca descrita em Arte Naval, volume 2, edição de 2019, julgue as afirmações e escolha a sequência correta:\n( ) A alavanca de controle pode substituir a roda do leme.\n( ) O leme pode ficar retido no ângulo desejado por um freio, sem mecanismo compensador nessa configuração.\n( ) Com a alavanca a meio, o motor permanece girando para conduzir o leme ao centro.\n( ) O mecanismo elétrico comanda o sentido e a amplitude do movimento do motor e, por consequência, do leme.",
       "options": [
         {
           "key": "A",
@@ -143498,7 +143556,7 @@
         }
       ],
       "correct_answer": "A",
-      "explanation": "A sequência decorre diretamente das proposições técnicas do item: 1) O sistema permite eliminar a roda do leme, substituindo-a por uma simples alavanca de controle. | 2) Não há mecanismo compensador; o leme permanece na posição desejada por meio de um freio. | 3) Com a alavanca a meio, o motor elétrico permanece girando para manter o leme centralizado. | 4) No servomotor elétrico, o sentido e a amplitude do movimento do motor e do leme são dados por mecanismo de controle elétrico.",
+      "explanation": "A sequência é V/V/F/V (alternativa A). Em 11.4.e, pp. 759–760, a alavanca substitui a roda, o freio retém o ângulo e o mecanismo elétrico determina o movimento. A terceira afirmação é falsa: alavanca a meio significa motor parado, não centralização automática. A ausência de mecanismo compensador pertence à configuração descrita na obra e não deve ser estendida a todo sistema elétrico de governo.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC09",
@@ -143508,7 +143566,15 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
-      }
+      },
+      "distractor_analysis": {
+        "A": "É a única sequência com I, II e IV verdadeiras e III falsa.",
+        "B": "Erra II, III e IV: a retenção por freio e o comando elétrico são descritos; marcha no neutro não é.",
+        "C": "Erra I, III e IV: a roda pode ser substituída, o motor para no neutro e o controle é elétrico.",
+        "D": "Erra I, II e III: a alavanca pode substituir a roda, há retenção por freio e o motor para no neutro.",
+        "E": "Erra III: não há marcha contínua para centralizar o leme com a alavanca neutra."
+      },
+      "cognitive_level": 2
     },
     {
       "subject": "Arte Naval",
