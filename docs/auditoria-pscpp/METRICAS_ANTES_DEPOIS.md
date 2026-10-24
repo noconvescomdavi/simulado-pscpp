@@ -569,3 +569,14 @@ Falhas reais mantidas:test-notebook-complete-stems exit1 emANV-0142;validate-edi
 Acumulado162 IDs distintos corrigidos,165 conferências primárias parciais,zero aprovações finais. Triagem178 sem proposições e77 localizadores:75 candidatos corrigidos+3 falsos positivos anteriores+178 restantes=256;87 correções fora dessa triagem.27.435 físicos,14.086 ocorrências(12.102 cadernos+1.984PSCPP),13.715 IDs únicos. Próxima independenteANV-0278,máquinas em sentidos opostos,Fonseca v2 12.15. Impedimentos0142/0840,0176/0874 e0253/0651 preservados,sem recontagem.
 
 Relatório individual: `REVISAO_ARTE_NAVAL_LOTE_060.md`. Cinco correções parciais;nenhuma aprovação final.
+
+
+## Lote061 — seis correções parciais
+
+Gerados runtime PSCPP, bancos, catálogo e flashcards; validações de bancos, matriz de seleção, proveniência e catálogo passaram; check:pscpp-bank passou. Regressão acumulada:168 deltas exatos,11934 ocorrências de cadernos preservadas,364 proposições renderizadas e385 alternativas diretas preservadas. Frente ao checkpoint060,exatamente seis IDs mudaram; todos os1984 registros PSCPP e a composição14086=12102+1984 permaneceram iguais. Sem inclusão/exclusão de ID.27435 registros físicos e13715 IDs únicos mantidos.
+
+Build completo npm run build passou em cópia isolada: compilação,lint/tipos,101/101 páginas e tabela de rotas confirmados no log integral. A primeira tentativa retornou0 com log vazio e não foi aceita como evidência; repetição direta teve saída integral. Todos os arquivos rastreados fora de docs e os seis artefatos gerados foram comparados byte a byte com a cópia testada. A triagem terminou0 com log vazio; o artefato foi conferido diretamente:176 candidatos sem proposições e77 por localizador.
+
+Falhas conhecidas mantidas:test-notebook-complete-stems exit1 emANV-0142;validate-editorial-runtime exit1 nos77 localizadores;validate-pscpp-editorial-evidence exit2,zero evidências finais aceitas/14086 pendentes. Critérios não relaxados. REVISOES_EDITORIAIS intacto. As162 correções anteriores permanecem exatamente iguais no ledger; seis novas elevam o acumulado a168,com171 conferências bibliográficas parciais eZERO aprovações finais. Dos256 candidatos originais,77 corrigidos+3 falsos positivos+176 restantes;91 correções fora dessa triagem,sem dupla contagem.
+
+Próxima falha independente:ANV-0279,seguimento para vante com máquina atrás,Fonseca v2 12.6.3. Impedimentos0142/0840,0176/0874 e0253/0651 e reconciliação da fraseAR na fonte permanecem abertos. Publicação deste relatório e CHECKPOINT no mesmo commit da branch,com comparação da árvore Git local/remota e expected_sha sem force; o SHA definitivo é o commit que contém este arquivo.

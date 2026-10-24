@@ -22784,9 +22784,9 @@
       "module": "Governo de navio de dois hélices",
       "topic_code": "old-101",
       "topic": "máquinas em sentidos opostos",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "Sobre “máquinas em sentidos opostos”, analise as afirmativas a seguir e assinale a alternativa que apresenta apenas as corretas:\nI. “máquinas em sentidos opostos” designa propulsor cujo ângulo das pás varia para alterar módulo e sentido do empuxo.\nII. Em relação a “máquinas em sentidos opostos”, considere: permite aproveitar individualmente o fluxo dos propulsores para ampliar o controle.\nIII. Em relação a “máquinas em sentidos opostos”, considere: produz forte momento de rotação com pouco avanço quando potência e alavancas são adequadas.\nIV. “máquinas em sentidos opostos” designa uso de um propulsor adiante e outro atrás.",
+      "question": "Segundo Arte Naval, volume 2, edição de 2019, examine as afirmações sobre a manobra convencional de dois hélices, com um dando adiante e outro atrás, partindo do repouso. Escolha o conjunto completo das corretas:\nI. A manobra consiste em manter os dois hélices dando adiante, com diferentes rotações.\nII. Rotações iguais nos dois eixos garantem giro no mesmo ponto, mesmo sem influências externas.\nIII. Para girar sobre a quilha, a obra indica menor rotação na máquina que dá adiante, com diferença determinada por experiências no próprio navio.\nIV. No caso descrito, a proa guina para o bordo do hélice que dá atrás.",
       "options": [
         {
           "key": "A",
@@ -22810,12 +22810,15 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “máquinas em sentidos opostos”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "Somente III e IV são verdadeiras (alternativa C). Em 12.15, p. 814, a manobra emprega um hélice adiante e outro atrás; a proa guina para o bordo do que dá atrás. Mesmo com rotações iguais e sem influências externas, o modelo descrito admite ligeiro seguimento para vante. O equilíbrio exige ajuste de rotações, variável entre navios e verificado por experiências; não decorre automaticamente de igual número de rotações.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção B, item 12.15"
+        "locator": "cap. 12, seção B, item 12.15, pp. 813–815/PDF 174–176; contexto 12.10, pp. 810–811/PDF 171–172, e 12.16/fig. 12-9, p. 815/PDF 176",
+        "printed_page": "813–815",
+        "pdf_page": "174–176",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Governo de navio de dois hélices",
@@ -22849,7 +22852,15 @@
         "chapter_id": "fonseca-arte-v1::ch12",
         "topic_id": "old-101",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Inclui I, falsa por manter ambos os hélices adiante; omite III.",
+        "B": "I e II são falsas: comandos no mesmo sentido e garantia indevida de giro estacionário.",
+        "C": "III e IV são verdadeiras: ajuste experimental de rotações e proa para o bordo do hélice que dá atrás.",
+        "D": "Inclui II, falsa por transformar rotações iguais em garantia de giro no mesmo ponto; omite III.",
+        "E": "Inclui I, falsa por alterar a configuração da manobra; omite IV."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0279",
@@ -52170,36 +52181,39 @@
       "topic": "máquinas em sentidos opostos",
       "difficulty": "Médio",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “máquinas em sentidos opostos”.",
+      "question": "Na manobra convencional de dois hélices descrita em Arte Naval, volume 2, edição de 2019, qual associação entre comandos das máquinas e comportamento esperado está correta?",
       "options": [
         {
           "key": "A",
-          "text": "uso de um propulsor adiante e outro atrás"
+          "text": "Um hélice adiante e outro atrás; rotações iguais não garantem giro no mesmo ponto."
         },
         {
           "key": "B",
-          "text": "propulsor cujo ângulo das pás varia para alterar módulo e sentido do empuxo"
+          "text": "Um hélice adiante e outro parado; essa configuração equivale ao par adiante e atrás."
         },
         {
           "key": "C",
-          "text": "arranjo em que o topo das pás gira afastando-se do plano diametral na marcha a vante"
+          "text": "Ambos os hélices adiante, em rotações iguais; essa configuração equivale ao par adiante e atrás."
         },
         {
           "key": "D",
-          "text": "configuração que posiciona uma porta de leme na descarga de cada hélice"
+          "text": "Ambos os hélices atrás, em rotações iguais; essa configuração equivale ao par adiante e atrás."
         },
         {
           "key": "E",
-          "text": "arranjo em que o topo das pás gira em direção ao plano diametral na marcha a vante"
+          "text": "Um hélice adiante e outro atrás; rotações iguais garantem ausência de translação."
         }
       ],
       "correct_answer": "A",
-      "explanation": "A opção correta apresenta a definição técnica de “máquinas em sentidos opostos”: uso de um propulsor adiante e outro atrás; produz forte momento de rotação com pouco avanço quando potência e alavancas são adequadas.",
+      "explanation": "A alternativa A corresponde a 12.15, pp. 813–814. Há um hélice dando adiante e outro atrás, e não se pode concluir que rotações iguais produzam giro estacionário. O texto descreve ligeiro avanço nessa condição e exige experiências para ajustar o equilíbrio entre os eixos. Um hélice parado ou os dois no mesmo sentido não reproduzem a configuração pedida. A conclusão se limita ao arranjo convencional descrito, não a toda propulsão azimutal, de passo controlável ou com dois lemes.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção B, item 12.15"
+        "locator": "cap. 12, seção B, item 12.15, pp. 813–815/PDF 174–176; contexto 12.10, pp. 810–811/PDF 171–172, e 12.16/fig. 12-9, p. 815/PDF 176",
+        "printed_page": "813–815",
+        "pdf_page": "174–176",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Governo de navio de dois hélices",
@@ -52233,7 +52247,15 @@
         "chapter_id": "fonseca-arte-v1::ch12",
         "topic_id": "old-101",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Reúne a configuração de comandos opostos e a ressalva correta sobre rotações iguais.",
+        "B": "Um hélice parado não é um hélice dando atrás; a configuração não corresponde à manobra pedida.",
+        "C": "Dois hélices dando adiante não formam o par adiante/atrás examinado.",
+        "D": "Dois hélices dando atrás também não correspondem ao par de comandos opostos.",
+        "E": "A igualdade de rotações não garante ausência de translação no modelo descrito."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0677",
@@ -70729,38 +70751,41 @@
       "module": "Governo de navio de dois hélices",
       "topic_code": "old-101",
       "topic": "máquinas em sentidos opostos",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Situação aplicada",
-      "question": "Considere A definição técnica “uso de um propulsor adiante e outro atrás. A descrição inclui ainda esta característica: produz forte momento de rotação com pouco avanço quando potência e alavancas são adequadas. Qual nomenclatura corresponde ao caso apresentado?",
+      "question": "Um navio com a configuração convencional de dois hélices descrita em Arte Naval, volume 2, edição de 2019, parte do repouso, sem influências externas. A máquina de boreste dá atrás e a de bombordo dá adiante, com o mesmo número de rotações nos eixos. Qual resposta corresponde ao modelo apresentado na obra?",
       "options": [
         {
           "key": "A",
-          "text": "máquinas em sentidos opostos"
+          "text": "A proa guina para boreste, com ligeiro seguimento para vante."
         },
         {
           "key": "B",
-          "text": "hélice de passo controlado"
+          "text": "A proa guina para bombordo, com ligeiro seguimento para vante."
         },
         {
           "key": "C",
-          "text": "hélices para fora"
+          "text": "A proa guina para boreste, girando necessariamente no mesmo ponto."
         },
         {
           "key": "D",
-          "text": "navio de dois lemes"
+          "text": "A proa guina para bombordo, girando necessariamente no mesmo ponto."
         },
         {
           "key": "E",
-          "text": "hélices para dentro"
+          "text": "O navio adquire seguimento para vante, sem tendência de guinada."
         }
       ],
       "correct_answer": "A",
-      "explanation": "“máquinas em sentidos opostos” é uso de um propulsor adiante e outro atrás; produz forte momento de rotação com pouco avanço quando potência e alavancas são adequadas.",
+      "explanation": "A alternativa A aplica 12.15, p. 814: a proa guina para o bordo do hélice que dá atrás, neste caso boreste. A obra ressalva que, mesmo sem influências externas e com rotações iguais, o giro não é estacionário: surge ligeiro seguimento para vante. A diferença de rotações necessária para equilibrar a manobra deve ser experimentada para cada navio. A previsão corresponde ao arranjo convencional e às condições descritas, sem fixar uma razão universal de rotações entre os eixos.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção B, item 12.15"
+        "locator": "cap. 12, seção B, item 12.15, pp. 813–815/PDF 174–176; contexto 12.10, pp. 810–811/PDF 171–172, e 12.16/fig. 12-9, p. 815/PDF 176",
+        "printed_page": "813–815",
+        "pdf_page": "174–176",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Governo de navio de dois hélices",
@@ -70794,7 +70819,15 @@
         "chapter_id": "fonseca-arte-v1::ch12",
         "topic_id": "old-101",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Boreste é o bordo da máquina que dá atrás; o ligeiro avanço é a ressalva do modelo para rotações iguais.",
+        "B": "Inverte o bordo da guinada, atribuindo-o ao hélice que dá adiante.",
+        "C": "Acerta o bordo, mas transforma igualdade de rotações em garantia indevida de giro estacionário.",
+        "D": "Inverte o bordo e também afirma giro estacionário garantido.",
+        "E": "Ignora o conjugado de rotação e a guinada para o bordo do hélice que dá atrás."
+      },
+      "cognitive_level": 3
     },
     {
       "id": "ANV-0927",
@@ -158128,12 +158161,15 @@
       "subject": "Arte Naval",
       "module": "Manobra do Navio",
       "topic": "Um hélice dando adiante e outro dando atrás",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, item 12.15, p. 813–815"
+        "locator": "cap. 12, seção B, item 12.15, pp. 813–815/PDF 174–176; contexto 12.10, pp. 810–811/PDF 171–172, e 12.16/fig. 12-9, p. 815/PDF 176",
+        "printed_page": "813–815",
+        "pdf_page": "174–176",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -158172,7 +158208,7 @@
       },
       "style": "Afirmativas combinadas",
       "question_type": "assertion_combination",
-      "question": "Com base no art. 12.15, analise:\nI. O conjugado de rotação é máximo e obriga a proa a guinar para o mesmo bordo do hélice que dá atrás.\nII. Partindo do repouso, um hélice adiante e outro atrás fazem a proa guinar rapidamente para o bordo do hélice que dá atrás.\nIII. Sem seguimento, todo o leme para o bordo da guinada é sempre a condição mais eficiente.\nIV. Com um hélice adiante e outro atrás, a proa guina para o bordo do hélice que dá adiante.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "question": "Segundo Arte Naval, volume 2, edição de 2019, examine as afirmações sobre o arranjo convencional de dois hélices e um leme, com um hélice adiante e outro atrás. Escolha o conjunto completo das corretas:\nI. Os esforços dos hélices estabelecem um conjugado que tende a levar a proa para o bordo do hélice que dá atrás.\nII. Na partida do repouso, rotações iguais nos eixos não garantem giro estacionário.\nIII. Sem seguimento, carregar todo o leme para o bordo da guinada é apresentado como o ajuste mais eficiente em qualquer caso.\nIV. Na partida do repouso descrita, a proa guina para o bordo do hélice que dá adiante.",
       "options": [
         {
           "key": "A",
@@ -158196,21 +158232,32 @@
         }
       ],
       "correct_answer": "E",
-      "explanation": "I e II estão corretas no item indicado. III e IV estão incorretas. Conteúdo avaliado: I) O conjugado de rotação é máximo e obriga a proa a guinar para o mesmo bordo do hélice que dá atrás. | II) Partindo do repouso, um hélice adiante e outro atrás fazem a proa guinar rapidamente para o bordo do hélice que dá atrás. | III) Sem seguimento, todo o leme para o bordo da guinada é sempre a condição mais eficiente. | IV) Com um hélice adiante e outro atrás, a proa guina para o bordo do hélice que dá adiante.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "explanation": "Somente I e II são verdadeiras (alternativa E). O item 12.15, pp. 813–814, descreve a tendência para o bordo do hélice que dá atrás e ressalva o ligeiro avanço com rotações iguais. Sem seguimento, todo o leme pode contrariar a rotação; a indicação é leme a meio ou pequeno ângulo nas condições descritas. III ignora essa ressalva; IV inverte o bordo. A referência ao arranjo de um leme evita transferir a conclusão para o caso de dois lemes discutido em 12.16.",
       "validation": {
         "final_editorial_audit": "2026-10-01"
-      }
+      },
+      "distractor_analysis": {
+        "A": "Inclui III, falsa por generalizar a eficiência de todo o leme sem seguimento; omite II.",
+        "B": "Inclui IV, falsa por inverter o bordo da guinada; omite I.",
+        "C": "III e IV são falsas: ajuste de leme indevido e inversão do bordo.",
+        "D": "Inclui III e IV, ambas falsas nas condições descritas.",
+        "E": "I e II são verdadeiras: tendência do conjugado e ausência de garantia de giro estacionário."
+      },
+      "cognitive_level": 2
     },
     {
       "subject": "Arte Naval",
       "module": "Manobra do Navio",
       "topic": "Um hélice dando adiante e outro dando atrás",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, item 12.15, p. 813–815"
+        "locator": "cap. 12, seção B, item 12.15, pp. 813–815/PDF 174–176; contexto 12.10, pp. 810–811/PDF 171–172, e 12.16/fig. 12-9, p. 815/PDF 176",
+        "printed_page": "813–815",
+        "pdf_page": "174–176",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -158249,45 +158296,56 @@
       },
       "style": "Múltipla escolha conceitual",
       "question_type": "conceptual",
-      "question": "Sem seguimento, com um hélice adiante e outro atrás, qual posição do leme é indicada?",
+      "question": "Sem seguimento, no arranjo convencional de dois hélices e um leme examinado em Arte Naval, volume 2, edição de 2019, um hélice dá adiante e outro atrás. Qual orientação reúne apenas posições de leme indicadas para auxiliar o giro descrito?",
       "options": [
         {
           "key": "A",
-          "text": "A meio ou cerca de 10° para o bordo em que a proa vai guinar; até 15° se compensado."
+          "text": "A meio ou cerca de 10 graus para o bordo da guinada; 15 graus se o leme for compensado."
         },
         {
           "key": "B",
-          "text": "Todo para o bordo oposto à guinada."
+          "text": "A meio ou cerca de 10 graus para o bordo oposto à guinada; 15 graus se o leme for compensado."
         },
         {
           "key": "C",
-          "text": "Todo para o bordo da guinada em qualquer caso."
+          "text": "Todo o leme para o bordo da guinada; cerca de 10 graus se o leme for compensado."
         },
         {
           "key": "D",
-          "text": "Obrigatoriamente 30° para boreste."
+          "text": "Todo o leme para o bordo oposto à guinada; 15 graus se o leme for compensado."
         },
         {
           "key": "E",
-          "text": "O leme deve ser alternado continuamente."
+          "text": "Cerca de 10 graus para o bordo oposto à guinada; 15 graus para qualquer tipo de leme."
         }
       ],
       "correct_answer": "A",
-      "explanation": "A meio ou cerca de 10° para o bordo em que a proa vai guinar; até 15° se compensado.",
+      "explanation": "A alternativa A corresponde a 12.15, p. 814: leme a meio ou cerca de 10 graus para o bordo em que a proa vai guinar; sendo o leme compensado, o texto admite 15 graus nessa guinada. Carregar todo o leme, sem seguimento, pode contrariar a rotação pela ação das correntes. Os valores pertencem ao arranjo e às condições da passagem, e não constituem limites universais para qualquer leme ou navio.",
       "validation": {
         "final_editorial_audit": "2026-10-01"
-      }
+      },
+      "distractor_analysis": {
+        "A": "Conserva as posições a meio/pequeno ângulo no bordo da guinada e a condição de leme compensado para 15 graus.",
+        "B": "Troca o pequeno ângulo para o bordo oposto ao indicado.",
+        "C": "Inclui todo o leme sem seguimento, ajuste que a fonte considera inútil e até prejudicial.",
+        "D": "Também inclui todo o leme sem seguimento e ainda o dirige ao bordo oposto.",
+        "E": "Inverte o bordo do pequeno ângulo e elimina a condição de leme compensado para 15 graus."
+      },
+      "cognitive_level": 2
     },
     {
       "subject": "Arte Naval",
       "module": "Manobra do Navio",
       "topic": "Um hélice dando adiante e outro dando atrás",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, item 12.15, p. 813–815"
+        "locator": "cap. 12, seção B, item 12.15, pp. 813–815/PDF 174–176; contexto 12.10, pp. 810–811/PDF 171–172, e 12.16/fig. 12-9, p. 815/PDF 176",
+        "printed_page": "813–815",
+        "pdf_page": "174–176",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -158326,7 +158384,7 @@
       },
       "style": "Sequência V/F",
       "question_type": "true_false",
-      "question": "Julgue:\n( ) Com seguimento, pode-se aproveitar o leme para aumentar o efeito do conjugado e obter menor curva de giro.\n( ) Sem seguimento, carregar todo o leme é inútil e até prejudicial; recomenda-se leme a meio ou pequeno ângulo para o bordo da guinada.\n( ) Sem seguimento, todo o leme para o bordo da guinada é sempre a condição mais eficiente.\n( ) O conjugado de rotação é máximo e obriga a proa a guinar para o mesmo bordo do hélice que dá atrás.\nAssinale a sequência correta.",
+      "question": "Na manobra convencional de dois hélices e um leme, com um hélice adiante e outro atrás, descrita em Arte Naval, volume 2, edição de 2019, julgue as afirmações e escolha a sequência correta:\n( ) Com seguimento para vante, a ação do leme pode ser aproveitada para ampliar a guinada do conjunto.\n( ) Sem seguimento, o trecho recomenda leme a meio ou pequeno ângulo no bordo da guinada, em vez de carregar todo o leme.\n( ) Sem seguimento, todo o leme para o bordo da guinada é sempre o ajuste mais eficiente.\n( ) Na partida do repouso descrita, a proa guina para o bordo do hélice que dá atrás.",
       "options": [
         {
           "key": "A",
@@ -158350,10 +158408,18 @@
         }
       ],
       "correct_answer": "B",
-      "explanation": "A sequência correta resulta da avaliação das quatro proposições: 1) Com seguimento, pode-se aproveitar o leme para aumentar o efeito do conjugado e obter menor curva de giro. | 2) Sem seguimento, carregar todo o leme é inútil e até prejudicial; recomenda-se leme a meio ou pequeno ângulo para o bordo da guinada. | 3) Sem seguimento, todo o leme para o bordo da guinada é sempre a condição mais eficiente. | 4) O conjugado de rotação é máximo e obriga a proa a guinar para o mesmo bordo do hélice que dá atrás.",
+      "explanation": "A sequência é V/V/F/V (alternativa B). Em 12.15, pp. 813–815, a obra distingue o navio com seguimento do que parte do repouso. Com seguimento para vante, aproveita-se a ação do leme; sem seguimento, todo o leme pode contrariar a rotação, e o texto indica posição a meio ou pequeno ângulo. III é falsa por eliminar essa distinção. IV conserva o bordo do hélice que dá atrás. O resultado não foi generalizado a dois lemes, propulsores azimutais ou qualquer condição de vento e mar.",
       "validation": {
         "final_editorial_audit": "2026-10-01"
-      }
+      },
+      "distractor_analysis": {
+        "A": "Erra II, III e IV: inverte o ajuste sem seguimento e o bordo da guinada.",
+        "B": "É a única sequência com I, II e IV verdadeiras e III falsa.",
+        "C": "Erra I, III e IV: a ação do leme com seguimento pode auxiliar, e todo o leme sem seguimento não é a regra indicada.",
+        "D": "Erra I, II e III: nega dois efeitos descritos e aceita a generalização indevida.",
+        "E": "Erra III: todo o leme sem seguimento não é sempre o ajuste mais eficiente."
+      },
+      "cognitive_level": 2
     },
     {
       "subject": "Arte Naval",
