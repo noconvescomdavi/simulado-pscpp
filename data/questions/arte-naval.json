@@ -142454,10 +142454,10 @@
       "module": "Máquina do leme",
       "topic_code": "AN.C11.11.4.M1",
       "topic": "Máquina do leme ou servomotor",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
       "question_type": "assertion_combination",
-      "question": "Com base em Arte Naval, v. 2, art. 11.4, analise as afirmativas:\nI. A máquina do leme é comandada a distância pelos movimentos da roda do leme, razão de sua denominação de servomotor.\nII. Entre os requisitos do servomotor estão aplicação súbita de grande força a baixa velocidade, variação gradual de velocidade e inversão de marcha.\nIII. O servomotor deve ser instalado o mais distante possível do leme para aumentar o comprimento e a flexibilidade da transmissão.\nIV. O requisito fundamental do servomotor é produzir pouca força em alta velocidade, sem necessidade de inversão de marcha.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "question": "Sobre as generalidades da máquina do leme apresentadas em Arte Naval, volume 2, edição de 2019, analise as afirmativas:\nI. A obra relaciona a denominação servomotor à dependência do comando remoto pelos movimentos da roda do leme.\nII. Os requisitos de atuação incluem aplicação súbita de grande força a baixa velocidade, variação gradual de velocidade e inversão de marcha.\nIII. A localização deve privilegiar o maior afastamento possível do leme, para alongar as transmissões.\nIV. O requisito de atuação é produzir pouca força em alta velocidade, dispensando a inversão de marcha.\nAssinale o conjunto correto.",
       "options": [
         {
           "key": "A",
@@ -142481,12 +142481,15 @@
         }
       ],
       "correct_answer": "A",
-      "explanation": "As afirmativas corretas reproduzem o conteúdo técnico do item de referência. I: A máquina do leme é comandada a distância pelos movimentos da roda do leme, razão de sua denominação de servomotor. II: Entre os requisitos do servomotor estão aplicação súbita de grande força a baixa velocidade, variação gradual de velocidade e inversão de marcha. III: O servomotor deve ser instalado o mais distante possível do leme para aumentar o comprimento e a flexibilidade da transmissão. IV: O requisito fundamental do servomotor é produzir pouca força em alta velocidade, sem necessidade de inversão de marcha.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "explanation": "I e II são verdadeiras: correspondem à explicação da denominação e aos requisitos de atuação apresentados nas generalidades. III é falsa: a obra situa o servomotor na popa, no compartimento do leme ou em outro contíguo, para evitar transmissões longas. IV inverte força e velocidade e elimina indevidamente a inversão de marcha. Só A reúne I e II. O requisito de baixa velocidade da atuação não significa que todo motor componente gire lentamente; o tipo hidrelétrico descrito usa motor de alta rotação. A referência à roda nas generalidades também não exclui a alavanca do tipo elétrico tratado adiante.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.4, p. 757–760"
+        "locator": "cap. 11, seção A, item 11.4.a, p. 757/PDF 118; contexto 11.4.b–e, pp. 758–760/PDF 119–121, figs. 11-3 e 11-4",
+        "printed_page": 757,
+        "pdf_page": 118,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -142525,7 +142528,15 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
-      }
+      },
+      "distractor_analysis": {
+        "A": "Reúne exatamente I e II, verdadeiras, excluindo as duas inversões de requisitos/localização.",
+        "B": "Inclui III, falsa, e omite II, verdadeira.",
+        "C": "Inclui IV, falsa, e omite I, verdadeira.",
+        "D": "Reúne III e IV, ambas falsas.",
+        "E": "Inclui III e IV, falsas, juntamente com I e II."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "AN-C11-114-M2",
@@ -142533,39 +142544,42 @@
       "module": "Máquina do leme",
       "topic_code": "AN.C11.11.4.M2",
       "topic": "Máquina do leme ou servomotor",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Múltipla escolha conceitual",
       "question_type": "conceptual",
-      "question": "Qual conjunto reúne requisitos atribuídos pelo art. 11.4 à máquina do leme?",
+      "question": "Qual perfil de atuação reúne os requisitos da máquina do leme apresentados em Arte Naval, volume 2, edição de 2019?",
       "options": [
         {
           "key": "A",
-          "text": "Alta velocidade constante, baixa força e impossibilidade de inversão."
+          "text": "Aplicação súbita de pequena força a baixa velocidade, com variação gradual e inversão de marcha."
         },
         {
           "key": "B",
-          "text": "Somente grande rotação, sem necessidade de controle de velocidade."
+          "text": "Aplicação súbita de grande força a alta velocidade, com variação gradual e inversão de marcha."
         },
         {
           "key": "C",
-          "text": "Funcionamento exclusivamente manual e ausência de transmissão."
+          "text": "Aplicação súbita de grande força a baixa velocidade, sem variação de velocidade e com inversão de marcha."
         },
         {
           "key": "D",
-          "text": "Grande força aplicada subitamente a baixa velocidade, variação gradual de velocidade e possibilidade de inversão de marcha."
+          "text": "Aplicação súbita de grande força a baixa velocidade, com variação gradual e inversão de marcha."
         },
         {
           "key": "E",
-          "text": "Baixa força, alta velocidade e atuação apenas em um sentido."
+          "text": "Aplicação súbita de grande força a baixa velocidade, com variação gradual e sem inversão de marcha."
         }
       ],
       "correct_answer": "D",
-      "explanation": "Entre os requisitos do servomotor estão aplicação súbita de grande força a baixa velocidade, variação gradual de velocidade e inversão de marcha.",
+      "explanation": "D mantém a combinação indicada: grande força aplicada subitamente a baixa velocidade, variação de velocidade por graus insensíveis e inversão de marcha. A reduz indevidamente a força; B troca a baixa velocidade de atuação por alta; C elimina a variação; E elimina a inversão. Trata-se dos requisitos de atuação da máquina, não de uma afirmação de que todos os motores internos devam operar com baixa rotação.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.4, p. 757–760"
+        "locator": "cap. 11, seção A, item 11.4.a, p. 757/PDF 118; contexto 11.4.b–e, pp. 758–760/PDF 119–121, figs. 11-3 e 11-4",
+        "printed_page": 757,
+        "pdf_page": 118,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -142604,7 +142618,15 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
-      }
+      },
+      "distractor_analysis": {
+        "A": "Troca a grande força requerida por pequena força.",
+        "B": "Troca a baixa velocidade de atuação por alta velocidade.",
+        "C": "Retira a possibilidade de variação gradual da velocidade.",
+        "D": "Mantém conjuntamente força,velocidade,variação e inversão indicadas na obra.",
+        "E": "Retira a possibilidade de inversão de marcha."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "AN-C11-114-M3",
@@ -142612,10 +142634,10 @@
       "module": "Máquina do leme",
       "topic_code": "AN.C11.11.4.M3",
       "topic": "Máquina do leme ou servomotor",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Sequência V/F",
       "question_type": "true_false",
-      "question": "Com base no art. 11.4 de Arte Naval, v. 2, julgue as afirmativas e assinale a sequência correta:\n( ) O servomotor é instalado na popa, no compartimento do leme ou em compartimento contíguo, evitando transmissões longas.\n( ) O texto apresenta como tipos de máquina do leme a máquina a vapor, o sistema hidrelétrico e o motor elétrico.\n( ) O servomotor deve ser instalado o mais distante possível do leme para aumentar o comprimento e a flexibilidade da transmissão.\n( ) A máquina do leme é comandada a distância pelos movimentos da roda do leme, razão de sua denominação de servomotor.",
+      "question": "Sobre a máquina do leme descrita em Arte Naval, volume 2, edição de 2019, julgue as afirmações e escolha a sequência correta:\n( ) A instalação na popa, no compartimento do leme ou em compartimento contíguo, visa evitar transmissões longas.\n( ) Entre os tipos apresentados pela obra estão máquina a vapor, sistema hidrelétrico e motor elétrico.\n( ) A localização deve privilegiar o maior afastamento possível do leme, para alongar as transmissões.\n( ) Nas generalidades, a denominação servomotor é relacionada à dependência do comando remoto pelos movimentos da roda do leme.",
       "options": [
         {
           "key": "A",
@@ -142639,12 +142661,15 @@
         }
       ],
       "correct_answer": "E",
-      "explanation": "A sequência decorre diretamente das proposições técnicas do item: 1) O servomotor é instalado na popa, no compartimento do leme ou em compartimento contíguo, evitando transmissões longas. | 2) O texto apresenta como tipos de máquina do leme a máquina a vapor, o sistema hidrelétrico e o motor elétrico. | 3) O servomotor deve ser instalado o mais distante possível do leme para aumentar o comprimento e a flexibilidade da transmissão. | 4) A máquina do leme é comandada a distância pelos movimentos da roda do leme, razão de sua denominação de servomotor.",
+      "explanation": "A sequência é V–V–F–V, alternativa E. I expressa a razão da localização indicada. II corresponde aos tipos listados no texto. III contraria a finalidade de evitar transmissões longas. IV corresponde à explicação da denominação nas generalidades; não afirma que toda instalação use obrigatoriamente roda, pois o próprio texto admite sua substituição por alavanca no tipo elétrico. A lista é a da obra, não um inventário completo de tecnologias atuais.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.4, p. 757–760"
+        "locator": "cap. 11, seção A, item 11.4.a, p. 757/PDF 118; contexto 11.4.b–e, pp. 758–760/PDF 119–121, figs. 11-3 e 11-4",
+        "printed_page": 757,
+        "pdf_page": 118,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -142683,7 +142708,15 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
-      }
+      },
+      "distractor_analysis": {
+        "A": "V–F–V–F: erra II, III e IV.",
+        "B": "F–V–V–F: erra I, III e IV.",
+        "C": "F–F–V–V: erra I, II e III.",
+        "D": "V–V–V–V: considera III verdadeira, mas ela alonga a transmissão que se pretende encurtar.",
+        "E": "V–V–F–V: julga corretamente os quatro itens."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "AN-C11-114a-M1",
@@ -142770,39 +142803,42 @@
       "module": "Máquina do leme",
       "topic_code": "AN.C11.11.4.a.M2",
       "topic": "Generalidades do servomotor",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Múltipla escolha conceitual",
       "question_type": "conceptual",
-      "question": "Segundo as generalidades do art. 11.4.a, qual disposição é recomendada sempre que possível para o compartimento do servomotor?",
+      "question": "Qual critério de localização do compartimento do servomotor corresponde às generalidades de Arte Naval, volume 2, edição de 2019?",
       "options": [
         {
           "key": "A",
-          "text": "Ser instalado obrigatoriamente no passadiço."
+          "text": "Privilegiar a adjacência aos costados, mesmo quando for possível evitá-la, para aumentar a proteção."
         },
         {
           "key": "B",
-          "text": "Não ser adjacente aos costados do navio, para ficar mais protegido."
+          "text": "Evitar a adjacência aos costados, sempre que possível, para aumentar a proteção do compartimento."
         },
         {
           "key": "C",
-          "text": "Ficar sempre acima do convés, inclusive nos grandes navios de guerra."
+          "text": "Dispensar a consideração de avarias quando o compartimento estiver contíguo ao do leme."
         },
         {
           "key": "D",
-          "text": "Ser instalado na proa para equilibrar o peso do aparelho de fundear."
+          "text": "Privilegiar o alongamento das transmissões, afastando a máquina do leme de seu compartimento."
         },
         {
           "key": "E",
-          "text": "Ser adjacente ao costado para reduzir o comprimento da madre."
+          "text": "Desconsiderar a proteção do compartimento quando a máquina escolhida for do tipo a vapor."
         }
       ],
       "correct_answer": "B",
-      "explanation": "Nos navios mercantes, o compartimento do servomotor é geralmente situado acima do convés para melhor aproveitamento do espaço interno do casco.",
+      "explanation": "B preserva a orientação condicionada: sempre que possível, o compartimento não deve ser adjacente aos costados, buscando maior proteção. A inverte a orientação. C e E criam dispensas de proteção que o trecho não estabelece. D contraria a finalidade adicional de evitar transmissões longas. Não se trata de proibição absoluta de qualquer proximidade ao costado, nem de autorização para ignorar outros critérios de projeto.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.4.a, p. 757"
+        "locator": "cap. 11, seção A, item 11.4.a, p. 757/PDF 118; contexto 11.4.b–e, pp. 758–760/PDF 119–121, figs. 11-3 e 11-4",
+        "printed_page": 757,
+        "pdf_page": 118,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -142841,7 +142877,15 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
-      }
+      },
+      "distractor_analysis": {
+        "A": "Inverte a relação entre afastamento do costado e proteção indicada pela obra.",
+        "B": "Mantém a orientação e sua condição sempre que possível.",
+        "C": "Cria uma dispensa de consideração de avarias baseada apenas na contiguidade.",
+        "D": "Contraria o objetivo de evitar transmissões longas.",
+        "E": "Cria uma dispensa de proteção vinculada ao tipo de acionamento."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "AN-C11-114a-M3",
@@ -142849,10 +142893,10 @@
       "module": "Máquina do leme",
       "topic_code": "AN.C11.11.4.a.M3",
       "topic": "Generalidades do servomotor",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Sequência V/F",
       "question_type": "true_false",
-      "question": "Com base no art. 11.4.a de Arte Naval, v. 2, julgue as afirmativas e assinale a sequência correta:\n( ) Nos navios de guerra de grande porte, o compartimento do servomotor fica abaixo da linha-d'água e é protegido por couraça.\n( ) Sempre que possível, o compartimento do servomotor não deve ser adjacente aos costados, visando maior proteção.\n( ) Nos navios de guerra de grande porte, recomenda-se instalar o servomotor acima do convés e junto ao costado.\n( ) Nos navios mercantes, o compartimento do servomotor é geralmente situado acima do convés para melhor aproveitamento do espaço interno do casco.",
+      "question": "Na descrição da localização do servomotor em Arte Naval, volume 2, edição de 2019, julgue as afirmações e escolha a sequência correta:\n( ) Para navios de guerra de grande porte, o texto descreve compartimento abaixo da linha-d’água e protegido por couraça.\n( ) Sempre que possível, o compartimento deve evitar adjacência aos costados, visando maior proteção.\n( ) Para navios de guerra de grande porte, o texto recomenda compartimento acima do convés e junto ao costado.\n( ) Para navios mercantes, o texto descreve o compartimento geralmente acima do convés, em razão do aproveitamento do espaço interno do casco.",
       "options": [
         {
           "key": "A",
@@ -142876,12 +142920,15 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "A sequência decorre diretamente das proposições técnicas do item: 1) Nos navios de guerra de grande porte, o compartimento do servomotor fica abaixo da linha-d'água e é protegido por couraça. | 2) Sempre que possível, o compartimento do servomotor não deve ser adjacente aos costados, visando maior proteção. | 3) Nos navios de guerra de grande porte, recomenda-se instalar o servomotor acima do convés e junto ao costado. | 4) Nos navios mercantes, o compartimento do servomotor é geralmente situado acima do convés para melhor aproveitamento do espaço interno do casco.",
+      "explanation": "A sequência é V–V–F–V, alternativa C. I e IV são as disposições descritas pela obra para os grupos de navios mencionados. II mantém a condição sempre que possível. III inverte a descrição dos navios de guerra de grande porte e a orientação de proteção. As proposições relatam o texto da edição de 2019; não transformam a referência à couraça ou a posição geralmente descrita em exigência universal vigente para navios atuais.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.4.a, p. 757"
+        "locator": "cap. 11, seção A, item 11.4.a, p. 757/PDF 118; contexto 11.4.b–e, pp. 758–760/PDF 119–121, figs. 11-3 e 11-4",
+        "printed_page": 757,
+        "pdf_page": 118,
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -142920,7 +142967,15 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
-      }
+      },
+      "distractor_analysis": {
+        "A": "V–F–V–F: erra II, III e IV.",
+        "B": "F–V–V–F: erra I, III e IV.",
+        "C": "V–V–F–V: julga corretamente os quatro itens.",
+        "D": "F–F–V–V: erra I, II e III.",
+        "E": "V–V–V–V: considera III verdadeira, mas ela inverte a descrição e a orientação de proteção."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "AN-C11-114b-M1",

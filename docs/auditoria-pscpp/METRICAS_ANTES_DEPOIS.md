@@ -726,3 +726,31 @@ Falhas conhecidas mantidas:test-notebook-complete-stems exit1 emANV-0142;validat
 |node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/audit-pscpp-runtime-inventory.mjs|0|
 |node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-pscpp-editorial-evidence.mjs|2|
 |npm run check:pscpp-bank|0|
+
+## Lote069 — cinco IDs novos,zero aprovação final
+
+Base`3804f46e710c6535d107ef1a8f8bf0102d312ea8`;relatório REVISAO_ARTE_NAVAL_LOTE_069.md.210correções/213conferências/0aprovações;166candidatos/77localizadores.
+
+Regenerados runtime PSCPP,bancos,catálogo e flashcards. Passaram validação runtime,seleção/matriz,proveniência,catálogo,regressão e check:pscpp-bank. Regressão:210 deltas acumulados exatos,11892 ocorrências de cadernos preservadas,460 proposições renderizadas e475 alternativas diretas preservadas. Exatamente cinco IDs efetivos e cinco objetos principais mudaram frente ao068;1984PSCPP intactos. População14086=12102+1984,13715IDs únicos,27435 registros físicos e matriz100=25/25/10/10/10/10/10 preservadas.
+
+Build completo em cópia isolada passou com log integral:compilação,lint/tipos,101/101 páginas e rotas. Os1285 arquivos rastreados fora de docs e seis artefatos gerados coincidem byte a byte com a cópia testada. Avisos de CSS/cache/npm não impediram sucesso;nenhuma aprovação de release inferida.
+
+Falhas conhecidas mantidas:test-notebook-complete-stems exit1 emANV-0142;validate-editorial-runtime exit1 nos77 localizadores;validate-pscpp-editorial-evidence exit2,0aceitas/14086pendentes. Triagem e inventário regenerados:166candidatos sem proposições e77localizadores. REVISOES_EDITORIAIS intacto. Resultados reais dos comandos:
+
+| Comando | Saída |
+|---|---|
+|npm run generate:pscpp-bank|0|
+|npm run generate:question-banks|0|
+|npm run generate:question-catalog|0|
+|npm run generate:flashcard-decks|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-runtime-question-banks.mjs|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-pscpp-exam-selection.mjs|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-question-source-provenance.mjs|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-runtime-question-catalog.mjs|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-pscpp-audit-anv0005.mjs|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-notebook-complete-stems.mjs|1|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-editorial-runtime.mjs|1|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/audit-pscpp-runtime-triage.mjs|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/audit-pscpp-runtime-inventory.mjs|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-pscpp-editorial-evidence.mjs|2|
+|npm run check:pscpp-bank|0|
