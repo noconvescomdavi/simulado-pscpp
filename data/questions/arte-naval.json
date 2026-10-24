@@ -15796,9 +15796,9 @@
       "module": "Aparelho de governo",
       "topic_code": "old-070",
       "topic": "leme à mão",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "Sobre “leme à mão”, analise as afirmativas a seguir e assinale a alternativa que apresenta apenas as corretas:\nI. Em relação a “leme à mão”, considere: protegem as aberturas e reduzem dano por contato dos elementos da transmissão.\nII. Em relação a “leme à mão”, considere: comum em embarcações pequenas e dispensa um servomotor de grande potência.\nIII. “leme à mão” designa sistema que permite ao timoneiro orientar o leme e governar o navio.\nIV. “leme à mão” designa instalação simples em que a roda transmite movimento ao leme por gualdropes.",
+      "question": "No leme à mão descrito em Arte Naval, volume 2, edição de 2019, analise as afirmativas:\nI. Os gualdropes servem exclusivamente para limitar o ângulo do leme, sem transmitir o movimento da roda.\nII. A composição básica indicada é roda do leme, gualdropes e leme.\nIII. Macarrões são os tambores solidários à roda nos quais os gualdropes dão voltas.\nIV. No arranjo com tambor, um bordo se enrola e o outro se desenrola, movimentando a cana do leme.\nAssinale o conjunto correto.",
       "options": [
         {
           "key": "A",
@@ -15822,12 +15822,15 @@
         }
       ],
       "correct_answer": "E",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “leme à mão”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "II e IV são verdadeiras pela composição e pela cinemática do arranjo descrito. I é falsa porque os gualdropes transmitem movimento. III é falsa porque macarrões são golas metálicas das aberturas de passagem, não tambores. Só E reúne II e IV. A antiga definição genérica de aparelho de governo não foi julgada falsa apenas por estar fora da chave: foi substituída por uma distinção verificável entre peças.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, seção A, item 11.3"
+        "locator": "cap. 11, seção A, item 11.3, p. 756/PDF 117, fig. 11-2, p. 757/PDF 118",
+        "printed_page": "756–757",
+        "pdf_page": "117–118",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Aparelho de governo",
@@ -15861,7 +15864,15 @@
         "chapter_id": "fonseca-arte-v1::ch11",
         "topic_id": "old-070",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Reúne I e III, ambas falsas.",
+        "B": "Inclui I, falsa, e omite II, verdadeira.",
+        "C": "Inclui I, falsa, e omite IV, verdadeira.",
+        "D": "Inclui III, falsa, e omite IV, verdadeira.",
+        "E": "Reúne exatamente II e IV, verdadeiras, excluindo I e III."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0186",
@@ -56519,36 +56530,39 @@
       "topic": "gualdropes",
       "difficulty": "Médio",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “gualdropes”.",
+      "question": "No arranjo com tambor solidário à roda do leme descrito em Arte Naval, volume 2, edição de 2019, qual relação entre os gualdropes dos dois bordos está correta durante o giro da roda?",
       "options": [
         {
           "key": "A",
-          "text": "punhos distribuídos no contorno exterior da roda do leme"
+          "text": "Os dois bordos se enrolam simultaneamente no tambor, sem que nenhum se desenrole."
         },
         {
           "key": "B",
-          "text": "instalação simples em que a roda transmite movimento ao leme por gualdropes"
+          "text": "Os dois bordos se desenrolam simultaneamente do tambor, sem que nenhum se enrole."
         },
         {
           "key": "C",
-          "text": "máquina comandada a distância que fornece força para movimentar o leme"
+          "text": "Um bordo se enrola e o outro se desenrola, mantendo a cana imóvel."
         },
         {
           "key": "D",
-          "text": "cabos de aço, correntes ou cadeias que ligam a roda ao mecanismo do leme"
+          "text": "Um bordo se enrola e o outro se desenrola, movimentando a cana do leme."
         },
         {
           "key": "E",
-          "text": "marinheiro encarregado de manobrar o leme conforme as ordens recebidas"
+          "text": "Os dois bordos permanecem imóveis no tambor, enquanto a roda gira livremente."
         }
       ],
       "correct_answer": "D",
-      "explanation": "A opção correta apresenta a definição técnica de “gualdropes”: cabos de aço, correntes ou cadeias que ligam a roda ao mecanismo do leme; um bordo enrola enquanto o outro desenrola no tambor solidário à roda.",
+      "explanation": "D descreve a relação da instalação apresentada: o tambor gira com a roda, um bordo se enrola e o outro se desenrola, provocando o movimento da cana. Não se trata de enrolamento simultâneo dos dois bordos nem de indicação sem transmissão. A afirmação é sobre o arranjo descrito, sem pressupor que toda transmissão seja integralmente flexível.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, seção A, item 11.3"
+        "locator": "cap. 11, seção A, item 11.3, p. 756/PDF 117, fig. 11-2, p. 757/PDF 118",
+        "printed_page": "756–757",
+        "pdf_page": "117–118",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Aparelho de governo",
@@ -56582,7 +56596,15 @@
         "chapter_id": "fonseca-arte-v1::ch11",
         "topic_id": "old-071",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Substitui a ação oposta dos bordos por enrolamento simultâneo.",
+        "B": "Substitui a ação oposta dos bordos por desenrolamento simultâneo.",
+        "C": "Mantém a ação oposta, mas nega seu efeito descrito sobre a cana.",
+        "D": "Mantém a ação oposta dos bordos e o movimento resultante da cana.",
+        "E": "Nega o acoplamento do tambor à roda e a transmissão pelos gualdropes."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0735",
@@ -67661,38 +67683,41 @@
       "module": "Aparelho de governo",
       "topic_code": "old-070",
       "topic": "leme à mão",
-      "difficulty": "Médio",
+      "difficulty": "Fácil",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “leme à mão”.",
+      "question": "Qual conjunto corresponde à composição básica do leme à mão indicada em Arte Naval, volume 2, edição de 2019?",
       "options": [
         {
           "key": "A",
-          "text": "realimentação que neutraliza o comando quando o leme alcança o ângulo pedido"
+          "text": "Roda do leme, telemotor e servomotor."
         },
         {
           "key": "B",
-          "text": "acionamento cujo sentido depende de uma alavanca de controle elétrico"
+          "text": "Roda do leme, cilindro transmissor e cilindro receptor."
         },
         {
           "key": "C",
-          "text": "instalação simples em que a roda transmite movimento ao leme por gualdropes"
+          "text": "Roda do leme, gualdropes e leme."
         },
         {
           "key": "D",
-          "text": "punhos distribuídos no contorno exterior da roda do leme"
+          "text": "Gualdropes, macarrões e malaguetas."
         },
         {
           "key": "E",
-          "text": "sistema em que bomba e cilindros hidráulicos aplicam força à cana do leme"
+          "text": "Roda do leme, telemotor e leme."
         }
       ],
       "correct_answer": "C",
-      "explanation": "A opção correta apresenta a definição técnica de “leme à mão”: instalação simples em que a roda transmite movimento ao leme por gualdropes; comum em embarcações pequenas e dispensa um servomotor de grande potência.",
+      "explanation": "A composição básica explicitada é roda do leme, gualdropes e leme, alternativa C. A pergunta pede esse conjunto, não qualquer lista de componentes encontrados em diferentes aparelhos de governo. Os demais conjuntos substituem ou omitem elementos dessa composição. A obra descreve emprego comum em embarcações miúdas, sem impor a mesma solução a todas elas.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, seção A, item 11.3"
+        "locator": "cap. 11, seção A, item 11.3, p. 756/PDF 117, fig. 11-2, p. 757/PDF 118",
+        "printed_page": "756–757",
+        "pdf_page": "117–118",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Aparelho de governo",
@@ -67726,7 +67751,15 @@
         "chapter_id": "fonseca-arte-v1::ch11",
         "topic_id": "old-070",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Não reúne o leme e os gualdropes da composição indicada.",
+        "B": "Substitui gualdropes e leme por dois cilindros.",
+        "C": "Reúne exatamente os três elementos básicos enumerados na obra.",
+        "D": "Lista componentes sem reunir roda e leme da composição básica.",
+        "E": "Substitui os gualdropes por telemotor."
+      },
+      "cognitive_level": 1
     },
     {
       "id": "ANV-0884",
@@ -142151,10 +142184,10 @@
       "module": "Aparelho de governo",
       "topic_code": "AN.C11.11.3.M1",
       "topic": "Leme à mão",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
       "question_type": "assertion_combination",
-      "question": "Com base em Arte Naval, v. 2, art. 11.3, analise as afirmativas:\nI. O leme à mão é o aparelho de governo mais simples e é empregado comumente nas embarcações miúdas.\nII. Gualdropes podem ser cabos de aço, correntes ou cadeias Galle e transmitem o movimento da roda ao leme.\nIII. Os gualdropes têm função exclusiva de limitar o ângulo máximo do leme, sem transmitir movimento.\nIV. Macarrões são os tambores nos quais os gualdropes dão voltas pelo seio.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "question": "Sobre o leme à mão descrito em Arte Naval, volume 2, edição de 2019, analise as afirmativas:\nI. A composição básica indicada é roda do leme, gualdropes e leme.\nII. Gualdropes podem ser cabos de aço, correntes ou cadeias Galle e transmitem o movimento da roda ao leme.\nIII. Os gualdropes servem exclusivamente para limitar o ângulo máximo do leme, sem transmitir movimento.\nIV. Macarrões são os tambores em torno dos quais os gualdropes dão voltas pelo seio.\nAssinale o conjunto correto.",
       "options": [
         {
           "key": "A",
@@ -142178,12 +142211,15 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "As afirmativas corretas reproduzem o conteúdo técnico do item de referência. I: O leme à mão é o aparelho de governo mais simples e é empregado comumente nas embarcações miúdas. II: Gualdropes podem ser cabos de aço, correntes ou cadeias Galle e transmitem o movimento da roda ao leme. III: Os gualdropes têm função exclusiva de limitar o ângulo máximo do leme, sem transmitir movimento. IV: Macarrões são os tambores nos quais os gualdropes dão voltas pelo seio.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "explanation": "I e II são verdadeiras: a obra apresenta a composição básica do leme à mão e define os gualdropes como elementos que transmitem movimento. III é falsa porque nega essa transmissão. IV é falsa: macarrões são as golas metálicas das aberturas de passagem dos gualdropes; o tambor é outra peça, solidária à roda. Só C reúne I e II. A figura 11-2 também mostra segmentos de vergalhões, sem permitir reduzir toda a instalação ilustrada a um cabo contínuo.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.3, p. 756–757"
+        "locator": "cap. 11, seção A, item 11.3, p. 756/PDF 117, fig. 11-2, p. 757/PDF 118",
+        "printed_page": "756–757",
+        "pdf_page": "117–118",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -142222,7 +142258,15 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
-      }
+      },
+      "distractor_analysis": {
+        "A": "Inclui III, falsa, e omite II, verdadeira: os gualdropes transmitem movimento.",
+        "B": "Inclui IV, falsa, e omite I, verdadeira: gola de passagem e tambor são peças distintas.",
+        "C": "Reúne exatamente I e II, verdadeiras, excluindo III e IV.",
+        "D": "Reúne III e IV, ambas falsas.",
+        "E": "Inclui III e IV, falsas, juntamente com I e II."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "AN-C11-113-M2",
@@ -142230,39 +142274,42 @@
       "module": "Aparelho de governo",
       "topic_code": "AN.C11.11.3.M2",
       "topic": "Leme à mão",
-      "difficulty": "Difícil",
+      "difficulty": "Fácil",
       "style": "Múltipla escolha conceitual",
       "question_type": "conceptual",
-      "question": "De acordo com o art. 11.3, qual é a função dos gualdropes no leme à mão?",
+      "question": "No leme à mão descrito em Arte Naval, volume 2, edição de 2019, qual função é atribuída aos gualdropes?",
       "options": [
         {
           "key": "A",
-          "text": "Comandar eletricamente o servomotor por sinais autossincronizados."
+          "text": "Limitar exclusivamente o ângulo do leme, sem transmitir o movimento da roda."
         },
         {
           "key": "B",
-          "text": "Regular a pressão hidráulica no telemotor."
+          "text": "Regular a pressão de um circuito líquido, sem transmitir mecanicamente o comando."
         },
         {
           "key": "C",
-          "text": "Limitar a rotação do eixo propulsor durante a guinada."
+          "text": "Indicar o ângulo da porta do leme, sem participar de seu acionamento."
         },
         {
           "key": "D",
-          "text": "Transmitir o movimento da roda do leme ao leme."
+          "text": "Transmitir o movimento da roda do leme ao leme por ligação mecânica."
         },
         {
           "key": "E",
-          "text": "Acionar a válvula de distribuição de vapor sem ligação com a roda."
+          "text": "Converter a rotação da roda em sinal elétrico para um motor receptor."
         }
       ],
       "correct_answer": "D",
-      "explanation": "O leme à mão é o aparelho de governo mais simples e é empregado comumente nas embarcações miúdas.",
+      "explanation": "D corresponde à função dos gualdropes: transmitir o movimento da roda ao leme. No arranjo descrito com tambor solidário à roda, um bordo se enrola enquanto o outro se desenrola, movimentando a cana. A explicação não se limita a dizer que o leme à mão é simples: identifica a função perguntada e a distingue de limitação, indicação e transmissão por outros meios.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.3, p. 756–757"
+        "locator": "cap. 11, seção A, item 11.3, p. 756/PDF 117, fig. 11-2, p. 757/PDF 118",
+        "printed_page": "756–757",
+        "pdf_page": "117–118",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -142301,7 +142348,15 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
-      }
+      },
+      "distractor_analysis": {
+        "A": "Nega a transmissão de movimento e a substitui por limitação exclusiva de ângulo.",
+        "B": "Troca a ligação mecânica descrita por regulação de pressão líquida.",
+        "C": "Troca a transmissão de movimento por indicação angular sem acionamento.",
+        "D": "Identifica a função mecânica expressamente atribuída aos gualdropes.",
+        "E": "Troca a transmissão mecânica descrita por conversão elétrica do comando."
+      },
+      "cognitive_level": 1
     },
     {
       "id": "AN-C11-113-M3",
@@ -142309,10 +142364,10 @@
       "module": "Aparelho de governo",
       "topic_code": "AN.C11.11.3.M3",
       "topic": "Leme à mão",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Sequência V/F",
       "question_type": "true_false",
-      "question": "Com base no art. 11.3 de Arte Naval, v. 2, julgue as afirmativas e assinale a sequência correta:\n( ) O leme à mão descrito é constituído por roda do leme, gualdropes e leme.\n( ) No sistema com tambor, ao girar a roda um gualdrope se enrola e o do outro bordo se desenrola, movimentando a cana do leme.\n( ) Os gualdropes têm função exclusiva de limitar o ângulo máximo do leme, sem transmitir movimento.\n( ) O leme à mão é o aparelho de governo mais simples e é empregado comumente nas embarcações miúdas.",
+      "question": "Sobre o arranjo de leme à mão apresentado em Arte Naval, volume 2, edição de 2019, julgue as afirmações e escolha a sequência correta:\n( ) A composição básica indicada é roda do leme, gualdropes e leme.\n( ) No arranjo com tambor solidário à roda, um bordo se enrola enquanto o outro se desenrola, movimentando a cana do leme.\n( ) Os gualdropes têm função exclusiva de limitar o ângulo máximo do leme, sem transmitir movimento.\n( ) A obra apresenta o leme à mão como aparelho de governo simples, empregado comumente em embarcações miúdas.",
       "options": [
         {
           "key": "A",
@@ -142336,12 +142391,15 @@
         }
       ],
       "correct_answer": "E",
-      "explanation": "A sequência decorre diretamente das proposições técnicas do item: 1) O leme à mão descrito é constituído por roda do leme, gualdropes e leme. | 2) No sistema com tambor, ao girar a roda um gualdrope se enrola e o do outro bordo se desenrola, movimentando a cana do leme. | 3) Os gualdropes têm função exclusiva de limitar o ângulo máximo do leme, sem transmitir movimento. | 4) O leme à mão é o aparelho de governo mais simples e é empregado comumente nas embarcações miúdas.",
+      "explanation": "A sequência é V–V–F–V, alternativa E. I corresponde à composição apresentada. II descreve o funcionamento do arranjo com tambor solidário à roda. III é falsa porque os gualdropes transmitem movimento; não são definidos como simples limitadores. IV corresponde ao emprego descrito na obra, sem impor esse sistema a toda embarcação pequena ou a qualquer instalação moderna. O esquema inclui componentes flexíveis e segmentos rígidos identificados, não um único cabo contínuo em todo o circuito.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.3, p. 756–757"
+        "locator": "cap. 11, seção A, item 11.3, p. 756/PDF 117, fig. 11-2, p. 757/PDF 118",
+        "printed_page": "756–757",
+        "pdf_page": "117–118",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -142380,7 +142438,15 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
-      }
+      },
+      "distractor_analysis": {
+        "A": "V–F–V–F: erra II, III e IV.",
+        "B": "F–V–V–F: erra I, III e IV.",
+        "C": "F–F–V–V: erra I, II e III.",
+        "D": "V–V–V–V: considera III verdadeira, mas ela nega a função transmissora.",
+        "E": "V–V–F–V: julga corretamente os quatro itens."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "AN-C11-114-M1",

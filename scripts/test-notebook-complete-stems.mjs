@@ -35,6 +35,7 @@ const report = JSON.parse(fs.readFileSync(new URL("../reports/notebook-incomplet
 // Require the exact full effective hash and primary restoration, never a blanket exemption.
 const primaryCorrections = JSON.parse(fs.readFileSync(new URL("../docs/auditoria-pscpp/CORRECOES_RUNTIME.json", import.meta.url))).corrections;
 const primaryRestorations = JSON.parse(fs.readFileSync(new URL("../data/question-restorations/arte-naval.json", import.meta.url))).questions;
+const primaryMainBank = JSON.parse(fs.readFileSync(new URL("../data/questions/arte-naval.json", import.meta.url))).questions;
 const stable = value => Array.isArray(value) ? value.map(stable) : value && typeof value === "object"
   ? Object.fromEntries(Object.keys(value).sort().map(key => [key, stable(value[key])])) : value;
 const byBank = {};
@@ -85,7 +86,10 @@ for (const edit of pack.edits) {
       assert.equal(digest(question.options), before.options_sha256, `Options changed: ${edit.id}`);
       const correction = edit.bank === "arte-naval" && primaryCorrections.find(row => row.id === edit.id);
       if (correction) {
-        const primary = primaryRestorations.find(row => row.id === edit.id);
+        // Lot 068: this documented stem overlay follows a corrected main-bank object.
+        // Keep exact effective hash and source-content assertions for both origins.
+        if (edit.id === "ANV-0185") assert.equal(edit.source_file, "data/questions/arte-naval.json");
+        const primary = (edit.id === "ANV-0185" ? primaryMainBank : primaryRestorations).find(row => row.id === edit.id);
         assert.ok(primary, `Primary restoration missing: ${edit.id}`);
         assert.equal(digest(stable(question)), correction.after_hash, `Primary effective hash changed: ${edit.id}`);
         assert.equal(question.question, primary.question, `Primary stem overwritten: ${edit.id}`);
