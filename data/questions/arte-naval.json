@@ -22868,9 +22868,9 @@
       "module": "Governo de navio de um hélice",
       "topic_code": "old-095",
       "topic": "seguimento para vante com máquina atrás",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
-      "question": "Sobre “seguimento para vante com máquina atrás”, analise as afirmativas a seguir e assinale a alternativa que apresenta apenas as corretas:\nI. “seguimento para vante com máquina atrás” designa condição transitória em que o casco ainda avança apesar do propulsor em reversão.\nII. Em relação a “seguimento para vante com máquina atrás”, considere: quando dirigido sobre o leme, pode produzir governo mesmo com pouco seguimento do navio.\nIII. Em relação a “seguimento para vante com máquina atrás”, considere: o leme recebe combinação variável entre fluxo devido ao movimento e corrente do hélice.\nIV. “seguimento para vante com máquina atrás” designa força lateral produzida pelo escoamento sobre o leme angulado.",
+      "question": "Segundo Arte Naval, volume 2, edição de 2019, examine as afirmações sobre um navio convencional de um hélice de passo direito, ainda com seguimento para vante e com a máquina dando atrás, sem vento ou corrente externos. Escolha o conjunto completo das corretas:\nI. A marcha atrás do hélice pode coexistir, durante a transição, com o movimento do casco para vante.\nII. Com o leme angulado, a corrente de sucção reforça a ação que o seguimento para vante exerce sobre ele.\nIII. O comportamento depende da velocidade do navio, do regime do hélice e da ocasião em que o leme é carregado.\nIV. A inversão da máquina torna imediatamente nula a ação do leme devida ao seguimento para vante.",
       "options": [
         {
           "key": "A",
@@ -22894,12 +22894,15 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "As duas afirmativas verdadeiras reproduzem a definição e a característica técnica de “seguimento para vante com máquina atrás”. As demais atribuem ao item propriedades pertencentes a outros conceitos.",
+      "explanation": "Somente I e III são verdadeiras (alternativa D). O item 12.6.3, pp. 800–803, trata justamente de casco ainda avançando com o hélice em marcha atrás. A sucção contraria a ação do leme angulado devida ao seguimento para vante, em vez de reforçá-la. A resposta resulta de efeitos concorrentes e depende das velocidades e do momento de aplicação do leme. A reversão não equivale à perda instantânea do governo: sua duração é limitada e deve ser conhecida por experiências no próprio navio.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção A, item 12.6.3"
+        "locator": "cap. 12, seção A, item 12.6.3, pp. 800–803/PDF 161–164, fig. 12-4 p. 801/PDF 162; contexto 12.6 p. 798/PDF 159, 12.6.2 pp. 799–800/PDF 160–161 e 12.3–12.4 pp. 795–796/PDF 156–157",
+        "printed_page": "800–803",
+        "pdf_page": "161–164",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Governo de navio de um hélice",
@@ -22933,7 +22936,15 @@
         "chapter_id": "fonseca-arte-v1::ch12",
         "topic_id": "old-095",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "II e IV são falsas: a sucção se opõe à ação do leme nesta condição, e a reversão não a anula instantaneamente.",
+        "B": "III é verdadeira, mas IV é falsa; falta I, que distingue marcha do hélice e movimento do casco.",
+        "C": "I é verdadeira, mas IV é falsa por impor perda imediata da ação do leme.",
+        "D": "I e III são verdadeiras: a condição transitória existe e sua resposta depende das velocidades e da ocasião de aplicação do leme.",
+        "E": "I é verdadeira, mas II é falsa porque troca oposição por reforço da ação do leme."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0280",
@@ -52265,36 +52276,39 @@
       "topic": "seguimento para vante com máquina atrás",
       "difficulty": "Médio",
       "style": "Associação conceitual",
-      "question": "Qual alternativa descreve corretamente o significado ou a função de “seguimento para vante com máquina atrás”.",
+      "question": "Para um navio convencional de um hélice de passo direito, ainda com seguimento para vante e com a máquina dando atrás, sem influências externas, qual associação entre ação hidrodinâmica e efeito corresponde ao modelo de Arte Naval, volume 2, edição de 2019?",
       "options": [
         {
           "key": "A",
-          "text": "força lateral produzida pelo escoamento sobre o leme angulado"
+          "text": "Corrente de sucção: reforça a ação do leme angulado devida ao seguimento para vante."
         },
         {
           "key": "B",
-          "text": "condição transitória em que o casco ainda avança apesar do propulsor em reversão"
+          "text": "Corrente de sucção: contraria a ação do leme angulado devida ao seguimento para vante."
         },
         {
           "key": "C",
-          "text": "manobra de emergência para retirar seguimento de vante"
+          "text": "Corrente de sucção: elimina a pressão lateral das pás enquanto o casco ainda avança."
         },
         {
           "key": "D",
-          "text": "situação em que margens, fundo e espaço disponível alteram a manobra"
+          "text": "Corrente de descarga: é lançada diretamente sobre o leme, como na marcha adiante do hélice."
         },
         {
           "key": "E",
-          "text": "componente transversal do empuxo do propulsor"
+          "text": "Pressão lateral das pás: tende a deslocar a popa para boreste no arranjo descrito."
         }
       ],
       "correct_answer": "B",
-      "explanation": "A opção correta apresenta a definição técnica de “seguimento para vante com máquina atrás”: condição transitória em que o casco ainda avança apesar do propulsor em reversão; o leme recebe combinação variável entre fluxo devido ao movimento e corrente do hélice.",
+      "explanation": "A alternativa B corresponde a 12.6.3, p. 801: a sucção gerada pelo hélice dando atrás se opõe à ação do leme angulado associada ao avanço do casco. Com leme a meio, essa corrente não exerce efeito evolutivo sobre ele. A descarga incide na carena a boreste da popa e, junto com a pressão lateral das pás no arranjo de passo direito examinado, tende a levar a popa para bombordo. Essas contribuições não determinam, isoladamente, a guinada resultante em qualquer instante.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, seção A, item 12.6.3"
+        "locator": "cap. 12, seção A, item 12.6.3, pp. 800–803/PDF 161–164, fig. 12-4 p. 801/PDF 162; contexto 12.6 p. 798/PDF 159, 12.6.2 pp. 799–800/PDF 160–161 e 12.3–12.4 pp. 795–796/PDF 156–157",
+        "printed_page": "800–803",
+        "pdf_page": "161–164",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tags": [
         "Governo de navio de um hélice",
@@ -52328,7 +52342,15 @@
         "chapter_id": "fonseca-arte-v1::ch12",
         "topic_id": "old-095",
         "subtopic_id": null
-      }
+      },
+      "distractor_analysis": {
+        "A": "Inverte a relação entre a sucção e a ação do leme devida ao seguimento para vante.",
+        "B": "Associa corretamente a sucção à oposição sobre o leme angulado nesta condição.",
+        "C": "A sucção não elimina a pressão lateral das pás; são contribuições distintas no modelo.",
+        "D": "Confunde a descarga do hélice dando atrás, dirigida à carena, com a descarga na marcha adiante sobre o leme.",
+        "E": "Inverte o bordo: a pressão lateral das pás tende a levar a popa para bombordo no arranjo indicado."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "ANV-0678",
@@ -155851,12 +155873,15 @@
       "subject": "Arte Naval",
       "module": "Manobra do Navio",
       "topic": "Navio com seguimento para vante e hélice dando atrás",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, item 12.6.3, p. 800–803"
+        "locator": "cap. 12, seção A, item 12.6.3, pp. 800–803/PDF 161–164, fig. 12-4 p. 801/PDF 162; contexto 12.6 p. 798/PDF 159, 12.6.2 pp. 799–800/PDF 160–161 e 12.3–12.4 pp. 795–796/PDF 156–157",
+        "printed_page": "800–803",
+        "pdf_page": "161–164",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -155890,7 +155915,7 @@
       "topic_code": "AN.C12.12.6.3.M1",
       "style": "Afirmativas combinadas",
       "question_type": "assertion_combination",
-      "question": "Com base no art. 12.6.3, analise:\nI. Com seguimento para vante, a ação do leme tende a fazer a popa guinar para o bordo oposto ao bordo para o qual o leme foi carregado.\nII. Pressão lateral das pás e corrente de descarga tendem a levar a popa para bombordo.\nIII. A corrente de sucção reforça sempre a ação do leme quando o navio tem seguimento para vante e o hélice dá atrás.\nIV. A ocasião em que se carrega o leme é irrelevante para o comportamento do navio nesta manobra.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "question": "No modelo de Arte Naval, volume 2, edição de 2019, considere um navio convencional de um hélice de passo direito, ainda com seguimento para vante e com a máquina dando atrás, sem influências externas. Examine as afirmações e escolha o conjunto completo das corretas:\nI. O escoamento devido ao avanço do casco faz o leme angulado tender a levar a popa para o bordo oposto ao de aplicação do leme.\nII. A pressão lateral das pás e a descarga incidente na carena a boreste da popa tendem a levá-la para bombordo.\nIII. A sucção gerada pelo hélice atrás reforça a ação do leme angulado devida ao avanço do casco.\nIV. Aplicar o leme antes ou depois da reversão produz necessariamente a mesma resposta de guinada.",
       "options": [
         {
           "key": "A",
@@ -155914,7 +155939,7 @@
         }
       ],
       "correct_answer": "E",
-      "explanation": "I e II estão corretas no item indicado. III e IV estão incorretas. Conteúdo avaliado: I) Com seguimento para vante, a ação do leme tende a fazer a popa guinar para o bordo oposto ao bordo para o qual o leme foi carregado. | II) Pressão lateral das pás e corrente de descarga tendem a levar a popa para bombordo. | III) A corrente de sucção reforça sempre a ação do leme quando o navio tem seguimento para vante e o hélice dá atrás. | IV) A ocasião em que se carrega o leme é irrelevante para o comportamento do navio nesta manobra.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "explanation": "Somente I e II são verdadeiras (alternativa E). Em 12.6.3, p. 801 e figura 12-4, distinguem-se a ação do leme devida ao avanço, a sucção que a contraria e as contribuições da descarga e da pressão lateral das pás. A indicação de bombordo refere-se à popa; a proa apresenta tendência para o bordo oposto por essas duas últimas contribuições. As pp. 802–803 ressaltam a importância das velocidades e da ocasião de aplicação do leme, sem garantir a preponderância de uma força em todo instante.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC09",
@@ -155922,18 +155947,29 @@
       },
       "validation": {
         "final_editorial_audit": "2026-10-01"
-      }
+      },
+      "distractor_analysis": {
+        "A": "I é verdadeira, mas III é falsa por trocar oposição da sucção por reforço.",
+        "B": "II é verdadeira, mas IV é falsa: a ocasião de aplicação do leme importa.",
+        "C": "III e IV são falsas: a sucção se opõe ao efeito do avanço e a sequência temporal altera a resposta.",
+        "D": "Inclui III e IV, ambas falsas nas condições examinadas.",
+        "E": "I e II são verdadeiras: distinguem o efeito do leme sobre a popa das contribuições da descarga e da pressão lateral."
+      },
+      "cognitive_level": 2
     },
     {
       "subject": "Arte Naval",
       "module": "Manobra do Navio",
       "topic": "Navio com seguimento para vante e hélice dando atrás",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, item 12.6.3, p. 800–803"
+        "locator": "cap. 12, seção A, item 12.6.3, pp. 800–803/PDF 161–164, fig. 12-4 p. 801/PDF 162; contexto 12.6 p. 798/PDF 159, 12.6.2 pp. 799–800/PDF 160–161 e 12.3–12.4 pp. 795–796/PDF 156–157",
+        "printed_page": "800–803",
+        "pdf_page": "161–164",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -155967,31 +156003,31 @@
       "topic_code": "AN.C12.12.6.3.M2",
       "style": "Múltipla escolha conceitual",
       "question_type": "conceptual",
-      "question": "Para favorecer uma guinada para o bordo desejado ao inverter rapidamente a marcha, o que a obra recomenda em condições normais?",
+      "question": "Um navio convencional de um hélice, ainda com seguimento para vante e sem influências externas, vai inverter rapidamente a máquina para reduzir o avanço e alterar o rumo. Qual procedimento corresponde à orientação de Arte Naval, volume 2, edição de 2019, em condições normais?",
       "options": [
         {
           "key": "A",
-          "text": "Carregar o leme para esse bordo antes de inverter a marcha."
+          "text": "Aplicar leme para o bordo desejado antes da reversão, permitindo que a guinada se inicie."
         },
         {
           "key": "B",
-          "text": "Inverter primeiro a marcha e manter o leme a meio até o navio parar."
+          "text": "Inverter a marcha antes de aplicar o leme, deixando para depois o início da guinada desejada."
         },
         {
           "key": "C",
-          "text": "Carregar o leme somente depois de adquirido seguimento para ré."
+          "text": "Esperar adquirir seguimento para ré antes de aplicar o leme para iniciar a guinada desejada."
         },
         {
           "key": "D",
-          "text": "Usar sempre leme a bombordo, independentemente do bordo desejado."
+          "text": "Aplicar leme para o bordo oposto ao desejado antes da reversão, iniciando a guinada contrária."
         },
         {
           "key": "E",
-          "text": "Aguardar desaparecer toda velocidade angular antes de agir no leme."
+          "text": "Manter leme a meio antes e depois da reversão, dispensando a guinada inicial pelo leme."
         }
       ],
       "correct_answer": "A",
-      "explanation": "Carregar o leme para esse bordo antes de inverter a marcha.",
+      "explanation": "A alternativa A corresponde às pp. 802–803 do item 12.6.3. O leme aplicado antes da reversão permite iniciar a guinada com o seguimento para vante e adquirir velocidade angular para o bordo desejado. Quando a aplicação ocorre somente depois, os efeitos do hélice têm maior influência. A recomendação é condicionada ao modelo e às condições normais descritas; a obra exige experiências no próprio navio e não garante governo indefinido após a inversão.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC09",
@@ -155999,18 +156035,29 @@
       },
       "validation": {
         "final_editorial_audit": "2026-10-01"
-      }
+      },
+      "distractor_analysis": {
+        "A": "Conserva a sequência indicada: iniciar a guinada pelo leme antes de inverter a marcha.",
+        "B": "Inverte a sequência recomendada e aumenta a influência relativa dos efeitos do hélice.",
+        "C": "Adia a ação para outra condição de movimento, sem aproveitar o seguimento para vante indicado.",
+        "D": "Inicia a guinada para o bordo contrário ao objetivo.",
+        "E": "Dispensa a ação inicial do leme que fundamenta a sequência examinada."
+      },
+      "cognitive_level": 2
     },
     {
       "subject": "Arte Naval",
       "module": "Manobra do Navio",
       "topic": "Navio com seguimento para vante e hélice dando atrás",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 12, item 12.6.3, p. 800–803"
+        "locator": "cap. 12, seção A, item 12.6.3, pp. 800–803/PDF 161–164, fig. 12-4 p. 801/PDF 162; contexto 12.6 p. 798/PDF 159, 12.6.2 pp. 799–800/PDF 160–161 e 12.3–12.4 pp. 795–796/PDF 156–157",
+        "printed_page": "800–803",
+        "pdf_page": "161–164",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -156044,7 +156091,7 @@
       "topic_code": "AN.C12.12.6.3.M3",
       "style": "Sequência V/F",
       "question_type": "true_false",
-      "question": "Julgue:\n( ) Com o hélice dando atrás, a corrente de sucção contraria a ação do leme quando este tem ângulo.\n( ) O momento em que o leme é carregado é importante; carregá-lo antes de inverter a marcha favorece a guinada para o bordo desejado.\n( ) A corrente de sucção reforça sempre a ação do leme quando o navio tem seguimento para vante e o hélice dá atrás.\n( ) Com seguimento para vante, a ação do leme tende a fazer a popa guinar para o bordo oposto ao bordo para o qual o leme foi carregado.\nAssinale a sequência correta.",
+      "question": "Sobre um navio convencional de um hélice de passo direito, ainda com seguimento para vante e com a máquina dando atrás, sem influências externas, julgue as afirmações conforme Arte Naval, volume 2, edição de 2019, e escolha a sequência correta:\n( ) Com o leme angulado, a sucção gerada pelo hélice atrás se opõe à ação do leme devida ao avanço do casco.\n( ) Em condições normais, aplicar o leme antes da reversão permite iniciar a guinada para o bordo desejado.\n( ) Após a reversão a toda força, o navio conserva indefinidamente a mesma capacidade de obedecer ao leme.\n( ) Enquanto há seguimento para vante, a ação do leme angulado tende a levar a popa ao bordo oposto ao de aplicação do leme.",
       "options": [
         {
           "key": "A",
@@ -156068,7 +156115,7 @@
         }
       ],
       "correct_answer": "B",
-      "explanation": "A sequência correta resulta da avaliação das quatro proposições: 1) Com o hélice dando atrás, a corrente de sucção contraria a ação do leme quando este tem ângulo. | 2) O momento em que o leme é carregado é importante; carregá-lo antes de inverter a marcha favorece a guinada para o bordo desejado. | 3) A corrente de sucção reforça sempre a ação do leme quando o navio tem seguimento para vante e o hélice dá atrás. | 4) Com seguimento para vante, a ação do leme tende a fazer a popa guinar para o bordo oposto ao bordo para o qual o leme foi carregado.",
+      "explanation": "A sequência é V/V/F/V (alternativa B). O item 12.6.3 distingue a sucção que contraria o efeito do avanço sobre o leme e o uso antecipado deste para iniciar a guinada. A afirmativa III é falsa: a obra ressalta que o navio continua obedecendo ao leme por tempo limitado após a reversão a toda força, e que as experiências devem ser feitas em cada navio. IV trata da popa; nesse efeito do leme com seguimento para vante, a proa tende ao bordo para o qual ele foi aplicado.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC09",
@@ -156076,7 +156123,15 @@
       },
       "validation": {
         "final_editorial_audit": "2026-10-01"
-      }
+      },
+      "distractor_analysis": {
+        "A": "Erra II, III e IV: nega a aplicação antecipada e o sentido do efeito do leme e aceita governo indefinido.",
+        "B": "É a única sequência com I, II e IV verdadeiras e III falsa.",
+        "C": "Erra I, III e IV: nega a oposição da sucção e o efeito sobre a popa e aceita governo indefinido.",
+        "D": "Erra I, II e III: nega duas relações descritas e aceita a conservação indefinida do governo.",
+        "E": "Erra III: a ação de governo após a reversão a toda força é limitada no tempo."
+      },
+      "cognitive_level": 2
     },
     {
       "subject": "Arte Naval",
