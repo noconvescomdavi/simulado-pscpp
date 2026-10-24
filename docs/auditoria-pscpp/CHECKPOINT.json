@@ -1,7 +1,7 @@
 {
   "checkpoint_version": 1,
   "created_at_utc": "2026-10-19T02:22:35.805683+00:00",
-  "updated_at_utc": "2026-10-24T07:05:47.917033+00:00",
+  "updated_at_utc": "2026-10-24T08:10:56.268854+00:00",
   "task_status": "in_progress_not_approved",
   "branch": "feature/auditoria-integral-padrao-banca-pscpp",
   "source_baseline_sha": "012b562b0eb6f7fec78773b339e4a53b3643e791",
@@ -11,8 +11,8 @@
   "runtime_occurrences": 14086,
   "runtime_unique_ids": 13715,
   "individual_editorial_approved_occurrences": 0,
-  "primary_source_partial_checks": 183,
-  "individually_corrected_questions": 180,
+  "primary_source_partial_checks": 191,
+  "individually_corrected_questions": 188,
   "corrected_question_ids": [
     "ANV-0005",
     "ANV-0007",
@@ -193,7 +193,15 @@
     "AN-C10-1032-M2",
     "AN-C10-1032-M3",
     "AN-C10-1036-M2",
-    "AN-C10-1036-M3"
+    "AN-C10-1036-M3",
+    "ANV-0288",
+    "ANV-0686",
+    "AN-C09-91-M1",
+    "AN-C09-91-M2",
+    "AN-C09-91-M3",
+    "AN-C09-93-M1",
+    "AN-C09-93-M2",
+    "AN-C09-93-M3"
   ],
   "primary_content_correction_is_release_approval": false,
   "historical_extraction_count": 264,
@@ -214,22 +222,22 @@
   "gates": {
     "1": "partial: local JSON pipelines reconciled; full consumers/offline and production checks pending",
     "2": "failed: 0 approved individual evidence records",
-    "3": "pending:183 partial primary checks and180 corrected IDs;independent recheck,official program/edital,complete bibliography/current applicability and semantic prevention pending;existing source impediments and12.15AR sentence unresolved",
+    "3": "pending:191 partial primary checks and188 corrected IDs;independent recheck,official program/edital,complete bibliography/current applicability and semantic prevention pending;existing source impediments and12.15AR sentence unresolved",
     "4": "partial: 264 records individually checked, 255 available texts read, 254 observed keys reconciled; subject/points/cognitive/language matrices recorded; active-bank calibration and format targets not yet approved",
     "5": "partial: 102 runtime duplicate IDs removed; semantic duplicate analysis pending",
-    "6": "partial:77 locator candidates;notebook-complete-stems fails0142;next0288;regression180 exact deltas/392 propositions/410 direct options;isolated fullbuild integral log/stable inputs confirmed;not release approval",
+    "6": "partial:77 locator candidates;notebook-complete-stems fails0142;next0295;regression188 exact deltas/412 propositions/425 direct options;isolated fullbuild integral log/stable inputs confirmed;not release approval",
     "7": "pending: SQL schema inspected read-only; no migrations or production mutations",
     "8": "pending: no merge; baseline deployment READY is not audit release"
   },
   "known_findings": {
     "locator_candidates": 77,
-    "combination_without_parsed_assertions_candidates": 173,
+    "combination_without_parsed_assertions_candidates": 172,
     "previous_combination_candidates": 256,
-    "combination_candidates_corrected": 80,
+    "combination_candidates_corrected": 81,
     "combination_false_positives_resolved_without_content_change": 3,
     "noncanonical_subject_records": 20,
     "selection_excluded_records_retained": 11,
-    "editorial_corrections_outside_missing_proposition_triage": 100,
+    "editorial_corrections_outside_missing_proposition_triage": 107,
     "source_state_reconciliation_example": {
       "id": "ANV-0105",
       "physical_main_version": "quarantined/inactive; different swing-circle content preserved unchanged",
@@ -750,6 +758,27 @@
       "report": "REVISAO_ARTE_NAVAL_LOTE_063.md",
       "scope": "1032all3 and1036twoalreadyactive models individually source-checked/partiallycorrected.All3formats ineachphysicalgroup preserved.1036M1 excluded/pending unchanged;no wholeitem approval.10.32p747/PDF108,10.36pp752–753/PDF113–114,context748/PDF109,4pages text/images.Legacyflags notacceptedapproval.10percent is edition-bound recall,not modernnorm/compliance.Solventpassage read but not prescribed.Current equipment/normative mapping and semantic prevention pending.",
       "editorial_approval": false
+    },
+    "physical_runtime_state_lot064": {
+      "ids": [
+        "ANV-0487"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_064.md",
+      "status": "Unchanged/absent runtime;raw active then stem-quotes-source-answer after existing transforms.No activation,new quarantine or counted check."
+    },
+    "page_number_note_lot064": "V2 chapter9opening hasno printednumeral;[657] inferred immediatelybeforeprinted658.PDF18 exact.Source.page_note andpartialledger discloseinference.Report064.Fivepages text/images,fig9-1 through9-11.",
+    "three_model_revision_lot064": {
+      "ids": [
+        "AN-C09-91-M1",
+        "AN-C09-91-M2",
+        "AN-C09-91-M3",
+        "AN-C09-93-M1",
+        "AN-C09-93-M2",
+        "AN-C09-93-M3"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_064.md",
+      "scope": "Both3model groups individually source-checked/partiallycorrected;all3formats andlegacyflags preserved,notacceptedapproval.V2 9.1opening/PDF18,[657]inferred;9.2pp658–659/PDF19–20;9.3pp659–661/PDF20–22,5pages/fig9-1–11.No universal forcegain orloadcalculation.Classvsinstance overlap removed,patesca closing distinguishedfromopenpole.Historicaltypes scopedtobook.Old003/91/93 competency overlaps maynotcoexist inproof;globalsemantic prevention pending.",
+      "editorial_approval": false
     }
   },
   "production_baseline": {
@@ -763,29 +792,29 @@
   "next_actions": [
     "Historical read complete for all available texts; use BENCHMARK_REVISAO_INTEGRAL.md and manual TSV rather than superseded structural counts. Do not equate historical key observation with current technical correctness.",
     "Verify official Annexes 2-A/2-B provenance, revisions and edital; map complete work/chapter/item trees.",
-    "Review every active effective version.180 primary corrections,183 partial checks,zero final approvals.Complete independent recheck,official program/edital,bibliography/current applicability inventory and semantic prevention.Resolve existing source impediments,excluded1036M1 and12.15AR sentence honestly.",
-    "Continue independent ANV-0288(poleame de laborar,Fonseca9.1/9.3).Lot063 corrected0283/0681,3AN-C10-1032 models and2alreadyactiveAN-C10-1036 models;35rationales.0482/1036M1 excludedunchanged;0044 preexisting effective restoration unchanged,no recount.Three physical models peritem andlegacy tracking preserved;globalsemantic prevention pending.All8gates pending/failing;no merge/deploy.",
+    "Review every active effective version.188 primary corrections,191 partial checks,zero final approvals.Complete independent recheck,official program/edital,bibliography/current applicability inventory and semantic prevention.Resolve existing source impediments,excluded1036M1 and12.15AR sentence honestly.",
+    "Continue independent ANV-0295(teste do aparelho de governo,Fonseca11.10).Lot064 corrected0288/0686 and3models eachAN-C09-91/93;40rationales.0487excluded intact;only0288 restoresmissingpropositions;otherM1/M3alreadyparsed4items.[657]inferred anddisclosed;no universal forcegain.Three-model regimes,legacyflags/tracking preserved;globalsemantic prevention pending.All8gates pending/failing;no merge/deploy.",
     "Inspect 20 PSCPP records classified as ii — arte naval and normalize taxonomy with regression tests.",
     "Reconcile offline/production consumers and all hashes, complete every gate, then sync main, revalidate, review PR, merge and verify production."
   ],
   "resume_command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/audit-pscpp-runtime-inventory.mjs",
   "resume_instruction": "Continue this branch from CHECKPOINT.json, preserving baseline/. Do not treat pending rows as approved. Reobtain the attached dossier if needed; its hashes are in INTEGRIDADE_DOSSIE.json. Follow the original Prompt-Mestre. Do not merge while any gate remains pending or failed.",
-  "source_checkpoint_sha": "699857b91455d332d9e42c72bc29cac06a71e9cf",
-  "last_completed_batch": "063: ANV-0283/0681,three AN-C10-1032 models,two active AN-C10-1036 models;preparation,operation,voltage limit,cleaning and final securing;35 rationales;excluded1036M1 unchanged;no final approval",
+  "source_checkpoint_sha": "b60d122834b5cb51266a703ea64bf7c6c60521eb",
+  "last_completed_batch": "064: ANV-0288/0686 and three models each AN-C09-91/93;classes vs instances,box material,roldana/perno,patesca/pole and historical types;40 rationales;inferred[657] disclosed;no final approval",
   "last_build": {
     "command": "npm run build in isolated copy;NEXT_TELEMETRY_DISABLED=1 npm_config_offline=true npm_config_update_notifier=false",
     "result": "passed_isolated_copy_integral_log_confirmed",
-    "source_checkpoint_sha": "699857b91455d332d9e42c72bc29cac06a71e9cf",
+    "source_checkpoint_sha": "b60d122834b5cb51266a703ea64bf7c6c60521eb",
     "source_changes": [
-      "data/questions/arte-naval.json:ANV-0283,ANV-0681,AN-C10-1032-M1,AN-C10-1032-M2,AN-C10-1032-M3,AN-C10-1036-M2,AN-C10-1036-M3"
+      "data/questions/arte-naval.json:ANV-0288,ANV-0686,AN-C09-91-M1,AN-C09-91-M2,AN-C09-91-M3,AN-C09-93-M1,AN-C09-93-M2,AN-C09-93-M3"
     ],
     "source_sha256": {
-      "data/questions/arte-naval.json": "25578e49eac9ed2fa6e7d0e83b32b99b7c511ebf3ba7009f06a5031204c59170",
+      "data/questions/arte-naval.json": "60b2ad1d9986ec99951cd21bd69620c1f993b6b3c7d2c495625e4e06b6418047",
       "data/question-restorations/arte-naval.json": "6607132d2a946fc22cca613b05e3591e2ecab69e1967e867ece7b2432d855a0d",
       "data/question-restorations/notebook-complete-stems.json": "95c79a49d6a367e67cc58441d2579302caaaa4dd22f72de32bd5aff004a2f7d2"
     },
     "release_approval": false,
-    "note": "Compile/lint/types/101pages/routes confirmed;all tracked non-docs and6generated artifacts byte-identical.180exactdeltas,392propositions,410directoptions.Sevennew effectiveIDs only.Zero final approval."
+    "note": "Compile/lint/types/101pages/routes confirmed;all tracked non-docs and6generated artifacts byte-identical.188exactdeltas,412propositions,425directoptions.Eightnew effectiveIDs only.Zero final approval."
   },
   "continuation_automation": {
     "id": "6ad9195b550c8191bf6738126d23a44e",

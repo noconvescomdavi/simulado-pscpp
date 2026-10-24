@@ -1665,3 +1665,14 @@ O primeiro ciclo de testes passou nos contratos pertinentes,mas a conferência f
 Falhas conhecidas mantidas:test-notebook-complete-stems exit1 emANV-0142;validate-editorial-runtime exit1 nos77 localizadores;validate-pscpp-editorial-evidence exit2,zero aceitas/14086 pendentes. Triagem e inventário regenerados;artefato conferido:173 candidatos sem proposições e77 por localizador. REVISOES_EDITORIAIS byte a byte intacto. Critérios não relaxados.
 
 Acumulado sem recontagem:180 IDs corrigidos e183 conferências bibliográficas parciais,ZERO aprovações finais. Dos256 candidatos originais,80 corrigidos+3 falsos positivos+173 restantes;100 correções fora dessa triagem,80+100=180. Este lote acrescenta sete correções e sete conferências,sem recontar os173 IDs anteriores. Próxima falha independente:ANV-0288,poleame de laborar,Fonseca9.1/9.3. Impedimentos0142/0840,0176/0874 e0253/0651,modelo1036M1 excluído,reconciliaçãoAR do061 e demais pendências globais preservados.
+
+
+## Lote064 — oito correções parciais
+
+Regenerados runtime PSCPP,bancos,catálogo e flashcards. Passaram validate-runtime-question-banks,validate-pscpp-exam-selection,test-question-source-provenance,validate-runtime-question-catalog,test-pscpp-audit-anv0005 e check:pscpp-bank. Regressão:188 deltas acumulados exatos,11914 ocorrências de cadernos preservadas,412 proposições renderizadas e425 alternativas diretas preservadas. Frente ao063,exatamente oito IDs efetivos e oito objetos principais mudaram;180 correções anteriores permanecem intactas. Todos os1984 registros PSCPP,IDs ativos e composição14086=12102+1984 preservados.27435 registros físicos e13715 IDs únicos mantidos;matriz100=25/25/10/10/10/10/10 preservada pela validação pertinente.
+
+Build completo npm run build passou em cópia isolada com log integral:compilação,lint/tipos,101/101 páginas e tabela de rotas. Todos os arquivos rastreados fora de docs e seis artefatos gerados comparados byte a byte com a cópia testada. Não se usa código de saída isolado como evidência de execução.
+
+Falhas conhecidas mantidas:test-notebook-complete-stems exit1 emANV-0142;validate-editorial-runtime exit1 nos77 localizadores;validate-pscpp-editorial-evidence exit2,zero aceitas/14086 pendentes. Triagem e inventário regenerados;artefato conferido:172 candidatos sem proposições e77 por localizador. REVISOES_EDITORIAIS permaneceu byte a byte intacto. Critérios não relaxados.
+
+Acumulado sem recontagem:188 IDs corrigidos e191 conferências bibliográficas parciais,ZERO aprovações finais. Dos256 candidatos originais,81 corrigidos+3 falsos positivos+172 restantes;107 correções fora dessa triagem,81+107=188. Este lote acrescenta oito correções e oito conferências,sem recontar os180 IDs anteriores. Próxima falha independente:ANV-0295,teste do aparelho de governo,Fonseca11.10. Impedimentos0142/0840,0176/0874 e0253/0651,modelo1036M1 excluído,reconciliaçãoAR do061 e demais pendências globais preservados.
