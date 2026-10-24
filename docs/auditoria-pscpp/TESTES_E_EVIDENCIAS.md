@@ -1817,3 +1817,33 @@ Falhas conhecidas mantidas:test-notebook-complete-stems exit1 emANV-0142;validat
 |node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/audit-pscpp-runtime-inventory.mjs|0|
 |node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-pscpp-editorial-evidence.mjs|2|
 |npm run check:pscpp-bank|0|
+
+## Lote 070 — três IDs novos, zero aprovação final
+
+Base `f177ca98cac8183f545272a099cb5444642a4978`; relatório REVISAO_ARTE_NAVAL_LOTE_070.md. 213 correções, 216 conferências, zero aprovações; 165 candidatos e 77 localizadores.
+
+Regenerados runtime PSCPP, bancos, catálogo e flashcards. Passaram validação runtime, seleção/matriz, proveniência, catálogo, regressão e check:pscpp-bank. Regressão: 213 deltas acumulados exatos, 11889 ocorrências de cadernos preservadas, 468 proposições renderizadas e 480 alternativas diretas preservadas. Exatamente três IDs efetivos e três objetos principais mudaram frente ao lote 069. Permanecem 27435 registros físicos, 14086 ocorrências (12102 cadernos + 1984 PSCPP) e 13715 IDs únicos; matriz 100=25/25/10/10/10/10/10 preservada.
+
+A primeira execução retornou zero, mas seu log terminou durante a geração de páginas e não foi aceito como prova integral. A segunda execução, na mesma cópia isolada e sem mudança de insumos, retornou zero com 101/101 páginas e resumo completo de rotas. Ambos os logs foram preservados privadamente.
+
+Build completo em cópia isolada passou, com log integral de compilação, lint/tipos, 101/101 páginas e rotas. Os 1285 arquivos rastreados fora de docs e os seis artefatos gerados coincidem byte a byte com a cópia testada. Avisos de CSS/cache/npm não impediram o sucesso; isso não é aprovação de release.
+
+Falhas conhecidas mantidas: test-notebook-complete-stems exit1 em ANV-0142; validate-editorial-runtime exit1 nos 77 localizadores; validate-pscpp-editorial-evidence exit2, zero ocorrências aceitas e 14086 pendentes. Inventário e triagem regenerados: 165 candidatos sem proposições e 77 localizadores. REVISOES_EDITORIAIS permanece inalterado.
+
+| Comando | Código de saída |
+|---|---|
+|npm run generate:pscpp-bank|0|
+|npm run generate:question-banks|0|
+|npm run generate:question-catalog|0|
+|npm run generate:flashcard-decks|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-runtime-question-banks.mjs|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-pscpp-exam-selection.mjs|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-question-source-provenance.mjs|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-runtime-question-catalog.mjs|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-pscpp-audit-anv0005.mjs|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-notebook-complete-stems.mjs|1|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-editorial-runtime.mjs|1|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/audit-pscpp-runtime-triage.mjs|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/audit-pscpp-runtime-inventory.mjs|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-pscpp-editorial-evidence.mjs|2|
+|npm run check:pscpp-bank|0|

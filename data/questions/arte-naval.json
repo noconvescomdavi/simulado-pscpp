@@ -142983,10 +142983,10 @@
       "module": "Máquina do leme",
       "topic_code": "AN.C11.11.4.b.M1",
       "topic": "Servomotor a vapor",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Afirmativas combinadas",
       "question_type": "assertion_combination",
-      "question": "Com base em Arte Naval, v. 2, art. 11.4.b, analise as afirmativas:\nI. O servomotor a vapor é apresentado como muito empregado nos navios mercantes a vapor.\nII. Com a roda do leme a meio, a válvula fica a meio de seu curso, fecha os canais de admissão de vapor e a máquina permanece parada.\nIII. Com a roda a meio, a válvula abre totalmente os canais de admissão para manter o servomotor em movimento.\nIV. A válvula de distribuição de vapor funciona independentemente da roda do leme.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "question": "A respeito do comando do servomotor a vapor descrito em Arte Naval, volume 2, edição de 2019, analise as afirmações:\nI. A obra relaciona o emprego desse tipo de servomotor aos navios mercantes com propulsão a vapor.\nII. Na condição descrita com a roda a meio, a válvula de distribuição ocupa a posição central, interrompe a admissão de vapor e a máquina permanece parada.\nIII. Na condição descrita com a roda a meio, a válvula mantém a admissão inteiramente aberta para sustentar o movimento da máquina.\nIV. O deslocamento da válvula de distribuição independe dos movimentos da roda do leme.\nAssinale a alternativa que reúne apenas as afirmações corretas.",
       "options": [
         {
           "key": "A",
@@ -143010,12 +143010,15 @@
         }
       ],
       "correct_answer": "E",
-      "explanation": "As afirmativas corretas reproduzem o conteúdo técnico do item de referência. I: O servomotor a vapor é apresentado como muito empregado nos navios mercantes a vapor. II: Com a roda do leme a meio, a válvula fica a meio de seu curso, fecha os canais de admissão de vapor e a máquina permanece parada. III: Com a roda a meio, a válvula abre totalmente os canais de admissão para manter o servomotor em movimento. IV: A válvula de distribuição de vapor funciona independentemente da roda do leme.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "explanation": "Somente I e II são verdadeiras, alternativa E. I delimita o emprego à descrição da obra, sem afirmar predominância na frota atual. II relaciona a posição central da válvula ao fechamento da admissão e à parada da máquina. III inverte essa relação ao manter a admissão aberta. IV é falsa porque os movimentos da roda comandam a válvula. Isso não exclui a ação adicional da própria máquina sobre a válvula pelo mecanismo compensador, explicada em 11.4.d; a posição neutra da válvula não significa que o leme só possa parar a meio.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.4.b, p. 757–758"
+        "locator": "cap. 11, item 11.4.b, pp. 757–758/PDF 118–119, fig. 11-3; contexto 11.4.d, p. 759/PDF 120",
+        "printed_page": "757–758",
+        "pdf_page": "118–119",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -143054,7 +143057,15 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
-      }
+      },
+      "distractor_analysis": {
+        "A": "Inclui III, falsa porque a admissão é fechada na condição indicada, e omite II, verdadeira.",
+        "B": "Inclui IV, falsa porque há comando pela roda, e omite I, verdadeira no escopo da obra.",
+        "C": "Reúne III e IV, ambas falsas, e omite I e II.",
+        "D": "Inclui III e IV, que contradizem o fechamento da admissão e o comando pela roda.",
+        "E": "Reúne I e II, únicas verdadeiras; exclui III e IV."
+      },
+      "cognitive_level": 2
     },
     {
       "id": "AN-C11-114b-M2",
@@ -143062,39 +143073,42 @@
       "module": "Máquina do leme",
       "topic_code": "AN.C11.11.4.b.M2",
       "topic": "Servomotor a vapor",
-      "difficulty": "Difícil",
+      "difficulty": "Fácil",
       "style": "Múltipla escolha conceitual",
       "question_type": "conceptual",
-      "question": "No servomotor a vapor descrito no art. 11.4.b, o que ocorre quando a roda do leme está a meio?",
+      "question": "No arranjo de comando do servomotor a vapor descrito em Arte Naval, volume 2, edição de 2019, considere a condição em que a roda do leme está a meio. Qual associação entre posição da válvula de distribuição, admissão de vapor e estado da máquina corresponde à descrição?",
       "options": [
         {
           "key": "A",
-          "text": "A válvula de distribuição fica a meio de seu curso, fecha a admissão de vapor e a máquina fica parada."
+          "text": "Válvula a meio do curso, admissão fechada e máquina parada."
         },
         {
           "key": "B",
-          "text": "A válvula abre completamente e a máquina gira para boreste."
+          "text": "Válvula a meio do curso, admissão aberta e máquina em movimento."
         },
         {
           "key": "C",
-          "text": "O vapor é admitido alternadamente nos dois sentidos para manter o leme oscilando."
+          "text": "Válvula deslocada para um lado, admissão aberta e máquina em movimento."
         },
         {
           "key": "D",
-          "text": "A válvula é desligada da roda e passa ao comando exclusivo do telemotor."
+          "text": "Válvula deslocada para um lado, admissão fechada e máquina parada."
         },
         {
           "key": "E",
-          "text": "O servomotor passa automaticamente ao regime de máxima potência."
+          "text": "Válvula a meio do curso, admissão aberta e máquina parada."
         }
       ],
       "correct_answer": "A",
-      "explanation": "O servomotor a vapor é apresentado como muito empregado nos navios mercantes a vapor.",
+      "explanation": "A é a associação indicada: nessa condição, a válvula fica a meio do curso, fecha a admissão e a máquina permanece parada. B troca o fechamento por abertura e mantém movimento. C descreve deslocamento lateral com admissão e movimento, correspondente à atuação do comando para um bordo, e não à condição perguntada. D desloca lateralmente a válvula, contrariando sua posição central. E mantém a admissão aberta, contrariando o fechamento descrito. A questão trata do estado da válvula e da máquina; não conclui que todo leme parado esteja a meio, pois o mecanismo compensador pode parar o movimento no ângulo desejado.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.4.b, p. 757–758"
+        "locator": "cap. 11, item 11.4.b, pp. 757–758/PDF 118–119, fig. 11-3; contexto 11.4.d, p. 759/PDF 120",
+        "printed_page": "757–758",
+        "pdf_page": "118–119",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -143133,7 +143147,15 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
-      }
+      },
+      "distractor_analysis": {
+        "A": "Mantém os três elementos da condição descrita: posição central, admissão fechada e máquina parada.",
+        "B": "Troca o fechamento da admissão por abertura e a parada por movimento.",
+        "C": "Confunde a condição central com o comando para um dos bordos, que desloca a válvula e admite vapor.",
+        "D": "Mantém fechamento e parada, mas troca a posição central da válvula por deslocamento lateral.",
+        "E": "Mantém posição central e parada, mas troca o fechamento da admissão por abertura."
+      },
+      "cognitive_level": 1
     },
     {
       "id": "AN-C11-114b-M3",
@@ -143141,10 +143163,10 @@
       "module": "Máquina do leme",
       "topic_code": "AN.C11.11.4.b.M3",
       "topic": "Servomotor a vapor",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "style": "Sequência V/F",
       "question_type": "true_false",
-      "question": "Com base no art. 11.4.b de Arte Naval, v. 2, julgue as afirmativas e assinale a sequência correta:\n( ) A válvula de distribuição de vapor é comandada pela roda do leme.\n( ) Movendo-se a roda para boreste ou bombordo, a válvula desloca-se e admite vapor para movimentar a máquina no sentido correspondente.\n( ) Com a roda a meio, a válvula abre totalmente os canais de admissão para manter o servomotor em movimento.\n( ) O servomotor a vapor é apresentado como muito empregado nos navios mercantes a vapor.",
+      "question": "Sobre o funcionamento do servomotor a vapor descrito em Arte Naval, volume 2, edição de 2019, julgue as afirmações e escolha a sequência correta:\n( ) Os movimentos da roda do leme comandam a válvula que distribui vapor à máquina.\n( ) O comando para um dos bordos desloca a válvula e permite a entrada de vapor para movimentar a máquina no sentido correspondente.\n( ) Na condição descrita com a roda a meio, a válvula mantém a admissão inteiramente aberta para sustentar o movimento da máquina.\n( ) O emprego em navios mercantes a vapor integra a descrição desse tipo de servomotor na obra.",
       "options": [
         {
           "key": "A",
@@ -143168,12 +143190,15 @@
         }
       ],
       "correct_answer": "B",
-      "explanation": "A sequência decorre diretamente das proposições técnicas do item: 1) A válvula de distribuição de vapor é comandada pela roda do leme. | 2) Movendo-se a roda para boreste ou bombordo, a válvula desloca-se e admite vapor para movimentar a máquina no sentido correspondente. | 3) Com a roda a meio, a válvula abre totalmente os canais de admissão para manter o servomotor em movimento. | 4) O servomotor a vapor é apresentado como muito empregado nos navios mercantes a vapor.",
+      "explanation": "A sequência é V–V–F–V, alternativa B. I identifica o comando pela roda, sem afirmar que seja a única ação sobre a válvula. II relaciona deslocamento da válvula, admissão de vapor e sentido de movimento. III é falsa: na condição indicada, a válvula central fecha a admissão e a máquina fica parada. IV é verdadeira no escopo da descrição da edição, sem afirmar distribuição tecnológica atual. O mecanismo compensador, tratado em 11.4.d, também atua na válvula para interromper o movimento quando o leme atinge o ângulo desejado.",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.4.b, p. 757–758"
+        "locator": "cap. 11, item 11.4.b, pp. 757–758/PDF 118–119, fig. 11-3; contexto 11.4.d, p. 759/PDF 120",
+        "printed_page": "757–758",
+        "pdf_page": "118–119",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -143212,7 +143237,15 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
-      }
+      },
+      "distractor_analysis": {
+        "A": "V–F–V–F: erra II, III e IV.",
+        "B": "V–V–F–V: julga corretamente as quatro afirmações.",
+        "C": "F–V–V–F: erra I, III e IV.",
+        "D": "F–F–V–V: erra I, II e III.",
+        "E": "V–V–V–V: considera III verdadeira, mas ela inverte o fechamento da admissão na condição indicada."
+      },
+      "cognitive_level": 2
     },
     {
       "subject": "Arte Naval",
