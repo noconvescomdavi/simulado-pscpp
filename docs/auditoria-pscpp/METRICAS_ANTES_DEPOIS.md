@@ -520,3 +520,7 @@ Duas novas correções parciais;135 IDs acumulados,138 conferências,zero aprova
 ## Lote056
 
 Cinco novas correções parciais;140 IDs acumulados,143 conferências,zero aprovações.Triagem187→185 sem proposições;77 localizadores.Regressão140 deltas/304 proposições/320 opções;composição e matriz100 preservadas.Relatório:REVISAO_ARTE_NAVAL_LOTE_056.md.Três modelos preservados.Todos8gatespendentes/falhos.
+
+## Lote057
+
+Cinco novas correções parciais;145 IDs acumulados,148 conferências,zero aprovações.Triagem185→184 sem proposições;77 localizadores.Regressão145 deltas/316 proposições/330 opções;composição e matriz100 preservadas.Relatório:REVISAO_ARTE_NAVAL_LOTE_057.md.Três modelos preservados;M1/M3jáparseados,não contados como restauração.Todos8gatespendentes/falhos.
