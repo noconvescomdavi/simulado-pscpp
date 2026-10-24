@@ -1676,3 +1676,32 @@ Build completo npm run build passou em cópia isolada com log integral:compilaç
 Falhas conhecidas mantidas:test-notebook-complete-stems exit1 emANV-0142;validate-editorial-runtime exit1 nos77 localizadores;validate-pscpp-editorial-evidence exit2,zero aceitas/14086 pendentes. Triagem e inventário regenerados;artefato conferido:172 candidatos sem proposições e77 por localizador. REVISOES_EDITORIAIS permaneceu byte a byte intacto. Critérios não relaxados.
 
 Acumulado sem recontagem:188 IDs corrigidos e191 conferências bibliográficas parciais,ZERO aprovações finais. Dos256 candidatos originais,81 corrigidos+3 falsos positivos+172 restantes;107 correções fora dessa triagem,81+107=188. Este lote acrescenta oito correções e oito conferências,sem recontar os180 IDs anteriores. Próxima falha independente:ANV-0295,teste do aparelho de governo,Fonseca11.10. Impedimentos0142/0840,0176/0874 e0253/0651,modelo1036M1 excluído,reconciliaçãoAR do061 e demais pendências globais preservados.
+
+
+## Lote065 — dois IDs novos,sem aprovação final
+
+Base`96e55b1e04b66890e980057ef7597998d274adcf`;relatório REVISAO_ARTE_NAVAL_LOTE_065.md.190 correções/193 conferências/0aprovações;171 candidatos/77localizadores.
+
+Regenerados runtime PSCPP,bancos,catálogo e flashcards. Passaram validação runtime,seleção/matriz,proveniência,catálogo,regressão e check:pscpp-bank. Regressão confirmou190 deltas acumulados exatos,11912 ocorrências de cadernos preservadas,416 proposições renderizadas e430 alternativas diretas preservadas. Exatamente dois IDs efetivos e dois objetos principais mudaram frente ao064;1984 PSCPP intactos. População14086=12102+1984,13715IDs únicos,27435 registros físicos e matriz100=25/25/10/10/10/10/10 preservadas.
+
+Build completo em cópia isolada passou com log integral:compilação,lint/tipos,101/101 páginas e rotas. Os1285 arquivos rastreados fora de docs e seis artefatos gerados coincidem byte a byte com os insumos/resultados testados. Avisos do build não impediram sucesso;nenhuma aprovação de release inferida.
+
+Falhas mantidas:test-notebook-complete-stems exit1 emANV-0142;validate-editorial-runtime exit1 nos77 localizadores;validate-pscpp-editorial-evidence exit2,0aceitas/14086pendentes. Triagem e inventário regenerados:171 candidatos sem proposições e77 localizadores. REVISOES_EDITORIAIS intacto. Resultados reais de cada comando:
+
+| Comando | Saída |
+|---|---|
+|npm run generate:pscpp-bank|0|
+|npm run generate:question-banks|0|
+|npm run generate:question-catalog|0|
+|npm run generate:flashcard-decks|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-runtime-question-banks.mjs|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-pscpp-exam-selection.mjs|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-question-source-provenance.mjs|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-runtime-question-catalog.mjs|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-pscpp-audit-anv0005.mjs|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-notebook-complete-stems.mjs|1|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-editorial-runtime.mjs|1|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/audit-pscpp-runtime-triage.mjs|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/audit-pscpp-runtime-inventory.mjs|0|
+|node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-pscpp-editorial-evidence.mjs|2|
+|npm run check:pscpp-bank|0|
