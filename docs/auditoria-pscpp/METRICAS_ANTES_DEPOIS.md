@@ -539,3 +539,18 @@ Falhas reais mantidas:test-notebook-complete-stems exit1 emANV-0142;validate-edi
 Acumulado151 IDs distintos corrigidos,154 conferências primárias parciais,zero aprovações finais. Triagem182 sem proposições e77 localizadores:71 candidatos corrigidos+3 falsos positivos anteriores+182 restantes=256;80 correções fora dessa triagem.27.435 físicos,14.086 ocorrências(12.102 cadernos+1.984PSCPP),13.715 IDs únicos. Próxima independenteANV-0269,atracação a contrabordo,Fonseca v2 12.37. Impedimentos0142/0840,0176/0874 e0253/0651 preservados,sem recontagem.
 
 Relatório individual: `REVISAO_ARTE_NAVAL_LOTE_058.md`. Seis correções parciais;nenhuma aprovação final.
+
+
+# Lote 059 — atracação a contrabordo
+
+Build completo isolado com dependências locais: `npm run build` exit0,compilação,lint/tipos e101 páginas/rotas confirmados por log integral,com npmoffline e telemetria desativada. Todos os rastreados fora de docs e seis artefatos gerados iguais byte a byte à cópia testada. Não se declara resolvido o ENOTEMPTY antigo da árvore original.
+
+Passaram as quatro gerações,validate-runtime-question-banks,validate-pscpp-exam-selection,test-question-source-provenance,validate-runtime-question-catalog,test-pscpp-audit-anv0005,triagem/inventário echeck:pscpp-bank. Regressão final:157 deltas acumulados exatos,11.945 ocorrências de cadernos e todas1.984PSCPP intactas contra baseline;340 proposições renderizadas e360 opções diretas preservadas. Nenhuma asserção anterior relaxada. Matriz100=25/25/10/10/10/10/10 preservada.
+
+Entre058 e059,somente os seis IDs da tabela mudam no principal e inventário efetivo. Objetos finais integralmente iguais ao runtime;157 hashes corrigidos conferidos. Metadados de topo,0468,versões físicas/efetivas de0073/0100,demais questões/restaurações/extensões e todasPSCPP intactos. IDs,estados,modelos,marcas legadas,tracking e taxonomy preservados;hashes antes/depois emCORRECOES_RUNTIME.json eCONFERENCIAS_BIBLIOGRAFICAS.jsonl.
+
+Falhas reais mantidas:test-notebook-complete-stems exit1 emANV-0142;validate-editorial-runtime exit1 com77 localizadores;validate-pscpp-editorial-evidence exit2,zero aprovadas/14.086 pendentes. Gate regenerado após inventário,hashes conferidos;REVISOES_EDITORIAIS.jsonl inalterado. A execução preliminar incompleta descrita acima não substitui estes resultados finais.
+
+Acumulado157 IDs distintos corrigidos,160 conferências primárias parciais,zero aprovações finais. Triagem180 sem proposições e77 localizadores:73 candidatos corrigidos+3 falsos positivos anteriores+180 restantes=256;84 correções fora dessa triagem.27.435 físicos,14.086 ocorrências(12.102 cadernos+1.984PSCPP),13.715 IDs únicos. Próxima independenteANV-0276,navio portando pela amarra,Fonseca v2 12.43. Impedimentos0142/0840,0176/0874 e0253/0651 preservados,sem recontagem.
+
+Relatório individual: `REVISAO_ARTE_NAVAL_LOTE_059.md`. Seis correções parciais;nenhuma aprovação final.
