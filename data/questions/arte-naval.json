@@ -145138,12 +145138,15 @@
       "subject": "Arte Naval",
       "module": "Transmissão do aparelho de governo",
       "topic": "Telemotor",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.6, p. 761–763"
+        "locator": "cap. 11, item 11.6, pp. 761–763/PDF 122–124; fig. 11-5, p. 762/PDF 123",
+        "printed_page": "761–763",
+        "pdf_page": "122–124",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -145177,7 +145180,7 @@
       "topic_code": "AN.C11.11.6.M1",
       "style": "Afirmativas combinadas",
       "question_type": "assertion_combination",
-      "question": "Com base em Arte Naval, v. 2, art. 11.6, analise as afirmativas:\nI. O telemotor possui dois pequenos cilindros hidráulicos: transmissor no pedestal da roda do leme e receptor situado no leme.\nII. A percentagem de glicerina depende da temperatura e não deve exceder 60%.\nIII. O telemotor transmite o comando exclusivamente por condutores elétricos entre dois motores selsyn.\nIV. A obra determina que a percentagem de glicerina deve ser sempre superior a 60%.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "question": "Sobre o telemotor hidráulico descrito em Arte Naval, volume 2, examine as afirmações e assinale o conjunto correto:\nI. A roda comanda o cilindro transmissor no seu pedestal, e o cilindro receptor atua sobre o controle do servomotor.\nII. Para a mistura de água com glicerina, o texto indica proporção dependente da temperatura e limite de 60% de glicerina.\nIII. A comunicação do comando entre os cilindros ocorre exclusivamente por condutores elétricos.\nIV. O limite citado dispensa consultar as instruções do fabricante para o enchimento da instalação.",
       "options": [
         {
           "key": "A",
@@ -145201,7 +145204,7 @@
         }
       ],
       "correct_answer": "E",
-      "explanation": "As afirmativas corretas reproduzem o conteúdo técnico do item de referência. I: O telemotor possui dois pequenos cilindros hidráulicos: transmissor no pedestal da roda do leme e receptor situado no leme. II: A percentagem de glicerina depende da temperatura e não deve exceder 60%. III: O telemotor transmite o comando exclusivamente por condutores elétricos entre dois motores selsyn. IV: A obra determina que a percentagem de glicerina deve ser sempre superior a 60%.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "explanation": "Somente I e II são verdadeiras, alternativa E. O transmissor recebe a ação da roda e o receptor aciona o controle do servomotor. A obra menciona água com glicerina e limita a proporção de glicerina a 60%, conforme a temperatura. III é falsa: os cilindros se comunicam hidraulicamente por dois tubos de cobre, não por condutores elétricos. IV é falsa porque o próprio texto manda consultar o fabricante para o enchimento e a proporção da mistura; o limite bibliográfico não constitui receita universal de manutenção.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC14",
@@ -145211,18 +145214,28 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Inclui III, falsa por substituir a ligação hidráulica por comunicação elétrica, e omite II, verdadeira.",
+        "B": "Inclui IV, falsa: a referência ao limite não dispensa as instruções do fabricante; omite I, verdadeira.",
+        "C": "Reúne III e IV, falsas: erra o meio de transmissão e dispensa indevidamente a orientação do fabricante.",
+        "D": "Inclui III e IV, falsas; apenas I e II são verdadeiras.",
+        "E": "Correta: reúne I e II, mantendo a função dos cilindros e o limite bibliográfico da mistura sem dispensar o fabricante."
       }
     },
     {
       "subject": "Arte Naval",
       "module": "Transmissão do aparelho de governo",
       "topic": "Telemotor",
-      "difficulty": "Difícil",
+      "difficulty": "Fácil",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.6, p. 761–763"
+        "locator": "cap. 11, item 11.6, pp. 761–763/PDF 122–124; fig. 11-5, p. 762/PDF 123",
+        "printed_page": "761–763",
+        "pdf_page": "122–124",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -145256,31 +145269,31 @@
       "topic_code": "AN.C11.11.6.M2",
       "style": "Múltipla escolha conceitual",
       "question_type": "conceptual",
-      "question": "Segundo o art. 11.6, quais são os elementos hidráulicos fundamentais do telemotor?",
+      "question": "Qual configuração corresponde à ligação hidráulica básica do telemotor de governo apresentado em Arte Naval, volume 2?",
       "options": [
         {
           "key": "A",
-          "text": "Um cilindro transmissor e um cilindro receptor, comunicados por dois tubos de cobre."
+          "text": "Dois cilindros, um transmissor e um receptor, comunicados por dois tubos de cobre."
         },
         {
           "key": "B",
-          "text": "Dois motores selsyn unidos por condutores elétricos."
+          "text": "Dois cilindros, um transmissor e um receptor, comunicados por um único tubo de cobre."
         },
         {
           "key": "C",
-          "text": "Uma bomba centrífuga e uma coroa dentada."
+          "text": "Dois cilindros, um transmissor e um receptor, comunicados somente por condutores elétricos."
         },
         {
           "key": "D",
-          "text": "Um tambor e um cabo de aço sem fim."
+          "text": "Um único cilindro, acumulando as funções transmissora e receptora, com dois tubos de cobre."
         },
         {
           "key": "E",
-          "text": "Dois quadrantes ligados diretamente à madre do leme."
+          "text": "Dois cilindros transmissores, sem cilindro receptor, comunicados por dois tubos de cobre."
         }
       ],
       "correct_answer": "A",
-      "explanation": "Um cilindro transmissor e um cilindro receptor, comunicados por dois tubos de cobre.",
+      "explanation": "O arranjo descrito tem um cilindro transmissor comandado pela roda e um cilindro receptor que atua no controle do servomotor. Duas tubulações de cobre ligam os cilindros, e o deslocamento do transmissor produz uma diferença de pressão que move o êmbolo receptor. Assim, A conserva tanto o par funcional como a ligação descrita. A transmissão do comando não deve ser confundida com o acionamento de potência do leme pelo servomotor.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC14",
@@ -145290,18 +145303,28 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Correta: mantém dois cilindros com funções distintas, transmissora e receptora, e as duas tubulações de cobre da descrição.",
+        "B": "Reduz a ligação a um único tubo; a obra descreve duas tubulações entre os cilindros.",
+        "C": "Troca a comunicação hidráulica por comunicação exclusivamente elétrica, que não corresponde a esse telemotor.",
+        "D": "Elimina a separação entre transmissor junto à roda e receptor junto ao aparelho de governo; o modelo possui dois cilindros.",
+        "E": "Duplica a função transmissora e elimina o receptor que atua no controle do servomotor."
       }
     },
     {
       "subject": "Arte Naval",
       "module": "Transmissão do aparelho de governo",
       "topic": "Telemotor",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.6, p. 761–763"
+        "locator": "cap. 11, item 11.6, pp. 761–763/PDF 122–124; fig. 11-5, p. 762/PDF 123",
+        "printed_page": "761–763",
+        "pdf_page": "122–124",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -145335,7 +145358,7 @@
       "topic_code": "AN.C11.11.6.M3",
       "style": "Sequência V/F",
       "question_type": "true_false",
-      "question": "Com base no art. 11.6 de Arte Naval, v. 2, julgue as afirmativas:\n( ) Os cilindros comunicam-se por dois tubos de cobre e o sistema é cheio com líquido incongelável, como óleo especial ou água com glicerina.\n( ) Vazamentos, entrada de ar e formação de gás no fluido são desvantagens, e a tubulação não deve passar por locais de grandes variações de temperatura.\n( ) O telemotor transmite o comando exclusivamente por condutores elétricos entre dois motores selsyn.\n( ) O telemotor possui dois pequenos cilindros hidráulicos: transmissor no pedestal da roda do leme e receptor situado no leme.\nAssinale a sequência correta.",
+      "question": "Sobre o telemotor hidráulico de Arte Naval, volume 2, marque V ou F e assinale a sequência correta:\n( ) O texto admite óleo especial ou água com glicerina como líquido para a instalação descrita.\n( ) Vazamentos, entrada de ar e formação de gás por temperatura elevada estão entre as desvantagens apontadas.\n( ) Os dois cilindros comunicam o comando exclusivamente por condutores elétricos, dispensando a ligação hidráulica.\n( ) O receptor transmite o movimento ao controle do servomotor, enquanto o transmissor é comandado pela roda.",
       "options": [
         {
           "key": "A",
@@ -145359,7 +145382,7 @@
         }
       ],
       "correct_answer": "B",
-      "explanation": "A sequência decorre diretamente das proposições técnicas do item: 1) Os cilindros comunicam-se por dois tubos de cobre e o sistema é cheio com líquido incongelável, como óleo especial ou água com glicerina. | 2) Vazamentos, entrada de ar e formação de gás no fluido são desvantagens, e a tubulação não deve passar por locais de grandes variações de temperatura. | 3) O telemotor transmite o comando exclusivamente por condutores elétricos entre dois motores selsyn. | 4) O telemotor possui dois pequenos cilindros hidráulicos: transmissor no pedestal da roda do leme e receptor situado no leme.",
+      "explanation": "A sequência é V/V/F/V, alternativa B. I é verdadeira: a obra apresenta óleo especial ou água com glicerina, remetendo ao fabricante para enchimento e proporção. II é verdadeira: vazamentos, ar e formação de gás no fluido são problemas expressamente citados; o texto também recomenda evitar grandes variações de temperatura no trajeto da tubulação. III é falsa porque a comunicação é hidráulica, por duas tubulações. IV é verdadeira: o transmissor recebe a ação da roda e o receptor atua no controle do servomotor. A descrição não permite concluir que qualquer mistura sirva a todos os equipamentos.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC14",
@@ -145369,6 +145392,13 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Erra II, III e IV: os problemas citados são desvantagens, a comunicação não é exclusivamente elétrica e as funções dos cilindros estão corretamente descritas.",
+        "B": "Correta: V/V/F/V; conserva as opções de líquido da obra, os riscos e as funções, rejeitando a substituição da ligação hidráulica por fios.",
+        "C": "Erra I, III e IV: nega as opções de líquido, aceita a comunicação exclusivamente elétrica e nega a relação correta entre roda, transmissor e receptor.",
+        "D": "Erra I, II e III: nega as opções de líquido e as desvantagens e aceita uma ligação exclusivamente elétrica inexistente no modelo.",
+        "E": "Erra III: a ligação entre os cilindros é hidráulica; as demais afirmações são verdadeiras."
       }
     },
     {

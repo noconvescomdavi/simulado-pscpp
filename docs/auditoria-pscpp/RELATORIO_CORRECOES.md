@@ -2078,3 +2078,7 @@ Ver `RECUPERACAO_E_REVISAO_LOTE_075.md` para tabela individual completa,fonte,li
 ## Lote076 — transmissão elétrica selsyn
 
 Três correções parciais: AN-C11-115c-M1/M2/M3; gabaritos B/C/D preservados. Relatório individual: REVISAO_ARTE_NAVAL_LOTE_076.md. Fonte11.5.c pp760–761/PDF121–122 conferida em texto/imagens. 225 IDs/228 conferências parciais/zero aprovações. 161 candidatos sem proposições e77 localizadores. Recuperado075 por bundle/manifest/árvore, sem refazer/recontar9IDs. Build direto Next e regressão passaram; gates permanecem pendentes/falhos. Sem merge/deploy.
+
+## Lote077 — telemotor hidráulico
+
+Três correções parciais: AN-C11-116-M1/M2/M3; E/A/B preservados; relatório individual REVISAO_ARTE_NAVAL_LOTE_077.md e logs EVIDENCIAS_LOTE_077.json. Fonte11.6 pp761–763/PDF122–124 efig11-5 conferidas em texto/imagens. 228IDs/231conferências parciais/zero aprovações;160candidatos sem proposições e77localizadores. Sem recontagem075/076. Build completo e regressão passaram; gates permanecem pendentes/falhos. Sem merge/deploy.
