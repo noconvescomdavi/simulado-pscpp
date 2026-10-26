@@ -2086,3 +2086,7 @@ Três correções parciais: AN-C11-116-M1/M2/M3; E/A/B preservados; relatório i
 ## Lote 078 — transmissão máquina–leme
 
 Três correções parciais: AN-C11-117-M1/M2/M3; C/D/E preservados. Relatório individual REVISAO_ARTE_NAVAL_LOTE_078.md e logs EVIDENCIAS_LOTE_078.json. Fonte 11.7.a–d, pp.763–764/PDF124–125, figuras11-4/11-6 e contexto11.4.c/11.5 conferidos em texto/imagens. 231 IDs / 234 conferências parciais / zero aprovações. 159 candidatos sem proposições e77localizadores. Sem recontagem anterior. Build completo e regressão passaram; gates continuam pendentes/falhos. Sem merge em main ou deploy solicitado.
+
+## Lote 079 — transmissão direta
+
+Três correções parciais: AN-C11-117a-M1/M2/M3; A/B/C preservados. Relatório individual REVISAO_ARTE_NAVAL_LOTE_079.md e logs EVIDENCIAS_LOTE_079.json. Fonte11.7.a p.763/PDF124, contexto11.7.b–d e11.4.c pp.758–759/PDF119–120, figura11-4 conferidos em texto/imagens. 234 IDs / 237 conferências parciais / zero aprovações. 158 candidatos sem proposições e77localizadores. Sem recontagem anterior. Build completo e regressão passaram; gates continuam pendentes/falhos. Sem merge em main ou deploy solicitado.

@@ -1,7 +1,7 @@
 {
   "checkpoint_version": 1,
   "created_at_utc": "2026-10-19T02:22:35.805683+00:00",
-  "updated_at_utc": "2026-10-26T05:36:44.317028+00:00",
+  "updated_at_utc": "2026-10-26T06:45:51.055711+00:00",
   "task_status": "in_progress_not_approved",
   "branch": "feature/auditoria-integral-padrao-banca-pscpp",
   "source_baseline_sha": "012b562b0eb6f7fec78773b339e4a53b3643e791",
@@ -11,8 +11,8 @@
   "runtime_occurrences": 14086,
   "runtime_unique_ids": 13715,
   "individual_editorial_approved_occurrences": 0,
-  "primary_source_partial_checks": 234,
-  "individually_corrected_questions": 231,
+  "primary_source_partial_checks": 237,
+  "individually_corrected_questions": 234,
   "corrected_question_ids": [
     "ANV-0005",
     "ANV-0007",
@@ -244,7 +244,10 @@
     "AN-C11-116-M3",
     "AN-C11-117-M1",
     "AN-C11-117-M2",
-    "AN-C11-117-M3"
+    "AN-C11-117-M3",
+    "AN-C11-117a-M1",
+    "AN-C11-117a-M2",
+    "AN-C11-117a-M3"
   ],
   "primary_content_correction_is_release_approval": false,
   "historical_extraction_count": 264,
@@ -265,22 +268,22 @@
   "gates": {
     "1": "partial: local JSON pipelines reconciled; full consumers/offline and production checks pending",
     "2": "failed: 0 approved individual evidence records",
-    "3": "pending:234 partial source checks,231 corrected IDs; independent recheck, official program alignment and remaining bank outstanding",
+    "3": "pending:237 partial source checks,234 corrected IDs; independent recheck, official program alignment and remaining bank outstanding",
     "4": "partial: 264 records individually checked, 255 available texts read, 254 observed keys reconciled; subject/points/cognitive/language matrices recorded; active-bank calibration and format targets not yet approved",
     "5": "partial: 102 runtime duplicate IDs removed; semantic duplicate analysis pending",
-    "6": "partial:231 exact regression deltas,516 rendered propositions,510 direct options; direct full Next build passed; ANV-0142 and77locators fail; no release approval",
+    "6": "partial:234 exact regression deltas,524 rendered propositions,515 direct options; direct full Next build passed; ANV-0142 and77locators fail; no release approval",
     "7": "pending: SQL schema inspected read-only; no migrations or production mutations",
     "8": "pending: no merge; baseline deployment READY is not audit release"
   },
   "known_findings": {
     "locator_candidates": 77,
-    "combination_without_parsed_assertions_candidates": 159,
+    "combination_without_parsed_assertions_candidates": 158,
     "previous_combination_candidates": 256,
-    "combination_candidates_corrected": 94,
+    "combination_candidates_corrected": 95,
     "combination_false_positives_resolved_without_content_change": 3,
     "noncanonical_subject_records": 20,
     "selection_excluded_records_retained": 11,
-    "editorial_corrections_outside_missing_proposition_triage": 137,
+    "editorial_corrections_outside_missing_proposition_triage": 139,
     "source_state_reconciliation_example": {
       "id": "ANV-0105",
       "physical_main_version": "quarantined/inactive; different swing-circle content preserved unchanged",
@@ -971,6 +974,17 @@
       "source": "11.7.a–d pp763–764/PDF124–125 fig11-6; context11.4.c pp758–759/PDF119–120 fig11-4 and11.5.a–c pp760–761/PDF121–122; six pages text/images; all printed numerals checked",
       "scope": "M1 restores4propositions; M3 recognizes4VFitems. All three objects identical to runtime; exactly3deltas from077. Distinguish wheel-command transmission from machine–rudder mechanisms. No universal efficiency/cost/current fleet/neutral pressure claims.117a–d untouched; independent recheck/program alignment/semantic prevention pending.",
       "editorial_approval": false
+    },
+    "three_model_revision_lot079": {
+      "ids": [
+        "AN-C11-117a-M1",
+        "AN-C11-117a-M2",
+        "AN-C11-117a-M3"
+      ],
+      "report": "REVISAO_ARTE_NAVAL_LOTE_079.md",
+      "source": "11.7.a p763/PDF124; context11.7.b–d same page and11.4.c pp758–759/PDF119–120 fig11-4; three pages text/images, printed numerals checked",
+      "scope": "M1 restores4propositions; M3 recognizes4VFitems. All objects identical to runtime; exactly3deltas from078. Figure number not required; direct classification not motor–rudder-stock coupling. No universal geometry, cost/efficiency/neutral-pressure/current-fleet claims.117b–d untouched; independent recheck/program alignment/semantic prevention pending.",
+      "editorial_approval": false
     }
   },
   "production_baseline": {
@@ -982,8 +996,8 @@
     "team_id": "team_n8yGTY7O9r3Y19SWfZDI7iP2"
   },
   "next_actions": [
-    "Consult remote HEAD and PR172; latest durable checkpoint prevails. Do not recount previous batches. Preserve untracked temporaries, use cooperative lock and expected_sha.",
-    "Next AN-C11-117a-M1/M2/M3: verify effective presence/precedence, source11.7.a andfig11-4; preserve117b–d groups.",
+    "Consult remote HEAD and PR172; latest durable checkpoint prevails. Do not recount prior batches. Preserve untracked temporaries; use cooperative lock and expected_sha.",
+    "Next AN-C11-117b-M1/M2/M3: verify effective presence/precedence and source11.7.b; preserve117c–d and do not recount117/117a.",
     "Historical read complete for all available texts; use BENCHMARK_REVISAO_INTEGRAL.md and manual TSV rather than superseded structural counts. Do not equate historical key observation with current technical correctness.",
     "Verify official Annexes 2-A/2-B provenance, revisions and edital; map complete work/chapter/item trees.",
     "Inspect 20 PSCPP records classified as ii — arte naval and normalize taxonomy with regression tests.",
@@ -991,15 +1005,15 @@
   ],
   "resume_command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/audit-pscpp-runtime-inventory.mjs",
   "resume_instruction": "Read remoteHEAD/PR172; if they remain070, locate persistent PSCPP_Checkpoint_075_Recuperacao.zip, import bundle over34c45320 and verify tree before continuing. Do not discard local work or redo/recount075. Public publication remains blocked by earlier auto-review rejection. All8gates pending/failed; no merge/deploy.",
-  "source_checkpoint_sha": "a00a2335f5f2c6f7058d61a59ce062ece38961b5",
-  "last_completed_batch": "078: AN-C11-117-M1/M2/M3; partial only; previous batches not recounted",
+  "source_checkpoint_sha": "860b07081c01f45f07fb50dc70e965118177ca94",
+  "last_completed_batch": "079: AN-C11-117a-M1/M2/M3; partial only; prior batches not recounted",
   "last_build": {
     "command": "node node_modules/next/dist/bin/next build",
     "result": "passed",
-    "evidence": "EVIDENCIAS_LOTE_078.json",
+    "evidence": "EVIDENCIAS_LOTE_079.json",
     "full_route_summary": true,
     "release_approval": false,
-    "note": "Four generators and four generated-artifact checks passed individually; complete Next log includes101pages androutes."
+    "note": "Four generators and four generated-artifact checks passed individually; full Next log includes101pages androutes."
   },
   "continuation_automation": {
     "id": "6ad9195b550c8191bf6738126d23a44e",
