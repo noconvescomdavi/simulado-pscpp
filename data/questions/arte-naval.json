@@ -143251,12 +143251,15 @@
       "subject": "Arte Naval",
       "module": "Máquina do leme",
       "topic": "Servomotor hidrelétrico",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.4.c, p. 758–759"
+        "locator": "cap. 11, item 11.4.c, pp. 758–759/PDF 119–120; fig. 11-4",
+        "printed_page": "758–759",
+        "pdf_page": "119–120",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -143290,7 +143293,7 @@
       "topic_code": "AN.C11.11.4.c.M1",
       "style": "Afirmativas combinadas",
       "question_type": "assertion_combination",
-      "question": "Com base em Arte Naval, v. 2, art. 11.4.c, analise as afirmativas:\nI. O servomotor hidrelétrico é apresentado como o equipamento mais eficiente para movimentação do leme e pode empregar motor de cerca de metade da potência, em relação ao servomotor elétrico.\nII. O débito e o sentido de escoamento do líquido na bomba são regulados por mecanismo de controle comandado pela roda do leme.\nIII. Com o mecanismo de controle na posição neutra, a bomba mantém pressão máxima na tubulação.\nIV. No sistema descrito, mover a roda para boreste provoca necessariamente o giro do leme para bombordo.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "question": "No servomotor hidrelétrico descrito em Arte Naval, volume 2, edição de 2019, analise as afirmativas:\nI. Em viagem, o motor elétrico aciona a bomba hidráulica trabalhando sob velocidade constante.\nII. O mecanismo comandado pela roda regula o débito e o sentido de escoamento do líquido.\nIII. A amplitude do movimento do mecanismo de controle não interfere no débito da bomba.\nIV. No arranjo descrito, o comando da roda para boreste faz o leme girar para bombordo.\nAssinale o conjunto correto.",
       "options": [
         {
           "key": "A",
@@ -143314,7 +143317,7 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "As afirmativas corretas reproduzem o conteúdo técnico do item de referência. I: O servomotor hidrelétrico é apresentado como o equipamento mais eficiente para movimentação do leme e pode empregar motor de cerca de metade da potência, em relação ao servomotor elétrico. II: O débito e o sentido de escoamento do líquido na bomba são regulados por mecanismo de controle comandado pela roda do leme. III: Com o mecanismo de controle na posição neutra, a bomba mantém pressão máxima na tubulação. IV: No sistema descrito, mover a roda para boreste provoca necessariamente o giro do leme para bombordo.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "explanation": "I e II são verdadeiras: o motor mantém a rotação descrita e o controle da bomba regula tanto o débito como o sentido do fluxo. III é falsa porque o débito depende da amplitude do movimento do controle. IV é falsa porque o comando para boreste produz giro do leme para boreste no arranjo apresentado. Só C reúne I e II. A inclui III e omite II; B inclui IV e omite I; D reúne as duas falsas; E inclui III e IV. Não se generaliza a descrição a todas as instalações.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC07",
@@ -143324,18 +143327,29 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Inclui III, falsa pela dependência entre amplitude e débito, e omite II, verdadeira.",
+        "B": "Inclui IV, que inverte o bordo de resposta, e omite I, verdadeira.",
+        "C": "Reúne exatamente I e II, as duas afirmações verdadeiras.",
+        "D": "Reúne III e IV, ambas falsas.",
+        "E": "Acrescenta III e IV, contrariadas pela relação amplitude/débito e pela resposta para o bordo comandado."
       }
     },
     {
       "subject": "Arte Naval",
       "module": "Máquina do leme",
       "topic": "Servomotor hidrelétrico",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.4.c, p. 758–759"
+        "locator": "cap. 11, item 11.4.c, pp. 758–759/PDF 119–120; fig. 11-4",
+        "printed_page": "758–759",
+        "pdf_page": "119–120",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -143369,31 +143383,31 @@
       "topic_code": "AN.C11.11.4.c.M2",
       "style": "Múltipla escolha conceitual",
       "question_type": "conceptual",
-      "question": "No servomotor hidrelétrico, o que ocorre quando o mecanismo de controle da bomba está na posição neutra?",
+      "question": "No servomotor hidrelétrico descrito em Arte Naval, volume 2, edição de 2019, o motor elétrico permanece trabalhando em viagem. Quando o mecanismo de controle da bomba é levado ao neutro, qual associação entre fluxo para os cilindros e estado do motor corresponde à descrição?",
       "options": [
         {
           "key": "A",
-          "text": "A bomba aplica pressão máxima simultaneamente em todos os cilindros."
+          "text": "Passagem contínua de líquido e motor em funcionamento."
         },
         {
           "key": "B",
-          "text": "O motor elétrico inverte automaticamente sua rotação."
+          "text": "Interrupção da passagem de líquido e motor necessariamente parado."
         },
         {
           "key": "C",
-          "text": "O leme é levado obrigatoriamente a boreste."
+          "text": "Passagem contínua de líquido e motor necessariamente parado."
         },
         {
           "key": "D",
-          "text": "Não há passagem do líquido nem pressão na tubulação."
+          "text": "Interrupção da passagem de líquido e motor em funcionamento."
         },
         {
           "key": "E",
-          "text": "O conjunto de reserva entra automaticamente em funcionamento."
+          "text": "Interrupção da passagem de líquido condicionada à inversão da rotação do motor."
         }
       ],
       "correct_answer": "D",
-      "explanation": "Não há passagem do líquido nem pressão na tubulação.",
+      "explanation": "D é a associação correta: no neutro não há passagem de líquido no circuito descrito, enquanto o motor continua trabalhando. A atribui fluxo contínuo ao neutro. B confunde neutralização do controle com parada do motor. C acrescenta fluxo e parada, ambos incompatíveis com as condições dadas. E condiciona a neutralização à inversão do motor, embora o sentido do fluxo seja regulado pelo mecanismo da bomba. A questão não infere ausência universal de pressão estática ou residual a partir de ausência de fluxo.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC07",
@@ -143403,18 +143417,29 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Mantém indevidamente fluxo para os cilindros com o controle no neutro.",
+        "B": "Acerta o fluxo, mas atribui ao neutro uma parada do motor não descrita.",
+        "C": "Erra o fluxo e o estado do motor nas condições apresentadas.",
+        "D": "Associa o neutro sem passagem de líquido ao motor que continua em funcionamento.",
+        "E": "Confunde inversão do fluxo pelo mecanismo de controle com necessidade de inverter o motor."
       }
     },
     {
       "subject": "Arte Naval",
       "module": "Máquina do leme",
       "topic": "Servomotor hidrelétrico",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.4.c, p. 758–759"
+        "locator": "cap. 11, item 11.4.c, pp. 758–759/PDF 119–120; fig. 11-4",
+        "printed_page": "758–759",
+        "pdf_page": "119–120",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -143448,7 +143473,7 @@
       "topic_code": "AN.C11.11.4.c.M3",
       "style": "Sequência V/F",
       "question_type": "true_false",
-      "question": "Com base no art. 11.4.c de Arte Naval, v. 2, julgue as afirmativas:\n( ) Um motor elétrico de alta rotação trabalha em viagem sob velocidade constante e aciona uma bomba hidráulica dotada de regulador de pressão.\n( ) Usualmente há dois conjuntos completos de motor elétrico e bomba hidráulica, um em movimento e outro de reserva.\n( ) Com o mecanismo de controle na posição neutra, a bomba mantém pressão máxima na tubulação.\n( ) O servomotor hidrelétrico é apresentado como o equipamento mais eficiente para movimentação do leme e pode empregar motor de cerca de metade da potência, em relação ao servomotor elétrico.\nAssinale a sequência correta.",
+      "question": "No servomotor hidrelétrico descrito em Arte Naval, volume 2, edição de 2019, julgue as afirmativas e assinale a sequência correta:\n( ) A bomba acionada pelo motor elétrico dispõe de regulador de pressão para impedir sobrecarga.\n( ) A descrição usual inclui dois conjuntos de motor e bomba, com um trabalhando e outro parado, de reserva.\n( ) Para inverter o sentido de escoamento do líquido, é necessário inverter a rotação do motor elétrico.\n( ) O deslocamento do mecanismo de controle para o sentido oposto inverte os lados de pressão e aspiração.",
       "options": [
         {
           "key": "A",
@@ -143472,7 +143497,7 @@
         }
       ],
       "correct_answer": "E",
-      "explanation": "A sequência decorre diretamente das proposições técnicas do item: 1) Um motor elétrico de alta rotação trabalha em viagem sob velocidade constante e aciona uma bomba hidráulica dotada de regulador de pressão. | 2) Usualmente há dois conjuntos completos de motor elétrico e bomba hidráulica, um em movimento e outro de reserva. | 3) Com o mecanismo de controle na posição neutra, a bomba mantém pressão máxima na tubulação. | 4) O servomotor hidrelétrico é apresentado como o equipamento mais eficiente para movimentação do leme e pode empregar motor de cerca de metade da potência, em relação ao servomotor elétrico.",
+      "explanation": "A sequência é V/V/F/V, alternativa E. A primeira descreve a proteção indicada para a bomba; a segunda conserva a configuração usual apresentada pela obra, sem torná-la obrigatória para todo navio. A terceira é falsa: o motor é descrito trabalhando sob velocidade constante, e a inversão do fluxo decorre do mecanismo de controle. A quarta explica essa inversão pelos lados de pressão e aspiração. A erra os julgamentos 2, 3 e 4; B erra 1, 3 e 4; C erra 1, 2 e 3; D erra 3.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC07",
@@ -143482,18 +143507,29 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Erra 2, 3 e 4: nega a reserva e a inversão pelo controle, aceitando a exigência falsa de reversão do motor.",
+        "B": "Erra 1, 3 e 4: nega a proteção e a atuação do controle, aceitando reversão obrigatória do motor.",
+        "C": "Erra 1, 2 e 3: nega proteção e reserva e aceita reversão obrigatória do motor.",
+        "D": "Erra 3: a inversão do fluxo é feita pelo controle da bomba.",
+        "E": "Conserva V/V/F/V: proteção, reserva usual e inversão pelo controle, sem reversão obrigatória do motor."
       }
     },
     {
       "subject": "Arte Naval",
       "module": "Máquina do leme",
       "topic": "Mecanismo compensador",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.4.d, p. 759"
+        "locator": "cap. 11, item 11.4.d, pp. 759/PDF 120; contexto 11.4.b–c, pp. 758–759/PDF 119–120",
+        "printed_page": "759",
+        "pdf_page": "120",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -143527,7 +143563,7 @@
       "topic_code": "AN.C11.11.4.d.M1",
       "style": "Afirmativas combinadas",
       "question_type": "assertion_combination",
-      "question": "Com base em Arte Naval, v. 2, art. 11.4.d, analise as afirmativas:\nI. Nos servomotores a vapor ou hidrelétrico, o mecanismo compensador faz parar o movimento do leme quando ele atinge o ângulo desejado.\nII. Quando a roda deixa de girar, a válvula é levada à posição neutra, fazendo parar a máquina e, consequentemente, o leme.\nIII. O mecanismo compensador existe para aumentar continuamente o ângulo do leme depois que a roda deixa de girar.\nIV. No sistema hidrelétrico, o mecanismo compensador atua exclusivamente sobre a rotação do hélice.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "question": "Nos servomotores a vapor e hidrelétrico descritos em Arte Naval, volume 2, edição de 2019, analise as afirmativas sobre o mecanismo compensador:\nI. Sua finalidade é interromper o movimento do leme no ângulo desejado.\nII. No sistema a vapor, o movimento da máquina atua sobre a válvula, tendendo a neutralizar o efeito do comando da roda.\nIII. No sistema hidrelétrico, a neutralização do controle exige que o leme retorne à posição a meio.\nIV. No sistema hidrelétrico, somente a roda pode atuar no controle, sem ação da cana ou dos junços.\nAssinale o conjunto correto.",
       "options": [
         {
           "key": "A",
@@ -143551,7 +143587,7 @@
         }
       ],
       "correct_answer": "A",
-      "explanation": "As afirmativas corretas reproduzem o conteúdo técnico do item de referência. I: Nos servomotores a vapor ou hidrelétrico, o mecanismo compensador faz parar o movimento do leme quando ele atinge o ângulo desejado. II: Quando a roda deixa de girar, a válvula é levada à posição neutra, fazendo parar a máquina e, consequentemente, o leme. III: O mecanismo compensador existe para aumentar continuamente o ângulo do leme depois que a roda deixa de girar. IV: No sistema hidrelétrico, o mecanismo compensador atua exclusivamente sobre a rotação do hélice.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "explanation": "I e II são verdadeiras: a compensação interrompe o movimento no ângulo desejado e, no sistema a vapor, o movimento da própria máquina tende a neutralizar a atuação da roda sobre a válvula. III é falsa: posição neutra do controle não exige leme a meio. IV é falsa: a cana ou os junços também atuam no mecanismo de controle hidrelétrico. A é a única opção com I e II. B inclui III e omite II; C inclui IV e omite I; D reúne duas falsas; E inclui III e IV.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC08",
@@ -143561,18 +143597,29 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Reúne exatamente I e II, finalidade e realimentação a vapor descritas.",
+        "B": "Inclui III, que confunde neutro do controle com leme a meio, e omite II.",
+        "C": "Inclui IV, que exclui a ação da cana e dos junços, e omite I.",
+        "D": "Reúne III e IV, ambas falsas.",
+        "E": "Acrescenta III e IV às verdadeiras, contrariando a parada no ângulo desejado e a ação da cana ou dos junços."
       }
     },
     {
       "subject": "Arte Naval",
       "module": "Máquina do leme",
       "topic": "Mecanismo compensador",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.4.d, p. 759"
+        "locator": "cap. 11, item 11.4.d, pp. 759/PDF 120; contexto 11.4.b–c, pp. 758–759/PDF 119–120",
+        "printed_page": "759",
+        "pdf_page": "120",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -143606,31 +143653,31 @@
       "topic_code": "AN.C11.11.4.d.M2",
       "style": "Múltipla escolha conceitual",
       "question_type": "conceptual",
-      "question": "Qual é a finalidade essencial do mecanismo compensador descrito no art. 11.4.d?",
+      "question": "No servomotor hidrelétrico descrito em Arte Naval, volume 2, edição de 2019, o timoneiro termina um movimento da roda para obter determinado ângulo de leme. Como o mecanismo compensador permite interromper o movimento nesse ângulo?",
       "options": [
         {
           "key": "A",
-          "text": "Aumentar continuamente a pressão hidráulica enquanto o leme estiver parado."
+          "text": "A cana ou os junços mantêm o controle deslocado no mesmo sentido, prolongando o movimento."
         },
         {
           "key": "B",
-          "text": "Fazer cessar o movimento do leme quando este atinge o ângulo desejado."
+          "text": "A cana ou os junços atuam sobre o controle, levando-o ao neutro para cessar o movimento."
         },
         {
           "key": "C",
-          "text": "Substituir a transmissão entre a roda e o servomotor."
+          "text": "A cana ou os junços só neutralizam o controle depois que o leme retorna à posição a meio."
         },
         {
           "key": "D",
-          "text": "Manter a válvula de vapor permanentemente aberta."
+          "text": "A cana ou os junços levam o controle ao sentido oposto, fazendo o leme inverter seu movimento."
         },
         {
           "key": "E",
-          "text": "Levar o leme ao bordo oposto sem novo comando da roda."
+          "text": "A cana ou os junços não atuam no controle; a parada depende apenas de cessar o giro da roda."
         }
       ],
       "correct_answer": "B",
-      "explanation": "Fazer cessar o movimento do leme quando este atinge o ângulo desejado.",
+      "explanation": "B é correta: o movimento da cana ou dos junços atua no controle, levando-o ao neutro e interrompendo o movimento no ângulo desejado. A mantém o controle deslocado, em vez de neutralizá-lo. C confunde posição do leme com posição neutra do controle. D inverte o sentido de atuação em vez de neutralizá-lo. E retira a ação de retorno descrita e atribui a parada somente à roda.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC08",
@@ -143640,18 +143687,29 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Manter o deslocamento prolonga a atuação, contrariando a compensação descrita.",
+        "B": "Descreve o retorno do controle ao neutro pela ação da cana ou dos junços.",
+        "C": "Exige leme a meio, embora a compensação permita parar no ângulo desejado.",
+        "D": "Troca neutralização por reversão do movimento.",
+        "E": "Exclui a realimentação mecânica explicitamente descrita."
       }
     },
     {
       "subject": "Arte Naval",
       "module": "Máquina do leme",
       "topic": "Mecanismo compensador",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.4.d, p. 759"
+        "locator": "cap. 11, item 11.4.d, pp. 759/PDF 120; contexto 11.4.b–c, pp. 758–759/PDF 119–120",
+        "printed_page": "759",
+        "pdf_page": "120",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -143685,7 +143743,7 @@
       "topic_code": "AN.C11.11.4.d.M3",
       "style": "Sequência V/F",
       "question_type": "true_false",
-      "question": "Com base no art. 11.4.d de Arte Naval, v. 2, julgue as afirmativas:\n( ) Na instalação a vapor, o movimento da própria máquina tende a neutralizar o efeito da roda do leme sobre a válvula de distribuição.\n( ) No sistema hidrelétrico, o movimento da cana do leme ou dos junços atua no mecanismo de controle, levando-o à posição neutra após cada movimento da roda.\n( ) O mecanismo compensador existe para aumentar continuamente o ângulo do leme depois que a roda deixa de girar.\n( ) Nos servomotores a vapor ou hidrelétrico, o mecanismo compensador faz parar o movimento do leme quando ele atinge o ângulo desejado.\nAssinale a sequência correta.",
+      "question": "Nos servomotores a vapor e hidrelétrico descritos em Arte Naval, volume 2, edição de 2019, julgue as afirmativas sobre a compensação:\n( ) Na instalação a vapor, o movimento da própria máquina tende a neutralizar o efeito da roda sobre a válvula de distribuição.\n( ) No sistema hidrelétrico, a cana ou os junços atuam no controle, levando-o ao neutro depois de cada movimento da roda.\n( ) Levar o controle hidrelétrico ao neutro implica, necessariamente, que o leme esteja a meio.\n( ) A compensação permite cessar o movimento do leme quando ele atinge o ângulo desejado.",
       "options": [
         {
           "key": "A",
@@ -143709,7 +143767,7 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "A sequência decorre diretamente das proposições técnicas do item: 1) Na instalação a vapor, o movimento da própria máquina tende a neutralizar o efeito da roda do leme sobre a válvula de distribuição. | 2) No sistema hidrelétrico, o movimento da cana do leme ou dos junços atua no mecanismo de controle, levando-o à posição neutra após cada movimento da roda. | 3) O mecanismo compensador existe para aumentar continuamente o ângulo do leme depois que a roda deixa de girar. | 4) Nos servomotores a vapor ou hidrelétrico, o mecanismo compensador faz parar o movimento do leme quando ele atinge o ângulo desejado.",
+      "explanation": "V/V/F/V corresponde a C. O primeiro julgamento é verdadeiro pela ação da máquina sobre a válvula no arranjo a vapor. O segundo é verdadeiro pela ação de retorno da cana ou dos junços sobre o controle hidrelétrico. O terceiro é falso: neutro do controle interrompe o movimento, sem exigir leme a meio. O quarto expressa a finalidade da compensação. A erra 2, 3 e 4; B erra 1, 3 e 4; D erra 1, 2 e 3; E erra 3.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC08",
@@ -143719,6 +143777,14 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Erra 2, 3 e 4, negando o retorno pelo mecanismo e a parada no ângulo desejado.",
+        "B": "Erra 1, 3 e 4, negando a ação da máquina e a finalidade da compensação.",
+        "C": "Conserva V/V/F/V e distingue neutro do controle de leme a meio.",
+        "D": "Erra 1, 2 e 3, negando as duas ações de retorno e confundindo controle e leme.",
+        "E": "Erra 3: neutro do controle não exige leme a meio."
       }
     },
     {
@@ -143995,12 +144061,15 @@
       "subject": "Arte Naval",
       "module": "Transmissão do aparelho de governo",
       "topic": "Transmissão entre a roda do leme e o servomotor",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.5, p. 760–761"
+        "locator": "cap. 11, item 11.5.a–c, pp. 760–761/PDF 121–122",
+        "printed_page": "760–761",
+        "pdf_page": "121–122",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -144034,7 +144103,7 @@
       "topic_code": "AN.C11.11.5.M1",
       "style": "Afirmativas combinadas",
       "question_type": "assertion_combination",
-      "question": "Com base em Arte Naval, v. 2, art. 11.5, analise as afirmativas:\nI. O art. 11.5 apresenta transmissões mecânica, hidráulica e elétrica entre a roda do leme e o servomotor.\nII. Na transmissão hidráulica, emprega-se telemotor e a transmissão ocorre por pressão líquida em tubulações.\nIII. O art. 11.5 limita a transmissão entre roda e servomotor exclusivamente ao sistema mecânico rígido.\nIV. Na transmissão elétrica, o receptor comanda a roda do leme e o transmissor fica ligado diretamente ao leme.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "question": "Na transmissão entre a roda do leme e o servomotor descrita em Arte Naval, volume 2, edição de 2019, analise as afirmativas:\nI. Há modalidades mecânica, hidráulica e elétrica.\nII. O telemotor transmite o comando por pressão líquida em tubulações.\nIII. A modalidade mecânica é necessariamente rígida, não empregando gualdropes.\nIV. No sistema elétrico selsyn, o transmissor recebe o comando do controle do servomotor e o receptor movimenta a roda.\nAssinale o conjunto correto.",
       "options": [
         {
           "key": "A",
@@ -144058,7 +144127,7 @@
         }
       ],
       "correct_answer": "B",
-      "explanation": "As afirmativas corretas reproduzem o conteúdo técnico do item de referência. I: O art. 11.5 apresenta transmissões mecânica, hidráulica e elétrica entre a roda do leme e o servomotor. II: Na transmissão hidráulica, emprega-se telemotor e a transmissão ocorre por pressão líquida em tubulações. III: O art. 11.5 limita a transmissão entre roda e servomotor exclusivamente ao sistema mecânico rígido. IV: Na transmissão elétrica, o receptor comanda a roda do leme e o transmissor fica ligado diretamente ao leme.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "explanation": "I e II são verdadeiras: a obra distingue três modalidades e descreve o telemotor na transmissão hidráulica. III é falsa porque a modalidade mecânica também pode ser flexível, por gualdropes. IV é falsa porque inverte as funções: a roda comanda o transmissor e o receptor atua no controle do servomotor. B reúne I e II. A inclui III e omite II; C inclui IV e omite I; D reúne as falsas; E inclui ambas as falsas. A classificação se refere à transmissão do comando, não aos tipos de acionamento do servomotor.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC10",
@@ -144068,18 +144137,29 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Inclui III, que exclui indevidamente a transmissão flexível, e omite II.",
+        "B": "Reúne I e II: as três modalidades e o princípio hidráulico do telemotor.",
+        "C": "Inclui IV, que inverte transmissor e receptor, e omite I.",
+        "D": "Reúne III e IV, ambas falsas.",
+        "E": "Acrescenta III e IV às duas verdadeiras."
       }
     },
     {
       "subject": "Arte Naval",
       "module": "Transmissão do aparelho de governo",
       "topic": "Transmissão entre a roda do leme e o servomotor",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.5, p. 760–761"
+        "locator": "cap. 11, item 11.5.a–c, pp. 760–761/PDF 121–122",
+        "printed_page": "760–761",
+        "pdf_page": "121–122",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -144113,31 +144193,31 @@
       "topic_code": "AN.C11.11.5.M2",
       "style": "Múltipla escolha conceitual",
       "question_type": "conceptual",
-      "question": "Quais são os três tipos de transmissão entre a roda do leme e o servomotor apresentados no art. 11.5?",
+      "question": "Na transmissão entre a roda do leme e o servomotor descrita em Arte Naval, volume 2, edição de 2019, qual associação entre modalidade e meio de transmissão do comando está correta?",
       "options": [
         {
           "key": "A",
-          "text": "Direta, quadrantal e de tambor."
+          "text": "Mecânica: pressão líquida; hidráulica: gualdropes ou eixos; elétrica: condutores elétricos."
         },
         {
           "key": "B",
-          "text": "A vapor, pneumática e por corrente."
+          "text": "Mecânica: gualdropes ou eixos; hidráulica: condutores elétricos; elétrica: pressão líquida."
         },
         {
           "key": "C",
-          "text": "Mecânica, hidráulica e elétrica."
+          "text": "Mecânica: gualdropes ou eixos; hidráulica: pressão líquida; elétrica: condutores elétricos."
         },
         {
           "key": "D",
-          "text": "Flexível, quadrantal e por parafuso sem fim."
+          "text": "Mecânica: condutores elétricos; hidráulica: pressão líquida; elétrica: gualdropes ou eixos."
         },
         {
           "key": "E",
-          "text": "Hidrelétrica, direta e por engrenagem cônica."
+          "text": "Mecânica: pressão líquida; hidráulica: condutores elétricos; elétrica: gualdropes ou eixos."
         }
       ],
       "correct_answer": "C",
-      "explanation": "Mecânica, hidráulica e elétrica.",
+      "explanation": "C conserva as três associações: a mecânica utiliza elementos como gualdropes ou eixos; a hidráulica emprega pressão líquida em tubulações; a elétrica utiliza condutores entre transmissor e receptor. A troca os meios mecânico e hidráulico. B troca os meios hidráulico e elétrico. D troca os meios mecânico e elétrico. E desloca os três meios. A classificação trata do trecho roda–controle do servomotor, que pode ser elétrico mesmo quando o servomotor é hidrelétrico.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC10",
@@ -144147,18 +144227,29 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Troca os meios das modalidades mecânica e hidráulica.",
+        "B": "Troca os meios das modalidades hidráulica e elétrica.",
+        "C": "Associa corretamente cada modalidade ao seu meio de transmissão.",
+        "D": "Troca os meios das modalidades mecânica e elétrica.",
+        "E": "Atribui a cada uma das três modalidades o meio de outra."
       }
     },
     {
       "subject": "Arte Naval",
       "module": "Transmissão do aparelho de governo",
       "topic": "Transmissão entre a roda do leme e o servomotor",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.5, p. 760–761"
+        "locator": "cap. 11, item 11.5.a–c, pp. 760–761/PDF 121–122",
+        "printed_page": "760–761",
+        "pdf_page": "121–122",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -144192,7 +144283,7 @@
       "topic_code": "AN.C11.11.5.M3",
       "style": "Sequência V/F",
       "question_type": "true_false",
-      "question": "Com base no art. 11.5 de Arte Naval, v. 2, julgue as afirmativas:\n( ) A transmissão mecânica pode ser flexível, por gualdropes, ou rígida, por vergalhões ou eixos.\n( ) Na transmissão elétrica, são empregados motores selsyn autossincronizados, com transmissor comandado pela roda e receptor ligado ao controle do servomotor.\n( ) O art. 11.5 limita a transmissão entre roda e servomotor exclusivamente ao sistema mecânico rígido.\n( ) O art. 11.5 apresenta transmissões mecânica, hidráulica e elétrica entre a roda do leme e o servomotor.\nAssinale a sequência correta.",
+      "question": "Na transmissão entre a roda do leme e o servomotor descrita em Arte Naval, volume 2, edição de 2019, julgue as afirmativas e assinale a sequência correta:\n( ) A modalidade mecânica pode ser flexível, por gualdropes, ou rígida, por vergalhões ou eixos.\n( ) No sistema elétrico selsyn, o transmissor é comandado pela roda e o receptor é ligado ao controle do servomotor.\n( ) Usar transmissão elétrica entre a roda e o controle impede o emprego de servomotor hidrelétrico.\n( ) No arranjo com servomotor hidrelétrico e transmissão elétrica, o receptor pode atuar diretamente no controle da bomba.",
       "options": [
         {
           "key": "A",
@@ -144216,7 +144307,7 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "A sequência decorre diretamente das proposições técnicas do item: 1) A transmissão mecânica pode ser flexível, por gualdropes, ou rígida, por vergalhões ou eixos. | 2) Na transmissão elétrica, são empregados motores selsyn autossincronizados, com transmissor comandado pela roda e receptor ligado ao controle do servomotor. | 3) O art. 11.5 limita a transmissão entre roda e servomotor exclusivamente ao sistema mecânico rígido. | 4) O art. 11.5 apresenta transmissões mecânica, hidráulica e elétrica entre a roda do leme e o servomotor.",
+      "explanation": "A sequência V/V/F/V corresponde a D. A primeira distingue as duas formas mecânicas; a segunda mantém as funções de transmissor e receptor. A terceira é falsa: a obra descreve justamente a associação entre transmissão elétrica e servomotor hidrelétrico. A quarta indica onde o receptor atua nessa associação. A erra 2, 3 e 4; B erra 1, 3 e 4; C erra 1, 2 e 3; E erra 3. Modalidade de transmissão do comando e forma de acionamento do leme são classificações distintas.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC10",
@@ -144226,6 +144317,14 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "cognitive_level": 2,
+      "distractor_analysis": {
+        "A": "Erra 2, 3 e 4: nega a ligação correta e aceita incompatibilidade inexistente.",
+        "B": "Erra 1, 3 e 4: nega as formas mecânicas e a atuação do receptor e aceita incompatibilidade inexistente.",
+        "C": "Erra 1, 2 e 3: nega duas descrições corretas e aceita incompatibilidade inexistente.",
+        "D": "Conserva V/V/F/V, incluindo transmissão elétrica com servomotor hidrelétrico.",
+        "E": "Erra 3: a combinação transmissão elétrica/servomotor hidrelétrico é descrita pela obra."
       }
     },
     {
@@ -144772,12 +144871,15 @@
       "subject": "Arte Naval",
       "module": "Transmissão do aparelho de governo",
       "topic": "Transmissão elétrica",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.5.c, p. 760–761"
+        "locator": "cap. 11, item 11.5.c, pp. 760–761/PDF 121–122",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+        "printed_page": "760–761",
+        "pdf_page": "121–122"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -144811,7 +144913,7 @@
       "topic_code": "AN.C11.11.5.c.M1",
       "style": "Afirmativas combinadas",
       "question_type": "assertion_combination",
-      "question": "Com base em Arte Naval, v. 2, art. 11.5.c, analise as afirmativas:\nI. São usados motores selsyn autossincronizados, em um sistema com transmissor comandado pela roda do leme e receptor ligado ao mecanismo de controle do servomotor.\nII. O rotor do receptor acompanha o rotor do transmissor em velocidade e quantidade de deslocamento angular.\nIII. O receptor é comandado pela roda do leme e transmite mecanicamente seu movimento ao transmissor.\nIV. A transmissão elétrica é menos flexível na instalação que a transmissão hidráulica.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "question": "No sistema selsyn de transmissão do comando do leme descrito em Arte Naval, volume 2, examine as afirmações e assinale o conjunto correto:\nI. A roda comanda o transmissor, enquanto o receptor se liga ao controle do servomotor.\nII. O conjunto descrito emprega duas máquinas elétricas autossincronizadas de corrente alternada.\nIII. O movimento é comunicado entre as duas máquinas por uma coluna de líquido em tubos de cobre.\nIV. O elemento ligado ao controle recebe da roda a função de transmissor, e o elemento junto à roda funciona como receptor.",
       "options": [
         {
           "key": "A",
@@ -144835,7 +144937,7 @@
         }
       ],
       "correct_answer": "B",
-      "explanation": "As afirmativas corretas reproduzem o conteúdo técnico do item de referência. I: São usados motores selsyn autossincronizados, em um sistema com transmissor comandado pela roda do leme e receptor ligado ao mecanismo de controle do servomotor. II: O rotor do receptor acompanha o rotor do transmissor em velocidade e quantidade de deslocamento angular. III: O receptor é comandado pela roda do leme e transmite mecanicamente seu movimento ao transmissor. IV: A transmissão elétrica é menos flexível na instalação que a transmissão hidráulica.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "explanation": "I e II são verdadeiras: no arranjo descrito, a roda atua sobre o transmissor e a unidade receptora comanda o servomotor; o par selsyn é de corrente alternada e autossincronizado. III é falsa: a ligação entre transmissor e receptor é elétrica; tubos com líquido caracterizam o telemotor hidráulico. IV é falsa porque inverte as funções das duas unidades. Assim, somente I e II compõem o conjunto correto, alternativa B.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC13",
@@ -144845,18 +144947,28 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Inclui III, que troca condutores elétricos por uma ligação hidráulica, e omite II, verdadeira.",
+        "B": "Correta: reúne I e II, preservando as funções das unidades e o tipo de par elétrico descrito.",
+        "C": "Inclui IV, que inverte transmissor e receptor, e omite I, verdadeira.",
+        "D": "Reúne III e IV, ambas falsas: confunde o meio de transmissão e inverte as funções.",
+        "E": "Inclui III e IV, falsas; apenas I e II são verdadeiras."
       }
     },
     {
       "subject": "Arte Naval",
       "module": "Transmissão do aparelho de governo",
       "topic": "Transmissão elétrica",
-      "difficulty": "Difícil",
+      "difficulty": "Fácil",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.5.c, p. 760–761"
+        "locator": "cap. 11, item 11.5.c, pp. 760–761/PDF 121–122",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+        "printed_page": "760–761",
+        "pdf_page": "121–122"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -144890,31 +145002,31 @@
       "topic_code": "AN.C11.11.5.c.M2",
       "style": "Múltipla escolha conceitual",
       "question_type": "conceptual",
-      "question": "Na transmissão elétrica descrita no art. 11.5.c, qual é a relação funcional entre transmissor e receptor?",
+      "question": "No sistema selsyn usado para comunicar ordens de governo, conforme Arte Naval, volume 2, qual associação identifica corretamente as duas unidades elétricas, na ordem da origem para o destino do comando?",
       "options": [
         {
           "key": "A",
-          "text": "O receptor é comandado pela roda e o transmissor atua diretamente na madre do leme."
+          "text": "Junto à roda: receptor; junto ao controle: transmissor."
         },
         {
           "key": "B",
-          "text": "Ambos são bombas hidráulicas ligadas por tubos de cobre."
+          "text": "Junto à roda: transmissor; junto ao controle: transmissor."
         },
         {
           "key": "C",
-          "text": "O transmissor é comandado pela roda do leme e o receptor atua no mecanismo de controle do servomotor."
+          "text": "Junto à roda: transmissor; junto ao controle: receptor."
         },
         {
           "key": "D",
-          "text": "O transmissor atua no quadrante e o receptor aciona gualdropes."
+          "text": "Junto à roda: receptor; junto ao controle: receptor."
         },
         {
           "key": "E",
-          "text": "Ambos são motores de corrente contínua instalados na cana do leme."
+          "text": "Junto à roda: receptor; junto à madre: transmissor de acionamento direto."
         }
       ],
       "correct_answer": "C",
-      "explanation": "O transmissor é comandado pela roda do leme e o receptor atua no mecanismo de controle do servomotor.",
+      "explanation": "A roda fornece o comando ao transmissor, também denominado motor-piloto. Por condutores elétricos, esse comando chega ao receptor ligado ao mecanismo de controle do servomotor. A cadeia descrita é roda, transmissor, ligação elétrica, receptor e controle; ela não dispensa o servomotor nem põe o transmissor diretamente na madre. A associação correta é C.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC13",
@@ -144924,18 +145036,28 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Inverte as duas funções: a unidade junto à roda é transmissora e a ligada ao controle é receptora.",
+        "B": "Identifica corretamente a unidade junto à roda, mas chama de transmissora a unidade receptora do controle.",
+        "C": "Correta: a roda comanda o transmissor e o receptor se liga ao controle do servomotor.",
+        "D": "Reconhece a unidade receptora do controle, mas troca a transmissora junto à roda por outra receptora.",
+        "E": "Inverte a função junto à roda e substitui o controle do servomotor por um acionamento direto da madre, ausente do arranjo descrito."
       }
     },
     {
       "subject": "Arte Naval",
       "module": "Transmissão do aparelho de governo",
       "topic": "Transmissão elétrica",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.5.c, p. 760–761"
+        "locator": "cap. 11, item 11.5.c, pp. 760–761/PDF 121–122",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+        "printed_page": "760–761",
+        "pdf_page": "121–122"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -144969,7 +145091,7 @@
       "topic_code": "AN.C11.11.5.c.M3",
       "style": "Sequência V/F",
       "question_type": "true_false",
-      "question": "Com base no art. 11.5.c de Arte Naval, v. 2, julgue as afirmativas:\n( ) O transmissor, também chamado motor-piloto, envia por condutores elétricos ao receptor o movimento recebido da roda do leme.\n( ) A transmissão elétrica é muito empregada com servomotores hidrelétricos, com o receptor atuando diretamente no controle da bomba.\n( ) O receptor é comandado pela roda do leme e transmite mecanicamente seu movimento ao transmissor.\n( ) São usados motores selsyn autossincronizados, em um sistema com transmissor comandado pela roda do leme e receptor ligado ao mecanismo de controle do servomotor.\nAssinale a sequência correta.",
+      "question": "Sobre o funcionamento da transmissão elétrica por selsyn descrita em Arte Naval, volume 2, marque V ou F e assinale a sequência correta:\n( ) O motor-piloto recebe o comando da roda e o comunica eletricamente à unidade receptora.\n( ) No modelo ideal descrito, o rotor receptor acompanha tanto a velocidade como o deslocamento angular do rotor transmissor.\n( ) A ligação elétrica entre roda e controle impede o emprego de um servomotor hidrelétrico.\n( ) No arranjo hidrelétrico citado, a unidade receptora atua no mecanismo que controla a bomba.",
       "options": [
         {
           "key": "A",
@@ -144993,7 +145115,7 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "A sequência decorre diretamente das proposições técnicas do item: 1) O transmissor, também chamado motor-piloto, envia por condutores elétricos ao receptor o movimento recebido da roda do leme. | 2) A transmissão elétrica é muito empregada com servomotores hidrelétricos, com o receptor atuando diretamente no controle da bomba. | 3) O receptor é comandado pela roda do leme e transmite mecanicamente seu movimento ao transmissor. | 4) São usados motores selsyn autossincronizados, em um sistema com transmissor comandado pela roda do leme e receptor ligado ao mecanismo de controle do servomotor.",
+      "explanation": "A sequência é V, V, F, V, alternativa D. A primeira afirmação descreve a função do motor-piloto e o meio elétrico de comunicação. A segunda corresponde ao acompanhamento dos rotores apresentado na obra; não é uma especificação de erro ou tolerância de equipamentos reais. A terceira é falsa: a transmissão do comando pode ser elétrica e o servomotor, hidrelétrico. A quarta é verdadeira, pois nesse arranjo o receptor atua no controle da bomba, sem substituir sua função hidráulica.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC13",
@@ -145003,6 +145125,13 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Erra os itens II, III e IV: o acompanhamento dos rotores e a atuação no controle da bomba são verdadeiros, e a incompatibilidade alegada é falsa.",
+        "B": "Erra I, III e IV: o motor-piloto transmite eletricamente, há compatibilidade com servomotor hidrelétrico e o receptor atua no controle da bomba.",
+        "C": "Erra I, II e III: nega as duas descrições verdadeiras do par selsyn e aceita uma incompatibilidade inexistente.",
+        "D": "Correta: V/V/F/V; diferencia transmissão elétrica do comando e acionamento hidrelétrico do leme.",
+        "E": "Erra III: o emprego de transmissão elétrica não impede o servomotor hidrelétrico descrito."
       }
     },
     {

@@ -2069,3 +2069,12 @@ Falhas conhecidas mantidas: test-notebook-complete-stems exit1 em ANV-0142; vali
 213 IDs corrigidos, 216 conferências bibliográficas parciais, zero aprovações finais. Das 256 entradas iniciais da triagem: 88 corrigidas, 3 falsos positivos resolvidos e 165 restantes; 125 correções fora dessa triagem; 88+125=213. Permanecem 77 localizadores. Os 210 IDs anteriores não foram recontados. Correções abrangem 213/13715 = 1,55% dos IDs únicos do banco; isso não é percentual de auditoria integral concluída.
 
 Próxima revisão independente: AN-C11-114c-M1, examinando os três modelos do servomotor hidrelétrico e as remissões necessárias. Rechecagem independente, fontes oficiais/edital, cobertura, bibliografia/aplicabilidade, prevenção semântica, consumidores/offline/SQL e homologação integral continuam pendentes. Os oito gates seguem pendentes/falhos; merge_permitted=false. Sem merge, deploy ou alteração de dados de usuários.
+
+
+### Checkpoint075 — nove correções indisponíveis refeitas
+
+Ver `RECUPERACAO_E_REVISAO_LOTE_075.md` para tabela individual completa,fonte,limites e testes. Refeitos114c/114d/115 M1–M3 sobre remoto070; +9 IDs e+9 conferências, sem recontar registros perdidos. Acumulado222 IDs/225 conferências parciais/zero aprovação final. Bloqueio de publicação anterior respeitado;checkpoint preparado para preservação persistente alternativa. Próximo115c.
+
+## Lote076 — transmissão elétrica selsyn
+
+Três correções parciais: AN-C11-115c-M1/M2/M3; gabaritos B/C/D preservados. Relatório individual: REVISAO_ARTE_NAVAL_LOTE_076.md. Fonte11.5.c pp760–761/PDF121–122 conferida em texto/imagens. 225 IDs/228 conferências parciais/zero aprovações. 161 candidatos sem proposições e77 localizadores. Recuperado075 por bundle/manifest/árvore, sem refazer/recontar9IDs. Build direto Next e regressão passaram; gates permanecem pendentes/falhos. Sem merge/deploy.
