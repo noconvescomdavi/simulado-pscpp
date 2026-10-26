@@ -146206,12 +146206,15 @@
       "subject": "Arte Naval",
       "module": "Transmissão do aparelho de governo",
       "topic": "Transmissão de tambor",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.7.c, p. 763"
+        "locator": "cap. 11, item 11.7.c, p. 763/PDF 124",
+        "printed_page": "763",
+        "pdf_page": "124",
+        "pdf_sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -146245,7 +146248,7 @@
       "topic_code": "AN.C11.11.7.c.M1",
       "style": "Afirmativas combinadas",
       "question_type": "assertion_combination",
-      "question": "Com base em Arte Naval, v. 2, art. 11.7.c, analise as afirmativas:\nI. A transmissão de tambor emprega um cabo de aço ou corrente sem fim.\nII. Os chicotes do cabo ou corrente são fixados à extremidade de um setor quadrantal.\nIII. Na transmissão de tambor, os chicotes são fixados diretamente aos êmbolos de dois cilindros hidráulicos.\nIV. A obra restringe a transmissão de tambor exclusivamente aos servomotores a vapor.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "question": "No arranjo de governo com transmissão por tambor, analise os itens e assinale a alternativa que reúne apenas os corretos.\nI. O elemento flexível empregado pode ser um cabo de aço ou uma corrente.\nII. Os chicotes desse elemento são fixados à extremidade de um setor quadrantal.\nIII. O cabo ou a corrente trabalha sem ser enrolado no tambor.\nIV. Esse arranjo é incompatível com o acionamento por servomotor elétrico.",
       "options": [
         {
           "key": "A",
@@ -146269,7 +146272,7 @@
         }
       ],
       "correct_answer": "B",
-      "explanation": "As afirmativas corretas reproduzem o conteúdo técnico do item de referência. I: A transmissão de tambor emprega um cabo de aço ou corrente sem fim. II: Os chicotes do cabo ou corrente são fixados à extremidade de um setor quadrantal. III: Na transmissão de tambor, os chicotes são fixados diretamente aos êmbolos de dois cilindros hidráulicos. IV: A obra restringe a transmissão de tambor exclusivamente aos servomotores a vapor.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "explanation": "I e II são verdadeiras: o elemento flexível é um cabo de aço ou corrente, cujos chicotes são fixados à extremidade do setor quadrantal. III é falsa porque o elemento é enrolado com determinado número de voltas no tambor. IV é falsa porque o arranjo pode ser empregado com servomotor elétrico. Assim, apenas I e II estão corretas: alternativa B. A descrição não fixa um número universal de voltas nem torna a fonte elétrica exclusiva.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC18",
@@ -146279,18 +146282,28 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: inclui III, que nega o enrolamento, e omite II, verdadeira.",
+        "B": "Correta: I e II descrevem o elemento flexível e a fixação de seus chicotes.",
+        "C": "Incorreta: inclui IV, embora o arranjo admita servomotor elétrico, e omite I.",
+        "D": "Incorreta: III e IV contradizem, respectivamente, o enrolamento e a compatibilidade elétrica.",
+        "E": "Incorreta: inclui III e IV, ambas falsas."
       }
     },
     {
       "subject": "Arte Naval",
       "module": "Transmissão do aparelho de governo",
       "topic": "Transmissão de tambor",
-      "difficulty": "Difícil",
+      "difficulty": "Fácil",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.7.c, p. 763"
+        "locator": "cap. 11, item 11.7.c, p. 763/PDF 124",
+        "printed_page": "763",
+        "pdf_page": "124",
+        "pdf_sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -146324,31 +146337,31 @@
       "topic_code": "AN.C11.11.7.c.M2",
       "style": "Múltipla escolha conceitual",
       "question_type": "conceptual",
-      "question": "Qual elemento transmite o movimento na transmissão de tambor do art. 11.7.c?",
+      "question": "Na transmissão de movimento por tambor entre a máquina do leme e o leme, qual descrição reúne o elemento flexível, sua disposição no tambor e o ponto de fixação dos chicotes?",
       "options": [
         {
           "key": "A",
-          "text": "Duas barras rígidas ligadas diretamente às extremidades da cana do leme."
+          "text": "Cabo de aço ou corrente, sem voltas no tambor e com os chicotes fixados ao setor quadrantal."
         },
         {
           "key": "B",
-          "text": "Dois tubos de cobre cheios de líquido incongelável."
+          "text": "Cabo de aço ou corrente, enrolado no tambor e com os chicotes livres, sem fixação ao setor quadrantal."
         },
         {
           "key": "C",
-          "text": "Um cabo de aço ou corrente sem fim, enrolado num tambor e ligado ao setor quadrantal."
+          "text": "Cabo de aço ou corrente, enrolado no tambor e com os chicotes fixados à extremidade do setor quadrantal."
         },
         {
           "key": "D",
-          "text": "Um par de motores selsyn sem ligação mecânica."
+          "text": "Cabo de aço ou corrente, enrolado no tambor e com os chicotes fixados somente ao próprio tambor, sem ligação ao setor quadrantal."
         },
         {
           "key": "E",
-          "text": "Um duplo parafuso sem fim com roscas de mesmo sentido."
+          "text": "Cabo de aço ou corrente, enrolado no tambor e com os chicotes fixados a dois êmbolos, sem ligação ao setor quadrantal."
         }
       ],
       "correct_answer": "C",
-      "explanation": "Um cabo de aço ou corrente sem fim, enrolado num tambor e ligado ao setor quadrantal.",
+      "explanation": "A alternativa C reúne as três relações descritas para a transmissão por tambor: cabo de aço ou corrente como elemento flexível, enrolamento com determinado número de voltas no tambor e fixação dos chicotes à extremidade de um setor quadrantal. As demais alternativas suprimem o enrolamento ou alteram a fixação dos chicotes. A passagem não fornece um número universal de voltas.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC18",
@@ -146358,18 +146371,28 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: elimina as voltas do elemento flexível no tambor.",
+        "B": "Incorreta: os chicotes não ficam livres; são fixados à extremidade do setor quadrantal.",
+        "C": "Correta: conserva o elemento flexível, o enrolamento e a fixação ao setor quadrantal.",
+        "D": "Incorreta: substitui a fixação ao setor quadrantal por uma ligação exclusiva ao tambor.",
+        "E": "Incorreta: desloca a fixação dos chicotes para êmbolos, contrariando o arranjo descrito."
       }
     },
     {
       "subject": "Arte Naval",
       "module": "Transmissão do aparelho de governo",
       "topic": "Transmissão de tambor",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.7.c, p. 763"
+        "locator": "cap. 11, item 11.7.c, p. 763/PDF 124",
+        "printed_page": "763",
+        "pdf_page": "124",
+        "pdf_sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -146403,7 +146426,7 @@
       "topic_code": "AN.C11.11.7.c.M3",
       "style": "Sequência V/F",
       "question_type": "true_false",
-      "question": "Com base no art. 11.7.c de Arte Naval, v. 2, julgue as afirmativas:\n( ) O cabo ou corrente é enrolado com determinado número de voltas num tambor.\n( ) Esse tipo de transmissão pode ser empregado com servomotor elétrico.\n( ) Na transmissão de tambor, os chicotes são fixados diretamente aos êmbolos de dois cilindros hidráulicos.\n( ) A transmissão de tambor emprega um cabo de aço ou corrente sem fim.\nAssinale a sequência correta.",
+      "question": "Julgue os itens sobre a transmissão de movimento por tambor no aparelho de governo e assinale a sequência correta.\n( ) O elemento flexível é enrolado com determinado número de voltas no tambor.\n( ) O arranjo pode ser empregado com servomotor elétrico.\n( ) Os chicotes do elemento flexível permanecem livres, sem fixação ao setor quadrantal.\n( ) O elemento flexível empregado pode ser um cabo de aço ou uma corrente.",
       "options": [
         {
           "key": "A",
@@ -146427,7 +146450,7 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "A sequência decorre diretamente das proposições técnicas do item: 1) O cabo ou corrente é enrolado com determinado número de voltas num tambor. | 2) Esse tipo de transmissão pode ser empregado com servomotor elétrico. | 3) Na transmissão de tambor, os chicotes são fixados diretamente aos êmbolos de dois cilindros hidráulicos. | 4) A transmissão de tambor emprega um cabo de aço ou corrente sem fim.",
+      "explanation": "A sequência é V – V – F – V: alternativa D. O elemento flexível é enrolado no tambor e o arranjo admite servomotor elétrico. O terceiro item é falso porque os chicotes são fixados à extremidade de um setor quadrantal, em vez de permanecerem livres. O quarto é verdadeiro: cabo de aço ou corrente são as alternativas de elemento flexível citadas. A compatibilidade elétrica não implica exclusividade e a passagem não especifica um número universal de voltas.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC18",
@@ -146437,6 +146460,13 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: erra os itens II, III e IV; o arranjo admite servomotor elétrico, os chicotes são fixados e cabo ou corrente podem ser empregados.",
+        "B": "Incorreta: erra I, III e IV; há enrolamento, fixação dos chicotes e possibilidade de cabo ou corrente.",
+        "C": "Incorreta: erra I, II e III; há enrolamento e compatibilidade elétrica, e os chicotes não ficam livres.",
+        "D": "Correta: corresponde a V – V – F – V, com o terceiro item negado pela fixação ao setor quadrantal.",
+        "E": "Incorreta: considera verdadeiro o terceiro item, embora os chicotes sejam fixados ao setor quadrantal."
       }
     },
     {
