@@ -2099,3 +2099,8 @@ Três correções parciais: AN-C11-117b-M1/M2/M3; D/E/A preservados. Relatório 
 ## Lote 081 — transmissão por tambor
 
 Três novos IDs AN-C11-117c-M1/M2/M3: restauradas assertivas, estruturado V/F, enunciado direto autossuficiente e quinze justificativas. Chaves B/C/D mantidas; fonte11.7.c p763/PDF124 conferida em texto/imagem. Build completo e regressão240deltas passaram; ANV-0142,77localizadores e gate editorial permanecem falhos. Acumulado240correções/243conferências parciais,zeroaprovações;156candidatos sem proposições. Relatório individual: REVISAO_ARTE_NAVAL_LOTE_081.md; logs/hashes: EVIDENCIAS_LOTE_081.json. Próximo117d; sem merge em main.
+
+
+## Lote 082 — duplo parafuso sem fim
+
+Três novos IDs AN-C11-117d-M1/M2/M3: assertivas restauradas, V/F estruturado, cinco configurações construtivas comparáveis e quinze justificativas. Chaves A/B/C mantidas; fonte11.7.d pp763–764/PDF124–125 e figura11-6 conferidas em texto/imagens. Retirada generalização de emprego atual. Build completo e regressão243deltas passaram; ANV-0142,77localizadores e gate editorial permanecem falhos. Acumulado243correções/246conferências parciais,zeroaprovações;155candidatos sem proposições. Relatório individual: REVISAO_ARTE_NAVAL_LOTE_082.md; logs/hashes: EVIDENCIAS_LOTE_082.json. Próximo118; sem merge em main.

@@ -146473,12 +146473,15 @@
       "subject": "Arte Naval",
       "module": "Transmissão do aparelho de governo",
       "topic": "Transmissão por parafuso sem fim",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.7.d, p. 763–764"
+        "locator": "cap. 11, item 11.7.d, pp. 763–764/PDF 124–125, fig. 11-6",
+        "printed_page": "763–764",
+        "pdf_page": "124–125",
+        "pdf_sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -146512,7 +146515,7 @@
       "topic_code": "AN.C11.11.7.d.M1",
       "style": "Afirmativas combinadas",
       "question_type": "assertion_combination",
-      "question": "Com base em Arte Naval, v. 2, art. 11.7.d, analise as afirmativas:\nI. É muito usada em navios mercantes e é apresentada como simples e segura, embora pouco eficiente e em desuso nos navios de guerra.\nII. Em cada parafuso trabalha um cursor ligado por tirante a uma extremidade da cana do leme.\nIII. Os dois cursores deslocam-se sempre no mesmo sentido.\nIV. A transmissão por parafuso sem fim é indicada como exclusiva dos navios de guerra.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "question": "Sobre o arranjo de governo com duplo parafuso sem fim, analise os itens e assinale a alternativa que reúne apenas os corretos.\nI. O eixo da máquina aciona um parafuso com rosca para a direita em uma extremidade e para a esquerda na outra.\nII. Em cada parte roscada trabalha um cursor ligado por tirante a uma extremidade da cana do leme.\nIII. Quando o parafuso gira, os dois cursores se deslocam no mesmo sentido.\nIV. Esse arranjo admite exclusivamente servomotor a vapor, sendo incompatível com servomotor elétrico.",
       "options": [
         {
           "key": "A",
@@ -146536,7 +146539,7 @@
         }
       ],
       "correct_answer": "A",
-      "explanation": "As afirmativas corretas reproduzem o conteúdo técnico do item de referência. I: É muito usada em navios mercantes e é apresentada como simples e segura, embora pouco eficiente e em desuso nos navios de guerra. II: Em cada parafuso trabalha um cursor ligado por tirante a uma extremidade da cana do leme. III: Os dois cursores deslocam-se sempre no mesmo sentido. IV: A transmissão por parafuso sem fim é indicada como exclusiva dos navios de guerra.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "explanation": "I e II são verdadeiras: o duplo parafuso tem roscas de sentidos opostos e cada cursor se liga por tirante a uma extremidade da cana. III é falsa porque os cursores se deslocam em direções opostas, atuando nas extremidades da cana. IV é falsa porque o arranjo também pode ser empregado com servomotor elétrico ou em lemes à mão. Portanto, somente I e II estão corretas: A. Trata-se da configuração descrita na fonte, sem afirmar frequência atual de emprego, rendimento numérico ou exclusividade por classe de navio.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC19",
@@ -146546,18 +146549,28 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Correta: reúne I e II, sobre as roscas opostas e a ligação dos cursores por tirantes à cana.",
+        "B": "Incorreta: inclui III, embora os cursores se desloquem em direções opostas, e omite II.",
+        "C": "Incorreta: inclui IV, embora a fonte também admita servomotor elétrico e lemes à mão, e omite I.",
+        "D": "Incorreta: reúne III e IV, ambas falsas; erra os sentidos dos deslocamentos e restringe indevidamente o acionamento.",
+        "E": "Incorreta: inclui III e IV, que contradizem a configuração e os empregos admitidos na fonte."
       }
     },
     {
       "subject": "Arte Naval",
       "module": "Transmissão do aparelho de governo",
       "topic": "Transmissão por parafuso sem fim",
-      "difficulty": "Difícil",
+      "difficulty": "Fácil",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.7.d, p. 763–764"
+        "locator": "cap. 11, item 11.7.d, pp. 763–764/PDF 124–125, fig. 11-6",
+        "printed_page": "763–764",
+        "pdf_page": "124–125",
+        "pdf_sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -146591,31 +146604,31 @@
       "topic_code": "AN.C11.11.7.d.M2",
       "style": "Múltipla escolha conceitual",
       "question_type": "conceptual",
-      "question": "Qual característica construtiva permite que os cursores do sistema de parafuso sem fim se desloquem em sentidos opostos?",
+      "question": "Na transmissão entre a máquina do leme e a cana por duplo parafuso sem fim descrita em Arte Naval, qual configuração corresponde às roscas e às ligações mecânicas do arranjo?",
       "options": [
         {
           "key": "A",
-          "text": "Os cursores são ligados por dois tubos hidráulicos cruzados."
+          "text": "Rosca para a direita nas duas extremidades; um cursor em cada parte roscada, ligado por tirante a uma extremidade da cana."
         },
         {
           "key": "B",
-          "text": "O duplo parafuso possui rosca para a direita numa extremidade e para a esquerda na outra."
+          "text": "Rosca para a direita em uma extremidade e para a esquerda na outra; um cursor em cada parte roscada, ligado por tirante a uma extremidade da cana."
         },
         {
           "key": "C",
-          "text": "Um motor selsyn inverte eletricamente apenas um dos cursores."
+          "text": "Rosca para a esquerda nas duas extremidades; um cursor em cada parte roscada, ligado por tirante a uma extremidade da cana."
         },
         {
           "key": "D",
-          "text": "O quadrante possui dois setores dentados com o mesmo sentido de rotação."
+          "text": "Roscas de sentidos opostos nas extremidades; um cursor em cada parte roscada, sem ligação por tirantes às extremidades da cana."
         },
         {
           "key": "E",
-          "text": "Os gualdropes são enrolados em sentidos opostos no telemotor."
+          "text": "Roscas de sentidos opostos nas extremidades; um cursor em cada parte roscada, com ambos os tirantes ligados à mesma extremidade da cana."
         }
       ],
       "correct_answer": "B",
-      "explanation": "O duplo parafuso possui rosca para a direita numa extremidade e para a esquerda na outra.",
+      "explanation": "B descreve o conjunto: roscas de sentidos opostos nas duas extremidades do duplo parafuso e um cursor em cada parte roscada, ligado por tirante a uma extremidade da cana. Ao girar o parafuso, os cursores se deslocam em direções opostas e atuam nas duas extremidades da cana. A e C trocam as roscas opostas por roscas de mesmo sentido; D elimina os tirantes; E concentra ambas as ligações numa só extremidade da cana.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC19",
@@ -146625,18 +146638,28 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: coloca rosca para a direita nas duas extremidades, em vez de uma direita e outra esquerda.",
+        "B": "Correta: conserva as roscas opostas, os dois cursores e os tirantes atuando nas extremidades da cana.",
+        "C": "Incorreta: coloca rosca para a esquerda nas duas extremidades, em vez de sentidos opostos.",
+        "D": "Incorreta: retira os tirantes que ligam os cursores às extremidades da cana.",
+        "E": "Incorreta: os tirantes atuam nas duas extremidades da cana, não ambos na mesma extremidade."
       }
     },
     {
       "subject": "Arte Naval",
       "module": "Transmissão do aparelho de governo",
       "topic": "Transmissão por parafuso sem fim",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.7.d, p. 763–764"
+        "locator": "cap. 11, item 11.7.d, pp. 763–764/PDF 124–125, fig. 11-6",
+        "printed_page": "763–764",
+        "pdf_page": "124–125",
+        "pdf_sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -146670,7 +146693,7 @@
       "topic_code": "AN.C11.11.7.d.M3",
       "style": "Sequência V/F",
       "question_type": "true_false",
-      "question": "Com base no art. 11.7.d de Arte Naval, v. 2, julgue as afirmativas:\n( ) O eixo da máquina aciona um duplo parafuso sem fim, com rosca para a direita numa extremidade e para a esquerda na outra.\n( ) Ao girar o parafuso sem fim, os dois cursores deslocam-se em direções opostas e atuam nas extremidades da cana.\n( ) Os dois cursores deslocam-se sempre no mesmo sentido.\n( ) É muito usada em navios mercantes e é apresentada como simples e segura, embora pouco eficiente e em desuso nos navios de guerra.\nAssinale a sequência correta.",
+      "question": "Julgue os itens sobre o arranjo de governo com duplo parafuso sem fim e assinale a sequência correta.\n( ) O eixo da máquina aciona roscas de sentidos opostos nas duas extremidades do duplo parafuso.\n( ) Os cursores se ligam por tirantes às extremidades da cana do leme.\n( ) Durante o giro do parafuso, ambos os cursores se deslocam no mesmo sentido.\n( ) O arranjo pode ser empregado com servomotor a vapor ou elétrico, ou em lemes à mão.",
       "options": [
         {
           "key": "A",
@@ -146694,7 +146717,7 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "A sequência decorre diretamente das proposições técnicas do item: 1) O eixo da máquina aciona um duplo parafuso sem fim, com rosca para a direita numa extremidade e para a esquerda na outra. | 2) Ao girar o parafuso sem fim, os dois cursores deslocam-se em direções opostas e atuam nas extremidades da cana. | 3) Os dois cursores deslocam-se sempre no mesmo sentido. | 4) É muito usada em navios mercantes e é apresentada como simples e segura, embora pouco eficiente e em desuso nos navios de guerra.",
+      "explanation": "A sequência é V – V – F – V: C. O eixo aciona o duplo parafuso com roscas de sentidos opostos; os cursores atuam na cana por tirantes. O terceiro item é falso porque os deslocamentos dos cursores têm direções opostas. O quarto é verdadeiro: a fonte admite emprego com servomotor a vapor ou elétrico, ou em lemes à mão. Esses empregos não autorizam generalizar a frequência atual de uso nem assegurar igual rendimento para todos os equipamentos.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC19",
@@ -146704,6 +146727,13 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: erra II, III e IV; existem tirantes, os cursores se deslocam em sentidos opostos e os empregos listados são admitidos.",
+        "B": "Incorreta: erra I, III e IV; as roscas têm sentidos opostos, o terceiro item é falso e os empregos indicados são admitidos.",
+        "C": "Correta: corresponde a V – V – F – V, com o terceiro item refutado pelo deslocamento em direções opostas.",
+        "D": "Incorreta: erra I, II e III; nega roscas opostas e tirantes e aceita deslocamentos de mesmo sentido.",
+        "E": "Incorreta: julga verdadeiro o terceiro item, embora os cursores se desloquem em sentidos opostos."
       }
     },
     {
