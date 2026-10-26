@@ -145939,12 +145939,15 @@
       "subject": "Arte Naval",
       "module": "Transmissão do aparelho de governo",
       "topic": "Transmissão quadrantal",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.7.b, p. 763"
+        "locator": "cap. 11, item 11.7.b, p. 763/PDF 124; contexto 11.5.a–c e 11.6, pp. 760–761/PDF 121–122",
+        "printed_page": "763",
+        "pdf_page": "124",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -145978,7 +145981,7 @@
       "topic_code": "AN.C11.11.7.b.M1",
       "style": "Afirmativas combinadas",
       "question_type": "assertion_combination",
-      "question": "Com base em Arte Naval, v. 2, art. 11.7.b, analise as afirmativas:\nI. Na transmissão quadrantal, a máquina do leme aciona uma pequena roda dentada que engrena num quadrante.\nII. Esse tipo é muito empregado para máquinas a vapor.\nIII. O quadrante é um cilindro hidráulico livremente apoiado e sem ligação rígida com a cana do leme.\nIV. A transmissão quadrantal é apresentada como exclusiva de servomotores elétricos.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "question": "Na transmissão quadrantal descrita em Arte Naval, volume 2, examine as afirmações e assinale o conjunto correto:\nI. A máquina de governo aciona uma pequena roda dentada que engrena no quadrante.\nII. O arranjo é compatível com máquina a vapor, cuja válvula pode receber comando por gualdropes, eixos ou telemotor.\nIII. O quadrante é um cilindro hidráulico livremente apoiado, sem união rígida com a cana do leme.\nIV. O quadrante é a própria pequena roda dentada acionada pela máquina, e não o setor unido à cana.",
       "options": [
         {
           "key": "A",
@@ -146002,7 +146005,7 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "As afirmativas corretas reproduzem o conteúdo técnico do item de referência. I: Na transmissão quadrantal, a máquina do leme aciona uma pequena roda dentada que engrena num quadrante. II: Esse tipo é muito empregado para máquinas a vapor. III: O quadrante é um cilindro hidráulico livremente apoiado e sem ligação rígida com a cana do leme. IV: A transmissão quadrantal é apresentada como exclusiva de servomotores elétricos.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "explanation": "Somente I e II são verdadeiras, alternativa D. A pequena roda acionada pela máquina engrena no quadrante, que é um setor dentado rigidamente fixado à cana. A obra descreve o emprego com máquina a vapor e admite gualdropes, eixos ou telemotor no comando de sua válvula. III é falsa porque troca o setor dentado por um cilindro e elimina sua união rígida com a cana. IV é falsa porque confunde a roda de acionamento com o setor que ela movimenta. O emprego citado fica limitado à descrição da obra, sem levantamento da frota atual.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC17",
@@ -146012,18 +146015,28 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Inclui III, falsa por transformar o quadrante em cilindro sem ligação rígida, e omite II, verdadeira.",
+        "B": "Inclui IV, falsa por confundir a roda de acionamento com o setor fixado à cana, e omite I, verdadeira.",
+        "C": "Reúne III e IV, falsas: erra a natureza do quadrante e troca sua posição funcional pela da roda de acionamento.",
+        "D": "Correta: I e II conservam o engrenamento e a compatibilidade com máquina a vapor e seus meios de comando descritos.",
+        "E": "Inclui III e IV, falsas; somente I e II são verdadeiras."
       }
     },
     {
       "subject": "Arte Naval",
       "module": "Transmissão do aparelho de governo",
       "topic": "Transmissão quadrantal",
-      "difficulty": "Difícil",
+      "difficulty": "Fácil",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.7.b, p. 763"
+        "locator": "cap. 11, item 11.7.b, p. 763/PDF 124; contexto 11.5.a–c e 11.6, pp. 760–761/PDF 121–122",
+        "printed_page": "763",
+        "pdf_page": "124",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -146057,31 +146070,31 @@
       "topic_code": "AN.C11.11.7.b.M2",
       "style": "Múltipla escolha conceitual",
       "question_type": "conceptual",
-      "question": "O que é o quadrante na transmissão quadrantal descrita no art. 11.7.b?",
+      "question": "Na ligação quadrantal entre a máquina de governo e o leme, qual descrição identifica corretamente o quadrante, conforme Arte Naval, volume 2?",
       "options": [
         {
           "key": "A",
-          "text": "Um tambor no qual se enrola um cabo de aço sem fim."
+          "text": "Um setor dentado livre em torno da cana, sem transmitir a ela seu movimento por uma união rígida."
         },
         {
           "key": "B",
-          "text": "Um cilindro transmissor instalado no pedestal da roda."
+          "text": "Um setor liso rigidamente unido à cana, que recebe o movimento apenas por enrolamento de um cabo."
         },
         {
           "key": "C",
-          "text": "Um motor autossincronizado ligado à bomba hidráulica."
+          "text": "Uma pequena roda dentada instalada no eixo da máquina, que aciona o setor unido à cana."
         },
         {
           "key": "D",
-          "text": "Uma engrenagem cônica instalada na roda do leme."
+          "text": "Um setor dentado unido à roda do timoneiro, que transmite o comando ao controle do servomotor."
         },
         {
           "key": "E",
-          "text": "Um setor dentado rigidamente fixado à cana do leme."
+          "text": "Um setor dentado rigidamente unido à cana, que recebe movimento da pequena roda dentada acionada pela máquina."
         }
       ],
       "correct_answer": "E",
-      "explanation": "Um setor dentado rigidamente fixado à cana do leme.",
+      "explanation": "A alternativa E identifica o quadrante como o setor dentado rigidamente fixado à cana do leme. Ele recebe o movimento da pequena roda acionada pela máquina; a união rígida faz a cana acompanhar o setor. A roda de acionamento e o quadrante são elementos distintos. Um setor livre, liso ou ligado apenas ao comando na roda do timoneiro não corresponde à definição apresentada.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC17",
@@ -146091,18 +146104,28 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Elimina a união rígida entre quadrante e cana, necessária à disposição descrita pela obra.",
+        "B": "Retira o dentado e substitui o engrenamento por atuação de cabo; não define o quadrante desse método.",
+        "C": "Descreve a roda de acionamento que engrena no quadrante, e não o próprio setor fixado à cana.",
+        "D": "Desloca o elemento para a roda do timoneiro e para a transmissão do comando, em vez da ligação à cana.",
+        "E": "Correta: conserva setor dentado, fixação rígida à cana e engrenamento com a roda acionada pela máquina."
       }
     },
     {
       "subject": "Arte Naval",
       "module": "Transmissão do aparelho de governo",
       "topic": "Transmissão quadrantal",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.7.b, p. 763"
+        "locator": "cap. 11, item 11.7.b, p. 763/PDF 124; contexto 11.5.a–c e 11.6, pp. 760–761/PDF 121–122",
+        "printed_page": "763",
+        "pdf_page": "124",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -146136,7 +146159,7 @@
       "topic_code": "AN.C11.11.7.b.M3",
       "style": "Sequência V/F",
       "question_type": "true_false",
-      "question": "Com base no art. 11.7.b de Arte Naval, v. 2, julgue as afirmativas:\n( ) O quadrante é um setor dentado rigidamente fixado à cana do leme.\n( ) A válvula diferencial pode ser comandada por gualdropes, eixos ou telemotor.\n( ) O quadrante é um cilindro hidráulico livremente apoiado e sem ligação rígida com a cana do leme.\n( ) Na transmissão quadrantal, a máquina do leme aciona uma pequena roda dentada que engrena num quadrante.\nAssinale a sequência correta.",
+      "question": "Sobre a transmissão quadrantal e o arranjo com máquina a vapor descritos em Arte Naval, volume 2, marque V ou F e assinale a sequência correta:\n( ) O quadrante é um setor dentado rigidamente fixado à cana do leme.\n( ) A válvula da máquina a vapor pode ser comandada por gualdropes, eixos ou telemotor.\n( ) Nesse arranjo, o telemotor substitui o engrenamento e movimenta diretamente o quadrante, dispensando a pequena roda dentada.\n( ) A pequena roda dentada recebe movimento da máquina e engrena no quadrante.",
       "options": [
         {
           "key": "A",
@@ -146160,7 +146183,7 @@
         }
       ],
       "correct_answer": "A",
-      "explanation": "A sequência decorre diretamente das proposições técnicas do item: 1) O quadrante é um setor dentado rigidamente fixado à cana do leme. | 2) A válvula diferencial pode ser comandada por gualdropes, eixos ou telemotor. | 3) O quadrante é um cilindro hidráulico livremente apoiado e sem ligação rígida com a cana do leme. | 4) Na transmissão quadrantal, a máquina do leme aciona uma pequena roda dentada que engrena num quadrante.",
+      "explanation": "A sequência é V/V/F/V, alternativa A. I é verdadeira pela definição do setor e sua união rígida à cana. II é verdadeira para o comando da válvula da máquina a vapor citado na obra. III é falsa: o telemotor transmite o comando ao controle da máquina; não substitui a ligação quadrantal que leva o movimento da máquina ao leme. IV é verdadeira e descreve esse engrenamento. Assim, meio de comando e mecanismo de transmissão do movimento são funções diferentes, que coexistem no arranjo descrito.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC17",
@@ -146170,6 +146193,13 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Correta: V/V/F/V; mantém a definição, o comando da válvula e o engrenamento, rejeitando a substituição deste pelo telemotor.",
+        "B": "Erra II, III e IV: o comando citado e o engrenamento são verdadeiros, enquanto a substituição pelo telemotor é falsa.",
+        "C": "Erra I, III e IV: nega a definição do quadrante e o engrenamento, mas aceita que o telemotor os dispense.",
+        "D": "Erra I, II e III: nega a definição e o comando admitido e aceita a substituição indevida da transmissão pelo telemotor.",
+        "E": "Erra III: o telemotor atua no comando da máquina, sem dispensar o engrenamento quadrantal descrito."
       }
     },
     {
