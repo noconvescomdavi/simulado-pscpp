@@ -145405,12 +145405,15 @@
       "subject": "Arte Naval",
       "module": "Transmissão do aparelho de governo",
       "topic": "Transmissão entre o servomotor e o leme",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.7, p. 763–764"
+        "locator": "cap. 11, item 11.7.a–d, pp. 763–764/PDF 124–125, fig. 11-6; contexto 11.4.c, pp. 758–759/PDF 119–120, fig. 11-4, e 11.5.a–c, pp. 760–761/PDF 121–122",
+        "printed_page": "763–764",
+        "pdf_page": "124–125",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -145444,7 +145447,7 @@
       "topic_code": "AN.C11.11.7.M1",
       "style": "Afirmativas combinadas",
       "question_type": "assertion_combination",
-      "question": "Com base em Arte Naval, v. 2, art. 11.7, analise as afirmativas:\nI. A obra apresenta vários métodos para transmitir o movimento entre a máquina do leme e o leme.\nII. A transmissão direta emprega barras ligadas às extremidades da cana do leme.\nIII. O art. 11.7 apresenta somente transmissões hidráulica e elétrica entre o servomotor e o leme.\nIV. A transmissão quadrantal é definida como sistema formado exclusivamente por dois cilindros hidráulicos.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "question": "Quanto à ligação entre a máquina de governo e o leme descrita em Arte Naval, volume 2, examine as afirmações e assinale o conjunto correto:\nI. Entre os métodos estão os tipos direto, quadrantal, de tambor e por parafuso sem fim.\nII. No arranjo direto descrito, duas barras se ligam às extremidades da cana do leme.\nIII. A classificação dessa ligação se limita às modalidades hidráulica e elétrica.\nIV. O tipo quadrantal se caracteriza apenas por um par de cilindros hidráulicos, sem engrenamento dentado.",
       "options": [
         {
           "key": "A",
@@ -145468,7 +145471,7 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "As afirmativas corretas reproduzem o conteúdo técnico do item de referência. I: A obra apresenta vários métodos para transmitir o movimento entre a máquina do leme e o leme. II: A transmissão direta emprega barras ligadas às extremidades da cana do leme. III: O art. 11.7 apresenta somente transmissões hidráulica e elétrica entre o servomotor e o leme. IV: A transmissão quadrantal é definida como sistema formado exclusivamente por dois cilindros hidráulicos.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "explanation": "I e II são verdadeiras, alternativa C. A obra distingue vários mecanismos de transmissão entre a máquina e o leme e descreve a transmissão direta com duas barras ligadas à cana. III é falsa: hidráulica e elétrica não esgotam os métodos dessa ligação; não se deve confundir a transmissão do comando com os mecanismos que movimentam o leme. IV é falsa porque, no tipo quadrantal, uma pequena roda dentada engrena em um setor dentado fixado à cana. Um par de cilindros não define esse engrenamento.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC15",
@@ -145478,18 +145481,28 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Inclui III, falsa por reduzir indevidamente a classificação a hidráulica e elétrica, e omite II, verdadeira.",
+        "B": "Inclui IV, falsa por eliminar o engrenamento que caracteriza o tipo quadrantal, e omite I, verdadeira.",
+        "C": "Correta: I e II conservam os métodos enumerados e a ligação por duas barras do arranjo direto.",
+        "D": "Reúne III e IV, falsas: restringe a classificação e troca o mecanismo quadrantal por cilindros.",
+        "E": "Inclui III e IV, falsas; apenas I e II são verdadeiras."
       }
     },
     {
       "subject": "Arte Naval",
       "module": "Transmissão do aparelho de governo",
       "topic": "Transmissão entre o servomotor e o leme",
-      "difficulty": "Difícil",
+      "difficulty": "Fácil",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.7, p. 763–764"
+        "locator": "cap. 11, item 11.7.a–d, pp. 763–764/PDF 124–125, fig. 11-6; contexto 11.4.c, pp. 758–759/PDF 119–120, fig. 11-4, e 11.5.a–c, pp. 760–761/PDF 121–122",
+        "printed_page": "763–764",
+        "pdf_page": "124–125",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -145523,19 +145536,19 @@
       "topic_code": "AN.C11.11.7.M2",
       "style": "Múltipla escolha conceitual",
       "question_type": "conceptual",
-      "question": "Qual conjunto corresponde aos métodos apresentados no art. 11.7 para transmitir movimento entre o servomotor e o leme?",
+      "question": "Qual combinação reúne apenas mecanismos que fazem a máquina de governo movimentar o leme, na classificação apresentada em Arte Naval, volume 2?",
       "options": [
         {
           "key": "A",
-          "text": "Flexível, hidráulica, selsyn e telemotor."
+          "text": "Direta, quadrantal, de tambor e por telemotor."
         },
         {
           "key": "B",
-          "text": "A vapor, elétrica, pneumática e magnética."
+          "text": "Direta, por selsyn, de tambor e por parafuso sem fim."
         },
         {
           "key": "C",
-          "text": "Gualdropes, telemotor, Barbotin e molinete."
+          "text": "Direta, quadrantal, por telemotor e por selsyn."
         },
         {
           "key": "D",
@@ -145543,11 +145556,11 @@
         },
         {
           "key": "E",
-          "text": "Direta, hidrelétrica, por hélice e por corrente de esteira."
+          "text": "Por telemotor, quadrantal, de tambor e por parafuso sem fim."
         }
       ],
       "correct_answer": "D",
-      "explanation": "Direta, quadrantal, de tambor e por parafuso sem fim.",
+      "explanation": "D reúne as quatro modalidades da ligação entre máquina e leme indicadas na classificação: direta por barras, quadrantal por engrenamento em setor, de tambor por cabo ou corrente e por parafuso sem fim. Telemotor e selsyn pertencem à transmissão do comando da roda ao controle do servomotor e não substituem os mecanismos dessa outra ligação. Por isso, as opções que os inserem nessa lista confundem etapas diferentes do aparelho de governo.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC15",
@@ -145557,18 +145570,28 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Substitui o mecanismo por parafuso sem fim pelo telemotor, que transmite o comando ao controle do servomotor.",
+        "B": "Substitui o tipo quadrantal pelo selsyn, sistema elétrico de transmissão do comando.",
+        "C": "Inclui telemotor e selsyn, meios de transmissão do comando, em lugar dos mecanismos de tambor e parafuso sem fim.",
+        "D": "Correta: conserva os quatro mecanismos da ligação entre máquina e leme descritos pela obra.",
+        "E": "Substitui o mecanismo direto pelo telemotor, confundindo a transmissão do comando com a ligação de potência ao leme."
       }
     },
     {
       "subject": "Arte Naval",
       "module": "Transmissão do aparelho de governo",
       "topic": "Transmissão entre o servomotor e o leme",
-      "difficulty": "Difícil",
+      "difficulty": "Médio",
       "source": {
         "author": "FONSECA, Maurílio M.",
         "title": "Arte Naval, v. 2",
         "edition": "8. ed., 2019",
-        "locator": "cap. 11, item 11.7, p. 763–764"
+        "locator": "cap. 11, item 11.7.a–d, pp. 763–764/PDF 124–125, fig. 11-6; contexto 11.4.c, pp. 758–759/PDF 119–120, fig. 11-4, e 11.5.a–c, pp. 760–761/PDF 121–122",
+        "printed_page": "763–764",
+        "pdf_page": "124–125",
+        "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
       },
       "tracking": {
         "subject_slug": "arte-naval",
@@ -145602,7 +145625,7 @@
       "topic_code": "AN.C11.11.7.M3",
       "style": "Sequência V/F",
       "question_type": "true_false",
-      "question": "Com base no art. 11.7 de Arte Naval, v. 2, julgue as afirmativas:\n( ) Entre os métodos enumerados estão transmissão direta, quadrantal, de tambor e por parafuso sem fim.\n( ) A transmissão por parafuso sem fim é indicada como simples e segura, embora pouco eficiente e em desuso nos navios de guerra.\n( ) O art. 11.7 apresenta somente transmissões hidráulica e elétrica entre o servomotor e o leme.\n( ) A obra apresenta vários métodos para transmitir o movimento entre a máquina do leme e o leme.\nAssinale a sequência correta.",
+      "question": "Sobre os mecanismos que ligam a máquina de governo ao leme em Arte Naval, volume 2, marque V ou F e assinale a sequência correta:\n( ) A classificação apresentada inclui transmissão direta, quadrantal, de tambor e por parafuso sem fim.\n( ) No conjunto de duplo parafuso descrito, roscas de sentidos contrários fazem os cursores se deslocarem em direções opostas.\n( ) As modalidades hidráulica e elétrica esgotam a classificação dessa ligação, excluindo mecanismos de tambor e quadrantal.\n( ) No mecanismo de tambor descrito, cabo de aço ou corrente sem fim transmite o movimento a um setor quadrantal.",
       "options": [
         {
           "key": "A",
@@ -145626,7 +145649,7 @@
         }
       ],
       "correct_answer": "E",
-      "explanation": "A sequência decorre diretamente das proposições técnicas do item: 1) Entre os métodos enumerados estão transmissão direta, quadrantal, de tambor e por parafuso sem fim. | 2) A transmissão por parafuso sem fim é indicada como simples e segura, embora pouco eficiente e em desuso nos navios de guerra. | 3) O art. 11.7 apresenta somente transmissões hidráulica e elétrica entre o servomotor e o leme. | 4) A obra apresenta vários métodos para transmitir o movimento entre a máquina do leme e o leme.",
+      "explanation": "A sequência é V/V/F/V, alternativa E. I é verdadeira: os quatro métodos constam da descrição. II é verdadeira: o duplo parafuso tem roscas de sentidos contrários, com cursores que se deslocam em direções opostas e atuam na cana por tirantes. III é falsa: os mecanismos de tambor e quadrantal estão expressamente incluídos; não se restringe essa ligação a hidráulica e elétrica. IV é verdadeira: o cabo ou a corrente se enrola no tambor e se liga ao setor quadrantal. Essas características são as do arranjo descrito, sem afirmar emprego atual na frota ou rendimento universal.",
       "provenance": {
         "method": "chapter-item-3-models",
         "coverage_unit": "UC15",
@@ -145636,6 +145659,13 @@
         "final_audit": "2026-10-01",
         "source_of_truth": "corpo da obra oficial",
         "editorial_explanation_repair": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Erra II, III e IV: o movimento oposto dos cursores e a ligação do tambor são verdadeiros, e a restrição da classificação é falsa.",
+        "B": "Erra I, III e IV: nega a enumeração e o mecanismo de tambor, mas aceita a exclusão indevida de métodos descritos.",
+        "C": "Erra I, II e III: nega a enumeração e o funcionamento do duplo parafuso e aceita a classificação restritiva falsa.",
+        "D": "Erra III: hidráulica e elétrica não esgotam os mecanismos dessa ligação; as demais afirmações são verdadeiras.",
+        "E": "Correta: V/V/F/V; mantém os quatro métodos e os mecanismos descritos, rejeitando a classificação restritiva."
       }
     },
     {

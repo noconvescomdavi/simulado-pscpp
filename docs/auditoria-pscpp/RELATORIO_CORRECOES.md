@@ -2082,3 +2082,7 @@ Três correções parciais: AN-C11-115c-M1/M2/M3; gabaritos B/C/D preservados. R
 ## Lote077 — telemotor hidráulico
 
 Três correções parciais: AN-C11-116-M1/M2/M3; E/A/B preservados; relatório individual REVISAO_ARTE_NAVAL_LOTE_077.md e logs EVIDENCIAS_LOTE_077.json. Fonte11.6 pp761–763/PDF122–124 efig11-5 conferidas em texto/imagens. 228IDs/231conferências parciais/zero aprovações;160candidatos sem proposições e77localizadores. Sem recontagem075/076. Build completo e regressão passaram; gates permanecem pendentes/falhos. Sem merge/deploy.
+
+## Lote 078 — transmissão máquina–leme
+
+Três correções parciais: AN-C11-117-M1/M2/M3; C/D/E preservados. Relatório individual REVISAO_ARTE_NAVAL_LOTE_078.md e logs EVIDENCIAS_LOTE_078.json. Fonte 11.7.a–d, pp.763–764/PDF124–125, figuras11-4/11-6 e contexto11.4.c/11.5 conferidos em texto/imagens. 231 IDs / 234 conferências parciais / zero aprovações. 159 candidatos sem proposições e77localizadores. Sem recontagem anterior. Build completo e regressão passaram; gates continuam pendentes/falhos. Sem merge em main ou deploy solicitado.
