@@ -228,7 +228,22 @@ const hensenQuarantined = quarantinedBlocks.reduce((sum, block) => {
   return sum + source.questions.filter(q => q.taxonomy?.bibliography_id === "hensen-tug" && q.active === false && q.validation_status === "quarantined").length;
 }, 0);
 assert.equal(hensenQuarantined, 119, "Quarentena Hensen deve permanecer íntegra até revisão por fonte primária");
-assert.equal(audited, 9955 + hensenAdded - hensenQuarantined - cap45Review.edits.filter(e => e.pool === "Cadernos" && !e.question.active).length);
+// The 9955 historical snapshot predates independent bank expansions. Exact
+// equality to that frozen snapshot rejects valid new questions. Instead,
+// independently regenerate active IDs from source and require an exact match
+// with the persisted runtime artifact, while retaining the historical floor.
+const { collectActiveQuestionBanks } = await import("../lib/question-banks-source.js");
+const liveSourceBanks = collectActiveQuestionBanks();
+const activeKeys = entries => Object.entries(entries)
+  .filter(([slug]) => slug !== "situacoes-de-manobra-ripeam")
+  .flatMap(([slug, bank]) => (bank.questions || []).map(q => `${slug}::${q.id}`));
+const expectedKeys = activeKeys(liveSourceBanks);
+const runtimeKeys = activeKeys(banks);
+assert.deepEqual(runtimeKeys, expectedKeys, "Runtime active IDs must match independently loaded source banks");
+assert.equal(audited, expectedKeys.length, "Audited count must match the complete active source bank");
+const historicalMinimum = 9955 + hensenAdded - hensenQuarantined
+  - cap45Review.edits.filter(e => e.pool === "Cadernos" && !e.question.active).length;
+assert.ok(audited >= historicalMinimum, `Active bank shrank below historical floor: ${audited} < ${historicalMinimum}`);
 assert.equal(pack.edits.length, 506);
 assert.equal(Object.keys(byBank).length, 7);
 assert.deepEqual(reasons, {inline_assertions_removed: 365, fill_sentence_removed: 10, association_columns_missing: 45, empty_fill_context: 72, incomplete_association_command: 1, source_stem_replaced_by_runtime_normalization: 13});
