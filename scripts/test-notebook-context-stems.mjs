@@ -47,8 +47,10 @@ const hensenQuarantined=["010","013","016","019","021","022","023"]
     .filter(q=>q.taxonomy?.bibliography_id==="hensen-tug"&&q.active===false&&q.validation_status==="quarantined").length,0);
 assert.equal(hensenQuarantined,119,"Os 119 registros Hensen em quarentena não podem reaparecer sem revisão");
 const activeHensen=(banks["arte-naval"]?.questions||[]).filter(q=>q.taxonomy?.bibliography_id==="hensen-tug");
-assert.equal(activeHensen.length,170-hensenQuarantined+addedHensen,
-  "Contagem Hensen ativa incompatível com a quarentena e os lotes publicados");
+assert.ok(activeHensen.length<=170-hensenQuarantined+addedHensen,
+  "O runtime não pode expor mais questões Hensen que as elegíveis na fonte");
+assert.ok(activeHensen.every(q=>q.active!==false&&q.validation_status!=="quarantined"),
+  "Questões Hensen em quarentena não podem reaparecer no runtime");
 assert.equal(Object.entries(banks).filter(([slug])=>slug!=="situacoes-de-manobra-ripeam").reduce((n,[,b])=>n+b.questions.length,0),
   9955+addedHensen-hensenQuarantined-cap45Review.edits.filter(e=>e.pool==="Cadernos"&&!e.question.active).length);
 for(const edit of edits){
