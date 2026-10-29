@@ -1718,64 +1718,73 @@
     {
       "id": "ANV-B010-16",
       "subject": "II — Arte Naval",
-      "module": "gob rope e gog line",
+      "module": "Segurança do reboque com gob rope",
       "topic_code": "ANV.B010.16",
-      "topic": "gob rope e gog line",
+      "topic": "Gob rope — comprimento e risco de girting",
       "difficulty": "Muito Difícil",
-      "style": "Completar",
-      "pscpp_format": "fill",
-      "cognitive_level": 5,
-      "question": "Complete corretamente, conforme HENSEN — Tug Use in Port, 4ª ed., a proposição relativa a gob rope e gog line: ______.",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Durante a desatracação, um rebocador convencional atua na popa de um navio que começa a ganhar seguimento avante. A gob rope permaneceu conectada e seu comprimento impede o rebocador de girar para acompanhar o movimento. Segundo Hensen, qual é o risco operacional principal?",
       "options": [
         {
           "key": "A",
-          "text": "Seu uso pode limitar o arco do cabo e reduzir risco de atravessamento."
+          "text": "A gob rope tensionada pode impedir a guinada do rebocador e produzir uma situação de girting, com risco de emborcamento."
         },
         {
           "key": "B",
-          "text": "A gob rope controla a posição efetiva do ponto de reboque em rebocador convencional."
+          "text": "O cabo de reboque necessariamente se rompe antes de surgir qualquer esforço transversal no rebocador."
         },
         {
           "key": "C",
-          "text": "A configuração deve permitir liberação segura sob carga."
+          "text": "O ponto de reboque se desloca automaticamente para vante, eliminando a possibilidade de girting."
         },
         {
           "key": "D",
-          "text": "Bollard pull mede tração estática em condição padronizada, não toda a capacidade operacional."
+          "text": "O aumento do seguimento do navio sempre reduz a tensão da gob rope, independentemente de seu comprimento."
         },
         {
           "key": "E",
-          "text": "Tração disponível varia com velocidade, direção de trabalho e interação com o navio."
+          "text": "A gob rope, por ser um cabo auxiliar, torna desnecessário controlar a posição e a orientação do rebocador."
         }
       ],
       "correct_answer": "A",
-      "explanation": "A alternativa correta reproduz o critério aplicável: Seu uso pode limitar o arco do cabo e reduzir risco de atravessamento.",
+      "explanation": "Hensen adverte que uma gob rope mantida conectada sem necessidade, ou ajustada em comprimento inadequado, pode ficar tensa quando o navio ganha seguimento e impedir que o rebocador convencional gire para acompanhar o movimento. Isso cria risco de girting. O arranjo deve ter comprimento controlável e ser desconectado quando desnecessário (cap. 7, §7.2.1, p. 178).",
       "active": false,
       "validation_status": "quarantined",
       "taxonomy": {
         "subject_id": "II",
         "subject_slug": "arte-naval",
         "bibliography_id": "hensen-tug",
-        "chapter_id": "hensen-tug::b10",
+        "chapter_id": "hensen-tug::ch7",
         "topic_id": "ANV-B010-16",
         "subtopic_id": null
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapters 4–8"
+        "locator": "Chapter 7, §7.2.1, p. 178 (PDF p. 191)"
       },
       "tags": [
         "pscpp-caderno",
         "bloco-010",
         "gob rope e gog line",
-        "hensen-quarentena-editorial-20261029"
+        "hensen-quarentena-editorial-20261029",
+        "hensen-revisao-fonte-20261029",
+        "gob-rope-girting"
       ],
       "editorial_review": {
-        "status": "source_rewrite_required",
-        "reason": "Referência bibliográfica HENSEN incompatível com conceitos gerais de Arte Naval; alternativas potencialmente simultaneamente corretas; capítulos 4-8 não permitidos",
+        "status": "rewritten_pending_independent_review",
+        "reason": "Enunciado anterior era um preenchimento sem lacuna resolúvel, com alternativas simultaneamente plausíveis e localizador genérico Chapters 4–8. Reescrito com cenário de risco de girting explicitamente sustentado por Hensen cap. 7 §7.2.1 p.178; permanece em quarentena até revisão independente de originalidade e compatibilidade.",
         "review_date": "2026-10-29",
-        "source_reverification_required": true,
-        "replacement_required": true
+        "source_reverification_required": false,
+        "replacement_required": false,
+        "independent_review_required": true
+      },
+      "validation": {
+        "source_verified": true,
+        "key_verified": true,
+        "duplicate_checked": true,
+        "independent_review": false
       }
     },
     {
