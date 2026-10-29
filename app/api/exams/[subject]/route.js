@@ -92,6 +92,7 @@ export async function POST(request, { params }) {
     const body = await request.json().catch(() => ({}));
     const result = await startExam(ctx.session.id, ctx.subject, {
       filters: ctx.trialAllowed ? {} : body.filters,
+      allowAnsweredReview: !ctx.trialAllowed && body.allow_answered_review === true && !body.filters?.official_exam_only,
     });
     return Response.json(result, { status: result.status || 200 });
   } catch (error) {

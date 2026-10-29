@@ -109,6 +109,7 @@ export default function Client({ subject, title, ready, facets, planTask, trial 
   const [busy, setBusy] = useState(false);
   const [pauseBusy, setPauseBusy] = useState(false);
   const [filters, setFilters] = useState({ ...EMPTY_QUESTION_FILTERS });
+  const [allowAnsweredReview,setAllowAnsweredReview]=useState(false);
   const [focusMode, setFocusMode] = useState(false);
   const assessmentRef = useRef(null);
   useEffect(() => {
@@ -224,7 +225,7 @@ export default function Client({ subject, title, ready, facets, planTask, trial 
       const response = await fetch(`/api/exams/${subject}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ filters }),
+        body: JSON.stringify({ filters, allow_answered_review:subject==="simulado-pscpp" && !filters.official_exam_only && allowAnsweredReview }),
       });
       const payload = await response.json().catch(() => ({}));
       if (!response.ok) {
@@ -415,6 +416,12 @@ export default function Client({ subject, title, ready, facets, planTask, trial 
           disabled={busy || state.can_start === false}
           showOfficialExamFilter={isPscpp}
         />}
+        {isPscpp&&!filters.official_exam_only&&<div style={{margin:"15px 0",padding:"12px 14px",border:"1px solid #26506e",borderRadius:9,background:"#0b2436",color:"#d7edff"}}>
+          <label style={{display:"flex",alignItems:"flex-start",gap:10,cursor:"pointer"}}>
+            <input type="checkbox" checked={allowAnsweredReview} onChange={e=>setAllowAnsweredReview(e.target.checked)} disabled={busy||state.can_start===false} style={{marginTop:4}}/>
+            <span><strong>Permitir questões já respondidas apenas para completar o simulado</strong><small style={{display:"block",marginTop:4,lineHeight:1.5}}>Opcional: primeiro tenta 100 questões inéditas e respeita a matriz 25/25/10/10/10/10/10. Se faltar algum tópico, inclui somente as questões anteriores necessárias, mantendo a diversidade temática. Sem marcar, nenhuma questão respondida será reutilizada.</small></span>
+          </label>
+        </div>}
         <button type="button" onClick={start} disabled={busy || state.can_start === false}>Criar e iniciar simulado</button>
         {state.can_start === false && state.next_available_at && (
           <p>Nova emissão disponível em {new Date(state.next_available_at).toLocaleString("pt-BR")}.</p>
@@ -448,6 +455,7 @@ export default function Client({ subject, title, ready, facets, planTask, trial 
         <div>
           <span>{paused ? "SIMULADO PAUSADO" : "SIMULADO EM ANDAMENTO"}</span>
           <h1>{title} · {index + 1}/{exam.questions.length}</h1>
+          {exam.review_mode&&<p role="status">Simulado de revisão: {exam.repeated_count} questão(ões) já respondida(s), incluída(s) para completar as 100 questões.</p>}
           {Number(exam.answered_count || 0) > 0 && <small>{Number(exam.answered_count || 0)} respostas restauradas no cartão desta tentativa.</small>}
         </div>
         <b>{clock(remaining)}</b>
