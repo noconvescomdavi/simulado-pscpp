@@ -119,7 +119,7 @@ if (!catalog?.works?.length) {
       const catalogCount = Number(chapter.question_count || 0);
       // The historical cap. 10 catalog count includes the later Volume-2
       // chapter expansion; other entries reflect only the 1,150-item baseline.
-      const chapterNumber = /^fonseca-arte-v1::ch(\\d+)$/.exec(chapter.id)?.[1];
+      const chapterNumber = /^fonseca-arte-v1::ch(\d+)$/.exec(chapter.id)?.[1];
       const v2Expansion = chapterNumber ? expansion.filter(q => {
         const effective = canonicalizeQuestionTaxonomy(q);
         return effective.taxonomy?.bibliography_id === "fonseca-arte-v2"
