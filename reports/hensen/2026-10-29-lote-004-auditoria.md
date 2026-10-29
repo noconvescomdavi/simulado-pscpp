@@ -143,7 +143,7 @@
 - **Enunciado:** Um Rotortug dispõe de duas unidades azimutais à vante e uma à ré. Em uma análise de empurrão e reboque, por que importa a proximidade entre cada unidade e o ponto de aplicação do esforço?
 - **Gabarito:** **A — Porque a distribuição dos propulsores permite produzir esforços eficazes próximos ao ponto de empurrão ou reboque, conforme a manobra.**
 - **Justificativa:** Hensen relaciona a distribuição dos três propulsores do Rotortug à geração de esforços de reboque e empurrão e ao trabalho em espaços restritos.
-- **Referência:** Hensen (2021), Chapter 4, §4.3.2, p. 120 (PDF p. 133).
+- **Referência:** Hensen (2021), Chapter 4, §4.3.2, p. 119 (PDF p. 132).
 
 ### ANV-HENSEN-C04-L004-02 — Componente indesejada de avanço no reboque convencional
 
@@ -345,3 +345,13 @@
 4. Não executar merge nem deploy enquanto houver gates ou homologação pendentes.
 
 **Próxima execução:** verificar a existência de `hensen-lote-005.json` antes de criar o Lote 005.
+
+
+## Retificação de localização bibliográfica — checkpoint 006
+
+- **ID:** `ANV-HENSEN-C04-L004-01`.
+- **Antes:** `Chapter 4, §4.3.2, p. 120 (PDF p. 133)`; a página impressa 120 já pertence à continuação da síntese §4.3.3 e não contém a passagem específica sobre propulsores próximos aos pontos de reboque e empurrão.
+- **Depois:** `Chapter 4, §4.3.2, p. 119 (PDF p. 132)`; nessa página Hensen relaciona explicitamente a distribuição de duas unidades a vante e uma à ré do Rotortug com o aumento da força ao posicionar os propulsores próximos aos pontos de reboque e empurrão.
+- **Mudança efetiva:** somente o localizador `source.locator` e este relatório; enunciado, alternativas, gabarito A, explicação, taxonomia e estado ativo foram preservados.
+- **Evidência:** confronto direto com a página 119 da quarta edição, 2021, do PDF de 335 páginas disponibilizado no acervo.
+- **Limite:** o ajuste de localizador não conclui a homologação semântica independente nem resolve sobreposição temática sinalizada com `ANV-B008-06`.
