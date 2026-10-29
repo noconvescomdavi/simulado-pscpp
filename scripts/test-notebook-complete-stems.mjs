@@ -29,6 +29,16 @@ const StructuredQuestion = compiled.exports.default;
 const cap45Review = JSON.parse(fs.readFileSync(new URL("../data/question-restorations/miguens-cap45-reviewed.json", import.meta.url)));
 const pack = JSON.parse(fs.readFileSync(new URL("../data/question-restorations/notebook-complete-stems.json", import.meta.url)));
 const banks = JSON.parse(fs.readFileSync(new URL("../data/questions/runtime-active-banks.json", import.meta.url))).banks;
+// Regression: technical-topic quotations must not erase the four stated
+// propositions of an existing Fonseca combination question.
+const fonsecaAssertions = banks["arte-naval"]?.questions.find(q => q.id === "ANV-0005");
+assert.ok(fonsecaAssertions, "ANV-0005 must not be lost by quotation normalization");
+const fonsecaBlocks = classifyQuestionStructure(fonsecaAssertions).blocks;
+assert.equal(
+  fonsecaBlocks.find(block => block.type === "assertions")?.items.length,
+  4,
+  "ANV-0005 must preserve all four numbered assertions"
+);
 const digest = value => createHash("sha256").update(JSON.stringify(value)).digest("hex");
 const report = JSON.parse(fs.readFileSync(new URL("../reports/notebook-incomplete-stems.json", import.meta.url)));
 const byBank = {};
