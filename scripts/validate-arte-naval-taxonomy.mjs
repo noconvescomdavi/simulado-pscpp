@@ -33,7 +33,7 @@ for (const [index, original] of questions.entries()) {
   const question = canonicalizeQuestionTaxonomy(original);
   if (question !== original) legacyDriveChapterRepairs += 1;
   const isSequencedAnv = /^ANV-\d{4}$/.test(question.id || "");
-  const isChapterExpansion = /^AN-C(?:09|10|11|12)-[A-Z0-9-]+-M[123]$/.test(question.id || "");
+  const isChapterExpansion = /^AN-C(?:09|10|11|12)-[A-Za-z0-9-]+-M[123]$/.test(question.id || "");
   if (isSequencedAnv) {
     lastSequentialAnvId += 1;
     const expectedId = `ANV-${String(lastSequentialAnvId).padStart(4, "0")}`;
