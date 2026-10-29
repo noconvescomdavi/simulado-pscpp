@@ -101,3 +101,10 @@ Nenhum enunciado, alternativa, gabarito, explicação ou taxonomia HENSEN foi mo
 ## Próximo checkpoint
 
 Conferir os runs do novo HEAD, resolver novas falhas genuínas sem suprimir verificações, atualizar o relatório, revalidar mergeabilidade contra a `main` atualizada e confirmar Preview. Só após gates verdes e revisão bibliográfica suficiente, efetuar merge e verificar Production READY para o SHA correto. Não iniciar Lote 002 nem reativar itens em quarentena enquanto o Lote 001 não estiver seguro.
+
+## Atualização de gates após o registro inicial
+
+- **CI** falhou novamente no run https://github.com/noconvescomdavi/simulado-pscpp/actions/runs/40927404788 : `Combination without propositions: meteorologia-oceanografia/MEO-1161`. O JSON de origem contém quatro afirmativas, mas a rotina preexistente de normalização transforma o enunciado em uma pergunta genérica. A origem `data/questions/meteorologia-oceanografia.json` possui o mesmo blob `a19068ec68e381fd4a2cbbf5cd9b21ce2492cd1c` em `main` e nesta branch; **não é uma alteração do lote HENSEN**. A questão contém ainda uma afirmativa III editorialmente malformada; não foi alterada nem reativada por esta execução. A frente de Meteorologia exige correção bibliográfica própria e não deve ser resolvida por supressão do teste.
+- **PSCPP Integral Bank Audit**, run https://github.com/noconvescomdavi/simulado-pscpp/actions/runs/40927404783 : `validate:taxonomy:master` passou com **0 inválidas ativas**, e a validação de rastreio do banco Arte Naval passou após reconciliação explícita do legado; o job ainda prosseguia por outras etapas quando esta atualização foi escrita. Não declarar o workflow inteiro verde antes de sua conclusão.
+- **Vercel Production**: `READY` para a `main` em `eb0932f9f187626c60f9bcad3ef79e31bd63590c`, https://vercel.com/estibordo/estibordo-pscpp/FMNgqGohWT87YU9SuEosh7qjEP8e . **Este commit não contém o lote HENSEN.** A Preview da branch segue separada e não autoriza anunciar publicação do lote.
+- **Decisão mantida:** PR #173 aberto, sem merge, devido à CI e à necessidade de revisão de escopo. Não foi iniciado Lote 002.
