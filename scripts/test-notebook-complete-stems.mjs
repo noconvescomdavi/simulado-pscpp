@@ -152,7 +152,7 @@ for (const [bank, data] of Object.entries(banks)) {
     const structure = classifyQuestionStructure(q);
     const optionText = o => typeof o === "string" ? o : o.text;
     const combination = q.options.some(o => /(?:apenas|somente)\s+(?:as?\s+(?:afirmativas|assertivas)\s+)?(?:I|II|III|IV|V)\b/i.test(optionText(o)));
-    if (combination) assert.ok(structure.blocks.some(b => b.type === "assertions" || b.type === "items"), `Combination without propositions: ${bank}/${q.id}`);
+    if (combination) assert.ok(structure.blocks.some(b => b.type === "assertions" || b.type === "items"), `Combination without propositions: ${bank}/${q.id}; stem=${JSON.stringify(String(q.question).slice(0, 300))}; structure=${structure.type}`);
     assert.ok(!/proposição relativa a .+: _{3}|relação técnica entre .+: _{3}/i.test(q.question), `Empty fill sentence: ${bank}/${q.id}`);
     const missingPairs = q.options.some(o => /^\d e \d trocados/i.test(optionText(o)));
     if (missingPairs) assert.ok(structure.blocks.some(b => b.type === "columns"), `Association without columns: ${bank}/${q.id}`);
