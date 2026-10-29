@@ -16,25 +16,25 @@
 | ID | Tema avaliado | Gabarito | Fonte bibliográfica | Intervenção |
 |---|---|:---:|---|---|
 | `ANV-HENSEN-C01-L006-01` | Padronização do push-pull em terminais amplos | **B** | Cap. 1, §1.2.1, p. 4 (PDF p. 17) | Inédita |
-| `ANV-HENSEN-C01-L006-02` | Comprimento usual do cabo no reboque afastado | **D** | Cap. 1, §1.4, p. 7 (PDF p. 20) | Inédita |
-| `ANV-HENSEN-C01-L006-03` | Número mínimo de espias no alongside towing | **A** | Cap. 1, §1.4, p. 7 (PDF p. 20) | Inédita |
+| `ANV-HENSEN-C01-L006-02` | Comprimento usual do cabo no reboque afastado | **D** | Cap. 1, §1.4, p. 8 (PDF p. 21) | Inédita |
+| `ANV-HENSEN-C01-L006-03` | Número mínimo de espias no alongside towing | **A** | Cap. 1, §1.4, p. 8 (PDF p. 21) | Inédita |
 | `ANV-HENSEN-C01-L006-04` | Versatilidade da frota e taxa de utilização | **C** | Cap. 1, §1.4, p. 8 (PDF p. 21) | Inédita |
 | `ANV-HENSEN-C01-L006-05` | Dimensionamento segundo fase e condição da força | **E** | Cap. 1, §1.4, p. 8 (PDF p. 21) | Inédita |
 | `ANV-HENSEN-C02-L006-01` | Efeito do ponto de reboque excessivamente a ré | **E** | Cap. 2, §2.3.1, p. 17 (PDF p. 30) | Inédita |
 | `ANV-HENSEN-C02-L006-02` | Conceito propulsivo e ponto móvel do AR360T | **C** | Cap. 2, §2.16, p. 49 (PDF p. 62) | Inédita |
-| `ANV-HENSEN-C02-L006-03` | Limitação hidrodinâmica do carrousel em baixa velocidade | **B** | Cap. 2, §2.14, p. 48 (PDF p. 61) | Inédita |
+| `ANV-HENSEN-C02-L006-03` | Limitação hidrodinâmica do carrousel em baixa velocidade | **B** | Cap. 2, §2.14, p. 49 (PDF p. 62) | Inédita |
 | `ANV-HENSEN-C02-L006-04` | Uso de CFD no projeto de propulsão | **A** | Cap. 2, §2.25, p. 77 (PDF p. 90) | Inédita |
 | `ANV-HENSEN-C02-L006-05` | Sobrecarga de torque em fluxo negativo | **D** | Cap. 2, §2.26, p. 78 (PDF p. 91) | Inédita |
 | `ANV-HENSEN-C03-L006-01` | Velocidade sobre o fundo versus velocidade na água | **A** | Cap. 3, §3.2.1, p. 82 (PDF p. 95) | Inédita |
 | `ANV-HENSEN-C03-L006-02` | Mudança de assistência com aumento de marulho | **E** | Cap. 3, §3.2.1, p. 82 (PDF p. 95) | Inédita |
 | `ANV-HENSEN-C03-L006-03` | Largura ocupada pelo conjunto no push-pull | **C** | Cap. 3, §3.2.2, p. 86 (PDF p. 99) | Inédita |
 | `ANV-HENSEN-C03-L006-04` | Posição do propulsor em submarinos | **D** | Cap. 3, §3.4.1, p. 96 (PDF p. 109) | Inédita |
-| `ANV-HENSEN-C03-L006-05` | Altura dos mastros sob o convés de voo | **B** | Cap. 3, §3.4.2, p. 99 (PDF p. 112) | Inédita |
-| `ANV-HENSEN-C04-L006-01` | Guinada transitória contrária na mudança de bordo | **D** | Cap. 4, §4.3.1, p. 115 (PDF p. 128) | Inédita |
-| `ANV-HENSEN-C04-L006-02` | Alteração do KG por carregamento adicional | **B** | Cap. 4, §4.2.3.2, p. 112 (PDF p. 125) | Inédita |
+| `ANV-HENSEN-C03-L006-05` | Altura dos mastros sob o convés de voo | **B** | Cap. 3, §3.4.2, p. 98 (PDF p. 111) | Inédita |
+| `ANV-HENSEN-C04-L006-01` | Guinada transitória contrária na mudança de bordo | **D** | Cap. 4, §4.3.1, p. 114 (PDF p. 127) | Inédita |
+| `ANV-HENSEN-C04-L006-02` | Alteração do KG por carregamento adicional | **B** | Cap. 4, §4.2.3.2, p. 111 (PDF p. 124) | Inédita |
 | `ANV-HENSEN-C04-L006-03` | Imersão da borda do convés como limite de banda | **E** | Cap. 4, §4.3.1, p. 114 (PDF p. 127) | Inédita |
-| `ANV-HENSEN-C04-L006-04` | Compromisso do skeg entre porto e escolta | **A** | Cap. 4, §4.2.2, p. 105 (PDF p. 118) | Inédita |
-| `ANV-HENSEN-C04-L006-05` | Aceleração transversal na travessia em ondas | **C** | Cap. 4, §4.5.2, p. 130 (PDF p. 143) | Inédita |
+| `ANV-HENSEN-C04-L006-04` | Compromisso do skeg entre porto e escolta | **A** | Cap. 4, §4.2.2, p. 106 (PDF p. 119) | Inédita |
+| `ANV-HENSEN-C04-L006-05` | Aceleração transversal na travessia em ondas | **C** | Cap. 4, §4.5.2, p. 131 (PDF p. 144) | Inédita |
 | `ANV-HENSEN-C05-L006-01` | Fase intermediária e redução de governo próprio | **C** | Cap. 5, §5.1, p. 135 (PDF p. 148) | Inédita |
 | `ANV-HENSEN-C05-L006-02` | Coeficiente de vento em tipos de tanque LNG | **A** | Cap. 5, §5.2.2, p. 137 (PDF p. 150) | Inédita |
 | `ANV-HENSEN-C05-L006-03` | Efeito Coanda e reação inesperada ao puxar | **D** | Cap. 5, §5.2.6, p. 142 (PDF p. 155) | Inédita |
@@ -42,24 +42,30 @@
 | `ANV-HENSEN-C05-L006-05` | Previsão contratual de reforço de rebocagem | **E** | Cap. 5, §5.3.7, p. 148 (PDF p. 161) | Inédita |
 | `ANV-HENSEN-C06-L006-01` | Saída de emergência do rebocador convencional junto à proa | **B** | Cap. 6, §6.3.2, p. 156 (PDF p. 169) | Substituição de enunciado redundante antes da integração |
 | `ANV-HENSEN-C06-L006-02` | Peso impróprio na retinida de lançamento | **C** | Cap. 6, §6.3.5, p. 159 (PDF p. 172) | Inédita |
-| `ANV-HENSEN-C06-L006-03` | Separação do tráfego durante manobras em nevoeiro | **E** | Cap. 6, §6.3.12, p. 164 (PDF p. 177) | Inédita |
-| `ANV-HENSEN-C06-L006-04` | Orientação do radar em operação bow-to-bow | **D** | Cap. 6, §6.3.13, p. 169 (PDF p. 182) | Inédita |
+| `ANV-HENSEN-C06-L006-03` | Separação do tráfego durante manobras em nevoeiro | **E** | Cap. 6, §6.3.12, p. 165 (PDF p. 178) | Inédita |
+| `ANV-HENSEN-C06-L006-04` | Orientação do radar em operação bow-to-bow | **D** | Cap. 6, §6.3.12, p. 164 (PDF p. 177) | Inédita |
 | `ANV-HENSEN-C06-L006-05` | Superaquecimento de embreagens em bow-to-bow | **A** | Cap. 6, §6.3.13, p. 169 (PDF p. 182) | Inédita |
-| `ANV-HENSEN-C07-L006-01` | Folga funcional da manilha do gob rope | **E** | Cap. 7, §7.2.1, p. 176 (PDF p. 189) | Inédita |
+| `ANV-HENSEN-C07-L006-01` | Folga funcional da manilha do gob rope | **E** | Cap. 7, §7.2.1, p. 177 (PDF p. 190) | Inédita |
 | `ANV-HENSEN-C07-L006-02` | Camada de cabo e capacidade do freio de cinta | **A** | Cap. 7, §7.3.3.1, p. 181 (PDF p. 194) | Inédita |
-| `ANV-HENSEN-C07-L006-03` | Voltas mortas remanescentes no tambor | **B** | Cap. 7, §7.3.3.4, p. 185 (PDF p. 198) | Inédita |
+| `ANV-HENSEN-C07-L006-03` | Voltas mortas remanescentes no tambor | **B** | Cap. 7, §7.3.3.4, p. 186 (PDF p. 199) | Inédita |
 | `ANV-HENSEN-C07-L006-04` | Limitação térmica do HMPE | **C** | Cap. 7, §7.5.2.2, p. 191 (PDF p. 204) | Inédita |
 | `ANV-HENSEN-C07-L006-05` | Dano ao cabo sintético por ferragens do navio | **D** | Cap. 7, §7.5.4, p. 199 (PDF p. 212) | Inédita |
 | `ANV-HENSEN-C09-L006-01` | Tempo de reação nos cenários de falha | **C** | Cap. 9, §9.2, p. 243 (PDF p. 256) | Inédita |
 | `ANV-HENSEN-C09-L006-02` | Faixa típica de velocidade em escolta tandem | **D** | Cap. 9, §9.6.1, p. 249 (PDF p. 262) | Inédita |
-| `ANV-HENSEN-C09-L006-03` | Tendência de guinada após falha em navios cheios | **A** | Cap. 9, §9.6.2, p. 253 (PDF p. 266) | Inédita |
-| `ANV-HENSEN-C09-L006-04` | Continuidade controlada da guinada após avaria | **E** | Cap. 9, §9.6.2, p. 253 (PDF p. 266) | Inédita |
+| `ANV-HENSEN-C09-L006-03` | Tendência de guinada após falha em navios cheios | **A** | Cap. 9, §9.6.2, p. 254 (PDF p. 267) | Inédita |
+| `ANV-HENSEN-C09-L006-04` | Continuidade controlada da guinada após avaria | **E** | Cap. 9, §9.6.2, p. 254 (PDF p. 267) | Inédita |
 | `ANV-HENSEN-C09-L006-05` | Limitação da escolta ativa em gelo muito pesado | **B** | Cap. 9, §9.6.4, p. 265 (PDF p. 278) | Inédita |
 
 ## Correção editorial identificada durante a execução
 
 - **`ANV-HENSEN-C06-L006-01`**: a primeira versão perguntava qual região do costado oferece escoamento mais uniforme e reproduzia a mesma habilidade cognitiva de **`ANV-HENSEN-C06-L004-02`**. A comparação semântica revelou a duplicação apesar de os enunciados não serem idênticos. **Correção aplicada:** substituição integral pelo cenário de escape de rebocador convencional junto à proa, quando a tentativa de afastamento com máquina avante pode agravar a interação. Gabarito mantido em **B**. Referência alterada para **capítulo 6, §6.3.2, p. 156 (PDF p. 169)**. Nenhuma questão do Lote 004 foi modificada.
 - **Demais 39 IDs:** novas questões; nenhuma correção pós-geração identificada nesta rodada. Distratores, fundamentações e localizadores constam integralmente no JSON.
+
+## Revisão de localização bibliográfica após conferência textual
+
+- **14 localizadores corrigidos** após cotejo das passagens com os cabeçalhos de página da fonte primária, incluindo a mudança de seção de `ANV-HENSEN-C06-L006-04` de §6.3.13 para §6.3.12. **Nenhum gabarito foi alterado** por essa revisão.
+- IDs ajustados: `ANV-HENSEN-C01-L006-02`, `ANV-HENSEN-C01-L006-03`, `ANV-HENSEN-C02-L006-03`, `ANV-HENSEN-C03-L006-05`, `ANV-HENSEN-C04-L006-01`, `ANV-HENSEN-C04-L006-02`, `ANV-HENSEN-C04-L006-04`, `ANV-HENSEN-C04-L006-05`, `ANV-HENSEN-C06-L006-03`, `ANV-HENSEN-C06-L006-04`, `ANV-HENSEN-C07-L006-01`, `ANV-HENSEN-C07-L006-03`, `ANV-HENSEN-C09-L006-03`, `ANV-HENSEN-C09-L006-04`.
+- Correção dos localizadores persistida no commit `ce4dc5ee98498c4571bd4939434a80ae7dd2d288`. A tabela acima contém a localização revisada de cada questão. A correspondência com as páginas físicas do PDF ainda merece amostragem visual independente.
 
 ## Publicação e integração
 
