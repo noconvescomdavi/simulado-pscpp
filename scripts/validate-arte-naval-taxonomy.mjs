@@ -109,6 +109,7 @@ for (const [index, original] of questions.entries()) {
 
 
 
+const legacyMixedVolumeCatalog = [];
 const catalog = bank.bibliography_coverage;
 if (!catalog?.works?.length) {
   errors.push("catálogo de cobertura bibliográfica ausente");
@@ -127,6 +128,8 @@ if (!catalog?.works?.length) {
       }).length : 0;
       if (baselineReal !== catalogCount && baselineReal + v2Expansion !== catalogCount) {
         errors.push(`${chapter.id}: catálogo=${catalogCount}; baseline=${baselineReal}; expansão v2=${v2Expansion}`);
+      } else if (baselineReal !== catalogCount) {
+        legacyMixedVolumeCatalog.push({chapter_id:chapter.id,baseline:baselineReal,volume_2_expansion:v2Expansion,catalog:catalogCount});
       }
       if (work.source_available && baselineReal < 25) {
         errors.push(`${chapter.id}: fonte disponível, mas somente ${baselineReal} questões no baseline`);
@@ -134,6 +137,8 @@ if (!catalog?.works?.length) {
     }
   }
 }
+
+if (legacyMixedVolumeCatalog.length) console.warn("CATÁLOGO LEGADO MISTURA VOLUMES:", JSON.stringify(legacyMixedVolumeCatalog));
 
 if (errors.length) {
   console.error("VALIDAÇÃO DE RASTREIO REPROVADA");
