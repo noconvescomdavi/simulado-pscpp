@@ -15,6 +15,7 @@ jobs:
           node-version: 20
       - run: node scripts/audit-full-question-bank.mjs
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: full-question-bank-audit
           path: reports/full-question-bank-audit.json
