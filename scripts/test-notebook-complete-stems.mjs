@@ -32,7 +32,22 @@ const banks = JSON.parse(fs.readFileSync(new URL("../data/questions/runtime-acti
 // Regression: technical-topic quotations must not erase the four stated
 // propositions of an existing Fonseca combination question.
 const fonsecaAssertions = banks["arte-naval"]?.questions.find(q => q.id === "ANV-0005");
-assert.ok(fonsecaAssertions, "ANV-0005 must not be lost by quotation normalization");
+if (!fonsecaAssertions) {
+  const [{ applyQuestionRestorations }, { reformulateLeakingStem }, { normalizeEditorialStem }, { questionQualityState }] = await Promise.all([
+    import("../lib/question-restorations.js"), import("../lib/question-quality.js"),
+    import("../lib/question-editorial-normalization.js"), import("../lib/question-quality-policy.js"),
+  ]);
+  const source = JSON.parse(fs.readFileSync(new URL("../data/questions/arte-naval.json", import.meta.url)));
+  const raw = source.questions.find(q => q.id === "ANV-0005");
+  const restored = applyQuestionRestorations("arte-naval", { questions: [raw] }).questions[0];
+  const reformed = reformulateLeakingStem(restored);
+  const normalized = normalizeEditorialStem(reformed);
+  assert.fail("ANV-0005 missing from runtime; diagnostic " + JSON.stringify({
+    rawStemLength: raw.question.length, restoredStemLength: restored.question.length,
+    reformedStemLength: reformed.question.length, normalizedStemLength: normalized.question.length,
+    normalizedStem: normalized.question.slice(0, 220), quality: questionQualityState(normalized),
+  }));
+}
 const fonsecaBlocks = classifyQuestionStructure(fonsecaAssertions).blocks;
 assert.equal(
   fonsecaBlocks.find(block => block.type === "assertions")?.items.length,
