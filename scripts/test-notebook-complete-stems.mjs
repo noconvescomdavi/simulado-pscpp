@@ -33,9 +33,31 @@ const digest = value => createHash("sha256").update(JSON.stringify(value)).diges
 const report = JSON.parse(fs.readFileSync(new URL("../reports/notebook-incomplete-stems.json", import.meta.url)));
 const byBank = {};
 const reasons = {};
+const quarantinedRestorations = [];
+const sourceCache = new Map();
 for (const edit of pack.edits) {
   const question = banks[edit.bank].questions.find(q => q.id === edit.id);
-  assert.ok(question, `Inactive or missing corrected question: ${edit.bank}/${edit.id}`);
+  if (!question) {
+    // A correção estrutural histórica não autoriza reativar questão cuja
+    // atribuição a Hensen não foi comprovada. Verificar a quarentena no JSON
+    // de origem, em vez de exigir sua publicação no banco runtime.
+    const block = String(edit.id).match(/^ANV-B(010|013|016|019|021|022|023)-\d+$/)?.[1];
+    assert.ok(block, `Missing corrected question without documented Hensen quarantine: ${edit.bank}/${edit.id}`);
+    const sourceFile = edit.source_file || `data/question-extensions/pscpp-caderno-bloco-${block}.json`;
+    if (!sourceCache.has(sourceFile)) {
+      sourceCache.set(sourceFile, JSON.parse(fs.readFileSync(new URL("../" + sourceFile, import.meta.url), "utf8")));
+    }
+    const original = sourceCache.get(sourceFile).questions.find(q => q.id === edit.id);
+    assert.ok(original, `Quarantined Hensen source disappeared: ${edit.id}`);
+    assert.equal(original.active, false, `Quarantined Hensen question unexpectedly active: ${edit.id}`);
+    assert.equal(original.validation_status, "quarantined", `Missing quarantine status: ${edit.id}`);
+    assert.equal(original.editorial_review?.status, "source_rewrite_required", `Missing source-rewrite obligation: ${edit.id}`);
+    assert.equal(original.taxonomy?.bibliography_id, "hensen-tug");
+    quarantinedRestorations.push(edit.id);
+    byBank[edit.bank] = (byBank[edit.bank] || 0) + 1;
+    for (const reason of edit.reasons) reasons[reason] = (reasons[reason] || 0) + 1;
+    continue;
+  }
   const replacement = cap45Review.edits.find(e => e.pool === "Cadernos" && e.id === edit.id);
   if (replacement) {
     assert.equal(question.question, replacement.question.question);
@@ -129,8 +151,21 @@ if (activeFragoso.length !== 144) {
   console.error("FRAGOSO_INACTIVE_DIAGNOSTICS", JSON.stringify(diagnostics, null, 2));
 }
 assert.equal(activeFragoso.length, 144, "As 144 questões de Rebocadores Portuários devem permanecer ativas no banco de cadernos");
-assert.equal(audited, 9955 - cap45Review.edits.filter(e => e.pool === "Cadernos" && !e.question.active).length);
+// O baseline 9955 antecede os lotes Hensen e a quarentena reversível.
+// Contabilizar os novos lotes e os itens retirados do runtime, sem relaxar
+// a verificação de integridade do acervo restante.
+const extensionDir = new URL("../data/question-extensions/", import.meta.url);
+const hensenLotFiles = fs.readdirSync(extensionDir).filter(name => /^hensen-lote-\d+\.json$/.test(name));
+const hensenAdded = hensenLotFiles.reduce((sum, name) =>
+  sum + JSON.parse(fs.readFileSync(new URL(name, extensionDir), "utf8")).questions.length, 0);
+const quarantinedBlocks = ["010","013","016","019","021","022","023"];
+const hensenQuarantined = quarantinedBlocks.reduce((sum, block) => {
+  const source = JSON.parse(fs.readFileSync(new URL(`../data/question-extensions/pscpp-caderno-bloco-${block}.json`, import.meta.url), "utf8"));
+  return sum + source.questions.filter(q => q.taxonomy?.bibliography_id === "hensen-tug" && q.active === false && q.validation_status === "quarantined").length;
+}, 0);
+assert.equal(hensenQuarantined, 119, "Quarentena Hensen deve permanecer íntegra até revisão por fonte primária");
+assert.equal(audited, 9955 + hensenAdded - hensenQuarantined - cap45Review.edits.filter(e => e.pool === "Cadernos" && !e.question.active).length);
 assert.equal(pack.edits.length, 506);
 assert.equal(Object.keys(byBank).length, 7);
 assert.deepEqual(reasons, {inline_assertions_removed: 365, fill_sentence_removed: 10, association_columns_missing: 45, empty_fill_context: 72, incomplete_association_command: 1, source_stem_replaced_by_runtime_normalization: 13});
-console.log(JSON.stringify({verified:pack.edits.length,by_bank:byBank,reasons,component_html_verified:true},null,2));
+console.log(JSON.stringify({verified:pack.edits.length,quarantined_source_preserved:quarantinedRestorations,active_component_html_verified:true,by_bank:byBank,reasons},null,2));
