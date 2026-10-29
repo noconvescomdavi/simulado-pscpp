@@ -1,0 +1,1820 @@
+{
+  "app/.well-known/assetlinks.json/route.js": [],
+  "app/aceitar-termos/page.js": [
+    "app/components.js",
+    "lib/auth.js",
+    "lib/legal-consent.js"
+  ],
+  "app/admin/Nav.js": [
+    "lib/admin-permissions.js",
+    "lib/admin.js"
+  ],
+  "app/admin/cobertura/page.js": [
+    "lib/admin.js",
+    "lib/question-banks.js",
+    "lib/question-taxonomy.js"
+  ],
+  "app/admin/configuracoes/page.js": [],
+  "app/admin/conteudo/page.js": [
+    "lib/admin.js"
+  ],
+  "app/admin/contramestre/ContramestreLibrary.js": [],
+  "app/admin/contramestre/page.js": [
+    "app/admin/contramestre/ContramestreLibrary.js",
+    "lib/admin.js",
+    "lib/db.js"
+  ],
+  "app/admin/editor/BlockInspector.js": [],
+  "app/admin/editor/BlockTree.js": [],
+  "app/admin/editor/EditorCanvasProEngine.js": [
+    "app/admin/editor/EditorObjectRegistry.js"
+  ],
+  "app/admin/editor/EditorClient.js": [
+    "app/admin/editor/BlockInspector.js",
+    "app/admin/editor/BlockTree.js",
+    "app/admin/editor/EditorCommandPalette.js",
+    "app/admin/editor/EditorContextMenu.js",
+    "app/admin/editor/EditorProPanel.js",
+    "app/admin/editor/EditorToolbox.js",
+    "app/admin/editor/FlashcardManager.js",
+    "app/admin/editor/StudioMenu.js"
+  ],
+  "app/admin/editor/EditorCommandPalette.js": [],
+  "app/admin/editor/EditorConstraintEngine.js": [],
+  "app/admin/editor/EditorContextMenu.js": [],
+  "app/admin/editor/EditorCoreGuard.js": [],
+  "app/admin/editor/EditorIntegratedPage.js": [
+    "app/admin/editor/EditorClient.js",
+    "app/admin/editor/EditorCoreGuard.js",
+    "app/admin/editor/EditorInteractionLayer.js",
+    "app/admin/editor/EditorMaxSuite.js",
+    "app/admin/editor/EditorStudioEntry.js",
+    "lib/admin.js"
+  ],
+  "app/admin/editor/EditorInteractionLayer.js": [
+    "app/admin/editor/EditorObjectRegistry.js"
+  ],
+  "app/admin/editor/EditorKeyboardMap.js": [],
+  "app/admin/editor/EditorMaxSuite.js": [
+    "app/admin/editor/EditorObjectRegistry.js",
+    "app/admin/editor/EditorStudioSDK.js"
+  ],
+  "app/admin/editor/EditorObjectRegistry.js": [],
+  "app/admin/editor/EditorProPanel.js": [],
+  "app/admin/editor/EditorProductionGate.js": [],
+  "app/admin/editor/EditorProfessionalWorkbench.js": [
+    "app/admin/editor/EditorObjectRegistry.js"
+  ],
+  "app/admin/editor/EditorStudioBootstrap.js": [
+    "app/admin/editor/EditorCanvasProEngine.js",
+    "app/admin/editor/EditorProfessionalWorkbench.js",
+    "app/admin/editor/EditorSystemStatus.js",
+    "app/admin/editor/EditorUltraSuite.js"
+  ],
+  "app/admin/editor/EditorStudioEntry.js": [
+    "app/admin/editor/EditorKeyboardMap.js",
+    "app/admin/editor/EditorStudioBootstrap.js",
+    "app/admin/editor/EditorStudioQA.js"
+  ],
+  "app/admin/editor/EditorStudioManifest.js": [],
+  "app/admin/editor/EditorStudioQA.js": [],
+  "app/admin/editor/EditorStudioSDK.js": [],
+  "app/admin/editor/EditorSystemStatus.js": [],
+  "app/admin/editor/EditorToolbox.js": [],
+  "app/admin/editor/EditorUltraSuite.js": [
+    "app/admin/editor/EditorConstraintEngine.js",
+    "app/admin/editor/EditorObjectRegistry.js",
+    "app/admin/editor/EditorStudioSDK.js",
+    "app/admin/editor/EditorVectorWorkspace.js"
+  ],
+  "app/admin/editor/EditorVectorProTools.js": [],
+  "app/admin/editor/EditorVectorSceneGraph.js": [],
+  "app/admin/editor/EditorVectorWorkspace.js": [
+    "app/admin/editor/EditorVectorProTools.js",
+    "app/admin/editor/EditorVectorSceneGraph.js"
+  ],
+  "app/admin/editor/FlashcardManager.js": [],
+  "app/admin/editor/StudioMenu.js": [
+    "app/admin/editor/BlockTree.js"
+  ],
+  "app/admin/editor/page.js": [
+    "app/admin/editor/EditorClient.js",
+    "app/admin/editor/EditorCoreGuard.js",
+    "app/admin/editor/EditorInteractionLayer.js",
+    "app/admin/editor/EditorMaxSuite.js",
+    "app/admin/editor/EditorProductionGate.js",
+    "app/admin/editor/EditorStudioEntry.js",
+    "lib/admin.js"
+  ],
+  "app/admin/editor/page.new.js": [
+    "app/admin/editor/EditorClient.js",
+    "app/admin/editor/EditorCoreGuard.js",
+    "app/admin/editor/EditorInteractionLayer.js",
+    "app/admin/editor/EditorMaxSuite.js",
+    "app/admin/editor/EditorStudioEntry.js",
+    "lib/admin.js"
+  ],
+  "app/admin/laboratorio-3d/Admin3DEditor.js": [
+    "app/admin/laboratorio-3d/Admin3DViewport.js",
+    "app/admin/laboratorio-3d/editor-presets.js",
+    "app/admin/laboratorio-3d/editor-pro-suite.js",
+    "app/admin/laboratorio-3d/editor-professional.js",
+    "app/admin/laboratorio-3d/editor-v3.js",
+    "app/admin/laboratorio-3d/ripeam-semantic.js",
+    "lib/ripeam-asset-manifest.js"
+  ],
+  "app/admin/laboratorio-3d/Admin3DViewport.js": [
+    "app/admin/laboratorio-3d/editor-v3.js",
+    "lib/ripeam-asset-manifest.js"
+  ],
+  "app/admin/laboratorio-3d/editor-presets.js": [],
+  "app/admin/laboratorio-3d/editor-pro-suite.js": [],
+  "app/admin/laboratorio-3d/editor-professional.js": [],
+  "app/admin/laboratorio-3d/editor-v3.js": [],
+  "app/admin/laboratorio-3d/page.js": [
+    "app/admin/laboratorio-3d/Admin3DEditor.js",
+    "lib/admin.js"
+  ],
+  "app/admin/laboratorio-3d/ripeam-semantic.js": [],
+  "app/admin/layout.js": [
+    "app/admin/Nav.js",
+    "lib/admin.js",
+    "lib/auth.js"
+  ],
+  "app/admin/metricas/page.js": [
+    "lib/admin.js",
+    "lib/db.js"
+  ],
+  "app/admin/observabilidade/page.js": [
+    "lib/admin.js",
+    "lib/db.js"
+  ],
+  "app/admin/pagamentos/page.js": [
+    "lib/admin.js",
+    "lib/db.js"
+  ],
+  "app/admin/page.js": [
+    "lib/db.js"
+  ],
+  "app/admin/permissoes/page.js": [
+    "lib/admin-permissions.js",
+    "lib/admin.js",
+    "lib/db.js"
+  ],
+  "app/admin/precos/PricingForm.js": [],
+  "app/admin/precos/page.js": [
+    "app/admin/precos/PricingForm.js",
+    "lib/admin.js",
+    "lib/pricing.js"
+  ],
+  "app/admin/questoes/page.js": [
+    "lib/admin.js",
+    "lib/question-summary.js"
+  ],
+  "app/admin/seguranca/MfaSetupClient.js": [],
+  "app/admin/seguranca/page.js": [
+    "app/admin/seguranca/MfaSetupClient.js",
+    "lib/admin-mfa.js",
+    "lib/admin.js"
+  ],
+  "app/admin/simulados/page.js": [
+    "lib/admin.js",
+    "lib/db.js"
+  ],
+  "app/admin/suporte/AdminSupportClient.js": [],
+  "app/admin/suporte/page.js": [
+    "app/admin/suporte/AdminSupportClient.js",
+    "lib/admin.js",
+    "lib/db.js",
+    "lib/support.js"
+  ],
+  "app/admin/usuarios/page.js": [
+    "lib/admin.js",
+    "lib/db.js"
+  ],
+  "app/analise-de-fraquezas/page.js": [],
+  "app/api/access/route.js": [
+    "lib/access.js"
+  ],
+  "app/api/account/accept-terms/route.js": [
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/legal.js",
+    "lib/security.js"
+  ],
+  "app/api/account/delete/route.js": [
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/security.js"
+  ],
+  "app/api/account/export/route.js": [
+    "lib/auth.js",
+    "lib/db.js"
+  ],
+  "app/api/account/logout-all/route.js": [
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/security.js"
+  ],
+  "app/api/achievements/route.js": [
+    "lib/auth.js",
+    "lib/db.js"
+  ],
+  "app/api/adaptive-training/route.js": [
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/entitlement.js",
+    "lib/integrated-study-plan.js",
+    "lib/question-banks.js",
+    "lib/security.js"
+  ],
+  "app/api/admin/contramestre/bibliography/multipart/route.js": [
+    "lib/admin.js",
+    "lib/db.js",
+    "lib/security.js"
+  ],
+  "app/api/admin/contramestre/bibliography/route.js": [
+    "lib/admin.js",
+    "lib/db.js",
+    "lib/security.js"
+  ],
+  "app/api/admin/laboratorio-3d/route.js": [
+    "lib/admin-audit.js",
+    "lib/admin.js",
+    "lib/ripeam-3d-default-scenes.js",
+    "lib/ripeam-3d-scenes.js",
+    "lib/security.js"
+  ],
+  "app/api/admin/laboratorio-3d/upload/route.js": [
+    "lib/admin-audit.js",
+    "lib/admin.js",
+    "lib/ripeam-3d-scenes.js",
+    "lib/security.js",
+    "lib/site-editor/design-server.js"
+  ],
+  "app/api/admin/mfa/route.js": [
+    "lib/admin-mfa.js",
+    "lib/admin.js",
+    "lib/db.js",
+    "lib/security.js"
+  ],
+  "app/api/admin/permissions/route.js": [
+    "lib/admin-audit.js",
+    "lib/admin-permissions.js",
+    "lib/admin.js",
+    "lib/db.js",
+    "lib/security.js"
+  ],
+  "app/api/admin/pricing/route.js": [
+    "lib/admin.js",
+    "lib/db.js",
+    "lib/pricing.js",
+    "lib/security.js"
+  ],
+  "app/api/admin/support/[id]/route.js": [
+    "lib/admin.js",
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/security.js",
+    "lib/support.js"
+  ],
+  "app/api/admin/support/route.js": [
+    "lib/admin.js",
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/support.js"
+  ],
+  "app/api/admin/users/[id]/access/route.js": [
+    "lib/admin.js",
+    "lib/db.js",
+    "lib/security.js"
+  ],
+  "app/api/admin/users/[id]/status/route.js": [
+    "lib/admin.js",
+    "lib/db.js",
+    "lib/security.js"
+  ],
+  "app/api/attempts/route.js": [
+    "lib/auth.js",
+    "lib/db.js"
+  ],
+  "app/api/auth/admin-mfa/verify/route.js": [
+    "lib/admin-mfa.js",
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/security.js"
+  ],
+  "app/api/auth/forgot-password/route.js": [
+    "lib/db.js",
+    "lib/password-reset.js",
+    "lib/security.js"
+  ],
+  "app/api/auth/google/callback/route.js": [
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/google-auth.js",
+    "lib/legal.js",
+    "lib/security.js"
+  ],
+  "app/api/auth/google/start/route.js": [
+    "lib/google-auth.js"
+  ],
+  "app/api/auth/login/route.js": [
+    "lib/admin-mfa.js",
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/legal-consent.js",
+    "lib/recaptcha.js",
+    "lib/security.js"
+  ],
+  "app/api/auth/logout/route.js": [
+    "lib/auth.js",
+    "lib/security.js"
+  ],
+  "app/api/auth/me/route.js": [
+    "lib/auth.js"
+  ],
+  "app/api/auth/profile/complete/route.js": [
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/pii.js",
+    "lib/security.js"
+  ],
+  "app/api/auth/register/route.js": [
+    "lib/db.js",
+    "lib/email-verification.js",
+    "lib/legal.js",
+    "lib/password-policy.js",
+    "lib/pii.js",
+    "lib/recaptcha.js",
+    "lib/security.js"
+  ],
+  "app/api/auth/resend-verification/route.js": [
+    "lib/db.js",
+    "lib/email-verification.js",
+    "lib/security.js"
+  ],
+  "app/api/auth/reset-password/route.js": [
+    "lib/password-policy.js",
+    "lib/password-reset.js",
+    "lib/security.js"
+  ],
+  "app/api/auth/verify-email/route.js": [
+    "lib/email-verification.js",
+    "lib/security.js"
+  ],
+  "app/api/cron/finalize-exams/route.js": [
+    "lib/exams.js"
+  ],
+  "app/api/exams/[subject]/answer/route.js": [
+    "lib/auth.js",
+    "lib/entitlement.js",
+    "lib/exams.js",
+    "lib/learning-engine.js",
+    "lib/observability.js",
+    "lib/question-banks.js",
+    "lib/security.js",
+    "lib/subjects.js"
+  ],
+  "app/api/exams/[subject]/finish/route.js": [
+    "lib/achievement-engine.js",
+    "lib/auth.js",
+    "lib/entitlement.js",
+    "lib/exams.js",
+    "lib/security.js",
+    "lib/subjects.js"
+  ],
+  "app/api/exams/[subject]/pause/route.js": [
+    "lib/auth.js",
+    "lib/entitlement.js",
+    "lib/exams.js",
+    "lib/observability.js",
+    "lib/security.js",
+    "lib/subjects.js"
+  ],
+  "app/api/exams/[subject]/route.js": [
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/entitlement.js",
+    "lib/exams.js",
+    "lib/security.js",
+    "lib/subjects.js"
+  ],
+  "app/api/experiments/route.js": [
+    "lib/auth.js",
+    "lib/experiments.js"
+  ],
+  "app/api/flashcards/[deck]/route.js": [
+    "lib/auth.js",
+    "lib/entitlement.js",
+    "lib/flashcards.js"
+  ],
+  "app/api/growth/event/route.js": [
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/security.js"
+  ],
+  "app/api/health/route.js": [
+    "lib/db.js"
+  ],
+  "app/api/insights/route.js": [
+    "lib/auth.js",
+    "lib/student-insights.js"
+  ],
+  "app/api/learning-graph/route.js": [
+    "lib/auth.js",
+    "lib/learning-graph.js"
+  ],
+  "app/api/library/files/[id]/content/route.js": [
+    "lib/auth.js",
+    "lib/github-library.js"
+  ],
+  "app/api/library/files/[id]/progress/route.js": [
+    "lib/auth.js",
+    "lib/db.js"
+  ],
+  "app/api/library/files/route.js": [
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/github-library.js"
+  ],
+  "app/api/library/google/callback/route.js": [
+    "lib/auth.js",
+    "lib/google-drive-library.js"
+  ],
+  "app/api/library/google/connect/route.js": [
+    "lib/auth.js",
+    "lib/google-drive-library.js"
+  ],
+  "app/api/library/google/disconnect/route.js": [
+    "lib/auth.js",
+    "lib/db.js"
+  ],
+  "app/api/library/google/files/[id]/content/route.js": [
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/google-drive-library.js"
+  ],
+  "app/api/library/google/files/[id]/progress/route.js": [
+    "lib/auth.js",
+    "lib/db.js"
+  ],
+  "app/api/library/google/files/route.js": [
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/google-drive-library.js"
+  ],
+  "app/api/library/google/picker/route.js": [
+    "lib/auth.js",
+    "lib/google-drive-library.js"
+  ],
+  "app/api/library/google/status/route.js": [
+    "lib/auth.js",
+    "lib/google-drive-library.js"
+  ],
+  "app/api/metrics/route.js": [
+    "lib/auth.js",
+    "lib/metrics.js"
+  ],
+  "app/api/mind-maps/[id]/duplicate/route.js": [
+    "lib/auth.js",
+    "lib/mind-maps.js",
+    "lib/security.js"
+  ],
+  "app/api/mind-maps/[id]/flashcard/route.js": [
+    "lib/auth.js",
+    "lib/mind-maps.js",
+    "lib/security.js"
+  ],
+  "app/api/mind-maps/[id]/route.js": [
+    "lib/auth.js",
+    "lib/mind-maps.js",
+    "lib/security.js"
+  ],
+  "app/api/mind-maps/route.js": [
+    "lib/auth.js",
+    "lib/mind-maps.js",
+    "lib/security.js"
+  ],
+  "app/api/observability/client-error/route.js": [
+    "lib/observability.js",
+    "lib/security.js"
+  ],
+  "app/api/observability/vitals/route.js": [
+    "lib/db.js",
+    "lib/security.js"
+  ],
+  "app/api/payments/mercado-pago/checkout/route.js": [
+    "lib/access.js",
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/observability.js",
+    "lib/payments.js",
+    "lib/security.js"
+  ],
+  "app/api/payments/mercado-pago/tutor-checkout/route.js": [
+    "lib/ai-tutor.js",
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/payments.js",
+    "lib/security.js"
+  ],
+  "app/api/payments/mercado-pago/webhook/route.js": [
+    "lib/access.js",
+    "lib/ai-tutor.js",
+    "lib/db.js",
+    "lib/observability.js",
+    "lib/payments.js"
+  ],
+  "app/api/preferences/route.js": [
+    "lib/auth.js",
+    "lib/security.js",
+    "lib/student-preferences.js"
+  ],
+  "app/api/profile/route.js": [
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/profile.js",
+    "lib/security.js"
+  ],
+  "app/api/progress/route.js": [
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/security.js",
+    "lib/subjects.js"
+  ],
+  "app/api/question-notebooks/[id]/answer/route.js": [
+    "lib/auth.js",
+    "lib/entitlement.js",
+    "lib/learning-engine.js",
+    "lib/notebooks.js",
+    "lib/study-plan-progress.js",
+    "lib/subjects.js"
+  ],
+  "app/api/question-notebooks/route.js": [
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/entitlement.js",
+    "lib/notebooks.js"
+  ],
+  "app/api/questions/[subject]/answer/route.js": [
+    "lib/access.js",
+    "lib/achievement-engine.js",
+    "lib/db.js",
+    "lib/learning-engine.js",
+    "lib/question-banks.js",
+    "lib/subjects.js"
+  ],
+  "app/api/questions/[subject]/route.js": [
+    "lib/access.js",
+    "lib/question-banks.js",
+    "lib/question-taxonomy.js"
+  ],
+  "app/api/questions/manobrabilidade/route.js": [
+    "lib/access.js",
+    "lib/question-banks.js"
+  ],
+  "app/api/questions/taxonomy/route.js": [
+    "lib/auth.js",
+    "lib/question-taxonomy.js"
+  ],
+  "app/api/review-queue/route.js": [
+    "lib/auth.js",
+    "lib/engagement.js",
+    "lib/security.js"
+  ],
+  "app/api/ripeam-3d/scenes/route.js": [
+    "lib/ripeam-3d-scenes.js"
+  ],
+  "app/api/site-editor/auth/route.js": [
+    "lib/admin.js",
+    "lib/security.js",
+    "lib/site-editor/server.js"
+  ],
+  "app/api/site-editor/design/route.js": [
+    "lib/site-editor/design-server.js",
+    "lib/site-editor/server.js"
+  ],
+  "app/api/site-editor/design/save/route.js": [
+    "lib/site-editor/design-server.js",
+    "lib/site-editor/server.js"
+  ],
+  "app/api/site-editor/file/route.js": [
+    "lib/site-editor/server.js"
+  ],
+  "app/api/site-editor/files/route.js": [
+    "lib/site-editor/server.js"
+  ],
+  "app/api/site-editor/flashcards/route.js": [
+    "lib/flashcards-db.js",
+    "lib/site-editor/server.js"
+  ],
+  "app/api/site-editor/logout/route.js": [
+    "lib/site-editor/server.js"
+  ],
+  "app/api/site-editor/pages/route.js": [
+    "data/site/editor-design.json",
+    "lib/site-editor/server.js"
+  ],
+  "app/api/site-editor/save/route.js": [
+    "lib/site-editor/server.js"
+  ],
+  "app/api/site-editor/upload/route.js": [
+    "lib/site-editor/design-server.js",
+    "lib/site-editor/server.js"
+  ],
+  "app/api/study-plan/calendar/route.js": [
+    "lib/auth.js",
+    "lib/entitlement.js",
+    "lib/integrated-study-plan.js"
+  ],
+  "app/api/study-plan/customize/route.js": [
+    "data/study/bibliography.js",
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/entitlement.js",
+    "lib/integrated-study-plan.js",
+    "lib/study-plan-manual-queue.mjs",
+    "lib/study-plan-snapshot.js",
+    "lib/subjects.js"
+  ],
+  "app/api/study-plan/export/route.js": [
+    "lib/auth.js",
+    "lib/integrated-study-plan.js"
+  ],
+  "app/api/study-plan/onboarding/route.js": [
+    "lib/auth.js",
+    "lib/integrated-study-plan.js",
+    "lib/study-onboarding-profile.js"
+  ],
+  "app/api/study-plan/route.js": [
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/integrated-study-plan.js",
+    "lib/study-plan-progress.js"
+  ],
+  "app/api/study-plan/session/route.js": [
+    "lib/auth.js",
+    "lib/db.js"
+  ],
+  "app/api/study-plan/snapshot/route.js": [
+    "lib/auth.js",
+    "lib/integrated-study-plan.js",
+    "lib/study-plan-snapshot.js"
+  ],
+  "app/api/study-plan/task/route.js": [
+    "lib/auth.js",
+    "lib/study-plan-progress.js"
+  ],
+  "app/api/study-plan/tutor-export/route.js": [
+    "lib/auth.js",
+    "lib/integrated-study-plan.js"
+  ],
+  "app/api/study-plan/unavailability/route.js": [
+    "lib/auth.js",
+    "lib/db.js"
+  ],
+  "app/api/study/plan/route.js": [
+    "lib/auth.js",
+    "lib/entitlement.js",
+    "lib/study-engine.js"
+  ],
+  "app/api/support/tickets/[id]/route.js": [
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/support.js"
+  ],
+  "app/api/support/tickets/route.js": [
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/security.js",
+    "lib/support.js"
+  ],
+  "app/api/tutor/chat/route.js": [
+    "lib/ai-tutor.js",
+    "lib/auth.js",
+    "lib/observability.js",
+    "lib/security.js",
+    "lib/student-insights.js"
+  ],
+  "app/api/tutor/conversations/[id]/route.js": [
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/security.js"
+  ],
+  "app/area-do-aluno/DailyStudyPlan.js": [
+    "app/components/StudySessionTracker.js",
+    "app/components/TrackedStudyLink.js",
+    "lib/offline-store.js"
+  ],
+  "app/area-do-aluno/page.js": [
+    "app/components/ExamCountdown.js",
+    "app/components/StudentHeader.js",
+    "lib/access.js",
+    "lib/auth.js",
+    "lib/bibliography-completion.js",
+    "lib/consistency-summary.js",
+    "lib/db.js",
+    "lib/learning-summary.js",
+    "lib/metrics.js",
+    "lib/subjects.js"
+  ],
+  "app/cadastro/page.js": [
+    "app/components.js",
+    "app/components/RecaptchaWidget.js"
+  ],
+  "app/cancelamento-e-reembolso/page.js": [
+    "app/components.js"
+  ],
+  "app/centro-de-revisao/page.js": [],
+  "app/completar-cadastro/page.js": [
+    "app/components.js"
+  ],
+  "app/components.js": [
+    "data/site/shared.json"
+  ],
+  "app/components/CommandPaletteShortcut.js": [],
+  "app/components/ExamCountdown.js": [],
+  "app/components/HomeDemo.js": [],
+  "app/components/MarketingShell.js": [
+    "app/components.js"
+  ],
+  "app/components/MobileAppRuntime.js": [],
+  "app/components/PwaRuntime.js": [],
+  "app/components/QuestionFilterControls.js": [],
+  "app/components/RecaptchaWidget.js": [],
+  "app/components/StructuredQuestion.js": [
+    "lib/question-structure.js"
+  ],
+  "app/components/StudentHeader.js": [
+    "app/components/StudentMobileMenu.js",
+    "app/components/StudySessionTracker.js",
+    "lib/admin.js",
+    "lib/auth.js",
+    "lib/db.js"
+  ],
+  "app/components/StudentMobileMenu.js": [],
+  "app/components/StudySessionTracker.js": [],
+  "app/components/TrackedLink.js": [],
+  "app/components/TrackedStudyLink.js": [
+    "app/components/StudySessionTracker.js"
+  ],
+  "app/components/TurnstileWidget.js": [],
+  "app/components/WebVitalsReporter.js": [],
+  "app/comprar/PaymentStatusPoller.js": [],
+  "app/comprar/page.js": [
+    "app/components/StudentHeader.js",
+    "app/comprar/PaymentStatusPoller.js",
+    "lib/access.js",
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/payments.js"
+  ],
+  "app/conquistas/page.js": [
+    "app/components/StudentHeader.js",
+    "lib/auth.js",
+    "lib/db.js"
+  ],
+  "app/conteudos/banco-de-questoes/Builder.js": [
+    "app/components/QuestionFilterControls.js",
+    "lib/offline-store.js"
+  ],
+  "app/conteudos/banco-de-questoes/page.js": [
+    "app/components/StudentHeader.js",
+    "app/conteudos/banco-de-questoes/Builder.js",
+    "lib/auth.js",
+    "lib/entitlement.js",
+    "lib/notebook-history.js",
+    "lib/question-catalog.js"
+  ],
+  "app/conteudos/caderno-de-erros/page.js": [
+    "app/components/StructuredQuestion.js",
+    "app/components/StudentHeader.js",
+    "lib/auth.js",
+    "lib/entitlement.js",
+    "lib/study-engine.js"
+  ],
+  "app/conteudos/caderno/[id]/Client.js": [
+    "app/components/StructuredQuestion.js",
+    "lib/offline-store.js"
+  ],
+  "app/conteudos/caderno/[id]/page.js": [
+    "app/components/StudentHeader.js",
+    "app/conteudos/caderno/[id]/Client.js",
+    "lib/auth.js",
+    "lib/entitlement.js",
+    "lib/notebooks.js"
+  ],
+  "app/conteudos/fixacao/page.js": [
+    "lib/auth.js",
+    "lib/entitlement.js",
+    "lib/notebooks.js"
+  ],
+  "app/conteudos/page.js": [
+    "app/components/StudentHeader.js",
+    "lib/auth.js",
+    "lib/content-metrics.js",
+    "lib/entitlement.js",
+    "lib/flashcards.js",
+    "lib/subjects.js"
+  ],
+  "app/contramestre/page.js": [
+    "app/tutor-ia/page.js"
+  ],
+  "app/diagnostico-gratuito/DiagnosticClient.js": [],
+  "app/diagnostico-gratuito/page.js": [
+    "app/components.js",
+    "app/diagnostico-gratuito/DiagnosticClient.js"
+  ],
+  "app/esqueci-minha-senha/page.js": [
+    "app/components.js"
+  ],
+  "app/excluir-conta/page.js": [],
+  "app/flashcards/[deck]/ArteNavalFlashcardsClient.js": [],
+  "app/flashcards/[deck]/FlashcardsClient.js": [],
+  "app/flashcards/[deck]/page.js": [
+    "app/components/StudentHeader.js",
+    "app/flashcards/[deck]/ArteNavalFlashcardsClient.js",
+    "app/flashcards/[deck]/FlashcardsClient.js",
+    "lib/auth.js",
+    "lib/entitlement.js",
+    "lib/flashcards.js"
+  ],
+  "app/flashcards/meus-mapas/PersonalMapCards.js": [],
+  "app/flashcards/meus-mapas/page.js": [
+    "app/components/StudentHeader.js",
+    "app/flashcards/meus-mapas/PersonalMapCards.js",
+    "lib/auth.js",
+    "lib/entitlement.js",
+    "lib/mind-maps.js"
+  ],
+  "app/flashcards/page.js": [
+    "app/components/StudentHeader.js",
+    "lib/auth.js",
+    "lib/entitlement.js",
+    "lib/flashcards.js"
+  ],
+  "app/flashcards/ripeam/3d/Ripeam3DClient.js": [
+    "app/flashcards/ripeam/3d/RipeamThreeScene.js",
+    "app/flashcards/ripeam/3d/student-viewer-v5.js"
+  ],
+  "app/flashcards/ripeam/3d/RipeamThreeScene.js": [
+    "app/flashcards/ripeam/3d/student-viewer-v5.js",
+    "lib/ripeam-asset-manifest.js"
+  ],
+  "app/flashcards/ripeam/3d/page.js": [
+    "app/components/StudentHeader.js",
+    "app/flashcards/ripeam/3d/Ripeam3DClient.js",
+    "lib/auth.js"
+  ],
+  "app/flashcards/ripeam/3d/student-viewer-v5.js": [
+    "lib/ripeam-asset-manifest.js"
+  ],
+  "app/global-error.js": [],
+  "app/hoje/TodayExamCountdown.js": [],
+  "app/hoje/page.js": [
+    "app/components/StudentHeader.js",
+    "app/components/TrackedStudyLink.js",
+    "app/hoje/TodayExamCountdown.js",
+    "lib/auth.js",
+    "lib/entitlement.js",
+    "lib/integrated-study-plan.js"
+  ],
+  "app/layout.js": [
+    "app/components/CommandPaletteShortcut.js",
+    "app/components/MobileAppRuntime.js",
+    "app/components/PwaRuntime.js",
+    "app/components/WebVitalsReporter.js",
+    "app/site-editor/SiteDesignProRuntime.js",
+    "app/site-editor/SiteDesignRuntime.js"
+  ],
+  "app/loading.js": [],
+  "app/login/page.js": [
+    "app/components.js",
+    "app/components/RecaptchaWidget.js"
+  ],
+  "app/logout/page.js": [],
+  "app/mapas-mentais/NewMindMap.js": [
+    "lib/subjects.js"
+  ],
+  "app/mapas-mentais/[id]/MindMapEditor.js": [
+    "lib/subjects.js"
+  ],
+  "app/mapas-mentais/[id]/page.js": [
+    "app/components/StudentHeader.js",
+    "app/mapas-mentais/[id]/MindMapEditor.js",
+    "lib/auth.js",
+    "lib/entitlement.js",
+    "lib/mind-maps.js"
+  ],
+  "app/mapas-mentais/page.js": [
+    "app/components/StudentHeader.js",
+    "app/mapas-mentais/NewMindMap.js",
+    "lib/auth.js",
+    "lib/entitlement.js",
+    "lib/mind-maps.js"
+  ],
+  "app/mfa-admin/page.js": [
+    "app/components.js",
+    "lib/admin-mfa.js"
+  ],
+  "app/minha-biblioteca/DriveLibraryClient.js": [],
+  "app/minha-biblioteca/LibraryClient.js": [],
+  "app/minha-biblioteca/[id]/PdfReaderClient.js": [
+    "lib/offline-store.js"
+  ],
+  "app/minha-biblioteca/[id]/page.js": [
+    "app/components/StudentHeader.js",
+    "app/minha-biblioteca/[id]/PdfReaderClient.js",
+    "lib/auth.js",
+    "lib/db.js"
+  ],
+  "app/minha-biblioteca/page.js": [
+    "app/components/StudentHeader.js",
+    "app/minha-biblioteca/LibraryClient.js",
+    "lib/auth.js",
+    "lib/entitlement.js"
+  ],
+  "app/minha-trajetoria/page.js": [
+    "app/components/StudentHeader.js",
+    "lib/auth.js",
+    "lib/bibliography-completion.js",
+    "lib/db.js",
+    "lib/integrated-study-plan.js",
+    "lib/learning-graph.js",
+    "lib/metrics.js",
+    "lib/title-score.js"
+  ],
+  "app/minhas-assinaturas/page.js": [
+    "app/components/StudentHeader.js",
+    "lib/access.js",
+    "lib/ai-tutor.js",
+    "lib/auth.js",
+    "lib/payments.js"
+  ],
+  "app/not-found.js": [],
+  "app/page.js": [
+    "app/components.js",
+    "app/components/HomeDemo.js",
+    "app/components/TrackedLink.js",
+    "data/site/home.json",
+    "lib/pricing.js"
+  ],
+  "app/paginas/[slug]/page.js": [
+    "data/site/editor-design.json"
+  ],
+  "app/perfil/ProfessionalFields.js": [],
+  "app/perfil/page.js": [
+    "app/components/StudentHeader.js",
+    "app/perfil/ProfessionalFields.js",
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/profile.js"
+  ],
+  "app/pesquisar/page.js": [
+    "app/components/StudentHeader.js",
+    "lib/auth.js",
+    "lib/question-banks.js",
+    "lib/subjects.js"
+  ],
+  "app/plano-de-estudos/PlanClient.js": [
+    "app/components/StudySessionTracker.js",
+    "app/plano-de-estudos/StudyDashboard.js",
+    "lib/offline-store.js"
+  ],
+  "app/plano-de-estudos/PlanControls.js": [],
+  "app/plano-de-estudos/StudyDashboard.js": [
+    "app/plano-de-estudos/PlanControls.js",
+    "lib/study-plan-bibliography-reference.mjs"
+  ],
+  "app/plano-de-estudos/configurar/OnboardingForm.js": [],
+  "app/plano-de-estudos/configurar/page.js": [
+    "app/components/StudentHeader.js",
+    "app/plano-de-estudos/configurar/OnboardingForm.js",
+    "data/study/bibliography.js",
+    "lib/auth.js",
+    "lib/integrated-study-plan.js",
+    "lib/study-onboarding-profile.js",
+    "lib/subjects.js"
+  ],
+  "app/plano-de-estudos/page.js": [
+    "app/components/StudentHeader.js",
+    "app/plano-de-estudos/PlanClient.js",
+    "lib/auth.js",
+    "lib/entitlement.js",
+    "lib/integrated-study-plan.js"
+  ],
+  "app/plano-de-estudos/pendencias/page.js": [
+    "app/components/StudentHeader.js",
+    "lib/auth.js",
+    "lib/integrated-study-plan.js"
+  ],
+  "app/plataforma/page.js": [
+    "app/components.js"
+  ],
+  "app/politica-de-cookies/page.js": [
+    "app/components.js"
+  ],
+  "app/politica-de-privacidade/page.js": [
+    "app/components.js"
+  ],
+  "app/preferencias/PreferencesClient.js": [],
+  "app/preferencias/page.js": [
+    "app/components/StudentHeader.js",
+    "app/preferencias/PreferencesClient.js",
+    "lib/auth.js",
+    "lib/student-preferences.js"
+  ],
+  "app/produtos/banco-de-questoes/page.js": [
+    "app/components/MarketingShell.js"
+  ],
+  "app/produtos/flashcards-mapas-mentais/page.js": [
+    "app/components/MarketingShell.js"
+  ],
+  "app/produtos/page.js": [
+    "app/components/MarketingShell.js"
+  ],
+  "app/produtos/simulados/page.js": [
+    "app/components/MarketingShell.js"
+  ],
+  "app/pscpp/page.js": [
+    "app/components.js",
+    "app/components/TrackedLink.js"
+  ],
+  "app/pwa-icon/route.js": [],
+  "app/pwa-splash/route.js": [],
+  "app/ranking/page.js": [
+    "app/components/StudentHeader.js",
+    "lib/auth.js",
+    "lib/ranking.js"
+  ],
+  "app/redefinir-senha/ResetPasswordForm.js": [],
+  "app/redefinir-senha/page.js": [
+    "app/components.js",
+    "app/redefinir-senha/ResetPasswordForm.js"
+  ],
+  "app/revisao-inteligente/ReviewActions.js": [],
+  "app/revisao-inteligente/page.js": [
+    "app/components/StudentHeader.js",
+    "app/revisao-inteligente/ReviewActions.js",
+    "lib/auth.js",
+    "lib/engagement.js",
+    "lib/entitlement.js"
+  ],
+  "app/robots.js": [],
+  "app/simulado/[subject]/Client.js": [
+    "app/components/QuestionFilterControls.js",
+    "app/components/StructuredQuestion.js",
+    "lib/offline-store.js"
+  ],
+  "app/simulado/[subject]/page.js": [
+    "app/components/StudentHeader.js",
+    "app/simulado/[subject]/Client.js",
+    "lib/auth.js",
+    "lib/entitlement.js",
+    "lib/question-catalog.js",
+    "lib/subjects.js"
+  ],
+  "app/simulado/manobrabilidade/SimuladoClient.js": [
+    "app/components/StructuredQuestion.js"
+  ],
+  "app/simulado/manobrabilidade/page.js": [
+    "app/components/StudentHeader.js",
+    "app/simulado/[subject]/Client.js",
+    "lib/access.js",
+    "lib/auth.js",
+    "lib/question-summary.js",
+    "lib/subjects.js"
+  ],
+  "app/simulado/page.js": [
+    "app/components/StudentHeader.js",
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/entitlement.js",
+    "lib/question-summary.js",
+    "lib/subjects.js"
+  ],
+  "app/simulado/tentativa/[id]/page.js": [
+    "app/components/StructuredQuestion.js",
+    "app/components/StudentHeader.js",
+    "lib/access.js",
+    "lib/auth.js",
+    "lib/db.js",
+    "lib/question-banks.js",
+    "lib/subjects.js"
+  ],
+  "app/site-editor/SiteDesignProRuntime.js": [
+    "data/site/editor-design.json"
+  ],
+  "app/site-editor/SiteDesignRuntime.js": [
+    "data/site/editor-design.json"
+  ],
+  "app/sitemap.js": [],
+  "app/sobre-a-praticagem/como-se-tornar-um-pratico/page.js": [
+    "app/components/MarketingShell.js"
+  ],
+  "app/sobre-a-praticagem/o-que-faz-um-pratico/page.js": [
+    "app/components/MarketingShell.js"
+  ],
+  "app/sobre-a-praticagem/page.js": [
+    "app/components/MarketingShell.js"
+  ],
+  "app/sobre-nos/page.js": [
+    "app/components/MarketingShell.js"
+  ],
+  "app/study-content/[[...path]]/route.js": [
+    "lib/access.js"
+  ],
+  "app/suporte/SupportClient.js": [],
+  "app/suporte/page.js": [
+    "app/components/StudentHeader.js",
+    "app/suporte/SupportClient.js",
+    "lib/auth.js"
+  ],
+  "app/termos-de-uso/page.js": [
+    "app/components.js"
+  ],
+  "app/teste-gratis-excedido/page.js": [
+    "app/components/StudentHeader.js",
+    "lib/auth.js"
+  ],
+  "app/treino-adaptativo/AdaptiveClient.js": [],
+  "app/treino-adaptativo/page.js": [],
+  "app/treino-inteligente/page.js": [
+    "app/components/StudentHeader.js",
+    "app/treino-adaptativo/AdaptiveClient.js",
+    "lib/auth.js",
+    "lib/engagement.js",
+    "lib/integrated-study-plan.js",
+    "lib/learning-engine.js"
+  ],
+  "app/tutor-ia/TutorChat.js": [],
+  "app/tutor-ia/page.js": [
+    "app/components/StudentHeader.js",
+    "app/tutor-ia/TutorChat.js",
+    "lib/ai-tutor.js",
+    "lib/auth.js",
+    "lib/payments.js"
+  ],
+  "app/verificar-email/page.js": [
+    "app/components.js"
+  ],
+  "data/study/bibliography.js": [],
+  "lib/access.js": [
+    "lib/auth.js",
+    "lib/db.js"
+  ],
+  "lib/achievement-engine.js": [
+    "lib/db.js"
+  ],
+  "lib/admin-audit.js": [
+    "lib/db.js",
+    "lib/security.js"
+  ],
+  "lib/admin-mfa.js": [
+    "lib/db.js"
+  ],
+  "lib/admin-permissions.js": [],
+  "lib/admin.js": [
+    "lib/admin-permissions.js",
+    "lib/auth.js",
+    "lib/db.js"
+  ],
+  "lib/ai-tutor.js": [
+    "lib/db.js"
+  ],
+  "lib/approved-pscpp-drive-blocks.js": [
+    "data/pscpp/approved-drive-blocks/block_001.json",
+    "data/pscpp/approved-drive-blocks/block_002.json",
+    "data/pscpp/approved-drive-blocks/block_003.json",
+    "data/pscpp/approved-drive-blocks/block_004.json",
+    "data/pscpp/approved-drive-blocks/block_005.json",
+    "data/pscpp/approved-drive-blocks/block_006.json",
+    "data/pscpp/approved-drive-blocks/block_007.json",
+    "data/pscpp/approved-drive-blocks/block_008.json",
+    "data/pscpp/approved-drive-blocks/block_009.json",
+    "data/pscpp/approved-drive-blocks/block_010.json",
+    "data/pscpp/approved-drive-blocks/block_011.json",
+    "data/pscpp/approved-drive-blocks/block_012.json",
+    "data/pscpp/approved-drive-blocks/block_013.json",
+    "data/pscpp/approved-drive-blocks/block_014.json",
+    "data/pscpp/approved-drive-blocks/block_015.json",
+    "data/pscpp/approved-drive-blocks/block_016.json",
+    "data/pscpp/approved-drive-blocks/block_017.json",
+    "data/pscpp/approved-drive-blocks/block_018.json",
+    "data/pscpp/approved-drive-blocks/block_019.json",
+    "data/pscpp/approved-drive-blocks/block_020.json"
+  ],
+  "lib/auth.js": [
+    "lib/db.js"
+  ],
+  "lib/bibliography-completion.js": [
+    "data/study/bibliography.js",
+    "lib/db.js"
+  ],
+  "lib/bibliography-flashcards.js": [
+    "lib/question-banks.js",
+    "lib/question-filters.js"
+  ],
+  "lib/consistency-summary.js": [],
+  "lib/content-metrics.js": [
+    "lib/db.js",
+    "lib/subjects.js"
+  ],
+  "lib/db.js": [],
+  "lib/email-verification.js": [
+    "lib/db.js"
+  ],
+  "lib/engagement.js": [
+    "lib/consistency-summary.js",
+    "lib/db.js",
+    "lib/learning-algorithms.js",
+    "lib/learning-engine.js",
+    "lib/question-banks.js",
+    "lib/subjects.js"
+  ],
+  "lib/entitlement.js": [
+    "lib/access.js"
+  ],
+  "lib/exams.js": [
+    "lib/db.js",
+    "lib/historical-exam-blueprint.js",
+    "lib/official-exam-bank.js",
+    "lib/pscpp-exam-bank.js",
+    "lib/question-banks.js",
+    "lib/question-filters.js",
+    "lib/question-structure.js",
+    "lib/subjects.js"
+  ],
+  "lib/experiments.js": [
+    "lib/db.js"
+  ],
+  "lib/flashcards-db.js": [],
+  "lib/flashcards.js": [
+    "lib/flashcards-db.js"
+  ],
+  "lib/generated-pscpp-batches.js": [
+    "data/pscpp/generated-batches/batch_011.json",
+    "data/pscpp/generated-batches/batch_012.json",
+    "data/pscpp/generated-batches/batch_013.json",
+    "data/pscpp/generated-batches/batch_014.json",
+    "data/pscpp/generated-batches/batch_015.json",
+    "data/pscpp/generated-batches/batch_016.json",
+    "data/pscpp/generated-batches/batch_017.json",
+    "data/pscpp/generated-batches/batch_018.json",
+    "data/pscpp/generated-batches/batch_019.json",
+    "data/pscpp/generated-batches/batch_020.json",
+    "data/pscpp/generated-batches/batch_021.json",
+    "data/pscpp/generated-batches/batch_022.json",
+    "data/pscpp/generated-batches/batch_023.json",
+    "data/pscpp/generated-batches/batch_024.json",
+    "data/pscpp/generated-batches/batch_025.json",
+    "data/pscpp/generated-batches/batch_026.json",
+    "data/pscpp/generated-batches/batch_027.json",
+    "data/pscpp/generated-batches/batch_028.json",
+    "data/pscpp/generated-batches/batch_029.json",
+    "data/pscpp/generated-batches/batch_030.json",
+    "data/pscpp/generated-batches/batch_031.json",
+    "data/pscpp/generated-batches/batch_032.json",
+    "data/pscpp/generated-batches/batch_033.json",
+    "data/pscpp/generated-batches/batch_034.json",
+    "data/pscpp/generated-batches/batch_035.json",
+    "data/pscpp/generated-batches/batch_036.json",
+    "data/pscpp/generated-batches/batch_037.json",
+    "data/pscpp/generated-batches/batch_038.json",
+    "data/pscpp/generated-batches/batch_039.json",
+    "data/pscpp/generated-batches/batch_040.json",
+    "data/pscpp/generated-batches/batch_041.json",
+    "data/pscpp/generated-batches/batch_042.json",
+    "data/pscpp/generated-batches/batch_043.json",
+    "data/pscpp/generated-batches/batch_044.json",
+    "data/pscpp/generated-batches/batch_045.json",
+    "data/pscpp/generated-batches/batch_046.json",
+    "data/pscpp/generated-batches/batch_047.json",
+    "data/pscpp/generated-batches/batch_048.json",
+    "data/pscpp/generated-batches/batch_049.json",
+    "data/pscpp/generated-batches/batch_050.json",
+    "data/pscpp/generated-batches/batch_051.json",
+    "data/pscpp/generated-batches/batch_052.json",
+    "data/pscpp/generated-batches/batch_053.json",
+    "data/pscpp/generated-batches/batch_054.json",
+    "data/pscpp/generated-batches/batch_055.json",
+    "data/pscpp/generated-batches/batch_056.json",
+    "data/pscpp/generated-batches/batch_057.json",
+    "data/pscpp/generated-batches/batch_058.json",
+    "data/pscpp/generated-batches/batch_059.json",
+    "data/pscpp/generated-batches/batch_060.json"
+  ],
+  "lib/github-library.js": [
+    "lib/db.js"
+  ],
+  "lib/gmail-mailer.js": [],
+  "lib/google-auth.js": [],
+  "lib/google-drive-library.js": [
+    "lib/db.js",
+    "lib/token-vault.js"
+  ],
+  "lib/historical-exam-blueprint.js": [],
+  "lib/integrated-study-plan.js": [
+    "data/study/bibliography.js",
+    "lib/db.js",
+    "lib/learning-summary.js",
+    "lib/student-preferences.js",
+    "lib/study-plan-bibliography-reference.mjs",
+    "lib/study-plan-snapshot.js",
+    "lib/subjects.js"
+  ],
+  "lib/learning-algorithms.js": [],
+  "lib/learning-engine.js": [
+    "lib/db.js",
+    "lib/learning-algorithms.js",
+    "lib/question-banks.js",
+    "lib/subjects.js"
+  ],
+  "lib/learning-events.js": [],
+  "lib/learning-graph.js": [
+    "data/study/bibliography.js",
+    "lib/db.js",
+    "lib/question-banks.js",
+    "lib/question-filters.js"
+  ],
+  "lib/learning-summary.js": [
+    "lib/db.js"
+  ],
+  "lib/legal-consent.js": [
+    "lib/db.js",
+    "lib/legal.js"
+  ],
+  "lib/legal.js": [],
+  "lib/metrics.js": [
+    "lib/db.js",
+    "lib/question-banks.js",
+    "lib/subjects.js",
+    "lib/title-score.js"
+  ],
+  "lib/miguens-cap45-review.js": [
+    "data/question-restorations/miguens-cap45-reviewed.json"
+  ],
+  "lib/mind-maps.js": [
+    "lib/db.js",
+    "lib/subjects.js"
+  ],
+  "lib/notebook-history.js": [
+    "lib/db.js",
+    "lib/notebook-scope-index.js",
+    "lib/subjects.js"
+  ],
+  "lib/notebook-scope-index.js": [
+    "lib/subjects.js"
+  ],
+  "lib/notebook-stem-restorations.js": [
+    "data/question-restorations/notebook-complete-stems.json",
+    "data/question-restorations/notebook-context-stems.json"
+  ],
+  "lib/notebooks.js": [
+    "lib/db.js",
+    "lib/notebook-history.js",
+    "lib/official-exam-bank.js",
+    "lib/question-banks.js",
+    "lib/question-filters.js",
+    "lib/subjects.js"
+  ],
+  "lib/observability.js": [
+    "lib/db.js"
+  ],
+  "lib/official-exam-bank.js": [
+    "data/pscpp/official-exams.json",
+    "lib/historical-exam-blueprint.js"
+  ],
+  "lib/offline-store.js": [
+    "lib/historical-exam-blueprint.js"
+  ],
+  "lib/password-policy.js": [],
+  "lib/password-reset.js": [
+    "lib/db.js",
+    "lib/gmail-mailer.js"
+  ],
+  "lib/payments.js": [
+    "lib/pricing.js"
+  ],
+  "lib/pii.js": [],
+  "lib/pricing.js": [
+    "lib/db.js"
+  ],
+  "lib/profile.js": [],
+  "lib/pscpp-exam-bank.js": [
+    "lib/pscpp-exam-selection.js"
+  ],
+  "lib/pscpp-exam-selection.js": [
+    "lib/historical-exam-blueprint.js"
+  ],
+  "lib/pscpp-exam-source.js": [
+    "data/pscpp/arte-naval-cap1-552.json",
+    "data/pscpp/arte-naval-cap2-cap3-459.json",
+    "data/pscpp/arte-naval-cap8-504.json",
+    "data/pscpp/arte-naval-cap9-108.json",
+    "data/pscpp/generated-questions.json",
+    "data/pscpp/official-exams.json",
+    "lib/approved-pscpp-drive-blocks.js",
+    "lib/generated-pscpp-batches.js",
+    "lib/miguens-cap45-review.js",
+    "lib/question-quality-policy.js",
+    "lib/question-quality.js"
+  ],
+  "lib/question-banks-source.js": [
+    "data/pscpp/arte-naval-cap9-108.json",
+    "data/question-extensions/normam201-cap7-84.json",
+    "data/question-extensions/pscpp-caderno-bloco-001.json",
+    "data/question-extensions/pscpp-caderno-bloco-002.json",
+    "data/question-extensions/pscpp-caderno-bloco-003.json",
+    "data/question-extensions/pscpp-caderno-bloco-004.json",
+    "data/question-extensions/pscpp-caderno-bloco-005.json",
+    "data/question-extensions/pscpp-caderno-bloco-006.json",
+    "data/question-extensions/pscpp-caderno-bloco-007.json",
+    "data/question-extensions/pscpp-caderno-bloco-008.json",
+    "data/question-extensions/pscpp-caderno-bloco-009.json",
+    "data/question-extensions/pscpp-caderno-bloco-010.json",
+    "data/question-extensions/pscpp-caderno-bloco-011.json",
+    "data/question-extensions/pscpp-caderno-bloco-012.json",
+    "data/question-extensions/pscpp-caderno-bloco-013.json",
+    "data/question-extensions/pscpp-caderno-bloco-014.json",
+    "data/question-extensions/pscpp-caderno-bloco-015.json",
+    "data/question-extensions/pscpp-caderno-bloco-016.json",
+    "data/question-extensions/pscpp-caderno-bloco-017.json",
+    "data/question-extensions/pscpp-caderno-bloco-018.json",
+    "data/question-extensions/pscpp-caderno-bloco-019.json",
+    "data/question-extensions/pscpp-caderno-bloco-020.json",
+    "data/question-extensions/pscpp-caderno-bloco-021.json",
+    "data/question-extensions/pscpp-caderno-bloco-022.json",
+    "data/question-extensions/pscpp-caderno-bloco-023.json",
+    "data/question-extensions/pscpp-caderno-bloco-024.json",
+    "data/question-extensions/pscpp-caderno-bloco-025.json",
+    "data/question-extensions/pscpp-caderno-bloco-026.json",
+    "data/question-extensions/ripeam-expansao-01.json",
+    "data/question-extensions/ripeam-expansao-02.json",
+    "data/question-extensions/ripeam-expansao-03.json",
+    "data/question-extensions/ripeam-expansao-04.json",
+    "data/question-extensions/ripeam-expansao-05.json",
+    "data/question-extensions/ripeam-expansao-06.json",
+    "data/question-extensions/ripeam-expansao-07.json",
+    "data/question-extensions/ripeam-situacoes-01.json",
+    "data/question-extensions/ripeam-situacoes-02.json",
+    "data/question-extensions/ripeam-situacoes-03.json",
+    "data/question-extensions/ripeam-situacoes-04.json",
+    "data/question-extensions/ripeam-situacoes-05.json",
+    "data/questions/arte-naval.json",
+    "data/questions/comunicacoes.json",
+    "data/questions/conhecimentos-gerais.json",
+    "data/questions/legislacao-regulamentacao.json",
+    "data/questions/manobrabilidade.json",
+    "data/questions/meteorologia-oceanografia.json",
+    "data/questions/navegacao-aguas-restritas.json",
+    "lib/miguens-cap45-review.js",
+    "lib/notebook-stem-restorations.js",
+    "lib/question-editorial-normalization.js",
+    "lib/question-filters.js",
+    "lib/question-quality-policy.js",
+    "lib/question-quality.js",
+    "lib/question-restorations.js",
+    "lib/question-source-merge.js",
+    "lib/subjects.js"
+  ],
+  "lib/question-banks.js": [
+    "lib/official-exam-bank.js",
+    "lib/pscpp-exam-bank.js",
+    "lib/question-filters.js",
+    "lib/question-structure.js",
+    "lib/subjects.js"
+  ],
+  "lib/question-catalog.js": [
+    "lib/question-summary.js",
+    "lib/subjects.js"
+  ],
+  "lib/question-editorial-normalization.js": [],
+  "lib/question-filters.js": [],
+  "lib/question-locator-audit.js": [],
+  "lib/question-quality-policy.js": [
+    "lib/question-quality.js"
+  ],
+  "lib/question-quality.js": [],
+  "lib/question-restorations.js": [
+    "data/question-restorations/arte-naval.json",
+    "data/question-restorations/comunicacoes-sequencial.json",
+    "data/question-restorations/comunicacoes.json",
+    "data/question-restorations/conhecimentos-gerais.json",
+    "data/question-restorations/legislacao-regulamentacao-01.json",
+    "data/question-restorations/legislacao-regulamentacao-02.json",
+    "data/question-restorations/legislacao-regulamentacao-03.json",
+    "data/question-restorations/legislacao-regulamentacao-04.json",
+    "data/question-restorations/legislacao-regulamentacao-05.json",
+    "data/question-restorations/legislacao-regulamentacao-06.json",
+    "data/question-restorations/manobrabilidade-01.json",
+    "data/question-restorations/manobrabilidade-02.json",
+    "data/question-restorations/manobrabilidade-03.json",
+    "data/question-restorations/manobrabilidade-04.json",
+    "data/question-restorations/manobrabilidade-05.json",
+    "data/question-restorations/meteorologia-oceanografia-01.json",
+    "data/question-restorations/meteorologia-oceanografia-02.json",
+    "data/question-restorations/meteorologia-oceanografia-03.json",
+    "data/question-restorations/meteorologia-oceanografia-04.json",
+    "data/question-restorations/meteorologia-oceanografia-05.json",
+    "data/question-restorations/meteorologia-oceanografia-06.json",
+    "data/question-restorations/meteorologia-oceanografia-07.json",
+    "data/question-restorations/navegacao-aguas-restritas-01.json",
+    "lib/question-quality.js"
+  ],
+  "lib/question-source-merge.js": [],
+  "lib/question-structure.js": [],
+  "lib/question-summary.js": [
+    "lib/subjects.js"
+  ],
+  "lib/question-taxonomy.js": [
+    "data/study/bibliography.js"
+  ],
+  "lib/ranking.js": [
+    "lib/db.js"
+  ],
+  "lib/recaptcha.js": [],
+  "lib/ripeam-3d-default-scenes.js": [],
+  "lib/ripeam-3d-scenes.js": [
+    "lib/db.js"
+  ],
+  "lib/ripeam-asset-manifest.js": [],
+  "lib/security.js": [
+    "lib/db.js"
+  ],
+  "lib/site-editor/design-server.js": [
+    "lib/site-editor/server.js"
+  ],
+  "lib/site-editor/server.js": [],
+  "lib/student-insights.js": [
+    "lib/engagement.js",
+    "lib/integrated-study-plan.js",
+    "lib/learning-engine.js",
+    "lib/metrics.js"
+  ],
+  "lib/student-preferences.js": [
+    "lib/db.js"
+  ],
+  "lib/study-engine.js": [
+    "lib/db.js",
+    "lib/question-banks.js",
+    "lib/subjects.js"
+  ],
+  "lib/study-onboarding-profile.js": [
+    "data/study/bibliography.js",
+    "lib/db.js"
+  ],
+  "lib/study-plan-bibliography-reference.mjs": [],
+  "lib/study-plan-manual-queue.mjs": [],
+  "lib/study-plan-progress.js": [
+    "data/study/bibliography.js",
+    "lib/db.js"
+  ],
+  "lib/study-plan-snapshot.js": [
+    "lib/db.js"
+  ],
+  "lib/subjects.js": [],
+  "lib/support.js": [
+    "lib/db.js"
+  ],
+  "lib/title-score.js": [],
+  "lib/token-vault.js": [],
+  "lib/turnstile.js": [],
+  "mobile/capacitor.config.ts": [],
+  "mobile/scripts/configure-android.mjs": [],
+  "mobile/scripts/configure-release-signing.mjs": [],
+  "mobile/scripts/generate-play-assets.mjs": [],
+  "mobile/scripts/prepare-assets.mjs": [],
+  "next.config.mjs": [],
+  "open-next.config.ts": [],
+  "protected-content/study-content/flashcards/flashcard-cis/assets/js/app.js": [],
+  "protected-content/study-content/flashcards/flashcard-cis/ripeam/assets/js/app.js": [],
+  "protected-content/study-content/simulado/manobrabilidade/questions.js": [],
+  "protected-content/study-content/simulado/navegacao-aguas-restritas/ripeam/assets/js/app.js": [],
+  "public/assets/js/app.js": [],
+  "public/assets/js/auth.js": [],
+  "public/assets/js/guard.js": [
+    "public/assets/js/auth.js"
+  ],
+  "public/assets/js/platform-config.js": [],
+  "scripts/add-pscpp-arte-naval-batch-003.mjs": [],
+  "scripts/add-pscpp-arte-naval-batch-004.mjs": [],
+  "scripts/add-pscpp-arte-naval-batch.mjs": [],
+  "scripts/add-pscpp-btm-batch-002.mjs": [],
+  "scripts/audit-all-question-banks.mjs": [
+    "data/study/bibliography.js"
+  ],
+  "scripts/audit-artificial-question-sources.mjs": [],
+  "scripts/audit-full-question-bank.mjs": [],
+  "scripts/audit-legislation-locator-prompts.mjs": [
+    "lib/question-locator-audit.js"
+  ],
+  "scripts/audit-locator-dependent-stems.mjs": [
+    "lib/question-editorial-normalization.js",
+    "lib/question-quality.js"
+  ],
+  "scripts/audit-pscpp-bank.mjs": [],
+  "scripts/audit-pscpp-integral-source-review.mjs": [
+    "lib/question-quality-policy.js"
+  ],
+  "scripts/audit-pscpp-runtime-inventory.mjs": [
+    "lib/historical-exam-blueprint.js",
+    "lib/pscpp-exam-selection.js",
+    "lib/pscpp-exam-source.js",
+    "lib/question-banks-source.js",
+    "lib/question-quality-policy.js",
+    "lib/question-structure.js"
+  ],
+  "scripts/audit-pscpp-runtime-triage.mjs": [
+    "lib/question-locator-audit.js",
+    "lib/question-structure.js"
+  ],
+  "scripts/audit-question-quality-v2.mjs": [],
+  "scripts/audit-question-semantics.mjs": [],
+  "scripts/bibliographic-refine-pscpp-v6.mjs": [],
+  "scripts/build-arte-naval-cap1-552.mjs": [],
+  "scripts/build-arte-naval-cap23-459.mjs": [
+    "data/pscpp/arte-naval-cap1-552.json",
+    "data/pscpp/arte-naval-cap2-cap3-459.json"
+  ],
+  "scripts/build-arte-naval-cap8-504.mjs": [
+    "data/pscpp/arte-naval-cap2-cap3-459.json",
+    "data/pscpp/arte-naval-cap8-504.json"
+  ],
+  "scripts/build-legislation-content-restorations.mjs": [],
+  "scripts/build-pscpp-batches-011-060.mjs": [],
+  "scripts/check-repo-hygiene.mjs": [],
+  "scripts/check-ripeam-glb-regression.mjs": [],
+  "scripts/cleanup-pscpp-v8.mjs": [],
+  "scripts/deep-refine-question-banks-pscpp-v4.mjs": [],
+  "scripts/deep-refine-question-banks-pscpp-v5.mjs": [],
+  "scripts/expand-manobrabilidade-v2.mjs": [
+    "scripts/lib/question-expansion.mjs"
+  ],
+  "scripts/expand-navigation-followup-v2.mjs": [
+    "scripts/lib/question-expansion.mjs"
+  ],
+  "scripts/expand-navigation-v2.mjs": [
+    "scripts/lib/question-expansion.mjs"
+  ],
+  "scripts/expand-other-banks-v2.mjs": [
+    "scripts/lib/question-expansion.mjs"
+  ],
+  "scripts/expand-question-formats-v1.mjs": [],
+  "scripts/extract-question-quality-samples.mjs": [],
+  "scripts/fix-audit-math-normalization.mjs": [],
+  "scripts/fix-hard-duplicate-stem-v2.mjs": [],
+  "scripts/fix-pscpp-duplicate-stems-v5.mjs": [],
+  "scripts/focused-arte-meteo-pscpp-v7.mjs": [],
+  "scripts/generate-pscpp-runtime-bank.mjs": [
+    "data/pscpp/official-exams.json",
+    "lib/pscpp-exam-source.js",
+    "scripts/lib/hash-module-closure.mjs"
+  ],
+  "scripts/generate-runtime-flashcard-decks.mjs": [
+    "lib/bibliography-flashcards.js"
+  ],
+  "scripts/generate-runtime-question-banks.mjs": [
+    "lib/question-banks-source.js",
+    "scripts/lib/hash-module-closure.mjs"
+  ],
+  "scripts/generate-runtime-question-catalog.mjs": [
+    "lib/pscpp-exam-selection.js",
+    "lib/question-filters.js"
+  ],
+  "scripts/harden-context-revision-v2.mjs": [],
+  "scripts/harden-question-format-generator.mjs": [],
+  "scripts/import-manobrabilidade.mjs": [],
+  "scripts/lib/hash-module-closure.mjs": [],
+  "scripts/lib/question-expansion.mjs": [
+    "data/study/bibliography.js"
+  ],
+  "scripts/migrate-all-question-taxonomy-v2.mjs": [
+    "data/study/bibliography.js",
+    "scripts/taxonomy-maps/manobrabilidade.mjs"
+  ],
+  "scripts/pscpp-json-loader.mjs": [],
+  "scripts/quarantine-final-generic-and-duplicates.mjs": [],
+  "scripts/quarantine-invalid-taxonomy.mjs": [],
+  "scripts/quarantine-main-question-duplicate-stems.mjs": [],
+  "scripts/quarantine-pscpp-editorial-stage2.mjs": [],
+  "scripts/refine-question-banks-pscpp-v3.mjs": [],
+  "scripts/repair-all-artificial-question-sources.mjs": [],
+  "scripts/repair-legislation-full-context-stems.mjs": [],
+  "scripts/repair-main-question-explanation-keys.mjs": [],
+  "scripts/repair-main-question-extraction-artifacts.mjs": [],
+  "scripts/repair-main-question-generic-templates.mjs": [],
+  "scripts/repair-pscpp-arte-naval-stems.mjs": [],
+  "scripts/repair-pscpp-generated-editorial.mjs": [],
+  "scripts/repair-pscpp-official-extraction.mjs": [],
+  "scripts/repair-question-banks-pscpp-v3.mjs": [],
+  "scripts/repair-question-banks-semantic.mjs": [],
+  "scripts/report-coverage-deficits.mjs": [
+    "data/study/bibliography.js"
+  ],
+  "scripts/report-question-stem-patterns.mjs": [],
+  "scripts/revise-question-banks-context-v2.mjs": [],
+  "scripts/rewrite-locator-dependent-stems.mjs": [],
+  "scripts/sync-question-validation-totals.mjs": [],
+  "scripts/taxonomy-maps/manobrabilidade.mjs": [],
+  "scripts/test-complete-question-stems.mjs": [
+    "lib/question-banks.js",
+    "lib/question-structure.js"
+  ],
+  "scripts/test-flashcards-db-config.mjs": [
+    "lib/flashcards-db.js"
+  ],
+  "scripts/test-learning-algorithms.mjs": [
+    "lib/learning-algorithms.js"
+  ],
+  "scripts/test-legislation-content-restorations.mjs": [
+    "lib/question-banks-source.js",
+    "lib/question-editorial-normalization.js",
+    "lib/question-locator-audit.js",
+    "lib/question-quality-policy.js",
+    "lib/question-quality.js",
+    "lib/question-structure.js"
+  ],
+  "scripts/test-miguens-cap45-review.mjs": [
+    "lib/miguens-cap45-review.js",
+    "lib/question-quality-policy.js",
+    "lib/question-quality.js",
+    "lib/question-structure.js"
+  ],
+  "scripts/test-notebook-complete-stems.mjs": [
+    "lib/notebook-stem-restorations.js",
+    "lib/question-banks.js",
+    "lib/question-editorial-normalization.js",
+    "lib/question-quality-policy.js",
+    "lib/question-quality.js",
+    "lib/question-restorations.js",
+    "lib/question-structure.js"
+  ],
+  "scripts/test-notebook-context-stems.mjs": [
+    "lib/question-banks.js",
+    "lib/question-quality-policy.js",
+    "lib/question-structure.js"
+  ],
+  "scripts/test-pianc121-cge-quarantine.mjs": [
+    "lib/question-quality-policy.js",
+    "lib/question-taxonomy.js"
+  ],
+  "scripts/test-pscpp-audit-anv0005.mjs": [
+    "lib/question-banks.js",
+    "lib/question-structure.js"
+  ],
+  "scripts/test-question-quality-policy.mjs": [
+    "lib/question-quality-policy.js"
+  ],
+  "scripts/test-question-restorations.mjs": [],
+  "scripts/test-question-source-provenance.mjs": [
+    "lib/question-source-merge.js",
+    "scripts/lib/hash-module-closure.mjs"
+  ],
+  "scripts/test-question-structure.mjs": [
+    "lib/question-structure.js"
+  ],
+  "scripts/test-study-plan-bibliography-reference.mjs": [
+    "lib/study-plan-bibliography-reference.mjs"
+  ],
+  "scripts/test-study-plan-manual-queue.mjs": [
+    "lib/study-plan-manual-queue.mjs"
+  ],
+  "scripts/upgrade-question-banks-pscpp-v3.mjs": [],
+  "scripts/validate-arte-naval-taxonomy.mjs": [],
+  "scripts/validate-drive-library.mjs": [],
+  "scripts/validate-editorial-runtime.mjs": [
+    "lib/pscpp-exam-selection.js",
+    "lib/question-locator-audit.js"
+  ],
+  "scripts/validate-historical-exam-blueprint.mjs": [
+    "data/pscpp/generated-questions.json",
+    "data/pscpp/official-exams.json",
+    "lib/historical-exam-blueprint.js"
+  ],
+  "scripts/validate-learning-migrations.mjs": [],
+  "scripts/validate-pscpp-editorial-evidence.mjs": [],
+  "scripts/validate-pscpp-exam-selection.mjs": [
+    "lib/historical-exam-blueprint.js",
+    "lib/pscpp-exam-selection.js",
+    "lib/pscpp-exam-source.js"
+  ],
+  "scripts/validate-question-bank-quality.mjs": [],
+  "scripts/validate-question-bank.mjs": [],
+  "scripts/validate-question-banks.mjs": [],
+  "scripts/validate-question-taxonomy.mjs": [],
+  "scripts/validate-recaptcha-auth.mjs": [],
+  "scripts/validate-runtime-question-banks.mjs": [
+    "lib/question-quality.js"
+  ],
+  "scripts/validate-runtime-question-catalog.mjs": [
+    "lib/notebook-scope-index.js",
+    "lib/question-banks.js",
+    "lib/question-catalog.js",
+    "lib/question-filters.js",
+    "lib/question-summary.js",
+    "lib/subjects.js"
+  ],
+  "scripts/validate-study-plan-v3.mjs": []
+}
