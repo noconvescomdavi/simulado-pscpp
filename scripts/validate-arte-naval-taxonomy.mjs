@@ -15,6 +15,13 @@ const normalize = (value) => String(value ?? "")
   .replace(/[^a-z0-9]+/g, " ")
   .trim();
 
+// Mathematical alternatives must retain their operators for duplicate checks.
+// Expressions F/m and F·m, for example, are not equivalent.
+const optionIdentity = (value) => {
+  const raw=String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+  return /[=+/*√·^]/.test(raw) ? raw.replace(/\s+/g,"") : normalize(raw);
+};
+
 if (questions.length < BASELINE_TOTAL) {
   errors.push(`baseline incompleto: esperadas ao menos ${BASELINE_TOTAL} questões; encontradas ${questions.length}`);
 }
@@ -72,7 +79,7 @@ for (const [index, original] of questions.entries()) {
   const expectedOptionCount = isExpansion && isTrueFalse ? 2 : 5;
   if (options.length !== expectedOptionCount) {
     errors.push(`${question.id}: esperadas ${expectedOptionCount} alternativas para o formato ${question.style || question.question_type || "padrão"}`);
-  } else if (new Set(options.map((option) => normalize(option.text))).size !== options.length) {
+  } else if (new Set(options.map((option) => optionIdentity(option.text))).size !== options.length) {
     errors.push(`${question.id}: alternativas repetidas`);
   }
 
