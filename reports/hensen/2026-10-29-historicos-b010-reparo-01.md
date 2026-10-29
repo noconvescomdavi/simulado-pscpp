@@ -31,7 +31,7 @@
 - E: `A gob rope, por ser um cabo auxiliar, torna desnecessário controlar a posição e a orientação do rebocador.`
 - Explicação: fundamenta a necessidade de controlar o comprimento e desconectar a gob rope quando não necessária, para evitar o bloqueio da guinada e o girting.
 - **Localizador exato:** `Chapter 7, §7.2.1, p. 178 (PDF p. 191)`. **Taxonomia:** `arte-naval / hensen-tug / hensen-tug::ch7`.
-- **Gabarito A preservado. ID preservado.** Estado **`active=false` e `validation_status=quarantined` preservado**, com `editorial_review.status=rewritten_pending_independent_review` e `independent_review_required=true`.
+- **Gabarito A preservado. ID preservado.** Estado **`active=false` e `validation_status=quarantined` preservado**, com `editorial_review.status=source_rewrite_required`, `rewrite_progress=candidate_rewritten_pending_independent_review` e `independent_review_required=true`.
 
 ## Fundamentação e cautelas
 
@@ -40,3 +40,10 @@ A página 178 descreve um rebocador convencional saindo de um berço com gob rop
 Cotejo preliminar com as 160 novas: `ANV-HENSEN-C07-L001-01` avalia a função geral da gob rope; `ANV-HENSEN-C07-L001-02` avalia o dimensionamento dos componentes. O presente item trata do **risco específico de manter o arranjo conectado em comprimento inadequado durante a desatracação**. Há proximidade temática, mas não identidade literal; **revisão semântica independente ainda é obrigatória**.
 
 **Não houve reativação** nem homologação final. A correção é editorial e bibliográfica, com pendência de validação externa, testes do HEAD e compatibilidade de runtime. Nenhuma das outras 118 questões históricas foi reparada nesta execução.
+
+## Regressão detectada e reparada na CI
+
+- A CI https://github.com/noconvescomdavi/simulado-pscpp/actions/runs/40961099372 falhou em `test:notebook-complete-stems` porque a primeira versão do candidato alterou prematuramente `editorial_review.status` para `rewritten_pending_independent_review`, enquanto a regra de quarentena exige `source_rewrite_required` até a homologação.
+- **Antes da correção de regressão:** `status=rewritten_pending_independent_review`, e `assertions` antigas (sobre assuntos alheios à nova pergunta) ainda persistiam apesar do formato direto.
+- **Depois:** `status=source_rewrite_required` preserva a obrigação editorial; `rewrite_progress=candidate_rewritten_pending_independent_review` registra o progresso real; `independent_review_required=true`; `source_reverification_required=true` até nova revisão. As quatro afirmativas obsoletas foram removidas. O item continua **inativo e em quarentena**.
+- **Commit:** https://github.com/noconvescomdavi/simulado-pscpp/commit/239831334d3936b6a31297baa07d9638466ad60a . O teste **não foi desabilitado nem relaxado**; a estrutura da questão e os metadados foram corrigidos para satisfazer a obrigação editorial. Novo HEAD exige reexecução dos gates.
