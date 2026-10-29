@@ -116,8 +116,17 @@ if (!catalog?.works?.length) {
   for (const work of catalog.works) {
     for (const chapter of work.chapters || []) {
       const baselineReal = baselineChapterCounts.get(chapter.id) || 0;
-      if (baselineReal !== Number(chapter.question_count || 0)) {
-        errors.push(`${chapter.id}: catálogo baseline=${chapter.question_count}; real baseline=${baselineReal}`);
+      const catalogCount = Number(chapter.question_count || 0);
+      // The historical cap. 10 catalog count includes the later Volume-2
+      // chapter expansion; other entries reflect only the 1,150-item baseline.
+      const chapterNumber = /^fonseca-arte-v1::ch(\\d+)$/.exec(chapter.id)?.[1];
+      const v2Expansion = chapterNumber ? expansion.filter(q => {
+        const effective = canonicalizeQuestionTaxonomy(q);
+        return effective.taxonomy?.bibliography_id === "fonseca-arte-v2"
+          && effective.taxonomy?.chapter_id === `fonseca-arte-v2::ch${chapterNumber}`;
+      }).length : 0;
+      if (baselineReal !== catalogCount && baselineReal + v2Expansion !== catalogCount) {
+        errors.push(`${chapter.id}: catálogo=${catalogCount}; baseline=${baselineReal}; expansão v2=${v2Expansion}`);
       }
       if (work.source_available && baselineReal < 25) {
         errors.push(`${chapter.id}: fonte disponível, mas somente ${baselineReal} questões no baseline`);
