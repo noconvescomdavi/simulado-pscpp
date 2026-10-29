@@ -43,7 +43,7 @@
 | `ANV-HENSEN-C05-L002-03` | Escopo do cálculo de ondas curtas | Chapter 5, §5.2.4, p. 140 (PDF p. 153) | **C** | Criada; resposta justificada no JSON |
 | `ANV-HENSEN-C05-L002-04` | Massa adicionada na aproximação lateral | Chapter 5, §5.2.5, p. 140 (PDF p. 153) | **E** | Criada; resposta justificada no JSON |
 | `ANV-HENSEN-C05-L002-05` | Limite de uma fórmula de distância de parada | Chapter 5, §5.3.5, p. 147 (PDF p. 160) | **B** | Criada; resposta justificada no JSON |
-| `ANV-HENSEN-C06-L002-01` | Aproximação ao costado em movimento | Chapter 6, §6.3.2, p. 155 (PDF p. 168) | **D** | Criada; resposta justificada no JSON |
+| `ANV-HENSEN-C06-L002-01` | Escoamento nos ombros e na seção mestra | Chapter 6, §6.2.4, p. 154 (PDF p. 167) | **D** | Corrigida: enunciado, alternativas, explicação e localizador confrontados com p. 154 da obra; gabarito D preservado |
 | `ANV-HENSEN-C06-L002-02` | Risco de ultrapassagem de rebocador de proa | Chapter 6, §6.3.3, p. 155 (PDF p. 168) | **A** | Criada; resposta justificada no JSON |
 | `ANV-HENSEN-C06-L002-03` | Segurança da retinida | Chapter 6, §6.3.5, p. 160 (PDF p. 173) | **E** | Criada; resposta justificada no JSON |
 | `ANV-HENSEN-C06-L002-04` | Nevoeiro e risco na assistência | Chapter 6, §6.3.12, p. 163 (PDF p. 176) | **C** | Criada; resposta justificada no JSON |
@@ -67,3 +67,8 @@
 
 **Commits desta execução:** lote `f212f95d70edd20e36ddd3b44a26ae30c0496c75`; integração `ceefc1b851474a4b401d3129987b2c5a2ccf4e93`.
 **Decisão:** manter PR #173 aberto e sem merge/deploy até CI e demais gates aprovados.
+
+
+## Retificação bibliográfica — checkpoint 005 (29/10/2026)
+
+**ID:** `ANV-HENSEN-C06-L002-01`. Conferência direta do PDF da 4ª edição, páginas 167–168 (impressas 154–155), identificou referência inexata. **Antes:** pergunta genérica sobre seção mestra com referência ao §6.3.2, p. 155, cuja redação não sustenta a alegação de escoamento mais uniforme. **Depois:** pergunta aplicada sobre velocidade relativa do fluxo nos ombros de navio de casco largo versus seção mestra; alternativas reescritas, gabarito **D** preservado e explicação baseada no **§6.2.4, p. 154 (PDF p. 167)**, onde Hensen discute explicitamente o aumento da velocidade relativa nos ombros e a perda de efetividade de rebocadores empurrando ao costado. Não se afirma que a seção mestra seja isenta de interação. Commit: https://github.com/noconvescomdavi/simulado-pscpp/commit/050c7f45942693a3b5da95298dc29ec11c399806 .
