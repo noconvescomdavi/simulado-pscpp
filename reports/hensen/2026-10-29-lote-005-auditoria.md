@@ -67,3 +67,14 @@ Antes: o ID não existia no banco. Depois: o registro foi criado com cinco alter
 ## Critério de aprovação
 
 A validação estrutural e a conferência de seções da fonte foram executadas na preparação do lote. A homologação editorial independente e os workflows do HEAD final são gates adicionais e **não** estão automaticamente aprovados pela criação do arquivo.
+
+
+## Adendo de revisão independente — L005-02 (29/10/2026)
+
+A comparação cruzada dos **200 enunciados dos lotes 001–005** detectou equivalência semântica substancial entre `ANV-HENSEN-C01-L003-05` e `ANV-HENSEN-C01-L005-02`: ambos perguntavam a consequência de ampliar o pátio de contêineres sobre a bacia de evolução. A triagem lexical inicial do Lote 005 não detectou a repetição conceitual (similaridade Jaccard de tokens de enunciado + tema: **0,409** com normalização própria, sem ser prova isolada de equivalência).
+
+**ID corrigido:** `ANV-HENSEN-C01-L005-02`. **Antes:** tema "Conflito entre pátio de contêineres e bacia de evolução"; cenário de expansão de pátio reduzindo área aquática; alternativa correta D sobre espaço de manobra do conjunto navio–rebocadores; justificativa sobre área terrestre versus aquática. **Depois:** tema "Adequação da escolta de petroleiros em acessos expostos"; cenário de uso indevido de rebocadores dimensionados apenas para empurrar em bacias abrigadas na escolta de petroleiros em barra com ondas e marulho; alternativa correta D exige comprovação de aptidão ambiental e dos requisitos específicos da escolta. Foram substituídos enunciado, cinco alternativas, explicação e tema; preservados ID, capítulo, taxonomia, cinco alternativas A–E, gabarito **D**, estado ativo e referência `Chapter 1, §1.2.1, p. 5 (PDF p. 18)`.
+
+**Fundamentação verificada diretamente na edição original:** a página impressa 5 distingue acessos expostos a ondas/marulho e informa que a escolta de petroleiros e gaseiros nos acessos demanda rebocadores com requisitos específicos. A passagem é diferente da discussão sobre conflito entre pátio de contêineres e área de manobra, que permanece em `ANV-HENSEN-C01-L003-05`. Não se modificou o Lote 003.
+
+**Commit de correção:** https://github.com/noconvescomdavi/simulado-pscpp/commit/734783fc0221a242586478536c8a40a5e547d6c2 . **Limite:** revisão independente de uma duplicidade conceitual; não representa homologação semântica de todas as 200 questões. CI e demais gates do novo HEAD devem ser reconferidos antes de merge.
