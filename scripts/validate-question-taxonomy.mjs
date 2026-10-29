@@ -4,6 +4,19 @@ import {pathToFileURL} from "node:url";
 
 const root=process.cwd();
 const {validateQuestionTaxonomy,taxonomyCatalog,canonicalizeQuestionTaxonomy}=await import(pathToFileURL(path.join(root,"lib/question-taxonomy.js")).href);
+// Source-title variants coexist in the base branch and in historical
+// Volume-2 records. Both must map to the same canonical catalog entry.
+const legacyVolume2Id="1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec";
+for(const title of ["Arte Naval - Volume 2 - 8ª edição","Arte Naval, v. 2"]){
+  const fixture={taxonomy:{subject_slug:"arte-naval",bibliography_id:legacyVolume2Id,chapter_id:"Capítulo 9"},source:{title,drive_file_id:legacyVolume2Id}};
+  const normalized=canonicalizeQuestionTaxonomy(fixture);
+  if(normalized.taxonomy.bibliography_id!=="fonseca-arte-v2"||normalized.taxonomy.chapter_id!=="fonseca-arte-v2::ch9"){
+    throw new Error("Fonseca Volume-2 source-title normalization regression: "+title);
+  }
+}
+const unrelated={taxonomy:{subject_slug:"arte-naval",bibliography_id:legacyVolume2Id,chapter_id:"Capítulo 9"},source:{title:"Outra publicação",drive_file_id:legacyVolume2Id}};
+if(canonicalizeQuestionTaxonomy(unrelated)!==unrelated)throw new Error("Unrelated source was incorrectly canonicalized");
+
 const dir=path.join(root,"data/questions");
 const files=fs.readdirSync(dir).filter(x=>x.endsWith(".json")).sort();
 const rows=[];let invalid=0,quarantinedInvalid=0,legacy=0,total=0,canonicalized=0;
