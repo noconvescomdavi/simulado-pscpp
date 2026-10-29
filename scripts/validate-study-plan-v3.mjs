@@ -54,7 +54,19 @@ assert.match(client,/tasks\.filter\(t=>!\(t\.reprogrammed&&\(t\.source_plan_date
 assert.match(notebooks,/strictFixationMatch/,"Caderno diário não possui filtro estrito por obra/capítulo");
 assert.match(notebooks,/actualWork!==wantedWork/,"Fixação não exige correspondência exata da obra");
 assert.ok(!/fixationScore/.test(notebooks),"Fixação voltou a usar pontuação textual aproximada");
-assert.match(notebooks,/shuffle\(pool\)\.slice/,"Questões do capítulo não são limitadas somente após o filtro estrito");
+// A seleção foi centralizada na política de não repetição. Verificar a ordem
+// filtro estrito -> política de seleção -> limite, sem depender da implementação antiga.
+const repeatPolicy=read("lib/question-repeat-policy.js");
+const strictFilterIndex=notebooks.indexOf("pool=pool.filter(");
+const selectionIndex=notebooks.indexOf("selectNotebookQuestions(pool,answered,requestedCount");
+assert.ok(strictFilterIndex>=0&&selectionIndex>strictFilterIndex,
+  "Fixação deve filtrar por obra/capítulo antes de selecionar e limitar questões");
+assert.match(notebooks.slice(strictFilterIndex,selectionIndex),/strictFixationMatch\(question,ref\.subject,fixation\)/,
+  "Filtro estrito por obra/capítulo não é aplicado ao conjunto selecionável");
+assert.match(repeatPolicy,/const never=order\(candidates\.filter\(q=>!seenQuestion/,
+  "Política deve priorizar questões ainda não respondidas");
+assert.match(repeatPolicy,/const selected=\[\.\.\.never,\.\.\.old\]\.slice\(0,requested\)/,
+  "Limite solicitado deve ser aplicado após a seleção de questões inéditas e reutilizáveis");
 
 
 for(const table of [
