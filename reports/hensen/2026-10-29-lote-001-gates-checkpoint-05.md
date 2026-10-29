@@ -131,3 +131,20 @@ Os registros abaixo não foram corrigidos nem apagados. A mudança apenas evita 
 - Durante a inspeção do novo teste negativo, foi identificado que `lib/pscpp-exam-selection.js` utilizava `\\\\s` dentro de um **literal de expressão regular** em `isPscppEditoriallyEligible`. Isso procura uma barra literal seguida de `s`, em vez de espaços em branco, e poderia deixar passar uma alternativa de resposta copiada para `assertions`. A mesma forma defeituosa existe na `main` (blob `c5154ec5da4d56f43a1107f70dd5aa0c6714aba9`), portanto é preexistente.
 - **Antes:** regex duplamente escapada, incapaz de reconhecer padrões como `Apenas I e II são verdadeiras.`. **Depois:** escapes corrigidos para `\\s` dentro do literal de regex. O teste sintético adicionado em `validate-pscpp-exam-selection.mjs` exige rejeição desse caso, impedindo regressão. **Não foi desabilitado nenhum teste nem modificado conteúdo de questões.**
 - Commit: https://github.com/noconvescomdavi/simulado-pscpp/commit/bbfef3f38ec1d876c4aedfb859f4a3be1a604c60 . Validação remota do novo HEAD pendente; nenhum merge realizado.
+
+
+## Resultado dos gates após as correções (HEAD 6a27c2a)
+
+**Conferência remota concluída em 29/10/2026** para `6a27c2ae5a4d9e36e0d7187126eba3539cb53cc0`:
+
+| Gate | Resultado | Execução |
+|---|---|---|
+| CI (incluindo Legislação, editorial runtime, build e HTTP smoke E2E) | **PASS** | https://github.com/noconvescomdavi/simulado-pscpp/actions/runs/40954539625 |
+| Full Question Bank Audit | **PASS**, mas **2554 HIGH** ainda registrados no corpus bruto | https://github.com/noconvescomdavi/simulado-pscpp/actions/runs/40954539670 |
+| Audit Main Question Banks | **PASS** | https://github.com/noconvescomdavi/simulado-pscpp/actions/runs/40954539658 |
+| PSCPP Integral Bank Audit | **PASS** | https://github.com/noconvescomdavi/simulado-pscpp/actions/runs/40954539691 |
+| Validate PIANC 121 CGE Quarantine | **PASS** | https://github.com/noconvescomdavi/simulado-pscpp/actions/runs/40954539721 |
+| Vercel Preview | **READY** para SHA `6a27c2a` | https://vercel.com/estibordo/estibordo-pscpp/CNCkZB1Sj9YLTP4Gpxzv7EGGBwHZ |
+| Vercel Production | **READY somente para `main` `a03ccf9`**; não contém HENSEN | https://vercel.com/estibordo/estibordo-pscpp/Ge8vf857oW5hH1tzasSPgjNbReiJ |
+
+PR #173 verificado **aberto, mergeable=true, não integrado à main**. A aprovação técnica dos workflows **não equivale à homologação editorial**: apenas 24 de 120 novas foram confrontadas diretamente com páginas da obra nesta execução, 51 antigas ativas ainda precisam de revisão individual, 119 permanecem em quarentena, e 2554 achados HIGH do corpus bruto não estão integralmente saneados. **Decisão de segurança: manter PR aberto e não promover Production**. O presente adendo é documental; sua publicação em commit posterior gera um novo HEAD e exige reconferir os checks desse HEAD antes de qualquer merge.
