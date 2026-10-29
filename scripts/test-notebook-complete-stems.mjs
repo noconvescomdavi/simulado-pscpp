@@ -55,6 +55,13 @@ assert.equal(
   4,
   "AN-C11-1111-M1 must retain its four source propositions"
 );
+const quotedSourceAssertions = banks["arte-naval"]?.questions.find(q => q.id === "AN-C11-1118a-M1");
+assert.ok(quotedSourceAssertions, "AN-C11-1118a-M1 must remain visible despite quotations inside propositions");
+assert.equal(
+  classifyQuestionStructure(quotedSourceAssertions).blocks.find(block => block.type === "assertions")?.items.length,
+  4,
+  "AN-C11-1118a-M1 must retain its four source propositions"
+);
 const fonsecaBlocks = classifyQuestionStructure(fonsecaAssertions).blocks;
 assert.equal(
   fonsecaBlocks.find(block => block.type === "assertions")?.items.length,
