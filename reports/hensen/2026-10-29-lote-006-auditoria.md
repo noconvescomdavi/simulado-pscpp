@@ -54,7 +54,7 @@
 | `ANV-HENSEN-C09-L006-02` | Faixa típica de velocidade em escolta tandem | **D** | Cap. 9, §9.6.1, p. 249 (PDF p. 262) | Inédita |
 | `ANV-HENSEN-C09-L006-03` | Tendência de guinada após falha em navios cheios | **A** | Cap. 9, §9.6.2, p. 254 (PDF p. 267) | Inédita |
 | `ANV-HENSEN-C09-L006-04` | Continuidade controlada da guinada após avaria | **E** | Cap. 9, §9.6.2, p. 254 (PDF p. 267) | Inédita |
-| `ANV-HENSEN-C09-L006-05` | Limitação da escolta ativa em gelo muito pesado | **B** | Cap. 9, §9.6.4, p. 265 (PDF p. 278) | Inédita |
+| `ANV-HENSEN-C09-L006-05` | Limitação da escolta ativa em gelo muito pesado | **B** | Cap. 9, §9.6.2, p. 265 (PDF p. 278) | Inédita |
 
 ## Correção editorial identificada durante a execução
 
@@ -83,3 +83,14 @@
 4. **Sem merge nem deploy** antes da aprovação de todos os gates e da homologação editorial.
 
 **Próxima execução:** consultar o GitHub e este checkpoint; criar Lote 007 somente se não existir, sem recriar IDs ou sobrescrever o Lote 006.
+
+
+## Correção bibliográfica independente — `ANV-HENSEN-C09-L006-05` (checkpoint 008)
+
+- **Problema confirmado na fonte primária:** o texto sobre a inaplicabilidade da escolta ativa em gelo extremo está na página impressa **265** (PDF **278**), **dentro da seção 9.6.2, “Type of tugs, performance and ...”**, e não na seção 9.6.4, “Training and pilotage”. A seção 9.6.3 (“Escort tugs in use”) começa **depois** da passagem; a seção 9.6.4 também aparece posteriormente, no final da página 265.
+- **Antes:** `source.locator = "Chapter 9, §9.6.4, p. 265 (PDF p. 278)"`.
+- **Depois:** `source.locator = "Chapter 9, §9.6.2, p. 265 (PDF p. 278)"`.
+- **Preservados:** ID, tema, enunciado, cinco alternativas, gabarito **B**, explicação, taxonomia `arte-naval / hensen-tug::ch9`, estado ativo e demais metadados. O erro era de **seção**, não de página nem de conteúdo técnico.
+- **Evidência:** PDF da 4ª edição no acervo bibliográfico vinculado ao projeto, p. 265; a passagem sobre gelo extremo precede os cabeçalhos §9.6.3 e §9.6.4.
+- **Commit de correção:** https://github.com/noconvescomdavi/simulado-pscpp/commit/57aeb71ca9f58368b54fb6c28d36964a08518ead .
+- **Estado:** a correção individual não equivale à homologação editorial integral dos 240 novos nem dos 170 históricos. Os gates do novo HEAD precisam ser reexecutados; não realizar merge nem Production antes disso.
