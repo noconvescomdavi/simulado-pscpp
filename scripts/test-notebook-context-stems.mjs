@@ -35,7 +35,22 @@ const cap45Review=read('data/question-restorations/miguens-cap45-reviewed.json')
 const hash=value=>createHash('sha256').update(JSON.stringify(value??null)).digest('hex');
 assert.equal(edits.length,report.corrected);
 assert.equal(new Set(edits.map(e=>`${e.bank}::${e.id}`)).size,edits.length);
-assert.equal(Object.entries(banks).filter(([slug])=>slug!=='situacoes-de-manobra-ripeam').reduce((n,[,b])=>n+b.questions.length,0),9955-cap45Review.edits.filter(e=>e.pool==="Cadernos"&&!e.question.active).length);
+// O baseline anterior (9955) inclui as 170 questões Hensen antigas.
+// Reconciliar lotes novos e quarentenas documentadas sem aceitar perda
+// silenciosa de questões das demais bibliografias.
+const extensionDir=new URL("../data/question-extensions/",import.meta.url);
+const addedHensen=fs.readdirSync(extensionDir)
+  .filter(name=>/^hensen-lote-\d+\.json$/.test(name))
+  .reduce((n,name)=>n+read("data/question-extensions/"+name).questions.length,0);
+const hensenQuarantined=["010","013","016","019","021","022","023"]
+  .reduce((n,block)=>n+read("data/question-extensions/pscpp-caderno-bloco-"+block+".json").questions
+    .filter(q=>q.taxonomy?.bibliography_id==="hensen-tug"&&q.active===false&&q.validation_status==="quarantined").length,0);
+assert.equal(hensenQuarantined,119,"Os 119 registros Hensen em quarentena não podem reaparecer sem revisão");
+const activeHensen=(banks["arte-naval"]?.questions||[]).filter(q=>q.taxonomy?.bibliography_id==="hensen-tug");
+assert.equal(activeHensen.length,170-hensenQuarantined+addedHensen,
+  "Contagem Hensen ativa incompatível com a quarentena e os lotes publicados");
+assert.equal(Object.entries(banks).filter(([slug])=>slug!=="situacoes-de-manobra-ripeam").reduce((n,[,b])=>n+b.questions.length,0),
+  9955+addedHensen-hensenQuarantined-cap45Review.edits.filter(e=>e.pool==="Cadernos"&&!e.question.active).length);
 for(const edit of edits){
  const q=banks[edit.bank].questions.find(q=>q.id===edit.id);
  const baseline=report.questions.find(q=>q.bank===edit.bank&&q.id===edit.id);
