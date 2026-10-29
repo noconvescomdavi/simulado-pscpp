@@ -59,3 +59,14 @@ Após o commit documental `f0da7df05b933cf1391f6090f93510783e966e8c`, o PR conti
 **Importante:** a publicação deste relatório gera novo commit documental, que exigirá nova verificação do HEAD exato. Não se autoriza merge com base em gates verdes de SHA anterior. Confirmar também o estado real da Production no SHA correto após eventual merge seguro.
 
 **Próxima execução:** conferir checks do HEAD final, comparar fonte e conceitos de mais questões, resolver pares semanticamente equivalentes, revisar os 51 históricos ativos e avançar gradualmente na reparação bibliográfica dos 119 em quarentena. Persistir IDs, antes/depois e evidências; não desativar gates nem declarar quarentena como reparo definitivo.
+
+
+## Adendo — dois HIGH HENSEN identificados no artefato da auditoria e corrigidos
+
+O artefato de [Full Question Bank Audit #40969338336](https://github.com/noconvescomdavi/simulado-pscpp/actions/runs/40969338336) registrou **2.556 HIGH e 0 CRITICAL** em 25.745 questões. O arquivo JSON do artefato foi inspecionado integralmente: **dois HIGH são HENSEN**, ambos `LOCATOR_DEPENDENT_STEM` — `ANV-HENSEN-C06-L002-01` e `ANV-HENSEN-C09-L005-05`. Não confundir workflow PASS com ausência de HIGH.
+
+Os dois enunciados foram reformulados para situações operacionais autocontidas, com a fonte primária conferida em **§6.2.4, p. 154 / PDF 167** e **§9.7, p. 267 / PDF 280**, respectivamente. **Gabaritos D e E, alternativas, IDs, taxonomia e estado ativo foram preservados.** Commits de conteúdo: [3179b3a](https://github.com/noconvescomdavi/simulado-pscpp/commit/3179b3ac222aea5b4692472eacd5e2c3be25e014) e [7f06f85](https://github.com/noconvescomdavi/simulado-pscpp/commit/7f06f85da98177908bf9be2412fa7c779126c17f).
+
+**Relatório individual antes/depois, justificativas, URLs e limitações:** [2026-10-29-hensen-locator-reparos-01.md](https://github.com/noconvescomdavi/simulado-pscpp/blob/audit/hensen-lote-001-20261029/reports/hensen/2026-10-29-hensen-locator-reparos-01.md).
+
+O resultado do novo Full Question Bank Audit precisa confirmar a eliminação desses **dois IDs HENSEN**; não se afirma que os 2.554 HIGH restantes tenham sido resolvidos. Este adendo gera novo HEAD e obriga reconferir todos os gates. **Merge e Production permanecem bloqueados.**
