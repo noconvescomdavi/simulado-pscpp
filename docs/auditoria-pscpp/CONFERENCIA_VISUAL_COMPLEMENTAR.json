@@ -1,0 +1,45 @@
+{
+  "method":"Páginas renderizadas com PyMuPDF e inspecionadas visualmente. Não constitui revalidação técnica das respostas.",
+  "sources":[
+    {"year":2006,"sha256":"a586d4af526fccc39a8c8d2e8a25e00d20bb12172e559d1aa2e7b4009e4ba74f","checks":[
+      {"number":1,"pages":[1],"finding":"Cinco termos e seis definições; B, uma sem correspondente."},
+      {"number":6,"pages":[3],"finding":"Best to some alongside também no original; D. Não normalizar silenciosamente."},
+      {"number":8,"pages":[4],"finding":"Cinco tipos e seis descrições inglesas, uma sem correspondente; D."},
+      {"number":15,"pages":[7],"finding":"Padrão infravermelho sem imagem específica anexada; E."},
+      {"number":17,"pages":[8],"finding":"Tabela 75/45/30 rpm e 16/10/6 nós; C, 3 Lpp em ambas as condições de equilíbrio."},
+      {"number":59,"pages":[27],"finding":"Carta sinótica conceitual, sem carta específica; E."},
+      {"number":68,"pages":[30],"finding":"Caso narrativo extenso sem planta anexada; A."}
+    ]},
+    {"year":2008,"sha256":"dcd1c24da49e01c91207e35f3cb97b6328dff50a673d994daf96a34220c5eefb","checks":[
+      {"number":1,"pages":[1],"finding":"Mensagem fonética e opções inglesas, comando português; A."},
+      {"number":4,"pages":[2],"finding":"E: reduzir velocidade reduz squat e calado dinâmico."},
+      {"number":17,"pages":[7],"finding":"Classe Knox, sem figura de espias; condições e sequência no texto; E."},
+      {"number":19,"pages":[8],"finding":"Cinco tipos, seis sinais, repetição admitida; C."},
+      {"number":38,"pages":[18],"finding":"Cinco proposições completas; V/F E."},
+      {"number":47,"pages":[22],"finding":"Quatro órgãos e cinco descrições SAR; repetição admitida, B."},
+      {"number":62,"pages":[28],"finding":"DPC presente no PDF e em data/pscpp/official-exams.json, id pscpp::official::2008::062, alternativa C. Nenhum reparo no banco arquivado."},
+      {"number":63,"pages":[28],"finding":"Limites da interpolação de maré em lacunas, sem tabela numérica; C."},
+      {"number":65,"pages":[29],"finding":"Cinco termos e dez descrições, cinco sem correspondente; E."}
+    ]},
+    {"year":2011,"sha256":"9b513e3af4a2f253d285e37d88c99c8e72e4ef0569b7a8b17dd86cf763193494","checks":[
+      {"number":8,"pages":[4],"finding":"Quatro termos, seis definições, duas sem correspondente; B."},
+      {"number":24,"pages":[12],"finding":"Alteração expressa D para A e A em vermelho."},
+      {"number":25,"pages":[12],"finding":"Frase repetida na alternativa C também no original; D."},
+      {"number":39,"pages":[20],"finding":"Datas 14/21 setembro e oito eventos PM/BM conferidos; C."},
+      {"number":49,"pages":[24,25,26],"finding":"Tabela completa dos 14 rebocadores; trações AV/AR diferentes de Arrojado e Édipo; comando desconsidera bollard pull; B."},
+      {"number":51,"pages":[27,28],"finding":"Montagem de içadas e substitutas das cinco opções conferida em três colunas; E."},
+      {"number":53,"pages":[29],"finding":"Figura à proa de BE com vetores T e R; sentido da terceira força depende da geometria; E."},
+      {"number":58,"pages":[33],"finding":"Braços 22/9m e 15/7m conferidos; C."},
+      {"number":61,"pages":[35],"finding":"Extrato e tabelas I/II com cabeçalhos preservados; C, 01h20."},
+      {"number":71,"pages":[40],"finding":"Quatro posições por três tipos de rebocador; D, V/V/V/F/V."}
+    ]},
+    {"year":2012,"sha256":"e968e9b8f83d9f77d9940aed137a0c4199f0ba6136c0b1a9c9222530e651163c","checks":[
+      {"number":7,"pages":[4],"finding":"Anulada por pode em vez de popa; texto completo, sem resposta definitiva."},
+      {"number":14,"pages":[7],"finding":"Rumos e marcações no texto, sem figura; D."},
+      {"number":16,"pages":[8],"finding":"D, manter rumo e velocidade. Texto não declara obstrução da visão na curva e informa cumprimento prévio das regras."},
+      {"number":21,"pages":[11],"finding":"Três tabelas; profundidade 6m, calado 8m, FAQ 1,6m, faina 30min; A, 07h15–12h00."}
+    ]}
+  ],
+  "pdf_parser_warning":"PDF 2012 emite aviso de configuração padrão de camadas ausente em Poppler/MuPDF. Numeração, alternativas, pontos e marcações recuperados; páginas críticas renderizadas. Aviso preservado.",
+  "raster_scan":"Única imagem de questão com altura acima de 70 pontos: diagrama na página 29 de 2011, inspecionado. Tabelas vetoriais identificadas na leitura e conferidas separadamente. Cabeçalhos excluídos."
+}

@@ -1,0 +1,332 @@
+[
+  {
+    "table_schema": "public",
+    "table_name": "ai_tutor_daily_usage",
+    "column_name": "questions",
+    "data_type": "integer"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "exam_sessions",
+    "column_name": "question_ids",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_answers",
+    "column_name": "id",
+    "data_type": "bigint"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_answers",
+    "column_name": "user_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_answers",
+    "column_name": "attempt_id",
+    "data_type": "bigint"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_answers",
+    "column_name": "question_id",
+    "data_type": "character varying"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_answers",
+    "column_name": "subject",
+    "data_type": "character varying"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_answers",
+    "column_name": "selected_answer",
+    "data_type": "text"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_answers",
+    "column_name": "is_correct",
+    "data_type": "boolean"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_answers",
+    "column_name": "response_time_ms",
+    "data_type": "integer"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_answers",
+    "column_name": "answered_at",
+    "data_type": "timestamp with time zone"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_answers",
+    "column_name": "session_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_notebook_answers",
+    "column_name": "id",
+    "data_type": "bigint"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_notebook_answers",
+    "column_name": "notebook_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_notebook_answers",
+    "column_name": "user_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_notebook_answers",
+    "column_name": "subject",
+    "data_type": "character varying"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_notebook_answers",
+    "column_name": "question_id",
+    "data_type": "character varying"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_notebook_answers",
+    "column_name": "selected_answer",
+    "data_type": "character varying"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_notebook_answers",
+    "column_name": "is_correct",
+    "data_type": "boolean"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_notebook_answers",
+    "column_name": "response_time_ms",
+    "data_type": "integer"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_notebook_answers",
+    "column_name": "answered_at",
+    "data_type": "timestamp with time zone"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_notebooks",
+    "column_name": "id",
+    "data_type": "uuid"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_notebooks",
+    "column_name": "user_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_notebooks",
+    "column_name": "title",
+    "data_type": "character varying"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_notebooks",
+    "column_name": "subjects",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_notebooks",
+    "column_name": "question_refs",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_notebooks",
+    "column_name": "total_questions",
+    "data_type": "integer"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_notebooks",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_notebooks",
+    "column_name": "updated_at",
+    "data_type": "timestamp with time zone"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_stats",
+    "column_name": "user_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_stats",
+    "column_name": "question_id",
+    "data_type": "character varying"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_stats",
+    "column_name": "subject",
+    "data_type": "character varying"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_stats",
+    "column_name": "answer_count",
+    "data_type": "integer"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_stats",
+    "column_name": "correct_count",
+    "data_type": "integer"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_stats",
+    "column_name": "error_count",
+    "data_type": "integer"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_stats",
+    "column_name": "last_answered_at",
+    "data_type": "timestamp with time zone"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_snapshot_tasks",
+    "column_name": "id",
+    "data_type": "bigint"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_snapshot_tasks",
+    "column_name": "snapshot_id",
+    "data_type": "bigint"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_snapshot_tasks",
+    "column_name": "user_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_snapshot_tasks",
+    "column_name": "plan_date",
+    "data_type": "date"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_snapshot_tasks",
+    "column_name": "task_key",
+    "data_type": "character varying"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_snapshot_tasks",
+    "column_name": "task_type",
+    "data_type": "character varying"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_snapshot_tasks",
+    "column_name": "subject_slug",
+    "data_type": "character varying"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_snapshot_tasks",
+    "column_name": "position",
+    "data_type": "smallint"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_snapshot_tasks",
+    "column_name": "payload",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_snapshot_tasks",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_snapshots",
+    "column_name": "id",
+    "data_type": "bigint"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_snapshots",
+    "column_name": "user_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_snapshots",
+    "column_name": "week_start",
+    "data_type": "date"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_snapshots",
+    "column_name": "week_end",
+    "data_type": "date"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_snapshots",
+    "column_name": "algorithm_version",
+    "data_type": "character varying"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_snapshots",
+    "column_name": "source",
+    "data_type": "character varying"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_snapshots",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_snapshots",
+    "column_name": "frozen_at",
+    "data_type": "timestamp with time zone"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_snapshots",
+    "column_name": "metadata",
+    "data_type": "jsonb"
+  }
+]

@@ -1,0 +1,110 @@
+{
+  "checkpoint": "106",
+  "decisions": [
+    {
+      "id": "AN-C12-1233-M1",
+      "consumer": "cadernos",
+      "before_hash": "4c49f9b7a77c1c237127654d656d80a0ae72ff042461b07a68cd15021345bc16",
+      "after_hash": "b4fc9ab2a15836d7f06a9e7d52ef895bf2a78f8740d7947329b3d5f58f913847",
+      "previous_status": "CORRIGIR",
+      "resolved_findings": [
+        {
+          "level": "CORRIGIR",
+          "code": "MISSING_ASSERTIONS",
+          "detail": "As alternativas escolhem proposições numeradas, mas o enunciado e os campos adicionais não apresentam essas proposições.",
+          "evidence": {
+            "required": [
+              "I",
+              "III",
+              "II",
+              "IV"
+            ],
+            "structure": "simple"
+          }
+        },
+        {
+          "level": "REVISAR",
+          "code": "LOCATOR_OR_GENERIC_COMMAND",
+          "detail": "Comando genérico ou dependente de localizador identificado pelo verificador do projeto; exige revisão individual do conteúdo.",
+          "evidence": "De acordo com Arte Naval, v. 2, acerca de Largar de um cais, assinale a alternativa que apresenta corretamente a disposição, requisito ou conceito previsto na publicação."
+        }
+      ],
+      "basis": "Individualprimarysource/fulloptions/rationales/renderingchecked;12331M1/M2 now distinctaftercase/space normalization and invariantunderexistingtransforms.No finalapprovalor semanticcoexistencecertification.",
+      "final_approval": false
+    },
+    {
+      "id": "AN-C12-12331-M1",
+      "consumer": "cadernos",
+      "before_hash": "1ac0ee7f67ce1bf8a6222241ab835ab974ed14634ba4056f1de5c9aa59475106",
+      "after_hash": "f5d78cad4acb33467da6cd2bca28211213f91108a149dedcec471f141ccacd83",
+      "previous_status": "CORRIGIR",
+      "resolved_findings": [
+        {
+          "level": "CORRIGIR",
+          "code": "MISSING_ASSERTIONS",
+          "detail": "As alternativas escolhem proposições numeradas, mas o enunciado e os campos adicionais não apresentam essas proposições.",
+          "evidence": {
+            "required": [
+              "I",
+              "III",
+              "II",
+              "IV"
+            ],
+            "structure": "simple"
+          }
+        },
+        {
+          "level": "REVISAR",
+          "code": "LOCATOR_OR_GENERIC_COMMAND",
+          "detail": "Comando genérico ou dependente de localizador identificado pelo verificador do projeto; exige revisão individual do conteúdo.",
+          "evidence": "De acordo com Arte Naval, v. 2, acerca de Não havendo vento ou corrente, assinale a alternativa que apresenta corretamente a disposição, requisito ou conceito previsto na publicação."
+        },
+        {
+          "level": "REVISAR",
+          "code": "SAME_STEM_OTHER_ID",
+          "detail": "Enunciado idêntico em outro ID com alternativas diferentes; conferir se avaliam o mesmo conceito.",
+          "evidence": [
+            {
+              "pool": "Cadernos",
+              "id": "AN-C12-12331-M2"
+            }
+          ]
+        }
+      ],
+      "basis": "Individualprimarysource/fulloptions/rationales/renderingchecked;12331M1/M2 now distinctaftercase/space normalization and invariantunderexistingtransforms.No finalapprovalor semanticcoexistencecertification.",
+      "final_approval": false
+    },
+    {
+      "id": "AN-C12-12331-M2",
+      "consumer": "cadernos",
+      "before_hash": "7a7a6de18712929776a39a0d9ae5f09a776d15cf1698f4b4b1f4cc4848a62aa2",
+      "after_hash": "83c53bfe42b51d536231e8dacc418f89e021dc113ac04f0dc675a2225970516b",
+      "previous_status": "REVISAR",
+      "resolved_findings": [
+        {
+          "level": "REVISAR",
+          "code": "LOCATOR_OR_GENERIC_COMMAND",
+          "detail": "Comando genérico ou dependente de localizador identificado pelo verificador do projeto; exige revisão individual do conteúdo.",
+          "evidence": "De acordo com Arte Naval, v. 2, acerca de Não havendo vento ou corrente, assinale a alternativa que apresenta corretamente a disposição, requisito ou conceito previsto na publicação."
+        },
+        {
+          "level": "REVISAR",
+          "code": "SAME_STEM_OTHER_ID",
+          "detail": "Enunciado idêntico em outro ID com alternativas diferentes; conferir se avaliam o mesmo conceito.",
+          "evidence": [
+            {
+              "pool": "Cadernos",
+              "id": "AN-C12-12331-M1"
+            }
+          ]
+        }
+      ],
+      "basis": "Individualprimarysource/fulloptions/rationales/renderingchecked;12331M1/M2 now distinctaftercase/space normalization and invariantunderexistingtransforms.No finalapprovalor semanticcoexistencecertification.",
+      "final_approval": false
+    }
+  ],
+  "specific_review_findings_resolved_for_other_flagged_ids": 2,
+  "other_flagged_ids_resolved": 1,
+  "previous_copy_decisions_recounted": false,
+  "global_semantic_prevention_approved": false
+}

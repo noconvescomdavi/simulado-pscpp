@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
-import { createHash } from "node:crypto";
 import { readFile, readdir, writeFile } from "node:fs/promises";
+import { fileURLToPath } from "node:url";
+import { hashLocalModuleClosure } from "./lib/hash-module-closure.mjs";
 import { collectActiveQuestionBanks } from "../lib/question-banks-source.js";
 
 const root = new URL("../", import.meta.url);
@@ -16,12 +17,7 @@ for (const directory of directories) {
     if (file.endsWith(".json") && !file.startsWith("runtime-")) inputs.push(`${directory}/${file}`);
   }
 }
-const digest = createHash("sha256");
-for (const path of inputs.sort()) {
-  digest.update(path);
-  digest.update(await readFile(new URL(path, root)));
-}
-const sourceHash = digest.digest("hex");
+const { sourceHash } = await hashLocalModuleClosure(fileURLToPath(root), ["lib/question-banks-source.js"], inputs);
 if (process.argv.includes("--check")) {
   const saved = JSON.parse(await readFile(output, "utf8"));
   assert.equal(saved.source_hash, sourceHash, "Bancos de cadernos desatualizados; execute npm run generate:question-banks");

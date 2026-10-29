@@ -1,0 +1,30 @@
+{
+  "previous_candidates": 256,
+  "current_candidates": 246,
+  "corrected_with_primary_source": [
+    "ANV-0005",
+    "ANV-0007",
+    "ANV-0016",
+    "ANV-0023",
+    "ANV-0020",
+    "ANV-0021",
+    "ANV-0025"
+  ],
+  "removed_false_positive_candidates": [
+    {
+      "id": "LEG-0205",
+      "reason": "Ações afirmativas nas opções não é conjunto de proposições numeradas. Conteúdo efetivo inalterado."
+    },
+    {
+      "id": "LEG-0874",
+      "reason": "Ações afirmativas nas opções não é conjunto de proposições numeradas. Conteúdo efetivo inalterado."
+    },
+    {
+      "id": "COM-0231",
+      "reason": "Instruction é marcador de mensagem, não numeral romano I. Opções não selecionam conjuntos de afirmativas; conteúdo efetivo inalterado."
+    }
+  ],
+  "method": "Triagem reproduz o predicado do teste existente. Sete IDs corrigidos com hashes exatos em CORRECOES_RUNTIME.json. Retirada de falso positivo não aprova conteúdo bibliográfico.",
+  "locator_candidates": 77,
+  "release_approval": false
+}
