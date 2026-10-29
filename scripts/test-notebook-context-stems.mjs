@@ -51,8 +51,19 @@ assert.ok(activeHensen.length<=170-hensenQuarantined+addedHensen,
   "O runtime não pode expor mais questões Hensen que as elegíveis na fonte");
 assert.ok(activeHensen.every(q=>q.active!==false&&q.validation_status!=="quarantined"),
   "Questões Hensen em quarentena não podem reaparecer no runtime");
-assert.equal(Object.entries(banks).filter(([slug])=>slug!=="situacoes-de-manobra-ripeam").reduce((n,[,b])=>n+b.questions.length,0),
-  9955+addedHensen-hensenQuarantined-cap45Review.edits.filter(e=>e.pool==="Cadernos"&&!e.question.active).length);
+// The historical fixed count predates independent bank expansions. Check
+// exact source-to-runtime parity instead, plus the historical lower bound.
+const {collectActiveQuestionBanks}=await import("../lib/question-banks-source.js");
+const activeKeys=entries=>Object.entries(entries)
+  .filter(([slug])=>slug!=="situacoes-de-manobra-ripeam")
+  .flatMap(([slug,b])=>(b.questions||[]).map(q=>`${slug}::${q.id}`));
+const observedKeys=activeKeys(banks);
+const sourceKeys=activeKeys(collectActiveQuestionBanks());
+assert.deepEqual(observedKeys,sourceKeys,"Runtime IDs must exactly match source-derived active bank IDs");
+const historicalMinimum=9955+addedHensen-hensenQuarantined
+  -cap45Review.edits.filter(e=>e.pool==="Cadernos"&&!e.question.active).length;
+assert.ok(observedKeys.length>=historicalMinimum,
+  `Runtime bank below historical floor: ${observedKeys.length} < ${historicalMinimum}`);
 for(const edit of edits){
  const q=banks[edit.bank].questions.find(q=>q.id===edit.id);
  const baseline=report.questions.find(q=>q.bank===edit.bank&&q.id===edit.id);
