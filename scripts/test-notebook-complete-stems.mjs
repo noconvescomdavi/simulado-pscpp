@@ -8,6 +8,31 @@ import { classifyQuestionStructure, structuredPublicQuestion } from "../lib/ques
 import { publicQuestion as notebookPublicQuestion } from "../lib/question-banks.js";
 import { createHash } from "node:crypto";
 
+// Regression: a leaked or malformed combination stem must never be flattened
+// into a generic single-choice command that makes the key uninterpretable.
+const { reformulateLeakingStem: guardCombinationStem } = await import("../lib/question-quality.js");
+const combinationFixture = {
+  id: "REGRESSION-COMBINATION",
+  question: 'Sobre “Esta frase técnica longa exige verificação bibliográfica independente”, examine:\nI. Primeira proposição.\nII. Segunda proposição.\nIII. Terceira proposição.',
+  options: [
+    { key: "A", text: "Apenas I" }, { key: "B", text: "Apenas II" },
+    { key: "C", text: "Apenas III" }, { key: "D", text: "Apenas I e II" },
+    { key: "E", text: "Apenas II e III" },
+  ],
+  correct_answer: "D",
+  topic: "Operações portuárias",
+  source: { title: "Obra técnica" },
+};
+const completeCombination = guardCombinationStem(combinationFixture);
+assert.equal(completeCombination.question, combinationFixture.question, "Complete propositions must never be replaced with a generic stem");
+const incompleteCombination = guardCombinationStem({
+  ...combinationFixture,
+  question: 'Sobre “Esta frase técnica longa exige verificação bibliográfica independente”, assinale a alternativa correta.',
+});
+assert.equal(incompleteCombination.active, false, "Missing combination propositions must be quarantined");
+assert.equal(incompleteCombination.status, "quarantined");
+assert.equal(incompleteCombination.question.includes("frase técnica longa"), true, "Quarantine must preserve source text for repair");
+
 const require = createRequire(import.meta.url);
 const filename = fileURLToPath(new URL("../app/components/StructuredQuestion.js", import.meta.url));
 const babel = require("next/dist/compiled/babel/core");
