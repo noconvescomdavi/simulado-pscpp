@@ -26,6 +26,14 @@ E("fonseca-arte-v1","FONSECA — Arte Naval, Volume 1, 8ª ed.",[
 {...S("ch11","Capítulo 11 – Aparelho de Governo, Mastreação e Aparelhos de Carga"),pageStart:755,pageEnd:790},
 {...S("ch12","Capítulo 12 – Manobra do Navio"),pageStart:791,pageEnd:936}
 ]),
+// Volume 2 is a distinct source in the current question bank. Keep the
+// historical Volume-1 catalog IDs for older questions without relabeling them.
+E("fonseca-arte-v2","FONSECA — Arte Naval, Volume 2, 8ª ed.",[
+{...S("ch9","Capítulo 9 – Poleame, Aparelhos de Laborar e Acessórios"),pageStart:657,pageEnd:704},
+{...S("ch10","Capítulo 10 – Aparelho de Fundear e Suspender"),pageStart:705,pageEnd:754},
+{...S("ch11","Capítulo 11 – Aparelho de Governo, Mastreação e Aparelhos de Carga"),pageStart:755,pageEnd:790},
+{...S("ch12","Capítulo 12 – Manobra do Navio"),pageStart:791,pageEnd:936}
+]),
 E("macelrevey","MacELREVEY — Shiphandling for the Mariner, 4ª ed.",[
 S("ch1","Chapter 1 – Arrival"),
 S("ch2","Chapter 2 – Shiphandling in a Channel"),
