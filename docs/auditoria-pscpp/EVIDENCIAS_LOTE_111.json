@@ -1,0 +1,985 @@
+{
+  "checkpoint": "111",
+  "base_commit": "cc56526b188aca186a4277dd1ce4cd4875744f00",
+  "base_tree": "58a7fe449bf0a0ec22bf42c526a7c15aac2a8fe7",
+  "remote_head_before_edit": "d5f1354887b67e6483bf77320901f15d5728ce28",
+  "partial_only": true,
+  "release_approval": false,
+  "summary": {
+    "checkpoint": "111",
+    "previous_unique_broken": 86,
+    "structural_defects_repaired": 2,
+    "remaining_structural_defects": 84,
+    "new_content_corrections": 6,
+    "accumulated_partial_corrections": 463,
+    "final_editorial_approvals": 0,
+    "duplicate_alerts_resolved": 520,
+    "duplicate_pairs_checked": 260,
+    "unique_ids": 13715,
+    "runtime_occurrences": 14086,
+    "counts_by_id": {
+      "SEM_ALERTA_AUTOMATICO": 10439,
+      "REVISAR": 3188,
+      "CORRIGIR": 84,
+      "DOCUMENTAR": 4
+    },
+    "notes": [
+      "Alertas de cópia resolvidos somente quando há proveniência explícita e igualdade do enunciado após normalizar espaços e caixa, e igualdade literal de alternativas, gabarito e explicação nos dois consumidores.",
+      "Correções de conteúdo são parciais, com fonte primária; requerem rechecagem independente e validação integral.",
+      "Os IDs sem alerta automático não são aprovações finais.",
+      "Pendência ANV-0142 mantida: o sumário do exemplar anuncia thruster no art.11.13, mas o corpo do livro nessa numeração trata do aparelho fixo da mastreação. Não foi usada referência incompatível para inventar conteúdo.",
+      "Lote084: cinco defeitos removidos da fila após leitura bibliográfica e verificação de renderização. Outros dez modelos associados foram corrigidos; nenhum dos3193 alertas de outros IDs foi dado como resolvido.",
+      "Lote085: oito correções ativas e três defeitos estruturais reparados. AN-C11-1118b-M2 já estava ausente do runtime; original e exclusão preservados, sem contar correção ou revisão. Nenhum novo alerta de duplicidade resolvido.",
+      "Lote086: seis novos IDs ativos corrigidos parcialmente, incluindo dois defeitos estruturais. Sem nova resolução dos3193 alertas, sem recontagem das520 decisões de duplicidade, sem aprovação final.",
+      "Lote087: oito correções parciais ativas, três defeitos estruturais reparados. AN-C11-1122-M3 já ausente do runtime, original e exclusão preservados, sem revisão/correção contada. Nenhuma nova resolução dos3193alertas ou das520decisões de duplicidade.",
+      "Lote088:15 correções parciais ativas e5 defeitos estruturais reparados. SiglaTT conferida na imagem e corrigida em1122eM1/M2. Nenhum dos3193 outros alertas ou520 decisões anteriores recontado.",
+      "Lote089:6 correções parciais ativas,2 defeitos estruturais reparados. Modelo de leme explicitamente isolado; página[791] inferida e declarada. Nenhuma nova resolução dos3193 outros alertas ou recontagem das520 decisões anteriores.",
+      "Lote090:6 novos IDs ativos com correções parciais e2 defeitos estruturais reparados. Descarga e pressão lateral separadas; sem recontar os520 alertas ou resolver os3193 outros IDs. Lista acumulada saneada de15 entradas repetidas,sem alterar os338 IDs únicos anteriores.",
+      "Lote091:6 novos IDs ativos com correções parciais e2 defeitos estruturais reparados.12.6.1 inteiro nap798/PDF159;localizador ajustado nos3modelos. Sem nova resolução dos3193outrosIDs ou recontagem das520decisões anteriores.",
+      "Lote092:3 novosIDs ativos parcialmente corrigidos,1defeito estrutural reparado.091 recuperado em commit/árvore originais após ZIP incompleto,sem refazer/recontar.520 decisões e3193outros IDs não recontados.",
+      "Lote093:3novosIDs parcialmente corrigidos e1defeito estrutural;1262M2 rechecado por troca de campos,sem novo ID/conferência contado.4deltas efetivos,3IDs novos no acumulado.Nenhuma resolução adicional dos3193alertas ou recontagem das520decisões.",
+      "Lote094:4novosIDs parcialmente corrigidos,1defeito estrutural e2alertas específicos de128M2 resolvidos;3193outros IDs caem para3192.127M1/M2 já ausentes,preservados semcontagem.Nenhuma aprovação/recontagem dos520alertas.",
+      "Lote095:6novosIDs ativos parcialmente corrigidos,2defeitos estruturais reparados.Nenhum novo decremento dos3192outrosIDs ou recontagem dos520alertas antigos.Os2alertas específicos de128M2 resolvidos094 não recontados.",
+      "Lote096:6novos IDs ativos parcialmente corrigidos,2defeitos estruturais e2alertas específicos de1212M2 resolvidos;3192outrosIDs passam a3191.Não há aprovação final/prevenção semântica global.Nenhuma recontagem dos520alertas antigos ou decisões094.",
+      "Lote097:6novosIDs ativos parcialmente corrigidos,2defeitos estruturais. Nenhum novo decremento dos3191outrosIDs ou recontagem das decisões094/096 e520alertas antigos.Sem aprovação final.",
+      "Lote098: seis novos IDs ativos parcialmente corrigidos e dois defeitos estruturais. Nenhum novo decremento dos 3191 outros IDs nem recontagem das decisões anteriores. Zero aprovação final.",
+      "Lote099: oito novos IDs ativos parcialmente corrigidos e dois defeitos estruturais.1219M1 já ausente,preservado sem incremento.Nenhum novo decremento dos3191outrosIDs ou recontagem das decisões anteriores.Zero aprovação final.",
+      "Lote100:6novosIDs ativos parcialmente corrigidos,2defeitos estruturais e2alertas específicos de1221M2 resolvidos;3191outrosIDs passam a3190. Localizador12.21inteiro p820/PDF181.Nenhuma recontagem de decisões antigas ou aprovação final.",
+      "Lote101:6novosIDs ativos parcialmente corrigidos,2defeitos estruturais e2alertas específicos de12231M2 resolvidos;3190outrosIDs passam a3189.12.23/12.23.1 lidos integralmente,escopo naval e ressalvas preservados.Sem nova decisão sobre conteúdo do outro IDI12-53-5M1 ou prevenção semântica global.Sem recontagem de decisões antigas/aprovação final.",
+      "Lote102:6novosIDs ativos parcialmente corrigidos,2defeitos estruturais.12.24pp823–827 e12.25pp827–829 integrais,fig12-12/13/14 verificadas.Nenhum novo decremento dos3189outrosIDs ou recontagem das decisões antigas.Zero aprovação final.",
+      "Lote103:5novosIDs ativos parcialmente corrigidos,2defeitos estruturais;1226M2 já inativo,preservado sem contagem.12.26p829 e12.27pp829–830 integrais,fig12-14/contexto verificadas.1227M2recordação1,faixaangularbibliográfica,nãoprescriçãoatual.Sem novo decremento dos3189outrosIDs ou recontagem das decisões antigas.Zero aprovação final.",
+      "Lote104:6novosIDs ativos parcialmente corrigidos,2defeitos estruturais.12.29p831/12.30pp831–832 integrais,fig12-16/contexto verificadas.Risco/governo/velocidade e efeito de máquina limitados à discussão bibliográfica.Sem novo decremento dos3189outrosIDs ou recontagem das decisões antigas.Zero aprovação final.",
+      "Lote105:6novosIDs ativos parcialmente corrigidos,2defeitos estruturais;12.31pp832–833/12.32pp833–834 integrais,fig12-17/18conferidas.Sem novo decremento dos3189outrosIDs,sem recontagem/aprovação final.Sobreposição com ANV0020 registrada;coexistência não homologada.",
+      "Lote106:6novosIDs ativos parcialmente corrigidos,2defeitos estruturais e2alertas específicos de12331M2 resolvidos;3189outrosIDs passam a3188.12.33p834/12.33.1pp834–835 integrais;semfigurasnosalvos,sem regra operacionaluniversal.Sem recontagem/aprovaçãofinal.",
+      "Lote107:6novosIDs ativos parcialmente corrigidos,2defeitos estruturais;12.33.2/12.33.3p835/PDF196integrais,semfiguras/quadros.Correnteproa/popa,arranjos/ressalva distintos.Sem novo decremento dos3188outrosIDs,sem recontagem/aprovação final.",
+      "Lote108:6novosIDs ativos parcialmente corrigidos,2defeitos estruturais;12.33.4p835/12.33.5pp835–836 integrais,semfiguras/quadros.Ressalvas/meios/contextos preservados.Sem novo decremento dos3188outrosIDs,sem recontagem/aprovação final.",
+      "Lote109:6novos IDs ativos parcialmente corrigidos,2defeitos estruturais;12.34/12.35p836/PDF197 integrais,semfiguras/quadros.Descrições históricas não são normas atuais nem procedimentos de emergência.Sem novo decremento dos3188outrosIDs,sem recontagem/aprovação final.",
+      "Lote110:6novos IDs ativos parcialmente corrigidos,2defeitos estruturais;12.36p836 e12.38pp838–839 integrais,fig12-19conferida.Peso/ângulo/arranjo limitados à edição.Sem novo decremento dos3188outrosIDs,sem recontagem/aprovação final.1237inalterado.",
+      "Lote111:6novos IDs ativos parcialmente corrigidos,2defeitos estruturais;12.38.1pp839–840 integrais/fig12-20;12.39inteiro841–842,não843,referência corrigida nos3modelos.Casos/terminologia limitados à edição.Sem novo decremento dos3188outrosIDs,sem recontagem/aprovação final."
+    ],
+    "rechecked_existing_ids": [],
+    "changed_ids_in_this_checkpoint": 6,
+    "other_flagged_ids_resolved_this_checkpoint": 0,
+    "specific_review_findings_resolved_this_checkpoint": 0
+  },
+  "sources": [
+    {
+      "title": "Fonseca,ArteNaval,v.2",
+      "edition": "8ªed.,2019",
+      "locator": "12.38.1pp839–840/PDF200–201;12.39pp841–842/PDF202–203",
+      "pdf_sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+      "text_and_images_checked": true,
+      "printed_numerals_verified": [
+        839,
+        840,
+        841,
+        842
+      ],
+      "figures_checked": "12-20p840/PDF201:alternativegeometry,firstandsecondanchors,quayand8nósannotationvisuallyread.Annotationnotassignedtovesselspeedorusedasoperationalthreshold.12-19p839contextpreviousitemonly.12.39hasnoownfigure.",
+      "local_inspection_hashes": {
+        "source.txt": "f21e30e6e7ec03cf3c11f0a9e1cbd7b09b6da0bb7af489e6ad5736cbabd1784e",
+        "pdf200.jpg": "d172cb495879848579e20971d0077209afae61f35eb0b738731f924b75aef00c",
+        "pdf201.jpg": "b5f3d88299dae5561d0f96b31bf25dda14c20976f864b7944390a2c1421de0c2",
+        "pdf202.jpg": "ab89695758fcba9356bcb2a84419aad7a8f3d9d4d4126187af1b4dd40ec6078c",
+        "pdf203.jpg": "11ff27d2d6762355490139e7e638bd73eb92694f1752634c965db223c13ecbff"
+      }
+    }
+  ],
+  "source_context_read": "Full12.38.1text/imagePDF200–201includingalternativeparagraph/fig12-20;full12.39text/imagesPDF202–203endswithboa tençabefore12.40p843/PDF204.ContexttextPDF200–205read.Otheritemsnotcounted.",
+  "source_scope": "Initialtwo-shaft/favorableweathercaseseparatedfromalternativefig12-20.Nouniversalsequence/speed/power/RPM/load/tension/filameprescribed.Noabsentfigureneeded.12.39terminologyonly:garrarinvolvesdragginganchororchainalongbottom,àtona/àmatracadistinguishedwithoutdragging,suspenderandfundearnotinverted.Boa tençadefinitionnotall-loadguarantee.Remainingwhole12.39paragraphsreadbutcurrentanchorstockclaims,desuseclaims,pédegaloanti-dragguaranteeandcutting/deshacklingrecipesnotcertifiedorusedastruepremises.Noequipmentfleetuniversalityornormativevigencyinferred.",
+  "exact_diff": {
+    "physical_ids": [
+      "AN-C12-12381-M1",
+      "AN-C12-12381-M2",
+      "AN-C12-12381-M3",
+      "AN-C12-1239-M1",
+      "AN-C12-1239-M2",
+      "AN-C12-1239-M3"
+    ],
+    "effective_ids": [
+      "AN-C12-12381-M1",
+      "AN-C12-12381-M2",
+      "AN-C12-12381-M3",
+      "AN-C12-1239-M1",
+      "AN-C12-1239-M2",
+      "AN-C12-1239-M3"
+    ],
+    "active_ids_added": [],
+    "active_ids_removed": [],
+    "runtime_occurrences": 14086,
+    "cadernos": 12102,
+    "simulado": 1984,
+    "unique_ids": 13715,
+    "entire_simulado_unchanged": true
+  },
+  "regression": {
+    "id": "ANV-0005",
+    "before_hash": "80bf9b79cfb220e56a008fc9972c31b6b2be8ca2f9e8d3221d06a18788ff9f11",
+    "after_hash": "4d49a9fafaac6c35cffdf10636b51104e24b48bbd5d59548b139c6ffd6423204",
+    "changed_effective_ids": 463,
+    "preserved_occurrences": 11639,
+    "propositions_rendered": 1148,
+    "direct_options_preserved": 880,
+    "editorial_release_approval": false
+  },
+  "checks": {
+    "test-pscpp-audit-anv0005": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-pscpp-audit-anv0005.mjs",
+      "exit_code": 0,
+      "seconds": 24.69,
+      "output": "{\n  \"id\": \"ANV-0005\",\n  \"before_hash\": \"80bf9b79cfb220e56a008fc9972c31b6b2be8ca2f9e8d3221d06a18788ff9f11\",\n  \"after_hash\": \"4d49a9fafaac6c35cffdf10636b51104e24b48bbd5d59548b139c6ffd6423204\",\n  \"changed_effective_ids\": [\n    \"AN-C09-91-M1\",\n    \"AN-C09-91-M2\",\n    \"AN-C09-91-M3\",\n    \"AN-C09-916-M1\",\n    \"AN-C09-916-M2\",\n    \"AN-C09-916-M3\",\n    \"AN-C09-93-M1\",\n    \"AN-C09-93-M2\",\n    \"AN-C09-93-M3\",\n    \"AN-C09-933-M3\",\n    \"AN-C10-1014-M1\",\n    \"AN-C10-1014-M2\",\n    \"AN-C10-1014-M3\",\n    \"AN-C10-1016-M1\",\n    \"AN-C10-1016-M2\",\n    \"AN-C10-1016-M3\",\n    \"AN-C10-1020-M3\",\n    \"AN-C10-1032-M1\",\n    \"AN-C10-1032-M2\",\n    \"AN-C10-1032-M3\",\n    \"AN-C10-1034-M3\",\n    \"AN-C10-1036-M2\",\n    \"AN-C10-1036-M3\",\n    \"AN-C11-1111-M1\",\n    \"AN-C11-1111-M2\",\n    \"AN-C11-1111-M3\",\n    \"AN-C11-1112-M1\",\n    \"AN-C11-1112-M2\",\n    \"AN-C11-1112-M3\",\n    \"AN-C11-1112a-M1\",\n    \"AN-C11-1112a-M2\",\n    \"AN-C11-1112a-M3\",\n    \"AN-C11-1112b-M1\",\n    \"AN-C11-1112b-M2\",\n    \"AN-C11-1112b-M3\",\n    \"AN-C11-1113-M1\",\n    \"AN-C11-1113-M2\",\n    \"AN-C11-1113-M3\",\n    \"AN-C11-1114-M1\",\n    \"AN-C11-1114-M2\",\n    \"AN-C11-1114-M3\",\n    \"AN-C11-1115-M1\",\n    \"AN-C11-1115-M2\",\n    \"AN-C11-1115-M3\",\n    \"AN-C11-1116-M1\",\n    \"AN-C11-1116-M2\",\n    \"AN-C11-1116-M3\",\n    \"AN-C11-1117-M1\",\n    \"AN-C11-1117-M2\",\n    \"AN-C11-1117-M3\",\n    \"AN-C11-1118-M1\",\n    \"AN-C11-1118-M2\",\n    \"AN-C11-1118-M3\",\n    \"AN-C11-1118a-M1\",\n    \"AN-C11-1118a-M2\",\n    \"AN-C11-1118a-M3\",\n    \"AN-C11-1118b-M1\",\n    \"AN-C11-1118b-M3\",\n    \"AN-C11-1118c-M1\",\n    \"AN-C11-1118c-M2\",\n    \"AN-C11-1118c-M3\",\n    \"AN-C11-1118d-M1\",\n    \"AN-C11-1118d-M2\",\n    \"AN-C11-1118d-M3\",\n    \"AN-C11-1118e-M1\",\n    \"AN-C11-1118e-M2\",\n    \"AN-C11-1118e-M3\",\n    \"AN-C11-1119-M1\",\n    \"AN-C11-1119-M2\",\n    \"AN-C11-1119-M3\",\n    \"AN-C11-112-M1\",\n    \"AN-C11-112-M2\",\n    \"AN-C11-112-M3\",\n    \"AN-C11-1120-M1\",\n    \"AN-C11-1120-M2\",\n    \"AN-C11-1120-M3\",\n    \"AN-C11-1121-M1\",\n    \"AN-C11-1121-M2\",\n    \"AN-C11-1121-M3\",\n    \"AN-C11-1122-M1\",\n    \"AN-C11-1122-M2\",\n    \"AN-C11-1122a-M1\",\n    \"AN-C11-1122a-M2\",\n    \"AN-C11-1122a-M3\",\n    \"AN-C11-1122b-M1\",\n    \"AN-C11-1122b-M2\",\n    \"AN-C11-1122b-M3\",\n    \"AN-C11-1122c-M1\",\n    \"AN-C11-1122c-M2\",\n    \"AN-C11-1122c-M3\",\n    \"AN-C11-1122d-M1\",\n    \"AN-C11-1122d-M2\",\n    \"AN-C11-1122d-M3\",\n    \"AN-C11-1122e-M1\",\n    \"AN-C11-1122e-M2\",\n    \"AN-C11-1122e-M3\",\n    \"AN-C11-1122f-M1\",\n    \"AN-C11-1122f-M2\",\n    \"AN-C11-1122f-M3\",\n    \"AN-C11-1122g-M1\",\n    \"AN-C11-1122g-M2\",\n    \"AN-C11-1122g-M3\",\n    \"AN-C11-113-M1\",\n    \"AN-C11-113-M2\",\n    \"AN-C11-113-M3\",\n    \"AN-C11-114-M1\",\n    \"AN-C11-114-M2\",\n    \"AN-C11-114-M3\",\n    \"AN-C11-114a-M2\",\n    \"AN-C11-114a-M3\",\n    \"AN-C11-114b-M1\",\n    \"AN-C11-114b-M2\",\n    \"AN-C11-114b-M3\",\n    \"AN-C11-114c-M1\",\n    \"AN-C11-114c-M2\",\n    \"AN-C11-114c-M3\",\n    \"AN-C11-114d-M1\",\n    \"AN-C11-114d-M2\",\n    \"AN-C11-114d-M3\",\n    \"AN-C11-114e-M1\",\n    \"AN-C11-114e-M2\",\n    \"AN-C11-114e-M3\",\n    \"AN-C11-115-M1\",\n    \"AN-C11-115-M2\",\n    \"AN-C11-115-M3\",\n    \"AN-C11-115a-M1\",\n    \"AN-C11-115a-M2\",\n    \"AN-C11-115a-M3\",\n    \"AN-C11-115b-M1\",\n    \"AN-C11-115b-M2\",\n    \"AN-C11-115b-M3\",\n    \"AN-C11-115c-M1\",\n    \"AN-C11-115c-M2\",\n    \"AN-C11-115c-M3\",\n    \"AN-C11-116-M1\",\n    \"AN-C11-116-M2\",\n    \"AN-C11-116-M3\",\n    \"AN-C11-117-M1\",\n    \"AN-C11-117-M2\",\n    \"AN-C11-117-M3\",\n    \"AN-C11-117a-M1\",\n    \"AN-C11-117a-M2\",\n    \"AN-C11-117a-M3\",\n    \"AN-C11-117b-M1\",\n    \"AN-C11-117b-M2\",\n    \"AN-C11-117b-M3\",\n    \"AN-C11-117c-M1\",\n    \"AN-C11-117c-M2\",\n    \"AN-C11-117c-M3\",\n    \"AN-C11-117d-M1\",\n    \"AN-C11-117d-M2\",\n    \"AN-C11-117d-M3\",\n    \"AN-C11-118-M1\",\n    \"AN-C11-118-M2\",\n    \"AN-C11-118-M3\",\n    \"AN-C11-119-M1\",\n    \"AN-C11-119-M2\",\n    \"AN-C11-119-M3\",\n    \"AN-C12-121-M1\",\n    \"AN-C12-121-M2\",\n    \"AN-C12-121-M3\",\n    \"AN-C12-1210-M1\",\n    \"AN-C12-1210-M2\",\n    \"AN-C12-1210-M3\",\n    \"AN-C12-1211-M1\",\n    \"AN-C12-1211-M2\",\n    \"AN-C12-1211-M3\",\n    \"AN-C12-1212-M1\",\n    \"AN-C12-1212-M2\",\n    \"AN-C12-1212-M3\",\n    \"AN-C12-1213-M1\",\n    \"AN-C12-1213-M2\",\n    \"AN-C12-1213-M3\",\n    \"AN-C12-1214-M1\",\n    \"AN-C12-1214-M2\",\n    \"AN-C12-1214-M3\",\n    \"AN-C12-1215-M1\",\n    \"AN-C12-1215-M2\",\n    \"AN-C12-1215-M3\",\n    \"AN-C12-1216-M1\",\n    \"AN-C12-1216-M2\",\n    \"AN-C12-1216-M3\",\n    \"AN-C12-1217-M1\",\n    \"AN-C12-1217-M2\",\n    \"AN-C12-1217-M3\",\n    \"AN-C12-1218-M1\",\n    \"AN-C12-1218-M2\",\n    \"AN-C12-1218-M3\",\n    \"AN-C12-1219-M2\",\n    \"AN-C12-1219-M3\",\n    \"AN-C12-122-M1\",\n    \"AN-C12-122-M2\",\n    \"AN-C12-122-M3\",\n    \"AN-C12-1220-M1\",\n    \"AN-C12-1220-M2\",\n    \"AN-C12-1220-M3\",\n    \"AN-C12-1221-M1\",\n    \"AN-C12-1221-M2\",\n    \"AN-C12-1221-M3\",\n    \"AN-C12-1222-M1\",\n    \"AN-C12-1222-M2\",\n    \"AN-C12-1222-M3\",\n    \"AN-C12-1223-M1\",\n    \"AN-C12-1223-M2\",\n    \"AN-C12-1223-M3\",\n    \"AN-C12-12231-M1\",\n    \"AN-C12-12231-M2\",\n    \"AN-C12-12231-M3\",\n    \"AN-C12-1224-M1\",\n    \"AN-C12-1224-M2\",\n    \"AN-C12-1224-M3\",\n    \"AN-C12-1225-M1\",\n    \"AN-C12-1225-M2\",\n    \"AN-C12-1225-M3\",\n    \"AN-C12-1226-M1\",\n    \"AN-C12-1226-M3\",\n    \"AN-C12-1227-M1\",\n    \"AN-C12-1227-M2\",\n    \"AN-C12-1227-M3\",\n    \"AN-C12-1228-M1\",\n    \"AN-C12-1228-M2\",\n    \"AN-C12-1228-M3\",\n    \"AN-C12-1229-M1\",\n    \"AN-C12-1229-M2\",\n    \"AN-C12-1229-M3\",\n    \"AN-C12-123-M1\",\n    \"AN-C12-123-M2\",\n    \"AN-C12-123-M3\",\n    \"AN-C12-1230-M1\",\n    \"AN-C12-1230-M2\",\n    \"AN-C12-1230-M3\",\n    \"AN-C12-1231-M1\",\n    \"AN-C12-1231-M2\",\n    \"AN-C12-1231-M3\",\n    \"AN-C12-1232-M1\",\n    \"AN-C12-1232-M2\",\n    \"AN-C12-1232-M3\",\n    \"AN-C12-1233-M1\",\n    \"AN-C12-1233-M2\",\n    \"AN-C12-1233-M3\",\n    \"AN-C12-12331-M1\",\n    \"AN-C12-12331-M2\",\n    \"AN-C12-12331-M3\",\n    \"AN-C12-12332-M1\",\n    \"AN-C12-12332-M2\",\n    \"AN-C12-12332-M3\",\n    \"AN-C12-12333-M1\",\n    \"AN-C12-12333-M2\",\n    \"AN-C12-12333-M3\",\n    \"AN-C12-12334-M1\",\n    \"AN-C12-12334-M2\",\n    \"AN-C12-12334-M3\",\n    \"AN-C12-12335-M1\",\n    \"AN-C12-12335-M2\",\n    \"AN-C12-12335-M3\",\n    \"AN-C12-1234-M1\",\n    \"AN-C12-1234-M2\",\n    \"AN-C12-1234-M3\",\n    \"AN-C12-1235-M1\",\n    \"AN-C12-1235-M2\",\n    \"AN-C12-1235-M3\",\n    \"AN-C12-1236-M1\",\n    \"AN-C12-1236-M2\",\n    \"AN-C12-1236-M3\",\n    \"AN-C12-1237-M1\",\n    \"AN-C12-1237-M2\",\n    \"AN-C12-1237-M3\",\n    \"AN-C12-1238-M1\",\n    \"AN-C12-1238-M2\",\n    \"AN-C12-1238-M3\",\n    \"AN-C12-12381-M1\",\n    \"AN-C12-12381-M2\",\n    \"AN-C12-12381-M3\",\n    \"AN-C12-1239-M1\",\n    \"AN-C12-1239-M2\",\n    \"AN-C12-1239-M3\",\n    \"AN-C12-124-M1\",\n    \"AN-C12-124-M2\",\n    \"AN-C12-124-M3\",\n    \"AN-C12-1243-M1\",\n    \"AN-C12-1243-M2\",\n    \"AN-C12-1243-M3\",\n    \"AN-C12-1244-M3\",\n    \"AN-C12-1246-M3\",\n    \"AN-C12-125-M1\",\n    \"AN-C12-125-M2\",\n    \"AN-C12-125-M3\",\n    \"AN-C12-1253-M3\",\n    \"AN-C12-126-M1\",\n    \"AN-C12-126-M2\",\n    \"AN-C12-126-M3\",\n    \"AN-C12-1261-M1\",\n    \"AN-C12-1261-M2\",\n    \"AN-C12-1261-M3\",\n    \"AN-C12-1262-M1\",\n    \"AN-C12-1262-M2\",\n    \"AN-C12-1262-M3\",\n    \"AN-C12-1263-M1\",\n    \"AN-C12-1263-M2\",\n    \"AN-C12-1263-M3\",\n    \"AN-C12-1264-M1\",\n    \"AN-C12-1264-M2\",\n    \"AN-C12-1264-M3\",\n    \"AN-C12-127-M3\",\n    \"AN-C12-128-M1\",\n    \"AN-C12-128-M2\",\n    \"AN-C12-128-M3\",\n    \"AN-C12-129-M1\",\n    \"AN-C12-129-M2\",\n    \"AN-C12-129-M3\",\n    \"AN-C12-I12-56-M3\",\n    \"ANV-0005\",\n    \"ANV-0007\",\n    \"ANV-0016\",\n    \"ANV-0020\",\n    \"ANV-0021\",\n    \"ANV-0023\",\n    \"ANV-0025\",\n    \"ANV-0037\",\n    \"ANV-0038\",\n    \"ANV-0039\",\n    \"ANV-0041\",\n    \"ANV-0043\",\n    \"ANV-0044\",\n    \"ANV-0045\",\n    \"ANV-0046\",\n    \"ANV-0047\",\n    \"ANV-0048\",\n    \"ANV-0049\",\n    \"ANV-0050\",\n    \"ANV-0064\",\n    \"ANV-0067\",\n    \"ANV-0068\",\n    \"ANV-0073\",\n    \"ANV-0076\",\n    \"ANV-0085\",\n    \"ANV-0092\",\n    \"ANV-0096\",\n    \"ANV-0097\",\n    \"ANV-0100\",\n    \"ANV-0105\",\n    \"ANV-0108\",\n    \"ANV-0111\",\n    \"ANV-0116\",\n    \"ANV-0125\",\n    \"ANV-0128\",\n    \"ANV-0129\",\n    \"ANV-0131\",\n    \"ANV-0134\",\n    \"ANV-0138\",\n    \"ANV-0143\",\n    \"ANV-0145\",\n    \"ANV-0147\",\n    \"ANV-0148\",\n    \"ANV-0151\",\n    \"ANV-0152\",\n    \"ANV-0163\",\n    \"ANV-0164\",\n    \"ANV-0165\",\n    \"ANV-0166\",\n    \"ANV-0179\",\n    \"ANV-0181\",\n    \"ANV-0185\",\n    \"ANV-0190\",\n    \"ANV-0198\",\n    \"ANV-0199\",\n    \"ANV-0200\",\n    \"ANV-0203\",\n    \"ANV-0204\",\n    \"ANV-0213\",\n    \"ANV-0214\",\n    \"ANV-0218\",\n    \"ANV-0221\",\n    \"ANV-0223\",\n    \"ANV-0227\",\n    \"ANV-0235\",\n    \"ANV-0237\",\n    \"ANV-0254\",\n    \"ANV-0256\",\n    \"ANV-0262\",\n    \"ANV-0263\",\n    \"ANV-0269\",\n    \"ANV-0276\",\n    \"ANV-0278\",\n    \"ANV-0279\",\n    \"ANV-0283\",\n    \"ANV-0288\",\n    \"ANV-0295\",\n    \"ANV-0298\",\n    \"ANV-0378\",\n    \"ANV-0601\",\n    \"ANV-0602\",\n    \"ANV-0611\",\n    \"ANV-0612\",\n    \"ANV-0616\",\n    \"ANV-0619\",\n    \"ANV-0621\",\n    \"ANV-0625\",\n    \"ANV-0633\",\n    \"ANV-0635\",\n    \"ANV-0652\",\n    \"ANV-0654\",\n    \"ANV-0660\",\n    \"ANV-0661\",\n    \"ANV-0667\",\n    \"ANV-0674\",\n    \"ANV-0676\",\n    \"ANV-0677\",\n    \"ANV-0681\",\n    \"ANV-0686\",\n    \"ANV-0693\",\n    \"ANV-0696\",\n    \"ANV-0734\",\n    \"ANV-0765\",\n    \"ANV-0790\",\n    \"ANV-0794\",\n    \"ANV-0795\",\n    \"ANV-0798\",\n    \"ANV-0803\",\n    \"ANV-0806\",\n    \"ANV-0809\",\n    \"ANV-0814\",\n    \"ANV-0819\",\n    \"ANV-0823\",\n    \"ANV-0826\",\n    \"ANV-0827\",\n    \"ANV-0829\",\n    \"ANV-0832\",\n    \"ANV-0836\",\n    \"ANV-0841\",\n    \"ANV-0843\",\n    \"ANV-0845\",\n    \"ANV-0846\",\n    \"ANV-0849\",\n    \"ANV-0850\",\n    \"ANV-0861\",\n    \"ANV-0862\",\n    \"ANV-0863\",\n    \"ANV-0864\",\n    \"ANV-0877\",\n    \"ANV-0879\",\n    \"ANV-0883\",\n    \"ANV-0888\",\n    \"ANV-0897\",\n    \"ANV-0898\",\n    \"ANV-0901\",\n    \"ANV-0906\",\n    \"ANV-0909\",\n    \"ANV-0921\",\n    \"ANV-0923\",\n    \"ANV-0926\",\n    \"ANV-0964\",\n    \"ANV-0972\",\n    \"ANV-0975\",\n    \"ANV-0976\",\n    \"ANV-0977\",\n    \"ANV-0978\",\n    \"ANV-0981\",\n    \"ANV-0984\",\n    \"ANV-0988\",\n    \"ANV-0993\",\n    \"ANV-1000\",\n    \"ANV-1034\"\n  ],\n  \"preserved_occurrences\": 11639,\n  \"propositions_rendered\": 1148,\n  \"direct_options_preserved\": 880,\n  \"editorial_release_approval\": false\n}\n"
+    },
+    "validate-runtime-question-banks": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-runtime-question-banks.mjs",
+      "exit_code": 0,
+      "seconds": 13.69,
+      "output": "Bancos ativos de cadernos: 12102 questões verificadas\n"
+    },
+    "validate-pscpp-exam-selection": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-pscpp-exam-selection.mjs",
+      "exit_code": 0,
+      "seconds": 8.52,
+      "output": "Matriz fixa PSCPP: OK\n"
+    },
+    "test-question-source-provenance": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-question-source-provenance.mjs",
+      "exit_code": 0,
+      "seconds": 0.47,
+      "output": "Canonical ID precedence and transitive source fingerprints: OK\n"
+    },
+    "validate-runtime-question-catalog": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-runtime-question-catalog.mjs",
+      "exit_code": 0,
+      "seconds": 8.48,
+      "output": "Catálogo equivalente ao banco ativo: 12102 referências, contagens e filtros completos\n"
+    },
+    "test-notebook-complete-stems": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-notebook-complete-stems.mjs",
+      "exit_code": 1,
+      "seconds": 2.65,
+      "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Combination without propositions: arte-naval/ANV-0142\n    at file:///workspace/scratch/84c3a78e6648/repo/scripts/test-notebook-complete-stems.mjs:120:29\n    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async node:internal/modules/esm/loader:647:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: '==',\n  diff: 'simple'\n}\n\nNode.js v24.22.1\n"
+    },
+    "validate-editorial-runtime": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-editorial-runtime.mjs",
+      "exit_code": 1,
+      "seconds": 0.57,
+      "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Enunciado dependente de localizador no caderno de legislação: LEG-0023, LEG-0033, LEG-0041, LEG-0064, LEG-0070, LEG-0087, LEG-0096, LEG-0135, LEG-0136, LEG-0140, LEG-0173, LEG-0176, LEG-0189, LEG-0192, LEG-0224, LEG-0225, LEG-0242, LEG-0292, LEG-0325, LEG-0327, LEG-0330, LEG-0358, LEG-0384, LEG-0389, LEG-0392, LEG-0403, LEG-0405, LEG-0408, LEG-0410, LEG-0418, LEG-0426, LEG-0430, LEG-0434, LEG-0436, LEG-0447, LEG-0458, LEG-0460, LEG-0467, LEG-0478, LEG-0479, LEG-0482, LEG-0532, LEG-0562, LEG-0565, LEG-0568, LEG-0577, LEG-0592, LEG-0608, LEG-0612, LEG-0617, LEG-0634, LEG-0640, LEG-0660, LEG-0670, LEG-0675, LEG-0676, LEG-0677, LEG-0695, LEG-0714, LEG-0770, LEG-0777, LEG-0780, LEG-0786, LEG-0789, LEG-0812, LEG-0821, LEG-0841, LEG-0844, LEG-0851, LEG-0865, LEG-0871, LEG-0893, LEG-0983, LEG-N112-C01-UC02-M2, LEG-N112-C04-UC23-M2, LEG-N112-C05-UC28-M2, LEG-N112-C05-UC38-M2\n\n77 !== 0\n\n    at file:///workspace/scratch/84c3a78e6648/repo/scripts/validate-editorial-runtime.mjs:15:8 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: 77,\n  expected: 0,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.22.1\n"
+    },
+    "validate-pscpp-editorial-evidence": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-pscpp-editorial-evidence.mjs",
+      "exit_code": 2,
+      "seconds": 0.88,
+      "output": "{\n  \"scope\": \"Effective occurrences by consumer, stable ID and content hash\",\n  \"runtime_occurrences\": 14086,\n  \"accepted_occurrences\": 0,\n  \"pending_or_invalid_occurrences\": 14086,\n  \"editorial_gate_passed\": false,\n  \"merge_permitted\": false,\n  \"note\": \"This checks evidence completeness, not truth of evidence; all other release gates still apply.\"\n}\n"
+    },
+    "generate-pscpp-runtime-bank-check": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-pscpp-runtime-bank.mjs --check",
+      "exit_code": 0,
+      "seconds": 0.98,
+      "output": "Banco PSCPP pronto: 1984 questões, 254 oficiais fiéis às fontes\n"
+    },
+    "generate-runtime-question-banks-check": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-question-banks.mjs --check",
+      "exit_code": 0,
+      "seconds": 3.95,
+      "output": "Bancos de cadernos prontos: 12102 questões\n"
+    },
+    "generate-runtime-question-catalog-check": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-question-catalog.mjs --check",
+      "exit_code": 0,
+      "seconds": 0.57,
+      "output": "Catálogo pronto: 9 bancos\n"
+    },
+    "generate-runtime-flashcard-decks-check": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-flashcard-decks.mjs --check",
+      "exit_code": 0,
+      "seconds": 1.73,
+      "output": "Flashcards prontos: 7 baralhos\n"
+    }
+  },
+  "generations": {
+    "generate-pscpp-runtime-bank": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-pscpp-runtime-bank.mjs",
+      "exit_code": 0,
+      "seconds": 6.59,
+      "output": "Banco PSCPP gerado: 1984 questões · 254 oficiais fiéis às fontes\n"
+    },
+    "generate-runtime-question-banks": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-question-banks.mjs",
+      "exit_code": 0,
+      "seconds": 19.34,
+      "output": "Bancos de cadernos gerados: 12102 questões\n"
+    },
+    "generate-runtime-question-catalog": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-question-catalog.mjs",
+      "exit_code": 0,
+      "seconds": 1.08,
+      "output": "Catálogo gerado: 9 bancos, 12102 questões indexadas\n"
+    },
+    "generate-runtime-flashcard-decks": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-flashcard-decks.mjs",
+      "exit_code": 0,
+      "seconds": 1.82,
+      "output": "Flashcards gerados: 7 baralhos\n"
+    }
+  },
+  "inventory_generation": {
+    "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/audit-pscpp-runtime-inventory.mjs",
+    "exit_code": 0,
+    "seconds": 48.18,
+    "output": "{\n  \"baseline_sha\": \"012b562b0eb6f7fec78773b339e4a53b3643e791\",\n  \"scope\": \"Tracked data JSON and fixtures; effective source pipelines; live SQL/offline/production reconciliation still pending.\",\n  \"json_files\": 162,\n  \"question_files\": 153,\n  \"physical_records\": 27435,\n  \"bank_source_records\": 27113,\n  \"fixture_records\": 322,\n  \"partial_editorial_patches\": 1532,\n  \"unique_bank_ids\": 21509,\n  \"runtime_occurrences\": 14086,\n  \"runtime_unique_ids\": 13715,\n  \"runtime_by_consumer\": {\n    \"cadernos\": 12102,\n    \"simulado_pscpp\": 1984\n  },\n  \"runtime_by_subject\": {\n    \"cadernos/manobrabilidade\": 3959,\n    \"cadernos/arte-naval\": 2128,\n    \"cadernos/navegacao-aguas-restritas\": 1610,\n    \"cadernos/situacoes-de-manobra-ripeam\": 320,\n    \"cadernos/legislacao-regulamentacao\": 1083,\n    \"cadernos/meteorologia-oceanografia\": 991,\n    \"cadernos/comunicacoes\": 1038,\n    \"cadernos/conhecimentos-gerais\": 973,\n    \"simulado_pscpp/arte-naval\": 1031,\n    \"simulado_pscpp/comunicacoes\": 27,\n    \"simulado_pscpp/meteorologia-oceanografia\": 52,\n    \"simulado_pscpp/navegacao-aguas-restritas\": 230,\n    \"simulado_pscpp/manobrabilidade\": 494,\n    \"simulado_pscpp/legislacao-regulamentacao\": 105,\n    \"simulado_pscpp/ii — arte naval\": 20,\n    \"simulado_pscpp/conhecimentos-gerais\": 25\n  },\n  \"runtime_historical\": {\n    \"cadernos/authorial\": 12102,\n    \"simulado_pscpp/historical\": 254,\n    \"simulado_pscpp/authorial\": 1730\n  },\n  \"runtime_selection_excluded\": 11,\n  \"physical_by_directory\": {\n    \"data/pscpp\": 6789,\n    \"data/question-extensions\": 2434,\n    \"data/question-restorations\": 4185,\n    \"data/questions\": 13705,\n    \"scripts/fixtures\": 322\n  },\n  \"active_ids_without_physical_source\": [],\n  \"same_id_multiple_versions\": 4859,\n  \"reviewed_individually\": 0,\n  \"verified_primary_source\": 0,\n  \"gates\": {\n    \"gate_1\": \"pending\",\n    \"gate_2\": \"pending\",\n    \"gate_3\": \"pending\",\n    \"gate_4\": \"pending\",\n    \"gate_5\": \"pending\",\n    \"gate_6\": \"pending\",\n    \"gate_7\": \"pending\",\n    \"gate_8\": \"pending\"\n  },\n  \"merge_permitted\": false\n}\n"
+  },
+  "triage_generation": {
+    "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/audit-pscpp-runtime-triage.mjs",
+    "exit_code": 0,
+    "seconds": 0.42,
+    "output": "{\n  \"scope\": \"notebook effective snapshot; same predicates as existing tests\",\n  \"counts\": {\n    \"COMBINATION_WITHOUT_PARSED_ASSERTIONS_CANDIDATE\": 84,\n    \"LOCATOR_COMMAND_CANDIDATE\": 77\n  },\n  \"note\": \"Triage does not certify, rewrite or quarantine questions.\"\n}\n"
+  },
+  "build": {
+    "command": "node node_modules/next/dist/bin/next build",
+    "exit_code": 0,
+    "seconds": 61.14,
+    "output": "Attention: Next.js now collects completely anonymous telemetry regarding usage.\nThis information is used to shape Next.js' roadmap and prioritize features.\nYou can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:\nhttps://nextjs.org/telemetry\n\n   ▲ Next.js 15.5.25\n\n   Creating an optimized production build ...\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|javascript/auto|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/next-flight-css-loader.js??ruleSet[1].rules[14].oneOf[5].use[0]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[1]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/app/conteudos/conteudos.module.css|rsc': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 1 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|javascript/auto|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/next-flight-css-loader.js??ruleSet[1].rules[14].oneOf[5].use[0]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[1]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/app/plano-de-estudos/plano.module.css|rsc': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 2 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|javascript/auto|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/next-flight-css-loader.js??ruleSet[1].rules[14].oneOf[5].use[0]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[1]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/app/minha-trajetoria/trajectory.module.css|rsc': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 1 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|javascript/auto|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/next-flight-css-loader.js??ruleSet[1].rules[14].oneOf[5].use[0]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[1]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/app/plano-de-estudos/plano.module.css|ssr': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 2 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|javascript/auto|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/next-flight-css-loader.js??ruleSet[1].rules[14].oneOf[5].use[0]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[1]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/app/plano-de-estudos/plan-enhancements.module.css|ssr': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 2 items } -> webpack/lib/ModuleWarning -> Warning\n ⚠ Compiled with warnings in 28.5s\n\n./app/conteudos/conteudos.module.css\nWarning\n\n(3:106) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/conteudos/conteudos.module.css\n./app/conteudos/page.js\n\n./app/minha-trajetoria/trajectory.module.css\nWarning\n\n(1:286) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/minha-trajetoria/trajectory.module.css\n./app/minha-trajetoria/page.js\n\n./app/plano-de-estudos/plan-enhancements.module.css\nWarning\n\n(1:4025) autoprefixer: start value has mixed support, consider using flex-start instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plan-enhancements.module.css\n./app/plano-de-estudos/PlanControls.js\n./app/plano-de-estudos/StudyDashboard.js\n./app/plano-de-estudos/PlanClient.js\n\n./app/plano-de-estudos/plan-enhancements.module.css\nWarning\n\n(2:37) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plan-enhancements.module.css\n./app/plano-de-estudos/PlanControls.js\n./app/plano-de-estudos/StudyDashboard.js\n./app/plano-de-estudos/PlanClient.js\n\n./app/plano-de-estudos/plano.module.css\nWarning\n\n(1:342) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plano.module.css\n./app/plano-de-estudos/page.js\n\n./app/plano-de-estudos/plano.module.css\nWarning\n\n(1:2618) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plano.module.css\n./app/plano-de-estudos/page.js\n\n./app/plano-de-estudos/plano.module.css\nWarning\n\n(1:342) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plano.module.css\n./app/plano-de-estudos/PlanClient.js\n\n./app/plano-de-estudos/plano.module.css\nWarning\n\n(1:2618) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plano.module.css\n./app/plano-de-estudos/PlanClient.js\n\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!/workspace/scratch/84c3a78e6648/repo/app/globals.css': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 3 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!/workspace/scratch/84c3a78e6648/repo/app/conteudos/conteudos.module.css': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 1 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!/workspace/scratch/84c3a78e6648/repo/app/area-do-aluno/dashboard.css': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 1 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!/workspace/scratch/84c3a78e6648/repo/app/plano-de-estudos/plano.module.css': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 2 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!/workspace/scratch/84c3a78e6648/repo/app/plataforma/plataforma.css': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 1 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!/workspace/scratch/84c3a78e6648/repo/app/minha-trajetoria/trajectory.module.css': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 1 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!/workspace/scratch/84c3a78e6648/repo/app/plano-de-estudos/plan-enhancements.module.css': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 2 items } -> webpack/lib/ModuleWarning -> Warning\n ⚠ Compiled with warnings in 11.8s\n\n./app/conteudos/conteudos.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/conteudos/conteudos.module.css\nWarning\n\n(3:106) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/conteudos/conteudos.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/conteudos/conteudos.module.css\n./app/conteudos/conteudos.module.css\n\n./app/minha-trajetoria/trajectory.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/minha-trajetoria/trajectory.module.css\nWarning\n\n(1:286) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/minha-trajetoria/trajectory.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/minha-trajetoria/trajectory.module.css\n./app/minha-trajetoria/trajectory.module.css\n\n./app/plano-de-estudos/plan-enhancements.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plan-enhancements.module.css\nWarning\n\n(1:4025) autoprefixer: start value has mixed support, consider using flex-start instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plan-enhancements.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plan-enhancements.module.css\n./app/plano-de-estudos/plan-enhancements.module.css\n./app/plano-de-estudos/PlanControls.js\n./app/plano-de-estudos/StudyDashboard.js\n./app/plano-de-estudos/PlanClient.js\n\n./app/plano-de-estudos/plan-enhancements.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plan-enhancements.module.css\nWarning\n\n(2:37) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plan-enhancements.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plan-enhancements.module.css\n./app/plano-de-estudos/plan-enhancements.module.css\n./app/plano-de-estudos/PlanControls.js\n./app/plano-de-estudos/StudyDashboard.js\n./app/plano-de-estudos/PlanClient.js\n\n./app/plano-de-estudos/plano.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plano.module.css\nWarning\n\n(1:342) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plano.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plano.module.css\n./app/plano-de-estudos/plano.module.css\n\n./app/plano-de-estudos/plano.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plano.module.css\nWarning\n\n(1:2618) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plano.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plano.module.css\n./app/plano-de-estudos/plano.module.css\n\n./app/area-do-aluno/dashboard.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/area-do-aluno/dashboard.css\nWarning\n\n(7:92) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/area-do-aluno/dashboard.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/area-do-aluno/dashboard.css\n./app/area-do-aluno/dashboard.css\n\n./app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/globals.css\nWarning\n\n(49:39) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/globals.css\n./app/globals.css\n\n./app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/globals.css\nWarning\n\n(124:88) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/globals.css\n./app/globals.css\n\n./app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/globals.css\nWarning\n\n(124:669) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/globals.css\n./app/globals.css\n\n./app/plataforma/plataforma.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/plataforma/plataforma.css\nWarning\n\n(48:1323) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plataforma/plataforma.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/plataforma/plataforma.css\n./app/plataforma/plataforma.css\n\n ✓ Compiled successfully in 40s\n   Linting and checking validity of types ...\n   Collecting page data ...\n   Generating static pages (0/101) ...\n   Generating static pages (25/101) \n   Generating static pages (50/101) \n   Generating static pages (75/101) \n ✓ Generating static pages (101/101)\n   Finalizing page optimization ...\n   Collecting build traces ...\n\nRoute (app)                                            Size  First Load JS\n┌ ○ /                                                1.2 kB         104 kB\n├ ○ /_not-found                                       303 B         103 kB\n├ ƒ /.well-known/assetlinks.json                      424 B         103 kB\n├ ƒ /aceitar-termos                                   424 B         103 kB\n├ ƒ /admin                                            424 B         103 kB\n├ ƒ /admin/cobertura                                  171 B         103 kB\n├ ƒ /admin/configuracoes                              424 B         103 kB\n├ ƒ /admin/conteudo                                   424 B         103 kB\n├ ƒ /admin/contramestre                              2.4 kB         105 kB\n├ ƒ /admin/editor                                   87.6 kB         190 kB\n├ ƒ /admin/laboratorio-3d                           38.8 kB         142 kB\n├ ƒ /admin/metricas                                   424 B         103 kB\n├ ƒ /admin/observabilidade                            424 B         103 kB\n├ ƒ /admin/pagamentos                                 424 B         103 kB\n├ ƒ /admin/permissoes                                 424 B         103 kB\n├ ƒ /admin/precos                                   1.76 kB         105 kB\n├ ƒ /admin/questoes                                   424 B         103 kB\n├ ƒ /admin/seguranca                                1.45 kB         104 kB\n├ ƒ /admin/simulados                                  424 B         103 kB\n├ ƒ /admin/suporte                                  1.39 kB         104 kB\n├ ƒ /admin/usuarios                                   424 B         103 kB\n├ ƒ /analise-de-fraquezas                             424 B         103 kB\n├ ƒ /api/access                                       424 B         103 kB\n├ ƒ /api/account/accept-terms                         424 B         103 kB\n├ ƒ /api/account/delete                               424 B         103 kB\n├ ƒ /api/account/export                               424 B         103 kB\n├ ƒ /api/account/logout-all                           424 B         103 kB\n├ ƒ /api/achievements                                 424 B         103 kB\n├ ƒ /api/adaptive-training                            424 B         103 kB\n├ ƒ /api/admin/contramestre/bibliography              424 B         103 kB\n├ ƒ /api/admin/contramestre/bibliography/multipart    424 B         103 kB\n├ ƒ /api/admin/laboratorio-3d                         424 B         103 kB\n├ ƒ /api/admin/laboratorio-3d/upload                  424 B         103 kB\n├ ƒ /api/admin/mfa                                    424 B         103 kB\n├ ƒ /api/admin/permissions                            424 B         103 kB\n├ ƒ /api/admin/pricing                                424 B         103 kB\n├ ƒ /api/admin/support                                424 B         103 kB\n├ ƒ /api/admin/support/[id]                           424 B         103 kB\n├ ƒ /api/admin/users/[id]/access                      424 B         103 kB\n├ ƒ /api/admin/users/[id]/status                      424 B         103 kB\n├ ƒ /api/attempts                                     424 B         103 kB\n├ ƒ /api/auth/admin-mfa/verify                        424 B         103 kB\n├ ƒ /api/auth/forgot-password                         424 B         103 kB\n├ ƒ /api/auth/google/callback                         424 B         103 kB\n├ ƒ /api/auth/google/start                            424 B         103 kB\n├ ƒ /api/auth/login                                   424 B         103 kB\n├ ƒ /api/auth/logout                                  424 B         103 kB\n├ ƒ /api/auth/me                                      424 B         103 kB\n├ ƒ /api/auth/profile/complete                        424 B         103 kB\n├ ƒ /api/auth/register                                424 B         103 kB\n├ ƒ /api/auth/resend-verification                     424 B         103 kB\n├ ƒ /api/auth/reset-password                          424 B         103 kB\n├ ƒ /api/auth/verify-email                            424 B         103 kB\n├ ƒ /api/cron/finalize-exams                          424 B         103 kB\n├ ƒ /api/exams/[subject]                              424 B         103 kB\n├ ƒ /api/exams/[subject]/answer                       424 B         103 kB\n├ ƒ /api/exams/[subject]/finish                       424 B         103 kB\n├ ƒ /api/exams/[subject]/pause                        424 B         103 kB\n├ ƒ /api/experiments                                  424 B         103 kB\n├ ƒ /api/flashcards/[deck]                            424 B         103 kB\n├ ƒ /api/growth/event                                 424 B         103 kB\n├ ƒ /api/health                                       424 B         103 kB\n├ ƒ /api/insights                                     424 B         103 kB\n├ ƒ /api/learning-graph                               424 B         103 kB\n├ ƒ /api/library/files                                424 B         103 kB\n├ ƒ /api/library/files/[id]/content                   424 B         103 kB\n├ ƒ /api/library/files/[id]/progress                  424 B         103 kB\n├ ƒ /api/library/google/callback                      424 B         103 kB\n├ ƒ /api/library/google/connect                       424 B         103 kB\n├ ƒ /api/library/google/disconnect                    424 B         103 kB\n├ ƒ /api/library/google/files                         424 B         103 kB\n├ ƒ /api/library/google/files/[id]/content            424 B         103 kB\n├ ƒ /api/library/google/files/[id]/progress           424 B         103 kB\n├ ƒ /api/library/google/picker                        424 B         103 kB\n├ ƒ /api/library/google/status                        424 B         103 kB\n├ ƒ /api/metrics                                      424 B         103 kB\n├ ƒ /api/mind-maps                                    424 B         103 kB\n├ ƒ /api/mind-maps/[id]                               424 B         103 kB\n├ ƒ /api/mind-maps/[id]/duplicate                     424 B         103 kB\n├ ƒ /api/mind-maps/[id]/flashcard                     424 B         103 kB\n├ ƒ /api/observability/client-error                   424 B         103 kB\n├ ƒ /api/observability/vitals                         424 B         103 kB\n├ ƒ /api/payments/mercado-pago/checkout               424 B         103 kB\n├ ƒ /api/payments/mercado-pago/tutor-checkout         424 B         103 kB\n├ ƒ /api/payments/mercado-pago/webhook                424 B         103 kB\n├ ƒ /api/preferences                                  424 B         103 kB\n├ ƒ /api/profile                                      424 B         103 kB\n├ ƒ /api/progress                                     424 B         103 kB\n├ ƒ /api/question-notebooks                           424 B         103 kB\n├ ƒ /api/question-notebooks/[id]/answer               424 B         103 kB\n├ ƒ /api/questions/[subject]                          424 B         103 kB\n├ ƒ /api/questions/[subject]/answer                   424 B         103 kB\n├ ƒ /api/questions/manobrabilidade                    424 B         103 kB\n├ ƒ /api/questions/taxonomy                           424 B         103 kB\n├ ƒ /api/review-queue                                 424 B         103 kB\n├ ƒ /api/ripeam-3d/scenes                             424 B         103 kB\n├ ƒ /api/site-editor/auth                             424 B         103 kB\n├ ƒ /api/site-editor/design                           424 B         103 kB\n├ ƒ /api/site-editor/design/save                      424 B         103 kB\n├ ƒ /api/site-editor/file                             424 B         103 kB\n├ ƒ /api/site-editor/files                            424 B         103 kB\n├ ƒ /api/site-editor/flashcards                       424 B         103 kB\n├ ƒ /api/site-editor/logout                           424 B         103 kB\n├ ƒ /api/site-editor/pages                            424 B         103 kB\n├ ƒ /api/site-editor/save                             424 B         103 kB\n├ ƒ /api/site-editor/upload                           424 B         103 kB\n├ ƒ /api/study-plan                                   424 B         103 kB\n├ ƒ /api/study-plan/calendar                          424 B         103 kB\n├ ƒ /api/study-plan/customize                         424 B         103 kB\n├ ƒ /api/study-plan/export                            424 B         103 kB\n├ ƒ /api/study-plan/onboarding                        424 B         103 kB\n├ ƒ /api/study-plan/session                           424 B         103 kB\n├ ƒ /api/study-plan/snapshot                          424 B         103 kB\n├ ƒ /api/study-plan/task                              424 B         103 kB\n├ ƒ /api/study-plan/tutor-export                      424 B         103 kB\n├ ƒ /api/study-plan/unavailability                    424 B         103 kB\n├ ƒ /api/study/plan                                   424 B         103 kB\n├ ƒ /api/support/tickets                              424 B         103 kB\n├ ƒ /api/support/tickets/[id]                         424 B         103 kB\n├ ƒ /api/tutor/chat                                   424 B         103 kB\n├ ƒ /api/tutor/conversations/[id]                     424 B         103 kB\n├ ƒ /area-do-aluno                                  2.16 kB         113 kB\n├ ○ /cadastro                                       4.98 kB         108 kB\n├ ○ /cancelamento-e-reembolso                         274 B         103 kB\n├ ƒ /centro-de-revisao                                424 B         103 kB\n├ ○ /completar-cadastro                             3.67 kB         106 kB\n├ ƒ /comprar                                        2.17 kB         113 kB\n├ ƒ /conquistas                                     1.78 kB         113 kB\n├ ƒ /conteudos                                      2.15 kB         113 kB\n├ ƒ /conteudos/banco-de-questoes                    3.15 kB         121 kB\n├ ƒ /conteudos/caderno-de-erros                     2.06 kB         113 kB\n├ ƒ /conteudos/caderno/[id]                         3.97 kB         125 kB\n├ ƒ /conteudos/fixacao                                424 B         103 kB\n├ ƒ /contramestre                                     135 B         114 kB\n├ ○ /diagnostico-gratuito                           1.78 kB         105 kB\n├ ○ /esqueci-minha-senha                             2.6 kB         105 kB\n├ ○ /excluir-conta                                    424 B         103 kB\n├ ƒ /flashcards                                     1.99 kB         113 kB\n├ ƒ /flashcards/[deck]                                31 kB         142 kB\n├ ƒ /flashcards/meus-mapas                          2.25 kB         113 kB\n├ ƒ /flashcards/ripeam/3d                           22.3 kB         133 kB\n├ ƒ /hoje                                           2.53 kB         113 kB\n├ ○ /login                                          3.26 kB         106 kB\n├ ○ /logout                                           297 B         103 kB\n├ ƒ /mapas-mentais                                  2.78 kB         114 kB\n├ ƒ /mapas-mentais/[id]                             6.17 kB         117 kB\n├ ƒ /mfa-admin                                        424 B         103 kB\n├ ƒ /minha-biblioteca                               3.08 kB         114 kB\n├ ƒ /minha-biblioteca/[id]                          2.45 kB         120 kB\n├ ƒ /minha-trajetoria                               1.96 kB         113 kB\n├ ƒ /minhas-assinaturas                             1.73 kB         113 kB\n├ ƒ /paginas/[slug]                                   424 B         103 kB\n├ ƒ /perfil                                         3.42 kB         114 kB\n├ ƒ /pesquisar                                      1.73 kB         113 kB\n├ ƒ /plano-de-estudos                                 13 kB         131 kB\n├ ƒ /plano-de-estudos/configurar                    7.21 kB         118 kB\n├ ƒ /plano-de-estudos/pendencias                    1.73 kB         113 kB\n├ ○ /plataforma                                       170 B         103 kB\n├ ○ /politica-de-cookies                              274 B         103 kB\n├ ○ /politica-de-privacidade                          274 B         103 kB\n├ ƒ /preferencias                                   2.37 kB         113 kB\n├ ○ /produtos                                         513 B         103 kB\n├ ○ /produtos/banco-de-questoes                       513 B         103 kB\n├ ○ /produtos/flashcards-mapas-mentais                513 B         103 kB\n├ ○ /produtos/simulados                               513 B         103 kB\n├ ○ /pscpp                                            476 B         103 kB\n├ ƒ /pwa-icon                                         424 B         103 kB\n├ ƒ /pwa-splash                                       424 B         103 kB\n├ ƒ /ranking                                        1.88 kB         113 kB\n├ ƒ /redefinir-senha                                  899 B         104 kB\n├ ƒ /revisao-inteligente                             2.1 kB         113 kB\n├ ○ /robots.txt                                       424 B         103 kB\n├ ƒ /simulado                                       1.82 kB         113 kB\n├ ƒ /simulado/[subject]                               140 B         127 kB\n├ ƒ /simulado/manobrabilidade                         141 B         127 kB\n├ ƒ /simulado/tentativa/[id]                        2.05 kB         113 kB\n├ ○ /sitemap.xml                                      424 B         103 kB\n├ ○ /sobre-a-praticagem                               513 B         103 kB\n├ ○ /sobre-a-praticagem/como-se-tornar-um-pratico     513 B         103 kB\n├ ○ /sobre-a-praticagem/o-que-faz-um-pratico          513 B         103 kB\n├ ○ /sobre-nos                                        513 B         103 kB\n├ ƒ /study-content/[[...path]]                        424 B         103 kB\n├ ƒ /suporte                                        3.22 kB         114 kB\n├ ○ /termos-de-uso                                    274 B         103 kB\n├ ƒ /teste-gratis-excedido                          1.73 kB         113 kB\n├ ƒ /treino-adaptativo                                424 B         103 kB\n├ ƒ /treino-inteligente                             2.12 kB         113 kB\n├ ƒ /tutor-ia                                         134 B         114 kB\n└ ƒ /verificar-email                                  424 B         103 kB\n+ First Load JS shared by all                        103 kB\n  ├ chunks/1255-7316b50163a428e6.js                 46.4 kB\n  ├ chunks/4bd1b696-f785427dddbba9fb.js             54.2 kB\n  └ other shared chunks (total)                     2.19 kB\n\n\n○  (Static)   prerendered as static content\nƒ  (Dynamic)  server-rendered on demand\n\n"
+  },
+  "gate_hash_check": {
+    "all_occurrences_checked": 14086,
+    "accepted": 0,
+    "inventory_generated_before_gate": true
+  },
+  "transformations": [
+    {
+      "id": "AN-C12-12381-M1",
+      "invariant": true,
+      "policy": {
+        "active": true,
+        "reason": null
+      },
+      "structure": {
+        "type": "assertions",
+        "confidence": "high",
+        "blocks": [
+          {
+            "type": "stem",
+            "text": "Sobre a aproximação para atracação mediterrânea descrita em Arte Naval, v. 2, 8ª edição, analise as afirmações e assinale apenas as corretas. Considere o caso de dois eixos e condições meteorológicas favoráveis da passagem, sem interpretá-lo como procedimento universal."
+          },
+          {
+            "type": "assertions",
+            "items": [
+              {
+                "label": "I",
+                "text": "A descrição inicial relaciona aproximação paralela ao cais ao primeiro ferro do bordo oposto ao cais."
+              },
+              {
+                "label": "II",
+                "text": "No desenvolvimento desse caso, a aproximação da popa sucede o segundo ferro, com pagamento suave e alternado das duas amarras."
+              },
+              {
+                "label": "III",
+                "text": "A descrição inicial identifica o primeiro ferro como o do bordo voltado para o cais."
+              },
+              {
+                "label": "IV",
+                "text": "O texto atribui o controle dos movimentos laterais a espias de popa paralelas e rejeita o cruzamento dessas espias."
+              }
+            ]
+          }
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "Apenas as afirmativas I e III são verdadeiras."
+          },
+          {
+            "key": "B",
+            "text": "Apenas as afirmativas II e IV são verdadeiras."
+          },
+          {
+            "key": "C",
+            "text": "Apenas as afirmativas III e IV são verdadeiras."
+          },
+          {
+            "key": "D",
+            "text": "As afirmativas I, II, III e IV são verdadeiras."
+          },
+          {
+            "key": "E",
+            "text": "Apenas as afirmativas I e II são verdadeiras."
+          }
+        ]
+      }
+    },
+    {
+      "id": "AN-C12-12381-M2",
+      "invariant": true,
+      "policy": {
+        "active": true,
+        "reason": null
+      },
+      "structure": {
+        "type": "simple",
+        "confidence": "high",
+        "blocks": [
+          {
+            "type": "stem",
+            "text": "Ao associar disposição e finalidade das espias de popa na aproximação mediterrânea de dois eixos em condições meteorológicas favoráveis, qual par corresponde à descrição de Arte Naval, v. 2, 8ª edição? Considere, nessa ordem, disposição / finalidade indicada, sem inferir eliminação garantida de movimentos ou dimensionamento de carga."
+          }
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "Cruzadas / conter movimentos laterais."
+          },
+          {
+            "key": "B",
+            "text": "Paralelas / conter movimentos laterais."
+          },
+          {
+            "key": "C",
+            "text": "Cruzadas / ampliar movimentos laterais."
+          },
+          {
+            "key": "D",
+            "text": "Paralelas / ampliar movimentos laterais."
+          },
+          {
+            "key": "E",
+            "text": "Cruzadas / substituir as amarras de proa."
+          }
+        ]
+      }
+    },
+    {
+      "id": "AN-C12-12381-M3",
+      "invariant": true,
+      "policy": {
+        "active": true,
+        "reason": null
+      },
+      "structure": {
+        "type": "statements",
+        "confidence": "high",
+        "blocks": [
+          {
+            "type": "stem",
+            "text": "Sobre o caso inicial de aproximação mediterrânea de dois eixos em condições meteorológicas favoráveis em Arte Naval, v. 2, 8ª edição, julgue os itens e assinale a sequência correta. Identifique as relações do texto, sem tomá-las como receita de manobra real."
+          },
+          {
+            "type": "items",
+            "style": "statement",
+            "items": [
+              {
+                "label": "1",
+                "text": "O afastamento após o primeiro ferro é relacionado a evitar que a amarra corra por baixo do navio."
+              },
+              {
+                "label": "2",
+                "text": "A disposição cruzada das espias de popa é associada ao controle dos movimentos laterais."
+              },
+              {
+                "label": "3",
+                "text": "O primeiro ferro do caso inicial pertence ao bordo voltado para o cais."
+              },
+              {
+                "label": "4",
+                "text": "A descrição inicial combina aproximação paralela ao cais e primeiro ferro do bordo oposto."
+              }
+            ]
+          }
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "( V – F – V – F )"
+          },
+          {
+            "key": "B",
+            "text": "( V – V – F – V )"
+          },
+          {
+            "key": "C",
+            "text": "( F – V – V – F )"
+          },
+          {
+            "key": "D",
+            "text": "( F – F – V – V )"
+          },
+          {
+            "key": "E",
+            "text": "( V – V – V – V )"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AN-C12-1239-M1",
+      "invariant": true,
+      "policy": {
+        "active": true,
+        "reason": null
+      },
+      "structure": {
+        "type": "assertions",
+        "confidence": "high",
+        "blocks": [
+          {
+            "type": "stem",
+            "text": "Sobre a terminologia de fundeio em Arte Naval, v. 2, 8ª edição, analise as afirmações e assinale apenas as corretas. Considere as distinções definidas pela obra, sem diagnosticar uma situação real a partir de informação incompleta."
+          },
+          {
+            "type": "assertions",
+            "items": [
+              {
+                "label": "I",
+                "text": "Fundear ou ancorar designa lançar uma âncora ao fundo para manter o navio seguro por sua amarra."
+              },
+              {
+                "label": "II",
+                "text": "Na definição de garrar, o deslocamento por vento, maré ou corrente envolve arrastar a âncora ou a amarra pelo fundo."
+              },
+              {
+                "label": "III",
+                "text": "Seguir a correnteza sem arrastar âncoras ou amarra recebe necessariamente a designação de estar à garra."
+              },
+              {
+                "label": "IV",
+                "text": "Suspender é definido como largar uma segunda âncora para reforçar a amarração."
+              }
+            ]
+          }
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "Apenas as afirmativas I e III são verdadeiras."
+          },
+          {
+            "key": "B",
+            "text": "Apenas as afirmativas II e IV são verdadeiras."
+          },
+          {
+            "key": "C",
+            "text": "Apenas as afirmativas I e II são verdadeiras."
+          },
+          {
+            "key": "D",
+            "text": "Apenas as afirmativas III e IV são verdadeiras."
+          },
+          {
+            "key": "E",
+            "text": "As afirmativas I, II, III e IV são verdadeiras."
+          }
+        ]
+      }
+    },
+    {
+      "id": "AN-C12-1239-M2",
+      "invariant": true,
+      "policy": {
+        "active": true,
+        "reason": null
+      },
+      "structure": {
+        "type": "simple",
+        "confidence": "high",
+        "blocks": [
+          {
+            "type": "stem",
+            "text": "Na distinção terminológica de Arte Naval, v. 2, 8ª edição, como se classificam estes dois casos: (1) navio levado por vento, maré ou corrente, arrastando âncora ou amarra pelo fundo; (2) navio seguindo a correnteza sem arrastar âncoras ou amarra? Assinale o par na ordem caso 1 / caso 2, conforme as definições da obra."
+          }
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "À tona ou à matraca / à garra."
+          },
+          {
+            "key": "B",
+            "text": "À garra / suspendendo."
+          },
+          {
+            "key": "C",
+            "text": "Em amarração fixa / à tona ou à matraca."
+          },
+          {
+            "key": "D",
+            "text": "À garra / à tona ou à matraca."
+          },
+          {
+            "key": "E",
+            "text": "Suspendendo / à garra."
+          }
+        ]
+      }
+    },
+    {
+      "id": "AN-C12-1239-M3",
+      "invariant": true,
+      "policy": {
+        "active": true,
+        "reason": null
+      },
+      "structure": {
+        "type": "statements",
+        "confidence": "high",
+        "blocks": [
+          {
+            "type": "stem",
+            "text": "Sobre as definições de fundeio em Arte Naval, v. 2, 8ª edição, julgue os itens e assinale a sequência correta. Considere o vocabulário e a propriedade do fundo descritos pela obra, sem inferir capacidade para qualquer carga ou equipamento."
+          },
+          {
+            "type": "items",
+            "style": "statement",
+            "items": [
+              {
+                "label": "1",
+                "text": "Suspender é içar a âncora, recolhendo a amarra, para o navio mover-se ou navegar."
+              },
+              {
+                "label": "2",
+                "text": "Boa tença caracteriza, na definição da obra, um fundo cuja natureza permite que as âncoras se mantenham seguras onde unham diante dos esforços do navio."
+              },
+              {
+                "label": "3",
+                "text": "Seguir a correnteza sem arrastar âncoras ou amarra é necessariamente estar à garra."
+              },
+              {
+                "label": "4",
+                "text": "Fundear ou ancorar envolve lançar uma âncora ao fundo para manter o navio seguro por sua amarra."
+              }
+            ]
+          }
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "( V – F – V – F )"
+          },
+          {
+            "key": "B",
+            "text": "( F – V – V – F )"
+          },
+          {
+            "key": "C",
+            "text": "( F – F – V – V )"
+          },
+          {
+            "key": "D",
+            "text": "( V – V – V – V )"
+          },
+          {
+            "key": "E",
+            "text": "( V – V – F – V )"
+          }
+        ]
+      }
+    }
+  ],
+  "publication": {
+    "status": "not_attempted_existing_rejection084_requires_explicit_authorization",
+    "last_published_commit": "d5f1354887b67e6483bf77320901f15d5728ce28",
+    "checkpoint_will_be_preserved_in_recovery_bundle": true,
+    "merge_or_deploy": false
+  },
+  "manual_review": {
+    "all_five_options_and_rationales_checked_each_id": true,
+    "keys_after_primary_solution": {
+      "AN-C12-12381-M1": "E",
+      "AN-C12-12381-M2": "A",
+      "AN-C12-12381-M3": "B",
+      "AN-C12-1239-M1": "C",
+      "AN-C12-1239-M2": "D",
+      "AN-C12-1239-M3": "E"
+    },
+    "assertion_vectors": "M1VVFFresolvesE/C",
+    "true_false_vectors": "M3VVFVresolvesB/E",
+    "direct_solutions": {
+      "12381M2A": "crossedsternlines/lateralcontrolpurpose,notabsoluteelimination",
+      "1239M2D": "withbottomdragàgarra/withoutdragàtonaoràmatraca,inrequestedorder"
+    },
+    "no_swapped_options_feedback": true,
+    "three_physical_models_per_item": true,
+    "no_absent_figure_required": true,
+    "cognitive_level_assigned": 2,
+    "independent_calibration_approved": false
+  },
+  "review_limits": [
+    "0finalapprovals,8gatespending/failed",
+    "Independentsecondreview,officialedital/binaryidentity,globalcoverage,semanticselection,difficulty,SQL/offlinepending",
+    "ANV0142,77locatorspending;SOLAS11.10needsownofficialverification",
+    "098printedp817ambiguitynotusedastruepremise,noerratumobtained",
+    "Oldoverlaps105/108/110remainpending",
+    "OtherMANdocumentaryworknotincorporated/recounted;separaterunobservedinprogress,lastresult111nonappliedproposals/noGitcommit.Noassumptionofglobalprocessexclusivity;onlyown6IDsphysical/effectivediff"
+  ],
+  "semantic_candidates_screen_and_manual_comparison": {
+    "method": "Lexicalandreferencecandidateidentificationonly;manualcomparisonofthreevariantsineachfamily.Primaryreviewnotreplacedbysearch.",
+    "candidate_ids": [
+      "AN-C12-12381-M1",
+      "AN-C12-12381-M2",
+      "AN-C12-12381-M3",
+      "AN-C12-1239-M1",
+      "AN-C12-1239-M2",
+      "AN-C12-1239-M3"
+    ],
+    "result": "Onlysixfamilytargetsreturnedbyrecordedprobes;notglobalabsenceproof.12381initialapproachandlateralternativearedistinctbibliographiccases.1239definitionsdrag/no-dragandsuspender/fundear/boa-tençacompared.Threevariantsperitemoverlapcompetencyandmustnotcoexistinthesameproof;globalpreventionnothomologated.",
+    "no_other_ids_changed_or_counted": true
+  },
+  "preserved_inactives": [
+    {
+      "id": "AN-C12-127-M1",
+      "physical_hash": "18fccc00f58e7d6563bcc93174dc559d7880b4744e355ec7dbca3717eee27132",
+      "unchanged": true,
+      "active_before": false,
+      "active_after": false,
+      "counted": false
+    },
+    {
+      "id": "AN-C12-127-M2",
+      "physical_hash": "bcf64443b4290283329aadf79a0eef896523cae6abba7d2c71b9b53d194c67fe",
+      "unchanged": true,
+      "active_before": false,
+      "active_after": false,
+      "counted": false
+    },
+    {
+      "id": "AN-C12-1219-M1",
+      "physical_hash": "ccb782f7c3d5889bc858bc9c7d963a88debb44f3f11ce6f5ef9670e199e65e6c",
+      "unchanged": true,
+      "active_before": false,
+      "active_after": false,
+      "counted": false
+    },
+    {
+      "id": "AN-C12-1226-M2",
+      "physical_hash": "4380b331fd34e2048d03134545370bef9cdb9b81cd8fbf39b94f87319382d429",
+      "unchanged": true,
+      "active_before": false,
+      "active_after": false,
+      "counted": false
+    }
+  ],
+  "next_precheck": [
+    {
+      "id": "AN-C12-1240-M1",
+      "active": true,
+      "counted": false,
+      "physical_present": true,
+      "physical_hash": "8915186023bfc413aeff0a17df0562322ec16bfe2a1ed85649262d7ec2f5bd74"
+    },
+    {
+      "id": "AN-C12-1240-M2",
+      "active": true,
+      "counted": false,
+      "physical_present": true,
+      "physical_hash": "215795b9492851e4d0349d9e3f6f260144ee612bc9f0f3b2969ed731bfed5960"
+    },
+    {
+      "id": "AN-C12-1240-M3",
+      "active": true,
+      "counted": false,
+      "physical_present": true,
+      "physical_hash": "a892fdb1a6df516f862c90a0e543c4f05a29ad87ddde7a440acb763466421937"
+    },
+    {
+      "id": "AN-C12-1241-M1",
+      "active": true,
+      "counted": false,
+      "physical_present": true,
+      "physical_hash": "06ad8acacc176d5a0ecf8b152c71979d97e95b9fdcbdbbee739d37caedcab79e"
+    },
+    {
+      "id": "AN-C12-1241-M2",
+      "active": true,
+      "counted": false,
+      "physical_present": true,
+      "physical_hash": "8a31cff2b7c0d91e6faa05058a87f48d2e38f1341d30e3caf91844dc3be987d2"
+    },
+    {
+      "id": "AN-C12-1241-M3",
+      "active": true,
+      "counted": false,
+      "physical_present": true,
+      "physical_hash": "441a4d5d0a1ceabb47577c86e4186ef5d2c51ec9ebf58f20736676514002bb82"
+    },
+    {
+      "id": "AN-C12-1242-M1",
+      "active": true,
+      "counted": false,
+      "physical_present": true,
+      "physical_hash": "5b3919f248e1168b17dc2b9900ab641e91801c8124d78fe278db2b6dbcacbab5"
+    },
+    {
+      "id": "AN-C12-1242-M2",
+      "active": false,
+      "counted": false,
+      "physical_present": true,
+      "physical_hash": "c368d1c3baad60ef9eb63250112ad1711c0bc05d17807d74050bd4700ad49f3b"
+    },
+    {
+      "id": "AN-C12-1242-M3",
+      "active": false,
+      "counted": false,
+      "physical_present": true,
+      "physical_hash": "34cba54cd99eff99716c7c9a1255233ee487fe1aa44854aa49982f15426febeb"
+    }
+  ],
+  "alert_counting": "Only2CORRIGIRIDsremoved;3188otherIDsunchanged.Old520decisions/15trackingduplicates/093rechecknotrecounted.",
+  "structural_queue_resolutions": [
+    {
+      "pool": "Cadernos",
+      "id": "AN-C12-12381-M1",
+      "subject": "arte-naval",
+      "effective_hash": "2d7049b302c44d64d6efddd8b2d9179a28bf4afe2699791acb6fa61c7bab2d71",
+      "status": "CORRIGIR",
+      "findings": [
+        {
+          "level": "CORRIGIR",
+          "code": "MISSING_ASSERTIONS",
+          "detail": "As alternativas escolhem proposições numeradas, mas o enunciado e os campos adicionais não apresentam essas proposições.",
+          "evidence": {
+            "required": [
+              "I",
+              "III",
+              "II",
+              "IV"
+            ],
+            "structure": "simple"
+          }
+        },
+        {
+          "level": "REVISAR",
+          "code": "LOCATOR_OR_GENERIC_COMMAND",
+          "detail": "Comando genérico ou dependente de localizador identificado pelo verificador do projeto; exige revisão individual do conteúdo.",
+          "evidence": "De acordo com Arte Naval, v. 2, acerca de Aproximação para Atracação Mediterrânea, assinale a alternativa que apresenta corretamente a disposição, requisito ou conceito previsto na publicação."
+        }
+      ]
+    },
+    {
+      "pool": "Cadernos",
+      "id": "AN-C12-1239-M1",
+      "subject": "arte-naval",
+      "effective_hash": "20584376eb1d797f79ac568249ff8af3816986af659cfe5890c8f696740d558e",
+      "status": "CORRIGIR",
+      "findings": [
+        {
+          "level": "CORRIGIR",
+          "code": "MISSING_ASSERTIONS",
+          "detail": "As alternativas escolhem proposições numeradas, mas o enunciado e os campos adicionais não apresentam essas proposições.",
+          "evidence": {
+            "required": [
+              "I",
+              "III",
+              "II",
+              "IV"
+            ],
+            "structure": "simple"
+          }
+        },
+        {
+          "level": "REVISAR",
+          "code": "LOCATOR_OR_GENERIC_COMMAND",
+          "detail": "Comando genérico ou dependente de localizador identificado pelo verificador do projeto; exige revisão individual do conteúdo.",
+          "evidence": "De acordo com Arte Naval, v. 2, acerca de Definições, assinale a alternativa que apresenta corretamente a disposição, requisito ou conceito previsto na publicação."
+        }
+      ]
+    }
+  ],
+  "recovery110": {
+    "zip_size": 301337766,
+    "zip_sha256": "095b5f410d21e241c5cff1caba4c68880feec92848ec2fc5993af94a2795df53",
+    "all_member_crc_sha256_verified": true,
+    "pack_trailer_verified": true,
+    "bundle_verified": true,
+    "head_tree_exact": true,
+    "fast_forward_only": true,
+    "untracked_preserved": true,
+    "recount": false
+  },
+  "preflight": {
+    "final_six_objects_invariant": true,
+    "output": "[\n  { id: 'AN-C12-12381-M1', invariant: true, type: 'assertions' },\n  { id: 'AN-C12-12381-M2', invariant: true, type: 'simple' },\n  { id: 'AN-C12-12381-M3', invariant: true, type: 'statements' },\n  { id: 'AN-C12-1239-M1', invariant: true, type: 'assertions' },\n  { id: 'AN-C12-1239-M2', invariant: true, type: 'simple' },\n  { id: 'AN-C12-1239-M3', invariant: true, type: 'statements' }\n]\n",
+    "policies_filters_flags_unchanged": true
+  },
+  "credential_pattern_scan_passed": true,
+  "next_inactive_precheck_preservation": {
+    "checkpoint": "111",
+    "state_precheck_only": true,
+    "primary_source_review_completed": false,
+    "records": [
+      {
+        "id": "AN-C12-1242-M2",
+        "physical_original": {
+          "subject": "Arte Naval",
+          "module": "Manobra do Navio",
+          "topic": "Manobra de fundear",
+          "difficulty": "Difícil",
+          "source": {
+            "author": "FONSECA, Maurílio M.",
+            "title": "Arte Naval, v. 2",
+            "edition": "8. ed., 2019",
+            "locator": "cap. 12, item 12.42, p. 846"
+          },
+          "tracking": {
+            "subject_slug": "arte-naval",
+            "work": {
+              "id": "fonseca-arte-v2",
+              "title": "Arte Naval - Volume 2",
+              "author": "Maurílio M. Fonseca"
+            },
+            "chapter": {
+              "id": "fonseca-arte-v2::ch12",
+              "number": "12",
+              "title": "Manobra do Navio",
+              "label": "Capítulo 12 - Manobra do Navio"
+            },
+            "section": "item 12.42",
+            "module": "Manobra do Navio",
+            "topic": {
+              "id": "anv2-12.42",
+              "title": "Manobra de fundear"
+            }
+          },
+          "taxonomy": {
+            "subject_id": "II",
+            "subject_slug": "arte-naval",
+            "bibliography_id": "fonseca-arte-v2",
+            "chapter_id": "fonseca-arte-v2::ch12",
+            "topic_id": "anv2-12.42",
+            "subtopic_id": null
+          },
+          "id": "AN-C12-1242-M2",
+          "topic_code": "AN.C12.12.42.M2",
+          "provenance": {
+            "method": "chapter-item-3-models",
+            "coverage_unit": "UC53",
+            "model": 2
+          },
+          "style": "Múltipla escolha conceitual",
+          "question_type": "conceptual",
+          "question": "Como o item 12.42 é estruturado na obra?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Como definição de filame."
+            },
+            {
+              "key": "B",
+              "text": "Como procedimento de desatracação."
+            },
+            {
+              "key": "C",
+              "text": "Como título da Manobra de fundear, desenvolvido por subitens subsequentes."
+            },
+            {
+              "key": "D",
+              "text": "Como título de atracação mediterrânea."
+            },
+            {
+              "key": "E",
+              "text": "Como definição exclusiva de fundeadouro."
+            }
+          ],
+          "correct_answer": "C",
+          "explanation": "Como título da Manobra de fundear, desenvolvido por subitens subsequentes.",
+          "validation": {
+            "final_editorial_audit": "2026-10-01"
+          }
+        },
+        "physical_hash": "c368d1c3baad60ef9eb63250112ad1711c0bc05d17807d74050bd4700ad49f3b",
+        "physical_unchanged": true,
+        "runtime_present_before": false,
+        "runtime_present_after": false,
+        "counted_correction": false,
+        "counted_primary_review": false,
+        "reactivated": false,
+        "global_exclusion_cause": "not_reconciled"
+      },
+      {
+        "id": "AN-C12-1242-M3",
+        "physical_original": {
+          "subject": "Arte Naval",
+          "module": "Manobra do Navio",
+          "topic": "Manobra de fundear",
+          "difficulty": "Difícil",
+          "source": {
+            "author": "FONSECA, Maurílio M.",
+            "title": "Arte Naval, v. 2",
+            "edition": "8. ed., 2019",
+            "locator": "cap. 12, item 12.42, p. 846"
+          },
+          "tracking": {
+            "subject_slug": "arte-naval",
+            "work": {
+              "id": "fonseca-arte-v2",
+              "title": "Arte Naval - Volume 2",
+              "author": "Maurílio M. Fonseca"
+            },
+            "chapter": {
+              "id": "fonseca-arte-v2::ch12",
+              "number": "12",
+              "title": "Manobra do Navio",
+              "label": "Capítulo 12 - Manobra do Navio"
+            },
+            "section": "item 12.42",
+            "module": "Manobra do Navio",
+            "topic": {
+              "id": "anv2-12.42",
+              "title": "Manobra de fundear"
+            }
+          },
+          "taxonomy": {
+            "subject_id": "II",
+            "subject_slug": "arte-naval",
+            "bibliography_id": "fonseca-arte-v2",
+            "chapter_id": "fonseca-arte-v2::ch12",
+            "topic_id": "anv2-12.42",
+            "subtopic_id": null
+          },
+          "id": "AN-C12-1242-M3",
+          "topic_code": "AN.C12.12.42.M3",
+          "provenance": {
+            "method": "chapter-item-3-models",
+            "coverage_unit": "UC53",
+            "model": 3
+          },
+          "style": "Sequência V/F",
+          "question_type": "true_false",
+          "question": "Julgue:\n( ) A execução do fundeio é tratada como uma manobra própria dentro da seção de fundear, suspender, amarrar e rocegar.\n( ) A sequência posterior aborda aproximação para o fundeio e manobra da proa.\n( ) O item 12.42 trata exclusivamente da manobra de atracação mediterrânea.\n( ) O item 12.42 introduz a manobra de fundear, detalhada nos subitens subsequentes.\nAssinale a sequência correta.",
+          "options": [
+            {
+              "key": "A",
+              "text": "( V – F – V – F )"
+            },
+            {
+              "key": "B",
+              "text": "( F – V – V – F )"
+            },
+            {
+              "key": "C",
+              "text": "( F – F – V – V )"
+            },
+            {
+              "key": "D",
+              "text": "( V – V – F – V )"
+            },
+            {
+              "key": "E",
+              "text": "( V – V – V – V )"
+            }
+          ],
+          "correct_answer": "D",
+          "explanation": "A sequência correta resulta da avaliação das quatro proposições: 1) A execução do fundeio é tratada como uma manobra própria dentro da seção de fundear, suspender, amarrar e rocegar. | 2) A sequência posterior aborda aproximação para o fundeio e manobra da proa. | 3) O item 12.42 trata exclusivamente da manobra de atracação mediterrânea. | 4) O item 12.42 introduz a manobra de fundear, detalhada nos subitens subsequentes.",
+          "validation": {
+            "final_editorial_audit": "2026-10-01"
+          }
+        },
+        "physical_hash": "34cba54cd99eff99716c7c9a1255233ee487fe1aa44854aa49982f15426febeb",
+        "physical_unchanged": true,
+        "runtime_present_before": false,
+        "runtime_present_after": false,
+        "counted_correction": false,
+        "counted_primary_review": false,
+        "reactivated": false,
+        "global_exclusion_cause": "not_reconciled"
+      }
+    ]
+  }
+}

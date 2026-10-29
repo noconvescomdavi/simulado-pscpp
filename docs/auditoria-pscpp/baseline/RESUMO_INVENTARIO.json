@@ -1,0 +1,63 @@
+{
+  "baseline_sha": "012b562b0eb6f7fec78773b339e4a53b3643e791",
+  "scope": "Tracked data JSON and fixtures; effective source pipelines; live SQL/offline/production reconciliation still pending.",
+  "json_files": 162,
+  "question_files": 153,
+  "physical_records": 27435,
+  "bank_source_records": 27113,
+  "fixture_records": 322,
+  "partial_editorial_patches": 1532,
+  "unique_bank_ids": 21509,
+  "runtime_occurrences": 14188,
+  "runtime_unique_ids": 13715,
+  "runtime_by_consumer": {
+    "cadernos": 12204,
+    "simulado_pscpp": 1984
+  },
+  "runtime_by_subject": {
+    "cadernos/manobrabilidade": 3959,
+    "cadernos/arte-naval": 2230,
+    "cadernos/navegacao-aguas-restritas": 1610,
+    "cadernos/situacoes-de-manobra-ripeam": 320,
+    "cadernos/legislacao-regulamentacao": 1083,
+    "cadernos/meteorologia-oceanografia": 991,
+    "cadernos/comunicacoes": 1038,
+    "cadernos/conhecimentos-gerais": 973,
+    "simulado_pscpp/arte-naval": 1031,
+    "simulado_pscpp/comunicacoes": 27,
+    "simulado_pscpp/meteorologia-oceanografia": 52,
+    "simulado_pscpp/navegacao-aguas-restritas": 230,
+    "simulado_pscpp/manobrabilidade": 494,
+    "simulado_pscpp/legislacao-regulamentacao": 105,
+    "simulado_pscpp/ii — arte naval": 20,
+    "simulado_pscpp/conhecimentos-gerais": 25
+  },
+  "runtime_historical": {
+    "cadernos/authorial": 12204,
+    "simulado_pscpp/historical": 254,
+    "simulado_pscpp/authorial": 1730
+  },
+  "runtime_selection_excluded": 11,
+  "physical_by_directory": {
+    "data/pscpp": 6789,
+    "data/question-extensions": 2434,
+    "data/question-restorations": 4185,
+    "data/questions": 13705,
+    "scripts/fixtures": 322
+  },
+  "active_ids_without_physical_source": [],
+  "same_id_multiple_versions": 4859,
+  "reviewed_individually": 0,
+  "verified_primary_source": 0,
+  "gates": {
+    "gate_1": "pending",
+    "gate_2": "pending",
+    "gate_3": "pending",
+    "gate_4": "pending",
+    "gate_5": "pending",
+    "gate_6": "pending",
+    "gate_7": "pending",
+    "gate_8": "pending"
+  },
+  "merge_permitted": false
+}

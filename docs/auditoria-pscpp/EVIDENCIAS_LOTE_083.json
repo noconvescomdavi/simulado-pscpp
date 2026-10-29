@@ -1,0 +1,880 @@
+{
+  "checkpoint": "083",
+  "partial_only": true,
+  "release_approval": false,
+  "summary": {
+    "checkpoint": "083",
+    "previous_unique_broken": 163,
+    "structural_defects_repaired": 18,
+    "remaining_structural_defects": 145,
+    "new_content_corrections": 37,
+    "accumulated_partial_corrections": 280,
+    "final_editorial_approvals": 0,
+    "duplicate_alerts_resolved": 520,
+    "duplicate_pairs_checked": 260,
+    "unique_ids": 13715,
+    "runtime_occurrences": 14086,
+    "counts_by_id": {
+      "SEM_ALERTA_AUTOMATICO": 10373,
+      "REVISAR": 3193,
+      "CORRIGIR": 145,
+      "DOCUMENTAR": 4
+    },
+    "notes": [
+      "Alertas de cópia resolvidos somente quando há proveniência explícita e igualdade do enunciado após normalizar espaços e caixa, e igualdade literal de alternativas, gabarito e explicação nos dois consumidores.",
+      "Correções de conteúdo são parciais, com fonte primária; requerem rechecagem independente e validação integral.",
+      "Os IDs sem alerta automático não são aprovações finais.",
+      "Pendência ANV-0142 mantida: o sumário do exemplar anuncia thruster no art.11.13, mas o corpo do livro nessa numeração trata do aparelho fixo da mastreação. Não foi usada referência incompatível para inventar conteúdo."
+    ]
+  },
+  "exact_diff": [
+    {
+      "id": "AN-C11-118-M1",
+      "before_hash": "cf222ff9636d1db2ad309a9be42b58b6b730ef148d213e32d4f994dde7b29286",
+      "after_hash": "aa79b88ccdbf46cd827fce02752f6492d94b2e299a7cb5f4b3ed5704b0f9415e",
+      "format": "assertions",
+      "truths": [
+        true,
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "AN-C11-118-M2",
+      "before_hash": "2547a6b8763495aad42c62e09555e31cb45169674fd38177640f2730eaf8afd5",
+      "after_hash": "1152cc9a4112cb304358e971e8ae4df33cbf60b00577e023204dbed2dd61d067",
+      "format": "direct",
+      "truths": null
+    },
+    {
+      "id": "AN-C11-118-M3",
+      "before_hash": "b23a5575fecb654f51c7b825bf0492e8e7456deeb2194cc5517df84559ee67ec",
+      "after_hash": "871d5ff812bb681ed9fa604df6a1fe8b68510f34c81bc28b14644ed21273e582",
+      "format": "true_false",
+      "truths": [
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "id": "AN-C11-119-M1",
+      "before_hash": "73f3ea40ea32b07787a0bce50c0528a55b2ea2474826048e881af534cead8efd",
+      "after_hash": "25491a155d68a82c5f76ca55388a8075d96887b3cda3a2ce870a5cf4c70aaedd",
+      "format": "assertions",
+      "truths": [
+        true,
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "AN-C11-119-M2",
+      "before_hash": "fc13296b8f9c6baa7f60dcc64b16d0fe689a8327040111e504ef4347024b38e8",
+      "after_hash": "91ae1daa75e3eda6b76ba5d8d4563886d5d16a60a239f36b79935810abe23aa0",
+      "format": "direct",
+      "truths": null
+    },
+    {
+      "id": "AN-C11-119-M3",
+      "before_hash": "dcc9c33575587c56c2ebf32befb0865847a908ac5903cd9e8bf0f9d69f1bc1e3",
+      "after_hash": "08b9ec636eec6e9e84c1ac9afae429649f154a3ac72055521ee1099f01e43c26",
+      "format": "true_false",
+      "truths": [
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "id": "AN-C11-1111-M1",
+      "before_hash": "01f28f16534140ef9cb21185c48808d8f45d92ca7df06e129ab7c0b313914029",
+      "after_hash": "a1bc89c6299bd415ca3a993bafc7e03ba1aa24b9b51f88957f6522ab34fe1099",
+      "format": "assertions",
+      "truths": [
+        true,
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "AN-C11-1111-M2",
+      "before_hash": "99f5e77ccaeb9156bdc8ad7fc198447a959be1499d52c8c3dbee86fb0cd21018",
+      "after_hash": "0f1746828a589263d9a1251e500e88535bd2795e9e4bcb1344cd73dfefb2c1bf",
+      "format": "direct",
+      "truths": null
+    },
+    {
+      "id": "AN-C11-1111-M3",
+      "before_hash": "5aeec51269cc39f6248c022570193634e8d90fb388e7401ca9b4108b7299f373",
+      "after_hash": "4fd3c0b485a6cec8b50c8eef9ccc9058e210120e56aa7d1ab3519aabbff13f41",
+      "format": "true_false",
+      "truths": [
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "id": "AN-C11-1112a-M1",
+      "before_hash": "7213d9adf3b373b72b54c56863c12cbcb06466caf8c071fe4e703b18b4c5683e",
+      "after_hash": "31179c12eb816dacc9ec1ecc84457f75a80c4c88e58f39bbe84f104b2b45d212",
+      "format": "assertions",
+      "truths": [
+        true,
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "AN-C11-1112a-M2",
+      "before_hash": "5daeb0e60ffd40ed9c9241acb81b64b9320615ce8570e76cd9b097ea010f586b",
+      "after_hash": "86f76270e183cfda407f5a25308e5dcf48092f9721b83b5b461041aa30118236",
+      "format": "direct",
+      "truths": null
+    },
+    {
+      "id": "AN-C11-1112a-M3",
+      "before_hash": "ad3a010d3e7191ef2986207f7af58d82c21f0ff7dea99710630888a146867939",
+      "after_hash": "6da78b6cd0b65fc58fe46614fb51af1235edc25542de9dfdfedfaff1638d173f",
+      "format": "true_false",
+      "truths": [
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "id": "AN-C11-1112b-M1",
+      "before_hash": "d59728768e4dad7ef5ae18ccae4aeeee04a41ee6878aaa6ecce212ea71f81d37",
+      "after_hash": "df96ca2098da9254ec8ac7286c7d62dfd3dbe34422c40822a8b8689dc8ad5b36",
+      "format": "assertions",
+      "truths": [
+        true,
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "AN-C11-1112b-M2",
+      "before_hash": "45f0d1b1554139cd4d02d65ebfd1a930133cbab8382d5e4a93ea3128e053209a",
+      "after_hash": "6566de1796db5289028c30784c7a7ebdbed3eb340cad1e7f4705a5b3a11fd1e4",
+      "format": "direct",
+      "truths": null
+    },
+    {
+      "id": "AN-C11-1112b-M3",
+      "before_hash": "37c7f7940eee3730787d80702ecbf3e210ccef8af10f023fbe742733f3c0f246",
+      "after_hash": "9547b6efdacb769cea51a9f63854d0fbac716b40343679e5ea3128cee0420341",
+      "format": "true_false",
+      "truths": [
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "id": "AN-C11-1113-M1",
+      "before_hash": "249a52decba1078a409a6dddfb22bb1a95ea9b89b2693fbe31de14c9fff8b47e",
+      "after_hash": "c69ebb6cfbcf3f03508ec7167621afaed9f23ee3126e3d03583f6b40a1d47862",
+      "format": "assertions",
+      "truths": [
+        true,
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "AN-C11-1113-M2",
+      "before_hash": "377b38072b8ccc4d135a9733a3a40d7a915179e77b8d88be2717899e6d63c476",
+      "after_hash": "cd21f477ce88988e364bbfd5cbed259b0d6f8bfed84f3eb3fdbce2134ef0bfe6",
+      "format": "direct",
+      "truths": null
+    },
+    {
+      "id": "AN-C11-1113-M3",
+      "before_hash": "632e1865908b24d0943d804861ecc8d59fe9801c76868f8f3fb0e36ca9009507",
+      "after_hash": "683b9788b0d2567435fa163c2c6afc503d8db1588529af31e8d07ff2ec9d14a7",
+      "format": "true_false",
+      "truths": [
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "id": "AN-C11-1114-M1",
+      "before_hash": "fc86e8a98871b8329dc0e69f1f565f71ed4ce685bc245422152901fa0e0cf0a6",
+      "after_hash": "f5c517da74f8814e28e0ff1531dbb3aadafb43a16ec29466a3b26f24485853ae",
+      "format": "assertions",
+      "truths": [
+        true,
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "AN-C11-1114-M2",
+      "before_hash": "a0f4f553088dc02c3bef579efbbdfecb58509352d8dba67f4c29f40d8daa59b3",
+      "after_hash": "c27ab7bcefee5f982e515895d0991a84646ed1a7f5823bb98ce4bd8c553b7625",
+      "format": "direct",
+      "truths": null
+    },
+    {
+      "id": "AN-C11-1114-M3",
+      "before_hash": "ac37956e1870e123a240be67c9c0de1fe518ef8c25b7a18b4739066e64c62644",
+      "after_hash": "06ed929577e0c2e6ee7ebce27845b721d6e79c177cded6779e3b22b5c7da9932",
+      "format": "true_false",
+      "truths": [
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "id": "AN-C11-1115-M1",
+      "before_hash": "b98fad1a887311d9c1132766a1c785a4e7e1e5667aae5bf2666b064c05691b27",
+      "after_hash": "b969215a3133dcc2117d84808967ccb8fffcb6cc2c55e5af10f41e8373fb5da2",
+      "format": "assertions",
+      "truths": [
+        true,
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "AN-C11-1115-M2",
+      "before_hash": "94131b003f161961c312b5acf00ac6a8ebcd1ca1e9a805c9dd430d4bed57c3e8",
+      "after_hash": "4e853567dab25d8a21d3dc10dd1cc41d68035a78bbd57ff89ad02b5989c4d0e3",
+      "format": "direct",
+      "truths": null
+    },
+    {
+      "id": "AN-C11-1115-M3",
+      "before_hash": "5cd1f74fc4f8b57f7b421e0f2a1350599edf34315172245f42fe4f30bc6b7522",
+      "after_hash": "eb5e429ce34e4510e65046d20f81e7516788cef6ea5c3d20c1373ded2ded63e4",
+      "format": "true_false",
+      "truths": [
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "id": "AN-C11-1116-M1",
+      "before_hash": "21de1884778fed45cd16c54c434a54bd8bdba9fa8903ccfe89c265b503df3ac3",
+      "after_hash": "0402fc9060a1a0e23f74fcfde9f63d16a7d81ccb5d29f31b45a48ba72545a7ba",
+      "format": "assertions",
+      "truths": [
+        true,
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "AN-C11-1116-M2",
+      "before_hash": "da95609f132f03ade7e08013e1c71c4964d6a2cf2338bae4fa82d5d7a938d625",
+      "after_hash": "0b93eeb5478f4818240c63e303456a681566282b601312b8d1a8ce92e228c8bd",
+      "format": "direct",
+      "truths": null
+    },
+    {
+      "id": "AN-C11-1116-M3",
+      "before_hash": "999eb7ce67dc6904cddf22968be4d0e0b11205e28fa397c2fbb5dfa7f679ab3d",
+      "after_hash": "57be1c072f7c270e8700c3e8b52af6c01ed99ecb7c8d464c2d47b3b46ecb9e25",
+      "format": "true_false",
+      "truths": [
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "id": "AN-C11-1117-M1",
+      "before_hash": "311f3eade47a11516e10ae0cc40467dfed4a38f595a9630a1f915808e5ba73c4",
+      "after_hash": "07881ec4da28c2d2240fc3b9e6528a5f7f89cc8a433104e3c7c2f803ab764db8",
+      "format": "assertions",
+      "truths": [
+        true,
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "AN-C11-1117-M2",
+      "before_hash": "c5153426606364688af349f9c345699aa28ca69fdca4e3c25f30fc6521688c32",
+      "after_hash": "a0f59955db22dacb9a046a055269635fa3a5d500b3b61aca80393a803f646c78",
+      "format": "direct",
+      "truths": null
+    },
+    {
+      "id": "AN-C11-1117-M3",
+      "before_hash": "e4fee8226390b5651159ee627d1850217c0deba947c74f18d6b05c458108d8f0",
+      "after_hash": "29affd8fa5f3ad0e7eb4e5c1811992f0eda7ca666746aa567672415da638a5f4",
+      "format": "true_false",
+      "truths": [
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "id": "AN-C09-933-M3",
+      "before_hash": "7d1813567c59bd25d9dac7591ed8ccb09296b1ea16266450124a3a273a26052b",
+      "after_hash": "8bf136487df9e8d65b687c8ffbb70521d8a39a5863b8775c8346156d9535d1a3",
+      "format": "true_false",
+      "truths": [
+        true,
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "id": "AN-C10-1020-M3",
+      "before_hash": "900ea9bf35b5a11b51867fc49b3a6d9cfb98f1d5b1c93e629a712036af1ca693",
+      "after_hash": "25a57967b28e3a2a9c6aa17d0b34b31c2bfc66743942179503808271316967e2",
+      "format": "true_false",
+      "truths": [
+        true,
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "id": "AN-C10-1034-M3",
+      "before_hash": "0b7b865063fe20644c9142ed812aa04f468aa55bdc86d9af11b883bb95885eb0",
+      "after_hash": "c4fde2f44936d2bffcbbaf7fcb0014b6566943aae49127f93c780123c9861bf3",
+      "format": "true_false",
+      "truths": [
+        true,
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "id": "AN-C12-1244-M3",
+      "before_hash": "131b6b8da77678baee816f628f88b4492807f2a2d8169ac48842f2d246b7a82c",
+      "after_hash": "1d9ebd940a454a4f2680049d376fecb878727a1583d4611a4784f0333635c873",
+      "format": "true_false",
+      "truths": [
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "id": "AN-C12-1246-M3",
+      "before_hash": "1af132f82fba9ce08150bb4d7947fece6359fc7e4a1c577e893f0ab67f600c3d",
+      "after_hash": "184324e9fac0b06c0d0369b398c221e544e406b557cb89ecd54e8ebf4bd682e1",
+      "format": "true_false",
+      "truths": [
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "id": "AN-C12-1253-M3",
+      "before_hash": "fe9c9bfd5b0b6b5e6ab2f24e42848730f73d5475fdaac62b909ec48eefb57a0f",
+      "after_hash": "0b309d7f063e4304d50ba81f04a0d86f922fce1a53ef8b1da3ddcf630f08d0a9",
+      "format": "true_false",
+      "truths": [
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "id": "AN-C12-I12-56-M3",
+      "before_hash": "ca2f03b9c7f7211d7d267a092c3e4552ba12a1ead7419bb5d656acfc6e2e011a",
+      "after_hash": "1797a757644dbb3a289aee42cd5880cb9b32f952111897a6c2b6fac5c2bf5a27",
+      "format": "true_false",
+      "truths": [
+        true,
+        true,
+        false,
+        true
+      ]
+    }
+  ],
+  "regression": {
+    "id": "ANV-0005",
+    "before_hash": "80bf9b79cfb220e56a008fc9972c31b6b2be8ca2f9e8d3221d06a18788ff9f11",
+    "after_hash": "4d49a9fafaac6c35cffdf10636b51104e24b48bbd5d59548b139c6ffd6423204",
+    "changed_effective_ids": [
+      "AN-C09-91-M1",
+      "AN-C09-91-M2",
+      "AN-C09-91-M3",
+      "AN-C09-916-M1",
+      "AN-C09-916-M2",
+      "AN-C09-916-M3",
+      "AN-C09-93-M1",
+      "AN-C09-93-M2",
+      "AN-C09-93-M3",
+      "AN-C09-933-M3",
+      "AN-C10-1014-M1",
+      "AN-C10-1014-M2",
+      "AN-C10-1014-M3",
+      "AN-C10-1016-M1",
+      "AN-C10-1016-M2",
+      "AN-C10-1016-M3",
+      "AN-C10-1020-M3",
+      "AN-C10-1032-M1",
+      "AN-C10-1032-M2",
+      "AN-C10-1032-M3",
+      "AN-C10-1034-M3",
+      "AN-C10-1036-M2",
+      "AN-C10-1036-M3",
+      "AN-C11-1111-M1",
+      "AN-C11-1111-M2",
+      "AN-C11-1111-M3",
+      "AN-C11-1112a-M1",
+      "AN-C11-1112a-M2",
+      "AN-C11-1112a-M3",
+      "AN-C11-1112b-M1",
+      "AN-C11-1112b-M2",
+      "AN-C11-1112b-M3",
+      "AN-C11-1113-M1",
+      "AN-C11-1113-M2",
+      "AN-C11-1113-M3",
+      "AN-C11-1114-M1",
+      "AN-C11-1114-M2",
+      "AN-C11-1114-M3",
+      "AN-C11-1115-M1",
+      "AN-C11-1115-M2",
+      "AN-C11-1115-M3",
+      "AN-C11-1116-M1",
+      "AN-C11-1116-M2",
+      "AN-C11-1116-M3",
+      "AN-C11-1117-M1",
+      "AN-C11-1117-M2",
+      "AN-C11-1117-M3",
+      "AN-C11-112-M1",
+      "AN-C11-112-M2",
+      "AN-C11-112-M3",
+      "AN-C11-113-M1",
+      "AN-C11-113-M2",
+      "AN-C11-113-M3",
+      "AN-C11-114-M1",
+      "AN-C11-114-M2",
+      "AN-C11-114-M3",
+      "AN-C11-114a-M2",
+      "AN-C11-114a-M3",
+      "AN-C11-114b-M1",
+      "AN-C11-114b-M2",
+      "AN-C11-114b-M3",
+      "AN-C11-114c-M1",
+      "AN-C11-114c-M2",
+      "AN-C11-114c-M3",
+      "AN-C11-114d-M1",
+      "AN-C11-114d-M2",
+      "AN-C11-114d-M3",
+      "AN-C11-114e-M1",
+      "AN-C11-114e-M2",
+      "AN-C11-114e-M3",
+      "AN-C11-115-M1",
+      "AN-C11-115-M2",
+      "AN-C11-115-M3",
+      "AN-C11-115a-M1",
+      "AN-C11-115a-M2",
+      "AN-C11-115a-M3",
+      "AN-C11-115b-M1",
+      "AN-C11-115b-M2",
+      "AN-C11-115b-M3",
+      "AN-C11-115c-M1",
+      "AN-C11-115c-M2",
+      "AN-C11-115c-M3",
+      "AN-C11-116-M1",
+      "AN-C11-116-M2",
+      "AN-C11-116-M3",
+      "AN-C11-117-M1",
+      "AN-C11-117-M2",
+      "AN-C11-117-M3",
+      "AN-C11-117a-M1",
+      "AN-C11-117a-M2",
+      "AN-C11-117a-M3",
+      "AN-C11-117b-M1",
+      "AN-C11-117b-M2",
+      "AN-C11-117b-M3",
+      "AN-C11-117c-M1",
+      "AN-C11-117c-M2",
+      "AN-C11-117c-M3",
+      "AN-C11-117d-M1",
+      "AN-C11-117d-M2",
+      "AN-C11-117d-M3",
+      "AN-C11-118-M1",
+      "AN-C11-118-M2",
+      "AN-C11-118-M3",
+      "AN-C11-119-M1",
+      "AN-C11-119-M2",
+      "AN-C11-119-M3",
+      "AN-C12-1215-M1",
+      "AN-C12-1215-M2",
+      "AN-C12-1215-M3",
+      "AN-C12-1228-M1",
+      "AN-C12-1228-M2",
+      "AN-C12-1228-M3",
+      "AN-C12-1237-M1",
+      "AN-C12-1237-M2",
+      "AN-C12-1237-M3",
+      "AN-C12-1243-M1",
+      "AN-C12-1243-M2",
+      "AN-C12-1243-M3",
+      "AN-C12-1244-M3",
+      "AN-C12-1246-M3",
+      "AN-C12-125-M1",
+      "AN-C12-125-M2",
+      "AN-C12-125-M3",
+      "AN-C12-1253-M3",
+      "AN-C12-1263-M1",
+      "AN-C12-1263-M2",
+      "AN-C12-1263-M3",
+      "AN-C12-I12-56-M3",
+      "ANV-0005",
+      "ANV-0007",
+      "ANV-0016",
+      "ANV-0020",
+      "ANV-0021",
+      "ANV-0023",
+      "ANV-0025",
+      "ANV-0037",
+      "ANV-0038",
+      "ANV-0039",
+      "ANV-0041",
+      "ANV-0043",
+      "ANV-0044",
+      "ANV-0045",
+      "ANV-0046",
+      "ANV-0047",
+      "ANV-0048",
+      "ANV-0049",
+      "ANV-0050",
+      "ANV-0064",
+      "ANV-0067",
+      "ANV-0068",
+      "ANV-0073",
+      "ANV-0076",
+      "ANV-0085",
+      "ANV-0092",
+      "ANV-0096",
+      "ANV-0097",
+      "ANV-0100",
+      "ANV-0105",
+      "ANV-0108",
+      "ANV-0111",
+      "ANV-0116",
+      "ANV-0125",
+      "ANV-0128",
+      "ANV-0129",
+      "ANV-0131",
+      "ANV-0134",
+      "ANV-0138",
+      "ANV-0143",
+      "ANV-0145",
+      "ANV-0147",
+      "ANV-0148",
+      "ANV-0151",
+      "ANV-0152",
+      "ANV-0163",
+      "ANV-0164",
+      "ANV-0165",
+      "ANV-0166",
+      "ANV-0179",
+      "ANV-0181",
+      "ANV-0185",
+      "ANV-0190",
+      "ANV-0198",
+      "ANV-0199",
+      "ANV-0200",
+      "ANV-0203",
+      "ANV-0204",
+      "ANV-0213",
+      "ANV-0214",
+      "ANV-0218",
+      "ANV-0221",
+      "ANV-0223",
+      "ANV-0227",
+      "ANV-0235",
+      "ANV-0237",
+      "ANV-0254",
+      "ANV-0256",
+      "ANV-0262",
+      "ANV-0263",
+      "ANV-0269",
+      "ANV-0276",
+      "ANV-0278",
+      "ANV-0279",
+      "ANV-0283",
+      "ANV-0288",
+      "ANV-0295",
+      "ANV-0298",
+      "ANV-0378",
+      "ANV-0601",
+      "ANV-0602",
+      "ANV-0611",
+      "ANV-0612",
+      "ANV-0616",
+      "ANV-0619",
+      "ANV-0621",
+      "ANV-0625",
+      "ANV-0633",
+      "ANV-0635",
+      "ANV-0652",
+      "ANV-0654",
+      "ANV-0660",
+      "ANV-0661",
+      "ANV-0667",
+      "ANV-0674",
+      "ANV-0676",
+      "ANV-0677",
+      "ANV-0681",
+      "ANV-0686",
+      "ANV-0693",
+      "ANV-0696",
+      "ANV-0734",
+      "ANV-0765",
+      "ANV-0790",
+      "ANV-0794",
+      "ANV-0795",
+      "ANV-0798",
+      "ANV-0803",
+      "ANV-0806",
+      "ANV-0809",
+      "ANV-0814",
+      "ANV-0819",
+      "ANV-0823",
+      "ANV-0826",
+      "ANV-0827",
+      "ANV-0829",
+      "ANV-0832",
+      "ANV-0836",
+      "ANV-0841",
+      "ANV-0843",
+      "ANV-0845",
+      "ANV-0846",
+      "ANV-0849",
+      "ANV-0850",
+      "ANV-0861",
+      "ANV-0862",
+      "ANV-0863",
+      "ANV-0864",
+      "ANV-0877",
+      "ANV-0879",
+      "ANV-0883",
+      "ANV-0888",
+      "ANV-0897",
+      "ANV-0898",
+      "ANV-0901",
+      "ANV-0906",
+      "ANV-0909",
+      "ANV-0921",
+      "ANV-0923",
+      "ANV-0926",
+      "ANV-0964",
+      "ANV-0972",
+      "ANV-0975",
+      "ANV-0976",
+      "ANV-0977",
+      "ANV-0978",
+      "ANV-0981",
+      "ANV-0984",
+      "ANV-0988",
+      "ANV-0993",
+      "ANV-1000",
+      "ANV-1034"
+    ],
+    "preserved_occurrences": 11822,
+    "propositions_rendered": 656,
+    "direct_options_preserved": 580,
+    "editorial_release_approval": false
+  },
+  "render_full_bank": {
+    "occurrences": 14086,
+    "rendered": 14086,
+    "checked_block_texts": 26098,
+    "errors": [],
+    "note": "Verifica que blocos textuais reconhecidos pelo classificador chegam ao HTML do componente. Não comprova conteúdo correto nem detecta toda perda na classificação original. Alternativas foram conferidas separadamente no scanner."
+  },
+  "exit_codes": {
+    "checks-exits.json": {
+      "validate-runtime-question-banks": 0,
+      "validate-pscpp-exam-selection": 0,
+      "test-question-source-provenance": 0,
+      "validate-runtime-question-catalog": 0,
+      "test-pscpp-audit-anv0005": 0,
+      "test-notebook-complete-stems": 1,
+      "validate-editorial-runtime": 1
+    },
+    "generate-exits.json": {
+      "generate-pscpp-bank": 0,
+      "generate-question-banks": 0,
+      "generate-question-catalog": 0,
+      "generate-flashcard-decks": 0
+    },
+    "inventory-exits.json": {
+      "audit-pscpp-runtime-triage": 0,
+      "audit-pscpp-runtime-inventory": 0,
+      "validate-pscpp-editorial-evidence": 2
+    },
+    "generated-exits.json": {
+      "check-pscpp-bank": 0,
+      "check-question-banks": 0,
+      "check-question-catalog": 0,
+      "check-flashcard-decks": 0
+    },
+    "build-exits.json": {
+      "next-build": 0
+    }
+  },
+  "logs": [
+    {
+      "name": "audit-pscpp-runtime-inventory.log",
+      "sha256": "631df074fc037571dfc24b99e549950bad837111adb4f7e551db478185f5cfbc",
+      "output": "{\n  \"baseline_sha\": \"012b562b0eb6f7fec78773b339e4a53b3643e791\",\n  \"scope\": \"Tracked data JSON and fixtures; effective source pipelines; live SQL/offline/production reconciliation still pending.\",\n  \"json_files\": 162,\n  \"question_files\": 153,\n  \"physical_records\": 27435,\n  \"bank_source_records\": 27113,\n  \"fixture_records\": 322,\n  \"partial_editorial_patches\": 1532,\n  \"unique_bank_ids\": 21509,\n  \"runtime_occurrences\": 14086,\n  \"runtime_unique_ids\": 13715,\n  \"runtime_by_consumer\": {\n    \"cadernos\": 12102,\n    \"simulado_pscpp\": 1984\n  },\n  \"runtime_by_subject\": {\n    \"cadernos/manobrabilidade\": 3959,\n    \"cadernos/arte-naval\": 2128,\n    \"cadernos/navegacao-aguas-restritas\": 1610,\n    \"cadernos/situacoes-de-manobra-ripeam\": 320,\n    \"cadernos/legislacao-regulamentacao\": 1083,\n    \"cadernos/meteorologia-oceanografia\": 991,\n    \"cadernos/comunicacoes\": 1038,\n    \"cadernos/conhecimentos-gerais\": 973,\n    \"simulado_pscpp/arte-naval\": 1031,\n    \"simulado_pscpp/comunicacoes\": 27,\n    \"simulado_pscpp/meteorologia-oceanografia\": 52,\n    \"simulado_pscpp/navegacao-aguas-restritas\": 230,\n    \"simulado_pscpp/manobrabilidade\": 494,\n    \"simulado_pscpp/legislacao-regulamentacao\": 105,\n    \"simulado_pscpp/ii — arte naval\": 20,\n    \"simulado_pscpp/conhecimentos-gerais\": 25\n  },\n  \"runtime_historical\": {\n    \"cadernos/authorial\": 12102,\n    \"simulado_pscpp/historical\": 254,\n    \"simulado_pscpp/authorial\": 1730\n  },\n  \"runtime_selection_excluded\": 11,\n  \"physical_by_directory\": {\n    \"data/pscpp\": 6789,\n    \"data/question-extensions\": 2434,\n    \"data/question-restorations\": 4185,\n    \"data/questions\": 13705,\n    \"scripts/fixtures\": 322\n  },\n  \"active_ids_without_physical_source\": [],\n  \"same_id_multiple_versions\": 4859,\n  \"reviewed_individually\": 0,\n  \"verified_primary_source\": 0,\n  \"gates\": {\n    \"gate_1\": \"pending\",\n    \"gate_2\": \"pending\",\n    \"gate_3\": \"pending\",\n    \"gate_4\": \"pending\",\n    \"gate_5\": \"pending\",\n    \"gate_6\": \"pending\",\n    \"gate_7\": \"pending\",\n    \"gate_8\": \"pending\"\n  },\n  \"merge_permitted\": false\n}\n"
+    },
+    {
+      "name": "audit-pscpp-runtime-triage.log",
+      "sha256": "de3b4276fe380ae4c3ccaaee3e031bc5344a31db0ef597fe9a93cfa609bc159e",
+      "output": "{\n  \"scope\": \"notebook effective snapshot; same predicates as existing tests\",\n  \"counts\": {\n    \"COMBINATION_WITHOUT_PARSED_ASSERTIONS_CANDIDATE\": 145,\n    \"LOCATOR_COMMAND_CANDIDATE\": 77\n  },\n  \"note\": \"Triage does not certify, rewrite or quarantine questions.\"\n}\n"
+    },
+    {
+      "name": "check-flashcard-decks.log",
+      "sha256": "a23a8c2b1509a6257f53211dbe3d7f78092e8556eef2fc1c85bb237f8271cc55",
+      "output": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\n> simulados-pscpp@3.0.0 check:flashcard-decks\n> node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-flashcard-decks.mjs --check\n\nFlashcards prontos: 7 baralhos\n"
+    },
+    {
+      "name": "check-pscpp-bank.log",
+      "sha256": "f11b3b689dd725e4ae1164256836ca36f83474aa269cf8d0bd67162813bba4d4",
+      "output": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\n> simulados-pscpp@3.0.0 check:pscpp-bank\n> node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-pscpp-runtime-bank.mjs --check\n\nBanco PSCPP pronto: 1984 questões, 254 oficiais fiéis às fontes\n"
+    },
+    {
+      "name": "check-question-banks.log",
+      "sha256": "dc0a3ac9e8ba673199d33dde87921e2c6a3ea8b310577c13d22cb0a6d93e20ae",
+      "output": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\n> simulados-pscpp@3.0.0 check:question-banks\n> node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-question-banks.mjs --check\n\nBancos de cadernos prontos: 12102 questões\n"
+    },
+    {
+      "name": "check-question-catalog.log",
+      "sha256": "f2ab8cd489eeb10d146de3cec929dbc582c7a44ac9ca1f1a139e5814def110c7",
+      "output": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\n> simulados-pscpp@3.0.0 check:question-catalog\n> node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-question-catalog.mjs --check\n\nCatálogo pronto: 9 bancos\n"
+    },
+    {
+      "name": "conferencia-depois.log",
+      "sha256": "1c895e854be0cd5ca85d2e8d204ae1a62371f57ffa52c8451d49448827da7eb1",
+      "output": "{\n  \"snapshot\": \"e09a7d4e2d0b60bd9a3365f1069e0bd336106bb8\",\n  \"occurrences\": 14086,\n  \"unique_ids\": 13715,\n  \"partial_corrections\": 280,\n  \"counts_by_id\": {\n    \"SEM_ALERTA_AUTOMATICO\": 9857,\n    \"REVISAR\": 3709,\n    \"CORRIGIR\": 145,\n    \"DOCUMENTAR\": 4\n  },\n  \"counts_by_occurrence\": {\n    \"SEM_ALERTA_AUTOMATICO\": 9872,\n    \"REVISAR\": 4065,\n    \"CORRIGIR\": 145,\n    \"DOCUMENTAR\": 4\n  },\n  \"by_subject\": {\n    \"Cadernos/manobrabilidade\": {\n      \"total\": 3959,\n      \"counts\": {\n        \"SEM_ALERTA_AUTOMATICO\": 3474,\n        \"REVISAR\": 485\n      }\n    },\n    \"Cadernos/arte-naval\": {\n      \"total\": 2128,\n      \"counts\": {\n        \"SEM_ALERTA_AUTOMATICO\": 1787,\n        \"CORRIGIR\": 139,\n        \"REVISAR\": 202\n      }\n    },\n    \"Cadernos/navegacao-aguas-restritas\": {\n      \"total\": 1610,\n      \"counts\": {\n        \"SEM_ALERTA_AUTOMATICO\": 1418,\n        \"REVISAR\": 192\n      }\n    },\n    \"Cadernos/situacoes-de-manobra-ripeam\": {\n      \"total\": 320,\n      \"counts\": {\n        \"SEM_ALERTA_AUTOMATICO\": 16,\n        \"REVISAR\": 304\n      }\n    },\n    \"Cadernos/legislacao-regulamentacao\": {\n      \"total\": 1083,\n      \"counts\": {\n        \"SEM_ALERTA_AUTOMATICO\": 916,\n        \"REVISAR\": 167\n      }\n    },\n    \"Cadernos/meteorologia-oceanografia\": {\n      \"total\": 991,\n      \"counts\": {\n        \"SEM_ALERTA_AUTOMATICO\": 550,\n        \"REVISAR\": 439,\n        \"CORRIGIR\": 2\n      }\n    },\n    \"Cadernos/comunicacoes\": {\n      \"total\": 1038,\n      \"counts\": {\n        \"REVISAR\": 253,\n        \"SEM_ALERTA_AUTOMATICO\": 783,\n        \"CORRIGIR\": 2\n      }\n    },\n    \"Cadernos/conhecimentos-gerais\": {\n      \"total\": 973,\n      \"counts\": {\n        \"SEM_ALERTA_AUTOMATICO\": 326,\n        \"REVISAR\": 645,\n        \"CORRIGIR\": 2\n      }\n    },\n    \"Simulado PSCPP/arte-naval\": {\n      \"total\": 1031,\n      \"counts\": {\n        \"SEM_ALERTA_AUTOMATICO\": 311,\n        \"REVISAR\": 716,\n        \"DOCUMENTAR\": 4\n      }\n    },\n    \"Simulado PSCPP/comunicacoes\": {\n      \"total\": 27,\n      \"counts\": {\n        \"SEM_ALERTA_AUTOMATICO\": 13,\n        \"REVISAR\": 14\n      }\n    },\n    \"Simulado PSCPP/meteorologia-oceanografia\": {\n      \"total\": 52,\n      \"counts\": {\n        \"SEM_ALERTA_AUTOMATICO\": 40,\n        \"REVISAR\": 12\n      }\n    },\n    \"Simulado PSCPP/navegacao-aguas-restritas\": {\n      \"total\": 230,\n      \"counts\": {\n        \"SEM_ALERTA_AUTOMATICO\": 91,\n        \"REVISAR\": 139\n      }\n    },\n    \"Simulado PSCPP/manobrabilidade\": {\n      \"total\": 494,\n      \"counts\": {\n        \"SEM_ALERTA_AUTOMATICO\": 118,\n        \"REVISAR\": 376\n      }\n    },\n    \"Simulado PSCPP/legislacao-regulamentacao\": {\n      \"total\": 105,\n      \"counts\": {\n        \"SEM_ALERTA_AUTOMATICO\": 28,\n        \"REVISAR\": 77\n      }\n    },\n    \"Simulado PSCPP/ii — arte naval\": {\n      \"total\": 20,\n      \"counts\": {\n        \"REVISAR\": 20\n      }\n    },\n    \"Simulado PSCPP/conhecimentos-gerais\": {\n      \"total\": 25,\n      \"counts\": {\n        \"REVISAR\": 24,\n        \"SEM_ALERTA_AUTOMATICO\": 1\n      }\n    }\n  },\n  \"by_code\": {\n    \"UNBALANCED_OPTIONS\": {\n      \"level\": \"REVISAR\",\n      \"occurrences\": 330,\n      \"ids\": 330\n    },\n    \"LOCATOR_OR_GENERIC_COMMAND\": {\n      \"level\": \"REVISAR\",\n      \"occurrences\": 1676,\n      \"ids\": 1674\n    },\n    \"VISUAL_REFERENCE\": {\n      \"level\": \"REVISAR\",\n      \"occurrences\": 5,\n      \"ids\": 5\n    },\n    \"MISSING_ASSERTIONS\": {\n      \"level\": \"CORRIGIR\",\n      \"occurrences\": 145,\n      \"ids\": 145\n    },\n    \"DUPLICATE_OPTIONS\": {\n      \"level\": \"REVISAR\",\n      \"occurrences\": 1,\n      \"ids\": 1\n    },\n    \"ALREADY_EXCLUDED_SELECTION\": {\n      \"level\": \"DOCUMENTAR\",\n      \"occurrences\": 11,\n      \"ids\": 11\n    },\n    \"GENERIC_DISTRACTOR_RATIONALE\": {\n      \"level\": \"REVISAR\",\n      \"occurrences\": 64,\n      \"ids\": 64\n    },\n    \"IDENTICAL_QUESTION_OTHER_ID\": {\n      \"level\": \"REVISAR\",\n      \"occurrences\": 1179,\n      \"ids\": 1179\n    },\n    \"SAME_STEM_OTHER_ID\": {\n      \"level\": \"REVISAR\",\n      \"occurrences\": 1149,\n      \"ids\": 1149\n    },\n    \"SHARED_ID_VERSION_DIVERGENCE\": {\n      \"level\": \"REVISAR\",\n      \"occurrences\": 708,\n      \"ids\": 354\n    }\n  },\n  \"notes\": [\n    \"Conferência automatizada de todos os registros efetivos locais; não é revisão bibliográfica individual.\",\n    \"Categorias de ID são mutuamente exclusivas e seguem a prioridade CORRIGIR > REVISAR > DOCUMENTAR > SEM_ALERTA_AUTOMATICO.\",\n    \"SEM_ALERTA_AUTOMATICO não significa aprovado nem correto; erros de conteúdo, normas, gabarito e semântica ainda podem existir.\",\n    \"Leitura integral das obras, comparação item a item com provas e reconciliação SQL/offline não realizadas nesta conferência.\",\n    \"371 IDs ocorrem nos dois consumidores; contagem de IDs evita somá-los duas vezes.\"\n  ]\n}\n"
+    },
+    {
+      "name": "generate-flashcard-decks.log",
+      "sha256": "5602b622e66528c4c109534f5adaf2e478161c09c9cfbb89df017bbf727e9dfc",
+      "output": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\n> simulados-pscpp@3.0.0 generate:flashcard-decks\n> node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-flashcard-decks.mjs\n\nFlashcards gerados: 7 baralhos\n"
+    },
+    {
+      "name": "generate-notebook.log",
+      "sha256": "b2a0ab6250b0a7b547730a5d80e2154269f1257203eee926750cc3a4dabc53dc",
+      "output": "Bancos de cadernos gerados: 12102 questões\n"
+    },
+    {
+      "name": "generate-pscpp-bank.log",
+      "sha256": "973159119a0a94cf2eed21b97fc4147aa1d6c0d4949f56e0e19f4cf0600b205c",
+      "output": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\n> simulados-pscpp@3.0.0 generate:pscpp-bank\n> node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-pscpp-runtime-bank.mjs\n\nBanco PSCPP gerado: 1984 questões · 254 oficiais fiéis às fontes\n"
+    },
+    {
+      "name": "generate-question-banks.log",
+      "sha256": "979534b271e80e340988da98dd34dd61d726ee9e79ae9cc75b70b2cdf8a21d12",
+      "output": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\n> simulados-pscpp@3.0.0 generate:question-banks\n> node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-question-banks.mjs\n\nBancos de cadernos gerados: 12102 questões\n"
+    },
+    {
+      "name": "generate-question-catalog.log",
+      "sha256": "b7e951979825309069bba36ac6a7cf5a2769e38a6804adaae420a75b9244e470",
+      "output": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\n> simulados-pscpp@3.0.0 generate:question-catalog\n> node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-question-catalog.mjs\n\nCatálogo gerado: 9 bancos, 12102 questões indexadas\n"
+    },
+    {
+      "name": "next-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": ""
+    },
+    {
+      "name": "regression.log",
+      "sha256": "de3b7cb4bd5a69cf7e498e01cd9585b2d41dba2c54d93b329c334fe1ffbafdd9",
+      "output": "{\n  \"id\": \"ANV-0005\",\n  \"before_hash\": \"80bf9b79cfb220e56a008fc9972c31b6b2be8ca2f9e8d3221d06a18788ff9f11\",\n  \"after_hash\": \"4d49a9fafaac6c35cffdf10636b51104e24b48bbd5d59548b139c6ffd6423204\",\n  \"changed_effective_ids\": [\n    \"AN-C09-91-M1\",\n    \"AN-C09-91-M2\",\n    \"AN-C09-91-M3\",\n    \"AN-C09-916-M1\",\n    \"AN-C09-916-M2\",\n    \"AN-C09-916-M3\",\n    \"AN-C09-93-M1\",\n    \"AN-C09-93-M2\",\n    \"AN-C09-93-M3\",\n    \"AN-C09-933-M3\",\n    \"AN-C10-1014-M1\",\n    \"AN-C10-1014-M2\",\n    \"AN-C10-1014-M3\",\n    \"AN-C10-1016-M1\",\n    \"AN-C10-1016-M2\",\n    \"AN-C10-1016-M3\",\n    \"AN-C10-1020-M3\",\n    \"AN-C10-1032-M1\",\n    \"AN-C10-1032-M2\",\n    \"AN-C10-1032-M3\",\n    \"AN-C10-1034-M3\",\n    \"AN-C10-1036-M2\",\n    \"AN-C10-1036-M3\",\n    \"AN-C11-1111-M1\",\n    \"AN-C11-1111-M2\",\n    \"AN-C11-1111-M3\",\n    \"AN-C11-1112a-M1\",\n    \"AN-C11-1112a-M2\",\n    \"AN-C11-1112a-M3\",\n    \"AN-C11-1112b-M1\",\n    \"AN-C11-1112b-M2\",\n    \"AN-C11-1112b-M3\",\n    \"AN-C11-1113-M1\",\n    \"AN-C11-1113-M2\",\n    \"AN-C11-1113-M3\",\n    \"AN-C11-1114-M1\",\n    \"AN-C11-1114-M2\",\n    \"AN-C11-1114-M3\",\n    \"AN-C11-1115-M1\",\n    \"AN-C11-1115-M2\",\n    \"AN-C11-1115-M3\",\n    \"AN-C11-1116-M1\",\n    \"AN-C11-1116-M2\",\n    \"AN-C11-1116-M3\",\n    \"AN-C11-1117-M1\",\n    \"AN-C11-1117-M2\",\n    \"AN-C11-1117-M3\",\n    \"AN-C11-112-M1\",\n    \"AN-C11-112-M2\",\n    \"AN-C11-112-M3\",\n    \"AN-C11-113-M1\",\n    \"AN-C11-113-M2\",\n    \"AN-C11-113-M3\",\n    \"AN-C11-114-M1\",\n    \"AN-C11-114-M2\",\n    \"AN-C11-114-M3\",\n    \"AN-C11-114a-M2\",\n    \"AN-C11-114a-M3\",\n    \"AN-C11-114b-M1\",\n    \"AN-C11-114b-M2\",\n    \"AN-C11-114b-M3\",\n    \"AN-C11-114c-M1\",\n    \"AN-C11-114c-M2\",\n    \"AN-C11-114c-M3\",\n    \"AN-C11-114d-M1\",\n    \"AN-C11-114d-M2\",\n    \"AN-C11-114d-M3\",\n    \"AN-C11-114e-M1\",\n    \"AN-C11-114e-M2\",\n    \"AN-C11-114e-M3\",\n    \"AN-C11-115-M1\",\n    \"AN-C11-115-M2\",\n    \"AN-C11-115-M3\",\n    \"AN-C11-115a-M1\",\n    \"AN-C11-115a-M2\",\n    \"AN-C11-115a-M3\",\n    \"AN-C11-115b-M1\",\n    \"AN-C11-115b-M2\",\n    \"AN-C11-115b-M3\",\n    \"AN-C11-115c-M1\",\n    \"AN-C11-115c-M2\",\n    \"AN-C11-115c-M3\",\n    \"AN-C11-116-M1\",\n    \"AN-C11-116-M2\",\n    \"AN-C11-116-M3\",\n    \"AN-C11-117-M1\",\n    \"AN-C11-117-M2\",\n    \"AN-C11-117-M3\",\n    \"AN-C11-117a-M1\",\n    \"AN-C11-117a-M2\",\n    \"AN-C11-117a-M3\",\n    \"AN-C11-117b-M1\",\n    \"AN-C11-117b-M2\",\n    \"AN-C11-117b-M3\",\n    \"AN-C11-117c-M1\",\n    \"AN-C11-117c-M2\",\n    \"AN-C11-117c-M3\",\n    \"AN-C11-117d-M1\",\n    \"AN-C11-117d-M2\",\n    \"AN-C11-117d-M3\",\n    \"AN-C11-118-M1\",\n    \"AN-C11-118-M2\",\n    \"AN-C11-118-M3\",\n    \"AN-C11-119-M1\",\n    \"AN-C11-119-M2\",\n    \"AN-C11-119-M3\",\n    \"AN-C12-1215-M1\",\n    \"AN-C12-1215-M2\",\n    \"AN-C12-1215-M3\",\n    \"AN-C12-1228-M1\",\n    \"AN-C12-1228-M2\",\n    \"AN-C12-1228-M3\",\n    \"AN-C12-1237-M1\",\n    \"AN-C12-1237-M2\",\n    \"AN-C12-1237-M3\",\n    \"AN-C12-1243-M1\",\n    \"AN-C12-1243-M2\",\n    \"AN-C12-1243-M3\",\n    \"AN-C12-1244-M3\",\n    \"AN-C12-1246-M3\",\n    \"AN-C12-125-M1\",\n    \"AN-C12-125-M2\",\n    \"AN-C12-125-M3\",\n    \"AN-C12-1253-M3\",\n    \"AN-C12-1263-M1\",\n    \"AN-C12-1263-M2\",\n    \"AN-C12-1263-M3\",\n    \"AN-C12-I12-56-M3\",\n    \"ANV-0005\",\n    \"ANV-0007\",\n    \"ANV-0016\",\n    \"ANV-0020\",\n    \"ANV-0021\",\n    \"ANV-0023\",\n    \"ANV-0025\",\n    \"ANV-0037\",\n    \"ANV-0038\",\n    \"ANV-0039\",\n    \"ANV-0041\",\n    \"ANV-0043\",\n    \"ANV-0044\",\n    \"ANV-0045\",\n    \"ANV-0046\",\n    \"ANV-0047\",\n    \"ANV-0048\",\n    \"ANV-0049\",\n    \"ANV-0050\",\n    \"ANV-0064\",\n    \"ANV-0067\",\n    \"ANV-0068\",\n    \"ANV-0073\",\n    \"ANV-0076\",\n    \"ANV-0085\",\n    \"ANV-0092\",\n    \"ANV-0096\",\n    \"ANV-0097\",\n    \"ANV-0100\",\n    \"ANV-0105\",\n    \"ANV-0108\",\n    \"ANV-0111\",\n    \"ANV-0116\",\n    \"ANV-0125\",\n    \"ANV-0128\",\n    \"ANV-0129\",\n    \"ANV-0131\",\n    \"ANV-0134\",\n    \"ANV-0138\",\n    \"ANV-0143\",\n    \"ANV-0145\",\n    \"ANV-0147\",\n    \"ANV-0148\",\n    \"ANV-0151\",\n    \"ANV-0152\",\n    \"ANV-0163\",\n    \"ANV-0164\",\n    \"ANV-0165\",\n    \"ANV-0166\",\n    \"ANV-0179\",\n    \"ANV-0181\",\n    \"ANV-0185\",\n    \"ANV-0190\",\n    \"ANV-0198\",\n    \"ANV-0199\",\n    \"ANV-0200\",\n    \"ANV-0203\",\n    \"ANV-0204\",\n    \"ANV-0213\",\n    \"ANV-0214\",\n    \"ANV-0218\",\n    \"ANV-0221\",\n    \"ANV-0223\",\n    \"ANV-0227\",\n    \"ANV-0235\",\n    \"ANV-0237\",\n    \"ANV-0254\",\n    \"ANV-0256\",\n    \"ANV-0262\",\n    \"ANV-0263\",\n    \"ANV-0269\",\n    \"ANV-0276\",\n    \"ANV-0278\",\n    \"ANV-0279\",\n    \"ANV-0283\",\n    \"ANV-0288\",\n    \"ANV-0295\",\n    \"ANV-0298\",\n    \"ANV-0378\",\n    \"ANV-0601\",\n    \"ANV-0602\",\n    \"ANV-0611\",\n    \"ANV-0612\",\n    \"ANV-0616\",\n    \"ANV-0619\",\n    \"ANV-0621\",\n    \"ANV-0625\",\n    \"ANV-0633\",\n    \"ANV-0635\",\n    \"ANV-0652\",\n    \"ANV-0654\",\n    \"ANV-0660\",\n    \"ANV-0661\",\n    \"ANV-0667\",\n    \"ANV-0674\",\n    \"ANV-0676\",\n    \"ANV-0677\",\n    \"ANV-0681\",\n    \"ANV-0686\",\n    \"ANV-0693\",\n    \"ANV-0696\",\n    \"ANV-0734\",\n    \"ANV-0765\",\n    \"ANV-0790\",\n    \"ANV-0794\",\n    \"ANV-0795\",\n    \"ANV-0798\",\n    \"ANV-0803\",\n    \"ANV-0806\",\n    \"ANV-0809\",\n    \"ANV-0814\",\n    \"ANV-0819\",\n    \"ANV-0823\",\n    \"ANV-0826\",\n    \"ANV-0827\",\n    \"ANV-0829\",\n    \"ANV-0832\",\n    \"ANV-0836\",\n    \"ANV-0841\",\n    \"ANV-0843\",\n    \"ANV-0845\",\n    \"ANV-0846\",\n    \"ANV-0849\",\n    \"ANV-0850\",\n    \"ANV-0861\",\n    \"ANV-0862\",\n    \"ANV-0863\",\n    \"ANV-0864\",\n    \"ANV-0877\",\n    \"ANV-0879\",\n    \"ANV-0883\",\n    \"ANV-0888\",\n    \"ANV-0897\",\n    \"ANV-0898\",\n    \"ANV-0901\",\n    \"ANV-0906\",\n    \"ANV-0909\",\n    \"ANV-0921\",\n    \"ANV-0923\",\n    \"ANV-0926\",\n    \"ANV-0964\",\n    \"ANV-0972\",\n    \"ANV-0975\",\n    \"ANV-0976\",\n    \"ANV-0977\",\n    \"ANV-0978\",\n    \"ANV-0981\",\n    \"ANV-0984\",\n    \"ANV-0988\",\n    \"ANV-0993\",\n    \"ANV-1000\",\n    \"ANV-1034\"\n  ],\n  \"preserved_occurrences\": 11822,\n  \"propositions_rendered\": 656,\n  \"direct_options_preserved\": 580,\n  \"editorial_release_approval\": false\n}\n"
+    },
+    {
+      "name": "renderizacao-total.log",
+      "sha256": "db5961e635cdf361984cde05d324461b34618daf385b43e53ce190ff11b1cdd8",
+      "output": "{\n  \"occurrences\": 14086,\n  \"rendered\": 14086,\n  \"checked_block_texts\": 26098,\n  \"errors\": [],\n  \"note\": \"Verifica que blocos textuais reconhecidos pelo classificador chegam ao HTML do componente. Não comprova conteúdo correto nem detecta toda perda na classificação original. Alternativas foram conferidas separadamente no scanner.\"\n}\n"
+    },
+    {
+      "name": "test-notebook-complete-stems.log",
+      "sha256": "bf9bed04b185751291610ab7610d4cb5fd67f3347adae2db0e743efa21caf80e",
+      "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Combination without propositions: arte-naval/ANV-0142\n    at file:///workspace/scratch/84c3a78e6648/repo/scripts/test-notebook-complete-stems.mjs:120:29\n    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async node:internal/modules/esm/loader:647:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: '==',\n  diff: 'simple'\n}\n\nNode.js v24.22.1\n"
+    },
+    {
+      "name": "test-pscpp-audit-anv0005.log",
+      "sha256": "de3b7cb4bd5a69cf7e498e01cd9585b2d41dba2c54d93b329c334fe1ffbafdd9",
+      "output": "{\n  \"id\": \"ANV-0005\",\n  \"before_hash\": \"80bf9b79cfb220e56a008fc9972c31b6b2be8ca2f9e8d3221d06a18788ff9f11\",\n  \"after_hash\": \"4d49a9fafaac6c35cffdf10636b51104e24b48bbd5d59548b139c6ffd6423204\",\n  \"changed_effective_ids\": [\n    \"AN-C09-91-M1\",\n    \"AN-C09-91-M2\",\n    \"AN-C09-91-M3\",\n    \"AN-C09-916-M1\",\n    \"AN-C09-916-M2\",\n    \"AN-C09-916-M3\",\n    \"AN-C09-93-M1\",\n    \"AN-C09-93-M2\",\n    \"AN-C09-93-M3\",\n    \"AN-C09-933-M3\",\n    \"AN-C10-1014-M1\",\n    \"AN-C10-1014-M2\",\n    \"AN-C10-1014-M3\",\n    \"AN-C10-1016-M1\",\n    \"AN-C10-1016-M2\",\n    \"AN-C10-1016-M3\",\n    \"AN-C10-1020-M3\",\n    \"AN-C10-1032-M1\",\n    \"AN-C10-1032-M2\",\n    \"AN-C10-1032-M3\",\n    \"AN-C10-1034-M3\",\n    \"AN-C10-1036-M2\",\n    \"AN-C10-1036-M3\",\n    \"AN-C11-1111-M1\",\n    \"AN-C11-1111-M2\",\n    \"AN-C11-1111-M3\",\n    \"AN-C11-1112a-M1\",\n    \"AN-C11-1112a-M2\",\n    \"AN-C11-1112a-M3\",\n    \"AN-C11-1112b-M1\",\n    \"AN-C11-1112b-M2\",\n    \"AN-C11-1112b-M3\",\n    \"AN-C11-1113-M1\",\n    \"AN-C11-1113-M2\",\n    \"AN-C11-1113-M3\",\n    \"AN-C11-1114-M1\",\n    \"AN-C11-1114-M2\",\n    \"AN-C11-1114-M3\",\n    \"AN-C11-1115-M1\",\n    \"AN-C11-1115-M2\",\n    \"AN-C11-1115-M3\",\n    \"AN-C11-1116-M1\",\n    \"AN-C11-1116-M2\",\n    \"AN-C11-1116-M3\",\n    \"AN-C11-1117-M1\",\n    \"AN-C11-1117-M2\",\n    \"AN-C11-1117-M3\",\n    \"AN-C11-112-M1\",\n    \"AN-C11-112-M2\",\n    \"AN-C11-112-M3\",\n    \"AN-C11-113-M1\",\n    \"AN-C11-113-M2\",\n    \"AN-C11-113-M3\",\n    \"AN-C11-114-M1\",\n    \"AN-C11-114-M2\",\n    \"AN-C11-114-M3\",\n    \"AN-C11-114a-M2\",\n    \"AN-C11-114a-M3\",\n    \"AN-C11-114b-M1\",\n    \"AN-C11-114b-M2\",\n    \"AN-C11-114b-M3\",\n    \"AN-C11-114c-M1\",\n    \"AN-C11-114c-M2\",\n    \"AN-C11-114c-M3\",\n    \"AN-C11-114d-M1\",\n    \"AN-C11-114d-M2\",\n    \"AN-C11-114d-M3\",\n    \"AN-C11-114e-M1\",\n    \"AN-C11-114e-M2\",\n    \"AN-C11-114e-M3\",\n    \"AN-C11-115-M1\",\n    \"AN-C11-115-M2\",\n    \"AN-C11-115-M3\",\n    \"AN-C11-115a-M1\",\n    \"AN-C11-115a-M2\",\n    \"AN-C11-115a-M3\",\n    \"AN-C11-115b-M1\",\n    \"AN-C11-115b-M2\",\n    \"AN-C11-115b-M3\",\n    \"AN-C11-115c-M1\",\n    \"AN-C11-115c-M2\",\n    \"AN-C11-115c-M3\",\n    \"AN-C11-116-M1\",\n    \"AN-C11-116-M2\",\n    \"AN-C11-116-M3\",\n    \"AN-C11-117-M1\",\n    \"AN-C11-117-M2\",\n    \"AN-C11-117-M3\",\n    \"AN-C11-117a-M1\",\n    \"AN-C11-117a-M2\",\n    \"AN-C11-117a-M3\",\n    \"AN-C11-117b-M1\",\n    \"AN-C11-117b-M2\",\n    \"AN-C11-117b-M3\",\n    \"AN-C11-117c-M1\",\n    \"AN-C11-117c-M2\",\n    \"AN-C11-117c-M3\",\n    \"AN-C11-117d-M1\",\n    \"AN-C11-117d-M2\",\n    \"AN-C11-117d-M3\",\n    \"AN-C11-118-M1\",\n    \"AN-C11-118-M2\",\n    \"AN-C11-118-M3\",\n    \"AN-C11-119-M1\",\n    \"AN-C11-119-M2\",\n    \"AN-C11-119-M3\",\n    \"AN-C12-1215-M1\",\n    \"AN-C12-1215-M2\",\n    \"AN-C12-1215-M3\",\n    \"AN-C12-1228-M1\",\n    \"AN-C12-1228-M2\",\n    \"AN-C12-1228-M3\",\n    \"AN-C12-1237-M1\",\n    \"AN-C12-1237-M2\",\n    \"AN-C12-1237-M3\",\n    \"AN-C12-1243-M1\",\n    \"AN-C12-1243-M2\",\n    \"AN-C12-1243-M3\",\n    \"AN-C12-1244-M3\",\n    \"AN-C12-1246-M3\",\n    \"AN-C12-125-M1\",\n    \"AN-C12-125-M2\",\n    \"AN-C12-125-M3\",\n    \"AN-C12-1253-M3\",\n    \"AN-C12-1263-M1\",\n    \"AN-C12-1263-M2\",\n    \"AN-C12-1263-M3\",\n    \"AN-C12-I12-56-M3\",\n    \"ANV-0005\",\n    \"ANV-0007\",\n    \"ANV-0016\",\n    \"ANV-0020\",\n    \"ANV-0021\",\n    \"ANV-0023\",\n    \"ANV-0025\",\n    \"ANV-0037\",\n    \"ANV-0038\",\n    \"ANV-0039\",\n    \"ANV-0041\",\n    \"ANV-0043\",\n    \"ANV-0044\",\n    \"ANV-0045\",\n    \"ANV-0046\",\n    \"ANV-0047\",\n    \"ANV-0048\",\n    \"ANV-0049\",\n    \"ANV-0050\",\n    \"ANV-0064\",\n    \"ANV-0067\",\n    \"ANV-0068\",\n    \"ANV-0073\",\n    \"ANV-0076\",\n    \"ANV-0085\",\n    \"ANV-0092\",\n    \"ANV-0096\",\n    \"ANV-0097\",\n    \"ANV-0100\",\n    \"ANV-0105\",\n    \"ANV-0108\",\n    \"ANV-0111\",\n    \"ANV-0116\",\n    \"ANV-0125\",\n    \"ANV-0128\",\n    \"ANV-0129\",\n    \"ANV-0131\",\n    \"ANV-0134\",\n    \"ANV-0138\",\n    \"ANV-0143\",\n    \"ANV-0145\",\n    \"ANV-0147\",\n    \"ANV-0148\",\n    \"ANV-0151\",\n    \"ANV-0152\",\n    \"ANV-0163\",\n    \"ANV-0164\",\n    \"ANV-0165\",\n    \"ANV-0166\",\n    \"ANV-0179\",\n    \"ANV-0181\",\n    \"ANV-0185\",\n    \"ANV-0190\",\n    \"ANV-0198\",\n    \"ANV-0199\",\n    \"ANV-0200\",\n    \"ANV-0203\",\n    \"ANV-0204\",\n    \"ANV-0213\",\n    \"ANV-0214\",\n    \"ANV-0218\",\n    \"ANV-0221\",\n    \"ANV-0223\",\n    \"ANV-0227\",\n    \"ANV-0235\",\n    \"ANV-0237\",\n    \"ANV-0254\",\n    \"ANV-0256\",\n    \"ANV-0262\",\n    \"ANV-0263\",\n    \"ANV-0269\",\n    \"ANV-0276\",\n    \"ANV-0278\",\n    \"ANV-0279\",\n    \"ANV-0283\",\n    \"ANV-0288\",\n    \"ANV-0295\",\n    \"ANV-0298\",\n    \"ANV-0378\",\n    \"ANV-0601\",\n    \"ANV-0602\",\n    \"ANV-0611\",\n    \"ANV-0612\",\n    \"ANV-0616\",\n    \"ANV-0619\",\n    \"ANV-0621\",\n    \"ANV-0625\",\n    \"ANV-0633\",\n    \"ANV-0635\",\n    \"ANV-0652\",\n    \"ANV-0654\",\n    \"ANV-0660\",\n    \"ANV-0661\",\n    \"ANV-0667\",\n    \"ANV-0674\",\n    \"ANV-0676\",\n    \"ANV-0677\",\n    \"ANV-0681\",\n    \"ANV-0686\",\n    \"ANV-0693\",\n    \"ANV-0696\",\n    \"ANV-0734\",\n    \"ANV-0765\",\n    \"ANV-0790\",\n    \"ANV-0794\",\n    \"ANV-0795\",\n    \"ANV-0798\",\n    \"ANV-0803\",\n    \"ANV-0806\",\n    \"ANV-0809\",\n    \"ANV-0814\",\n    \"ANV-0819\",\n    \"ANV-0823\",\n    \"ANV-0826\",\n    \"ANV-0827\",\n    \"ANV-0829\",\n    \"ANV-0832\",\n    \"ANV-0836\",\n    \"ANV-0841\",\n    \"ANV-0843\",\n    \"ANV-0845\",\n    \"ANV-0846\",\n    \"ANV-0849\",\n    \"ANV-0850\",\n    \"ANV-0861\",\n    \"ANV-0862\",\n    \"ANV-0863\",\n    \"ANV-0864\",\n    \"ANV-0877\",\n    \"ANV-0879\",\n    \"ANV-0883\",\n    \"ANV-0888\",\n    \"ANV-0897\",\n    \"ANV-0898\",\n    \"ANV-0901\",\n    \"ANV-0906\",\n    \"ANV-0909\",\n    \"ANV-0921\",\n    \"ANV-0923\",\n    \"ANV-0926\",\n    \"ANV-0964\",\n    \"ANV-0972\",\n    \"ANV-0975\",\n    \"ANV-0976\",\n    \"ANV-0977\",\n    \"ANV-0978\",\n    \"ANV-0981\",\n    \"ANV-0984\",\n    \"ANV-0988\",\n    \"ANV-0993\",\n    \"ANV-1000\",\n    \"ANV-1034\"\n  ],\n  \"preserved_occurrences\": 11822,\n  \"propositions_rendered\": 656,\n  \"direct_options_preserved\": 580,\n  \"editorial_release_approval\": false\n}\n"
+    },
+    {
+      "name": "test-question-source-provenance.log",
+      "sha256": "94f1502ecd6a0e12f5f5e0ca23199287705e2935cc108ed53f7c9fe1dbdee4bb",
+      "output": "Canonical ID precedence and transitive source fingerprints: OK\n"
+    },
+    {
+      "name": "validate-editorial-runtime.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": ""
+    },
+    {
+      "name": "validate-pscpp-editorial-evidence.log",
+      "sha256": "6dfc0f52a36a11eef2641dd7eb104ec62d9ac71f896fbc8798d26d351dc4333f",
+      "output": "{\n  \"scope\": \"Effective occurrences by consumer, stable ID and content hash\",\n  \"runtime_occurrences\": 14086,\n  \"accepted_occurrences\": 0,\n  \"pending_or_invalid_occurrences\": 14086,\n  \"editorial_gate_passed\": false,\n  \"merge_permitted\": false,\n  \"note\": \"This checks evidence completeness, not truth of evidence; all other release gates still apply.\"\n}\n"
+    },
+    {
+      "name": "validate-pscpp-exam-selection.log",
+      "sha256": "096840b52977baac81c5806a04900d930ed8fc615efd94e2c7957f94f0b5fe70",
+      "output": "Matriz fixa PSCPP: OK\n"
+    },
+    {
+      "name": "validate-runtime-question-banks.log",
+      "sha256": "1b77228ab20a4493a359ecbb05a84cc02306b0a90b75d4418363bb6f5a9a2c45",
+      "output": "Bancos ativos de cadernos: 12102 questões verificadas\n"
+    },
+    {
+      "name": "validate-runtime-question-catalog.log",
+      "sha256": "9841ca1cf0b4ebe598ecf0334b59c3f32e3308948c127e2e2266747add2700ce",
+      "output": "Catálogo equivalente ao banco ativo: 12102 referências, contagens e filtros completos\n"
+    }
+  ],
+  "build_artifacts": {
+    "exit_code": 0,
+    "stdout_log_empty": true,
+    "build_id": "rorxo3xevgPCA4SCl-qyk",
+    "app_paths": 189,
+    "prerender_routes": 25,
+    "note": "Artifacts and exit0 checked; no full stdout route-summary claim."
+  }
+}

@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile, readdir, writeFile } from "node:fs/promises";
-import { createHash } from "node:crypto";
+import { fileURLToPath } from "node:url";
+import { hashLocalModuleClosure } from "./lib/hash-module-closure.mjs";
 import { collectActivePscppQuestions } from "../lib/pscpp-exam-source.js";
 import officialExams from "../data/pscpp/official-exams.json" with { type: "json" };
 
@@ -13,12 +14,7 @@ const inputFiles = [
   "lib/pscpp-exam-source.js", "lib/generated-pscpp-batches.js", "lib/approved-pscpp-drive-blocks.js",
   "lib/question-quality-policy.js", "lib/question-quality.js", "lib/miguens-cap45-review.js", "data/question-restorations/miguens-cap45-reviewed.json",
 ];
-const digest = createHash("sha256");
-for (const path of inputFiles.sort()) {
-  digest.update(path);
-  digest.update(await readFile(new URL(path, root)));
-}
-const sourceHash = digest.digest("hex");
+const { sourceHash } = await hashLocalModuleClosure(fileURLToPath(root), ["lib/pscpp-exam-source.js"], inputFiles);
 
 const isOfficial = (question) => question?.origin === "official_exam" || question?.pscpp_origin === "official_exam";
 const canonicalOfficial = officialExams.questions.filter((question) => question && !question.annulled);

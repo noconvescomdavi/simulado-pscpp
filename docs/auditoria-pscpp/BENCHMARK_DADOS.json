@@ -1,0 +1,405 @@
+{
+  "status": "historical_full_text_classified_not_active_bank_certification",
+  "total": 264,
+  "valid": 254,
+  "annulled": 10,
+  "by_year": {
+    "2006": {
+      "total": 70,
+      "valid": 70,
+      "annulled_numbers": [],
+      "points_total": null
+    },
+    "2008": {
+      "total": 73,
+      "valid": 68,
+      "annulled_numbers": [
+        14,
+        18,
+        20,
+        45,
+        51
+      ],
+      "points_total": 70.0
+    },
+    "2011": {
+      "total": 71,
+      "valid": 67,
+      "annulled_numbers": [
+        28,
+        33,
+        45,
+        56
+      ],
+      "points_total": 70.0
+    },
+    "2012": {
+      "total": 50,
+      "valid": 49,
+      "annulled_numbers": [
+        7
+      ],
+      "points_total": 70.0
+    }
+  },
+  "formats": {
+    "A": {
+      "count": 149,
+      "percent": 58.661417322834644
+    },
+    "B": {
+      "count": 55,
+      "percent": 21.653543307086615
+    },
+    "C": {
+      "count": 21,
+      "percent": 8.26771653543307
+    },
+    "D": {
+      "count": 22,
+      "percent": 8.661417322834646
+    },
+    "E": {
+      "count": 7,
+      "percent": 2.7559055118110236
+    }
+  },
+  "formats_basis": "manual_full_text_review",
+  "formats_structural_heuristic": {
+    "E": 7,
+    "A": 147,
+    "B": 57,
+    "C": 21,
+    "D": 22
+  },
+  "manual_structural_disagreements": [
+    {
+      "year": 2011,
+      "number": 17,
+      "format_recomputed": "B",
+      "format_reviewed": "A",
+      "editorial_notes_reviewed": "Calcula resistência e aplica cinco fatores de serviço; respostas são sequências numéricas, sem lacunas ou V/F."
+    },
+    {
+      "year": 2011,
+      "number": 47,
+      "format_recomputed": "B",
+      "format_reviewed": "A",
+      "editorial_notes_reviewed": "Ordena métodos por precisão decrescente; números romanos nomeiam métodos, não proposições V/F."
+    }
+  ],
+  "disagreements": [
+    {
+      "year": 2008,
+      "number": 11,
+      "page_start": 5,
+      "format_previous": "B",
+      "format_recomputed": "D"
+    },
+    {
+      "year": 2008,
+      "number": 27,
+      "page_start": 12,
+      "format_previous": "B",
+      "format_recomputed": "E"
+    },
+    {
+      "year": 2008,
+      "number": 37,
+      "page_start": 17,
+      "format_previous": "A",
+      "format_recomputed": "C"
+    },
+    {
+      "year": 2011,
+      "number": 16,
+      "page_start": 8,
+      "format_previous": "B",
+      "format_recomputed": "D"
+    },
+    {
+      "year": 2011,
+      "number": 43,
+      "page_start": 21,
+      "format_previous": "B",
+      "format_recomputed": "C"
+    },
+    {
+      "year": 2011,
+      "number": 68,
+      "page_start": 38,
+      "format_previous": "A",
+      "format_recomputed": "C"
+    }
+  ],
+  "subject_matrix_status": "manual_primary_competence_classification",
+  "format_targets_approved": false,
+  "historical_key_observation_complete": true,
+  "historical_answers_revalidated_against_current_primary_bibliography": false,
+  "manual_totals_valid": {
+    "subject_reviewed": {
+      "arte-naval": 24,
+      "comunicacoes": 14,
+      "meteorologia-oceanografia": 17,
+      "navegacao-aguas-restritas": 75,
+      "manobrabilidade": 100,
+      "legislacao-regulamentacao": 24
+    },
+    "format_reviewed": {
+      "E": 7,
+      "A": 149,
+      "B": 55,
+      "C": 21,
+      "D": 22
+    },
+    "cognitive_level_reviewed": {
+      "L1": 63,
+      "L3": 70,
+      "L2": 99,
+      "L4": 22
+    },
+    "language_reviewed": {
+      "pt": 200,
+      "mixed": 12,
+      "en": 42
+    }
+  },
+  "manual_subject_points_by_year": {
+    "2006": {
+      "arte-naval": {
+        "valid_count": 6,
+        "valid_points": null
+      },
+      "comunicacoes": {
+        "valid_count": 5,
+        "valid_points": null
+      },
+      "legislacao-regulamentacao": {
+        "valid_count": 5,
+        "valid_points": null
+      },
+      "manobrabilidade": {
+        "valid_count": 34,
+        "valid_points": null
+      },
+      "meteorologia-oceanografia": {
+        "valid_count": 7,
+        "valid_points": null
+      },
+      "navegacao-aguas-restritas": {
+        "valid_count": 13,
+        "valid_points": null
+      }
+    },
+    "2008": {
+      "arte-naval": {
+        "valid_count": 8,
+        "valid_points": 7.5
+      },
+      "comunicacoes": {
+        "valid_count": 3,
+        "valid_points": 2.4
+      },
+      "legislacao-regulamentacao": {
+        "valid_count": 8,
+        "valid_points": 8.0
+      },
+      "manobrabilidade": {
+        "valid_count": 25,
+        "valid_points": 23.1
+      },
+      "meteorologia-oceanografia": {
+        "valid_count": 3,
+        "valid_points": 3.0
+      },
+      "navegacao-aguas-restritas": {
+        "valid_count": 21,
+        "valid_points": 21.0
+      }
+    },
+    "2011": {
+      "arte-naval": {
+        "valid_count": 5,
+        "valid_points": 4.3
+      },
+      "comunicacoes": {
+        "valid_count": 5,
+        "valid_points": 3.5
+      },
+      "legislacao-regulamentacao": {
+        "valid_count": 6,
+        "valid_points": 4.7
+      },
+      "manobrabilidade": {
+        "valid_count": 23,
+        "valid_points": 24.3
+      },
+      "meteorologia-oceanografia": {
+        "valid_count": 5,
+        "valid_points": 5.4
+      },
+      "navegacao-aguas-restritas": {
+        "valid_count": 23,
+        "valid_points": 23.0
+      }
+    },
+    "2012": {
+      "arte-naval": {
+        "valid_count": 5,
+        "valid_points": 5.4
+      },
+      "comunicacoes": {
+        "valid_count": 1,
+        "valid_points": 1.6
+      },
+      "legislacao-regulamentacao": {
+        "valid_count": 5,
+        "valid_points": 5.6
+      },
+      "manobrabilidade": {
+        "valid_count": 18,
+        "valid_points": 26.6
+      },
+      "meteorologia-oceanografia": {
+        "valid_count": 2,
+        "valid_points": 2.9
+      },
+      "navegacao-aguas-restritas": {
+        "valid_count": 18,
+        "valid_points": 26.6
+      }
+    }
+  },
+  "annulled_points_by_year": {
+    "2006": null,
+    "2008": 5.0,
+    "2011": 4.8,
+    "2012": 1.3
+  },
+  "manual_records_reviewed": 264,
+  "manual_record_denominator": 264,
+  "manual_full_text_read": 255,
+  "manual_full_text_denominator": 255,
+  "manual_read_by_year": {
+    "2006": 70,
+    "2008": 68,
+    "2011": 67,
+    "2012": 50
+  },
+  "manual_records_complete_years": [
+    2006,
+    2008,
+    2011,
+    2012
+  ],
+  "manual_counts_by_year": {
+    "2006": {
+      "subject_reviewed": {
+        "arte-naval": 6,
+        "comunicacoes": 5,
+        "meteorologia-oceanografia": 7,
+        "navegacao-aguas-restritas": 13,
+        "manobrabilidade": 34,
+        "legislacao-regulamentacao": 5
+      },
+      "format_reviewed": {
+        "E": 2,
+        "A": 39,
+        "B": 14,
+        "C": 6,
+        "D": 9
+      },
+      "cognitive_level_reviewed": {
+        "L1": 23,
+        "L3": 15,
+        "L2": 27,
+        "L4": 5
+      },
+      "language_reviewed": {
+        "pt": 42,
+        "mixed": 4,
+        "en": 24
+      }
+    },
+    "2008": {
+      "subject_reviewed": {
+        "comunicacoes": 3,
+        "arte-naval": 8,
+        "manobrabilidade": 25,
+        "navegacao-aguas-restritas": 21,
+        "meteorologia-oceanografia": 3,
+        "legislacao-regulamentacao": 8
+      },
+      "format_reviewed": {
+        "A": 36,
+        "B": 14,
+        "D": 7,
+        "E": 4,
+        "C": 7
+      },
+      "cognitive_level_reviewed": {
+        "L3": 19,
+        "L2": 25,
+        "L1": 18,
+        "L4": 6
+      },
+      "language_reviewed": {
+        "mixed": 7,
+        "pt": 43,
+        "en": 18
+      }
+    },
+    "2011": {
+      "subject_reviewed": {
+        "manobrabilidade": 23,
+        "arte-naval": 5,
+        "navegacao-aguas-restritas": 23,
+        "meteorologia-oceanografia": 5,
+        "comunicacoes": 5,
+        "legislacao-regulamentacao": 6
+      },
+      "format_reviewed": {
+        "B": 14,
+        "A": 45,
+        "E": 1,
+        "D": 3,
+        "C": 4
+      },
+      "cognitive_level_reviewed": {
+        "L2": 28,
+        "L1": 15,
+        "L3": 16,
+        "L4": 8
+      },
+      "language_reviewed": {
+        "pt": 66,
+        "mixed": 1
+      }
+    },
+    "2012": {
+      "subject_reviewed": {
+        "arte-naval": 5,
+        "manobrabilidade": 18,
+        "navegacao-aguas-restritas": 18,
+        "comunicacoes": 1,
+        "meteorologia-oceanografia": 2,
+        "legislacao-regulamentacao": 5
+      },
+      "format_reviewed": {
+        "B": 13,
+        "A": 29,
+        "D": 3,
+        "C": 4
+      },
+      "cognitive_level_reviewed": {
+        "L1": 7,
+        "L2": 19,
+        "L3": 20,
+        "L4": 3
+      },
+      "language_reviewed": {
+        "pt": 49
+      }
+    }
+  }
+}

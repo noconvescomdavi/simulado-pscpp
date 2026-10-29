@@ -1,0 +1,1602 @@
+[
+  {
+    "id": "AN-C12-1231-M1",
+    "defect": "Proposições ausentes no runtime; falsas sem refutação e instruções sem escopo.",
+    "correction": "Restaurados quatro itens com espaço/porte/ambiente explícitos; refutadas exclusão de espias e dispensa de rebocador, com cinco justificativas.",
+    "before_physical": {
+      "subject": "Arte Naval",
+      "module": "Manobra do Navio",
+      "topic": "Atracar em espaço limitado",
+      "difficulty": "Difícil",
+      "source": {
+        "author": "FONSECA, Maurílio M.",
+        "title": "Arte Naval, v. 2",
+        "edition": "8. ed., 2019",
+        "locator": "cap. 12, item 12.31, p. 832–833"
+      },
+      "tracking": {
+        "subject_slug": "arte-naval",
+        "work": {
+          "id": "fonseca-arte-v2",
+          "title": "Arte Naval - Volume 2",
+          "author": "Maurílio M. Fonseca"
+        },
+        "chapter": {
+          "id": "fonseca-arte-v2::ch12",
+          "number": "12",
+          "title": "Manobra do Navio",
+          "label": "Capítulo 12 - Manobra do Navio"
+        },
+        "section": "item 12.31",
+        "module": "Manobra do Navio",
+        "topic": {
+          "id": "anv2-12.31",
+          "title": "Atracar em espaço limitado"
+        }
+      },
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v2",
+        "chapter_id": "fonseca-arte-v2::ch12",
+        "topic_id": "anv2-12.31",
+        "subtopic_id": null
+      },
+      "id": "AN-C12-1231-M1",
+      "topic_code": "AN.C12.12.31.M1",
+      "provenance": {
+        "method": "chapter-item-3-models",
+        "coverage_unit": "UC36",
+        "model": 1
+      },
+      "style": "Afirmativas combinadas",
+      "question_type": "assertion_combination",
+      "question": "Com base no art. 12.31, analise:\nI. Em espaço pouco maior que o navio, a manobra deve ser auxiliada pelas espias.\nII. Com vento vindo do cais, entra-se primeiro com a espia de vante, pois a proa geralmente oferece maior resistência ao vento.\nIII. Em espaço limitado, as espias devem ser evitadas para não restringirem a manobra.\nIV. Com vento ou corrente forte de popa, a obra recomenda realizar a atracação sem rebocador.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "I e II estão corretas no item indicado. III e IV estão incorretas. Conteúdo avaliado: I) Em espaço pouco maior que o navio, a manobra deve ser auxiliada pelas espias. | II) Com vento vindo do cais, entra-se primeiro com a espia de vante, pois a proa geralmente oferece maior resistência ao vento. | III) Em espaço limitado, as espias devem ser evitadas para não restringirem a manobra. | IV) Com vento ou corrente forte de popa, a obra recomenda realizar a atracação sem rebocador.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "validation": {
+        "final_editorial_audit": "2026-10-01"
+      }
+    },
+    "before_effective": {
+      "subject": "Arte Naval",
+      "module": "Manobra do Navio",
+      "topic": "Atracar em espaço limitado",
+      "difficulty": "Difícil",
+      "source": {
+        "author": "FONSECA, Maurílio M.",
+        "title": "Arte Naval, v. 2",
+        "edition": "8. ed., 2019",
+        "locator": "cap. 12, item 12.31, p. 832–833"
+      },
+      "tracking": {
+        "subject_slug": "arte-naval",
+        "work": {
+          "id": "fonseca-arte-v2",
+          "title": "Arte Naval - Volume 2",
+          "author": "Maurílio M. Fonseca"
+        },
+        "chapter": {
+          "id": "fonseca-arte-v2::ch12",
+          "number": "12",
+          "title": "Manobra do Navio",
+          "label": "Capítulo 12 - Manobra do Navio"
+        },
+        "section": "item 12.31",
+        "module": "Manobra do Navio",
+        "topic": {
+          "id": "anv2-12.31",
+          "title": "Atracar em espaço limitado"
+        }
+      },
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v2",
+        "chapter_id": "fonseca-arte-v2::ch12",
+        "topic_id": "anv2-12.31",
+        "subtopic_id": null
+      },
+      "id": "AN-C12-1231-M1",
+      "topic_code": "AN.C12.12.31.M1",
+      "provenance": {
+        "method": "chapter-item-3-models",
+        "coverage_unit": "UC36",
+        "model": 1,
+        "mass_reformulation": {
+          "version": "answer-leak-v1",
+          "reason": "stem normalized to remove answer-disclosing source fragment"
+        }
+      },
+      "style": "Afirmativas combinadas",
+      "question_type": "assertion_combination",
+      "question": "De acordo com Arte Naval, v. 2, acerca de Atracar em espaço limitado, assinale a alternativa que apresenta corretamente a disposição, requisito ou conceito previsto na publicação.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "I e II estão corretas no item indicado. III e IV estão incorretas. Conteúdo avaliado: I) Em espaço pouco maior que o navio, a manobra deve ser auxiliada pelas espias. | II) Com vento vindo do cais, entra-se primeiro com a espia de vante, pois a proa geralmente oferece maior resistência ao vento. | III) Em espaço limitado, as espias devem ser evitadas para não restringirem a manobra. | IV) Com vento ou corrente forte de popa, a obra recomenda realizar a atracação sem rebocador.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "validation": {
+        "final_editorial_audit": "2026-10-01"
+      }
+    },
+    "after": {
+      "subject": "Arte Naval",
+      "module": "Manobra do Navio",
+      "topic": "Atracar em espaço limitado",
+      "difficulty": "Difícil",
+      "source": {
+        "author": "FONSECA, Maurílio M.",
+        "title": "Arte Naval, v. 2",
+        "edition": "8. ed., 2019",
+        "locator": "cap. 12, item 12.31, pp. 832–833",
+        "printed_page": "832–833",
+        "pdf_page": "193–194",
+        "pdf_sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+        "scope_note": "Descrição bibliográfica da 8ª edição; condições de espaço, ambiente, porte e meios delimitadas. Não é procedimento operacional universal nem certificação de desempenho hidrodinâmico, autorização prática ou norma atual."
+      },
+      "tracking": {
+        "subject_slug": "arte-naval",
+        "work": {
+          "id": "fonseca-arte-v2",
+          "title": "Arte Naval - Volume 2",
+          "author": "Maurílio M. Fonseca"
+        },
+        "chapter": {
+          "id": "fonseca-arte-v2::ch12",
+          "number": "12",
+          "title": "Manobra do Navio",
+          "label": "Capítulo 12 - Manobra do Navio"
+        },
+        "section": "item 12.31",
+        "module": "Manobra do Navio",
+        "topic": {
+          "id": "anv2-12.31",
+          "title": "Atracar em espaço limitado"
+        }
+      },
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v2",
+        "chapter_id": "fonseca-arte-v2::ch12",
+        "topic_id": "anv2-12.31",
+        "subtopic_id": null
+      },
+      "id": "AN-C12-1231-M1",
+      "topic_code": "AN.C12.12.31.M1",
+      "provenance": {
+        "method": "chapter-item-3-models",
+        "coverage_unit": "UC36",
+        "model": 1
+      },
+      "style": "Afirmativas combinadas",
+      "question_type": "assertion_combination",
+      "question": "Em Arte Naval, v. 2, 8ª edição, a atracação entre dois navios, em espaço pouco maior que o comprimento do próprio navio, é discutida com auxílio de espias. Analise as afirmações sobre esse caso bibliográfico e assinale apenas as corretas.\nI. O emprego das espias integra a descrição para esse espaço restrito.\nII. Para os navios grandes, a presença de vento vindo do cais modifica a prioridade de trabalho entre espia de vante e de ré.\nIII. A limitação de espaço leva a obra a excluir as espias, independentemente das condições ambientais.\nIV. Sob vento ou corrente forte pela popa, o texto dispensa o auxílio de rebocador nesse caso.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "I e II são verdadeiras; III e IV são falsas. A descrição inclui as espias e condiciona sua utilização ao ambiente; no caso de vento ou corrente forte pela popa, indica rebocador. Trata-se do caso da edição, sem garantia de execução em qualquer navio.",
+      "validation": {
+        "final_editorial_audit": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Correta: Reúne I, que inclui as espias no espaço restrito, e II, que reconhece a influência do vento na prioridade descrita.",
+        "B": "Incorreta: Inclui III, que contradiz o auxílio das espias; omite II, verdadeira.",
+        "C": "Incorreta: II é verdadeira, mas IV inverte a condição de emprego de rebocador.",
+        "D": "Incorreta: III exclui indevidamente as espias e IV dispensa indevidamente o rebocador no cenário citado.",
+        "E": "Incorreta: Inclui III e IV, ambas contrárias ao caso bibliográfico."
+      },
+      "cognitive_level": 2
+    },
+    "before_hash": "ad2199a787544887a7ee19cdf0d04619448c6f6b75d405e53d5765b9b80dce45",
+    "after_hash": "3f70c00a1b2c6ea9280f85f88b881d3d7c2ed6732569817b11b63a2a1e31157e",
+    "source": {
+      "author": "FONSECA, Maurílio M.",
+      "title": "Arte Naval, v. 2",
+      "edition": "8. ed., 2019",
+      "locator": "cap. 12, item 12.31, pp. 832–833",
+      "printed_page": "832–833",
+      "pdf_page": "193–194",
+      "pdf_sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+      "scope_note": "Descrição bibliográfica da 8ª edição; condições de espaço, ambiente, porte e meios delimitadas. Não é procedimento operacional universal nem certificação de desempenho hidrodinâmico, autorização prática ou norma atual."
+    },
+    "truths": [
+      true,
+      true,
+      false,
+      false
+    ],
+    "final_editorial_approval": false
+  },
+  {
+    "id": "AN-C12-1231-M2",
+    "defect": "Pergunta prescritiva, alternativas heterogêneas e explicação que repetia a resposta.",
+    "correction": "Refeita como associação de dois cenários da obra, com cinco pares comparáveis, ordem explícita e justificativas individuais.",
+    "before_physical": {
+      "subject": "Arte Naval",
+      "module": "Manobra do Navio",
+      "topic": "Atracar em espaço limitado",
+      "difficulty": "Difícil",
+      "source": {
+        "author": "FONSECA, Maurílio M.",
+        "title": "Arte Naval, v. 2",
+        "edition": "8. ed., 2019",
+        "locator": "cap. 12, item 12.31, p. 832–833"
+      },
+      "tracking": {
+        "subject_slug": "arte-naval",
+        "work": {
+          "id": "fonseca-arte-v2",
+          "title": "Arte Naval - Volume 2",
+          "author": "Maurílio M. Fonseca"
+        },
+        "chapter": {
+          "id": "fonseca-arte-v2::ch12",
+          "number": "12",
+          "title": "Manobra do Navio",
+          "label": "Capítulo 12 - Manobra do Navio"
+        },
+        "section": "item 12.31",
+        "module": "Manobra do Navio",
+        "topic": {
+          "id": "anv2-12.31",
+          "title": "Atracar em espaço limitado"
+        }
+      },
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v2",
+        "chapter_id": "fonseca-arte-v2::ch12",
+        "topic_id": "anv2-12.31",
+        "subtopic_id": null
+      },
+      "id": "AN-C12-1231-M2",
+      "topic_code": "AN.C12.12.31.M2",
+      "provenance": {
+        "method": "chapter-item-3-models",
+        "coverage_unit": "UC36",
+        "model": 2
+      },
+      "style": "Múltipla escolha conceitual",
+      "question_type": "conceptual",
+      "question": "Com vento ou corrente forte de popa em espaço limitado, como a atracação deve ser tentada?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Somente com espia de popa."
+        },
+        {
+          "key": "B",
+          "text": "Com rebocador."
+        },
+        {
+          "key": "C",
+          "text": "Sem espias e com máxima velocidade."
+        },
+        {
+          "key": "D",
+          "text": "Somente com ferro de dentro."
+        },
+        {
+          "key": "E",
+          "text": "Com máquinas paradas desde o início."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Com rebocador.",
+      "validation": {
+        "final_editorial_audit": "2026-10-01"
+      }
+    },
+    "before_effective": {
+      "subject": "Arte Naval",
+      "module": "Manobra do Navio",
+      "topic": "Atracar em espaço limitado",
+      "difficulty": "Difícil",
+      "source": {
+        "author": "FONSECA, Maurílio M.",
+        "title": "Arte Naval, v. 2",
+        "edition": "8. ed., 2019",
+        "locator": "cap. 12, item 12.31, p. 832–833"
+      },
+      "tracking": {
+        "subject_slug": "arte-naval",
+        "work": {
+          "id": "fonseca-arte-v2",
+          "title": "Arte Naval - Volume 2",
+          "author": "Maurílio M. Fonseca"
+        },
+        "chapter": {
+          "id": "fonseca-arte-v2::ch12",
+          "number": "12",
+          "title": "Manobra do Navio",
+          "label": "Capítulo 12 - Manobra do Navio"
+        },
+        "section": "item 12.31",
+        "module": "Manobra do Navio",
+        "topic": {
+          "id": "anv2-12.31",
+          "title": "Atracar em espaço limitado"
+        }
+      },
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v2",
+        "chapter_id": "fonseca-arte-v2::ch12",
+        "topic_id": "anv2-12.31",
+        "subtopic_id": null
+      },
+      "id": "AN-C12-1231-M2",
+      "topic_code": "AN.C12.12.31.M2",
+      "provenance": {
+        "method": "chapter-item-3-models",
+        "coverage_unit": "UC36",
+        "model": 2
+      },
+      "style": "Múltipla escolha conceitual",
+      "question_type": "conceptual",
+      "question": "Com vento ou corrente forte de popa em espaço limitado, como a atracação deve ser tentada?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Somente com espia de popa."
+        },
+        {
+          "key": "B",
+          "text": "Com rebocador."
+        },
+        {
+          "key": "C",
+          "text": "Sem espias e com máxima velocidade."
+        },
+        {
+          "key": "D",
+          "text": "Somente com ferro de dentro."
+        },
+        {
+          "key": "E",
+          "text": "Com máquinas paradas desde o início."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Com rebocador.",
+      "validation": {
+        "final_editorial_audit": "2026-10-01"
+      }
+    },
+    "after": {
+      "subject": "Arte Naval",
+      "module": "Manobra do Navio",
+      "topic": "Atracar em espaço limitado",
+      "difficulty": "Difícil",
+      "source": {
+        "author": "FONSECA, Maurílio M.",
+        "title": "Arte Naval, v. 2",
+        "edition": "8. ed., 2019",
+        "locator": "cap. 12, item 12.31, pp. 832–833",
+        "printed_page": "832–833",
+        "pdf_page": "193–194",
+        "pdf_sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+        "scope_note": "Descrição bibliográfica da 8ª edição; condições de espaço, ambiente, porte e meios delimitadas. Não é procedimento operacional universal nem certificação de desempenho hidrodinâmico, autorização prática ou norma atual."
+      },
+      "tracking": {
+        "subject_slug": "arte-naval",
+        "work": {
+          "id": "fonseca-arte-v2",
+          "title": "Arte Naval - Volume 2",
+          "author": "Maurílio M. Fonseca"
+        },
+        "chapter": {
+          "id": "fonseca-arte-v2::ch12",
+          "number": "12",
+          "title": "Manobra do Navio",
+          "label": "Capítulo 12 - Manobra do Navio"
+        },
+        "section": "item 12.31",
+        "module": "Manobra do Navio",
+        "topic": {
+          "id": "anv2-12.31",
+          "title": "Atracar em espaço limitado"
+        }
+      },
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v2",
+        "chapter_id": "fonseca-arte-v2::ch12",
+        "topic_id": "anv2-12.31",
+        "subtopic_id": null
+      },
+      "id": "AN-C12-1231-M2",
+      "topic_code": "AN.C12.12.31.M2",
+      "provenance": {
+        "method": "chapter-item-3-models",
+        "coverage_unit": "UC36",
+        "model": 2
+      },
+      "style": "Múltipla escolha conceitual",
+      "question_type": "conceptual",
+      "question": "Na discussão bibliográfica da atracação em espaço restrito, Arte Naval, v. 2, 8ª edição, distingue dois cenários: navio grande com vento vindo do cais; e vento ou corrente forte pela popa. Qual par associa, nessa ordem, a espia trabalhada primeiro no primeiro cenário e o auxílio indicado no segundo? A pergunta identifica as relações do texto, sem autorizar sua aplicação prática a qualquer navio.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ré / rebocador."
+        },
+        {
+          "key": "B",
+          "text": "Vante / rebocador."
+        },
+        {
+          "key": "C",
+          "text": "Vante / apenas espias, dispensando rebocador."
+        },
+        {
+          "key": "D",
+          "text": "Ré / apenas espias, dispensando rebocador."
+        },
+        {
+          "key": "E",
+          "text": "Vante e ré sem prioridade / rebocador."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A alternativa B reúne vante e rebocador. A p.832 dá prioridade à espia de vante quando há vento vindo do cais; a continuação na p.833 associa vento ou corrente forte pela popa ao auxílio de rebocador. Não se deduz uma regra universal de resistência aerodinâmica ou uma autorização de manobra.",
+      "validation": {
+        "final_editorial_audit": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: Mantém o auxílio do segundo cenário, mas troca a prioridade de vante pela de ré no primeiro.",
+        "B": "Correta: Vante corresponde ao cenário de vento vindo do cais; rebocador corresponde ao de vento ou corrente forte pela popa.",
+        "C": "Incorreta: Acerta a prioridade da espia, mas retira o auxílio indicado para o segundo cenário.",
+        "D": "Incorreta: Inverte a prioridade da espia e dispensa o rebocador na condição em que o texto o exige.",
+        "E": "Incorreta: Mantém o rebocador, mas apaga a prioridade de vante atribuída ao vento vindo do cais."
+      },
+      "cognitive_level": 2
+    },
+    "before_hash": "5f3e290098baa574657a9489cdb0f7066db62c7a67c0b5e1f8f982382966c85e",
+    "after_hash": "79d7c336bf0ce385f7f83a11043eda8cf98c4c2fdad0767353807556688f153c",
+    "source": {
+      "author": "FONSECA, Maurílio M.",
+      "title": "Arte Naval, v. 2",
+      "edition": "8. ed., 2019",
+      "locator": "cap. 12, item 12.31, pp. 832–833",
+      "printed_page": "832–833",
+      "pdf_page": "193–194",
+      "pdf_sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+      "scope_note": "Descrição bibliográfica da 8ª edição; condições de espaço, ambiente, porte e meios delimitadas. Não é procedimento operacional universal nem certificação de desempenho hidrodinâmico, autorização prática ou norma atual."
+    },
+    "truths": null,
+    "final_editorial_approval": false
+  },
+  {
+    "id": "AN-C12-1231-M3",
+    "defect": "V/F sem delimitação suficiente e justificativa que apenas repetia as proposições.",
+    "correction": "Explicitados porte e caso bibliográfico; avaliados transporte das espias e exemplo da figura 12-17, com refutação da falsa.",
+    "before_physical": {
+      "subject": "Arte Naval",
+      "module": "Manobra do Navio",
+      "topic": "Atracar em espaço limitado",
+      "difficulty": "Difícil",
+      "source": {
+        "author": "FONSECA, Maurílio M.",
+        "title": "Arte Naval, v. 2",
+        "edition": "8. ed., 2019",
+        "locator": "cap. 12, item 12.31, p. 832–833"
+      },
+      "tracking": {
+        "subject_slug": "arte-naval",
+        "work": {
+          "id": "fonseca-arte-v2",
+          "title": "Arte Naval - Volume 2",
+          "author": "Maurílio M. Fonseca"
+        },
+        "chapter": {
+          "id": "fonseca-arte-v2::ch12",
+          "number": "12",
+          "title": "Manobra do Navio",
+          "label": "Capítulo 12 - Manobra do Navio"
+        },
+        "section": "item 12.31",
+        "module": "Manobra do Navio",
+        "topic": {
+          "id": "anv2-12.31",
+          "title": "Atracar em espaço limitado"
+        }
+      },
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v2",
+        "chapter_id": "fonseca-arte-v2::ch12",
+        "topic_id": "anv2-12.31",
+        "subtopic_id": null
+      },
+      "id": "AN-C12-1231-M3",
+      "topic_code": "AN.C12.12.31.M3",
+      "provenance": {
+        "method": "chapter-item-3-models",
+        "coverage_unit": "UC36",
+        "model": 3
+      },
+      "style": "Sequência V/F",
+      "question_type": "true_false",
+      "question": "Julgue:\n( ) Navios grandes aproximam-se paralelamente por fora dos navios já atracados e podem rondar alternadamente espias de proa e popa.\n( ) Com vento ou corrente forte de popa, a atracação só deve ser tentada com rebocador.\n( ) Em espaço limitado, as espias devem ser evitadas para não restringirem a manobra.\n( ) Em espaço pouco maior que o navio, a manobra deve ser auxiliada pelas espias.\nAssinale a sequência correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V – F – V – F )"
+        },
+        {
+          "key": "B",
+          "text": "( F – V – V – F )"
+        },
+        {
+          "key": "C",
+          "text": "( V – V – F – V )"
+        },
+        {
+          "key": "D",
+          "text": "( F – F – V – V )"
+        },
+        {
+          "key": "E",
+          "text": "( V – V – V – V )"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A sequência correta resulta da avaliação das quatro proposições: 1) Navios grandes aproximam-se paralelamente por fora dos navios já atracados e podem rondar alternadamente espias de proa e popa. | 2) Com vento ou corrente forte de popa, a atracação só deve ser tentada com rebocador. | 3) Em espaço limitado, as espias devem ser evitadas para não restringirem a manobra. | 4) Em espaço pouco maior que o navio, a manobra deve ser auxiliada pelas espias.",
+      "validation": {
+        "final_editorial_audit": "2026-10-01"
+      }
+    },
+    "before_effective": {
+      "subject": "Arte Naval",
+      "module": "Manobra do Navio",
+      "topic": "Atracar em espaço limitado",
+      "difficulty": "Difícil",
+      "source": {
+        "author": "FONSECA, Maurílio M.",
+        "title": "Arte Naval, v. 2",
+        "edition": "8. ed., 2019",
+        "locator": "cap. 12, item 12.31, p. 832–833"
+      },
+      "tracking": {
+        "subject_slug": "arte-naval",
+        "work": {
+          "id": "fonseca-arte-v2",
+          "title": "Arte Naval - Volume 2",
+          "author": "Maurílio M. Fonseca"
+        },
+        "chapter": {
+          "id": "fonseca-arte-v2::ch12",
+          "number": "12",
+          "title": "Manobra do Navio",
+          "label": "Capítulo 12 - Manobra do Navio"
+        },
+        "section": "item 12.31",
+        "module": "Manobra do Navio",
+        "topic": {
+          "id": "anv2-12.31",
+          "title": "Atracar em espaço limitado"
+        }
+      },
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v2",
+        "chapter_id": "fonseca-arte-v2::ch12",
+        "topic_id": "anv2-12.31",
+        "subtopic_id": null
+      },
+      "id": "AN-C12-1231-M3",
+      "topic_code": "AN.C12.12.31.M3",
+      "provenance": {
+        "method": "chapter-item-3-models",
+        "coverage_unit": "UC36",
+        "model": 3
+      },
+      "style": "Sequência V/F",
+      "question_type": "true_false",
+      "question": "Julgue:\n( ) Navios grandes aproximam-se paralelamente por fora dos navios já atracados e podem rondar alternadamente espias de proa e popa.\n( ) Com vento ou corrente forte de popa, a atracação só deve ser tentada com rebocador.\n( ) Em espaço limitado, as espias devem ser evitadas para não restringirem a manobra.\n( ) Em espaço pouco maior que o navio, a manobra deve ser auxiliada pelas espias.\nAssinale a sequência correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V – F – V – F )"
+        },
+        {
+          "key": "B",
+          "text": "( F – V – V – F )"
+        },
+        {
+          "key": "C",
+          "text": "( V – V – F – V )"
+        },
+        {
+          "key": "D",
+          "text": "( F – F – V – V )"
+        },
+        {
+          "key": "E",
+          "text": "( V – V – V – V )"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A sequência correta resulta da avaliação das quatro proposições: 1) Navios grandes aproximam-se paralelamente por fora dos navios já atracados e podem rondar alternadamente espias de proa e popa. | 2) Com vento ou corrente forte de popa, a atracação só deve ser tentada com rebocador. | 3) Em espaço limitado, as espias devem ser evitadas para não restringirem a manobra. | 4) Em espaço pouco maior que o navio, a manobra deve ser auxiliada pelas espias.",
+      "validation": {
+        "final_editorial_audit": "2026-10-01"
+      }
+    },
+    "after": {
+      "subject": "Arte Naval",
+      "module": "Manobra do Navio",
+      "topic": "Atracar em espaço limitado",
+      "difficulty": "Difícil",
+      "source": {
+        "author": "FONSECA, Maurílio M.",
+        "title": "Arte Naval, v. 2",
+        "edition": "8. ed., 2019",
+        "locator": "cap. 12, item 12.31, pp. 832–833",
+        "printed_page": "832–833",
+        "pdf_page": "193–194",
+        "pdf_sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+        "scope_note": "Descrição bibliográfica da 8ª edição; condições de espaço, ambiente, porte e meios delimitadas. Não é procedimento operacional universal nem certificação de desempenho hidrodinâmico, autorização prática ou norma atual."
+      },
+      "tracking": {
+        "subject_slug": "arte-naval",
+        "work": {
+          "id": "fonseca-arte-v2",
+          "title": "Arte Naval - Volume 2",
+          "author": "Maurílio M. Fonseca"
+        },
+        "chapter": {
+          "id": "fonseca-arte-v2::ch12",
+          "number": "12",
+          "title": "Manobra do Navio",
+          "label": "Capítulo 12 - Manobra do Navio"
+        },
+        "section": "item 12.31",
+        "module": "Manobra do Navio",
+        "topic": {
+          "id": "anv2-12.31",
+          "title": "Atracar em espaço limitado"
+        }
+      },
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v2",
+        "chapter_id": "fonseca-arte-v2::ch12",
+        "topic_id": "anv2-12.31",
+        "subtopic_id": null
+      },
+      "id": "AN-C12-1231-M3",
+      "topic_code": "AN.C12.12.31.M3",
+      "provenance": {
+        "method": "chapter-item-3-models",
+        "coverage_unit": "UC36",
+        "model": 3
+      },
+      "style": "Sequência V/F",
+      "question_type": "true_false",
+      "question": "Sobre a descrição de atracação em espaço restrito de Arte Naval, v. 2, 8ª edição, julgue os itens e assinale a sequência correta. As relações se limitam às condições discutidas na obra.\n( ) Para os navios grandes, o texto descreve aproximação por fora dos já atracados e trabalho alternado de espias de proa e popa.\n( ) A passagem prevê que uma embarcação pequena possa ser necessária para levar as espias a terra.\n( ) A descrição dispensa as espias quando o espaço entre os navios é apenas pouco maior que o comprimento do navio que atraca.\n( ) O exemplo de navios médios e menores relaciona uma espia pela bochecha ao leme para fora e a um ligeiro seguimento avante.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V – F – V – F )"
+        },
+        {
+          "key": "B",
+          "text": "( F – V – V – F )"
+        },
+        {
+          "key": "C",
+          "text": "( V – V – F – V )"
+        },
+        {
+          "key": "D",
+          "text": "( F – F – V – V )"
+        },
+        {
+          "key": "E",
+          "text": "( V – V – V – V )"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A sequência é V–V–F–V, alternativa C. Os dois primeiros itens correspondem ao caso dos navios grandes; o terceiro contraria o auxílio das espias; o quarto identifica o exemplo ilustrado pela figura 12-17, sem prescrever velocidade ou ângulo para uma operação real.",
+      "validation": {
+        "final_editorial_audit": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: Torna falsa a possibilidade de usar uma embarcação pequena e aceita a dispensa das espias; também nega o exemplo do quarto item.",
+        "B": "Incorreta: Nega o primeiro item e aceita a dispensa de espias no terceiro, contrariando o texto.",
+        "C": "Correta: Os itens 1, 2 e 4 identificam relações descritas; o item 3 inverte o emprego das espias.",
+        "D": "Incorreta: Nega os dois primeiros itens e aceita o terceiro, que é falso.",
+        "E": "Incorreta: O terceiro item é falso: a obra inclui auxílio de espias no espaço restrito."
+      },
+      "cognitive_level": 2
+    },
+    "before_hash": "5fb1808c1cb56d9a381a0bf79eb79cdd251204e93706ead123e6c7f5e0e77556",
+    "after_hash": "60d57bc1e65da606d1e42a52c56ef8f334511b0b379cbbbfff71545e3427679e",
+    "source": {
+      "author": "FONSECA, Maurílio M.",
+      "title": "Arte Naval, v. 2",
+      "edition": "8. ed., 2019",
+      "locator": "cap. 12, item 12.31, pp. 832–833",
+      "printed_page": "832–833",
+      "pdf_page": "193–194",
+      "pdf_sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+      "scope_note": "Descrição bibliográfica da 8ª edição; condições de espaço, ambiente, porte e meios delimitadas. Não é procedimento operacional universal nem certificação de desempenho hidrodinâmico, autorização prática ou norma atual."
+    },
+    "truths": [
+      true,
+      true,
+      false,
+      true
+    ],
+    "final_editorial_approval": false
+  },
+  {
+    "id": "AN-C12-1232-M1",
+    "defect": "Proposições ausentes no runtime, falsas não explicadas e cenário sem delimitação.",
+    "correction": "Restaurados quatro itens distinguindo preferência, direção de corrente, arranjo das espias e defensas; cinco justificativas individuais.",
+    "before_physical": {
+      "subject": "Arte Naval",
+      "module": "Manobra do Navio",
+      "topic": "Mudar o bordo de atracação",
+      "difficulty": "Difícil",
+      "source": {
+        "author": "FONSECA, Maurílio M.",
+        "title": "Arte Naval, v. 2",
+        "edition": "8. ed., 2019",
+        "locator": "cap. 12, item 12.32, p. 833–834"
+      },
+      "tracking": {
+        "subject_slug": "arte-naval",
+        "work": {
+          "id": "fonseca-arte-v2",
+          "title": "Arte Naval - Volume 2",
+          "author": "Maurílio M. Fonseca"
+        },
+        "chapter": {
+          "id": "fonseca-arte-v2::ch12",
+          "number": "12",
+          "title": "Manobra do Navio",
+          "label": "Capítulo 12 - Manobra do Navio"
+        },
+        "section": "item 12.32",
+        "module": "Manobra do Navio",
+        "topic": {
+          "id": "anv2-12.32",
+          "title": "Mudar o bordo de atracação"
+        }
+      },
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v2",
+        "chapter_id": "fonseca-arte-v2::ch12",
+        "topic_id": "anv2-12.32",
+        "subtopic_id": null
+      },
+      "id": "AN-C12-1232-M1",
+      "topic_code": "AN.C12.12.32.M1",
+      "provenance": {
+        "method": "chapter-item-3-models",
+        "coverage_unit": "UC37",
+        "model": 1
+      },
+      "style": "Afirmativas combinadas",
+      "question_type": "assertion_combination",
+      "question": "Com base no art. 12.32, analise:\nI. Para mudar o bordo de atracação, é preferível manobrar com rebocador.\nII. Com corrente pela popa, conservam-se inicialmente um espringue na proa e um través na popa.\nIII. A obra considera preferível mudar de bordo com corrente pela proa.\nIV. Na mudança de bordo, defensas são desnecessárias se a corrente for fraca.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "I e II estão corretas no item indicado. III e IV estão incorretas. Conteúdo avaliado: I) Para mudar o bordo de atracação, é preferível manobrar com rebocador. | II) Com corrente pela popa, conservam-se inicialmente um espringue na proa e um través na popa. | III) A obra considera preferível mudar de bordo com corrente pela proa. | IV) Na mudança de bordo, defensas são desnecessárias se a corrente for fraca.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "validation": {
+        "final_editorial_audit": "2026-10-01"
+      }
+    },
+    "before_effective": {
+      "subject": "Arte Naval",
+      "module": "Manobra do Navio",
+      "topic": "Mudar o bordo de atracação",
+      "difficulty": "Difícil",
+      "source": {
+        "author": "FONSECA, Maurílio M.",
+        "title": "Arte Naval, v. 2",
+        "edition": "8. ed., 2019",
+        "locator": "cap. 12, item 12.32, p. 833–834"
+      },
+      "tracking": {
+        "subject_slug": "arte-naval",
+        "work": {
+          "id": "fonseca-arte-v2",
+          "title": "Arte Naval - Volume 2",
+          "author": "Maurílio M. Fonseca"
+        },
+        "chapter": {
+          "id": "fonseca-arte-v2::ch12",
+          "number": "12",
+          "title": "Manobra do Navio",
+          "label": "Capítulo 12 - Manobra do Navio"
+        },
+        "section": "item 12.32",
+        "module": "Manobra do Navio",
+        "topic": {
+          "id": "anv2-12.32",
+          "title": "Mudar o bordo de atracação"
+        }
+      },
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v2",
+        "chapter_id": "fonseca-arte-v2::ch12",
+        "topic_id": "anv2-12.32",
+        "subtopic_id": null
+      },
+      "id": "AN-C12-1232-M1",
+      "topic_code": "AN.C12.12.32.M1",
+      "provenance": {
+        "method": "chapter-item-3-models",
+        "coverage_unit": "UC37",
+        "model": 1,
+        "mass_reformulation": {
+          "version": "answer-leak-v1",
+          "reason": "stem normalized to remove answer-disclosing source fragment"
+        }
+      },
+      "style": "Afirmativas combinadas",
+      "question_type": "assertion_combination",
+      "question": "De acordo com Arte Naval, v. 2, acerca de Mudar o bordo de atracação, assinale a alternativa que apresenta corretamente a disposição, requisito ou conceito previsto na publicação.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "I e II estão corretas no item indicado. III e IV estão incorretas. Conteúdo avaliado: I) Para mudar o bordo de atracação, é preferível manobrar com rebocador. | II) Com corrente pela popa, conservam-se inicialmente um espringue na proa e um través na popa. | III) A obra considera preferível mudar de bordo com corrente pela proa. | IV) Na mudança de bordo, defensas são desnecessárias se a corrente for fraca.\nAssinale a alternativa que apresenta apenas as afirmativas corretas.",
+      "validation": {
+        "final_editorial_audit": "2026-10-01"
+      }
+    },
+    "after": {
+      "subject": "Arte Naval",
+      "module": "Manobra do Navio",
+      "topic": "Mudar o bordo de atracação",
+      "difficulty": "Difícil",
+      "source": {
+        "author": "FONSECA, Maurílio M.",
+        "title": "Arte Naval, v. 2",
+        "edition": "8. ed., 2019",
+        "locator": "cap. 12, item 12.32, pp. 833–834",
+        "printed_page": "833–834",
+        "pdf_page": "194–195",
+        "pdf_sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+        "scope_note": "Descrição bibliográfica da 8ª edição; condições de espaço, ambiente, porte e meios delimitadas. Não é procedimento operacional universal nem certificação de desempenho hidrodinâmico, autorização prática ou norma atual."
+      },
+      "tracking": {
+        "subject_slug": "arte-naval",
+        "work": {
+          "id": "fonseca-arte-v2",
+          "title": "Arte Naval - Volume 2",
+          "author": "Maurílio M. Fonseca"
+        },
+        "chapter": {
+          "id": "fonseca-arte-v2::ch12",
+          "number": "12",
+          "title": "Manobra do Navio",
+          "label": "Capítulo 12 - Manobra do Navio"
+        },
+        "section": "item 12.32",
+        "module": "Manobra do Navio",
+        "topic": {
+          "id": "anv2-12.32",
+          "title": "Mudar o bordo de atracação"
+        }
+      },
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v2",
+        "chapter_id": "fonseca-arte-v2::ch12",
+        "topic_id": "anv2-12.32",
+        "subtopic_id": null
+      },
+      "id": "AN-C12-1232-M1",
+      "topic_code": "AN.C12.12.32.M1",
+      "provenance": {
+        "method": "chapter-item-3-models",
+        "coverage_unit": "UC37",
+        "model": 1
+      },
+      "style": "Afirmativas combinadas",
+      "question_type": "assertion_combination",
+      "question": "Em Arte Naval, v. 2, 8ª edição, a mudança do bordo de atracação é descrita com preferência por rebocador e com casos alternativos condicionados à corrente. Analise as afirmações sobre essa descrição e assinale apenas as corretas.\nI. O auxílio de rebocador é apresentado como preferível para a mudança de bordo.\nII. No caso descrito com corrente pela popa, o arranjo inicial conservado combina espringue de proa e través de popa.\nIII. A comparação entre os casos declara preferível a corrente pela proa, em vez da corrente pela popa.\nIV. A passagem considera desnecessárias as defensas na proa e no costado se a corrente for muito fraca.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "I e II são verdadeiras; III e IV são falsas, alternativa D. A p.833 registra preferência por rebocador e o arranjo para corrente de popa; a p.834 expressa preferência comparativa pela corrente de popa, e a descrição requer defensas mesmo quando a manobra é bem feita. Não são garantias de segurança ou desempenho de qualquer navio.",
+      "validation": {
+        "final_editorial_audit": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: I é verdadeira, mas III inverte a preferência comparativa entre as direções da corrente.",
+        "B": "Incorreta: II é verdadeira, mas IV dispensa defensas em desacordo com a descrição.",
+        "C": "Incorreta: III inverte a preferência; IV elimina a proteção que o texto exige.",
+        "D": "Correta: I identifica o auxílio preferível; II reproduz a associação entre tipo e posição das duas espias no caso da corrente pela popa.",
+        "E": "Incorreta: III e IV são falsas, portanto não podem integrar o conjunto de verdadeiras."
+      },
+      "cognitive_level": 2
+    },
+    "before_hash": "79fb9b0034dbd6643bde486282eb0e7178334c1980965e21cd0dd281945e0035",
+    "after_hash": "08dab5d83d2f73bc5c9f58366d954af0a9e6e45c182390ea7f0a9721acad6ebb",
+    "source": {
+      "author": "FONSECA, Maurílio M.",
+      "title": "Arte Naval, v. 2",
+      "edition": "8. ed., 2019",
+      "locator": "cap. 12, item 12.32, pp. 833–834",
+      "printed_page": "833–834",
+      "pdf_page": "194–195",
+      "pdf_sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+      "scope_note": "Descrição bibliográfica da 8ª edição; condições de espaço, ambiente, porte e meios delimitadas. Não é procedimento operacional universal nem certificação de desempenho hidrodinâmico, autorização prática ou norma atual."
+    },
+    "truths": [
+      true,
+      true,
+      false,
+      false
+    ],
+    "final_editorial_approval": false
+  },
+  {
+    "id": "AN-C12-1232-M2",
+    "defect": "Comando prático sem escopo, distratores heterogêneos e explicação mínima.",
+    "correction": "Criados cinco pares comparáveis de condição de maré/intensidade de corrente; mantidas as restrições da passagem e justificadas todas as alternativas.",
+    "before_physical": {
+      "subject": "Arte Naval",
+      "module": "Manobra do Navio",
+      "topic": "Mudar o bordo de atracação",
+      "difficulty": "Difícil",
+      "source": {
+        "author": "FONSECA, Maurílio M.",
+        "title": "Arte Naval, v. 2",
+        "edition": "8. ed., 2019",
+        "locator": "cap. 12, item 12.32, p. 833–834"
+      },
+      "tracking": {
+        "subject_slug": "arte-naval",
+        "work": {
+          "id": "fonseca-arte-v2",
+          "title": "Arte Naval - Volume 2",
+          "author": "Maurílio M. Fonseca"
+        },
+        "chapter": {
+          "id": "fonseca-arte-v2::ch12",
+          "number": "12",
+          "title": "Manobra do Navio",
+          "label": "Capítulo 12 - Manobra do Navio"
+        },
+        "section": "item 12.32",
+        "module": "Manobra do Navio",
+        "topic": {
+          "id": "anv2-12.32",
+          "title": "Mudar o bordo de atracação"
+        }
+      },
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v2",
+        "chapter_id": "fonseca-arte-v2::ch12",
+        "topic_id": "anv2-12.32",
+        "subtopic_id": null
+      },
+      "id": "AN-C12-1232-M2",
+      "topic_code": "AN.C12.12.32.M2",
+      "provenance": {
+        "method": "chapter-item-3-models",
+        "coverage_unit": "UC37",
+        "model": 2
+      },
+      "style": "Múltipla escolha conceitual",
+      "question_type": "conceptual",
+      "question": "Na ausência de rebocador, qual condição é indicada para mudar o bordo de atracação?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Corrente forte pela proa."
+        },
+        {
+          "key": "B",
+          "text": "Corrente forte pela popa."
+        },
+        {
+          "key": "C",
+          "text": "Vento forte para dentro."
+        },
+        {
+          "key": "D",
+          "text": "Qualquer condição, desde que todas as espias sejam largadas."
+        },
+        {
+          "key": "E",
+          "text": "Maré favorável e corrente muito fraca."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Maré favorável e corrente muito fraca.",
+      "validation": {
+        "final_editorial_audit": "2026-10-01"
+      }
+    },
+    "before_effective": {
+      "subject": "Arte Naval",
+      "module": "Manobra do Navio",
+      "topic": "Mudar o bordo de atracação",
+      "difficulty": "Difícil",
+      "source": {
+        "author": "FONSECA, Maurílio M.",
+        "title": "Arte Naval, v. 2",
+        "edition": "8. ed., 2019",
+        "locator": "cap. 12, item 12.32, p. 833–834"
+      },
+      "tracking": {
+        "subject_slug": "arte-naval",
+        "work": {
+          "id": "fonseca-arte-v2",
+          "title": "Arte Naval - Volume 2",
+          "author": "Maurílio M. Fonseca"
+        },
+        "chapter": {
+          "id": "fonseca-arte-v2::ch12",
+          "number": "12",
+          "title": "Manobra do Navio",
+          "label": "Capítulo 12 - Manobra do Navio"
+        },
+        "section": "item 12.32",
+        "module": "Manobra do Navio",
+        "topic": {
+          "id": "anv2-12.32",
+          "title": "Mudar o bordo de atracação"
+        }
+      },
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v2",
+        "chapter_id": "fonseca-arte-v2::ch12",
+        "topic_id": "anv2-12.32",
+        "subtopic_id": null
+      },
+      "id": "AN-C12-1232-M2",
+      "topic_code": "AN.C12.12.32.M2",
+      "provenance": {
+        "method": "chapter-item-3-models",
+        "coverage_unit": "UC37",
+        "model": 2
+      },
+      "style": "Múltipla escolha conceitual",
+      "question_type": "conceptual",
+      "question": "Na ausência de rebocador, qual condição é indicada para mudar o bordo de atracação?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Corrente forte pela proa."
+        },
+        {
+          "key": "B",
+          "text": "Corrente forte pela popa."
+        },
+        {
+          "key": "C",
+          "text": "Vento forte para dentro."
+        },
+        {
+          "key": "D",
+          "text": "Qualquer condição, desde que todas as espias sejam largadas."
+        },
+        {
+          "key": "E",
+          "text": "Maré favorável e corrente muito fraca."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Maré favorável e corrente muito fraca.",
+      "validation": {
+        "final_editorial_audit": "2026-10-01"
+      }
+    },
+    "after": {
+      "subject": "Arte Naval",
+      "module": "Manobra do Navio",
+      "topic": "Mudar o bordo de atracação",
+      "difficulty": "Difícil",
+      "source": {
+        "author": "FONSECA, Maurílio M.",
+        "title": "Arte Naval, v. 2",
+        "edition": "8. ed., 2019",
+        "locator": "cap. 12, item 12.32, pp. 833–834",
+        "printed_page": "833–834",
+        "pdf_page": "194–195",
+        "pdf_sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+        "scope_note": "Descrição bibliográfica da 8ª edição; condições de espaço, ambiente, porte e meios delimitadas. Não é procedimento operacional universal nem certificação de desempenho hidrodinâmico, autorização prática ou norma atual."
+      },
+      "tracking": {
+        "subject_slug": "arte-naval",
+        "work": {
+          "id": "fonseca-arte-v2",
+          "title": "Arte Naval - Volume 2",
+          "author": "Maurílio M. Fonseca"
+        },
+        "chapter": {
+          "id": "fonseca-arte-v2::ch12",
+          "number": "12",
+          "title": "Manobra do Navio",
+          "label": "Capítulo 12 - Manobra do Navio"
+        },
+        "section": "item 12.32",
+        "module": "Manobra do Navio",
+        "topic": {
+          "id": "anv2-12.32",
+          "title": "Mudar o bordo de atracação"
+        }
+      },
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v2",
+        "chapter_id": "fonseca-arte-v2::ch12",
+        "topic_id": "anv2-12.32",
+        "subtopic_id": null
+      },
+      "id": "AN-C12-1232-M2",
+      "topic_code": "AN.C12.12.32.M2",
+      "provenance": {
+        "method": "chapter-item-3-models",
+        "coverage_unit": "UC37",
+        "model": 2
+      },
+      "style": "Múltipla escolha conceitual",
+      "question_type": "conceptual",
+      "question": "Na descrição de mudança do bordo de atracação de Arte Naval, v. 2, 8ª edição, o rebocador é preferido. Quando ele não está disponível, qual par de condições ambientais a passagem associa à alternativa descrita? Considere, nessa ordem, a condição de maré e a intensidade da corrente, sem transformar a identificação bibliográfica em garantia ou autorização operacional.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Maré desfavorável / corrente muito fraca."
+        },
+        {
+          "key": "B",
+          "text": "Maré favorável / corrente forte."
+        },
+        {
+          "key": "C",
+          "text": "Maré desfavorável / corrente forte."
+        },
+        {
+          "key": "D",
+          "text": "Qualquer maré / qualquer intensidade de corrente."
+        },
+        {
+          "key": "E",
+          "text": "Maré favorável / corrente muito fraca."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A alternativa E corresponde à espera por maré favorável e ao auxílio de corrente muito fraca. A indisponibilidade de rebocador não torna qualquer maré, uma corrente forte ou uma intensidade arbitrária equivalentes às condições da passagem.",
+      "validation": {
+        "final_editorial_audit": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Incorreta: Mantém a intensidade descrita, mas inverte a condição de maré.",
+        "B": "Incorreta: Preserva a condição de maré, mas substitui a corrente muito fraca por forte.",
+        "C": "Incorreta: Altera tanto a condição de maré quanto a intensidade da corrente.",
+        "D": "Incorreta: Elimina as duas restrições ambientais expressas na passagem.",
+        "E": "Correta: Reúne as duas condições associadas à alternativa sem rebocador: maré favorável e corrente muito fraca."
+      },
+      "cognitive_level": 2
+    },
+    "before_hash": "bc73fceeda8b3432fcd90f51047f53ba417a0ef4d6b71fa67683c08b35ab6c7f",
+    "after_hash": "4523c1bc98315f2834ec319bae7384f49a9455844a08c9c0ce2117f79b3291d7",
+    "source": {
+      "author": "FONSECA, Maurílio M.",
+      "title": "Arte Naval, v. 2",
+      "edition": "8. ed., 2019",
+      "locator": "cap. 12, item 12.32, pp. 833–834",
+      "printed_page": "833–834",
+      "pdf_page": "194–195",
+      "pdf_sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+      "scope_note": "Descrição bibliográfica da 8ª edição; condições de espaço, ambiente, porte e meios delimitadas. Não é procedimento operacional universal nem certificação de desempenho hidrodinâmico, autorização prática ou norma atual."
+    },
+    "truths": null,
+    "final_editorial_approval": false
+  },
+  {
+    "id": "AN-C12-1232-M3",
+    "defect": "V/F generalizava governo e repetia falsas sem explicação.",
+    "correction": "Delimitada a descrição; diferenciados pares de espias para corrente pela proa/popa e precauções com defensas/hélices, sem certificar causalidade universal.",
+    "before_physical": {
+      "subject": "Arte Naval",
+      "module": "Manobra do Navio",
+      "topic": "Mudar o bordo de atracação",
+      "difficulty": "Difícil",
+      "source": {
+        "author": "FONSECA, Maurílio M.",
+        "title": "Arte Naval, v. 2",
+        "edition": "8. ed., 2019",
+        "locator": "cap. 12, item 12.32, p. 833–834"
+      },
+      "tracking": {
+        "subject_slug": "arte-naval",
+        "work": {
+          "id": "fonseca-arte-v2",
+          "title": "Arte Naval - Volume 2",
+          "author": "Maurílio M. Fonseca"
+        },
+        "chapter": {
+          "id": "fonseca-arte-v2::ch12",
+          "number": "12",
+          "title": "Manobra do Navio",
+          "label": "Capítulo 12 - Manobra do Navio"
+        },
+        "section": "item 12.32",
+        "module": "Manobra do Navio",
+        "topic": {
+          "id": "anv2-12.32",
+          "title": "Mudar o bordo de atracação"
+        }
+      },
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v2",
+        "chapter_id": "fonseca-arte-v2::ch12",
+        "topic_id": "anv2-12.32",
+        "subtopic_id": null
+      },
+      "id": "AN-C12-1232-M3",
+      "topic_code": "AN.C12.12.32.M3",
+      "provenance": {
+        "method": "chapter-item-3-models",
+        "coverage_unit": "UC37",
+        "model": 3
+      },
+      "style": "Sequência V/F",
+      "question_type": "true_false",
+      "question": "Julgue:\n( ) Sem rebocador, recomenda-se aguardar maré favorável e corrente muito fraca.\n( ) A obra considera preferível mudar de bordo com corrente pela popa, pois o navio governa melhor girando sobre a proa.\n( ) A obra considera preferível mudar de bordo com corrente pela proa.\n( ) Para mudar o bordo de atracação, é preferível manobrar com rebocador.\nAssinale a sequência correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V – V – F – V )"
+        },
+        {
+          "key": "B",
+          "text": "( V – F – V – F )"
+        },
+        {
+          "key": "C",
+          "text": "( F – V – V – F )"
+        },
+        {
+          "key": "D",
+          "text": "( F – F – V – V )"
+        },
+        {
+          "key": "E",
+          "text": "( V – V – V – V )"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A sequência correta resulta da avaliação das quatro proposições: 1) Sem rebocador, recomenda-se aguardar maré favorável e corrente muito fraca. | 2) A obra considera preferível mudar de bordo com corrente pela popa, pois o navio governa melhor girando sobre a proa. | 3) A obra considera preferível mudar de bordo com corrente pela proa. | 4) Para mudar o bordo de atracação, é preferível manobrar com rebocador.",
+      "validation": {
+        "final_editorial_audit": "2026-10-01"
+      }
+    },
+    "before_effective": {
+      "subject": "Arte Naval",
+      "module": "Manobra do Navio",
+      "topic": "Mudar o bordo de atracação",
+      "difficulty": "Difícil",
+      "source": {
+        "author": "FONSECA, Maurílio M.",
+        "title": "Arte Naval, v. 2",
+        "edition": "8. ed., 2019",
+        "locator": "cap. 12, item 12.32, p. 833–834"
+      },
+      "tracking": {
+        "subject_slug": "arte-naval",
+        "work": {
+          "id": "fonseca-arte-v2",
+          "title": "Arte Naval - Volume 2",
+          "author": "Maurílio M. Fonseca"
+        },
+        "chapter": {
+          "id": "fonseca-arte-v2::ch12",
+          "number": "12",
+          "title": "Manobra do Navio",
+          "label": "Capítulo 12 - Manobra do Navio"
+        },
+        "section": "item 12.32",
+        "module": "Manobra do Navio",
+        "topic": {
+          "id": "anv2-12.32",
+          "title": "Mudar o bordo de atracação"
+        }
+      },
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v2",
+        "chapter_id": "fonseca-arte-v2::ch12",
+        "topic_id": "anv2-12.32",
+        "subtopic_id": null
+      },
+      "id": "AN-C12-1232-M3",
+      "topic_code": "AN.C12.12.32.M3",
+      "provenance": {
+        "method": "chapter-item-3-models",
+        "coverage_unit": "UC37",
+        "model": 3
+      },
+      "style": "Sequência V/F",
+      "question_type": "true_false",
+      "question": "Julgue:\n( ) Sem rebocador, recomenda-se aguardar maré favorável e corrente muito fraca.\n( ) A obra considera preferível mudar de bordo com corrente pela popa, pois o navio governa melhor girando sobre a proa.\n( ) A obra considera preferível mudar de bordo com corrente pela proa.\n( ) Para mudar o bordo de atracação, é preferível manobrar com rebocador.\nAssinale a sequência correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V – V – F – V )"
+        },
+        {
+          "key": "B",
+          "text": "( V – F – V – F )"
+        },
+        {
+          "key": "C",
+          "text": "( F – V – V – F )"
+        },
+        {
+          "key": "D",
+          "text": "( F – F – V – V )"
+        },
+        {
+          "key": "E",
+          "text": "( V – V – V – V )"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A sequência correta resulta da avaliação das quatro proposições: 1) Sem rebocador, recomenda-se aguardar maré favorável e corrente muito fraca. | 2) A obra considera preferível mudar de bordo com corrente pela popa, pois o navio governa melhor girando sobre a proa. | 3) A obra considera preferível mudar de bordo com corrente pela proa. | 4) Para mudar o bordo de atracação, é preferível manobrar com rebocador.",
+      "validation": {
+        "final_editorial_audit": "2026-10-01"
+      }
+    },
+    "after": {
+      "subject": "Arte Naval",
+      "module": "Manobra do Navio",
+      "topic": "Mudar o bordo de atracação",
+      "difficulty": "Difícil",
+      "source": {
+        "author": "FONSECA, Maurílio M.",
+        "title": "Arte Naval, v. 2",
+        "edition": "8. ed., 2019",
+        "locator": "cap. 12, item 12.32, pp. 833–834",
+        "printed_page": "833–834",
+        "pdf_page": "194–195",
+        "pdf_sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+        "scope_note": "Descrição bibliográfica da 8ª edição; condições de espaço, ambiente, porte e meios delimitadas. Não é procedimento operacional universal nem certificação de desempenho hidrodinâmico, autorização prática ou norma atual."
+      },
+      "tracking": {
+        "subject_slug": "arte-naval",
+        "work": {
+          "id": "fonseca-arte-v2",
+          "title": "Arte Naval - Volume 2",
+          "author": "Maurílio M. Fonseca"
+        },
+        "chapter": {
+          "id": "fonseca-arte-v2::ch12",
+          "number": "12",
+          "title": "Manobra do Navio",
+          "label": "Capítulo 12 - Manobra do Navio"
+        },
+        "section": "item 12.32",
+        "module": "Manobra do Navio",
+        "topic": {
+          "id": "anv2-12.32",
+          "title": "Mudar o bordo de atracação"
+        }
+      },
+      "taxonomy": {
+        "subject_id": "II",
+        "subject_slug": "arte-naval",
+        "bibliography_id": "fonseca-arte-v2",
+        "chapter_id": "fonseca-arte-v2::ch12",
+        "topic_id": "anv2-12.32",
+        "subtopic_id": null
+      },
+      "id": "AN-C12-1232-M3",
+      "topic_code": "AN.C12.12.32.M3",
+      "provenance": {
+        "method": "chapter-item-3-models",
+        "coverage_unit": "UC37",
+        "model": 3
+      },
+      "style": "Sequência V/F",
+      "question_type": "true_false",
+      "question": "Julgue as relações entre ambiente, espias e proteção do costado na descrição bibliográfica da mudança do bordo de atracação em Arte Naval, v. 2, 8ª edição, e assinale a sequência correta. Não se avalia um procedimento universal para instalações reais.\n( ) Na falta de rebocador, a passagem condiciona a alternativa à espera por maré favorável e corrente muito fraca.\n( ) Para corrente pela popa, o par inicial de espias conservadas é espringue de proa e través de popa.\n( ) Para corrente pela proa, o texto mantém exatamente esse mesmo par inicial: espringue de proa e través de popa.\n( ) A descrição ressalta defensas para proteger proa e costado no primeiro caso e atenção aos hélices e defensas na popa no caso de corrente pela proa.",
+      "options": [
+        {
+          "key": "A",
+          "text": "( V – V – F – V )"
+        },
+        {
+          "key": "B",
+          "text": "( V – F – V – F )"
+        },
+        {
+          "key": "C",
+          "text": "( F – V – V – F )"
+        },
+        {
+          "key": "D",
+          "text": "( F – F – V – V )"
+        },
+        {
+          "key": "E",
+          "text": "( V – V – V – V )"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A sequência é V–V–F–V, alternativa A. Com corrente pela proa, a associação inicial muda para espringue de popa e través de proa; logo, o terceiro item é falso. As precauções de proteção permanecem explícitas nos dois casos, sem certificar giro sobre ponto fixo ou eficácia universal.",
+      "validation": {
+        "final_editorial_audit": "2026-10-01"
+      },
+      "distractor_analysis": {
+        "A": "Correta: Os itens 1, 2 e 4 correspondem às condições e precauções descritas; o item 3 confunde os arranjos de direções opostas da corrente.",
+        "B": "Incorreta: Nega o arranjo do segundo item e a proteção do quarto; aceita a falsa identidade do terceiro.",
+        "C": "Incorreta: Nega a condição ambiental do primeiro item e aceita o terceiro, que troca as posições das espias.",
+        "D": "Incorreta: Nega os dois primeiros itens e aceita o terceiro, contrariando as duas descrições.",
+        "E": "Incorreta: O terceiro item é falso: para corrente pela proa, a obra cita espringue de popa e través de proa."
+      },
+      "cognitive_level": 2
+    },
+    "before_hash": "3ceaac117d7052f8fdf894aa1ce16020a3250baffc887ba286854bbb41cf497e",
+    "after_hash": "f3de01bd3923cfa98a5ff6ce1eb65ed15f5b0fc65391b5841ec31ee94bb8e599",
+    "source": {
+      "author": "FONSECA, Maurílio M.",
+      "title": "Arte Naval, v. 2",
+      "edition": "8. ed., 2019",
+      "locator": "cap. 12, item 12.32, pp. 833–834",
+      "printed_page": "833–834",
+      "pdf_page": "194–195",
+      "pdf_sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+      "scope_note": "Descrição bibliográfica da 8ª edição; condições de espaço, ambiente, porte e meios delimitadas. Não é procedimento operacional universal nem certificação de desempenho hidrodinâmico, autorização prática ou norma atual."
+    },
+    "truths": [
+      true,
+      true,
+      false,
+      true
+    ],
+    "final_editorial_approval": false
+  }
+]

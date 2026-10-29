@@ -1,0 +1,110 @@
+{
+  "checkpoint": "100",
+  "decisions": [
+    {
+      "id": "AN-C12-1221-M1",
+      "consumer": "cadernos",
+      "before_hash": "e8b4bdba2691269426686fcd9c8b11fe1830048d48356e4916b88327a33193c5",
+      "after_hash": "afba9a3f4ba7457805bba28006bb54ffc105674881fb123ed7e5d60c5d698bd5",
+      "previous_status": "CORRIGIR",
+      "resolved_findings": [
+        {
+          "level": "CORRIGIR",
+          "code": "MISSING_ASSERTIONS",
+          "detail": "As alternativas escolhem proposições numeradas, mas o enunciado e os campos adicionais não apresentam essas proposições.",
+          "evidence": {
+            "required": [
+              "I",
+              "III",
+              "II",
+              "IV"
+            ],
+            "structure": "simple"
+          }
+        },
+        {
+          "level": "REVISAR",
+          "code": "LOCATOR_OR_GENERIC_COMMAND",
+          "detail": "Comando genérico ou dependente de localizador identificado pelo verificador do projeto; exige revisão individual do conteúdo.",
+          "evidence": "De acordo com Arte Naval, v. 2, acerca de Preparação para atracação, assinale a alternativa que apresenta corretamente a disposição, requisito ou conceito previsto na publicação."
+        },
+        {
+          "level": "REVISAR",
+          "code": "SAME_STEM_OTHER_ID",
+          "detail": "Enunciado idêntico em outro ID com alternativas diferentes; conferir se avaliam o mesmo conceito.",
+          "evidence": [
+            {
+              "pool": "Cadernos",
+              "id": "AN-C12-1221-M2"
+            }
+          ]
+        }
+      ],
+      "basis": "Fonte individual verificada,proposições renderizadas,comando técnico estável e enunciados finais distintos entre1221M1/M2;equivalência semântica global e aprovação final pendentes.",
+      "final_approval": false
+    },
+    {
+      "id": "AN-C12-1221-M2",
+      "consumer": "cadernos",
+      "before_hash": "59a3c0da68efe7c7dfb9d47dab3754fd1a78c87c8158fc30383b9c460988b3e5",
+      "after_hash": "737b7cbe93ca7ddf1d55a14bcf1faf91da3811be7c0ef0a6d0b4c877e9b399fd",
+      "previous_status": "REVISAR",
+      "resolved_findings": [
+        {
+          "level": "REVISAR",
+          "code": "LOCATOR_OR_GENERIC_COMMAND",
+          "detail": "Comando genérico ou dependente de localizador identificado pelo verificador do projeto; exige revisão individual do conteúdo.",
+          "evidence": "De acordo com Arte Naval, v. 2, acerca de Preparação para atracação, assinale a alternativa que apresenta corretamente a disposição, requisito ou conceito previsto na publicação."
+        },
+        {
+          "level": "REVISAR",
+          "code": "SAME_STEM_OTHER_ID",
+          "detail": "Enunciado idêntico em outro ID com alternativas diferentes; conferir se avaliam o mesmo conceito.",
+          "evidence": [
+            {
+              "pool": "Cadernos",
+              "id": "AN-C12-1221-M1"
+            }
+          ]
+        }
+      ],
+      "basis": "Fonte individual verificada,proposições renderizadas,comando técnico estável e enunciados finais distintos entre1221M1/M2;equivalência semântica global e aprovação final pendentes.",
+      "final_approval": false
+    },
+    {
+      "id": "AN-C12-1222-M1",
+      "consumer": "cadernos",
+      "before_hash": "b34f155dd748ae106d094972773eedbd5ec820b22724d84978b1d4237e958cac",
+      "after_hash": "e7593a3fc1118f2ae3cf1b4fd2a7a49e7829f42204e78a09efbc12f61489c15f",
+      "previous_status": "CORRIGIR",
+      "resolved_findings": [
+        {
+          "level": "CORRIGIR",
+          "code": "MISSING_ASSERTIONS",
+          "detail": "As alternativas escolhem proposições numeradas, mas o enunciado e os campos adicionais não apresentam essas proposições.",
+          "evidence": {
+            "required": [
+              "I",
+              "II",
+              "III",
+              "IV"
+            ],
+            "structure": "simple"
+          }
+        },
+        {
+          "level": "REVISAR",
+          "code": "LOCATOR_OR_GENERIC_COMMAND",
+          "detail": "Comando genérico ou dependente de localizador identificado pelo verificador do projeto; exige revisão individual do conteúdo.",
+          "evidence": "De acordo com Arte Naval, v. 2, acerca de Preparação para desatracação, assinale a alternativa que apresenta corretamente a disposição, requisito ou conceito previsto na publicação."
+        }
+      ],
+      "basis": "Fonte individual verificada,proposições renderizadas,comando técnico estável e enunciados finais distintos entre1221M1/M2;equivalência semântica global e aprovação final pendentes.",
+      "final_approval": false
+    }
+  ],
+  "other_flagged_id_decrement": 1,
+  "specific_other_findings_resolved": 2,
+  "no_global_semantic_approval": true,
+  "prior_decisions_recounted": false
+}

@@ -1,0 +1,28 @@
+{
+  "expected_archive": {
+    "library_file_id": "libfile_6a0b37b66d408191b72d0fa9248c16d5",
+    "size": 88906300,
+    "sha256": "d00d2818affc66a75a503d11a1e700c8e8b1b2adb6b9556c67d5cf95790e4d52"
+  },
+  "observed_archive": {
+    "size": 75870202,
+    "sha256": "b3d28a06a01928b032d88b839a8deabc99fe0e36b4726417faec2c0bd4cdc44d",
+    "valid_zip": false,
+    "repeat_materialize_size": 75870202
+  },
+  "cause": "Unknown: observed bytes incomplete,ZIP central directory absent and bundle member incomplete. Do not infer why receipt and recovered bytes differ.",
+  "recovery_steps": [
+    "Base090 recovered with complete ZIP/manifest/bundle SHA256 verification and fast-forward.",
+    "Complete prefix entries091 decompressed individually,CRC checked;four ledger files SHA256 match original091MANIFEST and originalcommit.",
+    "Partial bundle stream unpacked with earlyEOF;objects were treated only as salvage,never as a verified completebundle.",
+    "All14blobs changed in091 recomputed as Gitblob SHA1 and compared to original tree OIDs;all exist and match.",
+    "Originalf27c53ec commit and exact tree0cf660cd26bc93e1fea46c6752cd700cd7046010 recovered;fast-forward from verified090,without redoing or recounting091."
+  ],
+  "original_commit_recovered": true,
+  "original_tree_verified": true,
+  "all14_changed_blobs_verified": true,
+  "ledger_sha256_verified": true,
+  "prior_count_increment": 0,
+  "old091_archive_suitable_for_restoration": false,
+  "next_persistence": "Create archive under temporary name,close/fsync,atomic rename;save prepared helper,then independently materialize saved file and verify full SHA256/ZIP/member hashes and bundlepack trailer before reporting durable success."
+}

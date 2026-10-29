@@ -1,0 +1,1294 @@
+{
+  "checkpoint": "108",
+  "base_commit": "ed68a3e5acffae754de15b145a28242f3c34855a",
+  "base_tree": "0e8015af6eff22d4b024ef2cea47eeb9b5a66bce",
+  "remote_head_before_edit": "d5f1354887b67e6483bf77320901f15d5728ce28",
+  "partial_only": true,
+  "release_approval": false,
+  "summary": {
+    "checkpoint": "108",
+    "previous_unique_broken": 92,
+    "structural_defects_repaired": 2,
+    "remaining_structural_defects": 90,
+    "new_content_corrections": 6,
+    "accumulated_partial_corrections": 445,
+    "final_editorial_approvals": 0,
+    "duplicate_alerts_resolved": 520,
+    "duplicate_pairs_checked": 260,
+    "unique_ids": 13715,
+    "runtime_occurrences": 14086,
+    "counts_by_id": {
+      "SEM_ALERTA_AUTOMATICO": 10433,
+      "REVISAR": 3188,
+      "CORRIGIR": 90,
+      "DOCUMENTAR": 4
+    },
+    "notes": [
+      "Alertas de cópia resolvidos somente quando há proveniência explícita e igualdade do enunciado após normalizar espaços e caixa, e igualdade literal de alternativas, gabarito e explicação nos dois consumidores.",
+      "Correções de conteúdo são parciais, com fonte primária; requerem rechecagem independente e validação integral.",
+      "Os IDs sem alerta automático não são aprovações finais.",
+      "Pendência ANV-0142 mantida: o sumário do exemplar anuncia thruster no art.11.13, mas o corpo do livro nessa numeração trata do aparelho fixo da mastreação. Não foi usada referência incompatível para inventar conteúdo.",
+      "Lote084: cinco defeitos removidos da fila após leitura bibliográfica e verificação de renderização. Outros dez modelos associados foram corrigidos; nenhum dos3193 alertas de outros IDs foi dado como resolvido.",
+      "Lote085: oito correções ativas e três defeitos estruturais reparados. AN-C11-1118b-M2 já estava ausente do runtime; original e exclusão preservados, sem contar correção ou revisão. Nenhum novo alerta de duplicidade resolvido.",
+      "Lote086: seis novos IDs ativos corrigidos parcialmente, incluindo dois defeitos estruturais. Sem nova resolução dos3193 alertas, sem recontagem das520 decisões de duplicidade, sem aprovação final.",
+      "Lote087: oito correções parciais ativas, três defeitos estruturais reparados. AN-C11-1122-M3 já ausente do runtime, original e exclusão preservados, sem revisão/correção contada. Nenhuma nova resolução dos3193alertas ou das520decisões de duplicidade.",
+      "Lote088:15 correções parciais ativas e5 defeitos estruturais reparados. SiglaTT conferida na imagem e corrigida em1122eM1/M2. Nenhum dos3193 outros alertas ou520 decisões anteriores recontado.",
+      "Lote089:6 correções parciais ativas,2 defeitos estruturais reparados. Modelo de leme explicitamente isolado; página[791] inferida e declarada. Nenhuma nova resolução dos3193 outros alertas ou recontagem das520 decisões anteriores.",
+      "Lote090:6 novos IDs ativos com correções parciais e2 defeitos estruturais reparados. Descarga e pressão lateral separadas; sem recontar os520 alertas ou resolver os3193 outros IDs. Lista acumulada saneada de15 entradas repetidas,sem alterar os338 IDs únicos anteriores.",
+      "Lote091:6 novos IDs ativos com correções parciais e2 defeitos estruturais reparados.12.6.1 inteiro nap798/PDF159;localizador ajustado nos3modelos. Sem nova resolução dos3193outrosIDs ou recontagem das520decisões anteriores.",
+      "Lote092:3 novosIDs ativos parcialmente corrigidos,1defeito estrutural reparado.091 recuperado em commit/árvore originais após ZIP incompleto,sem refazer/recontar.520 decisões e3193outros IDs não recontados.",
+      "Lote093:3novosIDs parcialmente corrigidos e1defeito estrutural;1262M2 rechecado por troca de campos,sem novo ID/conferência contado.4deltas efetivos,3IDs novos no acumulado.Nenhuma resolução adicional dos3193alertas ou recontagem das520decisões.",
+      "Lote094:4novosIDs parcialmente corrigidos,1defeito estrutural e2alertas específicos de128M2 resolvidos;3193outros IDs caem para3192.127M1/M2 já ausentes,preservados semcontagem.Nenhuma aprovação/recontagem dos520alertas.",
+      "Lote095:6novosIDs ativos parcialmente corrigidos,2defeitos estruturais reparados.Nenhum novo decremento dos3192outrosIDs ou recontagem dos520alertas antigos.Os2alertas específicos de128M2 resolvidos094 não recontados.",
+      "Lote096:6novos IDs ativos parcialmente corrigidos,2defeitos estruturais e2alertas específicos de1212M2 resolvidos;3192outrosIDs passam a3191.Não há aprovação final/prevenção semântica global.Nenhuma recontagem dos520alertas antigos ou decisões094.",
+      "Lote097:6novosIDs ativos parcialmente corrigidos,2defeitos estruturais. Nenhum novo decremento dos3191outrosIDs ou recontagem das decisões094/096 e520alertas antigos.Sem aprovação final.",
+      "Lote098: seis novos IDs ativos parcialmente corrigidos e dois defeitos estruturais. Nenhum novo decremento dos 3191 outros IDs nem recontagem das decisões anteriores. Zero aprovação final.",
+      "Lote099: oito novos IDs ativos parcialmente corrigidos e dois defeitos estruturais.1219M1 já ausente,preservado sem incremento.Nenhum novo decremento dos3191outrosIDs ou recontagem das decisões anteriores.Zero aprovação final.",
+      "Lote100:6novosIDs ativos parcialmente corrigidos,2defeitos estruturais e2alertas específicos de1221M2 resolvidos;3191outrosIDs passam a3190. Localizador12.21inteiro p820/PDF181.Nenhuma recontagem de decisões antigas ou aprovação final.",
+      "Lote101:6novosIDs ativos parcialmente corrigidos,2defeitos estruturais e2alertas específicos de12231M2 resolvidos;3190outrosIDs passam a3189.12.23/12.23.1 lidos integralmente,escopo naval e ressalvas preservados.Sem nova decisão sobre conteúdo do outro IDI12-53-5M1 ou prevenção semântica global.Sem recontagem de decisões antigas/aprovação final.",
+      "Lote102:6novosIDs ativos parcialmente corrigidos,2defeitos estruturais.12.24pp823–827 e12.25pp827–829 integrais,fig12-12/13/14 verificadas.Nenhum novo decremento dos3189outrosIDs ou recontagem das decisões antigas.Zero aprovação final.",
+      "Lote103:5novosIDs ativos parcialmente corrigidos,2defeitos estruturais;1226M2 já inativo,preservado sem contagem.12.26p829 e12.27pp829–830 integrais,fig12-14/contexto verificadas.1227M2recordação1,faixaangularbibliográfica,nãoprescriçãoatual.Sem novo decremento dos3189outrosIDs ou recontagem das decisões antigas.Zero aprovação final.",
+      "Lote104:6novosIDs ativos parcialmente corrigidos,2defeitos estruturais.12.29p831/12.30pp831–832 integrais,fig12-16/contexto verificadas.Risco/governo/velocidade e efeito de máquina limitados à discussão bibliográfica.Sem novo decremento dos3189outrosIDs ou recontagem das decisões antigas.Zero aprovação final.",
+      "Lote105:6novosIDs ativos parcialmente corrigidos,2defeitos estruturais;12.31pp832–833/12.32pp833–834 integrais,fig12-17/18conferidas.Sem novo decremento dos3189outrosIDs,sem recontagem/aprovação final.Sobreposição com ANV0020 registrada;coexistência não homologada.",
+      "Lote106:6novosIDs ativos parcialmente corrigidos,2defeitos estruturais e2alertas específicos de12331M2 resolvidos;3189outrosIDs passam a3188.12.33p834/12.33.1pp834–835 integrais;semfigurasnosalvos,sem regra operacionaluniversal.Sem recontagem/aprovaçãofinal.",
+      "Lote107:6novosIDs ativos parcialmente corrigidos,2defeitos estruturais;12.33.2/12.33.3p835/PDF196integrais,semfiguras/quadros.Correnteproa/popa,arranjos/ressalva distintos.Sem novo decremento dos3188outrosIDs,sem recontagem/aprovação final.",
+      "Lote108:6novosIDs ativos parcialmente corrigidos,2defeitos estruturais;12.33.4p835/12.33.5pp835–836 integrais,semfiguras/quadros.Ressalvas/meios/contextos preservados.Sem novo decremento dos3188outrosIDs,sem recontagem/aprovação final."
+    ],
+    "rechecked_existing_ids": [],
+    "changed_ids_in_this_checkpoint": 6,
+    "other_flagged_ids_resolved_this_checkpoint": 0,
+    "specific_review_findings_resolved_this_checkpoint": 0
+  },
+  "sources": [
+    {
+      "title": "Fonseca,ArteNaval,v.2",
+      "edition": "8ªed.,2019",
+      "locator": "12.33.4p835/PDF196;12.33.5pp835–836/PDF196–197",
+      "pdf_sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1",
+      "text_and_images_checked": true,
+      "printed_numerals_verified": [
+        835,
+        836
+      ],
+      "figures_checked": "No figures/tables within targets",
+      "local_inspection_hashes": {
+        "source.txt": "d9363151f97c5ee12975f37fabbb9ce261b83f905ca82bb1123616ab386c7254",
+        "pdf196.jpg": "e666d0b2a932b5e180f467168e97f95f10989c6e7fbe682d2d8d6dbc93ac31a9",
+        "pdf197.jpg": "55cb4fc777f83482ce59a558251cc4b4aa59a107b85158207a27d761d3c2fc12"
+      }
+    }
+  ],
+  "source_context_read": "PDF195–198text;PDF196–197images;12.33.4/12.33.5complete,continuationandboundarieschecked;othersectionscontextonly,notcounted",
+  "source_scope": {
+    "source": "Fonseca v2 8ed12.33.4p835/PDF196;12.33.5pp835–836/PDF196–197,complete,nofiguresortables",
+    "limits": "Outside/insideenvironmentalaction,shiparrangement,spaceandmeans delimitbibliographicrelations.Windandcurrentnotphysicallyequated.Nouniversalviability/trajectory/causalityguarantee,operationalrecipe or speed/angle/power/RPM/tension prescribed.Independentcognitive/difficultycalibrationpending.",
+    "semantic_overlap": "ANV0047 overlaps12334mooring/departurecompetency;ANV0190/0888 overlap12335environmentalassessment/aid-or-waitcompetency.No same-proofcoexistenceapproved,candidates unchanged/notrecounted.Withinitemvariantsmustnotcoexist.Globalsemanticselectionpending."
+  },
+  "exact_diff": {
+    "changed_ids": [
+      "AN-C12-12334-M1",
+      "AN-C12-12334-M2",
+      "AN-C12-12334-M3",
+      "AN-C12-12335-M1",
+      "AN-C12-12335-M2",
+      "AN-C12-12335-M3"
+    ],
+    "physical_changed_ids": [
+      "AN-C12-12334-M1",
+      "AN-C12-12334-M2",
+      "AN-C12-12334-M3",
+      "AN-C12-12335-M1",
+      "AN-C12-12335-M2",
+      "AN-C12-12335-M3"
+    ],
+    "added_ids": [],
+    "removed_ids": [],
+    "simulado_pscpp_changed_ids": [],
+    "runtime_occurrences": 14086,
+    "unique_ids": 13715,
+    "counts_by_consumer": {
+      "cadernos": 12102,
+      "simulado_pscpp": 1984
+    }
+  },
+  "regression": {
+    "deltas": 445,
+    "propositions_rendered": 1100,
+    "direct_options": 850
+  },
+  "checks": {
+    "regression": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-pscpp-audit-anv0005.mjs",
+      "exit_code": 0,
+      "seconds": 15.8,
+      "output": "{\n  \"id\": \"ANV-0005\",\n  \"before_hash\": \"80bf9b79cfb220e56a008fc9972c31b6b2be8ca2f9e8d3221d06a18788ff9f11\",\n  \"after_hash\": \"4d49a9fafaac6c35cffdf10636b51104e24b48bbd5d59548b139c6ffd6423204\",\n  \"changed_effective_ids\": [\n    \"AN-C09-91-M1\",\n    \"AN-C09-91-M2\",\n    \"AN-C09-91-M3\",\n    \"AN-C09-916-M1\",\n    \"AN-C09-916-M2\",\n    \"AN-C09-916-M3\",\n    \"AN-C09-93-M1\",\n    \"AN-C09-93-M2\",\n    \"AN-C09-93-M3\",\n    \"AN-C09-933-M3\",\n    \"AN-C10-1014-M1\",\n    \"AN-C10-1014-M2\",\n    \"AN-C10-1014-M3\",\n    \"AN-C10-1016-M1\",\n    \"AN-C10-1016-M2\",\n    \"AN-C10-1016-M3\",\n    \"AN-C10-1020-M3\",\n    \"AN-C10-1032-M1\",\n    \"AN-C10-1032-M2\",\n    \"AN-C10-1032-M3\",\n    \"AN-C10-1034-M3\",\n    \"AN-C10-1036-M2\",\n    \"AN-C10-1036-M3\",\n    \"AN-C11-1111-M1\",\n    \"AN-C11-1111-M2\",\n    \"AN-C11-1111-M3\",\n    \"AN-C11-1112-M1\",\n    \"AN-C11-1112-M2\",\n    \"AN-C11-1112-M3\",\n    \"AN-C11-1112a-M1\",\n    \"AN-C11-1112a-M2\",\n    \"AN-C11-1112a-M3\",\n    \"AN-C11-1112b-M1\",\n    \"AN-C11-1112b-M2\",\n    \"AN-C11-1112b-M3\",\n    \"AN-C11-1113-M1\",\n    \"AN-C11-1113-M2\",\n    \"AN-C11-1113-M3\",\n    \"AN-C11-1114-M1\",\n    \"AN-C11-1114-M2\",\n    \"AN-C11-1114-M3\",\n    \"AN-C11-1115-M1\",\n    \"AN-C11-1115-M2\",\n    \"AN-C11-1115-M3\",\n    \"AN-C11-1116-M1\",\n    \"AN-C11-1116-M2\",\n    \"AN-C11-1116-M3\",\n    \"AN-C11-1117-M1\",\n    \"AN-C11-1117-M2\",\n    \"AN-C11-1117-M3\",\n    \"AN-C11-1118-M1\",\n    \"AN-C11-1118-M2\",\n    \"AN-C11-1118-M3\",\n    \"AN-C11-1118a-M1\",\n    \"AN-C11-1118a-M2\",\n    \"AN-C11-1118a-M3\",\n    \"AN-C11-1118b-M1\",\n    \"AN-C11-1118b-M3\",\n    \"AN-C11-1118c-M1\",\n    \"AN-C11-1118c-M2\",\n    \"AN-C11-1118c-M3\",\n    \"AN-C11-1118d-M1\",\n    \"AN-C11-1118d-M2\",\n    \"AN-C11-1118d-M3\",\n    \"AN-C11-1118e-M1\",\n    \"AN-C11-1118e-M2\",\n    \"AN-C11-1118e-M3\",\n    \"AN-C11-1119-M1\",\n    \"AN-C11-1119-M2\",\n    \"AN-C11-1119-M3\",\n    \"AN-C11-112-M1\",\n    \"AN-C11-112-M2\",\n    \"AN-C11-112-M3\",\n    \"AN-C11-1120-M1\",\n    \"AN-C11-1120-M2\",\n    \"AN-C11-1120-M3\",\n    \"AN-C11-1121-M1\",\n    \"AN-C11-1121-M2\",\n    \"AN-C11-1121-M3\",\n    \"AN-C11-1122-M1\",\n    \"AN-C11-1122-M2\",\n    \"AN-C11-1122a-M1\",\n    \"AN-C11-1122a-M2\",\n    \"AN-C11-1122a-M3\",\n    \"AN-C11-1122b-M1\",\n    \"AN-C11-1122b-M2\",\n    \"AN-C11-1122b-M3\",\n    \"AN-C11-1122c-M1\",\n    \"AN-C11-1122c-M2\",\n    \"AN-C11-1122c-M3\",\n    \"AN-C11-1122d-M1\",\n    \"AN-C11-1122d-M2\",\n    \"AN-C11-1122d-M3\",\n    \"AN-C11-1122e-M1\",\n    \"AN-C11-1122e-M2\",\n    \"AN-C11-1122e-M3\",\n    \"AN-C11-1122f-M1\",\n    \"AN-C11-1122f-M2\",\n    \"AN-C11-1122f-M3\",\n    \"AN-C11-1122g-M1\",\n    \"AN-C11-1122g-M2\",\n    \"AN-C11-1122g-M3\",\n    \"AN-C11-113-M1\",\n    \"AN-C11-113-M2\",\n    \"AN-C11-113-M3\",\n    \"AN-C11-114-M1\",\n    \"AN-C11-114-M2\",\n    \"AN-C11-114-M3\",\n    \"AN-C11-114a-M2\",\n    \"AN-C11-114a-M3\",\n    \"AN-C11-114b-M1\",\n    \"AN-C11-114b-M2\",\n    \"AN-C11-114b-M3\",\n    \"AN-C11-114c-M1\",\n    \"AN-C11-114c-M2\",\n    \"AN-C11-114c-M3\",\n    \"AN-C11-114d-M1\",\n    \"AN-C11-114d-M2\",\n    \"AN-C11-114d-M3\",\n    \"AN-C11-114e-M1\",\n    \"AN-C11-114e-M2\",\n    \"AN-C11-114e-M3\",\n    \"AN-C11-115-M1\",\n    \"AN-C11-115-M2\",\n    \"AN-C11-115-M3\",\n    \"AN-C11-115a-M1\",\n    \"AN-C11-115a-M2\",\n    \"AN-C11-115a-M3\",\n    \"AN-C11-115b-M1\",\n    \"AN-C11-115b-M2\",\n    \"AN-C11-115b-M3\",\n    \"AN-C11-115c-M1\",\n    \"AN-C11-115c-M2\",\n    \"AN-C11-115c-M3\",\n    \"AN-C11-116-M1\",\n    \"AN-C11-116-M2\",\n    \"AN-C11-116-M3\",\n    \"AN-C11-117-M1\",\n    \"AN-C11-117-M2\",\n    \"AN-C11-117-M3\",\n    \"AN-C11-117a-M1\",\n    \"AN-C11-117a-M2\",\n    \"AN-C11-117a-M3\",\n    \"AN-C11-117b-M1\",\n    \"AN-C11-117b-M2\",\n    \"AN-C11-117b-M3\",\n    \"AN-C11-117c-M1\",\n    \"AN-C11-117c-M2\",\n    \"AN-C11-117c-M3\",\n    \"AN-C11-117d-M1\",\n    \"AN-C11-117d-M2\",\n    \"AN-C11-117d-M3\",\n    \"AN-C11-118-M1\",\n    \"AN-C11-118-M2\",\n    \"AN-C11-118-M3\",\n    \"AN-C11-119-M1\",\n    \"AN-C11-119-M2\",\n    \"AN-C11-119-M3\",\n    \"AN-C12-121-M1\",\n    \"AN-C12-121-M2\",\n    \"AN-C12-121-M3\",\n    \"AN-C12-1210-M1\",\n    \"AN-C12-1210-M2\",\n    \"AN-C12-1210-M3\",\n    \"AN-C12-1211-M1\",\n    \"AN-C12-1211-M2\",\n    \"AN-C12-1211-M3\",\n    \"AN-C12-1212-M1\",\n    \"AN-C12-1212-M2\",\n    \"AN-C12-1212-M3\",\n    \"AN-C12-1213-M1\",\n    \"AN-C12-1213-M2\",\n    \"AN-C12-1213-M3\",\n    \"AN-C12-1214-M1\",\n    \"AN-C12-1214-M2\",\n    \"AN-C12-1214-M3\",\n    \"AN-C12-1215-M1\",\n    \"AN-C12-1215-M2\",\n    \"AN-C12-1215-M3\",\n    \"AN-C12-1216-M1\",\n    \"AN-C12-1216-M2\",\n    \"AN-C12-1216-M3\",\n    \"AN-C12-1217-M1\",\n    \"AN-C12-1217-M2\",\n    \"AN-C12-1217-M3\",\n    \"AN-C12-1218-M1\",\n    \"AN-C12-1218-M2\",\n    \"AN-C12-1218-M3\",\n    \"AN-C12-1219-M2\",\n    \"AN-C12-1219-M3\",\n    \"AN-C12-122-M1\",\n    \"AN-C12-122-M2\",\n    \"AN-C12-122-M3\",\n    \"AN-C12-1220-M1\",\n    \"AN-C12-1220-M2\",\n    \"AN-C12-1220-M3\",\n    \"AN-C12-1221-M1\",\n    \"AN-C12-1221-M2\",\n    \"AN-C12-1221-M3\",\n    \"AN-C12-1222-M1\",\n    \"AN-C12-1222-M2\",\n    \"AN-C12-1222-M3\",\n    \"AN-C12-1223-M1\",\n    \"AN-C12-1223-M2\",\n    \"AN-C12-1223-M3\",\n    \"AN-C12-12231-M1\",\n    \"AN-C12-12231-M2\",\n    \"AN-C12-12231-M3\",\n    \"AN-C12-1224-M1\",\n    \"AN-C12-1224-M2\",\n    \"AN-C12-1224-M3\",\n    \"AN-C12-1225-M1\",\n    \"AN-C12-1225-M2\",\n    \"AN-C12-1225-M3\",\n    \"AN-C12-1226-M1\",\n    \"AN-C12-1226-M3\",\n    \"AN-C12-1227-M1\",\n    \"AN-C12-1227-M2\",\n    \"AN-C12-1227-M3\",\n    \"AN-C12-1228-M1\",\n    \"AN-C12-1228-M2\",\n    \"AN-C12-1228-M3\",\n    \"AN-C12-1229-M1\",\n    \"AN-C12-1229-M2\",\n    \"AN-C12-1229-M3\",\n    \"AN-C12-123-M1\",\n    \"AN-C12-123-M2\",\n    \"AN-C12-123-M3\",\n    \"AN-C12-1230-M1\",\n    \"AN-C12-1230-M2\",\n    \"AN-C12-1230-M3\",\n    \"AN-C12-1231-M1\",\n    \"AN-C12-1231-M2\",\n    \"AN-C12-1231-M3\",\n    \"AN-C12-1232-M1\",\n    \"AN-C12-1232-M2\",\n    \"AN-C12-1232-M3\",\n    \"AN-C12-1233-M1\",\n    \"AN-C12-1233-M2\",\n    \"AN-C12-1233-M3\",\n    \"AN-C12-12331-M1\",\n    \"AN-C12-12331-M2\",\n    \"AN-C12-12331-M3\",\n    \"AN-C12-12332-M1\",\n    \"AN-C12-12332-M2\",\n    \"AN-C12-12332-M3\",\n    \"AN-C12-12333-M1\",\n    \"AN-C12-12333-M2\",\n    \"AN-C12-12333-M3\",\n    \"AN-C12-12334-M1\",\n    \"AN-C12-12334-M2\",\n    \"AN-C12-12334-M3\",\n    \"AN-C12-12335-M1\",\n    \"AN-C12-12335-M2\",\n    \"AN-C12-12335-M3\",\n    \"AN-C12-1237-M1\",\n    \"AN-C12-1237-M2\",\n    \"AN-C12-1237-M3\",\n    \"AN-C12-124-M1\",\n    \"AN-C12-124-M2\",\n    \"AN-C12-124-M3\",\n    \"AN-C12-1243-M1\",\n    \"AN-C12-1243-M2\",\n    \"AN-C12-1243-M3\",\n    \"AN-C12-1244-M3\",\n    \"AN-C12-1246-M3\",\n    \"AN-C12-125-M1\",\n    \"AN-C12-125-M2\",\n    \"AN-C12-125-M3\",\n    \"AN-C12-1253-M3\",\n    \"AN-C12-126-M1\",\n    \"AN-C12-126-M2\",\n    \"AN-C12-126-M3\",\n    \"AN-C12-1261-M1\",\n    \"AN-C12-1261-M2\",\n    \"AN-C12-1261-M3\",\n    \"AN-C12-1262-M1\",\n    \"AN-C12-1262-M2\",\n    \"AN-C12-1262-M3\",\n    \"AN-C12-1263-M1\",\n    \"AN-C12-1263-M2\",\n    \"AN-C12-1263-M3\",\n    \"AN-C12-1264-M1\",\n    \"AN-C12-1264-M2\",\n    \"AN-C12-1264-M3\",\n    \"AN-C12-127-M3\",\n    \"AN-C12-128-M1\",\n    \"AN-C12-128-M2\",\n    \"AN-C12-128-M3\",\n    \"AN-C12-129-M1\",\n    \"AN-C12-129-M2\",\n    \"AN-C12-129-M3\",\n    \"AN-C12-I12-56-M3\",\n    \"ANV-0005\",\n    \"ANV-0007\",\n    \"ANV-0016\",\n    \"ANV-0020\",\n    \"ANV-0021\",\n    \"ANV-0023\",\n    \"ANV-0025\",\n    \"ANV-0037\",\n    \"ANV-0038\",\n    \"ANV-0039\",\n    \"ANV-0041\",\n    \"ANV-0043\",\n    \"ANV-0044\",\n    \"ANV-0045\",\n    \"ANV-0046\",\n    \"ANV-0047\",\n    \"ANV-0048\",\n    \"ANV-0049\",\n    \"ANV-0050\",\n    \"ANV-0064\",\n    \"ANV-0067\",\n    \"ANV-0068\",\n    \"ANV-0073\",\n    \"ANV-0076\",\n    \"ANV-0085\",\n    \"ANV-0092\",\n    \"ANV-0096\",\n    \"ANV-0097\",\n    \"ANV-0100\",\n    \"ANV-0105\",\n    \"ANV-0108\",\n    \"ANV-0111\",\n    \"ANV-0116\",\n    \"ANV-0125\",\n    \"ANV-0128\",\n    \"ANV-0129\",\n    \"ANV-0131\",\n    \"ANV-0134\",\n    \"ANV-0138\",\n    \"ANV-0143\",\n    \"ANV-0145\",\n    \"ANV-0147\",\n    \"ANV-0148\",\n    \"ANV-0151\",\n    \"ANV-0152\",\n    \"ANV-0163\",\n    \"ANV-0164\",\n    \"ANV-0165\",\n    \"ANV-0166\",\n    \"ANV-0179\",\n    \"ANV-0181\",\n    \"ANV-0185\",\n    \"ANV-0190\",\n    \"ANV-0198\",\n    \"ANV-0199\",\n    \"ANV-0200\",\n    \"ANV-0203\",\n    \"ANV-0204\",\n    \"ANV-0213\",\n    \"ANV-0214\",\n    \"ANV-0218\",\n    \"ANV-0221\",\n    \"ANV-0223\",\n    \"ANV-0227\",\n    \"ANV-0235\",\n    \"ANV-0237\",\n    \"ANV-0254\",\n    \"ANV-0256\",\n    \"ANV-0262\",\n    \"ANV-0263\",\n    \"ANV-0269\",\n    \"ANV-0276\",\n    \"ANV-0278\",\n    \"ANV-0279\",\n    \"ANV-0283\",\n    \"ANV-0288\",\n    \"ANV-0295\",\n    \"ANV-0298\",\n    \"ANV-0378\",\n    \"ANV-0601\",\n    \"ANV-0602\",\n    \"ANV-0611\",\n    \"ANV-0612\",\n    \"ANV-0616\",\n    \"ANV-0619\",\n    \"ANV-0621\",\n    \"ANV-0625\",\n    \"ANV-0633\",\n    \"ANV-0635\",\n    \"ANV-0652\",\n    \"ANV-0654\",\n    \"ANV-0660\",\n    \"ANV-0661\",\n    \"ANV-0667\",\n    \"ANV-0674\",\n    \"ANV-0676\",\n    \"ANV-0677\",\n    \"ANV-0681\",\n    \"ANV-0686\",\n    \"ANV-0693\",\n    \"ANV-0696\",\n    \"ANV-0734\",\n    \"ANV-0765\",\n    \"ANV-0790\",\n    \"ANV-0794\",\n    \"ANV-0795\",\n    \"ANV-0798\",\n    \"ANV-0803\",\n    \"ANV-0806\",\n    \"ANV-0809\",\n    \"ANV-0814\",\n    \"ANV-0819\",\n    \"ANV-0823\",\n    \"ANV-0826\",\n    \"ANV-0827\",\n    \"ANV-0829\",\n    \"ANV-0832\",\n    \"ANV-0836\",\n    \"ANV-0841\",\n    \"ANV-0843\",\n    \"ANV-0845\",\n    \"ANV-0846\",\n    \"ANV-0849\",\n    \"ANV-0850\",\n    \"ANV-0861\",\n    \"ANV-0862\",\n    \"ANV-0863\",\n    \"ANV-0864\",\n    \"ANV-0877\",\n    \"ANV-0879\",\n    \"ANV-0883\",\n    \"ANV-0888\",\n    \"ANV-0897\",\n    \"ANV-0898\",\n    \"ANV-0901\",\n    \"ANV-0906\",\n    \"ANV-0909\",\n    \"ANV-0921\",\n    \"ANV-0923\",\n    \"ANV-0926\",\n    \"ANV-0964\",\n    \"ANV-0972\",\n    \"ANV-0975\",\n    \"ANV-0976\",\n    \"ANV-0977\",\n    \"ANV-0978\",\n    \"ANV-0981\",\n    \"ANV-0984\",\n    \"ANV-0988\",\n    \"ANV-0993\",\n    \"ANV-1000\",\n    \"ANV-1034\"\n  ],\n  \"preserved_occurrences\": 11657,\n  \"propositions_rendered\": 1100,\n  \"direct_options_preserved\": 850,\n  \"editorial_release_approval\": false\n}\n"
+    },
+    "runtime": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-runtime-question-banks.mjs",
+      "exit_code": 0,
+      "seconds": 13.43,
+      "output": "Bancos ativos de cadernos: 12102 questões verificadas\n"
+    },
+    "matrix": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-pscpp-exam-selection.mjs",
+      "exit_code": 0,
+      "seconds": 8.16,
+      "output": "Matriz fixa PSCPP: OK\n"
+    },
+    "provenance": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-question-source-provenance.mjs",
+      "exit_code": 0,
+      "seconds": 0.36,
+      "output": "Canonical ID precedence and transitive source fingerprints: OK\n"
+    },
+    "catalog": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-runtime-question-catalog.mjs",
+      "exit_code": 0,
+      "seconds": 7.29,
+      "output": "Catálogo equivalente ao banco ativo: 12102 referências, contagens e filtros completos\n"
+    },
+    "stems": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-notebook-complete-stems.mjs",
+      "exit_code": 1,
+      "seconds": 2.49,
+      "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Combination without propositions: arte-naval/ANV-0142\n    at file:///workspace/scratch/84c3a78e6648/repo/scripts/test-notebook-complete-stems.mjs:120:29\n    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async node:internal/modules/esm/loader:647:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: '==',\n  diff: 'simple'\n}\n\nNode.js v24.22.1\n"
+    },
+    "locators": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-editorial-runtime.mjs",
+      "exit_code": 1,
+      "seconds": 0.58,
+      "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Enunciado dependente de localizador no caderno de legislação: LEG-0023, LEG-0033, LEG-0041, LEG-0064, LEG-0070, LEG-0087, LEG-0096, LEG-0135, LEG-0136, LEG-0140, LEG-0173, LEG-0176, LEG-0189, LEG-0192, LEG-0224, LEG-0225, LEG-0242, LEG-0292, LEG-0325, LEG-0327, LEG-0330, LEG-0358, LEG-0384, LEG-0389, LEG-0392, LEG-0403, LEG-0405, LEG-0408, LEG-0410, LEG-0418, LEG-0426, LEG-0430, LEG-0434, LEG-0436, LEG-0447, LEG-0458, LEG-0460, LEG-0467, LEG-0478, LEG-0479, LEG-0482, LEG-0532, LEG-0562, LEG-0565, LEG-0568, LEG-0577, LEG-0592, LEG-0608, LEG-0612, LEG-0617, LEG-0634, LEG-0640, LEG-0660, LEG-0670, LEG-0675, LEG-0676, LEG-0677, LEG-0695, LEG-0714, LEG-0770, LEG-0777, LEG-0780, LEG-0786, LEG-0789, LEG-0812, LEG-0821, LEG-0841, LEG-0844, LEG-0851, LEG-0865, LEG-0871, LEG-0893, LEG-0983, LEG-N112-C01-UC02-M2, LEG-N112-C04-UC23-M2, LEG-N112-C05-UC28-M2, LEG-N112-C05-UC38-M2\n\n77 !== 0\n\n    at file:///workspace/scratch/84c3a78e6648/repo/scripts/validate-editorial-runtime.mjs:15:8 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: 77,\n  expected: 0,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.22.1\n"
+    },
+    "gate": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-pscpp-editorial-evidence.mjs",
+      "exit_code": 2,
+      "seconds": 0.62,
+      "output": "{\n  \"scope\": \"Effective occurrences by consumer, stable ID and content hash\",\n  \"runtime_occurrences\": 14086,\n  \"accepted_occurrences\": 0,\n  \"pending_or_invalid_occurrences\": 14086,\n  \"editorial_gate_passed\": false,\n  \"merge_permitted\": false,\n  \"note\": \"This checks evidence completeness, not truth of evidence; all other release gates still apply.\"\n}\n"
+    },
+    "check-exam": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-pscpp-runtime-bank.mjs --check",
+      "exit_code": 0,
+      "seconds": 0.87,
+      "output": "Banco PSCPP pronto: 1984 questões, 254 oficiais fiéis às fontes\n"
+    },
+    "check-banks": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-question-banks.mjs --check",
+      "exit_code": 0,
+      "seconds": 3.88,
+      "output": "Bancos de cadernos prontos: 12102 questões\n"
+    },
+    "check-catalog": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-question-catalog.mjs --check",
+      "exit_code": 0,
+      "seconds": 0.58,
+      "output": "Catálogo pronto: 9 bancos\n"
+    },
+    "check-flash": {
+      "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-flashcard-decks.mjs --check",
+      "exit_code": 0,
+      "seconds": 1.37,
+      "output": "Flashcards prontos: 7 baralhos\n"
+    }
+  },
+  "generations": [
+    {
+      "command": "npm run generate:pscpp-bank",
+      "exit_code": 0,
+      "seconds": 6.59,
+      "output": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\n> simulados-pscpp@3.0.0 generate:pscpp-bank\n> node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-pscpp-runtime-bank.mjs\n\nBanco PSCPP gerado: 1984 questões · 254 oficiais fiéis às fontes\n"
+    },
+    {
+      "command": "npm run generate:question-banks",
+      "exit_code": 0,
+      "seconds": 17.27,
+      "output": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\n> simulados-pscpp@3.0.0 generate:question-banks\n> node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-question-banks.mjs\n\nBancos de cadernos gerados: 12102 questões\n"
+    },
+    {
+      "command": "npm run generate:question-catalog",
+      "exit_code": 0,
+      "seconds": 1.17,
+      "output": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\n> simulados-pscpp@3.0.0 generate:question-catalog\n> node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-question-catalog.mjs\n\nCatálogo gerado: 9 bancos, 12102 questões indexadas\n"
+    },
+    {
+      "command": "npm run generate:flashcard-decks",
+      "exit_code": 0,
+      "seconds": 1.37,
+      "output": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\n> simulados-pscpp@3.0.0 generate:flashcard-decks\n> node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-flashcard-decks.mjs\n\nFlashcards gerados: 7 baralhos\n"
+    }
+  ],
+  "inventory_generation": {
+    "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/audit-pscpp-runtime-inventory.mjs",
+    "exit_code": 0,
+    "seconds": 48.02,
+    "output": "{\n  \"baseline_sha\": \"012b562b0eb6f7fec78773b339e4a53b3643e791\",\n  \"scope\": \"Tracked data JSON and fixtures; effective source pipelines; live SQL/offline/production reconciliation still pending.\",\n  \"json_files\": 162,\n  \"question_files\": 153,\n  \"physical_records\": 27435,\n  \"bank_source_records\": 27113,\n  \"fixture_records\": 322,\n  \"partial_editorial_patches\": 1532,\n  \"unique_bank_ids\": 21509,\n  \"runtime_occurrences\": 14086,\n  \"runtime_unique_ids\": 13715,\n  \"runtime_by_consumer\": {\n    \"cadernos\": 12102,\n    \"simulado_pscpp\": 1984\n  },\n  \"runtime_by_subject\": {\n    \"cadernos/manobrabilidade\": 3959,\n    \"cadernos/arte-naval\": 2128,\n    \"cadernos/navegacao-aguas-restritas\": 1610,\n    \"cadernos/situacoes-de-manobra-ripeam\": 320,\n    \"cadernos/legislacao-regulamentacao\": 1083,\n    \"cadernos/meteorologia-oceanografia\": 991,\n    \"cadernos/comunicacoes\": 1038,\n    \"cadernos/conhecimentos-gerais\": 973,\n    \"simulado_pscpp/arte-naval\": 1031,\n    \"simulado_pscpp/comunicacoes\": 27,\n    \"simulado_pscpp/meteorologia-oceanografia\": 52,\n    \"simulado_pscpp/navegacao-aguas-restritas\": 230,\n    \"simulado_pscpp/manobrabilidade\": 494,\n    \"simulado_pscpp/legislacao-regulamentacao\": 105,\n    \"simulado_pscpp/ii — arte naval\": 20,\n    \"simulado_pscpp/conhecimentos-gerais\": 25\n  },\n  \"runtime_historical\": {\n    \"cadernos/authorial\": 12102,\n    \"simulado_pscpp/historical\": 254,\n    \"simulado_pscpp/authorial\": 1730\n  },\n  \"runtime_selection_excluded\": 11,\n  \"physical_by_directory\": {\n    \"data/pscpp\": 6789,\n    \"data/question-extensions\": 2434,\n    \"data/question-restorations\": 4185,\n    \"data/questions\": 13705,\n    \"scripts/fixtures\": 322\n  },\n  \"active_ids_without_physical_source\": [],\n  \"same_id_multiple_versions\": 4859,\n  \"reviewed_individually\": 0,\n  \"verified_primary_source\": 0,\n  \"gates\": {\n    \"gate_1\": \"pending\",\n    \"gate_2\": \"pending\",\n    \"gate_3\": \"pending\",\n    \"gate_4\": \"pending\",\n    \"gate_5\": \"pending\",\n    \"gate_6\": \"pending\",\n    \"gate_7\": \"pending\",\n    \"gate_8\": \"pending\"\n  },\n  \"merge_permitted\": false\n}\n"
+  },
+  "triage_generation": {
+    "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/audit-pscpp-runtime-triage.mjs",
+    "exit_code": 0,
+    "seconds": 0.36,
+    "output": "{\n  \"scope\": \"notebook effective snapshot; same predicates as existing tests\",\n  \"counts\": {\n    \"COMBINATION_WITHOUT_PARSED_ASSERTIONS_CANDIDATE\": 90,\n    \"LOCATOR_COMMAND_CANDIDATE\": 77\n  },\n  \"note\": \"Triage does not certify, rewrite or quarantine questions.\"\n}\n"
+  },
+  "build": {
+    "command": "node node_modules/next/dist/bin/next build",
+    "exit_code": 0,
+    "seconds": 68.04,
+    "output": "   ▲ Next.js 15.5.25\n\n   Creating an optimized production build ...\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|javascript/auto|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/next-flight-css-loader.js??ruleSet[1].rules[14].oneOf[5].use[0]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[1]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/app/conteudos/conteudos.module.css|rsc': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 1 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|javascript/auto|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/next-flight-css-loader.js??ruleSet[1].rules[14].oneOf[5].use[0]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[1]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/app/plano-de-estudos/plano.module.css|rsc': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 2 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|javascript/auto|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/next-flight-css-loader.js??ruleSet[1].rules[14].oneOf[5].use[0]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[1]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/app/minha-trajetoria/trajectory.module.css|rsc': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 1 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|javascript/auto|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/next-flight-css-loader.js??ruleSet[1].rules[14].oneOf[5].use[0]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[1]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/app/plano-de-estudos/plano.module.css|ssr': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 2 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|javascript/auto|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/next-flight-css-loader.js??ruleSet[1].rules[14].oneOf[5].use[0]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[1]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/app/plano-de-estudos/plan-enhancements.module.css|ssr': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 2 items } -> webpack/lib/ModuleWarning -> Warning\n ⚠ Compiled with warnings in 31.7s\n\n./app/conteudos/conteudos.module.css\nWarning\n\n(3:106) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/conteudos/conteudos.module.css\n./app/conteudos/page.js\n\n./app/minha-trajetoria/trajectory.module.css\nWarning\n\n(1:286) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/minha-trajetoria/trajectory.module.css\n./app/minha-trajetoria/page.js\n\n./app/plano-de-estudos/plan-enhancements.module.css\nWarning\n\n(1:4025) autoprefixer: start value has mixed support, consider using flex-start instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plan-enhancements.module.css\n./app/plano-de-estudos/PlanControls.js\n./app/plano-de-estudos/StudyDashboard.js\n./app/plano-de-estudos/PlanClient.js\n\n./app/plano-de-estudos/plan-enhancements.module.css\nWarning\n\n(2:37) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plan-enhancements.module.css\n./app/plano-de-estudos/PlanControls.js\n./app/plano-de-estudos/StudyDashboard.js\n./app/plano-de-estudos/PlanClient.js\n\n./app/plano-de-estudos/plano.module.css\nWarning\n\n(1:342) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plano.module.css\n./app/plano-de-estudos/page.js\n\n./app/plano-de-estudos/plano.module.css\nWarning\n\n(1:2618) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plano.module.css\n./app/plano-de-estudos/page.js\n\n./app/plano-de-estudos/plano.module.css\nWarning\n\n(1:342) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plano.module.css\n./app/plano-de-estudos/PlanClient.js\n\n./app/plano-de-estudos/plano.module.css\nWarning\n\n(1:2618) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plano.module.css\n./app/plano-de-estudos/PlanClient.js\n\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!/workspace/scratch/84c3a78e6648/repo/app/globals.css': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 3 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!/workspace/scratch/84c3a78e6648/repo/app/conteudos/conteudos.module.css': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 1 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!/workspace/scratch/84c3a78e6648/repo/app/plano-de-estudos/plano.module.css': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 2 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!/workspace/scratch/84c3a78e6648/repo/app/area-do-aluno/dashboard.css': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 1 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!/workspace/scratch/84c3a78e6648/repo/app/plataforma/plataforma.css': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 1 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!/workspace/scratch/84c3a78e6648/repo/app/minha-trajetoria/trajectory.module.css': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 1 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!/workspace/scratch/84c3a78e6648/repo/app/plano-de-estudos/plan-enhancements.module.css': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 2 items } -> webpack/lib/ModuleWarning -> Warning\n ⚠ Compiled with warnings in 17.4s\n\n./app/conteudos/conteudos.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/conteudos/conteudos.module.css\nWarning\n\n(3:106) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/conteudos/conteudos.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/conteudos/conteudos.module.css\n./app/conteudos/conteudos.module.css\n\n./app/minha-trajetoria/trajectory.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/minha-trajetoria/trajectory.module.css\nWarning\n\n(1:286) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/minha-trajetoria/trajectory.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/minha-trajetoria/trajectory.module.css\n./app/minha-trajetoria/trajectory.module.css\n\n./app/plano-de-estudos/plan-enhancements.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plan-enhancements.module.css\nWarning\n\n(1:4025) autoprefixer: start value has mixed support, consider using flex-start instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plan-enhancements.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plan-enhancements.module.css\n./app/plano-de-estudos/plan-enhancements.module.css\n./app/plano-de-estudos/PlanControls.js\n./app/plano-de-estudos/StudyDashboard.js\n./app/plano-de-estudos/PlanClient.js\n\n./app/plano-de-estudos/plan-enhancements.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plan-enhancements.module.css\nWarning\n\n(2:37) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plan-enhancements.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plan-enhancements.module.css\n./app/plano-de-estudos/plan-enhancements.module.css\n./app/plano-de-estudos/PlanControls.js\n./app/plano-de-estudos/StudyDashboard.js\n./app/plano-de-estudos/PlanClient.js\n\n./app/plano-de-estudos/plano.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plano.module.css\nWarning\n\n(1:342) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plano.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plano.module.css\n./app/plano-de-estudos/plano.module.css\n\n./app/plano-de-estudos/plano.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plano.module.css\nWarning\n\n(1:2618) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plano.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plano.module.css\n./app/plano-de-estudos/plano.module.css\n\n./app/area-do-aluno/dashboard.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/area-do-aluno/dashboard.css\nWarning\n\n(7:92) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/area-do-aluno/dashboard.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/area-do-aluno/dashboard.css\n./app/area-do-aluno/dashboard.css\n\n./app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/globals.css\nWarning\n\n(49:39) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/globals.css\n./app/globals.css\n\n./app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/globals.css\nWarning\n\n(124:88) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/globals.css\n./app/globals.css\n\n./app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/globals.css\nWarning\n\n(124:669) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/globals.css\n./app/globals.css\n\n./app/plataforma/plataforma.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/plataforma/plataforma.css\nWarning\n\n(48:1323) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plataforma/plataforma.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/plataforma/plataforma.css\n./app/plataforma/plataforma.css\n\n ✓ Compiled successfully in 49s\n   Linting and checking validity of types ...\n   Collecting page data ...\n   Generating static pages (0/101) ...\n   Generating static pages (25/101) \n   Generating static pages (50/101) \n   Generating static pages (75/101) \n ✓ Generating static pages (101/101)\n   Finalizing page optimization ...\n   Collecting build traces ...\n\nRoute (app)                                            Size  First Load JS\n┌ ○ /                                                1.2 kB         104 kB\n├ ○ /_not-found                                       303 B         103 kB\n├ ƒ /.well-known/assetlinks.json                      424 B         103 kB\n├ ƒ /aceitar-termos                                   424 B         103 kB\n├ ƒ /admin                                            424 B         103 kB\n├ ƒ /admin/cobertura                                  171 B         103 kB\n├ ƒ /admin/configuracoes                              424 B         103 kB\n├ ƒ /admin/conteudo                                   424 B         103 kB\n├ ƒ /admin/contramestre                              2.4 kB         105 kB\n├ ƒ /admin/editor                                   87.6 kB         190 kB\n├ ƒ /admin/laboratorio-3d                           38.8 kB         142 kB\n├ ƒ /admin/metricas                                   424 B         103 kB\n├ ƒ /admin/observabilidade                            424 B         103 kB\n├ ƒ /admin/pagamentos                                 424 B         103 kB\n├ ƒ /admin/permissoes                                 424 B         103 kB\n├ ƒ /admin/precos                                   1.76 kB         105 kB\n├ ƒ /admin/questoes                                   424 B         103 kB\n├ ƒ /admin/seguranca                                1.45 kB         104 kB\n├ ƒ /admin/simulados                                  424 B         103 kB\n├ ƒ /admin/suporte                                  1.39 kB         104 kB\n├ ƒ /admin/usuarios                                   424 B         103 kB\n├ ƒ /analise-de-fraquezas                             424 B         103 kB\n├ ƒ /api/access                                       424 B         103 kB\n├ ƒ /api/account/accept-terms                         424 B         103 kB\n├ ƒ /api/account/delete                               424 B         103 kB\n├ ƒ /api/account/export                               424 B         103 kB\n├ ƒ /api/account/logout-all                           424 B         103 kB\n├ ƒ /api/achievements                                 424 B         103 kB\n├ ƒ /api/adaptive-training                            424 B         103 kB\n├ ƒ /api/admin/contramestre/bibliography              424 B         103 kB\n├ ƒ /api/admin/contramestre/bibliography/multipart    424 B         103 kB\n├ ƒ /api/admin/laboratorio-3d                         424 B         103 kB\n├ ƒ /api/admin/laboratorio-3d/upload                  424 B         103 kB\n├ ƒ /api/admin/mfa                                    424 B         103 kB\n├ ƒ /api/admin/permissions                            424 B         103 kB\n├ ƒ /api/admin/pricing                                424 B         103 kB\n├ ƒ /api/admin/support                                424 B         103 kB\n├ ƒ /api/admin/support/[id]                           424 B         103 kB\n├ ƒ /api/admin/users/[id]/access                      424 B         103 kB\n├ ƒ /api/admin/users/[id]/status                      424 B         103 kB\n├ ƒ /api/attempts                                     424 B         103 kB\n├ ƒ /api/auth/admin-mfa/verify                        424 B         103 kB\n├ ƒ /api/auth/forgot-password                         424 B         103 kB\n├ ƒ /api/auth/google/callback                         424 B         103 kB\n├ ƒ /api/auth/google/start                            424 B         103 kB\n├ ƒ /api/auth/login                                   424 B         103 kB\n├ ƒ /api/auth/logout                                  424 B         103 kB\n├ ƒ /api/auth/me                                      424 B         103 kB\n├ ƒ /api/auth/profile/complete                        424 B         103 kB\n├ ƒ /api/auth/register                                424 B         103 kB\n├ ƒ /api/auth/resend-verification                     424 B         103 kB\n├ ƒ /api/auth/reset-password                          424 B         103 kB\n├ ƒ /api/auth/verify-email                            424 B         103 kB\n├ ƒ /api/cron/finalize-exams                          424 B         103 kB\n├ ƒ /api/exams/[subject]                              424 B         103 kB\n├ ƒ /api/exams/[subject]/answer                       424 B         103 kB\n├ ƒ /api/exams/[subject]/finish                       424 B         103 kB\n├ ƒ /api/exams/[subject]/pause                        424 B         103 kB\n├ ƒ /api/experiments                                  424 B         103 kB\n├ ƒ /api/flashcards/[deck]                            424 B         103 kB\n├ ƒ /api/growth/event                                 424 B         103 kB\n├ ƒ /api/health                                       424 B         103 kB\n├ ƒ /api/insights                                     424 B         103 kB\n├ ƒ /api/learning-graph                               424 B         103 kB\n├ ƒ /api/library/files                                424 B         103 kB\n├ ƒ /api/library/files/[id]/content                   424 B         103 kB\n├ ƒ /api/library/files/[id]/progress                  424 B         103 kB\n├ ƒ /api/library/google/callback                      424 B         103 kB\n├ ƒ /api/library/google/connect                       424 B         103 kB\n├ ƒ /api/library/google/disconnect                    424 B         103 kB\n├ ƒ /api/library/google/files                         424 B         103 kB\n├ ƒ /api/library/google/files/[id]/content            424 B         103 kB\n├ ƒ /api/library/google/files/[id]/progress           424 B         103 kB\n├ ƒ /api/library/google/picker                        424 B         103 kB\n├ ƒ /api/library/google/status                        424 B         103 kB\n├ ƒ /api/metrics                                      424 B         103 kB\n├ ƒ /api/mind-maps                                    424 B         103 kB\n├ ƒ /api/mind-maps/[id]                               424 B         103 kB\n├ ƒ /api/mind-maps/[id]/duplicate                     424 B         103 kB\n├ ƒ /api/mind-maps/[id]/flashcard                     424 B         103 kB\n├ ƒ /api/observability/client-error                   424 B         103 kB\n├ ƒ /api/observability/vitals                         424 B         103 kB\n├ ƒ /api/payments/mercado-pago/checkout               424 B         103 kB\n├ ƒ /api/payments/mercado-pago/tutor-checkout         424 B         103 kB\n├ ƒ /api/payments/mercado-pago/webhook                424 B         103 kB\n├ ƒ /api/preferences                                  424 B         103 kB\n├ ƒ /api/profile                                      424 B         103 kB\n├ ƒ /api/progress                                     424 B         103 kB\n├ ƒ /api/question-notebooks                           424 B         103 kB\n├ ƒ /api/question-notebooks/[id]/answer               424 B         103 kB\n├ ƒ /api/questions/[subject]                          424 B         103 kB\n├ ƒ /api/questions/[subject]/answer                   424 B         103 kB\n├ ƒ /api/questions/manobrabilidade                    424 B         103 kB\n├ ƒ /api/questions/taxonomy                           424 B         103 kB\n├ ƒ /api/review-queue                                 424 B         103 kB\n├ ƒ /api/ripeam-3d/scenes                             424 B         103 kB\n├ ƒ /api/site-editor/auth                             424 B         103 kB\n├ ƒ /api/site-editor/design                           424 B         103 kB\n├ ƒ /api/site-editor/design/save                      424 B         103 kB\n├ ƒ /api/site-editor/file                             424 B         103 kB\n├ ƒ /api/site-editor/files                            424 B         103 kB\n├ ƒ /api/site-editor/flashcards                       424 B         103 kB\n├ ƒ /api/site-editor/logout                           424 B         103 kB\n├ ƒ /api/site-editor/pages                            424 B         103 kB\n├ ƒ /api/site-editor/save                             424 B         103 kB\n├ ƒ /api/site-editor/upload                           424 B         103 kB\n├ ƒ /api/study-plan                                   424 B         103 kB\n├ ƒ /api/study-plan/calendar                          424 B         103 kB\n├ ƒ /api/study-plan/customize                         424 B         103 kB\n├ ƒ /api/study-plan/export                            424 B         103 kB\n├ ƒ /api/study-plan/onboarding                        424 B         103 kB\n├ ƒ /api/study-plan/session                           424 B         103 kB\n├ ƒ /api/study-plan/snapshot                          424 B         103 kB\n├ ƒ /api/study-plan/task                              424 B         103 kB\n├ ƒ /api/study-plan/tutor-export                      424 B         103 kB\n├ ƒ /api/study-plan/unavailability                    424 B         103 kB\n├ ƒ /api/study/plan                                   424 B         103 kB\n├ ƒ /api/support/tickets                              424 B         103 kB\n├ ƒ /api/support/tickets/[id]                         424 B         103 kB\n├ ƒ /api/tutor/chat                                   424 B         103 kB\n├ ƒ /api/tutor/conversations/[id]                     424 B         103 kB\n├ ƒ /area-do-aluno                                  2.16 kB         113 kB\n├ ○ /cadastro                                       4.98 kB         108 kB\n├ ○ /cancelamento-e-reembolso                         274 B         103 kB\n├ ƒ /centro-de-revisao                                424 B         103 kB\n├ ○ /completar-cadastro                             3.67 kB         106 kB\n├ ƒ /comprar                                        2.17 kB         113 kB\n├ ƒ /conquistas                                     1.78 kB         113 kB\n├ ƒ /conteudos                                      2.15 kB         113 kB\n├ ƒ /conteudos/banco-de-questoes                    3.15 kB         121 kB\n├ ƒ /conteudos/caderno-de-erros                     2.06 kB         113 kB\n├ ƒ /conteudos/caderno/[id]                         3.97 kB         125 kB\n├ ƒ /conteudos/fixacao                                424 B         103 kB\n├ ƒ /contramestre                                     135 B         114 kB\n├ ○ /diagnostico-gratuito                           1.78 kB         105 kB\n├ ○ /esqueci-minha-senha                             2.6 kB         105 kB\n├ ○ /excluir-conta                                    424 B         103 kB\n├ ƒ /flashcards                                     1.99 kB         113 kB\n├ ƒ /flashcards/[deck]                                31 kB         142 kB\n├ ƒ /flashcards/meus-mapas                          2.25 kB         113 kB\n├ ƒ /flashcards/ripeam/3d                           22.3 kB         133 kB\n├ ƒ /hoje                                           2.53 kB         113 kB\n├ ○ /login                                          3.26 kB         106 kB\n├ ○ /logout                                           297 B         103 kB\n├ ƒ /mapas-mentais                                  2.78 kB         114 kB\n├ ƒ /mapas-mentais/[id]                             6.17 kB         117 kB\n├ ƒ /mfa-admin                                        424 B         103 kB\n├ ƒ /minha-biblioteca                               3.08 kB         114 kB\n├ ƒ /minha-biblioteca/[id]                          2.45 kB         120 kB\n├ ƒ /minha-trajetoria                               1.96 kB         113 kB\n├ ƒ /minhas-assinaturas                             1.73 kB         113 kB\n├ ƒ /paginas/[slug]                                   424 B         103 kB\n├ ƒ /perfil                                         3.42 kB         114 kB\n├ ƒ /pesquisar                                      1.73 kB         113 kB\n├ ƒ /plano-de-estudos                                 13 kB         131 kB\n├ ƒ /plano-de-estudos/configurar                    7.21 kB         118 kB\n├ ƒ /plano-de-estudos/pendencias                    1.73 kB         113 kB\n├ ○ /plataforma                                       170 B         103 kB\n├ ○ /politica-de-cookies                              274 B         103 kB\n├ ○ /politica-de-privacidade                          274 B         103 kB\n├ ƒ /preferencias                                   2.37 kB         113 kB\n├ ○ /produtos                                         513 B         103 kB\n├ ○ /produtos/banco-de-questoes                       513 B         103 kB\n├ ○ /produtos/flashcards-mapas-mentais                513 B         103 kB\n├ ○ /produtos/simulados                               513 B         103 kB\n├ ○ /pscpp                                            476 B         103 kB\n├ ƒ /pwa-icon                                         424 B         103 kB\n├ ƒ /pwa-splash                                       424 B         103 kB\n├ ƒ /ranking                                        1.88 kB         113 kB\n├ ƒ /redefinir-senha                                  899 B         104 kB\n├ ƒ /revisao-inteligente                             2.1 kB         113 kB\n├ ○ /robots.txt                                       424 B         103 kB\n├ ƒ /simulado                                       1.82 kB         113 kB\n├ ƒ /simulado/[subject]                               140 B         127 kB\n├ ƒ /simulado/manobrabilidade                         141 B         127 kB\n├ ƒ /simulado/tentativa/[id]                        2.05 kB         113 kB\n├ ○ /sitemap.xml                                      424 B         103 kB\n├ ○ /sobre-a-praticagem                               513 B         103 kB\n├ ○ /sobre-a-praticagem/como-se-tornar-um-pratico     513 B         103 kB\n├ ○ /sobre-a-praticagem/o-que-faz-um-pratico          513 B         103 kB\n├ ○ /sobre-nos                                        513 B         103 kB\n├ ƒ /study-content/[[...path]]                        424 B         103 kB\n├ ƒ /suporte                                        3.22 kB         114 kB\n├ ○ /termos-de-uso                                    274 B         103 kB\n├ ƒ /teste-gratis-excedido                          1.73 kB         113 kB\n├ ƒ /treino-adaptativo                                424 B         103 kB\n├ ƒ /treino-inteligente                             2.12 kB         113 kB\n├ ƒ /tutor-ia                                         134 B         114 kB\n└ ƒ /verificar-email                                  424 B         103 kB\n+ First Load JS shared by all                        103 kB\n  ├ chunks/1255-7316b50163a428e6.js                 46.4 kB\n  ├ chunks/4bd1b696-f785427dddbba9fb.js             54.2 kB\n  └ other shared chunks (total)                     2.18 kB\n\n\n○  (Static)   prerendered as static content\nƒ  (Dynamic)  server-rendered on demand\n\n"
+  },
+  "gate_hash_check": {
+    "all_occurrences_checked": 14086,
+    "accepted": 0,
+    "inventory_generated_before_gate": true
+  },
+  "transformations": [
+    {
+      "id": "AN-C12-12334-M1",
+      "invariant_reformulation": true,
+      "invariant_normalization": true,
+      "state": {
+        "active": true,
+        "reason": null
+      },
+      "structure": {
+        "type": "assertions",
+        "confidence": "high",
+        "blocks": [
+          {
+            "type": "stem",
+            "text": "Na descrição de desatracação sob vento ou corrente que afasta o navio do cais em Arte Naval, v. 2, 8ª edição, analise as afirmações e assinale apenas as corretas. As associações se referem ao caso delimitado pela obra."
+          },
+          {
+            "type": "assertions",
+            "items": [
+              {
+                "label": "I",
+                "text": "O arranjo inicial conserva um través avante e outro a ré."
+              },
+              {
+                "label": "II",
+                "text": "O afastamento do cais é apresentado antes da largada dessas espias e da saída."
+              },
+              {
+                "label": "III",
+                "text": "O arranjo descrito mantém somente um espringue de proa para abrir a popa."
+              },
+              {
+                "label": "IV",
+                "text": "O texto manda rondar os dois traveses para impedir qualquer afastamento do cais."
+              }
+            ]
+          }
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "Apenas as afirmativas I e III são verdadeiras."
+          },
+          {
+            "key": "B",
+            "text": "Apenas as afirmativas II e IV são verdadeiras."
+          },
+          {
+            "key": "C",
+            "text": "Apenas as afirmativas III e IV são verdadeiras."
+          },
+          {
+            "key": "D",
+            "text": "Apenas as afirmativas I e II são verdadeiras."
+          },
+          {
+            "key": "E",
+            "text": "As afirmativas I, II, III e IV são verdadeiras."
+          }
+        ]
+      },
+      "audit": {
+        "ok": true,
+        "score": 100,
+        "issues": [],
+        "version": "1.2"
+      }
+    },
+    {
+      "id": "AN-C12-12334-M2",
+      "invariant_reformulation": true,
+      "invariant_normalization": true,
+      "state": {
+        "active": true,
+        "reason": null
+      },
+      "structure": {
+        "type": "simple",
+        "confidence": "high",
+        "blocks": [
+          {
+            "type": "stem",
+            "text": "No caso bibliográfico de desatracação em que vento ou corrente atua para fora do cais, Arte Naval, v. 2, 8ª edição, menciona duas espias inicialmente conservadas. Qual par identifica essas espias na ordem avante / a ré? Interprete o arranjo da passagem, sem tratá-lo como escolha suficiente para uma operação real."
+          }
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "Espringue avante / espringue a ré."
+          },
+          {
+            "key": "B",
+            "text": "Través avante / lançante a ré."
+          },
+          {
+            "key": "C",
+            "text": "Lançante avante / través a ré."
+          },
+          {
+            "key": "D",
+            "text": "Espringue avante / través a ré."
+          },
+          {
+            "key": "E",
+            "text": "Través avante / través a ré."
+          }
+        ]
+      },
+      "audit": {
+        "ok": true,
+        "score": 100,
+        "issues": [],
+        "version": "1.2"
+      }
+    },
+    {
+      "id": "AN-C12-12334-M3",
+      "invariant_reformulation": true,
+      "invariant_normalization": true,
+      "state": {
+        "active": true,
+        "reason": null
+      },
+      "structure": {
+        "type": "statements",
+        "confidence": "high",
+        "blocks": [
+          {
+            "type": "stem",
+            "text": "Julgue a interpretação do caso de desatracação com ação ambiental para fora do cais em Arte Naval, v. 2, 8ª edição, e assinale a sequência correta. As relações são as da passagem bibliográfica."
+          },
+          {
+            "type": "items",
+            "style": "statement",
+            "items": [
+              {
+                "label": "1",
+                "text": "O texto associa o solecar dos dois traveses ao afastamento do cais."
+              },
+              {
+                "label": "2",
+                "text": "A largada dessas espias aparece depois de o navio estar afastado do cais."
+              },
+              {
+                "label": "3",
+                "text": "O único cabo conservado no arranjo inicial é um espringue de proa, destinado a abrir a popa."
+              },
+              {
+                "label": "4",
+                "text": "A identificação de um través avante e outro a ré distingue esse arranjo do caso de corrente pela popa."
+              }
+            ]
+          }
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "( V – V – F – V )"
+          },
+          {
+            "key": "B",
+            "text": "( V – F – V – F )"
+          },
+          {
+            "key": "C",
+            "text": "( F – V – V – F )"
+          },
+          {
+            "key": "D",
+            "text": "( F – F – V – V )"
+          },
+          {
+            "key": "E",
+            "text": "( V – V – V – V )"
+          }
+        ]
+      },
+      "audit": {
+        "ok": true,
+        "score": 100,
+        "issues": [],
+        "version": "1.2"
+      }
+    },
+    {
+      "id": "AN-C12-12335-M1",
+      "invariant_reformulation": true,
+      "invariant_normalization": true,
+      "state": {
+        "active": true,
+        "reason": null
+      },
+      "structure": {
+        "type": "assertions",
+        "confidence": "high",
+        "blocks": [
+          {
+            "type": "stem",
+            "text": "Considere a análise bibliográfica de desatracação sob vento ou corrente que atua para dentro do cais em Arte Naval, v. 2, 8ª edição. Analise as afirmações sobre as condições da passagem e assinale apenas as corretas."
+          },
+          {
+            "type": "assertions",
+            "items": [
+              {
+                "label": "I",
+                "text": "A obra caracteriza esse caso como difícil e perigoso, apontando auxílio de rebocadores ou espera por mudança das condições."
+              },
+              {
+                "label": "II",
+                "text": "Para dois hélices, o trecho admite uma tentativa de abertura da popa, mas qualifica a manobra como demorada."
+              },
+              {
+                "label": "III",
+                "text": "A condição ambiental é apresentada como favorável e suficiente para dispensar auxílio ou espera em qualquer navio."
+              },
+              {
+                "label": "IV",
+                "text": "O texto exclui todas as ressalvas de intensidade de corrente e posição de atracação ao discutir o navio de um hélice."
+              }
+            ]
+          }
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "Apenas as afirmativas I e III são verdadeiras."
+          },
+          {
+            "key": "B",
+            "text": "Apenas as afirmativas I e II são verdadeiras."
+          },
+          {
+            "key": "C",
+            "text": "Apenas as afirmativas II e IV são verdadeiras."
+          },
+          {
+            "key": "D",
+            "text": "Apenas as afirmativas III e IV são verdadeiras."
+          },
+          {
+            "key": "E",
+            "text": "As afirmativas I, II, III e IV são verdadeiras."
+          }
+        ]
+      },
+      "audit": {
+        "ok": true,
+        "score": 100,
+        "issues": [],
+        "version": "1.2"
+      }
+    },
+    {
+      "id": "AN-C12-12335-M2",
+      "invariant_reformulation": true,
+      "invariant_normalization": true,
+      "state": {
+        "active": true,
+        "reason": null
+      },
+      "structure": {
+        "type": "simple",
+        "confidence": "high",
+        "blocks": [
+          {
+            "type": "stem",
+            "text": "Ao discutir a desatracação sob ação ambiental para dentro do cais, Arte Naval, v. 2, 8ª edição, apresenta uma alternativa com auxílio externo e outra de adiamento. Qual par identifica essas alternativas, nessa ordem? A pergunta interpreta a recomendação bibliográfica, sem autorizar sua aplicação a qualquer instalação."
+          }
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "Dispensar rebocadores / aguardar mudança das condições."
+          },
+          {
+            "key": "B",
+            "text": "Empregar rebocadores / sair sem aguardar mudança das condições."
+          },
+          {
+            "key": "C",
+            "text": "Empregar rebocadores / aguardar mudança das condições."
+          },
+          {
+            "key": "D",
+            "text": "Dispensar rebocadores / sair sem aguardar mudança das condições."
+          },
+          {
+            "key": "E",
+            "text": "Usar somente o leme / aguardar mudança das condições."
+          }
+        ]
+      },
+      "audit": {
+        "ok": true,
+        "score": 100,
+        "issues": [],
+        "version": "1.2"
+      }
+    },
+    {
+      "id": "AN-C12-12335-M3",
+      "invariant_reformulation": true,
+      "invariant_normalization": true,
+      "state": {
+        "active": true,
+        "reason": null
+      },
+      "structure": {
+        "type": "statements",
+        "confidence": "high",
+        "blocks": [
+          {
+            "type": "stem",
+            "text": "Julgue os itens sobre os limites e meios considerados na desatracação com ação ambiental para dentro do cais em Arte Naval, v. 2, 8ª edição, e assinale a sequência correta. Não se avalia um procedimento universal de manobra."
+          },
+          {
+            "type": "items",
+            "style": "statement",
+            "items": [
+              {
+                "label": "1",
+                "text": "A advertência inicial é acompanhada das alternativas de auxílio de rebocadores ou espera por mudança das condições."
+              },
+              {
+                "label": "2",
+                "text": "A continuação menciona ferro de fora ou amarração fixa que permita puxar o navio para fora entre os meios associados à possibilidade da manobra."
+              },
+              {
+                "label": "3",
+                "text": "A condição é declarada favorável e, por si só, dispensa avaliação das características do navio e dos meios disponíveis."
+              },
+              {
+                "label": "4",
+                "text": "Ao tratar de um hélice, a passagem menciona ressalvas alternativas: corrente fraca ou atracação na extremidade do cais ou de um píer."
+              }
+            ]
+          }
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "( V – F – V – F )"
+          },
+          {
+            "key": "B",
+            "text": "( F – V – V – F )"
+          },
+          {
+            "key": "C",
+            "text": "( F – F – V – V )"
+          },
+          {
+            "key": "D",
+            "text": "( V – V – F – V )"
+          },
+          {
+            "key": "E",
+            "text": "( V – V – V – V )"
+          }
+        ]
+      },
+      "audit": {
+        "ok": true,
+        "score": 100,
+        "issues": [],
+        "version": "1.2"
+      }
+    }
+  ],
+  "publication": {
+    "status": "not_attempted_existing_rejection084_requires_explicit_authorization",
+    "last_published_commit": "d5f1354887b67e6483bf77320901f15d5728ce28",
+    "checkpoint_will_be_preserved_in_recovery_bundle": true,
+    "merge_or_deploy": false
+  },
+  "manual_review": {
+    "all_five_options_and_rationales_checked_each_id": true,
+    "keys_after_primary_solution": {
+      "AN-C12-12334-M1": "D",
+      "AN-C12-12334-M2": "E",
+      "AN-C12-12334-M3": "A",
+      "AN-C12-12335-M1": "B",
+      "AN-C12-12335-M2": "C",
+      "AN-C12-12335-M3": "D"
+    },
+    "assertion_vectors": "M1VVFF resolvesD/B",
+    "true_false_vectors": "M3VVFV resolvesA/D",
+    "direct_solutions": {
+      "12334M2E": "breastforward/breastaft,fore/aftorder",
+      "12335M2C": "tugassistance/waitforchangedconditions,assistance/postponementorder"
+    },
+    "no_swapped_options_feedback": true,
+    "three_physical_models_per_item": true,
+    "no_absent_figure_required": true,
+    "cognitive_level_assigned": 2,
+    "independent_calibration_approved": false
+  },
+  "review_limits": [
+    "No independentreviewer/finalapproval",
+    "No currentrule/edital/binaryprovenancecertification",
+    "No universalviability/causality/trajectoryoroperationalrecipe",
+    "098printedambiguityunchanged/erratumunobtained",
+    "Semanticpreventionpending,variantsandcompetencyoverlapsmustnotcoexistwithinproof"
+  ],
+  "semantic_candidates_screen_and_manual_comparison": [
+    {
+      "id": "AN-C12-12334-M1",
+      "candidate_id": "AN-C12-12332-M1",
+      "lexical_jaccard": 0.46,
+      "candidate_question": "Na descrição de desatracação com corrente pela proa de Arte Naval, v. 2, 8ª edição, distinga o caso inicial e a variante de dois hélices. Analise as afirmações sobre a passagem bibliográfica e assinale apenas as corretas.\nI. O caso inicial conserva um espringue na popa ao largar as demais espias.\nII. A variante de dois hélices acrescenta um través na proa quando a aproximação da popa ao cais impede o emprego adiante da máquina de dentro.\nIII. O arranjo inicial indicado conserva somente um espringue de proa para abrir a popa.\nIV. Depois de a proa estar safa, a saída descrita é associada à marcha a ré, em vez da marcha adiante.",
+      "candidate_options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "semantic_approval": false,
+      "manual_comparison": "Candidatesreadfordirection/environment/operationandmeans;ANV0047 overlapsoutside-case,ANV0190/0888 inside-case.Withinitemvariantsandrelatedcompetenciesnotapprovedforsameproof.No othercandidatecorrection/primarycheckincrement.Globalpreventionpending."
+    },
+    {
+      "id": "AN-C12-12334-M1",
+      "candidate_id": "AN-C12-12333-M1",
+      "lexical_jaccard": 0.4,
+      "candidate_question": "Em Arte Naval, v. 2, 8ª edição, considere somente o caso de desatracação com corrente pela popa. Analise as afirmações sobre as associações descritas e assinale apenas as corretas.\nI. O espringue conservado inicialmente é o de proa.\nII. A possibilidade de sair dando atrás é apresentada depois de a popa estar safa.\nIII. O texto conserva um espringue de popa para que a proa abra nesse caso.\nIV. Depois de a popa estar safa, a obra associa a saída obrigatoriamente à marcha adiante.",
+      "candidate_options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "semantic_approval": false,
+      "manual_comparison": "Candidatesreadfordirection/environment/operationandmeans;ANV0047 overlapsoutside-case,ANV0190/0888 inside-case.Withinitemvariantsandrelatedcompetenciesnotapprovedforsameproof.No othercandidatecorrection/primarycheckincrement.Globalpreventionpending."
+    },
+    {
+      "id": "AN-C12-12334-M2",
+      "candidate_id": "AN-C12-1233-M2",
+      "lexical_jaccard": 0.31,
+      "candidate_question": "Na organização da análise de desatracação apresentada em Arte Naval, v. 2, 8ª edição, qual par identifica os fatores examinados no início e os fatores acrescentados em seguida para escolher a forma de afastamento do cais? Leia cada alternativa na ordem: início / em seguida. Identifique a organização do texto, sem adotá-la como autorização operacional.",
+      "candidate_options": [
+        {
+          "key": "A",
+          "text": "Espaço e qualidades de manobra / vento e corrente."
+        },
+        {
+          "key": "B",
+          "text": "Somente velocidade do navio / somente comprimento do cais."
+        },
+        {
+          "key": "C",
+          "text": "Vento e corrente / espaço e qualidades de manobra."
+        },
+        {
+          "key": "D",
+          "text": "Vento e espaço / corrente e qualidades de manobra."
+        },
+        {
+          "key": "E",
+          "text": "Corrente e qualidades de manobra / vento e espaço."
+        }
+      ],
+      "semantic_approval": false,
+      "manual_comparison": "Candidatesreadfordirection/environment/operationandmeans;ANV0047 overlapsoutside-case,ANV0190/0888 inside-case.Withinitemvariantsandrelatedcompetenciesnotapprovedforsameproof.No othercandidatecorrection/primarycheckincrement.Globalpreventionpending."
+    },
+    {
+      "id": "AN-C12-12334-M2",
+      "candidate_id": "AN-C12-1230-M2",
+      "lexical_jaccard": 0.299,
+      "candidate_question": "No caso de duas hélices com abatimento em direção ao cais descrito em Arte Naval, v. 2, 8ª edição, qual combinação máquina/regime é mencionada no argumento de amortecimento? Use I = máquina de dentro, do lado do cais; F = máquina de fora; AV = avante; AR = ré; P = parada. Identifique a combinação citada, sem adotá-la como comando para uma instalação real.",
+      "candidate_options": [
+        {
+          "key": "A",
+          "text": "F / AV"
+        },
+        {
+          "key": "B",
+          "text": "I / AV"
+        },
+        {
+          "key": "C",
+          "text": "F / AR"
+        },
+        {
+          "key": "D",
+          "text": "I / AR"
+        },
+        {
+          "key": "E",
+          "text": "I e F / P"
+        }
+      ],
+      "semantic_approval": false,
+      "manual_comparison": "Candidatesreadfordirection/environment/operationandmeans;ANV0047 overlapsoutside-case,ANV0190/0888 inside-case.Withinitemvariantsandrelatedcompetenciesnotapprovedforsameproof.No othercandidatecorrection/primarycheckincrement.Globalpreventionpending."
+    },
+    {
+      "id": "AN-C12-12334-M3",
+      "candidate_id": "AN-C12-12332-M3",
+      "lexical_jaccard": 0.396,
+      "candidate_question": "Julgue os itens sobre a desatracação com corrente pela proa descrita em Arte Naval, v. 2, 8ª edição, e assinale a sequência correta. As relações se referem aos casos delimitados na passagem.\n( ) No caso inicial, o espringue na popa é associado à abertura da proa sob ação da corrente.\n( ) Na variante de dois hélices, a proximidade da popa ao cais pode levar ao acréscimo de um través na proa.\n( ) O arranjo inicial conserva somente um espringue de proa para que a corrente abra a popa.\n( ) A expressão proa safa aparece como condição anterior à largada da espia e à saída adiante no caso inicial.",
+      "candidate_options": [
+        {
+          "key": "A",
+          "text": "( V – F – V – F )"
+        },
+        {
+          "key": "B",
+          "text": "( F – V – V – F )"
+        },
+        {
+          "key": "C",
+          "text": "( F – F – V – V )"
+        },
+        {
+          "key": "D",
+          "text": "( V – V – V – V )"
+        },
+        {
+          "key": "E",
+          "text": "( V – V – F – V )"
+        }
+      ],
+      "semantic_approval": false,
+      "manual_comparison": "Candidatesreadfordirection/environment/operationandmeans;ANV0047 overlapsoutside-case,ANV0190/0888 inside-case.Withinitemvariantsandrelatedcompetenciesnotapprovedforsameproof.No othercandidatecorrection/primarycheckincrement.Globalpreventionpending."
+    },
+    {
+      "id": "AN-C12-12334-M3",
+      "candidate_id": "AN-C12-12333-M3",
+      "lexical_jaccard": 0.385,
+      "candidate_question": "Sobre a interpretação da desatracação com corrente pela popa em Arte Naval, v. 2, 8ª edição, julgue os itens e assinale a sequência correta. Considere o contraste com o caso de corrente pela proa, apresentado na mesma página.\n( ) A passagem conserva inicialmente um espringue de proa ao largar as demais espias.\n( ) A possibilidade de saída em ré é vinculada à condição de popa safa.\n( ) A palavra simples, usada pela obra, comprova que a manobra terá o mesmo resultado em qualquer intensidade de corrente, espaço e navio.\n( ) A extremidade do espringue conservado distingue esse arranjo inicial daquele descrito para corrente pela proa.",
+      "candidate_options": [
+        {
+          "key": "A",
+          "text": "( V – F – V – F )"
+        },
+        {
+          "key": "B",
+          "text": "( F – V – V – F )"
+        },
+        {
+          "key": "C",
+          "text": "( V – V – F – V )"
+        },
+        {
+          "key": "D",
+          "text": "( F – F – V – V )"
+        },
+        {
+          "key": "E",
+          "text": "( V – V – V – V )"
+        }
+      ],
+      "semantic_approval": false,
+      "manual_comparison": "Candidatesreadfordirection/environment/operationandmeans;ANV0047 overlapsoutside-case,ANV0190/0888 inside-case.Withinitemvariantsandrelatedcompetenciesnotapprovedforsameproof.No othercandidatecorrection/primarycheckincrement.Globalpreventionpending."
+    },
+    {
+      "id": "AN-C12-12335-M1",
+      "candidate_id": "AN-C12-12331-M1",
+      "lexical_jaccard": 0.364,
+      "candidate_question": "Considere apenas a descrição de desatracação sem vento nem corrente em Arte Naval, v. 2, 8ª edição, para o caso convencional de dois hélices. Analise as afirmações sobre as relações descritas e assinale apenas as corretas.\nI. O emprego da máquina de dentro em ré é associado, no caso da obra, à abertura da popa.\nII. O texto alerta para a aproximação da proa ao cais e relaciona a regulação da manobra à distância da proa.\nIII. Antes de haver seguimento, o trecho atribui o governo principalmente ao leme, em lugar dos hélices.\nIV. A presença de defensas elimina, por si só, a necessidade de evitar que a proa se aproxime do cais.",
+      "candidate_options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        }
+      ],
+      "semantic_approval": false,
+      "manual_comparison": "Candidatesreadfordirection/environment/operationandmeans;ANV0047 overlapsoutside-case,ANV0190/0888 inside-case.Withinitemvariantsandrelatedcompetenciesnotapprovedforsameproof.No othercandidatecorrection/primarycheckincrement.Globalpreventionpending."
+    },
+    {
+      "id": "AN-C12-12335-M1",
+      "candidate_id": "AN-C12-1231-M1",
+      "lexical_jaccard": 0.35,
+      "candidate_question": "Em Arte Naval, v. 2, 8ª edição, a atracação entre dois navios, em espaço pouco maior que o comprimento do próprio navio, é discutida com auxílio de espias. Analise as afirmações sobre esse caso bibliográfico e assinale apenas as corretas.\nI. O emprego das espias integra a descrição para esse espaço restrito.\nII. Para os navios grandes, a presença de vento vindo do cais modifica a prioridade de trabalho entre espia de vante e de ré.\nIII. A limitação de espaço leva a obra a excluir as espias, independentemente das condições ambientais.\nIV. Sob vento ou corrente forte pela popa, o texto dispensa o auxílio de rebocador nesse caso.",
+      "candidate_options": [
+        {
+          "key": "A",
+          "text": "Apenas as afirmativas I e II são verdadeiras."
+        },
+        {
+          "key": "B",
+          "text": "Apenas as afirmativas I e III são verdadeiras."
+        },
+        {
+          "key": "C",
+          "text": "Apenas as afirmativas II e IV são verdadeiras."
+        },
+        {
+          "key": "D",
+          "text": "Apenas as afirmativas III e IV são verdadeiras."
+        },
+        {
+          "key": "E",
+          "text": "As afirmativas I, II, III e IV são verdadeiras."
+        }
+      ],
+      "semantic_approval": false,
+      "manual_comparison": "Candidatesreadfordirection/environment/operationandmeans;ANV0047 overlapsoutside-case,ANV0190/0888 inside-case.Withinitemvariantsandrelatedcompetenciesnotapprovedforsameproof.No othercandidatecorrection/primarycheckincrement.Globalpreventionpending."
+    },
+    {
+      "id": "AN-C12-12335-M2",
+      "candidate_id": "AN-C12-1231-M2",
+      "lexical_jaccard": 0.316,
+      "candidate_question": "Na discussão bibliográfica da atracação em espaço restrito, Arte Naval, v. 2, 8ª edição, distingue dois cenários: navio grande com vento vindo do cais; e vento ou corrente forte pela popa. Qual par associa, nessa ordem, a espia trabalhada primeiro no primeiro cenário e o auxílio indicado no segundo? A pergunta identifica as relações do texto, sem autorizar sua aplicação prática a qualquer navio.",
+      "candidate_options": [
+        {
+          "key": "A",
+          "text": "Ré / rebocador."
+        },
+        {
+          "key": "B",
+          "text": "Vante / rebocador."
+        },
+        {
+          "key": "C",
+          "text": "Vante / apenas espias, dispensando rebocador."
+        },
+        {
+          "key": "D",
+          "text": "Ré / apenas espias, dispensando rebocador."
+        },
+        {
+          "key": "E",
+          "text": "Vante e ré sem prioridade / rebocador."
+        }
+      ],
+      "semantic_approval": false,
+      "manual_comparison": "Candidatesreadfordirection/environment/operationandmeans;ANV0047 overlapsoutside-case,ANV0190/0888 inside-case.Withinitemvariantsandrelatedcompetenciesnotapprovedforsameproof.No othercandidatecorrection/primarycheckincrement.Globalpreventionpending."
+    },
+    {
+      "id": "AN-C12-12335-M2",
+      "candidate_id": "AN-C12-1233-M2",
+      "lexical_jaccard": 0.275,
+      "candidate_question": "Na organização da análise de desatracação apresentada em Arte Naval, v. 2, 8ª edição, qual par identifica os fatores examinados no início e os fatores acrescentados em seguida para escolher a forma de afastamento do cais? Leia cada alternativa na ordem: início / em seguida. Identifique a organização do texto, sem adotá-la como autorização operacional.",
+      "candidate_options": [
+        {
+          "key": "A",
+          "text": "Espaço e qualidades de manobra / vento e corrente."
+        },
+        {
+          "key": "B",
+          "text": "Somente velocidade do navio / somente comprimento do cais."
+        },
+        {
+          "key": "C",
+          "text": "Vento e corrente / espaço e qualidades de manobra."
+        },
+        {
+          "key": "D",
+          "text": "Vento e espaço / corrente e qualidades de manobra."
+        },
+        {
+          "key": "E",
+          "text": "Corrente e qualidades de manobra / vento e espaço."
+        }
+      ],
+      "semantic_approval": false,
+      "manual_comparison": "Candidatesreadfordirection/environment/operationandmeans;ANV0047 overlapsoutside-case,ANV0190/0888 inside-case.Withinitemvariantsandrelatedcompetenciesnotapprovedforsameproof.No othercandidatecorrection/primarycheckincrement.Globalpreventionpending."
+    },
+    {
+      "id": "AN-C12-12335-M3",
+      "candidate_id": "AN-C12-1232-M3",
+      "lexical_jaccard": 0.298,
+      "candidate_question": "Julgue as relações entre ambiente, espias e proteção do costado na descrição bibliográfica da mudança do bordo de atracação em Arte Naval, v. 2, 8ª edição, e assinale a sequência correta. Não se avalia um procedimento universal para instalações reais.\n( ) Na falta de rebocador, a passagem condiciona a alternativa à espera por maré favorável e corrente muito fraca.\n( ) Para corrente pela popa, o par inicial de espias conservadas é espringue de proa e través de popa.\n( ) Para corrente pela proa, o texto mantém exatamente esse mesmo par inicial: espringue de proa e través de popa.\n( ) A descrição ressalta defensas para proteger proa e costado no primeiro caso e atenção aos hélices e defensas na popa no caso de corrente pela proa.",
+      "candidate_options": [
+        {
+          "key": "A",
+          "text": "( V – V – F – V )"
+        },
+        {
+          "key": "B",
+          "text": "( V – F – V – F )"
+        },
+        {
+          "key": "C",
+          "text": "( F – V – V – F )"
+        },
+        {
+          "key": "D",
+          "text": "( F – F – V – V )"
+        },
+        {
+          "key": "E",
+          "text": "( V – V – V – V )"
+        }
+      ],
+      "semantic_approval": false,
+      "manual_comparison": "Candidatesreadfordirection/environment/operationandmeans;ANV0047 overlapsoutside-case,ANV0190/0888 inside-case.Withinitemvariantsandrelatedcompetenciesnotapprovedforsameproof.No othercandidatecorrection/primarycheckincrement.Globalpreventionpending."
+    },
+    {
+      "id": "AN-C12-12335-M3",
+      "candidate_id": "AN-C12-12333-M3",
+      "lexical_jaccard": 0.298,
+      "candidate_question": "Sobre a interpretação da desatracação com corrente pela popa em Arte Naval, v. 2, 8ª edição, julgue os itens e assinale a sequência correta. Considere o contraste com o caso de corrente pela proa, apresentado na mesma página.\n( ) A passagem conserva inicialmente um espringue de proa ao largar as demais espias.\n( ) A possibilidade de saída em ré é vinculada à condição de popa safa.\n( ) A palavra simples, usada pela obra, comprova que a manobra terá o mesmo resultado em qualquer intensidade de corrente, espaço e navio.\n( ) A extremidade do espringue conservado distingue esse arranjo inicial daquele descrito para corrente pela proa.",
+      "candidate_options": [
+        {
+          "key": "A",
+          "text": "( V – F – V – F )"
+        },
+        {
+          "key": "B",
+          "text": "( F – V – V – F )"
+        },
+        {
+          "key": "C",
+          "text": "( V – V – F – V )"
+        },
+        {
+          "key": "D",
+          "text": "( F – F – V – V )"
+        },
+        {
+          "key": "E",
+          "text": "( V – V – V – V )"
+        }
+      ],
+      "semantic_approval": false,
+      "manual_comparison": "Candidatesreadfordirection/environment/operationandmeans;ANV0047 overlapsoutside-case,ANV0190/0888 inside-case.Withinitemvariantsandrelatedcompetenciesnotapprovedforsameproof.No othercandidatecorrection/primarycheckincrement.Globalpreventionpending."
+    }
+  ],
+  "same_source_candidates_comparison": {
+    "records": [
+      {
+        "id": "ANV-0047",
+        "question": "Segundo Arte Naval, volume 2, considere as manobras descritas para vento ou corrente que provoque abatimento para fora do cais. Examine as afirmações e escolha o conjunto completo das corretas:\nI. Na atracação em cais totalmente safo, com bastante abatimento para fora, a passagem das espias de proa e popa deve ser adiada até depois de o navio parar, para evitar que elas interfiram com a redução do seguimento.\nII. Na situação de atracação da afirmativa I, a obra prevê passar as espias de proa e popa prontamente para terra, evitando que o abatimento afaste o navio do local de atracação.\nIII. Para largar do cais com vento ou corrente para fora, a obra recomenda manter somente um espringue de popa, usando-o como ponto de giro para abrir a proa.\nIV. Para largar nessa condição, a obra recomenda conservar um través avante e outro a ré, solecá-los até obter afastamento do cais e então largá-los.",
+        "source": {
+          "author": "FONSECA, Maurílio M.",
+          "title": "Arte Naval, v. 2",
+          "edition": "8. ed., 2019",
+          "locator": "cap. 12, seção C, arts. 12.30 e 12.33.2/4, pp. 832 e 835",
+          "printed_page": 832,
+          "pdf_page": 193,
+          "drive_file_id": "1Kuftc9vCw2Oqbzutdaz1NsXWOV1nL-Ec",
+          "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
+        },
+        "semantic_approval": false
+      },
+      {
+        "id": "ANV-0190",
+        "question": "Considere o vento transversal que provoca abatimento do navio para dentro do cais, nas situações de atracação e desatracação examinadas por Fonseca. Analise as proposições e escolha o conjunto completo das corretas.\nI) Nesse caso, o vento tende a afastar espontaneamente o navio do cais, favorecendo a largada.\nII) O efeito desse vento pode ser desconsiderado na desatracação, pois só interfere na aproximação para atracar.\nIII) Na atracação, o abatimento para dentro pode tornar a manobra perigosa e deve ser estimado antes de iniciá-la.\nIV) Na desatracação com ação ambiental para dentro, o texto ressalta a dificuldade e aponta o auxílio de rebocadores ou a espera por mudança das condições.",
+        "source": {
+          "author": "FONSECA, Maurílio M.",
+          "title": "Arte Naval, v. 2",
+          "edition": "8. ed., 2019",
+          "locator": "cap.12,seção C,item12.30 pp.831–832/PDF192–193 e item12.33.5 pp.835–836/PDF196–197",
+          "printed_page": 831,
+          "pdf_page": 192,
+          "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
+        },
+        "semantic_approval": false
+      },
+      {
+        "id": "ANV-0745",
+        "question": "De acordo com Arte Naval, v. 2, acerca de vento para fora do cais, assinale a alternativa que apresenta corretamente a disposição, requisito ou conceito previsto na publicação.",
+        "source": {
+          "author": "FONSECA, Maurílio M.",
+          "title": "Arte Naval, v. 2",
+          "edition": "8. ed., 2019",
+          "locator": "cap. 12, seção C, itens 12.30 e 12.33.4"
+        },
+        "semantic_approval": false
+      },
+      {
+        "id": "ANV-0888",
+        "question": "Na análise de um vento transversal que provoca abatimento para dentro do cais, qual avaliação conjunta da atracação e da desatracação corresponde aos trechos de Arte Naval?",
+        "source": {
+          "author": "FONSECA, Maurílio M.",
+          "title": "Arte Naval, v. 2",
+          "edition": "8. ed., 2019",
+          "locator": "cap.12,seção C,item12.30 pp.831–832/PDF192–193 e item12.33.5 pp.835–836/PDF196–197",
+          "printed_page": 831,
+          "pdf_page": 192,
+          "sha256": "6afafcbe4ace9b708478a9a1ffb28e4ef666cefabe08b9f38fecc539ef8c8ef1"
+        },
+        "semantic_approval": false
+      },
+      {
+        "id": "ANV-0949",
+        "question": "Considere a seguinte definição técnica: vento que tende a afastar o navio da posição de atracação. Característica adicional: requer aproximação e espias planejadas para controlar o afastamento lateral. Qual nomenclatura corresponde ao caso apresentado?",
+        "source": {
+          "author": "FONSECA, Maurílio M.",
+          "title": "Arte Naval, v. 2",
+          "edition": "8. ed., 2019",
+          "locator": "cap. 12, seção C, itens 12.30 e 12.33.4"
+        },
+        "semantic_approval": false
+      }
+    ],
+    "manual_result": "CompetencyoverlapANV0047/12334andANV0190/0888/12335recorded.No approvalorrecountforcandidates.ANV0745/0949definitionssharetheme;wholecontentnotreviewedforapproval."
+  },
+  "preserved_inactives": {
+    "AN-C12-127-M1": {
+      "physical_hash": "18fccc00f58e7d6563bcc93174dc559d7880b4744e355ec7dbca3717eee27132",
+      "unchanged": true,
+      "runtime_before": false,
+      "runtime_after": false,
+      "counted": false
+    },
+    "AN-C12-127-M2": {
+      "physical_hash": "bcf64443b4290283329aadf79a0eef896523cae6abba7d2c71b9b53d194c67fe",
+      "unchanged": true,
+      "runtime_before": false,
+      "runtime_after": false,
+      "counted": false
+    },
+    "AN-C12-1219-M1": {
+      "physical_hash": "ccb782f7c3d5889bc858bc9c7d963a88debb44f3f11ce6f5ef9670e199e65e6c",
+      "unchanged": true,
+      "runtime_before": false,
+      "runtime_after": false,
+      "counted": false
+    },
+    "AN-C12-1226-M2": {
+      "physical_hash": "4380b331fd34e2048d03134545370bef9cdb9b81cd8fbf39b94f87319382d429",
+      "unchanged": true,
+      "runtime_before": false,
+      "runtime_after": false,
+      "counted": false
+    }
+  },
+  "next_precheck": {
+    "AN-C12-1234-M1": {
+      "runtime_present": true,
+      "already_counted": false,
+      "physical_hash": "4a2ded12e9c971fc27edbcb417480e990fe45478d89431dc2bf07a2e5fffa1e8"
+    },
+    "AN-C12-1234-M2": {
+      "runtime_present": true,
+      "already_counted": false,
+      "physical_hash": "1ae60fda3189955e6c292d9d015f1f13f03825784ac3ef1fc7540d15e283f7fc"
+    },
+    "AN-C12-1234-M3": {
+      "runtime_present": true,
+      "already_counted": false,
+      "physical_hash": "992293ce01239017b72829be3372b47459377b94c51bc7011a4de7b6aa67a8eb"
+    },
+    "AN-C12-1235-M1": {
+      "runtime_present": true,
+      "already_counted": false,
+      "physical_hash": "557525ff12da5f3c1003c1ec0881ef94bca0d6c476965a33ae8a695895ed4d08"
+    },
+    "AN-C12-1235-M2": {
+      "runtime_present": true,
+      "already_counted": false,
+      "physical_hash": "157e77c1cb38815010b8abc85b4c33b33d6a8dbc127322733aa789906fabf9c3"
+    },
+    "AN-C12-1235-M3": {
+      "runtime_present": true,
+      "already_counted": false,
+      "physical_hash": "72d828b98116d87535436e386bf83e8cf2e47508c10bee27d7c77f4ab07bbf43"
+    }
+  },
+  "alert_counting": "Only2structuralIDsremoved;3188otherflaggedunchanged.520decisions/15trackingduplicates/093rechecknotrecounted",
+  "structural_queue_resolutions": [
+    {
+      "pool": "Cadernos",
+      "id": "AN-C12-12334-M1",
+      "subject": "arte-naval",
+      "effective_hash": "80168b38a29a065e208ca95af3229bd6e5dc49d994b57c51e7c573a08e1d3990",
+      "status": "CORRIGIR",
+      "findings": [
+        {
+          "level": "CORRIGIR",
+          "code": "MISSING_ASSERTIONS",
+          "detail": "As alternativas escolhem proposições numeradas, mas o enunciado e os campos adicionais não apresentam essas proposições.",
+          "evidence": {
+            "required": [
+              "I",
+              "III",
+              "II",
+              "IV"
+            ],
+            "structure": "simple"
+          }
+        },
+        {
+          "level": "REVISAR",
+          "code": "LOCATOR_OR_GENERIC_COMMAND",
+          "detail": "Comando genérico ou dependente de localizador identificado pelo verificador do projeto; exige revisão individual do conteúdo.",
+          "evidence": "De acordo com Arte Naval, v. 2, acerca de Com vento ou corrente para fora, assinale a alternativa que apresenta corretamente a disposição, requisito ou conceito previsto na publicação."
+        }
+      ]
+    },
+    {
+      "pool": "Cadernos",
+      "id": "AN-C12-12335-M1",
+      "subject": "arte-naval",
+      "effective_hash": "b88617791bbe8214de26eddfebe6519929e25e94047f6e1d2506ab72b9e5ae0a",
+      "status": "CORRIGIR",
+      "findings": [
+        {
+          "level": "CORRIGIR",
+          "code": "MISSING_ASSERTIONS",
+          "detail": "As alternativas escolhem proposições numeradas, mas o enunciado e os campos adicionais não apresentam essas proposições.",
+          "evidence": {
+            "required": [
+              "I",
+              "III",
+              "II",
+              "IV"
+            ],
+            "structure": "simple"
+          }
+        },
+        {
+          "level": "REVISAR",
+          "code": "LOCATOR_OR_GENERIC_COMMAND",
+          "detail": "Comando genérico ou dependente de localizador identificado pelo verificador do projeto; exige revisão individual do conteúdo.",
+          "evidence": "De acordo com Arte Naval, v. 2, acerca de Com vento ou corrente para dentro, assinale a alternativa que apresenta corretamente a disposição, requisito ou conceito previsto na publicação."
+        }
+      ]
+    }
+  ],
+  "credential_pattern_scan_passed": true,
+  "recovery107": {
+    "zip_size": 267431374,
+    "zip_sha256": "7809312eaf316bdcdc3b7f1f5c4f79618be4078ad0cb2912954e3d2720962a65",
+    "all_members_crc_sha256_verified": true,
+    "manifest_packtrailer_bundle_head_tree_verified": true,
+    "fast_forward": true,
+    "recount": false
+  },
+  "first_pass_before_refinement": {
+    "reason": "12335M3item4nowexplicitlylistsalternativeconditionswithOR,notcumulativeAND.No truth/keychange.Allgeneration/inventory/checks/buildrepeatedforfinalhashes.",
+    "checks": {
+      "regression": {
+        "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-pscpp-audit-anv0005.mjs",
+        "exit_code": 0,
+        "seconds": 17.72,
+        "output": "{\n  \"id\": \"ANV-0005\",\n  \"before_hash\": \"80bf9b79cfb220e56a008fc9972c31b6b2be8ca2f9e8d3221d06a18788ff9f11\",\n  \"after_hash\": \"4d49a9fafaac6c35cffdf10636b51104e24b48bbd5d59548b139c6ffd6423204\",\n  \"changed_effective_ids\": [\n    \"AN-C09-91-M1\",\n    \"AN-C09-91-M2\",\n    \"AN-C09-91-M3\",\n    \"AN-C09-916-M1\",\n    \"AN-C09-916-M2\",\n    \"AN-C09-916-M3\",\n    \"AN-C09-93-M1\",\n    \"AN-C09-93-M2\",\n    \"AN-C09-93-M3\",\n    \"AN-C09-933-M3\",\n    \"AN-C10-1014-M1\",\n    \"AN-C10-1014-M2\",\n    \"AN-C10-1014-M3\",\n    \"AN-C10-1016-M1\",\n    \"AN-C10-1016-M2\",\n    \"AN-C10-1016-M3\",\n    \"AN-C10-1020-M3\",\n    \"AN-C10-1032-M1\",\n    \"AN-C10-1032-M2\",\n    \"AN-C10-1032-M3\",\n    \"AN-C10-1034-M3\",\n    \"AN-C10-1036-M2\",\n    \"AN-C10-1036-M3\",\n    \"AN-C11-1111-M1\",\n    \"AN-C11-1111-M2\",\n    \"AN-C11-1111-M3\",\n    \"AN-C11-1112-M1\",\n    \"AN-C11-1112-M2\",\n    \"AN-C11-1112-M3\",\n    \"AN-C11-1112a-M1\",\n    \"AN-C11-1112a-M2\",\n    \"AN-C11-1112a-M3\",\n    \"AN-C11-1112b-M1\",\n    \"AN-C11-1112b-M2\",\n    \"AN-C11-1112b-M3\",\n    \"AN-C11-1113-M1\",\n    \"AN-C11-1113-M2\",\n    \"AN-C11-1113-M3\",\n    \"AN-C11-1114-M1\",\n    \"AN-C11-1114-M2\",\n    \"AN-C11-1114-M3\",\n    \"AN-C11-1115-M1\",\n    \"AN-C11-1115-M2\",\n    \"AN-C11-1115-M3\",\n    \"AN-C11-1116-M1\",\n    \"AN-C11-1116-M2\",\n    \"AN-C11-1116-M3\",\n    \"AN-C11-1117-M1\",\n    \"AN-C11-1117-M2\",\n    \"AN-C11-1117-M3\",\n    \"AN-C11-1118-M1\",\n    \"AN-C11-1118-M2\",\n    \"AN-C11-1118-M3\",\n    \"AN-C11-1118a-M1\",\n    \"AN-C11-1118a-M2\",\n    \"AN-C11-1118a-M3\",\n    \"AN-C11-1118b-M1\",\n    \"AN-C11-1118b-M3\",\n    \"AN-C11-1118c-M1\",\n    \"AN-C11-1118c-M2\",\n    \"AN-C11-1118c-M3\",\n    \"AN-C11-1118d-M1\",\n    \"AN-C11-1118d-M2\",\n    \"AN-C11-1118d-M3\",\n    \"AN-C11-1118e-M1\",\n    \"AN-C11-1118e-M2\",\n    \"AN-C11-1118e-M3\",\n    \"AN-C11-1119-M1\",\n    \"AN-C11-1119-M2\",\n    \"AN-C11-1119-M3\",\n    \"AN-C11-112-M1\",\n    \"AN-C11-112-M2\",\n    \"AN-C11-112-M3\",\n    \"AN-C11-1120-M1\",\n    \"AN-C11-1120-M2\",\n    \"AN-C11-1120-M3\",\n    \"AN-C11-1121-M1\",\n    \"AN-C11-1121-M2\",\n    \"AN-C11-1121-M3\",\n    \"AN-C11-1122-M1\",\n    \"AN-C11-1122-M2\",\n    \"AN-C11-1122a-M1\",\n    \"AN-C11-1122a-M2\",\n    \"AN-C11-1122a-M3\",\n    \"AN-C11-1122b-M1\",\n    \"AN-C11-1122b-M2\",\n    \"AN-C11-1122b-M3\",\n    \"AN-C11-1122c-M1\",\n    \"AN-C11-1122c-M2\",\n    \"AN-C11-1122c-M3\",\n    \"AN-C11-1122d-M1\",\n    \"AN-C11-1122d-M2\",\n    \"AN-C11-1122d-M3\",\n    \"AN-C11-1122e-M1\",\n    \"AN-C11-1122e-M2\",\n    \"AN-C11-1122e-M3\",\n    \"AN-C11-1122f-M1\",\n    \"AN-C11-1122f-M2\",\n    \"AN-C11-1122f-M3\",\n    \"AN-C11-1122g-M1\",\n    \"AN-C11-1122g-M2\",\n    \"AN-C11-1122g-M3\",\n    \"AN-C11-113-M1\",\n    \"AN-C11-113-M2\",\n    \"AN-C11-113-M3\",\n    \"AN-C11-114-M1\",\n    \"AN-C11-114-M2\",\n    \"AN-C11-114-M3\",\n    \"AN-C11-114a-M2\",\n    \"AN-C11-114a-M3\",\n    \"AN-C11-114b-M1\",\n    \"AN-C11-114b-M2\",\n    \"AN-C11-114b-M3\",\n    \"AN-C11-114c-M1\",\n    \"AN-C11-114c-M2\",\n    \"AN-C11-114c-M3\",\n    \"AN-C11-114d-M1\",\n    \"AN-C11-114d-M2\",\n    \"AN-C11-114d-M3\",\n    \"AN-C11-114e-M1\",\n    \"AN-C11-114e-M2\",\n    \"AN-C11-114e-M3\",\n    \"AN-C11-115-M1\",\n    \"AN-C11-115-M2\",\n    \"AN-C11-115-M3\",\n    \"AN-C11-115a-M1\",\n    \"AN-C11-115a-M2\",\n    \"AN-C11-115a-M3\",\n    \"AN-C11-115b-M1\",\n    \"AN-C11-115b-M2\",\n    \"AN-C11-115b-M3\",\n    \"AN-C11-115c-M1\",\n    \"AN-C11-115c-M2\",\n    \"AN-C11-115c-M3\",\n    \"AN-C11-116-M1\",\n    \"AN-C11-116-M2\",\n    \"AN-C11-116-M3\",\n    \"AN-C11-117-M1\",\n    \"AN-C11-117-M2\",\n    \"AN-C11-117-M3\",\n    \"AN-C11-117a-M1\",\n    \"AN-C11-117a-M2\",\n    \"AN-C11-117a-M3\",\n    \"AN-C11-117b-M1\",\n    \"AN-C11-117b-M2\",\n    \"AN-C11-117b-M3\",\n    \"AN-C11-117c-M1\",\n    \"AN-C11-117c-M2\",\n    \"AN-C11-117c-M3\",\n    \"AN-C11-117d-M1\",\n    \"AN-C11-117d-M2\",\n    \"AN-C11-117d-M3\",\n    \"AN-C11-118-M1\",\n    \"AN-C11-118-M2\",\n    \"AN-C11-118-M3\",\n    \"AN-C11-119-M1\",\n    \"AN-C11-119-M2\",\n    \"AN-C11-119-M3\",\n    \"AN-C12-121-M1\",\n    \"AN-C12-121-M2\",\n    \"AN-C12-121-M3\",\n    \"AN-C12-1210-M1\",\n    \"AN-C12-1210-M2\",\n    \"AN-C12-1210-M3\",\n    \"AN-C12-1211-M1\",\n    \"AN-C12-1211-M2\",\n    \"AN-C12-1211-M3\",\n    \"AN-C12-1212-M1\",\n    \"AN-C12-1212-M2\",\n    \"AN-C12-1212-M3\",\n    \"AN-C12-1213-M1\",\n    \"AN-C12-1213-M2\",\n    \"AN-C12-1213-M3\",\n    \"AN-C12-1214-M1\",\n    \"AN-C12-1214-M2\",\n    \"AN-C12-1214-M3\",\n    \"AN-C12-1215-M1\",\n    \"AN-C12-1215-M2\",\n    \"AN-C12-1215-M3\",\n    \"AN-C12-1216-M1\",\n    \"AN-C12-1216-M2\",\n    \"AN-C12-1216-M3\",\n    \"AN-C12-1217-M1\",\n    \"AN-C12-1217-M2\",\n    \"AN-C12-1217-M3\",\n    \"AN-C12-1218-M1\",\n    \"AN-C12-1218-M2\",\n    \"AN-C12-1218-M3\",\n    \"AN-C12-1219-M2\",\n    \"AN-C12-1219-M3\",\n    \"AN-C12-122-M1\",\n    \"AN-C12-122-M2\",\n    \"AN-C12-122-M3\",\n    \"AN-C12-1220-M1\",\n    \"AN-C12-1220-M2\",\n    \"AN-C12-1220-M3\",\n    \"AN-C12-1221-M1\",\n    \"AN-C12-1221-M2\",\n    \"AN-C12-1221-M3\",\n    \"AN-C12-1222-M1\",\n    \"AN-C12-1222-M2\",\n    \"AN-C12-1222-M3\",\n    \"AN-C12-1223-M1\",\n    \"AN-C12-1223-M2\",\n    \"AN-C12-1223-M3\",\n    \"AN-C12-12231-M1\",\n    \"AN-C12-12231-M2\",\n    \"AN-C12-12231-M3\",\n    \"AN-C12-1224-M1\",\n    \"AN-C12-1224-M2\",\n    \"AN-C12-1224-M3\",\n    \"AN-C12-1225-M1\",\n    \"AN-C12-1225-M2\",\n    \"AN-C12-1225-M3\",\n    \"AN-C12-1226-M1\",\n    \"AN-C12-1226-M3\",\n    \"AN-C12-1227-M1\",\n    \"AN-C12-1227-M2\",\n    \"AN-C12-1227-M3\",\n    \"AN-C12-1228-M1\",\n    \"AN-C12-1228-M2\",\n    \"AN-C12-1228-M3\",\n    \"AN-C12-1229-M1\",\n    \"AN-C12-1229-M2\",\n    \"AN-C12-1229-M3\",\n    \"AN-C12-123-M1\",\n    \"AN-C12-123-M2\",\n    \"AN-C12-123-M3\",\n    \"AN-C12-1230-M1\",\n    \"AN-C12-1230-M2\",\n    \"AN-C12-1230-M3\",\n    \"AN-C12-1231-M1\",\n    \"AN-C12-1231-M2\",\n    \"AN-C12-1231-M3\",\n    \"AN-C12-1232-M1\",\n    \"AN-C12-1232-M2\",\n    \"AN-C12-1232-M3\",\n    \"AN-C12-1233-M1\",\n    \"AN-C12-1233-M2\",\n    \"AN-C12-1233-M3\",\n    \"AN-C12-12331-M1\",\n    \"AN-C12-12331-M2\",\n    \"AN-C12-12331-M3\",\n    \"AN-C12-12332-M1\",\n    \"AN-C12-12332-M2\",\n    \"AN-C12-12332-M3\",\n    \"AN-C12-12333-M1\",\n    \"AN-C12-12333-M2\",\n    \"AN-C12-12333-M3\",\n    \"AN-C12-12334-M1\",\n    \"AN-C12-12334-M2\",\n    \"AN-C12-12334-M3\",\n    \"AN-C12-12335-M1\",\n    \"AN-C12-12335-M2\",\n    \"AN-C12-12335-M3\",\n    \"AN-C12-1237-M1\",\n    \"AN-C12-1237-M2\",\n    \"AN-C12-1237-M3\",\n    \"AN-C12-124-M1\",\n    \"AN-C12-124-M2\",\n    \"AN-C12-124-M3\",\n    \"AN-C12-1243-M1\",\n    \"AN-C12-1243-M2\",\n    \"AN-C12-1243-M3\",\n    \"AN-C12-1244-M3\",\n    \"AN-C12-1246-M3\",\n    \"AN-C12-125-M1\",\n    \"AN-C12-125-M2\",\n    \"AN-C12-125-M3\",\n    \"AN-C12-1253-M3\",\n    \"AN-C12-126-M1\",\n    \"AN-C12-126-M2\",\n    \"AN-C12-126-M3\",\n    \"AN-C12-1261-M1\",\n    \"AN-C12-1261-M2\",\n    \"AN-C12-1261-M3\",\n    \"AN-C12-1262-M1\",\n    \"AN-C12-1262-M2\",\n    \"AN-C12-1262-M3\",\n    \"AN-C12-1263-M1\",\n    \"AN-C12-1263-M2\",\n    \"AN-C12-1263-M3\",\n    \"AN-C12-1264-M1\",\n    \"AN-C12-1264-M2\",\n    \"AN-C12-1264-M3\",\n    \"AN-C12-127-M3\",\n    \"AN-C12-128-M1\",\n    \"AN-C12-128-M2\",\n    \"AN-C12-128-M3\",\n    \"AN-C12-129-M1\",\n    \"AN-C12-129-M2\",\n    \"AN-C12-129-M3\",\n    \"AN-C12-I12-56-M3\",\n    \"ANV-0005\",\n    \"ANV-0007\",\n    \"ANV-0016\",\n    \"ANV-0020\",\n    \"ANV-0021\",\n    \"ANV-0023\",\n    \"ANV-0025\",\n    \"ANV-0037\",\n    \"ANV-0038\",\n    \"ANV-0039\",\n    \"ANV-0041\",\n    \"ANV-0043\",\n    \"ANV-0044\",\n    \"ANV-0045\",\n    \"ANV-0046\",\n    \"ANV-0047\",\n    \"ANV-0048\",\n    \"ANV-0049\",\n    \"ANV-0050\",\n    \"ANV-0064\",\n    \"ANV-0067\",\n    \"ANV-0068\",\n    \"ANV-0073\",\n    \"ANV-0076\",\n    \"ANV-0085\",\n    \"ANV-0092\",\n    \"ANV-0096\",\n    \"ANV-0097\",\n    \"ANV-0100\",\n    \"ANV-0105\",\n    \"ANV-0108\",\n    \"ANV-0111\",\n    \"ANV-0116\",\n    \"ANV-0125\",\n    \"ANV-0128\",\n    \"ANV-0129\",\n    \"ANV-0131\",\n    \"ANV-0134\",\n    \"ANV-0138\",\n    \"ANV-0143\",\n    \"ANV-0145\",\n    \"ANV-0147\",\n    \"ANV-0148\",\n    \"ANV-0151\",\n    \"ANV-0152\",\n    \"ANV-0163\",\n    \"ANV-0164\",\n    \"ANV-0165\",\n    \"ANV-0166\",\n    \"ANV-0179\",\n    \"ANV-0181\",\n    \"ANV-0185\",\n    \"ANV-0190\",\n    \"ANV-0198\",\n    \"ANV-0199\",\n    \"ANV-0200\",\n    \"ANV-0203\",\n    \"ANV-0204\",\n    \"ANV-0213\",\n    \"ANV-0214\",\n    \"ANV-0218\",\n    \"ANV-0221\",\n    \"ANV-0223\",\n    \"ANV-0227\",\n    \"ANV-0235\",\n    \"ANV-0237\",\n    \"ANV-0254\",\n    \"ANV-0256\",\n    \"ANV-0262\",\n    \"ANV-0263\",\n    \"ANV-0269\",\n    \"ANV-0276\",\n    \"ANV-0278\",\n    \"ANV-0279\",\n    \"ANV-0283\",\n    \"ANV-0288\",\n    \"ANV-0295\",\n    \"ANV-0298\",\n    \"ANV-0378\",\n    \"ANV-0601\",\n    \"ANV-0602\",\n    \"ANV-0611\",\n    \"ANV-0612\",\n    \"ANV-0616\",\n    \"ANV-0619\",\n    \"ANV-0621\",\n    \"ANV-0625\",\n    \"ANV-0633\",\n    \"ANV-0635\",\n    \"ANV-0652\",\n    \"ANV-0654\",\n    \"ANV-0660\",\n    \"ANV-0661\",\n    \"ANV-0667\",\n    \"ANV-0674\",\n    \"ANV-0676\",\n    \"ANV-0677\",\n    \"ANV-0681\",\n    \"ANV-0686\",\n    \"ANV-0693\",\n    \"ANV-0696\",\n    \"ANV-0734\",\n    \"ANV-0765\",\n    \"ANV-0790\",\n    \"ANV-0794\",\n    \"ANV-0795\",\n    \"ANV-0798\",\n    \"ANV-0803\",\n    \"ANV-0806\",\n    \"ANV-0809\",\n    \"ANV-0814\",\n    \"ANV-0819\",\n    \"ANV-0823\",\n    \"ANV-0826\",\n    \"ANV-0827\",\n    \"ANV-0829\",\n    \"ANV-0832\",\n    \"ANV-0836\",\n    \"ANV-0841\",\n    \"ANV-0843\",\n    \"ANV-0845\",\n    \"ANV-0846\",\n    \"ANV-0849\",\n    \"ANV-0850\",\n    \"ANV-0861\",\n    \"ANV-0862\",\n    \"ANV-0863\",\n    \"ANV-0864\",\n    \"ANV-0877\",\n    \"ANV-0879\",\n    \"ANV-0883\",\n    \"ANV-0888\",\n    \"ANV-0897\",\n    \"ANV-0898\",\n    \"ANV-0901\",\n    \"ANV-0906\",\n    \"ANV-0909\",\n    \"ANV-0921\",\n    \"ANV-0923\",\n    \"ANV-0926\",\n    \"ANV-0964\",\n    \"ANV-0972\",\n    \"ANV-0975\",\n    \"ANV-0976\",\n    \"ANV-0977\",\n    \"ANV-0978\",\n    \"ANV-0981\",\n    \"ANV-0984\",\n    \"ANV-0988\",\n    \"ANV-0993\",\n    \"ANV-1000\",\n    \"ANV-1034\"\n  ],\n  \"preserved_occurrences\": 11657,\n  \"propositions_rendered\": 1100,\n  \"direct_options_preserved\": 850,\n  \"editorial_release_approval\": false\n}\n"
+      },
+      "runtime": {
+        "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-runtime-question-banks.mjs",
+        "exit_code": 0,
+        "seconds": 14.33,
+        "output": "Bancos ativos de cadernos: 12102 questões verificadas\n"
+      },
+      "matrix": {
+        "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-pscpp-exam-selection.mjs",
+        "exit_code": 0,
+        "seconds": 9.15,
+        "output": "Matriz fixa PSCPP: OK\n"
+      },
+      "provenance": {
+        "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-question-source-provenance.mjs",
+        "exit_code": 0,
+        "seconds": 0.62,
+        "output": "Canonical ID precedence and transitive source fingerprints: OK\n"
+      },
+      "catalog": {
+        "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-runtime-question-catalog.mjs",
+        "exit_code": 0,
+        "seconds": 8.45,
+        "output": "Catálogo equivalente ao banco ativo: 12102 referências, contagens e filtros completos\n"
+      },
+      "stems": {
+        "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-notebook-complete-stems.mjs",
+        "exit_code": 1,
+        "seconds": 2.65,
+        "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Combination without propositions: arte-naval/ANV-0142\n    at file:///workspace/scratch/84c3a78e6648/repo/scripts/test-notebook-complete-stems.mjs:120:29\n    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async node:internal/modules/esm/loader:647:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: '==',\n  diff: 'simple'\n}\n\nNode.js v24.22.1\n"
+      },
+      "locators": {
+        "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-editorial-runtime.mjs",
+        "exit_code": 1,
+        "seconds": 0.57,
+        "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Enunciado dependente de localizador no caderno de legislação: LEG-0023, LEG-0033, LEG-0041, LEG-0064, LEG-0070, LEG-0087, LEG-0096, LEG-0135, LEG-0136, LEG-0140, LEG-0173, LEG-0176, LEG-0189, LEG-0192, LEG-0224, LEG-0225, LEG-0242, LEG-0292, LEG-0325, LEG-0327, LEG-0330, LEG-0358, LEG-0384, LEG-0389, LEG-0392, LEG-0403, LEG-0405, LEG-0408, LEG-0410, LEG-0418, LEG-0426, LEG-0430, LEG-0434, LEG-0436, LEG-0447, LEG-0458, LEG-0460, LEG-0467, LEG-0478, LEG-0479, LEG-0482, LEG-0532, LEG-0562, LEG-0565, LEG-0568, LEG-0577, LEG-0592, LEG-0608, LEG-0612, LEG-0617, LEG-0634, LEG-0640, LEG-0660, LEG-0670, LEG-0675, LEG-0676, LEG-0677, LEG-0695, LEG-0714, LEG-0770, LEG-0777, LEG-0780, LEG-0786, LEG-0789, LEG-0812, LEG-0821, LEG-0841, LEG-0844, LEG-0851, LEG-0865, LEG-0871, LEG-0893, LEG-0983, LEG-N112-C01-UC02-M2, LEG-N112-C04-UC23-M2, LEG-N112-C05-UC28-M2, LEG-N112-C05-UC38-M2\n\n77 !== 0\n\n    at file:///workspace/scratch/84c3a78e6648/repo/scripts/validate-editorial-runtime.mjs:15:8 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: 77,\n  expected: 0,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.22.1\n"
+      },
+      "gate": {
+        "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/validate-pscpp-editorial-evidence.mjs",
+        "exit_code": 2,
+        "seconds": 0.77,
+        "output": "{\n  \"scope\": \"Effective occurrences by consumer, stable ID and content hash\",\n  \"runtime_occurrences\": 14086,\n  \"accepted_occurrences\": 0,\n  \"pending_or_invalid_occurrences\": 14086,\n  \"editorial_gate_passed\": false,\n  \"merge_permitted\": false,\n  \"note\": \"This checks evidence completeness, not truth of evidence; all other release gates still apply.\"\n}\n"
+      },
+      "check-exam": {
+        "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-pscpp-runtime-bank.mjs --check",
+        "exit_code": 0,
+        "seconds": 1.08,
+        "output": "Banco PSCPP pronto: 1984 questões, 254 oficiais fiéis às fontes\n"
+      },
+      "check-banks": {
+        "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-question-banks.mjs --check",
+        "exit_code": 0,
+        "seconds": 4.17,
+        "output": "Bancos de cadernos prontos: 12102 questões\n"
+      },
+      "check-catalog": {
+        "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-question-catalog.mjs --check",
+        "exit_code": 0,
+        "seconds": 0.62,
+        "output": "Catálogo pronto: 9 bancos\n"
+      },
+      "check-flash": {
+        "command": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/generate-runtime-flashcard-decks.mjs --check",
+        "exit_code": 0,
+        "seconds": 1.68,
+        "output": "Flashcards prontos: 7 baralhos\n"
+      }
+    },
+    "build": {
+      "command": "node node_modules/next/dist/bin/next build",
+      "exit_code": 0,
+      "seconds": 67.39,
+      "output": "Attention: Next.js now collects completely anonymous telemetry regarding usage.\nThis information is used to shape Next.js' roadmap and prioritize features.\nYou can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:\nhttps://nextjs.org/telemetry\n\n   ▲ Next.js 15.5.25\n\n   Creating an optimized production build ...\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|javascript/auto|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/next-flight-css-loader.js??ruleSet[1].rules[14].oneOf[5].use[0]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[1]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/app/conteudos/conteudos.module.css|rsc': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 1 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|javascript/auto|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/next-flight-css-loader.js??ruleSet[1].rules[14].oneOf[5].use[0]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[1]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/app/plano-de-estudos/plano.module.css|rsc': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 2 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|javascript/auto|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/next-flight-css-loader.js??ruleSet[1].rules[14].oneOf[5].use[0]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[1]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/app/minha-trajetoria/trajectory.module.css|rsc': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 1 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|javascript/auto|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/next-flight-css-loader.js??ruleSet[1].rules[14].oneOf[5].use[0]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[1]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/app/plano-de-estudos/plano.module.css|ssr': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 2 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|javascript/auto|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/next-flight-css-loader.js??ruleSet[1].rules[14].oneOf[5].use[0]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[1]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/app/plano-de-estudos/plan-enhancements.module.css|ssr': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 2 items } -> webpack/lib/ModuleWarning -> Warning\n ⚠ Compiled with warnings in 32.4s\n\n./app/conteudos/conteudos.module.css\nWarning\n\n(3:106) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/conteudos/conteudos.module.css\n./app/conteudos/page.js\n\n./app/minha-trajetoria/trajectory.module.css\nWarning\n\n(1:286) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/minha-trajetoria/trajectory.module.css\n./app/minha-trajetoria/page.js\n\n./app/plano-de-estudos/plan-enhancements.module.css\nWarning\n\n(1:4025) autoprefixer: start value has mixed support, consider using flex-start instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plan-enhancements.module.css\n./app/plano-de-estudos/PlanControls.js\n./app/plano-de-estudos/StudyDashboard.js\n./app/plano-de-estudos/PlanClient.js\n\n./app/plano-de-estudos/plan-enhancements.module.css\nWarning\n\n(2:37) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plan-enhancements.module.css\n./app/plano-de-estudos/PlanControls.js\n./app/plano-de-estudos/StudyDashboard.js\n./app/plano-de-estudos/PlanClient.js\n\n./app/plano-de-estudos/plano.module.css\nWarning\n\n(1:342) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plano.module.css\n./app/plano-de-estudos/page.js\n\n./app/plano-de-estudos/plano.module.css\nWarning\n\n(1:2618) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plano.module.css\n./app/plano-de-estudos/page.js\n\n./app/plano-de-estudos/plano.module.css\nWarning\n\n(1:342) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plano.module.css\n./app/plano-de-estudos/PlanClient.js\n\n./app/plano-de-estudos/plano.module.css\nWarning\n\n(1:2618) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plano.module.css\n./app/plano-de-estudos/PlanClient.js\n\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!/workspace/scratch/84c3a78e6648/repo/app/globals.css': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 3 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!/workspace/scratch/84c3a78e6648/repo/app/conteudos/conteudos.module.css': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 1 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!/workspace/scratch/84c3a78e6648/repo/app/area-do-aluno/dashboard.css': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 1 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!/workspace/scratch/84c3a78e6648/repo/app/plano-de-estudos/plano.module.css': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 2 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!/workspace/scratch/84c3a78e6648/repo/app/plataforma/plataforma.css': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 1 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!/workspace/scratch/84c3a78e6648/repo/app/minha-trajetoria/trajectory.module.css': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 1 items } -> webpack/lib/ModuleWarning -> Warning\n<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!/workspace/scratch/84c3a78e6648/repo/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!/workspace/scratch/84c3a78e6648/repo/app/plano-de-estudos/plan-enhancements.module.css': No serializer registered for Warning\n<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 2 items } -> webpack/lib/ModuleWarning -> Warning\n ⚠ Compiled with warnings in 15.7s\n\n./app/conteudos/conteudos.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/conteudos/conteudos.module.css\nWarning\n\n(3:106) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/conteudos/conteudos.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/conteudos/conteudos.module.css\n./app/conteudos/conteudos.module.css\n\n./app/minha-trajetoria/trajectory.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/minha-trajetoria/trajectory.module.css\nWarning\n\n(1:286) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/minha-trajetoria/trajectory.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/minha-trajetoria/trajectory.module.css\n./app/minha-trajetoria/trajectory.module.css\n\n./app/plano-de-estudos/plan-enhancements.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plan-enhancements.module.css\nWarning\n\n(1:4025) autoprefixer: start value has mixed support, consider using flex-start instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plan-enhancements.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plan-enhancements.module.css\n./app/plano-de-estudos/plan-enhancements.module.css\n./app/plano-de-estudos/PlanControls.js\n./app/plano-de-estudos/StudyDashboard.js\n./app/plano-de-estudos/PlanClient.js\n\n./app/plano-de-estudos/plan-enhancements.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plan-enhancements.module.css\nWarning\n\n(2:37) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plan-enhancements.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plan-enhancements.module.css\n./app/plano-de-estudos/plan-enhancements.module.css\n./app/plano-de-estudos/PlanControls.js\n./app/plano-de-estudos/StudyDashboard.js\n./app/plano-de-estudos/PlanClient.js\n\n./app/plano-de-estudos/plano.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plano.module.css\nWarning\n\n(1:342) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plano.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plano.module.css\n./app/plano-de-estudos/plano.module.css\n\n./app/plano-de-estudos/plano.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plano.module.css\nWarning\n\n(1:2618) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plano-de-estudos/plano.module.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/plano-de-estudos/plano.module.css\n./app/plano-de-estudos/plano.module.css\n\n./app/area-do-aluno/dashboard.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/area-do-aluno/dashboard.css\nWarning\n\n(7:92) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/area-do-aluno/dashboard.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/area-do-aluno/dashboard.css\n./app/area-do-aluno/dashboard.css\n\n./app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/globals.css\nWarning\n\n(49:39) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/globals.css\n./app/globals.css\n\n./app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/globals.css\nWarning\n\n(124:88) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/globals.css\n./app/globals.css\n\n./app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/globals.css\nWarning\n\n(124:669) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/globals.css\n./app/globals.css\n\n./app/plataforma/plataforma.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/plataforma/plataforma.css\nWarning\n\n(48:1323) autoprefixer: end value has mixed support, consider using flex-end instead\n\nImport trace for requested module:\n./app/plataforma/plataforma.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/plataforma/plataforma.css\n./app/plataforma/plataforma.css\n\n ✓ Compiled successfully in 48s\n   Linting and checking validity of types ...\n   Collecting page data ...\n   Generating static pages (0/101) ...\n   Generating static pages (25/101) \n   Generating static pages (50/101) \n   Generating static pages (75/101) \n ✓ Generating static pages (101/101)\n   Finalizing page optimization ...\n   Collecting build traces ...\n\nRoute (app)                                            Size  First Load JS\n┌ ○ /                                                1.2 kB         104 kB\n├ ○ /_not-found                                       303 B         103 kB\n├ ƒ /.well-known/assetlinks.json                      424 B         103 kB\n├ ƒ /aceitar-termos                                   424 B         103 kB\n├ ƒ /admin                                            424 B         103 kB\n├ ƒ /admin/cobertura                                  171 B         103 kB\n├ ƒ /admin/configuracoes                              424 B         103 kB\n├ ƒ /admin/conteudo                                   424 B         103 kB\n├ ƒ /admin/contramestre                              2.4 kB         105 kB\n├ ƒ /admin/editor                                   87.6 kB         190 kB\n├ ƒ /admin/laboratorio-3d                           38.8 kB         142 kB\n├ ƒ /admin/metricas                                   424 B         103 kB\n├ ƒ /admin/observabilidade                            424 B         103 kB\n├ ƒ /admin/pagamentos                                 424 B         103 kB\n├ ƒ /admin/permissoes                                 424 B         103 kB\n├ ƒ /admin/precos                                   1.76 kB         105 kB\n├ ƒ /admin/questoes                                   424 B         103 kB\n├ ƒ /admin/seguranca                                1.45 kB         104 kB\n├ ƒ /admin/simulados                                  424 B         103 kB\n├ ƒ /admin/suporte                                  1.39 kB         104 kB\n├ ƒ /admin/usuarios                                   424 B         103 kB\n├ ƒ /analise-de-fraquezas                             424 B         103 kB\n├ ƒ /api/access                                       424 B         103 kB\n├ ƒ /api/account/accept-terms                         424 B         103 kB\n├ ƒ /api/account/delete                               424 B         103 kB\n├ ƒ /api/account/export                               424 B         103 kB\n├ ƒ /api/account/logout-all                           424 B         103 kB\n├ ƒ /api/achievements                                 424 B         103 kB\n├ ƒ /api/adaptive-training                            424 B         103 kB\n├ ƒ /api/admin/contramestre/bibliography              424 B         103 kB\n├ ƒ /api/admin/contramestre/bibliography/multipart    424 B         103 kB\n├ ƒ /api/admin/laboratorio-3d                         424 B         103 kB\n├ ƒ /api/admin/laboratorio-3d/upload                  424 B         103 kB\n├ ƒ /api/admin/mfa                                    424 B         103 kB\n├ ƒ /api/admin/permissions                            424 B         103 kB\n├ ƒ /api/admin/pricing                                424 B         103 kB\n├ ƒ /api/admin/support                                424 B         103 kB\n├ ƒ /api/admin/support/[id]                           424 B         103 kB\n├ ƒ /api/admin/users/[id]/access                      424 B         103 kB\n├ ƒ /api/admin/users/[id]/status                      424 B         103 kB\n├ ƒ /api/attempts                                     424 B         103 kB\n├ ƒ /api/auth/admin-mfa/verify                        424 B         103 kB\n├ ƒ /api/auth/forgot-password                         424 B         103 kB\n├ ƒ /api/auth/google/callback                         424 B         103 kB\n├ ƒ /api/auth/google/start                            424 B         103 kB\n├ ƒ /api/auth/login                                   424 B         103 kB\n├ ƒ /api/auth/logout                                  424 B         103 kB\n├ ƒ /api/auth/me                                      424 B         103 kB\n├ ƒ /api/auth/profile/complete                        424 B         103 kB\n├ ƒ /api/auth/register                                424 B         103 kB\n├ ƒ /api/auth/resend-verification                     424 B         103 kB\n├ ƒ /api/auth/reset-password                          424 B         103 kB\n├ ƒ /api/auth/verify-email                            424 B         103 kB\n├ ƒ /api/cron/finalize-exams                          424 B         103 kB\n├ ƒ /api/exams/[subject]                              424 B         103 kB\n├ ƒ /api/exams/[subject]/answer                       424 B         103 kB\n├ ƒ /api/exams/[subject]/finish                       424 B         103 kB\n├ ƒ /api/exams/[subject]/pause                        424 B         103 kB\n├ ƒ /api/experiments                                  424 B         103 kB\n├ ƒ /api/flashcards/[deck]                            424 B         103 kB\n├ ƒ /api/growth/event                                 424 B         103 kB\n├ ƒ /api/health                                       424 B         103 kB\n├ ƒ /api/insights                                     424 B         103 kB\n├ ƒ /api/learning-graph                               424 B         103 kB\n├ ƒ /api/library/files                                424 B         103 kB\n├ ƒ /api/library/files/[id]/content                   424 B         103 kB\n├ ƒ /api/library/files/[id]/progress                  424 B         103 kB\n├ ƒ /api/library/google/callback                      424 B         103 kB\n├ ƒ /api/library/google/connect                       424 B         103 kB\n├ ƒ /api/library/google/disconnect                    424 B         103 kB\n├ ƒ /api/library/google/files                         424 B         103 kB\n├ ƒ /api/library/google/files/[id]/content            424 B         103 kB\n├ ƒ /api/library/google/files/[id]/progress           424 B         103 kB\n├ ƒ /api/library/google/picker                        424 B         103 kB\n├ ƒ /api/library/google/status                        424 B         103 kB\n├ ƒ /api/metrics                                      424 B         103 kB\n├ ƒ /api/mind-maps                                    424 B         103 kB\n├ ƒ /api/mind-maps/[id]                               424 B         103 kB\n├ ƒ /api/mind-maps/[id]/duplicate                     424 B         103 kB\n├ ƒ /api/mind-maps/[id]/flashcard                     424 B         103 kB\n├ ƒ /api/observability/client-error                   424 B         103 kB\n├ ƒ /api/observability/vitals                         424 B         103 kB\n├ ƒ /api/payments/mercado-pago/checkout               424 B         103 kB\n├ ƒ /api/payments/mercado-pago/tutor-checkout         424 B         103 kB\n├ ƒ /api/payments/mercado-pago/webhook                424 B         103 kB\n├ ƒ /api/preferences                                  424 B         103 kB\n├ ƒ /api/profile                                      424 B         103 kB\n├ ƒ /api/progress                                     424 B         103 kB\n├ ƒ /api/question-notebooks                           424 B         103 kB\n├ ƒ /api/question-notebooks/[id]/answer               424 B         103 kB\n├ ƒ /api/questions/[subject]                          424 B         103 kB\n├ ƒ /api/questions/[subject]/answer                   424 B         103 kB\n├ ƒ /api/questions/manobrabilidade                    424 B         103 kB\n├ ƒ /api/questions/taxonomy                           424 B         103 kB\n├ ƒ /api/review-queue                                 424 B         103 kB\n├ ƒ /api/ripeam-3d/scenes                             424 B         103 kB\n├ ƒ /api/site-editor/auth                             424 B         103 kB\n├ ƒ /api/site-editor/design                           424 B         103 kB\n├ ƒ /api/site-editor/design/save                      424 B         103 kB\n├ ƒ /api/site-editor/file                             424 B         103 kB\n├ ƒ /api/site-editor/files                            424 B         103 kB\n├ ƒ /api/site-editor/flashcards                       424 B         103 kB\n├ ƒ /api/site-editor/logout                           424 B         103 kB\n├ ƒ /api/site-editor/pages                            424 B         103 kB\n├ ƒ /api/site-editor/save                             424 B         103 kB\n├ ƒ /api/site-editor/upload                           424 B         103 kB\n├ ƒ /api/study-plan                                   424 B         103 kB\n├ ƒ /api/study-plan/calendar                          424 B         103 kB\n├ ƒ /api/study-plan/customize                         424 B         103 kB\n├ ƒ /api/study-plan/export                            424 B         103 kB\n├ ƒ /api/study-plan/onboarding                        424 B         103 kB\n├ ƒ /api/study-plan/session                           424 B         103 kB\n├ ƒ /api/study-plan/snapshot                          424 B         103 kB\n├ ƒ /api/study-plan/task                              424 B         103 kB\n├ ƒ /api/study-plan/tutor-export                      424 B         103 kB\n├ ƒ /api/study-plan/unavailability                    424 B         103 kB\n├ ƒ /api/study/plan                                   424 B         103 kB\n├ ƒ /api/support/tickets                              424 B         103 kB\n├ ƒ /api/support/tickets/[id]                         424 B         103 kB\n├ ƒ /api/tutor/chat                                   424 B         103 kB\n├ ƒ /api/tutor/conversations/[id]                     424 B         103 kB\n├ ƒ /area-do-aluno                                  2.16 kB         113 kB\n├ ○ /cadastro                                       4.98 kB         108 kB\n├ ○ /cancelamento-e-reembolso                         274 B         103 kB\n├ ƒ /centro-de-revisao                                424 B         103 kB\n├ ○ /completar-cadastro                             3.67 kB         106 kB\n├ ƒ /comprar                                        2.17 kB         113 kB\n├ ƒ /conquistas                                     1.78 kB         113 kB\n├ ƒ /conteudos                                      2.15 kB         113 kB\n├ ƒ /conteudos/banco-de-questoes                    3.15 kB         121 kB\n├ ƒ /conteudos/caderno-de-erros                     2.06 kB         113 kB\n├ ƒ /conteudos/caderno/[id]                         3.97 kB         125 kB\n├ ƒ /conteudos/fixacao                                424 B         103 kB\n├ ƒ /contramestre                                     135 B         114 kB\n├ ○ /diagnostico-gratuito                           1.78 kB         105 kB\n├ ○ /esqueci-minha-senha                             2.6 kB         105 kB\n├ ○ /excluir-conta                                    424 B         103 kB\n├ ƒ /flashcards                                     1.99 kB         113 kB\n├ ƒ /flashcards/[deck]                                31 kB         142 kB\n├ ƒ /flashcards/meus-mapas                          2.25 kB         113 kB\n├ ƒ /flashcards/ripeam/3d                           22.3 kB         133 kB\n├ ƒ /hoje                                           2.53 kB         113 kB\n├ ○ /login                                          3.26 kB         106 kB\n├ ○ /logout                                           297 B         103 kB\n├ ƒ /mapas-mentais                                  2.78 kB         114 kB\n├ ƒ /mapas-mentais/[id]                             6.17 kB         117 kB\n├ ƒ /mfa-admin                                        424 B         103 kB\n├ ƒ /minha-biblioteca                               3.08 kB         114 kB\n├ ƒ /minha-biblioteca/[id]                          2.45 kB         120 kB\n├ ƒ /minha-trajetoria                               1.96 kB         113 kB\n├ ƒ /minhas-assinaturas                             1.73 kB         113 kB\n├ ƒ /paginas/[slug]                                   424 B         103 kB\n├ ƒ /perfil                                         3.42 kB         114 kB\n├ ƒ /pesquisar                                      1.73 kB         113 kB\n├ ƒ /plano-de-estudos                                 13 kB         131 kB\n├ ƒ /plano-de-estudos/configurar                    7.21 kB         118 kB\n├ ƒ /plano-de-estudos/pendencias                    1.73 kB         113 kB\n├ ○ /plataforma                                       170 B         103 kB\n├ ○ /politica-de-cookies                              274 B         103 kB\n├ ○ /politica-de-privacidade                          274 B         103 kB\n├ ƒ /preferencias                                   2.37 kB         113 kB\n├ ○ /produtos                                         513 B         103 kB\n├ ○ /produtos/banco-de-questoes                       513 B         103 kB\n├ ○ /produtos/flashcards-mapas-mentais                513 B         103 kB\n├ ○ /produtos/simulados                               513 B         103 kB\n├ ○ /pscpp                                            476 B         103 kB\n├ ƒ /pwa-icon                                         424 B         103 kB\n├ ƒ /pwa-splash                                       424 B         103 kB\n├ ƒ /ranking                                        1.88 kB         113 kB\n├ ƒ /redefinir-senha                                  899 B         104 kB\n├ ƒ /revisao-inteligente                             2.1 kB         113 kB\n├ ○ /robots.txt                                       424 B         103 kB\n├ ƒ /simulado                                       1.82 kB         113 kB\n├ ƒ /simulado/[subject]                               140 B         127 kB\n├ ƒ /simulado/manobrabilidade                         141 B         127 kB\n├ ƒ /simulado/tentativa/[id]                        2.05 kB         113 kB\n├ ○ /sitemap.xml                                      424 B         103 kB\n├ ○ /sobre-a-praticagem                               513 B         103 kB\n├ ○ /sobre-a-praticagem/como-se-tornar-um-pratico     513 B         103 kB\n├ ○ /sobre-a-praticagem/o-que-faz-um-pratico          513 B         103 kB\n├ ○ /sobre-nos                                        513 B         103 kB\n├ ƒ /study-content/[[...path]]                        424 B         103 kB\n├ ƒ /suporte                                        3.22 kB         114 kB\n├ ○ /termos-de-uso                                    274 B         103 kB\n├ ƒ /teste-gratis-excedido                          1.73 kB         113 kB\n├ ƒ /treino-adaptativo                                424 B         103 kB\n├ ƒ /treino-inteligente                             2.12 kB         113 kB\n├ ƒ /tutor-ia                                         134 B         114 kB\n└ ƒ /verificar-email                                  424 B         103 kB\n+ First Load JS shared by all                        103 kB\n  ├ chunks/1255-7316b50163a428e6.js                 46.4 kB\n  ├ chunks/4bd1b696-f785427dddbba9fb.js             54.2 kB\n  └ other shared chunks (total)                     2.19 kB\n\n\n○  (Static)   prerendered as static content\nƒ  (Dynamic)  server-rendered on demand\n\n"
+    }
+  }
+}

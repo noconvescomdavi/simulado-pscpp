@@ -1,0 +1,176 @@
+[
+  {
+    "table_schema": "public",
+    "table_name": "admin_audit_log",
+    "column_name": "before_data",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "admin_audit_log",
+    "column_name": "after_data",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "ai_tutor_messages",
+    "column_name": "sources",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "app_error_events",
+    "column_name": "metadata",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "app_performance_events",
+    "column_name": "metadata",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "exam_sessions",
+    "column_name": "question_ids",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "library_documents",
+    "column_name": "metadata_confidence",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "library_documents",
+    "column_name": "metadata_source",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "mind_maps",
+    "column_name": "canvas",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "product_events",
+    "column_name": "metadata",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_notebooks",
+    "column_name": "subjects",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "question_notebooks",
+    "column_name": "question_refs",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "ripeam_3d_assets",
+    "column_name": "tags",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "ripeam_3d_assets",
+    "column_name": "metadata",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "ripeam_3d_scene_publications",
+    "column_name": "snapshot",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "ripeam_3d_scene_versions",
+    "column_name": "snapshot",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "ripeam_3d_scenes",
+    "column_name": "config",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_bibliography_progress",
+    "column_name": "completed_ranges",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_onboarding",
+    "column_name": "studied_subjects",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_onboarding",
+    "column_name": "confidence_by_subject",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_onboarding_preferences",
+    "column_name": "daily_minutes_by_day",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_events",
+    "column_name": "metadata",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_reschedules",
+    "column_name": "metadata",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_snapshot_tasks",
+    "column_name": "payload",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_snapshots",
+    "column_name": "metadata",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_plan_task_progress",
+    "column_name": "metadata",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "student_study_sessions",
+    "column_name": "metadata",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "study_bibliography_catalog",
+    "column_name": "metadata",
+    "data_type": "jsonb"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "study_progress",
+    "column_name": "studied_items",
+    "data_type": "jsonb"
+  }
+]
