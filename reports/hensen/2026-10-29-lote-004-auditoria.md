@@ -10,6 +10,8 @@
 - 40 IDs únicos; cinco alternativas distintas por questão; justificativas técnicas; metadados de taxonomia, rastreabilidade, dificuldade e bibliografia.
 - Fonte primária consultada: texto integral da edição 2021; localizadores com capítulo, seção, página impressa e PDF (+13). Seções localizadas no texto integral: **40/40**. Não há seções ausentes na verificação textual.
 - Cotejo com 120 itens dos Lotes 001–003: **0 colisões literais de ID ou enunciado**. A comparação literal não comprova ausência de sobreposição semântica; recomenda-se revisão independente.
+- Cotejo lexical adicional com **170 questões históricas HENSEN** (10 blocos, 17 por bloco): maior similaridade Jaccard de termos filtrados entre enunciados/tópicos = **0,25**; com os 120 itens dos lotes novos anteriores, maior similaridade de enunciados = **0,278**. Estes índices são triagem, não prova de originalidade semântica.
+- **Sobreposições temáticas para revisão independente:** C01-L004-04 versus ANV-B008-01 (rebocador convencional); C04-L004-01 versus ANV-B008-06 (Rotortug); C04-L004-02 versus ANV-B008-01; C07-L004-03 versus ANV-B006-15 (HMPE). As questões novas tratam de atributos específicos, mas não se deve dispensar a revisão editorial por causa da baixa coincidência lexical.
 - Não foram modificadas questões históricas, lotes anteriores ou regras de quarentena. Os campos `validation_status: approved` e `validation.source_verified` refletem a verificação editorial efetuada nesta execução, **não** equivalem à homologação independente ou à aprovação de CI.
 - Não foi comprovada execução local de `npm run validate` ou `npm run build`. Verificar GitHub Actions no HEAD final.
 
