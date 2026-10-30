@@ -894,36 +894,36 @@
       "subject": "II — Arte Naval",
       "module": "Assisting methods",
       "topic_code": "ANV.HENSEN.C03.L008.03",
-      "topic": "Saída em águas geladas",
+      "topic": "Vibração na frenagem prolongada",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Antes de desatracar um navio cercado por gelo, qual preparação é apropriada?",
+      "question": "Um rebocador de popa controla por longo período a velocidade de um navio abaixo de sua dead slow ahead. Qual efeito operacional adverso é destacado por Hensen?",
       "options": [
         {
           "key": "A",
-          "text": "Acelerar contra gelo intacto sem inspeção."
+          "text": "Eliminação automática de toda carga no cabo."
         },
         {
           "key": "B",
-          "text": "Quebrar gelo apenas junto à popa."
+          "text": "Aumento obrigatório da velocidade do navio acima de dead slow."
         },
         {
           "key": "C",
-          "text": "Romper o gelo ao redor do navio e preparar a rota de saída."
+          "text": "Vibração intensa a bordo do rebocador durante a manutenção prolongada do esforço de frenagem."
         },
         {
           "key": "D",
-          "text": "Dispensar preparação se o motor funcionar."
+          "text": "Ausência de esforços nos propulsores do rebocador."
         },
         {
           "key": "E",
-          "text": "Aplicar força lateral máxima imediatamente."
+          "text": "Dispensa de coordenação com o passadiço do navio."
         }
       ],
       "correct_answer": "C",
-      "explanation": "Hensen distingue a preparação de chegada da rota de partida em gelo.",
+      "explanation": "A seção descreve que o controle prolongado da velocidade pelo rebocador de popa pode produzir vibrações muito intensas a bordo.",
       "active": true,
       "validation_status": "approved",
       "validation": {
@@ -953,7 +953,7 @@
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapter 3, §3.3.3, p. 88 (PDF p. 101)"
+        "locator": "Chapter 3, §3.2.2, p. 87 (PDF p. 100)"
       },
       "tags": [
         "hensen",
@@ -1486,36 +1486,36 @@
       "subject": "II — Arte Naval",
       "module": "Bollard pull required",
       "topic_code": "ANV.HENSEN.C05.L008.01",
-      "topic": "Coeficientes aerodinâmicos de vento",
+      "topic": "Influência da densidade do ar",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Dois navios apresentam a mesma área vélica lateral e recebem vento de igual intensidade, mas possuem superestruturas e trims diferentes. Por que a força lateral pode diferir?",
+      "question": "Mantendo constantes a velocidade do vento, a área exposta e o coeficiente aerodinâmico, como varia a força lateral calculada se a densidade do ar aumentar 10%?",
       "options": [
         {
           "key": "A",
-          "text": "Porque os coeficientes aerodinâmicos dependem da forma do navio, trim, superestruturas e ângulo do vento."
+          "text": "A força lateral calculada aumenta 10%."
         },
         {
           "key": "B",
-          "text": "Porque a área lateral determina a força sem qualquer coeficiente."
+          "text": "A força lateral aumenta 100%."
         },
         {
           "key": "C",
-          "text": "Porque a densidade da água substitui o coeficiente aerodinâmico."
+          "text": "A força lateral diminui 10%."
         },
         {
           "key": "D",
-          "text": "Porque a força de vento independe da geometria do navio."
+          "text": "A força lateral não depende da densidade do ar."
         },
         {
           "key": "E",
-          "text": "Porque o coeficiente de vento é sempre igual para todos os tipos de navio."
+          "text": "A força lateral aumenta aproximadamente 21%."
         }
       ],
       "correct_answer": "A",
-      "explanation": "Hensen apresenta coeficientes de vento variáveis conforme forma, calado, trim, superestrutura e ângulo de incidência.",
+      "explanation": "A expressão FYw = 0,5 × CYw × ρ × V² × AL mostra proporcionalidade direta entre a força e a densidade do ar, com os demais fatores fixos.",
       "active": true,
       "validation_status": "approved",
       "validation": {
