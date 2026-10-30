@@ -1495,27 +1495,27 @@
       "options": [
         {
           "key": "A",
-          "text": "Área exposta e coeficientes aplicáveis à nova configuração."
+          "text": "Recalcular a área lateral exposta ao vento, incluindo os contêineres, e aplicar coeficientes adequados ao novo perfil."
         },
         {
           "key": "B",
-          "text": "O coeficiente de momento depende da forma, carregamento e ângulo do vento."
+          "text": "Manter a área vélica anterior, pois o casco e o deslocamento não foram alterados."
         },
         {
           "key": "C",
-          "text": "Aproximadamente dobra."
+          "text": "Alterar apenas a densidade do ar, já que a altura da carga não influencia a força lateral."
         },
         {
           "key": "D",
-          "text": "A efetividade do bow thruster pode estar quase anulada nessa velocidade."
+          "text": "Substituir a área acima da linha d'água pela área submersa para representar os contêineres."
         },
         {
           "key": "E",
-          "text": "167 tf."
+          "text": "Desconsiderar o vento de través, porque o aumento da carga afeta somente a força longitudinal."
         }
       ],
       "correct_answer": "A",
-      "explanation": "A carga no convés integra a área ao vento.",
+      "explanation": "Em §5.2.2, a área exposta ao vento inclui a carga de convés; a forma e a condição de carregamento também influenciam os coeficientes aerodinâmicos. A avaliação deve refletir a nova configuração.",
       "active": true,
       "validation_status": "approved",
       "validation": {
@@ -1569,27 +1569,27 @@
       "options": [
         {
           "key": "A",
-          "text": "Área exposta e coeficientes aplicáveis à nova configuração."
+          "text": "Os momentos são necessariamente iguais, pois a área lateral exposta é a mesma."
         },
         {
           "key": "B",
-          "text": "O coeficiente de momento depende da forma, carregamento e ângulo do vento."
+          "text": "O coeficiente de momento de guinada varia com a geometria, a distribuição das superfícies, a condição de carregamento e o ângulo de incidência do vento."
         },
         {
           "key": "C",
-          "text": "Aproximadamente dobra."
+          "text": "A diferença só poderia ocorrer se a densidade do ar fosse diferente para cada navio no mesmo local."
         },
         {
           "key": "D",
-          "text": "A efetividade do bow thruster pode estar quase anulada nessa velocidade."
+          "text": "O momento de guinada independe do ângulo do vento quando a área lateral é igual."
         },
         {
           "key": "E",
-          "text": "167 tf."
+          "text": "O momento é determinado exclusivamente pela potência dos rebocadores disponíveis."
         }
       ],
       "correct_answer": "B",
-      "explanation": "O coeficiente aerodinâmico não é universal.",
+      "explanation": "O §5.2.2 diferencia os coeficientes de força e de momento do vento: mesmo com áreas laterais iguais, formas e superestruturas distintas podem produzir coeficientes e momentos de guinada diferentes.",
       "active": true,
       "validation_status": "approved",
       "validation": {
@@ -1643,27 +1643,27 @@
       "options": [
         {
           "key": "A",
-          "text": "Área exposta e coeficientes aplicáveis à nova configuração."
+          "text": "Permanece constante, porque a velocidade da corrente não se alterou."
         },
         {
           "key": "B",
-          "text": "O coeficiente de momento depende da forma, carregamento e ângulo do vento."
+          "text": "Quadruplica, pois a força é proporcional ao quadrado do calado."
         },
         {
           "key": "C",
-          "text": "Aproximadamente dobra."
+          "text": "Aproximadamente dobra, desde que velocidade, comprimento, densidade e coeficiente de força permaneçam constantes."
         },
         {
           "key": "D",
-          "text": "A efetividade do bow thruster pode estar quase anulada nessa velocidade."
+          "text": "Reduz-se à metade, porque maior calado diminui a área submersa."
         },
         {
           "key": "E",
-          "text": "167 tf."
+          "text": "Aumenta oito vezes, pois a força é proporcional ao cubo do calado."
         }
       ],
       "correct_answer": "C",
-      "explanation": "O calado aparece linearmente na expressão de força.",
+      "explanation": "Em §5.2.3, a expressão FYc = 0,5 × CYc × ρ × V² × LBP × T é linear no calado T. Dobrar T dobra FYc somente sob a hipótese enunciada de manter os demais fatores constantes; na prática, a folga sob a quilha pode alterar CYc.",
       "active": true,
       "validation_status": "approved",
       "validation": {
@@ -1717,27 +1717,27 @@
       "options": [
         {
           "key": "A",
-          "text": "Área exposta e coeficientes aplicáveis à nova configuração."
+          "text": "A força transversal do bow thruster aumenta com o seguimento, dispensando o rebocador de proa."
         },
         {
           "key": "B",
-          "text": "O coeficiente de momento depende da forma, carregamento e ângulo do vento."
+          "text": "A potência nominal assegura força transversal constante, qualquer que seja a velocidade do navio."
         },
         {
           "key": "C",
-          "text": "Aproximadamente dobra."
+          "text": "A perda de eficiência ocorre apenas com seguimento a ré, não durante avanço."
         },
         {
           "key": "D",
-          "text": "A efetividade do bow thruster pode estar quase anulada nessa velocidade."
+          "text": "A quatro nós, a eficácia do bow thruster pode ficar quase nula; não se deve presumir que substitua o rebocador de proa."
         },
         {
           "key": "E",
-          "text": "167 tf."
+          "text": "A restrição é determinada apenas pelo comprimento do cabo do rebocador, sem relação com a velocidade."
         }
       ],
       "correct_answer": "D",
-      "explanation": "O seguimento reduz fortemente a eficácia do propulsor transversal.",
+      "explanation": "No §5.3.1, Hensen informa redução de eficácia de aproximadamente 50% a dois nós e quase total a quatro nós. Em passagem estreita com seguimento, o propulsor transversal não deve ser considerado substituto automático do rebocador de proa.",
       "active": true,
       "validation_status": "approved",
       "validation": {
@@ -1767,7 +1767,7 @@
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapter 5, §5.3.1, p. 143 (PDF p. 156)"
+        "locator": "Chapter 5, §5.3.1, p. 144 (PDF p. 157)"
       },
       "tags": [
         "hensen",
@@ -1791,27 +1791,27 @@
       "options": [
         {
           "key": "A",
-          "text": "Área exposta e coeficientes aplicáveis à nova configuração."
+          "text": "125 tf, considerando apenas vento e ondas."
         },
         {
           "key": "B",
-          "text": "O coeficiente de momento depende da forma, carregamento e ângulo do vento."
+          "text": "159 tf, considerando apenas vento e corrente."
         },
         {
           "key": "C",
-          "text": "Aproximadamente dobra."
+          "text": "50 tf, considerando apenas corrente e ondas."
         },
         {
           "key": "D",
-          "text": "A efetividade do bow thruster pode estar quase anulada nessa velocidade."
+          "text": "175 tf, contabilizando a parcela de ondas duas vezes."
         },
         {
           "key": "E",
-          "text": "167 tf."
+          "text": "167 tf, pela soma das parcelas de vento, corrente e ondas."
         }
       ],
       "correct_answer": "E",
-      "explanation": "As três parcelas do exemplo somam 167 tf.",
+      "explanation": "No exemplo de §5.3.2, as parcelas compensatórias são 117 tf de vento, 42 tf de corrente e 8 tf de ondas; sua soma é 167 tf. Esse valor não dispensa avaliação de distribuição de esforços e condições locais.",
       "active": true,
       "validation_status": "approved",
       "validation": {
