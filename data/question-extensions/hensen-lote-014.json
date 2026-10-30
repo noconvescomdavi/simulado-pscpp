@@ -672,36 +672,36 @@
       "subject": "II — Arte Naval",
       "module": "Types of harbour tug",
       "topic_code": "ANV.HENSEN.C02.L014.05",
-      "topic": "Fluxo negativo no propulsor",
+      "topic": "Prova de tração com um propulsor indisponível",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Um rebocador freia navio em seguimento com jato contrário ao fluxo incidente. Qual consequência é possível?",
+      "question": "Na avaliação de um rebocador azimutal de duas unidades, o contratante quer conhecer também o desempenho quando apenas uma delas está em operação. Qual ensaio complementar é citado por Hensen?",
       "options": [
         {
           "key": "A",
-          "text": "Empuxo maior, mas também torque elevado e vibração por escoamento instável."
+          "text": "Prova de tração com apenas um propulsor em funcionamento, além das provas usuais nas potências especificadas."
         },
         {
           "key": "B",
-          "text": "Torque obrigatoriamente nulo."
+          "text": "Ensaio apenas de velocidade livre, sem medir força no cabo."
         },
         {
           "key": "C",
-          "text": "Empuxo independente da velocidade."
+          "text": "Prova estática sem célula de carga."
         },
         {
           "key": "D",
-          "text": "Ausência de cargas dinâmicas."
+          "text": "Medição da tração pela potência nominal dividida pelo calado."
         },
         {
           "key": "E",
-          "text": "Comportamento idêntico ao de água parada."
+          "text": "Ensaio com ambas as hélices desligadas e cabo sem tensão."
         }
       ],
       "correct_answer": "A",
-      "explanation": "O §2.26 associa fluxo negativo a aumento de empuxo e de torque, com possível vibração.",
+      "explanation": "O §2.26, p. 78, informa que provas de bollard pull podem incluir condição de sobrecarga e ensaio com somente um propulsor em funcionamento.",
       "active": true,
       "validation_status": "pending_editorial_review",
       "validation": {
@@ -1708,36 +1708,36 @@
       "subject": "II — Arte Naval",
       "module": "Bollard pull required",
       "topic_code": "ANV.HENSEN.C05.L014.04",
-      "topic": "Margem e cabo curto",
+      "topic": "Decomposição do esforço de rebocador que acompanha o seguimento",
       "difficulty": "Difícil",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 4,
-      "question": "O cálculo de forças já inclui reserva de 20%, mas os rebocadores puxarão com cabo curto e jato no costado. Qual ajuste é necessário?",
+      "question": "Um rebocador precisa acompanhar o seguimento do navio enquanto aplica força oblíqua para deslocá-lo lateralmente. Por que não é correto usar toda a tração nominal como força transversal disponível?",
       "options": [
         {
           "key": "A",
-          "text": "Eliminar a margem."
+          "text": "Porque a tração nominal é sempre igual à velocidade do navio."
         },
         {
           "key": "B",
-          "text": "Somar o jato à tração útil."
+          "text": "Porque a força transversal depende apenas do peso do cabo."
         },
         {
           "key": "C",
-          "text": "Avaliar separadamente a perda de eficiência da puxada, que pode exceder a margem geral."
+          "text": "Parte do esforço propulsivo é consumida na componente longitudinal para acompanhar o navio, reduzindo a componente transversal útil."
         },
         {
           "key": "D",
-          "text": "Usar só velocidade sobre o fundo."
+          "text": "Porque a tração se anula automaticamente quando há seguimento."
         },
         {
           "key": "E",
-          "text": "Ignorar a interferência do casco."
+          "text": "Porque a corrente elimina qualquer necessidade de rebocador."
         }
       ],
       "correct_answer": "C",
-      "explanation": "O §5.2 alerta que a margem de 20% pode ser insuficiente para puxar junto ao costado.",
+      "explanation": "O §5.2, p. 136, esclarece que, com o navio em movimento, o rebocador utiliza parte da potência na direção do seguimento, em detrimento da força lateral.",
       "active": true,
       "validation_status": "pending_editorial_review",
       "validation": {
@@ -2078,36 +2078,36 @@
       "subject": "II — Arte Naval",
       "module": "Interaction and tug safety",
       "topic_code": "ANV.HENSEN.C06.L014.04",
-      "topic": "Troca de alheta na popa",
+      "topic": "Segurança do aparelho de reboque em nevoeiro",
       "difficulty": "Difícil",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 4,
-      "question": "Um convencional conectado à popa precisa cruzar de uma alheta à outra perto do hélice do navio. Quando realizar?",
+      "question": "Em nevoeiro denso, um rebocador trabalha por cabo sob tensão e precisa estar preparado para liberar a linha rapidamente em emergência. Qual arranjo é preferido por Hensen nessa condição?",
       "options": [
         {
           "key": "A",
-          "text": "Com seguimento elevado."
+          "text": "Cabo permanentemente amarrado em cabeço sem possibilidade de liberação."
         },
         {
           "key": "B",
-          "text": "Sem informar a ponte."
+          "text": "Gancho sem teste de liberação e acesso apenas pelo convés."
         },
         {
           "key": "C",
-          "text": "Com máquina avante obrigatória."
+          "text": "Retirar o guincho e depender de corte manual sob carga."
         },
         {
           "key": "D",
-          "text": "Com navio praticamente parado na água e máquina rigorosamente coordenada."
+          "text": "Guincho de reboque com liberação rápida confiável, acionável do passadiço e também junto ao guincho."
         },
         {
           "key": "E",
-          "text": "Com máxima tração transversal."
+          "text": "Aumentar a tensão para impedir qualquer mudança de rumo."
         }
       ],
       "correct_answer": "D",
-      "explanation": "O §6.3.10 recomenda navio quase parado por risco de girting e de interação com hélice.",
+      "explanation": "O §6.3.12, p. 164, desaconselha cabeços em reboque por cabo no nevoeiro devido à dificuldade de liberar sob tensão, preferindo guincho com liberação confiável do passadiço e do convés.",
       "active": true,
       "validation_status": "pending_editorial_review",
       "validation": {
@@ -2137,7 +2137,7 @@
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapter 6, §6.3.10, p. 163 (PDF p. 176)"
+        "locator": "Chapter 6, §6.3.12, p. 164 (PDF p. 177)"
       },
       "tags": [
         "hensen",
