@@ -7,7 +7,8 @@
 1. Criação do `data/question-extensions/hensen-lote-008.json` — 40 questões inéditas propostas, commit `90aa5ba32142af1c2be5b862b28589ba5d1dbfc9`.
 2. Integração em `lib/question-banks-source.js` — commit `019ff1a89db8c491a9658d2874892d2ade505841`.
 3. Substituição de questões sobrepostas e correções de páginas — commits `57c4bfb097be347ee1d888ca3f4aa84a6c3c731f`, `d120d4f277fea3122661d6d046676657e51c17bf`, `b207834d175e67ffeb0a0dd4162794c1c28d5b28`.
-4. [Relatório individual de 40 IDs](https://github.com/noconvescomdavi/simulado-pscpp/blob/audit/hensen-lote-001-20261029/reports/hensen/2026-10-29-lote-008-auditoria.md) — commit `24447713910a9576cb929a1a6042acc40eee7979`.
+4. Correção adicional de duplicidade temática `ANV-HENSEN-C01-L008-03` (L002): commit `9277e22913fe3c8055179127ed9339138f973cd0`, relatório atualizado no commit `7ec6cf7daeb006fdac5aa41d14d8d16fa56df76a`.
+5. [Relatório individual de 40 IDs](https://github.com/noconvescomdavi/simulado-pscpp/blob/audit/hensen-lote-001-20261029/reports/hensen/2026-10-29-lote-008-auditoria.md) — commit `24447713910a9576cb929a1a6042acc40eee7979`.
 
 ## Inventário e verificações
 
@@ -35,7 +36,7 @@ No HEAD documental `24447713910a9576cb929a1a6042acc40eee7979`, a consulta de wor
 ## Pendências e próxima execução
 
 - Aguardar e verificar todos os gates **no HEAD final**, inclusive Vercel Preview, sem desativar verificações.
-- Revisar originalidade semântica do Lote 008, em especial `ANV-HENSEN-C01-L008-03`, `ANV-HENSEN-C07-L008-05` e outras aproximações registradas no relatório.
+- Revisar originalidade semântica do Lote 008, em especial `ANV-HENSEN-C07-L008-05` e outras aproximações registradas no relatório.
 - Conferir visualmente as páginas bibliográficas e sanar eventuais divergências.
 - Resolver os problemas de distratores repetidos no Lote 007 e homologar as 51 questões históricas ainda ativas.
 - Preservar os 119 históricos em quarentena e os lotes 001–008.
