@@ -598,12 +598,12 @@
       "subject": "II — Arte Naval",
       "module": "Types of harbour tug",
       "topic_code": "ANV.HENSEN.C02.L007.04",
-      "topic": "Condições de gelo",
+      "topic": "Resistência do conjunto propulsivo no gelo",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Dois portos têm gelo de igual espessura, mas um apresenta cristas consolidadas e deriva. Por que a seleção dos rebocadores pode diferir?",
+      "question": "Dois rebocadores têm potência nominal semelhante para trabalhar em gelo, mas um não tolera operação prolongada com carga elevada. Qual requisito deve ser priorizado?",
       "options": [
         {
           "key": "A",
@@ -619,7 +619,7 @@
         },
         {
           "key": "D",
-          "text": "Tipo, cobertura, cristas e pressão de deriva também condicionam a operação."
+          "text": "Curvas de torque e rotação e capacidade de operar continuamente em potência alta sob solicitações do gelo."
         },
         {
           "key": "E",
@@ -627,7 +627,7 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "A espessura isolada não caracteriza o ambiente de gelo.",
+      "explanation": "Hensen inclui torque/rpm e tolerância a operação prolongada em alta potência na seleção de rebocadores de gelo.",
       "active": true,
       "validation_status": "approved",
       "validation": {
@@ -1264,12 +1264,12 @@
       "subject": "II — Arte Naval",
       "module": "Tug capabilities and limitations",
       "topic_code": "ANV.HENSEN.C04.L007.03",
-      "topic": "Centro de pressão",
+      "topic": "Propulsão tratora e esforço de governo no cabo",
       "difficulty": "Difícil",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 4,
-      "question": "Que efeito pode ter reduzir a distância entre ponto de reboque e centro de pressão lateral?",
+      "question": "Um trator com propulsão a vante opera por cabo em velocidade e precisa compensar o momento hidrodinâmico lateral. Que efeito isso pode ter sobre a tração disponível?",
       "options": [
         {
           "key": "A",
@@ -1281,7 +1281,7 @@
         },
         {
           "key": "C",
-          "text": "Reduzir o momento a compensar pelo governo e liberar potência para tração."
+          "text": "Parte do empuxo lateral é consumida pelo governo, reduzindo a componente disponível no cabo."
         },
         {
           "key": "D",
@@ -1293,7 +1293,7 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "O braço de momento condiciona o esforço de governo.",
+      "explanation": "Hensen descreve que, com propulsão a vante, o esforço de governo em direção oposta pode diminuir a força transmitida ao cabo.",
       "active": true,
       "validation_status": "approved",
       "validation": {
@@ -1323,7 +1323,7 @@
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapter 4, §4.2.2, p. 102 (PDF p. 115)"
+        "locator": "Chapter 4, §4.2.2, p. 103 (PDF p. 116)"
       },
       "tags": [
         "hensen",
@@ -2078,12 +2078,12 @@
       "subject": "II — Arte Naval",
       "module": "Interaction and tug safety",
       "topic_code": "ANV.HENSEN.C06.L007.04",
-      "topic": "Velocidade relativa",
+      "topic": "Escoamento nos propulsores ASD e trator",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Um navio parado recebe corrente intensa ao longo do casco. Por que ainda pode haver interação com rebocador próximo?",
+      "question": "Ao comparar ASD navegando avante e trator de propulsores a vante, qual explicação Hensen dá para pequena vantagem de desempenho propulsivo do ASD nessa condição?",
       "options": [
         {
           "key": "A",
@@ -2099,7 +2099,7 @@
         },
         {
           "key": "D",
-          "text": "O escoamento relativo ao casco produz forças mesmo sem movimento sobre o fundo."
+          "text": "A velocidade local do escoamento junto aos propulsores a ré pode ser menor que a encontrada sob o casco do trator."
         },
         {
           "key": "E",
@@ -2107,7 +2107,7 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "A velocidade relativa é o parâmetro físico relevante.",
+      "explanation": "A diferença de velocidade da água que chega aos propulsores modifica o desempenho relativo.",
       "active": true,
       "validation_status": "approved",
       "validation": {
@@ -2137,7 +2137,7 @@
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapter 6, §6.2.3, p. 150 (PDF p. 163)"
+        "locator": "Chapter 6, §6.2.1, p. 149 (PDF p. 162)"
       },
       "tags": [
         "hensen",
@@ -2374,12 +2374,12 @@
       "subject": "II — Arte Naval",
       "module": "Towing equipment",
       "topic_code": "ANV.HENSEN.C07.L007.03",
-      "topic": "Cargas dinâmicas",
+      "topic": "Variedade de construções de cabos sintéticos",
       "difficulty": "Difícil",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 4,
-      "question": "Uma empresa escolhe cabo apenas pela resistência à ruptura. Que requisito essencial falta?",
+      "question": "Uma equipe pretende adotar um único valor genérico de propriedades para todos os cabos sintéticos de reboque. Qual ressalva Hensen faz?",
       "options": [
         {
           "key": "A",
@@ -2391,7 +2391,7 @@
         },
         {
           "key": "C",
-          "text": "Capacidade de suportar cargas dinâmicas de movimentos relativos."
+          "text": "Há fibras, misturas e construções distintas; as propriedades específicas devem ser obtidas junto ao fabricante."
         },
         {
           "key": "D",
@@ -2403,7 +2403,7 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "O cabo deve transmitir carga e absorver transientes.",
+      "explanation": "A obra enfatiza a diversidade de fibras e construções e recomenda consultar dados do fabricante.",
       "active": true,
       "validation_status": "approved",
       "validation": {
@@ -2433,7 +2433,7 @@
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapter 7, §7.5.1, p. 188 (PDF p. 201)"
+        "locator": "Chapter 7, §7.5.2, p. 188 (PDF p. 201)"
       },
       "tags": [
         "hensen",
