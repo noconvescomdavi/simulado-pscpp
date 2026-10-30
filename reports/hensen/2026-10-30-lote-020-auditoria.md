@@ -343,3 +343,25 @@ Fonte primária: Henk Hensen, *Tug Use in Port*, 4ª ed. (2021), Google Drive `1
 - `20557d919cbf66a8c05e781db6796e48ec4b7190`: reescrita adicional de C03-L020-01.
 - Nenhuma alteração em lotes 001–019, históricos (119 em quarentena e 51 ativos), validadores ou workflows.
 - Não realizar merge ou deploy sem aprovação de todos os gates e homologação editorial.
+
+## Revisão independente de duplicidade — C07-L020-01 (checkpoint 021)
+
+**Evidência de equivalência semântica:** `ANV-HENSEN-C07-L020-01` reproduzia a competência de `ANV-B010-16` (histórico ainda `active=false`, `validation_status=quarantined`): gob rope esquecida/curta após saída do berço impede a guinada do rebocador e provoca girting. A equivalência foi confirmada comparando enunciados, respostas e explicações, não apenas similaridade lexical.
+
+**Fonte primária diretamente conferida:** Hensen, *Tug Use in Port*, 4ª edição, capítulo 7, §7.2.1, p. impressa 178 / PDF p. 191. O texto distingue dois riscos: (i) gob rope remanescente de comprimento impróprio, capaz de impedir a guinada e causar girting; (ii) manilha de diâmetro insuficiente para o cabo de aço ou fibra, capaz de induzir fadiga e ruptura do cabo. O segundo conceito fundamenta a substituição.
+
+| Campo | Antes | Depois |
+|---|---|---|
+| ID | `ANV-HENSEN-C07-L020-01` | **mesmo ID** |
+| Tópico | Gob rope remanescente após saída do berço | Manilha do gob rope — fadiga do cabo principal |
+| Enunciado | O navio ganha seguimento após ser puxado do cais, mas o gob rope continua conectado com comprimento inadequado. Qual risco surge? | Em um sistema gob rope de rebocador convencional, a manilha deslizante tem diâmetro insuficiente para o cabo principal de aço ou fibra que passa por ela. Mesmo sem falha imediata, qual risco de integridade Hensen destaca? |
+| A | A linha aumenta automaticamente a estabilidade. | Aumento progressivo da resistência à ruptura por compactação das pernas do cabo. |
+| B (correta) | A linha pode ficar tesada, impedir a guinada do rebocador e provocar girting. | Fadiga localizada do cabo principal, com possibilidade de ruptura após solicitações repetidas. |
+| C | Ela afeta só a velocidade do guincho. | Deslocamento automático do ponto de reboque para a proa, sem desgaste do cabo. |
+| D | A conexão elimina forças transversais no cabo. | Eliminação dos esforços de flexão do cabo devido à pequena abertura da manilha. |
+| E | O risco existe apenas com o navio parado. | Redução permanente da carga no cabo principal, independentemente da tração aplicada. |
+| Explicação | Hensen recomenda desconectar o gob rope quando não necessário. Se ficar curto ou tesado, pode impedir que o rebocador se alinhe ao movimento do navio. | Hensen alerta que a manilha do gob rope com diâmetro insuficiente para o cabo principal, de aço ou fibra, pode provocar fadiga e, por fim, ruptura do cabo. É uma falha de compatibilidade geométrica e integridade do conjunto, distinta do requisito de passagem livre do cabo em uma liberação de emergência. Fonte: capítulo 7, §7.2.1, p. 178 (PDF p. 191). |
+
+**Preservados:** gabarito B, classificação `arte-naval/hensen-tug`, capítulo 7, referência, `active=true` e `validation_status=pending_editorial_review`. O histórico `ANV-B010-16` permanece em quarentena, sem reativação. O lote mantém 40 IDs únicos, cinco alternativas por questão e distribuição A=B=C=D=E=8. A verificação não homologa automaticamente o restante do lote nem a revisão semântica integral.
+
+Commits de correção: [conteúdo](https://github.com/noconvescomdavi/simulado-pscpp/commit/03c8db108b6e6f19568d64a3703f633280e847e5) e [tópico](https://github.com/noconvescomdavi/simulado-pscpp/commit/b7968eea2383174e3d25a0db931f86a239b9a910).
