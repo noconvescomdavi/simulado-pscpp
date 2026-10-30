@@ -1,4 +1,4 @@
-# HENSEN — Lote 016 — auditoria individual, revisão 02
+# HENSEN — Lote 016 — auditoria individual, revisão 03
 
 Data: 2026-10-30. Branch `audit/hensen-lote-001-20261029`. PR #173.
 
@@ -241,11 +241,11 @@ Fonte: Henk Hensen, *Tug Use in Port*, 4ª edição (2021), PDF no Google Drive 
 
 ### ANV-HENSEN-C06-L016-01
 
-- **Alteração:** questão nova sobre Limitações do modelo de jato contra o casco; reescrita na revisão 02 por proximidade conceitual.
-- **Gabarito:** A; cinco alternativas textualmente distintas.
-- **Referência:** Chapter 6, §6.2.2, p. 150 (PDF p. 163); âncora textual `effects of towline length, shallow water and angle`.
-- **Justificativa técnica:** Hensen ressalta que alguns modelos aproximados de interação jato-casco não incorporam comprimento do cabo, águas rasas e ângulo do jato.
-- **Triagem de originalidade:** maior proximidade lexical com `ANV-HENSEN-C04-L012-02` (Desvio do jato em puxão junto ao casco), Dice 0.343; comparação semântica independente pendente.
+- **Alteração:** questão nova sobre Absorção dinâmica do cabo e banda do rebocador; reescrita na revisão 03 para corrigir a atribuição bibliográfica.
+- **Gabarito:** A; cinco alternativas distintas.
+- **Referência:** Chapter 6, §6.2.1, p. 149 (PDF p. 162); âncora textual `tug list and consequently tug performance are influenced`.
+- **Justificativa técnica:** Hensen relaciona características do cabo, especialmente absorção de cargas dinâmicas, à banda e ao desempenho do rebocador.
+- **Triagem de originalidade:** sem colisão literal com os 600 enunciados anteriores; revisão semântica independente pendente.
 - **Estado:** `pending_editorial_review`.
 
 ### ANV-HENSEN-C06-L016-02
@@ -279,7 +279,7 @@ Fonte: Henk Hensen, *Tug Use in Port*, 4ª edição (2021), PDF no Google Drive 
 
 - **Alteração:** questão nova sobre Entrega controlada do cabo ao rebocador; reescrita na revisão 02 por proximidade conceitual.
 - **Gabarito:** E; cinco alternativas textualmente distintas.
-- **Referência:** Chapter 6, §6.4, p. 174 (PDF p. 187); âncora textual `lower it gently on to the tug’s deck`.
+- **Referência:** Chapter 6, §6.4, p. 175 (PDF p. 188); âncora textual `lower it gently on to the tug’s deck`.
 - **Justificativa técnica:** O resumo de segurança recomenda que a tripulação do navio baixe o cabo controladamente até o convés do rebocador.
 - **Triagem de originalidade:** maior proximidade lexical com `ANV-HENSEN-C06-L013-03` (Recolhimento do cabo após liberar o rebocador e emprego de Norman pins), Dice 0.389; comparação semântica independente pendente.
 - **Estado:** `pending_editorial_review`.
@@ -391,3 +391,9 @@ Fonte: Henk Hensen, *Tug Use in Port*, 4ª edição (2021), PDF no Google Drive 
 - Comparação com 170 históricos, incluindo 51 ativos pendentes de homologação; preservadas 119 questões em quarentena.
 - Execução de testes locais e verificação de CI, PSCPP Integral Bank Audit, Full Question Bank Audit, Audit Main Question Banks, Validate PIANC 121 CGE Quarantine e Vercel Preview no SHA final.
 - Proibido merge/deploy enquanto gates e homologação editorial estiverem pendentes.
+
+## Revisão 03 — rastreabilidade bibliográfica
+
+- `ANV-HENSEN-C06-L016-01`: substituição por conceito de interação cabo–rebocador em §6.2.1, p. 149; removida referência indevida a texto de outro capítulo.
+- `ANV-HENSEN-C06-L016-05`: paginação corrigida para p. 175, §6.4.
+- Banco: commit `13c52196dbd188f67e2d7c221afb6d99364e275a`; gabaritos preservados, sem alterações nos lotes anteriores.
