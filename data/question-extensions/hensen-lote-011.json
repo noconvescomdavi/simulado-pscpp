@@ -80,36 +80,36 @@
       "subject": "II — Arte Naval",
       "module": "Tug design factors",
       "topic_code": "ANV.HENSEN.C01.L011.02",
-      "topic": "Mudança de requisitos ao longo de estuário",
+      "topic": "Envelope operacional de um único rebocador no acesso",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Um navio percorre um estuário com trechos sujeitos a maré, canal estreito e acesso final abrigado. Qual decisão de planejamento melhor corresponde à variabilidade do percurso?",
+      "question": "Um porto com canal estuarino, passagem por eclusa e acesso marítimo exposto deseja operar um único tipo de rebocador em toda a rota. Qual evidência deve fundamentar essa decisão, em vez de apenas comparar bollard pull nominal?",
       "options": [
         {
           "key": "A",
-          "text": "Avaliar as exigências de assistência por trecho, admitindo rebocadores de características diferentes ao longo da rota."
+          "text": "Demonstrar que o mesmo tipo atende, em cada trecho, aos limites de calado, marulho, corrente, espaço e manobrabilidade."
         },
         {
           "key": "B",
-          "text": "Fixar a mesma configuração de assistência exclusivamente pela condição do berço."
+          "text": "Exigir apenas que a tração estática exceda a maior força de vento estimada no berço."
         },
         {
           "key": "C",
-          "text": "Dimensionar os rebocadores apenas pelo comprimento total da travessia."
+          "text": "Verificar somente a velocidade máxima em mar aberto, sem avaliar a eclusa."
         },
         {
           "key": "D",
-          "text": "Desconsiderar a influência da maré porque o navio terminará a manobra em águas abrigadas."
+          "text": "Adotar a profundidade média do canal como único critério de aptidão."
         },
         {
           "key": "E",
-          "text": "Substituir a avaliação de cada trecho por um único valor de tração estática."
+          "text": "Assumir que uma homologação em águas abrigadas comprova desempenho em todos os trechos."
         }
       ],
       "correct_answer": "A",
-      "explanation": "O §1.2.2 explica que as condições podem variar do acesso ao berço e que alguns portos empregam tipos distintos de rebocador em partes diferentes da rota.",
+      "explanation": "O §1.2.2 exige avaliar condições que mudam do acesso ao berço; a escolha de um único tipo de rebocador precisa demonstrar compatibilidade com todo o envelope operacional, inclusive limitações locais.",
       "active": true,
       "validation_status": "pending_editorial_review",
       "validation": {
@@ -154,36 +154,36 @@
       "subject": "II — Arte Naval",
       "module": "Tug design factors",
       "topic_code": "ANV.HENSEN.C01.L011.03",
-      "topic": "Superestrutura como critério de compatibilidade",
+      "topic": "Atendimento naval como requisito específico da frota",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Um porto recebe navios ro-ro e petroleiros com geometrias externas distintas. Ao especificar um rebocador comum à frota, qual aspecto deve ser avaliado além da tração e do tipo de propulsão?",
+      "question": "Um porto comercial passa a receber submarinos e porta-aviões, além de navios mercantes. Qual conclusão é coerente com os exemplos apresentados por Hensen ao encerrar o capítulo de seleção de rebocadores?",
       "options": [
         {
           "key": "A",
-          "text": "Somente a capacidade de armazenamento de combustível do rebocador."
+          "text": "O mesmo método de contato no casco é necessariamente adequado a todos os tipos de navio."
         },
         {
           "key": "B",
-          "text": "A velocidade econômica do rebocador em viagem oceânica, sem considerar contato com o casco."
+          "text": "O porte de um porta-aviões dispensa qualquer estudo de rebocadores."
         },
         {
           "key": "C",
-          "text": "A cor da pintura do costado, como parâmetro de afastamento operacional."
+          "text": "A pequena borda-livre visível de um submarino garante ausência de restrições ao empurrão."
         },
         {
           "key": "D",
-          "text": "A adoção de um único ponto de empurrão para todas as classes de navio."
+          "text": "A seleção de rebocadores para navios navais depende apenas da potência instalada do navio."
         },
         {
           "key": "E",
-          "text": "A compatibilidade da superestrutura e das defensas do rebocador com os perfis dos navios assistidos."
+          "text": "A assistência naval pode exigir requisitos específicos de rebocadores e métodos, que não devem ser presumidos idênticos aos de navios mercantes."
         }
       ],
       "correct_answer": "E",
-      "explanation": "Hensen inclui potência, equipamento de reboque, defensas, manobrabilidade e superestrutura entre os requisitos que variam conforme os tipos de navio.",
+      "explanation": "As figuras e a conclusão do capítulo 1 apresentam submarinos e porta-aviões como exemplos de navios cuja assistência pode impor demandas específicas aos rebocadores.",
       "active": true,
       "validation_status": "pending_editorial_review",
       "validation": {
@@ -213,7 +213,7 @@
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapter 1, §1.2.3, p. 6 (PDF p. 19)"
+        "locator": "Chapter 1, §1.5, p. 8 (PDF p. 21)"
       },
       "tags": [
         "hensen",
@@ -228,36 +228,36 @@
       "subject": "II — Arte Naval",
       "module": "Tug design factors",
       "topic_code": "ANV.HENSEN.C01.L011.04",
-      "topic": "Diferença entre arranjos de propulsores",
+      "topic": "Gestão da transição para novo método de assistência",
       "difficulty": "Difícil",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 4,
-      "question": "Um relatório descreve um rebocador com uma unidade propulsora à vante e outra à ré e o classifica automaticamente como Rotortug. Qual é a correção técnica?",
+      "question": "Uma autoridade portuária decide substituir um método tradicional por outro que exige manobras e comandos muito diferentes. Qual condição de implantação deve acompanhar a troca de frota?",
       "options": [
         {
           "key": "A",
-          "text": "A designação Rotortug depende apenas de possuir dois propulsores, sem importar sua localização."
+          "text": "Introduzir a mudança imediatamente após a entrega do rebocador, sem adaptação dos operadores."
         },
         {
           "key": "B",
-          "text": "O arranjo com uma unidade em cada extremidade é distinto do Rotortug descrito com duas unidades azimutais à vante e uma à ré."
+          "text": "Planejamento de transição com instrução e treinamento de práticos e comandantes de rebocadores antes da operação regular."
         },
         {
           "key": "C",
-          "text": "O arranjo com uma unidade em cada extremidade identifica obrigatoriamente um rebocador convencional monohélice."
+          "text": "Preservar todos os comandos antigos mesmo que produzam movimentos diferentes no novo sistema."
         },
         {
           "key": "D",
-          "text": "Um Rotortug possui duas unidades fixas à ré e nenhum propulsor azimutal."
+          "text": "Substituir o treinamento por uma comparação entre potência nominal dos rebocadores."
         },
         {
           "key": "E",
-          "text": "O número e a posição das unidades propulsoras não são relevantes para distinguir essas categorias."
+          "text": "Dispensar avaliação de riscos porque o método novo é tecnologicamente mais moderno."
         }
       ],
       "correct_answer": "B",
-      "explanation": "O §1.3 diferencia explicitamente Rotortugs de três unidades azimutais dos tipos com uma unidade propulsora em cada extremidade.",
+      "explanation": "O §1.2.6 destaca a experiência acumulada com métodos locais e alerta que mudanças de tipo ou método exigem instrução, treinamento e transição planejada.",
       "active": true,
       "validation_status": "pending_editorial_review",
       "validation": {
@@ -287,7 +287,7 @@
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapter 1, §1.3, p. 7 (PDF p. 20)"
+        "locator": "Chapter 1, §1.2.6, p. 6 (PDF p. 19)"
       },
       "tags": [
         "hensen",
@@ -1708,36 +1708,36 @@
       "subject": "II — Arte Naval",
       "module": "Bollard pull required",
       "topic_code": "ANV.HENSEN.C05.L011.04",
-      "topic": "Correção aproximada para puxão com cabo curto",
+      "topic": "Extrapolação de gráfico de vento por área",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Uma estimativa por gráficos de vento e corrente foi feita para rebocadores puxando em linha. O plano final prevê puxão ao costado com cabos curtos. Qual ajuste aproximado Hensen recomenda?",
+      "question": "Um gráfico de tração contra vento de través termina em 10.000 m² de área lateral, mas um porta-contêineres apresenta 12.000 m². Como Hensen sugere utilizar o gráfico em uma estimativa preliminar?",
       "options": [
         {
           "key": "A",
-          "text": "Elevar a tração estimada em cerca de 20% para contemplar a menor efetividade do puxão com cabo curto."
+          "text": "Somar a contribuição calculada para 10.000 m² à contribuição correspondente aos 2.000 m² adicionais, mantidas as demais condições."
         },
         {
           "key": "B",
-          "text": "Reduzir a tração estimada em 20% porque o jato aumenta a força útil."
+          "text": "Aplicar o resultado de 10.000 m² sem ajuste, porque o gráfico atingiu seu limite."
         },
         {
           "key": "C",
-          "text": "Manter a estimativa sem qualquer ajuste, pois o método não altera a efetividade."
+          "text": "Dobrar o resultado de 10.000 m² para qualquer área superior ao limite."
         },
         {
           "key": "D",
-          "text": "Aplicar correção de 100% independentemente da geometria e das condições."
+          "text": "Reduzir o resultado na proporção de 2.000/10.000, pois o navio é maior."
         },
         {
           "key": "E",
-          "text": "Desconsiderar o esforço transversal e calcular somente o de frenagem."
+          "text": "Abandonar qualquer estimativa de vento porque o gráfico não inclui a área exata."
         }
       ],
       "correct_answer": "A",
-      "explanation": "O resumo do §5.3.6 recomenda incremento aproximado de 20% ao resultado dos gráficos para rebocadores puxando junto ao costado com cabos curtos.",
+      "explanation": "Na nota do §5.2.2, Hensen explica a extrapolação para 12.000 m² pela soma das parcelas de 10.000 m² e 2.000 m², dada a proporcionalidade com a área.",
       "active": true,
       "validation_status": "pending_editorial_review",
       "validation": {
@@ -1767,7 +1767,7 @@
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapter 5, §5.3.6, p. 147 (PDF p. 160)"
+        "locator": "Chapter 5, §5.2.2, p. 137 (PDF p. 150)"
       },
       "tags": [
         "hensen",
@@ -2152,36 +2152,36 @@
       "subject": "II — Arte Naval",
       "module": "Interaction and tug safety",
       "topic_code": "ANV.HENSEN.C06.L011.05",
-      "topic": "Fechamento estanque durante reboque",
+      "topic": "Cabeços reduzidos por guinchos de tensão em navios",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Durante uma faina de reboque sob tensão, parte da tripulação sugere manter aberta a porta de acesso a um compartimento abaixo do convés. Qual medida é recomendada?",
+      "question": "Um navio novo possui poucos cabeços na proa porque utiliza guinchos de tensão nas amarrações. Qual consequência para a assistência por rebocadores Hensen alerta que deve ser avaliada?",
       "options": [
         {
           "key": "A",
-          "text": "Manter fechadas as portas estanques de aberturas expostas, reduzindo o risco de alagamento se o rebocador adernar."
+          "text": "Os pontos restantes podem estar mal posicionados para cabos de reboque, dificultando a fixação simultânea de rebocadores e atrasando a manobra."
         },
         {
           "key": "B",
-          "text": "Manter portas abertas para permitir a saída rápida de água que entre pelo convés."
+          "text": "A redução de cabeços melhora necessariamente o ângulo de aplicação de todas as forças."
         },
         {
           "key": "C",
-          "text": "Fechar apenas escotilhas acima da casa do leme, sem considerar acessos inferiores."
+          "text": "Os guinchos de tensão substituem automaticamente os pontos de amarração de rebocadores."
         },
         {
           "key": "D",
-          "text": "Abrir as portas para compensar o momento de adernamento provocado pelo cabo."
+          "text": "A quantidade e a localização dos cabeços deixam de importar se o rebocador possui guincho próprio."
         },
         {
           "key": "E",
-          "text": "Considerar o fechamento desnecessário quando o cabo é sintético."
+          "text": "O uso de guinchos de tensão impede qualquer necessidade futura de reboque de emergência."
         }
       ],
       "correct_answer": "A",
-      "explanation": "Hensen recomenda manter fechadas durante reboque as portas estanques que protegem acessos a espaços abaixo do convés, devido ao risco de entrada de água sob banda.",
+      "explanation": "O §6.3.15 descreve que navios com guinchos de tensão podem ter menos cabeços, nem sempre bem posicionados para cabos de rebocadores, prejudicando fixação e tempo de resposta.",
       "active": true,
       "validation_status": "pending_editorial_review",
       "validation": {
@@ -2211,7 +2211,7 @@
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapter 6, §6.5, p. 175 (PDF p. 188)"
+        "locator": "Chapter 6, §6.3.15, p. 173 (PDF p. 186)"
       },
       "tags": [
         "hensen",
