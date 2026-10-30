@@ -27,6 +27,7 @@
 | `ANV-HENSEN-C02-L008-05` | Ventilação em terminal LNG | **E** | Chapter 2, §2.22, p. 64 (PDF p. 77) | A obra cita detecção nas tomadas de ar e dampers remotos. |
 | `ANV-HENSEN-C03-L008-01` | Diferenças regionais | **A** | Chapter 3, §3.2.1, p. 82 (PDF p. 95) | São tendências históricas, não regras universais. |
 | `ANV-HENSEN-C01-L008-03` | Substituição de tema repetido sobre diversidade da frota (L002) por cenário de crescimento dos navios em infraestrutura portuária antiga, com novo localizador §1.2.1, p. 4. |
+| `ANV-HENSEN-C01-L008-03` | Correção do posicionamento das alternativas após reescrita: resposta técnica foi reposicionada na letra C, preservando a distribuição equilibrada dos gabaritos; commit `a8e77259ccc364c76735139b93561dd8e05eb7b4`. |
 | `ANV-HENSEN-C03-L008-02` | Braço de giro no push-pull | **B** | Chapter 3, §3.2.2, p. 86 (PDF p. 99) | Hensen registra como desvantagem do push-pull o braço de giro relativamente curto, dado pela separação entre rebocadores ao costado. |
 | `ANV-HENSEN-C03-L008-03` | Vibração na frenagem prolongada | **C** | Chapter 3, §3.2.2, p. 87 (PDF p. 100) | A seção descreve que o controle prolongado da velocidade pelo rebocador de popa pode produzir vibrações muito intensas a bordo. |
 | `ANV-HENSEN-C03-L008-04` | Obstrução por gelo | **D** | Chapter 3, §3.3.5, p. 89 (PDF p. 102) | Vibração e instrumentos podem sinalizar bloqueio por gelo. |
