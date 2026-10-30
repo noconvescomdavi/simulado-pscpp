@@ -1,4 +1,4 @@
-# HENSEN — Lote 016 — auditoria individual
+# HENSEN — Lote 016 — auditoria individual, revisão 02
 
 Data: 2026-10-30. Branch `audit/hensen-lote-001-20261029`. PR #173.
 
@@ -97,20 +97,20 @@ Fonte: Henk Hensen, *Tug Use in Port*, 4ª edição (2021), PDF no Google Drive 
 
 ### ANV-HENSEN-C02-L016-05
 
-- **Alteração:** questão nova sobre Gelo consolidado.
+- **Alteração:** questão nova sobre Proteção de tomadas de mar contra gelo; reescrita na revisão 02 por proximidade conceitual.
 - **Gabarito:** A; cinco alternativas textualmente distintas.
-- **Referência:** Chapter 2, §2.24, p. 73 (PDF p. 86); âncora textual `consolidation of ridges`.
-- **Justificativa técnica:** Hensen manda avaliar cristas, consolidação, deriva, pressão e gelo encalhado.
-- **Triagem de originalidade:** maior proximidade lexical com `ANV-HENSEN-C02-L005-05` (Critérios locais para rebocadores em gelo), Dice 0.500; comparação semântica independente pendente.
+- **Referência:** Chapter 2, §2.24, p. 74 (PDF p. 87); âncora textual `sea chest does not become blocked with ice`.
+- **Justificativa técnica:** Hensen cita medidas de projeto para impedir que as caixas de mar sejam bloqueadas por gelo.
+- **Triagem de originalidade:** maior proximidade lexical com `ANV-HENSEN-C03-L004-02` (Restrição ao reboque em linha com tubulão bloqueável), Dice 0.303; comparação semântica independente pendente.
 - **Estado:** `pending_editorial_review`.
 
 ### ANV-HENSEN-C03-L016-01
 
-- **Alteração:** questão nova sobre Rebocador a sotavento comprimido.
+- **Alteração:** questão nova sobre Espias de proa e varredura de gelo; reescrita na revisão 02 por proximidade conceitual.
 - **Gabarito:** C; cinco alternativas textualmente distintas.
-- **Referência:** Chapter 3, §3.2.2, p. 86 (PDF p. 99); âncora textual `jammed between ship and shore or quay`.
-- **Justificativa técnica:** O texto alerta para o aprisionamento do rebocador a sotavento.
-- **Triagem de originalidade:** maior proximidade lexical com `ANV-HENSEN-C03-L007-01` (Rebocadores a sotavento), Dice 0.581; comparação semântica independente pendente.
+- **Referência:** Chapter 3, §3.3.6, p. 91 (PDF p. 104); âncora textual `should not pass any head lines`.
+- **Justificativa técnica:** Hensen recomenda não passar as head lines enquanto sua presença impedir a varredura de gelo pelo rebocador à frente.
+- **Triagem de originalidade:** maior proximidade lexical com `ANV-HENSEN-C03-L012-02` (Espringue reforçado na remoção de gelo), Dice 0.400; comparação semântica independente pendente.
 - **Estado:** `pending_editorial_review`.
 
 ### ANV-HENSEN-C03-L016-02
@@ -223,11 +223,11 @@ Fonte: Henk Hensen, *Tug Use in Port*, 4ª edição (2021), PDF no Google Drive 
 
 ### ANV-HENSEN-C05-L016-04
 
-- **Alteração:** questão nova sobre Reserva já incluída no exemplo.
+- **Alteração:** questão nova sobre Velocidade média de corrente ao longo do calado; reescrita na revisão 02 por proximidade conceitual.
 - **Gabarito:** C; cinco alternativas textualmente distintas.
-- **Referência:** Chapter 5, §5.3.2, p. 145 (PDF p. 158); âncora textual `33 tons is included`.
-- **Justificativa técnica:** O exemplo registra explicitamente reserva já incorporada no total calculado.
-- **Triagem de originalidade:** maior proximidade lexical com `ANV-HENSEN-C05-L007-05` (Exemplo de tração), Dice 0.381; comparação semântica independente pendente.
+- **Referência:** Chapter 5, §5.2.3, p. 139 (PDF p. 152); âncora textual `correct average current for the calculation`.
+- **Justificativa técnica:** A nota da seção 5.2.3 admite correção da velocidade informada conforme profundidade da medição, calado e folga sob a quilha.
+- **Triagem de originalidade:** maior proximidade lexical com `ANV-HENSEN-C02-L002-04` (Comandos da propulsão cicloidal), Dice 0.286; comparação semântica independente pendente.
 - **Estado:** `pending_editorial_review`.
 
 ### ANV-HENSEN-C05-L016-05
@@ -241,11 +241,11 @@ Fonte: Henk Hensen, *Tug Use in Port*, 4ª edição (2021), PDF no Google Drive 
 
 ### ANV-HENSEN-C06-L016-01
 
-- **Alteração:** questão nova sobre Fluxo acelerado junto ao casco.
+- **Alteração:** questão nova sobre Limitações do modelo de jato contra o casco; reescrita na revisão 02 por proximidade conceitual.
 - **Gabarito:** A; cinco alternativas textualmente distintas.
-- **Referência:** Chapter 6, §6.2.3, p. 151 (PDF p. 164); âncora textual `pushed sideways and downwards by the ship`.
-- **Justificativa técnica:** A geometria submersa desvia a água lateralmente e para baixo, modificando o fluxo.
-- **Triagem de originalidade:** maior proximidade lexical com `ANV-HENSEN-C06-L008-02` (Fluxo acelerado no costado), Dice 0.667; comparação semântica independente pendente.
+- **Referência:** Chapter 6, §6.2.2, p. 150 (PDF p. 163); âncora textual `effects of towline length, shallow water and angle`.
+- **Justificativa técnica:** Hensen ressalta que alguns modelos aproximados de interação jato-casco não incorporam comprimento do cabo, águas rasas e ângulo do jato.
+- **Triagem de originalidade:** maior proximidade lexical com `ANV-HENSEN-C04-L012-02` (Desvio do jato em puxão junto ao casco), Dice 0.343; comparação semântica independente pendente.
 - **Estado:** `pending_editorial_review`.
 
 ### ANV-HENSEN-C06-L016-02
@@ -277,11 +277,11 @@ Fonte: Henk Hensen, *Tug Use in Port*, 4ª edição (2021), PDF no Google Drive 
 
 ### ANV-HENSEN-C06-L016-05
 
-- **Alteração:** questão nova sobre Motores independentes com dois tripulantes.
+- **Alteração:** questão nova sobre Entrega controlada do cabo ao rebocador; reescrita na revisão 02 por proximidade conceitual.
 - **Gabarito:** E; cinco alternativas textualmente distintas.
-- **Referência:** Chapter 6, §6.3.14, p. 170 (PDF p. 183); âncora textual `two independent working main engines`.
-- **Justificativa técnica:** O exemplo exige comandante e engenheiro habilitados e dois motores principais independentes.
-- **Triagem de originalidade:** maior proximidade lexical com `ANV-HENSEN-C06-L013-05` (Exigências históricas para dois tripulantes em Hamburgo), Dice 0.600; comparação semântica independente pendente.
+- **Referência:** Chapter 6, §6.4, p. 174 (PDF p. 187); âncora textual `lower it gently on to the tug’s deck`.
+- **Justificativa técnica:** O resumo de segurança recomenda que a tripulação do navio baixe o cabo controladamente até o convés do rebocador.
+- **Triagem de originalidade:** maior proximidade lexical com `ANV-HENSEN-C06-L013-03` (Recolhimento do cabo após liberar o rebocador e emprego de Norman pins), Dice 0.389; comparação semântica independente pendente.
 - **Estado:** `pending_editorial_review`.
 
 ### ANV-HENSEN-C07-L016-01
@@ -295,11 +295,11 @@ Fonte: Henk Hensen, *Tug Use in Port*, 4ª edição (2021), PDF no Google Drive 
 
 ### ANV-HENSEN-C07-L016-02
 
-- **Alteração:** questão nova sobre Elo fraco controlado.
+- **Alteração:** questão nova sobre Válvula próxima ao cilindro de liberação; reescrita na revisão 02 por proximidade conceitual.
 - **Gabarito:** C; cinco alternativas textualmente distintas.
-- **Referência:** Chapter 7, §7.4.2, p. 187 (PDF p. 200); âncora textual `preventing towing-line overload`.
-- **Justificativa técnica:** O elemento coordena a resistência à ruptura para evitar sobrecargas excessivas.
-- **Triagem de originalidade:** maior proximidade lexical com `ANV-HENSEN-C02-L002-05` (Geometria do sistema carrousel), Dice 0.333; comparação semântica independente pendente.
+- **Referência:** Chapter 7, §7.3.2, p. 180 (PDF p. 193); âncora textual `hydraulic valve should be positioned in close vicinity`.
+- **Justificativa técnica:** Hensen recomenda válvula hidráulica próxima ao cilindro, preferencialmente com acionamento elétrico, para reduzir o tempo de liberação.
+- **Triagem de originalidade:** maior proximidade lexical com `ANV-HENSEN-C07-L006-01` (Folga funcional da manilha do gob rope), Dice 0.286; comparação semântica independente pendente.
 - **Estado:** `pending_editorial_review`.
 
 ### ANV-HENSEN-C07-L016-03
@@ -367,12 +367,22 @@ Fonte: Henk Hensen, *Tug Use in Port*, 4ª edição (2021), PDF no Google Drive 
 
 ### ANV-HENSEN-C09-L016-05
 
-- **Alteração:** questão nova sobre Portas estanques na escolta.
+- **Alteração:** questão nova sobre VTS e esquema de separação no estudo de escolta; reescrita na revisão 02 por proximidade conceitual.
 - **Gabarito:** B; cinco alternativas textualmente distintas.
-- **Referência:** Chapter 9, §9.6.5, p. 266 (PDF p. 279); âncora textual `doors should be kept closed during escort operations`.
-- **Justificativa técnica:** O resumo de requisitos exige estanqueidade e portas fechadas em escolta.
-- **Triagem de originalidade:** maior proximidade lexical com `ANV-HENSEN-C09-L011-04` (Arranjo histórico de escolta em Sullom Voe), Dice 0.194; comparação semântica independente pendente.
+- **Referência:** Chapter 9, §9.2, p. 243 (PDF p. 256); âncora textual `Vessel traffic services and information exchange`.
+- **Justificativa técnica:** A seção 9.2 inclui traffic separation schemes, VTS e intercâmbio de informações com navios e práticos no estudo de escolta.
+- **Triagem de originalidade:** maior proximidade lexical com `ANV-HENSEN-C09-L002-03` (Bloqueio de canal como consequência de acidente), Dice 0.276; comparação semântica independente pendente.
 - **Estado:** `pending_editorial_review`.
+
+## Correções da revisão 02
+
+- `ANV-HENSEN-C02-L016-05`: reescrita integral do tema, enunciado, alternativas e fundamentação; §2.24, p. 74. Gabarito preservado.
+- `ANV-HENSEN-C03-L016-01`: reescrita integral do tema, enunciado, alternativas e fundamentação; §3.3.6, p. 91. Gabarito preservado.
+- `ANV-HENSEN-C05-L016-04`: reescrita integral do tema, enunciado, alternativas e fundamentação; §5.2.3, p. 139. Gabarito preservado.
+- `ANV-HENSEN-C06-L016-01`: reescrita integral do tema, enunciado, alternativas e fundamentação; §6.2.2, p. 150. Gabarito preservado.
+- `ANV-HENSEN-C06-L016-05`: reescrita integral do tema, enunciado, alternativas e fundamentação; §6.4, p. 174. Gabarito preservado.
+- `ANV-HENSEN-C07-L016-02`: reescrita integral do tema, enunciado, alternativas e fundamentação; §7.3.2, p. 180. Gabarito preservado.
+- `ANV-HENSEN-C09-L016-05`: reescrita integral do tema, enunciado, alternativas e fundamentação; §9.2, p. 243. Gabarito preservado.
 
 ## Pendências e gates
 
