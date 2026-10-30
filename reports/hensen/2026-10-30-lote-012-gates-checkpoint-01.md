@@ -11,3 +11,9 @@
 - Pendências antigas: C01-L011-01 e C01-L011-04 repetem conceitos de outros lotes; checkpoint 013.
 - Gates do HEAD final devem ser verificados após este checkpoint; falha Vercel por limite de builds anteriormente documentada.
 - Sem merge e sem deploy. Próximo lote a verificar: 013, após consulta de existência e checkpoints.
+
+## Correções de originalidade após triagem
+
+- `C03-L012-05`: equivalência com `C03-L004-05` corrigida por cenário quantitativo (190 t vs 4 × 50 t); referência ajustada para p. 99 (PDF 112).
+- `C06-L012-01`: equivalência com `C06-L004-02` corrigida por cenário de troca de informações de limitações do navio; referência ajustada para §6.3.15, p. 173 (PDF 186).
+- Commits: JSON `00f22c9489721e40a54ebf5bca250be57f6e499c`; relatório `31d5e6793402ea26ed78aa9f8b600925e2088bc1`. Requer nova verificação de gates no HEAD final.
