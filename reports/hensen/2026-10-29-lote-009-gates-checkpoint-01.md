@@ -29,6 +29,12 @@ No commit da revisão de distratores `68889950675d7b9a265676435ec8e06cc048c2b1`,
 
 Nenhuma execução local de `npm run validate` ou `npm run build` foi comprovada. Aprovação de workflows em commits anteriores não homologa o HEAD final.
 
+## Diagnóstico e reparo de falha real do gate
+
+- O workflow **Full Question Bank Audit** no commit `150fd2d5` falhou por `EMPTY_OPTION` em `ANV-HENSEN-C03-L009-02`, conforme [run 40991950827](https://github.com/noconvescomdavi/simulado-pscpp/actions/runs/40991950827). A inspeção posterior do JSON corrigido confirmou cinco alternativas preenchidas para o item.
+- A revisão de 160 distratores no commit `68889950` também reparou essa alternativa vazia. Nesse commit, **Full Question Bank Audit** ([run 40992128909](https://github.com/noconvescomdavi/simulado-pscpp/actions/runs/40992128909)) e **Audit Main Question Banks** ([run 40992129006](https://github.com/noconvescomdavi/simulado-pscpp/actions/runs/40992129006)) foram aprovados. **CI**, **PSCPP Integral Bank Audit** e **Validate PIANC 121 CGE Quarantine** ainda estavam em execução na última consulta.
+- Os gates precisam ser reconfirmados no HEAD documental final. **Vercel continua em failure** por cota de builds; sem Preview READY.
+
 ## Pendências e próxima execução
 
 1. Verificar os cinco workflows e o Vercel Preview no HEAD final, sem desativar validações.
