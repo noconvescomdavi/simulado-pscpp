@@ -17,3 +17,9 @@
 - `C03-L012-05`: equivalência com `C03-L004-05` corrigida por cenário quantitativo (190 t vs 4 × 50 t); referência ajustada para p. 99 (PDF 112).
 - `C06-L012-01`: equivalência com `C06-L004-02` corrigida por cenário de troca de informações de limitações do navio; referência ajustada para §6.3.15, p. 173 (PDF 186).
 - Commits: JSON `00f22c9489721e40a54ebf5bca250be57f6e499c`; relatório `31d5e6793402ea26ed78aa9f8b600925e2088bc1`. Requer nova verificação de gates no HEAD final.
+
+## Segunda rodada de correções semânticas
+
+- Substituídos por competências diferentes: `C01-L012-02`, `C01-L012-04`, `C03-L012-01`, `C04-L012-01`, `C05-L012-03`, `C09-L012-01`.
+- Mantidos 40 IDs, cinco por capítulo e A=8 B=8 C=8 D=8 E=8; revisão independente e verificação de gates no HEAD final ainda pendentes.
+- Commits: JSON `bbd5b1b9efc702904986e439add356247b2d1215`; relatório `924414a579ca01fa5d0068edba9ea0d422eb8552`.
