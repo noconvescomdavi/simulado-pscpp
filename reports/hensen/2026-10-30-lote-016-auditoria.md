@@ -27,7 +27,7 @@ Fonte: Henk Hensen, *Tug Use in Port*, 4ª edição (2021), PDF no Google Drive 
 
 - **Alteração:** questão nova sobre Frota atendida heterogênea.
 - **Gabarito:** B; cinco alternativas textualmente distintas.
-- **Referência:** Chapter 1, §1.2.3, p. 5 (PDF p. 18); âncora textual `Different types of ship give rise to specific requirements`.
+- **Referência:** Chapter 1, §1.2.3, p. 6 (PDF p. 19); âncora textual `Different types of ship give rise to specific requirements`.
 - **Justificativa técnica:** Navios de tipos distintos impõem requisitos próprios de potência, defensas e equipamento.
 - **Triagem de originalidade:** maior proximidade lexical com `ANV-HENSEN-C01-L002-02` (Diversidade da frota atendida), Dice 0.353; comparação semântica independente pendente.
 - **Estado:** `pending_editorial_review`.
@@ -36,7 +36,7 @@ Fonte: Henk Hensen, *Tug Use in Port*, 4ª edição (2021), PDF no Google Drive 
 
 - **Alteração:** questão nova sobre Elevadores flutuantes.
 - **Gabarito:** C; cinco alternativas textualmente distintas.
-- **Referência:** Chapter 1, §1.2.4, p. 5 (PDF p. 18); âncora textual `Towing inland barges, elevators, floating cranes`.
+- **Referência:** Chapter 1, §1.2.4, p. 6 (PDF p. 19); âncora textual `Towing inland barges, elevators, floating cranes`.
 - **Justificativa técnica:** Hensen inclui explicitamente elevadores flutuantes entre serviços complementares.
 - **Triagem de originalidade:** maior proximidade lexical com `ANV-HENSEN-C01-L002-03` (Serviços complementares portuários), Dice 0.200; comparação semântica independente pendente.
 - **Estado:** `pending_editorial_review`.
@@ -397,3 +397,14 @@ Fonte: Henk Hensen, *Tug Use in Port*, 4ª edição (2021), PDF no Google Drive 
 - `ANV-HENSEN-C06-L016-01`: substituição por conceito de interação cabo–rebocador em §6.2.1, p. 149; removida referência indevida a texto de outro capítulo.
 - `ANV-HENSEN-C06-L016-05`: paginação corrigida para p. 175, §6.4.
 - Banco: commit `13c52196dbd188f67e2d7c221afb6d99364e275a`; gabaritos preservados, sem alterações nos lotes anteriores.
+
+
+## Revisão 04 — correção de paginação impressa/PDF (checkpoint 017)
+
+- **Fonte primária conferida:** *Tug Use in Port*, 4ª edição, texto do capítulo 1, página impressa 6 (página 19 do PDF). A página contém as seções **§1.2.3 The ships concerned** e **§1.2.4 Services required in and around the harbour**. A localização anterior na página impressa 5/PDF 18 estava errada, embora a seção estivesse correta.
+- **`ANV-HENSEN-C01-L016-02`:** `Chapter 1, §1.2.3, p. 5 (PDF p. 18)` → `Chapter 1, §1.2.3, p. 6 (PDF p. 19)`; fundamentação: a passagem `Different types of ship give rise to specific requirements` pertence à seção 1.2.3 na página impressa 6.
+- **`ANV-HENSEN-C01-L016-03`:** `Chapter 1, §1.2.4, p. 5 (PDF p. 18)` → `Chapter 1, §1.2.4, p. 6 (PDF p. 19)`; fundamentação: a passagem `Towing inland barges, elevators, floating cranes` pertence à seção 1.2.4 na página impressa 6.
+- **Commit do banco:** https://github.com/noconvescomdavi/simulado-pscpp/commit/f8938b7d83dd7c885f843ca42a50595319c3ef6f .
+- **Escopo da modificação:** somente dois localizadores `source.locator`. Os 40 IDs, enunciados, alternativas, gabaritos, explicações, classificação e estados editoriais do lote foram preservados e comparados estruturalmente antes da gravação.
+- **Risco ainda aberto:** `C01-L016-02` sobrepõe a competência de `C01-L002-02` e `C01-L016-03` a de `C01-L002-03` e outros itens sobre serviços complementares. Corrigir página não sana redundância. **Ambas permanecem `pending_editorial_review`, sem homologação de originalidade.**
+- **Não verificado nesta revisão:** cotejo visual de todas as 40 páginas, testes locais, originalidade semântica integral, recuperação dos 119 históricos e validação de produção para este novo commit.
