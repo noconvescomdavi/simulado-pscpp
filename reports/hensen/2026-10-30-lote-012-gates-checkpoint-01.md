@@ -23,3 +23,12 @@
 - Substituídos por competências diferentes: `C01-L012-02`, `C01-L012-04`, `C03-L012-01`, `C04-L012-01`, `C05-L012-03`, `C09-L012-01`.
 - Mantidos 40 IDs, cinco por capítulo e A=8 B=8 C=8 D=8 E=8; revisão independente e verificação de gates no HEAD final ainda pendentes.
 - Commits: JSON `bbd5b1b9efc702904986e439add356247b2d1215`; relatório `924414a579ca01fa5d0068edba9ea0d422eb8552`.
+
+## Auditoria final e gates consultados
+
+- Verificação estrutural em todos os 12 JSONs: **480/480 registros e IDs únicos**, 40 por lote, A=8 B=8 C=8 D=8 E=8 em cada lote, alternativas A–E distintas, explicações e localizadores presentes; **zero falhas estruturais**.
+- Oito questões do Lote 012 reescritas por sobreposição conceitual; Jaccard máximo final de enunciados contra os 440 anteriores **0,308**. Originalidade semântica independente e cotejo dos 170 históricos pendentes.
+- Gates consultados no commit documental `41189bbfa7370cfc4037e571bfe429dba293bbbf`: **Full Question Bank Audit = success**; **CI, Audit Main Question Banks, PSCPP Integral Bank Audit e Validate PIANC 121 CGE Quarantine = in_progress**.
+- GitHub commit status **Vercel = failure** por limite de builds, https://vercel.com/estibordo?upgradeToPro=build-rate-limit .
+- Como este checkpoint gera novo commit, não extrapolar os resultados do SHA anterior ao novo HEAD. Sem merge/deploy.
+- Relatório consolidado no commit `91755640569158e5f55de96ff5fa3e3e8dbbef1d`.
