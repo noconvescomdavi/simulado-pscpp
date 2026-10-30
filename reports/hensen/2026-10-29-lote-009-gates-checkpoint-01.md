@@ -8,7 +8,9 @@
 2. Criação de [`data/question-extensions/hensen-lote-009.json`](../../data/question-extensions/hensen-lote-009.json): 40 questões, commit `026342323f0c2b3e5c2e93b5e0a829019cbe410c`.
 3. Integração por importação e inclusão no array de extensões de `lib/question-banks-source.js`: commit `06c00d8896a3a924196bd0b4a96b187f661e6c08`.
 4. Três reparos editoriais para reduzir sobreposições internas: IDs `C03-L009-02`, `C05-L009-04`, `C09-L009-03`, commit `150fd2d57bf18e4de98ab9e6968faa6382a67b13`.
-5. [Relatório individual com 40 IDs, alternativas corretas, referências e justificativas](./2026-10-29-lote-009-auditoria.md): commit `82985151c15f5c7742c34bc9a601de1604b1d1b3`.
+5. Revisão integral dos **160 distratores** do Lote 009, preservando gabaritos e fontes: commit `68889950675d7b9a265676435ec8e06cc048c2b1`.
+6. Atualização do relatório individual após a revisão: commit `7b1c1510f98209293cb775468efdf1362b192451`.
+7. [Relatório individual com 40 IDs, alternativas corretas, referências e justificativas](./2026-10-29-lote-009-auditoria.md): commit `82985151c15f5c7742c34bc9a601de1604b1d1b3`.
 
 ## Inventário e auditoria
 
@@ -23,7 +25,7 @@
 
 No commit de correção do lote `150fd2d57bf18e4de98ab9e6968faa6382a67b13`, os workflows **CI**, **PSCPP Integral Bank Audit**, **Full Question Bank Audit**, **Audit Main Question Banks** e **Validate PIANC 121 CGE Quarantine** estavam todos `in_progress` na última consulta.
 
-No commit do relatório `82985151c15f5c7742c34bc9a601de1604b1d1b3`, a consulta de workflows ainda não retornou execuções. O status combinado **Vercel = failure**, apontando para o [limite de builds/deploys](https://vercel.com/estibordo?upgradeToPro=build-rate-limit). Não contornar a cota.
+No commit da revisão de distratores `68889950675d7b9a265676435ec8e06cc048c2b1`, a consulta de workflows ainda não retornou execuções. O status combinado **Vercel = failure**, apontando para o [limite de builds/deploys](https://vercel.com/estibordo?upgradeToPro=build-rate-limit). Não contornar a cota.
 
 Nenhuma execução local de `npm run validate` ou `npm run build` foi comprovada. Aprovação de workflows em commits anteriores não homologa o HEAD final.
 
