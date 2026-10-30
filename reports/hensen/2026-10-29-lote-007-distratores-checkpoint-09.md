@@ -238,7 +238,7 @@ Reuso de alternativas ainda identificado no Lote 007 após estes dez reparos:
 | 07 | 4 de 5 |
 | 09 | 5 de 5 |
 
-**30 questões ainda não revisadas individualmente nesta execução**, incluindo 31 itens inicialmente agrupados em conjuntos repetidos nos capítulos 02, 03, 04, 06, 07 e 09 (alguns grupos incluem quatro e outros cinco questões). Esse diagnóstico é restrito ao Lote 007, não uma aprovação dos lotes 001–006. Revisar também a equivalência semântica e a plausibilidade dos distratores remanescentes.
+**30 questões ainda não revisadas individualmente nesta execução**, incluindo 26 itens ainda agrupados em conjuntos repetidos nos capítulos 02, 03, 04, 06, 07 e 09 (alguns grupos incluem quatro e outros cinco questões). Esse diagnóstico é restrito ao Lote 007, não uma aprovação dos lotes 001–006. Revisar também a equivalência semântica e a plausibilidade dos distratores remanescentes.
 
 ## Gates e publicação
 
