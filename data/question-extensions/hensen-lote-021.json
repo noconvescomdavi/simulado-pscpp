@@ -968,36 +968,36 @@
       "subject": "II — Arte Naval",
       "module": "Assisting methods",
       "topic_code": "ANV.HENSEN.C03.L021.04",
-      "topic": "Bloqueio de tubulão em canal gelado",
+      "topic": "Procedimento de escolta de submarino em boia",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Um rebocador puxando por cabo para subitamente por gelo no tubulão. Qual ação deve ser coordenada imediatamente?",
+      "question": "Um submarino será amarrado a uma boia em área abrigada, sem necessidade de atracar ao cais. Que forma de assistência é descrita como adequada em certos portos?",
       "options": [
         {
           "key": "A",
-          "text": "Acelerar o navio para esticar o cabo."
+          "text": "Empurrão lateral obrigatório com dois rebocadores sem defensas submersas."
         },
         {
           "key": "B",
-          "text": "Parar ou reduzir prontamente o seguimento do navio para evitar alcançar o rebocador."
+          "text": "Um rebocador conectado à proa para dar puxões suaves de aproximação à boia, sem forçar contato lateral."
         },
         {
           "key": "C",
-          "text": "Manter a velocidade e aguardar a liberação do gelo."
+          "text": "Cabo ligado diretamente ao sonar rebocado na popa."
         },
         {
           "key": "D",
-          "text": "Ordenar ao rebocador que fique atravessado."
+          "text": "Atracação forçada ao cais antes de alcançar a boia."
         },
         {
           "key": "E",
-          "text": "Desconsiderar a posição relativa do rebocador."
+          "text": "Operação sem qualquer possibilidade de controle da proa."
         }
       ],
       "correct_answer": "B",
-      "explanation": "A parada por gelo exige resposta imediata do navio assistido.",
+      "explanation": "Hensen relata assistência a submarinos que amarram em boia, com rebocador de proa usando tração suave quando necessário.",
       "active": true,
       "validation_status": "pending_editorial_review",
       "validation": {
@@ -1027,7 +1027,7 @@
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapter 3, §3.3.8, p. 94 (PDF p. 107)"
+        "locator": "Chapter 3, §3.4, p. 98 (PDF p. 111)"
       },
       "tags": [
         "hensen",
@@ -1634,36 +1634,36 @@
       "subject": "II — Arte Naval",
       "module": "Bollard pull required",
       "topic_code": "ANV.HENSEN.C05.L021.03",
-      "topic": "Ondas curtas: comprimento e altura",
+      "topic": "Composição algébrica de solicitações transversais",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Na fórmula simplificada de ondas curtas, LBP cai à metade e altura de onda dobra. Como muda a força lateral estimada?",
+      "question": "Na mesma fase da manobra, vento e ondas solicitam 40 tf e 10 tf para boreste, enquanto a corrente exerce 25 tf para bombordo. Desprezando momentos e reservas, qual força transversal mínima de equilíbrio deve ser aplicada pelos rebocadores?",
       "options": [
         {
           "key": "A",
-          "text": "Dobra, pois 0,5 × 2² = 2."
+          "text": "25 tf para bombordo, para compensar a resultante de 25 tf para boreste."
         },
         {
           "key": "B",
-          "text": "Cai à metade."
+          "text": "75 tf para boreste, somando os módulos sem considerar sentidos."
         },
         {
           "key": "C",
-          "text": "Permanece igual."
+          "text": "25 tf para boreste, reforçando a resultante."
         },
         {
           "key": "D",
-          "text": "Quadruplica sem depender do comprimento."
+          "text": "15 tf para bombordo, desconsiderando as ondas."
         },
         {
           "key": "E",
-          "text": "Aumenta oito vezes."
+          "text": "Zero, porque as três forças se anulam."
         }
       ],
       "correct_answer": "A",
-      "explanation": "A expressão é proporcional a LBP e ao quadrado da altura de onda.",
+      "explanation": "As solicitações laterais devem ser compostas com sinal: 40+10−25=25 tf para boreste; o equilíbrio requer 25 tf no sentido oposto. É simplificação sem momento nem margem.",
       "active": true,
       "validation_status": "pending_editorial_review",
       "validation": {
@@ -1693,7 +1693,7 @@
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapter 5, §5.2.4, p. 140 (PDF p. 153)"
+        "locator": "Chapter 5, §5.2.2–5.2.4, p. 140 (PDF p. 153)"
       },
       "tags": [
         "hensen",
@@ -2670,36 +2670,36 @@
       "subject": "II — Arte Naval",
       "module": "Escort tugs",
       "topic_code": "ANV.HENSEN.C09.L021.02",
-      "topic": "Leme travado com hélice parada",
+      "topic": "Rebocador de escolta multifunção em terminal de GNL polar",
       "difficulty": "Difícil",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 4,
-      "question": "Se o leme travado produz 200 kN com hélice girando, qual força resulta da hipótese DNV de 0,53 citada por Hensen para hélice parada?",
+      "question": "Um terminal de GNL em região polar especifica rebocador para escolta, atracação e prontidão de emergência. Qual combinação corresponde a exemplo citado por Hensen?",
       "options": [
         {
           "key": "A",
-          "text": "106 kN."
+          "text": "Unidade com propulsão dual-fuel diesel/GNL, capacidade de escolta e recursos para combate a incêndio e resposta a derramamento."
         },
         {
           "key": "B",
-          "text": "200 kN."
+          "text": "Rebocador apenas de águas interiores, sem capacidade em ondas."
         },
         {
           "key": "C",
-          "text": "53 kN."
+          "text": "Unidade dedicada exclusivamente a carga geral sem resposta ambiental."
         },
         {
           "key": "D",
-          "text": "300 kN."
+          "text": "Rebocador sem sistemas de segurança para operação em terminal de gás."
         },
         {
           "key": "E",
-          "text": "400 kN."
+          "text": "Embarcação com capacidade de escolta, mas proibida de atuar em atracação."
         }
       ],
       "correct_answer": "A",
-      "explanation": "200×0,53=106 kN, sob a hipótese especificada.",
+      "explanation": "Os rebocadores RAstar 4000-DF para Melkøya são descritos com motores dual-fuel e missões de escolta, assistência e resposta a emergências.",
       "active": true,
       "validation_status": "pending_editorial_review",
       "validation": {
@@ -2729,7 +2729,7 @@
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapter 9, §9.6.2, p. 254 (PDF p. 267)"
+        "locator": "Chapter 9, §9.6.2, p. 258 (PDF p. 271)"
       },
       "tags": [
         "hensen",
