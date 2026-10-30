@@ -1,0 +1,13 @@
+# HENSEN — Lote 012 — checkpoint persistente 01
+
+**Data:** 30/10/2026. **Branch:** `audit/hensen-lote-001-20261029`. **PR:** #173.
+- JSON: `data/question-extensions/hensen-lote-012.json`; commit caafde31882b91030bf567acf55822de2909ff0c.
+- Relatório: `reports/hensen/2026-10-30-lote-012-auditoria.md`; commit 0ed29a1376b3a7f81943fe3e1b757eec9a194506.
+- 40 questões, 5 por capítulo 1–7 e 9, A=8 B=8 C=8 D=8 E=8.
+- 440 registros prévios cotejados para IDs e enunciados; 0 colisões literais. Máximo Jaccard 0.538.
+- Âncoras textuais confirmadas: 40/40; correspondências não localizadas: nenhuma.
+- Revisão semântica independente e conferência visual de página pendentes; status pending_editorial_review e duplicate_checked=false.
+- Preservados lotes 001–011, 119 históricos em quarentena, demais históricos e validadores.
+- Pendências antigas: C01-L011-01 e C01-L011-04 repetem conceitos de outros lotes; checkpoint 013.
+- Gates do HEAD final devem ser verificados após este checkpoint; falha Vercel por limite de builds anteriormente documentada.
+- Sem merge e sem deploy. Próximo lote a verificar: 013, após consulta de existência e checkpoints.
