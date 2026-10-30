@@ -30,7 +30,7 @@
 | `ANV-HENSEN-C03-L012-02` | Espringue reforçado na remoção de gelo | **C** | Chapter 3, §3.3.6, p. 90 (PDF p. 103) | **Criada.** Hensen recomenda reforçar o espringue e aumentar o regime progressivamente para remover gelo com o fluxo da hélice. |
 | `ANV-HENSEN-C03-L012-03` | Faixa de quebra de gelo na desatracação | **B** | Chapter 3, §3.3.7, p. 92 (PDF p. 105) | **Criada.** O §3.3.7 menciona quebrar gelo ao redor do navio e em áreas aproximadamente 20–40 m além de proa e popa. |
 | `ANV-HENSEN-C03-L012-04` | Bloqueio de gelo no tubulão do rebocador | **D** | Chapter 3, §3.3.8, p. 94 (PDF p. 107) | **Criada.** Hensen adverte que, quando o rebocador para por bloqueio de gelo, o navio assistido deve ser parado imediatamente. |
-| `ANV-HENSEN-C03-L012-05` | Informação antecipada na assistência a porta-aviões | **A** | Chapter 3, §3.4.2, p. 98 (PDF p. 111) | **Criada.** O §3.4.2 exige que práticos e comandantes de rebocadores recebam previamente informações e confirmem as manobras previstas. |
+| `ANV-HENSEN-C03-L012-05` | Dimensionamento nominal de rebocadores para porta-aviões | **A** | Chapter 3, §3.4.2, p. 99 (PDF p. 112) | **Criada; revisada por sobreposição conceitual.** No exemplo do §3.4.2, a necessidade total aproximada é 190 t, com margem de 20% já incorporada. Quatro rebocadores de 50 t somam 200 t nominais, excedendo-a em 10 t; perdas de efetividade e limites de cabeços devem ser avaliados. |
 | `ANV-HENSEN-C04-L012-01` | Premissas de aberturas no caderno de estabilidade | **A** | Chapter 4, §4.2.3.2, p. 112 (PDF p. 125) | **Criada.** Hensen recomenda conhecer as aberturas assumidas fechadas nos cálculos; condições dinâmicas e alagamento podem reduzir a estabilidade real. |
 | `ANV-HENSEN-C04-L012-02` | Desvio do jato em puxão junto ao casco | **E** | Chapter 4, §4.3.3, p. 124 (PDF p. 137) | **Criada.** Hensen descreve o ajuste angular de propulsores azimutais para reduzir interferência do jato com o casco assistido. |
 | `ANV-HENSEN-C04-L012-03` | Cabo longo e alternância de puxar/empurrar | **D** | Chapter 4, §4.3.3, p. 124 (PDF p. 137) | **Criada.** Hensen observa que cabo mais longo pode ajudar no puxão, mas comprometer a resposta quando também é necessário empurrar. |
@@ -41,7 +41,7 @@
 | `ANV-HENSEN-C05-L012-03` | Atraso ausente na fórmula de parada | **C** | Chapter 5, §5.3.5, p. 147 (PDF p. 160) | **Criada.** Hensen explicita que a fórmula não inclui o tempo entre a ordem e a ação plena dos rebocadores. |
 | `ANV-HENSEN-C05-L012-04` | Variação conjunta de velocidade e tração | **A** | Chapter 5, §5.3.5, p. 147 (PDF p. 160) | **Criada.** Pela expressão aproximada, S2/S1 = 2,25/1,5 = 1,5; não estão incluídos atrasos de resposta e outros efeitos. |
 | `ANV-HENSEN-C05-L012-05` | Resistência das ferragens diante de tração elevada | **E** | Chapter 5, §5.3.8, p. 148 (PDF p. 161) | **Criada.** Hensen alerta que ferragens dos navios podem ser insuficientes para os esforços de rebocadores modernos muito potentes. |
-| `ANV-HENSEN-C06-L012-01` | Aproximação ao costado em escoamento uniforme | **C** | Chapter 6, §6.3.2, p. 155 (PDF p. 168) | **Criada.** Hensen considera a região próxima à seção mestra mais previsível que as extremidades para aproximação ao costado. |
+| `ANV-HENSEN-C06-L012-01` | Informações de limitações do navio no intercâmbio operacional | **C** | Chapter 6, §6.3.15, p. 173 (PDF p. 186) | **Criada; revisada por sobreposição conceitual.** No §6.3.15, Hensen recomenda intercâmbio prático–comandante–rebocadores. O comandante deve informar limitações de manobra e dos equipamentos de amarração/reboque, que condicionam pontos de conexão, forças e sequência da assistência. |
 | `ANV-HENSEN-C06-L012-02` | Retinidas preparadas na proa | **D** | Chapter 6, §6.3.3, p. 158 (PDF p. 171) | **Criada.** Hensen destaca a importância da equipe pronta e de retinidas adequadas para evitar exposição perigosa do rebocador junto à proa. |
 | `ANV-HENSEN-C06-L012-03` | Escala quadrática das forças de interação | **E** | Chapter 6, §6.3.3, p. 157 (PDF p. 170) | **Criada.** Os ensaios relatados indicam variação aproximadamente quadrática com a velocidade; dobrá-la pode quadruplicar a interação. |
 | `ANV-HENSEN-C06-L012-04` | Drenagem e aberturas em bow-to-bow | **A** | Chapter 6, §6.3.13, p. 169 (PDF p. 182) | **Criada.** Hensen destaca freeing ports para drenagem e fechamento de portas e entradas, inclusive ventilação, no bow-to-bow. |
@@ -65,3 +65,10 @@
 4. Equivalências C01-L011-01 e C01-L011-04 continuam documentadas no checkpoint 013 anterior; não foram alteradas neste lote.
 
 **Sem merge nem deploy.**
+
+
+## Revisão de originalidade após publicação inicial
+
+- `ANV-HENSEN-C03-L012-05`: substituída a pergunta sobre comunicação antecipada a porta-aviões, equivalente a `ANV-HENSEN-C03-L004-05`, por comparação quantitativa de 190 t versus quatro rebocadores de 50 t, com ressalvas operacionais (p. 99).
+- `ANV-HENSEN-C06-L012-01`: substituída a pergunta sobre aproximação junto à meia-nau, equivalente a `ANV-HENSEN-C06-L004-02`, por intercâmbio de limitações de máquina e cabeços entre comandante, prático e rebocadores (p. 173).
+- Preservados os IDs e os gabaritos A e C, respectivamente. Revisão independente dos demais itens e dos históricos permanece pendente.
