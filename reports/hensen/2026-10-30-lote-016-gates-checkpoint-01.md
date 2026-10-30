@@ -34,3 +34,10 @@ Data: 2026-10-30. Branch `audit/hensen-lote-001-20261029`. PR #173.
 - Nova triagem lexical com 600 questões anteriores: nenhum par acima do limiar Dice 0,50; isto não substitui auditoria semântica independente.
 - Nenhum lote anterior, histórico, quarentena, validador ou configuração de deploy foi alterado.
 - Inspeção visual do PDF, testes locais e conclusão dos gates no HEAD final ainda pendentes. Não realizar merge/deploy.
+
+## Revisão 03 — correção de fontes
+
+- Banco no commit `13c52196dbd188f67e2d7c221afb6d99364e275a`; relatório no commit `bd93196ba29cce83d543a0a03e48c35482328367`.
+- `ANV-HENSEN-C06-L016-01`: substituída questão que usava indevidamente trecho de outro capítulo; agora §6.2.1, p. 149 (PDF p. 162), sobre cabo e cargas dinâmicas.
+- `ANV-HENSEN-C06-L016-05`: paginação corrigida para §6.4, p. 175 (PDF p. 188).
+- Distribuição, IDs e gabaritos preservados. Revisão visual integral e homologação independente ainda pendentes.
