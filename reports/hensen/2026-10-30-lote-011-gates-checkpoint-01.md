@@ -25,3 +25,16 @@
 - Cinco questões foram reescritas após comparar temas e explicações dos lotes anteriores: `ANV-HENSEN-C01-L011-02`, `ANV-HENSEN-C01-L011-03`, `ANV-HENSEN-C01-L011-04`, `ANV-HENSEN-C05-L011-04`, `ANV-HENSEN-C06-L011-05`.
 - Gabaritos e IDs preservados; revisão independente ainda pendente.
 - Commit de correção: `7e4d4c7fb4f240b23a816d913c8da1d26b9e6491`. Relatório atualizado: `eef711ddd9e0e5a3065e82b2871e7d377f01671f`.
+
+## Gates consultados no commit de revisão `859c94bf54aec69bce40e622ea80b1f142b75e7e`
+
+| Gate | Resultado observado | Evidência |
+|---|---|---|
+| Audit Main Question Banks | **success** | https://github.com/noconvescomdavi/simulado-pscpp/actions/runs/41003474634 |
+| Full Question Bank Audit | **success** | https://github.com/noconvescomdavi/simulado-pscpp/actions/runs/41003474597 |
+| PSCPP Integral Bank Audit | **in_progress** | https://github.com/noconvescomdavi/simulado-pscpp/actions/runs/41003474673 |
+| CI | **in_progress** | https://github.com/noconvescomdavi/simulado-pscpp/actions/runs/41003474620 |
+| Validate PIANC 121 CGE Quarantine | **in_progress** | https://github.com/noconvescomdavi/simulado-pscpp/actions/runs/41003474664 |
+| Vercel Preview | **nenhum deployment localizado para SHA** | Consulta filtrada no projeto estibordo-pscpp retornou 0; commits anteriores apresentaram bloqueio por limite de builds |
+
+**Atenção:** este checkpoint gera novo commit documental. Os gates acima foram observados no SHA anterior e não devem ser atribuídos automaticamente ao novo HEAD. Não houve merge nem deploy.
