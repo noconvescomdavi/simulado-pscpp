@@ -25,3 +25,12 @@ Data: 2026-10-30. Branch `audit/hensen-lote-001-20261029`. PR #173.
 - GitHub Actions (CI e quatro auditorias): verificar no HEAD final; não presumir aprovação.
 - Vercel Preview: verificar no HEAD final; bloqueio anterior por cota de builds não resolvido neste checkpoint.
 - Revisão editorial independente: pendente.
+
+## Revisão 02 — correções de originalidade
+
+- Banco corrigido no commit `2189faf795d025e938bc0dfae70b2237abc43144`.
+- Relatório individual atualizado no commit `ba994bce0a4327fd1b7e03a18a6674a1be0afa6e`.
+- Sete questões reescritas integralmente, com gabaritos e IDs preservados: `C02-L016-05`, `C03-L016-01`, `C05-L016-04`, `C06-L016-01`, `C06-L016-05`, `C07-L016-02`, `C09-L016-05`.
+- Nova triagem lexical com 600 questões anteriores: nenhum par acima do limiar Dice 0,50; isto não substitui auditoria semântica independente.
+- Nenhum lote anterior, histórico, quarentena, validador ou configuração de deploy foi alterado.
+- Inspeção visual do PDF, testes locais e conclusão dos gates no HEAD final ainda pendentes. Não realizar merge/deploy.
