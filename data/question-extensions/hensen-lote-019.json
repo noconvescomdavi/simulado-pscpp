@@ -6,36 +6,36 @@
       "subject": "II — Arte Naval",
       "module": "Tug design factors",
       "topic_code": "ANV.HENSEN.C01.L019.01",
-      "topic": "Método condicionado à instalação",
+      "topic": "Instalação remota SPM e FLNG na tipologia de portos",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Um terminal de contêineres tem bacia ampla, enquanto um píer offshore é exposto a marulho. É válido impor o mesmo push-pull sem reavaliação?",
+      "question": "Um estudo trata uma monoboia SPM e uma unidade FLNG offshore como simples cais convencionais porque ambas recebem navios. Na classificação operacional de Hensen, qual abordagem é apropriada?",
       "options": [
         {
           "key": "A",
-          "text": "Sim, se os navios tiverem igual porte."
+          "text": "Classificá-las como bacias portuárias convencionais, sem exigências adicionais."
         },
         {
           "key": "B",
-          "text": "Sim, se a tração estática for igual."
+          "text": "Presumir que não há necessidade de equipamento de reboque específico."
         },
         {
           "key": "C",
-          "text": "Não; a padronização possível no terminal não dispensa avaliar geometria e exposição do píer."
+          "text": "Tratá-las como instalações de amarração remotas, avaliando requisitos próprios de potência, manobrabilidade e guinchos."
         },
         {
           "key": "D",
-          "text": "Sim, pois marulho não afeta rebocadores."
+          "text": "Considerar apenas a profundidade, independentemente de ondas e correntes."
         },
         {
           "key": "E",
-          "text": "Não, porque push-pull é proibido em terminais."
+          "text": "Adotar obrigatoriamente o mesmo método usado em cais de contêineres."
         }
       ],
       "correct_answer": "C",
-      "explanation": "As características locais determinam a adequação do método.",
+      "explanation": "O §1.2.1 distingue instalações remotas, como SPMs e F(P)SOs/FLNGs, cujos requisitos de rebocagem dependem das condições e do tipo de operação.",
       "active": true,
       "validation_status": "pending_editorial_review",
       "validation": {
@@ -1560,36 +1560,36 @@
       "subject": "II — Arte Naval",
       "module": "Bollard pull required",
       "topic_code": "ANV.HENSEN.C05.L019.02",
-      "topic": "Calado e força de corrente",
+      "topic": "Comprimento ao quadrado no momento de corrente",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Pela fórmula lateral de corrente, calado passa de 8 m para 10 m com os demais fatores fixos. Qual variação?",
+      "question": "Na expressão de momento de guinada por corrente citada por Hensen, o LBP entra ao quadrado. Se o comprimento entre perpendiculares aumenta 20%, com coeficiente, calado e velocidade constantes, como varia o momento?",
       "options": [
         {
           "key": "A",
-          "text": "Redução de 20%."
+          "text": "Aumenta 20%."
         },
         {
           "key": "B",
-          "text": "Aumento de 25%."
+          "text": "Aumenta 44%."
         },
         {
           "key": "C",
-          "text": "Aumento de 56,25%."
+          "text": "Aumenta 40%."
         },
         {
           "key": "D",
-          "text": "Aumento de 100%."
+          "text": "Diminui 20%."
         },
         {
           "key": "E",
-          "text": "Nenhuma variação."
+          "text": "Permanece igual."
         }
       ],
       "correct_answer": "B",
-      "explanation": "A força é proporcional a T: 10/8=1,25.",
+      "explanation": "O momento de corrente é proporcional a LBP²; portanto 1,20² = 1,44, ou aumento de 44%, mantidas as hipóteses.",
       "active": true,
       "validation_status": "pending_editorial_review",
       "validation": {
@@ -2374,36 +2374,36 @@
       "subject": "II — Arte Naval",
       "module": "Towing equipment",
       "topic_code": "ANV.HENSEN.C07.L019.03",
-      "topic": "Arames rompidos",
+      "topic": "Dano irreparável em cabo de aço",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Um cabo de aço tem cinco arames rompidos em trecho 6d. Pelo critério OCIMF citado, qual decisão cabe?",
+      "question": "Após uma manobra, a inspeção identifica deformação permanente severa e esmagamento localizado de cabo de aço. A equipe propõe endireitá-lo manualmente e reutilizá-lo. Qual decisão é coerente com a orientação de Hensen?",
       "options": [
         {
           "key": "A",
-          "text": "Liberar: limite é dez em 6d."
+          "text": "Reparar por aquecimento e restituir automaticamente a resistência original."
         },
         {
           "key": "B",
-          "text": "Apenas inverter cabo."
+          "text": "Reutilizar sem exame, pois a deformação é apenas estética."
         },
         {
           "key": "C",
-          "text": "Manter até ruptura total."
+          "text": "Reduzir o bollard pull em 5% e dispensar avaliação do cabo."
         },
         {
           "key": "D",
-          "text": "Descartar: excede quatro arames rompidos em 6d."
+          "text": "Retirar e substituir o cabo quando o dano estrutural for significativo ou houver dúvida sobre sua gravidade."
         },
         {
           "key": "E",
-          "text": "Reduzir BP em 5%."
+          "text": "Inverter as extremidades e declarar o dano reparado."
         }
       ],
       "correct_answer": "D",
-      "explanation": "O critério reproduzido é mais de quatro arames em 6d.",
+      "explanation": "O autor observa que os danos mecânicos em cabos de aço não são reparáveis; em caso de dúvida sobre sua gravidade, deve-se retirar e substituir o cabo.",
       "active": true,
       "validation_status": "pending_editorial_review",
       "validation": {
@@ -2744,36 +2744,36 @@
       "subject": "II — Arte Naval",
       "module": "Escort tugs",
       "topic_code": "ANV.HENSEN.C09.L019.03",
-      "topic": "Ângulo do cabo indireto",
+      "topic": "Braços de momento na escolta indireta",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Para força transversal elevada em escolta indireta, qual orientação aproximada do cabo ao eixo do navio é discutida?",
+      "question": "Na análise de equilíbrio de um rebocador em escolta indireta, o braço horizontal da força hidrodinâmica em relação ao ponto de reboque aumenta, mantidas as demais condições. Qual consequência para a propulsão lateral de equilíbrio é indicada?",
       "options": [
         {
           "key": "A",
-          "text": "Próxima de 90°, com ângulo de ataque ajustado à situação."
+          "text": "Uma relação mais favorável entre os braços pode reduzir o empuxo lateral necessário para equilibrar as forças hidrodinâmicas."
         },
         {
           "key": "B",
-          "text": "Paralela ao eixo."
+          "text": "O empuxo lateral necessário aumenta sempre na mesma proporção."
         },
         {
           "key": "C",
-          "text": "Sempre 0°."
+          "text": "O centro de pressão deixa de influenciar o momento."
         },
         {
           "key": "D",
-          "text": "Sempre 180°."
+          "text": "O cabo passa a exercer somente força longitudinal."
         },
         {
           "key": "E",
-          "text": "Independente da força transmitida."
+          "text": "O ângulo de banda torna-se necessariamente nulo."
         }
       ],
       "correct_answer": "A",
-      "explanation": "A geometria favorece a componente transversal.",
+      "explanation": "A relação entre os braços horizontais x e y condiciona o empuxo lateral requerido para equilibrar a força hidrodinâmica e, portanto, a força disponível no cabo.",
       "active": true,
       "validation_status": "pending_editorial_review",
       "validation": {
