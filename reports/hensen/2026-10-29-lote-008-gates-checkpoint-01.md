@@ -8,7 +8,8 @@
 2. Integração em `lib/question-banks-source.js` — commit `019ff1a89db8c491a9658d2874892d2ade505841`.
 3. Substituição de questões sobrepostas e correções de páginas — commits `57c4bfb097be347ee1d888ca3f4aa84a6c3c731f`, `d120d4f277fea3122661d6d046676657e51c17bf`, `b207834d175e67ffeb0a0dd4162794c1c28d5b28`.
 4. Correção adicional de duplicidade temática `ANV-HENSEN-C01-L008-03` (L002): commit `9277e22913fe3c8055179127ed9339138f973cd0`, relatório atualizado no commit `7ec6cf7daeb006fdac5aa41d14d8d16fa56df76a`.
-5. [Relatório individual de 40 IDs](https://github.com/noconvescomdavi/simulado-pscpp/blob/audit/hensen-lote-001-20261029/reports/hensen/2026-10-29-lote-008-auditoria.md) — commit `24447713910a9576cb929a1a6042acc40eee7979`.
+5. Correção de alinhamento do gabarito `ANV-HENSEN-C01-L008-03`: alternativa correta reposicionada em **C**; commit `a8e77259ccc364c76735139b93561dd8e05eb7b4`, relatório atualizado em `324c0f4db656d6a2b365279c8ddec7fde8e2946a`.
+6. [Relatório individual de 40 IDs](https://github.com/noconvescomdavi/simulado-pscpp/blob/audit/hensen-lote-001-20261029/reports/hensen/2026-10-29-lote-008-auditoria.md) — commit `24447713910a9576cb929a1a6042acc40eee7979`.
 
 ## Inventário e verificações
 
