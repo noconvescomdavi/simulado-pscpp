@@ -357,3 +357,9 @@ Fonte primária: Henk Hensen, *Tug Use in Port: A Practical Guide*, 4ª edição
 - Pendências: conferência visual de todas as páginas, revisão editorial independente, cotejo conceitual completo dos históricos e do banco principal, testes locais npm e aprovação de todos os gates no HEAD final, inclusive Preview Vercel.
 
 - **Status editorial**: `pending_editorial_review`. **Não realizar merge nem deploy até a aprovação de todos os gates e a homologação editorial.**
+
+## Checkpoint de correção após execução dos gates
+
+- `ANV-HENSEN-C05-L019-03`: a primeira execução de **Full Question Bank Audit** falhou no `HENSEN_SOURCE_GUARD` por `explicação ausente ou insuficiente`. A justificativa técnica foi ampliada no commit `113d8a8c48b7a409c3b884f3a43ca912637ebe19`, sem mudar enunciado, alternativas ou gabarito.
+- Confronto adicional dos 40 itens com os **170 históricos HENSEN** nos dez blocos 006, 007, 008, 010, 013, 016, 019, 021, 022 e 023: 0 colisões literais e 0 alertas lexicais Jaccard ≥ 0,33. Preservados 119 em quarentena e 51 ativos.
+- Revisão semântica independente, testes npm, inspeção visual integral e todos os gates no HEAD final ainda precisam ser confirmados.
