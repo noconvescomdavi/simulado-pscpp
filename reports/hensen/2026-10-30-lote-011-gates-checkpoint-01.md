@@ -19,3 +19,9 @@
 2. Resolver bloqueio de Vercel Preview se ainda presente, sem contornar limite de builds.
 3. Fazer revisão semântica independente, inclusive contra os 51 históricos ativos, e cotejo visual das referências.
 4. Antes de elaborar outro lote, consultar se o Lote 012 já existe e registrar novo checkpoint; não duplicar.
+
+## Revisão semântica adicional
+
+- Cinco questões foram reescritas após comparar temas e explicações dos lotes anteriores: `ANV-HENSEN-C01-L011-02`, `ANV-HENSEN-C01-L011-03`, `ANV-HENSEN-C01-L011-04`, `ANV-HENSEN-C05-L011-04`, `ANV-HENSEN-C06-L011-05`.
+- Gabaritos e IDs preservados; revisão independente ainda pendente.
+- Commit de correção: `7e4d4c7fb4f240b23a816d913c8da1d26b9e6491`. Relatório atualizado: `eef711ddd9e0e5a3065e82b2871e7d377f01671f`.
