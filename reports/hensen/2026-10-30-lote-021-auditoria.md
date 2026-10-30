@@ -29,7 +29,7 @@ Data: 2026-10-30 | PR #173 | branch `audit/hensen-lote-001-20261029`
 | `ANV-HENSEN-C04-L021-05` | Três componentes de perda em ondas | A | Chapter 4, §4.5.2, p. 130 (PDF p. 143) | Questão nova, sem revisão posterior. |
 | `ANV-HENSEN-C05-L021-01` | Prazo de manobra e força lateral | E | Chapter 5, §5.2.1, p. 136 (PDF p. 149) | Questão nova, sem revisão posterior. |
 | `ANV-HENSEN-C05-L021-02` | Escala combinada de corrente e calado | C | Chapter 5, §5.2.3, p. 138 (PDF p. 151) | Questão nova, sem revisão posterior. |
-| `ANV-HENSEN-C05-L021-03` | Composição algébrica de solicitações transversais | A | Chapter 5, §5.2.2–5.2.4, p. 140 (PDF p. 153) | Substituída variação quadrática de ondas por composição algébrica de vento, corrente e ondas. |
+| `ANV-HENSEN-C05-L021-03` | Composição algébrica de solicitações transversais | A | Chapter 5, §5.2.1, p. 136 (PDF p. 149) | Substituída variação quadrática de ondas por composição algébrica de vento, corrente e ondas; localizador retificado no checkpoint 022. |
 | `ANV-HENSEN-C05-L021-04` | Propulsor de proa a quatro nós e pouca água | D | Chapter 5, §5.3.1, p. 144 (PDF p. 157) | Questão nova, sem revisão posterior. |
 | `ANV-HENSEN-C05-L021-05` | Curvas históricas de tração | B | Chapter 5, §5.3.3, p. 146 (PDF p. 159) | Questão nova, sem revisão posterior. |
 | `ANV-HENSEN-C06-L021-01` | Interação com velocidade sobre o fundo zero | A | Chapter 6, §6.2.3, p. 150 (PDF p. 163) | Questão nova, sem revisão posterior. |
@@ -207,8 +207,8 @@ Data: 2026-10-30 | PR #173 | branch `audit/hensen-lote-001-20261029`
 ### ANV-HENSEN-C05-L021-03
 **Enunciado:** Na mesma fase da manobra, vento e ondas solicitam 40 tf e 10 tf para boreste, enquanto a corrente exerce 25 tf para bombordo. Desprezando momentos e reservas, qual força transversal mínima de equilíbrio deve ser aplicada pelos rebocadores?
 **Resposta:** A — 25 tf para bombordo, para compensar a resultante de 25 tf para boreste.
-**Justificativa técnica:** As solicitações laterais devem ser compostas com sinal: 40+10−25=25 tf para boreste; o equilíbrio requer 25 tf no sentido oposto. É simplificação sem momento nem margem.
-**Fonte:** Chapter 5, §5.2.2–5.2.4, p. 140 (PDF p. 153)
+**Justificativa técnica:** Hensen, §5.2.1, p. 136, afirma que as forças externas de vento, corrente e ondas precisam ser compensadas por rebocadores. A soma com sinais 40+10−25=25 tf para boreste e a compensação de 25 tf para bombordo são aplicação mecânica didática; não se atribui a fórmula numérica ao autor. Desprezam-se momentos, reservas e variações temporais.
+**Fonte:** Chapter 5, §5.2.1, p. 136 (PDF p. 149)
 **Alteração:** Substituída variação quadrática de ondas por composição algébrica de vento, corrente e ondas.
 
 ### ANV-HENSEN-C05-L021-04
@@ -343,3 +343,14 @@ Data: 2026-10-30 | PR #173 | branch `audit/hensen-lote-001-20261029`
 - Testes locais npm não executados neste ambiente; validação de GitHub Actions no HEAD final deve ser verificada após o último commit.
 - Gate de Vercel Preview, CI, auditoria integral e demais workflows devem estar aprovados antes de qualquer merge/deploy.
 - Estado: `pending_editorial_review`. Nenhum merge ou deploy autorizado por esta inclusão.
+
+## Retificação verificada — checkpoint 022 (2026-10-30)
+
+- **ID:** `ANV-HENSEN-C05-L021-03`.
+- **Antes:** `Chapter 5, §5.2.2–5.2.4, p. 140 (PDF p. 153)`. A referência usava um intervalo de seções não aceito pelo validador, sem indicar seção única exata.
+- **Depois:** `Chapter 5, §5.2.1, p. 136 (PDF p. 149)`.
+- **Fonte consultada:** PDF da quarta edição no Google Drive, passagem `5.2.1 The two main situations to be considered`: vento, corrente e ondas geram forças a serem compensadas por rebocadores. A conta 40+10−25 e o sentido de compensação são derivação didática, não citação de fórmula específica de Hensen.
+- **Preservados:** ID, enunciado, cinco alternativas, gabarito A, taxonomia `arte-naval/hensen-tug`, estado `pending_editorial_review` e quarentena dos históricos.
+- **Causa e evidência:** CI run https://github.com/noconvescomdavi/simulado-pscpp/actions/runs/41065182184 e Full Audit https://github.com/noconvescomdavi/simulado-pscpp/actions/runs/41065182219 falharam em `validate-hensen-source-locators.mjs` para esse ID. `Study Plan V3 invariants` passou na mesma execução.
+- **Commit da correção:** https://github.com/noconvescomdavi/simulado-pscpp/commit/f1e3ac15aab7ec4dd37d70467f078246671edcef.
+- **Homologação:** não concluída. Testes e Preview do HEAD pós-reparo precisam ser reconfirmados.
