@@ -820,36 +820,36 @@
       "subject": "II — Arte Naval",
       "module": "Assisting methods",
       "topic_code": "ANV.HENSEN.C03.L008.02",
-      "topic": "Mudança de bordo no push-pull",
+      "topic": "Braço de giro no push-pull",
       "difficulty": "Difícil",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 4,
-      "question": "Rebocadores já conectados em push-pull precisam acompanhar uma troca do bordo de atracação. Qual dificuldade surge?",
+      "question": "Ao comparar a guinada de um navio com rebocadores em push-pull ao costado e rebocadores por cabo afastados, que limitação geométrica do primeiro método merece atenção?",
       "options": [
         {
           "key": "A",
-          "text": "A troca ocorre automaticamente."
+          "text": "A força transversal é sempre nula quando há dois rebocadores."
         },
         {
           "key": "B",
-          "text": "A conexão reduz a flexibilidade e pode exigir reposicionamento."
+          "text": "O braço de giro pode ser relativamente curto, pois depende da distância longitudinal entre os rebocadores junto ao costado."
         },
         {
           "key": "C",
-          "text": "O bordo é irrelevante com cabo curto."
+          "text": "O braço de giro passa a ser o comprimento total do cabo de reboque."
         },
         {
           "key": "D",
-          "text": "A mudança dispensa coordenação."
+          "text": "O método elimina a necessidade de analisar momentos de guinada."
         },
         {
           "key": "E",
-          "text": "Basta mudar a frequência de rádio."
+          "text": "A potência dos rebocadores determina sozinha o braço de giro."
         }
       ],
       "correct_answer": "B",
-      "explanation": "O método junto ao costado condiciona o lado de emprego dos rebocadores.",
+      "explanation": "Hensen registra como desvantagem do push-pull o braço de giro relativamente curto, dado pela separação entre rebocadores ao costado.",
       "active": true,
       "validation_status": "approved",
       "validation": {
@@ -1027,7 +1027,7 @@
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapter 3, §3.3.5, p. 90 (PDF p. 103)"
+        "locator": "Chapter 3, §3.3.5, p. 89 (PDF p. 102)"
       },
       "tags": [
         "hensen",
@@ -1486,36 +1486,36 @@
       "subject": "II — Arte Naval",
       "module": "Bollard pull required",
       "topic_code": "ANV.HENSEN.C05.L008.01",
-      "topic": "Carga de convés e vento",
+      "topic": "Coeficientes aerodinâmicos de vento",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "A altura das pilhas de contêineres aumenta. Qual dado deve ser atualizado no cálculo de vento?",
+      "question": "Dois navios apresentam a mesma área vélica lateral e recebem vento de igual intensidade, mas possuem superestruturas e trims diferentes. Por que a força lateral pode diferir?",
       "options": [
         {
           "key": "A",
-          "text": "Área projetada exposta e coeficientes adequados à condição."
+          "text": "Porque os coeficientes aerodinâmicos dependem da forma do navio, trim, superestruturas e ângulo do vento."
         },
         {
           "key": "B",
-          "text": "Somente a área submersa."
+          "text": "Porque a área lateral determina a força sem qualquer coeficiente."
         },
         {
           "key": "C",
-          "text": "Apenas o diâmetro do hélice."
+          "text": "Porque a densidade da água substitui o coeficiente aerodinâmico."
         },
         {
           "key": "D",
-          "text": "Somente a densidade da água."
+          "text": "Porque a força de vento independe da geometria do navio."
         },
         {
           "key": "E",
-          "text": "Apenas o deslocamento do navio."
+          "text": "Porque o coeficiente de vento é sempre igual para todos os tipos de navio."
         }
       ],
       "correct_answer": "A",
-      "explanation": "A carga de convés compõe a área exposta ao vento.",
+      "explanation": "Hensen apresenta coeficientes de vento variáveis conforme forma, calado, trim, superestrutura e ângulo de incidência.",
       "active": true,
       "validation_status": "approved",
       "validation": {
@@ -2004,36 +2004,36 @@
       "subject": "II — Arte Naval",
       "module": "Interaction and tug safety",
       "topic_code": "ANV.HENSEN.C06.L008.03",
-      "topic": "Região de aproximação",
+      "topic": "Onda de proa de VLCC carregado",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Para encostar em navio com seguimento, onde o escoamento tende a ser mais uniforme?",
+      "question": "Um rebocador aguarda próximo à proa de um VLCC carregado com pequeno UKC e seguimento de 4 a 5 nós. Qual efeito inesperado pode ocorrer?",
       "options": [
         {
           "key": "A",
-          "text": "Sob a proa bulbosa em qualquer velocidade."
+          "text": "A onda de proa sempre atrai o rebocador diretamente para a popa."
         },
         {
           "key": "B",
-          "text": "Imediatamente junto ao hélice de popa."
+          "text": "A pequena folga sob a quilha elimina a interação hidrodinâmica."
         },
         {
           "key": "C",
-          "text": "Próximo à seção mestra, observadas as condições da manobra."
+          "text": "A onda de pressão da proa pode empurrar o rebocador para vante, exigindo até empuxo a ré para controlar sua aproximação."
         },
         {
           "key": "D",
-          "text": "Na região de máxima sucção."
+          "text": "A pressão de proa só existe quando o navio está parado."
         },
         {
           "key": "E",
-          "text": "Em qualquer ponto, pois a pressão é igual."
+          "text": "A onda impede qualquer deslocamento longitudinal do rebocador."
         }
       ],
       "correct_answer": "C",
-      "explanation": "Hensen indica a região central como geralmente mais segura.",
+      "explanation": "Hensen relata que a pressão de proa de navios grandes e carregados pode deslocar o rebocador para vante durante a aproximação.",
       "active": true,
       "validation_status": "approved",
       "validation": {
@@ -2063,7 +2063,7 @@
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapter 6, §6.3.2, p. 155 (PDF p. 168)"
+        "locator": "Chapter 6, §6.3.2, p. 156 (PDF p. 169)"
       },
       "tags": [
         "hensen",
@@ -2078,36 +2078,36 @@
       "subject": "II — Arte Naval",
       "module": "Interaction and tug safety",
       "topic_code": "ANV.HENSEN.C06.L008.04",
-      "topic": "Travessia de alheta",
+      "topic": "Comunicação proativa em nevoeiro",
       "difficulty": "Difícil",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 4,
-      "question": "Um rebocador convencional de popa deve mudar de uma alheta para outra. Qual condição é essencial?",
+      "question": "Durante assistência em nevoeiro denso, o mestre do rebocador identifica dificuldade de manter posição, ainda não percebida pelo prático. Qual conduta é recomendada?",
       "options": [
         {
           "key": "A",
-          "text": "Navio em alta velocidade."
+          "text": "Aguardar a próxima ordem sem informar o risco."
         },
         {
           "key": "B",
-          "text": "Ordem de máquina avante durante a passagem."
+          "text": "Aumentar a velocidade do navio para melhorar o radar."
         },
         {
           "key": "C",
-          "text": "Ausência de comunicação com o passadiço."
+          "text": "Desligar a comunicação para reduzir distrações."
         },
         {
           "key": "D",
-          "text": "Navio praticamente parado na água e coordenação do uso do hélice."
+          "text": "Comunicar imediatamente a dificuldade ao prático, mantendo coordenação e velocidade reduzida."
         },
         {
           "key": "E",
-          "text": "Tração transversal máxima no cabo."
+          "text": "Manter a dificuldade em sigilo se a manobra ainda não foi interrompida."
         }
       ],
       "correct_answer": "D",
-      "explanation": "Há risco de girting e de interação com o hélice do navio.",
+      "explanation": "Hensen recomenda encorajar os mestres a relatar prontamente dificuldades e anormalidades durante manobras em nevoeiro.",
       "active": true,
       "validation_status": "approved",
       "validation": {
@@ -2137,7 +2137,7 @@
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapter 6, §6.3.10, p. 163 (PDF p. 176)"
+        "locator": "Chapter 6, §6.3.12, p. 165 (PDF p. 178)"
       },
       "tags": [
         "hensen",
@@ -2507,7 +2507,7 @@
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapter 7, §7.5.4, p. 192 (PDF p. 205)"
+        "locator": "Chapter 7, §7.5.4, p. 198 (PDF p. 211)"
       },
       "tags": [
         "hensen",
@@ -2596,36 +2596,36 @@
       "subject": "II — Arte Naval",
       "module": "Escort tugs",
       "topic_code": "ANV.HENSEN.C09.L008.01",
-      "topic": "Mitigação na escolta",
+      "topic": "Distribuição lateral de rebocadores conectados",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Se um encalhe não puder ser totalmente evitado após falha de governo, que objetivo permanece para a escolta?",
+      "question": "Em escolta com rebocadores presos apenas a um bordo, o navio sofre guinada inesperada para o lado oposto. Qual problema de posicionamento deve ser previsto?",
       "options": [
         {
           "key": "A",
-          "text": "Reduzir impacto e consequências com forças de governo e frenagem."
+          "text": "Os rebocadores conectados podem ficar no bordo inadequado para contrariar a guinada, exigindo estudo de posições e assistência em ambos os bordos."
         },
         {
           "key": "B",
-          "text": "Garantir ausência de danos em qualquer velocidade."
+          "text": "Rebocadores presos em um bordo podem aplicar qualquer força lateral sem restrição geométrica."
         },
         {
           "key": "C",
-          "text": "Substituir a análise de risco pela presença do rebocador."
+          "text": "A direção da guinada não influencia a eficácia do posicionamento."
         },
         {
           "key": "D",
-          "text": "Manter sempre o rebocador desconectado."
+          "text": "A conexão torna desnecessário avaliar vento e corrente."
         },
         {
           "key": "E",
-          "text": "Ignorar proteção ambiental em casco duplo."
+          "text": "A disposição lateral dos rebocadores só importa com o navio parado."
         }
       ],
       "correct_answer": "A",
-      "explanation": "A escolta busca evitar ou limitar consequências de colisões e encalhes.",
+      "explanation": "Hensen observa que rebocadores conectados a um único bordo podem não estar no lado adequado após uma guinada e discute cobertura dos dois bordos.",
       "active": true,
       "validation_status": "approved",
       "validation": {
@@ -2655,7 +2655,7 @@
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapter 9, §9.4, p. 246 (PDF p. 259)"
+        "locator": "Chapter 9, §9.4, p. 247 (PDF p. 260)"
       },
       "tags": [
         "hensen",
