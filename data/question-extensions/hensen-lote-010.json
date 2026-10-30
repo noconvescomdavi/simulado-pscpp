@@ -6,36 +6,36 @@
       "subject": "II — Arte Naval",
       "module": "Tug design factors",
       "topic_code": "ANV.HENSEN.C01.L010.01",
-      "topic": "Projeto de defensas para frota heterogênea",
+      "topic": "Mudança dos métodos por novos cabos e aparelhos",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Um terminal que antes recebia apenas petroleiros passa a operar navios ro-ro de borda-livre e geometria de costado diferentes. Que característica do rebocador precisa ser reavaliada além da potência instalada?",
+      "question": "Um porto moderniza rebocadores não apenas com propulsores mais manobráveis, mas também com novos aparelhos de reboque e cabos de materiais diferentes. Qual consequência operacional dessa evolução é apontada por Hensen?",
       "options": [
         {
           "key": "A",
-          "text": "Apenas a capacidade dos tanques de combustível, pois o contato com o casco é indiferente."
+          "text": "A modernização dos cabos afeta apenas o custo de estoque, sem interferir na operação."
         },
         {
           "key": "B",
-          "text": "Somente a frequência do VHF, já que a geometria do costado não interfere na assistência."
+          "text": "A adoção de novos aparelhos exige manter obrigatoriamente os métodos tradicionais sem reavaliação."
         },
         {
           "key": "C",
-          "text": "A compatibilidade das defensas e da superestrutura com as zonas de contato dos novos navios."
+          "text": "A tecnologia dos equipamentos de reboque também pode alterar os métodos de assistência e o número de rebocadores empregados."
         },
         {
           "key": "D",
-          "text": "Exclusivamente a velocidade máxima de trânsito, mantendo o mesmo arranjo de defensas."
+          "text": "A escolha do material do cabo determina, sozinha, a velocidade de serviço dos navios assistidos."
         },
         {
           "key": "E",
-          "text": "A cor das defensas, pois sua posição não influencia o risco de dano estrutural."
+          "text": "A mudança de equipamento dispensa examinar a manobrabilidade e os riscos de assistência."
         }
       ],
       "correct_answer": "C",
-      "explanation": "Hensen relaciona tipos de navio aos requisitos de defensas, superestrutura, manobrabilidade e equipamento; a alteração da frota atendida exige verificar as interfaces físicas de contato.",
+      "explanation": "O §1.1 relaciona propulsão, aparelhos de reboque e novos materiais de cabos à evolução dos métodos de assistência e à quantidade de rebocadores utilizados.",
       "active": true,
       "validation_status": "pending_editorial_review",
       "validation": {
@@ -65,7 +65,7 @@
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapter 1, §1.2.3, p. 6 (PDF p. 19)"
+        "locator": "Chapter 1, §1.1, p. 3 (PDF p. 16)"
       },
       "tags": [
         "hensen",
@@ -80,36 +80,36 @@
       "subject": "II — Arte Naval",
       "module": "Tug design factors",
       "topic_code": "ANV.HENSEN.C01.L010.02",
-      "topic": "Apoio a combate a incêndio e poluição",
+      "topic": "Critérios de guincho em apoio a SPM e unidades offshore",
       "difficulty": "Difícil",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Na licitação de uma frota portuária, o edital prevê assistência a navios e resposta inicial a incêndios e derramamentos. Qual abordagem de especificação é tecnicamente adequada?",
+      "question": "Uma empresa pretende empregar os mesmos rebocadores em operações com SPMs e unidades F(P)SO de diferentes portes. Qual parâmetro específico do conjunto de reboque deve integrar a avaliação, além da potência e da manobrabilidade?",
       "options": [
         {
           "key": "A",
-          "text": "Prever os equipamentos e as capacidades específicas de combate a incêndio e controle de poluição, além da rebocagem."
+          "text": "A adequação dos guinchos de reboque às condições locais e às dimensões dos navios atendidos."
         },
         {
           "key": "B",
-          "text": "Presumir que a tração estática certificada substitui qualquer equipamento de resposta ambiental."
+          "text": "A substituição obrigatória de todos os guinchos por cabeços sem capacidade de liberação."
         },
         {
           "key": "C",
-          "text": "Restringir a especificação ao diâmetro dos cabos de reboque, sem requisitos de combate a incêndio."
+          "text": "A padronização de um único comprimento de cabo sem considerar o porte do navio."
         },
         {
           "key": "D",
-          "text": "Dispensar a avaliação de manobrabilidade nas missões de emergência ambiental."
+          "text": "A exclusão de requisitos de reboque, por se tratar de operação fora de um cais convencional."
         },
         {
           "key": "E",
-          "text": "Considerar as missões ambientais automaticamente atendidas por qualquer rebocador convencional."
+          "text": "A definição do guincho exclusivamente pela velocidade máxima do navio em mar aberto."
         }
       ],
       "correct_answer": "A",
-      "explanation": "O §1.2.4 inclui combate a incêndio e controle de poluição entre serviços adicionais que influenciam tipo, porte e equipamento do rebocador.",
+      "explanation": "O §1.2.4 ressalta requisitos específicos de potência, manobrabilidade, equipamento e método para serviços em SPMs, F(P)SOs e outras instalações offshore; o §1.2.1 destaca guinchos de reboque adequados.",
       "active": true,
       "validation_status": "pending_editorial_review",
       "validation": {
@@ -1782,36 +1782,36 @@
       "subject": "II — Arte Naval",
       "module": "Bollard pull required",
       "topic_code": "ANV.HENSEN.C05.L010.05",
-      "topic": "Composição de esforços no exemplo de porta-contêineres",
+      "topic": "Equivalência de potência de propulsor lateral e força estática",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "No exemplo de Hensen para porta-contêineres em aproximação ao berço, são estimadas 117 tf de vento, 42 tf de corrente e 8 tf de ondas. Qual valor total de tração compensatória resulta antes de distribuir a demanda entre rebocadores?",
+      "question": "Um porta-contêineres está praticamente sem seguimento, e seu propulsor lateral de proa dispõe de 2.000 kW. Usando a equivalência aproximada citada por Hensen de 1,5 tf por 100 kW, qual força transversal teórica corresponde a essa potência?",
       "options": [
         {
           "key": "A",
-          "text": "125 toneladas-força, desprezando a parcela de ondas."
+          "text": "Aproximadamente 3 toneladas-força."
         },
         {
           "key": "B",
-          "text": "167 toneladas-força."
+          "text": "Aproximadamente 30 toneladas-força."
         },
         {
           "key": "C",
-          "text": "159 toneladas-força, considerando apenas vento e corrente."
+          "text": "Aproximadamente 15 toneladas-força."
         },
         {
           "key": "D",
-          "text": "200 toneladas-força, por arredondamento obrigatório de cada parcela."
+          "text": "Aproximadamente 45 toneladas-força."
         },
         {
           "key": "E",
-          "text": "75 toneladas-força, correspondente ao deslocamento do navio dividido por mil."
+          "text": "Aproximadamente 60 toneladas-força."
         }
       ],
       "correct_answer": "B",
-      "explanation": "O exemplo numérico do §5.3.2 soma 117+42+8=167 tf; o autor explica que o total já incorpora margem de segurança no método usado.",
+      "explanation": "Para navio sem seguimento, o §5.3.2 indica aproximadamente 1,5 tf por 100 kW de bow thruster. Assim, 2.000/100×1,5=30 tf; em seguimento, a efetividade pode cair.",
       "active": true,
       "validation_status": "pending_editorial_review",
       "validation": {
