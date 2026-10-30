@@ -10,7 +10,7 @@
 - Âncoras textuais localizadas diretamente no PDF do Drive: 40/40. Não localizado por correspondência normalizada: nenhum.
 - Localizadores seguem capítulo/seção e página impressa; deslocamento de +13 para página do PDF. A verificação textual não comprova, isoladamente, paginação visual.
 - Cinco alternativas distintas, explicação e taxonomia HENSEN em todos os 40 IDs. Nenhum lote anterior, quarentena ou validador foi alterado.
-- Triagem lexical Jaccard: máximo 0.538; não garante originalidade conceitual. Os 170 históricos requerem cotejo integral.
+- Triagem lexical Jaccard após oito reescritas: máximo 0.308 (contra 440 anteriores); não garante originalidade conceitual. Os 170 históricos requerem cotejo integral.
 
 ## Relatório por ID
 
@@ -83,3 +83,10 @@
 - `C05-L012-03`: substituído atraso omitido da fórmula de parada (já em `C05-L002-05`) por limites de aplicabilidade quanto à forma do casco e velocidade.
 - `C09-L012-01`: substituído atraso de conexão após falha (já em `C09-L007-01`) por risco de assistência unilateral diante de guinada para bordo oposto.
 - Mantidos todos os IDs, letras de gabarito, total de 40 e equilíbrio A–E. As inferências aplicadas em C01-L012-02 e C01-L012-04 exigem homologação editorial independente.
+
+## Auditoria estrutural conjunta após correções
+
+- 12 lotes, **480 questões e 480 IDs únicos**; todos os lotes com 40 questões, cinco alternativas distintas, justificativa, localizador e distribuição A=8, B=8, C=8, D=8, E=8.
+- O maior Jaccard de enunciados do Lote 012 contra os 440 anteriores caiu para **0,308**; a maior proximidade é `C03-L012-02` versus `C03-L002-04`, mas o novo item cobra especificamente reforço do espringue, enquanto o anterior aborda a lavagem de gelo junto ao cais. Ainda exige revisão independente.
+- No total, oito IDs do Lote 012 foram reescritos após triagem de equivalência. Nenhuma questão anterior foi modificada.
+- Este teste estrutural e lexical foi executado em análise de dados, não equivale a `npm run validate` ou aos workflows completos.
