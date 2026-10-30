@@ -1,17 +1,21 @@
-# HENSEN — Lote 013 — auditoria editorial e bibliográfica
+# HENSEN — Lote 013 — auditoria editorial e bibliográfica (revisão 02)
 
 **Data:** 30/10/2026. **Branch:** `audit/hensen-lote-001-20261029`. **PR:** #173.
 **Fonte primária:** Henk Hensen, *Tug Use in Port*, 4ª ed. (2021), https://drive.google.com/file/d/1TzakagjCKQ_p7kaMbWPV-MHShIZ6AXG9/view .
-**Estado:** `pending_editorial_review`; nenhuma homologação semântica independente.
+**Estado:** `pending_editorial_review`.
 
-## Inventário e verificações
+## Integridade
+- 40 questões, cinco por capítulo 1–7 e 9; A=8 B=8 C=8 D=8 E=8.
+- 40 âncoras textuais no PDF, incluindo duas novas âncoras verificadas na revisão 02; paginação visual ainda pendente.
+- 0 colisões literais de IDs/enunciados com os 480 anteriores; 5 alternativas distintas por questão.
+- Maior Jaccard lexical atual: 0.227 com `ANV-HENSEN-C07-L007-01`. Não substitui revisão conceitual independente dos 480 novos anteriores e 170 históricos.
+- Status `pending_editorial_review`, `duplicate_checked=false`; 119 históricos em quarentena preservados.
 
-- 40 questões novas: cinco por capítulo 1–7 e 9; A=8, B=8, C=8, D=8, E=8.
-- Fonte primária lida no Drive: **40/40 âncoras textuais localizadas** nos intervalos dos capítulos correspondentes. Paginação impressa indicada com deslocamento PDF de +13, seguindo os checkpoints anteriores; **cotejo visual página a página pendente**.
-- Comparação com os 480 itens dos lotes 001–012: **zero colisões literais de IDs e enunciados**, cinco alternativas distintas em todos os itens.
-- Triagem lexical Jaccard por tokens de enunciados: máximo **0.421**, mais próximo `ANV-HENSEN-C06-L004-02`; a métrica não comprova originalidade semântica. Revisão conceitual independente, inclusive contra os 170 históricos, pendente.
-- Mantidos `active=true`, `validation_status=pending_editorial_review`, `validation.duplicate_checked=false`. Os lotes anteriores, 119 históricos em quarentena e validadores não foram modificados.
-- O conteúdo técnico foi verificado contra o texto extraído da fonte; figuras e tabelas não foram inspecionadas visualmente nesta execução.
+## Correções da revisão 02
+- `ANV-HENSEN-C06-L013-01`: a primeira versão repetia conceitualmente `C06-L004-02` (aproximação à seção mestra); substituída por análise do jato do propulsor azimutal interno sem embreagem moduladora, §6.2.4 p. 155.
+- `ANV-HENSEN-C06-L013-03`: a primeira versão repetia conceitualmente `C06-L010-03` (duas retinidas prontas); substituída por liberação controlada de cabo e Norman pins, §6.3.15 p. 174.
+- Localizadores ajustados após leitura da paginação extraída: `ANV-HENSEN-C02-L013-03 → p.74`, `ANV-HENSEN-C04-L013-04 → p.114`, `ANV-HENSEN-C04-L013-05 → p.132`, `ANV-HENSEN-C05-L013-01 → p.142`, `ANV-HENSEN-C05-L013-02 → p.142`, `ANV-HENSEN-C05-L013-05 → p.144`. A paginação visual final ainda requer inspeção do PDF renderizado.
+- Nenhum gabarito ou ID foi alterado.
 
 ## Relatório individual por ID
 
@@ -24,7 +28,7 @@
 | `ANV-HENSEN-C01-L013-05` | Pesquisa operacional antes de escolher a frota | **E** | Chapter 1, §1.5, p. 8 (PDF p. 21) | **Criada.** Hensen exige pesquisa confiável sobre a aplicação temporal e ambiental das forças, incluindo velocidade, confinamento e UKC, e não uma escolha por valor isolado. | 0.129 (`ANV-HENSEN-C01-L001-05`) |
 | `ANV-HENSEN-C02-L013-01` | Altura equivalente nas duas extremidades do RSD | **C** | Chapter 2, §2.13.1, p. 47 (PDF p. 60) | **Criada.** Hensen descreve o RSD como tendo duas extremidades de altura semelhante, em contraste com limitações de outras configurações ao operar invertidas. | 0.095 (`ANV-HENSEN-C06-L012-04`) |
 | `ANV-HENSEN-C02-L013-02` | Recuperação de cabo do Carrousel RAVE sob carga | **D** | Chapter 2, §2.20.1, p. 59 (PDF p. 72) | **Criada.** O CRT possui guincho separado que não é render-recovery; acima do limite de recolhimento, o comandante reduz a força alterando o rumo antes de içar. | 0.2 (`ANV-HENSEN-C07-L007-01`) |
-| `ANV-HENSEN-C02-L013-03` | Segurança de baterias de lítio em rebocador elétrico | **E** | Chapter 2, §2.23, p. 73 (PDF p. 86) | **Criada.** O capítulo relata incidentes com baterias e remete a estudo de segurança que alerta para a insuficiência de ventilação isolada diante de certos cenários de explosão. | 0.045 (`ANV-HENSEN-C07-L007-02`) |
+| `ANV-HENSEN-C02-L013-03` | Segurança de baterias de lítio em rebocador elétrico | **E** | Chapter 2, §2.23, p. 74 (PDF p. 87) | **Criada.** O capítulo relata incidentes com baterias e remete a estudo de segurança que alerta para a insuficiência de ventilação isolada diante de certos cenários de explosão. | 0.045 (`ANV-HENSEN-C07-L007-02`) |
 | `ANV-HENSEN-C02-L013-04` | CFD potencial versus viscosa para afluxo à hélice | **A** | Chapter 2, §2.25, p. 77 (PDF p. 90) | **Criada.** Hensen distingue os cálculos potenciais úteis para formas esbeltas das simulações viscosas necessárias para distribuição detalhada de escoamento e afluxo à propulsão. | 0.179 (`ANV-HENSEN-C02-L006-04`) |
 | `ANV-HENSEN-C02-L013-05` | Alinhamento do casco no sistema carrousel | **B** | Chapter 2, §2.14, p. 47 (PDF p. 60) | **Criada.** O carrousel permite que o casco gire livremente em torno do sistema radial, favorecendo o alinhamento da propulsão convencional à direção do esforço. | 0.136 (`ANV-HENSEN-C07-L001-01`) |
 | `ANV-HENSEN-C03-L013-01` | Risco de partir espringue ao usar máquina em gelo | **E** | Chapter 3, §3.3.2, p. 88 (PDF p. 101) | **Criada.** Hensen separa navios capazes de usar dead slow em espringue daqueles cuja força mínima já pode partir a linha, mesmo duplicada. | 0.143 (`ANV-HENSEN-C03-L012-02`) |
@@ -35,16 +39,16 @@
 | `ANV-HENSEN-C04-L013-01` | Tanquear em lastro com trim pela popa e empurrão de proa | **B** | Chapter 4, §4.2.1, p. 101 (PDF p. 114) | **Criada.** Hensen observa que o centro da resistência hidrodinâmica oposta pode deslocar-se para ré no petroleiro em lastro com trim pela popa, aumentando a eficácia do empurrão à proa. | 0.143 (`ANV-HENSEN-C04-L007-01`) |
 | `ANV-HENSEN-C04-L013-02` | Ponto auxiliar à ré em trator Voith durante espera | **C** | Chapter 4, §4.2.2, p. 106 (PDF p. 119) | **Criada.** O §4.2.2 descreve um ponto auxiliar à ré em alguns tratores VS, destinado a reduzir a demanda de governo quando nenhuma força de direção é solicitada. | 0.143 (`ANV-HENSEN-C09-L011-02`) |
 | `ANV-HENSEN-C04-L013-03` | Distâncias entre centro de pressão e propulsão no reboque direto | **D** | Chapter 4, §4.2.2, p. 105 (PDF p. 118) | **Criada.** A análise geométrica do reboque direto de Hensen associa menor razão entre C–T e P–T a maior eficiência na aplicação da força. | 0.161 (`ANV-HENSEN-C04-L003-01`) |
-| `ANV-HENSEN-C04-L013-04` | Realimentação do adernamento no modo indireto | **E** | Chapter 4, §4.3.1, p. 117 (PDF p. 130) | **Criada.** Hensen associa a imersão da borda do convés ao crescimento da área lateral submersa e recomenda considerar esse limite como barreira de segurança. | 0.138 (`ANV-HENSEN-C07-L011-03`) |
-| `ANV-HENSEN-C04-L013-05` | Comunicação compreensível ao comandante do navio | **A** | Chapter 4, §4.7, p. 133 (PDF p. 146) | **Criada.** Hensen critica a comunicação em gíria local incompreensível ao comandante e recomenda padronização e ordens inequívocas com confirmação. | 0.13 (`ANV-HENSEN-C03-L011-02`) |
-| `ANV-HENSEN-C05-L013-01` | Massa virtual e razão profundidade-calado | **D** | Chapter 5, §5.2.5, p. 141 (PDF p. 154) | **Criada.** A razão entre os fatores recomendados é 1,8/1,5 = 1,2. A questão compara massa virtual em condições distintas, não presume coeficiente universal. | 0.211 (`ANV-HENSEN-C05-L012-01`) |
-| `ANV-HENSEN-C05-L013-02` | Força de parada lateral: berço aberto versus sólido | **E** | Chapter 5, §5.2.5, p. 141 (PDF p. 154) | **Criada.** Na fórmula simplificada, os demais fatores se cancelam e 0,09/0,07 ≈ 1,286; o berço aberto não cria o mesmo colchão d'água de um cais sólido. | 0.167 (`ANV-HENSEN-C05-L004-04`) |
+| `ANV-HENSEN-C04-L013-04` | Realimentação do adernamento no modo indireto | **E** | Chapter 4, §4.3.1, p. 114 (PDF p. 127) | **Criada.** Hensen associa a imersão da borda do convés ao crescimento da área lateral submersa e recomenda considerar esse limite como barreira de segurança. | 0.138 (`ANV-HENSEN-C07-L011-03`) |
+| `ANV-HENSEN-C04-L013-05` | Comunicação compreensível ao comandante do navio | **A** | Chapter 4, §4.7, p. 132 (PDF p. 145) | **Criada.** Hensen critica a comunicação em gíria local incompreensível ao comandante e recomenda padronização e ordens inequívocas com confirmação. | 0.13 (`ANV-HENSEN-C03-L011-02`) |
+| `ANV-HENSEN-C05-L013-01` | Massa virtual e razão profundidade-calado | **D** | Chapter 5, §5.2.5, p. 142 (PDF p. 155) | **Criada.** A razão entre os fatores recomendados é 1,8/1,5 = 1,2. A questão compara massa virtual em condições distintas, não presume coeficiente universal. | 0.211 (`ANV-HENSEN-C05-L012-01`) |
+| `ANV-HENSEN-C05-L013-02` | Força de parada lateral: berço aberto versus sólido | **E** | Chapter 5, §5.2.5, p. 142 (PDF p. 155) | **Criada.** Na fórmula simplificada, os demais fatores se cancelam e 0,09/0,07 ≈ 1,286; o berço aberto não cria o mesmo colchão d'água de um cais sólido. | 0.167 (`ANV-HENSEN-C05-L004-04`) |
 | `ANV-HENSEN-C05-L013-03` | Estimativa empírica de tração para graneleiro carregado | **A** | Chapter 5, §5.3.2, p. 146 (PDF p. 159) | **Criada.** Aplicação direta da expressão: 60 × 2 + 40 = 160 tf. É estimativa empírica e não dispensa análise das condições de operação. | 0.125 (`ANV-HENSEN-C05-L004-02`) |
 | `ANV-HENSEN-C05-L013-04` | Correção de tração para puxar com cabo curto | **B** | Chapter 5, §5.3.6, p. 147 (PDF p. 160) | **Criada.** O resumo do capítulo recomenda elevar aproximadamente 20% as estimativas dos gráficos quando se puxa ao costado com cabo curto: 80 × 1,20 = 96 tf. | 0.147 (`ANV-HENSEN-C05-L004-05`) |
-| `ANV-HENSEN-C05-L013-05` | Reserva já incorporada em exemplo de vento, corrente e ondas | **C** | Chapter 5, §5.3.2, p. 143 (PDF p. 156) | **Criada.** O exemplo soma 167 tf e registra reserva de segurança incluída; o resumo trata separadamente de perdas adicionais de efetividade em cabos curtos. | 0.2 (`ANV-HENSEN-C05-L007-05`) |
-| `ANV-HENSEN-C06-L013-01` | Ponto de aproximação com escoamento mais uniforme | **A** | Chapter 6, §6.3.2, p. 155 (PDF p. 168) | **Criada.** O §6.3.2 recomenda a aproximação na região média do navio, onde o padrão de escoamento é mais uniforme que nas extremidades. | 0.421 (`ANV-HENSEN-C06-L004-02`) |
+| `ANV-HENSEN-C05-L013-05` | Reserva já incorporada em exemplo de vento, corrente e ondas | **C** | Chapter 5, §5.3.2, p. 144 (PDF p. 157) | **Criada.** O exemplo soma 167 tf e registra reserva de segurança incluída; o resumo trata separadamente de perdas adicionais de efetividade em cabos curtos. | 0.2 (`ANV-HENSEN-C05-L007-05`) |
+| `ANV-HENSEN-C06-L013-01` | Sucção por jato do propulsor interno azimutal sem embreagem moduladora | **A** | Chapter 6, §6.2.4, p. 155 (PDF p. 168) | **Reformulada por duplicação conceitual.** O §6.2.4 descreve que o jato do propulsor interno pode acelerar a água entre os cascos e produzir sucção violenta; em propulsores de passo fixo sem embreagem moduladora, a rotação mínima relativamente elevada agrava o efeito. | 0.103 (`ANV-HENSEN-C01-L003-04`) |
 | `ANV-HENSEN-C06-L013-02` | Hélice FPP e CPP na conexão pela popa | **B** | Chapter 6, §6.3.4, p. 158 (PDF p. 171) | **Criada.** O §6.3.4 distingue a hélice de passo fixo, que deve estar parada, da CPP, que deve ficar em passo mínimo, reduzindo perturbação e risco ao rebocador. | 0.19 (`ANV-HENSEN-C03-L011-05`) |
-| `ANV-HENSEN-C06-L013-03` | Quantidade mínima de retinidas prontas | **C** | Chapter 6, §6.3.5, p. 159 (PDF p. 172) | **Criada.** O §6.3.5 recomenda pessoal de prontidão e pelo menos duas retinidas apropriadas para reduzir permanência do rebocador em área de risco. | 0.333 (`ANV-HENSEN-C06-L010-03`) |
+| `ANV-HENSEN-C06-L013-03` | Recolhimento do cabo após liberar o rebocador e emprego de Norman pins | **C** | Chapter 6, §6.3.15, p. 174 (PDF p. 187) | **Reformulada por duplicação conceitual.** O §6.3.15 recomenda não deixar cabos cair na água, mas baixá-los guiados ao convés do rebocador; os Norman pins, quando existentes, devem ser erguidos para impedir que a linha deslize pelas laterais e alcance hélices. | 0.13 (`ANV-HENSEN-C03-L011-05`) |
 | `ANV-HENSEN-C06-L013-04` | GNSS multipercurso e posição no ECDIS em nevoeiro | **D** | Chapter 6, §6.3.12, p. 163 (PDF p. 176) | **Criada.** Hensen alerta que o multipercurso pode gerar posição incorreta sem percepção em baixa visibilidade quando falta uma segunda referência independente. | 0.115 (`ANV-HENSEN-C06-L008-04`) |
 | `ANV-HENSEN-C06-L013-05` | Exigências históricas para dois tripulantes em Hamburgo | **E** | Chapter 6, §6.3.14, p. 170 (PDF p. 183) | **Criada.** O exemplo histórico do §6.3.14 reúne redundância de motores, requisitos de passadiço e VHF com controle por pedal; não se afirma que seja regra universal vigente. | 0.167 (`ANV-HENSEN-C06-L005-03`) |
 | `ANV-HENSEN-C07-L013-01` | Comprimento fixo de cabo sem guincho | **C** | Chapter 7, §7.3.1, p. 179 (PDF p. 192) | **Criada.** Hensen observa que cabos próprios com olhais fixos não têm comprimento variável; algumas unidades levam mais de um cabo de comprimento diferente. | 0.227 (`ANV-HENSEN-C07-L007-01`) |
@@ -59,8 +63,7 @@
 | `ANV-HENSEN-C09-L013-05` | Investigação de falhas recorrentes e projeto do navio | **D** | Chapter 9, §9.8, p. 272 (PDF p. 285) | **Criada.** Nas conclusões, Hensen recomenda investigar falhas técnicas sistemáticas e propor mudanças de projeto, em vez de tratar apenas suas consequências. | 0.111 (`ANV-HENSEN-C09-L002-02`) |
 
 ## Testes e pendências
-
-- Integridade local do lote e comparação literal com os lotes anteriores: aprovadas antes do commit.
-- **Não executados localmente:** `npm run validate`, `npm run build` e validação integral do repositório; dependem do ambiente de CI.
-- **Pendentes:** revisão semântica independente, conferência visual das 40 páginas/figuras e confronto semântico dos 170 históricos; gates no SHA de conteúdo e no HEAD documental final; Vercel Preview bloqueado anteriormente por limite de builds.
+- Estrutura e comparação literal locais aprovadas para 520 novos itens dos lotes 001–013.
+- Não executados localmente `npm run validate` nem `npm run build`; exigir CI no SHA final.
+- Pendentes revisão semântica independente, cotejo visual de páginas/figuras e comparação conceitual dos 170 históricos.
 - Não houve merge, deploy, alteração de validações ou reativação de quarentena.
