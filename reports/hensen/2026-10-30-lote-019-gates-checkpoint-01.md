@@ -12,3 +12,9 @@ Data: 2026-10-30. PR #173. Branch `audit/hensen-lote-001-20261029`.
 - **Não concluído**: originalidade conceitual independente, revisão dos 170 históricos e banco principal, testes npm, CI e auditorias no HEAD final, Preview Vercel.
 - Os 119 históricos em quarentena, 51 ativos e lotes anteriores foram preservados; workflows, validadores e configuração de deploy não foram alterados.
 - Status editorial `pending_editorial_review`. **Não fazer merge nem deploy até aprovação de todos os gates e homologação editorial.**
+
+## Correção de gate e auditoria histórica
+
+- A primeira execução de `Full Question Bank Audit` falhou no `HENSEN_SOURCE_GUARD` exclusivamente em `ANV-HENSEN-C05-L019-03` por justificativa insuficiente. Explicação técnica ampliada no commit `113d8a8c48b7a409c3b884f3a43ca912637ebe19`; não houve mudança de gabarito ou alternativas.
+- Confronto literal e lexical do L019 com os 170 registros HENSEN históricos dos dez blocos: zero colisões e zero alertas Jaccard >= 0,33. Os 119 em quarentena e 51 ativos permanecem inalterados.
+- Verificar novamente todos os workflows e Vercel no HEAD final deste checkpoint. O resultado do commit anterior não homologa o HEAD novo.
