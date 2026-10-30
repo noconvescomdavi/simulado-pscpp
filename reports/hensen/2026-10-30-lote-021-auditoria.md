@@ -14,7 +14,7 @@ Data: 2026-10-30 | PR #173 | branch `audit/hensen-lote-001-20261029`
 | `ANV-HENSEN-C01-L021-05` | Padronização versus envelope operacional | C | Chapter 1, §1.5, p. 8 (PDF p. 21) | Questão nova, sem revisão posterior. |
 | `ANV-HENSEN-C02-L021-01` | Defensa em bloco para trabalho pesado | B | Chapter 2, §2.2.4, p. 14 (PDF p. 27) | Questão nova, sem revisão posterior. |
 | `ANV-HENSEN-C02-L021-02` | Bow thruster de túnel a dois nós | E | Chapter 2, §2.3.2, p. 22 (PDF p. 35) | Questão nova, sem revisão posterior. |
-| `ANV-HENSEN-C02-L021-03` | Proteção do convés no guincho radial | C | Chapter 2, §2.16, p. 50 (PDF p. 63) | Questão nova, sem revisão posterior. |
+| `ANV-HENSEN-C02-L021-03` | Ventilação segura sob grandes ângulos de banda no AR360T | C | Chapter 2, §2.16, p. 50 (PDF p. 63) | Reescrita no checkpoint 022 para eliminar duplicidade com C02-L020-02. |
 | `ANV-HENSEN-C02-L021-04` | Propulsão híbrida paralela em baixa carga | A | Chapter 2, §2.23, p. 68 (PDF p. 81) | Questão nova, sem revisão posterior. |
 | `ANV-HENSEN-C02-L021-05` | Proa quebra-gelo removível | D | Chapter 2, §2.24, p. 77 (PDF p. 90) | Questão nova, sem revisão posterior. |
 | `ANV-HENSEN-C03-L021-01` | Mudança de fase na assistência regional | C | Chapter 3, §3.2.1, p. 84 (PDF p. 97) | Questão nova, sem revisão posterior. |
@@ -37,7 +37,7 @@ Data: 2026-10-30 | PR #173 | branch `audit/hensen-lote-001-20261029`
 | `ANV-HENSEN-C06-L021-03` | Retinida não preparada e tempo em risco | B | Chapter 6, §6.3.5, p. 160 (PDF p. 173) | Questão nova, sem revisão posterior. |
 | `ANV-HENSEN-C06-L021-04` | Liberação de cabo sob nevoeiro | E | Chapter 6, §6.3.12, p. 164 (PDF p. 177) | Questão nova, sem revisão posterior. |
 | `ANV-HENSEN-C06-L021-05` | Limites distintos em bow-to-bow | C | Chapter 6, §6.3.13, p. 168 (PDF p. 181) | Questão nova, sem revisão posterior. |
-| `ANV-HENSEN-C07-L021-01` | Gob rope deixado conectado | B | Chapter 7, §7.2.2, p. 178 (PDF p. 191) | Questão nova, sem revisão posterior. |
+| `ANV-HENSEN-C07-L021-01` | Guia de reboque transversal com deslocamento para o bordo baixo | B | Chapter 7, §7.2.2, p. 178 (PDF p. 191) | Reescrita no checkpoint 022 para eliminar duplicidade com histórico ANV-B010-16. |
 | `ANV-HENSEN-C07-L021-02` | Diâmetro mínimo do tambor para cabo de aço | E | Chapter 7, §7.3.3.4, p. 186 (PDF p. 199) | Substituída questão de encurtamento de cabo sob carga por dimensionamento do diâmetro do tambor (14:1). |
 | `ANV-HENSEN-C07-L021-03` | Autonomia de liberação em blackout | C | Chapter 7, §7.3.3.4, p. 186 (PDF p. 199) | Questão nova, sem revisão posterior. |
 | `ANV-HENSEN-C07-L021-04` | Fator de segurança e resistência residual | A | Chapter 7, §7.5.4, p. 198 (PDF p. 211) | Questão nova, sem revisão posterior. |
@@ -100,11 +100,11 @@ Data: 2026-10-30 | PR #173 | branch `audit/hensen-lote-001-20261029`
 **Alteração:** Inclusão inédita; preservados os lotes anteriores.
 
 ### ANV-HENSEN-C02-L021-03
-**Enunciado:** Antes de tripulantes entrarem na área de um guincho radial rotativo, qual sequência é descrita?
-**Resposta:** C — Imobilizar o suporte com freio de estacionamento e só liberar seu giro após a saída de todos.
-**Justificativa técnica:** O projeto do All-Rounder separa o acesso ao convés da movimentação do guincho.
+**Enunciado:** No projeto do rebocador All-Rounder AR360T, qual dispositivo adicional foi previsto para reduzir o risco de alagamento da praça de máquinas quando a embarcação aderna acentuadamente?
+**Resposta:** C — Sistema SaferVents, concebido para evitar inundação da praça de máquinas mesmo sob grandes ângulos de banda.
+**Justificativa técnica:** Hensen, §2.16, p. 50, descreve SaferVents como proteção da praça de máquinas sob grandes bandas, distinta da imobilização do guincho para acesso ao convés.
 **Fonte:** Chapter 2, §2.16, p. 50 (PDF p. 63)
-**Alteração:** Inclusão inédita; preservados os lotes anteriores.
+**Alteração:** Reescrita por duplicidade semântica com `ANV-HENSEN-C02-L020-02`; preservados ID, gabarito C, página e taxonomia.
 
 ### ANV-HENSEN-C02-L021-04
 **Enunciado:** Um rebocador passa muito tempo em baixa carga e precisa de picos de potência. Qual solução híbrida é descrita?
@@ -261,11 +261,11 @@ Data: 2026-10-30 | PR #173 | branch `audit/hensen-lote-001-20261029`
 **Alteração:** Inclusão inédita; preservados os lotes anteriores.
 
 ### ANV-HENSEN-C07-L021-01
-**Enunciado:** Um convencional mantém gob rope mal ajustado após desatracar e o navio ganha seguimento. Qual risco surge?
-**Resposta:** B — A linha tensionada pode impedir o giro do rebocador e provocar girting.
-**Justificativa técnica:** Hensen recomenda desconectar gob rope quando não necessário.
+**Enunciado:** Alguns rebocadores possuem uma abertura transversal no towing staple que permite ao cabo deslocar-se para o bordo mais baixo quando há banda. Qual é a combinação de efeitos que Hensen ressalta?
+**Resposta:** B — Possível momento adicional de endireitamento, acompanhado de provável abrasão adicional do cabo.
+**Justificativa técnica:** Hensen, §7.2.2, p. 178, descreve abertura transversal que permite deslocamento do cabo para o bordo baixo, criando momento de endireitamento e provável abrasão.
 **Fonte:** Chapter 7, §7.2.2, p. 178 (PDF p. 191)
-**Alteração:** Inclusão inédita; preservados os lotes anteriores.
+**Alteração:** Reescrita por duplicidade com o histórico em quarentena `ANV-B010-16`; o histórico não foi reativado.
 
 ### ANV-HENSEN-C07-L021-02
 **Enunciado:** Para um guincho de reboque com cabo de aço de 40 mm de diâmetro, qual diâmetro mínimo de tambor decorre da razão 14:1 citada nas regras reproduzidas por Hensen?
@@ -354,3 +354,12 @@ Data: 2026-10-30 | PR #173 | branch `audit/hensen-lote-001-20261029`
 - **Causa e evidência:** CI run https://github.com/noconvescomdavi/simulado-pscpp/actions/runs/41065182184 e Full Audit https://github.com/noconvescomdavi/simulado-pscpp/actions/runs/41065182219 falharam em `validate-hensen-source-locators.mjs` para esse ID. `Study Plan V3 invariants` passou na mesma execução.
 - **Commit da correção:** https://github.com/noconvescomdavi/simulado-pscpp/commit/f1e3ac15aab7ec4dd37d70467f078246671edcef.
 - **Homologação:** não concluída. Testes e Preview do HEAD pós-reparo precisam ser reconfirmados.
+
+## Retificação semântica — checkpoint 022 (2026-10-30)
+
+| ID | Antes | Depois | Justificativa | Commit |
+|---|---|---|---|---|
+| `ANV-HENSEN-C02-L021-03` | Acesso seguro ao guincho radial, idêntico em competência a `C02-L020-02`; gabarito C | SaferVents e prevenção de alagamento da praça de máquinas sob grandes bandas; gabarito C | §2.16, p. 50, descreve os dois recursos separadamente; o novo item testa estabilidade/ventilação, não controle de acesso | [`33c5e52`](https://github.com/noconvescomdavi/simulado-pscpp/commit/33c5e52d0bf7f404a92834864c39a9e7bf7a60cb) |
+| `ANV-HENSEN-C07-L021-01` | Gob rope esquecida e risco de girting, redundante com histórico `ANV-B010-16`; gabarito B | Towing staple transversal, momento de endireitamento e abrasão; gabarito B | §7.2.2, p. 178, trata explicitamente do guia e do desgaste, mecanismo distinto do gob rope | [`33c5e52`](https://github.com/noconvescomdavi/simulado-pscpp/commit/33c5e52d0bf7f404a92834864c39a9e7bf7a60cb) |
+
+**Alternativas novas completas:** `C02-L021-03`: A=defensas largas; B=fechar ventilação permanentemente; C=SaferVents; D=guincho folgado; E=velocidade para expulsar água. `C07-L021-01`: A=aumento de adernamento sem desgaste; B=endireitamento e abrasão; C=bloqueio do cabo; D=carrousel completo automático; E=redução permanente de tensão. Distratores são mutuamente distintos. Preservados os estados `pending_editorial_review` e a quarentena histórica. A equivalência semântica global ainda exige auditoria independente.
