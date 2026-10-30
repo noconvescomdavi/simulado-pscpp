@@ -542,6 +542,11 @@
 - `ANV-HENSEN-C05-L009-04`: substituído o exercício de proporcionalidade de área vélica por avaliação da faixa típica do coeficiente lateral de vento; gabarito D mantido.
 - `ANV-HENSEN-C09-L009-03`: substituída a questão sobre momento de frenagem lateral por análise comparativa dos riscos de derramamento de GLP e GNL; gabarito A mantido.
 
+## Revisão dos distratores após o relatório inicial
+
+- **160 alternativas incorretas (quatro por questão) foram reescritas** para privilegiar erros técnicos plausíveis e reduzir opções evidentemente absurdas; os 40 gabaritos, enunciados e localizadores foram preservados. Commit `68889950675d7b9a265676435ec8e06cc048c2b1`.
+- Esta revisão textual não substitui uma segunda leitura editorial independente de cada item.
+
 ## Verificações efetivamente executadas
 
 - Comparados nove arquivos `hensen-lote-001` a `009` e dez blocos históricos (`006`, `007`, `008`, `010`, `013`, `016`, `019`, `021`, `022`, `023`), totalizando 1.020 questões anteriores nos arquivos inspecionados, das quais 170 históricas HENSEN.
