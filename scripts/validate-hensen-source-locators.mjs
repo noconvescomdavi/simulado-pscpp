@@ -4,15 +4,15 @@ import fs from "node:fs";
 import path from "node:path";
 
 const dir = path.join(process.cwd(), "data", "question-extensions");
-const files = fs.readdirSync(dir).filter(name => /^hensen-lote-\\d{3}\\.json$/.test(name)).sort();
+const files = fs.readdirSync(dir).filter(name => /^hensen-lote-\d{3}\.json$/.test(name)).sort();
 const errors = [];
 const seen = new Set();
 const chapters = new Set([1, 2, 3, 4, 5, 6, 7, 9]);
-const clean = value => String(value ?? "").normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").toLowerCase().replace(/\\s+/g, " ").trim();
+const clean = value => String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\s+/g, " ").trim();
 if (!files.length) errors.push("Nenhum lote HENSEN encontrado.");
 let count = 0;
 for (const file of files) {
-  const lot = file.match(/hensen-lote-(\\d{3})\\.json$/)[1];
+  const lot = file.match(/hensen-lote-(\d{3})\.json$/)[1];
   let data;
   try { data = JSON.parse(fs.readFileSync(path.join(dir, file), "utf8")); }
   catch (error) { errors.push(`${file}: JSON inválido: ${error.message}`); continue; }
@@ -25,7 +25,7 @@ for (const file of files) {
   for (const q of qs) {
     count++;
     const id = String(q.id ?? "");
-    const match = id.match(/^ANV-HENSEN-C(\\d{2})-L(\\d{3})-(\\d{2})$/);
+    const match = id.match(/^ANV-HENSEN-C(\d{2})-L(\d{3})-(\d{2})$/);
     if (!match || match[2] !== lot || !chapters.has(Number(match[1]))) errors.push(`${file}: ID ou capítulo inválido: ${id}`);
     if (seen.has(id)) errors.push(`${file}: ID duplicado: ${id}`);
     seen.add(id);
@@ -39,7 +39,7 @@ for (const file of files) {
     if (exp.length < 30) errors.push(`${id}: explicação ausente ou insuficiente.`);
     if (options.some(o => o.key !== q.correct_answer && clean(o.text) === exp)) errors.push(`${id}: explicação copiada de distrator incorreto.`);
     const loc = String(q.source?.locator ?? "");
-    const source = loc.match(/^Chapter (\\d+), §(\\d+(?:\\.\\d+)*), p\\. (\\d+) \\(PDF p\\. (\\d+)\\)$/);
+    const source = loc.match(/^Chapter (\d+), §(\d+(?:\.\d+)*), p\. (\d+) \(PDF p\. (\d+)\)$/);
     if (!source || !chapters.has(Number(source[1])) || Number(source[1]) !== Number(match?.[1]) || Number(source[4]) - Number(source[3]) !== 13) {
       errors.push(`${id}: localizador HENSEN inválido ou páginas incoerentes: ${loc}`);
     }
