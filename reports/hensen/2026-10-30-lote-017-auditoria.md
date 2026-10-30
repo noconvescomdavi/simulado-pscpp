@@ -335,3 +335,18 @@ Fonte primária consultada: Henk Hensen, *Tug Use in Port*, 4ª edição (2021),
 ## Revisão 02 — reparos de originalidade
 
 Foram reformulados quatro itens após identificação de proximidade conceitual com lotes anteriores: C01-L017-05 (comprimento de cabo, L006), C05-L017-02 (escala da distância de parada, L008), C06-L017-03 (dois tripulantes em Hamburgo, L013) e C06-L017-04 (homem ao mar com guarnição reduzida, L015). Os IDs foram preservados e os novos gabaritos redistribuídos mantendo oito por letra. A revisão semântica independente continua pendente.
+
+
+## Revisão 03 — correção de fonte primária (checkpoint 018, 30/10/2026)
+
+**ID:** `ANV-HENSEN-C03-L017-02` — somente três campos alterados: `question`, `explanation` e `source.locator`.
+
+| Campo | Antes | Depois |
+|---|---|---|
+| Enunciado | Navio com grande empuxo mínimo usa máquina dead slow contra espringue para retirar gelo. Qual perigo? | Durante atracação em gelo, pretende-se usar Dead Slow Ahead com espringue de vante firme para varrer gelo pelo fluxo do hélice. Por que esse método não deve ser aplicado a um navio com elevado empuxo inicial? |
+| Explicação | Alguns navios não podem trabalhar sobre espringue devido ao empuxo inicial. | Hensen (§3.3.6, p. 92) desaconselha manobras em gelo usando máquina contra espringues em navios com elevada potência de partida ou em Dead Slow, pelo risco de ruptura das espias; nesses casos a manobra deve ser executada com rebocadores, sem usar o fluxo do hélice para remover gelo. |
+| Localizador | `Chapter 3, §3.3.2, p. 88 (PDF p. 101)` | `Chapter 3, §3.3.6, p. 92 (PDF p. 105)` |
+
+**Evidência:** Henk Hensen, *Tug Use in Port*, 4ª edição, seção **3.3.6 Berthing in ice**, página impressa **92** (PDF p. 105). O trecho explica que o uso de máquina e espringues é inadequado para navios com grande potência de partida ou potência elevada em Dead Slow; a alternativa é empregar rebocadores sem usar a esteira do hélice. A seção **3.3.2**, citada antes, trata de tipos de navio para manobra em gelo e não fundamenta a contraindicação. Fonte consultada: https://drive.google.com/file/d/1TzakagjCKQ_p7kaMbWPV-MHShIZ6AXG9/view .
+
+**Preservado:** ID, cinco alternativas, gabarito **D**, taxonomia `arte-naval/hensen-tug`, estado `pending_editorial_review` e todos os outros 39 registros. Verificação estrutural local em memória: 40 IDs únicos, cinco alternativas distintas por questão e oito respostas por letra A–E. Revisão visual e semântica independente dos demais itens permanece pendente.
