@@ -10,7 +10,7 @@ Fonte primária: Henk Hensen, *Tug Use in Port: A Practical Guide*, 4ª edição
 
 - Distribuição dos gabaritos: A=8, B=8, C=8, D=8, E=8. Quarenta IDs únicos.
 
-- Referências com capítulo, seção e página impressa (PDF p. impressa + 13). 40 âncoras verificadas no texto extraído da fonte primária; conferência visual integral pendente.
+- Referências com capítulo, seção e página impressa (PDF p. impressa + 13). 40 âncoras inicialmente declaradas como verificadas no texto extraído; revisão posterior identificou um localizador incorreto em `C01-L019-01` e o corrigiu para §1.2.4, p. 6. Conferência visual integral e homologação independente permanecem pendentes.
 
 - Comparação literal com os 720 itens dos lotes 001–018: **zero colisões**. Triagem lexical Jaccard por tokens relevantes (limiar 0,33): **zero alertas após quatro reescritas**. Ausência de alerta lexical não prova originalidade conceitual integral.
 
@@ -32,8 +32,8 @@ Fonte primária: Henk Hensen, *Tug Use in Port: A Practical Guide*, 4ª edição
 - **Alteração**: Substituído tema de transferência de push-pull já coberto no L014 por classificação de instalações remotas SPM/FLNG..
 - **Tema**: Instalação remota SPM e FLNG na tipologia de portos.
 - **Gabarito**: C.
-- **Fonte**: Chapter 1, §1.2.1, p. 4 (PDF p. 17).
-- **Justificativa técnica**: O §1.2.1 distingue instalações remotas, como SPMs e F(P)SOs/FLNGs, cujos requisitos de rebocagem dependem das condições e do tipo de operação.
+- **Fonte**: Chapter 1, §1.2.4, p. 6 (PDF p. 19).
+- **Justificativa técnica**: O §1.2.4 inclui tarefas em SPMs e unidades F(P)SO/FLNG entre os serviços que exigem tipo, dimensões, manobrabilidade, equipamento e método de reboque adequados. A referência anterior a §1.2.1, p. 4 não fundamentava especificamente a classificação de SPM/FLNG.
 - **Validação**: cinco alternativas distintas; referência textual localizada; gabarito estruturalmente coerente com a alternativa; homologação técnica independente pendente.
 
 ### ANV-HENSEN-C01-L019-02
@@ -363,3 +363,12 @@ Fonte primária: Henk Hensen, *Tug Use in Port: A Practical Guide*, 4ª edição
 - `ANV-HENSEN-C05-L019-03`: a primeira execução de **Full Question Bank Audit** falhou no `HENSEN_SOURCE_GUARD` por `explicação ausente ou insuficiente`. A justificativa técnica foi ampliada no commit `113d8a8c48b7a409c3b884f3a43ca912637ebe19`, sem mudar enunciado, alternativas ou gabarito.
 - Confronto adicional dos 40 itens com os **170 históricos HENSEN** nos dez blocos 006, 007, 008, 010, 013, 016, 019, 021, 022 e 023: 0 colisões literais e 0 alertas lexicais Jaccard ≥ 0,33. Preservados 119 em quarentena e 51 ativos.
 - Revisão semântica independente, testes npm, inspeção visual integral e todos os gates no HEAD final ainda precisam ser confirmados.
+
+## Errata documental — 30/10/2026
+
+- **ID:** `ANV-HENSEN-C01-L019-01`.
+- **Antes:** localizador `Chapter 1, §1.2.1, p. 4 (PDF p. 17)`; explicação atribuía a essa seção a referência a SPM/F(P)SO/FLNG.
+- **Depois:** localizador `Chapter 1, §1.2.4, p. 6 (PDF p. 19)`; explicação fundamentada nas atividades especiais e nos requisitos de rebocador da seção 1.2.4.
+- **Justificativa:** conferência do texto original da quarta edição demonstrou que §1.2.1 trata de categorias de portos e acessos, enquanto §1.2.4 cita explicitamente SPM, F(P)SO e instalações offshore.
+- **Preservados:** ID, enunciado, cinco alternativas, gabarito C, estado `pending_editorial_review`, classificação Arte Naval / `hensen-tug`.
+- **Não homologado:** ainda há possível sobreposição temática com `ANV-HENSEN-C01-L013-04`, `C07-L007-02` e `C01-L010-02`; nenhuma equivalência foi declarada resolvida por simples troca do localizador.
