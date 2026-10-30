@@ -16,7 +16,7 @@
 - Lotes 001–008: 320 novas questões. **Total bruto esperado: 490 HENSEN**; 371 com `active:true` em metadados antes de filtros adicionais.
 - Lote 008: 5 por capítulo 1–7 e 9; 40 IDs distintos; 5 alternativas por questão; distribuição A=8, B=8, C=8, D=8, E=8.
 - Leitura e comparação dos oito JSON HENSEN e dez blocos históricos: 0 duplicações literais com os 450 registros anteriores.
-- Revisão editorial por triagem lexical identificou e substituiu 6 itens conceitualmente próximos, com três correções de páginas. **Persistem aproximações temáticas que exigem revisão semântica independente.**
+- Revisão editorial por triagem lexical identificou e substituiu 7 itens conceitualmente próximos, com três correções de páginas. **Persistem aproximações temáticas que exigem revisão semântica independente.**
 - Fonte primária consultada: [Hensen, 4ª ed., 2021](https://drive.google.com/file/d/1TzakagjCKQ_p7kaMbWPV-MHShIZ6AXG9/view). Seções localizadas no texto extraído; cotejo visual de todas as páginas ainda não concluído.
 
 ## Gates observados (não homologados)
