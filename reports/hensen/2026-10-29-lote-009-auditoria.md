@@ -24,7 +24,7 @@
 | `ANV-HENSEN-C02-L009-04` | Limitação de câmeras em baixa visibilidade | **A** | Chapter 2, §2.2.2, p. 13 (PDF p. 26) |
 | `ANV-HENSEN-C02-L009-05` | Realidade aumentada e informação de passadiço | **C** | Chapter 2, §2.2.2, p. 13 (PDF p. 26) |
 | `ANV-HENSEN-C03-L009-01` | Função do cabo de ré em assistência ao costado | **B** | Chapter 3, §3.2.1, p. 83 (PDF p. 96) |
-| `ANV-HENSEN-C03-L009-02` | Função da linha de backing e do espringue em rebocador convencional | **D** | Chapter 3, A linha de backing só pode ser utilizada por rebocador trator com propulsores à vante., p. O cabo de vante é obrigatoriamente conectado à hélice do navio. (PDF p. O cabo de vante é obrigatoriamente conectado à hélice do navio.13) |
+| `ANV-HENSEN-C03-L009-02` | Função da linha de backing e do espringue em rebocador convencional | **D** | Chapter 3, §3.2.1, p. 83 (PDF p. 96) |
 | `ANV-HENSEN-C03-L009-03` | Amarração de trator em assistência lateral | **A** | Chapter 3, §3.2.1, p. 83 (PDF p. 96) |
 | `ANV-HENSEN-C03-L009-04` | Arranjo lateral de ASD com propulsão omnidirecional | **E** | Chapter 3, §3.2.1, p. 83 (PDF p. 96) |
 | `ANV-HENSEN-C03-L009-05` | Exceção operacional em entrada de dique seco | **C** | Chapter 3, §3.2.1, p. 82 (PDF p. 95) |
@@ -36,7 +36,7 @@
 | `ANV-HENSEN-C05-L009-01` | Aceleração transversal e tempo de manobra | **A** | Chapter 5, §5.2, p. 136 (PDF p. 149) |
 | `ANV-HENSEN-C05-L009-02` | Coeficientes aerodinâmicos obtidos por modelo | **E** | Chapter 5, §5.2.2, p. 136 (PDF p. 149) |
 | `ANV-HENSEN-C05-L009-03` | Área longitudinal exposta versus área frontal | **C** | Chapter 5, §5.2.2, p. 136 (PDF p. 149) |
-| `ANV-HENSEN-C05-L009-04` | Faixa do coeficiente lateral em vento de través | **D** | Chapter 5, Sempre maior que 20 para qualquer navio mercante., p. Exatamente 0,01 para todos os ângulos de incidência. (PDF p. Exatamente 0,01 para todos os ângulos de incidência.13) |
+| `ANV-HENSEN-C05-L009-04` | Faixa do coeficiente lateral em vento de través | **D** | Chapter 5, §5.2.2, p. 136 (PDF p. 149) |
 | `ANV-HENSEN-C05-L009-05` | Separação entre força lateral e momento de guinada | **B** | Chapter 5, §5.2.2, p. 136 (PDF p. 149) |
 | `ANV-HENSEN-C06-L009-01` | Classificação das fases críticas do cabo | **C** | Chapter 6, §6.3.1, p. 155 (PDF p. 168) |
 | `ANV-HENSEN-C06-L009-02` | Variáveis de ensaio após acidente com ASD | **B** | Chapter 6, §6.3.2, p. 157 (PDF p. 170) |
@@ -50,7 +50,7 @@
 | `ANV-HENSEN-C07-L009-05` | Critério de descarte por arames rompidos | **B** | Chapter 7, §7.5.2.1, p. 190 (PDF p. 203) |
 | `ANV-HENSEN-C09-L009-01` | Requisitos de ferragens em graneleiros Capesize | **B** | Chapter 9, §9.4, p. 246 (PDF p. 259) |
 | `ANV-HENSEN-C09-L009-02` | Frenagem que agrava risco de encalhe | **C** | Chapter 9, §9.4, p. 247 (PDF p. 260) |
-| `ANV-HENSEN-C09-L009-03` | Avaliação diferenciada de derramamento LPG e LNG | **A** | Chapter 9, Concluir que a carga de ambos é sempre incombustível., p. Substituir análise de risco por uma regra fixa de velocidade de dez nós. (PDF p. Substituir análise de risco por uma regra fixa de velocidade de dez nós.13) |
+| `ANV-HENSEN-C09-L009-03` | Avaliação diferenciada de derramamento LPG e LNG | **A** | Chapter 9, §9.4, p. 246 (PDF p. 259) |
 | `ANV-HENSEN-C09-L009-04` | Vantagem de rudder tug ao frear | **D** | Chapter 9, §9.5.1, p. 248 (PDF p. 261) |
 | `ANV-HENSEN-C09-L009-05` | Limite de rebocador convencional ao costado em velocidade | **E** | Chapter 9, §9.5.1, p. 248 (PDF p. 261) |
 
@@ -194,9 +194,9 @@
 
 **Alternativa correta (D):** A linha de vante funciona como backing line; o espringue pode sair do guincho por uma buzina mais à vante.
 
-**Fundamentação:** O espringue substitui a defensa e não transmite força.
+**Fundamentação:** Em rebocadores convencionais amarrados ao costado, a linha de vante é a *backing line*, feita firme no navio. O espringue pode sair do guincho de vante pela buzina ou guia mais avançada da proa; uma terceira linha, na popa, pode controlar a aproximação lateral e efeitos da propulsão.
 
-**Fonte:** Chapter 3, A linha de backing só pode ser utilizada por rebocador trator com propulsores à vante., p. O cabo de vante é obrigatoriamente conectado à hélice do navio. (PDF p. O cabo de vante é obrigatoriamente conectado à hélice do navio.13).
+**Fonte:** Chapter 3, §3.2.1, p. 83 (PDF p. 96).
 
 **Ação:** criação inédita; verificação estrutural aprovada; revisão semântica independente e conferência visual pendentes.
 
@@ -338,9 +338,9 @@
 
 **Alternativa correta (D):** Entre 0,8 e 1,0, variando com o tipo de navio e o carregamento.
 
-**Fundamentação:** Exatamente zero, pois o vento não exerce força lateral.
+**Fundamentação:** Hensen informa que o coeficiente lateral de vento CYw, para vento de través, varia aproximadamente de 0,8 a 1,0, em geral de 0,9 a 1,0, segundo tipo e condição de carregamento do navio (seção 5.2.2).
 
-**Fonte:** Chapter 5, Sempre maior que 20 para qualquer navio mercante., p. Exatamente 0,01 para todos os ângulos de incidência. (PDF p. Exatamente 0,01 para todos os ângulos de incidência.13).
+**Fonte:** Chapter 5, §5.2.2, p. 136 (PDF p. 149).
 
 **Ação:** criação inédita; verificação estrutural aprovada; revisão semântica independente e conferência visual pendentes.
 
@@ -506,9 +506,9 @@
 
 **Alternativa correta (A):** Investigar separadamente as consequências de derramamento de GLP em comparação com GNL, em vez de presumir equivalência.
 
-**Fundamentação:** Desconsiderar qualquer vazamento de GLP em colisões portuárias.
+**Fundamentação:** Hensen recomenda investigar comparativamente as consequências de derramamento em acidentes com navios de GLP e GNL, sem presumir equivalência. A seção 9.4 cita um vazamento de butano em colisão em Singapura em 2018.
 
-**Fonte:** Chapter 9, Concluir que a carga de ambos é sempre incombustível., p. Substituir análise de risco por uma regra fixa de velocidade de dez nós. (PDF p. Substituir análise de risco por uma regra fixa de velocidade de dez nós.13).
+**Fonte:** Chapter 9, §9.4, p. 246 (PDF p. 259).
 
 **Ação:** criação inédita; verificação estrutural aprovada; revisão semântica independente e conferência visual pendentes.
 
@@ -563,3 +563,16 @@
 - 51 históricos HENSEN ativos ainda aguardam revisão individual; 119 históricos permanecem em quarentena reversível.
 - Vercel Preview bloqueado pelo limite do plano gratuito, conforme status do HEAD observado. Não contornar a cota.
 - PR #173 aberto. **Sem merge nem deploy em produção.**
+
+
+## Errata técnica — checkpoint 011 (2026-10-29)
+
+Após o checkpoint anterior, foram identificados três registros cujos localizadores e explicações haviam sido substituídos indevidamente por textos de alternativas incorretas. A correção foi cotejada com o texto extraído da 4ª edição de Hensen, preservando IDs, enunciados, cinco alternativas e gabaritos. A inspeção visual integral e a homologação semântica independente permanecem pendentes.
+
+| ID | Antes (defeito) | Depois (fonte confirmada) | Justificativa |
+|---|---|---|---|
+| `ANV-HENSEN-C03-L009-02` | Localizador formado por frases falsas sobre *backing line*; explicação afirmava que o espringue não transmite força | §3.2.1, p. 83 (PDF 96); explicação das funções de *backing line*, espringue e linha de popa | A obra identifica a linha de vante e descreve o encaminhamento do espringue pelo guincho/buzina de proa |
+| `ANV-HENSEN-C05-L009-04` | Localizador formado por valores falsos; explicação afirmava força lateral nula | §5.2.2, p. 136 (PDF 149); explicação de CYw de 0,8–1,0 | A obra indica explicitamente a faixa do coeficiente para vento de través |
+| `ANV-HENSEN-C09-L009-03` | Localizador com alternativas falsas sobre GLP/GNL; explicação recomendava ignorar vazamento | §9.4, p. 246 (PDF 259); explicação de avaliação comparativa de consequências | A obra pede investigação específica e relata vazamento de butano após colisão em 2018 |
+
+Commit da correção do banco: [`abadf09`](https://github.com/noconvescomdavi/simulado-pscpp/commit/abadf09cff02486e0ba75365d35e7e8c12f78d52). Não considerar as três questões plenamente homologadas sem segunda revisão editorial.
