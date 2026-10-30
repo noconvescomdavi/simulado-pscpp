@@ -8,7 +8,7 @@
 - 40 IDs distintos, 5 alternativas A–E por questão, gabaritos **A=8, B=8, C=8, D=8, E=8**; explicações e localizadores individuais.
 - Comparação com 280 questões dos Lotes 001–007 e com **170 questões históricas HENSEN** nos dez blocos 006/007/008/010/013/016/019/021/022/023: nenhuma repetição literal de enunciado.
 - Total HENSEN esperado após integração: **490 registros** = 170 históricos + 320 novos. Históricos: 119 em quarentena e 51 ativos pendentes de homologação.
-- O cotejo automático por palavras detectou temas próximos, incluindo `ANV-HENSEN-C01-L008-03` (diversidade de navios) e `ANV-HENSEN-C07-L008-05` (reboque de emergência). **Não declarar originalidade semântica independente integral**; exigir revisão editorial de mérito antes de merge.
+- O cotejo automático por palavras detectou temas próximos, incluindo `ANV-HENSEN-C07-L008-05` (reboque de emergência). **Não declarar originalidade semântica independente integral**; exigir revisão editorial de mérito antes de merge.
 - As seções da obra foram localizadas no texto extraído; referências são páginas impressas com equivalência **PDF p. = impressa + 13**, adotada no projeto. A conferência visual independente de todas as páginas ainda está pendente.
 
 ## Registro individual das questões
@@ -17,7 +17,7 @@
 |---|---|:---:|---|---|
 | `ANV-HENSEN-C01-L008-01` | Acesso por eclusas | **A** | Chapter 1, §1.2.1, p. 4 (PDF p. 17) | O acesso com pontes e eclusas impõe exigências além da manobra no berço. |
 | `ANV-HENSEN-C01-L008-02` | Sazonalidade de estuário | **B** | Chapter 1, §1.2.2, p. 5 (PDF p. 18) | Marés e variações sazonais modificam as condições e restrições do acesso. |
-| `ANV-HENSEN-C01-L008-03` | Diversidade da frota assistida | **C** | Chapter 1, §1.2.3, p. 6 (PDF p. 19) | Perfis de navio diferentes impõem requisitos distintos à assistência. |
+| `ANV-HENSEN-C01-L008-03` | Crescimento dos navios em portos antigos | **C** | Chapter 1, §1.2.1, p. 4 (PDF p. 17) | Hensen explica que o crescimento dos navios pode ultrapassar a evolução da infraestrutura portuária, exigindo rebocadores com potência, manobrabilidade e dimensões compatíveis com manobras mais difíceis. |
 | `ANV-HENSEN-C01-L008-04` | Transição para novo rebocador | **D** | Chapter 1, §1.2.6, p. 6 (PDF p. 19) | A experiência anterior não dispensa instrução ao mudar de sistema. |
 | `ANV-HENSEN-C01-L008-05` | Método e tipo de rebocador | **E** | Chapter 1, §1.2.8, p. 7 (PDF p. 20) | O tipo de rebocador e o método de assistência são interdependentes. |
 | `ANV-HENSEN-C02-L008-01` | Proteção submersa | **A** | Chapter 2, §2.2.3, p. 13 (PDF p. 26) | O projeto submerso deve impedir contato perigoso dos propulsores. |
@@ -26,6 +26,7 @@
 | `ANV-HENSEN-C02-L008-04` | Convés livre no Z-tech | **D** | Chapter 2, §2.12, p. 45 (PDF p. 58) | Esse arranjo favorece o convés de trabalho dianteiro junto ao navio. |
 | `ANV-HENSEN-C02-L008-05` | Ventilação em terminal LNG | **E** | Chapter 2, §2.22, p. 64 (PDF p. 77) | A obra cita detecção nas tomadas de ar e dampers remotos. |
 | `ANV-HENSEN-C03-L008-01` | Diferenças regionais | **A** | Chapter 3, §3.2.1, p. 82 (PDF p. 95) | São tendências históricas, não regras universais. |
+| `ANV-HENSEN-C01-L008-03` | Substituição de tema repetido sobre diversidade da frota (L002) por cenário de crescimento dos navios em infraestrutura portuária antiga, com novo localizador §1.2.1, p. 4. |
 | `ANV-HENSEN-C03-L008-02` | Braço de giro no push-pull | **B** | Chapter 3, §3.2.2, p. 86 (PDF p. 99) | Hensen registra como desvantagem do push-pull o braço de giro relativamente curto, dado pela separação entre rebocadores ao costado. |
 | `ANV-HENSEN-C03-L008-03` | Vibração na frenagem prolongada | **C** | Chapter 3, §3.2.2, p. 87 (PDF p. 100) | A seção descreve que o controle prolongado da velocidade pelo rebocador de popa pode produzir vibrações muito intensas a bordo. |
 | `ANV-HENSEN-C03-L008-04` | Obstrução por gelo | **D** | Chapter 3, §3.3.5, p. 89 (PDF p. 102) | Vibração e instrumentos podem sinalizar bloqueio por gelo. |
@@ -74,7 +75,7 @@
 
 - **Aprovado por leitura dos JSON no GitHub:** 40 IDs únicos; 5 alternativas distintas por item; distribuição A–E 8/8/8/8/8; gabaritos presentes; localizadores preenchidos.
 - **Aprovado por comparação textual:** nenhuma duplicação literal entre Lote 008, os 280 itens dos Lotes 001–007 e os 170 históricos identificados por metadados HENSEN.
-- **Triagem de similaridade lexical:** executada; seis itens reescritos por proximidade conceitual e três correções de paginação. Essa triagem **não equivale a homologação semântica por revisor independente**.
+- **Triagem de similaridade lexical:** executada; sete itens reescritos por proximidade conceitual e três correções de paginação. Essa triagem **não equivale a homologação semântica por revisor independente**.
 - **Integração:** `lib/question-banks-source.js` importa `hensen-lote-008.json` e agrega suas questões à lista de extensões.
 - **Pendente:** inspeção visual integral das páginas do PDF, revisão editorial independente das 40 questões, avaliação dos achados anteriores (incluindo distratores repetidos no Lote 007) e homologação dos 51 históricos ativos.
 - **CI e Vercel:** não declarar aprovados sem confirmação no HEAD final. O PR permanece aberto; não realizar merge ou deploy enquanto os gates ou riscos editoriais estiverem pendentes.
