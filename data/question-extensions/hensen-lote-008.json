@@ -2527,31 +2527,31 @@
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Segundo SOLAS II-1/3-4 reproduzida por Hensen, qual petroleiro exige arranjos de reboque de emergência nas duas extremidades?",
+      "question": "Um petroleiro de 55.000 dwt possui arranjo de reboque de emergência. Segundo as diretrizes reproduzidas por Hensen, qual resistência de trabalho mínima deve ser prevista para seus componentes de reboque?",
       "options": [
         {
           "key": "A",
-          "text": "Toda embarcação de pesca de 100 AB."
+          "text": "500 kN, independentemente do porte bruto."
         },
         {
           "key": "B",
-          "text": "Somente petroleiros abaixo de 5.000 dwt."
+          "text": "750 kN, desde que a linha seja sintética."
         },
         {
           "key": "C",
-          "text": "Apenas navios de passageiros interiores."
+          "text": "1.000 kN, limite único para todos os petroleiros acima de 20.000 dwt."
         },
         {
           "key": "D",
-          "text": "Exclusivamente rebocadores azimutais."
+          "text": "1.500 kN, desde que a conexão seja feita pela proa."
         },
         {
           "key": "E",
-          "text": "Petroleiro com porte bruto igual ou superior a 20.000 toneladas."
+          "text": "2.000 kN, para petroleiros com porte bruto igual ou superior a 50.000 toneladas."
         }
       ],
       "correct_answer": "E",
-      "explanation": "A regra reproduzida fixa o patamar de 20.000 dwt.",
+      "explanation": "As diretrizes de arranjos de reboque de emergência apresentadas por Hensen distinguem resistência de trabalho mínima de 1.000 kN para petroleiros de 20.000 a menos de 50.000 dwt e de 2.000 kN para petroleiros com 50.000 dwt ou mais. Para 55.000 dwt, aplica-se 2.000 kN; a resistência de trabalho é definida como metade da resistência última.",
       "active": true,
       "validation_status": "approved",
       "validation": {
@@ -2581,7 +2581,7 @@
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapter 7, §7.8, p. 209 (PDF p. 222)"
+        "locator": "Chapter 7, §7.8, p. 210 (PDF p. 223)"
       },
       "tags": [
         "hensen",
@@ -2601,31 +2601,31 @@
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Em escolta com rebocadores presos apenas a um bordo, o navio sofre guinada inesperada para o lado oposto. Qual problema de posicionamento deve ser previsto?",
+      "question": "Ao planejar a escolta em um canal de largura restrita, o prático deve decidir se os rebocadores acompanharão o navio conectados ou em prontidão sem cabo. Segundo Hensen, quais fatores devem fundamentar essa decisão?",
       "options": [
         {
           "key": "A",
-          "text": "Os rebocadores conectados podem ficar no bordo inadequado para contrariar a guinada, exigindo estudo de posições e assistência em ambos os bordos."
+          "text": "Restrições do canal em relação às dimensões e ao calado do navio, número e tipo de rebocadores disponíveis, posições possíveis, vento e corrente."
         },
         {
           "key": "B",
-          "text": "Rebocadores presos em um bordo podem aplicar qualquer força lateral sem restrição geométrica."
+          "text": "Apenas a potência nominal do rebocador mais forte, independentemente da largura do canal."
         },
         {
           "key": "C",
-          "text": "A direção da guinada não influencia a eficácia do posicionamento."
+          "text": "Exclusivamente a preferência comercial do operador, sem avaliar posicionamento e forças externas."
         },
         {
           "key": "D",
-          "text": "A conexão torna desnecessário avaliar vento e corrente."
+          "text": "Somente o tipo de carga transportada, pois a posição dos rebocadores não altera a resposta a falhas."
         },
         {
           "key": "E",
-          "text": "A disposição lateral dos rebocadores só importa com o navio parado."
+          "text": "Apenas a velocidade máxima de trânsito dos rebocadores, dispensando avaliação de vento e corrente."
         }
       ],
       "correct_answer": "A",
-      "explanation": "Hensen observa que rebocadores conectados a um único bordo podem não estar no lado adequado após uma guinada e discute cobertura dos dois bordos.",
+      "explanation": "Em §9.4, Hensen recomenda avaliar cuidadosamente se os rebocadores devem estar conectados ou não, considerando restrições do canal frente às dimensões e ao calado do navio, quantidade e tipo de rebocadores, posicionamento e efeitos de vento e corrente. Trata-se de decisão operacional distinta do problema de rebocadores já conectados a um único bordo.",
       "active": true,
       "validation_status": "approved",
       "validation": {
