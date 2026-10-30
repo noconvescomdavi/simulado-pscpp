@@ -302,36 +302,36 @@
       "subject": "II — Arte Naval",
       "module": "Tug design factors",
       "topic_code": "ANV.HENSEN.C01.L017.05",
-      "topic": "Cabo em reboque afastado",
+      "topic": "Dimensionamento por fase e folga sob a quilha",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Para rebocador de 32 m, qual o comprimento mínimo usual de cabo segundo referência geral de 1,5 L?",
+      "question": "Dois rebocadores têm igual bollard pull, mas respostas distintas com navio em seguimento e pequena folga sob a quilha. Como selecionar o mais adequado?",
       "options": [
         {
           "key": "A",
-          "text": "32 m."
+          "text": "Comparar como e quando a força atua, considerando velocidade, confinamento e folga sob a quilha."
         },
         {
           "key": "B",
-          "text": "40 m."
+          "text": "Escolher sempre maior velocidade livre."
         },
         {
           "key": "C",
-          "text": "64 m."
+          "text": "Usar só a tração estática."
         },
         {
           "key": "D",
-          "text": "96 m."
+          "text": "Ignorar condições de aplicação da força."
         },
         {
           "key": "E",
-          "text": "48 m."
+          "text": "Adotar sempre maior calado."
         }
       ],
-      "correct_answer": "E",
-      "explanation": "1,5 × 32 = 48 m, ressalvadas condições operacionais locais.",
+      "correct_answer": "A",
+      "explanation": "A seleção deve avaliar como, quando e sob quais condições as forças são exigidas, incluindo velocidade, confinamento e UKC.",
       "active": true,
       "validation_status": "pending_editorial_review",
       "validation": {
@@ -361,7 +361,7 @@
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapter 1, §1.4, p. 8 (PDF p. 21)"
+        "locator": "Chapter 1, §1.2.8, p. 8 (PDF p. 21)"
       },
       "tags": [
         "hensen",
@@ -1560,36 +1560,36 @@
       "subject": "II — Arte Naval",
       "module": "Bollard Pull Required",
       "topic_code": "ANV.HENSEN.C05.L017.02",
-      "topic": "Distância de parada",
+      "topic": "Distância adicional pelo atraso de frenagem",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Com velocidade e tração iguais, deslocamento dobrado implica qual efeito na fórmula de parada?",
+      "question": "A fórmula estima 200 m após plena frenagem. Se o navio ainda segue a 6 nós por 20 s antes da plena ação, qual distância total aproximada resulta somando o percurso sem desaceleração?",
       "options": [
         {
           "key": "A",
-          "text": "Distância teórica dobrada, sem incluir atraso de resposta."
+          "text": "200 m, pois o atraso está incluído."
         },
         {
           "key": "B",
-          "text": "Metade da distância."
+          "text": "231 m, considerando 1,54 m/s."
         },
         {
           "key": "C",
-          "text": "Mesma distância."
+          "text": "262 m, considerando aproximadamente 3,09 m/s."
         },
         {
           "key": "D",
-          "text": "Quatro vezes a distância."
+          "text": "320 m, considerando 6 m/s."
         },
         {
           "key": "E",
-          "text": "Atraso já embutido."
+          "text": "400 m, pois o atraso sempre duplica a distância."
         }
       ],
-      "correct_answer": "A",
-      "explanation": "S é proporcional ao deslocamento; tempo de reação não integra a fórmula.",
+      "correct_answer": "C",
+      "explanation": "6 nós ≈3,087 m/s; 20 s correspondem a 61,7 m adicionais, totalizando aproximadamente 262 m na hipótese de velocidade constante no atraso.",
       "active": true,
       "validation_status": "pending_editorial_review",
       "validation": {
@@ -2004,36 +2004,36 @@
       "subject": "II — Arte Naval",
       "module": "Interaction and Tug Safety",
       "topic_code": "ANV.HENSEN.C06.L017.03",
-      "topic": "Dois tripulantes",
+      "topic": "Treinamento bow-to-bow com dois rebocadores",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "No exemplo de Hamburgo, qual combinação de requisitos técnicos permite operação com dois tripulantes?",
+      "question": "No exercício prático de conexão bow-to-bow usando dois rebocadores, qual procedimento e limitação são descritos?",
       "options": [
         {
           "key": "A",
-          "text": "Um motor sem redundância."
+          "text": "Começar em velocidade máxima para reproduzir um navio grande."
         },
         {
           "key": "B",
-          "text": "Só dois rádios portáteis."
+          "text": "Usar apenas simulador sem contato."
         },
         {
           "key": "C",
-          "text": "Dois motores principais independentes e VHF com acionamento por pedal."
+          "text": "Ambos devem avançar, sem marcha à ré."
         },
         {
           "key": "D",
-          "text": "Guincho sem liberação rápida."
+          "text": "Um segue avante e o aluno aproxima o outro de ré, começando devagar; a interação difere daquela com um navio grande."
         },
         {
           "key": "E",
-          "text": "Sem alarmes no passadiço."
+          "text": "Dispensar passagem de cabo e avaliar apenas velocidade livre."
         }
       ],
-      "correct_answer": "C",
-      "explanation": "A redução de guarnição pressupõe redundância e controles adequados.",
+      "correct_answer": "D",
+      "explanation": "O exercício emprega um rebocador avançando e outro aproximando de ré, com velocidade progressiva, mas a interação não reproduz exatamente a de um grande navio.",
       "active": true,
       "validation_status": "pending_editorial_review",
       "validation": {
@@ -2063,7 +2063,7 @@
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapter 6, §6.3.14, p. 170 (PDF p. 183)"
+        "locator": "Chapter 6, §6.3.13, p. 171 (PDF p. 184)"
       },
       "tags": [
         "hensen",
@@ -2078,36 +2078,36 @@
       "subject": "II — Arte Naval",
       "module": "Interaction and Tug Safety",
       "topic_code": "ANV.HENSEN.C06.L017.04",
-      "topic": "Homem ao mar",
+      "topic": "Treinamento de skeg e propulsores",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Qual projeto facilita resgate de homem ao mar com guarnição mínima?",
+      "question": "Após treinar conexão bow-to-bow, qual habilidade distinta é trabalhada no exercício de comportamento do rebocador?",
       "options": [
         {
           "key": "A",
-          "text": "Meios que exigem três operadores."
+          "text": "Memorizar apenas a pintura do casco."
         },
         {
           "key": "B",
-          "text": "Baluarte sem abertura."
+          "text": "Examinar somente o comprimento do cabo parado."
         },
         {
           "key": "C",
-          "text": "Depender sempre do navio assistido."
+          "text": "Ignorar a geometria do casco ao manobrar de ré."
         },
         {
           "key": "D",
-          "text": "Meios lançáveis por uma pessoa e porta no baluarte."
+          "text": "Substituir governo por teste de VHF."
         },
         {
           "key": "E",
-          "text": "Equipamento inacessível do convés."
+          "text": "Observar a resposta ao uso de propulsores, à configuração do skeg e à forma do casco."
         }
       ],
-      "correct_answer": "D",
-      "explanation": "Hensen cita lançamento por um tripulante e abertura no baluarte.",
+      "correct_answer": "E",
+      "explanation": "A obra distingue treinamento de conexão daquele sobre comportamento determinado por propulsores, skeg e forma do casco.",
       "active": true,
       "validation_status": "pending_editorial_review",
       "validation": {
@@ -2137,7 +2137,7 @@
       },
       "source": {
         "title": "HENSEN — Tug Use in Port, 4ª ed.",
-        "locator": "Chapter 6, §6.3.14, p. 170 (PDF p. 183)"
+        "locator": "Chapter 6, §6.3.13, p. 171 (PDF p. 184)"
       },
       "tags": [
         "hensen",

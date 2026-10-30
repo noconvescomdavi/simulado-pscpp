@@ -13,3 +13,10 @@ Data: 2026-10-30; PR #173; branch `audit/hensen-lote-001-20261029`.
 - Verificar os cinco workflows GitHub Actions e o Vercel Preview no SHA final; não presumir aprovação de outro SHA. Há dívidas editoriais anteriores e achados globais HIGH.
 - **Não executar merge, deploy ou desativar validações.**
 - Parent SHA da transação: `7a92bc67973a9cbe66a7c1dda59199e07bf3830a`.
+
+## Revisão 02 — reparos editoriais
+
+- Reescritos C01-L017-05, C05-L017-02, C06-L017-03 e C06-L017-04 por proximidade conceitual com lotes anteriores.
+- Preservados 40 IDs, cinco itens por capítulo e A=B=C=D=E=8.
+- Nenhum lote anterior, histórico, quarentena, workflow ou validador foi alterado.
+- Revisão independente, inspeção visual das páginas e gates do HEAD final permanecem pendentes.

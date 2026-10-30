@@ -44,11 +44,11 @@ Fonte primária consultada: Henk Hensen, *Tug Use in Port*, 4ª edição (2021),
 
 ### ANV-HENSEN-C01-L017-05
 
-- **Alteração:** questão nova proposta sobre Cabo em reboque afastado.
-- **Gabarito:** E; cinco alternativas distintas.
-- **Referência:** Chapter 1, §1.4, p. 8 (PDF p. 21).
-- **Justificativa técnica:** 1,5 × 32 = 48 m, ressalvadas condições operacionais locais.
-- **Pendências:** cotejo visual da página, originalidade conceitual contra todos os lotes e históricos, revisão independente de gabarito e distratores.
+- **Alteração:** reescrita na revisão 02 para reduzir redundância conceitual (antes: Cabo em reboque afastado; depois: Dimensionamento por fase e folga sob a quilha).
+- **Gabarito:** A; cinco alternativas distintas.
+- **Referência:** Chapter 1, §1.2.8, p. 8 (PDF p. 21).
+- **Justificativa:** A seleção deve avaliar como, quando e sob quais condições as forças são exigidas, incluindo velocidade, confinamento e UKC.
+- **Pendências:** conferência visual da página, comparação conceitual independente e revisão do gabarito.
 
 ### ANV-HENSEN-C02-L017-01
 
@@ -180,11 +180,11 @@ Fonte primária consultada: Henk Hensen, *Tug Use in Port*, 4ª edição (2021),
 
 ### ANV-HENSEN-C05-L017-02
 
-- **Alteração:** questão nova proposta sobre Distância de parada.
-- **Gabarito:** A; cinco alternativas distintas.
+- **Alteração:** reescrita na revisão 02 para reduzir redundância conceitual (antes: Distância de parada; depois: Distância adicional pelo atraso de frenagem).
+- **Gabarito:** C; cinco alternativas distintas.
 - **Referência:** Chapter 5, §5.3.5, p. 147 (PDF p. 160).
-- **Justificativa técnica:** S é proporcional ao deslocamento; tempo de reação não integra a fórmula.
-- **Pendências:** cotejo visual da página, originalidade conceitual contra todos os lotes e históricos, revisão independente de gabarito e distratores.
+- **Justificativa:** 6 nós ≈3,087 m/s; 20 s correspondem a 61,7 m adicionais, totalizando aproximadamente 262 m na hipótese de velocidade constante no atraso.
+- **Pendências:** conferência visual da página, comparação conceitual independente e revisão do gabarito.
 
 ### ANV-HENSEN-C05-L017-03
 
@@ -228,19 +228,19 @@ Fonte primária consultada: Henk Hensen, *Tug Use in Port*, 4ª edição (2021),
 
 ### ANV-HENSEN-C06-L017-03
 
-- **Alteração:** questão nova proposta sobre Dois tripulantes.
-- **Gabarito:** C; cinco alternativas distintas.
-- **Referência:** Chapter 6, §6.3.14, p. 170 (PDF p. 183).
-- **Justificativa técnica:** A redução de guarnição pressupõe redundância e controles adequados.
-- **Pendências:** cotejo visual da página, originalidade conceitual contra todos os lotes e históricos, revisão independente de gabarito e distratores.
+- **Alteração:** reescrita na revisão 02 para reduzir redundância conceitual (antes: Dois tripulantes; depois: Treinamento bow-to-bow com dois rebocadores).
+- **Gabarito:** D; cinco alternativas distintas.
+- **Referência:** Chapter 6, §6.3.13, p. 171 (PDF p. 184).
+- **Justificativa:** O exercício emprega um rebocador avançando e outro aproximando de ré, com velocidade progressiva, mas a interação não reproduz exatamente a de um grande navio.
+- **Pendências:** conferência visual da página, comparação conceitual independente e revisão do gabarito.
 
 ### ANV-HENSEN-C06-L017-04
 
-- **Alteração:** questão nova proposta sobre Homem ao mar.
-- **Gabarito:** D; cinco alternativas distintas.
-- **Referência:** Chapter 6, §6.3.14, p. 170 (PDF p. 183).
-- **Justificativa técnica:** Hensen cita lançamento por um tripulante e abertura no baluarte.
-- **Pendências:** cotejo visual da página, originalidade conceitual contra todos os lotes e históricos, revisão independente de gabarito e distratores.
+- **Alteração:** reescrita na revisão 02 para reduzir redundância conceitual (antes: Homem ao mar; depois: Treinamento de skeg e propulsores).
+- **Gabarito:** E; cinco alternativas distintas.
+- **Referência:** Chapter 6, §6.3.13, p. 171 (PDF p. 184).
+- **Justificativa:** A obra distingue treinamento de conexão daquele sobre comportamento determinado por propulsores, skeg e forma do casco.
+- **Pendências:** conferência visual da página, comparação conceitual independente e revisão do gabarito.
 
 ### ANV-HENSEN-C06-L017-05
 
@@ -331,3 +331,7 @@ Fonte primária consultada: Henk Hensen, *Tug Use in Port*, 4ª edição (2021),
 - **Pendências:** cotejo visual da página, originalidade conceitual contra todos os lotes e históricos, revisão independente de gabarito e distratores.
 
 **Status:** `pending_editorial_review`; não homologado para merge/deploy.
+
+## Revisão 02 — reparos de originalidade
+
+Foram reformulados quatro itens após identificação de proximidade conceitual com lotes anteriores: C01-L017-05 (comprimento de cabo, L006), C05-L017-02 (escala da distância de parada, L008), C06-L017-03 (dois tripulantes em Hamburgo, L013) e C06-L017-04 (homem ao mar com guarnição reduzida, L015). Os IDs foram preservados e os novos gabaritos redistribuídos mantendo oito por letra. A revisão semântica independente continua pendente.
