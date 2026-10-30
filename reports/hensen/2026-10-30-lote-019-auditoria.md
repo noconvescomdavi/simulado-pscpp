@@ -371,4 +371,4 @@ Fonte primária: Henk Hensen, *Tug Use in Port: A Practical Guide*, 4ª edição
 - **Depois:** localizador `Chapter 1, §1.2.4, p. 6 (PDF p. 19)`; explicação fundamentada nas atividades especiais e nos requisitos de rebocador da seção 1.2.4.
 - **Justificativa:** conferência do texto original da quarta edição demonstrou que §1.2.1 trata de categorias de portos e acessos, enquanto §1.2.4 cita explicitamente SPM, F(P)SO e instalações offshore.
 - **Preservados:** ID, enunciado, cinco alternativas, gabarito C, estado `pending_editorial_review`, classificação Arte Naval / `hensen-tug`.
-- **Não homologado:** ainda há possível sobreposição temática com `ANV-HENSEN-C01-L013-04`, `C07-L007-02` e `C01-L010-02`; nenhuma equivalência foi declarada resolvida por simples troca do localizador.
+- **Não homologado:** ainda há possível sobreposição temática com `ANV-HENSEN-C01-L013-04`, `C01-L007-02` e `C01-L010-02`; nenhuma equivalência foi declarada resolvida por simples troca do localizador.
