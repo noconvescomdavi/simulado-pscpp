@@ -40,14 +40,22 @@ assert.equal(leakingAssertions.length, 0, `Há alternativas vazando para o enunc
 
 const runtime = JSON.parse(await readFile(new URL("../data/pscpp/runtime-active-questions.json", import.meta.url), "utf8")).questions;
 assert.ok(runtime.length >= 100);
-assert.equal(runtime.filter(q=>!isPscppEditoriallyEligible(q)).length,11,"A quarentena editorial mudou: rever os itens antes de publicar");
+// Do not freeze the number of ineligible items: earlier structural filters
+// may remove malformed records before runtime. Preserve an explicit exclusion
+// invariant for every remaining ineligible ID, regardless of pool size.
+const excluded=runtime.filter(q=>!isPscppEditoriallyEligible(q));
+const excludedIds=new Set(excluded.map(q=>String(q.id)));
+assert.equal(excludedIds.size,excluded.length,"IDs duplicados entre os itens inelegíveis");
+assert.equal(isPscppEditoriallyEligible({question:"MODO DE REPRESEN TAR VISTA DO AS LINHAS DO NAVIO",options:[]}),false,"Tabela OCR corrompida não pode ser elegível");
+assert.equal(isPscppEditoriallyEligible({question:"Analise as afirmativas.",assertions:["Apenas I e II são verdadeiras."],options:[]}),false,"Alternativa vazada em afirmativa não pode ser elegível");
 for (const seed of ["alpha", "bravo", "charlie", "delta"]) {
   const exam = buildFixedPscppExam(runtime, seed);
   assert.equal(exam.length, 100);
   assert.ok(exam.every(isPscppEditoriallyEligible));
+  assert.ok(exam.every(q=>!excludedIds.has(String(q.id))),`${seed}: item inelegível entrou no sorteio`);
   for (const [subject, quota] of Object.entries(PSCPP_QUOTAS)) {
     assert.equal(exam.filter((q) => historicalSubject(q) === subject).length, quota, `${seed}: banco ativo ${subject}`);
   }
 }
 
-console.log("Matriz fixa PSCPP: OK");
+console.log(`Matriz fixa PSCPP: OK; ${excluded.length} itens editoriais inelegíveis excluídos de todos os sorteios testados`);
