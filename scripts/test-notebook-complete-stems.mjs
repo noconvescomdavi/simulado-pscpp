@@ -109,6 +109,15 @@ for (const edit of pack.edits) {
   byBank[edit.bank] = (byBank[edit.bank] || 0) + 1;
   for (const reason of edit.reasons) reasons[reason] = (reasons[reason] || 0) + 1;
 }
+// Regression: the quoted technical term in ANV-0142 must not cause the
+// leak normalizer to erase its four I–IV propositions from the active bank.
+const anv0142 = banks["arte-naval"]?.questions.find(q => q.id === "ANV-0142");
+const anv0142Source = primaryRestorations.find(q => q.id === "ANV-0142");
+assert.ok(anv0142 && anv0142Source, "ANV-0142 must remain available");
+assert.equal(anv0142.question, anv0142Source.question, "ANV-0142 inline assertions were overwritten");
+assert.equal(anv0142.correct_answer, "B", "ANV-0142 answer key changed");
+assert.deepEqual(classifyQuestionStructure(anv0142).blocks.find(b => b.type === "assertions")?.items.map(i => i.label), ["I", "II", "III", "IV"]);
+
 let audited = 0;
 for (const [bank, data] of Object.entries(banks)) {
   if (bank === "situacoes-de-manobra-ripeam") continue;
