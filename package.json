@@ -11,6 +11,7 @@
     "test:question-structure": "node scripts/test-question-structure.mjs",
     "test:question-repeat-policy": "node --test scripts/test-question-repeat-policy.mjs",
     "test:pscpp-reviewed-selection": "node --test scripts/test-pscpp-reviewed-selection.mjs",
+    "test:whole-book-reading": "node --test scripts/test-whole-book-reading.mjs",
     "test:complete-question-stems": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-complete-question-stems.mjs",
     "test:notebook-context-stems": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-notebook-context-stems.mjs",
     "test:notebook-complete-stems": "node --no-warnings --experimental-loader ./scripts/pscpp-json-loader.mjs scripts/test-notebook-complete-stems.mjs",
