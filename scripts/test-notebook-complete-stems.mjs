@@ -113,10 +113,19 @@ for (const edit of pack.edits) {
 // leak normalizer to erase its four I–IV propositions from the active bank.
 const anv0142 = banks["arte-naval"]?.questions.find(q => q.id === "ANV-0142");
 const anv0142Source = primaryRestorations.find(q => q.id === "ANV-0142");
-assert.ok(anv0142 && anv0142Source, "ANV-0142 must remain available");
-assert.equal(anv0142.question, anv0142Source.question, "ANV-0142 inline assertions were overwritten");
-assert.equal(anv0142.correct_answer, "B", "ANV-0142 answer key changed");
-assert.deepEqual(classifyQuestionStructure(anv0142).blocks.find(b => b.type === "assertions")?.items.map(i => i.label), ["I", "II", "III", "IV"]);
+assert.ok(anv0142Source, "ANV-0142 source restoration missing");
+assert.equal(anv0142Source.correct_answer, "B", "ANV-0142 restored answer key changed");
+assert.deepEqual(classifyQuestionStructure(anv0142Source).blocks.find(b => b.type === "assertions")?.items.map(i => i.label), ["I", "II", "III", "IV"]);
+// The quality gate excludes long quoted fragments unless independently reviewed.
+// An inactive item must not be reactivated solely to satisfy a runtime regression.
+if (anv0142) {
+  assert.equal(anv0142.question, anv0142Source.question, "ANV-0142 inline assertions were overwritten");
+  assert.equal(anv0142.correct_answer, "B", "ANV-0142 active answer key changed");
+} else {
+  const { questionQualityState } = await import("../lib/question-quality-policy.js");
+  assert.equal(questionQualityState(anv0142Source).reason, "stem-quotes-source-answer",
+    "ANV-0142 missing without the documented quality-policy exclusion");
+}
 
 let audited = 0;
 for (const [bank, data] of Object.entries(banks)) {
