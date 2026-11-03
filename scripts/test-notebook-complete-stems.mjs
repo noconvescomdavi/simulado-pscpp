@@ -143,7 +143,20 @@ for (const [bank, data] of Object.entries(banks)) {
     const structure = classifyQuestionStructure(q);
     const optionText = o => typeof o === "string" ? o : o.text;
     const combination = q.options.some(o => /(?:apenas|somente)\s+(?:as?\s+(?:afirmativas|assertivas)\s+)?(?:I|II|III|IV|V)\b/i.test(optionText(o)));
-    if (combination) assert.ok(structure.blocks.some(b => b.type === "assertions" || b.type === "items"), `Combination without propositions: ${bank}/${q.id}`);
+    if (combination && !structure.blocks.some(b => b.type === "assertions" || b.type === "items")) {
+      const source = bank === "arte-naval" ? primaryMainBank.find(item => item.id === q.id) : null;
+      console.error("COMBINATION_PROPOSITION_DIAGNOSTICS", JSON.stringify({
+        bank, id: q.id,
+        source_stem: source?.question ?? null,
+        source_structure: source ? classifyQuestionStructure(source) : null,
+        generated_stem: q.question,
+        generated_structure: structure,
+        generated_assertions: q.assertions ?? null,
+        source_answer: source?.correct_answer ?? null,
+        generated_answer: q.correct_answer,
+      }, null, 2));
+      assert.fail(`Combination without propositions: ${bank}/${q.id}`);
+    }
     assert.ok(!/proposição relativa a .+: _{3}|relação técnica entre .+: _{3}/i.test(q.question), `Empty fill sentence: ${bank}/${q.id}`);
     const missingPairs = q.options.some(o => /^\d e \d trocados/i.test(optionText(o)));
     if (missingPairs) assert.ok(structure.blocks.some(b => b.type === "columns"), `Association without columns: ${bank}/${q.id}`);
