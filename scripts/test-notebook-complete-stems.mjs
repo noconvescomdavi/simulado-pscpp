@@ -134,6 +134,8 @@ assert.equal(steeringSource.correct_answer, "E");
 assert.deepEqual(classifyQuestionStructure(steeringSource).blocks.find(b => b.type === "assertions")?.items.map(i => i.label), ["I", "II", "III", "IV"]);
 const { normalizeEditorialStem } = await import("../lib/question-editorial-normalization.js");
 assert.equal(normalizeEditorialStem(steeringSource).question, steeringSource.question, "AN-C11-1110-M1 assertions lost in locator normalization");
+const { reformulateLeakingStem } = await import("../lib/question-quality.js");
+assert.equal(reformulateLeakingStem(steeringSource).question, steeringSource.question, "AN-C11-1110-M1 assertions lost in answer-leak reformulation");
 
 let audited = 0;
 for (const [bank, data] of Object.entries(banks)) {
