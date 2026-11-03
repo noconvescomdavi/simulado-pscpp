@@ -127,7 +127,7 @@ if (anv0142) {
     "ANV-0142 missing without the documented quality-policy exclusion");
 }
 
-let audited = 0;
+// Regression: source art. 11.10 is a locator, not permission to discard I–IV.\nconst steeringSource = primaryMainBank.find(q => q.id === "AN-C11-1110-M1");\nassert.ok(steeringSource, "AN-C11-1110-M1 source missing");\nassert.equal(steeringSource.correct_answer, "E");\nassert.deepEqual(classifyQuestionStructure(steeringSource).blocks.find(b => b.type === "assertions")?.items.map(i => i.label), ["I", "II", "III", "IV"]);\nconst { normalizeEditorialStem } = await import("../lib/question-editorial-normalization.js");\nassert.equal(normalizeEditorialStem(steeringSource).question, steeringSource.question, "AN-C11-1110-M1 assertions lost in locator normalization");\n\nlet audited = 0;
 for (const [bank, data] of Object.entries(banks)) {
   if (bank === "situacoes-de-manobra-ripeam") continue;
   for (const q of data.questions) {
