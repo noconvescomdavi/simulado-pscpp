@@ -67,7 +67,21 @@ jobs:
         run: exit 1
 
       - name: Full runtime source audit
+        id: full_runtime_audit
+        continue-on-error: true
         run: npm run audit:questions:full
+
+      - name: Upload full runtime source audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: full-runtime-question-bank-audit
+          path: reports/full-question-bank-audit.json
+          if-no-files-found: warn
+
+      - name: Enforce full runtime source audit
+        if: steps.full_runtime_audit.outcome == 'failure'
+        run: exit 1
 
       - name: Build
         env:

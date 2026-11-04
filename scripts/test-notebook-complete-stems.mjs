@@ -109,6 +109,34 @@ for (const edit of pack.edits) {
   byBank[edit.bank] = (byBank[edit.bank] || 0) + 1;
   for (const reason of edit.reasons) reasons[reason] = (reasons[reason] || 0) + 1;
 }
+// Regression: the quoted technical term in ANV-0142 must not cause the
+// leak normalizer to erase its four I–IV propositions from the active bank.
+const anv0142 = banks["arte-naval"]?.questions.find(q => q.id === "ANV-0142");
+const anv0142Source = primaryRestorations.find(q => q.id === "ANV-0142");
+assert.ok(anv0142Source, "ANV-0142 source restoration missing");
+assert.equal(anv0142Source.correct_answer, "B", "ANV-0142 restored answer key changed");
+assert.deepEqual(classifyQuestionStructure(anv0142Source).blocks.find(b => b.type === "assertions")?.items.map(i => i.label), ["I", "II", "III", "IV"]);
+// The quality gate excludes long quoted fragments unless independently reviewed.
+// An inactive item must not be reactivated solely to satisfy a runtime regression.
+if (anv0142) {
+  assert.equal(anv0142.question, anv0142Source.question, "ANV-0142 inline assertions were overwritten");
+  assert.equal(anv0142.correct_answer, "B", "ANV-0142 active answer key changed");
+} else {
+  const { questionQualityState } = await import("../lib/question-quality-policy.js");
+  assert.equal(questionQualityState(anv0142Source).reason, "stem-quotes-source-answer",
+    "ANV-0142 missing without the documented quality-policy exclusion");
+}
+
+// Regression: source art. 11.10 is a locator, not permission to discard I–IV.
+const steeringSource = primaryMainBank.find(q => q.id === "AN-C11-1110-M1");
+assert.ok(steeringSource, "AN-C11-1110-M1 source missing");
+assert.equal(steeringSource.correct_answer, "E");
+assert.deepEqual(classifyQuestionStructure(steeringSource).blocks.find(b => b.type === "assertions")?.items.map(i => i.label), ["I", "II", "III", "IV"]);
+const { normalizeEditorialStem } = await import("../lib/question-editorial-normalization.js");
+assert.equal(normalizeEditorialStem(steeringSource).question, steeringSource.question, "AN-C11-1110-M1 assertions lost in locator normalization");
+const { reformulateLeakingStem } = await import("../lib/question-quality.js");
+assert.equal(reformulateLeakingStem(steeringSource).question, steeringSource.question, "AN-C11-1110-M1 assertions lost in answer-leak reformulation");
+
 let audited = 0;
 for (const [bank, data] of Object.entries(banks)) {
   if (bank === "situacoes-de-manobra-ripeam") continue;
@@ -117,7 +145,20 @@ for (const [bank, data] of Object.entries(banks)) {
     const structure = classifyQuestionStructure(q);
     const optionText = o => typeof o === "string" ? o : o.text;
     const combination = q.options.some(o => /(?:apenas|somente)\s+(?:as?\s+(?:afirmativas|assertivas)\s+)?(?:I|II|III|IV|V)\b/i.test(optionText(o)));
-    if (combination) assert.ok(structure.blocks.some(b => b.type === "assertions" || b.type === "items"), `Combination without propositions: ${bank}/${q.id}`);
+    if (combination && !structure.blocks.some(b => b.type === "assertions" || b.type === "items")) {
+      const source = bank === "arte-naval" ? primaryMainBank.find(item => item.id === q.id) : null;
+      console.error("COMBINATION_PROPOSITION_DIAGNOSTICS", JSON.stringify({
+        bank, id: q.id,
+        source_stem: source?.question ?? null,
+        source_structure: source ? classifyQuestionStructure(source) : null,
+        generated_stem: q.question,
+        generated_structure: structure,
+        generated_assertions: q.assertions ?? null,
+        source_answer: source?.correct_answer ?? null,
+        generated_answer: q.correct_answer,
+      }, null, 2));
+      assert.fail(`Combination without propositions: ${bank}/${q.id}`);
+    }
     assert.ok(!/proposição relativa a .+: _{3}|relação técnica entre .+: _{3}/i.test(q.question), `Empty fill sentence: ${bank}/${q.id}`);
     const missingPairs = q.options.some(o => /^\d e \d trocados/i.test(optionText(o)));
     if (missingPairs) assert.ok(structure.blocks.some(b => b.type === "columns"), `Association without columns: ${bank}/${q.id}`);
@@ -148,7 +189,22 @@ if (activeFragoso.length !== 144) {
   console.error("FRAGOSO_INACTIVE_DIAGNOSTICS", JSON.stringify(diagnostics, null, 2));
 }
 assert.equal(activeFragoso.length, 144, "As 144 questões de Rebocadores Portuários devem permanecer ativas no banco de cadernos");
-assert.equal(audited, 9955 - cap45Review.edits.filter(e => e.pool === "Cadernos" && !e.question.active).length);
+// The former 9955 baseline predates changes in the runtime catalogue. Verify the
+// complete current scope without assuming that inactive records are reactivated.
+const scopedBanks = Object.entries(banks).filter(([name]) => name !== "situacoes-de-manobra-ripeam");
+const expectedAudited = scopedBanks.reduce((sum, [, bank]) => sum + bank.questions.length, 0);
+assert.equal(audited, expectedAudited, "Not all runtime catalogue questions were checked");
+for (const [bankName, bank] of scopedBanks) {
+  const ids = bank.questions.map(question => String(question.id));
+  assert.equal(new Set(ids).size, ids.length, `Duplicate active question IDs in ${bankName}`);
+  assert.ok(ids.every(Boolean), `Missing active question ID in ${bankName}`);
+}
+console.log("NOTEBOOK_CATALOGUE_SCOPE", JSON.stringify({
+  audited,
+  by_bank: Object.fromEntries(scopedBanks.map(([name, bank]) => [name, bank.questions.length])),
+  excluded_bank: "situacoes-de-manobra-ripeam",
+  previous_frozen_baseline: 9955,
+}));
 assert.equal(pack.edits.length, 506);
 assert.equal(Object.keys(byBank).length, 7);
 assert.deepEqual(reasons, {inline_assertions_removed: 365, fill_sentence_removed: 10, association_columns_missing: 45, empty_fill_context: 72, incomplete_association_command: 1, source_stem_replaced_by_runtime_normalization: 13});

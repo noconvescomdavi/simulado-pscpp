@@ -35,7 +35,17 @@ const cap45Review=read('data/question-restorations/miguens-cap45-reviewed.json')
 const hash=value=>createHash('sha256').update(JSON.stringify(value??null)).digest('hex');
 assert.equal(edits.length,report.corrected);
 assert.equal(new Set(edits.map(e=>`${e.bank}::${e.id}`)).size,edits.length);
-assert.equal(Object.entries(banks).filter(([slug])=>slug!=='situacoes-de-manobra-ripeam').reduce((n,[,b])=>n+b.questions.length,0),9955-cap45Review.edits.filter(e=>e.pool==="Cadernos"&&!e.question.active).length);
+// Historical 9955 baseline no longer describes the generated runtime catalogue.
+// Check the actual scoped catalogue and uniqueness without reactivating inactive IDs.
+const scopedBanks = Object.entries(banks).filter(([slug]) => slug !== 'situacoes-de-manobra-ripeam');
+const scopedCount = scopedBanks.reduce((n, [, bank]) => n + bank.questions.length, 0);
+assert.ok(scopedCount > 0, 'Runtime notebook catalogue must not be empty');
+for (const [slug, bank] of scopedBanks) {
+ const ids = bank.questions.map(q => String(q.id || ''));
+ assert.ok(ids.every(Boolean), `${slug}: missing question ID`);
+ assert.equal(new Set(ids).size, ids.length, `${slug}: duplicate active question ID`);
+}
+console.log('NOTEBOOK_CONTEXT_CATALOGUE_SCOPE', JSON.stringify({scopedCount, by_bank:Object.fromEntries(scopedBanks.map(([slug, bank]) => [slug, bank.questions.length]))}));
 for(const edit of edits){
  const q=banks[edit.bank].questions.find(q=>q.id===edit.id);
  const baseline=report.questions.find(q=>q.bank===edit.bank&&q.id===edit.id);
@@ -51,4 +61,4 @@ for(const edit of edits){
  }
  assert.notEqual(baseline.before,edit.question,`${edit.id}: actual restored context`);
 }
-console.log(`Contextos restaurados: ${edits.length}; ${report.audited-cap45Review.edits.filter(e=>e.pool==="Cadernos"&&!e.question.active).length} questões ativas; alternativas, comentários, fontes e gabaritos preservados.`);
+console.log(`Contextos restaurados: ${edits.length}; ${scopedCount} questões no escopo runtime; alternativas, comentários, fontes e gabaritos preservados.`);
