@@ -17,6 +17,24 @@ assert.equal(reviewed.length,322);
 assert.equal(new Set(reviewed.map(q=>q.id)).size,322);
 assert.deepEqual(new Set(reviewed.map(q=>q.id)),new Set(baseline.map(q=>q.id)));
 assert.ok(baseline.every(hasLocatorOnlyCommand),'baseline must reproduce the actual defective runtime templates');
+if (runtime.length !== 826) {
+ const base=read('data/questions/legislacao-regulamentacao.json').questions || [];
+ const baseIds=new Set(base.map(q=>String(q.id)));
+ const runtimeIds=runtime.map(q=>String(q.id));
+ const seen=new Set();
+ const duplicates=runtimeIds.filter(id=>seen.has(id) || (seen.add(id),false));
+ const extensionOnly=runtime.filter(q=>!baseIds.has(String(q.id)));
+ const byBibliography=Object.fromEntries([...new Set(extensionOnly.map(q=>String(q.taxonomy?.bibliography_id||'unclassified')))].sort().map(id=>[id,extensionOnly.filter(q=>String(q.taxonomy?.bibliography_id||'unclassified')===id).length]));
+ console.error('LEGISLATION_COUNT_DIAGNOSTIC '+JSON.stringify({
+  expected:826,actual:runtime.length,base_total:base.length,
+  runtime_base_id_matches:runtime.length-extensionOnly.length,
+  runtime_extension_only:extensionOnly.length,
+  duplicate_id_occurrences:duplicates.length,
+  duplicate_ids:[...new Set(duplicates)].slice(0,100),
+  extension_bibliography_counts:byBibliography,
+  extension_ids:extensionOnly.map(q=>q.id),
+ },null,2));
+}
 assert.equal(runtime.length,826,'the repair must retain all active Legislation notebook questions');
 assert.deepEqual(runtime.filter(hasLocatorOnlyCommand).map(q=>q.id),[],'locator-only commands remain in the active notebook');
 for(const edit of reviewed) {
