@@ -21,6 +21,7 @@ jobs:
       - run: npm run generate:question-banks
       - run: npm run generate:question-catalog
       - run: node scripts/inventory-runtime-questions.mjs
+      - run: node scripts/export-runtime-questions-txt.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
