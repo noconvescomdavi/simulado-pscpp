@@ -1,0 +1,41 @@
+{
+  "scope": "MAN-966..MAN-975",
+  "kind": "editorial_findings_not_bibliographic_homologation",
+  "source_commit": "5dbc094e6e39453c0e76dd7b92dca708d6030ad9",
+  "evidence_commit": "fe007f44c4ece4bfafba9b3cffadf3f6e91af707",
+  "bank_blob": "f62b57228676076969feb281a100a3d509bb2937",
+  "findings": [
+    {
+      "id": "MAN-967",
+      "record_sha256": "299c78b1a6fac6312e2ca26f23aaf6b075792ebacad2468367fb745c5be321cd",
+      "issue": "assertions 1 and 3 identical; 2 and 4 identical; VVVV key E; invalid independence of four assertions"
+    },
+    {
+      "id": "MAN-970",
+      "record_sha256": "e36e5d9904552b434de94e6a9bb39e93c90ddf8e96343ab9fa0b649bf4cca5a1",
+      "issue": "assertions 1 and 2 identical; V V F F key A; redundancy"
+    },
+    {
+      "id": "MAN-971",
+      "record_sha256": "e9aef00615aa4a69f71e01ca1592c91a70e45310d292296f4d6da836f345724a",
+      "issue": "assertions III and IV identical; key D; redundancy"
+    },
+    {
+      "id": "MAN-974",
+      "record_sha256": "37912d4f4bd25e6240353ad617aa3a25f1eaf41247f671f3ef05ddcb1c54cfe3",
+      "issue": "18 concatenated introductory clauses before actual question; A/C same proposition and D/E same proposition with differing contexts; key B not bibliographically checked"
+    }
+  ],
+  "other_ids_pending": [
+    "MAN-966",
+    "MAN-968",
+    "MAN-969",
+    "MAN-972",
+    "MAN-973",
+    "MAN-975"
+  ],
+  "all_ids_require_primary_source_page_verification": true,
+  "corrected_ids": [],
+  "homologated_ids": [],
+  "next": "Verify primary pages, correct repeated propositions with documented technical basis, rerun selection/build tests; keep existing IDs and inactive state."
+}
