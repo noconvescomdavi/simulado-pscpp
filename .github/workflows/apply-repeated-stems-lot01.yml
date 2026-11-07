@@ -1,0 +1,50 @@
+name: Apply repeated-stem corrections lot 01
+on:
+  push:
+    branches:
+      - audit/revisao-enunciados-repetidos-20261107
+    paths:
+      - audit-patches/repeated-stems-lot01.json
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Patch original bank JSONs, preserving all other question fields
+        run: |
+          node <<'NODE'
+          const fs=require('fs');
+          const patch=JSON.parse(fs.readFileSync('audit-patches/repeated-stems-lot01.json','utf8'));
+          const remaining=new Set(Object.keys(patch.changes));
+          const changed=[];
+          for(const file of fs.readdirSync('data/questions').filter(f=>f.endsWith('.json')&&f!=='runtime-active-banks.json')){
+            const path='data/questions/'+file;
+            const bank=JSON.parse(fs.readFileSync(path,'utf8'));
+            if(!Array.isArray(bank.questions))continue;
+            let touched=false;
+            for(const q of bank.questions){
+              if(!Object.hasOwn(patch.changes,q.id))continue;
+              if(!remaining.has(q.id))throw Error('Duplicate target ID: '+q.id);
+              if(typeof q.question!=='string')throw Error('Missing question for '+q.id);
+              const old=q.question, next=patch.changes[q.id];
+              if(!next||next===old)throw Error('No change for '+q.id);
+              q.question=next;touched=true;remaining.delete(q.id);
+              changed.push({id:q.id,file,old,new:next});
+            }
+            if(touched)fs.writeFileSync(path,JSON.stringify(bank,null,2)+'\n');
+          }
+          if(remaining.size)throw Error('Missing IDs: '+[...remaining].join(','));
+          fs.writeFileSync('audit-patches/repeated-stems-lot01-applied.json',JSON.stringify(changed,null,2)+'\n');
+          console.log('Patched '+changed.length+' question fields');
+          NODE
+      - name: Commit corrected JSON banks
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/questions/*.json audit-patches/repeated-stems-lot01-applied.json
+          git diff --cached --quiet || (git commit -m "fix(pscpp): correct ten repeated question stems in original JSON banks" && git push)
