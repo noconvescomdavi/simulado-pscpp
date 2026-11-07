@@ -1,0 +1,993 @@
+{
+  "scope": "MAN-966..MAN-975",
+  "source_commit": "5dbc094e6e39453c0e76dd7b92dca708d6030ad9",
+  "bank_blob": "f62b57228676076969feb281a100a3d509bb2937",
+  "status": "structural_review_only",
+  "records": [
+    {
+      "id": "MAN-966",
+      "record_sha256": "840ccd7e9fce964a857a9e7dba460dc19cae872691676f81fae743f2590f1d95",
+      "record": {
+        "id": "MAN-966",
+        "subject": "Manobrabilidade do Navio",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": "Avanço na curva de giro",
+        "difficulty": "Difícil",
+        "style": "Assertivas I–IV",
+        "question_type": "Assertivas I–IV",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "msc137",
+          "chapter_id": "msc137::annex6",
+          "topic_id": "I-msc137-annex6-4-30-avanco-na-curva-de-giro",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "msc137",
+            "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+            "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+          },
+          "chapter": {
+            "id": "msc137::annex6",
+            "number": "annex6",
+            "title": "Annex 6 – Standards for Ship Manoeuvrability",
+            "label": "Annex 6 – Standards for Ship Manoeuvrability"
+          },
+          "section": "Annex 6 – Standards for Ship Manoeuvrability",
+          "module": "4. Controlabilidade e padrões de manobrabilidade",
+          "topic": {
+            "id": "I-msc137-annex6-4-30-avanco-na-curva-de-giro",
+            "title": "Avanço na curva de giro"
+          }
+        },
+        "source": {
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+          "title": "Standards for Ship Manoeuvrability",
+          "edition": "Resolution MSC.137(76), 2002",
+          "locator": "Annex — Sections 1–6"
+        },
+        "tags": [
+          "Controlabilidade e padrões de manobrabilidade",
+          "Avanço na curva de giro",
+          "avanço na curva de giro",
+          "manobrabilidade",
+          "msc137",
+          "msc137::annex6",
+          "avanco-na-curva-de-giro",
+          "pscpp-style-v5",
+          "formato-pscpp-assertivas-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-3460",
+            "MAN-3463",
+            "MAN-3466",
+            "MAN-166"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-966",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.AST.00148",
+        "question": "De acordo com o contido em “Standards for Ship Manoeuvrability”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Avanço na curva de giro”, considere a proposição: O princípio aplicável indica que, para avanço na curva de giro durante a análise de dados antes e depois de uma alteração de comando, é a distância percorrida na direção do rumo inicial até uma determinada mudança de rumo, conforme a definição do ensaio.\nII) Sobre “Primeiro sobressinal”, considere a proposição: A interpretação adequada é que, para primeiro sobressinal durante a análise de dados antes e depois de uma alteração de comando, é a rotação máxima do eixo.\nIII) Sobre “Parada crash stop”, considere a proposição: A análise correta considera que, para parada crash stop durante a análise de dados antes e depois de uma alteração de comando, avalia a capacidade de parar a partir de uma condição de avanço mediante comando de máquina apropriado.\nIV) No contexto de “Habilidade de giro”, a associação “tempo de partida do motor.” é tecnicamente aplicável.",
+        "options": [
+          {
+            "key": "A",
+            "text": "Apenas as afirmativas I e II são verdadeiras."
+          },
+          {
+            "key": "B",
+            "text": "Apenas as afirmativas I e III são verdadeiras."
+          },
+          {
+            "key": "C",
+            "text": "Apenas as afirmativas II e IV são verdadeiras."
+          },
+          {
+            "key": "D",
+            "text": "Apenas as afirmativas III e IV são verdadeiras."
+          },
+          {
+            "key": "E",
+            "text": "As afirmativas I, II, III e IV são verdadeiras."
+          }
+        ],
+        "correct_answer": "B",
+        "explanation": "A combinação correta é a alternativa B. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Annex — Sections 1–6."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-967",
+      "record_sha256": "299c78b1a6fac6312e2ca26f23aaf6b075792ebacad2468367fb745c5be321cd",
+      "record": {
+        "id": "MAN-967",
+        "subject": "Manobrabilidade do Navio",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": "Estabilidade direcional",
+        "difficulty": "Difícil",
+        "style": "Sequência V/F",
+        "question_type": "Sequência V/F",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "pna-v3",
+          "chapter_id": "pna-v3::ch9-s4",
+          "topic_id": "I-pna-v3-ch9-s4-4-6-estabilidade-direcional",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "pna-v3",
+            "title": "LEWIS — Principles of Naval Architecture, Volume III",
+            "author": "LEWIS, Edward V."
+          },
+          "chapter": {
+            "id": "pna-v3::ch9-s4",
+            "number": "ch9-s4",
+            "title": "Chapter IX — Section 4: Analysis of Course Keeping and Controls-fixed Stability",
+            "label": "Chapter IX — Section 4: Analysis of Course Keeping and Controls-fixed Stability"
+          },
+          "section": "Chapter IX — Section 4: Analysis of Course Keeping and Controls-fixed Stability",
+          "module": "4. Controlabilidade e padrões de manobrabilidade",
+          "topic": {
+            "id": "I-pna-v3-ch9-s4-4-6-estabilidade-direcional",
+            "title": "Estabilidade direcional"
+          }
+        },
+        "source": {
+          "author": "LEWIS, Edward V.",
+          "title": "Principles of Naval Architecture, Volume III",
+          "edition": "2nd Revision, 1989",
+          "locator": "Chapter IX — Controllability, selected sections listed in bibliografia.txt"
+        },
+        "tags": [
+          "estabilidade direcional",
+          "rumo",
+          "manobrabilidade",
+          "pna-v3",
+          "pna-v3::ch9-s4",
+          "estabilidade-direcional",
+          "pscpp-style-v5",
+          "formato-pscpp-vf-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-914",
+            "MAN-968",
+            "MAN-331",
+            "MAN-862"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-967",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.VF.00149",
+        "question": "Com base em “Principles of Naval Architecture, Volume III”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Estabilidade direcional”, considere a proposição: Estabilidade direcional relaciona-se à tendência do navio de manter ou recuperar comportamento de rumo após pequenas perturbações, conforme a condição de controle analisada.\n( ) Sobre “Curva espiral”, considere a proposição: O ensaio de espiral pode revelar características de estabilidade direcional por meio da relação entre ângulo de leme e taxa de guinada em regime.\n( ) Sobre “Estabilidade direcional”, considere a proposição: Estabilidade direcional relaciona-se à tendência do navio de manter ou recuperar comportamento de rumo após pequenas perturbações, conforme a condição de controle analisada.\n( ) Sobre “Curva espiral”, considere a proposição: O ensaio de espiral pode revelar características de estabilidade direcional por meio da relação entre ângulo de leme e taxa de guinada em regime.",
+        "options": [
+          {
+            "key": "A",
+            "text": "( V ) ( V ) ( F ) ( F )"
+          },
+          {
+            "key": "B",
+            "text": "( V ) ( F ) ( V ) ( F )"
+          },
+          {
+            "key": "C",
+            "text": "( F ) ( V ) ( F ) ( V )"
+          },
+          {
+            "key": "D",
+            "text": "( F ) ( F ) ( V ) ( V )"
+          },
+          {
+            "key": "E",
+            "text": "( V ) ( V ) ( V ) ( V )"
+          }
+        ],
+        "correct_answer": "E",
+        "explanation": "A sequência correta corresponde à alternativa E, conforme os conceitos reunidos em Chapter IX — Controllability, selected sections listed in bibliografia.txt."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-968",
+      "record_sha256": "284c6aca42c6ab1dd76c9d9d5d0ed9772fd64f7cf2ed42babd2a04d0d23ffab1",
+      "record": {
+        "id": "MAN-968",
+        "subject": "Manobrabilidade do Navio",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": "Estabilidade direcional",
+        "difficulty": "Difícil",
+        "style": "Assertivas I–IV",
+        "question_type": "Assertivas I–IV",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "pna-v3",
+          "chapter_id": "pna-v3::ch9-s4",
+          "topic_id": "I-pna-v3-ch9-s4-4-6-estabilidade-direcional",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "pna-v3",
+            "title": "LEWIS — Principles of Naval Architecture, Volume III",
+            "author": "LEWIS, Edward V."
+          },
+          "chapter": {
+            "id": "pna-v3::ch9-s4",
+            "number": "ch9-s4",
+            "title": "Chapter IX — Section 4: Analysis of Course Keeping and Controls-fixed Stability",
+            "label": "Chapter IX — Section 4: Analysis of Course Keeping and Controls-fixed Stability"
+          },
+          "section": "Chapter IX — Section 4: Analysis of Course Keeping and Controls-fixed Stability",
+          "module": "4. Controlabilidade e padrões de manobrabilidade",
+          "topic": {
+            "id": "I-pna-v3-ch9-s4-4-6-estabilidade-direcional",
+            "title": "Estabilidade direcional"
+          }
+        },
+        "source": {
+          "author": "LEWIS, Edward V.",
+          "title": "Principles of Naval Architecture, Volume III",
+          "edition": "2nd Revision, 1989",
+          "locator": "Chapter IX — Controllability, selected sections listed in bibliografia.txt"
+        },
+        "tags": [
+          "estabilidade direcional",
+          "rumo",
+          "manobrabilidade",
+          "pna-v3",
+          "pna-v3::ch9-s4",
+          "estabilidade-direcional",
+          "pscpp-style-v5",
+          "formato-pscpp-assertivas-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-331",
+            "MAN-862",
+            "MAN-967",
+            "MAN-184"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-968",
+          "repair_reason": "duplicate-options-after-v5-generation"
+        },
+        "topic_code": "PSCPP.V5.AST.20968",
+        "question": "De acordo com o contido em “Principles of Naval Architecture, Volume III”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Estabilidade direcional”, considere a proposição: É sinônimo de estabilidade transversal estática.\nII) Sobre “Curva espiral”, considere a proposição: É um teste de cavitação do hélice.\nIII) Sobre “Estabilidade direcional”, considere a proposição: Estabilidade direcional relaciona-se à tendência do navio de manter ou recuperar comportamento de rumo após pequenas perturbações, conforme a condição de controle analisada.\nIV) Sobre “Espiral reversa”, considere a proposição: permite obter a parte instável da relação leme-razão de guinada mediante controle da guinada.",
+        "options": [
+          {
+            "key": "A",
+            "text": "Apenas as afirmativas I e II são verdadeiras."
+          },
+          {
+            "key": "B",
+            "text": "Apenas as afirmativas I e III são verdadeiras."
+          },
+          {
+            "key": "C",
+            "text": "Apenas as afirmativas II e IV são verdadeiras."
+          },
+          {
+            "key": "D",
+            "text": "Apenas as afirmativas III e IV são verdadeiras."
+          },
+          {
+            "key": "E",
+            "text": "As afirmativas I, II, III e IV são verdadeiras."
+          }
+        ],
+        "correct_answer": "D",
+        "explanation": "A combinação correta é a alternativa D. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Chapter IX — Controllability, selected sections listed in bibliografia.txt."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-969",
+      "record_sha256": "866f61debed3e30f9338992dcfc65e0312c71e4300f31593b5e4e6af3496f6ec",
+      "record": {
+        "id": "MAN-969",
+        "subject": "Manobrabilidade do Navio",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": "Coasting",
+        "difficulty": "Difícil",
+        "style": "Assertivas I–IV",
+        "question_type": "Assertivas I–IV",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "pna-v3",
+          "chapter_id": "pna-v3::ch9-s10",
+          "topic_id": "I-pna-v3-ch9-s10-4-11-coasting",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "pna-v3",
+            "title": "LEWIS — Principles of Naval Architecture, Volume III",
+            "author": "LEWIS, Edward V. (ed.)"
+          },
+          "chapter": {
+            "id": "pna-v3::ch9-s10",
+            "number": "ch9-s10",
+            "title": "Chapter IX — Section 10: Accelerating, Stopping and Backing",
+            "label": "Chapter IX — Section 10: Accelerating, Stopping and Backing"
+          },
+          "section": "Chapter IX — Section 10: Accelerating, Stopping and Backing",
+          "module": "4. Controlabilidade e padrões de manobrabilidade",
+          "topic": {
+            "id": "I-pna-v3-ch9-s10-4-11-coasting",
+            "title": "Coasting"
+          }
+        },
+        "source": {
+          "author": "LEWIS, Edward V. (ed.)",
+          "title": "Principles of Naval Architecture, Volume III",
+          "edition": "3. ed., 1988-1989",
+          "locator": "Chapter IX - Controllability, selected sections"
+        },
+        "tags": [
+          "controlabilidade",
+          "manobrabilidade",
+          "pna-v3",
+          "pna-v3::ch9-s10",
+          "coasting",
+          "pscpp-style-v5",
+          "formato-pscpp-assertivas-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-227",
+            "MAN-334",
+            "MAN-864",
+            "MAN-917"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-969",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.AST.00151",
+        "question": "De acordo com o contido em “Principles of Naval Architecture, Volume III”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Coasting”, considere a proposição: reduzir a velocidade deixando o navio perder seguimento sem empuxo significativo a ré.\nII) Sobre “Aceleração”, considere a proposição: A resposta de aceleração depende da diferença entre força propulsiva e resistência, além da inércia efetiva do sistema.\nIII) Sobre “Aceleração”, considere a proposição: A aceleração independe da resultante de forças.\nIV) Sobre “Aceleração”, considere a proposição: A massa efetiva é sempre nula.",
+        "options": [
+          {
+            "key": "A",
+            "text": "Apenas as afirmativas I e II são verdadeiras."
+          },
+          {
+            "key": "B",
+            "text": "Apenas as afirmativas I e III são verdadeiras."
+          },
+          {
+            "key": "C",
+            "text": "Apenas as afirmativas II e IV são verdadeiras."
+          },
+          {
+            "key": "D",
+            "text": "Apenas as afirmativas III e IV são verdadeiras."
+          },
+          {
+            "key": "E",
+            "text": "As afirmativas I, II, III e IV são verdadeiras."
+          }
+        ],
+        "correct_answer": "A",
+        "explanation": "A combinação correta é a alternativa A. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Chapter IX - Controllability, selected sections."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-970",
+      "record_sha256": "e36e5d9904552b434de94e6a9bb39e93c90ddf8e96343ab9fa0b649bf4cca5a1",
+      "record": {
+        "id": "MAN-970",
+        "subject": "Manobrabilidade do Navio",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": "Movimento a ré",
+        "difficulty": "Difícil",
+        "style": "Sequência V/F",
+        "question_type": "Sequência V/F",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "pna-v3",
+          "chapter_id": "pna-v3::ch9-s10",
+          "topic_id": "I-pna-v3-ch9-s10-4-10-movimento-a-re",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "pna-v3",
+            "title": "LEWIS — Principles of Naval Architecture, Volume III",
+            "author": "LEWIS, Edward V."
+          },
+          "chapter": {
+            "id": "pna-v3::ch9-s10",
+            "number": "ch9-s10",
+            "title": "Chapter IX — Section 10: Accelerating, Stopping and Backing",
+            "label": "Chapter IX — Section 10: Accelerating, Stopping and Backing"
+          },
+          "section": "Chapter IX — Section 10: Accelerating, Stopping and Backing",
+          "module": "4. Controlabilidade e padrões de manobrabilidade",
+          "topic": {
+            "id": "I-pna-v3-ch9-s10-4-10-movimento-a-re",
+            "title": "Movimento a ré"
+          }
+        },
+        "source": {
+          "author": "LEWIS, Edward V.",
+          "title": "Principles of Naval Architecture, Volume III",
+          "edition": "2nd Revision, 1989",
+          "locator": "Chapter IX — Controllability, selected sections listed in bibliografia.txt"
+        },
+        "tags": [
+          "ré",
+          "controle",
+          "manobrabilidade",
+          "pna-v3",
+          "pna-v3::ch9-s10",
+          "movimento-a-re",
+          "pscpp-style-v5",
+          "formato-pscpp-vf-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-865",
+            "MAN-918",
+            "MAN-971",
+            "MAN-333"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-970",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.VF.00152",
+        "question": "Com base em “Principles of Naval Architecture, Volume III”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Movimento a ré”, considere a proposição: O comportamento hidrodinâmico e de controle a ré pode diferir substancialmente do comportamento avante.\n( ) Sobre “Movimento a ré”, considere a proposição: O comportamento hidrodinâmico e de controle a ré pode diferir substancialmente do comportamento avante.\n( ) Sobre “Movimento a ré”, considere a proposição: Todo navio mantém a mesma estabilidade direcional nos dois sentidos.\n( ) Sobre “Parada”, considere a proposição: Não envolve resposta propulsiva.",
+        "options": [
+          {
+            "key": "A",
+            "text": "( V ) ( V ) ( F ) ( F )"
+          },
+          {
+            "key": "B",
+            "text": "( V ) ( F ) ( V ) ( F )"
+          },
+          {
+            "key": "C",
+            "text": "( F ) ( V ) ( F ) ( V )"
+          },
+          {
+            "key": "D",
+            "text": "( F ) ( F ) ( V ) ( V )"
+          },
+          {
+            "key": "E",
+            "text": "( V ) ( V ) ( V ) ( V )"
+          }
+        ],
+        "correct_answer": "A",
+        "explanation": "A sequência correta corresponde à alternativa A, conforme os conceitos reunidos em Chapter IX — Controllability, selected sections listed in bibliografia.txt."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-971",
+      "record_sha256": "e9aef00615aa4a69f71e01ca1592c91a70e45310d292296f4d6da836f345724a",
+      "record": {
+        "id": "MAN-971",
+        "subject": "Manobrabilidade do Navio",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": "Aceleração",
+        "difficulty": "Difícil",
+        "style": "Assertivas I–IV",
+        "question_type": "Assertivas I–IV",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "pna-v3",
+          "chapter_id": "pna-v3::ch9-s10",
+          "topic_id": "I-pna-v3-ch9-s10-4-9-aceleracao",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "pna-v3",
+            "title": "LEWIS — Principles of Naval Architecture, Volume III",
+            "author": "LEWIS, Edward V."
+          },
+          "chapter": {
+            "id": "pna-v3::ch9-s10",
+            "number": "ch9-s10",
+            "title": "Chapter IX — Section 10: Accelerating, Stopping and Backing",
+            "label": "Chapter IX — Section 10: Accelerating, Stopping and Backing"
+          },
+          "section": "Chapter IX — Section 10: Accelerating, Stopping and Backing",
+          "module": "4. Controlabilidade e padrões de manobrabilidade",
+          "topic": {
+            "id": "I-pna-v3-ch9-s10-4-9-aceleracao",
+            "title": "Aceleração"
+          }
+        },
+        "source": {
+          "author": "LEWIS, Edward V.",
+          "title": "Principles of Naval Architecture, Volume III",
+          "edition": "2nd Revision, 1989",
+          "locator": "Chapter IX — Controllability, selected sections listed in bibliografia.txt"
+        },
+        "tags": [
+          "aceleração",
+          "dinâmica",
+          "manobrabilidade",
+          "pna-v3",
+          "pna-v3::ch9-s10",
+          "aceleracao",
+          "pscpp-style-v5",
+          "formato-pscpp-assertivas-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-970",
+            "MAN-229",
+            "MAN-335",
+            "MAN-865"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-971",
+          "repair_reason": "duplicate-options-after-v5-generation"
+        },
+        "topic_code": "PSCPP.V5.AST.20971",
+        "question": "De acordo com o contido em “Principles of Naval Architecture, Volume III”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Aceleração”, considere a proposição: Velocidade muda instantaneamente para qualquer ordem.\nII) Sobre “Parada com guinada”, considere a proposição: mantém a trajetória exatamente sobre o rumo inicial.\nIII) Sobre “Movimento a ré”, considere a proposição: O comportamento hidrodinâmico e de controle a ré pode diferir substancialmente do comportamento avante.\nIV) Sobre “Movimento a ré”, considere a proposição: O comportamento hidrodinâmico e de controle a ré pode diferir substancialmente do comportamento avante.",
+        "options": [
+          {
+            "key": "A",
+            "text": "Apenas as afirmativas I e II são verdadeiras."
+          },
+          {
+            "key": "B",
+            "text": "Apenas as afirmativas I e III são verdadeiras."
+          },
+          {
+            "key": "C",
+            "text": "Apenas as afirmativas II e IV são verdadeiras."
+          },
+          {
+            "key": "D",
+            "text": "Apenas as afirmativas III e IV são verdadeiras."
+          },
+          {
+            "key": "E",
+            "text": "As afirmativas I, II, III e IV são verdadeiras."
+          }
+        ],
+        "correct_answer": "D",
+        "explanation": "A combinação correta é a alternativa D. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Chapter IX — Controllability, selected sections listed in bibliografia.txt."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-972",
+      "record_sha256": "c8dbd60ce0d9a9223f08ade282ebba49cbb99dac4eedf397705c32851db284ef",
+      "record": {
+        "id": "MAN-972",
+        "subject": "Manobrabilidade do Navio",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": "Diâmetro tático",
+        "difficulty": "Difícil",
+        "style": "Assertivas I–IV",
+        "question_type": "Assertivas I–IV",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "msc137",
+          "chapter_id": "msc137::annex6",
+          "topic_id": "I-msc137-annex6-4-3-diametro-tatico",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "msc137",
+            "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+            "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+          },
+          "chapter": {
+            "id": "msc137::annex6",
+            "number": "annex6",
+            "title": "Annex 6 – Standards for Ship Manoeuvrability",
+            "label": "Annex 6 – Standards for Ship Manoeuvrability"
+          },
+          "section": "Annex 6 – Standards for Ship Manoeuvrability",
+          "module": "4. Controlabilidade e padrões de manobrabilidade",
+          "topic": {
+            "id": "I-msc137-annex6-4-3-diametro-tatico",
+            "title": "Diâmetro tático"
+          }
+        },
+        "source": {
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+          "title": "Standards for Ship Manoeuvrability",
+          "edition": "Resolution MSC.137(76), 2002",
+          "locator": "Annex 6 — Standards for Ship Manoeuvrability, sections 4-6"
+        },
+        "tags": [
+          "diâmetro tático",
+          "curva de giro",
+          "manobrabilidade",
+          "msc137",
+          "msc137::annex6",
+          "diametro-tatico",
+          "pscpp-style-v5",
+          "formato-pscpp-assertivas-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-328",
+            "MAN-336",
+            "MAN-435",
+            "MAN-495"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-972",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.AST.00154",
+        "question": "De acordo com o contido em “Standards for Ship Manoeuvrability”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Diâmetro tático”, considere a proposição: É uma medida vertical do navio.\nII) Sobre “Condições de ensaio IMO”, considere a proposição: Os padrões IMO especificam condições de referência para que resultados de manobrabilidade sejam comparáveis.\nIII) Sobre “Diâmetro tático”, considere a proposição: O princípio aplicável indica que, para diâmetro tático durante o estudo de causas de aumento de esforço propulsivo, é a profundidade mínima do canal.\nIV) Sobre “Estabilidade direcional”, considere a proposição: A análise correta considera que, para estabilidade direcional ao avaliar a influência de uma alteração de trim sobre a manobra, refere-se à tendência do navio de manter ou recuperar comportamento de rumo sem divergência excessiva após pequenas perturbações.",
+        "options": [
+          {
+            "key": "A",
+            "text": "Apenas as afirmativas I e II são verdadeiras."
+          },
+          {
+            "key": "B",
+            "text": "Apenas as afirmativas I e III são verdadeiras."
+          },
+          {
+            "key": "C",
+            "text": "Apenas as afirmativas II e IV são verdadeiras."
+          },
+          {
+            "key": "D",
+            "text": "Apenas as afirmativas III e IV são verdadeiras."
+          },
+          {
+            "key": "E",
+            "text": "As afirmativas I, II, III e IV são verdadeiras."
+          }
+        ],
+        "correct_answer": "C",
+        "explanation": "A combinação correta é a alternativa C. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Annex 6 — Standards for Ship Manoeuvrability, sections 4-6."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-973",
+      "record_sha256": "6b1a2347127b3d7fbf6f1faa0f6aa222e5cf22649ea8ffaffdabceda3819d5b8",
+      "record": {
+        "id": "MAN-973",
+        "subject": "Manobrabilidade do Navio",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": "Curva de giro",
+        "difficulty": "Difícil",
+        "style": "Sequência V/F",
+        "question_type": "Sequência V/F",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "msc137",
+          "chapter_id": "msc137::annex6",
+          "topic_id": "I-msc137-annex6-4-29-curva-de-giro",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "msc137",
+            "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+            "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+          },
+          "chapter": {
+            "id": "msc137::annex6",
+            "number": "annex6",
+            "title": "Annex 6 – Standards for Ship Manoeuvrability",
+            "label": "Annex 6 – Standards for Ship Manoeuvrability"
+          },
+          "section": "Annex 6 – Standards for Ship Manoeuvrability",
+          "module": "4. Controlabilidade e padrões de manobrabilidade",
+          "topic": {
+            "id": "I-msc137-annex6-4-29-curva-de-giro",
+            "title": "Curva de giro"
+          }
+        },
+        "source": {
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+          "title": "Standards for Ship Manoeuvrability",
+          "edition": "Resolution MSC.137(76), 2002",
+          "locator": "Annex — Sections 1–6"
+        },
+        "tags": [
+          "Controlabilidade e padrões de manobrabilidade",
+          "Curva de giro",
+          "curva de giro",
+          "manobrabilidade",
+          "msc137",
+          "msc137::annex6",
+          "curva-de-giro",
+          "pscpp-style-v3",
+          "pscpp-refinement-v3",
+          "pscpp-style-v5",
+          "formato-pscpp-vf-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-443",
+            "MAN-539",
+            "MAN-647",
+            "MAN-857"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-973",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.VF.00155",
+        "question": "Com base em “Standards for Ship Manoeuvrability”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Curva de giro”, considere a proposição: É coerente afirmar que, para curva de giro na revisão de um procedimento operacional para águas confinadas, mede apenas a aceleração longitudinal.\n( ) Sobre “Diâmetro tático”, considere a proposição: O princípio aplicável indica que, para diâmetro tático ao preparar uma nota técnica para uma prova de aceitação, é a distância transversal ao rumo inicial medida no giro segundo a definição padronizada.\n( ) Sobre “Curva espiral”, considere a proposição: A conclusão técnica é que, para curva espiral ao revisar um relatório de desempenho do casco e do sistema de governo, não envolve ângulos de leme positivos e negativos.\n( ) Sobre “Avanço”, considere a proposição: No ensaio de giro, avanço é a distância na direção do rumo inicial percorrida até a mudança de rumo especificada pela definição do padrão.",
+        "options": [
+          {
+            "key": "A",
+            "text": "( V ) ( V ) ( F ) ( F )"
+          },
+          {
+            "key": "B",
+            "text": "( V ) ( F ) ( V ) ( F )"
+          },
+          {
+            "key": "C",
+            "text": "( F ) ( V ) ( F ) ( V )"
+          },
+          {
+            "key": "D",
+            "text": "( F ) ( F ) ( V ) ( V )"
+          },
+          {
+            "key": "E",
+            "text": "( V ) ( V ) ( V ) ( V )"
+          }
+        ],
+        "correct_answer": "C",
+        "explanation": "A sequência correta corresponde à alternativa C, conforme os conceitos reunidos em Annex — Sections 1–6."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-974",
+      "record_sha256": "37912d4f4bd25e6240353ad617aa3a25f1eaf41247f671f3ef05ddcb1c54cfe3",
+      "record": {
+        "id": "MAN-974",
+        "subject": "Manobrabilidade do Navio",
+        "module": "5. Efeitos ambientais, águas rasas e interações",
+        "topic": "Vento sobre o navio",
+        "difficulty": "Difícil",
+        "style": "Assinale a incorreta",
+        "question_type": "Assinale a incorreta",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "pna-v3",
+          "chapter_id": "pna-v3::ch9-s12",
+          "topic_id": "I-pna-v3-ch9-s12-5-39-vento-sobre-o-navio",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "pna-v3",
+            "title": "LEWIS — Principles of Naval Architecture, Volume III",
+            "author": "LEWIS, Edward V."
+          },
+          "chapter": {
+            "id": "pna-v3::ch9-s12",
+            "number": "ch9-s12",
+            "title": "Chapter IX — Section 12: Effects of the Environment",
+            "label": "Chapter IX — Section 12: Effects of the Environment"
+          },
+          "section": "Chapter IX — Section 12: Effects of the Environment",
+          "module": "5. Efeitos ambientais, águas rasas e interações",
+          "topic": {
+            "id": "I-pna-v3-ch9-s12-5-39-vento-sobre-o-navio",
+            "title": "Vento sobre o navio"
+          }
+        },
+        "source": {
+          "author": "LEWIS, Edward V.",
+          "title": "Principles of Naval Architecture, Volume III",
+          "edition": "2nd Revision, 1989",
+          "locator": "Chapter IX — Controllability, selected Sections 1, 3, 4, 5, 6, 10, 12, 13 and 14"
+        },
+        "tags": [
+          "Efeitos ambientais, águas rasas e interações",
+          "Vento sobre o navio",
+          "vento sobre o navio",
+          "manobrabilidade",
+          "pna-v3",
+          "pna-v3::ch9-s12",
+          "vento-sobre-o-navio",
+          "pscpp-style-v5",
+          "formato-pscpp-incorreta-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-3091",
+            "MAN-3146",
+            "MAN-3253",
+            "MAN-3308",
+            "MAN-3416"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-974",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.INC.00156",
+        "question": "Em uma avaliação do passadiço, Ao revisar o plano de manobra, No briefing conduzido antes da faina, Durante uma análise técnica de bordo, Durante a preparação do Prático, Em uma avaliação do passadiço, Ao revisar o plano de manobra, No briefing conduzido antes da faina, Durante uma análise técnica de bordo, Durante a preparação do Prático, Em uma avaliação do passadiço, Ao revisar o plano de manobra, No briefing conduzido antes da faina, Durante uma análise técnica de bordo, Durante a preparação do Prático, Em uma avaliação do passadiço, Ao revisar o plano de manobra, No briefing conduzido antes da faina, Durante uma análise técnica de bordo, Considerando o conteúdo de “Principles of Naval Architecture, Volume III” (Chapter IX — Controllability, selected Sections 1, 3, 4, 5, 6, 10, 12, 13 and 14), assinale a alternativa INCORRETA:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Sobre “Vento sobre o navio”, considere a proposição: O princípio aplicável indica que, para vento sobre o navio na preparação de uma decisão de governo sob restrição de espaço, gera forças e momentos dependentes da velocidade relativa, direção e áreas expostas."
+          },
+          {
+            "key": "B",
+            "text": "Sobre “Corrente”, considere a proposição: A análise correta considera que, para corrente durante a análise de uma condição em que forças externas se tornam relevantes, elimina a velocidade através da água."
+          },
+          {
+            "key": "C",
+            "text": "Sobre “Vento sobre o navio”, considere a proposição: A análise correta considera que, para vento sobre o navio na revisão de um caso operacional com resposta assimétrica do navio, gera forças e momentos dependentes da velocidade relativa, direção e áreas expostas."
+          },
+          {
+            "key": "D",
+            "text": "Sobre “Corrente”, considere a proposição: É coerente afirmar que, para corrente durante a avaliação de uma alteração no escoamento relativo ao casco, deve ser considerada pelo movimento relativo água-navio; uma corrente uniforme altera principalmente a trajetória sobre o fundo."
+          },
+          {
+            "key": "E",
+            "text": "Sobre “Corrente”, considere a proposição: A conclusão técnica é que, para corrente na preparação de um plano de contingência para perda de margem de controle, deve ser considerada pelo movimento relativo água-navio; uma corrente uniforme altera principalmente a trajetória sobre o fundo."
+          }
+        ],
+        "correct_answer": "B",
+        "explanation": "A alternativa B é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-975",
+      "record_sha256": "a39e4fc56a243cae0362ba5a9bee23b4aa55c12f32bda8eb579827750028382c",
+      "record": {
+        "id": "MAN-975",
+        "subject": "Manobrabilidade do Navio",
+        "module": "5. Efeitos ambientais, águas rasas e interações",
+        "topic": "Corrente",
+        "difficulty": "Difícil",
+        "style": "Assertivas I–IV",
+        "question_type": "Assertivas I–IV",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "pna-v3",
+          "chapter_id": "pna-v3::ch9-s12",
+          "topic_id": "I-pna-v3-ch9-s12-5-40-corrente",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "pna-v3",
+            "title": "LEWIS — Principles of Naval Architecture, Volume III",
+            "author": "LEWIS, Edward V."
+          },
+          "chapter": {
+            "id": "pna-v3::ch9-s12",
+            "number": "ch9-s12",
+            "title": "Chapter IX — Section 12: Effects of the Environment",
+            "label": "Chapter IX — Section 12: Effects of the Environment"
+          },
+          "section": "Chapter IX — Section 12: Effects of the Environment",
+          "module": "5. Efeitos ambientais, águas rasas e interações",
+          "topic": {
+            "id": "I-pna-v3-ch9-s12-5-40-corrente",
+            "title": "Corrente"
+          }
+        },
+        "source": {
+          "author": "LEWIS, Edward V.",
+          "title": "Principles of Naval Architecture, Volume III",
+          "edition": "2nd Revision, 1989",
+          "locator": "Chapter IX — Controllability, selected Sections 1, 3, 4, 5, 6, 10, 12, 13 and 14"
+        },
+        "tags": [
+          "Efeitos ambientais, águas rasas e interações",
+          "Corrente",
+          "corrente",
+          "manobrabilidade",
+          "pna-v3",
+          "pna-v3::ch9-s12",
+          "pscpp-style-v5",
+          "formato-pscpp-assertivas-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-3254",
+            "MAN-3361",
+            "MAN-3469",
+            "MAN-339"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-975",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.AST.00157",
+        "question": "De acordo com o contido em “Principles of Naval Architecture, Volume III”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Corrente”, considere a proposição: A interpretação adequada é que, para corrente na revisão de um caso operacional com resposta assimétrica do navio, deve ser considerada pelo movimento relativo água-navio; uma corrente uniforme altera principalmente a trajetória sobre o fundo.\nII) Sobre “Vento sobre o navio”, considere a proposição: O princípio aplicável indica que, para vento sobre o navio ao interpretar uma tendência registrada durante o giro do navio, gera forças e momentos dependentes da velocidade relativa, direção e áreas expostas.\nIII) Sobre “Vento sobre o navio”, considere a proposição: A análise correta considera que, para vento sobre o navio durante a análise de dados antes e depois de uma alteração de comando, é desprezível em baixa velocidade do navio.\nIV) Sobre “Corrente”, considere a proposição: Corrente nunca altera trajetória sobre o fundo.",
+        "options": [
+          {
+            "key": "A",
+            "text": "Apenas as afirmativas I e II são verdadeiras."
+          },
+          {
+            "key": "B",
+            "text": "Apenas as afirmativas I e III são verdadeiras."
+          },
+          {
+            "key": "C",
+            "text": "Apenas as afirmativas II e IV são verdadeiras."
+          },
+          {
+            "key": "D",
+            "text": "Apenas as afirmativas III e IV são verdadeiras."
+          },
+          {
+            "key": "E",
+            "text": "As afirmativas I, II, III e IV são verdadeiras."
+          }
+        ],
+        "correct_answer": "A",
+        "explanation": "A combinação correta é a alternativa A. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Chapter IX — Controllability, selected Sections 1, 3, 4, 5, 6, 10, 12, 13 and 14."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    }
+  ]
+}
