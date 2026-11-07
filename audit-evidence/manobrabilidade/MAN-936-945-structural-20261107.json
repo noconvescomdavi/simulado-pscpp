@@ -1,0 +1,994 @@
+{
+  "scope": "MAN-936..MAN-945",
+  "source_commit": "e51fda83843727ca4569d99e0db43a989eca8015",
+  "bank_blob": "f62b57228676076969feb281a100a3d509bb2937",
+  "status": "structural_review_only",
+  "records": [
+    {
+      "id": "MAN-936",
+      "record_sha256": "891af307c54bbf64bd0eaec9171f9b757c0c433b0ca82a7451e7b5f57c50a675",
+      "record": {
+        "id": "MAN-936",
+        "subject": "Manobrabilidade do Navio",
+        "module": "6. Mar adverso e informações de manobra a bordo",
+        "topic": "Pilot card",
+        "difficulty": "Difícil",
+        "style": "Assertivas I–IV",
+        "question_type": "Assertivas I–IV",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "a601",
+          "chapter_id": "a601::s1",
+          "topic_id": "I-a601-s1-6-6-pilot-card",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "a601",
+            "title": "IMO Resolution A.601(15) — Provision and Display of Manoeuvring Information",
+            "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+          },
+          "chapter": {
+            "id": "a601::s1",
+            "number": "s1",
+            "title": "1. Manoeuvring information",
+            "label": "1. Manoeuvring information"
+          },
+          "section": "1. Manoeuvring information",
+          "module": "6. Mar adverso e informações de manobra a bordo",
+          "topic": {
+            "id": "I-a601-s1-6-6-pilot-card",
+            "title": "Pilot card"
+          }
+        },
+        "source": {
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+          "title": "Provision and Display of Manoeuvring Information on Board Ships",
+          "edition": "Resolution A.601(15), 1987",
+          "locator": "Section 1 — Manoeuvring information"
+        },
+        "tags": [
+          "pilot card",
+          "informação de manobra",
+          "manobrabilidade",
+          "a601",
+          "a601::s1",
+          "pilot-card",
+          "pscpp-style-v5",
+          "formato-pscpp-assertivas-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-934",
+            "MAN-987",
+            "MAN-291",
+            "MAN-294"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-936",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.AST.00118",
+        "question": "De acordo com o contido em “Provision and Display of Manoeuvring Information on Board Ships”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Pilot card”, considere a proposição: O pilot card substitui todas as cartas náuticas.\nII) Sobre “Pilot card”, considere a proposição: O pilot card é destinado a fornecer ao prático informações atualizadas sobre condição e características de manobra do navio.\nIII) Sobre “Formas de informação de manobra”, considere a proposição: ECDIS, radar e AIS, exclusivamente.\nIV) Sobre “Wheelhouse poster”, considere a proposição: ficar permanentemente exposto no passadiço e apresentar, de forma acessível, dados gerais e características de manobra.",
+        "options": [
+          {
+            "key": "A",
+            "text": "Apenas as afirmativas I e II são verdadeiras."
+          },
+          {
+            "key": "B",
+            "text": "Apenas as afirmativas I e III são verdadeiras."
+          },
+          {
+            "key": "C",
+            "text": "Apenas as afirmativas II e IV são verdadeiras."
+          },
+          {
+            "key": "D",
+            "text": "Apenas as afirmativas III e IV são verdadeiras."
+          },
+          {
+            "key": "E",
+            "text": "As afirmativas I, II, III e IV são verdadeiras."
+          }
+        ],
+        "correct_answer": "C",
+        "explanation": "A combinação correta é a alternativa C. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Section 1 — Manoeuvring information."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-937",
+      "record_sha256": "a16b86fa17e08f92f4b05620b95620fb7188707340da8e53045ef147df993d83",
+      "record": {
+        "id": "MAN-937",
+        "subject": "Manobrabilidade do Navio",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": "Resistência em mar agitado",
+        "difficulty": "Difícil",
+        "style": "Sequência V/F",
+        "question_type": "Sequência V/F",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "crenshaw-naval-shiphandling",
+          "chapter_id": "crenshaw-naval-shiphandling::ch2",
+          "topic_id": "I-crenshaw-naval-shiphandling-ch2-1-6-resistencia-em-mar-agitado",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "crenshaw-naval-shiphandling",
+            "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+            "author": "CRENSHAW, Russell Sydnor"
+          },
+          "chapter": {
+            "id": "crenshaw-naval-shiphandling::ch2",
+            "number": "ch2",
+            "title": "Chapter 2 – Forces Affecting the Ship",
+            "label": "Chapter 2 – Forces Affecting the Ship"
+          },
+          "section": "Chapter 2 – Forces Affecting the Ship",
+          "module": "1. Resistência do navio e métodos de obtenção",
+          "topic": {
+            "id": "I-crenshaw-naval-shiphandling-ch2-1-6-resistencia-em-mar-agitado",
+            "title": "Resistência em mar agitado"
+          }
+        },
+        "source": {
+          "author": "CRENSHAW, Russell Sydnor",
+          "title": "Naval Shiphandling",
+          "edition": "4. ed., 1975",
+          "locator": "Chapter 2 - Forces Affecting the Ship"
+        },
+        "tags": [
+          "resistência do navio",
+          "manobrabilidade",
+          "crenshaw-naval-shiphandling",
+          "crenshaw-naval-shiphandling::ch2",
+          "resistencia-em-mar-agitado",
+          "pscpp-style-v5",
+          "formato-pscpp-vf-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-043",
+            "MAN-047",
+            "MAN-050",
+            "MAN-110"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-937",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.VF.00119",
+        "question": "Com base em “Naval Shiphandling”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Resistência em mar agitado”, considere a proposição: O movimento de deriva em corrente uniforme.\n( ) Sobre “Resistência do ar”, considere a proposição: uma parcela independente da área frontal.\n( ) Sobre “Efeito da condição de carga”, considere a proposição: A condição leve, por maior área exposta relativa e menor resistência lateral submersa.\n( ) Sobre “Propulsor parcialmente submerso”, considere a proposição: ventilação, perda e flutuação de empuxo, vibração e disparo de rotação.",
+        "options": [
+          {
+            "key": "A",
+            "text": "( V ) ( V ) ( F ) ( F )"
+          },
+          {
+            "key": "B",
+            "text": "( V ) ( F ) ( V ) ( F )"
+          },
+          {
+            "key": "C",
+            "text": "( F ) ( V ) ( F ) ( V )"
+          },
+          {
+            "key": "D",
+            "text": "( F ) ( F ) ( V ) ( V )"
+          },
+          {
+            "key": "E",
+            "text": "( V ) ( V ) ( V ) ( V )"
+          }
+        ],
+        "correct_answer": "D",
+        "explanation": "A sequência correta corresponde à alternativa D, conforme os conceitos reunidos em Chapter 2 - Forces Affecting the Ship."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-938",
+      "record_sha256": "5e014cb7934cf52e79cb8a389d3498873f65a67517210755bab8aedb57add1f0",
+      "record": {
+        "id": "MAN-938",
+        "subject": "manobrabilidade",
+        "module": "Cobertura bibliográfica — Manobrabilidade do Navio",
+        "topic": "tensão de cisalhamento",
+        "difficulty": "Difícil",
+        "style": "Assertivas I–IV",
+        "question_type": "Assertivas I–IV",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "pna-v2",
+          "chapter_id": "pna-v2::ch5-s3",
+          "topic_id": "I-pna-v2-ch5-s3-tensao-de-cisalhamento",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "pna-v2",
+            "title": "LEWIS — Principles of Naval Architecture, Volume II",
+            "author": "E. V. Lewis (ed.)"
+          },
+          "chapter": {
+            "id": "pna-v2::ch5-s3",
+            "number": "ch5-s3",
+            "title": "Chapter V – Resistance — Section 3: Frictional Resistance",
+            "label": "Chapter V – Resistance — Section 3: Frictional Resistance"
+          },
+          "section": "Chapter V – Resistance — Section 3: Frictional Resistance",
+          "module": "Cobertura bibliográfica — Manobrabilidade do Navio",
+          "topic": {
+            "id": "I-pna-v2-ch5-s3-tensao-de-cisalhamento",
+            "title": "tensão de cisalhamento"
+          }
+        },
+        "source": {
+          "author": "E. V. Lewis (ed.)",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "edition": "Second Revision, 1988",
+          "locator": "Chapter V – Resistance — Section 3: Frictional Resistance"
+        },
+        "tags": [
+          "manobrabilidade",
+          "pna-v2",
+          "pna-v2::ch5-s3",
+          "tensao-de-cisalhamento",
+          "cobertura-v2",
+          "pscpp-style-v5",
+          "formato-pscpp-assertivas-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-3526",
+            "MAN-3529",
+            "MAN-3533",
+            "MAN-567"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-938",
+          "repair_reason": "duplicate-options-after-v5-generation"
+        },
+        "topic_code": "PSCPP.V5.AST.20938",
+        "question": "De acordo com o contido em “LEWIS — Principles of Naval Architecture, Volume II”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “tensão de cisalhamento”, considere a proposição: coeficiente de atrito — Irregularidade superficial que tende a elevar o arrasto friccional em relação a uma superfície lisa.\nII) Sobre “escoamento turbulento”, considere a proposição: escoamento turbulento — Regime com flutuações e mistura intensa, predominante em grande parte da camada limite de navios em escala real.\nIII) Sobre “efeito de escala viscoso”, considere a proposição: Regime ordenado de escoamento que apresenta comportamento friccional distinto do regime turbulento.\nIV) Sobre “rugosidade do casco”, considere a proposição: rugosidade do casco — Irregularidade superficial que tende a elevar o arrasto friccional em relação a uma superfície lisa.",
+        "options": [
+          {
+            "key": "A",
+            "text": "Apenas as afirmativas I e II são verdadeiras."
+          },
+          {
+            "key": "B",
+            "text": "Apenas as afirmativas I e III são verdadeiras."
+          },
+          {
+            "key": "C",
+            "text": "Apenas as afirmativas II e IV são verdadeiras."
+          },
+          {
+            "key": "D",
+            "text": "Apenas as afirmativas III e IV são verdadeiras."
+          },
+          {
+            "key": "E",
+            "text": "As afirmativas I, II, III e IV são verdadeiras."
+          }
+        ],
+        "correct_answer": "C",
+        "explanation": "A combinação correta é a alternativa C. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Chapter V – Resistance — Section 3: Frictional Resistance."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-939",
+      "record_sha256": "856bfb192cd4237b6c3b360ea0b59e96be3c4155951c6479e829bf4a4311ec07",
+      "record": {
+        "id": "MAN-939",
+        "subject": "Manobrabilidade do Navio",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": "Resistência de ondas",
+        "difficulty": "Difícil",
+        "style": "Assertivas I–IV",
+        "question_type": "Assertivas I–IV",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "pna-v2",
+          "chapter_id": "pna-v2::ch5-s4",
+          "topic_id": "I-pna-v2-ch5-s4-1-3-resistencia-de-ondas",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "pna-v2",
+            "title": "LEWIS — Principles of Naval Architecture, Volume II",
+            "author": "LEWIS, Edward V."
+          },
+          "chapter": {
+            "id": "pna-v2::ch5-s4",
+            "number": "ch5-s4",
+            "title": "Chapter V – Resistance — Section 4: Wave-Making Resistance",
+            "label": "Chapter V – Resistance — Section 4: Wave-Making Resistance"
+          },
+          "section": "Chapter V – Resistance — Section 4: Wave-Making Resistance",
+          "module": "1. Resistência do navio e métodos de obtenção",
+          "topic": {
+            "id": "I-pna-v2-ch5-s4-1-3-resistencia-de-ondas",
+            "title": "Resistência de ondas"
+          }
+        },
+        "source": {
+          "author": "LEWIS, Edward V.",
+          "title": "Principles of Naval Architecture, Volume II",
+          "edition": "2nd Revision, 1988",
+          "locator": "Chapters V-VI, selected sections listed in bibliografia.txt"
+        },
+        "tags": [
+          "ondas",
+          "Froude",
+          "manobrabilidade",
+          "pna-v2",
+          "pna-v2::ch5-s4",
+          "resistencia-de-ondas",
+          "pscpp-style-v5",
+          "formato-pscpp-assertivas-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-303",
+            "MAN-3535",
+            "MAN-020",
+            "MAN-040"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-939",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.AST.00121",
+        "question": "De acordo com o contido em “Principles of Naval Architecture, Volume II”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Resistência de ondas”, considere a proposição: A resistência de formação de ondas está associada ao sistema de ondas gerado pelo casco em movimento.\nII) No contexto de “ondas divergentes”, a associação “ondas divergentes” é tecnicamente aplicável.\nIII) Sobre “Interferência de ondas”, considere a proposição: da interferência construtiva ou destrutiva entre sistemas de ondas originados em diferentes regiões do casco.\nIV) Sobre “Padrão de ondas”, considere a proposição: sua orientação e direção de propagação em relação à trajetória do navio.",
+        "options": [
+          {
+            "key": "A",
+            "text": "Apenas as afirmativas I e II são verdadeiras."
+          },
+          {
+            "key": "B",
+            "text": "Apenas as afirmativas I e III são verdadeiras."
+          },
+          {
+            "key": "C",
+            "text": "Apenas as afirmativas II e IV são verdadeiras."
+          },
+          {
+            "key": "D",
+            "text": "Apenas as afirmativas III e IV são verdadeiras."
+          },
+          {
+            "key": "E",
+            "text": "As afirmativas I, II, III e IV são verdadeiras."
+          }
+        ],
+        "correct_answer": "E",
+        "explanation": "A combinação correta é a alternativa E. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Chapters V-VI, selected sections listed in bibliografia.txt."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-940",
+      "record_sha256": "d8187dedf72b36783e0d6ab5ca26eb9f3dd6b66456c9afa98f56fd6821ab9d5b",
+      "record": {
+        "id": "MAN-940",
+        "subject": "Manobrabilidade do Navio",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": "Camada limite",
+        "difficulty": "Difícil",
+        "style": "Sequência V/F",
+        "question_type": "Sequência V/F",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "larsson-resistance",
+          "chapter_id": "larsson-resistance::ch6",
+          "topic_id": "I-larsson-resistance-ch6-1-8-camada-limite",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "larsson-resistance",
+            "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+            "author": "LARSSON, Lars; RAVEN, Hoyte C."
+          },
+          "chapter": {
+            "id": "larsson-resistance::ch6",
+            "number": "ch6",
+            "title": "Chapter 6",
+            "label": "Chapter 6"
+          },
+          "section": "Chapter 6",
+          "module": "1. Resistência do navio e métodos de obtenção",
+          "topic": {
+            "id": "I-larsson-resistance-ch6-1-8-camada-limite",
+            "title": "Camada limite"
+          }
+        },
+        "source": {
+          "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+          "title": "Ship Resistance and Flow",
+          "edition": "2010",
+          "locator": "Chapters 1–8"
+        },
+        "tags": [
+          "Resistência do navio e métodos de obtenção",
+          "Camada limite",
+          "camada limite",
+          "manobrabilidade",
+          "larsson-resistance",
+          "larsson-resistance::ch6",
+          "camada-limite",
+          "pscpp-style-v5",
+          "formato-pscpp-vf-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-1872",
+            "MAN-1926",
+            "MAN-1980",
+            "MAN-2034"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-940",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.VF.00122",
+        "question": "Com base em “Ship Resistance and Flow”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Camada limite”, considere a proposição: O princípio aplicável indica que, para camada limite durante a análise de sensibilidade de uma condição operacional, é a região próxima ao casco em que os efeitos viscosos e gradientes de velocidade são importantes.\n( ) Sobre “Camada limite”, considere a proposição: A interpretação adequada é que, para camada limite ao verificar coerência entre teoria hidrodinâmica e observação de bordo, é a região próxima ao casco em que os efeitos viscosos e gradientes de velocidade são importantes.\n( ) Sobre “Camada limite”, considere a proposição: É coerente afirmar que, para camada limite na preparação de uma aula de revisão para o PSCPP, é a região próxima ao casco em que os efeitos viscosos e gradientes de velocidade são importantes.\n( ) Sobre “Camada limite”, considere a proposição: A análise correta considera que, para camada limite ao interpretar uma situação de manobra com perturbação ambiental, é a região próxima ao casco em que os efeitos viscosos e gradientes de velocidade são importantes.",
+        "options": [
+          {
+            "key": "A",
+            "text": "( V ) ( V ) ( F ) ( F )"
+          },
+          {
+            "key": "B",
+            "text": "( V ) ( F ) ( V ) ( F )"
+          },
+          {
+            "key": "C",
+            "text": "( F ) ( V ) ( F ) ( V )"
+          },
+          {
+            "key": "D",
+            "text": "( F ) ( F ) ( V ) ( V )"
+          },
+          {
+            "key": "E",
+            "text": "( V ) ( V ) ( V ) ( V )"
+          }
+        ],
+        "correct_answer": "E",
+        "explanation": "A sequência correta corresponde à alternativa E, conforme os conceitos reunidos em Chapters 1–8."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-941",
+      "record_sha256": "c1c2684a1c4b0949e5f10ea8973365c96e346125f3aa938dd4928fe3689c7bcb",
+      "record": {
+        "id": "MAN-941",
+        "subject": "Manobrabilidade do Navio",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": "Número de Froude",
+        "difficulty": "Difícil",
+        "style": "Assinale a incorreta",
+        "question_type": "Assinale a incorreta",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "larsson-resistance",
+          "chapter_id": "larsson-resistance::ch3",
+          "topic_id": "I-larsson-resistance-ch3-1-5-numero-de-froude",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "larsson-resistance",
+            "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+            "author": "LARSSON, Lars; RAVEN, Hoyte C."
+          },
+          "chapter": {
+            "id": "larsson-resistance::ch3",
+            "number": "ch3",
+            "title": "Chapter 3",
+            "label": "Chapter 3"
+          },
+          "section": "Chapter 3",
+          "module": "1. Resistência do navio e métodos de obtenção",
+          "topic": {
+            "id": "I-larsson-resistance-ch3-1-5-numero-de-froude",
+            "title": "Número de Froude"
+          }
+        },
+        "source": {
+          "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+          "title": "Ship Resistance and Flow",
+          "edition": "2010",
+          "locator": "Chapters 1–8"
+        },
+        "tags": [
+          "Resistência do navio e métodos de obtenção",
+          "Número de Froude",
+          "número de froude",
+          "manobrabilidade",
+          "larsson-resistance",
+          "larsson-resistance::ch3",
+          "numero-de-froude",
+          "pscpp-style-v5",
+          "formato-pscpp-incorreta-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-1707",
+            "MAN-1761",
+            "MAN-1816",
+            "MAN-1870",
+            "MAN-1924"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-941",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.INC.00123",
+        "question": "Ao revisar o plano de manobra, No briefing conduzido antes da faina, Durante uma análise técnica de bordo, Durante a preparação do Prático, Em uma avaliação do passadiço, Ao revisar o plano de manobra, No briefing conduzido antes da faina, Durante uma análise técnica de bordo, Considerando o conteúdo de “Ship Resistance and Flow” (Chapters 1–8), assinale a alternativa INCORRETA:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Sobre “Número de Froude”, considere a proposição: A análise correta considera que, para número de froude durante o estudo de causas de aumento de esforço propulsivo, relaciona efeitos de inércia e gravidade e é relevante para fenômenos de ondas."
+          },
+          {
+            "key": "B",
+            "text": "Sobre “Número de Froude”, considere a proposição: A conclusão técnica é que, para número de froude na discussão de segurança antes de uma manobra em baixa velocidade, relaciona efeitos de inércia e gravidade e é relevante para fenômenos de ondas."
+          },
+          {
+            "key": "C",
+            "text": "Sobre “Similitude de modelos”, considere a proposição: A análise correta considera que, para similitude de modelos ao revisar um relatório de desempenho do casco e do sistema de governo, não permite, em geral, igualar simultaneamente Reynolds e Froude com o mesmo fluido e escala geométrica."
+          },
+          {
+            "key": "D",
+            "text": "Sobre “Similitude de modelos”, considere a proposição: A conclusão técnica é que, para similitude de modelos durante a análise de sensibilidade de uma condição operacional, não permite, em geral, igualar simultaneamente Reynolds e Froude com o mesmo fluido e escala geométrica."
+          },
+          {
+            "key": "E",
+            "text": "Sobre “Similitude de modelos”, considere a proposição: A interpretação adequada é que, para similitude de modelos ao verificar coerência entre teoria hidrodinâmica e observação de bordo, é obtida igualando somente a velocidade."
+          }
+        ],
+        "correct_answer": "E",
+        "explanation": "A alternativa E é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-942",
+      "record_sha256": "1045f3cf5c29c26bffd461a6df611514d5e3e41d641f707b7ada90ba4c0a6a20",
+      "record": {
+        "id": "MAN-942",
+        "subject": "Manobrabilidade do Navio",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": "Número de Reynolds",
+        "difficulty": "Difícil",
+        "style": "Assertivas I–IV",
+        "question_type": "Assertivas I–IV",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "larsson-resistance",
+          "chapter_id": "larsson-resistance::ch3",
+          "topic_id": "I-larsson-resistance-ch3-1-4-numero-de-reynolds",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "larsson-resistance",
+            "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+            "author": "LARSSON, Lars; RAVEN, Hoyte C."
+          },
+          "chapter": {
+            "id": "larsson-resistance::ch3",
+            "number": "ch3",
+            "title": "Chapter 3",
+            "label": "Chapter 3"
+          },
+          "section": "Chapter 3",
+          "module": "1. Resistência do navio e métodos de obtenção",
+          "topic": {
+            "id": "I-larsson-resistance-ch3-1-4-numero-de-reynolds",
+            "title": "Número de Reynolds"
+          }
+        },
+        "source": {
+          "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+          "title": "Ship Resistance and Flow",
+          "edition": "2010",
+          "locator": "Chapters 1–8"
+        },
+        "tags": [
+          "Resistência do navio e métodos de obtenção",
+          "Número de Reynolds",
+          "número de reynolds",
+          "manobrabilidade",
+          "larsson-resistance",
+          "larsson-resistance::ch3",
+          "numero-de-reynolds",
+          "pscpp-style-v5",
+          "formato-pscpp-assertivas-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-1868",
+            "MAN-1922",
+            "MAN-1976",
+            "MAN-2030"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-942",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.AST.00124",
+        "question": "De acordo com o contido em “Ship Resistance and Flow”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Número de Reynolds”, considere a proposição: A análise correta considera que, para número de reynolds durante a análise de sensibilidade de uma condição operacional, relaciona efeitos de inércia e viscosidade e é central na similitude viscosa.\nII) Sobre “Número de Reynolds”, considere a proposição: A conclusão técnica é que, para número de reynolds ao verificar coerência entre teoria hidrodinâmica e observação de bordo, relaciona efeitos de inércia e viscosidade e é central na similitude viscosa.\nIII) Sobre “Número de Reynolds”, considere a proposição: O princípio aplicável indica que, para número de reynolds na preparação de uma aula de revisão para o PSCPP, relaciona efeitos de inércia e viscosidade e é central na similitude viscosa.\nIV) Sobre “Número de Reynolds”, considere a proposição: A interpretação adequada é que, para número de reynolds ao interpretar uma situação de manobra com perturbação ambiental, relaciona efeitos de inércia e viscosidade e é central na similitude viscosa.",
+        "options": [
+          {
+            "key": "A",
+            "text": "Apenas as afirmativas I e II são verdadeiras."
+          },
+          {
+            "key": "B",
+            "text": "Apenas as afirmativas I e III são verdadeiras."
+          },
+          {
+            "key": "C",
+            "text": "Apenas as afirmativas II e IV são verdadeiras."
+          },
+          {
+            "key": "D",
+            "text": "Apenas as afirmativas III e IV são verdadeiras."
+          },
+          {
+            "key": "E",
+            "text": "As afirmativas I, II, III e IV são verdadeiras."
+          }
+        ],
+        "correct_answer": "E",
+        "explanation": "A combinação correta é a alternativa E. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Chapters 1–8."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-943",
+      "record_sha256": "e5327b533ce051dc707d3462d529a8c5a68f3403a116756816b0ea0ac6e4df83",
+      "record": {
+        "id": "MAN-943",
+        "subject": "Manobrabilidade do Navio",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": "Ensaio de resistência",
+        "difficulty": "Difícil",
+        "style": "Sequência V/F",
+        "question_type": "Sequência V/F",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "larsson-resistance",
+          "chapter_id": "larsson-resistance::ch8",
+          "topic_id": "I-larsson-resistance-ch8-1-10-ensaio-de-resistencia",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "larsson-resistance",
+            "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+            "author": "LARSSON, Lars; RAVEN, Hoyte C."
+          },
+          "chapter": {
+            "id": "larsson-resistance::ch8",
+            "number": "ch8",
+            "title": "Chapter 8",
+            "label": "Chapter 8"
+          },
+          "section": "Chapter 8",
+          "module": "1. Resistência do navio e métodos de obtenção",
+          "topic": {
+            "id": "I-larsson-resistance-ch8-1-10-ensaio-de-resistencia",
+            "title": "Ensaio de resistência"
+          }
+        },
+        "source": {
+          "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+          "title": "Ship Resistance and Flow",
+          "edition": "2010",
+          "locator": "Chapters 1–8"
+        },
+        "tags": [
+          "Resistência do navio e métodos de obtenção",
+          "Ensaio de resistência",
+          "ensaio de resistência",
+          "manobrabilidade",
+          "larsson-resistance",
+          "larsson-resistance::ch8",
+          "ensaio-de-resistencia",
+          "pscpp-style-v5",
+          "formato-pscpp-vf-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-1172",
+            "MAN-1279",
+            "MAN-1334",
+            "MAN-1441"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-943",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.VF.00125",
+        "question": "Com base em “Ship Resistance and Flow”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Ensaio de resistência”, considere a proposição: A análise correta considera que, para ensaio de resistência durante uma comparação entre condição de projeto e condição operacional, permite obter a força de reboque do modelo em velocidades controladas para estimar componentes da resistência.\n( ) Sobre “Esteira nominal”, considere a proposição: É coerente afirmar que, para esteira nominal na preparação de um briefing técnico para a equipe de navegação, representa a não uniformidade do escoamento que chega ao plano do propulsor devido principalmente ao casco.\n( ) Sobre “Ensaio de resistência”, considere a proposição: A interpretação adequada é que, para ensaio de resistência ao avaliar o comportamento do navio antes de entrar em águas restritas, permite obter a força de reboque do modelo em velocidades controladas para estimar componentes da resistência.\n( ) Sobre “Esteira nominal”, considere a proposição: O princípio aplicável indica que, para esteira nominal na análise de uma mudança de carregamento antes da saída, representa a não uniformidade do escoamento que chega ao plano do propulsor devido principalmente ao casco.",
+        "options": [
+          {
+            "key": "A",
+            "text": "( V ) ( V ) ( F ) ( F )"
+          },
+          {
+            "key": "B",
+            "text": "( V ) ( F ) ( V ) ( F )"
+          },
+          {
+            "key": "C",
+            "text": "( F ) ( V ) ( F ) ( V )"
+          },
+          {
+            "key": "D",
+            "text": "( F ) ( F ) ( V ) ( V )"
+          },
+          {
+            "key": "E",
+            "text": "( V ) ( V ) ( V ) ( V )"
+          }
+        ],
+        "correct_answer": "E",
+        "explanation": "A sequência correta corresponde à alternativa E, conforme os conceitos reunidos em Chapters 1–8."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-944",
+      "record_sha256": "309978ae1ddf9c0dc7c316cfac2d7b3a690202fc5b9e36a31170750ca38f4ecf",
+      "record": {
+        "id": "MAN-944",
+        "subject": "Manobrabilidade do Navio",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": "Separação do escoamento",
+        "difficulty": "Difícil",
+        "style": "Assinale a incorreta",
+        "question_type": "Assinale a incorreta",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "larsson-resistance",
+          "chapter_id": "larsson-resistance::ch6",
+          "topic_id": "I-larsson-resistance-ch6-1-7-separacao-do-escoamento",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "larsson-resistance",
+            "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+            "author": "LARSSON, Lars; RAVEN, Hoyte C."
+          },
+          "chapter": {
+            "id": "larsson-resistance::ch6",
+            "number": "ch6",
+            "title": "Chapter 6",
+            "label": "Chapter 6"
+          },
+          "section": "Chapter 6",
+          "module": "1. Resistência do navio e métodos de obtenção",
+          "topic": {
+            "id": "I-larsson-resistance-ch6-1-7-separacao-do-escoamento",
+            "title": "Separação do escoamento"
+          }
+        },
+        "source": {
+          "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+          "title": "Ship Resistance and Flow",
+          "edition": "2010",
+          "locator": "Chapters 1–8"
+        },
+        "tags": [
+          "Resistência do navio e métodos de obtenção",
+          "Separação do escoamento",
+          "separação do escoamento",
+          "manobrabilidade",
+          "larsson-resistance",
+          "larsson-resistance::ch6",
+          "separacao-do-escoamento",
+          "pscpp-style-v5",
+          "formato-pscpp-incorreta-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-2411",
+            "MAN-2465",
+            "MAN-2519",
+            "MAN-2573",
+            "MAN-2627"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-944",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.INC.00126",
+        "question": "Em uma avaliação do passadiço, Ao revisar o plano de manobra, No briefing conduzido antes da faina, Durante uma análise técnica de bordo, Durante a preparação do Prático, Em uma avaliação do passadiço, Ao revisar o plano de manobra, No briefing conduzido antes da faina, Durante uma análise técnica de bordo, Considerando o conteúdo de “Ship Resistance and Flow” (Chapters 1–8), assinale a alternativa INCORRETA:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Sobre “Separação do escoamento”, considere a proposição: É coerente afirmar que, para separação do escoamento na análise de risco anterior a uma aproximação de cais, pode aumentar perdas viscosas e resistência de forma quando o gradiente de pressão adverso favorece o descolamento."
+          },
+          {
+            "key": "B",
+            "text": "Sobre “Separação do escoamento”, considere a proposição: A análise correta considera que, para separação do escoamento durante a verificação de desempenho após manutenção do sistema propulsivo, pode aumentar perdas viscosas e resistência de forma quando o gradiente de pressão adverso favorece o descolamento."
+          },
+          {
+            "key": "C",
+            "text": "Sobre “Separação do escoamento”, considere a proposição: A análise correta considera que, para separação do escoamento ao comparar comportamento em água calma e condição ambiental perturbada, é sinônimo de cavitação."
+          },
+          {
+            "key": "D",
+            "text": "Sobre “Separação do escoamento”, considere a proposição: O princípio aplicável indica que, para separação do escoamento na revisão de uma ficha de dados de manobra do navio, pode aumentar perdas viscosas e resistência de forma quando o gradiente de pressão adverso favorece o descolamento."
+          },
+          {
+            "key": "E",
+            "text": "Sobre “Separação do escoamento”, considere a proposição: A interpretação adequada é que, para separação do escoamento durante o planejamento de uma alteração de rumo de grande amplitude, pode aumentar perdas viscosas e resistência de forma quando o gradiente de pressão adverso favorece o descolamento."
+          }
+        ],
+        "correct_answer": "C",
+        "explanation": "A alternativa C é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-945",
+      "record_sha256": "9a8ab0bdf8315535c82b7e13c8123fb91c2e98fdd33ab8804ad91a0a241e7141",
+      "record": {
+        "id": "MAN-945",
+        "subject": "manobrabilidade",
+        "module": "Cobertura bibliográfica — Manobrabilidade do Navio",
+        "topic": "resistência de apêndices",
+        "difficulty": "Difícil",
+        "style": "Assertivas I–IV",
+        "question_type": "Assertivas I–IV",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "larsson-resistance",
+          "chapter_id": "larsson-resistance::ch7",
+          "topic_id": "I-larsson-resistance-ch7-resistencia-de-apendices",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "larsson-resistance",
+            "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+            "author": "Lars Larsson; Hoyte C. Raven"
+          },
+          "chapter": {
+            "id": "larsson-resistance::ch7",
+            "number": "ch7",
+            "title": "Chapter 7",
+            "label": "Chapter 7"
+          },
+          "section": "Chapter 7",
+          "module": "Cobertura bibliográfica — Manobrabilidade do Navio",
+          "topic": {
+            "id": "I-larsson-resistance-ch7-resistencia-de-apendices",
+            "title": "resistência de apêndices"
+          }
+        },
+        "source": {
+          "author": "Lars Larsson; Hoyte C. Raven",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "edition": "2010",
+          "locator": "Chapter 7"
+        },
+        "tags": [
+          "manobrabilidade",
+          "larsson-resistance",
+          "larsson-resistance::ch7",
+          "resistencia-de-apendices",
+          "cobertura-v2",
+          "pscpp-style-v3",
+          "formato-pscpp-direta",
+          "pscpp-style-v5",
+          "formato-pscpp-assertivas-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-415",
+            "MAN-3688",
+            "MAN-3691",
+            "MAN-3695"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-945",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.AST.00127",
+        "question": "De acordo com o contido em “LARSSON & RAVEN — Ship Resistance and Flow”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “resistência de apêndices”, considere a proposição: Condição em que a velocidade local pode ser menor que a velocidade do navio por influência do casco.\nII) No contexto de “sustentação hidrodinâmica”, a associação “resistência do ar” é tecnicamente aplicável.\nIII) No contexto de “corpo afilado”, a associação “corpo afilado” é tecnicamente aplicável.\nIV) Sobre “vento aparente”, considere a proposição: vento aparente — Vento relativo percebido a bordo, resultante da soma vetorial do vento verdadeiro com a velocidade oposta do navio.",
+        "options": [
+          {
+            "key": "A",
+            "text": "Apenas as afirmativas I e II são verdadeiras."
+          },
+          {
+            "key": "B",
+            "text": "Apenas as afirmativas I e III são verdadeiras."
+          },
+          {
+            "key": "C",
+            "text": "Apenas as afirmativas II e IV são verdadeiras."
+          },
+          {
+            "key": "D",
+            "text": "Apenas as afirmativas III e IV são verdadeiras."
+          },
+          {
+            "key": "E",
+            "text": "As afirmativas I, II, III e IV são verdadeiras."
+          }
+        ],
+        "correct_answer": "D",
+        "explanation": "A combinação correta é a alternativa D. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Chapter 7."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    }
+  ]
+}
