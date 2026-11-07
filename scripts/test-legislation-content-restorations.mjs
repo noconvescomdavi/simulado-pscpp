@@ -2,7 +2,12 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { reformulateLeakingStem, auditQuestion } from '../lib/question-quality.js';
 import { normalizeEditorialStem } from '../lib/question-editorial-normalization.js';
-import { questionQualityState } from '../lib/question-quality-policy.js';
+import { questionQualityState, isQuestionActive } from '../lib/question-quality-policy.js';
+import legislationSource from '../data/questions/legislacao-regulamentacao.json';
+import { applyQuestionRestorations, applyContentEditorialRestoration } from '../lib/question-restorations.js';
+import { canonicalizeQuestionTaxonomy } from '../lib/question-taxonomy.js';
+import { restoreCompleteNotebookStem } from '../lib/notebook-stem-restorations.js';
+import { applyMiguensCap45Review } from '../lib/miguens-cap45-review.js';
 import { collectActiveQuestionBanks } from '../lib/question-banks-source.js';
 import { hasLocatorOnlyCommand } from '../lib/question-locator-audit.js';
 import { classifyQuestionStructure } from '../lib/question-structure.js';
@@ -17,7 +22,28 @@ assert.equal(reviewed.length,322);
 assert.equal(new Set(reviewed.map(q=>q.id)).size,322);
 assert.deepEqual(new Set(reviewed.map(q=>q.id)),new Set(baseline.map(q=>q.id)));
 assert.ok(baseline.every(hasLocatorOnlyCommand),'baseline must reproduce the actual defective runtime templates');
-assert.equal(runtime.length,826,'the repair must retain all active Legislation notebook questions');
+// The active notebook grows as independently audited legislation sources are added.
+// Verify every previously active source question survives runtime processing,
+// rather than freezing the total at 826 and rejecting legitimate additions.
+const restoredSource = applyQuestionRestorations('legislacao-regulamentacao', legislationSource).questions;
+const processedSource = restoredSource
+ .map(canonicalizeQuestionTaxonomy)
+ .map(q=>applyContentEditorialRestoration('legislacao-regulamentacao',q))
+ .map(reformulateLeakingStem)
+ .map(normalizeEditorialStem)
+ .map(q=>restoreCompleteNotebookStem('legislacao-regulamentacao',q))
+ .map(q=>applyMiguensCap45Review('Cadernos',q));
+const sourceActiveIds = processedSource.filter(isQuestionActive).map(q=>q.id);
+const sourceQuarantined = processedSource.filter(q=>!isQuestionActive(q));
+assert.equal(processedSource.length,legislationSource.questions.length,'a canonical source question disappeared before quality filtering');
+assert.equal(new Set(processedSource.map(q=>q.id)).size,processedSource.length,'duplicate IDs in the canonical Legislation source');
+assert.equal(byId.size,runtime.length,'duplicate IDs in the active Legislation notebook');
+for (const id of sourceActiveIds) assert.ok(byId.has(id),`${id}: eligible canonical legislation question missing from runtime`);
+for (const q of sourceQuarantined) {
+ assert.ok(questionQualityState(q).reason,`${q.id}: missing documented quality reason for quarantine`);
+ assert.ok(!byId.has(q.id),`${q.id}: quarantined canonical question unexpectedly active`);
+}
+assert.ok(runtime.length>=sourceActiveIds.length,'runtime lost eligible canonical Legislation questions');
 assert.deepEqual(runtime.filter(hasLocatorOnlyCommand).map(q=>q.id),[],'locator-only commands remain in the active notebook');
 for(const edit of reviewed) {
  const q=byId.get(edit.id);
@@ -51,4 +77,4 @@ assert.equal(hasLocatorOnlyCommand({question:'De acordo com NORMAM 601, sobre o 
 // A reviewed marker cannot suppress a genuinely distinctive answer clue.
 const leaked={...reviewed[0],question:reviewed[0].options.find(o=>o.key===reviewed[0].correct_answer).text,options:reviewed[0].options.map(o=>({...o,text:o.key===reviewed[0].correct_answer?o.text:'Outro conceito sem relação com a resposta.'}))};
 assert.ok(auditQuestion(leaked).issues.some(issue=>issue.code==='stem_answer_overlap'));
-console.log('Legislação: 322 revisões ativas; 826 questões preservadas; 0 comandos por localizador; 5 alternativas distintas; gabaritos, comentários, formato e regeneração validados.');
+console.log(`Legislação: 322 revisões ativas; ${sourceActiveIds.length} questões elegíveis da fonte canônica preservadas; ${sourceQuarantined.length} exclusões justificadas pela política editorial; ${runtime.length} questões ativas no total; 0 comandos por localizador; 5 alternativas distintas; gabaritos, comentários, formato e regeneração validados.`);

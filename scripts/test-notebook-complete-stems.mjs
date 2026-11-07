@@ -8,6 +8,31 @@ import { classifyQuestionStructure, structuredPublicQuestion } from "../lib/ques
 import { publicQuestion as notebookPublicQuestion } from "../lib/question-banks.js";
 import { createHash } from "node:crypto";
 
+// Regression: a leaked or malformed combination stem must never be flattened
+// into a generic single-choice command that makes the key uninterpretable.
+const { reformulateLeakingStem: guardCombinationStem } = await import("../lib/question-quality.js");
+const combinationFixture = {
+  id: "REGRESSION-COMBINATION",
+  question: 'Sobre “Esta frase técnica longa exige verificação bibliográfica independente”, examine:\nI. Primeira proposição.\nII. Segunda proposição.\nIII. Terceira proposição.',
+  options: [
+    { key: "A", text: "Apenas I" }, { key: "B", text: "Apenas II" },
+    { key: "C", text: "Apenas III" }, { key: "D", text: "Apenas I e II" },
+    { key: "E", text: "Apenas II e III" },
+  ],
+  correct_answer: "D",
+  topic: "Operações portuárias",
+  source: { title: "Obra técnica" },
+};
+const completeCombination = guardCombinationStem(combinationFixture);
+assert.equal(completeCombination.question, combinationFixture.question, "Complete propositions must never be replaced with a generic stem");
+const incompleteCombination = guardCombinationStem({
+  ...combinationFixture,
+  question: 'Sobre “Esta frase técnica longa exige verificação bibliográfica independente”, assinale a alternativa correta.',
+});
+assert.equal(incompleteCombination.active, false, "Missing combination propositions must be quarantined");
+assert.equal(incompleteCombination.status, "quarantined");
+assert.equal(incompleteCombination.question.includes("frase técnica longa"), true, "Quarantine must preserve source text for repair");
+
 const require = createRequire(import.meta.url);
 const filename = fileURLToPath(new URL("../app/components/StructuredQuestion.js", import.meta.url));
 const babel = require("next/dist/compiled/babel/core");
@@ -29,6 +54,45 @@ const StructuredQuestion = compiled.exports.default;
 const cap45Review = JSON.parse(fs.readFileSync(new URL("../data/question-restorations/miguens-cap45-reviewed.json", import.meta.url)));
 const pack = JSON.parse(fs.readFileSync(new URL("../data/question-restorations/notebook-complete-stems.json", import.meta.url)));
 const banks = JSON.parse(fs.readFileSync(new URL("../data/questions/runtime-active-banks.json", import.meta.url))).banks;
+// Regression: technical-topic quotations must not erase the four stated
+// propositions of an existing Fonseca combination question.
+const fonsecaAssertions = banks["arte-naval"]?.questions.find(q => q.id === "ANV-0005");
+if (!fonsecaAssertions) {
+  const [{ applyQuestionRestorations }, { reformulateLeakingStem }, { normalizeEditorialStem }, { questionQualityState }] = await Promise.all([
+    import("../lib/question-restorations.js"), import("../lib/question-quality.js"),
+    import("../lib/question-editorial-normalization.js"), import("../lib/question-quality-policy.js"),
+  ]);
+  const source = JSON.parse(fs.readFileSync(new URL("../data/questions/arte-naval.json", import.meta.url)));
+  const raw = source.questions.find(q => q.id === "ANV-0005");
+  const restored = applyQuestionRestorations("arte-naval", { questions: [raw] }).questions[0];
+  const reformed = reformulateLeakingStem(restored);
+  const normalized = normalizeEditorialStem(reformed);
+  assert.fail("ANV-0005 missing from runtime; diagnostic " + JSON.stringify({
+    rawStemLength: raw.question.length, restoredStemLength: restored.question.length,
+    reformedStemLength: reformed.question.length, normalizedStemLength: normalized.question.length,
+    normalizedStem: normalized.question.slice(0, 220), quality: questionQualityState(normalized),
+  }));
+}
+const mastreacaoAssertions = banks["arte-naval"]?.questions.find(q => q.id === "AN-C11-1111-M1");
+assert.ok(mastreacaoAssertions, "AN-C11-1111-M1 must remain visible after locator normalization");
+assert.equal(
+  classifyQuestionStructure(mastreacaoAssertions).blocks.find(block => block.type === "assertions")?.items.length,
+  4,
+  "AN-C11-1111-M1 must retain its four source propositions"
+);
+const quotedSourceAssertions = banks["arte-naval"]?.questions.find(q => q.id === "AN-C11-1118a-M1");
+assert.ok(quotedSourceAssertions, "AN-C11-1118a-M1 must remain visible despite quotations inside propositions");
+assert.equal(
+  classifyQuestionStructure(quotedSourceAssertions).blocks.find(block => block.type === "assertions")?.items.length,
+  4,
+  "AN-C11-1118a-M1 must retain its four source propositions"
+);
+const fonsecaBlocks = classifyQuestionStructure(fonsecaAssertions).blocks;
+assert.equal(
+  fonsecaBlocks.find(block => block.type === "assertions")?.items.length,
+  4,
+  "ANV-0005 must preserve all four numbered assertions"
+);
 const digest = value => createHash("sha256").update(JSON.stringify(value)).digest("hex");
 const report = JSON.parse(fs.readFileSync(new URL("../reports/notebook-incomplete-stems.json", import.meta.url)));
 // Primary-source audit revisions supersede the frozen stem-only explanation.
@@ -40,9 +104,31 @@ const stable = value => Array.isArray(value) ? value.map(stable) : value && type
   ? Object.fromEntries(Object.keys(value).sort().map(key => [key, stable(value[key])])) : value;
 const byBank = {};
 const reasons = {};
+const quarantinedRestorations = [];
+const sourceCache = new Map();
 for (const edit of pack.edits) {
   const question = banks[edit.bank].questions.find(q => q.id === edit.id);
-  assert.ok(question, `Inactive or missing corrected question: ${edit.bank}/${edit.id}`);
+  if (!question) {
+    // A correção estrutural histórica não autoriza reativar questão cuja
+    // atribuição a Hensen não foi comprovada. Verificar a quarentena no JSON
+    // de origem, em vez de exigir sua publicação no banco runtime.
+    const block = String(edit.id).match(/^ANV-B(010|013|016|019|021|022|023)-\d+$/)?.[1];
+    assert.ok(block, `Missing corrected question without documented Hensen quarantine: ${edit.bank}/${edit.id}`);
+    const sourceFile = edit.source_file || `data/question-extensions/pscpp-caderno-bloco-${block}.json`;
+    if (!sourceCache.has(sourceFile)) {
+      sourceCache.set(sourceFile, JSON.parse(fs.readFileSync(new URL("../" + sourceFile, import.meta.url), "utf8")));
+    }
+    const original = sourceCache.get(sourceFile).questions.find(q => q.id === edit.id);
+    assert.ok(original, `Quarantined Hensen source disappeared: ${edit.id}`);
+    assert.equal(original.active, false, `Quarantined Hensen question unexpectedly active: ${edit.id}`);
+    assert.equal(original.validation_status, "quarantined", `Missing quarantine status: ${edit.id}`);
+    assert.equal(original.editorial_review?.status, "source_rewrite_required", `Missing source-rewrite obligation: ${edit.id}`);
+    assert.equal(original.taxonomy?.bibliography_id, "hensen-tug");
+    quarantinedRestorations.push(edit.id);
+    byBank[edit.bank] = (byBank[edit.bank] || 0) + 1;
+    for (const reason of edit.reasons) reasons[reason] = (reasons[reason] || 0) + 1;
+    continue;
+  }
   const replacement = cap45Review.edits.find(e => e.pool === "Cadernos" && e.id === edit.id);
   if (replacement) {
     assert.equal(question.question, replacement.question.question);
@@ -117,7 +203,7 @@ for (const [bank, data] of Object.entries(banks)) {
     const structure = classifyQuestionStructure(q);
     const optionText = o => typeof o === "string" ? o : o.text;
     const combination = q.options.some(o => /(?:apenas|somente)\s+(?:as?\s+(?:afirmativas|assertivas)\s+)?(?:I|II|III|IV|V)\b/i.test(optionText(o)));
-    if (combination) assert.ok(structure.blocks.some(b => b.type === "assertions" || b.type === "items"), `Combination without propositions: ${bank}/${q.id}`);
+    if (combination) assert.ok(structure.blocks.some(b => b.type === "assertions" || b.type === "items"), `Combination without propositions: ${bank}/${q.id}; stem=${JSON.stringify(String(q.question).slice(0, 300))}; structure=${structure.type}`);
     assert.ok(!/proposição relativa a .+: _{3}|relação técnica entre .+: _{3}/i.test(q.question), `Empty fill sentence: ${bank}/${q.id}`);
     const missingPairs = q.options.some(o => /^\d e \d trocados/i.test(optionText(o)));
     if (missingPairs) assert.ok(structure.blocks.some(b => b.type === "columns"), `Association without columns: ${bank}/${q.id}`);
@@ -148,8 +234,36 @@ if (activeFragoso.length !== 144) {
   console.error("FRAGOSO_INACTIVE_DIAGNOSTICS", JSON.stringify(diagnostics, null, 2));
 }
 assert.equal(activeFragoso.length, 144, "As 144 questões de Rebocadores Portuários devem permanecer ativas no banco de cadernos");
-assert.equal(audited, 9955 - cap45Review.edits.filter(e => e.pool === "Cadernos" && !e.question.active).length);
+// O baseline 9955 antecede os lotes Hensen e a quarentena reversível.
+// Contabilizar os novos lotes e os itens retirados do runtime, sem relaxar
+// a verificação de integridade do acervo restante.
+const extensionDir = new URL("../data/question-extensions/", import.meta.url);
+const hensenLotFiles = fs.readdirSync(extensionDir).filter(name => /^hensen-lote-\d+\.json$/.test(name));
+const hensenAdded = hensenLotFiles.reduce((sum, name) =>
+  sum + JSON.parse(fs.readFileSync(new URL(name, extensionDir), "utf8")).questions.length, 0);
+const quarantinedBlocks = ["010","013","016","019","021","022","023"];
+const hensenQuarantined = quarantinedBlocks.reduce((sum, block) => {
+  const source = JSON.parse(fs.readFileSync(new URL(`../data/question-extensions/pscpp-caderno-bloco-${block}.json`, import.meta.url), "utf8"));
+  return sum + source.questions.filter(q => q.taxonomy?.bibliography_id === "hensen-tug" && q.active === false && q.validation_status === "quarantined").length;
+}, 0);
+assert.equal(hensenQuarantined, 119, "Quarentena Hensen deve permanecer íntegra até revisão por fonte primária");
+// The 9955 historical snapshot predates independent bank expansions. Exact
+// equality to that frozen snapshot rejects valid new questions. Instead,
+// independently regenerate active IDs from source and require an exact match
+// with the persisted runtime artifact, while retaining the historical floor.
+const { collectActiveQuestionBanks } = await import("../lib/question-banks-source.js");
+const liveSourceBanks = collectActiveQuestionBanks();
+const activeKeys = entries => Object.entries(entries)
+  .filter(([slug]) => slug !== "situacoes-de-manobra-ripeam")
+  .flatMap(([slug, bank]) => (bank.questions || []).map(q => `${slug}::${q.id}`));
+const expectedKeys = activeKeys(liveSourceBanks);
+const runtimeKeys = activeKeys(banks);
+assert.deepEqual(runtimeKeys, expectedKeys, "Runtime active IDs must match independently loaded source banks");
+assert.equal(audited, expectedKeys.length, "Audited count must match the complete active source bank");
+const historicalMinimum = 9955 + hensenAdded - hensenQuarantined
+  - cap45Review.edits.filter(e => e.pool === "Cadernos" && !e.question.active).length;
+assert.ok(audited >= historicalMinimum, `Active bank shrank below historical floor: ${audited} < ${historicalMinimum}`);
 assert.equal(pack.edits.length, 506);
 assert.equal(Object.keys(byBank).length, 7);
 assert.deepEqual(reasons, {inline_assertions_removed: 365, fill_sentence_removed: 10, association_columns_missing: 45, empty_fill_context: 72, incomplete_association_command: 1, source_stem_replaced_by_runtime_normalization: 13});
-console.log(JSON.stringify({verified:pack.edits.length,by_bank:byBank,reasons,component_html_verified:true},null,2));
+console.log(JSON.stringify({verified:pack.edits.length,quarantined_source_preserved:quarantinedRestorations,active_component_html_verified:true,by_bank:byBank,reasons},null,2));

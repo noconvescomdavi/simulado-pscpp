@@ -41,6 +41,9 @@ jobs:
       - name: Validate question banks
         run: npm run validate:questions
 
+      - name: Validate Hensen source locators and explanations
+        run: node scripts/validate-hensen-source-locators.mjs
+
       - name: Audit question formatting
         run: npm run test:question-structure
 
