@@ -1,0 +1,61 @@
+{
+  "kind": "cross_id_exact_assertion_reuse",
+  "date": "2026-11-07",
+  "source_commit": "5dbc094e6e39453c0e76dd7b92dca708d6030ad9",
+  "source_blob": "f62b57228676076969feb281a100a3d509bb2937",
+  "main_commit_observed": "8a41efb087641d95d4787a0ac476384b8634506c",
+  "main_blob": "7d91a960b5901e1595e723d0382ddd3693616a62",
+  "production_per_id_identity": "unverified_large_file_unavailable_via_connector",
+  "findings": [
+    {
+      "ids": [
+        "MAN-967",
+        "MAN-968"
+      ],
+      "record_sha256": [
+        "299c78b1a6fac6312e2ca26f23aaf6b075792ebacad2468367fb745c5be321cd",
+        "284c6aca42c6ab1dd76c9d9d5d0ed9772fd64f7cf2ed42babd2a04d0d23ffab1"
+      ],
+      "concept": "Estabilidade direcional",
+      "reused_assertion": "Estabilidade direcional relaciona-se à tendência do navio de manter ou recuperar comportamento de rumo após pequenas perturbações, conforme a condição de controle analisada.",
+      "positions": {
+        "MAN-967": [
+          1,
+          3
+        ],
+        "MAN-968": [
+          3
+        ]
+      }
+    },
+    {
+      "ids": [
+        "MAN-970",
+        "MAN-971"
+      ],
+      "record_sha256": [
+        "e36e5d9904552b434de94e6a9bb39e93c90ddf8e96343ab9fa0b649bf4cca5a1",
+        "e9aef00615aa4a69f71e01ca1592c91a70e45310d292296f4d6da836f345724a"
+      ],
+      "concept": "Movimento a ré",
+      "reused_assertion": "O comportamento hidrodinâmico e de controle a ré pode diferir substancialmente do comportamento avante.",
+      "positions": {
+        "MAN-970": [
+          1,
+          2
+        ],
+        "MAN-971": [
+          3,
+          4
+        ]
+      }
+    }
+  ],
+  "impact": "Exact cross-question proposition reuse creates potential concept repetition in the same generated exam. This is not a whole-bank duplication proof; selection engine must be checked before claiming matrix violation.",
+  "prior_within_item_duplicates": "Already recorded in prior triage; not counted again.",
+  "new_unique_cross_id_pairs": 2,
+  "new_final_homologations": 0,
+  "bank_edits": 0,
+  "deploys": 0,
+  "next": "Verify four IDs on main; inspect selection deduplication by concept and primary bibliography before editing."
+}
