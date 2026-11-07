@@ -1,0 +1,31 @@
+{
+  "kind": "verified_git_blob_provenance_reconciliation",
+  "scope": "MAN-966..MAN-975",
+  "verified_at_local": "2026-11-07 15:58 America/Sao_Paulo",
+  "main": {
+    "commit": "8a41efb087641d95d4787a0ac476384b8634506c",
+    "bank_path": "data/questions/manobrabilidade.json",
+    "blob": "7d91a960b5901e1595e723d0382ddd3693616a62"
+  },
+  "audit_source": {
+    "commit": "5dbc094e6e39453c0e76dd7b92dca708d6030ad9",
+    "bank_path": "data/questions/manobrabilidade.json",
+    "blob": "f62b57228676076969feb281a100a3d509bb2937"
+  },
+  "evidence": "audit-evidence/manobrabilidade/MAN-966-975-structural-20261107.json",
+  "comparison": {
+    "base": "main",
+    "head": "5dbc094e6e39453c0e76dd7b92dca708d6030ad9",
+    "ahead_by": 30,
+    "behind_by": 0,
+    "bank_file_changed": true,
+    "bank_file_additions": 6,
+    "bank_file_deletions": 6,
+    "interpretation": "The two Git blob IDs refer to different versions of the same bank file, not a hashing inconsistency. Prior branch evidence is anchored to its branch source commit, not the production main snapshot."
+  },
+  "counting_rule": "Do not double-count MAN-966..975 review. Recheck record hashes against current main before any editorial correction or final approval; no bibliographic homologation is implied.",
+  "new_homologations": 0,
+  "bank_edits": 0,
+  "deploys": 0,
+  "next": "Compare per-ID canonical records and inspect primary-source pages; retain both provenance lines."
+}
