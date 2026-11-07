@@ -1,0 +1,48 @@
+{
+  "scope": "MAN-946..MAN-955",
+  "evidence": "audit-evidence/manobrabilidade/MAN-946-955-structural-20261107.json",
+  "source_bank_blob": "f62b57228676076969feb281a100a3d509bb2937",
+  "status": "editorial_triage_not_homologated",
+  "findings": [
+    {
+      "id": "MAN-946",
+      "record_sha256": "78a781fb2b3a2d988cf44a96f288f5c6ceb882742a2b0f3686a2e263b85e65af",
+      "issue": "V/F statements 1, 2, 3, 4 are syntactically incomplete fragments; meaning and unique key cannot be certified",
+      "action": "rewrite against primary source before approval"
+    },
+    {
+      "id": "MAN-947",
+      "record_sha256": "2d6f73e345b937921ea29424a799bfc42ec00fd9105f717350a4e17327e0e960",
+      "issue": "Option E ('o bordo de ataque ao bordo de fuga') is a fragment rather than a complete assertion; options C and E require grammatical repair; repeated preamble",
+      "action": "verify source and rewrite options"
+    },
+    {
+      "id": "MAN-948",
+      "record_sha256": "5aae07419df98fc316d0ce799cb07365c39e1c1bf03d3646543b221dd8e9641d",
+      "issue": "Assertions II, III and IV lack predicates or referents; key E cannot be independently established",
+      "action": "reconstruct complete propositions from source"
+    },
+    {
+      "id": "MAN-949",
+      "record_sha256": "641a3d2ac3c5eb1ba652f5391f96c253987cbc2e9db6d57dddd9d3aa0982719a",
+      "issue": "V/F statements 1 and 2 are incomplete fragments",
+      "action": "rewrite with source confirmation"
+    },
+    {
+      "id": "MAN-950",
+      "record_sha256": "b0b7faa0c4f65612ea0b0660a5771194233c9d70c0ba0e4770261ffc6e8895b6",
+      "issue": "Eleven repeated boilerplate preamble clauses; options C and E substantially restate thrust deduction",
+      "action": "trim boilerplate only after concurrency check; evaluate distractor redundancy"
+    }
+  ],
+  "remaining_ids": [
+    "MAN-951",
+    "MAN-952",
+    "MAN-953",
+    "MAN-954",
+    "MAN-955"
+  ],
+  "bibliographic_status": "pending_primary_page_verification",
+  "corrections_applied": 0,
+  "homologations": 0
+}
