@@ -1,0 +1,42 @@
+{
+  "scope": "MAN-951..MAN-954",
+  "date": "2026-11-07",
+  "status": "editorial_triage_not_homologated",
+  "main_head_observed": "8a41efb087641d95d4787a0ac476384b8634506c",
+  "source_bank_blob": "f62b57228676076969feb281a100a3d509bb2937",
+  "source_evidence": "audit-evidence/manobrabilidade/MAN-946-955-structural-20261107.json",
+  "findings": [
+    {
+      "id": "MAN-951",
+      "record_sha256": "329e4bddd2db0e487cecbd14c12665505c74fbb76fc0242671536cfce0f4e263",
+      "finding": "Proposições I, III e IV têm encaixe gramatical artificial e justificativa não demonstra cada valor lógico; gabarito C plausível mas não homologado",
+      "action": "conferir Lewis VI §4 e reescrever justificativa com páginas"
+    },
+    {
+      "id": "MAN-952",
+      "record_sha256": "5bc3e8744ac4faa4f9e444d3c9260c1a961ebb6245f93c71a81cbb6696a2ac34",
+      "finding": "Proposições I e II são fragmentos sintáticos; o gabarito C pressupõe interpretação não expressa no enunciado",
+      "action": "reformular proposições com sujeitos/predicados completos após conferir Lewis VI §7"
+    },
+    {
+      "id": "MAN-953",
+      "record_sha256": "4517b08f821c2942c4ced020a6b041c261d4c68f307111ad76333d555dda3f50",
+      "finding": "Alternativas C e E apresentam mesmo conceito de recuperação de energia rotacional por propulsores contra-rotativos; redundância de distratores e redação artificial",
+      "action": "conferir Lewis VI §10 e reconstruir distrator sem mudar gabarito sem prova"
+    },
+    {
+      "id": "MAN-954",
+      "record_sha256": "3b532a471f1fbb371dbad43d8ee4fd8b94aad7689c3c9a614ca10892d903d25f",
+      "finding": "Quatro assertivas usam estruturas gramaticais artificiais; justificativa genérica não fundamenta cada assertiva; gabarito A não homologado",
+      "action": "conferir Lewis VI §10 e fundamentar cada assertiva"
+    }
+  ],
+  "remaining_ids": [
+    "MAN-955"
+  ],
+  "primary_pages_checked": 0,
+  "corrections_applied": 0,
+  "editorial_homologations": 0,
+  "production_deploy": false,
+  "next": "Inspecionar MAN-955 integralmente; obter páginas Lewis VI §§4,7,10; corrigir apenas com evidência e checar concorrência antes de modificar JSON"
+}
