@@ -1,0 +1,993 @@
+{
+  "scope": "MAN-946..MAN-955",
+  "source_commit": "3f8cc68b55512e2f53b6d4bb51b6a67615f6df41",
+  "bank_blob": "f62b57228676076969feb281a100a3d509bb2937",
+  "status": "structural_review_only",
+  "records": [
+    {
+      "id": "MAN-946",
+      "record_sha256": "78a781fb2b3a2d988cf44a96f288f5c6ceb882742a2b0f3686a2e263b85e65af",
+      "record": {
+        "id": "MAN-946",
+        "subject": "Manobrabilidade do Navio",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": "Balanceamento do propulsor",
+        "difficulty": "Difícil",
+        "style": "Sequência V/F",
+        "question_type": "Sequência V/F",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "crenshaw-naval-shiphandling",
+          "chapter_id": "crenshaw-naval-shiphandling::ch2",
+          "topic_id": "I-crenshaw-naval-shiphandling-ch2-6-5-balanceamento-do-propulsor",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "crenshaw-naval-shiphandling",
+            "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+            "author": "CRENSHAW, Russell Sydnor"
+          },
+          "chapter": {
+            "id": "crenshaw-naval-shiphandling::ch2",
+            "number": "ch2",
+            "title": "Chapter 2 – Forces Affecting the Ship",
+            "label": "Chapter 2 – Forces Affecting the Ship"
+          },
+          "section": "Chapter 2 – Forces Affecting the Ship",
+          "module": "2. Propulsão do navio e propulsores",
+          "topic": {
+            "id": "I-crenshaw-naval-shiphandling-ch2-6-5-balanceamento-do-propulsor",
+            "title": "Balanceamento do propulsor"
+          }
+        },
+        "source": {
+          "author": "CRENSHAW, Russell Sydnor",
+          "title": "Naval Shiphandling",
+          "edition": "4. ed., 1975",
+          "locator": "Chapter 2 - Forces Affecting the Ship"
+        },
+        "tags": [
+          "propulsão",
+          "manobrabilidade",
+          "crenshaw-naval-shiphandling",
+          "crenshaw-naval-shiphandling::ch2",
+          "balanceamento-do-propulsor",
+          "pscpp-style-v5",
+          "formato-pscpp-vf-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-123",
+            "MAN-128",
+            "MAN-132",
+            "MAN-147"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-946",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.VF.00128",
+        "question": "Com base em “Naval Shiphandling”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Balanceamento do propulsor”, considere a proposição: desequilibra as forças radiais e periódicas que normalmente se compensam entre pás simétricas.\n( ) Sobre “Definição de arrasto”, considere a proposição: perpendicular ao escoamento.\n( ) Sobre “Escoamento sobre o leme”, considere a proposição: menos o ângulo entre o eixo do navio e sua verdadeira direção de movimento.\n( ) Sobre “Momento de governo”, considere a proposição: deslocamento da proa para o mesmo bordo da popa sem rotação.",
+        "options": [
+          {
+            "key": "A",
+            "text": "( V ) ( V ) ( F ) ( F )"
+          },
+          {
+            "key": "B",
+            "text": "( V ) ( F ) ( V ) ( F )"
+          },
+          {
+            "key": "C",
+            "text": "( F ) ( V ) ( F ) ( V )"
+          },
+          {
+            "key": "D",
+            "text": "( F ) ( F ) ( V ) ( V )"
+          },
+          {
+            "key": "E",
+            "text": "( V ) ( V ) ( V ) ( V )"
+          }
+        ],
+        "correct_answer": "B",
+        "explanation": "A sequência correta corresponde à alternativa B, conforme os conceitos reunidos em Chapter 2 - Forces Affecting the Ship."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-947",
+      "record_sha256": "2d6f73e345b937921ea29424a799bfc42ec00fd9105f717350a4e17327e0e960",
+      "record": {
+        "id": "MAN-947",
+        "subject": "Manobrabilidade do Navio",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": "Coeficientes de hélice",
+        "difficulty": "Difícil",
+        "style": "Assinale a incorreta",
+        "question_type": "Assinale a incorreta",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "bertram",
+          "chapter_id": "bertram::ch2",
+          "topic_id": "I-bertram-ch2-2-3-coeficientes-de-helice",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "bertram",
+            "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+            "author": "BERTRAM, Volker"
+          },
+          "chapter": {
+            "id": "bertram::ch2",
+            "number": "ch2",
+            "title": "Chapter 2 – Propellers",
+            "label": "Chapter 2 – Propellers"
+          },
+          "section": "Chapter 2 – Propellers",
+          "module": "2. Propulsão do navio e propulsores",
+          "topic": {
+            "id": "I-bertram-ch2-2-3-coeficientes-de-helice",
+            "title": "Coeficientes de hélice"
+          }
+        },
+        "source": {
+          "author": "BERTRAM, Volker",
+          "title": "Practical Ship Hydrodynamics",
+          "edition": "2nd ed., 2012",
+          "locator": "Chapters 2, 3 and 6"
+        },
+        "tags": [
+          "hélice",
+          "coeficientes",
+          "manobrabilidade",
+          "bertram",
+          "bertram::ch2",
+          "coeficientes-de-helice",
+          "pscpp-style-v5",
+          "formato-pscpp-incorreta-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-896",
+            "MAN-949",
+            "MAN-075",
+            "MAN-078",
+            "MAN-081"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-947",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.INC.00129",
+        "question": "No briefing conduzido antes da faina, Durante uma análise técnica de bordo, Considerando o conteúdo de “Practical Ship Hydrodynamics” (Chapters 2, 3 and 6), assinale a alternativa INCORRETA:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Sobre “Coeficientes de hélice”, considere a proposição: Esses coeficientes dependem apenas do calado."
+          },
+          {
+            "key": "B",
+            "text": "Sobre “Coeficientes de hélice”, considere a proposição: Coeficientes adimensionais de empuxo e torque permitem comparar desempenho de hélices em condições semelhantes."
+          },
+          {
+            "key": "C",
+            "text": "Sobre “Passo da hélice”, considere a proposição: à distância axial que uma superfície helicoidal avançaria em uma rotação completa sem escorregamento."
+          },
+          {
+            "key": "D",
+            "text": "Sobre “Área de pá e eficiência”, considere a proposição: Seu aumento tende a elevar perdas friccionais, embora possa ser necessário para controlar a cavitação."
+          },
+          {
+            "key": "E",
+            "text": "Sobre “Perfil da pá”, considere a proposição: o bordo de ataque ao bordo de fuga."
+          }
+        ],
+        "correct_answer": "A",
+        "explanation": "A alternativa A é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-948",
+      "record_sha256": "5aae07419df98fc316d0ce799cb07365c39e1c1bf03d3646543b221dd8e9641d",
+      "record": {
+        "id": "MAN-948",
+        "subject": "Manobrabilidade do Navio",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": "Geometria do propulsor",
+        "difficulty": "Difícil",
+        "style": "Assertivas I–IV",
+        "question_type": "Assertivas I–IV",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "bertram",
+          "chapter_id": "bertram::ch2",
+          "topic_id": "I-bertram-ch2-6-1-geometria-do-propulsor",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "bertram",
+            "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+            "author": "BERTRAM, Volker"
+          },
+          "chapter": {
+            "id": "bertram::ch2",
+            "number": "ch2",
+            "title": "Chapter 2 – Propellers",
+            "label": "Chapter 2 – Propellers"
+          },
+          "section": "Chapter 2 – Propellers",
+          "module": "2. Propulsão do navio e propulsores",
+          "topic": {
+            "id": "I-bertram-ch2-6-1-geometria-do-propulsor",
+            "title": "Geometria do propulsor"
+          }
+        },
+        "source": {
+          "author": "BERTRAM, Volker",
+          "title": "Practical Ship Hydrodynamics",
+          "edition": "2. ed., 2012",
+          "locator": "Chapters 2 and 3 - Propellers; Resistance and Propulsion"
+        },
+        "tags": [
+          "propulsão",
+          "manobrabilidade",
+          "bertram",
+          "bertram::ch2",
+          "geometria-do-propulsor",
+          "pscpp-style-v5",
+          "formato-pscpp-assertivas-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-076",
+            "MAN-079",
+            "MAN-082",
+            "MAN-085"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-948",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.AST.00130",
+        "question": "De acordo com o contido em “Practical Ship Hydrodynamics”, analise as afirmativas abaixo e assinale a opção correta:\nI) No contexto de “Geometria do propulsor”, a associação “A0 = πD²/4.” é tecnicamente aplicável.\nII) Sobre “Skew”, considere a proposição: suavizar a entrada de diferentes seções da pá em uma esteira não uniforme e reduzir picos de vibração.\nIII) Sobre “Coeficiente de empuxo”, considere a proposição: densidade, rotação ao quadrado e diâmetro à quarta potência.\nIV) Sobre “Curvas de água aberta”, considere a proposição: cresce até um máximo e depois decresce.",
+        "options": [
+          {
+            "key": "A",
+            "text": "Apenas as afirmativas I e II são verdadeiras."
+          },
+          {
+            "key": "B",
+            "text": "Apenas as afirmativas I e III são verdadeiras."
+          },
+          {
+            "key": "C",
+            "text": "Apenas as afirmativas II e IV são verdadeiras."
+          },
+          {
+            "key": "D",
+            "text": "Apenas as afirmativas III e IV são verdadeiras."
+          },
+          {
+            "key": "E",
+            "text": "As afirmativas I, II, III e IV são verdadeiras."
+          }
+        ],
+        "correct_answer": "E",
+        "explanation": "A combinação correta é a alternativa E. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Chapters 2 and 3 - Propellers; Resistance and Propulsion."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-949",
+      "record_sha256": "641a3d2ac3c5eb1ba652f5391f96c253987cbc2e9db6d57dddd9d3aa0982719a",
+      "record": {
+        "id": "MAN-949",
+        "subject": "Manobrabilidade do Navio",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": "Coeficiente de torque",
+        "difficulty": "Difícil",
+        "style": "Sequência V/F",
+        "question_type": "Sequência V/F",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "bertram",
+          "chapter_id": "bertram::ch2",
+          "topic_id": "I-bertram-ch2-6-1-coeficiente-de-torque",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "bertram",
+            "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+            "author": "BERTRAM, Volker"
+          },
+          "chapter": {
+            "id": "bertram::ch2",
+            "number": "ch2",
+            "title": "Chapter 2 – Propellers",
+            "label": "Chapter 2 – Propellers"
+          },
+          "section": "Chapter 2 – Propellers",
+          "module": "2. Propulsão do navio e propulsores",
+          "topic": {
+            "id": "I-bertram-ch2-6-1-coeficiente-de-torque",
+            "title": "Coeficiente de torque"
+          }
+        },
+        "source": {
+          "author": "BERTRAM, Volker",
+          "title": "Practical Ship Hydrodynamics",
+          "edition": "2. ed., 2012",
+          "locator": "Chapters 2 and 3 - Propellers; Resistance and Propulsion"
+        },
+        "tags": [
+          "propulsão",
+          "manobrabilidade",
+          "bertram",
+          "bertram::ch2",
+          "coeficiente-de-torque",
+          "pscpp-style-v5",
+          "formato-pscpp-vf-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-083",
+            "MAN-086",
+            "MAN-122",
+            "MAN-312"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-949",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.VF.00131",
+        "question": "Com base em “Practical Ship Hydrodynamics”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Coeficiente de torque”, considere a proposição: o diâmetro tático da curva de giro.\n( ) Sobre “Curvas de quatro quadrantes”, considere a proposição: escoamento sem rotação do propulsor.\n( ) Sobre “Reversão e backing”, considere a proposição: fortemente transitória e de quadrante diferente do regime estacionário de água aberta.\n( ) Sobre “Avanço do hélice”, considere a proposição: A razão de avanço caracteriza a relação entre velocidade de avanço, rotação e diâmetro do hélice.",
+        "options": [
+          {
+            "key": "A",
+            "text": "( V ) ( V ) ( F ) ( F )"
+          },
+          {
+            "key": "B",
+            "text": "( V ) ( F ) ( V ) ( F )"
+          },
+          {
+            "key": "C",
+            "text": "( F ) ( V ) ( F ) ( V )"
+          },
+          {
+            "key": "D",
+            "text": "( F ) ( F ) ( V ) ( V )"
+          },
+          {
+            "key": "E",
+            "text": "( V ) ( V ) ( V ) ( V )"
+          }
+        ],
+        "correct_answer": "D",
+        "explanation": "A sequência correta corresponde à alternativa D, conforme os conceitos reunidos em Chapters 2 and 3 - Propellers; Resistance and Propulsion."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-950",
+      "record_sha256": "b0b7faa0c4f65612ea0b0660a5771194233c9d70c0ba0e4770261ffc6e8895b6",
+      "record": {
+        "id": "MAN-950",
+        "subject": "Manobrabilidade do Navio",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": "Dedução de empuxo",
+        "difficulty": "Difícil",
+        "style": "Assinale a incorreta",
+        "question_type": "Assinale a incorreta",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "pna-v2",
+          "chapter_id": "pna-v2::ch6-s4",
+          "topic_id": "I-pna-v2-ch6-s4-2-18-deducao-de-empuxo",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "pna-v2",
+            "title": "LEWIS — Principles of Naval Architecture, Volume II",
+            "author": "LEWIS, Edward V."
+          },
+          "chapter": {
+            "id": "pna-v2::ch6-s4",
+            "number": "ch6-s4",
+            "title": "Chapter VI – Propulsion — Section 4: Interaction between Hull and Propeller",
+            "label": "Chapter VI – Propulsion — Section 4: Interaction between Hull and Propeller"
+          },
+          "section": "Chapter VI – Propulsion — Section 4: Interaction between Hull and Propeller",
+          "module": "2. Propulsão do navio e propulsores",
+          "topic": {
+            "id": "I-pna-v2-ch6-s4-2-18-deducao-de-empuxo",
+            "title": "Dedução de empuxo"
+          }
+        },
+        "source": {
+          "author": "LEWIS, Edward V.",
+          "title": "Principles of Naval Architecture, Volume II",
+          "edition": "2nd Revision, 1988",
+          "locator": "Chapter VI — Propulsion, Sections 1, 2, 4, 6, 7 and 10"
+        },
+        "tags": [
+          "Propulsão do navio e propulsores",
+          "Dedução de empuxo",
+          "dedução de empuxo",
+          "manobrabilidade",
+          "pna-v2",
+          "pna-v2::ch6-s4",
+          "deducao-de-empuxo",
+          "pscpp-style-v5",
+          "formato-pscpp-incorreta-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-3448",
+            "MAN-314",
+            "MAN-527",
+            "MAN-845",
+            "MAN-1018"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-950",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.INC.00132",
+        "question": "Durante uma análise técnica de bordo, Durante a preparação do Prático, Em uma avaliação do passadiço, Ao revisar o plano de manobra, No briefing conduzido antes da faina, Durante uma análise técnica de bordo, Durante a preparação do Prático, Em uma avaliação do passadiço, Ao revisar o plano de manobra, No briefing conduzido antes da faina, Durante uma análise técnica de bordo, Considerando o conteúdo de “Principles of Naval Architecture, Volume II” (Chapter VI — Propulsion, Sections 1, 2, 4, 6, 7 and 10), assinale a alternativa INCORRETA:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Sobre “Dedução de empuxo”, considere a proposição: É coerente afirmar que, para dedução de empuxo durante a análise de dados antes e depois de uma alteração de comando, é uma redução obrigatória do torque a zero."
+          },
+          {
+            "key": "B",
+            "text": "Sobre “Esteira”, considere a proposição: O hélice opera na esteira do casco, de modo que a velocidade de entrada pode diferir da velocidade do navio."
+          },
+          {
+            "key": "C",
+            "text": "Sobre “Dedução de empuxo”, considere a proposição: A interpretação adequada é que, para dedução de empuxo ao preparar uma nota técnica para uma prova de aceitação, representa o aumento efetivo da resistência do casco associado à ação do propulsor."
+          },
+          {
+            "key": "D",
+            "text": "Sobre “Dedução de empuxo”, considere a proposição: A interação casco-hélice faz com que o empuxo requerido pelo propulsor não seja simplesmente igual à resistência do casco isolado."
+          },
+          {
+            "key": "E",
+            "text": "Sobre “Dedução de empuxo”, considere a proposição: A conclusão técnica é que, para dedução de empuxo durante a análise de uma prova de mar em água livre, representa o aumento efetivo da resistência do casco associado à ação do propulsor."
+          }
+        ],
+        "correct_answer": "A",
+        "explanation": "A alternativa A é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-951",
+      "record_sha256": "329e4bddd2db0e487cecbd14c12665505c74fbb76fc0242671536cfce0f4e263",
+      "record": {
+        "id": "MAN-951",
+        "subject": "Manobrabilidade do Navio",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": "Interação casco-propulsor",
+        "difficulty": "Difícil",
+        "style": "Assertivas I–IV",
+        "question_type": "Assertivas I–IV",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "pna-v2",
+          "chapter_id": "pna-v2::ch6-s4",
+          "topic_id": "I-pna-v2-ch6-s4-2-17-interacao-casco-propulsor",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "pna-v2",
+            "title": "LEWIS — Principles of Naval Architecture, Volume II",
+            "author": "LEWIS, Edward V."
+          },
+          "chapter": {
+            "id": "pna-v2::ch6-s4",
+            "number": "ch6-s4",
+            "title": "Chapter VI – Propulsion — Section 4: Interaction between Hull and Propeller",
+            "label": "Chapter VI – Propulsion — Section 4: Interaction between Hull and Propeller"
+          },
+          "section": "Chapter VI – Propulsion — Section 4: Interaction between Hull and Propeller",
+          "module": "2. Propulsão do navio e propulsores",
+          "topic": {
+            "id": "I-pna-v2-ch6-s4-2-17-interacao-casco-propulsor",
+            "title": "Interação casco-propulsor"
+          }
+        },
+        "source": {
+          "author": "LEWIS, Edward V.",
+          "title": "Principles of Naval Architecture, Volume II",
+          "edition": "2nd Revision, 1988",
+          "locator": "Chapter VI — Propulsion, Sections 1, 2, 4, 6, 7 and 10"
+        },
+        "tags": [
+          "Propulsão do navio e propulsores",
+          "Interação casco-propulsor",
+          "interação casco-propulsor",
+          "manobrabilidade",
+          "pna-v2",
+          "pna-v2::ch6-s4",
+          "interacao-casco-propulsor",
+          "pscpp-style-v3",
+          "pscpp-refinement-v3",
+          "pscpp-style-v5",
+          "formato-pscpp-assertivas-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-579",
+            "MAN-897",
+            "MAN-1072",
+            "MAN-1179"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-951",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.AST.00133",
+        "question": "De acordo com o contido em “Principles of Naval Architecture, Volume II”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Interação casco-propulsor”, considere a proposição: A interpretação adequada é que, para interação casco-propulsor ao revisar o planejamento de uma manobra portuária, existe apenas em navios de dois eixos.\nII) Sobre “Esteira”, considere a proposição: O hélice opera na esteira do casco, de modo que a velocidade de entrada pode diferir da velocidade do navio.\nIII) Sobre “Dedução de empuxo”, considere a proposição: A análise correta considera que, para dedução de empuxo ao revisar o planejamento de uma manobra portuária, não participa da análise propulsiva.\nIV) Sobre “Interação casco-propulsor”, considere a proposição: A conclusão técnica é que, para interação casco-propulsor durante uma comparação entre condição de projeto e condição operacional, faz com que o propulsor opere em um escoamento alterado pelo casco e que sua ação também modifique forças no casco.",
+        "options": [
+          {
+            "key": "A",
+            "text": "Apenas as afirmativas I e II são verdadeiras."
+          },
+          {
+            "key": "B",
+            "text": "Apenas as afirmativas I e III são verdadeiras."
+          },
+          {
+            "key": "C",
+            "text": "Apenas as afirmativas II e IV são verdadeiras."
+          },
+          {
+            "key": "D",
+            "text": "Apenas as afirmativas III e IV são verdadeiras."
+          },
+          {
+            "key": "E",
+            "text": "As afirmativas I, II, III e IV são verdadeiras."
+          }
+        ],
+        "correct_answer": "C",
+        "explanation": "A combinação correta é a alternativa C. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Chapter VI — Propulsion, Sections 1, 2, 4, 6, 7 and 10."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-952",
+      "record_sha256": "5bc3e8744ac4faa4f9e444d3c9260c1a961ebb6245f93c71a81cbb6696a2ac34",
+      "record": {
+        "id": "MAN-952",
+        "subject": "Manobrabilidade do Navio",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": "Cavitação de ponta",
+        "difficulty": "Difícil",
+        "style": "Sequência V/F",
+        "question_type": "Sequência V/F",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "pna-v2",
+          "chapter_id": "pna-v2::ch6-s7",
+          "topic_id": "I-pna-v2-ch6-s7-6-3-cavitacao-de-ponta",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "pna-v2",
+            "title": "LEWIS — Principles of Naval Architecture, Volume II",
+            "author": "LEWIS, Edward V. (ed.)"
+          },
+          "chapter": {
+            "id": "pna-v2::ch6-s7",
+            "number": "ch6-s7",
+            "title": "Chapter VI – Propulsion — Section 7: Cavitation",
+            "label": "Chapter VI – Propulsion — Section 7: Cavitation"
+          },
+          "section": "Chapter VI – Propulsion — Section 7: Cavitation",
+          "module": "2. Propulsão do navio e propulsores",
+          "topic": {
+            "id": "I-pna-v2-ch6-s7-6-3-cavitacao-de-ponta",
+            "title": "Cavitação de ponta"
+          }
+        },
+        "source": {
+          "author": "LEWIS, Edward V. (ed.)",
+          "title": "Principles of Naval Architecture, Volume II",
+          "edition": "3. ed., 1988-1989",
+          "locator": "Chapter VI - Propulsion, Sections 1, 2, 4, 6, 7 and 10"
+        },
+        "tags": [
+          "propulsão",
+          "manobrabilidade",
+          "pna-v2",
+          "pna-v2::ch6-s7",
+          "cavitacao-de-ponta",
+          "pscpp-style-v5",
+          "formato-pscpp-vf-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-106",
+            "MAN-116",
+            "MAN-899",
+            "MAN-1069"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-952",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.VF.00134",
+        "question": "Com base em “Principles of Naval Architecture, Volume II”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Cavitação de ponta”, considere a proposição: somente à rugosidade do casco na proa.\n( ) Sobre “Propulsores supercavitantes”, considere a proposição: operar com uma cavidade extensa e controlada cobrindo grande parte do dorso em altas velocidades.\n( ) Sobre “Cavitação”, considere a proposição: Não produz efeitos sobre ruído, vibração ou erosão.\n( ) Sobre “Cavitação”, considere a proposição: A interpretação adequada é que, para cavitação ao revisar o planejamento de uma manobra portuária, ocorre quando a pressão local cai suficientemente para formar cavidades de vapor, podendo causar ruído, erosão e perda de desempenho.",
+        "options": [
+          {
+            "key": "A",
+            "text": "( V ) ( V ) ( F ) ( F )"
+          },
+          {
+            "key": "B",
+            "text": "( V ) ( F ) ( V ) ( F )"
+          },
+          {
+            "key": "C",
+            "text": "( F ) ( V ) ( F ) ( V )"
+          },
+          {
+            "key": "D",
+            "text": "( F ) ( F ) ( V ) ( V )"
+          },
+          {
+            "key": "E",
+            "text": "( V ) ( V ) ( V ) ( V )"
+          }
+        ],
+        "correct_answer": "C",
+        "explanation": "A sequência correta corresponde à alternativa C, conforme os conceitos reunidos em Chapter VI - Propulsion, Sections 1, 2, 4, 6, 7 and 10."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-953",
+      "record_sha256": "4517b08f821c2942c4ced020a6b041c261d4c68f307111ad76333d555dda3f50",
+      "record": {
+        "id": "MAN-953",
+        "subject": "Manobrabilidade do Navio",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": "Propulsor cicloidal",
+        "difficulty": "Difícil",
+        "style": "Assinale a incorreta",
+        "question_type": "Assinale a incorreta",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "pna-v2",
+          "chapter_id": "pna-v2::ch6-s10",
+          "topic_id": "I-pna-v2-ch6-s10-2-9-propulsor-cicloidal",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "pna-v2",
+            "title": "LEWIS — Principles of Naval Architecture, Volume II",
+            "author": "LEWIS, Edward V."
+          },
+          "chapter": {
+            "id": "pna-v2::ch6-s10",
+            "number": "ch6-s10",
+            "title": "Chapter VI – Propulsion — Section 10: Other propulsion devices",
+            "label": "Chapter VI – Propulsion — Section 10: Other propulsion devices"
+          },
+          "section": "Chapter VI – Propulsion — Section 10: Other propulsion devices",
+          "module": "2. Propulsão do navio e propulsores",
+          "topic": {
+            "id": "I-pna-v2-ch6-s10-2-9-propulsor-cicloidal",
+            "title": "Propulsor cicloidal"
+          }
+        },
+        "source": {
+          "author": "LEWIS, Edward V.",
+          "title": "Principles of Naval Architecture, Volume II",
+          "edition": "2nd Revision, 1988",
+          "locator": "Chapters V-VI, selected sections listed in bibliografia.txt"
+        },
+        "tags": [
+          "eixo vertical",
+          "propulsor",
+          "manobrabilidade",
+          "pna-v2",
+          "pna-v2::ch6-s10",
+          "propulsor-cicloidal",
+          "pscpp-style-v5",
+          "formato-pscpp-incorreta-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-955",
+            "MAN-1020",
+            "MAN-1128",
+            "MAN-1232",
+            "MAN-1290"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-953",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.INC.00135",
+        "question": "Considerando o conteúdo de “Principles of Naval Architecture, Volume II” (Chapters V-VI, selected sections listed in bibliografia.txt), assinale a alternativa INCORRETA:",
+        "options": [
+          {
+            "key": "A",
+            "text": "Sobre “Propulsor cicloidal”, considere a proposição: Propulsores de eixo vertical podem produzir empuxo vetorado pela variação cíclica da orientação das pás."
+          },
+          {
+            "key": "B",
+            "text": "Sobre “Propulsores contra-rotativos”, considere a proposição: A interpretação adequada é que, para propulsores contra-rotativos durante a análise de uma prova de mar em água livre, eliminam a esteira do casco."
+          },
+          {
+            "key": "C",
+            "text": "Sobre “Propulsores contra-rotativos”, considere a proposição: É coerente afirmar que, para propulsores contra-rotativos na avaliação de desempenho após alteração da velocidade, podem recuperar parte da energia rotacional do escoamento usando hélices coaxiais em sentidos opostos."
+          },
+          {
+            "key": "D",
+            "text": "Sobre “Propulsor de passo controlável”, considere a proposição: É coerente afirmar que, para propulsor de passo controlável ao interpretar registros do passadiço após uma manobra, permite variar o passo das pás e, assim, controlar empuxo sem necessariamente inverter o sentido de rotação do eixo."
+          },
+          {
+            "key": "E",
+            "text": "Sobre “Propulsores contra-rotativos”, considere a proposição: O princípio aplicável indica que, para propulsores contra-rotativos na preparação de um briefing técnico para a equipe de navegação, podem recuperar parte da energia rotacional do escoamento usando hélices coaxiais em sentidos opostos."
+          }
+        ],
+        "correct_answer": "B",
+        "explanation": "A alternativa B é a única incompatível com o conteúdo técnico do recorte bibliográfico indicado."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-954",
+      "record_sha256": "3b532a471f1fbb371dbad43d8ee4fd8b94aad7689c3c9a614ca10892d903d25f",
+      "record": {
+        "id": "MAN-954",
+        "subject": "Manobrabilidade do Navio",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": "Propulsor de passo controlável",
+        "difficulty": "Difícil",
+        "style": "Assertivas I–IV",
+        "question_type": "Assertivas I–IV",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "pna-v2",
+          "chapter_id": "pna-v2::ch6-s10",
+          "topic_id": "I-pna-v2-ch6-s10-2-16-propulsor-de-passo-controlavel",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "pna-v2",
+            "title": "LEWIS — Principles of Naval Architecture, Volume II",
+            "author": "LEWIS, Edward V."
+          },
+          "chapter": {
+            "id": "pna-v2::ch6-s10",
+            "number": "ch6-s10",
+            "title": "Chapter VI – Propulsion — Section 10: Other propulsion devices",
+            "label": "Chapter VI – Propulsion — Section 10: Other propulsion devices"
+          },
+          "section": "Chapter VI – Propulsion — Section 10: Other propulsion devices",
+          "module": "2. Propulsão do navio e propulsores",
+          "topic": {
+            "id": "I-pna-v2-ch6-s10-2-16-propulsor-de-passo-controlavel",
+            "title": "Propulsor de passo controlável"
+          }
+        },
+        "source": {
+          "author": "LEWIS, Edward V.",
+          "title": "Principles of Naval Architecture, Volume II",
+          "edition": "2nd Revision, 1988",
+          "locator": "Chapter VI — Propulsion, Sections 1, 2, 4, 6, 7 and 10"
+        },
+        "tags": [
+          "Propulsão do navio e propulsores",
+          "Propulsor de passo controlável",
+          "propulsor de passo controlável",
+          "manobrabilidade",
+          "pna-v2",
+          "pna-v2::ch6-s10",
+          "propulsor-de-passo-controlavel",
+          "pscpp-style-v5",
+          "formato-pscpp-assertivas-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-1178",
+            "MAN-1236",
+            "MAN-1340",
+            "MAN-1448"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-954",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.AST.00136",
+        "question": "De acordo com o contido em “Principles of Naval Architecture, Volume II”, analise as afirmativas abaixo e assinale a opção correta:\nI) Sobre “Propulsor de passo controlável”, considere a proposição: A interpretação adequada é que, para propulsor de passo controlável durante uma comparação entre condição de projeto e condição operacional, permite variar o passo das pás e, assim, controlar empuxo sem necessariamente inverter o sentido de rotação do eixo.\nII) Sobre “Propulsores contra-rotativos”, considere a proposição: A conclusão técnica é que, para propulsores contra-rotativos ao interpretar registros do passadiço após uma manobra, podem recuperar parte da energia rotacional do escoamento usando hélices coaxiais em sentidos opostos.\nIII) Sobre “Propulsor de passo controlável”, considere a proposição: É coerente afirmar que, para propulsor de passo controlável ao avaliar o comportamento do navio antes de entrar em águas restritas, não altera o carregamento das pás.\nIV) Sobre “Propulsor de passo controlável”, considere a proposição: O princípio aplicável indica que, para propulsor de passo controlável na análise de uma mudança de carregamento antes da saída, elimina qualquer risco de cavitação.",
+        "options": [
+          {
+            "key": "A",
+            "text": "Apenas as afirmativas I e II são verdadeiras."
+          },
+          {
+            "key": "B",
+            "text": "Apenas as afirmativas I e III são verdadeiras."
+          },
+          {
+            "key": "C",
+            "text": "Apenas as afirmativas II e IV são verdadeiras."
+          },
+          {
+            "key": "D",
+            "text": "Apenas as afirmativas III e IV são verdadeiras."
+          },
+          {
+            "key": "E",
+            "text": "As afirmativas I, II, III e IV são verdadeiras."
+          }
+        ],
+        "correct_answer": "A",
+        "explanation": "A combinação correta é a alternativa A. As quatro proposições foram construídas a partir de conceitos rastreados ao mesmo recorte bibliográfico: Chapter VI — Propulsion, Sections 1, 2, 4, 6, 7 and 10."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    },
+    {
+      "id": "MAN-955",
+      "record_sha256": "521782b396f944c333da02bfc399ca42e4ad61573867b328c661896b0aff1244",
+      "record": {
+        "id": "MAN-955",
+        "subject": "Manobrabilidade do Navio",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": "Propulsores contra-rotativos",
+        "difficulty": "Difícil",
+        "style": "Sequência V/F",
+        "question_type": "Sequência V/F",
+        "taxonomy": {
+          "subject_id": "I",
+          "subject_slug": "manobrabilidade",
+          "bibliography_id": "pna-v2",
+          "chapter_id": "pna-v2::ch6-s10",
+          "topic_id": "I-pna-v2-ch6-s10-2-20-propulsores-contra-rotativos",
+          "subtopic_id": null
+        },
+        "tracking": {
+          "subject_slug": "manobrabilidade",
+          "work": {
+            "id": "pna-v2",
+            "title": "LEWIS — Principles of Naval Architecture, Volume II",
+            "author": "LEWIS, Edward V."
+          },
+          "chapter": {
+            "id": "pna-v2::ch6-s10",
+            "number": "ch6-s10",
+            "title": "Chapter VI – Propulsion — Section 10: Other propulsion devices",
+            "label": "Chapter VI – Propulsion — Section 10: Other propulsion devices"
+          },
+          "section": "Chapter VI – Propulsion — Section 10: Other propulsion devices",
+          "module": "2. Propulsão do navio e propulsores",
+          "topic": {
+            "id": "I-pna-v2-ch6-s10-2-20-propulsores-contra-rotativos",
+            "title": "Propulsores contra-rotativos"
+          }
+        },
+        "source": {
+          "author": "LEWIS, Edward V.",
+          "title": "Principles of Naval Architecture, Volume II",
+          "edition": "2nd Revision, 1988",
+          "locator": "Chapter VI — Propulsion, Sections 1, 2, 4, 6, 7 and 10"
+        },
+        "tags": [
+          "Propulsão do navio e propulsores",
+          "Propulsores contra-rotativos",
+          "propulsores contra-rotativos",
+          "manobrabilidade",
+          "pna-v2",
+          "pna-v2::ch6-s10",
+          "propulsores-contra-rotativos",
+          "pscpp-style-v5",
+          "formato-pscpp-vf-v5"
+        ],
+        "provenance": {
+          "method": "pscpp-deep-refine-v5",
+          "derived_from_question_ids": [
+            "MAN-1344",
+            "MAN-1452",
+            "MAN-1556",
+            "MAN-1614"
+          ],
+          "benchmark": "PSCPP/DPC 2006, 2008, 2011, 2012 e 2023",
+          "replaces_question_id": "MAN-955",
+          "rewrite_reason": "residual-medium-quality-v5"
+        },
+        "topic_code": "PSCPP.V5.VF.00137",
+        "question": "Com base em “Principles of Naval Architecture, Volume II”, julgue as proposições a seguir e assinale a sequência correta:\n( ) Sobre “Propulsores contra-rotativos”, considere a proposição: A conclusão técnica é que, para propulsores contra-rotativos ao avaliar o comportamento do navio antes de entrar em águas restritas, só funcionam fora d’água.\n( ) Sobre “Propulsores contra-rotativos”, considere a proposição: É coerente afirmar que, para propulsores contra-rotativos na análise de uma mudança de carregamento antes da saída, não transmitem torque.\n( ) Sobre “Propulsor de passo controlável”, considere a proposição: A análise correta considera que, para propulsor de passo controlável durante uma inspeção dos dados de manobrabilidade disponíveis a bordo, permite variar o passo das pás e, assim, controlar empuxo sem necessariamente inverter o sentido de rotação do eixo.\n( ) Sobre “Propulsores contra-rotativos”, considere a proposição: A interpretação adequada é que, para propulsores contra-rotativos na avaliação de uma resposta inesperada do navio a um comando, podem recuperar parte da energia rotacional do escoamento usando hélices coaxiais em sentidos opostos.",
+        "options": [
+          {
+            "key": "A",
+            "text": "( V ) ( V ) ( F ) ( F )"
+          },
+          {
+            "key": "B",
+            "text": "( V ) ( F ) ( V ) ( F )"
+          },
+          {
+            "key": "C",
+            "text": "( F ) ( V ) ( F ) ( V )"
+          },
+          {
+            "key": "D",
+            "text": "( F ) ( F ) ( V ) ( V )"
+          },
+          {
+            "key": "E",
+            "text": "( V ) ( V ) ( V ) ( V )"
+          }
+        ],
+        "correct_answer": "D",
+        "explanation": "A sequência correta corresponde à alternativa D, conforme os conceitos reunidos em Chapter VI — Propulsion, Sections 1, 2, 4, 6, 7 and 10."
+      },
+      "duplicates": [],
+      "flags": [],
+      "editorial_status": "pending_primary_source_verification"
+    }
+  ]
+}
