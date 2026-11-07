@@ -1,0 +1,50 @@
+name: Editorial correction MAN-920 and MAN-923
+on:
+  push:
+    branches: [audit/revisao-enunciados-repetidos-20261107]
+    paths: [.github/workflows/editorial-man920-923.yml]
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: audit/revisao-enunciados-repetidos-20261107
+      - name: Remove duplicated preambles without changing answers
+        run: |
+          node <<'NODE'
+          const fs=require('fs'),p='data/questions/manobrabilidade.json';
+          const b=JSON.parse(fs.readFileSync(p,'utf8'));
+          const changes={
+            'MAN-920':{
+              prefix:'Em uma avaliação do passadiço, Ao revisar o plano de manobra, No briefing conduzido antes da faina,',
+              ending:'Considerando o conteúdo de “Standards for Ship Manoeuvrability” (Annex — Sections 1–6), assinale a alternativa INCORRETA:',
+              next:'Segundo os Standards for Ship Manoeuvrability (Resolução IMO MSC.137(76)), assinale a alternativa INCORRETA:'
+            },
+            'MAN-923':{
+              prefix:'Durante uma análise técnica de bordo, Durante a preparação do Prático, Em uma avaliação do passadiço,',
+              ending:'Considerando o conteúdo de “Principles of Naval Architecture, Volume III” (Chapter IX — Controllability, selected Sections 1, 3, 4, 5, 6, 10, 12, 13 and 14), assinale a alternativa INCORRETA:',
+              next:'Com base em Principles of Naval Architecture, Volume III, capítulo IX (Controllability), assinale a alternativa INCORRETA:'
+            }
+          };
+          const log=[];
+          for(const [id,c] of Object.entries(changes)){
+            const found=b.questions.filter(q=>q.id===id);
+            if(found.length!==1)throw Error(id+' absent or duplicated');
+            const q=found[0],old=q.question;
+            if(old===c.next){console.log(id+' already applied');continue}
+            if(!old.startsWith(c.prefix)||!old.endsWith(c.ending))throw Error('Concurrent change or unexpected text: '+id);
+            q.question=c.next;
+            log.push({id,old,new:c.next,answer:q.correct_answer});
+          }
+          if(log.length)fs.writeFileSync(p,JSON.stringify(b,null,2)+'\n');
+          console.log(JSON.stringify(log,null,2));
+          NODE
+      - name: Commit corrected bank
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/questions/manobrabilidade.json
+          git diff --cached --quiet || (git commit -m "fix(pscpp): remove repeated preambles in MAN-920 and MAN-923" && git push origin HEAD:audit/revisao-enunciados-repetidos-20261107)
