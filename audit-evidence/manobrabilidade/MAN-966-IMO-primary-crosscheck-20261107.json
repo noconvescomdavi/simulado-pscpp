@@ -1,0 +1,61 @@
+{
+  "kind": "primary_source_crosscheck_partial",
+  "date": "2026-11-07",
+  "scope": [
+    "MAN-966"
+  ],
+  "bank_snapshot": {
+    "branch_source_commit": "5dbc094e6e39453c0e76dd7b92dca708d6030ad9",
+    "blob": "f62b57228676076969feb281a100a3d509bb2937",
+    "record_sha256": "840ccd7e9fce964a857a9e7dba460dc19cae872691676f81fae743f2590f1d95"
+  },
+  "production_snapshot": {
+    "commit": "8a41efb087641d95d4787a0ac476384b8634506c",
+    "blob": "7d91a960b5901e1595e723d0382ddd3693616a62",
+    "per_id_identity": "not_verified"
+  },
+  "primary_source": {
+    "title": "IMO MSC.137(76) Standards for Ship Manoeuvrability",
+    "url": "https://wwwcdn.imo.org/localresources/en/KnowledgeCentre/IndexofIMOResolutions/MSCResolutions/MSC.137%2876%29.pdf",
+    "sections": [
+      "Annex 4.2.3",
+      "Annex 4.2.7",
+      "Annex 4.2.10",
+      "Annex 5.3"
+    ]
+  },
+  "findings": [
+    {
+      "assertion": "I",
+      "status": "conceptually_supported_but_imprecise",
+      "detail": "Advance is distance in original course direction until heading change of exactly 90 degrees, not an unspecified change of heading; source Annex 4.2.3."
+    },
+    {
+      "assertion": "II",
+      "status": "false_confirmed",
+      "detail": "First overshoot is additional heading deviation after second execute in zig-zag test, not shaft maximum rpm; Annex 4.2.7."
+    },
+    {
+      "assertion": "III",
+      "status": "conceptually_supported_but_imprecise",
+      "detail": "Full astern stopping test measures track reach from full astern order until vessel stops in water; Annex 4.2.10-.11."
+    },
+    {
+      "assertion": "IV",
+      "status": "false_confirmed",
+      "detail": "Turning ability concerns turning circle advance and tactical diameter, not engine start time; Annex 5.3.1."
+    }
+  ],
+  "key": "B",
+  "key_status": "consistent_with_source_for_branch_record_only",
+  "remaining_gates": [
+    "verify exact MAN-966 record in production main",
+    "repair imprecise assertion I and III only after production record identity confirmed",
+    "check official examination benchmarks",
+    "whole-bank semantic duplicate check",
+    "editorial approval and technical tests"
+  ],
+  "new_final_homologations": 0,
+  "bank_edits": 0,
+  "deploys": 0
+}
