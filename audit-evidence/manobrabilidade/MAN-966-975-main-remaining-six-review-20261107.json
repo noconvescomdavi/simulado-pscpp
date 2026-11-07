@@ -1,0 +1,60 @@
+{
+  "scope": "MAN-966..MAN-975",
+  "kind": "supplementary_main_bank_record_review_not_bibliographic_homologation",
+  "main_commit_verified": "8a41efb087641d95d4787a0ac476384b8634506c",
+  "main_bank_blob_verified": "7d91a960b5901e1595e723d0382ddd3693616a62",
+  "prior_branch_evidence": "audit-evidence/manobrabilidade/MAN-966-975-duplicate-assertions-20261107-run13.json",
+  "prior_branch_reported_blob": "f62b57228676076969feb281a100a3d509bb2937",
+  "blob_discrepancy": "The prior evidence's bank_blob differs from main blob; do not equate hashes or infer same byte representation without checking exact file at prior source commit.",
+  "reviewed_remaining_ids": [
+    {
+      "id": "MAN-966",
+      "key": "B",
+      "finding": "Assertions II and IV contain obvious unrelated false definitions (first overshoot as maximum shaft RPM; turning ability as engine start time); I and III plausible but the explanatory text only repeats the key and generic source; primary IMO page not inspected."
+    },
+    {
+      "id": "MAN-968",
+      "key": "D",
+      "finding": "I and II are unrelated categorical distractors (directional stability equated to static transverse stability; spiral test equated to propeller cavitation). III/IV plausible, but key lacks source-page demonstration."
+    },
+    {
+      "id": "MAN-969",
+      "key": "A",
+      "finding": "III and IV are absolute false distractors ('acceleration independent of resultant force', 'effective mass always zero'); I has syntactically incomplete sentence after 'considere a proposição:'; generic explanation."
+    },
+    {
+      "id": "MAN-972",
+      "key": "C",
+      "finding": "I and III use absurd distractors ('tactical diameter is a vertical measurement', 'minimum channel depth'); III adds unrelated propulsion-effort premise. IV inserts trim condition without explicit reference; generic explanation."
+    },
+    {
+      "id": "MAN-973",
+      "key": "C",
+      "finding": "I and III use obviously false statements unrelated to real turning/spiral test definitions; repeated artificial editorial clauses, generic explanation; key sequence internally F-V-F-V but not primary-source certified."
+    },
+    {
+      "id": "MAN-975",
+      "key": "A",
+      "finding": "III claims wind negligible at low ship speed, potentially misleading since relative wind can be strong; IV is categorical 'current never alters track over ground'; I/II are grammatically broken after editorial prefix; no source page."
+    }
+  ],
+  "checked_fields": [
+    "question",
+    "options A-E",
+    "correct_answer",
+    "explanation",
+    "source edition and locator",
+    "taxonomy",
+    "provenance"
+  ],
+  "not_checked": [
+    "primary source page images or text",
+    "official exam 2006/2008/2011/2012 comparison",
+    "whole-bank semantic duplicates",
+    "production runtime"
+  ],
+  "new_integral_homologations": 0,
+  "bank_corrections": 0,
+  "production_deploys": 0,
+  "next": "Retrieve primary IMO MSC.137(76) and Lewis PNA III chapter IX exact pages, validate each claim and uniqueness; resolve bank blob discrepancy and earlier MAN-928; do not count this review as final approval."
+}
