@@ -1,0 +1,55 @@
+name: Audit MAN-946 to MAN-955 structural evidence
+on:
+  push:
+    branches: [audit/revisao-enunciados-repetidos-20261107]
+    paths: [.github/workflows/audit-man946-955.yml]
+permissions:
+  contents: write
+concurrency:
+  group: audit-man946-955
+  cancel-in-progress: false
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: audit/revisao-enunciados-repetidos-20261107
+      - name: Extract ten full records and check structural integrity
+        run: |
+          node <<'NODE'
+          const fs=require('fs'),crypto=require('crypto'),cp=require('child_process');
+          const p='data/questions/manobrabilidade.json',bank=JSON.parse(fs.readFileSync(p,'utf8'));
+          const ids=Array.from({length:10},(_,i)=>'MAN-'+String(946+i));
+          const norm=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim().replace(/\s+/g,' ');
+          const records=ids.map(id=>{
+            const matches=bank.questions.filter(q=>q.id===id);
+            const q=matches[0],flags=[];
+            if(matches.length!==1)flags.push('ID_COUNT_'+matches.length);
+            if(!q)return {id,flags};
+            if(!q.question?.trim())flags.push('EMPTY_STEM');
+            if(q.options?.length!==5)flags.push('OPTION_COUNT');
+            const opts=q.options??[];
+            if(new Set(opts.map(o=>norm(o.text))).size!==opts.length)flags.push('DUPLICATE_OPTIONS');
+            if(!opts.some(o=>o.key===q.correct_answer))flags.push('INVALID_KEY');
+            if(!q.explanation?.trim())flags.push('MISSING_EXPLANATION');
+            const duplicates=bank.questions.filter(x=>x.id!==id&&norm(x.question)===norm(q.question)).map(x=>x.id);
+            if(duplicates.length)flags.push('REPEATED_STEM');
+            const sha=crypto.createHash('sha256').update(JSON.stringify(q)).digest('hex');
+            return {id,record_sha256:sha,record:q,duplicates,flags,editorial_status:'pending_primary_source_verification'};
+          });
+          const result={scope:'MAN-946..MAN-955',source_commit:cp.execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),bank_blob:cp.execFileSync('git',['hash-object',p],{encoding:'utf8'}).trim(),status:'structural_review_only',records};
+          const out='audit-evidence/manobrabilidade/MAN-946-955-structural-20261107.json';
+          fs.mkdirSync('audit-evidence/manobrabilidade',{recursive:true});
+          if(fs.existsSync(out))throw Error('Evidence path already exists; avoid overwriting concurrent work');
+          fs.writeFileSync(out,JSON.stringify(result,null,2)+'\n');
+          console.log(JSON.stringify({ids:ids.length,missing:records.filter(r=>r.flags.some(f=>f.startsWith('ID_COUNT'))).map(r=>r.id),flagged:records.filter(r=>r.flags.length).map(r=>({id:r.id,flags:r.flags}))}));
+          NODE
+      - name: Commit evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add audit-evidence/manobrabilidade/MAN-946-955-structural-20261107.json
+          git commit -m "audit(pscpp): record structural evidence MAN-946 through MAN-955"
+          git pull --rebase origin audit/revisao-enunciados-repetidos-20261107
+          git push origin HEAD:audit/revisao-enunciados-repetidos-20261107
