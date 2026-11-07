@@ -1,0 +1,27 @@
+{
+  "scope": "MAN-926..MAN-935",
+  "observed_branch_head": "5daae196a3d192f340f698122a3d2ba64530aa18",
+  "main_head": "8a41efb087641d95d4787a0ac476384b8634506c",
+  "evidence_file": "audit-evidence/manobrabilidade/MAN-926-935-structural-20261107.json",
+  "github_action": {
+    "id": 42348814351,
+    "conclusion": "success",
+    "note": "Workflow success alone is not bibliographic homologation."
+  },
+  "finding": {
+    "id": "MAN-928",
+    "severity": "answer_key_logical_conflict",
+    "answer_key": "B",
+    "key_implied_truth_values": [
+      "V",
+      "F",
+      "V",
+      "F"
+    ],
+    "issue": "Statements 2 and 3 express materially the same definition of straight-line/motion stability: small sway and yaw disturbances do not lead to growing trajectory divergence. Key B assigns false to statement 2 and true to statement 3, despite their shared assertion. Statement 1 is tautological; statement 4 also mixes yaw rate and a hydrodynamic derivative.",
+    "required_action": "Rewrite statements to distinguish different testable concepts, then verify every proposition and unique key against Lewis, Chapter IX Section 3, before changing the production bank.",
+    "status": "editorial_blocked_pending_primary_source",
+    "correction_applied": false
+  },
+  "next": "Reconcile current JSON for MAN-926,929,932 and MAN-928, verify primary source pages, then audit MAN-936..945. No question deactivation."
+}
