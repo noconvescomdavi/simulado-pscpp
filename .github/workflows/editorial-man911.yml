@@ -1,0 +1,34 @@
+name: Editorial correction MAN-911
+on:
+  push:
+    branches: [audit/revisao-enunciados-repetidos-20261107]
+    paths: [.github/workflows/editorial-man911.yml]
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: audit/revisao-enunciados-repetidos-20261107
+      - name: Remove repeated introduction only
+        run: |
+          node <<'NODE'
+          const fs=require('fs'),p='data/questions/manobrabilidade.json';
+          const b=JSON.parse(fs.readFileSync(p,'utf8'));
+          const q=b.questions.filter(x=>x.id==='MAN-911');
+          if(q.length!==1)throw Error('MAN-911 missing or duplicated');
+          const old=q[0].question;
+          const next='Considerando os critérios de manobrabilidade da Resolução IMO MSC.137(76), assinale a alternativa INCORRETA:';
+          if(!old.includes('Ao revisar o plano de manobra, No briefing conduzido antes da faina'))throw Error('Concurrent change detected');
+          q[0].question=next;
+          fs.writeFileSync(p,JSON.stringify(b,null,2)+'\n');
+          console.log(JSON.stringify({id:'MAN-911',old,new:next,correct_answer:q[0].correct_answer}));
+          NODE
+      - name: Commit correction
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/questions/manobrabilidade.json
+          git diff --cached --quiet || (git commit -m "fix(pscpp): remove repeated preambles from MAN-911" && git push origin HEAD:audit/revisao-enunciados-repetidos-20261107)
