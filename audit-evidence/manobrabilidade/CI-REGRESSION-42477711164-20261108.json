@@ -1,0 +1,29 @@
+{
+  "kind": "ci_regression_verification",
+  "run_id": 42477711164,
+  "run_url": "https://github.com/noconvescomdavi/simulado-pscpp/actions/runs/42477711164",
+  "job_id": 128722638892,
+  "head_sha": "52bf6a75ba7b2f893f2f2dbb7d8243fd99d1da00",
+  "main_sha": "8a41efb087641d95d4787a0ac476384b8634506c",
+  "test_command": "node --test tests/audit-pscpp-assertion-reuse.test.mjs",
+  "test_result": {
+    "tests": 1,
+    "passed": 1,
+    "failed": 0,
+    "case": "overlap between embedded and explicit assertions is not an internal duplicate"
+  },
+  "inventory": {
+    "active": 4075,
+    "cross_id_exact_assertion_groups": 261,
+    "source_sha256": "e8ffd4355d3a8f63250a51330b9e4766a941a87a6143bb32cde48a6bef70bb13",
+    "limitations": "Exact normalized text only; not semantic equivalence or co-selection evidence"
+  },
+  "artifact": {
+    "id": 13615174545,
+    "sha256_zip": "2df2924147f2569e63d217326fc6a2cd6da354014cdc6d225fbb128e6a43b780"
+  },
+  "editorial_homologations_new": 0,
+  "question_edits": 0,
+  "deploy": false,
+  "next": "Read artifact per-ID and compare with previous run; bibliographic validation MAN-928 and MAN-966..975; reconcile checkpoint 112 and 195."
+}
