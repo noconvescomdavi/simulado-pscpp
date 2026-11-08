@@ -1,0 +1,51 @@
+{
+  "type": "artifact-independent-reconciliation",
+  "source_run": 42431860274,
+  "artifact_id": 13597751634,
+  "artifact_zip_sha256": "0e6d948318ff9390a44099e6762b30f6b1abf888f83ac96d6a4d53b1ec6fa4f8",
+  "source_commit": "90a48e3db22542c6918eacb70d70248a6e1f8bb0",
+  "source_blob": "f62b57228676076969feb281a100a3d509bb2937",
+  "source_sha256": "e8ffd4355d3a8f63250a51330b9e4766a941a87a6143bb32cde48a6bef70bb13",
+  "active_count": 4075,
+  "exact_groups": 119,
+  "distinct_ids_in_groups": 153,
+  "group_size_distribution": {
+    "2": 78,
+    "3": 18,
+    "4": 10,
+    "5": 9,
+    "7": 1,
+    "8": 2,
+    "10": 1
+  },
+  "focused_ids": {
+    "MAN-967": {
+      "groups": 0
+    },
+    "MAN-968": {
+      "groups": 3
+    },
+    "MAN-970": {
+      "groups": 0
+    },
+    "MAN-971": {
+      "groups": 2
+    }
+  },
+  "prior_claims_rechecked": {
+    "MAN-967/MAN-968": {
+      "shared_exact_groups": 0,
+      "conclusion": "not corroborated by this branch artifact"
+    },
+    "MAN-970/MAN-971": {
+      "shared_exact_groups": 0,
+      "conclusion": "not corroborated by this branch artifact"
+    }
+  },
+  "limitations": [
+    "This counts identical normalized propositions across distinct IDs only, not within-question repetition or semantic overlap.",
+    "Branch snapshot differs from main; no editorial approval or production selection outcome inferred.",
+    "Prior claimed pairs may refer to different revisions; do not delete earlier evidence without comparing exact versions."
+  ],
+  "next_step": "Extract current main and branch records for MAN-967/968/970/971; compare per-ID normalized texts and hashes, then bibliographic review."
+}
