@@ -16,15 +16,25 @@ if (!Array.isArray(questions)) throw new Error("Expected JSON array or object wi
 const normalize = value => String(value ?? "").normalize("NFD")
   .replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\s+/g, " ").trim();
 const byAssertion = new Map();
+const internalRepeats = [];
 const active = questions.filter(q => q && q.active !== false && !q.annulled);
+const numbered = /^\s*(?:I|II|III|IV|V|VI)\s*[).:-]\s+(.+)$/i;
+const checkbox = /^\s*\(\s*\)\s*(?:[-–—:]\s*)?(.+)$/;
 for (const q of active) {
   const explicit = Array.isArray(q.assertions) ? q.assertions.map(a => typeof a === "string" ? a : a?.text) : [];
-  const embedded = String(q.question ?? "").split(/\r?\n/)
-    .filter(line => /^\s*(?:I|II|III|IV|V|VI)\s*[).:-]\s+/i.test(line))
-    .map(line => line.replace(/^\s*(?:I|II|III|IV|V|VI)\s*[).:-]\s+/i, ""));
+  const embedded = String(q.question ?? "").split(/\r?\n/).map(line => {
+    const match = line.match(numbered) ?? line.match(checkbox);
+    return match?.[1];
+  }).filter(Boolean);
+  const seen = new Set();
   for (const assertion of [...explicit, ...embedded]) {
     const key = normalize(assertion);
     if (key.length < 35) continue;
+    if (seen.has(key)) {
+      internalRepeats.push({ id: String(q.id), assertion_sha256: createHash("sha256").update(key).digest("hex") });
+      continue;
+    }
+    seen.add(key);
     if (!byAssertion.has(key)) byAssertion.set(key, new Set());
     byAssertion.get(key).add(String(q.id));
   }
@@ -38,6 +48,8 @@ const output = {
   source_sha256: createHash("sha256").update(bytes).digest("hex"),
   active_count: active.length,
   cross_id_exact_assertion_groups: duplicates.length,
+  internal_repeat_occurrences: internalRepeats.length,
+  internal_repeats: internalRepeats,
   duplicates,
   limitation: "Exact normalized text only; not a semantic equivalence test or evidence of co-selection. Source is runtime snapshot, not necessarily all editorial-bank records."
 };
