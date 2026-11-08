@@ -2,7 +2,9 @@ name: PSCPP exact assertion reuse inventory (read only)
 on:
   push:
     branches: [audit/revisao-enunciados-repetidos-20261107]
-    paths: [.github/workflows/audit-assertion-reuse-20261107-run11.yml]
+    paths:
+      - .github/workflows/audit-assertion-reuse-20261107-run11.yml
+      - scripts/audit-pscpp-assertion-reuse.mjs
   workflow_dispatch:
 permissions:
   contents: read
