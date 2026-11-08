@@ -1,0 +1,65 @@
+{
+  "kind": "primary_source_crosscheck_partial_not_editorial_homologation",
+  "date": "2026-11-08",
+  "source": {
+    "authority": "IMO Maritime Safety Committee",
+    "resolution": "MSC.137(76)",
+    "adopted": "2002-12-04",
+    "url": "https://wwwcdn.imo.org/localresources/en/KnowledgeCentre/IndexofIMOResolutions/MSCResolutions/MSC.137(76).pdf",
+    "sections": [
+      "4.2.3",
+      "4.2.4",
+      "4.2.5",
+      "4.2.6",
+      "4.2.7",
+      "4.2.8",
+      "5.3.1",
+      "5.3.2",
+      "5.3.3",
+      "5.3.4"
+    ]
+  },
+  "verified_reference_facts": [
+    {
+      "concept": "advance",
+      "section": "4.2.3",
+      "fact": "Distance in original heading direction from rudder order to heading change of 90 degrees."
+    },
+    {
+      "concept": "tactical_diameter",
+      "section": "4.2.4",
+      "fact": "Transverse distance from rudder order to heading change of 180 degrees."
+    },
+    {
+      "concept": "turning_criteria",
+      "section": "5.3.1",
+      "fact": "Advance <=4.5L and tactical diameter <=5L."
+    },
+    {
+      "concept": "initial_turning",
+      "section": "5.3.2",
+      "fact": "With 10 degree rudder, distance <=2.5L before heading changes 10 degrees."
+    },
+    {
+      "concept": "zigzag_overshoot",
+      "section": "4.2.7-4.2.8",
+      "fact": "First and second overshoot follow the second and third rudder executes respectively."
+    },
+    {
+      "concept": "stopping",
+      "section": "5.3.4",
+      "fact": "Track reach <=15L, with possible Administration modification for large displacement, never >20L."
+    }
+  ],
+  "related_pending_ids": [
+    "MAN-966",
+    "MAN-968",
+    "MAN-972",
+    "MAN-973"
+  ],
+  "scope_limitation": "The current exact complete wording and options of each related ID were not re-read in this run; these are source reference facts for subsequent line-by-line comparison, not an approval or correction.",
+  "production_bank_changes": 0,
+  "editorial_homologations": 0,
+  "source_commit_main": "8a41efb087641d95d4787a0ac476384b8634506c",
+  "next": "Fetch complete current records for the related IDs, compare each assertion and option to the exact cited sections, check source edition/page and unique answer, and only then propose corrections."
+}
