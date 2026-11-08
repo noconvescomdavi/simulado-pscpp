@@ -26,17 +26,25 @@ for (const q of active) {
     const match = line.match(numbered) ?? line.match(checkbox);
     return match?.[1];
   }).filter(Boolean);
-  const seen = new Set();
-  for (const assertion of [...explicit, ...embedded]) {
-    const key = normalize(assertion);
-    if (key.length < 35) continue;
-    if (seen.has(key)) {
-      internalRepeats.push({ id: String(q.id), assertion_sha256: createHash("sha256").update(key).digest("hex") });
-      continue;
+  // The same proposition can be represented in both assertions[] and question.
+  // Such source overlap is not an internal repetition. Count repeats within
+  // each representation separately, then index each proposition only once.
+  const seenAcrossSources = new Set();
+  for (const sourceAssertions of [explicit, embedded]) {
+    const seenWithinSource = new Set();
+    for (const assertion of sourceAssertions) {
+      const key = normalize(assertion);
+      if (key.length < 35) continue;
+      if (seenWithinSource.has(key)) {
+        internalRepeats.push({ id: String(q.id), assertion_sha256: createHash("sha256").update(key).digest("hex") });
+        continue;
+      }
+      seenWithinSource.add(key);
+      if (seenAcrossSources.has(key)) continue;
+      seenAcrossSources.add(key);
+      if (!byAssertion.has(key)) byAssertion.set(key, new Set());
+      byAssertion.get(key).add(String(q.id));
     }
-    seen.add(key);
-    if (!byAssertion.has(key)) byAssertion.set(key, new Set());
-    byAssertion.get(key).add(String(q.id));
   }
 }
 const duplicates = [...byAssertion.entries()]
