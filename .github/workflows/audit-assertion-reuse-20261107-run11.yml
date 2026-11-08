@@ -1,0 +1,38 @@
+name: PSCPP exact assertion reuse inventory (read only)
+on:
+  push:
+    branches: [audit/revisao-enunciados-repetidos-20261107]
+    paths: [.github/workflows/audit-assertion-reuse-20261107-run11.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: audit-assertion-reuse-readonly
+  cancel-in-progress: false
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run read-only diagnostic on editorial bank
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p audit-output
+          git rev-parse HEAD > audit-output/source-commit.txt
+          git hash-object data/questions/manobrabilidade.json > audit-output/source-blob.txt
+          node scripts/audit-pscpp-assertion-reuse.mjs data/questions/manobrabilidade.json > audit-output/manobrabilidade-exact-reuse.json
+          node -e 'const r=require("./audit-output/manobrabilidade-exact-reuse.json");console.log(JSON.stringify({active:r.active_count,groups:r.cross_id_exact_assertion_groups,source_sha256:r.source_sha256,limitation:r.limitation}))'
+      - name: Upload immutable run artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: assertion-reuse-${{ github.run_id }}-${{ github.run_attempt }}
+          path: audit-output/
+          if-no-files-found: warn
+          retention-days: 30
