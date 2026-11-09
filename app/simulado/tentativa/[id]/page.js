@@ -7,6 +7,7 @@ import { subjectLabel } from "../../../../lib/subjects";
 import StudentHeader from "../../../components/StudentHeader";
 import styles from "./review.module.css";
 import StructuredQuestion from "../../../components/StructuredQuestion";
+import { getOfficialExamCommentary } from "../../../../lib/official-exam-commentary";
 
 function parseQuestionIds(value) {
   if (Array.isArray(value)) return value.map(String);
@@ -132,6 +133,7 @@ export default async function Page({ params }) {
           {ids.map((questionId, index) => {
             const question = getQuestion(exam.subject, questionId);
             const answer = answerMap.get(String(questionId));
+            const commentary = answer ? getOfficialExamCommentary(questionId, answer.selected_answer) : null;
             return (
               <article id={`questao-${index + 1}`} key={`${questionId}-${index}`}>
                 {question?.tracking && (
@@ -154,6 +156,20 @@ export default async function Page({ params }) {
                       <p>Resposta correta: <strong>{question.correct_answer || question.answer || "—"}</strong></p>
                     )}
                     {question?.explanation && <p>{question.explanation}</p>}
+                    {commentary && (
+                      <section aria-label="Gabarito comentado com bibliografia">
+                        <h3>Gabarito comentado</h3>
+                        <p><strong>Por que a alternativa {commentary.correct_answer} está correta:</strong> {commentary.correct_reason}</p>
+                        {commentary.incorrect_reason && <p><strong>Por que sua alternativa está incorreta:</strong> {commentary.incorrect_reason}</p>}
+                        {commentary.bibliography.map((source, index) => (
+                          <div key={index}>
+                            <p><strong>Referência:</strong> {source.author}. <em>{source.title}</em>, vol. {source.volume}, {source.edition}, {source.year}, p. {source.pages.join("–")}.</p>
+                            {source.verified_quote && <blockquote><p>“{source.verified_quote}”</p><small>p. {source.quote_page}</small></blockquote>}
+                            {source.source_url && <p><a href={source.source_url} target="_blank" rel="noopener noreferrer">Consultar a obra</a></p>}
+                          </div>
+                        ))}
+                      </section>
+                    )}
                     {question?.source?.title && (
                       <p className={styles.source}>
                         Fonte: {question.source.title}{question.source.locator ? ` · ${question.source.locator}` : ""}
