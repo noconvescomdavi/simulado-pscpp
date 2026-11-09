@@ -1,0 +1,27 @@
+{
+  "scope": "MAN-906..MAN-915",
+  "review_date": "2026-11-09",
+  "branch": "audit/revisao-enunciados-repetidos-20261107",
+  "head_verified": "2056b6a471b0af1cb1db7007091166a5f63c5c59",
+  "source_evidence_blob": "22203ab0ffeece7f82e7397d011e9b5fda1d50b4",
+  "status": "additional_structural_finding_not_bibliographic_homologation",
+  "new_finding": {
+    "id": "MAN-908",
+    "question_type": "select_incorrect",
+    "correct_answer_current": "D",
+    "option_B": "Sobre “Comparação de lemes”, considere a proposição: maior coeficiente de sustentação máximo, especialmente útil em baixa velocidade.",
+    "option_D": "Sobre “Bocal de governo”, considere a proposição: girar apenas uma pequena pala fora da corrente.",
+    "issue": "Both B and D are syntactically incomplete: B lacks an explicit subject/comparator and D lacks an explicit subject. Existing structural record flags B only. Consequently the unique incorrect alternative cannot be certified on the present wording; D may be intended as the incorrect concept, but cannot be bibliographically homologated without primary-page comparison.",
+    "required_action": "Read Bertram Practical Ship Hydrodynamics 2nd ed. (2012), chapters 2, 3, 6; establish precise page for each relevant rudder/nozzle concept; rewrite B and D as complete independently assessable propositions, verify unique wrong answer, compare official exams, run tests before modifying bank."
+  },
+  "delta": {
+    "new_structural_observation": 1,
+    "question_ids_newly_homologated": [],
+    "questions_modified": 0
+  },
+  "other_pending": [
+    "MAN-911 repeated preambles",
+    "MAN-914 incomplete proposition IV and answer dependence"
+  ],
+  "notes": "No bank, answer, ID, inactive flag or user progress modified. Not counted as additional audited question because MAN-908 already inspected in earlier structural artifact."
+}
