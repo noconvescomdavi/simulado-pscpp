@@ -492,6 +492,20 @@ export default function Client({ subject, title, ready, facets, planTask, trial 
               <p>Resposta correta: <strong>{answer.correct_answer}</strong></p>
             )}
             {answer.explanation && <p>{answer.explanation}</p>}
+            {answer.commentary && (
+              <section aria-label="Gabarito comentado com fundamentação">
+                <h3>Gabarito comentado</h3>
+                <p><strong>Por que a alternativa {answer.commentary.correct_answer} está correta:</strong> {answer.commentary.correct_reason}</p>
+                {answer.commentary.incorrect_reason && <p><strong>Por que sua alternativa está incorreta:</strong> {answer.commentary.incorrect_reason}</p>}
+                {answer.commentary.bibliography?.map((source, i) => (
+                  <div key={i}>
+                    <p><strong>Referência:</strong> {source.author}. <em>{source.title}</em>, {source.edition}, {source.year}, p. {source.pages.join("–")}.</p>
+                    {source.verified_quote && <blockquote>“{source.verified_quote}” (p. {source.quote_page})</blockquote>}
+                    {source.source_url && <p><a href={source.source_url} target="_blank" rel="noopener noreferrer">Consultar a obra</a></p>}
+                  </div>
+                ))}
+              </section>
+            )}
             {answer.source?.title && (
               <p className={styles.source}>Fonte: {answer.source.title}{answer.source.locator?` · ${answer.source.locator}`:""}</p>
             )}
