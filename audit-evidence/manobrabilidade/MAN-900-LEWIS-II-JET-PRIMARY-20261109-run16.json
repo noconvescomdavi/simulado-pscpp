@@ -1,0 +1,38 @@
+{
+  "kind": "primary_source_crosscheck_not_editorial_homologation",
+  "date": "2026-11-09",
+  "repo": "noconvescomdavi/simulado-pscpp",
+  "main_sha": "8a41efb087641d95d4787a0ac476384b8634506c",
+  "branch": "audit/revisao-enunciados-repetidos-20261107",
+  "branch_ahead_main": 53,
+  "question_id": "MAN-900",
+  "question_bank_blob_main": "7d91a960b5901e1595e723d0382ddd3693616a62",
+  "primary_source": {
+    "title": "Principles of Naval Architecture",
+    "editor": "Edward V. Lewis",
+    "edition": "Second Revision",
+    "volume": "II",
+    "year": 1988,
+    "section": "10.2 Jet Propulsion",
+    "printed_page": 226,
+    "pdf_page": 235,
+    "library_file_id": "libfile_016a134222c08191acaaf65643ed7673",
+    "file_lines": [
+      12422,
+      12445
+    ],
+    "finding": "The source describes an internal impeller/pump drawing external water, accelerating it, and discharging it astern as a faster jet. This supports the physical premise of MAN-900 assertion III, which remains syntactically incomplete in the bank."
+  },
+  "suggested_minimal_rewrite_not_applied": "III) Na propulsão a jato, uma bomba ou impulsor aspira água do exterior do casco, acelera o escoamento e descarrega a água pela popa em forma de jato.",
+  "key_status": "E previously recorded; not homologated",
+  "remaining": [
+    "Verify exact current record on branch and main",
+    "Check I/II redundant wording and IV source",
+    "Compare 2006/2008/2011/2012 official exams",
+    "Validate unique answer, full provenance, duplicates and selector",
+    "Run tests/build before applying any patch"
+  ],
+  "new_homologations": 0,
+  "new_bank_corrections": 0,
+  "deploys": 0
+}
