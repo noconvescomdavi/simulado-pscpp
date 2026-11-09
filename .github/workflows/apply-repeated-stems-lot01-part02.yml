@@ -1,0 +1,43 @@
+name: Apply repeated-stem corrections lot 01 part 02
+on:
+  push:
+    branches: [audit/revisao-enunciados-repetidos-20261107]
+    paths: [audit-patches/repeated-stems-lot01-part02.json]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply exact field-level edits and verify
+        run: |
+          node <<'NODE'
+          const fs=require('fs');
+          const patch=JSON.parse(fs.readFileSync('audit-patches/repeated-stems-lot01-part02.json','utf8')).changes;
+          const bankPath='data/questions/arte-naval.json';
+          const bank=JSON.parse(fs.readFileSync(bankPath,'utf8'));
+          const remaining=new Set(Object.keys(patch));
+          const report=[];
+          for(const q of bank.questions){
+            if(!remaining.has(q.id))continue;
+            const old=q.question;
+            if(typeof old!=='string'||old===patch[q.id])throw Error('Invalid patch for '+q.id);
+            q.question=patch[q.id];
+            report.push({id:q.id,old,new:q.question});
+            remaining.delete(q.id);
+          }
+          if(remaining.size)throw Error('Missing IDs: '+[...remaining]);
+          fs.writeFileSync(bankPath,JSON.stringify(bank,null,2)+'\n');
+          fs.writeFileSync('audit-patches/repeated-stems-lot01-part02-applied.json',JSON.stringify(report,null,2)+'\n');
+          const verify=JSON.parse(fs.readFileSync(bankPath,'utf8'));
+          for(const x of report)if(verify.questions.find(q=>q.id===x.id)?.question!==x.new)throw Error('Verification failed: '+x.id);
+          console.log('Verified '+report.length+' corrections');
+          NODE
+      - name: Commit JSON changes on audit branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/questions/arte-naval.json audit-patches/repeated-stems-lot01-part02-applied.json
+          git diff --cached --quiet || (git commit -m "fix(pscpp): revise six repeated stems in arte-naval JSON" && git push)
