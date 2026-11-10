@@ -422,6 +422,87 @@
         }
       ],
       "review_note": "Gabarito C consta da prova original de 2006. Livro original pedido pela prova não é especificado nesta questão, mas fonte técnica SNAME é de 1989, anterior à prova. Página 297 deduzida dos marcadores impressos consecutivos 296 e 298 presentes na extração; conferir visualmente na homologação final. Enunciado não fornece Lpp exato, mas classifica o navio como capesize, portanto a aplicação do limite Fn < 0,30 a 16 nós supõe dimensões usuais dessa classe."
+    },
+    {
+      "id": "pscpp::official::2006::012",
+      "year": 2006,
+      "number": 12,
+      "correct_answer": "B",
+      "verification_status": "bibliography_verified",
+      "correct_reason": "MacElrevey distingue dois limiares na razão profundidade/calado: em aproximadamente 1,2, o efeito das águas rasas é sentido plenamente; em aproximadamente 1,5, passa a ser significativo. A ordem solicitada no enunciado é plena manifestação e depois efeito significativo, logo 1,2 e 1,5, alternativa B. A quinta edição fornece ambos na figura 1-1, p.8, e investigação oficial canadense anterior à prova atribui a mesma distinção à segunda edição (1988), p.8.",
+      "incorrect_reasons": {
+        "A": "Atribui 1,1 como limite do efeito pleno; a figura 1-1 indica 1,2.",
+        "C": "Usa 1,3 para efeito pleno e 1,8 para significativo, em desacordo com 1,2 e 1,5.",
+        "D": "Indica 1,4 e 1,8, ambos acima dos limiares explicitados.",
+        "E": "Emprega 1,5 como limite de efeito pleno, confundindo-o com o limite de efeito significativo, e introduz 2,0 como segundo limiar."
+      },
+      "bibliography": [
+        {
+          "author": "MACELREVEY, Daniel H.; MACELREVEY, Daniel E.",
+          "title": "Shiphandling for the Mariner",
+          "edition": "5th edition",
+          "publisher": "Schiffer Publishing",
+          "year": 2018,
+          "pages": [
+            8
+          ],
+          "section": "Chapter 1, Arrival — Master's Trial, fig. 1-1, Depth versus shallow water effect",
+          "source_url": "https://pdfcoffee.com/shiphandling-for-the-mariner-5-ediaopdf-pdf-free.html",
+          "verified_quote": "Depth = 1.2 x draft Full shallow water effect felt.",
+          "quote_page": 8
+        },
+        {
+          "author": "TRANSPORTATION SAFETY BOARD OF CANADA",
+          "title": "Marine Investigation Report M99L0126",
+          "edition": "Government investigation report",
+          "publisher": "Transportation Safety Board of Canada",
+          "year": 2003,
+          "pages": [
+            25
+          ],
+          "section": "Shallow water maneuvering; endnote 25 cites MacElrevey, Ship-handling for the Mariner, second edition (1988), p. 8",
+          "source_url": "https://publications.gc.ca/collections/collection_2009/bst-tsb/TU3-7-99-24E.pdf",
+          "verified_quote": "When this ratio is 1.2 or less, full shallow water effect is felt.",
+          "quote_page": 25
+        }
+      ],
+      "review_note": "Prova original 2006 gabarito B. Texto efetivamente consultado: transcrição online da 5ª edição (2018), p. 8, com limiares 1,2/1,5; fonte governamental canadense anterior à prova cita edição 2 (1988), p. 8, mas a edição 2 não foi inspecionada diretamente. Não apresentar a edição de 1988 como leitura direta. O livro não foi localizado no Google Drive; origem externa documentada."
+    },
+    {
+      "id": "pscpp::official::2006::013",
+      "year": 2006,
+      "number": 13,
+      "correct_answer": "D",
+      "verification_status": "bibliography_verified",
+      "correct_reason": "A D contém informação falsa porque confunde dois usos distintos da âncora de popa (stern/kedge anchor). Ela é útil para frear o navio em pouca distância, manter o rumo e evitar deriva lateral depois de perdido o seguimento, mas MacElrevey ressalva explicitamente que não é ferramenta apropriada quando se precisa contornar uma curva ou alterar o rumo durante a parada. As alternativas A, B, C e E são afirmações afirmadas pela obra, conforme páginas 191–195 e 200–201.",
+      "incorrect_reasons": {
+        "A": "Está correta no sentido expresso pela referência: com seguimento a vante, a âncora arrastando estabiliza a proa independentemente do ferro escolhido, sem puxá-la imediatamente para um bordo específico.",
+        "B": "Está correta: recomenda-se aproximadamente duas vezes a profundidade em comprimento de amarra, com freio apertado, para que a âncora exerça arrasto controlado.",
+        "C": "Está correta: a âncora deve agarrar e desprender-se, arrastando sem unhar e prender permanentemente durante a manobra.",
+        "E": "É formulação figurada presente na obra: a âncora é chamada de 'poor man's tugboat' e pode, em determinadas manobras, ser mais eficaz que um rebocador."
+      },
+      "bibliography": [
+        {
+          "author": "MACELREVEY, Daniel H.; MACELREVEY, Daniel E.",
+          "title": "Shiphandling for the Mariner",
+          "edition": "5th edition",
+          "publisher": "Schiffer Publishing",
+          "year": 2018,
+          "pages": [
+            191,
+            192,
+            194,
+            195,
+            200,
+            201
+          ],
+          "section": "Chapter 8, Anchoring and Shiphandling with Anchors — Anchor as a shiphandling tool; Emergency Use of the Anchor",
+          "source_url": "https://pdfcoffee.com/shiphandling-for-the-mariner-5-ediaopdf-pdf-free.html",
+          "verified_quote": "the stern anchor would not be an appropriate tool.",
+          "quote_page": 201
+        }
+      ],
+      "review_note": "Prova original 2006 marca D. Fonte nominal diretamente inspecionada é transcrição online da 5ª edição (2018), posterior à prova; páginas impressas 191–195 e 200–201 identificadas. A seção p. 201 contradiz apenas a conclusão final da alternativa D ('appropriate tool to work around a bend'), não suas demais vantagens. Edição vigente em 2006 não foi inspecionada; não afirmar equivalência histórica integral. Fonte não encontrada no Drive; origem externa documentada."
     }
   ]
 }
