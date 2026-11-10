@@ -38,6 +38,9 @@ jobs:
       - name: Official PSCPP source fidelity
         run: npm run generate:pscpp-bank && npm run validate:historical-blueprint
 
+      - name: PSCPP selection matrix and complete Santos pool
+        run: npm run validate:pscpp-matrix
+
       - name: Validate question banks
         run: npm run validate:questions
 
