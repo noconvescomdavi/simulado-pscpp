@@ -861,6 +861,39 @@
         }
       ],
       "review_note": "Confrontado com transcrição da prova original no banco e texto extraído da obra, §6.4.1, p.59, onde a diminuição da pressão na popa é associada à viscous pressure resistance. Edição 2010 é posterior à prova 2006, logo verificação bibliográfica conceitual não constitui homologação histórica. OCR pode introduzir quebras; trecho curto preserva palavras do original. Conferência visual do fac-símile recomendada. Enunciado contém a expressão contraditória 'ideal (viscous fluid)' — fluido ideal é invíscido — e deve ser sinalizado na revisão editorial."
+    },
+    {
+      "id": "pscpp::official::2006::031",
+      "year": 2006,
+      "number": 31,
+      "correct_answer": "B",
+      "verification_status": "bibliography_verified",
+      "correct_reason": "As afirmações I e III descrevem o modelo idealizado de teoria da quantidade de movimento: o propulsor é representado por um disco atuador, com salto de pressão e aceleração axial do escoamento, sem representação explícita do passo, do número de pás ou da rotação. A afirmação II é falsa porque confunde o salto de pressão no plano do disco com um salto simultâneo de velocidade: o modelo apresenta salto de pressão no disco, enquanto a velocidade axial evolui ao longo do tubo de corrente. A IV é falsa por afirmar que o escoamento idealizado não é sem atrito.",
+      "incorrect_reasons": {
+        "A": "Inclui II como verdadeira, embora a teoria do disco atuador distinga o salto de pressão no plano do disco da aceleração do fluxo ao longo do tubo de corrente.",
+        "C": "Inclui II e IV, ambas falsas; também omite as afirmações I e III, verdadeiras.",
+        "D": "A IV é falsa: o modelo ideal desconsidera perdas viscosas, portanto não descreve escoamento com atrito.",
+        "E": "A III é verdadeira, mas não é a única: a I também é verdadeira, pois o propulsor ideal é representado por um disco."
+      },
+      "bibliography": [
+        {
+          "author": "BERTRAM, Volker",
+          "title": "Practical Ship Hydrodynamics",
+          "edition": "2nd edition",
+          "publisher": "Butterworth-Heinemann / Elsevier",
+          "year": 2012,
+          "pages": [
+            47,
+            48,
+            49
+          ],
+          "section": "2.3.1 Overview of Methods; 2.3.2 Momentum Theory",
+          "source_url": "https://drive.google.com/file/d/1SIEdgocYhzy10UXMEoyTz2afcsRg3AdM/view",
+          "verified_quote": "Momentum theory models the propeller as a simple actuator disk accelerating the flow in the axial direction",
+          "quote_page": 48
+        }
+      ],
+      "review_note": "Prova oficial PSCPP 2006 questão 31, gabarito B preservado. Texto consultado diretamente em Bertram, 2ª ed., 2012, pp.47–49, com salto de pressão no plano do disco e variação de velocidade ao longo do escoamento; a obra diferencia explicitamente a teoria ideal de modelos com perdas viscosas. Edição posterior a 2006: verificação conceitual, não homologação histórica da edição de Principles of Naval Architecture citada na prova. Recomendada conferência visual do PDF."
     }
   ]
 }
