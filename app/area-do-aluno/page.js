@@ -9,6 +9,8 @@ import StudentHeader from "../components/StudentHeader";
 import ExamCountdown from "../components/ExamCountdown";
 import {consistencyFromDays} from "../../lib/consistency-summary";
 import {getStudyTimeSummary} from "../../lib/learning-summary";
+import {getStudyActivityCalendar} from "../../lib/study-activity";
+import StudyActivityPanel from "./StudyActivityPanel";
 import { unstable_cache } from "next/cache";
 import "./dashboard.css";
 
@@ -26,7 +28,7 @@ export default async function Area(){
   if(!session)redirect("/login");
 
   const dataStarted=Date.now();
-  const [access,progress,performance,profile,recentExams,learning,studyDays,studentIntel,studyTime,planProgress,bibliographyProgress]=await Promise.all([
+  const [access,progress,performance,profile,recentExams,learning,studyDays,studentIntel,studyTime,planProgress,bibliographyProgress,studyActivity]=await Promise.all([
     cachedAccess(session.id),
     query("select subject,percent from study_progress where user_id=$1",[session.id]),
     getUserMetrics(session.id).then(({subjects,overall})=>({subjects,overall})),
@@ -37,7 +39,8 @@ export default async function Area(){
     query(`select count(*)::int as due from student_review_queue where user_id=$1 and source_type='topic' and state<>'suspended' and due_at<=now()`,[session.id]).then(r=>({due:Number(r.rows[0]?.due||0)})).catch(()=>({due:0})),
     getStudyTimeSummary(session.id),
     query(`select count(*) filter(where status='pending')::int pending,count(*) filter(where status='done')::int done from student_plan_task_progress where user_id=$1`,[session.id]).then(r=>r.rows[0]||{pending:0,done:0}).catch(()=>({pending:0,done:0})),
-    getBibliographyCompletion(session.id)
+    getBibliographyCompletion(session.id),
+    getStudyActivityCalendar(session.id)
   ]);
   if(Date.now()-dataStarted>500)console.warn("[perf] dashboard_data_slow",{elapsed_ms:Date.now()-dataStarted});
   const consistency=consistencyFromDays(studyDays.rows,performance.totalAnswered);
@@ -117,6 +120,8 @@ export default async function Area(){
           <a href="/revisao-inteligente">Abrir Revisão Inteligente →</a>
           <a href="/analise-de-fraquezas">Ver análise por tópico →</a>
         </section>
+
+        <StudyActivityPanel data={studyActivity}/>
 
         <section className="dashboardSection" id="desempenho">
           <div className="sectionTitle"><div><h2>Meu Progresso</h2><p>Acompanhe seus estudos em tempo real:</p></div><a href="#disciplinas">Ver estatísticas completas →</a></div>
