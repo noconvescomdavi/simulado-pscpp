@@ -18,20 +18,39 @@
 .progressTrack{height:5px;background:#12334c;border-radius:99px;overflow:hidden;margin-top:10px}
 .progressTrack i{display:block;height:100%;background:#c8102e}
 .historyStats{display:grid;grid-template-columns:repeat(2,90px) auto;gap:10px;align-items:center}
-.historyStats>div{border-left:1px solid #17415e;padding-left:10px}
+.historyStats>div:not(.historyControls){border-left:1px solid #17415e;padding-left:10px}
 .historyStats span,.historyStats strong{display:block}
 .historyStats span{font-size:7px;color:#7ea0b7;text-transform:uppercase}
 .historyStats strong{font-size:16px;margin-top:3px}
-.historyStats a{display:inline-flex;align-items:center;justify-content:center;min-height:36px;border:1px solid #c8102e;color:#fff;background:#c8102e;border-radius:7px;padding:8px 11px;font-size:9px;font-weight:900;white-space:nowrap}
+.historyOpenLink{display:inline-flex;align-items:center;justify-content:center;min-height:36px;border:1px solid #c8102e;color:#fff;background:#c8102e;border-radius:7px;padding:8px 11px;font-size:9px;font-weight:900;white-space:nowrap}
 .historyEmpty{text-align:center;padding:28px 16px;border:1px dashed #17415e;border-radius:10px;color:#d8eaf5}
 .historyEmpty p{color:#789bb4;font-size:10px;margin:6px 0 0}
 @media(max-width:780px){
   .historyHead,.historyCard{grid-template-columns:1fr;display:grid}
   .historyStats{grid-template-columns:1fr 1fr}
-  .historyStats a{grid-column:1/-1}
+  .historyControls{grid-column:1/-1}
 }
 
 .notebookScope{display:grid;gap:4px;margin:8px 0 10px;padding:9px 11px;border-left:2px solid rgba(38,139,190,.55);background:rgba(12,50,70,.28);border-radius:0 8px 8px 0}.notebookScope p{margin:0!important;font-size:12px!important;line-height:1.4;color:#9fb8c8!important}.notebookScope strong{color:#d8e8f1;font-weight:800}
 @media(max-width:700px){.notebookScope{padding:8px 9px;margin:7px 0 9px}.notebookScope p{font-size:11px!important;line-height:1.35}}
 
 .summary{position:sticky;top:92px;background:linear-gradient(145deg,#0a253a,#071826);border:1px solid #1b5278;border-radius:15px;padding:20px;color:#e7f0f7;box-shadow:0 18px 45px rgba(0,0,0,.15)}.summary span,.summary strong,.summary small{display:block}.summary span{font-size:9px;color:#8fd1f6;font-weight:900;letter-spacing:.12em}.summary strong{font-size:30px;margin:8px 0}.summary p{color:#9ab4c6;font-size:11px;line-height:1.55}.summary small{color:#7f9caf;font-size:9px}.summary button{width:100%;margin-top:18px;background:#c8102e;color:#fff;border:0;border-radius:9px;padding:12px 14px;font-weight:900;cursor:pointer}@media(max-width:800px){.builderLayout{grid-template-columns:1fr}.summary{position:static;order:-1}.box button{display:block}.summary button{display:none}}
+
+/* Gerenciamento de cadernos: extensões locais à identidade visual Estibordo. */
+.historyControls{display:flex;flex-direction:column;gap:7px;align-items:stretch;min-width:128px}
+.manageActions{display:flex;gap:6px;align-items:stretch;justify-content:space-between;flex-wrap:wrap}
+.manageActions .editAction,.manageActions .deleteAction{flex:1;display:inline-flex;align-items:center;justify-content:center;min-height:34px;padding:8px 10px;border-radius:7px;font-size:9px;line-height:1;font-weight:900;cursor:pointer;white-space:nowrap}
+.manageActions .editAction{background:#0b2b45;color:#d9ecf8;border:1px solid #176ca7}
+.manageActions .editAction:hover{background:#114367}
+.manageActions .deleteAction{background:#1d1521;color:#ff8ea2;border:1px solid #8e2943}
+.manageActions .deleteAction:hover{background:#38202d}
+.manageActions .deleteAction:disabled{opacity:.6;cursor:wait}
+.manageError{flex-basis:100%;display:block!important;color:#ff8ea2!important;font-size:9px!important;line-height:1.5}
+.editNotice{border:1px solid #20729e;background:#e8f3fa;color:#11354d;border-radius:9px;padding:13px 14px;margin-bottom:17px}
+.editNotice strong{font-size:12px}
+.editNotice p{font-size:11px;line-height:1.6;margin:7px 0}
+.editNotice a{color:#0e578c;font-size:10px;font-weight:800;text-decoration:underline}
+.titleEdit{display:block;font-size:11px;color:#183c54;font-weight:800;margin-bottom:15px}
+.titleEdit input{display:block;margin-top:6px;width:100%;border:1px solid #b7cad8;border-radius:8px;background:#fff;color:#0d1b2a;padding:10px 12px;font-size:12px}
+.historyOpenLink:focus-visible,.manageActions a:focus-visible,.manageActions button:focus-visible{outline:2px solid #85c9f3;outline-offset:2px}
+@media(max-width:780px){.historyControls{grid-column:1/-1}.manageActions .editAction,.manageActions .deleteAction{min-height:39px;font-size:10px}}
