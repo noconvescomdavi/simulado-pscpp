@@ -9,7 +9,7 @@ const bank = JSON.parse(contents.toString("utf8"));
 // antes da inclusão do lote Santos, que não o modifica.
 const BASELINE_MAIN_GIT_BLOB_SHA1 = "74de7f01eb84a257e757515fd95522db42f6cf54";
 const currentBlobSha = createHash("sha1")
-  .update("blob " + contents.length + "\\0", "utf8")
+  .update("blob " + contents.length + "\0", "utf8")
   .update(contents)
   .digest("hex");
 const questions = Array.isArray(bank.questions) ? bank.questions : [];
