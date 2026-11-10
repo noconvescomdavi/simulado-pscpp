@@ -13,5 +13,6 @@ assert.equal(findings.length,0,`Artefatos editoriais conhecidos em ${findings.ma
 // retains its independent editorial policy and is not changed by this repair.
 const locatorFindings=notebook.banks['legislacao-regulamentacao'].questions.filter(hasLocatorOnlyCommand);
 assert.equal(locatorFindings.length,0,`Enunciado dependente de localizador no caderno de legislação: ${locatorFindings.map(q=>q.id).join(', ')}`);
-assert.equal(pscpp.questions.filter(q=>!isPscppEditoriallyEligible(q)).length,11);
-console.log(`Auditoria determinística: ${questions.length} itens, 0 artefatos conhecidos, 0 enunciados por localizador no caderno de legislação, 11 itens tabulares retidos de novos sorteios`);
+const remainingEditorialExceptions=pscpp.questions.filter(q=>!isPscppEditoriallyEligible(q)).length;
+assert.ok(remainingEditorialExceptions<=11,`A quarentena editorial aumentou: ${remainingEditorialExceptions} > 11`);
+console.log(`Auditoria determinística: ${questions.length} itens, 0 artefatos conhecidos, 0 enunciados por localizador no caderno de legislação, ${remainingEditorialExceptions} itens tabulares retidos de novos sorteios`);

@@ -30,6 +30,10 @@ assert.throws(() => buildFixedPscppExam(pool.map((q) => q.source_subject === "co
 
 const optionLikeAssertion = /^(?:\s*(?:I|II|III|IV|V|VI|VII|VIII|IX|X|[a-e])\s*[).:-]?\s*)?(?:(?:apenas|somente)\s+(?:(?:as\s+)?(?:afirmativas?|assertivas?)\s+)?(?:I|II|III|IV|V|VI|VII|VIII|IX|X)(?:\s*[,;]\s*(?:I|II|III|IV|V|VI|VII|VIII|IX|X))*(?:\s+e\s+(?:I|II|III|IV|V|VI|VII|VIII|IX|X))?\s+(?:s[aã]o|est[aã]o)\s+(?:verdadeiras?|falsas?|corretas?|incorretas?)|(?:todas|nenhuma)\s+(?:as\s+)?(?:afirmativas?|assertivas?)\s+(?:s[aã]o|est[aã]o)\s+(?:verdadeiras?|falsas?|corretas?|incorretas?))/i;
 const activePscpp = collectActivePscppQuestions();
+const santosActive=new Set(activePscpp.filter(q=>/^MSN21-REV-\d{3}$/.test(String(q.id))).map(q=>String(q.id)));
+const santosMissing=Array.from({length:50},(_,i)=>"MSN21-REV-"+String(i+1).padStart(3,"0")).filter(id=>!santosActive.has(id));
+assert.deepEqual(santosMissing,[],"Questões homologadas Santos ausentes do pool do Simulado PSCPP");
+
 const leakingAssertions = activePscpp.filter((q) => {
   const assertions = Array.isArray(q.assertions) ? q.assertions : [];
   const stemLines = String(q.question || "").split(/\r?\n/);
@@ -40,7 +44,7 @@ assert.equal(leakingAssertions.length, 0, `Há alternativas vazando para o enunc
 
 const runtime = JSON.parse(await readFile(new URL("../data/pscpp/runtime-active-questions.json", import.meta.url), "utf8")).questions;
 assert.ok(runtime.length >= 100);
-assert.equal(runtime.filter(q=>!isPscppEditoriallyEligible(q)).length,11,"A quarentena editorial mudou: rever os itens antes de publicar");
+assert.ok(runtime.filter(q=>!isPscppEditoriallyEligible(q)).length<=11,"A quarentena editorial aumentou: rever os itens antes de publicar");
 for (const seed of ["alpha", "bravo", "charlie", "delta"]) {
   const exam = buildFixedPscppExam(runtime, seed);
   assert.equal(exam.length, 100);

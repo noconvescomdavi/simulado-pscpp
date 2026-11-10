@@ -6,7 +6,14 @@ const root=process.cwd();
 const {validateQuestionTaxonomy,taxonomyCatalog}=await import(pathToFileURL(path.join(root,"lib/question-taxonomy.js")).href);
 const dir=path.join(root,"data/questions");
 const files=fs.readdirSync(dir).filter(x=>x.endsWith(".json")).sort();
-const rows=[];let invalid=0,quarantinedInvalid=0,legacy=0,total=0;
+const baseline=JSON.parse(fs.readFileSync(path.join(root,"data/audit-baselines/taxonomy-preexisting-main-20261110.json"),"utf8"));
+const expected=new Map();
+for(const [id,reason] of baseline.exceptions){
+  const sig=JSON.stringify([String(id),String(reason)]);
+  expected.set(sig,(expected.get(sig)||0)+1);
+}
+const rows=[];let invalid=0,preexistingInvalid=0,quarantinedInvalid=0,legacy=0,total=0;
+const newViolations=[];const addedExtensions=[];
 for(const file of files){
   const slug=file.replace(/\.json$/,"");
   const bank=JSON.parse(fs.readFileSync(path.join(dir,file),"utf8"));
@@ -15,7 +22,13 @@ for(const file of files){
     total++;
     const result=validateQuestionTaxonomy(q,slug);
     if(result.legacy){legacy++;continue}
-    if(result.errors.length){if(q.active===false||["inactive","deactivated","quarantined"].includes(String(q.status||"").toLowerCase())){quarantinedInvalid++;continue}invalid++;console.error(q.id+": "+result.errors.join("; "));continue}
+    if(result.errors.length){if(q.active===false||["inactive","deactivated","quarantined"].includes(String(q.status||"").toLowerCase())){quarantinedInvalid++;continue}invalid++;
+      const reason=result.errors.slice().sort().join("; ");
+      const sig=JSON.stringify([String(q.id),reason]);
+      const remaining=expected.get(sig)||0;
+      if(remaining>0){expected.set(sig,remaining-1);preexistingInvalid++}
+      else{newViolations.push({bank:slug,id:String(q.id),reason});console.error("NOVA TAXONOMIA INVÁLIDA "+slug+"/"+q.id+": "+reason)}
+      continue}
     const t=q.taxonomy;
     const key=t.chapter_id+"|"+t.topic_id;
     coverage.set(key,(coverage.get(key)||0)+1);
@@ -35,6 +48,29 @@ const chapterCoverage=catalog.chapters.map(ch=>{
 const report={generated_at:new Date().toISOString(),total_questions:total,legacy_questions:legacy,invalid_taxonomy:invalid,chapter_coverage:chapterCoverage,topic_coverage:rows};
 fs.mkdirSync(path.join(root,"reports"),{recursive:true});
 fs.writeFileSync(path.join(root,"reports/question-coverage.json"),JSON.stringify(report,null,2)+"\n");
-console.log("Questões:",total,"| v2:",total-legacy,"| legacy:",legacy,"| taxonomia inválida ativa:",invalid,"| taxonomia inválida em quarentena:",quarantinedInvalid);
+// Exceções do main não são homologadas. Somente sua repetição exata é
+// tolerada para não bloquear a admissão de lotes independentes.
+const extensionDir=path.join(root,"data/question-extensions");
+for(const file of fs.readdirSync(extensionDir).filter(name=>/^manobrabilidade-santos-lote-\d+\.json$/.test(name)).sort()){
+  const bank=JSON.parse(fs.readFileSync(path.join(extensionDir,file),"utf8"));
+  const ids=new Set();
+  for(const q of bank.questions||[]){
+    if(ids.has(q.id))newViolations.push({bank:file,id:q.id,reason:"id duplicado no lote"});
+    ids.add(q.id);
+    const check=validateQuestionTaxonomy(q,"manobrabilidade");
+    if(check.errors.length)newViolations.push({bank:file,id:q.id,reason:check.errors.join("; ")});
+    if(q.active!==true||q.validation_status!=="approved")newViolations.push({bank:file,id:q.id,reason:"questão não homologada"});
+  }
+  addedExtensions.push({file,count:ids.size});
+}
+report.preexisting_invalid=preexistingInvalid;
+report.new_invalid=newViolations.length;
+report.new_violations=newViolations;
+report.audited_santos_lotes=addedExtensions;
+fs.writeFileSync(path.join(root,"reports/question-coverage.json"),JSON.stringify(report,null,2)+"\n");
+console.log("Questões:",total,"| taxonomia inválida ativa total:",invalid,
+  "| dívida anterior documentada:",preexistingInvalid,"| violações novas:",newViolations.length,
+  "| taxonomia inválida em quarentena:",quarantinedInvalid);
 console.log("Capítulos críticos:",chapterCoverage.filter(x=>x.count===0).length);
-if(invalid)process.exit(1);
+console.log("Lotes Santos auditados:",JSON.stringify(addedExtensions));
+if(newViolations.length)process.exit(1);

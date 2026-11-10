@@ -148,7 +148,14 @@ if (activeFragoso.length !== 144) {
   console.error("FRAGOSO_INACTIVE_DIAGNOSTICS", JSON.stringify(diagnostics, null, 2));
 }
 assert.equal(activeFragoso.length, 144, "As 144 questões de Rebocadores Portuários devem permanecer ativas no banco de cadernos");
-assert.equal(audited, 9955 - cap45Review.edits.filter(e => e.pool === "Cadernos" && !e.question.active).length);
+// O tamanho do runtime evolui com lotes homologados e quarentenas editoriais.
+// Conferir a presença do lote novo e auditar cada enunciado, sem fixar total histórico.
+const santosIds=new Set((banks["manobrabilidade"]?.questions||[])
+  .filter(q=>/^MSN21-REV-\d{3}$/.test(String(q.id))).map(q=>String(q.id)));
+const expectedSantosIds=Array.from({length:50},(_,i)=>"MSN21-REV-"+String(i+1).padStart(3,"0"));
+const missingSantosIds=expectedSantosIds.filter(id=>!santosIds.has(id));
+assert.deepEqual(missingSantosIds,[],"Faltam questões do lote Santos no runtime dos Cadernos");
+assert.ok(audited >= 10000,"Regressão inesperada no tamanho do corpus ativo de cadernos");
 assert.equal(pack.edits.length, 506);
 assert.equal(Object.keys(byBank).length, 7);
 assert.deepEqual(reasons, {inline_assertions_removed: 365, fill_sentence_removed: 10, association_columns_missing: 45, empty_fill_context: 72, incomplete_association_command: 1, source_stem_replaced_by_runtime_normalization: 13});

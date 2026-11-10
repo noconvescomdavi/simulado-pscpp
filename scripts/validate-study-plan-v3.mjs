@@ -54,7 +54,11 @@ assert.match(client,/tasks\.filter\(t=>!\(t\.reprogrammed&&\(t\.source_plan_date
 assert.match(notebooks,/strictFixationMatch/,"Caderno diário não possui filtro estrito por obra/capítulo");
 assert.match(notebooks,/actualWork!==wantedWork/,"Fixação não exige correspondência exata da obra");
 assert.ok(!/fixationScore/.test(notebooks),"Fixação voltou a usar pontuação textual aproximada");
-assert.match(notebooks,/shuffle\(pool\)\.slice/,"Questões do capítulo não são limitadas somente após o filtro estrito");
+const strictFixationBeforeSelection=notebooks.indexOf("if(fixation){")>=0
+  && notebooks.indexOf("pool=pool.filter(ref=>")>notebooks.indexOf("if(fixation){")
+  && notebooks.indexOf("const resultSet=selectNotebookQuestions(")>notebooks.indexOf("pool=pool.filter(ref=>");
+assert.ok(strictFixationBeforeSelection,"A seleção do caderno deve ocorrer somente depois do filtro estrito por obra/capítulo");
+assert.match(notebooks,/selectNotebookQuestions\(pool,answered,requestedCount,/,"Caderno não usa o seletor central de repetição e limite de questões");
 
 
 for(const table of [

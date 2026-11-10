@@ -434,7 +434,7 @@ E("larsson-resistance","LARSSON & RAVEN — Ship Resistance and Flow",[1,2,3,4,5
 E("bertram","BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",[S("ch2","Chapter 2 – Propellers"),S("ch3","Chapter 3 – Resistance and Propulsion"),S("ch6","Chapter 6 – Ship manoeuvering")]),
 E("msc1053","IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",[S("ch1","Chapter 1 – General principles"),S("ch2","Chapter 2 – Guidelines for application of the standards"),S("ch3","Chapter 3 – Prediction guidance")]),
 E("msc137","IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",[S("annex6","Annex 6 – Standards for Ship Manoeuvrability")]),
-E("santos-manobrabilidade","SANTOS — A Manobrabilidade do Navio no Século 21",[2,3,4,5,6,7,8,9,10,11].map(n=>S("ch"+n,"Capítulo "+n)) ),
+E("santos-manobrabilidade","SANTOS — A Manobrabilidade do Navio no Século 21",[1,2,3,4,5,6,7,8,9,10,11].map(n=>S("ch"+n,"Capítulo "+n)) ),
 E("santos-hidrodinamica","SANTOS — Princípios de Hidrodinâmica e Ação das Ondas",[S("ch3","Capítulo 3 – O movimento do navio em ondas regulares"),S("ch4","Capítulo 4 – O mar irregular e o mar confuso – o movimento do navio")]),
 E("msc1228","IMO MSC.1/Circ.1228 — Revised Guidance in Adverse Weather",[S("s1","1. General"),S("s3","3. Dangerous phenomena"),S("s4","4. Operational guidance")]),
 E("a601","IMO Resolution A.601(15) — Provision and Display of Manoeuvring Information",[S("s1","1. Manoeuvring information")])
