@@ -112,13 +112,30 @@
     "integrated_count": 0,
     "corrections": 1,
     "blockers": [
-      "Banco SQL ativo não localizado na conexão Neon disponível; ausência de prova de unicidade global.",
-      "Não concluída revisão de 50 questões nem testes CI; publicação proibida."
+      "Catálogo integral de questões da aplicação (arquivos estáticos) ainda não confrontado semanticamente com os três candidatos.",
+      "Sem novas questões com confronto direto à fonte primária nesta execução; revisão e testes CI de 50 questões pendentes."
     ],
     "primary_source_pages_verified": [
       155,
       156
     ],
-    "review_note": "Confronto textual direto com PDF OCR realizado em 2026-11-10. L04-DRAFT-02 delimitada explicitamente aos navios carregados para não confundir com comportamento de navios em lastro (p.156). As três questões seguem sem homologação até auditoria SQL de duplicidades."
+    "review_note": "Confronto textual direto com PDF OCR realizado em 2026-11-10. L04-DRAFT-02 delimitada explicitamente aos navios carregados para não confundir com comportamento de navios em lastro (p.156). As três questões seguem sem homologação até auditoria SQL de duplicidades.",
+    "database_audit_20261110": {
+      "project_id": "weathered-mud-33091087",
+      "branch": "main (br-nameless-morning-ac2pdret)",
+      "tables_examined": [
+        "question_answers",
+        "question_notebooks",
+        "library_documents",
+        "syllabus_topics"
+      ],
+      "question_answers_rows": 561,
+      "question_answers_distinct_question_ids": 527,
+      "question_answers_santos_id_matches": 0,
+      "question_notebooks_rows": 16,
+      "question_notebooks_santos_references": 0,
+      "syllabus_8_10_2_1_1": "Os coeficientes da força de corrente para navios-petroleiros",
+      "limitation": "As tabelas consultadas armazenam respostas e referências, não o catálogo completo de questões distribuídas em arquivos do repositório. Ausência de MSN21 em respostas não comprova ausência de IDs no catálogo nem exclusividade conceitual. Não atribuir IDs nem homologar com base apenas nesses resultados."
+    }
   }
 }
