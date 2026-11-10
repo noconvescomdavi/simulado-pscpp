@@ -390,6 +390,38 @@
         }
       ],
       "review_note": "Prova original 2006 marca E. Texto OCR da 4ª edição de 2019 mostra fig. I-32 p.52 e exposição subsequente p.53. A presença de cirrus com garras sustenta previsão de possível aproximação de Cb/mau tempo, sem determinar inevitabilidade de trovoadas e rajadas. Edição posterior à prova; confirmar imagem e paginação na homologação final."
+    },
+    {
+      "id": "pscpp::official::2006::017",
+      "year": 2006,
+      "number": 17,
+      "correct_answer": "C",
+      "verification_status": "bibliography_verified",
+      "correct_reason": "O diâmetro tático informado é 3 Lpp. Em velocidades típicas de graneleiros capesize, o número de Froude permanece abaixo de aproximadamente 0,30; nessa faixa, Lewis informa que o diâmetro tático é praticamente independente da velocidade. Assim, o diâmetro pode ser tratado como aproximadamente 3 Lpp tanto em HALF-AHEAD (10 nós) quanto em SLOW-AHEAD (6 nós). A constância é aproximação operacional condicionada a características e condições comparáveis; não se deve interpretar o valor como invariável para qualquer navio/velocidade.",
+      "incorrect_reasons": {
+        "A": "Alega redução para 1,5 Lpp em ambos os regimes; a referência não indica redução para metade do diâmetro tático ao reduzir velocidade dentro da faixa de baixo número de Froude.",
+        "B": "Atribui 1,5 Lpp ao regime HALF-AHEAD, sem fundamentação na quase independência do diâmetro tático em relação à velocidade nessas condições.",
+        "D": "Prevê duplicação do diâmetro para 6 Lpp no SLOW-AHEAD; isso não decorre da redução proporcional de rotação e velocidade para número de Froude baixo.",
+        "E": "Supõe 6 Lpp em ambos os regimes, contradizendo a manutenção aproximada do diâmetro de 3 Lpp conhecida para a embarcação nas condições consideradas."
+      },
+      "bibliography": [
+        {
+          "author": "LEWIS, Edward V. (ed.)",
+          "title": "Principles of Naval Architecture",
+          "volume": "III — Motions in Waves and Controllability",
+          "edition": "Second Revision",
+          "publisher": "Society of Naval Architects and Marine Engineers (SNAME)",
+          "year": 1989,
+          "pages": [
+            297
+          ],
+          "section": "Controllability — Rudder effectiveness and speed/scale effects, §14.3",
+          "source_url": "https://drive.google.com/file/d/1Za6N1Cbbo6v_ZZ-g1UxFWQ82SLsMrOjp/view",
+          "verified_quote": "tactical diameter is practically independent of speed at Froude numbers less than about 0.30",
+          "quote_page": 297
+        }
+      ],
+      "review_note": "Gabarito C consta da prova original de 2006. Livro original pedido pela prova não é especificado nesta questão, mas fonte técnica SNAME é de 1989, anterior à prova. Página 297 deduzida dos marcadores impressos consecutivos 296 e 298 presentes na extração; conferir visualmente na homologação final. Enunciado não fornece Lpp exato, mas classifica o navio como capesize, portanto a aplicação do limite Fn < 0,30 a 16 nós supõe dimensões usuais dessa classe."
     }
   ]
 }
