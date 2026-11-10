@@ -3,7 +3,7 @@
   "scope": "official_pscpp_exams_2006_2008_2011_2012",
   "provenance": "data/pscpp/official-exams.json",
   "total": 264,
-  "completed": 0,
+  "completed": 26,
   "criteria": {
     "required": [
       "correct_reason",
@@ -339,8 +339,13 @@
           "year": 2006,
           "number": 31,
           "original_correct_answer": "B",
-          "status": "pending_bibliographic_verification",
-          "commentary_status": "not_started"
+          "status": "bibliography_verified",
+          "commentary_status": "completed",
+          "review_note": "Confronto conceitual realizado com BERTRAM, Practical Ship Hydrodynamics, 2ª ed., Elsevier 2012, pp.47–49, §2.3.1–2.3.2. Disco atuador e salto de pressão no plano do propulsor; aceleração axial no tubo de corrente, sem perdas viscosas. Gabarito oficial B preservado; edição posterior à prova e diferente da obra citada, portanto homologação histórica pendente.",
+          "verified_source_locator": "Bertram (2012), §2.3.2, pp.48–49",
+          "bibliography_candidate_urls": [
+            "https://drive.google.com/file/d/1SIEdgocYhzy10UXMEoyTz2afcsRg3AdM/view"
+          ]
         },
         {
           "id": "pscpp::official::2006::032",
@@ -2222,5 +2227,5 @@
       ]
     }
   ],
-  "bibliographically_verified": 25
+  "bibliographically_verified": 26
 }
