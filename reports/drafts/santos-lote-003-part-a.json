@@ -1,0 +1,382 @@
+{
+  "lot": "003",
+  "part": "A",
+  "status": "working-draft-not-runtime",
+  "questions": [
+    [
+      8,
+      1,
+      "1.1",
+      "Memória hidrodinâmica potencial",
+      "Que processo permite que a resposta hidrodinâmica atual de um casco na superfície livre dependa de movimentos anteriores?",
+      "A formação de ondas produzidas pelo movimento do casco.",
+      [
+        "A correção do desvio magnético.",
+        "A inexistência de perturbação da água.",
+        "O consumo do combustível dos tanques.",
+        "A imobilidade permanente da massa adicional."
+      ],
+      "O sistema de ondas na superfície livre introduz memória potencial."
+    ],
+    [
+      8,
+      1,
+      "1.1",
+      "Memória hidrodinâmica viscosa",
+      "Além do efeito potencial das ondas, que fenômeno contribui para a memória hidrodinâmica em fluido real?",
+      "Vorticidades que se desenvolvem e se propagam no tempo.",
+      [
+        "Anulação total da viscosidade da água.",
+        "Ausência de camada-limite no casco.",
+        "Desaparecimento de todos os gradientes de pressão.",
+        "Alteração do norte verdadeiro."
+      ],
+      "A obra associa memória viscosa à irradiação de vorticidade variável."
+    ],
+    [
+      8,
+      1,
+      "1.1",
+      "Ressonância em ondas",
+      "Uma embarcação passa a responder com oscilações de grande amplitude em determinado mar. Qual condição pode explicar o fenômeno?",
+      "Frequência de encontro próxima de uma frequência natural do casco.",
+      [
+        "Leme obrigatoriamente na posição zero.",
+        "Força de excitação necessariamente inexistente.",
+        "Velocidade igual à do som na água.",
+        "Momento de inércia igual a zero."
+      ],
+      "A proximidade entre frequência de encontro e frequência natural pode gerar ressonância."
+    ],
+    [
+      8,
+      1,
+      "1.1",
+      "Operadores de amplitude de resposta",
+      "Na representação estatística do movimento no mar com análise espectral, qual ferramenta o livro menciona?",
+      "Operadores de amplitude de resposta, ou RAOs.",
+      [
+        "Somente a curva de Williamson.",
+        "Índices de arqueação da embarcação.",
+        "Tabelas de resistência dos cabos de reboque.",
+        "Coeficiente de atrito do convés."
+      ],
+      "A análise espectral emprega funções de transferência conhecidas como RAOs."
+    ],
+    [
+      8,
+      1,
+      "1.1",
+      "Restauração e governo horizontal",
+      "Qual particularidade é destacada ao comparar a manobrabilidade horizontal em mar calmo com movimentos verticais em ondas?",
+      "Ausência das forças restauradoras características do movimento vertical.",
+      [
+        "Restauração hidrostática obrigatoriamente dominante no yaw.",
+        "Ausência completa de força hidrodinâmica.",
+        "Impossibilidade de escrever equações de movimento.",
+        "Ressonância de pitch obrigatória em toda curva."
+      ],
+      "No estudo clássico da manobra horizontal, a obra destaca ausência de forças restauradoras."
+    ],
+    [
+      9,
+      1,
+      "1.1",
+      "Oscilação do piloto automático",
+      "Qual característica de um sistema de governo automático pode provocar oscilações autossustentadas de guinada?",
+      "Atrasos ou zona morta na resposta do controlador.",
+      [
+        "Sensores perfeitamente instantâneos.",
+        "Ausência absoluta de atuação do leme.",
+        "Simetria geométrica da quilha.",
+        "Escala de cores da carta náutica."
+      ],
+      "O texto relaciona oscilações a atraso e zonas mortas do piloto automático."
+    ],
+    [
+      9,
+      1,
+      "1.1",
+      "Guinada transitória e espectro",
+      "Por que uma guinada em fase transitória não deve ser interpretada como movimento de frequência exclusivamente baixa?",
+      "Porque sua evolução pode envolver harmônicos em diversas frequências.",
+      [
+        "Porque a razão de guinada é necessariamente nula.",
+        "Porque a aceleração desaparece no instante inicial.",
+        "Porque o navio deixa de possuir massa.",
+        "Porque o vento deve ser sempre zero."
+      ],
+      "A fase transitória até estabilização inclui harmônicos que não se restringem às baixas frequências."
+    ],
+    [
+      10,
+      1,
+      "1.2",
+      "Estudo histórico de parada",
+      "Qual manobra foi examinada por Euler para estudar a desaceleração a partir de uma velocidade inicial?",
+      "Parada em linha reta sem influência ambiental externa.",
+      [
+        "Interação com navio atracado.",
+        "Zigue-zague com ângulos alternados de leme.",
+        "Giro próximo a banco submerso.",
+        "Curva de resgate com máquina a ré."
+      ],
+      "Santos descreve o estudo de desaceleração de Euler, precursor do conceito de coasting."
+    ],
+    [
+      10,
+      1,
+      "1.2",
+      "Vento oblíquo e leme em Euler",
+      "Na investigação de Euler com vento oblíquo sobre uma embarcação à vela, qual era a função do comando de leme?",
+      "Manter trajetória e velocidade constantes.",
+      [
+        "Eliminar a força da vela.",
+        "Tornar o ângulo de deriva permanentemente zero.",
+        "Converter todo momento em empuxo vertical.",
+        "Impedir qualquer deslocamento do centro de gravidade."
+      ],
+      "Euler estudou o emprego de leme sob vento oblíquo para manter trajetória e velocidade."
+    ],
+    [
+      10,
+      1,
+      "1.2",
+      "Estabilidade por autovalores",
+      "No relato sobre a linearização de Routh, que condição da equação característica indica estabilidade?",
+      "Autovalores negativos.",
+      [
+        "Autovalores todos positivos.",
+        "Autovalores sempre iguais à unidade.",
+        "Valores de força lateral obrigatoriamente nulos.",
+        "Razão de guinada sempre positiva."
+      ],
+      "O autor apresenta a estabilidade do sistema linearizado associada a autovalores negativos."
+    ],
+    [
+      11,
+      1,
+      "1.2",
+      "Coeficientes táticos de Hovgaard",
+      "Que utilização histórica se deu aos coeficientes K e S da fórmula de Hovgaard?",
+      "Estimar perdas de velocidade em curva para dados táticos de manobra.",
+      [
+        "Medir forças de maré em águas rasas.",
+        "Calcular apenas squat em canais.",
+        "Avaliar exclusividade do vento lateral.",
+        "Determinar a tração de um cabo de reboque."
+      ],
+      "A fórmula de Hovgaard relaciona a curva de giro à diminuição da velocidade."
+    ],
+    [
+      12,
+      1,
+      "1.2",
+      "Categorias de navios em 1960",
+      "No primeiro simpósio internacional de manobrabilidade, qual contraste entre navios de guerra e mercantes foi enfatizado?",
+      "Guerra: menor inércia e mais potência; mercantes: maior inércia e menos potência.",
+      [
+        "Ambas as classes sempre tinham potência idêntica.",
+        "Mercantes não possuíam massa de inércia.",
+        "Navios de guerra eram necessariamente desprovidos de propulsão.",
+        "A divisão considerava apenas a bandeira de registro."
+      ],
+      "A obra destaca a diferença entre navios de guerra de grande potência e mercantes de grande inércia."
+    ],
+    [
+      14,
+      2,
+      "2.1",
+      "Simetria e eixos do navio",
+      "Por que orientar os eixos de referência segundo o plano longitudinal de simetria do casco?",
+      "Para simplificar a representação das forças e equações de movimento.",
+      [
+        "Para eliminar todo movimento lateral.",
+        "Para tornar impossível qualquer guinada.",
+        "Para suprimir os efeitos do propulsor.",
+        "Para transformar automaticamente os eixos em inerciais."
+      ],
+      "A simetria de boreste e bombordo reduz a complexidade da formulação."
+    ],
+    [
+      14,
+      2,
+      "2.1",
+      "Assimetria dinâmica da propulsão",
+      "Mesmo em casco geometricamente simétrico, qual fenômeno pode introduzir assimetria dinâmica?",
+      "O sentido de rotação de um único propulsor atuando na esteira.",
+      [
+        "A geometria espelhada da carena.",
+        "A escolha de eixos ortogonais.",
+        "A constância do comprimento do navio.",
+        "A existência de linha de centro."
+      ],
+      "O livro cita a ação de propulsor único como possível exceção à simetria dinâmica."
+    ],
+    [
+      14,
+      2,
+      "2.1",
+      "Geometria no referencial terrestre",
+      "Por que o uso exclusivo de um referencial fixo na Terra complica a análise de forças de um casco em curva?",
+      "Porque a geometria do casco altera continuamente sua orientação nesses eixos.",
+      [
+        "Porque o casco perde sua massa ao girar.",
+        "Porque deixa de existir escoamento.",
+        "Porque o leme não pode produzir força.",
+        "Porque os eixos terrestres se tornam solidários ao navio."
+      ],
+      "A orientação variável do casco dificulta expressar a geometria em eixos inerciais."
+    ],
+    [
+      15,
+      2,
+      "2.1",
+      "Comparação de trajetórias e ambiente",
+      "Para representar posição, trajetória, alinhamento do acesso e direção de vento ou corrente, que tipo de referencial é conveniente?",
+      "Um referencial geográfico independente da orientação instantânea do casco.",
+      [
+        "Um eixo que acompanha o hélice.",
+        "Um sistema que gira junto com a proa.",
+        "Somente o eixo da quilha.",
+        "Uma referência sem direções horizontais."
+      ],
+      "O NED é empregado para navegação, posições e direção das ações ambientais."
+    ],
+    [
+      15,
+      2,
+      "2.1",
+      "Referencial de translação constante",
+      "Quando um sistema em movimento também pode ser classificado como inercial relativamente a outro inercial?",
+      "Quando translada com velocidade constante.",
+      [
+        "Quando gira com aceleração angular.",
+        "Quando altera continuamente a velocidade.",
+        "Quando faz curva em torno de banco.",
+        "Quando acompanha a rotação do leme."
+      ],
+      "Referenciais que se movem a velocidade constante entre si têm aceleração equivalente."
+    ],
+    [
+      15,
+      2,
+      "2.1",
+      "Eixos não inerciais na guinada",
+      "Por que não se deve tratar eixos fixos a um navio que guina como inerciais sem correções?",
+      "Porque sua orientação varia com o movimento angular do casco.",
+      [
+        "Porque deixam de ser perpendiculares.",
+        "Porque a água passa a ter densidade nula.",
+        "Porque apontam invariavelmente ao norte.",
+        "Porque a gravidade muda instantaneamente de sinal."
+      ],
+      "Eixos solidários ao casco mudam de orientação durante a rotação."
+    ],
+    [
+      16,
+      2,
+      "2.2",
+      "Mudança de vetor unitário",
+      "Durante pequena rotação, por que um vetor unitário fixo ao casco pode ter derivada temporal diferente de zero?",
+      "Porque muda de direção embora conserve seu comprimento.",
+      [
+        "Porque passa a ter comprimento infinito.",
+        "Porque deixa de possuir componentes.",
+        "Porque o casco deixa de ser rígido.",
+        "Porque muda a definição da unidade de tempo."
+      ],
+      "A orientação do vetor unitário acompanha a rotação do navio."
+    ],
+    [
+      17,
+      2,
+      "2.3",
+      "Razões angulares p q r",
+      "Que conjunto de símbolos representa as componentes da velocidade angular do corpo no capítulo 2?",
+      "p, q e r em torno dos eixos x, y e z.",
+      [
+        "u, v e w como rotações.",
+        "X, Y e Z como ângulos de Euler.",
+        "N, E e D como momentos.",
+        "K, T e S como derivadas de guinada."
+      ],
+      "O vetor angular é expresso como p i + q j + r k."
+    ],
+    [
+      17,
+      2,
+      "2.3",
+      "Campo de velocidades de corpo rígido",
+      "Que dados permitem obter a velocidade de outro ponto do casco na hipótese de corpo rígido?",
+      "Velocidade de um ponto conhecido e vetor de velocidade angular.",
+      [
+        "Somente a leitura do ecobatímetro.",
+        "Apenas a pressão atmosférica.",
+        "Potência elétrica e arqueação.",
+        "Somente a força do leme."
+      ],
+      "A seção 2.3 usa a velocidade de um ponto e a rotação para definir o campo de velocidades."
+    ],
+    [
+      17,
+      2,
+      "2.3",
+      "Componentes translacionais",
+      "No referencial fixo ao navio, como se relacionam u, v e w com seus eixos?",
+      "u longitudinal, v transversal, w vertical.",
+      [
+        "u vertical, v longitudinal, w transversal.",
+        "p longitudinal, q transversal, r vertical.",
+        "X longitudinal, Y transversal, N vertical.",
+        "K longitudinal, T transversal, S vertical."
+      ],
+      "O vetor translacional é V = u i + v j + w k."
+    ],
+    [
+      18,
+      2,
+      "2.4.1",
+      "Definição de corpo rígido",
+      "Qual hipótese estrutural é empregada ao deduzir as equações gerais do movimento do navio?",
+      "Elementos de massa mantêm posições relativas, forma e dimensões.",
+      [
+        "O casco se deforma ilimitadamente.",
+        "Não há qualquer momento de inércia.",
+        "A embarcação se reduz a ponto sem rotação.",
+        "Todas as forças externas são desprezadas."
+      ],
+      "A definição de corpo rígido idealiza ausência de deformação relativa dos elementos de massa."
+    ],
+    [
+      18,
+      2,
+      "2.4.1",
+      "Massa constante na manobra",
+      "Por que é razoável tomar a massa do navio mercante como constante durante uma manobra de curta duração?",
+      "Porque a alteração por consumo de combustível é desprezível no período.",
+      [
+        "Porque embarcações não consomem combustível.",
+        "Porque a massa adicional substitui o combustível.",
+        "Porque a massa do casco é sempre nula.",
+        "Porque não há possibilidade matemática de massa variável."
+      ],
+      "O livro despreza a variação de massa por consumo no tempo da manobra."
+    ],
+    [
+      22,
+      2,
+      "2.4.3",
+      "Referencial afastado do CG",
+      "Ao escrever as forças em uma origem do casco deslocada do centro de gravidade, que parcelas adicionais aparecem?",
+      "Termos relativos à separação das origens e às reações do sistema não inercial.",
+      [
+        "Somente termos de pressão atmosférica.",
+        "Apenas o peso da âncora.",
+        "A resistência de onda por vento isolada.",
+        "Exclusivamente propriedades da pintura."
+      ],
+      "A mudança de origem introduz termos proporcionais às coordenadas relativas da origem."
+    ]
+  ]
+}
