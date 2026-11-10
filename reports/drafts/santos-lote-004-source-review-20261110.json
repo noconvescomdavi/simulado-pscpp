@@ -218,6 +218,41 @@
       "approved_count": 0,
       "remaining_to_target": 47,
       "next": "Cross-check all 150 Santos extension questions and other extensions for conceptual equivalence; retrieve primary PDF to validate any new items; perform test/PR/merge only after approval."
+    },
+    "audit_20261110_2012": {
+      "method": "Releitura integral dos 150 registros dos lotes 001-003 via GitHub fetch_file; comparação dos enunciados de corrente com os três drafts",
+      "prior_questions": 150,
+      "unique_ids": 150,
+      "prior_current_questions": [
+        "MSN21-REV-002",
+        "MSN21-REV-035",
+        "MSN21-REV-079",
+        "MSN21-REV-116"
+      ],
+      "specific_findings": [
+        {
+          "draft": "L04-DRAFT-01",
+          "related": "MSN21-REV-035",
+          "assessment": "Corrente pelo través em ambos; anterior pergunta movimento longitudinal para vante em casco de proa cheia, candidata pergunta máximo de força lateral; sobreposição de cenário, não equivalência de resposta."
+        },
+        {
+          "draft": "L04-DRAFT-02",
+          "related": "MSN21-REV-079",
+          "assessment": "Anterior enumera componentes da força de corrente; candidata aborda deslocamento dos picos de momento de guinada com h/T; não equivalentes no enunciado."
+        },
+        {
+          "draft": "L04-DRAFT-03",
+          "related": "MSN21-REV-079",
+          "assessment": "Anterior pergunta componentes da formulação; candidata pergunta especificidade e não linearidade de coeficientes; não equivalentes no enunciado."
+        }
+      ],
+      "limits": "Comparação semântica do catálogo principal 4089 + gerado 500 e demais extensões não concluída; não foi reaberto PDF primário nesta execução. Nenhuma homologação ou numeração definitiva.",
+      "new_approved": 0,
+      "new_questions": 0,
+      "corrections": 0,
+      "pr": null,
+      "merge": null,
+      "deploy": null
     }
   }
 }
