@@ -150,6 +150,25 @@
       "database": "Neon weathered-mud-33091087: question_stats 527 registros/527 IDs distintos, 0 MSN21; library_documents não contém título Santos/manobrabilidade; sem catálogo SQL integral.",
       "status": "auditoria parcial; sem atribuição de IDs, homologação ou publicação",
       "remaining": "Confrontar data/questions/manobrabilidade.json, data/pscpp/generated-questions.json, demais extensões e fontes primárias; validar páginas e 47 questões restantes."
+    },
+    "audit_20261110_1709": {
+      "database_tables_inventory": "Neon weathered-mud-33091087: public schema lists question_answers, question_stats, question_notebooks, question_notebook_answers, exam_session_answers; no standalone master questions table identified.",
+      "repository_access": "GitHub repository permissions admin/push confirmed",
+      "large_catalog_attempts": [
+        {
+          "path": "data/questions/manobrabilidade.json",
+          "blob_sha": "7d91a960b5901e1595e723d0382ddd3693616a62",
+          "result": "fetch_file returned empty content; cannot claim semantic review"
+        },
+        {
+          "path": "data/pscpp/generated-questions.json",
+          "blob_sha": "97c2662f1e4f01593ad71a0c8e269c00d9574b55",
+          "result": "fetch_file returned empty content; cannot claim semantic review"
+        }
+      ],
+      "lot_003": "data/question-extensions/manobrabilidade-santos-lote-003.json fetched; MSN21-REV-101..150 observed",
+      "outcome": "No new verified question, no homologation, no PR or deploy. Large catalog needs paginated/chunked inspection and source PDF page review.",
+      "next": "Retrieve large catalogs in bounded line ranges or alternate repository mechanism; compare draft topics semantically, verify primary book, then prepare questions."
     }
   }
 }
