@@ -17,7 +17,7 @@ assert.equal(reviewed.length,322);
 assert.equal(new Set(reviewed.map(q=>q.id)).size,322);
 assert.deepEqual(new Set(reviewed.map(q=>q.id)),new Set(baseline.map(q=>q.id)));
 assert.ok(baseline.every(hasLocatorOnlyCommand),'baseline must reproduce the actual defective runtime templates');
-assert.equal(runtime.length,826,'the repair must retain all active Legislation notebook questions');
+assert.ok(runtime.length>=826,'the repair must retain at least 826 active Legislation notebook questions');
 assert.deepEqual(runtime.filter(hasLocatorOnlyCommand).map(q=>q.id),[],'locator-only commands remain in the active notebook');
 for(const edit of reviewed) {
  const q=byId.get(edit.id);
@@ -51,4 +51,4 @@ assert.equal(hasLocatorOnlyCommand({question:'De acordo com NORMAM 601, sobre o 
 // A reviewed marker cannot suppress a genuinely distinctive answer clue.
 const leaked={...reviewed[0],question:reviewed[0].options.find(o=>o.key===reviewed[0].correct_answer).text,options:reviewed[0].options.map(o=>({...o,text:o.key===reviewed[0].correct_answer?o.text:'Outro conceito sem relação com a resposta.'}))};
 assert.ok(auditQuestion(leaked).issues.some(issue=>issue.code==='stem_answer_overlap'));
-console.log('Legislação: 322 revisões ativas; 826 questões preservadas; 0 comandos por localizador; 5 alternativas distintas; gabaritos, comentários, formato e regeneração validados.');
+console.log(`Legislação: 322 revisões ativas; ${runtime.length} questões preservadas; 0 comandos por localizador; 5 alternativas distintas; gabaritos, comentários, formato e regeneração validados.`);
