@@ -151,7 +151,7 @@ assert.equal(activeFragoso.length, 144, "As 144 questões de Rebocadores Portuá
 // O tamanho do runtime evolui com lotes homologados e quarentenas editoriais.
 // Conferir a presença do lote novo e auditar cada enunciado, sem fixar total histórico.
 const santosIds=new Set((banks["manobrabilidade"]?.questions||[])
-  .filter(q=>/^MSN21-REV-\\d{3}$/.test(String(q.id))).map(q=>String(q.id)));
+  .filter(q=>/^MSN21-REV-\d{3}$/.test(String(q.id))).map(q=>String(q.id)));
 assert.equal(santosIds.size,50,"As 50 questões Santos devem existir nos Cadernos de Manobrabilidade");
 assert.ok(audited >= 10000,"Regressão inesperada no tamanho do corpus ativo de cadernos");
 assert.equal(pack.edits.length, 506);
