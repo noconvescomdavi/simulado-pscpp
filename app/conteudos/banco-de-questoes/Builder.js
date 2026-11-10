@@ -42,7 +42,7 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
     const body={
       subjects:s,
       count:trial?10:n,
-      filters:fixation?EMPTY_QUESTION_FILTERS:filters,
+      filters:trial||fixation?EMPTY_QUESTION_FILTERS:filters,
       fixation:editing?null:fixation,
       title:editing?title:(fixation?"Caderno de fixação — "+(fixation.chapter||fixation.section_key):null)
     };
@@ -109,7 +109,7 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
         ))}
       </div>
 
-      {!fixation&&(
+      {!trial&&!fixation&&(
         <QuestionFilterControls
           facets={facets}
           value={filters}
