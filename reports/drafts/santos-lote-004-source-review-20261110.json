@@ -192,6 +192,32 @@
       "corrections": 0,
       "blocking": "Semantic matching of all catalog records and direct source PDF verification for any new questions not completed; no approval or deploy.",
       "next": "Use recovered JSON to compare full question text and answer concepts to 3 drafts, then inspect primary book and prepare new distinct questions."
+    },
+    "audit_20261110_1908": {
+      "method": "GitHub fetch_blob, parse JSON and regex-based candidate-topic screening",
+      "catalogs_checked": [
+        {
+          "path": "data/questions/manobrabilidade.json",
+          "records": 4089
+        },
+        {
+          "path": "data/pscpp/generated-questions.json",
+          "records": 500
+        }
+      ],
+      "keyword_screen": {
+        "main_catalog_current_abeam": 18,
+        "main_catalog_yaw_current": 0,
+        "main_catalog_current_coefficients": 0,
+        "main_catalog_current_depth_draft": 0,
+        "generated_catalog_broad_current_or_lateral": 19
+      },
+      "notable_overlap": "MAN-NSH-C02-UC50-M2 compares current abeam versus ahead for hull resistance; not equivalent to loaded tanker lateral-force coefficient maximum, but requires expert comparison. MAN-NSH-C02-UC50-M3 similarly addresses resistance in current.",
+      "conclusion": "No exact topical wording found for draft 02/03 in main catalog via targeted expressions; NOT a full semantic deduplication. Draft 01 shares adjacent current-abeam concept with existing questions. No approval, no IDs or publication.",
+      "candidate_count": 3,
+      "approved_count": 0,
+      "remaining_to_target": 47,
+      "next": "Cross-check all 150 Santos extension questions and other extensions for conceptual equivalence; retrieve primary PDF to validate any new items; perform test/PR/merge only after approval."
     }
   }
 }
