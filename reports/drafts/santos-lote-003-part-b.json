@@ -1,0 +1,382 @@
+{
+  "lot": "003",
+  "part": "B",
+  "status": "working-draft-not-runtime",
+  "questions": [
+    [
+      23,
+      2,
+      "2.4.3",
+      "Forças inerciais de Euler",
+      "Qual movimento do referencial é responsável pelos termos reconhecidos como forças de Euler na dedução do capítulo 2?",
+      "A aceleração angular dos eixos em rotação.",
+      [
+        "Movimento retilíneo com velocidade constante.",
+        "A ausência de toda força externa.",
+        "A mudança de salinidade sem movimento.",
+        "A escolha de uma cor para a superfície molhada."
+      ],
+      "Os termos inerciais de Euler decorrem da aceleração angular do referencial."
+    ],
+    [
+      24,
+      2,
+      "2.4.4",
+      "Força de Coriolis no momento",
+      "Que força inercial é mencionada ao calcular os momentos do navio em uma origem distinta do centro de gravidade?",
+      "A força de Coriolis relacionada ao referencial não inercial.",
+      [
+        "Somente o empuxo de Arquimedes.",
+        "A força do vento verdadeiro na superestrutura.",
+        "A resistência friccional da pintura.",
+        "Exclusivamente o arrasto aerodinâmico."
+      ],
+      "O capítulo inclui a força de Coriolis na dedução dos momentos na origem deslocada."
+    ],
+    [
+      26,
+      2,
+      "2.5",
+      "Momento por aceleração do CG",
+      "Que contribuição surge ao calcular momentos em um ponto do casco separado do centro de gravidade?",
+      "Momentos de reações inerciais geradas pela aceleração do centro de gravidade.",
+      [
+        "Desaparecimento do momento de guinada.",
+        "Eliminação de todos os produtos de inércia.",
+        "Obrigatoriedade de leme a meio.",
+        "Anulação de toda aceleração linear."
+      ],
+      "Os termos adicionais multiplicados pelas distâncias à origem representam momentos das reações inerciais."
+    ],
+    [
+      29,
+      3,
+      "3.1",
+      "Série de Taylor",
+      "Por que as forças e os momentos de um navio em manobra são desenvolvidos em séries de Taylor no modelo citado?",
+      "Dependem de diversas variáveis de movimento e de orientação.",
+      [
+        "A força de arrasto é sempre constante.",
+        "O navio só pode mover-se em um eixo.",
+        "As ondas eliminam a força no casco.",
+        "A aceleração é sempre nula."
+      ],
+      "A expansão organiza em derivadas as contribuições de muitas variáveis da dinâmica."
+    ],
+    [
+      29,
+      3,
+      "3.2",
+      "Forças em seções do casco",
+      "Em uma guinada, por que cada estação longitudinal do casco pode contribuir com força hidrodinâmica distinta?",
+      "Porque o escoamento e o ângulo local de ataque variam de seção para seção.",
+      [
+        "Porque cada estação tem salinidade obrigatoriamente distinta.",
+        "Porque a popa não sofre pressão da água.",
+        "Porque o comprimento das cavernas varia com o giro.",
+        "Porque somente o vento atua na proa."
+      ],
+      "O modelo calcula arrasto e sustentação localmente em função do ângulo β(x)."
+    ],
+    [
+      29,
+      3,
+      "3.2.1",
+      "Fricção na camada-limite",
+      "Que fenômeno explica o componente de resistência friccional do casco em movimento?",
+      "A interação viscosa entre a água e a superfície molhada na camada-limite.",
+      [
+        "Somente a rotação do leme.",
+        "A corrente magnética do casco.",
+        "A eliminação do contato entre casco e água.",
+        "A pressão atmosférica no convés."
+      ],
+      "O arrasto por atrito é associado ao escoamento viscoso junto à superfície molhada."
+    ],
+    [
+      29,
+      3,
+      "3.2.1",
+      "Arrasto de forma",
+      "Uma diferença de pressão entre a frente e a região de esteira de um corpo produz que contribuição de resistência?",
+      "Arrasto de pressão, também conhecido como arrasto de forma.",
+      [
+        "Empuxo útil do propulsor.",
+        "Somente força restauradora de pitch.",
+        "Anulação da resistência total.",
+        "Sustentação hidrostática vertical."
+      ],
+      "O arrasto de forma aparece porque a pressão frontal supera a pressão a ré no escoamento real."
+    ],
+    [
+      29,
+      3,
+      "3.2.1",
+      "Separação da camada-limite",
+      "Que fenômeno provoca arrasto por vórtices, especialmente em contornos acentuados de um casco?",
+      "Descolamento da camada-limite e formação de estruturas vorticosas.",
+      [
+        "Supressão de todo cisalhamento.",
+        "Ausência total de viscosidade.",
+        "Desaparecimento do escoamento submerso.",
+        "Variação do norte magnético."
+      ],
+      "Santos relaciona arrasto por separação ao desprendimento da camada-limite."
+    ],
+    [
+      29,
+      3,
+      "3.2.1",
+      "Froude para corpo duplo",
+      "Na condição indicada no livro, para qual intervalo aproximado de número de Froude o efeito de ondas pode ser desprezado no arrasto da asa-casco?",
+      "Valores inferiores a 0,25.",
+      [
+        "Valores superiores a 2,5.",
+        "Apenas valor exatamente igual a 1.",
+        "Somente números de Froude negativos.",
+        "Apenas em velocidade nula."
+      ],
+      "O autor admite aproximação de corpo duplo para Fn inferior a 0,25 na análise apresentada."
+    ],
+    [
+      29,
+      3,
+      "3.2.1",
+      "Razão de aspecto de corpo duplo",
+      "Para comprimento L e calado T, qual expressão descreve a razão de aspecto efetiva do casco espelhado?",
+      "2T/L.",
+      [
+        "L/T².",
+        "2L/T.",
+        "T multiplicado por L.",
+        "B multiplicado por T²."
+      ],
+      "O corpo duplo é associado à razão de aspecto equivalente de duas vezes o calado sobre o comprimento."
+    ],
+    [
+      30,
+      3,
+      "3.2.1",
+      "Modelo de Froude e ondas",
+      "Qual era a finalidade da hipótese de corpo duplo sob superfície rígida atribuída a Froude?",
+      "Separar a resistência das ondas irradiadas do restante da resistência.",
+      [
+        "Calcular raio de curva de Williamson.",
+        "Medir o desvio da agulha magnética.",
+        "Determinar exclusivamente a ação do vento.",
+        "Eliminar a inércia do navio."
+      ],
+      "A comparação com condição sem ondas irradiadas foi proposta para isolar a resistência de ondas."
+    ],
+    [
+      30,
+      3,
+      "3.2.1",
+      "Pressão primária e arrasto",
+      "Na descrição de corpo duplo, a que parcela são atribuídas as pressões do sistema primário, que não são resistência por ondas irradiadas?",
+      "Ao arrasto de forma da asa-casco.",
+      [
+        "Apenas ao empuxo propulsivo.",
+        "Exclusivamente ao vento na obra morta.",
+        "Somente às forças de Coriolis.",
+        "À tração dos cabos de amarração."
+      ],
+      "A distribuição primária de pressão corresponde ao arrasto de forma, distinto da resistência de ondas."
+    ],
+    [
+      30,
+      3,
+      "3.2.1",
+      "Altura de onda primária",
+      "No modelo do sistema primário de ondas, como muda a escala vertical quando a velocidade é aumentada sem mudança de geometria?",
+      "Varia com o quadrado da velocidade.",
+      [
+        "Permanece rigorosamente igual.",
+        "Varia apenas com o ângulo do leme.",
+        "É determinada somente pela temperatura do ar.",
+        "Aumenta proporcionalmente à arqueação bruta."
+      ],
+      "As posições de máximos e mínimos dependem da forma; a escala vertical depende quadraticamente da velocidade."
+    ],
+    [
+      30,
+      3,
+      "3.2.1",
+      "Paradoxo de d'Alembert",
+      "Qual resultado a teoria potencial idealizada prevê para resistência de um corpo profundamente submerso em fluido ideal?",
+      "Resistência resultante nula.",
+      [
+        "Resistência infinita em toda velocidade.",
+        "Resistência igual ao peso do casco.",
+        "Ausência de qualquer pressão local.",
+        "Força de arrasto exclusivamente aerodinâmica."
+      ],
+      "O livro recorda o paradoxo de d'Alembert de resistência resultante zero no escoamento ideal."
+    ],
+    [
+      30,
+      3,
+      "3.2.2",
+      "Plano da sustentação do casco",
+      "Na manobrabilidade convencional, a sustentação da asa-casco discutida por Santos age em qual plano?",
+      "No plano horizontal, ligado a forças laterais e momentos de guinada.",
+      [
+        "Somente na vertical como em um avião.",
+        "Exclusivamente no movimento heave.",
+        "Apenas na superfície do convés.",
+        "Somente na direção vertical do empuxo hidrostático."
+      ],
+      "O autor diferencia a sustentação horizontal do casco de sustentação vertical aeronáutica."
+    ],
+    [
+      30,
+      3,
+      "3.2.2",
+      "Vórtices e circulação",
+      "Que artifício da teoria potencial é utilizado para representar a circulação ao redor do casco?",
+      "Uma distribuição de vórtices livres sobre o contorno do corpo.",
+      [
+        "Impedir toda velocidade incidente.",
+        "Anular a pressão em todas as seções.",
+        "Substituir a água pelo ar do convés.",
+        "Eliminar a diferença de velocidade no casco."
+      ],
+      "O modelo associa vórtices livres à circulação e à formação de sustentação."
+    ],
+    [
+      30,
+      3,
+      "3.2.2",
+      "Kutta–Joukowski",
+      "Que expressão relaciona densidade ρ, circulação Γ e velocidade V na lei apresentada para a sustentação?",
+      "L = ρΓV.",
+      [
+        "L = ρ/(ΓV).",
+        "L = Γ/(ρV).",
+        "L = ρ + Γ + V.",
+        "L = V/(ρΓ²)."
+      ],
+      "A seção 3.2.2 explicita L = ρΓV no desenvolvimento da força de sustentação."
+    ],
+    [
+      31,
+      3,
+      "3.2.2",
+      "Sustentação elíptica de Prandtl",
+      "Como se comporta a sustentação local nas extremidades da distribuição elíptica apresentada?",
+      "Tende a zero nas extremidades da distribuição.",
+      [
+        "Tende a infinito nas duas pontas.",
+        "Mantém-se constante e máxima em todas as seções.",
+        "Independe completamente da circulação.",
+        "Inverte necessariamente o sentido do peso."
+      ],
+      "A distribuição elíptica usada como exemplo tem sustentação nula nas pontas."
+    ],
+    [
+      32,
+      3,
+      "3.2.3",
+      "Momento de Munk puro",
+      "Como pode existir momento de Munk mesmo que a força total resultante seja zero no escoamento ideal considerado?",
+      "Forças iguais e opostas podem produzir um momento sem força resultante.",
+      [
+        "O momento só existe com propulsor de passo controlável.",
+        "Toda força local se torna infinita.",
+        "Nenhuma pressão atua sobre um corpo ideal.",
+        "Qualquer momento requer força vertical líquida."
+      ],
+      "O livro apresenta o momento puro de Munk como resultante de forças opostas."
+    ],
+    [
+      34,
+      3,
+      "3.2.5",
+      "Componente longitudinal do leme",
+      "Na decomposição das forças de um leme idealizado e sem interação com o casco, que sinal apresenta a força longitudinal Xδ?",
+      "Negativo, devido à contribuição de arrasto.",
+      [
+        "Sempre positivo em todo regime.",
+        "Sempre nulo com leme carregado.",
+        "Igual ao ângulo de aproamento.",
+        "Independente de qualquer escoamento."
+      ],
+      "Nas hipóteses apresentadas, o termo de arrasto supera a componente longitudinal de sustentação."
+    ],
+    [
+      34,
+      3,
+      "3.2.5",
+      "Ângulo de ataque do leme",
+      "Na definição do ângulo de ataque efetivo α do leme, como se combinam deflexão geométrica δ, deriva local βr e endireitamento ε?",
+      "α = δ − βr + ε.",
+      [
+        "α = δ + βr − ε.",
+        "α = δ × βr × ε.",
+        "α = ρΓV.",
+        "α = βr − δ − ε."
+      ],
+      "O autor apresenta α = δ − βr + ε para a influência do escoamento no leme."
+    ],
+    [
+      34,
+      3,
+      "3.2.5",
+      "Descarga do hélice no leme",
+      "Em que condição a velocidade da água incidente no leme pode superar a velocidade do navio?",
+      "Quando o leme está na descarga acelerada do propulsor.",
+      [
+        "Quando a esteira do casco é sempre uniforme.",
+        "Quando o leme está completamente fora da água.",
+        "Quando não existe qualquer movimento do fluido.",
+        "Quando o propulsor está removido."
+      ],
+      "A descarga do propulsor pode acelerar o escoamento sobre o leme."
+    ],
+    [
+      34,
+      3,
+      "3.2.5",
+      "Estol cavitação e aeração do leme",
+      "Por que o comportamento do leme próximo à popa pode exigir instrumentação especial para prever estol e cavitação?",
+      "A esteira do casco e os apêndices mudam intensidade e direção do escoamento.",
+      [
+        "A água não produz forças laterais no leme.",
+        "Toda cavitação é conhecida somente pelo calado.",
+        "O leme não recebe interação alguma do casco.",
+        "A deflexão do leme é sempre zero."
+      ],
+      "O livro ressalta que a interação casco–leme dificulta prever esses fenômenos por equações simplificadas."
+    ],
+    [
+      37,
+      3,
+      "3.4",
+      "Hipótese de Taylor sem acoplamento",
+      "Qual hipótese simplificadora é adotada para os termos que multiplicam velocidade e aceleração na expansão hidrodinâmica?",
+      "Desprezar o acoplamento entre velocidade e aceleração.",
+      [
+        "Manter todos os termos infinitos.",
+        "Assumir aceleração sempre infinita.",
+        "Desprezar apenas a densidade da água.",
+        "Substituir arrasto por vento atmosférico."
+      ],
+      "A segunda hipótese simplificadora exclui termos com produto velocidade–aceleração."
+    ],
+    [
+      41,
+      3,
+      "3.5.1",
+      "Significado da massa adicional",
+      "Que interpretação física deve ser dada à massa adicional longitudinal que surge quando o casco acelera na água?",
+      "Uma reação ao movimento acelerado que aumenta a inércia efetiva.",
+      [
+        "Água permanentemente aderida ao casco.",
+        "A massa de combustível consumida.",
+        "Empuxo aerodinâmico da superestrutura.",
+        "Peso de rebocador conectado ao navio."
+      ],
+      "O autor define massa adicional como reação produzida pela aceleração do corpo no fluido."
+    ]
+  ]
+}
