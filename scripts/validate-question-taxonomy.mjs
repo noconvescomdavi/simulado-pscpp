@@ -51,7 +51,7 @@ fs.writeFileSync(path.join(root,"reports/question-coverage.json"),JSON.stringify
 // Exceções do main não são homologadas. Somente sua repetição exata é
 // tolerada para não bloquear a admissão de lotes independentes.
 const extensionDir=path.join(root,"data/question-extensions");
-for(const file of fs.readdirSync(extensionDir).filter(name=>/^manobrabilidade-santos-lote-\\d+\\.json$/.test(name)).sort()){
+for(const file of fs.readdirSync(extensionDir).filter(name=>/^manobrabilidade-santos-lote-\d+\.json$/.test(name)).sort()){
   const bank=JSON.parse(fs.readFileSync(path.join(extensionDir,file),"utf8"));
   const ids=new Set();
   for(const q of bank.questions||[]){
@@ -67,7 +67,7 @@ report.preexisting_invalid=preexistingInvalid;
 report.new_invalid=newViolations.length;
 report.new_violations=newViolations;
 report.audited_santos_lotes=addedExtensions;
-fs.writeFileSync(path.join(root,"reports/question-coverage.json"),JSON.stringify(report,null,2)+"\\n");
+fs.writeFileSync(path.join(root,"reports/question-coverage.json"),JSON.stringify(report,null,2)+"\n");
 console.log("Questões:",total,"| taxonomia inválida ativa total:",invalid,
   "| dívida anterior documentada:",preexistingInvalid,"| violações novas:",newViolations.length,
   "| taxonomia inválida em quarentena:",quarantinedInvalid);
