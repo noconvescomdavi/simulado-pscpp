@@ -1,0 +1,119 @@
+{
+  "title": "Santos lote 004 — candidatos bibliográficos não homologados",
+  "status": "draft",
+  "source": "SANTOS, Edson Mesquita dos. A Manobrabilidade do Navio no Século 21. PDF OCR, páginas do arquivo (não paginação impressa).",
+  "review_date": "2026-11-10",
+  "id_policy": "IDs não atribuídos: aguardar inventário do banco SQL ativo e verificação cruzada final.",
+  "questions": [
+    {
+      "temporary_id": "L04-DRAFT-01",
+      "syllabus_item": "8.10.2.1.1",
+      "pdf_page": 155,
+      "section": "8.3.2.2",
+      "question": "No estudo dos coeficientes de corrente de petroleiros e graneleiros carregados, qual condição de incidência produz a força lateral máxima indicada pelo autor?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Corrente exatamente pela proa."
+        },
+        {
+          "key": "B",
+          "text": "Corrente exatamente pela popa."
+        },
+        {
+          "key": "C",
+          "text": "Corrente pelo través."
+        },
+        {
+          "key": "D",
+          "text": "Corrente a 5 graus da proa, independentemente da profundidade."
+        },
+        {
+          "key": "E",
+          "text": "Corrente a 30 graus da popa, em todas as profundidades."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Na seção 8.3.2.2, a força lateral máxima para o navio carregado estudado é associada à corrente pelo través. A magnitude depende fortemente da razão profundidade/calado.",
+      "source_locator": "PDF OCR p. 155, seção 8.3.2.2",
+      "validation_status": "source-reviewed; pending database duplicate audit"
+    },
+    {
+      "temporary_id": "L04-DRAFT-02",
+      "syllabus_item": "8.10.2.1.1",
+      "pdf_page": 156,
+      "section": "8.3.2.3",
+      "question": "Nos exemplos de petroleiros e graneleiros carregados apresentados por Santos, como se deslocam os picos do momento de guinada causado pela corrente quando a profundidade diminui?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Diminuem e aproximam-se sempre do través."
+        },
+        {
+          "key": "B",
+          "text": "Aumentam e aproximam-se das extremidades de proa e popa."
+        },
+        {
+          "key": "C",
+          "text": "Permanecem constantes e concentram-se na linha de centro."
+        },
+        {
+          "key": "D",
+          "text": "Desaparecem porque o momento de guinada é nulo em águas rasas."
+        },
+        {
+          "key": "E",
+          "text": "Mudam apenas com a velocidade do vento."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A seção 8.3.2.3 informa que os picos de momento em yaw aumentam com a redução da profundidade e se aproximam das extremidades, no caso dos navios carregados analisados.",
+      "source_locator": "PDF OCR p. 156, seção 8.3.2.3",
+      "validation_status": "source-reviewed; pending database duplicate audit"
+    },
+    {
+      "temporary_id": "L04-DRAFT-03",
+      "syllabus_item": "8.10.2.1.1",
+      "pdf_page": 156,
+      "section": "8.3.2.3",
+      "question": "Por que não se deve aplicar diretamente a curva de momento de guinada de um petroleiro carregado a outro tipo de navio sob corrente transversal?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Porque a corrente só atua em navios carregados."
+        },
+        {
+          "key": "B",
+          "text": "Porque os momentos de guinada são sempre independentes da geometria do casco."
+        },
+        {
+          "key": "C",
+          "text": "Porque as curvas são válidas apenas quando não há corrente."
+        },
+        {
+          "key": "D",
+          "text": "Porque os coeficientes de cada tipo de navio apresentam comportamento próprio e não linear."
+        },
+        {
+          "key": "E",
+          "text": "Porque a profundidade elimina a necessidade de considerar o tipo de navio."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "O autor ressalva que os coeficientes de corrente são específicos de cada tipo de navio e que o comportamento sob corrente é complexo e não linear.",
+      "source_locator": "PDF OCR p. 156, final da seção 8.3.2.3",
+      "validation_status": "source-reviewed; pending database duplicate audit"
+    }
+  ],
+  "checkpoint": {
+    "existing_repository_ids": "MSN21-REV-001..150",
+    "candidate_count": 3,
+    "approved_count": 0,
+    "integrated_count": 0,
+    "corrections": 0,
+    "blockers": [
+      "Banco SQL ativo não localizado na conexão Neon disponível; ausência de prova de unicidade global.",
+      "Não concluída revisão de 50 questões nem testes CI; publicação proibida."
+    ]
+  }
+}
