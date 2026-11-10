@@ -17,6 +17,25 @@ for(const title of ["Arte Naval - Volume 2 - 8ª edição","Arte Naval, v. 2"]){
 const unrelated={taxonomy:{subject_slug:"arte-naval",bibliography_id:legacyVolume2Id,chapter_id:"Capítulo 9"},source:{title:"Outra publicação",drive_file_id:legacyVolume2Id}};
 if(canonicalizeQuestionTaxonomy(unrelated)!==unrelated)throw new Error("Unrelated source was incorrectly canonicalized");
 
+
+// Exact, source-backed mapping: EROG units/annexes and NORMAM-224 chapters.
+for(const [publication,subject,title,locator,chapter] of [
+  ["radioperador","comunicacoes","Especial de Radioperador Geral (EROG)","Item 1.3 — FREQUÊNCIA","radioperador::unit1"],
+  ["radioperador","comunicacoes","Especial de Radioperador Geral (EROG)","Unidade 2 — Socorro e salvamento","radioperador::unit2"],
+  ["radioperador","comunicacoes","Especial de Radioperador Geral (EROG)","Item 3.4 — INMARSAT","radioperador::unit3"],
+  ["radioperador","comunicacoes","Especial de Radioperador Geral (EROG)","Anexo 2 — Glossário","radioperador::annexes"],
+  ["normam224","conhecimentos-gerais","NORMAM-224/DPC — Folga Dinâmica Abaixo da Quilha","seção 1.2 — Definições","normam224::ch1"],
+  ["normam224","conhecimentos-gerais","NORMAM-224/DPC — Folga Dinâmica Abaixo da Quilha","seção 2.4 — Testes","normam224::ch2"],
+  ["normam224","conhecimentos-gerais","NORMAM-224/DPC — Folga Dinâmica Abaixo da Quilha","seção 3.1 — Parecer","normam224::ch3"]
+]){
+  const fixture={id:"FIXTURE",taxonomy:{subject_slug:subject,bibliography_id:publication,chapter_id:publication+"::integral"},source:{title,locator},tracking:{chapter:{id:publication+"::integral"}}};
+  const mapped=canonicalizeQuestionTaxonomy(fixture);
+  if(mapped===fixture||mapped.taxonomy.chapter_id!==chapter||mapped.tracking.chapter.id!==chapter||mapped.id!==fixture.id||mapped.source!==fixture.source)throw new Error("Verified legacy section mapping regression: "+publication+" / "+locator);
+  for(const tampered of [{...fixture,source:{title:"Outra obra",locator}},{...fixture,source:{title,locator:"Fonte não localizada"}},{...fixture,active:false}]){
+    if(canonicalizeQuestionTaxonomy(tampered)!==tampered)throw new Error("Unsafe legacy mapping triggered on unverified/inactive source");
+  }
+}
+
 const dir=path.join(root,"data/questions");
 const files=fs.readdirSync(dir).filter(x=>x.endsWith(".json")).sort();
 const baseline=JSON.parse(fs.readFileSync(path.join(root,"data/audit-baselines/taxonomy-preexisting-main-20261110.json"),"utf8"));
