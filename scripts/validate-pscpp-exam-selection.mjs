@@ -3,6 +3,9 @@ import { readFile } from "node:fs/promises";
 import { buildFixedPscppExam, isPscppEditoriallyEligible, PSCPP_QUOTAS } from "../lib/pscpp-exam-selection.js";
 import { historicalSubject } from "../lib/historical-exam-blueprint.js";
 import { collectActivePscppQuestions } from "../lib/pscpp-exam-source.js";
+import { questionQualityState } from "../lib/question-quality-policy.js";
+import { reformulateLeakingStem } from "../lib/question-quality.js";
+import santosLote003 from "../data/question-extensions/manobrabilidade-santos-lote-003.json";
 
 const pool = Object.entries(PSCPP_QUOTAS).flatMap(([subject, quota]) =>
   Array.from({ length: quota + 4 }, (_, index) => ({
@@ -32,6 +35,15 @@ const optionLikeAssertion = /^(?:\s*(?:I|II|III|IV|V|VI|VII|VIII|IX|X|[a-e])\s*[
 const activePscpp = collectActivePscppQuestions();
 const santosActive=new Set(activePscpp.filter(q=>/^MSN21-REV-\d{3}$/.test(String(q.id))).map(q=>String(q.id)));
 const santosMissing=Array.from({length:150},(_,i)=>"MSN21-REV-"+String(i+1).padStart(3,"0")).filter(id=>!santosActive.has(id));
+if(santosMissing.length){
+  for(const id of santosMissing){
+    const original=santosLote003.questions.find(q=>q.id===id);
+    if(original){
+      const reformulated=reformulateLeakingStem(original);
+      console.error("SANTOS_L03_DIAGNOSTIC",JSON.stringify({id,original:questionQualityState(original),reformulated:questionQualityState(reformulated),newQuestion:reformulated.question,changed:reformulated.question!==original.question}));
+    }
+  }
+}
 assert.deepEqual(santosMissing,[],"Questões homologadas Santos ausentes do pool do Simulado PSCPP");
 
 const leakingAssertions = activePscpp.filter((q) => {
