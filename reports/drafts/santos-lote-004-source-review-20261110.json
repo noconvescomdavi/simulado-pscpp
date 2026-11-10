@@ -35,15 +35,15 @@
       ],
       "correct_answer": "C",
       "explanation": "Na seção 8.3.2.2, a força lateral máxima para o navio carregado estudado é associada à corrente pelo través. A magnitude depende fortemente da razão profundidade/calado.",
-      "source_locator": "PDF OCR p. 155, seção 8.3.2.2",
-      "validation_status": "source-reviewed; pending database duplicate audit"
+      "source_locator": "PDF OCR p. 155, seção 8.3.2.2 (página do arquivo PDF; páginas impressas 162–163)",
+      "validation_status": "primary-source-text-verified; pending active SQL duplicate audit"
     },
     {
       "temporary_id": "L04-DRAFT-02",
       "syllabus_item": "8.10.2.1.1",
       "pdf_page": 156,
       "section": "8.3.2.3",
-      "question": "Nos exemplos de petroleiros e graneleiros carregados apresentados por Santos, como se deslocam os picos do momento de guinada causado pela corrente quando a profundidade diminui?",
+      "question": "Para petroleiros/graneleiros carregados analisados por Santos, como variam os picos do momento de guinada devido à corrente quando a razão profundidade/calado diminui?",
       "options": [
         {
           "key": "A",
@@ -68,8 +68,8 @@
       ],
       "correct_answer": "B",
       "explanation": "A seção 8.3.2.3 informa que os picos de momento em yaw aumentam com a redução da profundidade e se aproximam das extremidades, no caso dos navios carregados analisados.",
-      "source_locator": "PDF OCR p. 156, seção 8.3.2.3",
-      "validation_status": "source-reviewed; pending database duplicate audit"
+      "source_locator": "PDF OCR p. 156, seção 8.3.2.3 (página do arquivo PDF; páginas impressas 162–163)",
+      "validation_status": "primary-source-text-verified; pending active SQL duplicate audit"
     },
     {
       "temporary_id": "L04-DRAFT-03",
@@ -101,8 +101,8 @@
       ],
       "correct_answer": "D",
       "explanation": "O autor ressalva que os coeficientes de corrente são específicos de cada tipo de navio e que o comportamento sob corrente é complexo e não linear.",
-      "source_locator": "PDF OCR p. 156, final da seção 8.3.2.3",
-      "validation_status": "source-reviewed; pending database duplicate audit"
+      "source_locator": "PDF OCR p. 156, final da seção 8.3.2.3 (página do arquivo PDF; páginas impressas 162–163)",
+      "validation_status": "primary-source-text-verified; pending active SQL duplicate audit"
     }
   ],
   "checkpoint": {
@@ -110,10 +110,15 @@
     "candidate_count": 3,
     "approved_count": 0,
     "integrated_count": 0,
-    "corrections": 0,
+    "corrections": 1,
     "blockers": [
       "Banco SQL ativo não localizado na conexão Neon disponível; ausência de prova de unicidade global.",
       "Não concluída revisão de 50 questões nem testes CI; publicação proibida."
-    ]
+    ],
+    "primary_source_pages_verified": [
+      155,
+      156
+    ],
+    "review_note": "Confronto textual direto com PDF OCR realizado em 2026-11-10. L04-DRAFT-02 delimitada explicitamente aos navios carregados para não confundir com comportamento de navios em lastro (p.156). As três questões seguem sem homologação até auditoria SQL de duplicidades."
   }
 }
