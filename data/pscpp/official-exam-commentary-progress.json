@@ -721,8 +721,35 @@
           "year": 2006,
           "number": 55,
           "original_correct_answer": "E",
-          "status": "pending_bibliographic_verification",
-          "commentary_status": "not_started"
+          "status": "bibliography_verified",
+          "commentary_status": "draft_verified_pending_integration",
+          "correct_reason": "E. Hensen divide expressamente as situações críticas em duas categorias: durante a passagem do cabo de reboque e enquanto o cabo está fixado. A alternativa E reproduz ambas.",
+          "incorrect_reasons_by_option": {
+            "A": "A primeira situação coincide com a categoria de Hensen, mas a posição pelo través do ombro de vante é uma circunstância operacional particular, não a segunda categoria da divisão citada.",
+            "B": "A situação de cabo fixado corresponde à segunda categoria; a posição no ombro de vante não substitui a primeira categoria, passagem do cabo.",
+            "C": "A operação na esteira do navio pode representar risco, mas não é uma das duas categorias expressamente enunciadas; omite a passagem do cabo.",
+            "D": "Apresenta duas circunstâncias de risco específicas (esteira e ombro de vante), em lugar das duas categorias definidas no texto."
+          },
+          "bibliography": {
+            "author": "HENSEN, Henk",
+            "title": "Tug Use in Port: A Practical Guide",
+            "edition": "Fourth revised edition, 2021 (posterior à prova de 2006)",
+            "page": "capítulo 6, seção 6.3.1, p. 156 (paginação impressa inferida pela sequência 155/157; confirmar visualmente)",
+            "verified_short_excerpts": [
+              "While passing a towline.",
+              "While the towline is secured."
+            ],
+            "url": "https://drive.google.com/file/d/1TzakagjCKQ_p7kaMbWPV-MHShIZ6AXG9/view"
+          },
+          "source_verification": {
+            "original_exam": "https://drive.google.com/file/d/1p7UL_pWG2ZdvOpg9DBI8uf80b_NSvCe7/view",
+            "original_answer": "E",
+            "original_exam_page": "página impressa 26",
+            "bibliography_verified": true,
+            "original_text_verified": true,
+            "notes": "Texto da questão e marcação (X) da letra E conferidos na prova oficial. Frases exatas localizadas no OCR da 4ª edição de 2021, seção 6.3.1. Edição posterior à prova; verificar se a formulação consta da edição disponível em 2006. Paginação 156 inferida, não visualmente verificada; não homologar até sanar essas ressalvas."
+          },
+          "review_note": "2026-11-11: confrontados enunciado e gabarito E com prova original; duas categorias literais conferidas em Hensen 4ª edição (2021), seção 6.3.1. Pendentes edição histórica, paginação visual e integração."
         },
         {
           "id": "pscpp::official::2006::056",
@@ -2411,5 +2438,5 @@
       ]
     }
   ],
-  "bibliographically_verified": 27
+  "bibliographically_verified": 28
 }
