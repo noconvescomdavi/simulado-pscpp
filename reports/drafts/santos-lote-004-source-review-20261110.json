@@ -650,6 +650,44 @@
       "deploy": null,
       "remaining_to_target": 47,
       "next": "Inspect related candidates' complete alternatives and comments; finish remaining extensions and catalog-level semantic audit; reopen primary source."
+    },
+    "audit_20261111_0905": {
+      "method": "Direct full-text comparison of three previously flagged caderno 007 records against draft questions; GitHub fetch_file and Neon read-only count",
+      "records_examined": [
+        "MAN-B007-02",
+        "MAN-B007-12",
+        "MAN-B007-13"
+      ],
+      "findings": [
+        {
+          "id": "MAN-B007-02",
+          "assessment": "General hydrodynamic importance of current relative to wind; does not test maximum lateral force at abeam incidence, yaw moment extrema, or vessel-specific nonlinear coefficients."
+        },
+        {
+          "id": "MAN-B007-12",
+          "assessment": "Multi-assertion item about wind, rudder drag, and current-water density; no equivalent question objective to drafts 01–03."
+        },
+        {
+          "id": "MAN-B007-13",
+          "assessment": "Rudder drag definition; no conceptual equivalence to current-force coefficients or current-induced yaw moments."
+        }
+      ],
+      "confirmed_direct_duplicates": 0,
+      "scope_limit": "Only these 3 flagged items examined in full this run; no claim of full deduplication across remaining extensions or static catalogs.",
+      "neon_syllabus_topic_sources_count": 0,
+      "new_questions": 0,
+      "new_approvals": 0,
+      "new_corrections": 0,
+      "permanent_ids": [],
+      "pr": null,
+      "ci": null,
+      "merge": null,
+      "deploy": null,
+      "remaining_to_target": 47,
+      "blockers": [
+        "Remaining extensions and static catalog semantic review incomplete",
+        "Fresh primary-source page recheck needed before final approval"
+      ]
     }
   }
 }
