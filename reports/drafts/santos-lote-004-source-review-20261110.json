@@ -865,6 +865,59 @@
       "deploy": null,
       "remaining_to_target": 47,
       "pending": "Review 19 hits and remaining extension records, catalog semantic equivalence and primary Santos pages; no approval or deployment."
+    },
+    "audit_20261111_1509": {
+      "method": "Read full question and explanation fields of all 19 previously keyword-flagged Manobrabilidade records in caderno blocks 021–026; classify conceptual overlap against Santos L04-DRAFT-01..03. This is not an option-by-option review nor primary-source revalidation.",
+      "reviewed_ids": [
+        "MAN-B021-01",
+        "MAN-B021-03",
+        "MAN-B022-02",
+        "MAN-B022-06",
+        "MAN-B022-12",
+        "MAN-B023-08",
+        "MAN-B024-03",
+        "MAN-B024-04",
+        "MAN-B024-05",
+        "MAN-B024-06",
+        "MAN-B025-07",
+        "MAN-B025-10",
+        "MAN-B026-01",
+        "MAN-B026-03",
+        "MAN-B026-04",
+        "MAN-B026-05",
+        "MAN-B026-07",
+        "MAN-B026-08",
+        "MAN-B026-13"
+      ],
+      "count": 19,
+      "confirmed_direct_duplicates": 0,
+      "assessment": "No matching learning objective in the 19 stems/explanations for Santos loaded-tanker lateral-current maximum, h/T-dependent current yaw-moment peaks, or ship-specific nonlinear current coefficients. Remaining option-level and full-catalog semantic review required.",
+      "new_defect": {
+        "id": "MAN-B026-08",
+        "finding": "Explanation defines 'course changing' as ability to stop the ship in a straight line, confusing course changing with stopping ability.",
+        "action": "Flag only; inspect five alternatives and Bertram primary source before correction or approval."
+      },
+      "prior_defect": "MAN-B022-12 wind-force assertion/gabarito inconsistency remains unresolved.",
+      "database": "Neon project lookup returned empty list in this run; prior SQL results not reclassified as freshly verified.",
+      "draft_ids": [
+        "L04-DRAFT-01",
+        "L04-DRAFT-02",
+        "L04-DRAFT-03"
+      ],
+      "new_questions": 0,
+      "approved": 0,
+      "corrections": 0,
+      "permanent_ids": [],
+      "pr": null,
+      "ci": null,
+      "merge": null,
+      "deploy": null,
+      "remaining_to_target": 47,
+      "blockers": [
+        "Primary Santos PDF not directly reopened this run",
+        "Full alternatives and all remaining extensions/catalog semantic audit incomplete",
+        "No verified integration gates or deployment"
+      ]
     }
   }
 }
