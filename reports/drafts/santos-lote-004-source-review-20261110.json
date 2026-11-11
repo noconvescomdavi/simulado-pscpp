@@ -253,6 +253,25 @@
       "pr": null,
       "merge": null,
       "deploy": null
+    },
+    "audit_20261110_2111": {
+      "method": "Direct GitHub draft read, Neon information_schema inspection, Library source search",
+      "database_project": "weathered-mud-33091087",
+      "database_result": "Confirmed public schema contains no master question text table; question_answers and question_stats hold question IDs and user responses, question_notebooks holds question_refs. Thus SQL cannot alone prove semantic uniqueness.",
+      "source_result": "Library search returned secondary PSCPP_Glossario_Comparado_Atualizado.pdf, not the primary Santos OCR PDF. No fresh direct page-level source verification in this run.",
+      "drafts_reviewed": 3,
+      "approved_new": 0,
+      "corrections_new": 0,
+      "ids_assigned": [],
+      "remaining_to_target": 47,
+      "pr": null,
+      "merge": null,
+      "deploy": null,
+      "blockers": [
+        "Primary OCR book not retrieved for direct page comparison in this run",
+        "Semantic equivalence against full static catalogs and other extensions remains unverified"
+      ],
+      "next": "Retrieve primary book and perform record-level semantic deduplication before approving or numbering drafts."
     }
   }
 }
