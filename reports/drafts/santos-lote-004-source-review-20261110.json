@@ -688,6 +688,38 @@
         "Remaining extensions and static catalog semantic review incomplete",
         "Fresh primary-source page recheck needed before final approval"
       ]
+    },
+    "audit_20261111_1009": {
+      "method": "Direct GitHub fetch_file and JSON parsing of caderno blocks 011-016; review of question text and explanations of thematic matches; no full option-by-option semantic validation",
+      "files": [
+        "data/question-extensions/pscpp-caderno-bloco-011.json",
+        "data/question-extensions/pscpp-caderno-bloco-012.json",
+        "data/question-extensions/pscpp-caderno-bloco-013.json",
+        "data/question-extensions/pscpp-caderno-bloco-014.json",
+        "data/question-extensions/pscpp-caderno-bloco-015.json",
+        "data/question-extensions/pscpp-caderno-bloco-016.json"
+      ],
+      "total_questions": 420,
+      "manobrabilidade_questions": 78,
+      "screened_related_ids": [
+        "MAN-B011-13",
+        "MAN-B014-13",
+        "MAN-B015-08"
+      ],
+      "finding": "Related shallow-water or environmental-current subjects, but none of the inspected question/explanation pairs explicitly reproduces the three draft questions on loaded tanker lateral-force maxima, yaw-moment peaks or ship-type-specific coefficients. Screening is not complete semantic deduplication; options not fully cross-reviewed.",
+      "neon_query": "Attempted syllabus_topic_sources count; connector requires explicit project_id, so no fresh SQL result obtained.",
+      "new_questions": 0,
+      "approved": 0,
+      "corrections": 0,
+      "assigned_ids": [],
+      "pr": null,
+      "deploy": null,
+      "blockers": [
+        "Remaining extension blocks 017-026 and other extension files not yet audited",
+        "Full static catalog semantic comparison incomplete",
+        "Primary PDF not reopened during this run; do not homologate",
+        "No verified complete CI/merge/deploy controls"
+      ]
     }
   }
 }
