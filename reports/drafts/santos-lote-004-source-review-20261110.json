@@ -272,6 +272,52 @@
         "Semantic equivalence against full static catalogs and other extensions remains unverified"
       ],
       "next": "Retrieve primary book and perform record-level semantic deduplication before approving or numbering drafts."
+    },
+    "audit_20261110_2205": {
+      "method": "Read GitHub blob objects for main catalogs, parse all 4589 questions, compare each draft to all questions using normalized token-overlap cosine similarity (screening only)",
+      "catalogs": [
+        {
+          "path": "data/questions/manobrabilidade.json",
+          "count": 4089
+        },
+        {
+          "path": "data/pscpp/generated-questions.json",
+          "count": 500
+        }
+      ],
+      "drafts": [
+        "L04-DRAFT-01",
+        "L04-DRAFT-02",
+        "L04-DRAFT-03"
+      ],
+      "top_candidates": [
+        {
+          "draft": "L04-DRAFT-01",
+          "id": "MAN-NSH-C02-UC50-M3",
+          "score": 0.1993,
+          "reason": "General force/current resistance overlap; no confirmed equivalence"
+        },
+        {
+          "draft": "L04-DRAFT-02",
+          "id": "MAN-170",
+          "score": 0.303,
+          "reason": "Yaw moment overlap, but damping rather than current-depth response"
+        },
+        {
+          "draft": "L04-DRAFT-03",
+          "id": "MAN-160",
+          "score": 0.3586,
+          "reason": "Yaw moment overlap, but counter-rudder rather than current coefficient transferability"
+        }
+      ],
+      "result": "All 4589 catalog question stems screened; no definitive semantic deduplication (alternatives and full meanings require review). No direct primary PDF accessible in this run. Zero newly approved.",
+      "new_questions": 0,
+      "corrections": 0,
+      "approved": 0,
+      "pr": null,
+      "merge": null,
+      "deploy": null,
+      "remaining_to_target": 47
     }
   }
 }
