@@ -1065,6 +1065,75 @@
         "Two previously flagged unrelated question defects MAN-B022-12 and MAN-B026-08 still await primary-source-backed correction"
       ],
       "next": "Review option-level neighbors and all other extensions, then draft new source-verified distinct questions before any numbering or integration."
+    },
+    "audit_20261111_1910": {
+      "method": "Live GitHub checkpoint read and complete directory listing of data/question-extensions; checked current draft structure, source references and previously recorded validation status. Neon project list lookup attempted but returned no projects for weathered-mud search.",
+      "extension_inventory": {
+        "total_files": 42,
+        "santos_lots": [
+          "manobrabilidade-santos-lote-001.json",
+          "manobrabilidade-santos-lote-002.json",
+          "manobrabilidade-santos-lote-003.json"
+        ],
+        "pscpp_caderno_files": 26,
+        "other_extensions": [
+          "normam201-cap7-84.json",
+          "ripeam-expansao-01.json",
+          "ripeam-expansao-02.json",
+          "ripeam-expansao-03.json",
+          "ripeam-expansao-04.json",
+          "ripeam-expansao-05.json",
+          "ripeam-expansao-06.json",
+          "ripeam-expansao-07.json",
+          "ripeam-situacoes-01.json",
+          "ripeam-situacoes-02.json",
+          "ripeam-situacoes-03.json",
+          "ripeam-situacoes-04.json",
+          "ripeam-situacoes-05.json"
+        ]
+      },
+      "drafts_checked": [
+        {
+          "id": "L04-DRAFT-01",
+          "options": 5,
+          "key": "C",
+          "page": 155,
+          "section": "8.3.2.2",
+          "status": "primary-source-text-verified; pending active SQL duplicate audit"
+        },
+        {
+          "id": "L04-DRAFT-02",
+          "options": 5,
+          "key": "B",
+          "page": 156,
+          "section": "8.3.2.3",
+          "status": "primary-source-text-verified; pending active SQL duplicate audit"
+        },
+        {
+          "id": "L04-DRAFT-03",
+          "options": 5,
+          "key": "D",
+          "page": 156,
+          "section": "8.3.2.3",
+          "status": "primary-source-text-verified; pending active SQL duplicate audit"
+        }
+      ],
+      "finding": "Extension directory inventory is now enumerated: Santos 001–003, cadernos 001–026 and NORMAM201 cap7. Existing checkpoint documents partial comparisons of these sets, but no certified full semantic comparison with 4,589 static catalog questions. Previous primary-source verification is historical (17:03 checkpoint); no fresh primary page read in this run.",
+      "approved": 0,
+      "new_questions": 0,
+      "corrections": 0,
+      "ids_assigned": [],
+      "pr": null,
+      "ci": null,
+      "merge": null,
+      "deploy": null,
+      "remaining_to_target": 47,
+      "blockers": [
+        "Full semantic equivalence and alternatives comparison across static catalogs not certified",
+        "No new source-grounded questions beyond three draft candidates",
+        "Neon project lookup returned [] on this connection; SQL inventory cannot be refreshed"
+      ],
+      "next": "Use full-catalog semantic deduplication and source-backed editorial review; only then assign IDs and run branch/CI/PR/merge/deploy."
     }
   }
 }
