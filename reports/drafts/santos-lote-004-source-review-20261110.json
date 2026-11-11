@@ -918,6 +918,45 @@
         "Full alternatives and all remaining extensions/catalog semantic audit incomplete",
         "No verified integration gates or deployment"
       ]
+    },
+    "audit_20261111_1603": {
+      "method": "Full record review of MAN-B022-12 and MAN-B026-08 in caderno 022 and 026 (question, all options, key, explanation, source metadata); no primary Bertram/Crenshaw book pages retrieved.",
+      "reviewed_ids": [
+        "MAN-B022-12",
+        "MAN-B026-08"
+      ],
+      "findings": [
+        {
+          "id": "MAN-B022-12",
+          "status": "confirmed internal inconsistency",
+          "detail": "I claims lateral wind force acts only below waterline; false. Key D endorses I, II, III; none of A-E offers II and III alone. Cannot fix solely by changing answer key; needs source-backed rewriting."
+        },
+        {
+          "id": "MAN-B026-08",
+          "status": "confirmed internal conceptual defect",
+          "detail": "Options B and C and keyed explanation define course changing as stopping straight ahead. B marked correct, but definition describes stopping ability; no valid option jointly covers CFD and course changing. Needs source-backed revision of question/options/key/comment."
+        }
+      ],
+      "action": "Flagged only; no mutation of approved records without book-based verification. Draft Santos questions remain unapproved and unnumbered.",
+      "candidate_ids": [
+        "L04-DRAFT-01",
+        "L04-DRAFT-02",
+        "L04-DRAFT-03"
+      ],
+      "new_questions": 0,
+      "approved": 0,
+      "corrections_applied": 0,
+      "permanent_ids": [],
+      "pr": null,
+      "ci": null,
+      "merge": null,
+      "deploy": null,
+      "remaining_to_target": 47,
+      "blockers": [
+        "Direct Santos pages 155-156 not rechecked",
+        "Full semantic comparison with other extensions/catalogs incomplete",
+        "Bertram and Crenshaw source pages unavailable for safe corrections"
+      ]
     }
   }
 }
