@@ -957,6 +957,44 @@
         "Full semantic comparison with other extensions/catalogs incomplete",
         "Bertram and Crenshaw source pages unavailable for safe corrections"
       ]
+    },
+    "audit_20261111_1703": {
+      "method": "Direct primary OCR PDF read via user file library, pages 155-156 of 239; compared all three draft stems, A-E alternatives, answer keys, explanations and page locators against sections 8.3.2.2 and 8.3.2.3.",
+      "source": "SANTOS, Edson Mesquita dos, A Manobrabilidade do Navio no Século 21, PDF pages 155-156, printed pages 162-163",
+      "reviewed_ids": [
+        "L04-DRAFT-01",
+        "L04-DRAFT-02",
+        "L04-DRAFT-03"
+      ],
+      "findings": [
+        {
+          "id": "L04-DRAFT-01",
+          "result": "source supports C; lateral force maximum at beam for loaded tanker/bulk carrier; p.155"
+        },
+        {
+          "id": "L04-DRAFT-02",
+          "result": "source supports B for loaded vessels; peaks grow and approach bow/stern as depth decreases; p.156; ballast case explicitly differs"
+        },
+        {
+          "id": "L04-DRAFT-03",
+          "result": "source supports D; vessel-type-specific unique coefficient curves and nonlinear current response; p.156"
+        }
+      ],
+      "source_verified_count": 3,
+      "editorial_corrections_applied": 0,
+      "new_questions": 0,
+      "approved": 0,
+      "permanent_ids": [],
+      "remaining_to_target": 47,
+      "blockers": [
+        "Full semantic comparison with remaining extensions and static catalog not certified",
+        "No new 47 questions individually verified or prepared",
+        "No CI, PR or deployment gates reached"
+      ],
+      "pr": null,
+      "ci": null,
+      "merge": null,
+      "deploy": null
     }
   }
 }
