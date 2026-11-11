@@ -468,6 +468,46 @@
         "No fresh primary-page read during this run; previous source validation remains recorded"
       ],
       "next": "Audit extension records and semantic overlaps before assigning IDs; source-verify further questions before authoring."
+    },
+    "audit_20261111_0412": {
+      "method": "Re-fetched all three approved Santos extension lots (001-003) from GitHub; parsed 150 records and checked 150 unique IDs; normalized stem+explanation token overlap for all three lot-004 drafts against all 150 previous questions.",
+      "compared_prior": 150,
+      "unique_prior_ids": 150,
+      "screened_pairs": 450,
+      "nearest": [
+        {
+          "draft": "L04-DRAFT-01",
+          "id": "MSN21-REV-035",
+          "score": 0.3233,
+          "assessment": "Current abeam and depth/draft overlap; previous asks longitudinal tendency, draft asks lateral force maximum; needs complete conceptual cross-check."
+        },
+        {
+          "draft": "L04-DRAFT-02",
+          "id": "MSN21-REV-035",
+          "score": 0.2731,
+          "assessment": "Shared current and depth/draft context, different requested outcome: yaw-moment peak trend."
+        },
+        {
+          "draft": "L04-DRAFT-03",
+          "id": "MSN21-REV-077",
+          "score": 0.1929,
+          "assessment": "Shared loaded tanker/coefficient terminology; previous concerns wind longitudinal tendency, draft concerns transferability of current coefficients."
+        }
+      ],
+      "result": "No exact ID collision within 150 previous items. Lexical ranking is screening, not a semantic uniqueness certification. Prior primary source verification preserved, not repeated this run.",
+      "new_questions": 0,
+      "approved": 0,
+      "corrections": 0,
+      "assigned_ids": [],
+      "pr": null,
+      "merge": null,
+      "deploy": null,
+      "remaining_to_target": 47,
+      "blockers": [
+        "Full semantic review of other extensions and static catalogs not complete",
+        "No new primary-source page validation for additional question authoring"
+      ],
+      "next": "Inspect remaining 39 extension files and their near neighbors; resolve full conceptual duplication gate before IDs, CI, PR and deploy."
     }
   }
 }
