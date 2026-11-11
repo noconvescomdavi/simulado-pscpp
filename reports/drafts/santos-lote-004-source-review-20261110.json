@@ -761,6 +761,30 @@
         "No fresh direct source PDF page verification in this run"
       ],
       "next": "Audit blocks 021-026 and remaining extensions; review options of related records, recheck primary PDF, then approve and integrate only validated nonduplicates."
+    },
+    "audit_20261111_1206": {
+      "cadernos_examined": "021–026",
+      "records": 420,
+      "manobrabilidade": 78,
+      "full_records_compared": [
+        "MAN-B022-02",
+        "MAN-B022-12"
+      ],
+      "finding": "MAN-B022-12 has false assertion I (wind lateral force acts only below waterline), yet marked D (I,II,III) and explanation claims I true; no option II and III only. Flag for source-backed repair; do not change published question without verification.",
+      "drafts": [
+        "L04-DRAFT-01",
+        "L04-DRAFT-02",
+        "L04-DRAFT-03"
+      ],
+      "approved": 0,
+      "new_questions": 0,
+      "corrections": 0,
+      "ids": [],
+      "pr": null,
+      "merge": null,
+      "deploy": null,
+      "remaining": 47,
+      "pending": "Other extensions and static catalog semantic checks; primary Santos PDF recheck; Crenshaw primary review for flagged defect"
     }
   }
 }
