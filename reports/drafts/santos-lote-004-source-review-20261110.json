@@ -541,6 +541,34 @@
         "Primary PDF not retrieved in this run; earlier page-level verification retained as historical evidence"
       ],
       "next": "Audit remaining extensions and primary PDF; only then homologate and integrate."
+    },
+    "audit_20261111_0610": {
+      "method": "Live Neon read-only join syllabus_topics to syllabus_topic_sources, plus GitHub draft checkpoint inspection",
+      "topic_code": "8.10.2.1.1",
+      "topic_title": "Os coeficientes da força de corrente para navios-petroleiros",
+      "neon_topic_source_links": 0,
+      "neon_reviewed_source_links": 0,
+      "neon_primary_source_links": 0,
+      "interpretation": "Neon does not contain bibliographic source mappings for this syllabus topic; this does not invalidate historical PDF page checks, but prevents using SQL mappings as independent source verification.",
+      "candidate_ids": [
+        "L04-DRAFT-01",
+        "L04-DRAFT-02",
+        "L04-DRAFT-03"
+      ],
+      "new_questions": 0,
+      "approved": 0,
+      "corrections": 0,
+      "assigned_ids": [],
+      "pr": null,
+      "merge": null,
+      "deploy": null,
+      "remaining_to_target": 47,
+      "blockers": [
+        "No SQL syllabus_topic_sources mapping for 8.10.2.1.1",
+        "Semantic duplicate audit of 39 other extensions and 4589 static catalog records remains incomplete",
+        "No fresh primary PDF page inspection in this run"
+      ],
+      "next": "Locate primary PDF and source mappings; finish extension-level deduplication before homologation or deployment."
     }
   }
 }
