@@ -569,6 +569,45 @@
         "No fresh primary PDF page inspection in this run"
       ],
       "next": "Locate primary PDF and source mappings; finish extension-level deduplication before homologation or deployment."
+    },
+    "audit_20261111_0703": {
+      "method": "Live GitHub checkpoint read, full directory listing of question-extensions, direct parsing of PSCPP caderno blocks 001-003, and Neon read-only bibliography mapping count",
+      "extension_inventory": {
+        "total_files": 42,
+        "santos_files": 3,
+        "other_files": 39,
+        "caderno_files": 26,
+        "ripeam_expansao_files": 7,
+        "ripeam_situacoes_files": 5,
+        "normam_files": 1
+      },
+      "additional_files_parsed": [
+        "pscpp-caderno-bloco-001.json",
+        "pscpp-caderno-bloco-002.json",
+        "pscpp-caderno-bloco-003.json"
+      ],
+      "additional_records_parsed": 210,
+      "additional_manobrabilidade_records_by_metadata": 39,
+      "neon_syllabus_source_links_total": 0,
+      "limitations": [
+        "Attempt to batch-read remaining 39 extensions exceeded connector call limit; no full semantic duplicate review can be claimed",
+        "No fresh direct primary PDF page validation",
+        "Neon global syllabus_topic_sources count is zero, so database mapping cannot certify book references"
+      ],
+      "candidate_ids": [
+        "L04-DRAFT-01",
+        "L04-DRAFT-02",
+        "L04-DRAFT-03"
+      ],
+      "new_questions": 0,
+      "approved": 0,
+      "corrections": 0,
+      "assigned_ids": [],
+      "pr": null,
+      "merge": null,
+      "deploy": null,
+      "remaining_to_target": 47,
+      "next": "Complete per-file semantic comparison of remaining extensions and static catalogs; re-open book pages; only then assign IDs, test and integrate."
     }
   }
 }
