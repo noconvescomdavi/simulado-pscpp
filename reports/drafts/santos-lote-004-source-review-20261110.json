@@ -720,6 +720,47 @@
         "Primary PDF not reopened during this run; do not homologate",
         "No verified complete CI/merge/deploy controls"
       ]
+    },
+    "audit_20261111_1108": {
+      "method": "Fetched and parsed full GitHub question-extension caderno blocks 017-020 on draft branch; filtered discipline Manobrabilidade and inspected stems/comments of keyword-matched entries.",
+      "files": [
+        "data/question-extensions/pscpp-caderno-bloco-017.json",
+        "data/question-extensions/pscpp-caderno-bloco-018.json",
+        "data/question-extensions/pscpp-caderno-bloco-019.json",
+        "data/question-extensions/pscpp-caderno-bloco-020.json"
+      ],
+      "total_questions": 280,
+      "manobrabilidade_questions": 52,
+      "keyword_matched_records": [
+        "MAN-B017-08",
+        "MAN-B017-13",
+        "MAN-B018-05",
+        "MAN-B019-02",
+        "MAN-B020-05",
+        "MAN-B020-06",
+        "MAN-B020-13"
+      ],
+      "assessment": "Seven keyword-matched records involve general yaw, current, or shallow-water topics, but stems/comments concern Crenshaw or IMO manoeuvring criteria and do not directly reproduce Santos drafts on maximum lateral current force, yaw-moment peaks with h/T, or ship-specific nonlinear coefficients. Alternatives and answer keys of these seven were not checked in this run, so semantic exclusion remains preliminary.",
+      "candidate_ids": [
+        "L04-DRAFT-01",
+        "L04-DRAFT-02",
+        "L04-DRAFT-03"
+      ],
+      "new_questions": 0,
+      "new_approvals": 0,
+      "new_corrections": 0,
+      "assigned_ids": [],
+      "pr": null,
+      "ci": null,
+      "merge": null,
+      "deploy": null,
+      "remaining_to_target": 47,
+      "blockers": [
+        "Blocks 021-026 and other extensions not yet fully reviewed",
+        "Full static catalog semantic uniqueness unproven",
+        "No fresh direct source PDF page verification in this run"
+      ],
+      "next": "Audit blocks 021-026 and remaining extensions; review options of related records, recheck primary PDF, then approve and integrate only validated nonduplicates."
     }
   }
 }
