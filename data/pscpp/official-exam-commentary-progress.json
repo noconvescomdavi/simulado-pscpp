@@ -756,8 +756,28 @@
           "year": 2006,
           "number": 56,
           "original_correct_answer": "B",
-          "status": "pending_bibliographic_verification",
-          "commentary_status": "not_started"
+          "status": "bibliography_verified",
+          "commentary_status": "draft_verified_pending_integration",
+          "review_note": "Confronto direto com fac-símile da prova PSCPP 2006, p. 27 (questão 56), que assinala B, e Lewis (ed.), Principles of Naval Architecture, Second Revision, Vol. III, 1988/1989, seção 10.9, p. 263 impressa. O critério é velocidade a ré após percorrer UM comprimento de navio ao sair da vaga; não fixa velocidade numérica universal, pois depende da experiência e hidrografia local. Excluir A/C/D/E porque 0,5/2/3/4 comprimentos não correspondem ao critério explicitamente descrito. Trecho curto fiel do OCR confrontado. Pendente integração ao banco e testes da aplicação; sem homologação final.",
+          "correct_reason": "B: a referência estabelece a velocidade a ré atingida depois de percorrer um comprimento do navio como critério adequado para avaliar a capacidade de marcha a ré na saída de uma vaga.",
+          "incorrect_reasons_by_option": {
+            "A": "Meio comprimento não é a distância citada por Chase na passagem consultada.",
+            "C": "Dois comprimentos não correspondem à distância indicada.",
+            "D": "Três comprimentos não correspondem à distância indicada.",
+            "E": "Quatro comprimentos não correspondem à distância indicada."
+          },
+          "bibliography_author": "LEWIS, Edward V. (editor); capítulo que cita Chase et al. (1957)",
+          "bibliography_title": "Principles of Naval Architecture, Volume III: Motions in Waves and Controllability",
+          "bibliography_edition": "Second Revision, SNAME, volume III (copyright 1989; edição catalogada como 1988)",
+          "bibliography_page": "263 (paginação impressa), seção 10.9, Backing Times, Distances, and Velocities",
+          "verified_short_excerpt": "the astern speed achieved after the ship has traveled one ship length may be an adequate criterion",
+          "source_verification": {
+            "original_exam_url": "https://drive.google.com/file/d/1p7UL_pWG2ZdvOpg9DBI8uf80b_NSvCe7/view",
+            "original_exam_locator": "PSCPP 2006, questão 56, página impressa 27; alternativa (b) marcada (X)",
+            "bibliography_url": "https://drive.google.com/file/d/1Za6N1Cbbo6v_ZZ-g1UxFWQ82SLsMrOjp/view",
+            "bibliography_locator": "Seção 10.9, p. 263; texto extraído da obra disponível no Google Drive",
+            "verification_date": "2026-11-11"
+          }
         },
         {
           "id": "pscpp::official::2006::057",
@@ -2438,5 +2458,5 @@
       ]
     }
   ],
-  "bibliographically_verified": 28
+  "bibliographically_verified": 29
 }
