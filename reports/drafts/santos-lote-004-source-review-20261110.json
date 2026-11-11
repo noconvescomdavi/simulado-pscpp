@@ -785,6 +785,43 @@
       "deploy": null,
       "remaining": 47,
       "pending": "Other extensions and static catalog semantic checks; primary Santos PDF recheck; Crenshaw primary review for flagged defect"
+    },
+    "audit_20261111_1306": {
+      "method": "Direct read of complete seven flagged records in caderno blocks 017–020, including stems, five alternatives, keys, explanations, and source metadata; compare question objectives with three Santos draft candidates.",
+      "reviewed_ids": [
+        "MAN-B017-08",
+        "MAN-B017-13",
+        "MAN-B018-05",
+        "MAN-B019-02",
+        "MAN-B020-05",
+        "MAN-B020-06",
+        "MAN-B020-13"
+      ],
+      "structural_findings": "All seven records have five labeled A–E alternatives, valid answer keys and explanatory text; sources are Crenshaw or IMO, not Santos.",
+      "semantic_findings": "No direct conceptual duplication with Santos draft topics of maximum lateral current force on loaded tankers, yaw-moment peak changes with h/T, and non-transferability of vessel-specific current coefficients. The seven records focus on stopping, ship interaction, shallow-water turning, IMO manoeuvring criteria or zigzag tests.",
+      "confirmed_direct_duplicates": 0,
+      "scope_limit": "Only these seven records fully compared in this run; other extension records and full semantic catalog audit still incomplete. Primary Santos OCR pages not re-opened.",
+      "candidate_ids": [
+        "L04-DRAFT-01",
+        "L04-DRAFT-02",
+        "L04-DRAFT-03"
+      ],
+      "new_questions": 0,
+      "approved": 0,
+      "corrections": 0,
+      "permanent_ids": [],
+      "pr": null,
+      "ci": null,
+      "merge": null,
+      "deploy": null,
+      "remaining_to_target": 47,
+      "additional_issue": "Previously flagged MAN-B022-12 still requires Crenshaw source verification and editorial repair; no modification made.",
+      "database": "Read-only Neon public schema inventory reconfirmed: no standalone master questions text table; repository static catalogs remain authoritative for semantic deduplication.",
+      "blockers": [
+        "Full conceptual review of remaining extensions and static catalogs",
+        "Direct primary source PDF page verification",
+        "Tests and deployment controls not reached because no approved new items"
+      ]
     }
   }
 }
