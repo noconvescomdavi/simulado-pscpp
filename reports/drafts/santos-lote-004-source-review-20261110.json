@@ -995,6 +995,76 @@
       "ci": null,
       "merge": null,
       "deploy": null
+    },
+    "audit_20261111_1803": {
+      "method": "Live Neon information_schema read and complete retrieval of 150 Santos extension questions (lots 001-003); normalized token cosine similarity screen against three draft stems and explanations. No direct primary-source read this run; prior page verification retained as historical evidence only.",
+      "database": "Neon weathered-mud-33091087 reachable; public table inventory includes question_answers, question_stats, question_notebooks, syllabus_topic_sources; no dedicated master question text table identified.",
+      "prior_santos_records": 150,
+      "top_neighbors": {
+        "L04-DRAFT-01": [
+          [
+            "MSN21-REV-035",
+            0.232
+          ],
+          [
+            "MSN21-REV-077",
+            0.204
+          ],
+          [
+            "MSN21-REV-082",
+            0.187
+          ]
+        ],
+        "L04-DRAFT-02": [
+          [
+            "MSN21-REV-035",
+            0.256
+          ],
+          [
+            "MSN21-REV-082",
+            0.247
+          ],
+          [
+            "MSN21-REV-037",
+            0.196
+          ]
+        ],
+        "L04-DRAFT-03": [
+          [
+            "MSN21-REV-077",
+            0.147
+          ],
+          [
+            "MSN21-REV-066",
+            0.125
+          ],
+          [
+            "MSN21-REV-026",
+            0.102
+          ]
+        ]
+      },
+      "finding": "No identical learning objective obvious in closest Santos extension stems. Similarity screening cannot certify absence of conceptual duplication in full alternatives or other extensions and catalogs.",
+      "candidate_ids": [
+        "L04-DRAFT-01",
+        "L04-DRAFT-02",
+        "L04-DRAFT-03"
+      ],
+      "new_questions": 0,
+      "approved": 0,
+      "corrections": 0,
+      "permanent_ids": [],
+      "remaining_to_target": 47,
+      "pr": null,
+      "ci": null,
+      "merge": null,
+      "deploy": null,
+      "blockers": [
+        "Full semantic audit of other extensions and main catalogs incomplete",
+        "No direct source verification of additional questions in this run",
+        "Two previously flagged unrelated question defects MAN-B022-12 and MAN-B026-08 still await primary-source-backed correction"
+      ],
+      "next": "Review option-level neighbors and all other extensions, then draft new source-verified distinct questions before any numbering or integration."
     }
   }
 }
