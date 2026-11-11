@@ -338,6 +338,51 @@
       "deploy": null,
       "remaining_to_target": 47,
       "next": "Obtain original Santos OCR pages 155–156; retrieve full catalog blob and compare alternatives and explanations, then produce additional sourced questions."
+    },
+    "audit_20261111_0008": {
+      "method": "Located original 112364929-byte Santos OCR PDF in ChatGPT Library; direct read of PDF pages 155-157 (printed 162-164) and compared all 3 draft question stems, five options, answers and comments against sections 8.3.2.2-8.3.2.3.",
+      "primary_source": {
+        "file": "Manobrabilidade_do_Navio_no_Seculo_21_OCR.pdf",
+        "library_file_id": "libfile_fd17d758c4dc81919dc62b7907afbecf",
+        "pdf_pages": [
+          155,
+          156
+        ],
+        "printed_pages": [
+          162,
+          163
+        ]
+      },
+      "candidate_reviews": [
+        {
+          "id": "L04-DRAFT-01",
+          "answer": "C",
+          "result": "Source confirms maximum lateral force with current abeam for loaded tanker/bulk carrier; five alternatives checked; retains draft status pending catalog semantic audit"
+        },
+        {
+          "id": "L04-DRAFT-02",
+          "answer": "B",
+          "result": "Source confirms peaks increase and approach bow/stern as depth decreases for loaded vessel; distinct ballast behavior explicitly noted; five alternatives checked; retains draft status"
+        },
+        {
+          "id": "L04-DRAFT-03",
+          "answer": "D",
+          "result": "Source explicitly states each ship type has unique coefficients and current response complex/nonlinear; five alternatives checked; retains draft status"
+        }
+      ],
+      "new_questions": 0,
+      "approved": 0,
+      "corrections": 0,
+      "ids_assigned": [],
+      "remaining_to_target": 47,
+      "pr": null,
+      "merge": null,
+      "deploy": null,
+      "blockers": [
+        "Semantic equivalence review across 4589 static catalog records and other extensions remains incomplete; do not assign definitive IDs or integrate before resolving.",
+        "No CI or deployment attempted because draft approval gates remain unmet."
+      ],
+      "next": "Inspect all nearest semantic neighbors including options/explanations, other extension files and current catalog state, then homologate only nonduplicates and continue page-verified authoring."
     }
   }
 }
