@@ -608,6 +608,48 @@
       "deploy": null,
       "remaining_to_target": 47,
       "next": "Complete per-file semantic comparison of remaining extensions and static catalogs; re-open book pages; only then assign IDs, test and integrate."
+    },
+    "audit_20261111_0809": {
+      "method": "Direct GitHub fetch and JSON parse of caderno extension blocks 004–010; metadata/keyword screening for Santos draft topical overlap; live Neon source mapping count.",
+      "files": [
+        "pscpp-caderno-bloco-004.json",
+        "pscpp-caderno-bloco-005.json",
+        "pscpp-caderno-bloco-006.json",
+        "pscpp-caderno-bloco-007.json",
+        "pscpp-caderno-bloco-008.json",
+        "pscpp-caderno-bloco-009.json",
+        "pscpp-caderno-bloco-010.json"
+      ],
+      "records_examined": 490,
+      "manobrabilidade_records": 91,
+      "related_candidates": [
+        {
+          "id": "MAN-B007-02",
+          "module": "corrente sobre o casco",
+          "source": "[object Object]"
+        },
+        {
+          "id": "MAN-B007-12",
+          "module": "força lateral de vento",
+          "source": "[object Object]"
+        },
+        {
+          "id": "MAN-B007-13",
+          "module": "efeito do leme na resistência",
+          "source": "[object Object]"
+        }
+      ],
+      "neon_syllabus_topic_sources_total": 0,
+      "scope": "Keyword screening, not semantic equivalence or primary-source validation",
+      "new_questions": 0,
+      "approved": 0,
+      "corrections": 0,
+      "assigned_ids": [],
+      "pr": null,
+      "merge": null,
+      "deploy": null,
+      "remaining_to_target": 47,
+      "next": "Inspect related candidates' complete alternatives and comments; finish remaining extensions and catalog-level semantic audit; reopen primary source."
     }
   }
 }
