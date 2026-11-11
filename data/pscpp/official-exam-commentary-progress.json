@@ -684,8 +684,37 @@
           "year": 2006,
           "number": 54,
           "original_correct_answer": "D",
-          "status": "pending_bibliographic_verification",
-          "commentary_status": "not_started"
+          "status": "bibliography_verified",
+          "commentary_status": "draft_verified_pending_integration",
+          "correct_reason": "D: somente III é verdadeira. Para hélice dextrógira em marcha avante, Crenshaw afirma que o efeito de imersão rasa desloca a popa para boreste e faz o navio guinar para bombordo.",
+          "incorrect_reasons_by_option": {
+            "A": "Inclui I e II, falsas: esteira desloca popa para bombordo; inclinação tende a torcer o navio para bombordo.",
+            "B": "Inclui II, falsa: efeito de inclinação produz momento para bombordo.",
+            "C": "Inclui I e IV, ambas falsas: a esteira tende à guinada para boreste, enquanto a descarga helicoidal tende à guinada para bombordo.",
+            "E": "I é falsa: inverte o bordo do deslocamento da popa e da guinada."
+          },
+          "bibliography": {
+            "author": "CRENSHAW, R. S., Jr.",
+            "title": "Naval Shiphandling",
+            "edition": "Fourth Edition (copyright 1975)",
+            "page": "pp. 22–24 (paginação impressa)",
+            "verified_short_excerpts": [
+              "tending to move the stern to port and cause the ship to veer to the right.",
+              "a torque tending to twist the ship to the left.",
+              "to tend to turn the ship to the left.",
+              "to move the stern to starboard and cause the ship to veer to the left."
+            ],
+            "url": "https://drive.google.com/file/d/1Zymbk_t99_IUAHNyoNrcCWCkBLwIX8Ok/view"
+          },
+          "source_verification": {
+            "original_exam": "https://drive.google.com/file/d/1p7UL_pWG2ZdvOpg9DBI8uf80b_NSvCe7/view",
+            "original_answer": "D",
+            "original_exam_page": "página impressa 26 (questão 54)",
+            "bibliography_verified": true,
+            "original_text_verified": true,
+            "notes": "Texto da prova original e marcação (X) da alternativa D confrontados com o PDF; trechos bibliográficos confrontados diretamente com OCR da 4ª edição, páginas impressas 22–24. Pendente revisão editorial e integração ao banco."
+          },
+          "review_note": "2026-11-11: conferidos texto integral da questão 54 e alternativa D assinalada no PDF da prova 2006; Crenshaw 4ª ed., pp.22–24, confirma I falsa, II falsa, III verdadeira, IV falsa. Comentário completo registrado; integração/homologação final ainda pendentes."
         },
         {
           "id": "pscpp::official::2006::055",
@@ -2382,5 +2411,5 @@
       ]
     }
   ],
-  "bibliographically_verified": 26
+  "bibliographically_verified": 27
 }
