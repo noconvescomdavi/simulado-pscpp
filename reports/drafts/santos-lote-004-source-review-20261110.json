@@ -318,6 +318,26 @@
       "merge": null,
       "deploy": null,
       "remaining_to_target": 47
+    },
+    "audit_20261110_2307": {
+      "method": "Read current draft checkpoint on GitHub; inspect live Neon public tables; search Library for primary OCR; attempt bounded catalog read and targeted GitHub index lookup",
+      "verified": {
+        "drafts_present": 3,
+        "primary_pdf_accessible": false,
+        "neon_master_question_table_found": false,
+        "bounded_catalog_read": "empty response",
+        "github_index_lookup": "no matches for three candidate IDs"
+      },
+      "status": "No new primary-source page validation or complete semantic deduplication; retain drafts unapproved",
+      "new_questions": 0,
+      "approved": 0,
+      "corrections": 0,
+      "assigned_ids": [],
+      "pr": null,
+      "merge": null,
+      "deploy": null,
+      "remaining_to_target": 47,
+      "next": "Obtain original Santos OCR pages 155–156; retrieve full catalog blob and compare alternatives and explanations, then produce additional sourced questions."
     }
   }
 }
