@@ -383,6 +383,45 @@
         "No CI or deployment attempted because draft approval gates remain unmet."
       ],
       "next": "Inspect all nearest semantic neighbors including options/explanations, other extension files and current catalog state, then homologate only nonduplicates and continue page-verified authoring."
+    },
+    "audit_20261111_0108": {
+      "method": "Live Neon information_schema table inventory; GitHub fetch_blob and parse of main catalog (4089) and generated catalog (500); full record-level inspection of four nearest previously flagged catalog entries including alternatives, answers, explanations and bibliography.",
+      "catalog_counts": {
+        "main": 4089,
+        "generated": 500
+      },
+      "neighbor_reviews": [
+        {
+          "id": "MAN-NSH-C02-UC50-M2",
+          "draft": "L04-DRAFT-01",
+          "finding": "Crenshaw comparison of bow versus abeam hull resistance; Santos draft specifically identifies maximum lateral-force coefficient for loaded tankers/bulk carriers; adjacent but not identical learning objective."
+        },
+        {
+          "id": "MAN-NSH-C02-UC50-M3",
+          "draft": "L04-DRAFT-01",
+          "finding": "Crenshaw true/false item about propulsion, quadratic current resistance, water/air density, and relative resistance abeam; not the Santos loaded-tanker lateral-force peak question."
+        },
+        {
+          "id": "MAN-170",
+          "draft": "L04-DRAFT-02",
+          "finding": "IMO yaw-rate damping/stabilizing moment, not the Santos current-induced yaw moment peaks as depth/draft ratio decreases."
+        },
+        {
+          "id": "MAN-160",
+          "draft": "L04-DRAFT-03",
+          "finding": "IMO counter-rudder response to starboard yaw, not vessel-specific nonlinear current coefficients."
+        }
+      ],
+      "conclusion": "Four flagged neighbors excluded as direct duplicates after full-record inspection. This is not a guarantee of uniqueness against all 4589 records and all extensions. Three drafts remain pending final semantic approval; no final IDs or publication.",
+      "database": "Live Neon public schema contains question_answers, question_stats, question_notebooks but no standalone master questions table.",
+      "new_questions": 0,
+      "approved": 0,
+      "corrections": 0,
+      "ids_assigned": [],
+      "pr": null,
+      "merge": null,
+      "deploy": null,
+      "next": "Inspect other high-similarity candidates and all extension files; only then assign IDs and run tests."
     }
   }
 }
