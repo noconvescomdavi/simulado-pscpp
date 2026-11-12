@@ -1354,6 +1354,65 @@
         "Fresh page-level primary source inspection for additional questions not completed"
       ],
       "next": "Use repository catalog full-text semantic comparisons and primary OCR before approval; database project is queryable by explicit ID."
+    },
+    "audit_20261112_0103": {
+      "method": "Read live GitHub draft checkpoint and executed read-only Neon SQL against both question_answers and question_stats with explicit project ID; verified three draft records remain unapproved.",
+      "database_project": "weathered-mud-33091087",
+      "database_counts": {
+        "question_answers": 561,
+        "question_answers_santos_ids": 0,
+        "question_stats": 527,
+        "question_stats_santos_ids": 0
+      },
+      "interpretation": "These are user-response/statistics tables, not the canonical question catalog. Zero MSN21 references does not prove absence from deployed static files or uniqueness.",
+      "draft_ids": [
+        "L04-DRAFT-01",
+        "L04-DRAFT-02",
+        "L04-DRAFT-03"
+      ],
+      "draft_structure": [
+        {
+          "id": "L04-DRAFT-01",
+          "alternatives": 5,
+          "keys": "ABCDE",
+          "answer": "C",
+          "has_explanation": true,
+          "source_page": 155,
+          "valid": true
+        },
+        {
+          "id": "L04-DRAFT-02",
+          "alternatives": 5,
+          "keys": "ABCDE",
+          "answer": "B",
+          "has_explanation": true,
+          "source_page": 156,
+          "valid": true
+        },
+        {
+          "id": "L04-DRAFT-03",
+          "alternatives": 5,
+          "keys": "ABCDE",
+          "answer": "D",
+          "has_explanation": true,
+          "source_page": 156,
+          "valid": true
+        }
+      ],
+      "new_questions": 0,
+      "approved": 0,
+      "corrections": 0,
+      "assigned_ids": [],
+      "pr": null,
+      "ci": null,
+      "merge": null,
+      "deploy": null,
+      "remaining_to_target": 47,
+      "blockers": [
+        "Full semantic duplicate audit against canonical repository catalogs and extensions remains unverified",
+        "No fresh direct source-page examination for additional questions; do not invent content or approve"
+      ],
+      "next": "Inspect source PDF and complete semantic comparison; only then assign IDs and test integration."
     }
   }
 }
