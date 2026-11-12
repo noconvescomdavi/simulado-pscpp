@@ -1,0 +1,47 @@
+{
+  "title": "PSCPP Santos lote 004 — confronto conceitual prioritário",
+  "date": "2026-11-12",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261112-1904.json",
+  "scope": "Leitura integral de três questões existentes no GitHub e comparação conceitual com as três candidatas; não é auditoria global nem nova conferência bibliográfica",
+  "reviewed_existing_ids": [
+    "MAN-B007-02",
+    "MAN-B007-12",
+    "MSN21-REV-035"
+  ],
+  "findings": [
+    {
+      "id": "MAN-B007-02",
+      "result": "Força hidrodinâmica da corrente e densidade da água; não equivale aos coeficientes específicos e força lateral máxima em navio carregado."
+    },
+    {
+      "id": "MAN-B007-12",
+      "result": "Assertivas de vento, resistência do leme e corrente; não reproduz objetivos específicos das candidatas."
+    },
+    {
+      "id": "MSN21-REV-035",
+      "result": "Movimento longitudinal para vante sob corrente pelo través; não equivale à força lateral máxima da candidata 01."
+    }
+  ],
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "candidates": 3,
+  "new_questions": 0,
+  "new_approved": 0,
+  "corrections_applied": 0,
+  "definitive_ids": [],
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "production_deploy": null,
+  "pending": [
+    "Recuperar PDF primário e cotejar páginas das questões que ainda exigem revisão",
+    "Concluir auditoria semântica dos demais catálogos e extensões",
+    "Verificar 50 questões preexistentes e o estado de homologação frente aos lotes 001–003 já integrados",
+    "Revisar inconsistência MAN-B022-12 com fonte primária",
+    "Produzir somente novas questões fundamentadas após controle de duplicidades"
+  ]
+}
