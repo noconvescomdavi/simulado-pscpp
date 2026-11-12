@@ -1,0 +1,36 @@
+{
+  "title": "Santos lote 004 — verificação de continuidade e inventário",
+  "date": "2026-11-12",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261112-1209.json",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "verified_existing_block": "data/question-extensions/pscpp-caderno-bloco-018.json",
+  "missing_paths": [
+    "data/question-extensions/pscpp-caderno-bloco-19.json",
+    "data/question-extensions/pscpp-caderno-bloco-20.json",
+    "data/question-extensions/pscpp-caderno-bloco-21.json"
+  ],
+  "missing_path_result": "GitHub fetch_file 404 on specified draft branch; cannot infer files 022–026 exist",
+  "database": "Neon shy-firefly-80833334",
+  "database_findings": "public.question_answers and question_stats store question IDs and user response statistics, not question stems; public.question_notebooks stores question_refs, not complete question catalog. public.library_documents and library_chunks may store bibliographic content but have not been matched to this book.",
+  "existing_published_santos": "GitHub default-branch commits indicate batches 001–003 with 50 questions each, IDs MSN21-REV-001..150; not independently reaudited",
+  "draft_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "new_questions": 0,
+  "approved": 0,
+  "corrections": 0,
+  "definitive_ids": [],
+  "remaining_to_target": 47,
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "production_deploy": null,
+  "limitations": [
+    "Missing next block paths prevent continuing sequential block audit as previously described",
+    "18 keyword matches in blocks 007–009 still need semantic review",
+    "Full question corpus and primary source pages not reverified in this run"
+  ],
+  "next": "Locate actual remaining extension file paths and retrieve candidate content, then inspect source pages and compare semantic duplicates before assigning IDs."
+}
