@@ -1,0 +1,45 @@
+{
+  "title": "PSCPP Santos lote 004 — reconciliação Library L01 vs GitHub main",
+  "date": "2026-11-12",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "prior_checkpoint": "reports/drafts/santos-lote-004-audit-20261112-priority-comparison.json",
+  "source_library": "PSCPP_Manobrabilidade_Santos_Lote01_50questoes.json",
+  "source_repo": "data/question-extensions/manobrabilidade-santos-lote-001.json",
+  "repo_ref": "main",
+  "library_count": 50,
+  "repository_count": 50,
+  "ids_identical": 50,
+  "exact_match_stem_options_answer_page": 46,
+  "stem_differences": [
+    "MSN21-REV-014",
+    "MSN21-REV-016",
+    "MSN21-REV-026",
+    "MSN21-REV-044"
+  ],
+  "answer_differences": 0,
+  "option_differences": 0,
+  "page_differences": 0,
+  "library_status": "PENDENTE_HOMOLOGACAO",
+  "repository_status": "approved",
+  "interpretation": "Library file is an earlier draft of existing L01, not a separate unnumbered batch; do not duplicate IDs or downgrade GitHub approval based solely on stale Library status.",
+  "database": "Neon shy-firefly-80833334 public tables enumerated; no master question-stem table; SQL-only semantic deduplication impossible.",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "new_questions": 0,
+  "approved": 0,
+  "corrections": 0,
+  "final_ids": [],
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "deploy": null,
+  "blockers": [
+    "Primary Santos OCR PDF not retrieved from Library/conversation search for independent page verification",
+    "Remaining catalog-wide semantic duplicate checks and syllabus mapping",
+    "L04 draft questions not approved; no production integration"
+  ],
+  "next": "Retrieve primary OCR and audit draft source pages; cross-check remaining extension catalogs; approve only validated items."
+}
