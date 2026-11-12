@@ -1450,6 +1450,62 @@
         "No direct primary-source page examination for additional questions in this run"
       ],
       "next": "Inspect primary OCR and compare canonical catalog plus extensions at full semantic level before approval, numbering and integration."
+    },
+    "audit_20261112_0309": {
+      "method": "Fetched and JSON-parsed canonical GitHub blobs (4089 main + 500 generated); scanned serialized complete records including options/explanations for four proximity regex patterns on current coefficients, current/yaw/lateral force and depth/current. Verified live Neon syllabus topic using correct title_pt column.",
+      "catalogs": [
+        {
+          "path": "data/questions/manobrabilidade.json",
+          "records": 4089,
+          "pattern_hits": 15
+        },
+        {
+          "path": "data/pscpp/generated-questions.json",
+          "records": 500,
+          "pattern_hits": 4
+        }
+      ],
+      "matched_ids": [
+        "MAN-249",
+        "MAN-275",
+        "MAN-619",
+        "MAN-709",
+        "MAN-3362",
+        "MAN-3913",
+        "MAN-NSH-C02-UC11-M2",
+        "MAN-NSH-C02-UC28-M1",
+        "MAN-NSH-C02-UC50-M2",
+        "MAN-NSH-C02-UC50-M3",
+        "MAN-NSH-C02-UC52-M2",
+        "MAN-NSH-C02-UC52-M3",
+        "MAN-NSH-C02-UC53-M1",
+        "MAN-NSH-C02-UC53-M2",
+        "MAN-NSH-C02-UC53-M3",
+        "pscpp::generated::man::0013",
+        "pscpp::generated::man::0060",
+        "pscpp::generated::anv::0454",
+        "pscpp::generated::anv::0474"
+      ],
+      "syllabus_verified": "8.10.2.1.1 — Os coeficientes da força de corrente para navios-petroleiros",
+      "assessment": "19 proximity matches, mostly generic current/resistance, not proof of conceptual non-duplication; no new primary-source page check. Further manual semantic review needed; do not approve.",
+      "draft_ids": [
+        "L04-DRAFT-01",
+        "L04-DRAFT-02",
+        "L04-DRAFT-03"
+      ],
+      "new_questions": 0,
+      "approved": 0,
+      "corrections": 0,
+      "assigned_ids": [],
+      "pr": null,
+      "ci": null,
+      "merge": null,
+      "production_deploy": null,
+      "remaining_to_target": 47,
+      "blockers": [
+        "Manual semantic examination of 19 proximity matches and other extension catalogs",
+        "Primary-source page verification for additional proposed questions"
+      ]
     }
   }
 }
