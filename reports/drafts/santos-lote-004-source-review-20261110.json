@@ -1170,6 +1170,38 @@
         "Recheck primary source page for any newly drafted questions before approval",
         "No approved new questions to run integration tests or deploy"
       ]
+    },
+    "audit_20261111_2106": {
+      "method": "Fetched and parsed 13 additional non-Santos, non-PSCPP-caderno extension files from repository default branch; inspected question counts and screened complete serialized content for three exact Santos-current/yaw topic expressions. Screening is lexical only.",
+      "files_checked": 13,
+      "counts": {
+        "normam201": 84,
+        "ripeam_expansao": 280,
+        "ripeam_situacoes": 250,
+        "total": 614
+      },
+      "exact_phrase_hits": 0,
+      "limitations": [
+        "Exact phrase absence does not certify semantic nonduplication",
+        "Default branch files inspected; branch-specific parity not verified",
+        "No direct primary book read in this run; source checks remain historical",
+        "4,589 main/generated static records not fully semantically certified"
+      ],
+      "draft_ids": [
+        "L04-DRAFT-01",
+        "L04-DRAFT-02",
+        "L04-DRAFT-03"
+      ],
+      "new_questions": 0,
+      "approved": 0,
+      "corrections": 0,
+      "ids_assigned": [],
+      "pr": null,
+      "ci": null,
+      "merge": null,
+      "deploy": null,
+      "remaining_to_target": 47,
+      "next": "Compare candidate concepts against full static catalog alternatives/comments and branch versions, then source-verify additional authored questions; no integration before approval."
     }
   }
 }
