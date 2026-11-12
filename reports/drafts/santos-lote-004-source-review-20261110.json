@@ -1413,6 +1413,43 @@
         "No fresh direct source-page examination for additional questions; do not invent content or approve"
       ],
       "next": "Inspect source PDF and complete semantic comparison; only then assign IDs and test integration."
+    },
+    "audit_20261112_0208": {
+      "method": "Live GitHub draft read, Neon syllabus lookup, and Vercel deployment history filtered by draft branch.",
+      "syllabus_verified": {
+        "topic_code": "8.10.2.1.1",
+        "subject_slug": "manobrabilidade",
+        "title_pt": "Os coeficientes da força de corrente para navios-petroleiros",
+        "database": "weathered-mud-33091087"
+      },
+      "vercel_observation": {
+        "deployment_id": "dpl_HavHbKT7JX5rd21Djm8WnsKxADVg",
+        "state": "READY",
+        "target": null,
+        "commit_sha": "690ce9f2558485cbd795986abf538998ea4e2420",
+        "inspector_url": "https://vercel.com/estibordo/estibordo-pscpp/HavHbKT7JX5rd21Djm8WnsKxADVg",
+        "interpretation": "Automatic branch preview deployment exists for previous documentation-only commit; NOT production deploy and NOT question integration."
+      },
+      "draft_ids": [
+        "L04-DRAFT-01",
+        "L04-DRAFT-02",
+        "L04-DRAFT-03"
+      ],
+      "draft_count": 3,
+      "new_questions": 0,
+      "approved": 0,
+      "corrections": 0,
+      "assigned_ids": [],
+      "pr": null,
+      "ci": null,
+      "merge": null,
+      "production_deploy": null,
+      "remaining_to_target": 47,
+      "blockers": [
+        "Full semantic deduplication of all question alternatives/comments not certified",
+        "No direct primary-source page examination for additional questions in this run"
+      ],
+      "next": "Inspect primary OCR and compare canonical catalog plus extensions at full semantic level before approval, numbering and integration."
     }
   }
 }
