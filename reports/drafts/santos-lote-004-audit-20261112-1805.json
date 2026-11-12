@@ -1,0 +1,37 @@
+{
+  "title": "Santos lote 004 — descoberta de fonte primária e lote preexistente",
+  "date": "2026-11-12",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261112-1707.json",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "findings": {
+    "source_primary": "Manobrabilidade_do_Navio_no_Seculo_21_OCR.pdf localizado na biblioteca do usuário; ainda não houve cotejo página a página nesta execução",
+    "existing_draft": "PSCPP_Manobrabilidade_Santos_Lote01_50questoes.json localizado na biblioteca; metadados indicam 50 questões MSN21-REV-001... e status PENDENTE_HOMOLOGACAO; verificar integralmente antes de reutilizar numeração",
+    "syllabus": "Conteudo Programatico - FINAL.pdf localizado na biblioteca, com Anexo 2-A",
+    "neon": "Consulta read-only ao information_schema do projeto shy-firefly-80833334 confirmou tabelas de respostas, cadernos e biblioteca, sem demonstrar catálogo integral de enunciados",
+    "overlap_priority": [
+      "MAN-B007-02",
+      "MAN-B007-12"
+    ],
+    "editorial_issue": "MAN-B022-12 ainda pendente de confronto com Crenshaw"
+  },
+  "draft_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "new_questions": 0,
+  "approved": 0,
+  "corrections_applied": 0,
+  "definitive_ids": [],
+  "existing_unapproved_library_drafts": 50,
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Cotejo da fonte primária com os enunciados e páginas ainda não realizado",
+    "Verificação de sobreposição do lote existente de 50 com repositório e banco não concluída",
+    "Sem validação bibliográfica e testes, publicação bloqueada"
+  ],
+  "next": "Auditar os 50 rascunhos já existentes antes de produzir novos; comparar com MAN-B007-02 e MAN-B007-12, verificar página na fonte primária e mapear catálogo de questões."
+}
