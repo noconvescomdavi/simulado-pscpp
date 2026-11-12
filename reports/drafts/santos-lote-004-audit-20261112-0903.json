@@ -1,0 +1,88 @@
+{
+  "title": "Santos lote 004 — auditoria incremental blocos 007–009",
+  "date": "2026-11-12",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261112-0812.json",
+  "files": [
+    "data/question-extensions/pscpp-caderno-bloco-007.json",
+    "data/question-extensions/pscpp-caderno-bloco-008.json",
+    "data/question-extensions/pscpp-caderno-bloco-009.json"
+  ],
+  "records_read": 210,
+  "manobrabilidade_records": 39,
+  "manobrabilidade_ids": [
+    "MAN-B007-01..13",
+    "MAN-B008-01..13",
+    "MAN-B009-01..13"
+  ],
+  "screening": {
+    "method": "Complete serialized Manobrabilidade records, including options and explanations, screened for current, lateral force, yaw moment, tanker, ballast and loaded ship. Broad term matches require manual conceptual assessment.",
+    "term_matches": 18,
+    "term_match_ids": [
+      "MAN-B007-01",
+      "MAN-B007-02",
+      "MAN-B007-03",
+      "MAN-B007-04",
+      "MAN-B007-05",
+      "MAN-B007-06",
+      "MAN-B007-07",
+      "MAN-B007-08",
+      "MAN-B007-09",
+      "MAN-B007-10",
+      "MAN-B007-11",
+      "MAN-B007-12",
+      "MAN-B007-13",
+      "MAN-B008-09",
+      "MAN-B008-10",
+      "MAN-B008-11",
+      "MAN-B008-12",
+      "MAN-B009-10"
+    ],
+    "assessment": "Most term matches concern wind, river current, squat, bank effects or manoeuvring trials. No assertion of semantic uniqueness without full conceptual review."
+  },
+  "database": {
+    "project_id": "shy-firefly-80833334",
+    "tables_seen": [
+      "question_answers",
+      "question_notebook_answers",
+      "question_notebooks",
+      "question_stats"
+    ],
+    "catalog_completeness": "Full question text catalog not established in this database; no uniqueness certification."
+  },
+  "drafts": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "source_page_pdf": [
+    155,
+    156
+  ],
+  "source_page_printed": [
+    162,
+    163
+  ],
+  "new_questions": 0,
+  "approved": 0,
+  "corrections": 0,
+  "definitive_ids": [],
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "production_deploy": null,
+  "remaining_to_target": 47,
+  "extensions_remaining_caderno": 17,
+  "blockers": [
+    "17 remaining caderno files and other extensions not reviewed",
+    "18 broad keyword matches require manual semantic comparison",
+    "No primary-source validation for 47 additional questions",
+    "Semantic uniqueness and approval gates incomplete"
+  ],
+  "next": "Review blocks 010–012, assess the 18 matched records conceptually, then remaining extensions; source-verify new questions before assigning IDs or publishing."
+}
