@@ -1,0 +1,54 @@
+{
+  "title": "Santos lote 004 — auditoria blocos 025–026",
+  "date": "2026-11-12",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261112-1509.json",
+  "examined": [
+    {
+      "block": "025",
+      "path": "data/question-extensions/pscpp-caderno-bloco-025.json",
+      "sha": "e88b711285056b99fc63f4bf52ba7cb4ab4ccdec",
+      "total": 70,
+      "manobrabilidade": 13
+    },
+    {
+      "block": "026",
+      "path": "data/question-extensions/pscpp-caderno-bloco-026.json",
+      "sha": "a67261561aecf26307d3771768dc455b866602fd",
+      "total": 70,
+      "manobrabilidade": 13
+    }
+  ],
+  "counts": {
+    "examined": 140,
+    "manobrabilidade": 26,
+    "invalid_option_counts": 0,
+    "specific_terminological_matches": 0,
+    "existing_santos_drafts": 3,
+    "new_questions": 0,
+    "approved": 0,
+    "corrections_applied": 0,
+    "definitive_ids": 0,
+    "remaining_to_target": 47,
+    "remaining_caderno_blocks": 0
+  },
+  "draft_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "outstanding": [
+    "18 correspondências nos blocos 007–009 exigem revisão semântica",
+    "MAN-B022-12 com contradição entre assertivas e gabarito, sem correção aplicada",
+    "Extensões adicionais e catálogo completo no banco não certificados",
+    "Conferência bibliográfica da obra Santos e páginas não refeita nesta etapa"
+  ],
+  "limitations": [
+    "Busca terminológica não prova inexistência de duplicidades semânticas",
+    "Nenhuma questão Santos homologada ou publicada"
+  ],
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "production_deploy": null
+}
