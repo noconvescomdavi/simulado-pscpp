@@ -1,0 +1,68 @@
+{
+  "title": "Santos lote 004 — recuperação de caminhos e triagem dos blocos 019–021",
+  "date": "2026-11-12",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261112-1312.json",
+  "finding": "O erro 404 anterior decorreu de nomes sem zero à esquerda (19/20/21). Os caminhos corretos 019/020/021 existem.",
+  "records": [
+    {
+      "block": "019",
+      "path": "data/question-extensions/pscpp-caderno-bloco-019.json",
+      "blob_sha": "b4bc704422eb101ba22fbde660f6eb930a8f8830",
+      "total": 70,
+      "manobrabilidade": 13,
+      "option_counts": [
+        5
+      ],
+      "targeted_keyword_matches": []
+    },
+    {
+      "block": "020",
+      "path": "data/question-extensions/pscpp-caderno-bloco-020.json",
+      "blob_sha": "f007535547fbcc30b92a74d01f89f3d914b5205d",
+      "total": 70,
+      "manobrabilidade": 13,
+      "option_counts": [
+        5
+      ],
+      "targeted_keyword_matches": []
+    },
+    {
+      "block": "021",
+      "path": "data/question-extensions/pscpp-caderno-bloco-021.json",
+      "blob_sha": "83ff81b1fd221ff291be03d5cf393d5f6dacca73",
+      "total": 70,
+      "manobrabilidade": 13,
+      "option_counts": [
+        5
+      ],
+      "targeted_keyword_matches": []
+    }
+  ],
+  "counts": {
+    "examined": 210,
+    "manobrabilidade": 39,
+    "keyword_matches": 0,
+    "existing_drafts": 3,
+    "new_questions": 0,
+    "approved": 0,
+    "corrections": 0,
+    "definitive_ids": 0,
+    "remaining_target": 47
+  },
+  "draft_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "limitations": [
+    "Triagem terminológica não equivale a comparação semântica integral.",
+    "18 correspondências dos blocos 007–009 aguardam revisão conceitual.",
+    "Blocos 022–026 e outras extensões aguardam auditoria.",
+    "Fonte primária e catálogo completo do banco não foram reconferidos nesta etapa."
+  ],
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "production_deploy": null
+}
