@@ -1,0 +1,64 @@
+{
+  "title": "Santos lote 004 — auditoria blocos 022–024",
+  "date": "2026-11-12",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261112-1406.json",
+  "examined": [
+    {
+      "block": "022",
+      "path": "data/question-extensions/pscpp-caderno-bloco-022.json",
+      "sha": "7ed4eed07cd7c549f58af3af9adbfb25cd8cebb3",
+      "total": 70,
+      "manobrabilidade": 13
+    },
+    {
+      "block": "023",
+      "path": "data/question-extensions/pscpp-caderno-bloco-023.json",
+      "sha": "59389d6674822a0c1f597b6ef7e1329e2cbff993",
+      "total": 70,
+      "manobrabilidade": 13
+    },
+    {
+      "block": "024",
+      "path": "data/question-extensions/pscpp-caderno-bloco-024.json",
+      "sha": "3242d7b9ed4289a807f659c1758fc54104f845a8",
+      "total": 70,
+      "manobrabilidade": 13
+    }
+  ],
+  "counts": {
+    "examined": 210,
+    "manobrabilidade": 39,
+    "invalid_option_counts": 0,
+    "terminological_matches": 1,
+    "existing_santos_drafts": 3,
+    "new_questions": 0,
+    "approved": 0,
+    "corrections_applied": 0,
+    "definitive_ids": 0,
+    "remaining_to_target": 47,
+    "remaining_caderno_blocks": 2
+  },
+  "finding": {
+    "id": "MAN-B022-12",
+    "status": "blocking_editorial_defect",
+    "detail": "A assertiva I afirma que a força lateral de vento atua somente abaixo da linha d'água, o que é falso. A assertiva II e III são verdadeiras no contexto geral, porém nenhuma alternativa representa apenas II e III. O gabarito D e a explicação que valida I são inconsistentes. Exige revisão bibliográfica da fonte CRENSHAW antes de corrigir e republicar.",
+    "action": "Não homologar; não alterar o registro sem confronto com a fonte e fluxo de revisão."
+  },
+  "draft_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "limitations": [
+    "Triagem terminológica não certifica ausência de duplicidade conceitual.",
+    "18 correspondências dos blocos 007–009 aguardam revisão.",
+    "Blocos 025–026 e extensões adicionais aguardam revisão.",
+    "Obra Santos e páginas não foram reconferidas nesta execução.",
+    "Neon não revelou catálogo integral de enunciados; nenhuma alteração de banco."
+  ],
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "production_deploy": null
+}
