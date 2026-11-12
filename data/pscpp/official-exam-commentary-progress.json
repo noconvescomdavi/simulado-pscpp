@@ -1118,8 +1118,24 @@
           "year": 2006,
           "number": 70,
           "original_correct_answer": "D",
-          "status": "pending_bibliographic_verification",
-          "commentary_status": "not_started"
+          "status": "bibliography_verified",
+          "commentary_status": "draft_verified_pending_integration",
+          "review_note": "Prova oficial 2006: resposta D. Código Internacional de Sinais, Pub. 102, edição 1969 revista em 2003, seção 2 (Casualties—Damages), p. impressa 50: HV pergunta colisão; HW 4 identifica colisão com objeto submerso. Conferência textual direta do PDF no Google Drive via extração de texto; paginação inferida do marcador 50 na sequência OCR, inspeção visual da página e correspondência exata com prova original ainda pendentes para homologação final.",
+          "original_exam_url": "https://drive.google.com/file/d/1p7UL_pWG2ZdvOpg9DBI8uf80b_NSvCe7/view",
+          "bibliography_candidate_url": "https://drive.google.com/file/d/1Ozca6namhuFiMbnXzWfRbIU7J54t0jFU/view",
+          "bibliography_author": "National Imagery and Mapping Agency (NIMA), Estados Unidos",
+          "bibliography_title": "International Code of Signals for Visual, Sound, and Radio Communications (Pub. 102)",
+          "bibliography_edition": "United States Edition, 1969 (Revised 2003)",
+          "bibliography_page": "50 (página impressa, seção 2, colisões; confirmar visualmente)",
+          "verified_short_excerpt": "HW 4 I have (or vessel indicated has) collided with underwater object.",
+          "correct_reason": "D (HW 4): tronco de árvore submerso é objeto submerso (underwater object), categoria expressamente designada pelo sinal HW 4. HV é a pergunta 'Have you been in collision?'.",
+          "incorrect_reasons_by_option": {
+            "A": "HW 1 indica colisão com navio-farol (light vessel), não tronco submerso.",
+            "B": "HW 2 indica colisão com submarino (submarine), não tronco submerso.",
+            "C": "HW 3 indica colisão com embarcação desconhecida (unknown vessel), não objeto submerso.",
+            "E": "HW 5 indica colisão com boia de navegação (navigation buoy), não tronco submerso."
+          },
+          "source_verification": "Texto do International Code of Signals, Pub. 102, rev. 2003, recuperado diretamente do PDF disponível no Google Drive; correspondência textual dos códigos HV e HW 1–5 conferida. Gabarito D confrontado com corpus de prova oficial no repositório; verificação visual da página da prova e do livro ainda pendente, sem homologação."
         },
         {
           "id": "pscpp::official::2008::001",
@@ -2688,5 +2704,5 @@
       ]
     }
   ],
-  "bibliographically_verified": 31
+  "bibliographically_verified": 32
 }
