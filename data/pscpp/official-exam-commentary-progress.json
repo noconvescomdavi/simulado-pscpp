@@ -815,8 +815,31 @@
           "year": 2006,
           "number": 58,
           "original_correct_answer": "B",
-          "status": "pending_bibliographic_verification",
-          "commentary_status": "not_started"
+          "status": "bibliography_verified",
+          "commentary_status": "draft_verified_pending_integration",
+          "correct_reason": "B — 5 metros. A Lista de Faróis da DHN informa que o alcance geográfico publicado considera o olho do observador elevado 5 m sobre o nível do mar; o fac-símile oficial assinala B.",
+          "incorrect_reasons_by_option": {
+            "A": "3 m não é a altura convencional adotada na coluna de alcances geográficos da Lista de Faróis.",
+            "C": "12 m não é a altura convencional publicada; a altura real do observador pode ser usada para recalcular a distância de visibilidade.",
+            "D": "10 m não é o valor de referência de 5 m estabelecido na publicação.",
+            "E": "15 m não é a altura de referência da publicação; confunde a altura real de observação com a convenção tabular."
+          },
+          "bibliography": {
+            "author": "Diretoria de Hidrografia e Navegação (DHN), Marinha do Brasil",
+            "title": "Lista de Faróis",
+            "edition": "39ª edição (consultada; posterior à prova de 2006)",
+            "pages": "XII (6ª coluna — Alcances); seção de alcance geográfico, página romana a confirmar",
+            "verified_short_excerpt": "os olhos (desarmados) do observador elevados 5 metros sobre o nível do mar.",
+            "source_url": "https://drive.google.com/file/d/1RZFT8W8wmwhDsLDOnrkpbtmDRXzXqiJN/view"
+          },
+          "source_verification": {
+            "exam_url": "https://drive.google.com/file/d/1p7UL_pWG2ZdvOpg9DBI8uf80b_NSvCe7/view",
+            "exam_page": "27 (página impressa)",
+            "exam_marked_answer": "B",
+            "reference_section": "Instruções de uso, 6ª coluna — Alcances, p. XII",
+            "historical_caveat": "A 39ª edição é posterior à prova de 2006. Conferir edição da DHN vigente em 2006 antes da homologação final."
+          },
+          "review_note": "Prova oficial 2006 questão 58 assinala B. Lista de Faróis 39ª edição p. XII confirma 5 m. Comentário completo das cinco alternativas, mas edição histórica não conferida; integração e homologação pendentes."
         },
         {
           "id": "pscpp::official::2006::059",
@@ -2481,5 +2504,5 @@
       ]
     }
   ],
-  "bibliographically_verified": 30
+  "bibliographically_verified": 31
 }
