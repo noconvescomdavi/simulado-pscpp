@@ -1,0 +1,53 @@
+{
+  "title": "Santos lote 004 — auditoria incremental blocos 004–006",
+  "date": "2026-11-12",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261112-0703.json",
+  "files": [
+    "data/question-extensions/pscpp-caderno-bloco-004.json",
+    "data/question-extensions/pscpp-caderno-bloco-005.json",
+    "data/question-extensions/pscpp-caderno-bloco-006.json"
+  ],
+  "records_read": 210,
+  "manobrabilidade_records": 39,
+  "manobrabilidade_ids": [
+    "MAN-B004-01..13",
+    "MAN-B005-01..13",
+    "MAN-B006-01..13"
+  ],
+  "screening": "All 210 JSON objects loaded; 39 Manobrabilidade records isolated. Checked complete serialized records (including alternatives and explanations) for corrente, petroleiro, força lateral, momento de guinada, coeficientes de corrente; zero matches in Manobrabilidade records. Other disciplines' generic terms not treated as semantic duplicates. This is a targeted screening, not comprehensive semantic certification.",
+  "drafts": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "source_page_pdf": [
+    155,
+    156
+  ],
+  "source_page_printed": [
+    162,
+    163
+  ],
+  "new_questions": 0,
+  "approved": 0,
+  "corrections": 0,
+  "definitive_ids": [],
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "production_deploy": null,
+  "remaining_to_target": 47,
+  "extensions_remaining_caderno": 20,
+  "blockers": [
+    "20 remaining caderno files and other extensions not yet reviewed",
+    "No fresh primary-source validation for additional 47 questions",
+    "Semantic uniqueness and approval gates incomplete"
+  ],
+  "next": "Review caderno blocks 007–009; then all remaining extensions; check primary source for new questions and only then assign IDs and execute tests/PR/merge/deploy."
+}
