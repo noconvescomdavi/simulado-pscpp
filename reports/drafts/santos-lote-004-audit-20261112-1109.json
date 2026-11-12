@@ -1,0 +1,57 @@
+{
+  "title": "Santos lote 004 — auditoria incremental blocos 013–015",
+  "date": "2026-11-12",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261112-1004.json",
+  "files": [
+    "data/question-extensions/pscpp-caderno-bloco-013.json",
+    "data/question-extensions/pscpp-caderno-bloco-014.json",
+    "data/question-extensions/pscpp-caderno-bloco-015.json"
+  ],
+  "records_read": 210,
+  "manobrabilidade_records": 39,
+  "manobrabilidade_ids": [
+    "MAN-B013-01..13",
+    "MAN-B014-01..13",
+    "MAN-B015-01..13"
+  ],
+  "assessment": "Read complete serialized question records for blocks 013–015. These Manobrabilidade records cite IMO MSC/Circ.1053, Crenshaw and IMO MSC.137(76), not Edson Mesquita dos Santos. Broad current/yaw keyword matches are incidental; no direct wording duplicate observed, but semantic exclusivity remains uncertified.",
+  "database": {
+    "project_id": "shy-firefly-80833334",
+    "public_tables_inspected": true,
+    "question_related_tables": [
+      "question_answers",
+      "question_notebook_answers",
+      "question_notebooks",
+      "question_stats"
+    ],
+    "full_catalog_confirmed": false
+  },
+  "draft_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "draft_answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "new_questions": 0,
+  "approved": 0,
+  "corrections": 0,
+  "definitive_ids": [],
+  "remaining_to_target": 47,
+  "remaining_caderno_files": 11,
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "production_deploy": null,
+  "limitations": [
+    "18 prior matches in blocks 007–009 not fully reviewed conceptually",
+    "Blocks 016–026 and other extensions pending",
+    "No full live question catalog established in Neon",
+    "No new primary-source verification or homologation"
+  ],
+  "next": "Review 18 prior matches and blocks 016–018; continue checking other extensions and source pages before approval."
+}
