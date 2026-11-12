@@ -1320,6 +1320,40 @@
         "Current Neon project lookup returned no matching project"
       ],
       "next": "Obtain full catalog comparison and fresh source evidence before assigning IDs, approving, testing or deploying."
+    },
+    "audit_20261112_0008": {
+      "method": "Fresh GitHub checkpoint and direct Neon run_sql with explicit project_id; verified database schema despite list_projects search returning []",
+      "database_project": "weathered-mud-33091087",
+      "database_connection": "SQL read succeeded",
+      "question_related_tables": [
+        "question_answers",
+        "question_notebook_answers",
+        "question_notebooks",
+        "question_stats",
+        "syllabus_topic_sources",
+        "syllabus_topics"
+      ],
+      "master_question_text_table": "Not found among question-related tables; catalog content is in repository files",
+      "draft_ids": [
+        "L04-DRAFT-01",
+        "L04-DRAFT-02",
+        "L04-DRAFT-03"
+      ],
+      "draft_count": 3,
+      "approved": 0,
+      "new_questions": 0,
+      "corrections": 0,
+      "assigned_ids": [],
+      "pr": null,
+      "ci": null,
+      "merge": null,
+      "deploy": null,
+      "remaining_to_target": 47,
+      "blocking": [
+        "Semantic comparison of all relevant static catalog question alternatives and explanations not certified",
+        "Fresh page-level primary source inspection for additional questions not completed"
+      ],
+      "next": "Use repository catalog full-text semantic comparisons and primary OCR before approval; database project is queryable by explicit ID."
     }
   }
 }
