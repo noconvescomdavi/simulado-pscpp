@@ -1,0 +1,46 @@
+{
+  "title": "Santos lote 004 — auditoria estrutural do lote preexistente",
+  "date": "2026-11-12",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261112-1805.json",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "source_file": "PSCPP_Manobrabilidade_Santos_Lote01_50questoes.json (Library)",
+  "scope": "Auditoria estrutural dos 50 registros; não equivale a revisão bibliográfica",
+  "existing_draft_count": 50,
+  "existing_ids": "MSN21-REV-001..MSN21-REV-050",
+  "unique_ids": 50,
+  "duplicate_ids": 0,
+  "duplicate_exact_normalized_stems": 0,
+  "invalid_five_alternatives": 0,
+  "invalid_answer_key": 0,
+  "missing_required_fields": 0,
+  "all_pending_homologation": true,
+  "source_conferida_flag_true": 50,
+  "source_conferida_flag_warning": "Flag preexistente não comprova cotejo independente com páginas da obra nesta execução",
+  "new_questions": 0,
+  "approved": 0,
+  "corrections_applied": 0,
+  "definitive_ids": [],
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "unresolved_existing_question": "MAN-B022-12",
+  "priority_overlap": [
+    "MAN-B007-02",
+    "MAN-B007-12"
+  ],
+  "database": "Neon shy-firefly-80833334: schema enumerado; não identificada tabela de catálogo integral de enunciados",
+  "source_primary": "PDF não recuperado nesta execução para cotejo página a página",
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "production_deploy": null,
+  "pending": [
+    "Confrontar 50 questões com páginas PDF da fonte primária",
+    "Comparar semântica com todos os catálogos de questões",
+    "Conferir alinhamento detalhado do Anexo 2-A",
+    "Verificar e corrigir MAN-B022-12 com referência primária",
+    "Somente após validação executar testes, PR, merge e deploy"
+  ]
+}
