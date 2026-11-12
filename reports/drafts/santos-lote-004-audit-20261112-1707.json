@@ -1,0 +1,57 @@
+{
+  "title": "Santos lote 004 — revisão conceitual das 18 correspondências",
+  "date": "2026-11-12",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261112-1610.json",
+  "reviewed_ids": [
+    "MAN-B007-01",
+    "MAN-B007-02",
+    "MAN-B007-03",
+    "MAN-B007-04",
+    "MAN-B007-05",
+    "MAN-B007-06",
+    "MAN-B007-07",
+    "MAN-B007-08",
+    "MAN-B007-09",
+    "MAN-B007-10",
+    "MAN-B007-11",
+    "MAN-B007-12",
+    "MAN-B007-13",
+    "MAN-B008-09",
+    "MAN-B008-10",
+    "MAN-B008-11",
+    "MAN-B008-12",
+    "MAN-B009-10"
+  ],
+  "findings": {
+    "potential_conceptual_overlap": [
+      "MAN-B007-02",
+      "MAN-B007-12"
+    ],
+    "reason": "Corrente sobre casco / força lateral e corrente aparecem em enunciados ou assertivas; necessário cotejar os textos completos das candidatas Santos e sua fonte antes de afirmar distinção.",
+    "other_matches": "16 registros tratam sobretudo de vento, leme, squat, efeito de margem, ensaios zig-zag e condições de prova. A triagem por tópico não prova exclusividade semântica.",
+    "database": "Neon library_documents não retornou a obra Santos por título, nome de arquivo ou autor; somente errata de manobrabilidade e outra obra homônima apareceram.",
+    "editorial_issue": "MAN-B022-12 permanece sinalizada e não corrigida sem confronto bibliográfico"
+  },
+  "draft_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "new_questions": 0,
+  "approved": 0,
+  "corrections_applied": 0,
+  "definitive_ids": [],
+  "remaining_to_target": 47,
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Obra primária Santos não localizada no catálogo Neon pesquisado",
+    "Texto integral das candidatas e páginas ainda precisa ser confrontado",
+    "Catálogo integral de questões e extensões adicionais ainda não certificado",
+    "Questão MAN-B022-12 requer conferência na fonte Crenshaw"
+  ],
+  "next": "Localizar fonte Santos e rascunhos integrais; cotejar MAN-B007-02 e MAN-B007-12; inventariar extensões adicionais e banco antes de homologação."
+}
