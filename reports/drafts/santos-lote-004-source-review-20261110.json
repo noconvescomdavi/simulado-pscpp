@@ -1202,6 +1202,52 @@
       "deploy": null,
       "remaining_to_target": 47,
       "next": "Compare candidate concepts against full static catalog alternatives/comments and branch versions, then source-verify additional authored questions; no integration before approval."
+    },
+    "audit_20261111_2204": {
+      "method": "Re-fetched full GitHub blobs for main (4089) and generated (500) question catalogs; screened all serialized records for candidate-specific current/yaw terms and inspected five complete nearest/adjacent records (stems, five options, keys, explanations, sources).",
+      "catalogs_examined": [
+        {
+          "path": "data/questions/manobrabilidade.json",
+          "records": 4089
+        },
+        {
+          "path": "data/pscpp/generated-questions.json",
+          "records": 500
+        }
+      ],
+      "full_records_inspected": [
+        "MAN-3793",
+        "MAN-248",
+        "MAN-444",
+        "pscpp::generated::man::0047",
+        "pscpp::generated::man::0013"
+      ],
+      "duplicate_conclusion": "No direct equivalence of these five to Santos drafts 01-03. This is a targeted lexical/record inspection, not certification of semantic uniqueness across all 4589 records.",
+      "additional_quality_finding": {
+        "id": "MAN-444",
+        "issue": "Statements I and III are identical; II and IV are identical. Answer D is internally consistent but item tests only two independent statements, degrading quality.",
+        "action": "Flagged for editorial/source review; no change to production bank."
+      },
+      "drafts": [
+        "L04-DRAFT-01",
+        "L04-DRAFT-02",
+        "L04-DRAFT-03"
+      ],
+      "new_questions": 0,
+      "approved": 0,
+      "corrections": 0,
+      "assigned_ids": [],
+      "pr": null,
+      "ci": null,
+      "merge": null,
+      "deploy": null,
+      "remaining_to_target": 47,
+      "blockers": [
+        "Complete conceptual duplicate review including alternatives and explanations for other relevant catalog and extension entries",
+        "Verify additional proposed questions against primary Santos PDF pages before approval",
+        "No newly approved content available for CI/merge/deploy"
+      ],
+      "next": "Review other high-relevance current-coefficient/yaw entries and Santos source pages; then prepare and approve distinct questions."
     }
   }
 }
