@@ -1597,6 +1597,52 @@
         "Additional 47 questions need direct page-level verification against primary book"
       ],
       "note": "Prior page-level source verification preserved from 04:07 checkpoint; no new direct PDF reading or approval in this step. Preview is not production publication."
+    },
+    "audit_20261112_0604": {
+      "method": "Fetched full canonical GitHub blob records and inspected enunciados, five options and explanations of all 19 regex-proximity matches from 2026-11-12 03:09 audit.",
+      "reviewed_ids": [
+        "MAN-249",
+        "MAN-275",
+        "MAN-619",
+        "MAN-709",
+        "MAN-3362",
+        "MAN-3913",
+        "MAN-NSH-C02-UC11-M2",
+        "MAN-NSH-C02-UC28-M1",
+        "MAN-NSH-C02-UC50-M2",
+        "MAN-NSH-C02-UC50-M3",
+        "MAN-NSH-C02-UC52-M2",
+        "MAN-NSH-C02-UC52-M3",
+        "MAN-NSH-C02-UC53-M1",
+        "MAN-NSH-C02-UC53-M2",
+        "MAN-NSH-C02-UC53-M3",
+        "pscpp::generated::man::0013",
+        "pscpp::generated::man::0060",
+        "pscpp::generated::anv::0454",
+        "pscpp::generated::anv::0474"
+      ],
+      "reviewed_count": 19,
+      "assessment": "None of 19 records directly asks about (1) maximum lateral-force coefficient for loaded tankers/bulkers at beam current, (2) depth/draft reduction shifting loaded-vessel current-induced yaw-moment peaks toward bow/stern, or (3) vessel-specific nonlinear current coefficients. Related Crenshaw records discuss current resistance, restraint and vector motion; other records discuss wind, squat, rudder or general yaw. No direct conceptual duplicate found in these 19, but remaining extension catalogs and unflagged records are not exhaustively certified.",
+      "candidate_ids": [
+        "L04-DRAFT-01",
+        "L04-DRAFT-02",
+        "L04-DRAFT-03"
+      ],
+      "source_verification": "Previous 2026-11-12 04:07 primary OCR pages 155-156 confirmed; not re-read in this run.",
+      "new_questions": 0,
+      "approved": 0,
+      "corrections": 0,
+      "assigned_ids": [],
+      "pr": null,
+      "ci": null,
+      "merge": null,
+      "production_deploy": null,
+      "remaining_to_target": 47,
+      "blockers": [
+        "Full semantic uniqueness audit against remaining extensions and records outside the 19 flagged matches is not certified.",
+        "Additional questions require direct page-level source verification."
+      ],
+      "next": "Review all remaining extension catalogs and broader semantic neighbors; only then homologate and number three drafts and author additional sourced questions."
     }
   }
 }
