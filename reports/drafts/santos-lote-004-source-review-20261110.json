@@ -35,8 +35,8 @@
       ],
       "correct_answer": "C",
       "explanation": "Na seção 8.3.2.2, a força lateral máxima para o navio carregado estudado é associada à corrente pelo través. A magnitude depende fortemente da razão profundidade/calado.",
-      "source_locator": "PDF OCR p. 155, seção 8.3.2.2 (página do arquivo PDF; páginas impressas 162–163)",
-      "validation_status": "primary-source-text-verified; pending active SQL duplicate audit"
+      "source_locator": "PDF OCR p. 155 (página impressa 162), seção 8.3.2.2",
+      "validation_status": "primary-source-text-reverified-2026-11-12; pending semantic deduplication"
     },
     {
       "temporary_id": "L04-DRAFT-02",
@@ -68,8 +68,8 @@
       ],
       "correct_answer": "B",
       "explanation": "A seção 8.3.2.3 informa que os picos de momento em yaw aumentam com a redução da profundidade e se aproximam das extremidades, no caso dos navios carregados analisados.",
-      "source_locator": "PDF OCR p. 156, seção 8.3.2.3 (página do arquivo PDF; páginas impressas 162–163)",
-      "validation_status": "primary-source-text-verified; pending active SQL duplicate audit"
+      "source_locator": "PDF OCR p. 156 (página impressa 163), seção 8.3.2.3",
+      "validation_status": "primary-source-text-reverified-2026-11-12; pending semantic deduplication"
     },
     {
       "temporary_id": "L04-DRAFT-03",
@@ -101,8 +101,8 @@
       ],
       "correct_answer": "D",
       "explanation": "O autor ressalva que os coeficientes de corrente são específicos de cada tipo de navio e que o comportamento sob corrente é complexo e não linear.",
-      "source_locator": "PDF OCR p. 156, final da seção 8.3.2.3 (página do arquivo PDF; páginas impressas 162–163)",
-      "validation_status": "primary-source-text-verified; pending active SQL duplicate audit"
+      "source_locator": "PDF OCR p. 156 (página impressa 163), seção 8.3.2.3",
+      "validation_status": "primary-source-text-reverified-2026-11-12; pending semantic deduplication"
     }
   ],
   "checkpoint": {
@@ -1505,6 +1505,43 @@
       "blockers": [
         "Manual semantic examination of 19 proximity matches and other extension catalogs",
         "Primary-source page verification for additional proposed questions"
+      ]
+    },
+    "audit_20261112_0407": {
+      "method": "Direct read of primary OCR PDF pages 155–156 via Files; cross-checked all three existing draft stems, five options, answer keys, explanations, sections and printed page mapping.",
+      "source_file": "Manobrabilidade_do_Navio_no_Seculo_21_OCR.pdf",
+      "pages": [
+        {
+          "pdf": 155,
+          "printed": 162,
+          "section": "8.3.2.2",
+          "finding": "Maximum lateral current force at beam for loaded tanker/bulker; h/T sensitivity."
+        },
+        {
+          "pdf": 156,
+          "printed": 163,
+          "section": "8.3.2.3",
+          "finding": "Loaded-vessel yaw peaks grow and move toward ends with decreasing depth; ballast case differs, moving toward beam; vessel-type coefficient curves unique/nonlinear."
+        }
+      ],
+      "draft_ids": [
+        "L04-DRAFT-01",
+        "L04-DRAFT-02",
+        "L04-DRAFT-03"
+      ],
+      "source_locators_corrected": 3,
+      "question_text_changes": 0,
+      "new_questions": 0,
+      "approved": 0,
+      "assigned_ids": [],
+      "pr": null,
+      "ci": null,
+      "merge": null,
+      "production_deploy": null,
+      "remaining_to_target": 47,
+      "blockers": [
+        "Full conceptual deduplication against 19 proximate catalog records and all other extensions not certified; no final IDs or approval.",
+        "Further 47 questions require independently sourced and deduplicated content."
       ]
     }
   }
