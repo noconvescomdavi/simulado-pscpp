@@ -1,0 +1,45 @@
+{
+  "title": "Santos lote 004 — auditoria incremental",
+  "date": "2026-11-12",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-source-review-20261110.json",
+  "reviewed_extension_files": [
+    "data/question-extensions/pscpp-caderno-bloco-001.json",
+    "data/question-extensions/pscpp-caderno-bloco-002.json",
+    "data/question-extensions/pscpp-caderno-bloco-003.json"
+  ],
+  "records_screened": 210,
+  "method": "Read all 70 JSON question objects per file, including options/explanations. Broad regex current/yaw/tanker/depth/coefficient selected 16,13,11 records respectively; examined selected stems and source context. No stem directly duplicates the three Santos drafts, but full semantic uniqueness remains uncertified.",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "candidate_answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "source_pages_pdf": [
+    155,
+    156
+  ],
+  "source_pages_printed": [
+    162,
+    163
+  ],
+  "new_questions": 0,
+  "approved": 0,
+  "corrections": 0,
+  "definitive_ids": [],
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "production_deploy": null,
+  "remaining_to_target": 47,
+  "blockers": [
+    "23 other PSCPP caderno extension files and other extensions not yet completely reviewed",
+    "No new primary-source page-verified material for 47 additional questions",
+    "Do not publish until full semantic deduplication, test and approval"
+  ]
+}
