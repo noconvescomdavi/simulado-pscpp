@@ -1,0 +1,59 @@
+{
+  "title": "Santos lote 004 — auditoria incremental blocos 010–012",
+  "date": "2026-11-12",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261112-0903.json",
+  "files": [
+    {
+      "path": "data/question-extensions/pscpp-caderno-bloco-010.json",
+      "total": 70,
+      "man": 13,
+      "hits": [],
+      "invalid": []
+    },
+    {
+      "path": "data/question-extensions/pscpp-caderno-bloco-011.json",
+      "total": 70,
+      "man": 13,
+      "hits": [],
+      "invalid": []
+    },
+    {
+      "path": "data/question-extensions/pscpp-caderno-bloco-012.json",
+      "total": 70,
+      "man": 13,
+      "hits": [],
+      "invalid": []
+    }
+  ],
+  "records_read": 210,
+  "manobrabilidade_records": 39,
+  "specific_term_hits": [],
+  "draft_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "draft_answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "new_questions": 0,
+  "approved": 0,
+  "corrections": 0,
+  "definitive_ids": [],
+  "remaining_to_target": 47,
+  "remaining_caderno_files": 14,
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "production_deploy": null,
+  "limitations": [
+    "Term scan is not complete semantic deduplication",
+    "Previous 18 term matches from blocks 007–009 not yet reviewed individually",
+    "Other extensions and active master catalog remain unverified",
+    "No new primary-source page validation"
+  ],
+  "next": "Review 18 prior term matches and blocks 013–015, then remaining extensions before approval."
+}
