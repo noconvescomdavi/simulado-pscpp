@@ -1450,8 +1450,56 @@
           "year": 2008,
           "number": 37,
           "original_correct_answer": "C",
-          "status": "pending_bibliographic_verification",
-          "commentary_status": "not_started"
+          "status": "pending_official_answer_discrepancy_adjudication",
+          "commentary_status": "documentary_conflict_pending_adjudication",
+          "review_note": "DIVERGÊNCIA CRÍTICA: o PDF da prova 2008 acessado no Google Drive marca (X) na alternativa A (sequência C,E,C,E,C,C), enquanto official-exams.json e o checkpoint registram C (C,C,E,E,C,E). A Resolução IMO A.918(22), vigente antes de 2008, confirma literalmente a primeira frase (p.13), exige hemisférios na posição (p.15), recomenda resposta 'The pilot will embark at ... hours local time' (p.55), e resposta 'Yes, we are ready' (p.63), tornando os diálogos 2, 3 e 4 problemáticos. Diálogo 5 coincide com A2/3.2 p.61. Diálogo 6 omite 'manoeuvring' conforme A2/3.2 p.61, mas a interpretação estrita exige adjudicação. Não homologar nem alterar gabarito do banco antes de conferir se o X do PDF representa gabarito oficial ou anotação de terceiro.",
+          "original_exam_url": "https://drive.google.com/file/d/1ZUC9GoT0hYZcljrp1kKqRofmiehjzptr/view",
+          "bibliography_candidate_url": "https://drive.google.com/file/d/1jYZo-tH5rEfEi6S0jsh5erYSVyY1RLEV/view",
+          "bibliography": {
+            "author": "International Maritime Organization",
+            "title": "IMO Standard Marine Communication Phrases",
+            "edition": "Resolution A.918(22), adopted 29 November 2001",
+            "pages": "13, 15, 55, 61, 63",
+            "short_excerpts": [
+              "Please use IMO Standard Marine Communication Phrases.",
+              "When latitude and longitude are used, these shall be expressed in degrees and minutes",
+              "The pilot will embark at ... hours local time.",
+              "Yes, we are ready (to get underway).",
+              "The manoeuvring speed at full / half / slow / dead slow ahead is ... knots."
+            ]
+          },
+          "dialogue_review": [
+            {
+              "number": 1,
+              "assessment": "C",
+              "reason": "Frases idênticas ao procedimento introdutório, p.13"
+            },
+            {
+              "number": 2,
+              "assessment": "E",
+              "reason": "Faltam Norte/Sul e Leste/Oeste nas coordenadas, p.15"
+            },
+            {
+              "number": 3,
+              "assessment": "E (provisório)",
+              "reason": "Resposta Stand by 15 minutes não informa hora de embarque conforme modelo específico, p.55; Stand by é permitido em outros contextos"
+            },
+            {
+              "number": 4,
+              "assessment": "E (interpretação estrita)",
+              "reason": "Resposta prescrita é Yes, we are ready (to get underway), p.63"
+            },
+            {
+              "number": 5,
+              "assessment": "C",
+              "reason": "Correspondência literal com diâmetro do turning circle, p.61"
+            },
+            {
+              "number": 6,
+              "assessment": "E (interpretação estrita)",
+              "reason": "Modelo inclui 'manoeuvring speed', p.61"
+            }
+          ]
         },
         {
           "id": "pscpp::official::2008::038",
