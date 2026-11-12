@@ -1543,6 +1543,60 @@
         "Full conceptual deduplication against 19 proximate catalog records and all other extensions not certified; no final IDs or approval.",
         "Further 47 questions require independently sourced and deduplicated content."
       ]
+    },
+    "audit_20261112_0509": {
+      "method": "Live read of draft checkpoint; read-only Neon verification of syllabus item; Vercel recent deployment inspection.",
+      "syllabus": "8.10.2.1.1 — Os coeficientes da força de corrente para navios-petroleiros",
+      "candidate_ids": [
+        "L04-DRAFT-01",
+        "L04-DRAFT-02",
+        "L04-DRAFT-03"
+      ],
+      "structure": [
+        {
+          "id": "L04-DRAFT-01",
+          "options": 5,
+          "keys": "ABCDE",
+          "answer": "C",
+          "source": "PDF OCR p. 155 (página impressa 162), seção 8.3.2.2"
+        },
+        {
+          "id": "L04-DRAFT-02",
+          "options": 5,
+          "keys": "ABCDE",
+          "answer": "B",
+          "source": "PDF OCR p. 156 (página impressa 163), seção 8.3.2.3"
+        },
+        {
+          "id": "L04-DRAFT-03",
+          "options": 5,
+          "keys": "ABCDE",
+          "answer": "D",
+          "source": "PDF OCR p. 156 (página impressa 163), seção 8.3.2.3"
+        }
+      ],
+      "new_questions": 0,
+      "approved": 0,
+      "corrections": 0,
+      "assigned_ids": [],
+      "commit_scope": "checkpoint only",
+      "pr": null,
+      "ci": null,
+      "merge": null,
+      "production_deploy": null,
+      "preview": {
+        "id": "dpl_79hQWZbtJefLJq5vWzW1n8zqMVnH",
+        "state": "READY",
+        "target": null,
+        "sha": "ca4ffb8b72201d1619b1f418fe597963ef248eef",
+        "url": "https://vercel.com/estibordo/estibordo-pscpp/79hQWZbtJefLJq5vWzW1n8zqMVnH"
+      },
+      "remaining_to_target": 47,
+      "blockers": [
+        "19 proximity matches require semantic comparison of complete question/answer/comment and other extensions; no exclusivity certification",
+        "Additional 47 questions need direct page-level verification against primary book"
+      ],
+      "note": "Prior page-level source verification preserved from 04:07 checkpoint; no new direct PDF reading or approval in this step. Preview is not production publication."
     }
   }
 }
