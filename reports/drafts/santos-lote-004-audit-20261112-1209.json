@@ -1,0 +1,52 @@
+{
+  "title": "Santos lote 004 — auditoria incremental blocos 016–018",
+  "date": "2026-11-12",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261112-1109.json",
+  "files": [
+    "data/question-extensions/pscpp-caderno-bloco-016.json",
+    "data/question-extensions/pscpp-caderno-bloco-017.json",
+    "data/question-extensions/pscpp-caderno-bloco-018.json"
+  ],
+  "records_read": 210,
+  "manobrabilidade_records": 48,
+  "manobrabilidade_by_block": {
+    "016": 15,
+    "017": 18,
+    "018": 15
+  },
+  "manobrabilidade_ids": [
+    "MAN-B016-01..15",
+    "MAN-B017-01..18",
+    "MAN-B018-01..15"
+  ],
+  "specific_keyword_matches": 0,
+  "assessment": "All three files read from draft branch. No specific literal pattern for coeficiente/corrente, força lateral, momento de guinada among 48 Manobrabilidade records. This does not establish semantic uniqueness. Records cite IMO/Crenshaw, not Santos.",
+  "draft_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "draft_answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "new_questions": 0,
+  "approved": 0,
+  "corrections": 0,
+  "definitive_ids": [],
+  "remaining_to_target": 47,
+  "remaining_caderno_files": 8,
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "production_deploy": null,
+  "limitations": [
+    "18 prior matches in blocks 007–009 require conceptual review",
+    "Blocks 019–026 and other extensions pending",
+    "Full live question catalog not confirmed in Neon",
+    "No additional source-page verification"
+  ],
+  "next": "Review 18 prior matches and blocks 019–021; validate source before creating or approving."
+}
