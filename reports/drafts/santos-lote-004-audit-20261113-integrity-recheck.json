@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-13",
+  "title": "Santos lote 004 — reconciliação atual dos lotes 001–003 e integridade das candidatas",
+  "previous": "reports/drafts/santos-lote-004-audit-20261113-37-contextual-review.json",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "github_read": {
+    "paths": [
+      "data/question-extensions/manobrabilidade-santos-lote-001.json",
+      "data/question-extensions/manobrabilidade-santos-lote-002.json",
+      "data/question-extensions/manobrabilidade-santos-lote-003.json",
+      "reports/drafts/santos-lote-004-source-review-20261110.json"
+    ],
+    "existing_records": 150,
+    "unique_existing_ids": 150,
+    "first_id": "MSN21-REV-001",
+    "last_id": "MSN21-REV-150",
+    "drafts": 3,
+    "exact_stem_collisions_with_existing_lots": 0,
+    "draft_alternative_counts": [
+      5,
+      5,
+      5
+    ],
+    "draft_keys": [
+      "C",
+      "B",
+      "D"
+    ],
+    "draft_pdf_pages": [
+      155,
+      156,
+      156
+    ],
+    "syllabus_item": "8.10.2.1.1"
+  },
+  "neon": {
+    "project_id": "shy-firefly-80833334",
+    "inspection": "information_schema.tables public",
+    "master_question_text_table_found": false
+  },
+  "limits": [
+    "Only exact stem collisions checked against 150 extension questions; full semantic comparison of all other extensions and static catalogs incomplete",
+    "Primary PDF not reopened this run; prior source-page checkpoint remains provenance",
+    "No production snapshot or deployment verification this run"
+  ],
+  "new_questions": 0,
+  "approved": 0,
+  "corrections": 0,
+  "assigned_ids": [],
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "deploy": null,
+  "pending": [
+    "Complete semantic deduplication beyond 37 screened records and 150 Santos questions",
+    "Reopen primary PDF for any additional authored questions",
+    "Validate production branch and active catalog before definitive IDs",
+    "Run tests and deployment controls only after approval"
+  ]
+}
