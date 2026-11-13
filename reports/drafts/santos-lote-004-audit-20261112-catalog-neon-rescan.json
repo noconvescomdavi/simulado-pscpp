@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-12",
+  "title": "Santos L04 — nova leitura dos catálogos e Neon",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous": "reports/drafts/santos-lote-004-audit-20261112-source-pages-155-156.json",
+  "catalogs": [
+    {
+      "path": "data/questions/manobrabilidade.json",
+      "blob_sha": "7d91a960b5901e1595e723d0382ddd3693616a62",
+      "records": 4089,
+      "preliminary_keyword_hits": 106
+    },
+    {
+      "path": "data/pscpp/generated-questions.json",
+      "blob_sha": "97c2662f1e4f01593ad71a0c8e269c00d9574b55",
+      "records": 500,
+      "preliminary_keyword_hits": 25
+    }
+  ],
+  "keyword_screen": "Registro JSON contém corrente e ao menos um dos termos coeficiente, guinada, lateral ou través. Inclui alternativas e comentários; não equivale a duplicação semântica. Os 131 acertos exigem inspeção direcionada.",
+  "neon": {
+    "project_id": "shy-firefly-80833334",
+    "tables": [
+      "question_answers",
+      "question_notebook_answers",
+      "question_notebooks",
+      "question_stats",
+      "syllabus_topic_sources",
+      "syllabus_topics"
+    ],
+    "master_question_text_table_found": false
+  },
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "primary_source_verification": "Conferência direta registrada no checkpoint anterior, páginas PDF 155–156; não repetida nesta execução.",
+  "new_questions": 0,
+  "approved": 0,
+  "corrections": 0,
+  "definitive_ids": [],
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "deploy": null,
+  "pending": [
+    "Inspecionar 131 ocorrências lexicais em contexto e concluir comparação semântica, incluindo extensões",
+    "Confrontar a fonte diretamente para qualquer questão adicional",
+    "Validar numeração contra todos os registros atuais",
+    "Testes/PR/merge/deploy somente após homologação"
+  ]
+}
