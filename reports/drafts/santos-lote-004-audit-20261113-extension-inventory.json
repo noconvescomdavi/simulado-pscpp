@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-13",
+  "phase": "extension-inventory-before-semantic-deduplication",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous": "reports/drafts/santos-lote-004-audit-20261113-neighbor-context.json",
+  "new_evidence": {
+    "repository_recursive_tree_truncated": false,
+    "additional_question_extensions": [
+      "pscpp-caderno-bloco-001..026.json",
+      "manobrabilidade-santos-lote-001..003.json"
+    ],
+    "additional_manobrabilidade_restorations": [
+      "manobrabilidade-01.json",
+      "manobrabilidade-02.json",
+      "manobrabilidade-03.json",
+      "manobrabilidade-04.json",
+      "manobrabilidade-05.json"
+    ],
+    "candidate_draft_file": "reports/drafts/santos-lote-004-source-review-20261110.json",
+    "candidate_count": 3,
+    "candidate_ids": [
+      "L04-DRAFT-01",
+      "L04-DRAFT-02",
+      "L04-DRAFT-03"
+    ],
+    "draft_answers": [
+      "C",
+      "B",
+      "D"
+    ],
+    "draft_five_options_each": true,
+    "source_pages_pdf": [
+      155,
+      156
+    ],
+    "neon_project_checked": "shy-firefly-80833334",
+    "neon_master_question_table": false
+  },
+  "assessment": "The previous 4589-record screening does not include 26 caderno extension files or five manobrabilidade restoration files; semantic uniqueness cannot yet be certified. Existing draft bibliographic verification is historical, not freshly repeated here.",
+  "new_questions": 0,
+  "approved": 0,
+  "corrections": 0,
+  "assigned_ids": [],
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "deploy": null,
+  "pending": [
+    "Parse and deduplicate all relevant extension/restoration records against three drafts",
+    "Recheck primary PDF and Anexo 2-A before authoring further questions",
+    "Validate active application catalog and definitive IDs before CI/PR/merge/deploy"
+  ]
+}
