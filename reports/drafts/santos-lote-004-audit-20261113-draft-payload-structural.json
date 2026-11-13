@@ -1,0 +1,84 @@
+{
+  "date": "2026-11-13",
+  "phase": "draft-payload-recovery-and-structural-audit",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "source_draft": "reports/drafts/santos-lote-004-source-review-20261110.json",
+  "reviews": [
+    {
+      "id": "L04-DRAFT-01",
+      "options_count": 5,
+      "option_keys": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "answer": "C",
+      "answer_occurrences": 1,
+      "source": "PDF OCR p. 155 (página impressa 162), seção 8.3.2.2",
+      "syllabus_item": "8.10.2.1.1",
+      "editorial_status": "structurally_valid_source_previously_verified",
+      "notes": "Source scope retained"
+    },
+    {
+      "id": "L04-DRAFT-02",
+      "options_count": 5,
+      "option_keys": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "answer": "B",
+      "answer_occurrences": 1,
+      "source": "PDF OCR p. 156 (página impressa 163), seção 8.3.2.3",
+      "syllabus_item": "8.10.2.1.1",
+      "editorial_status": "structurally_valid_source_previously_verified",
+      "notes": "Loaded vessels only; do not generalize to ballast"
+    },
+    {
+      "id": "L04-DRAFT-03",
+      "options_count": 5,
+      "option_keys": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "answer": "D",
+      "answer_occurrences": 1,
+      "source": "PDF OCR p. 156 (página impressa 163), seção 8.3.2.3",
+      "syllabus_item": "8.10.2.1.1",
+      "editorial_status": "structurally_valid_source_previously_verified",
+      "notes": "Source scope retained"
+    }
+  ],
+  "syllabus_discrepancy": {
+    "draft_code": "8.10.2.1.1",
+    "database_code": "4.13.2",
+    "note": "Different numbering observed; official Anexo 2-A must establish authoritative mapping. Do not overwrite either code without checking."
+  },
+  "source_status": "Previous checkpoints record primary PDF page verification; primary pages not reread in this execution",
+  "semantic_uniqueness": "Not certified against active runtime catalog; prior lexical and contextual scans are partial",
+  "approved": 0,
+  "new_questions": 0,
+  "corrections_applied": 0,
+  "definitive_ids": [],
+  "existing_errors_pending": [
+    "MAN-B022-09",
+    "MAN-B022-12"
+  ],
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "deploy": null,
+  "pending": [
+    "Verify official Anexo 2-A numbering against draft and database",
+    "Certify active loader and semantic deduplication",
+    "Approve only after complete gates",
+    "Correct existing flagged items only after direct source verification"
+  ]
+}
