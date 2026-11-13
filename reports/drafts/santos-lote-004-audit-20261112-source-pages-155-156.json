@@ -1,0 +1,75 @@
+{
+  "title": "Santos lote 004 — conferência direta das páginas 155–156",
+  "date": "2026-11-12",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous": "reports/drafts/santos-lote-004-audit-20261112-l01-reconciliation.json",
+  "primary_source": "Manobrabilidade_do_Navio_no_Seculo_21_OCR.pdf (Library)",
+  "source_pages": [
+    {
+      "pdf": 155,
+      "printed": 162,
+      "section": "8.3.2.2"
+    },
+    {
+      "pdf": 156,
+      "printed": 163,
+      "section": "8.3.2.3"
+    }
+  ],
+  "questions": [
+    {
+      "id": "L04-DRAFT-01",
+      "answer": "C",
+      "alternatives": 5,
+      "source": "PDF p155, impressa 162, seção 8.3.2.2",
+      "finding": "Força lateral máxima no través para petroleiro/graneleiro carregado; forte dependência h/T.",
+      "source_text_checked": true,
+      "editorial_result": "compatible",
+      "approval": "pending full semantic deduplication"
+    },
+    {
+      "id": "L04-DRAFT-02",
+      "answer": "B",
+      "alternatives": 5,
+      "source": "PDF p156, impressa 163, seção 8.3.2.3",
+      "finding": "Picos de momento yaw em navio carregado aumentam e se deslocam às extremidades com menor profundidade; comportamento em lastro difere.",
+      "source_text_checked": true,
+      "editorial_result": "compatible",
+      "approval": "pending full semantic deduplication"
+    },
+    {
+      "id": "L04-DRAFT-03",
+      "answer": "D",
+      "alternatives": 5,
+      "source": "PDF p156, impressa 163, seção 8.3.2.3",
+      "finding": "Curvas de coeficientes próprias de cada tipo de navio, comportamento complexo e não linear.",
+      "source_text_checked": true,
+      "editorial_result": "compatible",
+      "approval": "pending full semantic deduplication"
+    }
+  ],
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "tables": [
+      "question_answers",
+      "question_notebook_answers",
+      "question_notebooks",
+      "question_stats"
+    ],
+    "master_question_stems_table": false
+  },
+  "new_questions": 0,
+  "approved": 0,
+  "corrections": 0,
+  "definitive_ids": [],
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "deploy": null,
+  "pending": [
+    "Concluir deduplicação semântica integral dos catálogos e extensões",
+    "Conferir os subitens do Anexo 2-A e status dos lotes existentes antes de numerar",
+    "Produzir novas questões somente com cotejo direto da obra",
+    "Executar testes, PR, merge e deploy somente após homologação"
+  ]
+}
