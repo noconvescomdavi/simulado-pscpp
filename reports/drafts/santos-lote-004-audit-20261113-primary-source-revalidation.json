@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-13",
+  "phase": "primary-source-page-revalidation",
+  "previous": "reports/drafts/santos-lote-004-audit-20261113-cadernos-011-026-contextual.json",
+  "source": "SANTOS, Edson Mesquita dos. A Manobrabilidade do Navio no Século 21, cap. 8, sec. 8.3.2.2-8.3.2.3",
+  "source_pdf": "Manobrabilidade_do_Navio_no_Seculo_21_OCR.pdf",
+  "pdf_pages": [
+    155,
+    156
+  ],
+  "printed_pages": [
+    162,
+    163
+  ],
+  "verified_findings": [
+    {
+      "candidate": "L04-DRAFT-01",
+      "fact": "For loaded tanker/bulk carrier, lateral current force peaks abeam; grows markedly in shallow water (depth/draft 1.05 versus deep water >=6).",
+      "page_pdf": 155,
+      "page_printed": 162
+    },
+    {
+      "candidate": "L04-DRAFT-02",
+      "fact": "Loaded vessel yaw moment peaks near quarters in deep water; shallower water increases peaks and shifts them toward bow/stern. Ballast behavior differs, with shallow-water peaks approaching beam.",
+      "page_pdf": 156,
+      "page_printed": 163
+    },
+    {
+      "candidate": "L04-DRAFT-03",
+      "fact": "Current behavior nonlinear and vessel-specific coefficient curves unique; simulation requires detailed current inputs.",
+      "page_pdf": 156,
+      "page_printed": 163
+    }
+  ],
+  "status": "source statements verified; exact draft stems, 5 options, answers and comments not fetched; official Anexo 2-A and active runtime catalog not independently verified",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "new_questions": 0,
+  "approved": 0,
+  "corrections_applied": 0,
+  "assigned_ids": [],
+  "existing_catalog_errors_pending": [
+    "MAN-B022-09",
+    "MAN-B022-12"
+  ],
+  "database": "Neon shy-firefly-80833334 public tables re-inventoried, no independent master questions table",
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "deploy": null,
+  "pending": [
+    "Retrieve exact three candidate records and validate all five options/gabarito/comment",
+    "Verify official Anexo 2-A",
+    "Verify active catalog and duplicates",
+    "Resolve two catalog errors via source-backed editorial correction",
+    "Run branch tests PR merge deploy only after controls"
+  ]
+}
