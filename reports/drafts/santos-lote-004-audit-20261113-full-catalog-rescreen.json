@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-13",
+  "title": "Santos lote 004 — triagem integral repetida dos catálogos principais",
+  "previous": "reports/drafts/santos-lote-004-audit-20261113-question-stats.json",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "method": "GitHub fetch_blob dos blobs conhecidos; parse de 4089+500 registros; comparação exata normalizada de enunciados e triagem por cosseno de tokens enunciado+comentário (heurística, não certificação semântica)",
+  "catalogs": [
+    {
+      "path": "data/questions/manobrabilidade.json",
+      "sha": "7d91a960b5901e1595e723d0382ddd3693616a62",
+      "count": 4089
+    },
+    {
+      "path": "data/pscpp/generated-questions.json",
+      "sha": "97c2662f1e4f01593ad71a0c8e269c00d9574b55",
+      "count": 500
+    }
+  ],
+  "candidates": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "exact_normalized_stem_duplicates": 0,
+  "top_lexical_neighbors": {
+    "L04-DRAFT-01": [
+      "MAN-322",
+      "MAN-NSH-C02-UC50-M3",
+      "MAN-338"
+    ],
+    "L04-DRAFT-02": [
+      "MAN-255",
+      "MAN-216",
+      "pscpp::generated::man::0009"
+    ],
+    "L04-DRAFT-03": [
+      "MAN-193",
+      "MAN-160",
+      "MAN-050"
+    ]
+  },
+  "limits": [
+    "Heurística lexical não prova ausência de duplicidade conceitual",
+    "Demais extensões e catálogo ativo não verificados integralmente nesta execução",
+    "Fonte primária e Anexo 2-A não reabertos nesta execução",
+    "Blobs identificados por SHA previamente registrado; atualização posterior dos arquivos não descartada"
+  ],
+  "new_questions": 0,
+  "approved": 0,
+  "corrections": 0,
+  "definitive_ids": [],
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "deploy": null,
+  "next": "Conferir versões atuais dos catálogos e todas as extensões; cotejar semanticamente, consultar PDF primário e Anexo 2-A antes de atribuir IDs ou aprovar."
+}
