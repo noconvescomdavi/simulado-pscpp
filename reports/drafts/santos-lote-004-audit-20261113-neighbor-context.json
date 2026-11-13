@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-13",
+  "title": "Santos lote 004 — revisão contextual de nove vizinhos lexicais e verificação de SHAs",
+  "previous": "reports/drafts/santos-lote-004-audit-20261113-full-catalog-rescreen.json",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "checked_current_catalog_shas": {
+    "data/questions/manobrabilidade.json": "7d91a960b5901e1595e723d0382ddd3693616a62",
+    "data/pscpp/generated-questions.json": "97c2662f1e4f01593ad71a0c8e269c00d9574b55"
+  },
+  "counts": {
+    "main_catalog": 4089,
+    "generated_catalog": 500,
+    "neighbor_records_reviewed": 9,
+    "candidates": 3,
+    "exact_or_direct_conceptual_duplicates_among_neighbors": 0,
+    "new_questions": 0,
+    "approved": 0,
+    "corrections": 0
+  },
+  "neighbor_ids": [
+    "MAN-322",
+    "MAN-338",
+    "MAN-255",
+    "MAN-216",
+    "MAN-193",
+    "MAN-160",
+    "MAN-050",
+    "MAN-NSH-C02-UC50-M3",
+    "pscpp::generated::man::0009"
+  ],
+  "findings": "Nine lexical neighbors reviewed with full stems, options and explanations. MAN-NSH-C02-UC50-M3 concerns general current resistance and relative velocity, not Santos's loaded tanker current lateral-force maximum. Other neighbors address rudder arm, wind, squat, overshoot, turning dynamics, counter-rudder, wind in ballast and passing suction. None directly reproduces the three candidate learning objectives. This is a bounded contextual review, not full semantic uniqueness certification.",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "definitive_ids": [],
+  "source_status": "Previous checkpoint records primary OCR page 155-156 verification; no fresh primary source reread in this execution.",
+  "neon": "shy-firefly-80833334 public schema inspected; no master question-stem table identified.",
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "deploy": null,
+  "remaining": [
+    "Review all other extension catalogs and non-lexical conceptual overlaps",
+    "Check primary PDF and Anexo 2-A for any additional questions",
+    "Assign IDs only after complete collision control",
+    "Run tests and PR/merge/deploy only for approved questions"
+  ]
+}
