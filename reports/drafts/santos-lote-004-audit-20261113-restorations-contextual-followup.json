@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-13",
+  "phase": "restoration-01-05-contextual-candidate-comparison",
+  "previous": "reports/drafts/santos-lote-004-audit-20261113-restorations-01-05.json",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "files_checked": [
+    "data/question-restorations/manobrabilidade-01.json",
+    "data/question-restorations/manobrabilidade-02.json",
+    "data/question-restorations/manobrabilidade-03.json",
+    "data/question-restorations/manobrabilidade-04.json",
+    "data/question-restorations/manobrabilidade-05.json"
+  ],
+  "records_checked": 699,
+  "lexical_hits_this_pass": 69,
+  "prior_report_hits": 68,
+  "method_difference": "This pass matches /corrente|força lateral|momento de guinada|coeficient/ across stem/options/explanation; earlier 68 used a different broad stem/term screen. Counts are not directly interchangeable.",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "finding": "Restoration records on current address ground track, bank effect, rudder yaw moment, wind and propeller coefficients are general or distinct mechanisms; no restoration hit inspected specifically states (1) maximum current lateral force abeam for loaded tankers/bulk carriers, (2) yaw-moment peaks shifting toward bow/stern with decreasing depth/draft, or (3) vessel-specific nonlinear current-coefficient curves. This is scoped contextual assessment, not complete semantic certification.",
+  "related_ids": [
+    "MAN-392",
+    "MAN-445",
+    "MAN-498",
+    "MAN-551",
+    "MAN-604",
+    "MAN-657",
+    "MAN-710",
+    "MAN-375",
+    "MAN-428",
+    "MAN-481",
+    "MAN-534",
+    "MAN-587",
+    "MAN-640",
+    "MAN-693",
+    "MAN-746"
+  ],
+  "source_status": "Draft source locators p.155-156 were previously verified, not independently reopened in this run.",
+  "database": "Neon shy-firefly-80833334 public table inventory reread; no standalone master question-text table; active catalog remains unresolved.",
+  "new_questions": 0,
+  "approved": 0,
+  "corrections": 0,
+  "assigned_ids": [],
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "deploy": null,
+  "pending": [
+    "Complete contextual review of 25 flagged caderno records",
+    "Resolve actual active catalog and cross-file overlap",
+    "Reopen Santos primary PDF and Anexo 2-A to verify precise page and syllabus mapping",
+    "Only after full validation assign IDs and perform branch/CI/PR/deploy controls"
+  ]
+}
