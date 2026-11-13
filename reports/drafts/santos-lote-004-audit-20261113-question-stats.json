@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-13",
+  "title": "Santos lote 004 — verificação do banco de estatísticas e continuidade",
+  "previous": "reports/drafts/santos-lote-004-audit-20261113-integrity-recheck.json",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "neon": {
+    "project_id": "shy-firefly-80833334",
+    "table": "public.question_stats",
+    "total_rows": 1541,
+    "rows_with_question_id_like_MSN21_REV": 0,
+    "interpretation": "Tabela de estatísticas não é catálogo mestre. Zero registros de estatísticas MSN21 não prova ausência de questões publicadas."
+  },
+  "repository": {
+    "draft_file": "reports/drafts/santos-lote-004-source-review-20261110.json",
+    "candidate_ids": [
+      "L04-DRAFT-01",
+      "L04-DRAFT-02",
+      "L04-DRAFT-03"
+    ],
+    "candidate_keys": [
+      "C",
+      "B",
+      "D"
+    ],
+    "candidate_pages": [
+      155,
+      156,
+      156
+    ],
+    "existing_lot_ids": "MSN21-REV-001..150 (conforme checkpoint anterior)"
+  },
+  "new_questions": 0,
+  "new_approved": 0,
+  "corrections": 0,
+  "definitive_ids": [],
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "deploy": null,
+  "blockers": [
+    "Auditoria semântica completa das demais extensões e catálogos ainda não certificada",
+    "Nenhuma nova questão cotejada diretamente com a obra nesta execução",
+    "Não atribuir IDs definitivos nem integrar sem validação completa"
+  ],
+  "next": "Inspecionar demais extensões e catálogo ativo; cotejar cada nova questão com PDF e subitem do Anexo 2-A; executar testes/PR/merge/deploy somente após aprovação."
+}
