@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-12",
+  "title": "Santos lote 004 — inspeção de lotes Santos 002–003 e esquema Neon",
+  "previous": "reports/drafts/santos-lote-004-audit-20261112-catalog-neon-rescan.json",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "github_files_reviewed": [
+    "data/question-extensions/manobrabilidade-santos-lote-002.json",
+    "data/question-extensions/manobrabilidade-santos-lote-003.json"
+  ],
+  "records_inspected": 100,
+  "related_stems_inspected": 12,
+  "related_ids": [
+    "MSN21-REV-054",
+    "MSN21-REV-058",
+    "MSN21-REV-064",
+    "MSN21-REV-077",
+    "MSN21-REV-079",
+    "MSN21-REV-097",
+    "MSN21-REV-106",
+    "MSN21-REV-107",
+    "MSN21-REV-111",
+    "MSN21-REV-116",
+    "MSN21-REV-118",
+    "MSN21-REV-130"
+  ],
+  "priority_related_id": "MSN21-REV-079",
+  "comparison": "REV-079 trata do conjunto de grandezas para forças de corrente; candidatos 01–03 tratam de força lateral máxima, picos do momento em águas rasas e especificidade de curvas. Nenhum enunciado idêntico detectado entre os 12, mas equivalência semântica integral não certificada.",
+  "neon_project": "shy-firefly-80833334",
+  "neon_query": "information_schema.tables public",
+  "neon_findings": "Tabelas question_answers, question_stats, question_notebooks e syllabus_topic_sources confirmadas; nenhum catálogo mestre de enunciados evidente.",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "new_questions": 0,
+  "approved": 0,
+  "corrections": 0,
+  "definitive_ids": [],
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "deploy": null,
+  "pending": [
+    "Examinar as 131 ocorrências lexicais dos dois catálogos principais em contexto, inclusive alternativas e comentários",
+    "Comparar demais extensões e certificar não equivalência conceitual",
+    "Conferir PDF primário para novas questões antes de redigir ou homologar",
+    "Validar IDs, executar testes e fluxo de integração apenas após controles"
+  ]
+}
