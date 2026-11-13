@@ -1,0 +1,69 @@
+{
+  "date": "2026-11-13",
+  "phase": "contextual-review-cadernos-011-026",
+  "previous": "reports/drafts/santos-lote-004-audit-20261113-restorations-contextual-followup.json",
+  "reviewed_ids": [
+    "MAN-B011-01",
+    "MAN-B011-02",
+    "MAN-B013-01",
+    "MAN-B013-02",
+    "MAN-B015-08",
+    "MAN-B016-02",
+    "MAN-B017-08",
+    "MAN-B018-05",
+    "MAN-B019-02",
+    "MAN-B020-05",
+    "MAN-B022-02",
+    "MAN-B022-06",
+    "MAN-B022-09",
+    "MAN-B022-12",
+    "MAN-B023-08",
+    "MAN-B024-03",
+    "MAN-B024-04",
+    "MAN-B024-05",
+    "MAN-B024-06",
+    "MAN-B025-07",
+    "MAN-B025-10",
+    "MAN-B026-03",
+    "MAN-B026-04",
+    "MAN-B026-07",
+    "MAN-B026-08"
+  ],
+  "records_contextually_inspected": 25,
+  "critical_existing_catalog_errors": [
+    {
+      "id": "MAN-B022-09",
+      "stored_answer": "A",
+      "issue": "Assertion II says wind lateral force acts only below waterline (false); answer A includes II; no listed combination appears to express only I and III. Needs editorial rewrite and source verification.",
+      "action": "flag_only_no_production_change"
+    },
+    {
+      "id": "MAN-B022-12",
+      "stored_answer": "D",
+      "issue": "Assertion I says wind lateral force acts only below waterline (false); answer D includes I; correct combination II and III not offered. Needs editorial rewrite and source verification.",
+      "action": "flag_only_no_production_change"
+    }
+  ],
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "candidate_status": "unapproved; source pages and Anexo 2-A not revalidated",
+  "semantic_overlap": "MAN-B022-02 and MAN-B022-12 address generic current force, not candidate-specific current coefficients; no certification of full active catalog",
+  "neon": "Public table inventory queried; no independent master question-text table identified",
+  "new_questions": 0,
+  "approved": 0,
+  "corrections_applied": 0,
+  "assigned_ids": [],
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "deploy": null,
+  "pending": [
+    "Verify source PDF pages 155-156 and Anexo 2-A",
+    "Correct invalid MAN-B022-09 and MAN-B022-12 in separate validated change after bibliographic check",
+    "Resolve active catalog and cross-file overlaps",
+    "Only then assign IDs and run tests/PR/merge/deploy"
+  ]
+}
