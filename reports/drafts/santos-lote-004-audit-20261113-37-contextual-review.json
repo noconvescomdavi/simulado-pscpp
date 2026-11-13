@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-13",
+  "title": "Santos lote 004 — revisão contextual dos 37 enunciados sinalizados",
+  "previous": "reports/drafts/santos-lote-004-audit-20261113-stem-screen.json",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "source_blob": "7d91a960b5901e1595e723d0382ddd3693616a62",
+  "examined_count": 37,
+  "all_ids_resolved": true,
+  "source_groups": {
+    "Principles of Naval Architecture Volume III": 9,
+    "Provision and Display of Manoeuvring Information on Board Ships": 8,
+    "Naval Shiphandling": 18,
+    "Ship Resistance and Flow": 1,
+    "Principles of Naval Architecture Volume II": 1
+  },
+  "nearby_ids": [
+    "MAN-NSH-C02-UC50-M2",
+    "MAN-NSH-C02-UC50-M3"
+  ],
+  "finding": "These ask comparative hull resistance for bow versus abeam current, not Santos-specific maximum lateral-force coefficient for loaded tankers. Adjacent concepts, not established duplicates.",
+  "other_current_related": [
+    "MAN-NSH-C02-UC52-M2",
+    "MAN-NSH-C02-UC52-M3",
+    "MAN-NSH-C02-UC53-M1",
+    "MAN-NSH-C02-UC53-M2",
+    "MAN-NSH-C02-UC53-M3"
+  ],
+  "finding_limit": "Review of selected 37 full records (stems, options, explanations) indicates no direct duplication of the three Santos candidate objectives; does not establish global semantic uniqueness. Source bibliography in these records is not Santos.",
+  "draft_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "new_questions": 0,
+  "approved": 0,
+  "corrections": 0,
+  "assigned_ids": [],
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "deploy": null,
+  "pending": [
+    "Screen remaining extensions and conceptual synonyms missed by current-and-keyword filter",
+    "Reconfirm current primary PDF pages and Anexo 2-A for any additional drafts",
+    "Check exact production repository and deployment state before numbering",
+    "Only after complete validation produce reviewed questions and run CI/PR/merge/deploy"
+  ]
+}
