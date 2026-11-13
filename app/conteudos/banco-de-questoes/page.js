@@ -1,10 +1,12 @@
-import {redirect} from "next/navigation";
+import {redirect,notFound} from "next/navigation";
 import {getSession} from "../../../lib/auth";
 import {getEntitlement} from "../../../lib/entitlement";
 import {availableQuestionBanks} from "../../../lib/question-catalog";
 import {listNotebookHistory} from "../../../lib/notebook-history";
+import {getNotebookEditConfig} from "../../../lib/notebook-management";
 import StudentHeader from "../../components/StudentHeader";
 import Builder from "./Builder";
+import NotebookHistoryActions from "./NotebookHistoryActions";
 import styles from "./bank.module.css";
 
 export default async function Page({searchParams}){
@@ -17,25 +19,31 @@ export default async function Page({searchParams}){
   const q=await searchParams;
   const history=await listNotebookHistory(s.id,30);
   const requested=String(q?.materia||q?.subject||"").trim();
+  const editingId=String(q?.editar||"").trim();
+  const editing=editingId?await getNotebookEditConfig(s.id,editingId):null;
+  if(editingId&&(!editing||editing.completed))notFound();
   const banks=availableQuestionBanks({includeFilters:true});
-  const initialSubjects=requested&&banks.some(b=>b.slug===requested&&b.count)
+  const initialSubjects=editing?.subjects||(requested&&banks.some(b=>b.slug===requested&&b.count)
     ? [requested]
-    : [];
+    : []);
 
   return (
     <>
       <StudentHeader active="banco"/>
       <main className={styles.page}>
         <span>QUESTÕES</span>
-        <h1>Banco de questões</h1>
-        <p>{e.trial
-          ?"Período de testes: gere 1 bloco com 10 questões."
-          :"Marque as matérias, filtre por obra, capítulo ou assunto e gere um caderno de 1 a 300 questões."}</p>
+        <h1>{editing?"Editar caderno":"Banco de questões"}</h1>
+        <p>{editing
+          ?"Atualize o caderno em andamento. Suas respostas anteriores permanecem preservadas."
+          :e.trial
+            ?"Período de testes: gere 1 bloco com 10 questões."
+            :"Marque as matérias, filtre por obra, capítulo ou assunto e gere um caderno de 1 a 300 questões."}</p>
         <Builder
           banks={banks}
           trial={e.trial}
           initialSubjects={initialSubjects}
-          fixation={q?.modo==="fixacao"?{
+          editing={editing}
+          fixation={!editing&&q?.modo==="fixacao"?{
             bibliography_key:q?.bibliografia||"",
             section_key:q?.secao||"",
             chapter:q?.capitulo||""
@@ -78,9 +86,12 @@ export default async function Page({searchParams}){
                   <div className={styles.historyStats}>
                     <div><span>Progresso</span><strong>{item.total_questions?Math.round((item.answered_count/item.total_questions)*100):0}%</strong></div>
                     <div><span>Aproveitamento</span><strong>{item.score_percent.toFixed(0)}%</strong></div>
-                    <a href={`/conteudos/caderno/${item.id}`}>
-                      {item.completed?"Ver resultado":"Continuar caderno"} →
-                    </a>
+                    <div className={styles.historyControls}>
+                      <a className={styles.historyOpenLink} href={`/conteudos/caderno/${item.id}`}>
+                        {item.completed?"Ver resultado":"Continuar caderno"} →
+                      </a>
+                      {!item.completed&&<NotebookHistoryActions id={item.id} title={item.title} answeredCount={item.answered_count}/>}
+                    </div>
                   </div>
                 </article>
               ))}
