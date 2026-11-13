@@ -1,0 +1,80 @@
+{
+  "date": "2026-11-13",
+  "phase": "primary-source-direct-recheck-and-live-inventory",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "source": {
+    "title": "A Manobrabilidade do Navio no Século 21",
+    "author": "Edson Mesquita dos Santos",
+    "file": "Manobrabilidade_do_Navio_no_Seculo_21_OCR.pdf",
+    "pdf_pages": [
+      155,
+      156
+    ],
+    "printed_pages": [
+      162,
+      163
+    ],
+    "sections": [
+      "8.3.2.2",
+      "8.3.2.3"
+    ],
+    "direct_read_this_run": true
+  },
+  "drafts": [
+    {
+      "id": "L04-DRAFT-01",
+      "options": 5,
+      "answer": "C",
+      "page": 162,
+      "source_support": "Força lateral máxima no través para petroleiro/graneleiro carregado; sensível à profundidade",
+      "status": "source-verified; semantic-dedup-and-official-syllabus-pending"
+    },
+    {
+      "id": "L04-DRAFT-02",
+      "options": 5,
+      "answer": "B",
+      "page": 163,
+      "source_support": "Picos de momento aumentam e aproximam-se das extremidades em navio carregado quando a profundidade diminui; comportamento do lastro é diferente",
+      "status": "source-verified; semantic-dedup-and-official-syllabus-pending"
+    },
+    {
+      "id": "L04-DRAFT-03",
+      "options": 5,
+      "answer": "D",
+      "page": 163,
+      "source_support": "Comportamento não linear e curvas únicas por tipo de navio",
+      "status": "source-verified; semantic-dedup-and-official-syllabus-pending"
+    }
+  ],
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "result": "Public tables inspected; no standalone question master table"
+  },
+  "git": {
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51",
+    "ahead_before_checkpoint": 77,
+    "behind": 1
+  },
+  "counts": {
+    "drafts_reverified": 3,
+    "new_questions": 0,
+    "approved": 0,
+    "corrections_applied": 0,
+    "definitive_ids": 0
+  },
+  "existing_errors_pending": [
+    "MAN-B022-09",
+    "MAN-B022-12"
+  ],
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "deploy": null,
+  "pending": [
+    "Official Anexo 2-A primary document verification",
+    "Full active static loader and semantic uniqueness certification",
+    "Reconcile branch divergence",
+    "Bibliographic corrections for flagged existing questions"
+  ],
+  "decision": "No approval, definitive numbering, or deployment without complete controls"
+}
