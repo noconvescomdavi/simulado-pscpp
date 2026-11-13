@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-13",
+  "phase": "independent-full-payload-and-live-state-crosscheck",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "source_draft": "reports/drafts/santos-lote-004-source-review-20261110.json",
+  "candidates": [
+    {
+      "id": "L04-DRAFT-01",
+      "answer": "C",
+      "option_count": 5,
+      "pdf_page": 155,
+      "printed_page": 162,
+      "section": "8.3.2.2",
+      "finding": "five distinct options; stem restricts loaded tankers/bulk carriers; source checkpoint supports abeam maximum"
+    },
+    {
+      "id": "L04-DRAFT-02",
+      "answer": "B",
+      "option_count": 5,
+      "pdf_page": 156,
+      "printed_page": 163,
+      "section": "8.3.2.3",
+      "finding": "five distinct options; stem correctly restricts loaded vessels, excludes ballast generalization"
+    },
+    {
+      "id": "L04-DRAFT-03",
+      "answer": "D",
+      "option_count": 5,
+      "pdf_page": 156,
+      "printed_page": 163,
+      "section": "8.3.2.3",
+      "finding": "five distinct options; scope vessel-specific nonlinear coefficients"
+    }
+  ],
+  "source_evidence": "Compared complete exact payload with previously recorded primary-source validation; PDF not directly reopened in this run",
+  "syllabus": "8.10.2.1.1 exists in Neon per previous checkpoint; official Anexo 2-A not independently reopened",
+  "live_db": "Read-only inventory of Neon shy-firefly-80833334 public tables; no independent question master table; active static loader unresolved",
+  "git": {
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51",
+    "ahead": 75,
+    "behind": 1,
+    "status": "diverged"
+  },
+  "existing_issues": [
+    "MAN-B022-09",
+    "MAN-B022-12"
+  ],
+  "new_questions": 0,
+  "approved": 0,
+  "corrections": 0,
+  "definitive_ids": [],
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "deploy": null,
+  "blockers": [
+    "Active runtime catalog and semantic deduplication not certified",
+    "Official Anexo 2-A primary text not rechecked",
+    "Branch divergent and requires controlled reconciliation",
+    "Primary source PDF not reopened in this execution"
+  ],
+  "decision": "Retain drafts only; no production integration or numbering"
+}
