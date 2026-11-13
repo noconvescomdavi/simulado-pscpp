@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-13",
+  "phase": "syllabus-database-crosscheck",
+  "previous_commit": "270a19a73b51285c43c1ddd3f279b957afeb4f28",
+  "neon_project": "shy-firefly-80833334",
+  "verified_database_topic": {
+    "subject_slug": "manobrabilidade",
+    "topic_code": "4.13.2",
+    "title_pt": "Correntes",
+    "parent": "4.13 Efeitos do meio ambiente",
+    "related": "4.13.5.1 Águas rasas"
+  },
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "candidate_status": "Not approved; exact stems/options/answer/comment not retrieved and official Anexo 2-A not independently compared",
+  "source_prior_checkpoint": "PDF pages 155-156, printed pages 162-163; previous checkpoint records verification, not repeated here",
+  "database_catalog": "No independent public question-text master table; question_stats and question_notebooks contain references/statistics, not canonical question content",
+  "new_questions": 0,
+  "approved": 0,
+  "corrections_applied": 0,
+  "assigned_ids": [],
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "deploy": null,
+  "pending": [
+    "Fetch exact candidate payloads from draft branch",
+    "Validate five options, correct key and explanation per candidate",
+    "Verify official Anexo 2-A against database topic 4.13.2",
+    "Identify actual runtime question loader and certify duplicate exclusion",
+    "Fix MAN-B022-09 and MAN-B022-12 only after source verification",
+    "Run tests and PR controls before deployment"
+  ]
+}
