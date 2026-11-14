@@ -52,10 +52,11 @@ const constrainedPool = Object.entries(PSCPP_QUOTAS).flatMap(([subject, quota]) 
 const feasibleExam = constrainedPool.filter(q => q.id !== "man-25");
 assert.equal(feasibleExam.length, 100);
 assert.equal(new Set(feasibleExam.flatMap(q => q.concept_ids)).size, 100);
-assert.throws(
-  () => buildFixedPscppExam(constrainedPool, "greedy-counterexample"),
-  /navegacao-aguas-restritas: 24\/25/,
-  "The current greedy selector must reproduce the known failure before it is fixed"
-);
+const repairedExam = buildFixedPscppExam(constrainedPool, "greedy-counterexample");
+assert.equal(repairedExam.length, 100);
+assert.equal(new Set(repairedExam.flatMap(q => q.concept_ids)).size, 100);
+for (const [subject, quota] of Object.entries(PSCPP_QUOTAS)) {
+  assert.equal(repairedExam.filter(q => historicalSubject(q) === subject).length, quota);
+}
 
-console.log("Concept ID selection regression: OK (known greedy failure reproduced)");
+console.log("Concept ID selection regression: OK (bounded greedy repair verified)");
