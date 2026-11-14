@@ -59,4 +59,41 @@ for (const [subject, quota] of Object.entries(PSCPP_QUOTAS)) {
   assert.equal(repairedExam.filter(q => historicalSubject(q) === subject).length, quota);
 }
 
-console.log("Concept ID selection regression: OK (bounded greedy repair verified)");
+// Two separate cross-subject conflicts require two replacements, not one.
+const doubleSeed = "double-cross-subject-conflict";
+function selectionHash(value) {
+  let result = 2166136261;
+  for (const char of String(value)) {
+    result ^= char.charCodeAt(0);
+    result = Math.imul(result, 16777619);
+  }
+  return result >>> 0;
+}
+const doublePool = Object.entries(PSCPP_QUOTAS).flatMap(([subject, quota]) =>
+  Array.from({ length: quota + (subject === "manobrabilidade" ? 2 : 0) }, (_, i) => ({
+    id: `${subject}-double-${i}`,
+    source_subject: subject,
+    topic: `${subject}-double-topic-${i}`,
+    question: `Double conflict ${subject} question ${i}?`,
+    concept_ids: [`${subject}-double-concept-${i}`],
+  }))
+);
+const manRanked = doublePool.filter(q => q.source_subject === "manobrabilidade")
+  .sort((a, b) => selectionHash(`${doubleSeed}:manobrabilidade:${a.id}`) -
+    selectionHash(`${doubleSeed}:manobrabilidade:${b.id}`) || a.id.localeCompare(b.id));
+for (let i = 0; i < 2; i++) {
+  manRanked[i].concept_ids = [`mandatory-navigation-${i}`];
+  doublePool.find(q => q.id === `navegacao-aguas-restritas-double-${i}`).concept_ids =
+    [`mandatory-navigation-${i}`];
+}
+const feasibleDouble = doublePool.filter(q => !manRanked.slice(0, 2).includes(q));
+assert.equal(feasibleDouble.length, 100);
+assert.equal(new Set(feasibleDouble.flatMap(q => q.concept_ids)).size, 100);
+const doubleExam = buildFixedPscppExam(doublePool, doubleSeed);
+assert.equal(doubleExam.length, 100);
+assert.equal(new Set(doubleExam.flatMap(q => q.concept_ids)).size, 100);
+for (const [subject, quota] of Object.entries(PSCPP_QUOTAS)) {
+  assert.equal(doubleExam.filter(q => historicalSubject(q) === subject).length, quota);
+}
+
+console.log("Concept ID selection regression: OK (bounded single/double repair verified)");
