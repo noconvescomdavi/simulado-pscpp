@@ -1614,7 +1614,7 @@
           "original_correct_answer": "C",
           "status": "pending_official_answer_discrepancy_adjudication",
           "commentary_status": "documentary_conflict_pending_adjudication",
-          "review_note": "DIVERGÊNCIA CRÍTICA: o PDF da prova 2008 acessado no Google Drive marca (X) na alternativa A (sequência C,E,C,E,C,C), enquanto official-exams.json e o checkpoint registram C (C,C,E,E,C,E). A Resolução IMO A.918(22), vigente antes de 2008, confirma literalmente a primeira frase (p.13), exige hemisférios na posição (p.15), recomenda resposta 'The pilot will embark at ... hours local time' (p.55), e resposta 'Yes, we are ready' (p.63), tornando os diálogos 2, 3 e 4 problemáticos. Diálogo 5 coincide com A2/3.2 p.61. Diálogo 6 omite 'manoeuvring' conforme A2/3.2 p.61, mas a interpretação estrita exige adjudicação. Não homologar nem alterar gabarito do banco antes de conferir se o X do PDF representa gabarito oficial ou anotação de terceiro.",
+          "review_note": "DIVERGÊNCIA CRÍTICA: o PDF da prova 2008 acessado no Google Drive marca (X) na alternativa A (sequência C,E,C,E,C,C), enquanto official-exams.json e o checkpoint registram C (C,C,E,E,C,E). A Resolução IMO A.918(22), vigente antes de 2008, confirma literalmente a primeira frase (p.13), exige hemisférios na posição (p.15), recomenda resposta 'The pilot will embark at ... hours local time' (p.55), e resposta 'Yes, we are ready' (p.63), tornando os diálogos 2, 3 e 4 problemáticos. Diálogo 5 coincide com A2/3.2 p.61. Diálogo 6 omite 'manoeuvring' conforme A2/3.2 p.61, mas a interpretação estrita exige adjudicação. Não homologar nem alterar gabarito do banco antes de conferir se o X do PDF representa gabarito oficial ou anotação de terceiro. Nova leitura direta do texto extraído da prova_escrita_2008.pdf confirmou a sequência da alternativa (a) C,E,C,E,C,C seguida de '( X )' na página impressa 17. A alternativa (c) C,C,E,E,C,E continua cadastrada no corpus. Conflito documental confirmado, porém a autoria da marcação X e a adjudicação técnica de cada diálogo permanecem abertas.",
           "original_exam_url": "https://drive.google.com/file/d/1ZUC9GoT0hYZcljrp1kKqRofmiehjzptr/view",
           "bibliography_candidate_url": "https://drive.google.com/file/d/1jYZo-tH5rEfEi6S0jsh5erYSVyY1RLEV/view",
           "bibliography": {
@@ -1661,7 +1661,9 @@
               "assessment": "E (interpretação estrita)",
               "reason": "Modelo inclui 'manoeuvring speed', p.61"
             }
-          ]
+          ],
+          "original_exam_marked_answer": "A",
+          "original_exam_printed_page": 17
         },
         {
           "id": "pscpp::official::2008::038",
@@ -1698,17 +1700,25 @@
           "number": 40,
           "original_correct_answer": "B",
           "status": "pending_bibliographic_verification",
-          "commentary_status": "not_started",
-          "review_note": "Questão 2008-040: corpus official-exams.json registra B e atribui texto a Swift & Bailey, Bridge Team Management. Fonte candidata localizada no Google Drive: Bridge Team Management: A Practical Guide, 2nd edition, The Nautical Institute, 2004 (folha de rosto e créditos identificados na extração). A extração do PDF apresenta codificação de caracteres deslocada/ilegível, impedindo confronto literal seguro do parágrafo sobre execução do plano, localização de página e fundamentação individual A–E. O gabarito B não foi confrontado nesta execução com a marcação da prova original. Não homologar.",
+          "commentary_status": "official_marking_checked_bibliography_pending",
+          "review_note": "Confronto documental efetuado diretamente com o texto extraído de prova_escrita_2008.pdf, DPC, página impressa 19: questão 40 assinala expressamente alternativa (b) com '( X )'. O gabarito B cadastrado coincide com essa marcação, cuja natureza de gabarito oficial versus anotação no exemplar ainda requer autenticação da proveniência. A opção B refere-se à modificação do plano quando equipamentos de navegação se tornam imprecisos ou quando horários mudam; A, C, D e E descrevem outras medidas de preparação/execução, mas a exclusão bibliográfica de cada uma não foi autenticada. Swift & Bailey, Bridge Team Management, 2ª ed. 2004, arquivo candidato localizado; extração ilegível impede identificar página e trecho literal fiel. Não homologar.",
           "original_exam_url": "https://drive.google.com/file/d/1ZUC9GoT0hYZcljrp1kKqRofmiehjzptr/view",
           "bibliography_candidate_url": "https://drive.google.com/file/d/1DGU72Swr5JGYPNMW686afhzjq0ZKZiOC/view",
-          "source_verification": "bibliography_file_located_edition_identified_text_encoding_unresolved_original_answer_not_rechecked",
+          "source_verification": "original_exam_text_checked_bibliography_not_verified",
           "bibliography_candidate": {
             "author": "A. J. Swift; T. J. Bailey",
             "title": "Bridge Team Management: A Practical Guide",
             "edition": "Second edition, The Nautical Institute, 2004",
             "pages": "pendente de verificação",
             "short_excerpts": []
+          },
+          "original_exam_marked_answer": "B",
+          "original_exam_printed_page": 19,
+          "incorrect_reasons_preliminary": {
+            "A": "Descanso de pessoal antes do quarto é preparação, não a adaptação do plano descrita em B; requer conferência na obra.",
+            "C": "Briefing do pessoal é preparação; requer conferência da distinção na obra.",
+            "D": "Disponibilidade do plano é preparação; requer confronto com o parágrafo citado.",
+            "E": "Ajuste de ETA pode ser medida operacional, mas não responde diretamente à alteração do plano diante de equipamentos imprecisos; requer conferência na obra."
           }
         },
         {
