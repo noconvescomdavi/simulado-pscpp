@@ -1727,10 +1727,23 @@
           "number": 41,
           "original_correct_answer": "E",
           "status": "pending_bibliographic_verification",
-          "commentary_status": "not_started",
-          "review_note": "Confronto textual com prova_escrita_2008.pdf, página impressa 19: marcação ( X ) na alternativa E, coincidente com official-exams.json. A marcação do PDF não foi autenticada como gabarito oficial independente. Falta localizar e conferir a fonte primária citada no enunciado, edição aplicável a 2008, página e trecho fiel; justificativas A–E não verificadas. Não homologar.",
+          "commentary_status": "technical_triage_regulatory_conflict_pending",
+          "review_note": "Revisão de 2026-11-14: enunciado e alternativas confrontados com data/pscpp/official-exams.json. Exemplar da prova 2008 (p.19) anteriormente registrado com marcação E, ainda sem autenticação independente da natureza da marcação. ALERTA: a opção E emprega 'tonelagem de porte bruto' para a TUF, enquanto A e D mencionam 'arqueação bruta'; não presumir que porte bruto e arqueação bruta sejam equivalentes. Além disso, E não explicita o LRIT, que A inclui, exigindo conferência da obrigação histórica para navio estrangeiro de longo curso no mar territorial. A redação vigente em 2008 da NORMAM-08/DPC e a base normativa da TUF/LRIT/SISTRAM/SIMMAP não foram autenticadas. Não é possível justificar com segurança a opção E nem excluir A-D bibliograficamente. Manter gabarito cadastrado E como não homologado; NÃO publicar comentário como verificado.",
           "original_exam_url": "https://drive.google.com/file/d/1ZUC9GoT0hYZcljrp1kKqRofmiehjzptr/view",
-          "source_verification": "original_exam_pdf_text_mark_matches_corpus_bibliography_not_verified"
+          "source_verification": "official_exam_mark_previously_checked_historical_norms_not_verified",
+          "incorrect_reasons_preliminary": {
+            "A": "Inclui LRIT e SIMMAP além de SISTRAM e TUF por arqueação bruta; determinar obrigações históricas separadamente antes de rejeitar.",
+            "B": "Dispensa SISTRAM e TUF e exige SIMMAP; conferir regime aplicável à embarcação estrangeira de longo curso.",
+            "C": "Dispensa LRIT, SIMMAP e TUF; verificar se adesão ao SISTRAM dispensava LRIT e incidência de TUF.",
+            "D": "Inclui TUF por arqueação bruta e dispensa LRIT; confronto com E depende de norma histórica e possível erro na unidade de incidência."
+          },
+          "bibliography_candidate": {
+            "author": "Diretoria de Portos e Costas",
+            "title": "NORMAM-08/DPC — Tráfego e Permanência de Embarcações em Águas Jurisdicionais Brasileiras",
+            "edition": "redação vigente em 2008 não autenticada",
+            "pages": "não verificadas",
+            "short_excerpts": []
+          }
         },
         {
           "id": "pscpp::official::2008::042",
