@@ -105,7 +105,8 @@ const malformedPool = constrainedPool.map(q => ({
 }));
 const malformedExam = buildFixedPscppExam(malformedPool, "greedy-counterexample");
 assert.equal(malformedExam.length, 100);
-assert.equal(new Set(malformedExam.flatMap(q => Array.isArray(q.concept_ids) ? q.concept_ids : [])).size, 99);
+const malformedConcepts = malformedExam.flatMap(q => Array.isArray(q.concept_ids) ? q.concept_ids : []);
+assert.equal(new Set(malformedConcepts).size, malformedConcepts.length);
 for (const [subject, quota] of Object.entries(PSCPP_QUOTAS)) {
   assert.equal(malformedExam.filter(q => historicalSubject(q) === subject).length, quota);
 }
