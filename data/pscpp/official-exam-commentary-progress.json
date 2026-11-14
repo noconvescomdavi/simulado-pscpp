@@ -1547,10 +1547,24 @@
           "number": 34,
           "original_correct_answer": "C",
           "status": "pending_bibliographic_verification",
-          "commentary_status": "not_started",
-          "review_note": "Confronto direto em 2026-11-12 com prova_escrita_2008.pdf, p. 16: gabarito C (redução de pressão na popa por ação do propulsor) e alternativas A–E correspondem ao corpus. Obra Principles of Naval Architecture citada na prova, mas edição/página/trecho do mecanismo de thrust deduction não recuperados nesta execução; não homologar.",
+          "commentary_status": "preliminary_option_by_option_review_pending_primary_bibliography",
+          "review_note": "Confronto direto em 2026-11-12 com prova_escrita_2008.pdf, p. 16: gabarito C (redução de pressão na popa por ação do propulsor) e alternativas A–E correspondem ao corpus. Obra Principles of Naval Architecture citada na prova, mas edição/página/trecho do mecanismo de thrust deduction não recuperados nesta execução; não homologar. Triagem adicional 2026-11-14: alternativas A/B/D/E comentadas individualmente com distinção entre esteira, sistema de ondas e sucção induzida pelo propulsor. Pesquisa no Drive por 'Principles of Naval Architecture' não identificou edição/página textual verificável nesta consulta. Justificativas são interpretação técnica provisória, não transcrição bibliográfica; manter sem homologação.",
           "original_exam_url": "https://drive.google.com/file/d/1ZUC9GoT0hYZcljrp1kKqRofmiehjzptr/view",
-          "source_verification": "official_exam_text_and_marked_answer_checked_bibliography_pending"
+          "source_verification": "official_exam_text_and_marked_answer_checked_bibliography_not_verified",
+          "correct_reason": "C (provisório, conforme marcação na prova): o propulsor acelera o escoamento de água que chega ao disco, podendo reduzir a pressão em regiões da popa e aumentar a resistência efetiva do casco; esta interação contribui para a dedução de empuxo. Mecanismo ainda não cotejado com a página da edição de PNA citada.",
+          "incorrect_reasons_by_option": {
+            "A": "A redução de velocidade relativa da água junto à popa descreve aspecto associado à esteira (wake), não a causa direta da dedução de empuxo formulada na alternativa C.",
+            "B": "O movimento orbital/longitudinal de partículas associado à onda de popa não é a explicação direta da queda de pressão induzida pela sucção do propulsor.",
+            "D": "A corrente de esteira causada por atrito do casco descreve o wake nominal, fenômeno distinto da variação de pressão no casco causada pela operação do propulsor.",
+            "E": "O enunciado sobre velocidade relativa superior à velocidade do navio não identifica o mecanismo de redução de pressão na popa e não explica por si a dedução de empuxo."
+          },
+          "bibliography_candidate": {
+            "author": "Society of Naval Architects and Marine Engineers (SNAME), autoria/organização exata a conferir",
+            "title": "Principles of Naval Architecture",
+            "edition": "não verificada",
+            "pages": "não verificadas",
+            "short_excerpts": []
+          }
         },
         {
           "id": "pscpp::official::2008::035",
