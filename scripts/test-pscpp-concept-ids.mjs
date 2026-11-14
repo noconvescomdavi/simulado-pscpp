@@ -96,4 +96,18 @@ for (const [subject, quota] of Object.entries(PSCPP_QUOTAS)) {
   assert.equal(doubleExam.filter(q => historicalSubject(q) === subject).length, quota);
 }
 
+
+// Invalid concept_ids metadata must not crash the bounded repair path.
+// This pool forces a cross-subject conflict while including malformed metadata.
+const malformedPool = constrainedPool.map(q => ({
+  ...q,
+  concept_ids: q.id === "man-1" ? "unexpected-string" : q.concept_ids,
+}));
+const malformedExam = buildFixedPscppExam(malformedPool, "greedy-counterexample");
+assert.equal(malformedExam.length, 100);
+assert.equal(new Set(malformedExam.flatMap(q => Array.isArray(q.concept_ids) ? q.concept_ids : [])).size, 99);
+for (const [subject, quota] of Object.entries(PSCPP_QUOTAS)) {
+  assert.equal(malformedExam.filter(q => historicalSubject(q) === subject).length, quota);
+}
+
 console.log("Concept ID selection regression: OK (bounded single/double repair verified)");
