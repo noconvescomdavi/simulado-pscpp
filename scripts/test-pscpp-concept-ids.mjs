@@ -54,7 +54,7 @@ assert.equal(feasibleExam.length, 100);
 assert.equal(new Set(feasibleExam.flatMap(q => q.concept_ids)).size, 100);
 assert.throws(
   () => buildFixedPscppExam(constrainedPool, "greedy-counterexample"),
-  /navegacao-aguas-restritas: 24\\/25/,
+  /navegacao-aguas-restritas: 24\/25/,
   "The current greedy selector must reproduce the known failure before it is fixed"
 );
 
