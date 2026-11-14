@@ -35,4 +35,27 @@ for (const seed of ["alpha", "bravo", "charlie"]) {
 }
 const insufficient = pool.filter(q => q.source_subject !== "manobrabilidade" || Number(q.id.split("-").at(-1)) < 25);
 assert.throws(() => buildFixedPscppExam(insufficient, "shortage"), /manobrabilidade: 24\/25/);
-console.log("Concept ID selection regression: OK");
+
+// Contraexemplo determinístico: existe uma prova válida, mas a seleção gulosa
+// pode consumir o conceito compartilhado antes da disciplina seguinte.
+const constrainedPool = Object.entries(PSCPP_QUOTAS).flatMap(([subject, quota]) =>
+  Array.from({ length: quota + (subject === "manobrabilidade" ? 1 : 0) }, (_, i) => ({
+    id: subject === "manobrabilidade" ? `man-${i}` : `${subject}-fixed-${i}`,
+    source_subject: subject,
+    topic: `${subject}-unique-${i}`,
+    question: `Constrained ${subject} question ${i}?`,
+    concept_ids: (subject === "manobrabilidade" && i === 25) ||
+      (subject === "navegacao-aguas-restritas" && i === 0)
+      ? ["shared-required-by-navigation"] : [`${subject}-unique-${i}`],
+  }))
+);
+const feasibleExam = constrainedPool.filter(q => q.id !== "man-25");
+assert.equal(feasibleExam.length, 100);
+assert.equal(new Set(feasibleExam.flatMap(q => q.concept_ids)).size, 100);
+assert.throws(
+  () => buildFixedPscppExam(constrainedPool, "greedy-counterexample"),
+  /navegacao-aguas-restritas: 24\\/25/,
+  "The current greedy selector must reproduce the known failure before it is fixed"
+);
+
+console.log("Concept ID selection regression: OK (known greedy failure reproduced)");
