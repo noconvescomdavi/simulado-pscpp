@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-14",
+  "phase": "direct-primary-source-and-payload-verification",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "base_main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51",
+  "branch_compare": {
+    "ahead": 80,
+    "behind": 1
+  },
+  "source": "SANTOS, Edson Mesquita dos. A Manobrabilidade do Navio no Século 21",
+  "directly_read_pdf_pages": [
+    155,
+    156
+  ],
+  "printed_pages": [
+    162,
+    163
+  ],
+  "candidate_checks": [
+    {
+      "id": "L04-DRAFT-01",
+      "options": "A-E",
+      "answer": "C",
+      "page": 162,
+      "section": "8.3.2.2",
+      "result": "supported by primary text"
+    },
+    {
+      "id": "L04-DRAFT-02",
+      "options": "A-E",
+      "answer": "B",
+      "page": 163,
+      "section": "8.3.2.3",
+      "result": "supported for loaded vessels; ballast has opposite peak shift"
+    },
+    {
+      "id": "L04-DRAFT-03",
+      "options": "A-E",
+      "answer": "D",
+      "page": 163,
+      "section": "8.3.2.3",
+      "result": "supported by vessel-specific non-linear coefficients"
+    }
+  ],
+  "neon_project": "shy-firefly-80833334",
+  "neon_schema": "public tables inspected; no independent master questions table",
+  "approved": 0,
+  "assigned_ids": [],
+  "corrections_applied": 0,
+  "new_questions": 0,
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "production_deploy": null,
+  "pending": [
+    "official Anexo 2-A direct authentication",
+    "complete active runtime catalog semantic deduplication",
+    "reconcile diverged branch before integration",
+    "MAN-B022-09 and MAN-B022-12 source-backed correction"
+  ],
+  "note": "No production integration; bibliographic check only. No new final IDs allocated."
+}
