@@ -1,0 +1,66 @@
+{
+  "date": "2026-11-15",
+  "phase": "runtime-schema-and-draft-structure-recheck",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "github_comparison": {
+    "ahead": 83,
+    "behind": 1,
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+  },
+  "drafts": [
+    {
+      "id": "L04-DRAFT-01",
+      "answer": "C",
+      "pdf_page": 155,
+      "printed_page": 162,
+      "section": "8.3.2.2",
+      "options": 5
+    },
+    {
+      "id": "L04-DRAFT-02",
+      "answer": "B",
+      "pdf_page": 156,
+      "printed_page": 163,
+      "section": "8.3.2.3",
+      "options": 5
+    },
+    {
+      "id": "L04-DRAFT-03",
+      "answer": "D",
+      "pdf_page": 156,
+      "printed_page": 163,
+      "section": "8.3.2.3",
+      "options": 5
+    }
+  ],
+  "draft_structure_checked": true,
+  "primary_source_directly_read_this_run": false,
+  "primary_source_last_recheck": "reports/drafts/santos-lote-004-audit-20261115-primary-recheck.json",
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "syllabus_record_id": 3155,
+    "syllabus_code": "8.10.2.1.1",
+    "information_schema_question_tables": [
+      "question_answers",
+      "question_notebook_answers",
+      "question_notebooks",
+      "question_stats"
+    ],
+    "master_question_text_table_found": false,
+    "note": "Schema inspection limited to public table names containing question or quiz; does not establish full runtime catalog."
+  },
+  "approved": 0,
+  "final_ids": [],
+  "new_questions": 0,
+  "editorial_corrections": 0,
+  "pr": null,
+  "tests": null,
+  "merge": null,
+  "deploy": null,
+  "pending": [
+    "Complete active static/runtime question catalog semantic deduplication",
+    "Authenticate Anexo 2-A official source",
+    "Reconcile branch diverged from main",
+    "Review MAN-B022-09 and MAN-B022-12 against primary sources"
+  ]
+}
