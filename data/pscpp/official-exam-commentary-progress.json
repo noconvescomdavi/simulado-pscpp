@@ -3090,11 +3090,25 @@
           "year": 2012,
           "number": 13,
           "original_correct_answer": "C",
-          "status": "pending_bibliographic_verification",
-          "commentary_status": "preliminary_review_pending_primary_sources",
-          "review_note": "Triagem de A–E. Gabarito cadastrado C. COLREG Regra 3(i): 'em movimento' significa não estar fundeada, amarrada à terra nem encalhada; pode estar sob máquinas, parada e sem seguimento. A: 'no visual' requer avistamento visual efetivo (Regra 3(k)), não mera ausência de visibilidade restrita; B: sem governo e capacidade de manobra restrita são definições distintas (3(f), 3(g)); D: pesca não é automaticamente manobra restrita; E: embarcação à vela pode possuir máquina, desde que não a esteja usando para propulsão (3(e)). Conferir tradução oficial histórica, enunciado original, edição e página antes de homologação.",
-          "review_scope": "enunciado e alternativas A-E do corpus; fontes primárias e gabarito definitivo ainda não autenticados",
-          "bibliography_required": "COLREG Regra 3(e,f,g,i,k), edição/página/trecho pendentes"
+          "status": "bibliography_verified",
+          "commentary_status": "draft_verified_pending_historical_version_and_official_key_authentication",
+          "review_note": "Confronto textual da prova rosa 2012 p.7 com RIPEAM/COLREG consolidado com emendas até dez/2013, Regra 3, pp.7–8. C é tecnicamente correta: 'em movimento' exclui apenas fundeada, amarrada à terra ou encalhada; navio sob máquinas parado e sem seguimento pode permanecer em movimento. A falsa: Regra 3(k) exige observação visual efetiva; B falsa: 3(f) e 3(g) são categorias distintas; D falsa: 3(d) distingue pesca com equipamento restritivo e modalidades sem restrição, não implicando automaticamente 3(g); E falsa: 3(c) admite máquina instalada, desde que não usada. Trechos curtos abaixo extraídos da edição consolidada; posterior a 2012, portanto equivalência histórica e autenticação da marcação oficial permanecem pendentes. Não homologar.",
+          "review_scope": "Prova original 2012 p.7 e fonte normativa posterior pp.7–8 conferidas; marcação oficial e versão histórica ainda pendentes",
+          "bibliography_required": "COLREG Regra 3(e,f,g,i,k), edição/página/trecho pendentes",
+          "original_exam_url": "https://drive.google.com/file/d/1Pvx8ZzNt2R8LT07C2caaZMstXBJZUDAE/view",
+          "bibliography_candidate_url": "https://drive.google.com/file/d/14kTD2X3gyo2-9zP_y0GADkRjNixsDwEJ/view",
+          "verified_source_locator": "Convenção COLREG 1972 / RIPEAM, versão consolidada com emendas até dez. 2013, Regra 3(c,d,f,g,i,k), pp. 7–8 (paginação impressa)",
+          "verified_short_excerpts": [
+            "O termo “em movimento” se aplica a todas as embarcações que não se encontram fundeadas, amarradas à terra ou encalhadas.",
+            "Duas embarcações são consideradas “no visual” quando uma pode ser observada pela outra visualmente;"
+          ],
+          "option_reasons": {
+            "A": "Incorreta: ausência de visibilidade restrita não equivale a avistamento visual mútuo (Regra 3(k)).",
+            "B": "Incorreta: sem governo decorre de circunstância excepcional; manobra restrita decorre da natureza do serviço (3(f),(g)).",
+            "C": "Correta tecnicamente: parado e sem seguimento não exclui a condição de 'em movimento' (3(i)).",
+            "D": "Incorreta: a categoria de pesca é definida pela restrição causada pelo equipamento, não sendo automaticamente 'capacidade de manobra restrita' (3(d),(g)).",
+            "E": "Incorreta: embarcação à vela pode ter máquina, desde que não usada para propulsão (3(c))."
+          }
         },
         {
           "id": "pscpp::official::2012::014",
@@ -3494,5 +3508,5 @@
       ]
     }
   ],
-  "bibliographically_verified": 36
+  "bibliographically_verified": 37
 }
