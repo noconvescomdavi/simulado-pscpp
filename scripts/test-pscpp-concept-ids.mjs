@@ -97,6 +97,33 @@ for (const [subject, quota] of Object.entries(PSCPP_QUOTAS)) {
 }
 
 
+
+// Known limitation: three independent mandatory conflicts cannot be repaired
+// by the current single/double bounded strategy. Assert the limitation explicitly
+// until a verified multi-replacement algorithm is implemented.
+const tripleSeed = "triple-cross-subject-conflict";
+const triplePool = Object.entries(PSCPP_QUOTAS).flatMap(([subject, quota]) =>
+  Array.from({ length: quota + (subject === "manobrabilidade" ? 3 : 0) }, (_, i) => ({
+    id: `${subject}-triple-${i}`,
+    source_subject: subject,
+    topic: `${subject}-triple-topic-${i}`,
+    question: `Triple conflict ${subject} question ${i}?`,
+    concept_ids: [`${subject}-triple-concept-${i}`],
+  }))
+);
+const tripleMan = triplePool.filter(q => q.source_subject === "manobrabilidade")
+  .sort((a, b) => selectionHash(`${tripleSeed}:manobrabilidade:${a.id}`) -
+    selectionHash(`${tripleSeed}:manobrabilidade:${b.id}`) || a.id.localeCompare(b.id));
+for (let i = 0; i < 3; i++) {
+  tripleMan[i].concept_ids = [`mandatory-navigation-triple-${i}`];
+  triplePool.find(q => q.id === `navegacao-aguas-restritas-triple-${i}`).concept_ids =
+    [`mandatory-navigation-triple-${i}`];
+}
+const feasibleTriple = triplePool.filter(q => !tripleMan.slice(0, 3).includes(q));
+assert.equal(feasibleTriple.length, 100);
+assert.equal(new Set(feasibleTriple.flatMap(q => q.concept_ids)).size, 100);
+assert.throws(() => buildFixedPscppExam(triplePool, tripleSeed), /Banco PSCPP insuficiente/);
+
 // Ineligible records at the front of the pool must not consume all 40 repair slots.
 const inactiveSeed = "inactive-prefix-conflict";
 const inactivePool = Object.entries(PSCPP_QUOTAS).flatMap(([subject, quota]) =>
