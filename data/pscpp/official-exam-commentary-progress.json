@@ -1936,11 +1936,28 @@
           "year": 2008,
           "number": 52,
           "original_correct_answer": "D",
-          "status": "pending_bibliographic_verification",
-          "commentary_status": "official_exam_checked_bibliography_pending",
+          "status": "bibliography_verified",
+          "commentary_status": "draft_verified_pending_official_key_authentication_and_integration",
           "original_exam_url": "https://drive.google.com/file/d/1ZUC9GoT0hYZcljrp1kKqRofmiehjzptr/view",
-          "review_note": "Marcação (X) em D coincide com o corpus; Crenshaw Naval Shiphandling disponível no Google Drive, mas ainda sem confronto de página/edição e justificativa individual das opções.",
-          "bibliography_candidate_url": "https://drive.google.com/file/d/1Zymbk_t99_IUAHNyoNrcCWCkBLwIX8Ok/view"
+          "review_note": "2026-11-15: prova 2008 questão 52 cotejada com Crenshaw 4ª ed. (1975), capítulo 6 pp. 107–110. I verdadeira; II, III, IV falsas. D consistente com livro e (X) no exemplar. A natureza oficial do (X) não foi autenticada separadamente; pendente integração editorial e homologação.",
+          "bibliography_candidate_url": "https://drive.google.com/file/d/1Zymbk_t99_IUAHNyoNrcCWCkBLwIX8Ok/view",
+          "bibliography": {
+            "author": "R. S. Crenshaw, Jr.",
+            "title": "Naval Shiphandling",
+            "edition": "Fourth edition (1975)",
+            "pages": "107–110 (capítulo 6, Anchoring and Mooring; paginação impressa)",
+            "verified_short_excerpt": "Never allow the boat to get between the buoy and the ship.",
+            "source_verification": "Texto integral confrontado diretamente com PDF da quarta edição (1975) no Google Drive; prova de 2008, questão 52, confrontada diretamente. Marcação (X) não autenticada como gabarito oficial independente."
+          },
+          "correct_reason": "D (somente I) corresponde à marcação no exemplar e à obra: I é verdadeira (p. 107–108: parar máquinas a 200 jardas e enviar embarcação com cabo e mensageiro); II é falsa (p. 108: Crenshaw desaconselha o uso de buoy hook); III é falsa (p. 109: a proibição se refere à embarcação auxiliar entre boia e navio, não ao navio entre boia e embarcação); IV é falsa (p. 110: manobrar a proa para barlavento/upwind, não sotavento/downwind).",
+          "incorrect_reasons_by_option": {
+            "A": "Inclui II e III, ambas falsas: não usar buoy hook e não colocar embarcação auxiliar entre boia e navio (pp. 108–109).",
+            "B": "Inclui II e III falsas e omite I verdadeira (pp. 107–109).",
+            "C": "Inclui IV falsa, pois a proa deve ser orientada para barlavento; I é verdadeira (pp. 107–110).",
+            "D": "Única combinação tecnicamente correta: apenas I (pp. 107–110).",
+            "E": "IV é falsa: Crenshaw manda orientar a proa para barlavento, não sotavento (p. 110)."
+          },
+          "source_verification": "primary_book_text_verified_official_marking_not_independently_authenticated"
         },
         {
           "id": "pscpp::official::2008::053",
@@ -3433,5 +3450,5 @@
       ]
     }
   ],
-  "bibliographically_verified": 34
+  "bibliographically_verified": 35
 }
