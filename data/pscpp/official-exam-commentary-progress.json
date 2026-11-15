@@ -3220,10 +3220,24 @@
           "year": 2012,
           "number": 19,
           "original_correct_answer": "C",
-          "status": "pending_bibliographic_verification",
-          "commentary_status": "preliminary_review_pending_primary_sources",
-          "review_note": "2026-11-14: Confronto textual com Prova Rosa PSCPP/2012 original, PDF DPC no Drive ID 1Pvx8ZzNt2R8LT07C2caaZMstXBJZUDAE. Cálculo independente: rumo magnético 045° - (-15°)=060°; rumo de agulha 060° - (+2°)=058°, compatível com C. A/B/D/E não correspondem ao rumo de agulha calculado (030°,032°,060°,075°). A marcação polar do farolete não altera o rumo requerido quando se conserva a derrota. Pendente autenticar gabarito definitivo e localizar obra, edição, página e citação literal sobre conversões de rumos.",
-          "original_exam_url": "https://drive.google.com/file/d/1Pvx8ZzNt2R8LT07C2caaZMstXBJZUDAE/view"
+          "status": "bibliography_verified",
+          "commentary_status": "draft_verified_pending_historical_source_and_official_key",
+          "review_note": "2026-11-15: Conferido diretamente no PDF Miguens vol. I 2ª revisão 2023, página impressa 3-16 (PDF 123), exemplo 1: para declinação 15° W, Rmg = Rv +15°; para Dag 3° E, Rag = Rmg -3°. Aplicação ao enunciado 2012-019: Rmg 060°, Rag 058° (C). A-E justificadas individualmente nos campos estruturados. Edição 2023 posterior à prova; edição de 1996 e gabarito definitivo não autenticados. NÃO homologar.",
+          "original_exam_url": "https://drive.google.com/file/d/1Pvx8ZzNt2R8LT07C2caaZMstXBJZUDAE/view",
+          "bibliography_candidate_url": "https://drive.google.com/file/d/1oPh8CPnY59EveVasAb1y7ElALohtWxym/view",
+          "verified_source_locator": "MIGUENS, Altineu Pires. Navegação: A Ciência e a Arte, vol. I, 2ª revisão, 2023, cap. 3, §3.3, p. 3-16 (página 123 do PDF), exemplo 1; edição posterior à prova 2012.",
+          "verified_short_excerpts": [
+            "Rmg = Rv  Dec mag = 075º + 15º (W)",
+            "Rag = Rmg ± Dag = 090º - 3º (E)"
+          ],
+          "correct_reason": "C (058°): rumo magnético = 045° + 15° W = 060°; rumo da agulha = 060° - 2° E = 058°. A marcação polar 030° BE é dado acessório e não muda o rumo para manter a derrota.",
+          "incorrect_reasons_by_option": {
+            "A": "030° é a marcação polar informada, não o rumo da agulha.",
+            "B": "032° não resulta das correções de declinação 15° W e desvio 2° E.",
+            "D": "060° é o rumo magnético intermediário, ainda sem subtrair o desvio 2° E.",
+            "E": "075° não corresponde ao rumo de agulha; decorre de aplicar incorretamente a declinação ao rumo verdadeiro."
+          },
+          "source_verification": "verified_later_edition_pending_1996_edition_and_official_answer_mark"
         },
         {
           "id": "pscpp::official::2012::020",
@@ -3538,5 +3552,5 @@
       ]
     }
   ],
-  "bibliographically_verified": 37
+  "bibliographically_verified": 38
 }
