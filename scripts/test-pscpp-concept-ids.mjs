@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { buildFixedPscppExam, PSCPP_QUOTAS } from "../lib/pscpp-exam-selection.js";
+import { buildFixedPscppExam, isPscppEditoriallyEligible, PSCPP_QUOTAS } from "../lib/pscpp-exam-selection.js";
 import { historicalSubject } from "../lib/historical-exam-blueprint.js";
 
 const pool = Object.entries(PSCPP_QUOTAS).flatMap(([subject, quota]) =>
@@ -110,5 +110,26 @@ assert.equal(new Set(malformedConcepts).size, malformedConcepts.length);
 for (const [subject, quota] of Object.entries(PSCPP_QUOTAS)) {
   assert.equal(malformedExam.filter(q => historicalSubject(q) === subject).length, quota);
 }
+
+
+// Assertion answer summaries must not be accepted as independent assertions.
+// Regression: a literal \\s in the regex failed to match these normal spaces.
+for (const assertion of [
+  "Apenas as afirmativas I e II são corretas",
+  "  II) Somente as assertivas I, III e IV estão corretas",
+  "Todas as afirmativas são verdadeiras",
+  "Nenhuma das assertivas está correta",
+]) {
+  assert.equal(isPscppEditoriallyEligible({
+    question: "Qual é a opção correta?",
+    options: ["A", "B"],
+    assertions: [assertion],
+  }), false, `Must reject option-like assertion: ${assertion}`);
+}
+assert.equal(isPscppEditoriallyEligible({
+  question: "Avalie as assertivas.",
+  options: ["A", "B"],
+  assertions: ["I. O avanço é medido até 90 graus de mudança de proa."],
+}), true);
 
 console.log("Concept ID selection regression: OK (bounded single/double repair verified)");
