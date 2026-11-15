@@ -1821,10 +1821,17 @@
           "number": 46,
           "original_correct_answer": "B",
           "status": "pending_bibliographic_verification",
-          "commentary_status": "not_started",
-          "review_note": "Confronto textual com prova_escrita_2008.pdf, página impressa 22: alternativa B marcada ( X ), coincidente com o corpus. A origem/autenticidade das marcações ( X ) não foi independentemente estabelecida. MacElrevey & MacElrevey, Shiphandling for the Mariner; afirmações I-IV ainda não confrontadas com edição e páginas da obra. Não homologar sem fonte primária e verificação das alternativas.",
+          "commentary_status": "preliminary_review_pending_primary_source",
+          "review_note": "Triagem editorial em 2026-11-15: texto do enunciado e alternativas reconferidos no corpus data/pscpp/official-exams.json, questão 2008-046. B corresponde a I, III e IV, e coincide com a marcação (X) já observada no exemplar da prova; autenticidade independente do gabarito não estabelecida. O item II afirma que posições por radar ou marcações visuais seriam suficientemente precisas para estimar velocidade durante atracação; isso requer confronto textual com MacElrevey & MacElrevey. Itens I (Doppler), III (referências pelo través à noite) e IV (quickwater e limiar de 3 nós) não foram comprovados na edição/página primárias. As razões abaixo apenas descrevem as combinações de assertivas divergentes de B, sem afirmar validade técnica independente. Nenhuma edição, página ou citação literal autenticada; não homologar.",
           "original_exam_url": "https://drive.google.com/file/d/1ZUC9GoT0hYZcljrp1kKqRofmiehjzptr/view",
-          "source_verification": "original_exam_pdf_text_mark_matches_corpus_bibliography_not_verified"
+          "source_verification": "official_exam_mark_checked_bibliographic_page_excerpt_not_verified",
+          "incorrect_reasons_by_option": {
+            "A": "Inclui II e exclui IV, ao contrário da combinação I+III+IV do gabarito cadastrado; a validade das assertivas não foi autenticada.",
+            "C": "Inclui II e exclui I, divergindo da combinação cadastrada; exige fonte primária.",
+            "D": "Inclui II e exclui III e IV, divergindo da combinação cadastrada; exige fonte primária.",
+            "E": "Exclui I, embora contenha III e IV; exige fonte primária."
+          },
+          "correct_reason": "Provisoriamente, B é a combinação I+III+IV registrada no corpus e marcada no exemplar; ainda não existe comprovação bibliográfica suficiente para justificar cada assertiva."
         },
         {
           "id": "pscpp::official::2008::047",
