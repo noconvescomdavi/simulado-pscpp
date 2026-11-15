@@ -1750,11 +1750,24 @@
           "year": 2008,
           "number": 42,
           "original_correct_answer": "B",
-          "status": "pending_bibliographic_verification",
-          "commentary_status": "not_started",
-          "review_note": "Confronto textual com prova_escrita_2008.pdf, página impressa 20: marcação ( X ) na alternativa B, coincidente com official-exams.json. A marcação do PDF não foi autenticada como gabarito oficial independente. Falta localizar e conferir a fonte primária citada no enunciado, edição aplicável a 2008, página e trecho fiel; justificativas A–E não verificadas. Não homologar.",
+          "status": "bibliography_verified",
+          "commentary_status": "draft_verified_pending_integration",
+          "review_note": "Confrontado texto da questão 42 na prova_escrita_2008.pdf, p. impressa 20, com Lewis (ed.), Principles of Naval Architecture, 2nd revision, vol. III (1988), seção 13.3, p. 282 (passagem imediatamente anterior ao cabeçalho CONTROLLABILITY 283). O texto da obra descreve atração lateral para a margem próxima e momento que faz a proa girar para a margem distante. Como o navio está a BB do eixo, a margem próxima é BB e a proa tende a BE: alternativa B. Marcação (X) do exemplar coincide com B, mas sua autenticidade como gabarito oficial independente continua não comprovada; não homologar/publicar até integração editorial e autenticação da marcação.",
           "original_exam_url": "https://drive.google.com/file/d/1ZUC9GoT0hYZcljrp1kKqRofmiehjzptr/view",
-          "source_verification": "original_exam_pdf_text_mark_matches_corpus_bibliography_not_verified"
+          "source_verification": "primary_book_edition_page_excerpt_verified_exam_mark_not_independently_authenticated",
+          "correct_reason": "B: deslocado para bombordo do eixo do canal, o navio sofre força lateral de sucção para a margem próxima (BB), enquanto o momento de guinada tende a levar a proa para a margem oposta (BE).",
+          "incorrect_reasons_by_option": {
+            "A": "A tendência lateral para BB é correta, mas a proa tende à margem distante, BE, e não BB.",
+            "C": "A proa tende para BE, porém a força lateral desloca o centro de gravidade para a margem próxima, BB, não BE.",
+            "D": "Inverte simultaneamente a direção da força lateral (BB) e a tendência de guinada da proa (BE).",
+            "E": "A obra descreve tanto força lateral sobre o navio quanto momento de guinada; a alternativa omite a atração lateral do centro de gravidade para BB e não representa o par de efeitos pedido."
+          },
+          "bibliography_author": "Edward V. Lewis (editor); capítulo de controlabilidade no volume III",
+          "bibliography_title": "Principles of Naval Architecture, Volume III: Motions in Waves and Controllability",
+          "bibliography_edition": "Second Revision (1988)",
+          "bibliography_page": "282, seção 13.3 Effects of Narrow Channels (continuação na p. 283)",
+          "verified_short_excerpt": "creates a force that draws the ship toward the near wall",
+          "bibliography_candidate_url": "https://drive.google.com/file/d/1Za6N1Cbbo6v_ZZ-g1UxFWQ82SLsMrOjp/view"
         },
         {
           "id": "pscpp::official::2008::043",
