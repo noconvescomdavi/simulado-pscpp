@@ -1761,11 +1761,24 @@
           "year": 2008,
           "number": 43,
           "original_correct_answer": "D",
-          "status": "pending_bibliographic_verification",
-          "commentary_status": "not_started",
-          "review_note": "Confronto textual com prova_escrita_2008.pdf, página impressa 20: marcação ( X ) na alternativa D, coincidente com official-exams.json. A marcação do PDF não foi autenticada como gabarito oficial independente. Falta localizar e conferir a fonte primária citada no enunciado, edição aplicável a 2008, página e trecho fiel; justificativas A–E não verificadas. Não homologar.",
+          "status": "bibliography_verified",
+          "commentary_status": "draft_verified_pending_integration",
+          "review_note": "Confronto com texto OCR da obra no Google Drive: Crenshaw, Naval Shiphandling, 4ª ed., 1975, p.23, Inclination effect. Sequência D confirmada literalmente na obra. Corpus official-exams.json registra D; marcação (X) no exemplar da prova foi registrada anteriormente, mas não autenticada como gabarito oficial independente. Não homologar nem publicar até checagem editorial da transcrição e origem do gabarito.",
           "original_exam_url": "https://drive.google.com/file/d/1ZUC9GoT0hYZcljrp1kKqRofmiehjzptr/view",
-          "source_verification": "original_exam_pdf_text_mark_matches_corpus_bibliography_not_verified"
+          "source_verification": "primary_book_edition_page_excerpt_verified_exam_mark_not_independently_authenticated",
+          "correct_reason": "D: no efeito de inclinação, a pá descendente encontra fluxo ascendente e para ré, aumentando simultaneamente velocidade relativa e ângulo de ataque, logo aumenta o empuxo; no lado oposto diminui o empuxo. A reação líquida é um torque que tende a torcer o navio para bombordo (left).",
+          "incorrect_reasons_by_option": {
+            "A": "Inverte os efeitos de velocidade e ângulo de ataque; atribui thrust em vez de torque e direção right, contrariando Crenshaw.",
+            "B": "Inverte os efeitos de velocidade e ângulo de ataque; embora mencione torque e left, as três primeiras lacunas estão incorretas.",
+            "C": "Acerta aumento de velocidade e ângulo e a redução oposta, mas troca torque por thrust e left por right.",
+            "E": "Erra a variação de empuxo da pá descendente (decrease em lugar de increase), a do lado oposto (increase em lugar de decrease) e substitui torque por thrust."
+          },
+          "bibliography_author": "R. S. Crenshaw Jr.",
+          "bibliography_title": "Naval Shiphandling",
+          "bibliography_edition": "4th edition (1975)",
+          "bibliography_page": "23 (seção Inclination effect; continuação após cabeçalho da p. 22)",
+          "verified_short_excerpt": "a torque tending to twist the ship to the left.",
+          "bibliography_candidate_url": "https://drive.google.com/file/d/1Zymbk_t99_IUAHNyoNrcCWCkBLwIX8Ok/view"
         },
         {
           "id": "pscpp::official::2008::044",
