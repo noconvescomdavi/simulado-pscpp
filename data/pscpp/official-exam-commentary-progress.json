@@ -1964,10 +1964,24 @@
           "year": 2008,
           "number": 53,
           "original_correct_answer": "B",
-          "status": "pending_bibliographic_verification",
-          "commentary_status": "official_exam_checked_bibliography_pending",
+          "status": "bibliography_verified",
+          "commentary_status": "draft_verified_pending_official_key_authentication_and_integration",
           "original_exam_url": "https://drive.google.com/file/d/1ZUC9GoT0hYZcljrp1kKqRofmiehjzptr/view",
-          "review_note": "Prova 2008, página impressa 25: marcação (X) na alternativa B coincide com corpus. Autenticidade da marcação como gabarito oficial independente não demonstrada. Tema: Características de luzes de sinais náuticos. Localizar publicação hidrográfica/IALA aplicável em 2008; conferir definição de ocultação, lampejo, luz de setor, alternada e fase, com edição, página e trecho literal. Sem justificativas A–E ou homologação bibliográfica até confronto primário."
+          "review_note": "Prova 2008 p.25 marca B com (X), coincidente com corpus, mas a autenticidade independente dessa marcação como gabarito oficial não foi demonstrada. Confronto direto no Google Drive com Lista de Faróis DHN 39ª ed. 2024–2025: seção 3.1 p. XIII (ocultação, período, fase); seção 3.3 pp. XIV e XVII (luz de ocultação, alternada); seção 3.4 p. XVIII (luz de setor). Justificativa B e rejeição A/C/D/E verificadas textualmente. Edição posterior à prova: ainda localizar edição vigente em 2008 ou comprovar continuidade das definições. Não homologar ou integrar sem autenticação do gabarito oficial e revisão histórica.",
+          "bibliography_author": "Diretoria de Hidrografia e Navegação (DHN), Centro de Hidrografia da Marinha",
+          "bibliography_title": "Lista de Faróis",
+          "bibliography_edition": "39ª edição, 2024–2025, corrigida até Avisos aos Navegantes nº 16/2025",
+          "bibliography_page": "Introdução, pp. XII–XIV e XVII–XVIII (numeração romana impressa)",
+          "bibliography_candidate_url": "https://drive.google.com/file/d/1RZFT8W8wmwhDsLDOnrkpbtmDRXzXqiJN/view",
+          "verified_short_excerpt": "Ocultação: intervalo de obscuridade relativamente mais curto que o de luz em um mesmo período.",
+          "correct_reason": "B reproduz literalmente a definição de ocultação na Lista de Faróis, seção 3.1, p. XIII.",
+          "incorrect_reasons_by_option": {
+            "A": "Luz de setor exibe ao navegante, com mesmo ritmo e diferentes cores, diferentes setores do horizonte; não é necessariamente um setor bem estreito indicando direção (seção 3.4, termos descritivos, p. XVIII).",
+            "C": "Luz alternada exibe diferentes cores alternadamente, não alternância entre lampejo e ocultação (seção 3.3, classificação 9, p. XVII).",
+            "D": "A definição enunciada corresponde a período; fase é cada aspecto sucessivo de luz ou obscuridade no período (seção 3.1, pp. XII–XIII).",
+            "E": "Inverte a proporção: em luz de ocultação a soma das fases luminosas é mais longa que a soma dos eclipses, não o contrário (seção 3.3, classificação 1, p. XIV)."
+          },
+          "source_verification": "verified_in_DHN_2024_2025_edition_historical_2008_equivalence_pending"
         },
         {
           "id": "pscpp::official::2008::054",
@@ -3451,5 +3465,5 @@
       ]
     }
   ],
-  "bibliographically_verified": 35
+  "bibliographically_verified": 36
 }
