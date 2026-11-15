@@ -98,9 +98,7 @@ for (const [subject, quota] of Object.entries(PSCPP_QUOTAS)) {
 
 
 
-// Known limitation: three independent mandatory conflicts cannot be repaired
-// by the current single/double bounded strategy. Assert the limitation explicitly
-// until a verified multi-replacement algorithm is implemented.
+// Three independent mandatory conflicts require a bounded triple replacement.
 const tripleSeed = "triple-cross-subject-conflict";
 const triplePool = Object.entries(PSCPP_QUOTAS).flatMap(([subject, quota]) =>
   Array.from({ length: quota + (subject === "manobrabilidade" ? 3 : 0) }, (_, i) => ({
@@ -122,7 +120,12 @@ for (let i = 0; i < 3; i++) {
 const feasibleTriple = triplePool.filter(q => !tripleMan.slice(0, 3).includes(q));
 assert.equal(feasibleTriple.length, 100);
 assert.equal(new Set(feasibleTriple.flatMap(q => q.concept_ids)).size, 100);
-assert.throws(() => buildFixedPscppExam(triplePool, tripleSeed), /Banco PSCPP insuficiente/);
+const tripleExam = buildFixedPscppExam(triplePool, tripleSeed);
+assert.equal(tripleExam.length, 100);
+assert.equal(new Set(tripleExam.flatMap(q => q.concept_ids)).size, 100);
+for (const [subject, quota] of Object.entries(PSCPP_QUOTAS)) {
+  assert.equal(tripleExam.filter(q => historicalSubject(q) === subject).length, quota);
+}
 
 // Ineligible records at the front of the pool must not consume all 40 repair slots.
 const inactiveSeed = "inactive-prefix-conflict";
@@ -192,4 +195,4 @@ assert.equal(isPscppEditoriallyEligible({
   assertions: ["I. O avanço é medido até 90 graus de mudança de proa."],
 }), true);
 
-console.log("Concept ID selection regression: OK (bounded single/double repair verified)");
+console.log("Concept ID selection regression: OK (bounded single/double/triple repair verified)");
