@@ -3244,10 +3244,25 @@
           "year": 2012,
           "number": 20,
           "original_correct_answer": "B",
-          "status": "pending_bibliographic_verification",
-          "commentary_status": "preliminary_review_pending_primary_sources",
-          "review_note": "2026-11-14: Enunciado e alternativas localizados na Prova Rosa PSCPP/2012, Drive ID 1Pvx8ZzNt2R8LT07C2caaZMstXBJZUDAE. Sequência preliminar V-F-V-F-F, correspondente a B. Lua cheia não é idade 7 (aproximadamente 14-15 dias); quarto crescente é quadratura e maré de quadratura/águas mortas; cartas brasileiras não adotam genericamente MLWN como NR; a assertiva V é inadequada ao dizer uma vez por lunação (quadraturas duas vezes). A/C/D/E divergem da sequência. Pendente verificação bibliográfica histórica com edição, página e trecho, além do gabarito definitivo.",
-          "original_exam_url": "https://drive.google.com/file/d/1Pvx8ZzNt2R8LT07C2caaZMstXBJZUDAE/view"
+          "status": "bibliography_verified",
+          "commentary_status": "draft_verified_pending_historical_source_and_official_key",
+          "review_note": "2026-11-15: prova rosa 2012 p.11, assertivas I-V e alternativas A-E confrontadas com MIGUENS, Navegação: A Ciência e a Arte, vol. I, 2ª revisão 2023, cap. 10, pp. 10-4, 10-9 a 10-10. Sequência V-F-V-F-F corresponde a B. Edição posterior à prova e marcação do gabarito definitivo não autenticada; NÃO homologar.",
+          "original_exam_url": "https://drive.google.com/file/d/1Pvx8ZzNt2R8LT07C2caaZMstXBJZUDAE/view",
+          "bibliography_candidate_url": "https://drive.google.com/file/d/1oPh8CPnY59EveVasAb1y7ElALohtWxym/view",
+          "verified_source_locator": "MIGUENS, Altineu Pires. Navegação: A Ciência e a Arte, vol. I, 2ª revisão, 2023, cap. 10, §10.1.3 p. 10-4, §10.1.6 p. 10-9 e §10.1.7 pp. 10-9–10-10.",
+          "verified_short_excerpts": [
+            "Marés de Sizígia ocorrem em situações de Lua Cheia e Lua Nova",
+            "marés de águas mortas (quadraturas) ocorrem quando a Idade da Lua for 7 e 21",
+            "O Nível de Redução normalmente corresponde ao nível médio das baixa-mares de sizígia (MLWS) nas cartas náuticas brasileiras."
+          ],
+          "correct_reason": "B (V-F-V-F-F): I verdadeira, alinhamento Sol-Terra-Lua reforça marés de sizígia; II falsa, Lua Cheia idade aproximadamente 14, não 7; III verdadeira, quarto crescente produz águas mortas; IV falsa, NR brasileiro normalmente MLWS, não MLWN; V falsa, quadraturas ocorrem duas vezes por lunação (idades 7 e 21), não uma.",
+          "incorrect_reasons_by_option": {
+            "A": "F-V-V-V-F: inverte I e II e toma IV como verdadeira; contradiz Miguens pp.10-4,10-9.",
+            "C": "V-F-F-F-V: nega III e afirma V, embora haja águas mortas em ambos os quartos lunares.",
+            "D": "V-F-V-V-F: afirma IV, confundindo MLWN com MLWS no nível de redução brasileiro.",
+            "E": "F-V-F-V-V: erra I, II, III, IV e V diante das fases lunares e referências de maré."
+          },
+          "source_verification": "verified_later_edition_pending_historical_equivalence_and_official_answer_mark"
         },
         {
           "id": "pscpp::official::2012::021",
@@ -3552,5 +3567,5 @@
       ]
     }
   ],
-  "bibliographically_verified": 38
+  "bibliographically_verified": 39
 }
