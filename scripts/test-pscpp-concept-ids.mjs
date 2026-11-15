@@ -97,6 +97,39 @@ for (const [subject, quota] of Object.entries(PSCPP_QUOTAS)) {
 }
 
 
+// Ineligible records at the front of the pool must not consume all 40 repair slots.
+const inactiveSeed = "inactive-prefix-conflict";
+const inactivePool = Object.entries(PSCPP_QUOTAS).flatMap(([subject, quota]) =>
+  Array.from({ length: quota + (subject === "manobrabilidade" ? 1 : 0) }, (_, i) => ({
+    id: `${subject}-inactive-test-${i}`,
+    source_subject: subject,
+    topic: `${subject}-inactive-topic-${i}`,
+    question: `Inactive prefix ${subject} question ${i}?`,
+    concept_ids: [`${subject}-inactive-concept-${i}`],
+  }))
+);
+const inactiveMan = inactivePool.filter(q => q.source_subject === "manobrabilidade")
+  .sort((a, b) => selectionHash(`${inactiveSeed}:manobrabilidade:${a.id}`) -
+    selectionHash(`${inactiveSeed}:manobrabilidade:${b.id}`) || a.id.localeCompare(b.id));
+inactiveMan[0].concept_ids = ["required-navigation-inactive-prefix"];
+inactivePool.find(q => q.id === "navegacao-aguas-restritas-inactive-test-0").concept_ids =
+  ["required-navigation-inactive-prefix"];
+const ineligiblePrefix = Array.from({ length: 45 }, (_, i) => ({
+  id: `inactive-prefix-${i}`,
+  source_subject: "manobrabilidade",
+  topic: `inactive-prefix-topic-${i}`,
+  question: `Inactive question ${i}?`,
+  concept_ids: ["required-navigation-inactive-prefix"],
+  active: false,
+}));
+const inactiveExam = buildFixedPscppExam([...ineligiblePrefix, ...inactivePool], inactiveSeed);
+assert.equal(inactiveExam.length, 100);
+assert.equal(inactiveExam.some(q => q.active === false), false);
+assert.equal(new Set(inactiveExam.flatMap(q => q.concept_ids)).size, 100);
+for (const [subject, quota] of Object.entries(PSCPP_QUOTAS)) {
+  assert.equal(inactiveExam.filter(q => historicalSubject(q) === subject).length, quota);
+}
+
 // Invalid concept_ids metadata must not crash the bounded repair path.
 // This pool forces a cross-subject conflict while including malformed metadata.
 const malformedPool = constrainedPool.map(q => ({
