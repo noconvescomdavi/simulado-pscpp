@@ -1,0 +1,69 @@
+{
+  "date": "2026-11-16",
+  "phase": "1708-column-search-confirmation",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261116-1606-live-table-inventory.json",
+  "github": {
+    "ahead_before_commit": 101,
+    "behind": 1
+  },
+  "candidates": [
+    {
+      "id": "L04-DRAFT-01",
+      "answer": "C",
+      "printed_page": 162,
+      "pdf_page": 155,
+      "status": "draft"
+    },
+    {
+      "id": "L04-DRAFT-02",
+      "answer": "B",
+      "printed_page": 163,
+      "pdf_page": 156,
+      "status": "draft"
+    },
+    {
+      "id": "L04-DRAFT-03",
+      "answer": "D",
+      "printed_page": 163,
+      "pdf_page": 156,
+      "status": "draft"
+    }
+  ],
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "sql_authenticated": true,
+    "check": "information_schema.columns search for question, statement, alternativ, enunciad",
+    "result": "No public column named statement, alternative, or enunciado; question_id appears in exam_session_answers, question_answers, question_notebook_answers, question_stats and other operational tables; exam_sessions.question_ids and question_notebooks.question_refs hold references, not confirmed full question payload.",
+    "catalog_binding_confirmed": false,
+    "semantic_dedup_complete": false
+  },
+  "vercel": {
+    "id": "dpl_3hC47f3nuyVGbqfApFz34c2hzjQv",
+    "state": "READY",
+    "target": null,
+    "source_commit": "ff84c3076a42762124d3c28e12d6220fc744f968",
+    "production_confirmed": false
+  },
+  "counts": {
+    "preserved": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "source_recheck": "Original book PDF not read directly this run",
+  "blockers": [
+    "Original PDF direct verification pending",
+    "Official Anexo 2-A independent verification pending",
+    "Active static question catalog and semantic deduplication unresolved",
+    "Production database/catalog binding unresolved",
+    "Branch behind main by one commit",
+    "MAN-B022-09 and MAN-B022-12 unresolved"
+  ],
+  "publication_allowed": false
+}
