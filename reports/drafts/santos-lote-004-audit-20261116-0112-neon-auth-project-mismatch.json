@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-16",
+  "local_time": "01:12 America/Sao_Paulo",
+  "phase": "live-crosscheck-auth-blocker",
+  "prior_checkpoint": "reports/drafts/santos-lote-004-audit-20261116-0012-candidate-deployment-crosscheck.json",
+  "ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "gabaritos": [
+    "C",
+    "B",
+    "D"
+  ],
+  "printed_pages": [
+    162,
+    163,
+    163
+  ],
+  "candidate_count": 3,
+  "approved": 0,
+  "integrated": 0,
+  "new_questions": 0,
+  "corrections": 0,
+  "final_ids": [],
+  "github": {
+    "branch": "draft/santos-lote-004-source-review-20261110",
+    "ahead_before_commit": 90,
+    "behind": 1,
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51",
+    "pr_for_lot_found": false,
+    "other_open_pr": "#184 draft concept-ids regression, not Santos lot"
+  },
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "tables_read": true,
+    "master_question_table_found": false,
+    "sql_check": "HTTP 401 supplied credentials do not pass authentication",
+    "prior_checkpoint_project": "weathered-mud-33091087",
+    "project_identity_discrepancy_unresolved": true,
+    "production_binding_confirmed": false
+  },
+  "vercel": {
+    "project": "estibordo-pscpp",
+    "deployment": "dpl_2nitvKhKQyPo5GuyAqHrJdekN5yp",
+    "commit": "0800c48601f29ab9300466495dbbf9ff66e8a29e",
+    "state": "READY",
+    "target": null,
+    "production_publication_confirmed": false
+  },
+  "source": {
+    "prior_primary_check": "reports/drafts/santos-lote-004-audit-20261115-2105-direct-primary-reverification.json",
+    "fresh_pdf_read": false,
+    "official_annex_authenticated": false
+  },
+  "ci": null,
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "pending": [
+    "Restore Neon SQL authentication and resolve project mismatch",
+    "Confirm production DB binding and active question catalog",
+    "Complete semantic deduplication of extensions and current catalogs",
+    "Authenticate official Annex 2-A",
+    "Reconcile diverged branch",
+    "Review MAN-B022-09 and MAN-B022-12"
+  ],
+  "publication_allowed": false
+}
