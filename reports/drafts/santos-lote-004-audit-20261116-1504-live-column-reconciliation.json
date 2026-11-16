@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-16",
+  "phase": "1504-live-structure-reconciliation",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261116-1406-candidate-payload-live-schema.json",
+  "github": {
+    "ahead_before_commit": 99,
+    "behind": 1,
+    "base_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+  },
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "printed_pages": [
+    162,
+    163,
+    163
+  ],
+  "pdf_pages": [
+    155,
+    156,
+    156
+  ],
+  "syllabus_item": "8.10.2.1.1",
+  "candidate_payload": "Re-read complete draft JSON, each question contains stem, five choices, key, explanation and source locator. Original PDF not directly read this run; no approval.",
+  "database": {
+    "project_id": "shy-firefly-80833334",
+    "sql_authenticated": true,
+    "new_evidence": "information_schema.columns confirms question_answers and question_stats store question_id and answer statistics, not stems/options; syllabus_topics stores codes/titles and syllabus_topic_sources maps chunks; master catalog remains outside verified SQL tables.",
+    "production_catalog_binding_confirmed": false,
+    "semantic_deduplication_complete": false
+  },
+  "vercel": {
+    "deployment_id": "dpl_6NBx2D5zQfcCciRAUHtnhUtTWcN8",
+    "commit": "6f3673bbb2a2ac951297f49f0a1f782a45210e26",
+    "state": "READY",
+    "target": null,
+    "production_confirmed": false
+  },
+  "counts": {
+    "preserved": 3,
+    "new_questions": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests_executed": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blocking": [
+    "Primary OCR PDF not retrieved for current direct verification",
+    "Complete semantic comparison against static active catalog and extensions not demonstrated",
+    "Official Annex 2-A not independently authenticated",
+    "Live catalog to SQL project binding unverified",
+    "Branch diverged one commit behind main",
+    "MAN-B022-09 and MAN-B022-12 outstanding"
+  ],
+  "publication_allowed": false
+}
