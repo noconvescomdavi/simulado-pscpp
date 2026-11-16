@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-16",
+  "phase": "0917-live-schema-and-draft-recheck",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261116-0817-live-reconciliation.json",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "github_compare": {
+    "ahead_before_commit": 95,
+    "behind": 1,
+    "base_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+  },
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "printed_pages": [
+    162,
+    163,
+    163
+  ],
+  "pdf_pages": [
+    155,
+    156,
+    156
+  ],
+  "candidate_structure": "All three drafts fetched from repository; each has five alternatives A-E, a keyed answer, explanation and source locator. Prior direct primary-source verification on 2026-11-15; not repeated this run.",
+  "neon": {
+    "project_id": "shy-firefly-80833334",
+    "sql_authenticated": true,
+    "table_inventory_confirmed": true,
+    "question_answers_columns_confirmed": true,
+    "question_stats_columns_confirmed": true,
+    "syllabus_topics_columns_confirmed": true,
+    "master_question_text_table_identified": false,
+    "production_binding_confirmed": false
+  },
+  "counts": {
+    "preserved": 3,
+    "new_questions": 0,
+    "approved": 0,
+    "final_ids": 0,
+    "corrections": 0,
+    "tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blocking": [
+    "Semantic deduplication of live full catalog not certified",
+    "Official Annex 2-A independent authentication pending",
+    "Production catalog/database binding unconfirmed",
+    "Branch diverged from main",
+    "MAN-B022-09 and MAN-B022-12 pending"
+  ],
+  "publication_allowed": false
+}
