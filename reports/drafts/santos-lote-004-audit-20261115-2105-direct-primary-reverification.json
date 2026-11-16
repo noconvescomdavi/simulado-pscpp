@@ -1,0 +1,79 @@
+{
+  "date": "2026-11-15",
+  "phase": "direct-primary-book-reverification",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "source": {
+    "title": "A Manobrabilidade do Navio no Século 21",
+    "author": "Edson Mesquita dos Santos",
+    "file": "Manobrabilidade_do_Navio_no_Seculo_21_OCR.pdf",
+    "pdf_pages": [
+      155,
+      156
+    ],
+    "printed_pages": [
+      162,
+      163
+    ],
+    "method": "Direct text read of primary PDF via file library during this execution"
+  },
+  "candidates": [
+    {
+      "id": "L04-DRAFT-01",
+      "answer": "C",
+      "options": 5,
+      "printed_page": 162,
+      "pdf_page": 155,
+      "section": "8.3.2.2",
+      "result": "Supported: loaded tanker/bulk carrier lateral current force maximum at beam incidence"
+    },
+    {
+      "id": "L04-DRAFT-02",
+      "answer": "B",
+      "options": 5,
+      "printed_page": 163,
+      "pdf_page": 156,
+      "section": "8.3.2.3",
+      "result": "Supported for loaded ships; explicitly distinct from ballast peak movement toward beam"
+    },
+    {
+      "id": "L04-DRAFT-03",
+      "answer": "D",
+      "options": 5,
+      "printed_page": 163,
+      "pdf_page": 156,
+      "section": "8.3.2.3",
+      "result": "Supported: ship-type-specific coefficients and nonlinear current response"
+    }
+  ],
+  "github": {
+    "main_branch": "main",
+    "ahead": 86,
+    "behind": 1,
+    "pr_found": false
+  },
+  "database": {
+    "fresh_sql_query": false,
+    "prior_schema_review": "No master question-stem table confirmed",
+    "production_binding_confirmed": false
+  },
+  "counts": {
+    "candidates": 3,
+    "approved": 0,
+    "final_ids": 0,
+    "new_questions": 0,
+    "corrections": 0
+  },
+  "commit": null,
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "deploy": null,
+  "pending": [
+    "Authenticate official Anexo 2-A independently",
+    "Complete full semantic deduplication against active static catalogs and extensions",
+    "Confirm production database binding and catalog loading",
+    "Reconcile branch with main",
+    "Review MAN-B022-09 and MAN-B022-12"
+  ],
+  "publication_allowed": false
+}
