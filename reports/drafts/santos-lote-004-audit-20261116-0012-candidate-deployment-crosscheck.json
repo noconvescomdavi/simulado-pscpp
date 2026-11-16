@@ -1,0 +1,69 @@
+{
+  "date": "2026-11-16",
+  "phase": "candidate-payload-and-live-deployment-crosscheck",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "source_record": "reports/drafts/santos-lote-004-source-review-20261110.json",
+  "candidates": [
+    {
+      "id": "L04-DRAFT-01",
+      "answer": "C",
+      "pdf_page": 155,
+      "printed_page": 162,
+      "options": 5
+    },
+    {
+      "id": "L04-DRAFT-02",
+      "answer": "B",
+      "pdf_page": 156,
+      "printed_page": 163,
+      "options": 5,
+      "scope": "loaded tankers/bulkers"
+    },
+    {
+      "id": "L04-DRAFT-03",
+      "answer": "D",
+      "pdf_page": 156,
+      "printed_page": 163,
+      "options": 5
+    }
+  ],
+  "verification": "Direct read of complete candidate records and previous checkpoint; no independent primary PDF read this run",
+  "github": {
+    "ahead_before_commit": 89,
+    "behind": 1,
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+  },
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "tables_listed": true,
+    "canonical_question_stem_table_identified": false,
+    "production_binding_confirmed": false
+  },
+  "vercel": {
+    "project": "estibordo-pscpp",
+    "latest_branch_deployment": "dpl_EVbbaTWkDQXaSWmkfhbx71d44qid",
+    "sha": "1a94c80fc72cbbf43eac2370bdce891d1484d914",
+    "state": "READY",
+    "target": null,
+    "production_published": false
+  },
+  "counts": {
+    "drafts": 3,
+    "new_questions": 0,
+    "approved": 0,
+    "definitive_ids": 0,
+    "corrections_this_run": 0
+  },
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "production_deploy": null,
+  "pending": [
+    "Authenticate official Anexo 2-A",
+    "Exhaustive semantic deduplication across static catalogs and extensions",
+    "Confirm active catalog and production Neon binding",
+    "Reconcile divergent branch",
+    "Review MAN-B022-09 and MAN-B022-12"
+  ],
+  "publication_allowed": false
+}
