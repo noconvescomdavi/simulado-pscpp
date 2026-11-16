@@ -1,0 +1,76 @@
+{
+  "date": "2026-11-16",
+  "local_time": "02:11 America/Sao_Paulo",
+  "phase": "sql-auth-recovered-schema-read",
+  "prior_checkpoint": "reports/drafts/santos-lote-004-audit-20261116-0112-neon-auth-project-mismatch.json",
+  "ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "printed_pages": [
+    162,
+    163,
+    163
+  ],
+  "candidate_count": 3,
+  "approved": 0,
+  "integrated": 0,
+  "new_questions": 0,
+  "corrections": 0,
+  "final_ids": [],
+  "github": {
+    "branch": "draft/santos-lote-004-source-review-20261110",
+    "ahead_before_commit": 91,
+    "behind": 1,
+    "pr_for_lot_found": false
+  },
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "sql_authentication": "SUCCESS when explicit project_id provided",
+    "database": "neondb",
+    "role": "neondb_owner",
+    "schema_tables_read": true,
+    "master_question_table_found": false,
+    "production_binding_confirmed": false,
+    "prior_project_discrepancy": "weathered-mud-33091087 unresolved",
+    "question_related_tables": [
+      "question_answers",
+      "question_notebook_answers",
+      "question_notebooks",
+      "question_stats",
+      "exam_attempts",
+      "exam_session_answers",
+      "exam_sessions"
+    ]
+  },
+  "vercel": {
+    "deployment": "dpl_3V8TQKVEJzP45dXRq49RFEdkqrkP",
+    "commit": "2441b0aaf22d50e9fd0ae081ffdabd9ed6606419",
+    "state": "READY",
+    "target": null,
+    "production_publication_confirmed": false
+  },
+  "source": {
+    "prior_primary_check": "reports/drafts/santos-lote-004-audit-20261115-2105-direct-primary-reverification.json",
+    "fresh_pdf_read": false,
+    "official_annex_authenticated": false
+  },
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "production_deploy": null,
+  "pending": [
+    "Identify production DB binding and active static question catalog",
+    "Complete semantic deduplication against extensions",
+    "Authenticate official Annex 2-A",
+    "Reconcile diverged branch",
+    "Review MAN-B022-09 and MAN-B022-12"
+  ],
+  "publication_allowed": false
+}
