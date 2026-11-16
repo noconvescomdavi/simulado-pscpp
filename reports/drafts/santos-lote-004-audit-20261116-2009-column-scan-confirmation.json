@@ -1,0 +1,74 @@
+{
+  "date": "2026-11-16",
+  "phase": "2009-column-scan-confirmation",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261116-1911-bibliography-schema-recheck.json",
+  "github": {
+    "ahead_before_commit": 104,
+    "behind": 1,
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+  },
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "sql_authenticated": true,
+    "query": "information_schema.columns, public schema, column names matching question/content/payload",
+    "finding": "Question IDs are present in exam_sessions, question_notebooks, question_answers and question_stats, but no stem/options columns surfaced. This is not proof that the active question catalog is absent; its source and production binding remain unverified.",
+    "catalog_binding_confirmed": false,
+    "semantic_dedup_complete": false
+  },
+  "source": {
+    "prior_direct_verification": "2026-11-15 21:05",
+    "direct_recheck_this_run": false,
+    "printed_pages": [
+      162,
+      163
+    ]
+  },
+  "candidates": [
+    {
+      "id": "L04-DRAFT-01",
+      "answer": "C",
+      "printed_page": 162,
+      "status": "draft"
+    },
+    {
+      "id": "L04-DRAFT-02",
+      "answer": "B",
+      "printed_page": 163,
+      "status": "draft"
+    },
+    {
+      "id": "L04-DRAFT-03",
+      "answer": "D",
+      "printed_page": 163,
+      "status": "draft"
+    }
+  ],
+  "vercel": {
+    "deployment_id": "dpl_HQygPXW7ACzR5ExeH7waW8G15pbX",
+    "commit": "780b985f09a84d4730d98bf527ede6a48a2ecb44",
+    "state": "READY",
+    "target": null,
+    "production_confirmed": false
+  },
+  "counts": {
+    "preserved": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Official Anexo 2-A not independently authenticated",
+    "Primary PDF not directly rechecked this run",
+    "Active static question catalog and semantic dedup unresolved",
+    "Production catalog/database binding unconfirmed",
+    "Branch behind main by one commit",
+    "MAN-B022-09 and MAN-B022-12 unresolved"
+  ],
+  "publication_allowed": false
+}
