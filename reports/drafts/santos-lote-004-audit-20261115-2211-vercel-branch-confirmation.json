@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-15",
+  "phase": "vercel-branch-deployment-confirmation",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "source_checkpoint": "reports/drafts/santos-lote-004-audit-20261115-2105-direct-primary-reverification.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "candidate_answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "printed_pages": [
+    162,
+    163,
+    163
+  ],
+  "counts": {
+    "candidates": 3,
+    "approved": 0,
+    "new_questions": 0,
+    "corrections": 0,
+    "final_ids": 0
+  },
+  "github": {
+    "ahead": 87,
+    "behind": 1,
+    "base_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+  },
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "query": "information_schema.columns for question/enunciado",
+    "finding": "question references and activity tables; no master stem column found; active production database association unverified"
+  },
+  "vercel": {
+    "project": "estibordo-pscpp",
+    "branch_deployments": [
+      {
+        "id": "dpl_Cejq4BA9KEFvJ1F6RCy9kbbP7hh4",
+        "sha": "d29c1ae2519d4a539914182727508031e848bcee",
+        "state": "READY",
+        "target": null
+      },
+      {
+        "id": "dpl_2xQWL6rgGY3VoDuujZ9PQ9bQc7ME",
+        "sha": "eacb0a188776a15a3922eb09b2ebb980fbc748c1",
+        "state": "READY",
+        "target": null
+      }
+    ],
+    "interpretation": "READY deployments of documentation-only draft branch, not proof of question integration or production promotion"
+  },
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "production_deploy": null,
+  "pending": [
+    "Official Anexo 2-A validation",
+    "Full semantic deduplication including static extensions",
+    "Confirm active catalog and production DB binding",
+    "Reconcile divergent branch",
+    "MAN-B022-09 and MAN-B022-12 reviews"
+  ],
+  "publication_allowed": false
+}
