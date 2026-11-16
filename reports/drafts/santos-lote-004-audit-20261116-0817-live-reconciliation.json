@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-16",
+  "phase": "08h17-live-reconciliation",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261116-0508-current-branch-catalog-control.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "candidate_answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "printed_pages": [
+    162,
+    163,
+    163
+  ],
+  "pdf_pages": [
+    155,
+    156,
+    156
+  ],
+  "five_options_each": true,
+  "primary_source_reverified_in_prior_checkpoint": "2026-11-15-2105",
+  "primary_source_read_this_run": false,
+  "github": {
+    "branch": "draft/santos-lote-004-source-review-20261110",
+    "ahead_before_commit": 94,
+    "behind": 1,
+    "base_commit": "d2f0fabddf6c2100f81f7900b260f5484f3cde51",
+    "catalog_paths": [
+      "data/questions/manobrabilidade.json",
+      "data/pscpp/generated-questions.json"
+    ],
+    "semantic_dedup_certified": false
+  },
+  "neon": {
+    "accessible_project": "shy-firefly-80833334",
+    "project_name": "estibordo",
+    "production_binding_confirmed": false,
+    "master_question_catalog_confirmed": false
+  },
+  "vercel": {
+    "latest_preview_id": "dpl_82jRe99DhjpDECgCSj5j9H7bumuZ",
+    "state": "READY",
+    "target": null,
+    "commit": "b4f912f4fc2d5a76b561bcdc6493224cc24946b3",
+    "production_deploy": false
+  },
+  "counts": {
+    "candidates": 3,
+    "new_questions": 0,
+    "approved": 0,
+    "final_ids": 0,
+    "corrections": 0,
+    "tests_executed": 0
+  },
+  "pr": null,
+  "merge": null,
+  "deploy_production": null,
+  "blocking": [
+    "Full semantic deduplication against live catalog not certified",
+    "Official Annex 2-A independent authentication pending",
+    "Production catalog/database binding not confirmed",
+    "Branch diverged from main",
+    "MAN-B022-09 and MAN-B022-12 unresolved"
+  ],
+  "publication_allowed": false
+}
