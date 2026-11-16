@@ -1,0 +1,66 @@
+{
+  "date": "2026-11-16",
+  "phase": "05h-current-branch-catalog-control",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261116-0304-syllabus-db-crosscheck.json",
+  "ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "printed_pages": [
+    162,
+    163,
+    163
+  ],
+  "candidate_count": 3,
+  "approved": 0,
+  "integrated": 0,
+  "new_questions": 0,
+  "corrections": 0,
+  "final_ids": [],
+  "github": {
+    "branch": "draft/santos-lote-004-source-review-20261110",
+    "ahead_before_commit": 93,
+    "behind": 1,
+    "pr_search": "no Santos 004 PR found",
+    "catalog_primary": "data/questions/manobrabilidade.json",
+    "catalog_generated": "data/pscpp/generated-questions.json",
+    "semantic_dedup_complete": false
+  },
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "sql_authenticated": true,
+    "question_master_table_found": false,
+    "production_binding_confirmed": false
+  },
+  "source": {
+    "candidate_file": "reports/drafts/santos-lote-004-source-review-20261110.json",
+    "five_options_per_question": true,
+    "explanation_and_source_locators_present": true,
+    "primary_source_read_this_run": false,
+    "official_annex_authenticated": false
+  },
+  "vercel": {
+    "deployment_id": "dpl_4QupUz4Jd5sPne9X4WezxiJxkDnW",
+    "commit": "369def4cc6e9b94a6737ff5f23ed51893fd29cd0",
+    "state": "READY",
+    "target": null,
+    "production_deploy": false
+  },
+  "tests_run": 0,
+  "pr": null,
+  "merge": null,
+  "pending": [
+    "Verify live catalog identity and all extension records for semantic duplication",
+    "Authenticate official Annex 2-A",
+    "Verify production database binding",
+    "Reconcile divergent branch",
+    "Review MAN-B022-09 and MAN-B022-12"
+  ],
+  "publication_allowed": false
+}
