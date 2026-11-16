@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-16",
+  "phase": "1606-live-catalog-boundary-check",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261116-1504-live-column-reconciliation.json",
+  "github": {
+    "ahead_before_commit": 100,
+    "behind": 1,
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+  },
+  "candidates": [
+    {
+      "id": "L04-DRAFT-01",
+      "answer": "C",
+      "printed_page": 162,
+      "pdf_page": 155,
+      "source_section": "8.3.2.2",
+      "status": "draft"
+    },
+    {
+      "id": "L04-DRAFT-02",
+      "answer": "B",
+      "printed_page": 163,
+      "pdf_page": 156,
+      "source_section": "8.3.2.3",
+      "status": "draft"
+    },
+    {
+      "id": "L04-DRAFT-03",
+      "answer": "D",
+      "printed_page": 163,
+      "pdf_page": 156,
+      "source_section": "8.3.2.3",
+      "status": "draft"
+    }
+  ],
+  "source_recheck": "Read previous 2026-11-15 direct-primary-source checkpoint and draft payload, not original PDF in this run",
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "sql_authenticated": true,
+    "query": "information_schema.tables",
+    "result": "77 public tables returned, including question_answers, question_stats, syllabus_topics, syllabus_topic_sources; no obvious master questions table",
+    "catalog_binding_confirmed": false,
+    "semantic_dedup_complete": false
+  },
+  "vercel": {
+    "id": "dpl_8Br196dWqr5K1C3wBomxW4QuZooD",
+    "state": "READY",
+    "target": null,
+    "source_commit": "5fddd9576c45e8dddf98b3a4fa0a4a7ad847fb26",
+    "production_confirmed": false
+  },
+  "counts": {
+    "preserved": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Original PDF not directly checked this run",
+    "Official Anexo 2-A not independently authenticated",
+    "Active static catalog and extension deduplication incomplete",
+    "Catalog/database production binding not confirmed",
+    "Branch diverged one commit behind main",
+    "MAN-B022-09 and MAN-B022-12 unresolved"
+  ],
+  "publication_allowed": false
+}
