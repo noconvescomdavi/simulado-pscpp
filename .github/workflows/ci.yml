@@ -44,6 +44,9 @@ jobs:
       - name: Validate question banks
         run: npm run validate:questions
 
+      - name: Reject repeated secondary concepts in PSCPP exam selection
+        run: npm run test:pscpp-concept-ids
+
       - name: Audit question formatting
         run: npm run test:question-structure
 
