@@ -195,4 +195,44 @@ assert.equal(isPscppEditoriallyEligible({
   assertions: ["I. O avanço é medido até 90 graus de mudança de proa."],
 }), true);
 
+
+// Regression: 17 unselected conflicts precede three selected conflicts in pool order.
+// The first 16 raw conflicting records are irrelevant to the initial shortage.
+const windowSeed = "selected-conflicts-after-window";
+const windowPool = Object.entries(PSCPP_QUOTAS).flatMap(([subject, quota]) =>
+  Array.from({ length: quota + (subject === "manobrabilidade" ? 20 : 0) }, (_, i) => ({
+    id: `${subject}-window-${i}`,
+    source_subject: subject,
+    topic: `${subject}-window-topic-${i}`,
+    question: `Window regression ${subject} question ${i}?`,
+    concept_ids: [`${subject}-window-concept-${i}`],
+  }))
+);
+const windowMan = windowPool.filter(q => q.source_subject === "manobrabilidade")
+  .sort((a, b) => selectionHash(`${windowSeed}:manobrabilidade:${a.id}`) -
+    selectionHash(`${windowSeed}:manobrabilidade:${b.id}`) || a.id.localeCompare(b.id));
+const selectedConflicts = windowMan.slice(0, 3);
+const unselectedConflicts = windowMan.slice(28, 45);
+for (let i = 0; i < 3; i++) {
+  selectedConflicts[i].concept_ids = [`window-mandatory-navigation-${i}`];
+  windowPool.find(q => q.id === `navegacao-aguas-restritas-window-${i}`).concept_ids =
+    [`window-mandatory-navigation-${i}`];
+}
+for (let i = 0; i < unselectedConflicts.length; i++) {
+  unselectedConflicts[i].concept_ids = [`window-mandatory-navigation-${i % 3}`];
+}
+const windowOrdered = [
+  ...unselectedConflicts,
+  ...selectedConflicts,
+  ...windowPool.filter(q => !unselectedConflicts.includes(q) && !selectedConflicts.includes(q)),
+];
+const feasibleWindow = windowPool.filter(q => !selectedConflicts.includes(q) && !unselectedConflicts.includes(q));
+assert.equal(feasibleWindow.filter(q => q.source_subject === "manobrabilidade").length, 25);
+const windowExam = buildFixedPscppExam(windowOrdered, windowSeed);
+assert.equal(windowExam.length, 100);
+assert.equal(new Set(windowExam.flatMap(q => q.concept_ids)).size, 100);
+for (const [subject, quota] of Object.entries(PSCPP_QUOTAS)) {
+  assert.equal(windowExam.filter(q => historicalSubject(q) === subject).length, quota);
+}
+
 console.log("Concept ID selection regression: OK (bounded single/double/triple repair verified)");
