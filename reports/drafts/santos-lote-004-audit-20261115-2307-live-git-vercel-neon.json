@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-15",
+  "phase": "live-connector-recheck",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "source_record": "reports/drafts/santos-lote-004-source-review-20261110.json",
+  "candidates": [
+    {
+      "id": "L04-DRAFT-01",
+      "answer": "C",
+      "pdf_page": 155,
+      "printed_page": 162
+    },
+    {
+      "id": "L04-DRAFT-02",
+      "answer": "B",
+      "pdf_page": 156,
+      "printed_page": 163
+    },
+    {
+      "id": "L04-DRAFT-03",
+      "answer": "D",
+      "pdf_page": 156,
+      "printed_page": 163
+    }
+  ],
+  "verification": "Structural payload read directly in repository; primary-source verification inherited from checkpoint 20261115-2105, not repeated this run",
+  "github": {
+    "ahead": 88,
+    "behind": 1,
+    "pr_found": false
+  },
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "tables_listed": true,
+    "question_master_identified": false,
+    "production_binding_confirmed": false
+  },
+  "vercel": {
+    "project": "estibordo-pscpp",
+    "latest_branch_deployment": "dpl_8WC5XnKunij3iPbsn4wVMwQ7HD4v",
+    "sha": "0353de794cf9146475b15eb2f8a31af18c3d407b",
+    "state": "READY",
+    "target": null,
+    "production_published": false
+  },
+  "counts": {
+    "candidates": 3,
+    "approved": 0,
+    "new_questions": 0,
+    "final_ids": 0,
+    "corrections": 0
+  },
+  "pr": null,
+  "ci": null,
+  "merge": null,
+  "production_deploy": null,
+  "pending": [
+    "Independent official Anexo 2-A validation",
+    "Full semantic deduplication of all static question catalogs and extensions",
+    "Confirm production catalog and database binding",
+    "Reconcile divergent branch",
+    "Review MAN-B022-09 and MAN-B022-12"
+  ],
+  "publication_allowed": false
+}
