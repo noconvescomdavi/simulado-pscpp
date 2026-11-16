@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-16",
+  "phase": "1311-catalog-control",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261116-1029-deployment-branch-check.json",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "github_compare": {
+    "ahead_before_commit": 97,
+    "behind": 1,
+    "base_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+  },
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "candidate_answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "printed_pages": [
+    162,
+    163,
+    163
+  ],
+  "source_check": "Draft records read in GitHub, primary PDF not independently reread in this execution; previous validation metadata retained",
+  "database": {
+    "project_id": "shy-firefly-80833334",
+    "sql_authenticated": true,
+    "question_related_tables": [
+      "question_answers",
+      "question_notebook_answers",
+      "question_notebooks",
+      "question_stats",
+      "syllabus_topic_sources",
+      "syllabus_topics"
+    ],
+    "master_catalog_identified": false,
+    "production_binding_confirmed": false
+  },
+  "vercel": {
+    "deployment_id": "dpl_FDrn5ngKeUV7wFMTAXX9xqYpQ9dy",
+    "commit": "88e5fb8028438ca81b8cc99f93502023e8ac54bb",
+    "state": "READY",
+    "target": null,
+    "production_confirmed": false
+  },
+  "counts": {
+    "preserved": 3,
+    "new_questions": 0,
+    "approved": 0,
+    "corrections": 0,
+    "final_ids": 0,
+    "tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blocking": [
+    "Semantic deduplication against active static catalog incomplete",
+    "Official Annex 2-A independently authenticated version missing",
+    "Production catalog binding not established",
+    "Branch diverged from main",
+    "MAN-B022-09 and MAN-B022-12 pending"
+  ],
+  "publication_allowed": false
+}
