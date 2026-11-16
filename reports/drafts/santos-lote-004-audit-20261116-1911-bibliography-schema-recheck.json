@@ -1,0 +1,66 @@
+{
+  "date": "2026-11-16",
+  "phase": "1911-bibliography-schema-recheck",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261116-1809-jsonb-catalog-probe.json",
+  "github": {
+    "ahead_before_commit": 103,
+    "behind": 1,
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+  },
+  "candidates": [
+    {
+      "id": "L04-DRAFT-01",
+      "answer": "C",
+      "printed_page": 162,
+      "pdf_page": 155,
+      "status": "draft"
+    },
+    {
+      "id": "L04-DRAFT-02",
+      "answer": "B",
+      "printed_page": 163,
+      "pdf_page": 156,
+      "status": "draft"
+    },
+    {
+      "id": "L04-DRAFT-03",
+      "answer": "D",
+      "printed_page": 163,
+      "pdf_page": 156,
+      "status": "draft"
+    }
+  ],
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "sql_authenticated": true,
+    "checks": [
+      "information_schema.columns on library_chunks, library_documents and study_bibliography_catalog",
+      "study_bibliography_catalog where publication_title ilike '%manobrabilidade%'"
+    ],
+    "finding": "study_bibliography_catalog has bibliographic page metadata and pages_verified, but query for manobrabilidade returned zero rows; library_chunks stores book text, not a confirmed active question catalog.",
+    "catalog_binding_confirmed": false,
+    "semantic_dedup_complete": false
+  },
+  "source_recheck": "Prior direct PDF verification documented 2026-11-15 21:05; not repeated this run",
+  "counts": {
+    "preserved": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Primary PDF not directly rechecked this run",
+    "Official Anexo 2-A not independently authenticated",
+    "Active question catalog and semantic deduplication unresolved",
+    "Production catalog/database binding unconfirmed",
+    "Branch behind main by one commit",
+    "MAN-B022-09 and MAN-B022-12 unresolved"
+  ],
+  "publication_allowed": false
+}
