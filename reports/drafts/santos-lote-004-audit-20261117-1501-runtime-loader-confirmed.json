@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-17",
+  "phase": "1501-runtime-loader-confirmed",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261117-1406-related-payload-comparison.json",
+  "verified_live_source": "lib/question-banks-source.js (main)",
+  "findings": [
+    "Main bank data/questions/manobrabilidade.json imported directly",
+    "Santos extension files 001, 002, 003 imported explicitly",
+    "cadernoExtensionQuestions spreads each Santos extension questions",
+    "withCadernoBlock filters extensions by taxonomy.subject_slug and appends to subject bank",
+    "Lot 004 not imported; adding a JSON file alone will not activate it"
+  ],
+  "draft_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "source_printed_pages": [
+    162,
+    163,
+    163
+  ],
+  "counts": {
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0
+  },
+  "branch_comparison": {
+    "ahead_before_commit": 123,
+    "behind_before_commit": 1
+  },
+  "tests": 0,
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Complete semantic review of full records across active catalog and extensions",
+    "Official Anexo 2-A mapping remains unverified",
+    "Need assign safe IDs and match extension schema, add import and append, run CI",
+    "Branch diverges from main"
+  ],
+  "publication_allowed": false
+}
