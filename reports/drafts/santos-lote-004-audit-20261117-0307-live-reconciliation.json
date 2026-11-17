@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-17",
+  "phase": "0307-live-source-payload-and-deployment-audit",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261117-0211-primary-source-reverified.json",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "verified": {
+    "draft_path": "reports/drafts/santos-lote-004-source-review-20261110.json",
+    "candidate_ids": [
+      "L04-DRAFT-01",
+      "L04-DRAFT-02",
+      "L04-DRAFT-03"
+    ],
+    "answers": [
+      "C",
+      "B",
+      "D"
+    ],
+    "printed_pages": [
+      162,
+      163,
+      163
+    ],
+    "pdf_pages": [
+      155,
+      156,
+      156
+    ],
+    "five_options_each": true,
+    "stems_comments_locators_present": true,
+    "source_reverification": "prior checkpoint 0211; not directly reopened in this run",
+    "github_ahead_before_commit": 111,
+    "github_behind": 1,
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51",
+    "large_catalog_fetch": "fetch_file for data/questions/manobrabilidade.json returned empty text despite blob SHA; cannot certify full semantic deduplication",
+    "vercel": {
+      "id": "dpl_Eh8RbKMb5Cavt6agm8JZ8gMaB4YK",
+      "commit": "1fccb3f2b802054bbb0c3a61a5fdbcd6bfe16dff",
+      "state": "READY",
+      "target": null
+    }
+  },
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "ci_tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Cannot certify complete semantic uniqueness against active static and runtime catalogs",
+    "Official Anexo 2-A code mapping 8.10.2.1.1 versus 4.13.2 unresolved",
+    "Branch diverged from main by one commit",
+    "MAN-B022-09 and MAN-B022-12 pending verification"
+  ],
+  "publication_allowed": false
+}
