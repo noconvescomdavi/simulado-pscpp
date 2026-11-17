@@ -1386,10 +1386,27 @@
           "year": 2008,
           "number": 13,
           "original_correct_answer": "C",
-          "status": "pending_bibliographic_verification",
-          "commentary_status": "preliminary_review_pending_primary_sources",
-          "review_note": "Triagem editorial não homologada: Gabarito cadastrado C (power tie-up). Enunciado exige amarração de rebocador que permite variar amplamente direção de força deslocando o leme. A backing headline, B single line, D double headline e E single headline são outras configurações; diferenças mecânicas específicas não verificadas nesta execução. Conferir figura e descrição de 'power tie-up' em Crenshaw, Naval Shiphandling, 4ª ed. 1975, página e trecho original; confrontar prova 2008.",
-          "source_verification": "not_verified"
+          "status": "bibliographic_source_checked_pending_original_facsimile_and_official_key",
+          "commentary_status": "draft_verified_pending_independent_official_key",
+          "review_note": "2026-11-17: Confronto textual da questão 2008-013 no corpus data/pscpp/official-exams.json (gabarito cadastrado C, 'power') com Crenshaw, Naval Shiphandling, 4ª ed., 1975, p. 341, capítulo 18 PILOTS AND TUGS. A obra distingue single headline/backing line (força para dentro/fora ou uma direção longitudinal), double headline (força alternada proa/popa) e power tie-up (rebocador fixo, ampla variação da direção da força pelo leme). Trecho curto diretamente recuperado do PDF Drive. O fac-símile da prova e gabarito definitivo independente ainda não foram autenticados nesta execução; não homologar.",
+          "source_verification": "bibliography_verified_original_facsimile_pending",
+          "bibliography_candidate_url": "https://drive.google.com/file/d/1Zymbk_t99_IUAHNyoNrcCWCkBLwIX8Ok/view",
+          "bibliography_candidate": {
+            "author": "CRENSHAW, R. S. Jr.",
+            "title": "Naval Shiphandling",
+            "edition": "4th edition (1975)",
+            "pages": "341",
+            "section": "Chapter 18, Pilots and Tugs, Tugs",
+            "verified_short_excerpt": "With the power tie-up, the direction of the applied force can be altered over a wide range",
+            "source_verification": "Texto extraído do PDF Naval Shiphandling.pdf no Google Drive em 2026-11-17; página 341 indicada no próprio texto OCR."
+          },
+          "option_analysis_draft": {
+            "A": "Incorreta: backing line/headline é uma linha simples para empurrar diretamente ou puxar, sem a versatilidade descrita para variar amplamente a direção apenas pelo leme.",
+            "B": "Incorreta: single line descreve a ligação simples, não a configuração power tie-up indicada para navio sem propulsão.",
+            "C": "Correta segundo Crenshaw p. 341: power tie-up permite usar motor e leme sem deslocar o rebocador em relação ao navio e variar amplamente a direção da força.",
+            "D": "Incorreta: double headline é recomendado quando a força deve atuar ora para a proa, ora para a popa, não a configuração versátil descrita.",
+            "E": "Incorreta: single headline é a ligação simples para empurrar ou puxar diretamente, distinta do power tie-up."
+          }
         },
         {
           "id": "pscpp::official::2008::014",
