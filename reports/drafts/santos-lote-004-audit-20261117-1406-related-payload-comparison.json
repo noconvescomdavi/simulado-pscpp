@@ -1,0 +1,72 @@
+{
+  "date": "2026-11-17",
+  "phase": "1406-related-prior-full-payload-review",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261117-1303-prior-extension-reconciliation.json",
+  "candidates": [
+    {
+      "id": "L04-DRAFT-01",
+      "answer": "C",
+      "pdf_page": 155,
+      "printed_page": 162,
+      "related": "MSN21-REV-035",
+      "comparison": "Related current abeam, but prior question addresses longitudinal forward tendency at h/T approximately 1.5; candidate addresses maximum lateral force for loaded tanker/bulk carrier. Different tested propositions.",
+      "status": "pending"
+    },
+    {
+      "id": "L04-DRAFT-02",
+      "answer": "B",
+      "pdf_page": 156,
+      "printed_page": 163,
+      "status": "pending"
+    },
+    {
+      "id": "L04-DRAFT-03",
+      "answer": "D",
+      "pdf_page": 156,
+      "printed_page": 163,
+      "status": "pending"
+    }
+  ],
+  "other_related": {
+    "id": "MSN21-REV-079",
+    "comparison": "Prior question tests force components (longitudinal, lateral, yaw moment) of stationary ship; candidate questions test angular maxima, depth trend and vessel-specific nonlinear coefficients. Not identical propositions."
+  },
+  "checks": {
+    "prior_extensions": 150,
+    "prior_related_full_options_comments_read": [
+      "MSN21-REV-035",
+      "MSN21-REV-079"
+    ],
+    "catalogs_previous_total": 4589,
+    "semantic_dedup_certified": false,
+    "primary_source_directly_reopened": false,
+    "branch_ahead_before_commit": 122,
+    "branch_behind": 1,
+    "vercel": {
+      "deployment": "dpl_TqGT8Myook5opVdQ6sbEbNRhtm8G",
+      "state": "READY",
+      "target": null,
+      "commit": "e8eb5c9cbce88996f3f3d2d41ff06594f1d2a40f",
+      "production_verified": false
+    }
+  },
+  "counts": {
+    "preserved": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "definitive_ids": 0
+  },
+  "tests": 0,
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Semantic review against all 4589 catalog entries and other extensions not certified",
+    "Official Anexo 2-A mapping and active runtime loader unverified",
+    "Primary source PDF not reopened this run",
+    "Branch diverged from main",
+    "MAN-B022-09 and MAN-B022-12 pending"
+  ],
+  "publication_allowed": false
+}
