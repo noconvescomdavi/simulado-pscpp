@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-17",
+  "phase": "0107-static-catalog-versus-neon-reconciliation",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261117-0006-live-reconciliation.json",
+  "github": {
+    "ahead_before_checkpoint": 109,
+    "behind": 1,
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+  },
+  "new_finding": "Earlier source draft records successful recovery and preliminary screening of static question catalogs: data/questions/manobrabilidade.json (4089) and data/pscpp/generated-questions.json (500), plus Santos extensions 001-003 (150). Therefore 'catalog not identified' must be qualified: SQL master table unconfirmed, but static catalog paths are known. Historical screening does not establish current runtime binding or full semantic uniqueness.",
+  "database": {
+    "project": "shy-firefly-80833334",
+    "read_only_column_scan": "SUCCESS",
+    "matching_columns": 16,
+    "master_question_text_table_confirmed": false,
+    "active_runtime_catalog_binding_confirmed": false
+  },
+  "candidates": [
+    {
+      "id": "L04-DRAFT-01",
+      "answer": "C",
+      "printed_page": 162,
+      "pdf_page": 155
+    },
+    {
+      "id": "L04-DRAFT-02",
+      "answer": "B",
+      "printed_page": 163,
+      "pdf_page": 156
+    },
+    {
+      "id": "L04-DRAFT-03",
+      "answer": "D",
+      "printed_page": 163,
+      "pdf_page": 156
+    }
+  ],
+  "structural_review": "All three drafts read directly; each contains five options, answer, explanation, source locator and printed page. Historical primary verification dated 2026-11-15; no fresh primary PDF comparison.",
+  "syllabus_discrepancy": "Draft 8.10.2.1.1 versus database 4.13.2; official mapping not authenticated.",
+  "counts": {
+    "preserved": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0
+  },
+  "commits_created_this_run": 1,
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Full semantic deduplication against current active static catalog and extensions not certified",
+    "Production runtime catalog loader/binding unconfirmed",
+    "Official Anexo 2-A code mapping not independently authenticated",
+    "Primary PDF not reread directly this run",
+    "Branch behind main by one commit",
+    "MAN-B022-09 and MAN-B022-12 remain under review"
+  ],
+  "publication_allowed": false
+}
