@@ -1358,10 +1358,28 @@
           "year": 2008,
           "number": 12,
           "original_correct_answer": "E",
-          "status": "pending_bibliographic_verification",
-          "commentary_status": "preliminary_review_pending_primary_sources",
-          "review_note": "Triagem editorial não homologada: Gabarito cadastrado E: plataformas de perfuração e explotação submarina, luz branca sincronizada em Morse U. A trata perímetro de conjunto; B obstrução submarina; C obras portuárias; D sistemas de coleta oceânica: classes de sinais distintas. Verificar norma brasileira de sinalização náutica de plataformas aplicável em 2008, dispositivo, edição, página e redação do código Morse U; confirmar fac-símile oficial antes de homologar.",
-          "source_verification": "not_verified"
+          "status": "historical_norm_discrepancy_requires_adjudication",
+          "commentary_status": "draft_partial_bibliographic_evidence_pending_historical_norm",
+          "review_note": "Confronto direto com prova PSCPP 2008, p. 5: alternativa E marcada (X), descrevendo luzes brancas sincronizadas Morse U com período máximo de 30 s para plataformas de perfuração e explotação submarina. Confronto com NORMAM-601/DHN (2023), seção VII, itens 3.48–3.49, pp. 3-25–3-26: identifica estruturas offshore de perfuração/explotação e exige luzes Morse U sincronizadas, porém período máximo de 15 s, NÃO 30 s. A norma contemporânea diverge numericamente da prova de 2008; não usar edição de 2023 para validar retrospectivamente o limite de 30 s. A–D referem outras classes de sinalização; justificativas classificatórias provisórias, não verificadas integralmente nas regras específicas. Necessário localizar NORMAM-17 ou outra norma vigente em 2008, cotejar edição/página/trecho e gabarito definitivo independente. NÃO HOMOLOGAR.",
+          "source_verification": "not_verified",
+          "original_exam_url": "https://drive.google.com/file/d/1ZUC9GoT0hYZcljrp1kKqRofmiehjzptr/view",
+          "bibliography_candidate_url": "https://drive.google.com/file/d/16mjTFhcAAXDmDeHiocsMt_tdZG0UBZVW/view",
+          "bibliography_candidate": {
+            "author": "Diretoria de Hidrografia e Navegação (DHN)",
+            "title": "NORMAM-601/DHN — Normas da Autoridade Marítima para Auxílios à Navegação",
+            "edition": "2023 (posterior à prova)",
+            "pages": "3-25–3-26",
+            "section": "3.48–3.49",
+            "verified_short_excerpt": "representarem a letra “U” (·· - ) em código Morse, com o período máximo de quinze segundos",
+            "source_verification": "Texto extraído diretamente do PDF do Google Drive; edição histórica de 2008 não verificada"
+          },
+          "option_analysis_draft": {
+            "A": "Incorreta segundo marcação da prova: demarcação do perímetro de conjunto de plataformas não é o objeto específico descrito; falta cotejo normativo da classe.",
+            "B": "Incorreta segundo marcação da prova: obstruções submarinas isoladas não são a classe de estruturas offshore emergentes descrita; falta cotejo normativo da classe.",
+            "C": "Incorreta segundo marcação da prova: cais, píer e molhe têm regras próprias de sinalização; falta cotejo normativo da classe.",
+            "D": "Incorreta segundo marcação da prova: sistemas de aquisição de dados oceânicos têm regras próprias; falta cotejo normativo da classe.",
+            "E": "Alternativa assinalada na prova e compatível com a classe de estruturas offshore e Morse U na NORMAM-601/2023; porém a prova exige 30 s e a norma consultada limita a 15 s. Não comprovada historicamente."
+          }
         },
         {
           "id": "pscpp::official::2008::013",
