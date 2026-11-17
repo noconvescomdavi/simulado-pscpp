@@ -1854,7 +1854,7 @@
           "original_correct_answer": "C",
           "status": "pending_official_answer_discrepancy_adjudication",
           "commentary_status": "documentary_conflict_pending_adjudication",
-          "review_note": "DIVERGÊNCIA CRÍTICA: o PDF da prova 2008 acessado no Google Drive marca (X) na alternativa A (sequência C,E,C,E,C,C), enquanto official-exams.json e o checkpoint registram C (C,C,E,E,C,E). A Resolução IMO A.918(22), vigente antes de 2008, confirma literalmente a primeira frase (p.13), exige hemisférios na posição (p.15), recomenda resposta 'The pilot will embark at ... hours local time' (p.55), e resposta 'Yes, we are ready' (p.63), tornando os diálogos 2, 3 e 4 problemáticos. Diálogo 5 coincide com A2/3.2 p.61. Diálogo 6 omite 'manoeuvring' conforme A2/3.2 p.61, mas a interpretação estrita exige adjudicação. Não homologar nem alterar gabarito do banco antes de conferir se o X do PDF representa gabarito oficial ou anotação de terceiro. Nova leitura direta do texto extraído da prova_escrita_2008.pdf confirmou a sequência da alternativa (a) C,E,C,E,C,C seguida de '( X )' na página impressa 17. A alternativa (c) C,C,E,E,C,E continua cadastrada no corpus. Conflito documental confirmado, porém a autoria da marcação X e a adjudicação técnica de cada diálogo permanecem abertas.",
+          "review_note": "DIVERGÊNCIA CRÍTICA: o PDF da prova 2008 acessado no Google Drive marca (X) na alternativa A (sequência C,E,C,E,C,C), enquanto official-exams.json e o checkpoint registram C (C,C,E,E,C,E). A Resolução IMO A.918(22), vigente antes de 2008, confirma literalmente a primeira frase (p.13), exige hemisférios na posição (p.15), recomenda resposta 'The pilot will embark at ... hours local time' (p.55), e resposta 'Yes, we are ready' (p.63), tornando os diálogos 2, 3 e 4 problemáticos. Diálogo 5 coincide com A2/3.2 p.61. Diálogo 6 omite 'manoeuvring' conforme A2/3.2 p.61, mas a interpretação estrita exige adjudicação. Não homologar nem alterar gabarito do banco antes de conferir se o X do PDF representa gabarito oficial ou anotação de terceiro. Nova leitura direta do texto extraído da prova_escrita_2008.pdf confirmou a sequência da alternativa (a) C,E,C,E,C,C seguida de '( X )' na página impressa 17. A alternativa (c) C,C,E,E,C,E continua cadastrada no corpus. Conflito documental confirmado, porém a autoria da marcação X e a adjudicação técnica de cada diálogo permanecem abertas. | 2026-11-17: AUDITORIA DE CONSISTÊNCIA: sequência da avaliação técnica individual atualmente anotada (C,E,E,E,C,E) NÃO corresponde nem à alternativa C cadastrada (C,C,E,E,C,E), nem à alternativa A marcada no exemplar (C,E,C,E,C,C). Divergências de interpretação especialmente nos diálogos 3, 4 e 6. Proibido concluir que A ou C é correta apenas pelo X ou pela análise parcial. Requer gabarito oficial independente e texto literal de cada diálogo antes de correção.",
           "original_exam_url": "https://drive.google.com/file/d/1ZUC9GoT0hYZcljrp1kKqRofmiehjzptr/view",
           "bibliography_candidate_url": "https://drive.google.com/file/d/1jYZo-tH5rEfEi6S0jsh5erYSVyY1RLEV/view",
           "bibliography": {
@@ -1903,7 +1903,23 @@
             }
           ],
           "original_exam_marked_answer": "A",
-          "original_exam_printed_page": 17
+          "original_exam_printed_page": 17,
+          "adjudication_matrix": {
+            "registered_answer": "C",
+            "registered_sequence": "C,C,E,E,C,E",
+            "marked_exam_copy_answer": "A",
+            "marked_exam_copy_sequence": "C,E,C,E,C,C",
+            "current_dialogue_assessments": "C,E,E,E,C,E",
+            "assessment_matches_registered_answer": false,
+            "assessment_matches_marked_exam_copy": false,
+            "assessment_ambiguities": [
+              3,
+              4,
+              6
+            ],
+            "decision": "hold_no_homologation",
+            "required_next_evidence": "Authentic independent official answer key and verbatim original six dialogue statements; adjudicate 3, 4, 6 against IMO A.918(22)."
+          }
         },
         {
           "id": "pscpp::official::2008::038",
