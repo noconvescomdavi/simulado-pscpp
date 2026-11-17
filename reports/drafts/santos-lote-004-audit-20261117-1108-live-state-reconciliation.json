@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-17",
+  "phase": "1108-live-state-reconciliation",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261117-1007-stem-screen.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "printed_pages": [
+    162,
+    163,
+    163
+  ],
+  "catalogs": {
+    "main": 4089,
+    "generated": 500,
+    "total": 4589,
+    "stem_screen_hits": 38,
+    "semantic_dedup_certified": false
+  },
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "matching_columns": 12,
+    "master_question_table_found": false
+  },
+  "git": {
+    "branch": "draft/santos-lote-004-source-review-20261110",
+    "ahead_before_checkpoint": 119,
+    "behind": 1,
+    "base_commit": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+  },
+  "vercel": {
+    "deployment": "dpl_6CoZdHwwX2n3ffHAc761gMBwb6j8",
+    "state": "READY",
+    "target": null,
+    "commit": "95928e316cc2b6bdc8ce99552a51f6359e1161dc",
+    "production_verified": false
+  },
+  "counts": {
+    "preserved": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "definitive_ids": 0
+  },
+  "tests": 0,
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Full semantic deduplication against catalogs and 150 Santos extensions not certified",
+    "Active loader not established",
+    "Official Anexo 2-A mapping not certified",
+    "Branch behind main by one commit",
+    "MAN-B022-09 and MAN-B022-12 still require source review"
+  ],
+  "publication_allowed": false
+}
