@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-17",
+  "phase": "0906-blob-recovery-and-targeted-overlap-screen",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261117-0805-live-catalog-read-and-deployment-check.json",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "source_draft": "reports/drafts/santos-lote-004-source-review-20261110.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "printed_pages": [
+    162,
+    163,
+    163
+  ],
+  "new_findings": {
+    "github_fetch_file_catalog_empty": true,
+    "github_fetch_blob_catalog_success": true,
+    "main_catalog_sha": "7d91a960b5901e1595e723d0382ddd3693616a62",
+    "main_catalog_records": 4089,
+    "generated_catalog_sha": "97c2662f1e4f01593ad71a0c8e269c00d9574b55",
+    "generated_catalog_records": 500,
+    "main_catalog_current_and_related_keyword_hits": 37,
+    "generated_catalog_current_and_related_keyword_hits": 0,
+    "screen_method": "question/enunciado contains corrente and one of través,lateral,guinada,coeficiente,profundidade,calado,petroleiro,graneleiro",
+    "screen_limitation": "Keyword search is not semantic equivalence certification; 37 hits include incidental terms and multi-assertion questions",
+    "neon_project": "shy-firefly-80833334",
+    "neon_question_columns": 12,
+    "neon_master_table_identified": false,
+    "github_ahead_before_commit": 117,
+    "github_behind": 1,
+    "vercel_latest_deployment": "dpl_CzAkAnvndiENvQjkmyEAnxUcCLAU",
+    "vercel_latest_state": "READY",
+    "vercel_target": null
+  },
+  "counts": {
+    "preserved": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "definitive_ids": 0,
+    "tests": 0
+  },
+  "commits": {
+    "current_checkpoint": "pending tool result"
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Complete semantic comparison of 4589 recovered catalog questions and all extensions against candidates remains uncertified",
+    "Confirm active runtime catalog loader and official Anexo 2-A mapping",
+    "Branch diverged from main by one commit",
+    "Review MAN-B022-09 and MAN-B022-12 with source"
+  ],
+  "publication_allowed": false
+}
