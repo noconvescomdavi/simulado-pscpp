@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-17",
+  "phase": "0412-candidate-payload-and-neon-live-check",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261117-0307-live-reconciliation.json",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "verified": {
+    "candidate_ids": [
+      "L04-DRAFT-01",
+      "L04-DRAFT-02",
+      "L04-DRAFT-03"
+    ],
+    "answers": [
+      "C",
+      "B",
+      "D"
+    ],
+    "printed_pages": [
+      162,
+      163,
+      163
+    ],
+    "pdf_pages": [
+      155,
+      156,
+      156
+    ],
+    "all_five_options": true,
+    "all_stems_comments_source_locators": true,
+    "source_reverification": "previous checkpoint 0211; original PDF not directly reread in this run",
+    "github_ahead_before_commit": 112,
+    "github_behind": 1,
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51",
+    "catalogs": [
+      "data/questions/manobrabilidade.json",
+      "data/pscpp/generated-questions.json"
+    ],
+    "catalog_read": "both fetch_file calls returned empty content with blob SHAs, even when line ranges were requested",
+    "neon_project": "shy-firefly-80833334",
+    "neon_columns": "12 matching question/enunciado/alternative column names, no standalone stem/options columns identified; operational references are not a complete question catalog",
+    "vercel_preview": {
+      "id": "dpl_6qkneKmeya9YGACeCTWFW2n8TvMd",
+      "state": "READY",
+      "target": null,
+      "commit": "065c2297366ac6be25bf0ca0346fa216f0c4202e"
+    }
+  },
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "ci_tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Full semantic deduplication against static/runtime catalogs cannot be certified",
+    "Official Anexo 2-A mapping 8.10.2.1.1 vs 4.13.2 unresolved",
+    "Branch diverged from main by one commit",
+    "MAN-B022-09 and MAN-B022-12 pending review"
+  ],
+  "publication_allowed": false
+}
