@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-17",
+  "phase": "0512-readonly-live-reconciliation",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261117-0412-live-column-inventory.json",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "printed_pages": [
+    162,
+    163,
+    163
+  ],
+  "source_status": "Previously directly verified 0211; no new PDF verification",
+  "github": {
+    "ahead_before_commit": 113,
+    "behind": 1,
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+  },
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "sql": "information_schema.columns search for question/content/alternative",
+    "matching_columns": 15,
+    "master_question_table_confirmed": false
+  },
+  "vercel": {
+    "deployment": "dpl_2UaGAJ4siLHXTFphXBWSTbDL56uK",
+    "commit": "51270c061f5396a5fa896256b4b21174aec0570d",
+    "state": "READY",
+    "target": null
+  },
+  "counts": {
+    "preserved": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Semantic deduplication against full active static catalog not certified",
+    "Official Anexo 2-A numbering unresolved",
+    "Branch diverged from main",
+    "MAN-B022-09 and MAN-B022-12 review pending"
+  ],
+  "publication_allowed": false
+}
