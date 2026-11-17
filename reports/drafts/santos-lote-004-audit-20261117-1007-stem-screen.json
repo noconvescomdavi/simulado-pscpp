@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-17",
+  "phase": "1007-full-blob-stem-screen",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261117-0906-blob-recovery.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "candidate_answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "printed_pages": [
+    162,
+    163,
+    163
+  ],
+  "catalogs": {
+    "main": {
+      "sha": "7d91a960b5901e1595e723d0382ddd3693616a62",
+      "records": 4089
+    },
+    "generated": {
+      "sha": "97c2662f1e4f01593ad71a0c8e269c00d9574b55",
+      "records": 500
+    },
+    "total": 4589
+  },
+  "screen": {
+    "method": "Accent-normalized question stem contains corrente AND one of traves/lateral/guinada/coeficiente/profundidade/calado/petroleiro/graneleiro",
+    "hits": 38,
+    "notable_related": [
+      "MAN-NSH-C02-UC50-M2",
+      "MAN-NSH-C02-UC52-M2",
+      "MAN-2822",
+      "MAN-3862"
+    ],
+    "assessment": "No exact stem equivalent to three candidates seen among 38; several address cross-current resistance or other effects, not the Santos-specific lateral force peak, yaw peaks, or ship-specific nonlinear coefficients. Keyword screen cannot certify semantic uniqueness across 4589 full question+option+comment records."
+  },
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "matching_schema_columns": 12,
+    "master_question_table_found": false
+  },
+  "git": {
+    "ahead_before_checkpoint": 118,
+    "behind": 1
+  },
+  "vercel": {
+    "deployment": "dpl_GqnxEHvStK3ryMLbbC69npmYVY5z",
+    "state": "READY",
+    "target": null,
+    "production_verified": false
+  },
+  "counts": {
+    "preserved": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "definitive_ids": 0
+  },
+  "tests": 0,
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Full semantic deduplication of options/comments and 150 prior Santos extensions not certified",
+    "Active runtime catalog and official Anexo 2-A mapping not independently confirmed",
+    "Branch diverges from main",
+    "MAN-B022-09 and MAN-B022-12 source reviews pending"
+  ],
+  "publication_allowed": false
+}
