@@ -1486,36 +1486,36 @@
       "subject": "II — Arte Naval",
       "module": "Bollard pull required",
       "topic_code": "ANV.HENSEN.C05.L021.01",
-      "topic": "Prazo de manobra e força lateral",
+      "topic": "Distinção entre forças ambientais e massa no dimensionamento",
       "difficulty": "Média",
       "style": "Aplicada",
       "pscpp_format": "direct",
       "cognitive_level": 3,
-      "question": "Sem vento nem corrente, um navio precisa deslocar-se lateralmente em prazo muito curto. Que efeito decorre de F=m·a?",
+      "question": "Na estimativa do bollard pull necessário, um navio de grande área vélica sofre vento transversal intenso, enquanto um petroleiro carregado opera em água abrigada, com vento fraco e sem corrente significativa. Segundo Hensen, qual distinção orienta o dimensionamento inicial da assistência?",
       "options": [
         {
           "key": "A",
-          "text": "Qualquer força cumpre o mesmo prazo."
+          "text": "Em ambos os casos, a tração deve ser determinada exclusivamente pela velocidade máxima do rebocador."
         },
         {
           "key": "B",
-          "text": "A massa deixa de importar."
+          "text": "A área vélica é irrelevante no primeiro caso, pois somente a massa deslocada determina a força."
         },
         {
           "key": "C",
-          "text": "A distância lateral é irrelevante."
+          "text": "No primeiro caso, predominam as forças ambientais a compensar; no segundo, a massa e a aceleração ou desaceleração lateral necessárias."
         },
         {
           "key": "D",
-          "text": "Maior prazo exige sempre maior força."
+          "text": "No petroleiro carregado, a força do vento necessariamente supera qualquer efeito de inércia."
         },
         {
           "key": "E",
-          "text": "A necessidade de aceleração maior eleva a força requerida, apesar de pequena força já iniciar movimento."
+          "text": "Os dois casos dispensam avaliação separada porque o mesmo cálculo por área lateral resolve qualquer manobra."
         }
       ],
-      "correct_answer": "E",
-      "explanation": "Hensen (§5.2.1, p. 136) distingue a força suficiente para iniciar deslocamento, quando o tempo não importa, da força maior necessária para acelerar ou desacelerar rapidamente. Pela relação F = m × a, mantida a massa, maior aceleração exige maior força; isso não dispensa avaliação operacional de reservas e condições ambientais.",
+      "correct_answer": "C",
+      "explanation": "Hensen distingue expressamente em §5.2.1 duas situações básicas: forças externas (vento, corrente e ondas), particularmente importantes em navios com grande área exposta, e massa/inércia, predominante em petroleiros ou graneleiros carregados em condições ambientais pouco significativas. A avaliação real deve considerar ambas quando presentes; não se trata de exclusividade absoluta.",
       "active": true,
       "validation_status": "pending_editorial_review",
       "validation": {
