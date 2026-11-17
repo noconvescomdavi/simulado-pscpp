@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-17",
+  "phase": "1515-full-payload-catalog-screen",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261117-1501-runtime-loader-confirmed.json",
+  "catalogs": [
+    {
+      "path": "data/questions/manobrabilidade.json",
+      "records": 4089,
+      "sha": "7d91a960b5901e1595e723d0382ddd3693616a62"
+    },
+    {
+      "path": "data/pscpp/generated-questions.json",
+      "records": 500,
+      "sha": "97c2662f1e4f01593ad71a0c8e269c00d9574b55"
+    }
+  ],
+  "method": "Retrieved and parsed both complete GitHub blobs during this execution; inspected candidate-topic terms across each record's stem, options, explanation and commentary. Broad term matching has substantial false positives, so no semantic uniqueness certification.",
+  "notable_overlap": [
+    "MAN-2822",
+    "MAN-NSH-C02-UC50-M2",
+    "MAN-NSH-C02-UC50-M3",
+    "MAN-NSH-C02-UC52-M2"
+  ],
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "runtime_loader": "lib/question-banks-source.js imports Santos 001-003 explicitly; 004 absent",
+  "counts": {
+    "records_scanned": 4589,
+    "preserved": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0
+  },
+  "tests": 0,
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Broad full-payload screening did not resolve semantic duplicates and generated unrelated matches",
+    "Other extensions not all reviewed",
+    "Official Anexo 2-A mapping unverified",
+    "Branch diverges from main",
+    "No test/CI executed"
+  ],
+  "publication_allowed": false
+}
