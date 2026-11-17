@@ -1854,7 +1854,7 @@
           "original_correct_answer": "C",
           "status": "pending_official_answer_discrepancy_adjudication",
           "commentary_status": "documentary_conflict_pending_adjudication",
-          "review_note": "DIVERGÊNCIA CRÍTICA: o PDF da prova 2008 acessado no Google Drive marca (X) na alternativa A (sequência C,E,C,E,C,C), enquanto official-exams.json e o checkpoint registram C (C,C,E,E,C,E). A Resolução IMO A.918(22), vigente antes de 2008, confirma literalmente a primeira frase (p.13), exige hemisférios na posição (p.15), recomenda resposta 'The pilot will embark at ... hours local time' (p.55), e resposta 'Yes, we are ready' (p.63), tornando os diálogos 2, 3 e 4 problemáticos. Diálogo 5 coincide com A2/3.2 p.61. Diálogo 6 omite 'manoeuvring' conforme A2/3.2 p.61, mas a interpretação estrita exige adjudicação. Não homologar nem alterar gabarito do banco antes de conferir se o X do PDF representa gabarito oficial ou anotação de terceiro. Nova leitura direta do texto extraído da prova_escrita_2008.pdf confirmou a sequência da alternativa (a) C,E,C,E,C,C seguida de '( X )' na página impressa 17. A alternativa (c) C,C,E,E,C,E continua cadastrada no corpus. Conflito documental confirmado, porém a autoria da marcação X e a adjudicação técnica de cada diálogo permanecem abertas. | 2026-11-17: AUDITORIA DE CONSISTÊNCIA: sequência da avaliação técnica individual atualmente anotada (C,E,E,E,C,E) NÃO corresponde nem à alternativa C cadastrada (C,C,E,E,C,E), nem à alternativa A marcada no exemplar (C,E,C,E,C,C). Divergências de interpretação especialmente nos diálogos 3, 4 e 6. Proibido concluir que A ou C é correta apenas pelo X ou pela análise parcial. Requer gabarito oficial independente e texto literal de cada diálogo antes de correção.",
+          "review_note": "DIVERGÊNCIA CRÍTICA: o PDF da prova 2008 acessado no Google Drive marca (X) na alternativa A (sequência C,E,C,E,C,C), enquanto official-exams.json e o checkpoint registram C (C,C,E,E,C,E). A Resolução IMO A.918(22), vigente antes de 2008, confirma literalmente a primeira frase (p.13), exige hemisférios na posição (p.15), recomenda resposta 'The pilot will embark at ... hours local time' (p.55), e resposta 'Yes, we are ready' (p.63), tornando os diálogos 2, 3 e 4 problemáticos. Diálogo 5 coincide com A2/3.2 p.61. Diálogo 6 omite 'manoeuvring' conforme A2/3.2 p.61, mas a interpretação estrita exige adjudicação. Não homologar nem alterar gabarito do banco antes de conferir se o X do PDF representa gabarito oficial ou anotação de terceiro. Nova leitura direta do texto extraído da prova_escrita_2008.pdf confirmou a sequência da alternativa (a) C,E,C,E,C,C seguida de '( X )' na página impressa 17. A alternativa (c) C,C,E,E,C,E continua cadastrada no corpus. Conflito documental confirmado, porém a autoria da marcação X e a adjudicação técnica de cada diálogo permanecem abertas. | 2026-11-17: AUDITORIA DE CONSISTÊNCIA: sequência da avaliação técnica individual atualmente anotada (C,E,E,E,C,E) NÃO corresponde nem à alternativa C cadastrada (C,C,E,E,C,E), nem à alternativa A marcada no exemplar (C,E,C,E,C,C). Divergências de interpretação especialmente nos diálogos 3, 4 e 6. Proibido concluir que A ou C é correta apenas pelo X ou pela análise parcial. Requer gabarito oficial independente e texto literal de cada diálogo antes de correção. | 2026-11-17: NOVO CONFRONTO DIRETO por Google Drive fetch do PDF prova_escrita_2008.pdf: enunciado e SEIS pares de falas transcritos literalmente no campo original_dialogues_verified_2026_11_17; página impressa 17, sequência A marcada (X), C cadastrada. A instrução original exige 'não obedecem rigorosamente', razão para não tratar equivalência coloquial como prova de conformidade. Fonte IMO A.918(22) acessada no Drive, mas a adjudicação dos diálogos 3/4/6 e a natureza oficial do X permanecem pendentes. Nenhum gabarito alterado.",
           "original_exam_url": "https://drive.google.com/file/d/1ZUC9GoT0hYZcljrp1kKqRofmiehjzptr/view",
           "bibliography_candidate_url": "https://drive.google.com/file/d/1jYZo-tH5rEfEi6S0jsh5erYSVyY1RLEV/view",
           "bibliography": {
@@ -1919,7 +1919,33 @@
             ],
             "decision": "hold_no_homologation",
             "required_next_evidence": "Authentic independent official answer key and verbatim original six dialogue statements; adjudicate 3, 4, 6 against IMO A.918(22)."
-          }
+          },
+          "original_dialogues_verified_2026_11_17": [
+            [
+              "Please use IMO Standard Marine Communications Phrases.",
+              "I will use IMO Standard Marine Communications Phrases."
+            ],
+            [
+              "What is your position?",
+              "My position is two-three degrees five-seven minutes zero-four five degrees two-nine decimal six."
+            ],
+            [
+              "When will the pilot embark?",
+              "Stand by one-five minutes."
+            ],
+            [
+              "Are you ready to get underway?",
+              "We are ready to get underway."
+            ],
+            [
+              "What is the diameter of the turning circle?",
+              "The diameter of the turning circle is three-zero-zero-zero metres."
+            ],
+            [
+              "What is the speed at half ahead?",
+              "The speed at half ahead is eight knots."
+            ]
+          ]
         },
         {
           "id": "pscpp::official::2008::038",
@@ -1929,7 +1955,7 @@
           "status": "pending_bibliographic_verification",
           "commentary_status": "preliminary_review_pending_historical_norm_and_official_mark",
           "original_exam_url": "https://drive.google.com/file/d/1ZUC9GoT0hYZcljrp1kKqRofmiehjzptr/view",
-          "review_note": "Triagem técnica não homologada da sequência F,F,V,V,F (alternativa E) cadastrada no corpus. Assertiva I: preferência contra corrente não decorre automaticamente de situação roda a roda em visibilidade restrita; requer confronto da regra especial de navegação interior. II: termo 'somente' é restritivo e exige catálogo completo de luzes amarelas da norma histórica. III: reduzir velocidade para evitar danos por marolas junto a embarcações pequenas, rebocadas ou atracadas é coerente com precauções de navegação interior. IV: embarcação de 90 m restrita por calado pode exibir três luzes circulares encarnadas verticais além das luzes de navegação; confirmar alcance da regra histórica. V: marcas esferas-cones-esferas correspondem a capacidade de manobra restrita, não automaticamente a unidade integrada em movimento. Alternativas: A diverge nas assertivas II e IV; B diverge I,II,III,IV,V; C diverge IV e V; D diverge I,III,V; E corresponde à análise provisória. Não foi localizada cópia verificável da NORMAM-02/DPC vigente em 2008 na pesquisa do Drive, nem foi autenticada a marcação no fac-símile. Sem edição, página ou trecho fiel: não homologar. | 2026-11-17: Consulta direta ao PDF RIPEAM/COLREG consolidado com emendas até dezembro de 2013, disponível no Google Drive (ID 14kTD2X3gyo2-9zP_y0GADkRjNixsDwEJ). Regra 28 contém: 'Uma embarcação restrita devido ao seu calado pode, além das luzes prescritas para embarcações de propulsão mecânica na Regra 23, exibir três luzes circulares encarnadas dispostas em linha vertical'. Isso sustenta em princípio a assertiva IV; a regra usa 'pode', não obrigação. Regra 27(b) associa esferas e losango a capacidade de manobra restrita, distinguindo-a de restrição por calado; conferir redação literal da assertiva V antes de conclusão. Documento consolidado em 2013 é posterior à prova de 2008; ainda não se verificou equivalência histórica nem paginação da passagem. Assertivas I–III e alternativas A–E permanecem sem fundamentação completa. NÃO HOMOLOGAR.",
+          "review_note": "Triagem técnica não homologada da sequência F,F,V,V,F (alternativa E) cadastrada no corpus. Assertiva I: preferência contra corrente não decorre automaticamente de situação roda a roda em visibilidade restrita; requer confronto da regra especial de navegação interior. II: termo 'somente' é restritivo e exige catálogo completo de luzes amarelas da norma histórica. III: reduzir velocidade para evitar danos por marolas junto a embarcações pequenas, rebocadas ou atracadas é coerente com precauções de navegação interior. IV: embarcação de 90 m restrita por calado pode exibir três luzes circulares encarnadas verticais além das luzes de navegação; confirmar alcance da regra histórica. V: marcas esferas-cones-esferas correspondem a capacidade de manobra restrita, não automaticamente a unidade integrada em movimento. Alternativas: A diverge nas assertivas II e IV; B diverge I,II,III,IV,V; C diverge IV e V; D diverge I,III,V; E corresponde à análise provisória. Não foi localizada cópia verificável da NORMAM-02/DPC vigente em 2008 na pesquisa do Drive, nem foi autenticada a marcação no fac-símile. Sem edição, página ou trecho fiel: não homologar. | 2026-11-17: Consulta direta ao PDF RIPEAM/COLREG consolidado com emendas até dezembro de 2013, disponível no Google Drive (ID 14kTD2X3gyo2-9zP_y0GADkRjNixsDwEJ). Regra 28 contém: 'Uma embarcação restrita devido ao seu calado pode, além das luzes prescritas para embarcações de propulsão mecânica na Regra 23, exibir três luzes circulares encarnadas dispostas em linha vertical'. Isso sustenta em princípio a assertiva IV; a regra usa 'pode', não obrigação. Regra 27(b) associa esferas e losango a capacidade de manobra restrita, distinguindo-a de restrição por calado; conferir redação literal da assertiva V antes de conclusão. Documento consolidado em 2013 é posterior à prova de 2008; ainda não se verificou equivalência histórica nem paginação da passagem. Assertivas I–III e alternativas A–E permanecem sem fundamentação completa. NÃO HOMOLOGAR. | 2026-11-17: CONFERÊNCIA DO ENUNCIADO ORIGINAL no PDF prova_escrita_2008.pdf, página impressa 18: a referência expressamente exigida é NORMAM-02/DPC (Embarcações Empregadas na Navegação Interior), NÃO apenas RIPEAM/COLREG. Embora Regra 28 seja relevante à assertiva IV, a verificação final das cinco assertivas exige NORMAM-02/DPC vigente em 2008, inclusive regras interiores sobre corrente, luzes amarelas, maretas e unidade integrada. Gabarito E marcado (X), sem homologação.",
           "source_verification": "post_exam_consolidated_colreg_rule28_checked_historical_equivalence_and_other_assertions_pending",
           "bibliography_candidate": {
             "author": "Organização Marítima Internacional (IMO), versão em português",
@@ -1940,7 +1966,8 @@
               "Uma embarcação restrita devido ao seu calado pode, além das luzes prescritas para embarcações de propulsão mecânica na Regra 23, exibir três luzes circulares encarnadas dispostas em linha vertical"
             ]
           },
-          "bibliography_candidate_url": "https://drive.google.com/file/d/14kTD2X3gyo2-9zP_y0GADkRjNixsDwEJ/view"
+          "bibliography_candidate_url": "https://drive.google.com/file/d/14kTD2X3gyo2-9zP_y0GADkRjNixsDwEJ/view",
+          "primary_reference_required": "NORMAM-02/DPC, edição vigente na data da prova de 2008; RIPEAM apenas como referência complementar quando aplicável"
         },
         {
           "id": "pscpp::official::2008::039",
