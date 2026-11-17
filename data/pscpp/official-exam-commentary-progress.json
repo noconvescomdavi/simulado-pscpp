@@ -1673,8 +1673,18 @@
           "original_correct_answer": "C",
           "status": "pending_bibliographic_verification",
           "commentary_status": "preliminary_review_pending_primary_source",
-          "review_note": "Triagem editorial 2026-11-14: C cadastrada = F,V,F,V,F. As alternativas A/B/D/E diferem dessa sequência, mas nenhuma assertiva foi bibliograficamente autenticada. I: verificar comparação de eficácia de hélice de passo controlável em marcha a ré com hélice convencional (F no gabarito). II: verificar resposta de aceleração de turbina a vapor versus diesel (V). III: verificar alcance/área de cobertura VHF, inclusive expressão 'piores condições' e 1800 milhas náuticas quadradas (F). IV: verificar limitação da precisão do sistema eletrônico pelas cartas usadas (V). V: verificar se segurança/silêncio dos AZIPOD justifica generalização a 'qualquer tipo de navio' (F). Fonte declarada no enunciado: MacElrevey & MacElrevey, Shiphandling for the Mariner (título/edição precisam ser confrontados com exemplar). Faltam edição, páginas, trechos literais, descarte demonstrado de cada opção e confronto com fac-símile. NÃO HOMOLOGAR.",
-          "source_verification": "not_verified"
+          "review_note": "Triagem editorial 2026-11-14: C cadastrada = F,V,F,V,F. As alternativas A/B/D/E diferem dessa sequência, mas nenhuma assertiva foi bibliograficamente autenticada. I: verificar comparação de eficácia de hélice de passo controlável em marcha a ré com hélice convencional (F no gabarito). II: verificar resposta de aceleração de turbina a vapor versus diesel (V). III: verificar alcance/área de cobertura VHF, inclusive expressão 'piores condições' e 1800 milhas náuticas quadradas (F). IV: verificar limitação da precisão do sistema eletrônico pelas cartas usadas (V). V: verificar se segurança/silêncio dos AZIPOD justifica generalização a 'qualquer tipo de navio' (F). Fonte declarada no enunciado: MacElrevey & MacElrevey, Shiphandling for the Mariner (título/edição precisam ser confrontados com exemplar). Faltam edição, páginas, trechos literais, descarte demonstrado de cada opção e confronto com fac-símile. NÃO HOMOLOGAR. | 2026-11-17: Localizada transcrição da 4ª ed. (2004) de MacElrevey & MacElrevey, Shiphandling for the Mariner, capítulo 2, seção de propulsão variável: texto literal 'A variable-pitch propeller going astern is less effective than a conventional propeller.' Confirma que a assertiva I é F; fonte eletrônica de terceiros e página impressa do trecho ainda por conferir. As demais assertivas II-V permanecem sem confronto individual suficiente. NÃO HOMOLOGAR.",
+          "source_verification": "fourth_edition_transcription_checked_assertion_I_only_other_assertions_pending",
+          "bibliography_candidate": {
+            "author": "Daniel H. MacElrevey; Daniel E. MacElrevey",
+            "title": "Shiphandling for the Mariner",
+            "edition": "4th edition (2004), Cornell Maritime Press",
+            "pages": "Capítulo 2, seção de hélice de passo variável; página impressa exata pendente",
+            "short_excerpts": [
+              "A variable-pitch propeller going astern is less effective than a conventional propeller."
+            ]
+          },
+          "bibliography_candidate_url": "https://studylib.net/doc/28510495/shiphandling-for-the-mariners"
         }
       ]
     },
@@ -1688,10 +1698,27 @@
           "number": 31,
           "original_correct_answer": "D",
           "status": "pending_bibliographic_verification",
-          "commentary_status": "preliminary_calculation_checked_primary_formula_pending",
-          "review_note": "Auditoria 2026-11-14: texto integral, dimensões e marcação (X) em D (0,96 m) confrontados diretamente com prova_escrita_2008.pdf, p. 15, no Google Drive. Dados: Cb=0,75; V=8 nós; h=30 m; T=20 m; folga estática sob a quilha=10 m. A operação 2×Cb×V²/100 = 2×0,75×64/100 = 0,96 m reproduz D. ATENÇÃO: essa expressão é somente uma hipótese de fórmula; sua aplicabilidade à geometria do canal e sua atribuição a MacElrevey & MacElrevey NÃO foram verificadas na obra, portanto o cálculo não constitui validação bibliográfica. Comparação das alternativas: A=0,40, B=0,48, C=0,80 e E=1,60 m diferem do resultado da expressão hipotética, mas NÃO podem ser declaradas incorretas por fonte primária até confirmar a equação, coeficiente e regime de águas confinadas na edição citada. A profundidade e a boca podem exigir outro modelo. Exigir edição, página e trecho literal de Shiphandling for the Mariner antes de homologar.",
+          "commentary_status": "full_option_analysis_supported_by_external_book_transcription_pending_final_source_authentication",
+          "review_note": "Auditoria 2026-11-14: texto integral, dimensões e marcação (X) em D (0,96 m) confrontados diretamente com prova_escrita_2008.pdf, p. 15, no Google Drive. Dados: Cb=0,75; V=8 nós; h=30 m; T=20 m; folga estática sob a quilha=10 m. A operação 2×Cb×V²/100 = 2×0,75×64/100 = 0,96 m reproduz D. ATENÇÃO: essa expressão é somente uma hipótese de fórmula; sua aplicabilidade à geometria do canal e sua atribuição a MacElrevey & MacElrevey NÃO foram verificadas na obra, portanto o cálculo não constitui validação bibliográfica. Comparação das alternativas: A=0,40, B=0,48, C=0,80 e E=1,60 m diferem do resultado da expressão hipotética, mas NÃO podem ser declaradas incorretas por fonte primária até confirmar a equação, coeficiente e regime de águas confinadas na edição citada. A profundidade e a boca podem exigir outro modelo. Exigir edição, página e trecho literal de Shiphandling for the Mariner antes de homologar. | 2026-11-17: Localizada e confrontada transcrição da obra Shiphandling for the Mariner, 4ª ed. (2004), pp. 87–88, fórmula de Barrass: S=C_b×V²/100 em águas abertas; em águas rasas confinadas squat=2×S. Substituição dá 0,96 m e fundamenta D; justificativas A/B/C/E registradas. A transcrição está em repositório de terceiros, não no exemplar Drive; requer autenticação do fac-símile/paginação para homologação final. Não confundir o resultado com garantia de UKC real.",
           "original_exam_url": "https://drive.google.com/file/d/1ZUC9GoT0hYZcljrp1kKqRofmiehjzptr/view",
-          "source_verification": "official_exam_marking_verified_arithmetic_only_primary_formula_not_verified"
+          "source_verification": "official_exam_and_fourth_edition_transcription_formula_verified_pending_facsimile_authentication",
+          "correct_reason": "D = 0,96 m. MacElrevey & MacElrevey, 4ª ed. (2004), pp. 87–88, reproduzem fórmula de Barrass S=C_b×V²/100 para águas abertas e indicam dobrar S para águas rasas e confinadas. Para C_b=0,75 e V=8 nós: S=0,75×64/100=0,48 m; squat total em águas confinadas=2×0,48=0,96 m. Corresponde à marcação D na prova oficial de 2008, p. 15. Fórmula aproximativa, com ressalva dos autores quanto a superestimativa e variáveis locais.",
+          "incorrect_reasons_by_option": {
+            "A": "0,40 m não corresponde à expressão de Barrass aplicada a C_b=0,75, V=8 nós e fator 2 para águas confinadas.",
+            "B": "0,48 m é o squat estimado pela fórmula para águas abertas; omite o fator 2 exigido no exemplo para águas confinadas.",
+            "C": "0,80 m não resulta da substituição dos dados fornecidos na fórmula indicada pelos autores.",
+            "E": "1,60 m não resulta da substituição de C_b=0,75 e V=8 nós com fator 2; excede o resultado de 0,96 m da fórmula aplicada."
+          },
+          "bibliography_candidate": {
+            "author": "Daniel H. MacElrevey; Daniel E. MacElrevey",
+            "title": "Shiphandling for the Mariner",
+            "edition": "4th edition (2004), Cornell Maritime Press",
+            "pages": "87–88, capítulo 2, The Basics of Squat",
+            "short_excerpts": [
+              "Squat in shallow, confined waters is double the quantity S found by the above formula"
+            ]
+          },
+          "bibliography_candidate_url": "https://studylib.net/doc/28510495/shiphandling-for-the-mariners"
         },
         {
           "id": "pscpp::official::2008::032",
