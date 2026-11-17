@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-17",
+  "phase": "0805-live-catalog-read-and-deployment-check",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261117-0703-current-state-reconciliation.json",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "printed_pages": [
+    162,
+    163,
+    163
+  ],
+  "source_direct_verification": "reports/drafts/santos-lote-004-audit-20261117-0211-primary-source-reverified.json",
+  "current_run": {
+    "draft_first_25_lines_read": true,
+    "static_catalogs": [
+      {
+        "path": "data/questions/manobrabilidade.json",
+        "sha": "7d91a960b5901e1595e723d0382ddd3693616a62",
+        "first_25_lines_returned": "empty"
+      },
+      {
+        "path": "data/pscpp/generated-questions.json",
+        "sha": "97c2662f1e4f01593ad71a0c8e269c00d9574b55",
+        "first_25_lines_returned": "empty"
+      }
+    ],
+    "neon": {
+      "project": "shy-firefly-80833334",
+      "question_related_columns": 12,
+      "master_question_table_identified": false
+    },
+    "github": {
+      "ahead_before_checkpoint": 116,
+      "behind": 1,
+      "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+    },
+    "vercel": {
+      "deployment": "dpl_FfcS3gC15uetkWexZz1zSxQE31KY",
+      "commit": "953c149b6f7ac027bbaaf1d3a1374ee34bf0752c",
+      "state": "READY",
+      "target": null,
+      "production_confirmed": false
+    }
+  },
+  "counts": {
+    "preserved": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "definitive_ids": 0,
+    "tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Static catalog fetch returns empty even with line range; complete semantic deduplication not certified",
+    "Active runtime question catalog loader not established",
+    "Official Anexo 2-A mapping not independently authenticated",
+    "Branch one commit behind main",
+    "MAN-B022-09 and MAN-B022-12 still require source-based review"
+  ],
+  "publication_allowed": false
+}
