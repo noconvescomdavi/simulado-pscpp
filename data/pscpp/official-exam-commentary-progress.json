@@ -1472,23 +1472,46 @@
           "year": 2008,
           "number": 17,
           "original_correct_answer": "E",
-          "status": "pending_bibliographic_verification",
-          "commentary_status": "preliminary_review_pending_primary_sources",
-          "review_note": "Confronto com corpus oficial cadastrado (2026-11-14): gabarito E. Enunciado: contratorpedeiro Knox, atracado por boreste, proa 090°, corrente para W de 3 nós, hélice de passo direito, um leme e domo sonar. As alternativas C/D/E diferem especialmente no momento de inverter ou centrar o leme durante desatracação com espias 5 e 1. Necessário conferir Crenshaw, Naval Shiphandling, 4ª ed. 1975, figura/procedimento, numeração de espias e página antes de justificar cada alternativa. Candidato no Drive localizado, não verificado.",
-          "source_verification": "not_verified",
+          "status": "original_exam_and_contemporaneous_bibliography_verified_pending_independent_key",
+          "commentary_status": "draft_verified_pending_independent_official_key",
+          "review_note": "2026-11-17: confrontado diretamente com prova PSCPP 2008 p.7 (E assinalada) e Crenshaw, Naval Shiphandling, 4ª ed. 1975, p.128 impressa, Fig.7-5, em PDF do Drive. Passagem explícita sobre proa contra corrente, espias 5/1, leme inicialmente afastando do cais e depois a meio, máquina adiante 1/3. Comentários A-E completos. Falta autenticar gabarito definitivo independente da prova marcada; não homologar.",
+          "source_verification": "original_exam_p7_and_crenshaw_1975_p128_verified",
           "bibliography_candidate_urls": [
             "https://drive.google.com/file/d/1Zymbk_t99_IUAHNyoNrcCWCkBLwIX8Ok/view"
-          ]
+          ],
+          "original_exam_source_url": "https://drive.google.com/file/d/1ZUC9GoT0hYZcljrp1kKqRofmiehjzptr/view",
+          "bibliography": {
+            "author": "R. S. Crenshaw Jr.",
+            "title": "Naval Shiphandling",
+            "edition": "4th edition (1975)",
+            "page": "128 (printed)",
+            "section": "Chapter 7, Single-Screw Ocean Escorts, Getting under way; Figure 7-5",
+            "verified_short_excerpts": [
+              "the rudder is put over in the direction away from the pier",
+              "line 5 is held, line 1 is slacked",
+              "the rudder is returned amidships"
+            ],
+            "source_url": "https://drive.google.com/file/d/1Zymbk_t99_IUAHNyoNrcCWCkBLwIX8Ok/view"
+          },
+          "correct_reason": "E: proa 090° e corrente para oeste significam proa contra corrente. Com boreste ao cais, o leme inicial para bombordo afasta a proa; aguentar espia 5, solecar 1 e largar demais; quando a proa abrir, leme a meio, aguentar 1 temporariamente, solecar 5, máquina adiante 1/3 para afastar a popa, depois recolher espias. Corresponde à sequência textual de Crenshaw, p. 128, figura 7-5.",
+          "incorrect_reasons_by_option": {
+            "A": "Propõe espias 1 e 6 e saída de ré; não corresponde ao procedimento de saída avante contra corrente com espia 5 controlando a proa.",
+            "B": "Emprega leme a bombordo inicialmente, mas espias 1 e 6 e máquina atrás, em desacordo com a sequência da figura 7-5.",
+            "C": "Mantém o leme a bombordo após abrir a proa e depois o inverte, quando Crenshaw manda centralizá-lo nesse momento.",
+            "D": "Inverte o leme após abrir a proa; a obra exige leme a meio antes do movimento avante.",
+            "E": "Alternativa correta: sequência coincide com o procedimento descrito para proa contra a corrente."
+          }
         },
         {
           "id": "pscpp::official::2008::018",
           "year": 2008,
           "number": 18,
           "original_correct_answer": null,
-          "status": "annulled_pending_original_document_confirmation",
+          "status": "annulment_confirmed_in_original_exam_pending_independent_act",
           "commentary_status": "not_applicable_annulled",
-          "review_note": "Confronto com data/pscpp/official-exams.json na branch de trabalho (2026-11-14): questão 2008-018 está explicitamente anulada, sem alternativas ou gabarito. Não elaborar justificativa de resposta nem contar como homologação; confirmar anulação no documento oficial.",
-          "source_verification": "not_verified"
+          "review_note": "2026-11-17: prova PSCPP 2008, p.8 impressa, contém literalmente '18 (1 PONTO) (QUESTÃO ANULADA)'. Não atribuir gabarito nem comentários A-E. Pendente eventual ato administrativo independente de anulação.",
+          "source_verification": "original_exam_p8_annulment_verified",
+          "original_exam_source_url": "https://drive.google.com/file/d/1ZUC9GoT0hYZcljrp1kKqRofmiehjzptr/view"
         },
         {
           "id": "pscpp::official::2008::019",
