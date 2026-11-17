@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-16",
+  "phase": "2204-readonly-reconciliation",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261116-2108-current-state.json",
+  "github": {
+    "ahead": 106,
+    "behind": 1,
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+  },
+  "source": {
+    "prior_direct_check": "2026-11-15 21:05",
+    "current_direct_check": false,
+    "pages_printed": [
+      162,
+      163
+    ],
+    "pages_pdf": [
+      155,
+      156
+    ]
+  },
+  "candidates": [
+    {
+      "id": "L04-DRAFT-01",
+      "answer": "C",
+      "page": 162,
+      "status": "draft"
+    },
+    {
+      "id": "L04-DRAFT-02",
+      "answer": "B",
+      "page": 163,
+      "status": "draft"
+    },
+    {
+      "id": "L04-DRAFT-03",
+      "answer": "D",
+      "page": 163,
+      "status": "draft"
+    }
+  ],
+  "database": {
+    "project": "shy-firefly-80833334",
+    "project_access": "ADMIN",
+    "sql_probe": "attempted but connector returned error",
+    "catalog_confirmed": false,
+    "semantic_dedup_complete": false
+  },
+  "vercel": {
+    "id": "dpl_71FNGQWMoMydkiDNaauRcH7gUKnR",
+    "commit": "d9a6dc58a4054db4050f1e47f124f53857516201",
+    "state": "READY",
+    "target": null,
+    "production_confirmed": false
+  },
+  "counts": {
+    "preserved": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Catalog source and production binding not identified",
+    "Semantic dedup incomplete",
+    "Anexo 2-A independent authentication pending",
+    "Primary PDF not directly reread",
+    "Branch diverged: behind main 1",
+    "MAN-B022-09 and MAN-B022-12 pending"
+  ],
+  "publication_allowed": false
+}
