@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-17",
+  "phase": "0703-current-state-reconciliation",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261117-0610-syllabus-coexistence.json",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "printed_pages": [
+    162,
+    163,
+    163
+  ],
+  "source_verification_checkpoint": "reports/drafts/santos-lote-004-audit-20261117-0211-primary-source-reverified.json",
+  "verified_current_run": [
+    "candidate payload text and 5 options each",
+    "Neon schema question-related column inventory",
+    "GitHub branch divergence",
+    "Vercel latest preview deployment"
+  ],
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "question_related_columns": 12,
+    "explanation": "12 results with strict question/enunciado/alternative column-name predicates; earlier 15 used broader content/payload predicates; counts are not comparable",
+    "master_question_catalog_found": false
+  },
+  "github": {
+    "ahead": 115,
+    "behind": 1,
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+  },
+  "vercel": {
+    "deployment": "dpl_ASYwGDwWSNiTZQyNsKAFXTcdpmko",
+    "commit": "b220e96c9a57ff9d80e7484fdc0d7afd45e79c1b",
+    "state": "READY",
+    "target": null,
+    "production_confirmed": false
+  },
+  "counts": {
+    "preserved": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Large static catalogs not fully retrieved and semantic deduplication not certified",
+    "Official Anexo 2-A mapping not independently authenticated",
+    "Runtime catalog binding not established",
+    "Branch behind main by one commit",
+    "MAN-B022-09 and MAN-B022-12 source review pending"
+  ],
+  "publication_allowed": false
+}
