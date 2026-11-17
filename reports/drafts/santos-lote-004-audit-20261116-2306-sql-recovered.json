@@ -1,0 +1,80 @@
+{
+  "date": "2026-11-16",
+  "phase": "2306-sql-restored-column-inventory",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261116-2204-readonly-reconciliation.json",
+  "github": {
+    "ahead": 107,
+    "behind": 1,
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+  },
+  "source": {
+    "prior_direct_check": "2026-11-15 21:05",
+    "current_direct_check": false,
+    "printed_pages": [
+      162,
+      163
+    ]
+  },
+  "candidates": [
+    {
+      "id": "L04-DRAFT-01",
+      "answer": "C",
+      "page": 162,
+      "status": "draft"
+    },
+    {
+      "id": "L04-DRAFT-02",
+      "answer": "B",
+      "page": 163,
+      "status": "draft"
+    },
+    {
+      "id": "L04-DRAFT-03",
+      "answer": "D",
+      "page": 163,
+      "status": "draft"
+    }
+  ],
+  "database": {
+    "project": "shy-firefly-80833334",
+    "sql_probe": "SUCCESS",
+    "columns_matching_question_content_payload": 16,
+    "master_catalog_confirmed": false,
+    "semantic_dedup_complete": false,
+    "notable_columns": [
+      "exam_sessions.question_ids",
+      "question_notebooks.question_refs",
+      "question_answers.question_id",
+      "question_stats.question_id",
+      "library_chunks.content"
+    ]
+  },
+  "vercel": {
+    "deployment_id": "dpl_A8bPiaNSDeACoE2instuucZ7n3aH",
+    "commit": "78c3f1fc019278dc2f47238f9cd0a66d3cf328c5",
+    "state": "READY",
+    "target": null,
+    "production_confirmed": false
+  },
+  "counts": {
+    "preserved": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Active question catalog not located or linked to production",
+    "Semantic deduplication incomplete",
+    "Official Anexo 2-A independent authentication pending",
+    "Primary PDF not reread in this run",
+    "Branch behind main by one commit",
+    "MAN-B022-09 and MAN-B022-12 outstanding"
+  ],
+  "publication_allowed": false
+}
