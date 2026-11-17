@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-17",
+  "phase": "0006-live-reconciliation",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261116-2306-sql-recovered.json",
+  "github": {
+    "ahead_before_checkpoint": 108,
+    "behind": 1,
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+  },
+  "candidates": [
+    {
+      "id": "L04-DRAFT-01",
+      "answer": "C",
+      "printed_page": 162,
+      "pdf_page": 155
+    },
+    {
+      "id": "L04-DRAFT-02",
+      "answer": "B",
+      "printed_page": 163,
+      "pdf_page": 156
+    },
+    {
+      "id": "L04-DRAFT-03",
+      "answer": "D",
+      "printed_page": 163,
+      "pdf_page": 156
+    }
+  ],
+  "candidate_fields_checked_from_repository": true,
+  "primary_pdf_read_this_run": false,
+  "syllabus_independently_verified": false,
+  "database": {
+    "project": "shy-firefly-80833334",
+    "read_only_column_scan": "SUCCESS",
+    "matching_columns": 16,
+    "master_catalog_confirmed": false,
+    "semantic_dedup_complete": false
+  },
+  "vercel": {
+    "deployment_id": "dpl_AWWQnL7GzcnPKtyRzvetP5weLs7M",
+    "commit": "43d6b70b56e3ec8207fe59669fba3367929ec576",
+    "state": "READY",
+    "target": null,
+    "production_confirmed": false
+  },
+  "counts": {
+    "preserved": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Active production question catalog not identified; semantic dedup incomplete",
+    "Independent official Anexo 2-A validation outstanding",
+    "Original PDF not directly reread this run",
+    "Branch diverged: behind main by 1 commit",
+    "MAN-B022-09 and MAN-B022-12 outstanding"
+  ],
+  "publication_allowed": false
+}
