@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-17",
+  "phase": "1203-direct-draft-reinspection-and-live-controls",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261117-1108-live-state-reconciliation.json",
+  "source_draft": "reports/drafts/santos-lote-004-source-review-20261110.json",
+  "candidate_reviews": [
+    {
+      "id": "L04-DRAFT-01",
+      "answer": "C",
+      "options": 5,
+      "pdf_page": 155,
+      "printed_page": 162,
+      "section": "8.3.2.2",
+      "status": "pending"
+    },
+    {
+      "id": "L04-DRAFT-02",
+      "answer": "B",
+      "options": 5,
+      "pdf_page": 156,
+      "printed_page": 163,
+      "section": "8.3.2.3",
+      "restriction": "loaded vessels, not ballast",
+      "status": "pending"
+    },
+    {
+      "id": "L04-DRAFT-03",
+      "answer": "D",
+      "options": 5,
+      "pdf_page": 156,
+      "printed_page": 163,
+      "section": "8.3.2.3",
+      "status": "pending"
+    }
+  ],
+  "checks": {
+    "draft_full_payload_read": true,
+    "prior_source_verification_checkpoint_read": true,
+    "primary_pdf_reopened_this_run": false,
+    "prior_santos_extension_count_reported": 150,
+    "main_catalog_count_reported": 4089,
+    "generated_catalog_count_reported": 500,
+    "full_semantic_dedup_certified": false,
+    "neon_query": "attempted; connector returned error without usable rows",
+    "github": {
+      "ahead_before_checkpoint": 120,
+      "behind": 1,
+      "base_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+    },
+    "vercel": {
+      "id": "dpl_5FBpRbJE6Jm9F58fa2R6ekwBf2a8",
+      "state": "READY",
+      "target": null,
+      "commit": "e5c248a1e3612b4168b8b4365d5673eb32866639",
+      "production_verified": false
+    }
+  },
+  "counts": {
+    "preserved": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "definitive_ids": 0
+  },
+  "tests": 0,
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "No full semantic uniqueness certification across active catalogs and extensions",
+    "No direct source PDF recheck in this run",
+    "Official Anexo 2-A mapping and active runtime loader unverified",
+    "Branch diverged from main by one commit",
+    "MAN-B022-09 and MAN-B022-12 remain pending"
+  ],
+  "publication_allowed": false
+}
