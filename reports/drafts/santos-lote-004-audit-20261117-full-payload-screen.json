@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-17",
+  "phase": "full-payload-two-static-catalog-similarity-screen",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261117-1501-runtime-loader-confirmed.json",
+  "method": "Fetched both GitHub blobs, parsed every question; normalized and tokenized concatenated question, alternatives, and explanation; computed overlap similarity against all 3 drafts; inspected top matches",
+  "catalogs": [
+    {
+      "path": "data/questions/manobrabilidade.json",
+      "records": 4089,
+      "blob": "7d91a960b5901e1595e723d0382ddd3693616a62"
+    },
+    {
+      "path": "data/pscpp/generated-questions.json",
+      "records": 500,
+      "blob": "97c2662f1e4f01593ad71a0c8e269c00d9574b55"
+    }
+  ],
+  "total_records_screened": 4589,
+  "draft_results": [
+    {
+      "id": "L04-DRAFT-01",
+      "answer": "C",
+      "printed_page": 162,
+      "nearest": "MAN-NSH-C02-UC50-M3",
+      "similarity": 0.2259,
+      "assessment": "Nearby question on resistance to current through beam, not maximum lateral force for loaded tanker/bulker"
+    },
+    {
+      "id": "L04-DRAFT-02",
+      "answer": "B",
+      "printed_page": 163,
+      "nearest": "MAN-036",
+      "similarity": 0.2163,
+      "assessment": "Nearby question on shallow-water wave resistance peaks, not current yaw-moment peaks as depth decreases"
+    },
+    {
+      "id": "L04-DRAFT-03",
+      "answer": "D",
+      "printed_page": 163,
+      "nearest": "MAN-170",
+      "similarity": 0.2059,
+      "assessment": "Nearby question on yaw damping, not vessel-specific nonlinear current coefficients"
+    }
+  ],
+  "limitations": [
+    "Similarity screening is not semantic uniqueness certification",
+    "Other extension files beyond prior Santos lots not fully compared",
+    "Official Anexo 2-A syllabus mapping unresolved",
+    "Neon question master table not identified",
+    "No fresh primary source PDF page reading in this execution"
+  ],
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0
+  },
+  "tests": 0,
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "publication_allowed": false
+}
