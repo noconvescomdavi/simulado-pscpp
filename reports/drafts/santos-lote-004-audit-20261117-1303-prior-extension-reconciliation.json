@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-17",
+  "phase": "1303-direct-prior-extension-reconciliation",
+  "previous_checkpoint": "reports/drafts/santos-lote-004-audit-20261117-1203-direct-draft-live-controls.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "source": {
+    "book": "SANTOS, Edson Mesquita dos. A Manobrabilidade do Navio no Século 21",
+    "pdf_pages": [
+      155,
+      156
+    ],
+    "printed_pages": [
+      162,
+      163
+    ],
+    "direct_source_reopened": false,
+    "prior_source_review": "reports/drafts/santos-lote-004-audit-20261112-source-pages-155-156.json"
+  },
+  "checks": {
+    "prior_extensions": [
+      "data/question-extensions/manobrabilidade-santos-lote-001.json",
+      "data/question-extensions/manobrabilidade-santos-lote-002.json",
+      "data/question-extensions/manobrabilidade-santos-lote-003.json"
+    ],
+    "prior_extension_counts": [
+      50,
+      50,
+      50
+    ],
+    "prior_total": 150,
+    "prior_related": [
+      "MSN21-REV-035",
+      "MSN21-REV-079"
+    ],
+    "stem_screen": "No directly equivalent stem among 150; thematic overlaps exist. Options and explanations not fully semantically adjudicated.",
+    "catalogs_prior_count": 4589,
+    "catalog_full_semantic_dedup": false,
+    "github": {
+      "ahead_before_checkpoint": 121,
+      "behind": 1
+    },
+    "vercel": {
+      "deployment": "dpl_EMRGMfQDYNW32yWBcVCmFQu8mGcH",
+      "state": "READY",
+      "target": null,
+      "commit": "b831069153613480e5ab22f64f9b8921bbf84c49",
+      "production_verified": false
+    }
+  },
+  "counts": {
+    "preserved": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "definitive_ids": 0
+  },
+  "tests": 0,
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Full semantic deduplication across 4589 catalog records, prior extensions and options/comments remains uncertified",
+    "Official Anexo 2-A and active runtime loader unverified",
+    "Direct source PDF not reopened this run",
+    "Branch diverged from main",
+    "MAN-B022-09 and MAN-B022-12 pending"
+  ],
+  "publication_allowed": false
+}
