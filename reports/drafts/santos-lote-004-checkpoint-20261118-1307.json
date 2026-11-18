@@ -1,0 +1,74 @@
+{
+  "timestamp": "2026-11-18T13:07:59-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261118-1203.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "verified_structure": {
+    "five_options_each": true,
+    "provisional_answers": [
+      "C",
+      "B",
+      "D"
+    ],
+    "printed_pages": [
+      162,
+      163
+    ],
+    "pdf_pages": [
+      155,
+      156
+    ],
+    "sections": [
+      "8.3.2.2",
+      "8.3.2.3"
+    ]
+  },
+  "primary_source": {
+    "direct_read_this_run": false,
+    "last_documented_direct_read": "2026-11-15",
+    "audit": "reports/drafts/santos-lote-004-audit-20261115-2105-direct-primary-reverification.json"
+  },
+  "database": {
+    "project": "shy-firefly-80833334",
+    "branch": "br-odd-leaf-b6n3spx7",
+    "query": "information_schema.columns public question/content/stem",
+    "matched_columns": 15,
+    "master_question_stem_table_identified": false
+  },
+  "git": {
+    "ahead_before_correction": 140,
+    "behind": 1,
+    "metadata_correction_commit": "90c937f5e1f330eeab743c97c373746946914fa8ebca8bb811"
+  },
+  "corrections": [
+    {
+      "file": "reports/drafts/santos-lote-004-source-review-20261110.json",
+      "field": "questions[*].validation_status",
+      "reason": "Removed unsubstantiated claim of primary source text verification on 2026-11-18; documented 2026-11-15 audit instead"
+    }
+  ],
+  "counts": {
+    "candidates": 3,
+    "new_questions": 0,
+    "approved": 0,
+    "final_ids": 0,
+    "metadata_corrections": 3,
+    "content_corrections": 0,
+    "tests": 0,
+    "prs": 0,
+    "merges": 0,
+    "production_deploys": 0
+  },
+  "publication_allowed": false,
+  "pending": [
+    "Direct source re-read and official syllabus confirmation",
+    "Complete semantic deduplication of all active catalogs/extensions",
+    "Reconcile branch diverged from main",
+    "Run integration tests and PR review",
+    "Verify production binding before deploy"
+  ]
+}
