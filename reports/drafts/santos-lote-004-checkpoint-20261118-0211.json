@@ -1,0 +1,59 @@
+{
+  "timestamp": "2026-11-18T02:11:20-03:00",
+  "batch": "Santos-004",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "final_ids": 0,
+    "corrections_this_run": 0,
+    "tests_this_run": 0,
+    "published": 0
+  },
+  "verified_this_run": {
+    "checkpoint": "reports/drafts/santos-lote-004-checkpoint-20261118-0105.json",
+    "previous_checkpoint_sha": "4c17bd49e7b699d986e491779d49ee21af259e64",
+    "git_comparison": {
+      "base": "main",
+      "status": "diverged",
+      "ahead_by": 129,
+      "behind_by": 1,
+      "base_commit": "d2f0fabddf6c2100f81f7900b260f5484f3cde51",
+      "merge_base": "839d1e2a06f176056822ea1bd8802556be99103a"
+    },
+    "related_prior_prs": [
+      176,
+      177,
+      179
+    ],
+    "other_open_pr_reference": 184
+  },
+  "source_review": "Prior verified printed pages 162-163, PDF pages 155-156, syllabus I.4.13.2 and I.4.13.5.1; not independently reopened this run",
+  "deduplication": {
+    "previous_main_catalog_screen": 4589,
+    "extension_comparison_complete": false,
+    "compared_this_run": 0
+  },
+  "preexisting_issues": [
+    "MAN-B022-09 answer key anomaly",
+    "MAN-B022-12 answer key anomaly"
+  ],
+  "commit": null,
+  "pr": null,
+  "merge": null,
+  "deploy": null,
+  "blockers": [
+    "Full extension comparison not completed",
+    "Branch diverged from main by 129 ahead and 1 behind",
+    "No integration tests run",
+    "No definitive approved candidate IDs"
+  ],
+  "production_status": "not deployed",
+  "next": "Retrieve actual extension file paths and candidate payload, finish semantic deduplication, verify source, test before PR/merge/deploy"
+}
