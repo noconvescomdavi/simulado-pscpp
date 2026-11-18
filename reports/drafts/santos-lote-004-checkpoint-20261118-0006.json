@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-11-18T00:06:41-03:00",
+  "batch": "Santos-004",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "temporary_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "counts": {
+    "candidates": 3,
+    "new_questions": 0,
+    "source_reverified": 3,
+    "syllabus_mappings_corrected": 3,
+    "wording_refinements": 2,
+    "approved": 0,
+    "final_ids": 0,
+    "published": 0
+  },
+  "source": {
+    "title": "SANTOS, Edson Mesquita dos. A Manobrabilidade do Navio no Século 21",
+    "pdf_pages": [
+      155,
+      156
+    ],
+    "printed_pages": [
+      162,
+      163
+    ],
+    "sections": [
+      "8.3.2.2",
+      "8.3.2.3"
+    ]
+  },
+  "syllabus": {
+    "verified_document": "Conteudo Programatico - FINAL(1).pdf, Anexo 2-A pages 1-2",
+    "primary": "I.4.13.2 Correntes",
+    "secondary": "I.4.13.5.1 Águas rasas",
+    "replaced_incorrect": "8.10.2.1.1"
+  },
+  "database": {
+    "project_id": "shy-firefly-80833334",
+    "public_schema_question_master_found": false,
+    "read_only": true
+  },
+  "deduplication": {
+    "main_catalog_records_screened_previous_run": 4589,
+    "extensions_full_comparison_completed": false
+  },
+  "commits": [
+    "87faa5a25e50cac2b09ff4e048f2f239ff490009"
+  ],
+  "pull_request": null,
+  "tests_run": 0,
+  "merge": null,
+  "vercel_deploy": null,
+  "production_status": "not deployed",
+  "blockers": [
+    "Full semantic deduplication against question-extensions and production loader not complete",
+    "No final question IDs until uniqueness verified",
+    "No integration tests or deployment verification"
+  ],
+  "next_action": "Read and compare all extensions in small batches, then review final IDs and run branch tests"
+}
