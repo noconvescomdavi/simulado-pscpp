@@ -1,0 +1,58 @@
+{
+  "timestamp": "2026-11-18T07:08:49-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261118-0612.json",
+  "checks": {
+    "draft_file": "reports/drafts/santos-lote-004-source-review-20261110.json",
+    "drafts": [
+      "L04-DRAFT-01",
+      "L04-DRAFT-02",
+      "L04-DRAFT-03"
+    ],
+    "answer_keys": [
+      "C",
+      "B",
+      "D"
+    ],
+    "five_options_each": true,
+    "source_locators": [
+      "PDF OCR 155 / printed 162 section 8.3.2.2",
+      "PDF OCR 156 / printed 163 section 8.3.2.3",
+      "PDF OCR 156 / printed 163 section 8.3.2.3"
+    ],
+    "syllabus": [
+      "I.4.13.2",
+      "I.4.13.5.1"
+    ],
+    "source_pdf_reopened_this_run": false,
+    "semantic_dedup_completed": false,
+    "prior_catalog_screen": "4589 records per 2026-11-17 audit; no new full comparison this run",
+    "restoration_screen": "699 records and 14 contextual matches in previous checkpoint",
+    "branch_compare": {
+      "ahead": 134,
+      "behind": 1,
+      "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+    },
+    "database_queried_this_run": false
+  },
+  "counts": {
+    "drafts_preserved": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0,
+    "published": 0
+  },
+  "commits": [],
+  "pr": null,
+  "merge": null,
+  "deploy": null,
+  "blockers": [
+    "Other extensions and active catalogs not certified semantically unique",
+    "Primary PDF and official syllabus not freshly reverified",
+    "Branch diverged from main (134 ahead, 1 behind)",
+    "No CI/integration tests executed"
+  ],
+  "status": "draft-only; no publication"
+}
