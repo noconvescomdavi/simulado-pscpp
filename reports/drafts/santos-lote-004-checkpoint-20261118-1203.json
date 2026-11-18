@@ -1,0 +1,61 @@
+{
+  "timestamp": "2026-11-18T12:03:15-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261118-1111.json",
+  "evidence": {
+    "draft_file": "reports/drafts/santos-lote-004-source-review-20261110.json",
+    "candidate_ids": [
+      "L04-DRAFT-01",
+      "L04-DRAFT-02",
+      "L04-DRAFT-03"
+    ],
+    "five_options_each": true,
+    "provisional_answers": [
+      "C",
+      "B",
+      "D"
+    ],
+    "pdf_pages": [
+      155,
+      156
+    ],
+    "printed_pages": [
+      162,
+      163
+    ],
+    "sections": [
+      "8.3.2.2",
+      "8.3.2.3"
+    ],
+    "syllabus": [
+      "I.4.13.2",
+      "I.4.13.5.1"
+    ],
+    "primary_source_direct_read_this_run": false,
+    "prior_source_audit": "reports/drafts/santos-lote-004-audit-20261115-2105-direct-primary-reverification.json",
+    "neon_project": "shy-firefly-80833334",
+    "neon_branch": "br-odd-leaf-b6n3spx7",
+    "neon_columns_matched": 15,
+    "master_question_text_table_identified": false,
+    "github_ahead_before_commit": 139,
+    "github_behind": 1,
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+  },
+  "counts": {
+    "candidates": 3,
+    "new_questions": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0,
+    "prs": 0,
+    "merges": 0,
+    "production_deploys": 0
+  },
+  "blockers": [
+    "No direct primary PDF re-read in this run",
+    "Full semantic deduplication across active catalogs and extensions not certified",
+    "Branch diverged from main; no CI or merge review"
+  ],
+  "publication_allowed": false
+}
