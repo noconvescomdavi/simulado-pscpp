@@ -1,0 +1,63 @@
+{
+  "timestamp": "2026-11-18T08:11:55-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261118-0708.json",
+  "draft_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "draft_answer_keys": [
+    "C",
+    "B",
+    "D"
+  ],
+  "source_locators": [
+    "printed p.162 / OCR 155 / 8.3.2.2",
+    "printed p.163 / OCR 156 / 8.3.2.3"
+  ],
+  "syllabus": [
+    "I.4.13.2",
+    "I.4.13.5.1"
+  ],
+  "checks": {
+    "draft_payload_read": true,
+    "all_five_options_present": true,
+    "source_pdf_reopened": false,
+    "semantic_dedup_completed": false,
+    "neon_project": "shy-firefly-80833334",
+    "neon_production_branch": "br-odd-leaf-b6n3spx7",
+    "neon_branches_listed": true,
+    "neon_sql_question_content_queried": false,
+    "github_branch_ahead": 135,
+    "github_branch_behind": 1,
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51",
+    "vercel_preview": {
+      "deployment_id": "dpl_9Zh58YuHQa52EWGL68HfXvFR1xVU",
+      "state": "READY",
+      "commit": "e40091be1690981019a0db78fb9d75d42ca71bba",
+      "target": null,
+      "meaning": "Preview of documentation checkpoint only; NOT evidence of question publication"
+    }
+  },
+  "counts": {
+    "candidates": 3,
+    "new_questions": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0,
+    "merged": 0,
+    "questions_published": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Semantic deduplication of active catalogs and remaining extensions incomplete",
+    "Primary source and official syllabus not freshly checked",
+    "Branch diverged 135 ahead / 1 behind",
+    "No integration tests or approval"
+  ],
+  "status": "draft-only; no approved questions; no production publication"
+}
