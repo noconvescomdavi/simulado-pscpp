@@ -1,0 +1,68 @@
+{
+  "timestamp": "2026-11-18T05:04:17-03:00",
+  "batch": "Santos-004",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261118-0409.json",
+  "verified_this_run": {
+    "draft_file": "reports/drafts/santos-lote-004-source-review-20261110.json",
+    "drafts": [
+      {
+        "id": "L04-DRAFT-01",
+        "options": 5,
+        "answer": "C",
+        "pdf_page": 155,
+        "printed_page": 162,
+        "section": "8.3.2.2"
+      },
+      {
+        "id": "L04-DRAFT-02",
+        "options": 5,
+        "answer": "B",
+        "pdf_page": 156,
+        "printed_page": 163,
+        "section": "8.3.2.3"
+      },
+      {
+        "id": "L04-DRAFT-03",
+        "options": 5,
+        "answer": "D",
+        "pdf_page": 156,
+        "printed_page": 163,
+        "section": "8.3.2.3"
+      }
+    ],
+    "syllabus": [
+      "I.4.13.2",
+      "I.4.13.5.1"
+    ],
+    "prior_primary_source_recheck": "reports/drafts/santos-lote-004-audit-20261117-0211-primary-source-reverified.json",
+    "primary_source_reopened_this_run": false,
+    "extension_inventory": "reports/drafts/santos-lote-004-audit-20261113-extension-inventory.json",
+    "extension_scope": "26 PSCPP cadernos, 3 previous Santos lots, 5 manobrabilidade restoration files; remaining full semantic comparison not certified",
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51",
+    "branch_ahead": 132,
+    "branch_behind": 1,
+    "git_status": "diverged"
+  },
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0,
+    "published": 0
+  },
+  "commits_created_this_run": 0,
+  "pr": null,
+  "merge": null,
+  "deploy": null,
+  "blockers": [
+    "No complete semantic deduplication of all extension/restoration content",
+    "Primary PDF not independently reopened this run",
+    "Branch diverged from main",
+    "No integration tests executed"
+  ],
+  "next": "Read extension/restoration records and perform semantic deduplication; reopen primary PDF and official syllabus; then test and reconcile branch before PR/merge/deploy",
+  "production_status": "not deployed"
+}
