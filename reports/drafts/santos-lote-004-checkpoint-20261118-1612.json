@@ -1,0 +1,61 @@
+{
+  "timestamp": "2026-11-18T16:12:16-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261118-1507.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers_provisional": [
+    "C",
+    "B",
+    "D"
+  ],
+  "source_audit": "reports/drafts/santos-lote-004-audit-20261117-0211-primary-source-reverified.json",
+  "source_pages_printed": [
+    162,
+    163
+  ],
+  "source_read_this_run": false,
+  "official_annex_read_this_run": false,
+  "github": {
+    "branch": "draft/santos-lote-004-source-review-20261110",
+    "ahead_before_write": 145,
+    "behind": 1,
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+  },
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "branch": "br-odd-leaf-b6n3spx7",
+    "read_sql_success": true,
+    "question_or_content_columns": 15,
+    "master_catalog_confirmed": false
+  },
+  "vercel": {
+    "latest_preview_id": "dpl_DqKYr31jVQTYDTTP7rRPWKzx81Ka",
+    "state": "READY",
+    "target": null,
+    "commit": "9a0c17318e77ad1e2d07d7660be97ecb31dd7416",
+    "production_confirmed": false
+  },
+  "counts": {
+    "candidates": 3,
+    "new_questions": 0,
+    "approved": 0,
+    "final_ids": 0,
+    "content_corrections": 0,
+    "metadata_corrections": 0,
+    "tests": 0,
+    "prs": 0,
+    "merges": 0,
+    "production_deploys": 0
+  },
+  "pending": [
+    "Full semantic deduplication across catalogs and extensions",
+    "Official Anexo 2-A mapping 8.10.2.1.1 versus 4.13.2",
+    "Independent primary source recheck and active runtime loader",
+    "Reconcile branch divergence, run tests and obtain review before merge"
+  ],
+  "publication_allowed": false
+}
