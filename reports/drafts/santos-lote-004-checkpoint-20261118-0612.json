@@ -1,0 +1,73 @@
+{
+  "timestamp": "2026-11-18T06:12:18-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261118-0504.json",
+  "review": {
+    "restoration_files": [
+      "data/question-restorations/manobrabilidade-01.json",
+      "data/question-restorations/manobrabilidade-02.json",
+      "data/question-restorations/manobrabilidade-03.json",
+      "data/question-restorations/manobrabilidade-04.json",
+      "data/question-restorations/manobrabilidade-05.json"
+    ],
+    "records_read": 699,
+    "related_current_records": [
+      "MAN-392",
+      "MAN-445",
+      "MAN-498",
+      "MAN-551",
+      "MAN-604",
+      "MAN-657",
+      "MAN-710",
+      "MAN-763",
+      "MAN-816",
+      "MAN-869",
+      "MAN-922",
+      "MAN-975",
+      "MAN-2606",
+      "MAN-3362"
+    ],
+    "related_records_contextually_reviewed": 14,
+    "assessment": "All 14 concern current effects on trajectory relative to ground and water, with source Lewis; none directly asks the loaded-tanker lateral-force maximum, current-induced yaw peaks as depth/draft declines, or nontransferability of current coefficients between hull types. Not proof of uniqueness against other extensions or active catalog.",
+    "editorial_observation": "12 of the 14 current records (MAN-392 through MAN-975) repeat the same correct answer content with different question wrappers and shuffled alternatives. Existing-bank editorial redundancy; not changed in this run.",
+    "draft_ids": [
+      "L04-DRAFT-01",
+      "L04-DRAFT-02",
+      "L04-DRAFT-03"
+    ],
+    "draft_answer_keys": [
+      "C",
+      "B",
+      "D"
+    ],
+    "draft_options_each": 5,
+    "primary_pdf_reopened": false,
+    "syllabus_reopened": false,
+    "neon_read_attempt": "Project ID required; unscoped connection rejected, so no fresh database conclusion",
+    "github_compare_before_commit": {
+      "ahead": 133,
+      "behind": 1,
+      "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+    }
+  },
+  "counts": {
+    "new_questions": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "restoration_records_read": 699,
+    "contextually_compared": 14,
+    "tests": 0,
+    "published": 0
+  },
+  "pr": null,
+  "merge": null,
+  "deploy": null,
+  "blockers": [
+    "Full semantic deduplication of remaining extension records and active catalogs not certified",
+    "Primary Santos PDF and official Anexo 2-A not freshly verified",
+    "Branch diverged from main",
+    "No integration tests executed"
+  ],
+  "status": "draft-only; not deployed"
+}
