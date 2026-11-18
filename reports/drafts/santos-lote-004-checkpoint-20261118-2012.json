@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-11-18T20:12:02-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261118-1908.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "provisional_answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "verification": {
+    "github_branch": "draft/santos-lote-004-source-review-20261110",
+    "ahead_before_commit": 149,
+    "behind": 1,
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51",
+    "loader": "Santos 001-003 imported, Santos 004 not imported",
+    "catalog_screen": "historical 4589 records; not complete semantic dedup",
+    "neon_project": "shy-firefly-80833334",
+    "neon_branch": "br-odd-leaf-b6n3spx7",
+    "neon_columns_matching_question_terms": 12,
+    "neon_query": "information_schema.columns, schema excluding pg_catalog and information_schema, column names matching question/enunciado/questao",
+    "neon_master_catalog_identified": false,
+    "vercel_preview_id": "dpl_3KcD3eUYixmahQsZWfB7N3HvxTR5",
+    "vercel_preview_state": "READY",
+    "vercel_preview_commit": "069b34dab5cd856b4945e7ca0231b9e6bda85782",
+    "vercel_production": false,
+    "source_reopened": false,
+    "annex_reopened": false
+  },
+  "correction": "Previous checkpoints reported 15 matching Neon columns. Current reproducible information_schema query returned 12 matching columns under its explicit predicate; results are not directly comparable without the earlier SQL predicate.",
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected_questions": 0,
+    "corrected_audit_metadata": 1,
+    "final_ids": 0,
+    "tests": 0,
+    "prs": 0,
+    "merges": 0,
+    "production_deploys": 0
+  },
+  "pr": null,
+  "production_deploy": null,
+  "publication_allowed": false,
+  "pending": [
+    "Direct primary-source page check (printed 162-163)",
+    "Official Anexo 2-A mapping 8.10.2.1.1 versus I.4.13.2",
+    "Semantic dedup against all active extensions including MAN-B022-09 and MAN-B022-12",
+    "Reconcile divergent branch, run tests, review and PR before any merge/deploy"
+  ]
+}
