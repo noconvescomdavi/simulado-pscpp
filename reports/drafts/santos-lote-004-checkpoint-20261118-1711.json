@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-11-18T17:11:36-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261118-1612.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers_provisional": [
+    "C",
+    "B",
+    "D"
+  ],
+  "primary_source_historical_audit": "reports/drafts/santos-lote-004-audit-20261117-0211-primary-source-reverified.json",
+  "primary_source_read_this_run": false,
+  "annex_read_this_run": false,
+  "confirmed_runtime_loader_from_historical_audit": "lib/question-banks-source.js imports extensions 001-003 explicitly; 004 absent as of 2026-11-17",
+  "database": {
+    "project": "shy-firefly-80833334",
+    "branch": "br-odd-leaf-b6n3spx7",
+    "sql_read_this_run": true,
+    "question_related_columns": 15,
+    "master_question_catalog_identified": false
+  },
+  "deduplication": {
+    "prior_screened_catalog_records": 4589,
+    "semantic_uniqueness_certified": false
+  },
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0,
+    "prs": 0,
+    "merges": 0,
+    "production_deploys": 0
+  },
+  "commits": [],
+  "pr": null,
+  "deploy": null,
+  "pending": [
+    "Complete semantic deduplication against main and all extensions",
+    "Verify official Anexo 2-A code mapping",
+    "Direct primary source verification and question content review",
+    "Reconcile divergent branch, tests and PR review"
+  ],
+  "publication_allowed": false
+}
