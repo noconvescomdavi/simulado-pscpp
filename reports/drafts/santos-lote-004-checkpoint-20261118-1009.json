@@ -1,0 +1,59 @@
+{
+  "timestamp": "2026-11-18T10:09:31-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261118-0903.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers_provisional": [
+    "C",
+    "B",
+    "D"
+  ],
+  "printed_pages": [
+    162,
+    163
+  ],
+  "source_pdf_reopened": false,
+  "official_syllabus_reopened": false,
+  "checks": {
+    "github_draft_payload_retrieved": true,
+    "all_three_have_five_options": true,
+    "all_three_have_question_answer_explanation_locator": true,
+    "neon_project": "shy-firefly-80833334",
+    "neon_branch": "br-odd-leaf-b6n3spx7",
+    "neon_question_content_related_columns": 15,
+    "master_question_text_column_found": false,
+    "full_semantic_dedup": false,
+    "github_main_ahead": 137,
+    "github_main_behind": 1,
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51",
+    "vercel_preview": {
+      "id": "dpl_4472CyZb4zMcaiMDWuZqLgDubkmg",
+      "state": "READY",
+      "target": null,
+      "sha": "d391be0762b832e5cc2a3be92c2b4509bef0dd90",
+      "is_production": false
+    }
+  },
+  "counts": {
+    "candidates": 3,
+    "new_questions": 0,
+    "approved": 0,
+    "corrections": 0,
+    "definitive_ids": 0,
+    "tests": 0,
+    "prs": 0,
+    "merges": 0,
+    "production_deploys": 0
+  },
+  "pending": [
+    "Compare all active question catalogs and extensions semantically",
+    "Reopen printed pages 162-163 and official Annex 2-A",
+    "Reconcile draft branch divergence with main",
+    "Run integration tests and review gates"
+  ],
+  "status": "draft-only; no publication"
+}
