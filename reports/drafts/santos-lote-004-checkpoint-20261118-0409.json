@@ -1,0 +1,68 @@
+{
+  "timestamp": "2026-11-18T04:09:01-03:00",
+  "batch": "Santos-004",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261118-0310.json",
+  "review": {
+    "draft_file": "reports/drafts/santos-lote-004-source-review-20261110.json",
+    "candidate_ids": [
+      "L04-DRAFT-01",
+      "L04-DRAFT-02",
+      "L04-DRAFT-03"
+    ],
+    "five_alternatives_each": true,
+    "provisional_answers": [
+      "C",
+      "B",
+      "D"
+    ],
+    "printed_pages": [
+      162,
+      163
+    ],
+    "pdf_pages": [
+      155,
+      156
+    ],
+    "sections": [
+      "8.3.2.2",
+      "8.3.2.3"
+    ],
+    "syllabus": [
+      "I.4.13.2",
+      "I.4.13.5.1"
+    ],
+    "primary_source_reopened_this_run": false,
+    "editorial_observation": "All three draft records have stem, five options, answer, explanation, source locator; cannot independently certify source text in this run.",
+    "prior_santos_records_last_checkpoint": 150,
+    "main_catalog_records_last_checkpoint": 4589,
+    "full_semantic_deduplication_complete": false
+  },
+  "git": {
+    "base": "main",
+    "base_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51",
+    "ahead": 131,
+    "behind": 1,
+    "status": "diverged"
+  },
+  "counts": {
+    "candidates": 3,
+    "new_questions": 0,
+    "approved": 0,
+    "final_ids": 0,
+    "corrections": 0,
+    "tests": 0,
+    "published": 0
+  },
+  "commit": null,
+  "pr": null,
+  "merge": null,
+  "deploy": null,
+  "blockers": [
+    "Remaining extensions not fully semantically compared",
+    "Primary OCR pages not independently reopened this run",
+    "Branch diverged from main",
+    "Integration tests not executed"
+  ],
+  "production_status": "not deployed"
+}
