@@ -1,0 +1,73 @@
+{
+  "timestamp": "2026-11-18T19:08:16-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261118-1804.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "provisional_answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "direct_checks": {
+    "draft_payload": "All three have 5 options A-E, provisional answer, explanation, PDF and printed page, and section",
+    "printed_pages": [
+      162,
+      163
+    ],
+    "pdf_pages": [
+      155,
+      156
+    ],
+    "source_primary_reopened": false,
+    "official_syllabus_reopened": false
+  },
+  "catalog_screen_historical": {
+    "file": "reports/drafts/santos-lote-004-audit-20261117-full-payload-screen.json",
+    "main_records": 4089,
+    "generated_records": 500,
+    "nearest": [
+      "MAN-NSH-C02-UC50-M3",
+      "MAN-036",
+      "MAN-170"
+    ],
+    "not_full_dedup": true
+  },
+  "loader": "lib/question-banks-source.js imports Santos 001-003 but not 004",
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "branch": "br-odd-leaf-b6n3spx7",
+    "read_only": true,
+    "matched_columns": 15,
+    "master_question_catalog_identified": false
+  },
+  "git": {
+    "branch": "draft/santos-lote-004-source-review-20261110",
+    "ahead_before_checkpoint": 148,
+    "behind": 1,
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+  },
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0,
+    "prs": 0,
+    "merges": 0,
+    "production_deploys": 0
+  },
+  "pr": null,
+  "deploy": null,
+  "publication_allowed": false,
+  "pending": [
+    "Independently reopen primary source and official Anexo 2-A",
+    "Resolve 8.10.2.1.1 vs I.4.13.2 mapping",
+    "Semantic dedup across all active extension files, especially MAN-B022-09 and MAN-B022-12",
+    "Reconcile branch with main and run integration tests before PR/merge/deploy"
+  ]
+}
