@@ -1,0 +1,61 @@
+{
+  "timestamp": "2026-11-18T11:11:10-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261118-1009.json",
+  "verified_now": {
+    "candidate_payload_read": true,
+    "candidate_ids": [
+      "L04-DRAFT-01",
+      "L04-DRAFT-02",
+      "L04-DRAFT-03"
+    ],
+    "options_per_candidate": [
+      5,
+      5,
+      5
+    ],
+    "provisional_answers": [
+      "C",
+      "B",
+      "D"
+    ],
+    "printed_pages": [
+      162,
+      163
+    ],
+    "syllabus_items": [
+      "I.4.13.2",
+      "I.4.13.5.1"
+    ],
+    "primary_source_reopened": false,
+    "source_history_checked": "reports/drafts/santos-lote-004-audit-20261115-2105-direct-primary-reverification.json",
+    "source_history_indicates_prior_direct_pdf_review": true,
+    "semantic_dedup_completed": false,
+    "neon_project": "shy-firefly-80833334",
+    "neon_branch": "br-odd-leaf-b6n3spx7",
+    "neon_question_content_column_matches": 15,
+    "neon_master_stem_column_identified": false,
+    "github_main_ahead": 138,
+    "github_main_behind": 1,
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+  },
+  "finding": "Draft records contain historical primary-source verification flags dated 2026-11-18, and the 2026-11-15 audit records direct PDF review. Neither substitutes for a new direct source read in this execution. Database question references cannot prove semantic uniqueness in static catalogs.",
+  "counts": {
+    "drafts": 3,
+    "new_questions": 0,
+    "approved": 0,
+    "corrections": 0,
+    "final_ids": 0,
+    "tests": 0,
+    "prs": 0,
+    "merges": 0,
+    "production_deploys": 0
+  },
+  "pending": [
+    "Complete semantic deduplication against active static catalogs and extensions",
+    "Directly recheck primary PDF and official Annex 2-A before approval",
+    "Reconcile branch divergence with main",
+    "Run tests and review gates before PR/merge/deploy"
+  ],
+  "publication_allowed": false
+}
