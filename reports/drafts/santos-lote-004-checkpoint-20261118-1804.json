@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-11-18T18:04:48-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261118-1711.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "provisional_answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "new_finding": "Direct GitHub read of lib/question-banks-source.js confirms Santos extensions 001-003 are explicitly imported and spread into cadernoExtensionQuestions, which is merged into the manobrabilidade BANKS entry and collectActiveQuestionBanks. Santos 004 is not imported. Static catalog integration requires an explicit loader change, but must not occur before approvals.",
+  "source_verification": "Historical direct comparison recorded 2026-11-17, printed pp. 162-163 (PDF pp.155-156); not independently reopened this run.",
+  "syllabus": "8.10.2.1.1 versus 4.13.2 unresolved",
+  "deduplication": "Earlier screening of 4089 manobrabilidade + 500 generated + 150 Santos 001-003 reported; current complete semantic deduplication not certified.",
+  "github": {
+    "branch": "draft/santos-lote-004-source-review-20261110",
+    "ahead_before_checkpoint": 147,
+    "behind": 1,
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+  },
+  "database": "No fresh SQL query this run; historical Neon column scan not sufficient to establish master question catalog.",
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0,
+    "prs": 0,
+    "merges": 0,
+    "production_deploys": 0
+  },
+  "pr": null,
+  "deploy": null,
+  "pending": [
+    "Verify primary book pages and official Anexo 2-A mapping",
+    "Perform full semantic deduplication against active catalogs",
+    "Review draft content and MAN-B022-09/MAN-B022-12 overlap",
+    "Reconcile branch with main; execute tests and PR checks before deployment"
+  ],
+  "publication_allowed": false
+}
