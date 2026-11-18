@@ -7,7 +7,7 @@
   "questions": [
     {
       "temporary_id": "L04-DRAFT-01",
-      "syllabus_item": "8.10.2.1.1",
+      "syllabus_item": "I.4.13.2",
       "pdf_page": 155,
       "section": "8.3.2.2",
       "question": "No estudo dos coeficientes de corrente de petroleiros e graneleiros carregados, qual condição de incidência produz a força lateral máxima indicada pelo autor?",
@@ -36,14 +36,17 @@
       "correct_answer": "C",
       "explanation": "Na seção 8.3.2.2, a força lateral máxima para o navio carregado estudado é associada à corrente pelo través. A magnitude depende fortemente da razão profundidade/calado.",
       "source_locator": "PDF OCR p. 155 (página impressa 162), seção 8.3.2.2",
-      "validation_status": "primary-source-text-reverified-2026-11-12; pending semantic deduplication"
+      "validation_status": "primary-source-text-verified-2026-11-18; official-syllabus-mapping-corrected; pending full extension semantic deduplication",
+      "syllabus_label": "Efeitos do meio ambiente — Correntes",
+      "secondary_syllabus_item": "I.4.13.5.1",
+      "secondary_syllabus_label": "Interação do navio com águas rasas"
     },
     {
       "temporary_id": "L04-DRAFT-02",
-      "syllabus_item": "8.10.2.1.1",
+      "syllabus_item": "I.4.13.2",
       "pdf_page": 156,
       "section": "8.3.2.3",
-      "question": "Para petroleiros/graneleiros carregados analisados por Santos, como variam os picos do momento de guinada devido à corrente quando a razão profundidade/calado diminui?",
+      "question": "Para os petroleiros/graneleiros carregados analisados por Santos, como variam os picos do momento de guinada devido à corrente quando a razão profundidade/calado diminui?",
       "options": [
         {
           "key": "A",
@@ -67,16 +70,19 @@
         }
       ],
       "correct_answer": "B",
-      "explanation": "A seção 8.3.2.3 informa que os picos de momento em yaw aumentam com a redução da profundidade e se aproximam das extremidades, no caso dos navios carregados analisados.",
+      "explanation": "Para os navios carregados analisados, a seção 8.3.2.3 registra aumento dos picos do momento em yaw com a diminuição da profundidade e aproximação das extremidades de proa e popa. Não generalizar ao navio em lastro, para o qual o autor descreve deslocamento dos picos em águas rasas em direção ao través.",
       "source_locator": "PDF OCR p. 156 (página impressa 163), seção 8.3.2.3",
-      "validation_status": "primary-source-text-reverified-2026-11-12; pending semantic deduplication"
+      "validation_status": "primary-source-text-verified-2026-11-18; official-syllabus-mapping-corrected; pending full extension semantic deduplication",
+      "syllabus_label": "Efeitos do meio ambiente — Correntes",
+      "secondary_syllabus_item": "I.4.13.5.1",
+      "secondary_syllabus_label": "Interação do navio com águas rasas"
     },
     {
       "temporary_id": "L04-DRAFT-03",
-      "syllabus_item": "8.10.2.1.1",
+      "syllabus_item": "I.4.13.2",
       "pdf_page": 156,
       "section": "8.3.2.3",
-      "question": "Por que não se deve aplicar diretamente a curva de momento de guinada de um petroleiro carregado a outro tipo de navio sob corrente transversal?",
+      "question": "Por que não se deve aplicar diretamente a curva de momento de guinada de um petroleiro/graneleiro carregado a outro tipo de navio sob ação da corrente?",
       "options": [
         {
           "key": "A",
@@ -102,7 +108,10 @@
       "correct_answer": "D",
       "explanation": "O autor ressalva que os coeficientes de corrente são específicos de cada tipo de navio e que o comportamento sob corrente é complexo e não linear.",
       "source_locator": "PDF OCR p. 156 (página impressa 163), seção 8.3.2.3",
-      "validation_status": "primary-source-text-reverified-2026-11-12; pending semantic deduplication"
+      "validation_status": "primary-source-text-verified-2026-11-18; official-syllabus-mapping-corrected; pending full extension semantic deduplication",
+      "syllabus_label": "Efeitos do meio ambiente — Correntes",
+      "secondary_syllabus_item": "I.4.13.5.1",
+      "secondary_syllabus_label": "Interação do navio com águas rasas"
     }
   ],
   "checkpoint": {
@@ -1643,6 +1652,21 @@
         "Additional questions require direct page-level source verification."
       ],
       "next": "Review all remaining extension catalogs and broader semantic neighbors; only then homologate and number three drafts and author additional sourced questions."
-    }
+    },
+    "last_review": "2026-11-18",
+    "source_pages_verified": [
+      155,
+      156
+    ],
+    "printed_pages_verified": [
+      162,
+      163
+    ],
+    "syllabus_mapping_corrected_from": "8.10.2.1.1",
+    "syllabus_mapping_corrected_to": "I.4.13.2 (secondary I.4.13.5.1)",
+    "reviewed": 3,
+    "approved": 0,
+    "assigned_final_ids": 0,
+    "remaining": "semantic deduplication of extensions, tests and controlled publication"
   }
 }
