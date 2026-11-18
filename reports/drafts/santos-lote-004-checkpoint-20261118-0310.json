@@ -1,0 +1,79 @@
+{
+  "timestamp": "2026-11-18T03:10:43-03:00",
+  "batch": "Santos-004",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261118-0211.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "verified": {
+    "candidate_payload": "reports/drafts/santos-lote-004-source-review-20261110.json",
+    "five_options_each": true,
+    "answers": [
+      "C",
+      "B",
+      "D"
+    ],
+    "source_pages_printed": [
+      162,
+      163
+    ],
+    "source_pages_pdf": [
+      155,
+      156
+    ],
+    "source_pages_independently_reopened": false,
+    "syllabus_codes": [
+      "I.4.13.2",
+      "I.4.13.5.1"
+    ],
+    "prior_santos_lots": [
+      {
+        "lot": 1,
+        "records": 50
+      },
+      {
+        "lot": 2,
+        "records": 50
+      },
+      {
+        "lot": 3,
+        "records": 50
+      }
+    ],
+    "related_prior_ids": [
+      "MSN21-REV-035",
+      "MSN21-REV-079"
+    ],
+    "prior_lots_exact_duplicate_detected": false,
+    "prior_lots_semantic_uniqueness_certified": false,
+    "neon_public_tables": 73,
+    "neon_question_tables": "question_answers and question_stats store question_id, not full question texts",
+    "branch_ahead": 130,
+    "branch_behind": 1
+  },
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "final_ids": 0,
+    "corrections": 0,
+    "prior_records_reexamined": 150,
+    "tests": 0,
+    "published": 0
+  },
+  "blockers": [
+    "Remaining extension files not semantically compared in full",
+    "Main catalogs previously screened but no certified semantic uniqueness",
+    "Primary book not reopened in this run",
+    "Branch diverged 130 ahead / 1 behind main",
+    "Integration tests not run"
+  ],
+  "commit": null,
+  "pr": null,
+  "merge": null,
+  "deploy": null,
+  "production_status": "not deployed"
+}
