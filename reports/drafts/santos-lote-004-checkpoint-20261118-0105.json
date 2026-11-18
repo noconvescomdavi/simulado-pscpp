@@ -1,0 +1,52 @@
+{
+  "timestamp": "2026-11-18T01:05:33-03:00",
+  "batch": "Santos-004",
+  "branch": "draft/santos-lote-004-source-review-20261110",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "final_ids": 0,
+    "published": 0,
+    "existing_extension_files_inventoried": 42,
+    "related_records_directly_compared_this_run": 3
+  },
+  "comparisons": [
+    {
+      "id": "MAN-B022-02",
+      "result": "Current and shallow-water operational synthesis, not equivalent to Santos loaded-hull lateral force maxima, yaw peak shifts, or vessel-specific nonlinear coefficient behavior."
+    },
+    {
+      "id": "MAN-B022-09",
+      "result": "Wind lateral force and bank effect, unrelated to Santos three propositions; independent preexisting answer-key anomaly: assertion II says wind lateral force acts only below waterline, false, yet key A includes II."
+    },
+    {
+      "id": "MAN-B022-12",
+      "result": "Wind lateral force and current, not equivalent to Santos three propositions; independent preexisting answer-key anomaly: assertion I says wind lateral force acts only below waterline, false, yet key D includes I; no option expresses II and III alone."
+    }
+  ],
+  "source_review": "Previous checkpoint 20261118-0006 verifies Santos OCR PDF 155-156 / printed 162-163 and syllabus I.4.13.2 plus I.4.13.5.1; not independently reopened this run.",
+  "deduplication": {
+    "main_catalogs_prior_screened": 4589,
+    "extension_comparison_complete": false,
+    "prior_santos_questions": 150
+  },
+  "corrections_applied": 0,
+  "tests": 0,
+  "pr": null,
+  "merge": null,
+  "deploy": null,
+  "production_status": "not deployed",
+  "blockers": [
+    "Full extension semantic deduplication not complete",
+    "No integration test suite run",
+    "Branch diverges from main; no approved IDs",
+    "Preexisting MAN-B022-09 and MAN-B022-12 contain answer-key inconsistencies requiring separate editorial audit"
+  ],
+  "next": "Continue targeted extension semantic review; do not approve candidates until complete and tests pass."
+}
