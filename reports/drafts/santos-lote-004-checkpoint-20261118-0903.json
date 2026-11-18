@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-11-18T09:03:19-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261118-0811.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "source_pages_printed": [
+    162,
+    163
+  ],
+  "source_pdf_reopened": false,
+  "syllabus_directly_rechecked": false,
+  "github": {
+    "branch": "draft/santos-lote-004-source-review-20261110",
+    "compare_main": {
+      "ahead": 136,
+      "behind": 1,
+      "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+    }
+  },
+  "neon": {
+    "project_id": "shy-firefly-80833334",
+    "branch_id": "br-odd-leaf-b6n3spx7",
+    "read_only_schema_query": true,
+    "matching_columns": 15,
+    "master_question_text_column_found": false,
+    "sql_question_content_dedup": false,
+    "notes": "information_schema.columns returned 15 question/content-related columns; question_answers, question_stats and exam_session_answers have question_id, not full question text. library_chunks.content is library text, not proof of a question master catalog."
+  },
+  "review": {
+    "candidate_payload_fetched": true,
+    "five_options_each": true,
+    "answer_explanation_source_locator_each": true,
+    "prior_extension_inventory_fetched": true,
+    "bloco026_fetched": true,
+    "full_semantic_dedup": false
+  },
+  "counts": {
+    "candidates": 3,
+    "new_questions": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0,
+    "prs": 0,
+    "merges": 0,
+    "production_deploys": 0
+  },
+  "pending": [
+    "Finish full semantic deduplication of active catalogs and 26 extensions",
+    "Directly re-open source PDF pages and official syllabus",
+    "Reconcile divergent branch with main",
+    "Run integration tests and required reviews before PR/merge/deploy"
+  ],
+  "status": "draft-only; no publication"
+}
