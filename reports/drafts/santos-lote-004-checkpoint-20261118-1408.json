@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-11-18T14:08:09-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261118-1307.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "candidate_answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "source_pages_printed": [
+    162,
+    163
+  ],
+  "source_pages_pdf": [
+    155,
+    156
+  ],
+  "correction": {
+    "description": "Three validation_status fields corrected from last historical direct source read 2026-11-15 to later documented 2026-11-17 audit",
+    "evidence": "reports/drafts/santos-lote-004-audit-20261117-0211-primary-source-reverified.json",
+    "commit": "50aeb2165c7bc0f4afec4515030a726cc7f35efb",
+    "new_direct_source_read": false
+  },
+  "git": {
+    "branch": "draft/santos-lote-004-source-review-20261110",
+    "ahead_before_write": 142,
+    "behind": 1,
+    "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+  },
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "branch": "br-odd-leaf-b6n3spx7",
+    "matched_question_or_content_columns": 15,
+    "master_question_catalog_confirmed": false
+  },
+  "vercel": {
+    "latest_preview_id": "dpl_5V2qtQUf3FzWynM4Fo6zkqwmFJsx",
+    "state": "READY",
+    "target": null,
+    "commit": "cc34b0fcef50e1f1062ae5e075ef29182cf3dd7d",
+    "production_deploy": false
+  },
+  "counts": {
+    "candidates": 3,
+    "new_questions": 0,
+    "approved": 0,
+    "final_ids": 0,
+    "metadata_corrections": 3,
+    "content_corrections": 0,
+    "tests": 0,
+    "prs": 0,
+    "merges": 0,
+    "production_deploys": 0
+  },
+  "pending": [
+    "Full semantic deduplication of current catalogs and extensions",
+    "Re-read source and independently confirm official Anexo 2-A mapping; reconcile syllabus numbering",
+    "Confirm active runtime catalog binding",
+    "Reconcile branch divergence and execute tests/PR checks"
+  ],
+  "publication_allowed": false
+}
