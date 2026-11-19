@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-11-18T23:07:53-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261118-2207.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "candidate_count": 3,
+  "approved_count": 0,
+  "new_count": 0,
+  "corrected_count": 0,
+  "final_ids": [],
+  "tests_executed": 0,
+  "github": {
+    "branch": "draft/santos-lote-004-source-review-20261110",
+    "ahead_before_checkpoint": 152,
+    "behind": 1,
+    "base_commit": "d2f0fabddf6c2100f81f7900b260f5484f3cde51",
+    "loader": "lib/question-banks-source.js",
+    "imports_santos_lots": [
+      1,
+      2,
+      3
+    ],
+    "imports_lot_004": false
+  },
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "branch": "br-odd-leaf-b6n3spx7",
+    "sql": "SELECT table_schema,table_name,column_name FROM information_schema.columns WHERE table_schema NOT IN ('pg_catalog','information_schema') AND (column_name ILIKE '%question%' OR column_name ILIKE '%enunciado%' OR column_name ILIKE '%questao%') ORDER BY 1,2,3",
+    "matched_columns": 12,
+    "master_question_catalog_found": false,
+    "note": "Column-name inspection alone cannot exclude JSONB or external static catalogs."
+  },
+  "vercel": {
+    "preview_id": "dpl_5jdFZovkREDwNPkmq1tBPVfEWEvj",
+    "preview_state": "READY",
+    "preview_commit": "4479f838637272186d756769ae1a11530a061294",
+    "production_deploy": false
+  },
+  "new_checks": [
+    "Current live schema SQL executed with explicit predicate; 12 columns returned.",
+    "Current GitHub branch divergence checked; 152 ahead and 1 behind.",
+    "Loader file re-read; Santos 004 still absent.",
+    "Latest branch preview READY; not a production release."
+  ],
+  "existing_issue_ids": [
+    "MAN-B022-09",
+    "MAN-B022-12"
+  ],
+  "pending": [
+    "Reconcile Anexo 2-A mapping from official text",
+    "Full semantic deduplication of active extensions",
+    "Review B022-09 and B022-12 against Crenshaw before edits",
+    "Reconcile branch and execute tests",
+    "Only then assign final IDs, import lot 004, PR, merge, production deploy"
+  ],
+  "publication_allowed": false,
+  "pr": null,
+  "merge": null,
+  "production_deploy": null
+}
