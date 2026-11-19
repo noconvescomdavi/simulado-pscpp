@@ -1,0 +1,66 @@
+{
+  "timestamp": "2026-11-19T05:11:47-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261119-0411.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "review": {
+    "draft_read_directly": true,
+    "three_stems_five_options_answers_explanations_source_locators_checked": true,
+    "primary_pdf_reopened": false,
+    "source_evidence": "Historical direct source audit reports PDF pages 155–156 / printed 162–163; current run did not repeat independent source verification.",
+    "official_anexo_2a_checked": false,
+    "full_semantic_deduplication": false
+  },
+  "correction": {
+    "file": "reports/drafts/santos-lote-004-source-review-20261110.json",
+    "description": "Corrected source metadata that incorrectly described PDF-only pagination; now explicitly identifies printed pages 162–163 and sections 8.3.2.2–8.3.2.3. Clarified definitive-ID gate.",
+    "commit": "656e28988014d64d93d687396bedbafa0ad5deec"
+  },
+  "github": {
+    "branch": "draft/santos-lote-004-source-review-20261110",
+    "ahead_before_changes": 158,
+    "behind_before_changes": 1,
+    "loader_imports_lots": [
+      1,
+      2,
+      3
+    ],
+    "loader_imports_lot_004": false
+  },
+  "database": {
+    "query_attempted": true,
+    "result": "Connection requires explicit project_id; read failed before SQL execution; no database conclusions drawn this run.",
+    "project_id_from_prior_checkpoint": "shy-firefly-80833334"
+  },
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected_questions": 0,
+    "metadata_corrections": 1,
+    "final_ids": 0,
+    "tests": 0
+  },
+  "commits": [
+    "656e28988014d64d93d687396bedbafa0ad5deec"
+  ],
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Official Anexo 2-A source not independently checked",
+    "Semantic duplicate review across all extensions and restorations unfinished",
+    "Primary source not re-opened this run",
+    "Branch diverged from main and integration tests not run"
+  ],
+  "publication_allowed": false
+}
