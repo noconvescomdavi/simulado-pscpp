@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-11-19T03:11:17-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261119-0207.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "bibliography": {
+    "author": "Edson Mesquita dos Santos",
+    "title": "A Manobrabilidade do Navio no Século 21",
+    "printed_pages": [
+      162,
+      163
+    ],
+    "pdf_pages": [
+      155,
+      156
+    ],
+    "direct_recheck_this_run": false,
+    "historical_audit": "reports/drafts/santos-lote-004-audit-20261112-source-pages-155-156.json"
+  },
+  "checks": [
+    "Read last checkpoint",
+    "Read active loader",
+    "Read primary-source audit",
+    "Read catalog similarity audit",
+    "Compared branch with main",
+    "Executed read-only Neon schema query"
+  ],
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "branch": "br-odd-leaf-b6n3spx7",
+    "matched_columns": 16,
+    "predicate": "column_name ILIKE '%question%' OR column_name ILIKE '%quest%' OR column_name ILIKE '%content%'",
+    "master_stem_catalog_identified": false
+  },
+  "branch_before_commit": {
+    "ahead": 156,
+    "behind": 1
+  },
+  "loader_imports_santos": [
+    1,
+    2,
+    3
+  ],
+  "loader_imports_004": false,
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "deploy": null,
+  "blockers": [
+    "Independent official Anexo 2-A mapping pending",
+    "Semantic deduplication across all extensions/restorations pending",
+    "Primary-source final recheck pending",
+    "Branch diverged; tests not executed"
+  ],
+  "publication_allowed": false
+}
