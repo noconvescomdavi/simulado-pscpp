@@ -1,0 +1,79 @@
+{
+  "timestamp": "2026-11-18T21:10:31-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261118-2012.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "primary_source": {
+    "file": "Manobrabilidade_do_Navio_no_Seculo_21_OCR.pdf",
+    "directly_read_this_run": true,
+    "pdf_pages": [
+      155,
+      156
+    ],
+    "printed_pages": [
+      162,
+      163
+    ],
+    "sections": [
+      "8.3.2.2",
+      "8.3.2.3"
+    ],
+    "findings": {
+      "L04-DRAFT-01": "Confirmed maximum lateral force at beam current for loaded tanker/bulk carrier, p162.",
+      "L04-DRAFT-02": "Confirmed loaded-vessel yaw peaks increase and move toward bow/stern as depth decreases; ballast differs, p163.",
+      "L04-DRAFT-03": "Confirmed vessel-specific coefficient curves and nonlinear response, p163."
+    }
+  },
+  "structural_review": {
+    "each_options": 5,
+    "answers": [
+      "C",
+      "B",
+      "D"
+    ],
+    "explanations_present": true,
+    "source_locators_present": true
+  },
+  "database": {
+    "project": "shy-firefly-80833334",
+    "branch": "br-odd-leaf-b6n3spx7",
+    "matching_columns": 12,
+    "master_question_catalog_found": false,
+    "query": "SELECT table_schema,table_name,column_name FROM information_schema.columns WHERE table_schema NOT IN ('pg_catalog','information_schema') AND (column_name ILIKE '%question%' OR column_name ILIKE '%enunciado%' OR column_name ILIKE '%questao%') ORDER BY 1,2,3"
+  },
+  "github": {
+    "branch": "draft/santos-lote-004-source-review-20261110",
+    "ahead_before_checkpoint": 150,
+    "behind": 1,
+    "loader_imports_santos_lots": [
+      1,
+      2,
+      3
+    ],
+    "loader_imports_lot004": false
+  },
+  "counts": {
+    "candidates": 3,
+    "source_rechecked": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected_questions": 0,
+    "final_ids": 0,
+    "tests": 0,
+    "prs": 0,
+    "merges": 0,
+    "production_deploys": 0
+  },
+  "pending": [
+    "Verify official Anexo 2-A independently; conflict I.4.13.2 versus 8.10.2.1.1",
+    "Complete semantic dedup against active catalogs and extensions including MAN-B022-09 and MAN-B022-12",
+    "Reconcile branch with main and run tests before PR/merge/deploy"
+  ],
+  "publication_allowed": false,
+  "pr": null,
+  "deploy": null
+}
