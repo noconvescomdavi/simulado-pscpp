@@ -1,0 +1,83 @@
+{
+  "timestamp": "2026-11-19T07:04:30-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261119-0608.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "provisional_keys": [
+    "C",
+    "B",
+    "D"
+  ],
+  "github": {
+    "branch": "draft/santos-lote-004-source-review-20261110",
+    "ahead_before_checkpoint": 161,
+    "behind_before_checkpoint": 1,
+    "base_commit": "d2f0fabddf6c2100f81f7900b260f5484f3cde51",
+    "loader_lots": [
+      1,
+      2,
+      3
+    ],
+    "loader_lot_004": false
+  },
+  "neon": {
+    "project_id": "shy-firefly-80833334",
+    "branch_id": "br-odd-leaf-b6n3spx7",
+    "read_only": true,
+    "verified_topics": [
+      [
+        "4.13.2",
+        "Correntes"
+      ],
+      [
+        "4.13.5.1",
+        "Águas rasas"
+      ],
+      [
+        "8.10.2.1.1",
+        "Os coeficientes da força de corrente para navios-petroleiros"
+      ],
+      [
+        "8.10.2.1.2",
+        "Calcular a intensidade da corrente"
+      ],
+      [
+        "8.11",
+        "Efeitos de águas rasas"
+      ]
+    ],
+    "note": "Initial SQL used nonexistent code/title columns; corrected to topic_code/title_pt."
+  },
+  "checks": {
+    "checkpoint_read": true,
+    "loader_read": true,
+    "branch_comparison": true,
+    "neon_syllabus_read": true,
+    "official_anexo_checked": false,
+    "primary_pdf_reopened": false,
+    "all_active_questions_semantic_dedup": false,
+    "question_text_revalidated": false
+  },
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "question_corrections": 0,
+    "final_ids": 0,
+    "tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "publication_allowed": false,
+  "blockers": [
+    "Official Anexo 2-A not directly checked",
+    "Primary book not reopened for per-question final verification",
+    "Semantic deduplication against all active extensions and restorations incomplete",
+    "Branch diverged from main; no integration tests executed"
+  ]
+}
