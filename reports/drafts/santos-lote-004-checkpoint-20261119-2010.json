@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-11-19T20:10:44-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261119-1906.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers_provisional": [
+    "C",
+    "B",
+    "D"
+  ],
+  "printed_pages": [
+    162,
+    163,
+    163
+  ],
+  "source_audit": "reports/drafts/santos-lote-004-audit-20261113-draft-payload-structural.json",
+  "syllabus_crosswalk": "reports/drafts/santos-lote-004-audit-20261113-2308-syllabus-document-crosscheck.json",
+  "catalog_audit": "reports/drafts/santos-lote-004-audit-20261113-full-catalog-rescreen.json",
+  "new_verifications": [
+    "Re-read 19:06 checkpoint and three historical audit artifacts directly from branch",
+    "Neon read-only SQL counted 38 question_notebooks and 12 exam_sessions",
+    "GitHub main...draft compare: 174 ahead, 1 behind before this checkpoint; base main d2f0fabddf6c2100f81f7900b260f5484f3cde51",
+    "Vercel newest READY preview dpl_DrAY8EtySxHnND4es4R3HFMrudBX for commit 5448e93ff24e5ce0d8374e49d00a91df4c695cd2; target null, not production"
+  ],
+  "finding": "Crosswalk 8.10.2.1.1 is secondary, conflicting with 4.13.2; official Annex 2-A not authenticated. Historical 4589-question exact-stem screening is not current full semantic deduplication. No promotion.",
+  "counts": {
+    "candidates": 3,
+    "created": 0,
+    "approved": 0,
+    "corrected": 0,
+    "definitive_ids": 0,
+    "tests": 0
+  },
+  "commit_before_checkpoint": "5448e93ff24e5ce0d8374e49d00a91df4c695cd2",
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "publication_allowed": false,
+  "pending": [
+    "Authenticate official Annex 2-A",
+    "Direct source and current active loader validation",
+    "Semantic deduplication across extensions and restorations",
+    "Reconcile branch behind main and execute tests",
+    "Review MAN-B022-09 and MAN-B022-12"
+  ]
+}
