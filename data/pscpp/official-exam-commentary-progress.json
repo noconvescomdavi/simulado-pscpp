@@ -421,7 +421,22 @@
           "original_correct_answer": "C",
           "status": "bibliography_verified",
           "commentary_status": "draft_verified_pending_integration",
-          "review_note": "Fonte encontrada: Lewis (ed.), Principles of Naval Architecture, 2ª revisão, vol III 1989, p.297, §14.3: diâmetro tático praticamente independente de velocidade para Fn <~0,30; gabarito oficial C, 3 Lpp/3 Lpp. Lpp não consta no enunciado; aplicação do critério decorre de categoria capesize e velocidades fornecidas. Página inferida entre marcas 296/298 no PDF textual, recomendada confirmação visual antes da homologação."
+          "review_note": "Fonte encontrada: Lewis (ed.), Principles of Naval Architecture, 2ª revisão, vol III 1989, p.297, §14.3: diâmetro tático praticamente independente de velocidade para Fn <~0,30; gabarito oficial C, 3 Lpp/3 Lpp. Lpp não consta no enunciado; aplicação do critério decorre de categoria capesize e velocidades fornecidas. Página inferida entre marcas 296/298 no PDF textual, recomendada confirmação visual antes da homologação. | 2026-11-19: comentários A–E adicionados com passagem literal de Lewis pp.371–372, que corrobora efeito pequeno da velocidade até Fn 0,25. A nota antiga citava p.297/Fn 0,30 sem autenticação nesta execução; usar passagem efetivamente localizada. Pendente conferência de Fn do navio, gabarito independente e fac-símile; não homologado.",
+          "correct_reason": "A alternativa C conserva o diâmetro tático informado de 3 Lpp tanto a 10 nós (HALF-AHEAD) quanto a 6 nós (SLOW-AHEAD). Lewis, vol. III, p. 371–372, descreve resultados de ensaios em modelos nos quais o efeito da velocidade sobre o diâmetro de giro é muito pequeno até Fn 0,25. É uma aproximação para o regime considerado, não uma invariância universal nem cálculo específico do DOCEBAY.",
+          "incorrect_reasons_by_option": {
+            "A": "Supõe redução do diâmetro para 1,5 Lpp nas duas velocidades, sem respaldo nos dados fornecidos ou na tendência experimental citada.",
+            "B": "Supõe redução para 1,5 Lpp em HALF-AHEAD e manutenção em SLOW-AHEAD, embora o enunciado não forneça alteração de geometria ou condição que justifique essa diferença.",
+            "D": "Supõe duplicação para 6 Lpp apenas em SLOW-AHEAD; a redução de velocidade, isoladamente, não autoriza essa duplicação segundo a referência.",
+            "E": "Supõe duplicação para 6 Lpp nas duas velocidades, sem evidência bibliográfica ou dados específicos de prova de giro."
+          },
+          "bibliography_author": "LEWIS, Edward V. (editor)",
+          "bibliography_title": "Principles of Naval Architecture, Volume III: Motions in Waves and Controllability",
+          "bibliography_edition": "Second Revision (exemplar do Google Drive identificado como 1988)",
+          "bibliography_page": "pp. 371–372 (paginação impressa; seção sobre área do leme e diâmetro de giro)",
+          "verified_short_excerpt": "the effects of speed on turning diameters are very small",
+          "source_verification": "Confronto direto em 2026-11-19: prova PSCPP 2006 no Drive, questão 17, assinala C (3 Lpp, 3 Lpp); PDF de Lewis vol. III no Drive contém literalmente a passagem nas pp. 371–372, citando ensaios de Shiba (1960) até Fn 0,25. O trecho é corroborativo e não demonstra que o capesize específico permaneça no intervalo Fn indicado: faltam Lpp numérico, verificação do fac-símile e gabarito definitivo independente. Não homologar.",
+          "original_exam_url": "https://drive.google.com/file/d/1p7UL_pWG2ZdvOpg9DBI8uf80b_NSvCe7/view",
+          "bibliography_candidate_url": "https://drive.google.com/file/d/1Za6N1Cbbo6v_ZZ-g1UxFWQ82SLsMrOjp/view"
         },
         {
           "id": "pscpp::official::2006::018",
