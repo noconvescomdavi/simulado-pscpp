@@ -1,0 +1,77 @@
+{
+  "timestamp": "2026-11-19T02:07:47-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261119-0110.json",
+  "checks": [
+    "Fetched previous checkpoint directly",
+    "Fetched complete 3-question candidate file",
+    "Fetched active question loader",
+    "Fetched prior 4589-record similarity audit and extension inventory",
+    "Fetched block 022 catalog",
+    "Compared review branch with main"
+  ],
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "five_options_each": true,
+  "printed_pages": [
+    162,
+    163
+  ],
+  "pdf_pages": [
+    155,
+    156
+  ],
+  "candidate_syllabus_code": "I.4.13.2",
+  "candidate_syllabus_label": "Efeitos do meio ambiente — Correntes",
+  "source_reopened_this_run": false,
+  "source_verification_historical": true,
+  "semantic_uniqueness_certified": false,
+  "syllabus_official_verified_this_run": false,
+  "similarity_screen_historical": {
+    "records": 4589,
+    "coverage": "two principal catalogs only"
+  },
+  "extension_inventory_not_yet_fully_screened": [
+    "pscpp-caderno-bloco-001..026",
+    "manobrabilidade-01..05",
+    "Santos 001..003"
+  ],
+  "loader_santos_lots": [
+    1,
+    2,
+    3
+  ],
+  "loader_004": false,
+  "branch_before_commit": {
+    "ahead": 155,
+    "behind": 1,
+    "base_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+  },
+  "neon_queried_this_run": false,
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "deploy": null,
+  "blockers": [
+    "Complete semantic deduplication against extensions and restored catalogs",
+    "Independently confirm official Anexo 2-A mapping",
+    "Re-open original source for final approval",
+    "Reconcile diverged branch and run integration tests"
+  ],
+  "publication_allowed": false
+}
