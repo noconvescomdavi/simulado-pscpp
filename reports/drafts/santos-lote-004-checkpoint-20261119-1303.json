@@ -1,0 +1,77 @@
+{
+  "timestamp": "2026-11-19T13:03:31-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261119-1208.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "provisional_answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "verified_this_run": {
+    "github_ahead_before_commit": 167,
+    "github_behind": 1,
+    "loader_lots": [
+      1,
+      2,
+      3
+    ],
+    "loader_lot_004": false,
+    "neon_project": "shy-firefly-80833334",
+    "neon_branch": "br-odd-leaf-b6n3spx7",
+    "notebooks_rows": 38,
+    "notebooks_matching_provisional_markers": 0,
+    "exam_sessions_rows": 12,
+    "exam_sessions_matching_provisional_markers": 0,
+    "reference_patterns": [
+      "L04-DRAFT",
+      "SANTOS-004"
+    ],
+    "historical_source_audit": "reports/drafts/santos-lote-004-audit-20261112-source-pages-155-156.json",
+    "historical_structural_audit": "reports/drafts/santos-lote-004-audit-20261113-draft-payload-structural.json",
+    "historical_source_pdf_pages": [
+      155,
+      156
+    ],
+    "historical_printed_pages": [
+      162,
+      163
+    ],
+    "historical_section": [
+      "8.3.2.2",
+      "8.3.2.3"
+    ],
+    "primary_pdf_reread": false,
+    "official_anexo_reread": false,
+    "full_semantic_dedup": false,
+    "tests_executed": false
+  },
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0
+  },
+  "existing_flagged_questions": [
+    "MAN-B022-09",
+    "MAN-B022-12"
+  ],
+  "commits": {
+    "checkpoint": null,
+    "question_changes": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Primary source and official Anexo 2-A not directly revalidated in this run",
+    "Semantic duplicate certification across active catalog, extensions and restorations incomplete",
+    "Branch diverged from main and tests not run"
+  ],
+  "note": "Read-only SQL and GitHub checks. No definitive ID assigned, no question published. Historical page verification is not represented as new direct source inspection."
+}
