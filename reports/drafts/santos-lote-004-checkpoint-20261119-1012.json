@@ -1,0 +1,62 @@
+{
+  "timestamp": "2026-11-19T10:12:21-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261119-0905.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "provisional_answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "new_evidence": {
+    "live_branch_comparison": {
+      "ahead": 164,
+      "behind": 1,
+      "status": "diverged"
+    },
+    "loader_direct_read": true,
+    "loader_imports_santos_batches": [
+      1,
+      2,
+      3
+    ],
+    "historical_structural_audit_read": true,
+    "restoration_contextual_audit_read": true,
+    "restoration_records_historically_checked": 699,
+    "latest_vercel_preview": {
+      "id": "dpl_Bxr5Qscmpj7JhB9kScGrZ6U9beex",
+      "commit": "8f0dbe190171c72f4ee305f407b938898061a51d",
+      "state": "READY",
+      "target": null,
+      "production_verified": false
+    }
+  },
+  "checks": {
+    "direct_primary_pdf": false,
+    "direct_official_anexo": false,
+    "complete_semantic_dedup": false,
+    "live_neon_sql": false,
+    "tests_executed": false
+  },
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "question_corrections": 0,
+    "final_ids": 0
+  },
+  "commits_this_run": [],
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "No independent direct primary source and official syllabus verification this run",
+    "Semantic deduplication against entire active runtime unresolved",
+    "Branch diverged from main; integration tests not run"
+  ],
+  "publication_allowed": false
+}
