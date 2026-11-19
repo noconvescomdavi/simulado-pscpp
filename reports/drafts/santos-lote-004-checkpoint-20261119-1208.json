@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-11-19T12:08:00-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261119-1111.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "provisional_answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "checks": {
+    "github_branch_ahead_before_commit": 166,
+    "github_branch_behind": 1,
+    "loader_imports_lots": [
+      1,
+      2,
+      3
+    ],
+    "loader_imports_lot_004": false,
+    "neon_project": "shy-firefly-80833334",
+    "neon_branch": "br-odd-leaf-b6n3spx7",
+    "neon_reference_search": {
+      "question_notebooks_rows": 38,
+      "question_notebooks_candidate_refs": 0,
+      "exam_sessions_rows": 12,
+      "exam_sessions_candidate_refs": 0,
+      "patterns": [
+        "L04-DRAFT",
+        "SANTOS-004"
+      ],
+      "limitations": "Only two JSONB reference fields checked; other IDs, tables and static catalogs not excluded"
+    },
+    "structural_historical_review": {
+      "five_options_each": true,
+      "answers": [
+        "C",
+        "B",
+        "D"
+      ],
+      "printed_pages": [
+        162,
+        163
+      ]
+    },
+    "primary_pdf_directly_verified": false,
+    "official_anexo_directly_verified": false,
+    "full_semantic_dedup": false,
+    "tests_executed": false
+  },
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Direct primary PDF and official Anexo 2-A verification",
+    "Full semantic deduplication against runtime extensions and restorations",
+    "Diverged branch and unexecuted tests"
+  ],
+  "note": "SQL checks are limited to matching provisional markers in JSONB references. No publication."
+}
