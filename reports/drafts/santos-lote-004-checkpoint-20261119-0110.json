@@ -1,0 +1,68 @@
+{
+  "timestamp": "2026-11-19T01:10:36-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261119-0012.json",
+  "checks_performed": [
+    "Read three complete draft question payloads and their source locators",
+    "Read 2026-11-17 full-payload screen and 2026-11-18 primary-source checkpoint",
+    "Read current question loader",
+    "Compared branch to main"
+  ],
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "options_each": 5,
+  "source_pages_printed": [
+    162,
+    163
+  ],
+  "source_verified_this_run": false,
+  "source_verified_historically": true,
+  "syllabus_mapping_independently_verified": false,
+  "deduplication_certified": false,
+  "existing_catalog_records_screened_historically": 4589,
+  "notable_overlaps": [
+    "MAN-2822",
+    "MAN-NSH-C02-UC50-M2",
+    "MAN-NSH-C02-UC50-M3",
+    "MAN-NSH-C02-UC52-M2",
+    "MAN-B022-09",
+    "MAN-B022-12"
+  ],
+  "loader_imports_santos_lots": [
+    1,
+    2,
+    3
+  ],
+  "loader_imports_lot_004": false,
+  "branch_comparison_before_commit": {
+    "ahead": 154,
+    "behind": 1
+  },
+  "database_queried_this_run": false,
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "blockers": [
+    "Independent official Annex 2-A mapping pending",
+    "Semantic deduplication against all extensions and active catalogs pending",
+    "Primary source not re-opened this run; historical check available",
+    "Branch diverged from main; no integration tests run"
+  ],
+  "publication_allowed": false
+}
