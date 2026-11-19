@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-11-19T08:09:31-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261119-0704.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "provisional_keys": [
+    "C",
+    "B",
+    "D"
+  ],
+  "checks": {
+    "previous_checkpoint_read": true,
+    "loader_read": true,
+    "branch_comparison": true,
+    "historical_source_audit_read": true,
+    "historical_catalog_audit_read": true,
+    "primary_pdf_direct_read": false,
+    "official_anexo_direct_read": false,
+    "all_extensions_dedup": false,
+    "neon_live_query": false
+  },
+  "historical_source_pages": {
+    "pdf": [
+      155,
+      156
+    ],
+    "printed": [
+      162,
+      163
+    ],
+    "sections": [
+      "8.3.2.2",
+      "8.3.2.3"
+    ]
+  },
+  "historical_catalog_count": 4589,
+  "branch": {
+    "name": "draft/santos-lote-004-source-review-20261110",
+    "ahead_before_checkpoint": 162,
+    "behind_before_checkpoint": 1
+  },
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "question_corrections": 0,
+    "final_ids": 0,
+    "tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "publication_allowed": false,
+  "blockers": [
+    "Primary PDF not directly accessible in this run; historical audit is insufficient for final per-question signoff",
+    "Official Anexo 2-A not directly checked",
+    "Dedup against active extensions and restorations incomplete",
+    "Branch diverged from main and no tests run"
+  ],
+  "note": "No live Neon query performed. Historical audit reviewed but not represented as new verification."
+}
