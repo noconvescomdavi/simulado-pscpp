@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-11-19T14:11:32-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261119-1303.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "verified_this_run": {
+    "github_branch_ahead_before_commit": 168,
+    "github_branch_behind": 1,
+    "neon_project": "shy-firefly-80833334",
+    "neon_branch": "br-odd-leaf-b6n3spx7",
+    "neon_notebooks": 38,
+    "neon_sessions": 12,
+    "draft_payload_read": true,
+    "each_has_five_options": true,
+    "source_pages_from_historical_audit": [
+      155,
+      156
+    ],
+    "printed_pages": [
+      162,
+      163
+    ],
+    "source_sections": [
+      "8.3.2.2",
+      "8.3.2.3"
+    ],
+    "draft_primary_syllabus": "I.4.13.2",
+    "historical_structural_audit_syllabus": "8.10.2.1.1",
+    "mapping_requires_official_anexo_check": true,
+    "primary_pdf_directly_read": false,
+    "official_anexo_directly_read": false,
+    "full_semantic_dedup": false,
+    "tests_run": false
+  },
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "definitive_ids": 0
+  },
+  "commits": {
+    "checkpoint": "see commit of this file",
+    "question_changes": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "pending": [
+    "Resolve draft-vs-historical-audit syllabus code using official Anexo 2-A; do not silently replace either code",
+    "Directly verify original PDF pages and source scope",
+    "Complete semantic deduplication against active loader, all static catalogs, extensions and restorations",
+    "Reconcile diverged branch, run tests and CI before PR/merge/deploy"
+  ],
+  "note": "This run directly inspected candidate payload and historical audit, not primary book. No approval or deployment claimed."
+}
