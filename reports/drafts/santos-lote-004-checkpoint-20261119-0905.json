@@ -1,0 +1,84 @@
+{
+  "timestamp": "2026-11-19T09:05:32-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261119-0809.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "provisional_answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "checks": {
+    "prior_checkpoint_read": true,
+    "loader_direct_read": true,
+    "branch_live_comparison": true,
+    "historical_source_audit_read": true,
+    "historical_catalog_rescreen_read": true,
+    "extension_inventory_read": true,
+    "vercel_live_deployment_list": true,
+    "primary_pdf_direct_read": false,
+    "official_anexo_direct_read": false,
+    "complete_semantic_dedup": false,
+    "neon_live_query": false
+  },
+  "historical_source": {
+    "pdf_pages": [
+      155,
+      156
+    ],
+    "printed_pages": [
+      162,
+      163
+    ],
+    "source_sections": [
+      "8.3.2.2",
+      "8.3.2.3"
+    ],
+    "status": "historical evidence only"
+  },
+  "catalog_screen": {
+    "historical_main_catalog_records": 4589,
+    "exact_normalized_duplicates": 0,
+    "semantic_uniqueness_certified": false,
+    "missing_scope": "26 caderno extensions and five restoration files; active runtime content"
+  },
+  "branch_status_before_commit": {
+    "ahead": 163,
+    "behind": 1,
+    "diverged": true
+  },
+  "loader_imports_santos_batches": [
+    1,
+    2,
+    3
+  ],
+  "vercel_latest_preview": {
+    "deployment_id": "dpl_GQokYs9j1JPT7ytDmv12auPkWKDs",
+    "commit": "a8fdf276c8ac67fe94426c4a4cc336948b712f28",
+    "state": "READY",
+    "target": null,
+    "production_verified": false
+  },
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "question_corrections": 0,
+    "final_ids": 0,
+    "tests_executed": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "publication_allowed": false,
+  "blockers": [
+    "Primary source and official Anexo 2-A not directly revalidated",
+    "Full semantic deduplication across extensions and restorations remains incomplete",
+    "Branch diverged from main and tests not executed"
+  ],
+  "note": "A READY Vercel preview of a documentation-only commit is not a production release or evidence of batch integration."
+}
