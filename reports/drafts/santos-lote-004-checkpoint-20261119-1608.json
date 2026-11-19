@@ -1,0 +1,74 @@
+{
+  "timestamp": "2026-11-19T16:08:00-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261119-1505.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "source_directly_read_this_run": {
+    "file": "Manobrabilidade_do_Navio_no_Seculo_21_OCR.pdf",
+    "pdf_pages": [
+      155,
+      156
+    ],
+    "printed_pages": [
+      162,
+      163
+    ],
+    "sections": [
+      "8.3.2.2",
+      "8.3.2.3"
+    ],
+    "checks": [
+      {
+        "id": "L04-DRAFT-01",
+        "five_options": true,
+        "answer": "C",
+        "finding": "Loaded tanker/bulk-carrier lateral force maximum at beam current; source p162"
+      },
+      {
+        "id": "L04-DRAFT-02",
+        "five_options": true,
+        "answer": "B",
+        "finding": "Loaded ship yaw moment peaks increase and shift toward bow/stern as depth decreases; ballast exception preserved; source p163"
+      },
+      {
+        "id": "L04-DRAFT-03",
+        "five_options": true,
+        "answer": "D",
+        "finding": "Ship-specific coefficient curves and nonlinear current response; source p163"
+      }
+    ]
+  },
+  "official_annex_directly_verified": false,
+  "syllabus_conflict": "I.4.13.2 versus I.8.10.2.1.1 unresolved",
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "branch": "br-odd-leaf-b6n3spx7",
+    "notebooks_count": 38
+  },
+  "github": {
+    "ahead_before_checkpoint": 170,
+    "behind": 1
+  },
+  "counts": {
+    "candidates": 3,
+    "source_revalidated": 3,
+    "created": 0,
+    "approved": 0,
+    "corrected": 0,
+    "definitive_ids": 0,
+    "tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "publication_allowed": false,
+  "pending": [
+    "Official Anexo 2-A direct verification",
+    "Full semantic deduplication across active catalogs, extensions and restorations",
+    "Branch reconciliation and tests"
+  ]
+}
