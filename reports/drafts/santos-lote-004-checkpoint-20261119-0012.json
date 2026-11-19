@@ -1,0 +1,93 @@
+{
+  "timestamp": "2026-11-19T00:12:30-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261118-2307.json",
+  "candidate_checks": [
+    {
+      "id": "L04-DRAFT-01",
+      "options": 5,
+      "keys": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "answer": "C",
+      "answer_exists": true,
+      "has_comment": true,
+      "has_page": true,
+      "syllabus": "I.4.13.2",
+      "ready_for_homologation": false
+    },
+    {
+      "id": "L04-DRAFT-02",
+      "options": 5,
+      "keys": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "answer": "B",
+      "answer_exists": true,
+      "has_comment": true,
+      "has_page": true,
+      "syllabus": "I.4.13.2",
+      "ready_for_homologation": false
+    },
+    {
+      "id": "L04-DRAFT-03",
+      "options": 5,
+      "keys": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "answer": "D",
+      "answer_exists": true,
+      "has_comment": true,
+      "has_page": true,
+      "syllabus": "I.4.13.2",
+      "ready_for_homologation": false
+    }
+  ],
+  "counts": {
+    "candidates": 3,
+    "structurally_valid": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0
+  },
+  "repository": {
+    "permissions": "admin/push verified",
+    "branch": "draft/santos-lote-004-source-review-20261110",
+    "ahead_before_commit": 153,
+    "behind": 1,
+    "loader_imports_lot_004": false
+  },
+  "database": {
+    "current_query_executed": false,
+    "prior_inspection": "12 matching columns; no master catalog established",
+    "semantic_deduplication_complete": false
+  },
+  "source": {
+    "historical_page_verification": "2026-11-18 21:10 checkpoint",
+    "reopened_this_run": false
+  },
+  "blocking": [
+    "Official Annex 2-A mapping independently unverified",
+    "Complete semantic deduplication against active catalogs and extensions not certified",
+    "No executable integration test performed",
+    "Branch diverged from main"
+  ],
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "publication_allowed": false
+}
