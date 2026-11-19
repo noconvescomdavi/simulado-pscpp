@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-11-19T04:11:50-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261119-0311.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "provisional_answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "new_finding": "Neon syllabus_topics explicitly contains both 4.13.2 Correntes and 8.10.2.1.1 Os coeficientes da força de corrente para navios-petroleiros; these are separate syllabus taxonomy nodes, not interchangeable codes. Exact official Anexo 2-A mapping still requires primary document.",
+  "database": {
+    "project": "shy-firefly-80833334",
+    "branch": "br-odd-leaf-b6n3spx7",
+    "read_only": true,
+    "columns_related_to_question_content": 16,
+    "master_question_stem_table_identified": false,
+    "verified_topic_codes": [
+      "4.13.2",
+      "4.13.5.1",
+      "8.10.2.1.1",
+      "8.10.2.1.2",
+      "8.11"
+    ]
+  },
+  "github": {
+    "branch": "draft/santos-lote-004-source-review-20261110",
+    "ahead_before_checkpoint": 157,
+    "behind_before_checkpoint": 1,
+    "loader_imports_lots": [
+      1,
+      2,
+      3
+    ],
+    "loader_imports_lot_004": false
+  },
+  "historical_source": {
+    "printed_pages": [
+      162,
+      163
+    ],
+    "pdf_pages": [
+      155,
+      156
+    ],
+    "reopened_this_run": false
+  },
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "deploy": null,
+  "blockers": [
+    "Official Anexo 2-A mapping not independently verified",
+    "Semantic deduplication across all active extensions incomplete",
+    "Final primary source recheck not performed",
+    "Diverged branch and no integration tests"
+  ],
+  "publication_allowed": false
+}
