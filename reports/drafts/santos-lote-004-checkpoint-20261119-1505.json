@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-11-19T15:05:03-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261119-1411.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "findings": {
+    "draft_payload_directly_read": true,
+    "all_have_five_options": true,
+    "source_pdf_pages": [
+      155,
+      156
+    ],
+    "printed_pages": [
+      162,
+      163
+    ],
+    "source_sections": [
+      "8.3.2.2",
+      "8.3.2.3"
+    ],
+    "primary_source_verified_in_historical_audit": "2026-11-17T02:11",
+    "primary_source_reopened_this_run": false,
+    "official_anexo_directly_read": false,
+    "secondary_crosswalk": "8.10.2.1.1 coefficients of current force for tankers",
+    "draft_syllabus": "I.4.13.2 currents",
+    "syllabus_conflict_unresolved": true,
+    "neon_project": "shy-firefly-80833334",
+    "neon_branch": "br-odd-leaf-b6n3spx7",
+    "neon_notebooks_count": 38,
+    "github_ahead_before_commit": 169,
+    "github_behind": 1,
+    "full_semantic_deduplication": false
+  },
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "definitive_ids": 0,
+    "tests": 0
+  },
+  "commits": {
+    "question_changes": 0,
+    "checkpoint": "commit containing this file"
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "pending": [
+    "Authenticate original Anexo 2-A and resolve mapping without conflating broad current-effects item and specific tanker coefficient item",
+    "Direct source recheck when source file accessible; historical source audit alone is insufficient for fresh approval",
+    "Full semantic dedup against active catalogs, extensions and restorations",
+    "Reconcile diverged branch and run tests before PR/merge/deploy"
+  ],
+  "publication_allowed": false
+}
