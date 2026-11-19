@@ -1,0 +1,58 @@
+{
+  "timestamp": "2026-11-19T18:03:19-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261119-1708.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers_provisional": [
+    "C",
+    "B",
+    "D"
+  ],
+  "printed_pages": [
+    162,
+    163,
+    163
+  ],
+  "structural_audit": "reports/drafts/santos-lote-004-audit-20261113-draft-payload-structural.json",
+  "mapping_evidence": "reports/drafts/santos-lote-004-audit-20261113-2308-syllabus-document-crosscheck.json",
+  "mapping_finding": "Secondary syllabus crosswalk explicitly identifies 8.10.2 Correntes, 8.10.2.1 A força da corrente, 8.10.2.1.1 coeficientes para navios-petroleiros; database 4.13.2 is distinct. Official Annex 2-A remains unauthenticated; neither code replaced.",
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "branch": "br-odd-leaf-b6n3spx7",
+    "notebooks": 38,
+    "sessions": 12,
+    "sql": "read-only counts"
+  },
+  "github": {
+    "ahead_before_commit": 172,
+    "behind": 1
+  },
+  "vercel": {
+    "latest_preview_id": "dpl_J6H4W2WMvCvJ1rjG8PZ2EJ8zspGC",
+    "state": "READY",
+    "sha": "39e46938d8025dcbcd9a216f01b5b30601a492a0",
+    "production": false
+  },
+  "counts": {
+    "candidates": 3,
+    "created": 0,
+    "approved": 0,
+    "corrected": 0,
+    "definitive_ids": 0,
+    "tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "pending": [
+    "Authenticate official Annex 2-A",
+    "Full semantic deduplication across active catalog and restorations",
+    "Reconcile branch and run tests",
+    "Correct MAN-B022-09 and MAN-B022-12 only after source verification"
+  ],
+  "publication_allowed": false
+}
