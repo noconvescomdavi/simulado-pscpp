@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-11-18T22:07:41-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261118-2110.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "candidate_answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "printed_pages": [
+    162,
+    163,
+    163
+  ],
+  "new_finding": {
+    "path": "data/question-extensions/pscpp-caderno-bloco-022.json",
+    "ids": [
+      "MAN-B022-09",
+      "MAN-B022-12"
+    ],
+    "details": "Both approved records assert 'força lateral de vento atua somente abaixo da linha-d'água' as true (II in 09, I in 12), which is physically false. Both explanations declare this false assertion true. MAN-B022-09 key A includes II; MAN-B022-12 key D includes I. Their available options lack the logically correct I+III (09) or II+III (12) combinations, assuming the other statements stand. Independent bibliographic verification needed before modifying those records.",
+    "dedup_assessment": "These records address wind/current operational combination, not the precise Santos 004 propositions; no direct duplication established."
+  },
+  "neon": {
+    "project": "shy-firefly-80833334",
+    "branch": "br-odd-leaf-b6n3spx7",
+    "question_related_columns": 12,
+    "master_catalog_identified": false
+  },
+  "github": {
+    "branch": "draft/santos-lote-004-source-review-20261110",
+    "ahead_before_checkpoint": 151,
+    "behind": 1,
+    "loader_imports_lots": [
+      1,
+      2,
+      3
+    ],
+    "lot004_imported": false
+  },
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "corrected": 0,
+    "final_ids": 0,
+    "tests": 0,
+    "pr": 0,
+    "merge": 0,
+    "production_deploy": 0
+  },
+  "pending": [
+    "Confirm official Anexo 2-A mapping",
+    "Finish semantic dedup of all active extensions",
+    "Review and repair MAN-B022-09 and MAN-B022-12 with their own Crenshaw source",
+    "Reconcile branch and run tests"
+  ],
+  "publication_allowed": false
+}
