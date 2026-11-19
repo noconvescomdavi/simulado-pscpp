@@ -1,0 +1,81 @@
+{
+  "timestamp": "2026-11-19T06:08:36-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261119-0511.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "verified_this_run": {
+    "github_draft_read": true,
+    "loader_read": true,
+    "branch_comparison": true,
+    "neon_project_discovered": true,
+    "neon_syllabus_columns": [
+      "topic_code",
+      "title_pt",
+      "subject_slug"
+    ],
+    "neon_topic_rows": [
+      [
+        "4.13.2",
+        "Correntes"
+      ],
+      [
+        "4.13.5.1",
+        "Águas rasas"
+      ],
+      [
+        "8.10.2.1.1",
+        "Os coeficientes da força de corrente para navios-petroleiros"
+      ],
+      [
+        "8.10.2.1.2",
+        "Calcular a intensidade da corrente"
+      ],
+      [
+        "8.11",
+        "Efeitos de águas rasas"
+      ]
+    ],
+    "official_anexo_2a_directly_checked": false,
+    "primary_pdf_reopened": false,
+    "full_semantic_deduplication": false
+  },
+  "github": {
+    "branch": "draft/santos-lote-004-source-review-20261110",
+    "ahead_before_checkpoint": 160,
+    "behind_before_checkpoint": 1,
+    "loader_lots": [
+      1,
+      2,
+      3
+    ],
+    "loader_lot_004": false
+  },
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "question_corrections": 0,
+    "final_ids": 0,
+    "tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "publication_allowed": false,
+  "blockers": [
+    "Official Anexo 2-A document not directly checked; Neon syllabus is supporting mapping only",
+    "Full semantic deduplication against active extensions and restorations unfinished",
+    "Primary Santos OCR PDF not reopened in this run",
+    "Branch diverged from main and no integration tests executed"
+  ],
+  "note": "Recovered explicit Neon project ID and corrected initial SQL column-name error (code/title -> topic_code/title_pt); read-only query confirmed five syllabus mappings. No question approval inferred."
+}
