@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-11-19T11:11:49-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261119-1012.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "provisional_answers": [
+    "C",
+    "B",
+    "D"
+  ],
+  "checks": {
+    "previous_checkpoint_read": true,
+    "loader_read": true,
+    "branch_comparison": {
+      "ahead": 165,
+      "behind": 1,
+      "status": "diverged"
+    },
+    "neon_sql_live": true,
+    "neon_project": "shy-firefly-80833334",
+    "neon_branch": "br-odd-leaf-b6n3spx7",
+    "neon_columns_related_to_questions_or_content": 15,
+    "neon_master_question_table_identified": false,
+    "neon_jsonb_question_references": [
+      "exam_sessions.question_ids",
+      "question_notebooks.question_refs"
+    ],
+    "direct_primary_pdf": false,
+    "direct_official_anexo": false,
+    "complete_semantic_dedup": false,
+    "tests_executed": false
+  },
+  "counts": {
+    "candidates": 3,
+    "new": 0,
+    "approved": 0,
+    "question_corrections": 0,
+    "final_ids": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "publication_allowed": false,
+  "blockers": [
+    "Direct PDF and official Anexo 2-A verification pending",
+    "Full semantic deduplication of active extensions/restorations pending",
+    "Branch diverged; tests not executed"
+  ],
+  "note": "SQL column discovery is not proof that no question records exist; JSONB and static sources may contain them. No candidate approved or imported."
+}
