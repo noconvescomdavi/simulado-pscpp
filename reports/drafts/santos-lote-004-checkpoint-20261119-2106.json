@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-11-19T21:06:51-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261119-2010.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers_provisional": [
+    "C",
+    "B",
+    "D"
+  ],
+  "printed_pages": [
+    162,
+    163,
+    163
+  ],
+  "checks": [
+    "Fetched full candidate payload and structural audit: three stems, five options each, answer keys C/B/D, explanations and page locators present",
+    "Fetched secondary syllabus crosswalk; original Annex 2-A still not authenticated",
+    "GitHub compare main...draft: 175 ahead, 1 behind before checkpoint",
+    "Neon project shy-firefly-80833334 branch br-odd-leaf-b6n3spx7: 38 question_notebooks, 12 exam_sessions"
+  ],
+  "new_finding": "Draft payload's historical database audit cites another Neon project weathered-mud-33091087, while current checks target shy-firefly-80833334; database scope must be reconciled before treating historical counts as equivalent.",
+  "counts": {
+    "candidates": 3,
+    "created": 0,
+    "approved": 0,
+    "corrected": 0,
+    "definitive_ids": 0,
+    "tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "pending": [
+    "Authenticate original Annex 2-A and reconcile I.4.13.2 versus 8.10.2.1.1",
+    "Reconcile historical and current Neon project scopes",
+    "Complete full semantic deduplication including extensions/restorations",
+    "Reconcile branch and run CI tests",
+    "Review MAN-B022-09 and MAN-B022-12"
+  ],
+  "publication_allowed": false
+}
