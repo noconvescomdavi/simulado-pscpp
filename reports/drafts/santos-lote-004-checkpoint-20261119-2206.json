@@ -1,0 +1,52 @@
+{
+  "timestamp": "2026-11-19T22:06:57-03:00",
+  "batch": "Santos-004",
+  "previous": "reports/drafts/santos-lote-004-checkpoint-20261119-2106.json",
+  "candidate_ids": [
+    "L04-DRAFT-01",
+    "L04-DRAFT-02",
+    "L04-DRAFT-03"
+  ],
+  "answers_provisional": [
+    "C",
+    "B",
+    "D"
+  ],
+  "printed_pages": [
+    162,
+    163,
+    163
+  ],
+  "new_findings": [
+    "Neon list_projects returned only one accessible project: shy-firefly-80833334 (estibordo); historical weathered-mud-33091087 is not among projects visible to this connection. This does not prove deletion or nonexistence.",
+    "Read-only SQL on br-odd-leaf-b6n3spx7 returned 38 question_notebooks, 12 exam_sessions, and no public.questions table.",
+    "Historical audit 20261116-0211 confirms explicit project_id recovered SQL authentication but did not establish production binding."
+  ],
+  "github": {
+    "branch": "draft/santos-lote-004-source-review-20261110",
+    "comparison_before_commit": {
+      "ahead": 176,
+      "behind": 1,
+      "main_sha": "d2f0fabddf6c2100f81f7900b260f5484f3cde51"
+    }
+  },
+  "counts": {
+    "candidates": 3,
+    "created": 0,
+    "approved": 0,
+    "corrected": 0,
+    "definitive_ids": 0,
+    "tests": 0
+  },
+  "pr": null,
+  "merge": null,
+  "production_deploy": null,
+  "publication_allowed": false,
+  "pending": [
+    "Verify official Annex 2-A directly and resolve 4.13.2 vs 8.10.2.1.1",
+    "Identify actual production DB binding and historical Neon project scope",
+    "Complete semantic deduplication against active static catalog and extensions/restorations",
+    "Reconcile divergent branch and run tests",
+    "Review MAN-B022-09 and MAN-B022-12"
+  ]
+}
