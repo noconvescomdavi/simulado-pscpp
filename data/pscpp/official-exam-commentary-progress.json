@@ -467,8 +467,22 @@
           "number": 19,
           "original_correct_answer": "B",
           "status": "bibliography_verified",
-          "commentary_status": "draft_verified_pending_integration",
-          "review_note": "Gabarito oficial B (F,V,V,F,V) conforme prova de 2006. Hensen Tug Use in Port 4th revised (2021) p.105-106 fig.4.8: tractor com popa ao navio; ASD com proa; indireto >5-6 nós; configuração de retardo posição 2; centro de pressão avançado melhora desempenho ASD de popa. Visualizar figura na homologação final."
+          "commentary_status": "draft_verified_pending_figure_and_historical_source",
+          "review_note": "2026-11-19: comentários A–E e referência primária Hensen 2021 pp.105–106 acrescentados. Inversão de distância T–C na IV confirmada por citação literal. Itens I e III dependem de inspeção visual da figura 4.8. Não homologar antes de cotejo da edição histórica e gabarito oficial independente.",
+          "correct_reason": "Sequência F–V–V–F–V (alternativa B). I: falsa, pois a configuração do trator no método indireto não corresponde à orientação de proa descrita; requer confirmação visual da figura 4.8. II: verdadeira: Hensen recomenda método indireto acima de cinco a seis nós e descreve o direto para velocidades menores. III: verdadeira conforme as posições 2 (somente retardo) da figura 4.8, ainda sujeita a conferência visual. IV: falsa: Hensen diz expressamente que o ASD/reverse-tractor tem distância T–C geralmente MAIOR, e não menor, do que o trator, exigindo mais potência transversal e reduzindo força disponível no cabo. V: verdadeira: avanço do centro de pressão em direção ao ponto de reboque de vante favorece o comportamento do ASD como rebocador de popa.",
+          "incorrect_reasons_by_option": {
+            "A": "Marca I verdadeira, mas a orientação do trator descrita em I não corresponde à figura 4.8; verificar visualmente antes da homologação.",
+            "C": "Marca I verdadeira, II falsa, III falsa e IV verdadeira; contradiz a descrição de emprego indireto acima de 5–6 nós e a relação T–C maior nos ASD.",
+            "D": "Marca II falsa e V falsa, contrariando o limiar de velocidade e a vantagem do centro de pressão mais avançado; a figura 4.8 deve ser conferida.",
+            "E": "Marca III falsa, IV verdadeira e V falsa; a IV inverte explicitamente a comparação de distância T–C publicada por Hensen."
+          },
+          "bibliography_author": "HENSEN, Henk",
+          "bibliography_title": "Tug Use in Port",
+          "bibliography_edition": "4th revised edition (2021)",
+          "bibliography_page": "105–106 (paginação impressa), capítulo 4, figura 4.8",
+          "verified_short_excerpt": "“The ASD-tug/reverse-tractor tug has generally a larger distance between the towing point (T) and centre of pressure (C).” (p. 105)",
+          "source_verification": "Trecho literal, contexto técnico e legenda da figura 4.8 conferidos diretamente no texto extraído do PDF Hensen 2021 do Google Drive em 2026-11-19. O enunciado e as cinco alternativas conferidos no inventário oficial-exams.json. A representação gráfica da figura e a edição vigente em 2006 ainda não foram verificadas visualmente; gabarito definitivo independente não reautenticado.",
+          "bibliography_candidate_url": "https://drive.google.com/file/d/1TzakagjCKQ_p7kaMbWPV-MHShIZ6AXG9/view"
         },
         {
           "id": "pscpp::official::2006::020",
