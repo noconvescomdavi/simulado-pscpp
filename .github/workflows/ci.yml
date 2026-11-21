@@ -35,6 +35,9 @@ jobs:
       - name: Learning algorithm tests
         run: npm run test:learning
 
+      - name: Notebook deletion safety tests
+        run: node --test scripts/test-notebook-deletion.mjs
+
       - name: Official PSCPP source fidelity
         run: npm run generate:pscpp-bank && npm run validate:historical-blueprint
 
@@ -156,6 +159,10 @@ jobs:
             test "$BUY_STATUS" = "200"
             if grep -q "Ir para o Mercado Pago\|Histórico de pagamentos" /tmp/buy.html; then exit 1; fi
           fi
+
+          # Exclusão exige autenticação; sem sessão deve retornar 401.
+          DELETE_STATUS=$(curl -sS -o /dev/null -w "%{http_code}" -X DELETE "http://127.0.0.1:3000/api/question-notebooks/babc1234-1234-4abc-8def-abcdef123456")
+          test "$DELETE_STATUS" = "401"
 
           # Learning Engine: endpoints privados devem falhar fechados sem sessão
           for ENDPOINT in \
