@@ -5,6 +5,7 @@ import {availableQuestionBanks} from "../../../lib/question-catalog";
 import {listNotebookHistory} from "../../../lib/notebook-history";
 import StudentHeader from "../../components/StudentHeader";
 import Builder from "./Builder";
+import DeleteNotebookButton from "./DeleteNotebookButton";
 import styles from "./bank.module.css";
 
 export default async function Page({searchParams}){
@@ -78,9 +79,12 @@ export default async function Page({searchParams}){
                   <div className={styles.historyStats}>
                     <div><span>Progresso</span><strong>{item.total_questions?Math.round((item.answered_count/item.total_questions)*100):0}%</strong></div>
                     <div><span>Aproveitamento</span><strong>{item.score_percent.toFixed(0)}%</strong></div>
-                    <a href={`/conteudos/caderno/${item.id}`}>
-                      {item.completed?"Ver resultado":"Continuar caderno"} →
-                    </a>
+                    <div className={styles.historyActions}>
+                      <a href={`/conteudos/caderno/${item.id}`}>
+                        {item.completed?"Ver resultado":"Continuar caderno"} →
+                      </a>
+                      <DeleteNotebookButton id={item.id} title={item.title} answeredCount={item.answered_count} completed={item.completed}/>
+                    </div>
                   </div>
                 </article>
               ))}
