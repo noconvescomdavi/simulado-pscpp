@@ -1,0 +1,31 @@
+name: PSCPP runtime inventory
+on:
+  push:
+    branches:
+      - audit/runtime-inventory-20261106
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run generate:pscpp-bank
+      - run: npm run generate:question-banks
+      - run: npm run generate:question-catalog
+      - run: node scripts/inventory-runtime-questions.mjs
+      - run: node scripts/export-runtime-questions-txt.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pscpp-runtime-inventory
+          path: audit-output/
+          if-no-files-found: warn
+          retention-days: 30
