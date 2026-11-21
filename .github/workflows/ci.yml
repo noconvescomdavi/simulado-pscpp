@@ -35,6 +35,9 @@ jobs:
       - name: Learning algorithm tests
         run: npm run test:learning
 
+      - name: Pending notebook edit invariants
+        run: node --test scripts/test-notebook-edit-policy.mjs
+
       - name: Official PSCPP source fidelity
         run: npm run generate:pscpp-bank && npm run validate:historical-blueprint
 
@@ -156,6 +159,12 @@ jobs:
             test "$BUY_STATUS" = "200"
             if grep -q "Ir para o Mercado Pago\|Histórico de pagamentos" /tmp/buy.html; then exit 1; fi
           fi
+
+          # Alterações nos cadernos também exigem autenticação
+          for METHOD in PATCH DELETE; do
+            STATUS=$(curl -sS -o /dev/null -w "%{http_code}" -X "$METHOD" "http://127.0.0.1:3000/api/question-notebooks/00000000-0000-4000-8000-000000000000" -H "Content-Type: application/json" -d '{}')
+            test "$STATUS" = "401"
+          done
 
           # Learning Engine: endpoints privados devem falhar fechados sem sessão
           for ENDPOINT in \

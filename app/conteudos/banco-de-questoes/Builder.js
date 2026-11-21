@@ -16,14 +16,15 @@ function mergeFacetList(items){
   return [...merged.values()].sort((a,b)=>a.label.localeCompare(b.label,"pt-BR",{numeric:true}));
 }
 
-export default function Builder({banks,trial=false,initialSubjects=[],fixation=null}){
+export default function Builder({banks,trial=false,initialSubjects=[],fixation=null,editing=null}){
   const available=banks.filter(x=>x.count).map(x=>x.slug);
-  const initial=initialSubjects.filter(slug=>available.includes(slug));
+  const initial=(editing?.subjects||initialSubjects).filter(slug=>available.includes(slug));
   const [s,setS]=useState(initial.length?initial:available);
-  const [n,setN]=useState(trial?10:(fixation?300:20));
+  const [n,setN]=useState(editing?.total_questions||(trial?10:(fixation?300:20)));
+  const [title,setTitle]=useState(editing?.title||"");
   const [e,setE]=useState("");
   const [busy,setBusy]=useState(false);
-  const [filters,setFilters]=useState({...EMPTY_QUESTION_FILTERS});
+  const [filters,setFilters]=useState({...EMPTY_QUESTION_FILTERS,...(editing?.filters||{})});
   const facets={
     works:mergeFacetList(banks.flatMap(bank=>bank.filters?.works||[])),
     chapters:mergeFacetList(banks.flatMap(bank=>bank.filters?.chapters||[])),
@@ -42,9 +43,10 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
       subjects:s,
       count:trial?10:n,
       filters:trial||fixation?EMPTY_QUESTION_FILTERS:filters,
-      fixation,
-      title:fixation?"Caderno de fixação — "+(fixation.chapter||fixation.section_key):null
+      fixation:editing?null:fixation,
+      title:editing?title:(fixation?"Caderno de fixação — "+(fixation.chapter||fixation.section_key):null)
     };
+    if(!navigator.onLine&&editing){setE("A edição exige conexão à internet para preservar as respostas existentes.");setBusy(false);return;}
     if(!navigator.onLine){
       try{
         const notebook=await createOfflineNotebook(body);
@@ -53,11 +55,12 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
       return;
     }
     let r;
-    try{r=await fetch("/api/question-notebooks",{
-      method:"POST",
+    try{r=await fetch(editing?`/api/question-notebooks/${editing.id}`:"/api/question-notebooks",{
+      method:editing?"PATCH":"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify(body)
     });}catch(error){
+      if(editing){setE("Não foi possível salvar a edição. Confira sua conexão.");setBusy(false);return;}
       try{
         const notebook=await createOfflineNotebook(body);
         location.href=`/offline?mode=notebook&id=${notebook.id}`;
@@ -67,7 +70,7 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
     const p=await r.json().catch(()=>({}));
 
     if(!r.ok){
-      if(r.status===429&&trial){
+      if(r.status===429&&trial&&!editing){
         location.href="/teste-gratis-excedido?recurso=caderno";
         return;
       }
@@ -82,8 +85,11 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
   const availabilityText=filters.official_exam_only
     ?"Acervo histórico: 254 questões oficiais não anuladas · 254 ativas"
     :`${totalSelected.toLocaleString("pt-BR")} questões disponíveis`;
+  const actionLabel=editing?"Salvar alterações":fixation?"Criar caderno de fixação":"Gerar caderno";
   return (
-    <section className={styles.builderLayout}><div className={styles.box}>
+    <section id="gerar-caderno" className={styles.builderLayout}><div className={styles.box}>
+      {editing&&<div className={styles.editNotice}><strong>Editar caderno em andamento</strong><p>As {editing.answered_count} questão(ões) já respondida(s) e seus resultados são preservados. Os novos filtros serão aplicados somente às questões pendentes. Caso existam menos questões compatíveis que o solicitado, o caderno ficará com as disponíveis.</p><a href="/conteudos/banco-de-questoes#meus-cadernos">Cancelar edição</a></div>}
+      {editing&&<label className={styles.titleEdit}>Nome do caderno<input type="text" maxLength={180} value={title} onChange={event=>setTitle(event.target.value)} placeholder="Nome do caderno"/></label>}
       {fixation&&<p><strong>Modo fixação:</strong> o caderno usará somente as questões que correspondem ao conteúdo estudado. Se houver menos questões, o caderno será criado apenas com as disponíveis.</p>}
       <div className={styles.banks}>
         {banks.map(x=>(
@@ -116,17 +122,17 @@ export default function Builder({banks,trial=false,initialSubjects=[],fixation=n
         Quantidade
         <input
           type="number"
-          min={trial?10:1}
+          min={trial?10:Math.max(1,(editing?.answered_count||0)+1)}
           max={trial?10:300}
           disabled={trial}
           value={trial?10:n}
-          onChange={x=>setN(Math.max(1,Math.min(300,+x.target.value||1)))}
+          onChange={x=>setN(Math.max(editing?.answered_count?editing.answered_count+1:1,Math.min(300,+x.target.value||1)))}
         />
       </label>
 
-      {trial&&<p><strong>Teste gratuito:</strong> este será seu único caderno, com 10 questões aleatórias entre as matérias disponíveis.</p>}
+      {trial&&!editing&&<p><strong>Teste gratuito:</strong> este será seu único caderno, com 10 questões aleatórias entre as matérias disponíveis.</p>}
       {e&&<p>{e}</p>}
-      <button onClick={go} disabled={!s.length||busy} aria-busy={busy}>{busy?"Preparando caderno…":fixation?"Criar caderno de fixação":"Gerar caderno"}</button>
-    </div><aside className={styles.summary}><span>SEU CADERNO</span><strong>{trial?10:n} questões</strong><p>{s.length} matéria{s.length===1?"":"s"} selecionada{s.length===1?"":"s"} · {availabilityText}</p><small>Estimativa de resolução: ~{Math.max(1,Math.round((trial?10:n)*1.2))} min</small><button onClick={go} disabled={!s.length||busy} aria-busy={busy}>{busy?"Preparando caderno…":fixation?"Criar caderno de fixação":"Gerar caderno"}</button></aside></section>
+      <button onClick={go} disabled={!s.length||busy} aria-busy={busy}>{busy?"Salvando caderno…":actionLabel}</button>
+    </div><aside className={styles.summary}><span>{editing?"EDITANDO CADERNO":"SEU CADERNO"}</span><strong>{trial?10:n} questões</strong><p>{s.length} matéria{s.length===1?"":"s"} selecionada{s.length===1?"":"s"} · {availabilityText}</p><small>Estimativa de resolução: ~{Math.max(1,Math.round((trial?10:n)*1.2))} min</small><button onClick={go} disabled={!s.length||busy} aria-busy={busy}>{busy?"Salvando caderno…":actionLabel}</button></aside></section>
   );
 }
