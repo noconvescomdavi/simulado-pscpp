@@ -18,7 +18,7 @@
 .progressTrack{height:5px;background:#12334c;border-radius:99px;overflow:hidden;margin-top:10px}
 .progressTrack i{display:block;height:100%;background:#c8102e}
 .historyStats{display:grid;grid-template-columns:repeat(2,90px) auto;gap:10px;align-items:center}
-.historyStats>div{border-left:1px solid #17415e;padding-left:10px}
+.historyStats>div:not(.historyActions){border-left:1px solid #17415e;padding-left:10px}
 .historyStats span,.historyStats strong{display:block}
 .historyStats span{font-size:7px;color:#7ea0b7;text-transform:uppercase}
 .historyStats strong{font-size:16px;margin-top:3px}
@@ -35,3 +35,14 @@
 @media(max-width:700px){.notebookScope{padding:8px 9px;margin:7px 0 9px}.notebookScope p{font-size:11px!important;line-height:1.35}}
 
 .summary{position:sticky;top:92px;background:linear-gradient(145deg,#0a253a,#071826);border:1px solid #1b5278;border-radius:15px;padding:20px;color:#e7f0f7;box-shadow:0 18px 45px rgba(0,0,0,.15)}.summary span,.summary strong,.summary small{display:block}.summary span{font-size:9px;color:#8fd1f6;font-weight:900;letter-spacing:.12em}.summary strong{font-size:30px;margin:8px 0}.summary p{color:#9ab4c6;font-size:11px;line-height:1.55}.summary small{color:#7f9caf;font-size:9px}.summary button{width:100%;margin-top:18px;background:#c8102e;color:#fff;border:0;border-radius:9px;padding:12px 14px;font-weight:900;cursor:pointer}@media(max-width:800px){.builderLayout{grid-template-columns:1fr}.summary{position:static;order:-1}.box button{display:block}.summary button{display:none}}
+
+/* Exclusão de cadernos: mantém a identidade visual ESTIBORDO. */
+.historyActions{display:flex;flex-direction:column;align-items:stretch;gap:7px;min-width:136px}
+.deleteContainer{display:flex;flex-direction:column;gap:5px}
+.deleteNotebook{width:100%;min-height:35px;background:#221522;color:#ff879c;border:1px solid #a12e46;border-radius:7px;padding:8px 11px;font-size:10px;font-weight:900;cursor:pointer}
+.deleteNotebook:hover:not(:disabled){background:#39202c;border-color:#ef607b}
+.deleteNotebook:disabled{opacity:.55;cursor:wait}
+.deleteNotebook:focus-visible{outline:2px solid #85c9f3;outline-offset:2px}
+.deleteError,.deleteSuccess{display:block!important;font-size:9px!important;line-height:1.5;color:#ff98a8!important;max-width:210px}
+.deleteSuccess{color:#59d7aa!important}
+@media(max-width:780px){.historyActions{grid-column:1/-1}.historyActions>a{grid-column:auto}.deleteNotebook{min-height:39px}}
