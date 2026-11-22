@@ -7,8 +7,8 @@
   "base_branch": "main",
   "base_sha_at_creation": "14c6afed392cb6d87e80c8ff3453299e949039b4",
   "stage": "02",
-  "stage_name": "Reconciliação de restauração concorrente PR #265",
-  "stage_status": "14 IDs MSC.137 lote 07 verificados localmente; reconciliação global de 3051 candidatos ainda pendente",
+  "stage_name": "Reconciliação incremental PR #266",
+  "stage_status": "16 IDs MSC.137 lote 08 verificados estruturalmente; reconciliação global e cotejo autoral pendentes",
   "banks_discovered": [
     "arte-naval.json",
     "comunicacoes.json",
@@ -44,12 +44,13 @@
     "Rodada 02: main igual ao baseline; PR #262 só documentação; concorrentes #172/#173/#175/#184; PIANC121 não é PIANC117; nenhum cotejo autoral ou teste novo nesta rodada.",
     "Rodada 03: main avançou f0a33c4 via PR263, 14 IDs únicos MSC.137(76) e mudança de consumidor; 0/48 interseção com hidrodinâmica; sem cotejo bibliográfico ou novos testes.",
     "Rodada 04: main PR264 adicionou 14 IDs MSC.137(76), únicos no lote e sem interseção com os 48 candidatos hidrodinâmica; sem prova de ausência de conflitos no inventário integral; sem homologação, build ou merge.",
-    "Rodada 05: PR265 acrescentou 14 IDs MSC.137(76), sem interseção com os 48 candidatos hidrodinâmica; testes estruturais locais, nenhuma homologação."
+    "Rodada 05: PR265 acrescentou 14 IDs MSC.137(76), sem interseção com os 48 candidatos hidrodinâmica; testes estruturais locais, nenhuma homologação.",
+    "Rodada 06: main PR266, 16 IDs MSC.137 sem sobreposição por ID com 48 candidatos de hidrodinâmica; sem revisão bibliográfica ou testes de integração."
   ],
-  "next_stage": "02 continuação: comparar ID/hash/origem efetiva dos 3051 candidatos na main 51fe10b e consumidores; iniciar cotejo bibliográfico Santos hidrodinâmica",
-  "checkpoint_index": 5,
+  "next_stage": "02: reconstruir inventário global dos 3051 por ID/hash/origem efetiva; iniciar Santos hidrodinâmica",
+  "checkpoint_index": 6,
   "updated_at": "2026-11-22",
-  "baseline_sha": "51fe10bedf97dfe512266989c5c797820e2cef94",
+  "baseline_sha": "5b293dc19367b58e88e14d41fb5a7f6cf3a10144",
   "previous_branch_head": "cf64490c9125c347122dba70c2e4955dddab22cc",
   "pr": {
     "numero": 262,
@@ -371,11 +372,54 @@
     "five_options_and_answer_key": "PASS"
   },
   "tests_not_run_this_round": [
-    "conflitos com todos os 3051 candidatos",
-    "hashes de cada ID nos sete bancos e overrides",
-    "consumidor efetivo por ID",
-    "fonte bibliográfica primária",
-    "segunda passagem editorial",
-    "build e CI"
-  ]
+    "overlap com todos os 3051 candidatos",
+    "comparação dos hashes em todos os bancos/overrides",
+    "proveniência efetiva do consumidor",
+    "fonte primária e segunda revisão",
+    "CI/build"
+  ],
+  "reconciliacao_06": {
+    "checkpoint": 6,
+    "main_sha": "5b293dc19367b58e88e14d41fb5a7f6cf3a10144",
+    "previous_main_sha": "51fe10bedf97dfe512266989c5c797820e2cef94",
+    "source_pr": 266,
+    "source_file": "data/question-restorations/manobrabilidade-msc137-lote-08.json",
+    "source_blob_sha": "c60cc4168862f11974f0a249304f7cc2eb2456c6",
+    "source_reference": "IMO MSC.137(76) — fora das nove fontes, porém tema de manobrabilidade potencialmente sobreposto",
+    "ids": [
+      "MAN-962",
+      "MAN-963",
+      "MAN-964",
+      "MAN-965",
+      "MAN-966",
+      "MAN-972",
+      "MAN-973",
+      "MAN-1029",
+      "MAN-1030",
+      "MAN-1031",
+      "MAN-1032",
+      "MAN-1033",
+      "MAN-1034",
+      "MAN-1035",
+      "MAN-1036",
+      "MAN-1038"
+    ],
+    "unique_ids": 16,
+    "overlap_with_48_hydrodynamics_candidates": [],
+    "checks": {
+      "json_parse": "PASS",
+      "unique_local_ids": "PASS",
+      "five_options_and_answer_key": "PASS"
+    },
+    "not_checked": [
+      "overlap com todos os 3051 candidatos",
+      "comparação dos hashes em todos os bancos/overrides",
+      "proveniência efetiva do consumidor",
+      "fonte primária e segunda revisão",
+      "CI/build"
+    ],
+    "homologated": 0,
+    "corrected": 0,
+    "merge_allowed": false
+  }
 }
