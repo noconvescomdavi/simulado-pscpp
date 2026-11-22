@@ -7,8 +7,8 @@
   "base_branch": "main",
   "base_sha_at_creation": "14c6afed392cb6d87e80c8ff3453299e949039b4",
   "stage": "02",
-  "stage_name": "Reconciliação incremental PR280; cotejo primário e reconciliação global pendentes",
-  "stage_status": "15 IDs lote21 triados estruturalmente; 0 homologados",
+  "stage_name": "Reconciliação incremental lote23; cotejo primário e reconciliação global pendentes",
+  "stage_status": "15 IDs triados estruturalmente; 0 homologados",
   "banks_discovered": [
     "arte-naval.json",
     "comunicacoes.json",
@@ -59,13 +59,14 @@
     "Rodada 17: PR277 merged, 15 IDs lote19, um Santos MAN-1901, demais IMO; import e precedência de overlays inspecionados; sem cotejo primário, segunda revisão, CI ou deploy.",
     "Rodada 18: main PR278, 15 registros do lote20 com estrutura local A–E e IDs únicos; MAN-1955/MAN-2009 citam Santos, agora 18 pendentes identificados nas rodadas recentes; sem cotejo primário, homologação ou CI.",
     "Rodada 19: PR279 integrado na main, 15 IDs do lote21 triados, MAN-2063 cita Santos CONAPRA 2021; total 19 Santos recentes sem cotejo primário; sem homologação, segunda passagem, CI ou deploy.",
-    "Rodada 20: PR280 integrado na main, lote22 triado estruturalmente; sem cotejo primário, homologação, segunda passagem, CI ou deploy."
+    "Rodada 20: PR280 integrado na main, lote22 triado estruturalmente; sem cotejo primário, homologação, segunda passagem, CI ou deploy.",
+    "Rodada 21: lote23 com 15 IDs únicos e opções A-E válidas; 4 atribuições Santos (MAN-2222/2225/2271/2274); nenhuma homologação, segunda passagem ou CI."
   ],
-  "next_stage": "Reconciliar 3051 IDs por hash/origem efetiva e cotejar IDs Santos na edição CONAPRA 2021",
-  "checkpoint_index": 20,
-  "updated_at": "2026-11-22T18:00:15-03:00",
-  "baseline_sha": "424f065da0fe46249d940087964615d345a4c7d4",
-  "previous_branch_head": "a8b20ab0fcd6c5f9803623bfa14f36d38feb66a0",
+  "next_stage": "Reconciliar 3051 IDs por hash/origem efetiva; cotejar 30 IDs recentes Santos na fonte CONAPRA 2021",
+  "checkpoint_index": 21,
+  "updated_at": "2026-11-22T18:56:18-03:00",
+  "baseline_sha": "e6c70d2e15564e0f9d7619acc4c1b6758a92f974",
+  "previous_branch_head": "d5860bec7b2f97e6f37c38a5c92b8a4cc9d10ffa",
   "pr": {
     "numero": 262,
     "estado": "draft",
@@ -381,15 +382,16 @@
     "merge_allowed": false
   },
   "tests_run_this_round": [
-    "JSON parse lote20",
-    "15 IDs únicos e cinco alternativas A-E/gabarito existente"
+    "JSON parse",
+    "unique IDs in restoration file",
+    "five A-E options and existing answer key"
   ],
   "tests_not_run_this_round": [
-    "reconciliação integral 3051 IDs",
-    "fonte primária",
-    "segunda passagem",
+    "source-primary cotejo",
+    "second review",
+    "full 3051-ID reconciliation",
     "CI/build",
-    "Vercel"
+    "Vercel production"
   ],
   "reconciliacao_06": {
     "checkpoint": 6,
@@ -856,5 +858,59 @@
     "full_reconciliation_complete": false,
     "source_primary_verified": false,
     "second_pass": false
+  },
+  "reconciliacao_21": {
+    "checkpoint": 21,
+    "run_local": "2026-11-22T18:56:18-03:00",
+    "main_sha": "e6c70d2e15564e0f9d7619acc4c1b6758a92f974",
+    "previous_main_sha": "424f065da0fe46249d940087964615d345a4c7d4",
+    "source_file": "data/question-restorations/manobrabilidade-msc137-lote-23.json",
+    "source_blob_sha": "bc8123321702294bb15acb453b7f62fbf2d03a6a",
+    "ids": [
+      "MAN-2217",
+      "MAN-2218",
+      "MAN-2219",
+      "MAN-2220",
+      "MAN-2221",
+      "MAN-2222",
+      "MAN-2223",
+      "MAN-2224",
+      "MAN-2225",
+      "MAN-2226",
+      "MAN-2271",
+      "MAN-2272",
+      "MAN-2273",
+      "MAN-2274",
+      "MAN-2275"
+    ],
+    "structural": {
+      "count": 15,
+      "unique_ids": 15,
+      "invalid_options_or_answer": []
+    },
+    "santos_ids": [
+      "MAN-2222",
+      "MAN-2225",
+      "MAN-2271",
+      "MAN-2274"
+    ],
+    "source_primary_checked": false,
+    "second_pass": false,
+    "global_id_hash_reconciled": false,
+    "homologated": 0,
+    "corrected": 0,
+    "tests_run": [
+      "JSON parse",
+      "unique IDs in restoration file",
+      "five A-E options and existing answer key"
+    ],
+    "tests_not_run": [
+      "source-primary cotejo",
+      "second review",
+      "full 3051-ID reconciliation",
+      "CI/build",
+      "Vercel production"
+    ],
+    "merge_allowed": false
   }
 }
