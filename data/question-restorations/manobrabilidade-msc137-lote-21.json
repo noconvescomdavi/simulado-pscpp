@@ -1,0 +1,1157 @@
+{
+  "questions": [
+    {
+      "id": "MAN-2055",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.29",
+      "topic": "Curva de giro",
+      "difficulty": "Médio",
+      "style": "Conceitual",
+      "question": "No processamento de uma curva de giro de 720°, as estimativas vetoriais obtidas de diferentes pares de pontos se dispersam bastante em torno do vetor médio. O que representa esse desvio RMS na análise da circular?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O raio médio do giro estabilizado."
+        },
+        {
+          "key": "B",
+          "text": "O erro angular máximo do indicador de leme."
+        },
+        {
+          "key": "C",
+          "text": "A velocidade média do casco através da água."
+        },
+        {
+          "key": "D",
+          "text": "A magnitude do vetor médio de corrente."
+        },
+        {
+          "key": "E",
+          "text": "A não uniformidade das estimativas, que pode refletir vento, ondas ou corrente variável."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O RMS usa as diferenças entre cada estimativa vetorial e sua média. A circular o interpreta como uma medida de não uniformidade, que pode incluir efeitos ambientais além da corrente.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
+        "edition": "MSC/Circ.1053, 16 Dec. 2002",
+        "locator": "Anexo, cap. 3, p. 15, §§ 3.4.2.5–3.4.2.7"
+      },
+      "tags": [
+        "Controlabilidade e padrões de manobrabilidade",
+        "Curva de giro",
+        "curva de giro",
+        "manobrabilidade",
+        "msc1053",
+        "msc1053::ch3",
+        "curva-de-giro"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch3",
+        "topic_id": "I-msc137-annex6-4-29-curva-de-giro",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc1053",
+          "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+        },
+        "chapter": {
+          "id": "msc1053::ch3",
+          "number": "ch3",
+          "title": "Chapter 3 – Prediction guidance",
+          "label": "Chapter 3 – Prediction guidance"
+        },
+        "section": "Chapter 3 – Prediction guidance",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc137-annex6-4-29-curva-de-giro",
+          "title": "Curva de giro"
+        }
+      }
+    },
+    {
+      "id": "MAN-2056",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.30",
+      "topic": "Avanço na curva de giro",
+      "difficulty": "Difícil",
+      "style": "Conceitual",
+      "question": "Uma antena GNSS está na linha de centro, 50 m a vante da meia-nau. A coordenada da antena no eixo da proa inicial é zero na ordem de leme e 430 m quando a proa muda 90°. Qual é o avanço corrigido para a meia-nau?",
+      "options": [
+        {
+          "key": "A",
+          "text": "480 m."
+        },
+        {
+          "key": "B",
+          "text": "430 m."
+        },
+        {
+          "key": "C",
+          "text": "380 m."
+        },
+        {
+          "key": "D",
+          "text": "405 m."
+        },
+        {
+          "key": "E",
+          "text": "530 m."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A meia-nau está em −50 m na ordem de leme. Aos 90°, o deslocamento da antena em relação à meia-nau ficou perpendicular ao eixo inicial, então a coordenada da meia-nau é 430 m. A diferença é 480 m.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002",
+        "locator": "Anexo 6, p. 3, §§ 4.1.2 e 4.2.3"
+      },
+      "tags": [
+        "Controlabilidade e padrões de manobrabilidade",
+        "Avanço na curva de giro",
+        "avanço na curva de giro",
+        "manobrabilidade",
+        "msc137",
+        "msc137::annex6",
+        "avanco-na-curva-de-giro"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "I-msc137-annex6-4-30-avanco-na-curva-de-giro",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc137-annex6-4-30-avanco-na-curva-de-giro",
+          "title": "Avanço na curva de giro"
+        }
+      }
+    },
+    {
+      "id": "MAN-2057",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.31",
+      "topic": "Diâmetro tático",
+      "difficulty": "Fácil",
+      "style": "Conceitual",
+      "question": "Durante um giro, o rumo sobre o fundo alcançou 180° de mudança quando o afastamento transversal da meia-nau era 530 m. A proa alcançou 180° de mudança mais tarde, com afastamento de 565 m. Ambos são medidos desde a ordem de leme. Qual é o diâmetro tático?",
+      "options": [
+        {
+          "key": "A",
+          "text": "530 m."
+        },
+        {
+          "key": "B",
+          "text": "565 m."
+        },
+        {
+          "key": "C",
+          "text": "35 m."
+        },
+        {
+          "key": "D",
+          "text": "547,5 m."
+        },
+        {
+          "key": "E",
+          "text": "1.095 m."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O marco é a mudança de 180° do aproamento. A norma usa o afastamento da meia-nau perpendicular à proa original naquele instante, que é 565 m.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002",
+        "locator": "Anexo 6, p. 3, § 4.2.4"
+      },
+      "tags": [
+        "Controlabilidade e padrões de manobrabilidade",
+        "Diâmetro tático",
+        "diâmetro tático",
+        "manobrabilidade",
+        "msc137",
+        "msc137::annex6",
+        "diametro-tatico"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "I-msc137-annex6-4-31-diametro-tatico",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc137-annex6-4-31-diametro-tatico",
+          "title": "Diâmetro tático"
+        }
+      }
+    },
+    {
+      "id": "MAN-2058",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.32",
+      "topic": "Zigue-zague",
+      "difficulty": "Médio",
+      "style": "Conceitual",
+      "question": "No zigue-zague 10°/10° iniciado a boreste, o leme acabou de chegar a 10° a bombordo na primeira inversão. A guinada a boreste ainda persiste, mas sua taxa diminui. Como interpretar essa resposta imediata?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O leme foi invertido para o bordo errado."
+        },
+        {
+          "key": "B",
+          "text": "A manobra já atingiu necessariamente o segundo sobressinal."
+        },
+        {
+          "key": "C",
+          "text": "A resposta é esperada até a guinada ser detida e mudar de sentido."
+        },
+        {
+          "key": "D",
+          "text": "A taxa indica que o leme deve retornar a meio de imediato."
+        },
+        {
+          "key": "E",
+          "text": "A proa deveria inverter de sentido junto com o movimento do leme."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A resolução prevê a continuação transitória da guinada original com taxa decrescente depois da inversão. A proa só começa a voltar após a taxa passar por zero.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002",
+        "locator": "Anexo 6, p. 4, §§ 4.2.6.2–4.2.6.3"
+      },
+      "tags": [
+        "Controlabilidade e padrões de manobrabilidade",
+        "Zigue-zague",
+        "zigue-zague",
+        "manobrabilidade",
+        "msc137",
+        "msc137::annex6"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "I-msc137-annex6-4-32-zigue-zague",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc137-annex6-4-32-zigue-zague",
+          "title": "Zigue-zague"
+        }
+      }
+    },
+    {
+      "id": "MAN-2059",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.33",
+      "topic": "Primeiro sobressinal",
+      "difficulty": "Médio",
+      "style": "Conceitual",
+      "question": "Em um zigue-zague 10°/10°, a primeira inversão do leme ocorre em 357°. A proa continua crescendo, cruza o norte e atinge 006° antes de voltar. Qual é o primeiro sobressinal?",
+      "options": [
+        {
+          "key": "A",
+          "text": "3°."
+        },
+        {
+          "key": "B",
+          "text": "6°."
+        },
+        {
+          "key": "C",
+          "text": "16°."
+        },
+        {
+          "key": "D",
+          "text": "9°."
+        },
+        {
+          "key": "E",
+          "text": "351°."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "No sentido da guinada, de 357° a 000° decorrem 3°, e de 000° a 006° mais 6°. O desvio adicional após a primeira inversão soma 9°.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002",
+        "locator": "Anexo 6, p. 4, §§ 4.2.6.2 e 4.2.7"
+      },
+      "tags": [
+        "Controlabilidade e padrões de manobrabilidade",
+        "Primeiro sobressinal",
+        "primeiro sobressinal",
+        "manobrabilidade",
+        "msc137",
+        "msc137::annex6",
+        "primeiro-sobressinal"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "I-msc137-annex6-4-33-primeiro-sobressinal",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc137-annex6-4-33-primeiro-sobressinal",
+          "title": "Primeiro sobressinal"
+        }
+      }
+    },
+    {
+      "id": "MAN-2060",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.34",
+      "topic": "Estabilidade direcional",
+      "difficulty": "Difícil",
+      "style": "Conceitual",
+      "question": "No critério linear de estabilidade dinâmica em rumo retilíneo da circular, o ponto de aplicação da força lateral resultante de giro puro, com o termo de massa, está 8 m à vante do centro de pressão da força lateral de deriva pura. Qual conclusão decorre da posição relativa desses dois pontos?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Braço negativo de 8 m e estabilidade."
+        },
+        {
+          "key": "B",
+          "text": "Braço negativo de 8 m e instabilidade."
+        },
+        {
+          "key": "C",
+          "text": "Braço de 0 m e estabilidade."
+        },
+        {
+          "key": "D",
+          "text": "Braço positivo de 8 m e instabilidade."
+        },
+        {
+          "key": "E",
+          "text": "Braço positivo de 8 m e estabilidade."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O braço é a distância orientada do centro de pressão em deriva ao ponto de aplicação da força resultante em giro. Como o segundo ponto está 8 m à vante do primeiro, o braço é positivo e o critério linear indica estabilidade.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
+        "edition": "MSC/Circ.1053, 16 Dec. 2002",
+        "locator": "Anexo, cap. 1, p. 3, §§ 1.2.2.4–1.2.2.5"
+      },
+      "tags": [
+        "Controlabilidade e padrões de manobrabilidade",
+        "Estabilidade direcional",
+        "estabilidade direcional",
+        "manobrabilidade",
+        "msc1053",
+        "msc1053::ch1",
+        "estabilidade-direcional"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "I-msc137-annex6-4-34-estabilidade-direcional",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc1053",
+          "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+        },
+        "chapter": {
+          "id": "msc1053::ch1",
+          "number": "ch1",
+          "title": "Chapter 1 – General principles",
+          "label": "Chapter 1 – General principles"
+        },
+        "section": "Chapter 1 – General principles",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc137-annex6-4-34-estabilidade-direcional",
+          "title": "Estabilidade direcional"
+        }
+      }
+    },
+    {
+      "id": "MAN-2061",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.35",
+      "topic": "Curva espiral",
+      "difficulty": "Fácil",
+      "style": "Conceitual",
+      "question": "A curva de equilíbrio obtida em uma espiral direta apresenta um trecho sem pontos medidos entre os dois ramos. Qual procedimento da circular permite investigar especificamente o ramo de equilíbrios instáveis?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Espiral reversa com taxa-alvo de guinada mantida por governo ativo."
+        },
+        {
+          "key": "B",
+          "text": "Espiral direta com uma espera menor para cada ângulo."
+        },
+        {
+          "key": "C",
+          "text": "Prova de giro com leme máximo e máquina reduzida em cada volta."
+        },
+        {
+          "key": "D",
+          "text": "Prova de parada com leitura do desvio final de proa."
+        },
+        {
+          "key": "E",
+          "text": "Zigue-zague convencional, usando apenas a amplitude do primeiro pico."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A espiral reversa permite governar para manter a taxa desejada e obter a deflexão média associada, inclusive na parte da relação que o método direto de leme fixo não estabiliza.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
+        "edition": "MSC/Circ.1053, 16 Dec. 2002",
+        "locator": "Anexo, cap. 1, p. 3, § 1.2.2.7, e apêndice 4, p. 30, § 2.2.1"
+      },
+      "tags": [
+        "Controlabilidade e padrões de manobrabilidade",
+        "Curva espiral",
+        "curva espiral",
+        "manobrabilidade",
+        "msc1053",
+        "msc1053::ch1",
+        "curva-espiral"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "I-msc137-annex6-4-35-curva-espiral",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc1053",
+          "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+        },
+        "chapter": {
+          "id": "msc1053::ch1",
+          "number": "ch1",
+          "title": "Chapter 1 – General principles",
+          "label": "Chapter 1 – General principles"
+        },
+        "section": "Chapter 1 – General principles",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc137-annex6-4-35-curva-espiral",
+          "title": "Curva espiral"
+        }
+      }
+    },
+    {
+      "id": "MAN-2062",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.36",
+      "topic": "Parada crash stop",
+      "difficulty": "Médio",
+      "style": "Conceitual",
+      "question": "Para o ensaio de parada com toda força a ré, o registrador vai medir continuamente o tempo e amostrar posição e proa em intervalos regulares. Qual dos intervalos propostos é o maior que atende ao limite geral da circular?",
+      "options": [
+        {
+          "key": "A",
+          "text": "25 s."
+        },
+        {
+          "key": "B",
+          "text": "20 s."
+        },
+        {
+          "key": "C",
+          "text": "30 s."
+        },
+        {
+          "key": "D",
+          "text": "35 s."
+        },
+        {
+          "key": "E",
+          "text": "45 s."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O § 2.2.2.3 recomenda medir os dados aplicáveis durante cada ensaio em intervalos apropriados de até 20 s. Posição e proa estão na lista.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
+        "edition": "MSC/Circ.1053, 16 Dec. 2002",
+        "locator": "Anexo, cap. 2, p. 9, § 2.2.1.5, e p. 10, § 2.2.2.3"
+      },
+      "tags": [
+        "Controlabilidade e padrões de manobrabilidade",
+        "Parada crash stop",
+        "parada crash stop",
+        "manobrabilidade",
+        "msc1053",
+        "msc1053::ch2",
+        "parada-crash-stop"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch2",
+        "topic_id": "I-msc137-annex6-4-36-parada-crash-stop",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc1053",
+          "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+        },
+        "chapter": {
+          "id": "msc1053::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Guidelines for application of the standards",
+          "label": "Chapter 2 – Guidelines for application of the standards"
+        },
+        "section": "Chapter 2 – Guidelines for application of the standards",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc137-annex6-4-36-parada-crash-stop",
+          "title": "Parada crash stop"
+        }
+      }
+    },
+    {
+      "id": "MAN-2063",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.37",
+      "topic": "Movimento a ré",
+      "difficulty": "Médio",
+      "style": "Conceitual",
+      "question": "Na situação de grande inércia apresentada por Santos, o navio ainda tem seguimento avante elevado em relação à água. O propulsor passa a girar devagar, ainda no sentido de marcha avante. Qual combinação a figura ilustra para a incidência do fluxo na pá e a direção da força axial?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ângulo de ataque positivo com empuxo dirigido a ré."
+        },
+        {
+          "key": "B",
+          "text": "Ângulo de ataque nulo com o empuxo avante original."
+        },
+        {
+          "key": "C",
+          "text": "Ângulo de ataque negativo com empuxo dirigido a ré."
+        },
+        {
+          "key": "D",
+          "text": "Ângulo de ataque positivo com aumento de empuxo avante."
+        },
+        {
+          "key": "E",
+          "text": "Ângulo de ataque negativo com empuxo dirigido a vante."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "No caso da figura 127, a combinação de escoamento incidente elevado e rotação reduzida produz ângulo de ataque negativo e empuxo dirigido a ré, mesmo antes de inverter a rotação.",
+      "source": {
+        "author": "SANTOS, Edson Mesquita dos",
+        "title": "A Manobrabilidade do Navio no Século 21",
+        "edition": "1ª ed., CONAPRA, 2021",
+        "locator": "1ª ed., 2021, cap. 7, § 7.3.5, p. 122 impressa, fig. 127"
+      },
+      "tags": [
+        "Controlabilidade e padrões de manobrabilidade",
+        "Movimento a ré",
+        "movimento a ré",
+        "manobrabilidade",
+        "santos-manobrabilidade",
+        "santos-manobrabilidade::ch7",
+        "movimento-a-re"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "santos-manobrabilidade",
+        "chapter_id": "santos-manobrabilidade::ch7",
+        "topic_id": "I-msc137-annex6-4-37-movimento-a-re",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "santos-manobrabilidade",
+          "title": "SANTOS — A Manobrabilidade do Navio no Século 21",
+          "author": "SANTOS, Edson Mesquita dos"
+        },
+        "chapter": {
+          "id": "santos-manobrabilidade::ch7",
+          "number": "ch7",
+          "title": "Capítulo 7",
+          "label": "Capítulo 7"
+        },
+        "section": "Capítulo 7",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc137-annex6-4-37-movimento-a-re",
+          "title": "Movimento a ré"
+        }
+      }
+    },
+    {
+      "id": "MAN-2064",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.38",
+      "topic": "Critérios IMO",
+      "difficulty": "Difícil",
+      "style": "Conceitual",
+      "question": "Para um ensaio com calados iguais a vante e a ré, o calado de plena carga é 10,00 m. Aplicando exclusivamente a margem de 5% admitida pela circular para esse calado, qual valor abaixo da plena carga ainda está dentro da margem?",
+      "options": [
+        {
+          "key": "A",
+          "text": "9,00 m."
+        },
+        {
+          "key": "B",
+          "text": "9,20 m."
+        },
+        {
+          "key": "C",
+          "text": "9,40 m."
+        },
+        {
+          "key": "D",
+          "text": "9,50 m."
+        },
+        {
+          "key": "E",
+          "text": "8,50 m."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Cinco por cento de 10,00 m é 0,50 m. O limite inferior dessa margem é 10,00 − 0,50 = 9,50 m. O cálculo se restringe à tolerância indicada para o calado, independentemente das demais verificações do ensaio.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
+        "edition": "MSC/Circ.1053, 16 Dec. 2002",
+        "locator": "Anexo, cap. 2, p. 7, § 2.2.1.2.2"
+      },
+      "tags": [
+        "Controlabilidade e padrões de manobrabilidade",
+        "Critérios IMO",
+        "critérios imo",
+        "manobrabilidade",
+        "msc1053",
+        "msc1053::ch2",
+        "criterios-imo"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch2",
+        "topic_id": "I-msc137-annex6-4-38-criterios-imo",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc1053",
+          "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+        },
+        "chapter": {
+          "id": "msc1053::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Guidelines for application of the standards",
+          "label": "Chapter 2 – Guidelines for application of the standards"
+        },
+        "section": "Chapter 2 – Guidelines for application of the standards",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc137-annex6-4-38-criterios-imo",
+          "title": "Critérios IMO"
+        }
+      }
+    },
+    {
+      "id": "MAN-2109",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.29",
+      "topic": "Curva de giro",
+      "difficulty": "Fácil",
+      "style": "Normativa",
+      "question": "Para comparar curvas de giro do mesmo navio em duas configurações, a equipe registra calado, deslocamento e características do aparelho de governo. Qual dado de identificação também deve acompanhar a ficha dos dispositivos de manobra?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O número de tripulantes que acompanharam a prova."
+        },
+        {
+          "key": "B",
+          "text": "A quantidade de cartas náuticas consultadas."
+        },
+        {
+          "key": "C",
+          "text": "O intervalo desde o último abastecimento."
+        },
+        {
+          "key": "D",
+          "text": "A condição de operação de cada dispositivo descrito."
+        },
+        {
+          "key": "E",
+          "text": "A lista de portos visitados durante o mês."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A circular pede descrever a disposição da máquina, do propulsor, do leme e de outros dispositivos, junto com suas características e condições de operação. Isso permite identificar a configuração representada por cada curva.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
+        "edition": "MSC/Circ.1053, 16 Dec. 2002",
+        "locator": "Anexo, cap. 2, p. 8, § 2.2.1.3.1–.2 e p. 9, § 2.2.2.1"
+      },
+      "tags": [
+        "Controlabilidade e padrões de manobrabilidade",
+        "Curva de giro",
+        "curva de giro",
+        "manobrabilidade",
+        "msc1053",
+        "msc1053::ch2",
+        "curva-de-giro"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch2",
+        "topic_id": "I-msc137-annex6-4-29-curva-de-giro",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc1053",
+          "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+        },
+        "chapter": {
+          "id": "msc1053::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Guidelines for application of the standards",
+          "label": "Chapter 2 – Guidelines for application of the standards"
+        },
+        "section": "Chapter 2 – Guidelines for application of the standards",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc137-annex6-4-29-curva-de-giro",
+          "title": "Curva de giro"
+        }
+      }
+    },
+    {
+      "id": "MAN-2110",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.30",
+      "topic": "Avanço na curva de giro",
+      "difficulty": "Médio",
+      "style": "Normativa",
+      "question": "A curva de giro foi registrada sobre o fundo. Aos 90° de mudança de proa, a projeção longitudinal desde a ordem de leme é 300 m e já passaram 60 s. A componente de corrente no eixo da proa inicial é de 0,5 m/s no sentido oposto à aproximação. Qual é o avanço corrigido?",
+      "options": [
+        {
+          "key": "A",
+          "text": "270 m."
+        },
+        {
+          "key": "B",
+          "text": "300 m."
+        },
+        {
+          "key": "C",
+          "text": "329,5 m."
+        },
+        {
+          "key": "D",
+          "text": "360 m."
+        },
+        {
+          "key": "E",
+          "text": "330 m."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "No eixo longitudinal, subtrai-se o deslocamento de corrente com seu sinal. Assim, 300 − (−0,5 × 60) = 330 m.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
+        "edition": "MSC/Circ.1053, 16 Dec. 2002",
+        "locator": "Anexo, cap. 3, p. 16, § 3.4.2.8, e MSC.137(76), Anexo 6, p. 3, § 4.2.3"
+      },
+      "tags": [
+        "Controlabilidade e padrões de manobrabilidade",
+        "Avanço na curva de giro",
+        "avanço na curva de giro",
+        "manobrabilidade",
+        "msc1053",
+        "msc1053::ch3",
+        "avanco-na-curva-de-giro"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch3",
+        "topic_id": "I-msc137-annex6-4-30-avanco-na-curva-de-giro",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc1053",
+          "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+        },
+        "chapter": {
+          "id": "msc1053::ch3",
+          "number": "ch3",
+          "title": "Chapter 3 – Prediction guidance",
+          "label": "Chapter 3 – Prediction guidance"
+        },
+        "section": "Chapter 3 – Prediction guidance",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc137-annex6-4-30-avanco-na-curva-de-giro",
+          "title": "Avanço na curva de giro"
+        }
+      }
+    },
+    {
+      "id": "MAN-2111",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.31",
+      "topic": "Diâmetro tático",
+      "difficulty": "Médio",
+      "style": "Normativa",
+      "question": "Dois navios registram diâmetro tático de 680 m na mesma condição padronizada. As esloras entre perpendiculares são 130 m para X e 150 m para Y. Qual é a avaliação pelo limite de diâmetro tático?",
+      "options": [
+        {
+          "key": "A",
+          "text": "X excede o limite em 30 m e Y fica 70 m abaixo do limite."
+        },
+        {
+          "key": "B",
+          "text": "X e Y atendem por terem o mesmo diâmetro em metros."
+        },
+        {
+          "key": "C",
+          "text": "X e Y excedem porque se aplica 4,5 L nos dois casos."
+        },
+        {
+          "key": "D",
+          "text": "X atende e Y excede, pois o limite cai com o aumento de L."
+        },
+        {
+          "key": "E",
+          "text": "X e Y ficam exatamente no limite."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Pelo teto de 5 L, X pode ter até 650 m e Y até 750 m. Uma mesma distância em metros pode, portanto, atender em um navio e exceder o limite no outro.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002",
+        "locator": "Anexo 6, pp. 3 e 5, §§ 4.2.4 e 5.3.1"
+      },
+      "tags": [
+        "Controlabilidade e padrões de manobrabilidade",
+        "Diâmetro tático",
+        "diâmetro tático",
+        "manobrabilidade",
+        "msc137",
+        "msc137::annex6",
+        "diametro-tatico"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "I-msc137-annex6-4-31-diametro-tatico",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc137-annex6-4-31-diametro-tatico",
+          "title": "Diâmetro tático"
+        }
+      }
+    },
+    {
+      "id": "MAN-2112",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.32",
+      "topic": "Zigue-zague",
+      "difficulty": "Difícil",
+      "style": "Normativa",
+      "question": "O ensaio planejado é o zigue-zague 20°/20°, mas o equipamento programado a partir do 10°/10° mudou só a amplitude do leme e manteve o gatilho de inversão original. Qual deve ser a alteração no gatilho?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A inversão deve ocorrer a 20° da proa em que ocorreu a inversão anterior."
+        },
+        {
+          "key": "B",
+          "text": "Cada inversão deve ocorrer a 20° do aproamento inicial, no bordo da guinada."
+        },
+        {
+          "key": "C",
+          "text": "Cada inversão deve ocorrer ao cruzar o aproamento inicial."
+        },
+        {
+          "key": "D",
+          "text": "O gatilho de 10° deve ser mantido até a terceira ordem."
+        },
+        {
+          "key": "E",
+          "text": "A inversão deve ocorrer quando o leme atingir 20°, antes de qualquer variação de proa."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O 20°/20° troca tanto o ângulo comandado quanto o desvio de proa para 20°. As marcas ficam em lados opostos do aproamento inicial, que continua sendo a referência.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002",
+        "locator": "Anexo 6, p. 4, §§ 4.2.6.1–4.2.6.3 e 4.2.9"
+      },
+      "tags": [
+        "Controlabilidade e padrões de manobrabilidade",
+        "Zigue-zague",
+        "zigue-zague",
+        "manobrabilidade",
+        "msc137",
+        "msc137::annex6"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "I-msc137-annex6-4-32-zigue-zague",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc137-annex6-4-32-zigue-zague",
+          "title": "Zigue-zague"
+        }
+      }
+    },
+    {
+      "id": "MAN-2113",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.33",
+      "topic": "Primeiro sobressinal",
+      "difficulty": "Fácil",
+      "style": "Normativa",
+      "question": "No zigue-zague 10°/10°, um navio apresenta L/V = 26 s, primeiro sobressinal de 18° e segundo de 38°. Quais desses resultados satisfazem os limites da MSC.137(76)?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ambos, pois seus limites são 20° e 40°."
+        },
+        {
+          "key": "B",
+          "text": "Apenas o segundo, pois o primeiro deve ser inferior a 18°."
+        },
+        {
+          "key": "C",
+          "text": "Apenas o primeiro, que fica no limite."
+        },
+        {
+          "key": "D",
+          "text": "Nenhum, pois se aplicam os valores de 10° e 25°."
+        },
+        {
+          "key": "E",
+          "text": "Ambos, pois os sobressinais podem ser avaliados pela média."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Na faixa intermediária, os limites são 5 + 0,5 × 26 = 18° e 17,5 + 0,75 × 26 = 37°. Igualar o primeiro limite é permitido. O segundo é excedido em 1°.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002",
+        "locator": "Anexo 6, p. 5, §§ 5.3.3.1.3 e 5.3.3.2.3"
+      },
+      "tags": [
+        "Controlabilidade e padrões de manobrabilidade",
+        "Primeiro sobressinal",
+        "primeiro sobressinal",
+        "manobrabilidade",
+        "msc137",
+        "msc137::annex6",
+        "primeiro-sobressinal"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "I-msc137-annex6-4-33-primeiro-sobressinal",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc137-annex6-4-33-primeiro-sobressinal",
+          "title": "Primeiro sobressinal"
+        }
+      }
+    }
+  ]
+}
