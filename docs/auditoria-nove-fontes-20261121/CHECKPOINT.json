@@ -7,8 +7,8 @@
   "base_branch": "main",
   "base_sha_at_creation": "14c6afed392cb6d87e80c8ff3453299e949039b4",
   "stage": "02",
-  "stage_name": "Reconciliação incremental PR #269 e classificação de fonte",
-  "stage_status": "15 registros PR269 validados estruturalmente, 1 atribuído a Santos; cotejo autoral pendente",
+  "stage_name": "Reconciliação incremental PR270 e bloqueio Santos",
+  "stage_status": "15 IDs estruturalmente validados; MAN-1253, MAN-1307, MAN-1361 pendentes da edição primária; sem homologação",
   "banks_discovered": [
     "arte-naval.json",
     "comunicacoes.json",
@@ -48,12 +48,13 @@
     "Rodada 06: main PR266, 16 IDs MSC.137 sem sobreposição por ID com 48 candidatos de hidrodinâmica; sem revisão bibliográfica ou testes de integração.",
     "Rodada 07: main PR267, 14 IDs do lote09 MSC.137, A–E/gabarito e unicidade local verificados; 0/48 interseção com hidrodinâmica; sem homologação, testes integrados ou merge.",
     "Rodada 08: main PR268 adicionou 17 IDs MSC137/MSC1053/CONAPRA; JSON, unicidade local, A-E/gabaritos verificados; sem reconciliação global ou cotejo bibliográfico.",
-    "Rodada 09: PR269 acrescentou 15 IDs, incluindo MAN-1253 com atribuição explícita a Santos; nenhuma revisão bibliográfica, sem merge ou deploy."
+    "Rodada 09: PR269 acrescentou 15 IDs, incluindo MAN-1253 com atribuição explícita a Santos; nenhuma revisão bibliográfica, sem merge ou deploy.",
+    "Rodada 10: PR270 adicionou 15 IDs (13 IMO, 2 Santos); 15 testes estruturais locais PASS. PDF Livro 08 de Edson é obra de título diferente da edição CONAPRA 2021 citada, logo MAN-1253/1307/1361 bloqueados para homologação; nenhuma questão corrigida."
   ],
-  "next_stage": "Cotejo MAN-1253 na obra Santos cap.7 pp.120–121; reconciliação completa dos 3051 por ID/hash/origem",
-  "checkpoint_index": 9,
+  "next_stage": "Localizar e cotejar Santos CONAPRA 2021 (MAN-1253, MAN-1307, MAN-1361); reconciliar todos 3051 por ID/hash/origem efetiva",
+  "checkpoint_index": 10,
   "updated_at": "2026-11-22",
-  "baseline_sha": "cd524245a09c29dd5fdb600617a0569b23361ec5",
+  "baseline_sha": "8d5ff0dab02054549f41f5c187a1125651752cf9",
   "previous_branch_head": "a8b20ab0fcd6c5f9803623bfa14f36d38feb66a0",
   "pr": {
     "numero": 262,
@@ -502,6 +503,46 @@
       "LOTE-09.md",
       "RECONCILIACAO-09.json",
       "RECONCILIACAO-09.csv"
+    ]
+  },
+  "reconciliacao_10": {
+    "main_sha": "8d5ff0dab02054549f41f5c187a1125651752cf9",
+    "source_pr": 270,
+    "ids": [
+      "MAN-1304",
+      "MAN-1305",
+      "MAN-1306",
+      "MAN-1307",
+      "MAN-1308",
+      "MAN-1353",
+      "MAN-1354",
+      "MAN-1355",
+      "MAN-1356",
+      "MAN-1357",
+      "MAN-1358",
+      "MAN-1359",
+      "MAN-1360",
+      "MAN-1361",
+      "MAN-1362"
+    ],
+    "santos_ids": [
+      "MAN-1307",
+      "MAN-1361"
+    ],
+    "previous_santos_id": "MAN-1253",
+    "local_structural_pass": 15,
+    "source_primary_confirmed": false,
+    "full_id_hash_reconciliation_complete": false,
+    "consumer_origin_verified": false,
+    "homologated": 0,
+    "corrected": 0,
+    "report": "LOTE-10.md",
+    "tests_not_run": [
+      "full schema",
+      "CI",
+      "build",
+      "runtime selection",
+      "Vercel production"
     ]
   }
 }
