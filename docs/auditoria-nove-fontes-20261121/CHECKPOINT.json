@@ -7,8 +7,8 @@
   "base_branch": "main",
   "base_sha_at_creation": "14c6afed392cb6d87e80c8ff3453299e949039b4",
   "stage": "02",
-  "stage_name": "Reconciliação estrutural main/PRs e proveniência",
-  "stage_status": "reconciliação estrutural parcial; cotejo de hashes por ID, consumidores e homologação pendentes",
+  "stage_name": "Reconciliação de restauração concorrente PR #263",
+  "stage_status": "delta da main reconciliado em nível de arquivos e 14 IDs; inventário por hash pendente",
   "banks_discovered": [
     "arte-naval.json",
     "comunicacoes.json",
@@ -41,12 +41,13 @@
   "notes": [
     "Outra automação ativa 'Auditar bancos do PSCPP'; checar concorrência antes de editar.",
     "Nenhum gabarito foi homologado nesta etapa inicial.",
-    "Rodada 02: main igual ao baseline; PR #262 só documentação; concorrentes #172/#173/#175/#184; PIANC121 não é PIANC117; nenhum cotejo autoral ou teste novo nesta rodada."
+    "Rodada 02: main igual ao baseline; PR #262 só documentação; concorrentes #172/#173/#175/#184; PIANC121 não é PIANC117; nenhum cotejo autoral ou teste novo nesta rodada.",
+    "Rodada 03: main avançou f0a33c4 via PR263, 14 IDs únicos MSC.137(76) e mudança de consumidor; 0/48 interseção com hidrodinâmica; sem cotejo bibliográfico ou novos testes."
   ],
-  "next_stage": "02 (continuação) — materializar JSONs completos, reconciliar hashes por ID e consumidores; depois primeiro lote Santos hidrodinâmica capítulos 3 e 4",
-  "checkpoint_index": 2,
-  "updated_at": "2026-11-22T00:00:07-03:00",
-  "baseline_sha": "14c6afed392cb6d87e80c8ff3453299e949039b4",
+  "next_stage": "02 continuação: indexar os 3051 candidatos por ID/hash contra main f0a33c4, restaurações e consumidores; depois cotejo Santos.",
+  "checkpoint_index": 3,
+  "updated_at": "2026-11-22",
+  "baseline_sha": "f0a33c443670fd33313dc8141f513d640baaa967",
   "previous_branch_head": "cf64490c9125c347122dba70c2e4955dddab22cc",
   "pr": {
     "numero": 262,
@@ -250,5 +251,29 @@
     "consumer_origin_verified": false,
     "pianc121_not_117": true,
     "report": "LOTE-02.md"
+  },
+  "concorrencia_rodada_03": {
+    "main_sha": "f0a33c443670fd33313dc8141f513d640baaa967",
+    "pr": 263,
+    "ids": [
+      "MAN-644",
+      "MAN-645",
+      "MAN-646",
+      "MAN-647",
+      "MAN-648",
+      "MAN-654",
+      "MAN-655",
+      "MAN-697",
+      "MAN-698",
+      "MAN-699",
+      "MAN-700",
+      "MAN-701",
+      "MAN-707",
+      "MAN-708"
+    ],
+    "overlap_48_hidrodinamica": 0,
+    "full_id_hash_reconciliation_complete": false,
+    "report": "LOTE-03.md",
+    "tests_executed_this_round": 0
   }
 }
