@@ -1,0 +1,47 @@
+{
+  "project": "Auditoria PSCPP 9 fontes",
+  "created_at": "2026-11-21T23:36:00-03:00",
+  "deadline": "2026-11-22T23:59:00-03:00",
+  "timezone": "America/Sao_Paulo",
+  "branch": "audit/pscpp-nove-fontes-20261121",
+  "base_branch": "main",
+  "base_sha_at_creation": "14c6afed392cb6d87e80c8ff3453299e949039b4",
+  "stage": "00",
+  "stage_name": "Preflight e localização inicial",
+  "stage_status": "preflight parcial; inventário e cotejo individual não iniciados",
+  "banks_discovered": [
+    "arte-naval.json",
+    "comunicacoes.json",
+    "conhecimentos-gerais.json",
+    "legislacao-regulamentacao.json",
+    "manobrabilidade.json",
+    "meteorologia-oceanografia.json",
+    "navegacao-aguas-restritas.json"
+  ],
+  "files_verified_in_drive": [
+    "NORMAM-311",
+    "NORMAM-701",
+    "RIPEAM consolidado emdez2013",
+    "Fragoso/Cajaty Rebocadores portuários",
+    "Ynoue meteorologia",
+    "Lobo/Soares meteorologia 4ed",
+    "provas 2006/2008/2011/2012",
+    "Prova DPC 2023"
+  ],
+  "uncertain_source_files": [
+    "Santos — Princípios de hidrodinâmica e ação das ondas",
+    "Santos — A manobrabilidade do navio no século 21 (variante Livro 08 Manobras no Navio precisa cotejo)",
+    "PIANC Report 117 integral"
+  ],
+  "reviewed_question_count": 0,
+  "approved_question_count": 0,
+  "corrected_question_count": 0,
+  "merged": false,
+  "deployed": false,
+  "notes": [
+    "Outra automação ativa 'Auditar bancos do PSCPP'; checar concorrência antes de editar.",
+    "Nenhum gabarito foi homologado nesta etapa inicial."
+  ],
+  "next_stage": "01 — extrair padrão e critérios das provas oficiais 2006, 2008, 2011, 2012; depois inventário por ID.",
+  "checkpoint_index": 0
+}
