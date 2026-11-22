@@ -7,8 +7,8 @@
   "base_branch": "main",
   "base_sha_at_creation": "14c6afed392cb6d87e80c8ff3453299e949039b4",
   "stage": "02",
-  "stage_name": "Reconciliação incremental PR #268",
-  "stage_status": "17 IDs estruturais inspecionados; reconciliação global e cotejo bibliográfico pendentes",
+  "stage_name": "Reconciliação incremental PR #269 e classificação de fonte",
+  "stage_status": "15 registros PR269 validados estruturalmente, 1 atribuído a Santos; cotejo autoral pendente",
   "banks_discovered": [
     "arte-naval.json",
     "comunicacoes.json",
@@ -47,12 +47,13 @@
     "Rodada 05: PR265 acrescentou 14 IDs MSC.137(76), sem interseção com os 48 candidatos hidrodinâmica; testes estruturais locais, nenhuma homologação.",
     "Rodada 06: main PR266, 16 IDs MSC.137 sem sobreposição por ID com 48 candidatos de hidrodinâmica; sem revisão bibliográfica ou testes de integração.",
     "Rodada 07: main PR267, 14 IDs do lote09 MSC.137, A–E/gabarito e unicidade local verificados; 0/48 interseção com hidrodinâmica; sem homologação, testes integrados ou merge.",
-    "Rodada 08: main PR268 adicionou 17 IDs MSC137/MSC1053/CONAPRA; JSON, unicidade local, A-E/gabaritos verificados; sem reconciliação global ou cotejo bibliográfico."
+    "Rodada 08: main PR268 adicionou 17 IDs MSC137/MSC1053/CONAPRA; JSON, unicidade local, A-E/gabaritos verificados; sem reconciliação global ou cotejo bibliográfico.",
+    "Rodada 09: PR269 acrescentou 15 IDs, incluindo MAN-1253 com atribuição explícita a Santos; nenhuma revisão bibliográfica, sem merge ou deploy."
   ],
-  "next_stage": "02: reconciliar todos 3051 por ID/hash/origem efetiva; cotejo Santos hidrodinâmica",
-  "checkpoint_index": 8,
+  "next_stage": "Cotejo MAN-1253 na obra Santos cap.7 pp.120–121; reconciliação completa dos 3051 por ID/hash/origem",
+  "checkpoint_index": 9,
   "updated_at": "2026-11-22",
-  "baseline_sha": "a3b97b9176fb961bd4cc9f2ef5dbb09b34eff2f1",
+  "baseline_sha": "cd524245a09c29dd5fdb600617a0569b23361ec5",
   "previous_branch_head": "a8b20ab0fcd6c5f9803623bfa14f36d38feb66a0",
   "pr": {
     "numero": 262,
@@ -368,17 +369,19 @@
     "corrected": 0,
     "merge_allowed": false
   },
-  "tests_run_this_round": {
-    "json_parse": "PASS",
-    "unique_local_ids": "PASS",
-    "five_options_and_answer_key": "PASS"
-  },
+  "tests_run_this_round": [
+    "JSON parse of restored lot",
+    "local ID uniqueness",
+    "five options per question",
+    "correct_answer key exists in options",
+    "intersection with 48 preliminary hydro IDs",
+    "taxonomy/source classification"
+  ],
   "tests_not_run_this_round": [
-    "global ID/hash",
-    "runtime selection",
-    "bibliographic source",
-    "second review",
-    "CI/build"
+    "full 3051 ID hash provenance reconciliation",
+    "primary source reading for MAN-1253",
+    "independent second pass",
+    "schema/build/CI/deploy"
   ],
   "reconciliacao_06": {
     "checkpoint": 6,
@@ -468,5 +471,37 @@
       "production"
     ],
     "merge_allowed": false
+  },
+  "reconciliacao_09": {
+    "main_sha": "cd524245a09c29dd5fdb600617a0569b23361ec5",
+    "pr": 269,
+    "ids": [
+      "MAN-1245",
+      "MAN-1246",
+      "MAN-1247",
+      "MAN-1248",
+      "MAN-1249",
+      "MAN-1250",
+      "MAN-1251",
+      "MAN-1252",
+      "MAN-1253",
+      "MAN-1254",
+      "MAN-1299",
+      "MAN-1300",
+      "MAN-1301",
+      "MAN-1302",
+      "MAN-1303"
+    ],
+    "hydro_intersection": 0,
+    "direct_nine_sources": [
+      "MAN-1253"
+    ],
+    "reviewed_primary_source": 0,
+    "structural_checks_passed": 15,
+    "reports": [
+      "LOTE-09.md",
+      "RECONCILIACAO-09.json",
+      "RECONCILIACAO-09.csv"
+    ]
   }
 }
