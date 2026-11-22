@@ -7,8 +7,8 @@
   "base_branch": "main",
   "base_sha_at_creation": "14c6afed392cb6d87e80c8ff3453299e949039b4",
   "stage": "02",
-  "stage_name": "Reconciliação de restauração concorrente PR #263",
-  "stage_status": "delta da main reconciliado em nível de arquivos e 14 IDs; inventário por hash pendente",
+  "stage_name": "Reconciliação de restauração concorrente PR #264",
+  "stage_status": "14 IDs da restauração MSC.137 lote 06 reconciliados localmente; conciliação global de 3051 candidatos pendente",
   "banks_discovered": [
     "arte-naval.json",
     "comunicacoes.json",
@@ -42,12 +42,13 @@
     "Outra automação ativa 'Auditar bancos do PSCPP'; checar concorrência antes de editar.",
     "Nenhum gabarito foi homologado nesta etapa inicial.",
     "Rodada 02: main igual ao baseline; PR #262 só documentação; concorrentes #172/#173/#175/#184; PIANC121 não é PIANC117; nenhum cotejo autoral ou teste novo nesta rodada.",
-    "Rodada 03: main avançou f0a33c4 via PR263, 14 IDs únicos MSC.137(76) e mudança de consumidor; 0/48 interseção com hidrodinâmica; sem cotejo bibliográfico ou novos testes."
+    "Rodada 03: main avançou f0a33c4 via PR263, 14 IDs únicos MSC.137(76) e mudança de consumidor; 0/48 interseção com hidrodinâmica; sem cotejo bibliográfico ou novos testes.",
+    "Rodada 04: main PR264 adicionou 14 IDs MSC.137(76), únicos no lote e sem interseção com os 48 candidatos hidrodinâmica; sem prova de ausência de conflitos no inventário integral; sem homologação, build ou merge."
   ],
-  "next_stage": "02 continuação: indexar os 3051 candidatos por ID/hash contra main f0a33c4, restaurações e consumidores; depois cotejo Santos.",
-  "checkpoint_index": 3,
+  "next_stage": "02 continuação: reconciliar 3051 candidatos por ID/hash/origem contra main 23c8a3276b4f45c01d974ad9ca946131ddd5a14f e consumidor; iniciar cotejo bibliográfico individual Santos hidrodinâmica",
+  "checkpoint_index": 4,
   "updated_at": "2026-11-22",
-  "baseline_sha": "f0a33c443670fd33313dc8141f513d640baaa967",
+  "baseline_sha": "23c8a3276b4f45c01d974ad9ca946131ddd5a14f",
   "previous_branch_head": "cf64490c9125c347122dba70c2e4955dddab22cc",
   "pr": {
     "numero": 262,
@@ -275,5 +276,49 @@
     "full_id_hash_reconciliation_complete": false,
     "report": "LOTE-03.md",
     "tests_executed_this_round": 0
+  },
+  "concorrencia_rodada_04": {
+    "checkpoint": 4,
+    "base_sha": "23c8a3276b4f45c01d974ad9ca946131ddd5a14f",
+    "previous_base_sha": "f0a33c443670fd33313dc8141f513d640baaa967",
+    "pr": 262,
+    "source_pr": 264,
+    "source_file": "data/question-restorations/manobrabilidade-msc137-lote-06.json",
+    "consumer": "lib/question-restorations.js",
+    "ids": [
+      "MAN-750",
+      "MAN-751",
+      "MAN-752",
+      "MAN-753",
+      "MAN-754",
+      "MAN-760",
+      "MAN-761",
+      "MAN-803",
+      "MAN-804",
+      "MAN-805",
+      "MAN-806",
+      "MAN-807",
+      "MAN-813",
+      "MAN-814"
+    ],
+    "unique_ids": 14,
+    "overlap_with_48_hydrodynamics_candidates": [],
+    "all_3051_candidates_reconciled": false,
+    "homologated": 0,
+    "corrected": 0,
+    "tests_run": [
+      "JSON parse and local uniqueness of 14 IDs; PASS",
+      "Intersection with 48 provisional hydrodynamics IDs; 0"
+    ],
+    "tests_not_run": [
+      "full schema and runtime selection",
+      "build and CI",
+      "bibliographic verification",
+      "full 3051 ID/hash comparison",
+      "production deployment"
+    ],
+    "source_type": "MSC.137(76), not one of nine audited sources; related runtime competition",
+    "status": "CONCORRENCIA_RECONCILIADA_PARCIALMENTE",
+    "merge_allowed": false
   }
 }
