@@ -6,9 +6,9 @@
   "branch": "audit/pscpp-nove-fontes-20261121",
   "base_branch": "main",
   "base_sha_at_creation": "14c6afed392cb6d87e80c8ff3453299e949039b4",
-  "stage": "01",
-  "stage_name": "Padrão histórico e inventário preliminar",
-  "stage_status": "cotejo histórico concluído; reconciliação de inventário e revisão editorial pendentes",
+  "stage": "02",
+  "stage_name": "Reconciliação estrutural main/PRs e proveniência",
+  "stage_status": "reconciliação estrutural parcial; cotejo de hashes por ID, consumidores e homologação pendentes",
   "banks_discovered": [
     "arte-naval.json",
     "comunicacoes.json",
@@ -40,13 +40,14 @@
   "deployed": false,
   "notes": [
     "Outra automação ativa 'Auditar bancos do PSCPP'; checar concorrência antes de editar.",
-    "Nenhum gabarito foi homologado nesta etapa inicial."
+    "Nenhum gabarito foi homologado nesta etapa inicial.",
+    "Rodada 02: main igual ao baseline; PR #262 só documentação; concorrentes #172/#173/#175/#184; PIANC121 não é PIANC117; nenhum cotejo autoral ou teste novo nesta rodada."
   ],
-  "next_stage": "02 — reconciliar IDs, procedência e consumidores com a main atual; verificar parciais sem enunciado e registros candidatos só por tema; preparar o primeiro lote Santos/hidrodinâmica a partir dos capítulos 3 e 4.",
-  "checkpoint_index": 1,
-  "updated_at": "2026-11-21T23:53:03-03:00",
+  "next_stage": "02 (continuação) — materializar JSONs completos, reconciliar hashes por ID e consumidores; depois primeiro lote Santos hidrodinâmica capítulos 3 e 4",
+  "checkpoint_index": 2,
+  "updated_at": "2026-11-22T00:00:07-03:00",
   "baseline_sha": "14c6afed392cb6d87e80c8ff3453299e949039b4",
-  "previous_branch_head": "a5b08fc7cb691a252ae34a6464007a354f9a12db",
+  "previous_branch_head": "cf64490c9125c347122dba70c2e4955dddab22cc",
   "pr": {
     "numero": 262,
     "estado": "draft",
@@ -226,5 +227,28 @@
     "INVENTARIO.json": "777116c2455e13be3b0fc15fadbf35b498f0b21321f27298cb209c1548872a78",
     "LOTE-01.md": "810cc2d5486e9e57075abdacb2bf87462015855d2f83764617931fed36123698"
   },
-  "inventario_detalhado": "https://chatgpt.com/library?file_id=libfile_90e8da1b68f881919833d09ab61e441a&account_id=personal"
+  "inventario_detalhado": "https://chatgpt.com/library?file_id=libfile_90e8da1b68f881919833d09ab61e441a&account_id=personal",
+  "reconciliation": {
+    "main_sha": "14c6afed392cb6d87e80c8ff3453299e949039b4",
+    "pr262_head_before": "cf64490c9125c347122dba70c2e4955dddab22cc",
+    "parallel_prs": [
+      172,
+      173,
+      175,
+      184
+    ],
+    "canonical_blobs": {
+      "arte-naval.json": "e745ff262af143b59c5f629f59d8f42edecd303e",
+      "comunicacoes.json": "9b0459a90756c864a45a556dc5ec6406d4e7f404",
+      "conhecimentos-gerais.json": "1943eaf1093e401efc1abfd6ebde06b99f1a9021",
+      "legislacao-regulamentacao.json": "cd7b16ea5cdef66c708f30c35bd8e408ff158676",
+      "manobrabilidade.json": "7d91a960b5901e1595e723d0382ddd3693616a62",
+      "meteorologia-oceanografia.json": "a19068ec68e381fd4a2cbbf5cd9b21ce2492cd1c",
+      "navegacao-aguas-restritas.json": "6bfacdbad217943ce9b7270faca5a0fb31890d27"
+    },
+    "by_id_hashes_verified": false,
+    "consumer_origin_verified": false,
+    "pianc121_not_117": true,
+    "report": "LOTE-02.md"
+  }
 }
