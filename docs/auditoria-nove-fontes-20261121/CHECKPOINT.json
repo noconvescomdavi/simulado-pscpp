@@ -7,7 +7,7 @@
   "base_branch": "main",
   "base_sha_at_creation": "14c6afed392cb6d87e80c8ff3453299e949039b4",
   "stage": "02",
-  "stage_name": "Reconciliação incremental lote24; cotejo primário e reconciliação global pendentes",
+  "stage_name": "Reconciliação incremental lote25; cotejo primário e reconciliação global pendentes",
   "stage_status": "15 IDs triados estruturalmente; 0 homologados",
   "banks_discovered": [
     "arte-naval.json",
@@ -61,13 +61,14 @@
     "Rodada 19: PR279 integrado na main, 15 IDs do lote21 triados, MAN-2063 cita Santos CONAPRA 2021; total 19 Santos recentes sem cotejo primário; sem homologação, segunda passagem, CI ou deploy.",
     "Rodada 20: PR280 integrado na main, lote22 triado estruturalmente; sem cotejo primário, homologação, segunda passagem, CI ou deploy.",
     "Rodada 21: lote23 com 15 IDs únicos e opções A-E válidas; 4 atribuições Santos (MAN-2222/2225/2271/2274); nenhuma homologação, segunda passagem ou CI.",
-    "Rodada 22: main PR282 lote24 15 IDs, 5 atribuições Santos (MAN-2276, MAN-2277, MAN-2279, MAN-2331, MAN-2333); checagem estrutural PASS; sem cotejo primário, homologação, CI ou deploy."
+    "Rodada 22: main PR282 lote24 15 IDs, 5 atribuições Santos (MAN-2276, MAN-2277, MAN-2279, MAN-2331, MAN-2333); checagem estrutural PASS; sem cotejo primário, homologação, CI ou deploy.",
+    "Rodada 23: main PR283 merged, lote25 15 IDs triados A-E/gabarito formalmente válidos; 4 atribuições Santos MAN-2384/2387/2433/2435, total 39 Santos recentes pendentes; sem cotejo primário, reconciliação global, segunda passagem, CI ou deploy."
   ],
-  "next_stage": "Reconciliar 3051 IDs por hash/origem efetiva; cotejar IDs Santos na fonte primária CONAPRA 2021",
-  "checkpoint_index": 22,
-  "updated_at": "2026-11-22T19:58:03-03:00",
-  "baseline_sha": "259b97b5426193915240344f134c20f3d1bbf5dc",
-  "previous_branch_head": "d5860bec7b2f97e6f37c38a5c92b8a4cc9d10ffa",
+  "next_stage": "Reconciliação global dos 3051 IDs por hash e origem efetiva; cotejo primário dos 39 Santos recentes",
+  "checkpoint_index": 23,
+  "updated_at": "2026-11-22T20:55:50-03:00",
+  "baseline_sha": "89ae9e23e975b17d26922a6a14074a6c1793c908",
+  "previous_branch_head": "f75ec049196473448fe18416ae0823ed6987a792",
   "pr": {
     "numero": 262,
     "estado": "draft",
