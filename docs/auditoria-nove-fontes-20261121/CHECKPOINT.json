@@ -7,7 +7,7 @@
   "base_branch": "main",
   "base_sha_at_creation": "14c6afed392cb6d87e80c8ff3453299e949039b4",
   "stage": "02",
-  "stage_name": "Reconciliação incremental PR273; cotejo autoral e origem efetiva pendentes",
+  "stage_name": "Reconciliação incremental PR274; cotejo autoral e origem efetiva pendentes",
   "stage_status": "15 IDs triados estruturalmente; 0 homologados",
   "banks_discovered": [
     "arte-naval.json",
@@ -52,12 +52,13 @@
     "Rodada 10: PR270 adicionou 15 IDs (13 IMO, 2 Santos); 15 testes estruturais locais PASS. PDF Livro 08 de Edson é obra de título diferente da edição CONAPRA 2021 citada, logo MAN-1253/1307/1361 bloqueados para homologação; nenhuma questão corrigida.",
     "Rodada 11: main PR271, 15 IDs no lote13; MAN-1415 atribuído a Santos CONAPRA 2021 sem conferência primária; 14 fontes IMO; 0 interseção com os 48 candidatos hidrodinâmica; sem revisão bibliográfica, CI ou deploy.",
     "Rodada 12: PR272 acrescentou 15 restaurações, duas atribuídas a Santos; testes estruturais locais PASS, seis Santos pendentes de fonte primária; consumidor substitui somente IDs já existentes; sem homologação, CI ou deploy.",
-    "Rodada 13: main PR273, 15 registros, 15 A-E/chave formalmente válidos, 1 com Santos declarado; sem cotejo primário, homologação, CI ou deploy."
+    "Rodada 13: main PR273, 15 registros, 15 A-E/chave formalmente válidos, 1 com Santos declarado; sem cotejo primário, homologação, CI ou deploy.",
+    "Rodada 14: PR274 incorporado na main, 15 registros triados estruturalmente, quatro com Santos CONAPRA 2021 declarado; sem cotejo primário, homologação, CI ou deploy."
   ],
-  "next_stage": "Cotejar seis IDs Santos CONAPRA 2021; reconciliar por ID/hash/origem efetiva todos os candidatos",
-  "checkpoint_index": 13,
-  "updated_at": "2026-11-22",
-  "baseline_sha": "43571dfab37cc00de75faa12c10ee3baaf393dd1",
+  "next_stage": "Cotejar Santos CONAPRA 2021 por ID e concluir reconciliação global por ID/hash/origem efetiva",
+  "checkpoint_index": 14,
+  "updated_at": "2026-11-22T12:02:14-03:00",
+  "baseline_sha": "d7068975b6b9598c5a5643168f022d5024c356af",
   "previous_branch_head": "a8b20ab0fcd6c5f9803623bfa14f36d38feb66a0",
   "pr": {
     "numero": 262,
@@ -240,7 +241,7 @@
   },
   "inventario_detalhado": "https://chatgpt.com/library?file_id=libfile_90e8da1b68f881919833d09ab61e441a&account_id=personal",
   "reconciliation": {
-    "main_sha": "14c6afed392cb6d87e80c8ff3453299e949039b4",
+    "main_sha": "d7068975b6b9598c5a5643168f022d5024c356af",
     "pr262_head_before": "cf64490c9125c347122dba70c2e4955dddab22cc",
     "parallel_prs": [
       172,
@@ -260,7 +261,7 @@
     "by_id_hashes_verified": false,
     "consumer_origin_verified": false,
     "pianc121_not_117": true,
-    "report": "LOTE-13.md"
+    "report": "LOTE-14.md"
   },
   "concorrencia_rodada_03": {
     "main_sha": "f0a33c443670fd33313dc8141f513d640baaa967",
@@ -642,5 +643,44 @@
     ],
     "report": "LOTE-12.md",
     "merge_allowed": false
+  },
+  "reconciliacao_14": {
+    "source_pr": 274,
+    "source_blob_sha": "ae9a8124c697fbf5a360c10374e253f794211b74",
+    "ids": [
+      "MAN-1628",
+      "MAN-1629",
+      "MAN-1630",
+      "MAN-1631",
+      "MAN-1632",
+      "MAN-1677",
+      "MAN-1678",
+      "MAN-1679",
+      "MAN-1680",
+      "MAN-1681",
+      "MAN-1682",
+      "MAN-1683",
+      "MAN-1684",
+      "MAN-1685",
+      "MAN-1686"
+    ],
+    "santos_ids": [
+      "MAN-1630",
+      "MAN-1631",
+      "MAN-1684",
+      "MAN-1685"
+    ],
+    "local_unique": true,
+    "formal_options_and_key": false,
+    "homologated": 0,
+    "corrected": 0,
+    "full_reconciliation_complete": false,
+    "tests_not_run": [
+      "bibliografia primária",
+      "segunda passagem",
+      "build",
+      "CI",
+      "deploy"
+    ]
   }
 }
