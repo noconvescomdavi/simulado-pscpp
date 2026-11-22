@@ -7,8 +7,8 @@
   "base_branch": "main",
   "base_sha_at_creation": "14c6afed392cb6d87e80c8ff3453299e949039b4",
   "stage": "02",
-  "stage_name": "Reconciliação de restauração concorrente PR #264",
-  "stage_status": "14 IDs da restauração MSC.137 lote 06 reconciliados localmente; conciliação global de 3051 candidatos pendente",
+  "stage_name": "Reconciliação de restauração concorrente PR #265",
+  "stage_status": "14 IDs MSC.137 lote 07 verificados localmente; reconciliação global de 3051 candidatos ainda pendente",
   "banks_discovered": [
     "arte-naval.json",
     "comunicacoes.json",
@@ -43,12 +43,13 @@
     "Nenhum gabarito foi homologado nesta etapa inicial.",
     "Rodada 02: main igual ao baseline; PR #262 só documentação; concorrentes #172/#173/#175/#184; PIANC121 não é PIANC117; nenhum cotejo autoral ou teste novo nesta rodada.",
     "Rodada 03: main avançou f0a33c4 via PR263, 14 IDs únicos MSC.137(76) e mudança de consumidor; 0/48 interseção com hidrodinâmica; sem cotejo bibliográfico ou novos testes.",
-    "Rodada 04: main PR264 adicionou 14 IDs MSC.137(76), únicos no lote e sem interseção com os 48 candidatos hidrodinâmica; sem prova de ausência de conflitos no inventário integral; sem homologação, build ou merge."
+    "Rodada 04: main PR264 adicionou 14 IDs MSC.137(76), únicos no lote e sem interseção com os 48 candidatos hidrodinâmica; sem prova de ausência de conflitos no inventário integral; sem homologação, build ou merge.",
+    "Rodada 05: PR265 acrescentou 14 IDs MSC.137(76), sem interseção com os 48 candidatos hidrodinâmica; testes estruturais locais, nenhuma homologação."
   ],
-  "next_stage": "02 continuação: reconciliar 3051 candidatos por ID/hash/origem contra main 23c8a3276b4f45c01d974ad9ca946131ddd5a14f e consumidor; iniciar cotejo bibliográfico individual Santos hidrodinâmica",
-  "checkpoint_index": 4,
+  "next_stage": "02 continuação: comparar ID/hash/origem efetiva dos 3051 candidatos na main 51fe10b e consumidores; iniciar cotejo bibliográfico Santos hidrodinâmica",
+  "checkpoint_index": 5,
   "updated_at": "2026-11-22",
-  "baseline_sha": "23c8a3276b4f45c01d974ad9ca946131ddd5a14f",
+  "baseline_sha": "51fe10bedf97dfe512266989c5c797820e2cef94",
   "previous_branch_head": "cf64490c9125c347122dba70c2e4955dddab22cc",
   "pr": {
     "numero": 262,
@@ -320,5 +321,61 @@
     "source_type": "MSC.137(76), not one of nine audited sources; related runtime competition",
     "status": "CONCORRENCIA_RECONCILIADA_PARCIALMENTE",
     "merge_allowed": false
-  }
+  },
+  "concorrencia_rodada_05": {
+    "checkpoint": 5,
+    "main_sha": "51fe10bedf97dfe512266989c5c797820e2cef94",
+    "previous_main_sha": "23c8a3276b4f45c01d974ad9ca946131ddd5a14f",
+    "source_pr": 265,
+    "source_file": "data/question-restorations/manobrabilidade-msc137-lote-07.json",
+    "consumer": "lib/question-restorations.js",
+    "source_reference": "IMO MSC.137(76), fora das nove fontes",
+    "ids": [
+      "MAN-856",
+      "MAN-857",
+      "MAN-858",
+      "MAN-859",
+      "MAN-860",
+      "MAN-866",
+      "MAN-867",
+      "MAN-909",
+      "MAN-910",
+      "MAN-911",
+      "MAN-912",
+      "MAN-913",
+      "MAN-919",
+      "MAN-920"
+    ],
+    "unique_ids": 14,
+    "overlap_with_48_hydrodynamics_candidates": [],
+    "structural_checks": {
+      "json_parse": "PASS",
+      "unique_local_ids": "PASS",
+      "five_options_and_answer_key": "PASS"
+    },
+    "not_checked": [
+      "conflitos com todos os 3051 candidatos",
+      "hashes de cada ID nos sete bancos e overrides",
+      "consumidor efetivo por ID",
+      "fonte bibliográfica primária",
+      "segunda passagem editorial",
+      "build e CI"
+    ],
+    "homologated": 0,
+    "corrected": 0,
+    "merge_allowed": false
+  },
+  "tests_run_this_round": {
+    "json_parse": "PASS",
+    "unique_local_ids": "PASS",
+    "five_options_and_answer_key": "PASS"
+  },
+  "tests_not_run_this_round": [
+    "conflitos com todos os 3051 candidatos",
+    "hashes de cada ID nos sete bancos e overrides",
+    "consumidor efetivo por ID",
+    "fonte bibliográfica primária",
+    "segunda passagem editorial",
+    "build e CI"
+  ]
 }
