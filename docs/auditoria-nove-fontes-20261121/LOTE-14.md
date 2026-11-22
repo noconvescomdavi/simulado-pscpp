@@ -10,7 +10,7 @@ PR #274 integrado na main em d7068975b6b9598c5a5643168f022d5024c356af; acrescent
 
 ## Triagem local
 15 IDs: MAN-1628, MAN-1629, MAN-1630, MAN-1631, MAN-1632, MAN-1677, MAN-1678, MAN-1679, MAN-1680, MAN-1681, MAN-1682, MAN-1683, MAN-1684, MAN-1685, MAN-1686.
-Unicidade local: PASS; cinco opções A–E e chave presente: FAIL. Santos CONAPRA 2021 declarados: MAN-1630, MAN-1631, MAN-1684, MAN-1685; os demais têm referência declarada IMO MSC.137(76)/MSC/Circ.1053, sem cotejo primário nesta rodada. Estes testes são apenas inspeção estrutural do pacote, **não homologação**. Nenhum hash individual de enunciado foi reconciliado contra todos os bancos. Nenhuma questão corrigida, aprovada ou desativada pela auditoria nove fontes.
+Unicidade local: PASS; cinco opções A–E e chave presente: PASS. Santos CONAPRA 2021 declarados: MAN-1630, MAN-1631, MAN-1684, MAN-1685; os demais têm referência declarada IMO MSC.137(76)/MSC/Circ.1053, sem cotejo primário nesta rodada. As alternativas são objetos em uma lista, não chaves de um objeto; validação adaptada ao esquema real. Estes testes são apenas inspeção estrutural do pacote, **não homologação**. Nenhum hash individual de enunciado foi reconciliado contra todos os bancos. Nenhuma questão corrigida, aprovada ou desativada pela auditoria nove fontes.
 
 ## Bloqueios e próximos passos
 Falta confronto integral de 3.051 candidatos por ID/hash/origem efetiva, cotejo na edição CONAPRA 2021 de Santos, segunda passagem independente e testes reais do projeto. A validação de taxonomia Arte Naval reportada no checkpoint inicial era falha preexistente e não foi reexecutada. CI, build e Vercel Production não foram verificados nesta execução. Merge da auditoria não autorizado.
