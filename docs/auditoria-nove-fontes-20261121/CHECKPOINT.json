@@ -7,8 +7,8 @@
   "base_branch": "main",
   "base_sha_at_creation": "14c6afed392cb6d87e80c8ff3453299e949039b4",
   "stage": "02",
-  "stage_name": "Reconciliação incremental PR #267",
-  "stage_status": "14 IDs MSC.137 lote 09 validados estruturalmente; inventário global e cotejo autoral pendentes",
+  "stage_name": "Reconciliação incremental PR #268",
+  "stage_status": "17 IDs estruturais inspecionados; reconciliação global e cotejo bibliográfico pendentes",
   "banks_discovered": [
     "arte-naval.json",
     "comunicacoes.json",
@@ -46,12 +46,13 @@
     "Rodada 04: main PR264 adicionou 14 IDs MSC.137(76), únicos no lote e sem interseção com os 48 candidatos hidrodinâmica; sem prova de ausência de conflitos no inventário integral; sem homologação, build ou merge.",
     "Rodada 05: PR265 acrescentou 14 IDs MSC.137(76), sem interseção com os 48 candidatos hidrodinâmica; testes estruturais locais, nenhuma homologação.",
     "Rodada 06: main PR266, 16 IDs MSC.137 sem sobreposição por ID com 48 candidatos de hidrodinâmica; sem revisão bibliográfica ou testes de integração.",
-    "Rodada 07: main PR267, 14 IDs do lote09 MSC.137, A–E/gabarito e unicidade local verificados; 0/48 interseção com hidrodinâmica; sem homologação, testes integrados ou merge."
+    "Rodada 07: main PR267, 14 IDs do lote09 MSC.137, A–E/gabarito e unicidade local verificados; 0/48 interseção com hidrodinâmica; sem homologação, testes integrados ou merge.",
+    "Rodada 08: main PR268 adicionou 17 IDs MSC137/MSC1053/CONAPRA; JSON, unicidade local, A-E/gabaritos verificados; sem reconciliação global ou cotejo bibliográfico."
   ],
-  "next_stage": "02: reconciliação global 3051 por ID/hash/origem efetiva; cotejo Santos hidrodinâmica",
-  "checkpoint_index": 7,
+  "next_stage": "02: reconciliar todos 3051 por ID/hash/origem efetiva; cotejo Santos hidrodinâmica",
+  "checkpoint_index": 8,
   "updated_at": "2026-11-22",
-  "baseline_sha": "d5c30a7d183e60c794793e94c6ae2c4859e05e69",
+  "baseline_sha": "a3b97b9176fb961bd4cc9f2ef5dbb09b34eff2f1",
   "previous_branch_head": "a8b20ab0fcd6c5f9803623bfa14f36d38feb66a0",
   "pr": {
     "numero": 262,
@@ -373,10 +374,10 @@
     "five_options_and_answer_key": "PASS"
   },
   "tests_not_run_this_round": [
-    "overlap com todos os 3051 candidatos",
-    "comparação dos hashes em todos os bancos/overrides",
-    "proveniência efetiva do consumidor",
-    "fonte primária e segunda revisão",
+    "global ID/hash",
+    "runtime selection",
+    "bibliographic source",
+    "second review",
     "CI/build"
   ],
   "reconciliacao_06": {
@@ -421,6 +422,51 @@
     ],
     "homologated": 0,
     "corrected": 0,
+    "merge_allowed": false
+  },
+  "reconciliacao_08": {
+    "checkpoint": 8,
+    "main_sha": "a3b97b9176fb961bd4cc9f2ef5dbb09b34eff2f1",
+    "source_pr": 268,
+    "source_file": "data/question-restorations/manobrabilidade-msc137-lote-10.json",
+    "source_blob_sha": "f95c433dc8f545d2c777df0bb97153c708819243",
+    "ids": [
+      "MAN-1140",
+      "MAN-1141",
+      "MAN-1142",
+      "MAN-1143",
+      "MAN-1144",
+      "MAN-1145",
+      "MAN-1146",
+      "MAN-1191",
+      "MAN-1192",
+      "MAN-1193",
+      "MAN-1194",
+      "MAN-1195",
+      "MAN-1196",
+      "MAN-1197",
+      "MAN-1198",
+      "MAN-1199",
+      "MAN-1200"
+    ],
+    "local_structural_check": "PASS",
+    "all_3051_candidates_reconciled": false,
+    "consumer_imported": true,
+    "consumer_runtime_verified": false,
+    "homologated": 0,
+    "corrected": 0,
+    "tests_run": [
+      "JSON parse",
+      "17 local unique IDs",
+      "17 options A-E and answer key validity"
+    ],
+    "tests_not_run": [
+      "global ID/hash",
+      "bibliographic review",
+      "second pass",
+      "build/CI",
+      "production"
+    ],
     "merge_allowed": false
   }
 }
