@@ -7,8 +7,8 @@
   "base_branch": "main",
   "base_sha_at_creation": "14c6afed392cb6d87e80c8ff3453299e949039b4",
   "stage": "02",
-  "stage_name": "Reconciliação incremental PR272 e seis referências Santos pendentes",
-  "stage_status": "15 IDs triados estruturalmente; dois novos Santos bloqueados de homologação",
+  "stage_name": "Reconciliação incremental PR273; cotejo autoral e origem efetiva pendentes",
+  "stage_status": "15 IDs triados estruturalmente; 0 homologados",
   "banks_discovered": [
     "arte-naval.json",
     "comunicacoes.json",
@@ -51,12 +51,13 @@
     "Rodada 09: PR269 acrescentou 15 IDs, incluindo MAN-1253 com atribuição explícita a Santos; nenhuma revisão bibliográfica, sem merge ou deploy.",
     "Rodada 10: PR270 adicionou 15 IDs (13 IMO, 2 Santos); 15 testes estruturais locais PASS. PDF Livro 08 de Edson é obra de título diferente da edição CONAPRA 2021 citada, logo MAN-1253/1307/1361 bloqueados para homologação; nenhuma questão corrigida.",
     "Rodada 11: main PR271, 15 IDs no lote13; MAN-1415 atribuído a Santos CONAPRA 2021 sem conferência primária; 14 fontes IMO; 0 interseção com os 48 candidatos hidrodinâmica; sem revisão bibliográfica, CI ou deploy.",
-    "Rodada 12: PR272 acrescentou 15 restaurações, duas atribuídas a Santos; testes estruturais locais PASS, seis Santos pendentes de fonte primária; consumidor substitui somente IDs já existentes; sem homologação, CI ou deploy."
+    "Rodada 12: PR272 acrescentou 15 restaurações, duas atribuídas a Santos; testes estruturais locais PASS, seis Santos pendentes de fonte primária; consumidor substitui somente IDs já existentes; sem homologação, CI ou deploy.",
+    "Rodada 13: main PR273, 15 registros, 15 A-E/chave formalmente válidos, 1 com Santos declarado; sem cotejo primário, homologação, CI ou deploy."
   ],
-  "next_stage": "Cotejar seis IDs Santos CONAPRA 2021 na fonte primária; reconstruir origem efetiva por ID e hashes nos 3051 candidatos",
-  "checkpoint_index": 12,
+  "next_stage": "Cotejar seis IDs Santos CONAPRA 2021; reconciliar por ID/hash/origem efetiva todos os candidatos",
+  "checkpoint_index": 13,
   "updated_at": "2026-11-22",
-  "baseline_sha": "6f5b7ea2dcf63baefdc51b4f484b63ca397bf8bc",
+  "baseline_sha": "43571dfab37cc00de75faa12c10ee3baaf393dd1",
   "previous_branch_head": "a8b20ab0fcd6c5f9803623bfa14f36d38feb66a0",
   "pr": {
     "numero": 262,
@@ -259,7 +260,7 @@
     "by_id_hashes_verified": false,
     "consumer_origin_verified": false,
     "pianc121_not_117": true,
-    "report": "LOTE-02.md"
+    "report": "LOTE-13.md"
   },
   "concorrencia_rodada_03": {
     "main_sha": "f0a33c443670fd33313dc8141f513d640baaa967",
