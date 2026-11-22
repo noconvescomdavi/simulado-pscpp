@@ -671,7 +671,7 @@
       "MAN-1685"
     ],
     "local_unique": true,
-    "formal_options_and_key": false,
+    "formal_options_and_key": true,
     "homologated": 0,
     "corrected": 0,
     "full_reconciliation_complete": false,
@@ -681,6 +681,7 @@
       "build",
       "CI",
       "deploy"
-    ]
+    ],
+    "option_schema": "array of {key,text}"
   }
 }
