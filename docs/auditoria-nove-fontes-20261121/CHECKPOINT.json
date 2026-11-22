@@ -7,8 +7,8 @@
   "base_branch": "main",
   "base_sha_at_creation": "14c6afed392cb6d87e80c8ff3453299e949039b4",
   "stage": "02",
-  "stage_name": "Reconciliação incremental PR271 e pendência Santos MAN-1415",
-  "stage_status": "15 IDs com validação estrutural local; 1 novo candidato Santos bloqueado de homologação; sem cotejo individual",
+  "stage_name": "Reconciliação incremental PR272 e seis referências Santos pendentes",
+  "stage_status": "15 IDs triados estruturalmente; dois novos Santos bloqueados de homologação",
   "banks_discovered": [
     "arte-naval.json",
     "comunicacoes.json",
@@ -50,12 +50,13 @@
     "Rodada 08: main PR268 adicionou 17 IDs MSC137/MSC1053/CONAPRA; JSON, unicidade local, A-E/gabaritos verificados; sem reconciliação global ou cotejo bibliográfico.",
     "Rodada 09: PR269 acrescentou 15 IDs, incluindo MAN-1253 com atribuição explícita a Santos; nenhuma revisão bibliográfica, sem merge ou deploy.",
     "Rodada 10: PR270 adicionou 15 IDs (13 IMO, 2 Santos); 15 testes estruturais locais PASS. PDF Livro 08 de Edson é obra de título diferente da edição CONAPRA 2021 citada, logo MAN-1253/1307/1361 bloqueados para homologação; nenhuma questão corrigida.",
-    "Rodada 11: main PR271, 15 IDs no lote13; MAN-1415 atribuído a Santos CONAPRA 2021 sem conferência primária; 14 fontes IMO; 0 interseção com os 48 candidatos hidrodinâmica; sem revisão bibliográfica, CI ou deploy."
+    "Rodada 11: main PR271, 15 IDs no lote13; MAN-1415 atribuído a Santos CONAPRA 2021 sem conferência primária; 14 fontes IMO; 0 interseção com os 48 candidatos hidrodinâmica; sem revisão bibliográfica, CI ou deploy.",
+    "Rodada 12: PR272 acrescentou 15 restaurações, duas atribuídas a Santos; testes estruturais locais PASS, seis Santos pendentes de fonte primária; consumidor substitui somente IDs já existentes; sem homologação, CI ou deploy."
   ],
-  "next_stage": "Localizar a edição CONAPRA 2021 e cotejar MAN-1253, MAN-1307, MAN-1361, MAN-1415; prosseguir reconciliação 3051 IDs por hash/origem",
-  "checkpoint_index": 11,
+  "next_stage": "Cotejar seis IDs Santos CONAPRA 2021 na fonte primária; reconstruir origem efetiva por ID e hashes nos 3051 candidatos",
+  "checkpoint_index": 12,
   "updated_at": "2026-11-22",
-  "baseline_sha": "8f88127de625e74ca1958a86b37029ee61ec32cf",
+  "baseline_sha": "6f5b7ea2dcf63baefdc51b4f484b63ca397bf8bc",
   "previous_branch_head": "a8b20ab0fcd6c5f9803623bfa14f36d38feb66a0",
   "pr": {
     "numero": 262,
@@ -592,5 +593,53 @@
       "runtime selection",
       "production"
     ]
+  },
+  "reconciliacao_12": {
+    "main_sha": "6f5b7ea2dcf63baefdc51b4f484b63ca397bf8bc",
+    "source_pr": 272,
+    "source_file": "data/question-restorations/manobrabilidade-msc137-lote-14.json",
+    "source_blob_sha": "dc3c623945b5cbb0df7c93c946e5a5070ba11ea4",
+    "consumer_blob_sha": "04aed80dded9880da86275383c657242ce930087",
+    "ids": [
+      "MAN-1466",
+      "MAN-1467",
+      "MAN-1468",
+      "MAN-1469",
+      "MAN-1470",
+      "MAN-1515",
+      "MAN-1516",
+      "MAN-1517",
+      "MAN-1518",
+      "MAN-1519",
+      "MAN-1520",
+      "MAN-1521",
+      "MAN-1522",
+      "MAN-1523",
+      "MAN-1524"
+    ],
+    "structural_pass": 15,
+    "santos_ids": [
+      "MAN-1469",
+      "MAN-1523"
+    ],
+    "santos_total_pending_ids": [
+      "MAN-1253",
+      "MAN-1307",
+      "MAN-1361",
+      "MAN-1415",
+      "MAN-1469",
+      "MAN-1523"
+    ],
+    "bibliographic_homologated": 0,
+    "full_reconciliation_complete": false,
+    "tests": [
+      "parse JSON",
+      "15 IDs únicos localmente",
+      "5 alternativas e chave presente",
+      "compare commits",
+      "inspeção estática consumidor"
+    ],
+    "report": "LOTE-12.md",
+    "merge_allowed": false
   }
 }
