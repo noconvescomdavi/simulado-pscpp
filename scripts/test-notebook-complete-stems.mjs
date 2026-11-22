@@ -38,6 +38,10 @@ const primaryRestorations = JSON.parse(fs.readFileSync(new URL("../data/question
 const primaryMainBank = JSON.parse(fs.readFileSync(new URL("../data/questions/arte-naval.json", import.meta.url))).questions;
 const stable = value => Array.isArray(value) ? value.map(stable) : value && typeof value === "object"
   ? Object.fromEntries(Object.keys(value).sort().map(key => [key, stable(value[key])])) : value;
+// These later technical corrections change the explanation after the stem-only audit.
+const revisedExplanationHashes = {
+  "manobrabilidade/MAN-B006-13": "2e2ff068b63471d814f579edc67a463eea4df5e4d9e7c12d0745731b2d31adf6",
+};
 const byBank = {};
 const reasons = {};
 for (const edit of pack.edits) {
@@ -95,7 +99,8 @@ for (const edit of pack.edits) {
         assert.equal(question.question, primary.question, `Primary stem overwritten: ${edit.id}`);
         assert.equal(question.explanation, primary.explanation, `Primary explanation overwritten: ${edit.id}`);
       } else {
-        assert.equal(digest(question.explanation), before.explanation_sha256, `Explanation changed: ${edit.id}`);
+        const expected = revisedExplanationHashes[`${edit.bank}/${edit.id}`] ?? before.explanation_sha256;
+        assert.equal(digest(question.explanation), expected, `Explanation changed: ${edit.id}`);
       }
     }
     if (edit.reasons.includes("inline_assertions_removed")) {
