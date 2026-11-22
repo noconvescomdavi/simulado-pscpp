@@ -479,12 +479,12 @@
       "style": "Assertivas",
       "pscpp_format": "assertions",
       "cognitive_level": 3,
-      "question": "Segundo IMO MSC.137(76) — Standards for Ship Manoeuvrability, analise as afirmativas sobre full astern stopping test, track reach, condições padrão dos ensaios, critério de turning ability e assinale a opção correta.",
+      "question": "Analise as afirmativas sobre a medição em prova de parada a ré e escolha a combinação correta.",
       "assertions": [
-        "I) full astern stopping test: mede somente o tempo de reversão do leme.",
-        "II) track reach: é a distância ao longo da trajetória do ponto médio do navio entre a ordem de toda força a ré e a parada.",
-        "III) condições padrão dos ensaios: incluem águas profundas e irrestritas, ambiente calmo, plena carga/even keel e aproximação estável à velocidade de teste.",
-        "IV) critério de turning ability: limita o advance a 4,5 L e o tactical diameter a 5 L."
+        "I) A distância começa a ser medida somente depois de o propulsor atingir rotação máxima a ré.",
+        "II) O ponto de referência fica na linha de centro, a meio caminho entre as perpendiculares.",
+        "III) Uma trajetória curva exige medir seu percurso, que pode exceder a distância em linha reta entre as posições inicial e final.",
+        "IV) A referência para o fim da medição é a parada do navio em relação à água."
       ],
       "options": [
         {
@@ -509,7 +509,7 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "A afirmativa I é incorreta.",
+      "explanation": "I é falsa, pois a posição inicial é registrada na ordem de toda força a ré. II, III e IV são verdadeiras: usa-se o ponto de meia-nau, integra-se sua trajetória e encerra-se a medição na parada em relação à água.",
       "active": true,
       "validation_status": "approved",
       "taxonomy": {
@@ -522,7 +522,8 @@
       },
       "source": {
         "title": "IMO MSC.137(76) — Standards for Ship Manoeuvrability",
-        "locator": "Annex 6 — §4.2.10"
+        "locator": "Anexo 6, p. 3, § 4.1.2, e p. 4, §§ 4.2.10–4.2.11",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002"
       },
       "tags": [
         "pscpp-caderno",
@@ -540,12 +541,12 @@
       "style": "Assertivas",
       "pscpp_format": "assertions",
       "cognitive_level": 3,
-      "question": "Segundo IMO MSC.137(76) — Standards for Ship Manoeuvrability, analise as afirmativas sobre track reach, condições padrão dos ensaios, critério de turning ability, critério normal de stopping ability e assinale a opção correta.",
+      "question": "Analise as afirmativas sobre o plano de provas de manobrabilidade nas condições de referência da IMO.",
       "assertions": [
-        "I) track reach: é a distância ao longo da trajetória do ponto médio do navio entre a ordem de toda força a ré e a parada.",
-        "II) condições padrão dos ensaios: exigem águas rasas, vento forte e navio em lastro.",
-        "III) critério de turning ability: limita o advance a 4,5 L e o tactical diameter a 5 L.",
-        "IV) critério normal de stopping ability: estabelece track reach máximo de 15 L, admitindo tratamento administrativo específico para grandes deslocamentos sem exceder 20 L."
+        "I) Uma única curva a bombordo não basta para o ensaio padrão de giro.",
+        "II) Uma ajuda instalada apenas para a prova é aceitável desde que seja retirada antes da entrega.",
+        "III) A aproximação deve estar estabilizada na velocidade de teste.",
+        "IV) Para a condição padrão de carregamento, adota-se o calado de verão sem trim."
       ],
       "options": [
         {
@@ -570,7 +571,7 @@
         }
       ],
       "correct_answer": "E",
-      "explanation": "A afirmativa II é incorreta.",
+      "explanation": "I, III e IV são verdadeiras. A curva é feita para ambos os bordos, a aproximação usa a velocidade de prova e a condição padrão é de plena carga sem trim. A afirmativa II contraria a regra de disponibilidade de auxílios.",
       "active": true,
       "validation_status": "approved",
       "taxonomy": {
@@ -583,7 +584,8 @@
       },
       "source": {
         "title": "IMO MSC.137(76) — Standards for Ship Manoeuvrability",
-        "locator": "Annex 6 — §4.2.11"
+        "locator": "Anexo 6, p. 3, § 4.2.2, e p. 4, § 5.1 e §§ 5.2.1–5.2.4",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002"
       },
       "tags": [
         "pscpp-caderno",
@@ -601,12 +603,12 @@
       "style": "Assertivas",
       "pscpp_format": "assertions",
       "cognitive_level": 4,
-      "question": "Segundo IMO MSC.137(76) — Standards for Ship Manoeuvrability, analise as afirmativas sobre condições padrão dos ensaios, critério de turning ability, critério normal de stopping ability, aplicação dos Standards e assinale a opção correta.",
+      "question": "Analise as afirmativas sobre o âmbito da resolução e a interpretação das medições de giro e parada.",
       "assertions": [
-        "I) condições padrão dos ensaios: incluem águas profundas e irrestritas, ambiente calmo, plena carga/even keel e aproximação estável à velocidade de teste.",
-        "II) critério de turning ability: limita o advance a 4,5 L e o tactical diameter a 5 L.",
-        "III) critério normal de stopping ability: estabelece limite universal de 5 L sem exceção.",
-        "IV) aplicação dos Standards: abrange navios de todos os tipos de leme e propulsão com 100 m ou mais e navios-tanque químicos e gaseiros independentemente do comprimento."
+        "I) Um navio gaseiro de 93 m que não seja classificado como embarcação de alta velocidade está no âmbito do padrão.",
+        "II) Se o avanço atende, mas o diâmetro tático excede o máximo, o critério de giro não foi satisfeito.",
+        "III) Um resultado de parada de 19L atende ao limite geral de qualquer navio sujeito ao padrão.",
+        "IV) As medidas expressas em L usam o comprimento entre perpendiculares."
       ],
       "options": [
         {
@@ -631,7 +633,7 @@
         }
       ],
       "correct_answer": "A",
-      "explanation": "A afirmativa III é incorreta.",
+      "explanation": "I, II e IV são verdadeiras. A aplicação a gaseiros independe do comprimento, ressalvada a exclusão de embarcações classificadas como de alta velocidade. Os dois limites de giro são cumulativos e L é medido entre perpendiculares. III é falsa porque 20L é teto de eventual flexibilização administrativa, não limite geral.",
       "active": true,
       "validation_status": "approved",
       "taxonomy": {
@@ -644,7 +646,8 @@
       },
       "source": {
         "title": "IMO MSC.137(76) — Standards for Ship Manoeuvrability",
-        "locator": "Annex 6 — §5.2"
+        "locator": "Anexo 6, p. 2, § 3.1, p. 3, §§ 3.4 e 4.1.1, e p. 5, §§ 5.3.1 e 5.3.4",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002"
       },
       "tags": [
         "pscpp-caderno",
@@ -662,12 +665,12 @@
       "style": "Assertivas",
       "pscpp_format": "assertions",
       "cognitive_level": 3,
-      "question": "Segundo IMO MSC.137(76) — Standards for Ship Manoeuvrability, analise as afirmativas sobre critério de turning ability, critério normal de stopping ability, aplicação dos Standards, test speed V e assinale a opção correta.",
+      "question": "Analise as afirmativas sobre a demonstração de conformidade e a escolha da velocidade de teste.",
       "assertions": [
-        "I) critério de turning ability: limita o advance a 4,5 L e o tactical diameter a 5 L.",
-        "II) critério normal de stopping ability: estabelece track reach máximo de 15 L, admitindo tratamento administrativo específico para grandes deslocamentos sem exceder 20 L.",
-        "III) aplicação dos Standards: abrange navios de todos os tipos de leme e propulsão com 100 m ou mais e navios-tanque químicos e gaseiros independentemente do comprimento.",
-        "IV) test speed V: é exatamente 50% da velocidade de serviço."
+        "I) Na fase de projeto, ensaios com modelos em escala ou previsões numéricas podem estimar a conformidade.",
+        "II) Quando se utiliza a previsão de projeto, provas em escala real devem ser realizadas para validá-la.",
+        "III) Há possibilidade de demonstrar a conformidade com os resultados de provas em escala real conduzidas segundo o padrão.",
+        "IV) Se a velocidade a 85% da potência máxima é 16 nós, uma velocidade de prova de 14,1 nós satisfaz o mínimo."
       ],
       "options": [
         {
@@ -692,7 +695,7 @@
         }
       ],
       "correct_answer": "B",
-      "explanation": "A afirmativa IV é incorreta.",
+      "explanation": "I, II e III são verdadeiras. A norma admite ensaios em escala ou previsões numéricas no projeto, requer provas em escala real para validá-los e admite também demonstrar conformidade com provas reais. IV é falsa porque 14,1 nós fica abaixo de 90% de 16 nós, que são 14,4 nós.",
       "active": true,
       "validation_status": "approved",
       "taxonomy": {
@@ -705,7 +708,8 @@
       },
       "source": {
         "title": "IMO MSC.137(76) — Standards for Ship Manoeuvrability",
-        "locator": "Annex 6 — §5.3.1"
+        "locator": "Anexo 6, p. 2, §§ 2.1.1–2.1.2, e p. 3, § 4.2.1",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002"
       },
       "tags": [
         "pscpp-caderno",
@@ -747,7 +751,7 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "A definição corresponde a critério normal de stopping ability.",
+      "explanation": "A lacuna corresponde à capacidade de parada. O limite geral de track reach no ensaio de toda força a ré é 15L. Se o grande deslocamento tornar esse valor impraticável, a Administração pode autorizar outro limite até 20L.",
       "active": true,
       "validation_status": "approved",
       "taxonomy": {
@@ -760,7 +764,8 @@
       },
       "source": {
         "title": "IMO MSC.137(76) — Standards for Ship Manoeuvrability",
-        "locator": "Annex 6 — §5.3.4"
+        "locator": "Anexo 6, p. 4, §§ 4.2.10–4.2.11, e p. 5, § 5.3.4",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002"
       },
       "tags": [
         "pscpp-caderno",
