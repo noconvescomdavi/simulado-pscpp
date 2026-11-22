@@ -6,9 +6,9 @@
   "branch": "audit/pscpp-nove-fontes-20261121",
   "base_branch": "main",
   "base_sha_at_creation": "14c6afed392cb6d87e80c8ff3453299e949039b4",
-  "stage": "00",
-  "stage_name": "Preflight e localização inicial",
-  "stage_status": "preflight parcial; inventário e cotejo individual não iniciados",
+  "stage": "01",
+  "stage_name": "Padrão histórico e inventário preliminar",
+  "stage_status": "cotejo histórico concluído; reconciliação de inventário e revisão editorial pendentes",
   "banks_discovered": [
     "arte-naval.json",
     "comunicacoes.json",
@@ -29,9 +29,9 @@
     "Prova DPC 2023"
   ],
   "uncertain_source_files": [
-    "Santos — Princípios de hidrodinâmica e ação das ondas",
-    "Santos — A manobrabilidade do navio no século 21 (variante Livro 08 Manobras no Navio precisa cotejo)",
-    "PIANC Report 117 integral"
+    "PIANC Report 117 integral",
+    "Santos hidrodinâmica — continuidade e legibilidade da cópia",
+    "Santos manobrabilidade — erratas e cobertura da cópia"
   ],
   "reviewed_question_count": 0,
   "approved_question_count": 0,
@@ -42,6 +42,189 @@
     "Outra automação ativa 'Auditar bancos do PSCPP'; checar concorrência antes de editar.",
     "Nenhum gabarito foi homologado nesta etapa inicial."
   ],
-  "next_stage": "01 — extrair padrão e critérios das provas oficiais 2006, 2008, 2011, 2012; depois inventário por ID.",
-  "checkpoint_index": 0
+  "next_stage": "02 — reconciliar IDs, procedência e consumidores com a main atual; verificar parciais sem enunciado e registros candidatos só por tema; preparar o primeiro lote Santos/hidrodinâmica a partir dos capítulos 3 e 4.",
+  "checkpoint_index": 1,
+  "updated_at": "2026-11-21T23:53:03-03:00",
+  "baseline_sha": "14c6afed392cb6d87e80c8ff3453299e949039b4",
+  "previous_branch_head": "a5b08fc7cb691a252ae34a6464007a354f9a12db",
+  "pr": {
+    "numero": 262,
+    "estado": "draft",
+    "url": "https://github.com/noconvescomdavi/simulado-pscpp/pull/262"
+  },
+  "historico": {
+    "cotejados": 264,
+    "validos": 254,
+    "anulados": 10,
+    "provas": [
+      2006,
+      2008,
+      2011,
+      2012
+    ],
+    "evidencias": "EVIDENCIAS.csv"
+  },
+  "inventario_preliminar": {
+    "ids_autorais_candidatos": 3051,
+    "ids_com_referencia_explicita": 2555,
+    "ids_so_por_tema": 496,
+    "candidatos_em_runtime": 2367,
+    "historicas_com_referencia_ou_tema": 71,
+    "total_fisico_ids_indexados": 22534,
+    "por_obra": {
+      "santos_hidrodinamica": {
+        "explicitamente_referenciadas": 0,
+        "com_referencia_e_runtime": 0,
+        "candidatas_por_tema_sem_referencia_a_obra": 48
+      },
+      "santos_manobrabilidade": {
+        "explicitamente_referenciadas": 205,
+        "com_referencia_e_runtime": 204,
+        "candidatas_por_tema_sem_referencia_a_obra": 157
+      },
+      "normam311": {
+        "explicitamente_referenciadas": 266,
+        "com_referencia_e_runtime": 172,
+        "candidatas_por_tema_sem_referencia_a_obra": 93
+      },
+      "normam701": {
+        "explicitamente_referenciadas": 96,
+        "com_referencia_e_runtime": 43,
+        "candidatas_por_tema_sem_referencia_a_obra": 16
+      },
+      "fragoso_cajaty": {
+        "explicitamente_referenciadas": 85,
+        "com_referencia_e_runtime": 85,
+        "candidatas_por_tema_sem_referencia_a_obra": 120
+      },
+      "ynoue": {
+        "explicitamente_referenciadas": 411,
+        "com_referencia_e_runtime": 309,
+        "candidatas_por_tema_sem_referencia_a_obra": 34
+      },
+      "lobo_soares": {
+        "explicitamente_referenciadas": 575,
+        "com_referencia_e_runtime": 467,
+        "candidatas_por_tema_sem_referencia_a_obra": 61
+      },
+      "pianc117": {
+        "explicitamente_referenciadas": 0,
+        "com_referencia_e_runtime": 0,
+        "candidatas_por_tema_sem_referencia_a_obra": 1
+      },
+      "ripeam": {
+        "explicitamente_referenciadas": 924,
+        "com_referencia_e_runtime": 720,
+        "candidatas_por_tema_sem_referencia_a_obra": 21
+      }
+    },
+    "por_disciplina": {
+      "arte-naval": 193,
+      "conhecimentos-gerais": 25,
+      "comunicacoes": 1,
+      "legislacao-regulamentacao": 422,
+      "manobrabilidade": 396,
+      "meteorologia-oceanografia": 1131,
+      "navegacao-aguas-restritas": 881,
+      "simulado-pscpp": 2
+    }
+  },
+  "pendentes_candidatos": 3051,
+  "reviewed_ids": [],
+  "approved_ids": [],
+  "corrected_ids": [],
+  "bloqueadas_fonte_por_id": [],
+  "fontes_pendentes": {
+    "pianc117": "FONTE_INDISPONIVEL: apenas ficha oficial ou reprodução de terceiro localizada; nenhum registro identificado com a referência declarada",
+    "santos_hidrodinamica": "OCR com 178 páginas; título e edição confirmados; comprovar páginas do escopo, continuidade e legibilidade",
+    "santos_manobrabilidade": "OCR com 239 páginas; capa e capítulo 11 confirmados; extrair e cotejar arquivo de erratas"
+  },
+  "fontes_lidas": {
+    "programa": "Anexo 2-A, 30 pp., texto extraído",
+    "bibliografia": "Anexo 2-B, 14 pp., texto extraído",
+    "provas": "PDFs originais 2006, 2008, 2011 e 2012, leitura de texto e marcações de gabarito",
+    "santos_hidrodinamica": "PDF pp. 1–7 e 176–178",
+    "santos_manobrabilidade": "PDF pp. 1–3 e 237–239; apresentação do Drive com outro título",
+    "pianc117": "ficha oficial da editora",
+    "normas": "atos oficiais de versão e alterações de NORMAM 311/701 e emenda A.1085(28)"
+  },
+  "proximos_ids_hidrodinamica": [
+    "CGE-1111",
+    "MAN-287",
+    "MAN-2941",
+    "MAN-3265",
+    "MAN-3832",
+    "MAN-3864",
+    "MAN-3925",
+    "MAN-400",
+    "MAN-401",
+    "MAN-453",
+    "MAN-456",
+    "MAN-505",
+    "MAN-509",
+    "MAN-559",
+    "MAN-560",
+    "MAN-561",
+    "MAN-613",
+    "MAN-615",
+    "MAN-664",
+    "MAN-665",
+    "MAN-668",
+    "MAN-721",
+    "MAN-770",
+    "MAN-772",
+    "MAN-773",
+    "MAN-823",
+    "MAN-825",
+    "MAN-876",
+    "MAN-879",
+    "MAN-880",
+    "MAN-930",
+    "MAN-931",
+    "MAN-933",
+    "MAN-B013-13",
+    "MAN-B017-09",
+    "MEO-0082",
+    "MEO-0145",
+    "MEO-0179",
+    "MEO-0182",
+    "MEO-0246",
+    "MEO-0254",
+    "MEO-0313",
+    "MEO-0397",
+    "MEO-1080",
+    "NAR-1506",
+    "NAR-1515",
+    "NAR-1790",
+    "NAR-1817"
+  ],
+  "tests": {
+    "validate:questions": "PASS (14.538 registros)",
+    "test:question-structure": "PASS, com alertas automáticos a examinar",
+    "validate:historical-blueprint": "PASS",
+    "validate:runtime-banks": "PASS (12.158 ocorrências de caderno)",
+    "validate:question-catalog": "PASS",
+    "validate:pscpp-matrix": "PASS",
+    "validate:taxonomy:master": "PASS (1.327 pendências ativas preexistentes, 0 novas)",
+    "validate:taxonomy:arte-naval": "FAIL na main (IDs esperados e campos de proveniência)",
+    "test:question-repeat-policy": "PASS",
+    "test:pscpp-reviewed-selection": "PASS",
+    "validate:editorial-runtime": "PASS",
+    "npm run build": "PASS com avisos de CSS"
+  },
+  "production_baseline": {
+    "state": "READY",
+    "sha": "14c6afed392cb6d87e80c8ff3453299e949039b4",
+    "url": "https://vercel.com/estibordo/estibordo-pscpp/A31v3RXfFFrtkbr9MnSyoxY9J6CR"
+  },
+  "merge_permitted": false,
+  "reports_sha256": {
+    "EVIDENCIAS.csv": "76dd986648f1a61276bdb31965ab5f8394ac1e41a064a303fd499edc544b6c96",
+    "INVENTARIO.csv": "067fc639bce9168a3227f60d1a2cad7a0ed2250af5f0087d19b5e069f7a0d6ed",
+    "PROVAS.json": "fd2d6eb406545e62585e2d12c1e561b3b4973a0281a78c5675846226e7389380",
+    "INVENTARIO_RESUMO.json": "83efeba489830b23e821c6542ca643e64f13dad996f9a5aa704c467386240ac1",
+    "INVENTARIO.json": "777116c2455e13be3b0fc15fadbf35b498f0b21321f27298cb209c1548872a78",
+    "LOTE-01.md": "810cc2d5486e9e57075abdacb2bf87462015855d2f83764617931fed36123698"
+  },
+  "inventario_detalhado": "https://chatgpt.com/library?file_id=libfile_90e8da1b68f881919833d09ab61e441a&account_id=personal"
 }
