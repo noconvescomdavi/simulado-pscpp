@@ -7,8 +7,8 @@
   "base_branch": "main",
   "base_sha_at_creation": "14c6afed392cb6d87e80c8ff3453299e949039b4",
   "stage": "02",
-  "stage_name": "Reconciliação incremental PR275; cotejo autoral e origem efetiva pendentes",
-  "stage_status": "15 IDs triados estruturalmente; 0 homologados",
+  "stage_name": "Reconciliação incremental PR276; cotejo autoral primário e reconciliação global pendentes",
+  "stage_status": "15 IDs do lote 18 triados estruturalmente; 0 homologados",
   "banks_discovered": [
     "arte-naval.json",
     "comunicacoes.json",
@@ -54,12 +54,13 @@
     "Rodada 12: PR272 acrescentou 15 restaurações, duas atribuídas a Santos; testes estruturais locais PASS, seis Santos pendentes de fonte primária; consumidor substitui somente IDs já existentes; sem homologação, CI ou deploy.",
     "Rodada 13: main PR273, 15 registros, 15 A-E/chave formalmente válidos, 1 com Santos declarado; sem cotejo primário, homologação, CI ou deploy.",
     "Rodada 14: PR274 incorporado na main, 15 registros triados estruturalmente, quatro com Santos CONAPRA 2021 declarado; sem cotejo primário, homologação, CI ou deploy.",
-    "Rodada 15: main PR275, 15 registros estruturais PASS, MAN-1739 cita Santos; nenhuma homologação, segunda passagem ou CI."
+    "Rodada 15: main PR275, 15 registros estruturais PASS, MAN-1739 cita Santos; nenhuma homologação, segunda passagem ou CI.",
+    "Rodada 16: PR276 merged, lote18 com 15 IDs estruturalmente válidos, 3 citam Santos (MAN-1793, MAN-1846, MAN-1847); banco canônico grande retornou conteúdo vazio no conector, impedindo confronto por ID/hash e origem efetiva; nenhuma homologação."
   ],
-  "next_stage": "Cotejar 12 IDs Santos CONAPRA 2021 na fonte primária e reconciliar globalmente 3051 candidatos por ID/hash/origem",
-  "checkpoint_index": 15,
-  "updated_at": "2026-11-22T12:57:57-03:00",
-  "baseline_sha": "1f0d147638d6521fd73ffe3a6d9a0081f337a1c0",
+  "next_stage": "Cotejar 15 IDs Santos CONAPRA 2021 em fonte primária; recuperar banco-base integral e reconciliar 3051 IDs por hash e origem efetiva",
+  "checkpoint_index": 16,
+  "updated_at": "2026-11-22T13:58:26-03:00",
+  "baseline_sha": "e9806dd1ebec950436b7a4d0f7a4b8ea02e52248",
   "previous_branch_head": "a8b20ab0fcd6c5f9803623bfa14f36d38feb66a0",
   "pr": {
     "numero": 262,
@@ -242,7 +243,7 @@
   },
   "inventario_detalhado": "https://chatgpt.com/library?file_id=libfile_90e8da1b68f881919833d09ab61e441a&account_id=personal",
   "reconciliation": {
-    "main_sha": "1f0d147638d6521fd73ffe3a6d9a0081f337a1c0",
+    "main_sha": "e9806dd1ebec950436b7a4d0f7a4b8ea02e52248",
     "pr262_head_before": "cf64490c9125c347122dba70c2e4955dddab22cc",
     "parallel_prs": [
       172,
@@ -262,7 +263,7 @@
     "by_id_hashes_verified": false,
     "consumer_origin_verified": false,
     "pianc121_not_117": true,
-    "report": "LOTE-15.md"
+    "report": "CHECKPOINT.json (rodada 16)"
   },
   "concorrencia_rodada_03": {
     "main_sha": "f0a33c443670fd33313dc8141f513d640baaa967",
@@ -376,10 +377,10 @@
     "merge_allowed": false
   },
   "tests_run_this_round": [
-    "JSON parse PR275",
+    "parse JSON lote18",
     "15 IDs únicos",
-    "5 alternativas e chave formal",
-    "import estático consumidor"
+    "5 alternativas A-E e gabarito formal",
+    "import estático lote18"
   ],
   "tests_not_run_this_round": [
     "cotejo primário",
@@ -714,5 +715,48 @@
     "full_reconciliation_complete": false,
     "consumer_origin_verified": false,
     "report": "LOTE-15.md"
+  },
+  "reconciliacao_16": {
+    "source_pr": 276,
+    "source_file": "data/question-restorations/manobrabilidade-msc137-lote-18.json",
+    "source_blob_sha": "f83cc937ac2b9d751a6a74064ef79f06395baed7",
+    "ids": [
+      "MAN-1790",
+      "MAN-1791",
+      "MAN-1792",
+      "MAN-1793",
+      "MAN-1794",
+      "MAN-1839",
+      "MAN-1840",
+      "MAN-1841",
+      "MAN-1842",
+      "MAN-1843",
+      "MAN-1844",
+      "MAN-1845",
+      "MAN-1846",
+      "MAN-1847",
+      "MAN-1848"
+    ],
+    "santos_ids": [
+      "MAN-1793",
+      "MAN-1846",
+      "MAN-1847"
+    ],
+    "structural_pass": 15,
+    "homologated": 0,
+    "corrected": 0,
+    "primary_source_verified": false,
+    "consumer_import_verified": true,
+    "consumer_origin_per_id_verified": false,
+    "main_bank_blob": "7d91a960b5901e1595e723d0382ddd3693616a62",
+    "main_bank_content_unavailable": true,
+    "full_reconciliation_complete": false,
+    "tests_not_run": [
+      "cotejo bibliográfico primário",
+      "segunda passagem",
+      "reconciliação 3051 IDs",
+      "build/CI",
+      "Vercel"
+    ]
   }
 }
