@@ -8,31 +8,31 @@
       "topic": "Estabilidade direcional",
       "difficulty": "Difícil",
       "style": "Situacional",
-      "question": "Após uma perturbação pequena durante um giro em regime, a equipe mantém máquina e leme nas regulagens originais. Em um navio dinamicamente estável nessa curva, que tendência se espera?",
+      "question": "Na análise da estabilidade direcional, o navio recebe uma perturbação que aumenta sua taxa de guinada. Qual efeito a circular identifica como estabilizador nesse balanço de momentos?",
       "options": [
         {
           "key": "A",
-          "text": "O desvio aumenta enquanto o leme fica fixo."
+          "text": "O momento associado à força lateral de deriva."
         },
         {
           "key": "B",
-          "text": "O equilíbrio de forças e momentos tende a ser restabelecido."
+          "text": "O amortecimento que se opõe à rotação do casco."
         },
         {
           "key": "C",
-          "text": "A taxa de guinada converge para zero."
+          "text": "O aumento da taxa de guinada no mesmo sentido da perturbação."
         },
         {
           "key": "D",
-          "text": "O casco passa a descrever uma curva de raio cada vez menor."
+          "text": "A manutenção do empuxo longitudinal como único esforço atuante."
         },
         {
           "key": "E",
-          "text": "A proa permanece fixa na marca que tinha antes da perturbação."
+          "text": "A supressão da força lateral do casco no novo regime."
         }
       ],
       "correct_answer": "B",
-      "explanation": "A perturbação altera o equilíbrio. A resposta de um navio estável tende a restabelecer o movimento de giro que existia antes, com taxa de guinada de regime.",
+      "explanation": "O momento de amortecimento de guinada resiste à rotação e contribui para estabilizar a resposta. A circular distingue esse momento do associado à força lateral de deriva, que tem efeito desestabilizador.",
       "source": {
         "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
         "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
@@ -854,36 +854,36 @@
       "topic": "Curva espiral",
       "difficulty": "Médio",
       "style": "Aplicada",
-      "question": "Uma equipe vai executar a espiral reversa e dispõe de indicador calibrado de taxa de guinada e indicador de ângulo de leme. Que dado deve obter em cada taxa de guinada estabelecida?",
+      "question": "Numa espiral direta, com o leme fixo a 2° a boreste, mediu-se taxa estabilizada de 0,4°/s para bombordo ao vir de um giro por bombordo. Repetido a partir de um giro por boreste, o mesmo comando resultou em 0,7°/s para boreste. Como interpretar as leituras?",
       "options": [
         {
           "key": "A",
-          "text": "O ângulo instantâneo do leme ao iniciar o giro."
+          "text": "A média das taxas substitui as duas leituras e indica estabilidade."
         },
         {
           "key": "B",
-          "text": "O ângulo médio de leme necessário para sustentar a taxa escolhida."
+          "text": "Os valores pertencem a ramos distintos do laço de instabilidade."
         },
         {
           "key": "C",
-          "text": "A máxima banda observada enquanto a taxa varia."
+          "text": "A magnitude mais alta é o diâmetro tático medido na espiral."
         },
         {
           "key": "D",
-          "text": "O menor tempo de leme de um batente ao outro."
+          "text": "A primeira leitura é impossível com leme para boreste."
         },
         {
           "key": "E",
-          "text": "A potência média durante um trecho em linha reta."
+          "text": "O intervalo entre as taxas mede diretamente o tempo de resposta do leme."
         }
       ],
       "correct_answer": "B",
-      "explanation": "A espiral reversa controla a taxa de guinada e mede o ângulo médio de leme correspondente. Esses pares permitem traçar também o ramo instável da relação.",
+      "explanation": "Na faixa do laço, o navio pode conservar guinada em regime no sentido anterior mesmo com pequena deflexão para o lado oposto. O procedimento registra cada ramo conforme o sentido da sequência.",
       "source": {
         "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
         "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
         "edition": "MSC/Circ.1053, 16 Dec. 2002",
-        "locator": "Anexo, p. 30, apêndice 4, §§ 2.2.1–2.2.2"
+        "locator": "Anexo, apêndice 4, pp. 29–30, §§ 2.1.4–2.1.6, e p. 34, fig. A4-3"
       },
       "tags": [
         "Controlabilidade e padrões de manobrabilidade",
