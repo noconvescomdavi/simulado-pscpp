@@ -7,7 +7,7 @@
   "base_branch": "main",
   "base_sha_at_creation": "14c6afed392cb6d87e80c8ff3453299e949039b4",
   "stage": "02",
-  "stage_name": "Reconciliação incremental PR279; cotejo primário e reconciliação global pendentes",
+  "stage_name": "Reconciliação incremental PR280; cotejo primário e reconciliação global pendentes",
   "stage_status": "15 IDs lote21 triados estruturalmente; 0 homologados",
   "banks_discovered": [
     "arte-naval.json",
@@ -58,12 +58,13 @@
     "Rodada 16: PR276 merged, lote18 com 15 IDs estruturalmente válidos, 3 citam Santos (MAN-1793, MAN-1846, MAN-1847); banco canônico grande retornou conteúdo vazio no conector, impedindo confronto por ID/hash e origem efetiva; nenhuma homologação.",
     "Rodada 17: PR277 merged, 15 IDs lote19, um Santos MAN-1901, demais IMO; import e precedência de overlays inspecionados; sem cotejo primário, segunda revisão, CI ou deploy.",
     "Rodada 18: main PR278, 15 registros do lote20 com estrutura local A–E e IDs únicos; MAN-1955/MAN-2009 citam Santos, agora 18 pendentes identificados nas rodadas recentes; sem cotejo primário, homologação ou CI.",
-    "Rodada 19: PR279 integrado na main, 15 IDs do lote21 triados, MAN-2063 cita Santos CONAPRA 2021; total 19 Santos recentes sem cotejo primário; sem homologação, segunda passagem, CI ou deploy."
+    "Rodada 19: PR279 integrado na main, 15 IDs do lote21 triados, MAN-2063 cita Santos CONAPRA 2021; total 19 Santos recentes sem cotejo primário; sem homologação, segunda passagem, CI ou deploy.",
+    "Rodada 20: PR280 integrado na main, lote22 triado estruturalmente; sem cotejo primário, homologação, segunda passagem, CI ou deploy."
   ],
-  "next_stage": "Reconciliar 3051 IDs por hash/origem efetiva e cotejar 19 IDs Santos CONAPRA 2021",
-  "checkpoint_index": 19,
-  "updated_at": "2026-11-22T17:04:02-03:00",
-  "baseline_sha": "03a551292c69b928e3ef72a7fad53710d42e0fe4",
+  "next_stage": "Reconciliar 3051 IDs por hash/origem efetiva e cotejar IDs Santos na edição CONAPRA 2021",
+  "checkpoint_index": 20,
+  "updated_at": "2026-11-22T18:00:15-03:00",
+  "baseline_sha": "424f065da0fe46249d940087964615d345a4c7d4",
   "previous_branch_head": "a8b20ab0fcd6c5f9803623bfa14f36d38feb66a0",
   "pr": {
     "numero": 262,
@@ -816,5 +817,44 @@
     "corrected": 0,
     "full_reconciliation_complete": false,
     "source_primary_verified": false
+  },
+  "reconciliacao_20": {
+    "checkpoint": 20,
+    "main_sha": "424f065da0fe46249d940087964615d345a4c7d4",
+    "source_pr": 280,
+    "source_file": "data/question-restorations/manobrabilidade-msc137-lote-22.json",
+    "source_blob_sha": "82c97ef0149e0151d1c7e822017b9a0c306eeca8",
+    "ids": [
+      "MAN-2114",
+      "MAN-2115",
+      "MAN-2116",
+      "MAN-2117",
+      "MAN-2118",
+      "MAN-2163",
+      "MAN-2164",
+      "MAN-2165",
+      "MAN-2166",
+      "MAN-2167",
+      "MAN-2168",
+      "MAN-2169",
+      "MAN-2170",
+      "MAN-2171",
+      "MAN-2172"
+    ],
+    "santos_ids": [
+      "MAN-2114",
+      "MAN-2115",
+      "MAN-2117",
+      "MAN-2164",
+      "MAN-2168",
+      "MAN-2169",
+      "MAN-2171"
+    ],
+    "structural_errors": [],
+    "homologated": 0,
+    "corrected": 0,
+    "full_reconciliation_complete": false,
+    "source_primary_verified": false,
+    "second_pass": false
   }
 }
