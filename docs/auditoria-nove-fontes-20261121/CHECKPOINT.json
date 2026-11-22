@@ -7,8 +7,8 @@
   "base_branch": "main",
   "base_sha_at_creation": "14c6afed392cb6d87e80c8ff3453299e949039b4",
   "stage": "02",
-  "stage_name": "Reconciliação incremental PR276; cotejo autoral primário e reconciliação global pendentes",
-  "stage_status": "15 IDs do lote 18 triados estruturalmente; 0 homologados",
+  "stage_name": "Reconciliação incremental PR277; reconciliação global e cotejo primário pendentes",
+  "stage_status": "15 IDs do lote19 identificados; 0 homologados",
   "banks_discovered": [
     "arte-naval.json",
     "comunicacoes.json",
@@ -55,12 +55,13 @@
     "Rodada 13: main PR273, 15 registros, 15 A-E/chave formalmente válidos, 1 com Santos declarado; sem cotejo primário, homologação, CI ou deploy.",
     "Rodada 14: PR274 incorporado na main, 15 registros triados estruturalmente, quatro com Santos CONAPRA 2021 declarado; sem cotejo primário, homologação, CI ou deploy.",
     "Rodada 15: main PR275, 15 registros estruturais PASS, MAN-1739 cita Santos; nenhuma homologação, segunda passagem ou CI.",
-    "Rodada 16: PR276 merged, lote18 com 15 IDs estruturalmente válidos, 3 citam Santos (MAN-1793, MAN-1846, MAN-1847); banco canônico grande retornou conteúdo vazio no conector, impedindo confronto por ID/hash e origem efetiva; nenhuma homologação."
+    "Rodada 16: PR276 merged, lote18 com 15 IDs estruturalmente válidos, 3 citam Santos (MAN-1793, MAN-1846, MAN-1847); banco canônico grande retornou conteúdo vazio no conector, impedindo confronto por ID/hash e origem efetiva; nenhuma homologação.",
+    "Rodada 17: PR277 merged, 15 IDs lote19, um Santos MAN-1901, demais IMO; import e precedência de overlays inspecionados; sem cotejo primário, segunda revisão, CI ou deploy."
   ],
-  "next_stage": "Cotejar 15 IDs Santos CONAPRA 2021 em fonte primária; recuperar banco-base integral e reconciliar 3051 IDs por hash e origem efetiva",
-  "checkpoint_index": 16,
-  "updated_at": "2026-11-22T13:58:26-03:00",
-  "baseline_sha": "e9806dd1ebec950436b7a4d0f7a4b8ea02e52248",
+  "next_stage": "Recuperar banco canônico e reconciliar 3051 IDs por hash e origem efetiva; cotejar 16 IDs Santos CONAPRA 2021",
+  "checkpoint_index": 17,
+  "updated_at": "2026-11-22T14:58:00-03:00",
+  "baseline_sha": "f2a65b287117bd6202e4e63c1a9058ab3a04459b",
   "previous_branch_head": "a8b20ab0fcd6c5f9803623bfa14f36d38feb66a0",
   "pr": {
     "numero": 262,
@@ -243,7 +244,7 @@
   },
   "inventario_detalhado": "https://chatgpt.com/library?file_id=libfile_90e8da1b68f881919833d09ab61e441a&account_id=personal",
   "reconciliation": {
-    "main_sha": "e9806dd1ebec950436b7a4d0f7a4b8ea02e52248",
+    "main_sha": "f2a65b287117bd6202e4e63c1a9058ab3a04459b",
     "pr262_head_before": "cf64490c9125c347122dba70c2e4955dddab22cc",
     "parallel_prs": [
       172,
@@ -263,7 +264,7 @@
     "by_id_hashes_verified": false,
     "consumer_origin_verified": false,
     "pianc121_not_117": true,
-    "report": "CHECKPOINT.json (rodada 16)"
+    "report": "RECONCILIACAO-17.json"
   },
   "concorrencia_rodada_03": {
     "main_sha": "f0a33c443670fd33313dc8141f513d640baaa967",
@@ -377,16 +378,15 @@
     "merge_allowed": false
   },
   "tests_run_this_round": [
-    "parse JSON lote18",
-    "15 IDs únicos",
-    "5 alternativas A-E e gabarito formal",
-    "import estático lote18"
+    "leitura e parse JSON lote19",
+    "contagem de 15 IDs distintos e cinco alternativas por registro",
+    "inspeção estática do consumidor e precedência dos overrides"
   ],
   "tests_not_run_this_round": [
-    "cotejo primário",
-    "segunda passagem",
+    "fonte primária e gabaritos",
     "reconciliação global",
-    "build/CI",
+    "segunda passagem",
+    "CI/build",
     "Vercel"
   ],
   "reconciliacao_06": {
@@ -758,5 +758,31 @@
       "build/CI",
       "Vercel"
     ]
+  },
+  "concorrencia_rodada_17": {
+    "source_pr": 277,
+    "source_file": "data/question-restorations/manobrabilidade-msc137-lote-19.json",
+    "source_blob_sha": "705f8c3b78591a7152d3b54b4ec09be1345f824b",
+    "ids": [
+      "MAN-1893",
+      "MAN-1894",
+      "MAN-1895",
+      "MAN-1896",
+      "MAN-1897",
+      "MAN-1898",
+      "MAN-1899",
+      "MAN-1900",
+      "MAN-1901",
+      "MAN-1902",
+      "MAN-1947",
+      "MAN-1948",
+      "MAN-1949",
+      "MAN-1950",
+      "MAN-1951"
+    ],
+    "santos_id": "MAN-1901",
+    "homologated": 0,
+    "corrected": 0,
+    "report": "LOTE-17.md"
   }
 }
