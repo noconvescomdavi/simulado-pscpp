@@ -7,6 +7,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { classifyQuestionStructure, structuredPublicQuestion } from "../lib/question-structure.js";
 import { publicQuestion as notebookPublicQuestion } from "../lib/question-banks.js";
 import { createHash } from "node:crypto";
+import { completeNotebookStemEdits } from "../lib/notebook-stem-restorations.js";
 
 const require = createRequire(import.meta.url);
 const filename = fileURLToPath(new URL("../app/components/StructuredQuestion.js", import.meta.url));
@@ -40,11 +41,12 @@ const stable = value => Array.isArray(value) ? value.map(stable) : value && type
   ? Object.fromEntries(Object.keys(value).sort().map(key => [key, stable(value[key])])) : value;
 // These later technical corrections change the explanation after the stem-only audit.
 const revisedExplanationHashes = {
+  "manobrabilidade/MAN-3909": "dcfb052f041824d58a21f638b9be24c0edd7dc0614893ab179244a3df9f844a8",
   "manobrabilidade/MAN-B006-13": "2e2ff068b63471d814f579edc67a463eea4df5e4d9e7c12d0745731b2d31adf6",
 };
 const byBank = {};
 const reasons = {};
-for (const edit of pack.edits) {
+for (const edit of completeNotebookStemEdits) {
   const question = banks[edit.bank].questions.find(q => q.id === edit.id);
   assert.ok(question, `Inactive or missing corrected question: ${edit.bank}/${edit.id}`);
   const replacement = cap45Review.edits.find(e => e.pool === "Cadernos" && e.id === edit.id);
