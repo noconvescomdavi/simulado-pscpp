@@ -41,6 +41,9 @@ jobs:
       - name: Official PSCPP source fidelity
         run: npm run generate:pscpp-bank && npm run validate:historical-blueprint
 
+      - name: PSCPP — teste exclusivo de 50 questões CIS/COLREG
+        run: npm run test:pscpp-cis-colreg
+
       - name: PSCPP selection matrix and complete Santos pool
         run: npm run validate:pscpp-matrix
 
