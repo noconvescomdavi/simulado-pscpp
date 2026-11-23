@@ -41,6 +41,7 @@ const stable = value => Array.isArray(value) ? value.map(stable) : value && type
   ? Object.fromEntries(Object.keys(value).sort().map(key => [key, stable(value[key])])) : value;
 // These later technical corrections change the explanation after the stem-only audit.
 const revisedExplanationHashes = {
+  "manobrabilidade/MAN-B018-13": "a4f97bc41c1967f489ea82cd90853603b393140801d80bcf3d836294b7a49a00",
   "manobrabilidade/MAN-B017-13": "f29c8c3f0bef4da518509e9568dd342e590fcff1e5bbecc220e0a2be83423c84",
   "manobrabilidade/MAN-B016-13": "f0e427935ec95b70de02b3bebe09ec56dae501246a4d38c832396fe7d3d187af",
   "manobrabilidade/MAN-B015-13": "201c6c1ca9707e2d73f741cc089ff1d97c2b7313251f99b75b7b75223956c314",
