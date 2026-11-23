@@ -7,8 +7,8 @@
   "base_branch": "main",
   "base_sha_at_creation": "14c6afed392cb6d87e80c8ff3453299e949039b4",
   "stage": "02",
-  "stage_name": "Triagem incremental lote26; reconciliação global e cotejo primário pendentes",
-  "stage_status": "15 IDs triados estruturalmente; 0 erros estruturais; 0 homologados",
+  "stage_name": "Triagem estrutural lotes 27 e 28; reconciliação global e cotejo primário pendentes",
+  "stage_status": "30 IDs triados estruturalmente; 8 Santos declarados; 0 homologados",
   "banks_discovered": [
     "arte-naval.json",
     "comunicacoes.json",
@@ -63,12 +63,13 @@
     "Rodada 21: lote23 com 15 IDs únicos e opções A-E válidas; 4 atribuições Santos (MAN-2222/2225/2271/2274); nenhuma homologação, segunda passagem ou CI.",
     "Rodada 22: main PR282 lote24 15 IDs, 5 atribuições Santos (MAN-2276, MAN-2277, MAN-2279, MAN-2331, MAN-2333); checagem estrutural PASS; sem cotejo primário, homologação, CI ou deploy.",
     "Rodada 23: main PR283 merged, lote25 15 IDs triados A-E/gabarito formalmente válidos; 4 atribuições Santos MAN-2384/2387/2433/2435, total 39 Santos recentes pendentes; sem cotejo primário, reconciliação global, segunda passagem, CI ou deploy.",
-    "Rodada 24: lote26 15 registros, 5 Santos (MAN-2439, MAN-2441, MAN-2487, MAN-2492, MAN-2495); erros estruturais nenhum; sem cotejo primário, segunda passagem, CI ou deploy."
+    "Rodada 24: lote26 15 registros, 5 Santos (MAN-2439, MAN-2441, MAN-2487, MAN-2492, MAN-2495); erros estruturais nenhum; sem cotejo primário, segunda passagem, CI ou deploy.",
+    "Rodada 25: main #285/#286, 30 registros dos lotes 27 e 28 triados A–E/gabarito, 8 atribuídos a Santos, total 52 Santos recentes pendentes; 0 homologados; sem cotejo primário, reconciliação global, CI ou Vercel."
   ],
-  "next_stage": "Reconciliar 3051 IDs por hash/origem efetiva e cotejar 44 Santos recentes com fonte primária; verificar conflitos concorrentes",
-  "checkpoint_index": 24,
-  "updated_at": "2026-11-22T21:59:23-03:00",
-  "baseline_sha": "89ae9e23e975b17d26922a6a14074a6c1793c908",
+  "next_stage": "Reconciliar 3051 candidatos por ID/hash/origem efetiva e cotejar 52 Santos recentes com fonte primária; segunda passagem e CI pendentes",
+  "checkpoint_index": 25,
+  "updated_at": "2026-11-22T22:57:38-03:00",
+  "baseline_sha": "7a6d1930dec380d669d30131ca4acb4c802ad091",
   "previous_branch_head": "f75ec049196473448fe18416ae0823ed6987a792",
   "pr": {
     "numero": 262,
@@ -385,16 +386,16 @@
     "merge_allowed": false
   },
   "tests_run_this_round": [
-    "JSON parse",
-    "unique IDs in restoration file",
-    "five A-E options and existing answer key"
+    "parse JSON",
+    "30 IDs únicos nos dois pacotes",
+    "5 alternativas A-E e gabarito formal existente"
   ],
   "tests_not_run_this_round": [
-    "source-primary cotejo",
-    "second review",
-    "full 3051-ID reconciliation",
+    "cotejo fonte primária",
+    "segunda passagem",
+    "reconciliação 3051 IDs",
     "CI/build",
-    "Vercel production"
+    "Vercel Production"
   ],
   "reconciliacao_06": {
     "checkpoint": 6,
@@ -985,5 +986,63 @@
     "corrected": 0,
     "source_primary_verified": false,
     "full_reconciliation_complete": false
+  },
+  "reconciliacao_25": {
+    "main_sha": "7a6d1930dec380d669d30131ca4acb4c802ad091",
+    "source_prs": [
+      285,
+      286
+    ],
+    "source_blobs": [
+      "2c9def5a5b92b146a1cb6f1fc80e061a1cbdb4dc",
+      "0772cdffd71f8526148dbc7f1a3b9ceaa4db8320"
+    ],
+    "ids": [
+      "MAN-2541",
+      "MAN-2542",
+      "MAN-2543",
+      "MAN-2544",
+      "MAN-2545",
+      "MAN-2546",
+      "MAN-2547",
+      "MAN-2548",
+      "MAN-2549",
+      "MAN-2550",
+      "MAN-2595",
+      "MAN-2596",
+      "MAN-2597",
+      "MAN-2598",
+      "MAN-2599",
+      "MAN-2600",
+      "MAN-2601",
+      "MAN-2602",
+      "MAN-2603",
+      "MAN-2604",
+      "MAN-2649",
+      "MAN-2650",
+      "MAN-2651",
+      "MAN-2652",
+      "MAN-2653",
+      "MAN-2654",
+      "MAN-2655",
+      "MAN-2656",
+      "MAN-2657",
+      "MAN-2658"
+    ],
+    "santos_ids": [
+      "MAN-2541",
+      "MAN-2549",
+      "MAN-2597",
+      "MAN-2599",
+      "MAN-2600",
+      "MAN-2603",
+      "MAN-2654",
+      "MAN-2657"
+    ],
+    "structural_pass": 30,
+    "homologated": 0,
+    "corrected": 0,
+    "full_reconciliation_complete": false,
+    "report": "RECONCILIACAO-25.json"
   }
 }
