@@ -7,8 +7,8 @@
   "base_branch": "main",
   "base_sha_at_creation": "14c6afed392cb6d87e80c8ff3453299e949039b4",
   "stage": "02",
-  "stage_name": "Reconciliação incremental lote25; cotejo primário e reconciliação global pendentes",
-  "stage_status": "15 IDs triados estruturalmente; 0 homologados",
+  "stage_name": "Triagem incremental lote26; reconciliação global e cotejo primário pendentes",
+  "stage_status": "15 IDs triados estruturalmente; 0 erros estruturais; 0 homologados",
   "banks_discovered": [
     "arte-naval.json",
     "comunicacoes.json",
@@ -62,11 +62,12 @@
     "Rodada 20: PR280 integrado na main, lote22 triado estruturalmente; sem cotejo primário, homologação, segunda passagem, CI ou deploy.",
     "Rodada 21: lote23 com 15 IDs únicos e opções A-E válidas; 4 atribuições Santos (MAN-2222/2225/2271/2274); nenhuma homologação, segunda passagem ou CI.",
     "Rodada 22: main PR282 lote24 15 IDs, 5 atribuições Santos (MAN-2276, MAN-2277, MAN-2279, MAN-2331, MAN-2333); checagem estrutural PASS; sem cotejo primário, homologação, CI ou deploy.",
-    "Rodada 23: main PR283 merged, lote25 15 IDs triados A-E/gabarito formalmente válidos; 4 atribuições Santos MAN-2384/2387/2433/2435, total 39 Santos recentes pendentes; sem cotejo primário, reconciliação global, segunda passagem, CI ou deploy."
+    "Rodada 23: main PR283 merged, lote25 15 IDs triados A-E/gabarito formalmente válidos; 4 atribuições Santos MAN-2384/2387/2433/2435, total 39 Santos recentes pendentes; sem cotejo primário, reconciliação global, segunda passagem, CI ou deploy.",
+    "Rodada 24: lote26 15 registros, 5 Santos (MAN-2439, MAN-2441, MAN-2487, MAN-2492, MAN-2495); erros estruturais nenhum; sem cotejo primário, segunda passagem, CI ou deploy."
   ],
-  "next_stage": "Reconciliação global dos 3051 IDs por hash e origem efetiva; cotejo primário dos 39 Santos recentes",
-  "checkpoint_index": 23,
-  "updated_at": "2026-11-22T20:55:50-03:00",
+  "next_stage": "Reconciliar 3051 IDs por hash/origem efetiva e cotejar 43 Santos recentes com fonte primária; verificar conflitos concorrentes",
+  "checkpoint_index": 24,
+  "updated_at": "2026-11-22T21:59:23-03:00",
   "baseline_sha": "89ae9e23e975b17d26922a6a14074a6c1793c908",
   "previous_branch_head": "f75ec049196473448fe18416ae0823ed6987a792",
   "pr": {
@@ -951,5 +952,38 @@
     "homologated": 0,
     "corrected": 0,
     "merge_allowed": false
+  },
+  "reconciliacao_24": {
+    "source_file": "data/question-restorations/manobrabilidade-msc137-lote-26.json",
+    "source_blob_sha": "fa4d920fb5a352f27dbaefe849ba99f5689d6de9",
+    "ids": [
+      "MAN-2438",
+      "MAN-2439",
+      "MAN-2440",
+      "MAN-2441",
+      "MAN-2442",
+      "MAN-2487",
+      "MAN-2488",
+      "MAN-2489",
+      "MAN-2490",
+      "MAN-2491",
+      "MAN-2492",
+      "MAN-2493",
+      "MAN-2494",
+      "MAN-2495",
+      "MAN-2496"
+    ],
+    "santos_ids": [
+      "MAN-2439",
+      "MAN-2441",
+      "MAN-2487",
+      "MAN-2492",
+      "MAN-2495"
+    ],
+    "structural_errors": [],
+    "homologated": 0,
+    "corrected": 0,
+    "source_primary_verified": false,
+    "full_reconciliation_complete": false
   }
 }
