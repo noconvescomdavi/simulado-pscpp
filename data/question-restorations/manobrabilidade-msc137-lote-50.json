@@ -1,0 +1,672 @@
+{
+  "questions": [
+    {
+      "id": "MAN-B021-06",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "zig-zag test + second overshoot angle",
+      "topic_code": "MAN.B021.06",
+      "topic": "Integração: zig-zag test e second overshoot angle",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Num zigue-zague 10°/10° com proa inicial de 112°, o primeiro comando foi a bombordo. O leme foi invertido nas proas 102° e 122°. Após essa segunda inversão, a proa ainda chegou a 130° antes de voltar. Qual foi o segundo ângulo de sobressinal?",
+      "options": [
+        {
+          "key": "A",
+          "text": "8°"
+        },
+        {
+          "key": "B",
+          "text": "10°"
+        },
+        {
+          "key": "C",
+          "text": "18°"
+        },
+        {
+          "key": "D",
+          "text": "20°"
+        },
+        {
+          "key": "E",
+          "text": "28°"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O segundo sobressinal mede o desvio adicional após o terceiro comando de leme, que foi dado na proa 122°. A proa extrema foi 130°, logo o sobressinal foi 130° − 122° = 8°.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "MAN-B021-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002",
+        "locator": "Anexo 6, pp. 3–4, §§ 4.2.5–4.2.8"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-021",
+        "zig-zag test",
+        "second overshoot angle",
+        "integração"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "zig-zag test + second overshoot angle",
+        "topic": {
+          "id": "MAN-B021-06",
+          "title": "Integração: zig-zag test e second overshoot angle"
+        }
+      }
+    },
+    {
+      "id": "MAN-B021-07",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "first overshoot angle + full astern stopping test",
+      "topic_code": "MAN.B021.07",
+      "topic": "Integração: first overshoot angle e full astern stopping test",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Num zigue-zague 10°/10°, o primeiro comando foi a boreste. A proa inicial era 140°, a primeira inversão ocorreu a 150° e a proa extrema a seguir foi 157°. Em ensaio separado, a ordem de toda força a ré foi dada aos 20 s, a força a ré se estabeleceu aos 34 s e o navio parou em relação à água aos 155 s. Qual registro está correto?",
+      "options": [
+        {
+          "key": "A",
+          "text": "17° de primeiro sobressinal e 135 s de intervalo para medir o track reach."
+        },
+        {
+          "key": "B",
+          "text": "7° de primeiro sobressinal e 135 s de intervalo para medir o track reach."
+        },
+        {
+          "key": "C",
+          "text": "7° de primeiro sobressinal e 121 s de intervalo para medir o track reach."
+        },
+        {
+          "key": "D",
+          "text": "10° de primeiro sobressinal e 14 s de intervalo para medir o track reach."
+        },
+        {
+          "key": "E",
+          "text": "17° de primeiro sobressinal e 155 s de intervalo para medir o track reach."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O primeiro sobressinal é 157° − 150° = 7°. No ensaio de parada, mede-se a distância percorrida pela meia-nau desde a ordem de toda força a ré até a parada em relação à água. O intervalo correspondente é 155 − 20 = 135 s.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "MAN-B021-07",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002",
+        "locator": "Anexo 6, p. 4, §§ 4.2.6–4.2.7 e 4.2.10–4.2.11"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-021",
+        "first overshoot angle",
+        "full astern stopping test",
+        "integração"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "first overshoot angle + full astern stopping test",
+        "topic": {
+          "id": "MAN-B021-07",
+          "title": "Integração: first overshoot angle e full astern stopping test"
+        }
+      }
+    },
+    {
+      "id": "MAN-B021-08",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "second overshoot angle + track reach",
+      "topic_code": "MAN.B021.08",
+      "topic": "Integração: second overshoot angle e track reach",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Após o terceiro comando de leme num zigue-zague 10°/10°, o desvio de proa chegou a 24° no lado desse sobressinal. Em um ensaio separado de parada a toda força a ré, o percurso da meia-nau até parar em relação à água teve trechos sucessivos de 0,8 L, 8,0 L e 4,0 L, medidos desde a ordem. A projeção longitudinal foi de 11,9 L. Quais são o segundo sobressinal e o track reach?",
+      "options": [
+        {
+          "key": "A",
+          "text": "24° e 12,8 L"
+        },
+        {
+          "key": "B",
+          "text": "14° e 11,9 L"
+        },
+        {
+          "key": "C",
+          "text": "14° e 12,8 L"
+        },
+        {
+          "key": "D",
+          "text": "10° e 12,0 L"
+        },
+        {
+          "key": "E",
+          "text": "24° e 11,9 L"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "O terceiro comando ocorre a 10° da proa inicial, então o desvio adicional é 24° − 10° = 14°. A trajetória da meia-nau soma 0,8 L + 8,0 L + 4,0 L = 12,8 L.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "MAN-B021-08",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002",
+        "locator": "Anexo 6, p. 4, §§ 4.2.6.3, 4.2.8 e 4.2.10–4.2.11"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-021",
+        "second overshoot angle",
+        "track reach",
+        "integração"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "second overshoot angle + track reach",
+        "topic": {
+          "id": "MAN-B021-08",
+          "title": "Integração: second overshoot angle e track reach"
+        }
+      }
+    },
+    {
+      "id": "MAN-B021-09",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "full astern stopping test + condições padrão dos ensaios",
+      "topic_code": "MAN.B021.09",
+      "topic": "Integração: full astern stopping test e condições padrão dos ensaios",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 5,
+      "question": "Uma equipe está conferindo o protocolo do ensaio de parada a toda força a ré segundo a MSC.137(76). Quais proposições estão corretas?",
+      "assertions": [
+        "I) A distância segue a trajetória da meia-nau entre a ordem de toda força a ré e a parada em relação à água.",
+        "II) As condições padrão incluem águas profundas e irrestritas, ambiente calmo, plena carga sem trim e aproximação estabilizada à velocidade de teste.",
+        "III) O protocolo exclui auxílios de manobra que não estejam continuamente e prontamente disponíveis na operação normal.",
+        "IV) Com corrente, a parada deve ser registrada quando se anular a velocidade sobre o fundo."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A distância é medida pela trajetória da meia-nau entre a ordem e a parada em relação à água. A resolução especifica águas profundas e irrestritas, ambiente calmo, plena carga sem trim e aproximação estabilizada à velocidade de teste. Auxílios sem disponibilidade contínua e pronta na operação normal ficam excluídos. O zero sobre o fundo pode divergir da parada em relação à água.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "MAN-B021-09",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002",
+        "locator": "Anexo 6, p. 4, §§ 4.2.10–4.2.11 e 5.1–5.2"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-021",
+        "full astern stopping test",
+        "condições padrão dos ensaios",
+        "integração"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "full astern stopping test + condições padrão dos ensaios",
+        "topic": {
+          "id": "MAN-B021-09",
+          "title": "Integração: full astern stopping test e condições padrão dos ensaios"
+        }
+      }
+    },
+    {
+      "id": "MAN-B021-10",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "track reach + critério de turning ability",
+      "topic_code": "MAN.B021.10",
+      "topic": "Integração: track reach e critério de turning ability",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Um navio convencional de L = 100 m apresentou avanço de 451 m e diâmetro tático de 499 m no giro. A equipe também analisou o ensaio de parada. Quais proposições estão corretas?",
+      "assertions": [
+        "I) O track reach segue a trajetória da meia-nau desde a ordem de toda força a ré até a parada em relação à água.",
+        "II) Os tetos de avanço e diâmetro tático para esse navio são 450 m e 500 m, respectivamente.",
+        "III) O diâmetro tático atende ao critério, mas o avanço excede seu limite.",
+        "IV) O track reach deve ser medido pela projeção de toda a trajetória de parada na direção inicial do navio."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "I, II, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II e III."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O track reach segue a trajetória da meia-nau até parar em relação à água. No giro, avanço e diâmetro tático têm tetos separados de 450 m e 500 m. Portanto, somente o diâmetro atende. Projetar a parada no rumo inicial descartaria a componente lateral do percurso.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "MAN-B021-10",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002",
+        "locator": "Anexo 6, pp. 3–4, §§ 4.2.3–4.2.4 e 4.2.10–4.2.11; p. 5, § 5.3.1"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-021",
+        "track reach",
+        "critério de turning ability",
+        "integração"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "track reach + critério de turning ability",
+        "topic": {
+          "id": "MAN-B021-10",
+          "title": "Integração: track reach e critério de turning ability"
+        }
+      }
+    },
+    {
+      "id": "MAN-B021-11",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "condições padrão dos ensaios + critério normal de stopping ability",
+      "topic_code": "MAN.B021.11",
+      "topic": "Integração: condições padrão dos ensaios e critério normal de stopping ability",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Para aceitar o registro de parada de um navio de grande deslocamento com base na MSC.137(76), quais proposições estão corretas?",
+      "assertions": [
+        "I) As condições padrão incluem águas profundas e irrestritas.",
+        "II) O limite normal do track reach é 15 L.",
+        "III) A Administração pode modificar o limite quando o grande deslocamento torna o critério impraticável, respeitado o teto de 20 L.",
+        "IV) Todo navio de grande deslocamento tem direito automático ao limite de 20 L."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O limite normal do track reach é 15 L. Quando o grande deslocamento torna esse critério impraticável, a Administração pode modificá-lo até o teto absoluto de 20 L. A referência de ensaio é água profunda e irrestrita.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "MAN-B021-11",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002",
+        "locator": "Anexo 6, p. 4, § 5.2.1; p. 5, § 5.3.4"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-021",
+        "condições padrão dos ensaios",
+        "critério normal de stopping ability",
+        "integração"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "condições padrão dos ensaios + critério normal de stopping ability",
+        "topic": {
+          "id": "MAN-B021-11",
+          "title": "Integração: condições padrão dos ensaios e critério normal de stopping ability"
+        }
+      }
+    },
+    {
+      "id": "MAN-B021-12",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "critério de turning ability + aplicação dos Standards",
+      "topic_code": "MAN.B021.12",
+      "topic": "Integração: critério de turning ability e aplicação dos Standards",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Um navio-tanque químico convencional tem 88 m entre perpendiculares. A equipe aplica a MSC.137(76) à avaliação de sua curva de giro. Quais proposições estão corretas?",
+      "assertions": [
+        "I) O comprimento abaixo de 100 m não exclui esse navio-tanque químico convencional da aplicação dos padrões.",
+        "II) O comprimento L usado nos critérios é o medido entre as perpendiculares.",
+        "III) O avanço tem teto de 396 m e o diâmetro tático tem teto de 440 m.",
+        "IV) Para navios sujeitos à resolução com L inferior a 100 m, o teto de 5 L passa a valer para o avanço."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A resolução abrange navios-tanque químicos independentemente do comprimento e exclui embarcações de alta velocidade conforme o Código aplicável. Com 88 m entre perpendiculares, os tetos do avanço e do diâmetro tático são 396 m e 440 m.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "MAN-B021-12",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002",
+        "locator": "Anexo 6, p. 2, § 3.1; p. 3, §§ 3.4 e 4.1.1; p. 5, § 5.3.1"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-021",
+        "critério de turning ability",
+        "aplicação dos Standards",
+        "integração"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "critério de turning ability + aplicação dos Standards",
+        "topic": {
+          "id": "MAN-B021-12",
+          "title": "Integração: critério de turning ability e aplicação dos Standards"
+        }
+      }
+    },
+    {
+      "id": "MAN-B021-13",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "critério normal de stopping ability + test speed V",
+      "topic_code": "MAN.B021.13",
+      "topic": "Integração: critério normal de stopping ability e test speed V",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 5,
+      "question": "Um navio convencional faz 16,4 nós a 85% da potência máxima do motor. Em águas profundas e calmas, aproximou-se estabilizado a 14,8 nós e registrou track reach de 15,05 L. Sem alteração do limite pela Administração, qual é a avaliação desses dois parâmetros?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ambos atendem, pois a velocidade supera 14,76 nós e o teto de parada é 20 L."
+        },
+        {
+          "key": "B",
+          "text": "A velocidade não atende, pois deveria atingir 16,4 nós, e o track reach atende por ficar abaixo de 20 L."
+        },
+        {
+          "key": "C",
+          "text": "A velocidade atende, mas o track reach excede em 0,05 L o limite normal."
+        },
+        {
+          "key": "D",
+          "text": "Ambos falham, pois a velocidade mínima é 16,4 nós e o teto de parada é 15 L."
+        },
+        {
+          "key": "E",
+          "text": "O track reach atende após arredondamento para 15 L, mas a velocidade mínima é 14,85 nós."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A velocidade mínima é 0,90 × 16,4 = 14,76 nós, então 14,8 nós atendem. Sem alteração pela Administração, o teto do track reach é 15 L, superado em 0,05 L.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "MAN-B021-13",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002",
+        "locator": "Anexo 6, p. 3, § 4.2.1; p. 4, §§ 4.2.10–4.2.11; p. 5, § 5.3.4"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-021",
+        "critério normal de stopping ability",
+        "test speed V",
+        "integração"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "critério normal de stopping ability + test speed V",
+        "topic": {
+          "id": "MAN-B021-13",
+          "title": "Integração: critério normal de stopping ability e test speed V"
+        }
+      }
+    }
+  ],
+  "notebookStems": [
+    {
+      "bank": "manobrabilidade",
+      "id": "MAN-B021-13",
+      "reasons": [
+        "empty_fill_context"
+      ],
+      "question": "Um navio convencional faz 16,4 nós a 85% da potência máxima do motor. Em águas profundas e calmas, aproximou-se estabilizado a 14,8 nós e registrou track reach de 15,05 L. Sem alteração do limite pela Administração, qual é a avaliação desses dois parâmetros?",
+      "pscpp_format": "situation",
+      "style": "Aplicada"
+    }
+  ]
+}
