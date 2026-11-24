@@ -41,6 +41,7 @@ const stable = value => Array.isArray(value) ? value.map(stable) : value && type
   ? Object.fromEntries(Object.keys(value).sort().map(key => [key, stable(value[key])])) : value;
 // These later technical corrections change the explanation after the stem-only audit.
 const revisedExplanationHashes = {
+  "manobrabilidade/MAN-B023-13": "73b342e7db885e5e48412a3e04f9879180ee3e6d49d85858625d6ef67e250db9",
   "manobrabilidade/MAN-B022-13": "4473258c8abf9a25a21cdd2d120108f69e4738163fe36b288c03549554770648",
   "manobrabilidade/MAN-B021-13": "7cf348ef2e4a5a92e9f65c1228362084f3e99d59273b026c4f779424918d9844",
   "manobrabilidade/MAN-B020-13": "b4913ddf197f9475b29129dd0108e305ed7e24d0e36d89a7a802dee647d5006f",
@@ -58,6 +59,7 @@ const revisedExplanationHashes = {
 };
 // These primary-source reviews also replace incomplete alternatives.
 const revisedOptionsHashes = {
+  "manobrabilidade/MAN-B023-13": "8742a76dd829a56cfb630d50f0bfff98587f659a9d297a221258d243097e3bf7",
   "manobrabilidade/MAN-B022-13": "682754e9f15b2e9ae73145be013590eb15448efd54c4e8e700c4d981b052d909",
   "manobrabilidade/MAN-B021-13": "0e5cb1071e1809bd636cbdef904f069f54383e83afb24d05aafb5bcf2abcd66f",
 };
