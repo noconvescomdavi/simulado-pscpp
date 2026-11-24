@@ -1,0 +1,1067 @@
+{
+  "questions": [
+    {
+      "id": "MAN-B022-01",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "efeito do vento sobre navio leve + squat",
+      "topic_code": "MAN.B022.01",
+      "topic": "Integração: efeito do vento sobre navio leve e squat",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 5,
+      "question": "Um navio leve de borda livre alta reduz a marcha de 9 para 6 nós através da água ao entrar em trecho raso. O vento relativo de través mantém a intensidade e a direção. Qual avaliação distingue os dois efeitos?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A redução de marcha elimina a tendência de abatimento pelo vento."
+        },
+        {
+          "key": "B",
+          "text": "A força do vento cai na proporção do quadrado da velocidade através da água."
+        },
+        {
+          "key": "C",
+          "text": "O abatimento continua relevante e a redução de marcha tende a aliviar o afundamento dinâmico."
+        },
+        {
+          "key": "D",
+          "text": "O afundamento dinâmico aumenta porque a marcha menor reduz a ação do leme."
+        },
+        {
+          "key": "E",
+          "text": "Em navio de borda livre alta, o vento de través tende a elevar a folga sob a quilha."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A condição leve e a borda livre alta favorecem a sensibilidade ao vento. Com vento relativo mantido, reduzir a velocidade através da água tende a aliviar o squat. A força lateral do vento continua atuando.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "MAN-B022-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, pp. 35, 37–38, seções Squat e Wind"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-022",
+        "efeito do vento sobre navio leve",
+        "squat",
+        "integração"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Chapter 2 – Forces Affecting the Ship",
+        "module": "efeito do vento sobre navio leve + squat",
+        "topic": {
+          "id": "MAN-B022-01",
+          "title": "Integração: efeito do vento sobre navio leve e squat"
+        }
+      }
+    },
+    {
+      "id": "MAN-B022-02",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "corrente sobre o casco + águas rasas e squat",
+      "topic_code": "MAN.B022.02",
+      "topic": "Integração: corrente sobre o casco e águas rasas e squat",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Num trecho raso, um navio segue a 9 nós sobre o fundo contra uma corrente uniforme de 2 nós alinhada ao canal. Conservando os 9 nós sobre o fundo, qual velocidade deve entrar na análise do escoamento longitudinal e do squat?",
+      "options": [
+        {
+          "key": "A",
+          "text": "7 nós, pela subtração da corrente contrária."
+        },
+        {
+          "key": "B",
+          "text": "9 nós, porque o trecho é fixo em relação ao fundo."
+        },
+        {
+          "key": "C",
+          "text": "2 nós, porque só a corrente gera escoamento no casco."
+        },
+        {
+          "key": "D",
+          "text": "11 nós, pela soma da marcha sobre o fundo com a magnitude da corrente contrária."
+        },
+        {
+          "key": "E",
+          "text": "9 nós para o squat e 2 nós para todo o escoamento longitudinal."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "No eixo do canal, velocidade sobre o fundo é a soma algébrica da velocidade pela água e da corrente. Aqui, 9 = V − 2, portanto V = 11 nós. Essa é a referência da velocidade junto ao casco para a análise sob as hipóteses dadas.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "MAN-B022-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, pp. 35 e 38–39, seções Shallow water effect e Current"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-022",
+        "corrente sobre o casco",
+        "águas rasas e squat",
+        "integração"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Chapter 2 – Forces Affecting the Ship",
+        "module": "corrente sobre o casco + águas rasas e squat",
+        "topic": {
+          "id": "MAN-B022-02",
+          "title": "Integração: corrente sobre o casco e águas rasas e squat"
+        }
+      }
+    },
+    {
+      "id": "MAN-B022-03",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "uso de leme para vencer vento de través + resistência em águas rasas",
+      "topic_code": "MAN.B022.03",
+      "topic": "Integração: uso de leme para vencer vento de través e resistência em águas rasas",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Com vento relativo de través, um navio de propulsão e leme convencionais precisa manter o controle de proa em trecho raso. Seu seguimento é baixo. Qual fator deve entrar na avaliação antes de aumentar a marcha?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O leme conserva a mesma força para uma deflexão fixa mesmo se mudar o escoamento incidente."
+        },
+        {
+          "key": "B",
+          "text": "A resistência ao avanço em água rasa pode ser desprezada quando há vento de través."
+        },
+        {
+          "key": "C",
+          "text": "O leme carregado reduz a resistência ao avanço e libera potência para acelerar."
+        },
+        {
+          "key": "D",
+          "text": "Se o navio ganhar seguimento, a resistência permanecerá igual desde que o calado estático se mantenha."
+        },
+        {
+          "key": "E",
+          "text": "Mais seguimento pode aumentar a autoridade do leme, mas a resistência em água rasa e o squat podem crescer."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Com mais escoamento incidente, o leme convencional pode oferecer força lateral maior. No trecho raso, o aumento da velocidade também pode acentuar a resistência e o squat. A própria deflexão de leme acrescenta arrasto.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "MAN-B022-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, pp. 34–35 e 37–38, seções Air resistance and wind resistance, Shallow water effect e Wind"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-022",
+        "uso de leme para vencer vento de través",
+        "resistência em águas rasas",
+        "integração"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Chapter 2 – Forces Affecting the Ship",
+        "module": "uso de leme para vencer vento de través + resistência em águas rasas",
+        "topic": {
+          "id": "MAN-B022-03",
+          "title": "Integração: uso de leme para vencer vento de través e resistência em águas rasas"
+        }
+      }
+    },
+    {
+      "id": "MAN-B022-04",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "squat + bank suction",
+      "topic_code": "MAN.B022.04",
+      "topic": "Integração: squat e bank suction",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Num ensaio de canal, com deriva inicial nula e margem vertical mais próxima a boreste, a meia-nau passa a deslocar-se para boreste e o calado dinâmico aumenta. Como classificar esses sinais?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A aproximação lateral é compatível com sucção de margem e o aumento de calado com squat."
+        },
+        {
+          "key": "B",
+          "text": "A aproximação lateral é compatível com squat e o aumento de calado com sucção transversal."
+        },
+        {
+          "key": "C",
+          "text": "Ambos são explicados exclusivamente pelo momento de guinada da margem."
+        },
+        {
+          "key": "D",
+          "text": "O aumento de calado exige que a força lateral desloque a meia-nau para bombordo."
+        },
+        {
+          "key": "E",
+          "text": "Se houver sucção de margem, a posição vertical do casco fica invariável."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A sucção clássica decorre do campo transversal assimétrico e tende a atrair o casco à margem próxima. O squat altera a posição vertical e o trim do casco em movimento.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "santos-manobrabilidade",
+        "chapter_id": "santos-manobrabilidade::ch10",
+        "topic_id": "MAN-B022-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "SANTOS, Edson Mesquita dos",
+        "title": "A manobrabilidade do navio no século 21",
+        "edition": "1. ed., 2021",
+        "locator": "Cap. 9, § 9.7, p. 188; cap. 10, § 10.3, pp. 204–205"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-022",
+        "squat",
+        "bank suction",
+        "integração"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "santos-manobrabilidade",
+          "title": "SANTOS — A Manobrabilidade do Navio no Século 21",
+          "author": "SANTOS, Edson Mesquita dos"
+        },
+        "chapter": {
+          "id": "santos-manobrabilidade::ch10",
+          "number": "ch10",
+          "title": "Capítulo 10",
+          "label": "Capítulo 10"
+        },
+        "section": "Capítulo 10",
+        "module": "squat + bank suction",
+        "topic": {
+          "id": "MAN-B022-04",
+          "title": "Integração: squat e bank suction"
+        }
+      }
+    },
+    {
+      "id": "MAN-B022-05",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "águas rasas e squat + bow cushion junto à margem",
+      "topic_code": "MAN.B022.05",
+      "topic": "Integração: águas rasas e squat e bow cushion junto à margem",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 5,
+      "question": "Em um canal raso, a equipe observa que a proa tende a se afastar da margem mais próxima quando a onda de proa se intensifica desse lado. Em comparação com água profunda, como avaliar também o início do squat severo no regime descrito por Crenshaw?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A onda empurra a proa para a margem e o squat severo exige velocidade maior."
+        },
+        {
+          "key": "B",
+          "text": "A onda reforçada tende a afastar a proa e o squat severo pode manifestar-se em velocidade menor."
+        },
+        {
+          "key": "C",
+          "text": "A onda reforçada elimina o momento de guinada e o squat requer a mesma velocidade."
+        },
+        {
+          "key": "D",
+          "text": "O afastamento da proa implica que o casco inteiro se afasta e que o squat diminui."
+        },
+        {
+          "key": "E",
+          "text": "O afastamento da proa comprova que a velocidade crítica independe da profundidade."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Crenshaw descreve a onda de proa reforçada do lado da margem como contribuição para guinar a proa para fora. Em água rasa, o reforço do sistema de ondas e o squat severo podem aparecer a velocidades menores. A direção da guinada não determina o sentido da translação do casco.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "MAN-B022-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, p. 35, Shallow water effect; cap. 10, p. 188, fig. 10-7, como apoio para o efeito da onda de proa"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-022",
+        "águas rasas e squat",
+        "bow cushion junto à margem",
+        "integração"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Chapter 2 – Forces Affecting the Ship",
+        "module": "águas rasas e squat + bow cushion junto à margem",
+        "topic": {
+          "id": "MAN-B022-05",
+          "title": "Integração: águas rasas e squat e bow cushion junto à margem"
+        }
+      }
+    },
+    {
+      "id": "MAN-B022-06",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "resistência em águas rasas + combinação bank suction/bow cushion",
+      "topic_code": "MAN.B022.06",
+      "topic": "Integração: resistência em águas rasas e combinação bank suction/bow cushion",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Um modelo avança inicialmente paralelo a uma margem vertical próxima, sem deriva. No mesmo trecho raso e nas faixas de velocidade em que a resistência de onda está crescendo, aumenta-se a velocidade pela água. Qual conjunto de efeitos é compatível com essa condição?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Menor resistência e deslocamento lateral para fora porque a proa guina para fora."
+        },
+        {
+          "key": "B",
+          "text": "Maior resistência, força lateral para fora e momento de proa em direção à margem."
+        },
+        {
+          "key": "C",
+          "text": "Maior resistência possível, atração lateral à margem e momento de proa para fora."
+        },
+        {
+          "key": "D",
+          "text": "Resistência invariável e atração lateral somente se existir vento de través."
+        },
+        {
+          "key": "E",
+          "text": "Queda da resistência e neutralização do momento pelo simples aumento da velocidade."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "O confinamento pode elevar a resistência. No caso clássico, o campo de pressão assimétrico atrai lateralmente o casco para a margem e pode induzir guinada da proa para fora. Força lateral e momento podem coexistir.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "santos-manobrabilidade",
+        "chapter_id": "santos-manobrabilidade::ch10",
+        "topic_id": "MAN-B022-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "SANTOS, Edson Mesquita dos",
+        "title": "A manobrabilidade do navio no século 21",
+        "edition": "1. ed., 2021",
+        "locator": "Cap. 9, §§ 9.1–9.2, pp. 173–174; cap. 10, § 10.3, pp. 204–205; Crenshaw, cap. 2, p. 35"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-022",
+        "resistência em águas rasas",
+        "combinação bank suction/bow cushion",
+        "integração"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "santos-manobrabilidade",
+          "title": "SANTOS — A Manobrabilidade do Navio no Século 21",
+          "author": "SANTOS, Edson Mesquita dos"
+        },
+        "chapter": {
+          "id": "santos-manobrabilidade::ch10",
+          "number": "ch10",
+          "title": "Capítulo 10",
+          "label": "Capítulo 10"
+        },
+        "section": "Capítulo 10",
+        "module": "resistência em águas rasas + combinação bank suction/bow cushion",
+        "topic": {
+          "id": "MAN-B022-06",
+          "title": "Integração: resistência em águas rasas e combinação bank suction/bow cushion"
+        }
+      }
+    },
+    {
+      "id": "MAN-B022-07",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "bank suction + calibração de manobra do navio",
+      "topic_code": "MAN.B022.07",
+      "topic": "Integração: bank suction e calibração de manobra do navio",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Na preparação de um trânsito junto a uma margem, a ponte dispõe de dados medidos de giro e parada em águas abertas. Onde há margem vertical próxima a boreste e pouco espaço lateral, como usar esses dados?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Aplicá-los diretamente, pois a margem só altera a posição vertical do casco."
+        },
+        {
+          "key": "B",
+          "text": "Descartar os registros de parada, pois basta conhecer a taxa de guinada."
+        },
+        {
+          "key": "C",
+          "text": "Interpretar uma guinada da proa para bombordo como prova de afastamento de toda a embarcação."
+        },
+        {
+          "key": "D",
+          "text": "Usá-los como referência e avaliar separadamente a força lateral para boreste e o momento de guinada associados à margem."
+        },
+        {
+          "key": "E",
+          "text": "Substituir os dados do próprio navio por uma curva genérica de outro casco com o mesmo comprimento."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A calibração fornece referência para respostas de giro e parada. A margem próxima pode gerar força lateral para boreste e momento da proa para fora. Ensaios em águas abertas não quantificam diretamente essas ações em canal.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "santos-manobrabilidade",
+        "chapter_id": "santos-manobrabilidade::ch10",
+        "topic_id": "MAN-B022-07",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "SANTOS, Edson Mesquita dos",
+        "title": "A manobrabilidade do navio no século 21",
+        "edition": "1. ed., 2021",
+        "locator": "Cap. 10, §§ 10.3–10.3.1, pp. 204–205; Crenshaw, cap. 1, Calibration, pp. 7–8, apoio operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-022",
+        "bank suction",
+        "calibração de manobra do navio",
+        "integração"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "santos-manobrabilidade",
+          "title": "SANTOS — A Manobrabilidade do Navio no Século 21",
+          "author": "SANTOS, Edson Mesquita dos"
+        },
+        "chapter": {
+          "id": "santos-manobrabilidade::ch10",
+          "number": "ch10",
+          "title": "Capítulo 10",
+          "label": "Capítulo 10"
+        },
+        "section": "Capítulo 10",
+        "module": "bank suction + calibração de manobra do navio",
+        "topic": {
+          "id": "MAN-B022-07",
+          "title": "Integração: bank suction e calibração de manobra do navio"
+        }
+      }
+    },
+    {
+      "id": "MAN-B022-08",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "bow cushion junto à margem + distância de parada",
+      "topic_code": "MAN.B022.08",
+      "topic": "Integração: bow cushion junto à margem e distância de parada",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "O relatório de prova traz um track reach de 820 m em água profunda e irrestrita. Em um canal, a proa tende a guinar para fora da margem próxima. Qual conclusão separa a interação lateral da prova de parada?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A guinada para fora permite reduzir proporcionalmente os 820 m."
+        },
+        {
+          "key": "B",
+          "text": "Os 820 m são projeção sobre o eixo do canal e se mantêm em qualquer profundidade."
+        },
+        {
+          "key": "C",
+          "text": "A guinada para fora demonstra que cessou a força lateral de aproximação da margem."
+        },
+        {
+          "key": "D",
+          "text": "A prova de parada mede a deflexão necessária para anular a guinada."
+        },
+        {
+          "key": "E",
+          "text": "A guinada é compatível com o momento de margem e os 820 m são uma referência obtida em condições distintas das do canal."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O momento de margem pode afastar a proa enquanto a força lateral aproxima o casco. O track reach segue a trajetória da meia-nau até a parada relativa à água, nas condições em que o ensaio foi feito.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "santos-manobrabilidade",
+        "chapter_id": "santos-manobrabilidade::ch10",
+        "topic_id": "MAN-B022-08",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "SANTOS, Edson Mesquita dos",
+        "title": "A manobrabilidade do navio no século 21",
+        "edition": "1. ed., 2021",
+        "locator": "Cap. 10, §§ 10.3–10.3.1, pp. 204–205; MSC.137(76), Anexo 6, p. 4, §§ 4.2.10–4.2.11 e 5.2.1"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-022",
+        "bow cushion junto à margem",
+        "distância de parada",
+        "integração"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "santos-manobrabilidade",
+          "title": "SANTOS — A Manobrabilidade do Navio no Século 21",
+          "author": "SANTOS, Edson Mesquita dos"
+        },
+        "chapter": {
+          "id": "santos-manobrabilidade::ch10",
+          "number": "ch10",
+          "title": "Capítulo 10",
+          "label": "Capítulo 10"
+        },
+        "section": "Capítulo 10",
+        "module": "bow cushion junto à margem + distância de parada",
+        "topic": {
+          "id": "MAN-B022-08",
+          "title": "Integração: bow cushion junto à margem e distância de parada"
+        }
+      }
+    },
+    {
+      "id": "MAN-B022-09",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "combinação bank suction/bow cushion + força lateral de vento",
+      "topic_code": "MAN.B022.09",
+      "topic": "Integração: combinação bank suction/bow cushion e força lateral de vento",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 5,
+      "question": "Com deriva inicialmente nula, um navio passa paralelo a uma margem vertical próxima a bombordo e recebe vento relativo de bombordo. Quais proposições descrevem as ações presentes?",
+      "assertions": [
+        "I) A força lateral clássica de margem tende a atrair o casco para bombordo.",
+        "II) O momento de margem pode dirigir a proa para fora, ainda que o casco seja atraído para bombordo.",
+        "III) A parte emersa recebe a força aerodinâmica direta, com componente lateral para boreste neste cenário.",
+        "IV) Os sentidos opostos das forças laterais garantem que elas se anulem."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A margem pode atrair o casco para bombordo e produzir guinada da proa para fora. A pressão aerodinâmica sobre a parte emersa tende a empurrar o navio para boreste. Conhecer o sentido de cada ação, sem conhecer as magnitudes e os momentos, não basta para prever a resposta resultante.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "santos-manobrabilidade",
+        "chapter_id": "santos-manobrabilidade::ch10",
+        "topic_id": "MAN-B022-09",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "SANTOS, Edson Mesquita dos",
+        "title": "A manobrabilidade do navio no século 21",
+        "edition": "1. ed., 2021",
+        "locator": "Cap. 10, § 10.3, pp. 204–205; Crenshaw, cap. 2, Wind, pp. 37–38"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-022",
+        "combinação bank suction/bow cushion",
+        "força lateral de vento",
+        "integração"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "santos-manobrabilidade",
+          "title": "SANTOS — A Manobrabilidade do Navio no Século 21",
+          "author": "SANTOS, Edson Mesquita dos"
+        },
+        "chapter": {
+          "id": "santos-manobrabilidade::ch10",
+          "number": "ch10",
+          "title": "Capítulo 10",
+          "label": "Capítulo 10"
+        },
+        "section": "Capítulo 10",
+        "module": "combinação bank suction/bow cushion + força lateral de vento",
+        "topic": {
+          "id": "MAN-B022-09",
+          "title": "Integração: combinação bank suction/bow cushion e força lateral de vento"
+        }
+      }
+    },
+    {
+      "id": "MAN-B022-10",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "calibração de manobra do navio + efeito do leme na resistência",
+      "topic_code": "MAN.B022.10",
+      "topic": "Integração: calibração de manobra do navio e efeito do leme na resistência",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Para atualizar a ficha de manobra de um navio convencional, a equipe compara séries de giro, de parada e de marcha com leme carregado. Quais proposições são corretas?",
+      "assertions": [
+        "I) A taxa de giro registrada deve identificar velocidade e ângulo de leme.",
+        "II) A distância de parada de uma ordem a ré deve ser associada à velocidade inicial da série.",
+        "III) Leme carregado para manter o rumo pode aumentar a resistência ao avanço.",
+        "IV) O arrasto permanece independente do ângulo de leme enquanto houver seguimento."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Taxas de giro precisam ser associadas à velocidade e à deflexão. Distâncias de parada precisam identificar o estado inicial e a ordem de máquina. Mesmo pequenas deflexões para manter o rumo podem elevar o arrasto, segundo a seção de resistência ao vento.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "MAN-B022-10",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, p. 34, Air resistance and wind resistance; cap. 1, Calibration, pp. 7–8, apoio operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-022",
+        "calibração de manobra do navio",
+        "efeito do leme na resistência",
+        "integração"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Chapter 2 – Forces Affecting the Ship",
+        "module": "calibração de manobra do navio + efeito do leme na resistência",
+        "topic": {
+          "id": "MAN-B022-10",
+          "title": "Integração: calibração de manobra do navio e efeito do leme na resistência"
+        }
+      }
+    },
+    {
+      "id": "MAN-B022-11",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "distância de parada + efeito do vento sobre navio leve",
+      "topic_code": "MAN.B022.11",
+      "topic": "Integração: distância de parada e efeito do vento sobre navio leve",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Um navio com borda livre alta vai aproximar-se leve sob vento relativo de través. A ficha de bordo contém séries de parada em diferentes velocidades e ordens a ré. Quais proposições se aplicam?",
+      "assertions": [
+        "I) A condição leve e a borda livre alta favorecem a resposta ao vento de través.",
+        "II) A referência de parada deve ser associada à velocidade inicial e à ordem de máquina registradas.",
+        "III) Convém considerar o abatimento durante a redução do seguimento.",
+        "IV) A distância de parada na direção longitudinal informa, por si só, o abatimento lateral durante a aproximação."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A borda livre alta com pequena imersão favorece a sensibilidade ao vento. A avaliação da parada deve usar os registros do navio e suas condições de ensaio. Durante a perda de seguimento, o abatimento ainda pode ser relevante mesmo com a redução do movimento longitudinal.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "MAN-B022-11",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, Wind, pp. 37–38; cap. 1, Calibration, pp. 7–8, apoio operacional"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-022",
+        "distância de parada",
+        "efeito do vento sobre navio leve",
+        "integração"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Chapter 2 – Forces Affecting the Ship",
+        "module": "distância de parada + efeito do vento sobre navio leve",
+        "topic": {
+          "id": "MAN-B022-11",
+          "title": "Integração: distância de parada e efeito do vento sobre navio leve"
+        }
+      }
+    },
+    {
+      "id": "MAN-B022-12",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "força lateral de vento + corrente sobre o casco",
+      "topic_code": "MAN.B022.12",
+      "topic": "Integração: força lateral de vento e corrente sobre o casco",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Um navio é mantido com vento e corrente incidindo de través. Sem variar o ângulo de incidência nem a geometria exposta, a velocidade do vento relativo dobra e o escoamento relativo da água fica igual. Quais proposições são corretas no modelo descrito por Crenshaw?",
+      "assertions": [
+        "I) A carga aerodinâmica direta incide sobre a parte emersa.",
+        "II) A força aerodinâmica estimada passa a cerca de quatro vezes o valor inicial.",
+        "III) O escoamento da água continua exercendo força sobre a parte imersa.",
+        "IV) A igualdade das velocidades relativas do ar e da água garantiria forças de mesma magnitude."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "O vento aplica carga na estrutura emersa. Para forma, área e incidência constantes, a estimativa de força do vento varia com o quadrado da velocidade relativa, portanto quadruplica. A corrente continua atuando na parte imersa. Densidade, áreas projetadas e forma impedem equiparar forças apenas pela velocidade.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "MAN-B022-12",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, Basic principles e Wind/Current, pp. 14–15 e 37–39"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-022",
+        "força lateral de vento",
+        "corrente sobre o casco",
+        "integração"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Chapter 2 – Forces Affecting the Ship",
+        "module": "força lateral de vento + corrente sobre o casco",
+        "topic": {
+          "id": "MAN-B022-12",
+          "title": "Integração: força lateral de vento e corrente sobre o casco"
+        }
+      }
+    },
+    {
+      "id": "MAN-B022-13",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "efeito do leme na resistência + uso de leme para vencer vento de través",
+      "topic_code": "MAN.B022.13",
+      "topic": "Integração: efeito do leme na resistência e uso de leme para vencer vento de través",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 5,
+      "question": "Um navio convencional mantém o rumo com leme carregado sob vento de través. Considere o efeito da deflexão sobre a resistência e a possibilidade de ganhar governo com maior fluxo incidente no leme. Que avaliação é correta?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A deflexão diminui a resistência e o escoamento deixa de influir na força do leme."
+        },
+        {
+          "key": "B",
+          "text": "A deflexão aumenta a resistência, mas o leme fica menos eficaz sempre que o fluxo incidente aumenta."
+        },
+        {
+          "key": "C",
+          "text": "A deflexão só acrescenta resistência se o vento relativo vier pela proa."
+        },
+        {
+          "key": "D",
+          "text": "O aumento do escoamento pode ajudar o governo porque anula o arrasto gerado pelo leme carregado."
+        },
+        {
+          "key": "E",
+          "text": "A deflexão pode aumentar a resistência e maior fluxo incidente pode aumentar a força disponível no leme."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A deflexão de governo acrescenta arrasto. Em condições comparáveis, maior escoamento incidente pode elevar a força lateral disponível no leme para enfrentar o vento de través. Os dois efeitos podem coexistir.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "MAN-B022-13",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, Air resistance and wind resistance e Wind, pp. 34 e 37–38"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-022",
+        "efeito do leme na resistência",
+        "uso de leme para vencer vento de través",
+        "integração"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Chapter 2 – Forces Affecting the Ship",
+        "module": "efeito do leme na resistência + uso de leme para vencer vento de través",
+        "topic": {
+          "id": "MAN-B022-13",
+          "title": "Integração: efeito do leme na resistência e uso de leme para vencer vento de través"
+        }
+      }
+    }
+  ],
+  "notebookStems": [
+    {
+      "bank": "manobrabilidade",
+      "id": "MAN-B022-13",
+      "reasons": [
+        "empty_fill_context"
+      ],
+      "question": "Um navio convencional mantém o rumo com leme carregado sob vento de través. Considere o efeito da deflexão sobre a resistência e a possibilidade de ganhar governo com maior fluxo incidente no leme. Que avaliação é correta?",
+      "pscpp_format": "situation",
+      "style": "Aplicada"
+    }
+  ]
+}
