@@ -1,0 +1,1039 @@
+{
+  "questions": [
+    {
+      "id": "MAN-B004-01",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "resistência total RT",
+      "topic_code": "MAN.B004.01",
+      "topic": "resistência total RT",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Num ensaio de reboque em rumo reto, velocidade constante e água calma, o dinamômetro registra a força longitudinal média necessária para rebocar o modelo sem propulsor. Que grandeza é obtida?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O valor de Rₜ na condição testada."
+        },
+        {
+          "key": "B",
+          "text": "O atrito de uma placa plana equivalente."
+        },
+        {
+          "key": "C",
+          "text": "Somente a parcela de ondas do casco."
+        },
+        {
+          "key": "D",
+          "text": "A resistência residual após a subtração do atrito da placa equivalente."
+        },
+        {
+          "key": "E",
+          "text": "O coeficiente de resistência total, diretamente em newtons."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A tração longitudinal equilibra a resistência total Rₜ nas condições do ensaio. Atrito da placa e resistência de ondas são parcelas ou referências de análise, e a residual exige subtração. O coeficiente Cₜ é adimensional, obtido por normalização da força.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch4",
+        "topic_id": "MAN-B004-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 4, §§ 4.1.1–4.1.2, pp. 13–14, eq. (4.1) e fig. 4.1"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "resistência total rt"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch4",
+          "number": "ch4",
+          "title": "Chapter 4",
+          "label": "Chapter 4"
+        },
+        "section": "Chapter 4",
+        "module": "resistência total RT",
+        "topic": {
+          "id": "MAN-B004-01",
+          "title": "resistência total RT"
+        }
+      }
+    },
+    {
+      "id": "MAN-B004-02",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "resistência de atrito RF",
+      "topic_code": "MAN.B004.02",
+      "topic": "resistência de atrito RF",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Ao separar as forças hidrodinâmicas na superfície do casco, qual contribuição caracteriza o atrito viscoso?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A parcela longitudinal da força de pressão normal à superfície."
+        },
+        {
+          "key": "B",
+          "text": "A componente longitudinal resultante das tensões tangenciais sobre a área em contato com a água."
+        },
+        {
+          "key": "C",
+          "text": "A força necessária para sustentar o peso do navio em repouso."
+        },
+        {
+          "key": "D",
+          "text": "A parcela que resta ao subtrair o atrito da placa plana equivalente da resistência total."
+        },
+        {
+          "key": "E",
+          "text": "A transferência de energia ao sistema de ondas na superfície livre."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A viscosidade produz tensão tangencial junto à parede, associada ao gradiente de velocidade normal à superfície. A componente longitudinal dessa tensão integrada no casco é a parcela de atrito. A é pressão, C é equilíbrio hidrostático, D é a residual clássica e E descreve geração de ondas.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch6",
+        "topic_id": "MAN-B004-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 6, §§ 6.2.1–6.2.2, pp. 51–52, eq. (6.1); apoio no cap. 4, § 4.1.2, pp. 13–14"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "resistência de atrito rf"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch6",
+          "number": "ch6",
+          "title": "Chapter 6",
+          "label": "Chapter 6"
+        },
+        "section": "Chapter 6",
+        "module": "resistência de atrito RF",
+        "topic": {
+          "id": "MAN-B004-02",
+          "title": "resistência de atrito RF"
+        }
+      }
+    },
+    {
+      "id": "MAN-B004-03",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "resistência de ondas RW",
+      "topic_code": "MAN.B004.03",
+      "topic": "resistência de ondas RW",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 3,
+      "question": "Em uma análise de casco com superfície livre, detecta-se energia que se afasta na forma de um sistema de ondas produzido pelo avanço. Qual interpretação cabe no balanço de forças?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Atrito tangencial na superfície do casco."
+        },
+        {
+          "key": "B",
+          "text": "Arrasto de pressão viscosa resultante da esteira atrás do casco."
+        },
+        {
+          "key": "C",
+          "text": "A parcela ondulatória de Rₜ."
+        },
+        {
+          "key": "D",
+          "text": "Toda a resistência residual de Froude, incluindo os efeitos de forma."
+        },
+        {
+          "key": "E",
+          "text": "Resistência aerodinâmica das obras mortas."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "O sistema de ondas carrega energia fornecida pelo avanço do navio, o que caracteriza a resistência de formação de ondas. Atrito, pressão viscosa e arrasto do ar decorrem de outros mecanismos. A resistência residual clássica também incorpora efeitos de forma e tem escopo mais amplo.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch5",
+        "topic_id": "MAN-B004-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 5, §§ 5.4.4 e 5.5, pp. 27–28 e 31–32; apoio no cap. 4, § 4.1.2, pp. 13–14"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "resistência de ondas rw"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch5",
+          "number": "ch5",
+          "title": "Chapter 5",
+          "label": "Chapter 5"
+        },
+        "section": "Chapter 5",
+        "module": "resistência de ondas RW",
+        "topic": {
+          "id": "MAN-B004-03",
+          "title": "resistência de ondas RW"
+        }
+      }
+    },
+    {
+      "id": "MAN-B004-04",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "resistência residual RR",
+      "topic_code": "MAN.B004.04",
+      "topic": "resistência residual RR",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "No método original de Froude, que efeitos podem permanecer na parcela residual depois de descontar a força estimada para uma placa plana equivalente?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Somente atrito da própria placa."
+        },
+        {
+          "key": "B",
+          "text": "Somente formação de ondas, por definição exata."
+        },
+        {
+          "key": "C",
+          "text": "Somente efeito de forma sobre a pressão."
+        },
+        {
+          "key": "D",
+          "text": "Ondas e efeitos da forma do casco sobre atrito e pressão."
+        },
+        {
+          "key": "E",
+          "text": "Apenas pressão hidrostática associada ao peso do navio."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A subtração retira a estimativa de atrito da placa. O saldo conserva a resistência de ondas e os efeitos da geometria sobre atrito e pressão, conforme a discussão do método de Froude. A é a parcela retirada, B e C são incompletas e E não representa o saldo de forças longitudinais.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch1",
+        "topic_id": "MAN-B004-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 1, § 1.2.1, pp. 1–2; apoio no cap. 8, § 8.3.1, p. 101, eq. (8.1)"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "resistência residual rr"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch1",
+          "number": "ch1",
+          "title": "Chapter 1",
+          "label": "Chapter 1"
+        },
+        "section": "Chapter 1",
+        "module": "resistência residual RR",
+        "topic": {
+          "id": "MAN-B004-04",
+          "title": "resistência residual RR"
+        }
+      }
+    },
+    {
+      "id": "MAN-B004-05",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "número de Froude",
+      "topic_code": "MAN.B004.05",
+      "topic": "número de Froude",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Mantida a gravidade, um casco de teste é substituído por outro geometricamente semelhante com quatro vezes o comprimento de referência. Qual velocidade mantém a similitude governada pela gravidade na superfície livre?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Um quarto da original."
+        },
+        {
+          "key": "B",
+          "text": "Metade da original."
+        },
+        {
+          "key": "C",
+          "text": "A mesma do primeiro casco."
+        },
+        {
+          "key": "D",
+          "text": "Quatro vezes a original."
+        },
+        {
+          "key": "E",
+          "text": "O dobro da original."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Para conservar Fn = V/√(gL), V varia com √L. O comprimento multiplicado por quatro exige multiplicar a velocidade por dois. Os fatores 1/4, 1/2, 1 e 4 alteram o número de Froude.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch3",
+        "topic_id": "MAN-B004-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 3, §§ 3.3.1–3.3.2, pp. 11–12, eq. (3.13)"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "número de froude"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch3",
+          "number": "ch3",
+          "title": "Chapter 3",
+          "label": "Chapter 3"
+        },
+        "section": "Chapter 3",
+        "module": "número de Froude",
+        "topic": {
+          "id": "MAN-B004-05",
+          "title": "número de Froude"
+        }
+      }
+    },
+    {
+      "id": "MAN-B004-06",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "número de Reynolds",
+      "topic_code": "MAN.B004.06",
+      "topic": "número de Reynolds",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Em dois ensaios à mesma velocidade, o comprimento de referência e a viscosidade cinemática do fluido são ambos duplicados no segundo. Qual é a consequência para o número de Reynolds?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Permanece igual."
+        },
+        {
+          "key": "B",
+          "text": "Cai à metade."
+        },
+        {
+          "key": "C",
+          "text": "Dobra."
+        },
+        {
+          "key": "D",
+          "text": "Quadruplica."
+        },
+        {
+          "key": "E",
+          "text": "Cai a um quarto."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Rn = VL/ν. Em velocidade fixa, dobrar L e ν multiplica numerador e denominador pelo mesmo fator. Cada um dos outros fatores exigiria uma variação diferente de V, L ou ν.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch3",
+        "topic_id": "MAN-B004-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 3, § 3.3.1, p. 11, eq. (3.11)"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "número de reynolds"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch3",
+          "number": "ch3",
+          "title": "Chapter 3",
+          "label": "Chapter 3"
+        },
+        "section": "Chapter 3",
+        "module": "número de Reynolds",
+        "topic": {
+          "id": "MAN-B004-06",
+          "title": "número de Reynolds"
+        }
+      }
+    },
+    {
+      "id": "MAN-B004-07",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "camada-limite",
+      "topic_code": "MAN.B004.07",
+      "topic": "camada-limite",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 3,
+      "question": "Em relação ao casco em movimento, a velocidade tangencial medida num perfil junto à parede vai de zero na superfície até se aproximar da velocidade do escoamento externo. Que região o perfil atravessa?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Uma faixa de escoamento externo sem gradientes viscosos apreciáveis."
+        },
+        {
+          "key": "B",
+          "text": "A camada-limite viscosa junto ao casco."
+        },
+        {
+          "key": "C",
+          "text": "Toda a esteira a jusante da popa, fora da superfície do casco."
+        },
+        {
+          "key": "D",
+          "text": "O sistema de ondas irradiado pela superfície livre."
+        },
+        {
+          "key": "E",
+          "text": "Uma camada sem viscosidade com deslizamento livre na parede."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A condição de não deslizamento fixa em zero a velocidade relativa na parede. O gradiente na camada-limite liga a parede ao escoamento exterior e produz cisalhamento. A e E contradizem essas condições, C fica a jusante e D descreve ondas.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch6",
+        "topic_id": "MAN-B004-07",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 6, §§ 6.2.1–6.2.2, pp. 51–52, fig. 6.1 e eq. (6.1); apoio no cap. 2, § 2.4.1"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "camada-limite"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch6",
+          "number": "ch6",
+          "title": "Chapter 6",
+          "label": "Chapter 6"
+        },
+        "section": "Chapter 6",
+        "module": "camada-limite",
+        "topic": {
+          "id": "MAN-B004-07",
+          "title": "camada-limite"
+        }
+      }
+    },
+    {
+      "id": "MAN-B004-08",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "superfície molhada S",
+      "topic_code": "MAN.B004.08",
+      "topic": "superfície molhada S",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Ao calcular Cₜ = Rₜ/(½ρV²S) para um casco nu no calado do ensaio, que área se emprega como S na convenção de Larsson e Raven?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A projeção transversal da seção mestra."
+        },
+        {
+          "key": "B",
+          "text": "A projeção horizontal delimitada pela linha de água."
+        },
+        {
+          "key": "C",
+          "text": "A extensão da superfície do casco diretamente em contato com a água."
+        },
+        {
+          "key": "D",
+          "text": "A projeção lateral das obras mortas."
+        },
+        {
+          "key": "E",
+          "text": "A área varrida pelas pontas do hélice."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "S é a área molhada do casco na condição analisada, que multiplica a pressão dinâmica na normalização. Projeções de seção, flutuação e obras mortas são áreas diferentes. O disco do hélice também não é a referência.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch4",
+        "topic_id": "MAN-B004-08",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 4, §§ 4.1.1–4.1.2, pp. 13–14, eq. (4.1)"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "superfície molhada s"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch4",
+          "number": "ch4",
+          "title": "Chapter 4",
+          "label": "Chapter 4"
+        },
+        "section": "Chapter 4",
+        "module": "superfície molhada S",
+        "topic": {
+          "id": "MAN-B004-08",
+          "title": "superfície molhada S"
+        }
+      }
+    },
+    {
+      "id": "MAN-B004-09",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "efeito de águas rasas na resistência",
+      "topic_code": "MAN.B004.09",
+      "topic": "efeito de águas rasas na resistência",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "Classifique as afirmações sobre efeitos de profundidade e coeficientes de resistência.",
+      "assertions": [
+        "I) Quando a velocidade se aproxima de √(gh), a profundidade limitada implica necessariamente uma redução da resistência em relação à água profunda.",
+        "II) O número de Froude de profundidade vale V/√(gh), com h igual à profundidade.",
+        "III) Cₜ é o coeficiente de resistência total.",
+        "IV) Cw é o coeficiente de resistência de ondas."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II, III e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "D",
+          "text": "Apenas II, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I e IV."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "I é falsa: o comportamento varia com a faixa de velocidade e pode haver aumento acentuado de resistência perto da velocidade crítica. II é verdadeira pela definição de Fnₕ. III e IV são verdadeiras pelas definições dos coeficientes. A, B, C e E incluem I, e D reúne apenas as verdadeiras.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch5",
+        "topic_id": "MAN-B004-09",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 5, §§ 5.9–5.10, pp. 38 e 42–43, figs. 5.30–5.32; apoio no cap. 4, § 4.1.1, p. 13, e no cap. 8, § 8.3.2, p. 101, eq. (8.9)"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "efeito de águas rasas na resistência"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch5",
+          "number": "ch5",
+          "title": "Chapter 5",
+          "label": "Chapter 5"
+        },
+        "section": "Chapter 5",
+        "module": "efeito de águas rasas na resistência",
+        "topic": {
+          "id": "MAN-B004-09",
+          "title": "efeito de águas rasas na resistência"
+        }
+      }
+    },
+    {
+      "id": "MAN-B004-10",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "coeficiente CT",
+      "topic_code": "MAN.B004.10",
+      "topic": "coeficiente CT",
+      "difficulty": "Médio",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "Um relatório compara dois ensaios com a mesma velocidade, densidade e área molhada de referência. Classifique as afirmações sobre os resultados.",
+      "assertions": [
+        "I) Se Rₜ aumenta 10%, Cₜ também aumenta 10%.",
+        "II) Cw descreve exclusivamente o efeito viscoso de forma.",
+        "III) Se Rₜ cresce 10%, Pₑ também cresce 10%.",
+        "IV) A análise pode decompor Rₜ em parcelas associadas a mecanismos físicos distintos."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II, III e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, III e IV."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "I e III são verdadeiras porque os fatores que multiplicam Rₜ em Cₜ ou Pₑ foram mantidos. II é falsa porque Cw se refere a ondas. IV é verdadeira pela finalidade da decomposição. Só E reúne todas as verdadeiras e exclui II.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch4",
+        "topic_id": "MAN-B004-10",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 4, §§ 4.1.1–4.1.2, pp. 13–14, eq. (4.1); apoio no cap. 8, § 8.3, pp. 100–101, eqs. (8.8)–(8.9)"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "coeficiente ct"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch4",
+          "number": "ch4",
+          "title": "Chapter 4",
+          "label": "Chapter 4"
+        },
+        "section": "Chapter 4",
+        "module": "coeficiente CT",
+        "topic": {
+          "id": "MAN-B004-10",
+          "title": "coeficiente CT"
+        }
+      }
+    },
+    {
+      "id": "MAN-B004-11",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "potência efetiva PE",
+      "topic_code": "MAN.B004.11",
+      "topic": "potência efetiva PE",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "A 5 m/s em água calma, o reboque de um casco exige 80 kN de força longitudinal. Classifique as afirmações sobre resistência e potência.",
+      "assertions": [
+        "I) A potência efetiva nessa condição vale 400 kW.",
+        "II) A força de reboque em regime constante representa a resistência total na condição analisada.",
+        "III) Os 400 kW já incorporam as perdas propulsivas e são diretamente a potência entregue ao propulsor.",
+        "IV) A geração de ondas pode contribuir para a resistência total."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II, III e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I e IV."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Pₑ = RₜV = 80 kN × 5 m/s = 400 kW. A força de reboque em regime constante equilibra Rₜ, e a parcela de ondas entra na decomposição. III é falsa porque a potência efetiva exclui as perdas propulsivas. B e D incluem III, C omite IV e E omite II.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch8",
+        "topic_id": "MAN-B004-11",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 8, § 8.3, pp. 100–101, eq. (8.8); apoio no cap. 4, § 4.1.2, pp. 13–14"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "potência efetiva pe"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch8",
+          "number": "ch8",
+          "title": "Chapter 8",
+          "label": "Chapter 8"
+        },
+        "section": "Chapter 8",
+        "module": "potência efetiva PE",
+        "topic": {
+          "id": "MAN-B004-11",
+          "title": "potência efetiva PE"
+        }
+      }
+    },
+    {
+      "id": "MAN-B004-12",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "resistência de atrito RF",
+      "topic_code": "MAN.B004.12",
+      "topic": "resistência de atrito RF",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "Classifique as afirmações sobre decomposição da resistência e similitude hidrodinâmica.",
+      "assertions": [
+        "I) A resistência de atrito decorre de cisalhamento na superfície molhada.",
+        "II) A formação do sistema de ondas do casco contribui para a resistência associada a ondas.",
+        "III) Na decomposição clássica de Froude, a residual é Rₜ menos o atrito estimado para a placa plana equivalente.",
+        "IV) O número de Froude, por si só, estabelece similitude dos efeitos viscosos."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II, III e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I e IV."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "I é verdadeira pela origem da tensão tangencial e II pela geração de ondas. III é verdadeira no método de Froude original. IV é falsa porque Fn caracteriza a similitude gravitacional e Rn caracteriza a relação entre inércia e viscosidade. A e E incluem IV, C omite III e D omite II.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch4",
+        "topic_id": "MAN-B004-12",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 4, §§ 4.1.1–4.1.2, pp. 13–14; apoio no cap. 3, §§ 3.3.1–3.3.2, pp. 11–12, e no cap. 8, § 8.3.1, p. 101"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "resistência de atrito rf"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch4",
+          "number": "ch4",
+          "title": "Chapter 4",
+          "label": "Chapter 4"
+        },
+        "section": "Chapter 4",
+        "module": "resistência de atrito RF",
+        "topic": {
+          "id": "MAN-B004-12",
+          "title": "resistência de atrito RF"
+        }
+      }
+    },
+    {
+      "id": "MAN-B004-13",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "potência efetiva PE",
+      "topic_code": "MAN.B004.13",
+      "topic": "potência efetiva PE",
+      "difficulty": "Médio",
+      "style": "Completar",
+      "pscpp_format": "fill",
+      "cognitive_level": 3,
+      "question": "Com base em LARSSON & RAVEN — Ship Resistance and Flow, complete corretamente: a grandeza obtida pelo produto da resistência total à translação pela velocidade do navio corresponde a ______.",
+      "options": [
+        {
+          "key": "A",
+          "text": "resistência de atrito RF"
+        },
+        {
+          "key": "B",
+          "text": "resistência total RT"
+        },
+        {
+          "key": "C",
+          "text": "potência efetiva PE"
+        },
+        {
+          "key": "D",
+          "text": "resistência de ondas RW"
+        },
+        {
+          "key": "E",
+          "text": "resistência residual RR"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "O produto RₜV define a potência efetiva Pₑ, isto é, a potência de reboque na condição de avanço, sem as perdas propulsivas. Em unidades SI, N × m/s = W. As demais opções são forças e se exprimem em newtons.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch8",
+        "topic_id": "MAN-B004-13",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 8, § 8.3, pp. 100–101, eq. (8.8)"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-004",
+        "potência efetiva pe"
+      ],
+      "provenance": {
+        "mass_reformulation": {
+          "version": "answer-leak-v1",
+          "reason": "stem normalized to remove answer-disclosing source fragment"
+        }
+      },
+      "editorial_review": {
+        "complete_stem_restored": true,
+        "complete_stem_version": "notebook-complete-stems-v1"
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch8",
+          "number": "ch8",
+          "title": "Chapter 8",
+          "label": "Chapter 8"
+        },
+        "section": "Chapter 8",
+        "module": "potência efetiva PE",
+        "topic": {
+          "id": "MAN-B004-13",
+          "title": "potência efetiva PE"
+        }
+      }
+    }
+  ]
+}
