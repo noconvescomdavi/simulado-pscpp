@@ -83,31 +83,31 @@
       "topic": "Pressão dinâmica",
       "difficulty": "Fácil",
       "style": "Cálculo",
-      "question": "Em dois ensaios no mesmo fluido, a velocidade relativa passa de 2 m/s para 6 m/s. Qual é a razão entre a pressão dinâmica do segundo ensaio e a do primeiro?",
+      "question": "O fluido do segundo ensaio tem metade da densidade do primeiro, e a velocidade relativa passa de 2 m/s para 6 m/s. Qual é a razão entre a pressão dinâmica do segundo ensaio e a do primeiro?",
       "options": [
         {
           "key": "A",
-          "text": "3"
+          "text": "1,5"
         },
         {
           "key": "B",
-          "text": "9"
+          "text": "4,5"
         },
         {
           "key": "C",
-          "text": "1/3"
+          "text": "3"
         },
         {
           "key": "D",
-          "text": "1"
+          "text": "9"
         },
         {
           "key": "E",
-          "text": "27"
+          "text": "18"
         }
       ],
       "correct_answer": "B",
-      "explanation": "No mesmo fluido, a densidade é constante e a pressão dinâmica varia com o quadrado da velocidade relativa. A razão é (6/2)² = 9.",
+      "explanation": "A pressão dinâmica varia com o produto da densidade pelo quadrado da velocidade relativa. A razão é 0,5 × (6/2)² = 4,5.",
       "source": {
         "author": "CRENSHAW, Russell Sydnor",
         "title": "Naval Shiphandling",
@@ -464,32 +464,32 @@
       "topic_code": "1.1",
       "topic": "Resistência friccional",
       "difficulty": "Fácil",
-      "style": "Conceitual",
-      "question": "Qual contribuição, integrada sobre a superfície molhada do casco na direção do avanço, fornece a resistência friccional?",
+      "style": "Cálculo",
+      "question": "Num modelo de casco, duas regiões da superfície molhada têm áreas de 10 m² e 20 m². As componentes longitudinais médias da tensão de cisalhamento opostas ao avanço são, respectivamente, 4 Pa e 2 Pa. Qual é a soma das contribuições dessas regiões para a resistência friccional?",
       "options": [
         {
           "key": "A",
-          "text": "da pressão hidrostática vertical sobre o convés."
+          "text": "40 N"
         },
         {
           "key": "B",
-          "text": "A componente longitudinal da tensão tangencial de cisalhamento exercida pela água no casco."
+          "text": "80 N"
         },
         {
           "key": "C",
-          "text": "somente das forças normais sobre o espelho de popa."
+          "text": "90 N"
         },
         {
           "key": "D",
-          "text": "da energia das ondas sem considerar viscosidade."
+          "text": "120 N"
         },
         {
           "key": "E",
-          "text": "do empuxo do propulsor sobre o disco da hélice."
+          "text": "180 N"
         }
       ],
       "correct_answer": "B",
-      "explanation": "O gradiente de velocidade na camada limite gera tensão tangencial. A integral da sua componente longitudinal fornece a parcela friccional da resistência, descrita por Bertram no capítulo 3.",
+      "explanation": "Integra-se a componente longitudinal da tensão tangencial sobre a superfície molhada. Cada região contribui com 40 N, pois 1 Pa = 1 N/m². A soma é 80 N.",
       "source": {
         "author": "BERTRAM, Volker",
         "title": "Practical Ship Hydrodynamics",
@@ -614,32 +614,32 @@
       "topic_code": "5.6.1",
       "topic": "Camada limite",
       "difficulty": "Fácil",
-      "style": "Conceitual",
-      "question": "Em uma região de escoamento aderido, como varia a velocidade longitudinal da água, medida em relação ao casco, entre a parede e a borda da camada limite?",
+      "style": "Cálculo",
+      "question": "Num ponto do casco com escoamento aderido, a velocidade externa local relativa ao casco é de 8 m/s. Se a borda da camada limite for definida pelo critério de 99%, que velocidade se espera nessa borda?",
       "options": [
         {
           "key": "A",
-          "text": "da velocidade máxima na superfície até zero fora da camada."
+          "text": "0 m/s"
         },
         {
           "key": "B",
-          "text": "de forma descontínua, sem gradiente de velocidade."
+          "text": "0,08 m/s"
         },
         {
           "key": "C",
-          "text": "apenas com a profundidade hidrostática."
+          "text": "4,00 m/s"
         },
         {
           "key": "D",
-          "text": "de zero na superfície, pela condição de não deslizamento, até aproximar-se da velocidade do escoamento externo."
+          "text": "7,92 m/s"
         },
         {
           "key": "E",
-          "text": "de zero em toda a camada, independentemente da marcha."
+          "text": "8,08 m/s"
         }
       ],
       "correct_answer": "D",
-      "explanation": "Na parede, a condição de não deslizamento impõe velocidade relativa nula. Ao se afastar da parede, o escoamento se aproxima da velocidade externa local. Pode-se definir a espessura pelo ponto que atinge 99% desse valor.",
+      "explanation": "Na parede, a condição de não deslizamento impõe velocidade relativa nula. O perfil aproxima-se da velocidade externa local. Com o critério de 99%, a borda está onde a velocidade é 0,99 × 8 = 7,92 m/s.",
       "source": {
         "author": "LARSSON, Lars; RAVEN, Hoyte C.",
         "title": "Ship Resistance and Flow",
