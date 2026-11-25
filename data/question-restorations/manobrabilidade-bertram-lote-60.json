@@ -1,0 +1,1030 @@
+{
+  "questions": [
+    {
+      "id": "MAN-B005-01",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "course keeping",
+      "topic_code": "MAN.B005.01",
+      "topic": "course keeping",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Ao configurar a função de governo descrita como course keeping, qual variável é mantida na referência em um modelo de manobra?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A direção do eixo longitudinal do navio."
+        },
+        {
+          "key": "B",
+          "text": "O rumo sobre o fundo, calculado a partir de posições sucessivas."
+        },
+        {
+          "key": "C",
+          "text": "O afastamento lateral em relação à linha de rota."
+        },
+        {
+          "key": "D",
+          "text": "A velocidade através da água."
+        },
+        {
+          "key": "E",
+          "text": "O diâmetro de uma curva de giro."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Em § 6.1, o alvo do course keeping é a direção do eixo longitudinal. Rumo sobre o fundo e afastamento lateral descrevem a trajetória. Velocidade e diâmetro de giro dizem respeito a outros aspectos da manobrabilidade.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "MAN-B005-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, § 6.1, pp. 241–242"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-005",
+        "course keeping"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Chapter 6 – Ship manoeuvering",
+        "module": "course keeping",
+        "topic": {
+          "id": "MAN-B005-01",
+          "title": "course keeping"
+        }
+      }
+    },
+    {
+      "id": "MAN-B005-02",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "course changing",
+      "topic_code": "MAN.B005.02",
+      "topic": "course changing",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 3,
+      "question": "Que capacidade está sendo avaliada quando o indicador de desempenho é a execução sob governo da transição de um aproamento inicial para outro?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Manutenção da proa (course keeping)."
+        },
+        {
+          "key": "B",
+          "text": "Mudança de rumo (course changing)."
+        },
+        {
+          "key": "C",
+          "text": "Seguimento da trajetória (track keeping)."
+        },
+        {
+          "key": "D",
+          "text": "Capacidade de parada (stopping ability)."
+        },
+        {
+          "key": "E",
+          "text": "Manutenção da velocidade sob perturbação."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A transição entre duas direções da proa é course changing. Course keeping conserva a direção, track keeping segue uma trajetória e as duas últimas alternativas tratam da velocidade. A transição pode envolver tanto iniciar a guinada como contê-la em seguida.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "MAN-B005-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, § 6.1, pp. 241–242"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-005",
+        "course changing"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Chapter 6 – Ship manoeuvering",
+        "module": "course changing",
+        "topic": {
+          "id": "MAN-B005-02",
+          "title": "course changing"
+        }
+      }
+    },
+    {
+      "id": "MAN-B005-03",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "turning circle",
+      "topic_code": "MAN.B005.03",
+      "topic": "turning circle",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Na prova de giro, que medida é lida perpendicularmente ao rumo de aproximação quando o aproamento já mudou 180°?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O avanço aos 90°."
+        },
+        {
+          "key": "B",
+          "text": "O afastamento transversal aos 90°."
+        },
+        {
+          "key": "C",
+          "text": "O diâmetro tático."
+        },
+        {
+          "key": "D",
+          "text": "O raio de giro no regime estabilizado."
+        },
+        {
+          "key": "E",
+          "text": "A distância de parada ao longo da trajetória."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A fig. 6.4 identifica o diâmetro tático pelo afastamento transversal aos 180°. O avanço é longitudinal aos 90°, e a transferência aos 90° usa outro marco de proa. O raio de regime é outra medida. A distância de parada pertence a outra prova.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "MAN-B005-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, § 6.3.1, pp. 262–263, fig. 6.4"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-005",
+        "turning circle"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Chapter 6 – Ship manoeuvering",
+        "module": "turning circle",
+        "topic": {
+          "id": "MAN-B005-03",
+          "title": "turning circle"
+        }
+      }
+    },
+    {
+      "id": "MAN-B005-04",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "zig-zag test",
+      "topic_code": "MAN.B005.04",
+      "topic": "zig-zag test",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Em um zigue-zague 10°/10°, a primeira ordem coloca o leme a 10° a boreste. Qual evento determina a seguinte ordem, agora para bombordo?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Decorrerem 10 segundos desde a primeira ordem."
+        },
+        {
+          "key": "B",
+          "text": "O indicador confirmar que o leme atingiu os 10° ordenados."
+        },
+        {
+          "key": "C",
+          "text": "A velocidade de guinada atingir zero após a primeira ordem."
+        },
+        {
+          "key": "D",
+          "text": "A proa afastar-se 10° a boreste da direção inicial."
+        },
+        {
+          "key": "E",
+          "text": "A proa já ter atingido o extremo do primeiro sobressinal."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A segunda execução é comandada pelo desvio de proa de 10° em relação à direção inicial. Tempo decorrido e posição efetiva da pá não são o critério. A guinada costuma continuar após o contraleme até o extremo do sobressinal.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "MAN-B005-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, § 6.3.1, p. 265, fig. 6.7"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-005",
+        "zig-zag test"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Chapter 6 – Ship manoeuvering",
+        "module": "zig-zag test",
+        "topic": {
+          "id": "MAN-B005-04",
+          "title": "zig-zag test"
+        }
+      }
+    },
+    {
+      "id": "MAN-B005-05",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "efeito de águas rasas em navio yaw-stable",
+      "topic_code": "MAN.B005.05",
+      "topic": "efeito de águas rasas em navio yaw-stable",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Dois navios entram em águas rasas. Um mantém estabilidade em guinada, e o outro é instável e sofre grande alteração dessa característica com a mudança de profundidade. Que comparação se sustenta?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Os dois necessariamente apresentam menor raio de giro."
+        },
+        {
+          "key": "B",
+          "text": "O navio estável gira mais fechado, e só o instável pode ter aumento no tempo de conter a guinada."
+        },
+        {
+          "key": "C",
+          "text": "As tendências do navio estável têm de ser idênticas no instável, qualquer que seja sua resposta ao leme."
+        },
+        {
+          "key": "D",
+          "text": "No navio estável, o aumento das forças do leme basta para reduzir o tempo de giro."
+        },
+        {
+          "key": "E",
+          "text": "No estável, podem aumentar o raio e os tempos de giro e de conter a guinada. O instável pode responder de outra forma."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "No caso estável, o crescimento das forças do casco que se opõem à mudança de rumo supera o efeito favorável do leme. A, B e D atribuem ao caso estável melhora não sustentada. C ignora que a própria estabilidade pode mudar e a tendência do caso instável pode divergir.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "MAN-B005-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, § 6.2.5, p. 256"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-005",
+        "efeito de águas rasas em navio yaw-stable"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Chapter 6 – Ship manoeuvering",
+        "module": "efeito de águas rasas em navio yaw-stable",
+        "topic": {
+          "id": "MAN-B005-05",
+          "title": "efeito de águas rasas em navio yaw-stable"
+        }
+      }
+    },
+    {
+      "id": "MAN-B005-06",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "leme atrás de propulsor girando a ré",
+      "topic_code": "MAN.B005.06",
+      "topic": "leme atrás de propulsor girando a ré",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 4,
+      "question": "Ao elaborar um modelo de parada para um navio de hélice convencional, o analista considera o leme instalado atrás do propulsor. O que deve prever para a ação do leme durante o giro do hélice a ré?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Efeito muito reduzido na manobra descrita."
+        },
+        {
+          "key": "B",
+          "text": "A mesma força para uma dada deflexão que em marcha avante."
+        },
+        {
+          "key": "C",
+          "text": "Aumento garantido da força lateral com a inversão do eixo."
+        },
+        {
+          "key": "D",
+          "text": "Anulação da força lateral do propulsor por qualquer pequena deflexão."
+        },
+        {
+          "key": "E",
+          "text": "Capacidade de impor uma trajetória retilínea só pelo ângulo de leme."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Na configuração descrita em § 6.2.6, o leme atrás do hélice girando a ré tem efeito muito reduzido. O ganho de autoridade associado à esteira propulsiva avante não pode ser transferido para essa fase. A inversão não garante aumento, compensação ou controle integral do traçado.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "MAN-B005-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, § 6.2.6, p. 257, e § 6.4.4, pp. 284–285"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-005",
+        "leme atrás de propulsor girando a ré"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Chapter 6 – Ship manoeuvering",
+        "module": "leme atrás de propulsor girando a ré",
+        "topic": {
+          "id": "MAN-B005-06",
+          "title": "leme atrás de propulsor girando a ré"
+        }
+      }
+    },
+    {
+      "id": "MAN-B005-07",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "trajetória durante stopping",
+      "topic_code": "MAN.B005.07",
+      "topic": "trajetória durante stopping",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Para interpretar a dispersão lateral entre repetidas provas de parada de um navio instável em guinada, quais dados convém comparar junto com a ordem de máquina?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas a distância longitudinal percorrida até parar."
+        },
+        {
+          "key": "B",
+          "text": "As ações dos propulsores, o vento e as pequenas diferenças de guinada no início."
+        },
+        {
+          "key": "C",
+          "text": "Somente os giros de ensaio realizados com o leme fixo em marcha avante."
+        },
+        {
+          "key": "D",
+          "text": "Apenas a corrente no caso de o vento mudar."
+        },
+        {
+          "key": "E",
+          "text": "Somente a proa final, porque perturbações iniciais pequenas não afetam o traçado."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Durante a parada o governo pelo leme pode ser limitado, e forças dos propulsores e do vento têm peso no traçado. Em um navio instável, pequenos movimentos iniciais também podem produzir trajetórias muito distintas. Medidas finais isoladas, curva em outra manobra e um único agente ambiental não explicam a dispersão.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "MAN-B005-07",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, § 6.2.6, p. 257"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-005",
+        "trajetória durante stopping"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Chapter 6 – Ship manoeuvering",
+        "module": "trajetória durante stopping",
+        "topic": {
+          "id": "MAN-B005-07",
+          "title": "trajetória durante stopping"
+        }
+      }
+    },
+    {
+      "id": "MAN-B005-08",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "CFD em manobrabilidade",
+      "topic_code": "MAN.B005.08",
+      "topic": "CFD em manobrabilidade",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Qual fluxo de trabalho usa resultados de CFD para estimar coeficientes de força em um modelo de manobra?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Medir apenas a potência no eixo e atribuir seu valor a todos os coeficientes."
+        },
+        {
+          "key": "B",
+          "text": "Prescrever arrasto de casco nulo quando o ângulo de leme é pequeno."
+        },
+        {
+          "key": "C",
+          "text": "Calcular forças e momentos para estados de movimento pertinentes e usar as respostas para ajustar os termos do modelo."
+        },
+        {
+          "key": "D",
+          "text": "Usar os dados geométricos do casco para dispensar a avaliação das forças."
+        },
+        {
+          "key": "E",
+          "text": "Tratar um único cálculo em marcha retilínea como validação de todas as condições de deriva, guinada e leme."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "CFD pode fornecer forças e momentos em diferentes condições, que embasam os coeficientes das equações de manobra. Potência isolada, geometria sem avaliação de forças e uma única condição reta não identificam as dependências. Ângulo reduzido de leme tampouco justifica arrasto nulo. Malha, turbulência e comparação com resultados experimentais afetam a confiabilidade.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "MAN-B005-08",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, § 6.2.2, p. 244, e § 6.2.8, pp. 258–260"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-005",
+        "cfd em manobrabilidade"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Chapter 6 – Ship manoeuvering",
+        "module": "CFD em manobrabilidade",
+        "topic": {
+          "id": "MAN-B005-08",
+          "title": "CFD em manobrabilidade"
+        }
+      }
+    },
+    {
+      "id": "MAN-B005-09",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "forças do casco em águas rasas",
+      "topic_code": "MAN.B005.09",
+      "topic": "forças do casco em águas rasas",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "Classifique as afirmações sobre profundidade, interação hidrodinâmica e cavitação do leme.",
+      "assertions": [
+        "I) Em águas rasas, para um navio estável em guinada, o crescimento das forças do casco pode superar o crescimento das forças do leme e dificultar a mudança de rumo.",
+        "II) Em marcha avante, estar atrás do hélice faz o leme ficar imune ao escoamento induzido pelo propulsor.",
+        "III) O escoamento ao redor do leme defletido em marcha avante pode induzir força transversal na popa do casco.",
+        "IV) Se a pressão local cair abaixo da pressão de vapor da água, pode ocorrer cavitação no leme."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II, III e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I e IV."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "I é verdadeira no caso estável descrito. II é falsa porque o leme na esteira do hélice em marcha avante recebe escoamento alterado. III é verdadeira pela reação adicional na popa e IV pelo mecanismo de vaporização. A omite IV, E omite III e B e C incluem II. D reúne as três verdadeiras.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "MAN-B005-09",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, § 6.2.5, p. 256, §§ 6.4.4–6.4.5, pp. 284–285 e 288–289, e § 6.4.6, p. 290"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-005",
+        "forças do casco em águas rasas"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Chapter 6 – Ship manoeuvering",
+        "module": "forças do casco em águas rasas",
+        "topic": {
+          "id": "MAN-B005-09",
+          "title": "forças do casco em águas rasas"
+        }
+      }
+    },
+    {
+      "id": "MAN-B005-10",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "rudder-hull interaction",
+      "topic_code": "MAN.B005.10",
+      "topic": "rudder-hull interaction",
+      "difficulty": "Médio",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "Classifique as afirmações sobre o leme, a banda e a manutenção da proa.",
+      "assertions": [
+        "I) Com o leme defletido e velocidade avante, a reação induzida na popa pode deslocar para vante o centro de ação da força transversal total, comparado ao leme isolado.",
+        "II) O colapso de cavidades de vapor junto ao leme pode produzir erosão.",
+        "III) A banda pode ser desconsiderada sempre, ainda que seja grande, porque nunca modifica forças de manobra.",
+        "IV) A manutenção do aproamento tem como referência a orientação longitudinal do navio."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II, III e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, II e IV."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "I é verdadeira: pode haver deslocamento para vante do centro de ação da força transversal total. II é verdadeira porque o colapso próximo à superfície pode provocar erosão. III é falsa pela dependência de forças e momento com a banda, e IV corresponde ao course keeping. A e C omitem uma verdadeira, e B e D incluem III.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "MAN-B005-10",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, § 6.4.5, pp. 288–289, eqs. (6.83)–(6.84), e § 6.4.6, p. 290; apoio nos §§ 6.1 e 6.2.4, pp. 241–242 e 255–256"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-005",
+        "rudder-hull interaction"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Chapter 6 – Ship manoeuvering",
+        "module": "rudder-hull interaction",
+        "topic": {
+          "id": "MAN-B005-10",
+          "title": "rudder-hull interaction"
+        }
+      }
+    },
+    {
+      "id": "MAN-B005-11",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "heel influence",
+      "topic_code": "MAN.B005.11",
+      "topic": "heel influence",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Classifique as afirmações sobre banda, governo e prova de giro.",
+      "assertions": [
+        "I) O ângulo de banda pode influenciar as forças X e Y e o momento de guinada N.",
+        "II) Course keeping tem por objetivo conservar a orientação longitudinal.",
+        "III) Course changing envolve levar a proa a uma nova direção sob governo.",
+        "IV) A finalidade da curva de giro é medir exclusivamente a potência do hélice em água livre."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II, III e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I e IV."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "I é verdadeira porque a banda pode modificar forças e momento. II e III distinguem manter e mudar a direção da proa. IV é falsa porque o giro mede a capacidade de girar e a geometria da trajetória. B e E incluem IV, C omite III e D omite II.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "MAN-B005-11",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, § 6.2.4, pp. 255–256; apoio nos §§ 6.1 e 6.3.1, pp. 241–242 e 262–263, fig. 6.4"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-005",
+        "heel influence"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Chapter 6 – Ship manoeuvering",
+        "module": "heel influence",
+        "topic": {
+          "id": "MAN-B005-11",
+          "title": "heel influence"
+        }
+      }
+    },
+    {
+      "id": "MAN-B005-12",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "course changing",
+      "topic_code": "MAN.B005.12",
+      "topic": "course changing",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "Classifique as afirmações sobre mudança de rumo, ensaios e efeito da profundidade.",
+      "assertions": [
+        "I) A mudança de rumo é avaliada pela capacidade de reduzir a velocidade a zero sem guinar.",
+        "II) A curva de giro permite extrair grandezas da trajetória, como avanço e diâmetro tático.",
+        "III) O zigue-zague permite observar o tempo de conter a guinada após o contraleme e o ângulo de sobressinal.",
+        "IV) Em águas rasas, um navio estável em guinada pode ter maior raio de giro e maior tempo para conter a guinada."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II, III e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas II, III e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I e IV."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "I é falsa: reduzir a velocidade a zero caracteriza parada. II é verdadeira pela prova de giro, III pela prova de zigue-zague e IV pela análise de águas rasas do caso estável. A, C, D e E incluem I. B contém apenas as verdadeiras.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "MAN-B005-12",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, §§ 6.1 e 6.2.5, pp. 241–242 e 256, e § 6.3.1, pp. 262–263 e 265, figs. 6.4 e 6.7"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-005",
+        "course changing"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Chapter 6 – Ship manoeuvering",
+        "module": "course changing",
+        "topic": {
+          "id": "MAN-B005-12",
+          "title": "course changing"
+        }
+      }
+    },
+    {
+      "id": "MAN-B005-13",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "heel influence",
+      "topic_code": "MAN.B005.13",
+      "topic": "heel influence",
+      "difficulty": "Médio",
+      "style": "Completar",
+      "pscpp_format": "fill",
+      "cognitive_level": 3,
+      "question": "Um modelo mantém a proa e o leme fixos ao comparar dois estados de inclinação transversal do casco. A variável angular que distingue esses estados no modelo é ______.",
+      "options": [
+        {
+          "key": "A",
+          "text": "o ângulo de deriva."
+        },
+        {
+          "key": "B",
+          "text": "o ângulo de leme δ."
+        },
+        {
+          "key": "C",
+          "text": "o ângulo de banda φ."
+        },
+        {
+          "key": "D",
+          "text": "o ângulo de guinada."
+        },
+        {
+          "key": "E",
+          "text": "o ângulo de trim."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A banda é a inclinação transversal em torno do eixo longitudinal e pode modificar X, Y e N. Deriva e guinada descrevem relações e movimentos no plano horizontal, δ descreve a deflexão do leme e trim se refere à inclinação longitudinal.",
+      "active": false,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "MAN-B005-13",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, § 6.2.1, p. 243, e § 6.2.4, pp. 255–256"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-005",
+        "heel influence"
+      ],
+      "status": "quarantined",
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Chapter 6 – Ship manoeuvering",
+        "module": "heel influence",
+        "topic": {
+          "id": "MAN-B005-13",
+          "title": "heel influence"
+        }
+      }
+    }
+  ]
+}
