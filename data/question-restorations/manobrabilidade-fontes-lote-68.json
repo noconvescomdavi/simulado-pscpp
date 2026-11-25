@@ -1,0 +1,979 @@
+{
+  "questions": [
+    {
+      "id": "MAN-040",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.5.3",
+      "topic": "Padrão de ondas",
+      "difficulty": "Médio",
+      "style": "Conceitual",
+      "question": "No padrão ideal de Kelvin em águas profundas, uma equipe distingue a orientação das cristas da posição das linhas externas que delimitam a esteira. Que identificação dos dois sistemas é correta?",
+      "options": [
+        {
+          "key": "A",
+          "text": "As cristas de ambos os sistemas coincidem com as duas linhas externas da esteira."
+        },
+        {
+          "key": "B",
+          "text": "O sistema transversal é o que aparece apenas à frente da perturbação."
+        },
+        {
+          "key": "C",
+          "text": "O sistema divergente é a sucessão de cristas aproximadamente perpendiculares à linha de marcha, a ré."
+        },
+        {
+          "key": "D",
+          "text": "O sistema transversal tem cristas necessariamente paralelas à linha de marcha; o divergente tem cristas perpendiculares a ela."
+        },
+        {
+          "key": "E",
+          "text": "As cristas transversais cruzam a esteira aproximadamente de lado a lado, enquanto as cristas divergentes são oblíquas e se dispõem para os lados."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "As cristas do sistema transversal atravessam a região atrás do navio. As ondas divergentes formam cristas oblíquas orientadas para os lados. As linhas-limite do padrão de Kelvin delimitam a região que contém ambos os sistemas.",
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "3. ed. (Second Revision), 1988",
+        "locator": "Vol. II, cap. V, § 4.2, pp. 15–16, figs. 6–7"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch5-s4",
+        "padrao-de-ondas"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch5-s4",
+        "topic_id": "I-pna-v2-ch5-s4-5-5-3-padrao-de-ondas",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V. (ed.)"
+        },
+        "chapter": {
+          "id": "pna-v2::ch5-s4",
+          "number": "ch5-s4",
+          "title": "Chapter V – Resistance — Section 4: Wave-Making Resistance",
+          "label": "Chapter V – Resistance — Section 4: Wave-Making Resistance"
+        },
+        "section": "Vol. II, cap. V, § 4.2, pp. 15–16, figs. 6–7",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-pna-v2-ch5-s4-5-5-3-padrao-de-ondas",
+          "title": "Padrão de ondas"
+        }
+      }
+    },
+    {
+      "id": "MAN-041",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.5.4",
+      "topic": "Efeito de canais",
+      "difficulty": "Médio",
+      "style": "Cálculo",
+      "question": "Um navio avança à mesma velocidade através da água em dois canais retangulares de igual profundidade. O segundo tem metade da largura do primeiro. Quais são as razões segundo/primeiro para o bloqueio geométrico e para o Froude de profundidade, respectivamente?",
+      "options": [
+        {
+          "key": "A",
+          "text": "2 e 1."
+        },
+        {
+          "key": "B",
+          "text": "1 e 2."
+        },
+        {
+          "key": "C",
+          "text": "0,5 e 1."
+        },
+        {
+          "key": "D",
+          "text": "2 e 2."
+        },
+        {
+          "key": "E",
+          "text": "1 e 1."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O bloqueio é a razão entre a área da seção mestra imersa e a área da seção do canal. Reduzir a largura à metade dobra essa razão. A profundidade e a velocidade mantidas produzem o mesmo Froude de profundidade, embora o bloqueio possa alterar a resposta.",
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 5, § 5.12, pp. 48–49, fig. 5.37, bloqueio em canais"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch5",
+        "efeito-de-canais"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch5",
+        "topic_id": "I-larsson-resistance-ch5-5-5-4-efeito-de-canais",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch5",
+          "number": "ch5",
+          "title": "Chapter 5",
+          "label": "Chapter 5"
+        },
+        "section": "Cap. 5, § 5.12, pp. 48–49, fig. 5.37, bloqueio em canais",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch5-5-5-4-efeito-de-canais",
+          "title": "Efeito de canais"
+        }
+      }
+    },
+    {
+      "id": "MAN-042",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "1.6",
+      "topic": "Resistência adicional em ondas",
+      "difficulty": "Médio",
+      "style": "Conceitual",
+      "question": "Um modelo sem propulsor é rebocado em ondas de proa com o caturro e o movimento vertical impedidos no ensaio. Qual mecanismo da resistência adicional discutida em Lewis pode permanecer nessa configuração?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A parcela indireta que depende do movimento vertical livre do casco."
+        },
+        {
+          "key": "B",
+          "text": "A difração das ondas incidentes pelo casco em avanço."
+        },
+        {
+          "key": "C",
+          "text": "A parcela indireta que depende do caturro livre do casco."
+        },
+        {
+          "key": "D",
+          "text": "A perda de rendimento de um propulsor por disparo periódico, mesmo com modelo rebocado sem propulsor."
+        },
+        {
+          "key": "E",
+          "text": "A ação aerodinâmica de vento na superestrutura, como efeito obrigatório das ondas incidentes."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Lewis distingue a difração das ondas encontradas pelo casco do efeito indireto dos movimentos de caturro e oscilação vertical. Impedir esses movimentos remove sua contribuição correspondente, mas ainda há interação entre o casco e as ondas incidentes.",
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "3. ed. (Second Revision), 1988",
+        "locator": "Vol. II, cap. V, § 5.3, p. 34, Added Resistance due to Waves"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch5-s5",
+        "resistencia-adicional-em-ondas"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch5-s5",
+        "topic_id": "I-pna-v2-ch5-s4-1-6-resistencia-adicional-em-ondas",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V. (ed.)"
+        },
+        "chapter": {
+          "id": "pna-v2::ch5-s5",
+          "number": "ch5-s5",
+          "title": "Chapter V – Resistance — Section 5: Other Components of Resistance",
+          "label": "Chapter V – Resistance — Section 5: Other Components of Resistance"
+        },
+        "section": "Vol. II, cap. V, § 5.3, p. 34, Added Resistance due to Waves",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-pna-v2-ch5-s4-1-6-resistencia-adicional-em-ondas",
+          "title": "Resistência adicional em ondas"
+        }
+      }
+    },
+    {
+      "id": "MAN-043",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "1.6",
+      "topic": "Resistência em mar agitado",
+      "difficulty": "Fácil",
+      "style": "Aplicada",
+      "question": "Em mar de proa, um navio sofre caturro pronunciado, e a rotação do propulsor aumenta brevemente quando ele se aproxima da superfície. Como Crenshaw distingue esse efeito do aumento da resistência ao avanço?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O aumento de rotação prova que a resistência do casco caiu no mesmo instante."
+        },
+        {
+          "key": "B",
+          "text": "O aumento de rotação é só um efeito de maior resistência viscosa de parede."
+        },
+        {
+          "key": "C",
+          "text": "O caturro pode elevar a resistência do casco e, separadamente, prejudicar o rendimento propulsivo quando a imersão do hélice diminui."
+        },
+        {
+          "key": "D",
+          "text": "O propulsor próximo da superfície mantém a mesma capacidade de gerar empuxo para qualquer condição de caturro."
+        },
+        {
+          "key": "E",
+          "text": "A perda de rendimento por redução de imersão pode ser atribuída exclusivamente ao balanço puro."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Crenshaw distingue o aumento de resistência associado ao caturro das perdas de eficiência propulsiva quando os hélices se aproximam da superfície e disparam.",
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, pp. 35–36, Rough Water Effects"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "crenshaw-naval-shiphandling",
+        "crenshaw-naval-shiphandling::ch2",
+        "resistencia-em-mar-agitado"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "I-crenshaw-naval-shiphandling-ch2-1-6-resistencia-em-mar-agitado",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Cap. 2, pp. 35–36, Rough Water Effects",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-crenshaw-naval-shiphandling-ch2-1-6-resistencia-em-mar-agitado",
+          "title": "Resistência em mar agitado"
+        }
+      }
+    },
+    {
+      "id": "MAN-044",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.9",
+      "topic": "Potência efetiva",
+      "difficulty": "Médio",
+      "style": "Cálculo",
+      "question": "Uma curva de reboque mostra resistência total aproximadamente proporcional a V³ num intervalo estreito. Para a potência efetiva proporcional a V elevado a n nesse mesmo intervalo, quanto vale n?",
+      "options": [
+        {
+          "key": "A",
+          "text": "2."
+        },
+        {
+          "key": "B",
+          "text": "3."
+        },
+        {
+          "key": "C",
+          "text": "−1."
+        },
+        {
+          "key": "D",
+          "text": "4."
+        },
+        {
+          "key": "E",
+          "text": "0."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A potência efetiva é o produto da resistência pela velocidade. Se a curva local tem resistência proporcional a V³, a potência efetiva varia com V⁴. A regra cúbica para a potência corresponde ao caso local de resistência aproximadamente quadrática.",
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, pp. 36–37, The Cube Rule"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "crenshaw-naval-shiphandling",
+        "crenshaw-naval-shiphandling::ch2",
+        "potencia-efetiva"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "I-crenshaw-naval-shiphandling-ch2-5-9-potencia-efetiva",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Cap. 2, pp. 36–37, The Cube Rule",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-crenshaw-naval-shiphandling-ch2-5-9-potencia-efetiva",
+          "title": "Potência efetiva"
+        }
+      }
+    },
+    {
+      "id": "MAN-045",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.9",
+      "topic": "Regra do cubo",
+      "difficulty": "Médio",
+      "style": "Cálculo",
+      "question": "Em uma faixa na qual a resistência de reboque permanece proporcional ao quadrado da velocidade, a potência efetiva passa a 72,9% do valor inicial. Que fração da velocidade inicial é esperada?",
+      "options": [
+        {
+          "key": "A",
+          "text": "72,9%."
+        },
+        {
+          "key": "B",
+          "text": "Aproximadamente 85,4%."
+        },
+        {
+          "key": "C",
+          "text": "100%."
+        },
+        {
+          "key": "D",
+          "text": "110%."
+        },
+        {
+          "key": "E",
+          "text": "90%."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Nesse regime, a potência efetiva é proporcional ao cubo da velocidade. A raiz cúbica de 0,729 é 0,90, redução de 10% da velocidade inicial.",
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, pp. 36–37, The Cube Rule"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "crenshaw-naval-shiphandling",
+        "crenshaw-naval-shiphandling::ch2",
+        "regra-do-cubo"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "I-crenshaw-naval-shiphandling-ch2-5-9-regra-do-cubo",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Cap. 2, pp. 36–37, The Cube Rule",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-crenshaw-naval-shiphandling-ch2-5-9-regra-do-cubo",
+          "title": "Regra do cubo"
+        }
+      }
+    },
+    {
+      "id": "MAN-046",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.9",
+      "topic": "Potência efetiva",
+      "difficulty": "Fácil",
+      "style": "Cálculo",
+      "question": "A 6 m/s, a força longitudinal de reboque de referência definida na eq. (3.1) de Bertram é 70 kN. Um estudo de propulsão estima 560 kW entregues ao hélice no mesmo ponto de avanço. Qual potência efetiva deve entrar no balanço?",
+      "options": [
+        {
+          "key": "A",
+          "text": "420 kW."
+        },
+        {
+          "key": "B",
+          "text": "560 kW."
+        },
+        {
+          "key": "C",
+          "text": "140 kW."
+        },
+        {
+          "key": "D",
+          "text": "630 kW."
+        },
+        {
+          "key": "E",
+          "text": "980 kW."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A potência efetiva é 70 kN × 6 m/s = 420 kW. A potência entregue ao hélice tem outra definição no balanço e pode ser maior que a potência efetiva.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 3, § 3.1.1, p. 74, eq. (3.1), potência efetiva"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch3",
+        "potencia-efetiva"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch3",
+        "topic_id": "I-bertram-ch3-5-9-potencia-efetiva",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch3",
+          "number": "ch3",
+          "title": "Chapter 3 – Resistance and Propulsion",
+          "label": "Chapter 3 – Resistance and Propulsion"
+        },
+        "section": "Cap. 3, § 3.1.1, p. 74, eq. (3.1), potência efetiva",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-bertram-ch3-5-9-potencia-efetiva",
+          "title": "Potência efetiva"
+        }
+      }
+    },
+    {
+      "id": "MAN-047",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "1.5",
+      "topic": "Resistência do ar",
+      "difficulty": "Fácil",
+      "style": "Cálculo",
+      "question": "Para aplicar apenas a faixa experimental citada por Crenshaw, tome um caso de avanço em ar parado em velocidade máxima com resistência da água de 400 kN. Qual intervalo representa a estimativa de resistência do ar nessa comparação?",
+      "options": [
+        {
+          "key": "A",
+          "text": "4 a 8 kN."
+        },
+        {
+          "key": "B",
+          "text": "6 a 12 kN."
+        },
+        {
+          "key": "C",
+          "text": "8 a 16 kN."
+        },
+        {
+          "key": "D",
+          "text": "10 a 20 kN."
+        },
+        {
+          "key": "E",
+          "text": "16 a 32 kN."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Os experimentos citados encontraram resistência do ar de cerca de 1,5% a 3% da resistência da água na velocidade máxima. Sobre 400 kN, a faixa ilustrativa é 6 a 12 kN. A estimativa corresponde à série descrita e pode variar com casco, superestrutura e vento.",
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, p. 34, Air Resistance and Wind Resistance"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "crenshaw-naval-shiphandling",
+        "crenshaw-naval-shiphandling::ch2",
+        "resistencia-do-ar"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "I-crenshaw-naval-shiphandling-ch2-1-5-resistencia-do-ar",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Cap. 2, p. 34, Air Resistance and Wind Resistance",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-crenshaw-naval-shiphandling-ch2-1-5-resistencia-do-ar",
+          "title": "Resistência do ar"
+        }
+      }
+    },
+    {
+      "id": "MAN-048",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "1.5",
+      "topic": "Resistência ao vento",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Dois registros mantêm a mesma velocidade e o mesmo ângulo de vento relativo pela bochecha. No segundo, manter o mesmo rumo exige maior deflexão de leme. Que parcela pode aumentar por efeito direto dessa deflexão?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A pressão atmosférica média sobre a superestrutura."
+        },
+        {
+          "key": "B",
+          "text": "A resistência do ar por alteração da velocidade do vento relativo."
+        },
+        {
+          "key": "C",
+          "text": "A resistência hidrodinâmica associada ao leme defletido."
+        },
+        {
+          "key": "D",
+          "text": "A resistência de ondas apenas por aumento da velocidade de marcha."
+        },
+        {
+          "key": "E",
+          "text": "A resistência do ar por aumento da área vélica projetada a esse mesmo ângulo."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Crenshaw observa que um componente transversal de vento pode exigir leme e que mesmo uma deflexão pequena pode aumentar o arrasto. O contraste proposto mantém o vento relativo e a velocidade, isolando a contribuição possível do leme.",
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, p. 34, Air Resistance and Wind Resistance"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "crenshaw-naval-shiphandling",
+        "crenshaw-naval-shiphandling::ch2",
+        "resistencia-ao-vento"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "I-crenshaw-naval-shiphandling-ch2-1-5-resistencia-ao-vento",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Cap. 2, p. 34, Air Resistance and Wind Resistance",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-crenshaw-naval-shiphandling-ch2-1-5-resistencia-ao-vento",
+          "title": "Resistência ao vento"
+        }
+      }
+    },
+    {
+      "id": "MAN-049",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.7.3",
+      "topic": "Resistência ao vento",
+      "difficulty": "Fácil",
+      "style": "Cálculo",
+      "question": "Uma estimativa simplificada aplica a mesma densidade do ar e o mesmo coeficiente de força em duas condições. Na segunda, a área exposta normal ao vento é 75% da primeira, e a velocidade relativa do ar aumenta 20%. Qual é a nova força estimada como fração da anterior?",
+      "options": [
+        {
+          "key": "A",
+          "text": "0,75."
+        },
+        {
+          "key": "B",
+          "text": "0,90."
+        },
+        {
+          "key": "C",
+          "text": "1,00."
+        },
+        {
+          "key": "D",
+          "text": "1,08."
+        },
+        {
+          "key": "E",
+          "text": "1,44."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A força é proporcional à área normal ao vento e ao quadrado da velocidade relativa, com densidade e coeficiente mantidos. O fator é 0,75 × 1,20² = 1,08.",
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, p. 37, Wind, dependência de área e velocidade relativa"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "crenshaw-naval-shiphandling",
+        "crenshaw-naval-shiphandling::ch2",
+        "resistencia-ao-vento"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "I-crenshaw-naval-shiphandling-ch2-5-7-3-resistencia-ao-vento",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Cap. 2, p. 37, Wind, dependência de área e velocidade relativa",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-crenshaw-naval-shiphandling-ch2-5-7-3-resistencia-ao-vento",
+          "title": "Resistência ao vento"
+        }
+      }
+    },
+    {
+      "id": "MAN-050",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "1.5",
+      "topic": "Efeito da condição de carga",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Na condição leve, o casco fica com mais área exposta e menor calado. A equipe conhece a variação de área total, mas desconhece sua distribuição entre proa e popa. Que conclusão é sustentada pela discussão de Crenshaw antes de avaliar o momento de guinada?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O maior calado da condição carregada torna obrigatório o maior abatimento nessa condição."
+        },
+        {
+          "key": "B",
+          "text": "A área exposta total determina o sentido da guinada sem precisar de sua distribuição."
+        },
+        {
+          "key": "C",
+          "text": "O navio leve obrigatoriamente aproa ao vento, qualquer que seja a posição das áreas expostas."
+        },
+        {
+          "key": "D",
+          "text": "A maior sensibilidade da condição leve só pode ocorrer se a área exposta à ré predominar."
+        },
+        {
+          "key": "E",
+          "text": "A condição leve tende a responder mais ao vento, mas o sentido provável da guinada exige avaliar onde a ação aerodinâmica atua."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Crenshaw associa borda livre alta e menor calado a maior sensibilidade. Ele trata separadamente a distribuição longitudinal da área exposta para explicar por que uma extremidade pode cair a sotavento. A área total sozinha é insuficiente para identificar qual extremidade.",
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, pp. 37–38, Wind, borda livre, calado e distribuição longitudinal"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "crenshaw-naval-shiphandling",
+        "crenshaw-naval-shiphandling::ch2",
+        "efeito-da-condicao-de-carga"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "I-crenshaw-naval-shiphandling-ch2-1-5-efeito-da-condicao-de-carga",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Cap. 2, pp. 37–38, Wind, borda livre, calado e distribuição longitudinal",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-crenshaw-naval-shiphandling-ch2-1-5-efeito-da-condicao-de-carga",
+          "title": "Efeito da condição de carga"
+        }
+      }
+    },
+    {
+      "id": "MAN-051",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "1.7",
+      "topic": "Variação de calado",
+      "difficulty": "Médio",
+      "style": "Cálculo",
+      "question": "Numa comparação da forma mercante em lastro sem trim com a condição carregada, suponha que a resistência por unidade de deslocamento aumente 10% e o deslocamento caia para 80% do valor inicial. Qual é a resistência total em lastro como porcentagem da resistência na condição carregada?",
+      "options": [
+        {
+          "key": "A",
+          "text": "88%."
+        },
+        {
+          "key": "B",
+          "text": "90%."
+        },
+        {
+          "key": "C",
+          "text": "110%."
+        },
+        {
+          "key": "D",
+          "text": "125%."
+        },
+        {
+          "key": "E",
+          "text": "137,5%."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A razão das forças totais é o produto das razões da resistência específica e do deslocamento: 1,10 × 0,80 = 0,88. O cálculo ilustra como a resistência por unidade de deslocamento pode aumentar enquanto a força total diminui.",
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "3. ed. (Second Revision), 1988",
+        "locator": "Vol. II, cap. V, § 5.5, p. 42, condição de lastro sem trim"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch5-s5",
+        "variacao-de-calado"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch5-s5",
+        "topic_id": "I-pna-v2-ch5-s1-1-7-variacao-de-calado",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V. (ed.)"
+        },
+        "chapter": {
+          "id": "pna-v2::ch5-s5",
+          "number": "ch5-s5",
+          "title": "Chapter V – Resistance — Section 5: Other Components of Resistance",
+          "label": "Chapter V – Resistance — Section 5: Other Components of Resistance"
+        },
+        "section": "Vol. II, cap. V, § 5.5, p. 42, condição de lastro sem trim",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-pna-v2-ch5-s1-1-7-variacao-de-calado",
+          "title": "Variação de calado"
+        }
+      }
+    },
+    {
+      "id": "MAN-052",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "1.7",
+      "topic": "Efeito do trim",
+      "difficulty": "Difícil",
+      "style": "Conceitual",
+      "question": "Para a forma mercante média descrita no § 5.5, mantendo o deslocamento, aumenta-se o trim estático pela popa. Que tendência de resistência a fonte atribui a essa alteração em baixa e em alta velocidade?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Redução em baixa e aumento em alta velocidade, dominados pelo atrito nos dois casos."
+        },
+        {
+          "key": "B",
+          "text": "Aumento em baixa velocidade pelo maior efeito de forma a ré, com possível redução em alta pelo menor efeito de formação de ondas."
+        },
+        {
+          "key": "C",
+          "text": "Redução nos dois regimes, pois o trim pela popa elimina separação em qualquer velocidade."
+        },
+        {
+          "key": "D",
+          "text": "Aumento nos dois regimes, pois a alteração de trim não afeta a resistência de ondas."
+        },
+        {
+          "key": "E",
+          "text": "Resistência igual nos dois regimes, pois a geometria imersa independe do trim estático."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Na forma mercante média discutida, o maior calado de ré pode tornar a popa efetivamente mais cheia e elevar a resistência de forma e separação a baixa velocidade. Em alta velocidade, o menor efeito de geração de ondas da entrada mais fina pode compensar essa elevação. A tendência é específica à forma e à faixa considerada.",
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "3. ed. (Second Revision), 1988",
+        "locator": "Vol. II, cap. V, § 5.5, pp. 41–42, Trim Effects"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch5-s5",
+        "efeito-do-trim"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch5-s5",
+        "topic_id": "I-pna-v2-ch5-s5-1-7-efeito-do-trim",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V. (ed.)"
+        },
+        "chapter": {
+          "id": "pna-v2::ch5-s5",
+          "number": "ch5-s5",
+          "title": "Chapter V – Resistance — Section 5: Other Components of Resistance",
+          "label": "Chapter V – Resistance — Section 5: Other Components of Resistance"
+        },
+        "section": "Vol. II, cap. V, § 5.5, pp. 41–42, Trim Effects",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-pna-v2-ch5-s5-1-7-efeito-do-trim",
+          "title": "Efeito do trim"
+        }
+      }
+    }
+  ]
+}
