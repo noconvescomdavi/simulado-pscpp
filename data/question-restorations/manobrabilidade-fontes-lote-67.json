@@ -1,0 +1,979 @@
+{
+  "questions": [
+    {
+      "id": "MAN-027",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.3.1",
+      "topic": "Similaridade dinâmica",
+      "difficulty": "Médio",
+      "style": "Cálculo",
+      "question": "Em dois escoamentos geometricamente semelhantes, foram isoladas três componentes de força, na mesma ordem: inércia, gravidade e viscosidade. Se no modelo elas valem 2 N, 3 N e 4 N, qual conjunto está em similitude dinâmica quanto a essas três componentes?",
+      "options": [
+        {
+          "key": "A",
+          "text": "20 N, 30 N e 35 N."
+        },
+        {
+          "key": "B",
+          "text": "20 N, 30 N e 40 N."
+        },
+        {
+          "key": "C",
+          "text": "20 N, 40 N e 30 N."
+        },
+        {
+          "key": "D",
+          "text": "20 N, 20 N e 20 N."
+        },
+        {
+          "key": "E",
+          "text": "10 N, 30 N e 40 N."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A similitude dinâmica requer um mesmo fator de escala para todas as componentes pertinentes. O segundo conjunto multiplica cada força por 10 e preserva suas razões.",
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 3, § 3.1, p. 10, semelhança dinâmica"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch3",
+        "similaridade-dinamica"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch3",
+        "topic_id": "I-larsson-resistance-ch3-5-3-1-similaridade-dinamica",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch3",
+          "number": "ch3",
+          "title": "Chapter 3",
+          "label": "Chapter 3"
+        },
+        "section": "Cap. 3, § 3.1, p. 10, semelhança dinâmica",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch3-5-3-1-similaridade-dinamica",
+          "title": "Similaridade dinâmica"
+        }
+      }
+    },
+    {
+      "id": "MAN-028",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.8.2",
+      "topic": "Ensaios de resistência",
+      "difficulty": "Fácil",
+      "style": "Aplicada",
+      "question": "Qual configuração de tanque permite medir a resistência longitudinal de um modelo para a condição de deslocamento e linha-d’água do projeto?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Carro em velocidade constante e modelo sem lastro, mesmo quando o calado de projeto exige lastro."
+        },
+        {
+          "key": "B",
+          "text": "Modelo lastrado e trimado, com registro apenas da rotação do propulsor."
+        },
+        {
+          "key": "C",
+          "text": "Modelo lastrado e trimado, ligado ao dinamômetro de reboque de um carro com velocidade controlada."
+        },
+        {
+          "key": "D",
+          "text": "Modelo lastrado e trimado, medindo exclusivamente o momento de guinada durante uma curva."
+        },
+        {
+          "key": "E",
+          "text": "Modelo ligado ao dinamômetro para registrar apenas o pico de força durante a aceleração inicial do carro."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "O modelo é ajustado ao deslocamento e à linha-d’água especificados e ligado ao dinamômetro do carro. A resistência longitudinal é medida no regime de velocidade controlada.",
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 8, § 8.2.1, pp. 99–100, ensaio de resistência"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch8",
+        "ensaios-de-resistencia"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch8",
+        "topic_id": "I-larsson-resistance-ch8-5-8-2-ensaios-de-resistencia",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch8",
+          "number": "ch8",
+          "title": "Chapter 8",
+          "label": "Chapter 8"
+        },
+        "section": "Cap. 8, § 8.2.1, pp. 99–100, ensaio de resistência",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch8-5-8-2-ensaios-de-resistencia",
+          "title": "Ensaios de resistência"
+        }
+      }
+    },
+    {
+      "id": "MAN-029",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.9.1",
+      "topic": "Método de Froude",
+      "difficulty": "Médio",
+      "style": "Conceitual",
+      "question": "Dois modelos têm o mesmo atrito de placa plana de referência e a mesma resistência de ondas estimada por medição independente. Ainda assim, a parcela residuária clássica de Froude é maior em um deles. Que diferença pode explicar o resultado?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Diferença na resistência de ondas, apesar da igualdade medida."
+        },
+        {
+          "key": "B",
+          "text": "Diferença no atrito da placa plana, apesar da igualdade da referência."
+        },
+        {
+          "key": "C",
+          "text": "Diferença na potência interna transmitida ao eixo de um hélice."
+        },
+        {
+          "key": "D",
+          "text": "Diferença nos efeitos de forma do casco sobre atrito e pressão."
+        },
+        {
+          "key": "E",
+          "text": "Diferença no peso do carro de reboque, mesmo sem erro de medição."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "No método original, a parcela residuária é a diferença entre a resistência total e o atrito da placa equivalente. Se o padrão de ondas contribui com a mesma resistência nos dois modelos, efeitos de forma sobre atrito e pressão podem explicar a diferença.",
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 3, § 3.3.2, pp. 12–13; cap. 8, § 8.3.1, p. 101, eq. (8.1)"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch3",
+        "metodo-de-froude"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch3",
+        "topic_id": "I-larsson-resistance-ch3-5-9-1-metodo-de-froude",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch3",
+          "number": "ch3",
+          "title": "Chapter 3",
+          "label": "Chapter 3"
+        },
+        "section": "Cap. 3, § 3.3.2, pp. 12–13; cap. 8, § 8.3.1, p. 101, eq. (8.1)",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch3-5-9-1-metodo-de-froude",
+          "title": "Método de Froude"
+        }
+      }
+    },
+    {
+      "id": "MAN-030",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.9.2",
+      "topic": "Método ITTC-78",
+      "difficulty": "Médio",
+      "style": "Cálculo",
+      "question": "Para a mesma velocidade e referência de área, o atrito da placa plana equivalente é de 50 N. A resistência viscosa lisa atribuída ao casco é de 60 N. Quanto vale o fator de forma 1 + k no tratamento ITTC-78?",
+      "options": [
+        {
+          "key": "A",
+          "text": "0,20."
+        },
+        {
+          "key": "B",
+          "text": "0,83."
+        },
+        {
+          "key": "C",
+          "text": "1,00."
+        },
+        {
+          "key": "D",
+          "text": "1,10."
+        },
+        {
+          "key": "E",
+          "text": "1,20."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O fator 1 + k é a razão entre a resistência viscosa lisa do casco e o atrito da placa plana de referência. Para esses dados, 60/50 = 1,20. O incremento relativo k vale 0,20.",
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 8, §§ 8.3.2–8.3.3, pp. 101–103, eq. (8.9)"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch8",
+        "metodo-ittc-78"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch8",
+        "topic_id": "I-larsson-resistance-ch8-5-9-2-metodo-ittc-78",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch8",
+          "number": "ch8",
+          "title": "Chapter 8",
+          "label": "Chapter 8"
+        },
+        "section": "Cap. 8, §§ 8.3.2–8.3.3, pp. 101–103, eq. (8.9)",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch8-5-9-2-metodo-ittc-78",
+          "title": "Método ITTC-78"
+        }
+      }
+    },
+    {
+      "id": "MAN-031",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.9.3",
+      "topic": "Determinação do fator de forma",
+      "difficulty": "Difícil",
+      "style": "Conceitual",
+      "question": "Em uma análise de Prohaska com pontos de baixo Froude, traça-se C_T/C_F no eixo vertical contra Fn elevado à quarta potência dividido por C_F no eixo horizontal. Onde se obtém 1 + k no ajuste linear?",
+      "options": [
+        {
+          "key": "A",
+          "text": "No intercepto da reta com o eixo vertical."
+        },
+        {
+          "key": "B",
+          "text": "Na inclinação da reta ajustada."
+        },
+        {
+          "key": "C",
+          "text": "No intercepto da reta com o eixo horizontal."
+        },
+        {
+          "key": "D",
+          "text": "Na abscissa do ponto medido de menor velocidade."
+        },
+        {
+          "key": "E",
+          "text": "No maior valor de C_T/C_F medido no ensaio."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A relação linear adotada por Prohaska tem 1 + k como termo constante. Quando a abscissa é extrapolada a zero, o valor previsto no eixo vertical é o fator de forma.",
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 8, § 8.3.3, pp. 103–104, eqs. (8.19)–(8.20) e fig. 8.6"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch8",
+        "determinacao-do-fator-de-forma"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch8",
+        "topic_id": "I-larsson-resistance-ch8-5-9-3-determinacao-do-fator-de-forma",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch8",
+          "number": "ch8",
+          "title": "Chapter 8",
+          "label": "Chapter 8"
+        },
+        "section": "Cap. 8, § 8.3.3, pp. 103–104, eqs. (8.19)–(8.20) e fig. 8.6",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch8-5-9-3-determinacao-do-fator-de-forma",
+          "title": "Determinação do fator de forma"
+        }
+      }
+    },
+    {
+      "id": "MAN-032",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.4",
+      "topic": "Decomposição da resistência",
+      "difficulty": "Médio",
+      "style": "Conceitual",
+      "question": "O dinamômetro registra uma força total de reboque em água calma. A equipe pretende publicar valores separados de atrito, resistência viscosa de pressão e resistência de ondas. Que conclusão é justificada pela medição disponível?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O único valor de força determina separadamente as três parcelas, desde que a velocidade seja conhecida."
+        },
+        {
+          "key": "B",
+          "text": "A força total serve à decomposição, mas estimar as parcelas exige informação ou hipóteses adicionais e elas podem interagir."
+        },
+        {
+          "key": "C",
+          "text": "A força medida corresponde integralmente ao atrito da superfície molhada."
+        },
+        {
+          "key": "D",
+          "text": "A força medida corresponde integralmente à resistência de ondas se o modelo tiver superfície livre."
+        },
+        {
+          "key": "E",
+          "text": "A força total permite isolar a pressão viscosa apenas descontando o empuxo propulsivo."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Bertram usa a decomposição para analisar os mecanismos, embora as parcelas interajam e a maioria delas não seja medida diretamente de forma isolada. Uma medição da força total não fornece, por si, a contribuição de cada mecanismo.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 3, § 3.1.2, pp. 76–77, fig. 3.1, decomposição da resistência"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch3",
+        "decomposicao-da-resistencia"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch3",
+        "topic_id": "I-bertram-ch3-5-4-decomposicao-da-resistencia",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch3",
+          "number": "ch3",
+          "title": "Chapter 3 – Resistance and Propulsion",
+          "label": "Chapter 3 – Resistance and Propulsion"
+        },
+        "section": "Cap. 3, § 3.1.2, pp. 76–77, fig. 3.1, decomposição da resistência",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-bertram-ch3-5-4-decomposicao-da-resistencia",
+          "title": "Decomposição da resistência"
+        }
+      }
+    },
+    {
+      "id": "MAN-033",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.5",
+      "topic": "Resistência de ondas",
+      "difficulty": "Fácil",
+      "style": "Conceitual",
+      "question": "Em um casco de deslocamento em águas profundas, o número de Froude baseado no comprimento cai para bem abaixo de 0,10. As ondas geradas ficam muito pequenas. Qual balanço da resistência em água calma é esperado nessa faixa?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A resistência de ondas se torna a parcela dominante."
+        },
+        {
+          "key": "B",
+          "text": "As parcelas de ondas e viscosa tornam-se aproximadamente iguais."
+        },
+        {
+          "key": "C",
+          "text": "A resistência total é predominantemente viscosa, com contribuição pequena das ondas."
+        },
+        {
+          "key": "D",
+          "text": "O escoamento deixa de exercer resistência viscosa porque a onda é pequena."
+        },
+        {
+          "key": "E",
+          "text": "A resistência passa a depender sobretudo da quebra de ondas de proa."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Larsson e Raven descrevem ondas muito pequenas nas velocidades mais baixas e resistência total quase toda viscosa. O comportamento é apresentado como tendência, com diferenças entre formas de casco.",
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 5, § 5.5, p. 33, fig. 5.20"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch5",
+        "resistencia-de-ondas"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch5",
+        "topic_id": "I-larsson-resistance-ch5-5-5-resistencia-de-ondas",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch5",
+          "number": "ch5",
+          "title": "Chapter 5",
+          "label": "Chapter 5"
+        },
+        "section": "Cap. 5, § 5.5, p. 33, fig. 5.20",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch5-5-5-resistencia-de-ondas",
+          "title": "Resistência de ondas"
+        }
+      }
+    },
+    {
+      "id": "MAN-034",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "1.2",
+      "topic": "Resistência de ondas",
+      "difficulty": "Médio",
+      "style": "Conceitual",
+      "question": "Na comparação de Wigley citada por Lewis, as posições dos picos e vales da resistência podem ser estimadas pela interferência de ondas transversais até cerca de Fn = 0,4. Por que essa estimativa perde validade acima dessa faixa?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Porque o comprimento de referência deixa de fazer parte do número de Froude."
+        },
+        {
+          "key": "B",
+          "text": "Porque as ondas transversais passam necessariamente a governar sozinhas o padrão."
+        },
+        {
+          "key": "C",
+          "text": "Porque o atrito passa a ser a única causa de picos e vales."
+        },
+        {
+          "key": "D",
+          "text": "Porque as ondas divergentes passam a contribuir mais, e as transversais sozinhas deixam de indicar as posições corretamente."
+        },
+        {
+          "key": "E",
+          "text": "Porque acima desse valor toda interferência entre sistemas de ondas desaparece."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A separação dos sistemas nos cálculos citados indica que as ondas transversais governam principalmente as posições até cerca de Fn 0,4. Em velocidades maiores, o efeito das divergentes cresce. O valor descreve os cálculos citados.",
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "3. ed. (Second Revision), 1988",
+        "locator": "Vol. II, cap. V, § 4.5, p. 24, fig. 19, cálculos de Wigley (1942)"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch5-s4",
+        "resistencia-de-ondas"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch5-s4",
+        "topic_id": "I-pna-v2-ch5-s4-1-2-resistencia-de-ondas",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V. (ed.)"
+        },
+        "chapter": {
+          "id": "pna-v2::ch5-s4",
+          "number": "ch5-s4",
+          "title": "Chapter V – Resistance — Section 4: Wave-Making Resistance",
+          "label": "Chapter V – Resistance — Section 4: Wave-Making Resistance"
+        },
+        "section": "Vol. II, cap. V, § 4.5, p. 24, fig. 19, cálculos de Wigley (1942)",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-pna-v2-ch5-s4-1-2-resistencia-de-ondas",
+          "title": "Resistência de ondas"
+        }
+      }
+    },
+    {
+      "id": "MAN-035",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.5.2",
+      "topic": "Efeito de águas rasas",
+      "difficulty": "Difícil",
+      "style": "Cálculo",
+      "question": "O mesmo navio mantém a velocidade em relação à água ao passar de uma região com profundidade de 36 m para outra com 9 m, sob a mesma gravidade. Que comparação entre os números de Froude de profundidade é correta?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O valor na região de 9 m é quatro vezes maior."
+        },
+        {
+          "key": "B",
+          "text": "O valor na região de 9 m é a metade."
+        },
+        {
+          "key": "C",
+          "text": "Os valores se mantêm iguais."
+        },
+        {
+          "key": "D",
+          "text": "O valor na região de 9 m é um quarto."
+        },
+        {
+          "key": "E",
+          "text": "O valor na região de 9 m é duas vezes maior."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O número de Froude de profundidade é V/√(gh), com h igual à profundidade. A redução de h de 36 m para 9 m reduz o denominador à metade e dobra esse número.",
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 5, §§ 5.8–5.9, pp. 36–39, número de Froude de profundidade"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch5",
+        "efeito-de-aguas-rasas"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch5",
+        "topic_id": "I-larsson-resistance-ch5-5-5-2-efeito-de-aguas-rasas",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch5",
+          "number": "ch5",
+          "title": "Chapter 5",
+          "label": "Chapter 5"
+        },
+        "section": "Cap. 5, §§ 5.8–5.9, pp. 36–39, número de Froude de profundidade",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch5-5-5-2-efeito-de-aguas-rasas",
+          "title": "Efeito de águas rasas"
+        }
+      }
+    },
+    {
+      "id": "MAN-036",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "1.8",
+      "topic": "Resistência em águas rasas",
+      "difficulty": "Médio",
+      "style": "Conceitual",
+      "question": "Crenshaw apresenta um exemplo em que certo navio muito rápido alcança velocidade máxima maior em água rasa à mesma potência que em água profunda. Em que posição da curva de resistência de ondas se explica esse resultado?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Além do pico deslocado para velocidades menores, numa faixa em que a resistência de ondas em água rasa fica abaixo da de água profunda."
+        },
+        {
+          "key": "B",
+          "text": "Antes do pico, numa faixa em que o reforço entre ondas eleva a resistência em água rasa."
+        },
+        {
+          "key": "C",
+          "text": "No próprio pico de ondas, pois nesse ponto a resistência de ondas se anula."
+        },
+        {
+          "key": "D",
+          "text": "Em qualquer posição da curva, pois a redução de profundidade baixa uniformemente a resistência."
+        },
+        {
+          "key": "E",
+          "text": "Na faixa do pico, pois a velocidade de reforço aumenta quando a profundidade diminui."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "No exemplo de Crenshaw, o deslocamento do pico para velocidades menores pode colocar o ponto de operação muito rápido além dele, numa faixa em que a resistência de ondas fica abaixo da de água profunda. O resultado depende do casco e da faixa de velocidade.",
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, p. 35, Shallow Water Effect e Total Resistance, figs. 2-10 e 2-11"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "crenshaw-naval-shiphandling",
+        "crenshaw-naval-shiphandling::ch2",
+        "resistencia-em-aguas-rasas"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "I-crenshaw-naval-shiphandling-ch2-1-8-resistencia-em-aguas-rasas",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Cap. 2, p. 35, Shallow Water Effect e Total Resistance, figs. 2-10 e 2-11",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-crenshaw-naval-shiphandling-ch2-1-8-resistencia-em-aguas-rasas",
+          "title": "Resistência em águas rasas"
+        }
+      }
+    },
+    {
+      "id": "MAN-037",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "1.8",
+      "topic": "Regime crítico em águas rasas",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Em um ensaio análogo ao do modelo de contratorpedeiro descrito por Larsson e Raven, a velocidade aproxima-se da crítica pelo lado subcrítico. Que combinação de sinais é compatível com as curvas medidas?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Queda rápida da resistência e do trim pela popa ainda no lado subcrítico."
+        },
+        {
+          "key": "B",
+          "text": "Crescimento rápido da resistência e do trim pela popa, com pico de aumento da resistência ligeiramente abaixo de Froude de profundidade igual a um."
+        },
+        {
+          "key": "C",
+          "text": "Resistência constante e trim pela popa decrescente até Froude de profundidade unitário."
+        },
+        {
+          "key": "D",
+          "text": "Crescimento de resistência somente acima da velocidade crítica, sem mudança de trim no lado subcrítico."
+        },
+        {
+          "key": "E",
+          "text": "Pico de resistência imposto exclusivamente pelo Froude de comprimento, com posição independente da profundidade."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Nos ensaios citados, a resistência e o trim pela popa crescem rapidamente no lado subcrítico. O pico relativo de resistência ficou ligeiramente abaixo de Froude de profundidade igual a um. A magnitude e a posição dependem das condições do ensaio.",
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 5, §§ 5.9.3 e 5.10, pp. 40 e 42–44, figs. 5.31–5.32"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch5",
+        "regime-critico-em-aguas-rasas"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch5",
+        "topic_id": "I-larsson-resistance-ch5-1-8-regime-critico-em-aguas-rasas",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch5",
+          "number": "ch5",
+          "title": "Chapter 5",
+          "label": "Chapter 5"
+        },
+        "section": "Cap. 5, §§ 5.9.3 e 5.10, pp. 40 e 42–44, figs. 5.31–5.32",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch5-1-8-regime-critico-em-aguas-rasas",
+          "title": "Regime crítico em águas rasas"
+        }
+      }
+    },
+    {
+      "id": "MAN-038",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "1.4",
+      "topic": "Wave-breaking",
+      "difficulty": "Médio",
+      "style": "Conceitual",
+      "question": "Num ensaio com proa cheia, observam-se quebra de onda e regiões turbulentas ao lado da esteira principal. O que a perda de energia nessa região representa na decomposição discutida por Larsson e Raven?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Transferência integral de energia ao padrão de ondas que permanece no campo distante."
+        },
+        {
+          "key": "B",
+          "text": "Somente atrito de placa plana, calculável sem considerar a superfície livre."
+        },
+        {
+          "key": "C",
+          "text": "Uma parcela de resistência por quebra de ondas, ligada à conversão da energia de onda em turbulência e outras formas de energia cinética."
+        },
+        {
+          "key": "D",
+          "text": "A parcela de potência absorvida pelas perdas internas da transmissão do propulsor."
+        },
+        {
+          "key": "E",
+          "text": "Aumento da energia disponível nas ondas irradiadas em consequência direta da quebra."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A quebra redistribui energia da onda para turbulência e outras formas de movimento do fluido. Os autores distinguem a resistência associada à perda nessa região da parcela ligada ao padrão de ondas irradiadas.",
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 5, § 5.6, pp. 34–35, fig. 5.21, dissipação e vórtice de colar"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch5",
+        "wave-breaking"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch5",
+        "topic_id": "I-larsson-resistance-ch5-1-4-wave-breaking",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch5",
+          "number": "ch5",
+          "title": "Chapter 5",
+          "label": "Chapter 5"
+        },
+        "section": "Cap. 5, § 5.6, pp. 34–35, fig. 5.21, dissipação e vórtice de colar",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch5-1-4-wave-breaking",
+          "title": "Wave-breaking"
+        }
+      }
+    },
+    {
+      "id": "MAN-039",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.5.1",
+      "topic": "Viscosidade e padrão de ondas",
+      "difficulty": "Difícil",
+      "style": "Conceitual",
+      "question": "Um cálculo potencial sem viscosidade superestima a formação de ondas na região de ré de um modelo. Na correção do efeito indireto da camada limite discutida por Lewis, qual modificação geométrica é adotada?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Encurtamento virtual da parte de ré para acentuar a inclinação das linhas-d’água."
+        },
+        {
+          "key": "B",
+          "text": "Aumento virtual do calado para reproduzir apenas a pressão atmosférica."
+        },
+        {
+          "key": "C",
+          "text": "Alongamento virtual somente do corpo de vante, com a popa mantida no cálculo original."
+        },
+        {
+          "key": "D",
+          "text": "Alongamento virtual da parte de ré, com redução da inclinação das linhas-d’água nessa região."
+        },
+        {
+          "key": "E",
+          "text": "Remoção virtual da popa para equiparar a resistência de ondas ao atrito de placa plana."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A camada limite fica mais espessa rumo à popa. A correção descrita por Havelock representa seu efeito indireto com um alongamento virtual a ré. A menor inclinação das linhas-d’água nessa região reduz a formação calculada de ondas de ré.",
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "3. ed. (Second Revision), 1988",
+        "locator": "Vol. II, cap. V, § 4.6, pp. 24–26, correção de Havelock e Wigley"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch5-s4",
+        "viscosidade-e-padrao-de-ondas"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch5-s4",
+        "topic_id": "I-pna-v2-ch5-s4-5-5-1-viscosidade-e-padrao-de-ondas",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V. (ed.)"
+        },
+        "chapter": {
+          "id": "pna-v2::ch5-s4",
+          "number": "ch5-s4",
+          "title": "Chapter V – Resistance — Section 4: Wave-Making Resistance",
+          "label": "Chapter V – Resistance — Section 4: Wave-Making Resistance"
+        },
+        "section": "Vol. II, cap. V, § 4.6, pp. 24–26, correção de Havelock e Wigley",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-pna-v2-ch5-s4-5-5-1-viscosidade-e-padrao-de-ondas",
+          "title": "Viscosidade e padrão de ondas"
+        }
+      }
+    }
+  ]
+}
