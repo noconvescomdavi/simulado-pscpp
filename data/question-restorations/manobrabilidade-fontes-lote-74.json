@@ -310,31 +310,31 @@
       "topic": "Reversão e backing",
       "difficulty": "Difícil",
       "style": "Aplicada",
-      "question": "Um registro de parada mostra que o propulsor já exerce força axial para ré, enquanto o navio ainda se desloca para vante através da água. Como esse instante deve ser classificado no diagrama de Bertram?",
+      "question": "Em dois pontos de uma série, a máquina já desenvolve empuxo a ré. Em X, o navio ainda avança através da água. Em Y, já recua. Como registrar os dois pontos na classificação de Bertram?",
       "options": [
         {
           "key": "A",
-          "text": "Avanço firme, com empuxo para vante."
+          "text": "Ambos pertencem ao mesmo quadrante porque têm o mesmo empuxo."
         },
         {
           "key": "B",
-          "text": "Um dos casos de sinais opostos entre velocidade do navio e empuxo."
+          "text": "X combina sentidos opostos e Y combina sentidos iguais de movimento e empuxo. São quadrantes distintos."
         },
         {
           "key": "C",
-          "text": "Movimento para ré, com empuxo também para ré."
+          "text": "X combina sentidos iguais e Y, sentidos opostos."
         },
         {
           "key": "D",
-          "text": "Movimento para ré, com empuxo para vante."
+          "text": "Ambos pertencem ao quadrante de marcha sustentada a vante."
         },
         {
           "key": "E",
-          "text": "Repouso, pois a mudança de sinal da força implica velocidade nula."
+          "text": "A diferença de seguimento deve ser ignorada depois de inverter o empuxo."
         }
       ],
       "correct_answer": "B",
-      "explanation": "Bertram separa os regimes pelo sentido do movimento e pelo sentido do empuxo. Durante a parada, é possível ter seguimento para vante e empuxo para ré simultaneamente. O ponto pertence a um dos quadrantes que não se confundem com o de avanço firme.",
+      "explanation": "A classificação usa os sentidos da velocidade do navio e do empuxo. Com empuxo a ré nos dois pontos, a mudança do sentido de movimento separa X de Y. O empuxo isolado seria insuficiente para classificar ambos.",
       "source": {
         "author": "BERTRAM, Volker",
         "title": "Practical Ship Hydrodynamics",
@@ -384,32 +384,32 @@
       "topic_code": "6.5",
       "topic": "Balanceamento do propulsor",
       "difficulty": "Médio",
-      "style": "Aplicada",
-      "question": "Depois de um pequeno entalhe em uma única pá, o navio mantém empuxo axial próximo do anterior, mas aparecem pancadas e vibração no propulsor. Qual explicação é compatível com a análise de Crenshaw?",
+      "style": "Cálculo",
+      "question": "Num modelo instantâneo com quatro pás simétricas, considere apenas as componentes radiais, dirigidas para fora nas quatro posições. Três pás produzem 10 kN cada. Por causa de um dano, uma produz apenas 8 kN. Qual é a resultante radial nesse instante?",
       "options": [
         {
           "key": "A",
-          "text": "A força axial útil deve ter desaparecido, apesar da medição."
+          "text": "Nula, porque as quatro pás permanecem nas mesmas posições."
         },
         {
           "key": "B",
-          "text": "A simetria radial melhora quando somente uma pá sofre dano."
+          "text": "2 kN para o lado da pá danificada."
         },
         {
           "key": "C",
-          "text": "As componentes radiais deixam de se compensar de modo satisfatório."
+          "text": "2 kN para o lado da pá oposta à danificada."
         },
         {
           "key": "D",
-          "text": "A deformação muda o número de pás durante o giro."
+          "text": "8 kN para o lado da pá danificada."
         },
         {
           "key": "E",
-          "text": "O efeito exige uma alteração da direção do vento sobre o casco."
+          "text": "38 kN na direção do eixo."
         }
       ],
       "correct_answer": "C",
-      "explanation": "As pás simétricas tendem a cancelar as componentes radiais de suas forças. Um dano pequeno em uma delas pode alterar esse equilíbrio e carregar os apoios do eixo, mesmo quando a perda de empuxo axial é pouco perceptível.",
+      "explanation": "Os vetores do par não afetado cancelam entre si. No outro par, a força de 10 kN vence a de 8 kN, deixando 2 kN no sentido da pá oposta à danificada. Isso aplica, em um modelo simples, o desequilíbrio radial descrito por Crenshaw.",
       "source": {
         "author": "CRENSHAW, Russell Sydnor",
         "title": "Naval Shiphandling",
