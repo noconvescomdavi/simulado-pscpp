@@ -1,0 +1,1045 @@
+{
+  "questions": [
+    {
+      "id": "MAN-B010-01",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "aplicação dos padrões",
+      "topic_code": "MAN.B010.01",
+      "topic": "aplicação dos padrões",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 5,
+      "question": "No projeto, o estaleiro verificou por ensaio com modelo a conformidade prevista com os padrões da IMO. Depois de construído o navio, que etapa completa essa via de avaliação?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Repetir apenas a avaliação de projeto, mesmo com o navio pronto."
+        },
+        {
+          "key": "B",
+          "text": "Substituir os dados de prova por uma declaração do projetista."
+        },
+        {
+          "key": "C",
+          "text": "Realizar provas em escala real para validar a previsão."
+        },
+        {
+          "key": "D",
+          "text": "Dispensar a validação se o comprimento entre perpendiculares for conhecido."
+        },
+        {
+          "key": "E",
+          "text": "Avaliar somente a potência máxima do motor na condição de entrega."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "O § 2.1.1 permite prever a conformidade no projeto e prevê provas em escala real para validar o resultado. Repetir apenas o modelo, declarar conformidade, medir comprimento ou medir potência não realiza essa validação. O § 2.1.2 prevê também a via baseada nos próprios resultados das provas em escala real.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "MAN-B010-01",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002",
+        "locator": "Anexo 6, p. 2, §§ 2.1.1–2.1.2; apoio em MSC/Circ.1053, Anexo, cap. 3, p. 11, § 3.1.1"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-010",
+        "aplicação dos padrões"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "aplicação dos padrões",
+        "topic": {
+          "id": "MAN-B010-01",
+          "title": "aplicação dos padrões"
+        }
+      }
+    },
+    {
+      "id": "MAN-B010-02",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "velocidade de prova",
+      "topic_code": "MAN.B010.02",
+      "topic": "velocidade de prova",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Antes de começar uma curva de giro padronizada, o navio já atingiu a velocidade prevista, mas ainda guina após a última correção de rumo. Qual decisão é compatível com o procedimento?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Iniciar o giro porque alcançar a velocidade basta."
+        },
+        {
+          "key": "B",
+          "text": "Aplicar o leme de prova com a guinada residual e descontá-la depois como se fosse corrente."
+        },
+        {
+          "key": "C",
+          "text": "Reduzir a velocidade a zero e iniciar sem aproximação."
+        },
+        {
+          "key": "D",
+          "text": "Restabelecer a aproximação estabilizada, na velocidade de prova e sem guinada, antes da ordem de leme."
+        },
+        {
+          "key": "E",
+          "text": "Iniciar durante a aceleração e levar em conta apenas a velocidade ao fim do giro."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A velocidade de prova e a aproximação estabilizada sem guinada são condições distintas. As notas orientam a manter as condições de aproximação por pelo menos dois minutos. A, B e E começam fora da condição requerida, e C elimina a aproximação na velocidade especificada.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch2",
+        "topic_id": "MAN-B010-02",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
+        "edition": "MSC/Circ.1053, 16 Dec. 2002",
+        "locator": "Anexo, cap. 2, pp. 7–8, §§ 2.1.6 e 2.2.1.2.3–2.2.1.2.6; cap. 1, p. 5, § 1.3.1; MSC.137(76), Anexo 6, p. 3, § 4.2.1"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-010",
+        "velocidade de prova"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc1053",
+          "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc1053::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Guidelines for application of the standards",
+          "label": "Chapter 2 – Guidelines for application of the standards"
+        },
+        "section": "Chapter 2 – Guidelines for application of the standards",
+        "module": "velocidade de prova",
+        "topic": {
+          "id": "MAN-B010-02",
+          "title": "velocidade de prova"
+        }
+      }
+    },
+    {
+      "id": "MAN-B010-03",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "círculo de giro",
+      "topic_code": "MAN.B010.03",
+      "topic": "círculo de giro",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 3,
+      "question": "No registro da curva de giro há duas marcas iniciais: a posição no momento da ordem de leme e a posição quando a pá atinge o ângulo ordenado. Qual é a origem para medir o avanço?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A posição da proa quando a pá atinge o ângulo."
+        },
+        {
+          "key": "B",
+          "text": "A posição da meia-nau quando a pá atinge o ângulo."
+        },
+        {
+          "key": "C",
+          "text": "A posição do centro de gravidade ao chegar a 180° de mudança de proa."
+        },
+        {
+          "key": "D",
+          "text": "A posição da popa ao chegar a 90° de mudança de proa."
+        },
+        {
+          "key": "E",
+          "text": "A posição da meia-nau no instante da ordem."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O avanço é a projeção do deslocamento da meia-nau na direção inicial, desde a ordem de leme até a alteração de proa de 90°. A e B usam um instante posterior, A e D trocam o ponto do navio e C usa outro marco de proa.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "MAN-B010-03",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002",
+        "locator": "Anexo 6, p. 3, §§ 4.1.2 e 4.2.3; apoio em MSC/Circ.1053, Anexo, p. 18, fig. 2"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-010",
+        "círculo de giro"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "círculo de giro",
+        "topic": {
+          "id": "MAN-B010-03",
+          "title": "círculo de giro"
+        }
+      }
+    },
+    {
+      "id": "MAN-B010-04",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "critérios de giro",
+      "topic_code": "MAN.B010.04",
+      "topic": "critérios de giro",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "A meia-nau de um navio registra avanço de 4,4 L e diâmetro tático de 5,1 L em uma curva de giro. Qual é o resultado para esses dois critérios da MSC.137(76)?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas o avanço atende ao respectivo limite."
+        },
+        {
+          "key": "B",
+          "text": "Apenas o diâmetro tático atende ao respectivo limite."
+        },
+        {
+          "key": "C",
+          "text": "As duas medidas atendem aos limites."
+        },
+        {
+          "key": "D",
+          "text": "Nenhuma das duas medidas atende ao respectivo limite."
+        },
+        {
+          "key": "E",
+          "text": "O diâmetro tático não pode ser avaliado sem o diâmetro do giro estabilizado."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O avanço admite até 4,5 L e o diâmetro tático até 5 L. Assim, 4,4 L atende e 5,1 L excede o limite respectivo. Os critérios são independentes, e o diâmetro tático não depende do diâmetro estabilizado.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "MAN-B010-04",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002",
+        "locator": "Anexo 6, p. 3, §§ 4.2.3–4.2.4, e p. 5, § 5.3.1"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-010",
+        "critérios de giro"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "critérios de giro",
+        "topic": {
+          "id": "MAN-B010-04",
+          "title": "critérios de giro"
+        }
+      }
+    },
+    {
+      "id": "MAN-B010-05",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "capacidade inicial de giro",
+      "topic_code": "MAN.B010.05",
+      "topic": "capacidade inicial de giro",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Em um navio de 140 m entre perpendiculares, o leme é aplicado a 10°. A proa atinge 10° de desvio após 352 m percorridos desde a aplicação. Qual é a avaliação da capacidade inicial de giro?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Atende, pois o limite de distância da capacidade inicial é 4,5 L."
+        },
+        {
+          "key": "B",
+          "text": "Não atende, pois o limite é 350 m para esse navio."
+        },
+        {
+          "key": "C",
+          "text": "Atende, pois o limite é 500 m para qualquer navio."
+        },
+        {
+          "key": "D",
+          "text": "Não é possível avaliar antes de 180° de mudança de proa."
+        },
+        {
+          "key": "E",
+          "text": "Atende se o primeiro sobressinal ficar abaixo de 25°, independentemente dos 352 m."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O § 5.3.2 limita a distância a 2,5 L desde a aplicação de 10° de leme até a alteração de 10° de proa. Para L=140 m, o limite é 350 m. 4,5 L é limite do avanço na curva de giro. 500 m não é regra universal. 180° e sobressinal são marcos de outras avaliações.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "MAN-B010-05",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002",
+        "locator": "Anexo 6, p. 5, § 5.3.2; apoio em MSC/Circ.1053, Anexo, p. 5, § 1.2.3.3"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-010",
+        "capacidade inicial de giro"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "capacidade inicial de giro",
+        "topic": {
+          "id": "MAN-B010-05",
+          "title": "capacidade inicial de giro"
+        }
+      }
+    },
+    {
+      "id": "MAN-B010-06",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "zigue-zague 10°/10°",
+      "topic_code": "MAN.B010.06",
+      "topic": "zigue-zague 10°/10°",
+      "difficulty": "Muito Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "situation",
+      "cognitive_level": 5,
+      "question": "Num 10°/10°, a equipe marca a segunda ordem de leme quando a proa atinge o primeiro limiar previsto. Como deve identificar o primeiro sobressinal no traçado?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Pela diferença entre a proa inicial e a proa no instante da primeira ordem."
+        },
+        {
+          "key": "B",
+          "text": "Pelo próprio desvio de 10° que aciona a segunda ordem."
+        },
+        {
+          "key": "C",
+          "text": "Pelo desvio adicional de proa no mesmo sentido, após a segunda ordem, até o extremo antes da reversão da guinada."
+        },
+        {
+          "key": "D",
+          "text": "Pelo desvio adicional que ocorre após a terceira ordem."
+        },
+        {
+          "key": "E",
+          "text": "Pela diferença entre as duas ordens de leme, sempre igual a 20°."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "O § 4.2.7 define o primeiro sobressinal como o desvio adicional após a segunda execução. O limiar de 10° e a diferença entre ângulos de leme não são o sobressinal. O desvio após a terceira execução corresponde ao segundo sobressinal.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "MAN-B010-06",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002",
+        "locator": "Anexo 6, pp. 3–4, §§ 4.2.5–4.2.8; apoio em MSC/Circ.1053, Anexo, p. 19, fig. 3"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-010",
+        "zigue-zague 10°/10°"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "zigue-zague 10°/10°",
+        "topic": {
+          "id": "MAN-B010-06",
+          "title": "zigue-zague 10°/10°"
+        }
+      }
+    },
+    {
+      "id": "MAN-B010-07",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "zigue-zague 20°/20°",
+      "topic_code": "MAN.B010.07",
+      "topic": "zigue-zague 20°/20°",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "No zigue-zague 20°/20°, depois do segundo comando de leme a guinada inicial continua até atingir desvio máximo de 45° da proa inicial. Qual registro atende à definição e ao critério da resolução?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O sobressinal é 45°, acima do limite do ensaio."
+        },
+        {
+          "key": "B",
+          "text": "O sobressinal é 20°, igual ao limiar de inversão."
+        },
+        {
+          "key": "C",
+          "text": "O sobressinal é 45°, mas a avaliação deve usar o limite de diâmetro tático."
+        },
+        {
+          "key": "D",
+          "text": "O sobressinal é 25° e atende ao limite para o 20°/20°."
+        },
+        {
+          "key": "E",
+          "text": "O sobressinal é 25°, mas o limite exige um valor estritamente inferior a 25°."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A segunda ordem ocorre a 20° da proa inicial. O desvio adicional até 45° é 25°, valor que não excede o limite de § 5.3.3.3. A e C usam o desvio total, B usa o limiar, e E troca um teto inclusivo por um estrito.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "MAN-B010-07",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002",
+        "locator": "Anexo 6, p. 4, §§ 4.2.7 e 4.2.9, e p. 5, § 5.3.3.3"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-010",
+        "zigue-zague 20°/20°"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "zigue-zague 20°/20°",
+        "topic": {
+          "id": "MAN-B010-07",
+          "title": "zigue-zague 20°/20°"
+        }
+      }
+    },
+    {
+      "id": "MAN-B010-08",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "parada a ré toda força",
+      "topic_code": "MAN.B010.08",
+      "topic": "parada a ré toda força",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "pscpp_format": "direct",
+      "cognitive_level": 3,
+      "question": "Na parada a toda força a ré, a meia-nau percorreu 15,2 L ao longo da trajetória. Sua projeção na direção original foi 14,7 L. A Administração aplica o limite normal. Qual é a conclusão?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Atende, pois a projeção longitudinal é menor que 15 L."
+        },
+        {
+          "key": "B",
+          "text": "Atende, pois 20 L é o limite normal para qualquer navio."
+        },
+        {
+          "key": "C",
+          "text": "Atende, pois deve-se usar apenas o componente transversal."
+        },
+        {
+          "key": "D",
+          "text": "Só se pode avaliar o critério a partir do tempo de parada."
+        },
+        {
+          "key": "E",
+          "text": "Não atende, porque o percurso ao longo da trajetória excede 15 L."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Track reach é a distância ao longo da trajetória da meia-nau até a parada na água, e 15,2 L excede 15 L. A usa a projeção, C utiliza a componente errada e D invoca outra medida. O teto de 20 L só se refere à modificação pela Administração quando o grande deslocamento torna impraticável o critério normal.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "MAN-B010-08",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 4 Dec. 2002",
+        "locator": "Anexo 6, p. 4, §§ 4.2.10–4.2.11, e p. 5, § 5.3.4"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-010",
+        "parada a ré toda força"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "parada a ré toda força",
+        "topic": {
+          "id": "MAN-B010-08",
+          "title": "parada a ré toda força"
+        }
+      }
+    },
+    {
+      "id": "MAN-B010-09",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "condição dos ensaios",
+      "topic_code": "MAN.B010.09",
+      "topic": "condição dos ensaios",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "Classifique as afirmações sobre o protocolo e a interpretação da prova de giro.",
+      "assertions": [
+        "I) O plano deve incluir curvas para bombordo e boreste.",
+        "II) A condição de referência prevê plena carga, trim zero e ambiente calmo.",
+        "III) Avanço e diâmetro tático são comparados separadamente com os respectivos limites.",
+        "IV) Uma prova junto à margem substitui a condição padrão sem avaliação adicional."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "B",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "D",
+          "text": "I, II, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I e II."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "I é verdadeira pelo procedimento de prova aos dois bordos. II é verdadeira pelas condições de referência. III é verdadeira porque cada dimensão tem seu limite. IV é falsa: a condição padronizada é água profunda e irrestrita. B, C e D incluem IV. E omite III.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch2",
+        "topic_id": "MAN-B010-09",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
+        "edition": "MSC/Circ.1053, 16 Dec. 2002",
+        "locator": "Anexo, cap. 2, pp. 6–8, §§ 2.1.1–2.1.3, 2.1.5 e 2.2.1.3; MSC.137(76), Anexo 6, pp. 4–5, §§ 5.2 e 5.3.1"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-010",
+        "condição dos ensaios"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc1053",
+          "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc1053::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Guidelines for application of the standards",
+          "label": "Chapter 2 – Guidelines for application of the standards"
+        },
+        "section": "Chapter 2 – Guidelines for application of the standards",
+        "module": "condição dos ensaios",
+        "topic": {
+          "id": "MAN-B010-09",
+          "title": "condição dos ensaios"
+        }
+      }
+    },
+    {
+      "id": "MAN-B010-10",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "correções ambientais",
+      "topic_code": "MAN.B010.10",
+      "topic": "correções ambientais",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 4,
+      "question": "Classifique as afirmações sobre registro e correção de influências ambientais nas provas de manobra.",
+      "assertions": [
+        "I) Registram-se as condições ambientais antes e depois da prova para permitir correções.",
+        "II) A circular recomenda completar 720° de giro para avaliar efeitos ambientais, embora o procedimento indique completar pelo menos 360°.",
+        "III) O giro fornece dados para estimar direção e intensidade da corrente aproximadamente constante.",
+        "IV) Com corrente constante, o traçado sobre o fundo equivale ao traçado relativo à água e dispensa exame."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "C",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "E",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "I e II são verdadeiras pelos §§ 2.1.5 e 2.2.1.3.4. III é verdadeira: a circular descreve a estimativa de corrente a partir de dados de posição, proa e tempo no giro. IV é falsa, pois a corrente altera a trajetória observada sobre o fundo. A omite III, e C, D e E incluem IV.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch2",
+        "topic_id": "MAN-B010-10",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
+        "edition": "MSC/Circ.1053, 16 Dec. 2002",
+        "locator": "Anexo, cap. 2, pp. 7–8 e 10, §§ 2.1.5, 2.2.1.2.1, 2.2.1.3.4 e 2.2.2.2; cap. 3, pp. 15–16, §§ 3.4.2.3–3.4.2.8"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-010",
+        "correções ambientais"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc1053",
+          "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc1053::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Guidelines for application of the standards",
+          "label": "Chapter 2 – Guidelines for application of the standards"
+        },
+        "section": "Chapter 2 – Guidelines for application of the standards",
+        "module": "correções ambientais",
+        "topic": {
+          "id": "MAN-B010-10",
+          "title": "correções ambientais"
+        }
+      }
+    },
+    {
+      "id": "MAN-B010-11",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "interação com margem",
+      "topic_code": "MAN.B010.11",
+      "topic": "interação com margem",
+      "difficulty": "Muito Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 5,
+      "question": "Classifique as afirmações sobre o escoamento em canal reto, de seção constante e simétrica.",
+      "assertions": [
+        "I) Com casco simétrico, proa e velocidade alinhadas exatamente ao eixo, o modelo prevê força lateral e momento de guinada nulos por simetria.",
+        "II) Com avanço paralelo fora do eixo, pode surgir força lateral para a parede próxima.",
+        "III) Nessa posição excêntrica, pode surgir ao mesmo tempo um momento que afasta a proa da parede próxima.",
+        "IV) A ausência de força lateral no eixo prova que um afastamento desse eixo produz uma força restauradora em direção ao centro."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "I, II, III e IV."
+        },
+        {
+          "key": "B",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "D",
+          "text": "Apenas II e IV."
+        },
+        {
+          "key": "E",
+          "text": "Apenas I, III e IV."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "I é verdadeira pela simetria. Com o casco deslocado, o escoamento se altera no espaço menor, produzindo II e III. IV é falsa: a condição simétrica de eixo apresenta equilíbrio de posição instável no modelo analisado, e o afastamento produz força para a parede próxima. A e E incluem IV, B omite III e D exclui I e III.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s13",
+        "topic_id": "MAN-B010-11",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "3. ed. (Second Revision), 1989",
+        "locator": "Cap. IX, § 13.3, pp. 282–283, figs. 105–106"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-010",
+        "interação com margem"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V. (ed.)"
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s13",
+          "number": "ch9-s13",
+          "title": "Chapter IX — Section 13: Vessel Waterway Interactions",
+          "label": "Chapter IX — Section 13: Vessel Waterway Interactions"
+        },
+        "section": "Chapter IX — Section 13: Vessel Waterway Interactions",
+        "module": "interação com margem",
+        "topic": {
+          "id": "MAN-B010-11",
+          "title": "interação com margem"
+        }
+      }
+    },
+    {
+      "id": "MAN-B010-12",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "interação navio-navio",
+      "topic_code": "MAN.B010.12",
+      "topic": "interação navio-navio",
+      "difficulty": "Difícil",
+      "style": "Assertivas",
+      "pscpp_format": "assertions",
+      "cognitive_level": 3,
+      "question": "Classifique as afirmações sobre a interação hidrodinâmica durante passagem próxima entre dois navios.",
+      "assertions": [
+        "I) A intensidade de forças e momentos depende também da posição longitudinal relativa.",
+        "II) Distância transversal e tamanhos relativos influenciam a interação.",
+        "III) Em ensaios citados, o aumento da velocidade elevou as forças de interação, enquanto aumentar a separação transversal as reduziu nas condições comparadas.",
+        "IV) Depois de fixar a distância transversal, a força e o momento permanecem iguais durante toda a ultrapassagem."
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "key": "B",
+          "text": "I, II, III e IV."
+        },
+        {
+          "key": "C",
+          "text": "Apenas I e II."
+        },
+        {
+          "key": "D",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "key": "E",
+          "text": "Apenas II e IV."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "I e II são verdadeiras pela dependência das posições e dimensões demonstrada na seção. III é verdadeira pela variação com velocidade e afastamento nos ensaios citados. IV é falsa: a força e o momento mudam com as posições ao longo da passagem. A, B e E incluem IV, e C omite III.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s13",
+        "topic_id": "MAN-B010-12",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "3. ed. (Second Revision), 1989",
+        "locator": "Cap. IX, § 13.4, pp. 287–289, figs. 113–116"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-010",
+        "interação navio-navio"
+      ],
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V. (ed.)"
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s13",
+          "number": "ch9-s13",
+          "title": "Chapter IX — Section 13: Vessel Waterway Interactions",
+          "label": "Chapter IX — Section 13: Vessel Waterway Interactions"
+        },
+        "section": "Chapter IX — Section 13: Vessel Waterway Interactions",
+        "module": "interação navio-navio",
+        "topic": {
+          "id": "MAN-B010-12",
+          "title": "interação navio-navio"
+        }
+      }
+    },
+    {
+      "id": "MAN-B010-13",
+      "subject": "I — Manobrabilidade do Navio",
+      "module": "efeito de águas rasas",
+      "topic_code": "MAN.B010.13",
+      "topic": "efeito de águas rasas",
+      "difficulty": "Difícil",
+      "style": "Conceitual",
+      "pscpp_format": "direct",
+      "cognitive_level": 4,
+      "question": "Em um canal no regime subcrítico, a previsão para a velocidade planejada indica folga insuficiente após computar o squat. Qual ajuste é compatível com o uso das curvas de velocidade-limite discutidas por Lewis?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Aumentar a velocidade para atravessar o canal antes que o squat se desenvolva."
+        },
+        {
+          "key": "B",
+          "text": "Manter a velocidade porque a folga estática basta para decidir."
+        },
+        {
+          "key": "C",
+          "text": "Presumir que um trim pela popa aumenta a folga mínima em toda a extensão do casco."
+        },
+        {
+          "key": "D",
+          "text": "Usar o mesmo limite para qualquer largura ou profundidade do canal."
+        },
+        {
+          "key": "E",
+          "text": "Reduzir a velocidade planejada e recalcular a folga dinâmica para a seção e o calado considerados."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A fig. 120 relaciona limites de velocidade às dimensões do canal para manter folga sob o casco. No regime subcrítico tratado, reduzir a velocidade e verificar novamente a folga considera o afundamento e o trim. A pode agravar o squat, B ignora a parte dinâmica, C presume um efeito uniforme e D ignora a geometria do canal.",
+      "active": true,
+      "validation_status": "approved",
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s13",
+        "topic_id": "MAN-B010-13",
+        "subtopic_id": null
+      },
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "3. ed. (Second Revision), 1989",
+        "locator": "Cap. IX, § 13.5, p. 290, fig. 120"
+      },
+      "tags": [
+        "pscpp-caderno",
+        "bloco-010",
+        "efeito de águas rasas"
+      ],
+      "editorial_review": {
+        "complete_stem_restored": true,
+        "complete_stem_version": "notebook-complete-stems-v1"
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V. (ed.)"
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s13",
+          "number": "ch9-s13",
+          "title": "Chapter IX — Section 13: Vessel Waterway Interactions",
+          "label": "Chapter IX — Section 13: Vessel Waterway Interactions"
+        },
+        "section": "Chapter IX — Section 13: Vessel Waterway Interactions",
+        "module": "efeito de águas rasas",
+        "topic": {
+          "id": "MAN-B010-13",
+          "title": "efeito de águas rasas"
+        }
+      }
+    }
+  ],
+  "notebookStems": [
+    {
+      "bank": "manobrabilidade",
+      "id": "MAN-B010-13",
+      "reasons": [
+        "empty_fill_context"
+      ],
+      "question": "Em um canal no regime subcrítico, a previsão para a velocidade planejada indica folga insuficiente após computar o squat. Qual ajuste é compatível com o uso das curvas de velocidade-limite discutidas por Lewis?",
+      "pscpp_format": "direct",
+      "style": "Conceitual"
+    }
+  ]
+}
