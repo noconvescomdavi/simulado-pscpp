@@ -1,0 +1,979 @@
+{
+  "questions": [
+    {
+      "id": "MAN-144",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.7",
+      "topic": "Interação leme-propulsor",
+      "difficulty": "Fácil",
+      "style": "Cálculo",
+      "question": "Numa estimativa simplificada, 40% da área do leme recebe água a 8 m/s na descarga do propulsor e os 60% restantes recebem água a 4 m/s. Admita coeficiente local e direção da força iguais nas duas áreas e some suas contribuições. Qual fator resulta em relação à estimativa que usa 4 m/s em toda a área?",
+      "options": [
+        {
+          "key": "A",
+          "text": "1,40."
+        },
+        {
+          "key": "B",
+          "text": "1,96."
+        },
+        {
+          "key": "C",
+          "text": "4,00."
+        },
+        {
+          "key": "D",
+          "text": "2,20."
+        },
+        {
+          "key": "E",
+          "text": "1,00."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Cada parcela é ponderada pela área e pelo quadrado da velocidade local. O fator é 0,40 × (8/4)² + 0,60 × (4/4)² = 2,20. É uma estimativa de duas zonas nas condições impostas, pois o escoamento real não precisa atender a essas simplificações.",
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, p. 18, Hydrofoils. Complemento: Bertram, cap. 6, § 6.4.4, pp. 284–286"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "crenshaw-naval-shiphandling",
+        "crenshaw-naval-shiphandling::ch2",
+        "interacao-leme-propulsor"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "I-crenshaw-naval-shiphandling-ch2-7-7-interacao-leme-propulsor",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Cap. 2, p. 18, Hydrofoils. Complemento: Bertram, cap. 6, § 6.4.4, pp. 284–286",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-crenshaw-naval-shiphandling-ch2-7-7-interacao-leme-propulsor",
+          "title": "Interação leme-propulsor"
+        }
+      }
+    },
+    {
+      "id": "MAN-145",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.7",
+      "topic": "Leme com máquina a ré",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Dois registros de um navio mono-hélice mostram mesma rotação a ré e velocidade de 2 nós para ré sobre o fundo. No registro X, o casco é arrastado por uma corrente quase à mesma velocidade e direção, com pouco seguimento pela água. No registro Y, a água está parada. Em qual caso o leme convencional a ré do hélice tende a ter mais ação?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Em X, porque a corrente aumenta a área imersa do leme."
+        },
+        {
+          "key": "B",
+          "text": "Em X, porque o fluxo de aspiração torna irrelevante o seguimento pela água."
+        },
+        {
+          "key": "C",
+          "text": "Nos dois, porque o GPS indica a mesma velocidade."
+        },
+        {
+          "key": "D",
+          "text": "Nos dois, porque a rotação do hélice determina sozinha o fluxo no leme."
+        },
+        {
+          "key": "E",
+          "text": "Em Y, com maior velocidade local produzida pelo recuo em relação ao líquido."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Crenshaw observa que, no arranjo convencional, a aspiração do hélice girando a ré é pouco eficaz no leme. É o movimento do casco através da água que mais contribui para o escoamento nessa marcha. Com água parada, a velocidade sobre o fundo corresponde à velocidade pela água.",
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, p. 18, Hydrofoils, e p. 25, Backing"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "crenshaw-naval-shiphandling",
+        "crenshaw-naval-shiphandling::ch2",
+        "leme-com-maquina-a-re"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "I-crenshaw-naval-shiphandling-ch2-7-7-leme-com-maquina-a-re",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Cap. 2, p. 18, Hydrofoils, e p. 25, Backing",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-crenshaw-naval-shiphandling-ch2-7-7-leme-com-maquina-a-re",
+          "title": "Leme com máquina a ré"
+        }
+      }
+    },
+    {
+      "id": "MAN-146",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.8",
+      "topic": "Interação leme-casco",
+      "difficulty": "Difícil",
+      "style": "Cálculo",
+      "question": "No modelo de Bertram, a sustentação de referência do leme sem interação com o casco é 100 kN. Com velocidade a vante e leme defletido, o parâmetro de interação do casco vale 0,20. Qual é a força transversal combinada na aproximação?",
+      "options": [
+        {
+          "key": "A",
+          "text": "120 kN."
+        },
+        {
+          "key": "B",
+          "text": "80 kN."
+        },
+        {
+          "key": "C",
+          "text": "20 kN."
+        },
+        {
+          "key": "D",
+          "text": "100 kN."
+        },
+        {
+          "key": "E",
+          "text": "500 kN."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A força transversal total é (1 + aH) vezes a sustentação de referência sem interação. São 120 kN. Bertram distingue a força no leme, que pode diminuir nessa interação, da contribuição adicional de mesmo sentido na popa.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, § 6.4.5, p. 289, eqs. (6.83)–(6.84)"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch6",
+        "interacao-leme-casco"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "I-bertram-ch6-7-8-interacao-leme-casco",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Cap. 6, § 6.4.5, p. 289, eqs. (6.83)–(6.84)",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-bertram-ch6-7-8-interacao-leme-casco",
+          "title": "Interação leme-casco"
+        }
+      }
+    },
+    {
+      "id": "MAN-147",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.4",
+      "topic": "Momento de governo",
+      "difficulty": "Fácil",
+      "style": "Aplicada",
+      "question": "No instante inicial de uma manobra em marcha a vante, considere apenas a força do leme. Ela atua na popa, a ré do centro de massa, e aponta para bombordo. Que tendência inicial decorre dessa força?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Translação para bombordo sem guinada, pois importa apenas o sentido da força."
+        },
+        {
+          "key": "B",
+          "text": "Deslocamento lateral da popa para bombordo e guinada da proa para boreste."
+        },
+        {
+          "key": "C",
+          "text": "Deslocamento lateral da popa para boreste e guinada da proa para bombordo."
+        },
+        {
+          "key": "D",
+          "text": "Guinada da proa para bombordo porque a força na popa aponta para esse bordo."
+        },
+        {
+          "key": "E",
+          "text": "Variação apenas da velocidade longitudinal."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A força lateral empurra a popa para bombordo e tem braço em relação ao centro de massa. O momento tende a orientar a proa para boreste. A pergunta isola a contribuição do leme, pois a trajetória posterior depende das demais forças.",
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, pp. 16–17, Hydrofoils e fig. 2-2"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "crenshaw-naval-shiphandling",
+        "crenshaw-naval-shiphandling::ch2",
+        "momento-de-governo"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "I-crenshaw-naval-shiphandling-ch2-7-4-momento-de-governo",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Cap. 2, pp. 16–17, Hydrofoils e fig. 2-2",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-crenshaw-naval-shiphandling-ch2-7-4-momento-de-governo",
+          "title": "Momento de governo"
+        }
+      }
+    },
+    {
+      "id": "MAN-148",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.8",
+      "topic": "Equilíbrio em curva",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Com potência e ângulo de leme mantidos, o registro de uma prova mostra que a razão de guinada já se tornou aproximadamente constante, mas a velocidade continua caindo e o ângulo de deriva ainda muda. Como classificar esse trecho pela circular?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Curva estabilizada, pois basta que a guinada deixe de mudar."
+        },
+        {
+          "key": "B",
+          "text": "Curva estabilizada, pois basta manter o ângulo de leme."
+        },
+        {
+          "key": "C",
+          "text": "O trecho ainda é transitório. A curva estabilizada também requer velocidade e deriva aproximadamente constantes."
+        },
+        {
+          "key": "D",
+          "text": "O movimento já é retilíneo, pois uma razão de guinada constante é sempre nula."
+        },
+        {
+          "key": "E",
+          "text": "A deriva precisa ser exatamente zero para que qualquer curva se estabilize."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Na condição de curva estabilizada descrita na nota, razão de guinada, velocidade e deriva permanecem constantes, com balanço de forças e momentos. A constância de uma só variável não basta.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
+        "edition": "MSC/Circ.1053, 16 Dec. 2002",
+        "locator": "MSC/Circ.1053, anexo, cap. 1, §§ 1.2.2.1 e 1.2.2.4, pp. 2–3"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "msc1053",
+        "msc1053::ch1",
+        "equilibrio-em-curva"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "I-msc1053-ch1-7-8-equilibrio-em-curva",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc1053",
+          "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc1053::ch1",
+          "number": "ch1",
+          "title": "Chapter 1 – General principles",
+          "label": "Chapter 1 – General principles"
+        },
+        "section": "MSC/Circ.1053, anexo, cap. 1, §§ 1.2.2.1 e 1.2.2.4, pp. 2–3",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-msc1053-ch1-7-8-equilibrio-em-curva",
+          "title": "Equilíbrio em curva"
+        }
+      }
+    },
+    {
+      "id": "MAN-149",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.8",
+      "topic": "Casco como hidrofólio",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Num ensaio oblíquo, o casco passa pela água com o eixo longitudinal inclinado em relação à trajetória. A deflexão comandada do leme é nula. Qual contribuição do próprio casco precisa ser considerada?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Somente a força vertical de flutuação."
+        },
+        {
+          "key": "B",
+          "text": "Somente a força na direção longitudinal."
+        },
+        {
+          "key": "C",
+          "text": "Nenhuma contribuição transversal antes que haja ordem de leme."
+        },
+        {
+          "key": "D",
+          "text": "Força lateral e momento de rotação devido à incidência do casco no fluxo."
+        },
+        {
+          "key": "E",
+          "text": "Torque externo que só existe se o propulsor estiver tracionando."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Crenshaw trata o casco também como um hidrofólio. Quando o casco está inclinado em relação ao fluxo, as pressões geram força lateral e momento mesmo com leme em posição geométrica neutra.",
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, pp. 16–17, Hydrofoils, parágrafo sobre o casco inclinado ao escoamento"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "crenshaw-naval-shiphandling",
+        "crenshaw-naval-shiphandling::ch2",
+        "casco-como-hidrofolio"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "I-crenshaw-naval-shiphandling-ch2-7-8-casco-como-hidrofolio",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Cap. 2, pp. 16–17, Hydrofoils, parágrafo sobre o casco inclinado ao escoamento",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-crenshaw-naval-shiphandling-ch2-7-8-casco-como-hidrofolio",
+          "title": "Casco como hidrofólio"
+        }
+      }
+    },
+    {
+      "id": "MAN-150",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.8",
+      "topic": "Efeito do skeg",
+      "difficulty": "Fácil",
+      "style": "Aplicada",
+      "question": "Um skeg fixo, alinhado ao plano diametral na popa, recebe escoamento oblíquo após uma pequena perturbação de rumo. Qual efeito de sua força explica a finalidade estabilizadora desse apêndice?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A força só pode ser vertical, pois o apêndice está submerso."
+        },
+        {
+          "key": "B",
+          "text": "A força longitudinal é independente da direção de entrada da água."
+        },
+        {
+          "key": "C",
+          "text": "O apêndice transforma qualquer perturbação em giro instável."
+        },
+        {
+          "key": "D",
+          "text": "O apêndice só pode atuar quando a madre do leme gira."
+        },
+        {
+          "key": "E",
+          "text": "A força lateral aplicada a ré pode contribuir com momento que se opõe ao desvio."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Em deriva, o apêndice alinhado ao casco pode adquirir incidência no fluxo local. A força lateral na região de popa pode gerar contribuição restauradora, embora a estabilidade final dependa do conjunto casco e apêndices.",
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, p. 17, Hydrofoils, parágrafo sobre quilhas e skegs"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "crenshaw-naval-shiphandling",
+        "crenshaw-naval-shiphandling::ch2",
+        "efeito-do-skeg"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "I-crenshaw-naval-shiphandling-ch2-7-8-efeito-do-skeg",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Cap. 2, p. 17, Hydrofoils, parágrafo sobre quilhas e skegs",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-crenshaw-naval-shiphandling-ch2-7-8-efeito-do-skeg",
+          "title": "Efeito do skeg"
+        }
+      }
+    },
+    {
+      "id": "MAN-151",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.11",
+      "topic": "Projeto para manobrabilidade",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Compara-se um leme móvel com a mesma configuração acrescida de uma aleta fixa acima dele. Qual compromisso de manobrabilidade Bertram descreve para esse arranjo?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A aleta pode melhorar a estabilidade de rumo e aumentar o diâmetro de giro."
+        },
+        {
+          "key": "B",
+          "text": "A aleta reduz simultaneamente a estabilidade e o diâmetro em qualquer navio."
+        },
+        {
+          "key": "C",
+          "text": "A aleta fica solidária à madre e substitui o leme nas mudanças de rumo."
+        },
+        {
+          "key": "D",
+          "text": "A área fixa anula todas as forças transversais durante uma curva."
+        },
+        {
+          "key": "E",
+          "text": "A presença da aleta garante conformidade com os critérios de giro sem necessidade de avaliação."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Bertram atribui efeito estabilizador à aleta fixa e cita aumento do diâmetro de giro como contrapartida. A mudança de rumo depende da parte móvel. A circular aponta o compromisso geral entre características, sem atribuir esse efeito a um skeg específico nesse item.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, §§ 6.1 e 6.4.3, pp. 242 e 284, aleta fixa acima do leme. Complemento: MSC/Circ.1053, anexo, cap. 1, § 1.2.1.2, p. 2"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch6",
+        "projeto-para-manobrabilidade"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "I-msc1053-ch3-7-11-projeto-para-manobrabilidade",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Cap. 6, §§ 6.1 e 6.4.3, pp. 242 e 284, aleta fixa acima do leme. Complemento: MSC/Circ.1053, anexo, cap. 1, § 1.2.1.2, p. 2",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-msc1053-ch3-7-11-projeto-para-manobrabilidade",
+          "title": "Projeto para manobrabilidade"
+        }
+      }
+    },
+    {
+      "id": "MAN-152",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.8",
+      "topic": "Quilhas de balanço",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Durante avanço retilíneo, a quilha de balanço acompanha aproximadamente a direção do escoamento. O que muda quando o casco passa a oscilar em balanço para um bordo?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A quilha gira de modo independente e substitui o leme de guinada."
+        },
+        {
+          "key": "B",
+          "text": "O movimento transversal local cria incidência na quilha e uma reação que amortece o balanço."
+        },
+        {
+          "key": "C",
+          "text": "A quilha passa a mover-se no ar e perde qualquer interação com a água."
+        },
+        {
+          "key": "D",
+          "text": "O escoamento continua necessariamente paralelo à quilha durante toda a oscilação."
+        },
+        {
+          "key": "E",
+          "text": "Surge empuxo útil, pois a quilha funciona como um hélice."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A quilha acompanha as linhas de fluxo em marcha reta, mas o próprio balanço introduz movimento relativo transversal na região. A reação contribui para amortecer a rotação de balanço.",
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, pp. 17–18, Hydrofoils, parágrafo sobre bilge keels"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "crenshaw-naval-shiphandling",
+        "crenshaw-naval-shiphandling::ch2",
+        "quilhas-de-balanco"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "I-crenshaw-naval-shiphandling-ch2-7-8-quilhas-de-balanco",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Cap. 2, pp. 17–18, Hydrofoils, parágrafo sobre bilge keels",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-crenshaw-naval-shiphandling-ch2-7-8-quilhas-de-balanco",
+          "title": "Quilhas de balanço"
+        }
+      }
+    },
+    {
+      "id": "MAN-153",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.10",
+      "topic": "Cavitação no leme",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Num teste de leme pouco defletido atrás do propulsor, o aumento da carga e da velocidade produz cavidades junto ao lado de sucção. Qual leitura é compatível com Bertram?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O ângulo pequeno exclui cavitação, ainda que haja forte escoamento incidente."
+        },
+        {
+          "key": "B",
+          "text": "O aumento de pressão local explica a passagem de líquido a vapor."
+        },
+        {
+          "key": "C",
+          "text": "O fluxo acelerado pode baixar a pressão a ponto de haver vaporização local, mesmo com pequena deflexão."
+        },
+        {
+          "key": "D",
+          "text": "O fenômeno exige que a velocidade local seja nula."
+        },
+        {
+          "key": "E",
+          "text": "A presença de cavidades só pode ser interpretada como aspiração de ar."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Bertram adverte que a descarga sobre o leme pode favorecer cavitação ainda com pequena deflexão. A alta velocidade local pode reduzir a pressão abaixo da de vapor em partes da superfície. A identificação de ventilação exigiria evidência própria de entrada de ar.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, § 6.4.6, pp. 290–291, fig. 6.21 e eq. (6.88)"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch6",
+        "cavitacao-no-leme"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "I-bertram-ch6-7-10-cavitacao-no-leme",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Cap. 6, § 6.4.6, pp. 290–291, fig. 6.21 e eq. (6.88)",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-bertram-ch6-7-10-cavitacao-no-leme",
+          "title": "Cavitação no leme"
+        }
+      }
+    },
+    {
+      "id": "MAN-154",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.7",
+      "topic": "Influxo no leme",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "question": "Em marcha retilínea, o leme indica zero em relação ao casco. Sensores acima e abaixo do eixo do hélice registram componentes transversais opostas na descarga. Qual efeito precisa ser considerado na análise do leme?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O ângulo medido no indicador torna nula a incidência em toda a pá."
+        },
+        {
+          "key": "B",
+          "text": "As duas regiões perdem pressão dinâmica porque o leme não está defletido."
+        },
+        {
+          "key": "C",
+          "text": "As forças locais são necessariamente nulas porque suas incidências têm sinais opostos."
+        },
+        {
+          "key": "D",
+          "text": "A rotação da descarga pode gerar incidências locais opostas e arrasto mesmo com o leme a zero."
+        },
+        {
+          "key": "E",
+          "text": "As incidências determinam necessariamente um momento resultante de mesmo sinal nas duas regiões."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A descarga rotacional pode chegar oblíqua à corda, com sinal oposto acima e abaixo do eixo. Assim existe carregamento local com leme centrado. A existência de parcelas opostas não permite inferir o valor da resultante sem conhecer suas distribuições.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, § 6.4.1, pp. 273–274, trecho sobre a rotação da descarga e incidência com leme centrado"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch6",
+        "influxo-no-leme"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "I-pna-v3-ch9-s14-7-7-influxo-no-leme",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Cap. 6, § 6.4.1, pp. 273–274, trecho sobre a rotação da descarga e incidência com leme centrado",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-pna-v3-ch9-s14-7-7-influxo-no-leme",
+          "title": "Influxo no leme"
+        }
+      }
+    },
+    {
+      "id": "MAN-155",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.6",
+      "topic": "Lemes de alto desempenho",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Uma inspeção identifica, num leme Schilling, bordo de fuga alargado em cauda de peixe e placas nas extremidades. Para qual finalidade serve essa geometria no arranjo documentado pelo fabricante?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Desacoplar a lâmina da madre ao aplicar esforço lateral."
+        },
+        {
+          "key": "B",
+          "text": "Criar um flap móvel a vante do bordo de ataque."
+        },
+        {
+          "key": "C",
+          "text": "Fazer o leme trabalhar sem escoamento relativo."
+        },
+        {
+          "key": "D",
+          "text": "Substituir a reação da descarga por empuxo de um motor próprio."
+        },
+        {
+          "key": "E",
+          "text": "Aproveitar a corrente do hélice e gerar força lateral elevada com um perfil de alta sustentação."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A ficha Schilling descreve um perfil de alta sustentação, com cauda de peixe e placas que ajudam a controlar a descarga. Bertram é usado para os princípios de perfil e de supressão do fluxo pela extremidade. A força continua dependente da corrente local.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, §§ 6.4.2 e 6.4.5, pp. 277–278 e 288, efeitos do perfil e do bloqueio de extremidade. Complemento: Becker Marine Systems, ficha Becker Schilling Rudder e brochura Manoeuvring Systems, seção Becker Schilling Rudder"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch6",
+        "lemes-de-alto-desempenho"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "I-bertram-ch6-7-6-lemes-de-alto-desempenho",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Cap. 6, §§ 6.4.2 e 6.4.5, pp. 277–278 e 288, efeitos do perfil e do bloqueio de extremidade. Complemento: Becker Marine Systems, ficha Becker Schilling Rudder e brochura Manoeuvring Systems, seção Becker Schilling Rudder",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-bertram-ch6-7-6-lemes-de-alto-desempenho",
+          "title": "Lemes de alto desempenho"
+        }
+      }
+    },
+    {
+      "id": "MAN-156",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.6",
+      "topic": "Bocal de governo",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Um rebocador mantém o eixo do propulsor orientado longitudinalmente, mas a tubeira governável em torno dele gira sobre um eixo vertical. Qual mecanismo explica a força de governo com pequeno seguimento?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O desvio da descarga pela tubeira introduz componente transversal na reação do conjunto."
+        },
+        {
+          "key": "B",
+          "text": "O anel garante descarga sempre longitudinal, independentemente do ângulo."
+        },
+        {
+          "key": "C",
+          "text": "A força atua apenas porque aumenta a rotação do eixo propulsor."
+        },
+        {
+          "key": "D",
+          "text": "A tubeira governa apenas quando o propulsor está parado."
+        },
+        {
+          "key": "E",
+          "text": "A tubeira produz força lateral somente ao reduzir o calado de popa."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A tubeira orientável desvia a descarga, e a reação do sistema adquire componente lateral. O escoamento gerado pelo propulsor permite que o mecanismo atue com pequeno seguimento. O comando descrito gira a tubeira; ele não precisa girar o eixo do propulsor.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, §§ 6.1 e 6.4.3, pp. 242 e 284, steering nozzle. Complemento: Damen Marine Components, ficha DMC Nozzles, seção Optispec nozzle"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch6",
+        "bocal-de-governo"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "I-bertram-ch6-7-6-bocal-de-governo",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Cap. 6, §§ 6.1 e 6.4.3, pp. 242 e 284, steering nozzle. Complemento: Damen Marine Components, ficha DMC Nozzles, seção Optispec nozzle",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-bertram-ch6-7-6-bocal-de-governo",
+          "title": "Bocal de governo"
+        }
+      }
+    }
+  ]
+}
