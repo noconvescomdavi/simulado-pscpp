@@ -1,0 +1,979 @@
+{
+  "questions": [
+    {
+      "id": "MAN-053",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.7.1",
+      "topic": "Arrasto induzido",
+      "difficulty": "Difícil",
+      "style": "Conceitual",
+      "question": "Considere um perfil que gera sustentação. Compara-se um ensaio com ponta livre a um ensaio idealizado bidimensional em que o perfil vai de parede a parede. Que efeito se espera sobre o arrasto induzido pelos vórtices de ponta?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Aumenta porque as paredes ampliam a fuga pela ponta."
+        },
+        {
+          "key": "B",
+          "text": "Permanece igual porque todo arrasto é determinado pelo atrito de parede."
+        },
+        {
+          "key": "C",
+          "text": "A contribuição dos vórtices de ponta desaparece no caso idealizado sem ponta livre."
+        },
+        {
+          "key": "D",
+          "text": "Desaparece no perfil com ponta livre, pois a diferença de pressão deixa de atuar."
+        },
+        {
+          "key": "E",
+          "text": "É substituída integralmente pela resistência de ondas no ensaio de parede a parede."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Sem ponta livre, a água não contorna a extremidade do perfil para passar do lado de pressão ao de sucção. Na idealização bidimensional da fonte, deixa de existir esse sistema de vórtices de ponta. Outras parcelas de arrasto podem permanecer.",
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 7, § 7.1.2, p. 79, figs. 7.2–7.3"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch7",
+        "arrasto-induzido"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch7",
+        "topic_id": "I-larsson-resistance-ch7-5-7-1-arrasto-induzido",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch7",
+          "number": "ch7",
+          "title": "Chapter 7",
+          "label": "Chapter 7"
+        },
+        "section": "Cap. 7, § 7.1.2, p. 79, figs. 7.2–7.3",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch7-5-7-1-arrasto-induzido",
+          "title": "Arrasto induzido"
+        }
+      }
+    },
+    {
+      "id": "MAN-054",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.7.1",
+      "topic": "Hidrofólios e arrasto",
+      "difficulty": "Médio",
+      "style": "Cálculo",
+      "question": "Um hidrofólio simétrico passa de 2° para 4° de incidência em relação ao escoamento local. A pressão dinâmica e a área permanecem constantes, e o escoamento continua aderido na faixa linear. Qual é a razão aproximada entre a sustentação final e a inicial?",
+      "options": [
+        {
+          "key": "A",
+          "text": "0,5."
+        },
+        {
+          "key": "B",
+          "text": "1."
+        },
+        {
+          "key": "C",
+          "text": "1,5."
+        },
+        {
+          "key": "D",
+          "text": "2."
+        },
+        {
+          "key": "E",
+          "text": "4."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Na aproximação de Crenshaw para escoamento suave, a sustentação é proporcional ao ângulo de incidência quando área e pressão dinâmica são fixas. Para o perfil simétrico na faixa linear, a razão é 4/2 = 2.",
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, pp. 16–18, Hydrofoils, fig. 2-2"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "crenshaw-naval-shiphandling",
+        "crenshaw-naval-shiphandling::ch2",
+        "hidrofolios-e-arrasto"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "I-crenshaw-naval-shiphandling-ch2-5-7-1-hidrofolios-e-arrasto",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Cap. 2, pp. 16–18, Hydrofoils, fig. 2-2",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-crenshaw-naval-shiphandling-ch2-5-7-1-hidrofolios-e-arrasto",
+          "title": "Hidrofólios e arrasto"
+        }
+      }
+    },
+    {
+      "id": "MAN-055",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.1.3",
+      "topic": "Modelos numéricos",
+      "difficulty": "Médio",
+      "style": "Conceitual",
+      "question": "A resistência total prevista é parecida para duas popas candidatas, mas a equipe quer comparar a distribuição de velocidades que chega ao plano do propulsor. Que uso dos métodos descritos por Larsson e Raven é adequado?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Usar a igualdade da resistência total para concluir que a esteira local é idêntica."
+        },
+        {
+          "key": "B",
+          "text": "Exigir do método empírico de resistência total a velocidade em cada ponto do plano da hélice."
+        },
+        {
+          "key": "C",
+          "text": "Extrair a esteira diretamente de um dinamômetro de reboque sem medir o campo de velocidades."
+        },
+        {
+          "key": "D",
+          "text": "Aceitar o resultado de qualquer malha porque os modelos viscosos eliminam erros de resolução."
+        },
+        {
+          "key": "E",
+          "text": "Comparar os campos de esteira calculados por um método viscoso como RANS e confrontar as previsões com os ensaios pertinentes."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Os autores descrevem o uso de RANS para detalhar a distribuição da esteira na popa. Essa informação pode discriminar soluções com resistência total semelhante. Resolução e modelagem de turbulência ainda influenciam as previsões.",
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 1, §§ 1.2.3–1.2.4, pp. 3–4, métodos teóricos e uso no projeto"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch1",
+        "modelos-numericos"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch1",
+        "topic_id": "I-larsson-resistance-ch1-5-1-3-modelos-numericos",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch1",
+          "number": "ch1",
+          "title": "Chapter 1",
+          "label": "Chapter 1"
+        },
+        "section": "Cap. 1, §§ 1.2.3–1.2.4, pp. 3–4, métodos teóricos e uso no projeto",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch1-5-1-3-modelos-numericos",
+          "title": "Modelos numéricos"
+        }
+      }
+    },
+    {
+      "id": "MAN-056",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.1.2",
+      "topic": "Métodos empíricos",
+      "difficulty": "Fácil",
+      "style": "Conceitual",
+      "question": "Uma regressão de resistência foi ajustada com dados de cascos convencionais. Um novo projeto tem proporções fora da faixa representada nos dados. Qual procedimento é sustentado pela discussão de Larsson e Raven?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Tratar a extrapolação como incerta e confrontá-la com dados, cálculo ou ensaio adequado à nova geometria."
+        },
+        {
+          "key": "B",
+          "text": "Considerar a regressão exata porque o ajuste foi obtido com ensaios de tanque."
+        },
+        {
+          "key": "C",
+          "text": "Usar a regressão para calcular diretamente as velocidades locais junto à popa."
+        },
+        {
+          "key": "D",
+          "text": "Concluir que aumentar o grau do polinômio elimina a dependência da população original."
+        },
+        {
+          "key": "E",
+          "text": "Considerar suficiente a igualdade de velocidade para transferir a regressão a qualquer forma."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "As regressões e séries sistemáticas permitem estimativas rápidas, sobretudo no início do projeto. A aplicação a formas fora da faixa dos dados exige cautela e, quando necessário, verificação por outro método.",
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 1, § 1.2.2, pp. 2–3; § 1.2.4, p. 4, métodos empíricos"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch1",
+        "metodos-empiricos"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch1",
+        "topic_id": "I-larsson-resistance-ch1-5-1-2-metodos-empiricos",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch1",
+          "number": "ch1",
+          "title": "Chapter 1",
+          "label": "Chapter 1"
+        },
+        "section": "Cap. 1, § 1.2.2, pp. 2–3; § 1.2.4, p. 4, métodos empíricos",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch1-5-1-2-metodos-empiricos",
+          "title": "Métodos empíricos"
+        }
+      }
+    },
+    {
+      "id": "MAN-057",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.1.1",
+      "topic": "Testes com modelos",
+      "difficulty": "Médio",
+      "style": "Conceitual",
+      "question": "Num ensaio com Froude correspondente, um modelo de Reynolds muito menor tem uma região laminar maior que a esperada no navio. Que medida experimental Larsson e Raven descrevem para tratar especificamente essa diferença?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Aumentar a velocidade até igualar Reynolds e considerar Froude automaticamente mantido."
+        },
+        {
+          "key": "B",
+          "text": "Empregar um estimulador de turbulência perto da proa do modelo para antecipar a transição."
+        },
+        {
+          "key": "C",
+          "text": "Retirar a superfície livre do tanque para manter a mesma resistência de ondas."
+        },
+        {
+          "key": "D",
+          "text": "Alterar apenas a leitura do dinamômetro para compensar a camada limite."
+        },
+        {
+          "key": "E",
+          "text": "Tornar maior a região laminar para representar o casco em escala real."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Os autores descrevem a estimulação da transição por fio ou rugosidade localizada. Ela reduz o efeito de uma região laminar excessiva no modelo, sem igualar todos os parâmetros de similitude. O dispositivo pode adicionar arrasto próprio.",
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 8, §§ 8.2.1 e 8.2.3, pp. 99–100, fig. 8.2; cap. 3, § 3.3.2, pp. 12–13"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch8",
+        "testes-com-modelos"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch8",
+        "topic_id": "I-larsson-resistance-ch8-5-1-1-testes-com-modelos",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch8",
+          "number": "ch8",
+          "title": "Chapter 8",
+          "label": "Chapter 8"
+        },
+        "section": "Cap. 8, §§ 8.2.1 e 8.2.3, pp. 99–100, fig. 8.2; cap. 3, § 3.3.2, pp. 12–13",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch8-5-1-1-testes-com-modelos",
+          "title": "Testes com modelos"
+        }
+      }
+    },
+    {
+      "id": "MAN-058",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.8",
+      "topic": "Medição do escoamento",
+      "difficulty": "Médio",
+      "style": "Conceitual",
+      "question": "Uma sonda fixa no tanque registra elevação da água enquanto um modelo passa com velocidade constante. Como se obtém um corte longitudinal do padrão de ondas do modelo sem confundir o registro com as reflexões das paredes?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Usar apenas o trecho após a chegada das ondas refletidas."
+        },
+        {
+          "key": "B",
+          "text": "Associar a elevação à posição transversal, embora a sonda esteja fixa no tanque."
+        },
+        {
+          "key": "C",
+          "text": "Converter tempos em posições relativas pela velocidade do modelo e usar o trecho anterior à chegada das reflexões."
+        },
+        {
+          "key": "D",
+          "text": "Integrar o sinal em todo o tempo para obter diretamente a força de reboque."
+        },
+        {
+          "key": "E",
+          "text": "Atribuir todas as elevações à altura de onda na proa, independentemente do instante."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A leitura temporal de uma sonda fixa pode ser convertida em distância relativa usando a velocidade do modelo e um instante de referência. A janela útil começa na chegada da perturbação e termina antes de as ondas refletidas atingirem a sonda.",
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 8, § 8.4.6, pp. 106–107, medição do padrão de ondas"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch8",
+        "medicao-do-escoamento"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch8",
+        "topic_id": "I-larsson-resistance-ch8-5-8-medicao-do-escoamento",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch8",
+          "number": "ch8",
+          "title": "Chapter 8",
+          "label": "Chapter 8"
+        },
+        "section": "Cap. 8, § 8.4.6, pp. 106–107, medição do padrão de ondas",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch8-5-8-medicao-do-escoamento",
+          "title": "Medição do escoamento"
+        }
+      }
+    },
+    {
+      "id": "MAN-059",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.9.2",
+      "topic": "Correlação modelo-navio",
+      "difficulty": "Difícil",
+      "style": "Conceitual",
+      "question": "Dois métodos de extrapolação aplicados ao mesmo navio dão níveis diferentes de resistência em escala real. Para explicar o papel da margem de correlação, que conclusão corresponde à discussão de Larsson e Raven?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A margem deve ser idêntica em ambos os métodos porque apenas a rugosidade muda entre modelo e navio."
+        },
+        {
+          "key": "B",
+          "text": "A margem substitui o ensaio de resistência e determina sozinha a força total."
+        },
+        {
+          "key": "C",
+          "text": "A margem é a diferença geométrica entre as áreas molhadas, sem uso de dados de provas."
+        },
+        {
+          "key": "D",
+          "text": "A margem pode depender do método e incorporar vários ajustes inferidos de provas, além dos efeitos de rugosidade."
+        },
+        {
+          "key": "E",
+          "text": "A margem é uma correção aplicada somente à parcela de ondas do modelo."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "As margens citadas derivam de regressões sobre dados de provas e podem incorporar efeitos ainda não representados no método. Froude e ITTC-78 podem exigir margens diferentes. Uma correção de rugosidade específica é apenas parte do problema.",
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 8, § 8.3.4, pp. 103–105, discussão das margens de correlação"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch8",
+        "correlacao-modelo-navio"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch8",
+        "topic_id": "I-larsson-resistance-ch8-5-9-2-correlacao-modelo-navio",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch8",
+          "number": "ch8",
+          "title": "Chapter 8",
+          "label": "Chapter 8"
+        },
+        "section": "Cap. 8, § 8.3.4, pp. 103–105, discussão das margens de correlação",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch8-5-9-2-correlacao-modelo-navio",
+          "title": "Correlação modelo-navio"
+        }
+      }
+    },
+    {
+      "id": "MAN-060",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.2.2",
+      "topic": "Conservação da quantidade de movimento",
+      "difficulty": "Difícil",
+      "style": "Conceitual",
+      "question": "Em um escoamento permanente retilíneo, a velocidade longitudinal u aumenta com x ao longo de uma linha de corrente. Nesse trecho unidimensional, que termo ainda explica a aceleração e a resultante longitudinal sobre uma partícula de água?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A derivada local de u em relação ao tempo, apesar de o escoamento ser permanente."
+        },
+        {
+          "key": "B",
+          "text": "Apenas a pressão hidrostática constante ao longo da linha."
+        },
+        {
+          "key": "C",
+          "text": "Somente a derivada transversal da velocidade, desprezada nessa idealização."
+        },
+        {
+          "key": "D",
+          "text": "A variação de densidade em um escoamento tratado como incompressível."
+        },
+        {
+          "key": "E",
+          "text": "O termo convectivo u vezes a derivada de u em relação a x."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A aceleração material inclui a mudança por advecção. No caso permanente, a derivada temporal local é zero, mas a partícula atravessa pontos de velocidades diferentes. A segunda lei de Newton liga a aceleração convectiva à força resultante.",
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 2, § 2.3, p. 6, eqs. (2.2)–(2.5a), quantidade de movimento"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch2",
+        "conservacao-da-quantidade-de-movimento"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch2",
+        "topic_id": "I-larsson-resistance-ch2-5-2-2-conservacao-da-quantidade-de-movimento",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch2",
+          "number": "ch2",
+          "title": "Chapter 2",
+          "label": "Chapter 2"
+        },
+        "section": "Cap. 2, § 2.3, p. 6, eqs. (2.2)–(2.5a), quantidade de movimento",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch2-5-2-2-conservacao-da-quantidade-de-movimento",
+          "title": "Conservação da quantidade de movimento"
+        }
+      }
+    },
+    {
+      "id": "MAN-061",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.2.1",
+      "topic": "Conservação de massa",
+      "difficulty": "Médio",
+      "style": "Cálculo",
+      "question": "Num volume de controle fixo com água incompressível em regime permanente, entram 12 m³/s por uma seção. Uma das duas saídas conduz 7 m³/s. Sem outras passagens, que vazão deve atravessar a segunda saída?",
+      "options": [
+        {
+          "key": "A",
+          "text": "5 m³/s."
+        },
+        {
+          "key": "B",
+          "text": "7 m³/s."
+        },
+        {
+          "key": "C",
+          "text": "12 m³/s."
+        },
+        {
+          "key": "D",
+          "text": "19 m³/s."
+        },
+        {
+          "key": "E",
+          "text": "Zero."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Em regime permanente e sem fontes internas, o fluxo de volume total que sai iguala o que entra para densidade constante. A segunda saída conduz 12 − 7 = 5 m³/s.",
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 2, § 2.2, pp. 5–6, fig. 2.2 e eq. (2.1), continuidade"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch2",
+        "conservacao-de-massa"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch2",
+        "topic_id": "I-larsson-resistance-ch2-5-2-1-conservacao-de-massa",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch2",
+          "number": "ch2",
+          "title": "Chapter 2",
+          "label": "Chapter 2"
+        },
+        "section": "Cap. 2, § 2.2, pp. 5–6, fig. 2.2 e eq. (2.1), continuidade",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch2-5-2-1-conservacao-de-massa",
+          "title": "Conservação de massa"
+        }
+      }
+    },
+    {
+      "id": "MAN-062",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.2.3",
+      "topic": "Forças de pressão",
+      "difficulty": "Fácil",
+      "style": "Conceitual",
+      "question": "Em dois pontos do escoamento junto ao casco, à mesma profundidade e referidos ao mesmo nível de água em repouso, a pressão medida difere em 3 kPa. Como essa diferença aparece na decomposição de Larsson e Raven?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Inteiramente na parcela hidrostática, porque a água está escoando."
+        },
+        {
+          "key": "B",
+          "text": "Inteiramente na diferença entre as parcelas hidrodinâmicas dos dois pontos."
+        },
+        {
+          "key": "C",
+          "text": "Metade na parcela hidrostática e metade na hidrodinâmica, por definição."
+        },
+        {
+          "key": "D",
+          "text": "Na diferença de pressão de vapor, mesmo com a mesma temperatura."
+        },
+        {
+          "key": "E",
+          "text": "Na diferença de pressão atmosférica usada como referência comum."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Na referência comum, a pressão hidrostática depende da profundidade. Ela é igual nos dois pontos e se cancela na subtração. A diferença de pressão total coincide com a diferença das parcelas hidrodinâmicas.",
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "1. ed., 2010",
+        "locator": "Cap. 2, § 2.5, p. 9, eqs. (2.22)–(2.24), pressão hidrodinâmica e hidrostática"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch2",
+        "forcas-de-pressao"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch2",
+        "topic_id": "I-larsson-resistance-ch2-5-2-3-forcas-de-pressao",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch2",
+          "number": "ch2",
+          "title": "Chapter 2",
+          "label": "Chapter 2"
+        },
+        "section": "Cap. 2, § 2.5, p. 9, eqs. (2.22)–(2.24), pressão hidrodinâmica e hidrostática",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch2-5-2-3-forcas-de-pressao",
+          "title": "Forças de pressão"
+        }
+      }
+    },
+    {
+      "id": "MAN-063",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.6",
+      "topic": "Separação na popa",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Dois modelos do mesmo casco, em escala diferente e sem propulsor, são ensaiados para caracterizar a esteira. No menor, a separação e a espessura da camada limite são relativamente maiores. Qual cautela Bertram indica para usar esse resultado no projeto do hélice?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Transferir diretamente a mesma fração de esteira ao navio, pois igualar Froude preserva toda a camada limite."
+        },
+        {
+          "key": "B",
+          "text": "Desprezar a separação porque ela só afeta a resistência do ar."
+        },
+        {
+          "key": "C",
+          "text": "Considerar que o modelo pode superestimar a fração de esteira e que a previsão de rotação e passo é sensível a esse erro."
+        },
+        {
+          "key": "D",
+          "text": "Considerar a distribuição medida uma esteira efetiva, pois não havia propulsor."
+        },
+        {
+          "key": "E",
+          "text": "Trocar a medição da esteira pelo calado estático sem outras informações."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Bertram explica que camada limite e separação relativamente maiores no modelo elevam a fração de esteira medida. São necessárias correções de escala, e erros de esteira afetam as estimativas de rotação e passo. Sem propulsor, mede-se a esteira nominal.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 3, §§ 3.1.1–3.1.2, pp. 75–77, esteira e resistência viscosa de pressão"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch3",
+        "separacao-na-popa"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch3",
+        "topic_id": "I-bertram-ch3-5-6-separacao-na-popa",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch3",
+          "number": "ch3",
+          "title": "Chapter 3 – Resistance and Propulsion",
+          "label": "Chapter 3 – Resistance and Propulsion"
+        },
+        "section": "Cap. 3, §§ 3.1.1–3.1.2, pp. 75–77, esteira e resistência viscosa de pressão",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-bertram-ch3-5-6-separacao-na-popa",
+          "title": "Separação na popa"
+        }
+      }
+    },
+    {
+      "id": "MAN-064",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.5",
+      "topic": "Redução da resistência de ondas",
+      "difficulty": "Difícil",
+      "style": "Conceitual",
+      "question": "Numa série de modelos com as mesmas formas de proa e popa, varia-se apenas o comprimento da seção paralela. À velocidade de um ensaio, a diferença de comprimento do corpo paralelo entre dois máximos consecutivos de resistência é aproximadamente igual a quê, segundo a interpretação de Lewis?",
+      "options": [
+        {
+          "key": "A",
+          "text": "À boca máxima do modelo, independentemente da velocidade."
+        },
+        {
+          "key": "B",
+          "text": "À profundidade do tanque, mesmo em água profunda."
+        },
+        {
+          "key": "C",
+          "text": "Ao comprimento entre perpendiculares do menor modelo."
+        },
+        {
+          "key": "D",
+          "text": "Ao comprimento da onda de águas profundas correspondente à velocidade daquele ensaio."
+        },
+        {
+          "key": "E",
+          "text": "À espessura da camada limite no plano do hélice."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A figura 22 relaciona máximos sucessivos à variação de distância entre as extremidades. Alterar essa distância em aproximadamente um comprimento de onda devolve uma relação de fase semelhante entre os sistemas de proa e popa.",
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "3. ed. (Second Revision), 1988",
+        "locator": "Vol. II, cap. V, § 4.5, pp. 24–25, figs. 20–22"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch5-s4",
+        "reducao-da-resistencia-de-ondas"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch5-s4",
+        "topic_id": "I-pna-v2-ch5-s4-5-5-reducao-da-resistencia-de-ondas",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V. (ed.)"
+        },
+        "chapter": {
+          "id": "pna-v2::ch5-s4",
+          "number": "ch5-s4",
+          "title": "Chapter V – Resistance — Section 4: Wave-Making Resistance",
+          "label": "Chapter V – Resistance — Section 4: Wave-Making Resistance"
+        },
+        "section": "Vol. II, cap. V, § 4.5, pp. 24–25, figs. 20–22",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-pna-v2-ch5-s4-5-5-reducao-da-resistencia-de-ondas",
+          "title": "Redução da resistência de ondas"
+        }
+      }
+    },
+    {
+      "id": "MAN-065",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "5.5.3",
+      "topic": "Interferência do bulbo",
+      "difficulty": "Médio",
+      "style": "Conceitual",
+      "question": "Um bulbo reduz a resistência de ondas na velocidade de projeto, mas aumenta a resistência total em um ensaio mais lento. Qual explicação é compatível com a discussão de Lewis?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A presença do bulbo elimina a parcela viscosa em ambas as velocidades."
+        },
+        {
+          "key": "B",
+          "text": "A interferência entre bulbo e proa tem intensidade e fase invariáveis com a velocidade."
+        },
+        {
+          "key": "C",
+          "text": "Reduzir resistência de ondas garante redução igual da resistência total em qualquer velocidade."
+        },
+        {
+          "key": "D",
+          "text": "O aumento em baixa velocidade prova que a redução da resistência de ondas na velocidade de projeto foi impossível."
+        },
+        {
+          "key": "E",
+          "text": "O benefício por interferência depende da velocidade e pode não compensar o atrito e a resistência de forma adicionais no ensaio mais lento."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A interação do padrão do bulbo com o padrão da proa pode reduzir ondas na faixa visada. O ganho depende da fase e da intensidade dos sistemas. No caso descrito por Lewis, a resistência friccional e de forma do bulbo pode superar o ganho em baixa velocidade.",
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "3. ed. (Second Revision), 1988",
+        "locator": "Vol. II, cap. V, §§ 4.4–4.5, pp. 21–24, interferência e bulbos; exemplo complementar § 8.10, pp. 79–80"
+      },
+      "tags": [
+        "resistência do navio",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch5-s4",
+        "interferencia-do-bulbo"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch5-s4",
+        "topic_id": "I-pna-v2-ch5-s4-5-5-3-interferencia-do-bulbo",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V. (ed.)"
+        },
+        "chapter": {
+          "id": "pna-v2::ch5-s4",
+          "number": "ch5-s4",
+          "title": "Chapter V – Resistance — Section 4: Wave-Making Resistance",
+          "label": "Chapter V – Resistance — Section 4: Wave-Making Resistance"
+        },
+        "section": "Vol. II, cap. V, §§ 4.4–4.5, pp. 21–24, interferência e bulbos; exemplo complementar § 8.10, pp. 79–80",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-pna-v2-ch5-s4-5-5-3-interferencia-do-bulbo",
+          "title": "Interferência do bulbo"
+        }
+      }
+    }
+  ]
+}
