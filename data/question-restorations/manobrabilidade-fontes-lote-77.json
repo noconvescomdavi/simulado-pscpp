@@ -1,0 +1,981 @@
+{
+  "questions": [
+    {
+      "id": "MAN-157",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.11",
+      "topic": "Projeto do leme",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Na verificação de um leme recém-dimensionado, o projetista quer medir, no mesmo tipo de ensaio, a reação inicial à ordem de leme e a capacidade de conter a guinada após a inversão da ordem. Qual combinação fornece essas duas medidas?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ensaio de giro com leme carregado, usando avanço e diâmetro tático."
+        },
+        {
+          "key": "B",
+          "text": "Ensaio de zigue-zague, usando os tempos de guinada inicial e de contenção da guinada."
+        },
+        {
+          "key": "C",
+          "text": "Ensaio de parada a toda força atrás, usando alcance longitudinal e tempo de parada."
+        },
+        {
+          "key": "D",
+          "text": "Ensaio de espiral, usando os dois limites de uma malha de histerese."
+        },
+        {
+          "key": "E",
+          "text": "Ensaio de arrancada, usando velocidade final e tempo de aceleração."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O zigue-zague permite observar a resposta inicial e, depois da inversão da ordem, a contenção da guinada. Bertram apresenta critérios de projeto para os dois tempos no zigue-zague 20°/10°. Círculo de giro, parada, espiral e arrancada dão outras medidas.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, § 6.4.7, p. 295; § 6.3.1, fig. 6.7"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch6",
+        "projeto-do-leme"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "I-bertram-ch6-7-11-projeto-do-leme",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Cap. 6, § 6.4.7, p. 295; § 6.3.1, fig. 6.7",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-bertram-ch6-7-11-projeto-do-leme",
+          "title": "Projeto do leme"
+        }
+      }
+    },
+    {
+      "id": "MAN-158",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.11",
+      "topic": "Dimensionamento do leme",
+      "difficulty": "Difícil",
+      "style": "Cálculo",
+      "question": "Uma estimativa inicial usa a aproximação de Bertram para a área do leme de um navio de boca usual. Se o comprimento de referência é de 140 m e o calado de referência é de 8 m, qual área resulta da aproximação de 1,5% da área lateral submersa de referência, L × T?",
+      "options": [
+        {
+          "key": "A",
+          "text": "8,4 m²."
+        },
+        {
+          "key": "B",
+          "text": "11,2 m²."
+        },
+        {
+          "key": "C",
+          "text": "16,8 m²."
+        },
+        {
+          "key": "D",
+          "text": "22,4 m²."
+        },
+        {
+          "key": "E",
+          "text": "33,6 m²."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A área lateral de referência é 140 × 8 = 1.120 m². Aplicar 0,015 resulta em 16,8 m². As outras áreas corresponderiam, respectivamente, a 0,75%, 1%, 2% e 3%. Esse valor preliminar serve de partida para a análise do governo.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, § 6.4.7, p. 295, eq. (6.91) e parágrafo subsequente"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch6",
+        "dimensionamento-do-leme"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "I-pna-v3-ch9-s14-7-11-dimensionamento-do-leme",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Cap. 6, § 6.4.7, p. 295, eq. (6.91) e parágrafo subsequente",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-pna-v3-ch9-s14-7-11-dimensionamento-do-leme",
+          "title": "Dimensionamento do leme"
+        }
+      }
+    },
+    {
+      "id": "MAN-159",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.11",
+      "topic": "Tempo do aparelho de governo",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Em duas repetições de um zigue-zague, a inversão de comando ocorre com a mesma proa e razão de guinada. Na segunda, o aparelho leva mais tempo para passar o leme ao bordo oposto, e o navio segue guinando no sentido inicial durante o atraso adicional. Qual é o efeito observado nesse intervalo?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A proa fica fixa a partir da ordem de inversão."
+        },
+        {
+          "key": "B",
+          "text": "A guinada no sentido oposto começa antes de o leme se mover."
+        },
+        {
+          "key": "C",
+          "text": "Desaparece a diferença entre o ângulo de comando e o ângulo real do leme."
+        },
+        {
+          "key": "D",
+          "text": "A proa continua se afastando do limiar que disparou a inversão, enquanto se retarda a aplicação do contraleme."
+        },
+        {
+          "key": "E",
+          "text": "O desvio adicional começa somente depois de zerada a razão de guinada."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A ordem de inversão e o ângulo efetivo do leme são eventos distintos. Enquanto a razão de guinada mantém o sinal inicial, a proa continua avançando nesse sentido. O trecho descreve o atraso observado; a comparação dos máximos finais depende da resposta completa.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
+        "edition": "MSC/Circ.1053, 16 Dec. 2002",
+        "locator": "Anexo, cap. 1, §§ 1.2.2.8, 1.2.2.11 e 1.3.2, pp. 3–5. Complemento: Bertram, 2ª ed., cap. 6, § 6.4.1, p. 272"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "msc1053",
+        "msc1053::ch1",
+        "tempo-do-aparelho-de-governo"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "I-msc1053-ch1-7-11-tempo-do-aparelho-de-governo",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc1053",
+          "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc1053::ch1",
+          "number": "ch1",
+          "title": "Chapter 1 – General principles",
+          "label": "Chapter 1 – General principles"
+        },
+        "section": "Anexo, cap. 1, §§ 1.2.2.8, 1.2.2.11 e 1.3.2, pp. 3–5. Complemento: Bertram, 2ª ed., cap. 6, § 6.4.1, p. 272",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-msc1053-ch1-7-11-tempo-do-aparelho-de-governo",
+          "title": "Tempo do aparelho de governo"
+        }
+      }
+    },
+    {
+      "id": "MAN-160",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.4",
+      "topic": "Contraleme",
+      "difficulty": "Fácil",
+      "style": "Aplicada",
+      "question": "Depois de comandar contraleme, a razão de guinada para boreste diminui progressivamente de 0,50°/s para 0,15°/s. Considere boreste positivo. Como interpretar a ação durante esse intervalo?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A proa já está guinando para bombordo."
+        },
+        {
+          "key": "B",
+          "text": "A variação da razão de guinada é positiva."
+        },
+        {
+          "key": "C",
+          "text": "O momento resultante de guinada é nulo em todo o intervalo."
+        },
+        {
+          "key": "D",
+          "text": "O máximo desvio de proa já foi atingido no começo do intervalo."
+        },
+        {
+          "key": "E",
+          "text": "A guinada para boreste está sendo contida, embora a proa ainda gire para boreste."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A taxa de guinada diminui e ainda é positiva, de modo que a proa continua girando para boreste. A razão nula marca o fim dessa guinada quando há inversão de sentido, e não o primeiro instante em que ela começa a cair.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
+        "edition": "MSC/Circ.1053, 16 Dec. 2002",
+        "locator": "Anexo, cap. 1, §§ 1.2.2.8 e 1.2.3.4, pp. 3 e 5"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "msc1053",
+        "msc1053::ch1",
+        "contraleme"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "I-msc1053-ch1-7-4-contraleme",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc1053",
+          "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc1053::ch1",
+          "number": "ch1",
+          "title": "Chapter 1 – General principles",
+          "label": "Chapter 1 – General principles"
+        },
+        "section": "Anexo, cap. 1, §§ 1.2.2.8 e 1.2.3.4, pp. 3 e 5",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-msc1053-ch1-7-4-contraleme",
+          "title": "Contraleme"
+        }
+      }
+    },
+    {
+      "id": "MAN-161",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "8.1.1",
+      "topic": "Características de manobrabilidade",
+      "difficulty": "Fácil",
+      "style": "Aplicada",
+      "question": "O relatório de manobra traz apenas avanço a 90° e diâmetro tático a 180°, obtidos com leme carregado. Qual conclusão respeita o alcance desses registros na avaliação da manobrabilidade?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Os dados avaliam a capacidade de giro com leme carregado. A resposta inicial a leme moderado, a contenção da guinada e a parada exigem outras medições."
+        },
+        {
+          "key": "B",
+          "text": "Os dados bastam para quantificar a contenção da guinada, porque a medição a 180° já inclui a reversão do leme."
+        },
+        {
+          "key": "C",
+          "text": "O avanço a 90° mede o alcance de parada, e o diâmetro tático mede o tempo até água parada."
+        },
+        {
+          "key": "D",
+          "text": "O diâmetro tático basta para medir a estabilidade dinâmica inerente em linha reta."
+        },
+        {
+          "key": "E",
+          "text": "O avanço a 90° substitui a resposta inicial a leme moderado, pois ambos medem a proa no mesmo ponto do ensaio."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Avanço e diâmetro tático são medidas do círculo de giro. A avaliação distingue ainda estabilidade inerente, manutenção do rumo, mudança inicial com leme moderado, contenção com contraleme e parada. Os dados apresentados permitem concluir apenas sobre o aspecto medido.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
+        "edition": "MSC/Circ.1053, 16 Dec. 2002",
+        "locator": "Anexo, cap. 1, §§ 1.2.3.1–1.2.3.6 e 1.3.1, pp. 4–5"
+      },
+      "tags": [
+        "controlabilidade",
+        "manobrabilidade",
+        "msc1053",
+        "msc1053::ch1",
+        "caracteristicas-de-manobrabilidade"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "I-msc1053-ch1-8-1-1-caracteristicas-de-manobrabilidade",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc1053",
+          "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc1053::ch1",
+          "number": "ch1",
+          "title": "Chapter 1 – General principles",
+          "label": "Chapter 1 – General principles"
+        },
+        "section": "Anexo, cap. 1, §§ 1.2.3.1–1.2.3.6 e 1.3.1, pp. 4–5",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc1053-ch1-8-1-1-caracteristicas-de-manobrabilidade",
+          "title": "Características de manobrabilidade"
+        }
+      }
+    },
+    {
+      "id": "MAN-162",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "8.6.1",
+      "topic": "Estabilidade dinâmica",
+      "difficulty": "Fácil",
+      "style": "Aplicada",
+      "question": "Em água sem corrente, o leme permanece na posição neutra durante e após uma pequena perturbação breve. A velocidade se mantém, a razão de guinada tende a zero e a proa se estabiliza 3° a boreste da inicial. O que o resultado indica para essa perturbação?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Instabilidade dinâmica, porque o desvio residual de proa é diferente de zero."
+        },
+        {
+          "key": "B",
+          "text": "Comportamento compatível com estabilidade dinâmica inerente em trajetória retilínea."
+        },
+        {
+          "key": "C",
+          "text": "Retorno à trajetória geométrica original, pois a razão de guinada chegou a zero."
+        },
+        {
+          "key": "D",
+          "text": "Manutenção comprovada do rumo inicial por ação do controlador."
+        },
+        {
+          "key": "E",
+          "text": "Equilíbrio numa curva de raio finito, pois há um desvio residual de proa."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Para uma pequena perturbação, a guinada se extinguiu sem correção de leme, e o navio tomou uma nova direção retilínea. O desvio residual é compatível com estabilidade inerente. Curva sustentada requer razão de guinada diferente de zero.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
+        "edition": "MSC/Circ.1053, 16 Dec. 2002",
+        "locator": "Anexo, cap. 1, §§ 1.2.2.2 e 1.2.3.1, pp. 2 e 4"
+      },
+      "tags": [
+        "controlabilidade",
+        "manobrabilidade",
+        "msc1053",
+        "msc1053::ch1",
+        "estabilidade-dinamica"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "I-msc1053-ch1-8-6-1-estabilidade-dinamica",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc1053",
+          "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc1053::ch1",
+          "number": "ch1",
+          "title": "Chapter 1 – General principles",
+          "label": "Chapter 1 – General principles"
+        },
+        "section": "Anexo, cap. 1, §§ 1.2.2.2 e 1.2.3.1, pp. 2 e 4",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc1053-ch1-8-6-1-estabilidade-dinamica",
+          "title": "Estabilidade dinâmica"
+        }
+      },
+      "active": false,
+      "status": "quarantined"
+    },
+    {
+      "id": "MAN-163",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "8.7.1",
+      "topic": "Manutenção do rumo",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Um navio apresenta instabilidade dinâmica inerente de pequena magnitude. Com o piloto automático acionado, mantém trajetória retilínea no rumo prescrito, com pequenas correções de leme e sem oscilações excessivas. Qual interpretação é sustentada pela observação?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A estabilidade dinâmica inerente foi demonstrada, pois a trajetória com controle é retilínea."
+        },
+        {
+          "key": "B",
+          "text": "A capacidade de manter rumo só pode ser julgada com o leme imóvel a meio."
+        },
+        {
+          "key": "C",
+          "text": "O sistema navio e controle mantém o rumo nessa condição, embora a instabilidade inerente permaneça."
+        },
+        {
+          "key": "D",
+          "text": "A capacidade de giro com leme carregado ficou necessariamente abaixo do limite."
+        },
+        {
+          "key": "E",
+          "text": "Existe uma medida da distância de parada, pois a trajetória é retilínea."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A manutenção do rumo avalia a trajetória com governo ativo e a intensidade das oscilações de rumo e leme. Instabilidade inerente limitada pode coexistir com controle adequado. Giro carregado e parada pedem ensaios próprios.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
+        "edition": "MSC/Circ.1053, 16 Dec. 2002",
+        "locator": "Anexo, cap. 1, §§ 1.2.2.9 e 1.2.3.1–1.2.3.2, pp. 3–5"
+      },
+      "tags": [
+        "controlabilidade",
+        "manobrabilidade",
+        "msc1053",
+        "msc1053::ch1",
+        "manutencao-do-rumo"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "I-msc1053-ch1-8-7-1-manutencao-do-rumo",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc1053",
+          "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc1053::ch1",
+          "number": "ch1",
+          "title": "Chapter 1 – General principles",
+          "label": "Chapter 1 – General principles"
+        },
+        "section": "Anexo, cap. 1, §§ 1.2.2.9 e 1.2.3.1–1.2.3.2, pp. 3–5",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc1053-ch1-8-7-1-manutencao-do-rumo",
+          "title": "Manutenção do rumo"
+        }
+      }
+    },
+    {
+      "id": "MAN-164",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "8.1.1",
+      "topic": "Habilidade inicial de guinada",
+      "difficulty": "Fácil",
+      "style": "Aplicada",
+      "question": "Dois navios fazem um zigue-zague 10°/10° com trecho inicial à mesma velocidade constante. O primeiro percorre 1,8 L e o segundo 2,4 L até atingir, pela primeira vez, 10° de desvio de proa, sendo L o comprimento respectivo. Qual comparação é sustentada por essa medida?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O primeiro tem necessariamente menor diâmetro tático."
+        },
+        {
+          "key": "B",
+          "text": "O primeiro necessariamente contém a guinada em menor tempo depois do contraleme."
+        },
+        {
+          "key": "C",
+          "text": "O segundo necessariamente tem menor primeiro ângulo de overshoot."
+        },
+        {
+          "key": "D",
+          "text": "O primeiro responde melhor na mudança inicial de rumo medida em comprimentos até o segundo comando."
+        },
+        {
+          "key": "E",
+          "text": "O segundo necessariamente tem menor distância de parada."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "O primeiro precisa de menos comprimentos para alcançar o desvio de proa que dispara o segundo comando. A métrica caracteriza a resposta inicial a leme moderado. Os dados não determinam overshoot, contenção, giro carregado ou parada.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
+        "edition": "MSC/Circ.1053, 16 Dec. 2002",
+        "locator": "Anexo, cap. 1, §§ 1.2.3.3–1.2.3.6 e 1.3.2, p. 5"
+      },
+      "tags": [
+        "controlabilidade",
+        "manobrabilidade",
+        "msc1053",
+        "msc1053::ch1",
+        "habilidade-inicial-de-guinada"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "I-msc1053-ch1-8-1-1-habilidade-inicial-de-guinada",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc1053",
+          "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc1053::ch1",
+          "number": "ch1",
+          "title": "Chapter 1 – General principles",
+          "label": "Chapter 1 – General principles"
+        },
+        "section": "Anexo, cap. 1, §§ 1.2.3.3–1.2.3.6 e 1.3.2, p. 5",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc1053-ch1-8-1-1-habilidade-inicial-de-guinada",
+          "title": "Habilidade inicial de guinada"
+        }
+      }
+    },
+    {
+      "id": "MAN-165",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "8.7.1",
+      "topic": "Quebra da guinada",
+      "difficulty": "Fácil",
+      "style": "Aplicada",
+      "question": "Em duas provas de zigue-zague, a ordem de contraleme é dada no instante zero e a primeira razão de guinada nula após essa ordem é registrada aos 9 s no ensaio X e aos 13 s no ensaio Y. Qual comparação é diretamente demonstrada por esses registros?",
+      "options": [
+        {
+          "key": "A",
+          "text": "X teve primeiro ângulo de overshoot necessariamente menor."
+        },
+        {
+          "key": "B",
+          "text": "X percorreu menor avanço a 90°."
+        },
+        {
+          "key": "C",
+          "text": "Y demorou menos para atingir o limiar inicial de ordem de contraleme."
+        },
+        {
+          "key": "D",
+          "text": "Y parou antes na água."
+        },
+        {
+          "key": "E",
+          "text": "X levou menos tempo, após a ordem de contraleme, para conter a guinada."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Contar da ordem de contraleme até a primeira anulação da razão mede o intervalo de contenção. O overshoot angular exige a evolução da proa nesse intervalo. Os dados tampouco medem a etapa anterior, o avanço no círculo ou a parada.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
+        "edition": "MSC/Circ.1053, 16 Dec. 2002",
+        "locator": "Anexo, cap. 1, §§ 1.2.3.4 e 1.3.2.2, p. 5"
+      },
+      "tags": [
+        "controlabilidade",
+        "manobrabilidade",
+        "msc1053",
+        "msc1053::ch1",
+        "quebra-da-guinada"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "I-msc1053-ch1-8-7-1-quebra-da-guinada",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc1053",
+          "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc1053::ch1",
+          "number": "ch1",
+          "title": "Chapter 1 – General principles",
+          "label": "Chapter 1 – General principles"
+        },
+        "section": "Anexo, cap. 1, §§ 1.2.3.4 e 1.3.2.2, p. 5",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc1053-ch1-8-7-1-quebra-da-guinada",
+          "title": "Quebra da guinada"
+        }
+      }
+    },
+    {
+      "id": "MAN-168",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "8.8.4",
+      "topic": "Raio de giro",
+      "difficulty": "Médio",
+      "style": "Cálculo",
+      "question": "Em dois giros estabilizados, a velocidade é de 6 m/s. A razão de guinada é de 0,020 rad/s no primeiro e 0,030 rad/s no segundo. Quais são os raios de giro, nessa ordem?",
+      "options": [
+        {
+          "key": "A",
+          "text": "120 m e 180 m."
+        },
+        {
+          "key": "B",
+          "text": "200 m e 300 m."
+        },
+        {
+          "key": "C",
+          "text": "300 m e 200 m."
+        },
+        {
+          "key": "D",
+          "text": "600 m e 400 m."
+        },
+        {
+          "key": "E",
+          "text": "300 m e 450 m."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Em giro estabilizado, o raio é V/r, com r em rad/s e V em m/s. As divisões 6/0,020 e 6/0,030 dão 300 m e 200 m; a maior razão de guinada produz menor raio para a mesma velocidade.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
+        "edition": "MSC/Circ.1053, 16 Dec. 2002",
+        "locator": "Anexo, cap. 1, §§ 1.2.2.1–1.2.2.2, p. 2"
+      },
+      "tags": [
+        "controlabilidade",
+        "manobrabilidade",
+        "msc1053",
+        "msc1053::ch1",
+        "raio-de-giro"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "I-msc1053-ch1-8-8-4-raio-de-giro",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc1053",
+          "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc1053::ch1",
+          "number": "ch1",
+          "title": "Chapter 1 – General principles",
+          "label": "Chapter 1 – General principles"
+        },
+        "section": "Anexo, cap. 1, §§ 1.2.2.1–1.2.2.2, p. 2",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc1053-ch1-8-8-4-raio-de-giro",
+          "title": "Raio de giro"
+        }
+      }
+    },
+    {
+      "id": "MAN-169",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "8.6",
+      "topic": "Equilíbrio em curva",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "question": "Um navio percorre uma curva estabilizada de raio finito, com velocidade escalar e razão de guinada constantes. Em relação a um referencial inercial, o que ocorre com a velocidade do centro de gravidade?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O vetor velocidade é constante, porque o módulo da velocidade se mantém."
+        },
+        {
+          "key": "B",
+          "text": "O vetor velocidade gira, com aceleração tangente à trajetória."
+        },
+        {
+          "key": "C",
+          "text": "O vetor velocidade cresce em módulo devido à ação centrípeta."
+        },
+        {
+          "key": "D",
+          "text": "O vetor velocidade muda de direção e a aceleração é dirigida ao centro da curva."
+        },
+        {
+          "key": "E",
+          "text": "O vetor velocidade muda de direção apenas se o ângulo de deriva for zero."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Mesmo com velocidade escalar constante, o vetor velocidade muda de direção na trajetória circular; sua aceleração aponta para o centro. O balanço descrito no referencial do navio inclui os termos de inércia. Ângulo de deriva constante não impede o giro do vetor.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
+        "edition": "MSC/Circ.1053, 16 Dec. 2002",
+        "locator": "Anexo, cap. 1, §§ 1.2.2.1 e 1.2.2.4, pp. 2–3"
+      },
+      "tags": [
+        "controlabilidade",
+        "manobrabilidade",
+        "msc1053",
+        "msc1053::ch1",
+        "equilibrio-em-curva"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "I-msc1053-ch1-8-6-equilibrio-em-curva",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc1053",
+          "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc1053::ch1",
+          "number": "ch1",
+          "title": "Chapter 1 – General principles",
+          "label": "Chapter 1 – General principles"
+        },
+        "section": "Anexo, cap. 1, §§ 1.2.2.1 e 1.2.2.4, pp. 2–3",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc1053-ch1-8-6-equilibrio-em-curva",
+          "title": "Equilíbrio em curva"
+        }
+      }
+    },
+    {
+      "id": "MAN-170",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "8.6.7",
+      "topic": "Componentes estabilizadoras",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Com a convenção de sinais de guinada positiva para boreste, o navio tem razão de guinada de −0,25°/s. Qual é o sinal do momento de amortecimento devido exclusivamente à guinada e qual é sua ação?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Negativo, reforçando a guinada para bombordo."
+        },
+        {
+          "key": "B",
+          "text": "Negativo, opondo-se à guinada para bombordo."
+        },
+        {
+          "key": "C",
+          "text": "Nulo, pois a razão de guinada é negativa."
+        },
+        {
+          "key": "D",
+          "text": "Positivo, reforçando a guinada para bombordo."
+        },
+        {
+          "key": "E",
+          "text": "Positivo, opondo-se à guinada para bombordo."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O momento de amortecimento atua contra a rotação existente. Como a razão de guinada é negativa (bombordo), essa parcela isolada é positiva (boreste). O momento total pode incluir outras parcelas.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
+        "edition": "MSC/Circ.1053, 16 Dec. 2002",
+        "locator": "Anexo, cap. 1, § 1.2.2.4, pp. 2–3"
+      },
+      "tags": [
+        "controlabilidade",
+        "manobrabilidade",
+        "msc1053",
+        "msc1053::ch1",
+        "componentes-estabilizadoras"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "I-msc1053-ch1-8-6-7-componentes-estabilizadoras",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc1053",
+          "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc1053::ch1",
+          "number": "ch1",
+          "title": "Chapter 1 – General principles",
+          "label": "Chapter 1 – General principles"
+        },
+        "section": "Anexo, cap. 1, § 1.2.2.4, pp. 2–3",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc1053-ch1-8-6-7-componentes-estabilizadoras",
+          "title": "Componentes estabilizadoras"
+        }
+      }
+    },
+    {
+      "id": "MAN-171",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "8.7.9",
+      "topic": "Compromisso estabilidade-giro",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Na comparação qualitativa das Explanatory Notes, um projeto apresenta amortecimento de guinada maior e melhor estabilidade dinâmica. Qual tendência a circular indica para a curva estabilizada, em comparação com um projeto de maior instabilidade, para um dado ângulo de leme?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O projeto mais amortecido normalmente apresenta raio de giro maior."
+        },
+        {
+          "key": "B",
+          "text": "O projeto mais amortecido obrigatoriamente apresenta raio de giro menor."
+        },
+        {
+          "key": "C",
+          "text": "O projeto mais instável tem razão de guinada nula para qualquer ângulo."
+        },
+        {
+          "key": "D",
+          "text": "Os dois projetos têm raio idêntico desde que o ângulo de leme seja o mesmo."
+        },
+        {
+          "key": "E",
+          "text": "A comparação estabelece que o projeto mais amortecido para em distância menor."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Na comparação qualitativa das notas, maior amortecimento de guinada favorece a estabilidade, acompanhado normalmente de maior raio. A instabilidade tende a favorecer o giro. A figura 1 mostra esse contraste para o equilíbrio de giro, sem fixar uma relação de desempenho de parada.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION",
+        "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
+        "edition": "MSC/Circ.1053, 16 Dec. 2002",
+        "locator": "Anexo, cap. 1, §§ 1.2.2.7 e 1.2.2.12, figura 1, pp. 3–4"
+      },
+      "tags": [
+        "controlabilidade",
+        "manobrabilidade",
+        "msc1053",
+        "msc1053::ch1",
+        "compromisso-estabilidade-giro"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc1053",
+        "chapter_id": "msc1053::ch1",
+        "topic_id": "I-msc1053-ch1-8-7-9-compromisso-estabilidade-giro",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc1053",
+          "title": "IMO MSC/Circ.1053 — Explanatory Notes to Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION"
+        },
+        "chapter": {
+          "id": "msc1053::ch1",
+          "number": "ch1",
+          "title": "Chapter 1 – General principles",
+          "label": "Chapter 1 – General principles"
+        },
+        "section": "Anexo, cap. 1, §§ 1.2.2.7 e 1.2.2.12, figura 1, pp. 3–4",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc1053-ch1-8-7-9-compromisso-estabilidade-giro",
+          "title": "Compromisso estabilidade-giro"
+        }
+      }
+    }
+  ]
+}
