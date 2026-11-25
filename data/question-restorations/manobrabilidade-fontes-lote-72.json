@@ -1,0 +1,979 @@
+{
+  "questions": [
+    {
+      "id": "MAN-092",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "6.7.5",
+      "topic": "Eficiência propulsiva",
+      "difficulty": "Médio",
+      "style": "Cálculo",
+      "question": "Um balanço registra fator de casco de 1,10, eficiência em água aberta de 0,65, eficiência rotativa relativa de 1,04 e eficiência da transmissão de 0,98. Qual valor aproximado representa a eficiência propulsiva hidrodinâmica ηD?",
+      "options": [
+        {
+          "key": "A",
+          "text": "0,729."
+        },
+        {
+          "key": "B",
+          "text": "0,744."
+        },
+        {
+          "key": "C",
+          "text": "0,676."
+        },
+        {
+          "key": "D",
+          "text": "0,715."
+        },
+        {
+          "key": "E",
+          "text": "1,144."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A eficiência hidrodinâmica é o produto 1,10 × 0,65 × 1,04 = 0,7436. O fator 0,98 é aplicado separadamente para relacionar a potência efetiva à potência no freio.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 3, § 3.1.1, p. 76, eq. (3.8)"
+      },
+      "tags": [
+        "propulsão",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch3",
+        "eficiencia-propulsiva"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch3",
+        "topic_id": "I-bertram-ch3-6-7-5-eficiencia-propulsiva",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch3",
+          "number": "ch3",
+          "title": "Chapter 3 – Resistance and Propulsion",
+          "label": "Chapter 3 – Resistance and Propulsion"
+        },
+        "section": "Cap. 3, § 3.1.1, p. 76, eq. (3.8)",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-bertram-ch3-6-7-5-eficiencia-propulsiva",
+          "title": "Eficiência propulsiva"
+        }
+      }
+    },
+    {
+      "id": "MAN-093",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "6.7.5",
+      "topic": "Perdas mecânicas",
+      "difficulty": "Fácil",
+      "style": "Cálculo",
+      "question": "Em regime estável, o balanço indica 8.000 kW no freio do motor e 7.840 kW entregues ao hélice. Na decomposição simplificada de Bertram, que combinação corresponde à eficiência e à perda de potência da transmissão?",
+      "options": [
+        {
+          "key": "A",
+          "text": "1,020 e 160 kW."
+        },
+        {
+          "key": "B",
+          "text": "0,980 e 320 kW."
+        },
+        {
+          "key": "C",
+          "text": "0,980 e 160 kW."
+        },
+        {
+          "key": "D",
+          "text": "0,020 e 160 kW."
+        },
+        {
+          "key": "E",
+          "text": "0,960 e 320 kW."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "No modelo simplificado, a eficiência da transmissão é PD/PB = 0,980. A diferença PB − PD dá 160 kW de perda entre os pontos medidos.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 3, § 3.1.1, p. 76, imediatamente após a eq. (3.6)"
+      },
+      "tags": [
+        "propulsão",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch3",
+        "perdas-mecanicas"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch3",
+        "topic_id": "I-bertram-ch3-6-7-5-perdas-mecanicas",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch3",
+          "number": "ch3",
+          "title": "Chapter 3 – Resistance and Propulsion",
+          "label": "Chapter 3 – Resistance and Propulsion"
+        },
+        "section": "Cap. 3, § 3.1.1, p. 76, imediatamente após a eq. (3.6)",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-bertram-ch3-6-7-5-perdas-mecanicas",
+          "title": "Perdas mecânicas"
+        }
+      }
+    },
+    {
+      "id": "MAN-094",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "6.7.2",
+      "topic": "Dedução de empuxo",
+      "difficulty": "Médio",
+      "style": "Cálculo",
+      "question": "Duas configurações têm resistência de referência em reboque de 800 kN à mesma velocidade. A fração de dedução de empuxo passa de 0,20 para 0,25 na segunda configuração. Qual variação aproximada do empuxo é compatível com essa comparação?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Redução de 40 kN."
+        },
+        {
+          "key": "B",
+          "text": "Aumento de 40 kN."
+        },
+        {
+          "key": "C",
+          "text": "Redução de 67 kN."
+        },
+        {
+          "key": "D",
+          "text": "Aumento de 67 kN."
+        },
+        {
+          "key": "E",
+          "text": "Aumento de 267 kN."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "De RT = T(1 − t), seguem 800/0,80 = 1.000 kN e 800/0,75 ≈ 1.067 kN. A variação é de aproximadamente 67 kN para mais.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 3, § 3.1.1, p. 74, eq. (3.3)"
+      },
+      "tags": [
+        "propulsão",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch3",
+        "deducao-de-empuxo"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch3",
+        "topic_id": "I-bertram-ch3-6-7-2-deducao-de-empuxo",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch3",
+          "number": "ch3",
+          "title": "Chapter 3 – Resistance and Propulsion",
+          "label": "Chapter 3 – Resistance and Propulsion"
+        },
+        "section": "Cap. 3, § 3.1.1, p. 74, eq. (3.3)",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-bertram-ch3-6-7-2-deducao-de-empuxo",
+          "title": "Dedução de empuxo"
+        }
+      }
+    },
+    {
+      "id": "MAN-095",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "6.7.2",
+      "topic": "Fração de esteira",
+      "difficulty": "Médio",
+      "style": "Cálculo",
+      "question": "Na prova X, o navio avança a 10 m/s e a velocidade média de avanço do hélice é 8 m/s. Na prova Y, as velocidades correspondentes são 12 m/s e 10 m/s. Como se comparam as frações de esteira?",
+      "options": [
+        {
+          "key": "A",
+          "text": "São iguais porque o déficit absoluto é igual."
+        },
+        {
+          "key": "B",
+          "text": "A fração em Y é maior porque a velocidade do navio é maior."
+        },
+        {
+          "key": "C",
+          "text": "A fração em Y é maior porque a velocidade de avanço do hélice é maior."
+        },
+        {
+          "key": "D",
+          "text": "As duas frações são nulas porque ambas as velocidades de avanço são positivas."
+        },
+        {
+          "key": "E",
+          "text": "A fração em X é maior porque o mesmo déficit representa proporção maior da velocidade do navio."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A fração é o déficit VS − VA dividido por VS. Os resultados são 2/10 = 0,20 em X e 2/12 ≈ 0,167 em Y.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 3, § 3.1.1, p. 75, eq. (3.4)"
+      },
+      "tags": [
+        "propulsão",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch3",
+        "fracao-de-esteira"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch3",
+        "topic_id": "I-bertram-ch3-6-7-2-fracao-de-esteira",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch3",
+          "number": "ch3",
+          "title": "Chapter 3 – Resistance and Propulsion",
+          "label": "Chapter 3 – Resistance and Propulsion"
+        },
+        "section": "Cap. 3, § 3.1.1, p. 75, eq. (3.4)",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-bertram-ch3-6-7-2-fracao-de-esteira",
+          "title": "Fração de esteira"
+        }
+      }
+    },
+    {
+      "id": "MAN-096",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "6.7.2",
+      "topic": "Cálculo da esteira",
+      "difficulty": "Médio",
+      "style": "Cálculo",
+      "question": "A 15 nós de velocidade do navio nos dois ensaios, uma modificação reduz a fração de esteira de 0,24 para 0,12. Qual é a variação da velocidade média de avanço do hélice?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Aumento de 1,8 nós."
+        },
+        {
+          "key": "B",
+          "text": "Redução de 1,8 nós."
+        },
+        {
+          "key": "C",
+          "text": "Aumento de 3,6 nós."
+        },
+        {
+          "key": "D",
+          "text": "Redução de 3,6 nós."
+        },
+        {
+          "key": "E",
+          "text": "Aumento de 0,12 nós."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A relação VA = VS(1 − w) dá 11,4 nós antes e 13,2 nós depois. A velocidade média de avanço sobe 1,8 nós.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 3, § 3.1.1, p. 75, eq. (3.4)"
+      },
+      "tags": [
+        "propulsão",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch3",
+        "calculo-da-esteira"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch3",
+        "topic_id": "I-bertram-ch3-6-7-2-calculo-da-esteira",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch3",
+          "number": "ch3",
+          "title": "Chapter 3 – Resistance and Propulsion",
+          "label": "Chapter 3 – Resistance and Propulsion"
+        },
+        "section": "Cap. 3, § 3.1.1, p. 75, eq. (3.4)",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-bertram-ch3-6-7-2-calculo-da-esteira",
+          "title": "Cálculo da esteira"
+        }
+      }
+    },
+    {
+      "id": "MAN-097",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "6.7.3",
+      "topic": "Esteira nominal",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Um laboratório precisa medir a distribuição de velocidades de referência na região do disco, antes de incluir a indução do próprio hélice. Qual configuração produz o mapa procurado?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Modelo autopropelido com hélice entregando empuxo no ponto de projeto."
+        },
+        {
+          "key": "B",
+          "text": "Modelo rebocado com o hélice ausente e medições no plano que ele ocuparia."
+        },
+        {
+          "key": "C",
+          "text": "Hélice isolado ensaiado em escoamento uniforme, sem modelo do casco."
+        },
+        {
+          "key": "D",
+          "text": "Modelo parado em água calma e sondas no plano do disco."
+        },
+        {
+          "key": "E",
+          "text": "Modelo autopropelido com medições somente bem a jusante do disco."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O mapa nominal descreve a esteira do casco na região do hélice sem sua ação. O reboque com o hélice ausente permite medir no plano de interesse. A esteira efetiva incorpora a presença do hélice operante.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 3, § 3.1.1, p. 75, parágrafo sobre esteiras nominal e efetiva, e § 3.2.2, p. 83, fig. 3.6, medição de esteira"
+      },
+      "tags": [
+        "propulsão",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch3",
+        "esteira-nominal"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch3",
+        "topic_id": "I-bertram-ch3-6-7-3-esteira-nominal",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch3",
+          "number": "ch3",
+          "title": "Chapter 3 – Resistance and Propulsion",
+          "label": "Chapter 3 – Resistance and Propulsion"
+        },
+        "section": "Cap. 3, § 3.1.1, p. 75, parágrafo sobre esteiras nominal e efetiva, e § 3.2.2, p. 83, fig. 3.6, medição de esteira",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-bertram-ch3-6-7-3-esteira-nominal",
+          "title": "Esteira nominal"
+        }
+      }
+    },
+    {
+      "id": "MAN-098",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "6.7.3",
+      "topic": "Esteira friccional",
+      "difficulty": "Fácil",
+      "style": "Aplicada",
+      "question": "Dois cálculos para a mesma popa omitem a superfície livre e a ação do hélice. Só o cálculo que inclui a viscosidade mostra um déficit adicional de velocidade axial, com desenvolvimento de camada limite e início de separação. Como se classifica a parcela adicional?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Esteira de ondas."
+        },
+        {
+          "key": "B",
+          "text": "Esteira potencial."
+        },
+        {
+          "key": "C",
+          "text": "Esteira friccional."
+        },
+        {
+          "key": "D",
+          "text": "Indução do propulsor."
+        },
+        {
+          "key": "E",
+          "text": "Dedução de empuxo."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A camada limite contém fluido com menor velocidade relativa ao casco. A viscosidade e a possível separação na popa explicam a componente friccional. Nas condições descritas, a contribuição adicional decorre da inclusão da viscosidade.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 3, § 3.1.1, p. 75, componente friccional"
+      },
+      "tags": [
+        "propulsão",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch3",
+        "esteira-friccional"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch3",
+        "topic_id": "I-bertram-ch3-6-7-3-esteira-friccional",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch3",
+          "number": "ch3",
+          "title": "Chapter 3 – Resistance and Propulsion",
+          "label": "Chapter 3 – Resistance and Propulsion"
+        },
+        "section": "Cap. 3, § 3.1.1, p. 75, componente friccional",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-bertram-ch3-6-7-3-esteira-friccional",
+          "title": "Esteira friccional"
+        }
+      }
+    },
+    {
+      "id": "MAN-099",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "6.7.3",
+      "topic": "Esteira potencial",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "O campo simulado a ré de um casco sem hélice apresenta velocidades inferiores à velocidade do escoamento distante. A simulação usa fluido ideal e omite a superfície livre. Que interpretação é compatível com a decomposição da esteira?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O resultado só pode provir de atrito na camada limite."
+        },
+        {
+          "key": "B",
+          "text": "O déficit é causado pelo movimento orbital das ondas próprias do casco."
+        },
+        {
+          "key": "C",
+          "text": "O torque do hélice gera o déficit mesmo quando o hélice está ausente."
+        },
+        {
+          "key": "D",
+          "text": "A geometria do casco pode produzir o déficit na solução potencial."
+        },
+        {
+          "key": "E",
+          "text": "O resultado só pode representar uma cavidade de vapor no leme."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "O escoamento ideal contorna a forma do casco e pode desacelerar na região de popa. Esse efeito constitui a componente potencial. As hipóteses suprimem efeitos viscosos e de ondas.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 3, § 3.1.1, p. 75, componente potencial"
+      },
+      "tags": [
+        "propulsão",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch3",
+        "esteira-potencial"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch3",
+        "topic_id": "I-bertram-ch3-6-7-3-esteira-potencial",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch3",
+          "number": "ch3",
+          "title": "Chapter 3 – Resistance and Propulsion",
+          "label": "Chapter 3 – Resistance and Propulsion"
+        },
+        "section": "Cap. 3, § 3.1.1, p. 75, componente potencial",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-bertram-ch3-6-7-3-esteira-potencial",
+          "title": "Esteira potencial"
+        }
+      }
+    },
+    {
+      "id": "MAN-100",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "6.7.3",
+      "topic": "Onda de esteira",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Na condição X, a crista de uma onda do próprio navio está sobre o propulsor. Na condição Y, a mesma região está sob um cavado. Qual efeito se espera na fração de esteira ao isolar a contribuição ondulatória?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Diminui em X e aumenta em Y."
+        },
+        {
+          "key": "B",
+          "text": "Aumenta em X e em Y."
+        },
+        {
+          "key": "C",
+          "text": "Diminui em X e em Y."
+        },
+        {
+          "key": "D",
+          "text": "Permanece igual ao caso sem ondas em X e em Y."
+        },
+        {
+          "key": "E",
+          "text": "Aumenta em X e diminui em Y."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A componente de ondas decorre do movimento orbital associado ao sistema ondulatório do navio. Para a posição acima do hélice, Bertram indica aumento da fração sob a crista e diminuição sob o cavado.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 3, § 3.1.1, p. 75, componente de ondas"
+      },
+      "tags": [
+        "propulsão",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch3",
+        "onda-de-esteira"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch3",
+        "topic_id": "I-bertram-ch3-6-7-3-onda-de-esteira",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch3",
+          "number": "ch3",
+          "title": "Chapter 3 – Resistance and Propulsion",
+          "label": "Chapter 3 – Resistance and Propulsion"
+        },
+        "section": "Cap. 3, § 3.1.1, p. 75, componente de ondas",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-bertram-ch3-6-7-3-onda-de-esteira",
+          "title": "Onda de esteira"
+        }
+      }
+    },
+    {
+      "id": "MAN-101",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "6.5",
+      "topic": "Esteira não uniforme",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Os cascos X e Y fornecem a mesma velocidade axial média ao disco propulsor. No casco Y, porém, o mapa a um raio fixo apresenta um déficit muito mais pronunciado em certo ângulo que nos demais. O que deve ser investigado para o casco Y?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Oscilações de carga em cada volta, pois a incidência varia conforme a pá percorre o disco."
+        },
+        {
+          "key": "B",
+          "text": "Igualdade da carga instantânea, garantida pela igualdade das médias."
+        },
+        {
+          "key": "C",
+          "text": "Desaparecimento da vibração, pois a irregularidade está fixa em relação ao casco."
+        },
+        {
+          "key": "D",
+          "text": "Cavitação independente do ângulo de passagem da pá por esse setor."
+        },
+        {
+          "key": "E",
+          "text": "Aumento assegurado da eficiência em água aberta do hélice."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O mapa não uniforme é estacionário no referencial do casco, mas cada pá atravessa setores com velocidades diferentes. A incidência e a carga variam durante a rotação. O efeito também pode favorecer cavitação, vibração e ruído.",
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "3. ed. (Second Revision), 1988",
+        "locator": "Vol. II, cap. VI, § 4.2, p. 147, fig. 17 e eqs. (27)–(29)"
+      },
+      "tags": [
+        "propulsão",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch6-s4",
+        "esteira-nao-uniforme"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch6-s4",
+        "topic_id": "I-pna-v2-ch6-s4-6-5-esteira-nao-uniforme",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V. (ed.)"
+        },
+        "chapter": {
+          "id": "pna-v2::ch6-s4",
+          "number": "ch6-s4",
+          "title": "Chapter VI – Propulsion — Section 4: Interaction between Hull and Propeller",
+          "label": "Chapter VI – Propulsion — Section 4: Interaction between Hull and Propeller"
+        },
+        "section": "Vol. II, cap. VI, § 4.2, p. 147, fig. 17 e eqs. (27)–(29)",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-pna-v2-ch6-s4-6-5-esteira-nao-uniforme",
+          "title": "Esteira não uniforme"
+        }
+      }
+    },
+    {
+      "id": "MAN-102",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "6.7.5",
+      "topic": "Eficiência rotativa relativa",
+      "difficulty": "Difícil",
+      "style": "Cálculo",
+      "question": "O mesmo hélice é comparado em água aberta e atrás do casco, sob a identidade de empuxo, rotação e velocidade de avanço efetiva adotada por Lewis. Os torques correspondentes são 90 kN·m em água aberta e 100 kN·m atrás do casco. Qual é a eficiência rotativa relativa?",
+      "options": [
+        {
+          "key": "A",
+          "text": "1,11."
+        },
+        {
+          "key": "B",
+          "text": "0,90."
+        },
+        {
+          "key": "C",
+          "text": "0,10."
+        },
+        {
+          "key": "D",
+          "text": "0,53."
+        },
+        {
+          "key": "E",
+          "text": "0,95."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Como empuxo, velocidade de avanço e rotação são iguais na comparação, a razão entre as eficiências atrás do casco e em água aberta reduz-se a Q₀/Q, ou 90/100 = 0,90.",
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "3. ed. (Second Revision), 1988",
+        "locator": "Vol. II, cap. VI, § 4.4, pp. 151–152, eqs. (33)–(35)"
+      },
+      "tags": [
+        "propulsão",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch6-s4",
+        "eficiencia-rotativa-relativa"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch6-s4",
+        "topic_id": "I-pna-v2-ch6-s4-6-7-5-eficiencia-rotativa-relativa",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V. (ed.)"
+        },
+        "chapter": {
+          "id": "pna-v2::ch6-s4",
+          "number": "ch6-s4",
+          "title": "Chapter VI – Propulsion — Section 4: Interaction between Hull and Propeller",
+          "label": "Chapter VI – Propulsion — Section 4: Interaction between Hull and Propeller"
+        },
+        "section": "Vol. II, cap. VI, § 4.4, pp. 151–152, eqs. (33)–(35)",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-pna-v2-ch6-s4-6-7-5-eficiencia-rotativa-relativa",
+          "title": "Eficiência rotativa relativa"
+        }
+      }
+    },
+    {
+      "id": "MAN-103",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.5",
+      "topic": "Início da cavitação",
+      "difficulty": "Fácil",
+      "style": "Aplicada",
+      "question": "Num ensaio de perfil de pá, a pressão absoluta no ponto mais carregado do dorso diminui quando se eleva a incidência. Pelo critério idealizado de vaporização adotado na análise inicial de Lewis, qual parâmetro deve ser comparado ao menor valor de pressão?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A pressão de estagnação no bordo de ataque."
+        },
+        {
+          "key": "B",
+          "text": "A pressão hidrostática no fundo do tanque."
+        },
+        {
+          "key": "C",
+          "text": "A pressão de vapor à temperatura da água."
+        },
+        {
+          "key": "D",
+          "text": "A pressão dinâmica do fluxo, tomada isoladamente."
+        },
+        {
+          "key": "E",
+          "text": "A pressão atmosférica medida sem contribuição hidrostática."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "O critério inicial compara a menor pressão absoluta local com a pressão de vapor da água à temperatura do ensaio. Lewis também adverte que núcleos presentes na água do mar podem antecipar o aparecimento de cavidades.",
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "3. ed. (Second Revision), 1988",
+        "locator": "Vol. II, cap. VI, § 7.1, pp. 172–173, fig. 29"
+      },
+      "tags": [
+        "propulsão",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch6-s7",
+        "inicio-da-cavitacao"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch6-s7",
+        "topic_id": "I-pna-v2-ch6-s7-2-5-inicio-da-cavitacao",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V. (ed.)"
+        },
+        "chapter": {
+          "id": "pna-v2::ch6-s7",
+          "number": "ch6-s7",
+          "title": "Chapter VI – Propulsion — Section 7: Cavitation",
+          "label": "Chapter VI – Propulsion — Section 7: Cavitation"
+        },
+        "section": "Vol. II, cap. VI, § 7.1, pp. 172–173, fig. 29",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-pna-v2-ch6-s7-2-5-inicio-da-cavitacao",
+          "title": "Início da cavitação"
+        }
+      }
+    },
+    {
+      "id": "MAN-104",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "5.3.2",
+      "topic": "Número de cavitação",
+      "difficulty": "Difícil",
+      "style": "Cálculo",
+      "question": "Um perfil é avaliado a duas velocidades de referência, 10 m/s e 20 m/s. A densidade, a pressão estática de referência e a pressão de vapor mantêm os mesmos valores nas duas condições. A pressão estática excede a de vapor. Qual razão entre o número de cavitação da segunda condição e o da primeira resulta dessas hipóteses?",
+      "options": [
+        {
+          "key": "A",
+          "text": "2,00."
+        },
+        {
+          "key": "B",
+          "text": "0,50."
+        },
+        {
+          "key": "C",
+          "text": "1,00."
+        },
+        {
+          "key": "D",
+          "text": "0,25."
+        },
+        {
+          "key": "E",
+          "text": "4,00."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Na definição σ = (p₀ − pᵥ)/(½ρU²), o numerador é constante. Dobrar U quadruplica a pressão dinâmica e reduz σ para um quarto do valor inicial.",
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "3. ed. (Second Revision), 1988",
+        "locator": "Vol. II, cap. VI, § 7.1, pp. 172–173, definição de σ"
+      },
+      "tags": [
+        "propulsão",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch6-s7",
+        "numero-de-cavitacao"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch6-s7",
+        "topic_id": "I-pna-v2-ch6-s7-5-3-2-numero-de-cavitacao",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V. (ed.)"
+        },
+        "chapter": {
+          "id": "pna-v2::ch6-s7",
+          "number": "ch6-s7",
+          "title": "Chapter VI – Propulsion — Section 7: Cavitation",
+          "label": "Chapter VI – Propulsion — Section 7: Cavitation"
+        },
+        "section": "Vol. II, cap. VI, § 7.1, pp. 172–173, definição de σ",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-pna-v2-ch6-s7-5-3-2-numero-de-cavitacao",
+          "title": "Número de cavitação"
+        }
+      }
+    }
+  ]
+}
