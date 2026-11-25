@@ -1,0 +1,981 @@
+{
+  "questions": [
+    {
+      "id": "MAN-131",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.7",
+      "topic": "Ângulo de ataque efetivo",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Em dois momentos de um ensaio, o indicador do leme marca 12° em relação ao casco. O velocímetro direcional junto ao leme registra direções de entrada diferentes. Qual conclusão deve orientar a comparação das forças?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A incidência pode variar mesmo com a mesma leitura, pois a corda deve ser comparada ao vetor local da água."
+        },
+        {
+          "key": "B",
+          "text": "A incidência é igual nos dois momentos porque a madre girou o mesmo ângulo."
+        },
+        {
+          "key": "C",
+          "text": "Só a direção da velocidade medida na proa deve entrar no cálculo."
+        },
+        {
+          "key": "D",
+          "text": "O indicador mede diretamente o ângulo entre a corda e o fluxo."
+        },
+        {
+          "key": "E",
+          "text": "A mudança na entrada só pode influir na pressão estática."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A deflexão indicada tem o casco como referência, enquanto a incidência usa a direção local do fluxo. A mudança dessa direção pode alterar a incidência mesmo com deflexão fixa.",
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "3. ed. (Second Revision), 1989",
+        "locator": "Vol. III, cap. IX, § 14.1, pp. 291–292, figs. 121–122, e § 14.7, pp. 309–310, fig. 145"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s14",
+        "angulo-de-ataque-efetivo"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s14",
+        "topic_id": "I-pna-v3-ch9-s14-7-7-angulo-de-ataque-efetivo",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V. (ed.)"
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s14",
+          "number": "ch9-s14",
+          "title": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+          "label": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces"
+        },
+        "section": "Vol. III, cap. IX, § 14.1, pp. 291–292, figs. 121–122, e § 14.7, pp. 309–310, fig. 145",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-pna-v3-ch9-s14-7-7-angulo-de-ataque-efetivo",
+          "title": "Ângulo de ataque efetivo"
+        }
+      }
+    },
+    {
+      "id": "MAN-132",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "3.3",
+      "topic": "Escoamento sobre o leme",
+      "difficulty": "Difícil",
+      "style": "Cálculo",
+      "question": "Na aproximação de Crenshaw, a deflexão do leme é 18° e a inclinação do eixo do navio em relação à sua direção de movimento vale 7°, ambas com sinal positivo na convenção da subtração. Qual ângulo resulta para o leme?",
+      "options": [
+        {
+          "key": "A",
+          "text": "25°."
+        },
+        {
+          "key": "B",
+          "text": "11°."
+        },
+        {
+          "key": "C",
+          "text": "18°."
+        },
+        {
+          "key": "D",
+          "text": "7°."
+        },
+        {
+          "key": "E",
+          "text": "2,6°."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A aproximação subtrai a inclinação do navio da deflexão indicada. Assim, 18° − 7° = 11°. A estimativa não incorpora cada perturbação do fluxo junto ao leme.",
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4. ed., 1975",
+        "locator": "Cap. 2, p. 17, subseção Hydrofoils, aproximação do ângulo real de ataque"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "crenshaw-naval-shiphandling",
+        "crenshaw-naval-shiphandling::ch2",
+        "escoamento-sobre-o-leme"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "I-crenshaw-naval-shiphandling-ch2-3-3-escoamento-sobre-o-leme",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Cap. 2, p. 17, subseção Hydrofoils, aproximação do ângulo real de ataque",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-crenshaw-naval-shiphandling-ch2-3-3-escoamento-sobre-o-leme",
+          "title": "Escoamento sobre o leme"
+        }
+      }
+    },
+    {
+      "id": "MAN-133",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.5",
+      "topic": "Estol do leme",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Num ensaio de leme isolado, a incidência aumenta, mas a sustentação cai depois de um máximo e o arrasto sobe. A velocidade de entrada foi mantida. Qual interpretação é compatível com Bertram?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A pressão dinâmica caiu pela diminuição de velocidade."
+        },
+        {
+          "key": "B",
+          "text": "A curva permanece no trecho linear com escoamento aderente."
+        },
+        {
+          "key": "C",
+          "text": "O perfil entrou em estol, com descolamento extenso no lado de sucção."
+        },
+        {
+          "key": "D",
+          "text": "A sustentação se manteve máxima em toda a faixa ensaiada."
+        },
+        {
+          "key": "E",
+          "text": "O arrasto induzido foi eliminado pelo ângulo maior."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "No exemplo de perfil isolado, após a incidência de estol a separação no lado de sucção pode reduzir a sustentação e aumentar o arrasto. Bertram observa que a queda brusca depende do perfil e da condição de entrada.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, § 6.4.2, p. 278, fig. 6.13"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch6",
+        "estol-do-leme"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "I-bertram-ch6-7-5-estol-do-leme",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Cap. 6, § 6.4.2, p. 278, fig. 6.13",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-bertram-ch6-7-5-estol-do-leme",
+          "title": "Estol do leme"
+        }
+      }
+    },
+    {
+      "id": "MAN-134",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "3.4",
+      "topic": "Razão de aspecto",
+      "difficulty": "Médio",
+      "style": "Cálculo",
+      "question": "Para um leme de contorno trapezoidal, a envergadura de referência é 4 m, a corda de raiz é 3 m e a de ponta é 1 m. Com área projetada de 8 m², qual é a razão de aspecto geométrica?",
+      "options": [
+        {
+          "key": "A",
+          "text": "1,33."
+        },
+        {
+          "key": "B",
+          "text": "4,00."
+        },
+        {
+          "key": "C",
+          "text": "0,50."
+        },
+        {
+          "key": "D",
+          "text": "2,00."
+        },
+        {
+          "key": "E",
+          "text": "8,00."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A razão geométrica é b²/A = 4²/8 = 2. Nesse trapézio, a corda média é 2 m e a razão entre envergadura e corda média chega ao mesmo valor.",
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "3. ed. (Second Revision), 1989",
+        "locator": "Vol. III, cap. IX, § 14.1, p. 291, fig. 121, definição geométrica"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s14",
+        "razao-de-aspecto"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s14",
+        "topic_id": "I-pna-v3-ch9-s14-3-4-razao-de-aspecto",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V. (ed.)"
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s14",
+          "number": "ch9-s14",
+          "title": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+          "label": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces"
+        },
+        "section": "Vol. III, cap. IX, § 14.1, p. 291, fig. 121, definição geométrica",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-pna-v3-ch9-s14-3-4-razao-de-aspecto",
+          "title": "Razão de aspecto"
+        }
+      }
+    },
+    {
+      "id": "MAN-135",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.4",
+      "topic": "Efeito da razão de aspecto",
+      "difficulty": "Difícil",
+      "style": "Cálculo",
+      "question": "Dois lemes de mesma área em escoamento livre trabalham com igual sustentação e pressão dinâmica. Admitindo a distribuição elíptica idealizada em Lewis, o segundo tem o dobro da razão de aspecto. Como varia apenas a parcela de arrasto induzido?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Dobra."
+        },
+        {
+          "key": "B",
+          "text": "Permanece igual."
+        },
+        {
+          "key": "C",
+          "text": "Quadruplica."
+        },
+        {
+          "key": "D",
+          "text": "Torna-se nula."
+        },
+        {
+          "key": "E",
+          "text": "Cai à metade."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Com a mesma área, pressão dinâmica e sustentação, o coeficiente de sustentação permanece igual. No modelo elíptico, o coeficiente de arrasto induzido é proporcional a 1/Λ. Dobrar Λ reduz essa parcela à metade.",
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "3. ed. (Second Revision), 1989",
+        "locator": "Vol. III, cap. IX, § 14.4, pp. 298–299 e 302, teoria da distribuição elíptica e eqs. (122a)–(122b)"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s14",
+        "efeito-da-razao-de-aspecto"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s14",
+        "topic_id": "I-pna-v3-ch9-s14-7-4-efeito-da-razao-de-aspecto",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V. (ed.)"
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s14",
+          "number": "ch9-s14",
+          "title": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+          "label": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces"
+        },
+        "section": "Vol. III, cap. IX, § 14.4, pp. 298–299 e 302, teoria da distribuição elíptica e eqs. (122a)–(122b)",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-pna-v3-ch9-s14-7-4-efeito-da-razao-de-aspecto",
+          "title": "Efeito da razão de aspecto"
+        }
+      }
+    },
+    {
+      "id": "MAN-136",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.8",
+      "topic": "Influência do casco",
+      "difficulty": "Difícil",
+      "style": "Cálculo",
+      "question": "Um modelo de leme tem razão de aspecto geométrica 1,2. Num ensaio idealizado, a raiz encosta numa placa plana que impede completamente a passagem de água nesse extremo. Que razão efetiva o modelo de imagem atribui ao leme?",
+      "options": [
+        {
+          "key": "A",
+          "text": "2,4."
+        },
+        {
+          "key": "B",
+          "text": "1,2."
+        },
+        {
+          "key": "C",
+          "text": "0,6."
+        },
+        {
+          "key": "D",
+          "text": "3,6."
+        },
+        {
+          "key": "E",
+          "text": "4,8."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A placa ideal gera o efeito de uma imagem simétrica: a envergadura representada e a área representada dobram. Em b²/A, isso multiplica a razão por dois. A condição pode não se manter junto a um casco real quando a folga abre.",
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "3. ed. (Second Revision), 1989",
+        "locator": "Vol. III, cap. IX, § 14.4, pp. 298–299, figs. 129–131, e § 14.6, pp. 308–309"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s14",
+        "influencia-do-casco"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s14",
+        "topic_id": "I-pna-v3-ch9-s14-7-8-influencia-do-casco",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V. (ed.)"
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s14",
+          "number": "ch9-s14",
+          "title": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+          "label": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces"
+        },
+        "section": "Vol. III, cap. IX, § 14.4, pp. 298–299, figs. 129–131, e § 14.6, pp. 308–309",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-pna-v3-ch9-s14-7-8-influencia-do-casco",
+          "title": "Influência do casco"
+        }
+      }
+    },
+    {
+      "id": "MAN-137",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.6",
+      "topic": "Tipos de leme",
+      "difficulty": "Fácil",
+      "style": "Aplicada",
+      "question": "Em uma inspeção com a embarcação em seco, a porção posterior do conjunto gira com a madre. A porção dianteira é estruturalmente presa ao casco. Qual identificação corresponde às figuras de Lewis?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Superfície principal inteiramente móvel."
+        },
+        {
+          "key": "B",
+          "text": "Conjunto com estrutura fixa a vante e superfície móvel a ré."
+        },
+        {
+          "key": "C",
+          "text": "Leme articulado com flap móvel somente a vante."
+        },
+        {
+          "key": "D",
+          "text": "Propulsor azimutal com bocal orientável."
+        },
+        {
+          "key": "E",
+          "text": "Superfície de governo sem comando de deflexão."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "As figuras distinguem o leme todo móvel de um conjunto com estrutura fixa a vante e leme móvel a ré. O fato de a segunda parte girar com a madre não implica que toda a área principal gire.",
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "3. ed. (Second Revision), 1989",
+        "locator": "Vol. III, cap. IX, §§ 14.1 e 14.7, pp. 291 e 308–310, figs. 121, 142–143"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s14",
+        "tipos-de-leme"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s14",
+        "topic_id": "I-pna-v3-ch9-s14-7-6-tipos-de-leme",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V. (ed.)"
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s14",
+          "number": "ch9-s14",
+          "title": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+          "label": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces"
+        },
+        "section": "Vol. III, cap. IX, §§ 14.1 e 14.7, pp. 291 e 308–310, figs. 121, 142–143",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-pna-v3-ch9-s14-7-6-tipos-de-leme",
+          "title": "Tipos de leme"
+        }
+      },
+      "active": false,
+      "status": "quarantined"
+    },
+    {
+      "id": "MAN-138",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "3.5",
+      "topic": "Estrutura fixa e móvel",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "question": "Na comparação de Lewis, a entrada de água junto à estrutura fixa a vante do leme tem incidência quase nula em rumo reto. Em curva estabilizada, a entrada local torna-se oblíqua. Qual consequência deve entrar na análise?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A estrutura fixa continua com incidência nula por definição."
+        },
+        {
+          "key": "B",
+          "text": "As duas partes passam a girar solidárias com a madre."
+        },
+        {
+          "key": "C",
+          "text": "O ângulo de entrada na parte fixa deixa de ser desprezível e pode mudar a contribuição do conjunto."
+        },
+        {
+          "key": "D",
+          "text": "Basta medir a velocidade do navio para obter os dois ângulos."
+        },
+        {
+          "key": "E",
+          "text": "As cargas das duas partes se anulam necessariamente."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Mesmo fixa em relação ao casco, a estrutura vê uma nova direção de escoamento em curva. A comparação da fig. 145 mostra que a contribuição favorável medida com incidência nula na parte fixa não deve ser transposta sem considerar a entrada oblíqua.",
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "3. ed. (Second Revision), 1989",
+        "locator": "Vol. III, cap. IX, § 14.7, pp. 309–310, fig. 145(a)–(b)"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s14",
+        "estrutura-fixa-e-movel"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s14",
+        "topic_id": "I-pna-v3-ch9-s14-3-5-estrutura-fixa-e-movel",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V. (ed.)"
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s14",
+          "number": "ch9-s14",
+          "title": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+          "label": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces"
+        },
+        "section": "Vol. III, cap. IX, § 14.7, pp. 309–310, fig. 145(a)–(b)",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-pna-v3-ch9-s14-3-5-estrutura-fixa-e-movel",
+          "title": "Estrutura fixa e móvel"
+        }
+      }
+    },
+    {
+      "id": "MAN-139",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.9",
+      "topic": "Leme flap",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Um leme articulado e um leme convencional de mesmo perfil-base são ensaiados sob a mesma entrada. A parte principal recebe a mesma deflexão, e no primeiro leme o flap de fuga também se desloca conforme o comando. Qual mecanismo explica o incremento de sustentação no caso descrito?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Redução da superfície molhada a zero."
+        },
+        {
+          "key": "B",
+          "text": "Eliminação da assimetria de pressão nas faces."
+        },
+        {
+          "key": "C",
+          "text": "Aumento exclusivo da pressão hidrostática ambiente."
+        },
+        {
+          "key": "D",
+          "text": "Alteração da cambra efetiva do conjunto, com maior desvio da água."
+        },
+        {
+          "key": "E",
+          "text": "Reversão obrigatória do sentido de rotação do hélice."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "O deslocamento relativo do flap altera a geometria efetiva do perfil. A distribuição de pressão muda e pode elevar a sustentação para a mesma deflexão da parte principal.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, § 6.4.3, p. 283, fig. 6.18, Flap rudders"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch6",
+        "leme-flap"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "I-bertram-ch6-7-9-leme-flap",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Cap. 6, § 6.4.3, p. 283, fig. 6.18, Flap rudders",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-bertram-ch6-7-9-leme-flap",
+          "title": "Leme flap"
+        }
+      }
+    },
+    {
+      "id": "MAN-140",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "3.5",
+      "topic": "Comparação de lemes",
+      "difficulty": "Médio",
+      "style": "Cálculo",
+      "question": "Um leme convencional de referência atinge 100 kN de sustentação máxima em ensaio. Se um leme com flap de mesma forma de referência, tamanho e área reproduzir o ganho de 60% a 70% descrito por Bertram sob a mesma pressão dinâmica, qual faixa resultaria?",
+      "options": [
+        {
+          "key": "A",
+          "text": "60 a 70 kN."
+        },
+        {
+          "key": "B",
+          "text": "90 a 100 kN."
+        },
+        {
+          "key": "C",
+          "text": "100 a 110 kN."
+        },
+        {
+          "key": "D",
+          "text": "130 a 140 kN."
+        },
+        {
+          "key": "E",
+          "text": "160 a 170 kN."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Com pressão dinâmica e área mantidas, a força máxima acompanha o coeficiente máximo. Aplicar o ganho indicado no enunciado dá 100 × 1,60 a 100 × 1,70. A faixa é condicional à reprodução do ganho de referência.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, § 6.4.3, p. 283, fig. 6.18, comparação com leme convencional"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch6",
+        "comparacao-de-lemes"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "I-bertram-ch6-3-5-comparacao-de-lemes",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Cap. 6, § 6.4.3, p. 283, fig. 6.18, comparação com leme convencional",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-bertram-ch6-3-5-comparacao-de-lemes",
+          "title": "Comparação de lemes"
+        }
+      }
+    },
+    {
+      "id": "MAN-141",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.1",
+      "topic": "Balanceamento do leme",
+      "difficulty": "Fácil",
+      "style": "Aplicada",
+      "question": "Em um desenho de leme balanceado, parte da lâmina móvel se estende a vante da madre. Para comparar o esforço de governo, considera-se que a força normal permanece a mesma e seu centro de ação se aproxima da madre. Qual efeito resulta?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Diminui o módulo do torque hidrodinâmico na madre."
+        },
+        {
+          "key": "B",
+          "text": "Aumenta o torque porque a resultante ficou mais distante do eixo."
+        },
+        {
+          "key": "C",
+          "text": "O esforço de governo se iguala à força normal, em qualquer unidade."
+        },
+        {
+          "key": "D",
+          "text": "A posição do centro de ação só altera o rumo, sem efeito no torque local."
+        },
+        {
+          "key": "E",
+          "text": "O leme necessariamente perde toda sustentação."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O torque hidrodinâmico depende da distância da linha de ação à madre. Com a força normal mantida e braço menor, seu módulo diminui. A figura de Lewis exemplifica a área estendida a vante para esse equilíbrio.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, § 6.4.1, pp. 273–274, fig. 6.12 e eqs. (6.52), (6.58). Complemento: Lewis, vol. III, cap. IX, § 14.7, p. 310, fig. 143"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch6",
+        "balanceamento-do-leme"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "I-bertram-ch6-7-1-balanceamento-do-leme",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Cap. 6, § 6.4.1, pp. 273–274, fig. 6.12 e eqs. (6.52), (6.58). Complemento: Lewis, vol. III, cap. IX, § 14.7, p. 310, fig. 143",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-bertram-ch6-7-1-balanceamento-do-leme",
+          "title": "Balanceamento do leme"
+        }
+      }
+    },
+    {
+      "id": "MAN-142",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.1",
+      "topic": "Momento na madre",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "question": "Em dois pontos de um ensaio, a força normal ao leme mantém o mesmo sentido. Devido à mudança da incidência, seu centro de ação passa de 0,10 m a ré da madre para 0,10 m a vante. Que efeito é relevante para o aparelho de governo?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O torque mantém o sentido porque a força normal não mudou de sentido."
+        },
+        {
+          "key": "B",
+          "text": "O torque hidrodinâmico muda de sentido porque o braço troca de sinal."
+        },
+        {
+          "key": "C",
+          "text": "Nas duas condições, o torque é sempre nulo."
+        },
+        {
+          "key": "D",
+          "text": "O torque muda de sentido apenas se o navio passar a navegar a ré."
+        },
+        {
+          "key": "E",
+          "text": "A posição altera a pressão atmosférica, que governa o sinal do torque."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Quando o centro de ação cruza a madre, o braço assinado muda de sinal. A mesma direção de força passa a produzir torque de sentido oposto. Bertram observa que o centro varia com a incidência, o que precisa ser considerado no projeto.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2. ed., 2012",
+        "locator": "Cap. 6, § 6.4.1, pp. 273–274, relação entre centro de esforço e momento na madre"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch6",
+        "momento-na-madre"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "I-bertram-ch6-7-1-momento-na-madre",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Cap. 6, § 6.4.1, pp. 273–274, relação entre centro de esforço e momento na madre",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-bertram-ch6-7-1-momento-na-madre",
+          "title": "Momento na madre"
+        }
+      }
+    },
+    {
+      "id": "MAN-143",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "7.4",
+      "topic": "Forças e momentos",
+      "difficulty": "Médio",
+      "style": "Cálculo",
+      "question": "No cálculo do torque hidrodinâmico de um leme isolado, a componente normal ao plano do leme é 240 kN. O centro de pressão fica a 0,18 m da linha da madre e a 1,20 m do apoio superior na direção vertical. Qual é o módulo do torque em torno da madre?",
+      "options": [
+        {
+          "key": "A",
+          "text": "288 kN·m."
+        },
+        {
+          "key": "B",
+          "text": "1.333 kN·m."
+        },
+        {
+          "key": "C",
+          "text": "43,2 kN·m."
+        },
+        {
+          "key": "D",
+          "text": "331,2 kN·m."
+        },
+        {
+          "key": "E",
+          "text": "240 kN·m."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "O torque em torno da madre é a força normal multiplicada pelo braço no plano do giro. Assim, 240 × 0,18 = 43,2 kN·m. A distância vertical é pertinente ao cálculo de flexão e não substitui o braço de torção.",
+      "source": {
+        "author": "LEWIS, Edward V. (ed.)",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "3. ed. (Second Revision), 1989",
+        "locator": "Vol. III, cap. IX, § 14.1, p. 292, fig. 122 e eq. (121d)"
+      },
+      "tags": [
+        "lemes",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s14",
+        "forcas-e-momentos"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s14",
+        "topic_id": "I-pna-v3-ch9-s14-7-4-forcas-e-momentos",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V. (ed.)"
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s14",
+          "number": "ch9-s14",
+          "title": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+          "label": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces"
+        },
+        "section": "Vol. III, cap. IX, § 14.1, p. 292, fig. 122 e eq. (121d)",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-pna-v3-ch9-s14-7-4-forcas-e-momentos",
+          "title": "Forças e momentos"
+        }
+      }
+    }
+  ]
+}
