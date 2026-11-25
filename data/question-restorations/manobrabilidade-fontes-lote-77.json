@@ -233,31 +233,31 @@
       "topic": "Contraleme",
       "difficulty": "Fácil",
       "style": "Aplicada",
-      "question": "Depois de comandar contraleme, a razão de guinada para boreste diminui progressivamente de 0,50°/s para 0,15°/s. Considere boreste positivo. Como interpretar a ação durante esse intervalo?",
+      "question": "No primeiro zigue do ensaio, o contraleme é ordenado com guinada de 0,60°/s para boreste. Nos oito segundos seguintes a razão de guinada cai linearmente a zero. Qual desvio adicional de proa se acumula até esse instante?",
       "options": [
         {
           "key": "A",
-          "text": "A proa já está guinando para bombordo."
+          "text": "0,60° para boreste."
         },
         {
           "key": "B",
-          "text": "A variação da razão de guinada é positiva."
+          "text": "4,80° para boreste."
         },
         {
           "key": "C",
-          "text": "O momento resultante de guinada é nulo em todo o intervalo."
+          "text": "2,40° para bombordo."
         },
         {
           "key": "D",
-          "text": "O máximo desvio de proa já foi atingido no começo do intervalo."
+          "text": "0°."
         },
         {
           "key": "E",
-          "text": "A guinada para boreste está sendo contida, embora a proa ainda gire para boreste."
+          "text": "2,40° para boreste."
         }
       ],
       "correct_answer": "E",
-      "explanation": "A taxa de guinada diminui e ainda é positiva, de modo que a proa continua girando para boreste. A razão nula marca o fim dessa guinada quando há inversão de sentido, e não o primeiro instante em que ela começa a cair.",
+      "explanation": "A área sob a linha de razão de guinada é a de um triângulo: 8 s × 0,60°/s ÷ 2 = 2,40°. A taxa permanece a boreste até zerar. Multiplicar 0,60 por 8 supõe taxa constante; usar 0,60 como desvio confunde as unidades.",
       "source": {
         "author": "INTERNATIONAL MARITIME ORGANIZATION",
         "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
@@ -460,36 +460,36 @@
       "topic": "Manutenção do rumo",
       "difficulty": "Médio",
       "style": "Aplicada",
-      "question": "Um navio apresenta instabilidade dinâmica inerente de pequena magnitude. Com o piloto automático acionado, mantém trajetória retilínea no rumo prescrito, com pequenas correções de leme e sem oscilações excessivas. Qual interpretação é sustentada pela observação?",
+      "question": "Em duas provas de manutenção de rumo com o mesmo navio e nas mesmas condições, a proa e a trajetória observadas são praticamente iguais. O controlador X, porém, alterna repetidamente entre 18° a bombordo e 18° a boreste. O controlador Y faz correções suaves de até 3°. Qual resultado favorece a avaliação de manutenção de rumo?",
       "options": [
         {
           "key": "A",
-          "text": "A estabilidade dinâmica inerente foi demonstrada, pois a trajetória com controle é retilínea."
+          "text": "X, porque maior oscilação de leme sempre indica melhor controle."
         },
         {
           "key": "B",
-          "text": "A capacidade de manter rumo só pode ser julgada com o leme imóvel a meio."
+          "text": "Empate, porque a definição mede apenas oscilações de proa."
         },
         {
           "key": "C",
-          "text": "O sistema navio e controle mantém o rumo nessa condição, embora a instabilidade inerente permaneça."
+          "text": "Y, porque obtém a mesma trajetória com oscilações menores de leme."
         },
         {
           "key": "D",
-          "text": "A capacidade de giro com leme carregado ficou necessariamente abaixo do limite."
+          "text": "X, porque o maior ângulo observado já mede o diâmetro tático."
         },
         {
           "key": "E",
-          "text": "Existe uma medida da distância de parada, pois a trajetória é retilínea."
+          "text": "Y, porque as menores correções demonstram estabilidade inerente com leme fixo."
         }
       ],
       "correct_answer": "C",
-      "explanation": "A manutenção do rumo avalia a trajetória com governo ativo e a intensidade das oscilações de rumo e leme. Instabilidade inerente limitada pode coexistir com controle adequado. Giro carregado e parada pedem ensaios próprios.",
+      "explanation": "A avaliação do navio governado considera oscilações tanto de leme quanto de proa. A proa e a trajetória foram equivalentes, mas Y oscilou menos o leme. A prova sob controle não mede estabilidade inerente com leme fixo nem inclui um círculo de giro.",
       "source": {
         "author": "INTERNATIONAL MARITIME ORGANIZATION",
         "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
         "edition": "MSC/Circ.1053, 16 Dec. 2002",
-        "locator": "Anexo, cap. 1, §§ 1.2.2.9 e 1.2.3.1–1.2.3.2, pp. 3–5"
+        "locator": "Anexo, cap. 1, §§ 1.2.2.9 e 1.2.3.2, pp. 3–5"
       },
       "tags": [
         "controlabilidade",
@@ -519,7 +519,7 @@
           "title": "Chapter 1 – General principles",
           "label": "Chapter 1 – General principles"
         },
-        "section": "Anexo, cap. 1, §§ 1.2.2.9 e 1.2.3.1–1.2.3.2, pp. 3–5",
+        "section": "Anexo, cap. 1, §§ 1.2.2.9 e 1.2.3.2, pp. 3–5",
         "module": "4. Controlabilidade e padrões de manobrabilidade",
         "topic": {
           "id": "I-msc1053-ch1-8-7-1-manutencao-do-rumo",
@@ -685,31 +685,31 @@
       "topic": "Raio de giro",
       "difficulty": "Médio",
       "style": "Cálculo",
-      "question": "Em dois giros estabilizados, a velocidade é de 6 m/s. A razão de guinada é de 0,020 rad/s no primeiro e 0,030 rad/s no segundo. Quais são os raios de giro, nessa ordem?",
+      "question": "Em dois giros estabilizados, a velocidade passa de 5 m/s no primeiro para 7,5 m/s no segundo, mas o raio observado se mantém. Se a magnitude da razão de guinada inicial é de 0,024 rad/s, qual é a magnitude no segundo giro?",
       "options": [
         {
           "key": "A",
-          "text": "120 m e 180 m."
+          "text": "0,016 rad/s."
         },
         {
           "key": "B",
-          "text": "200 m e 300 m."
+          "text": "0,024 rad/s."
         },
         {
           "key": "C",
-          "text": "300 m e 200 m."
+          "text": "0,036 rad/s."
         },
         {
           "key": "D",
-          "text": "600 m e 400 m."
+          "text": "0,048 rad/s."
         },
         {
           "key": "E",
-          "text": "300 m e 450 m."
+          "text": "0,060 rad/s."
         }
       ],
       "correct_answer": "C",
-      "explanation": "Em giro estabilizado, o raio é V/r, com r em rad/s e V em m/s. As divisões 6/0,020 e 6/0,030 dão 300 m e 200 m; a maior razão de guinada produz menor raio para a mesma velocidade.",
+      "explanation": "Com o raio constante, a magnitude da razão de guinada cresce na mesma proporção que a velocidade. Portanto 0,024 × (7,5/5) = 0,036 rad/s. 0,016 inverte a proporção e 0,024 supõe que a razão de guinada não mudou.",
       "source": {
         "author": "INTERNATIONAL MARITIME ORGANIZATION",
         "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
@@ -910,36 +910,36 @@
       "topic": "Compromisso estabilidade-giro",
       "difficulty": "Médio",
       "style": "Aplicada",
-      "question": "Na comparação qualitativa das Explanatory Notes, um projeto apresenta amortecimento de guinada maior e melhor estabilidade dinâmica. Qual tendência a circular indica para a curva estabilizada, em comparação com um projeto de maior instabilidade, para um dado ângulo de leme?",
+      "question": "Num zigue-zague, o navio X chega ao segundo comando antes do navio Y. Mediu-se o mesmo primeiro sobressinal. Com base nas notas da IMO, o que se pode inferir sobre a causa da resposta inicial mais rápida de X?",
       "options": [
         {
           "key": "A",
-          "text": "O projeto mais amortecido normalmente apresenta raio de giro maior."
+          "text": "A medição não isola a causa, pois maior eficácia de leme e maior instabilidade podem ambas reduzir o tempo até o segundo comando."
         },
         {
           "key": "B",
-          "text": "O projeto mais amortecido obrigatoriamente apresenta raio de giro menor."
+          "text": "Apenas maior estabilidade inerente explica o menor tempo."
         },
         {
           "key": "C",
-          "text": "O projeto mais instável tem razão de guinada nula para qualquer ângulo."
+          "text": "Os sobressinais iguais demonstram eficácia de leme igual."
         },
         {
           "key": "D",
-          "text": "Os dois projetos têm raio idêntico desde que o ângulo de leme seja o mesmo."
+          "text": "O menor tempo demonstra que X tem maior amortecimento de guinada."
         },
         {
           "key": "E",
-          "text": "A comparação estabelece que o projeto mais amortecido para em distância menor."
+          "text": "Os dois valores determinam qual navio tem menor percurso de parada."
         }
       ],
       "correct_answer": "A",
-      "explanation": "Na comparação qualitativa das notas, maior amortecimento de guinada favorece a estabilidade, acompanhado normalmente de maior raio. A instabilidade tende a favorecer o giro. A figura 1 mostra esse contraste para o equilíbrio de giro, sem fixar uma relação de desempenho de parada.",
+      "explanation": "Tanto a maior eficácia de leme quanto a maior instabilidade podem encurtar o tempo de resposta inicial. As notas também descrevem o sobressinal isolado como uma medida insuficiente para separar esses efeitos. Nenhum dos dados apresentados mede a parada.",
       "source": {
         "author": "INTERNATIONAL MARITIME ORGANIZATION",
         "title": "Explanatory Notes to the Standards for Ship Manoeuvrability",
         "edition": "MSC/Circ.1053, 16 Dec. 2002",
-        "locator": "Anexo, cap. 1, §§ 1.2.2.7 e 1.2.2.12, figura 1, pp. 3–4"
+        "locator": "Anexo, cap. 1, §§ 1.2.2.11–1.2.2.12, p. 4"
       },
       "tags": [
         "controlabilidade",
@@ -969,7 +969,7 @@
           "title": "Chapter 1 – General principles",
           "label": "Chapter 1 – General principles"
         },
-        "section": "Anexo, cap. 1, §§ 1.2.2.7 e 1.2.2.12, figura 1, pp. 3–4",
+        "section": "Anexo, cap. 1, §§ 1.2.2.11–1.2.2.12, p. 4",
         "module": "4. Controlabilidade e padrões de manobrabilidade",
         "topic": {
           "id": "I-msc1053-ch1-8-7-9-compromisso-estabilidade-giro",
