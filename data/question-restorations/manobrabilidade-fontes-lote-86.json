@@ -1,0 +1,1144 @@
+{
+  "questions": [
+    {
+      "id": "MAN-307",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "1.7",
+      "topic": "Ensaios de resistência",
+      "difficulty": "Difícil",
+      "style": "Conceitual",
+      "question": "Em um ajuste de Prohaska, a reta de CT/CF em função de Fn⁴/CF tem inclinação 0,65 e intercepto 1,18. Para um ponto de Fn = 0,20 no regime do ajuste, qual é o coeficiente de resistência de ondas aproximado previsto pela hipótese?",
+      "options": [
+        {
+          "key": "A",
+          "text": "0,00189."
+        },
+        {
+          "key": "B",
+          "text": "0,13000."
+        },
+        {
+          "key": "C",
+          "text": "0,00288."
+        },
+        {
+          "key": "D",
+          "text": "1,18000."
+        },
+        {
+          "key": "E",
+          "text": "0,00104."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O termo de ondas é k₁Fn⁴. A inclinação fornece k₁ = 0,65. Multiplicando por 0,20⁴, resulta 0,00104. O intercepto 1,18 representa o fator de forma, e não o coeficiente de ondas.",
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "2010",
+        "locator": "Cap. 8, § 8.3.3, pp. 103–104, eq. 8.20 e fig. 8.6"
+      },
+      "tags": [
+        "modelo",
+        "ensaio",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch8",
+        "ensaios-de-resistencia"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch8",
+        "topic_id": "I-larsson-resistance-ch8-1-7-ensaios-de-resistencia",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch8",
+          "number": "ch8",
+          "title": "Chapter 8",
+          "label": "Chapter 8"
+        },
+        "section": "Cap. 8, § 8.3.3, pp. 103–104, eq. 8.20 e fig. 8.6",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch8-1-7-ensaios-de-resistencia",
+          "title": "Ensaios de resistência"
+        }
+      },
+      "status": "quarantined"
+    },
+    {
+      "id": "MAN-308",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "1.8",
+      "topic": "Rugosidade",
+      "difficulty": "Difícil",
+      "style": "Conceitual",
+      "question": "Na mesma região do casco, duas superfícies têm rugosidade adimensional u* k/ν igual a 3 e 8. Qual classificação segue o limite aproximado de Larsson e Raven para uma superfície hidraulicamente lisa?",
+      "options": [
+        {
+          "key": "A",
+          "text": "As duas atendem, pois os dois valores são menores que 10."
+        },
+        {
+          "key": "B",
+          "text": "A segunda atende por apresentar o maior valor."
+        },
+        {
+          "key": "C",
+          "text": "A primeira atende ao limite, enquanto a segunda fica fora dele."
+        },
+        {
+          "key": "D",
+          "text": "Nenhuma atende, pois somente valor zero seria aceitável."
+        },
+        {
+          "key": "E",
+          "text": "É necessário conhecer a aceleração da gravidade para usar esses valores."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "O critério considera os elementos de rugosidade contidos na subcamada viscosa quando u* k/ν é menor que aproximadamente 5. O valor 3 atende e o valor 8 fica acima da referência.",
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "2010",
+        "locator": "Cap. 6, § 6.8.3, p. 72, eq. 6.42"
+      },
+      "tags": [
+        "rugosidade",
+        "atrito",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch6"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch6",
+        "topic_id": "I-larsson-resistance-ch6-1-8-rugosidade",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch6",
+          "number": "ch6",
+          "title": "Chapter 6",
+          "label": "Chapter 6"
+        },
+        "section": "Cap. 6, § 6.8.3, p. 72, eq. 6.42",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch6-1-8-rugosidade",
+          "title": "Rugosidade"
+        }
+      }
+    },
+    {
+      "id": "MAN-309",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "1.9",
+      "topic": "Apêndices",
+      "difficulty": "Médio",
+      "style": "Conceitual",
+      "question": "Na comparação de perfis imersos da figura 7.8 de Larsson e Raven, a seção perfilada tem área frontal muito maior que a circular, mas os arrastos totais são próximos. Que diferença de escoamento explica o resultado?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O cilindro mantém o escoamento aderido até a extremidade de ré."
+        },
+        {
+          "key": "B",
+          "text": "O corpo perfilado mantém o fluxo aderido, enquanto o cilindro sofre forte separação e perde recuperação de pressão."
+        },
+        {
+          "key": "C",
+          "text": "Os dois corpos têm igual separação, e o contraste decorre da densidade da água."
+        },
+        {
+          "key": "D",
+          "text": "A força sobre o cilindro vem quase toda do atrito num entorno sem separação."
+        },
+        {
+          "key": "E",
+          "text": "O arrasto das duas seções decorre da formação de ondas na superfície livre."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "No exemplo, as linhas permanecem aderidas ao corpo perfilado até a borda de fuga. Já atrás do cilindro há forte separação e baixa pressão, com resistência dominada pela parcela de pressão.",
+      "source": {
+        "author": "LARSSON, Lars; RAVEN, Hoyte C.",
+        "title": "Ship Resistance and Flow",
+        "edition": "2010",
+        "locator": "Cap. 7, §§ 7.2–7.2.1, pp. 82–84, fig. 7.8"
+      },
+      "tags": [
+        "apêndices",
+        "resistência",
+        "manobrabilidade",
+        "larsson-resistance",
+        "larsson-resistance::ch7",
+        "apendices"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "larsson-resistance",
+        "chapter_id": "larsson-resistance::ch7",
+        "topic_id": "I-larsson-resistance-ch7-1-9-apendices",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "larsson-resistance",
+          "title": "LARSSON & RAVEN — Ship Resistance and Flow",
+          "author": "LARSSON, Lars; RAVEN, Hoyte C."
+        },
+        "chapter": {
+          "id": "larsson-resistance::ch7",
+          "number": "ch7",
+          "title": "Chapter 7",
+          "label": "Chapter 7"
+        },
+        "section": "Cap. 7, §§ 7.2–7.2.1, pp. 82–84, fig. 7.8",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-larsson-resistance-ch7-1-9-apendices",
+          "title": "Apêndices"
+        }
+      }
+    },
+    {
+      "id": "MAN-310",
+      "subject": "Manobrabilidade do Navio",
+      "module": "1. Resistência do navio e métodos de obtenção",
+      "topic_code": "1.10",
+      "topic": "Resistência do ar",
+      "difficulty": "Difícil",
+      "style": "Conceitual",
+      "question": "Em túnel de vento, duas maquetes têm a mesma área projetada normal ao fluxo e recebem vento relativo de igual velocidade e incidência. Uma tem superestrutura perfilada e a outra tem numerosas faces planas expostas. Que efeito Crenshaw descreve?",
+      "options": [
+        {
+          "key": "A",
+          "text": "As cargas são iguais porque as áreas coincidem."
+        },
+        {
+          "key": "B",
+          "text": "A maquete perfilada sofre maior carga por ser mais lisa."
+        },
+        {
+          "key": "C",
+          "text": "A carga nas duas depende apenas do deslocamento."
+        },
+        {
+          "key": "D",
+          "text": "Só haverá carga se a velocidade do túnel variar."
+        },
+        {
+          "key": "E",
+          "text": "A geometria irregular tende a sofrer maior força aerodinâmica."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O exemplo de Crenshaw distingue a influência da forma das influências da área normal e da velocidade relativa. Mantidas estas últimas, uma superestrutura com faces expostas pode gerar carga maior.",
+      "source": {
+        "author": "CRENSHAW, Russell Sydnor",
+        "title": "Naval Shiphandling",
+        "edition": "4th ed., 1975",
+        "locator": "Cap. 2, Wind, p. 37"
+      },
+      "tags": [
+        "vento",
+        "pressão dinâmica",
+        "manobrabilidade",
+        "crenshaw-naval-shiphandling",
+        "crenshaw-naval-shiphandling::ch2",
+        "resistencia-do-ar"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "crenshaw-naval-shiphandling",
+        "chapter_id": "crenshaw-naval-shiphandling::ch2",
+        "topic_id": "I-crenshaw-naval-shiphandling-ch2-1-10-resistencia-do-ar",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "crenshaw-naval-shiphandling",
+          "title": "CRENSHAW — Naval Shiphandling, 4ª ed.",
+          "author": "CRENSHAW, Russell Sydnor"
+        },
+        "chapter": {
+          "id": "crenshaw-naval-shiphandling::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Forces Affecting the Ship",
+          "label": "Chapter 2 – Forces Affecting the Ship"
+        },
+        "section": "Cap. 2, Wind, p. 37",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-crenshaw-naval-shiphandling-ch2-1-10-resistencia-do-ar",
+          "title": "Resistência do ar"
+        }
+      }
+    },
+    {
+      "id": "MAN-311",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.1",
+      "topic": "Empuxo do propulsor",
+      "difficulty": "Fácil",
+      "style": "Conceitual",
+      "question": "Dois discos atuadores ideais têm a mesma velocidade a montante e fornecem o mesmo empuxo. Um deles processa maior vazão mássica. Qual consequência segue do balanço unidimensional?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A velocidade final precisa crescer mais que no outro disco."
+        },
+        {
+          "key": "B",
+          "text": "A força torna-se nula porque mais massa atravessa o disco."
+        },
+        {
+          "key": "C",
+          "text": "A diferença entre as velocidades cresce na mesma proporção que a vazão."
+        },
+        {
+          "key": "D",
+          "text": "O acréscimo de velocidade aplicado à água pode ser menor."
+        },
+        {
+          "key": "E",
+          "text": "A água pode atravessar o disco sem mudar de velocidade."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "O empuxo é o produto da vazão mássica pela diferença de velocidade entre montante e jusante. A empuxo fixo, vazão maior exige incremento menor de velocidade.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2nd ed., 2012",
+        "locator": "Cap. 2, § 2.3.2, pp. 48–50, eqs. 2.9–2.10"
+      },
+      "tags": [
+        "propulsor",
+        "empuxo",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch2",
+        "empuxo-do-propulsor"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch2",
+        "topic_id": "I-bertram-ch2-2-1-empuxo-do-propulsor",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Propellers",
+          "label": "Chapter 2 – Propellers"
+        },
+        "section": "Cap. 2, § 2.3.2, pp. 48–50, eqs. 2.9–2.10",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-bertram-ch2-2-1-empuxo-do-propulsor",
+          "title": "Empuxo do propulsor"
+        }
+      }
+    },
+    {
+      "id": "MAN-312",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.2",
+      "topic": "Avanço do hélice",
+      "difficulty": "Difícil",
+      "style": "Conceitual",
+      "question": "Um laboratório quer reproduzir o ponto J = 0,60 em água aberta com hélice de 3,0 m e velocidade média de entrada de 4,5 m/s. Que rotação deve ajustar no painel, graduado em rpm?",
+      "options": [
+        {
+          "key": "A",
+          "text": "90 rpm."
+        },
+        {
+          "key": "B",
+          "text": "150 rpm."
+        },
+        {
+          "key": "C",
+          "text": "180 rpm."
+        },
+        {
+          "key": "D",
+          "text": "225 rpm."
+        },
+        {
+          "key": "E",
+          "text": "250 rpm."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Rearranjando J = VA/(nD), obtém-se n = 4,5/(0,60 × 3,0) = 2,5 rotações por segundo. Em minutos, o ajuste é 2,5 × 60 = 150 rpm.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2nd ed., 2012",
+        "locator": "Cap. 2, § 2.2, p. 44"
+      },
+      "tags": [
+        "hélice",
+        "razão de avanço",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch2",
+        "avanco-do-helice"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch2",
+        "topic_id": "I-bertram-ch2-2-2-avanco-do-helice",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Propellers",
+          "label": "Chapter 2 – Propellers"
+        },
+        "section": "Cap. 2, § 2.2, p. 44",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-bertram-ch2-2-2-avanco-do-helice",
+          "title": "Avanço do hélice"
+        }
+      }
+    },
+    {
+      "id": "MAN-313",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.3",
+      "topic": "Coeficientes de hélice",
+      "difficulty": "Difícil",
+      "style": "Conceitual",
+      "question": "Duas curvas em água aberta são avaliadas no mesmo J positivo. Para X, KT = 0,20 e KQ = 0,040. Para Y, KT = 0,18 e KQ = 0,030. Qual é a comparação das eficiências?",
+      "options": [
+        {
+          "key": "A",
+          "text": "X supera Y em 20%."
+        },
+        {
+          "key": "B",
+          "text": "X e Y têm rendimentos iguais."
+        },
+        {
+          "key": "C",
+          "text": "Y supera X em 50%."
+        },
+        {
+          "key": "D",
+          "text": "Só é possível comparar com o diâmetro de cada hélice."
+        },
+        {
+          "key": "E",
+          "text": "Y supera X em 20%."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Como η₀ = (KT/KQ) × J/(2π), o fator J/(2π) é comum. As razões KT/KQ valem 5 para X e 6 para Y. Logo, ηY/ηX = 6/5 = 1,20.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2nd ed., 2012",
+        "locator": "Cap. 2, § 2.2, p. 44, eqs. 2.1–2.3"
+      },
+      "tags": [
+        "hélice",
+        "coeficientes",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch2",
+        "coeficientes-de-helice"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch2",
+        "topic_id": "I-bertram-ch2-2-3-coeficientes-de-helice",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Propellers",
+          "label": "Chapter 2 – Propellers"
+        },
+        "section": "Cap. 2, § 2.2, p. 44, eqs. 2.1–2.3",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-bertram-ch2-2-3-coeficientes-de-helice",
+          "title": "Coeficientes de hélice"
+        }
+      }
+    },
+    {
+      "id": "MAN-314",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.4",
+      "topic": "Esteira",
+      "difficulty": "Difícil",
+      "style": "Conceitual",
+      "question": "O navio tem 12 nós em relação à água distante e a velocidade média de avanço no hélice é de 9 nós. Quais frações de esteira resultam pelas convenções de Taylor e de Froude, respectivamente?",
+      "options": [
+        {
+          "key": "A",
+          "text": "25% e 33,3%."
+        },
+        {
+          "key": "B",
+          "text": "33,3% e 25%."
+        },
+        {
+          "key": "C",
+          "text": "75% e 25%."
+        },
+        {
+          "key": "D",
+          "text": "25% e 25%."
+        },
+        {
+          "key": "E",
+          "text": "33,3% e 33,3%."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A diferença é de 3 nós. Taylor usa a velocidade do navio no denominador: 3/12 = 25%. Froude usa a velocidade de avanço do hélice: 3/9 ≈ 33,3%.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "3. ed. (Second Revision), 1988",
+        "locator": "Vol. II, cap. VI, § 4.2, pp. 145–146, eqs. 25–26"
+      },
+      "tags": [
+        "esteira",
+        "interação casco-hélice",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch6-s4"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch6-s4",
+        "topic_id": "I-pna-v2-ch6-s4-2-4-esteira",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v2::ch6-s4",
+          "number": "ch6-s4",
+          "title": "Chapter VI – Propulsion — Section 4: Interaction between Hull and Propeller",
+          "label": "Chapter VI – Propulsion — Section 4: Interaction between Hull and Propeller"
+        },
+        "section": "Vol. II, cap. VI, § 4.2, pp. 145–146, eqs. 25–26",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-pna-v2-ch6-s4-2-4-esteira",
+          "title": "Esteira"
+        }
+      }
+    },
+    {
+      "id": "MAN-315",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.5",
+      "topic": "Dedução de empuxo",
+      "difficulty": "Médio",
+      "style": "Conceitual",
+      "question": "Um modelo é rebocado e depois navega autopropelido à mesma velocidade. Na segunda prova o propulsor reduz a pressão sobre uma parte inclinada da popa que antes contribuía com força a vante. Como isso afeta o balanço longitudinal?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Aumenta a contribuição favorável e reduz a demanda propulsiva."
+        },
+        {
+          "key": "B",
+          "text": "A demanda é igual à resistência no reboque, pois a velocidade não muda."
+        },
+        {
+          "key": "C",
+          "text": "A contribuição favorável diminui e cresce a demanda propulsiva."
+        },
+        {
+          "key": "D",
+          "text": "A variação de pressão atua apenas na vertical."
+        },
+        {
+          "key": "E",
+          "text": "A variação altera apenas o regime de rotação, sem afetar as forças."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A menor pressão na região de ré reduz a contribuição longitudinal favorável. Isso aumenta a resistência do modelo autopropelido em relação à prova de reboque, efeito expresso pela dedução de empuxo.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "3. ed. (Second Revision), 1988",
+        "locator": "Vol. II, cap. VI, § 4.5, p. 152"
+      },
+      "tags": [
+        "dedução de empuxo",
+        "interação",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch6-s4",
+        "deducao-de-empuxo"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch6-s4",
+        "topic_id": "I-pna-v2-ch6-s4-2-5-deducao-de-empuxo",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v2::ch6-s4",
+          "number": "ch6-s4",
+          "title": "Chapter VI – Propulsion — Section 4: Interaction between Hull and Propeller",
+          "label": "Chapter VI – Propulsion — Section 4: Interaction between Hull and Propeller"
+        },
+        "section": "Vol. II, cap. VI, § 4.5, p. 152",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-pna-v2-ch6-s4-2-5-deducao-de-empuxo",
+          "title": "Dedução de empuxo"
+        }
+      }
+    },
+    {
+      "id": "MAN-316",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.6",
+      "topic": "Cavitação",
+      "difficulty": "Fácil",
+      "style": "Conceitual",
+      "question": "Em dois ensaios sem admissão de ar, a pressão absoluta mínima medida na pá é de 2,5 kPa. A pressão de vapor da água é de 1,8 kPa no ensaio A e de 3,2 kPa no ensaio B. Qual caso satisfaz o critério de pressão para cavitação?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apenas A."
+        },
+        {
+          "key": "B",
+          "text": "Ambos, porque a pressão mínima é positiva."
+        },
+        {
+          "key": "C",
+          "text": "Nenhum, por não haver ligação com a atmosfera."
+        },
+        {
+          "key": "D",
+          "text": "Ambos, porque a pressão mínima medida é igual."
+        },
+        {
+          "key": "E",
+          "text": "Apenas B."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A pressão mínima de 2,5 kPa é maior que 1,8 kPa no primeiro ensaio e menor que 3,2 kPa no segundo. Apenas no segundo ela fica abaixo da pressão de vapor. A formação de cavidades de vapor é distinta da admissão de ar.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "3. ed. (Second Revision), 1988",
+        "locator": "Vol. II, cap. VI, § 7.1, pp. 171–173, fig. 29"
+      },
+      "tags": [
+        "cavitação",
+        "hélice",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch6-s7",
+        "cavitacao"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch6-s7",
+        "topic_id": "I-pna-v2-ch6-s7-2-6-cavitacao",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v2::ch6-s7",
+          "number": "ch6-s7",
+          "title": "Chapter VI – Propulsion — Section 7: Cavitation",
+          "label": "Chapter VI – Propulsion — Section 7: Cavitation"
+        },
+        "section": "Vol. II, cap. VI, § 7.1, pp. 171–173, fig. 29",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-pna-v2-ch6-s7-2-6-cavitacao",
+          "title": "Cavitação"
+        }
+      }
+    },
+    {
+      "id": "MAN-317",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.7",
+      "topic": "Passo controlável",
+      "difficulty": "Médio",
+      "style": "Conceitual",
+      "question": "Um navio com máquina principal não reversível precisa gerar força a ré. O hélice tem passo controlável e o eixo continua no sentido habitual. Qual ação o mecanismo do cubo permite?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Diminuir o diâmetro do disco, com as pás travadas."
+        },
+        {
+          "key": "B",
+          "text": "Inverter o motor antes de movimentar as pás."
+        },
+        {
+          "key": "C",
+          "text": "Prender as pás na posição de vante e deixar a corrente inverter o empuxo."
+        },
+        {
+          "key": "D",
+          "text": "Inverter o giro por meio do leme, conservando as pás fixas."
+        },
+        {
+          "key": "E",
+          "text": "Reorientar as pás para produzir empuxo a ré."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "As pás podem girar em torno dos próprios eixos e modificar o passo enquanto o hélice está em rotação. O mecanismo permite gerar empuxo a ré com o motor girando no mesmo sentido.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "3. ed. (Second Revision), 1988",
+        "locator": "Vol. II, cap. VI, § 10.6, pp. 230–231"
+      },
+      "tags": [
+        "CPP",
+        "passo controlável",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch6-s10",
+        "passo-controlavel"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch6-s10",
+        "topic_id": "I-pna-v2-ch6-s10-2-7-passo-controlavel",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v2::ch6-s10",
+          "number": "ch6-s10",
+          "title": "Chapter VI – Propulsion — Section 10: Other propulsion devices",
+          "label": "Chapter VI – Propulsion — Section 10: Other propulsion devices"
+        },
+        "section": "Vol. II, cap. VI, § 10.6, pp. 230–231",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-pna-v2-ch6-s10-2-7-passo-controlavel",
+          "title": "Passo controlável"
+        }
+      }
+    },
+    {
+      "id": "MAN-318",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.8",
+      "topic": "Propulsores contra-rotativos",
+      "difficulty": "Médio",
+      "style": "Conceitual",
+      "question": "Num par contra-rotativo coaxial, o rotor de ré fica na coluna de água acelerada pelo rotor de vante. Que característica geométrica do rotor de ré é associada à contração dessa coluna no exemplo de Lewis?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Aumentar a envergadura do rotor de ré para captar toda a água exterior à coluna."
+        },
+        {
+          "key": "B",
+          "text": "Adotar o mesmo tamanho para impedir que a coluna se contraia."
+        },
+        {
+          "key": "C",
+          "text": "Usar diâmetro menor para adequar o disco à seção contraída."
+        },
+        {
+          "key": "D",
+          "text": "Usar diâmetro maior porque o segundo rotor gira em outro sentido."
+        },
+        {
+          "key": "E",
+          "text": "Deslocar permanentemente o eixo para fora da coluna."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Lewis associa o menor diâmetro do rotor de ré à coluna contraída do primeiro. Também indica que o passo do rotor de ré deve ser escolhido para a absorção de potência requerida.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "3. ed. (Second Revision), 1988",
+        "locator": "Vol. II, cap. VI, § 10.7, p. 231"
+      },
+      "tags": [
+        "contra-rotativos",
+        "propulsão",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch6-s10",
+        "propulsores-contra-rotativos"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch6-s10",
+        "topic_id": "I-pna-v2-ch6-s10-2-8-propulsores-contra-rotativos",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v2::ch6-s10",
+          "number": "ch6-s10",
+          "title": "Chapter VI – Propulsion — Section 10: Other propulsion devices",
+          "label": "Chapter VI – Propulsion — Section 10: Other propulsion devices"
+        },
+        "section": "Vol. II, cap. VI, § 10.7, p. 231",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-pna-v2-ch6-s10-2-8-propulsores-contra-rotativos",
+          "title": "Propulsores contra-rotativos"
+        }
+      },
+      "status": "quarantined"
+    },
+    {
+      "id": "MAN-319",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.9",
+      "topic": "Propulsor cicloidal",
+      "difficulty": "Difícil",
+      "style": "Conceitual",
+      "question": "Num propulsor Voith-Schneider representado por Lewis, pretende-se mudar a resultante longitudinal para transversal mantendo a orientação do eixo vertical. Qual ajuste muda a lei de orientação das pás ao longo de cada volta?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Rebater o eixo de rotação para a horizontal."
+        },
+        {
+          "key": "B",
+          "text": "Alternar o sentido do motor em cada volta."
+        },
+        {
+          "key": "C",
+          "text": "Bloquear as articulações das pás em ângulo fixo."
+        },
+        {
+          "key": "D",
+          "text": "Alterar permanentemente o raio do disco."
+        },
+        {
+          "key": "E",
+          "text": "Deslocar o ponto de comando C no plano do disco."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "As pás articulam-se e são ligadas ao ponto C. Mover esse ponto altera a orientação das pás durante a órbita, mudando a direção da resultante sem inclinar o eixo vertical.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "3. ed. (Second Revision), 1988",
+        "locator": "Vol. II, cap. VI, § 10.5, pp. 227–229, fig. 88"
+      },
+      "tags": [
+        "eixo vertical",
+        "propulsor",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch6-s10",
+        "propulsor-cicloidal"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch6-s10",
+        "topic_id": "I-pna-v2-ch6-s10-2-9-propulsor-cicloidal",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v2::ch6-s10",
+          "number": "ch6-s10",
+          "title": "Chapter VI – Propulsion — Section 10: Other propulsion devices",
+          "label": "Chapter VI – Propulsion — Section 10: Other propulsion devices"
+        },
+        "section": "Vol. II, cap. VI, § 10.5, pp. 227–229, fig. 88",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-pna-v2-ch6-s10-2-9-propulsor-cicloidal",
+          "title": "Propulsor cicloidal"
+        }
+      }
+    },
+    {
+      "id": "MAN-320",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.10",
+      "topic": "Jato d’água",
+      "difficulty": "Médio",
+      "style": "Conceitual",
+      "question": "Num modelo ideal de jato d’água, a captação ocorre a 6 m/s em relação ao casco. Busca-se empuxo líquido a vante de 2.000 N com vazão de 500 kg/s. Se as pressões nas seções de comparação são iguais e não há perdas, qual deve ser o módulo da velocidade de descarga para ré?",
+      "options": [
+        {
+          "key": "A",
+          "text": "4 m/s."
+        },
+        {
+          "key": "B",
+          "text": "6 m/s."
+        },
+        {
+          "key": "C",
+          "text": "8 m/s."
+        },
+        {
+          "key": "D",
+          "text": "10 m/s."
+        },
+        {
+          "key": "E",
+          "text": "12 m/s."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "O incremento requerido é T/ṁ = 2.000/500 = 4 m/s. A descarga precisa superar a velocidade de captação por esse incremento. Portanto, 6 + 4 = 10 m/s em relação ao casco.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "3. ed. (Second Revision), 1988",
+        "locator": "Vol. II, cap. VI, § 10.2, pp. 225–227, fig. 86 e eq. 88"
+      },
+      "tags": [
+        "waterjet",
+        "propulsão",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch6-s10",
+        "jato-d-agua"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch6-s10",
+        "topic_id": "I-pna-v2-ch6-s10-2-10-jato-d-agua",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v2::ch6-s10",
+          "number": "ch6-s10",
+          "title": "Chapter VI – Propulsion — Section 10: Other propulsion devices",
+          "label": "Chapter VI – Propulsion — Section 10: Other propulsion devices"
+        },
+        "section": "Vol. II, cap. VI, § 10.2, pp. 225–227, fig. 86 e eq. 88",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-pna-v2-ch6-s10-2-10-jato-d-agua",
+          "title": "Jato d’água"
+        }
+      }
+    },
+    {
+      "id": "MAN-321",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "3.1",
+      "topic": "Força no leme",
+      "difficulty": "Médio",
+      "style": "Conceitual",
+      "question": "Na idealização bidimensional de Lewis, um perfil de leme fica profundamente imerso em fluido perfeito, com incidência não nula. Qual é o ângulo entre a resultante hidrodinâmica e o vetor de velocidade da corrente incidente?",
+      "options": [
+        {
+          "key": "A",
+          "text": "0°."
+        },
+        {
+          "key": "B",
+          "text": "15°."
+        },
+        {
+          "key": "C",
+          "text": "180°."
+        },
+        {
+          "key": "D",
+          "text": "90°."
+        },
+        {
+          "key": "E",
+          "text": "45°."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A incidência implica circulação e sustentação. No modelo bidimensional invíscido e profundamente imerso não há arrasto, de modo que a força total fica normal à corrente. Essa direção decorre da idealização; lemes reais também podem gerar arrasto.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "3. ed. (Second Revision), 1989",
+        "locator": "Vol. III, cap. IX, § 14.1, pp. 291–292, figs. 121–122"
+      },
+      "tags": [
+        "leme",
+        "força",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s14",
+        "forca-no-leme"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s14",
+        "topic_id": "I-pna-v3-ch9-s14-3-1-forca-no-leme",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s14",
+          "number": "ch9-s14",
+          "title": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+          "label": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces"
+        },
+        "section": "Vol. III, cap. IX, § 14.1, pp. 291–292, figs. 121–122",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-pna-v3-ch9-s14-3-1-forca-no-leme",
+          "title": "Força no leme"
+        }
+      }
+    }
+  ]
+}
