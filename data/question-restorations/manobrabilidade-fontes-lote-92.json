@@ -1,0 +1,220 @@
+{
+  "questions": [
+    {
+      "id": "MAN-400",
+      "question": "Segundo a MSC.1/Circ.1228, qual alternativa distingue corretamente surf-riding de broaching-to?",
+      "options": [
+        { "key": "A", "text": "No surf-riding, o navio é acelerado na face íngreme de uma onda e passa a acompanhá-la; o broaching-to é uma mudança súbita de rumo, acompanhada de grande inclinação inesperada." },
+        { "key": "B", "text": "Surf-riding é a oscilação do período natural de balanço; broaching-to é a coincidência desse período com o período de encontro das ondas." },
+        { "key": "C", "text": "Surf-riding ocorre somente em mar de proa; broaching-to, somente com ondas exatamente pelo través." },
+        { "key": "D", "text": "Os dois termos designam exclusivamente a perda de velocidade causada pelo aumento da resistência de ondas." },
+        { "key": "E", "text": "Broaching-to é a aceleração longitudinal controlada do navio, sem mudança de rumo nem inclinação." }
+      ],
+      "correct_answer": "A",
+      "explanation": "A Circular descreve o surf-riding como a aceleração do navio na face íngreme de uma onda, em mar de popa ou de alheta, até passar a mover-se com a onda. Nessa situação pode ocorrer broaching-to: mudança súbita de rumo acompanhada de grande inclinação inesperada, com risco de emborcamento.",
+      "source": { "locator": "Annex, § 3.1.1, p. 3" },
+      "provenance": { "audit_restore": { "baseline_commit": "dcd6e5c845b341c2ac58e5fd454e3f8cfc4641d4", "reason": "individual-source-audit-lote-92; differentiated-from-MAN-399" } }
+    },
+    {
+      "id": "MAN-401",
+      "question": "Um navio passa a apresentar grandes balanços porque o período de encontro das ondas coincide com seu período natural de balanço. Como a MSC.1/Circ.1228 denomina essa condição?",
+      "options": [
+        { "key": "A", "text": "Surf-riding." },
+        { "key": "B", "text": "Rolamento síncrono." },
+        { "key": "C", "text": "Ataque sucessivo de ondas altas." },
+        { "key": "D", "text": "Perda simples de estabilidade na crista." },
+        { "key": "E", "text": "Broaching-to." }
+      ],
+      "correct_answer": "B",
+      "explanation": "O rolamento síncrono pode ocorrer quando o período natural de balanço do navio coincide com o período de encontro das ondas. A Circular recomenda alterar rumo ou velocidade para afastar o período de encontro dessa condição de ressonância.",
+      "source": { "locator": "Annex, §§ 3.2 e 4.2.3.1, pp. 3 e 5" },
+      "provenance": { "audit_restore": { "baseline_commit": "dcd6e5c845b341c2ac58e5fd454e3f8cfc4641d4", "reason": "individual-source-audit-lote-92" } }
+    },
+    {
+      "id": "MAN-402",
+      "question": "De acordo com a MSC.1/Circ.1228, qual mecanismo caracteriza o rolamento paramétrico?",
+      "options": [
+        { "key": "A", "text": "Variações periódicas da estabilidade transversal quando o navio passa sucessivamente por cristas e cavados, podendo excitar grandes balanços, sobretudo em relações específicas entre os períodos de encontro e de balanço." },
+        { "key": "B", "text": "Coincidência obrigatória entre a rotação do propulsor e a frequência de encontro das ondas." },
+        { "key": "C", "text": "Mudança súbita de rumo causada exclusivamente pela ação do leme em mar de popa." },
+        { "key": "D", "text": "Redução permanente do período natural de balanço sem qualquer variação de estabilidade." },
+        { "key": "E", "text": "Sequência de impactos de ondas cuja única consequência possível é o aumento da velocidade." }
+      ],
+      "correct_answer": "A",
+      "explanation": "A passagem de cristas e cavados ao longo do casco provoca variações periódicas da estabilidade. A Circular destaca a possibilidade de grandes balanços quando o período de encontro é aproximadamente igual ao período natural de balanço ou à metade dele, além de recomendar mudança de rumo ou velocidade.",
+      "source": { "locator": "Annex, §§ 3.3.1 e 4.2.3.2, pp. 3–4 e 6" },
+      "provenance": { "audit_restore": { "baseline_commit": "dcd6e5c845b341c2ac58e5fd454e3f8cfc4641d4", "reason": "individual-source-audit-lote-92" } }
+    },
+    {
+      "id": "MAN-403",
+      "question": "Em mar de proa, um navio apresenta comportamento perigoso sob ondas cujo comprimento médio excede 0,8 do comprimento do navio e cuja altura significativa excede 0,04 desse comprimento. Qual providência corresponde à MSC.1/Circ.1228?",
+      "options": [
+        { "key": "A", "text": "Aumentar a velocidade até que o período de encontro seja igual ao período natural de balanço." },
+        { "key": "B", "text": "Manter rumo e velocidade, pois os limites mencionados excluem risco estrutural ou de estabilidade." },
+        { "key": "C", "text": "Reduzir a velocidade ou mudar o rumo para evitar a faixa perigosa de ataques sucessivos de ondas altas." },
+        { "key": "D", "text": "Colocar as ondas pela popa e buscar deliberadamente o surf-riding." },
+        { "key": "E", "text": "Parar o propulsor, mantendo necessariamente o navio aproado às ondas." }
+      ],
+      "correct_answer": "C",
+      "explanation": "Para comprimento médio de onda superior a 0,8 L e altura significativa superior a 0,04 L, a Circular orienta que, se o comportamento do navio indicar risco, a velocidade seja reduzida ou o rumo alterado. A faixa perigosa indicada corresponde a período de encontro entre aproximadamente 1,8 e 3,0 vezes o período médio das ondas.",
+      "source": { "locator": "Annex, §§ 4.2.2.1–4.2.2.2, p. 5" },
+      "provenance": { "audit_restore": { "baseline_commit": "dcd6e5c845b341c2ac58e5fd454e3f8cfc4641d4", "reason": "individual-source-audit-lote-92" } }
+    },
+    {
+      "id": "MAN-404",
+      "question": "Ao embarcar o prático, qual informação deve ser apresentada no pilot card conforme a Resolução IMO A.601(15)?",
+      "options": [
+        { "key": "A", "text": "Somente resultados históricos das provas de mar do navio leve." },
+        { "key": "B", "text": "Apenas as dimensões principais, sem dados da condição de carregamento ou do equipamento de manobra." },
+        { "key": "C", "text": "A condição atual do navio quanto a carregamento, propulsão e equipamento de manobra, preenchida pelo comandante sem exigir provas especiais." },
+        { "key": "D", "text": "Exclusivamente as limitações do porto, preenchidas pelo prático após a atracação." },
+        { "key": "E", "text": "Somente dados estimados para uma condição padrão, ainda que diferentes da condição presente." }
+      ],
+      "correct_answer": "C",
+      "explanation": "O pilot card deve ser preenchido pelo comandante e entregue ao prático quando ele embarca. Ele registra a condição atual do navio quanto ao carregamento, à instalação propulsora e ao equipamento de manobra; sua preparação não exige provas especiais de manobrabilidade.",
+      "source": { "locator": "Annex, §§ 1.2.1 e 3.1, pp. 3–4" },
+      "provenance": { "audit_restore": { "baseline_commit": "dcd6e5c845b341c2ac58e5fd454e3f8cfc4641d4", "reason": "individual-source-audit-lote-92" } }
+    },
+    {
+      "id": "MAN-405",
+      "question": "Qual descrição do wheelhouse poster está de acordo com a Resolução IMO A.601(15)?",
+      "options": [
+        { "key": "A", "text": "Documento mantido arquivado e apresentado apenas quando solicitado pela autoridade portuária." },
+        { "key": "B", "text": "Registro exclusivo das manobras realizadas durante a viagem corrente." },
+        { "key": "C", "text": "Cartaz permanentemente exposto no passadiço, com particularidades gerais e características detalhadas de manobra, acompanhado da advertência de que o desempenho pode variar com condições ambientais, de casco e de carregamento." },
+        { "key": "D", "text": "Substituto do pilot card, dispensando informação sobre a condição atual do navio." },
+        { "key": "E", "text": "Documento restrito aos resultados de máquinas, sem curvas ou dados de manobra." }
+      ],
+      "correct_answer": "C",
+      "explanation": "A Resolução determina que o cartaz fique permanentemente exposto no passadiço e apresente as particularidades gerais e as características detalhadas de manobra. Também adverte que o desempenho pode diferir em razão de condições ambientais, de casco e de carregamento.",
+      "source": { "locator": "Annex, §§ 1.2.2 e 3.2, pp. 3–4" },
+      "provenance": { "audit_restore": { "baseline_commit": "dcd6e5c845b341c2ac58e5fd454e3f8cfc4641d4", "reason": "individual-source-audit-lote-92" } }
+    },
+    {
+      "id": "MAN-406",
+      "question": "A equipe pretende retirar do manoeuvring booklet os dados que já aparecem no wheelhouse poster. O que estabelece a Resolução IMO A.601(15)?",
+      "options": [
+        { "key": "A", "text": "O livreto deve conter os dados do cartaz e outras informações abrangentes de manobra; parte pode vir de provas e parte de estimativas, com complementação ao longo da vida do navio." },
+        { "key": "B", "text": "Os dados do cartaz devem ser excluídos do livreto para evitar repetição documental." },
+        { "key": "C", "text": "O livreto deve registrar somente a condição de carregamento do dia, substituindo o pilot card." },
+        { "key": "D", "text": "Todo dado do livreto deve resultar obrigatoriamente de uma única prova especial realizada após cada viagem." },
+        { "key": "E", "text": "O livreto é opcional quando houver cartaz no passadiço." }
+      ],
+      "correct_answer": "A",
+      "explanation": "O manoeuvring booklet deve estar disponível a bordo e reunir informações abrangentes sobre as características de manobra. Ele inclui os dados mostrados no cartaz, além de outras informações; alguns dados podem ser estimados, outros obtidos em provas, e o conteúdo deve ser complementado durante a vida do navio.",
+      "source": { "locator": "Annex, §§ 1.2.3 e 3.3, pp. 3–4" },
+      "provenance": { "audit_restore": { "baseline_commit": "dcd6e5c845b341c2ac58e5fd454e3f8cfc4641d4", "reason": "individual-source-audit-lote-92" } }
+    },
+    {
+      "id": "MAN-407",
+      "question": "Um navio recebe força propulsora constante e deixa de acelerar ao atingir determinada velocidade. Segundo Crenshaw, o que explica esse regime?",
+      "options": [
+        { "key": "A", "text": "O empuxo é nulo, pois a velocidade constante elimina todas as forças longitudinais." },
+        { "key": "B", "text": "A resistência criada pelo movimento cresce até equilibrar a força aplicada; anulada a resultante longitudinal, a velocidade permanece constante." },
+        { "key": "C", "text": "O arrasto atua no mesmo sentido do movimento e aumenta continuamente a velocidade." },
+        { "key": "D", "text": "A resistência deixa de depender da velocidade através da água quando o regime se torna permanente." },
+        { "key": "E", "text": "A resultante longitudinal permanece diferente de zero, embora a aceleração seja nula." }
+      ],
+      "correct_answer": "B",
+      "explanation": "No capítulo sobre as forças que atuam no navio, Crenshaw afirma que a resistência fluida resulta do movimento e aumenta com a velocidade. Sob força aplicada, o navio acelera até que surja resistência de igual magnitude; a partir desse equilíbrio, deixa de haver aceleração longitudinal.",
+      "source": { "locator": "Chapter 2, pp. 28–29" },
+      "provenance": { "audit_restore": { "baseline_commit": "dcd6e5c845b341c2ac58e5fd454e3f8cfc4641d4", "reason": "individual-source-audit-lote-92" } }
+    },
+    {
+      "id": "MAN-408",
+      "question": "No estudo da resistência de um casco, qual descrição corresponde à resistência friccional apresentada por Lewis?",
+      "options": [
+        { "key": "A", "text": "É a força normal associada exclusivamente à formação de ondas na superfície livre." },
+        { "key": "B", "text": "É a parcela de resistência que existe apenas quando há separação maciça do escoamento na popa." },
+        { "key": "C", "text": "É a parcela viscosa ligada às tensões tangenciais na superfície molhada e à transferência contínua de quantidade de movimento para a camada-limite." },
+        { "key": "D", "text": "É a resistência aerodinâmica produzida sobre as obras mortas do navio." },
+        { "key": "E", "text": "É uma componente independente da viscosidade e do número de Reynolds." }
+      ],
+      "correct_answer": "C",
+      "explanation": "Lewis relaciona a resistência friccional ao movimento do casco em fluido viscoso. As tensões tangenciais na superfície molhada alimentam a camada-limite e sua esteira, representando transferência contínua de quantidade de movimento e dispêndio de energia.",
+      "source": { "edition": "2nd Revision, 1988", "locator": "Chapter V, §§ 1.1 e 3.1, pp. 1–2 e 17" },
+      "active": false,
+      "status": "quarantined",
+      "quality": { "quarantine_reason": "preserved-inactive-after-individual-source-audit", "audit_stage": "individual-source-audit-lote-92" },
+      "provenance": { "audit_restore": { "baseline_commit": "dcd6e5c845b341c2ac58e5fd454e3f8cfc4641d4", "reason": "individual-source-audit-lote-92; content-corrected-without-reactivation" } }
+    },
+    {
+      "id": "MAN-409",
+      "question": "Segundo Lewis, por que um navio de superfície apresenta resistência de formação de ondas?",
+      "options": [
+        { "key": "A", "text": "Porque a viscosidade elimina toda pressão na superfície livre." },
+        { "key": "B", "text": "Porque o casco transfere energia somente para a esteira friccional, sem irradiar ondas." },
+        { "key": "C", "text": "Porque a componente existe apenas em água rasa e desaparece em águas irrestritas." },
+        { "key": "D", "text": "Porque o navio precisa fornecer continuamente energia ao sistema de ondas que cria na superfície da água." },
+        { "key": "E", "text": "Porque a resistência do ar é convertida integralmente em ondas de gravidade." }
+      ],
+      "correct_answer": "D",
+      "explanation": "Lewis define a resistência de formação de ondas pela energia que o navio precisa fornecer continuamente ao sistema de ondas criado na superfície. Essa energia é irradiada para fora e para ré pelo padrão de ondas e se manifesta como uma componente da resistência ao avanço.",
+      "source": { "locator": "Chapter V, §§ 1.1 e 4.1–4.3, pp. 1–2 e 25–27" },
+      "provenance": { "audit_restore": { "baseline_commit": "dcd6e5c845b341c2ac58e5fd454e3f8cfc4641d4", "reason": "individual-source-audit-lote-92" } }
+    },
+    {
+      "id": "MAN-410",
+      "question": "Em Larsson e Raven, o que origina a resistência viscosa de pressão de um casco?",
+      "options": [
+        { "key": "A", "text": "Somente as tensões tangenciais de atrito, sem participação das pressões normais ao casco." },
+        { "key": "B", "text": "A alteração do escoamento pela camada-limite, que reduz a recuperação de pressão na popa e impede o cancelamento das forças normais de pressão." },
+        { "key": "C", "text": "Exclusivamente a pressão hidrostática uniforme, que produz resultante longitudinal em qualquer casco." },
+        { "key": "D", "text": "A geração de ondas, independentemente da viscosidade e da camada-limite." },
+        { "key": "E", "text": "A ação do vento nas obras mortas, transferida para a superfície molhada." }
+      ],
+      "correct_answer": "B",
+      "explanation": "A camada-limite desloca as linhas de corrente e pode reduzir a pressão recuperada na região de popa, sobretudo com separação. As forças normais de pressão deixam então de se cancelar, surgindo a parcela denominada form effect on pressure ou resistência viscosa de pressão.",
+      "source": { "locator": "Chapter 4, § 4.1.2, pp. 13–16; Chapter 6, § 6.4.1, p. 59" },
+      "provenance": { "audit_restore": { "baseline_commit": "dcd6e5c845b341c2ac58e5fd454e3f8cfc4641d4", "reason": "individual-source-audit-lote-92" } }
+    },
+    {
+      "id": "MAN-411",
+      "question": "Na análise de similaridade apresentada por Larsson e Raven, qual condição é associada ao número de Reynolds?",
+      "options": [
+        { "key": "A", "text": "Manter Rn = UL/ν entre as escalas para reproduzir corretamente os efeitos viscosos; em ensaios usuais, essa condição não pode ser satisfeita ao mesmo tempo que a similaridade de Froude." },
+        { "key": "B", "text": "Manter apenas a razão entre velocidade e raiz de gL para reproduzir os efeitos viscosos." },
+        { "key": "C", "text": "Igualar exclusivamente a tensão superficial, pois a viscosidade não entra nas equações do escoamento." },
+        { "key": "D", "text": "Usar a mesma velocidade dimensional no modelo e no navio, independentemente da escala de comprimento." },
+        { "key": "E", "text": "Eliminar a camada-limite para que o número de Reynolds se torne o único parâmetro das ondas." }
+      ],
+      "correct_answer": "A",
+      "explanation": "O número de Reynolds, Rn = UL/ν, governa principalmente os efeitos viscosos. Como o modelo é menor, a velocidade requerida para igualar Reynolds conflita com a velocidade menor exigida pela igualdade do número de Froude; por isso os ensaios mantêm Froude e corrigem os principais efeitos de Reynolds.",
+      "source": { "locator": "Chapter 3, §§ 3.2–3.3.2, pp. 10–12" },
+      "provenance": { "audit_restore": { "baseline_commit": "dcd6e5c845b341c2ac58e5fd454e3f8cfc4641d4", "reason": "individual-source-audit-lote-92" } }
+    },
+    {
+      "id": "MAN-412",
+      "question": "Para que as ondas geradas por um modelo sejam corretamente escaladas em relação ao navio, qual requisito Larsson e Raven associam ao número de Froude?",
+      "options": [
+        { "key": "A", "text": "Igualar as velocidades dimensionais do modelo e do navio." },
+        { "key": "B", "text": "Manter constante apenas o produto entre viscosidade cinemática e comprimento." },
+        { "key": "C", "text": "Fazer o número de Froude variar inversamente com a escala, sem ajustar a velocidade." },
+        { "key": "D", "text": "Manter Fn = U/√(gL) igual nas duas escalas, preservando a relação entre inércia e gravidade na superfície livre." },
+        { "key": "E", "text": "Substituir a gravidade pela tensão superficial como força restauradora das ondas." }
+      ],
+      "correct_answer": "D",
+      "explanation": "A igualdade de Fn = U/√(gL) preserva a relação entre forças de inércia e gravidade. Como a gravidade é a força restauradora das ondas na superfície livre, a similaridade de Froude permite escalar o padrão de ondas e, com boa aproximação, sua resistência associada.",
+      "source": { "locator": "Chapter 3, §§ 3.2–3.3.2, pp. 10–12" },
+      "provenance": { "audit_restore": { "baseline_commit": "dcd6e5c845b341c2ac58e5fd454e3f8cfc4641d4", "reason": "individual-source-audit-lote-92" } }
+    },
+    {
+      "id": "MAN-413",
+      "question": "Por que o ensaio de resistência de um modelo não fornece diretamente, sem correções, todas as parcelas da resistência do navio em escala real?",
+      "options": [
+        { "key": "A", "text": "Porque, com o modelo geometricamente menor no mesmo fluido, não é possível satisfazer simultaneamente as similaridades de Froude e Reynolds; ensaia-se normalmente com Froude correto e corrige-se a parcela viscosa na extrapolação." },
+        { "key": "B", "text": "Porque a resistência do modelo é sempre nula quando o tanque tem largura suficiente." },
+        { "key": "C", "text": "Porque somente a massa do modelo pode ser medida, enquanto força e velocidade não podem." },
+        { "key": "D", "text": "Porque as ondas do modelo obedecem exclusivamente ao número de Reynolds." },
+        { "key": "E", "text": "Porque modelos de resistência são ensaiados sem água e sem superfície livre." }
+      ],
+      "correct_answer": "A",
+      "explanation": "A redução geométrica exige velocidades incompatíveis para igualar simultaneamente Froude e Reynolds. A prática conserva a similaridade de Froude para escalar as ondas e usa formulações dependentes de Reynolds para corrigir e extrapolar a resistência viscosa, conforme a decomposição aplicada aos ensaios de resistência.",
+      "source": { "locator": "Chapter 3, § 3.3.2, p. 12; Chapter 8, §§ 8.2–8.3, pp. 99–101" },
+      "active": false,
+      "status": "quarantined",
+      "quality": { "quarantine_reason": "preserved-inactive-after-individual-source-audit", "audit_stage": "individual-source-audit-lote-92" },
+      "provenance": { "audit_restore": { "baseline_commit": "dcd6e5c845b341c2ac58e5fd454e3f8cfc4641d4", "reason": "individual-source-audit-lote-92; content-corrected-without-reactivation" } }
+    }
+  ]
+}
