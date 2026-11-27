@@ -1,0 +1,604 @@
+{
+  "questions": [
+    {
+      "id": "MAN-414",
+      "question": "Segundo Lewis, qual efeito a rugosidade da superfície molhada pode produzir na resistência do navio?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Reduz necessariamente o atrito porque antecipa a transição para escoamento turbulento."
+        },
+        {
+          "key": "B",
+          "text": "Pode elevar a resistência friccional em relação a uma superfície hidrodinamicamente lisa, devendo ser considerada na correlação entre modelo e navio."
+        },
+        {
+          "key": "C",
+          "text": "Afeta somente a resistência de formação de ondas e não altera a camada-limite."
+        },
+        {
+          "key": "D",
+          "text": "Elimina a influência do número de Reynolds sobre a resistência viscosa."
+        },
+        {
+          "key": "E",
+          "text": "Produz apenas resistência aerodinâmica nas obras mortas."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Lewis trata a rugosidade na seção de resistência friccional e mostra que uma superfície real mais rugosa pode apresentar atrito superior ao de uma superfície lisa comparável. Por isso, a correlação modelo-navio inclui uma margem de correlação associada, entre outros fatores, à rugosidade do casco.",
+      "source": {
+        "locator": "Chapter V, § 3.2, pp. 17–20",
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "2nd Revision, 1988"
+      },
+      "tags": [
+        "rugosidade",
+        "atrito",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch5-s3"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch5-s3",
+        "topic_id": "I-pna-v2-ch5-s3-1-8-rugosidade",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v2::ch5-s3",
+          "number": "ch5-s3",
+          "title": "Chapter V – Resistance — Section 3: Frictional Resistance",
+          "label": "Chapter V – Resistance — Section 3: Frictional Resistance"
+        },
+        "section": "Chapter V – Resistance — Section 3: Frictional Resistance",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-pna-v2-ch5-s3-1-8-rugosidade",
+          "title": "Rugosidade"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "6a5e43fe9926b787f694bee3bfd4e6681ac92ed8",
+          "reason": "individual-source-audit-lote-93; source-and-taxonomy-reconciled-to-primary-evidence"
+        }
+      }
+    },
+    {
+      "id": "MAN-415",
+      "question": "Na estimativa da resistência de um navio, como Lewis caracteriza a contribuição dos apêndices?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apêndices como lemes, bolinas, eixos e pés-de-galinha acrescentam resistência ao casco nu e sua contribuição pode envolver interação com o escoamento do casco."
+        },
+        {
+          "key": "B",
+          "text": "Eles sempre reduzem a resistência total, qualquer que seja sua forma ou alinhamento."
+        },
+        {
+          "key": "C",
+          "text": "Apêndices submersos influenciam apenas a força do vento sobre as obras mortas."
+        },
+        {
+          "key": "D",
+          "text": "Sua resistência pode ser calculada como pressão hidrostática, sem depender do movimento."
+        },
+        {
+          "key": "E",
+          "text": "Não existe efeito de escala na avaliação experimental da resistência dos apêndices."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Lewis identifica lemes, bolinas, bossagens, eixos e suportes como apêndices que originam resistência adicional. O texto recomenda determinar essa contribuição por ensaios de modelo e discute a incerteza introduzida por interferência e efeitos de escala.",
+      "source": {
+        "locator": "Chapter V, § 5.4, pp. 44–51",
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "2nd Revision, 1988"
+      },
+      "tags": [
+        "apêndices",
+        "resistência",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch5-s5"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch5-s5",
+        "topic_id": "I-pna-v2-ch5-s5-1-9-apendices",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v2::ch5-s5",
+          "number": "ch5-s5",
+          "title": "Chapter V – Resistance — Section 5: Other Components of Resistance",
+          "label": "Chapter V – Resistance — Section 5: Other Components of Resistance"
+        },
+        "section": "Chapter V – Resistance — Section 5.4: Appendage Resistance",
+        "module": "1. Resistência do navio e métodos de obtenção",
+        "topic": {
+          "id": "I-pna-v2-ch5-s5-1-9-apendices",
+          "title": "Apêndices"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "6a5e43fe9926b787f694bee3bfd4e6681ac92ed8",
+          "reason": "individual-source-audit-lote-93; source-and-taxonomy-reconciled-to-primary-evidence"
+        }
+      }
+    },
+    {
+      "id": "MAN-416",
+      "question": "Um vento relativo forte incide sobre as obras mortas do navio. Qual relação apresentada por Crenshaw explica o crescimento da força aerodinâmica?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A pressão dinâmica independe da velocidade relativa do ar."
+        },
+        {
+          "key": "B",
+          "text": "A força do vento varia apenas com a profundidade do calado."
+        },
+        {
+          "key": "C",
+          "text": "A pressão dinâmica é proporcional à densidade do ar e ao quadrado da velocidade relativa."
+        },
+        {
+          "key": "D",
+          "text": "A velocidade do ar precisa ser igual à da água para produzir pressão dinâmica."
+        },
+        {
+          "key": "E",
+          "text": "A ação aerodinâmica ocorre somente sobre partes submersas."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Crenshaw aplica ao ar a mesma relação de pressão dinâmica usada para o escoamento da água: ela cresce com a densidade do fluido e com o quadrado da velocidade relativa. Embora o ar seja muito menos denso, ventos fortes podem produzir forças importantes sobre a estrutura emersa.",
+      "source": {
+        "locator": "Chapter 2 — Forces Affecting the Ship, p. 15"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "6a5e43fe9926b787f694bee3bfd4e6681ac92ed8",
+          "reason": "individual-source-audit-lote-93"
+        }
+      }
+    },
+    {
+      "id": "MAN-417",
+      "question": "Na teoria da quantidade de movimento apresentada por Bertram, como o propulsor produz empuxo?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Por pressão hidrostática uniforme, sem alterar a velocidade do escoamento."
+        },
+        {
+          "key": "B",
+          "text": "Como um disco atuador que cria um salto de pressão e acelera axialmente o escoamento; o empuxo corresponde à variação da quantidade de movimento."
+        },
+        {
+          "key": "C",
+          "text": "Sem reação do fluido, pois a força atua apenas internamente no eixo."
+        },
+        {
+          "key": "D",
+          "text": "Reduzindo a velocidade a jusante até ela se tornar nula."
+        },
+        {
+          "key": "E",
+          "text": "Somente por atrito tangencial entre o cubo e a água."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "No modelo de disco atuador, o propulsor cria uma diferença de pressão e acelera o escoamento no sentido axial. Bertram expressa o empuxo como a vazão de massa multiplicada pela diferença entre as velocidades a jusante e a montante, isto é, pela variação da quantidade de movimento.",
+      "source": {
+        "locator": "Chapter 2, § 2.3.2 — Momentum Theory, pp. 48–49"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "6a5e43fe9926b787f694bee3bfd4e6681ac92ed8",
+          "reason": "individual-source-audit-lote-93"
+        }
+      }
+    },
+    {
+      "id": "MAN-418",
+      "question": "Em um ensaio de hélice em água aberta, o que representa o coeficiente de avanço J definido por Bertram?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A razão entre torque e empuxo, sem envolver rotação."
+        },
+        {
+          "key": "B",
+          "text": "Uma medida exclusiva da intensidade de cavitação."
+        },
+        {
+          "key": "C",
+          "text": "Uma constante que independe da condição operacional."
+        },
+        {
+          "key": "D",
+          "text": "A razão J = Vₐ/(nD), relacionando velocidade média de entrada no propulsor, rotação e diâmetro."
+        },
+        {
+          "key": "E",
+          "text": "A razão entre massa do navio e área do disco do hélice."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Bertram define o coeficiente de avanço por J = Vₐ/(nD), em que Vₐ é a velocidade média de entrada no propulsor, n é a rotação e D é o diâmetro. Ele é a abscissa usual das curvas de desempenho em água aberta.",
+      "source": {
+        "locator": "Chapter 2, § 2.2 — Propeller Curves, p. 44"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "6a5e43fe9926b787f694bee3bfd4e6681ac92ed8",
+          "reason": "individual-source-audit-lote-93"
+        }
+      }
+    },
+    {
+      "id": "MAN-419",
+      "question": "Qual afirmação descreve corretamente os coeficientes de empuxo e torque usados por Bertram nas curvas de hélice?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Dependem apenas do calado do navio."
+        },
+        {
+          "key": "B",
+          "text": "Impedem a comparação de desempenho entre hélices geometricamente semelhantes."
+        },
+        {
+          "key": "C",
+          "text": "São grandezas adimensionais, com Kₜ = T/(ρn²D⁴) e Kq = Q/(ρn²D⁵), usadas para representar o desempenho em função de J."
+        },
+        {
+          "key": "D",
+          "text": "Eliminam a necessidade de conhecer empuxo, torque, rotação e diâmetro."
+        },
+        {
+          "key": "E",
+          "text": "Não podem ser empregados em ensaios de água aberta."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Bertram adimensionaliza o empuxo e o torque por meio de Kₜ e Kq e apresenta essas grandezas, juntamente com a eficiência, em função do coeficiente de avanço J. Essa forma permite comparar e utilizar curvas de desempenho sob condições dinamicamente semelhantes.",
+      "source": {
+        "locator": "Chapter 2, § 2.2 — Propeller Curves, pp. 44–45"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "6a5e43fe9926b787f694bee3bfd4e6681ac92ed8",
+          "reason": "individual-source-audit-lote-93"
+        }
+      }
+    },
+    {
+      "id": "MAN-420",
+      "question": "Por que a velocidade média de entrada no hélice pode diferir da velocidade do navio, segundo Lewis?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Porque a velocidade no disco é, por definição, sempre igual à velocidade do navio."
+        },
+        {
+          "key": "B",
+          "text": "Porque o casco produz uma esteira por efeitos viscosos, de pressão e de ondas, alterando o escoamento que chega ao propulsor."
+        },
+        {
+          "key": "C",
+          "text": "Porque a esteira existe somente quando o navio dá máquinas a ré."
+        },
+        {
+          "key": "D",
+          "text": "Porque o casco não interfere no campo de velocidades na popa."
+        },
+        {
+          "key": "E",
+          "text": "Porque a esteira é um fenômeno exclusivamente atmosférico."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O propulsor trabalha no campo de esteira criado pelo casco. Lewis identifica contribuições viscosas, de pressão e de ondas e define a fração de esteira a partir da diferença entre a velocidade do navio e a velocidade média de avanço efetiva no propulsor.",
+      "source": {
+        "locator": "Chapter VI, § 4.2, pp. 146–148"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "6a5e43fe9926b787f694bee3bfd4e6681ac92ed8",
+          "reason": "individual-source-audit-lote-93"
+        }
+      }
+    },
+    {
+      "id": "MAN-421",
+      "question": "Em relação à dedução de empuxo, qual consequência da interação casco-hélice é descrita por Lewis?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A operação do hélice não altera as pressões na popa."
+        },
+        {
+          "key": "B",
+          "text": "A resistência do casco rebocado e o empuxo requerido são sempre numericamente iguais."
+        },
+        {
+          "key": "C",
+          "text": "A dedução de empuxo aplica-se somente a navios a vela."
+        },
+        {
+          "key": "D",
+          "text": "A interação casco-hélice reduz sempre a zero o empuxo necessário."
+        },
+        {
+          "key": "E",
+          "text": "O hélice modifica o campo de pressões na popa, de modo que o empuxo requerido para autopropulsão excede a resistência medida no reboque do casco."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A sucção induzida pelo propulsor modifica as pressões na popa e reduz parte da contribuição favorável de pressão. Por isso, em autopropulsão, o empuxo T é maior que a resistência de reboque R do casco; Lewis expressa a diferença pela fração de dedução de empuxo.",
+      "source": {
+        "locator": "Chapter VI, § 4.5, pp. 151–153"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "6a5e43fe9926b787f694bee3bfd4e6681ac92ed8",
+          "reason": "individual-source-audit-lote-93"
+        }
+      }
+    },
+    {
+      "id": "MAN-422",
+      "question": "Qual condição física caracteriza o início da cavitação em um hélice?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Entrada de ar atmosférico, necessariamente, sem formação de vapor."
+        },
+        {
+          "key": "B",
+          "text": "Pressão local superior, sem limite, à pressão ambiente."
+        },
+        {
+          "key": "C",
+          "text": "Ausência total de escoamento relativo sobre as pás."
+        },
+        {
+          "key": "D",
+          "text": "Elevação da pressão local muito acima da pressão crítica."
+        },
+        {
+          "key": "E",
+          "text": "Queda da pressão local até valor próximo ou inferior à pressão de vapor da água, com formação de cavidades de vapor."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Lewis descreve a cavitação como consequência de quedas locais de pressão no escoamento sobre o propulsor. Quando a pressão se aproxima da pressão de vapor, formam-se cavidades que podem causar ruído, vibração, erosão e perda de desempenho.",
+      "source": {
+        "locator": "Chapter VI, § 7.1, pp. 171–173"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "6a5e43fe9926b787f694bee3bfd4e6681ac92ed8",
+          "reason": "individual-source-audit-lote-93"
+        }
+      }
+    },
+    {
+      "id": "MAN-423",
+      "question": "Qual característica operacional distingue uma hélice de passo controlável segundo Lewis?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O diâmetro das pás varia durante a operação."
+        },
+        {
+          "key": "B",
+          "text": "O eixo precisa inverter o sentido de rotação para toda reversão de empuxo."
+        },
+        {
+          "key": "C",
+          "text": "As pás têm passo geometricamente fixo em qualquer condição."
+        },
+        {
+          "key": "D",
+          "text": "O mecanismo altera apenas a rotação, nunca a orientação das pás."
+        },
+        {
+          "key": "E",
+          "text": "O mecanismo do cubo permite alterar e até reverter o passo das pás com o hélice em funcionamento, sem exigir a reversão do eixo."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Em uma hélice de passo controlável, cada pá é montada no cubo de modo que seu passo possa ser modificado e até invertido durante a rotação. Isso permite variar ou reverter rapidamente o empuxo, inclusive com uma máquina motriz não reversível.",
+      "source": {
+        "locator": "Chapter VI, § 10.6, pp. 239–240"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "6a5e43fe9926b787f694bee3bfd4e6681ac92ed8",
+          "reason": "individual-source-audit-lote-93"
+        }
+      }
+    },
+    {
+      "id": "MAN-424",
+      "question": "Qual é o princípio de recuperação de energia dos propulsores contra-rotativos descrito por Lewis?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Dois hélices coaxiais giram no mesmo sentido para ampliar a rotação residual da esteira."
+        },
+        {
+          "key": "B",
+          "text": "Dois hélices coaxiais giram em sentidos opostos, permitindo que o segundo recupere parte da energia rotacional deixada pelo primeiro."
+        },
+        {
+          "key": "C",
+          "text": "Um único hélice elimina todo empuxo axial ao inverter alternadamente a rotação."
+        },
+        {
+          "key": "D",
+          "text": "Os dois rotores funcionam sem interação hidrodinâmica."
+        },
+        {
+          "key": "E",
+          "text": "O segundo hélice opera fora da esteira do primeiro e tem, obrigatoriamente, o mesmo diâmetro."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Lewis explica que hélices em tandem girando no mesmo sentido aumentam a energia rotacional residual. A configuração contra-rotativa emprega eixos coaxiais de sentidos opostos para recuperar parte dessa energia; idealmente, restaria pouca rotação na esteira após o segundo hélice.",
+      "source": {
+        "locator": "Chapter VI, § 10.7, pp. 240–242"
+      },
+      "active": false,
+      "status": "quarantined",
+      "quality": {
+        "quarantine_reason": "preserved-inactive-after-individual-source-audit",
+        "audit_stage": "individual-source-audit-lote-93"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "6a5e43fe9926b787f694bee3bfd4e6681ac92ed8",
+          "reason": "individual-source-audit-lote-93; content-corrected-without-reactivation"
+        }
+      }
+    },
+    {
+      "id": "MAN-425",
+      "question": "Como um propulsor cicloidal de eixo vertical controla a direção do empuxo?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Usando pás fixas alinhadas a um eixo longitudinal convencional."
+        },
+        {
+          "key": "B",
+          "text": "Produzindo apenas empuxo para vante, sem capacidade de governo."
+        },
+        {
+          "key": "C",
+          "text": "Mantendo constante a orientação das pás durante toda a rotação."
+        },
+        {
+          "key": "D",
+          "text": "Dependendo exclusivamente da inversão do motor para mudar a direção da força."
+        },
+        {
+          "key": "E",
+          "text": "Variando ciclicamente o passo ou a orientação das pás durante a rotação, de modo a produzir uma resultante de empuxo vetorada."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Nos propulsores cicloidais, as pás percorrem trajetórias em torno de um eixo vertical e sua incidência é comandada ao longo de cada volta. A variação cíclica permite orientar rapidamente a resultante, característica útil para governo e manobra a baixa velocidade.",
+      "source": {
+        "locator": "Chapter VI, § 10.5 — Vertical-Axis Propellers, pp. 237–239"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "6a5e43fe9926b787f694bee3bfd4e6681ac92ed8",
+          "reason": "individual-source-audit-lote-93"
+        }
+      }
+    },
+    {
+      "id": "MAN-426",
+      "question": "Na propulsão por jato descrita por Lewis, de onde provém o empuxo?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Da energia das ondas externas, sem captação de água."
+        },
+        {
+          "key": "B",
+          "text": "Da aceleração de uma vazão de água captada e descarregada a ré em maior velocidade, produzindo reação sobre o navio."
+        },
+        {
+          "key": "C",
+          "text": "Do peso estático da água armazenada dentro do casco."
+        },
+        {
+          "key": "D",
+          "text": "De um escoamento que atravessa o sistema sem variação de quantidade de movimento."
+        },
+        {
+          "key": "E",
+          "text": "Somente do atrito entre a água e a parte externa do casco."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O sistema usual capta água externa por uma bomba ou impulsor, aumenta sua velocidade e a descarrega a ré. A variação da quantidade de movimento da água produz a força de reação que impulsiona o navio.",
+      "source": {
+        "locator": "Chapter VI, § 10.2 — Jet Propulsion, pp. 234–237"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "6a5e43fe9926b787f694bee3bfd4e6681ac92ed8",
+          "reason": "individual-source-audit-lote-93"
+        }
+      }
+    },
+    {
+      "id": "MAN-427",
+      "question": "De quais grandezas depende a força hidrodinâmica desenvolvida por um leme, no regime considerado por Lewis?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Somente da pressão hidrostática, ainda que não exista escoamento relativo."
+        },
+        {
+          "key": "B",
+          "text": "Exclusivamente da massa do navio, sem relação com a geometria do leme."
+        },
+        {
+          "key": "C",
+          "text": "De uma força constante, independente da velocidade e do ângulo de ataque."
+        },
+        {
+          "key": "D",
+          "text": "Somente da rotação do eixo propulsor, mesmo quando o leme está fora de sua esteira."
+        },
+        {
+          "key": "E",
+          "text": "Do escoamento relativo, da área e configuração da superfície e do ângulo de ataque, que determinam seus coeficientes de força dentro dos limites de estol e cavitação."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Lewis apresenta as forças do leme em forma adimensional, escaladas pela pressão dinâmica e pela área da superfície. A sustentação e o arrasto variam com o ângulo de ataque, a velocidade e a configuração do leme, sujeitos a limitações como separação, estol, cavitação e aeração.",
+      "source": {
+        "locator": "Chapter IX, §§ 14.1–14.3, pp. 300–304"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "6a5e43fe9926b787f694bee3bfd4e6681ac92ed8",
+          "reason": "individual-source-audit-lote-93"
+        }
+      }
+    }
+  ]
+}
