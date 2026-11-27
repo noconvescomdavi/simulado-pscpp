@@ -67,9 +67,10 @@
     "Rodada 25: main #285/#286, 30 registros dos lotes 27 e 28 triados A–E/gabarito, 8 atribuídos a Santos, total 52 Santos recentes pendentes; 0 homologados; sem cotejo primário, reconciliação global, CI ou Vercel.",
     "25/11: cotejo conceitual 12 MEO (Lobo/Soares), 6 pares de duplicatas, 12 propostas editoriais documentadas. Homologações/correções aplicadas continuam zero.",
     "26/11: segunda passagem textual 12 questões MEO-0007–0018, 60 opções comentadas e 6 pares duplicados; fonte Lobo/Soares cap IX p 297–301. Sem homologação, fonte visual ou reconciliação canônica; sem edições de bancos.",
-    "Rodada 26/11: 12 IDs confirmados no overlay e 6 pares de duplicação; consumidor substitui somente IDs canônicos. Banco canônico inacessível via leitura do conector; diagnóstico ID/hash versionado mas não executado. 0 homologações."
+    "Rodada 26/11: 12 IDs confirmados no overlay e 6 pares de duplicação; consumidor substitui somente IDs canônicos. Banco canônico inacessível via leitura do conector; diagnóstico ID/hash versionado mas não executado. 0 homologações.",
+    "Rodada 26/11: recuperado banco canônico MEO completo (1353 registros) via GitHub contents; 150/150 IDs presentes na restauração MEO-01 mas todos substituem conteúdo diferente, com risco de perda semântica. Propostas anteriores MEO-0007..0018 não aplicar sem preservar origem/escopo canônico."
   ],
-  "next_stage": "Executar scripts/audit-pscpp-lobo-mares-origin.mjs no checkout completo para confirmar origem dos 12 IDs, verificar PDF visualmente, implementar correções somente após confirmação, rodar CI; continuar nove fontes.",
+  "next_stage": "Auditar uma a uma as substituições MEO-01 (150) com obra primária e histórico do aluno; confirmar efeito no runtime; não aplicar as 12 propostas de marés antes de resolver mudanças de tema/ID. Iniciar cotejo independente das demais oito fontes.",
   "checkpoint_index": 25,
   "updated_at": "2026-11-26",
   "baseline_sha": "7a6d1930dec380d669d30131ca4acb4c802ad091",
@@ -1132,5 +1133,17 @@
     "script": "scripts/audit-pscpp-lobo-mares-origin.mjs",
     "script_run": false,
     "report": "docs/auditoria-nove-fontes-20261121/RECONCILIACAO_ORIGEM_LOBO_001.json"
+  },
+  "last_canonical_reconciliation": {
+    "date": "2026-11-26",
+    "main_sha": "07abec6f74411a1a49fe55dab920bdcf5b96d090",
+    "restoration_blob_sha": "8cfeaba355d7a8ef85b22a37c5ebd0b823094678",
+    "ids_located": 150,
+    "content_replacements": 150,
+    "topic_changed": 138,
+    "module_changed": 138,
+    "gabarito_letter_changed": 27,
+    "report": "docs/auditoria-nove-fontes-20261121/RECONCILIACAO_MEO_CANONICO_001.json",
+    "status": "ANALISE_ESTATICA_CONCLUIDA_SEM_HOMOLOGACAO"
   }
 }
