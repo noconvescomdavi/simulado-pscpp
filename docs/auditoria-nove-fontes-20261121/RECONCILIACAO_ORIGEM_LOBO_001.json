@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-26",
+  "main_sha": "07abec6f74411a1a49fe55dab920bdcf5b96d090",
+  "restoration_sha": "8cfeaba355d7a8ef85b22a37c5ebd0b823094678",
+  "consumer_sha": "3a6ef6f9957eb84da2ee91403a3e7542570529f6",
+  "ids": [
+    "MEO-0007",
+    "MEO-0008",
+    "MEO-0009",
+    "MEO-0010",
+    "MEO-0011",
+    "MEO-0012",
+    "MEO-0013",
+    "MEO-0014",
+    "MEO-0015",
+    "MEO-0016",
+    "MEO-0017",
+    "MEO-0018"
+  ],
+  "pairs": [
+    [
+      "MEO-0007",
+      "MEO-0013"
+    ],
+    [
+      "MEO-0008",
+      "MEO-0014"
+    ],
+    [
+      "MEO-0009",
+      "MEO-0015"
+    ],
+    [
+      "MEO-0010",
+      "MEO-0016"
+    ],
+    [
+      "MEO-0011",
+      "MEO-0017"
+    ],
+    [
+      "MEO-0012",
+      "MEO-0018"
+    ]
+  ],
+  "restoration_ids_present": 12,
+  "duplicated_pairs": 6,
+  "canonical_content_available": false,
+  "origin_confirmed": 0,
+  "script_path": "scripts/audit-pscpp-lobo-mares-origin.mjs",
+  "script_committed": true,
+  "script_executed": false,
+  "tests_run": [
+    "parsed restoration JSON",
+    "verified 12 stable IDs",
+    "verified six repeated correct answer texts",
+    "inspected applyQuestionRestorations precedence"
+  ],
+  "tests_pending": [
+    "check canonical ID existence",
+    "run source provenance diagnostic",
+    "visual PDF verification",
+    "npm integration and CI"
+  ],
+  "edits_applied": 0,
+  "homologated": 0,
+  "merge_allowed": false
+}
