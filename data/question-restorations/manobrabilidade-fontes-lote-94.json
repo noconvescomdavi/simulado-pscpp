@@ -1,0 +1,522 @@
+{
+  "questions": [
+    {
+      "id": "MAN-428",
+      "question": "Segundo Lewis, por que a força transversal produzida por um leme instalado na popa gera um momento de guinada sobre o navio?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Porque a força do leme atua necessariamente no centro de gravidade e, portanto, sem braço."
+        },
+        {
+          "key": "B",
+          "text": "Porque somente a componente longitudinal da força pode produzir rotação no plano horizontal."
+        },
+        {
+          "key": "C",
+          "text": "Porque o momento independe da posição em que a força é aplicada."
+        },
+        {
+          "key": "D",
+          "text": "Porque a força transversal do leme anula todas as forças hidrodinâmicas do casco."
+        },
+        {
+          "key": "E",
+          "text": "Porque a força atua afastada do centro de referência do navio, e seu braço longitudinal produz o momento que inicia a rotação."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Lewis explica que a superfície de controle desenvolve uma força devido à sua orientação e ao movimento relativo na água. Aplicada na popa, essa força possui braço em relação ao centro de referência e cria o momento que faz o navio girar; as forças subsequentes do casco passam então a participar da manobra.",
+      "source": {
+        "locator": "Chapter IX, § 14.1 — Geometry, Forces, and Moments, pp. 300–302"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0fc8a6c15fb1ce0a4550a5e2e4705a6d2c487ec7",
+          "reason": "individual-source-audit-lote-94"
+        }
+      }
+    },
+    {
+      "id": "MAN-429",
+      "question": "Ao comparar lemes de mesma área e perfil, qual efeito hidrodinâmico Lewis atribui à redução da razão de aspecto?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Elimina o escoamento tridimensional e torna a sustentação independente do ângulo de ataque."
+        },
+        {
+          "key": "B",
+          "text": "Altera apenas a espessura da pintura, sem efeito sobre a força normal."
+        },
+        {
+          "key": "C",
+          "text": "Faz todos os lemes produzirem a mesma sustentação por unidade de área."
+        },
+        {
+          "key": "D",
+          "text": "Intensifica o escoamento transversal pelas extremidades e reduz a sustentação gerada para um mesmo ângulo de ataque."
+        },
+        {
+          "key": "E",
+          "text": "Transforma a superfície finita em uma asa de razão de aspecto infinita."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Em uma superfície de razão de aspecto finita há escoamento transversal da face de alta para a de baixa pressão nas extremidades. Lewis registra que esse efeito tridimensional aumenta quando o vão diminui e reduz a sustentação do leme para o mesmo ângulo de ataque.",
+      "source": {
+        "locator": "Chapter IX, § 14.4 — Effect of Aspect Ratio, pp. 307–311"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0fc8a6c15fb1ce0a4550a5e2e4705a6d2c487ec7",
+          "reason": "individual-source-audit-lote-94"
+        }
+      }
+    },
+    {
+      "id": "MAN-430",
+      "question": "Qual vantagem de governo resulta de posicionar o leme na esteira acelerada do hélice?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A velocidade sobre o leme torna-se sempre igual a zero quando o hélice produz empuxo."
+        },
+        {
+          "key": "B",
+          "text": "A força do leme passa a depender apenas da pressão hidrostática."
+        },
+        {
+          "key": "C",
+          "text": "O leme deixa de sofrer qualquer efeito da rotação ou do carregamento do propulsor."
+        },
+        {
+          "key": "D",
+          "text": "A esteira do hélice atua somente fora d'água e não alcança a superfície de controle."
+        },
+        {
+          "key": "E",
+          "text": "A maior velocidade local do escoamento eleva a pressão dinâmica e pode aumentar a força disponível no leme, inclusive com pouca velocidade do navio."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Lewis mostra que a velocidade aumentada na esteira do hélice eleva o escoamento incidente no leme. Como a força da superfície depende da pressão dinâmica, um leme colocado nessa região pode conservar autoridade de governo que não existiria com a mesma intensidade no escoamento livre.",
+      "source": {
+        "locator": "Chapter IX, §§ 14.3 and 17.3, pp. 304–307, 375–376"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0fc8a6c15fb1ce0a4550a5e2e4705a6d2c487ec7",
+          "reason": "individual-source-audit-lote-94"
+        }
+      }
+    },
+    {
+      "id": "MAN-431",
+      "question": "Durante uma manobra de atracação, o navio quase não tem seguimento, mas mantém o hélice trabalhando avante. Qual comportamento Bertram descreve para um leme convencional situado na esteira do hélice?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O leme torna-se ineficaz porque nenhum escoamento propulsivo pode existir com o navio parado."
+        },
+        {
+          "key": "B",
+          "text": "Sua força cresce ilimitadamente quando a velocidade do navio tende a zero, independentemente da rotação."
+        },
+        {
+          "key": "C",
+          "text": "O trabalho do hélice elimina a necessidade de aplicar ângulo de leme."
+        },
+        {
+          "key": "D",
+          "text": "A força do leme aumenta quando a pressão dinâmica sobre ele diminui."
+        },
+        {
+          "key": "E",
+          "text": "Ele ainda pode desenvolver força graças ao escoamento do hélice; fora dessa esteira, um leme é ineficaz a velocidade pequena ou nula."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Bertram distingue a velocidade do navio da velocidade local no leme. Em baixa velocidade, um leme fora da esteira tem pouca autoridade, enquanto o propulsor pode manter escoamento sobre um leme colocado em sua esteira. O próprio texto adverte que, durante a parada, essa condição pode mudar e o leme na esteira tornar-se ineficaz.",
+      "source": {
+        "locator": "Chapter 6 — Ship Manoeuvering, ‘Rudders’, pp. 270–272"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0fc8a6c15fb1ce0a4550a5e2e4705a6d2c487ec7",
+          "reason": "individual-source-audit-lote-94"
+        }
+      }
+    },
+    {
+      "id": "MAN-432",
+      "question": "Como a Resolução IMO MSC.137(76) define a execução da manobra de curva de giro?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Como uma parada de emergência com máquinas a ré e leme a meio."
+        },
+        {
+          "key": "B",
+          "text": "Como um ensaio sem alteração de rumo, destinado apenas a medir resistência."
+        },
+        {
+          "key": "C",
+          "text": "Como uma guinada feita uma única vez, sem repetição para o bordo oposto."
+        },
+        {
+          "key": "D",
+          "text": "Como a manobra realizada para boreste e bombordo com 35° de leme, ou o máximo permitido na velocidade de teste, após aproximação estável com taxa de guinada nula."
+        },
+        {
+          "key": "E",
+          "text": "Como um movimento exclusivamente transversal, iniciado com o navio parado."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A MSC.137(76) exige a curva de giro para ambos os bordos. A ordem é dada após uma aproximação estável, com taxa de guinada nula, usando 35° de leme ou o maior ângulo permitido na velocidade de teste.",
+      "source": {
+        "locator": "Annex, § 4.2.2, p. 4"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0fc8a6c15fb1ce0a4550a5e2e4705a6d2c487ec7",
+          "reason": "individual-source-audit-lote-94"
+        }
+      }
+    },
+    {
+      "id": "MAN-433",
+      "question": "Na curva de giro padronizada pela IMO, o que se mede como avanço (advance)?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O diâmetro físico do propulsor medido antes da prova."
+        },
+        {
+          "key": "B",
+          "text": "A distância transversal quando o rumo muda 180°."
+        },
+        {
+          "key": "C",
+          "text": "O tempo decorrido entre a partida do motor e a primeira ordem de leme."
+        },
+        {
+          "key": "D",
+          "text": "A distância, na direção do rumo inicial, percorrida pelo ponto a meia-nau desde a ordem de leme até a mudança de rumo de 90°."
+        },
+        {
+          "key": "E",
+          "text": "A maior distância lateral atingida em qualquer instante da curva."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A definição oficial usa como referência o ponto a meia-nau. O avanço é sua distância projetada na direção do rumo original entre a posição da ordem de leme e a posição em que a proa já alterou 90°.",
+      "source": {
+        "locator": "Annex, § 4.2.3, p. 4"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0fc8a6c15fb1ce0a4550a5e2e4705a6d2c487ec7",
+          "reason": "individual-source-audit-lote-94"
+        }
+      }
+    },
+    {
+      "id": "MAN-434",
+      "question": "Qual definição de diâmetro tático consta da Resolução IMO MSC.137(76)?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O diâmetro geométrico do leme medido na madre."
+        },
+        {
+          "key": "B",
+          "text": "A distância vertical entre a quilha e o centro de giro."
+        },
+        {
+          "key": "C",
+          "text": "A distância longitudinal de parada após a ordem de máquinas a ré."
+        },
+        {
+          "key": "D",
+          "text": "O raio instantâneo medido quando a proa altera 90°."
+        },
+        {
+          "key": "E",
+          "text": "A distância, perpendicular ao rumo inicial, entre a posição da ordem de leme e a posição do ponto a meia-nau quando a proa altera 180°."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A IMO define o diâmetro tático pela trajetória do ponto a meia-nau: mede-se perpendicularmente ao rumo original, desde a posição em que se deu a ordem de leme até a posição correspondente a 180° de mudança de rumo.",
+      "source": {
+        "locator": "Annex, § 4.2.4, p. 4"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0fc8a6c15fb1ce0a4550a5e2e4705a6d2c487ec7",
+          "reason": "individual-source-audit-lote-94"
+        }
+      }
+    },
+    {
+      "id": "MAN-435",
+      "question": "O que caracteriza o ensaio de zigue-zague segundo a Resolução IMO MSC.137(76)?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O leme é mantido no mesmo bordo até completar uma curva de 360°."
+        },
+        {
+          "key": "B",
+          "text": "A prova mede apenas a resistência longitudinal do casco."
+        },
+        {
+          "key": "C",
+          "text": "O leme permanece a meio após a primeira alteração de rumo."
+        },
+        {
+          "key": "D",
+          "text": "A manobra começa com o navio parado e máquinas paradas."
+        },
+        {
+          "key": "E",
+          "text": "Aplica-se alternadamente uma quantidade conhecida de leme para cada bordo quando se alcança uma alteração de rumo previamente definida."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "No zigue-zague, o leme é alternado de um bordo para o outro nos ângulos de execução estabelecidos. No ensaio 10°/10°, por exemplo, aplicam-se 10° de leme e ele é revertido cada vez que o rumo atinge 10° em relação ao rumo de referência pertinente.",
+      "source": {
+        "locator": "Annex, §§ 4.2.5–4.2.6, pp. 4–5"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0fc8a6c15fb1ce0a4550a5e2e4705a6d2c487ec7",
+          "reason": "individual-source-audit-lote-94"
+        }
+      }
+    },
+    {
+      "id": "MAN-436",
+      "question": "No ensaio 10°/10° de zigue-zague, o que representa o primeiro ângulo de overshoot?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A alteração adicional do rumo que ocorre após a segunda ordem de inversão do leme."
+        },
+        {
+          "key": "B",
+          "text": "A velocidade longitudinal adquirida durante a primeira execução."
+        },
+        {
+          "key": "C",
+          "text": "Um ângulo nulo por definição, pois o rumo para de variar no instante da inversão."
+        },
+        {
+          "key": "D",
+          "text": "O ângulo geométrico das pás do hélice durante a prova."
+        },
+        {
+          "key": "E",
+          "text": "A inclinação transversal máxima do navio na curva de giro."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A IMO define o primeiro overshoot como a alteração adicional de rumo observada depois da segunda execução, isto é, depois que o leme é invertido pela primeira vez no zigue-zague. Ele quantifica quanto a proa continua ultrapassando o rumo de execução apesar da reversão do leme.",
+      "source": {
+        "locator": "Annex, § 4.2.7, p. 5"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0fc8a6c15fb1ce0a4550a5e2e4705a6d2c487ec7",
+          "reason": "individual-source-audit-lote-94"
+        }
+      }
+    },
+    {
+      "id": "MAN-437",
+      "question": "Na análise linear de Lewis, qual comportamento identifica um navio com estabilidade em linha reta e controles fixos?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Uma oscilação transversal que cresce indefinidamente após qualquer perturbação."
+        },
+        {
+          "key": "B",
+          "text": "As componentes de velocidade lateral e de guinada decaem com o tempo, e a trajetória tende a assumir uma nova direção retilínea."
+        },
+        {
+          "key": "C",
+          "text": "A manutenção obrigatória da mesma posição transversal sobre a superfície da Terra."
+        },
+        {
+          "key": "D",
+          "text": "A impossibilidade de alterar o rumo mesmo com aplicação de leme."
+        },
+        {
+          "key": "E",
+          "text": "A igualdade entre estabilidade transversal estática e estabilidade direcional."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Lewis obtém duas raízes de estabilidade para o movimento linearizado. Quando ambas são negativas, a velocidade lateral e a taxa de guinada tendem a zero com o tempo, de modo que o navio termina seguindo uma nova linha reta; esse é o sentido de estabilidade em linha reta com os controles fixos.",
+      "source": {
+        "locator": "Chapter IX, §§ 4.1–4.2, pp. 208–211"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0fc8a6c15fb1ce0a4550a5e2e4705a6d2c487ec7",
+          "reason": "individual-source-audit-lote-94"
+        }
+      }
+    },
+    {
+      "id": "MAN-438",
+      "question": "Que informação sobre estabilidade direcional é obtida no ensaio de espiral direta de Dieudonné descrito por Lewis?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Somente a distância de parada com máquinas a ré."
+        },
+        {
+          "key": "B",
+          "text": "A relação entre ângulo de leme e taxa de guinada estabilizada; uma alça de histerese indica instabilidade em linha reta com controles fixos."
+        },
+        {
+          "key": "C",
+          "text": "A curva de sustentação do hélice em água aberta."
+        },
+        {
+          "key": "D",
+          "text": "A resistência de formação de ondas em função do número de Froude."
+        },
+        {
+          "key": "E",
+          "text": "A perda de velocidade numa curva de 360°, sem considerar taxa de guinada."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "No ensaio direto, cada ângulo de leme é mantido até a taxa de guinada se estabilizar. O gráfico dessas taxas em função do leme revela as características de estabilidade: uma curva única corresponde ao comportamento estável; duas ramificações formando histerese caracterizam instabilidade.",
+      "source": {
+        "locator": "Chapter IX, § 4.3 — The Dieudonné Spiral Maneuver, pp. 211–213"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0fc8a6c15fb1ce0a4550a5e2e4705a6d2c487ec7",
+          "reason": "individual-source-audit-lote-94"
+        }
+      }
+    },
+    {
+      "id": "MAN-439",
+      "question": "Qual definição de parada é adotada por Lewis ao tratar das mudanças de velocidade do navio?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A manutenção da velocidade com empuxo igual à resistência."
+        },
+        {
+          "key": "B",
+          "text": "A execução de uma curva completa com leme constante."
+        },
+        {
+          "key": "C",
+          "text": "A desaceleração a partir de uma velocidade avante determinada até o navio ficar em repouso."
+        },
+        {
+          "key": "D",
+          "text": "A aceleração a partir do repouso até uma velocidade a ré."
+        },
+        {
+          "key": "E",
+          "text": "A redução momentânea de rotação sem alteração da velocidade do navio."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Lewis distingue aceleração, parada, coasting e movimento a ré. Parar significa desacelerar desde uma velocidade avante dada até o repouso; a avaliação pode considerar, entre outras condições, a parada de emergência a partir da velocidade de mar e a parada a partir da velocidade de porto.",
+      "source": {
+        "locator": "Chapter IX, § 10.1 — Introduction, p. 260"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0fc8a6c15fb1ce0a4550a5e2e4705a6d2c487ec7",
+          "reason": "individual-source-audit-lote-94"
+        }
+      }
+    },
+    {
+      "id": "MAN-440",
+      "question": "Na formulação de Lewis para a aceleração avante, de que depende a aceleração instantânea do navio?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Da força aceleradora — empuxo líquido menos resistência — dividida pela massa efetiva, que inclui a massa adicionada longitudinal."
+        },
+        {
+          "key": "B",
+          "text": "Somente da rotação do eixo, independentemente do empuxo e da resistência."
+        },
+        {
+          "key": "C",
+          "text": "De massa efetiva nula, pois a água não participa do movimento longitudinal."
+        },
+        {
+          "key": "D",
+          "text": "Apenas da resistência do casco, mesmo quando não há empuxo."
+        },
+        {
+          "key": "E",
+          "text": "De uma mudança instantânea de velocidade, sem integração no tempo."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Lewis define a força aceleradora, em cada velocidade, como a diferença entre o empuxo líquido disponível e a resistência do navio. A aceleração resulta dessa força aplicada à massa efetiva do sistema, formada pela massa do navio mais a massa adicionada na direção longitudinal.",
+      "source": {
+        "locator": "Chapter IX, § 10.2 — Acceleration Times, Distances, and Velocities, pp. 260–263"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0fc8a6c15fb1ce0a4550a5e2e4705a6d2c487ec7",
+          "reason": "individual-source-audit-lote-94"
+        }
+      }
+    },
+    {
+      "id": "MAN-441",
+      "question": "Como Lewis define a manobra de backing (movimento a ré) no estudo de controlabilidade?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Como a aceleração do navio, a partir do repouso, até uma velocidade ou distância determinada a ré."
+        },
+        {
+          "key": "B",
+          "text": "Como a continuação do movimento avante com o propulsor em passo neutro."
+        },
+        {
+          "key": "C",
+          "text": "Como uma parada que termina obrigatoriamente sem qualquer movimento transversal."
+        },
+        {
+          "key": "D",
+          "text": "Como uma curva de giro avante executada com leme a meio."
+        },
+        {
+          "key": "E",
+          "text": "Como um movimento hidrodinamicamente idêntico à aceleração avante, sem influência da rotação do propulsor."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Lewis separa backing de stopping: backing é acelerar desde o repouso até uma condição a ré especificada. O texto também observa que, em navios de um hélice ou hélices de mesma rotação, forças laterais do propulsor podem desviar a popa, razão pela qual o movimento não deve ser tratado como simples espelho da aceleração avante.",
+      "source": {
+        "locator": "Chapter IX, §§ 10.1 and 10.9, pp. 260, 271–272"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0fc8a6c15fb1ce0a4550a5e2e4705a6d2c487ec7",
+          "reason": "individual-source-audit-lote-94"
+        }
+      }
+    }
+  ]
+}
