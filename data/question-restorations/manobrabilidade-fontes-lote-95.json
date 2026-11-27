@@ -1,0 +1,560 @@
+{
+  "questions": [
+    {
+      "id": "MAN-442",
+      "question": "Em quais condições de referência a Resolução IMO MSC.137(76) determina que as manobras de prova sejam realizadas para avaliar o desempenho do navio?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Somente em lastro, com trim livre e auxílio obrigatório de rebocadores."
+        },
+        {
+          "key": "B",
+          "text": "Em qualquer profundidade, desde que a velocidade sobre o fundo permaneça constante."
+        },
+        {
+          "key": "C",
+          "text": "Apenas para boreste, porque os resultados para bombordo são inferidos por simetria."
+        },
+        {
+          "key": "D",
+          "text": "Em mar agitado e vento forte, para representar a condição operacional mais severa."
+        },
+        {
+          "key": "E",
+          "text": "Para ambos os bordos, em águas profundas e irrestritas, ambiente calmo, plena carga e quilha paralela, após aproximação estável na velocidade de teste."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A seção 5.2 da MSC.137(76) fixa as condições que tornam os resultados comparáveis: provas para bombordo e boreste, águas profundas e irrestritas, ambiente calmo, plena carga no calado de verão, quilha paralela e aproximação estável na velocidade de teste.",
+      "source": {
+        "locator": "Annex, § 5.2, p. 5"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "209432d5284b41b1b66c3c1ccf7e5585690a92d2",
+          "reason": "individual-source-audit-lote-95"
+        }
+      }
+    },
+    {
+      "id": "MAN-443",
+      "question": "Qual conjunto de limites corresponde aos critérios de capacidade de giro e de parada da Resolução IMO MSC.137(76)?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Avanço máximo de 5L, diâmetro tático de 4,5L e alcance de parada de 10L em todos os casos."
+        },
+        {
+          "key": "B",
+          "text": "Avanço máximo de 2,5L e diâmetro tático de 15L, sem limite para a parada."
+        },
+        {
+          "key": "C",
+          "text": "Somente o tempo de giro é limitado; avanço, diâmetro tático e parada não são critérios."
+        },
+        {
+          "key": "D",
+          "text": "O alcance de parada deve ser sempre inferior a 5L, independentemente do deslocamento."
+        },
+        {
+          "key": "E",
+          "text": "Avanço não superior a 4,5L, diâmetro tático não superior a 5L e alcance de parada a toda força a ré normalmente não superior a 15L."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A IMO considera satisfatória a capacidade de giro quando o avanço não excede 4,5 comprimentos e o diâmetro tático não excede 5 comprimentos. Para a parada a toda força a ré, o alcance ao longo da trajetória não deve normalmente exceder 15L; a Administração pode admitir ajuste para navios de grande deslocamento, nunca acima de 20L.",
+      "source": {
+        "locator": "Annex, § 5.3.1 and § 5.3.4, pp. 5–6"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "209432d5284b41b1b66c3c1ccf7e5585690a92d2",
+          "reason": "individual-source-audit-lote-95"
+        }
+      }
+    },
+    {
+      "id": "MAN-444",
+      "question": "Por que um vento moderado pode dificultar especialmente o governo de um navio que avança em baixa velocidade, segundo Lewis?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Porque a área emersa deixa de produzir qualquer força aerodinâmica quando o navio reduz a velocidade."
+        },
+        {
+          "key": "B",
+          "text": "Porque o vento passa a atuar somente na direção vertical."
+        },
+        {
+          "key": "C",
+          "text": "Porque o momento aerodinâmico desaparece quando o centro da área vélica fica afastado do LCG."
+        },
+        {
+          "key": "D",
+          "text": "Porque cresce a importância relativa do vento frente às forças hidrodinâmicas de controle, sobretudo em navios com grande área emersa e braço aerodinâmico."
+        },
+        {
+          "key": "E",
+          "text": "Porque a redução de velocidade aumenta ilimitadamente a força do leme, tornando o vento dominante apenas por excesso de controle."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Lewis observa que o efeito do vento se torna apreciável quando a razão entre a velocidade do vento e a do navio é grande. Em baixo seguimento, a autoridade hidrodinâmica diminui, enquanto forças e momentos de vento continuam relacionados à área acima d'água, ao braço em relação ao LCG e aos coeficientes aerodinâmicos.",
+      "source": {
+        "locator": "Chapter IX, § 12.2 — Dynamic Behavior in Wind, pp. 268–271"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "209432d5284b41b1b66c3c1ccf7e5585690a92d2",
+          "reason": "individual-source-audit-lote-95"
+        }
+      }
+    },
+    {
+      "id": "MAN-445",
+      "question": "Um navio atravessa uma corrente horizontal uniforme em mar aberto. Qual tratamento é coerente com Lewis para analisar sua controlabilidade?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Usar apenas a velocidade sobre o fundo, pois a água não participa das forças hidrodinâmicas."
+        },
+        {
+          "key": "B",
+          "text": "Somar a corrente à velocidade relativa à água em qualquer direção, sem considerar vetores."
+        },
+        {
+          "key": "C",
+          "text": "Calcular as forças com a velocidade relativa entre navio e água; a corrente uniforme altera a trajetória sobre o fundo, mas gradientes e correntes locais é que introduzem efeitos adicionais relevantes de controle."
+        },
+        {
+          "key": "D",
+          "text": "Desconsiderar a corrente tanto na trajetória sobre o fundo quanto no escoamento relativo."
+        },
+        {
+          "key": "E",
+          "text": "Tratar toda corrente uniforme como equivalente a vento transversal sobre as obras mortas."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Lewis trata a corrente por velocidades relativas entre o navio e a água. Corrente aproximadamente uniforme em mar aberto muda a relação com o referencial terrestre, mas em geral não cria a mesma dificuldade de controle que gradientes, correntes não uniformes ou fluxos transversais presentes em entradas de porto e vias navegáveis.",
+      "source": {
+        "locator": "Chapter IX, § 12.3 — Current Effects, pp. 271–272"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "209432d5284b41b1b66c3c1ccf7e5585690a92d2",
+          "reason": "individual-source-audit-lote-95"
+        }
+      }
+    },
+    {
+      "id": "MAN-446",
+      "question": "Qual mecanismo explica a alteração da manobrabilidade quando a profundidade sob o navio diminui?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A água rasa atua apenas sobre o vento aparente, sem modificar forças no casco."
+        },
+        {
+          "key": "B",
+          "text": "O escoamento mantém a mesma distribuição tridimensional de águas profundas, independentemente da folga sob a quilha."
+        },
+        {
+          "key": "C",
+          "text": "A restrição do escoamento sob o casco modifica forças laterais, momentos e derivadas hidrodinâmicas, podendo alterar significativamente a trajetória de giro."
+        },
+        {
+          "key": "D",
+          "text": "A redução da profundidade elimina a influência do leme e torna invariável o diâmetro de giro."
+        },
+        {
+          "key": "E",
+          "text": "O único efeito possível é aumento estático do deslocamento do navio."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Os ensaios e simulações reunidos por Lewis mostram que a razão profundidade/calado altera as forças laterais e os momentos. Com isso, mudam as derivadas de manobra, a eficácia do leme e a trajetória, incluindo aumento importante do diâmetro ou redução da taxa de giro em certas condições.",
+      "source": {
+        "locator": "Chapter IX, § 13.2 — Shallow-Water Effects, pp. 280–282"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "209432d5284b41b1b66c3c1ccf7e5585690a92d2",
+          "reason": "individual-source-audit-lote-95"
+        }
+      }
+    },
+    {
+      "id": "MAN-447",
+      "question": "Ao definir squat, qual ressalva de Lewis impede tratá-lo sempre como simples afundamento uniforme com a proa para cima?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Squat ocorre apenas com o navio parado e carregado no cais."
+        },
+        {
+          "key": "B",
+          "text": "Além do afundamento do centro de gravidade, o trim pode ser positivo ou negativo; em baixa velocidade e água rasa pode ocorrer trim de proa, e o movimento resultante constitui o squat."
+        },
+        {
+          "key": "C",
+          "text": "O trim não participa do squat, que é exclusivamente uma variação de banda."
+        },
+        {
+          "key": "D",
+          "text": "A profundidade e a largura do canal não influenciam afundamento nem trim."
+        },
+        {
+          "key": "E",
+          "text": "Squat é definido como a distância transversal da curva de giro."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Lewis define sinkage como o deslocamento vertical descendente do centro de gravidade e trim positivo como rotação de proa para cima. O squat resulta da combinação desses movimentos, mas o texto ressalta que o trim pode ser negativo, isto é, de proa para baixo, em operação de baixa velocidade em água rasa.",
+      "source": {
+        "locator": "Chapter IX, § 13.5 — Sinkage and Trim, pp. 290–291"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "209432d5284b41b1b66c3c1ccf7e5585690a92d2",
+          "reason": "individual-source-audit-lote-95"
+        }
+      }
+    },
+    {
+      "id": "MAN-448",
+      "question": "Um navio segue paralelo a um canal estreito, deslocado da linha central e mais próximo de uma margem. Qual resposta hidrodinâmica Lewis descreve?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A simetria do escoamento é preservada e não surgem força lateral nem momento."
+        },
+        {
+          "key": "B",
+          "text": "A menor folga junto à margem reduz a velocidade local e empurra igualmente proa e popa para o centro."
+        },
+        {
+          "key": "C",
+          "text": "Surge apenas um aumento de resistência longitudinal, sem efeito de guinada."
+        },
+        {
+          "key": "D",
+          "text": "O escoamento acelera entre casco e margem próxima, atraindo o navio para essa margem e produzindo momento que tende a afastar a proa dela."
+        },
+        {
+          "key": "E",
+          "text": "A margem próxima repele a popa e a proa na mesma intensidade, sem alterar o rumo."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Fora da linha central, a velocidade do escoamento cresce no espaço menor entre casco e margem e diminui no lado oposto. Lewis associa essa assimetria a uma força de atração para a margem próxima e a um momento que tende a levar a proa para a margem distante; ambos aumentam à medida que o canal se estreita.",
+      "source": {
+        "locator": "Chapter IX, § 13.3 — Effects of Narrow Channels, pp. 282–283"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "209432d5284b41b1b66c3c1ccf7e5585690a92d2",
+          "reason": "individual-source-audit-lote-95"
+        }
+      }
+    },
+    {
+      "id": "MAN-449",
+      "question": "O que distingue, no modelo de Lewis, a interação entre dois navios próximos da interação de um navio com uma margem longa e uniforme?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Entre navios, as forças independem da posição longitudinal relativa."
+        },
+        {
+          "key": "B",
+          "text": "A interação com outro navio depende apenas do vento e não do escoamento na água."
+        },
+        {
+          "key": "C",
+          "text": "Uma margem produz sempre forças variáveis com o comprimento do outro navio."
+        },
+        {
+          "key": "D",
+          "text": "Dois navios próximos interagem somente se estiverem parados lado a lado."
+        },
+        {
+          "key": "E",
+          "text": "Entre dois navios, forças e momentos dependem também da separação longitudinal, além da distância lateral, dos ângulos de guinada e dos tamanhos relativos."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Uma margem de seção constante pode ser idealizada como longa em relação ao navio, fazendo a interação depender principalmente da distância transversal e do ângulo. No encontro, ultrapassagem ou passagem por outro navio, a posição longitudinal relativa e as dimensões de ambos também modificam forças e momentos.",
+      "source": {
+        "locator": "Chapter IX, § 13.4 — Interaction Between Two Vessels, pp. 287–290"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "209432d5284b41b1b66c3c1ccf7e5585690a92d2",
+          "reason": "individual-source-audit-lote-95"
+        }
+      }
+    },
+    {
+      "id": "MAN-450",
+      "question": "Como o confinamento lateral de um canal se soma ao efeito de águas rasas sobre a manobrabilidade?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A largura deixa de importar assim que a profundidade se torna limitada."
+        },
+        {
+          "key": "B",
+          "text": "O confinamento lateral restaura as derivadas hidrodinâmicas de águas profundas."
+        },
+        {
+          "key": "C",
+          "text": "Margens estreitas afetam somente navios parados, não navios com seguimento."
+        },
+        {
+          "key": "D",
+          "text": "Profundidade e largura produzem efeitos que sempre se anulam."
+        },
+        {
+          "key": "E",
+          "text": "A restrição do escoamento sob o casco já altera forças e momentos; se a largura também for limitada, as derivadas hidrodinâmicas podem ser modificadas ainda mais intensamente."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Lewis explica que a pouca profundidade desvia maior parcela do escoamento para os bordos do casco. Quando o canal também é estreito, a restrição lateral acentua a alteração das forças, dos momentos e das derivadas, criando sensibilidade à posição e ao aproamento que não existe em mar aberto.",
+      "source": {
+        "locator": "Chapter IX, § 13.3 — Effects of Narrow Channels, pp. 282–287"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "209432d5284b41b1b66c3c1ccf7e5585690a92d2",
+          "reason": "individual-source-audit-lote-95"
+        }
+      }
+    },
+    {
+      "id": "MAN-451",
+      "question": "No modelo de Bertram, como a resistência por cross-flow representa o movimento transversal das seções do casco?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Como uma força constante, no mesmo sentido da velocidade lateral."
+        },
+        {
+          "key": "B",
+          "text": "Como resistência exclusivamente aerodinâmica aplicada às obras mortas."
+        },
+        {
+          "key": "C",
+          "text": "Como termo linear que depende apenas da velocidade longitudinal do navio."
+        },
+        {
+          "key": "D",
+          "text": "Como pressão hidrostática independente de deriva e taxa de guinada."
+        },
+        {
+          "key": "E",
+          "text": "Como força oposta à velocidade transversal local v + xr, com dependência não linear proporcional a essa velocidade multiplicada por seu módulo."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Bertram acrescenta à teoria de corpo esbelto a resistência de cross-flow de cada seção porque a separação no escoamento transversal não é representada pelo modelo potencial. A velocidade local é v + xr, e a força usa o termo (v + xr)|v + xr|, com sinal oposto ao movimento transversal.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2nd ed., 2012",
+        "locator": "Chapter 6, § 6.2.4 — Forces on the Body, pp. 253–255"
+      },
+      "tags": [
+        "cross-flow",
+        "baixa velocidade",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch6"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "I-bertram-ch6-5-8-cross-flow",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Chapter 6, § 6.2.4 — Forces on the Body",
+        "module": "5. Efeitos ambientais, águas rasas e interações",
+        "topic": {
+          "id": "I-bertram-ch6-5-8-cross-flow",
+          "title": "Cross-flow"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "209432d5284b41b1b66c3c1ccf7e5585690a92d2",
+          "reason": "individual-source-audit-lote-95"
+        }
+      }
+    },
+    {
+      "id": "MAN-452",
+      "question": "Que medida operacional a MSC.1/Circ.1228 recomenda quando velocidade e rumo colocam o navio na região de risco de surf-riding?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Aumentar obrigatoriamente a velocidade até ultrapassar qualquer onda de popa."
+        },
+        {
+          "key": "B",
+          "text": "Manter curso e velocidade, pois o surf-riding não está relacionado ao encontro com as ondas."
+        },
+        {
+          "key": "C",
+          "text": "Parar o hélice e colocar o leme a meio em todos os casos."
+        },
+        {
+          "key": "D",
+          "text": "Alterar somente o calado, sem modificar a condição de encontro."
+        },
+        {
+          "key": "E",
+          "text": "Reduzir a velocidade, alterar o curso ou combinar ambas as ações para sair da região perigosa indicada pela orientação."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A circular identifica risco de surf-riding e broaching-to em mar de popa ou alheta para determinadas combinações de ângulo de encontro, comprimento e velocidade. A orientação operacional é retirar o navio dessa região perigosa por mudança de velocidade, de curso ou de ambos.",
+      "source": {
+        "locator": "Annex, §§ 3.1.1 and 4.2.1, pp. 3 and 5"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "209432d5284b41b1b66c3c1ccf7e5585690a92d2",
+          "reason": "individual-source-audit-lote-95"
+        }
+      }
+    },
+    {
+      "id": "MAN-453",
+      "question": "Por que o broaching-to associado ao surf-riding representa risco imediato à estabilidade do navio?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Porque produz somente aceleração longitudinal, sem alteração de rumo ou banda."
+        },
+        {
+          "key": "B",
+          "text": "Porque ocorre exclusivamente em mar de proa com o navio parado."
+        },
+        {
+          "key": "C",
+          "text": "Porque reduz a rotação do hélice sem afetar o movimento do casco."
+        },
+        {
+          "key": "D",
+          "text": "Porque mantém a proa rigidamente alinhada com a onda."
+        },
+        {
+          "key": "E",
+          "text": "Porque pode provocar mudança súbita de rumo e grande inclinação inesperada, criando risco de emborcamento."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Na face íngreme de uma onda de popa ou alheta, o navio pode ser acelerado e entrar em surf-riding. A MSC.1/Circ.1228 alerta que daí pode surgir o broaching-to: perda súbita de controle direcional acompanhada de inclinação elevada, capaz de levar ao emborcamento.",
+      "source": {
+        "locator": "Annex, § 3.1.1, p. 3"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "209432d5284b41b1b66c3c1ccf7e5585690a92d2",
+          "reason": "individual-source-audit-lote-95"
+        }
+      }
+    },
+    {
+      "id": "MAN-454",
+      "question": "Qual ação reduz o risco de rolamento síncrono segundo a MSC.1/Circ.1228?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Manter o período de encontro igual ao período natural de balanço."
+        },
+        {
+          "key": "B",
+          "text": "Aumentar a estabilidade até que todo movimento de balanço desapareça, sem alterar a navegação."
+        },
+        {
+          "key": "C",
+          "text": "Usar apenas o período absoluto da onda, ignorando rumo e velocidade do navio."
+        },
+        {
+          "key": "D",
+          "text": "Alterar curso ou velocidade para afastar o período de encontro das ondas do período natural de balanço do navio."
+        },
+        {
+          "key": "E",
+          "text": "Colocar o leme a meio, pois o período de encontro não pode ser modificado operacionalmente."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "O rolamento síncrono pode ser excitado quando o período de encontro TE coincide com o período natural de balanço TR. Como TE depende do período das ondas, do rumo de encontro e da velocidade, a medida operacional é modificar curso e/ou velocidade para afastar os períodos da condição de ressonância.",
+      "source": {
+        "locator": "Annex, §§ 3.2 and 4.2.3.1, pp. 3 and 6"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "209432d5284b41b1b66c3c1ccf7e5585690a92d2",
+          "reason": "individual-source-audit-lote-95"
+        }
+      }
+    },
+    {
+      "id": "MAN-455",
+      "question": "Quais relações entre período de encontro e período natural de balanço são destacadas pela MSC.1/Circ.1228 para o rolamento paramétrico?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Somente TE muito maior que TR, sem variação periódica de estabilidade."
+        },
+        {
+          "key": "B",
+          "text": "Apenas TE igual ao período de arfagem, exclusivamente em mar de popa."
+        },
+        {
+          "key": "C",
+          "text": "Somente TE igual a duas vezes TR e sempre com estabilidade constante."
+        },
+        {
+          "key": "D",
+          "text": "TE próximo de TR ou próximo de metade de TR, condições em que a variação periódica da estabilidade pode excitar grandes amplitudes."
+        },
+        {
+          "key": "E",
+          "text": "Nenhuma relação de períodos é relevante; o fenômeno decorre apenas de falha do leme."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A circular descreve duas condições principais: variação da estabilidade com TE aproximadamente igual a TR e com TE aproximadamente igual a 0,5TR. A passagem entre crista e cavado altera periodicamente a estabilidade e pode alimentar balanços grandes, inclusive em diferentes direções de encontro.",
+      "source": {
+        "locator": "Annex, §§ 3.3.1–3.3.2 and 4.2.3.2, pp. 3–4 and 6"
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "209432d5284b41b1b66c3c1ccf7e5585690a92d2",
+          "reason": "individual-source-audit-lote-95"
+        }
+      }
+    }
+  ]
+}
