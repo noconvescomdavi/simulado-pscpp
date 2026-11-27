@@ -65,11 +65,12 @@
     "Rodada 23: main PR283 merged, lote25 15 IDs triados A-E/gabarito formalmente válidos; 4 atribuições Santos MAN-2384/2387/2433/2435, total 39 Santos recentes pendentes; sem cotejo primário, reconciliação global, segunda passagem, CI ou deploy.",
     "Rodada 24: lote26 15 registros, 5 Santos (MAN-2439, MAN-2441, MAN-2487, MAN-2492, MAN-2495); erros estruturais nenhum; sem cotejo primário, segunda passagem, CI ou deploy.",
     "Rodada 25: main #285/#286, 30 registros dos lotes 27 e 28 triados A–E/gabarito, 8 atribuídos a Santos, total 52 Santos recentes pendentes; 0 homologados; sem cotejo primário, reconciliação global, CI ou Vercel.",
-    "25/11: cotejo conceitual 12 MEO (Lobo/Soares), 6 pares de duplicatas, 12 propostas editoriais documentadas. Homologações/correções aplicadas continuam zero."
+    "25/11: cotejo conceitual 12 MEO (Lobo/Soares), 6 pares de duplicatas, 12 propostas editoriais documentadas. Homologações/correções aplicadas continuam zero.",
+    "26/11: segunda passagem textual 12 questões MEO-0007–0018, 60 opções comentadas e 6 pares duplicados; fonte Lobo/Soares cap IX p 297–301. Sem homologação, fonte visual ou reconciliação canônica; sem edições de bancos."
   ],
-  "next_stage": "Rever visualmente as páginas 297-301 e fazer segunda passagem dos 12 IDs Lobo/Soares; reconciliar overlays por ID; aplicar apenas os corrigidos e testar; depois avançar ao próximo lote das nove fontes.",
+  "next_stage": "Inspecionar PDF original visualmente; recuperar conteúdo do banco canônico e precedência do consumidor MEO-0007–0018; verificar overlays/duplicidades, aplicar em lote validado e executar CI + produção. Prosseguir depois com demais 3039 candidatos (saldo provisório; 12 apenas segunda passagem textual).",
   "checkpoint_index": 25,
-  "updated_at": "2026-11-25",
+  "updated_at": "2026-11-26",
   "baseline_sha": "7a6d1930dec380d669d30131ca4acb4c802ad091",
   "previous_branch_head": "f75ec049196473448fe18416ae0823ed6987a792",
   "pr": {
@@ -1074,6 +1075,37 @@
       "docs/auditoria-nove-fontes-20261121/COTEJO_LOBO_MARES_001.json",
       "docs/auditoria-nove-fontes-20261121/COTEJO_LOBO_MARES_001.md",
       "docs/auditoria-nove-fontes-20261121/COTEJO_LOBO_MARES_001.csv"
+    ]
+  },
+  "last_second_pass": {
+    "date": "2026-11-26",
+    "source": "Lobo/Soares 4ª ed. capítulo IX pp 297–301",
+    "ids": [
+      "MEO-0007",
+      "MEO-0008",
+      "MEO-0009",
+      "MEO-0010",
+      "MEO-0011",
+      "MEO-0012",
+      "MEO-0013",
+      "MEO-0014",
+      "MEO-0015",
+      "MEO-0016",
+      "MEO-0017",
+      "MEO-0018"
+    ],
+    "textual_verification": 12,
+    "reasoned_options": 60,
+    "pdf_visual_verified": 0,
+    "consumer_confirmed": 0,
+    "homologated": 0,
+    "applied": 0,
+    "main_sha": "7da3ba8c54b222cc99cf65363bedf8ef9302fb32",
+    "restoration_blob_sha": "8cfeaba355d7a8ef85b22a37c5ebd0b823094678",
+    "reports": [
+      "docs/auditoria-nove-fontes-20261121/COTEJO_LOBO_MARES_002_SEGUNDA_PASSAGEM.json",
+      "docs/auditoria-nove-fontes-20261121/COTEJO_LOBO_MARES_002_SEGUNDA_PASSAGEM.md",
+      "docs/auditoria-nove-fontes-20261121/COTEJO_LOBO_MARES_002_SEGUNDA_PASSAGEM.csv"
     ]
   }
 }
