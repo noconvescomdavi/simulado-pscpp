@@ -1,0 +1,214 @@
+{
+  "questions": [
+    {
+      "id": "MAN-386",
+      "question": "Na análise da aceleração avante de um navio, qual relação expressa corretamente o princípio apresentado por Lewis?",
+      "options": [
+        { "key": "A", "text": "A aceleração depende somente da rotação do propulsor, sem influência da resistência do casco." },
+        { "key": "B", "text": "A força aceleradora é sempre igual à resistência, mesmo durante a variação de velocidade." },
+        { "key": "C", "text": "A massa adicionada não participa da relação entre força e aceleração longitudinal." },
+        { "key": "D", "text": "A aceleração é determinada apenas pelo deslocamento, independentemente do empuxo disponível." },
+        { "key": "E", "text": "A força aceleradora resulta da diferença entre o empuxo líquido disponível e a resistência, e a aceleração considera a massa do navio e a massa adicionada longitudinal." }
+      ],
+      "correct_answer": "E",
+      "explanation": "Lewis define, para cada velocidade, a força aceleradora como a diferença entre o empuxo líquido disponível e a resistência do navio. A equação do movimento longitudinal relaciona essa resultante à massa do navio acrescida da massa adicionada na direção x.",
+      "source": { "edition": "2nd Revision, 1989", "locator": "Chapter IX, § 10.2, pp. 251–252" },
+      "provenance": { "audit_restore": { "baseline_commit": "32e5dc6bba236e9ed00e3e0d933efe92391c8050", "reason": "individual-source-audit-lote-91" } }
+    },
+    {
+      "id": "MAN-387",
+      "question": "Com base no conceito de coasting apresentado por Lewis, julgue as proposições e assinale a sequência correta:\n( ) Coasting é a desaceleração sem emprego de potência a ré.\n( ) Com o propulsor girando livremente, ajustado para não produzir empuxo, a redução da velocidade decorre da resistência do casco.\n( ) Com o propulsor travado, sua resistência adicional pode reduzir a distância de coasting.\n( ) No cálculo de coasting, a velocidade final precisa ser necessariamente zero.",
+      "options": [
+        { "key": "A", "text": "( V ) ( F ) ( V ) ( F )" },
+        { "key": "B", "text": "( F ) ( V ) ( F ) ( V )" },
+        { "key": "C", "text": "( V ) ( V ) ( F ) ( V )" },
+        { "key": "D", "text": "( F ) ( F ) ( V ) ( V )" },
+        { "key": "E", "text": "( V ) ( V ) ( V ) ( F )" }
+      ],
+      "correct_answer": "E",
+      "explanation": "Lewis define coasting como desacelerar sem potência a ré. Com o propulsor em giro livre sem empuxo, atua a resistência do casco; travado, soma-se o arrasto do propulsor. A análise usa uma fração especificada da velocidade inicial como velocidade final, e não exige parada completa.",
+      "source": { "edition": "2nd Revision, 1989", "locator": "Chapter IX, § 10.8, pp. 261–262" },
+      "provenance": { "audit_restore": { "baseline_commit": "32e5dc6bba236e9ed00e3e0d933efe92391c8050", "reason": "individual-source-audit-lote-91" } }
+    },
+    {
+      "id": "MAN-388",
+      "question": "De acordo com Lewis, analise as afirmativas sobre parada e movimento a ré:\nI) A parada é a desaceleração a partir de uma velocidade avante até o repouso.\nII) Em uma parada com desvio de rumo, head reach e side reach são projeções relevantes da trajetória.\nIII) Para navio monohélice, o sentido de rotação do propulsor não pode influenciar a guinada durante parada ou movimento a ré.\nIV) A distância percorrida na parada é sempre medida apenas sobre a linha do rumo inicial, mesmo quando a trajetória é curva.",
+      "options": [
+        { "key": "A", "text": "Somente I e III." },
+        { "key": "B", "text": "Somente I e II." },
+        { "key": "C", "text": "Somente II e IV." },
+        { "key": "D", "text": "Somente III e IV." },
+        { "key": "E", "text": "I, II, III e IV." }
+      ],
+      "correct_answer": "B",
+      "explanation": "As afirmativas I e II reproduzem as definições e os índices de desempenho de Lewis. As III e IV são falsas: a rotação do propulsor pode provocar guinada, e, havendo desvio, a distância é considerada ao longo da trajetória, além de suas projeções longitudinal e lateral.",
+      "source": { "edition": "2nd Revision, 1989", "locator": "Chapter IX, § 10.1, p. 251" },
+      "provenance": { "audit_restore": { "baseline_commit": "32e5dc6bba236e9ed00e3e0d933efe92391c8050", "reason": "individual-source-audit-lote-91; corrected-answer-from-C-to-B" } }
+    },
+    {
+      "id": "MAN-389",
+      "question": "Segundo a Resolução IMO MSC.137(76), julgue as proposições sobre o ensaio de zigue-zague 10°/10°:\n( ) Após aproximação estável e taxa de guinada zero, aplica-se 10° de leme para um bordo.\n( ) Ao atingir 10° de mudança de rumo, o leme é invertido para 10° no bordo oposto.\n( ) O primeiro sobressinal é a mudança total de rumo medida antes da primeira ordem de leme.\n( ) O leme permanece fixo no primeiro bordo durante todo o ensaio.",
+      "options": [
+        { "key": "A", "text": "( V ) ( F ) ( V ) ( F )" },
+        { "key": "B", "text": "( V ) ( V ) ( F ) ( F )" },
+        { "key": "C", "text": "( F ) ( V ) ( F ) ( V )" },
+        { "key": "D", "text": "( F ) ( F ) ( V ) ( V )" },
+        { "key": "E", "text": "( V ) ( V ) ( V ) ( V )" }
+      ],
+      "correct_answer": "B",
+      "explanation": "A MSC.137(76), § 4.2.6, determina a aplicação alternada de 10° de leme quando o navio alcança 10° de desvio de rumo. O primeiro sobressinal é o desvio adicional após a segunda execução, não uma medida anterior ao primeiro comando.",
+      "source": { "locator": "Annex, §§ 4.2.5–4.2.8, pp. 3–4" },
+      "provenance": { "audit_restore": { "baseline_commit": "32e5dc6bba236e9ed00e3e0d933efe92391c8050", "reason": "individual-source-audit-lote-91" } }
+    },
+    {
+      "id": "MAN-390",
+      "question": "Com base nas definições da Resolução IMO MSC.137(76), assinale a alternativa INCORRETA:",
+      "options": [
+        { "key": "A", "text": "O primeiro sobressinal é o desvio adicional de rumo ocorrido no zigue-zague após a segunda execução." },
+        { "key": "B", "text": "O segundo sobressinal é o desvio adicional de rumo ocorrido após a terceira execução." },
+        { "key": "C", "text": "O ensaio 10°/10° exige manter o leme continuamente a 10° para o primeiro bordo, sem inversões." },
+        { "key": "D", "text": "No ensaio 20°/20°, empregam-se ângulos de leme e mudanças de rumo de 20°, seguindo o procedimento correspondente." },
+        { "key": "E", "text": "No ensaio 10°/10°, a segunda execução ocorre quando o rumo se afasta 10° do rumo original." }
+      ],
+      "correct_answer": "C",
+      "explanation": "A alternativa C é a única incorreta. O zigue-zague exige inversões sucessivas do leme nos desvios de rumo especificados. As demais alternativas correspondem às definições dos §§ 4.2.6 a 4.2.9 da MSC.137(76).",
+      "source": { "locator": "Annex, §§ 4.2.6–4.2.9, pp. 3–4" },
+      "provenance": { "audit_restore": { "baseline_commit": "32e5dc6bba236e9ed00e3e0d933efe92391c8050", "reason": "individual-source-audit-lote-91; corrected-answer-from-E-to-C" } }
+    },
+    {
+      "id": "MAN-391",
+      "question": "Um navio desce um rio com forte corrente. A velocidade sobre o fundo é elevada, mas a velocidade relativa à água é pequena. Qual consequência é coerente com Lewis?",
+      "options": [
+        { "key": "A", "text": "A baixa velocidade relativa à água pode reduzir as forças no leme e no casco, prejudicando o controle mesmo com velocidade elevada sobre o fundo." },
+        { "key": "B", "text": "A força no leme depende somente da velocidade sobre o fundo e permanece necessariamente elevada." },
+        { "key": "C", "text": "A corrente uniforme elimina qualquer diferença entre velocidade relativa à água e velocidade sobre o fundo." },
+        { "key": "D", "text": "Correntes só afetam o controle em mar aberto e são desprezíveis em rios e canais." },
+        { "key": "E", "text": "A corrente a favor sempre aumenta a autoridade do leme, independentemente da velocidade através da água." }
+      ],
+      "correct_answer": "A",
+      "explanation": "Lewis trata a corrente pela velocidade relativa entre navio e água. Em rios e canais, sobretudo a favor da corrente, a velocidade sobre o fundo pode ser alta enquanto a velocidade através da água é insuficiente para desenvolver força adequada no leme e no casco.",
+      "source": { "edition": "2nd Revision, 1989", "locator": "Chapter IX, § 12.3, pp. 271–272" },
+      "provenance": { "audit_restore": { "baseline_commit": "32e5dc6bba236e9ed00e3e0d933efe92391c8050", "reason": "individual-source-audit-lote-91" } }
+    },
+    {
+      "id": "MAN-392",
+      "question": "De acordo com Lewis, analise as afirmativas sobre o efeito do vento no controle do navio:\nI) Mesmo vento moderado pode dificultar o controle de um navio que avança em baixa velocidade.\nII) O efeito do vento independe da área vélica e da posição de seu centro em relação ao centro de gravidade longitudinal.\nIII) O efeito aumenta com a área acima d'água, com o braço entre o centro dessa área e o LCG e com os coeficientes aerodinâmicos.\nIV) Vento pela popa torna um navio sem governo necessariamente estável.",
+      "options": [
+        { "key": "A", "text": "Apenas as afirmativas I e II são verdadeiras." },
+        { "key": "B", "text": "Apenas as afirmativas I e III são verdadeiras." },
+        { "key": "C", "text": "Apenas as afirmativas II e IV são verdadeiras." },
+        { "key": "D", "text": "Apenas as afirmativas III e IV são verdadeiras." },
+        { "key": "E", "text": "As afirmativas I, II, III e IV são verdadeiras." }
+      ],
+      "correct_answer": "B",
+      "explanation": "Lewis afirma que o vento ganha importância quando sua velocidade é grande em relação à do navio e que até vento moderado dificulta o controle em baixa velocidade. Área exposta, braço em relação ao LCG e coeficientes aerodinâmicos ampliam o efeito; vento pela popa aumenta a instabilidade do navio sem governo.",
+      "source": { "edition": "2nd Revision, 1989", "locator": "Chapter IX, § 12.2, pp. 269–271" },
+      "provenance": { "audit_restore": { "baseline_commit": "32e5dc6bba236e9ed00e3e0d933efe92391c8050", "reason": "individual-source-audit-lote-91" } }
+    },
+    {
+      "id": "MAN-393",
+      "question": "Com base nos ensaios e simulações reunidos por Lewis, julgue as proposições sobre manobra em águas rasas:\n( ) A redução da profundidade pode aumentar substancialmente o diâmetro de giro.\n( ) Em profundidade igual a 1,25 vezes o calado, foram observadas taxas de giro da ordem de 50% a 60% das de águas profundas.\n( ) O desvio de rumo durante a parada necessariamente diminui quando a profundidade é reduzida.\n( ) Os efeitos de águas rasas tornam-se mais importantes para a segurança em portos e vias restritas.",
+      "options": [
+        { "key": "A", "text": "( V ) ( F ) ( V ) ( F )" },
+        { "key": "B", "text": "( V ) ( V ) ( F ) ( V )" },
+        { "key": "C", "text": "( F ) ( V ) ( F ) ( V )" },
+        { "key": "D", "text": "( F ) ( F ) ( V ) ( V )" },
+        { "key": "E", "text": "( V ) ( V ) ( V ) ( V )" }
+      ],
+      "correct_answer": "B",
+      "explanation": "Lewis relata aumento do diâmetro de giro e redução da taxa de giro em pouca profundidade. Nos ensaios do Esso Osaka, o desvio de rumo na parada aumentou à medida que a profundidade diminuiu; por isso a terceira proposição é falsa.",
+      "source": { "edition": "2nd Revision, 1989", "locator": "Chapter IX, § 13.2, pp. 280–282" },
+      "provenance": { "audit_restore": { "baseline_commit": "32e5dc6bba236e9ed00e3e0d933efe92391c8050", "reason": "individual-source-audit-lote-91" } }
+    },
+    {
+      "id": "MAN-394",
+      "question": "Sobre a passagem de um navio deslocado da linha central de um canal estreito, assinale a alternativa INCORRETA segundo Lewis:",
+      "options": [
+        { "key": "A", "text": "A menor folga junto à margem próxima acelera o escoamento nesse lado do casco." },
+        { "key": "B", "text": "A assimetria do escoamento produz força lateral e momento de guinada." },
+        { "key": "C", "text": "Mesmo fora da linha central, permanecem simetria de escoamento e ausência de força lateral e momento de guinada." },
+        { "key": "D", "text": "O confinamento lateral, somado à pouca profundidade, altera mais intensamente as derivadas hidrodinâmicas." },
+        { "key": "E", "text": "Na condição ideal de casco e canal simétricos, eixo e velocidade colineares com a linha central, não há força lateral nem momento de guinada por assimetria de margens." }
+      ],
+      "correct_answer": "C",
+      "explanation": "A alternativa C é incorreta. Lewis explica que o deslocamento lateral em relação ao centro do canal quebra a simetria: o escoamento acelera entre o casco e a margem próxima, criando forças e momentos. A ausência desses efeitos vale para a condição central e simétrica idealizada.",
+      "source": { "edition": "2nd Revision, 1989", "locator": "Chapter IX, § 13.3, pp. 282–283" },
+      "provenance": { "audit_restore": { "baseline_commit": "32e5dc6bba236e9ed00e3e0d933efe92391c8050", "reason": "individual-source-audit-lote-91; corrected-answer-from-D-to-C" } }
+    },
+    {
+      "id": "MAN-395",
+      "question": "Ao estabelecer a velocidade segura em um canal, por que a folga sob a quilha deve considerar o squat?",
+      "options": [
+        { "key": "A", "text": "Porque squat é somente uma banda estática causada pelo vento." },
+        { "key": "B", "text": "Porque a folga sob a quilha aumenta automaticamente com a velocidade do navio." },
+        { "key": "C", "text": "Porque águas restritas eliminam o afundamento dinâmico do casco." },
+        { "key": "D", "text": "Porque o movimento do navio pode produzir afundamento e alteração de trim, consumindo parte da folga disponível e aproximando o casco do fundo." },
+        { "key": "E", "text": "Porque a folga é medida entre o convés principal e a superfície livre." }
+      ],
+      "correct_answer": "D",
+      "explanation": "Lewis define sinkage como o deslocamento vertical para baixo e squat como o movimento resultante do afundamento e da rotação de trim. Em canal, a folga de fundo é requisito crítico e a velocidade precisa ser limitada para conservar separação segura do fundo.",
+      "source": { "edition": "2nd Revision, 1989", "locator": "Chapter IX, § 13.5, pp. 298–300" },
+      "provenance": { "audit_restore": { "baseline_commit": "32e5dc6bba236e9ed00e3e0d933efe92391c8050", "reason": "individual-source-audit-lote-91" } }
+    },
+    {
+      "id": "MAN-396",
+      "question": "De acordo com Lewis, analise as afirmativas sobre a interação entre dois navios próximos:\nI) As forças e os momentos dependem das separações longitudinal e lateral, dos ângulos de guinada e dos tamanhos relativos dos navios.\nII) Encontro, ultrapassagem e passagem por navio parado ou amarrado são situações operacionalmente relevantes.\nIII) As forças de interação independem da distância transversal entre os cascos.\nIV) Durante uma ultrapassagem, a correção de leme necessária permanece constante em todas as posições relativas.",
+      "options": [
+        { "key": "A", "text": "Apenas as afirmativas III e IV são verdadeiras." },
+        { "key": "B", "text": "Apenas as afirmativas I e III são verdadeiras." },
+        { "key": "C", "text": "Apenas as afirmativas II e IV são verdadeiras." },
+        { "key": "D", "text": "Apenas as afirmativas I e II são verdadeiras." },
+        { "key": "E", "text": "As afirmativas I, II, III e IV são verdadeiras." }
+      ],
+      "correct_answer": "D",
+      "explanation": "Lewis relaciona a interação às posições relativas, separação lateral, ângulos e dimensões dos navios, destacando encontros, ultrapassagens e passagem por navio parado ou amarrado. Os dados mostram forças e momentos variáveis com a posição e a separação, logo III e IV são falsas.",
+      "source": { "edition": "2nd Revision, 1989", "locator": "Chapter IX, § 13.4, pp. 287–289" },
+      "provenance": { "audit_restore": { "baseline_commit": "32e5dc6bba236e9ed00e3e0d933efe92391c8050", "reason": "individual-source-audit-lote-91; corrected-answer-from-A-to-D" } }
+    },
+    {
+      "id": "MAN-397",
+      "question": "Segundo Lewis, qual definição distingue corretamente afundamento, trim e squat em águas rasas ou restritas?",
+      "options": [
+        { "key": "A", "text": "Afundamento é apenas rotação de proa; trim é somente translação vertical; squat é a soma da banda e do jogo." },
+        { "key": "B", "text": "Squat é sinônimo de cavitação do propulsor em canal." },
+        { "key": "C", "text": "Afundamento é o deslocamento vertical para baixo do centro de gravidade; trim positivo é rotação de proa para cima; squat é o movimento resultante do afundamento e dessa rotação." },
+        { "key": "D", "text": "Squat ocorre apenas acima da velocidade crítica e não afeta a folga de fundo." },
+        { "key": "E", "text": "Afundamento e trim são independentes da profundidade e da largura do canal." }
+      ],
+      "correct_answer": "C",
+      "explanation": "Em § 13.5, Lewis define sinkage como deslocamento vertical descendente do centro de gravidade, trim positivo como rotação de proa para cima e squat como o movimento resultante de sinkage e trim. Essas grandezas são relevantes para a folga de fundo em canais.",
+      "source": { "edition": "2nd Revision, 1989", "locator": "Chapter IX, § 13.5, pp. 298–300" },
+      "provenance": { "audit_restore": { "baseline_commit": "32e5dc6bba236e9ed00e3e0d933efe92391c8050", "reason": "individual-source-audit-lote-91" } }
+    },
+    {
+      "id": "MAN-398",
+      "question": "Ao comparar resultados de modelo e de navio em escala real, qual dificuldade ligada ao cross-flow é explicitamente apontada por Lewis?",
+      "options": [
+        { "key": "A", "text": "A separação transversal é idêntica nas duas escalas e dispensa verificação." },
+        { "key": "B", "text": "O cross-flow existe somente no ar e não participa dos ensaios de manobrabilidade." },
+        { "key": "C", "text": "A diferença de escala afeta apenas a massa do modelo, nunca a camada-limite ou a separação do escoamento." },
+        { "key": "D", "text": "As diferenças de espessura da camada-limite e de separação no corpo de popa e no cross-flow dificultam a correspondência entre modelo e escala real." },
+        { "key": "E", "text": "O problema desaparece sempre que se mantém a mesma rotação dimensional do propulsor." }
+      ],
+      "correct_answer": "D",
+      "explanation": "Ao discutir ensaios com modelos livres, Lewis registra que permanecem diferenças entre modelo e escala real na espessura da camada-limite, na separação do corpo de popa e na separação de cross-flow. A igualdade de rotação, isoladamente, não elimina esses efeitos de escala.",
+      "source": { "edition": "2nd Revision, 1989", "locator": "Chapter IX, § 7.2, p. 217" },
+      "provenance": { "audit_restore": { "baseline_commit": "32e5dc6bba236e9ed00e3e0d933efe92391c8050", "reason": "individual-source-audit-lote-91; removed-duplicated-assertions" } }
+    },
+    {
+      "id": "MAN-399",
+      "question": "Um navio em mar de popa é acelerado na face íngreme de uma onda e passa a cavalgar a onda. Segundo a MSC.1/Circ.1228, qual perigo pode decorrer dessa situação?",
+      "options": [
+        { "key": "A", "text": "Somente aumento regular da rotação do propulsor, sem alteração de rumo." },
+        { "key": "B", "text": "Parada progressiva e alinhamento automático com a crista." },
+        { "key": "C", "text": "Broaching-to, com mudança súbita de rumo e grande inclinação inesperada, podendo levar ao emborcamento." },
+        { "key": "D", "text": "Redução obrigatória da banda, pois o surf-riding estabiliza transversalmente o navio." },
+        { "key": "E", "text": "Fenômeno restrito a mar de proa, sem relação com ondas de popa ou alheta." }
+      ],
+      "correct_answer": "C",
+      "explanation": "A MSC.1/Circ.1228 define surf-riding como a aceleração do navio na frente íngreme de uma onda em mar de popa ou alheta. Nessa condição pode ocorrer broaching-to: mudança súbita de rumo acompanhada de grande inclinação inesperada, com risco de emborcamento.",
+      "source": { "locator": "Annex, § 3.1.1, p. 3" },
+      "provenance": { "audit_restore": { "baseline_commit": "32e5dc6bba236e9ed00e3e0d933efe92391c8050", "reason": "individual-source-audit-lote-91" } }
+    }
+  ]
+}
