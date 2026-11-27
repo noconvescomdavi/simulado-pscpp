@@ -1,0 +1,1146 @@
+{
+  "questions": [
+    {
+      "id": "MAN-470",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.1",
+      "topic": "Empuxo do propulsor",
+      "difficulty": "Difícil",
+      "style": "Situacional",
+      "question": "No coeficiente de carregamento de empuxo CTh apresentado por Bertram, qual é a base usada para adimensionalizar o empuxo T?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A área do disco do hélice combinada com a pressão de referência baseada na velocidade de entrada VA."
+        },
+        {
+          "key": "B",
+          "text": "A área vélica do navio combinada apenas com a pressão atmosférica."
+        },
+        {
+          "key": "C",
+          "text": "O volume deslocado multiplicado pela aceleração da gravidade."
+        },
+        {
+          "key": "D",
+          "text": "A superfície molhada do casco combinada com a velocidade do vento."
+        },
+        {
+          "key": "E",
+          "text": "A área expandida das pás sem qualquer grandeza de velocidade."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Bertram define CTh usando o empuxo dividido por uma referência formada pela área do disco do hélice e pela pressão associada à velocidade de entrada VA. O coeficiente expressa, portanto, o carregamento do disco, não uma propriedade hidrostática do navio.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2nd ed., 2012",
+        "locator": "Chapter 2, § 2.2 — Propeller Curves, eq. (2.5), pp. 44–45"
+      },
+      "tags": [
+        "propulsor",
+        "empuxo",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch2",
+        "empuxo-do-propulsor"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch2",
+        "topic_id": "I-bertram-ch2-2-1-empuxo-do-propulsor",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Propellers",
+          "label": "Chapter 2 – Propellers"
+        },
+        "section": "Chapter 2 – Propellers",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-bertram-ch2-2-1-empuxo-do-propulsor",
+          "title": "Empuxo do propulsor"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "483846d723f39fc2a16661d0e2b36756d52c7ee7",
+          "reason": "individual-source-audit-lote-97"
+        }
+      }
+    },
+    {
+      "id": "MAN-471",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.2",
+      "topic": "Avanço do hélice",
+      "difficulty": "Médio",
+      "style": "Situacional",
+      "question": "Um hélice recebe velocidade média de entrada VA = 8 m/s, gira a n = 2 s⁻¹ e tem diâmetro D = 4 m. Qual é o número de avanço J = VA/(nD)?",
+      "options": [
+        {
+          "key": "A",
+          "text": "0,25."
+        },
+        {
+          "key": "B",
+          "text": "1,00."
+        },
+        {
+          "key": "C",
+          "text": "2,00."
+        },
+        {
+          "key": "D",
+          "text": "4,00."
+        },
+        {
+          "key": "E",
+          "text": "8,00."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Aplicando J = VA/(nD), obtém-se J = 8/(2×4) = 1,00. O cálculo usa a velocidade média de entrada no hélice, a rotação por unidade de tempo e o diâmetro.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2nd ed., 2012",
+        "locator": "Chapter 2, § 2.2 — Propeller Curves, eq. (2.3 context), p. 44"
+      },
+      "tags": [
+        "hélice",
+        "razão de avanço",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch2",
+        "avanco-do-helice"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch2",
+        "topic_id": "I-bertram-ch2-2-2-avanco-do-helice",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Propellers",
+          "label": "Chapter 2 – Propellers"
+        },
+        "section": "Chapter 2 – Propellers",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-bertram-ch2-2-2-avanco-do-helice",
+          "title": "Avanço do hélice"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "483846d723f39fc2a16661d0e2b36756d52c7ee7",
+          "reason": "individual-source-audit-lote-97"
+        }
+      }
+    },
+    {
+      "id": "MAN-472",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.3",
+      "topic": "Coeficientes de hélice",
+      "difficulty": "Fácil",
+      "style": "Situacional",
+      "question": "Qual expressão relaciona corretamente a eficiência em água livre η0 aos coeficientes de empuxo KT e torque KQ e ao número de avanço J?",
+      "options": [
+        {
+          "key": "A",
+          "text": "η0 = KT·KQ·2π/J."
+        },
+        {
+          "key": "B",
+          "text": "η0 = KQ/KT, sem depender de J."
+        },
+        {
+          "key": "C",
+          "text": "η0 = (KT/KQ)·J/(2π)."
+        },
+        {
+          "key": "D",
+          "text": "η0 = J²/(KT+KQ)."
+        },
+        {
+          "key": "E",
+          "text": "η0 = KT/(J·2π), sem KQ."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A equação (2.3) de Bertram fornece η0 = (KT/KQ)·J/(2π), resultado da razão entre potência útil T·VA e potência entregue 2πnQ.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2nd ed., 2012",
+        "locator": "Chapter 2, § 2.2 — Propeller Curves, eq. (2.3), p. 44"
+      },
+      "tags": [
+        "hélice",
+        "coeficientes",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch2",
+        "coeficientes-de-helice"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch2",
+        "topic_id": "I-bertram-ch2-2-3-coeficientes-de-helice",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Propellers",
+          "label": "Chapter 2 – Propellers"
+        },
+        "section": "Chapter 2 – Propellers",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-bertram-ch2-2-3-coeficientes-de-helice",
+          "title": "Coeficientes de hélice"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "483846d723f39fc2a16661d0e2b36756d52c7ee7",
+          "reason": "individual-source-audit-lote-97"
+        }
+      }
+    },
+    {
+      "id": "MAN-473",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.4",
+      "topic": "Esteira",
+      "difficulty": "Médio",
+      "style": "Situacional",
+      "question": "Qual distinção Bertram estabelece entre esteira nominal e esteira efetiva?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A nominal existe somente em navios de dois hélices; a efetiva, somente em navios de um hélice."
+        },
+        {
+          "key": "B",
+          "text": "A nominal é medida com o hélice girando; a efetiva, com o hélice removido."
+        },
+        {
+          "key": "C",
+          "text": "A nominal corresponde ao escoamento atrás do casco sem o hélice operando; a efetiva inclui a ação do hélice, que acelera o campo de escoamento."
+        },
+        {
+          "key": "D",
+          "text": "As duas expressões são sinônimas e produzem sempre a mesma distribuição."
+        },
+        {
+          "key": "E",
+          "text": "A efetiva considera apenas a onda de proa e exclui a região do disco."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A esteira nominal é a do casco sem a ação do propulsor. Com o hélice em operação, sua sucção acelera o escoamento e produz a esteira efetiva; Bertram indica aceleração típica do campo de 5% a 20%.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2nd ed., 2012",
+        "locator": "Chapter 3, § 3.1.1 — Interaction Between Ship and Propeller, pp. 74–75"
+      },
+      "tags": [
+        "esteira",
+        "propulsão",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch3"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch3",
+        "topic_id": "I-bertram-ch3-2-4-esteira",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch3",
+          "number": "ch3",
+          "title": "Chapter 3 – Resistance and Propulsion",
+          "label": "Chapter 3 – Resistance and Propulsion"
+        },
+        "section": "Chapter 3 – Resistance and Propulsion",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-bertram-ch3-2-4-esteira",
+          "title": "Esteira"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "483846d723f39fc2a16661d0e2b36756d52c7ee7",
+          "reason": "individual-source-audit-lote-97"
+        }
+      }
+    },
+    {
+      "id": "MAN-474",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.5",
+      "topic": "Dedução de empuxo",
+      "difficulty": "Médio",
+      "style": "Situacional",
+      "question": "Num ensaio de propulsão, o empuxo é T = 1.000 kN e a fração de dedução de empuxo é t = 0,15. Pela relação T(1−t) = RT, qual resistência do casco isolado RT corresponde a essa condição?",
+      "options": [
+        {
+          "key": "A",
+          "text": "150 kN."
+        },
+        {
+          "key": "B",
+          "text": "1.150 kN."
+        },
+        {
+          "key": "C",
+          "text": "850 kN."
+        },
+        {
+          "key": "D",
+          "text": "1.000 kN."
+        },
+        {
+          "key": "E",
+          "text": "6.667 kN."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Pela definição t = 1 − RT/T, resulta RT = T(1−t) = 1.000×0,85 = 850 kN. A relação quantifica a interação casco–propulsor sem confundir empuxo medido e resistência do casco rebocado.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2nd ed., 2012",
+        "locator": "Chapter 3, § 3.1.1 — Interaction Between Ship and Propeller, eq. (3.3), p. 74"
+      },
+      "tags": [
+        "dedução de empuxo",
+        "propulsão",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch3"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch3",
+        "topic_id": "I-bertram-ch3-2-5-deducao-de-empuxo",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch3",
+          "number": "ch3",
+          "title": "Chapter 3 – Resistance and Propulsion",
+          "label": "Chapter 3 – Resistance and Propulsion"
+        },
+        "section": "Chapter 3 – Resistance and Propulsion",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-bertram-ch3-2-5-deducao-de-empuxo",
+          "title": "Dedução de empuxo"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "483846d723f39fc2a16661d0e2b36756d52c7ee7",
+          "reason": "individual-source-audit-lote-97"
+        }
+      }
+    },
+    {
+      "id": "MAN-475",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.6",
+      "topic": "Cavitação",
+      "difficulty": "Médio",
+      "style": "Situacional",
+      "question": "Por que uma esteira muito não uniforme favorece efeitos indesejáveis ligados à cavitação do hélice?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Porque elimina toda variação de carregamento entre as pás."
+        },
+        {
+          "key": "B",
+          "text": "Porque mantém constante o ângulo de ataque durante a rotação."
+        },
+        {
+          "key": "C",
+          "text": "Porque impede a transmissão de forças periódicas ao casco."
+        },
+        {
+          "key": "D",
+          "text": "Porque transforma automaticamente cavitação em simples ventilação atmosférica."
+        },
+        {
+          "key": "E",
+          "text": "Porque a variação periódica da velocidade de entrada altera o ângulo de ataque das pás e pode favorecer cavitação, vibração, ruído e erosão."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O PNA explica que a não uniformidade da esteira faz cada pá atravessar velocidades de entrada diferentes, variando periodicamente seu ângulo de ataque. Isso favorece o início da cavitação e seus efeitos associados de vibração, ruído e erosão.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "2nd Revision, 1988",
+        "locator": "Chapter VI, § 4 — Interaction Between Hull and Propeller, p. 147"
+      },
+      "tags": [
+        "cavitação",
+        "hélice",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch6-s7",
+        "cavitacao"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch6-s7",
+        "topic_id": "I-pna-v2-ch6-s7-2-6-cavitacao",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v2::ch6-s7",
+          "number": "ch6-s7",
+          "title": "Chapter VI – Propulsion — Section 7: Cavitation",
+          "label": "Chapter VI – Propulsion — Section 7: Cavitation"
+        },
+        "section": "Chapter VI – Propulsion — Section 7: Cavitation",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-pna-v2-ch6-s7-2-6-cavitacao",
+          "title": "Cavitação"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "483846d723f39fc2a16661d0e2b36756d52c7ee7",
+          "reason": "individual-source-audit-lote-97"
+        }
+      }
+    },
+    {
+      "id": "MAN-476",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.7",
+      "topic": "Passo controlável",
+      "difficulty": "Fácil",
+      "style": "Situacional",
+      "question": "Ao operar um CPP em baixa velocidade com rotação mantida constante para acionar o gerador principal, qual desvantagem hidrodinâmica é destacada por Bertram?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A rotação relativamente alta para a baixa velocidade é subótima e pode elevar o consumo; o cubo maior e a distribuição de passo também impõem penalidades."
+        },
+        {
+          "key": "B",
+          "text": "O motor precisa ser obrigatoriamente reversível para cada redução de passo."
+        },
+        {
+          "key": "C",
+          "text": "O CPP perde a capacidade de realizar parada rápida."
+        },
+        {
+          "key": "D",
+          "text": "O diâmetro do cubo torna-se nulo quando o passo é reduzido."
+        },
+        {
+          "key": "E",
+          "text": "A rotação constante elimina todas as perdas e garante eficiência máxima em qualquer velocidade."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Bertram observa que a geração elétrica pelo motor principal permite operar diferentes velocidades com rpm constante, mas em baixa velocidade essa rpm mais alta é hidrodinamicamente subótima. O cubo maior e a distribuição de passo do CPP também penalizam a eficiência.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2nd ed., 2012",
+        "locator": "Chapter 2, § 2.8 — Unconventional Propellers: Controllable-pitch propeller, pp. 68–69"
+      },
+      "tags": [
+        "passo controlável",
+        "propulsão",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch2"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch2",
+        "topic_id": "I-bertram-ch2-2-7-passo-controlavel",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Propellers",
+          "label": "Chapter 2 – Propellers"
+        },
+        "section": "Chapter 2 – Propellers",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-bertram-ch2-2-7-passo-controlavel",
+          "title": "Passo controlável"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "483846d723f39fc2a16661d0e2b36756d52c7ee7",
+          "reason": "individual-source-audit-lote-97"
+        }
+      }
+    },
+    {
+      "id": "MAN-477",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.8",
+      "topic": "Propulsores contra-rotativos",
+      "difficulty": "Fácil",
+      "style": "Situacional",
+      "question": "Qual limitação pode reduzir o ganho líquido dos propulsores coaxiais contra-rotativos, apesar da recuperação de perdas rotacionais?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A impossibilidade de transmitir potência pelo eixo."
+        },
+        {
+          "key": "B",
+          "text": "A necessidade de ambos os rotores girarem no mesmo sentido."
+        },
+        {
+          "key": "C",
+          "text": "A ausência total de compensação de torque."
+        },
+        {
+          "key": "D",
+          "text": "A proibição de usar hélices de diâmetros diferentes."
+        },
+        {
+          "key": "E",
+          "text": "A instalação coaxial é complexa, cara e exige mais manutenção; perdas mecânicas no eixo podem compensar parte do ganho hidrodinâmico."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Bertram registra aumento usual de eficiência, mas ressalta a complexidade e o custo dos eixos coaxiais, a maior manutenção e as perdas mecânicas. Assim, o ganho hidrodinâmico não se converte integralmente em ganho líquido.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2nd ed., 2012",
+        "locator": "Chapter 2, § 2.8 — Unconventional Propellers: Contra-rotating propellers, p. 68"
+      },
+      "tags": [
+        "propulsores contra-rotativos",
+        "propulsão",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch2"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch2",
+        "topic_id": "I-bertram-ch2-2-8-propulsores-contra-rotativos",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Propellers",
+          "label": "Chapter 2 – Propellers"
+        },
+        "section": "Chapter 2 – Propellers",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-bertram-ch2-2-8-propulsores-contra-rotativos",
+          "title": "Propulsores contra-rotativos"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "483846d723f39fc2a16661d0e2b36756d52c7ee7",
+          "reason": "individual-source-audit-lote-97"
+        }
+      }
+    },
+    {
+      "id": "MAN-478",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.9",
+      "topic": "Propulsor cicloidal",
+      "difficulty": "Médio",
+      "style": "Situacional",
+      "question": "Que característica operacional do Voith-Schneider decorre do comando sincronizado do ângulo de ataque de suas pás verticais?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O empuxo só pode ser invertido após parar e reverter o motor."
+        },
+        {
+          "key": "B",
+          "text": "A magnitude e a direção do empuxo podem ser ajustadas quase instantaneamente, sem alterar a rotação do motor."
+        },
+        {
+          "key": "C",
+          "text": "O propulsor produz apenas empuxo longitudinal para vante."
+        },
+        {
+          "key": "D",
+          "text": "As pás permanecem com orientação fixa durante toda a volta."
+        },
+        {
+          "key": "E",
+          "text": "A direção do empuxo depende exclusivamente de um leme convencional a jusante."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "No VSP, a engrenagem interna varia o ângulo de ataque de cada pá em sincronismo com a rotação do disco. Isso permite comandar quase instantaneamente a magnitude e a direção do empuxo sem mudar a rpm do motor.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2nd ed., 2012",
+        "locator": "Chapter 2, § 2.8 — Unconventional Propellers: Voith-Schneider propellers, pp. 71–72"
+      },
+      "tags": [
+        "propulsor cicloidal",
+        "propulsão",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch2"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch2",
+        "topic_id": "I-bertram-ch2-2-9-propulsor-cicloidal",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Propellers",
+          "label": "Chapter 2 – Propellers"
+        },
+        "section": "Chapter 2 – Propellers",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-bertram-ch2-2-9-propulsor-cicloidal",
+          "title": "Propulsor cicloidal"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "483846d723f39fc2a16661d0e2b36756d52c7ee7",
+          "reason": "individual-source-audit-lote-97"
+        }
+      }
+    },
+    {
+      "id": "MAN-479",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.10",
+      "topic": "Jato d’água",
+      "difficulty": "Difícil",
+      "style": "Situacional",
+      "question": "O que diferencia os sistemas modernos de jato d’água dos sistemas antigos quanto ao governo da embarcação?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Os modernos exigem sempre lemes convencionais separados e não podem inverter empuxo."
+        },
+        {
+          "key": "B",
+          "text": "Nos modernos, os dispositivos de governo e reversão são integrados aos próprios jatos."
+        },
+        {
+          "key": "C",
+          "text": "Os modernos eliminam a tomada d’água e usam somente água armazenada a bordo."
+        },
+        {
+          "key": "D",
+          "text": "Nos modernos, a bomba deixa de fornecer energia ao escoamento."
+        },
+        {
+          "key": "E",
+          "text": "Os modernos operam sem bocal de descarga."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Bertram descreve entrada, dutos, bomba e bocal como componentes do waterjet. Enquanto sistemas antigos governavam por lemes separados, os modernos integram governo e reversão ao próprio jato.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2nd ed., 2012",
+        "locator": "Chapter 2, § 2.8 — Unconventional Propellers: Waterjets, pp. 70–71"
+      },
+      "tags": [
+        "jato d’água",
+        "propulsão",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch2"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch2",
+        "topic_id": "I-bertram-ch2-2-10-jato-d-agua",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch2",
+          "number": "ch2",
+          "title": "Chapter 2 – Propellers",
+          "label": "Chapter 2 – Propellers"
+        },
+        "section": "Chapter 2 – Propellers",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-bertram-ch2-2-10-jato-d-agua",
+          "title": "Jato d’água"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "483846d723f39fc2a16661d0e2b36756d52c7ee7",
+          "reason": "individual-source-audit-lote-97"
+        }
+      }
+    },
+    {
+      "id": "MAN-480",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "3.1",
+      "topic": "Força no leme",
+      "difficulty": "Médio",
+      "style": "Situacional",
+      "question": "Ao aumentar progressivamente o ângulo de ataque do leme além do ângulo crítico de stall, qual comportamento é esperado?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A força normal cresce linearmente sem limite."
+        },
+        {
+          "key": "B",
+          "text": "O escoamento volta a aderir integralmente e a força dobra."
+        },
+        {
+          "key": "C",
+          "text": "A densidade deixa de influenciar a força hidrodinâmica."
+        },
+        {
+          "key": "D",
+          "text": "O leme passa a produzir apenas força hidrostática."
+        },
+        {
+          "key": "E",
+          "text": "O crescimento da sustentação ou força normal sofre descontinuidade e a força pode diminuir mesmo com novo aumento do ângulo."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O PNA define stall pela descontinuidade da curva sustentação–ângulo de ataque. À medida que a separação avança, a inclinação da curva cai; ultrapassado o ângulo crítico, a sustentação ou força normal começa a diminuir.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX, § 14.2 — Flow Around a Ship's Rudder, pp. 293–294"
+      },
+      "tags": [
+        "leme",
+        "força",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s14",
+        "forca-no-leme"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s14",
+        "topic_id": "I-pna-v3-ch9-s14-3-1-forca-no-leme",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s14",
+          "number": "ch9-s14",
+          "title": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+          "label": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces"
+        },
+        "section": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-pna-v3-ch9-s14-3-1-forca-no-leme",
+          "title": "Força no leme"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "483846d723f39fc2a16661d0e2b36756d52c7ee7",
+          "reason": "individual-source-audit-lote-97"
+        }
+      }
+    },
+    {
+      "id": "MAN-481",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "3.2",
+      "topic": "Braço do leme",
+      "difficulty": "Difícil",
+      "style": "Situacional",
+      "question": "Por que a posição longitudinal do eixo da madre em relação ao centro de pressão do leme é relevante ao dimensionamento do aparelho de governo?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Porque determina exclusivamente a força vertical de flutuação."
+        },
+        {
+          "key": "B",
+          "text": "Porque elimina a necessidade de conhecer a força normal."
+        },
+        {
+          "key": "C",
+          "text": "Porque o torque independe da distância entre a força e o eixo."
+        },
+        {
+          "key": "D",
+          "text": "Porque apenas a área vélica do navio define o torque da madre."
+        },
+        {
+          "key": "E",
+          "text": "Porque o torque hidrodinâmico depende do braço entre o centro de pressão e o eixo; reduzir esse braço reduz o torque exigido, mantidas as demais condições."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O momento em torno da madre resulta da força hidrodinâmica aplicada no centro de pressão e de seu braço em relação ao eixo. Por isso, força normal e posição do centro de pressão devem ser conhecidas para estimar o torque de governo.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX, §§ 14.1 and 14.5 — Rudder force, moment and center of pressure, pp. 293 and 307–308"
+      },
+      "tags": [
+        "leme",
+        "momento",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s14",
+        "braco-do-leme"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s14",
+        "topic_id": "I-pna-v3-ch9-s14-3-2-braco-do-leme",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s14",
+          "number": "ch9-s14",
+          "title": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+          "label": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces"
+        },
+        "section": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-pna-v3-ch9-s14-3-2-braco-do-leme",
+          "title": "Braço do leme"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "483846d723f39fc2a16661d0e2b36756d52c7ee7",
+          "reason": "individual-source-audit-lote-97"
+        }
+      }
+    },
+    {
+      "id": "MAN-482",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "3.3",
+      "topic": "Alongamento do leme",
+      "difficulty": "Fácil",
+      "style": "Situacional",
+      "question": "Para uma superfície de controle de área A e envergadura b, qual expressão define sua razão de aspecto geométrica aG?",
+      "options": [
+        {
+          "key": "A",
+          "text": "aG = b²/A."
+        },
+        {
+          "key": "B",
+          "text": "aG = A²/b."
+        },
+        {
+          "key": "C",
+          "text": "aG = A/b²."
+        },
+        {
+          "key": "D",
+          "text": "aG = b/A²."
+        },
+        {
+          "key": "E",
+          "text": "aG = A·b."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O PNA define a razão de aspecto geométrica como aG = b²/A. A presença do casco como superfície de contorno pode alterar a razão de aspecto efetiva usada na análise hidrodinâmica.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX, §§ 9.2 and 14.5–14.6 — Geometric and effective aspect ratio, pp. 235–236 and 307–309"
+      },
+      "tags": [
+        "leme",
+        "razão de aspecto",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s14",
+        "alongamento-do-leme"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s14",
+        "topic_id": "I-pna-v3-ch9-s14-3-3-alongamento-do-leme",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s14",
+          "number": "ch9-s14",
+          "title": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+          "label": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces"
+        },
+        "section": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-pna-v3-ch9-s14-3-3-alongamento-do-leme",
+          "title": "Alongamento do leme"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "483846d723f39fc2a16661d0e2b36756d52c7ee7",
+          "reason": "individual-source-audit-lote-97"
+        }
+      }
+    },
+    {
+      "id": "MAN-483",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "3.4",
+      "topic": "Leme no jato do hélice",
+      "difficulty": "Difícil",
+      "style": "Situacional",
+      "question": "Ao analisar a curva de força normal de um leme instalado no jato do hélice, qual procedimento evita tratar incorretamente essa condição como escoamento livre?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Usar sempre a mesma curva de escoamento livre, pois o hélice não altera stall nem força normal."
+        },
+        {
+          "key": "B",
+          "text": "Ignorar a separação do escoamento, porque ela só ocorre fora do jato."
+        },
+        {
+          "key": "C",
+          "text": "Substituir a velocidade local pela velocidade do vento aparente."
+        },
+        {
+          "key": "D",
+          "text": "Usar dados ou curvas que representem o leme na propeller race, pois o comportamento força normal–ângulo e o stall podem diferir do escoamento livre."
+        },
+        {
+          "key": "E",
+          "text": "Considerar que o leme não recebe escoamento enquanto o hélice produz empuxo."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "O PNA apresenta separadamente curvas de coeficiente de força normal versus ângulo de ataque para o leme em escoamento livre e na propeller race. A avaliação do leme no jato deve, portanto, considerar essa condição de entrada, inclusive perto do stall.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX, § 14.2 — Flow Around a Ship's Rudder, Fig. 123, pp. 293–294"
+      },
+      "tags": [
+        "leme",
+        "jato do hélice",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s14",
+        "leme-no-jato-do-helice"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s14",
+        "topic_id": "I-pna-v3-ch9-s14-3-4-leme-no-jato-do-helice",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s14",
+          "number": "ch9-s14",
+          "title": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+          "label": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces"
+        },
+        "section": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-pna-v3-ch9-s14-3-4-leme-no-jato-do-helice",
+          "title": "Leme no jato do hélice"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "483846d723f39fc2a16661d0e2b36756d52c7ee7",
+          "reason": "individual-source-audit-lote-97"
+        }
+      }
+    }
+  ]
+}
