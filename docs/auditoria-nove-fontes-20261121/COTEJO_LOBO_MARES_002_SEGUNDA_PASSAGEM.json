@@ -1,0 +1,661 @@
+{
+  "date": "2026-11-26",
+  "type": "COTEJO_LOBO_MARES_001_SEGUNDA_PASSAGEM_TEXTUAL",
+  "first_pass": "2026-11-25",
+  "main_sha_at_check": "7da3ba8c54b222cc99cf65363bedf8ef9302fb32",
+  "source_title": "LOBO, P. R. V.; SOARES, C. A. Meteorologia e Oceanografia (4ª ed. 2019)",
+  "source_url": "https://drive.google.com/file/d/1qcF61kvGvSOIUd9M961OtTc8TWeplzKb/view?usp=drivesdk",
+  "local_restoration_sha": "8cfeaba355d7a8ef85b22a37c5ebd0b823094678",
+  "counts": {
+    "second_pass_textual_checked": 12,
+    "option_reasons": 60,
+    "proposed": 12,
+    "homologated": 0,
+    "applied": 0
+  },
+  "checks": {
+    "book_evidence": [
+      {
+        "token": "As marés",
+        "found": true
+      },
+      {
+        "token": "preamar",
+        "found": true
+      },
+      {
+        "token": "baixa-mar",
+        "found": true
+      },
+      {
+        "token": "Amplitude da Maré",
+        "found": true
+      },
+      {
+        "token": "Semiamplitude",
+        "found": true
+      },
+      {
+        "token": "Nivel de Reduc",
+        "found": true
+      },
+      {
+        "token": "Altura da maré",
+        "found": true
+      },
+      {
+        "token": "quadratura",
+        "found": true
+      },
+      {
+        "token": "sizigia",
+        "found": true
+      }
+    ],
+    "restoration_file_blob_unchanged": true,
+    "all_12_ids_equal_original": true,
+    "all_60_alternatives_examined": true,
+    "all_12_proposed_key_formally_unique": true,
+    "canonical_bank_blob": "a19068ec68e381fd4a2cbbf5cd9b21ce2492cd1c",
+    "canonical_bank_text_returned_by_connector": false,
+    "main_sha": "7da3ba8c54b222cc99cf65363bedf8ef9302fb32",
+    "not_run": [
+      "PDF visual page check",
+      "ID-level effective runtime precedence",
+      "full app schema",
+      "CI/build",
+      "Vercel"
+    ],
+    "notes": "Conteúdo extraído por OCR (não OCR visual), suficiente para verificação conceitual textual; homologação final depende de fonte visual legível e precedência do consumidor."
+  },
+  "records": [
+    {
+      "id": "MEO-0007",
+      "proposed_answer": "B",
+      "proposed_question": "Qual é a principal origem física das marés astronômicas?",
+      "source_locator": "Cap. IX, §1, p. 297",
+      "technical_review": "SECOND_PASS_TEXTUAL",
+      "source_evidence": "LOBO/SOARES 4ª ed. volume I capítulo IX páginas impressas 297 a 301 texto OCR lido novamente",
+      "per_option": [
+        {
+          "key": "A",
+          "text": "apenas do atrito do vento sobre a superfície do mar",
+          "verdict": "INCORRETA",
+          "reason": "vento é influência meteorológica, não causa da maré astronômica"
+        },
+        {
+          "key": "B",
+          "text": "atrações gravitacionais, sobretudo da Lua e do Sol, combinadas com a dinâmica do sistema Terra-Lua",
+          "verdict": "CORRETA",
+          "reason": "atrações Lua/Sol + sistema Terra–Lua correspondem à explicação da obra"
+        },
+        {
+          "key": "C",
+          "text": "somente da diferença de salinidade entre águas costeiras e oceânicas",
+          "verdict": "INCORRETA",
+          "reason": "salinidade não explica o mecanismo astronômico"
+        },
+        {
+          "key": "D",
+          "text": "unicamente de ondas sísmicas submarinas",
+          "verdict": "INCORRETA",
+          "reason": "onda sísmica define outra origem"
+        },
+        {
+          "key": "E",
+          "text": "apenas da pressão atmosférica local",
+          "verdict": "INCORRETA",
+          "reason": "pressão atmosférica não explica atração astronômica"
+        }
+      ],
+      "structural_check": {
+        "five_options": true,
+        "unique_keys": true,
+        "unique_texts": true,
+        "answer_present": true
+      },
+      "page_visual_confirmation": "PENDENTE",
+      "origin_runtime_confirmation": "PENDENTE",
+      "status": "SEGUNDA_PASSAGEM_TEXTUAL_VALIDADA_NAO_HOMOLOGADA"
+    },
+    {
+      "id": "MEO-0008",
+      "proposed_answer": "C",
+      "proposed_question": "Qual é a definição de preamar?",
+      "source_locator": "Cap. IX, §2, p. 299–301",
+      "technical_review": "SECOND_PASS_TEXTUAL",
+      "source_evidence": "LOBO/SOARES 4ª ed. volume I capítulo IX páginas impressas 297 a 301 texto OCR lido novamente",
+      "per_option": [
+        {
+          "key": "A",
+          "text": "ao instante de maior corrente de enchente",
+          "verdict": "INCORRETA",
+          "reason": "máximo de corrente de enchente não equivale a máximo de nível"
+        },
+        {
+          "key": "B",
+          "text": "ao nível médio do mar calculado para o mês",
+          "verdict": "INCORRETA",
+          "reason": "nível médio é referência distinta do extremo da curva"
+        },
+        {
+          "key": "C",
+          "text": "ao nível máximo alcançado pela maré em um ciclo local",
+          "verdict": "CORRETA",
+          "reason": "máximo local da curva define preamar"
+        },
+        {
+          "key": "D",
+          "text": "ao nível mínimo alcançado pela maré",
+          "verdict": "INCORRETA",
+          "reason": "mínimo é baixamar"
+        },
+        {
+          "key": "E",
+          "text": "ao período em que a corrente de maré necessariamente zera em todos os pontos",
+          "verdict": "INCORRETA",
+          "reason": "estagnação de corrente não é definidora universal de preamar"
+        }
+      ],
+      "structural_check": {
+        "five_options": true,
+        "unique_keys": true,
+        "unique_texts": true,
+        "answer_present": true
+      },
+      "page_visual_confirmation": "PENDENTE",
+      "origin_runtime_confirmation": "PENDENTE",
+      "status": "SEGUNDA_PASSAGEM_TEXTUAL_VALIDADA_NAO_HOMOLOGADA"
+    },
+    {
+      "id": "MEO-0009",
+      "proposed_answer": "D",
+      "proposed_question": "Qual é a definição de baixamar?",
+      "source_locator": "Cap. IX, §2, p. 299–301",
+      "technical_review": "SECOND_PASS_TEXTUAL",
+      "source_evidence": "LOBO/SOARES 4ª ed. volume I capítulo IX páginas impressas 297 a 301 texto OCR lido novamente",
+      "per_option": [
+        {
+          "key": "A",
+          "text": "o nível máximo previsto para sizígia",
+          "verdict": "INCORRETA",
+          "reason": "extremo alto não é baixamar"
+        },
+        {
+          "key": "B",
+          "text": "a fase lunar de menor amplitude de maré",
+          "verdict": "INCORRETA",
+          "reason": "quadratura é configuração astronômica, não extremo baixo"
+        },
+        {
+          "key": "C",
+          "text": "o instante de maior corrente de vazante",
+          "verdict": "INCORRETA",
+          "reason": "máxima corrente de vazante é grandeza dinâmica diferente"
+        },
+        {
+          "key": "D",
+          "text": "o nível mínimo alcançado pela maré em um ciclo local",
+          "verdict": "CORRETA",
+          "reason": "mínimo do nível define baixamar"
+        },
+        {
+          "key": "E",
+          "text": "a diferença entre duas preamares sucessivas",
+          "verdict": "INCORRETA",
+          "reason": "diferença entre preamares não é nível mínimo"
+        }
+      ],
+      "structural_check": {
+        "five_options": true,
+        "unique_keys": true,
+        "unique_texts": true,
+        "answer_present": true
+      },
+      "page_visual_confirmation": "PENDENTE",
+      "origin_runtime_confirmation": "PENDENTE",
+      "status": "SEGUNDA_PASSAGEM_TEXTUAL_VALIDADA_NAO_HOMOLOGADA"
+    },
+    {
+      "id": "MEO-0010",
+      "proposed_answer": "E",
+      "proposed_question": "O que representa a amplitude de maré?",
+      "source_locator": "Cap. IX, §2, p. 301",
+      "technical_review": "SECOND_PASS_TEXTUAL",
+      "source_evidence": "LOBO/SOARES 4ª ed. volume I capítulo IX páginas impressas 297 a 301 texto OCR lido novamente",
+      "per_option": [
+        {
+          "key": "A",
+          "text": "a velocidade máxima da corrente de maré",
+          "verdict": "INCORRETA",
+          "reason": "corrente tem dimensão de velocidade, não altura"
+        },
+        {
+          "key": "B",
+          "text": "a distância horizontal percorrida pela onda de maré",
+          "verdict": "INCORRETA",
+          "reason": "distância horizontal não é variação vertical de nível"
+        },
+        {
+          "key": "C",
+          "text": "a diferença entre pressão atmosférica e pressão hidrostática",
+          "verdict": "INCORRETA",
+          "reason": "diferença de pressões não define amplitude"
+        },
+        {
+          "key": "D",
+          "text": "o intervalo de tempo entre duas preamares",
+          "verdict": "INCORRETA",
+          "reason": "intervalo de tempo não define amplitude"
+        },
+        {
+          "key": "E",
+          "text": "a diferença vertical entre uma preamar e a baixamar associada",
+          "verdict": "CORRETA",
+          "reason": "diferença vertical entre preamar e baixamar é amplitude"
+        }
+      ],
+      "structural_check": {
+        "five_options": true,
+        "unique_keys": true,
+        "unique_texts": true,
+        "answer_present": true
+      },
+      "page_visual_confirmation": "PENDENTE",
+      "origin_runtime_confirmation": "PENDENTE",
+      "status": "SEGUNDA_PASSAGEM_TEXTUAL_VALIDADA_NAO_HOMOLOGADA"
+    },
+    {
+      "id": "MEO-0011",
+      "proposed_answer": "A",
+      "proposed_question": "Em que fases lunares tendem a ocorrer as marés de sizígia?",
+      "source_locator": "Cap. IX, §1, p. 298–300",
+      "technical_review": "SECOND_PASS_TEXTUAL",
+      "source_evidence": "LOBO/SOARES 4ª ed. volume I capítulo IX páginas impressas 297 a 301 texto OCR lido novamente",
+      "per_option": [
+        {
+          "key": "A",
+          "text": "próximo às fases de Lua nova e Lua cheia, com maior amplitude de maré",
+          "verdict": "CORRETA",
+          "reason": "equinócio não é condição exclusiva de sizígia"
+        },
+        {
+          "key": "B",
+          "text": "apenas nos equinócios e sem relação com a Lua",
+          "verdict": "INCORRETA",
+          "reason": "não se limita a fenômeno atmosférico"
+        },
+        {
+          "key": "C",
+          "text": "próximo aos quartos crescente e minguante, com menor amplitude",
+          "verdict": "INCORRETA",
+          "reason": "quartos lunares associam-se a quadratura"
+        },
+        {
+          "key": "D",
+          "text": "somente quando há tempestade tropical",
+          "verdict": "INCORRETA",
+          "reason": "tempestade não define sizígia"
+        },
+        {
+          "key": "E",
+          "text": "sempre ao meio-dia local",
+          "verdict": "INCORRETA",
+          "reason": "horário fixo não define sizígia"
+        }
+      ],
+      "structural_check": {
+        "five_options": true,
+        "unique_keys": true,
+        "unique_texts": true,
+        "answer_present": true
+      },
+      "page_visual_confirmation": "PENDENTE",
+      "origin_runtime_confirmation": "PENDENTE",
+      "status": "SEGUNDA_PASSAGEM_TEXTUAL_VALIDADA_NAO_HOMOLOGADA"
+    },
+    {
+      "id": "MEO-0012",
+      "proposed_answer": "B",
+      "proposed_question": "Qual característica é típica das marés de quadratura?",
+      "source_locator": "Cap. IX, §1, p. 298",
+      "technical_review": "SECOND_PASS_TEXTUAL",
+      "source_evidence": "LOBO/SOARES 4ª ed. volume I capítulo IX páginas impressas 297 a 301 texto OCR lido novamente",
+      "per_option": [
+        {
+          "key": "A",
+          "text": "amplitudes máximas, associadas à Lua nova",
+          "verdict": "INCORRETA",
+          "reason": "amplitude máxima em lua nova caracteriza sizígia"
+        },
+        {
+          "key": "B",
+          "text": "amplitudes menores, associadas aos quartos crescente e minguante",
+          "verdict": "CORRETA",
+          "reason": "menores amplitudes nos quartos lunares caracterizam quadratura"
+        },
+        {
+          "key": "C",
+          "text": "correntes sempre nulas",
+          "verdict": "INCORRETA",
+          "reason": "quadratura não elimina todas as correntes"
+        },
+        {
+          "key": "D",
+          "text": "níveis independentes da Lua",
+          "verdict": "INCORRETA",
+          "reason": "marés dependem da configuração lunar/solar"
+        },
+        {
+          "key": "E",
+          "text": "apenas uma preamar por dia",
+          "verdict": "INCORRETA",
+          "reason": "quadratura não determina necessariamente tipo diurno"
+        }
+      ],
+      "structural_check": {
+        "five_options": true,
+        "unique_keys": true,
+        "unique_texts": true,
+        "answer_present": true
+      },
+      "page_visual_confirmation": "PENDENTE",
+      "origin_runtime_confirmation": "PENDENTE",
+      "status": "SEGUNDA_PASSAGEM_TEXTUAL_VALIDADA_NAO_HOMOLOGADA"
+    },
+    {
+      "id": "MEO-0013",
+      "proposed_answer": "C",
+      "proposed_question": "Em um regime semidiurno, quantas preamares e baixamares ocorrem aproximadamente por dia?",
+      "source_locator": "Cap. IX, §2, p. 299–300",
+      "technical_review": "SECOND_PASS_TEXTUAL",
+      "source_evidence": "LOBO/SOARES 4ª ed. volume I capítulo IX páginas impressas 297 a 301 texto OCR lido novamente",
+      "per_option": [
+        {
+          "key": "A",
+          "text": "Uma preamar, sem baixamar.",
+          "verdict": "INCORRETA",
+          "reason": "regime semidiurno não omite baixamar"
+        },
+        {
+          "key": "B",
+          "text": "Uma preamar e uma baixamar.",
+          "verdict": "INCORRETA",
+          "reason": "1+1 corresponde ao regime diurno, não ao semidiurno"
+        },
+        {
+          "key": "C",
+          "text": "Duas preamares e duas baixamares.",
+          "verdict": "CORRETA",
+          "reason": "duas preamares e duas baixamares são descritas no capítulo"
+        },
+        {
+          "key": "D",
+          "text": "Três preamares e uma baixamar.",
+          "verdict": "INCORRETA",
+          "reason": "três preamares e uma baixamar não definem o regime semidiurno"
+        },
+        {
+          "key": "E",
+          "text": "Uma preamar apenas na Lua cheia.",
+          "verdict": "INCORRETA",
+          "reason": "semidiurnidade não se limita à lua cheia"
+        }
+      ],
+      "structural_check": {
+        "five_options": true,
+        "unique_keys": true,
+        "unique_texts": true,
+        "answer_present": true
+      },
+      "page_visual_confirmation": "PENDENTE",
+      "origin_runtime_confirmation": "PENDENTE",
+      "status": "SEGUNDA_PASSAGEM_TEXTUAL_VALIDADA_NAO_HOMOLOGADA"
+    },
+    {
+      "id": "MEO-0014",
+      "proposed_answer": "D",
+      "proposed_question": "Qual é a finalidade do nível de redução (NR) das marés?",
+      "source_locator": "Cap. IX, §2, p. 301",
+      "technical_review": "SECOND_PASS_TEXTUAL",
+      "source_evidence": "LOBO/SOARES 4ª ed. volume I capítulo IX páginas impressas 297 a 301 texto OCR lido novamente",
+      "per_option": [
+        {
+          "key": "A",
+          "text": "A velocidade máxima da corrente de enchente.",
+          "verdict": "INCORRETA",
+          "reason": "corrente de enchente não é datum vertical"
+        },
+        {
+          "key": "B",
+          "text": "A temperatura média superficial do mar.",
+          "verdict": "INCORRETA",
+          "reason": "temperatura não é datum de maré"
+        },
+        {
+          "key": "C",
+          "text": "A máxima amplitude de sizígia.",
+          "verdict": "INCORRETA",
+          "reason": "amplitude de sizígia é variação, não plano"
+        },
+        {
+          "key": "D",
+          "text": "O plano de referência para medir as alturas das marés.",
+          "verdict": "CORRETA",
+          "reason": "NR é plano de referência das alturas de maré"
+        },
+        {
+          "key": "E",
+          "text": "A linha da maior preamar observada.",
+          "verdict": "INCORRETA",
+          "reason": "maior preamar não define NR"
+        }
+      ],
+      "structural_check": {
+        "five_options": true,
+        "unique_keys": true,
+        "unique_texts": true,
+        "answer_present": true
+      },
+      "page_visual_confirmation": "PENDENTE",
+      "origin_runtime_confirmation": "PENDENTE",
+      "status": "SEGUNDA_PASSAGEM_TEXTUAL_VALIDADA_NAO_HOMOLOGADA"
+    },
+    {
+      "id": "MEO-0015",
+      "proposed_answer": "E",
+      "proposed_question": "Na representação da curva de maré de Lobo e Soares, como se define o nível médio (NM)?",
+      "source_locator": "Cap. IX, §2, p. 301",
+      "technical_review": "SECOND_PASS_TEXTUAL",
+      "source_evidence": "LOBO/SOARES 4ª ed. volume I capítulo IX páginas impressas 297 a 301 texto OCR lido novamente",
+      "per_option": [
+        {
+          "key": "A",
+          "text": "A altura da maré acima do NR em qualquer instante.",
+          "verdict": "INCORRETA",
+          "reason": "altura instantânea sobre NR é outra grandeza"
+        },
+        {
+          "key": "B",
+          "text": "O nível da baixamar mínima.",
+          "verdict": "INCORRETA",
+          "reason": "baixamar mínima é extremo, não média"
+        },
+        {
+          "key": "C",
+          "text": "A maior preamar de sizígia.",
+          "verdict": "INCORRETA",
+          "reason": "preamar máxima é extremo, não média"
+        },
+        {
+          "key": "D",
+          "text": "A soma de duas preamares sucessivas.",
+          "verdict": "INCORRETA",
+          "reason": "soma das preamares não define NM"
+        },
+        {
+          "key": "E",
+          "text": "O nível médio entre preamar e baixamar da curva considerada.",
+          "verdict": "CORRETA",
+          "reason": "a obra posiciona NM entre os extremos na curva"
+        }
+      ],
+      "structural_check": {
+        "five_options": true,
+        "unique_keys": true,
+        "unique_texts": true,
+        "answer_present": true
+      },
+      "page_visual_confirmation": "PENDENTE",
+      "origin_runtime_confirmation": "PENDENTE",
+      "status": "SEGUNDA_PASSAGEM_TEXTUAL_VALIDADA_NAO_HOMOLOGADA"
+    },
+    {
+      "id": "MEO-0016",
+      "proposed_answer": "A",
+      "proposed_question": "Como se define a semiamplitude de maré?",
+      "source_locator": "Cap. IX, §2, p. 301",
+      "technical_review": "SECOND_PASS_TEXTUAL",
+      "source_evidence": "LOBO/SOARES 4ª ed. volume I capítulo IX páginas impressas 297 a 301 texto OCR lido novamente",
+      "per_option": [
+        {
+          "key": "A",
+          "text": "A metade da diferença vertical entre preamar e baixamar associada.",
+          "verdict": "CORRETA",
+          "reason": "semiamplitude é metade da diferença vertical entre preamar e baixamar"
+        },
+        {
+          "key": "B",
+          "text": "A diferença entre duas preamares sucessivas.",
+          "verdict": "INCORRETA",
+          "reason": "diferença entre preamares não é amplitude"
+        },
+        {
+          "key": "C",
+          "text": "A metade do intervalo de tempo entre preamares.",
+          "verdict": "INCORRETA",
+          "reason": "intervalo temporal não é semiamplitude"
+        },
+        {
+          "key": "D",
+          "text": "A distância entre o NR e o fundo do mar.",
+          "verdict": "INCORRETA",
+          "reason": "distância ao fundo não é amplitude"
+        },
+        {
+          "key": "E",
+          "text": "O nível médio em relação ao NR.",
+          "verdict": "INCORRETA",
+          "reason": "NM é nível de referência distinto"
+        }
+      ],
+      "structural_check": {
+        "five_options": true,
+        "unique_keys": true,
+        "unique_texts": true,
+        "answer_present": true
+      },
+      "page_visual_confirmation": "PENDENTE",
+      "origin_runtime_confirmation": "PENDENTE",
+      "status": "SEGUNDA_PASSAGEM_TEXTUAL_VALIDADA_NAO_HOMOLOGADA"
+    },
+    {
+      "id": "MEO-0017",
+      "proposed_answer": "B",
+      "proposed_question": "O que se entende por altura da maré em determinado instante?",
+      "source_locator": "Cap. IX, §2, p. 301",
+      "technical_review": "SECOND_PASS_TEXTUAL",
+      "source_evidence": "LOBO/SOARES 4ª ed. volume I capítulo IX páginas impressas 297 a 301 texto OCR lido novamente",
+      "per_option": [
+        {
+          "key": "A",
+          "text": "A diferença vertical entre preamar e baixamar associada.",
+          "verdict": "INCORRETA",
+          "reason": "diferença preamar–baixamar define amplitude, não altura instantânea"
+        },
+        {
+          "key": "B",
+          "text": "A elevação instantânea da superfície do mar acima do nível de redução.",
+          "verdict": "CORRETA",
+          "reason": "altura instantânea da maré é medida desde o NR"
+        },
+        {
+          "key": "C",
+          "text": "O tempo desde a última preamar.",
+          "verdict": "INCORRETA",
+          "reason": "tempo desde preamar não é altura"
+        },
+        {
+          "key": "D",
+          "text": "A velocidade máxima da corrente de enchente.",
+          "verdict": "INCORRETA",
+          "reason": "corrente é velocidade"
+        },
+        {
+          "key": "E",
+          "text": "A metade da amplitude de maré.",
+          "verdict": "INCORRETA",
+          "reason": "metade da amplitude é semiamplitude"
+        }
+      ],
+      "structural_check": {
+        "five_options": true,
+        "unique_keys": true,
+        "unique_texts": true,
+        "answer_present": true
+      },
+      "page_visual_confirmation": "PENDENTE",
+      "origin_runtime_confirmation": "PENDENTE",
+      "status": "SEGUNDA_PASSAGEM_TEXTUAL_VALIDADA_NAO_HOMOLOGADA"
+    },
+    {
+      "id": "MEO-0018",
+      "proposed_answer": "C",
+      "proposed_question": "Qual fenômeno se relaciona diretamente com a oscilação periódica do nível do mar?",
+      "source_locator": "Cap. IX, §2, p. 301",
+      "technical_review": "SECOND_PASS_TEXTUAL",
+      "source_evidence": "LOBO/SOARES 4ª ed. volume I capítulo IX páginas impressas 297 a 301 texto OCR lido novamente",
+      "per_option": [
+        {
+          "key": "A",
+          "text": "O aumento permanente da salinidade.",
+          "verdict": "INCORRETA",
+          "reason": "salinidade permanente não se segue de maré"
+        },
+        {
+          "key": "B",
+          "text": "A formação obrigatória de tsunamis.",
+          "verdict": "INCORRETA",
+          "reason": "tsunami é fenômeno distinto"
+        },
+        {
+          "key": "C",
+          "text": "As correntes de maré associadas à enchente e à vazante.",
+          "verdict": "CORRETA",
+          "reason": "maré produz corrente associada à enchente/vazante"
+        },
+        {
+          "key": "D",
+          "text": "A suspensão temporária da atração lunar.",
+          "verdict": "INCORRETA",
+          "reason": "força lunar não é suspensa"
+        },
+        {
+          "key": "E",
+          "text": "A formação obrigatória de ondas de tempestade.",
+          "verdict": "INCORRETA",
+          "reason": "onda de tempestade não é consequência obrigatória"
+        }
+      ],
+      "structural_check": {
+        "five_options": true,
+        "unique_keys": true,
+        "unique_texts": true,
+        "answer_present": true
+      },
+      "page_visual_confirmation": "PENDENTE",
+      "origin_runtime_confirmation": "PENDENTE",
+      "status": "SEGUNDA_PASSAGEM_TEXTUAL_VALIDADA_NAO_HOMOLOGADA"
+    }
+  ]
+}
