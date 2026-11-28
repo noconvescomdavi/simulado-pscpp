@@ -1,0 +1,41 @@
+{
+  "checkpoint": 19,
+  "date": "2026-11-22T17:04:02-03:00",
+  "main_sha": "03a551292c69b928e3ef72a7fad53710d42e0fe4",
+  "previous_main_sha": "64e0271b5bbee75d743445dc076c5cc0195329c2",
+  "pr_concurrent": 279,
+  "source_file": "data/question-restorations/manobrabilidade-msc137-lote-21.json",
+  "source_blob_sha": "0cbd265604da5b819567fd733d784f6bc624f219",
+  "ids": [
+    "MAN-2055",
+    "MAN-2056",
+    "MAN-2057",
+    "MAN-2058",
+    "MAN-2059",
+    "MAN-2060",
+    "MAN-2061",
+    "MAN-2062",
+    "MAN-2063",
+    "MAN-2064",
+    "MAN-2109",
+    "MAN-2110",
+    "MAN-2111",
+    "MAN-2112",
+    "MAN-2113"
+  ],
+  "structural_checks": {
+    "unique_ids": true,
+    "five_distinct_options_and_valid_key": true
+  },
+  "santos_primary_pending": [
+    "MAN-2063"
+  ],
+  "homologated": 0,
+  "corrected": 0,
+  "second_pass": 0,
+  "tests_executed": "local structural inspection only",
+  "global_reconciliation": false,
+  "production_checked": false,
+  "merge_permitted": false,
+  "notes": "Triagem não equivale a cotejo primário; main atualizada pelo PR279. Banco integral e overrides ainda não reconciliados por ID/hash."
+}

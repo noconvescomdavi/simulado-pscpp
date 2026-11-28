@@ -1,0 +1,44 @@
+{
+  "checkpoint": 4,
+  "base_sha": "23c8a3276b4f45c01d974ad9ca946131ddd5a14f",
+  "previous_base_sha": "f0a33c443670fd33313dc8141f513d640baaa967",
+  "pr": 262,
+  "source_pr": 264,
+  "source_file": "data/question-restorations/manobrabilidade-msc137-lote-06.json",
+  "consumer": "lib/question-restorations.js",
+  "ids": [
+    "MAN-750",
+    "MAN-751",
+    "MAN-752",
+    "MAN-753",
+    "MAN-754",
+    "MAN-760",
+    "MAN-761",
+    "MAN-803",
+    "MAN-804",
+    "MAN-805",
+    "MAN-806",
+    "MAN-807",
+    "MAN-813",
+    "MAN-814"
+  ],
+  "unique_ids": 14,
+  "overlap_with_48_hydrodynamics_candidates": [],
+  "all_3051_candidates_reconciled": false,
+  "homologated": 0,
+  "corrected": 0,
+  "tests_run": [
+    "JSON parse and local uniqueness of 14 IDs; PASS",
+    "Intersection with 48 provisional hydrodynamics IDs; 0"
+  ],
+  "tests_not_run": [
+    "full schema and runtime selection",
+    "build and CI",
+    "bibliographic verification",
+    "full 3051 ID/hash comparison",
+    "production deployment"
+  ],
+  "source_type": "MSC.137(76), not one of nine audited sources; related runtime competition",
+  "status": "CONCORRENCIA_RECONCILIADA_PARCIALMENTE",
+  "merge_allowed": false
+}

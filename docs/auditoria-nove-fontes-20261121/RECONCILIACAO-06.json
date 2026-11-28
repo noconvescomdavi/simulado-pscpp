@@ -1,0 +1,44 @@
+{
+  "checkpoint": 6,
+  "main_sha": "5b293dc19367b58e88e14d41fb5a7f6cf3a10144",
+  "previous_main_sha": "51fe10bedf97dfe512266989c5c797820e2cef94",
+  "source_pr": 266,
+  "source_file": "data/question-restorations/manobrabilidade-msc137-lote-08.json",
+  "source_blob_sha": "c60cc4168862f11974f0a249304f7cc2eb2456c6",
+  "source_reference": "IMO MSC.137(76) — fora das nove fontes, porém tema de manobrabilidade potencialmente sobreposto",
+  "ids": [
+    "MAN-962",
+    "MAN-963",
+    "MAN-964",
+    "MAN-965",
+    "MAN-966",
+    "MAN-972",
+    "MAN-973",
+    "MAN-1029",
+    "MAN-1030",
+    "MAN-1031",
+    "MAN-1032",
+    "MAN-1033",
+    "MAN-1034",
+    "MAN-1035",
+    "MAN-1036",
+    "MAN-1038"
+  ],
+  "unique_ids": 16,
+  "overlap_with_48_hydrodynamics_candidates": [],
+  "checks": {
+    "json_parse": "PASS",
+    "unique_local_ids": "PASS",
+    "five_options_and_answer_key": "PASS"
+  },
+  "not_checked": [
+    "overlap com todos os 3051 candidatos",
+    "comparação dos hashes em todos os bancos/overrides",
+    "proveniência efetiva do consumidor",
+    "fonte primária e segunda revisão",
+    "CI/build"
+  ],
+  "homologated": 0,
+  "corrected": 0,
+  "merge_allowed": false
+}
