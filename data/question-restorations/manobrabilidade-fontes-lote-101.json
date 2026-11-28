@@ -1,0 +1,1221 @@
+{
+  "questions": [
+    {
+      "id": "MAN-526",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.4",
+      "topic": "Esteira",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "question": "Segundo Lewis, como se define a velocidade de esteira e qual consequência ela tem para a entrada do hélice?",
+      "options": [
+        {
+          "key": "A",
+          "text": "É a soma de V e VA; por isso a entrada é uniforme."
+        },
+        {
+          "key": "B",
+          "text": "É exclusivamente atmosférica."
+        },
+        {
+          "key": "C",
+          "text": "Só existe com o hélice operando."
+        },
+        {
+          "key": "D",
+          "text": "É V − VA; o casco modifica o escoamento, e a velocidade no disco pode diferir da velocidade do navio."
+        },
+        {
+          "key": "E",
+          "text": "Existe apenas em marcha a ré."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Lewis define a velocidade de esteira como V − VA. O casco altera o escoamento que chega ao propulsor, e a esteira varia no disco; não se deve igualar automaticamente a velocidade local à do navio.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "2nd Revision, 1988",
+        "locator": "Chapter VI, § 4.2 — Wake, pp. 145–150"
+      },
+      "tags": [
+        "esteira",
+        "interação casco-hélice",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch6-s4"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch6-s4",
+        "topic_id": "I-pna-v2-ch6-s4-2-4-esteira",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v2::ch6-s4",
+          "number": "ch6-s4",
+          "title": "Chapter VI – Propulsion — Section 4: Interaction between Hull and Propeller",
+          "label": "Chapter VI – Propulsion — Section 4: Interaction between Hull and Propeller"
+        },
+        "section": "Chapter VI – Propulsion — Section 4: Interaction between Hull and Propeller",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-pna-v2-ch6-s4-2-4-esteira",
+          "title": "Esteira"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "21f3b6d5dfbed2181cac113eeea9947fd9e12034",
+          "reason": "individual-source-audit-lote-101",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-527",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.5",
+      "topic": "Dedução de empuxo",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Na condição autopropulsada, por que o empuxo requerido pelo hélice supera, em geral, a resistência medida no reboque do casco sem propulsor?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A aceleração da água reduz a pressão na popa e sua componente avante, elevando a resistência efetiva; essa interação é expressa pela dedução de empuxo."
+        },
+        {
+          "key": "B",
+          "text": "O fator representa somente perdas no eixo."
+        },
+        {
+          "key": "C",
+          "text": "O hélice aumenta a pressão na popa e zera a resistência."
+        },
+        {
+          "key": "D",
+          "text": "Empuxo e resistência isolada são sempre idênticos."
+        },
+        {
+          "key": "E",
+          "text": "A dedução só existe em navios à vela."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Ao operar atrás do casco, o hélice acelera a água, altera a pressão na popa e reduz sua componente avante. A resistência efetiva aumenta, e a parcela de empuxo correspondente é representada pelo fator t.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "2nd Revision, 1988",
+        "locator": "Chapter VI, § 4.5 — Augment of Resistance and Thrust Deduction, pp. 160–163"
+      },
+      "tags": [
+        "dedução de empuxo",
+        "interação",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch6-s4",
+        "deducao-de-empuxo"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch6-s4",
+        "topic_id": "I-pna-v2-ch6-s4-2-5-deducao-de-empuxo",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v2::ch6-s4",
+          "number": "ch6-s4",
+          "title": "Chapter VI – Propulsion — Section 4: Interaction between Hull and Propeller",
+          "label": "Chapter VI – Propulsion — Section 4: Interaction between Hull and Propeller"
+        },
+        "section": "Chapter VI – Propulsion — Section 4: Interaction between Hull and Propeller",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-pna-v2-ch6-s4-2-5-deducao-de-empuxo",
+          "title": "Dedução de empuxo"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "21f3b6d5dfbed2181cac113eeea9947fd9e12034",
+          "reason": "individual-source-audit-lote-101",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-528",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.6",
+      "topic": "Cavitação",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Qual sequência de efeitos é associada por Lewis ao agravamento da cavitação de um hélice?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Aumento contínuo de empuxo e ausência de erosão."
+        },
+        {
+          "key": "B",
+          "text": "Somente entrada de ar atmosférico."
+        },
+        {
+          "key": "C",
+          "text": "Elevação ilimitada da pressão local."
+        },
+        {
+          "key": "D",
+          "text": "Antes do estágio extremo podem surgir ruído, vibração e erosão; acima de uma rotação crítica, há ruptura progressiva do escoamento e perda de empuxo."
+        },
+        {
+          "key": "E",
+          "text": "Ocorre apenas com o navio parado."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A queda da pressão local forma cavidades de vapor. Lewis registra ruído, vibração e erosão antes do estágio extremo e, acima de uma rotação crítica, ruptura do escoamento e perda de empuxo.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "2nd Revision, 1988",
+        "locator": "Chapter VI, § 7.1 — Nature of Cavitation, pp. 171–173"
+      },
+      "tags": [
+        "cavitação",
+        "hélice",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch6-s7",
+        "cavitacao"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch6-s7",
+        "topic_id": "I-pna-v2-ch6-s7-2-6-cavitacao",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v2::ch6-s7",
+          "number": "ch6-s7",
+          "title": "Chapter VI – Propulsion — Section 7: Cavitation",
+          "label": "Chapter VI – Propulsion — Section 7: Cavitation"
+        },
+        "section": "Chapter VI – Propulsion — Section 7: Cavitation",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-pna-v2-ch6-s7-2-6-cavitacao",
+          "title": "Cavitação"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "21f3b6d5dfbed2181cac113eeea9947fd9e12034",
+          "reason": "individual-source-audit-lote-101",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-529",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.7",
+      "topic": "Passo controlável",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Em uma embarcação com hélice de passo controlável, como se obtém empuxo a ré sem inverter o sentido de rotação do motor?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Variando o diâmetro em operação."
+        },
+        {
+          "key": "B",
+          "text": "Fechando a admissão de água."
+        },
+        {
+          "key": "C",
+          "text": "Mantendo o passo fixo."
+        },
+        {
+          "key": "D",
+          "text": "Invertendo obrigatoriamente o motor."
+        },
+        {
+          "key": "E",
+          "text": "Girando as pás em seus eixos através do passo nulo até o passo reverso, enquanto o eixo pode manter o mesmo sentido."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Cada pá pode mudar de passo em funcionamento. O comando atravessa o passo nulo e chega ao reverso, permitindo empuxo a ré sem inverter eixo e motor.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "2nd Revision, 1988",
+        "locator": "Chapter VI, § 10.6 — Controllable-Pitch Propellers, pp. 230–231"
+      },
+      "tags": [
+        "CPP",
+        "passo controlável",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch6-s10",
+        "passo-controlavel"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch6-s10",
+        "topic_id": "I-pna-v2-ch6-s10-2-7-passo-controlavel",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v2::ch6-s10",
+          "number": "ch6-s10",
+          "title": "Chapter VI – Propulsion — Section 10: Other propulsion devices",
+          "label": "Chapter VI – Propulsion — Section 10: Other propulsion devices"
+        },
+        "section": "Chapter VI – Propulsion — Section 10: Other propulsion devices",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-pna-v2-ch6-s10-2-7-passo-controlavel",
+          "title": "Passo controlável"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "21f3b6d5dfbed2181cac113eeea9947fd9e12034",
+          "reason": "individual-source-audit-lote-101",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-530",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.8",
+      "topic": "Propulsores contra-rotativos",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Qual é o objetivo hidrodinâmico principal de um conjunto de hélices coaxiais contra-rotativas?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Eliminar o empuxo axial."
+        },
+        {
+          "key": "B",
+          "text": "O segundo hélice recupera parte da energia de rotação do primeiro e reduz o redemoinho residual; pode ser menor por operar na esteira contraída."
+        },
+        {
+          "key": "C",
+          "text": "Fazer ambos girarem no mesmo sentido."
+        },
+        {
+          "key": "D",
+          "text": "Impedir interação entre rotores."
+        },
+        {
+          "key": "E",
+          "text": "Produzir força só transversal."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Os rotores coaxiais giram em sentidos opostos. O segundo aproveita a energia rotacional do primeiro; idealmente não resta rotação após ele e seu diâmetro pode ser menor na esteira contraída.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "2nd Revision, 1988",
+        "locator": "Chapter VI, § 10.7 — Contrarotating Propellers, pp. 231–232"
+      },
+      "tags": [
+        "contra-rotativos",
+        "propulsão",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch6-s10",
+        "propulsores-contra-rotativos"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch6-s10",
+        "topic_id": "I-pna-v2-ch6-s10-2-8-propulsores-contra-rotativos",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v2::ch6-s10",
+          "number": "ch6-s10",
+          "title": "Chapter VI – Propulsion — Section 10: Other propulsion devices",
+          "label": "Chapter VI – Propulsion — Section 10: Other propulsion devices"
+        },
+        "section": "Chapter VI – Propulsion — Section 10: Other propulsion devices",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-pna-v2-ch6-s10-2-8-propulsores-contra-rotativos",
+          "title": "Propulsores contra-rotativos"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "21f3b6d5dfbed2181cac113eeea9947fd9e12034",
+          "reason": "individual-source-audit-lote-101",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-531",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.9",
+      "topic": "Propulsor cicloidal",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Por que um propulsor cicloidal de eixo vertical pode reunir funções de propulsão e governo?",
+      "options": [
+        {
+          "key": "A",
+          "text": "As pás ficam fixas e só geram força avante."
+        },
+        {
+          "key": "B",
+          "text": "Depende sempre de leme convencional."
+        },
+        {
+          "key": "C",
+          "text": "O comando cíclico das pás dirige a resultante avante, a ré ou transversalmente, permitindo governar e parar sem reverter o motor principal."
+        },
+        {
+          "key": "D",
+          "text": "Não há movimento relativo das pás."
+        },
+        {
+          "key": "E",
+          "text": "Seu eixo é longitudinal."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A orientação das pás varia ao longo da rotação, mudando a direção da resultante. Assim o conjunto propulsiona, governa e auxilia a parada, inclusive em baixa velocidade.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "2nd Revision, 1988",
+        "locator": "Chapter VI, § 10.5 — Vertical-Axis Propellers, pp. 228–230"
+      },
+      "tags": [
+        "eixo vertical",
+        "propulsor",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch6-s10",
+        "propulsor-cicloidal"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch6-s10",
+        "topic_id": "I-pna-v2-ch6-s10-2-9-propulsor-cicloidal",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v2::ch6-s10",
+          "number": "ch6-s10",
+          "title": "Chapter VI – Propulsion — Section 10: Other propulsion devices",
+          "label": "Chapter VI – Propulsion — Section 10: Other propulsion devices"
+        },
+        "section": "Chapter VI – Propulsion — Section 10: Other propulsion devices",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-pna-v2-ch6-s10-2-9-propulsor-cicloidal",
+          "title": "Propulsor cicloidal"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "21f3b6d5dfbed2181cac113eeea9947fd9e12034",
+          "reason": "individual-source-audit-lote-101",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-532",
+      "subject": "Manobrabilidade do Navio",
+      "module": "2. Propulsão do navio e propulsores",
+      "topic_code": "2.10",
+      "topic": "Jato d’água",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "question": "Como um sistema de propulsão por jato d’água produz empuxo e qual limitação entra na avaliação de eficiência?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Usa apenas o peso da água armazenada."
+        },
+        {
+          "key": "B",
+          "text": "Uma bomba aspira, acelera e descarrega água pela popa; a reação gera empuxo, mas perdas na tomada, nos dutos e por atrito reduzem a eficiência."
+        },
+        {
+          "key": "C",
+          "text": "Depende apenas de ondas externas."
+        },
+        {
+          "key": "D",
+          "text": "Descarga água sem alterar quantidade de movimento."
+        },
+        {
+          "key": "E",
+          "text": "Elimina todas as perdas de entrada."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O jato é um dispositivo de reação: a bomba acelera e descarrega água para ré. A variação de quantidade de movimento gera empuxo; entrada, dutos e atrito introduzem perdas.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume II",
+        "edition": "2nd Revision, 1988",
+        "locator": "Chapter VI, § 10.2 — Water-Jet Propulsion, pp. 225–228"
+      },
+      "tags": [
+        "waterjet",
+        "propulsão",
+        "manobrabilidade",
+        "pna-v2",
+        "pna-v2::ch6-s10",
+        "jato-d-agua"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v2",
+        "chapter_id": "pna-v2::ch6-s10",
+        "topic_id": "I-pna-v2-ch6-s10-2-10-jato-d-agua",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v2",
+          "title": "LEWIS — Principles of Naval Architecture, Volume II",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v2::ch6-s10",
+          "number": "ch6-s10",
+          "title": "Chapter VI – Propulsion — Section 10: Other propulsion devices",
+          "label": "Chapter VI – Propulsion — Section 10: Other propulsion devices"
+        },
+        "section": "Chapter VI – Propulsion — Section 10: Other propulsion devices",
+        "module": "2. Propulsão do navio e propulsores",
+        "topic": {
+          "id": "I-pna-v2-ch6-s10-2-10-jato-d-agua",
+          "title": "Jato d’água"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "21f3b6d5dfbed2181cac113eeea9947fd9e12034",
+          "reason": "individual-source-audit-lote-101",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-533",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "3.1",
+      "topic": "Força no leme",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Na representação da força hidrodinâmica sobre um leme em fluido real, qual componente é diretamente tratada como força de controle do navio?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Somente o peso."
+        },
+        {
+          "key": "B",
+          "text": "A força hidrostática."
+        },
+        {
+          "key": "C",
+          "text": "A componente lateral normal ao eixo do navio, obtida ao resolver a resultante aplicada no centro de pressão."
+        },
+        {
+          "key": "D",
+          "text": "Apenas o arrasto paralelo."
+        },
+        {
+          "key": "E",
+          "text": "Uma força constante independente do ângulo."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A resultante atua no centro de pressão e se decompõe em sustentação, arrasto e componente y. A componente lateral normal ao eixo do navio é a força de controle.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX, § 14.1 — Rudder Force and Moment, pp. 291–293"
+      },
+      "tags": [
+        "leme",
+        "força",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s14",
+        "forca-no-leme"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s14",
+        "topic_id": "I-pna-v3-ch9-s14-3-1-forca-no-leme",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s14",
+          "number": "ch9-s14",
+          "title": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+          "label": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces"
+        },
+        "section": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-pna-v3-ch9-s14-3-1-forca-no-leme",
+          "title": "Força no leme"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "21f3b6d5dfbed2181cac113eeea9947fd9e12034",
+          "reason": "individual-source-audit-lote-101",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-534",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "3.2",
+      "topic": "Braço do leme",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Como se obtém o momento de controle em guinada produzido pela força lateral do leme?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Multiplica-se a componente lateral pelo braço longitudinal, com sinal, até a referência do navio; a interação casco-leme pode deslocar para vante o centro efetivo."
+        },
+        {
+          "key": "B",
+          "text": "Usa-se só a área do leme."
+        },
+        {
+          "key": "C",
+          "text": "Divide-se a força pelo calado."
+        },
+        {
+          "key": "D",
+          "text": "Considera-se apenas a força longitudinal."
+        },
+        {
+          "key": "E",
+          "text": "O momento é sempre nulo."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O momento resulta da força lateral vezes seu braço longitudinal. A interação com o casco também pode aumentar a força total e deslocar para vante o centro efetivo.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX, § 14.1 — Rudder Force and Moment, pp. 291–293"
+      },
+      "tags": [
+        "leme",
+        "momento",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s14",
+        "braco-do-leme"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s14",
+        "topic_id": "I-pna-v3-ch9-s14-3-2-braco-do-leme",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s14",
+          "number": "ch9-s14",
+          "title": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+          "label": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces"
+        },
+        "section": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-pna-v3-ch9-s14-3-2-braco-do-leme",
+          "title": "Braço do leme"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "21f3b6d5dfbed2181cac113eeea9947fd9e12034",
+          "reason": "individual-source-audit-lote-101",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-535",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "3.3",
+      "topic": "Alongamento do leme",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "question": "Mantido o ângulo de ataque, qual efeito a redução da razão de aspecto tende a produzir em um leme finito?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Elimina efeitos tridimensionais."
+        },
+        {
+          "key": "B",
+          "text": "Intensifica o escoamento transversal nas extremidades e reduz a sustentação; o casco junto à raiz pode bloquear parte desse escoamento e elevar a razão de aspecto efetiva."
+        },
+        {
+          "key": "C",
+          "text": "Torna a superfície bidimensional."
+        },
+        {
+          "key": "D",
+          "text": "Eleva ilimitadamente a sustentação."
+        },
+        {
+          "key": "E",
+          "text": "Altera apenas a pintura."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Menor vão intensifica o escoamento transversal entre as faces e reduz a sustentação. O casco próximo à raiz atua como barreira e pode elevar a razão de aspecto efetiva.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX, § 14.4 — Effect of Aspect Ratio, pp. 298–300"
+      },
+      "tags": [
+        "leme",
+        "razão de aspecto",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s14",
+        "alongamento-do-leme"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s14",
+        "topic_id": "I-pna-v3-ch9-s14-3-3-alongamento-do-leme",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s14",
+          "number": "ch9-s14",
+          "title": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+          "label": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces"
+        },
+        "section": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-pna-v3-ch9-s14-3-3-alongamento-do-leme",
+          "title": "Alongamento do leme"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "21f3b6d5dfbed2181cac113eeea9947fd9e12034",
+          "reason": "individual-source-audit-lote-101",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-536",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "3.4",
+      "topic": "Leme no jato do hélice",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Que distribuição de velocidade deve ser esperada sobre um leme alinhado atrás do hélice?",
+      "options": [
+        {
+          "key": "A",
+          "text": "É sempre uniforme e igual à velocidade do navio."
+        },
+        {
+          "key": "B",
+          "text": "A esteira do casco tende a reduzir a velocidade, enquanto o jato do hélice pode elevá-la; magnitude e direção variam ao longo da envergadura."
+        },
+        {
+          "key": "C",
+          "text": "O hélice zera o escoamento."
+        },
+        {
+          "key": "D",
+          "text": "Casco e hélice não alteram o fluxo."
+        },
+        {
+          "key": "E",
+          "text": "O jato atua só acima d’água."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O leme recebe escoamento combinado: a esteira do casco costuma desacelerá-lo e o propulsor o acelera. O campo não é uniforme ao longo do leme.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX, § 14.2 — Flow Around a Ship’s Rudder, pp. 293–295"
+      },
+      "tags": [
+        "leme",
+        "jato do hélice",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s14",
+        "leme-no-jato-do-helice"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s14",
+        "topic_id": "I-pna-v3-ch9-s14-3-4-leme-no-jato-do-helice",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s14",
+          "number": "ch9-s14",
+          "title": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+          "label": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces"
+        },
+        "section": "Chapter IX — Section 14: Hydrodynamics of Control Surfaces",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-pna-v3-ch9-s14-3-4-leme-no-jato-do-helice",
+          "title": "Leme no jato do hélice"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "21f3b6d5dfbed2181cac113eeea9947fd9e12034",
+          "reason": "individual-source-audit-lote-101",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-537",
+      "subject": "Manobrabilidade do Navio",
+      "module": "3. Superfícies de controle - lemes",
+      "topic_code": "3.5",
+      "topic": "Leme a baixa velocidade",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Durante uma atracação, qual condição distingue um leme convencional dentro do jato do hélice de outro fora dele?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ambos mantêm plena eficácia a velocidade nula."
+        },
+        {
+          "key": "B",
+          "text": "O leme fora do jato ganha eficácia quando a pressão dinâmica cai."
+        },
+        {
+          "key": "C",
+          "text": "Fora do jato, é ineficaz em velocidade muito baixa ou nula; dentro do jato, elevar temporariamente a rotação pode gerar força substancial, embora durante a parada essa vantagem possa desaparecer."
+        },
+        {
+          "key": "D",
+          "text": "O leme no jato só atua a ré."
+        },
+        {
+          "key": "E",
+          "text": "A posição relativa ao jato é irrelevante."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Bertram registra que lemes fora do jato são ineficazes em velocidade muito baixa ou nula. No jato, elevar a rotação aumenta a velocidade local e pode gerar força; durante a parada, porém, a vantagem pode desaparecer.",
+      "source": {
+        "author": "BERTRAM, Volker",
+        "title": "Practical Ship Hydrodynamics",
+        "edition": "2nd ed., 2012",
+        "locator": "Chapter 6, § 6.4.1 — Rudder Types and Arrangement, p. 270; § 6.4.4 — Rudder Forces, p. 284"
+      },
+      "tags": [
+        "leme",
+        "baixa velocidade",
+        "manobrabilidade",
+        "bertram",
+        "bertram::ch6",
+        "leme-a-baixa-velocidade"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "bertram",
+        "chapter_id": "bertram::ch6",
+        "topic_id": "I-bertram-ch6-3-5-leme-a-baixa-velocidade",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "bertram",
+          "title": "BERTRAM — Practical Ship Hydrodynamics, 2ª ed.",
+          "author": "BERTRAM, Volker"
+        },
+        "chapter": {
+          "id": "bertram::ch6",
+          "number": "ch6",
+          "title": "Chapter 6 – Ship manoeuvering",
+          "label": "Chapter 6 – Ship manoeuvering"
+        },
+        "section": "Chapter 6 – Ship manoeuvering",
+        "module": "3. Superfícies de controle - lemes",
+        "topic": {
+          "id": "I-bertram-ch6-3-5-leme-a-baixa-velocidade",
+          "title": "Leme a baixa velocidade"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "21f3b6d5dfbed2181cac113eeea9947fd9e12034",
+          "reason": "individual-source-audit-lote-101",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-538",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.1",
+      "topic": "Curva de giro",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Segundo a Resolução IMO MSC.137(76), como deve ser executada a prova de curva de giro usada para avaliar a capacidade de guinada?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Só para boreste, com 10° de leme."
+        },
+        {
+          "key": "B",
+          "text": "Com máquinas paradas e sem velocidade de aproximação."
+        },
+        {
+          "key": "C",
+          "text": "Para ambos os bordos, com 35° de leme ou o máximo admissível na velocidade de prova, após aproximação retilínea e guinada nula; medem-se avanço e diâmetro tático."
+        },
+        {
+          "key": "D",
+          "text": "Como prova de parada, invertendo máquinas."
+        },
+        {
+          "key": "E",
+          "text": "Em qualquer ângulo e condição inicial."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A MSC.137(76) determina curvas para ambos os bordos, com 35° ou o máximo permitido na velocidade de prova, partindo de aproximação retilínea em regime e taxa de guinada nula. Avaliam-se avanço e diâmetro tático.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 2002",
+        "locator": "Annex, §§ 4.2.2 and 5.3.1, pp. 3 and 5"
+      },
+      "tags": [
+        "curva de giro",
+        "IMO",
+        "manobrabilidade",
+        "msc137",
+        "msc137::annex6",
+        "curva-de-giro"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "I-msc137-annex6-4-1-curva-de-giro",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc137-annex6-4-1-curva-de-giro",
+          "title": "Curva de giro"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "21f3b6d5dfbed2181cac113eeea9947fd9e12034",
+          "reason": "individual-source-audit-lote-101",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-539",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.2",
+      "topic": "Avanço",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Na curva de giro da Resolução IMO MSC.137(76), o que é o avanço?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A distância transversal até 180°."
+        },
+        {
+          "key": "B",
+          "text": "A distância, no rumo original, percorrida pelo ponto de meia-nau desde a ordem de leme até a proa mudar 90°."
+        },
+        {
+          "key": "C",
+          "text": "O diâmetro do hélice vezes a rotação."
+        },
+        {
+          "key": "D",
+          "text": "A distância a ré após inverter máquinas."
+        },
+        {
+          "key": "E",
+          "text": "O tempo de movimento do aparelho de governo."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A norma define avanço como a distância no rumo original percorrida pelo ponto de meia-nau desde a aplicação do leme até a mudança de proa de 90°. Não é transferência nem diâmetro tático.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 2002",
+        "locator": "Annex, § 4.2.3 — Advance, p. 3"
+      },
+      "tags": [
+        "avanço",
+        "curva de giro",
+        "manobrabilidade",
+        "msc137",
+        "msc137::annex6",
+        "avanco"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "I-msc137-annex6-4-2-avanco",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc137-annex6-4-2-avanco",
+          "title": "Avanço"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "21f3b6d5dfbed2181cac113eeea9947fd9e12034",
+          "reason": "individual-source-audit-lote-101",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    }
+  ]
+}
