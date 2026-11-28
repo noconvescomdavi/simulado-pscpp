@@ -1,0 +1,1216 @@
+{
+  "questions": [
+    {
+      "id": "MAN-540",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.3",
+      "topic": "Diâmetro tático",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Segundo a Resolução IMO MSC.137(76), como se define o diâmetro tático na curva de giro?",
+      "options": [
+        {
+          "key": "A",
+          "text": "É a distância no rumo original até a proa mudar 90°."
+        },
+        {
+          "key": "B",
+          "text": "É a distância total da trajetória até o navio parar."
+        },
+        {
+          "key": "C",
+          "text": "É a distância, medida perpendicularmente ao rumo original, entre a posição da ordem de leme e a posição do ponto de meia-nau quando a proa mudou 180°."
+        },
+        {
+          "key": "D",
+          "text": "É o diâmetro físico descrito pela extremidade do leme."
+        },
+        {
+          "key": "E",
+          "text": "É a distância transversal medida quando a proa mudou apenas 10°."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A norma define o diâmetro tático pela posição do ponto de meia-nau quando a mudança de proa atinge 180°, medindo-se a separação na direção perpendicular ao rumo original.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 2002",
+        "locator": "Annex, § 4.2.4 — Tactical diameter, p. 3"
+      },
+      "tags": [
+        "diâmetro tático",
+        "curva de giro",
+        "manobrabilidade",
+        "msc137",
+        "msc137::annex6",
+        "diametro-tatico"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "I-msc137-annex6-4-3-diametro-tatico",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc137-annex6-4-3-diametro-tatico",
+          "title": "Diâmetro tático"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "498948dc3a22ccf68aeac0a1b776ee394e727603",
+          "reason": "individual-source-audit-lote-102",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-541",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.4",
+      "topic": "Zigue-zague",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "No ensaio IMO de zigue-zague 10°/10°, o que determina cada reversão do leme após a aproximação estabilizada?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O término de um intervalo fixo de dez minutos."
+        },
+        {
+          "key": "B",
+          "text": "A velocidade cair a 10% do valor inicial."
+        },
+        {
+          "key": "C",
+          "text": "A taxa de guinada tornar-se nula."
+        },
+        {
+          "key": "D",
+          "text": "O navio completar 180° de mudança de proa."
+        },
+        {
+          "key": "E",
+          "text": "A proa atingir 10° de desvio em relação ao rumo original; então o leme é invertido para 10° no bordo oposto."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Após aproximação retilínea com taxa de guinada nula, aplica-se 10° de leme. Ao atingir 10° de desvio de proa, inverte-se o leme para 10° no bordo oposto; o procedimento se repete para o terceiro execute.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 2002",
+        "locator": "Annex, §§ 4.2.5–4.2.6, pp. 3–4"
+      },
+      "tags": [
+        "zigue-zague",
+        "controle",
+        "manobrabilidade",
+        "msc137",
+        "msc137::annex6"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "I-msc137-annex6-4-4-zigue-zague",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc137-annex6-4-4-zigue-zague",
+          "title": "Zigue-zague"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "498948dc3a22ccf68aeac0a1b776ee394e727603",
+          "reason": "individual-source-audit-lote-102",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-542",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.5",
+      "topic": "Overshoot",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Na terminologia da MSC.137(76), o que representa o primeiro ângulo de overshoot no zigue-zague 10°/10°?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O desvio adicional de proa que ocorre após o segundo execute, enquanto o navio ainda guina no sentido inicial antes de responder ao leme invertido."
+        },
+        {
+          "key": "B",
+          "text": "O ângulo inicial de 10° aplicado ao leme."
+        },
+        {
+          "key": "C",
+          "text": "A diferença entre calado de proa e de popa."
+        },
+        {
+          "key": "D",
+          "text": "O ângulo geométrico das pás do hélice."
+        },
+        {
+          "key": "E",
+          "text": "A mudança total de proa após o terceiro execute."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Mesmo após a segunda ordem de leme, o navio continua por algum tempo a guinar no sentido anterior. A norma chama de primeiro overshoot o desvio adicional de proa ocorrido após esse segundo execute.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 2002",
+        "locator": "Annex, §§ 4.2.6.2–4.2.7, p. 4"
+      },
+      "tags": [
+        "overshoot",
+        "zigue-zague",
+        "manobrabilidade",
+        "msc137",
+        "msc137::annex6"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "I-msc137-annex6-4-5-overshoot",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc137-annex6-4-5-overshoot",
+          "title": "Overshoot"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "498948dc3a22ccf68aeac0a1b776ee394e727603",
+          "reason": "individual-source-audit-lote-102",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-543",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.6",
+      "topic": "Estabilidade direcional",
+      "difficulty": "Fácil",
+      "style": "Aplicada",
+      "question": "Qual afirmação distingue corretamente a estabilidade retilínea com controles fixos da estabilidade direcional sob controle?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Um navio retilineamente estável nunca necessita de correção de rumo."
+        },
+        {
+          "key": "B",
+          "text": "A estabilidade com controles fixos depende apenas da potência instalada."
+        },
+        {
+          "key": "C",
+          "text": "Ambas significam estabilidade transversal estática."
+        },
+        {
+          "key": "D",
+          "text": "Controles automáticos não podem estabilizar um navio inerentemente instável."
+        },
+        {
+          "key": "E",
+          "text": "Com controles fixos, a análise verifica se perturbações de guinada e deriva decaem e a trajetória retilínea é retomada; a manutenção de uma orientação desejada sob controle inclui realimentação de erro de rumo e taxa de guinada."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Lewis reserva, para navios autopropulsados no plano horizontal, o conceito de estabilidade retilínea com controles fixos. A estabilidade direcional controlada envolve o sistema de governo, que reage ao erro de rumo e à taxa de guinada; um controle bem projetado pode estabilizar resposta inerentemente instável.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX, §§ 3.2–4.2, pp. 204–211; § 11.2, pp. 273–274"
+      },
+      "tags": [
+        "estabilidade direcional",
+        "rumo",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s4",
+        "estabilidade-direcional"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s4",
+        "topic_id": "I-pna-v3-ch9-s4-4-6-estabilidade-direcional",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s4",
+          "number": "ch9-s4",
+          "title": "Chapter IX — Section 4: Analysis of Course Keeping and Controls-fixed Stability",
+          "label": "Chapter IX — Section 4: Analysis of Course Keeping and Controls-fixed Stability"
+        },
+        "section": "Chapter IX — Section 4: Analysis of Course Keeping and Controls-fixed Stability",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-pna-v3-ch9-s4-4-6-estabilidade-direcional",
+          "title": "Estabilidade direcional"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "498948dc3a22ccf68aeac0a1b776ee394e727603",
+          "reason": "individual-source-audit-lote-102",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-544",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.7",
+      "topic": "Curva espiral",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Como o ensaio espiral direto de Dieudonné identifica as características de estabilidade direcional do navio?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Parando o navio antes de cada nova posição do leme."
+        },
+        {
+          "key": "B",
+          "text": "Medindo apenas a resistência longitudinal em rumo constante."
+        },
+        {
+          "key": "C",
+          "text": "Invertendo máquinas a cada mudança de bordo."
+        },
+        {
+          "key": "D",
+          "text": "Mantendo sucessivos ângulos fixos de leme até estabilizar a taxa de guinada e traçando a relação entre leme e guinada; uma malha de histerese revela instabilidade."
+        },
+        {
+          "key": "E",
+          "text": "Aplicando um único ângulo de leme até completar uma curva de 360°."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "No ensaio direto, parte-se estabilizado e aplicam-se sucessivos ângulos de leme em pequenos incrementos, aguardando em cada ponto uma taxa de guinada constante. A curva leme–taxa de guinada, especialmente sua malha de histerese, caracteriza a estabilidade ou instabilidade.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX, § 4.3 — The Dieudonné Spiral Maneuver, pp. 211–213"
+      },
+      "tags": [
+        "curva espiral",
+        "estabilidade",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s4",
+        "curva-espiral"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s4",
+        "topic_id": "I-pna-v3-ch9-s4-4-7-curva-espiral",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s4",
+          "number": "ch9-s4",
+          "title": "Chapter IX — Section 4: Analysis of Course Keeping and Controls-fixed Stability",
+          "label": "Chapter IX — Section 4: Analysis of Course Keeping and Controls-fixed Stability"
+        },
+        "section": "Chapter IX — Section 4: Analysis of Course Keeping and Controls-fixed Stability",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-pna-v3-ch9-s4-4-7-curva-espiral",
+          "title": "Curva espiral"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "498948dc3a22ccf68aeac0a1b776ee394e727603",
+          "reason": "individual-source-audit-lote-102",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-545",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.8",
+      "topic": "Parada",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Na análise de parada apresentada por Lewis, qual grandeza expressa a distância útil na direção inicial e quais forças governam sua evolução?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O diâmetro tático, governado somente pelo leme."
+        },
+        {
+          "key": "B",
+          "text": "A transferência, independente da propulsão."
+        },
+        {
+          "key": "C",
+          "text": "A distância percorrida é irrelevante se a velocidade final for zero."
+        },
+        {
+          "key": "D",
+          "text": "O head reach, projeção da trajetória na direção original; ele resulta da desaceleração produzida pela resistência do casco e pelo empuxo a ré, sujeita à massa efetiva e à resposta da instalação propulsora."
+        },
+        {
+          "key": "E",
+          "text": "O avanço, definido até 90° de mudança de proa."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Head reach é a projeção da trajetória de parada na direção inicial. A desaceleração depende da resistência, do empuxo a ré disponível, da massa e massa adicional e dos atrasos/características da instalação propulsora.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX, §§ 10.1 and 10.3–10.7, pp. 260–270"
+      },
+      "tags": [
+        "parada",
+        "stopping",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s10"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s10",
+        "topic_id": "I-pna-v3-ch9-s10-4-8-parada",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s10",
+          "number": "ch9-s10",
+          "title": "Chapter IX — Section 10: Accelerating, Stopping and Backing",
+          "label": "Chapter IX — Section 10: Accelerating, Stopping and Backing"
+        },
+        "section": "Chapter IX — Section 10: Accelerating, Stopping and Backing",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-pna-v3-ch9-s10-4-8-parada",
+          "title": "Parada"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "498948dc3a22ccf68aeac0a1b776ee394e727603",
+          "reason": "individual-source-audit-lote-102",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-546",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.9",
+      "topic": "Aceleração",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Para um navio acelerando avante, qual relação física determina a aceleração instantânea no modelo de Lewis?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A massa efetiva é desprezada e a velocidade muda instantaneamente."
+        },
+        {
+          "key": "B",
+          "text": "A força aceleradora é o empuxo líquido disponível menos a resistência na mesma velocidade, dividida pela massa do navio somada à massa adicional longitudinal."
+        },
+        {
+          "key": "C",
+          "text": "A aceleração depende apenas da rotação comandada, sem relação com resistência."
+        },
+        {
+          "key": "D",
+          "text": "Empuxo e resistência são somados como forças no mesmo sentido."
+        },
+        {
+          "key": "E",
+          "text": "A massa adicional só participa quando o navio está parado."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Lewis obtém a força aceleradora pela diferença entre o empuxo líquido disponível e a resistência na velocidade considerada. A aceleração resulta dessa força aplicada à massa efetiva, composta pela massa do navio e pela massa adicional longitudinal.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX, § 10.2 — Acceleration Times, Distances, and Velocities, pp. 260–263"
+      },
+      "tags": [
+        "aceleração",
+        "dinâmica",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s10",
+        "aceleracao"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s10",
+        "topic_id": "I-pna-v3-ch9-s10-4-9-aceleracao",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s10",
+          "number": "ch9-s10",
+          "title": "Chapter IX — Section 10: Accelerating, Stopping and Backing",
+          "label": "Chapter IX — Section 10: Accelerating, Stopping and Backing"
+        },
+        "section": "Chapter IX — Section 10: Accelerating, Stopping and Backing",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-pna-v3-ch9-s10-4-9-aceleracao",
+          "title": "Aceleração"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "498948dc3a22ccf68aeac0a1b776ee394e727603",
+          "reason": "individual-source-audit-lote-102",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-547",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.10",
+      "topic": "Movimento a ré",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Para avaliar a capacidade de um navio de sair a ré de um berço, qual índice operacional é sugerido por Lewis?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A velocidade a ré atingida depois de percorrer uma distância de uma eslora, pois o desempenho de backing deve ser julgado nas condições hidrográficas e de manobra junto aos cais."
+        },
+        {
+          "key": "B",
+          "text": "O diâmetro tático obtido em curva avante."
+        },
+        {
+          "key": "C",
+          "text": "A velocidade máxima avante antes da ordem de máquinas."
+        },
+        {
+          "key": "D",
+          "text": "A igualdade obrigatória entre estabilidade direcional avante e a ré."
+        },
+        {
+          "key": "E",
+          "text": "A ausência total de forças laterais durante o movimento a ré."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Lewis relata que, para deixar um slip, a velocidade a ré alcançada após uma eslora pode servir de critério. O valor desejável depende da experiência e das condições hidrográficas locais; não se presume comportamento idêntico ao movimento avante.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX, § 10.9 — Backing Times, Distances, and Velocities, pp. 271–272"
+      },
+      "tags": [
+        "ré",
+        "controle",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s10",
+        "movimento-a-re"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s10",
+        "topic_id": "I-pna-v3-ch9-s10-4-10-movimento-a-re",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s10",
+          "number": "ch9-s10",
+          "title": "Chapter IX — Section 10: Accelerating, Stopping and Backing",
+          "label": "Chapter IX — Section 10: Accelerating, Stopping and Backing"
+        },
+        "section": "Chapter IX — Section 10: Accelerating, Stopping and Backing",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-pna-v3-ch9-s10-4-10-movimento-a-re",
+          "title": "Movimento a ré"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "498948dc3a22ccf68aeac0a1b776ee394e727603",
+          "reason": "individual-source-audit-lote-102",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-548",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.11",
+      "topic": "Condições de ensaio IMO",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Em quais condições de referência a MSC.137(76) determina a execução das provas de manobrabilidade?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Em qualquer profundidade, estado de mar e carregamento, sem correção."
+        },
+        {
+          "key": "B",
+          "text": "Em água profunda e irrestrita, ambiente calmo, plena carga na linha de verão e sem trim, com aproximação estabilizada na velocidade de prova e manobras para ambos os bordos."
+        },
+        {
+          "key": "C",
+          "text": "Somente em lastro, com mar de proa e velocidade livre."
+        },
+        {
+          "key": "D",
+          "text": "Em canal restrito para amplificar os efeitos de banco."
+        },
+        {
+          "key": "E",
+          "text": "Apenas para boreste, usando auxiliares de manobra não disponíveis continuamente."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A seção 5.2 padroniza as condições para tornar os resultados comparáveis: água profunda e sem restrições, ambiente calmo, plena carga na linha de verão, quilha nivelada e aproximação estabilizada na velocidade de prova, com ensaios nos dois bordos.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 2002",
+        "locator": "Annex, § 5.2 — Conditions at which the standards apply, pp. 4–5"
+      },
+      "tags": [
+        "IMO",
+        "condições de ensaio",
+        "manobrabilidade",
+        "msc137",
+        "msc137::annex6",
+        "condicoes-de-ensaio-imo"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "I-msc137-annex6-4-11-condicoes-de-ensaio-imo",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc137-annex6-4-11-condicoes-de-ensaio-imo",
+          "title": "Condições de ensaio IMO"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "498948dc3a22ccf68aeac0a1b776ee394e727603",
+          "reason": "individual-source-audit-lote-102",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-549",
+      "subject": "Manobrabilidade do Navio",
+      "module": "4. Controlabilidade e padrões de manobrabilidade",
+      "topic_code": "4.12",
+      "topic": "Critérios IMO",
+      "difficulty": "Fácil",
+      "style": "Aplicada",
+      "question": "Qual conjunto reproduz os limites básicos de capacidade de giro e parada da MSC.137(76)?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Avanço de até 5L, diâmetro tático de até 4,5L e track reach sem limite."
+        },
+        {
+          "key": "B",
+          "text": "Avanço e diâmetro tático de até 2,5L, sem prova de parada."
+        },
+        {
+          "key": "C",
+          "text": "Somente os ângulos de overshoot são limitados."
+        },
+        {
+          "key": "D",
+          "text": "Avanço ≤ 4,5L, diâmetro tático ≤ 5L e track reach na parada full astern ≤ 15L, admitindo-se ajuste administrativo para grandes deslocamentos, mas nunca acima de 20L."
+        },
+        {
+          "key": "E",
+          "text": "Diâmetro tático ≤ 15L e track reach ≤ 5L."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A norma limita o avanço a 4,5 esloras e o diâmetro tático a 5 esloras. Na parada full astern, o track reach deve ser no máximo 15 esloras; a Administração pode ajustar o limite para navios de grande deslocamento, sem ultrapassar 20 esloras.",
+      "source": {
+        "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)",
+        "title": "Standards for Ship Manoeuvrability",
+        "edition": "Resolution MSC.137(76), 2002",
+        "locator": "Annex, §§ 5.3.1 and 5.3.4 — Turning and stopping abilities, p. 5"
+      },
+      "tags": [
+        "IMO",
+        "critérios",
+        "manobrabilidade",
+        "msc137",
+        "msc137::annex6",
+        "criterios-imo"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "msc137",
+        "chapter_id": "msc137::annex6",
+        "topic_id": "I-msc137-annex6-4-12-criterios-imo",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "msc137",
+          "title": "IMO Resolution MSC.137(76) — Standards for Ship Manoeuvrability",
+          "author": "INTERNATIONAL MARITIME ORGANIZATION (IMO)"
+        },
+        "chapter": {
+          "id": "msc137::annex6",
+          "number": "annex6",
+          "title": "Annex 6 – Standards for Ship Manoeuvrability",
+          "label": "Annex 6 – Standards for Ship Manoeuvrability"
+        },
+        "section": "Annex 6 – Standards for Ship Manoeuvrability",
+        "module": "4. Controlabilidade e padrões de manobrabilidade",
+        "topic": {
+          "id": "I-msc137-annex6-4-12-criterios-imo",
+          "title": "Critérios IMO"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "498948dc3a22ccf68aeac0a1b776ee394e727603",
+          "reason": "individual-source-audit-lote-102",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-550",
+      "subject": "Manobrabilidade do Navio",
+      "module": "5. Efeitos ambientais, águas rasas e interações",
+      "topic_code": "5.1",
+      "topic": "Vento",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Por que um vento moderado pode comprometer seriamente o governo de um navio em baixa velocidade?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Porque a força aerodinâmica deixa de depender da área exposta."
+        },
+        {
+          "key": "B",
+          "text": "Porque a razão entre velocidade do vento e velocidade do navio cresce; força e momento aumentam com a área acima d’água, o braço até o LCG e os coeficientes aerodinâmicos, enquanto a autoridade hidrodinâmica de controle é reduzida."
+        },
+        {
+          "key": "C",
+          "text": "Porque vento transversal produz apenas força vertical."
+        },
+        {
+          "key": "D",
+          "text": "Porque o centro de área lateral não influencia o momento de guinada."
+        },
+        {
+          "key": "E",
+          "text": "Porque o vento só afeta navios fundeados."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Lewis destaca a razão vento/velocidade do navio: mesmo vento moderado dificulta o controle quando o navio avança lentamente. Área exposta, distância do centro de área lateral ao LCG e coeficientes de arrasto governam a intensidade dos efeitos.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX, § 12.2 — Dynamic Behavior in Wind, pp. 277–280"
+      },
+      "tags": [
+        "vento",
+        "guinada",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s12"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s12",
+        "topic_id": "I-pna-v3-ch9-s12-5-1-vento",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s12",
+          "number": "ch9-s12",
+          "title": "Chapter IX — Section 12: Effects of the Environment",
+          "label": "Chapter IX — Section 12: Effects of the Environment"
+        },
+        "section": "Chapter IX — Section 12: Effects of the Environment",
+        "module": "5. Efeitos ambientais, águas rasas e interações",
+        "topic": {
+          "id": "I-pna-v3-ch9-s12-5-1-vento",
+          "title": "Vento"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "498948dc3a22ccf68aeac0a1b776ee394e727603",
+          "reason": "individual-source-audit-lote-102",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-551",
+      "subject": "Manobrabilidade do Navio",
+      "module": "5. Efeitos ambientais, águas rasas e interações",
+      "topic_code": "5.2",
+      "topic": "Corrente",
+      "difficulty": "Médio",
+      "style": "Aplicada",
+      "question": "Como uma corrente aproximadamente uniforme deve ser tratada na avaliação da manobrabilidade em mar aberto?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Como força aerodinâmica aplicada apenas à obra morta."
+        },
+        {
+          "key": "B",
+          "text": "Igualando sempre velocidade sobre o fundo e velocidade relativa à água."
+        },
+        {
+          "key": "C",
+          "text": "Ignorando seu efeito sobre a trajetória sobre o fundo."
+        },
+        {
+          "key": "D",
+          "text": "Somando sua velocidade diretamente às forças de vento."
+        },
+        {
+          "key": "E",
+          "text": "Usando a velocidade do navio relativa à água para calcular forças hidrodinâmicas; uma corrente horizontal quase constante altera principalmente o movimento sobre o fundo, enquanto variações locais e correntes de via navegável podem afetar o controle."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Lewis trata a corrente por velocidades relativas navio–água. Correntes oceânicas locais, modestas e quase constantes no plano horizontal, geralmente não dificultam o controle em mar aberto, embora mudem o movimento sobre o fundo; gradientes e condições locais exigem análise adicional.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX, § 12.3 — Current Effects, pp. 280–281"
+      },
+      "tags": [
+        "corrente",
+        "trajetória",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s12"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s12",
+        "topic_id": "I-pna-v3-ch9-s12-5-2-corrente",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s12",
+          "number": "ch9-s12",
+          "title": "Chapter IX — Section 12: Effects of the Environment",
+          "label": "Chapter IX — Section 12: Effects of the Environment"
+        },
+        "section": "Chapter IX — Section 12: Effects of the Environment",
+        "module": "5. Efeitos ambientais, águas rasas e interações",
+        "topic": {
+          "id": "I-pna-v3-ch9-s12-5-2-corrente",
+          "title": "Corrente"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "498948dc3a22ccf68aeac0a1b776ee394e727603",
+          "reason": "individual-source-audit-lote-102",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-552",
+      "subject": "Manobrabilidade do Navio",
+      "module": "5. Efeitos ambientais, águas rasas e interações",
+      "topic_code": "5.3",
+      "topic": "Águas rasas",
+      "difficulty": "Fácil",
+      "style": "Aplicada",
+      "question": "Qual alteração de manobra foi observada por Lewis quando a relação profundidade/calado caiu para cerca de 1,25?",
+      "options": [
+        {
+          "key": "A",
+          "text": "O diâmetro de giro diminuiu entre 60% e 100%."
+        },
+        {
+          "key": "B",
+          "text": "O squat desapareceu e a taxa de guinada aumentou."
+        },
+        {
+          "key": "C",
+          "text": "Somente a resistência aerodinâmica mudou."
+        },
+        {
+          "key": "D",
+          "text": "A profundidade deixou de influenciar as forças laterais."
+        },
+        {
+          "key": "E",
+          "text": "A taxa de guinada caiu para cerca de 50%–60% do valor em águas profundas, correspondendo aproximadamente a aumento de 60%–100% no diâmetro de giro."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Os dados reunidos em §13.2 mostram forte degradação da capacidade de giro: para profundidade de cerca de 1,25 vezes o calado, a taxa de guinada fica em torno de 50%–60% da de águas profundas, e o diâmetro de giro cresce aproximadamente 60%–100%.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX, § 13.2 — Shallow-Water Effects, pp. 289–291"
+      },
+      "tags": [
+        "águas rasas",
+        "squat",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s13",
+        "aguas-rasas"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s13",
+        "topic_id": "I-pna-v3-ch9-s13-5-3-aguas-rasas",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s13",
+          "number": "ch9-s13",
+          "title": "Chapter IX — Section 13: Vessel Waterway Interactions",
+          "label": "Chapter IX — Section 13: Vessel Waterway Interactions"
+        },
+        "section": "Chapter IX — Section 13: Vessel Waterway Interactions",
+        "module": "5. Efeitos ambientais, águas rasas e interações",
+        "topic": {
+          "id": "I-pna-v3-ch9-s13-5-3-aguas-rasas",
+          "title": "Águas rasas"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "498948dc3a22ccf68aeac0a1b776ee394e727603",
+          "reason": "individual-source-audit-lote-102",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    },
+    {
+      "id": "MAN-553",
+      "subject": "Manobrabilidade do Navio",
+      "module": "5. Efeitos ambientais, águas rasas e interações",
+      "topic_code": "5.4",
+      "topic": "Squat",
+      "difficulty": "Difícil",
+      "style": "Aplicada",
+      "question": "Segundo Lewis, qual descrição de squat está correta?",
+      "options": [
+        {
+          "key": "A",
+          "text": "É somente uma banda estática causada pelo vento."
+        },
+        {
+          "key": "B",
+          "text": "É o aumento estático de calado causado por carga embarcada."
+        },
+        {
+          "key": "C",
+          "text": "É o movimento resultante do afundamento vertical do centro de gravidade combinado com a rotação de trim durante o movimento em água rasa ou restrita; o trim pode inclusive ser negativo, com a proa para baixo."
+        },
+        {
+          "key": "D",
+          "text": "É sinônimo de diâmetro tático."
+        },
+        {
+          "key": "E",
+          "text": "Independe da velocidade e das dimensões da via navegável."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Lewis define sinkage como o deslocamento vertical para baixo do centro de gravidade e squat como o movimento resultante desse afundamento e da rotação de trim. Embora a convenção adote trim positivo de proa para cima, em baixa velocidade e água rasa o trim pode ser negativo.",
+      "source": {
+        "author": "LEWIS, Edward V.",
+        "title": "Principles of Naval Architecture, Volume III",
+        "edition": "2nd Revision, 1989",
+        "locator": "Chapter IX, § 13.5 — Sinkage and Trim, p. 299"
+      },
+      "tags": [
+        "squat",
+        "águas rasas",
+        "manobrabilidade",
+        "pna-v3",
+        "pna-v3::ch9-s13"
+      ],
+      "taxonomy": {
+        "subject_id": "I",
+        "subject_slug": "manobrabilidade",
+        "bibliography_id": "pna-v3",
+        "chapter_id": "pna-v3::ch9-s13",
+        "topic_id": "I-pna-v3-ch9-s13-5-4-squat",
+        "subtopic_id": null
+      },
+      "tracking": {
+        "subject_slug": "manobrabilidade",
+        "work": {
+          "id": "pna-v3",
+          "title": "LEWIS — Principles of Naval Architecture, Volume III",
+          "author": "LEWIS, Edward V."
+        },
+        "chapter": {
+          "id": "pna-v3::ch9-s13",
+          "number": "ch9-s13",
+          "title": "Chapter IX — Section 13: Vessel Waterway Interactions",
+          "label": "Chapter IX — Section 13: Vessel Waterway Interactions"
+        },
+        "section": "Chapter IX — Section 13: Vessel Waterway Interactions",
+        "module": "5. Efeitos ambientais, águas rasas e interações",
+        "topic": {
+          "id": "I-pna-v3-ch9-s13-5-4-squat",
+          "title": "Squat"
+        }
+      },
+      "provenance": {
+        "audit_restore": {
+          "baseline_commit": "0c35bf949bc40d0b00ecc8806b64d8d13f9824c3",
+          "reason": "restored-before-legacy-generators"
+        },
+        "technical_audit": {
+          "baseline_commit": "498948dc3a22ccf68aeac0a1b776ee394e727603",
+          "reason": "individual-source-audit-lote-102",
+          "reviewed_on": "2026-11-28"
+        }
+      }
+    }
+  ]
+}
